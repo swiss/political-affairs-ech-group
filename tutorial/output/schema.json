@@ -1,26 +1,47 @@
 {
     "$defs": {
+        "Container": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "persons": {
+                    "items": {
+                        "$ref": "#/$defs/Person"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Container",
+            "type": "object"
+        },
         "Person": {
             "additionalProperties": false,
             "description": "",
             "properties": {
                 "age": {
+                    "maximum": 200,
+                    "minimum": 0,
                     "type": [
-                        "string",
+                        "integer",
                         "null"
                     ]
                 },
                 "aliases": {
+                    "description": "other names for the person",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
                 "full_name": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "description": "name of the person",
+                    "type": "string"
                 },
                 "id": {
                     "type": [
@@ -29,12 +50,17 @@
                     ]
                 },
                 "phone": {
+                    "pattern": "^[\\d\\(\\)\\-]+$",
                     "type": [
                         "string",
                         "null"
                     ]
                 }
             },
+            "required": [
+                "id",
+                "full_name"
+            ],
             "title": "Person",
             "type": "object"
         }
