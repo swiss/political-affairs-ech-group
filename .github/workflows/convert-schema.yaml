@@ -1,4 +1,4 @@
-name: Convert LinkML Schema
+name: Build and Convert
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  convert_schema:
+  build_and_convert:
     runs-on: ubuntu-latest
 
     steps:
