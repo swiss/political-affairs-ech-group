@@ -1,0 +1,100 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix personinfo: <https://w3id.org/linkml/examples/personinfo/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/linkml/examples/personinfo.owl.ttl> a owl:Ontology ;
+    rdfs:label "personinfo" .
+
+personinfo:Container a owl:Class ;
+    rdfs:label "Container" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom personinfo:Person ;
+            owl:onProperty personinfo:persons ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty personinfo:persons ] ;
+    skos:inScheme <https://w3id.org/linkml/examples/personinfo> .
+
+personinfo:Person a owl:Class ;
+    rdfs:label "Person" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:intersectionOf ( xsd:integer [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:integer ;
+                                owl:withRestrictions ( [ xsd:minInclusive 0 ] ) ] [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:integer ;
+                                owl:withRestrictions ( [ xsd:maxInclusive 200 ] ) ] ) ] ;
+            owl:onProperty personinfo:age ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty personinfo:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty personinfo:aliases ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty personinfo:full_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty personinfo:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty personinfo:age ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty personinfo:phone ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty personinfo:aliases ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty personinfo:full_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty personinfo:phone ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:string ;
+                    owl:withRestrictions ( [ xsd:pattern "^[\\d\\(\\)\\-]+$" ] ) ] ;
+            owl:onProperty personinfo:phone ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty personinfo:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty personinfo:full_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty personinfo:age ] ;
+    skos:inScheme <https://w3id.org/linkml/examples/personinfo> .
+
+personinfo:aliases a owl:DatatypeProperty ;
+    rdfs:label "aliases" ;
+    skos:definition "other names for the person" ;
+    skos:inScheme <https://w3id.org/linkml/examples/personinfo> .
+
+personinfo:persons a owl:ObjectProperty ;
+    rdfs:label "persons" ;
+    skos:inScheme <https://w3id.org/linkml/examples/personinfo> .
+
+personinfo:age a owl:DatatypeProperty ;
+    rdfs:label "age" ;
+    skos:inScheme <https://w3id.org/linkml/examples/personinfo> .
+
+personinfo:full_name a owl:DatatypeProperty ;
+    rdfs:label "full_name" ;
+    skos:definition "name of the person" ;
+    skos:inScheme <https://w3id.org/linkml/examples/personinfo> .
+
+personinfo:id a owl:DatatypeProperty ;
+    rdfs:label "id" ;
+    skos:inScheme <https://w3id.org/linkml/examples/personinfo> .
+
+personinfo:phone a owl:DatatypeProperty ;
+    rdfs:label "phone" ;
+    skos:inScheme <https://w3id.org/linkml/examples/personinfo> .
+
+
