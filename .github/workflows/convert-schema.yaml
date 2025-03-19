@@ -53,5 +53,5 @@ jobs:
             git add tutorial/output/schema.ttl
             git add tutorial/output/data.json
             git add tutorial/output/data.ttl
-            git diff --quiet && git diff --staged --quiet || git commit -m "Auto-generated schema.json"
+            git diff --quiet && git diff --staged --quiet || git commit -m "Auto-generated schema and data"
             git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
