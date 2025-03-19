@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'tutorial/input/schema.yaml'
+      - 'tutorial/input/data.yaml'
   workflow_dispatch:
 
 jobs:
@@ -49,5 +50,8 @@ jobs:
             git config --global user.name "github-actions"
             git config --global user.email "github-actions@github.com"
             git add tutorial/output/schema.json
+            git add tutorial/output/schema.ttl
+            git add tutorial/output/data.json
+            git add tutorial/output/data.ttl
             git diff --quiet && git diff --staged --quiet || git commit -m "Auto-generated schema.json"
             git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
