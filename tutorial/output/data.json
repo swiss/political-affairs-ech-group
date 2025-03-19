@@ -1,0 +1,16 @@
+{
+  "persons": [
+    {
+      "id": "ORCID:1234",
+      "full_name": "Clark Kent",
+      "phone": "555-555-5555",
+      "age": 33
+    },
+    {
+      "id": "ORCID:4567",
+      "full_name": "Lois Lane",
+      "age": 34
+    }
+  ],
+  "@type": "Container"
+}
