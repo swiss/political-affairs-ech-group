@@ -11,16 +11,33 @@
 personinfo:Container a owl:Class ;
     rdfs:label "Container" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom personinfo:Person ;
+            owl:minCardinality 0 ;
             owl:onProperty personinfo:persons ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom personinfo:Person ;
             owl:onProperty personinfo:persons ] ;
     skos:inScheme <https://w3id.org/linkml/examples/personinfo> .
 
 personinfo:Person a owl:Class ;
     rdfs:label "Person" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty personinfo:full_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:string ;
+                    owl:withRestrictions ( [ xsd:pattern "^[\\d\\(\\)\\-]+$" ] ) ] ;
+            owl:onProperty personinfo:phone ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty personinfo:age ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty personinfo:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty personinfo:phone ],
+        [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( xsd:integer [ a rdfs:Datatype ;
                                 owl:onDatatype xsd:integer ;
@@ -32,16 +49,13 @@ personinfo:Person a owl:Class ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty personinfo:id ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty personinfo:aliases ],
+            owl:maxCardinality 1 ;
+            owl:onProperty personinfo:full_name ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty personinfo:full_name ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty personinfo:id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty personinfo:age ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
@@ -50,25 +64,11 @@ personinfo:Person a owl:Class ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty personinfo:aliases ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty personinfo:full_name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty personinfo:phone ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:onDatatype xsd:string ;
-                    owl:withRestrictions ( [ xsd:pattern "^[\\d\\(\\)\\-]+$" ] ) ] ;
-            owl:onProperty personinfo:phone ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty personinfo:id ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty personinfo:full_name ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty personinfo:age ] ;
+            owl:onProperty personinfo:aliases ] ;
     skos:inScheme <https://w3id.org/linkml/examples/personinfo> .
 
 personinfo:aliases a owl:DatatypeProperty ;
