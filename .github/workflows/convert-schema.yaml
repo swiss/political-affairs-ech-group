@@ -29,7 +29,7 @@ jobs:
 
       - name: Convert schema.yaml to schema.ttl
         run: |
-          gen-rdf-schema tutorial/input/schema.yaml > tutorial/output/schema.ttl
+          gen-owl tutorial/input/schema.yaml > tutorial/output/schema.ttl
 
       - name: Convert data.yaml to data.json
         run: |
