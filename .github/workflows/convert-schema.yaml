@@ -29,14 +29,17 @@ jobs:
 
       - name: Convert schema.yaml to schema.ttl
         run: |
+          mkdir -p tutorial/output
           gen-owl tutorial/input/schema.yaml > tutorial/output/schema.ttl
 
       - name: Convert data.yaml to data.json
         run: |
+          mkdir -p tutorial/output
           linkml-convert -s tutorial/input/schema.yaml -t json tutorial/input/data.yaml > tutorial/output/data.json
 
       - name: Convert data.yaml to data.ttl
         run: |
+          mkdir -p tutorial/output
           linkml-convert -s tutorial/input/schema.yaml -t rdf tutorial/input/data.yaml > tutorial/output/data.ttl
 
       - name: Commit and push changes
