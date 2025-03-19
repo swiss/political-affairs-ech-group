@@ -1,0 +1,38 @@
+name: Convert LinkML Schema
+
+on:
+  push:
+    paths:
+      - 'tutorial/input/schema.yaml'
+  workflow_dispatch:
+
+jobs:
+  convert_schema:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Convert schema.yaml to schema.json
+        run: |
+          mkdir -p tutorial/output
+          gen-json-schema tutorial/input/schema.yaml > tutorial/output/schema.json
+
+      - name: Commit and push changes
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+            git config --global user.name "github-actions"
+            git config --global user.email "github-actions@github.com"
+            git add tutorial/output/schema.json
+            git diff --quiet && git diff --staged --quiet || git commit -m "Auto-generated schema.json"
+            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
