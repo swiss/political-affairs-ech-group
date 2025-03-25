@@ -1,8 +1,24 @@
-persons:
-  - id: ORCID:1234
-    full_name: Clark Kent
-    age: 33
-    phone: 555-555-5555
-  - id: ORCID:4567
-    full_name: Lois Lane
-    age: 34
+sessionen:
+  
+  - uid: parl:s2025-1
+    name: Frühlingssession 2025
+    traktanden:
+      - uid: parl:s2025-1_t1
+        name: Fahnenfarbe
+        abstimmungen:
+          - uid: parl:s2025-1_t1_a1
+            frage: Soll die Farbe geändert werden?
+            resultat: Ja
+          - uid: parl:s2025-1_t1_a2
+            frage: Soll die Farbe Auberginen-Oliv werden?
+            resultat: Nein
+  
+  - uid: parl:s2025-2
+    name: Sommersession 2025
+    traktanden:
+      - uid: parl:s2025-2_t1
+        name: Landeshymne
+        abstimmungen:
+          - uid: parl:s2025-2_t1_a1
+            frage: Soll die Hymne geändert werden?
+            resultat: Nein
