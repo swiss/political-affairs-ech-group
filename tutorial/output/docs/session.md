@@ -1,10 +1,10 @@
 
 
-# Slot: uid
+# Slot: session
 
 
 
-URI: [chpaf:uid](https://ch.paf.link/uid)
+URI: [chpaf:session](https://ch.paf.link/session)
 
 
 
@@ -18,9 +18,7 @@ URI: [chpaf:uid](https://ch.paf.link/uid)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Vote](Vote.md) |  |  no  |
-| [Session](Session.md) |  |  no  |
-| [AgendaItem](AgendaItem.md) |  |  no  |
+| [Container](Container.md) |  |  no  |
 
 
 
@@ -30,9 +28,9 @@ URI: [chpaf:uid](https://ch.paf.link/uid)
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Session](Session.md)
 
-* Required: True
+* Multivalued: True
 
 
 
@@ -58,8 +56,8 @@ URI: [chpaf:uid](https://ch.paf.link/uid)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | chpaf:uid |
-| native | chpaf:uid |
+| self | chpaf:session |
+| native | chpaf:session |
 
 
 
@@ -68,17 +66,17 @@ URI: [chpaf:uid](https://ch.paf.link/uid)
 
 <details>
 ```yaml
-name: uid
+name: session
 from_schema: https://ch.paf.link/schema/session
 rank: 1000
-identifier: true
-alias: uid
+alias: session
+owner: Container
 domain_of:
-- Session
-- AgendaItem
-- Vote
-range: string
-required: true
+- Container
+range: Session
+multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details>

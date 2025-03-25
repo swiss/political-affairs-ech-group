@@ -1,10 +1,10 @@
 
 
-# Slot: uid
+# Slot: vote
 
 
 
-URI: [chpaf:uid](https://ch.paf.link/uid)
+URI: [chpaf:vote](https://ch.paf.link/vote)
 
 
 
@@ -18,8 +18,6 @@ URI: [chpaf:uid](https://ch.paf.link/uid)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Vote](Vote.md) |  |  no  |
-| [Session](Session.md) |  |  no  |
 | [AgendaItem](AgendaItem.md) |  |  no  |
 
 
@@ -30,9 +28,9 @@ URI: [chpaf:uid](https://ch.paf.link/uid)
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Vote](Vote.md)
 
-* Required: True
+* Multivalued: True
 
 
 
@@ -58,8 +56,8 @@ URI: [chpaf:uid](https://ch.paf.link/uid)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | chpaf:uid |
-| native | chpaf:uid |
+| self | chpaf:vote |
+| native | chpaf:vote |
 
 
 
@@ -68,17 +66,17 @@ URI: [chpaf:uid](https://ch.paf.link/uid)
 
 <details>
 ```yaml
-name: uid
+name: vote
 from_schema: https://ch.paf.link/schema/session
 rank: 1000
-identifier: true
-alias: uid
+slot_uri: chpaf:vote
+alias: vote
 domain_of:
-- Session
 - AgendaItem
-- Vote
-range: string
-required: true
+range: Vote
+multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details>

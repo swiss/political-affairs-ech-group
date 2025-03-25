@@ -1,36 +1,60 @@
 
 
-# Slot: session
+# Class: Session
 
 
 
-URI: [chpaf:session](https://ch.paf.link/session)
+URI: [chpaf:Session](https://ch.paf.link/Session)
+
+
+
+
+
+
+```mermaid
+ classDiagram
+    class Session
+    click Session href "../Session"
+      Session : agendaItem
+        
+          
+    
+    
+    Session --> "*" AgendaItem : agendaItem
+    click AgendaItem href "../AgendaItem"
+
+        
+      Session : name
+        
+      Session : uid
+        
+      
+```
+
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+## Slots
 
-
-
-## Applicable Classes
-
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Container](Container.md) |  |  no  |
-
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [uid](uid.md) | 1 <br/> [String](String.md) |  | direct |
+| [name](name.md) | 1 <br/> [String](String.md) |  | direct |
+| [agendaItem](agendaItem.md) | * <br/> [AgendaItem](AgendaItem.md) |  | direct |
 
 
 
 
 
+## Usages
 
-## Properties
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Container](Container.md) | [session](session.md) | range | [Session](Session.md) |
 
-* Range: [Session](Session.md)
-
-* Multivalued: True
 
 
 
@@ -56,27 +80,79 @@ URI: [chpaf:session](https://ch.paf.link/session)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | chpaf:session |
-| native | chpaf:session |
+| self | chpaf:Session |
+| native | chpaf:Session |
+
+
+
 
 
 
 
 ## LinkML Source
 
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
 <details>
 ```yaml
-name: session
+name: Session
 from_schema: https://ch.paf.link/schema/session
-rank: 1000
-alias: session
-owner: Container
-domain_of:
-- Container
-range: Session
-multivalued: true
-inlined: true
-inlined_as_list: true
+slots:
+- uid
+- name
+- agendaItem
+class_uri: chpaf:Session
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: Session
+from_schema: https://ch.paf.link/schema/session
+attributes:
+  uid:
+    name: uid
+    from_schema: https://ch.paf.link/schema/session
+    rank: 1000
+    identifier: true
+    alias: uid
+    owner: Session
+    domain_of:
+    - Session
+    - AgendaItem
+    - Vote
+    range: string
+    required: true
+  name:
+    name: name
+    from_schema: https://ch.paf.link/schema/session
+    rank: 1000
+    slot_uri: dcterm:title
+    alias: name
+    owner: Session
+    domain_of:
+    - Session
+    - AgendaItem
+    range: string
+    required: true
+  agendaItem:
+    name: agendaItem
+    from_schema: https://ch.paf.link/schema/session
+    rank: 1000
+    slot_uri: chpaf:agendaItem
+    alias: agendaItem
+    owner: Session
+    domain_of:
+    - Session
+    range: AgendaItem
+    multivalued: true
+    inlined_as_list: true
+class_uri: chpaf:Session
 
 ```
 </details>
