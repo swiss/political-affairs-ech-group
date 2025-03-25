@@ -4,35 +4,35 @@
 
 parl:s2025-1 a chpaf:Session ;
     dcterm:title "Frühlingssession 2025" ;
-    chpaf:traktandum parl:s2025-1_t1 .
+    chpaf:agendaItem parl:s2025-1_t1 .
 
-parl:s2025-1_t1 a chpaf:Traktandum ;
+parl:s2025-1_t1 a chpaf:AgendaItem ;
     dcterm:title "Fahnenfarbe" ;
-    chpaf:abstimmung parl:s2025-1_t1_a1,
+    chpaf:vote parl:s2025-1_t1_a1,
         parl:s2025-1_t1_a2 .
 
-parl:s2025-1_t1_a1 a chpaf:Abstimmung ;
-    chpaf:frage "Soll die Farbe geändert werden?" ;
-    chpaf:resultat <https://ch.paf.link/results/ja> .
+parl:s2025-1_t1_a1 a chpaf:Vote ;
+    chpaf:question "Soll die Farbe geändert werden?" ;
+    chpaf:result <https://ch.paf.link/results/yes> .
 
-parl:s2025-1_t1_a2 a chpaf:Abstimmung ;
-    chpaf:frage "Soll die Farbe Auberginen-Oliv werden?" ;
-    chpaf:resultat <https://ch.paf.link/results/nein> .
+parl:s2025-1_t1_a2 a chpaf:Vote ;
+    chpaf:question "Soll die Farbe Auberginen-Oliv werden?" ;
+    chpaf:result <https://ch.paf.link/results/no> .
 
 parl:s2025-2 a chpaf:Session ;
     dcterm:title "Sommersession 2025" ;
-    chpaf:traktandum parl:s2025-2_t1 .
+    chpaf:agendaItem parl:s2025-2_t1 .
 
-parl:s2025-2_t1 a chpaf:Traktandum ;
+parl:s2025-2_t1 a chpaf:AgendaItem ;
     dcterm:title "Landeshymne" ;
-    chpaf:abstimmung parl:s2025-2_t1_a1 .
+    chpaf:vote parl:s2025-2_t1_a1 .
 
-parl:s2025-2_t1_a1 a chpaf:Abstimmung ;
-    chpaf:frage "Soll die Hymne geändert werden?" ;
-    chpaf:resultat <https://ch.paf.link/results/nein> .
+parl:s2025-2_t1_a1 a chpaf:Vote ;
+    chpaf:question "Soll die Hymne geändert werden?" ;
+    chpaf:result <https://ch.paf.link/results/no> .
 
 [] a chpaf:Container ;
-    chpaf:sessionen parl:s2025-1,
+    chpaf:session parl:s2025-1,
         parl:s2025-2 .
 
 

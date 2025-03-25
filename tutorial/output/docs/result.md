@@ -1,10 +1,10 @@
 
 
-# Slot: sessionen
+# Slot: result
 
 
 
-URI: [chpaf:sessionen](https://ch.paf.link/sessionen)
+URI: [chpaf:result](https://ch.paf.link/result)
 
 
 
@@ -18,7 +18,7 @@ URI: [chpaf:sessionen](https://ch.paf.link/sessionen)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Container](Container.md) |  |  no  |
+| [Vote](Vote.md) |  |  no  |
 
 
 
@@ -28,9 +28,9 @@ URI: [chpaf:sessionen](https://ch.paf.link/sessionen)
 
 ## Properties
 
-* Range: [Session](Session.md)
+* Range: [ResultEnum](ResultEnum.md)
 
-* Multivalued: True
+* Required: True
 
 
 
@@ -56,8 +56,8 @@ URI: [chpaf:sessionen](https://ch.paf.link/sessionen)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | chpaf:sessionen |
-| native | chpaf:sessionen |
+| self | chpaf:result |
+| native | chpaf:result |
 
 
 
@@ -66,17 +66,15 @@ URI: [chpaf:sessionen](https://ch.paf.link/sessionen)
 
 <details>
 ```yaml
-name: sessionen
+name: result
 from_schema: https://ch.paf.link/schema/session
 rank: 1000
-alias: sessionen
-owner: Container
+slot_uri: chpaf:result
+alias: result
 domain_of:
-- Container
-range: Session
-multivalued: true
-inlined: true
-inlined_as_list: true
+- Vote
+range: result_enum
+required: true
 
 ```
 </details>

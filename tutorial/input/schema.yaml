@@ -20,67 +20,68 @@ classes:
     slots:
       - uid
       - name
-      - traktanden
+      - agendaItem
 
-  Traktandum:
-    class_uri: chpaf:Traktandum
+  AgendaItem:
+    class_uri: chpaf:AgendaItem
     slots:
       - uid
       - name
-      - abstimmungen
+      - vote
 
-  Abstimmung:
-    class_uri: chpaf:Abstimmung
+  Vote:
+    class_uri: chpaf:Vote
     slots:
       - uid
-      - frage
-      - resultat
+      - question
+      - result
 
   Container:
     tree_root: true
     attributes:
-      sessionen:
+      session:
         multivalued: true
         inlined_as_list: true
         range: Session
-
 
 slots:
   
   uid:
     identifier: true
+    required: true
 
   name:
     slot_uri: dcterm:title
     range: string
     required: true
   
-  traktanden:
-    slot_uri: chpaf:traktandum
-    range: Traktandum
+  agendaItem:
+    slot_uri: chpaf:agendaItem
+    range: AgendaItem
     multivalued: true
     inlined_as_list: true
   
-  abstimmungen:
-    slot_uri: chpaf:abstimmung
-    range: Abstimmung
+  vote:
+    slot_uri: chpaf:vote
+    range: Vote
     multivalued: true
     inlined_as_list: true
 
-  frage:
-    slot_uri: chpaf:frage
+  question:
+    slot_uri: chpaf:question
     range: string
     required: true
   
-  resultat:
-    slot_uri: chpaf:resultat
-    range: cv_resultat
+  result:
+    slot_uri: chpaf:result
+    range: result_enum
     required: true
 
 enums:
-  cv_resultat:
+
+  result_enum:
     permissible_values:
-      Ja:
-        meaning: chpaf:results/ja
-      Nein:
-        meaning: chpaf:results/nein
+      "yes":
+        meaning: chpaf:results/yes
+      "no":
+        meaning: chpaf:results/no

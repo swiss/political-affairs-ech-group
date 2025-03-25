@@ -18,7 +18,7 @@ URI: [dcterm:title](http://purl.org/dc/terms/title)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Traktandum](Traktandum.md) |  |  no  |
+| [AgendaItem](AgendaItem.md) |  |  no  |
 | [Session](Session.md) |  |  no  |
 
 
@@ -74,7 +74,7 @@ slot_uri: dcterm:title
 alias: name
 domain_of:
 - Session
-- Traktandum
+- AgendaItem
 range: string
 required: true
 

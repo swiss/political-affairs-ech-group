@@ -1,32 +1,37 @@
 {
     "$defs": {
-        "Abstimmung": {
+        "AgendaItem": {
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "frage": {
+                "name": {
                     "type": "string"
-                },
-                "resultat": {
-                    "$ref": "#/$defs/CvResultat"
                 },
                 "uid": {
                     "type": "string"
+                },
+                "vote": {
+                    "items": {
+                        "$ref": "#/$defs/Vote"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 }
             },
             "required": [
                 "uid",
-                "frage",
-                "resultat"
+                "name"
             ],
-            "title": "Abstimmung",
+            "title": "AgendaItem",
             "type": "object"
         },
         "Container": {
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "sessionen": {
+                "session": {
                     "items": {
                         "$ref": "#/$defs/Session"
                     },
@@ -39,36 +44,33 @@
             "title": "Container",
             "type": "object"
         },
-        "CvResultat": {
+        "ResultEnum": {
             "description": "",
             "enum": [
-                "Ja",
-                "Nein"
+                "yes",
+                "no"
             ],
-            "title": "CvResultat",
+            "title": "ResultEnum",
             "type": "string"
         },
         "Session": {
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "traktanden": {
+                "agendaItem": {
                     "items": {
-                        "$ref": "#/$defs/Traktandum"
+                        "$ref": "#/$defs/AgendaItem"
                     },
                     "type": [
                         "array",
                         "null"
                     ]
                 },
+                "name": {
+                    "type": "string"
+                },
                 "uid": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 }
             },
             "required": [
@@ -78,21 +80,15 @@
             "title": "Session",
             "type": "object"
         },
-        "Traktandum": {
+        "Vote": {
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "abstimmungen": {
-                    "items": {
-                        "$ref": "#/$defs/Abstimmung"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "name": {
+                "question": {
                     "type": "string"
+                },
+                "result": {
+                    "$ref": "#/$defs/ResultEnum"
                 },
                 "uid": {
                     "type": "string"
@@ -100,9 +96,10 @@
             },
             "required": [
                 "uid",
-                "name"
+                "question",
+                "result"
             ],
-            "title": "Traktandum",
+            "title": "Vote",
             "type": "object"
         }
     },
@@ -112,7 +109,7 @@
     "description": "",
     "metamodel_version": "1.7.0",
     "properties": {
-        "sessionen": {
+        "session": {
             "items": {
                 "$ref": "#/$defs/Session"
             },

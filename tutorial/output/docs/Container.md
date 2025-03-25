@@ -15,12 +15,12 @@ URI: [chpaf:Container](https://ch.paf.link/Container)
  classDiagram
     class Container
     click Container href "../Container"
-      Container : sessionen
+      Container : session
         
           
     
     
-    Container --> "*" Session : sessionen
+    Container --> "*" Session : session
     click Session href "../Session"
 
         
@@ -37,7 +37,7 @@ URI: [chpaf:Container](https://ch.paf.link/Container)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [sessionen](sessionen.md) | * <br/> [Session](Session.md) |  | direct |
+| [session](session.md) | * <br/> [Session](Session.md) |  | direct |
 
 
 
@@ -87,8 +87,8 @@ URI: [chpaf:Container](https://ch.paf.link/Container)
 name: Container
 from_schema: https://ch.paf.link/schema/session
 attributes:
-  sessionen:
-    name: sessionen
+  session:
+    name: session
     from_schema: https://ch.paf.link/schema/session
     rank: 1000
     domain_of:
@@ -109,11 +109,11 @@ tree_root: true
 name: Container
 from_schema: https://ch.paf.link/schema/session
 attributes:
-  sessionen:
-    name: sessionen
+  session:
+    name: session
     from_schema: https://ch.paf.link/schema/session
     rank: 1000
-    alias: sessionen
+    alias: session
     owner: Container
     domain_of:
     - Container

@@ -1,15 +1,15 @@
-# Enum: CvResultat
+# Enum: ResultEnum
 
 
 
-URI: [CvResultat](CvResultat.md)
+URI: [ResultEnum](ResultEnum.md)
 
 ## Permissible Values
 
 | Value | Meaning | Description |
 | --- | --- | --- |
-| Ja | chpaf:results/ja |  |
-| Nein | chpaf:results/nein |  |
+| yes | chpaf:results/yes |  |
+| no | chpaf:results/no |  |
 
 
 
@@ -18,7 +18,7 @@ URI: [CvResultat](CvResultat.md)
 
 | Name | Description |
 | ---  | --- |
-| [resultat](resultat.md) |  |
+| [result](result.md) |  |
 
 
 
@@ -47,16 +47,16 @@ URI: [CvResultat](CvResultat.md)
 
 <details>
 ```yaml
-name: cv_resultat
+name: result_enum
 from_schema: https://ch.paf.link/schema/session
 rank: 1000
 permissible_values:
-  Ja:
-    text: Ja
-    meaning: chpaf:results/ja
-  Nein:
-    text: Nein
-    meaning: chpaf:results/nein
+  'yes':
+    text: 'yes'
+    meaning: chpaf:results/yes
+  'no':
+    text: 'no'
+    meaning: chpaf:results/no
 
 ```
 </details>

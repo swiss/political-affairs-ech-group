@@ -18,9 +18,9 @@ URI: [chpaf:uid](https://ch.paf.link/uid)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Traktandum](Traktandum.md) |  |  no  |
+| [AgendaItem](AgendaItem.md) |  |  no  |
 | [Session](Session.md) |  |  no  |
-| [Abstimmung](Abstimmung.md) |  |  no  |
+| [Vote](Vote.md) |  |  no  |
 
 
 
@@ -75,8 +75,8 @@ identifier: true
 alias: uid
 domain_of:
 - Session
-- Traktandum
-- Abstimmung
+- AgendaItem
+- Vote
 range: string
 required: true
 

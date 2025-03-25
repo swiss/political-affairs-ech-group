@@ -12,10 +12,10 @@ Name: ch-paf-link-session
 
 | Class | Description |
 | --- | --- |
-| [Abstimmung](Abstimmung.md) | None |
+| [AgendaItem](AgendaItem.md) | None |
 | [Container](Container.md) | None |
 | [Session](Session.md) | None |
-| [Traktandum](Traktandum.md) | None |
+| [Vote](Vote.md) | None |
 
 
 
@@ -23,20 +23,20 @@ Name: ch-paf-link-session
 
 | Slot | Description |
 | --- | --- |
-| [abstimmungen](abstimmungen.md) |  |
-| [frage](frage.md) |  |
+| [agendaItem](agendaItem.md) |  |
 | [name](name.md) |  |
-| [resultat](resultat.md) |  |
-| [sessionen](sessionen.md) |  |
-| [traktanden](traktanden.md) |  |
+| [question](question.md) |  |
+| [result](result.md) |  |
+| [session](session.md) |  |
 | [uid](uid.md) |  |
+| [vote](vote.md) |  |
 
 
 ## Enumerations
 
 | Enumeration | Description |
 | --- | --- |
-| [CvResultat](CvResultat.md) |  |
+| [ResultEnum](ResultEnum.md) |  |
 
 
 ## Types

@@ -1,10 +1,10 @@
 
 
-# Slot: traktanden
+# Slot: question
 
 
 
-URI: [chpaf:traktandum](https://ch.paf.link/traktandum)
+URI: [chpaf:question](https://ch.paf.link/question)
 
 
 
@@ -18,7 +18,7 @@ URI: [chpaf:traktandum](https://ch.paf.link/traktandum)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Session](Session.md) |  |  no  |
+| [Vote](Vote.md) |  |  no  |
 
 
 
@@ -28,9 +28,9 @@ URI: [chpaf:traktandum](https://ch.paf.link/traktandum)
 
 ## Properties
 
-* Range: [Traktandum](Traktandum.md)
+* Range: [String](String.md)
 
-* Multivalued: True
+* Required: True
 
 
 
@@ -56,8 +56,8 @@ URI: [chpaf:traktandum](https://ch.paf.link/traktandum)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | chpaf:traktandum |
-| native | chpaf:traktanden |
+| self | chpaf:question |
+| native | chpaf:question |
 
 
 
@@ -66,17 +66,15 @@ URI: [chpaf:traktandum](https://ch.paf.link/traktandum)
 
 <details>
 ```yaml
-name: traktanden
+name: question
 from_schema: https://ch.paf.link/schema/session
 rank: 1000
-slot_uri: chpaf:traktandum
-alias: traktanden
+slot_uri: chpaf:question
+alias: question
 domain_of:
-- Session
-range: Traktandum
-multivalued: true
-inlined: true
-inlined_as_list: true
+- Vote
+range: string
+required: true
 
 ```
 </details>

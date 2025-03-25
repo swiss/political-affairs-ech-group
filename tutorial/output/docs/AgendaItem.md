@@ -1,10 +1,10 @@
 
 
-# Slot: abstimmungen
+# Slot: agendaItem
 
 
 
-URI: [chpaf:abstimmung](https://ch.paf.link/abstimmung)
+URI: [chpaf:agendaItem](https://ch.paf.link/agendaItem)
 
 
 
@@ -18,7 +18,7 @@ URI: [chpaf:abstimmung](https://ch.paf.link/abstimmung)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Traktandum](Traktandum.md) |  |  no  |
+| [Session](Session.md) |  |  no  |
 
 
 
@@ -28,7 +28,7 @@ URI: [chpaf:abstimmung](https://ch.paf.link/abstimmung)
 
 ## Properties
 
-* Range: [Abstimmung](Abstimmung.md)
+* Range: [AgendaItem](AgendaItem.md)
 
 * Multivalued: True
 
@@ -56,8 +56,8 @@ URI: [chpaf:abstimmung](https://ch.paf.link/abstimmung)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | chpaf:abstimmung |
-| native | chpaf:abstimmungen |
+| self | chpaf:agendaItem |
+| native | chpaf:agendaItem |
 
 
 
@@ -66,14 +66,14 @@ URI: [chpaf:abstimmung](https://ch.paf.link/abstimmung)
 
 <details>
 ```yaml
-name: abstimmungen
+name: agendaItem
 from_schema: https://ch.paf.link/schema/session
 rank: 1000
-slot_uri: chpaf:abstimmung
-alias: abstimmungen
+slot_uri: chpaf:agendaItem
+alias: agendaItem
 domain_of:
-- Traktandum
-range: Abstimmung
+- Session
+range: AgendaItem
 multivalued: true
 inlined: true
 inlined_as_list: true

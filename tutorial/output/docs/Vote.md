@@ -1,10 +1,10 @@
 
 
-# Slot: frage
+# Slot: vote
 
 
 
-URI: [chpaf:frage](https://ch.paf.link/frage)
+URI: [chpaf:vote](https://ch.paf.link/vote)
 
 
 
@@ -18,7 +18,7 @@ URI: [chpaf:frage](https://ch.paf.link/frage)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Abstimmung](Abstimmung.md) |  |  no  |
+| [AgendaItem](AgendaItem.md) |  |  no  |
 
 
 
@@ -28,9 +28,9 @@ URI: [chpaf:frage](https://ch.paf.link/frage)
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Vote](Vote.md)
 
-* Required: True
+* Multivalued: True
 
 
 
@@ -56,8 +56,8 @@ URI: [chpaf:frage](https://ch.paf.link/frage)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | chpaf:frage |
-| native | chpaf:frage |
+| self | chpaf:vote |
+| native | chpaf:vote |
 
 
 
@@ -66,15 +66,17 @@ URI: [chpaf:frage](https://ch.paf.link/frage)
 
 <details>
 ```yaml
-name: frage
+name: vote
 from_schema: https://ch.paf.link/schema/session
 rank: 1000
-slot_uri: chpaf:frage
-alias: frage
+slot_uri: chpaf:vote
+alias: vote
 domain_of:
-- Abstimmung
-range: string
-required: true
+- AgendaItem
+range: Vote
+multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details>
