@@ -15,16 +15,16 @@ URI: [chpaf:AgendaItem](https://ch.paf.link/AgendaItem)
  classDiagram
     class AgendaItem
     click AgendaItem href "../AgendaItem"
-      AgendaItem : id
-        
       AgendaItem : name
         
-      AgendaItem : votes
+      AgendaItem : uid
+        
+      AgendaItem : vote
         
           
     
     
-    AgendaItem --> "*" Vote : votes
+    AgendaItem --> "*" Vote : vote
     click Vote href "../Vote"
 
         
@@ -41,9 +41,9 @@ URI: [chpaf:AgendaItem](https://ch.paf.link/AgendaItem)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 1 <br/> [String](String.md) |  | direct |
+| [uid](uid.md) | 1 <br/> [String](String.md) |  | direct |
 | [name](name.md) | 1 <br/> [String](String.md) |  | direct |
-| [votes](votes.md) | * <br/> [Vote](Vote.md) |  | direct |
+| [vote](vote.md) | * <br/> [Vote](Vote.md) |  | direct |
 
 
 
@@ -53,7 +53,7 @@ URI: [chpaf:AgendaItem](https://ch.paf.link/AgendaItem)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Session](Session.md) | [agendaItems](agendaItems.md) | range | [AgendaItem](AgendaItem.md) |
+| [Session](Session.md) | [agendaItem](agendaItem.md) | range | [AgendaItem](AgendaItem.md) |
 
 
 
@@ -100,9 +100,10 @@ URI: [chpaf:AgendaItem](https://ch.paf.link/AgendaItem)
 name: AgendaItem
 from_schema: https://ch.paf.link/schema/session
 slots:
-- id
+- uid
 - name
-- votes
+- vote
+class_uri: chpaf:AgendaItem
 
 ```
 </details>
@@ -114,18 +115,17 @@ slots:
 name: AgendaItem
 from_schema: https://ch.paf.link/schema/session
 attributes:
-  id:
-    name: id
+  uid:
+    name: uid
     from_schema: https://ch.paf.link/schema/session
     rank: 1000
     identifier: true
-    alias: id
+    alias: uid
     owner: AgendaItem
     domain_of:
     - Session
     - AgendaItem
     - Vote
-    - Container
     range: string
     required: true
   name:
@@ -140,12 +140,12 @@ attributes:
     - AgendaItem
     range: string
     required: true
-  votes:
-    name: votes
+  vote:
+    name: vote
     from_schema: https://ch.paf.link/schema/session
     rank: 1000
     slot_uri: chpaf:vote
-    alias: votes
+    alias: vote
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -153,6 +153,7 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
+class_uri: chpaf:AgendaItem
 
 ```
 </details>

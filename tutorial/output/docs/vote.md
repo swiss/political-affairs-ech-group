@@ -15,8 +15,6 @@ URI: [chpaf:Vote](https://ch.paf.link/Vote)
  classDiagram
     class Vote
     click Vote href "../Vote"
-      Vote : id
-        
       Vote : question
         
       Vote : result
@@ -27,6 +25,8 @@ URI: [chpaf:Vote](https://ch.paf.link/Vote)
     Vote --> "1" ResultEnum : result
     click ResultEnum href "../ResultEnum"
 
+        
+      Vote : uid
         
       
 ```
@@ -41,7 +41,7 @@ URI: [chpaf:Vote](https://ch.paf.link/Vote)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 1 <br/> [String](String.md) |  | direct |
+| [uid](uid.md) | 1 <br/> [String](String.md) |  | direct |
 | [question](question.md) | 1 <br/> [String](String.md) |  | direct |
 | [result](result.md) | 1 <br/> [ResultEnum](ResultEnum.md) |  | direct |
 
@@ -53,7 +53,7 @@ URI: [chpaf:Vote](https://ch.paf.link/Vote)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [AgendaItem](AgendaItem.md) | [votes](votes.md) | range | [Vote](Vote.md) |
+| [AgendaItem](AgendaItem.md) | [vote](vote.md) | range | [Vote](Vote.md) |
 
 
 
@@ -100,9 +100,10 @@ URI: [chpaf:Vote](https://ch.paf.link/Vote)
 name: Vote
 from_schema: https://ch.paf.link/schema/session
 slots:
-- id
+- uid
 - question
 - result
+class_uri: chpaf:Vote
 
 ```
 </details>
@@ -114,24 +115,24 @@ slots:
 name: Vote
 from_schema: https://ch.paf.link/schema/session
 attributes:
-  id:
-    name: id
+  uid:
+    name: uid
     from_schema: https://ch.paf.link/schema/session
     rank: 1000
     identifier: true
-    alias: id
+    alias: uid
     owner: Vote
     domain_of:
     - Session
     - AgendaItem
     - Vote
-    - Container
     range: string
     required: true
   question:
     name: question
     from_schema: https://ch.paf.link/schema/session
     rank: 1000
+    slot_uri: chpaf:question
     alias: question
     owner: Vote
     domain_of:
@@ -142,12 +143,14 @@ attributes:
     name: result
     from_schema: https://ch.paf.link/schema/session
     rank: 1000
+    slot_uri: chpaf:result
     alias: result
     owner: Vote
     domain_of:
     - Vote
     range: result_enum
     required: true
+class_uri: chpaf:Vote
 
 ```
 </details>
