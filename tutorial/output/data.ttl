@@ -2,6 +2,10 @@
 @prefix dcterm: <http://purl.org/dc/terms/> .
 @prefix parl: <https://politics.ld.admin.ch/parliamentary-affair/> .
 
+parl:s2025 a chpaf:Container ;
+    chpaf:session parl:s2025-1,
+        parl:s2025-2 .
+
 parl:s2025-1 a chpaf:Session ;
     dcterm:title "Frühlingssession 2025" ;
     chpaf:agendaItem parl:s2025-1_t1 .
@@ -30,9 +34,5 @@ parl:s2025-2_t1 a chpaf:AgendaItem ;
 parl:s2025-2_t1_a1 a chpaf:Vote ;
     chpaf:question "Soll die Hymne geändert werden?" ;
     chpaf:result <https://ch.paf.link/results/no> .
-
-[] a chpaf:Container ;
-    chpaf:session parl:s2025-1,
-        parl:s2025-2 .
 
 

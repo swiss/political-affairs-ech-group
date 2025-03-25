@@ -16,37 +16,32 @@ default_range: string
 classes:
   
   Session:
-    class_uri: chpaf:Session
     slots:
-      - uid
+      - id
       - name
-      - agendaItem
+      - agendaItems
 
   AgendaItem:
-    class_uri: chpaf:AgendaItem
     slots:
-      - uid
+      - id
       - name
-      - vote
+      - votes
 
   Vote:
-    class_uri: chpaf:Vote
     slots:
-      - uid
+      - id
       - question
       - result
 
   Container:
     tree_root: true
-    attributes:
-      session:
-        multivalued: true
-        inlined_as_list: true
-        range: Session
+    slots:
+      - id
+      - sessions
 
 slots:
   
-  uid:
+  id:
     identifier: true
     required: true
 
@@ -54,26 +49,30 @@ slots:
     slot_uri: dcterm:title
     range: string
     required: true
+
+  sessions:
+    slot_uri: chpaf:session
+    range: Session
+    multivalued: true
+    inlined_as_list: true
   
-  agendaItem:
+  agendaItems:
     slot_uri: chpaf:agendaItem
     range: AgendaItem
     multivalued: true
     inlined_as_list: true
   
-  vote:
+  votes:
     slot_uri: chpaf:vote
     range: Vote
     multivalued: true
     inlined_as_list: true
 
   question:
-    slot_uri: chpaf:question
     range: string
     required: true
   
   result:
-    slot_uri: chpaf:result
     range: result_enum
     required: true
 

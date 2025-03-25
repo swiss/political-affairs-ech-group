@@ -1,22 +1,23 @@
-session:
-  - uid: parl:s2025-1
+id: parl:s2025
+sessions:
+  - id: parl:s2025-1
     name: Frühlingssession 2025
-    agendaItem:
-      - uid: parl:s2025-1_t1
+    agendaItems:
+      - id: parl:s2025-1_t1
         name: Fahnenfarbe
-        vote:
-          - uid: parl:s2025-1_t1_a1
+        votes:
+          - id: parl:s2025-1_t1_a1
             question: Soll die Farbe geändert werden?
             result: "yes"
-          - uid: parl:s2025-1_t1_a2
+          - id: parl:s2025-1_t1_a2
             question: Soll die Farbe Auberginen-Oliv werden?
             result: "no"
-  - uid: parl:s2025-2
+  - id: parl:s2025-2
     name: Sommersession 2025
-    agendaItem:
-      - uid: parl:s2025-2_t1
+    agendaItems:
+      - id: parl:s2025-2_t1
         name: Landeshymne
-        vote:
-          - uid: parl:s2025-2_t1_a1
+        votes:
+          - id: parl:s2025-2_t1_a1
             question: Soll die Hymne geändert werden?
             result: "no"

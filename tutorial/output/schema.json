@@ -4,13 +4,13 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
+                "id": {
+                    "type": "string"
+                },
                 "name": {
                     "type": "string"
                 },
-                "uid": {
-                    "type": "string"
-                },
-                "vote": {
+                "votes": {
                     "items": {
                         "$ref": "#/$defs/Vote"
                     },
@@ -21,7 +21,7 @@
                 }
             },
             "required": [
-                "uid",
+                "id",
                 "name"
             ],
             "title": "AgendaItem",
@@ -31,7 +31,10 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "session": {
+                "id": {
+                    "type": "string"
+                },
+                "sessions": {
                     "items": {
                         "$ref": "#/$defs/Session"
                     },
@@ -41,6 +44,9 @@
                     ]
                 }
             },
+            "required": [
+                "id"
+            ],
             "title": "Container",
             "type": "object"
         },
@@ -57,7 +63,7 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agendaItem": {
+                "agendaItems": {
                     "items": {
                         "$ref": "#/$defs/AgendaItem"
                     },
@@ -66,15 +72,15 @@
                         "null"
                     ]
                 },
-                "name": {
+                "id": {
                     "type": "string"
                 },
-                "uid": {
+                "name": {
                     "type": "string"
                 }
             },
             "required": [
-                "uid",
+                "id",
                 "name"
             ],
             "title": "Session",
@@ -84,18 +90,18 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
+                "id": {
+                    "type": "string"
+                },
                 "question": {
                     "type": "string"
                 },
                 "result": {
                     "$ref": "#/$defs/ResultEnum"
-                },
-                "uid": {
-                    "type": "string"
                 }
             },
             "required": [
-                "uid",
+                "id",
                 "question",
                 "result"
             ],
@@ -109,7 +115,10 @@
     "description": "",
     "metamodel_version": "1.7.0",
     "properties": {
-        "session": {
+        "id": {
+            "type": "string"
+        },
+        "sessions": {
             "items": {
                 "$ref": "#/$defs/Session"
             },
@@ -119,6 +128,9 @@
             ]
         }
     },
+    "required": [
+        "id"
+    ],
     "title": "ch-paf-link-session",
     "type": "object",
     "version": null

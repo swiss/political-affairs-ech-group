@@ -15,12 +15,14 @@ URI: [chpaf:Container](https://ch.paf.link/Container)
  classDiagram
     class Container
     click Container href "../Container"
-      Container : session
+      Container : id
+        
+      Container : sessions
         
           
     
     
-    Container --> "*" Session : session
+    Container --> "*" Session : sessions
     click Session href "../Session"
 
         
@@ -37,7 +39,8 @@ URI: [chpaf:Container](https://ch.paf.link/Container)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [session](session.md) | * <br/> [Session](Session.md) |  | direct |
+| [id](id.md) | 1 <br/> [String](String.md) |  | direct |
+| [sessions](sessions.md) | * <br/> [Session](Session.md) |  | direct |
 
 
 
@@ -86,17 +89,9 @@ URI: [chpaf:Container](https://ch.paf.link/Container)
 ```yaml
 name: Container
 from_schema: https://ch.paf.link/schema/session
-attributes:
-  session:
-    name: session
-    from_schema: https://ch.paf.link/schema/session
-    rank: 1000
-    domain_of:
-    - Container
-    range: Session
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
+slots:
+- id
+- sessions
 tree_root: true
 
 ```
@@ -109,11 +104,26 @@ tree_root: true
 name: Container
 from_schema: https://ch.paf.link/schema/session
 attributes:
-  session:
-    name: session
+  id:
+    name: id
     from_schema: https://ch.paf.link/schema/session
     rank: 1000
-    alias: session
+    identifier: true
+    alias: id
+    owner: Container
+    domain_of:
+    - Session
+    - AgendaItem
+    - Vote
+    - Container
+    range: string
+    required: true
+  sessions:
+    name: sessions
+    from_schema: https://ch.paf.link/schema/session
+    rank: 1000
+    slot_uri: chpaf:session
+    alias: sessions
     owner: Container
     domain_of:
     - Container

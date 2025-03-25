@@ -23,13 +23,13 @@ Name: ch-paf-link-session
 
 | Slot | Description |
 | --- | --- |
-| [agendaItem](agendaItem.md) |  |
+| [agendaItems](agendaItems.md) |  |
+| [id](id.md) |  |
 | [name](name.md) |  |
 | [question](question.md) |  |
 | [result](result.md) |  |
-| [session](session.md) |  |
-| [uid](uid.md) |  |
-| [vote](vote.md) |  |
+| [sessions](sessions.md) |  |
+| [votes](votes.md) |  |
 
 
 ## Enumerations

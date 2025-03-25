@@ -69,7 +69,6 @@ URI: [chpaf:result](https://ch.paf.link/result)
 name: result
 from_schema: https://ch.paf.link/schema/session
 rank: 1000
-slot_uri: chpaf:result
 alias: result
 domain_of:
 - Vote

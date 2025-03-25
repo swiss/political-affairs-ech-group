@@ -1,10 +1,10 @@
 
 
-# Slot: uid
+# Slot: id
 
 
 
-URI: [chpaf:uid](https://ch.paf.link/uid)
+URI: [chpaf:id](https://ch.paf.link/id)
 
 
 
@@ -18,6 +18,7 @@ URI: [chpaf:uid](https://ch.paf.link/uid)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Container](Container.md) |  |  no  |
 | [Vote](Vote.md) |  |  no  |
 | [Session](Session.md) |  |  no  |
 | [AgendaItem](AgendaItem.md) |  |  no  |
@@ -58,8 +59,8 @@ URI: [chpaf:uid](https://ch.paf.link/uid)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | chpaf:uid |
-| native | chpaf:uid |
+| self | chpaf:id |
+| native | chpaf:id |
 
 
 
@@ -68,15 +69,16 @@ URI: [chpaf:uid](https://ch.paf.link/uid)
 
 <details>
 ```yaml
-name: uid
+name: id
 from_schema: https://ch.paf.link/schema/session
 rank: 1000
 identifier: true
-alias: uid
+alias: id
 domain_of:
 - Session
 - AgendaItem
 - Vote
+- Container
 range: string
 required: true
 

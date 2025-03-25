@@ -1,10 +1,10 @@
 
 
-# Slot: question
+# Slot: sessions
 
 
 
-URI: [chpaf:question](https://ch.paf.link/question)
+URI: [chpaf:session](https://ch.paf.link/session)
 
 
 
@@ -18,7 +18,7 @@ URI: [chpaf:question](https://ch.paf.link/question)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Vote](Vote.md) |  |  no  |
+| [Container](Container.md) |  |  no  |
 
 
 
@@ -28,9 +28,9 @@ URI: [chpaf:question](https://ch.paf.link/question)
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Session](Session.md)
 
-* Required: True
+* Multivalued: True
 
 
 
@@ -56,8 +56,8 @@ URI: [chpaf:question](https://ch.paf.link/question)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | chpaf:question |
-| native | chpaf:question |
+| self | chpaf:session |
+| native | chpaf:sessions |
 
 
 
@@ -66,14 +66,17 @@ URI: [chpaf:question](https://ch.paf.link/question)
 
 <details>
 ```yaml
-name: question
+name: sessions
 from_schema: https://ch.paf.link/schema/session
 rank: 1000
-alias: question
+slot_uri: chpaf:session
+alias: sessions
 domain_of:
-- Vote
-range: string
-required: true
+- Container
+range: Session
+multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details>
