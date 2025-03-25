@@ -33,7 +33,7 @@ URI: [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean)
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/examples/personinfo
+* from schema: https://ch.paf.link/schema/session
 
 
 
@@ -43,7 +43,7 @@ URI: [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:boolean |
-| native | personinfo:boolean |
+| native | chpaf:boolean |
 | exact | schema:Boolean |
 
 

@@ -1,10 +1,10 @@
 
 
-# Slot: phone
+# Slot: frage
 
 
 
-URI: [personinfo:phone](https://w3id.org/linkml/examples/personinfo/phone)
+URI: [chpaf:frage](https://ch.paf.link/frage)
 
 
 
@@ -18,7 +18,7 @@ URI: [personinfo:phone](https://w3id.org/linkml/examples/personinfo/phone)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) |  |  no  |
+| [Abstimmung](Abstimmung.md) |  |  no  |
 
 
 
@@ -30,7 +30,7 @@ URI: [personinfo:phone](https://w3id.org/linkml/examples/personinfo/phone)
 
 * Range: [String](String.md)
 
-* Regex pattern: `^[\d\(\)\-]+$`
+* Required: True
 
 
 
@@ -47,7 +47,7 @@ URI: [personinfo:phone](https://w3id.org/linkml/examples/personinfo/phone)
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/examples/personinfo
+* from schema: https://ch.paf.link/schema/session
 
 
 
@@ -56,8 +56,8 @@ URI: [personinfo:phone](https://w3id.org/linkml/examples/personinfo/phone)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | personinfo:phone |
-| native | personinfo:phone |
+| self | chpaf:frage |
+| native | chpaf:frage |
 
 
 
@@ -66,15 +66,15 @@ URI: [personinfo:phone](https://w3id.org/linkml/examples/personinfo/phone)
 
 <details>
 ```yaml
-name: phone
-from_schema: https://w3id.org/linkml/examples/personinfo
+name: frage
+from_schema: https://ch.paf.link/schema/session
 rank: 1000
-alias: phone
-owner: Person
+slot_uri: chpaf:frage
+alias: frage
 domain_of:
-- Person
+- Abstimmung
 range: string
-pattern: ^[\d\(\)\-]+$
+required: true
 
 ```
 </details>

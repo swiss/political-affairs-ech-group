@@ -1,18 +1,38 @@
-@prefix ORCID: <https://orcid.org/> .
-@prefix personinfo: <https://w3id.org/linkml/examples/personinfo/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix chpaf: <https://ch.paf.link/> .
+@prefix dcterm: <http://purl.org/dc/terms/> .
+@prefix parl: <https://politics.ld.admin.ch/parliamentary-affair/> .
 
-ORCID:1234 a personinfo:Person ;
-    personinfo:age 33 ;
-    personinfo:full_name "Clark Kent" ;
-    personinfo:phone "555-555-5555" .
+parl:s2025-1 a chpaf:Session ;
+    dcterm:title "Frühlingssession 2025" ;
+    chpaf:traktandum parl:s2025-1_t1 .
 
-ORCID:4567 a personinfo:Person ;
-    personinfo:age 34 ;
-    personinfo:full_name "Lois Lane" .
+parl:s2025-1_t1 a chpaf:Traktandum ;
+    dcterm:title "Fahnenfarbe" ;
+    chpaf:abstimmung parl:s2025-1_t1_a1,
+        parl:s2025-1_t1_a2 .
 
-[] a personinfo:Container ;
-    personinfo:persons ORCID:1234,
-        ORCID:4567 .
+parl:s2025-1_t1_a1 a chpaf:Abstimmung ;
+    chpaf:frage "Soll die Farbe geändert werden?" ;
+    chpaf:resultat <https://ch.paf.link/results/ja> .
+
+parl:s2025-1_t1_a2 a chpaf:Abstimmung ;
+    chpaf:frage "Soll die Farbe Auberginen-Oliv werden?" ;
+    chpaf:resultat <https://ch.paf.link/results/nein> .
+
+parl:s2025-2 a chpaf:Session ;
+    dcterm:title "Sommersession 2025" ;
+    chpaf:traktandum parl:s2025-2_t1 .
+
+parl:s2025-2_t1 a chpaf:Traktandum ;
+    dcterm:title "Landeshymne" ;
+    chpaf:abstimmung parl:s2025-2_t1_a1 .
+
+parl:s2025-2_t1_a1 a chpaf:Abstimmung ;
+    chpaf:frage "Soll die Hymne geändert werden?" ;
+    chpaf:resultat <https://ch.paf.link/results/nein> .
+
+[] a chpaf:Container ;
+    chpaf:sessionen parl:s2025-1,
+        parl:s2025-2 .
 
 

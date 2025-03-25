@@ -33,7 +33,7 @@ URI: [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime)
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/examples/personinfo
+* from schema: https://ch.paf.link/schema/session
 
 
 
@@ -43,7 +43,7 @@ URI: [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:dateTime |
-| native | personinfo:datetime |
+| native | chpaf:datetime |
 | exact | schema:DateTime |
 
 

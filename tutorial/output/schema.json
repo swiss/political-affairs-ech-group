@@ -1,12 +1,34 @@
 {
     "$defs": {
+        "Abstimmung": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "frage": {
+                    "type": "string"
+                },
+                "resultat": {
+                    "$ref": "#/$defs/CvResultat"
+                },
+                "uid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "uid",
+                "frage",
+                "resultat"
+            ],
+            "title": "Abstimmung",
+            "type": "object"
+        },
         "Container": {
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "persons": {
+                "sessionen": {
                     "items": {
-                        "$ref": "#/$defs/Person"
+                        "$ref": "#/$defs/Session"
                     },
                     "type": [
                         "array",
@@ -17,40 +39,32 @@
             "title": "Container",
             "type": "object"
         },
-        "Person": {
+        "CvResultat": {
+            "description": "",
+            "enum": [
+                "Ja",
+                "Nein"
+            ],
+            "title": "CvResultat",
+            "type": "string"
+        },
+        "Session": {
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "age": {
-                    "maximum": 200,
-                    "minimum": 0,
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
+                "name": {
+                    "type": "string"
                 },
-                "aliases": {
-                    "description": "other names for the person",
+                "traktanden": {
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/Traktandum"
                     },
                     "type": [
                         "array",
                         "null"
                     ]
                 },
-                "full_name": {
-                    "description": "name of the person",
-                    "type": "string"
-                },
-                "id": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "phone": {
-                    "pattern": "^[\\d\\(\\)\\-]+$",
+                "uid": {
                     "type": [
                         "string",
                         "null"
@@ -58,18 +72,57 @@
                 }
             },
             "required": [
-                "id",
-                "full_name"
+                "uid",
+                "name"
             ],
-            "title": "Person",
+            "title": "Session",
+            "type": "object"
+        },
+        "Traktandum": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "abstimmungen": {
+                    "items": {
+                        "$ref": "#/$defs/Abstimmung"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "type": "string"
+                },
+                "uid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "uid",
+                "name"
+            ],
+            "title": "Traktandum",
             "type": "object"
         }
     },
-    "$id": "https://w3id.org/linkml/examples/personinfo",
+    "$id": "https://ch.paf.link/schema/session",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
+    "description": "",
     "metamodel_version": "1.7.0",
-    "title": "personinfo",
+    "properties": {
+        "sessionen": {
+            "items": {
+                "$ref": "#/$defs/Session"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        }
+    },
+    "title": "ch-paf-link-session",
     "type": "object",
     "version": null
 }

@@ -1,10 +1,10 @@
-# personinfo
+# ch-paf-link-session
 
 
 
-URI: https://w3id.org/linkml/examples/personinfo
+URI: https://ch.paf.link/schema/session
 
-Name: personinfo
+Name: ch-paf-link-session
 
 
 
@@ -12,8 +12,10 @@ Name: personinfo
 
 | Class | Description |
 | --- | --- |
+| [Abstimmung](Abstimmung.md) | None |
 | [Container](Container.md) | None |
-| [Person](Person.md) | None |
+| [Session](Session.md) | None |
+| [Traktandum](Traktandum.md) | None |
 
 
 
@@ -21,18 +23,20 @@ Name: personinfo
 
 | Slot | Description |
 | --- | --- |
-| [age](age.md) |  |
-| [aliases](aliases.md) | other names for the person |
-| [full_name](full_name.md) | name of the person |
-| [id](id.md) |  |
-| [persons](persons.md) |  |
-| [phone](phone.md) |  |
+| [abstimmungen](abstimmungen.md) |  |
+| [frage](frage.md) |  |
+| [name](name.md) |  |
+| [resultat](resultat.md) |  |
+| [sessionen](sessionen.md) |  |
+| [traktanden](traktanden.md) |  |
+| [uid](uid.md) |  |
 
 
 ## Enumerations
 
 | Enumeration | Description |
 | --- | --- |
+| [CvResultat](CvResultat.md) |  |
 
 
 ## Types

@@ -1,10 +1,10 @@
 
 
-# Slot: id
+# Slot: name
 
 
 
-URI: [personinfo:id](https://w3id.org/linkml/examples/personinfo/id)
+URI: [dcterm:title](http://purl.org/dc/terms/title)
 
 
 
@@ -18,7 +18,8 @@ URI: [personinfo:id](https://w3id.org/linkml/examples/personinfo/id)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) |  |  no  |
+| [Traktandum](Traktandum.md) |  |  no  |
+| [Session](Session.md) |  |  no  |
 
 
 
@@ -47,7 +48,7 @@ URI: [personinfo:id](https://w3id.org/linkml/examples/personinfo/id)
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/examples/personinfo
+* from schema: https://ch.paf.link/schema/session
 
 
 
@@ -56,8 +57,8 @@ URI: [personinfo:id](https://w3id.org/linkml/examples/personinfo/id)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | personinfo:id |
-| native | personinfo:id |
+| self | dcterm:title |
+| native | chpaf:name |
 
 
 
@@ -66,14 +67,14 @@ URI: [personinfo:id](https://w3id.org/linkml/examples/personinfo/id)
 
 <details>
 ```yaml
-name: id
-from_schema: https://w3id.org/linkml/examples/personinfo
+name: name
+from_schema: https://ch.paf.link/schema/session
 rank: 1000
-identifier: true
-alias: id
-owner: Person
+slot_uri: dcterm:title
+alias: name
 domain_of:
-- Person
+- Session
+- Traktandum
 range: string
 required: true
 

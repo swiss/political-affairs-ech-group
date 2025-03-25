@@ -4,7 +4,7 @@
 
 
 
-URI: [personinfo:Container](https://w3id.org/linkml/examples/personinfo/Container)
+URI: [chpaf:Container](https://ch.paf.link/Container)
 
 
 
@@ -15,13 +15,13 @@ URI: [personinfo:Container](https://w3id.org/linkml/examples/personinfo/Containe
  classDiagram
     class Container
     click Container href "../Container"
-      Container : persons
+      Container : sessionen
         
           
     
     
-    Container --> "*" Person : persons
-    click Person href "../Person"
+    Container --> "*" Session : sessionen
+    click Session href "../Session"
 
         
       
@@ -37,7 +37,7 @@ URI: [personinfo:Container](https://w3id.org/linkml/examples/personinfo/Containe
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [persons](persons.md) | * <br/> [Person](Person.md) |  | direct |
+| [sessionen](sessionen.md) | * <br/> [Session](Session.md) |  | direct |
 
 
 
@@ -58,7 +58,7 @@ URI: [personinfo:Container](https://w3id.org/linkml/examples/personinfo/Containe
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/examples/personinfo
+* from schema: https://ch.paf.link/schema/session
 
 
 
@@ -67,8 +67,8 @@ URI: [personinfo:Container](https://w3id.org/linkml/examples/personinfo/Containe
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | personinfo:Container |
-| native | personinfo:Container |
+| self | chpaf:Container |
+| native | chpaf:Container |
 
 
 
@@ -85,18 +85,19 @@ URI: [personinfo:Container](https://w3id.org/linkml/examples/personinfo/Containe
 <details>
 ```yaml
 name: Container
-from_schema: https://w3id.org/linkml/examples/personinfo
+from_schema: https://ch.paf.link/schema/session
 attributes:
-  persons:
-    name: persons
-    from_schema: https://w3id.org/linkml/examples/personinfo
+  sessionen:
+    name: sessionen
+    from_schema: https://ch.paf.link/schema/session
     rank: 1000
     domain_of:
     - Container
-    range: Person
+    range: Session
     multivalued: true
     inlined: true
     inlined_as_list: true
+tree_root: true
 
 ```
 </details>
@@ -106,20 +107,21 @@ attributes:
 <details>
 ```yaml
 name: Container
-from_schema: https://w3id.org/linkml/examples/personinfo
+from_schema: https://ch.paf.link/schema/session
 attributes:
-  persons:
-    name: persons
-    from_schema: https://w3id.org/linkml/examples/personinfo
+  sessionen:
+    name: sessionen
+    from_schema: https://ch.paf.link/schema/session
     rank: 1000
-    alias: persons
+    alias: sessionen
     owner: Container
     domain_of:
     - Container
-    range: Person
+    range: Session
     multivalued: true
     inlined: true
     inlined_as_list: true
+tree_root: true
 
 ```
 </details>

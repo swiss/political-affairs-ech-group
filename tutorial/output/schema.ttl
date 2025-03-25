@@ -1,100 +1,158 @@
+@prefix chpaf: <https://ch.paf.link/> .
+@prefix linkml: <https://w3id.org/linkml/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix personinfo: <https://w3id.org/linkml/examples/personinfo/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://w3id.org/linkml/examples/personinfo.owl.ttl> a owl:Ontology ;
-    rdfs:label "personinfo" .
-
-personinfo:Container a owl:Class ;
+chpaf:Container a owl:Class ;
     rdfs:label "Container" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty personinfo:persons ],
+            owl:onProperty chpaf:sessionen ],
         [ a owl:Restriction ;
-            owl:allValuesFrom personinfo:Person ;
-            owl:onProperty personinfo:persons ] ;
-    skos:inScheme <https://w3id.org/linkml/examples/personinfo> .
+            owl:allValuesFrom chpaf:Session ;
+            owl:onProperty chpaf:sessionen ] ;
+    skos:inScheme <https://ch.paf.link/schema/session> .
 
-personinfo:Person a owl:Class ;
-    rdfs:label "Person" ;
+<https://ch.paf.link/schema/session.owl.ttl> a owl:Ontology ;
+    rdfs:label "ch-paf-link-session" .
+
+chpaf:Session a owl:Class ;
+    rdfs:label "Session" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:intersectionOf ( xsd:integer [ a rdfs:Datatype ;
-                                owl:onDatatype xsd:integer ;
-                                owl:withRestrictions ( [ xsd:minInclusive 0 ] ) ] [ a rdfs:Datatype ;
-                                owl:onDatatype xsd:integer ;
-                                owl:withRestrictions ( [ xsd:maxInclusive 200 ] ) ] ) ] ;
-            owl:onProperty personinfo:age ],
+            owl:maxCardinality 1 ;
+            owl:onProperty chpaf:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty chpaf:uid ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty personinfo:phone ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty personinfo:id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty personinfo:phone ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty personinfo:age ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty personinfo:full_name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:onDatatype xsd:string ;
-                    owl:withRestrictions ( [ xsd:pattern "^[\\d\\(\\)\\-]+$" ] ) ] ;
-            owl:onProperty personinfo:phone ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty personinfo:aliases ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty personinfo:age ],
+            owl:onProperty chpaf:traktanden ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty personinfo:id ],
+            owl:onProperty chpaf:name ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty personinfo:full_name ],
+            owl:allValuesFrom chpaf:Traktandum ;
+            owl:onProperty chpaf:traktanden ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty personinfo:id ],
+            owl:onProperty chpaf:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty chpaf:uid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty chpaf:uid ] ;
+    skos:exactMatch chpaf:Session ;
+    skos:inScheme <https://ch.paf.link/schema/session> .
+
+chpaf:abstimmungen a owl:ObjectProperty ;
+    rdfs:label "abstimmungen" ;
+    rdfs:range chpaf:Abstimmung ;
+    skos:inScheme <https://ch.paf.link/schema/session> .
+
+<https://ch.paf.link/results/ja> a owl:Class ;
+    rdfs:label "Ja" ;
+    rdfs:subClassOf chpaf:CvResultat .
+
+<https://ch.paf.link/results/nein> a owl:Class ;
+    rdfs:label "Nein" ;
+    rdfs:subClassOf chpaf:CvResultat .
+
+chpaf:sessionen a owl:ObjectProperty ;
+    rdfs:label "sessionen" ;
+    skos:inScheme <https://ch.paf.link/schema/session> .
+
+chpaf:traktanden a owl:ObjectProperty ;
+    rdfs:label "traktanden" ;
+    rdfs:range chpaf:Traktandum ;
+    skos:inScheme <https://ch.paf.link/schema/session> .
+
+chpaf:Abstimmung a owl:Class ;
+    rdfs:label "Abstimmung" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty chpaf:resultat ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty personinfo:full_name ],
+            owl:onProperty chpaf:uid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty chpaf:frage ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty chpaf:resultat ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty chpaf:frage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom chpaf:CvResultat ;
+            owl:onProperty chpaf:resultat ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty chpaf:frage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty chpaf:uid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty chpaf:uid ] ;
+    skos:exactMatch chpaf:Abstimmung ;
+    skos:inScheme <https://ch.paf.link/schema/session> .
+
+chpaf:Traktandum a owl:Class ;
+    rdfs:label "Traktandum" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty chpaf:uid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty chpaf:uid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty chpaf:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty chpaf:name ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty personinfo:aliases ] ;
-    skos:inScheme <https://w3id.org/linkml/examples/personinfo> .
+            owl:onProperty chpaf:abstimmungen ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty chpaf:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom chpaf:Abstimmung ;
+            owl:onProperty chpaf:abstimmungen ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty chpaf:uid ] ;
+    skos:exactMatch chpaf:Traktandum ;
+    skos:inScheme <https://ch.paf.link/schema/session> .
 
-personinfo:aliases a owl:DatatypeProperty ;
-    rdfs:label "aliases" ;
-    skos:definition "other names for the person" ;
-    skos:inScheme <https://w3id.org/linkml/examples/personinfo> .
+chpaf:frage a owl:DatatypeProperty ;
+    rdfs:label "frage" ;
+    rdfs:range xsd:string ;
+    skos:inScheme <https://ch.paf.link/schema/session> .
 
-personinfo:persons a owl:ObjectProperty ;
-    rdfs:label "persons" ;
-    skos:inScheme <https://w3id.org/linkml/examples/personinfo> .
+chpaf:resultat a owl:ObjectProperty ;
+    rdfs:label "resultat" ;
+    rdfs:range chpaf:CvResultat ;
+    skos:inScheme <https://ch.paf.link/schema/session> .
 
-personinfo:age a owl:DatatypeProperty ;
-    rdfs:label "age" ;
-    skos:inScheme <https://w3id.org/linkml/examples/personinfo> .
+chpaf:CvResultat a owl:Class ;
+    owl:unionOf ( <https://ch.paf.link/results/ja> <https://ch.paf.link/results/nein> ) ;
+    linkml:permissible_values <https://ch.paf.link/results/ja>,
+        <https://ch.paf.link/results/nein> .
 
-personinfo:full_name a owl:DatatypeProperty ;
-    rdfs:label "full_name" ;
-    skos:definition "name of the person" ;
-    skos:inScheme <https://w3id.org/linkml/examples/personinfo> .
+chpaf:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    rdfs:range xsd:string ;
+    skos:inScheme <https://ch.paf.link/schema/session> .
 
-personinfo:id a owl:DatatypeProperty ;
-    rdfs:label "id" ;
-    skos:inScheme <https://w3id.org/linkml/examples/personinfo> .
-
-personinfo:phone a owl:DatatypeProperty ;
-    rdfs:label "phone" ;
-    skos:inScheme <https://w3id.org/linkml/examples/personinfo> .
+chpaf:uid a owl:DatatypeProperty ;
+    rdfs:label "uid" ;
+    skos:inScheme <https://ch.paf.link/schema/session> .
 
 

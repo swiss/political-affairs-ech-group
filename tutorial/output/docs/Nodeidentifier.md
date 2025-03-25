@@ -33,7 +33,7 @@ URI: [shex:nonLiteral](http://www.w3.org/ns/shex#nonLiteral)
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/examples/personinfo
+* from schema: https://ch.paf.link/schema/session
 
 
 
@@ -43,7 +43,7 @@ URI: [shex:nonLiteral](http://www.w3.org/ns/shex#nonLiteral)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | shex:nonLiteral |
-| native | personinfo:nodeidentifier |
+| native | chpaf:nodeidentifier |
 
 
 

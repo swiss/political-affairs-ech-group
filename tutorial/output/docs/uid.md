@@ -1,15 +1,10 @@
 
 
-# Slot: full_name
-
-
-_name of the person_
+# Slot: uid
 
 
 
-
-
-URI: [personinfo:full_name](https://w3id.org/linkml/examples/personinfo/full_name)
+URI: [chpaf:uid](https://ch.paf.link/uid)
 
 
 
@@ -23,7 +18,9 @@ URI: [personinfo:full_name](https://w3id.org/linkml/examples/personinfo/full_nam
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) |  |  no  |
+| [Traktandum](Traktandum.md) |  |  no  |
+| [Session](Session.md) |  |  no  |
+| [Abstimmung](Abstimmung.md) |  |  no  |
 
 
 
@@ -52,7 +49,7 @@ URI: [personinfo:full_name](https://w3id.org/linkml/examples/personinfo/full_nam
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/examples/personinfo
+* from schema: https://ch.paf.link/schema/session
 
 
 
@@ -61,8 +58,8 @@ URI: [personinfo:full_name](https://w3id.org/linkml/examples/personinfo/full_nam
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | personinfo:full_name |
-| native | personinfo:full_name |
+| self | chpaf:uid |
+| native | chpaf:uid |
 
 
 
@@ -71,14 +68,15 @@ URI: [personinfo:full_name](https://w3id.org/linkml/examples/personinfo/full_nam
 
 <details>
 ```yaml
-name: full_name
-description: name of the person
-from_schema: https://w3id.org/linkml/examples/personinfo
+name: uid
+from_schema: https://ch.paf.link/schema/session
 rank: 1000
-alias: full_name
-owner: Person
+identifier: true
+alias: uid
 domain_of:
-- Person
+- Session
+- Traktandum
+- Abstimmung
 range: string
 required: true
 

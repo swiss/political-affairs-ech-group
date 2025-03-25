@@ -1,10 +1,10 @@
 
 
-# Slot: persons
+# Slot: sessionen
 
 
 
-URI: [personinfo:persons](https://w3id.org/linkml/examples/personinfo/persons)
+URI: [chpaf:sessionen](https://ch.paf.link/sessionen)
 
 
 
@@ -28,7 +28,7 @@ URI: [personinfo:persons](https://w3id.org/linkml/examples/personinfo/persons)
 
 ## Properties
 
-* Range: [Person](Person.md)
+* Range: [Session](Session.md)
 
 * Multivalued: True
 
@@ -47,7 +47,7 @@ URI: [personinfo:persons](https://w3id.org/linkml/examples/personinfo/persons)
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/examples/personinfo
+* from schema: https://ch.paf.link/schema/session
 
 
 
@@ -56,8 +56,8 @@ URI: [personinfo:persons](https://w3id.org/linkml/examples/personinfo/persons)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | personinfo:persons |
-| native | personinfo:persons |
+| self | chpaf:sessionen |
+| native | chpaf:sessionen |
 
 
 
@@ -66,14 +66,14 @@ URI: [personinfo:persons](https://w3id.org/linkml/examples/personinfo/persons)
 
 <details>
 ```yaml
-name: persons
-from_schema: https://w3id.org/linkml/examples/personinfo
+name: sessionen
+from_schema: https://ch.paf.link/schema/session
 rank: 1000
-alias: persons
+alias: sessionen
 owner: Container
 domain_of:
 - Container
-range: Person
+range: Session
 multivalued: true
 inlined: true
 inlined_as_list: true
