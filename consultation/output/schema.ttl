@@ -1,0 +1,88 @@
+@prefix chpaf: <https://ch.paf.link/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+chpaf:Container a owl:Class ;
+    rdfs:label "Container" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom chpaf:Consultation ;
+            owl:onProperty chpaf:consultations ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty chpaf:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty chpaf:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty chpaf:consultations ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty chpaf:id ] ;
+    skos:inScheme <https://ch.paf.link/schema/consultation> .
+
+<https://ch.paf.link/schema/consultation.owl.ttl> a owl:Ontology ;
+    rdfs:label "ch-paf-link-consultation" .
+
+chpaf:Consultation a owl:Class ;
+    rdfs:label "Consultation" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty chpaf:content ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty chpaf:content ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty chpaf:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty chpaf:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty chpaf:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty chpaf:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty chpaf:receivers ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty chpaf:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty chpaf:content ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty chpaf:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty chpaf:receivers ] ;
+    skos:inScheme <https://ch.paf.link/schema/consultation> .
+
+chpaf:consultations a owl:ObjectProperty ;
+    rdfs:label "consultations" ;
+    rdfs:range chpaf:Consultation ;
+    skos:inScheme <https://ch.paf.link/schema/consultation> .
+
+chpaf:receivers a owl:DatatypeProperty ;
+    rdfs:label "receivers" ;
+    skos:inScheme <https://ch.paf.link/schema/consultation> .
+
+chpaf:content a owl:DatatypeProperty ;
+    rdfs:label "content" ;
+    skos:inScheme <https://ch.paf.link/schema/consultation> .
+
+chpaf:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    rdfs:range xsd:string ;
+    skos:inScheme <https://ch.paf.link/schema/consultation> .
+
+chpaf:id a owl:DatatypeProperty ;
+    rdfs:label "id" ;
+    skos:inScheme <https://ch.paf.link/schema/consultation> .
+
+
