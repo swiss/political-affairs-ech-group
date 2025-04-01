@@ -1,0 +1,16 @@
+id: con:2025
+consultations:
+  - id: con:2025-1
+    name: Consultation 1
+    content: "Folgender Sachverhalt sei gegeben..."
+    receivers:
+      - BAR
+      - BK
+      - BAFU
+  - id: con:2025-2
+    name: Consultation 2
+    content: "Folgender Sachverhalt sei gegeben..."
+    receivers:
+      - BAG
+      - BLW
+      - BFS
