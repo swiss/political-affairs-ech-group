@@ -51,6 +51,16 @@ jobs:
           mkdir -p tutorial/output/docs
           gen-doc tutorial/input/schema.yaml --directory tutorial/output/docs
 
+      - name: Install Pandoc
+        run: sudo apt update && sudo apt install -y pandoc
+
+      - name: Convert Markdown to Word with Pandoc
+        run: |
+          mkdir -p tutorial/output
+          pandoc tutorial/1_documentation.md -o tutorial/output/tutorial.docx \
+            --lua-filter=include-files.lua --verbose \
+            --reference-doc=ech_template.docx
+
       - name: Commit and push changes
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
