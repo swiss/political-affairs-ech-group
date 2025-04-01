@@ -19,5 +19,7 @@ subgroup-name/
 │   ├── data.yaml
 ├── output/
 │   ├── docs/
-├── documentation.md
+├── 1_documentation.md
+├── 2_documentation.md
+├── x_documentation.md
 ```
