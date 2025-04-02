@@ -57,9 +57,10 @@ jobs:
       - name: Convert Markdown to Word with Pandoc
         run: |
           mkdir -p tutorial/output
-          pandoc tutorial/1_documentation.md -o tutorial/output/tutorial.docx \
-            --lua-filter=include-files.lua --verbose \
-            --reference-doc=ech_template.docx
+          cat $(ls tutorial/*.md | sort -V) > tutorial/output/combined.md
+          pandoc tutorial/output/combined.md -o tutorial/output/tutorial.docx \
+          --lua-filter=include-files.lua --verbose \
+          --reference-doc=ech_template.docx
 
       - name: Commit and push changes
         env:
