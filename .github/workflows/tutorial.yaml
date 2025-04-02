@@ -57,7 +57,7 @@ jobs:
       - name: Convert Markdown to Word with Pandoc
         run: |
           mkdir -p tutorial/output
-          cat $(ls tutorial/*.md | sort -V) > tutorial/output/combined.md
+          (for f in $(ls tutorial/*.md | sort -V); do cat "$f"; echo -e "\n\n"; done) > tutorial/output/combined.md
           pandoc tutorial/output/combined.md -o tutorial/output/tutorial.docx \
           --lua-filter=include-files.lua --verbose \
           --reference-doc=ech_template.docx
