@@ -1,6 +1,6 @@
 # eCH Specialist Group Political Affairs
 
-This repository contains the documents and resources of the [eCH](https://ech.ch/) Specialist Group [Political Affairs](https://www.ech.ch/de/fachgruppen/politische-geschaefte) (Fachgruppe Politische Geschäfte).
+This repository contains the documents and resources of the [eCH](https://ech.ch/) Specialist Group [Political Affairs](https://www.ech.ch/de/fachgruppen/politische-geschaefte) (Fachgruppe Politische Geschäfte / Groupe spécialisé affaires politiques).
 
 ## Subgroups
 
