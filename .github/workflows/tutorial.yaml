@@ -46,21 +46,21 @@ jobs:
           mkdir -p tutorial/output
           linkml-convert -s tutorial/input/schema.yaml -t rdf tutorial/input/data.yaml > tutorial/output/data.ttl
 
-      - name: Generate documentation
+      - name: Generate LinkML documentation
         run: |
           mkdir -p tutorial/output/docs
           gen-doc tutorial/input/schema.yaml --directory tutorial/output/docs
-
+      - name: Merge Markdown documentation
+        run: python merge_documentation.py tutorial
       - name: Install Pandoc
         run: sudo apt update && sudo apt install -y pandoc
 
       - name: Convert Markdown to Word with Pandoc
         run: |
           mkdir -p tutorial/output
-          (for f in $(ls tutorial/*.md | sort -V); do cat "$f"; echo -e "\n\n"; done) > tutorial/output/combined.md
-          pandoc tutorial/output/combined.md -o tutorial/output/tutorial.docx \
-          --lua-filter=include-files.lua --verbose \
-          --reference-doc=ech_template.docx
+          pandoc tutorial/output/documentation_merged.md \
+          -o tutorial/output/tutorial.docx \
+          --reference-doc=tutorial/input/template.docx
 
       - name: Commit and push changes
         env:
