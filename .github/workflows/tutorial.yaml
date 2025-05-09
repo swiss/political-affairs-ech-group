@@ -3,8 +3,7 @@ name: Tutorial
 on:
   push:
     paths:
-      - 'tutorial/input/schema.yaml'
-      - 'tutorial/input/data.yaml'
+      - 'tutorial/input/**'
   workflow_dispatch:
 
 jobs:
