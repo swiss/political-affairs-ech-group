@@ -1,0 +1,137 @@
+{
+    "$defs": {
+        "AgendaItem": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "votes": {
+                    "items": {
+                        "$ref": "#/$defs/Vote"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ],
+            "title": "AgendaItem",
+            "type": "object"
+        },
+        "Container": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "sessions": {
+                    "items": {
+                        "$ref": "#/$defs/Session"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Container",
+            "type": "object"
+        },
+        "ResultEnum": {
+            "description": "",
+            "enum": [
+                "yes",
+                "no"
+            ],
+            "title": "ResultEnum",
+            "type": "string"
+        },
+        "Session": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "agendaItems": {
+                    "items": {
+                        "$ref": "#/$defs/AgendaItem"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ],
+            "title": "Session",
+            "type": "object"
+        },
+        "Vote": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "question": {
+                    "type": "string"
+                },
+                "result": {
+                    "$ref": "#/$defs/ResultEnum"
+                }
+            },
+            "required": [
+                "id",
+                "question",
+                "result"
+            ],
+            "title": "Vote",
+            "type": "object"
+        }
+    },
+    "$id": "https://ch.paf.link/schema/session",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "description": "",
+    "metamodel_version": "1.7.0",
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "sessions": {
+            "items": {
+                "$ref": "#/$defs/Session"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        }
+    },
+    "required": [
+        "id"
+    ],
+    "title": "ch-paf-link-session",
+    "type": "object",
+    "version": null
+}
