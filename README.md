@@ -46,6 +46,9 @@ subgroup-name/
 │   ├── ...
 │   ├── n_topic_n.md
 │   ├── template.docx
+├── meetings/
+│   ├── YYMMDD.md
+│   ├── ...
 ├── output/
 │   ├── docs/
 │   ├── data.json
