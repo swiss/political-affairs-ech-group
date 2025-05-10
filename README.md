@@ -6,6 +6,12 @@ This repository contains the documents and resources of the [eCH](https://ech.ch
 
 The Specialist Group is divided into subgroups. Each subgroup is responsible for a specific topic. The following subgroups exist:
 
+- G1 - Operations ("Öffentlicher Ratsbetrieb")
+- G2 - Laws ("Erlasse und Gesetzestexte")
+- G3 - Actors ("Politische Akteure")
+- G4 - Meta ("Metaprozesse zu politischen Geschäften")
+- G5 - Affairs ("Geschäfte")
+- G6 - Consultations ("Vernehmlassungen")
 - tutorial: A tutorial on how to use the the [LinkML](https://linkml.io/linkml/index.html) toolchain to create a data model for the eCH Specialist Group Political Affairs.
 
 ## Data-Centric Approach
