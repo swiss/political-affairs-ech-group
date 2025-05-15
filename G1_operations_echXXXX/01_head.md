@@ -13,6 +13,6 @@
 | **Voraussetzungen**   | ?                                                                                                                          |
 | **Beilagen**          | -                                                                                                                          |
 | **Sprachen**          | English (Original)                                                                                                         |
-| **Autoren**           | Fachgruppe politische Geschäfte: Nicole, David, Jonas, Lena, Mina, Manuel W., Orhan, Michel, Laurens                       |
+| **Autoren**           | Fachgruppe politische Geschäfte: Nicole Aeby, David, Jonas, Lena, Mina, Manuel W., Orhan, Michel, Laurens                       |
 | **Herausgeber / Vertrieb** | Verein eCH, Räffelstr. 20, 8045                                                                                       |
 
