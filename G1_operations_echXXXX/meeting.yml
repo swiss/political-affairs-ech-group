@@ -1,103 +1,27 @@
-id: meeting
-name: Meeting
-description: "Meeting Schema originally from Open Parl Data"
-prefixes:
-  stg: http://example.org/meeting/
 
-types:
-  Meeting:
-    description: "Represents a meeting record"
-    attributes:
-      meeting_id:
-        type: string
-        description: "Unique identifier for the meeting"
-      meeting_body_key:
-        type: string
-        description: "The body key of the meeting"
-        max_length: 10
-      meeting_type:
-        type: string
-        description: "Type of the meeting"
-        max_length: 512
-      meeting_parent_type:
-        type: string
-        description: "Parent type of the meeting"
-        max_length: 128
-      meeting_parent_id:
-        type: string
-        description: "ID of the parent meeting"
-        max_length: 128
-      meeting_number:
-        type: string
-        description: "The meeting number"
-        max_length: 128
-      meeting_abbreviation:
-        type: string
-        description: "Abbreviation for the meeting"
-        max_length: 128
-      meeting_name:
-        type: string
-        description: "Name of the meeting"
-        max_length: 512
-      meeting_url:
-        type: string
-        description: "URL of the meeting"
-        max_length: 256
-      meeting_group_name:
-        type: string
-        description: "Name of the meeting group"
-        max_length: 256
-      meeting_group_id:
-        type: string
-        description: "ID of the meeting group"
-        max_length: 256
-      meeting_begin_date:
-        type: date_time
-        description: "The start date and time of the meeting"
-      meeting_end_date:
-        type: date_time
-        description: "The end date and time of the meeting"
-      meeting_state:
-        type: string
-        description: "State of the meeting"
-        max_length: 512
-      meeting_description:
-        type: string
-        description: "Description of the meeting"
-      meeting_location:
-        type: string
-        description: "Location of the meeting"
-        max_length: 1028
-      meeting_type_external:
-        type: string
-        description: "External type of the meeting"
-        max_length: 512
-      meeting_updated:
-        type: date_time
-        description: "Last local update timestamp"
-      meeting_created:
-        type: date_time
-        description: "The timestamp when the meeting was created locally"
-        default: "current_timestamp"
+Thema: Sitzungen:
 
-slots:
-  meeting_id:
-    range: string
-    description: "Primary key for the meeting"
-    identifier: true
-  meeting_body_key:
-    range: string
-    description: "The body key of the meeting"
-    max_length: 10
-  meeting_parent_id:
-    range: string
-    description: "ID of the parent meeting"
-    max_length: 128
-  meeting_group_id:
-    range: string
-    description: "ID of the meeting group"
-    max_length: 256
-  meeting_created:
-    range: date_time
-    description: "Timestamp when the meeting was created locally"
-    default: "current_timestamp"
+Legislatur
+Session
+Meeting
+Partial-Meeting (Abend, Morgen)
+
+meeting_body_key (Land, Kanton, Gemeinde)
+meeting_id (technische ID, GUID)
+meeting_name
+meeting_url
+meeting_number (Sitzung Nr 108)
+meeting_abbreviation
+meeting_group_id (ID von Kantonsrat, Nationalrat, Kommission)
+meeting_begin_date
+meeting_end_date
+meeting_planned_begin_datetime (braucht es da wirklich, besser bei agenda)
+meeting_planned_end_datetime  (braucht es da wirklich, besser bei agenda) 
+meeting_state (geplant, abgeschlossen, abgebrochen, verschoben)
+meeting_description
+meeting_location    
+meeting_type (Sondersession, Kommissionsitze)
+meeting_updated_datetime
+meeting_created_datetime
+
+Link von Meeting zu Session, Link von Session zu Legislatur
