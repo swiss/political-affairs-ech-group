@@ -8,7 +8,7 @@
 * https://www.oasis-open.org/standard/akn-v1-0/ - LegalDocML bzw. Akoma Ntoso, glbaler XML-Standard für Dokumente in den Bereichen parlamentarische Arbeit, Gesetzgebung und Rechtsprechung
 * https://ejustice.ch/chlexml/ - CHLexML, Schweizer XML-Standard für Gesetzgebung
 
-## Publikation (Erlasse und Matieralien)
+## Publikation (Erlasse und Materialien)
 ### Bund
 * https://www.fedlex.admin.ch/de/oc - Amtliche Sammlung des Bnudesrechts (rechtsverbindlich) - Owner: Bundeskanzlei
 * https://www.fedlex.admin.ch/de/fga - Bundesblatt (rechtsverbindlich) - Owner: Bundeskanzlei
