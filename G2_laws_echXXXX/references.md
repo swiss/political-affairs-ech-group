@@ -10,7 +10,7 @@
 
 ## Publikation (Erlasse und Materialien)
 ### Bund
-* https://www.fedlex.admin.ch/de/oc - Amtliche Sammlung des Bnudesrechts (rechtsverbindlich) - Owner: Bundeskanzlei
+* https://www.fedlex.admin.ch/de/oc - Amtliche Sammlung des Bundesrechts (rechtsverbindlich) - Owner: Bundeskanzlei
 * https://www.fedlex.admin.ch/de/fga - Bundesblatt (rechtsverbindlich) - Owner: Bundeskanzlei
 * https://shab.ch/ - Publikationsplattform eidgenössischer, kantonaler und kommunaler Amtsstellen sowie Unternehmen für gesetzlich vorgeschriebene Bekanntmachungen (freiwillig, bzw. verbindlich nach kt. Recht) - Owner: SECO
 
