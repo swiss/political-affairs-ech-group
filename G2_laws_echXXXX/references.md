@@ -15,7 +15,7 @@
 * https://shab.ch/ - Publikationsplattform eidgenössischer, kantonaler und kommunaler Amtsstellen sowie Unternehmen für gesetzlich vorgeschriebene Bekanntmachungen (freiwillig, bzw. verbindlich nach kt. Recht) - Owner: SECO
 
 ### Kantone
-* https://amtsblattportal.ch/ - Amtsblätter der Kantone AI, AR, BE, BL, BS, NW, SH, SO, TI, VS, ZG, ZH (nicht: AG, AR, FR, GE, GL, GR, JU, LU, NE, OW, SG, SZ, TG, UR, VD)
+* https://amtsblattportal.ch/ - Amtsblätter der Kantone AI, AR, BE, BL, BS, NW, SH, SO, TI, VS, ZG, ZH (nicht: AG, FR, GE, GL, GR, JU, LU, NE, OW, SG, SZ, TG, UR, VD)
 * https://amtsblatt.ag.ch/ - AG
 * https://abl.fr.ch/ - FR
 * https://fao.ge.ch/ - GE
