@@ -1,6 +1,6 @@
 @prefix chpaf: <https://ch.paf.link/> .
 @prefix dcterm: <http://purl.org/dc/terms/> .
-@prefix parl: <https://politics.ld.admin.ch/parliamentary-affair/> .
+@prefix parl: <https://politics.ld.admin.ch/parliamentary_affair/> .
 
 parl:s2025 a chpaf:Container ;
     chpaf:session parl:s2025-1,
