@@ -1,0 +1,52 @@
+id: https://w3id.org/linkml/examples/meeting
+name: Meeting
+description: "Meeting Schema for various legislative bodies"
+prefixes:
+  linkml: https://w3id.org/linkml/
+  meeting: https://w3id.org/linkml/examples/meeting
+
+imports:
+  - linkml:types
+
+classes:
+  Meeting:
+    attributes:
+      id:
+        range: string
+      body_key:
+        range: string
+      name:
+        range: string
+      url:
+        range: string
+      number:
+        range: string
+      abbreviation:
+        range: string
+      group_name:
+        range: string
+      group_id:
+        range: string
+      begin_date:
+        range: date_time
+      end_date:
+        range: date_time
+      state:
+        range: string
+      description:
+        range: string
+      location:
+        range: string
+      type:
+        range: string
+      updated_datetime:
+        range: date_time
+      created_datetime:
+        range: date_time
+
+  Container:
+    tree_root: true
+    attributes:
+      meetings:
+        multivalued: true
+        range: Meeting
