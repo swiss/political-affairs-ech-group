@@ -12,10 +12,10 @@ Name: ch-paf-link-session
 
 | Class | Description |
 | --- | --- |
-| [AgendaItem](AgendaItem.md) | None |
-| [Container](Container.md) | None |
-| [Session](Session.md) | None |
-| [Vote](Vote.md) | None |
+| [AgendaItem](AgendaItem.md) |  |
+| [Container](Container.md) |  |
+| [Session](Session.md) |  |
+| [Vote](Vote.md) |  |
 
 
 

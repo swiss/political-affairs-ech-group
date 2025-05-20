@@ -19,9 +19,11 @@ URI: [chpaf:Session](https://ch.paf.link/Session)
         
           
     
+        
+        
+        Session --> "*" AgendaItem : agendaItems
+        click AgendaItem href "../AgendaItem"
     
-    Session --> "*" AgendaItem : agendaItems
-    click AgendaItem href "../AgendaItem"
 
         
       Session : id

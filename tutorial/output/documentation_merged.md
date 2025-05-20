@@ -42,9 +42,11 @@ URI: [chpaf:AgendaItem](https://ch.paf.link/AgendaItem)
         
           
     
+        
+        
+        AgendaItem --> "*" Vote : votes
+        click Vote href "../Vote"
     
-    AgendaItem --> "*" Vote : votes
-    click Vote href "../Vote"
 
         
       
@@ -198,9 +200,11 @@ URI: [chpaf:Container](https://ch.paf.link/Container)
         
           
     
+        
+        
+        Container --> "*" Session : sessions
+        click Session href "../Session"
     
-    Container --> "*" Session : sessions
-    click Session href "../Session"
 
         
       
@@ -333,9 +337,11 @@ URI: [chpaf:Session](https://ch.paf.link/Session)
         
           
     
+        
+        
+        Session --> "*" AgendaItem : agendaItems
+        click AgendaItem href "../AgendaItem"
     
-    Session --> "*" AgendaItem : agendaItems
-    click AgendaItem href "../AgendaItem"
 
         
       Session : id
@@ -494,9 +500,11 @@ URI: [chpaf:Vote](https://ch.paf.link/Vote)
         
           
     
+        
+        
+        Vote --> "1" ResultEnum : result
+        click ResultEnum href "../ResultEnum"
     
-    Vote --> "1" ResultEnum : result
-    click ResultEnum href "../ResultEnum"
 
         
       

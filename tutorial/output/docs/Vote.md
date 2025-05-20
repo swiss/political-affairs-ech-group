@@ -23,9 +23,11 @@ URI: [chpaf:Vote](https://ch.paf.link/Vote)
         
           
     
+        
+        
+        Vote --> "1" ResultEnum : result
+        click ResultEnum href "../ResultEnum"
     
-    Vote --> "1" ResultEnum : result
-    click ResultEnum href "../ResultEnum"
 
         
       

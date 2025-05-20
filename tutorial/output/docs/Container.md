@@ -21,9 +21,11 @@ URI: [chpaf:Container](https://ch.paf.link/Container)
         
           
     
+        
+        
+        Container --> "*" Session : sessions
+        click Session href "../Session"
     
-    Container --> "*" Session : sessions
-    click Session href "../Session"
 
         
       

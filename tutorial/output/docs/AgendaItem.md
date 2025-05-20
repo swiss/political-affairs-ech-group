@@ -23,9 +23,11 @@ URI: [chpaf:AgendaItem](https://ch.paf.link/AgendaItem)
         
           
     
+        
+        
+        AgendaItem --> "*" Vote : votes
+        click Vote href "../Vote"
     
-    AgendaItem --> "*" Vote : votes
-    click Vote href "../Vote"
 
         
       
