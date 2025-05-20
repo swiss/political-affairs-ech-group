@@ -1,0 +1,84 @@
+name: Process Schema and Data
+
+on:
+  push:
+    paths:
+      - 'tutorial/input/**'
+      - 'G1_operations_echXXXX/input/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        dir: [tutorial, G1_operations_echXXXX]
+
+    # Run only if changes happened in the corresponding directory
+    if: |
+      contains(github.event.head_commit.message, matrix.dir + '/input/') ||
+      github.event_name == 'workflow_dispatch'
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Clean output directory
+        run: rm -rf ${{ matrix.dir }}/output/*
+
+      - name: Convert schema.yaml to schema.json
+        run: |
+          mkdir -p ${{ matrix.dir }}/output
+          gen-json-schema ${{ matrix.dir }}/input/schema.yaml > ${{ matrix.dir }}/output/schema.json
+
+      - name: Convert schema.yaml to schema.ttl
+        run: |
+          mkdir -p ${{ matrix.dir }}/output
+          gen-owl ${{ matrix.dir }}/input/schema.yaml > ${{ matrix.dir }}/output/schema.ttl
+
+      - name: Convert data.yaml to data.json
+        run: |
+          mkdir -p ${{ matrix.dir }}/output
+          linkml-convert -s ${{ matrix.dir }}/input/schema.yaml -t json ${{ matrix.dir }}/input/data.yaml > ${{ matrix.dir }}/output/data.json
+
+      - name: Convert data.yaml to data.ttl
+        run: |
+          mkdir -p ${{ matrix.dir }}/output
+          linkml-convert -s ${{ matrix.dir }}/input/schema.yaml -t rdf ${{ matrix.dir }}/input/data.yaml > ${{ matrix.dir }}/output/data.ttl
+
+      - name: Generate LinkML documentation
+        run: |
+          mkdir -p ${{ matrix.dir }}/output/docs
+          gen-doc ${{ matrix.dir }}/input/schema.yaml --directory ${{ matrix.dir }}/output/docs
+
+      - name: Merge Markdown documentation
+        run: python merge_documentation.py ${{ matrix.dir }}
+
+      - name: Install Pandoc
+        run: sudo apt update && sudo apt install -y pandoc
+
+      - name: Convert Markdown to Word with Pandoc
+        run: |
+          mkdir -p ${{ matrix.dir }}/output
+          pandoc ${{ matrix.dir }}/output/documentation_merged.md \
+          -o ${{ matrix.dir }}/output/${{ matrix.dir }}.docx \
+          --reference-doc=${{ matrix.dir }}/input/template.docx
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add ${{ matrix.dir }}/output/
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto-generated ${{ matrix.dir }} files"
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
