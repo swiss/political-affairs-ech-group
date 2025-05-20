@@ -15,11 +15,6 @@ jobs:
       matrix:
         dir: [tutorial, G1_operations_echXXXX]
 
-    # Run only if changes happened in the corresponding directory
-    if: |
-      contains(github.event.head_commit.message, matrix.dir + '/input/') ||
-      github.event_name == 'workflow_dispatch'
-
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -32,41 +27,58 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Check for changes in ${{ matrix.dir }}/input
+        id: check_changes
+        run: |
+          echo "changed=false" >> "$GITHUB_OUTPUT"
+          if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep "^${{ matrix.dir }}/input/"; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Clean output directory
+        if: steps.check_changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
         run: rm -rf ${{ matrix.dir }}/output/*
 
       - name: Convert schema.yaml to schema.json
+        if: steps.check_changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
         run: |
           mkdir -p ${{ matrix.dir }}/output
           gen-json-schema ${{ matrix.dir }}/input/schema.yaml > ${{ matrix.dir }}/output/schema.json
 
       - name: Convert schema.yaml to schema.ttl
+        if: steps.check_changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
         run: |
           mkdir -p ${{ matrix.dir }}/output
           gen-owl ${{ matrix.dir }}/input/schema.yaml > ${{ matrix.dir }}/output/schema.ttl
 
       - name: Convert data.yaml to data.json
+        if: steps.check_changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
         run: |
           mkdir -p ${{ matrix.dir }}/output
           linkml-convert -s ${{ matrix.dir }}/input/schema.yaml -t json ${{ matrix.dir }}/input/data.yaml > ${{ matrix.dir }}/output/data.json
 
       - name: Convert data.yaml to data.ttl
+        if: steps.check_changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
         run: |
           mkdir -p ${{ matrix.dir }}/output
           linkml-convert -s ${{ matrix.dir }}/input/schema.yaml -t rdf ${{ matrix.dir }}/input/data.yaml > ${{ matrix.dir }}/output/data.ttl
 
       - name: Generate LinkML documentation
+        if: steps.check_changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
         run: |
           mkdir -p ${{ matrix.dir }}/output/docs
           gen-doc ${{ matrix.dir }}/input/schema.yaml --directory ${{ matrix.dir }}/output/docs
 
       - name: Merge Markdown documentation
+        if: steps.check_changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
         run: python merge_documentation.py ${{ matrix.dir }}
 
       - name: Install Pandoc
+        if: steps.check_changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
         run: sudo apt update && sudo apt install -y pandoc
 
       - name: Convert Markdown to Word with Pandoc
+        if: steps.check_changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
         run: |
           mkdir -p ${{ matrix.dir }}/output
           pandoc ${{ matrix.dir }}/output/documentation_merged.md \
@@ -74,6 +86,7 @@ jobs:
           --reference-doc=${{ matrix.dir }}/input/template.docx
 
       - name: Commit and push changes
+        if: steps.check_changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
