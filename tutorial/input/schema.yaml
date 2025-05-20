@@ -7,7 +7,7 @@ prefixes:
   linkml: https://w3id.org/linkml/
   paf: https://paf.link/
   chpaf: https://ch.paf.link/
-  parl: https://politics.ld.admin.ch/parliamentary-affair/
+  parl: https://politics.ld.admin.ch/parliamentary_affair/
 imports:
   - linkml:types
 default_prefix: chpaf
