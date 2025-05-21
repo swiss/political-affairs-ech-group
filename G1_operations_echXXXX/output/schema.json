@@ -34,6 +34,7 @@
                     ]
                 },
                 "begin_date": {
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -58,6 +59,7 @@
                     ]
                 },
                 "end_date": {
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"

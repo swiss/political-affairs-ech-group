@@ -27,7 +27,7 @@ Alias: end_date
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Datetime](Datetime.md)
 
 
 
@@ -69,7 +69,7 @@ rank: 1000
 alias: end_date
 domain_of:
 - Meeting
-range: string
+range: datetime
 
 ```
 </details>

@@ -68,8 +68,8 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operationsMeeting)
 | [abbreviation](abbreviation.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [group_name](group_name.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [group_id](group_id.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [begin_date](begin_date.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [end_date](end_date.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [begin_date](begin_date.md) | 0..1 <br/> [Datetime](Datetime.md) |  | direct |
+| [end_date](end_date.md) | 0..1 <br/> [Datetime](Datetime.md) |  | direct |
 | [state](state.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [description](description.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [location](location.md) | 0..1 <br/> [String](String.md) |  | direct |
@@ -243,7 +243,7 @@ attributes:
     owner: Meeting
     domain_of:
     - Meeting
-    range: string
+    range: datetime
   end_date:
     name: end_date
     from_schema: https://ch.paf.link/schema/operations
@@ -252,7 +252,7 @@ attributes:
     owner: Meeting
     domain_of:
     - Meeting
-    range: string
+    range: datetime
   state:
     name: state
     from_schema: https://ch.paf.link/schema/operations
