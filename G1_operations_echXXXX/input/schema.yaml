@@ -3,7 +3,7 @@ name: ch-paf-link-operations
 description: "Meeting Schema for various legislative bodies"
 prefixes:
   linkml: https://w3id.org/linkml/
-  ops: https://ch.paf.link/schema/operations
+  ops: https://ch.paf.link/schema/operations/
   dcterm: http://purl.org/dc/terms/
 imports:
   - linkml:types
