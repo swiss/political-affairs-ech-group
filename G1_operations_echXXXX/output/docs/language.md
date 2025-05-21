@@ -1,11 +1,16 @@
 
 
-# Slot: id 
+# Slot: language 
+
+
+_Language code in ISO 639-1 format_
 
 
 
-URI: [dcterm:identifier](http://purl.org/dc/terms/identifier)
-Alias: id
+
+
+URI: [ops:language](https://ch.paf.link/schema/operations/language)
+Alias: language
 
 <!-- no inheritance hierarchy -->
 
@@ -17,8 +22,7 @@ Alias: id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) |  |  no  |
-| [Container](Container.md) |  |  no  |
+| [MultilingualString](MultilingualString.md) |  |  no  |
 
 
 
@@ -31,6 +35,8 @@ Alias: id
 * Range: [String](String.md)
 
 * Required: True
+
+* Regex pattern: `^[a-z]{2}$`
 
 
 
@@ -56,8 +62,8 @@ Alias: id
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | dcterm:identifier |
-| native | ops:id |
+| self | ops:language |
+| native | ops:language |
 
 
 
@@ -66,17 +72,16 @@ Alias: id
 
 <details>
 ```yaml
-name: id
+name: language
+description: Language code in ISO 639-1 format
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-slot_uri: dcterm:identifier
-identifier: true
-alias: id
+alias: language
 domain_of:
-- Container
-- Meeting
+- MultilingualString
 range: string
 required: true
+pattern: ^[a-z]{2}$
 
 ```
 </details>

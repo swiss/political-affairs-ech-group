@@ -37,6 +37,15 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
         
       Meeting : name
         
+          
+    
+        
+        
+        Meeting --> "*" MultilingualString : name
+        click MultilingualString href "../MultilingualString"
+    
+
+        
       Meeting : number
         
       Meeting : state
@@ -62,7 +71,7 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 | ---  | --- | --- | --- |
 | [id](id.md) | 1 <br/> [String](String.md) |  | direct |
 | [body_key](body_key.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [name](name.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [name](name.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
 | [url](url.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [number](number.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [abbreviation](abbreviation.md) | 0..1 <br/> [String](String.md) |  | direct |
@@ -189,7 +198,10 @@ attributes:
     owner: Meeting
     domain_of:
     - Meeting
-    range: string
+    range: MultilingualString
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   url:
     name: url
     from_schema: https://ch.paf.link/schema/operations

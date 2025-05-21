@@ -14,6 +14,7 @@ Name: ch-paf-link-operations
 | --- | --- |
 | [Container](Container.md) |  |
 | [Meeting](Meeting.md) |  |
+| [MultilingualString](MultilingualString.md) |  |
 
 
 
@@ -30,11 +31,13 @@ Name: ch-paf-link-operations
 | [group_id](group_id.md) |  |
 | [group_name](group_name.md) |  |
 | [id](id.md) |  |
+| [language](language.md) | Language code in ISO 639-1 format |
 | [location](location.md) |  |
 | [meetings](meetings.md) |  |
 | [name](name.md) |  |
 | [number](number.md) |  |
 | [state](state.md) |  |
+| [text](text.md) |  |
 | [type](type.md) |  |
 | [updated_datetime](updated_datetime.md) |  |
 | [url](url.md) |  |

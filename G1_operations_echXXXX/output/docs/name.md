@@ -27,7 +27,9 @@ Alias: name
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [MultilingualString](MultilingualString.md)
+
+* Multivalued: True
 
 
 
@@ -69,7 +71,10 @@ rank: 1000
 alias: name
 domain_of:
 - Meeting
-range: string
+range: MultilingualString
+multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details>

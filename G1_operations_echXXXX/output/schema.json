@@ -87,8 +87,11 @@
                     ]
                 },
                 "name": {
+                    "items": {
+                        "$ref": "#/$defs/MultilingualString"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
@@ -127,6 +130,26 @@
                 "id"
             ],
             "title": "Meeting",
+            "type": "object"
+        },
+        "MultilingualString": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "language": {
+                    "description": "Language code in ISO 639-1 format",
+                    "pattern": "^[a-z]{2}$",
+                    "type": "string"
+                },
+                "text": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "text",
+                "language"
+            ],
+            "title": "MultilingualString",
             "type": "object"
         }
     },

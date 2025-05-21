@@ -1,11 +1,11 @@
 
 
-# Slot: id 
+# Slot: text 
 
 
 
-URI: [dcterm:identifier](http://purl.org/dc/terms/identifier)
-Alias: id
+URI: [ops:text](https://ch.paf.link/schema/operations/text)
+Alias: text
 
 <!-- no inheritance hierarchy -->
 
@@ -17,8 +17,7 @@ Alias: id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) |  |  no  |
-| [Container](Container.md) |  |  no  |
+| [MultilingualString](MultilingualString.md) |  |  no  |
 
 
 
@@ -56,8 +55,8 @@ Alias: id
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | dcterm:identifier |
-| native | ops:id |
+| self | ops:text |
+| native | ops:text |
 
 
 
@@ -66,15 +65,12 @@ Alias: id
 
 <details>
 ```yaml
-name: id
+name: text
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-slot_uri: dcterm:identifier
-identifier: true
-alias: id
+alias: text
 domain_of:
-- Container
-- Meeting
+- MultilingualString
 range: string
 required: true
 
