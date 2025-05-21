@@ -18,6 +18,11 @@ classes:
       - id
       - meetings
 
+  MultilingualString:
+    slots:
+      - text
+      - language
+
   Meeting:
     slots:
       - id
@@ -45,6 +50,9 @@ slots:
     slot_uri: dcterm:identifier
   body_key:
   name:
+    range: MultilingualString
+    multivalued: true
+    inlined_as_list: true
   url:
   number:
   abbreviation:
@@ -65,3 +73,10 @@ slots:
     range: Meeting
     multivalued: true
     inlined_as_list: true
+  text:
+    required: true
+
+  language:
+    required: true
+    description: "Language code in ISO 639-1 format"
+    pattern: ^[a-z]{2}$

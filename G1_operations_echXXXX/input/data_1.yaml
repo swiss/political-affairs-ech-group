@@ -2,7 +2,11 @@ id: ops:meetings_1
 meetings:
   - body_key: "BE"
     id: ops:340dcf932fb044dd8f8c5c943267fbcc
-    name: "Regierungssitzung vom 31. März 2021"
+    name: 
+      - text: "Regierungssitzung vom 31. März 2021"
+        language: "de"
+      - text: "Séance du gouvernement du 31 mars 2021"
+        language: "fr"
     url: "https://www.rr.be.ch/de/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc"
     group_name: "Regierungsrat Bern"
     group_id: "RR"
