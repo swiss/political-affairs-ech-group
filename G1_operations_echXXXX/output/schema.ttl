@@ -1,0 +1,247 @@
+@prefix ops: <https://ch.paf.link/schema/operations> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ops:.owl.ttl a owl:Ontology ;
+    rdfs:label "ch-paf-link-operations" ;
+    skos:definition "Meeting Schema for various legislative bodies" .
+
+ops:Container a owl:Class ;
+    rdfs:label "Container" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:meetings ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ops:Meeting ;
+            owl:onProperty ops:meetings ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:id ] ;
+    skos:inScheme ops: .
+
+ops:Meeting a owl:Class ;
+    rdfs:label "Meeting" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:state ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:group_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:body_key ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:body_key ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:state ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:group_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:end_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:location ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:created_datetime ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:created_datetime ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:begin_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:end_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:updated_datetime ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:body_key ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:updated_datetime ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:location ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:abbreviation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:abbreviation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:group_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:end_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:created_datetime ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:group_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:group_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:updated_datetime ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:begin_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:abbreviation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:number ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:state ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:begin_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:group_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:number ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:number ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:location ] ;
+    skos:inScheme ops: .
+
+ops:meetings a owl:ObjectProperty ;
+    rdfs:label "meetings" ;
+    rdfs:range ops:Meeting ;
+    skos:inScheme ops: .
+
+ops:abbreviation a owl:DatatypeProperty ;
+    rdfs:label "abbreviation" ;
+    skos:inScheme ops: .
+
+ops:begin_date a owl:DatatypeProperty ;
+    rdfs:label "begin_date" ;
+    skos:inScheme ops: .
+
+ops:body_key a owl:DatatypeProperty ;
+    rdfs:label "body_key" ;
+    skos:inScheme ops: .
+
+ops:created_datetime a owl:DatatypeProperty ;
+    rdfs:label "created_datetime" ;
+    skos:inScheme ops: .
+
+ops:description a owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    skos:inScheme ops: .
+
+ops:end_date a owl:DatatypeProperty ;
+    rdfs:label "end_date" ;
+    skos:inScheme ops: .
+
+ops:group_id a owl:DatatypeProperty ;
+    rdfs:label "group_id" ;
+    skos:inScheme ops: .
+
+ops:group_name a owl:DatatypeProperty ;
+    rdfs:label "group_name" ;
+    skos:inScheme ops: .
+
+ops:location a owl:DatatypeProperty ;
+    rdfs:label "location" ;
+    skos:inScheme ops: .
+
+ops:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    skos:inScheme ops: .
+
+ops:number a owl:DatatypeProperty ;
+    rdfs:label "number" ;
+    skos:inScheme ops: .
+
+ops:state a owl:DatatypeProperty ;
+    rdfs:label "state" ;
+    skos:inScheme ops: .
+
+ops:type a owl:DatatypeProperty ;
+    rdfs:label "type" ;
+    skos:inScheme ops: .
+
+ops:updated_datetime a owl:DatatypeProperty ;
+    rdfs:label "updated_datetime" ;
+    skos:inScheme ops: .
+
+ops:url a owl:DatatypeProperty ;
+    rdfs:label "url" ;
+    skos:inScheme ops: .
+
+ops:id a owl:DatatypeProperty ;
+    rdfs:label "id" ;
+    skos:inScheme ops: .
+
+

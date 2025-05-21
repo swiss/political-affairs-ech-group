@@ -1,0 +1,156 @@
+{
+    "$defs": {
+        "Container": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "meetings": {
+                    "items": {
+                        "$ref": "#/$defs/Meeting"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Container",
+            "type": "object"
+        },
+        "Meeting": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "abbreviation": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "begin_date": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "body_key": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "created_datetime": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "end_date": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "group_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "group_name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "number": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "state": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "updated_datetime": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "url": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Meeting",
+            "type": "object"
+        }
+    },
+    "$id": "https://ch.paf.link/schema/operations",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "description": "",
+    "metamodel_version": "1.7.0",
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "meetings": {
+            "items": {
+                "$ref": "#/$defs/Meeting"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        }
+    },
+    "required": [
+        "id"
+    ],
+    "title": "ch-paf-link-operations",
+    "type": "object",
+    "version": null
+}
