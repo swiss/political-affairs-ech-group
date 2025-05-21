@@ -72,7 +72,7 @@ subgroup-name/
 │   ├── subgroup-name.docx
 ```
 
-## LinkML Learnings
+## LinkML Learnings
 
 In this section, we will share our learnings and experiences with LinkML. This includes tips and tricks, best practices, and any challenges we faced during the development of the data schema. We will also provide links to relevant resources and documentation that we found helpful.
 
