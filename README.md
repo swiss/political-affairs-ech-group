@@ -77,3 +77,4 @@ subgroup-name/
 In this section, we will share our learnings and experiences with LinkML. This includes tips and tricks, best practices, and any challenges we faced during the development of the data schema. We will also provide links to relevant resources and documentation that we found helpful.
 
 - if a slot is designated as `identifier: true`, the corresponding value must be a CURIE, e.g. `id: ops:1234` and not `id: 1234`.
+- if a slot needs to be a date with time, use `range: datetime?` and give the value in the format `YYYY-MM-DDTHH:MM:SSZ` (UTC) or `YYYY-MM-DDTHH:MM:SS+1.0` (UTC + 1).

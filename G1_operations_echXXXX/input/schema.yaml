@@ -51,7 +51,9 @@ slots:
   group_name:
   group_id:
   begin_date:
+    range: datetime
   end_date:
+    range: datetime
   state:
   description:
   location:
