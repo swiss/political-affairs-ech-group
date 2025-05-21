@@ -1,52 +1,65 @@
-id: https://w3id.org/linkml/examples/meeting
-name: Meeting
+id: https://ch.paf.link/schema/operations
+name: ch-paf-link-operations
 description: "Meeting Schema for various legislative bodies"
 prefixes:
   linkml: https://w3id.org/linkml/
-  meeting: https://w3id.org/linkml/examples/meeting
-
+  ops: https://ch.paf.link/schema/operations
+  dcterm: http://purl.org/dc/terms/
 imports:
   - linkml:types
+default_prefix: ops
+default_range: string
 
 classes:
-  Meeting:
-    attributes:
-      id:
-        range: string
-      body_key:
-        range: string
-      name:
-        range: string
-      url:
-        range: string
-      number:
-        range: string
-      abbreviation:
-        range: string
-      group_name:
-        range: string
-      group_id:
-        range: string
-      begin_date:
-        range: date_time
-      end_date:
-        range: date_time
-      state:
-        range: string
-      description:
-        range: string
-      location:
-        range: string
-      type:
-        range: string
-      updated_datetime:
-        range: date_time
-      created_datetime:
-        range: date_time
-
+  
   Container:
     tree_root: true
-    attributes:
-      meetings:
-        multivalued: true
-        range: Meeting
+    slots:
+      - id
+      - meetings
+
+  Meeting:
+    slots:
+      - id
+      - body_key
+      - name
+      - url
+      - number
+      - abbreviation
+      - group_name
+      - group_id
+      - begin_date
+      - end_date
+      - state
+      - description
+      - location
+      - type
+      - updated_datetime
+      - created_datetime
+    
+slots:
+  
+  id:
+    identifier: true
+    required: true
+    slot_uri: dcterm:identifier
+  body_key:
+  name:
+  url:
+  number:
+  abbreviation:
+  group_name:
+  group_id:
+  begin_date:
+  end_date:
+  state:
+  description:
+  location:
+  type:
+  updated_datetime:
+  created_datetime:
+  meetings:
+    slot_uri: ops:meeting
+    range: Meeting
+    multivalued: true
+    inlined_as_list: true
