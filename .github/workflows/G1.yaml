@@ -35,15 +35,21 @@ jobs:
           mkdir -p G1_operations_echXXXX/output
           gen-owl G1_operations_echXXXX/input/schema.yaml > G1_operations_echXXXX/output/schema.ttl
 
-      - name: Convert data.yaml to data.json
+      - name: Convert all data_*.yaml to data_*.json
         run: |
           mkdir -p G1_operations_echXXXX/output
-          linkml-convert -s G1_operations_echXXXX/input/schema.yaml -t json G1_operations_echXXXX/input/data.yaml > G1_operations_echXXXX/output/data.json
+          for yaml_file in G1_operations_echXXXX/input/data_*.yaml; do
+            base_name=$(basename "$yaml_file" .yaml)
+            linkml-convert -s G1_operations_echXXXX/input/schema.yaml -t json "$yaml_file" > "G1_operations_echXXXX/output/${base_name}.json"
+          done
 
       - name: Convert data.yaml to data.ttl
         run: |
           mkdir -p G1_operations_echXXXX/output
-          linkml-convert -s G1_operations_echXXXX/input/schema.yaml -t rdf G1_operations_echXXXX/input/data.yaml > G1_operations_echXXXX/output/data.ttl
+          for yaml_file in G1_operations_echXXXX/input/data_*.yaml; do
+            base_name=$(basename "$yaml_file" .yaml)
+            linkml-convert -s G1_operations_echXXXX/input/schema.yaml -t rdf "$yaml_file" > "G1_operations_echXXXX/output/${base_name}.ttl"
+          done
 
       - name: Generate LinkML documentation
         run: |
