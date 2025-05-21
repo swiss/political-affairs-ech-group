@@ -4,7 +4,7 @@
 
 
 
-URI: [ops:Container](https://ch.paf.link/schema/operationsContainer)
+URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
 
 
 

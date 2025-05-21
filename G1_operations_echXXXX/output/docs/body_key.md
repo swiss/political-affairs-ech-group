@@ -4,7 +4,7 @@
 
 
 
-URI: [ops:body_key](https://ch.paf.link/schema/operationsbody_key)
+URI: [ops:body_key](https://ch.paf.link/schema/operations/body_key)
 Alias: body_key
 
 <!-- no inheritance hierarchy -->

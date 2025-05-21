@@ -4,7 +4,7 @@
 
 
 
-URI: [ops:description](https://ch.paf.link/schema/operationsdescription)
+URI: [ops:description](https://ch.paf.link/schema/operations/description)
 Alias: description
 
 <!-- no inheritance hierarchy -->

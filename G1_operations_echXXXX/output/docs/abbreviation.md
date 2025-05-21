@@ -4,7 +4,7 @@
 
 
 
-URI: [ops:abbreviation](https://ch.paf.link/schema/operationsabbreviation)
+URI: [ops:abbreviation](https://ch.paf.link/schema/operations/abbreviation)
 Alias: abbreviation
 
 <!-- no inheritance hierarchy -->

@@ -4,7 +4,7 @@
 
 
 
-URI: [ops:location](https://ch.paf.link/schema/operationslocation)
+URI: [ops:location](https://ch.paf.link/schema/operations/location)
 Alias: location
 
 <!-- no inheritance hierarchy -->

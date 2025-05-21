@@ -4,7 +4,7 @@
 
 
 
-URI: [ops:group_name](https://ch.paf.link/schema/operationsgroup_name)
+URI: [ops:group_name](https://ch.paf.link/schema/operations/group_name)
 Alias: group_name
 
 <!-- no inheritance hierarchy -->

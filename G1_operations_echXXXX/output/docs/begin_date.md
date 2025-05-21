@@ -4,7 +4,7 @@
 
 
 
-URI: [ops:begin_date](https://ch.paf.link/schema/operationsbegin_date)
+URI: [ops:begin_date](https://ch.paf.link/schema/operations/begin_date)
 Alias: begin_date
 
 <!-- no inheritance hierarchy -->

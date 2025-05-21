@@ -4,7 +4,7 @@
 
 
 
-URI: [ops:end_date](https://ch.paf.link/schema/operationsend_date)
+URI: [ops:end_date](https://ch.paf.link/schema/operations/end_date)
 Alias: end_date
 
 <!-- no inheritance hierarchy -->

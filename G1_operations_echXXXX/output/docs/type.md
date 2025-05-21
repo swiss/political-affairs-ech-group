@@ -4,7 +4,7 @@
 
 
 
-URI: [ops:type](https://ch.paf.link/schema/operationstype)
+URI: [ops:type](https://ch.paf.link/schema/operations/type)
 Alias: type
 
 <!-- no inheritance hierarchy -->

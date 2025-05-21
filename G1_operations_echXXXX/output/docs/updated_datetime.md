@@ -4,7 +4,7 @@
 
 
 
-URI: [ops:updated_datetime](https://ch.paf.link/schema/operationsupdated_datetime)
+URI: [ops:updated_datetime](https://ch.paf.link/schema/operations/updated_datetime)
 Alias: updated_datetime
 
 <!-- no inheritance hierarchy -->

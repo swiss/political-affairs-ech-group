@@ -1,4 +1,4 @@
-@prefix ops: <https://ch.paf.link/schema/operations> .
+@prefix ops: <https://ch.paf.link/schema/operations/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 ops:meetings_1 a ops:Container ;

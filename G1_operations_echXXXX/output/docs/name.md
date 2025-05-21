@@ -4,7 +4,7 @@
 
 
 
-URI: [ops:name](https://ch.paf.link/schema/operationsname)
+URI: [ops:name](https://ch.paf.link/schema/operations/name)
 Alias: name
 
 <!-- no inheritance hierarchy -->

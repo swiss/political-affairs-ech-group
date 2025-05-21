@@ -4,7 +4,7 @@
 
 
 
-URI: [ops:created_datetime](https://ch.paf.link/schema/operationscreated_datetime)
+URI: [ops:created_datetime](https://ch.paf.link/schema/operations/created_datetime)
 Alias: created_datetime
 
 <!-- no inheritance hierarchy -->

@@ -4,7 +4,7 @@
 
 
 
-URI: [ops:Meeting](https://ch.paf.link/schema/operationsMeeting)
+URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 
 
 

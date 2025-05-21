@@ -4,7 +4,7 @@
 
 
 
-URI: [ops:number](https://ch.paf.link/schema/operationsnumber)
+URI: [ops:number](https://ch.paf.link/schema/operations/number)
 Alias: number
 
 <!-- no inheritance hierarchy -->

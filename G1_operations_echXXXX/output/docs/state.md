@@ -4,7 +4,7 @@
 
 
 
-URI: [ops:state](https://ch.paf.link/schema/operationsstate)
+URI: [ops:state](https://ch.paf.link/schema/operations/state)
 Alias: state
 
 <!-- no inheritance hierarchy -->

@@ -4,7 +4,7 @@
 
 
 
-URI: [ops:meeting](https://ch.paf.link/schema/operationsmeeting)
+URI: [ops:meeting](https://ch.paf.link/schema/operations/meeting)
 Alias: meetings
 
 <!-- no inheritance hierarchy -->
