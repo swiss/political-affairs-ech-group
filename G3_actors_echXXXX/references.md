@@ -54,3 +54,24 @@
 
 - **Cantonal Parliament Members (Grosser Rat Kanton Thurgau)**  
   [https://data.tg.ch/explore/dataset/sk-stat-138](https://data.tg.ch/explore/dataset/sk-stat-138/table/)
+
+## Canton of Bern – Parliamentary Data
+
+Source: [Open Data Angebot Grosser Rat](https://www.gr.be.ch/de/start/grosser-rat/open-data-angebot-gr/datensaetze-und-dokumentation.html)
+
+- **Members of the Cantonal Parliament (Mitglieder des Grossen Rates)**  
+  - [Download CSV](https://www.gr.be.ch/etc/designs/grportal/datensaetze/Mitglieder-des-Grossen-Rates.csv)  
+  - [Download JSON](https://www.gr.be.ch/etc/designs/grportal/datensaetze/Mitglieder-des-Grossen-Rates.json)  
+
+- **Interests (Interessenbindungen)**  
+  - [Download CSV](https://www.gr.be.ch/etc/designs/grportal/datensaetze/Interessenbindungen.csv)  
+  - [Download JSON](https://www.gr.be.ch/etc/designs/grportal/datensaetze/Interessenbindungen.json)  
+
+- **Parliamentary Organs (Ratsorgane)**  
+  - [Download CSV](https://www.gr.be.ch/etc/designs/grportal/datensaetze/Ratsorgane.csv)  
+  - [Download JSON](https://www.gr.be.ch/etc/designs/grportal/datensaetze/Ratsorgane.json)  
+
+- **Memberships in Organs/Groups (Mitgliedschaften)**  
+  - [Download CSV](https://www.gr.be.ch/etc/designs/grportal/datensaetze/Mitgliedschaften.csv)  
+  - [Download JSON](https://www.gr.be.ch/etc/designs/grportal/datensaetze/Mitgliedschaften.json)  
+
