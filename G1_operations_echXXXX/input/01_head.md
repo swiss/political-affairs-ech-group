@@ -22,7 +22,7 @@ toc: false
 
 # Summary
 
-Brief summary of the purpose of the document.
+Brief summary of the purpose of the document and standard.
 
 # Table of Contents
 
