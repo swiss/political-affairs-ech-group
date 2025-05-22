@@ -51,12 +51,32 @@ classes:
       - group_id
       - begin_date
       - end_date
-      - state
+      - begin_date_actual
+      - end_date_actual
+      - state #braucht noch enum planned, canceled, postponed
       - description
       - location
       - type
       - updated_datetime
       - created_datetime
+
+  meeting_item:
+    slots:
+      - id
+      - datetime
+      - datetime_actual
+      - postion
+      - number
+      - title
+      - affairs #zu 
+      - description
+      - status
+      - result
+      - url
+      - category
+      - updated_datetime
+      - created_datetime
+
 
 slots:
 
