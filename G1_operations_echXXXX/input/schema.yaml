@@ -11,17 +11,48 @@ default_prefix: ops
 default_range: string
 
 classes:
-  
+
   Container:
     tree_root: true
     slots:
       - id
       - meetings
+      - sessions
+      - legislatures
 
   MultilingualString:
     slots:
       - text
       - language
+
+  Legislatur:
+    slots:
+      - id
+      - body_key
+      - name
+      - url
+      - description
+      - group_name
+      - group_id
+      - begin_date
+      - end_date
+      - updated_datetime
+      - created_datetime
+
+
+  Session:
+    slots:
+      - id
+      - body_key
+      - name
+      - url
+      - description
+      - group_name
+      - group_id
+      - begin_date
+      - end_date
+      - updated_datetime
+      - created_datetime
 
   Meeting:
     slots:
@@ -41,9 +72,10 @@ classes:
       - type
       - updated_datetime
       - created_datetime
-    
+
+
 slots:
-  
+
   id:
     identifier: true
     required: true
@@ -75,9 +107,18 @@ slots:
     range: Meeting
     multivalued: true
     inlined_as_list: true
+  sessions:
+    slot_uri: ops:session
+    range: Session
+    multivalued: true
+    inlined_as_list: true
+  legislatures:
+    slot_uri: ops:legislature
+    range: Legislatur
+    multivalued: true
+    inlined_as_list: true
   text:
     required: true
-
   language:
     required: true
     description: "Language code in ISO 639-1 format"
