@@ -14,14 +14,13 @@
           "language": "fr"
         }
       ],
-      "url": "https://www.rr.be.ch/de/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc",
+      "url": "[{'text': 'https://www.rr.be.ch/de/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc', 'language': 'de'}, {'text': 'https://www.rr.be.ch/fr/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc', 'language': 'fr'}]",
       "number": "",
       "abbreviation": "",
       "group_name": "Regierungsrat Bern",
       "group_id": "RR",
       "begin_date": "2021-03-31T00:00:00+01:00",
       "end_date": "2021-03-31T00:00:00+01:00",
-      "type": "meeting",
       "updated_datetime": "2024-11-27T20:40:57Z",
       "created_datetime": "2024-10-28T01:22:26Z"
     }
