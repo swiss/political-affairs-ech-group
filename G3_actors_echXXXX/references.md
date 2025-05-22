@@ -57,7 +57,7 @@
 
 ## Canton of Bern – Parliamentary Data
 
-Source: [Open Data Angebot Grosser Rat](https://www.gr.be.ch/de/start/grosser-rat/open-data-angebot-gr/datensaetze-und-dokumentation.html)
+ [Open Data Angebot Grosser Rat](https://www.gr.be.ch/de/start/grosser-rat/open-data-angebot-gr/datensaetze-und-dokumentation.html)
 
 - **Members of the Cantonal Parliament (Mitglieder des Grossen Rates)**  
   - [Download CSV](https://www.gr.be.ch/etc/designs/grportal/datensaetze/Mitglieder-des-Grossen-Rates.csv)  
@@ -73,5 +73,8 @@ Source: [Open Data Angebot Grosser Rat](https://www.gr.be.ch/de/start/grosser-ra
 
 - **Memberships in Organs/Groups (Mitgliedschaften)**  
   - [Download CSV](https://www.gr.be.ch/etc/designs/grportal/datensaetze/Mitgliedschaften.csv)  
-  - [Download JSON](https://www.gr.be.ch/etc/designs/grportal/datensaetze/Mitgliedschaften.json)  
+  - [Download JSON](https://www.gr.be.ch/etc/designs/grportal/datensaetze/Mitgliedschaften.json)
+ 
+## Canton of Zurich – Parliamentary Data
+  - [Mitglieder des Kantonsrates des Kantons Zürich](https://opendata.swiss/de/dataset/web-service-des-geschaftsverwaltungssystems-des-kantonsrates-des-kantons-zurich/resource/9ddb2f1c-18a4-4359-8323-9bbb20200db8)
 
