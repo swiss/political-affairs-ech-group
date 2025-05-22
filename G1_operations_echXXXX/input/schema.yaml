@@ -54,6 +54,9 @@ slots:
     multivalued: true
     inlined_as_list: true
   url:
+    range: MultilingualString
+    multivalued: true
+    inlined_as_list: true
   number:
   abbreviation:
   group_name:
@@ -65,7 +68,6 @@ slots:
   state:
   description:
   location:
-  type:
   updated_datetime:
   created_datetime:
   meetings:
