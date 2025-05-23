@@ -13,6 +13,7 @@
 
 Typen ausgeschrieben: https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/nomenklaturen.assetdetail.24565576.html 
 
+```
 Person1 {
 usedFirstName: "Michael",
 usedLastName: "Luggen",
@@ -27,6 +28,7 @@ otherNames:
   },
 ]
 }
+```
 
 Amtlich * Label typ
   vorname
