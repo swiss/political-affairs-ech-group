@@ -20,9 +20,9 @@ otherNames:
   { nameType: nameOnForeignPassport , 
   firstname: "Michéle",
   lastname: "Luca",
-  fullName "Michael Luggen"},
-  { nameType: Rufname, 
-  fullName "luggi",
+  fullName: "Michéle Luca"},
+  { nameType: callName, 
+  fullName: "luggi",
   },
 ]
 }
