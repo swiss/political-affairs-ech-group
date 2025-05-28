@@ -24,24 +24,33 @@ Cross-Check: * Poltische Rechte
   * Ratsinformationssystem -> Möglichkeit (an CH44 orientiert)
     * Legislaturbasierend? verschiedene Ratssystemids vom selben Rat?
     * Rückwirkend IDs vergeben? -> Wikidata - "Datenraum Politik" / ähnlich Metagrid
+    * 
   * Externe Identifikatoren
     * Wikidata? ( Italienisches Parlament )
+      * Wikidata; z.B. Swiss Parlament ID: https://www.wikidata.org/wiki/Property:P1307
+        * [WikiProject Govdirectory/Switzerland](https://www.wikidata.org/wiki/Wikidata:WikiProject_Govdirectory/Switzerland)
+      * Wikidata wird der Identifer vom Ratssystem? Problem mit Wikidata als extern organisiert.
+      * Wikidata als prefered secondary Identifier.
+ 
     * https://metagrid.ch/
     * GND / VIAF
     * SmartVote
     * SelectCandidateSurvey
    
-   * Wikidata (Attrib Swiss Parlament ID (ratsid bei wikidata hinzufügen))
-   * Wikidata wird der Identifer vom Ratssystem? Problem mit Wikidata als extern organisiert.
-   * Wikidata als prefered secondary Identifier.
+
 
 
 * Use Case
   * Alle mögliche Anzeige und offizielen Namen (für Websites)
     * Beispiele:
-      * @Christian
+      * UR: [Alois (1981) Arnold](https://www.ur.ch/behoerdenmitglieder/6447)
+      * UR: [Alois (1965) Arnold](https://www.ur.ch/behoerdenmitglieder/6370)
+      * TI: [Fausto "Gerri" Beretta-Piccoli] (https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269)
   * Übernahme von den Wahlsystemen ( Politische Rechte ).
   * Überlegungen zu Datenschutz / Öffentlichkeitsrecht -> ein Kapitel mit Analyse des IST Zustands / Rechtsgrundlage oder Toolkit ?
+  * [Ersetzung der privaten Wohnadresse als Identifikator der Urheber von Volksinitiativen](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20243425)
+  * [Verhinderung der Pflicht zur Veröffentlichung der Wohnadressen von Parlamentsmitgliedern](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20233913}
+  * Gleiche Namen im Parlament: https://www.parlament.ch/centers/documents/de/gleichnamige-ratsmitglieder.pdf
 
   
 ```
