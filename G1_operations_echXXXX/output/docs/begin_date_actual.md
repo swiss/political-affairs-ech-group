@@ -1,11 +1,11 @@
 
 
-# Slot: description 
+# Slot: begin_date_actual 
 
 
 
-URI: [ops:description](https://ch.paf.link/schema/operations/description)
-Alias: description
+URI: [ops:begin_date_actual](https://ch.paf.link/schema/operations/begin_date_actual)
+Alias: begin_date_actual
 
 <!-- no inheritance hierarchy -->
 
@@ -17,10 +17,7 @@ Alias: description
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MeetingItem](MeetingItem.md) |  |  no  |
 | [Meeting](Meeting.md) |  |  no  |
-| [Session](Session.md) |  |  no  |
-| [Legislature](Legislature.md) |  |  no  |
 
 
 
@@ -30,7 +27,7 @@ Alias: description
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Date](Date.md)
 
 
 
@@ -56,8 +53,8 @@ Alias: description
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ops:description |
-| native | ops:description |
+| self | ops:begin_date_actual |
+| native | ops:begin_date_actual |
 
 
 
@@ -66,16 +63,13 @@ Alias: description
 
 <details>
 ```yaml
-name: description
+name: begin_date_actual
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: description
+alias: begin_date_actual
 domain_of:
-- Legislature
-- Session
 - Meeting
-- MeetingItem
-range: string
+range: date
 
 ```
 </details>

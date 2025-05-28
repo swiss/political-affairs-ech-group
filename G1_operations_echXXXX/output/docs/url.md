@@ -17,7 +17,10 @@ Alias: url
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [MeetingItem](MeetingItem.md) |  |  no  |
 | [Meeting](Meeting.md) |  |  no  |
+| [Session](Session.md) |  |  no  |
+| [Legislature](Legislature.md) |  |  no  |
 
 
 
@@ -27,7 +30,9 @@ Alias: url
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [MultilingualString](MultilingualString.md)
+
+* Multivalued: True
 
 
 
@@ -68,8 +73,14 @@ from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 alias: url
 domain_of:
+- Legislature
+- Session
 - Meeting
-range: string
+- MeetingItem
+range: MultilingualString
+multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details>

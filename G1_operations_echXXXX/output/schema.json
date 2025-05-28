@@ -7,9 +7,36 @@
                 "id": {
                     "type": "string"
                 },
+                "legislatures": {
+                    "items": {
+                        "$ref": "#/$defs/Legislature"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "meeting_items": {
+                    "items": {
+                        "$ref": "#/$defs/MeetingItem"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "meetings": {
                     "items": {
                         "$ref": "#/$defs/Meeting"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "sessions": {
+                    "items": {
+                        "$ref": "#/$defs/Session"
                     },
                     "type": [
                         "array",
@@ -23,18 +50,12 @@
             "title": "Container",
             "type": "object"
         },
-        "Meeting": {
+        "Legislature": {
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "abbreviation": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "begin_date": {
-                    "format": "date-time",
+                    "format": "date",
                     "type": [
                         "string",
                         "null"
@@ -47,6 +68,8 @@
                     ]
                 },
                 "created_datetime": {
+                    "description": "The time this record was created",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -59,7 +82,113 @@
                     ]
                 },
                 "end_date": {
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "group_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "group_name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "items": {
+                        "$ref": "#/$defs/MultilingualString"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "updated_datetime": {
+                    "description": "The last time this record was updated",
                     "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "url": {
+                    "items": {
+                        "$ref": "#/$defs/MultilingualString"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Legislature",
+            "type": "object"
+        },
+        "Meeting": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "abbreviation": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "begin_date": {
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "begin_date_actual": {
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "body_key": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "created_datetime": {
+                    "description": "The time this record was created",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "end_date": {
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "end_date_actual": {
+                    "format": "date",
                     "type": [
                         "string",
                         "null"
@@ -102,10 +231,7 @@
                     ]
                 },
                 "state": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "$ref": "#/$defs/StateEnum"
                 },
                 "type": {
                     "type": [
@@ -114,14 +240,19 @@
                     ]
                 },
                 "updated_datetime": {
+                    "description": "The last time this record was updated",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "url": {
+                    "items": {
+                        "$ref": "#/$defs/MultilingualString"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 }
@@ -130,6 +261,107 @@
                 "id"
             ],
             "title": "Meeting",
+            "type": "object"
+        },
+        "MeetingItem": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "affairs": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "category": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "created_datetime": {
+                    "description": "The time this record was created",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_time": {
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_time_actual": {
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "number": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "position": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "result": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "status": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "title": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "updated_datetime": {
+                    "description": "The last time this record was updated",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "url": {
+                    "items": {
+                        "$ref": "#/$defs/MultilingualString"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "MeetingItem",
             "type": "object"
         },
         "MultilingualString": {
@@ -151,6 +383,114 @@
             ],
             "title": "MultilingualString",
             "type": "object"
+        },
+        "Session": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "abbreviation": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "begin_date": {
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "body_key": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "created_datetime": {
+                    "description": "The time this record was created",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "end_date": {
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "group_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "group_name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "items": {
+                        "$ref": "#/$defs/MultilingualString"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "number": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "updated_datetime": {
+                    "description": "The last time this record was updated",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "url": {
+                    "items": {
+                        "$ref": "#/$defs/MultilingualString"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Session",
+            "type": "object"
+        },
+        "StateEnum": {
+            "description": "State of the meeting",
+            "enum": [
+                "planned",
+                "canceled",
+                "postponed"
+            ],
+            "title": "StateEnum",
+            "type": "string"
         }
     },
     "$id": "https://ch.paf.link/schema/operations",
@@ -162,9 +502,36 @@
         "id": {
             "type": "string"
         },
+        "legislatures": {
+            "items": {
+                "$ref": "#/$defs/Legislature"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "meeting_items": {
+            "items": {
+                "$ref": "#/$defs/MeetingItem"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
         "meetings": {
             "items": {
                 "$ref": "#/$defs/Meeting"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "sessions": {
+            "items": {
+                "$ref": "#/$defs/Session"
             },
             "type": [
                 "array",
@@ -175,7 +542,7 @@
     "required": [
         "id"
     ],
-    "title": "ch-paf-link-operations",
+    "title": "operations",
     "type": "object",
     "version": null
 }

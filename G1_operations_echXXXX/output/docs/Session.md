@@ -1,10 +1,10 @@
 
 
-# Class: Meeting 
+# Class: Session 
 
 
 
-URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
+URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
 
 
 
@@ -13,67 +13,48 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 
 ```mermaid
  classDiagram
-    class Meeting
-    click Meeting href "../Meeting"
-      Meeting : abbreviation
+    class Session
+    click Session href "../Session"
+      Session : abbreviation
         
-      Meeting : begin_date
+      Session : begin_date
         
-      Meeting : begin_date_actual
+      Session : body_key
         
-      Meeting : body_key
+      Session : created_datetime
         
-      Meeting : created_datetime
+      Session : description
         
-      Meeting : description
+      Session : end_date
         
-      Meeting : end_date
+      Session : group_id
         
-      Meeting : end_date_actual
+      Session : group_name
         
-      Meeting : group_id
+      Session : id
         
-      Meeting : group_name
-        
-      Meeting : id
-        
-      Meeting : location
-        
-      Meeting : name
+      Session : name
         
           
     
         
         
-        Meeting --> "*" MultilingualString : name
+        Session --> "*" MultilingualString : name
         click MultilingualString href "../MultilingualString"
     
 
         
-      Meeting : number
+      Session : number
         
-      Meeting : state
+      Session : updated_datetime
         
-          
-    
-        
-        
-        Meeting --> "0..1" StateEnum : state
-        click StateEnum href "../StateEnum"
-    
-
-        
-      Meeting : type
-        
-      Meeting : updated_datetime
-        
-      Meeting : url
+      Session : url
         
           
     
         
         
-        Meeting --> "*" MultilingualString : url
+        Session --> "*" MultilingualString : url
         click MultilingualString href "../MultilingualString"
     
 
@@ -95,18 +76,13 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 | [body_key](body_key.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [name](name.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
 | [url](url.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
-| [number](number.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [abbreviation](abbreviation.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [description](description.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [group_name](group_name.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [group_id](group_id.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [number](number.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [abbreviation](abbreviation.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [begin_date](begin_date.md) | 0..1 <br/> [Date](Date.md) |  | direct |
 | [end_date](end_date.md) | 0..1 <br/> [Date](Date.md) |  | direct |
-| [begin_date_actual](begin_date_actual.md) | 0..1 <br/> [Date](Date.md) |  | direct |
-| [end_date_actual](end_date_actual.md) | 0..1 <br/> [Date](Date.md) |  | direct |
-| [state](state.md) | 0..1 <br/> [StateEnum](StateEnum.md) |  | direct |
-| [description](description.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [location](location.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [type](type.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [updated_datetime](updated_datetime.md) | 0..1 <br/> [Datetime](Datetime.md) | The last time this record was updated | direct |
 | [created_datetime](created_datetime.md) | 0..1 <br/> [Datetime](Datetime.md) | The time this record was created | direct |
 
@@ -118,7 +94,7 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Container](Container.md) | [meetings](meetings.md) | range | [Meeting](Meeting.md) |
+| [Container](Container.md) | [sessions](sessions.md) | range | [Session](Session.md) |
 
 
 
@@ -145,8 +121,8 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ops:Meeting |
-| native | ops:Meeting |
+| self | ops:Session |
+| native | ops:Session |
 
 
 
@@ -162,25 +138,20 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 
 <details>
 ```yaml
-name: Meeting
+name: Session
 from_schema: https://ch.paf.link/schema/operations
 slots:
 - id
 - body_key
 - name
 - url
-- number
-- abbreviation
+- description
 - group_name
 - group_id
+- number
+- abbreviation
 - begin_date
 - end_date
-- begin_date_actual
-- end_date_actual
-- state
-- description
-- location
-- type
 - updated_datetime
 - created_datetime
 
@@ -191,7 +162,7 @@ slots:
 
 <details>
 ```yaml
-name: Meeting
+name: Session
 from_schema: https://ch.paf.link/schema/operations
 attributes:
   id:
@@ -201,7 +172,7 @@ attributes:
     slot_uri: dcterm:identifier
     identifier: true
     alias: id
-    owner: Meeting
+    owner: Session
     domain_of:
     - Container
     - Legislature
@@ -215,7 +186,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     alias: body_key
-    owner: Meeting
+    owner: Session
     domain_of:
     - Legislature
     - Session
@@ -226,7 +197,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     alias: name
-    owner: Meeting
+    owner: Session
     domain_of:
     - Legislature
     - Session
@@ -240,7 +211,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     alias: url
-    owner: Meeting
+    owner: Session
     domain_of:
     - Legislature
     - Session
@@ -250,33 +221,24 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  number:
-    name: number
+  description:
+    name: description
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: number
-    owner: Meeting
+    alias: description
+    owner: Session
     domain_of:
+    - Legislature
     - Session
     - Meeting
     - MeetingItem
-    range: string
-  abbreviation:
-    name: abbreviation
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: abbreviation
-    owner: Meeting
-    domain_of:
-    - Session
-    - Meeting
     range: string
   group_name:
     name: group_name
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     alias: group_name
-    owner: Meeting
+    owner: Session
     domain_of:
     - Legislature
     - Session
@@ -287,9 +249,30 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     alias: group_id
-    owner: Meeting
+    owner: Session
     domain_of:
     - Legislature
+    - Session
+    - Meeting
+    range: string
+  number:
+    name: number
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: number
+    owner: Session
+    domain_of:
+    - Session
+    - Meeting
+    - MeetingItem
+    range: string
+  abbreviation:
+    name: abbreviation
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: abbreviation
+    owner: Session
+    domain_of:
     - Session
     - Meeting
     range: string
@@ -298,7 +281,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     alias: begin_date
-    owner: Meeting
+    owner: Session
     domain_of:
     - Legislature
     - Session
@@ -309,76 +292,19 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     alias: end_date
-    owner: Meeting
+    owner: Session
     domain_of:
     - Legislature
     - Session
     - Meeting
     range: date
-  begin_date_actual:
-    name: begin_date_actual
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: begin_date_actual
-    owner: Meeting
-    domain_of:
-    - Meeting
-    range: date
-  end_date_actual:
-    name: end_date_actual
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: end_date_actual
-    owner: Meeting
-    domain_of:
-    - Meeting
-    range: date
-  state:
-    name: state
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: state
-    owner: Meeting
-    domain_of:
-    - Meeting
-    range: state_enum
-  description:
-    name: description
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: description
-    owner: Meeting
-    domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - MeetingItem
-    range: string
-  location:
-    name: location
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: location
-    owner: Meeting
-    domain_of:
-    - Meeting
-    range: string
-  type:
-    name: type
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: type
-    owner: Meeting
-    domain_of:
-    - Meeting
-    range: string
   updated_datetime:
     name: updated_datetime
     description: The last time this record was updated
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     alias: updated_datetime
-    owner: Meeting
+    owner: Session
     domain_of:
     - Legislature
     - Session
@@ -391,7 +317,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     alias: created_datetime
-    owner: Meeting
+    owner: Session
     domain_of:
     - Legislature
     - Session

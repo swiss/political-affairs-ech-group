@@ -43,7 +43,13 @@ URI: [ops:MultilingualString](https://ch.paf.link/schema/operations/Multilingual
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
+| [Legislature](Legislature.md) | [name](name.md) | range | [MultilingualString](MultilingualString.md) |
+| [Legislature](Legislature.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |
+| [Session](Session.md) | [name](name.md) | range | [MultilingualString](MultilingualString.md) |
+| [Session](Session.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |
 | [Meeting](Meeting.md) | [name](name.md) | range | [MultilingualString](MultilingualString.md) |
+| [Meeting](Meeting.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |
+| [MeetingItem](MeetingItem.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |
 
 
 

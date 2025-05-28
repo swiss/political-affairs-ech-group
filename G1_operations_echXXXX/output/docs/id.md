@@ -17,8 +17,11 @@ Alias: id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) |  |  no  |
+| [MeetingItem](MeetingItem.md) |  |  no  |
 | [Container](Container.md) |  |  no  |
+| [Session](Session.md) |  |  no  |
+| [Meeting](Meeting.md) |  |  no  |
+| [Legislature](Legislature.md) |  |  no  |
 
 
 
@@ -74,7 +77,10 @@ identifier: true
 alias: id
 domain_of:
 - Container
+- Legislature
+- Session
 - Meeting
+- MeetingItem
 range: string
 required: true
 

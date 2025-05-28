@@ -17,7 +17,9 @@ Alias: number
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [MeetingItem](MeetingItem.md) |  |  no  |
 | [Meeting](Meeting.md) |  |  no  |
+| [Session](Session.md) |  |  no  |
 
 
 
@@ -68,7 +70,9 @@ from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 alias: number
 domain_of:
+- Session
 - Meeting
+- MeetingItem
 range: string
 
 ```

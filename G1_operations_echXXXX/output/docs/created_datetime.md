@@ -3,6 +3,11 @@
 # Slot: created_datetime 
 
 
+_The time this record was created_
+
+
+
+
 
 URI: [ops:created_datetime](https://ch.paf.link/schema/operations/created_datetime)
 Alias: created_datetime
@@ -17,7 +22,10 @@ Alias: created_datetime
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [MeetingItem](MeetingItem.md) |  |  no  |
 | [Meeting](Meeting.md) |  |  no  |
+| [Session](Session.md) |  |  no  |
+| [Legislature](Legislature.md) |  |  no  |
 
 
 
@@ -27,7 +35,7 @@ Alias: created_datetime
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Datetime](Datetime.md)
 
 
 
@@ -64,12 +72,16 @@ Alias: created_datetime
 <details>
 ```yaml
 name: created_datetime
+description: The time this record was created
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 alias: created_datetime
 domain_of:
+- Legislature
+- Session
 - Meeting
-range: string
+- MeetingItem
+range: datetime
 
 ```
 </details>

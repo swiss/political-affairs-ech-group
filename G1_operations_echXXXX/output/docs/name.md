@@ -18,6 +18,8 @@ Alias: name
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Meeting](Meeting.md) |  |  no  |
+| [Session](Session.md) |  |  no  |
+| [Legislature](Legislature.md) |  |  no  |
 
 
 
@@ -70,6 +72,8 @@ from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 alias: name
 domain_of:
+- Legislature
+- Session
 - Meeting
 range: MultilingualString
 multivalued: true

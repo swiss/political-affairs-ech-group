@@ -1,11 +1,11 @@
 
 
-# Slot: description 
+# Slot: sessions 
 
 
 
-URI: [ops:description](https://ch.paf.link/schema/operations/description)
-Alias: description
+URI: [ops:session](https://ch.paf.link/schema/operations/session)
+Alias: sessions
 
 <!-- no inheritance hierarchy -->
 
@@ -17,10 +17,7 @@ Alias: description
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MeetingItem](MeetingItem.md) |  |  no  |
-| [Meeting](Meeting.md) |  |  no  |
-| [Session](Session.md) |  |  no  |
-| [Legislature](Legislature.md) |  |  no  |
+| [Container](Container.md) |  |  no  |
 
 
 
@@ -30,7 +27,9 @@ Alias: description
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Session](Session.md)
+
+* Multivalued: True
 
 
 
@@ -56,8 +55,8 @@ Alias: description
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ops:description |
-| native | ops:description |
+| self | ops:session |
+| native | ops:sessions |
 
 
 
@@ -66,16 +65,17 @@ Alias: description
 
 <details>
 ```yaml
-name: description
+name: sessions
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: description
+slot_uri: ops:session
+alias: sessions
 domain_of:
-- Legislature
-- Session
-- Meeting
-- MeetingItem
-range: string
+- Container
+range: Session
+multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details>

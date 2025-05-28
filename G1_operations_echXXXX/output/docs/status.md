@@ -1,11 +1,11 @@
 
 
-# Slot: description 
+# Slot: status 
 
 
 
-URI: [ops:description](https://ch.paf.link/schema/operations/description)
-Alias: description
+URI: [ops:status](https://ch.paf.link/schema/operations/status)
+Alias: status
 
 <!-- no inheritance hierarchy -->
 
@@ -18,9 +18,6 @@ Alias: description
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [MeetingItem](MeetingItem.md) |  |  no  |
-| [Meeting](Meeting.md) |  |  no  |
-| [Session](Session.md) |  |  no  |
-| [Legislature](Legislature.md) |  |  no  |
 
 
 
@@ -56,8 +53,8 @@ Alias: description
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ops:description |
-| native | ops:description |
+| self | ops:status |
+| native | ops:status |
 
 
 
@@ -66,14 +63,11 @@ Alias: description
 
 <details>
 ```yaml
-name: description
+name: status
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: description
+alias: status
 domain_of:
-- Legislature
-- Session
-- Meeting
 - MeetingItem
 range: string
 

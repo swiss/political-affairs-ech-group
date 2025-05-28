@@ -1,11 +1,11 @@
 
 
-# Slot: description 
+# Slot: date_time 
 
 
 
-URI: [ops:description](https://ch.paf.link/schema/operations/description)
-Alias: description
+URI: [ops:date_time](https://ch.paf.link/schema/operations/date_time)
+Alias: date_time
 
 <!-- no inheritance hierarchy -->
 
@@ -18,9 +18,6 @@ Alias: description
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [MeetingItem](MeetingItem.md) |  |  no  |
-| [Meeting](Meeting.md) |  |  no  |
-| [Session](Session.md) |  |  no  |
-| [Legislature](Legislature.md) |  |  no  |
 
 
 
@@ -30,7 +27,7 @@ Alias: description
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Datetime](Datetime.md)
 
 
 
@@ -56,8 +53,8 @@ Alias: description
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ops:description |
-| native | ops:description |
+| self | ops:date_time |
+| native | ops:date_time |
 
 
 
@@ -66,16 +63,13 @@ Alias: description
 
 <details>
 ```yaml
-name: description
+name: date_time
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: description
+alias: date_time
 domain_of:
-- Legislature
-- Session
-- Meeting
 - MeetingItem
-range: string
+range: datetime
 
 ```
 </details>

@@ -18,6 +18,7 @@ Alias: abbreviation
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Meeting](Meeting.md) |  |  no  |
+| [Session](Session.md) |  |  no  |
 
 
 
@@ -68,6 +69,7 @@ from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 alias: abbreviation
 domain_of:
+- Session
 - Meeting
 range: string
 

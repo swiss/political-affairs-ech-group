@@ -1,0 +1,66 @@
+{
+  "id": "ops:meetings_1",
+  "meetings": [
+    {
+      "id": "ops:340dcf932fb044dd8f8c5c943267fbcc",
+      "body_key": "BE",
+      "name": [
+        {
+          "text": "Regierungssitzung vom 31. März 2021",
+          "language": "de"
+        },
+        {
+          "text": "Séance du gouvernement du 31 mars 2021",
+          "language": "fr"
+        }
+      ],
+      "url": [
+        {
+          "text": "https://www.rr.be.ch/de/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc",
+          "language": "de"
+        },
+        {
+          "text": "https://www.rr.be.ch/fr/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc",
+          "language": "fr"
+        }
+      ],
+      "number": "",
+      "abbreviation": "",
+      "group_name": "Regierungsrat Bern",
+      "group_id": "RR",
+      "begin_date": "2021-03-31",
+      "end_date": "2021-03-31",
+      "updated_datetime": "2024-11-27T20:40:57+00:00",
+      "created_datetime": "2024-10-28T01:22:26+00:00"
+    },
+    {
+      "id": "ops:e7c5d453-848a-430a-b024-1dd2f6873aa6",
+      "body_key": "BE",
+      "name": [
+        {
+          "text": "Donnerstag (Nachmittag)",
+          "language": "de"
+        }
+      ],
+      "url": [
+        {
+          "text": "https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8",
+          "language": "de"
+        },
+        {
+          "text": "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8",
+          "language": "fr"
+        }
+      ],
+      "number": "",
+      "abbreviation": "",
+      "group_name": "Grosser Rat Bern",
+      "group_id": "5310",
+      "begin_date": "2025-06-05",
+      "end_date": "2025-06-05",
+      "updated_datetime": "2025-05-19T01:06:45+00:00",
+      "created_datetime": "2025-04-25T11:10:25+00:00"
+    }
+  ],
+  "@type": "Container"
+}

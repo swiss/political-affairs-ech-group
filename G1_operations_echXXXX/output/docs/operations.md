@@ -1,4 +1,4 @@
-# ch-paf-link-operations 
+# operations 
 
 Meeting Schema for various legislative bodies
 

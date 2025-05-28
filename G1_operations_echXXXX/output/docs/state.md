@@ -27,7 +27,7 @@ Alias: state
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [StateEnum](StateEnum.md)
 
 
 
@@ -69,7 +69,7 @@ rank: 1000
 alias: state
 domain_of:
 - Meeting
-range: string
+range: state_enum
 
 ```
 </details>

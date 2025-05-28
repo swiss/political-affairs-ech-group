@@ -3,6 +3,11 @@
 # Slot: updated_datetime 
 
 
+_The last time this record was updated_
+
+
+
+
 
 URI: [ops:updated_datetime](https://ch.paf.link/schema/operations/updated_datetime)
 Alias: updated_datetime
@@ -17,7 +22,10 @@ Alias: updated_datetime
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [MeetingItem](MeetingItem.md) |  |  no  |
 | [Meeting](Meeting.md) |  |  no  |
+| [Session](Session.md) |  |  no  |
+| [Legislature](Legislature.md) |  |  no  |
 
 
 
@@ -27,7 +35,7 @@ Alias: updated_datetime
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Datetime](Datetime.md)
 
 
 
@@ -64,12 +72,16 @@ Alias: updated_datetime
 <details>
 ```yaml
 name: updated_datetime
+description: The last time this record was updated
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 alias: updated_datetime
 domain_of:
+- Legislature
+- Session
 - Meeting
-range: string
+- MeetingItem
+range: datetime
 
 ```
 </details>
