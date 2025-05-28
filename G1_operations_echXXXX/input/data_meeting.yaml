@@ -16,11 +16,10 @@ meetings:
     group_id: "RR"
     number: ""
     abbreviation: ""
-    begin_date: "2021-03-31T00:00:00+01:00"
-    end_date: "2021-03-31T00:00:00+01:00"
+    begin_date: "2021-03-31"
+    end_date: "2021-03-31"
     updated_datetime: "2024-11-27T20:40:57Z"
     created_datetime: "2024-10-28T01:22:26Z"
-
 
   - body_key: "BE"
     id: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
@@ -36,7 +35,7 @@ meetings:
     group_id: "5310"
     number: ""
     abbreviation: ""
-    begin_date: "2025-06-05T13:30:00+01:00"
-    end_date: "2025-06-05T15:00:00+01:00"
+    begin_date: "2025-06-05"
+    end_date: "2025-06-05"
     updated_datetime: "2025-05-19T01:06:45Z"
     created_datetime: "2025-04-25T11:10:25Z"

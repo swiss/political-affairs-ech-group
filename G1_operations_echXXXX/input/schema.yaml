@@ -1,5 +1,5 @@
 id: https://ch.paf.link/schema/operations
-name: ch-paf-link-operations
+name: operations
 description: "Meeting Schema for various legislative bodies"
 prefixes:
   linkml: https://w3id.org/linkml/
@@ -16,16 +16,17 @@ classes:
     tree_root: true
     slots:
       - id
-      - meetings
-      - sessions
       - legislatures
+      - sessions
+      - meetings
+      - meeting_items
 
   MultilingualString:
     slots:
       - text
       - language
 
-  Legislatur:
+  Legislature:
     slots:
       - id
       - body_key
@@ -34,6 +35,22 @@ classes:
       - description
       - group_name
       - group_id
+      - begin_date
+      - end_date
+      - updated_datetime
+      - created_datetime
+
+  Session:
+    slots:
+      - id
+      - body_key
+      - name
+      - url
+      - description
+      - group_name
+      - group_id
+      - number
+      - abbreviation
       - begin_date
       - end_date
       - updated_datetime
@@ -53,22 +70,22 @@ classes:
       - end_date
       - begin_date_actual
       - end_date_actual
-      - state #braucht noch enum planned, canceled, postponed
+      - state
       - description
       - location
       - type
       - updated_datetime
       - created_datetime
 
-  meeting_item:
+  MeetingItem:
     slots:
       - id
-      - datetime
-      - datetime_actual
-      - postion
+      - date_time
+      - date_time_actual
+      - position
       - number
       - title
-      - affairs #zu 
+      - affairs
       - description
       - status
       - result
@@ -77,53 +94,120 @@ classes:
       - updated_datetime
       - created_datetime
 
-
 slots:
 
   id:
     identifier: true
     required: true
     slot_uri: dcterm:identifier
+  
   body_key:
+  
   name:
     range: MultilingualString
     multivalued: true
     inlined_as_list: true
+  
   url:
     range: MultilingualString
     multivalued: true
     inlined_as_list: true
+  
   number:
+  
   abbreviation:
+  
   group_name:
+  
   group_id:
+  
   begin_date:
-    range: datetime
+    range: date
+
+  begin_date_actual:
+    range: date
+  
   end_date:
+    range: date
+
+  end_date_actual:
+    range: date
+
+  date_time:
     range: datetime
+
+  date_time_actual:
+    range: datetime
+  
   state:
+    range: state_enum
+
+  status:
+
+  type:
+  
   description:
+  
   location:
+
+  position:
+
+  result:
+
+  title:
+
+  category:
+  
   updated_datetime:
+    range: datetime
+    description: "The last time this record was updated"
+  
   created_datetime:
-  meetings:
-    slot_uri: ops:meeting
-    range: Meeting
+    range: datetime
+    description: "The time this record was created"
+
+  affairs:
+
+  legislatures:
+    slot_uri: ops:legislature
+    range: Legislature
     multivalued: true
     inlined_as_list: true
+
   sessions:
     slot_uri: ops:session
     range: Session
     multivalued: true
     inlined_as_list: true
-  legislatures:
-    slot_uri: ops:legislature
-    range: Legislatur
+  
+  meetings:
+    slot_uri: ops:meeting
+    range: Meeting
     multivalued: true
     inlined_as_list: true
+
+  meeting_items:
+    slot_uri: ops:meetingItem
+    range: MeetingItem
+    multivalued: true
+    inlined_as_list: true
+  
   text:
     required: true
+  
   language:
     required: true
     description: "Language code in ISO 639-1 format"
     pattern: ^[a-z]{2}$
+
+enums:
+
+  state_enum:
+    description: "State of the meeting"
+    permissible_values:
+      "planned":
+        meaning: ops:state/planned
+      "canceled":
+        meaning: ops:state/canceled
+      "postponed":
+        meaning: ops:state/postponed
