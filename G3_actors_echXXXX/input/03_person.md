@@ -18,9 +18,29 @@ Cross-Check: * Poltische Rechte
 * Wenn nicht abgesichert ist, dass es sich um ein einen Amtlichen Namen handelt, kannt auf label zurückgegriffen werden.
 * Label braucht gute Erklärung damit es nicht missbraucht wird.
 
+
+* Id Identifikation
+  * AHV? - nice but difficult -> Möglichkeit
+  * Ratsinformationssystem -> Möglichkeit (an CH44 orientiert)
+    * Legislaturbasierend? verschiedene Ratssystemids vom selben Rat?
+    * Rückwirkend IDs vergeben? -> Wikidata - "Datenraum Politik" / ähnlich Metagrid
+  * Externe Identifikatoren
+    * Wikidata? ( Italienisches Parlament )
+    * https://metagrid.ch/
+    * GND / VIAF
+    * SmartVote
+    * SelectCandidateSurvey
+   
+   * Wikidata (Attrib Swiss Parlament ID (ratsid bei wikidata hinzufügen))
+   * Wikidata wird der Identifer vom Ratssystem? Problem mit Wikidata als extern organisiert.
+   * Wikidata als prefered secondary Identifier.
+
+
 * Use Case
   * Alle mögliche Anzeige und offizielen Namen (für Websites)
   * 
+
+  
 ```
 Person1: {
 ID: ???
@@ -40,27 +60,6 @@ names:
 }
 ```
 
-Amtlich * Label typ
-  vorname
-  nachname
-  fullName
-
-Amtlicher Name (präferenziert, optional) – officialName, siehe Kapitel 3.3.2.1   (TODO: Bestimmen ab wann wird ein Namenswechsel ausgewiesen?)
-Amtliche Vornamen (präferenziert, optional) – firstName, siehe Kapitel 3.3.2.2
-
-Ledigname (optional) – originalName, siehe Kapitel 3.3.2.3 (Use-Case: Kann helfen über Zeit Rückverfolgung zu erlauben.)
-Allianzname (optional) – allianceName, siehe Kapitel 3.3.2.4 (Use-Case: Kann helfen über Zeit Rückverfolgung zu erlauben.)
-
-Aliasname (optional) – aliasName, siehe Kapitel 3.3.2.5  (Brauch im ech11 eine Definition.)
-Andere amtliche Name (optional) – otherName, siehe Kapitel 3.3.2.6 (Brauch im ech11 eine Definition.)
-
-Rufname (optional) – callName, siehe Kapitel 3.3.2.7
-  Name im ausländischen Pass (optional) - nameOnForeignPassport, siehe Kapitel 3.3.2.8
-oder
-  Name gemäss Deklaration (optional) – declaredForeignName, siehe Kapitel 3.3.2.9
-
-
-* Id Identifikation
 
   # Use Case
 
