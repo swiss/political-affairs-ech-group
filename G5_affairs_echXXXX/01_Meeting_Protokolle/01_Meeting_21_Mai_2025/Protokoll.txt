@@ -1,0 +1,36 @@
+Zusammenfassung des Treffens der Subgruppe 5
+
+1. Ziel der Subgruppe
+Standardisierung der parlamentarischen Geschäfte auf Bundes-, Kantons- und Gemeindeebene.
+Abgrenzung zu anderen Geschäftstypen (Regierungsgeschäften), aber Verlinkungen vorgesehen.
+
+2. Organisatorisches
+Zusammenarbeit via Microsoft Teams ok.
+Meetings werden über Mail/Kalender organisiert.
+Arbeitsweise: in kleinen Gruppen mit Review-Runden.
+Verfügbare Meeting-Tage: Montag–Donnerstag.
+
+3. Begriffsklärung: Was ist ein Geschäft?
+Alles, was ein Parlament behandelt: z. B. Vorstösse, Petitionen, Wahlen..
+Ziel: breite Definition, aber Verknüpfungen mitdenken (= Link zu Sessions-Gruppe)
+
+4. Geschäftstypen: Erste Kategorisierung
+Grobe Typen sollen als YAML-Klassen umgesetzt werden.
+Ziel: grobe, verständliche Struktur – erst einzeln erfassen, später zusammenführen, wo sinnvoll.
+Top-Down Beginn: Bund – Kanton – Gemeinde
+
+5. Verfahrensstände und Etappen
+Verfahrensstand = eigene Klasse, nicht Subklasse der Geschäftstypen.
+Differenzierung nach Bund (Zweikammersystem) und Kanton/Gemeinde.
+Beinhaltet Prozesse/Etappen wie: Einreichung, Ausarbeitung, Kommissionsarbeit, ... aber auch Fristen
+
+6. Nächste Schritte
+Treffen zu Geschäftstypen (Bundesebene) => nächster Mittwoch, 9:30 Uhr
+YAML-Vorlage für Geschäftstyp „Motion“
+LB erstellt einen provokativen Entwurf
+Gemeinsames Durchgehen & Anpassen
+Aufteilung auf Kleingruppen für weitere Typen
+Peer-Reviews
+Zukünftiges Treffen zum Thema Prozesse
+Subgruppe 5.pdf
+ 

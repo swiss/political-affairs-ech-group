@@ -1,0 +1,165 @@
+Motion:
+	is_a: Geschäft
+	description: A motion instructs the government to draft a bill and submit it to parliament or take a specific action.
+	attributes:
+		motion_id:
+        		identifier: true
+        		required: true
+        		range: string
+        		description: Unique identifier.
+		# === title: illustration only ===
+		title:
+			description: A text string in a specific language, with metadata about its origin.
+			attributes:
+			      	text:
+			        	range: string
+			        	required: true
+			      	language:
+			       	range: LanguageCodeEnum
+			       	required: true
+					description: Language of the title (de, fr, it, rm, en)
+			      	origin:
+			        	range: TextOriginEnum
+			        	required: false
+			        	description: Indicates whether the text was originally submitted in this language or translated later.
+		title: 
+		       range: TitleText
+		       multivalued: true
+	       urgent:
+	         	range: boolean
+	         	description: Whether the motion was marked as urgent.
+		submission:
+		        range: Submission
+		        required: true
+		        description: Submission details for the motion.
+		
+	       # === Lifecycle flags ===
+		# Do we want this? => technically, we should add this in a separate layer
+	       submitted:
+	         	range: boolean
+	         	required: true
+	         	description: Indicates whether the motion was formally submitted to Parliament. The motion is considered submitted if submission.submission_date is set.
+	       withdrawn:
+	         	range: boolean
+	         	required: false
+	         	description: Indicates whether the motion was officially withdrawn at any point. The motion is considered withdrawn if submission.withdrawn_date is set.
+	
+
+TitleText:
+    	description: A motion title in a specific language, with optional translation metadata.
+    	attributes:
+      	 	text:
+        	      	range: string
+        	      	required: true
+      		language:
+        	      	range: LanguageCodeEnum
+        	      	required: true
+      		origin:
+        	      	range: TextOriginEnum
+        	      	required: false
+			
+Submission:
+	description: The submission stage of a motion, including date, sponsor, and accompanying texts.
+	attributes:
+		submission_date:
+			range: date
+			required: true
+			description: The official submission date.
+		sponsor:
+			range: Sponsorship
+			required: true
+			description: The main sponsor (MP, committee majority, or parliamentary group).
+		texts: 
+			range: SubmissionText
+			multivalued: true
+			required: true
+			description: All texts associated with the submission (e.g., main text, reasoning).
+	       withdrawn_date:
+	         	range: date
+	         	required: false
+	         	description: The date the pursuit/affair was officially withdrawn by the sponsor, if applicable.	
+			
+Sponsorship:
+	description: A time-bounded set of (co-)sponsors with roles.
+	attributes:
+		(co)sponsors:
+			range: SponsorshipParticipant
+			multivalued: true
+			required: true
+			description: All individuals or entities involved in sponsoring or cosponsoring, with roles.
+		start_date:
+			range: date
+			required: true
+		end_date:
+			range: date
+			required: false
+	
+SponsorshipParticipant:
+    	description: An individual or entity that participated in sponsoring a motion.
+    	attributes:
+      	 	actor:
+        	      	range: SponsoringEntity
+        	     	required: true
+      		 role:
+        		range: SponsorRoleEnum
+        	      	required: true
+        	      	description: Whether this entity is a sponsor, cosponsor, or got the sponsorship transferred to them.
+
+SubmissionText:
+    	description: A text block submitted during the submission stage, labeled by type and language.
+    	attributes:
+      	 	type:
+        		range: SubmissionTextTypeEnum
+        	      	required: true
+        	      	description: Type of the text (e.g., submitted, reasoning).
+      		 language:
+        		range: LanguageCodeEnum
+        	      	required: true
+      		 text:
+        		range: string
+        	      	required: true
+
+Person:
+    	is_a: SponsoringEntity
+    	XXLINK TO ACTOR eCH GROUP
+	
+Committee:
+    	is_a: SponsoringEntity
+    	XXLINK TO ACTOR eCH GROUP
+	
+ParliamentaryGroup:
+    	is_a: SponsoringEntity
+    	XXLINK TO ACTOR eCH GROUP
+	
+
+enums:
+	LanguageCodeEnum:
+		description: Text language
+		permissible_values:
+			de: { description: German }
+			fr: { description: French }
+			it: { description: Italian }
+			rm: { description: Romansh}
+			en: { description: English }
+	TextOriginEnum:
+		description: Origin of the text for multilingual tracking.
+		permissible_values:
+			original: { description: The title was originally submitted in this language. }
+			translated: { description: The title was later translated from another language. }
+	SubmissionTextTypeEnum: 
+		description: The purpose or role of the submission text.
+		permissible_values:
+			submitted:
+				description: The official text submitted by the sponsor.
+			reasoning:
+				description: An explanation or justification submitted by the sponsor.
+	SponsorRoleEnum:
+		description: Role of (co-)sponsors.
+	    	permissible_values:
+	      	 	sponsor: 
+				description: Main sponsor submitting a pursuit/affair.
+	      	 	cosponsor: 
+				description: 
+					MP who co-signed the pursuit/affair.
+	      	 	transferred: 
+				description: Entity who took over the sponsorship after the original sponsor left.
