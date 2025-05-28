@@ -49,7 +49,7 @@ Cross-Check: * Poltische Rechte
   * Übernahme von den Wahlsystemen ( Politische Rechte ).
   * Überlegungen zu Datenschutz / Öffentlichkeitsrecht -> ein Kapitel mit Analyse des IST Zustands / Rechtsgrundlage oder Toolkit ?
   * [Ersetzung der privaten Wohnadresse als Identifikator der Urheber von Volksinitiativen](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20243425)
-  * [Verhinderung der Pflicht zur Veröffentlichung der Wohnadressen von Parlamentsmitgliedern](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20233913}
+  * [Verhinderung der Pflicht zur Veröffentlichung der Wohnadressen von Parlamentsmitgliedern](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20233913)
   * Gleiche Namen im Parlament: https://www.parlament.ch/centers/documents/de/gleichnamige-ratsmitglieder.pdf
 
   
