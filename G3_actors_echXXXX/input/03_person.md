@@ -12,19 +12,29 @@
 ### Namenstypen basierend nach eCH11
 
 Typen ausgeschrieben: https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/nomenklaturen.assetdetail.24565576.html 
+Cross-Check: * Poltische Rechte
 
+* Klare Guideline herausgeben, das der Amtliche Name bevorzugt ist.
+* Wenn nicht abgesichert ist, dass es sich um ein einen Amtlichen Namen handelt, kannt auf label zurückgegriffen werden.
+* Label braucht gute Erklärung damit es nicht missbraucht wird.
+
+* Use Case
+  * Alle mögliche Anzeige und offizielen Namen (für Websites)
+  * 
 ```
 Person1: {
-givenName: "Michael",
-familyName: "Luggen",
-otherNames: 
+ID: ???
+
+label: "Michael Luggen",
+names: 
 [
-  { nameType: nameOnForeignPassport , 
-  firstname: "Michéle",
-  lastname: "Luca",
-  fullName: "Michéle Luca"},
-  { nameType: callName, 
-  fullName: "luggi",
+  { nameType: familyNameOnForeignPassport , 
+    value: "",
+    validFrom: "",
+    validUntil: "",
+  },
+  { nameType: callName,
+    value: "luggi",
   },
 ]
 }
@@ -50,6 +60,7 @@ oder
   Name gemäss Deklaration (optional) – declaredForeignName, siehe Kapitel 3.3.2.9
 
 
+* Id Identifikation
 
   # Use Case
 
