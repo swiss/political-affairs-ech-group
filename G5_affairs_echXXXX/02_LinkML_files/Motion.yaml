@@ -1,37 +1,41 @@
+Affair: 
+	type: ---motion	
+
+
+TODO: Motion wird Postulat; Motion und Postulat zusammen
+
+
+
 Motion:
-	is_a: Geschäft
-	description: A motion instructs the government to draft a bill and submit it to parliament or take a specific action.
+	is_a: Affair
+	type: affairType
+	description: Mit einer Motion beauftragt das Parlament die Exekutive (oder gegebenenfalls das Ratsbüro, das @FABIAN:Bundesgericht) einen Entwurf zu einem Erlass vorzulegen oder eine Massnahme zu treffen.
 	attributes:
-		motion_id:
+		affair_uid:
         		identifier: true
         		required: true
         		range: string
         		description: Unique identifier.
-		# === title: illustration only ===
-		title:
-			description: A text string in a specific language, with metadata about its origin.
-			attributes:
-			      	text:
-			        	range: string
-			        	required: true
-			      	language:
-			       	range: LanguageCodeEnum
-			       	required: true
-					description: Language of the title (de, fr, it, rm, en)
-			      	origin:
-			        	range: TextOriginEnum
-			        	required: false
-			        	description: Indicates whether the text was originally submitted in this language or translated later.
+		affair_number:
+			identifier: true
+        		required: true
+        		range: string
+        		description: Number of the affair, issued by XX.
 		title: 
 		       range: TitleText
 		       multivalued: true
-	       urgent:
-	         	range: boolean
-	         	description: Whether the motion was marked as urgent.
+			description: XX
 		submission:
 		        range: Submission
 		        required: true
 		        description: Submission details for the motion.
+	       urgency:
+	         	range: boolean
+	         	description: XX.
+		
+
+
+
 		
 	       # === Lifecycle flags ===
 		# Do we want this? => technically, we should add this in a separate layer
@@ -43,20 +47,26 @@ Motion:
 	         	range: boolean
 	         	required: false
 	         	description: Indicates whether the motion was officially withdrawn at any point. The motion is considered withdrawn if submission.withdrawn_date is set.
-	
+		urgent: 
+	         	range: boolean
+	         	required: true
+	         	description:
 
 TitleText:
     	description: A motion title in a specific language, with optional translation metadata.
-    	attributes:
-      	 	text:
-        	      	range: string
-        	      	required: true
-      		language:
-        	      	range: LanguageCodeEnum
-        	      	required: true
-      		origin:
-        	      	range: TextOriginEnum
-        	      	required: false
+	attributes:
+	      	text:
+	        	range: string
+	        	required: true
+			description: XX
+	      	language:
+	       	range: LanguageCodeEnum
+	       	required: false
+			description: Language of the title (de, fr, it, rm, en)
+	      	type:
+	        	range: TextOriginEnum
+	        	required: false
+	        	description: Original submission; short title; long title; translated title; provisionary title
 			
 Submission:
 	description: The submission stage of a motion, including date, sponsor, and accompanying texts.
@@ -133,6 +143,12 @@ ParliamentaryGroup:
 	
 
 enums:
+	affairType: 
+		description: XX
+		permissible_values: 
+			motion: { description: XX}
+			motion_and_postulate: 
+			motion_then_postulate: 
 	LanguageCodeEnum:
 		description: Text language
 		permissible_values:
