@@ -38,7 +38,10 @@ Cross-Check: * Poltische Rechte
 
 * Use Case
   * Alle mögliche Anzeige und offizielen Namen (für Websites)
-  * 
+    * Beispiele:
+      * @Christian
+  * Übernahme von den Wahlsystemen ( Politische Rechte ).
+  * Überlegungen zu Datenschutz / Öffentlichkeitsrecht -> ein Kapitel mit Analyse des IST Zustands / Rechtsgrundlage oder Toolkit ?
 
   
 ```
