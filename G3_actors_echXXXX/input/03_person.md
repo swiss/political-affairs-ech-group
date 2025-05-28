@@ -45,7 +45,7 @@ Cross-Check: * Poltische Rechte
     * Beispiele:
       * UR: [Alois (1981) Arnold](https://www.ur.ch/behoerdenmitglieder/6447)
       * UR: [Alois (1965) Arnold](https://www.ur.ch/behoerdenmitglieder/6370)
-      * TI: [Fausto "Gerri" Beretta-Piccoli] (https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269)
+      * TI: [Fausto "Gerri" Beretta-Piccoli](https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269)
   * Übernahme von den Wahlsystemen ( Politische Rechte ).
   * Überlegungen zu Datenschutz / Öffentlichkeitsrecht -> ein Kapitel mit Analyse des IST Zustands / Rechtsgrundlage oder Toolkit ?
   * [Ersetzung der privaten Wohnadresse als Identifikator der Urheber von Volksinitiativen](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20243425)
