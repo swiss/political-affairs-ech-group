@@ -17,9 +17,9 @@ Alias: begin_date
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) |  |  no  |
 | [Session](Session.md) |  |  no  |
 | [Legislature](Legislature.md) |  |  no  |
+| [Meeting](Meeting.md) |  |  no  |
 
 
 

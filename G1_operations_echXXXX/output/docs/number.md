@@ -17,9 +17,9 @@ Alias: number
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Session](Session.md) |  |  no  |
 | [MeetingItem](MeetingItem.md) |  |  no  |
 | [Meeting](Meeting.md) |  |  no  |
-| [Session](Session.md) |  |  no  |
 
 
 
