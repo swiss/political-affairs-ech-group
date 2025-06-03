@@ -17,7 +17,7 @@ toc: false
 | **Voraussetzungen**   | ?                                                                                                                          |
 | **Beilagen**          | -                                                                                                                          |
 | **Sprachen**          | English (Original)                                                                                                         |
-| **Autoren**           | Fachgruppe politische Geschäfte: Nicole Aeby, David Imseng, Jonas Schärer, Lena, Mina, Manuel W., Orhan, Michel, Laurens                       |
+| **Autoren**           | Fachgruppe politische Geschäfte: Nicole Aeby, David Imseng, Jonas Schärer, Lena Mina Friedrich, Manuel Weingartner, Orhan Saeedi, Michel Moret, Laurens Abu-Talib |
 | **Herausgeber / Vertrieb** | Verein eCH, Räffelstr. 20, 8045                                                                                       |
 
 # Summary
