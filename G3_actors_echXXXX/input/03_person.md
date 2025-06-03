@@ -24,7 +24,7 @@ Cross-Check: * Poltische Rechte
   * Ratsinformationssystem -> Möglichkeit (an CH44 orientiert)
     * Legislaturbasierend? verschiedene Ratssystemids vom selben Rat?
     * Rückwirkend IDs vergeben? -> Wikidata - "Datenraum Politik" / ähnlich Metagrid
-    * 
+  * Staatskalender (?)
   * Externe Identifikatoren
     * Wikidata? ( Italienisches Parlament )
       * Wikidata; z.B. Swiss Parlament ID: https://www.wikidata.org/wiki/Property:P1307
