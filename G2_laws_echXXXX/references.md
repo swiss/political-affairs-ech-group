@@ -1,9 +1,3 @@
-## Plattformen
-* https://www.omnius.ch/
-* https://omnilex.ai/en/
-* http://gsetz.li/
-* https://bger.li/
-
 ## Standards
 * https://www.oasis-open.org/standard/akn-v1-0/ - LegalDocML bzw. Akoma Ntoso, glbaler XML-Standard für Dokumente in den Bereichen parlamentarische Arbeit, Gesetzgebung und Rechtsprechung
 * https://ejustice.ch/chlexml/ - CHLexML, Schweizer XML-Standard für Gesetzgebung
@@ -11,6 +5,7 @@
 
 ## Publikation (Erlasse und Materialien)
 ### Bund
+* Dokumentation: https://swiss.github.io/fedlex-jolux/introduction.html
 * https://www.fedlex.admin.ch/de/oc - Amtliche Sammlung des Bundesrechts (rechtsverbindlich) - Owner: Bundeskanzlei
 * https://www.fedlex.admin.ch/de/fga - Bundesblatt (rechtsverbindlich) - Owner: Bundeskanzlei
 * https://shab.ch/ - Publikationsplattform eidgenössischer, kantonaler und kommunaler Amtsstellen sowie Unternehmen für gesetzlich vorgeschriebene Bekanntmachungen (freiwillig, bzw. verbindlich nach kt. Recht) - Owner: SECO
@@ -31,3 +26,9 @@
 * https://amtsblatt.tg.ch/ - TG
 * https://www.vd.ch/cha/bic/publications-de-letat/feuille-des-avis-officiels-fao - VD
 * https://www.ur.ch/amtsblatt - UR
+
+## Plattformen
+* https://www.omnius.ch/
+* https://omnilex.ai/en/
+* http://gsetz.li/
+* https://bger.li/
