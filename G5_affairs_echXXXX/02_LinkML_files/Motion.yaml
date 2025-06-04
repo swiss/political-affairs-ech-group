@@ -5,11 +5,10 @@ Affair:
 TODO: Motion wird Postulat; Motion und Postulat zusammen
 
 
-
 Motion:
 	is_a: Affair
 	type: affairType
-	description: Mit einer Motion beauftragt das Parlament die Exekutive (oder gegebenenfalls das Ratsbüro, das @FABIAN:Bundesgericht) einen Entwurf zu einem Erlass vorzulegen oder eine Massnahme zu treffen.
+	description: Mit einer Motion beauftragt das Parlament die Exekutive (oder gegebenenfalls das Ratsbüro) einen Entwurf zu einem Erlass vorzulegen oder eine Massnahme zu treffen.
 	attributes:
 		affair_uid:
         		identifier: true
@@ -29,14 +28,57 @@ Motion:
 		        range: Submission
 		        required: true
 		        description: Submission details for the motion.
-	       urgency:
-	         	range: boolean
-	         	description: XX.
+			 
+		submissionValidation: 
+			range: SubmissionValidation
+			description: Initial checks of the submitted motion + date. Including urgency requests + date. And first council assignment (federal) + date.
 		
-
-
-
+		committeeDeliberation: 
+			multivalued: true
+			description: Committee assignment (+date of decision, +date of referal) + chamber. Committee meeings (minutes). Committee decisions. 
+			
+		plenaryDebates: (consultation)
+		    	range: PlenaryDebate
+		    	multivalued: true
+		    	description: Plenary debate (+chamber). Debate type (Eintreten, Detail). Discussion minutes (+ date and time + link to speaker + link to roles). Amendments/propositions for change/adhering. Votes. Final decision.
+									
+		(plenaryDebates can be repeated as many times as neccessary? + can be "interruptted by committeeDeliberations (second chamber)")
 		
+		resolutionOfDifferences: 
+			description: Differenzbereinigung. Chamber. Date and time. Type. Discussion minutes (+ date and time + link to speaker + link to roles). Votes. Final decision.
+		
+		Conciliation:
+			description: Einigungskonferenz. 
+			
+		FinalVote: 
+			multivalued: true
+			description: Date and time. Chamber. Votes. Final decision.
+		
+		
+# Discuss June 4th: 
+2 Ways we can go: 
+	1) We define each as a class of its own and assign it values
+	2) We create a generic ProcessClass: 
+	
+	ProcessStep:
+	  	description: Generic step in the process of any affair.
+	  	attributes:
+	    	   	chamber: 
+	      			range: ChamberEnum
+	    		start_date: 
+	    		  	range: date
+	    		end_date:
+	    		  	range: date
+	    		documents:
+	      		 	range: Document
+	      		 	multivalued: true
+	CommitteeDeliberation:
+	  	is_a: ProcessStep
+	  	attributes:
+	    	  	XX
+	      
+	      
+	      		
 	       # === Lifecycle flags ===
 		# Do we want this? => technically, we should add this in a separate layer
 	       submitted:
@@ -78,7 +120,7 @@ Submission:
 		sponsor:
 			range: Sponsorship
 			required: true
-			description: The main sponsor (MP, committee majority, or parliamentary group).
+			description: The main sponsor (MP, committee majority, or parliamentary group) and cosponsors.
 		texts: 
 			range: SubmissionText
 			multivalued: true
