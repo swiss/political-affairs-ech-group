@@ -1,6 +1,6 @@
 # Person
 
-## Meeting 22.05.2025
+## Meeting 22.05.2025 / 28.06.2025 / 11.06.2025
 
 * Möglichst übernahme von eCH44 bezüglich Identifikation.
 
