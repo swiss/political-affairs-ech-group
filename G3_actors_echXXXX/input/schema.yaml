@@ -1,0 +1,51 @@
+id: https://ch.paf.link/schema/actors
+name: actors
+prefixes:
+  linkml: https://w3id.org/linkml/
+  act: https://ch.paf.link/schema/actors/
+  dcterm: http://purl.org/dc/terms/
+imports:
+  - linkml:types
+default_prefix: act
+default_range: string
+
+classes:
+
+  Container:
+    tree_root: true
+    slots:
+      - id
+      - actors
+
+  MultilingualString:
+    slots:
+      - text
+      - language
+
+  Actor:
+    slots:
+      - id
+      - name
+
+slots:
+
+  id:
+    identifier: true
+    required: true
+    slot_uri: dcterm:identifier
+  
+  actors:
+    slot_uri: act:actor
+    range: Actor
+    multivalued: true
+    inlined_as_list: true
+
+  name:
+  
+  text:
+    required: true
+  
+  language:
+    required: true
+    description: "Language code in ISO 639-1 format"
+    pattern: ^[a-z]{2}$

@@ -1,0 +1,78 @@
+name: G3_actors_echXXXX
+
+on:
+  push:
+    paths:
+      - 'G3_actors_echXXXX/input/**'
+  workflow_dispatch:
+
+jobs:
+  G3_actors_echXXXX:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Clean output directory
+        run: rm -rf G3_actors_echXXXX/output/*
+
+      - name: Convert schema.yaml to schema.json
+        run: |
+          mkdir -p G3_actors_echXXXX/output
+          gen-json-schema G3_actors_echXXXX/input/schema.yaml > G3_actors_echXXXX/output/schema.json
+
+      - name: Convert schema.yaml to schema.ttl
+        run: |
+          mkdir -p G3_actors_echXXXX/output
+          gen-owl G3_actors_echXXXX/input/schema.yaml > G3_actors_echXXXX/output/schema.ttl
+
+      - name: Convert all data_*.yaml to data_*.json
+        run: |
+          mkdir -p G3_actors_echXXXX/output
+          for yaml_file in G3_actors_echXXXX/input/data_*.yaml; do
+            base_name=$(basename "$yaml_file" .yaml)
+            linkml-convert -s G3_actors_echXXXX/input/schema.yaml -t json "$yaml_file" > "G3_actors_echXXXX/output/${base_name}.json"
+          done
+
+      - name: Convert data.yaml to data.ttl
+        run: |
+          mkdir -p G3_actors_echXXXX/output
+          for yaml_file in G3_actors_echXXXX/input/data_*.yaml; do
+            base_name=$(basename "$yaml_file" .yaml)
+            linkml-convert -s G3_actors_echXXXX/input/schema.yaml -t rdf "$yaml_file" > "G3_actors_echXXXX/output/${base_name}.ttl"
+          done
+
+      - name: Generate LinkML documentation
+        run: |
+          mkdir -p G3_actors_echXXXX/output/docs
+          gen-doc G3_actors_echXXXX/input/schema.yaml --directory G3_actors_echXXXX/output/docs
+      - name: Merge Markdown documentation
+        run: python merge_documentation.py G3_actors_echXXXX
+      - name: Install Pandoc
+        run: sudo apt update && sudo apt install -y pandoc
+
+      - name: Convert Markdown to Word with Pandoc
+        run: |
+          mkdir -p G3_actors_echXXXX/output
+          pandoc G3_actors_echXXXX/output/documentation_merged.md \
+          -o G3_actors_echXXXX/output/G3_actors_echXXXX.docx \
+          --reference-doc=G3_actors_echXXXX/input/template.docx
+
+      - name: Commit and push changes
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+            git config --global user.name "github-actions"
+            git config --global user.email "github-actions@github.com"
+            git add G3_actors_echXXXX/output/
+            git diff --quiet && git diff --staged --quiet || git commit -m "Auto-generated G3_actors_echXXXX files"
+            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
