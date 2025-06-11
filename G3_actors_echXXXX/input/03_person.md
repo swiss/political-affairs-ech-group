@@ -11,6 +11,7 @@
 * Geburtsdatum
 * Addresse
 
+* Sprachen
 * Staatsbürgerschaften
 * Geschlecht (genders) mfd 
 * persönliche Website (optional)
