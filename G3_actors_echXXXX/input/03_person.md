@@ -9,6 +9,7 @@
 * Aliase ? -> mit Geburtsdatum
 * offizieler Name (eindeutig in der Zeit, für apel)
 * Geburtsdatum
+* Adresse
 
 ### Namenstypen basierend nach eCH11
 
@@ -61,6 +62,13 @@ names:
   },
 ]
 }
+address: [
+    addressType: enum ? -> privateAddress, businessAddress, localAddress,
+    addressURI: , (super präferenziert)
+    streetAddress: ,
+    postalCode: ,
+    postalLocality: , 
+]
 ```
 
 ```
@@ -107,5 +115,3 @@ names:
   * Übernahme von den Wahlsystemen ( Politische Rechte ).
      * officialName (mandatory) / rufnamen werden bei der BK gesammelt
 
-  * [Ersetzung der privaten Wohnadresse als Identifikator der Urheber von Volksinitiativen](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20243425)
-  * [Verhinderung der Pflicht zur Veröffentlichung der Wohnadressen von Parlamentsmitgliedern](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20233913)
