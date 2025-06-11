@@ -1,0 +1,17 @@
+@prefix act: <https://ch.paf.link/schema/actors/> .
+
+act:actors_1 a act:Container ;
+    act:actor act:1,
+        act:2,
+        act:3 .
+
+act:1 a act:Actor ;
+    act:name "Dagobert Duck" .
+
+act:2 a act:Actor ;
+    act:name "Donald Duck" .
+
+act:3 a act:Actor ;
+    act:name "Mickey Mouse" .
+
+

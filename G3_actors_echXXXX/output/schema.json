@@ -1,0 +1,92 @@
+{
+    "$defs": {
+        "Actor": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Actor",
+            "type": "object"
+        },
+        "Container": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "actors": {
+                    "items": {
+                        "$ref": "#/$defs/Actor"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Container",
+            "type": "object"
+        },
+        "MultilingualString": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "language": {
+                    "description": "Language code in ISO 639-1 format",
+                    "pattern": "^[a-z]{2}$",
+                    "type": "string"
+                },
+                "text": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "text",
+                "language"
+            ],
+            "title": "MultilingualString",
+            "type": "object"
+        }
+    },
+    "$id": "https://ch.paf.link/schema/actors",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "description": "",
+    "metamodel_version": "1.7.0",
+    "properties": {
+        "actors": {
+            "items": {
+                "$ref": "#/$defs/Actor"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "id": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id"
+    ],
+    "title": "actors",
+    "type": "object",
+    "version": null
+}
