@@ -58,6 +58,8 @@ Cross-Check: * Poltische Rechte
     * Legislaturbasierend? verschiedene Ratssystemids vom selben Rat?
     * Rückwirkend IDs vergeben? -> Wikidata - "Datenraum Politik" / ähnlich Metagrid
   * Staatskalender (?)
+  * Election:
+    * Listennummer / Kandidatennummer
   * Externe Identifikatoren
     * Wikidata? ( Italienisches Parlament )
       * Wikidata; z.B. Swiss Parlament ID: https://www.wikidata.org/wiki/Property:P1307
