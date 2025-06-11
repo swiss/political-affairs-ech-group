@@ -42,7 +42,17 @@ Brief summary of the purpose of the document.
 * Aliase ? -> mit Geburtsdatum
 * offizieler Name (eindeutig in der Zeit, für apel)
 * Geburtsdatum
-* Adresse
+* Addresse
+
+* Sprachen
+* Staatsbürgerschaften
+* Geschlecht (genders) mfd 
+* persönliche Website (optional)
+* Anzahl Kinder -> offspring
+* Zivilstand -> ech44?
+* Beschäftigung (experience / occupation)
+  * Beruf / Arbeitsgeber (Interessenbindungen?)
+  * Armeerang / Zivildienst / Zivilschutz 
 
 ### Namenstypen basierend nach eCH11
 

@@ -11,40 +11,40 @@
 act:Container a owl:Class ;
     rdfs:label "Container" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:id ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:actors ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:id ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:Actor ;
             owl:onProperty act:actors ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty act:id ] ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:MultilingualString a owl:Class ;
     rdfs:label "MultilingualString" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:text ],
+        [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:onDatatype xsd:string ;
                     owl:withRestrictions ( [ xsd:pattern "^[a-z]{2}$" ] ) ] ;
+            owl:onProperty act:language ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty act:language ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty act:language ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:text ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:language ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
             owl:onProperty act:text ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
@@ -54,23 +54,23 @@ act:MultilingualString a owl:Class ;
 act:Actor a owl:Class ;
     rdfs:label "Actor" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:id ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:id ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty act:id ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:name ] ;
+            owl:onProperty act:id ] ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:actors a owl:ObjectProperty ;
