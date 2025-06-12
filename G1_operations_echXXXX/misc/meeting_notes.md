@@ -1,1 +1,12 @@
+**12.06.2025**
 
+## Meeting Items
+
+- [Sessionenprogramm SR (Parlament.ch)](https://www.parlament.ch/de/ratsbetrieb/sessionen/sessionsprogramme-sr?CouncilId=2&SessionId=2025+II)  
+- [Ordine del giorno GC (TI)](https://www4.ti.ch/poteri/gc/attivita/ordine-del-giorno)  
+- [Traktanden BE](https://www.gr.be.ch/de/start/grosser-rat/open-data-angebot-gr/datensaetze-und-dokumentation.html)  
+- [E-Traktandenliste Grosser Rat (AG)](https://www.ag.ch/grossrat/grweb/de/186/E-Traktandenliste?SitzungId=23805)
+
+- [VS](https://parlement.vs.ch/app/fr/search/parl_session/264452?date=2025-06-10)
+- [BS](https://grosserrat.bs.ch/ratsbetrieb/tagesordnung)
+- [TG](https://parlament.tg.ch/public/upload/assets/176389/01%20Tagesordnung%20der%20Grossratssitzung%20vom%2018.%20Juni%202025.pdf?fp=1)
