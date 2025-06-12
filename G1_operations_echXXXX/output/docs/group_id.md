@@ -18,8 +18,8 @@ Alias: group_id
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Session](Session.md) |  |  no  |
-| [Legislature](Legislature.md) |  |  no  |
 | [Meeting](Meeting.md) |  |  no  |
+| [Legislature](Legislature.md) |  |  no  |
 
 
 

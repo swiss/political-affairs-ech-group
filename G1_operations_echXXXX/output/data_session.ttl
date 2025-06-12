@@ -17,25 +17,25 @@ ops:5207 a ops:Session ;
     ops:group_id "52" ;
     ops:group_name "National und Ständerat" ;
     ops:name [ a ops:MultilingualString ;
-            ops:language "de" ;
-            ops:text "Frühjahrssession 2025" ],
-        [ a ops:MultilingualString ;
             ops:language "fr" ;
             ops:text "Session de printemps 2025" ],
         [ a ops:MultilingualString ;
             ops:language "it" ;
-            ops:text "Sessione primaverile 2025" ] ;
+            ops:text "Sessione primaverile 2025" ],
+        [ a ops:MultilingualString ;
+            ops:language "de" ;
+            ops:text "Frühjahrssession 2025" ] ;
     ops:number "FS 25" ;
     ops:updated_datetime "2025-04-24T00:19:37+00:00"^^xsd:dateTime ;
     ops:url [ a ops:MultilingualString ;
             ops:language "fr" ;
             ops:text "https://www.parlament.ch/agenda/Pages/fruehjahrssession-2025.aspx?lang=1036" ],
         [ a ops:MultilingualString ;
-            ops:language "de" ;
-            ops:text "https://www.parlament.ch/agenda/Pages/fruehjahrssession-2025.aspx" ],
-        [ a ops:MultilingualString ;
             ops:language "it" ;
-            ops:text "https://www.parlament.ch/agenda/Pages/fruehjahrssession-2025.aspx?lang=1040" ] .
+            ops:text "https://www.parlament.ch/agenda/Pages/fruehjahrssession-2025.aspx?lang=1040" ],
+        [ a ops:MultilingualString ;
+            ops:language "de" ;
+            ops:text "https://www.parlament.ch/agenda/Pages/fruehjahrssession-2025.aspx" ] .
 
 ops:66ccf0a9f4d24d318ff3b99e646644e8 a ops:Session ;
     ops:abbreviation "" ;
@@ -47,19 +47,19 @@ ops:66ccf0a9f4d24d318ff3b99e646644e8 a ops:Session ;
     ops:group_id "5310" ;
     ops:group_name "Grosser Bern" ;
     ops:name [ a ops:MultilingualString ;
-            ops:language "de" ;
-            ops:text "Sommersession 2025" ],
-        [ a ops:MultilingualString ;
             ops:language "fr" ;
-            ops:text "Session d'été 2025" ] ;
+            ops:text "Session d'été 2025" ],
+        [ a ops:MultilingualString ;
+            ops:language "de" ;
+            ops:text "Sommersession 2025" ] ;
     ops:number "" ;
     ops:updated_datetime "2025-05-19T01:06:44+00:00"^^xsd:dateTime ;
     ops:url [ a ops:MultilingualString ;
-            ops:language "fr" ;
-            ops:text "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8" ],
-        [ a ops:MultilingualString ;
             ops:language "de" ;
-            ops:text "https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8" ] .
+            ops:text "https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8" ],
+        [ a ops:MultilingualString ;
+            ops:language "fr" ;
+            ops:text "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8" ] .
 
 ops:GL_2025_02_26 a ops:Session ;
     ops:abbreviation "" ;

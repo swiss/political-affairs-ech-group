@@ -1,0 +1,169 @@
+{
+  "id": "ops:meeting_items_1",
+  "meeting_items": [
+    {
+      "id": "ops:cea750a5bd7b420fa4da1c914f801384",
+      "date_time": "2022-03-17T17:00:00+00:00",
+      "position": "29",
+      "number": "8",
+      "title": "[{'text': 'Interpellation Fraktion GB/JA! (Katharina Gallizzi, GB): Welche Konsequenzen haben die Klimaziele für das Gasnetz in Bern?', 'language': 'de'}]",
+      "affairs": "2020.SR.000007",
+      "url": [
+        {
+          "text": "https://stadtrat.bern.ch/de/sitzungen/detail.php?gid=000d6cf5f0bc4d89a5171e0123cfbff5#cea750a5bd7b420fa4da1c914f801384",
+          "language": "de"
+        }
+      ],
+      "updated_datetime": "2025-01-17T21:25:52+00:00",
+      "created_datetime": "2025-01-17T21:25:52+00:00"
+    },
+    {
+      "id": "ops:2023_10_03-52",
+      "date_time": "2023-10-03T00:00:00+00:00",
+      "position": "52",
+      "number": "52",
+      "title": "[{'text': 'Postulat de Mme Franziska MEINHERZ : « Lausanne sans publicité commerciale » (FIM)', 'language': 'fr'}]",
+      "affairs": "POS22/029",
+      "status": "Reporté",
+      "url": [
+        {
+          "text": "https://www.lausanne.ch/apps/agir/affaire/81/b7157ea2a4994086b65cf176768c6381.htm",
+          "language": "fr"
+        }
+      ],
+      "category": "RAPPORTS",
+      "updated_datetime": "2025-02-08T12:33:10+00:00",
+      "created_datetime": "2025-02-08T12:33:10+00:00"
+    },
+    {
+      "id": "ops:2025_05_20-23",
+      "date_time": "2025-05-20T00:00:00+00:00",
+      "position": "23",
+      "number": "23",
+      "title": "[{'text': 'Interpellation urgente du 20 mai 2025 de M. Yusuf KULMIYE : « Interpellation urgente de Kulmiye Yusuf et crts – Solidarité sans frontières, Lausanne en faveur du respect du droit international et de la protection des populations civiles à Gaza »', 'language': 'fr'}]",
+      "affairs": "INT25/027",
+      "status": "Non-traîté, renvoi en Municipalité",
+      "url": [
+        {
+          "text": "https://www.lausanne.ch/apps/agir/affaire/6c/049b6c612fe2428f9be66ea39522ac6c.htm",
+          "language": "fr"
+        }
+      ],
+      "category": "ANNONCES ET INTERPELLATIONS",
+      "updated_datetime": "2025-06-07T23:50:18+00:00",
+      "created_datetime": "2025-06-07T23:50:18+00:00"
+    },
+    {
+      "id": "ops:7b3545e4-57dc-3901-aaa8-4020da6ab0c6",
+      "date_time": "2008-04-30T00:00:00+00:00",
+      "position": "7",
+      "number": "7",
+      "title": "[{'text': 'Révision partielle de sept ordonnances fédérales relatives aux produits chimiques', 'language': 'fr'}]",
+      "description": "Le Conseil d'Etat approuve le projet de révision partielle de sept ordonnances fédérales relatives aux produits chimiques. Il salue la volonté des autorités fédérales d'introduire dans la législation fédérale les modifications nécessaires découlant des nouveaux règlements européens, afin d'éliminer des entraves au commerce et d'augmenter la sécurité d'évaluation des produits chimiques. Ces modifications permettront, dès 2009, la mise sur le marché suisse de produits chimiques répondant au système de classification et d'étiquetage SGH (Système général harmonisé) européen. Le Conseil d'Etat regrette cependant le rythme excessivement élevé des modifications dans ce domaine, trois ans seulement après l'introduction du nouveau droit chimique.\n",
+      "url": [
+        {
+          "text": "https://www.vd.ch/actualites/decisions-du-conseil-detat/seance-du-conseil-detat/seance/265632#7b3545e4-57dc-3901-aaa8-4020da6ab0c6",
+          "language": "fr"
+        }
+      ],
+      "updated_datetime": "2024-12-06T10:50:04+00:00",
+      "created_datetime": "2024-12-06T10:50:04+00:00"
+    },
+    {
+      "id": "ops:06fb582b753c416d8fdb05fa13873545",
+      "date_time": "2011-11-23T00:00:00+00:00",
+      "position": "1.5",
+      "title": "[{'text': 'Interpellation Peter Mark betr. elektronische Datenerfassung durch Mitarbeiter im Werkhof – Versuchsphase', 'language': 'de'}]",
+      "updated_datetime": "2025-03-21T23:15:19+00:00",
+      "created_datetime": "2025-03-21T23:15:19+00:00"
+    },
+    {
+      "id": "ops:16155798_3",
+      "date_time": "2025-03-31T00:00:00+00:00",
+      "position": "2",
+      "number": "2",
+      "title": "[{'text': 'Motion Nr. 2023/9 von Rainer Schmidig vom 18. Dezember 2023 betreffend zeitgemässe Abzüge in den Art. 35 und 37 des Gesetzes über die direkten Steuern', 'language': 'de'}]",
+      "affairs": "MOT 2023/9",
+      "category": "Traktanden",
+      "updated_datetime": "2025-05-02T11:23:49+00:00",
+      "created_datetime": "2025-05-02T11:23:49+00:00"
+    },
+    {
+      "id": "ops:21c50b86d21b4b4baeb1a76738ff82a3_2025-04-02_1_de",
+      "date_time": "2025-04-02T00:00:00+00:00",
+      "title": "[{'text': 'Petition «Gleichberechtigung für Tagesfamilien: Gleich hohe Betreuungsgutscheine für alle Anbieter im Kanton Bern». Regierungsrätliches Antwortschreiben', 'language': 'de'}]",
+      "affairs": "2025.STA.622",
+      "url": [
+        {
+          "text": "https://www.rr.be.ch/de/start/beschluesse/suche/geschaeftsdetail.html?guid=21c50b86d21b4b4baeb1a76738ff82a3",
+          "language": "de"
+        }
+      ],
+      "updated_datetime": "2025-04-25T11:11:40+00:00",
+      "created_datetime": "2025-04-25T11:11:40+00:00"
+    },
+    {
+      "id": "ops:49_253",
+      "date_time": "2025-03-31T00:00:00+00:00",
+      "position": "2",
+      "number": "2",
+      "title": "[{'text': 'Programmvereinbarungen 2024', 'language': 'de'}]",
+      "updated_datetime": "2025-03-29T01:07:14+00:00",
+      "created_datetime": "2025-03-29T01:07:14+00:00"
+    },
+    {
+      "id": "ops:16155798_4",
+      "date_time": "2025-03-31T00:00:00+00:00",
+      "position": "3",
+      "number": "3",
+      "title": "[{'text': 'Volksmotion Nr. 2024/1 von Sandro Mamedow und Livia Schraff (Erstunterzeichnende) sowie weitere 150 Mitunterzeichnende vom 22. März 2024 mit dem Titel: «Für eine Stimme der Studierenden im Hochschulrat der Pädagogischen Hochschule Schaffhausen (PHSH)»', 'language': 'de'}]",
+      "affairs": "MOT 2024/1",
+      "category": "Traktanden",
+      "updated_datetime": "2025-05-02T11:23:49+00:00",
+      "created_datetime": "2025-05-02T11:23:49+00:00"
+    },
+    {
+      "id": "ops:87b69a72919445a493a061d9b0daeba3",
+      "date_time": "2025-06-02T00:00:00+00:00",
+      "title": "[{'text': 'Differenzierte Anpassung des Gehalts von Lehrpersonen ohne Lehrdiplom', 'language': 'de'}]",
+      "affairs": "2025.GRPARL.81",
+      "updated_datetime": "2025-04-25T11:10:35+00:00",
+      "created_datetime": "2025-04-25T11:10:35+00:00"
+    },
+    {
+      "id": "ops:0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a",
+      "date_time": "2025-01-28T00:00:00+00:00",
+      "position": "29",
+      "number": "29",
+      "title": "[{'text': 'Postulat Widmer Reichlin Gisela und Mit. über Massnahmen zur Erfüllung des Sonderschulkonkordats und zur gezielten Behebung des Fachkräftemangels im Bereich schulische Heilpädagogik / Bildungs- und Kulturdepartement', 'language': 'de'}]",
+      "affairs": "2024P 125",
+      "url": [
+        {
+          "text": "https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a",
+          "language": "de"
+        }
+      ],
+      "category": "voting",
+      "updated_datetime": "2025-01-29T06:59:41+00:00",
+      "created_datetime": "2025-01-29T06:59:41+00:00"
+    },
+    {
+      "id": "ops:fa732e0e-7e5f-4d45-994a-fc74720c0781",
+      "date_time": "2025-01-28T00:00:00+00:00",
+      "position": "14",
+      "number": "14",
+      "title": "[{'text': 'Postulat Stadelmann Karin Andrea und Mit. über die Überprüfung und Anpassung der Kriterien zum früheren Eintritt von Kindern in die Basisstufe (den freiwilligen Kindergarten) / Bildungs- und Kulturdepartement', 'language': 'de'}]",
+      "affairs": "2023P 102",
+      "url": [
+        {
+          "text": "https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=fa732e0e-7e5f-4d45-994a-fc74720c0781",
+          "language": "de"
+        }
+      ],
+      "category": "voting",
+      "updated_datetime": "2025-01-29T06:59:41+00:00",
+      "created_datetime": "2025-01-29T06:59:41+00:00"
+    }
+  ],
+  "@type": "Container"
+}

@@ -18,9 +18,9 @@ Alias: description
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Session](Session.md) |  |  no  |
-| [MeetingItem](MeetingItem.md) |  |  no  |
-| [Legislature](Legislature.md) |  |  no  |
 | [Meeting](Meeting.md) |  |  no  |
+| [Legislature](Legislature.md) |  |  no  |
+| [MeetingItem](MeetingItem.md) |  |  no  |
 
 
 
