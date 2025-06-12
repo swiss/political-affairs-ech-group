@@ -40,25 +40,11 @@ classes:
       - updated_datetime
       - created_datetime
 
-  Session:
-    slots:
-      - id
-      - body_key
-      - name
-      - url
-      - description
-      - group_name
-      - group_id
-      - number
-      - abbreviation
-      - begin_date
-      - end_date
-      - updated_datetime
-      - created_datetime
 
   Meeting:
     slots:
       - id
+      - type  #define enum (session, committee, sitting, various) #sitting=Sessionsitzung, 
       - body_key
       - name
       - url
@@ -73,26 +59,40 @@ classes:
       - state
       - description
       - location
-      - type
+      - submeeting_id #linked meeting_id
       - updated_datetime
       - created_datetime
+      
 
   MeetingItem:
     slots:
       - id
+      - meeting
+      - type  #traktandum oder Traktandengruppen)
       - date_time
       - date_time_actual
       - position
+      - leading #Federführendes Departement
+      - speaker #Sprecher oder Departamentsvorsteher
       - number
       - title
       - affairs
-      - description
+      - description #Unteritel, Traktandendetails
       - status
-      - result
       - url
       - category
+      - subMeetingItem_id
+      - result
       - updated_datetime
       - created_datetime
+
+JointDebate  #Traktanden die gemeinsam behandelt werden
+  slots:
+    - meetingItem
+
+Decison
+  slots
+    -   
 
 slots:
 
