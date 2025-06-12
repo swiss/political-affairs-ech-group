@@ -1,0 +1,36 @@
+Datensatz "traktandum" # Hier ist die Quelle CMI
+  traktandum_beschluss_uhrzeit # Datum und genaue Uhrzeit des Beschlusses im Grossen Rat (verfügbar ab Wintersession 2022).
+  traktandum_beschluss_deutsch # Beschluss des Grossen Rates (z.B. Annahme, Ablehnung, punktweise beschlossen, Kenntnisnahme). Interpellationen und Anfragen werden im schriftlichen Verfahren behandelt. Der Grosse Rat fasst dazu keinen Beschluss.
+  traktandum_beschluss_franz
+  traktandum_beschlussdetail_deutsch # Details des Beschlusses im Ratsplenum (z.B. Resultate von punktweisen Abstimmungen über einen Vorstoss).
+  traktandum_beschlussdetail_franz 
+  traktandum_anzahl_ja_stimmen # Resultat der abschliessenden Abstimmung im Ratsplenum: Anzahl Ja-Stimmen.
+  traktandum_anzahl_nein_stimmen # Resultat der abschliessenden Abstimmung im Ratsplenum: Anzahl Nein-Stimmen.
+  traktandum_anzahl_enthalten # Resultat der abschliessenden Abstimmung im Ratsplenum: Anzahl Enthaltungen.
+  traktandum_antrag_regierungsrat_deutsch # Antrag des Regierungsrates an den Grossen Rat zum Beschluss über das Geschäft (z.B Annahme, Ablehnung, Kenntnisnahme). Zu Erlassgeschäften liegt der Antrag des Regierungsrates in einem separaten Dokument vor und ist nur über die Tabelle «Dokumente» bzw. den dort verfügbaren Link verfügbar. Dasselbe gilt für Kreditgeschäfte.  Interpellationen und Anfragen werden im schriftlichen Verfahren behandelt. Der Grosse Rat fasst dazu keinen Beschluss und der Regierungsrat stellt dementsprechend auch keinen Antrag. 
+  traktandum_antrag_regierungsrat_franz
+  traktandum_antrag_detail_deutsch # Details des Antrags des Regierungsrates (z.B. punktweise Anträge zu einem Vorstoss).
+  traktandum_antrag_detail_franz
+
+Datensatz "abstimmung_tagblatt" # Hier ist die Quelle Mediaparl von Recapp, sprich die digitalisierten Sessionsprotokolle im Online-Tagblatt https://www.be.ch/online-tagblatt
+  abstimmung_uid 
+  traktandum_uid # Referenz zum gleichnamigen Feld der Tabelle «traktandum».
+  element_id # Referenz zum gleichnamigen Feld der Tabelle «tagblatt».
+  abstimmung_ist_hauptabstimmung_von_traktandum # Gibt an, ob es die Hauptabstimmung bzw. die abschliessende Abstimmung zum Traktandum ist. Ist das Feld leer, handelt es sich um eine Nebenabstimmung, z.B. Abstimmungen über Anträge. Bei punktweisen Abstimmungen ist jeweils aus technischen Gründen die erste Abstimmung als Hauptabstimmung ausgewiesen.
+  abstimmung_datum_uhrzeit # ID der Abstimmung, bestehend aus dem Datum, der Uhrzeit und der Nummer der Abstimmung. Die Abstimmungen werden täglich durchnummeriert.
+  abstimmung_titel # Titel der Abstimmung. Gibt an, ob das Resultat einer Abstimmung, einer Gesamtabstimmung oder einer Schlussabstimmung folgt (zweisprachig). Berät der Grosse Rat eine Vorlage in zwei Lesungen, findet nach der ersten Lesung eine Gesamtabstimmung statt. Nach der zweiten Lesung erfolgt die Schlussabstimmung. Findet nur eine Lesung statt, erfolgt nach dieser die Schlussabstimmung. Die Präsidentin oder der Präsident stimmt nicht ab. Bei Stimmengleichheit hat sie oder er den Stichentscheid.
+  abstimmung_beschreibung # Ergebnis der Abstimmung in Textform: Geschäftsnummer, Abstimmungsgegenstand, Beschluss, Resultate (zweisprachig). Verfügbar ab Wintersession 2022.
+  abstimmung_resultat_anzahl_ja 
+  abstimmung_resultat_anzahl_nein
+  abstimmung_resultat_anzahl_enthalten
+   abstimmung_url
+  Link auf das Protokoll der Abstimmung im Online-Tagblatt.
+
+Datensatz "abstimmungsliste" # Der Datensatz enthält die Einzelstimmen der Ratsmitglieder bei Abstimmungen. Er gibt Auskunft darüber, welches Ratsmitglied bei welcher Abstimmung wie abgestimmt hat. Die Abstimmungslisten sind im Online-Tagblatt unter der jeweiligen Abstimmung publiziert.
+  abstimmungsliste_uid
+  abstimmung_uid
+  traktandum_uid
+  mitglied_uid
+  mitglied_vorname # Vorname des Ratsmitglieds, das abgestimmt hat.
+  mitglied_name
+  abstimmungsliste_stimme # Gibt an, wie das Ratsmitglied gestimmt hat (Ja, Nein, Enthalten).
