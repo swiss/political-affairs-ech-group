@@ -10,6 +10,8 @@
 - [BS](https://grosserrat.bs.ch/ratsbetrieb/tagesordnung)
 - [TG](https://parlament.tg.ch/public/upload/assets/176389/01%20Tagesordnung%20der%20Grossratssitzung%20vom%2018.%20Juni%202025.pdf?fp=1)
 
+OPAR: https://oparl.org/spezifikation/online-ansicht/#entity-agendaitem
+
 Besprochen:
 
 - Traktanden haben können ein oder mehrere federührende Departments haben, die häufig als Gruppierungselemente (BE, TI, AG) in der Darstellung genutzt werden.
@@ -21,3 +23,4 @@ Besprochen:
   -  BE: Beschluss wird beim ersten Traktdum ergänzt, Hinweis beim 2,3.. das dies gemeinsam Behandelt wurde
  
 - Wir bilden diese Thematik damit mit einer neuen Klasse JointDebate ab, welche die gemeinsam behandelten Traktanden aufführt und damit zusammenfasst.
+
