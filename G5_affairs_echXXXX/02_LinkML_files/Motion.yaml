@@ -21,64 +21,86 @@ Motion:
         		range: string
         		description: Number of the affair, issued by XX.
 		title: 
-		       range: TitleText
+		       range: TextBlock
 		       multivalued: true
 			description: XX
-		submission:
-		        range: Submission
-		        required: true
-		        description: Submission details for the motion.
-			 
-		submissionValidation: 
-			range: SubmissionValidation
-			description: Initial checks of the submitted motion + date. Including urgency requests + date. And first council assignment (federal) + date.
 		
-		committeeDeliberation: 
-			multivalued: true
-			description: Committee assignment (+date of decision, +date of referal) + chamber. Committee meeings (minutes). Committee decisions. 
-			
-		plenaryDebates: (consultation)
+		submission:
+		       range: Submission
+		       required: true
+		       description: Submission details for the motion.
+		
+		submissionValidation:
+		  	range: SubmissionReviewStep
+		  	multivalued: true
+		  	required: false
+		  	description: Initial steps taken after the submission of the motion, such as content/formal checks and urgency requests.
+		
+		Zuteilung: (assignment, referral)
+		  	range: ZuteilungsSchritt
+		  	multivalued: true
+		  	required: false
+		  	description: Steps that assign the affair to a chamber, committee, or administrative body for handling.
+		
+		response:
+		  	range: ResponseStep
+		  	multivalued: true
+		  	required: false
+		  	description: Formal responses or recommendations from the executive (e.g. Direktion, Bundesrat).
+
+		
+		committeeDeliberations:
+		  	range: CommitteeDeliberationStep
+		  	multivalued: true
+		  	required: false
+		  	description: Committee-level deliberations preparing for the plenary debate.
+
+
+
+
+	
+		
+		# TODO for LB: 
+		BeratungRatsplenum:
 		    	range: PlenaryDebate
 		    	multivalued: true
-		    	description: Plenary debate (+chamber). Debate type (Eintreten, Detail). Discussion minutes (+ date and time + link to speaker + link to roles). Amendments/propositions for change/adhering. Votes. Final decision.
-									
+		    	description: Plenary debate (+chamber). 
+				= Debate type (Eintreten (nid motion), Detail, Firstverlängerung, Beantwortung/Abschreibung, 1-2 Läsig (nid motion hihi)) (oder einfach "Beratung"). 
+			Discussion minutes (+ date and time + link to speaker + link to roles). 
+			Amendments/propositions for change/adhering. Votes. Final decision.
+										
+		
 		(plenaryDebates can be repeated as many times as neccessary? + can be "interruptted by committeeDeliberations (second chamber)")
 		
-		resolutionOfDifferences: 
+		
+		# Not for motion
+		Differenzbereinigung: 
 			description: Differenzbereinigung. Chamber. Date and time. Type. Discussion minutes (+ date and time + link to speaker + link to roles). Votes. Final decision.
 		
-		Conciliation:
+		
+		# Not for motion
+		Einigungskonferenz:
 			description: Einigungskonferenz. 
 			
+			
+		# To discuss how we capture voting in general! 
 		FinalVote: 
 			multivalued: true
 			description: Date and time. Chamber. Votes. Final decision.
 		
 		
-# Discuss June 4th: 
-2 Ways we can go: 
-	1) We define each as a class of its own and assign it values
-	2) We create a generic ProcessClass: 
+		
+		# === Fristen ===
+		# TODO for LB: 
+		Fristen:
+			Datum: XX
+			Typen:  
+				Beantwortungsfrist
+				Behandlungsfristen => für Exekutive UND für Legislative! => an wen gerichtet? (e.g., innerhalb von XY Zeit muss es behandelt werden)
+				Fristerstreckung = Erste frist, 2. Frist, ...
+				XX
 	
-	ProcessStep:
-	  	description: Generic step in the process of any affair.
-	  	attributes:
-	    	   	chamber: 
-	      			range: ChamberEnum
-	    		start_date: 
-	    		  	range: date
-	    		end_date:
-	    		  	range: date
-	    		documents:
-	      		 	range: Document
-	      		 	multivalued: true
-	CommitteeDeliberation:
-	  	is_a: ProcessStep
-	  	attributes:
-	    	  	XX
-	      
-	      
-	      		
+	
 	       # === Lifecycle flags ===
 		# Do we want this? => technically, we should add this in a separate layer
 	       submitted:
@@ -94,22 +116,268 @@ Motion:
 	         	required: true
 	         	description:
 
-TitleText:
-    	description: A motion title in a specific language, with optional translation metadata.
-	attributes:
-	      	text:
-	        	range: string
-	        	required: true
-			description: XX
-	      	language:
-	       	range: LanguageCodeEnum
-	       	required: false
-			description: Language of the title (de, fr, it, rm, en)
-	      	type:
-	        	range: TextOriginEnum
-	        	required: false
-	        	description: Original submission; short title; long title; translated title; provisionary title
+
+
+
+
+
+
+#-------------------- Process step classes --------------------#
+
+
+CommitteePosition:
+  	description: A formal position taken by part of the committee (majority or minority), including recommendation and supporting members.
+  	attributes:	
+  	  	name:
+  	  	  	range: string
+  	  	  	required: false
+  	  	  	description: Optional name or label of the position (e.g. "Minderheit I").
+  	  	
+  	  	recommendation:
+  	  	  	range: RecommendationEnum
+  	  	  	required: true
+  	  	  	description: The recommendation (accept, reject, etc.).
+  	  	
+  	  	supporters:
+  	  	  	range: Person
+  	  	  	multivalued: true
+  	  	  	required: false
+  	  	  	description: Members who supported this position.
+
+
+CommitteeDecision:
+  	description: The committee’s formal recommendation, with majority/minority positions and supporting members.
+  	attributes:
+  	
+  	  	date:
+  	  	  	range: date
+  	  	  	required: false
+  	  	
+  	  	majority_position:
+  	  	  	range: CommitteePosition
+  	  	  	required: true
+  	  	  	description: The majority recommendation of the committee, with supporter list.
+  	  	
+  	  	minority_positions:
+  	  	  	range: CommitteePosition
+  	  	  	multivalued: true
+  	  	  	required: false
+  	  	  	description: One or more formally recorded minority positions.
+  	  	
+  	  	press_release:
+  	  	  	range: TextBlock
+  	  	  	required: false
+  	  	  	description: Text of official communication of committee decision.
+  	  	
+  	  	document:
+  	  	  	range: string
+  	  	  	required: false
+			description: XX needed? probably, right?
+
+
+# TODO: link zu anderer Subgruppe? => Christian fragen
+CommitteeMeeting:
+  	description: A formal meeting held by a parliamentary committee, including participation and discussed affairs.
+  	attributes:
+  	  	committee:
+  	  	  	range: HandlingEntity
+  	  	  	required: true
+  	  	  	description: The committee that held the meeting.
+  	  	
+  	  	meeting_date:
+  	  	  	range: date
+  	  	  	required: true
+  	  	
+  	  	start_time:
+  	  	  	range: time
+  	  	  	required: false
+  	  	
+  	  	end_time:
+  	  	  	range: time
+  	  	  	required: false
+  	  	
+  	  	president:
+  	  	  	range: Person
+  	  	  	required: false
+  	  	  	description: Chair of the meeting.
+  	  	
+  	  	vice_president:
+  	  	  	range: Person
+  	  	  	required: false
+  	  	  	description: Vice-chair of the meeting.
+  	  	
+  	  	attendees:
+  	  	  	range: Person
+  	  	  	multivalued: true
+  	  	  	required: false
+  	  	
+  	  	absentees:
+  	  	  	range: Person
+  	  	  	multivalued: true
+  	  	  	required: false
+  	  	  	description: Members who were absent without excuse.
+  	  	  	
+  	  	excused:
+  	  	  	range: Person
+  	  	  	multivalued: true
+  	  	  	required: false
+  	  	  	description: Members who were excused from attendance.
+  	  	
+  	  	discussed_affairs:
+  	  	  	range: string
+  	  	  	multivalued: true
+  	  	  	required: false
+  	  	  	description: UIDs of affairs discussed during the meeting.
+
+
+CommitteeDeliberationStep:
+  	description: Preparation of a motion by a parliamentary committee, including meetings, recommendations, and spokesperson designation.
+  	attributes:
+  	
+  	  	committee:
+  	  	  	range: HandlingEntity
+  	  	  	required: true
+  	  	  	description: The committee responsible for the deliberation.
+  	  	
+  	  	chamber:
+  	  	  	range: ChamberEnum
+  	  	  	required: false
+  	  	  	description: The chamber this committee belongs to.
+  	  	
+		# können wir diese 2 Daten noch einmal durchgehen?
+  	  	assignment_date:
+  	  	  	range: date
+  	  	  	required: false
+  	  	  	description: When the committee was officially assigned the motion.
+  	  	
+  	  	referral_date:
+  	  	  	range: date
+  	  	  	required: false
+  	  	  	description: When the motion was formally referred to the committee.
+  	  	
+  	  	decision:
+  	  	  	range: CommitteeDecision
+  	  	  	required: false
+  	  	  	description: The committee’s recommendation to the plenary, including majority/minority positions.
+  	  	
+  	  	spokesperson:
+  	  	  	range: Person
+  	  	  	required: false
+  	  	  	description: The person designated to speak in plenary for the committee.
+
+		meeting_refs:
+		    range: CommitteeMeeting
+		    multivalued: true
+		    required: false
+
+ResponseStep:
+  	description: A formal statement or reaction by the executive authority to a motion.
+  	attributes:
+  	  	responder:
+  	  	  	range: HandlingEntity
+  	  	  	required: true
+  	  	  	description: The body that issued the response (e.g., Bundesrat, ...).
+  	  	
+  	  	response_date:
+  	  	 	range: date
+  	  	 	required: true
 			
+  	  	#---Was gibt es für Fristen heir? => da müssen wir noch daran arbeiten :) Evtl. könnten wir Frist-typen machen?
+  	  	deadline:
+  	  	  	range: date
+  	  	  	required: false
+  	  	  	description: Optional deadline mentioned in the response (e.g. Umsetzung bis ...).
+  	  	
+	       recommendation:
+	          	range: RecommendationEnum
+	          	required: false
+	          	description: Formal recommendation regarding the motion's adoption.
+		
+  	  	texts:
+  	  	  	range: TextBlock
+  	  	  	multivalued: true
+  	  	  	required: true
+  	  	  	description: Response and recommendation texts, including translations and metadata.
+
+		
+
+
+
+ZuteilungsSchritt:
+  	description: A formal assignment of the affair to an institution or actor for further processing.
+  	attributes:
+  	  	step_type:
+  	  	  	range: ZuteilungsSchrittTypeEnum
+  	  	  	required: true
+  	  	  	description: Type of assignment (e.g., chamber, committee, executive).
+  	  	
+  	  	assigned_to:
+  	  	  	range: HandlingEntity
+  	  	  	required: true
+  	  	  	description: The body to which the affair is assigned (e.g., Nationalrat, SGK-NR, Gesundheitsdirektion ZH).
+  	  	
+  	  	assignment_submission_date:
+  	  	  	range: date
+  	  	  	required: true
+		
+  	  	assignment_decision_date:
+  	  	  	range: date
+  	  	  	required: true
+  	  	
+		#Do we need this? => Die Idee wäre, dass wir "Regeln" fixieren hier? ... tricky
+  	  	basis:
+  	  	  	range: DocketingBasisEnum
+  	  	  	required: false
+  	  	  	description: Legal or procedural rule that governs this assignment (e.g., "Kommissionsmotion → Kammer").
+  	  	
+  	  	remarks:
+  	  	  	range: string
+  	  	  	required: false
+  	  	  	description: Free-text explanation or notes.
+  	  	
+  	  	deadline:
+  	  	  	range: date
+  	  	  	required: false
+  	  	  	description: Optional treatment deadline (e.g. Abschreibungsfrist).
+
+
+
+
+SubmissionReviewStep:
+  	description: A concrete step taken during the validation of the submission, such as a content check or an urgency decision.
+  	attributes:
+  	 	step_type:
+  	 	  	range: SubmissionReviewStepTypeEnum
+  	 	  	required: true
+  	 	  	description: Whether the step was an initial check or an urgency request.
+  	 	
+  	 	received_date:
+  	 	  	range: date
+  	 	  	required: false
+  	 	  	description: When the request or task was formally received.
+  	 	
+  	 	decision_date:
+  	 	  	range: date
+  	 	  	required: false
+  	 	  	description: When the step was completed or decided.
+  	 	
+  	 	decided_by:
+  	 	  	range: ValidatingEntity
+  	 	  	required: false
+  	 	  	description: Entity that made the decision.
+  	 	
+  	 	decision_result:
+  	 	 	range: string
+  	 	 	required: false
+  	 	 	description: Outcome of the step (e.g. "valid", "invalid", "granted", "rejected").
+  	 	
+  	 	deadline:
+  	 	 	range: date
+  	 	 	required: false
+  	 	 	description: If applicable, the deadline by which the affair must be treated (Beantwortungsfrist).
+
+
+
 Submission:
 	description: The submission stage of a motion, including date, sponsor, and accompanying texts.
 	attributes:
@@ -122,7 +390,7 @@ Submission:
 			required: true
 			description: The main sponsor (MP, committee majority, or parliamentary group) and cosponsors.
 		texts: 
-			range: SubmissionText
+			range: TextBlock
 			multivalued: true
 			required: true
 			description: All texts associated with the submission (e.g., main text, reasoning).
@@ -130,6 +398,42 @@ Submission:
 	         	range: date
 	         	required: false
 	         	description: The date the pursuit/affair was officially withdrawn by the sponsor, if applicable.	
+
+
+
+#-------------------- Helper classes --------------------#
+TextBlock:
+  	description: A text element in a specific language, with optional metadata for origin, type, and translation status.
+  	attributes:
+  	  	text:
+  	  	  	range: string
+  	  	  	required: true
+  	  	
+  	  	language:
+  	  	  	range: LanguageCodeEnum
+  	  	  	required: false
+  	  	  	description: Language of the text (de, fr, it, rm, en)
+  	  	
+  	  	text_type:
+  	  	  	range: TextTypeEnum
+  	  	  	required: true
+  	  	  	description: Purpose or content type of this text (e.g., title (Original submission; short title; long title; translated title; provisionary title), submitted text (submitted, reasoning), response).
+  	  	
+  	  	origin:
+  	  	  	range: TextOriginEnum
+  	  	  	required: false
+  	  	  	description: Whether this is an original or translated version.
+  	  	
+  	  	date:
+  	  	  	range: date
+  	  	  	required: false
+  	  	  	description: Date the text was produced or officially recorded.
+  	  	
+  	  	document:
+  	  	  	range: string
+  	  	  	required: false
+  	  	  	description: Optional reference or URI to the official document version.
+
 			
 Sponsorship:
 	description: A time-bounded set of (co-)sponsors with roles.
@@ -157,33 +461,31 @@ SponsorshipParticipant:
         	      	required: true
         	      	description: Whether this entity is a sponsor, cosponsor, or got the sponsorship transferred to them.
 
-SubmissionText:
-    	description: A text block submitted during the submission stage, labeled by type and language.
-    	attributes:
-      	 	type:
-        		range: SubmissionTextTypeEnum
-        	      	required: true
-        	      	description: Type of the text (e.g., submitted, reasoning).
-      		 language:
-        		range: LanguageCodeEnum
-        	      	required: true
-      		 text:
-        		range: string
-        	      	required: true
+
+		
 
 Person:
     	is_a: SponsoringEntity
     	XXLINK TO ACTOR eCH GROUP
 	
+	
 Committee:
     	is_a: SponsoringEntity
+	is_a: HandlingEntity
     	XXLINK TO ACTOR eCH GROUP
+
+Chamber: 
+	is_a: HandlingEntity
+	
+Department: 
+	is_a: HandlingEntity
 	
 ParliamentaryGroup:
     	is_a: SponsoringEntity
     	XXLINK TO ACTOR eCH GROUP
 	
 
+#-------------------- Fixed values / Dictionaries --------------------#
 enums:
 	affairType: 
 		description: XX
@@ -204,13 +506,17 @@ enums:
 		permissible_values:
 			original: { description: The title was originally submitted in this language. }
 			translated: { description: The title was later translated from another language. }
-	SubmissionTextTypeEnum: 
-		description: The purpose or role of the submission text.
-		permissible_values:
-			submitted:
-				description: The official text submitted by the sponsor.
-			reasoning:
-				description: An explanation or justification submitted by the sponsor.
+	TextTypeEnum:
+	  	description: Type or function of the text within the legislative affair.
+	  	permissible_values:
+	   		title: { description: Official title of the motion. }
+	   		submitted: {description: The text submitted by the sponsor.}
+	   		reasoning: {description: An explanation or justification submitted by the sponsor.}
+	   		response: { description: Response by executive (e.g., Bundesrat). }
+	   		recommendation: { description: Formal recommendation for or against the motion. }
+	   		summary: { description: Administrative summary or synopsis. }
+			
+	
 	SponsorRoleEnum:
 		description: Role of (co-)sponsors.
 	    	permissible_values:
@@ -221,3 +527,55 @@ enums:
 					MP who co-signed the pursuit/affair.
 	      	 	transferred: 
 				description: Entity who took over the sponsorship after the original sponsor left.
+	
+	SubmissionReviewStepTypeEnum:
+	  	permissible_values:
+	  	  	initial_check:
+	  	  	  	description: Formal or content check of the submission.
+	  	  	urgency_request:
+	  	  	  	description: Request for urgent treatment.
+				
+	ZuteilungsSchrittTypeEnum:
+	  	permissible_values:
+	  	  	chamber_assignment:
+	  	  	  	description: Assignment to a legislative chamber for first debate.
+	  	  	committee_referral:
+	  	  	  	description: Referral to a committee.
+	  	  	executive_routing:
+	  	  	  	description: Forwarding to a government department (e.g., Direktion).
+	  	  	agenda_placement:
+	  	  	  	description: Placing on the agenda for a specific session or meeting.
+	
+	#maybe we don't need this: 
+	DocketingBasisEnum:
+	  	permissible_values:
+	  	  	automatic_by_sponsor_type:
+	  	  	  	description: Automatically determined by the type of sponsor (e.g., Kommission → Kammer).
+	  	  	administrative_decision:
+	  	  	  	description: Assigned by Staatskanzlei, Ratsbüro or other admin body.
+	  	  	ai_assistance:
+	  	  	  	description: AI-generated recommendation followed by human validation.
+	  	  	government_protocol:
+	  	  	  	description: Assigned and approved by executive council or cantonal government.
+	
+	# Prüfen: was gibt es da alles? :)
+	RecommendationEnum:
+	  	description: Recommendation made by the responder regarding the fate of the motion.
+	  	permissible_values:
+	  	  	accept:
+	  	  	  	description: The motion is supported and should be adopted.
+	  	  	reject:
+	  	  	  	description: The motion is not supported and should be rejected.
+	  	  	partial_acceptance:
+	  	  	  	description: Some parts of the motion are supported.
+	  	  	already_done:
+	  	  	  	description: The measures requested are already implemented.
+	  	  	no_competence:
+	  	  	  	description: The body lacks the competence to act.
+	  	  	defer:
+	  	  	  	description: The motion should be deferred for later decision.
+	  	  	neutral:
+	  	  	  	description: No explicit recommendation provided.
+			
+	
+	
