@@ -31,12 +31,12 @@ Motion:
 		       description: Submission details for the motion.
 		
 		submissionValidation:
-		  	range: SubmissionReviewStep
+		  	range: SubmissionValidationStep
 		  	multivalued: true
 		  	required: false
 		  	description: Initial steps taken after the submission of the motion, such as content/formal checks and urgency requests.
 		
-		Zuteilung: (assignment, referral)
+		assignment: 
 		  	range: ZuteilungsSchritt
 		  	multivalued: true
 		  	required: false
@@ -48,7 +48,7 @@ Motion:
 		  	required: false
 		  	description: Formal responses or recommendations from the executive (e.g. Direktion, Bundesrat).
 
-		
+		# Beratung (im Hintergrund)
 		committeeDeliberations:
 		  	range: CommitteeDeliberationStep
 		  	multivalued: true
@@ -61,6 +61,7 @@ Motion:
 	
 		
 		# TODO for LB: 
+		# Behandlung im Rat
 		BeratungRatsplenum:
 		    	range: PlenaryDebate
 		    	multivalued: true
@@ -124,15 +125,20 @@ Motion:
 
 #-------------------- Process step classes --------------------#
 
-
 CommitteePosition:
   	description: A formal position taken by part of the committee (majority or minority), including recommendation and supporting members.
-  	attributes:	
+  	attributes:				
+		type: 	
+			range: enumXX
+			# TODO: fill
+			required: true
+			description: full committee, majority, minority (+name)
+			
   	  	name:
   	  	  	range: string
   	  	  	required: false
   	  	  	description: Optional name or label of the position (e.g. "Minderheit I").
-  	  	
+		  	  	
   	  	recommendation:
   	  	  	range: RecommendationEnum
   	  	  	required: true
@@ -143,6 +149,7 @@ CommitteePosition:
   	  	  	multivalued: true
   	  	  	required: false
   	  	  	description: Members who supported this position.
+		# TODO: maybe we can fix this via PERSON => roles
 
 
 CommitteeDecision:
@@ -153,26 +160,19 @@ CommitteeDecision:
   	  	  	range: date
   	  	  	required: false
   	  	
-  	  	majority_position:
-  	  	  	range: CommitteePosition
-  	  	  	required: true
-  	  	  	description: The majority recommendation of the committee, with supporter list.
-  	  	
-  	  	minority_positions:
-  	  	  	range: CommitteePosition
-  	  	  	multivalued: true
-  	  	  	required: false
-  	  	  	description: One or more formally recorded minority positions.
-  	  	
-  	  	press_release:
+		position: 
+			range: CommitteePosition
+			multivalued: true
+			required: false
+			description: The recommendation of the committee.
+		 	  	
+  	  	text:
   	  	  	range: TextBlock
   	  	  	required: false
   	  	  	description: Text of official communication of committee decision.
+			# type = press release, or official communication
   	  	
-  	  	document:
-  	  	  	range: string
-  	  	  	required: false
-			description: XX needed? probably, right?
+  	  	
 
 
 # TODO: link zu anderer Subgruppe? => Christian fragen
@@ -239,23 +239,14 @@ CommitteeDeliberationStep:
   	  	  	required: true
   	  	  	description: The committee responsible for the deliberation.
   	  	
-  	  	chamber:
-  	  	  	range: ChamberEnum
+  	  	council:
+			#TODO change ChamberEnum to CouncilEnum
+  	  	  	range: CouncilEnum
   	  	  	required: false
   	  	  	description: The chamber this committee belongs to.
-  	  	
-		# können wir diese 2 Daten noch einmal durchgehen?
-  	  	assignment_date:
-  	  	  	range: date
-  	  	  	required: false
-  	  	  	description: When the committee was officially assigned the motion.
-  	  	
-  	  	referral_date:
-  	  	  	range: date
-  	  	  	required: false
-  	  	  	description: When the motion was formally referred to the committee.
-  	  	
+  	  		  		
   	  	decision:
+			# TODO: name? 
   	  	  	range: CommitteeDecision
   	  	  	required: false
   	  	  	description: The committee’s recommendation to the plenary, including majority/minority positions.
@@ -263,10 +254,11 @@ CommitteeDeliberationStep:
   	  	spokesperson:
   	  	  	range: Person
   	  	  	required: false
-  	  	  	description: The person designated to speak in plenary for the committee.
+  	  	  	description: The person designated to speak in plenary for the committee. (Sprecher, Redner, Referent)
+			# TODO: genereller: jeder Step hat PERSONEN => diese Personen haben ROLLEN
 
 		meeting_refs:
-		    range: CommitteeMeeting
+		    range: CommitteeMeeting #Verweis auf andere Subgruppe => Christian
 		    multivalued: true
 		    required: false
 
@@ -282,12 +274,6 @@ ResponseStep:
   	  	 	range: date
   	  	 	required: true
 			
-  	  	#---Was gibt es für Fristen heir? => da müssen wir noch daran arbeiten :) Evtl. könnten wir Frist-typen machen?
-  	  	deadline:
-  	  	  	range: date
-  	  	  	required: false
-  	  	  	description: Optional deadline mentioned in the response (e.g. Umsetzung bis ...).
-  	  	
 	       recommendation:
 	          	range: RecommendationEnum
 	          	required: false
@@ -303,7 +289,7 @@ ResponseStep:
 
 
 
-ZuteilungsSchritt:
+assignment:
   	description: A formal assignment of the affair to an institution or actor for further processing.
   	attributes:
   	  	step_type:
@@ -315,21 +301,12 @@ ZuteilungsSchritt:
   	  	  	range: HandlingEntity
   	  	  	required: true
   	  	  	description: The body to which the affair is assigned (e.g., Nationalrat, SGK-NR, Gesundheitsdirektion ZH).
-  	  	
-  	  	assignment_submission_date:
+  	  			
+  	  	assignment_date:
   	  	  	range: date
   	  	  	required: true
-		
-  	  	assignment_decision_date:
-  	  	  	range: date
-  	  	  	required: true
-  	  	
-		#Do we need this? => Die Idee wäre, dass wir "Regeln" fixieren hier? ... tricky
-  	  	basis:
-  	  	  	range: DocketingBasisEnum
-  	  	  	required: false
-  	  	  	description: Legal or procedural rule that governs this assignment (e.g., "Kommissionsmotion → Kammer").
-  	  	
+  	  	  	  	
+		#TODO: evtl. kommt das überall ein wenig rein: remarks
   	  	remarks:
   	  	  	range: string
   	  	  	required: false
@@ -343,7 +320,7 @@ ZuteilungsSchritt:
 
 
 
-SubmissionReviewStep:
+SubmissionValidationStep:
   	description: A concrete step taken during the validation of the submission, such as a content check or an urgency decision.
   	attributes:
   	 	step_type:
@@ -368,13 +345,14 @@ SubmissionReviewStep:
   	 	
   	 	decision_result:
   	 	 	range: string
+			mapping: #TODO: dictionary => yes, no [wenn valid = dann yes]
   	 	 	required: false
   	 	 	description: Outcome of the step (e.g. "valid", "invalid", "granted", "rejected").
   	 	
   	 	deadline:
   	 	 	range: date
   	 	 	required: false
-  	 	 	description: If applicable, the deadline by which the affair must be treated (Beantwortungsfrist).
+  	 	 	description: If applicable, the deadline by which the affair must be treated (Beantwortungsfrist; Behandlungsfrist).
 
 
 
@@ -407,7 +385,8 @@ TextBlock:
   	attributes:
   	  	text:
   	  	  	range: string
-  	  	  	required: true
+  	  	  	required: true 
+			# TODO: (can be false if document = TRUE)
   	  	
   	  	language:
   	  	  	range: LanguageCodeEnum
@@ -431,6 +410,8 @@ TextBlock:
   	  	
   	  	document:
   	  	  	range: string
+			##TODO: Verschachteln => documentBlock nicht nur TextBlock
+			type: PDF, HTML, XX
   	  	  	required: false
   	  	  	description: Optional reference or URI to the official document version.
 
@@ -438,30 +419,25 @@ TextBlock:
 Sponsorship:
 	description: A time-bounded set of (co-)sponsors with roles.
 	attributes:
-		(co)sponsors:
-			range: SponsorshipParticipant
+		actor:
+			range: SponsoringEntity
 			multivalued: true
 			required: true
 			description: All individuals or entities involved in sponsoring or cosponsoring, with roles.
+     		 role:
+       		range: SponsorRoleEnum
+       	      	required: true
+			#Jonas: check wie viele first, second, third, N
+       	      	description: Whether this entity is a (first, second, third, ..) sponsor (Urheber:in), cosponsor (Mitunterzeichner:in), or got the sponsorship transferred to them.
 		start_date:
 			range: date
 			required: true
 		end_date:
 			range: date
 			required: false
-	
-SponsorshipParticipant:
-    	description: An individual or entity that participated in sponsoring a motion.
-    	attributes:
-      	 	actor:
-        	      	range: SponsoringEntity
-        	     	required: true
-      		 role:
-        		range: SponsorRoleEnum
-        	      	required: true
-        	      	description: Whether this entity is a sponsor, cosponsor, or got the sponsorship transferred to them.
-
-
+			#TODO description
+			description: tied to "transferred" (old member gets end-date + new member gets end-date + new entry with their new role)
+			#TODO Fabian fragen: wie wird es auf B-Ebene gemacht? => gibt es da Tage, wo das alles erledigt wird => Event-style & Nadine fragt bei Kantonen nach, ob das ein grosses Event ist, oder ob das eher so etwas kleines ist.
 		
 
 Person:
@@ -520,6 +496,7 @@ enums:
 	SponsorRoleEnum:
 		description: Role of (co-)sponsors.
 	    	permissible_values:
+			#Ergänzen: first, second, third, n-sponsor
 	      	 	sponsor: 
 				description: Main sponsor submitting a pursuit/affair.
 	      	 	cosponsor: 
