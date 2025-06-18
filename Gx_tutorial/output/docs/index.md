@@ -29,7 +29,7 @@ Name: tutorial
 | [agenda_items](agenda_items.md) |  |
 | [end_date](end_date.md) | [en] The end date of the session |
 | [id](id.md) |  |
-| [language](language.md) | [en] Language code in ISO 639-1 format |
+| [language](language.md) | [en] Language code in ISO 639-1 format [de] Sprachcode im ISO 639-1-Format |
 | [name](name.md) |  |
 | [question](question.md) |  |
 | [result](result.md) |  |

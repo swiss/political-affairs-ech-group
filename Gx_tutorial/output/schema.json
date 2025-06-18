@@ -78,7 +78,7 @@
             "description": "",
             "properties": {
                 "language": {
-                    "description": "[en] Language code in ISO 639-1 format\n[de] Sprachcode im ISO 639-1-Format\n",
+                    "description": "[en] Language code in ISO 639-1 format [de] Sprachcode im ISO 639-1-Format\n",
                     "pattern": "^[a-z]{2}$",
                     "type": "string"
                 },

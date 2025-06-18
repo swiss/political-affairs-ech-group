@@ -47,11 +47,11 @@ tutorial:s2025-2 a tutorial:Session ;
 
 tutorial:s2025-2_t1 a tutorial:AgendaItem ;
     dcterm:title [ a tutorial:MultilingualString ;
-            dcterm:language "en" ;
-            tutorial:text "National Anthem" ],
-        [ a tutorial:MultilingualString ;
             dcterm:language "de" ;
-            tutorial:text "Landeshymne" ] .
+            tutorial:text "Landeshymne" ],
+        [ a tutorial:MultilingualString ;
+            dcterm:language "en" ;
+            tutorial:text "National Anthem" ] .
 
 tutorial:s2025-2_t1_a1 a tutorial:Vote ;
     tutorial:question "Soll die Hymne geändert werden?" .
