@@ -3,9 +3,7 @@
 # Slot: end_date 
 
 
-_[en] The end date of the session._
-
-_[de] Das Enddatum der Sitzung._
+_[en] The end date of the session. [de] Das Enddatum der Sitzung._
 
 __
 
@@ -73,9 +71,7 @@ Alias: end_date
 <details>
 ```yaml
 name: end_date
-description: '[en] The end date of the session.
-
-  [de] Das Enddatum der Sitzung.
+description: '[en] The end date of the session. [de] Das Enddatum der Sitzung.
 
   '
 from_schema: https://ch.paf.link/schema/tutorial

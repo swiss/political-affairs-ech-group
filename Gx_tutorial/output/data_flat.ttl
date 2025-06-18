@@ -13,21 +13,21 @@ tutorial:s2025 a tutorial:Container ;
 
 tutorial:s2025-1 a tutorial:Session ;
     dcterm:title [ a tutorial:MultilingualString ;
-            dcterm:language "de" ;
-            tutorial:text "Frühlingssession 2025" ],
-        [ a tutorial:MultilingualString ;
             dcterm:language "en" ;
-            tutorial:text "Spring Session 2025" ] ;
+            tutorial:text "Spring Session 2025" ],
+        [ a tutorial:MultilingualString ;
+            dcterm:language "de" ;
+            tutorial:text "Frühlingssession 2025" ] ;
     tutorial:endDate "2025-04-10"^^xsd:date ;
     tutorial:startDate "2025-03-01"^^xsd:date .
 
 tutorial:s2025-1_t1 a tutorial:AgendaItem ;
     dcterm:title [ a tutorial:MultilingualString ;
-            dcterm:language "de" ;
-            tutorial:text "Fahnenfarbe" ],
-        [ a tutorial:MultilingualString ;
             dcterm:language "en" ;
-            tutorial:text "Flag Color" ] .
+            tutorial:text "Flag Color" ],
+        [ a tutorial:MultilingualString ;
+            dcterm:language "de" ;
+            tutorial:text "Fahnenfarbe" ] .
 
 tutorial:s2025-1_t1_a1 a tutorial:Vote ;
     tutorial:question "Soll die Farbe geändert werden?" .
@@ -47,11 +47,11 @@ tutorial:s2025-2 a tutorial:Session ;
 
 tutorial:s2025-2_t1 a tutorial:AgendaItem ;
     dcterm:title [ a tutorial:MultilingualString ;
-            dcterm:language "de" ;
-            tutorial:text "Landeshymne" ],
-        [ a tutorial:MultilingualString ;
             dcterm:language "en" ;
-            tutorial:text "National Anthem" ] .
+            tutorial:text "National Anthem" ],
+        [ a tutorial:MultilingualString ;
+            dcterm:language "de" ;
+            tutorial:text "Landeshymne" ] .
 
 tutorial:s2025-2_t1_a1 a tutorial:Vote ;
     tutorial:question "Soll die Hymne geändert werden?" .

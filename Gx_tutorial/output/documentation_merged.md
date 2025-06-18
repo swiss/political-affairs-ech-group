@@ -534,9 +534,7 @@ attributes:
     required: true
   start_date:
     name: start_date
-    description: '[en] The start date of the session.
-
-      [de] Das Startdatum der Sitzung.
+    description: '[en] The start date of the session. [de] Das Startdatum der Sitzung.
 
       '
     from_schema: https://ch.paf.link/schema/tutorial
@@ -549,9 +547,7 @@ attributes:
     range: date
   end_date:
     name: end_date
-    description: '[en] The end date of the session.
-
-      [de] Das Enddatum der Sitzung.
+    description: '[en] The end date of the session. [de] Das Enddatum der Sitzung.
 
       '
     from_schema: https://ch.paf.link/schema/tutorial
@@ -740,9 +736,8 @@ attributes:
     required: true
   vote_time:
     name: vote_time
-    description: '[en] The date and time when the vote was cast.
-
-      [de] Das Datum und die Uhrzeit, zu der die Abstimmung abgegeben wurde.
+    description: '[en] The date and time when the vote was cast. [de] Das Datum und
+      die Uhrzeit, zu der die Abstimmung abgegeben wurde.
 
       '
     from_schema: https://ch.paf.link/schema/tutorial

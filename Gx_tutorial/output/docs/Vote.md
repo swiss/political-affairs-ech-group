@@ -147,9 +147,8 @@ attributes:
     required: true
   vote_time:
     name: vote_time
-    description: '[en] The date and time when the vote was cast.
-
-      [de] Das Datum und die Uhrzeit, zu der die Abstimmung abgegeben wurde.
+    description: '[en] The date and time when the vote was cast. [de] Das Datum und
+      die Uhrzeit, zu der die Abstimmung abgegeben wurde.
 
       '
     from_schema: https://ch.paf.link/schema/tutorial

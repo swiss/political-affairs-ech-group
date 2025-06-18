@@ -116,7 +116,7 @@
                     ]
                 },
                 "end_date": {
-                    "description": "[en] The end date of the session.\n[de] Das Enddatum der Sitzung.\n",
+                    "description": "[en] The end date of the session. [de] Das Enddatum der Sitzung.\n",
                     "format": "date",
                     "type": [
                         "string",
@@ -136,7 +136,7 @@
                     ]
                 },
                 "start_date": {
-                    "description": "[en] The start date of the session.\n[de] Das Startdatum der Sitzung.\n",
+                    "description": "[en] The start date of the session. [de] Das Startdatum der Sitzung.\n",
                     "format": "date",
                     "type": [
                         "string",
@@ -164,7 +164,7 @@
                     "$ref": "#/$defs/ResultEnum"
                 },
                 "vote_time": {
-                    "description": "[en] The date and time when the vote was cast.\n[de] Das Datum und die Uhrzeit, zu der die Abstimmung abgegeben wurde.\n",
+                    "description": "[en] The date and time when the vote was cast. [de] Das Datum und die Uhrzeit, zu der die Abstimmung abgegeben wurde.\n",
                     "format": "date-time",
                     "type": [
                         "string",

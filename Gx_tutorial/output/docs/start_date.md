@@ -3,9 +3,7 @@
 # Slot: start_date 
 
 
-_[en] The start date of the session._
-
-_[de] Das Startdatum der Sitzung._
+_[en] The start date of the session. [de] Das Startdatum der Sitzung._
 
 __
 
@@ -73,9 +71,7 @@ Alias: start_date
 <details>
 ```yaml
 name: start_date
-description: '[en] The start date of the session.
-
-  [de] Das Startdatum der Sitzung.
+description: '[en] The start date of the session. [de] Das Startdatum der Sitzung.
 
   '
 from_schema: https://ch.paf.link/schema/tutorial
