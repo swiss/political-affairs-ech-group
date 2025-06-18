@@ -31,6 +31,15 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
+                "agenda_items": {
+                    "items": {
+                        "$ref": "#/$defs/AgendaItem"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "id": {
                     "type": "string"
                 },
@@ -42,12 +51,41 @@
                         "array",
                         "null"
                     ]
+                },
+                "votes": {
+                    "items": {
+                        "$ref": "#/$defs/Vote"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 }
             },
             "required": [
                 "id"
             ],
             "title": "Container",
+            "type": "object"
+        },
+        "MultilingualString": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "language": {
+                    "description": "[en] Language code in ISO 639-1 format\n[de] Sprachcode im ISO 639-1-Format\n",
+                    "pattern": "^[a-z]{2}$",
+                    "type": "string"
+                },
+                "text": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "text",
+                "language"
+            ],
+            "title": "MultilingualString",
             "type": "object"
         },
         "ResultEnum": {
@@ -63,7 +101,7 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "agendaItems": {
+                "agenda_items": {
                     "items": {
                         "$ref": "#/$defs/AgendaItem"
                     },
@@ -74,14 +112,10 @@
                 },
                 "id": {
                     "type": "string"
-                },
-                "name": {
-                    "type": "string"
                 }
             },
             "required": [
-                "id",
-                "name"
+                "id"
             ],
             "title": "Session",
             "type": "object"
@@ -109,12 +143,21 @@
             "type": "object"
         }
     },
-    "$id": "https://ch.paf.link/schema/session",
+    "$id": "https://ch.paf.link/schema/tutorial",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
     "description": "",
     "metamodel_version": "1.7.0",
     "properties": {
+        "agenda_items": {
+            "items": {
+                "$ref": "#/$defs/AgendaItem"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
         "id": {
             "type": "string"
         },
@@ -126,12 +169,21 @@
                 "array",
                 "null"
             ]
+        },
+        "votes": {
+            "items": {
+                "$ref": "#/$defs/Vote"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
         }
     },
     "required": [
         "id"
     ],
-    "title": "ch-paf-link-session",
+    "title": "tutorial",
     "type": "object",
     "version": null
 }

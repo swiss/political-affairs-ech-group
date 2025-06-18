@@ -1,165 +1,218 @@
-@prefix chpaf: <https://ch.paf.link/> .
 @prefix linkml: <https://w3id.org/linkml/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tutorial: <https://ch.paf.link/schema/tutorial/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-chpaf:Container a owl:Class ;
+<https://ch.paf.link/schema/tutorial.owl.ttl> a owl:Ontology ;
+    rdfs:label "tutorial" ;
+    skos:definition """[en] This is a dummy schema for a parliamentary affairs system, including sessions, agenda items, and votes. It is used to demonstrate the use of LinkML for defining data models. In this model, a session contains multiple agenda items and each agenda item can have multiple votes.
+[de] Dies ist ein Dummy-Schema für ein System von parlamentarischen Angelegenheiten, das Sitzungen, Tagesordnungspunkte und Abstimmungen umfasst. Es wird verwendet, um die Verwendung von LinkML zur Definition von Datenmodellen zu demonstrieren. In diesem Modell enthält eine Sitzung mehrere Tagesordnungspunkte und jeder Tagesordnungspunkt kann mehrere Abstimmungen haben.
+""" .
+
+tutorial:Container a owl:Class ;
     rdfs:label "Container" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty chpaf:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty chpaf:id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom chpaf:Session ;
-            owl:onProperty chpaf:sessions ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty chpaf:sessions ],
+            owl:allValuesFrom tutorial:Vote ;
+            owl:onProperty tutorial:votes ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty chpaf:id ] ;
-    skos:inScheme <https://ch.paf.link/schema/session> .
+            owl:onProperty tutorial:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom tutorial:AgendaItem ;
+            owl:onProperty tutorial:agenda_items ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom tutorial:Session ;
+            owl:onProperty tutorial:sessions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty tutorial:agenda_items ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty tutorial:sessions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty tutorial:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty tutorial:votes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty tutorial:id ] ;
+    skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
-<https://ch.paf.link/schema/session.owl.ttl> a owl:Ontology ;
-    rdfs:label "ch-paf-link-session" .
-
-chpaf:AgendaItem a owl:Class ;
-    rdfs:label "AgendaItem" ;
+tutorial:MultilingualString a owl:Class ;
+    rdfs:label "MultilingualString" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty chpaf:id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom chpaf:Vote ;
-            owl:onProperty chpaf:votes ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty chpaf:id ],
+            owl:minCardinality 1 ;
+            owl:onProperty tutorial:text ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty chpaf:name ],
+            owl:onProperty tutorial:language ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty tutorial:language ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty chpaf:name ],
+            owl:onProperty tutorial:text ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty chpaf:name ],
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:string ;
+                    owl:withRestrictions ( [ xsd:pattern "^[a-z]{2}$" ] ) ] ;
+            owl:onProperty tutorial:language ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty chpaf:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty chpaf:votes ] ;
-    skos:inScheme <https://ch.paf.link/schema/session> .
+            owl:maxCardinality 1 ;
+            owl:onProperty tutorial:text ] ;
+    skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
-chpaf:Session a owl:Class ;
+tutorial:Session a owl:Class ;
     rdfs:label "Session" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty chpaf:name ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty tutorial:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom tutorial:MultilingualString ;
+            owl:onProperty tutorial:name ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty chpaf:name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty chpaf:id ],
+            owl:onProperty tutorial:id ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty chpaf:id ],
+            owl:onProperty tutorial:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty tutorial:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom tutorial:AgendaItem ;
+            owl:onProperty tutorial:agenda_items ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty chpaf:agendaItems ],
+            owl:onProperty tutorial:agenda_items ],
         [ a owl:Restriction ;
-            owl:allValuesFrom chpaf:AgendaItem ;
-            owl:onProperty chpaf:agendaItems ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty chpaf:name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty chpaf:id ] ;
-    skos:inScheme <https://ch.paf.link/schema/session> .
+            owl:minCardinality 1 ;
+            owl:onProperty tutorial:id ] ;
+    skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
-chpaf:Vote a owl:Class ;
+<https://ch.paf.link/schema/tutorial/results/no> a owl:Class ;
+    rdfs:label "no" ;
+    rdfs:subClassOf tutorial:ResultEnum .
+
+<https://ch.paf.link/schema/tutorial/results/yes> a owl:Class ;
+    rdfs:label "yes" ;
+    rdfs:subClassOf tutorial:ResultEnum .
+
+tutorial:sessions a owl:ObjectProperty ;
+    rdfs:label "sessions" ;
+    rdfs:range tutorial:Session ;
+    skos:inScheme <https://ch.paf.link/schema/tutorial> .
+
+tutorial:AgendaItem a owl:Class ;
+    rdfs:label "AgendaItem" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty tutorial:votes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty tutorial:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty tutorial:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty tutorial:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty tutorial:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty tutorial:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom tutorial:Vote ;
+            owl:onProperty tutorial:votes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty tutorial:name ] ;
+    skos:inScheme <https://ch.paf.link/schema/tutorial> .
+
+tutorial:Vote a owl:Class ;
     rdfs:label "Vote" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty tutorial:question ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty tutorial:result ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom tutorial:ResultEnum ;
+            owl:onProperty tutorial:result ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty tutorial:question ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty chpaf:question ],
+            owl:onProperty tutorial:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty tutorial:result ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty tutorial:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty tutorial:id ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty chpaf:id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty chpaf:question ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty chpaf:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty chpaf:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty chpaf:question ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty chpaf:result ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom chpaf:ResultEnum ;
-            owl:onProperty chpaf:result ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty chpaf:result ] ;
-    skos:inScheme <https://ch.paf.link/schema/session> .
+            owl:onProperty tutorial:question ] ;
+    skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
-chpaf:agendaItems a owl:ObjectProperty ;
-    rdfs:label "agendaItems" ;
-    rdfs:range chpaf:AgendaItem ;
-    skos:inScheme <https://ch.paf.link/schema/session> .
+tutorial:language a owl:DatatypeProperty ;
+    rdfs:label "language" ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:onDatatype xsd:string ;
+            owl:withRestrictions ( [ xsd:pattern "^[a-z]{2}$" ] ) ] ;
+    skos:definition """[en] Language code in ISO 639-1 format
+[de] Sprachcode im ISO 639-1-Format
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
-<https://ch.paf.link/results/no> a owl:Class ;
-    rdfs:label "no" ;
-    rdfs:subClassOf chpaf:ResultEnum .
-
-<https://ch.paf.link/results/yes> a owl:Class ;
-    rdfs:label "yes" ;
-    rdfs:subClassOf chpaf:ResultEnum .
-
-chpaf:sessions a owl:ObjectProperty ;
-    rdfs:label "sessions" ;
-    rdfs:range chpaf:Session ;
-    skos:inScheme <https://ch.paf.link/schema/session> .
-
-chpaf:votes a owl:ObjectProperty ;
-    rdfs:label "votes" ;
-    rdfs:range chpaf:Vote ;
-    skos:inScheme <https://ch.paf.link/schema/session> .
-
-chpaf:question a owl:DatatypeProperty ;
+tutorial:question a owl:DatatypeProperty ;
     rdfs:label "question" ;
     rdfs:range xsd:string ;
-    skos:inScheme <https://ch.paf.link/schema/session> .
+    skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
-chpaf:result a owl:ObjectProperty ;
+tutorial:result a owl:ObjectProperty ;
     rdfs:label "result" ;
-    rdfs:range chpaf:ResultEnum ;
-    skos:inScheme <https://ch.paf.link/schema/session> .
+    rdfs:range tutorial:ResultEnum ;
+    skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
-chpaf:ResultEnum a owl:Class ;
-    owl:unionOf ( <https://ch.paf.link/results/yes> <https://ch.paf.link/results/no> ) ;
-    linkml:permissible_values <https://ch.paf.link/results/no>,
-        <https://ch.paf.link/results/yes> .
+tutorial:text a owl:DatatypeProperty ;
+    rdfs:label "text" ;
+    skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
-chpaf:name a owl:DatatypeProperty ;
+tutorial:ResultEnum a owl:Class ;
+    owl:unionOf ( <https://ch.paf.link/schema/tutorial/results/yes> <https://ch.paf.link/schema/tutorial/results/no> ) ;
+    linkml:permissible_values <https://ch.paf.link/schema/tutorial/results/no>,
+        <https://ch.paf.link/schema/tutorial/results/yes> .
+
+tutorial:agenda_items a owl:ObjectProperty ;
+    rdfs:label "agenda_items" ;
+    rdfs:range tutorial:AgendaItem ;
+    skos:inScheme <https://ch.paf.link/schema/tutorial> .
+
+tutorial:votes a owl:ObjectProperty ;
+    rdfs:label "votes" ;
+    rdfs:range tutorial:Vote ;
+    skos:inScheme <https://ch.paf.link/schema/tutorial> .
+
+tutorial:name a owl:DatatypeProperty ;
     rdfs:label "name" ;
     rdfs:range xsd:string ;
-    skos:inScheme <https://ch.paf.link/schema/session> .
+    skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
-chpaf:id a owl:DatatypeProperty ;
+tutorial:id a owl:DatatypeProperty ;
     rdfs:label "id" ;
-    skos:inScheme <https://ch.paf.link/schema/session> .
+    skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
 

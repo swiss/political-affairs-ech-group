@@ -1,16 +1,17 @@
-id: https://ch.paf.link/schema/session
-name: ch-paf-link-session
+id: https://ch.paf.link/schema/tutorial
+name: tutorial
+description: |
+  [en] This is a dummy schema for a parliamentary affairs system, including sessions, agenda items, and votes. It is used to demonstrate the use of LinkML for defining data models. In this model, a session contains multiple agenda items and each agenda item can have multiple votes.
+  [de] Dies ist ein Dummy-Schema für ein System von parlamentarischen Angelegenheiten, das Sitzungen, Tagesordnungspunkte und Abstimmungen umfasst. Es wird verwendet, um die Verwendung von LinkML zur Definition von Datenmodellen zu demonstrieren. In diesem Modell enthält eine Sitzung mehrere Tagesordnungspunkte und jeder Tagesordnungspunkt kann mehrere Abstimmungen haben.
 prefixes:
   xsd: http://www.w3.org/2001/XMLSchema#
   prov: http://www.w3.org/ns/prov#
   dcterm: http://purl.org/dc/terms/
   linkml: https://w3id.org/linkml/
-  paf: https://paf.link/
-  chpaf: https://ch.paf.link/
-  parl: https://politics.ld.admin.ch/parliamentary_affair/
+  tutorial: https://ch.paf.link/schema/tutorial/
 imports:
   - linkml:types
-default_prefix: chpaf
+default_prefix: tutorial
 default_range: string
   
 classes:
@@ -18,9 +19,11 @@ classes:
   Session:
     slots:
       - id
+      - start_date
+      - end_date
       - name
-      - agendaItems
-
+      - agenda_items
+    
   AgendaItem:
     slots:
       - id
@@ -31,6 +34,7 @@ classes:
     slots:
       - id
       - question
+      - vote_time
       - result
 
   Container:
@@ -38,6 +42,13 @@ classes:
     slots:
       - id
       - sessions
+      - agenda_items
+      - votes
+
+  MultilingualString:
+    slots:
+      - text
+      - language
 
 slots:
   
@@ -47,23 +58,24 @@ slots:
 
   name:
     slot_uri: dcterm:title
-    range: string
-    required: true
+    range: MultilingualString
+    multivalued: true
+    inlined_as_list: true
 
   sessions:
-    slot_uri: chpaf:session
+    slot_uri: tutorial:session
     range: Session
     multivalued: true
     inlined_as_list: true
   
-  agendaItems:
-    slot_uri: chpaf:agendaItem
+  agenda_items:
+    slot_uri: tutorial:agendaItem
     range: AgendaItem
     multivalued: true
     inlined_as_list: true
   
   votes:
-    slot_uri: chpaf:vote
+    slot_uri: tutorial:vote
     range: Vote
     multivalued: true
     inlined_as_list: true
@@ -74,13 +86,44 @@ slots:
   
   result:
     range: result_enum
+
+  text:
     required: true
+  
+  language:
+    required: true
+    description: |
+      [en] Language code in ISO 639-1 format
+      [de] Sprachcode im ISO 639-1-Format
+    pattern: ^[a-z]{2}$
+    slot_uri: dcterm:language
+
+  start_date:
+    range: date
+    description: |
+      [en] The start date of the session.
+      [de] Das Startdatum der Sitzung.
+    slot_uri: tutorial:startDate
+
+  end_date:
+    range: date
+    description: |
+      [en] The end date of the session.
+      [de] Das Enddatum der Sitzung.
+    slot_uri: tutorial:endDate
+
+  vote_time:
+    range: datetime
+    description: |
+      [en] The date and time when the vote was cast.
+      [de] Das Datum und die Uhrzeit, zu der die Abstimmung abgegeben wurde.
+    slot_uri: tutorial:voteTime
 
 enums:
 
   result_enum:
     permissible_values:
       "yes":
-        meaning: chpaf:results/yes
+        meaning: tutorial:results/yes
       "no":
-        meaning: chpaf:results/no
+        meaning: tutorial:results/no
