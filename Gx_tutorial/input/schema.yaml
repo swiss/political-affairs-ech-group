@@ -92,7 +92,7 @@ slots:
   
   language:
     required: true
-    description: |
+    description: >
       [en] Language code in ISO 639-1 format
       [de] Sprachcode im ISO 639-1-Format
     pattern: ^[a-z]{2}$
