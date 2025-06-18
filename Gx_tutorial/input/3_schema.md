@@ -9,7 +9,7 @@
 | [Session](#Session) | None |
 | [Vote](#Vote) | None |
 
-{{include:tutorial/output/docs/AgendaItem.md}}
-{{include:tutorial/output/docs/Container.md}}
-{{include:tutorial/output/docs/Session.md}}
-{{include:tutorial/output/docs/Vote.md}}
+{{include:Gx_tutorial/output/docs/AgendaItem.md}}
+{{include:Gx_tutorial/output/docs/Container.md}}
+{{include:Gx_tutorial/output/docs/Session.md}}
+{{include:Gx_tutorial/output/docs/Vote.md}}
