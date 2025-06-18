@@ -8,7 +8,13 @@
                     "type": "string"
                 },
                 "name": {
-                    "type": "string"
+                    "items": {
+                        "$ref": "#/$defs/MultilingualString"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "votes": {
                     "items": {
@@ -21,8 +27,7 @@
                 }
             },
             "required": [
-                "id",
-                "name"
+                "id"
             ],
             "title": "AgendaItem",
             "type": "object"
@@ -110,8 +115,33 @@
                         "null"
                     ]
                 },
+                "end_date": {
+                    "description": "[en] The end date of the session.\n[de] Das Enddatum der Sitzung.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "id": {
                     "type": "string"
+                },
+                "name": {
+                    "items": {
+                        "$ref": "#/$defs/MultilingualString"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "start_date": {
+                    "description": "[en] The start date of the session.\n[de] Das Startdatum der Sitzung.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -132,12 +162,19 @@
                 },
                 "result": {
                     "$ref": "#/$defs/ResultEnum"
+                },
+                "vote_time": {
+                    "description": "[en] The date and time when the vote was cast.\n[de] Das Datum und die Uhrzeit, zu der die Abstimmung abgegeben wurde.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
                 "id",
-                "question",
-                "result"
+                "question"
             ],
             "title": "Vote",
             "type": "object"

@@ -4,7 +4,7 @@
 
 
 
-URI: [chpaf:vote](https://ch.paf.link/vote)
+URI: [tutorial:vote](https://ch.paf.link/schema/tutorial/vote)
 Alias: votes
 
 <!-- no inheritance hierarchy -->
@@ -18,6 +18,7 @@ Alias: votes
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [AgendaItem](AgendaItem.md) |  |  no  |
+| [Container](Container.md) |  |  no  |
 
 
 
@@ -46,7 +47,7 @@ Alias: votes
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -55,8 +56,8 @@ Alias: votes
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | chpaf:vote |
-| native | chpaf:votes |
+| self | tutorial:vote |
+| native | tutorial:votes |
 
 
 
@@ -66,12 +67,13 @@ Alias: votes
 <details>
 ```yaml
 name: votes
-from_schema: https://ch.paf.link/schema/session
+from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-slot_uri: chpaf:vote
+slot_uri: tutorial:vote
 alias: votes
 domain_of:
 - AgendaItem
+- Container
 range: Vote
 multivalued: true
 inlined: true

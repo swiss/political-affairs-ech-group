@@ -1,11 +1,11 @@
 
 
-# Slot: agendaItems 
+# Slot: agenda_items 
 
 
 
-URI: [chpaf:agendaItem](https://ch.paf.link/agendaItem)
-Alias: agendaItems
+URI: [tutorial:agendaItem](https://ch.paf.link/schema/tutorial/agendaItem)
+Alias: agenda_items
 
 <!-- no inheritance hierarchy -->
 
@@ -17,6 +17,7 @@ Alias: agendaItems
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Container](Container.md) |  |  no  |
 | [Session](Session.md) |  |  no  |
 
 
@@ -46,7 +47,7 @@ Alias: agendaItems
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -55,8 +56,8 @@ Alias: agendaItems
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | chpaf:agendaItem |
-| native | chpaf:agendaItems |
+| self | tutorial:agendaItem |
+| native | tutorial:agenda_items |
 
 
 
@@ -65,13 +66,14 @@ Alias: agendaItems
 
 <details>
 ```yaml
-name: agendaItems
-from_schema: https://ch.paf.link/schema/session
+name: agenda_items
+from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-slot_uri: chpaf:agendaItem
-alias: agendaItems
+slot_uri: tutorial:agendaItem
+alias: agenda_items
 domain_of:
 - Session
+- Container
 range: AgendaItem
 multivalued: true
 inlined: true

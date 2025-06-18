@@ -33,7 +33,7 @@ URI: [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -43,7 +43,7 @@ URI: [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:dateTime |
-| native | chpaf:datetime |
+| native | tutorial:datetime |
 | exact | schema:DateTime |
 
 

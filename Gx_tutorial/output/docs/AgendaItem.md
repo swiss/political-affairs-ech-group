@@ -4,7 +4,7 @@
 
 
 
-URI: [chpaf:AgendaItem](https://ch.paf.link/AgendaItem)
+URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
 
 
 
@@ -18,6 +18,15 @@ URI: [chpaf:AgendaItem](https://ch.paf.link/AgendaItem)
       AgendaItem : id
         
       AgendaItem : name
+        
+          
+    
+        
+        
+        AgendaItem --> "*" MultilingualString : name
+        click MultilingualString href "../MultilingualString"
+    
+
         
       AgendaItem : votes
         
@@ -44,7 +53,7 @@ URI: [chpaf:AgendaItem](https://ch.paf.link/AgendaItem)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [id](id.md) | 1 <br/> [String](String.md) |  | direct |
-| [name](name.md) | 1 <br/> [String](String.md) |  | direct |
+| [name](name.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
 | [votes](votes.md) | * <br/> [Vote](Vote.md) |  | direct |
 
 
@@ -55,7 +64,8 @@ URI: [chpaf:AgendaItem](https://ch.paf.link/AgendaItem)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Session](Session.md) | [agendaItems](agendaItems.md) | range | [AgendaItem](AgendaItem.md) |
+| [Session](Session.md) | [agenda_items](agenda_items.md) | range | [AgendaItem](AgendaItem.md) |
+| [Container](Container.md) | [agenda_items](agenda_items.md) | range | [AgendaItem](AgendaItem.md) |
 
 
 
@@ -73,7 +83,7 @@ URI: [chpaf:AgendaItem](https://ch.paf.link/AgendaItem)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -82,8 +92,8 @@ URI: [chpaf:AgendaItem](https://ch.paf.link/AgendaItem)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | chpaf:AgendaItem |
-| native | chpaf:AgendaItem |
+| self | tutorial:AgendaItem |
+| native | tutorial:AgendaItem |
 
 
 
@@ -100,7 +110,7 @@ URI: [chpaf:AgendaItem](https://ch.paf.link/AgendaItem)
 <details>
 ```yaml
 name: AgendaItem
-from_schema: https://ch.paf.link/schema/session
+from_schema: https://ch.paf.link/schema/tutorial
 slots:
 - id
 - name
@@ -114,11 +124,11 @@ slots:
 <details>
 ```yaml
 name: AgendaItem
-from_schema: https://ch.paf.link/schema/session
+from_schema: https://ch.paf.link/schema/tutorial
 attributes:
   id:
     name: id
-    from_schema: https://ch.paf.link/schema/session
+    from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     identifier: true
     alias: id
@@ -132,7 +142,7 @@ attributes:
     required: true
   name:
     name: name
-    from_schema: https://ch.paf.link/schema/session
+    from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     slot_uri: dcterm:title
     alias: name
@@ -140,17 +150,20 @@ attributes:
     domain_of:
     - Session
     - AgendaItem
-    range: string
-    required: true
+    range: MultilingualString
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   votes:
     name: votes
-    from_schema: https://ch.paf.link/schema/session
+    from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    slot_uri: chpaf:vote
+    slot_uri: tutorial:vote
     alias: votes
     owner: AgendaItem
     domain_of:
     - AgendaItem
+    - Container
     range: Vote
     multivalued: true
     inlined: true

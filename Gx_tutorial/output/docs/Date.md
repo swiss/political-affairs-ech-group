@@ -33,7 +33,7 @@ URI: [xsd:date](http://www.w3.org/2001/XMLSchema#date)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -43,7 +43,7 @@ URI: [xsd:date](http://www.w3.org/2001/XMLSchema#date)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:date |
-| native | chpaf:date |
+| native | tutorial:date |
 | exact | schema:Date |
 
 

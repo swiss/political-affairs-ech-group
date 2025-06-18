@@ -33,7 +33,7 @@ URI: [shex:nonLiteral](http://www.w3.org/ns/shex#nonLiteral)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -43,7 +43,7 @@ URI: [shex:nonLiteral](http://www.w3.org/ns/shex#nonLiteral)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | shex:nonLiteral |
-| native | chpaf:nodeidentifier |
+| native | tutorial:nodeidentifier |
 
 
 

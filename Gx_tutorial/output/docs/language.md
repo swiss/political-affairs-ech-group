@@ -1,11 +1,20 @@
 
 
-# Slot: question 
+# Slot: language 
+
+
+_[en] Language code in ISO 639-1 format_
+
+_[de] Sprachcode im ISO 639-1-Format_
+
+__
 
 
 
-URI: [tutorial:question](https://ch.paf.link/schema/tutorial/question)
-Alias: question
+
+
+URI: [dcterm:language](http://purl.org/dc/terms/language)
+Alias: language
 
 <!-- no inheritance hierarchy -->
 
@@ -17,7 +26,7 @@ Alias: question
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Vote](Vote.md) |  |  no  |
+| [MultilingualString](MultilingualString.md) |  |  no  |
 
 
 
@@ -30,6 +39,8 @@ Alias: question
 * Range: [String](String.md)
 
 * Required: True
+
+* Regex pattern: `^[a-z]{2}$`
 
 
 
@@ -55,8 +66,8 @@ Alias: question
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | tutorial:question |
-| native | tutorial:question |
+| self | dcterm:language |
+| native | tutorial:language |
 
 
 
@@ -65,14 +76,21 @@ Alias: question
 
 <details>
 ```yaml
-name: question
+name: language
+description: '[en] Language code in ISO 639-1 format
+
+  [de] Sprachcode im ISO 639-1-Format
+
+  '
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-alias: question
+slot_uri: dcterm:language
+alias: language
 domain_of:
-- Vote
+- MultilingualString
 range: string
 required: true
+pattern: ^[a-z]{2}$
 
 ```
 </details>

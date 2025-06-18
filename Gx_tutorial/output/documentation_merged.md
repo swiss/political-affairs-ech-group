@@ -23,7 +23,7 @@ Intro Text from the input markdown file.
 
 
 
-URI: [chpaf:AgendaItem](https://ch.paf.link/AgendaItem)
+URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
 
 
 
@@ -37,6 +37,15 @@ URI: [chpaf:AgendaItem](https://ch.paf.link/AgendaItem)
       AgendaItem : id
         
       AgendaItem : name
+        
+          
+    
+        
+        
+        AgendaItem --> "*" MultilingualString : name
+        click MultilingualString href "../MultilingualString"
+    
+
         
       AgendaItem : votes
         
@@ -63,7 +72,7 @@ URI: [chpaf:AgendaItem](https://ch.paf.link/AgendaItem)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [id](#id) | 1 <br/> [String](#String) |  | direct |
-| [name](#name) | 1 <br/> [String](#String) |  | direct |
+| [name](#name) | * <br/> [MultilingualString](#MultilingualString) |  | direct |
 | [votes](#votes) | * <br/> [Vote](#Vote) |  | direct |
 
 
@@ -74,7 +83,8 @@ URI: [chpaf:AgendaItem](https://ch.paf.link/AgendaItem)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Session](#Session) | [agendaItems](#agendaItems) | range | [AgendaItem](#AgendaItem) |
+| [Session](#Session) | [agenda_items](#agenda_items) | range | [AgendaItem](#AgendaItem) |
+| [Container](#Container) | [agenda_items](#agenda_items) | range | [AgendaItem](#AgendaItem) |
 
 
 
@@ -92,7 +102,7 @@ URI: [chpaf:AgendaItem](https://ch.paf.link/AgendaItem)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -101,8 +111,8 @@ URI: [chpaf:AgendaItem](https://ch.paf.link/AgendaItem)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | chpaf:AgendaItem |
-| native | chpaf:AgendaItem |
+| self | tutorial:AgendaItem |
+| native | tutorial:AgendaItem |
 
 
 
@@ -119,7 +129,7 @@ URI: [chpaf:AgendaItem](https://ch.paf.link/AgendaItem)
 <details>
 ```yaml
 name: AgendaItem
-from_schema: https://ch.paf.link/schema/session
+from_schema: https://ch.paf.link/schema/tutorial
 slots:
 - id
 - name
@@ -133,11 +143,11 @@ slots:
 <details>
 ```yaml
 name: AgendaItem
-from_schema: https://ch.paf.link/schema/session
+from_schema: https://ch.paf.link/schema/tutorial
 attributes:
   id:
     name: id
-    from_schema: https://ch.paf.link/schema/session
+    from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     identifier: true
     alias: id
@@ -151,7 +161,7 @@ attributes:
     required: true
   name:
     name: name
-    from_schema: https://ch.paf.link/schema/session
+    from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     slot_uri: dcterm:title
     alias: name
@@ -159,17 +169,20 @@ attributes:
     domain_of:
     - Session
     - AgendaItem
-    range: string
-    required: true
+    range: MultilingualString
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   votes:
     name: votes
-    from_schema: https://ch.paf.link/schema/session
+    from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    slot_uri: chpaf:vote
+    slot_uri: tutorial:vote
     alias: votes
     owner: AgendaItem
     domain_of:
     - AgendaItem
+    - Container
     range: Vote
     multivalued: true
     inlined: true
@@ -183,7 +196,7 @@ attributes:
 
 
 
-URI: [chpaf:Container](https://ch.paf.link/Container)
+URI: [tutorial:Container](https://ch.paf.link/schema/tutorial/Container)
 
 
 
@@ -194,6 +207,17 @@ URI: [chpaf:Container](https://ch.paf.link/Container)
  classDiagram
     class Container
     click Container href "../Container"
+      Container : agenda_items
+        
+          
+    
+        
+        
+        Container --> "*" AgendaItem : agenda_items
+        click AgendaItem href "../AgendaItem"
+    
+
+        
       Container : id
         
       Container : sessions
@@ -204,6 +228,17 @@ URI: [chpaf:Container](https://ch.paf.link/Container)
         
         Container --> "*" Session : sessions
         click Session href "../Session"
+    
+
+        
+      Container : votes
+        
+          
+    
+        
+        
+        Container --> "*" Vote : votes
+        click Vote href "../Vote"
     
 
         
@@ -222,6 +257,8 @@ URI: [chpaf:Container](https://ch.paf.link/Container)
 | ---  | --- | --- | --- |
 | [id](#id) | 1 <br/> [String](#String) |  | direct |
 | [sessions](#sessions) | * <br/> [Session](#Session) |  | direct |
+| [agenda_items](#agenda_items) | * <br/> [AgendaItem](#AgendaItem) |  | direct |
+| [votes](#votes) | * <br/> [Vote](#Vote) |  | direct |
 
 
 
@@ -242,7 +279,7 @@ URI: [chpaf:Container](https://ch.paf.link/Container)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -251,8 +288,8 @@ URI: [chpaf:Container](https://ch.paf.link/Container)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | chpaf:Container |
-| native | chpaf:Container |
+| self | tutorial:Container |
+| native | tutorial:Container |
 
 
 
@@ -269,10 +306,12 @@ URI: [chpaf:Container](https://ch.paf.link/Container)
 <details>
 ```yaml
 name: Container
-from_schema: https://ch.paf.link/schema/session
+from_schema: https://ch.paf.link/schema/tutorial
 slots:
 - id
 - sessions
+- agenda_items
+- votes
 tree_root: true
 
 ```
@@ -283,11 +322,11 @@ tree_root: true
 <details>
 ```yaml
 name: Container
-from_schema: https://ch.paf.link/schema/session
+from_schema: https://ch.paf.link/schema/tutorial
 attributes:
   id:
     name: id
-    from_schema: https://ch.paf.link/schema/session
+    from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     identifier: true
     alias: id
@@ -301,14 +340,42 @@ attributes:
     required: true
   sessions:
     name: sessions
-    from_schema: https://ch.paf.link/schema/session
+    from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    slot_uri: chpaf:session
+    slot_uri: tutorial:session
     alias: sessions
     owner: Container
     domain_of:
     - Container
     range: Session
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  agenda_items:
+    name: agenda_items
+    from_schema: https://ch.paf.link/schema/tutorial
+    rank: 1000
+    slot_uri: tutorial:agendaItem
+    alias: agenda_items
+    owner: Container
+    domain_of:
+    - Session
+    - Container
+    range: AgendaItem
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  votes:
+    name: votes
+    from_schema: https://ch.paf.link/schema/tutorial
+    rank: 1000
+    slot_uri: tutorial:vote
+    alias: votes
+    owner: Container
+    domain_of:
+    - AgendaItem
+    - Container
+    range: Vote
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -322,7 +389,7 @@ tree_root: true
 
 
 
-URI: [chpaf:Session](https://ch.paf.link/Session)
+URI: [tutorial:Session](https://ch.paf.link/schema/tutorial/Session)
 
 
 
@@ -333,20 +400,33 @@ URI: [chpaf:Session](https://ch.paf.link/Session)
  classDiagram
     class Session
     click Session href "../Session"
-      Session : agendaItems
+      Session : agenda_items
         
           
     
         
         
-        Session --> "*" AgendaItem : agendaItems
+        Session --> "*" AgendaItem : agenda_items
         click AgendaItem href "../AgendaItem"
     
 
         
+      Session : end_date
+        
       Session : id
         
       Session : name
+        
+          
+    
+        
+        
+        Session --> "*" MultilingualString : name
+        click MultilingualString href "../MultilingualString"
+    
+
+        
+      Session : start_date
         
       
 ```
@@ -362,8 +442,10 @@ URI: [chpaf:Session](https://ch.paf.link/Session)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [id](#id) | 1 <br/> [String](#String) |  | direct |
-| [name](#name) | 1 <br/> [String](#String) |  | direct |
-| [agendaItems](#agendaItems) | * <br/> [AgendaItem](#AgendaItem) |  | direct |
+| [start_date](#start_date) | 0..1 <br/> [Date](#Date) | [en] The start date of the session | direct |
+| [end_date](#end_date) | 0..1 <br/> [Date](#Date) | [en] The end date of the session | direct |
+| [name](#name) | * <br/> [MultilingualString](#MultilingualString) |  | direct |
+| [agenda_items](#agenda_items) | * <br/> [AgendaItem](#AgendaItem) |  | direct |
 
 
 
@@ -391,7 +473,7 @@ URI: [chpaf:Session](https://ch.paf.link/Session)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -400,8 +482,8 @@ URI: [chpaf:Session](https://ch.paf.link/Session)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | chpaf:Session |
-| native | chpaf:Session |
+| self | tutorial:Session |
+| native | tutorial:Session |
 
 
 
@@ -418,11 +500,13 @@ URI: [chpaf:Session](https://ch.paf.link/Session)
 <details>
 ```yaml
 name: Session
-from_schema: https://ch.paf.link/schema/session
+from_schema: https://ch.paf.link/schema/tutorial
 slots:
 - id
+- start_date
+- end_date
 - name
-- agendaItems
+- agenda_items
 
 ```
 </details>
@@ -432,11 +516,11 @@ slots:
 <details>
 ```yaml
 name: Session
-from_schema: https://ch.paf.link/schema/session
+from_schema: https://ch.paf.link/schema/tutorial
 attributes:
   id:
     name: id
-    from_schema: https://ch.paf.link/schema/session
+    from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     identifier: true
     alias: id
@@ -448,9 +532,39 @@ attributes:
     - Container
     range: string
     required: true
+  start_date:
+    name: start_date
+    description: '[en] The start date of the session.
+
+      [de] Das Startdatum der Sitzung.
+
+      '
+    from_schema: https://ch.paf.link/schema/tutorial
+    rank: 1000
+    slot_uri: tutorial:startDate
+    alias: start_date
+    owner: Session
+    domain_of:
+    - Session
+    range: date
+  end_date:
+    name: end_date
+    description: '[en] The end date of the session.
+
+      [de] Das Enddatum der Sitzung.
+
+      '
+    from_schema: https://ch.paf.link/schema/tutorial
+    rank: 1000
+    slot_uri: tutorial:endDate
+    alias: end_date
+    owner: Session
+    domain_of:
+    - Session
+    range: date
   name:
     name: name
-    from_schema: https://ch.paf.link/schema/session
+    from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     slot_uri: dcterm:title
     alias: name
@@ -458,17 +572,19 @@ attributes:
     domain_of:
     - Session
     - AgendaItem
-    range: string
-    required: true
-  agendaItems:
-    name: agendaItems
-    from_schema: https://ch.paf.link/schema/session
+    range: MultilingualString
+    multivalued: true
+    inlined_as_list: true
+  agenda_items:
+    name: agenda_items
+    from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    slot_uri: chpaf:agendaItem
-    alias: agendaItems
+    slot_uri: tutorial:agendaItem
+    alias: agenda_items
     owner: Session
     domain_of:
     - Session
+    - Container
     range: AgendaItem
     multivalued: true
     inlined_as_list: true
@@ -481,7 +597,7 @@ attributes:
 
 
 
-URI: [chpaf:Vote](https://ch.paf.link/Vote)
+URI: [tutorial:Vote](https://ch.paf.link/schema/tutorial/Vote)
 
 
 
@@ -502,10 +618,12 @@ URI: [chpaf:Vote](https://ch.paf.link/Vote)
     
         
         
-        Vote --> "1" ResultEnum : result
+        Vote --> "0..1" ResultEnum : result
         click ResultEnum href "../ResultEnum"
     
 
+        
+      Vote : vote_time
         
       
 ```
@@ -522,7 +640,8 @@ URI: [chpaf:Vote](https://ch.paf.link/Vote)
 | ---  | --- | --- | --- |
 | [id](#id) | 1 <br/> [String](#String) |  | direct |
 | [question](#question) | 1 <br/> [String](#String) |  | direct |
-| [result](#result) | 1 <br/> [ResultEnum](#ResultEnum) |  | direct |
+| [vote_time](#vote_time) | 0..1 <br/> [Datetime](#Datetime) | [en] The date and time when the vote was cast | direct |
+| [result](#result) | 0..1 <br/> [ResultEnum](#ResultEnum) |  | direct |
 
 
 
@@ -533,6 +652,7 @@ URI: [chpaf:Vote](https://ch.paf.link/Vote)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [AgendaItem](#AgendaItem) | [votes](#votes) | range | [Vote](#Vote) |
+| [Container](#Container) | [votes](#votes) | range | [Vote](#Vote) |
 
 
 
@@ -550,7 +670,7 @@ URI: [chpaf:Vote](https://ch.paf.link/Vote)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -559,8 +679,8 @@ URI: [chpaf:Vote](https://ch.paf.link/Vote)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | chpaf:Vote |
-| native | chpaf:Vote |
+| self | tutorial:Vote |
+| native | tutorial:Vote |
 
 
 
@@ -577,10 +697,11 @@ URI: [chpaf:Vote](https://ch.paf.link/Vote)
 <details>
 ```yaml
 name: Vote
-from_schema: https://ch.paf.link/schema/session
+from_schema: https://ch.paf.link/schema/tutorial
 slots:
 - id
 - question
+- vote_time
 - result
 
 ```
@@ -591,11 +712,11 @@ slots:
 <details>
 ```yaml
 name: Vote
-from_schema: https://ch.paf.link/schema/session
+from_schema: https://ch.paf.link/schema/tutorial
 attributes:
   id:
     name: id
-    from_schema: https://ch.paf.link/schema/session
+    from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     identifier: true
     alias: id
@@ -609,7 +730,7 @@ attributes:
     required: true
   question:
     name: question
-    from_schema: https://ch.paf.link/schema/session
+    from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     alias: question
     owner: Vote
@@ -617,16 +738,30 @@ attributes:
     - Vote
     range: string
     required: true
+  vote_time:
+    name: vote_time
+    description: '[en] The date and time when the vote was cast.
+
+      [de] Das Datum und die Uhrzeit, zu der die Abstimmung abgegeben wurde.
+
+      '
+    from_schema: https://ch.paf.link/schema/tutorial
+    rank: 1000
+    slot_uri: tutorial:voteTime
+    alias: vote_time
+    owner: Vote
+    domain_of:
+    - Vote
+    range: datetime
   result:
     name: result
-    from_schema: https://ch.paf.link/schema/session
+    from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     alias: result
     owner: Vote
     domain_of:
     - Vote
     range: result_enum
-    required: true
 
 ```
 </details>

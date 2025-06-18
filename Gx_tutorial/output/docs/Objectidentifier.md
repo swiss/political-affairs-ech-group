@@ -37,7 +37,7 @@ URI: [shex:iri](http://www.w3.org/ns/shex#iri)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -47,7 +47,7 @@ URI: [shex:iri](http://www.w3.org/ns/shex#iri)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | shex:iri |
-| native | chpaf:objectidentifier |
+| native | tutorial:objectidentifier |
 
 
 

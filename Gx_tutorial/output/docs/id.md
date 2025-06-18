@@ -4,7 +4,7 @@
 
 
 
-URI: [chpaf:id](https://ch.paf.link/id)
+URI: [tutorial:id](https://ch.paf.link/schema/tutorial/id)
 Alias: id
 
 <!-- no inheritance hierarchy -->
@@ -17,10 +17,10 @@ Alias: id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [AgendaItem](AgendaItem.md) |  |  no  |
-| [Container](Container.md) |  |  no  |
-| [Session](Session.md) |  |  no  |
 | [Vote](Vote.md) |  |  no  |
+| [AgendaItem](AgendaItem.md) |  |  no  |
+| [Session](Session.md) |  |  no  |
+| [Container](Container.md) |  |  no  |
 
 
 
@@ -49,7 +49,7 @@ Alias: id
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -58,8 +58,8 @@ Alias: id
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | chpaf:id |
-| native | chpaf:id |
+| self | tutorial:id |
+| native | tutorial:id |
 
 
 
@@ -69,7 +69,7 @@ Alias: id
 <details>
 ```yaml
 name: id
-from_schema: https://ch.paf.link/schema/session
+from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
 identifier: true
 alias: id

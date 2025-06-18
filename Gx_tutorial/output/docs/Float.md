@@ -32,7 +32,7 @@ URI: [xsd:float](http://www.w3.org/2001/XMLSchema#float)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -42,7 +42,7 @@ URI: [xsd:float](http://www.w3.org/2001/XMLSchema#float)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:float |
-| native | chpaf:float |
+| native | tutorial:float |
 | exact | schema:Float |
 
 

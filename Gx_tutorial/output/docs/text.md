@@ -1,11 +1,11 @@
 
 
-# Slot: name 
+# Slot: text 
 
 
 
-URI: [dcterm:title](http://purl.org/dc/terms/title)
-Alias: name
+URI: [tutorial:text](https://ch.paf.link/schema/tutorial/text)
+Alias: text
 
 <!-- no inheritance hierarchy -->
 
@@ -17,8 +17,7 @@ Alias: name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [AgendaItem](AgendaItem.md) |  |  no  |
-| [Session](Session.md) |  |  no  |
+| [MultilingualString](MultilingualString.md) |  |  no  |
 
 
 
@@ -28,9 +27,9 @@ Alias: name
 
 ## Properties
 
-* Range: [MultilingualString](MultilingualString.md)
+* Range: [String](String.md)
 
-* Multivalued: True
+* Required: True
 
 
 
@@ -56,8 +55,8 @@ Alias: name
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | dcterm:title |
-| native | tutorial:name |
+| self | tutorial:text |
+| native | tutorial:text |
 
 
 
@@ -66,18 +65,14 @@ Alias: name
 
 <details>
 ```yaml
-name: name
+name: text
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-slot_uri: dcterm:title
-alias: name
+alias: text
 domain_of:
-- Session
-- AgendaItem
-range: MultilingualString
-multivalued: true
-inlined: true
-inlined_as_list: true
+- MultilingualString
+range: string
+required: true
 
 ```
 </details>

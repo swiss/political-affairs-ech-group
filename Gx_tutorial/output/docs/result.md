@@ -4,7 +4,7 @@
 
 
 
-URI: [chpaf:result](https://ch.paf.link/result)
+URI: [tutorial:result](https://ch.paf.link/schema/tutorial/result)
 Alias: result
 
 <!-- no inheritance hierarchy -->
@@ -29,8 +29,6 @@ Alias: result
 
 * Range: [ResultEnum](ResultEnum.md)
 
-* Required: True
-
 
 
 
@@ -46,7 +44,7 @@ Alias: result
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -55,8 +53,8 @@ Alias: result
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | chpaf:result |
-| native | chpaf:result |
+| self | tutorial:result |
+| native | tutorial:result |
 
 
 
@@ -66,13 +64,12 @@ Alias: result
 <details>
 ```yaml
 name: result
-from_schema: https://ch.paf.link/schema/session
+from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
 alias: result
 domain_of:
 - Vote
 range: result_enum
-required: true
 
 ```
 </details>

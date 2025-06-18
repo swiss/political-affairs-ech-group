@@ -32,7 +32,7 @@ URI: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -42,7 +42,7 @@ URI: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:integer |
-| native | chpaf:integer |
+| native | tutorial:integer |
 | exact | schema:Integer |
 
 

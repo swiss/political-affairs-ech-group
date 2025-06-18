@@ -33,7 +33,7 @@ URI: [linkml:DateOrDatetime](https://w3id.org/linkml/DateOrDatetime)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -43,7 +43,7 @@ URI: [linkml:DateOrDatetime](https://w3id.org/linkml/DateOrDatetime)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | linkml:DateOrDatetime |
-| native | chpaf:date_or_datetime |
+| native | tutorial:date_or_datetime |
 
 
 

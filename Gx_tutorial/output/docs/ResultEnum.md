@@ -8,8 +8,8 @@ URI: [ResultEnum](ResultEnum.md)
 
 | Value | Meaning | Description |
 | --- | --- | --- |
-| yes | chpaf:results/yes |  |
-| no | chpaf:results/no |  |
+| yes | tutorial:results/yes |  |
+| no | tutorial:results/no |  |
 
 
 
@@ -36,7 +36,7 @@ URI: [ResultEnum](ResultEnum.md)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -48,15 +48,15 @@ URI: [ResultEnum](ResultEnum.md)
 <details>
 ```yaml
 name: result_enum
-from_schema: https://ch.paf.link/schema/session
+from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
 permissible_values:
   'yes':
     text: 'yes'
-    meaning: chpaf:results/yes
+    meaning: tutorial:results/yes
   'no':
     text: 'no'
-    meaning: chpaf:results/no
+    meaning: tutorial:results/no
 
 ```
 </details>

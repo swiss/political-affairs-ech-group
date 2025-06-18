@@ -1,10 +1,12 @@
-# ch-paf-link-session
+# tutorial
+
+[en] This is a dummy schema for a parliamentary affairs system, including sessions, agenda items, and votes. It is used to demonstrate the use of LinkML for defining data models. In this model, a session contains multiple agenda items and each agenda item can have multiple votes.
+[de] Dies ist ein Dummy-Schema für ein System von parlamentarischen Angelegenheiten, das Sitzungen, Tagesordnungspunkte und Abstimmungen umfasst. Es wird verwendet, um die Verwendung von LinkML zur Definition von Datenmodellen zu demonstrieren. In diesem Modell enthält eine Sitzung mehrere Tagesordnungspunkte und jeder Tagesordnungspunkt kann mehrere Abstimmungen haben.
 
 
+URI: https://ch.paf.link/schema/tutorial
 
-URI: https://ch.paf.link/schema/session
-
-Name: ch-paf-link-session
+Name: tutorial
 
 
 
@@ -14,6 +16,7 @@ Name: ch-paf-link-session
 | --- | --- |
 | [AgendaItem](AgendaItem.md) |  |
 | [Container](Container.md) |  |
+| [MultilingualString](MultilingualString.md) |  |
 | [Session](Session.md) |  |
 | [Vote](Vote.md) |  |
 
@@ -23,12 +26,17 @@ Name: ch-paf-link-session
 
 | Slot | Description |
 | --- | --- |
-| [agendaItems](agendaItems.md) |  |
+| [agenda_items](agenda_items.md) |  |
+| [end_date](end_date.md) | [en] The end date of the session |
 | [id](id.md) |  |
+| [language](language.md) | [en] Language code in ISO 639-1 format |
 | [name](name.md) |  |
 | [question](question.md) |  |
 | [result](result.md) |  |
 | [sessions](sessions.md) |  |
+| [start_date](start_date.md) | [en] The start date of the session |
+| [text](text.md) |  |
+| [vote_time](vote_time.md) | [en] The date and time when the vote was cast |
 | [votes](votes.md) |  |
 
 

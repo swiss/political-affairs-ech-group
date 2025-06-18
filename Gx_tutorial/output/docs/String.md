@@ -32,7 +32,7 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -42,7 +42,7 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:string |
-| native | chpaf:string |
+| native | tutorial:string |
 | exact | schema:Text |
 
 

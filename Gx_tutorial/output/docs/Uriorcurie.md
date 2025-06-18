@@ -33,7 +33,7 @@ URI: [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -43,7 +43,7 @@ URI: [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:anyURI |
-| native | chpaf:uriorcurie |
+| native | tutorial:uriorcurie |
 
 
 

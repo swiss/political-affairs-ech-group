@@ -32,7 +32,7 @@ URI: [xsd:decimal](http://www.w3.org/2001/XMLSchema#decimal)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -42,7 +42,7 @@ URI: [xsd:decimal](http://www.w3.org/2001/XMLSchema#decimal)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:decimal |
-| native | chpaf:decimal |
+| native | tutorial:decimal |
 | broad | schema:Number |
 
 

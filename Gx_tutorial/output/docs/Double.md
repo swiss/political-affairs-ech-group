@@ -32,7 +32,7 @@ URI: [xsd:double](http://www.w3.org/2001/XMLSchema#double)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -42,7 +42,7 @@ URI: [xsd:double](http://www.w3.org/2001/XMLSchema#double)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:double |
-| native | chpaf:double |
+| native | tutorial:double |
 | close | schema:Float |
 
 

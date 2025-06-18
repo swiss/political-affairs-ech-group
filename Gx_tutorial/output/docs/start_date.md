@@ -1,11 +1,20 @@
 
 
-# Slot: name 
+# Slot: start_date 
+
+
+_[en] The start date of the session._
+
+_[de] Das Startdatum der Sitzung._
+
+__
 
 
 
-URI: [dcterm:title](http://purl.org/dc/terms/title)
-Alias: name
+
+
+URI: [tutorial:startDate](https://ch.paf.link/schema/tutorial/startDate)
+Alias: start_date
 
 <!-- no inheritance hierarchy -->
 
@@ -17,7 +26,6 @@ Alias: name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [AgendaItem](AgendaItem.md) |  |  no  |
 | [Session](Session.md) |  |  no  |
 
 
@@ -28,9 +36,7 @@ Alias: name
 
 ## Properties
 
-* Range: [MultilingualString](MultilingualString.md)
-
-* Multivalued: True
+* Range: [Date](Date.md)
 
 
 
@@ -56,8 +62,8 @@ Alias: name
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | dcterm:title |
-| native | tutorial:name |
+| self | tutorial:startDate |
+| native | tutorial:start_date |
 
 
 
@@ -66,18 +72,19 @@ Alias: name
 
 <details>
 ```yaml
-name: name
+name: start_date
+description: '[en] The start date of the session.
+
+  [de] Das Startdatum der Sitzung.
+
+  '
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-slot_uri: dcterm:title
-alias: name
+slot_uri: tutorial:startDate
+alias: start_date
 domain_of:
 - Session
-- AgendaItem
-range: MultilingualString
-multivalued: true
-inlined: true
-inlined_as_list: true
+range: date
 
 ```
 </details>

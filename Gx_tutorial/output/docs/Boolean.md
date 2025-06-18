@@ -33,7 +33,7 @@ URI: [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -43,7 +43,7 @@ URI: [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:boolean |
-| native | chpaf:boolean |
+| native | tutorial:boolean |
 | exact | schema:Boolean |
 
 

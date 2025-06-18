@@ -4,7 +4,7 @@
 
 
 
-URI: [chpaf:session](https://ch.paf.link/session)
+URI: [tutorial:session](https://ch.paf.link/schema/tutorial/session)
 Alias: sessions
 
 <!-- no inheritance hierarchy -->
@@ -46,7 +46,7 @@ Alias: sessions
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/session
+* from schema: https://ch.paf.link/schema/tutorial
 
 
 
@@ -55,8 +55,8 @@ Alias: sessions
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | chpaf:session |
-| native | chpaf:sessions |
+| self | tutorial:session |
+| native | tutorial:sessions |
 
 
 
@@ -66,9 +66,9 @@ Alias: sessions
 <details>
 ```yaml
 name: sessions
-from_schema: https://ch.paf.link/schema/session
+from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-slot_uri: chpaf:session
+slot_uri: tutorial:session
 alias: sessions
 domain_of:
 - Container
