@@ -42,6 +42,9 @@ classes:
 
 
   Meeting:
+    description: >-
+      A general meeting class used for Sessions, Comittee Meetings, Sittings and other various Meetings. >-
+      [de] Eine allgemeine Sitzungsklasse, die für Sessionssitzungen, Ausschusssitzungen, Tagungen und andere verschiedene Versammlungen verwendet wird.
     slots:
       - id
       - type  #define enum (session, committee, sitting, various) #sitting=Sessionsitzung, 
