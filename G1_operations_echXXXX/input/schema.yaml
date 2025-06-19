@@ -27,75 +27,92 @@ classes:
       - language
 
   Legislature:
+   description: >-
+      [en] Term of office of a parliament as a legislative assembly. Usually lasts four years. >-
+      [de] Amtsdauer eines Parlaments als gesetzgebender Versammlung. Dauert in der Regel vier Jahre.
     slots:
-      - id
-      - body_key
-      - name
-      - url
-      - description
-      - group_name
-      - group_id
-      - begin_date
-      - end_date
-      - updated_datetime
-      - created_datetime
+      - id # technical ID 
+      - administrative_id # administrative body of the legislation (muni, canton, country) 
+      - name # human readable name
+      - description      
+      - landing_page # if available link to an url which provides further information
+      - actor_id # the political body which is organized by the term of office (Regierungsrat, Nationalrat, Ständerat)
+      - begin_date # meta
+      - end_date # meta
+      - updated_datetime  # meta
+      - created_datetime # meta
 
 
   Meeting:
     description: >-
-      A general meeting class used for Sessions, Comittee Meetings, Sittings and other various Meetings. >-
-      [de] Eine allgemeine Sitzungsklasse, die für Sessionssitzungen, Ausschusssitzungen, Tagungen und andere verschiedene Versammlungen verwendet wird.
+      [en] A general meeting class used for Sessions, Comittee Meetings, invidiual session Sittings and other various Meetings. >-
+      [de] Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessionsitzung und andere verschiedene Versammlungen verwendet wird.
     slots:
       - id
       - type  #define enum (session, committee, sitting, various) #sitting=Sessionsitzung, 
-      - body_key
+      - administrative_id 
       - name
-      - url
-      - number
-      - abbreviation
-      - group_name
-      - group_id
-      - begin_date
-      - end_date
+      - landing_page
+      - sequential_number # Laufnummer (string, because roman literals etc.)
+      - position # integer in line with the sequential_number
+      - abbreviation # 
+      - actor_name # name of the political body (e.g. "Nationalrat")
+      - actor_id 
+      - begin_date # planned
+      - end_date # planned
       - begin_date_actual
       - end_date_actual
-      - state
-      - description
-      - location
-      - submeeting_id #linked meeting_id
+      - state # enum planned, moved, closed etc.
+      - state_name # for other state descriptions      
+      - description 
+      - location # If in person, where the meeting will be held.
+      - parent_meeting_id # Meetings are hierarchicaly structured, the linked meeting_id which is grouping the current meeting.
+      - parent_legislature_id # Legislation in which the meeting is based.
       - updated_datetime
       - created_datetime
       
-
-  MeetingItem:
+  AgendaItem:
+    description: >-
+      [en] An agenda item of a meeting. >-
+      [de] Ein Traktandum einer Sitzung.  
     slots:
       - id
-      - meeting
+      - meeting_id # the connection of the 
       - type  #traktandum oder Traktandengruppen)
       - date_time
       - date_time_actual
-      - position
-      - leading #Federführendes Departement
-      - speaker #Sprecher oder Departamentsvorsteher
-      - number
+      - number # number (string, because roman literals etc.)
+      - position # integer
+      - leading_actor_id # Federführendes Departement
+      - speaking_actor_id # Sprecher oder Departamentsvorsteher
       - title
-      - affairs
-      - description #Unteritel, Traktandendetails
-      - status
-      - url
-      - category
-      - subMeetingItem_id
-      - result
+      - affair_id # the connection to the affairs (business items) of the agenda item
+      - description #Untertitel, Traktandendetails
+      - state_id # enum planned, moved, closed etc.
+      - state_name # for other state descriptions
+      - landing_page # 
+      - category # grouped agenda items (e.g. introduction, by department, technical agenda items etc.)
+      - parent_agenda_item_id # if needed to build a hierarchy of agenda items
+      - resolution # range "Resolution" 
       - updated_datetime
       - created_datetime
 
-JointDebate:  #Traktanden die gemeinsam behandelt werden
+JointDebate: 
+  description: >-
+    [en] Agenda Items which are debated together. >-
+    [de] Traktanden die gemeinsam behandelt werden.
   slots:
     - meetingItem
 
-#Decision
-# slots
-#    -   
+Resolution:
+  slots:
+    - typ # annahme, ablehnung, kenntnisnahmme, punktweise annahme, annahme mit postulat, mündlich erledigt, beinahe einstimmig
+    - vote_procedures # [0:n] 
+
+Vote:
+  slots:
+    - typ #zwischenabstimmung, schlussabstimmung?
+    - TODO: Christian macht ein Vorschlag
 
 slots:
 
