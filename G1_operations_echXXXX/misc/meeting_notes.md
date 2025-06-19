@@ -1,6 +1,6 @@
-**12.06.2025**
+##12.06.2025**
 
-## Meeting Items
+**Meeting Items**
 
 - [Sessionenprogramm SR (Parlament.ch)](https://www.parlament.ch/de/ratsbetrieb/sessionen/sessionsprogramme-sr?CouncilId=2&SessionId=2025+II)  
 - [Ordine del giorno GC (TI)](https://www4.ti.ch/poteri/gc/attivita/ordine-del-giorno)  
@@ -18,9 +18,11 @@ Besprochen:
 - Recapp extrahiert Traktadum und Details
 - BE hat Titel (Geschätstitel) und Untertitel
   - Details und Subitel können über Description abgebildet werden.
-
 - Problematik: Traktanden können während der Beratung gemeinsam behandelt werden.
   -  BE: Beschluss wird beim ersten Traktdum ergänzt, Hinweis beim 2,3.. das dies gemeinsam Behandelt wurde
  
 - Wir bilden diese Thematik damit mit einer neuen Klasse JointDebate ab, welche die gemeinsam behandelten Traktanden aufführt und damit zusammenfasst.
+
+##19.06.2025
+
 
