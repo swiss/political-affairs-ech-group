@@ -86,7 +86,7 @@ classes:
       - updated_datetime
       - created_datetime
 
-JointDebate  #Traktanden die gemeinsam behandelt werden
+JointDebate:  #Traktanden die gemeinsam behandelt werden
   slots:
     - meetingItem
 
