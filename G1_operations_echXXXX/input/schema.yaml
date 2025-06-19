@@ -90,9 +90,9 @@ JointDebate  #Traktanden die gemeinsam behandelt werden
   slots:
     - meetingItem
 
-Decison
-  slots
-    -   
+#Decision
+# slots
+#    -   
 
 slots:
 
