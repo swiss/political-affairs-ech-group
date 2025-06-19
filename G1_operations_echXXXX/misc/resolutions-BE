@@ -1,5 +1,5 @@
-Datensatz "traktandum" # Hier ist die Quelle CMI
-  traktandum_beschluss_uhrzeit # Datum und genaue Uhrzeit des Beschlusses im Grossen Rat (verfügbar ab Wintersession 2022).
+Datensatz "traktandum" # Hier ist die Hauptquelle CMI
+  traktandum_beschluss_uhrzeit # Datum und genaue Uhrzeit des Beschlusses im Grossen Rat. Quelle ist hier das Online-Tagblatt, erst ab Wintersession 2022 verfügbar.
   traktandum_beschluss_deutsch # Beschluss des Grossen Rates (z.B. Annahme, Ablehnung, punktweise beschlossen, Kenntnisnahme). Interpellationen und Anfragen werden im schriftlichen Verfahren behandelt. Der Grosse Rat fasst dazu keinen Beschluss.
   traktandum_beschluss_franz
   traktandum_beschlussdetail_deutsch # Details des Beschlusses im Ratsplenum (z.B. Resultate von punktweisen Abstimmungen über einen Vorstoss).
@@ -28,8 +28,8 @@ Datensatz "abstimmung_tagblatt" # Hier ist die Quelle Mediaparl von Recapp, spri
 
 Datensatz "abstimmungsliste" # Der Datensatz enthält die Einzelstimmen der Ratsmitglieder bei Abstimmungen. Er gibt Auskunft darüber, welches Ratsmitglied bei welcher Abstimmung wie abgestimmt hat. Die Abstimmungslisten sind im Online-Tagblatt unter der jeweiligen Abstimmung publiziert.
   abstimmungsliste_uid
-  abstimmung_uid
-  traktandum_uid
+  abstimmung_uid # Querverweis zum Datensatz "abstimmung_tagblatt"
+  traktandum_uid # Querverweis auf Datensatz "traktandum"
   mitglied_uid
   mitglied_vorname # Vorname des Ratsmitglieds, das abgestimmt hat.
   mitglied_name
