@@ -1,4 +1,5 @@
-
+## Terminologie-Datenbank Bund
+* Neben Landessprachen auch Englisch und optional viele andere Sprachen: https://www.termdat.bk.admin.ch/search 
 
 
 ## Open Parldata
