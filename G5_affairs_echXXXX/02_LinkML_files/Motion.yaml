@@ -55,82 +55,224 @@ Motion:
 		  	required: false
 		  	description: Committee-level deliberations preparing for the plenary debate.
 
-
-
-
-	
-		
-		# TODO for LB: 
-		# Behandlung im Rat
-		BeratungRatsplenum:
-		    	range: PlenaryDebate
-		    	multivalued: true
-		    	description: Plenary debate (+chamber). 
-				= Debate type (Eintreten (nid motion), Detail, Firstverlängerung, Beantwortung/Abschreibung, 1-2 Läsig (nid motion hihi)) (oder einfach "Beratung"). 
-			Discussion minutes (+ date and time + link to speaker + link to roles). 
-			Amendments/propositions for change/adhering. Votes. Final decision.
-										
-		
-		(plenaryDebates can be repeated as many times as neccessary? + can be "interruptted by committeeDeliberations (second chamber)")
-		
-		
-		# Not for motion
-		Differenzbereinigung: 
-			description: Differenzbereinigung. Chamber. Date and time. Type. Discussion minutes (+ date and time + link to speaker + link to roles). Votes. Final decision.
-		
-		
-		# Not for motion
-		Einigungskonferenz:
-			description: Einigungskonferenz. 
-			
-			
-		# To discuss how we capture voting in general! 
-		FinalVote: 
-			multivalued: true
-			description: Date and time. Chamber. Votes. Final decision.
-		
-		
-		
-		# === Fristen ===
-		# TODO for LB: 
-		Fristen:
-			Datum: XX
-			Typen:  
-				Beantwortungsfrist
-				Behandlungsfristen => für Exekutive UND für Legislative! => an wen gerichtet? (e.g., innerhalb von XY Zeit muss es behandelt werden)
-				Fristerstreckung = Erste frist, 2. Frist, ...
-				XX
-	
+		# Behandlung im Rat: mit 3 Elementen = Reden, Anträge, Abstimmungen
+		councilDebates:
+		  	range: PlenaryDebate
+		  	multivalued: true
+		  	required: false
+		  	description: XX.						
 	
 	       # === Lifecycle flags ===
-		# Do we want this? => technically, we should add this in a separate layer
-	       submitted:
-	         	range: boolean
-	         	required: true
-	         	description: Indicates whether the motion was formally submitted to Parliament. The motion is considered submitted if submission.submission_date is set.
-	       withdrawn:
-	         	range: boolean
-	         	required: false
-	         	description: Indicates whether the motion was officially withdrawn at any point. The motion is considered withdrawn if submission.withdrawn_date is set.
-		urgent: 
-	         	range: boolean
-	         	required: true
-	         	description:
-
-
-
-
-
-
+		lifecycle:
+		  	range: LifecycleFlags
+		  	required: false
+		  	description: High-level metadata about the motion's formal state.
+				
 
 #-------------------- Process step classes --------------------#
+
+
+LifecycleFlags:
+  	description: General lifecycle metadata for the motion (status, withdrawal, urgency, etc.)
+  	attributes:
+  	
+  	  	submitted:
+  	  	  	range: boolean
+  	  	  	required: false
+  	  	  	description: Whether the motion has been formally submitted (derived from submission date).
+  	  	
+  	  	withdrawn:
+  	  	  	range: boolean
+  	  	  	required: false
+  	  	  	description: Whether the motion was officially withdrawn.
+  	  	
+  	  	urgent:
+  	  	  	range: boolean
+  	  	  	required: false
+  	  	  	description: Whether the motion was declared urgent.
+  	  	
+  	  	status:
+  	  	  	range: AffairStatusEnum
+  	  	  	required: true
+  	  	  	description: Current overall status of the motion (e.g. pending, passed, failed).
+
+
+NamedVote:
+  	description: A vote cast by a named individual in a formal vote.
+  	attributes:
+  	  	person:
+  	  	  	range: Person
+  	  	  	required: true
+  	  	
+  	  	vote_value:
+  	  	  	range: IndividualVoteEnum
+  	  	  	required: true
+  	  	
+  	  	remark:
+  	  	  	range: string
+  	  	  	required: false
+  	  	  	description: Optional remark if one was submitted.
+      
+
+Vote:
+  	description: A formal vote in the plenary, including semantics and participation counts.
+  	attributes:
+  	
+  	  	vote_registration_number:
+  	  	  	range: string
+  	  	  	required: false
+  	  	  	description: Official ID or number for the vote (e.g., from the voting system or protocol).
+  	  	
+  	  	vote_type:
+  	  	  	range: VoteTypeEnum
+  	  	  	required: false
+  	  	  	description: Type of vote (e.g. amendment, final, procedural).
+  	  	
+  	  	vote_meaning_yes:
+  	  	  	range: string
+  	  	  	required: true
+  	  	  	description: What does a YES vote mean in this context? (e.g., "accept the motion")
+  	  	
+  	  	vote_meaning_no:
+  	  	  	range: string
+  	  	  	required: true
+  	  	  	description: What does a NO vote mean in this context? (e.g., "reject the motion")
+  	  	
+  	  	decision:
+  	  	  	range: VoteOutcomeEnum
+  	  	  	required: false
+  	  	  	description: Final decision/result of the vote (e.g. adopted, rejected, tied, invalid).
+  	  	
+  	  	count_yes:
+  	  	  	range: integer
+  	  	  	required: true
+  	  	
+  	  	count_no:
+  	  	  	range: integer
+  	  	  	required: true
+  	  	
+  	  	count_abstain:
+  	  	  	range: integer
+  	  	  	required: false
+  	  	
+  	  	count_excused:
+  	  	  	range: integer
+  	  	  	required: false
+  	  	
+  	  	count_not_present:
+  	  	  	range: integer
+  	  	  	required: false
+      
+	       named_votes:
+	         	range: NamedVote
+	         	multivalued: true
+	         	required: false
+	         	description: Individual votes of MPs in named/roll-call voting procedures.
+      
+
+Proposition:
+  	description: proposition to accept, proposition to reject, proposition to change (amendment)
+  	attributes:
+  	  	proposer:
+  	  	  	range: Person, Committee, XX
+  	  	  	required: false
+  	  	text:
+			# Fahnen-Style hier? => Referenz zu Text vorher: Text nachher? 
+  	  	  	range: TextBlock
+  	  	  	required: true
+  	  	vote_ref:
+  	  	  	range: Vote
+  	  	  	required: false
+
+
+PlenaryDebateEvent:
+  	description: A single event within the plenary debate — speech, proposition, or vote — with a timestamp or order.
+  	attributes:
+  	
+  	  	sequence_number:
+  	  	  	range: integer
+  	  	  	required: true
+  	  	  	description: Position of the event within the debate (starting from 1).
+  	  	
+  	  	event_type:
+  	  	  	range: PlenaryDebateEventTypeEnum 
+			# speech, proposition, vote
+  	  	  	required: true
+  	  	
+  	  	speaker:
+  	  	  	range: Person
+  	  	  	required: false
+  	  	
+  	  	role:
+  	  	  	range: DebateRoleEnum
+  	  	  	required: false
+  	  	
+  	  	text:
+  	  	  	range: TextBlock
+  	  	  	required: false
+  	  	  	description: Speech, proposal text, or summary.
+  	  	
+  	  	proposition:
+  	  	  	range: Proposition
+  	  	  	required: false
+  	  	  	description: If this event involves a specific amendment.
+  	  	
+  	  	vote:
+  	  	  	range: Vote
+  	  	  	required: false
+  	  	  	description: If this event includes or follows with a vote.
+  	  	
+  	  	timestamp:
+  	  	  	range: datetime
+  	  	  	required: false
+			
+		# Deadline hier?
+  	  	deadline:
+  	  	  	range: date
+  	  	  	required: false
+  	  	  	description: Optional treatment deadline (e.g., Umsetzungsfrist).
+		
+
+PlenaryDebate:
+  	description: Behandlung im Rat. Elemente = Reden, Anträge, Abstimmungen
+  	attributes:
+              	
+  	  	council:
+  	  	  	range: CouncilEnum
+  	  	  	required: true
+  	  	  	description: The chamber in which the debate takes place.
+              	  
+  	  	debate_type:
+  	  	  	range: PlenaryDebateTypeEnum
+  	  	  	required: true
+  	  	  	description: The type of debate (e.g., Eintreten, Detailberatung). 
+			# Evtl. auch: Einigungskonferenz, Differenzberatung?
+				
+  	  	date:
+  	  	  	range: date
+  	  	  	required: true
+              	  	
+  	  	start_time:
+  	  	  	range: time
+  	  	  	required: false
+              	  	
+  	  	end_time:
+  	  	  	range: time
+  	  	  	required: false
+
+		debateEvent:
+		  	range: PlenaryDebateEvent
+		  	multivalued: true
+		  	required: false
+		  	description: Chronologically ordered events in the plenary debate.
+
+
 
 CommitteePosition:
   	description: A formal position taken by part of the committee (majority or minority), including recommendation and supporting members.
   	attributes:				
 		type: 	
-			range: enumXX
-			# TODO: fill
+			range: CommitteePositionTypeEnum
 			required: true
 			description: full committee, majority, minority (+name)
 			
@@ -171,11 +313,8 @@ CommitteeDecision:
   	  	  	required: false
   	  	  	description: Text of official communication of committee decision.
 			# type = press release, or official communication
-  	  	
-  	  	
-
-
-# TODO: link zu anderer Subgruppe? => Christian fragen
+  
+# Link zu anderer Subgruppe
 CommitteeMeeting:
   	description: A formal meeting held by a parliamentary committee, including participation and discussed affairs.
   	attributes:
@@ -240,13 +379,11 @@ CommitteeDeliberationStep:
   	  	  	description: The committee responsible for the deliberation.
   	  	
   	  	council:
-			#TODO change ChamberEnum to CouncilEnum
   	  	  	range: CouncilEnum
   	  	  	required: false
   	  	  	description: The chamber this committee belongs to.
   	  		  		
   	  	decision:
-			# TODO: name? 
   	  	  	range: CommitteeDecision
   	  	  	required: false
   	  	  	description: The committee’s recommendation to the plenary, including majority/minority positions.
@@ -258,7 +395,7 @@ CommitteeDeliberationStep:
 			# TODO: genereller: jeder Step hat PERSONEN => diese Personen haben ROLLEN
 
 		meeting_refs:
-		    range: CommitteeMeeting #Verweis auf andere Subgruppe => Christian
+		    range: CommitteeMeeting
 		    multivalued: true
 		    required: false
 
@@ -287,9 +424,7 @@ ResponseStep:
 
 		
 
-
-
-assignment:
+Assignment:
   	description: A formal assignment of the affair to an institution or actor for further processing.
   	attributes:
   	  	step_type:
@@ -440,6 +575,18 @@ Sponsorship:
 			#TODO Fabian fragen: wie wird es auf B-Ebene gemacht? => gibt es da Tage, wo das alles erledigt wird => Event-style & Nadine fragt bei Kantonen nach, ob das ein grosses Event ist, oder ob das eher so etwas kleines ist.
 		
 
+# === Fristen ===
+# TODO for LB: 
+Fristen:
+	Datum: XX
+	Typen:  
+		Beantwortungsfrist
+		Behandlungsfristen => für Exekutive UND für Legislative! => an wen gerichtet? (e.g., innerhalb von XY Zeit muss es behandelt werden)
+		Fristerstreckung = Erste frist, 2. Frist, ...
+		XX
+
+
+
 Person:
     	is_a: SponsoringEntity
     	XXLINK TO ACTOR eCH GROUP
@@ -460,6 +607,9 @@ ParliamentaryGroup:
     	is_a: SponsoringEntity
     	XXLINK TO ACTOR eCH GROUP
 	
+	
+	
+	
 
 #-------------------- Fixed values / Dictionaries --------------------#
 enums:
@@ -476,7 +626,15 @@ enums:
 			fr: { description: French }
 			it: { description: Italian }
 			rm: { description: Romansh}
-			en: { description: English }
+			en: { description: English }	
+	CouncilEnum:
+		description: XX
+		permissible_values:
+			Rat: { description: XX }
+			Kammer: { description: XX }
+			Nationalrat: { description: XX }
+			Ständerat:  { description: XX }
+			Vereinigte Bundesversammlung:  { description: XX }
 	TextOriginEnum:
 		description: Origin of the text for multilingual tracking.
 		permissible_values:
@@ -535,6 +693,18 @@ enums:
 	  	  	government_protocol:
 	  	  	  	description: Assigned and approved by executive council or cantonal government.
 	
+	CommitteePositionTypeEnum:
+	  	description: The role of the committee position in terms of consensus.
+	  	permissible_values:
+	  	  	full_committee:
+	  	  	  	description: Position unanimously adopted by the entire committee.
+	  	  	majority:
+	  	  	  	description: Position adopted by the majority of the committee.
+	  	  	minority:
+	  	  	  	description: Dissenting or minority position held by a subset of committee members.
+	
+	
+	
 	# Prüfen: was gibt es da alles? :)
 	RecommendationEnum:
 	  	description: Recommendation made by the responder regarding the fate of the motion.
@@ -553,6 +723,74 @@ enums:
 	  	  	  	description: The motion should be deferred for later decision.
 	  	  	neutral:
 	  	  	  	description: No explicit recommendation provided.
+	DebateRoleEnum:
+	  	permissible_values:
+	  	  	mp: { description: Regular member of parliament }
+	  	  	committee_spokesperson: { description: Speaking on behalf of committee }
+	  	  	parliamentarygroup_representative: { description: Speaking for a parliamentary group }
+	  	  	government_representative: { description: Member of executive (BR, Direktion) }	
+	
+	PlenaryDebateTypeEnum:
+	  	description: Classification of debate type in the plenary.
+	  	permissible_values:
+	  	  	eintreten:
+	  	  	  	description: General admission of the motion to debate.
+	  	  	detailberatung:
+	  	  	 	 description: Detailed discussion of content or clauses.
+	  	  	beantwortung:
+	  	  	  	description: Executive response is presented or debated.
+	  	  	abschreibung:
+	  	  	  	description: Motion is considered obsolete or no longer necessary.
+	  	  	fristverlaengerung:
+	  	  	  	description: Extension of deadline is debated.
+	  	  	verzoegerung:
+	  	  	  	description: Debate is postponed.
+	  	  	sonstige:
+	  	  	  	description: Other type not covered above.
+				
+	PlenaryDebateEventTypeEnum:
+	  	permissible_values:
+	  	  	speech: { description: A verbal intervention in the plenary. }
+	  	  	proposition: { description: A formal proposition or amendment. }
+	  	  	vote: { description: A vote taken in the plenary. }
+	
+	VoteTypeEnum:
+	  	permissible_values:
+	  	  	final: { description: Final decision on the motion }
+	  	  	amendment: { description: Vote on a proposed amendment }
+	  	  	procedural: { description: Vote on process or rules }
+	  	  	other: { description: Other type of vote }
 			
+	VoteOutcomeEnum:
+	  	permissible_values:
+	  	  	adopted: { description: The motion or amendment was accepted. }
+	  	  	rejected: { description: The proposal was not accepted. }
+	  	  	tied: { description: The vote was tied. }
+	  	  	not_held: { description: The vote was cancelled or not held. }
+	  	  	invalid: { description: The vote was ruled invalid. }
 	
-	
+	IndividualVoteEnum:
+	  	permissible_values:
+	  	  	yes: { description: Voted in favor }
+	  	  	no: { description: Voted against }
+	  	  	abstain: { description: Abstained from voting }
+	  	  	excused: { description: Was officially excused }
+	  	  	not_present: { description: Was absent without excuse }
+			
+			
+	AffairStatusEnum:
+	  	permissible_values:
+	  	  	pending:
+	  	  	  	description: The motion is still in progress.
+	  	  	passed:
+	  	  	  	description: The motion was adopted by both chambers.
+	  	  	rejected:
+	  	  	  	description: The motion was rejected in plenary.
+	  	  	withdrawn:
+	  	  	  	description: The motion was formally withdrawn.
+	  	  	lapsed:
+	  	  	  	description: The motion expired (e.g. not treated in time).
+	  	  	partially_accepted:
+	  	  	 	 description: The motion was only partly adopted.
+	  	  	replaced:
+	  	  	  	description: The motion was replaced or merged into another.
