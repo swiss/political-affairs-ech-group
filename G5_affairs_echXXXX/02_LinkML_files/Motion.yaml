@@ -61,10 +61,13 @@ Motion:
 		  	multivalued: true
 		  	required: false
 		  	description: XX.						
+			
+		
 	
 	       # === Lifecycle flags ===
 		lifecycle:
 		  	range: LifecycleFlags
+			multivalued: true
 		  	required: false
 		  	description: High-level metadata about the motion's formal state.
 				
@@ -75,7 +78,37 @@ Motion:
 LifecycleFlags:
   	description: General lifecycle metadata for the motion (status, withdrawal, urgency, etc.)
   	attributes:
+		
+		date: 	
+			range: date
+			description: 
+		## + Datum wann der change gemacht wurde
   	
+		pending: 
+			range: boolean
+			required: true
+			description: Ist das Geschäft noch offen/am Leben? Oder ist es finito?
+		
+  	  	urgent:
+  	  	  	range: boolean
+  	  	  	required: false
+  	  	  	description: Whether the motion was declared urgent.
+			
+		status: 
+			range: StatusEnum
+		
+		#TODO:
+		#Fabian: Liste machen mit möglichen Elementen (Ja/Nein)
+		
+		STATUS: 
+  	  	Passed:
+  	  	  	range: boolean
+  	  	  	required: true
+  	  	  	description: Current overall status of the motion (e.g. passed, failed, abgeschrieben).
+			
+		Abgeschrieben: 
+			range: boolean
+			
   	  	submitted:
   	  	  	range: boolean
   	  	  	required: false
@@ -85,16 +118,7 @@ LifecycleFlags:
   	  	  	range: boolean
   	  	  	required: false
   	  	  	description: Whether the motion was officially withdrawn.
-  	  	
-  	  	urgent:
-  	  	  	range: boolean
-  	  	  	required: false
-  	  	  	description: Whether the motion was declared urgent.
-  	  	
-  	  	status:
-  	  	  	range: AffairStatusEnum
-  	  	  	required: true
-  	  	  	description: Current overall status of the motion (e.g. pending, passed, failed).
+		
 
 
 NamedVote:
@@ -127,29 +151,34 @@ Vote:
   	  	  	range: VoteTypeEnum
   	  	  	required: false
   	  	  	description: Type of vote (e.g. amendment, final, procedural).
-  	  	
-  	  	vote_meaning_yes:
-  	  	  	range: string
-  	  	  	required: true
-  	  	  	description: What does a YES vote mean in this context? (e.g., "accept the motion")
-  	  	
-  	  	vote_meaning_no:
-  	  	  	range: string
-  	  	  	required: true
-  	  	  	description: What does a NO vote mean in this context? (e.g., "reject the motion")
-  	  	
+			
+  	  	text:
+  	  	  	range: TextBlock
+  	  	  	required: false
+			
   	  	decision:
   	  	  	range: VoteOutcomeEnum
   	  	  	required: false
   	  	  	description: Final decision/result of the vote (e.g. adopted, rejected, tied, invalid).
+			# Hier "Umwandlung" oder "Rückzug" mitaufnehmen!
+				
+  	  	vote_meaning_yes:
+  	  	  	range: string
+  	  	  	required: false
+  	  	  	description: What does a YES vote mean in this context? (e.g., "accept the motion")
   	  	
+  	  	vote_meaning_no:
+  	  	  	range: string
+  	  	  	required: false
+  	  	  	description: What does a NO vote mean in this context? (e.g., "reject the motion")
+  	  	  	  	
   	  	count_yes:
   	  	  	range: integer
-  	  	  	required: true
+  	  	  	required: false
   	  	
   	  	count_no:
   	  	  	range: integer
-  	  	  	required: true
+  	  	  	required: false
   	  	
   	  	count_abstain:
   	  	  	range: integer
@@ -176,13 +205,31 @@ Proposition:
   	  	proposer:
   	  	  	range: Person, Committee, XX
   	  	  	required: false
+			
+		type: 
+			range: 
+			required: true
+				
   	  	text:
-			# Fahnen-Style hier? => Referenz zu Text vorher: Text nachher? 
   	  	  	range: TextBlock
   	  	  	required: true
-  	  	vote_ref:
-  	  	  	range: Vote
+			
+Speech: 
+	description: 
+	attributes: 
+  	  	speaker:
+  	  	  	range: Person
   	  	  	required: false
+  	  	
+  	  	role:
+  	  	  	range: DebateRoleEnum
+  	  	  	required: false
+  	  	
+  	  	text:
+  	  	  	range: TextBlock
+  	  	  	required: false
+  	  	  	description: Speech, proposal text, or summary.
+		
 
 
 PlenaryDebateEvent:
@@ -198,20 +245,12 @@ PlenaryDebateEvent:
   	  	  	range: PlenaryDebateEventTypeEnum 
 			# speech, proposition, vote
   	  	  	required: true
-  	  	
-  	  	speaker:
-  	  	  	range: Person
-  	  	  	required: false
-  	  	
-  	  	role:
-  	  	  	range: DebateRoleEnum
-  	  	  	required: false
-  	  	
-  	  	text:
-  	  	  	range: TextBlock
-  	  	  	required: false
-  	  	  	description: Speech, proposal text, or summary.
-  	  	
+				
+		speech: 
+			range: Speech
+			required: false
+			description: XX
+	
   	  	proposition:
   	  	  	range: Proposition
   	  	  	required: false
@@ -247,19 +286,13 @@ PlenaryDebate:
   	  	  	required: true
   	  	  	description: The type of debate (e.g., Eintreten, Detailberatung). 
 			# Evtl. auch: Einigungskonferenz, Differenzberatung?
-				
+			
+		#TODO: Link zum Meeting!	
   	  	date:
   	  	  	range: date
   	  	  	required: true
+			description: date and time
               	  	
-  	  	start_time:
-  	  	  	range: time
-  	  	  	required: false
-              	  	
-  	  	end_time:
-  	  	  	range: time
-  	  	  	required: false
-
 		debateEvent:
 		  	range: PlenaryDebateEvent
 		  	multivalued: true
