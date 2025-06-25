@@ -1,10 +1,10 @@
 ---
-title: "eCH-xxxx Vernehmlassungen"
+title: "eCH-xxxx öffentliche Konsultationen"
 lang: de
 toc: false
 ---
 
-| **Name**              | **Vernehmlassungen**                                                                                               |
+| **Name**              | **öffentliche Konsultationen**                                                                                               |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------|
 | **eCH-Nummer**        | eCH-XXXX                                                                                                                   |
 | **Kategorie**         | Entwurf                                                                                                                    |
