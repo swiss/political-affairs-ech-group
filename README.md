@@ -125,6 +125,12 @@ name:
     language: "de"
 ```
 
+There seems to be no simple solution to allow a string to either be a `MultilingualString` or a simple string. Therefore, we recommend to use the `MultilingualString` type for all strings that are in a certain language even if there is no translation intended.
+
+### Reusing Slots
+
+It seems not possible to have a different descriptions for slots used in different classes. So slots should only be reused if a fairly general description is enough (like for a `id` or a `name`). For all other cases, it is better to define a new slot with a more specific name and description.
+
 ### Data Types and Formats
 
 When defining data types and formats in LinkML, consider the following guidelines:
