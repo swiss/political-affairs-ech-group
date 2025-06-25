@@ -78,3 +78,6 @@
 ## Canton of Zurich – Parliamentary Data
   - [Mitglieder des Kantonsrates des Kantons Zürich](https://opendata.swiss/de/dataset/web-service-des-geschaftsverwaltungssystems-des-kantonsrates-des-kantons-zurich/resource/9ddb2f1c-18a4-4359-8323-9bbb20200db8)
 
+## Journalism
+  - [Die Mitte gibt es nicht - Bajour](https://bajour.ch/a/grossrats-rating-2022)
+  - [SRF Data](srfdata.github.io)
