@@ -144,7 +144,7 @@ attributes:
     name: name
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    slot_uri: dcterm:title
+    slot_uri: schema:name
     alias: name
     owner: AgendaItem
     domain_of:

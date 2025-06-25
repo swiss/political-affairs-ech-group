@@ -4,7 +4,7 @@
 
 
 
-URI: [dcterm:title](http://purl.org/dc/terms/title)
+URI: [schema:name](http://schema.org/name)
 Alias: name
 
 <!-- no inheritance hierarchy -->
@@ -56,7 +56,7 @@ Alias: name
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | dcterm:title |
+| self | schema:name |
 | native | tutorial:name |
 
 
@@ -69,7 +69,7 @@ Alias: name
 name: name
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-slot_uri: dcterm:title
+slot_uri: schema:name
 alias: name
 domain_of:
 - Session

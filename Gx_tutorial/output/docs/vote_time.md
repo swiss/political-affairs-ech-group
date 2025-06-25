@@ -3,7 +3,9 @@
 # Slot: vote_time 
 
 
-_[en] The date and time when the vote was cast. [de] Das Datum und die Uhrzeit, zu der die Abstimmung abgegeben wurde._
+_[en] The date and time when the vote was cast._
+
+_[de] Das Datum und die Uhrzeit, zu der die Abstimmung abgegeben wurde._
 
 __
 
@@ -71,8 +73,9 @@ Alias: vote_time
 <details>
 ```yaml
 name: vote_time
-description: '[en] The date and time when the vote was cast. [de] Das Datum und die
-  Uhrzeit, zu der die Abstimmung abgegeben wurde.
+description: '[en] The date and time when the vote was cast.
+
+  [de] Das Datum und die Uhrzeit, zu der die Abstimmung abgegeben wurde.
 
   '
 from_schema: https://ch.paf.link/schema/tutorial

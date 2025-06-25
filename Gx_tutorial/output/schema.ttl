@@ -14,6 +14,18 @@
 tutorial:Container a owl:Class ;
     rdfs:label "Container" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty tutorial:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty tutorial:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom tutorial:AgendaItem ;
+            owl:onProperty tutorial:agenda_items ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty tutorial:votes ],
+        [ a owl:Restriction ;
             owl:allValuesFrom tutorial:Session ;
             owl:onProperty tutorial:sessions ],
         [ a owl:Restriction ;
@@ -23,41 +35,41 @@ tutorial:Container a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty tutorial:agenda_items ],
         [ a owl:Restriction ;
-            owl:allValuesFrom tutorial:Vote ;
-            owl:onProperty tutorial:votes ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom tutorial:AgendaItem ;
-            owl:onProperty tutorial:agenda_items ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty tutorial:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty tutorial:votes ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty tutorial:sessions ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty tutorial:id ] ;
+            owl:allValuesFrom tutorial:Vote ;
+            owl:onProperty tutorial:votes ] ;
     skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
 tutorial:Session a owl:Class ;
     rdfs:label "Session" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty tutorial:start_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty tutorial:end_date ],
+        [ a owl:Restriction ;
             owl:allValuesFrom tutorial:MultilingualString ;
             owl:onProperty tutorial:name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom tutorial:AgendaItem ;
-            owl:onProperty tutorial:agenda_items ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty tutorial:id ],
         [ a owl:Restriction ;
+            owl:allValuesFrom tutorial:AgendaItem ;
+            owl:onProperty tutorial:agenda_items ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty tutorial:agenda_items ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty tutorial:end_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty tutorial:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty tutorial:start_date ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
@@ -66,22 +78,10 @@ tutorial:Session a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty tutorial:name ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty tutorial:id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty tutorial:end_date ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
             owl:onProperty tutorial:start_date ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty tutorial:start_date ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty tutorial:end_date ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom xsd:date ;
             owl:onProperty tutorial:end_date ] ;
     skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
@@ -101,8 +101,8 @@ tutorial:sessions a owl:ObjectProperty ;
 tutorial:AgendaItem a owl:Class ;
     rdfs:label "AgendaItem" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty tutorial:id ],
+            owl:allValuesFrom tutorial:Vote ;
+            owl:onProperty tutorial:votes ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty tutorial:name ],
@@ -110,28 +110,22 @@ tutorial:AgendaItem a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty tutorial:votes ],
         [ a owl:Restriction ;
-            owl:allValuesFrom tutorial:MultilingualString ;
-            owl:onProperty tutorial:name ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty tutorial:id ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty tutorial:id ],
         [ a owl:Restriction ;
-            owl:allValuesFrom tutorial:Vote ;
-            owl:onProperty tutorial:votes ] ;
+            owl:minCardinality 1 ;
+            owl:onProperty tutorial:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom tutorial:MultilingualString ;
+            owl:onProperty tutorial:name ] ;
     skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
 tutorial:MultilingualString a owl:Class ;
     rdfs:label "MultilingualString" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty tutorial:text ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty tutorial:language ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty tutorial:language ],
         [ a owl:Restriction ;
@@ -140,51 +134,57 @@ tutorial:MultilingualString a owl:Class ;
                     owl:withRestrictions ( [ xsd:pattern "^[a-z]{2}$" ] ) ] ;
             owl:onProperty tutorial:language ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty tutorial:text ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty tutorial:text ],
+        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty tutorial:text ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty tutorial:text ] ;
+            owl:onProperty tutorial:language ] ;
     skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
 tutorial:Vote a owl:Class ;
     rdfs:label "Vote" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty tutorial:vote_time ],
+        [ a owl:Restriction ;
             owl:allValuesFrom tutorial:ResultEnum ;
             owl:onProperty tutorial:result ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty tutorial:question ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty tutorial:result ],
+            owl:onProperty tutorial:vote_time ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty tutorial:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty tutorial:vote_time ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty tutorial:vote_time ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty tutorial:result ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty tutorial:question ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty tutorial:id ],
+            owl:maxCardinality 1 ;
+            owl:onProperty tutorial:question ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty tutorial:question ],
+            owl:onProperty tutorial:id ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty tutorial:id ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty tutorial:vote_time ] ;
+            owl:onProperty tutorial:vote_time ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty tutorial:question ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty tutorial:result ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty tutorial:result ] ;
     skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
 tutorial:end_date a owl:DatatypeProperty ;
@@ -216,7 +216,7 @@ tutorial:result a owl:ObjectProperty ;
 tutorial:start_date a owl:DatatypeProperty ;
     rdfs:label "start_date" ;
     rdfs:range xsd:date ;
-    skos:definition """[en] The start date of the session. [de] Das Startdatum der Sitzung.
+    skos:definition """[en] The start date of the session [de] Das Startdatum der Sitzung
 """ ;
     skos:inScheme <https://ch.paf.link/schema/tutorial> .
 

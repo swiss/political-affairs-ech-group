@@ -3,7 +3,9 @@
 # Slot: language 
 
 
-_[en] Language code in ISO 639-1 format [de] Sprachcode im ISO 639-1-Format_
+_[en] Language code in ISO 639-1 format._
+
+_[de] Sprachcode im ISO 639-1-Format._
 
 __
 
@@ -75,7 +77,9 @@ Alias: language
 <details>
 ```yaml
 name: language
-description: '[en] Language code in ISO 639-1 format [de] Sprachcode im ISO 639-1-Format
+description: '[en] Language code in ISO 639-1 format.
+
+  [de] Sprachcode im ISO 639-1-Format.
 
   '
 from_schema: https://ch.paf.link/schema/tutorial

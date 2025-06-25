@@ -21,14 +21,10 @@ agenda_items:
     name:
       - text: Fahnenfarbe
         language: de
-      - text: Flag Color
-        language: en
   - id: tutorial:s2025-2_t1
     name: 
       - text: Landeshymne
         language: de
-      - text: National Anthem
-        language: en
 votes:
   - id: tutorial:s2025-1_t1_a1
     question: Soll die Farbe geändert werden?

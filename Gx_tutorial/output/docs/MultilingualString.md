@@ -33,7 +33,7 @@ URI: [tutorial:MultilingualString](https://ch.paf.link/schema/tutorial/Multiling
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [text](text.md) | 1 <br/> [String](String.md) |  | direct |
-| [language](language.md) | 1 <br/> [String](String.md) | [en] Language code in ISO 639-1 format [de] Sprachcode im ISO 639-1-Format | direct |
+| [language](language.md) | 1 <br/> [String](String.md) | [en] Language code in ISO 639-1 format | direct |
 
 
 
@@ -116,7 +116,9 @@ attributes:
     required: true
   language:
     name: language
-    description: '[en] Language code in ISO 639-1 format [de] Sprachcode im ISO 639-1-Format
+    description: '[en] Language code in ISO 639-1 format.
+
+      [de] Sprachcode im ISO 639-1-Format.
 
       '
     from_schema: https://ch.paf.link/schema/tutorial
