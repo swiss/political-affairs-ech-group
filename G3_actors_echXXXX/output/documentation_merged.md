@@ -33,7 +33,7 @@ Brief summary of the purpose of the document.
 
 # Person
 
-## Meeting 22.05.2025 / 28.06.2025 / 11.06.2025
+## Meeting 22.05.2025 / 28.05.2025 / 11.06.2025 / 25.06.2025
 
 * Möglichst übernahme von eCH44 bezüglich Identifikation.
 
@@ -44,15 +44,16 @@ Brief summary of the purpose of the document.
 * Geburtsdatum
 * Addresse
 
-* Sprachen
-* Staatsbürgerschaften
+* Sprachen -> languages [] (optional)
+* Staatsbürgerschaften -> ech44 citizenships [] (optional)
 * Geschlecht (genders) mfd 
 * persönliche Website (optional)
-* Anzahl Kinder -> offspring
-* Zivilstand -> ech44?
+* Anzahl Kinder -> offspring (optional)
+* Zivilstand -> ech44? (optional)
 * Beschäftigung (experience / occupation)
   * Beruf / Arbeitsgeber (Interessenbindungen?)
-  * Armeerang / Zivildienst / Zivilschutz 
+  * Armeerang / Zivildienst / Zivilschutz
+* 
 
 ### Namenstypen basierend nach eCH11
 
@@ -112,6 +113,45 @@ address: [
     postalCode: ,
     postalLocality: , 
 ]
+languages: [
+   {
+      language: "DE"
+      correspondence: "true",
+      native: "true"
+   },
+   {
+      language: "FR"
+      correspondence: "false",
+      native: "true"
+   }
+]
+ch_citizenship: {
+    validFrom: "",
+    validUntil: ""
+}
+citizenships:
+[
+  {
+    country: "CH"
+    validFrom: "",
+    validUntil: ""
+  },
+  {
+    country: "ALB",
+    validFrom: "",
+    validUntil: "",
+  },
+]
+genders: 
+[
+  {
+    gender: "m",
+    validFrom: "",
+    validUntil: "",
+    pronouns: "he/him",
+  },
+]
+}
 ```
 
 ```
