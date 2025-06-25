@@ -118,6 +118,29 @@ genders:
     pronouns: "he/him",
   },
 ]
+occupations: [
+  {
+    active: "true",
+    ??paid??:
+    validFrom: "",
+    validTo: "",
+    isco19_code: "71152",
+    occupation: "Schreiner"
+  },
+  {
+    active: "false",
+    validFrom: "",
+    validTo: "",
+    isco19_code: "12467",
+    occupation: "Damplokführer"
+  }
+],
+??ausbildung: [
+  armee, lehrabschluss
+],
+??infos (Social Media etc.): [
+
+]
 }
 ```
 
