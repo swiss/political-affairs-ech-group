@@ -14,11 +14,11 @@ tutorial:s2025 a tutorial:Container ;
 
 tutorial:s2025-1 a tutorial:Session ;
     schema1:name [ a tutorial:MultilingualString ;
-            dcterm:language "en" ;
-            tutorial:text "Spring Session 2025" ],
-        [ a tutorial:MultilingualString ;
             dcterm:language "de" ;
-            tutorial:text "Frühlingssession 2025" ] ;
+            tutorial:text "Frühlingssession 2025" ],
+        [ a tutorial:MultilingualString ;
+            dcterm:language "en" ;
+            tutorial:text "Spring Session 2025" ] ;
     tutorial:endDate "2025-04-10"^^xsd:date ;
     tutorial:startDate "2025-03-01"^^xsd:date .
 

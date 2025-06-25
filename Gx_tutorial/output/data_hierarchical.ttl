@@ -1,4 +1,5 @@
 @prefix dcterm: <http://purl.org/dc/terms/> .
+@prefix schema1: <http://schema.org/> .
 @prefix tutorial: <https://ch.paf.link/schema/tutorial/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -7,18 +8,18 @@ tutorial:s2025 a tutorial:Container ;
         tutorial:s2025-2 .
 
 tutorial:s2025-1 a tutorial:Session ;
-    dcterm:title [ a tutorial:MultilingualString ;
-            dcterm:language "de" ;
-            tutorial:text "Frühlingssession 2025" ],
-        [ a tutorial:MultilingualString ;
+    schema1:name [ a tutorial:MultilingualString ;
             dcterm:language "en" ;
-            tutorial:text "Spring Session 2025" ] ;
+            tutorial:text "Spring Session 2025" ],
+        [ a tutorial:MultilingualString ;
+            dcterm:language "de" ;
+            tutorial:text "Frühlingssession 2025" ] ;
     tutorial:agendaItem tutorial:s2025-1_t1 ;
     tutorial:endDate "2025-04-10"^^xsd:date ;
     tutorial:startDate "2025-03-01"^^xsd:date .
 
 tutorial:s2025-1_t1 a tutorial:AgendaItem ;
-    dcterm:title [ a tutorial:MultilingualString ;
+    schema1:name [ a tutorial:MultilingualString ;
             dcterm:language "de" ;
             tutorial:text "Fahnenfarbe" ],
         [ a tutorial:MultilingualString ;
@@ -38,7 +39,7 @@ tutorial:s2025-1_t1_a2 a tutorial:Vote ;
     tutorial:voteTime "2025-03-16T10:00:00+00:00"^^xsd:dateTime .
 
 tutorial:s2025-2 a tutorial:Session ;
-    dcterm:title [ a tutorial:MultilingualString ;
+    schema1:name [ a tutorial:MultilingualString ;
             dcterm:language "de" ;
             tutorial:text "Sommersession 2025" ],
         [ a tutorial:MultilingualString ;
@@ -49,12 +50,12 @@ tutorial:s2025-2 a tutorial:Session ;
     tutorial:startDate "2025-06-01"^^xsd:date .
 
 tutorial:s2025-2_t1 a tutorial:AgendaItem ;
-    dcterm:title [ a tutorial:MultilingualString ;
-            dcterm:language "en" ;
-            tutorial:text "National Anthem" ],
-        [ a tutorial:MultilingualString ;
+    schema1:name [ a tutorial:MultilingualString ;
             dcterm:language "de" ;
-            tutorial:text "Landeshymne" ] ;
+            tutorial:text "Landeshymne" ],
+        [ a tutorial:MultilingualString ;
+            dcterm:language "en" ;
+            tutorial:text "National Anthem" ] ;
     tutorial:vote tutorial:s2025-2_t1_a1 .
 
 tutorial:s2025-2_t1_a1 a tutorial:Vote ;
