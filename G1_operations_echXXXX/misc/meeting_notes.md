@@ -27,3 +27,11 @@ Besprochen:
 - Arbeit direkt im Schema
 
 ## 26.06.2025 ##
+
+Todo: 
+
+Abstimmungstypen - Wahl und Abstimmung unterschiedlich?
+Handling Präsidium
+Absolutes / Relatives Mehr
+Rolle bei Abstimmung
+Verknüpfung
