@@ -106,7 +106,8 @@ JointDebate:
 
 Resolution:
   slots:
-    - typ # annahme, ablehnung, kenntnisnahmme, punktweise annahme, annahme mit postulat, mündlich erledigt, beinahe einstimmig
+    - type # annahme, ablehnung, kenntnisnahmme, punktweise annahme, annahme mit postulat, mündlich erledigt, beinahe einstimmig, other
+    - type_label # Wenn nicht standardisiert, dann wird hier der Typ ausgegeben und bei type auf other gesetzt
     - vote_procedures # [0:n] 
 
 Voting:
@@ -114,17 +115,20 @@ Voting:
     - id # Ratssystem ID / Abstimmungslagen ID
     - datetime_begin # Datum und Zeit Abstimmungsbegin
     - datetime_end # Datum und Zeit Abstimmungsende
-    - title #Abstimmungstitel bzw. Gesgenstand
-    - typ #zwischenabstimmung, schlussabstimmung?
+    - type #zwischenabstimmung, schlussabstimmung, Stichentscheid Präsidium?, geheime Wahl/Abstimmung
+    - type_label
+    - title #Abstimmungstitel bzw. Gegenstand / Frage. Wenn kein Gegestand vorhanden, dann sollte nicht der Geschäftstitel angegeben werden
+        - optional
     - landing_page # URL für Abstimmungs PDF/HTML
     - meaning_of_yes # Bedeutung bei einem Ja
     - meaning_of_no # Bedeutung bei einem Nein
-    - meaning_of_abstention # Bedetung bei 3 Knopf - Selten belegt mit drei Optionen
+    - meaning_of_abstention # Bedeutung bei 3 Knopf - Selten belegt mit drei Optionen
     - total_yes
     - total_no
     - total_abstention
-    - total_absent # -> Handling Entschuldigt und Präsdent Abstimmung?
-    - total #
+    - total_absent # Präsident Abstimmung? # Unterscheidung abwesend/entschuldigt anwesend wird auf Anwesenheitsliste
+    - total # Anzahl yes, no, abstention (ohne absent und ohne Präsident)
+    - absulte_majority # Absolutes Mehr
     - result_text # freitext zum Beschrieb des Outcomens , z.B. "Mit 78 Stimmen angenommen"
     - meeting_id # Abstimmung gehört zu Meeting
     - agenda_item_ids # Abgestimmung gehört zu Traktandum
@@ -133,6 +137,7 @@ Voting:
     - updated_datetime
     - created_datetime
 
+# Handling Präsidiums-Votum wird als eigenes voting aufgenommen
 
 
 Vote:
@@ -140,8 +145,8 @@ Vote:
       - id
       - voting_id # link zu abstimmung
       - actor_id # Person
-      - vote # yes, no, abstention, abstention_president, absent, absent_excused, absent, further_option
-      - vote_label # Anzeige des der Abstimmung (z.B. Für oder Gegen Abstimmungsgegenstand
+      - type # yes, no, abstention, absent, absent_excused, abstention_president, other
+      - type_label # Anzeige des der Abstimmung (z.B. Für oder Gegen Abstimmungsgegenstand)
       - updated_datetime
       - created_datetime
 
