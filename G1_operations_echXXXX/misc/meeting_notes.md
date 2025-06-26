@@ -1,4 +1,4 @@
-##12.06.2025
+## 12.06.2025 ##
 
 **Meeting Items**
 
@@ -23,6 +23,7 @@ Besprochen:
  
 - Wir bilden diese Thematik damit mit einer neuen Klasse JointDebate ab, welche die gemeinsam behandelten Traktanden aufführt und damit zusammenfasst.
 
-##19.06.2025
+## 19.06.2025 ##
+- Arbeit direkt im Schema
 
-
+## 26.06.2025 ##
