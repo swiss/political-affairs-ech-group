@@ -109,11 +109,45 @@ Resolution:
     - typ # annahme, ablehnung, kenntnisnahmme, punktweise annahme, annahme mit postulat, mündlich erledigt, beinahe einstimmig
     - vote_procedures # [0:n] 
 
+Voting:
+  slots:
+    - id # Ratssystem ID / Abstimmungslagen ID
+    - datetime_begin # Datum und Zeit Abstimmungsbegin
+    - datetime_end # Datum und Zeit Abstimmungsende
+    - title #Abstimmungstitel bzw. Gesgenstand
+    - typ #zwischenabstimmung, schlussabstimmung?
+    - landing_page # URL für Abstimmungs PDF/HTML
+    - meaning_of_yes # Bedeutung bei einem Ja
+    - meaning_of_no # Bedeutung bei einem Nein
+    - meaning_of_abstention # Bedetung bei 3 Knopf - Selten belegt mit drei Optionen
+    - total_yes
+    - total_no
+    - total_abstention
+    - total_absent # -> Handling Entschuldigt und Präsdent Abstimmung?
+    - total #
+    - result_text # freitext zum Beschrieb des Outcomens , z.B. "Mit 78 Stimmen angenommen"
+    - meeting_id # Abstimmung gehört zu Meeting
+    - agenda_item_ids # Abgestimmung gehört zu Traktandum
+    - affairs_ids #
+    - actor_id # Gremium (Rat, aber auch Kommission, Landsgemeinde, Volk) 
+    - updated_datetime
+    - created_datetime
+
+
+
 Vote:
   slots:
-    - typ #zwischenabstimmung, schlussabstimmung?
-    - TODO: Christian macht ein Vorschlag
+      - id
+      - voting_id # link zu abstimmung
+      - actor_id # Person
+      - vote # yes, no, abstention, abstention_president, absent, absent_excused, absent, further_option
+      - vote_label # Anzeige des der Abstimmung (z.B. Für oder Gegen Abstimmungsgegenstand
+      - updated_datetime
+      - created_datetime
 
+
+
+      
 slots:
 
   id:
