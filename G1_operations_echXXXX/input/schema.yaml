@@ -110,7 +110,7 @@ Resolution:
     - type_label # Wenn nicht standardisiert, dann wird hier der Typ ausgegeben und bei type auf other gesetzt
     - vote_procedures # [0:n] 
 
-Voting:
+Voting: # Abstimmung
   slots:
     - id # Ratssystem ID / Abstimmungslagen ID
     - datetime_begin # Datum und Zeit Abstimmungsbegin
@@ -120,15 +120,25 @@ Voting:
     - title #Abstimmungstitel bzw. Gegenstand / Frage. Wenn kein Gegestand vorhanden, dann sollte nicht der Geschäftstitel angegeben werden
         - optional
     - landing_page # URL für Abstimmungs PDF/HTML
-    - meaning_of_yes # Bedeutung bei einem Ja
-    - meaning_of_no # Bedeutung bei einem Nein
-    - meaning_of_abstention # Bedeutung bei 3 Knopf - Selten belegt mit drei Optionen
-    - total_yes
-    - total_no
-    - total_abstention
+    - label_yes # Bedeutung bei einem Ja
+    - label_no # Bedeutung bei einem Nein
+    - label_abstention # Bedeutung bei 3 Knopf - Selten belegt mit drei Optionen
+    - tie_breaker  # Hat Stichentscheid stattgefunden ja oder nein. Entscheid wird bei Individual Vote mit typ_tie_breaker festgehalten 
+      - values: yes | no
+    
+    - total_count_yes    #Standardabstimmung
+    - total_count_no      #Standardabstimmung
+    - total_count_abstention #Standardabstimmung
+
+    - total_other  #Verwendung wenn mehrere Varianten zur Wahl gestellt werden (ZH hat 5 Knöpfe), Mehrfach
+      - count
+      - label
+    
     - total_absent # Präsident Abstimmung? # Unterscheidung abwesend/entschuldigt anwesend wird auf Anwesenheitsliste
     - total # Anzahl yes, no, abstention (ohne absent und ohne Präsident)
-    - absulte_majority # Absolutes Mehr
+    - majority_type # Absolutes Mehr oder Zwei-Drittelmehr
+        enum: absolut, two-third, other
+    - majority_count # Anzahl des relevanten mehr
     - result_text # freitext zum Beschrieb des Outcomens , z.B. "Mit 78 Stimmen angenommen"
     - meeting_id # Abstimmung gehört zu Meeting
     - agenda_item_ids # Abgestimmung gehört zu Traktandum
@@ -140,15 +150,24 @@ Voting:
 # Handling Präsidiums-Votum wird als eigenes voting aufgenommen
 
 
-Vote:
+Indiviudal_Vote: # Einzelstimme  / vote individuel
   slots:
       - id
       - voting_id # link zu abstimmung
       - actor_id # Person
-      - type # yes, no, abstention, absent, absent_excused, abstention_president, other
+      - seat_nr
+      - weight # Anzahl Stimmen bei Entscheiden wo eine Person mehrere Stimmen hat
+      - type # yes, no, abstention, absent, absent_excused, abstention_president, tie_breaker, other
       - type_label # Anzeige des der Abstimmung (z.B. Für oder Gegen Abstimmungsgegenstand)
       - updated_datetime
       - created_datetime
+
+Election: # Wahl
+  slots:
+    - id # Ratssystem ID / Abstimmungslagen ID
+    - datetime_begin # Datum und Zeit Abstimmungsbegin
+    - datetime_end # Datum und Zeit Abstimmungsende
+    - type #zwischenabstimmung, schlussabstimmung, Stichentscheid Präsidium?, geheime Wahl/Abstimmung
 
 
 
