@@ -30,8 +30,8 @@ Besprochen:
 
 Todo: 
 
-Abstimmungstypen - Wahl und Abstimmung unterschiedlich?
-Handling Präsidium
-Absolutes / Relatives Mehr
-Rolle bei Abstimmung
-Verknüpfung
+- Abstimmungstypen - Wahl und Abstimmung unterschiedlich?
+- Handling Präsidium
+- Absolutes / Relatives Mehr
+- Rolle bei Abstimmung
+- Verknüpfung
