@@ -1,8 +1,3 @@
-#
-# Syntaktisch korrekte Version
-# bitte in schema_working.yaml arbeiten!
-#
-
 id: https://ch.paf.link/schema/consultation
 name: ch-paf-link-consultation
 prefixes:
