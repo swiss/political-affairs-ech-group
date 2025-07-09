@@ -64,6 +64,7 @@ label: "Michael Luggen", (mandatory)
 label_long: "" (optional) (mit Titel usw.)
 birthyear: "", (preference but optional)
 birthdate: "", (optional)
+picture: "https://meinschönesbild.ch" # link to a supported format or base64 encoded, guideline: prio 1) PNG, 2) JPG, 3) GIF, nicht verwenden: TIFF, BMP
 names: 
 [
   { nameType: familyNameOnForeignPassport , 
