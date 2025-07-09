@@ -190,6 +190,11 @@ names:
 }
 ```
 
+# Todo
+
+*Membership connection to Party etc.
+  * start / end
+  * role
 
   # Use Case
 
