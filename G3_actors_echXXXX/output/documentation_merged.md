@@ -31,9 +31,18 @@ Brief summary of the purpose of the document.
 # Note
 
 
+# Prio
+
+1) Personen: Ratsmitglieder, Verwaltungsmitglieder
+2) Gruppen / Organe / Interessengruppe: Parteien, Fraktionen, Gremien, Kommissionen, Verbände
+3) Interessenbindungen / Konflikte (Politikfinanzierungen)
+4) Verknüpfungen gleicher Personen übergreifend CH / Kanton
+
+
+
 # Person
 
-## Meeting 22.05.2025 / 28.05.2025 / 11.06.2025 / 25.06.2025
+## Meeting 22.05.2025 / 28.05.2025 / 11.06.2025 / 25.06.2025 / 09.07.2025
 
 * Möglichst übernahme von eCH44 bezüglich Identifikation.
 
