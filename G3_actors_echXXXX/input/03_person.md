@@ -17,10 +17,12 @@
 * persönliche Website (optional)
 * Anzahl Kinder -> offspring (optional)
 * Zivilstand -> ech44? (optional)
+
+* Profilbild (optional) -> base64 .., link website
+
 * Beschäftigung (experience / occupation)
   * Beruf / Arbeitsgeber (Interessenbindungen?)
   * Armeerang / Zivildienst / Zivilschutz
-* 
 
 ### Namenstypen basierend nach eCH11
 
@@ -59,6 +61,7 @@ Person1: {
 ID: ???
 
 label: "Michael Luggen", (mandatory)
+label_long: "" (optional) (mit Titel usw.)
 birthyear: "", (preference but optional)
 birthdate: "", (optional)
 names: 
@@ -124,22 +127,32 @@ occupations: [
     ??paid??:
     validFrom: "",
     validTo: "",
-    isco19_code: "71152",
-    occupation: "Schreiner"
+    occupation_isco19_code: "71152", (optional)
+    occupation: "Schreiner", (optional)
+    enterprise_uid: "21342", (optional)
+    enterprise: "Bauman", (optional)
   },
   {
     active: "false",
     validFrom: "",
     validTo: "",
-    isco19_code: "12467",
+    occupation_isco19_code: "12467",
     occupation: "Damplokführer"
   }
 ],
-??ausbildung: [
-  armee, lehrabschluss
+training: [ # keine zeitliche Einordnung / Guideline: Im Grundsatz nur die höchste Ausbildung angeben.
+  { type: schulabschluss, efz, uni, armee / zivi / zischutz ...
+    training_isco19_code: 233 (optional)
+    training: "Mediamatiker"; #"Oberst"
+  },
+  { type: schulabschluss, efz, uni, ,armee / zivi / zischutz ...
+    training_isco19_code: 233 (optional)
+    training: "Mediamatiker"; #"Oberst"
+  }
 ],
-??infos (Social Media etc.): [
-
+contact: [
+   type: email, contact_website, linked-in, twitter; # Guideline: E-mail is quasi mandatory and should be always provided.
+   contact: "michael.luggen@...";
 ]
 }
 ```
@@ -152,6 +165,7 @@ label: "Alois (1920) Arnold", (mandatory)
 birthyear: "1920", (preference but optional)
 birthdate: "", (optional)
 deathdate: "", (optional)
+picture: "https://meinschönesbild.ch" # link to a supported format or base64 encoded, guideline: prio 1) PNG, 2) JPG, 3) GIF, nicht verwenden: TIFF, BMP
 names: 
 [
   { nameType: officialLastName , 
