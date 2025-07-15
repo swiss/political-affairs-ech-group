@@ -131,6 +131,10 @@ There seems to be no simple solution to allow a string to either be a `Multiling
 
 It seems not possible to have a different descriptions for slots used in different classes. So slots should only be reused if a fairly general description is enough (like for a `id` or a `name`). For all other cases, it is better to define a new slot with a more specific name and description.
 
+### Attributes vs Slots
+
+Properties can either be defined within a class as `attribute` and then, they are exclusive to that class or as `slot` which can be reused across different classes. If there are different classes that define the same `attribute` (even with different descriptions), this will result in an error.
+
 ### Data Types and Formats
 
 When defining data types and formats in LinkML, consider the following guidelines:
