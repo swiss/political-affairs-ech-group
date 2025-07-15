@@ -1,0 +1,15 @@
+
+Subgruppen
+  Öffentlicher Ratsbetrieb
+    - Stand
+    - Bearbeitete Entitäten
+    - Nächste Entitäten
+  Geschäfte
+    - Stand
+    - Bearbeitete Entitäten
+    - Nächste Entitäten
+
+
+- Offen für Gemeinsame Diskussion
+    - Dokumente von Geschäften; Meetings etc.
+    - Links
