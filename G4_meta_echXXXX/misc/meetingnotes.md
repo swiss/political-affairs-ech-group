@@ -58,12 +58,21 @@ https://sh.ch/CMS/Webseite/Kanton-Schaffhausen/Beh-rde/Parlament/Der-Kantonsrat/
 
 
 
-## Meeting Notes: next meeting
+## Meeting Notes 16. Juli 2025
  
- -  Activity i.e. event based model
- -  recurring meetings 
+ -  Activity i.e. event (vs. business object/state) based model
+     - vgl. [paf.link](https://paf.link) / Prov-O
+     - Aktivität (mit Zeitraum) + Agent (Person/en, Gruppierung) + Entität (+ Identifikator)
+     - Vorteil: Flexibilität, Modularität (Prozesse Stück für Stück abbilden) etc. siehe [paf.link](https://paf.link/#event-based-approach)
+     - Nachteil: anfangs komplexer, braucht "Übersetzung" in einfachen aktuellen Status
+     - Perspektive Legislative (vs. Exekutive) > paf.link würde Kompatibiltät ermöglichen
+     - 
+
+- Priorisierung
+- recurring meetings 
 
 
+## Meeting Notes: next meeting
 
 
 
