@@ -65,11 +65,23 @@ https://sh.ch/CMS/Webseite/Kanton-Schaffhausen/Beh-rde/Parlament/Der-Kantonsrat/
      - Aktivität (mit Zeitraum) + Agent (Person/en, Gruppierung) + Entität (+ Identifikator)
      - Vorteil: Flexibilität, Modularität (Prozesse Stück für Stück abbilden) etc. siehe [paf.link](https://paf.link/#event-based-approach)
      - Nachteil: anfangs komplexer, braucht "Übersetzung" in einfachen aktuellen Status
-     - Perspektive Legislative (vs. Exekutive) > paf.link würde Kompatibiltät ermöglichen
-     - 
+     - Perspektive Legislative (vs. Exekutive) > paf.link würde Kompatibiltät ermöglichen 
+
+
 
 - Priorisierung
 - recurring meetings 
+
+
+- 1. Vision / Scope / Life-Cycle
+- 2. Chronologie / Prozesse
+- 3. Verknüpfungen (von Events)
+- 4. Dokumente (Chronologisch verordnet)
+- 5. Publikationsvorgehen Vorschlagen
+  - wo möglich unabhängige Publikation und Vorteile davon auflisten.- 
+- 6. Guidelines Zugriff (Files, API)
+- 7. Permanente URL/URI/DOI (gegen Linkrot) (ggf. via Hilfsmittel), an ELI orientieren (?)
+- 8. Ablaufdaten für Links, Links zur Archivierung (vgl. [Kanton Uri](https://staur-digitalplattform.ch/tonaufnahmen/))
 
 
 ## Meeting Notes: next meeting
