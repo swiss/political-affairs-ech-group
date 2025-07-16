@@ -61,6 +61,7 @@ https://sh.ch/CMS/Webseite/Kanton-Schaffhausen/Beh-rde/Parlament/Der-Kantonsrat/
 ## Meeting Notes: next meeting
  
  -  Activity i.e. event based model
+ -  recurring meetings 
 
 
 
