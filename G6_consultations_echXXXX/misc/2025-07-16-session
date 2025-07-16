@@ -22,7 +22,7 @@
 #### 1. Begrüssung und kurze Vorstellungsrunde
 -	Dominik Steiner: Wirtschaftsinformatiker, Politiker, in Rolle als «Nutzer»
 -	Christian Gutknecht gibt kurzes Update: Prototyp Datenraum BK
--	Jürg Treichler: IT-Chef EDI, Auftraggeber «Consultations»; Übergang Projekt zu gemeinsamer Fachdienst
+-	Jürg Treichler: Verantwortlich IT EDI, Auftraggeber «Consultations»; Übergang Projekt zu gemeinsamer Fachdienst
 
 #### 2. Ziel der Subgruppe und inhaltliche Abgrenzung
 -	Formalisierter Konsultationsprozess zwischen Organisationen effizienter gestalten
@@ -40,32 +40,43 @@
 -	CivicTech & GovTech, Zivilgesellschaft, Politische Kreise
 
 #### 3. Mögliche Arbeitsthemen und Priorisierung
--	Definitionen
+-	Konzept-Definitionen
+    - Vernehmlassung
+    - Konsultation (Ausführen: Unter Konsultation wird auch Mitwirkung verstanden)
+- Begriffsklärung
     - Mitbericht
     - Anhörung
     - …
--	Metadaten Vernehmlassung
--	Vernehmlassungsdokumente
-    - Fragestellung
-    - Begleitdokumente
--	Abbilden «neue Welt» (strukturiert) und «alte Welt» (unstrukturiert)
--	Metadaten Beteiligte
--	Subgruppe politische Akteure
-    - Anforderung an Subgruppe (Michael / Christian)
--	Struktur Antwort / Stellungnahme
--	Auswertung Antworten
--	Zwischenergebnisse
--	Endergebnisse
--	…
 
-#### 4. Wahl des Namens der Subgruppe
--	Öffentliche Konsultationen
+Hinweise auf Termdat: https://www.termdat.bk.admin.ch/entry/56976, https://www.termdat.bk.admin.ch/entry/444199, https://www.termdat.bk.admin.ch/entry/56979, https://www.termdat.bk.admin.ch/entry/56977, https://www.termdat.bk.admin.ch/entry/93263, https://www.termdat.bk.admin.ch/entry/56981, https://www.termdat.bk.admin.ch/entry/56987
 
-#### 5. Arbeitsmodalitäten (Kommunikation, Rhythmus, Tools)
--	3-wöchentliche Treffen
--	eCH-Teams
+# Datenmodell
+1. Metadaten Konsultation
+    1.1 Fristen, zeitliche Abläufe
+    1.2	Metadaten Beteiligte (Subgruppe Politische Akteure)
+2. Konsultation
+    2.1 Fragestellung
+    2.2 Begleitdaten
+    2.3	Struktur Antwort
+3. Stellungnahme
+4. Auswertung Antworten
+5. Zwischenergebnisse
+6. Endergebnisse
+7. …
 
-#### 6. Offene Punkte und nächste Schritte
--	On-boarding neue Gruppenmitglieder
--	Arbeitsmodalitäten, Tools
--	Diskussion der Arbeitshemen und Priorisierung
+Ambition: Konsultationspaket wird abgebildet (dokumentenbasiert), Ziel: Struktur
+
+# Vorgehensmodell
+Empfehlungen zum Ablauf der Prozesse werden festgehalten (ggf. in begleitendem Hilfsmittel)
+
+Vorgehen: Entwickeln «neue Welt» (strukturiert), darauf aufbauend Mapping «alte Welt» (unstrukturiert); Erklärungen, Hilfestellungen
+
+#### 4. Aufgaben
+- Fabian / Demokratis: Recherche Begriffsnutzung
+- Anforderung an Subgruppe (Michael / Christian)
+- Jürg teilt Datenmodell von «Consultations»
+
+#### 5. Nächste Schritte
+- Ziel der Gruppe, was ist das Endprodukt der Gruppe (gehören z.B. Aktivitäten dazu? Vorgehensmodell?)
+- Detaildiskussion und Abgrenzung Datenmodell (z.B. Zwischenergebnis, Endergebnis)
+- Ausarbeiten Datenmodell Metadaten anhang der priorisierten Liste
