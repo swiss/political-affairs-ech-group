@@ -81,3 +81,7 @@
 ## Journalism
   - [Die Mitte gibt es nicht - Bajour](https://bajour.ch/a/grossrats-rating-2022)
   - [SRF Data](srfdata.github.io)
+
+## Wikidata
+
+- [WikiProject every politician/Political data model](https://www.wikidata.org/wiki/Wikidata:WikiProject_every_politician/Political_data_model)
