@@ -1,0 +1,78 @@
+name: ech-0293_operations
+
+on:
+  push:
+    paths:
+      - 'ech-0293_operations/input/**'
+  workflow_dispatch:
+
+jobs:
+  ech-0293_operations:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Clean output directory
+        run: rm -rf ech-0293_operations/output/*
+
+      - name: Convert schema.yaml to schema.json
+        run: |
+          mkdir -p ech-0293_operations/output
+          gen-json-schema ech-0293_operations/input/schema.yaml > ech-0293_operations/output/schema.json
+
+      - name: Convert schema.yaml to schema.ttl
+        run: |
+          mkdir -p ech-0293_operations/output
+          gen-owl ech-0293_operations/input/schema.yaml > ech-0293_operations/output/schema.ttl
+
+      - name: Convert all data_*.yaml to data_*.json
+        run: |
+          mkdir -p ech-0293_operations/output
+          for yaml_file in ech-0293_operations/input/data_*.yaml; do
+            base_name=$(basename "$yaml_file" .yaml)
+            linkml-convert -s ech-0293_operations/input/schema.yaml -t json "$yaml_file" > "ech-0293_operations/output/${base_name}.json"
+          done
+
+      - name: Convert data.yaml to data.ttl
+        run: |
+          mkdir -p ech-0293_operations/output
+          for yaml_file in ech-0293_operations/input/data_*.yaml; do
+            base_name=$(basename "$yaml_file" .yaml)
+            linkml-convert -s ech-0293_operations/input/schema.yaml -t rdf "$yaml_file" > "ech-0293_operations/output/${base_name}.ttl"
+          done
+
+      - name: Generate LinkML documentation
+        run: |
+          mkdir -p ech-0293_operations/output/docs
+          gen-doc ech-0293_operations/input/schema.yaml --directory ech-0293_operations/output/docs
+      - name: Merge Markdown documentation
+        run: python merge_documentation.py ech-0293_operations
+      - name: Install Pandoc
+        run: sudo apt update && sudo apt install -y pandoc
+
+      - name: Convert Markdown to Word with Pandoc
+        run: |
+          mkdir -p ech-0293_operations/output
+          pandoc ech-0293_operations/output/documentation_merged.md \
+          -o ech-0293_operations/output/ech-0293_operations.docx \
+          --reference-doc=ech-0293_operations/input/template.docx
+
+      - name: Commit and push changes
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+            git config --global user.name "github-actions"
+            git config --global user.email "github-actions@github.com"
+            git add G1_operations_echXXXX/output/
+            git diff --quiet && git diff --staged --quiet || git commit -m "Auto-generated ech-0293_operations files"
+            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
