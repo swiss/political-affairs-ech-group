@@ -1,2 +1,8 @@
-# Force LF line endings in all text files
+# Default: text files use LF
 * text eol=lf
+
+# Override for binary files
+*.pdf binary
+*.png binary
+*.jpg binary
+*.zip binary
