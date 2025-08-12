@@ -42,6 +42,10 @@ Subgruppen
     - Kick-Off gestartet
     - Einführung in paf.link
     - Kordination von Prozessen über den ganzen Prozess der politischen Geschäfte
+    - Objekt um Dokumente anzuführen (nach FRBR)
+    - Guideline bezüglich bereitstellung von Informationen allgemein
+      - Online halten / Archivierung
+      - Strukturierung von Links (Cool URI's)
 
   Offen für Gemeinsame Diskussion
     - Dokumente von Geschäften; Meetings etc.
