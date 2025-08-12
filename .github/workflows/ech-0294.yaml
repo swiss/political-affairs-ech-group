@@ -1,0 +1,78 @@
+name: ech-0294_actors
+
+on:
+  push:
+    paths:
+      - 'ech-0294_actors/input/**'
+  workflow_dispatch:
+
+jobs:
+  ech-0294_actors:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Clean output directory
+        run: rm -rf ech-0294_actors/output/*
+
+      - name: Convert schema.yaml to schema.json
+        run: |
+          mkdir -p ech-0294_actors/output
+          gen-json-schema ech-0294_actors/input/schema.yaml > ech-0294_actors/output/schema.json
+
+      - name: Convert schema.yaml to schema.ttl
+        run: |
+          mkdir -p ech-0294_actors/output
+          gen-owl ech-0294_actors/input/schema.yaml > ech-0294_actors/output/schema.ttl
+
+      - name: Convert all data_*.yaml to data_*.json
+        run: |
+          mkdir -p ech-0294_actors/output
+          for yaml_file in ech-0294_actors/input/data_*.yaml; do
+            base_name=$(basename "$yaml_file" .yaml)
+            linkml-convert -s ech-0294_actors/input/schema.yaml -t json "$yaml_file" > "ech-0294_actors/output/${base_name}.json"
+          done
+
+      - name: Convert data.yaml to data.ttl
+        run: |
+          mkdir -p ech-0294_actors/output
+          for yaml_file in ech-0294_actors/input/data_*.yaml; do
+            base_name=$(basename "$yaml_file" .yaml)
+            linkml-convert -s ech-0294_actors/input/schema.yaml -t rdf "$yaml_file" > "ech-0294_actors/output/${base_name}.ttl"
+          done
+
+      - name: Generate LinkML documentation
+        run: |
+          mkdir -p ech-0294_actors/output/docs
+          gen-doc ech-0294_actors/input/schema.yaml --directory ech-0294_actors/output/docs
+      - name: Merge Markdown documentation
+        run: python merge_documentation.py ech-0294_actors
+      - name: Install Pandoc
+        run: sudo apt update && sudo apt install -y pandoc
+
+      - name: Convert Markdown to Word with Pandoc
+        run: |
+          mkdir -p ech-0294_actors/output
+          pandoc ech-0294_actors/output/documentation_merged.md \
+          -o ech-0294_actors/output/ech-0294_actors.docx \
+          --reference-doc=ech-0294_actors/input/template.docx
+
+      - name: Commit and push changes
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+            git config --global user.name "github-actions"
+            git config --global user.email "github-actions@github.com"
+            git add ech-0294_actors/output/
+            git diff --quiet && git diff --staged --quiet || git commit -m "Auto-generated ech-0294_actors files"
+            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
