@@ -1,13 +1,13 @@
-name: Gx_tutorial
+name: tutorial
 
 on:
   push:
     paths:
-      - 'Gx_tutorial/input/**'
+      - 'tutorial/input/**'
   workflow_dispatch:
 
 jobs:
-  Gx_tutorial:
+  tutorial:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,49 +23,49 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Clean output directory
-        run: rm -rf Gx_tutorial/output/*
+        run: rm -rf tutorial/output/*
 
       - name: Convert schema.yaml to schema.json
         run: |
-          mkdir -p Gx_tutorial/output
-          gen-json-schema Gx_tutorial/input/schema.yaml > Gx_tutorial/output/schema.json
+          mkdir -p tutorial/output
+          gen-json-schema tutorial/input/schema.yaml > tutorial/output/schema.json
 
       - name: Convert schema.yaml to schema.ttl
         run: |
-          mkdir -p Gx_tutorial/output
-          gen-owl Gx_tutorial/input/schema.yaml > Gx_tutorial/output/schema.ttl
+          mkdir -p tutorial/output
+          gen-owl tutorial/input/schema.yaml > tutorial/output/schema.ttl
 
       - name: Convert all data_*.yaml to data_*.json
         run: |
-          mkdir -p Gx_tutorial/output
-          for yaml_file in Gx_tutorial/input/data_*.yaml; do
+          mkdir -p tutorial/output
+          for yaml_file in tutorial/input/data_*.yaml; do
             base_name=$(basename "$yaml_file" .yaml)
-            linkml-convert -s Gx_tutorial/input/schema.yaml -t json "$yaml_file" > "Gx_tutorial/${base_name}.json"
+            linkml-convert -s tutorial/input/schema.yaml -t json "$yaml_file" > "tutorial/${base_name}.json"
           done
 
       - name: Convert data_*.yaml to data_*.ttl
         run: |
-          mkdir -p Gx_tutorial/output
-          for yaml_file in Gx_tutorial/input/data_*.yaml; do
+          mkdir -p tutorial/output
+          for yaml_file in tutorial/input/data_*.yaml; do
             base_name=$(basename "$yaml_file" .yaml)
-            linkml-convert -s Gx_tutorial/input/schema.yaml -t rdf "$yaml_file" > "Gx_tutorial/output/${base_name}.ttl"
+            linkml-convert -s tutorial/input/schema.yaml -t rdf "$yaml_file" > "tutorial/output/${base_name}.ttl"
           done
 
       - name: Generate LinkML documentation
         run: |
-          mkdir -p Gx_tutorial/output/docs
-          gen-doc Gx_tutorial/input/schema.yaml --directory Gx_tutorial/output/docs
+          mkdir -p tutorial/output/docs
+          gen-doc tutorial/input/schema.yaml --directory tutorial/output/docs
       - name: Merge Markdown documentation
-        run: python merge_documentation.py Gx_tutorial
+        run: python merge_documentation.py tutorial
       - name: Install Pandoc
         run: sudo apt update && sudo apt install -y pandoc
 
       - name: Convert Markdown to Word with Pandoc
         run: |
-          mkdir -p Gx_tutorial/output
-          pandoc Gx_tutorial/output/documentation_merged.md \
-          -o Gx_tutorial/output/tutorial.docx \
-          --reference-doc=Gx_tutorial/input/template.docx
+          mkdir -p tutorial/output
+          pandoc tutorial/output/documentation_merged.md \
+          -o tutorial/output/tutorial.docx \
+          --reference-doc=tutorial/input/template.docx
 
       - name: Commit and push changes
         env:
@@ -73,6 +73,6 @@ jobs:
         run: |
             git config --global user.name "github-actions"
             git config --global user.email "github-actions@github.com"
-            git add Gx_tutorial/output/
+            git add tutorial/output/
             git diff --quiet && git diff --staged --quiet || git commit -m "Auto-generated tutorial files"
             git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
