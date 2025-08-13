@@ -24,7 +24,6 @@ Alias: actors
 
 
 
-
 ## Properties
 
 * Range: [Actor](Actor.md)
@@ -34,9 +33,7 @@ Alias: actors
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

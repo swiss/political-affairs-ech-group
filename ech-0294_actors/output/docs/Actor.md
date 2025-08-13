@@ -10,11 +10,10 @@ URI: [act:Actor](https://ch.paf.link/schema/actors/Actor)
 
 
 
-
 ```mermaid
  classDiagram
     class Actor
-    click Actor href "../Actor"
+    click Actor href "../Actor/"
       Actor : id
         
       Actor : name
@@ -50,8 +49,8 @@ URI: [act:Actor](https://ch.paf.link/schema/actors/Actor)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -72,7 +71,6 @@ URI: [act:Actor](https://ch.paf.link/schema/actors/Actor)
 | ---  | ---  |
 | self | act:Actor |
 | native | act:Actor |
-
 
 
 

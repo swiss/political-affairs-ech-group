@@ -10,11 +10,10 @@ URI: [act:MultilingualString](https://ch.paf.link/schema/actors/MultilingualStri
 
 
 
-
 ```mermaid
  classDiagram
     class MultilingualString
-    click MultilingualString href "../MultilingualString"
+    click MultilingualString href "../MultilingualString/"
       MultilingualString : language
         
       MultilingualString : text
@@ -43,8 +42,8 @@ URI: [act:MultilingualString](https://ch.paf.link/schema/actors/MultilingualStri
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -65,7 +64,6 @@ URI: [act:MultilingualString](https://ch.paf.link/schema/actors/MultilingualStri
 | ---  | ---  |
 | self | act:MultilingualString |
 | native | act:MultilingualString |
-
 
 
 

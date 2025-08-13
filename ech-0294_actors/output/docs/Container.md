@@ -10,11 +10,10 @@ URI: [act:Container](https://ch.paf.link/schema/actors/Container)
 
 
 
-
 ```mermaid
  classDiagram
     class Container
-    click Container href "../Container"
+    click Container href "../Container/"
       Container : actors
         
           
@@ -22,7 +21,7 @@ URI: [act:Container](https://ch.paf.link/schema/actors/Container)
         
         
         Container --> "*" Actor : actors
-        click Actor href "../Actor"
+        click Actor href "../Actor/"
     
 
         
@@ -52,8 +51,8 @@ URI: [act:Container](https://ch.paf.link/schema/actors/Container)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -74,7 +73,6 @@ URI: [act:Container](https://ch.paf.link/schema/actors/Container)
 | ---  | ---  |
 | self | act:Container |
 | native | act:Container |
-
 
 
 
