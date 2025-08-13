@@ -31,7 +31,9 @@ Brief summary of the purpose of the document.
 # Note
 
 
-# Prio
+# Working Document
+
+Currently we are working in the following order on the different topics regarding political actors (agents):
 
 1) Personen: Ratsmitglieder, Verwaltungsmitglieder
 2) Gruppen / Organe / Interessengruppe: Parteien, Fraktionen, Gremien, Kommissionen, Verbände
