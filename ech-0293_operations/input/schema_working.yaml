@@ -129,7 +129,7 @@ Voting: # Abstimmung
     - total_count_yes    #Standardabstimmung
     - total_count_no      #Standardabstimmung
     - total_count_abstention #Standardabstimmung
-
+    
     - total_other  #Verwendung wenn mehrere Varianten zur Wahl gestellt werden (ZH hat 5 Knöpfe), Mehrfach
       - count
       - label
@@ -148,6 +148,7 @@ Voting: # Abstimmung
     - created_datetime
 
 # Handling Präsidiums-Votum wird als eigenes voting aufgenommen
+
 
 
 Indiviudal_Vote: # Einzelstimme  / vote individuel
@@ -191,6 +192,35 @@ Election: # Wahl
 # Oder können die öffentlich sein (wer hat was gewählt), was bedeutet, dass wir hier auch Einzelstimmen bräuchten.
 
 
+#Anweseneheiten:
+#Kt. Bern: Stempelsystem bei Eintritt (Sitzungsbeginn) in Saal, wird intern erfasst, aber nicht publiziert.
+#Anzahl der Anwesendend und entschuldigten wird festgehalten.
+#Enschuldigungen gehen vorgängig per Mail ein und werden der Publikation hinzufgefügt.
+
+#Weitere Anweseneheiten wir über Abstimmungen ermittelt. Relevant für Sitzungsgelder:
+(Regelmentarisch festgehalten)
+#Thema Beschlussfähgkeit kann beim Bund in Frage gestellt werden und entsprechend gibt es eine erneeute Feststelleung
+
+Attendance: # Anwesenheits
+  slots:
+    - id # Ratssystem ID / Abstimmungslagen ID
+    - datetime_begin # Datum und Zeit Anwesheitsprüfung
+    - actor_id # Gremium (Rat, aber auch Kommission, Landsgemeinde, Volk)
+    - total_absent # 
+    - total_present #
+    - total_excused #
+
+Indiviudal_Attendance: # Einzel feststellung
+  slots:
+      - id
+      - voting_id # link zu abstimmung
+      - actor_id # Person
+      - type # remote | Stellvertretung 
+      - updated_datetime
+      - created_datetime
+ 
+# Abzklären: Wie funktionieren Stellvertretungen - Kann das abgebildet werden für Abstimmung:
+# Relvant für Sitzungsgelderungern.
 
 "data" : [ {
 
