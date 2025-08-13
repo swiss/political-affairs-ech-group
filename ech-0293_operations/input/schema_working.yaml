@@ -167,11 +167,33 @@ Election: # Wahl
     - id # Ratssystem ID / Abstimmungslagen ID
     - datetime_begin # Datum und Zeit Abstimmungsbegin
     - datetime_end # Datum und Zeit Abstimmungsende
-    - type #zwischenabstimmung, schlussabstimmung, Stichentscheid Präsidium?, geheime Wahl/Abstimmung
+    - title #Abstimmungstitel bzw. Gegenstand / Frage. Wenn kein Gegestand vorhanden, dann sollte nicht der Geschäftstitel angegeben werden
+    - optional
+    - landing_page # URL für Abstimmungs PDF/HTML
+    - type #Geheime Wahl, Offene Wahl, Stille Wahl ohne Gegenkandidat
+    - total_absent # Präsident Abstimmung? # Unterscheidung abwesend/entschuldigt anwesend wird auf Anwesenheitsliste
+    - total # Anzahl yes, no, abstention (ohne absent und ohne Präsident)
+    - majority_type # Absolutes Mehr oder Zwei-Drittelmehr
+        enum: absolut, two-third, other
+    - majority_count # Anzahl des relevanten Mehr
+    - result_text # freitext zum Beschrieb des Outcomens , z.B. "Gewählt ist Siegenthaler Edith mit 146 Stimmen"
+    - result_category # 
+      - label #
+        enum: Ausgeteilte Wahlzettel / Bulletins distribués, Anzahl eingegangen, Davon leer, Davon ungültig, Davon in Betracht fallend = Gültig?, Absolutes Mehr
+      - count 
+    - meeting_id # Abstimmung gehört zu Meeting
+    - agenda_item_ids # Abgestimmung gehört zu Traktandum
+    - affairs_ids #
+    - actor_id # Gremium (Rat, aber auch Kommission, Landsgemeinde, Volk) 
+    - updated_datetime
+    - created_datetime
+# Fazit, wir brauchen hier mehr Expertise für Wahlen in Parlamenten. Sind die immer geheim? #Anfrage UniBe
+# Oder können die öffentlich sein (wer hat was gewählt), was bedeutet, dass wir hier auch Einzelstimmen bräuchten.
 
 
 
-      
+"data" : [ {
+
 slots:
 
   id:
