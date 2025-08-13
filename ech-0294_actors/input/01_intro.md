@@ -1,12 +1,12 @@
 ---
-title: "eCH-xxxx Politische Akteure: Personen, Gruppen und Organe"
+title: "eCH-0294 Politische Akteure: Personen, Gruppen und Organe"
 lang: de
 toc: false
 ---
 
 | **Name**              | **Politische Akteure: Personen, Gruppen und Organe**                                                                                               |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------|
-| **eCH-Nummer**        | eCH-XXXX                                                                                                                   |
+| **eCH-Nummer**        | eCH-0294                                                                                                                   |
 | **Kategorie**         | Entwurf                                                                                                                    |
 | **Reifegrad**         |                                                                                                                            |
 | **Version**           | 0.1                                                                                                                        |
