@@ -1,4 +1,28 @@
 
+Agenda:
+
+Montag, 1. September 2025
+
+* 09:30 Eintreffen und Anmeldung beim Besuchereingang Parlament (unten auf der Bundesterasse)
+* 10:00-10:30 Begrüssung und Übersicht
+  * Begrüssung (15min) (Christian Gutknecht)
+  * Was läuft im Ausland? (Michael Luggen) (10min)
+    * https://data.europarl.europa.eu/en/developer-corner
+    * International Parlamentarian Union (IPU - Sitz in Genf)
+  * Überblick zum Vorgehen einer Verplichtung eine eCH Standards in der BV (Michael Luggen) (5min)
+* 10:30-11:45 Stand der Arbeiten der einzelnen Subgruppen - Identifikation von Koordinationsbedarf (Sub-Gruppen Leiter)
+
+* 11:45-13:30 Mittagessen (Restaurant reserviert - auf eigene Kosten)
+
+* 13:30-13:50 Success Story eCh-0200 - DCAT (Maik Roth)
+* 14:15-14:45 Austausch in Subgruppen (alle)
+* Pause
+* 14:45-15:30 Koordination im Plenum und Roadmap bis Ende Jahr
+
+* (16:00-open end) Open Parl Data - Projektabschluss Förderphase Mercator und Apero
+
+
+
 Subgruppen
   Öffentlicher Ratsbetrieb
     - Bearbeitete Entitäten
