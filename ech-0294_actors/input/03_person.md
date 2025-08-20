@@ -192,7 +192,7 @@ names:
 
 # Todo
 
-*Membership connection to Party etc.
+* Membership connection to Party etc.
   * start / end
   * role
 
