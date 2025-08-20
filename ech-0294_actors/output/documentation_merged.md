@@ -271,7 +271,7 @@ group
 - description:
 - landing_page:
 - parent_group: (0:n)   Um die Parteienhierarchie (CH-Kanton-Gemeinde) abzubilden, aber auch um Parteien an ein Parlament zu binden.
-- municipality_nr: gemeindenummer / agvch nummer
+- spatial: gemeindenummer / agvch nummer ld.admin.ch/muncipality/234 ld.admin.ch/canton/2
 - contact:
    - type: email, contact_website, linked-in, twitter; # Guideline: E-mail is quasi mandatory and should be always provided.
    - contact: "michael.luggen@...";
@@ -295,12 +295,14 @@ Zu diskutieren mit Hans-Peter
 * Arbeitsgruppen
 * Interessengruppen
 
-* Departemente
+* Departementehttps://uzh.zoom.us/j/66843584125?pwd=l2s4GJMNYHfqEGtFS6ObF4R5sG7XCh.1
 * Ausserparlementarische Komissionen
 
 ## Parteien
+Jede Föderaleebene, wird als eigene Gruppierung geführt.
 - url_statutes: (optional)
 - party_color: (optional)
+
 
 ## Memberships
 
