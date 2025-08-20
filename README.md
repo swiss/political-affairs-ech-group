@@ -6,12 +6,12 @@ This repository contains the documents and resources of the [eCH](https://ech.ch
 
 The specialist group is divided into different subgroups. Each subgroup is responsible for a specific topic. The following subgroups exist:
 
-- eCH-0292: Metaprozesse zu politischen Geschäften (meta)
-- eCH-0293: Öffentlicher Ratsbetrieb (operations)
-- eCH-0294: Politische Akteure: Personen, Gruppen und Organe (actors)
-- eCH-0295: Parlamentarische Geschäfte (affairs)
-- eCH-0296: Erlasse und Gesetzestexte (laws)
-- eCH-0297: Öffentliche Konsultationen (consultations)
+- eCH-0292: [Metaprozesse zu politischen Geschäften (meta)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0292_meta)
+- eCH-0293: [Öffentlicher Ratsbetrieb (operations)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0293_operations)
+- eCH-0294: [Politische Akteure: Personen, Gruppen und Organe (actors)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0294_actors)
+- eCH-0295: [Parlamentarische Geschäfte (affairs)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0295_affairs)
+- eCH-0296: [Erlasse und Gesetzestexte (laws)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0296_laws)
+- eCH-0297: [Öffentliche Konsultationen (consultations)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0297_consultations)
 
 ## Tutorial
 
