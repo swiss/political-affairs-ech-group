@@ -1,0 +1,51 @@
+Subgruppen
+  Öffentlicher Ratsbetrieb
+    - Bearbeitete Entitäten
+      - Session, Agenda
+      - Abstimmungen
+    - Nächste Entitäten
+      - Präsenz / Anwesenheit
+      - Wortmeldungen (Text / Audio / Video)
+      - Verknüpfung zu Gesetzesfahnen u. ä. Dokumenten
+    - Abgrenzungen
+      - Voschlag: Abstimmungen (Teil dieser Gruppe) nicht Subgruppe Geschäfte. (Abstimmung immer zu einem Agendapunkt, aber nicht immer zu einem Geschäft.)
+      - Vorschlag: Gesetzesfahnen (Teil von Gruppe Erlasse und Gesetzestexte)
+
+  Politische Akteure
+    - Bearbeitete Entitäten
+      - Person (Politisierende)
+    - Nächste Entitäten
+      - Organe (Parteien, Kammern)
+        - Parteinliste übernahme
+      - Interessenbindungen / Konflikte
+      - Verknüpfungen der Ratsmitglieder über die föderalen Ebenen hinweg
+    - Abgrenzungen
+        - Data Privacy Guideline als eigenes Hilfsmittel
+
+
+  Parlamentarische Geschäfte
+    - Stand
+    - Bearbeitete Entitäten
+    - Nächste Entitäten
+  
+  Erlasse und Gesetzestexte
+    - Kick-Off gestartet
+    - Einführung AkomoNtoso
+
+  Öffentliche Konsultationen
+    - Kick-Off gestartet
+    - Abgrenzungen zu partizipativen Prozessen
+    - Fokus auf CH und Kanton Ebene
+
+  Metaprozesse
+    - Kick-Off gestartet
+    - Einführung in paf.link
+    - Kordination von Prozessen über den ganzen Prozess der politischen Geschäfte
+    - Objekt um Dokumente anzuführen (nach FRBR)
+    - Guideline bezüglich bereitstellung von Informationen allgemein
+      - Online halten / Archivierung
+      - Strukturierung von Links (Cool URI's)
+
+  Offen für Gemeinsame Diskussion
+    - Dokumente von Geschäften; Meetings etc.
+    - Links
