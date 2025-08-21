@@ -1,3 +1,7 @@
-.local
+*.local
 .DS_Store
 .venv
+
+# OAuth App Environment Variables
+oauth-app/.env
+oauth-app/node_modules/
