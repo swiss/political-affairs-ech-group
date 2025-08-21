@@ -5,3 +5,4 @@
 # OAuth App Environment Variables
 oauth-app/.env
 oauth-app/node_modules/
+oauth-app/__pycache__/
