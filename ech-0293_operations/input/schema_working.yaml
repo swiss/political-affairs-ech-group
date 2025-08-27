@@ -70,6 +70,13 @@ classes:
       - parent_legislature_id # Legislation in which the meeting is based.
       - updated_datetime
       - created_datetime
+
+# Ein Meeting hat Traktanden und Attendance
+# Traktanden können haben:
+- Voting
+- Election
+- Resolution
+- 
       
   AgendaItem:
     description: >-
@@ -221,6 +228,32 @@ Indiviudal_Attendance: # Einzel feststellung
  
 # Abzklären: Wie funktionieren Stellvertretungen - Kann das abgebildet werden für Abstimmung:
 # Relvant für Sitzungsgelderungern.
+
+
+Wortmeldungen (Text / Audio / Video)
+
+speech 
+
+# Synomim Votum oder speaker_segement  (Teil eines AgendaItem)
+ - language (de/fr/mixed)
+ - start
+ - datetime_begin # Datum und Zeit Wortmeldung
+ - datetime_end # Datum und Zeit Wortmeldung
+ - actor
+    - fullname
+    - actor_id # Check Link mit Politische Akteure & Gremien
+    - role (Kommissionsprecher|im Namen der Kommission) # Offener String
+I  - text
+ - text_format (text, html, html_with_timestamps per word) # Unterscheidung von HTML und HTML mit Timestampes?
+ - text_type #Rohfassung, Bearbeitet (Wird wahrscheinlich nur immer bearbeitete Fassung publiziert)
+ - landing_page # Link zu publizierte Fassung
+
+text # Titel, text_segement (Quervereise und Zwischentitel, z.B Zusammenfassung eines Votings)
+ - text
+
+
+Antrag # Teil des Protokoll bzw. auch Traktandum (passiert vorgänging schriftlich), Abstimmungsbedarf mit Geschäfte
+
 
 "data" : [ {
 
