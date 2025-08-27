@@ -56,3 +56,5 @@ Die Anlage kommt nicht zum Einsatz
 "Die Stimme eines an der Sitzung anwesenden Ratsmitglieds, das sich während der Abstimmung nicht im Kantonsratssaal aufhält (Entrée, Toilette usw.), wird unter der Rubrik «Abwesenheit/Nicht-Teilnahme» erfasst.
 Entschuldigte, abwesende und nicht an einer Abstimmung teilnehmende Ratsmitglieder werden ebenfalls unter der Rubrik «Abwesenheit/Nicht-Teilnahme» erfasst"
 
+## Suppleants
+https://fr.wikipedia.org/wiki/D%C3%A9put%C3%A9_suppl%C3%A9ant_en_Suisse
