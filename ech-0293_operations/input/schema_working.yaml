@@ -56,7 +56,9 @@ classes:
       [de] Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen bestimmten Zeitraum erstreckt.
     slots:
       - id
+      - body_key
       - name
+      - url
       - begin_date
       - end_date
       - legislature_id
@@ -70,9 +72,14 @@ classes:
       [de] Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessionsitzung und andere verschiedene Versammlungen verwendet wird.
     slots:
       - id
+      - body_key
       - type  # range: meeting_type_enum (session, committee, sitting, various) #sitting=Sessionsitzung, 
       - administrative_id 
       - name
+      - url
+      - group_name
+      - group_id
+      - number
       - landing_page
       - sequential_number # Laufnummer (string, because roman literals etc.)
       - position # integer in line with the sequential_number
@@ -577,6 +584,12 @@ slots:
 
   state_id:
     description: "State identifier"
+
+  group_name:
+    description: "Name of the political group or body"
+
+  group_id:
+    description: "Identifier of the political group or body"
 
 enums:
 
