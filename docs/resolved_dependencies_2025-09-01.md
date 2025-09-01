@@ -1,41 +1,41 @@
 * operations - laws
-  * Gesetztesfahnen (2x)
-  * Gesetzesentwürfe
-  * Erläuternde Berichte
-
-* laws - affairs
-  * Geschäfte / Entwürfe  (2x)
+  * Gesetztesfahnen (2x) ( -> affairs )
+  * Gesetzesentwürfe (Varianten zu Entscheiden -> affairs, Struktur des G.Entwurfs -> laws)
+  * Erläuternde Berichte Gesetzestext zuordnung zum Gesetzt (artikel) ( -> consultations )
 
 * operations - affairs
-  * Meeting / Traktandum - Affair
-  * Abstimmungen (3x)
-  * Rollen
-  * Timeline / Versionisierung
+  * Meeting / Traktandum -> Affair (Geschäftstragende bei Affairs) / Traktandumsführende -> operations | 
+  * Abstimmungen: Traktandierung / Abstimmungsresultate -> (Operations - (see also at affairs))
+  * Abstimmungsinhalt -> (Affairs)
+  * Versionisierung (bei Fehlern) -> (Meta)
+  * Timeline -> (Timestamps, Activities) -> (Meta)
 
-* operations - actors
-  * Wortmeldung
-  * Personen
+* Rollen -> (bei actors, zuständigkeit bei affairs und operations)
+
 
 * actors - affairs
-  * Komissionen
-  * Gremien
+  * Ad-Hoc Komissionen (actors)
+  * Komissionen (actors)
+  * Gremien (actors)
 
 * laws - consultations
-  * Entlassentwürfe / Erlasse bereits als Draft
-  * Begrifssklärungen / Prozess-Äquivalente
-  * Strukturierte begleitende Dokumente
+  * Strukturierte begleitende Dokumente (consultations)
+  * Fragebögen (consultation)
+  * Auslegeordnung der zu Vernehmlassenden Dinge (consultations)
 
 * consultations - affairs
-  * Vernehmlassung als Geschäft
-  * Verknüfung zu Gesetze
+  * Vernehmlassung als Geschäft (affairs)
+  * Verknüpfung zu Gesetzen (laws)
 
 * actors - consultations
-  * Organisierende vs Teilnehmende
-  * Privatpersonen, Vereinte, Koalitionen
-  * Identifikation vs. Datenschutz
+  * Organisierende vs Teilnehmende (Rollen -> actors)
+  * Privatpersonen, Vereine, Koaliationen (Rollen -> actors)
+  * Identifikation vs. Datenschutz (actors)
 
 * meta
-  * Geschäftsdokumente vs Sessionsdokumente
-  * Schema evolution nachvollziebar machen. Procedure bei Änderungen
+  * Schema Evolution nachvollziebar machen. Procedure bei Änderungen (meta)
   * Vokabular
+    * Rollenbezeichnungen
+    * Begrifssklärungen / Prozess-Äquivalente
+
   * interaktive protkokolle (mit Video)
