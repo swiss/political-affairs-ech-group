@@ -1,7 +1,8 @@
 ## Standards
-* https://www.oasis-open.org/standard/akn-v1-0/ - LegalDocML bzw. Akoma Ntoso, glbaler XML-Standard für Dokumente in den Bereichen parlamentarische Arbeit, Gesetzgebung und Rechtsprechung
+* https://www.oasis-open.org/standard/akn-v1-0/ - LegalDocML bzw. Akoma Ntoso, globaler XML-Standard für Dokumente in den Bereichen parlamentarische Arbeit, Gesetzgebung und Rechtsprechung
 * https://ejustice.ch/chlexml/ - CHLexML, Schweizer XML-Standard für Gesetzgebung
 * https://www.ech.ch/de/ech/ech-0095/1.0 - Entwurf für eCH-0095 ("CHLexML"), Status: sistiert
+* https://eur-lex.europa.eu/eli-register/about.html – The European Legislation Identifier (ELI) is a system to make legislation available online in a standardised format, so that it can be accessed, exchanged and reused across borders.
 
 ## Publikation (Erlasse und Materialien)
 ### Bund
@@ -32,3 +33,7 @@
 * https://omnilex.ai/en/
 * http://gsetz.li/
 * https://bger.li/
+
+## Weiteres
+* Law as Code / Rulemapping: https://www.sprind.org/law-as-code
+* Förderfunke / Shacl: https://github.com/Citizen-Knowledge-Graph/shacl-generator
