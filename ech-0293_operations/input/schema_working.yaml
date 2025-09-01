@@ -19,7 +19,14 @@ classes:
       - legislatures
       - sessions
       - meetings
-      - meeting_items
+      - agenda_items
+      - votings
+      - elections
+      - individual_votes
+      - attendances
+      - individual_attendances
+      - speeches
+      - resolutions
 
   MultilingualString:
     slots:
@@ -27,8 +34,8 @@ classes:
       - language
 
   Legislature:
-   description: >-
-      [en] Term of office of a parliament as a legislative assembly. Usually lasts four years. >-
+    description: >-
+      [en] Term of office of a parliament as a legislative assembly. Usually lasts four years.
       [de] Amtsdauer eines Parlaments als gesetzgebender Versammlung. Dauert in der Regel vier Jahre.
     slots:
       - id # technical ID 
@@ -43,13 +50,27 @@ classes:
       - created_datetime # meta
 
 
+  Session: # A parliamentary session containing multiple meetings
+    description: >-
+      [en] A parliamentary session that groups multiple meetings and spans a specific time period.
+      [de] Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen bestimmten Zeitraum erstreckt.
+    slots:
+      - id
+      - name
+      - begin_date
+      - end_date
+      - legislature_id
+      - meetings
+      - updated_datetime
+      - created_datetime
+
   Meeting:
     description: >-
-      [en] A general meeting class used for Sessions, Comittee Meetings, invidiual session Sittings and other various Meetings. >-
+      [en] A general meeting class used for Sessions, Committee Meetings, individual session Sittings and other various Meetings.
       [de] Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessionsitzung und andere verschiedene Versammlungen verwendet wird.
     slots:
       - id
-      - type  #define enum (session, committee, sitting, various) #sitting=Sessionsitzung, 
+      - type  # range: meeting_type_enum (session, committee, sitting, various) #sitting=Sessionsitzung, 
       - administrative_id 
       - name
       - landing_page
@@ -73,14 +94,13 @@ classes:
 
 # Ein Meeting hat Traktanden und Attendance
 # Traktanden können haben:
-- Voting
-- Election
-- Resolution
-- 
+# - Voting
+# - Election
+# - Resolution
       
   AgendaItem:
     description: >-
-      [en] An agenda item of a meeting. >-
+      [en] An agenda item of a meeting.
       [de] Ein Traktandum einer Sitzung.  
     slots:
       - id
@@ -104,97 +124,92 @@ classes:
       - updated_datetime
       - created_datetime
 
-JointDebate: 
-  description: >-
-    [en] Agenda Items which are debated together. >-
-    [de] Traktanden die gemeinsam behandelt werden.
-  slots:
-    - meetingItem
+  JointDebate: 
+    description: >-
+      [en] Agenda Items which are debated together.
+      [de] Traktanden die gemeinsam behandelt werden.
+    slots:
+      - meeting_item
 
-Resolution:
-  slots:
-    - type # annahme, ablehnung, kenntnisnahmme, punktweise annahme, annahme mit postulat, mündlich erledigt, beinahe einstimmig, other
-    - type_label # Wenn nicht standardisiert, dann wird hier der Typ ausgegeben und bei type auf other gesetzt
-    - vote_procedures # [0:n] 
+  Resolution:
+    slots:
+      - id
+      - type # range: resolution_type_enum (annahme, ablehnung, kenntnisnahmme, punktweise annahme, annahme mit postulat, mündlich erledigt, beinahe einstimmig, other)
+      - type_label # Wenn nicht standardisiert, dann wird hier der Typ ausgegeben und bei type auf other gesetzt
+      - vote_procedures # [0:n] 
 
-Voting: # Abstimmung
-  slots:
-    - id # Ratssystem ID / Abstimmungslagen ID
-    - datetime_begin # Datum und Zeit Abstimmungsbegin
-    - datetime_end # Datum und Zeit Abstimmungsende
-    - type #zwischenabstimmung, schlussabstimmung, Stichentscheid Präsidium?, geheime Wahl/Abstimmung
-    - type_label
-    - title #Abstimmungstitel bzw. Gegenstand / Frage. Wenn kein Gegestand vorhanden, dann sollte nicht der Geschäftstitel angegeben werden
-        - optional
-    - landing_page # URL für Abstimmungs PDF/HTML
-    - label_yes # Bedeutung bei einem Ja
-    - label_no # Bedeutung bei einem Nein
-    - label_abstention # Bedeutung bei 3 Knopf - Selten belegt mit drei Optionen
-    - tie_breaker  # Hat Stichentscheid stattgefunden ja oder nein. Entscheid wird bei Individual Vote mit typ_tie_breaker festgehalten 
-      - values: yes | no
-    
-    - total_count_yes    #Standardabstimmung
-    - total_count_no      #Standardabstimmung
-    - total_count_abstention #Standardabstimmung
-    
-    - total_other  #Verwendung wenn mehrere Varianten zur Wahl gestellt werden (ZH hat 5 Knöpfe), Mehrfach
-      - count
-      - label
-    
-    - total_absent # Präsident Abstimmung? # Unterscheidung abwesend/entschuldigt anwesend wird auf Anwesenheitsliste
-    - total # Anzahl yes, no, abstention (ohne absent und ohne Präsident)
-    - majority_type # Absolutes Mehr oder Zwei-Drittelmehr
-        enum: absolut, two-third, other
-    - majority_count # Anzahl des relevanten mehr
-    - result_text # freitext zum Beschrieb des Outcomens , z.B. "Mit 78 Stimmen angenommen"
-    - meeting_id # Abstimmung gehört zu Meeting
-    - agenda_item_ids # Abgestimmung gehört zu Traktandum
-    - affairs_ids #
-    - actor_id # Gremium (Rat, aber auch Kommission, Landsgemeinde, Volk) 
-    - updated_datetime
-    - created_datetime
+  Voting: # Abstimmung
+    slots:
+      - id # Ratssystem ID / Abstimmungslagen ID
+      - datetime_begin # Datum und Zeit Abstimmungsbegin
+      - datetime_end # Datum und Zeit Abstimmungsende
+      - type # range: voting_type_enum (zwischenabstimmung, schlussabstimmung, Stichentscheid Präsidium?, geheime Wahl/Abstimmung)
+      - type_label
+      - title #Abstimmungstitel bzw. Gegenstand / Frage. Wenn kein Gegestand vorhanden, dann sollte nicht der Geschäftstitel angegeben werden
+      # - optional
+      - landing_page # URL für Abstimmungs PDF/HTML
+      - label_yes # Bedeutung bei einem Ja
+      - label_no # Bedeutung bei einem Nein
+      - label_abstention # Bedeutung bei 3 Knopf - Selten belegt mit drei Optionen
+      - tie_breaker  # Hat Stichentscheid stattgefunden ja oder nein. Entscheid wird bei Individual Vote mit typ_tie_breaker festgehalten 
+      # - values: yes | no
+      - total_count_yes    #Standardabstimmung
+      - total_count_no      #Standardabstimmung
+      - total_count_abstention #Standardabstimmung
+      # - total_other  #Verwendung wenn mehrere Varianten zur Wahl gestellt werden (ZH hat 5 Knöpfe), Mehrfach
+      # - count
+      # - label
+      - total_absent # Präsident Abstimmung? # Unterscheidung abwesend/entschuldigt anwesend wird auf Anwesenheitsliste
+      - total # Anzahl yes, no, abstention (ohne absent und ohne Präsident)
+      - majority_type # Absolutes Mehr oder Zwei-Drittelmehr enum: absolut, two-third, other
+      - majority_count # Anzahl des relevanten mehr
+      - result_text # freitext zum Beschrieb des Outcomens , z.B. "Mit 78 Stimmen angenommen"
+      - meeting_id # Abstimmung gehört zu Meeting
+      - agenda_item_ids # Abgestimmung gehört zu Traktandum
+      - affairs_ids #
+      - actor_id # Gremium (Rat, aber auch Kommission, Landsgemeinde, Volk) 
+      - updated_datetime
+      - created_datetime
 
 # Handling Präsidiums-Votum wird als eigenes voting aufgenommen
 
 
 
-Indiviudal_Vote: # Einzelstimme  / vote individuel
-  slots:
+  IndividualVote: # Einzelstimme  / vote individuel
+    slots:
       - id
       - voting_id # link zu abstimmung
       - actor_id # Person
       - seat_nr
       - weight # Anzahl Stimmen bei Entscheiden wo eine Person mehrere Stimmen hat
-      - type # yes, no, abstention, absent, absent_excused, abstention_president, tie_breaker, other
+      - type # range: vote_enum (yes, no, abstention, absent, absent_excused, abstention_president, tie_breaker, other)
       - type_label # Anzeige des der Abstimmung (z.B. Für oder Gegen Abstimmungsgegenstand)
       - updated_datetime
       - created_datetime
 
-Election: # Wahl
-  slots:
-    - id # Ratssystem ID / Abstimmungslagen ID
-    - datetime_begin # Datum und Zeit Abstimmungsbegin
-    - datetime_end # Datum und Zeit Abstimmungsende
-    - title #Abstimmungstitel bzw. Gegenstand / Frage. Wenn kein Gegestand vorhanden, dann sollte nicht der Geschäftstitel angegeben werden
-    - optional
-    - landing_page # URL für Abstimmungs PDF/HTML
-    - type #Geheime Wahl, Offene Wahl, Stille Wahl ohne Gegenkandidat
-    - total_absent # Präsident Abstimmung? # Unterscheidung abwesend/entschuldigt anwesend wird auf Anwesenheitsliste
-    - total # Anzahl yes, no, abstention (ohne absent und ohne Präsident)
-    - majority_type # Absolutes Mehr oder Zwei-Drittelmehr
-        enum: absolut, two-third, other
-    - majority_count # Anzahl des relevanten Mehr
-    - result_text # freitext zum Beschrieb des Outcomens , z.B. "Gewählt ist Siegenthaler Edith mit 146 Stimmen"
-    - result_category # 
-      - label #
-        enum: Ausgeteilte Wahlzettel / Bulletins distribués, Anzahl eingegangen, Davon leer, Davon ungültig, Davon in Betracht fallend = Gültig?, Absolutes Mehr
-      - count 
-    - meeting_id # Abstimmung gehört zu Meeting
-    - agenda_item_ids # Abgestimmung gehört zu Traktandum
-    - affairs_ids #
-    - actor_id # Gremium (Rat, aber auch Kommission, Landsgemeinde, Volk) 
-    - updated_datetime
-    - created_datetime
+  Election: # Wahl
+    slots:
+      - id # Ratssystem ID / Abstimmungslagen ID
+      - datetime_begin # Datum und Zeit Abstimmungsbegin
+      - datetime_end # Datum und Zeit Abstimmungsende
+      - title #Abstimmungstitel bzw. Gegenstand / Frage. Wenn kein Gegestand vorhanden, dann sollte nicht der Geschäftstitel angegeben werden
+      # - optional
+      - landing_page # URL für Abstimmungs PDF/HTML
+      - type # range: election_type_enum (Geheime Wahl, Offene Wahl, Stille Wahl ohne Gegenkandidat)
+      - total_absent # Präsident Abstimmung? # Unterscheidung abwesend/entschuldigt anwesend wird auf Anwesenheitsliste
+      - total # Anzahl yes, no, abstention (ohne absent und ohne Präsident)
+      - majority_type # Absolutes Mehr oder Zwei-Drittelmehr enum: absolut, two-third, other
+      - majority_count # Anzahl des relevanten Mehr
+      - result_text # freitext zum Beschrieb des Outcomens , z.B. "Gewählt ist Siegenthaler Edith mit 146 Stimmen"
+      # - result_category # 
+      # - label # enum: Ausgeteilte Wahlzettel / Bulletins distribués, Anzahl eingegangen, Davon leer, Davon ungültig, Davon in Betracht fallend = Gültig?, Absolutes Mehr
+      # - count 
+      - meeting_id # Abstimmung gehört zu Meeting
+      - agenda_item_ids # Abgestimmung gehört zu Traktandum
+      - affairs_ids #
+      - actor_id # Gremium (Rat, aber auch Kommission, Landsgemeinde, Volk) 
+      - updated_datetime
+      - created_datetime
 # Fazit, wir brauchen hier mehr Expertise für Wahlen in Parlamenten. Sind die immer geheim? #Anfrage UniBe
 # Oder können die öffentlich sein (wer hat was gewählt), was bedeutet, dass wir hier auch Einzelstimmen bräuchten.
 
@@ -205,57 +220,59 @@ Election: # Wahl
 #Enschuldigungen gehen vorgängig per Mail ein und werden der Publikation hinzufgefügt.
 
 #Weitere Anweseneheiten wir über Abstimmungen ermittelt. Relevant für Sitzungsgelder:
-(Regelmentarisch festgehalten)
+# (Regelmentarisch festgehalten)
 #Thema Beschlussfähgkeit kann beim Bund in Frage gestellt werden und entsprechend gibt es eine erneeute Feststelleung
 
-Attendance: # Anwesenheits
-  slots:
-    - id # Ratssystem ID / Abstimmungslagen ID
-    - datetime_begin # Datum und Zeit Anwesheitsprüfung
-    - actor_id # Gremium (Rat, aber auch Kommission, Landsgemeinde, Volk)
-    - total_absent # 
-    - total_present #
-    - total_excused #
+  Attendance: # Anwesenheits
+    slots:
+      - id # Ratssystem ID / Abstimmungslagen ID
+      - datetime_begin # Datum und Zeit Anwesheitsprüfung
+      - actor_id # Gremium (Rat, aber auch Kommission, Landsgemeinde, Volk)
+      - total_absent # 
+      - total_present #
+      - total_excused #
 
-Indiviudal_Attendance: # Einzel feststellung
-  slots:
+  IndividualAttendance: # Einzel feststellung
+    slots:
       - id
       - voting_id # link zu abstimmung
       - actor_id # Person
-      - type # remote | Stellvertretung 
+      - type # range: attendance_type_enum (remote, substitute, present) 
       - updated_datetime
       - created_datetime
  
 # Abzklären: Wie funktionieren Stellvertretungen - Kann das abgebildet werden für Abstimmung:
 # Relvant für Sitzungsgelderungern.
 
+# Wortmeldungen (Text / Audio / Video)
 
-Wortmeldungen (Text / Audio / Video)
+  Speech: # Synonym Votum oder speaker_segment (Teil eines AgendaItem)
+    slots:
+      - id
+      - language # (de/fr/mixed)
+      - start
+      - datetime_begin # Datum und Zeit Wortmeldung
+      - datetime_end # Datum und Zeit Wortmeldung
+      - actor_fullname
+      - actor_id # Check Link mit Politische Akteure & Gremien
+      - role # (Kommissionsprecher|im Namen der Kommission) # Offener String
+      - text
+      - text_format # (text, html, html_with_timestamps per word) # Unterscheidung von HTML und HTML mit Timestampes?
+      - text_type #Rohfassung, Bearbeitet (Wird wahrscheinlich nur immer bearbeitete Fassung publiziert)
+      - landing_page # Link zu publizierte Fassung
 
-speech 
+  TextSegment: # Titel, text_segment (Quervereise und Zwischentitel, z.B Zusammenfassung eines Votings)
+    slots:
+      - id
+      - text
 
-# Synomim Votum oder speaker_segement  (Teil eines AgendaItem)
- - language (de/fr/mixed)
- - start
- - datetime_begin # Datum und Zeit Wortmeldung
- - datetime_end # Datum und Zeit Wortmeldung
- - actor
-    - fullname
-    - actor_id # Check Link mit Politische Akteure & Gremien
-    - role (Kommissionsprecher|im Namen der Kommission) # Offener String
-I  - text
- - text_format (text, html, html_with_timestamps per word) # Unterscheidung von HTML und HTML mit Timestampes?
- - text_type #Rohfassung, Bearbeitet (Wird wahrscheinlich nur immer bearbeitete Fassung publiziert)
- - landing_page # Link zu publizierte Fassung
+  Motion: # Teil des Protokoll bzw. auch Traktandum (passiert vorgänging schriftlich), Abstimmungsbedarf mit Geschäfte
+    slots:
+      - id
+      - title
+      - description
 
-text # Titel, text_segement (Quervereise und Zwischentitel, z.B Zusammenfassung eines Votings)
- - text
-
-
-Antrag # Teil des Protokoll bzw. auch Traktandum (passiert vorgänging schriftlich), Abstimmungsbedarf mit Geschäfte
-
-
-"data" : [ {
+# "data" : [ {
 
 slots:
 
@@ -308,6 +325,7 @@ slots:
   status:
 
   type:
+    description: "Type classification"
   
   description:
   
@@ -349,9 +367,51 @@ slots:
     multivalued: true
     inlined_as_list: true
 
-  meeting_items:
-    slot_uri: ops:meetingItem
-    range: MeetingItem
+  agenda_items:
+    slot_uri: ops:agendaItem
+    range: AgendaItem
+    multivalued: true
+    inlined_as_list: true
+
+  votings:
+    slot_uri: ops:voting
+    range: Voting
+    multivalued: true
+    inlined_as_list: true
+
+  elections:
+    slot_uri: ops:election
+    range: Election
+    multivalued: true
+    inlined_as_list: true
+
+  individual_votes:
+    slot_uri: ops:individualVote
+    range: IndividualVote
+    multivalued: true
+    inlined_as_list: true
+
+  attendances:
+    slot_uri: ops:attendance
+    range: Attendance
+    multivalued: true
+    inlined_as_list: true
+
+  individual_attendances:
+    slot_uri: ops:individualAttendance
+    range: IndividualAttendance
+    multivalued: true
+    inlined_as_list: true
+
+  speeches:
+    slot_uri: ops:speech
+    range: Speech
+    multivalued: true
+    inlined_as_list: true
+
+  resolutions:
+    slot_uri: ops:resolution
+    range: Resolution
     multivalued: true
     inlined_as_list: true
   
@@ -362,6 +422,161 @@ slots:
     required: true
     description: "Language code in ISO 639-1 format"
     pattern: ^[a-z]{2}$
+
+  administrative_id:
+    description: "Administrative identifier"
+
+  landing_page:
+    description: "URL to additional information"
+
+  sequential_number:
+    description: "Sequential number (string format to allow roman numerals)"
+
+  actor_name:
+    description: "Name of the political body"
+
+  actor_id:
+    description: "Reference to political actor"
+    range: string  # Will reference Actor class from ech-0294
+
+  parent_meeting_id:
+    description: "Parent meeting identifier for hierarchical structure"
+    range: Meeting
+
+  parent_legislature_id:
+    description: "Parent legislature identifier"
+    range: Legislature
+
+  meeting_id:
+    description: "Reference to meeting"
+    range: Meeting
+
+  leading_actor_id:
+    description: "Leading department identifier"
+
+  speaking_actor_id:
+    description: "Speaking actor identifier"
+
+  affair_id:
+    description: "Connection to affairs/business items"
+
+  parent_agenda_item_id:
+    description: "Parent agenda item for hierarchy"
+    range: AgendaItem
+
+  meeting_item:
+    description: "Meeting item reference (AgendaItem)"
+    range: AgendaItem
+
+  vote_procedures:
+    description: "Vote procedures"
+    multivalued: true
+
+  datetime_begin:
+    range: datetime
+    description: "Begin date and time"
+
+  datetime_end:
+    range: datetime
+    description: "End date and time"
+
+  label_yes:
+    description: "Meaning of yes vote"
+
+  label_no:
+    description: "Meaning of no vote"
+
+  label_abstention:
+    description: "Meaning of abstention"
+
+  tie_breaker:
+    description: "Whether tie-breaker occurred"
+
+  total_count_yes:
+    range: integer
+    description: "Total yes votes"
+
+  total_count_no:
+    range: integer
+    description: "Total no votes"
+
+  total_count_abstention:
+    range: integer
+    description: "Total abstentions"
+
+  total_absent:
+    range: integer
+    description: "Total absent"
+
+  total:
+    range: integer
+    description: "Total votes (excluding absent and president)"
+
+  majority_type:
+    description: "Type of majority required"
+    range: majority_type_enum
+
+  majority_count:
+    range: integer
+    description: "Number required for majority"
+
+  result_text:
+    description: "Free text description of result"
+
+  agenda_item_ids:
+    description: "Related agenda item identifiers"
+    multivalued: true
+
+  affairs_ids:
+    description: "Related affairs identifiers" 
+    multivalued: true
+
+  voting_id:
+    description: "Reference to voting"
+    range: Voting
+
+  seat_nr:
+    description: "Seat number"
+
+  weight:
+    range: integer
+    description: "Vote weight for multiple votes"
+
+  total_present:
+    range: integer
+    description: "Total present"
+
+  total_excused:
+    range: integer
+    description: "Total excused"
+
+  actor_fullname:
+    description: "Full name of actor"
+
+  start:
+    description: "Start indicator"
+
+  text_format:
+    description: "Format of text (text, html, html_with_timestamps)"
+
+  text_type:
+    description: "Type of text (raw, edited)"
+
+  legislature_id:
+    description: "Reference to legislature"
+    range: Legislature
+
+  role:
+    description: "Role description"
+
+  state_name:
+    description: "State name for other descriptions"
+
+  type_label:
+    description: "Type label when not standardized"
+
+  state_id:
+    description: "State identifier"
 
 enums:
 
@@ -374,3 +589,122 @@ enums:
         meaning: ops:state/canceled
       "postponed":
         meaning: ops:state/postponed
+
+  majority_type_enum:
+    description: "Type of majority required for voting"
+    permissible_values:
+      "absolute":
+        meaning: ops:majority/absolute
+        description: "Absolute majority"
+      "two_third":
+        meaning: ops:majority/two_third
+        description: "Two-thirds majority"
+      "other":
+        meaning: ops:majority/other
+        description: "Other majority type"
+
+  meeting_type_enum:
+    description: "Type of meeting"
+    permissible_values:
+      "session":
+        meaning: ops:meeting_type/session
+        description: "Parliamentary session"
+      "committee":
+        meaning: ops:meeting_type/committee
+        description: "Committee meeting"
+      "sitting":
+        meaning: ops:meeting_type/sitting
+        description: "Session sitting (Sessionsitzung)"
+      "various":
+        meaning: ops:meeting_type/various
+        description: "Various other meeting types"
+
+  voting_type_enum:
+    description: "Type of voting"
+    permissible_values:
+      "intermediate":
+        meaning: ops:voting_type/intermediate
+        description: "Intermediate vote (Zwischenabstimmung)"
+      "final":
+        meaning: ops:voting_type/final
+        description: "Final vote (Schlussabstimmung)"
+      "tie_breaker":
+        meaning: ops:voting_type/tie_breaker
+        description: "Tie-breaker vote (Stichentscheid Präsidium)"
+      "secret":
+        meaning: ops:voting_type/secret
+        description: "Secret vote/election"
+
+  vote_enum:
+    description: "Individual vote types"
+    permissible_values:
+      "yes":
+        meaning: ops:vote/yes
+      "no":
+        meaning: ops:vote/no
+      "abstention":
+        meaning: ops:vote/abstention
+      "absent":
+        meaning: ops:vote/absent
+      "absent_excused":
+        meaning: ops:vote/absent_excused
+      "abstention_president":
+        meaning: ops:vote/abstention_president
+      "tie_breaker":
+        meaning: ops:vote/tie_breaker
+      "other":
+        meaning: ops:vote/other
+
+  election_type_enum:
+    description: "Type of election"
+    permissible_values:
+      "secret":
+        meaning: ops:election_type/secret
+        description: "Secret election (Geheime Wahl)"
+      "open":
+        meaning: ops:election_type/open
+        description: "Open election (Offene Wahl)"
+      "silent":
+        meaning: ops:election_type/silent
+        description: "Silent election without opponent (Stille Wahl ohne Gegenkandidat)"
+
+  resolution_type_enum:
+    description: "Type of resolution"
+    permissible_values:
+      "accepted":
+        meaning: ops:resolution/accepted
+        description: "Annahme"
+      "rejected":
+        meaning: ops:resolution/rejected
+        description: "Ablehnung"
+      "acknowledged":
+        meaning: ops:resolution/acknowledged
+        description: "Kenntnisnahme"
+      "partially_accepted":
+        meaning: ops:resolution/partially_accepted
+        description: "Punktweise Annahme"
+      "accepted_with_postulate":
+        meaning: ops:resolution/accepted_with_postulate
+        description: "Annahme mit Postulat"
+      "orally_resolved":
+        meaning: ops:resolution/orally_resolved
+        description: "Mündlich erledigt"
+      "nearly_unanimous":
+        meaning: ops:resolution/nearly_unanimous
+        description: "Beinahe einstimmig"
+      "other":
+        meaning: ops:resolution/other
+        description: "Other"
+
+  attendance_type_enum:
+    description: "Type of individual attendance"
+    permissible_values:
+      "remote":
+        meaning: ops:attendance/remote
+        description: "Remote participation"
+      "substitute":
+        meaning: ops:attendance/substitute
+        description: "Substitute (Stellvertretung)"
+      "present":
+        meaning: ops:attendance/present
+        description: "Present"
