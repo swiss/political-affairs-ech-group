@@ -33,3 +33,7 @@
 * https://omnilex.ai/en/
 * http://gsetz.li/
 * https://bger.li/
+
+## Weiteres
+* Law as Code / Rulemapping: https://www.sprind.org/law-as-code
+* Förderfunke / Shaql: https://github.com/Citizen-Knowledge-Graph/shacl-generator
