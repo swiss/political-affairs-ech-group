@@ -24,6 +24,7 @@ classes:
     slots:
       - id
       - legislatures
+      - sessions
       - meetings
       - agenda_items
 
@@ -43,15 +44,36 @@ classes:
       - datetime_updated  # meta
       - datetime_created # meta
 
+  Session:
+    description: |
+      [en] A parliamentary session that groups multiple meetings and spans a specific time period.
+      [de] Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen bestimmten Zeitraum erstreckt.
+    slots:
+      - id
+      - body_key
+      - name
+      - url
+      - date_begin_planned
+      - date_end_planned
+      - parent_legislature
+      - meetings
+      - datetime_updated
+      - datetime_created
+
   Meeting:
     description: |
       [en] A general meeting class used for Sessions, Comittee Meetings, individual session Sittings and other various Meetings.
       [de] Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessionssitzung und andere verschiedene Versammlungen verwendet wird.
     slots:
       - id
+      - body_key
       - meeting_type  #define enum (session, committee, sitting, various) #sitting=Sessionsitzung, 
       - administrative_id 
       - name
+      - url
+      - group_name
+      - group_id
+      - number
       - landing_page
       - sequential_number # Laufnummer (string, because roman literals etc.)
       - position # integer in line with the sequential_number
@@ -194,6 +216,11 @@ slots:
     description: |
       [en] The political body organized by the term of office (e.g., Regierungsrat, Nationalrat, Ständerat).
       [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat, Nationalrat, Ständerat).
+
+  body_key:
+    description: |
+      [en] Key identifying the political body or jurisdiction (e.g., BE for Bern, CHE for Switzerland).
+      [de] Schlüssel zur Identifizierung des politischen Organs oder der Gerichtsbarkeit (z.B. BE für Bern, CHE für Schweiz).
 
   type_label:
 
@@ -517,6 +544,12 @@ slots:
     multivalued: true
     inlined_as_list: true
   
+  sessions:
+    slot_uri: ops:session
+    range: Session
+    multivalued: true
+    inlined_as_list: true
+
   meetings:
     slot_uri: ops:meeting
     range: Meeting
