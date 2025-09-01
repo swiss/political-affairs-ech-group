@@ -3,6 +3,9 @@
   * Gesetzesentwürfe
   * Erläuternde Berichte
 
+* laws - affairs
+  * Geschäfte / Entwürfe  (2x)
+
 * operations - affairs
   * Meeting / Traktandum - Affair
   * Abstimmungen (3x)
@@ -30,9 +33,6 @@
   * Organisierende vs Teilnehmende
   * Privatpersonen, Vereinte, Koalitionen
   * Identifikation vs. Datenschutz
-
-* laws - affairs
-  * Geschäfte / Entwürfe  (2x)
 
 * meta
   * Geschäftsdokumente vs Sessionsdokumente
