@@ -80,8 +80,12 @@
 
 ## Journalism
   - [Die Mitte gibt es nicht - Bajour](https://bajour.ch/a/grossrats-rating-2022)
-  - [SRF Data](srfdata.github.io)
+  - [SRF Data](srfdata.github.io) [broken link]
 
 ## Wikidata
 
 - [WikiProject every politician/Political data model](https://www.wikidata.org/wiki/Wikidata:WikiProject_every_politician/Political_data_model)
+
+## International
+- [Popolo Project -  International legislative data specifications: Person](https://www.popoloproject.com/specs/person.html)
+- [OParl: Person](https://oparl.org/spezifikation/online-ansicht/#entity-person)
