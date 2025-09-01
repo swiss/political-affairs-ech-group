@@ -17,7 +17,7 @@ toc: false
 | **Voraussetzungen**   | ?                                                                                                                          |
 | **Beilagen**          | -                                                                                                                          |
 | **Sprachen**          | English (Original)                                                                                                         |
-| **Autoren**           | Fachgruppe politische Geschäfte: Silberstein Julie, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi   |
+| **Autoren**           | Fachgruppe politische Geschäfte: Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi   |
 | **Herausgeber / Vertrieb** | Verein eCH, Räffelstr. 20, 8045                                                                                       |
 
 # Summary
