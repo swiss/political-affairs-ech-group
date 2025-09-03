@@ -32,6 +32,7 @@ group
 Zu diskutieren mit Hans-Peter
 
 * Partei
+   * Parteilager ( Links, Rechts, Mitte )
 * Liste (kann Teil einer Partei sein, oder nicht)
 * Fraktion 
 * Parlamentskomission
@@ -39,8 +40,16 @@ Zu diskutieren mit Hans-Peter
 * Ad-Hoc Komission
 * Arbeitsgruppen
 * Interessengruppen
-
-* Departementehttps://uzh.zoom.us/j/66843584125?pwd=l2s4GJMNYHfqEGtFS6ObF4R5sG7XCh.1
+  * Zivilgesellschaftliche Gruppen (unter Interessengruppen subsumierbar?)
+*	Parlamentsbüro
+*	Präsidium des Parlaments
+*	Parlamentsdienste
+*	Gerichte
+*	ev. Finanzkontrolle (nimmt tw. Aufgaben fürs Parlament wahr)
+*	ev. Verwaltung (nimmt tw. Aufgaben fürs Parlament wahr)
+*	Regierung (hat ja auch im parl.Verfahren besondere Funktionen)
+*	(Parteilose und/oder fraktionslose Parlamentsmitglieder)
+* Departemente
 * Ausserparlementarische Komissionen
 
 ## Parteien
