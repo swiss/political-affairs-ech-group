@@ -1,0 +1,85 @@
+Affair: 
+	type: ---motion	
+
+
+TODO: Motion wird Postulat; Motion und Postulat zusammen
+## Bund: heute = keine Typänderung mehr möglich 
+## Bund: Teilweise annahme möglich => abgedeckt (https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20243378)
+## früherer Bund: änderung möglich = noch nicht = machen wir mit Kantonen
+## https://www.gr.be.ch/de/start/geschaefte/geschaeftssuche/geschaeftsdetail.html?guid=5900dc22a3b348ef962989fa79c2e4f5
+## @Nicole: wie genau wird das sachbearbeiterisch gehandhabt? => gitb es neue Geschäfte? = oder gibt es eine "Spaltung"? => oder bleibt diese info hier?
+
+
+Motion:
+	is_a: Affair
+	type: affairType
+	description: Mit einer Motion beauftragt das Parlament die Exekutive (oder gegebenenfalls das Ratsbüro) einen Entwurf zu einem Erlass vorzulegen oder eine Massnahme zu treffen.
+	attributes:
+		affair_uid:
+        		identifier: true
+        		required: true
+        		range: string
+        		description: Unique identifier.
+		affair_number:
+			identifier: true
+        		required: true
+        		range: string
+        		description: Number of the affair, issued by XX.
+		link_to_other_affair:
+			identifier_other_affairs: true
+			multivalued: true
+			required: false
+			description: Gleichlautende Motionen; Verlinkung zu früheren Geschäften
+		title: 
+		       range: TextBlock
+		       multivalued: true
+			description: XX
+		
+		submission:
+		       range: Submission
+		       required: true
+		       description: Submission details for the motion.
+		
+		submissionValidation:
+		  	range: SubmissionValidationStep
+		  	multivalued: true
+		  	required: false
+		  	description: Initial steps taken after the submission of the motion, such as content/formal checks and urgency requests.
+		
+		assignment: 
+		  	range: ZuteilungsSchritt
+		  	multivalued: true
+		  	required: false
+		  	description: Steps that assign the affair to a chamber, committee, or administrative body for handling.
+		
+		response:
+		  	range: ResponseStep
+		  	multivalued: true
+		  	required: false
+		  	description: Formal responses or recommendations from the executive (e.g. Direktion, Bundesrat).
+
+		# Beratung (im Hintergrund)
+		committeeDeliberations:
+		  	range: CommitteeDeliberationStep
+		  	multivalued: true
+		  	required: false
+		  	description: Committee-level deliberations preparing for the plenary debate.
+
+		# Behandlung im Rat: mit 3 Elementen = Reden, Anträge, Abstimmungen
+		councilDebates:
+		  	range: PlenaryDebate
+		  	multivalued: true
+		  	required: false
+		  	description: XX.						
+				
+			
+	       # === Lifecycle flags ===
+		lifecycle:
+		  	range: LifecycleFlags
+			multivalued: true
+		  	required: false
+		  	description: High-level metadata about the motion's formal state.
+		# Wann ist die Motion erledigt? => überwiesen (Bund); abgeschrieben (Kantone/Städte)
+
+
+	

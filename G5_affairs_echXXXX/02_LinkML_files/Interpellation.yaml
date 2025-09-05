@@ -1,0 +1,72 @@
+imports:
+  - dictionaries.yaml
+  - process_steps.yaml
+
+Affair: 
+	type: ---interpellation	
+
+Interpellation:
+  	is_a: 	Affair
+  	type: 	affairType
+  	description: 	An interpellation requests written information from the executive (Federal Council)
+    			on matters of federal policy/administration. The answer is usually delivered by the
+    			next session; urgent interpellations are answered in the same session and may be
+    			discussed in the council.
+  	attributes:
+		
+		# === Identification & texts ===
+		affair_uid:
+        		identifier: true
+        		required: true
+        		range: string
+        		description: Unique identifier.
+		affair_number:
+			identifier: true
+        		required: true
+        		range: string
+        		description: Number of the affair, issued by XX.
+		title: 
+		       range: TextBlock
+		       multivalued: true
+			description: XX
+						
+		# === Submission & initial handling ===
+		submission:
+		       range: Submission
+		       required: true
+		       description: Submission details for the postulate.
+		submissionValidation:
+		  	range: SubmissionValidationStep
+		  	multivalued: true
+		  	required: false
+		  	description: Initial steps taken after the submission of an affair, such as content/formal checks and urgency requests.
+		assignment: 
+		  	range: AssignmentStep
+		  	multivalued: true
+		  	required: false
+		  	description: Steps that assign the affair to a chamber, committee, or administrative body for handling.		
+		
+		# === Executive answer ===
+		response:
+		  	range: ResponseStep
+		  	multivalued: true
+		  	required: false
+		  	description: Formal responses or recommendations from the executive (e.g. Direktion, Bundesrat).
+		councilDebates:
+		  	range: PlenaryDebate
+		  	multivalued: true
+		  	required: false
+		  	description: XX.
+										
+			
+	       # === Lifecycle flags ===
+		lifecycle:
+		  	range: LifecycleFlags
+			multivalued: true
+		  	required: false
+		  	description: High-level metadata about the affair's formal state.
+		#TODO: Urheber zufrieden/teilweise befriedigt/Diskussion verlangt/nicht verlangt => das machen wir so: wenn es eine debatte gibt, dann gibt es auch den Flag "debatte verlangt"
+		
+
+
+	
