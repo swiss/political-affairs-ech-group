@@ -217,7 +217,7 @@ PlenaryDebate:
   	  	  	description: The type of debate (e.g., Eintreten, Detailberatung). 
 			# Evtl. auch: Einigungskonferenz, Differenzberatung?
 			
-		#TODO: Link zum Meeting!	
+		# TODO: Link zum Meeting!
   	  	date:
   	  	  	range: date
   	  	  	required: true
@@ -383,7 +383,7 @@ ResponseStep:
   	  	  	range: TextBlock
   	  	  	multivalued: true
   	  	  	required: true
-  	  	  	description: Response and recommendation texts, including translations and metadata.
+  	  	  	description: Response and recommendation texts, including translations and metadata.			
 
 		
 
@@ -474,7 +474,10 @@ Submission:
 	         	range: date
 	         	required: false
 	         	description: The date the pursuit/affair was officially withdrawn by the sponsor, if applicable.	
-
+		begründung_im_Rat: 
+			range: PlenaryDebate
+		  	required: false
+		  	description: XX.
 
 
 #-------------------- Helper classes --------------------#
