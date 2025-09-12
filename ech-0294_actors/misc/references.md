@@ -80,7 +80,7 @@
 
 ## Journalism
   - [Die Mitte gibt es nicht - Bajour](https://bajour.ch/a/grossrats-rating-2022)
-  - [SRF Data](srfdata.github.io) [broken link]
+  - [SRF Data](https://srfdata.github.io)
 
 ## Wikidata
 
