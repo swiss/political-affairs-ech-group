@@ -1,6 +1,7 @@
 ## Meeting Notes 22 September 2025 (10:30 – 11:30)
 
 - ...
+- monatliche Meetings
 
 ## Meeting Notes 16. Juli 2025
  
