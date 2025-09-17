@@ -40,7 +40,7 @@ Zu diskutieren mit Hans-Peter
 * Ad-Hoc Komission
 * Arbeitsgruppen
 * Interessengruppen
-  * Zivilgesellschaftliche Gruppen (unter Interessengruppen subsumierbar?)
+* Zivilgesellschaftliche Gruppen (unter Interessengruppen subsumierbar?)
 *	Parlamentsbüro
 *	Präsidium des Parlaments
 *	Parlamentsdienste
@@ -60,6 +60,12 @@ Jede Föderaleebene, wird als eigene Gruppierung geführt.
 
 ## Memberships
 
-- 
+- ID Person
+- Role
+- ID Group
+- validFrom
+- validUntil
+- isActive (als Alternateive zu validFrom and validUntil)
+- authorized_to_vote
 
 ## 
