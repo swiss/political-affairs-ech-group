@@ -2,7 +2,7 @@
 
 - dependencies (cf. https://github.com/swiss/political-affairs-ech-group/blob/main/docs/resolved_dependencies_2025-09-01.md)
 - ...
-- regelmässige Meetings: monatlich?
+- regelmässige Meetings: monatlich? 11:00 - 12:00 Montag -> 
 
 ## Meeting Notes 16. Juli 2025
  
