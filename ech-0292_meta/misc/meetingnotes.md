@@ -1,10 +1,12 @@
-## Meeting Notes 22 September 2025 (10:30 – 11:30)
+## Meeting Notes 22 September 2025
 
 - dependencies (cf. https://github.com/swiss/political-affairs-ech-group/blob/main/docs/resolved_dependencies_2025-09-01.md)
      - Versionisierung (bei Fehlern): später
      - Timeline -> (Timestamps, Activities): Michael und Benedikt machen Vorschlag
 - see: https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/schema_workin.yml
-- regelmässige Meetings: monatlich? 11:00 - 12:00 Montag -> 
+     - to do: Michael und Benedikt: linkml
+     - to do: Florin: Liste Vokabular von Fabian Ligibel
+- regelmässige Meetings: monatlich? 11:00 - 12:00 Montag -> Florin lädt ein
 
 ## Meeting Notes 16. Juli 2025
  
