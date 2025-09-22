@@ -3,10 +3,7 @@
 - dependencies (cf. https://github.com/swiss/political-affairs-ech-group/blob/main/docs/resolved_dependencies_2025-09-01.md)
      - Versionisierung (bei Fehlern): später
      - Timeline -> (Timestamps, Activities): Michael und Benedikt machen Vorschlag
-     - Schema Evolution nachvollziebar machen. Procedure bei Änderungen (meta)
-     - Vokabular
-     -      Rollenbezeichnungen
-     -       Begrifssklärungen / Prozess-Äquivalente
+     - 
 
 
 - ...
