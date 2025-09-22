@@ -6,12 +6,12 @@
     
     - type: seating order 
     - work:
-
-
+    
 - agenda_item
   - works
     - type: pv 
     - work: 
+
 
 - affairs
   - works
@@ -22,17 +22,26 @@
 - Work Collection (as own API Endpoint / URI Namespace)
 
 - Work (=Document)
-  - Title
-  - Date Sent
-  - Id
+  - Title: multilang (optional)
+  - Date Published (optional)
+  - Date 
+  - Id (Laufnummer, System dependent)
   - Expression
-    - lang
+    - lang: de
     - Manifestation
       - filetype: pdf
-      - url: https://example.com/document1.pdf
+      - url: https://example.com/document1DE.pdf
       - filetype: html
-      - url: https://example.com/document1.html
+      - url: https://example.com/document1De.html
+   - lang: fr
+    - Manifestation
+      - filetype: pdf
+      - url: https://example.com/document1FR.pdf
+      - filetype: html
+      - url: https://example.com/document1FR.html
 
+# Todo:
+* Dates on different level
 
 # Notes:
 * question: shall a PV Video and a PV be the same Work? -> idea would be to combine them were it makes sense.
