@@ -1,6 +1,9 @@
 ## Meeting Notes 22 September 2025 (10:30 – 11:30)
 
 - dependencies (cf. https://github.com/swiss/political-affairs-ech-group/blob/main/docs/resolved_dependencies_2025-09-01.md)
+ - Versionisierung (bei Fehlern): später
+ - Timeline -> (Timestamps, Activities): Michael und Benedikt machen Vorschlag
+ - 
 - ...
 - regelmässige Meetings: monatlich? 11:00 - 12:00 Montag -> 
 
