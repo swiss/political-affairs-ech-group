@@ -17,7 +17,12 @@
   - works
     - type: submitted version
     - work: 
-    
+ - legalDocuments
+    - type: current law
+    - eli: 
+    - type: proposed law
+    - eli: 
+        
 
 - Work Collection (as own API Endpoint / URI Namespace)
 
@@ -45,7 +50,7 @@
 
 # Notes:
 * question: shall a PV Video and a PV be the same Work? -> idea would be to combine them were it makes sense.
-* difference between general document / legal ressource
+* difference between general document / legal ressource -> probably just differs by type
 
 
 
