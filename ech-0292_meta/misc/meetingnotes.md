@@ -3,10 +3,7 @@
 - dependencies (cf. https://github.com/swiss/political-affairs-ech-group/blob/main/docs/resolved_dependencies_2025-09-01.md)
      - Versionisierung (bei Fehlern): später
      - Timeline -> (Timestamps, Activities): Michael und Benedikt machen Vorschlag
-     - 
-
-
-- ...
+- see: https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/schema_workin.yml
 - regelmässige Meetings: monatlich? 11:00 - 12:00 Montag -> 
 
 ## Meeting Notes 16. Juli 2025
