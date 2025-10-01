@@ -33,6 +33,7 @@ classes:
       id:
         identifier: true
         required: true
+        description: Wikidata-ID preferred
       label:
         description: Display name of the person
         required: true
@@ -40,8 +41,10 @@ classes:
         description: Extended display name (with title, etc.)
       birthyear:
         range: integer
+        description: Year of birth
       birthdate:
         range: date
+        description: Exact date of birth
       picture:
         description: Link to an image (preferred: PNG, then JPG, then GIF)
       names:
@@ -50,6 +53,7 @@ classes:
       addresses:
         range: Address
         multivalued: true
+        description: place of residence and work
       languages:
         range: LanguageProficiency
         multivalued: true
@@ -70,12 +74,16 @@ classes:
       contacts:
         range: Contact
         multivalued: true
+      electoral_district:
+        range: ElectoralDistrict
 
   Name:
     attributes:
       nameType:
         range: NameTypeEnum
         required: true
+        # Is it enough to just put required here? --> callName is not required
+        description: categories of name types
       value:
         required: true
       validFrom:
@@ -101,8 +109,10 @@ classes:
         required: true
       correspondence:
         range: boolean
+        description: preferred language
       native:
         range: boolean
+        description: proficient language
 
   Validity:
     attributes:
@@ -115,7 +125,7 @@ classes:
     is_a: Validity
     attributes:
       country:
-        description: ISO 3166 country code
+        description: ISO 3166 country code (can't be CH)
         required: true
 
   Gender:
@@ -153,12 +163,24 @@ classes:
         required: true
       contact:
         required: true
+  
+  ElectoralDistrict:
+    attributes:
+      district:
+        required: true
+      validFrom:
+        range: date
+      validUntil:
+        range: date
 
 enums:
   NameTypeEnum:
     permissible_values:
       familyNameOnForeignPassport:
       callName:
+      officialGivenName:
+      officialLastName:
+      officialMiddleName:
 
   AddressTypeEnum:
     permissible_values:
