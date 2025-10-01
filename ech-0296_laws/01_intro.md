@@ -21,6 +21,7 @@
 * Automatische Generierung der Systematischen Sammlung.
 
 ### Konsumierend
+* Redaktionelle Aufarbeitungen. Synoptische Aufarbeitung.
 * Einfache Verknüpfung zwischen Gesetztestexten, automatische generierung von Abhängikeiten zwischen Gesetzten.
 * Automatische Compliance Kontrolle für Wirtschaft.
 * Verknüpfungen zu begleitenden Dokumenten: Erläuterungen, Gerichtstexte, begleitendende Berichte, Politischen Prozess
