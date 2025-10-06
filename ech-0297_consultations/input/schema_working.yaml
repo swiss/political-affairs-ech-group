@@ -15,6 +15,9 @@ default_range: string
   
 classes:
   
+  
+
+
   Consultation:
     slots:
       - id
