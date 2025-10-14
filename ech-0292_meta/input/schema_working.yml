@@ -1,19 +1,19 @@
-
-- meeting
+## Examples (how to use the Document Metastandard) inside other sub-groups
+- meeting (subgroup operations)
   - works
     - type: meeting_agenda
-    - work: 
+    - work: kt.zh.ch/works/13424
     
     - type: seating order 
-    - work:
+    - work: kt.zh.ch/works/13424
     
-- agenda_item
+- agenda_item (subgroup operations)
   - works
     - type: pv 
     - work: 
 
 
-- affairs
+- affairs (affairs)
   - works
     - type: submitted version
     - work: 
@@ -22,9 +22,12 @@
     - eli: 
     - type: proposed law
     - eli: 
-        
+
+
+## schema.yml
 
 - Work Collection (as own API Endpoint / URI Namespace)
+- kt.zh.ch/works/13424
 
 - Work (=Document)
   - Title: multilang (optional)
