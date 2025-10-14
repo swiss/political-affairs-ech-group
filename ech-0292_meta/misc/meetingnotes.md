@@ -57,7 +57,10 @@ Mögliche Namen der Subgruppe:
 4. “Metainformation und Links zu politischen Geschäften”
 5. **“Metaprozesse zu politischen Geschäften”** --> gewählt
 
-Zielgruppen und Prioritäten:
+
+
+
+## Zielgruppen und Prioritäten:
 
 1. Andere eCH PoGe Subgruppen (Schema basis)
 2. Städte / Bund / Kantone (Publikation)
@@ -66,24 +69,27 @@ Zielgruppen und Prioritäten:
 5. Öffentliche Verwaltung (Statistikämter, Konsum, Monitoring)
 6. Forschung: Politikwissenschaft / Historiker (Forschung)
 
-Mini Gap Analysis (inkl. Eränzungen 10.06.):
+## Mini Gap Analysis (inkl. Eränzungen 10.06.):
+
+- Dokumente (Chronologisch verordnet)
+  - Versionen / Publikationsdatum
+  - Kommissionsberichte und Postulatsberichte
+  - Referenden und Volksinitiativen (Ablaufen und Inkrafttreten)
+  - [FRBR Model]([url](https://www.loc.gov/catdir/cpso/frbreng.pdf)): Work (z.b. Geschäft) - Expression (e.g. DE/FR/EN) - Manifestation (e.g. PDF) (- Item)
 
 - Chronologie / Prozesse
   - Räte sehr unterschiedlich (teils einfacher)
   - Übergeben und Abschliessen (unterschiedliche Semantik in Kantonen)
   - Vergleichbarkeit über Kantone und föderale Stufen hinweg (Scope: Parlamente)
   - Logik: abbilden, was passiert (vs. wie der Prozess abläuft (stärker kausal))
+
 - Verknüpfungen (von Events)
   - Vernehmlassung (und Anhörungen) und Ratsgeschäft
   - Ratsgeschäft zu Gesetzteserlass
   - Ratsgeschäft und Medienmitteilung
   - Exekutivbeschlüsse mit Geschäften (z.B. Inkrafttreten)
   - Identifikation "mitnehmen" von einem zum "related" Geschäft
-- Dokumente (Chronologisch verordnet)
-  - Versionen / Publikationsdatum
-  - Kommissionsberichte und Postulatsberichte
-  - Referenden und Volksinitiativen (Ablaufen und Inkrafttreten)
-  - [FRBR Model]([url](https://www.loc.gov/catdir/cpso/frbreng.pdf)): Work (z.b. Geschäft) - Expression (e.g. DE/FR/EN) - Manifestation (e.g. PDF) (- Item)
+
 - Guidelines Zugriff (Files, API)
 - Permanente URL/URI/DOI (gegen Linkrot) (ggf. via Hilfsmittel), an ELI orientieren (?)
 - Ablaufdaten für Links, Links zur Archivierung (vgl. [Kanton Uri](https://staur-digitalplattform.ch/tonaufnahmen/))
