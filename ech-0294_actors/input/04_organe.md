@@ -31,10 +31,25 @@ group
 -> Gemeinden, Kantone und Bund
 Zu diskutieren mit Hans-Peter
 
+-> Anwendungszweck der Struktur
+* Organisation innerhalb eines Parlamentssystems
+* Publikation an die öffentichkeit
+* Systeme mit Politischen Personen
+* Analysen mit Personen welche in Gruppen leben
+* Parteiliste global - UNIBE
+
+-> Ausdrücken der Ebene:
+* localExtend: Gemeinde Root
+* level: canton, municipality (abstract)
+
+
+Hierarchien innerhalb eines Types: Departement, Amt / Fraktion / Parteien
+
+
 * Partei
    * Parteilager ( Links, Rechts, Mitte )
 * Liste (kann Teil einer Partei sein, oder nicht)
-* Fraktion 
+* Fraktion
 * Parlamentskomission
 * Delegation
 * Ad-Hoc Komission
