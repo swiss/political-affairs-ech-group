@@ -5,8 +5,8 @@
      - Timeline -> (Timestamps, Activities): Michael und Benedikt machen Vorschlag
 - see: https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/schema_workin.yml
      - to do: Michael und Benedikt: linkml
-     - to do: Florin: Liste Vokabular von Fabian Ligibel
-- regelmässige Meetings: monatlich? 11:00 - 12:00 Montag -> Florin lädt ein
+     - to do: Florin: [Liste Vokabular](https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=0#gid=0) von Fabian Ligibel ☑️
+- regelmässige Meetings: monatlich? 11:00 - 12:00 Montag -> Florin lädt ein ☑️
 
 ## Meeting Notes 16. Juli 2025
  
