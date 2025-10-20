@@ -1,3 +1,9 @@
+## Meeting Notes 20 October 2025
+
+– FRBR
+- [Liste Vokabular](https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=0#gid=0)
+- ...
+
 ## Meeting Notes 22 September 2025
 
 - dependencies (cf. https://github.com/swiss/political-affairs-ech-group/blob/main/docs/resolved_dependencies_2025-09-01.md)
