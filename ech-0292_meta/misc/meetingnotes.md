@@ -1,17 +1,29 @@
+## Meeting Notes 17 November 2025
+
+- [Liste](https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=1490648211#gid=1490648211)
+  - Beispiele auswählen für Datenmodellierung
+  - konsolidieren, wo nötig
+- 
+
 ## Meeting Notes 20 October 2025
 
-- [FRBR Model]([url](https://www.loc.gov/catdir/cpso/frbreng.pdf))
+- [FRBR Model](https://www.loc.gov/catdir/cpso/frbreng.pdf)
   - Dokumente referenzieren mit verschiedenen Abstraktionsniveaus
   - Work (z.B. Geschäft) - Expression (z.B. DE/FR/EN) - Manifestation (e.g. PDF) (- Item (spezifisches Exemplar)
   - wird auch bei Fedlex gebraucht
-  - weiteres Vorgehen: verschiedene Beispiele durchdeklinieren als Basis für Modell, Schema
-      - Fragen z.B.
-        - Typologie für work_type?
-        - Auf welcher Ebene ist Datum angesiedelt? (xdate, date_type)
-      - Liste von Dokument-Typen von Fabian (Parlamentsdienste), BK und Stephan Lukasewitz anfordern
-      - ggf. Ergänzungen von Subgruppen
-- [Liste Vokabular](https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=0#gid=0)
-- ...
+- weiteres Vorgehen: verschiedene Beispiele durchdeklinieren als Basis für Modell, Schema
+  - Fragen z.B.
+    - Typologie für work_type?
+      - Auf welcher Ebene ist Datum angesiedelt? (xdate, date_type)
+    - Dafür braucht es möglich umfassende [Liste von Dokument-Typen](https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=1490648211#gid=1490648211)
+        - Liste von Dokument-Typen von Fabian Davoglio (Parlamentsdienste; via Florin), BK (via Florin) und Stephan Lukasewitz (Staatskanzlei ZH) + Genf (? via Florin) + Gemeinde (via Florin) anfordern --> in [Liste](https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=1490648211#gid=1490648211) eintragen
+    - ggf. Ergänzungen von Subgruppen (bestehende Arbeiten bzgl. verschiedenen Ebenen?)
+      - eCH-0293: Öffentlicher Ratsbetrieb (operations) – Michael (via Florin)
+      - eCH-0294: Politische Akteure: Personen, Gruppen und Organe (actors) – Daniela
+      - eCH-0295: Parlamentarische Geschäfte (affairs) – Florin
+      - eCH-0296: Erlasse und Gesetzestexte (laws) – Martin
+      - eCH-0297: Öffentliche Konsultationen (consultations) – Fabian Ligibel (via Martin)
+    - = Produkt der Meta-Subgruppe (?)
 
 ## Meeting Notes 22 September 2025
 
