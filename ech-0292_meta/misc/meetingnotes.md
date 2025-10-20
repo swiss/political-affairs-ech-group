@@ -1,6 +1,15 @@
 ## Meeting Notes 20 October 2025
 
-– FRBR
+- [FRBR Model]([url](https://www.loc.gov/catdir/cpso/frbreng.pdf))
+  - Dokumente referenzieren mit verschiedenen Abstraktionsniveaus
+  - Work (z.B. Geschäft) - Expression (z.B. DE/FR/EN) - Manifestation (e.g. PDF) (- Item (spezifisches Exemplar)
+  - wird auch bei Fedlex gebraucht
+  - weiteres Vorgehen: verschiedene Beispiele durchdeklinieren als Basis für Modell, Schema
+      - Fragen z.B.
+        - Typologie für work_type?
+        - Auf welcher Ebene ist Datum angesiedelt? (xdate, date_type)
+      - Liste von Dokument-Typen von Fabian (Parlamentsdienste), BK und Stephan Lukasewitz anfordern
+      - ggf. Ergänzungen von Subgruppen
 - [Liste Vokabular](https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=0#gid=0)
 - ...
 
