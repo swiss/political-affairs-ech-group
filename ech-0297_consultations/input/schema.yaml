@@ -1,8 +1,4 @@
-#
-# Syntaktisch korrekte Version
-# bitte in schema_working.yaml arbeiten!
-#
-
+# ech-0297_consultations/input/schema.yaml
 id: https://ch.paf.link/schema/consultation
 name: ch-paf-link-consultation
 prefixes:
@@ -15,17 +11,43 @@ prefixes:
   con: https://politics.ld.admin.ch/consultation/
 imports:
   - linkml:types
+  # If there is a shared “meta” or “common” schema in the project, import it:
+  # - ../ech-0292_meta/input/schema.yaml
 default_prefix: chpaf
 default_range: string
-  
+
 classes:
-  
+
   Consultation:
+    description: |
+      Hauptklasse für öffentliche Konsultationen (Vernehmlassungen).
+      Enthält Metadaten, Phasen, beteiligte Akteure, Dokumente, etc.
     slots:
       - id
-      - name
-      - content
+      - identifier
+      - title
+      - title_short
+      - description
+      - status
+      - landing_page
+      - publication_date
+      - start_date
+      - submission_deadline
+      - responsible_organization
+      - contact_person
+      - phases
       - receivers
+      - content
+
+  ConsultationPhase:
+    description: |
+      Repräsentiert eine Phase im Lebenszyklus einer Konsultation.
+      Z. B. Vorbereitung, Publikation, Einreichungsphase, Auswertung etc.
+    slots:
+      - phase_name
+      - start
+      - end
+      - description
 
   Container:
     tree_root: true
@@ -34,20 +56,93 @@ classes:
       - consultations
 
 slots:
-  
+
   id:
     identifier: true
     required: true
 
-  name:
-    slot_uri: dcterm:title
-    range: string
+  identifier:
+    description: Eindeutige Kennung (z. B. Projekt-ID)
     required: true
 
+  title:
+    description: Vollständiger Titel (mehrsprachig)
+    required: true
+    annotations:
+      translatable: true
+
+  title_short:
+    description: Kurztitel (mehrsprachig)
+    annotations:
+      translatable: true
+
+  description:
+    description: Kurzbeschreibung / Einführung (mehrsprachig)
+    annotations:
+      translatable: true
+
+  status:
+    description: Aktueller Status der Konsultation
+    required: true
+    range: string
+    enum:
+      preparing: preparing
+      planned: planned
+      open: open
+      closed: closed
+      waiting_for_statements: waiting_for_statements
+      waiting_for_report: waiting_for_report
+      cancelled: cancelled
+      unknown: unknown
+
+  landing_page:
+    description: URL der Landing Page
+    range: uri
+
+  publication_date:
+    description: Datum der Veröffentlichung
+    range: datetime
+
+  start_date:
+    description: Datum des Beginns der Einreichungsphase
+    range: datetime
+
+  submission_deadline:
+    description: Datum des Endes der Einreichungsphase
+    range: datetime
+
+  responsible_organization:
+    description: Zuständige Organisation (z. B. Departement, Amt)
+    range: string
+
+  contact_person:
+    description: Name oder Rolle der Ansprechperson
+    range: string
+
+  phases:
+    description: Liste von Phasen mit Zeitpunkten
+    range: ConsultationPhase
+    multivalued: true
+    inlined_as_list: true
+
+  phase_name:
+    description: Name der Phase (z. B. Vorbereitung, Publikation, Einreichung etc.)
+    range: string
+
+  start:
+    description: Startdatum der Phase
+    range: datetime
+
+  end:
+    description: Enddatum der Phase
+    range: datetime
+
   content:
+    description: Inhalt / Dokumentation oder Link zum Konsultationsinhalt
     required: true
 
   receivers:
+    description: Empfänger bzw. Adressaten der Konsultation
     slot_uri: chpaf:receiver
     multivalued: true
     inlined_as_list: true
