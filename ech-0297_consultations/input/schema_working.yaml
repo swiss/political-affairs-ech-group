@@ -24,6 +24,22 @@ consultation # eConsultation: project
   submission_deadline
     datetime
 
+Organizer
+- Group/Organization # Link Gremium
+- Person
+
+Participant  # Link to actors 
+  - Person
+    - Name
+      - required
+    - Lastname
+      - required
+    - Address 
+  - Group/Organization
+
+# Input Parteienliste 
+
+
 Fehlt noch:
 - Welche Organisation ist zuständig?
 - Wer ist die Ansprechperson?
