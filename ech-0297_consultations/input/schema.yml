@@ -1,0 +1,43 @@
+# Consultation
+
+## Allgemeingültige Informationen
+
+consultation # eConsultation: project
+  identifier
+    required
+  title
+    required
+    translatable
+  title_short
+    translatable
+  description # eConsultation: kurztext_id
+    translatable
+  status # eConsultation: state
+    required
+    values (preparing, planned, open, closed, waiting_for_statements, waiting_for_report, cancelled, unknown)
+  landing_page
+    string
+  publication_date # eConsultation: published_on
+    datetime
+  start_date # eConsultation: opening
+    datetime
+  submission_deadline
+    datetime
+
+Fehlt noch:
+- Welche Organisation ist zuständig?
+- Wer ist die Ansprechperson?
+
+Weggelassen (Implementierung):
+- created, updated dates
+- review_status
+- public
+- modified
+- counter_proposal_flag
+
+Phasen und Daten:
+- Vorbereitung
+- Publikation
+- Start der Einreichungen
+- Ende der Einreichungen (Deadline)
+- < TODO: Interne Abläufe >
