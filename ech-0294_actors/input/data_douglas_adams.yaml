@@ -1,0 +1,50 @@
+id: https://www.wikidata.org/wiki/Q42
+label: Douglas Adams
+label_long: Douglas Noël Adams
+birthyear: 1952
+birthdate: 1952-03-11
+picture: https://commons.wikimedia.org/wiki/File:Douglas_adams_portrait.jpg
+names:
+  - nameType: callName
+    value: Douglas
+  - nameType: officialLastName
+    value: Adams
+    validFrom: 1952-03-11
+addresses:
+  - addressType: privateAddress
+    addressURI: https://www.wikidata.org/wiki/Q42#P969
+    streetAddress: 1234 Fictional St, London, UK
+    postalCode: 12345
+    postalLocality: London
+languages:
+  - language: en
+    correspondence: true
+    native: true
+ch_citizenship:
+  validFrom: 2020-01-01
+  validUntil: 2025-01-01
+citizenships:
+  - country: GB
+    validFrom: 1952-03-11
+genders:
+  - gender: male
+    validFrom: 1952-03-11
+    pronouns:
+      - he
+      - him
+occupations:
+  - occupation: writer
+    validFrom: 1979-01-01
+    validUntil: 2001-05-11
+    active: false
+    paid: true
+trainings:
+  - type: schulabschluss
+    training: High School Diploma
+contacts:
+  - type: email
+    contact: douglas.adams@adams-familiy.org
+electoral_district:
+  district: London Central
+  validFrom: 2020-01-01
+  validUntil: 2025-01-01

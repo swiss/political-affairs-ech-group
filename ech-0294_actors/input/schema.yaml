@@ -9,21 +9,16 @@ prefixes:
   act: https://ch.paf.link/schema/actors/
   dcterm: http://purl.org/dc/terms/
 
-default_prefix: ex
+default_prefix: act
 default_range: string
 
 imports:
   - linkml:types
 
 classes:
-
-  Container:
-    tree_root: true
-    attributes:
-      person:
-        range: Person
       
   Person:
+    tree_root: true
     description: A person with identifiers, names, addresses, citizenships, and occupations.
     attributes:
       id:
@@ -45,34 +40,47 @@ classes:
         description: "Link to an image (preferred: PNG, then JPG, then GIF)"
       names:
         range: Name
+        slot_uri: act:name
         multivalued: true
         inlined_as_list: true
       addresses:
         range: Address
+        slot_uri: act:address
         multivalued: true
         inlined_as_list: true
         description: place of residence and work
       languages:
         range: LanguageProficiency
+        slot_uri: act:language
         multivalued: true
         inlined_as_list: true
       ch_citizenship:
         range: Validity
       citizenships:
         range: Citizenship
+        slot_uri: act:citizenship
         multivalued: true
+        inlined_as_list: true
       genders:
         range: Gender
+        slot_uri: act:gender
         multivalued: true
+        inlined_as_list: true
       occupations:
         range: Occupation
+        slot_uri: act:occupation
         multivalued: true
-      training:
+        inlined_as_list: true
+      trainings:
         range: Training
+        slot_uri: act:training
         multivalued: true
+        inlined_as_list: true
       contacts:
         range: Contact
+        slot_uri: act:contact
         multivalued: true
+        inlined_as_list: true
       electoral_district:
         range: ElectoralDistrict
 
@@ -134,6 +142,9 @@ classes:
         description: Gender code
         required: true
       pronouns:
+        description: Pronouns used by the person
+        multivalued: true
+        inlined_as_list: true
 
   Occupation:
     is_a: Validity
