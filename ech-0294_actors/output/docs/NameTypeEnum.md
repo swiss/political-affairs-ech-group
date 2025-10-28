@@ -21,7 +21,7 @@ URI: [act:NameTypeEnum](https://ch.paf.link/schema/actors/NameTypeEnum)
 
 | Name | Description |
 | ---  | --- |
-| [nameType](nameType.md) | categories of name types |
+| [name_type](name_type.md) | categories of name types |
 
 
 

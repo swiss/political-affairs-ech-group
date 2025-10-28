@@ -31,14 +31,13 @@ Name: PersonSchema
 | Slot | Description |
 | --- | --- |
 | [active](active.md) |  |
+| [address_type](address_type.md) |  |
+| [address_URI](address_URI.md) | Preferred URI of address |
 | [addresses](addresses.md) | place of residence and work |
-| [addressType](addressType.md) |  |
-| [addressURI](addressURI.md) | Preferred URI of address |
 | [birthdate](birthdate.md) | Exact date of birth |
 | [birthyear](birthyear.md) | Year of birth |
 | [ch_citizenship](ch_citizenship.md) |  |
 | [citizenships](citizenships.md) |  |
-| [contact](contact.md) |  |
 | [contacts](contacts.md) |  |
 | [correspondence](correspondence.md) | preferred language |
 | [country](country.md) | ISO 3166 country code (can't be CH) |
@@ -46,31 +45,29 @@ Name: PersonSchema
 | [electoral_district](electoral_district.md) |  |
 | [enterprise](enterprise.md) |  |
 | [enterprise_uid](enterprise_uid.md) |  |
-| [gender](gender.md) | Gender code |
 | [genders](genders.md) |  |
 | [id](id.md) | Wikidata-ID preferred |
 | [label](label.md) | Display name of the person |
 | [label_long](label_long.md) | Extended display name (with title, etc |
 | [language](language.md) | ISO language code |
 | [languages](languages.md) |  |
+| [name_type](name_type.md) | categories of name types |
 | [names](names.md) |  |
-| [nameType](nameType.md) | categories of name types |
 | [native](native.md) | proficient language |
-| [occupation](occupation.md) |  |
 | [occupation_isco19_code](occupation_isco19_code.md) |  |
 | [occupations](occupations.md) |  |
 | [paid](paid.md) |  |
 | [picture](picture.md) | Link to an image (preferred: PNG, then JPG, then GIF) |
-| [postalCode](postalCode.md) |  |
-| [postalLocality](postalLocality.md) |  |
+| [postal_code](postal_code.md) |  |
+| [postal_locality](postal_locality.md) |  |
 | [pronouns](pronouns.md) | Pronouns used by the person |
-| [streetAddress](streetAddress.md) |  |
-| [training](training.md) |  |
+| [street_address](street_address.md) |  |
 | [training_isco19_code](training_isco19_code.md) |  |
 | [trainings](trainings.md) |  |
 | [type](type.md) |  |
-| [validFrom](validFrom.md) |  |
-| [validUntil](validUntil.md) |  |
+| [valid_until](valid_until.md) |  |
+| [valid_from](valid_from.md) |  |
+| [valid_until](valid_until.md) |  |
 | [value](value.md) |  |
 
 

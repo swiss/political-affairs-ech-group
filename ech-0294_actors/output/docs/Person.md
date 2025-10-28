@@ -304,6 +304,7 @@ attributes:
     name: ch_citizenship
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
+    slot_uri: act:chCitizenship
     domain_of:
     - Person
     range: Validity
@@ -366,6 +367,7 @@ attributes:
     name: electoral_district
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
+    slot_uri: act:electoralDistrict
     domain_of:
     - Person
     range: ElectoralDistrict
@@ -486,6 +488,7 @@ attributes:
     name: ch_citizenship
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
+    slot_uri: act:chCitizenship
     alias: ch_citizenship
     owner: Person
     domain_of:
@@ -555,6 +558,7 @@ attributes:
     name: electoral_district
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
+    slot_uri: act:electoralDistrict
     alias: electoral_district
     owner: Person
     domain_of:

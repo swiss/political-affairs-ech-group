@@ -19,9 +19,9 @@ URI: [act:Citizenship](https://ch.paf.link/schema/actors/Citizenship)
       
       Citizenship : country
         
-      Citizenship : validFrom
+      Citizenship : valid_until
         
-      Citizenship : validUntil
+      Citizenship : valid_from
         
       
 ```
@@ -41,8 +41,8 @@ URI: [act:Citizenship](https://ch.paf.link/schema/actors/Citizenship)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [country](country.md) | 1 <br/> [String](String.md) | ISO 3166 country code (can't be CH) | direct |
-| [validFrom](validFrom.md) | 0..1 <br/> [Date](Date.md) |  | [Validity](Validity.md) |
-| [validUntil](validUntil.md) | 0..1 <br/> [Date](Date.md) |  | [Validity](Validity.md) |
+| [valid_from](valid_from.md) | 0..1 <br/> [Date](Date.md) |  | [Validity](Validity.md) |
+| [valid_until](valid_until.md) | 0..1 <br/> [Date](Date.md) |  | [Validity](Validity.md) |
 
 
 
@@ -130,23 +130,25 @@ attributes:
     - Citizenship
     range: string
     required: true
-  validFrom:
-    name: validFrom
+  valid_from:
+    name: valid_from
     from_schema: https://ch.paf.link/schema/actors
-    alias: validFrom
+    slot_uri: act:validFrom
+    alias: valid_from
     owner: Citizenship
     domain_of:
     - Name
     - Validity
     - ElectoralDistrict
     range: date
-  validUntil:
-    name: validUntil
+  valid-until:
+    name: valid-until
     from_schema: https://ch.paf.link/schema/actors
-    alias: validUntil
+    rank: 1000
+    slot_uri: act:validUntil
+    alias: valid_until
     owner: Citizenship
     domain_of:
-    - Name
     - Validity
     - ElectoralDistrict
     range: date

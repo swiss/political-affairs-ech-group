@@ -14,8 +14,6 @@ URI: [act:Contact](https://ch.paf.link/schema/actors/Contact)
  classDiagram
     class Contact
     click Contact href "../Contact/"
-      Contact : contact
-        
       Contact : type
         
           
@@ -26,6 +24,8 @@ URI: [act:Contact](https://ch.paf.link/schema/actors/Contact)
         click ContactTypeEnum href "../ContactTypeEnum/"
     
 
+        
+      Contact : value
         
       
 ```
@@ -41,7 +41,7 @@ URI: [act:Contact](https://ch.paf.link/schema/actors/Contact)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [type](type.md) | 1 <br/> [ContactTypeEnum](ContactTypeEnum.md) |  | direct |
-| [contact](contact.md) | 1 <br/> [String](String.md) |  | direct |
+| [value](value.md) | 1 <br/> [String](String.md) |  | direct |
 
 
 
@@ -105,11 +105,14 @@ attributes:
     - Contact
     range: ContactTypeEnum
     required: true
-  contact:
-    name: contact
+  value:
+    name: value
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     domain_of:
+    - Name
+    - Gender
+    - Occupation
+    - Training
     - Contact
     required: true
 
@@ -133,13 +136,16 @@ attributes:
     - Contact
     range: ContactTypeEnum
     required: true
-  contact:
-    name: contact
+  value:
+    name: value
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    alias: contact
+    alias: value
     owner: Contact
     domain_of:
+    - Name
+    - Gender
+    - Occupation
+    - Training
     - Contact
     range: string
     required: true

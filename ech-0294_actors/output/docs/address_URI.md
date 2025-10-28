@@ -1,6 +1,6 @@
 
 
-# Slot: addressURI 
+# Slot: address_URI 
 
 
 _Preferred URI of address_
@@ -10,7 +10,7 @@ _Preferred URI of address_
 
 
 URI: [act:addressURI](https://ch.paf.link/schema/actors/addressURI)
-Alias: addressURI
+Alias: address_URI
 
 <!-- no inheritance hierarchy -->
 
@@ -56,7 +56,7 @@ Alias: addressURI
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | act:addressURI |
-| native | act:addressURI |
+| native | act:address_URI |
 
 
 
@@ -65,11 +65,12 @@ Alias: addressURI
 
 <details>
 ```yaml
-name: addressURI
+name: address-URI
 description: Preferred URI of address
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: addressURI
+slot_uri: act:addressURI
+alias: address_URI
 owner: Address
 domain_of:
 - Address

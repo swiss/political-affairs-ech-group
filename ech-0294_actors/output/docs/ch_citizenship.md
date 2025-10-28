@@ -4,7 +4,7 @@
 
 
 
-URI: [act:ch_citizenship](https://ch.paf.link/schema/actors/ch_citizenship)
+URI: [act:chCitizenship](https://ch.paf.link/schema/actors/chCitizenship)
 Alias: ch_citizenship
 
 <!-- no inheritance hierarchy -->
@@ -50,7 +50,7 @@ Alias: ch_citizenship
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:ch_citizenship |
+| self | act:chCitizenship |
 | native | act:ch_citizenship |
 
 
@@ -63,6 +63,7 @@ Alias: ch_citizenship
 name: ch_citizenship
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
+slot_uri: act:chCitizenship
 alias: ch_citizenship
 owner: Person
 domain_of:

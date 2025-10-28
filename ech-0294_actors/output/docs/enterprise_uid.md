@@ -4,7 +4,7 @@
 
 
 
-URI: [act:enterprise_uid](https://ch.paf.link/schema/actors/enterprise_uid)
+URI: [act:enterpriseUid](https://ch.paf.link/schema/actors/enterpriseUid)
 Alias: enterprise_uid
 
 <!-- no inheritance hierarchy -->
@@ -50,7 +50,7 @@ Alias: enterprise_uid
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:enterprise_uid |
+| self | act:enterpriseUid |
 | native | act:enterprise_uid |
 
 
@@ -63,6 +63,7 @@ Alias: enterprise_uid
 name: enterprise_uid
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
+slot_uri: act:enterpriseUid
 alias: enterprise_uid
 owner: Occupation
 domain_of:

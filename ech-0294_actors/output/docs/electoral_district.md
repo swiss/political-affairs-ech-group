@@ -4,7 +4,7 @@
 
 
 
-URI: [act:electoral_district](https://ch.paf.link/schema/actors/electoral_district)
+URI: [act:electoralDistrict](https://ch.paf.link/schema/actors/electoralDistrict)
 Alias: electoral_district
 
 <!-- no inheritance hierarchy -->
@@ -50,7 +50,7 @@ Alias: electoral_district
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:electoral_district |
+| self | act:electoralDistrict |
 | native | act:electoral_district |
 
 
@@ -63,6 +63,7 @@ Alias: electoral_district
 name: electoral_district
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
+slot_uri: act:electoralDistrict
 alias: electoral_district
 owner: Person
 domain_of:

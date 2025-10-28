@@ -14,24 +14,24 @@ URI: [act:Address](https://ch.paf.link/schema/actors/Address)
  classDiagram
     class Address
     click Address href "../Address/"
-      Address : addressType
+      Address : address_type
         
           
     
         
         
-        Address --> "1" AddressTypeEnum : addressType
+        Address --> "1" AddressTypeEnum : address_type
         click AddressTypeEnum href "../AddressTypeEnum/"
     
 
         
-      Address : addressURI
+      Address : address_URI
         
-      Address : postalCode
+      Address : postal_code
         
-      Address : postalLocality
+      Address : postal_locality
         
-      Address : streetAddress
+      Address : street_address
         
       
 ```
@@ -46,11 +46,11 @@ URI: [act:Address](https://ch.paf.link/schema/actors/Address)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [addressType](addressType.md) | 1 <br/> [AddressTypeEnum](AddressTypeEnum.md) |  | direct |
-| [addressURI](addressURI.md) | 0..1 <br/> [String](String.md) | Preferred URI of address | direct |
-| [streetAddress](streetAddress.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [postalCode](postalCode.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [postalLocality](postalLocality.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [address_type](address_type.md) | 1 <br/> [AddressTypeEnum](AddressTypeEnum.md) |  | direct |
+| [address_URI](address_URI.md) | 0..1 <br/> [String](String.md) | Preferred URI of address | direct |
+| [street_address](street_address.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [postal_code](postal_code.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [postal_locality](postal_locality.md) | 0..1 <br/> [String](String.md) |  | direct |
 
 
 
@@ -106,37 +106,42 @@ URI: [act:Address](https://ch.paf.link/schema/actors/Address)
 name: Address
 from_schema: https://ch.paf.link/schema/actors
 attributes:
-  addressType:
-    name: addressType
+  address-type:
+    name: address-type
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
+    slot_uri: act:addressType
     domain_of:
     - Address
     range: AddressTypeEnum
     required: true
-  addressURI:
-    name: addressURI
+  address-URI:
+    name: address-URI
     description: Preferred URI of address
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
+    slot_uri: act:addressURI
     domain_of:
     - Address
-  streetAddress:
-    name: streetAddress
+  street-address:
+    name: street-address
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
+    slot_uri: act:streetAddress
     domain_of:
     - Address
-  postalCode:
-    name: postalCode
+  postal-code:
+    name: postal-code
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
+    slot_uri: act:postalCode
     domain_of:
     - Address
-  postalLocality:
-    name: postalLocality
+  postal-locality:
+    name: postal-locality
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
+    slot_uri: act:postalLocality
     domain_of:
     - Address
 
@@ -150,49 +155,54 @@ attributes:
 name: Address
 from_schema: https://ch.paf.link/schema/actors
 attributes:
-  addressType:
-    name: addressType
+  address-type:
+    name: address-type
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
-    alias: addressType
+    slot_uri: act:addressType
+    alias: address_type
     owner: Address
     domain_of:
     - Address
     range: AddressTypeEnum
     required: true
-  addressURI:
-    name: addressURI
+  address-URI:
+    name: address-URI
     description: Preferred URI of address
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
-    alias: addressURI
+    slot_uri: act:addressURI
+    alias: address_URI
     owner: Address
     domain_of:
     - Address
     range: string
-  streetAddress:
-    name: streetAddress
+  street-address:
+    name: street-address
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
-    alias: streetAddress
+    slot_uri: act:streetAddress
+    alias: street_address
     owner: Address
     domain_of:
     - Address
     range: string
-  postalCode:
-    name: postalCode
+  postal-code:
+    name: postal-code
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
-    alias: postalCode
+    slot_uri: act:postalCode
+    alias: postal_code
     owner: Address
     domain_of:
     - Address
     range: string
-  postalLocality:
-    name: postalLocality
+  postal-locality:
+    name: postal-locality
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
-    alias: postalLocality
+    slot_uri: act:postalLocality
+    alias: postal_locality
     owner: Address
     domain_of:
     - Address

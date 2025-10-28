@@ -1,11 +1,11 @@
 
 
-# Slot: postalLocality 
+# Slot: postal_code 
 
 
 
-URI: [act:postalLocality](https://ch.paf.link/schema/actors/postalLocality)
-Alias: postalLocality
+URI: [act:postalCode](https://ch.paf.link/schema/actors/postalCode)
+Alias: postal_code
 
 <!-- no inheritance hierarchy -->
 
@@ -50,8 +50,8 @@ Alias: postalLocality
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:postalLocality |
-| native | act:postalLocality |
+| self | act:postalCode |
+| native | act:postal_code |
 
 
 
@@ -60,10 +60,11 @@ Alias: postalLocality
 
 <details>
 ```yaml
-name: postalLocality
+name: postal-code
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: postalLocality
+slot_uri: act:postalCode
+alias: postal_code
 owner: Address
 domain_of:
 - Address

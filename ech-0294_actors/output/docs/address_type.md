@@ -1,11 +1,11 @@
 
 
-# Slot: addressType 
+# Slot: address_type 
 
 
 
 URI: [act:addressType](https://ch.paf.link/schema/actors/addressType)
-Alias: addressType
+Alias: address_type
 
 <!-- no inheritance hierarchy -->
 
@@ -53,7 +53,7 @@ Alias: addressType
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | act:addressType |
-| native | act:addressType |
+| native | act:address_type |
 
 
 
@@ -62,10 +62,11 @@ Alias: addressType
 
 <details>
 ```yaml
-name: addressType
+name: address-type
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: addressType
+slot_uri: act:addressType
+alias: address_type
 owner: Address
 domain_of:
 - Address

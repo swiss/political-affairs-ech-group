@@ -1,11 +1,11 @@
 
 
-# Slot: streetAddress 
+# Slot: street_address 
 
 
 
 URI: [act:streetAddress](https://ch.paf.link/schema/actors/streetAddress)
-Alias: streetAddress
+Alias: street_address
 
 <!-- no inheritance hierarchy -->
 
@@ -51,7 +51,7 @@ Alias: streetAddress
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | act:streetAddress |
-| native | act:streetAddress |
+| native | act:street_address |
 
 
 
@@ -60,10 +60,11 @@ Alias: streetAddress
 
 <details>
 ```yaml
-name: streetAddress
+name: street-address
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: streetAddress
+slot_uri: act:streetAddress
+alias: street_address
 owner: Address
 domain_of:
 - Address

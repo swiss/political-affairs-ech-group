@@ -4,29 +4,29 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "addressType": {
-                    "$ref": "#/$defs/AddressTypeEnum"
-                },
-                "addressURI": {
+                "address_URI": {
                     "description": "Preferred URI of address",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "postalCode": {
+                "address_type": {
+                    "$ref": "#/$defs/AddressTypeEnum"
+                },
+                "postal_code": {
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "postalLocality": {
+                "postal_locality": {
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "streetAddress": {
+                "street_address": {
                     "type": [
                         "string",
                         "null"
@@ -34,7 +34,7 @@
                 }
             },
             "required": [
-                "addressType"
+                "address_type"
             ],
             "title": "Address",
             "type": "object"
@@ -57,14 +57,14 @@
                     "description": "ISO 3166 country code (can't be CH)",
                     "type": "string"
                 },
-                "validFrom": {
+                "valid_from": {
                     "format": "date",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "validUntil": {
+                "valid_until": {
                     "format": "date",
                     "type": [
                         "string",
@@ -82,16 +82,16 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "contact": {
-                    "type": "string"
-                },
                 "type": {
                     "$ref": "#/$defs/ContactTypeEnum"
+                },
+                "value": {
+                    "type": "string"
                 }
             },
             "required": [
                 "type",
-                "contact"
+                "value"
             ],
             "title": "Contact",
             "type": "object"
@@ -114,14 +114,14 @@
                 "district": {
                     "type": "string"
                 },
-                "validFrom": {
+                "valid_from": {
                     "format": "date",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "validUntil": {
+                "valid_until": {
                     "format": "date",
                     "type": [
                         "string",
@@ -139,10 +139,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "gender": {
-                    "description": "Gender code",
-                    "type": "string"
-                },
                 "pronouns": {
                     "description": "Pronouns used by the person",
                     "items": {
@@ -153,23 +149,27 @@
                         "null"
                     ]
                 },
-                "validFrom": {
+                "valid_from": {
                     "format": "date",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "validUntil": {
+                "valid_until": {
                     "format": "date",
                     "type": [
                         "string",
                         "null"
                     ]
+                },
+                "value": {
+                    "description": "Gender code",
+                    "type": "string"
                 }
             },
             "required": [
-                "gender"
+                "value"
             ],
             "title": "Gender",
             "type": "object"
@@ -207,18 +207,18 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "nameType": {
+                "name_type": {
                     "$ref": "#/$defs/NameTypeEnum",
                     "description": "categories of name types"
                 },
-                "validFrom": {
+                "valid_from": {
                     "format": "date",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "validUntil": {
+                "valid_until": {
                     "format": "date",
                     "type": [
                         "string",
@@ -230,7 +230,7 @@
                 }
             },
             "required": [
-                "nameType",
+                "name_type",
                 "value"
             ],
             "title": "Name",
@@ -270,12 +270,6 @@
                         "null"
                     ]
                 },
-                "occupation": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "occupation_isco19_code": {
                     "type": [
                         "string",
@@ -288,15 +282,21 @@
                         "null"
                     ]
                 },
-                "validFrom": {
+                "valid_from": {
                     "format": "date",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "validUntil": {
+                "valid_until": {
                     "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "value": {
                     "type": [
                         "string",
                         "null"
@@ -452,12 +452,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "training": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "training_isco19_code": {
                     "type": [
                         "string",
@@ -466,6 +460,12 @@
                 },
                 "type": {
                     "$ref": "#/$defs/TrainingTypeEnum"
+                },
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -491,14 +491,14 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "validFrom": {
+                "valid_from": {
                     "format": "date",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "validUntil": {
+                "valid_until": {
                     "format": "date",
                     "type": [
                         "string",

@@ -23,15 +23,15 @@ URI: [act:Occupation](https://ch.paf.link/schema/actors/Occupation)
         
       Occupation : enterprise_uid
         
-      Occupation : occupation
-        
       Occupation : occupation_isco19_code
         
       Occupation : paid
         
-      Occupation : validFrom
+      Occupation : valid_until
         
-      Occupation : validUntil
+      Occupation : valid_from
+        
+      Occupation : value
         
       
 ```
@@ -53,11 +53,11 @@ URI: [act:Occupation](https://ch.paf.link/schema/actors/Occupation)
 | [active](active.md) | 0..1 <br/> [Boolean](Boolean.md) |  | direct |
 | [paid](paid.md) | 0..1 <br/> [Boolean](Boolean.md) |  | direct |
 | [occupation_isco19_code](occupation_isco19_code.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [occupation](occupation.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [value](value.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [enterprise_uid](enterprise_uid.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [enterprise](enterprise.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [validFrom](validFrom.md) | 0..1 <br/> [Date](Date.md) |  | [Validity](Validity.md) |
-| [validUntil](validUntil.md) | 0..1 <br/> [Date](Date.md) |  | [Validity](Validity.md) |
+| [valid_from](valid_from.md) | 0..1 <br/> [Date](Date.md) |  | [Validity](Validity.md) |
+| [valid_until](valid_until.md) | 0..1 <br/> [Date](Date.md) |  | [Validity](Validity.md) |
 
 
 
@@ -132,18 +132,23 @@ attributes:
     name: occupation_isco19_code
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
+    slot_uri: act:occupationIsco19Code
     domain_of:
     - Occupation
-  occupation:
-    name: occupation
+  value:
+    name: value
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     domain_of:
+    - Name
+    - Gender
     - Occupation
+    - Training
+    - Contact
   enterprise_uid:
     name: enterprise_uid
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
+    slot_uri: act:enterpriseUid
     domain_of:
     - Occupation
   enterprise:
@@ -186,24 +191,29 @@ attributes:
     name: occupation_isco19_code
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
+    slot_uri: act:occupationIsco19Code
     alias: occupation_isco19_code
     owner: Occupation
     domain_of:
     - Occupation
     range: string
-  occupation:
-    name: occupation
+  value:
+    name: value
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    alias: occupation
+    alias: value
     owner: Occupation
     domain_of:
+    - Name
+    - Gender
     - Occupation
+    - Training
+    - Contact
     range: string
   enterprise_uid:
     name: enterprise_uid
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
+    slot_uri: act:enterpriseUid
     alias: enterprise_uid
     owner: Occupation
     domain_of:
@@ -218,23 +228,25 @@ attributes:
     domain_of:
     - Occupation
     range: string
-  validFrom:
-    name: validFrom
+  valid_from:
+    name: valid_from
     from_schema: https://ch.paf.link/schema/actors
-    alias: validFrom
+    slot_uri: act:validFrom
+    alias: valid_from
     owner: Occupation
     domain_of:
     - Name
     - Validity
     - ElectoralDistrict
     range: date
-  validUntil:
-    name: validUntil
+  valid-until:
+    name: valid-until
     from_schema: https://ch.paf.link/schema/actors
-    alias: validUntil
+    rank: 1000
+    slot_uri: act:validUntil
+    alias: valid_until
     owner: Occupation
     domain_of:
-    - Name
     - Validity
     - ElectoralDistrict
     range: date

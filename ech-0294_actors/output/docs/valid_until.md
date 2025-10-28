@@ -1,11 +1,11 @@
 
 
-# Slot: occupation 
+# Slot: valid_until 
 
 
 
-URI: [act:occupation](https://ch.paf.link/schema/actors/occupation)
-Alias: occupation
+URI: [act:valid_until](https://ch.paf.link/schema/actors/valid_until)
+Alias: valid_until
 
 <!-- no inheritance hierarchy -->
 
@@ -17,7 +17,11 @@ Alias: occupation
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Citizenship](Citizenship.md) |  |  no  |
+| [Gender](Gender.md) |  |  no  |
 | [Occupation](Occupation.md) |  |  no  |
+| [ElectoralDistrict](ElectoralDistrict.md) |  |  no  |
+| [Validity](Validity.md) |  |  no  |
 
 
 
@@ -38,20 +42,13 @@ Alias: occupation
 
 
 
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/actors
-
-
-
 
 ## Mappings
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:occupation |
-| native | act:occupation |
+| self | act:valid_until |
+| native | act:valid_until |
 
 
 
@@ -60,13 +57,11 @@ Alias: occupation
 
 <details>
 ```yaml
-name: occupation
-from_schema: https://ch.paf.link/schema/actors
-rank: 1000
-alias: occupation
-owner: Occupation
+name: valid-until
+alias: valid_until
 domain_of:
-- Occupation
+- Validity
+- ElectoralDistrict
 range: string
 
 ```

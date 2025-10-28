@@ -17,13 +17,13 @@ URI: [act:Gender](https://ch.paf.link/schema/actors/Gender)
       Validity <|-- Gender
         click Validity href "../Validity/"
       
-      Gender : gender
-        
       Gender : pronouns
         
-      Gender : validFrom
+      Gender : valid_until
         
-      Gender : validUntil
+      Gender : valid_from
+        
+      Gender : value
         
       
 ```
@@ -42,10 +42,10 @@ URI: [act:Gender](https://ch.paf.link/schema/actors/Gender)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [gender](gender.md) | 1 <br/> [String](String.md) | Gender code | direct |
+| [value](value.md) | 1 <br/> [String](String.md) | Gender code | direct |
 | [pronouns](pronouns.md) | * <br/> [String](String.md) | Pronouns used by the person | direct |
-| [validFrom](validFrom.md) | 0..1 <br/> [Date](Date.md) |  | [Validity](Validity.md) |
-| [validUntil](validUntil.md) | 0..1 <br/> [Date](Date.md) |  | [Validity](Validity.md) |
+| [valid_from](valid_from.md) | 0..1 <br/> [Date](Date.md) |  | [Validity](Validity.md) |
+| [valid_until](valid_until.md) | 0..1 <br/> [Date](Date.md) |  | [Validity](Validity.md) |
 
 
 
@@ -102,13 +102,16 @@ name: Gender
 from_schema: https://ch.paf.link/schema/actors
 is_a: Validity
 attributes:
-  gender:
-    name: gender
+  value:
+    name: value
     description: Gender code
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     domain_of:
+    - Name
     - Gender
+    - Occupation
+    - Training
+    - Contact
     required: true
   pronouns:
     name: pronouns
@@ -132,15 +135,18 @@ name: Gender
 from_schema: https://ch.paf.link/schema/actors
 is_a: Validity
 attributes:
-  gender:
-    name: gender
+  value:
+    name: value
     description: Gender code
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    alias: gender
+    alias: value
     owner: Gender
     domain_of:
+    - Name
     - Gender
+    - Occupation
+    - Training
+    - Contact
     range: string
     required: true
   pronouns:
@@ -156,23 +162,25 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  validFrom:
-    name: validFrom
+  valid_from:
+    name: valid_from
     from_schema: https://ch.paf.link/schema/actors
-    alias: validFrom
+    slot_uri: act:validFrom
+    alias: valid_from
     owner: Gender
     domain_of:
     - Name
     - Validity
     - ElectoralDistrict
     range: date
-  validUntil:
-    name: validUntil
+  valid-until:
+    name: valid-until
     from_schema: https://ch.paf.link/schema/actors
-    alias: validUntil
+    rank: 1000
+    slot_uri: act:validUntil
+    alias: valid_until
     owner: Gender
     domain_of:
-    - Name
     - Validity
     - ElectoralDistrict
     range: date

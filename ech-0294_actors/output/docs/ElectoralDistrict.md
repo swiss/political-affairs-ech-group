@@ -16,9 +16,9 @@ URI: [act:ElectoralDistrict](https://ch.paf.link/schema/actors/ElectoralDistrict
     click ElectoralDistrict href "../ElectoralDistrict/"
       ElectoralDistrict : district
         
-      ElectoralDistrict : validFrom
+      ElectoralDistrict : valid_until
         
-      ElectoralDistrict : validUntil
+      ElectoralDistrict : valid_from
         
       
 ```
@@ -34,8 +34,8 @@ URI: [act:ElectoralDistrict](https://ch.paf.link/schema/actors/ElectoralDistrict
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [district](district.md) | 1 <br/> [String](String.md) |  | direct |
-| [validFrom](validFrom.md) | 0..1 <br/> [Date](Date.md) |  | direct |
-| [validUntil](validUntil.md) | 0..1 <br/> [Date](Date.md) |  | direct |
+| [valid_from](valid_from.md) | 0..1 <br/> [Date](Date.md) |  | direct |
+| [valid_until](valid_until.md) | 0..1 <br/> [Date](Date.md) |  | direct |
 
 
 
@@ -98,19 +98,20 @@ attributes:
     domain_of:
     - ElectoralDistrict
     required: true
-  validFrom:
-    name: validFrom
+  valid_from:
+    name: valid_from
     from_schema: https://ch.paf.link/schema/actors
+    slot_uri: act:validFrom
     domain_of:
     - Name
     - Validity
     - ElectoralDistrict
     range: date
-  validUntil:
-    name: validUntil
+  valid-until:
+    name: valid-until
     from_schema: https://ch.paf.link/schema/actors
+    slot_uri: act:validUntil
     domain_of:
-    - Name
     - Validity
     - ElectoralDistrict
     range: date
@@ -135,23 +136,24 @@ attributes:
     - ElectoralDistrict
     range: string
     required: true
-  validFrom:
-    name: validFrom
+  valid_from:
+    name: valid_from
     from_schema: https://ch.paf.link/schema/actors
-    alias: validFrom
+    slot_uri: act:validFrom
+    alias: valid_from
     owner: ElectoralDistrict
     domain_of:
     - Name
     - Validity
     - ElectoralDistrict
     range: date
-  validUntil:
-    name: validUntil
+  valid-until:
+    name: valid-until
     from_schema: https://ch.paf.link/schema/actors
-    alias: validUntil
+    slot_uri: act:validUntil
+    alias: valid_until
     owner: ElectoralDistrict
     domain_of:
-    - Name
     - Validity
     - ElectoralDistrict
     range: date

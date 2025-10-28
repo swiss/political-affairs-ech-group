@@ -10,24 +10,24 @@
             act:streetAddress "1234 Fictional St, London, UK" ] ;
     act:birthdate "1952-03-11"^^xsd:date ;
     act:birthyear 1952 ;
-    act:ch_citizenship [ a act:Validity ;
+    act:chCitizenship [ a act:Validity ;
             act:validFrom "2020-01-01"^^xsd:date ;
             act:validUntil "2025-01-01"^^xsd:date ] ;
     act:citizenship [ a act:Citizenship ;
             act:country "GB" ;
             act:validFrom "1952-03-11"^^xsd:date ] ;
     act:contact [ a act:Contact ;
-            act:contact "douglas.adams@adams-familiy.org" ;
-            act:type "email" ] ;
-    act:electoral_district [ a act:ElectoralDistrict ;
+            act:type "email" ;
+            act:value "douglas.adams@adams-familiy.org" ] ;
+    act:electoralDistrict [ a act:ElectoralDistrict ;
             act:district "London Central" ;
             act:validFrom "2020-01-01"^^xsd:date ;
             act:validUntil "2025-01-01"^^xsd:date ] ;
     act:gender [ a act:Gender ;
-            act:gender "male" ;
             act:pronouns "he",
                 "him" ;
-            act:validFrom "1952-03-11"^^xsd:date ] ;
+            act:validFrom "1952-03-11"^^xsd:date ;
+            act:value "male" ] ;
     act:label "Douglas Adams" ;
     act:label_long "Douglas Noël Adams" ;
     act:language [ a act:LanguageProficiency ;
@@ -35,21 +35,21 @@
             act:language "en" ;
             act:native true ] ;
     act:name [ a act:Name ;
+            act:nameType "callName" ;
+            act:value "Douglas" ],
+        [ a act:Name ;
             act:nameType "officialLastName" ;
             act:validFrom "1952-03-11"^^xsd:date ;
-            act:value "Adams" ],
-        [ a act:Name ;
-            act:nameType "callName" ;
-            act:value "Douglas" ] ;
+            act:value "Adams" ] ;
     act:occupation [ a act:Occupation ;
             act:active false ;
-            act:occupation "writer" ;
             act:paid true ;
             act:validFrom "1979-01-01"^^xsd:date ;
-            act:validUntil "2001-05-11"^^xsd:date ] ;
+            act:validUntil "2001-05-11"^^xsd:date ;
+            act:value "writer" ] ;
     act:picture "https://commons.wikimedia.org/wiki/File:Douglas_adams_portrait.jpg" ;
     act:training [ a act:Training ;
-            act:training "High School Diploma" ;
-            act:type "schulabschluss" ] .
+            act:type "schulabschluss" ;
+            act:value "High School Diploma" ] .
 
 

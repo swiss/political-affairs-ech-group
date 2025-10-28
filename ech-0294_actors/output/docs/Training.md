@@ -14,8 +14,6 @@ URI: [act:Training](https://ch.paf.link/schema/actors/Training)
  classDiagram
     class Training
     click Training href "../Training/"
-      Training : training
-        
       Training : training_isco19_code
         
       Training : type
@@ -28,6 +26,8 @@ URI: [act:Training](https://ch.paf.link/schema/actors/Training)
         click TrainingTypeEnum href "../TrainingTypeEnum/"
     
 
+        
+      Training : value
         
       
 ```
@@ -44,7 +44,7 @@ URI: [act:Training](https://ch.paf.link/schema/actors/Training)
 | ---  | --- | --- | --- |
 | [type](type.md) | 1 <br/> [TrainingTypeEnum](TrainingTypeEnum.md) |  | direct |
 | [training_isco19_code](training_isco19_code.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [training](training.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [value](value.md) | 0..1 <br/> [String](String.md) |  | direct |
 
 
 
@@ -113,14 +113,18 @@ attributes:
     name: training_isco19_code
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
+    slot_uri: act:trainingIsco19Code
     domain_of:
     - Training
-  training:
-    name: training
+  value:
+    name: value
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     domain_of:
+    - Name
+    - Gender
+    - Occupation
     - Training
+    - Contact
 
 ```
 </details>
@@ -147,19 +151,23 @@ attributes:
     name: training_isco19_code
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
+    slot_uri: act:trainingIsco19Code
     alias: training_isco19_code
     owner: Training
     domain_of:
     - Training
     range: string
-  training:
-    name: training
+  value:
+    name: value
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    alias: training
+    alias: value
     owner: Training
     domain_of:
+    - Name
+    - Gender
+    - Occupation
     - Training
+    - Contact
     range: string
 
 ```

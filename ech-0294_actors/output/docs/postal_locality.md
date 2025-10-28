@@ -1,16 +1,11 @@
 
 
-# Slot: nameType 
-
-
-_categories of name types_
+# Slot: postal_locality 
 
 
 
-
-
-URI: [act:nameType](https://ch.paf.link/schema/actors/nameType)
-Alias: nameType
+URI: [act:postalLocality](https://ch.paf.link/schema/actors/postalLocality)
+Alias: postal_locality
 
 <!-- no inheritance hierarchy -->
 
@@ -22,7 +17,7 @@ Alias: nameType
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Name](Name.md) |  |  no  |
+| [Address](Address.md) |  |  no  |
 
 
 
@@ -31,9 +26,7 @@ Alias: nameType
 
 ## Properties
 
-* Range: [NameTypeEnum](NameTypeEnum.md)
-
-* Required: True
+* Range: [String](String.md)
 
 
 
@@ -57,8 +50,8 @@ Alias: nameType
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:nameType |
-| native | act:nameType |
+| self | act:postalLocality |
+| native | act:postal_locality |
 
 
 
@@ -67,16 +60,15 @@ Alias: nameType
 
 <details>
 ```yaml
-name: nameType
-description: categories of name types
+name: postal-locality
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: nameType
-owner: Name
+slot_uri: act:postalLocality
+alias: postal_locality
+owner: Address
 domain_of:
-- Name
-range: NameTypeEnum
-required: true
+- Address
+range: string
 
 ```
 </details>

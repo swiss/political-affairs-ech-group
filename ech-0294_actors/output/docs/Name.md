@@ -14,20 +14,20 @@ URI: [act:Name](https://ch.paf.link/schema/actors/Name)
  classDiagram
     class Name
     click Name href "../Name/"
-      Name : nameType
+      Name : name_type
         
           
     
         
         
-        Name --> "1" NameTypeEnum : nameType
+        Name --> "1" NameTypeEnum : name_type
         click NameTypeEnum href "../NameTypeEnum/"
     
 
         
-      Name : validFrom
+      Name : valid_from
         
-      Name : validUntil
+      Name : valid_until
         
       Name : value
         
@@ -44,10 +44,10 @@ URI: [act:Name](https://ch.paf.link/schema/actors/Name)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [nameType](nameType.md) | 1 <br/> [NameTypeEnum](NameTypeEnum.md) | categories of name types | direct |
+| [name_type](name_type.md) | 1 <br/> [NameTypeEnum](NameTypeEnum.md) | categories of name types | direct |
 | [value](value.md) | 1 <br/> [String](String.md) |  | direct |
-| [validFrom](validFrom.md) | 0..1 <br/> [Date](Date.md) |  | direct |
-| [validUntil](validUntil.md) | 0..1 <br/> [Date](Date.md) |  | direct |
+| [valid_from](valid_from.md) | 0..1 <br/> [Date](Date.md) |  | direct |
+| [valid_until](valid_until.md) | 0..1 <br/> [Date](Date.md) |  | direct |
 
 
 
@@ -103,11 +103,12 @@ URI: [act:Name](https://ch.paf.link/schema/actors/Name)
 name: Name
 from_schema: https://ch.paf.link/schema/actors
 attributes:
-  nameType:
-    name: nameType
+  name_type:
+    name: name_type
     description: categories of name types
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
+    slot_uri: act:nameType
     domain_of:
     - Name
     range: NameTypeEnum
@@ -118,24 +119,28 @@ attributes:
     rank: 1000
     domain_of:
     - Name
+    - Gender
+    - Occupation
+    - Training
+    - Contact
     required: true
-  validFrom:
-    name: validFrom
+  valid_from:
+    name: valid_from
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
+    slot_uri: act:validFrom
     domain_of:
     - Name
     - Validity
     - ElectoralDistrict
     range: date
-  validUntil:
-    name: validUntil
+  valid_until:
+    name: valid_until
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
+    slot_uri: act:validUntil
     domain_of:
     - Name
-    - Validity
-    - ElectoralDistrict
     range: date
 
 ```
@@ -148,12 +153,13 @@ attributes:
 name: Name
 from_schema: https://ch.paf.link/schema/actors
 attributes:
-  nameType:
-    name: nameType
+  name_type:
+    name: name_type
     description: categories of name types
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
-    alias: nameType
+    slot_uri: act:nameType
+    alias: name_type
     owner: Name
     domain_of:
     - Name
@@ -167,29 +173,33 @@ attributes:
     owner: Name
     domain_of:
     - Name
+    - Gender
+    - Occupation
+    - Training
+    - Contact
     range: string
     required: true
-  validFrom:
-    name: validFrom
+  valid_from:
+    name: valid_from
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
-    alias: validFrom
+    slot_uri: act:validFrom
+    alias: valid_from
     owner: Name
     domain_of:
     - Name
     - Validity
     - ElectoralDistrict
     range: date
-  validUntil:
-    name: validUntil
+  valid_until:
+    name: valid_until
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
-    alias: validUntil
+    slot_uri: act:validUntil
+    alias: valid_until
     owner: Name
     domain_of:
     - Name
-    - Validity
-    - ElectoralDistrict
     range: date
 
 ```

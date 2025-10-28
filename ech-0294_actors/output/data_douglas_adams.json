@@ -7,22 +7,22 @@
   "picture": "https://commons.wikimedia.org/wiki/File:Douglas_adams_portrait.jpg",
   "names": [
     {
-      "nameType": "callName",
+      "name_type": "callName",
       "value": "Douglas"
     },
     {
-      "nameType": "officialLastName",
+      "name_type": "officialLastName",
       "value": "Adams",
-      "validFrom": "1952-03-11"
+      "valid_from": "1952-03-11"
     }
   ],
   "addresses": [
     {
-      "addressType": "privateAddress",
-      "addressURI": "https://www.wikidata.org/wiki/Q42#P969",
-      "streetAddress": "1234 Fictional St, London, UK",
-      "postalCode": "12345",
-      "postalLocality": "London"
+      "address_type": "privateAddress",
+      "address_URI": "https://www.wikidata.org/wiki/Q42#P969",
+      "street_address": "1234 Fictional St, London, UK",
+      "postal_code": "12345",
+      "postal_locality": "London"
     }
   ],
   "languages": [
@@ -33,19 +33,19 @@
     }
   ],
   "ch_citizenship": {
-    "validFrom": "2020-01-01",
-    "validUntil": "2025-01-01"
+    "valid_from": "2020-01-01",
+    "valid_until": "2025-01-01"
   },
   "citizenships": [
     {
-      "validFrom": "1952-03-11",
+      "valid_from": "1952-03-11",
       "country": "GB"
     }
   ],
   "genders": [
     {
-      "validFrom": "1952-03-11",
-      "gender": "male",
+      "valid_from": "1952-03-11",
+      "value": "male",
       "pronouns": [
         "he",
         "him"
@@ -54,29 +54,29 @@
   ],
   "occupations": [
     {
-      "validFrom": "1979-01-01",
-      "validUntil": "2001-05-11",
+      "valid_from": "1979-01-01",
+      "valid_until": "2001-05-11",
       "active": false,
       "paid": true,
-      "occupation": "writer"
+      "value": "writer"
     }
   ],
   "trainings": [
     {
       "type": "schulabschluss",
-      "training": "High School Diploma"
+      "value": "High School Diploma"
     }
   ],
   "contacts": [
     {
       "type": "email",
-      "contact": "douglas.adams@adams-familiy.org"
+      "value": "douglas.adams@adams-familiy.org"
     }
   ],
   "electoral_district": {
     "district": "London Central",
-    "validFrom": "2020-01-01",
-    "validUntil": "2025-01-01"
+    "valid_from": "2020-01-01",
+    "valid_until": "2025-01-01"
   },
   "@type": "Person"
 }

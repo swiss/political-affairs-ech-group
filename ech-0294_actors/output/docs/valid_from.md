@@ -1,11 +1,11 @@
 
 
-# Slot: validUntil 
+# Slot: valid_from 
 
 
 
-URI: [act:validUntil](https://ch.paf.link/schema/actors/validUntil)
-Alias: validUntil
+URI: [act:valid_from](https://ch.paf.link/schema/actors/valid_from)
+Alias: valid_from
 
 <!-- no inheritance hierarchy -->
 
@@ -17,12 +17,12 @@ Alias: validUntil
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Gender](Gender.md) |  |  no  |
-| [Name](Name.md) |  |  no  |
-| [Occupation](Occupation.md) |  |  no  |
 | [Citizenship](Citizenship.md) |  |  no  |
-| [Validity](Validity.md) |  |  no  |
+| [Gender](Gender.md) |  |  no  |
+| [Occupation](Occupation.md) |  |  no  |
+| [Name](Name.md) |  |  no  |
 | [ElectoralDistrict](ElectoralDistrict.md) |  |  no  |
+| [Validity](Validity.md) |  |  no  |
 
 
 
@@ -48,8 +48,8 @@ Alias: validUntil
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:validUntil |
-| native | act:validUntil |
+| self | act:valid_from |
+| native | act:valid_from |
 
 
 
@@ -58,8 +58,8 @@ Alias: validUntil
 
 <details>
 ```yaml
-name: validUntil
-alias: validUntil
+name: valid_from
+alias: valid_from
 domain_of:
 - Name
 - Validity

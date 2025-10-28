@@ -4,7 +4,7 @@
 
 
 
-URI: [act:training_isco19_code](https://ch.paf.link/schema/actors/training_isco19_code)
+URI: [act:trainingIsco19Code](https://ch.paf.link/schema/actors/trainingIsco19Code)
 Alias: training_isco19_code
 
 <!-- no inheritance hierarchy -->
@@ -50,7 +50,7 @@ Alias: training_isco19_code
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:training_isco19_code |
+| self | act:trainingIsco19Code |
 | native | act:training_isco19_code |
 
 
@@ -63,6 +63,7 @@ Alias: training_isco19_code
 name: training_isco19_code
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
+slot_uri: act:trainingIsco19Code
 alias: training_isco19_code
 owner: Training
 domain_of:

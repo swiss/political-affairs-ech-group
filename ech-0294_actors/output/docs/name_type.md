@@ -1,16 +1,16 @@
 
 
-# Slot: gender 
+# Slot: name_type 
 
 
-_Gender code_
+_categories of name types_
 
 
 
 
 
-URI: [act:gender](https://ch.paf.link/schema/actors/gender)
-Alias: gender
+URI: [act:nameType](https://ch.paf.link/schema/actors/nameType)
+Alias: name_type
 
 <!-- no inheritance hierarchy -->
 
@@ -22,7 +22,7 @@ Alias: gender
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Gender](Gender.md) |  |  no  |
+| [Name](Name.md) |  |  no  |
 
 
 
@@ -31,7 +31,7 @@ Alias: gender
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [NameTypeEnum](NameTypeEnum.md)
 
 * Required: True
 
@@ -57,8 +57,8 @@ Alias: gender
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:gender |
-| native | act:gender |
+| self | act:nameType |
+| native | act:name_type |
 
 
 
@@ -67,15 +67,16 @@ Alias: gender
 
 <details>
 ```yaml
-name: gender
-description: Gender code
+name: name_type
+description: categories of name types
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: gender
-owner: Gender
+slot_uri: act:nameType
+alias: name_type
+owner: Name
 domain_of:
-- Gender
-range: string
+- Name
+range: NameTypeEnum
 required: true
 
 ```

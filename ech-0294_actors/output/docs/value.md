@@ -17,7 +17,11 @@ Alias: value
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Gender](Gender.md) |  |  no  |
+| [Occupation](Occupation.md) |  |  no  |
 | [Name](Name.md) |  |  no  |
+| [Contact](Contact.md) |  |  no  |
+| [Training](Training.md) |  |  no  |
 
 
 
@@ -28,8 +32,6 @@ Alias: value
 
 * Range: [String](String.md)
 
-* Required: True
-
 
 
 
@@ -37,13 +39,6 @@ Alias: value
 
 
 
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/actors
 
 
 
@@ -63,14 +58,14 @@ Alias: value
 <details>
 ```yaml
 name: value
-from_schema: https://ch.paf.link/schema/actors
-rank: 1000
 alias: value
-owner: Name
 domain_of:
 - Name
+- Gender
+- Occupation
+- Training
+- Contact
 range: string
-required: true
 
 ```
 </details>

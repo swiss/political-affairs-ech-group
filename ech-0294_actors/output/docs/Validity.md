@@ -21,9 +21,9 @@ URI: [act:Validity](https://ch.paf.link/schema/actors/Validity)
       Validity <|-- Occupation
         click Occupation href "../Occupation/"
       
-      Validity : validFrom
+      Validity : valid_until
         
-      Validity : validUntil
+      Validity : valid_from
         
       
 ```
@@ -44,8 +44,8 @@ URI: [act:Validity](https://ch.paf.link/schema/actors/Validity)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [validFrom](validFrom.md) | 0..1 <br/> [Date](Date.md) |  | direct |
-| [validUntil](validUntil.md) | 0..1 <br/> [Date](Date.md) |  | direct |
+| [valid_from](valid_from.md) | 0..1 <br/> [Date](Date.md) |  | direct |
+| [valid_until](valid_until.md) | 0..1 <br/> [Date](Date.md) |  | direct |
 
 
 
@@ -101,19 +101,21 @@ URI: [act:Validity](https://ch.paf.link/schema/actors/Validity)
 name: Validity
 from_schema: https://ch.paf.link/schema/actors
 attributes:
-  validFrom:
-    name: validFrom
+  valid_from:
+    name: valid_from
     from_schema: https://ch.paf.link/schema/actors
+    slot_uri: act:validFrom
     domain_of:
     - Name
     - Validity
     - ElectoralDistrict
     range: date
-  validUntil:
-    name: validUntil
+  valid-until:
+    name: valid-until
     from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    slot_uri: act:validUntil
     domain_of:
-    - Name
     - Validity
     - ElectoralDistrict
     range: date
@@ -128,23 +130,25 @@ attributes:
 name: Validity
 from_schema: https://ch.paf.link/schema/actors
 attributes:
-  validFrom:
-    name: validFrom
+  valid_from:
+    name: valid_from
     from_schema: https://ch.paf.link/schema/actors
-    alias: validFrom
+    slot_uri: act:validFrom
+    alias: valid_from
     owner: Validity
     domain_of:
     - Name
     - Validity
     - ElectoralDistrict
     range: date
-  validUntil:
-    name: validUntil
+  valid-until:
+    name: valid-until
     from_schema: https://ch.paf.link/schema/actors
-    alias: validUntil
+    rank: 1000
+    slot_uri: act:validUntil
+    alias: valid_until
     owner: Validity
     domain_of:
-    - Name
     - Validity
     - ElectoralDistrict
     range: date

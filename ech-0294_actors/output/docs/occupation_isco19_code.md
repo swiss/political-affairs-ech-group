@@ -4,7 +4,7 @@
 
 
 
-URI: [act:occupation_isco19_code](https://ch.paf.link/schema/actors/occupation_isco19_code)
+URI: [act:occupationIsco19Code](https://ch.paf.link/schema/actors/occupationIsco19Code)
 Alias: occupation_isco19_code
 
 <!-- no inheritance hierarchy -->
@@ -50,7 +50,7 @@ Alias: occupation_isco19_code
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:occupation_isco19_code |
+| self | act:occupationIsco19Code |
 | native | act:occupation_isco19_code |
 
 
@@ -63,6 +63,7 @@ Alias: occupation_isco19_code
 name: occupation_isco19_code
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
+slot_uri: act:occupationIsco19Code
 alias: occupation_isco19_code
 owner: Occupation
 domain_of:

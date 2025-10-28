@@ -19,7 +19,7 @@ URI: [act:AddressTypeEnum](https://ch.paf.link/schema/actors/AddressTypeEnum)
 
 | Name | Description |
 | ---  | --- |
-| [addressType](addressType.md) |  |
+| [address_type](address_type.md) |  |
 
 
 
