@@ -46,7 +46,7 @@ classes:
         range: date
         description: Exact date of birth
       picture:
-        description: Link to an image (preferred: PNG, then JPG, then GIF)
+        description: "Link to an image (preferred: PNG, then JPG, then GIF)"
       names:
         range: Name
         multivalued: true
