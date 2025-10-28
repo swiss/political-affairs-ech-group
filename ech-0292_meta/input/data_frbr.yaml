@@ -1,0 +1,30 @@
+# Example data file for FRBR entities
+id: meta:1
+works:
+  - id: meta:work1
+    work_type: pv
+    expressions:
+      - id: meta:work1/de
+        dates:
+          - xdate: 2024-01-15
+            date_type: first publication
+          - xdate: 2024-02-05
+            date_type: last revision
+        language: de
+        title: Titel
+        manifestations:
+          - id: meta:work1/de/pdf
+            format: pdf
+            url: https://example.com/doc1_DE.pdf
+      - id: meta:work1/fr
+        dates:
+          - xdate: 2024-01-20
+            date_type: first publication
+          - xdate: 2024-02-01
+            date_type: last revision
+        language: fr
+        title: Titre Exemple
+        manifestations:
+          - id: meta:work1/fr/html
+            format: html
+            url: https://example.com/doc1_FR.html
