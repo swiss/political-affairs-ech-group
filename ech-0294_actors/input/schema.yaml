@@ -19,8 +19,9 @@ classes:
 
   Container:
     tree_root: true
-    slots:
-      - Person
+    attributes:
+      person:
+        range: Person
 
   MultilingualString:
     slots:
