@@ -1,16 +1,11 @@
 
 
-# Slot: language 
-
-
-_ISO language code_
+# Slot: training 
 
 
 
-
-
-URI: [act:language](https://ch.paf.link/schema/actors/language)
-Alias: language
+URI: [act:training](https://ch.paf.link/schema/actors/training)
+Alias: training
 
 <!-- no inheritance hierarchy -->
 
@@ -22,7 +17,7 @@ Alias: language
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [LanguageProficiency](LanguageProficiency.md) |  |  no  |
+| [Training](Training.md) |  |  no  |
 
 
 
@@ -32,8 +27,6 @@ Alias: language
 ## Properties
 
 * Range: [String](String.md)
-
-* Required: True
 
 
 
@@ -57,8 +50,8 @@ Alias: language
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:language |
-| native | act:language |
+| self | act:training |
+| native | act:training |
 
 
 
@@ -67,16 +60,14 @@ Alias: language
 
 <details>
 ```yaml
-name: language
-description: ISO language code
+name: training
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: language
-owner: LanguageProficiency
+alias: training
+owner: Training
 domain_of:
-- LanguageProficiency
+- Training
 range: string
-required: true
 
 ```
 </details>

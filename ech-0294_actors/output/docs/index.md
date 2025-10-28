@@ -1,10 +1,10 @@
-# actors
+# Person Schema
 
-
+A schema describing a person with addresses, names, languages, citizenships, occupations, training, and contact details.
 
 URI: https://ch.paf.link/schema/actors
 
-Name: actors
+Name: PersonSchema
 
 
 
@@ -12,9 +12,17 @@ Name: actors
 
 | Class | Description |
 | --- | --- |
-| [Actor](Actor.md) |  |
-| [Container](Container.md) |  |
-| [MultilingualString](MultilingualString.md) |  |
+| [Address](Address.md) |  |
+| [Contact](Contact.md) |  |
+| [ElectoralDistrict](ElectoralDistrict.md) |  |
+| [LanguageProficiency](LanguageProficiency.md) |  |
+| [Name](Name.md) |  |
+| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |
+| [Training](Training.md) |  |
+| [Validity](Validity.md) |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Citizenship](Citizenship.md) |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Gender](Gender.md) |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Occupation](Occupation.md) |  |
 
 
 
@@ -22,17 +30,58 @@ Name: actors
 
 | Slot | Description |
 | --- | --- |
-| [actors](actors.md) |  |
-| [id](id.md) |  |
-| [language](language.md) | Language code in ISO 639-1 format |
-| [name](name.md) |  |
-| [text](text.md) |  |
+| [active](active.md) |  |
+| [addresses](addresses.md) | place of residence and work |
+| [addressType](addressType.md) |  |
+| [addressURI](addressURI.md) | Preferred URI of address |
+| [birthdate](birthdate.md) | Exact date of birth |
+| [birthyear](birthyear.md) | Year of birth |
+| [ch_citizenship](ch_citizenship.md) |  |
+| [citizenships](citizenships.md) |  |
+| [contact](contact.md) |  |
+| [contacts](contacts.md) |  |
+| [correspondence](correspondence.md) | preferred language |
+| [country](country.md) | ISO 3166 country code (can't be CH) |
+| [district](district.md) |  |
+| [electoral_district](electoral_district.md) |  |
+| [enterprise](enterprise.md) |  |
+| [enterprise_uid](enterprise_uid.md) |  |
+| [gender](gender.md) | Gender code |
+| [genders](genders.md) |  |
+| [id](id.md) | Wikidata-ID preferred |
+| [label](label.md) | Display name of the person |
+| [label_long](label_long.md) | Extended display name (with title, etc |
+| [language](language.md) | ISO language code |
+| [languages](languages.md) |  |
+| [names](names.md) |  |
+| [nameType](nameType.md) | categories of name types |
+| [native](native.md) | proficient language |
+| [occupation](occupation.md) |  |
+| [occupation_isco19_code](occupation_isco19_code.md) |  |
+| [occupations](occupations.md) |  |
+| [paid](paid.md) |  |
+| [picture](picture.md) | Link to an image (preferred: PNG, then JPG, then GIF) |
+| [postalCode](postalCode.md) |  |
+| [postalLocality](postalLocality.md) |  |
+| [pronouns](pronouns.md) | Pronouns used by the person |
+| [streetAddress](streetAddress.md) |  |
+| [training](training.md) |  |
+| [training_isco19_code](training_isco19_code.md) |  |
+| [trainings](trainings.md) |  |
+| [type](type.md) |  |
+| [validFrom](validFrom.md) |  |
+| [validUntil](validUntil.md) |  |
+| [value](value.md) |  |
 
 
 ## Enumerations
 
 | Enumeration | Description |
 | --- | --- |
+| [AddressTypeEnum](AddressTypeEnum.md) |  |
+| [ContactTypeEnum](ContactTypeEnum.md) |  |
+| [NameTypeEnum](NameTypeEnum.md) |  |
+| [TrainingTypeEnum](TrainingTypeEnum.md) |  |
 
 
 ## Types

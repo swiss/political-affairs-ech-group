@@ -1,16 +1,16 @@
 
 
-# Slot: language 
+# Slot: nameType 
 
 
-_ISO language code_
+_categories of name types_
 
 
 
 
 
-URI: [act:language](https://ch.paf.link/schema/actors/language)
-Alias: language
+URI: [act:nameType](https://ch.paf.link/schema/actors/nameType)
+Alias: nameType
 
 <!-- no inheritance hierarchy -->
 
@@ -22,7 +22,7 @@ Alias: language
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [LanguageProficiency](LanguageProficiency.md) |  |  no  |
+| [Name](Name.md) |  |  no  |
 
 
 
@@ -31,7 +31,7 @@ Alias: language
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [NameTypeEnum](NameTypeEnum.md)
 
 * Required: True
 
@@ -57,8 +57,8 @@ Alias: language
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:language |
-| native | act:language |
+| self | act:nameType |
+| native | act:nameType |
 
 
 
@@ -67,15 +67,15 @@ Alias: language
 
 <details>
 ```yaml
-name: language
-description: ISO language code
+name: nameType
+description: categories of name types
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: language
-owner: LanguageProficiency
+alias: nameType
+owner: Name
 domain_of:
-- LanguageProficiency
-range: string
+- Name
+range: NameTypeEnum
 required: true
 
 ```

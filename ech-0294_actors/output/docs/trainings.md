@@ -1,16 +1,11 @@
 
 
-# Slot: id 
-
-
-_Wikidata-ID preferred_
+# Slot: trainings 
 
 
 
-
-
-URI: [act:id](https://ch.paf.link/schema/actors/id)
-Alias: id
+URI: [act:training](https://ch.paf.link/schema/actors/training)
+Alias: trainings
 
 <!-- no inheritance hierarchy -->
 
@@ -31,9 +26,9 @@ Alias: id
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Training](Training.md)
 
-* Required: True
+* Multivalued: True
 
 
 
@@ -57,8 +52,8 @@ Alias: id
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:id |
-| native | act:id |
+| self | act:training |
+| native | act:trainings |
 
 
 
@@ -67,17 +62,18 @@ Alias: id
 
 <details>
 ```yaml
-name: id
-description: Wikidata-ID preferred
+name: trainings
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-identifier: true
-alias: id
+slot_uri: act:training
+alias: trainings
 owner: Person
 domain_of:
 - Person
-range: string
-required: true
+range: Training
+multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details>

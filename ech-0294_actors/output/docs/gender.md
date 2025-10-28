@@ -1,16 +1,16 @@
 
 
-# Slot: language 
+# Slot: gender 
 
 
-_ISO language code_
+_Gender code_
 
 
 
 
 
-URI: [act:language](https://ch.paf.link/schema/actors/language)
-Alias: language
+URI: [act:gender](https://ch.paf.link/schema/actors/gender)
+Alias: gender
 
 <!-- no inheritance hierarchy -->
 
@@ -22,7 +22,7 @@ Alias: language
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [LanguageProficiency](LanguageProficiency.md) |  |  no  |
+| [Gender](Gender.md) |  |  no  |
 
 
 
@@ -57,8 +57,8 @@ Alias: language
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:language |
-| native | act:language |
+| self | act:gender |
+| native | act:gender |
 
 
 
@@ -67,14 +67,14 @@ Alias: language
 
 <details>
 ```yaml
-name: language
-description: ISO language code
+name: gender
+description: Gender code
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: language
-owner: LanguageProficiency
+alias: gender
+owner: Gender
 domain_of:
-- LanguageProficiency
+- Gender
 range: string
 required: true
 

@@ -1,16 +1,16 @@
 
 
-# Slot: id 
+# Slot: addresses 
 
 
-_Wikidata-ID preferred_
+_place of residence and work_
 
 
 
 
 
-URI: [act:id](https://ch.paf.link/schema/actors/id)
-Alias: id
+URI: [act:address](https://ch.paf.link/schema/actors/address)
+Alias: addresses
 
 <!-- no inheritance hierarchy -->
 
@@ -31,9 +31,9 @@ Alias: id
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Address](Address.md)
 
-* Required: True
+* Multivalued: True
 
 
 
@@ -57,8 +57,8 @@ Alias: id
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:id |
-| native | act:id |
+| self | act:address |
+| native | act:addresses |
 
 
 
@@ -67,17 +67,19 @@ Alias: id
 
 <details>
 ```yaml
-name: id
-description: Wikidata-ID preferred
+name: addresses
+description: place of residence and work
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-identifier: true
-alias: id
+slot_uri: act:address
+alias: addresses
 owner: Person
 domain_of:
 - Person
-range: string
-required: true
+range: Address
+multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details>

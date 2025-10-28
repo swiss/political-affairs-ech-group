@@ -1,16 +1,11 @@
 
 
-# Slot: id 
-
-
-_Wikidata-ID preferred_
+# Slot: occupations 
 
 
 
-
-
-URI: [act:id](https://ch.paf.link/schema/actors/id)
-Alias: id
+URI: [act:occupation](https://ch.paf.link/schema/actors/occupation)
+Alias: occupations
 
 <!-- no inheritance hierarchy -->
 
@@ -31,9 +26,9 @@ Alias: id
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Occupation](Occupation.md)
 
-* Required: True
+* Multivalued: True
 
 
 
@@ -57,8 +52,8 @@ Alias: id
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:id |
-| native | act:id |
+| self | act:occupation |
+| native | act:occupations |
 
 
 
@@ -67,17 +62,18 @@ Alias: id
 
 <details>
 ```yaml
-name: id
-description: Wikidata-ID preferred
+name: occupations
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-identifier: true
-alias: id
+slot_uri: act:occupation
+alias: occupations
 owner: Person
 domain_of:
 - Person
-range: string
-required: true
+range: Occupation
+multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details>

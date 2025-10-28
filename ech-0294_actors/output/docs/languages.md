@@ -1,16 +1,11 @@
 
 
-# Slot: language 
-
-
-_ISO language code_
-
-
+# Slot: languages 
 
 
 
 URI: [act:language](https://ch.paf.link/schema/actors/language)
-Alias: language
+Alias: languages
 
 <!-- no inheritance hierarchy -->
 
@@ -22,7 +17,7 @@ Alias: language
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [LanguageProficiency](LanguageProficiency.md) |  |  no  |
+| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
 
 
 
@@ -31,9 +26,9 @@ Alias: language
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [LanguageProficiency](LanguageProficiency.md)
 
-* Required: True
+* Multivalued: True
 
 
 
@@ -58,7 +53,7 @@ Alias: language
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | act:language |
-| native | act:language |
+| native | act:languages |
 
 
 
@@ -67,16 +62,18 @@ Alias: language
 
 <details>
 ```yaml
-name: language
-description: ISO language code
+name: languages
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: language
-owner: LanguageProficiency
+slot_uri: act:language
+alias: languages
+owner: Person
 domain_of:
-- LanguageProficiency
-range: string
-required: true
+- Person
+range: LanguageProficiency
+multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details>

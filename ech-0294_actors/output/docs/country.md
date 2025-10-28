@@ -1,16 +1,16 @@
 
 
-# Slot: language 
+# Slot: country 
 
 
-_ISO language code_
+_ISO 3166 country code (can't be CH)_
 
 
 
 
 
-URI: [act:language](https://ch.paf.link/schema/actors/language)
-Alias: language
+URI: [act:country](https://ch.paf.link/schema/actors/country)
+Alias: country
 
 <!-- no inheritance hierarchy -->
 
@@ -22,7 +22,7 @@ Alias: language
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [LanguageProficiency](LanguageProficiency.md) |  |  no  |
+| [Citizenship](Citizenship.md) |  |  no  |
 
 
 
@@ -57,8 +57,8 @@ Alias: language
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:language |
-| native | act:language |
+| self | act:country |
+| native | act:country |
 
 
 
@@ -67,14 +67,14 @@ Alias: language
 
 <details>
 ```yaml
-name: language
-description: ISO language code
+name: country
+description: ISO 3166 country code (can't be CH)
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: language
-owner: LanguageProficiency
+alias: country
+owner: Citizenship
 domain_of:
-- LanguageProficiency
+- Citizenship
 range: string
 required: true
 

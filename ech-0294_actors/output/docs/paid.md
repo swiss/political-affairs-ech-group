@@ -1,16 +1,11 @@
 
 
-# Slot: language 
-
-
-_ISO language code_
+# Slot: paid 
 
 
 
-
-
-URI: [act:language](https://ch.paf.link/schema/actors/language)
-Alias: language
+URI: [act:paid](https://ch.paf.link/schema/actors/paid)
+Alias: paid
 
 <!-- no inheritance hierarchy -->
 
@@ -22,7 +17,7 @@ Alias: language
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [LanguageProficiency](LanguageProficiency.md) |  |  no  |
+| [Occupation](Occupation.md) |  |  no  |
 
 
 
@@ -31,9 +26,7 @@ Alias: language
 
 ## Properties
 
-* Range: [String](String.md)
-
-* Required: True
+* Range: [Boolean](Boolean.md)
 
 
 
@@ -57,8 +50,8 @@ Alias: language
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:language |
-| native | act:language |
+| self | act:paid |
+| native | act:paid |
 
 
 
@@ -67,16 +60,14 @@ Alias: language
 
 <details>
 ```yaml
-name: language
-description: ISO language code
+name: paid
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: language
-owner: LanguageProficiency
+alias: paid
+owner: Occupation
 domain_of:
-- LanguageProficiency
-range: string
-required: true
+- Occupation
+range: boolean
 
 ```
 </details>

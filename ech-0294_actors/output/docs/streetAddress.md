@@ -1,16 +1,11 @@
 
 
-# Slot: language 
-
-
-_ISO language code_
+# Slot: streetAddress 
 
 
 
-
-
-URI: [act:language](https://ch.paf.link/schema/actors/language)
-Alias: language
+URI: [act:streetAddress](https://ch.paf.link/schema/actors/streetAddress)
+Alias: streetAddress
 
 <!-- no inheritance hierarchy -->
 
@@ -22,7 +17,7 @@ Alias: language
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [LanguageProficiency](LanguageProficiency.md) |  |  no  |
+| [Address](Address.md) |  |  no  |
 
 
 
@@ -32,8 +27,6 @@ Alias: language
 ## Properties
 
 * Range: [String](String.md)
-
-* Required: True
 
 
 
@@ -57,8 +50,8 @@ Alias: language
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:language |
-| native | act:language |
+| self | act:streetAddress |
+| native | act:streetAddress |
 
 
 
@@ -67,16 +60,14 @@ Alias: language
 
 <details>
 ```yaml
-name: language
-description: ISO language code
+name: streetAddress
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: language
-owner: LanguageProficiency
+alias: streetAddress
+owner: Address
 domain_of:
-- LanguageProficiency
+- Address
 range: string
-required: true
 
 ```
 </details>

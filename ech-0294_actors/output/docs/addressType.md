@@ -1,11 +1,11 @@
 
 
-# Slot: text 
+# Slot: addressType 
 
 
 
-URI: [act:text](https://ch.paf.link/schema/actors/text)
-Alias: text
+URI: [act:addressType](https://ch.paf.link/schema/actors/addressType)
+Alias: addressType
 
 <!-- no inheritance hierarchy -->
 
@@ -17,7 +17,7 @@ Alias: text
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MultilingualString](MultilingualString.md) |  |  no  |
+| [Address](Address.md) |  |  no  |
 
 
 
@@ -26,7 +26,7 @@ Alias: text
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [AddressTypeEnum](AddressTypeEnum.md)
 
 * Required: True
 
@@ -52,8 +52,8 @@ Alias: text
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:text |
-| native | act:text |
+| self | act:addressType |
+| native | act:addressType |
 
 
 
@@ -62,13 +62,14 @@ Alias: text
 
 <details>
 ```yaml
-name: text
+name: addressType
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: text
+alias: addressType
+owner: Address
 domain_of:
-- MultilingualString
-range: string
+- Address
+range: AddressTypeEnum
 required: true
 
 ```

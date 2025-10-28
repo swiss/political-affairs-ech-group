@@ -1,16 +1,11 @@
 
 
-# Slot: language 
-
-
-_ISO language code_
+# Slot: contact 
 
 
 
-
-
-URI: [act:language](https://ch.paf.link/schema/actors/language)
-Alias: language
+URI: [act:contact](https://ch.paf.link/schema/actors/contact)
+Alias: contact
 
 <!-- no inheritance hierarchy -->
 
@@ -22,7 +17,7 @@ Alias: language
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [LanguageProficiency](LanguageProficiency.md) |  |  no  |
+| [Contact](Contact.md) |  |  no  |
 
 
 
@@ -57,8 +52,8 @@ Alias: language
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:language |
-| native | act:language |
+| self | act:contact |
+| native | act:contact |
 
 
 
@@ -67,14 +62,13 @@ Alias: language
 
 <details>
 ```yaml
-name: language
-description: ISO language code
+name: contact
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: language
-owner: LanguageProficiency
+alias: contact
+owner: Contact
 domain_of:
-- LanguageProficiency
+- Contact
 range: string
 required: true
 

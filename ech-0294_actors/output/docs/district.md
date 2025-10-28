@@ -1,16 +1,11 @@
 
 
-# Slot: language 
-
-
-_ISO language code_
+# Slot: district 
 
 
 
-
-
-URI: [act:language](https://ch.paf.link/schema/actors/language)
-Alias: language
+URI: [act:district](https://ch.paf.link/schema/actors/district)
+Alias: district
 
 <!-- no inheritance hierarchy -->
 
@@ -22,7 +17,7 @@ Alias: language
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [LanguageProficiency](LanguageProficiency.md) |  |  no  |
+| [ElectoralDistrict](ElectoralDistrict.md) |  |  no  |
 
 
 
@@ -57,8 +52,8 @@ Alias: language
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:language |
-| native | act:language |
+| self | act:district |
+| native | act:district |
 
 
 
@@ -67,14 +62,13 @@ Alias: language
 
 <details>
 ```yaml
-name: language
-description: ISO language code
+name: district
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: language
-owner: LanguageProficiency
+alias: district
+owner: ElectoralDistrict
 domain_of:
-- LanguageProficiency
+- ElectoralDistrict
 range: string
 required: true
 

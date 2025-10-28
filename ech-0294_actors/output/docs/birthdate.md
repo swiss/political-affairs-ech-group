@@ -1,16 +1,16 @@
 
 
-# Slot: language 
+# Slot: birthdate 
 
 
-_ISO language code_
+_Exact date of birth_
 
 
 
 
 
-URI: [act:language](https://ch.paf.link/schema/actors/language)
-Alias: language
+URI: [act:birthdate](https://ch.paf.link/schema/actors/birthdate)
+Alias: birthdate
 
 <!-- no inheritance hierarchy -->
 
@@ -22,7 +22,7 @@ Alias: language
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [LanguageProficiency](LanguageProficiency.md) |  |  no  |
+| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
 
 
 
@@ -31,9 +31,7 @@ Alias: language
 
 ## Properties
 
-* Range: [String](String.md)
-
-* Required: True
+* Range: [Date](Date.md)
 
 
 
@@ -57,8 +55,8 @@ Alias: language
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:language |
-| native | act:language |
+| self | act:birthdate |
+| native | act:birthdate |
 
 
 
@@ -67,16 +65,15 @@ Alias: language
 
 <details>
 ```yaml
-name: language
-description: ISO language code
+name: birthdate
+description: Exact date of birth
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: language
-owner: LanguageProficiency
+alias: birthdate
+owner: Person
 domain_of:
-- LanguageProficiency
-range: string
-required: true
+- Person
+range: date
 
 ```
 </details>

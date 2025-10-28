@@ -1,11 +1,11 @@
 
 
-# Slot: name 
+# Slot: enterprise_uid 
 
 
 
-URI: [act:name](https://ch.paf.link/schema/actors/name)
-Alias: name
+URI: [act:enterprise_uid](https://ch.paf.link/schema/actors/enterprise_uid)
+Alias: enterprise_uid
 
 <!-- no inheritance hierarchy -->
 
@@ -17,7 +17,7 @@ Alias: name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Actor](Actor.md) |  |  no  |
+| [Occupation](Occupation.md) |  |  no  |
 
 
 
@@ -50,8 +50,8 @@ Alias: name
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:name |
-| native | act:name |
+| self | act:enterprise_uid |
+| native | act:enterprise_uid |
 
 
 
@@ -60,12 +60,13 @@ Alias: name
 
 <details>
 ```yaml
-name: name
+name: enterprise_uid
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: name
+alias: enterprise_uid
+owner: Occupation
 domain_of:
-- Actor
+- Occupation
 range: string
 
 ```

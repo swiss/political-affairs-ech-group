@@ -1,16 +1,16 @@
 
 
-# Slot: language 
+# Slot: pronouns 
 
 
-_ISO language code_
+_Pronouns used by the person_
 
 
 
 
 
-URI: [act:language](https://ch.paf.link/schema/actors/language)
-Alias: language
+URI: [act:pronouns](https://ch.paf.link/schema/actors/pronouns)
+Alias: pronouns
 
 <!-- no inheritance hierarchy -->
 
@@ -22,7 +22,7 @@ Alias: language
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [LanguageProficiency](LanguageProficiency.md) |  |  no  |
+| [Gender](Gender.md) |  |  no  |
 
 
 
@@ -33,7 +33,7 @@ Alias: language
 
 * Range: [String](String.md)
 
-* Required: True
+* Multivalued: True
 
 
 
@@ -57,8 +57,8 @@ Alias: language
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:language |
-| native | act:language |
+| self | act:pronouns |
+| native | act:pronouns |
 
 
 
@@ -67,16 +67,18 @@ Alias: language
 
 <details>
 ```yaml
-name: language
-description: ISO language code
+name: pronouns
+description: Pronouns used by the person
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: language
-owner: LanguageProficiency
+alias: pronouns
+owner: Gender
 domain_of:
-- LanguageProficiency
+- Gender
 range: string
-required: true
+multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details>

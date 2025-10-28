@@ -1,11 +1,11 @@
 
 
-# Slot: actors 
+# Slot: active 
 
 
 
-URI: [act:actor](https://ch.paf.link/schema/actors/actor)
-Alias: actors
+URI: [act:active](https://ch.paf.link/schema/actors/active)
+Alias: active
 
 <!-- no inheritance hierarchy -->
 
@@ -17,7 +17,7 @@ Alias: actors
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Container](Container.md) |  |  no  |
+| [Occupation](Occupation.md) |  |  no  |
 
 
 
@@ -26,9 +26,7 @@ Alias: actors
 
 ## Properties
 
-* Range: [Actor](Actor.md)
-
-* Multivalued: True
+* Range: [Boolean](Boolean.md)
 
 
 
@@ -52,8 +50,8 @@ Alias: actors
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:actor |
-| native | act:actors |
+| self | act:active |
+| native | act:active |
 
 
 
@@ -62,17 +60,14 @@ Alias: actors
 
 <details>
 ```yaml
-name: actors
+name: active
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-slot_uri: act:actor
-alias: actors
+alias: active
+owner: Occupation
 domain_of:
-- Container
-range: Actor
-multivalued: true
-inlined: true
-inlined_as_list: true
+- Occupation
+range: boolean
 
 ```
 </details>

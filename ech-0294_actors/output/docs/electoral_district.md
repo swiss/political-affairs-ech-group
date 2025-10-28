@@ -1,16 +1,11 @@
 
 
-# Slot: id 
-
-
-_Wikidata-ID preferred_
+# Slot: electoral_district 
 
 
 
-
-
-URI: [act:id](https://ch.paf.link/schema/actors/id)
-Alias: id
+URI: [act:electoral_district](https://ch.paf.link/schema/actors/electoral_district)
+Alias: electoral_district
 
 <!-- no inheritance hierarchy -->
 
@@ -31,9 +26,7 @@ Alias: id
 
 ## Properties
 
-* Range: [String](String.md)
-
-* Required: True
+* Range: [ElectoralDistrict](ElectoralDistrict.md)
 
 
 
@@ -57,8 +50,8 @@ Alias: id
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:id |
-| native | act:id |
+| self | act:electoral_district |
+| native | act:electoral_district |
 
 
 
@@ -67,17 +60,14 @@ Alias: id
 
 <details>
 ```yaml
-name: id
-description: Wikidata-ID preferred
+name: electoral_district
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-identifier: true
-alias: id
+alias: electoral_district
 owner: Person
 domain_of:
 - Person
-range: string
-required: true
+range: ElectoralDistrict
 
 ```
 </details>

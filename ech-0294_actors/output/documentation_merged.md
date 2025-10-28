@@ -286,10 +286,25 @@ group
 -> Gemeinden, Kantone und Bund
 Zu diskutieren mit Hans-Peter
 
+-> Anwendungszweck der Struktur
+* Organisation innerhalb eines Parlamentssystems
+* Publikation an die öffentichkeit
+* Systeme mit Politischen Personen
+* Analysen mit Personen welche in Gruppen leben
+* Parteiliste global - UNIBE
+
+-> Ausdrücken der Ebene:
+* localExtend: Gemeinde Root
+* level: canton, municipality (abstract)
+
+
+Hierarchien innerhalb eines Types: Departement, Amt / Fraktion / Parteien
+
+
 * Partei
    * Parteilager ( Links, Rechts, Mitte )
 * Liste (kann Teil einer Partei sein, oder nicht)
-* Fraktion 
+* Fraktion
 * Parlamentskomission
 * Delegation
 * Ad-Hoc Komission
@@ -333,6 +348,24 @@ Jede Föderaleebene, wird als eigene Gruppierung geführt.
   
   * [Ersetzung der privaten Wohnadresse als Identifikator der Urheber von Volksinitiativen](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20243425)
   * [Verhinderung der Pflicht zur Veröffentlichung der Wohnadressen von Parlamentsmitgliedern](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20233913)
+
+## Interessenbindungen / Konflikte (Politikfinanzierungen)
+
+Siehe:  * https://www.parlament.ch/centers/documents/de/interessen-nr.pdf
+
+
+* Person:
+  * Interessensbindungen
+    * Type: Berufliche Tätigkeit, Politische Ämter, Verein
+    * Label der Organisation
+    * Addresse der Organisation
+    * UID Link zu Organisation -> Weil damit dann auch Auswertungen wie z.B. Noga codes vorhanden sind.
+    * Rechtsform Organisation
+    * from / to
+    * Bezahlt
+    * Gremium (Stiftungsrat, Verwaltungsrat - übernehmen Liste von Parlament)
+    * Funktion/Rolle
+    
 
 ## Überlegungen am 17.09.2025
 

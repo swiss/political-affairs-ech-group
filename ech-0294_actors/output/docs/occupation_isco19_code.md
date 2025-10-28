@@ -1,16 +1,11 @@
 
 
-# Slot: language 
-
-
-_ISO language code_
+# Slot: occupation_isco19_code 
 
 
 
-
-
-URI: [act:language](https://ch.paf.link/schema/actors/language)
-Alias: language
+URI: [act:occupation_isco19_code](https://ch.paf.link/schema/actors/occupation_isco19_code)
+Alias: occupation_isco19_code
 
 <!-- no inheritance hierarchy -->
 
@@ -22,7 +17,7 @@ Alias: language
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [LanguageProficiency](LanguageProficiency.md) |  |  no  |
+| [Occupation](Occupation.md) |  |  no  |
 
 
 
@@ -32,8 +27,6 @@ Alias: language
 ## Properties
 
 * Range: [String](String.md)
-
-* Required: True
 
 
 
@@ -57,8 +50,8 @@ Alias: language
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:language |
-| native | act:language |
+| self | act:occupation_isco19_code |
+| native | act:occupation_isco19_code |
 
 
 
@@ -67,16 +60,14 @@ Alias: language
 
 <details>
 ```yaml
-name: language
-description: ISO language code
+name: occupation_isco19_code
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: language
-owner: LanguageProficiency
+alias: occupation_isco19_code
+owner: Occupation
 domain_of:
-- LanguageProficiency
+- Occupation
 range: string
-required: true
 
 ```
 </details>

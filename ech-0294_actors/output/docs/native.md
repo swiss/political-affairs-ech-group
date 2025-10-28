@@ -1,16 +1,16 @@
 
 
-# Slot: language 
+# Slot: native 
 
 
-_ISO language code_
+_proficient language_
 
 
 
 
 
-URI: [act:language](https://ch.paf.link/schema/actors/language)
-Alias: language
+URI: [act:native](https://ch.paf.link/schema/actors/native)
+Alias: native
 
 <!-- no inheritance hierarchy -->
 
@@ -31,9 +31,7 @@ Alias: language
 
 ## Properties
 
-* Range: [String](String.md)
-
-* Required: True
+* Range: [Boolean](Boolean.md)
 
 
 
@@ -57,8 +55,8 @@ Alias: language
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:language |
-| native | act:language |
+| self | act:native |
+| native | act:native |
 
 
 
@@ -67,16 +65,15 @@ Alias: language
 
 <details>
 ```yaml
-name: language
-description: ISO language code
+name: native
+description: proficient language
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: language
+alias: native
 owner: LanguageProficiency
 domain_of:
 - LanguageProficiency
-range: string
-required: true
+range: boolean
 
 ```
 </details>

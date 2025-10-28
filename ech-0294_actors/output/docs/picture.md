@@ -1,16 +1,16 @@
 
 
-# Slot: language 
+# Slot: picture 
 
 
-_ISO language code_
+_Link to an image (preferred: PNG, then JPG, then GIF)_
 
 
 
 
 
-URI: [act:language](https://ch.paf.link/schema/actors/language)
-Alias: language
+URI: [act:picture](https://ch.paf.link/schema/actors/picture)
+Alias: picture
 
 <!-- no inheritance hierarchy -->
 
@@ -22,7 +22,7 @@ Alias: language
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [LanguageProficiency](LanguageProficiency.md) |  |  no  |
+| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
 
 
 
@@ -32,8 +32,6 @@ Alias: language
 ## Properties
 
 * Range: [String](String.md)
-
-* Required: True
 
 
 
@@ -57,8 +55,8 @@ Alias: language
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:language |
-| native | act:language |
+| self | act:picture |
+| native | act:picture |
 
 
 
@@ -67,16 +65,15 @@ Alias: language
 
 <details>
 ```yaml
-name: language
-description: ISO language code
+name: picture
+description: 'Link to an image (preferred: PNG, then JPG, then GIF)'
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: language
-owner: LanguageProficiency
+alias: picture
+owner: Person
 domain_of:
-- LanguageProficiency
+- Person
 range: string
-required: true
 
 ```
 </details>

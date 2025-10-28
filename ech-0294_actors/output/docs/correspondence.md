@@ -1,16 +1,16 @@
 
 
-# Slot: language 
+# Slot: correspondence 
 
 
-_ISO language code_
+_preferred language_
 
 
 
 
 
-URI: [act:language](https://ch.paf.link/schema/actors/language)
-Alias: language
+URI: [act:correspondence](https://ch.paf.link/schema/actors/correspondence)
+Alias: correspondence
 
 <!-- no inheritance hierarchy -->
 
@@ -31,9 +31,7 @@ Alias: language
 
 ## Properties
 
-* Range: [String](String.md)
-
-* Required: True
+* Range: [Boolean](Boolean.md)
 
 
 
@@ -57,8 +55,8 @@ Alias: language
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:language |
-| native | act:language |
+| self | act:correspondence |
+| native | act:correspondence |
 
 
 
@@ -67,16 +65,15 @@ Alias: language
 
 <details>
 ```yaml
-name: language
-description: ISO language code
+name: correspondence
+description: preferred language
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-alias: language
+alias: correspondence
 owner: LanguageProficiency
 domain_of:
 - LanguageProficiency
-range: string
-required: true
+range: boolean
 
 ```
 </details>
