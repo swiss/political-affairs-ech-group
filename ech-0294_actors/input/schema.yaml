@@ -22,11 +22,6 @@ classes:
     attributes:
       person:
         range: Person
-
-  MultilingualString:
-    slots:
-      - text
-      - language
       
   Person:
     description: A person with identifiers, names, addresses, citizenships, and occupations.
@@ -51,13 +46,16 @@ classes:
       names:
         range: Name
         multivalued: true
+        inlined_as_list: true
       addresses:
         range: Address
         multivalued: true
+        inlined_as_list: true
         description: place of residence and work
       languages:
         range: LanguageProficiency
         multivalued: true
+        inlined_as_list: true
       ch_citizenship:
         range: Validity
       citizenships:
