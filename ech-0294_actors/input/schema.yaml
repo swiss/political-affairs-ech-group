@@ -56,6 +56,7 @@ classes:
         inlined_as_list: true
       ch_citizenship:
         range: Validity
+        slot_uri: act:chCitizenship
       citizenships:
         range: Citizenship
         slot_uri: act:citizenship
@@ -83,31 +84,40 @@ classes:
         inlined_as_list: true
       electoral_district:
         range: ElectoralDistrict
+        slot_uri: act:electoralDistrict
 
   Name:
     attributes:
-      nameType:
+      name_type:
         range: NameTypeEnum
+        slot_uri: act:nameType
         required: true
         # Is it enough to just put required here? --> callName is not required
         description: categories of name types
       value:
         required: true
-      validFrom:
+      valid_from:
         range: date
-      validUntil:
+        slot_uri: act:validFrom
+      valid_until:
         range: date
+        slot_uri: act:validUntil
 
   Address:
     attributes:
-      addressType:
+      address-type:
         range: AddressTypeEnum
+        slot_uri: act:addressType
         required: true
-      addressURI:
+      address-URI:
+        slot_uri: act:addressURI
         description: Preferred URI of address
-      streetAddress:
-      postalCode:
-      postalLocality:
+      street-address:
+        slot_uri: act:streetAddress
+      postal-code:
+        slot_uri: act:postalCode
+      postal-locality:
+        slot_uri: act:postalLocality
 
   LanguageProficiency:
     attributes:
@@ -123,10 +133,12 @@ classes:
 
   Validity:
     attributes:
-      validFrom:
+      valid_from:
         range: date
-      validUntil:
+        slot_uri: act:validFrom
+      valid-until:
         range: date
+        slot_uri: act:validUntil
 
   Citizenship:
     is_a: Validity
@@ -138,7 +150,7 @@ classes:
   Gender:
     is_a: Validity
     attributes:
-      gender:
+      value:
         description: Gender code
         required: true
       pronouns:
@@ -154,8 +166,10 @@ classes:
       paid:
         range: boolean
       occupation_isco19_code:
-      occupation:
+        slot_uri: act:occupationIsco19Code
+      value:
       enterprise_uid:
+        slot_uri: act:enterpriseUid
       enterprise:
 
   Training:
@@ -164,24 +178,27 @@ classes:
         range: TrainingTypeEnum
         required: true
       training_isco19_code:
-      training:
+        slot_uri: act:trainingIsco19Code
+      value:
 
   Contact:
     attributes:
       type:
         range: ContactTypeEnum
         required: true
-      contact:
+      value:
         required: true
   
   ElectoralDistrict:
     attributes:
       district:
         required: true
-      validFrom:
+      valid_from:
         range: date
-      validUntil:
+        slot_uri: act:validFrom
+      valid-until:
         range: date
+        slot_uri: act:validUntil
 
 enums:
   NameTypeEnum:
