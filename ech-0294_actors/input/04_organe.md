@@ -28,6 +28,10 @@ group
    - postalLocality: , 
 
 ## Verschiedene Typen von Organen
+
+* Gruppen, beinhalten Mitglieder ausweisen wollen (Listen)
+* Gruppen, Identifizieren (Departemente, Gerichte)
+
 -> Gemeinden, Kantone und Bund
 Zu diskutieren mit Hans-Peter
 
@@ -45,27 +49,50 @@ Zu diskutieren mit Hans-Peter
 
 Hierarchien innerhalb eines Types: Departement, Amt / Fraktion / Parteien
 
-
-* Partei
-   * Parteilager ( Links, Rechts, Mitte )
-* Liste (kann Teil einer Partei sein, oder nicht)
-* Fraktion
-* Parlamentskomission
-* Delegation
-* Ad-Hoc Komission
-* Arbeitsgruppen
-* Interessengruppen
-* Zivilgesellschaftliche Gruppen (unter Interessengruppen subsumierbar?)
-*	Parlamentsbüro
-*	Präsidium des Parlaments
-*	Parlamentsdienste
-*	Gerichte
-*	ev. Finanzkontrolle (nimmt tw. Aufgaben fürs Parlament wahr)
-*	ev. Verwaltung (nimmt tw. Aufgaben fürs Parlament wahr)
-*	Regierung (hat ja auch im parl.Verfahren besondere Funktionen)
+# Sicht Parlamentsmitglied
+* Legislative
+  * Parlamente Föderale Ebene
+    * Bund (beide Kammern) / Kanton / Gemeinde
+  * Delegation
+  * Komission
+    * Attribute:
+       * ständig / (Ad-Hoc) nicht ständige
+       * Aufsichtkomissionen / Sachkomissionen
+    * Geschäftsprüfungskommission (ständige Aufsichtskommission)
+    * PUK (nichständige Aufsichtkommision)
+    * Rechnungsprüfungskommission 
+  * Fraktion
+  * Parlamentsbüro
+  * Präsidium des Parlaments
+* Exekutive = Regierung / Verwaltung
+  * Department
+  * Amt
+  * Ausserparlementarische Komissionen (z.B. Bankrat)
+  * Arbeitsgruppe (Ad-Hoc APK)
+* Zivilgesellschaft
+   * Partei
+   * Liste (kann Teil einer Partei sein, oder nicht) 
+   * Interessengruppen
+* Andere
+  * Kontrollorgane
+    * Finanzkontrolle
+    * AB-BA
+  * Parlamentsdienste
 *	(Parteilose und/oder fraktionslose Parlamentsmitglieder)
-* Departemente
-* Ausserparlementarische Komissionen
+
+
+# Sicht Parlamentsgeschäft
+* Legislative
+* Exekutive
+  * Ausgelagerte Träger öffentlicher Aufgaben
+    * Universitäten
+* Judikative
+  * Gerichte
+* Zivilgesellschaft
+  * Petitionsträger
+  * Verein
+
+
 
 ## Parteien
 Jede Föderaleebene, wird als eigene Gruppierung geführt.
