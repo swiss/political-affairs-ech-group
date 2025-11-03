@@ -3,19 +3,18 @@
 ## Allgemeingültige Informationen
 
 consultation # eConsultation: project
-  identifier
+  identifier # "New world", see the discussion here: https://github.com/swiss/political-affairs-ech-group/edit/main/ech-0297_consultations/misc/2025-11-03-session.md
     required
-  title
+    string
+  title # Best practice recommendation: Keep it below 150 characters
     required
-    translatable
-  title_short
     translatable
   description # eConsultation: kurztext_id
     translatable
   status # eConsultation: state
     required
     values (preparing, planned, open, closed, waiting_for_statements, waiting_for_report, cancelled, unknown)
-  landing_page
+  landing_page # External URL offering additional information
     string
   publication_date # eConsultation: published_on
     datetime
@@ -38,7 +37,6 @@ Participant  # Link to actors
   - Group/Organization
 
 # Input Parteienliste (via APS) - Parteienliste sollte auch Adresse liefern
-
 
 Fehlt noch:
 - Welche Organisation ist zuständig?
