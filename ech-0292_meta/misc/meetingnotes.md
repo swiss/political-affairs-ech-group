@@ -17,9 +17,9 @@
     - Dafür braucht es möglichst umfassende [Liste von Dokument-Typen](https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=1490648211#gid=1490648211)
         - Liste von Dokument-Typen von Fabian Davoglio (Parlamentsdienste; via Florin), BK (Michael via Florin) und Stephan Lukasewitz (Staatskanzlei ZH; via Martin) + Genf (? via Florin) + Gemeinde (via Florin) anfordern --> in [Liste](https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=1490648211#gid=1490648211) eintragen bis 3.11.
     - ggf. Ergänzungen von Subgruppen (bestehende Arbeiten bzgl. verschiedenen Ebenen?) bis 16.11.
-      - eCH-0293: Öffentlicher Ratsbetrieb (operations) – Michael (via Florin)
+      - eCH-0293: Öffentlicher Ratsbetrieb (operations) – Jonas
       - eCH-0294: Politische Akteure: Personen, Gruppen und Organe (actors) – Daniela
-      - eCH-0295: Parlamentarische Geschäfte (affairs) – Florin
+      - eCH-0295: Parlamentarische Geschäfte (affairs) – Daniela
       - eCH-0296: Erlasse und Gesetzestexte (laws) – Martin
       - eCH-0297: Öffentliche Konsultationen (consultations) – Fabian Ligibel (via Martin)
     - = Produkt der Meta-Subgruppe (?)
