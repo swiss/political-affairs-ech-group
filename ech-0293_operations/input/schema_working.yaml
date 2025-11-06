@@ -253,7 +253,7 @@ classes:
 
 # Wortmeldungen (Text / Audio / Video)
 
-  Speech: # Synonym Votum oder speaker_segment (Teil eines AgendaItem)
+speech: # Synonym Votum oder speaker_segment (Teil eines AgendaItem)
     slots:
       - id
       - language # (de/fr/mixed)
@@ -267,7 +267,12 @@ classes:
       - text_format # (text, html, html_with_timestamps per word) # Unterscheidung von HTML und HTML mit Timestampes?
       - text_type #Rohfassung, Bearbeitet (Wird wahrscheinlich nur immer bearbeitete Fassung publiziert)
       - landing_page # Link zu publizierte Fassung
+      - media_url
+      - media_type (audio|video)
+      - media_format: mime-type # wenn bekannt
 
+  
+      
   TextSegment: # Titel, text_segment (Quervereise und Zwischentitel, z.B Zusammenfassung eines Votings)
     slots:
       - id
@@ -278,6 +283,14 @@ classes:
       - id
       - title
       - description
+
+  Media:  #Media/Dokumente (beinhalten auch Protokolle (PDF/HTML/WORD usw.) oder links zu mp3/mp4) 
+    slots:
+      - id
+      - title
+      - type: media
+      - url:
+      - parent_type: (meeting, agenda, speech, affair)
 
 # "data" : [ {
 
