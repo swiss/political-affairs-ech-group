@@ -261,7 +261,7 @@ Ein Organ in dieser Definition ist einzig eine ansammlung von Personen. (Ohne we
 
 group
 - id (local)
-- globalid / tb named
+- uri politics.ld.admin.ch/party/1
 - type  enum -> Partei, Liste, Arbeitsgruppe 
 - type_label: "" (Wenn spezifischer lokaler Namen vorhanden.)
 - valid_from:
