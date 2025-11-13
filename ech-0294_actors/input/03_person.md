@@ -1,5 +1,11 @@
 # Person
 
+[todo]: # (Introduction of the "Person in Political Context", goal of the structure, goal of providing the ability to be very correct, but allow open information)
+
+
+
+{{include:tutorial/output/docs/Person.md}} 
+
 ## Meeting 22.05.2025 / 28.05.2025 / 11.06.2025 / 25.06.2025 / 09.07.2025
 
 * Möglichst übernahme von eCH44 bezüglich Identifikation.
