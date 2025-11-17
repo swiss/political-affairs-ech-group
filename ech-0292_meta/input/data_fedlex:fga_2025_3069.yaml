@@ -1,6 +1,5 @@
 # Example data file for FRBR entities -> https://www.fedlex.admin.ch/eli/fga/2025/3069/de
 # Beschlussdatum ? -> Teil des Geschäfts?
-
 id: fedlex:container
 works:
   - id: fedlex:fga/2025/3069
