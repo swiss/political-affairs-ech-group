@@ -1,8 +1,12 @@
 ## Meeting Notes 17 November 2025
 
 - [Liste](https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=1490648211#gid=1490648211)
-  - Beispiele auswählen für Datenmodellierung
-  - konsolidieren, wo nötig
+- (konsolidieren, wo nötig)
+- Beispiele auswählen für Datenmodellierung: siehe Einträge mit "X"
+- Task bis nächstes Meeting:
+  - je 1 Dokument abbilden
+  - Beispiel: https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/data_fedlex%3Afga_2025_3069.yaml
+  - als separates yaml-file in https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0292_meta/input
 
 ## Meeting Notes 20 October 2025
 
