@@ -4,7 +4,7 @@
 - (konsolidieren, wo nötig)
 - Beispiele auswählen für Datenmodellierung: siehe Einträge mit "X"
 - Task bis nächstes Meeting:
-  - je 1 Dokument abbilden
+  - je 1 spezifisches Dokument (exemplarisch für Dokumenttyp) abbilden
   - Beispiel: https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/data_fedlex%3Afga_2025_3069.yaml
   - als separates yaml-file in https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0292_meta/input
 
