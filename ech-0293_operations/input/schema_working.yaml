@@ -290,6 +290,7 @@ speech: # Synonym Votum oder speaker_segment (Teil eines AgendaItem)
       - title
       - type: media
       - url:
+      - version:
       - parent_type: (meeting, agenda, speech, affair)
 
 # "data" : [ {
