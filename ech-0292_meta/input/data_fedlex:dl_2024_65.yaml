@@ -3,13 +3,13 @@
 
 id: fedlex:container               
 works:
-  - id: fedlex:bill/2024/65           # ≠ cons -> duplicate identifier (same as report) causes ambiguity
-    work_type: bill                   # AkomaNtoso vocabulary
+  - id: fedlex:dl/2024/65             # ≠ cons -> duplicate identifier (same as report) causes ambiguity
+    work_type: dl                     # AkomaNtoso vocabulary
     dates:
        - xdate: 2025-10-29
          date_type: publication       # mandatory: First publication in any language
        - xdate: 2025-XX-XX     
-         date_type: last_update       # optional
+         date_type: last_update       # if any
     expressions:
       - id: fedlex:bill/2024/65/de
         language: de                  # language currently                    : `eli/dl/proj/2024/65/cons_1/doc_4/de`
