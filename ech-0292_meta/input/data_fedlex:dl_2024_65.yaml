@@ -4,25 +4,25 @@
 id: fedlex:container               
 works:
   - id: fedlex:dl/2024/65             # ≠ cons -> duplicate identifier (same as report) causes ambiguity
-    work_type: dl                     # AkomaNtoso vocabulary
+    work_type: dl                     # draft legislation in ELI-DL vocabulary, bill in AkomaNtoso vocabulary
     dates:
        - xdate: 2025-10-29
          date_type: publication       # mandatory: First publication in any language
        - xdate: 2025-XX-XX     
          date_type: last_update       # if any
     expressions:
-      - id: fedlex:bill/2024/65/de
+      - id: fedlex:dl/2024/65/de
         language: de                  # language currently                    : `eli/dl/proj/2024/65/cons_1/doc_4/de`
         title: Vorentwurf des Bundesgesetzes über Kommunikationsplattformen und Suchmaschinen (VE-KomPG)
         manifestations:
-          - id: fedlex:cons/2024/65/de/pdf
+          - id: fedlex:dl/2024/65/de/pdf
             format: pdf               # only PDF version available currently  : `eli/dl/proj/2024/65/cons_1/doc_4/de/pdf-a/`
             url: https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/fedlex-data-admin-ch-eli-dl-proj-2024-65-cons_1-doc_4-de-pdf-a.pdf
-      - id: fedlex:cons/2024/65/fr
+      - id: fedlex:dl/2024/65/fr
         language: fr
         title: Avant-projet - Loi fédérale sur les plateformes de communication et les moteurs de recherche (LPCom)
         manifestations:
-          - id: fedlex:cons/2024/65/fr/pdf
+          - id: fedlex:dl/2024/65/fr/pdf
             format: pdf 
             url: https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/dl/proj/2024/65/cons_1/doc_1/fr/pdf-a/fedlex-data-admin-ch-eli-dl-proj-2024-65-cons_1-doc_1-fr-pdf-a.pdf
 
