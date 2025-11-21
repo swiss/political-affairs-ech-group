@@ -3,7 +3,7 @@
 
 id: fedlex:container               
 works:
-  - id: fedlex:dl/2024/65             # ≠ cons -> duplicate identifier (same as report) causes ambiguity
+  - id: fedlex:dl/2024/65             # ≠ cons; fga/2025/3178  causes ambiguity
     work_type: dl                     # draft legislation in ELI-DL vocabulary, bill in AkomaNtoso vocabulary
     dates:
        - xdate: 2025-10-29
