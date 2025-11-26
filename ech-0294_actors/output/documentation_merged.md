@@ -729,28 +729,6 @@ Jede Föderaleebene, wird als eigene Gruppierung geführt.
 - url_statutes: (optional)
 - party_color: (optional)
 
-
-## Memberships
-
-- ID Person
-- Role
-- ID Group
-- validFrom
-- validUntil
-- isActive (als Alternateive zu validFrom and validUntil)
-- authorized_to_vote
-
-## 
-
-* Überlegungen zu Datenschutz / Öffentlichkeitsrecht  (Christian schaut sich das an).
-  * ein Kapitel mit Analyse des IST Zustands / Rechtsgrundlage oder Toolkit ?
-  * Abklärung was ist rechtlich erlaubt.
-  * Was wäre ethisch verantwortbar.
-  * Personen des öffentlichen Interesses.
-  
-  * [Ersetzung der privaten Wohnadresse als Identifikator der Urheber von Volksinitiativen](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20243425)
-  * [Verhinderung der Pflicht zur Veröffentlichung der Wohnadressen von Parlamentsmitgliedern](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20233913)
-
 ## Interessenbindungen / Konflikte (Politikfinanzierungen)
 
 Siehe:  * https://www.parlament.ch/centers/documents/de/interessen-nr.pdf
@@ -773,4 +751,13 @@ Siehe:  * https://www.parlament.ch/centers/documents/de/interessen-nr.pdf
 
 * Zutrittsberechtigte in Personen eintragen und dann ein Objekt Zuttritsberechtigte die eine Beziehung zwischen Ratsmitglied und Zuttrittsberechtigter herstellt?
 * Wenn Interessensgrupppe ein anderes Parlament, dann ID von wo?
+
+* Überlegungen zu Datenschutz / Öffentlichkeitsrecht  (Christian schaut sich das an).
+  * ein Kapitel mit Analyse des IST Zustands / Rechtsgrundlage oder Toolkit ?
+  * Abklärung was ist rechtlich erlaubt.
+  * Was wäre ethisch verantwortbar.
+  * Personen des öffentlichen Interesses.
+  
+  * [Ersetzung der privaten Wohnadresse als Identifikator der Urheber von Volksinitiativen](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20243425)
+  * [Verhinderung der Pflicht zur Veröffentlichung der Wohnadressen von Parlamentsmitgliedern](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20233913)
 
