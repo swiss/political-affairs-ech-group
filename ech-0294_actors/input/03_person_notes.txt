@@ -205,3 +205,20 @@ names:
       * TI: [Fausto "Gerri" Beretta-Piccoli](https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269)
   * Übernahme von den Wahlsystemen ( Politische Rechte ).
      * officialName (mandatory) / rufnamen werden bei der BK gesammelt
+
+
+
+
+Beispiele von Bund, Kantonen, Städte
+
+- Beat Jans
+- Andrea Caroni
+- Maja Riniker
+- [Christelle Luisier Brodard
+]([url](https://openparldata.ch/home?item_category=persons&body_key=VD&active=true&gender=f&focused_item_category=persons&focused_item_id=18506))
+- [Luca Campana]([url](https://openparldata.ch/home?item_category=persons&body_key=5192&active=true&focused_item_category=persons&focused_item_id=5261))
+
+{{include:ech-0294_actors/output/docs/Person.md}} 
+
+
+
