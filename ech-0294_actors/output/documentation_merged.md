@@ -54,6 +54,14 @@ Currently we are working in the following order on the different topics regardin
 [todo]: # (Introduction of the "Person in Political Context", goal of the structure, goal of providing the ability to be very correct, but allow open information)
 
 
+Beispiele von Bund, Kantonen, Städte
+
+- Beat Jans
+- Andrea Caroni
+- Maja Riniker
+- [Christelle Luisier Brodard
+]([url](https://openparldata.ch/home?item_category=persons&body_key=VD&active=true&gender=f&focused_item_category=persons&focused_item_id=18506))
+- [Luca Campana]([url](https://openparldata.ch/home?item_category=persons&body_key=5192&active=true&focused_item_category=persons&focused_item_id=5261))
 
 
 
@@ -742,15 +750,6 @@ Jede Föderaleebene, wird als eigene Gruppierung geführt.
 
 ## 
 
-* Überlegungen zu Datenschutz / Öffentlichkeitsrecht  (Christian schaut sich das an).
-  * ein Kapitel mit Analyse des IST Zustands / Rechtsgrundlage oder Toolkit ?
-  * Abklärung was ist rechtlich erlaubt.
-  * Was wäre ethisch verantwortbar.
-  * Personen des öffentlichen Interesses.
-  
-  * [Ersetzung der privaten Wohnadresse als Identifikator der Urheber von Volksinitiativen](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20243425)
-  * [Verhinderung der Pflicht zur Veröffentlichung der Wohnadressen von Parlamentsmitgliedern](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20233913)
-
 ## Interessenbindungen / Konflikte (Politikfinanzierungen)
 
 Siehe:  * https://www.parlament.ch/centers/documents/de/interessen-nr.pdf
@@ -773,4 +772,13 @@ Siehe:  * https://www.parlament.ch/centers/documents/de/interessen-nr.pdf
 
 * Zutrittsberechtigte in Personen eintragen und dann ein Objekt Zuttritsberechtigte die eine Beziehung zwischen Ratsmitglied und Zuttrittsberechtigter herstellt?
 * Wenn Interessensgrupppe ein anderes Parlament, dann ID von wo?
+
+* Überlegungen zu Datenschutz / Öffentlichkeitsrecht  (Christian schaut sich das an).
+  * ein Kapitel mit Analyse des IST Zustands / Rechtsgrundlage oder Toolkit ?
+  * Abklärung was ist rechtlich erlaubt.
+  * Was wäre ethisch verantwortbar.
+  * Personen des öffentlichen Interesses.
+  
+  * [Ersetzung der privaten Wohnadresse als Identifikator der Urheber von Volksinitiativen](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20243425)
+  * [Verhinderung der Pflicht zur Veröffentlichung der Wohnadressen von Parlamentsmitgliedern](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20233913)
 

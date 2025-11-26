@@ -16,124 +16,124 @@
 act:Person a owl:Class ;
     rdfs:label "Person" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:genders ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:trainings ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty act:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:addresses ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:contacts ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:birthdate ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Citizenship ;
-            owl:onProperty act:citizenships ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:label_long ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty act:birthdate ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:ch_citizenship ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:LanguageProficiency ;
-            owl:onProperty act:languages ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:picture ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:electoral_district ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:picture ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:label ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
             owl:onProperty act:label ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:birthdate ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty act:birthyear ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:electoral_district ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Validity ;
-            owl:onProperty act:ch_citizenship ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Occupation ;
-            owl:onProperty act:occupations ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:occupations ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:label ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:label_long ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:picture ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Address ;
-            owl:onProperty act:addresses ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:languages ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Contact ;
-            owl:onProperty act:contacts ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:names ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Training ;
-            owl:onProperty act:trainings ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:label_long ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:citizenships ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:Name ;
             owl:onProperty act:names ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:birthyear ],
+            owl:onProperty act:citizenships ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Occupation ;
+            owl:onProperty act:occupations ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty act:names ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:addresses ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Citizenship ;
+            owl:onProperty act:citizenships ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:genders ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:LanguageProficiency ;
+            owl:onProperty act:languages ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:contacts ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty act:ch_citizenship ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:label ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:Gender ;
             owl:onProperty act:genders ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:electoral_district ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:languages ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:ElectoralDistrict ;
+            owl:onProperty act:electoral_district ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:trainings ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:ch_citizenship ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Contact ;
+            owl:onProperty act:contacts ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:occupations ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:label ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:birthyear ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:label_long ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Validity ;
+            owl:onProperty act:ch_citizenship ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:picture ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:integer ;
             owl:onProperty act:birthyear ],
         [ a owl:Restriction ;
-            owl:allValuesFrom act:ElectoralDistrict ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty act:birthdate ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:label_long ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:label_long ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:picture ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:birthdate ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Training ;
+            owl:onProperty act:trainings ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:birthdate ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Address ;
+            owl:onProperty act:addresses ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty act:electoral_district ] ;
     skos:definition "A person with identifiers, names, addresses, citizenships, and occupations." ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
@@ -141,62 +141,62 @@ act:Person a owl:Class ;
 act:Address a owl:Class ;
     rdfs:label "Address" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:street_address ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:postal_code ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:address_URI ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:postal_locality ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:street_address ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:postal_locality ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:postal_code ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:postal_locality ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:street_address ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:postal_code ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:address_type ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:AddressTypeEnum ;
             owl:onProperty act:address_type ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:street_address ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:address_type ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty act:address_URI ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
+            owl:onProperty act:postal_code ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:postal_locality ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:postal_locality ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:postal_locality ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:street_address ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:postal_code ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:address_URI ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:address_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty act:address_URI ] ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:Citizenship a owl:Class ;
     rdfs:label "Citizenship" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:country ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:country ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty act:country ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
             owl:onProperty act:country ],
         act:Validity ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
@@ -210,8 +210,8 @@ act:Contact a owl:Class ;
             owl:allValuesFrom act:ContactTypeEnum ;
             owl:onProperty act:type ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:type ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:value ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:type ],
@@ -219,36 +219,36 @@ act:Contact a owl:Class ;
             owl:maxCardinality 1 ;
             owl:onProperty act:value ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:value ] ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:type ] ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:ElectoralDistrict a owl:Class ;
     rdfs:label "ElectoralDistrict" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty act:valid_until ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 1 ;
             owl:onProperty act:district ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty act:valid_from ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:valid_from ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
-            owl:onProperty act:valid_from ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:district ],
+            owl:onProperty act:valid_until ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:valid_until ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty act:district ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:district ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:valid_until ] ;
@@ -257,19 +257,19 @@ act:ElectoralDistrict a owl:Class ;
 act:Gender a owl:Class ;
     rdfs:label "Gender" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:pronouns ],
+            owl:minCardinality 1 ;
+            owl:onProperty act:value ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:pronouns ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:value ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:pronouns ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:value ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:maxCardinality 1 ;
             owl:onProperty act:value ],
         act:Validity ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
@@ -277,161 +277,161 @@ act:Gender a owl:Class ;
 act:LanguageProficiency a owl:Class ;
     rdfs:label "LanguageProficiency" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:correspondence ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:language ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom xsd:boolean ;
             owl:onProperty act:correspondence ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
+            owl:onProperty act:native ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:native ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty act:correspondence ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty act:language ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:correspondence ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:language ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:native ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:native ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty act:native ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:language ] ;
+            owl:onProperty act:native ] ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:Name a owl:Class ;
     rdfs:label "Name" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty act:valid_until ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty act:value ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:date ;
             owl:onProperty act:valid_from ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:valid_until ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom xsd:date ;
             owl:onProperty act:valid_until ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:name_type ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:value ],
+            owl:minCardinality 1 ;
+            owl:onProperty act:name_type ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:NameTypeEnum ;
             owl:onProperty act:name_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:value ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:value ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:valid_from ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:name_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
             owl:onProperty act:valid_from ] ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:Occupation a owl:Class ;
     rdfs:label "Occupation" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty act:active ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:enterprise ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:paid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:enterprise ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty act:occupation_isco19_code ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:paid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty act:paid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:occupation_isco19_code ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:enterprise_uid ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
             owl:onProperty act:active ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:paid ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:paid ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:enterprise_uid ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:occupation_isco19_code ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:enterprise_uid ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:enterprise ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:value ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:enterprise_uid ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:value ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:active ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty act:active ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:enterprise ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
+            owl:onProperty act:enterprise_uid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty act:occupation_isco19_code ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:value ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty act:paid ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:enterprise ],
+            owl:onProperty act:enterprise_uid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:value ],
         act:Validity ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:Training a owl:Class ;
     rdfs:label "Training" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:training_isco19_code ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:type ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:value ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:training_isco19_code ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:TrainingTypeEnum ;
+            owl:onProperty act:type ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:training_isco19_code ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:value ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:training_isco19_code ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty act:training_isco19_code ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty act:type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:value ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:TrainingTypeEnum ;
             owl:onProperty act:type ] ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
@@ -665,23 +665,23 @@ act:AddressTypeEnum a owl:Class ;
 act:Validity a owl:Class ;
     rdfs:label "Validity" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:valid_until ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:valid_from ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
             owl:onProperty act:valid_until ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
             owl:onProperty act:valid_from ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty act:valid_from ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:valid_until ] ;
+            owl:onProperty act:valid_from ] ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:ContactTypeEnum a owl:Class ;
