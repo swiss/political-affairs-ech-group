@@ -729,6 +729,19 @@ Jede Föderaleebene, wird als eigene Gruppierung geführt.
 - url_statutes: (optional)
 - party_color: (optional)
 
+
+## Memberships
+
+- ID Person
+- Role
+- ID Group
+- validFrom
+- validUntil
+- isActive (als Alternateive zu validFrom and validUntil)
+- authorized_to_vote
+
+## 
+
 ## Interessenbindungen / Konflikte (Politikfinanzierungen)
 
 Siehe:  * https://www.parlament.ch/centers/documents/de/interessen-nr.pdf
