@@ -4,7 +4,7 @@
   * Erläuternde Berichte Gesetzestext zuordnung zum Gesetzt (artikel) ( -> consultations )
 
 * operations - affairs
-  * Meeting / Traktandum -> Affair (Geschäftstragende bei Affairs) / Traktandumsführende -> operations | 
+  * Meeting / Traktandum (Person/Gruppe) -> Affair (Geschäftstragende (Federführend) bei Affairs) / Traktandumsführende -> operations | 
   * Abstimmungen: Traktandierung / Abstimmungsresultate -> (Operations - (see also at affairs))
   * Abstimmungsinhalt -> (Affairs)
   * Versionisierung (bei Fehlern) -> (Meta)

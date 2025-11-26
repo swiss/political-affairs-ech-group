@@ -6,7 +6,7 @@ Ein Organ in dieser Definition ist einzig eine ansammlung von Personen. (Ohne we
 
 group
 - id (local)
-- globalid / tb named
+- uri politics.ld.admin.ch/party/1
 - type  enum -> Partei, Liste, Arbeitsgruppe 
 - type_label: "" (Wenn spezifischer lokaler Namen vorhanden.)
 - valid_from:
@@ -28,20 +28,71 @@ group
    - postalLocality: , 
 
 ## Verschiedene Typen von Organen
+
+* Gruppen, beinhalten Mitglieder ausweisen wollen (Listen)
+* Gruppen, Identifizieren (Departemente, Gerichte)
+
 -> Gemeinden, Kantone und Bund
 Zu diskutieren mit Hans-Peter
 
-* Partei
-* Liste (kann Teil einer Partei sein, oder nicht)
-* Fraktion 
-* Parlamentskomission
-* Delegation
-* Ad-Hoc Komission
-* Arbeitsgruppen
-* Interessengruppen
+-> Anwendungszweck der Struktur
+* Organisation innerhalb eines Parlamentssystems
+* Publikation an die öffentichkeit
+* Systeme mit Politischen Personen
+* Analysen mit Personen welche in Gruppen leben
+* Parteiliste global - UNIBE
 
-* Departementehttps://uzh.zoom.us/j/66843584125?pwd=l2s4GJMNYHfqEGtFS6ObF4R5sG7XCh.1
-* Ausserparlementarische Komissionen
+-> Ausdrücken der Ebene:
+* localExtend: Gemeinde Root
+* level: canton, municipality (abstract)
+
+
+Hierarchien innerhalb eines Types: Departement, Amt / Fraktion / Parteien
+
+# Sicht Parlamentsmitglied
+* Legislative
+  * Parlamente Föderale Ebene
+    * Bund (beide Kammern) / Kanton / Gemeinde
+  * Delegation
+  * Komission
+    * Attribute:
+       * ständig / (Ad-Hoc) nicht ständige
+       * Aufsichtkomissionen / Sachkomissionen
+    * Geschäftsprüfungskommission (ständige Aufsichtskommission)
+    * PUK (nichständige Aufsichtkommision)
+    * Rechnungsprüfungskommission 
+  * Fraktion
+  * Parlamentsbüro
+  * Präsidium des Parlaments
+* Exekutive = Regierung / Verwaltung
+  * Department
+  * Amt
+  * Ausserparlementarische Komissionen (z.B. Bankrat)
+  * Arbeitsgruppe (Ad-Hoc APK)
+* Zivilgesellschaft
+   * Partei
+   * Liste (kann Teil einer Partei sein, oder nicht) 
+   * Interessengruppen
+* Andere
+  * Kontrollorgane
+    * Finanzkontrolle
+    * AB-BA
+  * Parlamentsdienste
+*	(Parteilose und/oder fraktionslose Parlamentsmitglieder)
+
+
+# Sicht Parlamentsgeschäft
+* Legislative
+* Exekutive
+  * Ausgelagerte Träger öffentlicher Aufgaben
+    * Universitäten
+* Judikative
+  * Gerichte
+* Zivilgesellschaft
+  * Petitionsträger
+  * Verein
+
+
 
 ## Parteien
 Jede Föderaleebene, wird als eigene Gruppierung geführt.
@@ -51,6 +102,12 @@ Jede Föderaleebene, wird als eigene Gruppierung geführt.
 
 ## Memberships
 
-- 
+- ID Person
+- Role
+- ID Group
+- validFrom
+- validUntil
+- isActive (als Alternateive zu validFrom and validUntil)
+- authorized_to_vote
 
 ## 

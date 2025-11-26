@@ -1,13 +1,32 @@
 {
     "$defs": {
-        "Actor": {
+        "Address": {
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "id": {
-                    "type": "string"
+                "address_URI": {
+                    "description": "Preferred URI of address",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
-                "name": {
+                "address_type": {
+                    "$ref": "#/$defs/AddressTypeEnum"
+                },
+                "postal_code": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "postal_locality": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "street_address": {
                     "type": [
                         "string",
                         "null"
@@ -15,18 +34,348 @@
                 }
             },
             "required": [
-                "id"
+                "address_type"
             ],
-            "title": "Actor",
+            "title": "Address",
             "type": "object"
         },
-        "Container": {
+        "AddressTypeEnum": {
+            "description": "",
+            "enum": [
+                "privateAddress",
+                "businessAddress",
+                "localAddress"
+            ],
+            "title": "AddressTypeEnum",
+            "type": "string"
+        },
+        "Citizenship": {
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "actors": {
+                "country": {
+                    "description": "ISO 3166 country code (can't be CH)",
+                    "type": "string"
+                },
+                "valid_from": {
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "valid_until": {
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "country"
+            ],
+            "title": "Citizenship",
+            "type": "object"
+        },
+        "Contact": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "type": {
+                    "$ref": "#/$defs/ContactTypeEnum"
+                },
+                "value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type",
+                "value"
+            ],
+            "title": "Contact",
+            "type": "object"
+        },
+        "ContactTypeEnum": {
+            "description": "",
+            "enum": [
+                "email",
+                "contact_website",
+                "linked-in",
+                "twitter"
+            ],
+            "title": "ContactTypeEnum",
+            "type": "string"
+        },
+        "ElectoralDistrict": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "district": {
+                    "type": "string"
+                },
+                "valid_from": {
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "valid_until": {
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "district"
+            ],
+            "title": "ElectoralDistrict",
+            "type": "object"
+        },
+        "Gender": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "pronouns": {
+                    "description": "Pronouns used by the person",
                     "items": {
-                        "$ref": "#/$defs/Actor"
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "valid_from": {
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "valid_until": {
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "value": {
+                    "description": "Gender code",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "value"
+            ],
+            "title": "Gender",
+            "type": "object"
+        },
+        "LanguageProficiency": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "correspondence": {
+                    "description": "preferred language",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "language": {
+                    "description": "ISO language code",
+                    "type": "string"
+                },
+                "native": {
+                    "description": "proficient language",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "language"
+            ],
+            "title": "LanguageProficiency",
+            "type": "object"
+        },
+        "Name": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "name_type": {
+                    "$ref": "#/$defs/NameTypeEnum",
+                    "description": "categories of name types"
+                },
+                "valid_from": {
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "valid_until": {
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name_type",
+                "value"
+            ],
+            "title": "Name",
+            "type": "object"
+        },
+        "NameTypeEnum": {
+            "description": "",
+            "enum": [
+                "familyNameOnForeignPassport",
+                "callName",
+                "officialGivenName",
+                "officialLastName",
+                "officialMiddleName"
+            ],
+            "title": "NameTypeEnum",
+            "type": "string"
+        },
+        "Occupation": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "active": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "enterprise": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "enterprise_uid": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "occupation_isco19_code": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "paid": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "valid_from": {
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "valid_until": {
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Occupation",
+            "type": "object"
+        },
+        "Person": {
+            "additionalProperties": false,
+            "description": "A person with identifiers, names, addresses, citizenships, and occupations.",
+            "properties": {
+                "addresses": {
+                    "description": "place of residence and work",
+                    "items": {
+                        "$ref": "#/$defs/Address"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "birthdate": {
+                    "description": "Exact date of birth",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "birthyear": {
+                    "description": "Year of birth",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "ch_citizenship": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Validity"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "citizenships": {
+                    "items": {
+                        "$ref": "#/$defs/Citizenship"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "contacts": {
+                    "items": {
+                        "$ref": "#/$defs/Contact"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "electoral_district": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ElectoralDistrict"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "genders": {
+                    "items": {
+                        "$ref": "#/$defs/Gender"
                     },
                     "type": [
                         "array",
@@ -34,45 +383,205 @@
                     ]
                 },
                 "id": {
+                    "description": "Wikidata-ID preferred",
                     "type": "string"
+                },
+                "label": {
+                    "description": "Display name of the person",
+                    "type": "string"
+                },
+                "label_long": {
+                    "description": "Extended display name (with title, etc.)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "languages": {
+                    "items": {
+                        "$ref": "#/$defs/LanguageProficiency"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "names": {
+                    "items": {
+                        "$ref": "#/$defs/Name"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "occupations": {
+                    "items": {
+                        "$ref": "#/$defs/Occupation"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "picture": {
+                    "description": "Link to an image (preferred: PNG, then JPG, then GIF)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trainings": {
+                    "items": {
+                        "$ref": "#/$defs/Training"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "id"
+                "id",
+                "label"
             ],
-            "title": "Container",
+            "title": "Person",
             "type": "object"
         },
-        "MultilingualString": {
+        "Training": {
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "language": {
-                    "description": "Language code in ISO 639-1 format",
-                    "pattern": "^[a-z]{2}$",
-                    "type": "string"
+                "training_isco19_code": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
-                "text": {
-                    "type": "string"
+                "type": {
+                    "$ref": "#/$defs/TrainingTypeEnum"
+                },
+                "value": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "text",
-                "language"
+                "type"
             ],
-            "title": "MultilingualString",
+            "title": "Training",
+            "type": "object"
+        },
+        "TrainingTypeEnum": {
+            "description": "",
+            "enum": [
+                "schulabschluss",
+                "efz",
+                "uni",
+                "armee",
+                "zivi",
+                "zischutz"
+            ],
+            "title": "TrainingTypeEnum",
+            "type": "string"
+        },
+        "Validity": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "valid_from": {
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "valid_until": {
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Validity",
             "type": "object"
         }
     },
     "$id": "https://ch.paf.link/schema/actors",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
-    "description": "",
+    "description": "A person with identifiers, names, addresses, citizenships, and occupations.",
     "metamodel_version": "1.7.0",
     "properties": {
-        "actors": {
+        "addresses": {
+            "description": "place of residence and work",
             "items": {
-                "$ref": "#/$defs/Actor"
+                "$ref": "#/$defs/Address"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "birthdate": {
+            "description": "Exact date of birth",
+            "format": "date",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "birthyear": {
+            "description": "Year of birth",
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "ch_citizenship": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/Validity"
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        },
+        "citizenships": {
+            "items": {
+                "$ref": "#/$defs/Citizenship"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "contacts": {
+            "items": {
+                "$ref": "#/$defs/Contact"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "electoral_district": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/ElectoralDistrict"
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        },
+        "genders": {
+            "items": {
+                "$ref": "#/$defs/Gender"
             },
             "type": [
                 "array",
@@ -80,13 +589,69 @@
             ]
         },
         "id": {
+            "description": "Wikidata-ID preferred",
             "type": "string"
+        },
+        "label": {
+            "description": "Display name of the person",
+            "type": "string"
+        },
+        "label_long": {
+            "description": "Extended display name (with title, etc.)",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "languages": {
+            "items": {
+                "$ref": "#/$defs/LanguageProficiency"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "names": {
+            "items": {
+                "$ref": "#/$defs/Name"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "occupations": {
+            "items": {
+                "$ref": "#/$defs/Occupation"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "picture": {
+            "description": "Link to an image (preferred: PNG, then JPG, then GIF)",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "trainings": {
+            "items": {
+                "$ref": "#/$defs/Training"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
         }
     },
     "required": [
-        "id"
+        "id",
+        "label"
     ],
-    "title": "actors",
+    "title": "PersonSchema",
     "type": "object",
     "version": null
 }

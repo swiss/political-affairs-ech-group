@@ -1,4 +1,6 @@
 @prefix act: <https://ch.paf.link/schema/actors/> .
+@prefix dcterm: <http://purl.org/dc/terms/> .
+@prefix linkml: <https://w3id.org/linkml/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -6,96 +8,723 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://ch.paf.link/schema/actors.owl.ttl> a owl:Ontology ;
-    rdfs:label "actors" .
+    rdfs:label "PersonSchema" ;
+    dcterm:license "CC-BY" ;
+    dcterm:title "Person Schema" ;
+    skos:definition "A schema describing a person with addresses, names, languages, citizenships, occupations, training, and contact details." .
 
-act:Container a owl:Class ;
-    rdfs:label "Container" ;
+act:Person a owl:Class ;
+    rdfs:label "Person" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:id ],
+            owl:minCardinality 0 ;
+            owl:onProperty act:genders ],
         [ a owl:Restriction ;
-            owl:allValuesFrom act:Actor ;
-            owl:onProperty act:actors ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:id ],
+            owl:minCardinality 0 ;
+            owl:onProperty act:trainings ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:id ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:actors ] ;
-    skos:inScheme <https://ch.paf.link/schema/actors> .
-
-act:MultilingualString a owl:Class ;
-    rdfs:label "MultilingualString" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:text ],
+            owl:onProperty act:addresses ],
         [ a owl:Restriction ;
-            owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:onDatatype xsd:string ;
-                    owl:withRestrictions ( [ xsd:pattern "^[a-z]{2}$" ] ) ] ;
-            owl:onProperty act:language ],
+            owl:minCardinality 0 ;
+            owl:onProperty act:contacts ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:language ],
+            owl:onProperty act:birthdate ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:language ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:text ],
+            owl:allValuesFrom act:Citizenship ;
+            owl:onProperty act:citizenships ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:text ] ;
-    skos:inScheme <https://ch.paf.link/schema/actors> .
-
-act:Actor a owl:Class ;
-    rdfs:label "Actor" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:name ],
+            owl:onProperty act:label_long ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:name ],
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty act:birthdate ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:ch_citizenship ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:LanguageProficiency ;
+            owl:onProperty act:languages ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:picture ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:electoral_district ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:picture ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:label ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
+            owl:onProperty act:label ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:birthdate ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:birthyear ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:electoral_district ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Validity ;
+            owl:onProperty act:ch_citizenship ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Occupation ;
+            owl:onProperty act:occupations ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:occupations ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty act:id ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty act:id ],
+            owl:onProperty act:label ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:label_long ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:picture ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Address ;
+            owl:onProperty act:addresses ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:languages ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Contact ;
+            owl:onProperty act:contacts ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:names ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Training ;
+            owl:onProperty act:trainings ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:label_long ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
             owl:onProperty act:id ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:name ] ;
+            owl:onProperty act:citizenships ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Name ;
+            owl:onProperty act:names ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:birthyear ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:ch_citizenship ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Gender ;
+            owl:onProperty act:genders ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty act:birthyear ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:ElectoralDistrict ;
+            owl:onProperty act:electoral_district ] ;
+    skos:definition "A person with identifiers, names, addresses, citizenships, and occupations." ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
-act:actors a owl:ObjectProperty ;
-    rdfs:label "actors" ;
-    rdfs:range act:Actor ;
+act:Address a owl:Class ;
+    rdfs:label "Address" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:street_address ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:postal_code ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:address_URI ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:postal_locality ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:street_address ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:postal_locality ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:postal_code ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:postal_locality ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:street_address ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:postal_code ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:address_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:AddressTypeEnum ;
+            owl:onProperty act:address_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:address_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:address_URI ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:address_URI ] ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
-act:language a owl:DatatypeProperty ;
-    rdfs:label "language" ;
-    rdfs:range [ a rdfs:Datatype ;
-            owl:onDatatype xsd:string ;
-            owl:withRestrictions ( [ xsd:pattern "^[a-z]{2}$" ] ) ] ;
-    skos:definition "Language code in ISO 639-1 format" ;
+act:Citizenship a owl:Class ;
+    rdfs:label "Citizenship" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:country ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:country ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:country ],
+        act:Validity ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
-act:name a owl:DatatypeProperty ;
-    rdfs:label "name" ;
+act:Contact a owl:Class ;
+    rdfs:label "Contact" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:ContactTypeEnum ;
+            owl:onProperty act:type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:value ] ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
-act:text a owl:DatatypeProperty ;
-    rdfs:label "text" ;
+act:ElectoralDistrict a owl:Class ;
+    rdfs:label "ElectoralDistrict" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:district ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:district ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:district ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:valid_until ] ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:Gender a owl:Class ;
+    rdfs:label "Gender" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:pronouns ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:pronouns ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:value ],
+        act:Validity ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:LanguageProficiency a owl:Class ;
+    rdfs:label "LanguageProficiency" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:correspondence ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:correspondence ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty act:correspondence ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:language ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:language ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:native ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:native ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty act:native ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:language ] ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:Name a owl:Class ;
+    rdfs:label "Name" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:name_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:NameTypeEnum ;
+            owl:onProperty act:name_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:name_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty act:valid_from ] ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:Occupation a owl:Class ;
+    rdfs:label "Occupation" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:occupation_isco19_code ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty act:active ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:paid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:paid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:enterprise_uid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:occupation_isco19_code ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:enterprise_uid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:enterprise ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:enterprise_uid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:active ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:active ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:enterprise ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:occupation_isco19_code ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty act:paid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:enterprise ],
+        act:Validity ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:Training a owl:Class ;
+    rdfs:label "Training" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:training_isco19_code ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:training_isco19_code ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:training_isco19_code ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:TrainingTypeEnum ;
+            owl:onProperty act:type ] ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+<https://ch.paf.link/schema/actors/AddressTypeEnum#businessAddress> a owl:Class ;
+    rdfs:label "businessAddress" ;
+    rdfs:subClassOf act:AddressTypeEnum .
+
+<https://ch.paf.link/schema/actors/AddressTypeEnum#localAddress> a owl:Class ;
+    rdfs:label "localAddress" ;
+    rdfs:subClassOf act:AddressTypeEnum .
+
+<https://ch.paf.link/schema/actors/AddressTypeEnum#privateAddress> a owl:Class ;
+    rdfs:label "privateAddress" ;
+    rdfs:subClassOf act:AddressTypeEnum .
+
+<https://ch.paf.link/schema/actors/ContactTypeEnum#contact_website> a owl:Class ;
+    rdfs:label "contact_website" ;
+    rdfs:subClassOf act:ContactTypeEnum .
+
+<https://ch.paf.link/schema/actors/ContactTypeEnum#email> a owl:Class ;
+    rdfs:label "email" ;
+    rdfs:subClassOf act:ContactTypeEnum .
+
+<https://ch.paf.link/schema/actors/ContactTypeEnum#linked-in> a owl:Class ;
+    rdfs:label "linked-in" ;
+    rdfs:subClassOf act:ContactTypeEnum .
+
+<https://ch.paf.link/schema/actors/ContactTypeEnum#twitter> a owl:Class ;
+    rdfs:label "twitter" ;
+    rdfs:subClassOf act:ContactTypeEnum .
+
+<https://ch.paf.link/schema/actors/NameTypeEnum#callName> a owl:Class ;
+    rdfs:label "callName" ;
+    rdfs:subClassOf act:NameTypeEnum .
+
+<https://ch.paf.link/schema/actors/NameTypeEnum#familyNameOnForeignPassport> a owl:Class ;
+    rdfs:label "familyNameOnForeignPassport" ;
+    rdfs:subClassOf act:NameTypeEnum .
+
+<https://ch.paf.link/schema/actors/NameTypeEnum#officialGivenName> a owl:Class ;
+    rdfs:label "officialGivenName" ;
+    rdfs:subClassOf act:NameTypeEnum .
+
+<https://ch.paf.link/schema/actors/NameTypeEnum#officialLastName> a owl:Class ;
+    rdfs:label "officialLastName" ;
+    rdfs:subClassOf act:NameTypeEnum .
+
+<https://ch.paf.link/schema/actors/NameTypeEnum#officialMiddleName> a owl:Class ;
+    rdfs:label "officialMiddleName" ;
+    rdfs:subClassOf act:NameTypeEnum .
+
+<https://ch.paf.link/schema/actors/TrainingTypeEnum#armee> a owl:Class ;
+    rdfs:label "armee" ;
+    rdfs:subClassOf act:TrainingTypeEnum .
+
+<https://ch.paf.link/schema/actors/TrainingTypeEnum#efz> a owl:Class ;
+    rdfs:label "efz" ;
+    rdfs:subClassOf act:TrainingTypeEnum .
+
+<https://ch.paf.link/schema/actors/TrainingTypeEnum#schulabschluss> a owl:Class ;
+    rdfs:label "schulabschluss" ;
+    rdfs:subClassOf act:TrainingTypeEnum .
+
+<https://ch.paf.link/schema/actors/TrainingTypeEnum#uni> a owl:Class ;
+    rdfs:label "uni" ;
+    rdfs:subClassOf act:TrainingTypeEnum .
+
+<https://ch.paf.link/schema/actors/TrainingTypeEnum#zischutz> a owl:Class ;
+    rdfs:label "zischutz" ;
+    rdfs:subClassOf act:TrainingTypeEnum .
+
+<https://ch.paf.link/schema/actors/TrainingTypeEnum#zivi> a owl:Class ;
+    rdfs:label "zivi" ;
+    rdfs:subClassOf act:TrainingTypeEnum .
+
+act:addresses a owl:ObjectProperty ;
+    rdfs:label "addresses" ;
+    skos:definition "place of residence and work" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:citizenships a owl:ObjectProperty ;
+    rdfs:label "citizenships" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:contacts a owl:ObjectProperty ;
+    rdfs:label "contacts" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:genders a owl:ObjectProperty ;
+    rdfs:label "genders" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:languages a owl:ObjectProperty ;
+    rdfs:label "languages" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:names a owl:ObjectProperty ;
+    rdfs:label "names" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:occupations a owl:ObjectProperty ;
+    rdfs:label "occupations" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:pronouns a owl:DatatypeProperty ;
+    rdfs:label "pronouns" ;
+    skos:definition "Pronouns used by the person" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:trainings a owl:ObjectProperty ;
+    rdfs:label "trainings" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:active a owl:DatatypeProperty ;
+    rdfs:label "active" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:address_URI a owl:DatatypeProperty ;
+    rdfs:label "address-URI" ;
+    skos:definition "Preferred URI of address" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:address_type a owl:ObjectProperty ;
+    rdfs:label "address-type" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:birthdate a owl:DatatypeProperty ;
+    rdfs:label "birthdate" ;
+    skos:definition "Exact date of birth" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:birthyear a owl:DatatypeProperty ;
+    rdfs:label "birthyear" ;
+    skos:definition "Year of birth" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:ch_citizenship a owl:ObjectProperty ;
+    rdfs:label "ch_citizenship" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:correspondence a owl:DatatypeProperty ;
+    rdfs:label "correspondence" ;
+    skos:definition "preferred language" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:country a owl:DatatypeProperty ;
+    rdfs:label "country" ;
+    skos:definition "ISO 3166 country code (can't be CH)" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:district a owl:DatatypeProperty ;
+    rdfs:label "district" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:electoral_district a owl:ObjectProperty ;
+    rdfs:label "electoral_district" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:enterprise a owl:DatatypeProperty ;
+    rdfs:label "enterprise" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:enterprise_uid a owl:DatatypeProperty ;
+    rdfs:label "enterprise_uid" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:id a owl:DatatypeProperty ;
     rdfs:label "id" ;
+    skos:definition "Wikidata-ID preferred" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:label a owl:DatatypeProperty ;
+    rdfs:label "label" ;
+    skos:definition "Display name of the person" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:label_long a owl:DatatypeProperty ;
+    rdfs:label "label_long" ;
+    skos:definition "Extended display name (with title, etc.)" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:language a owl:DatatypeProperty .
+
+act:name_type a owl:ObjectProperty ;
+    rdfs:label "name_type" ;
+    skos:definition "categories of name types" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:native a owl:DatatypeProperty ;
+    rdfs:label "native" ;
+    skos:definition "proficient language" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:occupation_isco19_code a owl:DatatypeProperty ;
+    rdfs:label "occupation_isco19_code" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:paid a owl:DatatypeProperty ;
+    rdfs:label "paid" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:picture a owl:DatatypeProperty ;
+    rdfs:label "picture" ;
+    skos:definition "Link to an image (preferred: PNG, then JPG, then GIF)" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:postal_code a owl:DatatypeProperty ;
+    rdfs:label "postal-code" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:postal_locality a owl:DatatypeProperty ;
+    rdfs:label "postal-locality" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:street_address a owl:DatatypeProperty ;
+    rdfs:label "street-address" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:training_isco19_code a owl:DatatypeProperty ;
+    rdfs:label "training_isco19_code" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:AddressTypeEnum a owl:Class ;
+    rdfs:label "AddressTypeEnum" ;
+    owl:unionOf ( <https://ch.paf.link/schema/actors/AddressTypeEnum#privateAddress> <https://ch.paf.link/schema/actors/AddressTypeEnum#businessAddress> <https://ch.paf.link/schema/actors/AddressTypeEnum#localAddress> ) ;
+    skos:inScheme <https://ch.paf.link/schema/actors> ;
+    linkml:permissible_values <https://ch.paf.link/schema/actors/AddressTypeEnum#businessAddress>,
+        <https://ch.paf.link/schema/actors/AddressTypeEnum#localAddress>,
+        <https://ch.paf.link/schema/actors/AddressTypeEnum#privateAddress> .
+
+act:Validity a owl:Class ;
+    rdfs:label "Validity" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:valid_until ] ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:ContactTypeEnum a owl:Class ;
+    rdfs:label "ContactTypeEnum" ;
+    owl:unionOf ( <https://ch.paf.link/schema/actors/ContactTypeEnum#email> <https://ch.paf.link/schema/actors/ContactTypeEnum#contact_website> <https://ch.paf.link/schema/actors/ContactTypeEnum#linked-in> <https://ch.paf.link/schema/actors/ContactTypeEnum#twitter> ) ;
+    skos:inScheme <https://ch.paf.link/schema/actors> ;
+    linkml:permissible_values <https://ch.paf.link/schema/actors/ContactTypeEnum#contact_website>,
+        <https://ch.paf.link/schema/actors/ContactTypeEnum#email>,
+        <https://ch.paf.link/schema/actors/ContactTypeEnum#linked-in>,
+        <https://ch.paf.link/schema/actors/ContactTypeEnum#twitter> .
+
+act:NameTypeEnum a owl:Class ;
+    rdfs:label "NameTypeEnum" ;
+    owl:unionOf ( <https://ch.paf.link/schema/actors/NameTypeEnum#familyNameOnForeignPassport> <https://ch.paf.link/schema/actors/NameTypeEnum#callName> <https://ch.paf.link/schema/actors/NameTypeEnum#officialGivenName> <https://ch.paf.link/schema/actors/NameTypeEnum#officialLastName> <https://ch.paf.link/schema/actors/NameTypeEnum#officialMiddleName> ) ;
+    skos:inScheme <https://ch.paf.link/schema/actors> ;
+    linkml:permissible_values <https://ch.paf.link/schema/actors/NameTypeEnum#callName>,
+        <https://ch.paf.link/schema/actors/NameTypeEnum#familyNameOnForeignPassport>,
+        <https://ch.paf.link/schema/actors/NameTypeEnum#officialGivenName>,
+        <https://ch.paf.link/schema/actors/NameTypeEnum#officialLastName>,
+        <https://ch.paf.link/schema/actors/NameTypeEnum#officialMiddleName> .
+
+act:type a owl:ObjectProperty .
+
+act:TrainingTypeEnum a owl:Class ;
+    rdfs:label "TrainingTypeEnum" ;
+    owl:unionOf ( <https://ch.paf.link/schema/actors/TrainingTypeEnum#schulabschluss> <https://ch.paf.link/schema/actors/TrainingTypeEnum#efz> <https://ch.paf.link/schema/actors/TrainingTypeEnum#uni> <https://ch.paf.link/schema/actors/TrainingTypeEnum#armee> <https://ch.paf.link/schema/actors/TrainingTypeEnum#zivi> <https://ch.paf.link/schema/actors/TrainingTypeEnum#zischutz> ) ;
+    skos:inScheme <https://ch.paf.link/schema/actors> ;
+    linkml:permissible_values <https://ch.paf.link/schema/actors/TrainingTypeEnum#armee>,
+        <https://ch.paf.link/schema/actors/TrainingTypeEnum#efz>,
+        <https://ch.paf.link/schema/actors/TrainingTypeEnum#schulabschluss>,
+        <https://ch.paf.link/schema/actors/TrainingTypeEnum#uni>,
+        <https://ch.paf.link/schema/actors/TrainingTypeEnum#zischutz>,
+        <https://ch.paf.link/schema/actors/TrainingTypeEnum#zivi> .
+
+act:valid_from a owl:DatatypeProperty ;
+    rdfs:label "valid_from" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:valid_until a owl:DatatypeProperty ;
+    rdfs:label "valid-until",
+        "valid_until" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:value a owl:DatatypeProperty .
 
 

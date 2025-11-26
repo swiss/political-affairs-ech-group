@@ -3,8 +3,13 @@
 # Slot: id 
 
 
+_Wikidata-ID preferred_
 
-URI: [dcterm:identifier](http://purl.org/dc/terms/identifier)
+
+
+
+
+URI: [act:id](https://ch.paf.link/schema/actors/id)
 Alias: id
 
 <!-- no inheritance hierarchy -->
@@ -17,8 +22,7 @@ Alias: id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Container](Container.md) |  |  no  |
-| [Actor](Actor.md) |  |  no  |
+| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
 
 
 
@@ -53,7 +57,7 @@ Alias: id
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | dcterm:identifier |
+| self | act:id |
 | native | act:id |
 
 
@@ -64,14 +68,14 @@ Alias: id
 <details>
 ```yaml
 name: id
+description: Wikidata-ID preferred
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
-slot_uri: dcterm:identifier
 identifier: true
 alias: id
+owner: Person
 domain_of:
-- Container
-- Actor
+- Person
 range: string
 required: true
 

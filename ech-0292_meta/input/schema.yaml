@@ -1,0 +1,139 @@
+id: https://ch.paf.link/schema/meta
+name: meta
+description: |
+  [de] Dieses Schema modelliert Meta-Themen für die eCH Standards 0293-0297. In einem ersten Schritt werden FRBR-Entitäten modelliert, um die Verwaltung von Dokumenten und deren Übersetzungen zu ermöglichen.
+prefixes:
+  xsd: http://www.w3.org/2001/XMLSchema#
+  prov: http://www.w3.org/ns/prov#
+  dcterm: http://purl.org/dc/terms/
+  linkml: https://w3id.org/linkml/
+  meta: https://ch.paf.link/schema/meta/
+imports:
+  - linkml:types
+default_prefix: meta
+default_range: string
+  
+classes:
+  
+  Work:
+    slots:
+      - id
+      - work_type
+      - expressions
+    
+  Expression:
+    slots:
+      - id
+      - dates
+      - language
+      - title
+      - description
+      - manifestations
+
+  Manifestation:
+    slots:
+      - id
+      - dates
+      - format
+      - url
+
+  Container:
+    tree_root: true
+    slots:
+      - id
+      - works
+
+  Date:
+    slots:
+      - xdate
+      - date_type
+
+slots:
+  
+  works:
+    slot_uri: meta:works
+    range: Work
+    multivalued: true
+    inlined_as_list: true
+
+  expressions:
+    slot_uri: meta:expressions
+    range: Expression
+    multivalued: true
+    inlined_as_list: true
+
+  manifestations:
+    slot_uri: meta:manifestations
+    range: Manifestation
+    multivalued: true
+    inlined_as_list: true
+  
+  id:
+    identifier: true
+    required: true
+
+  work_type:
+    slot_uri: meta:workType
+    range: work_types_enum
+
+  language:
+    required: true
+    description: |
+      [en] Language code in ISO 639-1 format.
+      [de] Sprachcode im ISO 639-1-Format.
+    pattern: ^[a-z]{2}$
+    slot_uri: dcterm:language
+
+  title:
+    slot_uri: meta:title
+    range: string
+    required: true
+  
+  description:
+    slot_uri: schema:description
+    range: string
+
+  format: #probably from http://publications.europa.eu/resource/authority/file-type
+    slot_uri: meta:format
+    range: string
+    description: |
+      [en] The file format of the manifestation (e.g., pdf, html).
+      [de] Das Dateiformat der Manifestation (z.B. pdf, html).
+
+  url:
+    slot_uri: meta:url
+    range: uri
+
+  dates:
+    slot_uri: meta:dates
+    range: Date
+    multivalued: true
+    inlined_as_list: true
+
+  xdate:
+    slot_uri: dcterm:date
+    range: date
+    required: true
+
+  date_type:
+    slot_uri: meta:dateType
+    range: date_types_enum
+    required: true
+
+enums:
+
+  date_types_enum:
+    permissible_values:
+      first publication:
+        meaning: meta:vocabulary/date_types/FirstPublication
+      last revision:
+        meaning: meta:vocabulary/date_types/LastRevision
+
+  work_types_enum:
+    permissible_values:
+      pv:
+        meaning: meta:vocabulary/work_types/PV
+      submitted version:
+        meaning: meta:vocabulary/work_types/SubmittedVersion
+      current law:
+        meaning: meta:vocabulary/work_types/CurrentLaw

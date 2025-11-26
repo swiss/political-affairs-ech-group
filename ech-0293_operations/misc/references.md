@@ -24,7 +24,10 @@
 ## International
 
 - Popolo Project -  International legislative data specifications: [event](https://www.popoloproject.com/specs/event.html), [speech](https://www.popoloproject.com/specs/speech.html) etc.
-- [OParl](https://oparl.org/spezifikation/online-ansicht/#schema): LegistlativeTerm, Meeting, AgendaItem etc.
+- [DE: OParl](https://oparl.org/spezifikation/online-ansicht/#schema): LegistlativeTerm, Meeting, AgendaItem etc.
+- [The debates of the European Parliament as Linked Open Data](https://journals.sagepub.com/doi/full/10.3233/SW-160227)
+- [FI: ParliamentSampo Metadata Schema](https://www.ldf.fi/service/pylode?url=http://ldf.fi/schema/semparl/#)
+- [IT: Ontology of the Chamber of Deputies](https://dati.camera.it/en/ontology-chamber-deputies)
 
 ## Anwesenheit
 

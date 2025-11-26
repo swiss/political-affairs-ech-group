@@ -1,54 +1,57 @@
-id: https://ch.paf.link/schema/consultation
-name: ch-paf-link-consultation
-prefixes:
-  xsd: http://www.w3.org/2001/XMLSchema#
-  prov: http://www.w3.org/ns/prov#
-  dcterm: http://purl.org/dc/terms/
-  linkml: https://w3id.org/linkml/
-  paf: https://paf.link/
-  chpaf: https://ch.paf.link/
-  con: https://politics.ld.admin.ch/consultation/
-imports:
-  - linkml:types
-default_prefix: chpaf
-default_range: string
-  
-classes:
-  
-  Consultation:
-    slots:
-      - id
-      - name
-      - content
-      - receivers
+# Consultation
 
-  Container:
-    tree_root: true
-    slots:
-      - id
-      - consultations
+## Allgemeingültige Informationen
 
-slots:
-  
-  id:
-    identifier: true
-    required: true
+consultation # eConsultation: project
+  identifier # "New world", see the discussion here: https://github.com/swiss/political-affairs-ech-group/edit/main/ech-0297_consultations/misc/2025-11-03-session.md
+    required
+    string
+  title # Best practice recommendation: Keep it below 150 characters
+    required
+    translatable
+  description # eConsultation: kurztext_id
+    translatable
+  status # eConsultation: state
+    required
+    values (preparing, planned, open, closed, waiting_for_statements, waiting_for_report, cancelled, unknown)
+  landing_page # External URL offering additional information
+    string
+  publication_date # eConsultation: published_on
+    datetime
+  start_date # eConsultation: opening
+    datetime
+  submission_deadline
+    datetime
 
-  name:
-    slot_uri: dcterm:title
-    range: string
-    required: true
+Organizer
+- Group/Organization # Link Gremium
+- Person
 
-  content:
-    required: true
+Participant  # Link to actors 
+  - Person
+    - Name
+      - required
+    - Lastname
+      - required
+    - Address 
+  - Group/Organization
 
-  receivers:
-    slot_uri: chpaf:receiver
-    multivalued: true
-    inlined_as_list: true
+# Input Parteienliste (via APS) - Parteienliste sollte auch Adresse liefern
 
-  consultations:
-    slot_uri: chpaf:consultation
-    range: Consultation
-    multivalued: true
-    inlined_as_list: true
+Fehlt noch:
+- Welche Organisation ist zuständig?
+- Wer ist die Ansprechperson?
+
+Weggelassen (Implementierung):
+- created, updated dates
+- review_status
+- public
+- modified
+- counter_proposal_flag
+
+Phasen und Daten:
+- Vorbereitung
+- Publikation
+- Start der Einreichungen
+- Ende der Einreichungen (Deadline)
+- < TODO: Interne Abläufe >

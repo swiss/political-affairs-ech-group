@@ -1,0 +1,55 @@
+@prefix act: <https://ch.paf.link/schema/actors/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://www.wikidata.org/wiki/Q42> a act:Person ;
+    act:address [ a act:Address ;
+            act:addressType "privateAddress" ;
+            act:addressURI "https://www.wikidata.org/wiki/Q42#P969" ;
+            act:postalCode "12345" ;
+            act:postalLocality "London" ;
+            act:streetAddress "1234 Fictional St, London, UK" ] ;
+    act:birthdate "1952-03-11"^^xsd:date ;
+    act:birthyear 1952 ;
+    act:chCitizenship [ a act:Validity ;
+            act:validFrom "2020-01-01"^^xsd:date ;
+            act:validUntil "2025-01-01"^^xsd:date ] ;
+    act:citizenship [ a act:Citizenship ;
+            act:country "GB" ;
+            act:validFrom "1952-03-11"^^xsd:date ] ;
+    act:contact [ a act:Contact ;
+            act:type "email" ;
+            act:value "douglas.adams@adams-familiy.org" ] ;
+    act:electoralDistrict [ a act:ElectoralDistrict ;
+            act:district "London Central" ;
+            act:validFrom "2020-01-01"^^xsd:date ;
+            act:validUntil "2025-01-01"^^xsd:date ] ;
+    act:gender [ a act:Gender ;
+            act:pronouns "he",
+                "him" ;
+            act:validFrom "1952-03-11"^^xsd:date ;
+            act:value "male" ] ;
+    act:label "Douglas Adams" ;
+    act:label_long "Douglas Noël Adams" ;
+    act:language [ a act:LanguageProficiency ;
+            act:correspondence true ;
+            act:language "en" ;
+            act:native true ] ;
+    act:name [ a act:Name ;
+            act:nameType "callName" ;
+            act:value "Douglas" ],
+        [ a act:Name ;
+            act:nameType "officialLastName" ;
+            act:validFrom "1952-03-11"^^xsd:date ;
+            act:value "Adams" ] ;
+    act:occupation [ a act:Occupation ;
+            act:active false ;
+            act:paid true ;
+            act:validFrom "1979-01-01"^^xsd:date ;
+            act:validUntil "2001-05-11"^^xsd:date ;
+            act:value "writer" ] ;
+    act:picture "https://commons.wikimedia.org/wiki/File:Douglas_adams_portrait.jpg" ;
+    act:training [ a act:Training ;
+            act:type "schulabschluss" ;
+            act:value "High School Diploma" ] .
+
+

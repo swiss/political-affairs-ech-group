@@ -136,7 +136,11 @@ It seems not possible to have a different descriptions for slots used in differe
 
 ### Attributes vs Slots
 
-Properties can either be defined within a class as `attribute` and then, they are exclusive to that class or as `slot` which can be reused across different classes. If there are different classes that define the same `attribute` (even with different descriptions), this will result in an error.
+Properties can either be defined within a class as `attribute` and then, they are exclusive to that class or as `slot` which can be reused across different classes. If there are different classes that define the same `attribute` (even with different descriptions), this will result in a warning (but it seems that one can live with it).
+
+### Capitalization with Regards to Classes and Attributes/Slots
+
+If a class and an attribute/slot share the same name but differ only in capitalization (e.g. class `Person` and slot `person`), this will lead to issues in the generated documentation files because they will only differ in capitalization which some operating systems do not respect.
 
 ### Data Types and Formats
 

@@ -1,0 +1,183 @@
+#-------------------- Fixed values / Dictionaries --------------------#
+enums:
+	affairType: 
+		description: XX
+		permissible_values: 
+			motion: { description: XX}
+			motion_and_postulate: 
+			motion_then_postulate: 
+	LanguageCodeEnum:
+		description: Text language
+		permissible_values:
+			de: { description: German }
+			fr: { description: French }
+			it: { description: Italian }
+			rm: { description: Romansh}
+			en: { description: English }	
+	CouncilEnum:
+		description: XX
+		permissible_values:
+			Rat: { description: XX }
+			Kammer: { description: XX }
+			Nationalrat: { description: XX }
+			Ständerat:  { description: XX }
+			Vereinigte Bundesversammlung:  { description: XX }
+	TextOriginEnum:
+		description: Origin of the text for multilingual tracking.
+		permissible_values:
+			original: { description: The title was originally submitted in this language. }
+			translated: { description: The title was later translated from another language. }
+	TextTypeEnum:
+	  	description: Type or function of the text within the legislative affair.
+	  	permissible_values:
+	   		title: { description: Official title of the motion. }
+	   		submitted: {description: The text submitted by the sponsor.}
+	   		reasoning: {description: An explanation or justification submitted by the sponsor.}
+	   		response: { description: Response by executive (e.g., Bundesrat). }
+	   		recommendation: { description: Formal recommendation for or against the motion. }
+	   		summary: { description: Administrative summary or synopsis. }
+			
+	
+	SponsorRoleEnum:
+		description: Role of (co-)sponsors.
+	    	permissible_values:
+			#Ergänzen: first, second, third, n-sponsor
+	      	 	sponsor: 
+				description: Main sponsor submitting a pursuit/affair.
+	      	 	cosponsor: 
+				description: 
+					MP who co-signed the pursuit/affair.
+	      	 	transferred: 
+				description: Entity who took over the sponsorship after the original sponsor left.
+	
+	SubmissionReviewStepTypeEnum:
+	  	permissible_values:
+	  	  	initial_check:
+	  	  	  	description: Formal or content check of the submission.
+	  	  	urgency_request:
+	  	  	  	description: Request for urgent treatment.
+				
+	ZuteilungsSchrittTypeEnum:
+	  	permissible_values:
+	  	  	chamber_assignment:
+	  	  	  	description: Assignment to a legislative chamber for first debate.
+	  	  	committee_referral:
+	  	  	  	description: Referral to a committee.
+	  	  	executive_routing:
+	  	  	  	description: Forwarding to a government department (e.g., Direktion).
+	  	  	agenda_placement:
+	  	  	  	description: Placing on the agenda for a specific session or meeting.
+	
+	#maybe we don't need this: 
+	DocketingBasisEnum:
+	  	permissible_values:
+	  	  	automatic_by_sponsor_type:
+	  	  	  	description: Automatically determined by the type of sponsor (e.g., Kommission → Kammer).
+	  	  	administrative_decision:
+	  	  	  	description: Assigned by Staatskanzlei, Ratsbüro or other admin body.
+	  	  	ai_assistance:
+	  	  	  	description: AI-generated recommendation followed by human validation.
+	  	  	government_protocol:
+	  	  	  	description: Assigned and approved by executive council or cantonal government.
+	
+	CommitteePositionTypeEnum:
+	  	description: The role of the committee position in terms of consensus.
+	  	permissible_values:
+	  	  	full_committee:
+	  	  	  	description: Position unanimously adopted by the entire committee.
+	  	  	majority:
+	  	  	  	description: Position adopted by the majority of the committee.
+	  	  	minority:
+	  	  	  	description: Dissenting or minority position held by a subset of committee members.
+	
+	
+	
+	# Prüfen: was gibt es da alles? :)
+	RecommendationEnum:
+	  	description: Recommendation made by the responder regarding the fate of the motion.
+	  	permissible_values:
+	  	  	accept:
+	  	  	  	description: The motion is supported and should be adopted.
+	  	  	reject:
+	  	  	  	description: The motion is not supported and should be rejected.
+	  	  	partial_acceptance:
+	  	  	  	description: Some parts of the motion are supported.
+	  	  	already_done:
+	  	  	  	description: The measures requested are already implemented.
+	  	  	no_competence:
+	  	  	  	description: The body lacks the competence to act.
+	  	  	defer:
+	  	  	  	description: The motion should be deferred for later decision.
+	  	  	neutral:
+	  	  	  	description: No explicit recommendation provided.
+	DebateRoleEnum:
+	  	permissible_values:
+	  	  	mp: { description: Regular member of parliament }
+	  	  	committee_spokesperson: { description: Speaking on behalf of committee }
+	  	  	parliamentarygroup_representative: { description: Speaking for a parliamentary group }
+	  	  	government_representative: { description: Member of executive (BR, Direktion) }	
+	
+	PlenaryDebateTypeEnum:
+	  	description: Classification of debate type in the plenary.
+	  	permissible_values:
+	  	  	eintreten:
+	  	  	  	description: General admission of the motion to debate.
+	  	  	detailberatung:
+	  	  	 	 description: Detailed discussion of content or clauses.
+	  	  	beantwortung:
+	  	  	  	description: Executive response is presented or debated.
+	  	  	abschreibung:
+	  	  	  	description: Motion is considered obsolete or no longer necessary.
+	  	  	fristverlaengerung:
+	  	  	  	description: Extension of deadline is debated.
+	  	  	verzoegerung:
+	  	  	  	description: Debate is postponed.
+	  	  	sonstige:
+	  	  	  	description: Other type not covered above.
+				
+	PlenaryDebateEventTypeEnum:
+	  	permissible_values:
+	  	  	speech: { description: A verbal intervention in the plenary. }
+	  	  	proposition: { description: A formal proposition or amendment. }
+	  	  	vote: { description: A vote taken in the plenary. }
+	
+	VoteTypeEnum:
+	  	permissible_values:
+	  	  	final: { description: Final decision on the motion }
+	  	  	amendment: { description: Vote on a proposed amendment }
+	  	  	procedural: { description: Vote on process or rules }
+	  	  	other: { description: Other type of vote }
+			
+	VoteOutcomeEnum:
+	  	permissible_values:
+	  	  	adopted: { description: The motion or amendment was accepted. }
+	  	  	rejected: { description: The proposal was not accepted. }
+	  	  	tied: { description: The vote was tied. }
+	  	  	not_held: { description: The vote was cancelled or not held. }
+	  	  	invalid: { description: The vote was ruled invalid. }
+	
+	IndividualVoteEnum:
+	  	permissible_values:
+	  	  	yes: { description: Voted in favor }
+	  	  	no: { description: Voted against }
+	  	  	abstain: { description: Abstained from voting }
+	  	  	excused: { description: Was officially excused }
+	  	  	not_present: { description: Was absent without excuse }
+			
+			
+	AffairStatusEnum:
+	  	permissible_values:
+	  	  	pending:
+	  	  	  	description: The motion is still in progress.
+	  	  	passed:
+	  	  	  	description: The motion was adopted by both chambers.
+	  	  	rejected:
+	  	  	  	description: The motion was rejected in plenary.
+	  	  	withdrawn:
+	  	  	  	description: The motion was formally withdrawn.
+	  	  	lapsed:
+	  	  	  	description: The motion expired (e.g. not treated in time).
+	  	  	partially_accepted:
+	  	  	 	 description: The motion was only partly adopted.
+	  	  	replaced:
+	  	  	  	description: The motion was replaced or merged into another.

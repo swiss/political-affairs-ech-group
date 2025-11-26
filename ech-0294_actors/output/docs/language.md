@@ -3,7 +3,7 @@
 # Slot: language 
 
 
-_Language code in ISO 639-1 format_
+_ISO language code_
 
 
 
@@ -22,7 +22,7 @@ Alias: language
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MultilingualString](MultilingualString.md) |  |  no  |
+| [LanguageProficiency](LanguageProficiency.md) |  |  no  |
 
 
 
@@ -34,8 +34,6 @@ Alias: language
 * Range: [String](String.md)
 
 * Required: True
-
-* Regex pattern: `^[a-z]{2}$`
 
 
 
@@ -70,15 +68,15 @@ Alias: language
 <details>
 ```yaml
 name: language
-description: Language code in ISO 639-1 format
+description: ISO language code
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
 alias: language
+owner: LanguageProficiency
 domain_of:
-- MultilingualString
+- LanguageProficiency
 range: string
 required: true
-pattern: ^[a-z]{2}$
 
 ```
 </details>

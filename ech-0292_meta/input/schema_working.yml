@@ -1,0 +1,65 @@
+## Examples (how to use the Document Metastandard) inside other sub-groups
+- meeting (subgroup operations)
+  - works
+    - type: meeting_agenda
+    - work: kt.zh.ch/works/13424
+    
+    - type: seating order 
+    - work: kt.zh.ch/works/13424
+    
+- agenda_item (subgroup operations)
+  - works
+    - type: pv 
+    - work: 
+
+
+- affairs (affairs)
+  - works
+    - type: submitted version
+    - work: 
+ - legalDocuments
+    - type: current law
+    - eli: 
+    - type: proposed law
+    - eli: 
+
+
+## schema.yml
+
+- Work Collection (as own API Endpoint / URI Namespace)
+- kt.zh.ch/works/13424
+
+- Work (=Document)
+  - Title: multilang (optional)
+  - Date Published (optional)
+  - Date 
+  - Id (Laufnummer, System dependent)
+  - Expression
+    - lang: de
+    - Manifestation
+      - filetype: pdf
+      - url: https://example.com/document1DE.pdf
+      - filetype: html
+      - url: https://example.com/document1De.html
+   - lang: fr
+    - Manifestation
+      - filetype: pdf
+      - url: https://example.com/document1FR.pdf
+      - filetype: html
+      - url: https://example.com/document1FR.html
+
+# Todo:
+* Dates on different level
+
+# Notes:
+* question: shall a PV Video and a PV be the same Work? -> idea would be to combine them were it makes sense.
+* difference between general document / legal ressource -> probably just differs by type
+
+
+
+
+Dokumente (Chronologisch verordnet)
+Versionen / Publikationsdatum
+Kommissionsberichte und Postulatsberichte
+Referenden und Volksinitiativen (Ablaufen und Inkrafttreten)
+FRBR Model: Work (z.b. Geschäft) - Expression (e.g. DE/FR/EN) - Manifestation (e.g. PDF) (- Item)

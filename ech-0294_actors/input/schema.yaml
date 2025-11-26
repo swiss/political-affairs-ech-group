@@ -1,51 +1,232 @@
 id: https://ch.paf.link/schema/actors
-name: actors
+name: PersonSchema
+title: Person Schema
+description: A schema describing a person with addresses, names, languages, citizenships, occupations, training, and contact details.
+license: CC-BY
+
 prefixes:
   linkml: https://w3id.org/linkml/
   act: https://ch.paf.link/schema/actors/
   dcterm: http://purl.org/dc/terms/
-imports:
-  - linkml:types
+
 default_prefix: act
 default_range: string
 
+imports:
+  - linkml:types
+
 classes:
-
-  Container:
+      
+  Person:
     tree_root: true
-    slots:
-      - id
-      - actors
+    description: A person with identifiers, names, addresses, citizenships, and occupations.
+    attributes:
+      id:
+        identifier: true
+        required: true
+        description: Wikidata-ID preferred
+      label:
+        description: Display name of the person
+        required: true
+      label_long:
+        description: Extended display name (with title, etc.)
+      birthyear:
+        range: integer
+        description: Year of birth
+      birthdate:
+        range: date
+        description: Exact date of birth
+      picture:
+        description: "Link to an image (preferred: PNG, then JPG, then GIF)"
+      names:
+        range: Name
+        slot_uri: act:name
+        multivalued: true
+        inlined_as_list: true
+      addresses:
+        range: Address
+        slot_uri: act:address
+        multivalued: true
+        inlined_as_list: true
+        description: place of residence and work
+      languages:
+        range: LanguageProficiency
+        slot_uri: act:language
+        multivalued: true
+        inlined_as_list: true
+      ch_citizenship:
+        range: Validity
+        slot_uri: act:chCitizenship
+      citizenships:
+        range: Citizenship
+        slot_uri: act:citizenship
+        multivalued: true
+        inlined_as_list: true
+      genders:
+        range: Gender
+        slot_uri: act:gender
+        multivalued: true
+        inlined_as_list: true
+      occupations:
+        range: Occupation
+        slot_uri: act:occupation
+        multivalued: true
+        inlined_as_list: true
+      trainings:
+        range: Training
+        slot_uri: act:training
+        multivalued: true
+        inlined_as_list: true
+      contacts:
+        range: Contact
+        slot_uri: act:contact
+        multivalued: true
+        inlined_as_list: true
+      electoral_district:
+        range: ElectoralDistrict
+        slot_uri: act:electoralDistrict
 
-  MultilingualString:
-    slots:
-      - text
-      - language
+  Name:
+    attributes:
+      name_type:
+        range: NameTypeEnum
+        slot_uri: act:nameType
+        required: true
+        # Is it enough to just put required here? --> callName is not required
+        description: categories of name types
+      value:
+        required: true
+      valid_from:
+        range: date
+        slot_uri: act:validFrom
+      valid_until:
+        range: date
+        slot_uri: act:validUntil
 
-  Actor:
-    slots:
-      - id
-      - name
+  Address:
+    attributes:
+      address-type:
+        range: AddressTypeEnum
+        slot_uri: act:addressType
+        required: true
+      address-URI:
+        slot_uri: act:addressURI
+        description: Preferred URI of address
+      street-address:
+        slot_uri: act:streetAddress
+      postal-code:
+        slot_uri: act:postalCode
+      postal-locality:
+        slot_uri: act:postalLocality
 
-slots:
+  LanguageProficiency:
+    attributes:
+      language:
+        description: ISO language code
+        required: true
+      correspondence:
+        range: boolean
+        description: preferred language
+      native:
+        range: boolean
+        description: proficient language
 
-  id:
-    identifier: true
-    required: true
-    slot_uri: dcterm:identifier
+  Validity:
+    attributes:
+      valid_from:
+        range: date
+        slot_uri: act:validFrom
+      valid-until:
+        range: date
+        slot_uri: act:validUntil
+
+  Citizenship:
+    is_a: Validity
+    attributes:
+      country:
+        description: ISO 3166 country code (can't be CH)
+        required: true
+
+  Gender:
+    is_a: Validity
+    attributes:
+      value:
+        description: Gender code
+        required: true
+      pronouns:
+        description: Pronouns used by the person
+        multivalued: true
+        inlined_as_list: true
+
+  Occupation:
+    is_a: Validity
+    attributes:
+      active:
+        range: boolean
+      paid:
+        range: boolean
+      occupation_isco19_code:
+        slot_uri: act:occupationIsco19Code
+      value:
+      enterprise_uid:
+        slot_uri: act:enterpriseUid
+      enterprise:
+
+  Training:
+    attributes:
+      type:
+        range: TrainingTypeEnum
+        required: true
+      training_isco19_code:
+        slot_uri: act:trainingIsco19Code
+      value:
+
+  Contact:
+    attributes:
+      type:
+        range: ContactTypeEnum
+        required: true
+      value:
+        required: true
   
-  actors:
-    slot_uri: act:actor
-    range: Actor
-    multivalued: true
-    inlined_as_list: true
+  ElectoralDistrict:
+    attributes:
+      district:
+        required: true
+      valid_from:
+        range: date
+        slot_uri: act:validFrom
+      valid-until:
+        range: date
+        slot_uri: act:validUntil
 
-  name:
-  
-  text:
-    required: true
-  
-  language:
-    required: true
-    description: "Language code in ISO 639-1 format"
-    pattern: ^[a-z]{2}$
+enums:
+  NameTypeEnum:
+    permissible_values:
+      familyNameOnForeignPassport:
+      callName:
+      officialGivenName:
+      officialLastName:
+      officialMiddleName:
+
+  AddressTypeEnum:
+    permissible_values:
+      privateAddress:
+      businessAddress:
+      localAddress:
+
+  TrainingTypeEnum:
+    permissible_values:
+      schulabschluss:
+      efz:
+      uni:
+      armee:
+      zivi:
+      zischutz:
+
+  ContactTypeEnum:
+    permissible_values:
+      email:
+      contact_website:
+      linked-in:
+      twitter:

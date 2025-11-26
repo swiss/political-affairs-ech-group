@@ -1,8 +1,9 @@
-# Default: text files use LF
-* text eol=lf
+# Normalize all text files to LF in the repo
+* text=auto eol=lf
 
-# Override for binary files
-*.pdf binary
+# Mark binary files to avoid CRLF confusion
 *.png binary
 *.jpg binary
+*.pdf binary
+*.exe binary
 *.zip binary
