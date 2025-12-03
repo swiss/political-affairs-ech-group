@@ -1,0 +1,401 @@
+id: https://ch.paf.link/schema/operations
+name: operations
+description: |
+  [en] Meeting Schema for various legislative bodies
+  [de] Sitzungs Schema für verschiedene gesetzgebende Körperschaften
+prefixes:
+  linkml: https://w3id.org/linkml/
+  ops: https://ch.paf.link/schema/operations/
+  dcterm: http://purl.org/dc/terms/
+imports:
+  - linkml:types
+default_prefix: ops
+default_range: string
+classes:
+  Container:
+    description: ''
+    attributes: {}
+  Legislature:
+    description: >
+      [en] Term of office of a parliament as a legislative assembly. Usually
+      lasts four years.
+
+      [de] Amtsdauer eines Parlaments als gesetzgebender Versammlung. Dauert in
+      der Regel vier Jahre.
+    attributes: {}
+  Meeting:
+    description: >
+      [en] A general meeting class used for Sessions, Comittee Meetings,
+      individual session Sittings and other various Meetings.
+
+      [de] Eine allgemeine Sitzungsklasse, die für Sessionen,
+      Kommissionssitzungen, Sessionssitzung und andere verschiedene
+      Versammlungen verwendet wird.
+    attributes: {}
+  AgendaItem:
+    description: |
+      [en] An agenda item of a meeting.
+      [de] Ein Traktandum einer Sitzung.  
+    attributes: {}
+  JointDebate:
+    description: |
+      [en] Agenda Items which are debated together.
+      [de] Traktanden die gemeinsam behandelt werden.
+    attributes: {}
+  Resolution:
+    description: ''
+    attributes: {}
+  Voting:
+    description: ''
+    attributes: {}
+  IndiviudalVote:
+    description: ''
+    attributes: {}
+  Election:
+    description: ''
+    attributes: {}
+  TotalOther:
+    description: ''
+    attributes: {}
+  MultilingualString:
+    description: |
+      [en] A string that can contain text in multiple languages.
+      [de] Ein String, der Text in mehreren Sprachen enthalten kann.
+    attributes: {}
+slots:
+  id:
+    description: ''
+    range: string
+    required: true
+    identifier: true
+  administrative_id:
+    description: >
+      [en] Administrative ID of the legislative body, such as a municipality,
+      canton, or country.
+
+      [de] Verwaltungs-ID des gesetzgebenden Körpers, wie z.B. Gemeinde, Kanton
+      oder Land.
+    range: string
+  actor_id:
+    description: >
+      [en] The political body organized by the term of office (e.g.,
+      Regierungsrat, Nationalrat, Ständerat).
+
+      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B.
+      Regierungsrat, Nationalrat, Ständerat).
+    range: string
+  date_begin_planned:
+    description: |
+      [en] Planned start date of the meeting or session.
+      [de] Geplantes Startdatum der Sitzung oder Session.
+    range: date
+  date_end_planned:
+    description: |
+      [en] Planned end date of the meeting or session.
+      [de] Geplantes Enddatum der Sitzung oder Session.
+    range: date
+  date_end_actual:
+    description: |
+      [en] Actual end date of the meeting or session.
+      [de] Tatsächliches Enddatum der Sitzung oder Session.
+    range: date
+  sequential_number:
+    description: |
+      [en] Sequential number of the meeting, used for ordering.
+      [de] Laufende Nummer der Sitzung, die zur Sortierung verwendet wird.
+    range: integer
+  actor_name:
+    description: |
+      [en] Name of the political body (e.g., Nationalrat).
+      [de] Name des politischen Organs (z.B. Nationalrat).
+    range: string
+  state_name:
+    description: |
+      [en] Custom state description for the meeting.
+      [de] Benutzerdefinierte Zustandsbeschreibung für die Sitzung.
+    range: string
+  parent_meeting:
+    description: |
+      [en] The linked meeting ID that groups the current meeting.
+      [de] Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.
+    range: string
+  parent_legislature:
+    description: |
+      [en] The legislative body in which the meeting is based.
+      [de] Der gesetzgebende Körper, auf dem die Sitzung basiert.
+    range: string
+  leading_actor_id:
+    description: |
+      [en] The leading department for the agenda item.
+      [de] Das federführende Departement für den Tagesordnungspunkt.
+    range: string
+  speaking_actor_id:
+    description: |
+      [en] The speaker or head of the department for the agenda item.
+      [de] Der Sprecher oder Departementsvorsteher für den Tagesordnungspunkt.
+    range: string
+  name:
+    description: ''
+    range: MultilingualString
+    multivalued: true
+  vote_procedures:
+    description: >
+      [en] Procedures for voting, such as secret ballot or open vote.
+
+      [de] Verfahren für die Abstimmung, wie geheime Abstimmung oder offene
+      Abstimmung.
+    range: string
+    multivalued: true
+  affair_id:
+    description: >
+      [en] The connection to the affairs (business items) of the agenda item.
+
+      [de] Die Verbindung zu den Geschäften (Geschäftsgegenständen) des
+      Tagesordnungspunkts.
+    range: string
+  datetime_begin:
+    description: >
+      [en] The date and time when the meeting or voting begins.
+
+      [de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung
+      beginnt.
+    range: datetime
+  datetime_end:
+    description: |
+      [en] The date and time when the meeting or voting ends.
+      [de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung endet.
+    range: datetime
+  optional:
+    description: |
+      [en] Indicates if the meeting or voting is optional.
+      [de] Gibt an, ob die Sitzung oder Abstimmung optional ist.
+    range: boolean
+  agenda_item_ids:
+    description: |
+      [en] The agenda items associated with the voting.
+      [de] Die Tagesordnungspunkte, die mit der Abstimmung verbunden sind.
+    range: string
+    multivalued: true
+  seat_nr:
+    description: |
+      [en] The seat number of the individual vote, if applicable.
+      [de] Die Sitznummer der Einzelstimme, falls zutreffend.
+    range: string
+  weight:
+    description: >
+      [en] The number of votes held by the individual, if applicable (e.g., in
+      cases where a person has multiple votes).
+
+      [de] Die Anzahl der Stimmen, die die Einzelperson hat, falls zutreffend
+      (z.B. in Fällen, in denen eine Person mehrere Stimmen hat).
+    range: integer
+  count:
+    description: |
+      [en] The count of votes for the total other category.
+      [de] Die Anzahl der Stimmen für die Kategorie "Andere".
+    range: integer
+  label:
+    description: |
+      [en] The label or meaning of the vote in the total other category.
+      [de] Das Etikett oder die Bedeutung der Stimme in der Kategorie "Andere".
+    range: string
+  parent_voting:
+    description: |
+      [en] The ID of the voting associated with the individual vote.
+      [de] Die ID der Abstimmung, die mit der Einzelstimme verbunden ist.
+    range: Voting
+  parent_agenda_item:
+    description: >
+      [en] If needed, this slot builds a hierarchy of agenda items.
+
+      [de] Wenn erforderlich, baut dieser Slot eine Hierarchie von
+      Tagesordnungspunkten auf.
+    range: string
+  resolution:
+    description: >
+      [en] The resolution of the agenda item, which can be a decision or action
+      taken.
+
+      [de] Die Resolution des Tagesordnungspunkts, die eine Entscheidung oder
+      Maßnahme darstellt.
+    range: Resolution
+  url:
+    description: ''
+    range: MultilingualString
+    multivalued: true
+  landing_page:
+    description: ''
+    range: string
+  tie_breaker:
+    description: |
+      [en] Indicates if a tie-breaker was used in the voting.
+      [de] Gibt an, ob ein Stichentscheid bei der Abstimmung verwendet wurde.
+    range: boolean
+  label_yes:
+    description: |
+      [en] Meaning of a 'yes' vote.
+      [de] Bedeutung einer 'Ja'-Stimme.
+    range: string
+  label_no:
+    description: |
+      [en] Meaning of a 'no' vote.
+      [de] Bedeutung einer 'Nein'-Stimme.
+    range: string
+  label_abstention:
+    description: |
+      [en] Meaning of an 'abstention' vote.
+      [de] Bedeutung einer Enthaltungsstimme.
+    range: string
+  total_count_yes:
+    description: |
+      [en] Total number of 'yes' votes.
+      [de] Gesamtzahl der 'Ja'-Stimmen.
+    range: integer
+  total_count_no:
+    description: |
+      [en] Total number of 'no' votes.
+      [de] Gesamtzahl der 'Nein'-Stimmen.
+    range: integer
+  total_count_abstention:
+    description: |
+      [en] Total number of abstentions.
+      [de] Gesamtzahl der Enthaltungen.
+    range: integer
+  total_other:
+    description: >
+      [en] Used when multiple options are presented for voting (e.g., 5 buttons
+      in Zurich).
+
+      [de] Wird verwendet, wenn mehrere Optionen zur Abstimmung gestellt werden
+      (z.B. 5 Knöpfe in Zürich).
+    range: TotalOther
+    multivalued: true
+  total_absent:
+    description: ''
+    range: integer
+  total:
+    description: |
+      [en] Total number of votes, excluding absent and president's vote.
+      [de] Gesamtzahl der Stimmen, ohne abwesende und Präsidentenstimmen.
+    range: integer
+  majority_type:
+    description: >
+      [en] Type of majority required for the vote (absolute, two-thirds, etc.).
+
+      [de] Art der für die Abstimmung erforderlichen Mehrheit (absolut,
+      Zweidrittel usw.).
+    range: majority_type_enum
+  majority_count:
+    description: ''
+    range: integer
+  result_text:
+    description: >
+      [en] Free text describing the outcome of the vote, e.g., "Accepted with 78
+      votes".
+
+      [de] Freitext zur Beschreibung des Ergebnisses der Abstimmung, z.B. "Mit
+      78 Stimmen angenommen".
+    range: string
+  date_begin:
+    description: ''
+    range: date
+  date_begin_actual:
+    description: ''
+    range: date
+  date_end:
+    description: ''
+    range: date
+  datetime_begin_planned:
+    description: >
+      [en] Planned date and time for the start of the meeting or agenda item.
+
+      [de] Geplantes Datum und Uhrzeit für den Beginn der Sitzung oder des
+      Tagesordnungspunkts.
+    range: datetime
+  datetime_begin_actual:
+    description: >
+      [en] Actual date and time for the start of the meeting or agenda item.
+
+      [de] Tatsächliches Datum und Uhrzeit für den Beginn der Sitzung oder des
+      Tagesordnungspunkts.
+    range: datetime
+  begin_date:
+    description: |
+      [en] The start date of the meeting or session.
+      [de] Das Startdatum der Sitzung oder Session.
+    range: date
+  end_date:
+    description: |
+      [en] The end date of the meeting or session.
+      [de] Das Enddatum der Sitzung oder Session.
+    range: date
+  begin_date_actual:
+    description: |
+      [en] The actual start date of the meeting or session.
+      [de] Das tatsächliche Startdatum der Sitzung oder Session.
+    range: date
+  end_date_actual:
+    description: |
+      [en] The actual end date of the meeting or session.
+      [de] Das tatsächliche Enddatum der Sitzung oder Session.
+    range: date
+  meeting_type:
+    description: Type of the meeting, e.g. session, committee, sitting, various
+    range: meeting_type_enum
+  state:
+    description: ''
+    range: state_enum
+  datetime_updated:
+    description: The last time this record was updated
+    range: datetime
+  datetime_created:
+    description: The time this record was created
+    range: datetime
+  legislatures:
+    description: ''
+    range: Legislature
+    multivalued: true
+  meetings:
+    description: ''
+    range: Meeting
+    multivalued: true
+  agenda_items:
+    description: ''
+    range: AgendaItem
+    multivalued: true
+  text:
+    description: ''
+    range: string
+    required: true
+  language:
+    description: Language code in ISO 639-1 format
+    range: string
+    required: true
+    pattern: ^[a-z]{2}$
+enums:
+  state_enum:
+    permissible_values:
+      planned:
+        description: ''
+      canceled:
+        description: ''
+      postponed:
+        description: ''
+  meeting_type_enum:
+    permissible_values:
+      session:
+        description: ''
+      committee:
+        description: ''
+      sitting:
+        description: ''
+      various:
+        description: ''
+  majority_type_enum:
+    permissible_values:
+      absolute:
+        description: ''
+      two-third:
+        description: ''
+      other:
+        description: ''
