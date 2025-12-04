@@ -25,6 +25,7 @@ classes:
       - id
       - legislatures
       - sessions
+        # ist_schon_erfasst
       - meetings
       - agenda_items
       - votings
