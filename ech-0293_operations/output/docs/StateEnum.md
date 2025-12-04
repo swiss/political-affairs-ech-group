@@ -7,15 +7,15 @@ _State of the meeting_
 
 
 
-URI: [StateEnum](StateEnum.md)
+URI: [ops:state_enum](https://ch.paf.link/schema/operations/state_enum)
 
 ## Permissible Values
 
 | Value | Meaning | Description |
 | --- | --- | --- |
-| planned | ops:state/planned |  |
-| canceled | ops:state/canceled |  |
-| postponed | ops:state/postponed |  |
+| planned | ops:enum/state/planned |  |
+| canceled | ops:enum/state/canceled |  |
+| postponed | ops:enum/state/postponed |  |
 
 
 
@@ -30,9 +30,7 @@ URI: [StateEnum](StateEnum.md)
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 
@@ -60,13 +58,13 @@ rank: 1000
 permissible_values:
   planned:
     text: planned
-    meaning: ops:state/planned
+    meaning: ops:enum/state/planned
   canceled:
     text: canceled
-    meaning: ops:state/canceled
+    meaning: ops:enum/state/canceled
   postponed:
     text: postponed
-    meaning: ops:state/postponed
+    meaning: ops:enum/state/postponed
 
 ```
 </details>

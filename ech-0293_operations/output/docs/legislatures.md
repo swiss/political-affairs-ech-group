@@ -24,7 +24,6 @@ Alias: legislatures
 
 
 
-
 ## Properties
 
 * Range: [Legislature](Legislature.md)
@@ -34,9 +33,7 @@ Alias: legislatures
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

@@ -3,6 +3,11 @@
 # Slot: group_name 
 
 
+_Name of the group or body_
+
+
+
+
 
 URI: [ops:group_name](https://ch.paf.link/schema/operations/group_name)
 Alias: group_name
@@ -17,10 +22,7 @@ Alias: group_name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Session](Session.md) |  |  no  |
-| [Meeting](Meeting.md) |  |  no  |
-| [Legislature](Legislature.md) |  |  no  |
-
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 
 
 
@@ -34,9 +36,7 @@ Alias: group_name
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 
@@ -66,12 +66,11 @@ Alias: group_name
 <details>
 ```yaml
 name: group_name
+description: Name of the group or body
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 alias: group_name
 domain_of:
-- Legislature
-- Session
 - Meeting
 range: string
 

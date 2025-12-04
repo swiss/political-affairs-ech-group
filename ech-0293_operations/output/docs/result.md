@@ -13,16 +13,6 @@ Alias: result
 
 
 
-## Applicable Classes
-
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [MeetingItem](MeetingItem.md) |  |  no  |
-
-
-
-
-
 
 
 ## Properties
@@ -32,9 +22,7 @@ Alias: result
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 
@@ -67,8 +55,6 @@ name: result
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 alias: result
-domain_of:
-- MeetingItem
 range: string
 
 ```

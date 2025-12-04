@@ -17,9 +17,7 @@ Alias: abbreviation
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Session](Session.md) |  |  no  |
-| [Meeting](Meeting.md) |  |  no  |
-
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 
 
 
@@ -33,9 +31,7 @@ Alias: abbreviation
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 
@@ -69,7 +65,6 @@ from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 alias: abbreviation
 domain_of:
-- Session
 - Meeting
 range: string
 

@@ -13,16 +13,6 @@ Alias: status
 
 
 
-## Applicable Classes
-
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [MeetingItem](MeetingItem.md) |  |  no  |
-
-
-
-
-
 
 
 ## Properties
@@ -32,9 +22,7 @@ Alias: status
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 
@@ -67,8 +55,6 @@ name: status
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 alias: status
-domain_of:
-- MeetingItem
 range: string
 
 ```

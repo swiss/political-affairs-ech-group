@@ -17,11 +17,9 @@ Alias: description
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Session](Session.md) |  |  no  |
-| [Meeting](Meeting.md) |  |  no  |
-| [Legislature](Legislature.md) |  |  no  |
-| [MeetingItem](MeetingItem.md) |  |  no  |
-
+| [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |  no  |
+| [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 
 
 
@@ -35,9 +33,7 @@ Alias: description
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 
@@ -72,9 +68,8 @@ rank: 1000
 alias: description
 domain_of:
 - Legislature
-- Session
 - Meeting
-- MeetingItem
+- Motion
 range: string
 
 ```

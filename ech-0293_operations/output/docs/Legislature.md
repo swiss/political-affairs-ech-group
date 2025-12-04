@@ -3,9 +3,17 @@
 # Class: Legislature 
 
 
+_[en] Term of office of a parliament as a legislative assembly. Usually lasts four years._
+
+_[de] Amtsdauer eines Parlaments als gesetzgebender Versammlung. Dauert in der Regel vier Jahre._
+
+__
+
+
+
+
 
 URI: [ops:Legislature](https://ch.paf.link/schema/operations/Legislature)
-
 
 
 
@@ -14,22 +22,24 @@ URI: [ops:Legislature](https://ch.paf.link/schema/operations/Legislature)
 ```mermaid
  classDiagram
     class Legislature
-    click Legislature href "../Legislature"
-      Legislature : begin_date
+    click Legislature href "../Legislature/"
+      Legislature : actor_id
         
-      Legislature : body_key
+      Legislature : administrative_id
         
-      Legislature : created_datetime
+      Legislature : date_begin
+        
+      Legislature : date_end
+        
+      Legislature : datetime_created
+        
+      Legislature : datetime_updated
         
       Legislature : description
         
-      Legislature : end_date
-        
-      Legislature : group_id
-        
-      Legislature : group_name
-        
       Legislature : id
+        
+      Legislature : landing_page
         
       Legislature : name
         
@@ -38,20 +48,7 @@ URI: [ops:Legislature](https://ch.paf.link/schema/operations/Legislature)
         
         
         Legislature --> "*" MultilingualString : name
-        click MultilingualString href "../MultilingualString"
-    
-
-        
-      Legislature : updated_datetime
-        
-      Legislature : url
-        
-          
-    
-        
-        
-        Legislature --> "*" MultilingualString : url
-        click MultilingualString href "../MultilingualString"
+        click MultilingualString href "../MultilingualString/"
     
 
         
@@ -69,16 +66,15 @@ URI: [ops:Legislature](https://ch.paf.link/schema/operations/Legislature)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [id](id.md) | 1 <br/> [String](String.md) |  | direct |
-| [body_key](body_key.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [administrative_id](administrative_id.md) | 0..1 <br/> [String](String.md) | [en] Administrative ID of the legislative body, such as a municipality, canto... | direct |
 | [name](name.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
-| [url](url.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
 | [description](description.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [group_name](group_name.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [group_id](group_id.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [begin_date](begin_date.md) | 0..1 <br/> [Date](Date.md) |  | direct |
-| [end_date](end_date.md) | 0..1 <br/> [Date](Date.md) |  | direct |
-| [updated_datetime](updated_datetime.md) | 0..1 <br/> [Datetime](Datetime.md) | The last time this record was updated | direct |
-| [created_datetime](created_datetime.md) | 0..1 <br/> [Datetime](Datetime.md) | The time this record was created | direct |
+| [landing_page](landing_page.md) | 0..1 <br/> [String](String.md) | [en] URL providing further information | direct |
+| [actor_id](actor_id.md) | 0..1 <br/> [String](String.md) | [en] The political body organized by the term of office (e | direct |
+| [date_begin](date_begin.md) | 0..1 <br/> [Date](Date.md) |  | direct |
+| [date_end](date_end.md) | 0..1 <br/> [Date](Date.md) |  | direct |
+| [datetime_updated](datetime_updated.md) | 0..1 <br/> [Datetime](Datetime.md) | The last time this record was updated | direct |
+| [datetime_created](datetime_created.md) | 0..1 <br/> [Datetime](Datetime.md) | The time this record was created | direct |
 
 
 
@@ -95,8 +91,8 @@ URI: [ops:Legislature](https://ch.paf.link/schema/operations/Legislature)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -123,7 +119,6 @@ URI: [ops:Legislature](https://ch.paf.link/schema/operations/Legislature)
 
 
 
-
 ## LinkML Source
 
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
@@ -133,19 +128,25 @@ URI: [ops:Legislature](https://ch.paf.link/schema/operations/Legislature)
 <details>
 ```yaml
 name: Legislature
+description: '[en] Term of office of a parliament as a legislative assembly. Usually
+  lasts four years.
+
+  [de] Amtsdauer eines Parlaments als gesetzgebender Versammlung. Dauert in der Regel
+  vier Jahre.
+
+  '
 from_schema: https://ch.paf.link/schema/operations
 slots:
 - id
-- body_key
+- administrative_id
 - name
-- url
 - description
-- group_name
-- group_id
-- begin_date
-- end_date
-- updated_datetime
-- created_datetime
+- landing_page
+- actor_id
+- date_begin
+- date_end
+- datetime_updated
+- datetime_created
 
 ```
 </details>
@@ -155,6 +156,13 @@ slots:
 <details>
 ```yaml
 name: Legislature
+description: '[en] Term of office of a parliament as a legislative assembly. Usually
+  lasts four years.
+
+  [de] Amtsdauer eines Parlaments als gesetzgebender Versammlung. Dauert in der Regel
+  vier Jahre.
+
+  '
 from_schema: https://ch.paf.link/schema/operations
 attributes:
   id:
@@ -170,18 +178,33 @@ attributes:
     - Legislature
     - Session
     - Meeting
-    - MeetingItem
+    - AgendaItem
+    - Voting
+    - IndividualVote
+    - Election
+    - Attendance
+    - IndividualAttendance
+    - Speech
+    - TextSegment
+    - Motion
+    - Media
     range: string
     required: true
-  body_key:
-    name: body_key
+  administrative_id:
+    name: administrative_id
+    description: '[en] Administrative ID of the legislative body, such as a municipality,
+      canton, or country.
+
+      [de] Verwaltungs-ID des gesetzgebenden Körpers, wie z.B. Gemeinde, Kanton oder
+      Land.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: body_key
+    alias: administrative_id
     owner: Legislature
     domain_of:
     - Legislature
-    - Session
     - Meeting
     range: string
   name:
@@ -198,21 +221,6 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  url:
-    name: url
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: url
-    owner: Legislature
-    domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - MeetingItem
-    range: MultilingualString
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   description:
     name: description
     from_schema: https://ch.paf.link/schema/operations
@@ -221,79 +229,107 @@ attributes:
     owner: Legislature
     domain_of:
     - Legislature
-    - Session
     - Meeting
-    - MeetingItem
+    - Motion
     range: string
-  group_name:
-    name: group_name
+  landing_page:
+    name: landing_page
+    description: '[en] URL providing further information.
+
+      [de] URL mit weiteren Informationen.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: group_name
+    slot_uri: ops:landingPage
+    alias: landing_page
     owner: Legislature
     domain_of:
     - Legislature
-    - Session
     - Meeting
+    - AgendaItem
+    - Voting
+    - Election
+    - Speech
     range: string
-  group_id:
-    name: group_id
+  actor_id:
+    name: actor_id
+    description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
+      Nationalrat, Ständerat).
+
+      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
+      Nationalrat, Ständerat).
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: group_id
+    alias: actor_id
     owner: Legislature
     domain_of:
     - Legislature
-    - Session
     - Meeting
+    - Voting
+    - IndividualVote
+    - Election
+    - Attendance
+    - IndividualAttendance
+    - Speech
     range: string
-  begin_date:
-    name: begin_date
+  date_begin:
+    name: date_begin
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: begin_date
+    alias: date_begin
     owner: Legislature
     domain_of:
     - Legislature
-    - Session
-    - Meeting
     range: date
-  end_date:
-    name: end_date
+  date_end:
+    name: date_end
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: end_date
+    alias: date_end
     owner: Legislature
     domain_of:
     - Legislature
-    - Session
-    - Meeting
     range: date
-  updated_datetime:
-    name: updated_datetime
+  datetime_updated:
+    name: datetime_updated
     description: The last time this record was updated
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: updated_datetime
+    alias: datetime_updated
     owner: Legislature
     domain_of:
     - Legislature
     - Session
     - Meeting
-    - MeetingItem
+    - AgendaItem
+    - Voting
+    - IndividualVote
+    - Election
+    - Attendance
+    - IndividualAttendance
+    - Speech
     range: datetime
-  created_datetime:
-    name: created_datetime
+  datetime_created:
+    name: datetime_created
     description: The time this record was created
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: created_datetime
+    alias: datetime_created
     owner: Legislature
     domain_of:
     - Legislature
     - Session
     - Meeting
-    - MeetingItem
+    - AgendaItem
+    - Voting
+    - IndividualVote
+    - Election
+    - Attendance
+    - IndividualAttendance
+    - Speech
     range: datetime
 
 ```

@@ -3,9 +3,17 @@
 # Class: Session 
 
 
+_[en] A parliamentary session that groups multiple meetings and spans a specific time period._
+
+_[de] Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen bestimmten Zeitraum erstreckt._
+
+__
+
+
+
+
 
 URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
-
 
 
 
@@ -14,24 +22,29 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
 ```mermaid
  classDiagram
     class Session
-    click Session href "../Session"
-      Session : abbreviation
-        
-      Session : begin_date
-        
+    click Session href "../Session/"
       Session : body_key
         
-      Session : created_datetime
+      Session : date_begin_planned
         
-      Session : description
+      Session : date_end_planned
         
-      Session : end_date
+      Session : datetime_created
         
-      Session : group_id
-        
-      Session : group_name
+      Session : datetime_updated
         
       Session : id
+        
+      Session : meetings
+        
+          
+    
+        
+        
+        Session --> "*" Meeting : meetings
+        click Meeting href "../Meeting/"
+    
+
         
       Session : name
         
@@ -40,13 +53,11 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
         
         
         Session --> "*" MultilingualString : name
-        click MultilingualString href "../MultilingualString"
+        click MultilingualString href "../MultilingualString/"
     
 
         
-      Session : number
-        
-      Session : updated_datetime
+      Session : parent_legislature
         
       Session : url
         
@@ -55,7 +66,7 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
         
         
         Session --> "*" MultilingualString : url
-        click MultilingualString href "../MultilingualString"
+        click MultilingualString href "../MultilingualString/"
     
 
         
@@ -73,18 +84,15 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [id](id.md) | 1 <br/> [String](String.md) |  | direct |
-| [body_key](body_key.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [body_key](body_key.md) | 0..1 <br/> [String](String.md) | [en] Key identifying the political body or jurisdiction (e | direct |
 | [name](name.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
 | [url](url.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
-| [description](description.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [group_name](group_name.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [group_id](group_id.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [number](number.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [abbreviation](abbreviation.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [begin_date](begin_date.md) | 0..1 <br/> [Date](Date.md) |  | direct |
-| [end_date](end_date.md) | 0..1 <br/> [Date](Date.md) |  | direct |
-| [updated_datetime](updated_datetime.md) | 0..1 <br/> [Datetime](Datetime.md) | The last time this record was updated | direct |
-| [created_datetime](created_datetime.md) | 0..1 <br/> [Datetime](Datetime.md) | The time this record was created | direct |
+| [date_begin_planned](date_begin_planned.md) | 0..1 <br/> [Date](Date.md) | [en] Planned start date of the meeting or session | direct |
+| [date_end_planned](date_end_planned.md) | 0..1 <br/> [Date](Date.md) | [en] Planned end date of the meeting or session | direct |
+| [parent_legislature](parent_legislature.md) | 0..1 <br/> [String](String.md) | [en] The legislative body in which the meeting is based | direct |
+| [meetings](meetings.md) | * <br/> [Meeting](Meeting.md) |  | direct |
+| [datetime_updated](datetime_updated.md) | 0..1 <br/> [Datetime](Datetime.md) | The last time this record was updated | direct |
+| [datetime_created](datetime_created.md) | 0..1 <br/> [Datetime](Datetime.md) | The time this record was created | direct |
 
 
 
@@ -101,8 +109,8 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -129,7 +137,6 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
 
 
 
-
 ## LinkML Source
 
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
@@ -139,21 +146,25 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
 <details>
 ```yaml
 name: Session
+description: '[en] A parliamentary session that groups multiple meetings and spans
+  a specific time period.
+
+  [de] Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen
+  bestimmten Zeitraum erstreckt.
+
+  '
 from_schema: https://ch.paf.link/schema/operations
 slots:
 - id
 - body_key
 - name
 - url
-- description
-- group_name
-- group_id
-- number
-- abbreviation
-- begin_date
-- end_date
-- updated_datetime
-- created_datetime
+- date_begin_planned
+- date_end_planned
+- parent_legislature
+- meetings
+- datetime_updated
+- datetime_created
 
 ```
 </details>
@@ -163,6 +174,13 @@ slots:
 <details>
 ```yaml
 name: Session
+description: '[en] A parliamentary session that groups multiple meetings and spans
+  a specific time period.
+
+  [de] Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen
+  bestimmten Zeitraum erstreckt.
+
+  '
 from_schema: https://ch.paf.link/schema/operations
 attributes:
   id:
@@ -178,17 +196,32 @@ attributes:
     - Legislature
     - Session
     - Meeting
-    - MeetingItem
+    - AgendaItem
+    - Voting
+    - IndividualVote
+    - Election
+    - Attendance
+    - IndividualAttendance
+    - Speech
+    - TextSegment
+    - Motion
+    - Media
     range: string
     required: true
   body_key:
     name: body_key
+    description: '[en] Key identifying the political body or jurisdiction (e.g., BE
+      for Bern, CHE for Switzerland).
+
+      [de] Schlüssel zur Identifizierung des politischen Organs oder der Gerichtsbarkeit
+      (z.B. BE für Bern, CHE für Schweiz).
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     alias: body_key
     owner: Session
     domain_of:
-    - Legislature
     - Session
     - Meeting
     range: string
@@ -213,116 +246,109 @@ attributes:
     alias: url
     owner: Session
     domain_of:
-    - Legislature
     - Session
     - Meeting
-    - MeetingItem
+    - Media
     range: MultilingualString
     multivalued: true
     inlined: true
     inlined_as_list: true
-  description:
-    name: description
+  date_begin_planned:
+    name: date_begin_planned
+    description: '[en] Planned start date of the meeting or session.
+
+      [de] Geplantes Startdatum der Sitzung oder Session.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: description
+    alias: date_begin_planned
     owner: Session
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - MeetingItem
-    range: string
-  group_name:
-    name: group_name
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: group_name
-    owner: Session
-    domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    range: string
-  group_id:
-    name: group_id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: group_id
-    owner: Session
-    domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    range: string
-  number:
-    name: number
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: number
-    owner: Session
-    domain_of:
-    - Session
-    - Meeting
-    - MeetingItem
-    range: string
-  abbreviation:
-    name: abbreviation
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: abbreviation
-    owner: Session
-    domain_of:
-    - Session
-    - Meeting
-    range: string
-  begin_date:
-    name: begin_date
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: begin_date
-    owner: Session
-    domain_of:
-    - Legislature
     - Session
     - Meeting
     range: date
-  end_date:
-    name: end_date
+  date_end_planned:
+    name: date_end_planned
+    description: '[en] Planned end date of the meeting or session.
+
+      [de] Geplantes Enddatum der Sitzung oder Session.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: end_date
+    alias: date_end_planned
     owner: Session
     domain_of:
-    - Legislature
     - Session
     - Meeting
     range: date
-  updated_datetime:
-    name: updated_datetime
+  parent_legislature:
+    name: parent_legislature
+    description: '[en] The legislative body in which the meeting is based.
+
+      [de] Der gesetzgebende Körper, auf dem die Sitzung basiert.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: parent_legislature
+    owner: Session
+    domain_of:
+    - Session
+    - Meeting
+    range: string
+  meetings:
+    name: meetings
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: ops:meeting
+    alias: meetings
+    owner: Session
+    domain_of:
+    - Container
+    - Session
+    range: Meeting
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  datetime_updated:
+    name: datetime_updated
     description: The last time this record was updated
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: updated_datetime
+    alias: datetime_updated
     owner: Session
     domain_of:
     - Legislature
     - Session
     - Meeting
-    - MeetingItem
+    - AgendaItem
+    - Voting
+    - IndividualVote
+    - Election
+    - Attendance
+    - IndividualAttendance
+    - Speech
     range: datetime
-  created_datetime:
-    name: created_datetime
+  datetime_created:
+    name: datetime_created
     description: The time this record was created
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: created_datetime
+    alias: datetime_created
     owner: Session
     domain_of:
     - Legislature
     - Session
     - Meeting
-    - MeetingItem
+    - AgendaItem
+    - Voting
+    - IndividualVote
+    - Election
+    - Attendance
+    - IndividualAttendance
+    - Speech
     range: datetime
 
 ```

@@ -1,24 +1,307 @@
 {
     "$defs": {
-        "Container": {
+        "AgendaItem": {
             "additionalProperties": false,
-            "description": "",
+            "description": "[en] An agenda item of a meeting.\n[de] Ein Traktandum einer Sitzung.",
             "properties": {
-                "id": {
-                    "type": "string"
+                "affair_id": {
+                    "description": "[en] The connection to the affairs (business items) of the agenda item.\n[de] Die Verbindung zu den Gesch\u00e4ften (Gesch\u00e4ftsgegenst\u00e4nden) des Tagesordnungspunkts.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
-                "legislatures": {
+                "agenda_item_category": {
+                    "description": "[en] Category for grouped agenda items (e.g., introduction, by department, technical agenda items).\n[de] Kategorie f\u00fcr gruppierte Traktanden (z.B. Einf\u00fchrung, nach Departement, technische Traktanden).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "agenda_item_description": {
+                    "description": "[en] Subtitle or detailed description of the agenda item.\n[de] Untertitel oder ausf\u00fchrliche Beschreibung des Traktandums.\n",
                     "items": {
-                        "$ref": "#/$defs/Legislature"
+                        "$ref": "#/$defs/MultilingualString"
                     },
                     "type": [
                         "array",
                         "null"
                     ]
                 },
-                "meeting_items": {
+                "agenda_item_number": {
+                    "description": "[en] Sequential number of the agenda item (string type to support roman numerals).\n[de] Laufnummer des Traktandums (String-Typ zur Unterst\u00fctzung r\u00f6mischer Ziffern).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "agenda_item_position": {
+                    "description": "[en] Integer position of the agenda item in the meeting sequence.\n[de] Ganzzahlige Position des Traktandums in der Sitzungsreihenfolge.\n",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "agenda_item_title": {
+                    "description": "[en] Title of the agenda item.\n[de] Titel des Traktandums.\n",
                     "items": {
-                        "$ref": "#/$defs/MeetingItem"
+                        "$ref": "#/$defs/MultilingualString"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "agenda_item_type": {
+                    "$ref": "#/$defs/AgendaItemTypeEnum",
+                    "description": "[en] Type of agenda item, distinguishing individual items from groups.\n[de] Art des Traktandums, unterscheidet Einzeltraktanden von Traktandengruppen.\n"
+                },
+                "datetime_begin_actual": {
+                    "description": "[en] Actual date and time for the start of the meeting or agenda item.\n[de] Tats\u00e4chliches Datum und Uhrzeit f\u00fcr den Beginn der Sitzung oder des Tagesordnungspunkts.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_begin_planned": {
+                    "description": "[en] Planned date and time for the start of the meeting or agenda item.\n[de] Geplantes Datum und Uhrzeit f\u00fcr den Beginn der Sitzung oder des Tagesordnungspunkts.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_created": {
+                    "description": "The time this record was created",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_updated": {
+                    "description": "The last time this record was updated",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "landing_page": {
+                    "description": "[en] URL providing further information.\n[de] URL mit weiteren Informationen.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "leading_actor_id": {
+                    "description": "[en] The leading department for the agenda item.\n[de] Das federf\u00fchrende Departement f\u00fcr den Tagesordnungspunkt.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "parent_agenda_item": {
+                    "description": "[en] If needed, this slot builds a hierarchy of agenda items.\n[de] Wenn erforderlich, baut dieser Slot eine Hierarchie von Tagesordnungspunkten auf.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "parent_meeting": {
+                    "description": "[en] The linked meeting ID that groups the current meeting.\n[de] Die verkn\u00fcpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "resolution": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Resolution"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "[en] The resolutionor decision taken on this agenda item.\n[de] Die Resolution oder Entscheidung zu diesem Traktandum.\n"
+                },
+                "speaking_actor_id": {
+                    "description": "[en] The speaker or head of the department for the agenda item.\n[de] Der Sprecher oder Departementsvorsteher f\u00fcr den Tagesordnungspunkt.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "state_id": {
+                    "description": "State identifier (reference to state enum or custom state)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "state_name": {
+                    "description": "[en] Custom state description for the meeting.\n[de] Benutzerdefinierte Zustandsbeschreibung f\u00fcr die Sitzung.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "AgendaItem",
+            "type": "object"
+        },
+        "AgendaItemTypeEnum": {
+            "description": "[en] Type of agenda item, distinguishing individual items from grouped items.\n[de] Art des Traktandums, unterscheidet einzelne von gruppierten Traktanden.",
+            "enum": [
+                "item",
+                "group"
+            ],
+            "title": "AgendaItemTypeEnum",
+            "type": "string"
+        },
+        "Attendance": {
+            "additionalProperties": false,
+            "description": "[en] Attendance record for a meeting or voting session.\n[de] Anwesenheitsliste f\u00fcr eine Sitzung oder Abstimmung.",
+            "properties": {
+                "actor_id": {
+                    "description": "[en] The political body organized by the term of office (e.g., Regierungsrat, Nationalrat, St\u00e4nderat).\n[de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat, Nationalrat, St\u00e4nderat).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_begin": {
+                    "description": "[en] The date and time when the meeting or voting begins.\n[de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_created": {
+                    "description": "The time this record was created",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_updated": {
+                    "description": "The last time this record was updated",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "total_absent": {
+                    "description": "[en] Total number of absent members. Distinction between absent/excused absent - presence is tracked on attendance list.\n[de] Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.\n",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "total_excused": {
+                    "description": "Total number of excused absences",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "total_present": {
+                    "description": "Total number of members present",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Attendance",
+            "type": "object"
+        },
+        "AttendanceTypeEnum": {
+            "description": "[en] Type of individual attendance.\n[de] Art der individuellen Anwesenheit.",
+            "enum": [
+                "remote",
+                "substitute",
+                "present"
+            ],
+            "title": "AttendanceTypeEnum",
+            "type": "string"
+        },
+        "Container": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "agenda_items": {
+                    "items": {
+                        "$ref": "#/$defs/AgendaItem"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "attendances": {
+                    "description": "Collection of attendance records",
+                    "items": {
+                        "$ref": "#/$defs/Attendance"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "elections": {
+                    "description": "Collection of election records",
+                    "items": {
+                        "$ref": "#/$defs/Election"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "individual_attendances": {
+                    "description": "Collection of individual attendance records",
+                    "items": {
+                        "$ref": "#/$defs/IndividualAttendance"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "individual_votes": {
+                    "description": "Collection of individual vote records",
+                    "items": {
+                        "$ref": "#/$defs/IndividualVote"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "legislatures": {
+                    "items": {
+                        "$ref": "#/$defs/Legislature"
                     },
                     "type": [
                         "array",
@@ -34,9 +317,39 @@
                         "null"
                     ]
                 },
+                "resolutions": {
+                    "description": "Collection of resolutionrecords",
+                    "items": {
+                        "$ref": "#/$defs/Resolution"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "sessions": {
                     "items": {
                         "$ref": "#/$defs/Session"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "speeches": {
+                    "description": "Collection of speech records",
+                    "items": {
+                        "$ref": "#/$defs/Speech"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "votings": {
+                    "description": "Collection of voting records",
+                    "items": {
+                        "$ref": "#/$defs/Voting"
                     },
                     "type": [
                         "array",
@@ -50,25 +363,337 @@
             "title": "Container",
             "type": "object"
         },
+        "Election": {
+            "additionalProperties": false,
+            "description": "[en] An election procedure for selecting persons to positions.\n[de] Ein Wahlverfahren zur Wahl von Personen in Positionen.",
+            "properties": {
+                "actor_id": {
+                    "description": "[en] The political body organized by the term of office (e.g., Regierungsrat, Nationalrat, St\u00e4nderat).\n[de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat, Nationalrat, St\u00e4nderat).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "affair_id": {
+                    "description": "[en] The connection to the affairs (business items) of the agenda item.\n[de] Die Verbindung zu den Gesch\u00e4ften (Gesch\u00e4ftsgegenst\u00e4nden) des Tagesordnungspunkts.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_begin": {
+                    "description": "[en] The date and time when the meeting or voting begins.\n[de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_created": {
+                    "description": "The time this record was created",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_end": {
+                    "description": "[en] The date and time when the meeting or voting ends.\n[de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung endet.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_updated": {
+                    "description": "The last time this record was updated",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "election_type": {
+                    "$ref": "#/$defs/ElectionTypeEnum",
+                    "description": "Type of election procedure"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "landing_page": {
+                    "description": "[en] URL providing further information.\n[de] URL mit weiteren Informationen.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "majority_count": {
+                    "description": "[en] Number of votes required for the relevant majority threshold.\n[de] Anzahl der Stimmen, die f\u00fcr die relevante Mehrheitsschwelle erforderlich sind.\n",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "majority_type": {
+                    "$ref": "#/$defs/MajorityTypeEnum",
+                    "description": "[en] Type of majority required for the vote (absolute, two-thirds, etc.).\n[de] Art der f\u00fcr die Abstimmung erforderlichen Mehrheit (absolut, Zweidrittel usw.).\n"
+                },
+                "parent_agenda_item": {
+                    "description": "[en] If needed, this slot builds a hierarchy of agenda items.\n[de] Wenn erforderlich, baut dieser Slot eine Hierarchie von Tagesordnungspunkten auf.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "parent_meeting": {
+                    "description": "[en] The linked meeting ID that groups the current meeting.\n[de] Die verkn\u00fcpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "result_text": {
+                    "description": "[en] Free text describing the outcome of the vote, e.g., \"Accepted with 78 votes\".\n[de] Freitext zur Beschreibung des Ergebnisses der Abstimmung, z.B. \"Mit 78 Stimmen angenommen\".\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "title": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "total": {
+                    "description": "[en] Total number of votes, excluding absent and president's vote.\n[de] Gesamtzahl der Stimmen, ohne abwesende und Pr\u00e4sidentenstimmen.\n",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "total_absent": {
+                    "description": "[en] Total number of absent members. Distinction between absent/excused absent - presence is tracked on attendance list.\n[de] Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.\n",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "type_label": {
+                    "description": "[en] Custom type label when standard type values don't apply.\n[de] Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Election",
+            "type": "object"
+        },
+        "ElectionTypeEnum": {
+            "description": "[en] Type of election procedure.\n[de] Art des Wahlverfahrens.",
+            "enum": [
+                "secret",
+                "open",
+                "silent"
+            ],
+            "title": "ElectionTypeEnum",
+            "type": "string"
+        },
+        "IndividualAttendance": {
+            "additionalProperties": false,
+            "description": "[en] Individual attendance record for a specific person.\n[de] Einzelne Anwesenheitsfeststellung f\u00fcr eine bestimmte Person.",
+            "properties": {
+                "actor_id": {
+                    "description": "[en] The political body organized by the term of office (e.g., Regierungsrat, Nationalrat, St\u00e4nderat).\n[de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat, Nationalrat, St\u00e4nderat).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "attendance_type": {
+                    "$ref": "#/$defs/AttendanceTypeEnum",
+                    "description": "Type of individual attendance"
+                },
+                "datetime_created": {
+                    "description": "The time this record was created",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_updated": {
+                    "description": "The last time this record was updated",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "parent_voting": {
+                    "description": "[en] The ID of the voting associated with the individual vote.\n[de] Die ID der Abstimmung, die mit der Einzelstimme verbunden ist.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "IndividualAttendance",
+            "type": "object"
+        },
+        "IndividualVote": {
+            "additionalProperties": false,
+            "description": "[en] An individual vote cast by a member during a voting procedure.\n[de] Eine Einzelstimme eines Mitglieds w\u00e4hrend eines Abstimmungsverfahrens.",
+            "properties": {
+                "actor_id": {
+                    "description": "[en] The political body organized by the term of office (e.g., Regierungsrat, Nationalrat, St\u00e4nderat).\n[de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat, Nationalrat, St\u00e4nderat).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_created": {
+                    "description": "The time this record was created",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_updated": {
+                    "description": "The last time this record was updated",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "individual_vote_type": {
+                    "$ref": "#/$defs/IndividualVoteTypeEnum",
+                    "description": "[en] Type of vote cast (yes, no, abstention, absent, etc.).\n[de] Art der abgegebenen Stimme (ja, nein, Enthaltung, abwesend, etc.).\n"
+                },
+                "parent_voting": {
+                    "description": "[en] The ID of the voting associated with the individual vote.\n[de] Die ID der Abstimmung, die mit der Einzelstimme verbunden ist.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "seat_nr": {
+                    "description": "[en] The seat number of the individual vote, if applicable.\n[de] Die Sitznummer der Einzelstimme, falls zutreffend.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type_label": {
+                    "description": "[en] Custom type label when standard type values don't apply.\n[de] Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "weight": {
+                    "description": "[en] The number of votes held by the individual, if applicable (e.g., in cases where a person has multiple votes).\n[de] Die Anzahl der Stimmen, die die Einzelperson hat, falls zutreffend (z.B. in F\u00e4llen, in denen eine Person mehrere Stimmen hat).\n",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "IndividualVote",
+            "type": "object"
+        },
+        "IndividualVoteTypeEnum": {
+            "description": "[en] Type of individual vote cast by a member.\n[de] Art der Einzelstimme eines Mitglieds.",
+            "enum": [
+                "yes",
+                "no",
+                "abstention",
+                "absent",
+                "absent_excused",
+                "abstention_president",
+                "tie_breaker",
+                "other"
+            ],
+            "title": "IndividualVoteTypeEnum",
+            "type": "string"
+        },
+        "JointDebate": {
+            "additionalProperties": false,
+            "description": "[en] Agenda Items which are debated together.\n[de] Traktanden die gemeinsam behandelt werden.",
+            "properties": {
+                "agenda_items": {
+                    "items": {
+                        "$ref": "#/$defs/AgendaItem"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "JointDebate",
+            "type": "object"
+        },
         "Legislature": {
             "additionalProperties": false,
-            "description": "",
+            "description": "[en] Term of office of a parliament as a legislative assembly. Usually lasts four years.\n[de] Amtsdauer eines Parlaments als gesetzgebender Versammlung. Dauert in der Regel vier Jahre.",
             "properties": {
-                "begin_date": {
+                "actor_id": {
+                    "description": "[en] The political body organized by the term of office (e.g., Regierungsrat, Nationalrat, St\u00e4nderat).\n[de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat, Nationalrat, St\u00e4nderat).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "administrative_id": {
+                    "description": "[en] Administrative ID of the legislative body, such as a municipality, canton, or country.\n[de] Verwaltungs-ID des gesetzgebenden K\u00f6rpers, wie z.B. Gemeinde, Kanton oder Land.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_begin": {
                     "format": "date",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "body_key": {
+                "date_end": {
+                    "format": "date",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "created_datetime": {
+                "datetime_created": {
                     "description": "The time this record was created",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_updated": {
+                    "description": "The last time this record was updated",
                     "format": "date-time",
                     "type": [
                         "string",
@@ -81,46 +706,17 @@
                         "null"
                     ]
                 },
-                "end_date": {
-                    "format": "date",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "group_id": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "group_name": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "id": {
                     "type": "string"
                 },
-                "name": {
-                    "items": {
-                        "$ref": "#/$defs/MultilingualString"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "updated_datetime": {
-                    "description": "The last time this record was updated",
-                    "format": "date-time",
+                "landing_page": {
+                    "description": "[en] URL providing further information.\n[de] URL mit weiteren Informationen.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "url": {
+                "name": {
                     "items": {
                         "$ref": "#/$defs/MultilingualString"
                     },
@@ -136,9 +732,69 @@
             "title": "Legislature",
             "type": "object"
         },
+        "MajorityTypeEnum": {
+            "description": "Type of majority required for the vote",
+            "enum": [
+                "absolute",
+                "two-third",
+                "other"
+            ],
+            "title": "MajorityTypeEnum",
+            "type": "string"
+        },
+        "Media": {
+            "additionalProperties": false,
+            "description": "[en] Media files or documents (including protocols in PDF/HTML/WORD or links to audio/video).\n[de] Mediendateien oder Dokumente (einschlie\u00dflich Protokolle in PDF/HTML/WORD oder Links zu Audio/Video).",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "media_type": {
+                    "description": "Type of media (audio, video, document)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "parent_type": {
+                    "description": "Type of parent object (meeting, agenda, speech, affair)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "title": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "url": {
+                    "items": {
+                        "$ref": "#/$defs/MultilingualString"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "version": {
+                    "description": "Version number or identifier",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Media",
+            "type": "object"
+        },
         "Meeting": {
             "additionalProperties": false,
-            "description": "",
+            "description": "[en] A general meeting class used for Sessions, Comittee Meetings, individual session Sittings and other various Meetings.\n[de] Eine allgemeine Sitzungsklasse, die f\u00fcr Sessionen, Kommissionssitzungen, Sessionssitzung und andere verschiedene Versammlungen verwendet wird.",
             "properties": {
                 "abbreviation": {
                     "type": [
@@ -146,28 +802,75 @@
                         "null"
                     ]
                 },
-                "begin_date": {
-                    "format": "date",
+                "actor_id": {
+                    "description": "[en] The political body organized by the term of office (e.g., Regierungsrat, Nationalrat, St\u00e4nderat).\n[de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat, Nationalrat, St\u00e4nderat).\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "begin_date_actual": {
-                    "format": "date",
+                "actor_name": {
+                    "description": "[en] Name of the political body (e.g., Nationalrat).\n[de] Name des politischen Organs (z.B. Nationalrat).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "administrative_id": {
+                    "description": "[en] Administrative ID of the legislative body, such as a municipality, canton, or country.\n[de] Verwaltungs-ID des gesetzgebenden K\u00f6rpers, wie z.B. Gemeinde, Kanton oder Land.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "body_key": {
+                    "description": "[en] Key identifying the political body or jurisdiction (e.g., BE for Bern, CHE for Switzerland).\n[de] Schl\u00fcssel zur Identifizierung des politischen Organs oder der Gerichtsbarkeit (z.B. BE f\u00fcr Bern, CHE f\u00fcr Schweiz).\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "created_datetime": {
+                "date_begin_actual": {
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_begin_planned": {
+                    "description": "[en] Planned start date of the meeting or session.\n[de] Geplantes Startdatum der Sitzung oder Session.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_end_actual": {
+                    "description": "[en] Actual end date of the meeting or session.\n[de] Tats\u00e4chliches Enddatum der Sitzung oder Session.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_end_planned": {
+                    "description": "[en] Planned end date of the meeting or session.\n[de] Geplantes Enddatum der Sitzung oder Session.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_created": {
                     "description": "The time this record was created",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_updated": {
+                    "description": "The last time this record was updated",
                     "format": "date-time",
                     "type": [
                         "string",
@@ -180,27 +883,15 @@
                         "null"
                     ]
                 },
-                "end_date": {
-                    "format": "date",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "end_date_actual": {
-                    "format": "date",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "group_id": {
+                    "description": "Identifier of the group or body",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "group_name": {
+                    "description": "Name of the group or body",
                     "type": [
                         "string",
                         "null"
@@ -209,11 +900,22 @@
                 "id": {
                     "type": "string"
                 },
+                "landing_page": {
+                    "description": "[en] URL providing further information.\n[de] URL mit weiteren Informationen.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "location": {
                     "type": [
                         "string",
                         "null"
                     ]
+                },
+                "meeting_type": {
+                    "$ref": "#/$defs/MeetingTypeEnum",
+                    "description": "Type of the meeting, e.g. session, committee, sitting, various"
                 },
                 "name": {
                     "items": {
@@ -230,18 +932,38 @@
                         "null"
                     ]
                 },
-                "state": {
-                    "$ref": "#/$defs/StateEnum"
-                },
-                "type": {
+                "parent_legislature": {
+                    "description": "[en] The legislative body in which the meeting is based.\n[de] Der gesetzgebende K\u00f6rper, auf dem die Sitzung basiert.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "updated_datetime": {
-                    "description": "The last time this record was updated",
-                    "format": "date-time",
+                "parent_meeting": {
+                    "description": "[en] The linked meeting ID that groups the current meeting.\n[de] Die verkn\u00fcpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "position": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequential_number": {
+                    "description": "[en] Sequential number of the meeting, used for ordering.\n[de] Laufende Nummer der Sitzung, die zur Sortierung verwendet wird.\n",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "state": {
+                    "$ref": "#/$defs/StateEnum"
+                },
+                "state_name": {
+                    "description": "[en] Custom state description for the meeting.\n[de] Benutzerdefinierte Zustandsbeschreibung f\u00fcr die Sitzung.\n",
                     "type": [
                         "string",
                         "null"
@@ -263,44 +985,21 @@
             "title": "Meeting",
             "type": "object"
         },
-        "MeetingItem": {
+        "MeetingTypeEnum": {
+            "description": "Type of the meeting",
+            "enum": [
+                "session",
+                "committee",
+                "sitting",
+                "various"
+            ],
+            "title": "MeetingTypeEnum",
+            "type": "string"
+        },
+        "Motion": {
             "additionalProperties": false,
-            "description": "",
+            "description": "[en] A formal proposal or motion submitted during proceedings.\n[de] Ein formeller Antrag, der w\u00e4hrend der Verhandlungen eingereicht wird.",
             "properties": {
-                "affairs": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "category": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "created_datetime": {
-                    "description": "The time this record was created",
-                    "format": "date-time",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "date_time": {
-                    "format": "date-time",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "date_time_actual": {
-                    "format": "date-time",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "description": {
                     "type": [
                         "string",
@@ -310,50 +1009,9 @@
                 "id": {
                     "type": "string"
                 },
-                "number": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "position": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "result": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "status": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "title": {
                     "type": [
                         "string",
-                        "null"
-                    ]
-                },
-                "updated_datetime": {
-                    "description": "The last time this record was updated",
-                    "format": "date-time",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "url": {
-                    "items": {
-                        "$ref": "#/$defs/MultilingualString"
-                    },
-                    "type": [
-                        "array",
                         "null"
                     ]
                 }
@@ -361,12 +1019,12 @@
             "required": [
                 "id"
             ],
-            "title": "MeetingItem",
+            "title": "Motion",
             "type": "object"
         },
         "MultilingualString": {
             "additionalProperties": false,
-            "description": "",
+            "description": "[en] A string that can contain text in multiple languages.\n[de] Ein String, der Text in mehreren Sprachen enthalten kann.",
             "properties": {
                 "language": {
                     "description": "Language code in ISO 639-1 format",
@@ -384,30 +1042,78 @@
             "title": "MultilingualString",
             "type": "object"
         },
-        "Session": {
+        "Resolution": {
             "additionalProperties": false,
-            "description": "",
+            "description": "[en] A resolutionor decision taken on an agenda item, including voting procedures.\n[de] Eine Resolution oder Entscheidung zu einem Traktandum, einschlie\u00dflich Abstimmungsverfahren.",
             "properties": {
-                "abbreviation": {
+                "resolution_type": {
+                    "$ref": "#/$defs/ResolutionTypeEnum",
+                    "description": "[en] Type of resolutiontaken on the agenda item.\n[de] Art der Resolution zum Traktandum.\n"
+                },
+                "type_label": {
+                    "description": "[en] Custom type label when standard type values don't apply.\n[de] Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "begin_date": {
+                "vote_procedures": {
+                    "description": "[en] Procedures for voting, such as secret ballot or open vote.\n[de] Verfahren f\u00fcr die Abstimmung, wie geheime Abstimmung oder offene Abstimmung.\n",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Resolution",
+            "type": "object"
+        },
+        "ResolutionTypeEnum": {
+            "description": "[en] Type of resolutiontaken on an agenda item.\n[de] Art der Resolution zu einem Traktandum.",
+            "enum": [
+                "accepted",
+                "rejected",
+                "noted",
+                "accepted_point_by_point",
+                "accepted_with_postulate",
+                "orally_settled",
+                "nearly_unanimous",
+                "other"
+            ],
+            "title": "ResolutionTypeEnum",
+            "type": "string"
+        },
+        "Session": {
+            "additionalProperties": false,
+            "description": "[en] A parliamentary session that groups multiple meetings and spans a specific time period.\n[de] Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich \u00fcber einen bestimmten Zeitraum erstreckt.",
+            "properties": {
+                "body_key": {
+                    "description": "[en] Key identifying the political body or jurisdiction (e.g., BE for Bern, CHE for Switzerland).\n[de] Schl\u00fcssel zur Identifizierung des politischen Organs oder der Gerichtsbarkeit (z.B. BE f\u00fcr Bern, CHE f\u00fcr Schweiz).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_begin_planned": {
+                    "description": "[en] Planned start date of the meeting or session.\n[de] Geplantes Startdatum der Sitzung oder Session.\n",
                     "format": "date",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "body_key": {
+                "date_end_planned": {
+                    "description": "[en] Planned end date of the meeting or session.\n[de] Geplantes Enddatum der Sitzung oder Session.\n",
+                    "format": "date",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "created_datetime": {
+                "datetime_created": {
                     "description": "The time this record was created",
                     "format": "date-time",
                     "type": [
@@ -415,26 +1121,9 @@
                         "null"
                     ]
                 },
-                "description": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "end_date": {
-                    "format": "date",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "group_id": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "group_name": {
+                "datetime_updated": {
+                    "description": "The last time this record was updated",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -442,6 +1131,15 @@
                 },
                 "id": {
                     "type": "string"
+                },
+                "meetings": {
+                    "items": {
+                        "$ref": "#/$defs/Meeting"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "name": {
                     "items": {
@@ -452,15 +1150,8 @@
                         "null"
                     ]
                 },
-                "number": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "updated_datetime": {
-                    "description": "The last time this record was updated",
-                    "format": "date-time",
+                "parent_legislature": {
+                    "description": "[en] The legislative body in which the meeting is based.\n[de] Der gesetzgebende K\u00f6rper, auf dem die Sitzung basiert.\n",
                     "type": [
                         "string",
                         "null"
@@ -482,6 +1173,132 @@
             "title": "Session",
             "type": "object"
         },
+        "Speech": {
+            "additionalProperties": false,
+            "description": "[en] A speech or statement made during a meeting (also called Votum or speaker segment).\n[de] Eine Wortmeldung w\u00e4hrend einer Sitzung (auch Votum oder Redebeitrag genannt).",
+            "properties": {
+                "actor_fullname": {
+                    "description": "Full name of the actor/person",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "actor_id": {
+                    "description": "[en] The political body organized by the term of office (e.g., Regierungsrat, Nationalrat, St\u00e4nderat).\n[de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat, Nationalrat, St\u00e4nderat).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_begin": {
+                    "description": "[en] The date and time when the meeting or voting begins.\n[de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_created": {
+                    "description": "The time this record was created",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_end": {
+                    "description": "[en] The date and time when the meeting or voting ends.\n[de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung endet.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_updated": {
+                    "description": "The last time this record was updated",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "landing_page": {
+                    "description": "[en] URL providing further information.\n[de] URL mit weiteren Informationen.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "language": {
+                    "description": "Language code in ISO 639-1 format",
+                    "pattern": "^[a-z]{2}$",
+                    "type": "string"
+                },
+                "media_format": {
+                    "description": "MIME type of the media file",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "media_type": {
+                    "description": "Type of media (audio, video, document)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "media_url": {
+                    "description": "URL to media file (audio/video)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "role": {
+                    "description": "Role of the person (e.g., commission speaker)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "start": {
+                    "description": "Start indicator or position",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "text": {
+                    "type": "string"
+                },
+                "text_format": {
+                    "description": "[en] Format of text (text, html, html_with_timestamps)\n[de] Format des Textes (text, html, html_with_timestamps)\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "text_type": {
+                    "description": "[en] Type of text (raw draft, edited version)\n[de] Typ des Textes (Rohfassung, bearbeitete Fassung)\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "language",
+                "text"
+            ],
+            "title": "Speech",
+            "type": "object"
+        },
         "StateEnum": {
             "description": "State of the meeting",
             "enum": [
@@ -491,6 +1308,258 @@
             ],
             "title": "StateEnum",
             "type": "string"
+        },
+        "TextSegment": {
+            "additionalProperties": false,
+            "description": "[en] A text segment such as cross-references or subtitles in meeting protocols.\n[de] Ein Textsegment wie Querverweise oder Zwischentitel in Sitzungsprotokollen.",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "text": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "text"
+            ],
+            "title": "TextSegment",
+            "type": "object"
+        },
+        "TotalOther": {
+            "additionalProperties": false,
+            "description": "[en] Additional vote counts when multiple options are presented (e.g., Zurich uses 5 buttons).\n[de] Zus\u00e4tzliche Stimmzahlen, wenn mehrere Optionen zur Abstimmung gestellt werden (z.B. Z\u00fcrich verwendet 5 Kn\u00f6pfe).",
+            "properties": {
+                "count": {
+                    "description": "[en] The count of votes for the total other category.\n[de] Die Anzahl der Stimmen f\u00fcr die Kategorie \"Andere\".\n",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "description": "[en] The label or meaning of the vote in the total other category.\n[de] Das Etikett oder die Bedeutung der Stimme in der Kategorie \"Andere\".\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "TotalOther",
+            "type": "object"
+        },
+        "Voting": {
+            "additionalProperties": false,
+            "description": "[en] A voting procedure with individual votes and results.\n[de] Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen.",
+            "properties": {
+                "actor_id": {
+                    "description": "[en] The political body organized by the term of office (e.g., Regierungsrat, Nationalrat, St\u00e4nderat).\n[de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat, Nationalrat, St\u00e4nderat).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "affair_id": {
+                    "description": "[en] The connection to the affairs (business items) of the agenda item.\n[de] Die Verbindung zu den Gesch\u00e4ften (Gesch\u00e4ftsgegenst\u00e4nden) des Tagesordnungspunkts.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_begin": {
+                    "description": "[en] The date and time when the meeting or voting begins.\n[de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_created": {
+                    "description": "The time this record was created",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_end": {
+                    "description": "[en] The date and time when the meeting or voting ends.\n[de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung endet.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_updated": {
+                    "description": "The last time this record was updated",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "label_abstention": {
+                    "description": "[en] Meaning of an 'abstention' vote.\n[de] Bedeutung einer Enthaltungsstimme.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "label_no": {
+                    "description": "[en] Meaning of a 'no' vote.\n[de] Bedeutung einer 'Nein'-Stimme.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "label_yes": {
+                    "description": "[en] Meaning of a 'yes' vote.\n[de] Bedeutung einer 'Ja'-Stimme.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "landing_page": {
+                    "description": "[en] URL providing further information.\n[de] URL mit weiteren Informationen.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "majority_count": {
+                    "description": "[en] Number of votes required for the relevant majority threshold.\n[de] Anzahl der Stimmen, die f\u00fcr die relevante Mehrheitsschwelle erforderlich sind.\n",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "majority_type": {
+                    "$ref": "#/$defs/MajorityTypeEnum",
+                    "description": "[en] Type of majority required for the vote (absolute, two-thirds, etc.).\n[de] Art der f\u00fcr die Abstimmung erforderlichen Mehrheit (absolut, Zweidrittel usw.).\n"
+                },
+                "optional": {
+                    "description": "[en] Indicates if the meeting or voting is optional.\n[de] Gibt an, ob die Sitzung oder Abstimmung optional ist.\n",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "parent_agenda_item": {
+                    "description": "[en] If needed, this slot builds a hierarchy of agenda items.\n[de] Wenn erforderlich, baut dieser Slot eine Hierarchie von Tagesordnungspunkten auf.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "parent_meeting": {
+                    "description": "[en] The linked meeting ID that groups the current meeting.\n[de] Die verkn\u00fcpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "result_text": {
+                    "description": "[en] Free text describing the outcome of the vote, e.g., \"Accepted with 78 votes\".\n[de] Freitext zur Beschreibung des Ergebnisses der Abstimmung, z.B. \"Mit 78 Stimmen angenommen\".\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "tie_breaker": {
+                    "description": "[en] Indicates if a tie-breaker was used in the voting.\n[de] Gibt an, ob ein Stichentscheid bei der Abstimmung verwendet wurde.\n",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "total": {
+                    "description": "[en] Total number of votes, excluding absent and president's vote.\n[de] Gesamtzahl der Stimmen, ohne abwesende und Pr\u00e4sidentenstimmen.\n",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "total_absent": {
+                    "description": "[en] Total number of absent members. Distinction between absent/excused absent - presence is tracked on attendance list.\n[de] Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.\n",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "total_count_abstention": {
+                    "description": "[en] Total number of abstentions.\n[de] Gesamtzahl der Enthaltungen.\n",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "total_count_no": {
+                    "description": "[en] Total number of 'no' votes.\n[de] Gesamtzahl der 'Nein'-Stimmen.\n",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "total_count_yes": {
+                    "description": "[en] Total number of 'yes' votes.\n[de] Gesamtzahl der 'Ja'-Stimmen.\n",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "total_other": {
+                    "description": "[en] Used when multiple options are presented for voting (e.g., 5 buttons in Zurich).\n[de] Wird verwendet, wenn mehrere Optionen zur Abstimmung gestellt werden (z.B. 5 Kn\u00f6pfe in Z\u00fcrich).\n",
+                    "items": {
+                        "$ref": "#/$defs/TotalOther"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "type_label": {
+                    "description": "[en] Custom type label when standard type values don't apply.\n[de] Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "voting_title": {
+                    "description": "[en] Title or question being voted on. If no specific subject exists, do not use the business item title.\n[de] Abstimmungstitel bzw. Gegenstand oder Frage. Wenn kein Gegenstand vorhanden ist, sollte nicht der Gesch\u00e4ftstitel verwendet werden.\n",
+                    "items": {
+                        "$ref": "#/$defs/MultilingualString"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "voting_type": {
+                    "$ref": "#/$defs/VotingTypeEnum",
+                    "description": "[en] Type of voting procedure (preliminary, final, secret, etc.).\n[de] Art des Abstimmungsverfahrens (Zwischen-, Schlussabstimmung, geheim, etc.).\n"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Voting",
+            "type": "object"
+        },
+        "VotingTypeEnum": {
+            "description": "[en] Type of voting procedure.\n[de] Art des Abstimmungsverfahrens.",
+            "enum": [
+                "preliminary_vote",
+                "final_vote",
+                "tie_breaker_president",
+                "secret_vote",
+                "other"
+            ],
+            "title": "VotingTypeEnum",
+            "type": "string"
         }
     },
     "$id": "https://ch.paf.link/schema/operations",
@@ -499,21 +1568,61 @@
     "description": "",
     "metamodel_version": "1.7.0",
     "properties": {
-        "id": {
-            "type": "string"
-        },
-        "legislatures": {
+        "agenda_items": {
             "items": {
-                "$ref": "#/$defs/Legislature"
+                "$ref": "#/$defs/AgendaItem"
             },
             "type": [
                 "array",
                 "null"
             ]
         },
-        "meeting_items": {
+        "attendances": {
+            "description": "Collection of attendance records",
             "items": {
-                "$ref": "#/$defs/MeetingItem"
+                "$ref": "#/$defs/Attendance"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "elections": {
+            "description": "Collection of election records",
+            "items": {
+                "$ref": "#/$defs/Election"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "id": {
+            "type": "string"
+        },
+        "individual_attendances": {
+            "description": "Collection of individual attendance records",
+            "items": {
+                "$ref": "#/$defs/IndividualAttendance"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "individual_votes": {
+            "description": "Collection of individual vote records",
+            "items": {
+                "$ref": "#/$defs/IndividualVote"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "legislatures": {
+            "items": {
+                "$ref": "#/$defs/Legislature"
             },
             "type": [
                 "array",
@@ -529,9 +1638,39 @@
                 "null"
             ]
         },
+        "resolutions": {
+            "description": "Collection of resolutionrecords",
+            "items": {
+                "$ref": "#/$defs/Resolution"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
         "sessions": {
             "items": {
                 "$ref": "#/$defs/Session"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "speeches": {
+            "description": "Collection of speech records",
+            "items": {
+                "$ref": "#/$defs/Speech"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "votings": {
+            "description": "Collection of voting records",
+            "items": {
+                "$ref": "#/$defs/Voting"
             },
             "type": [
                 "array",
@@ -546,3 +1685,4 @@
     "type": "object",
     "version": null
 }
+

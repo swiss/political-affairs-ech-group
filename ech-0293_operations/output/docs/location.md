@@ -17,8 +17,7 @@ Alias: location
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) |  |  no  |
-
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 
 
 
@@ -32,9 +31,7 @@ Alias: location
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

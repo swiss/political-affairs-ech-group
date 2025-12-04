@@ -17,8 +17,7 @@ Alias: position
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MeetingItem](MeetingItem.md) |  |  no  |
-
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 
 
 
@@ -32,9 +31,7 @@ Alias: position
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 
@@ -68,7 +65,7 @@ from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 alias: position
 domain_of:
-- MeetingItem
+- Meeting
 range: string
 
 ```

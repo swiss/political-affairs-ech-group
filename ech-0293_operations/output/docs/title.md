@@ -17,8 +17,9 @@ Alias: title
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MeetingItem](MeetingItem.md) |  |  no  |
-
+| [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |  no  |
+| [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |  no  |
+| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 
 
 
@@ -32,9 +33,7 @@ Alias: title
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 
@@ -68,7 +67,9 @@ from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 alias: title
 domain_of:
-- MeetingItem
+- Election
+- Motion
+- Media
 range: string
 
 ```

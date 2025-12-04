@@ -3,6 +3,15 @@
 # Slot: body_key 
 
 
+_[en] Key identifying the political body or jurisdiction (e.g., BE for Bern, CHE for Switzerland)._
+
+_[de] Schlüssel zur Identifizierung des politischen Organs oder der Gerichtsbarkeit (z.B. BE für Bern, CHE für Schweiz)._
+
+__
+
+
+
+
 
 URI: [ops:body_key](https://ch.paf.link/schema/operations/body_key)
 Alias: body_key
@@ -17,10 +26,8 @@ Alias: body_key
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Session](Session.md) |  |  no  |
-| [Meeting](Meeting.md) |  |  no  |
-| [Legislature](Legislature.md) |  |  no  |
-
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
+| [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
 
 
 
@@ -34,9 +41,7 @@ Alias: body_key
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 
@@ -66,11 +71,17 @@ Alias: body_key
 <details>
 ```yaml
 name: body_key
+description: '[en] Key identifying the political body or jurisdiction (e.g., BE for
+  Bern, CHE for Switzerland).
+
+  [de] Schlüssel zur Identifizierung des politischen Organs oder der Gerichtsbarkeit
+  (z.B. BE für Bern, CHE für Schweiz).
+
+  '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 alias: body_key
 domain_of:
-- Legislature
 - Session
 - Meeting
 range: string

@@ -17,8 +17,9 @@ Alias: text
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MultilingualString](MultilingualString.md) |  |  no  |
-
+| [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
+| [TextSegment](TextSegment.md) | [en] A text segment such as cross-references or subtitles in meeting protocol... |  no  |
+| [MultilingualString](MultilingualString.md) | [en] A string that can contain text in multiple languages |  no  |
 
 
 
@@ -34,9 +35,7 @@ Alias: text
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 
@@ -70,6 +69,8 @@ from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 alias: text
 domain_of:
+- Speech
+- TextSegment
 - MultilingualString
 range: string
 required: true

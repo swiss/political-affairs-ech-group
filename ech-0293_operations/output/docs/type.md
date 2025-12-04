@@ -13,16 +13,6 @@ Alias: type
 
 
 
-## Applicable Classes
-
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Meeting](Meeting.md) |  |  no  |
-
-
-
-
-
 
 
 ## Properties
@@ -32,9 +22,7 @@ Alias: type
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 
@@ -67,8 +55,6 @@ name: type
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 alias: type
-domain_of:
-- Meeting
 range: string
 
 ```

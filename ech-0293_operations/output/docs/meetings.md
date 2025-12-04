@@ -18,7 +18,7 @@ Alias: meetings
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Container](Container.md) |  |  no  |
-
+| [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
 
 
 
@@ -34,9 +34,7 @@ Alias: meetings
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 
@@ -72,6 +70,7 @@ slot_uri: ops:meeting
 alias: meetings
 domain_of:
 - Container
+- Session
 range: Meeting
 multivalued: true
 inlined: true
