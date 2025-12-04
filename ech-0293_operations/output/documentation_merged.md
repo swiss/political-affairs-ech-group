@@ -104,33 +104,6 @@ Eine Legislaturperiode wird charakterisiert durch:
 
 Beispiel Bundesebene: Die 51. Legislaturperiode des Schweizer Parlaments dauerte vom 5. Dezember 2019 bis zum 4. Dezember 2023.
 
-### Mehrsprachigkeit
-
-Da die Schweiz ein mehrsprachiges Land ist, werden Namen und Beschreibungen mehrsprachig erfasst:
-
-- **name**: Array von MultilingualString-Objekten (z.B. "51. Legislatur", "51e législature", "51a legislatura")
-- **url**: Mehrsprachige URLs zu weiterführenden Informationen
-
-### Anwendungsbeispiele
-
-#### Bundesebene
-Die Bundesversammlung arbeitet in 4-jährigen Legislaturperioden. Innerhalb einer Legislature finden jährlich vier ordentliche Sessions statt (Frühlings-, Sommer-, Herbst- und Wintersession).
-
-#### Kantone
-Kantone mit Milizparlamenten haben oft kürzere, aber häufigere Sessions innerhalb einer Legislaturperiode. Kantonsparlamente mit vollamtlichen Mitgliedern ähneln strukturell dem Bundesparlament.
-
-#### Gemeinden
-In Gemeinden mit Parlamenten (üblicherweise grössere Städte) entspricht die Structure weitgehend derjenigen auf Kantonsebene. Gemeinden mit Gemeindeversammlungen kennen keine klassischen Legislaturperioden im engeren Sinne.
-
-### Verwendung im Standard
-
-Die Legislature-Entität dient primär dazu:
-
-1. Zeitliche Kontextualisierung aller parlamentarischen Aktivitäten
-2. Filterung und Abfrage von Daten nach Wahlperioden
-3. Historische Analysen über mehrere Legislaturperioden hinweg
-4. Zuordnung von Mitgliedschaften und Mandaten zu bestimmten Perioden
-
 
 
 # Class: Legislature 
@@ -1005,11 +978,6 @@ Wie bei Legislature und Session wird über **group_id**, **group_name** und **bo
 - Plenarsitzungen: Verweis auf das gesamte Parlament
 - Kommissionssitzungen: Verweis auf die spezifische Kommission
 - Gemeinsame Sitzungen: Verweis auf das gemeinsame Gremium
-
-### Mehrsprachigkeit und URLs
-
-- **name**: Array von MultilingualString für Namen in allen Landessprachen
-- **url**: Mehrsprachige URLs zu Sitzungsunterlagen, Livestreams, Protokollen
 
 ### Beziehungen zu anderen Entitäten
 
