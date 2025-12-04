@@ -1,3 +1,5 @@
+ToDo: Michel
+
 # Traktanden und Beschlüsse
 
 Die Tagesordnung einer Sitzung wird durch Traktanden strukturiert. Zu jedem Traktandum können Anträge gestellt und Beschlüsse gefasst werden.
