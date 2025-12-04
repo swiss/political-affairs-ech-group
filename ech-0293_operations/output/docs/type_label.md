@@ -26,9 +26,9 @@ Alias: type_label
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Resolution](Resolution.md) | [en] A resolutionor decision taken on an agenda item, including voting proced... |  no  |
 | [IndividualVote](IndividualVote.md) | [en] An individual vote cast by a member during a voting procedure |  no  |
 | [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
+| [Resolution](Resolution.md) | [en] A resolutionor decision taken on an agenda item, including voting proced... |  no  |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 
 
