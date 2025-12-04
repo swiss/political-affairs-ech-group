@@ -1,3 +1,5 @@
+ToDo: Nicole
+
 # Abstimmungen und Wahlen
 
 Parlamentarische Entscheidungen erfolgen durch Abstimmungen über Sachfragen und Wahlen von Personen. Der Standard unterscheidet diese beiden Mechanismen klar und erfasst bei offenen Verfahren auch das individuelle Stimmverhalten der Parlamentsmitglieder.
