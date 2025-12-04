@@ -1,8 +1,8 @@
-id: ops:sessions_1
+id: ops:sessions_example_2025
 sessions:
 
-- body_key: "CHE"
-  id: ops:5207
+- id: ops:session_5207
+  body_key: "CHE"
   name:
     - text: "Frühjahrssession 2025"
       language: "de"
@@ -11,30 +11,20 @@ sessions:
     - text: "Sessione primaverile 2025"
       language: "it"
   url:
-    - text: "https://www.parlament.ch/agenda/Pages/fruehjahrssession-2025.aspx"
+    - text: "https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025"
       language: "de"
-    - text: "https://www.parlament.ch/agenda/Pages/fruehjahrssession-2025.aspx?lang=1036"
+    - text: "https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025"
       language: "fr"
-    - text: "https://www.parlament.ch/agenda/Pages/fruehjahrssession-2025.aspx?lang=1040"
+    - text: "https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025"
       language: "it"
-  description:
-    - text: "Ordentliche Sessionen (je 3 Wochen)"
-      language: "de"
-    - text: "Sessions ordinaires  (durée 3 semaines)"
-      language: "fr"
-    - text: "Sessioni ordinarie (3 settimane)"
-      language: "it"
-  group_name: "National und Ständerat"
-  group_id: "52"
-  number: "FS 25"
-  abbreviation: ""
-  begin_date: "2025-03-03"
-  end_date: "2025-03-21"
-  updated_datetime: "2025-04-24T00:19:37Z"
-  created_datetime: "2025-03-20T14:27:09Z"
+  date_begin_planned: "2025-03-03"
+  date_end_planned: "2025-03-21"
+  parent_legislature: ops:legislature_51
+  datetime_updated: "2025-04-24T00:19:37Z"
+  datetime_created: "2025-03-20T14:27:09Z"
 
-- body_key: "BE"
-  id: ops:66ccf0a9f4d24d318ff3b99e646644e8
+- id: ops:session_be_summer_2025
+  body_key: "BE"
   name:
     - text: "Sommersession 2025"
       language: "de"
@@ -45,56 +35,33 @@ sessions:
       language: "de"
     - text: "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
       language: "fr"
-  description:
-    - text: "Die Sommersession 2025 des Bernischen Grossen Rates."
-      language: "de"
-    - text: "La session d'été 2025 du Grand Conseil bernois."
-      language: "fr"
-  group_name: "Grosser Bern"
-  group_id: "5310"
-  number: ""
-  abbreviation: ""
-  begin_date: "2025-06-02"
-  end_date: "2025-06-12"
-  updated_datetime: "2025-05-19T01:06:44Z"
-  created_datetime: "2025-04-25T11:10:24Z"
+  date_begin_planned: "2025-06-02"
+  date_end_planned: "2025-06-12"
+  datetime_updated: "2025-05-19T01:06:44Z"
+  datetime_created: "2025-04-25T11:10:24Z"
 
-- body_key: "GL"
-  id: ops:GL_2025_02_26
+- id: ops:session_gl_landrat_2025_02_26
+  body_key: "GL"
   name:
     - text: "Sitzung des Landrates vom 26.02.2025"
       language: "de"
   url:
     - text: "https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239"
       language: "de"
-  description:
-    - text: "Sitzung des Landrates vom 26. Februar 2025."
-      language: "de"
-  group_name: "Landrat Glarus"
-  group_id: "5310"
-  number: ""
-  abbreviation: ""
-  begin_date: "2025-02-26"
-  end_date: "2025-02-26"
-  updated_datetime: "2025-04-25T13:40:34Z"
-  created_datetime: "2025-04-23T22:58:39Z"
+  date_begin_planned: "2025-02-26"
+  date_end_planned: "2025-02-26"
+  datetime_updated: "2025-04-25T13:40:34Z"
+  datetime_created: "2025-04-23T22:58:39Z"
 
-- body_key: "GL"
-  id: ops:GL_2025_05_04
+- id: ops:session_gl_landsgemeinde_2025_05_04
+  body_key: "GL"
   name:
     - text: "Landsgemeinde vom 04. Mai 2025"
       language: "de"
   url:
     - text: "https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04"
       language: "de"
-  description:
-    - text: "<p class='has-img'><img src='https://www.landsgemeinde.gl.ch/storage/37a3e46d77ded21997b10e797ee002cf31062d98736ad0f95b554cceea28012e' alt='Foto: Samuel Trümpy' class='lazyload-alt' width='2048px' height='1367px'></p><p>Die Glarner Landsgemeinde findet jeweils am ersten Sonntag im Mai statt; in diesem Jahr am <strong>4. Mai 2025</strong> (Verschiebungsdatum 11. Mai). Sie beginnt um 9.30 Uhr. Die Stimmberechtigten treffen sich im Ring auf dem Zaunplatz (auch Landsgemeindeplatz genannt) mitten im Hauptort Glarus. Der Landammann eröffnet und leitet die Landsgemeinde und ermittelt bei Wahlen und Abstimmungen die Mehrheit durch Abschätzen.</p><p>Grundlage für die Stimmberechtigten ist das Memorial für die Landsgemeinde. Es enthält die Traktandenliste und eine Beschreibung aller Geschäfte mit einlässlicher Darstellung und Begründung sowie den Antrag des Landrates (Kantonsparlament). Dieser ist, wenn kein abweichender Antrag gestellt wird, genehmigt. An der Glarner Landsgemeinde haben die Stimmberechtigten das Recht „zu raten, zu mindern und zu mehren“. Das heisst, sie können zu jedem Sachgeschäft das Wort verlangen und Änderungen beantragen. Es sind zudem Anträge auch auf Verschiebung, Rückweisung oder Ablehnung möglich.</p><p>Zutritt zum Ring haben nur <strong>stimmberechtigte Personen</strong>. (Es muss der Stimmrechtsausweis den Kontrollorganen vorgewiesen werden). Im Kanton wohnhafte schulpflichtige oder der Schulpflicht entwachsene, nicht stimmberechtigte Jugendliche dürfen sich unmittelbar neben der Rednerbühne aufhalten. Es ist den Stimmberechtigten jedoch untersagt, Kinder auf den Ring oder die Sitzplätze mitzunehmen.</p><h2>Ehrengäste</h2><h3>Gäste des Regierungsrates</h3><ul><li>Bundesrat Albert Rösti, Vorsteher des Eidgenössischen Departements für Umwelt, Verkehr, Energie und Kommunikation UVEK</li><li>Korpskommandant Hans-Peter Walser, Chef Kommando Ausbildung und Stv. des Chefs der Armee</li><li>Brigadier Peter Baumgartner, Kommandant Lehrverband Infanterie</li><li>Regierungsrat des Kantons Schaffhausen in corpore</li></ul><h3>Gäste des Landrates</h3><ul><li>Büro des Grossen Rates des Kantons Appenzell Innerrhoden</li></ul><h2>Gratis mit dem öV an die Landsgemeinde</h2><p>Am Tag der Landsgemeinde kann das öV-Angebot im Kanton Glarus (Bahn- und Buslinien inkl. Braunwaldbahn), Basis 2. Klasse, gratis benützt werden. </p><h2>Bekanntgabe des Entscheides über die Abhaltung der Landsgemeinde</h2><p>Der Entscheid über die Durchführung der Landsgemeinde wird von Radio SRF1 in den Nachrichten um 7 und 8 Uhr ausgestrahlt und ist auf der Homepage <a href='http://www.gl.ch/'>www.gl.ch</a> publiziert.</p><h2>Informationen für Sehbehinderte und Blinde</h2><p>Die Schweizerische Bibliothek für Blinde, Seh- und Lesebehinderte (SBS) bietet das Landsgemeindememorial kostenlos als Hörfassung im DAISY-Format an. Weitere Informationen zum DAISY-Format und Abspielmöglichkeiten finden Sie auf der <a href='https://www.sbs.ch/?id=69'>Website der SBS</a>. Die Datei kann auf diesem <a href='https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04'>Landsgemeindeportal unter Downloads</a> heruntergeladen werden (Audio ZIP). Sogenannte «Daisy-Apps» stellen die Daten strukturiert dar, erlauben das direkte Navigieren zu einzelnen Abstimmungsvorlagen und spielen die Hörfassung ab.</p><h2>Informationen für Gehörlose</h2><p>Am Tag der Landsgemeinde steht für Gehörlose ein Dolmetscherdienst zur Verfügung. Es sind Plätze im Landsgemeindering für Gehörlose reserviert und angeschrieben.</p><h2>Kinderhütedienst an der Landsgemeinde</h2><p>Am Tag der Landsgemeinde findet ab 9 Uhr bis zum Ende der Landsgemeinde ein Kinderhütedienst im Kindergarten Erlen in Glarus (für Kinder aus Glarus Süd) und im Kindergarten Löwen in Glarus (für Kinder aus Glarus Nord und Glarus) statt.</p><h2>Informationen für auswärtige Besucherinnen und Besucher</h2><p>Für nicht stimmberechtigte Interessierte stehen Zuschauertribünen auf dem Zaunplatz zur Verfügung.<br>Weitere <a href='https://glarnerland.ch/de/glarnerland/landsgemeinde.html'>Hinweise und Tipps für Gäste</a> sind auf der Website der Tourismusorganisation Visit Glarnerland publiziert.</p><h2>Information für Medienschaffende</h2><p>Medienschaffende benötigen für den Zutritt in den Landsgemeindering einen Medienausweis der vorgängig zugestellt wird. Auskunft über die Akkreditierung erteilt die <a href='https://www.gl.ch/verwaltung/staatskanzlei/kommunikation.html/4585'>Fachstelle Kommunikation</a>. Fotografieren und filmen ist erlaubt, sofern der Ablauf der Landsgemeinde nicht gestört wird. Die Verwendung von Drohnen ist über dem Landsgemeindeplatz strikte verboten. Die Zuteilung der Medienarbeitsplätze obliegt der Fachstelle Kommunikation. Ein Medientermin für Interviews mit dem Regierungsrat und Ehrengästen besteht <em>nach</em> der Landsgemeinde auf dem Rathausplatz. </p><p>Das Wesen und Funktionieren einer Landsgemeinde wird im Film <em><a href='https://www.landsgemeinde.gl.ch/topics/film'>Ds Wort isch frii</a> </em>anschaulich erzählt. Der Film steht in einer Dialektfassung sowie auf deutsch und englisch zur Verfügung.</p><p>Die Landsgemeinde wird für Archivzwecke in Ton und Bild aufgenommen. Für ausführliche Dokumentationen, Fotos und Film wird auf die <a href='https://archivverzeichnis.gl.ch/home/#/'>Onlinesuche</a> des Landesarchivs des Kantons Glarus verwiesen. </p>"
-      language: "de"
-  group_name: "Landsgemeinde Glarus"
-  group_id: "LGGL"
-  number: ""
-  abbreviation: ""
-  begin_date: "2025-05-04"
-  end_date: "2025-05-04"
-  updated_datetime: "2025-04-25T13:40:34Z"
-  created_datetime: "2025-04-23T22:58:39Z"
+  date_begin_planned: "2025-05-04"
+  date_end_planned: "2025-05-04"
+  datetime_updated: "2025-04-25T13:40:34Z"
+  datetime_created: "2025-04-23T22:58:39Z"

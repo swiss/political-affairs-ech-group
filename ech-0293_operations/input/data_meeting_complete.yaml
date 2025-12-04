@@ -1,0 +1,179 @@
+id: ops:meeting_examples_2025
+
+meetings:
+
+- id: ops:meeting_sg_2025_03_15
+  body_key: "SG"
+  meeting_type: "session"
+  name:
+    - text: "Kantonsratssitzung vom 15. März 2025"
+      language: "de"
+  url:
+    - text: "https://www.ratsinfo.sg.ch/sessions/2025-03-15"
+      language: "de"
+  actor_id: actors:parliament_sg
+  actor_name: "Kantonsrat St. Gallen"
+  date_begin_planned: "2025-03-15T08:00:00Z"
+  date_end_planned: "2025-03-15T18:00:00Z"
+  date_begin_actual: "2025-03-15T08:15:00Z"
+  date_end_actual: "2025-03-15T17:30:00Z"
+  state: "planned"
+  location: "Kantonsratssaal, Regierungsgebäude St. Gallen"
+  parent_legislature: ops:legislature_sg_2024_2028
+  datetime_created: "2025-02-01T10:00:00Z"
+  datetime_updated: "2025-03-15T17:30:00Z"
+
+- id: ops:meeting_be_committee_wak_2025_05_12
+  body_key: "BE"
+  meeting_type: "committee"
+  name:
+    - text: "Sitzung Kommission für Wirtschaft und Abgaben"
+      language: "de"
+    - text: "Séance Commission de l'économie et des redevances"
+      language: "fr"
+  url:
+    - text: "https://www.gr.be.ch/kommissionen/wak/2025-05-12"
+      language: "de"
+  actor_id: actors:committee_wak_be
+  actor_name: "Kommission für Wirtschaft und Abgaben (WAK)"
+  date_begin_planned: "2025-05-12T14:00:00Z"
+  date_end_planned: "2025-05-12T17:00:00Z"
+  date_begin_actual: "2025-05-12T14:10:00Z"
+  date_end_actual: "2025-05-12T16:45:00Z"
+  state: "planned"
+  location: "Kommissionszimmer 301, Rathaus Bern"
+  parent_legislature: ops:legislature_be_2022_2026
+  datetime_created: "2025-04-15T09:00:00Z"
+  datetime_updated: "2025-05-12T16:45:00Z"
+
+- id: ops:meeting_gl_landsgemeinde_2025
+  body_key: "GL"
+  meeting_type: "sitting"
+  name:
+    - text: "Landsgemeinde 2025"
+      language: "de"
+  url:
+    - text: "https://www.landsgemeinde.gl.ch/2025"
+      language: "de"
+  actor_id: actors:landsgemeinde_gl
+  actor_name: "Landsgemeinde Glarus"
+  date_begin_planned: "2025-05-04T09:30:00Z"
+  date_end_planned: "2025-05-04T14:00:00Z"
+  date_begin_actual: "2025-05-04T09:30:00Z"
+  date_end_actual: "2025-05-04T13:45:00Z"
+  state: "planned"
+  location: "Zaunplatz, Glarus"
+  parent_legislature: ops:legislature_gl_2024_2028
+  datetime_created: "2025-01-10T12:00:00Z"
+  datetime_updated: "2025-05-04T13:45:00Z"
+
+agenda_items:
+
+- id: ops:agenda_item_sg_2025_015
+  meeting_id: ops:meeting_sg_2025_03_15
+  agenda_item_type: "item"
+  number: "15"
+  position: 15
+  title:
+    - text: "Energiegesetz - Schlussabstimmung"
+      language: "de"
+  description:
+    - text: "Schlussabstimmung über das revidierte Energiegesetz des Kantons St. Gallen"
+      language: "de"
+  category: "Gesetzgebung"
+  status: "completed"
+  result: "accepted"
+  date_time_planned: "2025-03-15T14:00:00Z"
+  date_time_actual: "2025-03-15T14:30:00Z"
+  affair_ids:
+    - "affairs:sg_2024_123_energiegesetz"
+  datetime_created: "2025-02-01T10:00:00Z"
+  datetime_updated: "2025-03-15T14:35:00Z"
+
+- id: ops:agenda_item_be_2025_042
+  meeting_id: ops:meeting_be_committee_wak_2025_05_12
+  agenda_item_type: "item"
+  number: "4.2"
+  position: 42
+  title:
+    - text: "Steuergesetz - Detailberatung Art. 5"
+      language: "de"
+    - text: "Loi fiscale - Délibération détaillée art. 5"
+      language: "fr"
+  description:
+    - text: "Beratung von Änderungsanträgen zu Artikel 5 des Steuergesetzes"
+      language: "de"
+    - text: "Délibération sur les propositions de modification de l'article 5 de la loi fiscale"
+      language: "fr"
+  category: "Gesetzgebung"
+  status: "completed"
+  result: "accepted"
+  date_time_planned: "2025-05-12T15:00:00Z"
+  date_time_actual: "2025-05-12T15:15:00Z"
+  affair_ids:
+    - "affairs:be_2024_089_steuergesetz"
+  datetime_created: "2025-04-15T09:00:00Z"
+  datetime_updated: "2025-05-12T15:20:00Z"
+
+- id: ops:agenda_item_zh_budget_2026
+  meeting_id: ops:meeting_zh_2025_11_20
+  agenda_item_type: "item"
+  number: "8"
+  position: 8
+  title:
+    - text: "Budget 2026"
+      language: "de"
+  description:
+    - text: "Beratung und Beschlussfassung über das Kantonsbudget für das Jahr 2026"
+      language: "de"
+  category: "Budget und Finanzen"
+  status: "completed"
+  result: "accepted"
+  date_time_planned: "2025-11-20T16:00:00Z"
+  date_time_actual: "2025-11-20T16:45:00Z"
+  affair_ids:
+    - "affairs:zh_2025_budget_2026"
+  datetime_created: "2025-10-01T08:00:00Z"
+  datetime_updated: "2025-11-20T16:50:00Z"
+
+resolutions:
+
+- id: ops:resolution_sg_2025_015_final
+  agenda_item_id: ops:agenda_item_sg_2025_015
+  voting_id: ops:voting_sg_2025_001
+  resolution_type: "accepted"
+  title:
+    - text: "Annahme Energiegesetz"
+      language: "de"
+  description:
+    - text: "Der Kantonsrat nimmt das revidierte Energiegesetz mit 78 zu 42 Stimmen bei 5 Enthaltungen an."
+      language: "de"
+  datetime_created: "2025-03-15T14:35:00Z"
+
+- id: ops:resolution_be_2025_042_amendment
+  agenda_item_id: ops:agenda_item_be_2025_042
+  voting_id: ops:voting_be_2025_042
+  resolution_type: "rejected"
+  title:
+    - text: "Ablehnung Änderungsantrag Art. 5 Abs. 2"
+      language: "de"
+    - text: "Rejet de la proposition de modification art. 5 al. 2"
+      language: "fr"
+  description:
+    - text: "Die Kommission lehnt den Änderungsantrag zu Artikel 5 Absatz 2 ab."
+      language: "de"
+    - text: "La commission rejette la proposition de modification de l'article 5 alinéa 2."
+      language: "fr"
+  datetime_created: "2025-06-05T10:15:00Z"
+
+- id: ops:resolution_zh_budget_2026
+  agenda_item_id: ops:agenda_item_zh_budget_2026
+  voting_id: ops:voting_zh_budget_2026
+  resolution_type: "accepted"
+  title:
+    - text: "Genehmigung Budget 2026"
+      language: "de"
+  description:
+    - text: "Der Kantonsrat genehmigt das Budget 2026 mit 105 zu 70 Stimmen bei 5 Enthaltungen."
+      language: "de"
+  datetime_created: "2025-11-20T16:50:00Z"

@@ -1,0 +1,125 @@
+id: ops:voting_examples_2025
+
+votings:
+
+- id: ops:voting_sg_2025_001
+  body_key: "SG"
+  title:
+    - text: "Schlussabstimmung Energiegesetz"
+      language: "de"
+  voting_type: "final"
+  procedure: "electronic"
+  is_nominal: true
+  date: "2025-03-15"
+  result: "passed"
+  yes_count: 78
+  no_count: 42
+  abstention_count: 5
+  absent_count: 3
+  total_count: 128
+  majority_type: "simple"
+  agenda_item_id: ops:agenda_item_sg_2025_015
+  meeting_id: ops:meeting_sg_2025_03_15
+  datetime_created: "2025-03-15T14:30:00Z"
+  datetime_updated: "2025-03-15T14:35:00Z"
+
+- id: ops:voting_be_2025_042
+  body_key: "BE"
+  title:
+    - text: "Änderungsantrag Art. 5 Abs. 2"
+      language: "de"
+    - text: "Proposition de modification art. 5 al. 2"
+      language: "fr"
+  voting_type: "intermediate"
+  procedure: "show_of_hands"
+  is_nominal: false
+  date: "2025-06-05"
+  result: "failed"
+  yes_count: 45
+  no_count: 87
+  abstention_count: 8
+  absent_count: 10
+  total_count: 150
+  majority_type: "simple"
+  agenda_item_id: ops:agenda_item_be_2025_042
+  meeting_id: ops:meeting_be_2025_06_05
+  datetime_created: "2025-06-05T10:15:00Z"
+  datetime_updated: "2025-06-05T10:15:00Z"
+
+- id: ops:voting_zh_budget_2026
+  body_key: "ZH"
+  title:
+    - text: "Budgetbeschluss 2026"
+      language: "de"
+  voting_type: "final"
+  procedure: "electronic"
+  is_nominal: true
+  date: "2025-11-20"
+  result: "passed"
+  yes_count: 105
+  no_count: 70
+  abstention_count: 5
+  absent_count: 0
+  total_count: 180
+  majority_type: "absolute"
+  quorum: 90
+  agenda_item_id: ops:agenda_item_zh_budget_2026
+  meeting_id: ops:meeting_zh_2025_11_20
+  datetime_created: "2025-11-20T16:45:00Z"
+  datetime_updated: "2025-11-20T16:50:00Z"
+
+individual_votes:
+
+- id: ops:vote_sg_2025_001_person_123
+  voting_id: ops:voting_sg_2025_001
+  person_id: actors:person_sg_123
+  person_name: "Maria Müller"
+  vote: "yes"
+  group_id: actors:group_sp_sg
+  position: 1
+  datetime_created: "2025-03-15T14:30:00Z"
+
+- id: ops:vote_sg_2025_001_person_456
+  voting_id: ops:voting_sg_2025_001
+  person_id: actors:person_sg_456
+  person_name: "Peter Schmidt"
+  vote: "no"
+  group_id: actors:group_svp_sg
+  position: 2
+  datetime_created: "2025-03-15T14:30:00Z"
+
+- id: ops:vote_sg_2025_001_person_789
+  voting_id: ops:voting_sg_2025_001
+  person_id: actors:person_sg_789
+  person_name: "Anna Weber"
+  vote: "abstention"
+  group_id: actors:group_cvp_sg
+  position: 3
+  datetime_created: "2025-03-15T14:30:00Z"
+
+- id: ops:vote_sg_2025_001_person_321
+  voting_id: ops:voting_sg_2025_001
+  person_id: actors:person_sg_321
+  person_name: "Hans Meier"
+  vote: "absent"
+  group_id: actors:group_fdp_sg
+  position: 4
+  datetime_created: "2025-03-15T14:30:00Z"
+
+- id: ops:vote_zh_budget_2026_person_101
+  voting_id: ops:voting_zh_budget_2026
+  person_id: actors:person_zh_101
+  person_name: "Sarah Fischer"
+  vote: "yes"
+  group_id: actors:group_gp_zh
+  position: 1
+  datetime_created: "2025-11-20T16:45:00Z"
+
+- id: ops:vote_zh_budget_2026_person_102
+  voting_id: ops:voting_zh_budget_2026
+  person_id: actors:person_zh_102
+  person_name: "Thomas Keller"
+  vote: "no"
+  group_id: actors:group_svp_zh
+  position: 2
+  datetime_created: "2025-11-20T16:45:00Z"
