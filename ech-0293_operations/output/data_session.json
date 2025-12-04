@@ -1,0 +1,111 @@
+{
+  "id": "ops:sessions_example_2025",
+  "sessions": [
+    {
+      "id": "ops:session_5207",
+      "body_key": "CHE",
+      "name": [
+        {
+          "text": "Frühjahrssession 2025",
+          "language": "de"
+        },
+        {
+          "text": "Session de printemps 2025",
+          "language": "fr"
+        },
+        {
+          "text": "Sessione primaverile 2025",
+          "language": "it"
+        }
+      ],
+      "url": [
+        {
+          "text": "https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025",
+          "language": "de"
+        },
+        {
+          "text": "https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025",
+          "language": "fr"
+        },
+        {
+          "text": "https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025",
+          "language": "it"
+        }
+      ],
+      "date_begin_planned": "2025-03-03",
+      "date_end_planned": "2025-03-21",
+      "parent_legislature": "ops:legislature_51",
+      "datetime_updated": "2025-04-24T00:19:37+00:00",
+      "datetime_created": "2025-03-20T14:27:09+00:00"
+    },
+    {
+      "id": "ops:session_be_summer_2025",
+      "body_key": "BE",
+      "name": [
+        {
+          "text": "Sommersession 2025",
+          "language": "de"
+        },
+        {
+          "text": "Session d'été 2025",
+          "language": "fr"
+        }
+      ],
+      "url": [
+        {
+          "text": "https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8",
+          "language": "de"
+        },
+        {
+          "text": "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8",
+          "language": "fr"
+        }
+      ],
+      "date_begin_planned": "2025-06-02",
+      "date_end_planned": "2025-06-12",
+      "datetime_updated": "2025-05-19T01:06:44+00:00",
+      "datetime_created": "2025-04-25T11:10:24+00:00"
+    },
+    {
+      "id": "ops:session_gl_landrat_2025_02_26",
+      "body_key": "GL",
+      "name": [
+        {
+          "text": "Sitzung des Landrates vom 26.02.2025",
+          "language": "de"
+        }
+      ],
+      "url": [
+        {
+          "text": "https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239",
+          "language": "de"
+        }
+      ],
+      "date_begin_planned": "2025-02-26",
+      "date_end_planned": "2025-02-26",
+      "datetime_updated": "2025-04-25T13:40:34+00:00",
+      "datetime_created": "2025-04-23T22:58:39+00:00"
+    },
+    {
+      "id": "ops:session_gl_landsgemeinde_2025_05_04",
+      "body_key": "GL",
+      "name": [
+        {
+          "text": "Landsgemeinde vom 04. Mai 2025",
+          "language": "de"
+        }
+      ],
+      "url": [
+        {
+          "text": "https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04",
+          "language": "de"
+        }
+      ],
+      "date_begin_planned": "2025-05-04",
+      "date_end_planned": "2025-05-04",
+      "datetime_updated": "2025-04-25T13:40:34+00:00",
+      "datetime_created": "2025-04-23T22:58:39+00:00"
+    }
+  ],
+  "@type": "Container"
+}
