@@ -17,20 +17,20 @@ Alias: id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |  no  |
-| [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
-| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
-| [TextSegment](TextSegment.md) | [en] A text segment such as cross-references or subtitles in meeting protocol... |  no  |
-| [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
-| [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
-| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
-| [IndividualVote](IndividualVote.md) | [en] An individual vote cast by a member during a voting procedure |  no  |
-| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 | [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |  no  |
-| [Container](Container.md) |  |  no  |
-| [Attendance](Attendance.md) | [en] Attendance record for a meeting or voting session |  no  |
-| [IndividualAttendance](IndividualAttendance.md) | [en] Individual attendance record for a specific person |  no  |
+| [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
+| [IndividualVote](IndividualVote.md) | [en] An individual vote cast by a member during a voting procedure |  no  |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
+| [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
+| [TextSegment](TextSegment.md) | [en] A text segment such as cross-references or subtitles in meeting protocol... |  no  |
+| [Attendance](Attendance.md) | [en] Attendance record for a meeting or voting session |  no  |
+| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
+| [Container](Container.md) |  |  no  |
+| [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |  no  |
+| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
+| [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
+| [IndividualAttendance](IndividualAttendance.md) | [en] Individual attendance record for a specific person |  no  |
 
 
 

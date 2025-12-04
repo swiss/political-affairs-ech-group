@@ -58,6 +58,8 @@ Erfasst die Resultate des parlamentarischen Prozesses - die verabschiedeten Gese
 ### eCH-0297: Öffentliche Konsultationen (Consultations)
 Strukturiert Vernehmlassungsverfahren, die oft Ausgangspunkt für parlamentarische Geschäfte sind.
 
+ToDo: Christian
+
 # Zeitliche Organisation des Ratsbetriebs
 
 Der parlamentarische Betrieb ist zeitlich auf drei Ebenen organisiert: Legislaturperioden bilden den langfristigen Rahmen, Sessions strukturieren die Arbeit innerhalb einer Legislature, und Meetings sind die konkreten Sitzungen, in denen Geschäfte beraten werden. Diese Hierarchie ermöglicht sowohl langfristige Planung als auch flexible Anpassung an aktuelle Erfordernisse.
@@ -1639,6 +1641,8 @@ attributes:
 ```
 </details>
 
+ToDo: Michel
+
 # Traktanden und Beschlüsse
 
 Die Tagesordnung einer Sitzung wird durch Traktanden strukturiert. Zu jedem Traktandum können Anträge gestellt und Beschlüsse gefasst werden.
@@ -2909,6 +2913,8 @@ attributes:
 
 ```
 </details>
+
+ToDo: Nicole
 
 # Abstimmungen und Wahlen
 
@@ -5100,6 +5106,8 @@ attributes:
 
 ```
 </details>
+
+ToDo: David
 
 # Anwesenheit und Wortmeldungen
 
