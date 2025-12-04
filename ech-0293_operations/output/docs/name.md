@@ -18,8 +18,8 @@ Alias: name
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
-| [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
+| [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
 
 
 

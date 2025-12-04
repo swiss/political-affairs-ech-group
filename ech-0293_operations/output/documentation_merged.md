@@ -1641,6 +1641,756 @@ attributes:
 ```
 </details>
 
+# Anwesenheit und Wortmeldungen
+
+Neben den formalen Entscheidungen dokumentiert der Standard auch die Teilnahme an Sitzungen und die geführten Debatten. Anwesenheitslisten erfassen wer an einer Sitzung teilgenommen hat, während Wortmeldungen die parlamentarische Debatte mit Text- und Medienaufzeichnungen festhalten.
+
+## Attendance (Anwesenheit)
+
+## Begriff und Bedeutung
+
+Die Attendance (Anwesenheit) erfasst, welche Mitglieder eines parlamentarischen Organs bei einer Sitzung anwesend, abwesend oder entschuldigt waren. Sie dient der Dokumentation der Teilnahme und ist Voraussetzung für die Beschlussfähigkeit (Quorum).
+
+## Zweiebenen-Struktur
+
+Der Standard unterscheidet zwischen zwei Ebenen der Anwesenheitserfassung:
+
+### 1. Attendance (Aggregierte Ebene)
+Zusammenfassung der Anwesenheit für ein Meeting:
+- Gesamtzahl Anwesende
+- Gesamtzahl Abwesende (entschuldigt/unentschuldigt)
+- Beschlussfähigkeit
+
+### 2. IndividualAttendance (Individuelle Ebene)
+Detaillierte Erfassung für jede einzelne Person:
+- Wer war anwesend?
+- Wer war abwesend?
+- War die Abwesenheit entschuldigt?
+
+```
+Meeting (Nationalratssitzung 4. März 2024)
+  └─ Attendance (Aggregierte Anwesenheit)
+      ├─ IndividualAttendance (Person A: anwesend)
+      ├─ IndividualAttendance (Person B: entschuldigt)
+      ├─ IndividualAttendance (Person C: abwesend)
+      └─ ...
+```
+
+## Attendance (Aggregierte Ebene)
+
+### Zuordnung zu Meeting und Organ
+
+- **meeting_id**: Verweis auf die spezifische Sitzung
+- **group_id**: Verweis auf das Organ (Parlament, Kommission)
+
+### Arten der Anwesenheitserfassung
+
+Das Feld **attendance_type** unterscheidet:
+
+#### start
+Anwesenheit zu Beginn der Sitzung
+
+**Anwendung:**
+- Feststellung der Beschlussfähigkeit
+- Offizielle Eröffnung der Sitzung
+- Basis für Präsenzlisten
+
+#### continuous
+Kontinuierliche Anwesenheitserfassung
+
+**Anwendung:**
+- Elektronische Systeme mit permanenter Erfassung
+- Erkennung von Zu- und Weggängen während der Sitzung
+
+#### end
+Anwesenheit am Ende der Sitzung
+
+**Anwendung:**
+- Abschliessende Kontrolle
+- Seltener verwendet
+
+### Aggregierte Zahlen
+
+- **present_count**: Anzahl anwesender Mitglieder
+- **absent_count**: Anzahl abwesender Mitglieder (unentschuldigt)
+- **excused_count**: Anzahl entschuldigter Mitglieder
+- **total_count**: Gesamtzahl der Mitglieder
+
+**Beispiel:**
+- Anwesend: 185
+- Entschuldigt: 12
+- Abwesend: 3
+- Total: 200
+
+### Beschlussfähigkeit
+
+Das Feld **quorum_reached** zeigt an, ob das erforderliche Quorum erreicht wurde:
+
+- **true**: Sitzung ist beschlussfähig
+- **false**: Sitzung ist nicht beschlussfähig
+
+**Konsequenz bei nicht erreichtem Quorum:**
+- Sitzung kann nicht stattfinden oder muss unterbrochen werden
+- Keine gültigen Beschlüsse möglich
+- Vertag auf spätere Sitzung
+
+## IndividualAttendance (Individuelle Ebene)
+
+### Identifikation der Person
+
+- **person_id**: Verweis auf die Person gemäss eCH-0294 Actors
+- **person_name**: Name für schnellen Zugriff
+
+### Status der Anwesenheit
+
+Das Feld **status** erfasst den Anwesenheitsstatus:
+
+#### present
+Anwesend
+
+**Bedeutung:** Die Person war während der (gesamten) Sitzung anwesend
+
+#### absent
+Abwesend (unentschuldigt)
+
+**Bedeutung:** Die Person war nicht anwesend und hatte keine Entschuldigung
+
+**Mögliche Gründe:**
+- Vergessen
+- Private Gründe ohne Entschuldigung
+- Politisches Signal (Fernbleiben als Protest)
+
+#### excused
+Entschuldigt abwesend
+
+**Bedeutung:** Die Person war nicht anwesend, aber ordnungsgemäss entschuldigt
+
+**Gründe:**
+- Krankheit
+- Anderweitige offizielle Verpflichtungen
+- Persönliche Gründe (mit Genehmigung)
+
+#### late
+Verspätet eingetroffen
+
+**Bedeutung:** Die Person kam nach Sitzungsbeginn
+
+#### left_early
+Vorzeitig gegangen
+
+**Bedeutung:** Die Person verliess die Sitzung vor deren Ende
+
+### Zeiterfassung
+
+- **arrival_time**: Zeitpunkt der Ankunft (bei Verspätung)
+- **departure_time**: Zeitpunkt des Verlassens (bei vorzeitigem Weggang)
+
+### Grund der Abwesenheit
+
+Das Feld **reason** kann den Grund für Abwesenheit oder Verspätung erfassen:
+
+**Beispiele:**
+- "Krankheit"
+- "Offizieller Auslandbesuch"
+- "Sitzung Kommission XY (Überschneidung)"
+- "Familiärer Notfall"
+
+### Stellvertretung
+
+Das Feld **substitute_person_id** erfasst, ob eine Stellvertretung anwesend war:
+
+**Anwendung:**
+- In Systemen, die Stellvertretung erlauben
+- Kantone mit Ersatzmitgliedern
+- Vertretungsregelungen in Kommissionen
+
+## Unterschied: Attendance vs. IndividualVote
+
+Wichtige Abgrenzung:
+
+| Aspekt | Attendance | IndividualVote |
+|--------|------------|----------------|
+| Erfasst | Anwesenheit bei Sitzung | Stimmabgabe bei Abstimmung |
+| Zeitpunkt | Beginn/während Sitzung | Zeitpunkt der Abstimmung |
+| Granularität | Pro Meeting | Pro Voting |
+
+**Beispiel:** Eine Person kann bei der Sitzung anwesend sein (Attendance: present), aber bei einer spezifischen Abstimmung als absent erfasst werden (IndividualVote: absent), weil sie in diesem Moment kurz den Raum verlassen hat.
+
+## Verwendungszwecke
+
+Die Attendance-Entitäten ermöglichen:
+
+1. **Dokumentation**: Nachvollziehbare Erfassung der Teilnahme
+2. **Quorum-Prüfung**: Sicherstellung der Beschlussfähigkeit
+3. **Transparenz**: Öffentliche Information über Anwesenheit
+4. **Rechenschaft**: Kontrolle der Pflichtenerfüllung
+5. **Statistik**: Auswertung von Anwesenheitsquoten
+6. **Administration**: Berechnung von Entschädigungen und Spesen
+
+
+
+# Class: Attendance 
+
+
+_[en] Attendance record for a meeting or voting session._
+
+_[de] Anwesenheitsliste für eine Sitzung oder Abstimmung._
+
+__
+
+
+
+
+
+URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
+
+
+
+
+
+```mermaid
+ classDiagram
+    class Attendance
+    click Attendance href "../Attendance/"
+      Attendance : actor_id
+        
+      Attendance : datetime_begin
+        
+      Attendance : datetime_created
+        
+      Attendance : datetime_updated
+        
+      Attendance : id
+        
+      Attendance : total_absent
+        
+      Attendance : total_excused
+        
+      Attendance : total_present
+        
+      
+```
+
+
+
+
+<!-- no inheritance hierarchy -->
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [id](#id) | 1 <br/> [String](#String) |  | direct |
+| [datetime_begin](#datetime_begin) | 0..1 <br/> [Datetime](#Datetime) | [en] The date and time when the meeting or voting begins | direct |
+| [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
+| [total_absent](#total_absent) | 0..1 <br/> [Integer](#Integer) | [en] Total number of absent members | direct |
+| [total_present](#total_present) | 0..1 <br/> [Integer](#Integer) | Total number of members present | direct |
+| [total_excused](#total_excused) | 0..1 <br/> [Integer](#Integer) | Total number of excused absences | direct |
+| [datetime_updated](#datetime_updated) | 0..1 <br/> [Datetime](#Datetime) | The last time this record was updated | direct |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The time this record was created | direct |
+
+
+
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Container](#Container) | [attendances](#attendances) | range | [Attendance](#Attendance) |
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://ch.paf.link/schema/operations
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ops:Attendance |
+| native | ops:Attendance |
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: Attendance
+description: '[en] Attendance record for a meeting or voting session.
+
+  [de] Anwesenheitsliste für eine Sitzung oder Abstimmung.
+
+  '
+from_schema: https://ch.paf.link/schema/operations
+slots:
+- id
+- datetime_begin
+- actor_id
+- total_absent
+- total_present
+- total_excused
+- datetime_updated
+- datetime_created
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: Attendance
+description: '[en] Attendance record for a meeting or voting session.
+
+  [de] Anwesenheitsliste für eine Sitzung oder Abstimmung.
+
+  '
+from_schema: https://ch.paf.link/schema/operations
+attributes:
+  id:
+    name: id
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: dcterm:identifier
+    identifier: true
+    alias: id
+    owner: Attendance
+    domain_of:
+    - Container
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Voting
+    - IndividualVote
+    - Election
+    - Attendance
+    - IndividualAttendance
+    - Speech
+    - TextSegment
+    - Motion
+    - Media
+    range: string
+    required: true
+  datetime_begin:
+    name: datetime_begin
+    description: '[en] The date and time when the meeting or voting begins.
+
+      [de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: datetime_begin
+    owner: Attendance
+    domain_of:
+    - Voting
+    - Election
+    - Attendance
+    - Speech
+    range: datetime
+  actor_id:
+    name: actor_id
+    description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
+      Nationalrat, Ständerat).
+
+      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
+      Nationalrat, Ständerat).
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: actor_id
+    owner: Attendance
+    domain_of:
+    - Legislature
+    - Meeting
+    - Voting
+    - IndividualVote
+    - Election
+    - Attendance
+    - IndividualAttendance
+    - Speech
+    range: string
+  total_absent:
+    name: total_absent
+    description: '[en] Total number of absent members. Distinction between absent/excused
+      absent - presence is tracked on attendance list.
+
+      [de] Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt
+      abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: total_absent
+    owner: Attendance
+    domain_of:
+    - Voting
+    - Election
+    - Attendance
+    range: integer
+  total_present:
+    name: total_present
+    description: Total number of members present
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: total_present
+    owner: Attendance
+    domain_of:
+    - Attendance
+    range: integer
+  total_excused:
+    name: total_excused
+    description: Total number of excused absences
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: total_excused
+    owner: Attendance
+    domain_of:
+    - Attendance
+    range: integer
+  datetime_updated:
+    name: datetime_updated
+    description: The last time this record was updated
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: datetime_updated
+    owner: Attendance
+    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Voting
+    - IndividualVote
+    - Election
+    - Attendance
+    - IndividualAttendance
+    - Speech
+    range: datetime
+  datetime_created:
+    name: datetime_created
+    description: The time this record was created
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: datetime_created
+    owner: Attendance
+    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Voting
+    - IndividualVote
+    - Election
+    - Attendance
+    - IndividualAttendance
+    - Speech
+    range: datetime
+
+```
+</details>
+
+
+
+# Class: IndividualAttendance 
+
+
+_[en] Individual attendance record for a specific person._
+
+_[de] Einzelne Anwesenheitsfeststellung für eine bestimmte Person._
+
+__
+
+
+
+
+
+URI: [ops:IndividualAttendance](https://ch.paf.link/schema/operations/IndividualAttendance)
+
+
+
+
+
+```mermaid
+ classDiagram
+    class IndividualAttendance
+    click IndividualAttendance href "../IndividualAttendance/"
+      IndividualAttendance : actor_id
+        
+      IndividualAttendance : attendance_type
+        
+          
+    
+        
+        
+        IndividualAttendance --> "0..1" AttendanceTypeEnum : attendance_type
+        click AttendanceTypeEnum href "../AttendanceTypeEnum/"
+    
+
+        
+      IndividualAttendance : datetime_created
+        
+      IndividualAttendance : datetime_updated
+        
+      IndividualAttendance : id
+        
+      IndividualAttendance : parent_voting
+        
+          
+    
+        
+        
+        IndividualAttendance --> "0..1" Voting : parent_voting
+        click Voting href "../Voting/"
+    
+
+        
+      
+```
+
+
+
+
+<!-- no inheritance hierarchy -->
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [id](#id) | 1 <br/> [String](#String) |  | direct |
+| [parent_voting](#parent_voting) | 0..1 <br/> [Voting](#Voting) | [en] The ID of the voting associated with the individual vote | direct |
+| [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
+| [attendance_type](#attendance_type) | 0..1 <br/> [AttendanceTypeEnum](#AttendanceTypeEnum) | Type of individual attendance | direct |
+| [datetime_updated](#datetime_updated) | 0..1 <br/> [Datetime](#Datetime) | The last time this record was updated | direct |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The time this record was created | direct |
+
+
+
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Container](#Container) | [individual_attendances](#individual_attendances) | range | [IndividualAttendance](#IndividualAttendance) |
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://ch.paf.link/schema/operations
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ops:IndividualAttendance |
+| native | ops:IndividualAttendance |
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: IndividualAttendance
+description: '[en] Individual attendance record for a specific person.
+
+  [de] Einzelne Anwesenheitsfeststellung für eine bestimmte Person.
+
+  '
+from_schema: https://ch.paf.link/schema/operations
+slots:
+- id
+- parent_voting
+- actor_id
+- attendance_type
+- datetime_updated
+- datetime_created
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: IndividualAttendance
+description: '[en] Individual attendance record for a specific person.
+
+  [de] Einzelne Anwesenheitsfeststellung für eine bestimmte Person.
+
+  '
+from_schema: https://ch.paf.link/schema/operations
+attributes:
+  id:
+    name: id
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: dcterm:identifier
+    identifier: true
+    alias: id
+    owner: IndividualAttendance
+    domain_of:
+    - Container
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Voting
+    - IndividualVote
+    - Election
+    - Attendance
+    - IndividualAttendance
+    - Speech
+    - TextSegment
+    - Motion
+    - Media
+    range: string
+    required: true
+  parent_voting:
+    name: parent_voting
+    description: '[en] The ID of the voting associated with the individual vote.
+
+      [de] Die ID der Abstimmung, die mit der Einzelstimme verbunden ist.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: ops:parentVoting
+    alias: parent_voting
+    owner: IndividualAttendance
+    domain_of:
+    - IndividualVote
+    - IndividualAttendance
+    range: Voting
+  actor_id:
+    name: actor_id
+    description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
+      Nationalrat, Ständerat).
+
+      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
+      Nationalrat, Ständerat).
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: actor_id
+    owner: IndividualAttendance
+    domain_of:
+    - Legislature
+    - Meeting
+    - Voting
+    - IndividualVote
+    - Election
+    - Attendance
+    - IndividualAttendance
+    - Speech
+    range: string
+  attendance_type:
+    name: attendance_type
+    description: Type of individual attendance
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: attendance_type
+    owner: IndividualAttendance
+    domain_of:
+    - IndividualAttendance
+    range: attendance_type_enum
+  datetime_updated:
+    name: datetime_updated
+    description: The last time this record was updated
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: datetime_updated
+    owner: IndividualAttendance
+    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Voting
+    - IndividualVote
+    - Election
+    - Attendance
+    - IndividualAttendance
+    - Speech
+    range: datetime
+  datetime_created:
+    name: datetime_created
+    description: The time this record was created
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: datetime_created
+    owner: IndividualAttendance
+    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Voting
+    - IndividualVote
+    - Election
+    - Attendance
+    - IndividualAttendance
+    - Speech
+    range: datetime
+
+```
+</details>
+
+
 ToDo: Michel
 
 # Traktanden und Beschlüsse
@@ -5109,754 +5859,6 @@ attributes:
 
 ToDo: David
 
-# Anwesenheit und Wortmeldungen
-
-Neben den formalen Entscheidungen dokumentiert der Standard auch die Teilnahme an Sitzungen und die geführten Debatten. Anwesenheitslisten erfassen wer an einer Sitzung teilgenommen hat, während Wortmeldungen die parlamentarische Debatte mit Text- und Medienaufzeichnungen festhalten.
-
-## Attendance (Anwesenheit)
-
-## Begriff und Bedeutung
-
-Die Attendance (Anwesenheit) erfasst, welche Mitglieder eines parlamentarischen Organs bei einer Sitzung anwesend, abwesend oder entschuldigt waren. Sie dient der Dokumentation der Teilnahme und ist Voraussetzung für die Beschlussfähigkeit (Quorum).
-
-## Zweiebenen-Struktur
-
-Der Standard unterscheidet zwischen zwei Ebenen der Anwesenheitserfassung:
-
-### 1. Attendance (Aggregierte Ebene)
-Zusammenfassung der Anwesenheit für ein Meeting:
-- Gesamtzahl Anwesende
-- Gesamtzahl Abwesende (entschuldigt/unentschuldigt)
-- Beschlussfähigkeit
-
-### 2. IndividualAttendance (Individuelle Ebene)
-Detaillierte Erfassung für jede einzelne Person:
-- Wer war anwesend?
-- Wer war abwesend?
-- War die Abwesenheit entschuldigt?
-
-```
-Meeting (Nationalratssitzung 4. März 2024)
-  └─ Attendance (Aggregierte Anwesenheit)
-      ├─ IndividualAttendance (Person A: anwesend)
-      ├─ IndividualAttendance (Person B: entschuldigt)
-      ├─ IndividualAttendance (Person C: abwesend)
-      └─ ...
-```
-
-## Attendance (Aggregierte Ebene)
-
-### Zuordnung zu Meeting und Organ
-
-- **meeting_id**: Verweis auf die spezifische Sitzung
-- **group_id**: Verweis auf das Organ (Parlament, Kommission)
-
-### Arten der Anwesenheitserfassung
-
-Das Feld **attendance_type** unterscheidet:
-
-#### start
-Anwesenheit zu Beginn der Sitzung
-
-**Anwendung:**
-- Feststellung der Beschlussfähigkeit
-- Offizielle Eröffnung der Sitzung
-- Basis für Präsenzlisten
-
-#### continuous
-Kontinuierliche Anwesenheitserfassung
-
-**Anwendung:**
-- Elektronische Systeme mit permanenter Erfassung
-- Erkennung von Zu- und Weggängen während der Sitzung
-
-#### end
-Anwesenheit am Ende der Sitzung
-
-**Anwendung:**
-- Abschliessende Kontrolle
-- Seltener verwendet
-
-### Aggregierte Zahlen
-
-- **present_count**: Anzahl anwesender Mitglieder
-- **absent_count**: Anzahl abwesender Mitglieder (unentschuldigt)
-- **excused_count**: Anzahl entschuldigter Mitglieder
-- **total_count**: Gesamtzahl der Mitglieder
-
-**Beispiel:**
-- Anwesend: 185
-- Entschuldigt: 12
-- Abwesend: 3
-- Total: 200
-
-### Beschlussfähigkeit
-
-Das Feld **quorum_reached** zeigt an, ob das erforderliche Quorum erreicht wurde:
-
-- **true**: Sitzung ist beschlussfähig
-- **false**: Sitzung ist nicht beschlussfähig
-
-**Konsequenz bei nicht erreichtem Quorum:**
-- Sitzung kann nicht stattfinden oder muss unterbrochen werden
-- Keine gültigen Beschlüsse möglich
-- Vertag auf spätere Sitzung
-
-## IndividualAttendance (Individuelle Ebene)
-
-### Identifikation der Person
-
-- **person_id**: Verweis auf die Person gemäss eCH-0294 Actors
-- **person_name**: Name für schnellen Zugriff
-
-### Status der Anwesenheit
-
-Das Feld **status** erfasst den Anwesenheitsstatus:
-
-#### present
-Anwesend
-
-**Bedeutung:** Die Person war während der (gesamten) Sitzung anwesend
-
-#### absent
-Abwesend (unentschuldigt)
-
-**Bedeutung:** Die Person war nicht anwesend und hatte keine Entschuldigung
-
-**Mögliche Gründe:**
-- Vergessen
-- Private Gründe ohne Entschuldigung
-- Politisches Signal (Fernbleiben als Protest)
-
-#### excused
-Entschuldigt abwesend
-
-**Bedeutung:** Die Person war nicht anwesend, aber ordnungsgemäss entschuldigt
-
-**Gründe:**
-- Krankheit
-- Anderweitige offizielle Verpflichtungen
-- Persönliche Gründe (mit Genehmigung)
-
-#### late
-Verspätet eingetroffen
-
-**Bedeutung:** Die Person kam nach Sitzungsbeginn
-
-#### left_early
-Vorzeitig gegangen
-
-**Bedeutung:** Die Person verliess die Sitzung vor deren Ende
-
-### Zeiterfassung
-
-- **arrival_time**: Zeitpunkt der Ankunft (bei Verspätung)
-- **departure_time**: Zeitpunkt des Verlassens (bei vorzeitigem Weggang)
-
-### Grund der Abwesenheit
-
-Das Feld **reason** kann den Grund für Abwesenheit oder Verspätung erfassen:
-
-**Beispiele:**
-- "Krankheit"
-- "Offizieller Auslandbesuch"
-- "Sitzung Kommission XY (Überschneidung)"
-- "Familiärer Notfall"
-
-### Stellvertretung
-
-Das Feld **substitute_person_id** erfasst, ob eine Stellvertretung anwesend war:
-
-**Anwendung:**
-- In Systemen, die Stellvertretung erlauben
-- Kantone mit Ersatzmitgliedern
-- Vertretungsregelungen in Kommissionen
-
-## Unterschied: Attendance vs. IndividualVote
-
-Wichtige Abgrenzung:
-
-| Aspekt | Attendance | IndividualVote |
-|--------|------------|----------------|
-| Erfasst | Anwesenheit bei Sitzung | Stimmabgabe bei Abstimmung |
-| Zeitpunkt | Beginn/während Sitzung | Zeitpunkt der Abstimmung |
-| Granularität | Pro Meeting | Pro Voting |
-
-**Beispiel:** Eine Person kann bei der Sitzung anwesend sein (Attendance: present), aber bei einer spezifischen Abstimmung als absent erfasst werden (IndividualVote: absent), weil sie in diesem Moment kurz den Raum verlassen hat.
-
-## Verwendungszwecke
-
-Die Attendance-Entitäten ermöglichen:
-
-1. **Dokumentation**: Nachvollziehbare Erfassung der Teilnahme
-2. **Quorum-Prüfung**: Sicherstellung der Beschlussfähigkeit
-3. **Transparenz**: Öffentliche Information über Anwesenheit
-4. **Rechenschaft**: Kontrolle der Pflichtenerfüllung
-5. **Statistik**: Auswertung von Anwesenheitsquoten
-6. **Administration**: Berechnung von Entschädigungen und Spesen
-
-
-
-# Class: Attendance 
-
-
-_[en] Attendance record for a meeting or voting session._
-
-_[de] Anwesenheitsliste für eine Sitzung oder Abstimmung._
-
-__
-
-
-
-
-
-URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
-
-
-
-
-
-```mermaid
- classDiagram
-    class Attendance
-    click Attendance href "../Attendance/"
-      Attendance : actor_id
-        
-      Attendance : datetime_begin
-        
-      Attendance : datetime_created
-        
-      Attendance : datetime_updated
-        
-      Attendance : id
-        
-      Attendance : total_absent
-        
-      Attendance : total_excused
-        
-      Attendance : total_present
-        
-      
-```
-
-
-
-
-<!-- no inheritance hierarchy -->
-
-
-## Slots
-
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [id](#id) | 1 <br/> [String](#String) |  | direct |
-| [datetime_begin](#datetime_begin) | 0..1 <br/> [Datetime](#Datetime) | [en] The date and time when the meeting or voting begins | direct |
-| [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
-| [total_absent](#total_absent) | 0..1 <br/> [Integer](#Integer) | [en] Total number of absent members | direct |
-| [total_present](#total_present) | 0..1 <br/> [Integer](#Integer) | Total number of members present | direct |
-| [total_excused](#total_excused) | 0..1 <br/> [Integer](#Integer) | Total number of excused absences | direct |
-| [datetime_updated](#datetime_updated) | 0..1 <br/> [Datetime](#Datetime) | The last time this record was updated | direct |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The time this record was created | direct |
-
-
-
-
-
-## Usages
-
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [Container](#Container) | [attendances](#attendances) | range | [Attendance](#Attendance) |
-
-
-
-
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:Attendance |
-| native | ops:Attendance |
-
-
-
-
-
-
-## LinkML Source
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: Attendance
-description: '[en] Attendance record for a meeting or voting session.
-
-  [de] Anwesenheitsliste für eine Sitzung oder Abstimmung.
-
-  '
-from_schema: https://ch.paf.link/schema/operations
-slots:
-- id
-- datetime_begin
-- actor_id
-- total_absent
-- total_present
-- total_excused
-- datetime_updated
-- datetime_created
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: Attendance
-description: '[en] Attendance record for a meeting or voting session.
-
-  [de] Anwesenheitsliste für eine Sitzung oder Abstimmung.
-
-  '
-from_schema: https://ch.paf.link/schema/operations
-attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: Attendance
-    domain_of:
-    - Container
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    - TextSegment
-    - Motion
-    - Media
-    range: string
-    required: true
-  datetime_begin:
-    name: datetime_begin
-    description: '[en] The date and time when the meeting or voting begins.
-
-      [de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: datetime_begin
-    owner: Attendance
-    domain_of:
-    - Voting
-    - Election
-    - Attendance
-    - Speech
-    range: datetime
-  actor_id:
-    name: actor_id
-    description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
-      Nationalrat, Ständerat).
-
-      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
-      Nationalrat, Ständerat).
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: actor_id
-    owner: Attendance
-    domain_of:
-    - Legislature
-    - Meeting
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    range: string
-  total_absent:
-    name: total_absent
-    description: '[en] Total number of absent members. Distinction between absent/excused
-      absent - presence is tracked on attendance list.
-
-      [de] Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt
-      abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: total_absent
-    owner: Attendance
-    domain_of:
-    - Voting
-    - Election
-    - Attendance
-    range: integer
-  total_present:
-    name: total_present
-    description: Total number of members present
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: total_present
-    owner: Attendance
-    domain_of:
-    - Attendance
-    range: integer
-  total_excused:
-    name: total_excused
-    description: Total number of excused absences
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: total_excused
-    owner: Attendance
-    domain_of:
-    - Attendance
-    range: integer
-  datetime_updated:
-    name: datetime_updated
-    description: The last time this record was updated
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: datetime_updated
-    owner: Attendance
-    domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    range: datetime
-  datetime_created:
-    name: datetime_created
-    description: The time this record was created
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: datetime_created
-    owner: Attendance
-    domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    range: datetime
-
-```
-</details>
-
-
-
-# Class: IndividualAttendance 
-
-
-_[en] Individual attendance record for a specific person._
-
-_[de] Einzelne Anwesenheitsfeststellung für eine bestimmte Person._
-
-__
-
-
-
-
-
-URI: [ops:IndividualAttendance](https://ch.paf.link/schema/operations/IndividualAttendance)
-
-
-
-
-
-```mermaid
- classDiagram
-    class IndividualAttendance
-    click IndividualAttendance href "../IndividualAttendance/"
-      IndividualAttendance : actor_id
-        
-      IndividualAttendance : attendance_type
-        
-          
-    
-        
-        
-        IndividualAttendance --> "0..1" AttendanceTypeEnum : attendance_type
-        click AttendanceTypeEnum href "../AttendanceTypeEnum/"
-    
-
-        
-      IndividualAttendance : datetime_created
-        
-      IndividualAttendance : datetime_updated
-        
-      IndividualAttendance : id
-        
-      IndividualAttendance : parent_voting
-        
-          
-    
-        
-        
-        IndividualAttendance --> "0..1" Voting : parent_voting
-        click Voting href "../Voting/"
-    
-
-        
-      
-```
-
-
-
-
-<!-- no inheritance hierarchy -->
-
-
-## Slots
-
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [id](#id) | 1 <br/> [String](#String) |  | direct |
-| [parent_voting](#parent_voting) | 0..1 <br/> [Voting](#Voting) | [en] The ID of the voting associated with the individual vote | direct |
-| [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
-| [attendance_type](#attendance_type) | 0..1 <br/> [AttendanceTypeEnum](#AttendanceTypeEnum) | Type of individual attendance | direct |
-| [datetime_updated](#datetime_updated) | 0..1 <br/> [Datetime](#Datetime) | The last time this record was updated | direct |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The time this record was created | direct |
-
-
-
-
-
-## Usages
-
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [Container](#Container) | [individual_attendances](#individual_attendances) | range | [IndividualAttendance](#IndividualAttendance) |
-
-
-
-
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:IndividualAttendance |
-| native | ops:IndividualAttendance |
-
-
-
-
-
-
-## LinkML Source
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: IndividualAttendance
-description: '[en] Individual attendance record for a specific person.
-
-  [de] Einzelne Anwesenheitsfeststellung für eine bestimmte Person.
-
-  '
-from_schema: https://ch.paf.link/schema/operations
-slots:
-- id
-- parent_voting
-- actor_id
-- attendance_type
-- datetime_updated
-- datetime_created
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: IndividualAttendance
-description: '[en] Individual attendance record for a specific person.
-
-  [de] Einzelne Anwesenheitsfeststellung für eine bestimmte Person.
-
-  '
-from_schema: https://ch.paf.link/schema/operations
-attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: IndividualAttendance
-    domain_of:
-    - Container
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    - TextSegment
-    - Motion
-    - Media
-    range: string
-    required: true
-  parent_voting:
-    name: parent_voting
-    description: '[en] The ID of the voting associated with the individual vote.
-
-      [de] Die ID der Abstimmung, die mit der Einzelstimme verbunden ist.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: ops:parentVoting
-    alias: parent_voting
-    owner: IndividualAttendance
-    domain_of:
-    - IndividualVote
-    - IndividualAttendance
-    range: Voting
-  actor_id:
-    name: actor_id
-    description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
-      Nationalrat, Ständerat).
-
-      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
-      Nationalrat, Ständerat).
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: actor_id
-    owner: IndividualAttendance
-    domain_of:
-    - Legislature
-    - Meeting
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    range: string
-  attendance_type:
-    name: attendance_type
-    description: Type of individual attendance
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: attendance_type
-    owner: IndividualAttendance
-    domain_of:
-    - IndividualAttendance
-    range: attendance_type_enum
-  datetime_updated:
-    name: datetime_updated
-    description: The last time this record was updated
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: datetime_updated
-    owner: IndividualAttendance
-    domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    range: datetime
-  datetime_created:
-    name: datetime_created
-    description: The time this record was created
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: datetime_created
-    owner: IndividualAttendance
-    domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    range: datetime
-
-```
-</details>
 
 ## Speech (Wortmeldung, Votum)
 
@@ -6435,6 +6437,7 @@ attributes:
 
 ```
 </details>
+
 
 # Texte und Medien
 
@@ -7467,4 +7470,5 @@ tree_root: true
 
 ```
 </details>
+
 
