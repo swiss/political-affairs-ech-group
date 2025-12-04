@@ -20,9 +20,13 @@ toc: false
 | **Autoren**           | Fachgruppe politische Geschäfte: Nicole Aeby, David Imseng, Jonas Schärer, Lena Mina Friedrich, Manuel Weingartner, Orhan Saeedi, Michel Moret, Laurens Abu-Talib |
 | **Herausgeber / Vertrieb** | Verein eCH, Räffelstr. 20, 8045                                                                                       |
 
-# Summary
+# Zusammenfassung
 
-Brief summary of the purpose of the document and standard.
+Der Standard eCH-0293 definiert ein gemeinsames Datenmodell für die Erfassung und Publikation von Informationen zum öffentlichen Ratsbetrieb in der Schweiz. Er deckt die zeitliche Organisation parlamentarischer Arbeit (Legislaturperioden, Sessionen), die Strukturierung von Sitzungen und Traktanden, Abstimmungen und Wahlen, Einzelstimmen, Anwesenheitslisten sowie Wortmeldungen und Resolutionen ab.
+
+Dieser Standard richtet sich an Parlamentsdienste, Softwareanbieter von Parlamentsverwaltungssystemen, Datennutzer für Analysen und Visualisierungen sowie Open-Data-Plattformen.
+
+eCH-0293 ist Teil einer Familie von Standards für politische Daten und arbeitet eng mit eCH-0294 (Actors), eCH-0295 (Affairs), eCH-0296 (Laws) und eCH-0297 (Consultations) zusammen.
 
 # Table of Contents
 
