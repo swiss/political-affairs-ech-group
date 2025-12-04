@@ -38,4 +38,4 @@
     * Rollenbezeichnungen
     * Begrifssklärungen / Prozess-Äquivalente
 
-  * interaktive Protokolle (mit Video) 
+  * interaktive Protokolle (mit Video)
