@@ -1,196 +1,224 @@
 id: ops:agenda_items_1
 agenda_items:
-
   - id: ops:cea750a5bd7b420fa4da1c914f801384
     meeting_id: ops:meeting_bern_2022_03_17
-    agenda_item_type: "item"
-    date_time_planned: "2022-03-17T17:00:00Z"
+    agenda_item_type: item
+    date_time_planned: '2022-03-17T17:00:00Z'
     position: 29
-    number: "8"
+    number: '8'
     title:
-      - text: "Interpellation Fraktion GB/JA! (Katharina Gallizzi, GB): Welche Konsequenzen haben die Klimaziele für das Gasnetz in Bern?"
-        language: "de"
+      - text: >-
+          Interpellation Fraktion GB/JA! (Katharina Gallizzi, GB): Welche
+          Konsequenzen haben die Klimaziele für das Gasnetz in Bern?
+        language: de
     affair_ids:
-      - "affairs:2020.SR.000007"
+      - affairs:2020.SR.000007
     url:
-      - text: "https://stadtrat.bern.ch/de/sitzungen/detail.php?gid=000d6cf5f0bc4d89a5171e0123cfbff5#cea750a5bd7b420fa4da1c914f801384"
-        language: "de"
-    datetime_created: "2025-01-17T21:25:52Z"
-    datetime_updated: "2025-01-17T21:25:52Z"
-
+      - text: >-
+          https://stadtrat.bern.ch/de/sitzungen/detail.php?gid=000d6cf5f0bc4d89a5171e0123cfbff5#cea750a5bd7b420fa4da1c914f801384
+        language: de
+    datetime_created: '2025-01-17T21:25:52Z'
+    datetime_updated: '2025-01-17T21:25:52Z'
   - id: ops:2023_10_03-52
     meeting_id: ops:meeting_lausanne_2023_10_03
-    agenda_item_type: "item"
-    date_time_planned: "2023-10-03T00:00:00Z"
+    agenda_item_type: item
+    date_time_planned: '2023-10-03T00:00:00Z'
     position: 52
-    number: "52"
+    number: '52'
     title:
-      - text: "Postulat de Mme Franziska MEINHERZ : « Lausanne sans publicité commerciale » (FIM)"
-        language: "fr"
-    status: "postponed"
-    category: "RAPPORTS"
+      - text: >-
+          Postulat de Mme Franziska MEINHERZ : « Lausanne sans publicité
+          commerciale » (FIM)
+        language: fr
+    status: postponed
+    category: RAPPORTS
     affair_ids:
-      - "affairs:POS22/029"
+      - affairs:POS22/029
     url:
-      - text: "https://www.lausanne.ch/apps/agir/affaire/81/b7157ea2a4994086b65cf176768c6381.htm"
-        language: "fr"
-    datetime_created: "2025-02-08T12:33:10Z"
-    datetime_updated: "2025-02-08T12:33:10Z"
-
+      - text: >-
+          https://www.lausanne.ch/apps/agir/affaire/81/b7157ea2a4994086b65cf176768c6381.htm
+        language: fr
+    datetime_created: '2025-02-08T12:33:10Z'
+    datetime_updated: '2025-02-08T12:33:10Z'
   - id: ops:2025_05_20-23
     meeting_id: ops:meeting_lausanne_2025_05_20
-    agenda_item_type: "item"
-    date_time_planned: "2025-05-20T00:00:00Z"
+    agenda_item_type: item
+    date_time_planned: '2025-05-20T00:00:00Z'
     position: 23
-    number: "23"
+    number: '23'
     title:
-      - text: "Interpellation urgente du 20 mai 2025 de M. Yusuf KULMIYE : « Interpellation urgente de Kulmiye Yusuf et crts – Solidarité sans frontières, Lausanne en faveur du respect du droit international et de la protection des populations civiles à Gaza »"
-        language: "fr"
-    status: "not_treated"
-    category: "ANNONCES ET INTERPELLATIONS"
+      - text: >-
+          Interpellation urgente du 20 mai 2025 de M. Yusuf KULMIYE : «
+          Interpellation urgente de Kulmiye Yusuf et crts – Solidarité sans
+          frontières, Lausanne en faveur du respect du droit international et de
+          la protection des populations civiles à Gaza »
+        language: fr
+    status: not_treated
+    category: ANNONCES ET INTERPELLATIONS
     affair_ids:
-      - "affairs:INT25/027"
+      - affairs:INT25/027
     url:
-      - text: "https://www.lausanne.ch/apps/agir/affaire/6c/049b6c612fe2428f9be66ea39522ac6c.htm"
-        language: "fr"
-    datetime_created: "2025-06-07T23:50:18Z"
-    datetime_updated: "2025-06-07T23:50:18Z"
-
+      - text: >-
+          https://www.lausanne.ch/apps/agir/affaire/6c/049b6c612fe2428f9be66ea39522ac6c.htm
+        language: fr
+    datetime_created: '2025-06-07T23:50:18Z'
+    datetime_updated: '2025-06-07T23:50:18Z'
   - id: ops:7b3545e4-57dc-3901-aaa8-4020da6ab0c6
     meeting_id: ops:meeting_vaud_2008_04_30
-    agenda_item_type: "item"
-    date_time_planned: "2008-04-30T00:00:00Z"
+    agenda_item_type: item
+    date_time_planned: '2008-04-30T00:00:00Z'
     position: 7
-    number: "7"
+    number: '7'
     title:
-      - text: "Révision partielle de sept ordonnances fédérales relatives aux produits chimiques"
-        language: "fr"
+      - text: >-
+          Révision partielle de sept ordonnances fédérales relatives aux
+          produits chimiques
+        language: fr
     description:
       - text: >
-          Le Conseil d'Etat approuve le projet de révision partielle de sept ordonnances fédérales
-          relatives aux produits chimiques. Il salue la volonté des autorités fédérales d'introduire
-          dans la législation fédérale les modifications nécessaires découlant des nouveaux règlements
-          européens, afin d'éliminer des entraves au commerce et d'augmenter la sécurité d'évaluation
-          des produits chimiques.
-        language: "fr"
+          Le Conseil d'Etat approuve le projet de révision partielle de sept
+          ordonnances fédérales relatives aux produits chimiques. Il salue la
+          volonté des autorités fédérales d'introduire dans la législation
+          fédérale les modifications nécessaires découlant des nouveaux
+          règlements européens, afin d'éliminer des entraves au commerce et
+          d'augmenter la sécurité d'évaluation des produits chimiques.
+        language: fr
     url:
-      - text: "https://www.vd.ch/actualites/decisions-du-conseil-detat/seance-du-conseil-detat/seance/265632#7b3545e4-57dc-3901-aaa8-4020da6ab0c6"
-        language: "fr"
-    datetime_created: "2024-12-06T10:50:04Z"
-    datetime_updated: "2024-12-06T10:50:04Z"
-
+      - text: >-
+          https://www.vd.ch/actualites/decisions-du-conseil-detat/seance-du-conseil-detat/seance/265632#7b3545e4-57dc-3901-aaa8-4020da6ab0c6
+        language: fr
+    datetime_created: '2024-12-06T10:50:04Z'
+    datetime_updated: '2024-12-06T10:50:04Z'
   - id: ops:06fb582b753c416d8fdb05fa13873545
     meeting_id: ops:meeting_2011_11_23
-    agenda_item_type: "item"
-    date_time_planned: "2011-11-23T00:00:00Z"
+    agenda_item_type: item
+    date_time_planned: '2011-11-23T00:00:00Z'
     position: 1.5
     title:
-      - text: "Interpellation Peter Mark betr. elektronische Datenerfassung durch Mitarbeiter im Werkhof – Versuchsphase"
-        language: "de"
-    datetime_created: "2025-03-21T23:15:19Z"
-    datetime_updated: "2025-03-21T23:15:19Z"
-
+      - text: >-
+          Interpellation Peter Mark betr. elektronische Datenerfassung durch
+          Mitarbeiter im Werkhof – Versuchsphase
+        language: de
+    datetime_created: '2025-03-21T23:15:19Z'
+    datetime_updated: '2025-03-21T23:15:19Z'
   - id: ops:16155798_3
     meeting_id: ops:meeting_schaffhausen_2025_03_31
-    agenda_item_type: "item"
-    date_time_planned: "2025-03-31T00:00:00Z"
+    agenda_item_type: item
+    date_time_planned: '2025-03-31T00:00:00Z'
     position: 2
-    number: "2"
+    number: '2'
     title:
-      - text: "Motion Nr. 2023/9 von Rainer Schmidig vom 18. Dezember 2023 betreffend zeitgemässe Abzüge in den Art. 35 und 37 des Gesetzes über die direkten Steuern"
-        language: "de"
-    category: "Traktanden"
+      - text: >-
+          Motion Nr. 2023/9 von Rainer Schmidig vom 18. Dezember 2023 betreffend
+          zeitgemässe Abzüge in den Art. 35 und 37 des Gesetzes über die
+          direkten Steuern
+        language: de
+    category: Traktanden
     affair_ids:
-      - "affairs:MOT_2023_9"
-    datetime_created: "2025-05-02T11:23:49Z"
-    datetime_updated: "2025-05-02T11:23:49Z"
-
+      - affairs:MOT_2023_9
+    datetime_created: '2025-05-02T11:23:49Z'
+    datetime_updated: '2025-05-02T11:23:49Z'
   - id: ops:21c50b86d21b4b4baeb1a76738ff82a3_2025-04-02_1_de
     meeting_id: ops:meeting_bern_rr_2025_04_02
-    agenda_item_type: "item"
-    date_time_planned: "2025-04-02T00:00:00Z"
+    agenda_item_type: item
+    date_time_planned: '2025-04-02T00:00:00Z'
     title:
-      - text: "Petition «Gleichberechtigung für Tagesfamilien: Gleich hohe Betreuungsgutscheine für alle Anbieter im Kanton Bern». Regierungsrätliches Antwortschreiben"
-        language: "de"
+      - text: >-
+          Petition «Gleichberechtigung für Tagesfamilien: Gleich hohe
+          Betreuungsgutscheine für alle Anbieter im Kanton Bern».
+          Regierungsrätliches Antwortschreiben
+        language: de
     affair_ids:
-      - "affairs:2025.STA.622"
+      - affairs:2025.STA.622
     url:
-      - text: "https://www.rr.be.ch/de/start/beschluesse/suche/geschaeftsdetail.html?guid=21c50b86d21b4b4baeb1a76738ff82a3"
-        language: "de"
-    datetime_created: "2025-04-25T11:11:40Z"
-    datetime_updated: "2025-04-25T11:11:40Z"
-
+      - text: >-
+          https://www.rr.be.ch/de/start/beschluesse/suche/geschaeftsdetail.html?guid=21c50b86d21b4b4baeb1a76738ff82a3
+        language: de
+    datetime_created: '2025-04-25T11:11:40Z'
+    datetime_updated: '2025-04-25T11:11:40Z'
   - id: ops:49_253
     meeting_id: ops:meeting_2025_03_31
-    agenda_item_type: "item"
-    date_time_planned: "2025-03-31T00:00:00Z"
+    agenda_item_type: item
+    date_time_planned: '2025-03-31T00:00:00Z'
     position: 2
-    number: "2"
+    number: '2'
     title:
-      - text: "Programmvereinbarungen 2024"
-        language: "de"
-    datetime_created: "2025-03-29T01:07:14Z"
-    datetime_updated: "2025-03-29T01:07:14Z"
-
+      - text: Programmvereinbarungen 2024
+        language: de
+    datetime_created: '2025-03-29T01:07:14Z'
+    datetime_updated: '2025-03-29T01:07:14Z'
   - id: ops:16155798_4
     meeting_id: ops:meeting_schaffhausen_2025_03_31_b
-    agenda_item_type: "item"
-    date_time_planned: "2025-03-31T00:00:00Z"
+    agenda_item_type: item
+    date_time_planned: '2025-03-31T00:00:00Z'
     position: 3
-    number: "3"
+    number: '3'
     title:
-      - text: "Volksmotion Nr. 2024/1 von Sandro Mamedow und Livia Schraff (Erstunterzeichnende) sowie weitere 150 Mitunterzeichnende vom 22. März 2024 mit dem Titel: «Für eine Stimme der Studierenden im Hochschulrat der Pädagogischen Hochschule Schaffhausen (PHSH)»"
-        language: "de"
-    category: "Traktanden"
+      - text: >-
+          Volksmotion Nr. 2024/1 von Sandro Mamedow und Livia Schraff
+          (Erstunterzeichnende) sowie weitere 150 Mitunterzeichnende vom 22.
+          März 2024 mit dem Titel: «Für eine Stimme der Studierenden im
+          Hochschulrat der Pädagogischen Hochschule Schaffhausen (PHSH)»
+        language: de
+    category: Traktanden
     affair_ids:
-      - "affairs:MOT_2024_1"
-    datetime_created: "2025-05-02T11:23:49Z"
-    datetime_updated: "2025-05-02T11:23:49Z"
-
+      - affairs:MOT_2024_1
+    datetime_created: '2025-05-02T11:23:49Z'
+    datetime_updated: '2025-05-02T11:23:49Z'
   - id: ops:87b69a72919445a493a061d9b0daeba3
     meeting_id: ops:meeting_be_2025_06_02
-    agenda_item_type: "item"
-    date_time_planned: "2025-06-02T00:00:00Z"
+    agenda_item_type: item
+    date_time_planned: '2025-06-02T00:00:00Z'
     title:
-      - text: "Differenzierte Anpassung des Gehalts von Lehrpersonen ohne Lehrdiplom"
-        language: "de"
+      - text: Differenzierte Anpassung des Gehalts von Lehrpersonen ohne Lehrdiplom
+        language: de
     affair_ids:
-      - "affairs:2025.GRPARL.81"
-    datetime_created: "2025-04-25T11:10:35Z"
-    datetime_updated: "2025-04-25T11:10:35Z"
-
+      - affairs:2025.GRPARL.81
+    datetime_created: '2025-04-25T11:10:35Z'
+    datetime_updated: '2025-04-25T11:10:35Z'
   - id: ops:0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
     meeting_id: ops:meeting_luzern_2025_01_28
-    agenda_item_type: "item"
-    date_time_planned: "2025-01-28T00:00:00Z"
+    agenda_item_type: item
+    date_time_planned: '2025-01-28T00:00:00Z'
     position: 29
-    number: "29"
+    number: '29'
     title:
-      - text: "Postulat Widmer Reichlin Gisela und Mit. über Massnahmen zur Erfüllung des Sonderschulkonkordats und zur gezielten Behebung des Fachkräftemangels im Bereich schulische Heilpädagogik / Bildungs- und Kulturdepartement"
-        language: "de"
-    category: "voting"
+      - text: >-
+          Postulat Widmer Reichlin Gisela und Mit. über Massnahmen zur Erfüllung
+          des Sonderschulkonkordats und zur gezielten Behebung des
+          Fachkräftemangels im Bereich schulische Heilpädagogik / Bildungs- und
+          Kulturdepartement
+        language: de
+    category: voting
     url:
-      - text: "https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a"
-        language: "de"
+      - text: >-
+          https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
+        language: de
     affair_ids:
-      - "affairs:2024P_125"
-    datetime_created: "2025-01-29T06:59:41Z"
-    datetime_updated: "2025-01-29T06:59:41Z"
-
+      - affairs:2024P_125
+    datetime_created: '2025-01-29T06:59:41Z'
+    datetime_updated: '2025-01-29T06:59:41Z'
   - id: ops:fa732e0e-7e5f-4d45-994a-fc74720c0781
     meeting_id: ops:meeting_luzern_2025_01_28_b
-    agenda_item_type: "item"
-    date_time_planned: "2025-01-28T00:00:00Z"
+    agenda_item_type: item
+    date_time_planned: '2025-01-28T00:00:00Z'
     position: 14
-    number: "14"
+    number: '14'
     title:
-      - text: "Postulat Stadelmann Karin Andrea und Mit. über die Überprüfung und Anpassung der Kriterien zum früheren Eintritt von Kindern in die Basisstufe (den freiwilligen Kindergarten) / Bildungs- und Kulturdepartement"
-        language: "de"
-    category: "voting"
+      - text: >-
+          Postulat Stadelmann Karin Andrea und Mit. über die Überprüfung und
+          Anpassung der Kriterien zum früheren Eintritt von Kindern in die
+          Basisstufe (den freiwilligen Kindergarten) / Bildungs- und
+          Kulturdepartement
+        language: de
+    category: voting
     url:
-      - text: "https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=fa732e0e-7e5f-4d45-994a-fc74720c0781"
-        language: "de"
+      - text: >-
+          https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=fa732e0e-7e5f-4d45-994a-fc74720c0781
+        language: de
     affair_ids:
-      - "affairs:2023P_102"
-    datetime_created: "2025-01-29T06:59:41Z"
-    datetime_updated: "2025-01-29T06:59:41Z"
+      - affairs:2023P_102
+    datetime_created: '2025-01-29T06:59:41Z'
+    datetime_updated: '2025-01-29T06:59:41Z'
+classes: {}
+enums: {}
