@@ -26,8 +26,8 @@ Alias: affair_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
+| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 
 
