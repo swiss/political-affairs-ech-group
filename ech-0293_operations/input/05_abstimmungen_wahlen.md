@@ -57,6 +57,9 @@ AgendaItem (Energiegesetz - Art. 15)
       └─ IndividualVote (Person C: Ja)
 ```
 
+
+Beispiel Auwahl: https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=aa10c137274f424fa4eda877e7644a89
+
 ## Abstimmungsverfahren
 
 Das Feld **procedure** beschreibt die Art der Durchführung:
@@ -74,6 +77,7 @@ Das Feld **procedure** beschreibt die Art der Durchführung:
 Die Wahl des Verfahrens beeinflusst, ob Einzelstimmen erfasst werden können:
 - Offene Verfahren: Einzelstimmen dokumentierbar
 - Geheime Verfahren: Nur Gesamtergebnis verfügbar
+
 
 ## Abstimmungsergebnis
 
@@ -172,6 +176,8 @@ Voting
   └─ ...
 ```
 
+Beispiel
+
 ## Beschreibung und Dokumentation
 
 - **description**: Beschreibung worüber abgestimmt wurde
@@ -182,29 +188,6 @@ Voting
 - **datetime_created**: Zeitpunkt der Durchführung der Abstimmung
 - **datetime_updated**: Letzte Aktualisierung (z.B. bei Korrekturen)
 
-## Besonderheiten verschiedener Föderalebenen
-
-### Bundesebene
-- Häufig elektronische Abstimmungen
-- Namentliche Abstimmungen bei wichtigen Vorlagen
-- Detaillierte Dokumentation
-
-### Kantone
-- Variiert stark: Von elektronischen Systemen bis zu Handzeichen
-- Unterschiedliche Praktiken bei namentlichen Abstimmungen
-- Teilweise noch traditionelle Verfahren (z.B. Aufstehen)
-
-### Gemeinden
-- Gemeindeversammlungen: Meist Handzeichen oder Aufstehen
-- Gemeindeparlamente: Ähnlich wie Kantone
-- Bei Versammlungen oft keine Erfassung von Einzelstimmen
-
-## Verwendungszwecke
-
-1. Dokumentation von Abstimmungsergebnissen und -verfahren
-2. Publikation für Öffentlichkeit und Medien
-3. Datengrundlage für Analysen (Abstimmungsmuster, Koalitionen)
-4. Langzeitarchivierung parlamentarischer Entscheidungen
 
 {{include:ech-0293_operations/output/docs/Voting.md}}
 
@@ -300,11 +283,7 @@ Das Feld **weight** erfasst das Stimmgewicht:
 ### Anwendungsfälle für abweichendes Stimmgewicht
 
 1. **Stellvertretung**: In einigen Systemen kann eine Person für eine abwesende Person mitstimmen (weight: 2.0)
-
-2. **Ständerat**: Bei der Vereinigten Bundesversammlung (z.B. Bundesratswahl) haben Ständeräte das gleiche Stimmgewicht wie Nationalräte (weight: 1.0), obwohl die Kantone unterschiedlich gross sind
-
 3. **Gemeindeversammlungen**: In speziellen Fällen können juristische Personen mehrere Stimmen haben
-
 4. **Historische Systeme**: Früher hatten in einigen Kantonen verschiedene Personengruppen unterschiedliches Stimmgewicht
 
 ## Gruppenzugehörigkeit
@@ -332,7 +311,6 @@ Das Feld **position** definiert die Sortierreihenfolge bei der Darstellung:
 Das Feld **description** kann zusätzliche Informationen erfassen:
 
 **Beispiele:**
-- "Stimmte trotz Fraktionslinie mit Nein"
 - "Enthaltung wegen Interessenkonflikt (Verwaltungsrat Energieunternehmen)"
 - "Abwesend wegen Krankheit"
 
@@ -356,51 +334,6 @@ IndividualVote-Entitäten werden nur bei namentlichen (offenen) Abstimmungen erf
 
 - **Namentliche Abstimmung**: Jede Stimme wird erfasst und ist öffentlich
 - **Geheime Abstimmung**: Nur das Gesamtergebnis wird erfasst, keine IndividualVotes
-
-## Datenqualität und Korrekturen
-
-Bei elektronischen Abstimmungssystemen:
-- Automatische Erfassung minimiert Fehler
-- Nachträgliche Korrekturen sind möglich (datetime_updated)
-- Transparente Dokumentation von Änderungen
-
-Bei manuellen Systemen:
-- Höheres Fehlerrisiko
-- Sorgfältige Protokollierung erforderlich
-
-## Verwendungszwecke
-
-1. Nachvollziehbarkeit des individuellen Stimmverhaltens für Öffentlichkeit
-2. Analysen: Parteidisziplin, Koalitionsbildung, Abstimmungsmuster
-3. Datengrundlage für Parlamentsforschung und Medien
-4. Monitoring durch Interessengruppen
-
-## Besonderheiten verschiedener Föderalebenen
-
-### Bundesebene
-- Umfassende Erfassung bei allen wichtigen Abstimmungen
-- Elektronisches System für hohe Datenqualität
-- Öffentliche APIs für Datenzugriff
-
-### Kantone
-- Unterschiedlich: Einige Kantone erfassen alle Abstimmungen namentlich, andere nur auf Antrag
-- Technische Systeme variieren stark
-- Nicht alle Kantone publizieren Einzelstimmen online
-
-### Gemeinden
-- Gemeindeparlamente: Ähnlich wie Kantone
-- Gemeindeversammlungen: Erfassung von Einzelstimmen meist nicht möglich (zu viele Teilnehmende)
-
-## Datenschutz und Öffentlichkeitsprinzip
-
-Spannungsfeld zwischen:
-- **Transparenz**: Öffentlichkeit hat Recht zu wissen, wie ihre Vertreter abstimmen
-- **Datenschutz**: Persönliche Daten müssen geschützt werden
-
-In der Schweiz gilt:
-- Abstimmungsverhalten von Parlamentsmitgliedern ist grundsätzlich öffentlich
-- Namen und Mandate sind öffentliche Informationen
-- Detaillierte persönliche Daten (Adressen, etc.) sind geschützt
 
 {{include:ech-0293_operations/output/docs/IndividualVote.md}}
 
@@ -612,15 +545,5 @@ Bei offenen Wahlen:
 - Individuelle Stimmabgaben können erfasst werden
 - Höhere Transparenz
 - Potenzielle soziale Druckeffekte
-
-## Verwendungszwecke
-
-Die Election-Entität ermöglicht:
-
-1. **Dokumentation**: Vollständige Erfassung von Wahlvorgängen
-2. **Transparenz**: Nachvollziehbare Ergebnisse (soweit nicht geheim)
-3. **Archivierung**: Langfristige Bewahrung von Wahlentscheiden
-4. **Analyse**: Auswertung von Wahlverhalten, Erfolgschancen, Mustern
-5. **Legitimation**: Nachweis der korrekten Durchführung
 
 {{include:ech-0293_operations/output/docs/Election.md}}
