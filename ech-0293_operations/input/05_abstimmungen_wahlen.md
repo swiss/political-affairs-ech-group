@@ -58,7 +58,9 @@ AgendaItem (Energiegesetz - Art. 15)
 ```
 
 
-Beispiel Auwahl: https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=aa10c137274f424fa4eda877e7644a89
+Beispiel Auswahl:
+3 Optionen: https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=aa10c137274f424fa4eda877e7644a89
+5 Optionen: https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=23f01ba9b3f3410cb9cfb85f32f3dfe0
 
 ## Abstimmungsverfahren
 
