@@ -17,8 +17,8 @@ Alias: agenda_items
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Container](Container.md) |  |  no  |
 | [JointDebate](JointDebate.md) | [en] Agenda Items which are debated together |  no  |
+| [Container](Container.md) |  |  no  |
 
 
 
