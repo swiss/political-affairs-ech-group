@@ -148,3 +148,23 @@ When defining data types and formats in LinkML, consider the following guideline
 
 - if a slot is designated as `identifier: true`, the corresponding value must be a CURIE, e.g. `id: ops:1234` and not `id: 1234`.
 - if a slot needs to be a date with time, use `range: datetime` and give the value in the format `YYYY-MM-DDTHH:MM:SSZ` (UTC) or `YYYY-MM-DDTHH:MM:SS+01:00` (UTC + 1).
+
+### Dates and Times
+
+Dates and times are a very important part of political affairs data. When working with dates and times in LinkML, consider the following best practices:
+
+- Use the `date` range for dates without time and the `datetime` range for dates with time.
+- Start attributes with `date_` or `datetime_` to make it clear what type of data is expected.
+- If a range of dates is needed, two separate attributes should be used, e.g. `date_begin` and `date_end`.
+- If a date is planned or expected but not yet fixed, use `date_planned` to indicate this. This can be combined with `date_actual` for the actual date once it is known.
+
+So, basically the following possible attributes for dates can be used (and all can also exist with time using `datetime` instead of `date`):
+
+- `date_actual`: Some event took place on this date (instantaneous)
+- `date_planned`: Some event is planned for this date (instantaneous)
+- `date_begin_actual`: Some event started on this date (interval start)
+- `date_begin_planned`: Some event is planned to start on this date (interval start)
+- `date_end_actual`: Some event ended on this date (interval end)
+- `date_end_planned`: Some event is planned to end on this date (interval end)
+- `date_created`: The entry for the object was created on this date (instantaneous)
+- `date_modified`: The entry for the object was last modified on this date (instantaneous)
