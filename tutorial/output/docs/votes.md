@@ -25,7 +25,6 @@ Alias: votes
 
 
 
-
 ## Properties
 
 * Range: [Vote](Vote.md)
@@ -35,9 +34,7 @@ Alias: votes
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

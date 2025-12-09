@@ -10,11 +10,10 @@ URI: [tutorial:Container](https://ch.paf.link/schema/tutorial/Container)
 
 
 
-
 ```mermaid
  classDiagram
     class Container
-    click Container href "../Container"
+    click Container href "../Container/"
       Container : agenda_items
         
           
@@ -22,7 +21,7 @@ URI: [tutorial:Container](https://ch.paf.link/schema/tutorial/Container)
         
         
         Container --> "*" AgendaItem : agenda_items
-        click AgendaItem href "../AgendaItem"
+        click AgendaItem href "../AgendaItem/"
     
 
         
@@ -35,7 +34,7 @@ URI: [tutorial:Container](https://ch.paf.link/schema/tutorial/Container)
         
         
         Container --> "*" Session : sessions
-        click Session href "../Session"
+        click Session href "../Session/"
     
 
         
@@ -46,7 +45,7 @@ URI: [tutorial:Container](https://ch.paf.link/schema/tutorial/Container)
         
         
         Container --> "*" Vote : votes
-        click Vote href "../Vote"
+        click Vote href "../Vote/"
     
 
         
@@ -76,8 +75,8 @@ URI: [tutorial:Container](https://ch.paf.link/schema/tutorial/Container)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -98,7 +97,6 @@ URI: [tutorial:Container](https://ch.paf.link/schema/tutorial/Container)
 | ---  | ---  |
 | self | tutorial:Container |
 | native | tutorial:Container |
-
 
 
 

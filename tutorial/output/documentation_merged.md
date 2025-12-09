@@ -29,11 +29,10 @@ URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
 
 
 
-
 ```mermaid
  classDiagram
     class AgendaItem
-    click AgendaItem href "../AgendaItem"
+    click AgendaItem href "../AgendaItem/"
       AgendaItem : id
         
       AgendaItem : name
@@ -43,7 +42,7 @@ URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
         
         
         AgendaItem --> "*" MultilingualString : name
-        click MultilingualString href "../MultilingualString"
+        click MultilingualString href "../MultilingualString/"
     
 
         
@@ -54,7 +53,7 @@ URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
         
         
         AgendaItem --> "*" Vote : votes
-        click Vote href "../Vote"
+        click Vote href "../Vote/"
     
 
         
@@ -84,6 +83,7 @@ URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Session](#Session) | [agenda_items](#agenda_items) | range | [AgendaItem](#AgendaItem) |
+| [Vote](#Vote) | [is_part_of_agenda_item](#is_part_of_agenda_item) | range | [AgendaItem](#AgendaItem) |
 | [Container](#Container) | [agenda_items](#agenda_items) | range | [AgendaItem](#AgendaItem) |
 
 
@@ -91,8 +91,8 @@ URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -113,7 +113,6 @@ URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
 | ---  | ---  |
 | self | tutorial:AgendaItem |
 | native | tutorial:AgendaItem |
-
 
 
 
@@ -202,11 +201,10 @@ URI: [tutorial:Container](https://ch.paf.link/schema/tutorial/Container)
 
 
 
-
 ```mermaid
  classDiagram
     class Container
-    click Container href "../Container"
+    click Container href "../Container/"
       Container : agenda_items
         
           
@@ -214,7 +212,7 @@ URI: [tutorial:Container](https://ch.paf.link/schema/tutorial/Container)
         
         
         Container --> "*" AgendaItem : agenda_items
-        click AgendaItem href "../AgendaItem"
+        click AgendaItem href "../AgendaItem/"
     
 
         
@@ -227,7 +225,7 @@ URI: [tutorial:Container](https://ch.paf.link/schema/tutorial/Container)
         
         
         Container --> "*" Session : sessions
-        click Session href "../Session"
+        click Session href "../Session/"
     
 
         
@@ -238,7 +236,7 @@ URI: [tutorial:Container](https://ch.paf.link/schema/tutorial/Container)
         
         
         Container --> "*" Vote : votes
-        click Vote href "../Vote"
+        click Vote href "../Vote/"
     
 
         
@@ -268,8 +266,8 @@ URI: [tutorial:Container](https://ch.paf.link/schema/tutorial/Container)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -290,7 +288,6 @@ URI: [tutorial:Container](https://ch.paf.link/schema/tutorial/Container)
 | ---  | ---  |
 | self | tutorial:Container |
 | native | tutorial:Container |
-
 
 
 
@@ -395,11 +392,10 @@ URI: [tutorial:Session](https://ch.paf.link/schema/tutorial/Session)
 
 
 
-
 ```mermaid
  classDiagram
     class Session
-    click Session href "../Session"
+    click Session href "../Session/"
       Session : agenda_items
         
           
@@ -407,11 +403,13 @@ URI: [tutorial:Session](https://ch.paf.link/schema/tutorial/Session)
         
         
         Session --> "*" AgendaItem : agenda_items
-        click AgendaItem href "../AgendaItem"
+        click AgendaItem href "../AgendaItem/"
     
 
         
-      Session : end_date
+      Session : date_begin_actual
+        
+      Session : date_end_actual
         
       Session : id
         
@@ -422,11 +420,9 @@ URI: [tutorial:Session](https://ch.paf.link/schema/tutorial/Session)
         
         
         Session --> "*" MultilingualString : name
-        click MultilingualString href "../MultilingualString"
+        click MultilingualString href "../MultilingualString/"
     
 
-        
-      Session : start_date
         
       
 ```
@@ -442,8 +438,8 @@ URI: [tutorial:Session](https://ch.paf.link/schema/tutorial/Session)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [id](#id) | 1 <br/> [String](#String) |  | direct |
-| [start_date](#start_date) | 0..1 <br/> [Date](#Date) | [en] The start date of the session | direct |
-| [end_date](#end_date) | 0..1 <br/> [Date](#Date) | [en] The end date of the session | direct |
+| [date_begin_actual](#date_begin_actual) | 0..1 <br/> [Date](#Date) |  | direct |
+| [date_end_actual](#date_end_actual) | 0..1 <br/> [Date](#Date) |  | direct |
 | [name](#name) | * <br/> [MultilingualString](#MultilingualString) |  | direct |
 | [agenda_items](#agenda_items) | * <br/> [AgendaItem](#AgendaItem) |  | direct |
 
@@ -462,8 +458,8 @@ URI: [tutorial:Session](https://ch.paf.link/schema/tutorial/Session)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -490,7 +486,6 @@ URI: [tutorial:Session](https://ch.paf.link/schema/tutorial/Session)
 
 
 
-
 ## LinkML Source
 
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
@@ -503,8 +498,8 @@ name: Session
 from_schema: https://ch.paf.link/schema/tutorial
 slots:
 - id
-- start_date
-- end_date
+- date_begin_actual
+- date_end_actual
 - name
 - agenda_items
 
@@ -532,32 +527,20 @@ attributes:
     - Container
     range: string
     required: true
-  start_date:
-    name: start_date
-    description: '[en] The start date of the session.
-
-      [de] Das Startdatum der Sitzung.
-
-      '
+  date_begin_actual:
+    name: date_begin_actual
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    slot_uri: tutorial:startDate
-    alias: start_date
+    alias: date_begin_actual
     owner: Session
     domain_of:
     - Session
     range: date
-  end_date:
-    name: end_date
-    description: '[en] The end date of the session.
-
-      [de] Das Enddatum der Sitzung.
-
-      '
+  date_end_actual:
+    name: date_end_actual
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    slot_uri: tutorial:endDate
-    alias: end_date
+    alias: date_end_actual
     owner: Session
     domain_of:
     - Session
@@ -603,12 +586,26 @@ URI: [tutorial:Vote](https://ch.paf.link/schema/tutorial/Vote)
 
 
 
-
 ```mermaid
  classDiagram
     class Vote
-    click Vote href "../Vote"
+    click Vote href "../Vote/"
+      Vote : datetime_actual
+        
       Vote : id
+        
+      Vote : is_part_of
+        
+      Vote : is_part_of_agenda_item
+        
+          
+    
+        
+        
+        Vote --> "0..1" AgendaItem : is_part_of_agenda_item
+        click AgendaItem href "../AgendaItem/"
+    
+
         
       Vote : question
         
@@ -619,11 +616,9 @@ URI: [tutorial:Vote](https://ch.paf.link/schema/tutorial/Vote)
         
         
         Vote --> "0..1" ResultEnum : result
-        click ResultEnum href "../ResultEnum"
+        click ResultEnum href "../ResultEnum/"
     
 
-        
-      Vote : vote_time
         
       
 ```
@@ -639,9 +634,11 @@ URI: [tutorial:Vote](https://ch.paf.link/schema/tutorial/Vote)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [id](#id) | 1 <br/> [String](#String) |  | direct |
+| [is_part_of](#is_part_of) | 0..1 <br/> [Uriorcurie](#Uriorcurie) |  | direct |
 | [question](#question) | 1 <br/> [String](#String) |  | direct |
-| [vote_time](#vote_time) | 0..1 <br/> [Datetime](#Datetime) | [en] The date and time when the vote was cast | direct |
+| [datetime_actual](#datetime_actual) | 0..1 <br/> [Datetime](#Datetime) |  | direct |
 | [result](#result) | 0..1 <br/> [ResultEnum](#ResultEnum) |  | direct |
+| [is_part_of_agenda_item](#is_part_of_agenda_item) | 0..1 <br/> [AgendaItem](#AgendaItem) |  | direct |
 
 
 
@@ -659,8 +656,8 @@ URI: [tutorial:Vote](https://ch.paf.link/schema/tutorial/Vote)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -687,7 +684,6 @@ URI: [tutorial:Vote](https://ch.paf.link/schema/tutorial/Vote)
 
 
 
-
 ## LinkML Source
 
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
@@ -700,9 +696,18 @@ name: Vote
 from_schema: https://ch.paf.link/schema/tutorial
 slots:
 - id
+- is_part_of
 - question
-- vote_time
+- datetime_actual
 - result
+attributes:
+  is_part_of_agenda_item:
+    name: is_part_of_agenda_item
+    from_schema: https://ch.paf.link/schema/tutorial
+    rank: 1000
+    domain_of:
+    - Vote
+    range: AgendaItem
 
 ```
 </details>
@@ -714,6 +719,15 @@ slots:
 name: Vote
 from_schema: https://ch.paf.link/schema/tutorial
 attributes:
+  is_part_of_agenda_item:
+    name: is_part_of_agenda_item
+    from_schema: https://ch.paf.link/schema/tutorial
+    rank: 1000
+    alias: is_part_of_agenda_item
+    owner: Vote
+    domain_of:
+    - Vote
+    range: AgendaItem
   id:
     name: id
     from_schema: https://ch.paf.link/schema/tutorial
@@ -728,6 +742,15 @@ attributes:
     - Container
     range: string
     required: true
+  is_part_of:
+    name: is_part_of
+    from_schema: https://ch.paf.link/schema/tutorial
+    rank: 1000
+    alias: is_part_of
+    owner: Vote
+    domain_of:
+    - Vote
+    range: uriorcurie
   question:
     name: question
     from_schema: https://ch.paf.link/schema/tutorial
@@ -738,17 +761,11 @@ attributes:
     - Vote
     range: string
     required: true
-  vote_time:
-    name: vote_time
-    description: '[en] The date and time when the vote was cast.
-
-      [de] Das Datum und die Uhrzeit, zu der die Abstimmung abgegeben wurde.
-
-      '
+  datetime_actual:
+    name: datetime_actual
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    slot_uri: tutorial:voteTime
-    alias: vote_time
+    alias: datetime_actual
     owner: Vote
     domain_of:
     - Vote

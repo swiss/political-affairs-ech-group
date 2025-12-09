@@ -1,20 +1,11 @@
 
 
-# Slot: vote_time 
-
-
-_[en] The date and time when the vote was cast._
-
-_[de] Das Datum und die Uhrzeit, zu der die Abstimmung abgegeben wurde._
-
-__
+# Slot: datetime_actual 
 
 
 
-
-
-URI: [tutorial:voteTime](https://ch.paf.link/schema/tutorial/voteTime)
-Alias: vote_time
+URI: [tutorial:datetime_actual](https://ch.paf.link/schema/tutorial/datetime_actual)
+Alias: datetime_actual
 
 <!-- no inheritance hierarchy -->
 
@@ -33,7 +24,6 @@ Alias: vote_time
 
 
 
-
 ## Properties
 
 * Range: [Datetime](Datetime.md)
@@ -41,9 +31,7 @@ Alias: vote_time
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 
@@ -62,8 +50,8 @@ Alias: vote_time
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | tutorial:voteTime |
-| native | tutorial:vote_time |
+| self | tutorial:datetime_actual |
+| native | tutorial:datetime_actual |
 
 
 
@@ -72,16 +60,10 @@ Alias: vote_time
 
 <details>
 ```yaml
-name: vote_time
-description: '[en] The date and time when the vote was cast.
-
-  [de] Das Datum und die Uhrzeit, zu der die Abstimmung abgegeben wurde.
-
-  '
+name: datetime_actual
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-slot_uri: tutorial:voteTime
-alias: vote_time
+alias: datetime_actual
 domain_of:
 - Vote
 range: datetime

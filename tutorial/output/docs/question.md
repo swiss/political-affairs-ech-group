@@ -24,7 +24,6 @@ Alias: question
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -34,9 +33,7 @@ Alias: question
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

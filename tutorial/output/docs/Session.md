@@ -10,11 +10,10 @@ URI: [tutorial:Session](https://ch.paf.link/schema/tutorial/Session)
 
 
 
-
 ```mermaid
  classDiagram
     class Session
-    click Session href "../Session"
+    click Session href "../Session/"
       Session : agenda_items
         
           
@@ -22,11 +21,13 @@ URI: [tutorial:Session](https://ch.paf.link/schema/tutorial/Session)
         
         
         Session --> "*" AgendaItem : agenda_items
-        click AgendaItem href "../AgendaItem"
+        click AgendaItem href "../AgendaItem/"
     
 
         
-      Session : end_date
+      Session : date_begin_actual
+        
+      Session : date_end_actual
         
       Session : id
         
@@ -37,11 +38,9 @@ URI: [tutorial:Session](https://ch.paf.link/schema/tutorial/Session)
         
         
         Session --> "*" MultilingualString : name
-        click MultilingualString href "../MultilingualString"
+        click MultilingualString href "../MultilingualString/"
     
 
-        
-      Session : start_date
         
       
 ```
@@ -57,8 +56,8 @@ URI: [tutorial:Session](https://ch.paf.link/schema/tutorial/Session)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [id](id.md) | 1 <br/> [String](String.md) |  | direct |
-| [start_date](start_date.md) | 0..1 <br/> [Date](Date.md) | [en] The start date of the session | direct |
-| [end_date](end_date.md) | 0..1 <br/> [Date](Date.md) | [en] The end date of the session | direct |
+| [date_begin_actual](date_begin_actual.md) | 0..1 <br/> [Date](Date.md) |  | direct |
+| [date_end_actual](date_end_actual.md) | 0..1 <br/> [Date](Date.md) |  | direct |
 | [name](name.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
 | [agenda_items](agenda_items.md) | * <br/> [AgendaItem](AgendaItem.md) |  | direct |
 
@@ -77,8 +76,8 @@ URI: [tutorial:Session](https://ch.paf.link/schema/tutorial/Session)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -105,7 +104,6 @@ URI: [tutorial:Session](https://ch.paf.link/schema/tutorial/Session)
 
 
 
-
 ## LinkML Source
 
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
@@ -118,8 +116,8 @@ name: Session
 from_schema: https://ch.paf.link/schema/tutorial
 slots:
 - id
-- start_date
-- end_date
+- date_begin_actual
+- date_end_actual
 - name
 - agenda_items
 
@@ -147,32 +145,20 @@ attributes:
     - Container
     range: string
     required: true
-  start_date:
-    name: start_date
-    description: '[en] The start date of the session.
-
-      [de] Das Startdatum der Sitzung.
-
-      '
+  date_begin_actual:
+    name: date_begin_actual
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    slot_uri: tutorial:startDate
-    alias: start_date
+    alias: date_begin_actual
     owner: Session
     domain_of:
     - Session
     range: date
-  end_date:
-    name: end_date
-    description: '[en] The end date of the session.
-
-      [de] Das Enddatum der Sitzung.
-
-      '
+  date_end_actual:
+    name: date_end_actual
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    slot_uri: tutorial:endDate
-    alias: end_date
+    alias: date_end_actual
     owner: Session
     domain_of:
     - Session

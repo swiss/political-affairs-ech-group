@@ -10,11 +10,10 @@ URI: [tutorial:MultilingualString](https://ch.paf.link/schema/tutorial/Multiling
 
 
 
-
 ```mermaid
  classDiagram
     class MultilingualString
-    click MultilingualString href "../MultilingualString"
+    click MultilingualString href "../MultilingualString/"
       MultilingualString : language
         
       MultilingualString : text
@@ -51,8 +50,8 @@ URI: [tutorial:MultilingualString](https://ch.paf.link/schema/tutorial/Multiling
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -73,7 +72,6 @@ URI: [tutorial:MultilingualString](https://ch.paf.link/schema/tutorial/Multiling
 | ---  | ---  |
 | self | tutorial:MultilingualString |
 | native | tutorial:MultilingualString |
-
 
 
 

@@ -10,12 +10,26 @@ URI: [tutorial:Vote](https://ch.paf.link/schema/tutorial/Vote)
 
 
 
-
 ```mermaid
  classDiagram
     class Vote
-    click Vote href "../Vote"
+    click Vote href "../Vote/"
+      Vote : datetime_actual
+        
       Vote : id
+        
+      Vote : is_part_of
+        
+      Vote : is_part_of_agenda_item
+        
+          
+    
+        
+        
+        Vote --> "0..1" AgendaItem : is_part_of_agenda_item
+        click AgendaItem href "../AgendaItem/"
+    
+
         
       Vote : question
         
@@ -26,11 +40,9 @@ URI: [tutorial:Vote](https://ch.paf.link/schema/tutorial/Vote)
         
         
         Vote --> "0..1" ResultEnum : result
-        click ResultEnum href "../ResultEnum"
+        click ResultEnum href "../ResultEnum/"
     
 
-        
-      Vote : vote_time
         
       
 ```
@@ -46,9 +58,11 @@ URI: [tutorial:Vote](https://ch.paf.link/schema/tutorial/Vote)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [id](id.md) | 1 <br/> [String](String.md) |  | direct |
+| [is_part_of](is_part_of.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) |  | direct |
 | [question](question.md) | 1 <br/> [String](String.md) |  | direct |
-| [vote_time](vote_time.md) | 0..1 <br/> [Datetime](Datetime.md) | [en] The date and time when the vote was cast | direct |
+| [datetime_actual](datetime_actual.md) | 0..1 <br/> [Datetime](Datetime.md) |  | direct |
 | [result](result.md) | 0..1 <br/> [ResultEnum](ResultEnum.md) |  | direct |
+| [is_part_of_agenda_item](is_part_of_agenda_item.md) | 0..1 <br/> [AgendaItem](AgendaItem.md) |  | direct |
 
 
 
@@ -66,8 +80,8 @@ URI: [tutorial:Vote](https://ch.paf.link/schema/tutorial/Vote)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -94,7 +108,6 @@ URI: [tutorial:Vote](https://ch.paf.link/schema/tutorial/Vote)
 
 
 
-
 ## LinkML Source
 
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
@@ -107,9 +120,18 @@ name: Vote
 from_schema: https://ch.paf.link/schema/tutorial
 slots:
 - id
+- is_part_of
 - question
-- vote_time
+- datetime_actual
 - result
+attributes:
+  is_part_of_agenda_item:
+    name: is_part_of_agenda_item
+    from_schema: https://ch.paf.link/schema/tutorial
+    rank: 1000
+    domain_of:
+    - Vote
+    range: AgendaItem
 
 ```
 </details>
@@ -121,6 +143,15 @@ slots:
 name: Vote
 from_schema: https://ch.paf.link/schema/tutorial
 attributes:
+  is_part_of_agenda_item:
+    name: is_part_of_agenda_item
+    from_schema: https://ch.paf.link/schema/tutorial
+    rank: 1000
+    alias: is_part_of_agenda_item
+    owner: Vote
+    domain_of:
+    - Vote
+    range: AgendaItem
   id:
     name: id
     from_schema: https://ch.paf.link/schema/tutorial
@@ -135,6 +166,15 @@ attributes:
     - Container
     range: string
     required: true
+  is_part_of:
+    name: is_part_of
+    from_schema: https://ch.paf.link/schema/tutorial
+    rank: 1000
+    alias: is_part_of
+    owner: Vote
+    domain_of:
+    - Vote
+    range: uriorcurie
   question:
     name: question
     from_schema: https://ch.paf.link/schema/tutorial
@@ -145,17 +185,11 @@ attributes:
     - Vote
     range: string
     required: true
-  vote_time:
-    name: vote_time
-    description: '[en] The date and time when the vote was cast.
-
-      [de] Das Datum und die Uhrzeit, zu der die Abstimmung abgegeben wurde.
-
-      '
+  datetime_actual:
+    name: datetime_actual
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    slot_uri: tutorial:voteTime
-    alias: vote_time
+    alias: datetime_actual
     owner: Vote
     domain_of:
     - Vote

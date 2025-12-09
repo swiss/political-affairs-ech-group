@@ -25,7 +25,6 @@ Alias: agenda_items
 
 
 
-
 ## Properties
 
 * Range: [AgendaItem](AgendaItem.md)
@@ -35,9 +34,7 @@ Alias: agenda_items
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

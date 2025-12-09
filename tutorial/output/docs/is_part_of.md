@@ -1,11 +1,11 @@
 
 
-# Slot: text 
+# Slot: is_part_of 
 
 
 
-URI: [tutorial:text](https://ch.paf.link/schema/tutorial/text)
-Alias: text
+URI: [tutorial:is_part_of](https://ch.paf.link/schema/tutorial/is_part_of)
+Alias: is_part_of
 
 <!-- no inheritance hierarchy -->
 
@@ -17,7 +17,7 @@ Alias: text
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MultilingualString](MultilingualString.md) |  |  no  |
+| [Vote](Vote.md) |  |  no  |
 
 
 
@@ -26,9 +26,7 @@ Alias: text
 
 ## Properties
 
-* Range: [String](String.md)
-
-* Required: True
+* Range: [Uriorcurie](Uriorcurie.md)
 
 
 
@@ -52,8 +50,8 @@ Alias: text
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | tutorial:text |
-| native | tutorial:text |
+| self | tutorial:is_part_of |
+| native | tutorial:is_part_of |
 
 
 
@@ -62,14 +60,13 @@ Alias: text
 
 <details>
 ```yaml
-name: text
+name: is_part_of
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-alias: text
+alias: is_part_of
 domain_of:
-- MultilingualString
-range: string
-required: true
+- Vote
+range: uriorcurie
 
 ```
 </details>

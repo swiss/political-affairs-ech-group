@@ -1,5 +1,6 @@
 @prefix dcterm: <http://purl.org/dc/terms/> .
 @prefix schema1: <http://schema.org/> .
+@prefix td: <https://ch.paf.link/schema/td/> .
 @prefix tutorial: <https://ch.paf.link/schema/tutorial/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -14,23 +15,22 @@ tutorial:s2025 a tutorial:Container ;
 
 tutorial:s2025-1 a tutorial:Session ;
     schema1:name [ a tutorial:MultilingualString ;
-            dcterm:language "de" ;
-            tutorial:text "Frühlingssession 2025" ],
-        [ a tutorial:MultilingualString ;
             dcterm:language "en" ;
-            tutorial:text "Spring Session 2025" ] ;
-    tutorial:endDate "2025-04-10"^^xsd:date ;
-    tutorial:startDate "2025-03-01"^^xsd:date .
-
-tutorial:s2025-1_t1 a tutorial:AgendaItem ;
-    schema1:name [ a tutorial:MultilingualString ;
+            tutorial:text "Spring Session 2025" ],
+        [ a tutorial:MultilingualString ;
             dcterm:language "de" ;
-            tutorial:text "Fahnenfarbe" ] .
+            tutorial:text "Frühlingssession 2025" ] ;
+    td:date_begin_actual "2025-03-01"^^xsd:date ;
+    td:date_end_actual "2025-04-10"^^xsd:date .
 
 tutorial:s2025-1_t1_a1 a tutorial:Vote ;
+    tutorial:is_part_of "tutorial:s2025-1_t1"^^xsd:anyURI ;
+    tutorial:is_part_of_agenda_item tutorial:s2025-1_t1 ;
     tutorial:question "Soll die Farbe geändert werden?" .
 
 tutorial:s2025-1_t1_a2 a tutorial:Vote ;
+    tutorial:is_part_of "tutorial:s2025-1_t1"^^xsd:anyURI ;
+    tutorial:is_part_of_agenda_item tutorial:s2025-1_t1 ;
     tutorial:question "Soll die Farbe Auberginen-Oliv werden?" .
 
 tutorial:s2025-2 a tutorial:Session ;
@@ -40,15 +40,22 @@ tutorial:s2025-2 a tutorial:Session ;
         [ a tutorial:MultilingualString ;
             dcterm:language "de" ;
             tutorial:text "Sommersession 2025" ] ;
-    tutorial:endDate "2025-07-10"^^xsd:date ;
-    tutorial:startDate "2025-06-01"^^xsd:date .
+    td:date_begin_actual "2025-06-01"^^xsd:date ;
+    td:date_end_actual "2025-07-10"^^xsd:date .
+
+tutorial:s2025-2_t1_a1 a tutorial:Vote ;
+    tutorial:is_part_of "tutorial:s2025-2_t1"^^xsd:anyURI ;
+    tutorial:is_part_of_agenda_item tutorial:s2025-2_t1 ;
+    tutorial:question "Soll die Hymne geändert werden?" .
 
 tutorial:s2025-2_t1 a tutorial:AgendaItem ;
     schema1:name [ a tutorial:MultilingualString ;
             dcterm:language "de" ;
             tutorial:text "Landeshymne" ] .
 
-tutorial:s2025-2_t1_a1 a tutorial:Vote ;
-    tutorial:question "Soll die Hymne geändert werden?" .
+tutorial:s2025-1_t1 a tutorial:AgendaItem ;
+    schema1:name [ a tutorial:MultilingualString ;
+            dcterm:language "de" ;
+            tutorial:text "Fahnenfarbe" ] .
 
 

@@ -1,20 +1,11 @@
 
 
-# Slot: start_date 
-
-
-_[en] The start date of the session._
-
-_[de] Das Startdatum der Sitzung._
-
-__
+# Slot: date_begin_actual 
 
 
 
-
-
-URI: [tutorial:startDate](https://ch.paf.link/schema/tutorial/startDate)
-Alias: start_date
+URI: [tutorial:date_begin_actual](https://ch.paf.link/schema/tutorial/date_begin_actual)
+Alias: date_begin_actual
 
 <!-- no inheritance hierarchy -->
 
@@ -33,7 +24,6 @@ Alias: start_date
 
 
 
-
 ## Properties
 
 * Range: [Date](Date.md)
@@ -41,9 +31,7 @@ Alias: start_date
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 
@@ -62,8 +50,8 @@ Alias: start_date
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | tutorial:startDate |
-| native | tutorial:start_date |
+| self | tutorial:date_begin_actual |
+| native | tutorial:date_begin_actual |
 
 
 
@@ -72,16 +60,10 @@ Alias: start_date
 
 <details>
 ```yaml
-name: start_date
-description: '[en] The start date of the session.
-
-  [de] Das Startdatum der Sitzung.
-
-  '
+name: date_begin_actual
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-slot_uri: tutorial:startDate
-alias: start_date
+alias: date_begin_actual
 domain_of:
 - Session
 range: date

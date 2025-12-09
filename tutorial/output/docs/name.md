@@ -17,9 +17,8 @@ Alias: name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Session](Session.md) |  |  no  |
 | [AgendaItem](AgendaItem.md) |  |  no  |
-
+| [Session](Session.md) |  |  no  |
 
 
 
@@ -35,9 +34,7 @@ Alias: name
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

@@ -5,4 +5,3 @@
 
 
 URI: https://ch.paf.link/schema/tutorial
-

@@ -10,11 +10,10 @@ URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
 
 
 
-
 ```mermaid
  classDiagram
     class AgendaItem
-    click AgendaItem href "../AgendaItem"
+    click AgendaItem href "../AgendaItem/"
       AgendaItem : id
         
       AgendaItem : name
@@ -24,7 +23,7 @@ URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
         
         
         AgendaItem --> "*" MultilingualString : name
-        click MultilingualString href "../MultilingualString"
+        click MultilingualString href "../MultilingualString/"
     
 
         
@@ -35,7 +34,7 @@ URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
         
         
         AgendaItem --> "*" Vote : votes
-        click Vote href "../Vote"
+        click Vote href "../Vote/"
     
 
         
@@ -65,6 +64,7 @@ URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Session](Session.md) | [agenda_items](agenda_items.md) | range | [AgendaItem](AgendaItem.md) |
+| [Vote](Vote.md) | [is_part_of_agenda_item](is_part_of_agenda_item.md) | range | [AgendaItem](AgendaItem.md) |
 | [Container](Container.md) | [agenda_items](agenda_items.md) | range | [AgendaItem](AgendaItem.md) |
 
 
@@ -72,8 +72,8 @@ URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -94,7 +94,6 @@ URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
 | ---  | ---  |
 | self | tutorial:AgendaItem |
 | native | tutorial:AgendaItem |
-
 
 
 

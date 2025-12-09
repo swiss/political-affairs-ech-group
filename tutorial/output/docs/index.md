@@ -27,16 +27,31 @@ Name: tutorial
 | Slot | Description |
 | --- | --- |
 | [agenda_items](agenda_items.md) |  |
-| [end_date](end_date.md) | [en] The end date of the session |
+| [date_actual](date_actual.md) |  |
+| [date_begin_actual](date_begin_actual.md) |  |
+| [date_begin_planned](date_begin_planned.md) |  |
+| [date_created](date_created.md) |  |
+| [date_end_actual](date_end_actual.md) |  |
+| [date_end_planned](date_end_planned.md) |  |
+| [date_modified](date_modified.md) |  |
+| [date_planned](date_planned.md) |  |
+| [datetime_actual](datetime_actual.md) |  |
+| [datetime_begin_actual](datetime_begin_actual.md) |  |
+| [datetime_begin_planned](datetime_begin_planned.md) |  |
+| [datetime_created](datetime_created.md) |  |
+| [datetime_end_actual](datetime_end_actual.md) |  |
+| [datetime_end_planned](datetime_end_planned.md) |  |
+| [datetime_modified](datetime_modified.md) |  |
+| [datetime_planned](datetime_planned.md) |  |
 | [id](id.md) |  |
+| [is_part_of](is_part_of.md) |  |
+| [is_part_of_agenda_item](is_part_of_agenda_item.md) |  |
 | [language](language.md) | [en] Language code in ISO 639-1 format |
 | [name](name.md) |  |
 | [question](question.md) |  |
 | [result](result.md) |  |
 | [sessions](sessions.md) |  |
-| [start_date](start_date.md) | [en] The start date of the session |
 | [text](text.md) |  |
-| [vote_time](vote_time.md) | [en] The date and time when the vote was cast |
 | [votes](votes.md) |  |
 
 

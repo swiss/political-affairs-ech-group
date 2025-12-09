@@ -1,5 +1,6 @@
 @prefix dcterm: <http://purl.org/dc/terms/> .
 @prefix schema1: <http://schema.org/> .
+@prefix td: <https://ch.paf.link/schema/td/> .
 @prefix tutorial: <https://ch.paf.link/schema/tutorial/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -9,45 +10,45 @@ tutorial:s2025 a tutorial:Container ;
 
 tutorial:s2025-1 a tutorial:Session ;
     schema1:name [ a tutorial:MultilingualString ;
-            dcterm:language "en" ;
-            tutorial:text "Spring Session 2025" ],
-        [ a tutorial:MultilingualString ;
             dcterm:language "de" ;
-            tutorial:text "Frühlingssession 2025" ] ;
-    tutorial:agendaItem tutorial:s2025-1_t1 ;
-    tutorial:endDate "2025-04-10"^^xsd:date ;
-    tutorial:startDate "2025-03-01"^^xsd:date .
+            tutorial:text "Frühlingssession 2025" ],
+        [ a tutorial:MultilingualString ;
+            dcterm:language "en" ;
+            tutorial:text "Spring Session 2025" ] ;
+    td:date_begin_actual "2025-03-01"^^xsd:date ;
+    td:date_end_actual "2025-04-10"^^xsd:date ;
+    tutorial:agendaItem tutorial:s2025-1_t1 .
 
 tutorial:s2025-1_t1 a tutorial:AgendaItem ;
     schema1:name [ a tutorial:MultilingualString ;
-            dcterm:language "de" ;
-            tutorial:text "Fahnenfarbe" ],
-        [ a tutorial:MultilingualString ;
             dcterm:language "en" ;
-            tutorial:text "Flag Color" ] ;
+            tutorial:text "Flag Color" ],
+        [ a tutorial:MultilingualString ;
+            dcterm:language "de" ;
+            tutorial:text "Fahnenfarbe" ] ;
     tutorial:vote tutorial:s2025-1_t1_a1,
         tutorial:s2025-1_t1_a2 .
 
 tutorial:s2025-1_t1_a1 a tutorial:Vote ;
+    td:datetime_actual "2025-03-15T10:00:00+00:00"^^xsd:dateTime ;
     tutorial:question "Soll die Farbe geändert werden?" ;
-    tutorial:result <https://ch.paf.link/schema/tutorial/results/yes> ;
-    tutorial:voteTime "2025-03-15T10:00:00+00:00"^^xsd:dateTime .
+    tutorial:result <https://ch.paf.link/schema/tutorial/results/yes> .
 
 tutorial:s2025-1_t1_a2 a tutorial:Vote ;
+    td:datetime_actual "2025-03-16T10:00:00+00:00"^^xsd:dateTime ;
     tutorial:question "Soll die Farbe Auberginen-Oliv werden?" ;
-    tutorial:result <https://ch.paf.link/schema/tutorial/results/no> ;
-    tutorial:voteTime "2025-03-16T10:00:00+00:00"^^xsd:dateTime .
+    tutorial:result <https://ch.paf.link/schema/tutorial/results/no> .
 
 tutorial:s2025-2 a tutorial:Session ;
     schema1:name [ a tutorial:MultilingualString ;
-            dcterm:language "de" ;
-            tutorial:text "Sommersession 2025" ],
-        [ a tutorial:MultilingualString ;
             dcterm:language "en" ;
-            tutorial:text "Summer Session 2025" ] ;
-    tutorial:agendaItem tutorial:s2025-2_t1 ;
-    tutorial:endDate "2025-07-10"^^xsd:date ;
-    tutorial:startDate "2025-06-01"^^xsd:date .
+            tutorial:text "Summer Session 2025" ],
+        [ a tutorial:MultilingualString ;
+            dcterm:language "de" ;
+            tutorial:text "Sommersession 2025" ] ;
+    td:date_begin_actual "2025-06-01"^^xsd:date ;
+    td:date_end_actual "2025-07-10"^^xsd:date ;
+    tutorial:agendaItem tutorial:s2025-2_t1 .
 
 tutorial:s2025-2_t1 a tutorial:AgendaItem ;
     schema1:name [ a tutorial:MultilingualString ;
@@ -59,8 +60,8 @@ tutorial:s2025-2_t1 a tutorial:AgendaItem ;
     tutorial:vote tutorial:s2025-2_t1_a1 .
 
 tutorial:s2025-2_t1_a1 a tutorial:Vote ;
+    td:datetime_actual "2025-06-15T10:00:00+01:00"^^xsd:dateTime ;
     tutorial:question "Soll die Hymne geändert werden?" ;
-    tutorial:result <https://ch.paf.link/schema/tutorial/results/no> ;
-    tutorial:voteTime "2025-06-15T10:00:00+01:00"^^xsd:dateTime .
+    tutorial:result <https://ch.paf.link/schema/tutorial/results/no> .
 
 

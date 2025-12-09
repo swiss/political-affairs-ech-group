@@ -1,20 +1,11 @@
 
 
-# Slot: end_date 
-
-
-_[en] The end date of the session._
-
-_[de] Das Enddatum der Sitzung._
-
-__
+# Slot: date_end_actual 
 
 
 
-
-
-URI: [tutorial:endDate](https://ch.paf.link/schema/tutorial/endDate)
-Alias: end_date
+URI: [tutorial:date_end_actual](https://ch.paf.link/schema/tutorial/date_end_actual)
+Alias: date_end_actual
 
 <!-- no inheritance hierarchy -->
 
@@ -33,7 +24,6 @@ Alias: end_date
 
 
 
-
 ## Properties
 
 * Range: [Date](Date.md)
@@ -41,9 +31,7 @@ Alias: end_date
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 
@@ -62,8 +50,8 @@ Alias: end_date
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | tutorial:endDate |
-| native | tutorial:end_date |
+| self | tutorial:date_end_actual |
+| native | tutorial:date_end_actual |
 
 
 
@@ -72,16 +60,10 @@ Alias: end_date
 
 <details>
 ```yaml
-name: end_date
-description: '[en] The end date of the session.
-
-  [de] Das Enddatum der Sitzung.
-
-  '
+name: date_end_actual
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-slot_uri: tutorial:endDate
-alias: end_date
+alias: date_end_actual
 domain_of:
 - Session
 range: date

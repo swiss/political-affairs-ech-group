@@ -2,7 +2,7 @@
 
 
 
-URI: [ResultEnum](ResultEnum.md)
+URI: [tutorial:result_enum](https://ch.paf.link/schema/tutorial/result_enum)
 
 ## Permissible Values
 
@@ -24,9 +24,7 @@ URI: [ResultEnum](ResultEnum.md)
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

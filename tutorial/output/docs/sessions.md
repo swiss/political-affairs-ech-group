@@ -24,7 +24,6 @@ Alias: sessions
 
 
 
-
 ## Properties
 
 * Range: [Session](Session.md)
@@ -34,9 +33,7 @@ Alias: sessions
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

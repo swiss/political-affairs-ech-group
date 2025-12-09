@@ -115,8 +115,14 @@
                         "null"
                     ]
                 },
-                "end_date": {
-                    "description": "[en] The end date of the session.\n[de] Das Enddatum der Sitzung.\n",
+                "date_begin_actual": {
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_end_actual": {
                     "format": "date",
                     "type": [
                         "string",
@@ -134,14 +140,6 @@
                         "array",
                         "null"
                     ]
-                },
-                "start_date": {
-                    "description": "[en] The start date of the session.\n[de] Das Startdatum der Sitzung.\n",
-                    "format": "date",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
                 }
             },
             "required": [
@@ -154,22 +152,33 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
+                "datetime_actual": {
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "id": {
                     "type": "string"
+                },
+                "is_part_of": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "is_part_of_agenda_item": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "question": {
                     "type": "string"
                 },
                 "result": {
                     "$ref": "#/$defs/ResultEnum"
-                },
-                "vote_time": {
-                    "description": "[en] The date and time when the vote was cast.\n[de] Das Datum und die Uhrzeit, zu der die Abstimmung abgegeben wurde.\n",
-                    "format": "date-time",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
                 }
             },
             "required": [
@@ -224,3 +233,4 @@
     "type": "object",
     "version": null
 }
+

@@ -1,11 +1,11 @@
 
 
-# Slot: text 
+# Slot: is_part_of_agenda_item 
 
 
 
-URI: [tutorial:text](https://ch.paf.link/schema/tutorial/text)
-Alias: text
+URI: [tutorial:is_part_of_agenda_item](https://ch.paf.link/schema/tutorial/is_part_of_agenda_item)
+Alias: is_part_of_agenda_item
 
 <!-- no inheritance hierarchy -->
 
@@ -17,7 +17,7 @@ Alias: text
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MultilingualString](MultilingualString.md) |  |  no  |
+| [Vote](Vote.md) |  |  no  |
 
 
 
@@ -26,9 +26,7 @@ Alias: text
 
 ## Properties
 
-* Range: [String](String.md)
-
-* Required: True
+* Range: [AgendaItem](AgendaItem.md)
 
 
 
@@ -52,8 +50,8 @@ Alias: text
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | tutorial:text |
-| native | tutorial:text |
+| self | tutorial:is_part_of_agenda_item |
+| native | tutorial:is_part_of_agenda_item |
 
 
 
@@ -62,14 +60,14 @@ Alias: text
 
 <details>
 ```yaml
-name: text
+name: is_part_of_agenda_item
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-alias: text
+alias: is_part_of_agenda_item
+owner: Vote
 domain_of:
-- MultilingualString
-range: string
-required: true
+- Vote
+range: AgendaItem
 
 ```
 </details>

@@ -17,11 +17,10 @@ Alias: id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Vote](Vote.md) |  |  no  |
-| [Session](Session.md) |  |  no  |
 | [AgendaItem](AgendaItem.md) |  |  no  |
+| [Session](Session.md) |  |  no  |
+| [Vote](Vote.md) |  |  no  |
 | [Container](Container.md) |  |  no  |
-
 
 
 
@@ -37,9 +36,7 @@ Alias: id
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

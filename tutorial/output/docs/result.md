@@ -24,7 +24,6 @@ Alias: result
 
 
 
-
 ## Properties
 
 * Range: [ResultEnum](ResultEnum.md)
@@ -32,9 +31,7 @@ Alias: result
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 
