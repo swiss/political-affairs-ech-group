@@ -11,6 +11,7 @@ prefixes:
   tutorial: https://ch.paf.link/schema/tutorial/
 imports:
   - linkml:types
+  - schema_dates
 default_prefix: tutorial
 default_range: string
   
@@ -19,8 +20,8 @@ classes:
   Session:
     slots:
       - id
-      - start_date
-      - end_date
+      - date_begin_actual
+      - date_end_actual
       - name
       - agenda_items
     
@@ -31,10 +32,14 @@ classes:
       - votes
 
   Vote:
+    attributes:
+      is_part_of_agenda_item: # attribute because only vor class Vote relevant
+        range: AgendaItem
     slots:
       - id
+      - is_part_of
       - question
-      - vote_time
+      - datetime_actual
       - result
 
   Container:
@@ -98,26 +103,8 @@ slots:
     pattern: ^[a-z]{2}$
     slot_uri: dcterm:language
 
-  start_date:
-    range: date
-    description: |
-      [en] The start date of the session.
-      [de] Das Startdatum der Sitzung.
-    slot_uri: tutorial:startDate
-
-  end_date:
-    range: date
-    description: |
-      [en] The end date of the session.
-      [de] Das Enddatum der Sitzung.
-    slot_uri: tutorial:endDate
-
-  vote_time:
-    range: datetime
-    description: |
-      [en] The date and time when the vote was cast.
-      [de] Das Datum und die Uhrzeit, zu der die Abstimmung abgegeben wurde.
-    slot_uri: tutorial:voteTime
+  is_part_of:
+    range: uriorcurie # this will only create literals with xsd:anyURI datatype
 
 enums:
 

@@ -1,8 +1,8 @@
 id: tutorial:s2025
 sessions:
   - id: tutorial:s2025-1
-    start_date: 2025-03-01
-    end_date: 2025-04-10
+    date_begin_actual: "2025-03-01"
+    date_end_actual: "2025-04-10"
     name: 
       - text: Frühlingssession 2025
         language: de
@@ -18,15 +18,15 @@ sessions:
         votes:
           - id: tutorial:s2025-1_t1_a1
             question: Soll die Farbe geändert werden?
-            vote_time: 2025-03-15T10:00:00Z
+            datetime_actual: "2025-03-15T10:00:00Z"
             result: "yes"
           - id: tutorial:s2025-1_t1_a2
             question: Soll die Farbe Auberginen-Oliv werden?
-            vote_time: 2025-03-16T10:00:00Z
+            datetime_actual: "2025-03-16T10:00:00Z"
             result: "no"
   - id: tutorial:s2025-2
-    start_date: 2025-06-01
-    end_date: 2025-07-10
+    date_begin_actual: "2025-06-01"
+    date_end_actual: "2025-07-10"
     name: 
       - text: Sommersession 2025
         language: de
@@ -42,5 +42,5 @@ sessions:
         votes:
           - id: tutorial:s2025-2_t1_a1
             question: Soll die Hymne geändert werden?
-            vote_time: 2025-06-15T10:00:00+01:00
+            datetime_actual: "2025-06-15T10:00:00+01:00"
             result: "no"

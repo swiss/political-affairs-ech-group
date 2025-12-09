@@ -1,0 +1,64 @@
+id: https://ch.paf.link/schema/td
+description: |
+  [en] This is a dummy schema for different date and time attributes.
+  [de] Dies ist ein Dummy-Schema für verschiedene Datum und Zeit Attribute.
+prefixes:
+  xsd: http://www.w3.org/2001/XMLSchema#
+  prov: http://www.w3.org/ns/prov#
+  dcterm: http://purl.org/dc/terms/
+  linkml: https://w3id.org/linkml/
+  td: https://ch.paf.link/schema/td/
+imports:
+  - linkml:types
+default_prefix: td
+default_range: string
+
+slots:
+  
+  - date_actual:
+      range: date
+
+  - datetime_actual:
+      range: datetime
+
+  - date_planned:
+      range: date
+
+  - datetime_planned:
+      range: datetime
+
+  - date_begin_actual:
+      range: date
+
+  - datetime_begin_actual:
+      range: datetime
+
+  - date_begin_planned:
+      range: date
+
+  - datetime_begin_planned:
+      range: datetime
+
+  - date_end_actual:
+      range: date
+
+  - datetime_end_actual:
+      range: datetime
+
+  - date_end_planned:
+      range: date
+  
+  - datetime_end_planned:
+      range: datetime
+
+  - date_created:
+      range: date
+
+  - datetime_created:
+      range: datetime
+
+  - date_modified:
+      range: date
+
+  - datetime_modified:
+      range: datetime
