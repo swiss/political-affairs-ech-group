@@ -72,6 +72,17 @@ URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
         
       AgendaItem : datetime_updated
         
+      AgendaItem : has_resolution
+        
+          
+    
+        
+        
+        AgendaItem --> "0..1" Resolution : has_resolution
+        click Resolution href "../Resolution/"
+    
+
+        
       AgendaItem : id
         
       AgendaItem : landing_page
@@ -81,17 +92,6 @@ URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
       AgendaItem : parent_agenda_item
         
       AgendaItem : parent_meeting
-        
-      AgendaItem : resolution
-        
-          
-    
-        
-        
-        AgendaItem --> "0..1" Resolution : resolution
-        click Resolution href "../Resolution/"
-    
-
         
       AgendaItem : speaking_actor_id
         
@@ -129,7 +129,7 @@ URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
 | [landing_page](landing_page.md) | 0..1 <br/> [String](String.md) | [en] URL providing further information | direct |
 | [agenda_item_category](agenda_item_category.md) | 0..1 <br/> [String](String.md) | [en] Category for grouped agenda items (e | direct |
 | [parent_agenda_item](parent_agenda_item.md) | 0..1 <br/> [String](String.md) | [en] If needed, this slot builds a hierarchy of agenda items | direct |
-| [resolution](resolution.md) | 0..1 <br/> [Resolution](Resolution.md) | [en] The resolutionor decision taken on this agenda item | direct |
+| [has_resolution](has_resolution.md) | 0..1 <br/> [Resolution](Resolution.md) | [en] The resolutionor decision taken on this agenda item | direct |
 | [datetime_updated](datetime_updated.md) | 0..1 <br/> [Datetime](Datetime.md) | The last time this record was updated | direct |
 | [datetime_created](datetime_created.md) | 0..1 <br/> [Datetime](Datetime.md) | The time this record was created | direct |
 
@@ -207,7 +207,7 @@ slots:
 - landing_page
 - agenda_item_category
 - parent_agenda_item
-- resolution
+- has_resolution
 - datetime_updated
 - datetime_created
 
@@ -495,8 +495,8 @@ attributes:
     - Voting
     - Election
     range: string
-  resolution:
-    name: resolution
+  has_resolution:
+    name: has_resolution
     description: '[en] The resolutionor decision taken on this agenda item.
 
       [de] Die Resolution oder Entscheidung zu diesem Traktandum.
@@ -504,7 +504,7 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: resolution
+    alias: has_resolution
     owner: AgendaItem
     domain_of:
     - AgendaItem

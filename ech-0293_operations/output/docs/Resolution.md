@@ -64,7 +64,7 @@ URI: [ops:Resolution](https://ch.paf.link/schema/operations/Resolution)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [resolutions](resolutions.md) | range | [Resolution](Resolution.md) |
-| [AgendaItem](AgendaItem.md) | [resolution](resolution.md) | range | [Resolution](Resolution.md) |
+| [AgendaItem](AgendaItem.md) | [has_resolution](has_resolution.md) | range | [Resolution](Resolution.md) |
 
 
 

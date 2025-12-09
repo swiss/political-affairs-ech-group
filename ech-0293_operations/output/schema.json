@@ -88,6 +88,17 @@
                         "null"
                     ]
                 },
+                "has_resolution": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Resolution"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "[en] The resolutionor decision taken on this agenda item.\n[de] Die Resolution oder Entscheidung zu diesem Traktandum.\n"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -118,17 +129,6 @@
                         "string",
                         "null"
                     ]
-                },
-                "resolution": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/Resolution"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "[en] The resolutionor decision taken on this agenda item.\n[de] Die Resolution oder Entscheidung zu diesem Traktandum.\n"
                 },
                 "speaking_actor_id": {
                     "description": "[en] The speaker or head of the department for the agenda item.\n[de] Der Sprecher oder Departementsvorsteher f\u00fcr den Tagesordnungspunkt.\n",

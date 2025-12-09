@@ -79,6 +79,7 @@ Name: operations
 | [end_date_actual](end_date_actual.md) | [en] The actual end date of the meeting or session |
 | [group_id](group_id.md) | Identifier of the group or body |
 | [group_name](group_name.md) | Name of the group or body |
+| [has_resolution](has_resolution.md) | [en] The resolutionor decision taken on this agenda item |
 | [id](id.md) |  |
 | [individual_attendances](individual_attendances.md) | Collection of individual attendance records |
 | [individual_vote_type](individual_vote_type.md) | [en] Type of vote cast (yes, no, abstention, absent, etc |
@@ -108,7 +109,6 @@ Name: operations
 | [parent_type](parent_type.md) | Type of parent object (meeting, agenda, speech, affair) |
 | [parent_voting](parent_voting.md) | [en] The ID of the voting associated with the individual vote |
 | [position](position.md) |  |
-| [resolution](resolution.md) | [en] The resolutionor decision taken on this agenda item |
 | [resolution_type](resolution_type.md) | [en] Type of resolutiontaken on the agenda item |
 | [resolutions](resolutions.md) | Collection of resolutionrecords |
 | [result](result.md) |  |
