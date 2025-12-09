@@ -44,7 +44,7 @@ jobs:
             linkml-convert -s ech-0293_operations/input/schema.yaml -t json "$yaml_file" > "ech-0293_operations/output/${base_name}.json" || echo "Warning: Could not convert $yaml_file to JSON"
           done
 
-      - name: Convert data.yaml to data.ttl
+      - name: Convert all data_*.yaml to data_*.ttl
         continue-on-error: true
         run: |
           mkdir -p ech-0293_operations/output
