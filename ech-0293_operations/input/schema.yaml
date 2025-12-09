@@ -123,7 +123,7 @@ classes:
       - landing_page
       - agenda_item_category
       - parent_agenda_item
-      - resolution
+      - has_resolution
       - datetime_updated
       - datetime_created
 
@@ -548,7 +548,7 @@ slots:
       [de] Wenn erforderlich, baut dieser Slot eine Hierarchie von Tagesordnungspunkten auf.
     range: string
 
-  resolution:
+  has_resolution:
     description: |
       [en] The resolutionor decision taken on this agenda item.
       [de] Die Resolution oder Entscheidung zu diesem Traktandum.
