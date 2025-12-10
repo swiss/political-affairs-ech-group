@@ -28,6 +28,7 @@
 * https://amtsblatt.tg.ch/ - TG
 * https://www.vd.ch/cha/bic/publications-de-letat/feuille-des-avis-officiels-fao - VD
 * https://www.ur.ch/amtsblatt - UR
+* https://www.zhlaw.ch/ – ZH (nicht offiziell)
 
 ## Plattformen
 * https://www.omnius.ch/
