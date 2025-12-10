@@ -35,12 +35,12 @@
             act:language "en" ;
             act:native true ] ;
     act:name [ a act:Name ;
-            act:nameType "callName" ;
-            act:value "Douglas" ],
-        [ a act:Name ;
             act:nameType "officialLastName" ;
             act:validFrom "1952-03-11"^^xsd:date ;
-            act:value "Adams" ] ;
+            act:value "Adams" ],
+        [ a act:Name ;
+            act:nameType "callName" ;
+            act:value "Douglas" ] ;
     act:occupation [ a act:Occupation ;
             act:active false ;
             act:paid true ;

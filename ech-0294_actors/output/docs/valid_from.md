@@ -17,12 +17,12 @@ Alias: valid_from
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Validity](Validity.md) |  |  no  |
-| [Occupation](Occupation.md) |  |  no  |
-| [Gender](Gender.md) |  |  no  |
-| [ElectoralDistrict](ElectoralDistrict.md) |  |  no  |
 | [Citizenship](Citizenship.md) |  |  no  |
+| [ElectoralDistrict](ElectoralDistrict.md) |  |  no  |
+| [Occupation](Occupation.md) |  |  no  |
+| [Validity](Validity.md) |  |  no  |
 | [Name](Name.md) |  |  no  |
+| [Gender](Gender.md) |  |  no  |
 
 
 
