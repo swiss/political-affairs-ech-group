@@ -4,7 +4,7 @@
 id: fedlex:container               
 works:
   - id: fedlex:dl/2024/65             # ≠ cons; fga/2025/3178  causes ambiguity
-    work_type: dl                     # draft legislation in ELI-DL vocabulary, bill in AkomaNtoso vocabulary
+    work_types: dl                    # draft legislation in ELI-DL vocabulary, bill in AkomaNtoso vocabulary; check ELI/akoma ntoso for equivalent to "preliminary draft"
     dates:
        - xdate: 2025-10-29
          date_type: publication       # mandatory: First publication in any language
@@ -13,14 +13,16 @@ works:
     expressions:
       - id: fedlex:dl/2024/65/de
         language: de                  # language currently                    : `eli/dl/proj/2024/65/cons_1/doc_4/de`
-        title: Vorentwurf des Bundesgesetzes über Kommunikationsplattformen und Suchmaschinen (VE-KomPG)
+        title: Bundesgesetz über Kommunikationsplattformen und Suchmaschinen
+        abbreviation: VE-KomPG # optional, name tbd
         manifestations:
           - id: fedlex:dl/2024/65/de/pdf
             format: pdf               # only PDF version available currently  : `eli/dl/proj/2024/65/cons_1/doc_4/de/pdf-a/`
             url: https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/fedlex-data-admin-ch-eli-dl-proj-2024-65-cons_1-doc_4-de-pdf-a.pdf
       - id: fedlex:dl/2024/65/fr
         language: fr
-        title: Avant-projet - Loi fédérale sur les plateformes de communication et les moteurs de recherche (LPCom)
+        title: Loi fédérale sur les plateformes de communication et les moteurs de recherche
+        abbreviation: LPCom # optional, name tbd
         manifestations:
           - id: fedlex:dl/2024/65/fr/pdf
             format: pdf 
