@@ -6,6 +6,9 @@
     - https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/data_fedlex%3Adl_2024_65.yaml
 - Timeline: Dokumentstandard Draft realistisch bis Mitte 2026
 - Nächste Sitzung: weitere Beispiele durchgehen
+- To dos:
+    - weitere Beispiele aufbereiten
+    - Martin: Dokumenttypen ELI und Akoma Ntoso recherchieren für Orientierung
 
 ## Meeting Notes 17 November 2025
 
