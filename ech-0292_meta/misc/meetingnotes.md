@@ -1,3 +1,8 @@
+## Meeting Notes 15 Dezember 2025
+
+- Beispiele: https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0292_meta/input
+
+
 ## Meeting Notes 17 November 2025
 
 - [Liste](https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=1490648211#gid=1490648211)
