@@ -3,7 +3,7 @@
 id: fedlex:container
 works:
   - id: fedlex:cons/2024/65
-    work_type: explanatory report (TBD)
+    work_type: explanatory report # tbd, cf. akoma ntoso/ eli
     dates:
        - xdate: 2025-10-29
          date_type: publication
@@ -12,7 +12,8 @@ works:
     expressions:
       - id: fedlex:cons/2024/65/de
         language: de
-        title: Vorentwurf des Bundesgesetzes über Kommunikationsplattformen und Suchmaschinen (VE-KomPG) – Erläuternder Bericht zur Eröffnung des Vernehmlassungsverfahrens
+        title: Vorentwurf des Bundesgesetzes über Kommunikationsplattformen und Suchmaschinen (VE-KomPG)
+        subtitle: Erläuternder Bericht zur Eröffnung des Vernehmlassungsverfahrens
         manifestations:
           - id: fedlex:cons/2024/65/de/pdf
             format: pdf
@@ -20,7 +21,8 @@ works:
    expressions:
       - id: fedlex:cons/2024/65/fr
         language: fr
-        title: Avant-projet de loi fédérale sur les plateformes de communication et les moteurs de recherche (AP-LPCom) – Rapport explicatif en vue de l’ouverture de la procédure de consultation
+        title: Avant-projet de loi fédérale sur les plateformes de communication et les moteurs de recherche (AP-LPCom)
+        subtitle: Rapport explicatif en vue de l’ouverture de la procédure de consultation
         manifestations:
           - id: fedlex:cons/2024/65/fr/pdf
             format: pdf
@@ -28,7 +30,8 @@ works:
     expressions:
       - id: fedlex:cons/2024/65/it
         language: it
-        title: Avamprogetto della legge federale sulle piattaforme di comunicazione e i motori di ricerca (AP-LPCom) – Rapporto esplicativo per l’avvio della procedura di consultazione
+        title: Avamprogetto della legge federale sulle piattaforme di comunicazione e i motori di ricerca (AP-LPCom)
+        subtitle: Rapporto esplicativo per l’avvio della procedura di consultazione
         manifestations:
           - id: fedlex:cons/2024/65/it/pdf
             format: pdf
