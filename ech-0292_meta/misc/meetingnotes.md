@@ -1,7 +1,11 @@
 ## Meeting Notes 15 Dezember 2025
 
 - Beispiele: https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0292_meta/input
-
+- 2 Bsp durchgegangen
+    - https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/data_fedlex%3Acons_2024_65.yaml
+    - https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/data_fedlex%3Adl_2024_65.yaml
+- Timeline: Dokumentstandard Draft realistisch bis Mitte 2026
+- Nächste Sitzung: weitere Beispiele durchgehen
 
 ## Meeting Notes 17 November 2025
 
