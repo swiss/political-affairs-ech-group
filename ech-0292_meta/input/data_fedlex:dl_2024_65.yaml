@@ -12,7 +12,7 @@ works:
          date_type: last_update       # if any
     expressions:
       - id: fedlex:dl/2024/65/de
-        language: de                  # language currently                    : `eli/dl/proj/2024/65/cons_1/doc_4/de`
+        language: de                  # language                              : `eli/dl/proj/2024/65/cons_1/doc_4/de`
         title: Bundesgesetz über Kommunikationsplattformen und Suchmaschinen
         abbreviation: VE-KomPG # optional, name tbd
         manifestations:
