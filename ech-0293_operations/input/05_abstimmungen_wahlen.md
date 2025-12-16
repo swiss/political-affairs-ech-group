@@ -69,7 +69,7 @@ Das Feld **procedure** beschreibt die Art der Durchführung:
 - **electronic**: Elektronische Abstimmung (häufig auf Bundesebene und Kantonsebene)
 - **roll_call**: Namentliche Abstimmung mit Namensaufruf
   
-\`rgb(9, 105, 218)`[Nicole: Die folgenden Abstimmungstypen haben wir vergessen]\
+***[Nicole: Die folgenden Abstimmungstypen haben wir vergessen]***
 - **remote_voting**: Externe Stimmabgabe bei Krisen (Ratsmitglieder geben ihre Stimme dem Parlamentspräsidium im Vorfeld des Sitzungstags bekannt. Die extern abgegebenen Stimmen werden gleichzeitig mit der im Rat laufenden Abstimmung erfasst.
 - **circulation_voting**: Zirkulationsverfahren bei Krisen (Das Parlamentspräsidium führt die Abstimmung im Zirkulationsverfahren durch und informiert über das Ergebnis)
 - **virtual_voting**: Stimmabgabe an virtuellen Sitzungen in Krisenfällen.
@@ -158,8 +158,8 @@ Das Feld **quorum** definiert die Mindestanzahl anwesender Mitglieder für die B
 **Beispiel:** Ein Parlament mit 200 Mitgliedern ist beschlussfähig, wenn mindestens 100 Mitglieder anwesend sind (quorum: 100).
 
 ## Namentliche Abstimmungen
-
-Das Feld **is_nominal** zeigt an, ob es sich um eine namentliche Abstimmung handelt: [Nicole: "nominal" ist in diesem Zusammenhang unüblich - besser "named_vote" oder "is_named"]
+***[Nicole: "nominal" ist in diesem Zusammenhang unüblich - besser "named_vote" oder "is_named"]***
+Das Feld **is_nominal** zeigt an, ob es sich um eine namentliche Abstimmung handelt: 
 
 - **true**: Die Einzelstimmen werden erfasst und publiziert
 - **false**: Nur das Gesamtergebnis wird erfasst
@@ -220,6 +220,8 @@ Die stimmende Person wird über das Feld **person_id** referenziert. Diese ID en
 Zusätzlich können weitere Identifikationsdaten erfasst werden:
 - **person_name**: Name der Person (für schnellen Zugriff)
 - **person_number**: Interne Nummer (z.B. Mandatsnummer)
+- **person_political_group**: Fraktionszugehörigkeit
+- **person_party**: Parteizugehörigkeit
 
 ## Arten von Stimmen
 
@@ -228,22 +230,22 @@ Das Feld **vote** erfasst die Art der Stimmabgabe:
 ### yes
 Ja-Stimme (Zustimmung)
 
-**Bedeutung:** Die Person stimmt der Vorlage/dem Antrag zu
+**Bedeutung:** Die Person stimmt der Vorlage/dem Antrag zu.
 
 ### no
 Nein-Stimme (Ablehnung)
 
-**Bedeutung:** Die Person lehnt die Vorlage/den Antrag ab
+**Bedeutung:** Die Person lehnt die Vorlage/den Antrag ab.
 
 ### abstention
 Enthaltung
 
-**Bedeutung:** Die Person nimmt an der Abstimmung teil, enthält sich aber der Stimme
+**Bedeutung:** Die Person nimmt an der Abstimmung teil, enthält sich aber der Stimme.
 
 ### absent
-Abwesend
+Nicht entschuldigt abwesend.
 
-**Bedeutung:** Die Person war zum Zeitpunkt der Abstimmung nicht anwesend
+**Bedeutung:** Die Person war zum Zeitpunkt der Abstimmung nicht anwesend.
 
 **Gründe für Abwesenheit:**
 - Krankheit oder Unfall
@@ -251,18 +253,18 @@ Abwesend
 - Ausstand (bei Interessenkonflikt)
 
 ### excused
-Entschuldigt abwesend
+Entschuldigt abwesend.
 
-**Bedeutung:** Die Person war abwesend, aber ordnungsgemäss entschuldigt
+**Bedeutung:** Die Person war abwesend, aber ordnungsgemäss entschuldigt.
 
 **Unterschied zu absent:**
-- **excused**: Vorherige Meldung und Genehmigung
-- **absent**: Unentschuldigte Abwesenheit
+- **excused**: Vorherige Meldung und Genehmigung.
+- **absent**: Unentschuldigte Abwesenheit.
 
 ### did_not_vote
-Hat nicht abgestimmt
+Hat nicht abgestimmt.
 
-**Bedeutung:** Die Person war anwesend, hat aber nicht abgestimmt
+**Bedeutung:** Die Person war anwesend, hat aber nicht abgestimmt ***Nicole: Dieses Feld scheint mir überflüssig. Wie wollte man die Anwesenden denn zählen, wenn sie nicht abstimmen – wer sollte sie zählen? Mit "absent" ist dieser Fall meiner Meinung nach abgedeckt.***
 
 **Unterschied zu abstention:**
 - **abstention**: Bewusste Enthaltung (wird als aktive Handlung erfasst)
