@@ -26,8 +26,8 @@ Alias: state_name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
+| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
 
 
 

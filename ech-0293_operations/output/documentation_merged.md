@@ -3668,20 +3668,20 @@ ToDo: Nicole
 
 # Abstimmungen und Wahlen
 
-Parlamentarische Entscheidungen erfolgen durch Abstimmungen über Sachfragen und Wahlen von Personen. Der Standard unterscheidet diese beiden Mechanismen klar und erfasst bei offenen Verfahren auch das individuelle Stimmverhalten der Parlamentsmitglieder.
+Parlamentarische Beschlussfassungen erfolgen entweder durch Abstimmungen über Sachfragen oder durch Wahlen von Personen. Der Standard unterscheidet diese beiden Mechanismen klar und erfasst bei offenen Verfahren zudem das individuelle Stimm- und Wahlverhalten jedes Parlamentsmitglieds. Parlamentspräsidentinnen oder Parlamentspräsidenten nehmen an Abstimmungen grundsätzlich nicht teil; sie stimmen nur bei Wahlen mit. Bei Abstimmungen mit Stimmengleichstand fällen sie den Stichentscheid.
 
 ## Voting (Abstimmung)
 
 ## Zweck der Entität
 
-Voting erfasst den Abstimmungsprozess und das Ergebnis einer formalen Entscheidung im Parlament. Die Entität dokumentiert sowohl das Verfahren (wie wurde abgestimmt) als auch das Resultat (mit welchem Stimmenverhältnis).
+"Voting" erfasst den Abstimmungsprozess und das Ergebnis einer formalen Entscheidung im Parlament. Die Entität dokumentiert sowohl den Abstimmungsgegenstand (Frage), als auch das Verfahren (wie wurde abgestimmt) und das Resultat (mit welchem Stimmenverhältnis).
 
 ## Arten von Abstimmungen
 
 Der Standard unterscheidet verschiedene Abstimmungstypen über das Feld **voting_type**:
 
 ### intermediate
-Zwischenabstimmungen während der Beratung
+Zwischenabstimmungen während der Beratung.
 
 **Beispiele:**
 - Abstimmung über einen Änderungsantrag
@@ -3697,11 +3697,7 @@ Schlussabstimmungen über die gesamte Vorlage
 - Annahme oder Ablehnung einer Vorlage in ihrer Gesamtheit
 
 ### casting
-Stichentscheid bei Stimmengleichheit
-
-**Anwendung:**
-- Präsidialsystem: Der/die Vorsitzende gibt bei Gleichstand den Stichentscheid
-- In der Schweiz selten, da meist ungerade Anzahl von Mitgliedern
+Stichentscheid des/der Vorsitzenden bei Stimmengleichheit. Vorsitzende nehmen an Abstimmungen nicht teil, haben bei Stimmengleichheit jedoch den Stichentscheid. Bei geheimer Abstimmung gilt bei Stimmengleichheit der Antrag des vorberatenden Ratsorgans als angenommen.
 
 ### secret
 Geheime Abstimmungen
@@ -3735,8 +3731,11 @@ Das Feld **procedure** beschreibt die Art der Durchführung:
 ### Open procedures (Offene Abstimmungen)
 - **show_of_hands**: Handzeichen (traditionell)
 - **standing**: Aufstehen (seltener)
-- **electronic**: Elektronische Abstimmung (häufig auf Bundesebene)
+- **electronic**: Elektronische Abstimmung (häufig auf Bundesebene und Kantonsebene)
 - **roll_call**: Namentliche Abstimmung mit Namensaufruf
+$\color{red}{\textbf{Hinweis:}} $ **??**: Externe Stimmabgabe bei Krisen (Ratsmitglieder geben ihre Stimme dem Parlamentspräsidium im Vorfeld des Sitzungstags bekannt. Die extern abgegebenen Stimmen werden gleichzeitig mit der im Rat laufenden Abstimmung erfasst.
+$\color{red}{\textbf{Hinweis:}} $ **??**: Zirkulationsverfahren bei Krisen (Das Parlamentspräsidium führt die Abstimmung im Zirkulationsverfahren durch und informiert über das Ergebnis)
+$\color{red}{\textbf{Hinweis:}} $ **??**: Stimmabgabe an virtuellen Sitzungen in Krisenfällen
 
 ### Secret procedures (Geheime Abstimmungen)
 - **secret_ballot**: Geheime Wahl mit Stimmzetteln
@@ -4649,7 +4648,7 @@ Hat nicht abgestimmt
 - **did_not_vote**: Passive Nicht-Teilnahme
 
 ### president
-Präsident/in (stimmt nicht ab)
+Präsident/in (stimmt nicht ab, aber fällt bei Stimmengleichheit den Stichentscheid)
 
 **Bedeutung:** Die Person führt den Vorsitz und stimmt daher nicht ab
 
@@ -5103,6 +5102,16 @@ Geheime Wahl
 - Wahl des Bundesrats
 - Wahl der Bundesrichter
 - Wahl der Kommissionspräsidien
+
+**Beispiele auf Kantonsebene:**
+- Wahl der Parlamentspräsidentin oder des Parlamentspräsidenten
+- Wahl der Regierungspräsidentin oder des Regierungspräsidenten
+- Wahl der Präsidentinnen und Präsidenten der obersten kantonalen Gerichte
+- Wahl der Richterinnen und Richter
+- Wahl er Staatsschreiberin oder des Staatsschreibers
+- Wahl der Kommissionspräsidentinnen oder der Kommissionspräsidenten
+- Wahl idien
+- Wahl der Kommissions
 
 ### tacit
 Stille Wahl
