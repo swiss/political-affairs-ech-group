@@ -68,7 +68,8 @@ Das Feld **procedure** beschreibt die Art der Durchführung:
 - **standing**: Aufstehen (seltener)
 - **electronic**: Elektronische Abstimmung (häufig auf Bundesebene und Kantonsebene)
 - **roll_call**: Namentliche Abstimmung mit Namensaufruf
-[Nicole: Die folgenden Abstimmungstypen haben wir vergessen]
+  
+\`rgb(9, 105, 218)`[Nicole: Die folgenden Abstimmungstypen haben wir vergessen]\
 - **remote_voting**: Externe Stimmabgabe bei Krisen (Ratsmitglieder geben ihre Stimme dem Parlamentspräsidium im Vorfeld des Sitzungstags bekannt. Die extern abgegebenen Stimmen werden gleichzeitig mit der im Rat laufenden Abstimmung erfasst.
 - **circulation_voting**: Zirkulationsverfahren bei Krisen (Das Parlamentspräsidium führt die Abstimmung im Zirkulationsverfahren durch und informiert über das Ergebnis)
 - **virtual_voting**: Stimmabgabe an virtuellen Sitzungen in Krisenfällen.
