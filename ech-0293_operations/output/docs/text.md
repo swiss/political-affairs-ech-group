@@ -17,8 +17,8 @@ Alias: text
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MultilingualString](MultilingualString.md) | [en] A string that can contain text in multiple languages |  no  |
 | [TextSegment](TextSegment.md) | [en] A text segment such as cross-references or subtitles in meeting protocol... |  no  |
+| [MultilingualString](MultilingualString.md) | [en] A string that can contain text in multiple languages |  no  |
 | [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
 
 
