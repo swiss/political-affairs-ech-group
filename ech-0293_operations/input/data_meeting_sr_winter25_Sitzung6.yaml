@@ -29,20 +29,17 @@ meetings:
 
 
 agenaitems:
-    description: >-
-      [en] An agenda item of a meeting.
-      [de] Ein Traktandum einer Sitzung.  
       - id: 69905
       - meeting_id: ǂǂ30362e205369747a756e67202f2030392e31322e323032352d30383135
-      - type  #traktandum oder Traktandengruppen)
-      - datetime_begin_planned: "2025-12-19T09:15:00"
-      - datetime_begin_actual: "2025-12-19T09:20:00"
-      - number: 6
-      - position: 4
-      - actor_references # uses class defined in actors
-      - title: "Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen, um die Verzögerungen zu verstehen"
-      - affair_id: 24.4471
-      - actor_references:
+        type: traktandum
+        datetime_begin_planned: "2025-12-19T09:15:00"
+        datetime_begin_actual: "2025-12-19T09:20:00"
+        number: 6
+        position: 4
+        actor_references # uses class defined in actors
+        title: "Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen, um die Verzögerungen zu verstehen"
+        affair_id: 24.4471
+        actor_references:
         - type: group
           id: 2
           uri: https://politics.ld.admin.ch/council/S
@@ -52,21 +49,21 @@ agenaitems:
             - text: "Conseil d'Etat"
               language: "fr"
           role: responsable
-      - description #Untertitel, Traktandendetails
-      - state_id # enum planned, moved, closed etc.
-      - state_name # for other state descriptions
-      - landing_page: https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3
-      - category: agenda_item
-      - resolution # range "Resolution" 
-      - datetime_created: "2026-01-12T00:00:00+01:00"
-      - datetime_updated: "2026-01-12T00:00:00+01:00"
+        description #Untertitel, Traktandendetails
+        state_id # enum planned, moved, closed etc.
+        state_name # for other state descriptions
+        landing_page: https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3
+        category: agenda_item
+        resolution # range "Resolution" 
+        datetime_created: "2026-01-12T00:00:00+01:00"
+        datetime_updated: "2026-01-12T00:00:00+01:00"
 
 speeches:
       - id: 366631
-      - language: fr
-      - datetime_begin: "2025-12-19T09:20:00"
-      - datetime_end: "2025-12-19T09:25:00"
-      - actor_references:
+        language: fr
+        datetime_begin: "2025-12-19T09:20:00"
+        datetime_end: "2025-12-19T09:25:00"
+        actor_references:
         - type: person
           id: 10805
           uri: https://politics.ld.admin.ch/person/10805
@@ -96,6 +93,3 @@ speeches:
       - media_type: video
       - media_format: video/mp4
       - parent_agendaitem: 69905
-
-
-
