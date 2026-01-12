@@ -15,11 +15,11 @@ ops:340dcf932fb044dd8f8c5c943267fbcc a ops:Meeting ;
     ops:datetime_updated "2024-11-27T20:40:57+00:00"^^xsd:dateTime ;
     ops:meetingType <https://ch.paf.link/schema/operations/enum/meeting_type/session> ;
     ops:name [ a ops:MultilingualString ;
-            ops:language "de" ;
-            ops:text "Regierungssitzung vom 31. März 2021" ],
-        [ a ops:MultilingualString ;
             ops:language "fr" ;
-            ops:text "Séance du gouvernement du 31 mars 2021" ] ;
+            ops:text "Séance du gouvernement du 31 mars 2021" ],
+        [ a ops:MultilingualString ;
+            ops:language "de" ;
+            ops:text "Regierungssitzung vom 31. März 2021" ] ;
     ops:url [ a ops:MultilingualString ;
             ops:language "de" ;
             ops:text "https://www.rr.be.ch/de/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc" ],
