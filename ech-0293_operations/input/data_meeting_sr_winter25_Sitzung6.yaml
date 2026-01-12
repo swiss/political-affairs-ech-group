@@ -1,4 +1,6 @@
-Meeting:
+id: data_meeting_sr_winter25_Sitzung6
+
+meetings:
   - body_key: "CHE"
     id: parl:ǂǂ30362e205369747a756e67202f2030392e31322e323032352d30383135
     meeting_type: "meeting"
@@ -26,11 +28,11 @@ Meeting:
     datetime_updated: "2026-01-12T00:00:00+01:00"
 
 
-AgendaItem:
+agenaitems:
     description: >-
       [en] An agenda item of a meeting.
       [de] Ein Traktandum einer Sitzung.  
-      - id: parl: 69905
+      - id: 69905
       - meeting_id: ǂǂ30362e205369747a756e67202f2030392e31322e323032352d30383135
       - type  #traktandum oder Traktandengruppen)
       - datetime_begin_planned: "2025-12-19T09:15:00"
@@ -59,7 +61,7 @@ AgendaItem:
       - datetime_created: "2026-01-12T00:00:00+01:00"
       - datetime_updated: "2026-01-12T00:00:00+01:00"
 
-  Speech
+speeches:
       - id: 366631
       - language: fr
       - datetime_begin: "2025-12-19T09:20:00"
@@ -93,6 +95,7 @@ AgendaItem:
       - media_url: https://par-pcache.simplex.tv/content?externalid=366631
       - media_type: video
       - media_format: video/mp4
+      - parent_agendaitem: 69905
 
 
 
