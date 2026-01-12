@@ -26,12 +26,17 @@ Besprochen:
 ## 19.06.2025 ##
 - Arbeit direkt im Schema
 
-## 26.06.2025 ##
 
-Todo: 
+## 2026 ##
+
+Todo Alt
 
 - Abstimmungstypen - Wahl und Abstimmung unterschiedlich?
 - Handling Präsidium
 - Absolutes / Relatives Mehr
 - Rolle bei Abstimmung
 - Verknüpfung
+
+Todo Neu
+- Bestimmung Roles Actor für Legislatur, meeting, Agenda_item Siehe GroupReference und ActorReference: https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0294_actors/input/schema.yaml
+
