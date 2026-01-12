@@ -28,8 +28,8 @@ Alias: parent_meeting
 | --- | --- | --- |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
-| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
+| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 
 
 

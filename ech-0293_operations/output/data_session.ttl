@@ -27,11 +27,11 @@ ops:session_5207 a ops:Session ;
             ops:language "fr" ;
             ops:text "https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025" ],
         [ a ops:MultilingualString ;
-            ops:language "de" ;
-            ops:text "https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025" ],
-        [ a ops:MultilingualString ;
             ops:language "it" ;
-            ops:text "https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025" ] .
+            ops:text "https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025" ],
+        [ a ops:MultilingualString ;
+            ops:language "de" ;
+            ops:text "https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025" ] .
 
 ops:session_be_summer_2025 a ops:Session ;
     ops:body_key "BE" ;
