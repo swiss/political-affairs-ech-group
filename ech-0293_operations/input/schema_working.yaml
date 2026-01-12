@@ -117,8 +117,7 @@ classes:
       - date_time_actual
       - number # number (string, because roman literals etc.)
       - position # integer
-      - leading_actor_id # Federführendes Departement
-      - speaking_actor_id # Sprecher oder Departamentsvorsteher
+      - actor_references # uses class defined in actors
       - title
       - affair_id # the connection to the affairs (business items) of the agenda item
       - description #Untertitel, Traktandendetails
@@ -130,6 +129,7 @@ classes:
       - resolution # range "Resolution" 
       - updated_datetime
       - created_datetime
+
 
   JointDebate: 
     description: >-
