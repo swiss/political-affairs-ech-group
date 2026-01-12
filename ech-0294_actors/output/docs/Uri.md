@@ -44,8 +44,7 @@ URI: [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | xsd:anyURI |
+| self | act:uri |
 | native | act:uri |
-| close | schema:URL |
 
 

@@ -227,6 +227,8 @@ attributes:
     identifier: true
     domain_of:
     - Person
+    - PersonReference
+    - GroupReference
     required: true
   label:
     name: label
@@ -394,6 +396,8 @@ attributes:
     owner: Person
     domain_of:
     - Person
+    - PersonReference
+    - GroupReference
     range: string
     required: true
   label:

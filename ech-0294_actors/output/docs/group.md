@@ -1,11 +1,16 @@
 
 
-# Slot: id 
+# Slot: group 
+
+
+_Group or body the function applies to_
 
 
 
-URI: [act:id](https://ch.paf.link/schema/actors/id)
-Alias: id
+
+
+URI: [act:group](https://ch.paf.link/schema/actors/group)
+Alias: group
 
 <!-- no inheritance hierarchy -->
 
@@ -17,9 +22,7 @@ Alias: id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
 | [PersonReference](PersonReference.md) | Reference to a person acting in a specific role or function |  no  |
-| [GroupReference](GroupReference.md) | Reference to a group acting in a specific role |  no  |
 
 
 
@@ -40,13 +43,20 @@ Alias: id
 
 
 
+### Schema Source
+
+
+* from schema: https://ch.paf.link/schema/actors
+
+
+
 
 ## Mappings
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:id |
-| native | act:id |
+| self | act:group |
+| native | act:group |
 
 
 
@@ -55,12 +65,14 @@ Alias: id
 
 <details>
 ```yaml
-name: id
-alias: id
+name: group
+description: Group or body the function applies to
+from_schema: https://ch.paf.link/schema/actors
+rank: 1000
+alias: group
+owner: PersonReference
 domain_of:
-- Person
 - PersonReference
-- GroupReference
 range: string
 
 ```

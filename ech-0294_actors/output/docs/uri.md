@@ -1,11 +1,11 @@
 
 
-# Slot: id 
+# Slot: uri 
 
 
 
-URI: [act:id](https://ch.paf.link/schema/actors/id)
-Alias: id
+URI: [act:uri](https://ch.paf.link/schema/actors/uri)
+Alias: uri
 
 <!-- no inheritance hierarchy -->
 
@@ -17,9 +17,8 @@ Alias: id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
-| [PersonReference](PersonReference.md) | Reference to a person acting in a specific role or function |  no  |
 | [GroupReference](GroupReference.md) | Reference to a group acting in a specific role |  no  |
+| [PersonReference](PersonReference.md) | Reference to a person acting in a specific role or function |  no  |
 
 
 
@@ -45,8 +44,8 @@ Alias: id
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:id |
-| native | act:id |
+| self | act:uri |
+| native | act:uri |
 
 
 
@@ -55,10 +54,9 @@ Alias: id
 
 <details>
 ```yaml
-name: id
-alias: id
+name: uri
+alias: uri
 domain_of:
-- Person
 - PersonReference
 - GroupReference
 range: string

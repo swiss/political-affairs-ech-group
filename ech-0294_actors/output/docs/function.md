@@ -1,11 +1,16 @@
 
 
-# Slot: id 
+# Slot: function 
+
+
+_Function of the person (e.g. president, member)_
 
 
 
-URI: [act:id](https://ch.paf.link/schema/actors/id)
-Alias: id
+
+
+URI: [act:function](https://ch.paf.link/schema/actors/function)
+Alias: function
 
 <!-- no inheritance hierarchy -->
 
@@ -17,9 +22,7 @@ Alias: id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
 | [PersonReference](PersonReference.md) | Reference to a person acting in a specific role or function |  no  |
-| [GroupReference](GroupReference.md) | Reference to a group acting in a specific role |  no  |
 
 
 
@@ -40,13 +43,20 @@ Alias: id
 
 
 
+### Schema Source
+
+
+* from schema: https://ch.paf.link/schema/actors
+
+
+
 
 ## Mappings
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:id |
-| native | act:id |
+| self | act:function |
+| native | act:function |
 
 
 
@@ -55,12 +65,14 @@ Alias: id
 
 <details>
 ```yaml
-name: id
-alias: id
+name: function
+description: Function of the person (e.g. president, member)
+from_schema: https://ch.paf.link/schema/actors
+rank: 1000
+alias: function
+owner: PersonReference
 domain_of:
-- Person
 - PersonReference
-- GroupReference
 range: string
 
 ```

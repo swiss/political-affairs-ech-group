@@ -15,9 +15,11 @@ Name: PersonSchema
 | [Address](Address.md) |  |
 | [Contact](Contact.md) |  |
 | [ElectoralDistrict](ElectoralDistrict.md) |  |
+| [GroupReference](GroupReference.md) | Reference to a group acting in a specific role |
 | [LanguageProficiency](LanguageProficiency.md) |  |
 | [Name](Name.md) |  |
 | [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |
+| [PersonReference](PersonReference.md) | Reference to a person acting in a specific role or function |
 | [Training](Training.md) |  |
 | [Validity](Validity.md) |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Citizenship](Citizenship.md) |  |
@@ -45,12 +47,15 @@ Name: PersonSchema
 | [electoral_district](electoral_district.md) |  |
 | [enterprise](enterprise.md) |  |
 | [enterprise_uid](enterprise_uid.md) |  |
+| [function](function.md) | Function of the person (e |
 | [genders](genders.md) |  |
+| [group](group.md) | Group or body the function applies to |
 | [id](id.md) | Wikidata-ID preferred |
 | [label](label.md) | Display name of the person |
 | [label_long](label_long.md) | Extended display name (with title, etc |
 | [language](language.md) | ISO language code |
 | [languages](languages.md) |  |
+| [name](name.md) | Full name of the person |
 | [name_type](name_type.md) | categories of name types |
 | [names](names.md) |  |
 | [native](native.md) | proficient language |
@@ -61,10 +66,12 @@ Name: PersonSchema
 | [postal_code](postal_code.md) |  |
 | [postal_locality](postal_locality.md) |  |
 | [pronouns](pronouns.md) | Pronouns used by the person |
+| [role](role.md) | Role of the person (e |
 | [street_address](street_address.md) |  |
 | [training_isco19_code](training_isco19_code.md) |  |
 | [trainings](trainings.md) |  |
 | [type](type.md) |  |
+| [uri](uri.md) | Globally valid identifier (eCH-0285 compatible) |
 | [valid_until](valid_until.md) |  |
 | [valid_from](valid_from.md) |  |
 | [valid_until](valid_until.md) |  |
