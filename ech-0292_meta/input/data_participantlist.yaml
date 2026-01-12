@@ -1,0 +1,26 @@
+
+id: fedlex:container               
+works:
+  - id: 
+    work_types: 
+    dates:
+       - xdate: 
+         date_type: 
+       - xdate:     
+         date_type: 
+    expressions:
+      - id: 
+        title: 
+        abbreviation: 
+        manifestations:
+          - id:
+            format: 
+            url: 
+      - id: 
+        language: 
+        title: 
+        abbreviation: 
+        manifestations:
+          - id: 
+            format:  
+            url: 
