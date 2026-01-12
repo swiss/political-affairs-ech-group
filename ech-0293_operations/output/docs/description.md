@@ -17,8 +17,8 @@ Alias: description
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
 | [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |  no  |
+| [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 
 

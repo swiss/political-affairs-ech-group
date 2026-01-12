@@ -17,21 +17,21 @@ ops:session_5207 a ops:Session ;
             ops:language "fr" ;
             ops:text "Session de printemps 2025" ],
         [ a ops:MultilingualString ;
-            ops:language "de" ;
-            ops:text "Frühjahrssession 2025" ],
-        [ a ops:MultilingualString ;
             ops:language "it" ;
-            ops:text "Sessione primaverile 2025" ] ;
+            ops:text "Sessione primaverile 2025" ],
+        [ a ops:MultilingualString ;
+            ops:language "de" ;
+            ops:text "Frühjahrssession 2025" ] ;
     ops:parent_legislature "ops:legislature_51" ;
     ops:url [ a ops:MultilingualString ;
+            ops:language "fr" ;
+            ops:text "https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025" ],
+        [ a ops:MultilingualString ;
             ops:language "it" ;
             ops:text "https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025" ],
         [ a ops:MultilingualString ;
             ops:language "de" ;
-            ops:text "https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025" ],
-        [ a ops:MultilingualString ;
-            ops:language "fr" ;
-            ops:text "https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025" ] .
+            ops:text "https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025" ] .
 
 ops:session_be_summer_2025 a ops:Session ;
     ops:body_key "BE" ;
@@ -40,17 +40,17 @@ ops:session_be_summer_2025 a ops:Session ;
     ops:datetime_created "2025-04-25T11:10:24+00:00"^^xsd:dateTime ;
     ops:datetime_updated "2025-05-19T01:06:44+00:00"^^xsd:dateTime ;
     ops:name [ a ops:MultilingualString ;
-            ops:language "fr" ;
-            ops:text "Session d'été 2025" ],
-        [ a ops:MultilingualString ;
             ops:language "de" ;
-            ops:text "Sommersession 2025" ] ;
+            ops:text "Sommersession 2025" ],
+        [ a ops:MultilingualString ;
+            ops:language "fr" ;
+            ops:text "Session d'été 2025" ] ;
     ops:url [ a ops:MultilingualString ;
-            ops:language "fr" ;
-            ops:text "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8" ],
-        [ a ops:MultilingualString ;
             ops:language "de" ;
-            ops:text "https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8" ] .
+            ops:text "https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8" ],
+        [ a ops:MultilingualString ;
+            ops:language "fr" ;
+            ops:text "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8" ] .
 
 ops:session_gl_landrat_2025_02_26 a ops:Session ;
     ops:body_key "GL" ;
