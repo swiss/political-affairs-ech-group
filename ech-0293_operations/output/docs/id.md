@@ -17,20 +17,20 @@ Alias: id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
-| [IndividualAttendance](IndividualAttendance.md) | [en] Individual attendance record for a specific person |  no  |
 | [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
-| [TextSegment](TextSegment.md) | [en] A text segment such as cross-references or subtitles in meeting protocol... |  no  |
-| [Attendance](Attendance.md) | [en] Attendance record for a meeting or voting session |  no  |
 | [IndividualVote](IndividualVote.md) | [en] An individual vote cast by a member during a voting procedure |  no  |
-| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
-| [Container](Container.md) |  |  no  |
-| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
-| [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |  no  |
-| [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |  no  |
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
+| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
+| [Attendance](Attendance.md) | [en] Attendance record for a meeting or voting session |  no  |
+| [TextSegment](TextSegment.md) | [en] A text segment such as cross-references or subtitles in meeting protocol... |  no  |
+| [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |  no  |
+| [Container](Container.md) |  |  no  |
+| [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |  no  |
+| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
+| [IndividualAttendance](IndividualAttendance.md) | [en] Individual attendance record for a specific person |  no  |
 
 
 
