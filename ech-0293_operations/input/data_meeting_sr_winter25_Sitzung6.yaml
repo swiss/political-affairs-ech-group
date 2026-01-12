@@ -1,5 +1,4 @@
-id: 69985
-meetings:
+Meeting:
   - body_key: "CHE"
     id: parl:ǂǂ30362e205369747a756e67202f2030392e31322e323032352d30383135
     meeting_type: "meeting"
@@ -25,3 +24,56 @@ meetings:
     datetime_begin: "2025-12-19T08:15:00"
     datetime_created: "2026-01-12T00:00:00+01:00"
     datetime_updated: "2026-01-12T00:00:00+01:00"
+
+
+AgendaItem:
+    description: >-
+      [en] An agenda item of a meeting.
+      [de] Ein Traktandum einer Sitzung.  
+      - id: parl: 69905
+      - meeting_id: ǂǂ30362e205369747a756e67202f2030392e31322e323032352d30383135
+      - type  #traktandum oder Traktandengruppen)
+      - datetime_begin_planned: "2025-12-19T09:15:00"
+      - datetime_begin_actual: "2025-12-19T09:20:00"
+      - number: 6
+      - position: 4
+      - actor_references # uses class defined in actors
+      - title: "Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen, um die Verzögerungen zu verstehen"
+      - affair_id: 24.4471
+      - actor_references:
+        - type: group
+          id: 2
+          uri: https://politics.ld.admin.ch/council/S
+          name:
+            - text: "Ständerat"
+              language: "de"
+            - text: "Conseil d'Etat"
+              language: "fr"
+          role: responsable
+      - description #Untertitel, Traktandendetails
+      - state_id # enum planned, moved, closed etc.
+      - state_name # for other state descriptions
+      - landing_page: https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3
+      - category: agenda_item
+      - resolution # range "Resolution" 
+      - datetime_created: "2026-01-12T00:00:00+01:00"
+       - datetime_updated: "2026-01-12T00:00:00+01:00"
+
+  Speech
+      - id: parl: 3
+      - language # (de/fr/mixed)
+      - start
+      - datetime_begin # Datum und Zeit Wortmeldung
+      - datetime_end # Datum und Zeit Wortmeldung
+      - actor_fullname
+      - actor_id # Check Link mit Politische Akteure & Gremien
+      - role # (Kommissionsprecher|im Namen der Kommission) # Offener String
+      - text
+      - text_format # (text, html, html_with_timestamps per word) # Unterscheidung von HTML und HTML mit Timestampes?
+      - text_type #Rohfassung, Bearbeitet (Wird wahrscheinlich nur immer bearbeitete Fassung publiziert)
+      - landing_page # Link zu publizierte Fassung
+      - media_url
+      - media_type (audio|video)
+      - media_format: mime-type # wenn bekannt
+
+
