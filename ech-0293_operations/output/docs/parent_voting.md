@@ -26,8 +26,8 @@ Alias: parent_voting
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [IndividualVote](IndividualVote.md) | [en] An individual vote cast by a member during a voting procedure |  no  |
 | [IndividualAttendance](IndividualAttendance.md) | [en] Individual attendance record for a specific person |  no  |
+| [IndividualVote](IndividualVote.md) | [en] An individual vote cast by a member during a voting procedure |  no  |
 
 
 
