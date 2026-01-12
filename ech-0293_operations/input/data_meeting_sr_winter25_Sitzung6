@@ -1,0 +1,25 @@
+id: 69985
+meetings:
+  - body_key: "CHE"
+    id: parl:ǂǂ30362e205369747a756e67202f2030392e31322e323032352d30383135
+    meeting_type: "meeting"
+    name:
+      - text: "Sechste Sitzung"
+        language: "de"
+      - text: "Sixième séance"
+        language: "fr"
+    url:
+      - text: "https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin#Default=%7B%22k%22%3A%22PdSubjectCouncil%3D%5C%222%5C%22%20AND%20PdSubjectSession%3D%5C%225211%5C%22%22%2C%22o%22%3A%5B%7B%22p%22%3A%22PdSubjectSortOrder%22%2C%22d%22%3A1%7D%5D%2C%22r%22%3A%5B%7B%22n%22%3A%22PdSubjectMeetingName%22%2C%22t%22%3A%5B%22%5C%22%C7%82%C7%8230362e205369747a756e67202f2030392e31322e323032352d30383135%5C%22%22%5D%2C%22o%22%3A%22and%22%2C%22k%22%3Afalse%2C%22m%22%3Anull%7D%5D%7D"
+        language: "de"
+    actor_references:
+      - id: 2
+        name:
+          - text: "Ständerat"
+            language: "de"
+          - text: "Conseil d'Etat"
+            language: "fr"
+        role: responsable
+    
+    datetime_begin: "2025-12-19T08:15:00"
+    datetime_created: "2026-01-12T00:00:00+01:00"
+    datetime_updated: "2026-01-12T00:00:00+01:00"
