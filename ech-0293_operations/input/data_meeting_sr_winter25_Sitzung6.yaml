@@ -13,7 +13,8 @@ meetings:
         language: "de"
     actor_references:
       - type: group
-      - id: 2
+        id: 2
+        uri: https://politics.ld.admin.ch/council/S
         name:
           - text: "Ständerat"
             language: "de"
