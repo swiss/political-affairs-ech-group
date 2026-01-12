@@ -86,6 +86,41 @@ classes:
         range: ElectoralDistrict
         slot_uri: act:electoralDistrict
 
+  PersonReference:
+    description: Reference to a person acting in a specific role or function
+    attributes:
+      id:
+        identifier: true
+        required: true
+        description: Internal system identifier
+      uri:
+        description: Globally valid identifier (eCH-0285 compatible)
+      name:
+        required: true
+        description: Full name of the person
+      role:
+        required: true
+        description: Role of the person (e.g. speaker, author, holder, leading)
+      function:
+        description: Function of the person (e.g. president, member)
+      group:
+        description: Group or body the function applies to
+
+  GroupReference:
+    description: Reference to a group acting in a specific role
+    attributes:
+      id:
+        identifier: true
+        required: true
+        description: Internal system identifier
+      uri:
+        description: Globally valid identifier (eCH-0285 compatible)
+      name:
+        required: true
+        description: Group name (can be multilingual)
+      role:
+        required: true
+        description: Role of the group (e.g. speaker, author, holder, leading)
   Name:
     attributes:
       name_type:
