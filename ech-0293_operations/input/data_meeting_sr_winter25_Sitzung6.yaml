@@ -60,15 +60,26 @@ AgendaItem:
        - datetime_updated: "2026-01-12T00:00:00+01:00"
 
   Speech
-      - id: parl: 3
-      - language # (de/fr/mixed)
+      - id: votum3
+      - language: de
       - start
-      - datetime_begin # Datum und Zeit Wortmeldung
-      - datetime_end # Datum und Zeit Wortmeldung
-      - actor_fullname
-      - actor_id # Check Link mit Politische Akteure & Gremien
-      - role # (Kommissionsprecher|im Namen der Kommission) # Offener String
-      - text
+      - datetime_begin: "2025-12-19T09:20:00"
+      - datetime_end: "2025-12-19T09:25:00"
+      - actor_references:
+        - type: person
+          id: 10805
+          uri: https://politics.ld.admin.ch/person/10805
+          name: Pascal Broulis
+          role: speaker
+          function: 
+            - text: "Ständerat Waadt"
+              language: "de"
+            - text: "Conseil d'Etat Vaud"
+              language: "fr"
+      - text: "Je remercie la rapporteuse pour son rapport exhaustif. J'ai également lu avec attention les différents commentaires qui ont été effectués sur mon postulat. Cela reste un postulat, ce n'est pas une motion.
+D'abord, je ne partage pas l'avis selon lequel ce postulat n'apporterait pas une valeur ajoutée. En effet, un "benchmark", à savoir un modèle chiffré de performance, permettrait de mieux comprendre les raisons des retards que notre pays rencontre en comparaison avec les principaux pays européens. À titre d'exemple, l'extension de la gare de Lausanne - on prend toujours le même exemple -, est prévue en 2038. C'est quand même incroyable, car notre pays n'est pas le seul à avoir un manque de surfaces propices aux constructions. À Berlin, le projet i2030 a pour but d'améliorer l'infrastructure ferroviaire dans sa région. À Paris, une métamorphose des transports publics est en cours, avec notamment sa première ligne de télécabine urbaine. En Autriche, le projet du tunnel de base du Brenner a commencé en 2011, et la fin des travaux est prévue pour 2032. Toujours en France, entre Toulouse et Castres, le projet d'autoroute A69 connaît un véritable feuilleton judiciaire. En Europe, un ambitieux projet de grand réseau TGV paneuropéen a été lancé. On voit que les projets de mobilité sont nombreux. Les bonnes et mauvaises pratiques devraient être examinées par nos autorités pour mieux entrevoir les projets de mobilité. De plus, le facteur, dans ce "benchmark", relatif au niveau des salaires pourrait facilement être pondéré pour que les résultats puissent être pleinement applicables à notre pays.
+J'ai été surpris de constater, dans l'avis du Conseil fédéral, que, dans le cadre de la planification et de la réalisation des projets, l'administration fédérale n'examinait pas d'autres exemples européens semblables. On comprend donc que mon postulat a du sens et qu'il apporterait une réelle plus-value dans le but d'identifier les bonnes ou mauvaises pratiques. Il permettrait également d'identifier des éléments qui devraient être changés dans nos lois, dans le but de remédier aux retards et aux coûts supplémentaires liés aux projets de mobilité, but que, je crois, nous partageons toutes et tous ; il en va aussi de la saine gestion des finances publiques.
+Ainsi, je vous recommande d'accepter mon postulat. Il permettrait d'avoir une comparaison non pas uniquement interne à la Suisse, mais bien à l'échelle internationale et de voir ce qui s'y passe.
       - text_format # (text, html, html_with_timestamps per word) # Unterscheidung von HTML und HTML mit Timestampes?
       - text_type #Rohfassung, Bearbeitet (Wird wahrscheinlich nur immer bearbeitete Fassung publiziert)
       - landing_page # Link zu publizierte Fassung
