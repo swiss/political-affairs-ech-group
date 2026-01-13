@@ -17,7 +17,7 @@ works:
           - id: fedlex:cons/2024/65/de/pdf
             format: pdf
             url: https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/dl/proj/2024/65/cons_1/doc_4/de/pdf-a/fedlex-data-admin-ch-eli-dl-proj-2024-65-cons_1-doc_4-de-pdf-a.pdf
-   expressions:
+    expressions:
       - id: fedlex:cons/2024/65/fr
         language: fr
         title: Avant-projet de loi fédérale sur les plateformes de communication et les moteurs de recherche (AP-LPCom)

@@ -119,7 +119,7 @@ Mögliche Namen der Subgruppe:
   - Referenden und Volksinitiativen (Ablaufen und Inkrafttreten)
   - [FRBR Model]([url](https://www.loc.gov/catdir/cpso/frbreng.pdf)): Work (z.b. Geschäft) - Expression (e.g. DE/FR/EN) - Manifestation (e.g. PDF) (- Item)
 
-- Chronologie / Prozesse
+- Chronologie / Prozesse (Activities?)
   - Räte sehr unterschiedlich (teils einfacher)
   - Übergeben und Abschliessen (unterschiedliche Semantik in Kantonen)
   - Vergleichbarkeit über Kantone und föderale Stufen hinweg (Scope: Parlamente)
