@@ -180,7 +180,8 @@ Voting
   └─ ...
 ```
 
-Beispiel
+**Beispiel:** Namensliste in Akkordeon https://www.tagblatt.gr.be.ch/shareparl?agendaItemUid=e65d81c90d1d43deb19ef078f7e363f3&segmentType=vote&unitName=default&scroll=true&autoplay=false 
+
 
 ## Beschreibung und Dokumentation
 
