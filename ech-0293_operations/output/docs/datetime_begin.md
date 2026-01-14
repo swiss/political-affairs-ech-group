@@ -26,10 +26,10 @@ Alias: datetime_begin
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
-| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 | [Attendance](Attendance.md) | [en] Attendance record for a meeting or voting session |  no  |
+| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 | [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
+| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 
 
 
