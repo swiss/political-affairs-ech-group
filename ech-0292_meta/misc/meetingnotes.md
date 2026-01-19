@@ -1,8 +1,11 @@
 ## Meeting Notes 19 Januar 2026
 - [Design Principles](https://github.com/swiss/political-affairs-ech-group/blob/main/docs/common/design_principles.md) (review)
   - Grundsätzlich in der Obhut von Metadata
-- Beispiele zusammen Anschauen
-- Ziel: Abschluss Dokumente definieren
+- Beispiele zusammen Anschauen: neu Beisplie noch ausstehend, werden auf nächsten Termin umgesetzt
+- Referenzobjekt als Beispiel erstellt: https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/document_reference_example.yaml
+- Todo:
+  - Dokumentieren damit man bei den anderen Sub-Gruppen die Typen (Kategorien von Dokumenten) einverlangen kann.
+- Ziel: Abschluss von Work geplant für April geplant.
 
 ## Meeting Notes 15 Dezember 2025
 
