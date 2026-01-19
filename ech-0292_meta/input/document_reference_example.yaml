@@ -3,7 +3,7 @@ agenda_item:
         - type: votum #  categories of different document types (definiertes enum in charge of the metagroup)
           id: 69905/votum3 #internal db id
           uri: https://ld.parlament.ch/documents/amtliches-bulletin-die-verhandlungen/69905/votum3 # Reference to the FRBR Work (this is not directly the document)
-          name: # angezeigter name welcher im use-case (agenda_item) sinn macht 
+          title: # angezeigter name welcher im use-case (agenda_item) sinn macht 
             - text: "Votum von Broulis Pascal"
               language: "de"
             - text: "Intevention de Broulis Pascal"
