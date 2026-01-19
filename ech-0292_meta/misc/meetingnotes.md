@@ -1,3 +1,8 @@
+## Meeting Notes 19 Januar 2026
+- Design Principles (review)
+- Beispiele zusammen Anschauen
+- Ziel: Abschluss Dokumente definieren
+
 ## Meeting Notes 15 Dezember 2025
 
 - Beispiele: https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0292_meta/input
