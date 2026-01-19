@@ -15,7 +15,7 @@ default_range: string
   
 classes:
   
-  Work:
+  Work: # only used if there are still documents, where ever possible the data should directly be structured in the data model
     slots:
       - id
       - work_type
