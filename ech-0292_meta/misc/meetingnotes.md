@@ -1,5 +1,6 @@
 ## Meeting Notes 19 Januar 2026
-- Design Principles (review)
+- [Design Principles](https://github.com/swiss/political-affairs-ech-group/blob/main/docs/common/design_principles.md) (review)
+  - Grundsätzlich in der Obhut von Metadata
 - Beispiele zusammen Anschauen
 - Ziel: Abschluss Dokumente definieren
 
