@@ -44,3 +44,44 @@ So, basically the following possible attributes for dates can be used (and all c
 - `date_end_planned`: Some event is planned to end on this date (interval end)
 - `date_created`: The entry for the object was created on this date (instantaneous)
 - `date_modified`: The entry for the object was last modified on this date (instantaneous)
+
+## URI Concept
+
+For schema related entities, URIs from https://ld.ech.ch are used. This domain is not yet established but the work of the eCH Specialist Group Political Affairs should help to establish it, so that it can also be used by other eCH Specialist Groups in the future.
+
+### URI for a Schema
+
+https://ld.ech.ch/[subgroup-number]/[schema-name]
+e.g. https://ld.ech.ch/0292/meta
+
+### URI for a Class in Schema
+
+https://ld.ech.ch/[subgroup-number]/[schema-name]/[ClassName]
+e.g. https://ld.ech.ch/0292/meta/Work
+
+### URI for a Predicate in Schema
+
+https://ld.ech.ch/[subgroup-number]/[schema-name]/[predicateName]
+e.g. https://ld.ech.ch/0292/meta/workType
+
+### URI for an Enumeration
+
+https://ld.ech.ch/[subgroup-number]/vocabulary/[enumeration-name]
+e.g. https://ld.ech.ch/0292/vocabulary/work-type
+
+### URI for Actual Data
+
+Actual data will not be published under https://ld.ech.ch but under the domain of the respective data provider. There are already some established domains for linked data in Switzerland, e.g.
+
+- Canton of Zurich: https://ld.zh.ch
+- Canton of Basel Stadt: https://ld.bs.ch
+- City of Zurich: https://ld.stadt-zuerich.ch
+
+Proposals for URIs for actual data:
+
+- Document ([FRBR](https://en.wikipedia.org/wiki/Functional_Requirements_for_Bibliographic_Records) Work): https://ld.bs.ch/[org]/document/[id] e.g. https://ld.bs.ch/gc/document/2026/5c19038b-abbe-415a-87c7-406f7ab75ab2 (gc = Grand Council of Basel Stadt)
+- Meeting: https://ld.bs.ch/[org]/meeting/[year]/[type]/[id] e.g. https://ld.bs.ch/gc/meeting/2026/session/7f5c373b-ff94-48a5-99bc-5e97eeb81865 (gc = Grand Council of Basel Stadt)
+
+If IDs are used within URIs, they should be persistent and not dependent on the currently used system. UUIDs are a good choice for this purpose.
+
+See also [Cool URIs for the Semantic Web](https://www.w3.org/TR/cooluris/).
