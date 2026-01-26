@@ -1,12 +1,25 @@
-# Design Principles Modell Politische Geschäfte
+# Design Principles and LinkML Guidelines
 
-* Grundsätzlich keine Versionierung ausser es ist im Datenmodell vorgesehen (also nicht im Hintergrund ist alles versioniert)
-  - Daten zu Personen, die aktualisiert werden, wenn die Person aber etwas macht, dann wird "snapshot" mässig ein paar Informationen festgehalten, die im Nachhinein nicht geändert werden (Name für dieses Prinzip muss noch irgendwie bezeichnet werden, evt. Actors-Reference)
-* Es gibt keine volle Normalisierung
-  - primär weil es keine einzelne Autorität gibt
-  - gewisse Dinge werden wiederholt, als Vorteil davon hat man auch eine gewisse Geschichtsschreibung
-  - Bsp: Eine Motion wird eingereicht, diese wird nicht nur mit einer ID zu einer Person verlinkt, sondern es werden auch "lokal" Infos hinzugefügt, bspw. Partei (obwohl die irgendwoanders auch zur Person hinterlegt ist)
-* Wir machen unsere Schema für Daten Austausch, nicht so sehr dafür, dass die Systeme intern so arbeiten können
-* Wir haben jeweils URI (RDF; global) und ID (meist intern im Ratssystem)
+## Data Exchange Focus
 
-* Wann machen wir eine eigene Klasse, wann ein Attribut type oder ähnlich um verschiedene "Klassen" zu machen?
+The eCH Specialist Group Political Affairs focuses on **data exchange** between different systems. Therefore, the data schema is designed to facilitate interoperability and data sharing. It is not intended to model the internal workings of any specific system.
+
+## Identifiers and URIs
+
+There is always the possibility to identify an entity with either an internal/local identifier (`ID`) or a global `URI`. The design principle is to always have both, so that data can be linked globally but also work in isolated systems.
+
+## Normalization
+
+The data schema follows a pragmatic approach to normalization. The basic principle is to avoid redundancy where possible. The main reason for not fully normalizing the data schema is that there is no single authority for many entities in the political domain. Therefore, some redundancy is accepted to allow for easier data integration and historical tracking.
+
+## Versioning
+
+There is no general versioning of entities in the data schema. The main reason for this is that versioning can lead to significant complexity in data management and querying. However, versioning can be implemented for specific entities where it makes sense and is required by the use case. In such a case, the versioning mechanism is part of the data model for that specific entity.
+
+An example of this would be the occupation of a person. Each occupation can have a start and end date, allowing to track changes over time without versioning the person entity itself.
+
+## Local References
+
+Some entities are referenced "locally" in addition to linking to the full entity. This is done to have useful local data without too much query complexity. This will also generate some form of Versioning implicitly, as the local reference will not change when the full entity changes.
+
+An example of this would be that a motion links to the person who submittet it. In addition to the link to the full person entity, the information of e.g. the political party at the time of the submission or the role of the person is stored "locally" in the motion entity. This way, even if the person changes party and/or role later on, the motion still contains the correct information at the time of submission.
