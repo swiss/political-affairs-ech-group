@@ -2,7 +2,7 @@ ToDo: Nicole
 
 # Abstimmungen und Wahlen
 
-Parlamentarische Beschlussfassungen erfolgen entweder durch Abstimmungen über Sachfragen oder durch Wahlen von Personen. Der Standard unterscheidet diese beiden Mechanismen klar und erfasst bei offenen Verfahren zudem das individuelle Stimm- und Wahlverhalten jedes Parlamentsmitglieds. Parlamentspräsidentinnen oder Parlamentspräsidenten nehmen an Abstimmungen grundsätzlich nicht teil; sie stimmen nur bei Wahlen mit. Bei Abstimmungen mit Stimmengleichstand fällen sie den Stichentscheid.
+Parlamentarische Beschlussfassungen erfolgen entweder durch Abstimmungen über Sachfragen oder durch Wahlen von Personen. Der Standard unterscheidet diese beiden Mechanismen klar und erfasst bei offenen Verfahren zudem das individuelle Stimm- und Wahlverhalten jedes Parlamentsmitglieds. Parlamentspräsidentinnen oder Parlamentspräsidenten nehmen an Abstimmungen grundsätzlich nicht teil; sie stimmen nur bei Wahlen mit. Bei Abstimmungen mit Stimmengleichstand fällen sie den Stichentscheid. 
 
 ## Voting (Abstimmung)
 
@@ -18,33 +18,38 @@ Der Standard unterscheidet verschiedene Abstimmungstypen über das Feld **voting
 Zwischenabstimmungen während der Beratung.
 
 **Beispiele:**
+- Abstimmung über Eintreten auf ein Geschäft
 - Abstimmung über einen Antrag
-- Punktweise Abstimmung über einen Vorstoss
+- Gegenüberstellung von zwei Anträgen, die sich gegenseitig ausschliessen oder sich auf denselben Textabschnitt beziehen
+- Eventualabstimmung wenn zu einem Abstimmungsgegenstand mehr als zwei Anträge vorliegen
+- Punktweise Abstimmung über einen Vorstoss (Nicole: eine punktweise Abstimmung ist keine Zwischenabstimmung, denn es gibt dabei keine Schlussabstimmung oder ein Endresultat über alle Punkte).
 - Abstimmung über einen einzelnen Artikel eines Gesetzes
-- Rückweisungsantrag an eine Kommission
+- Gesamtabstimmung nach der ersten Lesung eines Erlasses, der in zwei Lesungen beraten wird
 
 ### final
-Schlussabstimmungen über die gesamte Vorlage
+Schlussabstimmung über die gesamte Vorlage
 
 **Beispiele:**
-- Schlussabstimmung über ein Gesetz
+- Schlussabstimmung nach der letzten Lesung eines Erlasses 
 - Gesamtabstimmung über einen Beschluss
 - Annahme oder Ablehnung einer Vorlage in ihrer Gesamtheit
 
 ### casting
-Stichentscheid des/der Vorsitzenden bei Stimmengleichheit. Vorsitzende nehmen an Abstimmungen nicht teil, haben bei Stimmengleichheit jedoch den Stichentscheid. Bei geheimer Abstimmung gilt bei Stimmengleichheit der Antrag des vorberatenden Ratsorgans als angenommen.
+Stichentscheid des/der Vorsitzenden bei Stimmengleichheit. Vorsitzende nehmen an Abstimmungen nicht teil, haben bei Stimmengleichheit jedoch den Stichentscheid. Bei geheimer Abstimmung gilt bei Stimmengleichheit der Antrag des vorberatenden Ratsorgans als angenommen. 
 
 ### secret
-Geheime Abstimmungen
+Geheime Stimmabgabe bei Abstimmungen und Wahlen
 
 **Anwendung:**
-- Wahlen von Personen
-- Besonders sensible Entscheidungen
-- Auf Antrag einer Minderheit der Mitglieder
+- Wahl von Personen
+- Abstimmung über besonders heikles Sachgeschäft wie Gnadengesuch oder Aufhebung der Immunität
+- Abstimmung nach geheimer Beratung
+- Geheime Abstimmung auf Antrag 
 
 ## Struktur einer Abstimmung
 
-Eine Abstimmung ist immer einem AgendaItem zugeordnet und kann entweder:
+Eine Abstimmung ist immer einer Sitzungsphase, einer Sitzung, einem Traktandum (Agenda-Item) und einem Geschäft mit Geschäftsnummer zugeordnet. Sie umfasst den Abstimmungstyp, den Abstimmungsgegenstand (Frage), das Ergebnis und – bei nicht geheimer Abstimmung – die Einzelstimmen der Mitglieder. 
+Sie kann entweder:
 
 ```
 AgendaItem (Energiegesetz - Art. 15)
