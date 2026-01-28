@@ -48,11 +48,11 @@ Geheime Stimmabgabe bei Abstimmungen und Wahlen
 
 ## Struktur einer Abstimmung
 
-Eine Abstimmung ist immer einer Sitzungsphase, einer Sitzung, einem Traktandum (Agenda-Item) und einem Geschäft mit Geschäftsnummer zugeordnet. Sie umfasst den Abstimmungstyp, den Abstimmungsgegenstand (Frage), das Ergebnis und – bei nicht geheimer Abstimmung – die Einzelstimmen der Mitglieder. 
+Eine Abstimmung ist immer einer Sitzungsphase und/oder einer Sitzung, einem Traktandum (Agenda-Item) und einem Geschäft mit Geschäftsnummer zugeordnet. Sie umfasst den Abstimmungstyp, den Abstimmungsgegenstand (Frage), das Ergebnis und – bei nicht geheimer Abstimmung – die Einzelstimmen der Mitglieder. 
 Sie kann entweder:
 
 ```
-AgendaItem (Energiegesetz - Art. 15)
+AgendaItem (15) Geschäft (Energiegesetz - Art. 15)
   └─ Voting (Zwischenabstimmung über Art. 15)
       ├─ IndividualVote (Person A: Ja)
       ├─ IndividualVote (Person B: Nein)
