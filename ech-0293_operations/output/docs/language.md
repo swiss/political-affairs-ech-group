@@ -22,8 +22,8 @@ Alias: language
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
 | [MultilingualString](MultilingualString.md) | [en] A string that can contain text in multiple languages |  no  |
+| [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
 
 
 

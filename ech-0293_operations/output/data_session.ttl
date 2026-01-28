@@ -14,24 +14,24 @@ ops:session_5207 a ops:Session ;
     ops:datetime_created "2025-03-20T14:27:09+00:00"^^xsd:dateTime ;
     ops:datetime_updated "2025-04-24T00:19:37+00:00"^^xsd:dateTime ;
     ops:name [ a ops:MultilingualString ;
-            ops:language "fr" ;
-            ops:text "Session de printemps 2025" ],
-        [ a ops:MultilingualString ;
             ops:language "de" ;
             ops:text "Frühjahrssession 2025" ],
         [ a ops:MultilingualString ;
             ops:language "it" ;
-            ops:text "Sessione primaverile 2025" ] ;
+            ops:text "Sessione primaverile 2025" ],
+        [ a ops:MultilingualString ;
+            ops:language "fr" ;
+            ops:text "Session de printemps 2025" ] ;
     ops:parent_legislature "ops:legislature_51" ;
     ops:url [ a ops:MultilingualString ;
+            ops:language "it" ;
+            ops:text "https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025" ],
+        [ a ops:MultilingualString ;
             ops:language "de" ;
             ops:text "https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025" ],
         [ a ops:MultilingualString ;
             ops:language "fr" ;
-            ops:text "https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025" ],
-        [ a ops:MultilingualString ;
-            ops:language "it" ;
-            ops:text "https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025" ] .
+            ops:text "https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025" ] .
 
 ops:session_be_summer_2025 a ops:Session ;
     ops:body_key "BE" ;

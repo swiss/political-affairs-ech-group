@@ -22,16 +22,16 @@ Alias: datetime_created
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
-| [IndividualVote](IndividualVote.md) | [en] An individual vote cast by a member during a voting procedure |  no  |
-| [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
-| [Attendance](Attendance.md) | [en] Attendance record for a meeting or voting session |  no  |
-| [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
-| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
 | [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
-| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 | [IndividualAttendance](IndividualAttendance.md) | [en] Individual attendance record for a specific person |  no  |
+| [Attendance](Attendance.md) | [en] Attendance record for a meeting or voting session |  no  |
+| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
+| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
+| [IndividualVote](IndividualVote.md) | [en] An individual vote cast by a member during a voting procedure |  no  |
+| [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
+| [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
 
 
 
