@@ -1,3 +1,16 @@
+## 2026 ##
+Todos:
+- Bestimmung Roles Actor für Legislatur, meeting, Agenda_item Siehe GroupReference und ActorReference: https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0294_actors/input/schema.yaml
+- Cup Final (Mehrere Abstimmungsmöglichkeiten modellieren)
+- Absolutes / Relatives Mehr (ausweisen können)
+
+## 29.01.2026 ##
+- Arbeit direkt in den Dokumentbeschreibungen
+- neues Todo
+
+## 19.06.2025 ##
+- Arbeit direkt im Schema
+
 ## 12.06.2025 ##
 
 **Meeting Items**
@@ -23,20 +36,5 @@ Besprochen:
  
 - Wir bilden diese Thematik damit mit einer neuen Klasse JointDebate ab, welche die gemeinsam behandelten Traktanden aufführt und damit zusammenfasst.
 
-## 19.06.2025 ##
-- Arbeit direkt im Schema
 
-
-## 2026 ##
-
-Todo Alt
-
-- Abstimmungstypen - Wahl und Abstimmung unterschiedlich?
-- Handling Präsidium
-- Absolutes / Relatives Mehr
-- Rolle bei Abstimmung
-- Verknüpfung
-
-Todo Neu
-- Bestimmung Roles Actor für Legislatur, meeting, Agenda_item Siehe GroupReference und ActorReference: https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0294_actors/input/schema.yaml
 
