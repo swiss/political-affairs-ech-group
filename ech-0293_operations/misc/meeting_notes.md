@@ -3,7 +3,7 @@ Todos:
 - Bestimmung Roles Actor für Legislatur, meeting, Agenda_item Siehe GroupReference und ActorReference: https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0294_actors/input/schema.yaml
 - Cup Final (Mehrere Abstimmungsmöglichkeiten modellieren)
 - Absolutes / Relatives Mehr (ausweisen können)
-
+- Ausformulieren, Rollen bei Abstimmungen (Beispiel Gemeindeniveau: Rolle mit mehreren Stimmmen, Beispiel Stellvertretungen/Ersatzmitglieder ausweisen)
 ## 29.01.2026 ##
 - Arbeit direkt in den Dokumentbeschreibungen
 - neues Todo
