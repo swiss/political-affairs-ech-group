@@ -15,89 +15,89 @@
 ops:Container a owl:Class ;
     rdfs:label "Container" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom ops:Legislature ;
-            owl:onProperty ops:legislatures ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ops:IndividualVote ;
-            owl:onProperty ops:individual_votes ],
+            owl:allValuesFrom ops:Attendance ;
+            owl:onProperty ops:attendances ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:individual_votes ],
+            owl:onProperty ops:meetings ],
         [ a owl:Restriction ;
             owl:allValuesFrom ops:Voting ;
             owl:onProperty ops:votings ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:speeches ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:votings ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:elections ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:attendances ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:id ],
+            owl:allValuesFrom ops:Meeting ;
+            owl:onProperty ops:meetings ],
         [ a owl:Restriction ;
             owl:allValuesFrom ops:Election ;
             owl:onProperty ops:elections ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:individual_attendances ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:agenda_items ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:meetings ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ops:Resolution ;
-            owl:onProperty ops:resolutions ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ops:Speech ;
-            owl:onProperty ops:speeches ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ops:Session ;
-            owl:onProperty ops:sessions ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty ops:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty ops:legislatures ],
         [ a owl:Restriction ;
             owl:allValuesFrom ops:AgendaItem ;
             owl:onProperty ops:agenda_items ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ops:Meeting ;
-            owl:onProperty ops:meetings ],
+            owl:minCardinality 0 ;
+            owl:onProperty ops:votings ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:sessions ],
+            owl:onProperty ops:elections ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:allValuesFrom ops:Resolution ;
+            owl:onProperty ops:resolutions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:agenda_items ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ops:Speech ;
+            owl:onProperty ops:speeches ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty ops:id ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:resolutions ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ops:Attendance ;
-            owl:onProperty ops:attendances ],
+            owl:allValuesFrom ops:Session ;
+            owl:onProperty ops:sessions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:individual_votes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ops:IndividualVote ;
+            owl:onProperty ops:individual_votes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:individual_attendances ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ops:id ],
         [ a owl:Restriction ;
             owl:allValuesFrom ops:IndividualAttendance ;
-            owl:onProperty ops:individual_attendances ] ;
+            owl:onProperty ops:individual_attendances ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:attendances ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ops:Legislature ;
+            owl:onProperty ops:legislatures ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:sessions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:speeches ] ;
     skos:inScheme <https://ch.paf.link/schema/operations> .
 
 ops:JointDebate a owl:Class ;
     rdfs:label "JointDebate" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom ops:AgendaItem ;
             owl:onProperty ops:agenda_items ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ops:AgendaItem ;
+            owl:minCardinality 0 ;
             owl:onProperty ops:agenda_items ] ;
     skos:definition """[en] Agenda Items which are debated together.
 [de] Traktanden die gemeinsam behandelt werden.
@@ -107,56 +107,56 @@ ops:JointDebate a owl:Class ;
 ops:Media a owl:Class ;
     rdfs:label "Media" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:version ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:parent_type ],
+            owl:onProperty ops:id ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:parent_type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:media_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:media_type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:title ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:parent_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 1 ;
             owl:onProperty ops:id ],
         [ a owl:Restriction ;
             owl:allValuesFrom ops:MultilingualString ;
             owl:onProperty ops:url ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:version ],
+            owl:onProperty ops:parent_type ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty ops:id ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:media_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:media_type ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty ops:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:parent_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:version ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty ops:version ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:url ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:title ],
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:version ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:id ],
+            owl:onProperty ops:parent_type ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:media_type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:title ] ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:media_type ] ;
     skos:definition """[en] Media files or documents (including protocols in PDF/HTML/WORD or links to audio/video).
 [de] Mediendateien oder Dokumente (einschließlich Protokolle in PDF/HTML/WORD oder Links zu Audio/Video).
 """ ;
@@ -165,32 +165,32 @@ ops:Media a owl:Class ;
 ops:Motion a owl:Class ;
     rdfs:label "Motion" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty ops:title ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:description ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:description ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty ops:id ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:description ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty ops:id ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:title ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:title ],
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:id ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:id ] ;
+            owl:onProperty ops:title ] ;
     skos:definition """[en] A formal proposal or motion submitted during proceedings.
 [de] Ein formeller Antrag, der während der Verhandlungen eingereicht wird.
 """ ;
@@ -199,11 +199,14 @@ ops:Motion a owl:Class ;
 ops:TextSegment a owl:Class ;
     rdfs:label "TextSegment" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:id ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty ops:text ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ops:text ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:id ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty ops:id ],
@@ -212,10 +215,7 @@ ops:TextSegment a owl:Class ;
             owl:onProperty ops:text ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty ops:text ] ;
+            owl:onProperty ops:id ] ;
     skos:definition """[en] A text segment such as cross-references or subtitles in meeting protocols.
 [de] Ein Textsegment wie Querverweise oder Zwischentitel in Sitzungsprotokollen.
 """ ;
@@ -280,11 +280,17 @@ ops:type a owl:DatatypeProperty ;
 ops:Attendance a owl:Class ;
     rdfs:label "Attendance" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:total_present ],
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty ops:datetime_begin ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:datetime_begin ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:actor_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:datetime_created ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty ops:actor_id ],
@@ -292,65 +298,59 @@ ops:Attendance a owl:Class ;
             owl:allValuesFrom xsd:dateTime ;
             owl:onProperty ops:datetime_updated ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:id ],
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ops:total_excused ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:total_excused ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:total_present ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_begin ],
+            owl:onProperty ops:datetime_created ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:integer ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty ops:total_excused ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty ops:id ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_updated ],
+            owl:onProperty ops:datetime_created ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:total_absent ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty ops:actor_id ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:datetime_updated ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty ops:total_absent ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ops:total_present ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty ops:id ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:total_absent ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:total_absent ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:integer ;
             owl:onProperty ops:total_absent ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:total_excused ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:integer ;
             owl:onProperty ops:total_present ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_created ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_created ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:total_present ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_created ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:actor_id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_begin ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:total_excused ] ;
+            owl:onProperty ops:datetime_begin ] ;
     skos:definition """[en] Attendance record for a meeting or voting session.
 [de] Anwesenheitsliste für eine Sitzung oder Abstimmung.
 """ ;
@@ -359,167 +359,167 @@ ops:Attendance a owl:Class ;
 ops:Election a owl:Class ;
     rdfs:label "Election" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:majority_type ],
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty ops:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:result_text ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:election_type ],
+            owl:onProperty ops:total ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:actor_id ],
+            owl:onProperty ops:title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:parent_meeting ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:title ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:majority_count ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:actor_id ],
+            owl:onProperty ops:datetime_updated ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty ops:id ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:parent_agenda_item ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
             owl:onProperty ops:datetime_created ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:actor_id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:total ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:result_text ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:integer ;
-            owl:onProperty ops:total ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:parent_meeting ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:result_text ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:total_absent ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_created ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:title ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:result_text ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:election_type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:affair_id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:affair_id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:title ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:total_absent ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_begin ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:type_label ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_end ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_updated ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_end ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:parent_agenda_item ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:majority_count ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_end ],
         [ a owl:Restriction ;
             owl:allValuesFrom ops:ElectionTypeEnum ;
             owl:onProperty ops:election_type ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:landing_page ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:affair_id ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:majority_count ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ops:MajorityTypeEnum ;
-            owl:onProperty ops:majority_type ],
+            owl:onProperty ops:datetime_end ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_updated ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_begin ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:majority_type ],
+            owl:onProperty ops:datetime_end ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:type_label ],
+            owl:onProperty ops:landing_page ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_begin ],
+            owl:onProperty ops:datetime_end ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ops:total ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:total_absent ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:total ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:type_label ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty ops:parent_meeting ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ops:type_label ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:landing_page ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty ops:datetime_created ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:parent_agenda_item ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:integer ;
-            owl:onProperty ops:majority_count ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:parent_meeting ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:parent_agenda_item ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:type_label ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:affair_id ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:datetime_created ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:landing_page ],
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:total_absent ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:total ],
+            owl:onProperty ops:election_type ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:parent_meeting ],
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:parent_agenda_item ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_updated ],
+            owl:onProperty ops:actor_id ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:actor_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:result_text ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty ops:landing_page ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:affair_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:election_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:datetime_begin ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:datetime_begin ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ops:MajorityTypeEnum ;
+            owl:onProperty ops:majority_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty ops:datetime_begin ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:majority_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:result_text ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:integer ;
-            owl:onProperty ops:total_absent ] ;
+            owl:onProperty ops:total_absent ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:majority_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:majority_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:actor_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ops:majority_count ] ;
     skos:definition """[en] An election procedure for selecting persons to positions.
 [de] Ein Wahlverfahren zur Wahl von Personen in Positionen.
 """ ;
@@ -528,17 +528,11 @@ ops:Election a owl:Class ;
 ops:IndividualAttendance a owl:Class ;
     rdfs:label "IndividualAttendance" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty ops:attendance_type ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_created ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:actor_id ],
+            owl:minCardinality 0 ;
+            owl:onProperty ops:attendance_type ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:actor_id ],
@@ -546,41 +540,47 @@ ops:IndividualAttendance a owl:Class ;
             owl:allValuesFrom ops:AttendanceTypeEnum ;
             owl:onProperty ops:attendance_type ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_updated ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_updated ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ops:parent_voting ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:parent_voting ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ops:Voting ;
+            owl:onProperty ops:parent_voting ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ops:datetime_created ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:datetime_created ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:id ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ops:actor_id ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_created ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:parent_voting ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_updated ],
+            owl:onProperty ops:datetime_created ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty ops:id ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:attendance_type ],
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty ops:datetime_updated ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ops:Voting ;
-            owl:onProperty ops:parent_voting ] ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:actor_id ] ;
     skos:definition """[en] Individual attendance record for a specific person.
 [de] Einzelne Anwesenheitsfeststellung für eine bestimmte Person.
 """ ;
@@ -590,85 +590,85 @@ ops:IndividualVote a owl:Class ;
     rdfs:label "IndividualVote" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_updated ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_updated ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:integer ;
-            owl:onProperty ops:weight ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty ops:seat_nr ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:type_label ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:parent_voting ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_created ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:actor_id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:seat_nr ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:individual_vote_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:actor_id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
             owl:onProperty ops:type_label ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
+            owl:minCardinality 0 ;
             owl:onProperty ops:datetime_created ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ops:IndividualVoteTypeEnum ;
             owl:onProperty ops:individual_vote_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:datetime_created ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ops:weight ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:parent_voting ],
+            owl:onProperty ops:individual_vote_type ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ops:datetime_updated ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:seat_nr ],
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:type_label ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:weight ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty ops:actor_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:type_label ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:weight ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:parent_voting ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:seat_nr ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty ops:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:actor_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty ops:id ],
         [ a owl:Restriction ;
             owl:allValuesFrom ops:Voting ;
             owl:onProperty ops:parent_voting ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty ops:seat_nr ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ops:weight ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:individual_vote_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty ops:datetime_created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty ops:id ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:type_label ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ops:IndividualVoteTypeEnum ;
-            owl:onProperty ops:individual_vote_type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_created ] ;
+            owl:onProperty ops:actor_id ] ;
     skos:definition """[en] An individual vote cast by a member during a voting procedure.
 [de] Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens.
 """ ;
@@ -677,92 +677,92 @@ ops:IndividualVote a owl:Class ;
 ops:Legislature a owl:Class ;
     rdfs:label "Legislature" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:description ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_created ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:description ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:landing_page ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:description ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty ops:administrative_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:date_end ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:actor_id ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
             owl:onProperty ops:date_end ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:date_end ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:date_begin ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:administrative_id ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:date_begin ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:datetime_created ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:landing_page ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:datetime_created ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty ops:actor_id ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_created ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:landing_page ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:dateTime ;
             owl:onProperty ops:datetime_created ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:landing_page ],
+            owl:onProperty ops:administrative_id ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:id ],
+            owl:minCardinality 0 ;
+            owl:onProperty ops:actor_id ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty ops:date_begin ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty ops:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty ops:datetime_updated ],
         [ a owl:Restriction ;
             owl:allValuesFrom ops:MultilingualString ;
             owl:onProperty ops:name ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:id ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_updated ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:administrative_id ],
+            owl:onProperty ops:landing_page ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:date_end ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:date_end ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_updated ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:actor_id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:actor_id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty ops:date_begin ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty ops:id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:date_begin ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:administrative_id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:landing_page ] ;
+            owl:onProperty ops:datetime_updated ] ;
     skos:definition """[en] Term of office of a parliament as a legislative assembly. Usually lasts four years.
 [de] Amtsdauer eines Parlaments als gesetzgebender Versammlung. Dauert in der Regel vier Jahre.
 """ ;
@@ -771,86 +771,86 @@ ops:Legislature a owl:Class ;
 ops:Session a owl:Class ;
     rdfs:label "Session" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom ops:Meeting ;
-            owl:onProperty ops:meetings ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ops:parent_legislature ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:meetings ],
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:body_key ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty ops:datetime_created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
             owl:onProperty ops:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:date_begin_planned ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ops:MultilingualString ;
+            owl:onProperty ops:url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:datetime_created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ops:Meeting ;
+            owl:onProperty ops:meetings ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:body_key ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:parent_legislature ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:date_begin_planned ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:body_key ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty ops:date_end_planned ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty ops:datetime_created ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ops:date_end_planned ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ops:MultilingualString ;
-            owl:onProperty ops:name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_updated ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty ops:id ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:body_key ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty ops:date_end_planned ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:date_begin_planned ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ops:MultilingualString ;
-            owl:onProperty ops:url ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:date_begin_planned ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_created ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:parent_legislature ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_created ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:url ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:date_end_planned ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty ops:date_begin_planned ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_created ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:body_key ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
             owl:onProperty ops:datetime_updated ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty ops:url ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty ops:parent_legislature ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:id ],
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty ops:date_begin_planned ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:body_key ] ;
+            owl:allValuesFrom ops:MultilingualString ;
+            owl:onProperty ops:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:meetings ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:date_end_planned ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:name ] ;
     skos:definition """[en] A parliamentary session that groups multiple meetings and spans a specific time period.
 [de] Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen bestimmten Zeitraum erstreckt.
 """ ;
@@ -859,160 +859,160 @@ ops:Session a owl:Class ;
 ops:Speech a owl:Class ;
     rdfs:label "Speech" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:actor_fullname ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:landing_page ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:text_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
             owl:onProperty ops:role ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
+            owl:minCardinality 0 ;
             owl:onProperty ops:datetime_created ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:media_type ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:text_type ],
+            owl:minCardinality 0 ;
+            owl:onProperty ops:datetime_updated ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 1 ;
             owl:onProperty ops:text ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:dateTime ;
             owl:onProperty ops:datetime_end ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:actor_fullname ],
+            owl:onProperty ops:text_format ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:text ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_begin ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
             owl:onProperty ops:language ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:text_format ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:text_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:role ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:actor_id ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ops:start ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:text_type ],
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:actor_id ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:role ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:start ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom xsd:dateTime ;
             owl:onProperty ops:datetime_begin ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:media_format ],
+            owl:onProperty ops:media_url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:datetime_begin ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:text_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:text_format ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:media_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:text_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:datetime_created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:actor_fullname ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:media_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:landing_page ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:actor_fullname ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty ops:landing_page ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:media_format ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:text_format ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:media_type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_created ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_updated ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
             owl:onProperty ops:id ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:media_format ],
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:datetime_end ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty ops:actor_id ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_updated ],
+            owl:onProperty ops:media_url ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:actor_id ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:media_url ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:language ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty ops:text ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:start ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:media_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_end ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:media_url ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:actor_fullname ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:media_url ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty ops:role ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:text_format ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:start ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:media_url ],
+            owl:onProperty ops:media_format ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_end ],
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:text ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:media_format ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty ops:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_updated ],
+            owl:onProperty ops:language ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:onDatatype xsd:string ;
                     owl:withRestrictions ( [ xsd:pattern "^[a-z]{2}$" ] ) ] ;
             owl:onProperty ops:language ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:actor_fullname ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:landing_page ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty ops:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:datetime_end ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty ops:datetime_begin ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:actor_id ],
+            owl:minCardinality 1 ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty ops:datetime_created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:media_format ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:text_format ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_created ] ;
+            owl:onProperty ops:start ] ;
     skos:definition """[en] A speech or statement made during a meeting (also called Votum or speaker segment).
 [de] Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt).
 """ ;
@@ -1021,23 +1021,23 @@ ops:Speech a owl:Class ;
 ops:TotalOther a owl:Class ;
     rdfs:label "TotalOther" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ops:count ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ops:label ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty ops:count ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty ops:label ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:label ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty ops:count ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:integer ;
-            owl:onProperty ops:count ] ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:label ] ;
     skos:definition """[en] Additional vote counts when multiple options are presented (e.g., Zurich uses 5 buttons).
 [de] Zusätzliche Stimmzahlen, wenn mehrere Optionen zur Abstimmung gestellt werden (z.B. Zürich verwendet 5 Knöpfe).
 """ ;
@@ -1381,38 +1381,41 @@ ops:votings a owl:ObjectProperty ;
 ops:AgendaItem a owl:Class ;
     rdfs:label "AgendaItem" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:landing_page ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ops:MultilingualString ;
-            owl:onProperty ops:agenda_item_title ],
+            owl:minCardinality 0 ;
+            owl:onProperty ops:datetime_updated ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:state_name ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_created ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_created ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty ops:has_resolution ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:speaking_actor_id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_updated ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty ops:agenda_item_number ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_begin_planned ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty ops:agenda_item_position ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:affair_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ops:MultilingualString ;
             owl:onProperty ops:agenda_item_title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:parent_agenda_item ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:parent_meeting ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty ops:datetime_created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:speaking_actor_id ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:integer ;
             owl:onProperty ops:agenda_item_position ],
@@ -1421,79 +1424,7 @@ ops:AgendaItem a owl:Class ;
             owl:onProperty ops:leading_actor_id ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_begin_planned ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:agenda_item_category ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:agenda_item_position ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:parent_meeting ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ops:AgendaItemTypeEnum ;
-            owl:onProperty ops:agenda_item_type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:affair_id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:parent_agenda_item ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:speaking_actor_id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:speaking_actor_id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:agenda_item_category ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:state_id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_begin_planned ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:affair_id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_begin_actual ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_updated ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_updated ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:agenda_item_number ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:affair_id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:parent_meeting ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:state_name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
             owl:onProperty ops:leading_actor_id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:leading_actor_id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:agenda_item_description ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:agenda_item_type ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ops:state_id ],
@@ -1504,26 +1435,62 @@ ops:AgendaItem a owl:Class ;
             owl:maxCardinality 1 ;
             owl:onProperty ops:datetime_created ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_begin_actual ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:agenda_item_number ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:state_name ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty ops:state_id ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:parent_meeting ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:agenda_item_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty ops:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:state_name ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty ops:speaking_actor_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:state_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ops:MultilingualString ;
+            owl:onProperty ops:agenda_item_description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:affair_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty ops:datetime_begin_actual ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:agenda_item_category ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:agenda_item_number ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:parent_meeting ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:agenda_item_description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:datetime_begin_planned ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty ops:has_resolution ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:landing_page ],
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty ops:datetime_begin_planned ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty ops:id ],
+            owl:minCardinality 0 ;
+            owl:onProperty ops:datetime_begin_planned ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:leading_actor_id ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty ops:id ],
@@ -1531,29 +1498,62 @@ ops:AgendaItem a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty ops:agenda_item_category ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ops:MultilingualString ;
-            owl:onProperty ops:agenda_item_description ],
+            owl:allValuesFrom ops:AgendaItemTypeEnum ;
+            owl:onProperty ops:agenda_item_type ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:parent_agenda_item ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:agenda_item_title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:datetime_begin_actual ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:state_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:datetime_begin_actual ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:agenda_item_category ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:speaking_actor_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:landing_page ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:landing_page ],
         [ a owl:Restriction ;
             owl:allValuesFrom ops:Resolution ;
             owl:onProperty ops:has_resolution ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty ops:agenda_item_number ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:datetime_created ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty ops:agenda_item_position ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:affair_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty ops:parent_agenda_item ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:parent_meeting ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:agenda_item_type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_begin_actual ] ;
+            owl:onProperty ops:agenda_item_type ] ;
     skos:definition """[en] An agenda item of a meeting.
 [de] Ein Traktandum einer Sitzung.  
 """ ;
@@ -1563,241 +1563,241 @@ ops:Meeting a owl:Class ;
     rdfs:label "Meeting" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:parent_legislature ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:administrative_id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:state_name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:actor_id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:actor_name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:date_begin_planned ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:state ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:parent_legislature ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty ops:date_begin_actual ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:group_name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:number ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty ops:url ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:position ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:parent_meeting ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_created ],
         [ a owl:Restriction ;
             owl:allValuesFrom ops:StateEnum ;
             owl:onProperty ops:state ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ops:MeetingTypeEnum ;
-            owl:onProperty ops:meeting_type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:location ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:landing_page ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:parent_meeting ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ops:MultilingualString ;
-            owl:onProperty ops:name ],
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:date_end_planned ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:abbreviation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:parent_legislature ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:description ],
+            owl:onProperty ops:group_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:actor_name ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ops:position ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:sequential_number ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_updated ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty ops:date_begin_planned ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:group_id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:body_key ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:actor_id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:group_name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:date_end_planned ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:state_name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:state_name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:date_begin_planned ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:number ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:date_end_actual ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:group_name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:date_end_planned ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:description ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:abbreviation ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:actor_id ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ops:id ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:position ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:meeting_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:state_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:abbreviation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:date_end_actual ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:parent_legislature ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:date_end_planned ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:date_end_actual ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:abbreviation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:actor_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty ops:body_key ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:group_id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty ops:landing_page ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_created ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ops:location ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:body_key ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:sequential_number ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:landing_page ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
             owl:onProperty ops:date_end_planned ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:date_begin_planned ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:number ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:position ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_created ],
+            owl:onProperty ops:state_name ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:group_id ],
+            owl:onProperty ops:actor_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:landing_page ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ops:MeetingTypeEnum ;
+            owl:onProperty ops:meeting_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:location ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
             owl:onProperty ops:date_end_actual ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:actor_name ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:id ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:state ],
+            owl:minCardinality 0 ;
+            owl:onProperty ops:date_begin_actual ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:administrative_id ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:administrative_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:actor_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ops:MultilingualString ;
+            owl:onProperty ops:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:group_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:parent_meeting ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ops:sequential_number ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:meeting_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ops:MultilingualString ;
-            owl:onProperty ops:url ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:abbreviation ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_updated ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:actor_name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:date_end_actual ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_updated ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:date_begin_actual ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:date_begin_actual ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:abbreviation ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:administrative_id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:location ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:landing_page ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ops:parent_legislature ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty ops:id ],
+            owl:minCardinality 0 ;
+            owl:onProperty ops:datetime_created ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty ops:group_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty ops:date_begin_planned ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:administrative_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty ops:datetime_created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty ops:parent_meeting ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:meeting_type ],
+            owl:onProperty ops:state ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:integer ;
-            owl:onProperty ops:sequential_number ] ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty ops:date_begin_actual ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:date_begin_actual ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:group_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:position ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:group_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:state_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:group_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:sequential_number ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:date_begin_planned ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:body_key ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:sequential_number ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ops:MultilingualString ;
+            owl:onProperty ops:url ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:number ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:state ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:body_key ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty ops:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:datetime_created ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:number ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:number ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:location ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:actor_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:actor_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:name ] ;
     skos:definition """[en] A general meeting class used for Sessions, Comittee Meetings, individual session Sittings and other various Meetings.
 [de] Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessionssitzung und andere verschiedene Versammlungen verwendet wird.
 """ ;
@@ -2163,29 +2163,29 @@ ops:AgendaItemTypeEnum a owl:Class ;
 ops:Resolution a owl:Class ;
     rdfs:label "Resolution" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:vote_procedures ],
+            owl:minCardinality 0 ;
+            owl:onProperty ops:type_label ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:type_label ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:resolution_type ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:type_label ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty ops:vote_procedures ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:type_label ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ops:resolution_type ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:type_label ],
+            owl:onProperty ops:vote_procedures ],
         [ a owl:Restriction ;
             owl:allValuesFrom ops:ResolutionTypeEnum ;
-            owl:onProperty ops:resolution_type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:type_label ] ;
+            owl:onProperty ops:resolution_type ] ;
     skos:definition """[en] A resolutionor decision taken on an agenda item, including voting procedures.
 [de] Eine Resolution oder Entscheidung zu einem Traktandum, einschließlich Abstimmungsverfahren.
 """ ;
@@ -2235,242 +2235,242 @@ ops:StateEnum a owl:Class ;
 ops:Voting a owl:Class ;
     rdfs:label "Voting" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_created ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:parent_meeting ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:voting_title ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ops:MajorityTypeEnum ;
-            owl:onProperty ops:majority_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:label_no ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:optional ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:integer ;
-            owl:onProperty ops:total_count_yes ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:actor_id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:label_abstention ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:majority_count ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:type_label ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:voting_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:integer ;
-            owl:onProperty ops:total_count_abstention ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_updated ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:total_count_no ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_created ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:tie_breaker ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ops:MultilingualString ;
-            owl:onProperty ops:voting_title ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:label_abstention ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty ops:parent_meeting ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:affair_id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:integer ;
+            owl:minCardinality 0 ;
             owl:onProperty ops:majority_count ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:label_no ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:total_absent ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty ops:tie_breaker ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ops:TotalOther ;
-            owl:onProperty ops:total_other ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:total_absent ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:total_count_abstention ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:type_label ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:integer ;
-            owl:onProperty ops:total_count_no ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:landing_page ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_updated ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:datetime_begin ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty ops:datetime_updated ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:result_text ],
+            owl:onProperty ops:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:majority_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty ops:datetime_end ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:voting_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:optional ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:integer ;
             owl:onProperty ops:total_absent ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:majority_count ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:label_yes ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:majority_type ],
+            owl:onProperty ops:total ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_created ],
+            owl:onProperty ops:type_label ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:result_text ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:integer ;
             owl:onProperty ops:total ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_begin ],
+            owl:minCardinality 0 ;
+            owl:onProperty ops:type_label ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:voting_type ],
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ops:total_count_yes ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:result_text ],
+            owl:onProperty ops:actor_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:label_no ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ops:id ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:total_count_abstention ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:affair_id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:label_abstention ],
+            owl:onProperty ops:label_no ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:landing_page ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_end ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:landing_page ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty ops:label_yes ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:parent_meeting ],
+            owl:onProperty ops:parent_agenda_item ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty ops:optional ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty ops:id ],
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ops:majority_count ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:total_other ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:actor_id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty ops:total_count_yes ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:datetime_updated ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty ops:landing_page ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty ops:tie_breaker ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:parent_agenda_item ],
+            owl:onProperty ops:datetime_created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ops:total_count_no ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty ops:datetime_created ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:optional ],
+            owl:onProperty ops:total_absent ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:majority_type ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty ops:result_text ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:total_absent ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:voting_title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:total_count_yes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:label_abstention ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:datetime_end ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:tie_breaker ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:actor_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:total_count_no ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:total_count_abstention ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:datetime_end ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty ops:tie_breaker ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:total ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:optional ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ops:total_count_abstention ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:type_label ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:total_count_abstention ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:parent_meeting ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:landing_page ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ops:result_text ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ops:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:label_yes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ops:MajorityTypeEnum ;
             owl:onProperty ops:majority_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:total_other ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:parent_agenda_item ],
         [ a owl:Restriction ;
             owl:allValuesFrom ops:VotingTypeEnum ;
             owl:onProperty ops:voting_type ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty ops:actor_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ops:TotalOther ;
+            owl:onProperty ops:total_other ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ops:MultilingualString ;
+            owl:onProperty ops:voting_title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:label_no ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:datetime_begin ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ops:datetime_created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty ops:datetime_begin ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty ops:total_count_no ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ops:total_count_yes ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:datetime_end ],
+            owl:onProperty ops:voting_type ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:id ],
+            owl:onProperty ops:affair_id ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:type_label ],
+            owl:onProperty ops:parent_meeting ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:parent_agenda_item ],
+            owl:onProperty ops:label_abstention ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ops:label_no ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty ops:datetime_end ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty ops:parent_agenda_item ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ops:affair_id ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty ops:label_yes ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:total ],
+            owl:onProperty ops:landing_page ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty ops:optional ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:datetime_begin ],
+            owl:onProperty ops:majority_count ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ops:actor_id ],
+            owl:onProperty ops:label_abstention ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty ops:result_text ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ops:total ] ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ops:affair_id ] ;
     skos:definition """[en] A voting procedure with individual votes and results.
 [de] Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen.
 """ ;
@@ -2718,8 +2718,11 @@ ops:type_label a owl:DatatypeProperty ;
 ops:MultilingualString a owl:Class ;
     rdfs:label "MultilingualString" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty ops:text ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ops:language ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:onDatatype xsd:string ;
@@ -2727,12 +2730,9 @@ ops:MultilingualString a owl:Class ;
             owl:onProperty ops:language ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty ops:language ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty ops:text ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty ops:text ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;

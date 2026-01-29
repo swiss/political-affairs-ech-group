@@ -26,10 +26,10 @@ Alias: parent_meeting
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
-| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
+| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 
 
 
