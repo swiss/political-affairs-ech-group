@@ -22,17 +22,17 @@ Zwischenabstimmungen während der Beratung.
 - Abstimmung über einen Antrag
 - Gegenüberstellung von zwei Anträgen, die sich gegenseitig ausschliessen oder sich auf denselben Textabschnitt beziehen
 - Eventualabstimmung wenn zu einem Abstimmungsgegenstand mehr als zwei Anträge vorliegen
-- Punktweise Abstimmung über einen Vorstoss (Nicole: eine punktweise Abstimmung ist keine Zwischenabstimmung, denn es gibt dabei keine Schlussabstimmung oder ein Endresultat über alle Punkte).
 - Abstimmung über einen einzelnen Artikel eines Gesetzes
 - Gesamtabstimmung nach der ersten Lesung eines Erlasses, der in zwei Lesungen beraten wird
 
 ### final
-Schlussabstimmung über die gesamte Vorlage
+Die abschliessende Abstimmung über die gesamte Vorlage
 
 **Beispiele:**
-- Schlussabstimmung nach der letzten Lesung eines Erlasses 
+- Schlussabstimmung nach der letzten Lesung eines Erlasses
 - Gesamtabstimmung über einen Beschluss
 - Annahme oder Ablehnung einer Vorlage in ihrer Gesamtheit
+- Punktweise Abstimmung über einen Vorstoss
 
 ### casting
 Stichentscheid des/der Vorsitzenden bei Stimmengleichheit. Vorsitzende nehmen an Abstimmungen nicht teil, haben bei Stimmengleichheit jedoch den Stichentscheid. Bei geheimer Abstimmung gilt bei Stimmengleichheit der Antrag des vorberatenden Ratsorgans als angenommen. 
@@ -73,9 +73,7 @@ Das Feld **procedure** beschreibt die Art der Durchführung:
 - **standing**: Aufstehen (seltener)
 - **electronic**: Elektronische Abstimmung (häufig auf Bundesebene und Kantonsebene)
 - **roll_call**: Namentliche Abstimmung mit Namensaufruf
-  
-***[Nicole: Die folgenden Abstimmungstypen haben wir vergessen]***
-- **remote_voting**: Externe Stimmabgabe bei Krisen (Ratsmitglieder geben ihre Stimme dem Parlamentspräsidium im Vorfeld des Sitzungstags bekannt. Die extern abgegebenen Stimmen werden gleichzeitig mit der im Rat laufenden Abstimmung erfasst.
+- **remote_voting**: Externe Stimmabgabe bei Krisen (Einzelne Ratsmitglieder geben ihre Stimme dem Parlamentspräsidium im Vorfeld des Sitzungstags bekannt. Die extern abgegebenen Stimmen werden gleichzeitig mit der im Rat laufenden Abstimmung erfasst.
 - **circulation_voting**: Zirkulationsverfahren bei Krisen (Das Parlamentspräsidium führt die Abstimmung im Zirkulationsverfahren durch und informiert über das Ergebnis)
 - **virtual_voting**: Stimmabgabe an virtuellen Sitzungen in Krisenfällen.
 
@@ -95,7 +93,7 @@ Das Ergebnis wird auf zwei Arten erfasst:
 ### Gesamtergebnis (result)
 - **passed**: Angenommen
 - **failed**: Abgelehnt
-- **tied**: Stimmengleichheit (Nicole: Das gibt es nie, denn dann gibts einen Stichentscheid)
+- **tied**: Stimmengleichheit (Ein möglicher Stichentscheid wird über eine neue Abstimmung modeliert.)
 
 ### Detaillierte Zahlen
 - **yes_count**: Anzahl Ja-Stimmen
@@ -104,7 +102,7 @@ Das Ergebnis wird auf zwei Arten erfasst:
 - **absent_count**: Anzahl Abwesende (die nicht abstimmen konnten) 
 - **total_count**: Gesamtzahl der abstimmenden Mitglieder
 
-**Beispiel:**
+**Beispiel:** -> TODO: reale eher komplexere (stichentscheid, ordnungs antrag, Wiederholung, Cup-abstimmung) Bespiele aufbauen
 - Ja: 120
 - Nein: 75
 - Enthaltungen: 5
@@ -163,8 +161,7 @@ Das Feld **quorum** definiert die Mindestanzahl anwesender Mitglieder für die B
 **Beispiel:** Ein Parlament mit 200 Mitgliedern ist beschlussfähig, wenn mindestens 100 Mitglieder anwesend sind (quorum: 100).
 
 ## Namentliche Abstimmungen
-***[Nicole: "nominal" ist in diesem Zusammenhang unüblich - besser "named_vote" oder "is_named"]***
-Das Feld **is_nominal** zeigt an, ob es sich um eine namentliche Abstimmung handelt: 
+Das Feld **named_vote** zeigt an, ob es sich um eine namentliche Abstimmung handelt: 
 
 - **true**: Die Einzelstimmen werden erfasst und publiziert
 - **false**: Nur das Gesamtergebnis wird erfasst
