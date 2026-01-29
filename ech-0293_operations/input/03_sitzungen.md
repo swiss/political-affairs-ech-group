@@ -62,18 +62,6 @@ Diese Unterscheidung ist wichtig für das Verständnis des Standards:
 - **Meeting**: Eine einzelne Sitzung innerhalb einer Session
 
 #### Beispiel Bundesebene
-
-Die Bundesversammlung kennt vier ordentliche Sessions pro Jahr:
-
-- **Frühjahrssession**: Typischerweise 3 Wochen im Februar/März
-- **Sommersession**: Typischerweise 3 Wochen im Mai/Juni
-- **Herbstsession**: Typischerweise 3 Wochen im September
-- **Wintersession**: Typischerweise 2-3 Wochen im November/Dezember
-
-Innerhalb der Frühjahrssession 2024 fanden beispielsweise separate Meetings des Nationalrats und des Ständerats an verschiedenen Tagen statt.
-
-### Hierarchische Einordnung
-
 ```
 Legislature (51. Legislaturperiode)
   └─ Session (Frühjahrssession 2024)
@@ -85,9 +73,10 @@ Legislature (51. Legislaturperiode)
 
 ### Zuordnung zu Organen
 
-Eine Session kann sich auf verschiedene parlamentarische Organe beziehen:
+Eine Session oder ein Meeting kann sich auf verschiedene parlamentarische Organe beziehen:
 
-- **Vollparlament**: Sessions des National- oder Kantonsrats
+- **Parlament**: Sessions eines Kantonsrats
+--**Regiegerung**: Meetings des Bundesrats, Regierungsrat, oder Executive einer Gemeinde
 - **Kommissionen**: Sitzungsperioden parlamentarischer Kommissionen
 - **Gemeinsame Gremien**: Z.B. Sessions der Vereinigten Bundesversammlung
 
@@ -107,15 +96,6 @@ Sessions werden üblicherweise nummeriert:
 - **end_date**: Geplantes Ende der Session
 
 Im Gegensatz zu Meetings gibt es auf Session-Ebene keine "actual" Daten, da die übergeordnete Planung meist eingehalten wird.
-
-### Verwendungszwecke
-
-Die Session-Entität ermöglicht:
-
-1. **Gruppierung**: Zusammenfassung mehrerer thematisch oder zeitlich verbundener Sitzungen
-2. **Planung**: Vorausschauende Organisation des parlamentarischen Kalenders
-3. **Kommunikation**: Bündelung von Informationen für Öffentlichkeit und Medien
-4. **Analyse**: Auswertung parlamentarischer Aktivitäten nach Sitzungsperioden
 
 ### Flexibilität im Standard
 
