@@ -48,7 +48,7 @@ Geheime Stimmabgabe bei Abstimmungen und Wahlen
 
 ## Struktur einer Abstimmung
 
-Eine Abstimmung ist immer einer Sitzungsphase und/oder einer Sitzung, einem Traktandum (Agenda-Item) und einem Geschäft mit Geschäftsnummer zugeordnet. Sie umfasst den Abstimmungstyp, den Abstimmungsgegenstand (Frage), das Ergebnis und – bei nicht geheimer Abstimmung – die Einzelstimmen der Mitglieder. 
+Eine Abstimmung ist immer einer Sitzungsphase und/oder einer Sitzung, einem Traktandum (Agenda-Item) und einem Geschäft mit Geschäftstitel und mit Geschäftsnummer zugeordnet. Sie umfasst den Abstimmungstyp, den Abstimmungsgegenstand (Frage), das Ergebnis und – bei nicht geheimer Abstimmung – die Einzelstimmen der Mitglieder. 
 Sie kann entweder:
 
 ```
@@ -95,13 +95,13 @@ Das Ergebnis wird auf zwei Arten erfasst:
 ### Gesamtergebnis (result)
 - **passed**: Angenommen
 - **failed**: Abgelehnt
-- **tied**: Stimmengleichheit
+- **tied**: Stimmengleichheit (Nicole: Das gibt es nie, denn dann gibts einen Stichentscheid)
 
 ### Detaillierte Zahlen
 - **yes_count**: Anzahl Ja-Stimmen
 - **no_count**: Anzahl Nein-Stimmen
 - **abstention_count**: Anzahl Enthaltungen
-- **absent_count**: Anzahl Abwesende (die nicht abstimmen konnten)
+- **absent_count**: Anzahl Abwesende (die nicht abstimmen konnten) 
 - **total_count**: Gesamtzahl der abstimmenden Mitglieder
 
 **Beispiel:**
@@ -190,13 +190,13 @@ Voting
 
 ## Beschreibung und Dokumentation
 
-- **description**: Beschreibung worüber abgestimmt wurde
+- **description**: Beschreibung worüber abgestimmt wurde (Abstimmungsgegenstand, Abstimmungsfrage)
 - **url**: Mehrsprachige URLs zu Abstimmungsdetails
 
 ## Zeitstempel
 
 - **datetime_created**: Zeitpunkt der Durchführung der Abstimmung
-- **datetime_updated**: Letzte Aktualisierung (z.B. bei Korrekturen)
+- **datetime_updated**: Letzte Aktualisierung (z.B. bei Korrekturen) (Nicole: ist das wirklich ein realer Use-Case?)
 
 
 {{include:ech-0293_operations/output/docs/Voting.md}}
@@ -205,11 +205,11 @@ Voting
 
 ## Zweck der Entität
 
-IndividualVote erfasst das Stimmverhalten einzelner Parlamentsmitglieder bei namentlichen Abstimmungen. Die Entität wird nur erstellt, wenn eine Abstimmung namentlich durchgeführt wird (Voting.is_nominal = true).
+IndividualVote erfasst das Stimmverhalten einzelner Parlamentsmitglieder bei namentlichen Abstimmungen. Die Entität wird nur erstellt, wenn eine Abstimmung nicht geheim durchgeführt wird (Voting.is_nominal = true).
 
 ## Beziehung zur Abstimmung
 
-Jede Individual Vote ist Teil einer übergeordneten Voting (Abstimmung):
+Jede Individual Vote ist Teil eines übergeordneten Votings (Abstimmung):
 
 ```
 Voting (Schlussabstimmung Energiegesetz)
@@ -246,12 +246,13 @@ Nein-Stimme (Ablehnung)
 ### abstention
 Enthaltung
 
-**Bedeutung:** Die Person nimmt an der Abstimmung teil, enthält sich aber der Stimme.
+**Bedeutung:** Die Person nimmt an der Abstimmung teil, enthält sich aber der Stimme. Bei elektronischer Stimmabgabe drückt sie den Knopf "Enthaltung". 
+
 
 ### absent
 Nicht entschuldigt abwesend.
 
-**Bedeutung:** Die Person war zum Zeitpunkt der Abstimmung nicht anwesend.
+**Bedeutung:** Die Person war zum Zeitpunkt der Abstimmung nicht anwesend. (Nicole: Das müssten wir nochmals überlegen. Abwesend bezieht sich auf die ganze Sitzung, nicht auf die Abstimmung. Das gehört wohl eher zu 03_sitzungen)
 
 **Gründe für Abwesenheit:**
 - Krankheit oder Unfall
@@ -268,13 +269,13 @@ Entschuldigt abwesend.
 - **absent**: Unentschuldigte Abwesenheit.
 
 ### did_not_vote
-Hat nicht abgestimmt.
+Hat nicht abgestimmt. 
 
-**Bedeutung:** Die Person war anwesend, hat aber nicht abgestimmt ***Nicole: Dieses Feld scheint mir überflüssig. Wie wollte man die Anwesenden denn zählen, wenn sie nicht abstimmen – wer sollte sie zählen? Mit "absent" ist dieser Fall meiner Meinung nach abgedeckt.***
+**Bedeutung:** Die Person war anwesend, hat aber nicht abgestimmt ***Nicole: Dieses Feld scheint mir überflüssig. Wie wollte man die Anwesenden zählen, wenn sie nicht abstimmen – wer sollte sie zählen? Mit "absent" ist dieser Fall meiner Meinung nach abgedeckt.***
 
 **Unterschied zu abstention:**
-- **abstention**: Bewusste Enthaltung (wird als aktive Handlung erfasst)
-- **did_not_vote**: Passive Nicht-Teilnahme
+- **abstention**: Bewusste Enthaltung (wird in einigen Parlamenten als aktive Handlung erfasst) 
+- **did_not_vote**: Passive Nicht-Teilnahme (in den meisten Parlamenten 
 
 ### president
 Präsident/in (stimmt nicht ab, aber fällt bei Stimmengleichheit den Stichentscheid)
@@ -311,12 +312,13 @@ Das Feld **group_id** erfasst die Fraktionszugehörigkeit zum Zeitpunkt der Abst
 
 ## Position und Reihenfolge
 
-Das Feld **position** definiert die Sortierreihenfolge bei der Darstellung:
+Das Feld **position** definiert die Gruppierung und Sortierreihenfolge bei der Darstellung:
 
 **Anwendung:**
 - Alphabetische Sortierung nach Nachname
 - Sortierung nach Fraktion
 - Sortierung nach Stimmabgabe (erst Ja, dann Nein, dann Enthaltungen)
+- Gruppierung nach Fraktion, innerhalb der Fraktion nach Ja, Nein, Enthaltungen und innerhalb der Untergruppe alphabetisch sortiert
 
 ## Beschreibung und Kontext
 
@@ -329,7 +331,7 @@ Das Feld **description** kann zusätzliche Informationen erfassen:
 ## Zeitstempel
 
 - **datetime_created**: Zeitpunkt der Stimmabgabe
-- **datetime_updated**: Letzte Aktualisierung (z.B. bei Korrekturen)
+- **datetime_updated**: Letzte Aktualisierung (z.B. bei Korrekturen) (Nicole: Bei Abstimmungen gibt es keine Korrekturen, sondern sie werden wiederholt)
 
 ## Anwesenheit vs. Stimmabgabe
 
