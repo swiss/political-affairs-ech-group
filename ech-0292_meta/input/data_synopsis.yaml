@@ -2,6 +2,10 @@
 # URL_synopsis (Fahne)        : https://www.parlament.ch/centers/eparl/curia/2024/20240031/NS7%20D.pdf                  -> Namensgebung: (1.) NS = Bundesversammlung, N = Nationalrat, S = Ständerat; (2.) Nummer beschreibt Version der Fahne, mit Ausnahme von Beschluss Erstrat (immer = 11); (3.) D = Deutsch, F = Französisch oder I = Italienisch
 # URL_parliamentary_lexicon   : https://www.parlament.ch/en/%C3%BCber-das-parlament/parlamentsw%C3%B6rterbuch/parlamentsw%C3%B6rterbuch-detail?WordId=77 -> Erklärung des Ablaufs. ein Geschäft kann mehrere Gesetzesentwrüfe enthalten (thematisch gebündelt). Wenn sich die Räte nicht einig sind (in allen Entwürfen), kann es eine oder mehrere Fahnen geben.
 
+# Fragen: 
+# - Wo ist der Link zu Gesetzen bie mehrere Vorlagen?
+# - Versionierung bei Korrekturen
+
 id: curiavista:container               
 works:
   - id: curiavista:affair/20240031/2/8 # Nummer des Geschäfts + (optional; TBD) Session + in diesem Fall die 8. Fahne, Differenzbereinigung, (Achtung: Nr. 7, da Beschluss Erstrat immer = 11) zur "BFI Botschaft", Antrag Einigungskonferenz, beraten in der Herbtsession 2024.
