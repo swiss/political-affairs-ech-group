@@ -1,0 +1,32 @@
+# URL_affair                  : https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20240031
+# URL_synopsis (Fahne)        : https://www.parlament.ch/centers/eparl/curia/2024/20240031/NS7%20D.pdf                  -> Namensgebung: (1.) NS = Bundesversammlung, N = Nationalrat, S = Ständerat; (2.) Nummer beschreibt Version der Fahne, mit Ausnahme von Beschluss Erstrat (immer = 11); (3.) D = Deutsch, F = Französisch oder I = Italienisch
+# URL_parliamentary_lexicon   : https://www.parlament.ch/en/%C3%BCber-das-parlament/parlamentsw%C3%B6rterbuch/parlamentsw%C3%B6rterbuch-detail?WordId=77 -> Erklärung des Ablaufs. ein Geschäft kann mehrere Gesetzesentwrüfe enthalten (thematisch gebündelt). Wenn sich die Räte nicht einig sind (in allen Entwürfen), kann es eine oder mehrere Fahnen geben.
+
+id: curiavista:container               
+works:
+  - id: curiavista:affair/20240031/2/8 # Nummer des Geschäfts + (optional; TBD) Session + in diesem Fall die 8. Fahne, Differenzbereinigung, (Achtung: Nr. 7, da Beschluss Erstrat immer = 11) zur "BFI Botschaft", Antrag Einigungskonferenz, beraten in der Herbtsession 2024.
+    work_types: synopsis               # Synoptische Darstellung
+    dates:
+       - xdate: 2024-09-25
+         date_type: publication        # mandatory: First publication in any language
+       - xdate: 2025-XX-XX     
+         date_type: last_update        # if any -  siehe zum Beispiel hier: https://www.parlament.ch/centers/documents/de/s1-d.pdf
+    expressions:
+      - id: curiavista:affair/20240031/2/8/NS7%20D
+        language: de                   # language                              : `eli/dl/proj/2024/65/cons_1/doc_4/de`
+        title: 24.031 n  Förderung von Bildung, Forschung und Innovation in den Jahren 2025–2028     # -> wofür steht "n"? TBD
+        subtitle: (Differenzen)        # Zusatz "(Differenzen)" ab Differenzbereinigung (optional)
+        abbreviation:                  # gibt es hier nicht, TBD
+        manifestations:
+          - id: curiavista:affair/20240031/2/8/NS7%20D.pdf
+            format: pdf               # only PDF version available currently
+            url: https://www.parlament.ch/centers/eparl/curia/2024/20240031/NS7%20D.pdf
+      - id: curiavista:affair/20240031/2/8/NS7%20F
+        language: fr
+        title: 24.031 n Encouragement de la formation, de la recherche et de l’innovation pour la période 2025-2028 (Divergences)
+        subtitle: (Divergences)
+        abbreviation:
+        manifestations:
+          - id: curiavista:affair/20240031/2/8/NS7%20F.pdf
+            format: pdf 
+            url: https://www.parlament.ch/centers/eparl/curia/2024/20240031/NS7%20F.pdf
