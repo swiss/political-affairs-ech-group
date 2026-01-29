@@ -193,7 +193,7 @@ Voting
 ## Zeitstempel
 
 - **datetime_created**: Zeitpunkt der Durchführung der Abstimmung
-- **datetime_updated**: Letzte Aktualisierung (z.B. bei Korrekturen) (Nicole: ist das wirklich ein realer Use-Case?)
+- **datetime_updated**: Letzte Aktualisierung (z.B. bei Korrekturen des Abstimmungsprotkolls)
 
 
 {{include:ech-0293_operations/output/docs/Voting.md}}
