@@ -1,0 +1,96 @@
+Affair: 
+	type: ---parliamentary initiative	
+
+ParliamentaryInitiative:
+	is_a: Affair
+	type: affairType
+	description: Parlamentarische Initiative
+	attributes:
+		affair_uid:
+        		identifier: true
+        		required: true
+        		range: string
+        		description: Unique identifier.
+		affair_number:
+			identifier: true
+        		required: true
+        		range: string
+        		description: Number of the affair, issued by XX.
+		link_to_other_affair:
+			identifier_other_affairs: true
+			multivalued: true
+			required: false
+			description: Gleichlautende Geschäfte; Verlinkung zu früheren Geschäften
+		title: 
+		       range: TextBlock
+		       multivalued: true
+			description: XX
+		
+		# Submission
+		submission:
+		       range: Submission
+		       required: true
+		       description: Submission details for the parliamentary initiative.
+			
+		submissionValidation:
+		  	range: SubmissionValidationStep
+		  	multivalued: true
+		  	required: false
+		  	description: Initial steps taken after the submission of the parliamentary initiative, such as content/formal checks and urgency requests.
+		
+		assignment: 
+		  	range: AssignmentStep
+		  	multivalued: true
+		  	required: false
+		  	description: Steps that assign the affair to a chamber, committee, or administrative body for handling.
+		
+		response:
+		  	range: ResponseStep
+		  	multivalued: true
+		  	required: false
+		  	description: Formal responses or recommendations from the executive (e.g. Direktion, Bundesrat).
+
+		# Beratung (im Hintergrund)
+		committeeDeliberations:
+		  	range: CommitteeDeliberationStep
+		  	multivalued: true
+		  	required: false
+		  	description: Committee-level deliberations preparing for the plenary debate.
+
+		# Behandlung im Rat: mit 3 Elementen = Reden, Anträge, Abstimmungen
+		councilDebates:
+		  	range: PlenaryDebate
+		  	multivalued: true
+		  	required: false
+		  	description: XX.
+			
+#-----------------------
+		# # Phase 2- durch Kommission: Ausarbeitung Erlassentwurf, Vernehmlassung, Stellungsnahme BR, erster Entwurf = neu ins Parlament ab hier
+		
+		
+		# Frage an Fabian: erhält das Geschäft in der 2. Phase einen Stempel/Neue Nummer?/...
+		# Frage an Nicole: was passiert hier?
+		
+		
+# 			#im Parlament: Debatten (Eintreten + Detail) + Abstimmungen
+# 		consultationLink:
+# 			XX
+#
+#
+ 		# Entwürfe/Drafts (link zum BBl)
+#
+		# HIER WEITER SOBALD WIR BR-GESCHÄFT gemacht haben!
+# -----------------------
+		
+		
+		# Referendum => als typ einer Frist
+						
+		
+	       # === Lifecycle flags ===
+		lifecycle:
+		  	range: LifecycleFlags
+			multivalued: true
+		  	required: false
+		  	description: High-level metadata about the parliamentary initiative's formal state.
+
+	

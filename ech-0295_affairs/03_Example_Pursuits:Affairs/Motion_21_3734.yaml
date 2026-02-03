@@ -1,0 +1,179 @@
+Affair: 
+	type: ---motion
+Motion:
+	is_a: Affair
+	type: affairType
+	attributes:		
+		
+		ProcedureState: 
+			uid:		XX
+			as_of_date: 	"16.06.2021"
+			status: 	open
+			phase: 	pre-parliamentary
+			stage: 	Submission
+			decision: 	null
+			details: 
+				submission_date:	"16.06.2021"
+				sponsor:
+					actor: "XX"
+					role: "sponsor"
+					start_date: "XX"
+					end_date: NA
+				texts: 
+					range: TextBlock
+					multivalued: true
+					required: true
+					description: All texts associated with the submission (e.g., main text, reasoning).
+				withdrawn_date:
+				        	range: date
+				        	required: false
+				        	description: The date the pursuit/affair was officially withdrawn by the sponsor, if applicable.	
+				begründung_im_Rat: 
+					range: PlenaryDebate
+				  	required: false
+				  	description: XX.					
+									
+					
+		ProcedureState: 
+			uid:		XX
+			as_of_date: 	"22.06.2021"
+			status: 	closed
+			phase: 	pre-parliamentary
+			stage: 	Withdrawl
+			decision: 	null
+			details: 
+				withdrawn_date:
+				        	range: date
+				        	required: false
+				        	description: The date the pursuit/affair was officially withdrawn by the sponsor, if applicable.	
+		
+		
+		
+		
+		
+		---------------------
+		
+		submission:
+			submission_date:	"16.06.2021"
+			sponsor:
+				actor: "XX"
+				role: "sponsor"
+				start_date: "XX"
+				end_date: NA
+			texts: 
+				range: TextBlock
+				multivalued: true
+				required: true
+				description: All texts associated with the submission (e.g., main text, reasoning).
+			      withdrawn_date:
+			        	range: date
+			        	required: false
+			        	description: The date the pursuit/affair was officially withdrawn by the sponsor, if applicable.	
+			begründung_im_Rat: 
+				range: PlenaryDebate
+			  	required: false
+			  	description: XX.					
+			procedureState: uid
+
+
+		ProcedureState: 
+			uid:		XX
+			as_of_date: 	"16.06.2021"
+			status: 	open
+			phase: 	pre-parliamentary
+			stage: 	"submitted"
+			link: 		Submission
+			decision: 	false
+			
+		
+		ProcedureState: 
+			as_of_date: 	"16.06.2021" ## FABIAN: ergibt dieses Datum sinn?
+			status: 	open
+			phase: 	parliamentary
+			stage: 	submission_validation
+			decision: 	validated
+		
+		
+			
+		ResponseStep: 
+			responder: 		actor-link uid
+			response_date: 	"01.09.2021"
+			recommendation: 	reject
+			text: 			"Der Bundesrat beantragt die Ablehnung der Motion."
+
+
+		ProcedureState: 
+			as_of_date: 	"01.09.2021"
+			status: 	open
+			phase: 	parliamentary
+			stage: 	executive_response
+			decision: 	recommended_for: 	rejection
+				
+
+				
+		
+		
+		
+		
+		
+		
+		
+		affair_uid:
+        		identifier: true
+        		required: true
+        		range: string
+        		description: Unique identifier.
+		affair_number:
+			identifier: true
+        		required: true
+        		range: string
+        		description: Number of the affair, issued by XX.
+		link_to_other_affair:
+			identifier_other_affairs: true
+			multivalued: true
+			required: false
+			description: Gleichlautende Motionen; Verlinkung zu früheren Geschäften
+		title: 
+		       range: TextBlock
+		       multivalued: true
+			description: XX
+		
+		submission:
+		       range: Submission
+		       required: true
+		       description: Submission details for the motion.
+		
+		submissionValidation:
+		  	range: SubmissionValidationStep
+		  	multivalued: true
+		  	required: false
+		  	description: Initial steps taken after the submission of the motion, such as content/formal checks and urgency requests.
+		
+		assignment: 
+		  	range: ZuteilungsSchritt
+		  	multivalued: true
+		  	required: false
+		  	description: Steps that assign the affair to a chamber, committee, or administrative body for handling.
+		
+		response:
+		  	range: ResponseStep
+		  	multivalued: true
+		  	required: false
+		  	description: Formal responses or recommendations from the executive (e.g. Direktion, Bundesrat).
+
+		committeeDeliberations:
+		  	range: CommitteeDeliberationStep
+		  	multivalued: true
+		  	required: false
+		  	description: Committee-level deliberations preparing for the plenary debate.
+
+		councilDebates:
+		  	range: PlenaryDebate
+		  	multivalued: true
+		  	required: false
+		  	description: XX.							
+			
+		ProcedureState:
+			range: ProcedureState
+			required: false
+			description: Current (latest) procedure state of the affair.

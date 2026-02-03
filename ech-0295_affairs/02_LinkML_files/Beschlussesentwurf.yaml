@@ -1,19 +1,10 @@
 Affair: 
-	type: ---motion	
+	type: ---parliamentary initiative	
 
-
-TODO: Motion wird Postulat; Motion und Postulat zusammen
-## Bund: heute = keine Typänderung mehr möglich 
-## Bund: Teilweise annahme möglich => abgedeckt (https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20243378)
-## früherer Bund: änderung möglich = noch nicht = machen wir mit Kantonen
-## https://www.gr.be.ch/de/start/geschaefte/geschaeftssuche/geschaeftsdetail.html?guid=5900dc22a3b348ef962989fa79c2e4f5
-## @Nicole: wie genau wird das sachbearbeiterisch gehandhabt? => gitb es neue Geschäfte? = oder gibt es eine "Spaltung"? => oder bleibt diese info hier?
-
-
-Motion:
+ParliamentaryInitiative:
 	is_a: Affair
 	type: affairType
-	description: Mit einer Motion beauftragt das Parlament die Exekutive (oder gegebenenfalls das Ratsbüro) einen Entwurf zu einem Erlass vorzulegen oder eine Massnahme zu treffen.
+	description: Parlamentarische Initiative
 	attributes:
 		affair_uid:
         		identifier: true
@@ -29,25 +20,27 @@ Motion:
 			identifier_other_affairs: true
 			multivalued: true
 			required: false
-			description: Gleichlautende Motionen; Verlinkung zu früheren Geschäften
+			description: Gleichlautende Geschäfte; Verlinkung zu früheren Geschäften
 		title: 
 		       range: TextBlock
 		       multivalued: true
 			description: XX
 		
+		# Submission
 		submission:
 		       range: Submission
 		       required: true
-		       description: Submission details for the motion.
-		
+		       description: Submission details for the parliamentary initiative.
+			#TODO: begründung im Rat möglich?
+			
 		submissionValidation:
 		  	range: SubmissionValidationStep
 		  	multivalued: true
 		  	required: false
-		  	description: Initial steps taken after the submission of the motion, such as content/formal checks and urgency requests.
+		  	description: Initial steps taken after the submission of the parliamentary initiative, such as content/formal checks and urgency requests.
 		
 		assignment: 
-		  	range: ZuteilungsSchritt
+		  	range: AssignmentStep
 		  	multivalued: true
 		  	required: false
 		  	description: Steps that assign the affair to a chamber, committee, or administrative body for handling.
@@ -58,19 +51,29 @@ Motion:
 		  	required: false
 		  	description: Formal responses or recommendations from the executive (e.g. Direktion, Bundesrat).
 
+		# Beratung (im Hintergrund)
 		committeeDeliberations:
 		  	range: CommitteeDeliberationStep
 		  	multivalued: true
 		  	required: false
 		  	description: Committee-level deliberations preparing for the plenary debate.
 
+		# Behandlung im Rat: mit 3 Elementen = Reden, Anträge, Abstimmungen
 		councilDebates:
 		  	range: PlenaryDebate
 		  	multivalued: true
 		  	required: false
-		  	description: XX.							
-			
-		ProcedureState:
-			range: ProcedureState
-			required: false
-			description: Current (latest) procedure state of the affair.
+		  	description: XX.						
+		
+		
+		# Referendum => als typ einer Frist
+						
+		
+	       # === Lifecycle flags ===
+		lifecycle:
+		  	range: LifecycleFlags
+			multivalued: true
+		  	required: false
+		  	description: High-level metadata about the parliamentary initiative's formal state.
+
+	

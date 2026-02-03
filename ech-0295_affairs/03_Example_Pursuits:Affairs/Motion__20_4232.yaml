@@ -1,0 +1,303 @@
+https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20204232
+
+affair_uid: "20204232"
+affair_number: "20.4232"
+
+title:
+  	- text: "Deklaration von Kokosprodukten aus affenquälerischer Produktion"
+  	  language: de
+  	  text_type: title
+  	  date: "2020-09-25"
+
+procedure_states:
+
+  	# --- Submission ---
+  	- uid: "ps-20204232-submission"
+  	  as_of_date: "2020-09-25"
+  	  status: open
+  	  phase: pre-parliamentary
+  	  stage: Submission
+  	  decision: null
+  	  details:
+  	    	submission_date: "2020-09-25"
+  	    	
+  	    	sponsor:
+  	    	  - actor: "4289"
+  	    	    role: sponsor
+  	    	    start_date: "2020-09-25"
+  	    	    end_date: null
+  	    	  - actor: "4246"
+  	    	    role: cosponsor
+  	    	    start_date: "2020-09-25"
+  	    	    end_date: null
+  	    	  - actor: "4058"
+  	    	    role: cosponsor
+  	    	    start_date: "2020-09-25"
+  	    	    end_date: null
+  	    	
+  	    	texts:
+  	    	  - text: "Der Bundesrat wird beauftragt, eine Deklarationspflicht für Kokosprodukte einzuführen, die unter Einbezug von Affen produziert wurden. Der Code zur Nachverfolgbarkeit der Herkunft soll dabei um einen für Konsumierende klaren Hinweis auf die tierquälerische Produktion ergänzt werden."
+  	    	    language: de
+  	    	    text_type: submitted
+  	    	    origin: null
+  	    	    date: "2020-09-25"
+  	    	    document: null
+  	    	
+  	    	  - text: "Wie der Tagesspiegel vom 10. Juli 2020 und verschiedene weitere Medien berichteten, herrscht eine grosse Tierschutzproblematik im Zusammenhang mit der Ernte von Kokosnüssen in Thailand. Junge Affen werden in Thailand angekettet, gewaltsam trainiert und gezwungen, Kokosnüsse zu pflücken. Aus diesen werden Kokosmilch, Kokosöl und andere Kokosprodukte hergestellt. Viele Affen werden ihren Familien ganz jung und überdies illegal entrissen. Man legt ihnen harte Metallhalsbänder an, die den Hals verletzen, und bindet oder kettet sie so lange an, wie sie für die Kokosindustrie von Nutzen sind. Dies ist jedoch nicht auf allen Kokosnussfarmen der Fall. In anderen Kokosnussanbaugebieten - wie Brasilien, Kolumbien und Hawaii - nutzt man tierleidfreie Methoden zur Ernte. Die Kokosnüsse werden dort beispielsweise mit hydraulischen Aufzügen auf Traktoren, Seil- und Plattformsystemen oder Leitern geerntet; in manchen Anbaugebieten setzen die Menschen alternativ auf Zwergformen der Kokospalme. Einige Detailhändler in Deutschland haben bereits reagiert und entsprechende Produkte wie Aroy-D und Chaokoh aus dem Sortiment gestrichen. In der Schweiz werden diese noch immer angeboten, ohne dass Konsumierende über die tierquälerische Produktion Bescheid wissen. Die Regierung in Bangkok kündigte an, dass Kokosprodukte künftig mit einem Code nachverfolgbar sein sollen, damit klar ist, ob die Nüsse aus einer affenfreien Farm stammen. Da ein Code jedoch für Transparenz nicht ausreicht, ist eine klare Deklaration erforderlich wie sie bei anderen Produkten wie Käfigeiern bereits üblich ist."
+  	    	    language: de
+  	    	    text_type: reasoning
+  	    	    origin: null
+  	    	    date: "2020-09-25"
+  	    	    document: null
+  	    	
+  	    	begründung_im_Rat: null
+
+ 	 # --- Assignments ---
+ 	 - uid: "ps-20204232-assign-nr"
+ 	   as_of_date: "2020-09-25"
+ 	   status: open
+ 	   phase: pre-parliamentary
+ 	   stage: Assignment
+ 	   decision: null
+ 	   details:
+ 	     	assignment_type: chamber_assignment
+ 	     	assigned_to: "Nationalrat"
+ 	     	assignment_date: "2020-09-25"
+ 	     	deadline: "2022-09-24"
+ 	
+ 	 - uid: "ps-20204232-assign-wbk-n"
+ 	   as_of_date: "2020-09-25"
+ 	   status: open
+ 	   phase: pre-parliamentary
+ 	   stage: Assignment
+ 	   decision: null
+ 	   details:
+ 	     	assignment_type: committee_referral
+ 	     	assigned_to: "WBK-N"
+ 	     	assignment_date: null
+ 	     	deadline: null
+ 	
+ 	 - uid: "ps-20204232-assign-wbk-s"
+ 	   as_of_date: "2020-09-25"
+ 	   status: open
+ 	   phase: pre-parliamentary
+ 	   stage: Assignment
+ 	   decision: null
+ 	   details:
+ 	     	assignment_type: committee_referral
+ 	     	assigned_to: "WBK-S"
+ 	     	assignment_date: null
+ 	     	deadline: null
+ 	
+ 	 - uid: "ps-20204232-assign-edi"
+ 	   as_of_date: "2020-09-25"
+ 	   status: open
+ 	   phase: pre-parliamentary
+ 	   stage: Assignment
+ 	   decision: null
+ 	   details:
+ 	     	assignment_type: executive_routing
+ 	     	assigned_to: "EDI"
+ 	     	assignment_date: null
+ 	     	deadline: null
+ 	
+ 	 # --- Executive response (Bundesrat, recommendation reject) ---
+ 	 - uid: "ps-20204232-exec-response"
+ 	   as_of_date: "2020-11-25"
+ 	   status: open
+ 	   phase: pre-parliamentary
+ 	   stage: ExecutiveResponse
+ 	   decision: null
+ 	   details:
+ 	     	responder: "Bundesrat"
+ 	     	response_date: "2020-11-25"
+ 	     	recommendation: reject
+ 	     	texts:
+ 	     	  	- text: "Die Pflicht zur Deklaration der Produktionsmethoden von Nahrungsmitteln wurde bereits in mehreren parlamentarischen Vorstössen behandelt. Der Bundesrat ist sich bewusst, dass eine transparente Information der Konsumentinnen und Konsumenten wichtig ist. Er hat am 11. September 2020 einen Bericht veröffentlicht in Erfüllung des Postulats 17.3967 der WBK-S vom 13. September 2017 mit dem Titel \"Obligatorische Deklaration der Herstellungsmethoden von Nahrungsmitteln\". Der Bericht hält verschiedene Kriterien fest, die für die Einführung einer Deklarationspflicht erfüllt sein müssen. ..."
+ 	     	  	  language: de
+ 	     	  	  text_type: response
+ 	     	  	  origin: null
+ 	     	  	  date: "2020-11-25"
+ 	     	  	  document: null
+ 	     	  	- text: "La déclaration obligatoire des méthodes de production des denrées alimentaires a déjà fait l'objet de plusieurs interventions parlementaires. Le Conseil fédéral a conscience de l'importance d'une information transparente des consommateurs. ..."
+ 	     	  	  language: fr
+ 	     	  	  text_type: response
+ 	     	  	  origin: null
+ 	     	  	  date: "2020-11-25"
+ 	     	  	  document: null
+ 	     	  	- text: "Der Bundesrat beantragt die Ablehnung der Motion."
+ 	     	  	  language: de
+ 	     	  	  text_type: recommendation
+ 	     	  	  origin: null
+ 	     	  	  date: "2020-11-25"
+ 	     	  	  document: null
+ 	
+ 	# --- Committee deliberation (WBK-S) ---
+ 	 - uid: "ps-20204232-committee-wbk-s"
+ 	   as_of_date: "2023-04-25"
+ 	   status: open
+ 	   phase: parliamentary
+ 	   stage: CommitteeDeliberation
+ 	   decision: true
+ 	   details:
+ 	     	committee: "WBK-S"
+ 	     	council: "Ständerat"
+ 	     	decision: rejection
+ 	     	date: "2023-04-25"
+ 	     	spokesperson:
+ 	     	  	name: "Würth"
+ 	     	meeting_refs:
+ 	     	  	- uid: "meeting-XX"
+ 	     	texts:
+ 	     	  	- text: "Kommissionsbericht WBK-S (siehe Dokumentlink)."
+ 	     	  	  language: de
+ 	     	  	  text_type: committee_report
+ 	     	  	  date: "2023-04-25"
+ 	     	  	  document:
+ 	     	  	    	title: "Kommissionsbericht WBK-S 20.4232 (2023-04-25)"
+ 	     	  	   	url: "https://www.parlament.ch/centers/kb/Documents/2020/Kommissionsbericht_WBK-S_20.4232_2023-04-25.pdf"
+
+
+	# --- continue: plenary debates next + decisions ---
+
+	# --- continue: assignment (if passed) ---
+	
+	# --- continue: report/follow-up by FC ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------
+
+https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20204232
+
+Motion:
+	is_a: Affair
+	type: Motion
+	attributes:
+		affair_uid: "20204232"
+ 		affair_number: "20.4232"
+		title: "Deklaration von Kokosprodukten aus affenquälerischer Produktion"	     
+		submission:
+			submission_date: "2020-09-25"
+				# standardisierung des Datums. 
+			sponsor:
+				actor: "4289"
+				role: "sponsor"
+				start_date: "2020-09-25"
+				end_date: NA
+			
+			sponsor:
+				actor: "4246"
+				role: "cosponsor"
+				start_date: "2020-09-25"
+				end_date: NA
+			
+			sponsor:
+				actor: "4058"
+				role: "cosponsor"
+				start_date: "2020-09-25"
+				end_date: NA
+			# TODO LB: weitere cosponsors aufführen
+							
+			texts: 
+				text: "Der Bundesrat wird beauftragt, eine Deklarationspflicht für Kokosprodukte einzuführen, die unter Einbezug von Affen produziert wurden. Der Code zur Nachverfolgbarkeit der Herkunft soll dabei um einen für Konsumierende klaren Hinweis auf die tierquälerische Produktion ergänzt werden."
+				language: "de"
+				text_type: "submitted" #only 1
+				origin: NA # Description: ausformulieren und etwas beschreiben. originalsprache = was eingereicht wird (Datum) und was später kommt ist translated (Datum danach) ## DO WE NEED AMENDED? does anyone use that?
+				date: "2020-09-25"  	  	
+				document:
+			
+			texts: 
+				text: "Wie der Tagesspiegel vom 10. Juli 2020 und verschiedene weitere Medien berichteten, herrscht eine grosse Tierschutzproblematik im Zusammenhang mit der Ernte von Kokosnüssen in Thailand. Junge Affen werden in Thailand angekettet, gewaltsam trainiert und gezwungen, Kokosnüsse zu pflücken. Aus diesen werden Kokosmilch, Kokosöl und andere Kokosprodukte hergestellt. Viele Affen werden ihren Familien ganz jung und überdies illegal entrissen. Man legt ihnen harte Metallhalsbänder an, die den Hals verletzen, und bindet oder kettet sie so lange an, wie sie für die Kokosindustrie von Nutzen sind. Dies ist jedoch nicht auf allen Kokosnussfarmen der Fall. In anderen Kokosnussanbaugebieten - wie Brasilien, Kolumbien und Hawaii - nutzt man tierleidfreie Methoden zur Ernte. Die Kokosnüsse werden dort beispielsweise mit hydraulischen Aufzügen auf Traktoren, Seil- und Plattformsystemen oder Leitern geerntet; in manchen Anbaugebieten setzen die Menschen alternativ auf Zwergformen der Kokospalme. Einige Detailhändler in Deutschland haben bereits reagiert und entsprechende Produkte wie Aroy-D und Chaokoh aus dem Sortiment gestrichen. In der Schweiz werden diese noch immer angeboten, ohne dass Konsumierende über die tierquälerische Produktion Bescheid wissen. Die Regierung in Bangkok kündigte an, dass Kokosprodukte künftig mit einem Code nachverfolgbar sein sollen, damit klar ist, ob die Nüsse aus einer affenfreien Farm stammen. Da ein Code jedoch für Transparenz nicht ausreicht, ist eine klare Deklaration erforderlich wie sie bei anderen Produkten wie Käfigeiern bereits üblich ist."
+				language: "de"
+				text_type: "reasoning"
+				origin: NA 
+				date: "2020-09-25"  	  	
+				document:
+			
+		assignment: 
+	  	  	step_type: chamber_assignment
+	  	  	assigned_to: Nationalrat	  			  	
+	  	  	deadline: "2022-09-24" #entfällt sobald 1. rat sich beschäftigt 
+			deadline_active: false
+			#TODO: fristen + deadlines überdenken
+			
+		assignment: 
+	  	  	step_type: committee_referral
+	  	  	assigned_to: WBK-N 	  			  	
+	  	  	assignment_date: NA
+		
+		assignment: 
+	  	  	step_type: committee_referral
+	  	  	assigned_to: WBK-S	  			  	
+	  	  	assignment_date: NA
+		
+		assignment: 
+	  	  	step_type: executive_routing
+	  	  	assigned_to: EDI
+	  	  	assignment_date: NA
+		
+		response:
+	  	  	responder: "Bundesrat"
+	  	  	response_date: "2020-11-25"			
+		       recommendation: reject	
+			#TODO LB: französich, italienisch whatever bei allen texten! auch titel!
+	  	  	texts:
+				text: "Die Pflicht zur Deklaration der Produktionsmethoden von Nahrungsmitteln wurde bereits in mehreren parlamentarischen Vorstössen behandelt. Der Bundesrat ist sich bewusst, dass eine transparente Information der Konsumentinnen und Konsumenten wichtig ist. Er hat am 11. September 2020 einen Bericht veröffentlicht in Erfüllung des Postulats 17.3967 der WBK-S vom 13. September 2017 mit dem Titel "Obligatorische Deklaration der Herstellungsmethoden von Nahrungsmitteln". Der Bericht hält verschiedene Kriterien fest, die für die Einführung einer Deklarationspflicht erfüllt sein müssen. Zunächst muss überprüft werden, ob es klare, international anerkannte Standards gibt, auf deren Basis verpöntes Verhalten definiert und damit die Deklarationspflicht begründet werden kann. Der Einsatz von Affen zur Ernte von Kokosnüssen wird in der vorliegenden Motion als tierquälerisch beurteilt. Zwar könnten die in der Begründung der Motion erwähnten Methoden aus Schweizer Sicht als tierquälerisch betrachtet werden, doch diese Definition ist je nach Land unterschiedlich. Es gibt keinen Konsens über eine international anerkannte Definition, wenn es um den Einsatz von Tieren für die Ernte oder die Herstellung von Nahrungsmitteln geht. Eine Deklarationspflicht müsste zudem die Anforderungen der im Recht der Welthandelsorganisation (WTO) vorgesehenen Nichtdiskriminierung erfüllen. Schliesslich müssen die Umsetzung und die Kontrolle von Deklarationspflichten so ausgestaltet sein, dass sie glaubwürdig sind. Bei einer Deklarationspflicht für von Affen gepflückte Kokosnüsse würde sich die Frage der Rückverfolgbarkeit und der Überprüfbarkeit der Produktionsmethoden durch die kantonalen Behörden stellen. Diese wären nicht in der Lage, die Umsetzung an der Grenze zu überprüfen. Es müsste auch im Ausland ein schwerfälliger Kontrollapparat eingerichtet werden. Die vorangehenden Ausführungen zeigen, dass eine Deklarationspflicht nicht das geeignete Mittel ist, um die angestrebte Transparenz zu erreichen. Dies gilt erst recht für verarbeitete Produkte. Zudem wäre der Kontrollaufwand zur Umsetzung der Deklaration unverhältnismässig hoch. Die Lebensmittelgesetzgebung und die Landwirtschaftsgesetzgebung bieten jedoch die Möglichkeit, freiwillig auf spezifische Produktionsmethoden hinzuweisen. Als freiwillige Deklaration könnte auch angegeben werden, dass ein Produkt von Kokosnüssen stammt, die nicht von Affen gepflückt wurden. Die Kontrollorgane müssen auch bei freiwilligen Deklarationen überprüfen, ob die Angaben den Tatsachen entsprechen."
+				language: "de"
+				text_type: "response"
+				origin: NA 
+				date: "2020-11-25"  	
+			
+	  	  	texts:
+				text: "La déclaration obligatoire des méthodes de production des denrées alimentaires a déjà fait l'objet de plusieurs interventions parlementaires. Le Conseil fédéral a conscience de l'importance d'une information transparente des consommateurs. Il a publié le 11 septembre 2020 un rapport en réponse au postulat 17.3967 de la CSEC-E du 13 octobre 2017 intitulé " Déclaration obligatoire des modes de production de denrées alimentaires ". Le rapport fixe plusieurs critères de base qui doivent être remplis pour qu'une déclaration obligatoire puisse être introduite. Il s'agit tout d'abord de vérifier s'il existe des normes claires et reconnues internationalement qui permettent de définir les comportements décriés et qui justifient ainsi l'obligation de déclarer. Dans le cas soulevé par la présente motion, l'utilisation de singes pour la récolte des noix de coco est assimilée à de la maltraitance. Or, même si les méthodes mentionnées dans le développement de la motion seraient du point de vue suisse assimilables à de la maltraitance, sa définition varie selon les pays et il n'y a pas de consensus sur une définition internationale de l'utilisation d'animaux pour récolter ou produire des denrées alimentaires. Par ailleurs, une déclaration obligatoire devrait en outre respecter les exigences de non-discrimination prévues par le droit de l'Organisation mondiale du commerce (OMC). Finalement, l'application et le contrôle des déclarations obligatoires doivent être conçus de manière à être crédibles. Une obligation de déclarer que des noix de coco ont été récoltées avec l'aide de singes poserait la question de la traçabilité et de la vérification des méthodes de production par les autorités cantonales. Elles ne seraient pas en mesure de vérifier à la frontière la mise en oeuvre des exigences et devraient mettre en place un appareil de contrôle très lourd y compris à l'étranger. Les éléments qui précèdent montrent qu'une déclaration obligatoire n'est pas le moyen approprié pour atteindre la transparence souhaitée. C'est d'autant plus vrai pour les produits transformés. De plus, le recours à des moyens de contrôles très importants pour assurer la mise en oeuvre de la déclaration serait disproportionné. Les législations alimentaire et agricole prévoient cependant la possibilité de mentionner volontairement des méthodes de production spécifiques. Il serait également possible d'indiquer comme déclaration volontaire qu'un produit est issu de noix de coco produites sans recours à l'utilisation de singes. En présence de déclarations volontaires, les organes de contrôle doivent aussi vérifier que les informations sont véridiques."
+				language: "fr"
+				text_type: "response"
+				origin: NA 
+				date: "2020-11-25"  	
+			
+	  	  	texts:
+				text: "Der Bundesrat beantragt die Ablehnung der Motion."
+				language: "de"
+				text_type: "recommendation"
+				origin: NA 
+				date: "2020-11-25"
+					
+		councilDebates: ID-link-to-other-group	
+		
+		lifecycle: DECISION
+		lifecycle: Frist für Ständerat-Kommission
+	
+		committeeDeliberations:
+	  	  	committee: WBK-S  	
+	  	  	council: Ständerat		
+	  	  	decision: "rejection"
+	  	  	spokesperson: Würth
+			meeting_refs: #TODO: besser: link zu einem Meeting! 
+				meeting_id: XX
+				# TODO: rest können wir dann löschen: 
+		  	  	committee: WBK-S  	
+		  	  	meeting_date: "2023-04-25"
+				president: Würth
+			document: https://www.parlament.ch/centers/kb/Documents/2020/Kommissionsbericht_WBK-S_20.4232_2023-04-25.pdf	  	
+		
+		lifecycle: Frist für Ständerat-Penary
+		
+		councilDebates: ID-link-to-other-group
+		
+		lifecycle: DECISION

@@ -58,19 +58,28 @@ Motion:
 		  	required: false
 		  	description: Formal responses or recommendations from the executive (e.g. Direktion, Bundesrat).
 
+		# Beratung (im Hintergrund)
 		committeeDeliberations:
 		  	range: CommitteeDeliberationStep
 		  	multivalued: true
 		  	required: false
 		  	description: Committee-level deliberations preparing for the plenary debate.
 
+		# Behandlung im Rat: mit 3 Elementen = Reden, Anträge, Abstimmungen
 		councilDebates:
 		  	range: PlenaryDebate
 		  	multivalued: true
 		  	required: false
-		  	description: XX.							
+		  	description: XX.						
+				
 			
-		ProcedureState:
-			range: ProcedureState
-			required: false
-			description: Current (latest) procedure state of the affair.
+	       # === Lifecycle flags ===
+		lifecycle:
+		  	range: LifecycleFlags
+			multivalued: true
+		  	required: false
+		  	description: High-level metadata about the motion's formal state.
+		# Wann ist die Motion erledigt? => überwiesen (Bund); abgeschrieben (Kantone/Städte)
+
+
+	

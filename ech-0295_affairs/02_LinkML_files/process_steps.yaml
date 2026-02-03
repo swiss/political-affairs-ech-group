@@ -1,53 +1,61 @@
 #-------------------- Process step classes --------------------#
+ProcedureState:
+	description: Current procedure state of the affair, expressed via four orthogonal dimensions (openness, phase, stage, decision).
+	attributes:
+		as_of_date:
+			range: date
+			required: false
+			description: Date at which this state is valid (if known).
+		
+		
+		status:
+			range: StatusEnum
+			required: true
+			description: Whether the affair is still open or closed.
+		
+		
+		phase:
+			range: ProcedurePhaseEnum
+			required: true
+			description: Pre-parliamentary, parliamentary, or post-parliamentary phase.
+		
+		
+		stage:
+			range: ProcedureStageEnum
+			required: true
+			description: The current stage within the phase.
+		
+		
+		decision:
+			range: ProcedureDecisionEnum
+			required: false
+			description: Decision/outcome associated with the current stage (if applicable).
+			
+		
+		remark:
+			range: string
+			required: false
+			description: Optional remark for edge cases or additional context.
+
+
 LifecycleFlags:
   	description: General lifecycle metadata for the motion (status, withdrawal, urgency, etc.)
   	attributes:
-		
-		date: 	
+
+		date:
 			range: date
-			description: 
-		## + Datum wann der change gemacht wurde
-  	
-		pending: 
-			range: boolean
-			required: true
-			description: Ist das Geschäft noch offen/am Leben? Oder ist es finito?
-		
+			description:
+
+
   	  	urgent:
   	  	  	range: boolean
   	  	  	required: false
   	  	  	description: Whether the motion was declared urgent.
-			
+
   	  	remark:
   	  	  	range: string
   	  	  	required: false
-  	  	  	description: Optional remark. 
-		
-			
-		status: 
-			range: StatusEnum
-		
-		#TODO:
-		#Fabian: Liste machen mit möglichen Elementen (Ja/Nein)
-		
-		STATUS: 
-  	  	Passed:
-  	  	  	range: boolean
-  	  	  	required: true
-  	  	  	description: Current overall status of the motion (e.g. passed, failed, abgeschrieben).
-			
-		Abgeschrieben: 
-			range: boolean
-			
-  	  	submitted:
-  	  	  	range: boolean
-  	  	  	required: false
-  	  	  	description: Whether the motion has been formally submitted (derived from submission date).
-  	  	
-  	  	withdrawn:
-  	  	  	range: boolean
-  	  	  	required: false
-  	  	  	description: Whether the motion was officially withdrawn.
+  	  	  	description: Optional remark.
 		
 
 
@@ -549,7 +557,9 @@ Fristen:
 		Beantwortungsfrist
 		Behandlungsfristen => für Exekutive UND für Legislative! => an wen gerichtet? (e.g., innerhalb von XY Zeit muss es behandelt werden)
 		Fristerstreckung = Erste frist, 2. Frist, ...
-		XX
+		
+		Referendumgsfrist => am Schluss
+		
 
 
 

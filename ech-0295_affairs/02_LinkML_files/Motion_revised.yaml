@@ -1,0 +1,279 @@
+Affair: 
+	type: ---motion	
+	
+
+Motion:
+	is_a: Affair
+	type: affairType
+	description: Mit einer Motion beauftragt das Parlament die Exekutive (oder gegebenenfalls das Ratsbüro) einen Entwurf zu einem Erlass vorzulegen oder eine Massnahme zu treffen.
+	attributes:
+		affair_uid:
+        		identifier: true
+        		required: true
+        		range: string
+        		description: Unique identifier.
+		affair_number:
+			identifier: true
+        		required: true
+        		range: string
+        		description: Number of the affair, issued by XX.
+		link_to_other_affair:
+			identifier_other_affairs: true
+			multivalued: true
+			required: false
+			description: Gleichlautende Motionen; Verlinkung zu früheren Geschäften
+		title: 
+		       range: TextBlock
+		       multivalued: true
+			description: XX
+		
+		
+		# --- this needst to be a list, not multiple blocks
+		ProcedureState: 
+			uid: XX 
+			as_of_date: date
+			status: open
+			phase: pre-parliamentary
+			stage: Submission
+			decision: null
+			details: 
+				submission_date: date
+				sponsor: 
+					actor: uid
+					role: "sponsor", "cosponsor", "übernahme"
+					start_date: date
+					end_date: date
+				texts: 
+					range: TextBlock
+					multivalued: true
+					required: true
+					description: All texts associated with the submission (e.g., main text, reasoning).
+				begründung_im_Rat: 
+					range: PlenaryDebate
+				  	required: false
+				  	description: XX.										
+				
+		ProcedureState: 
+			uid: XX		
+			as_of_date: date
+			status: closed
+			phase: pre-parliamentary
+			stage: Withdrawl
+			decision: null
+			details: 
+				withdrawn_date:
+				       range: date
+				       required: false
+				       description: The date the pursuit/affair was officially withdrawn by the sponsor.
+		
+		ProcedureState: 
+			uid: XX		
+			as_of_date: date
+			status: "open", "closed"
+			phase: pre-parliamentary
+			stage: SubmissionValidation
+			decision: "valid", "not valid", "urgent"
+			details: 
+		  	 	validation_type:
+		  	 	  	range: SubmissionReviewStepTypeEnum
+		  	 	  	required: true
+		  	 	  	description: Whether the step was an initial check or an urgency request.
+  	 			received_date:
+  	 			  	range: date
+  	 			  	required: false
+  	 			  	description: When the request or task was formally received.
+  	 			decision_date:
+  	 			  	range: date
+  	 			  	required: false
+  	 			  	description: When the step was completed or decided.
+  	 			decided_by:
+  	 			  	range: ValidatingEntity
+  	 			  	required: false
+  	 			  	description: Entity that made the decision.
+ 				decision_result:
+ 				 	range: string
+ 				 	required: false
+ 				 	description: Outcome of the step (e.g. "valid", "invalid", "granted", "rejected").
+ 				deadline:
+ 				 	range: date
+ 				 	required: false
+ 				 	description: If applicable, the deadline by which the affair must be treated (Beantwortungsfrist; Behandlungsfrist).
+		
+		ProcedureState: 
+			uid: XX
+			description: A formal assignment of the affair to an institution or actor for further processing.		
+			as_of_date: date
+			status: "open"
+			phase: pre-parliamentary
+			stage: Assignment
+			decision: null
+			details: 
+		  	  	assignment_type:
+		  	  	  	range: ZuteilungsSchrittTypeEnum
+		  	  	  	required: true
+		  	  	  	description: Type of assignment (e.g., chamber, committee, executive).	
+  	  			assigned_to:
+  	  			  	range: HandlingEntity
+  	  			  	required: true
+  	  			  	description: The body to which the affair is assigned (e.g., Nationalrat, SGK-NR, Gesundheitsdirektion ZH).
+  	  			assignment_date:
+  	  			  	range: date
+  	  			  	required: true
+		  	  	deadline:
+		  	  	  	range: date
+		  	  	  	required: false
+		  	  	  	description: Optional treatment deadline (e.g. Abschreibungsfrist).
+				
+		
+		ProcedureState: 
+			uid: XX
+			description: A formal statement or reaction by the executive authority to an affair.
+			as_of_date: date
+			status: "open"
+			phase: pre-parliamentary
+			stage: ExecutiveResponse
+			decision: null
+			details: 
+		  	  	responder:
+		  	  	  	range: HandlingEntity
+		  	  	  	required: true
+		  	  	  	description: The body that issued the response (e.g., Bundesrat, ...).
+		  	  	response_date:
+		  	  	 	range: date
+		  	  	 	required: true
+			       recommendation:
+			          	range: RecommendationEnum
+			          	required: false
+			          	description: Formal recommendation, if applicable.
+		  	  	texts:
+		  	  	  	range: TextBlock
+		  	  	  	multivalued: true
+		  	  	  	required: true
+		  	  	  	description: Response and recommendation texts, including translations and metadata.			
+				
+
+		ProcedureState: 
+			uid: XX
+			description: Committee-level deliberations preparing for the plenary debate.
+			as_of_date: date
+			status: "open", "closed"
+			phase: parliamentary
+			stage: CommitteeDeliberation
+			decision: true
+			details: 
+		  	  	committee:
+		  	  	  	range: HandlingEntity
+		  	  	  	required: true
+		  	  	  	description: The committee responsible for the deliberation.
+		  	  	council:
+		  	  	  	range: CouncilEnum
+		  	  	  	required: false
+		  	  	  	description: The chamber this committee belongs to.
+		  	  	decision:
+		  	  	  	required: false
+		  	  	  	description: The committee’s recommendation to the plenary, including majority/minority positions.
+			  	  	date:
+			  	  	  	range: date
+			  	  	  	required: false
+					position: 
+						multivalued: true
+						required: false
+						description: The recommendation of the committee
+						type: 	
+							range: CommitteePositionTypeEnum
+							required: true
+							description: full committee, majority, minority (+name)
+				  	  	name:
+				  	  	  	range: string
+				  	  	  	required: false
+				  	  	  	description: Optional name or label of the position (e.g. "Minderheit I").
+				  	  	recommendation:
+				  	  	  	range: RecommendationEnum
+				  	  	  	required: true
+				  	  	  	description: The recommendation (accept, reject, etc.).
+				  	  	supporters:
+				  	  	  	range: Person
+				  	  	  	multivalued: true
+				  	  	  	required: false
+				  	  	  	description: Members who supported this position.
+			  	  	text:
+			  	  	  	range: TextBlock
+			  	  	  	required: false
+			  	  	  	description: Text of official communication of committee decision.
+						type: press release, or official communication, ..	
+		  	  	spokesperson:
+		  	  	  	range: Person
+		  	  	  	required: false
+		  	  	  	description: The person designated to speak in plenary for the committee. (Sprecher, Redner, Referent)
+				meeting_refs:
+				    uid: meeting-uid #=> link zur subgruppe
+				    multivalued: true
+				    required: false
+				
+				
+		ProcedureState: 
+			uid: XX
+			description: Behandlung im Rat. Elemente = Reden, Anträge, Abstimmungen
+			as_of_date: date
+			status: "open", "closed"
+			phase: parliamentary
+			stage: PlenaryDebate
+			decision: true
+			details: 
+		  	  	council:
+		  	  	  	range: CouncilEnum
+		  	  	  	required: true
+		  	  	  	description: The chamber in which the debate takes place.
+		  	  	debate_type:
+		  	  	  	range: PlenaryDebateTypeEnum
+		  	  	  	required: true
+		  	  	  	description: The type of debate (e.g., Eintreten, Detailberatung).
+		  	  	date:
+		  	  	  	range: date
+		  	  	  	required: true
+					description: date and time
+				
+				# TODO: Link zum Meeting!
+				# TODO: link zu Debates-subgruppe
+				debateEvent:
+				  	description: Chronologically ordered events in the plenary debate. A single event within the plenary debate — speech, proposition, or vote — with a timestamp or order.
+				  	multivalued: true
+				  	required: false
+			  	  	sequence_number:
+			  	  	  	range: integer
+			  	  	  	required: true
+			  	  	  	description: Position of the event within the debate (starting from 1).
+			  	  	event_type:
+			  	  	  	range: PlenaryDebateEventTypeEnum 
+						# speech, proposition, vote
+			  	  	  	required: true
+					speech: 
+						range: Speech
+						required: false
+						description: XX
+			  	  	proposition:
+			  	  	  	range: Proposition
+			  	  	  	required: false
+			  	  	  	description: If this event involves a specific amendment.
+			  	  	vote:
+			  	  	  	range: Vote
+			  	  	  	required: false
+			  	  	  	description: If this event includes or follows with a vote.
+			  	  	timestamp:
+			  	  	  	range: datetime
+			  	  	  	required: false
+			  	deadline:
+			  	  	range: date
+			  	  	required: false
+			  	  	description: Optional treatment deadline (e.g., Umsetzungsfrist).
+					
+		
+				
+			
+	
+#TODO: evtl. kommt das überall ein wenig rein: remarks
+remarks:
+    	range: string
+    	required: false
+    	description: Free-text explanation or notes.
+

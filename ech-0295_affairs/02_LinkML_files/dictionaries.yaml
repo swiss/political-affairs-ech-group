@@ -26,7 +26,9 @@ enums:
 		description: Origin of the text for multilingual tracking.
 		permissible_values:
 			original: { description: The title was originally submitted in this language. }
+			amended: { description: Text edited (e.g., tipo).}
 			translated: { description: The title was later translated from another language. }
+			
 	TextTypeEnum:
 	  	description: Type or function of the text within the legislative affair.
 	  	permissible_values:
@@ -164,20 +166,72 @@ enums:
 	  	  	excused: { description: Was officially excused }
 	  	  	not_present: { description: Was absent without excuse }
 			
+							
+	StatusEnum:
+		permissible_values:
+			open: { description: The affair is still active/open. }
+			closed: { description: The affair is closed/completed. }
 			
-	AffairStatusEnum:
-	  	permissible_values:
-	  	  	pending:
-	  	  	  	description: The motion is still in progress.
-	  	  	passed:
-	  	  	  	description: The motion was adopted by both chambers.
-	  	  	rejected:
-	  	  	  	description: The motion was rejected in plenary.
-	  	  	withdrawn:
-	  	  	  	description: The motion was formally withdrawn.
-	  	  	lapsed:
-	  	  	  	description: The motion expired (e.g. not treated in time).
-	  	  	partially_accepted:
-	  	  	 	 description: The motion was only partly adopted.
-	  	  	replaced:
-	  	  	  	description: The motion was replaced or merged into another.
+	ProcedurePhaseEnum:
+		permissible_values:
+			pre_parliamentary: { description: Before parliamentary deliberation (submission/validation/executive response). }
+			parliamentary: { description: Parliamentary deliberation phase (committees, plenary). }
+			post_parliamentary: { description: After parliamentary adoption, during implementation/reporting. }		
+			
+			
+	ProcedureStageEnum:
+		permissible_values:
+			preparation: { description: Preparation prior to submission. }
+			submission: { description: Formal submission filed. }
+			submission_validation: { description: Formal/content validation of the submission. }
+			executive_response: { description: Executive response issued (e.g., Federal Council / Directorate). }
+			urgency_review: { description: Urgency request reviewed/decided. }
+       		
+			committee:
+				description: In committee of the council. 
+				council: Erstrat, Zweitrat, oder false
+			plenary: 
+				description: In plenary of the first council. 
+				council: Erstrat, Zweitrat, oder false
+       		
+			forwarded_to_executive: { description: Forwarded to the executive for implementation. }
+			report_submitted_to_council: { description: Implementation/report submitted to the council. }
+			report_review_in_council: { description: Council reviews the implementation/report. }		
+			
+	ProcedureDecisionEnum:
+		permissible_values:
+			none: { description: No decision applicable/recorded for this stage. }
+       		
+       		
+			validated: { description: Submission/validation passed. }
+			failed_validation: { description: Submission/validation failed. }
+       		
+       		
+			recommended_for: { description: Executive recommends adoption (dafür). }
+			recommended_against: { description: Executive recommends rejection (dagegen). }
+       		
+       		
+			urgency_granted: { description: Urgency granted. }
+			urgency_denied: { description: Urgency denied. }
+       		
+       		
+			adopted: { description: Adopted/accepted. }
+			rejected: { description: Rejected. }
+			partially_adopted: { description: Partially adopted. }
+       		
+       		
+			report_adopted: { description: Report adopted/accepted. }
+			report_rejected: { description: Report rejected. }	
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
