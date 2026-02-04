@@ -3,6 +3,15 @@
 # Slot: paid 
 
 
+_[en] Indicates if the position is paid._
+
+_[de] Gibt an, ob die Position bezahlt ist._
+
+__
+
+
+
+
 
 URI: [act:paid](https://ch.paf.link/schema/actors/paid)
 Alias: paid
@@ -18,6 +27,7 @@ Alias: paid
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Occupation](Occupation.md) |  |  no  |
+| [InterestLink](InterestLink.md) | [en] An interest link (conflict of interest, political financing) of a person... |  no  |
 
 
 
@@ -61,11 +71,16 @@ Alias: paid
 <details>
 ```yaml
 name: paid
+description: '[en] Indicates if the position is paid.
+
+  [de] Gibt an, ob die Position bezahlt ist.
+
+  '
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
 alias: paid
-owner: Occupation
 domain_of:
+- InterestLink
 - Occupation
 range: boolean
 

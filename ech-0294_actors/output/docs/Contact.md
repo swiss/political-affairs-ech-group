@@ -52,6 +52,7 @@ URI: [act:Contact](https://ch.paf.link/schema/actors/Contact)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Person](Person.md) | [contacts](contacts.md) | range | [Contact](Contact.md) |
+| [Group](Group.md) | [contacts](contacts.md) | range | [Contact](Contact.md) |
 
 
 

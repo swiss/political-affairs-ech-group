@@ -3,7 +3,11 @@
 # Slot: label 
 
 
-_Display name of the person_
+_[en] Display name of the person._
+
+_[de] Anzeigename der Person._
+
+__
 
 
 
@@ -22,7 +26,7 @@ Alias: label
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
 
 
 
@@ -68,11 +72,14 @@ Alias: label
 <details>
 ```yaml
 name: label
-description: Display name of the person
+description: '[en] Display name of the person.
+
+  [de] Anzeigename der Person.
+
+  '
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
 alias: label
-owner: Person
 domain_of:
 - Person
 range: string

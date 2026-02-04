@@ -1,6 +1,9 @@
 @prefix act: <https://ch.paf.link/schema/actors/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+act:douglas_adams_example a act:Container ;
+    act:person <https://www.wikidata.org/wiki/Q42> .
+
 <https://www.wikidata.org/wiki/Q42> a act:Person ;
     act:address [ a act:Address ;
             act:addressType "privateAddress" ;

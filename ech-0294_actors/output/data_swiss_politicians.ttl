@@ -1,0 +1,236 @@
+@prefix act: <https://ch.paf.link/schema/actors/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+act:swiss_politicians_example a act:Container ;
+    act:person act:luca_campana_5261,
+        <https://www.wikidata.org/wiki/Q24699807>,
+        <https://www.wikidata.org/wiki/Q493598>,
+        <https://www.wikidata.org/wiki/Q77074968>,
+        <https://www.wikidata.org/wiki/Q813067> .
+
+act:luca_campana_5261 a act:Person ;
+    act:address [ a act:Address ;
+            act:addressType "businessAddress" ;
+            act:postalLocality "Lugano" ] ;
+    act:birthyear 1980 ;
+    act:chCitizenship [ a act:Validity ;
+            act:validFrom "1980-01-01"^^xsd:date ] ;
+    act:citizenship [ a act:Citizenship ;
+            act:country "CH" ] ;
+    act:electoralDistrict [ a act:ElectoralDistrict ;
+            act:district "Lugano" ] ;
+    act:gender [ a act:Gender ;
+            act:pronouns "lui" ;
+            act:value "male" ] ;
+    act:label "Luca Campana" ;
+    act:language [ a act:LanguageProficiency ;
+            act:correspondence true ;
+            act:language "it" ;
+            act:native true ] ;
+    act:name [ a act:Name ;
+            act:nameType "officialLastName" ;
+            act:value "Campana" ],
+        [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Luca" ] ;
+    act:occupation [ a act:Occupation ;
+            act:active true ;
+            act:value "Politico" ] .
+
+<https://www.wikidata.org/wiki/Q24699807> a act:Person ;
+    act:address [ a act:Address ;
+            act:addressType "businessAddress" ;
+            act:postalCode "1530" ;
+            act:postalLocality "Payerne" ;
+            act:streetAddress "Hôtel de Ville, CP 112" ] ;
+    act:birthdate "1974-01-01"^^xsd:date ;
+    act:birthyear 1974 ;
+    act:chCitizenship [ a act:Validity ;
+            act:validFrom "1974-01-01"^^xsd:date ] ;
+    act:citizenship [ a act:Citizenship ;
+            act:country "CH" ;
+            act:validFrom "1974-01-01"^^xsd:date ] ;
+    act:contact [ a act:Contact ;
+            act:type "email" ;
+            act:value "christelle.luisier-brodard@gc.vd.ch" ] ;
+    act:electoralDistrict [ a act:ElectoralDistrict ;
+            act:district "Broye-Vully" ;
+            act:validFrom "2022-01-01"^^xsd:date ] ;
+    act:gender [ a act:Gender ;
+            act:pronouns "elle" ;
+            act:validFrom "1974-01-01"^^xsd:date ;
+            act:value "female" ] ;
+    act:label "Christelle Luisier Brodard" ;
+    act:label_long "Christelle Luisier Brodard, Conseillère d'État" ;
+    act:language [ a act:LanguageProficiency ;
+            act:correspondence true ;
+            act:language "fr" ;
+            act:native true ] ;
+    act:name [ a act:Name ;
+            act:nameType "officialLastName" ;
+            act:validFrom "1974-01-01"^^xsd:date ;
+            act:value "Luisier Brodard" ],
+        [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Christelle" ] ;
+    act:occupation [ a act:Occupation ;
+            act:active true ;
+            act:paid true ;
+            act:validFrom "2022-01-01"^^xsd:date ;
+            act:value "Conseillère d'État" ] .
+
+<https://www.wikidata.org/wiki/Q493598> a act:Person ;
+    act:address [ a act:Address ;
+            act:addressType "businessAddress" ;
+            act:postalCode "9100" ;
+            act:postalLocality "Herisau" ;
+            act:streetAddress "Poststrasse 1" ] ;
+    act:birthdate "1980-04-19"^^xsd:date ;
+    act:birthyear 1980 ;
+    act:chCitizenship [ a act:Validity ;
+            act:validFrom "1980-04-19"^^xsd:date ] ;
+    act:citizenship [ a act:Citizenship ;
+            act:country "CH" ;
+            act:validFrom "1980-04-19"^^xsd:date ] ;
+    act:contact [ a act:Contact ;
+            act:type "email" ;
+            act:value "andrea.caroni@parl.ch" ],
+        [ a act:Contact ;
+            act:type "contact_website" ;
+            act:value "http://www.andrea-caroni.ch" ] ;
+    act:electoralDistrict [ a act:ElectoralDistrict ;
+            act:district "Appenzell Ausserrhoden" ;
+            act:validFrom "2015-01-01"^^xsd:date ] ;
+    act:gender [ a act:Gender ;
+            act:pronouns "er",
+                "ihm" ;
+            act:validFrom "1980-04-19"^^xsd:date ;
+            act:value "male" ] ;
+    act:label "Andrea Caroni" ;
+    act:label_long "Prof. Dr. iur. Andrea Caroni, MPA (Harvard)" ;
+    act:language [ a act:LanguageProficiency ;
+            act:correspondence true ;
+            act:language "de" ;
+            act:native true ] ;
+    act:name [ a act:Name ;
+            act:nameType "officialLastName" ;
+            act:validFrom "1980-04-19"^^xsd:date ;
+            act:value "Caroni" ],
+        [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Andrea" ] ;
+    act:occupation [ a act:Occupation ;
+            act:active true ;
+            act:paid true ;
+            act:validFrom "2010-01-01"^^xsd:date ;
+            act:value "Honorarprofessor" ] ;
+    act:picture "https://www.parlament.ch/en/%C3%BCber-das-parlament/parlamentsw%C3%B6rterbuch/parlamentsw%C3%B6rterbuch-detail?WordId=4075" ;
+    act:training [ a act:Training ;
+            act:type "uni" ;
+            act:value "Prof. Dr. iur." ],
+        [ a act:Training ;
+            act:type "uni" ;
+            act:value "MPA (Harvard)" ] .
+
+<https://www.wikidata.org/wiki/Q77074968> a act:Person ;
+    act:address [ a act:Address ;
+            act:addressType "privateAddress" ;
+            act:postalCode "5034" ;
+            act:postalLocality "Suhr" ;
+            act:streetAddress "Lindenweg 36" ],
+        [ a act:Address ;
+            act:addressType "businessAddress" ;
+            act:postalCode "3003" ;
+            act:postalLocality "Bern" ] ;
+    act:birthdate "1978-05-23"^^xsd:date ;
+    act:birthyear 1978 ;
+    act:chCitizenship [ a act:Validity ;
+            act:validFrom "1978-05-23"^^xsd:date ] ;
+    act:citizenship [ a act:Citizenship ;
+            act:country "CH" ;
+            act:validFrom "1978-05-23"^^xsd:date ] ;
+    act:contact [ a act:Contact ;
+            act:type "contact_website" ;
+            act:value "http://www.maja-riniker.ch" ],
+        [ a act:Contact ;
+            act:type "email" ;
+            act:value "maja.riniker@parl.ch" ],
+        [ a act:Contact ;
+            act:type "email" ;
+            act:value "maja.riniker@grossrat.ag.ch" ] ;
+    act:electoralDistrict [ a act:ElectoralDistrict ;
+            act:district "Aargau" ;
+            act:validFrom "2019-01-01"^^xsd:date ] ;
+    act:gender [ a act:Gender ;
+            act:pronouns "ihr",
+                "sie" ;
+            act:validFrom "1978-05-23"^^xsd:date ;
+            act:value "female" ] ;
+    act:label "Maja Riniker" ;
+    act:label_long "Maja Riniker, Betriebsökonomin FH" ;
+    act:language [ a act:LanguageProficiency ;
+            act:correspondence true ;
+            act:language "de" ;
+            act:native true ] ;
+    act:name [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Maja" ],
+        [ a act:Name ;
+            act:nameType "officialLastName" ;
+            act:validFrom "1978-05-23"^^xsd:date ;
+            act:value "Riniker" ] ;
+    act:occupation [ a act:Occupation ;
+            act:active true ;
+            act:paid true ;
+            act:validFrom "2000-01-01"^^xsd:date ;
+            act:value "Betriebsökonomin FH" ],
+        [ a act:Occupation ;
+            act:active true ;
+            act:paid true ;
+            act:validFrom "2005-01-01"^^xsd:date ;
+            act:value "Projektleiterin" ] ;
+    act:training [ a act:Training ;
+            act:type "uni" ;
+            act:value "Betriebsökonomin FH" ] .
+
+<https://www.wikidata.org/wiki/Q813067> a act:Person ;
+    act:address [ a act:Address ;
+            act:addressType "businessAddress" ;
+            act:postalLocality "Basel-Stadt" ] ;
+    act:birthdate "1964-07-12"^^xsd:date ;
+    act:birthyear 1964 ;
+    act:chCitizenship [ a act:Validity ;
+            act:validFrom "1964-07-12"^^xsd:date ] ;
+    act:citizenship [ a act:Citizenship ;
+            act:country "CH" ;
+            act:validFrom "1964-07-12"^^xsd:date ] ;
+    act:electoralDistrict [ a act:ElectoralDistrict ;
+            act:district "Basel-Stadt" ;
+            act:validFrom "2010-01-01"^^xsd:date ] ;
+    act:gender [ a act:Gender ;
+            act:pronouns "er",
+                "ihm" ;
+            act:validFrom "1964-07-12"^^xsd:date ;
+            act:value "male" ] ;
+    act:label "Beat Jans" ;
+    act:label_long "Beat Jans, dipl. nat. ETH" ;
+    act:language [ a act:LanguageProficiency ;
+            act:correspondence true ;
+            act:language "de" ;
+            act:native true ] ;
+    act:name [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Beat" ],
+        [ a act:Name ;
+            act:nameType "officialLastName" ;
+            act:validFrom "1964-07-12"^^xsd:date ;
+            act:value "Jans" ] ;
+    act:occupation [ a act:Occupation ;
+            act:active true ;
+            act:validFrom "1964-01-01"^^xsd:date ;
+            act:value "Politiker" ] ;
+    act:training [ a act:Training ;
+            act:type "uni" ;
+            act:value "dipl. nat. ETH" ] .
+
+

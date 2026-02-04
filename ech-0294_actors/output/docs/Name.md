@@ -127,9 +127,11 @@ attributes:
   valid_from:
     name: valid_from
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     slot_uri: act:validFrom
     domain_of:
+    - Group
+    - Membership
+    - InterestLink
     - Name
     - Validity
     - ElectoralDistrict
@@ -137,9 +139,11 @@ attributes:
   valid_until:
     name: valid_until
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     slot_uri: act:validUntil
     domain_of:
+    - Group
+    - Membership
+    - InterestLink
     - Name
     range: date
 
@@ -182,11 +186,13 @@ attributes:
   valid_from:
     name: valid_from
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     slot_uri: act:validFrom
     alias: valid_from
     owner: Name
     domain_of:
+    - Group
+    - Membership
+    - InterestLink
     - Name
     - Validity
     - ElectoralDistrict
@@ -194,11 +200,13 @@ attributes:
   valid_until:
     name: valid_until
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     slot_uri: act:validUntil
     alias: valid_until
     owner: Name
     domain_of:
+    - Group
+    - Membership
+    - InterestLink
     - Name
     range: date
 

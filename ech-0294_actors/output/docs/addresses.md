@@ -3,7 +3,11 @@
 # Slot: addresses 
 
 
-_place of residence and work_
+_[en] Addresses (private, business, local)._
+
+_[de] Adressen (privat, geschäftlich, lokal)._
+
+__
 
 
 
@@ -22,7 +26,8 @@ Alias: addresses
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Group](Group.md) | [en] A political group, organization, or body (e |  no  |
+| [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
 
 
 
@@ -68,14 +73,18 @@ Alias: addresses
 <details>
 ```yaml
 name: addresses
-description: place of residence and work
+description: '[en] Addresses (private, business, local).
+
+  [de] Adressen (privat, geschäftlich, lokal).
+
+  '
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
 slot_uri: act:address
 alias: addresses
-owner: Person
 domain_of:
 - Person
+- Group
 range: Address
 multivalued: true
 inlined: true

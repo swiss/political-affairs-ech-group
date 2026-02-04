@@ -3,7 +3,11 @@
 # Slot: birthyear 
 
 
-_Year of birth_
+_[en] Year of birth._
+
+_[de] Geburtsjahr._
+
+__
 
 
 
@@ -22,7 +26,7 @@ Alias: birthyear
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
 
 
 
@@ -66,11 +70,14 @@ Alias: birthyear
 <details>
 ```yaml
 name: birthyear
-description: Year of birth
+description: '[en] Year of birth.
+
+  [de] Geburtsjahr.
+
+  '
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
 alias: birthyear
-owner: Person
 domain_of:
 - Person
 range: integer

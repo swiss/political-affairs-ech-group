@@ -3,7 +3,11 @@
 # Class: Person 
 
 
-_A person with identifiers, names, addresses, citizenships, and occupations._
+_[en] A person with identifiers, names, addresses, citizenships, and occupations._
+
+_[de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Berufen._
+
+__
 
 
 
@@ -67,6 +71,10 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
     
 
         
+      Person : datetime_created
+        
+      Person : datetime_updated
+        
       Person : electoral_district
         
           
@@ -90,6 +98,17 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
 
         
       Person : id
+        
+      Person : interest_links_person
+        
+          
+    
+        
+        
+        Person --> "*" InterestLink : interest_links_person
+        click InterestLink href "../InterestLink/"
+    
+
         
       Person : label
         
@@ -154,25 +173,35 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 1 <br/> [String](String.md) | Wikidata-ID preferred | direct |
-| [label](label.md) | 1 <br/> [String](String.md) | Display name of the person | direct |
-| [label_long](label_long.md) | 0..1 <br/> [String](String.md) | Extended display name (with title, etc | direct |
-| [birthyear](birthyear.md) | 0..1 <br/> [Integer](Integer.md) | Year of birth | direct |
-| [birthdate](birthdate.md) | 0..1 <br/> [Date](Date.md) | Exact date of birth | direct |
-| [picture](picture.md) | 0..1 <br/> [String](String.md) | Link to an image (preferred: PNG, then JPG, then GIF) | direct |
+| [id](id.md) | 1 <br/> [String](String.md) | [en] Unique identifier (preferably Wikidata-ID or URI) | direct |
+| [label](label.md) | 1 <br/> [String](String.md) | [en] Display name of the person | direct |
+| [label_long](label_long.md) | 0..1 <br/> [String](String.md) | [en] Extended display name (with title, etc | direct |
+| [birthyear](birthyear.md) | 0..1 <br/> [Integer](Integer.md) | [en] Year of birth | direct |
+| [birthdate](birthdate.md) | 0..1 <br/> [Date](Date.md) | [en] Exact date of birth | direct |
+| [picture](picture.md) | 0..1 <br/> [String](String.md) | [en] Link to an image (preferred: PNG, then JPG, then GIF) | direct |
 | [names](names.md) | * <br/> [Name](Name.md) |  | direct |
-| [addresses](addresses.md) | * <br/> [Address](Address.md) | place of residence and work | direct |
+| [addresses](addresses.md) | * <br/> [Address](Address.md) | [en] Addresses (private, business, local) | direct |
 | [languages](languages.md) | * <br/> [LanguageProficiency](LanguageProficiency.md) |  | direct |
 | [ch_citizenship](ch_citizenship.md) | 0..1 <br/> [Validity](Validity.md) |  | direct |
 | [citizenships](citizenships.md) | * <br/> [Citizenship](Citizenship.md) |  | direct |
 | [genders](genders.md) | * <br/> [Gender](Gender.md) |  | direct |
 | [occupations](occupations.md) | * <br/> [Occupation](Occupation.md) |  | direct |
 | [trainings](trainings.md) | * <br/> [Training](Training.md) |  | direct |
-| [contacts](contacts.md) | * <br/> [Contact](Contact.md) |  | direct |
+| [contacts](contacts.md) | * <br/> [Contact](Contact.md) | [en] Contact information (email, website, social media) | direct |
 | [electoral_district](electoral_district.md) | 0..1 <br/> [ElectoralDistrict](ElectoralDistrict.md) |  | direct |
+| [interest_links_person](interest_links_person.md) | * <br/> [InterestLink](InterestLink.md) | [en] Interest links of the person | direct |
+| [datetime_updated](datetime_updated.md) | 0..1 <br/> [Datetime](Datetime.md) | [en] The last time this record was updated | direct |
+| [datetime_created](datetime_created.md) | 0..1 <br/> [Datetime](Datetime.md) | [en] The time this record was created | direct |
 
 
 
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Container](Container.md) | [persons](persons.md) | range | [Person](Person.md) |
 
 
 
@@ -216,164 +245,34 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
 <details>
 ```yaml
 name: Person
-description: A person with identifiers, names, addresses, citizenships, and occupations.
+description: '[en] A person with identifiers, names, addresses, citizenships, and
+  occupations.
+
+  [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und
+  Berufen.
+
+  '
 from_schema: https://ch.paf.link/schema/actors
-attributes:
-  id:
-    name: id
-    description: Wikidata-ID preferred
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    identifier: true
-    domain_of:
-    - Person
-    - PersonReference
-    - GroupReference
-    required: true
-  label:
-    name: label
-    description: Display name of the person
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    domain_of:
-    - Person
-    required: true
-  label_long:
-    name: label_long
-    description: Extended display name (with title, etc.)
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    domain_of:
-    - Person
-  birthyear:
-    name: birthyear
-    description: Year of birth
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    domain_of:
-    - Person
-    range: integer
-  birthdate:
-    name: birthdate
-    description: Exact date of birth
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    domain_of:
-    - Person
-    range: date
-  picture:
-    name: picture
-    description: 'Link to an image (preferred: PNG, then JPG, then GIF)'
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    domain_of:
-    - Person
-  names:
-    name: names
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:name
-    domain_of:
-    - Person
-    range: Name
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  addresses:
-    name: addresses
-    description: place of residence and work
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:address
-    domain_of:
-    - Person
-    range: Address
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  languages:
-    name: languages
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:language
-    domain_of:
-    - Person
-    range: LanguageProficiency
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  ch_citizenship:
-    name: ch_citizenship
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:chCitizenship
-    domain_of:
-    - Person
-    range: Validity
-  citizenships:
-    name: citizenships
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:citizenship
-    domain_of:
-    - Person
-    range: Citizenship
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  genders:
-    name: genders
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:gender
-    domain_of:
-    - Person
-    range: Gender
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  occupations:
-    name: occupations
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:occupation
-    domain_of:
-    - Person
-    range: Occupation
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  trainings:
-    name: trainings
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:training
-    domain_of:
-    - Person
-    range: Training
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  contacts:
-    name: contacts
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:contact
-    domain_of:
-    - Person
-    range: Contact
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  electoral_district:
-    name: electoral_district
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:electoralDistrict
-    domain_of:
-    - Person
-    range: ElectoralDistrict
-tree_root: true
+slots:
+- id
+- label
+- label_long
+- birthyear
+- birthdate
+- picture
+- names
+- addresses
+- languages
+- ch_citizenship
+- citizenships
+- genders
+- occupations
+- trainings
+- contacts
+- electoral_district
+- interest_links_person
+- datetime_updated
+- datetime_created
 
 ```
 </details>
@@ -383,26 +282,45 @@ tree_root: true
 <details>
 ```yaml
 name: Person
-description: A person with identifiers, names, addresses, citizenships, and occupations.
+description: '[en] A person with identifiers, names, addresses, citizenships, and
+  occupations.
+
+  [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und
+  Berufen.
+
+  '
 from_schema: https://ch.paf.link/schema/actors
 attributes:
   id:
     name: id
-    description: Wikidata-ID preferred
+    description: '[en] Unique identifier (preferably Wikidata-ID or URI).
+
+      [de] Eindeutiger Identifikator (vorzugsweise Wikidata-ID oder URI).
+
+      '
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
+    slot_uri: dcterm:identifier
     identifier: true
     alias: id
     owner: Person
     domain_of:
+    - Container
     - Person
+    - Group
+    - Membership
+    - InterestLink
     - PersonReference
     - GroupReference
     range: string
     required: true
   label:
     name: label
-    description: Display name of the person
+    description: '[en] Display name of the person.
+
+      [de] Anzeigename der Person.
+
+      '
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
     alias: label
@@ -413,7 +331,11 @@ attributes:
     required: true
   label_long:
     name: label_long
-    description: Extended display name (with title, etc.)
+    description: '[en] Extended display name (with title, etc.).
+
+      [de] Erweiterter Anzeigename (mit Titel, etc.).
+
+      '
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
     alias: label_long
@@ -423,7 +345,11 @@ attributes:
     range: string
   birthyear:
     name: birthyear
-    description: Year of birth
+    description: '[en] Year of birth.
+
+      [de] Geburtsjahr.
+
+      '
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
     alias: birthyear
@@ -433,7 +359,11 @@ attributes:
     range: integer
   birthdate:
     name: birthdate
-    description: Exact date of birth
+    description: '[en] Exact date of birth.
+
+      [de] Genaues Geburtsdatum.
+
+      '
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
     alias: birthdate
@@ -443,7 +373,11 @@ attributes:
     range: date
   picture:
     name: picture
-    description: 'Link to an image (preferred: PNG, then JPG, then GIF)'
+    description: '[en] Link to an image (preferred: PNG, then JPG, then GIF).
+
+      [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).
+
+      '
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
     alias: picture
@@ -462,10 +396,15 @@ attributes:
     - Person
     range: Name
     multivalued: true
+    inlined: true
     inlined_as_list: true
   addresses:
     name: addresses
-    description: place of residence and work
+    description: '[en] Addresses (private, business, local).
+
+      [de] Adressen (privat, geschäftlich, lokal).
+
+      '
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
     slot_uri: act:address
@@ -473,8 +412,10 @@ attributes:
     owner: Person
     domain_of:
     - Person
+    - Group
     range: Address
     multivalued: true
+    inlined: true
     inlined_as_list: true
   languages:
     name: languages
@@ -487,6 +428,7 @@ attributes:
     - Person
     range: LanguageProficiency
     multivalued: true
+    inlined: true
     inlined_as_list: true
   ch_citizenship:
     name: ch_citizenship
@@ -509,6 +451,7 @@ attributes:
     - Person
     range: Citizenship
     multivalued: true
+    inlined: true
     inlined_as_list: true
   genders:
     name: genders
@@ -521,6 +464,7 @@ attributes:
     - Person
     range: Gender
     multivalued: true
+    inlined: true
     inlined_as_list: true
   occupations:
     name: occupations
@@ -533,6 +477,7 @@ attributes:
     - Person
     range: Occupation
     multivalued: true
+    inlined: true
     inlined_as_list: true
   trainings:
     name: trainings
@@ -545,9 +490,15 @@ attributes:
     - Person
     range: Training
     multivalued: true
+    inlined: true
     inlined_as_list: true
   contacts:
     name: contacts
+    description: '[en] Contact information (email, website, social media).
+
+      [de] Kontaktinformationen (E-Mail, Website, Social Media).
+
+      '
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
     slot_uri: act:contact
@@ -555,8 +506,10 @@ attributes:
     owner: Person
     domain_of:
     - Person
+    - Group
     range: Contact
     multivalued: true
+    inlined: true
     inlined_as_list: true
   electoral_district:
     name: electoral_district
@@ -568,7 +521,58 @@ attributes:
     domain_of:
     - Person
     range: ElectoralDistrict
-tree_root: true
+  interest_links_person:
+    name: interest_links_person
+    description: '[en] Interest links of the person.
+
+      [de] Interessenbindungen der Person.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    slot_uri: act:interestLink
+    alias: interest_links_person
+    owner: Person
+    domain_of:
+    - Person
+    range: InterestLink
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  datetime_updated:
+    name: datetime_updated
+    description: '[en] The last time this record was updated.
+
+      [de] Der Zeitpunkt, zu dem dieser Datensatz zuletzt aktualisiert wurde.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    alias: datetime_updated
+    owner: Person
+    domain_of:
+    - Person
+    - Group
+    - Membership
+    - InterestLink
+    range: datetime
+  datetime_created:
+    name: datetime_created
+    description: '[en] The time this record was created.
+
+      [de] Der Zeitpunkt, zu dem dieser Datensatz erstellt wurde.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    alias: datetime_created
+    owner: Person
+    domain_of:
+    - Person
+    - Group
+    - Membership
+    - InterestLink
+    range: datetime
 
 ```
 </details>

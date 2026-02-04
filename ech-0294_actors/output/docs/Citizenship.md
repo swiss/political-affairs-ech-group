@@ -137,6 +137,9 @@ attributes:
     alias: valid_from
     owner: Citizenship
     domain_of:
+    - Group
+    - Membership
+    - InterestLink
     - Name
     - Validity
     - ElectoralDistrict

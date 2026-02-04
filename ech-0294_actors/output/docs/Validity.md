@@ -106,6 +106,9 @@ attributes:
     from_schema: https://ch.paf.link/schema/actors
     slot_uri: act:validFrom
     domain_of:
+    - Group
+    - Membership
+    - InterestLink
     - Name
     - Validity
     - ElectoralDistrict
@@ -137,6 +140,9 @@ attributes:
     alias: valid_from
     owner: Validity
     domain_of:
+    - Group
+    - Membership
+    - InterestLink
     - Name
     - Validity
     - ElectoralDistrict
