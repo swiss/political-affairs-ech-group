@@ -1,0 +1,220 @@
+id: act:swiss_politicians_example
+persons:
+  - id: https://www.wikidata.org/wiki/Q813067
+    label: Beat Jans
+    label_long: Beat Jans, dipl. nat. ETH
+    birthyear: 1964
+    birthdate: 1964-07-12
+    names:
+      - name_type: officialGivenName
+        value: Beat
+      - name_type: officialLastName
+        value: Jans
+        valid_from: 1964-07-12
+    addresses:
+      - address_type: businessAddress
+        postal_locality: Basel-Stadt
+    languages:
+      - language: de
+        correspondence: true
+        native: true
+    citizenships:
+      - country: CH
+        valid_from: 1964-07-12
+    ch_citizenship:
+      valid_from: 1964-07-12
+    genders:
+      - value: male
+        valid_from: 1964-07-12
+        pronouns:
+          - er
+          - ihm
+    occupations:
+      - value: Politiker
+        valid_from: 1964-01-01
+        active: true
+    trainings:
+      - type: uni
+        value: dipl. nat. ETH
+    electoral_district:
+      district: Basel-Stadt
+      valid_from: 2010-01-01
+
+  - id: https://www.wikidata.org/wiki/Q493598
+    label: Andrea Caroni
+    label_long: Prof. Dr. iur. Andrea Caroni, MPA (Harvard)
+    birthyear: 1980
+    birthdate: 1980-04-19
+    picture: https://www.parlament.ch/en/%C3%BCber-das-parlament/parlamentsw%C3%B6rterbuch/parlamentsw%C3%B6rterbuch-detail?WordId=4075
+    names:
+      - name_type: officialGivenName
+        value: Andrea
+      - name_type: officialLastName
+        value: Caroni
+        valid_from: 1980-04-19
+    addresses:
+      - address_type: businessAddress
+        street_address: Poststrasse 1
+        postal_code: "9100"
+        postal_locality: Herisau
+    languages:
+      - language: de
+        correspondence: true
+        native: true
+    citizenships:
+      - country: CH
+        valid_from: 1980-04-19
+    ch_citizenship:
+      valid_from: 1980-04-19
+    genders:
+      - value: male
+        valid_from: 1980-04-19
+        pronouns:
+          - er
+          - ihm
+    occupations:
+      - value: Honorarprofessor
+        valid_from: 2010-01-01
+        active: true
+        paid: true
+    trainings:
+      - type: uni
+        value: Prof. Dr. iur.
+      - type: uni
+        value: MPA (Harvard)
+    contacts:
+      - type: email
+        value: andrea.caroni@parl.ch
+      - type: contact_website
+        value: http://www.andrea-caroni.ch
+    electoral_district:
+      district: Appenzell Ausserrhoden
+      valid_from: 2015-01-01
+
+  - id: https://www.wikidata.org/wiki/Q77074968
+    label: Maja Riniker
+    label_long: Maja Riniker, Betriebsökonomin FH
+    birthyear: 1978
+    birthdate: 1978-05-23
+    names:
+      - name_type: officialGivenName
+        value: Maja
+      - name_type: officialLastName
+        value: Riniker
+        valid_from: 1978-05-23
+    addresses:
+      - address_type: privateAddress
+        street_address: Lindenweg 36
+        postal_code: "5034"
+        postal_locality: Suhr
+      - address_type: businessAddress
+        postal_code: "3003"
+        postal_locality: Bern
+    languages:
+      - language: de
+        correspondence: true
+        native: true
+    citizenships:
+      - country: CH
+        valid_from: 1978-05-23
+    ch_citizenship:
+      valid_from: 1978-05-23
+    genders:
+      - value: female
+        valid_from: 1978-05-23
+        pronouns:
+          - sie
+          - ihr
+    occupations:
+      - value: Betriebsökonomin FH
+        valid_from: 2000-01-01
+        active: true
+        paid: true
+      - value: Projektleiterin
+        valid_from: 2005-01-01
+        active: true
+        paid: true
+    trainings:
+      - type: uni
+        value: Betriebsökonomin FH
+    contacts:
+      - type: email
+        value: maja.riniker@parl.ch
+      - type: email
+        value: maja.riniker@grossrat.ag.ch
+      - type: contact_website
+        value: http://www.maja-riniker.ch
+    electoral_district:
+      district: Aargau
+      valid_from: 2019-01-01
+
+  - id: https://www.wikidata.org/wiki/Q24699807
+    label: Christelle Luisier Brodard
+    label_long: Christelle Luisier Brodard, Conseillère d'État
+    birthyear: 1974
+    birthdate: 1974-01-01
+    names:
+      - name_type: officialGivenName
+        value: Christelle
+      - name_type: officialLastName
+        value: Luisier Brodard
+        valid_from: 1974-01-01
+    addresses:
+      - address_type: businessAddress
+        street_address: Hôtel de Ville, CP 112
+        postal_code: "1530"
+        postal_locality: Payerne
+    languages:
+      - language: fr
+        correspondence: true
+        native: true
+    citizenships:
+      - country: CH
+        valid_from: 1974-01-01
+    ch_citizenship:
+      valid_from: 1974-01-01
+    genders:
+      - value: female
+        valid_from: 1974-01-01
+        pronouns:
+          - elle
+    occupations:
+      - value: Conseillère d'État
+        valid_from: 2022-01-01
+        active: true
+        paid: true
+    contacts:
+      - type: email
+        value: christelle.luisier-brodard@gc.vd.ch
+    electoral_district:
+      district: Broye-Vully
+      valid_from: 2022-01-01
+
+  - id: act:luca_campana_5261
+    label: Luca Campana
+    birthyear: 1980
+    names:
+      - name_type: officialGivenName
+        value: Luca
+      - name_type: officialLastName
+        value: Campana
+    addresses:
+      - address_type: businessAddress
+        postal_locality: Lugano
+    languages:
+      - language: it
+        correspondence: true
+        native: true
+    citizenships:
+      - country: CH
+    ch_citizenship:
+      valid_from: 1980-01-01
+    genders:
+      - value: male
+        pronouns:
+          - lui
+    occupations:
+      - value: Politico
+        active: true
+    electoral_district:
+      district: Lugano
