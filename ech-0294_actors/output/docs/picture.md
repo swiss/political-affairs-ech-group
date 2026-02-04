@@ -3,7 +3,11 @@
 # Slot: picture 
 
 
-_Link to an image (preferred: PNG, then JPG, then GIF)_
+_[en] Link to an image (preferred: PNG, then JPG, then GIF)._
+
+_[de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF)._
+
+__
 
 
 
@@ -22,7 +26,7 @@ Alias: picture
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
 
 
 
@@ -66,11 +70,14 @@ Alias: picture
 <details>
 ```yaml
 name: picture
-description: 'Link to an image (preferred: PNG, then JPG, then GIF)'
+description: '[en] Link to an image (preferred: PNG, then JPG, then GIF).
+
+  [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).
+
+  '
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
 alias: picture
-owner: Person
 domain_of:
 - Person
 range: string

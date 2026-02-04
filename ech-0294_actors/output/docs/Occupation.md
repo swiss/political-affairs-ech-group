@@ -124,8 +124,8 @@ attributes:
   paid:
     name: paid
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     domain_of:
+    - InterestLink
     - Occupation
     range: boolean
   occupation_isco19_code:
@@ -181,10 +181,10 @@ attributes:
   paid:
     name: paid
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     alias: paid
     owner: Occupation
     domain_of:
+    - InterestLink
     - Occupation
     range: boolean
   occupation_isco19_code:
@@ -235,6 +235,9 @@ attributes:
     alias: valid_from
     owner: Occupation
     domain_of:
+    - Group
+    - Membership
+    - InterestLink
     - Name
     - Validity
     - ElectoralDistrict

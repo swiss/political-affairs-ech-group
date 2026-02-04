@@ -3,6 +3,15 @@
 # Slot: contacts 
 
 
+_[en] Contact information (email, website, social media)._
+
+_[de] Kontaktinformationen (E-Mail, Website, Social Media)._
+
+__
+
+
+
+
 
 URI: [act:contact](https://ch.paf.link/schema/actors/contact)
 Alias: contacts
@@ -17,7 +26,8 @@ Alias: contacts
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
+| [Group](Group.md) | [en] A political group, organization, or body (e |  no  |
 
 
 
@@ -63,13 +73,18 @@ Alias: contacts
 <details>
 ```yaml
 name: contacts
+description: '[en] Contact information (email, website, social media).
+
+  [de] Kontaktinformationen (E-Mail, Website, Social Media).
+
+  '
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
 slot_uri: act:contact
 alias: contacts
-owner: Person
 domain_of:
 - Person
+- Group
 range: Contact
 multivalued: true
 inlined: true

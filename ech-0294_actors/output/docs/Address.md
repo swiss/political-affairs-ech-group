@@ -61,6 +61,7 @@ URI: [act:Address](https://ch.paf.link/schema/actors/Address)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Person](Person.md) | [addresses](addresses.md) | range | [Address](Address.md) |
+| [Group](Group.md) | [addresses](addresses.md) | range | [Address](Address.md) |
 
 
 

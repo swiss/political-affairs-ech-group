@@ -17,7 +17,7 @@ Alias: names
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
 
 
 
@@ -67,7 +67,6 @@ from_schema: https://ch.paf.link/schema/actors
 rank: 1000
 slot_uri: act:name
 alias: names
-owner: Person
 domain_of:
 - Person
 range: Name

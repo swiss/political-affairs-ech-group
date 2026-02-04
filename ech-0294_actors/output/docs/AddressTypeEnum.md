@@ -2,15 +2,24 @@
 
 
 
+
+_[en] Types of addresses._
+
+_[de] Adresstypen._
+
+__
+
+
+
 URI: [act:AddressTypeEnum](https://ch.paf.link/schema/actors/AddressTypeEnum)
 
 ## Permissible Values
 
 | Value | Meaning | Description |
 | --- | --- | --- |
-| privateAddress | None |  |
-| businessAddress | None |  |
-| localAddress | None |  |
+| privateAddress | None | [en] Private address |
+| businessAddress | None | [en] Business address |
+| localAddress | None | [en] Local address |
 
 
 
@@ -47,15 +56,35 @@ URI: [act:AddressTypeEnum](https://ch.paf.link/schema/actors/AddressTypeEnum)
 <details>
 ```yaml
 name: AddressTypeEnum
+description: '[en] Types of addresses.
+
+  [de] Adresstypen.
+
+  '
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
 permissible_values:
   privateAddress:
     text: privateAddress
+    description: '[en] Private address.
+
+      [de] Privatadresse.
+
+      '
   businessAddress:
     text: businessAddress
+    description: '[en] Business address.
+
+      [de] Geschäftsadresse.
+
+      '
   localAddress:
     text: localAddress
+    description: '[en] Local address.
+
+      [de] Lokaladresse.
+
+      '
 
 ```
 </details>

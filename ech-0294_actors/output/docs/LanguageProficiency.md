@@ -95,9 +95,9 @@ attributes:
     name: language
     description: ISO language code
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     domain_of:
     - LanguageProficiency
+    - MultilingualString
     required: true
   correspondence:
     name: correspondence
@@ -130,11 +130,11 @@ attributes:
     name: language
     description: ISO language code
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     alias: language
     owner: LanguageProficiency
     domain_of:
     - LanguageProficiency
+    - MultilingualString
     range: string
     required: true
   correspondence:

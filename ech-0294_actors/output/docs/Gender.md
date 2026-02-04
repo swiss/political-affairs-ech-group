@@ -169,6 +169,9 @@ attributes:
     alias: valid_from
     owner: Gender
     domain_of:
+    - Group
+    - Membership
+    - InterestLink
     - Name
     - Validity
     - ElectoralDistrict

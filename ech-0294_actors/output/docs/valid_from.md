@@ -3,8 +3,17 @@
 # Slot: valid_from 
 
 
+_[en] Start date of validity period._
 
-URI: [act:valid_from](https://ch.paf.link/schema/actors/valid_from)
+_[de] Startdatum der Gültigkeitsperiode._
+
+__
+
+
+
+
+
+URI: [act:validFrom](https://ch.paf.link/schema/actors/validFrom)
 Alias: valid_from
 
 <!-- no inheritance hierarchy -->
@@ -17,12 +26,15 @@ Alias: valid_from
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Name](Name.md) |  |  no  |
+| [InterestLink](InterestLink.md) | [en] An interest link (conflict of interest, political financing) of a person... |  no  |
 | [Citizenship](Citizenship.md) |  |  no  |
-| [ElectoralDistrict](ElectoralDistrict.md) |  |  no  |
 | [Occupation](Occupation.md) |  |  no  |
+| [Name](Name.md) |  |  no  |
 | [Validity](Validity.md) |  |  no  |
+| [Group](Group.md) | [en] A political group, organization, or body (e |  no  |
 | [Gender](Gender.md) |  |  no  |
+| [Membership](Membership.md) | [en] A membership relationship between a person and a group |  no  |
+| [ElectoralDistrict](ElectoralDistrict.md) |  |  no  |
 
 
 
@@ -31,7 +43,7 @@ Alias: valid_from
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Date](Date.md)
 
 
 
@@ -43,12 +55,19 @@ Alias: valid_from
 
 
 
+### Schema Source
+
+
+* from schema: https://ch.paf.link/schema/actors
+
+
+
 
 ## Mappings
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:valid_from |
+| self | act:validFrom |
 | native | act:valid_from |
 
 
@@ -59,12 +78,23 @@ Alias: valid_from
 <details>
 ```yaml
 name: valid_from
+description: '[en] Start date of validity period.
+
+  [de] Startdatum der Gültigkeitsperiode.
+
+  '
+from_schema: https://ch.paf.link/schema/actors
+rank: 1000
+slot_uri: act:validFrom
 alias: valid_from
 domain_of:
+- Group
+- Membership
+- InterestLink
 - Name
 - Validity
 - ElectoralDistrict
-range: string
+range: date
 
 ```
 </details>

@@ -3,7 +3,11 @@
 # Slot: label_long 
 
 
-_Extended display name (with title, etc.)_
+_[en] Extended display name (with title, etc.)._
+
+_[de] Erweiterter Anzeigename (mit Titel, etc.)._
+
+__
 
 
 
@@ -22,7 +26,7 @@ Alias: label_long
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
 
 
 
@@ -66,11 +70,14 @@ Alias: label_long
 <details>
 ```yaml
 name: label_long
-description: Extended display name (with title, etc.)
+description: '[en] Extended display name (with title, etc.).
+
+  [de] Erweiterter Anzeigename (mit Titel, etc.).
+
+  '
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
 alias: label_long
-owner: Person
 domain_of:
 - Person
 range: string

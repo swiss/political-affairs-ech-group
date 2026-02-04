@@ -3,7 +3,11 @@
 # Slot: birthdate 
 
 
-_Exact date of birth_
+_[en] Exact date of birth._
+
+_[de] Genaues Geburtsdatum._
+
+__
 
 
 
@@ -22,7 +26,7 @@ Alias: birthdate
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
 
 
 
@@ -66,11 +70,14 @@ Alias: birthdate
 <details>
 ```yaml
 name: birthdate
-description: Exact date of birth
+description: '[en] Exact date of birth.
+
+  [de] Genaues Geburtsdatum.
+
+  '
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
 alias: birthdate
-owner: Person
 domain_of:
 - Person
 range: date

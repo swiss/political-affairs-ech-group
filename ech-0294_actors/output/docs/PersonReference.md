@@ -105,7 +105,11 @@ attributes:
     from_schema: https://ch.paf.link/schema/actors
     identifier: true
     domain_of:
+    - Container
     - Person
+    - Group
+    - Membership
+    - InterestLink
     - PersonReference
     - GroupReference
     required: true
@@ -113,16 +117,16 @@ attributes:
     name: uri
     description: Globally valid identifier (eCH-0285 compatible)
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     domain_of:
+    - Group
     - PersonReference
     - GroupReference
   name:
     name: name
     description: Full name of the person
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     domain_of:
+    - Group
     - PersonReference
     - GroupReference
     required: true
@@ -130,8 +134,8 @@ attributes:
     name: role
     description: Role of the person (e.g. speaker, author, holder, leading)
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     domain_of:
+    - Membership
     - PersonReference
     - GroupReference
     required: true
@@ -169,7 +173,11 @@ attributes:
     alias: id
     owner: PersonReference
     domain_of:
+    - Container
     - Person
+    - Group
+    - Membership
+    - InterestLink
     - PersonReference
     - GroupReference
     range: string
@@ -178,10 +186,10 @@ attributes:
     name: uri
     description: Globally valid identifier (eCH-0285 compatible)
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     alias: uri
     owner: PersonReference
     domain_of:
+    - Group
     - PersonReference
     - GroupReference
     range: string
@@ -189,10 +197,10 @@ attributes:
     name: name
     description: Full name of the person
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     alias: name
     owner: PersonReference
     domain_of:
+    - Group
     - PersonReference
     - GroupReference
     range: string
@@ -201,10 +209,10 @@ attributes:
     name: role
     description: Role of the person (e.g. speaker, author, holder, leading)
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     alias: role
     owner: PersonReference
     domain_of:
+    - Membership
     - PersonReference
     - GroupReference
     range: string

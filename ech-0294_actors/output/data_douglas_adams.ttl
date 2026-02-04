@@ -1,6 +1,9 @@
 @prefix act: <https://ch.paf.link/schema/actors/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+act:douglas_adams_example a act:Container ;
+    act:person <https://www.wikidata.org/wiki/Q42> .
+
 <https://www.wikidata.org/wiki/Q42> a act:Person ;
     act:address [ a act:Address ;
             act:addressType "privateAddress" ;
@@ -35,12 +38,12 @@
             act:language "en" ;
             act:native true ] ;
     act:name [ a act:Name ;
-            act:nameType "callName" ;
-            act:value "Douglas" ],
-        [ a act:Name ;
             act:nameType "officialLastName" ;
             act:validFrom "1952-03-11"^^xsd:date ;
-            act:value "Adams" ] ;
+            act:value "Adams" ],
+        [ a act:Name ;
+            act:nameType "callName" ;
+            act:value "Douglas" ] ;
     act:occupation [ a act:Occupation ;
             act:active false ;
             act:paid true ;

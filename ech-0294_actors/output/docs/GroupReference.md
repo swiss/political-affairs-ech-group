@@ -99,7 +99,11 @@ attributes:
     from_schema: https://ch.paf.link/schema/actors
     identifier: true
     domain_of:
+    - Container
     - Person
+    - Group
+    - Membership
+    - InterestLink
     - PersonReference
     - GroupReference
     required: true
@@ -108,6 +112,7 @@ attributes:
     description: Globally valid identifier (eCH-0285 compatible)
     from_schema: https://ch.paf.link/schema/actors
     domain_of:
+    - Group
     - PersonReference
     - GroupReference
   name:
@@ -115,6 +120,7 @@ attributes:
     description: Group name (can be multilingual)
     from_schema: https://ch.paf.link/schema/actors
     domain_of:
+    - Group
     - PersonReference
     - GroupReference
     required: true
@@ -123,6 +129,7 @@ attributes:
     description: Role of the group (e.g. speaker, author, holder, leading)
     from_schema: https://ch.paf.link/schema/actors
     domain_of:
+    - Membership
     - PersonReference
     - GroupReference
     required: true
@@ -146,7 +153,11 @@ attributes:
     alias: id
     owner: GroupReference
     domain_of:
+    - Container
     - Person
+    - Group
+    - Membership
+    - InterestLink
     - PersonReference
     - GroupReference
     range: string
@@ -158,6 +169,7 @@ attributes:
     alias: uri
     owner: GroupReference
     domain_of:
+    - Group
     - PersonReference
     - GroupReference
     range: string
@@ -168,6 +180,7 @@ attributes:
     alias: name
     owner: GroupReference
     domain_of:
+    - Group
     - PersonReference
     - GroupReference
     range: string
@@ -179,6 +192,7 @@ attributes:
     alias: role
     owner: GroupReference
     domain_of:
+    - Membership
     - PersonReference
     - GroupReference
     range: string
