@@ -1,50 +1,52 @@
-id: https://www.wikidata.org/wiki/Q42
-label: Douglas Adams
-label_long: Douglas Noël Adams
-birthyear: 1952
-birthdate: 1952-03-11
-picture: https://commons.wikimedia.org/wiki/File:Douglas_adams_portrait.jpg
-names:
-  - name_type: callName
-    value: Douglas
-  - name_type: officialLastName
-    value: Adams
-    valid_from: 1952-03-11
-addresses:
-  - address_type: privateAddress
-    address_URI: https://www.wikidata.org/wiki/Q42#P969
-    street_address: 1234 Fictional St, London, UK
-    postal_code: 12345
-    postal_locality: London
-languages:
-  - language: en
-    correspondence: true
-    native: true
-ch_citizenship:
-  valid_from: 2020-01-01
-  valid_until: 2025-01-01
-citizenships:
-  - country: GB
-    valid_from: 1952-03-11
-genders:
-  - value: male
-    valid_from: 1952-03-11
-    pronouns:
-      - he
-      - him
-occupations:
-  - value: writer
-    valid_from: 1979-01-01
-    valid_until: 2001-05-11
-    active: false
-    paid: true
-trainings:
-  - type: schulabschluss
-    value: High School Diploma
-contacts:
-  - type: email
-    value: douglas.adams@adams-familiy.org
-electoral_district:
-  district: London Central
-  valid_from: 2020-01-01
-  valid_until: 2025-01-01
+id: act:douglas_adams_example
+persons:
+  - id: https://www.wikidata.org/wiki/Q42
+    label: Douglas Adams
+    label_long: Douglas Noël Adams
+    birthyear: 1952
+    birthdate: 1952-03-11
+    picture: https://commons.wikimedia.org/wiki/File:Douglas_adams_portrait.jpg
+    names:
+      - name_type: callName
+        value: Douglas
+      - name_type: officialLastName
+        value: Adams
+        valid_from: 1952-03-11
+    addresses:
+      - address_type: privateAddress
+        address_URI: https://www.wikidata.org/wiki/Q42#P969
+        street_address: 1234 Fictional St, London, UK
+        postal_code: 12345
+        postal_locality: London
+    languages:
+      - language: en
+        correspondence: true
+        native: true
+    ch_citizenship:
+      valid_from: 2020-01-01
+      valid_until: 2025-01-01
+    citizenships:
+      - country: GB
+        valid_from: 1952-03-11
+    genders:
+      - value: male
+        valid_from: 1952-03-11
+        pronouns:
+          - he
+          - him
+    occupations:
+      - value: writer
+        valid_from: 1979-01-01
+        valid_until: 2001-05-11
+        active: false
+        paid: true
+    trainings:
+      - type: schulabschluss
+        value: High School Diploma
+    contacts:
+      - type: email
+        value: douglas.adams@adams-familiy.org
+    electoral_district:
+      district: London Central
+      valid_from: 2020-01-01
+      valid_until: 2025-01-01

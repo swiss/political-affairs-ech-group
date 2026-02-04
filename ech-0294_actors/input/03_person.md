@@ -223,17 +223,6 @@ electoral_district:
   valid_until: 2023-11-30
 ```
 
-## Datenschutz und Öffentlichkeit
-
-**Grundprinzip**: Nur öffentlich verfügbare Informationen werden erfasst.
-
-**Besondere Schutzbereiche**:
-- Geburtsdatum: Optional nur Geburtsjahr angeben
-- Privatadresse: Nur wenn öffentlich verfügbar (z.B. Amtsblatt)
-- Kontaktdaten: Nur offizielle/öffentliche Kontakte
-
-**Empfehlung**: Siehe separate Datenschutz-Reflexionen (07_privacy_reflections.md)
-
 ## Interoperabilität
 
 ### Globale Identifikatoren
@@ -336,50 +325,6 @@ names:
     value: Meier-Schmidt
     valid_from: 2005-06-20
 ```
-
-## Praktische Implementierungshinweise
-
-### 1. Schrittweise Datenanreicherung
-
-Start mit Minimum-Daten:
-```yaml
-id: [Wikidata-ID oder lokale ID]
-label: [Anzeigename]
-names: [Mindestens Vor- und Nachname]
-```
-
-Schrittweise ergänzen:
-- Geburtsdaten
-- Adressen (wenn öffentlich)
-- Sprachkenntnisse
-- Berufliche Informationen
-- Kontaktdaten
-
-### 2. Validierung
-
-Vor dem Import validieren:
-```bash
-linkml-validate -s schema.yaml data_person.yaml
-```
-
-### 3. Konvertierung
-
-Export in verschiedene Formate:
-```bash
-# JSON
-linkml-convert -s schema.yaml -t json data_person.yaml > person.json
-
-# RDF/Turtle
-linkml-convert -s schema.yaml -t rdf data_person.yaml > person.ttl
-```
-
-### 4. Best Practices
-
-- **IDs**: Immer Wikidata-IDs verwenden, wenn verfügbar
-- **Datenschutz**: Nur öffentliche Informationen erfassen
-- **Gültigkeit**: Zeitliche Gültigkeit für veränderliche Attribute nutzen
-- **Vollständigkeit**: Nur verfügbare Daten erfassen, keine Platzhalter
-- **Konsistenz**: Einheitliche Schreibweise (z.B. Ortsnamen)
 
 ## Referenzen
 

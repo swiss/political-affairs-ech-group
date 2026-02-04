@@ -284,6 +284,7 @@ slots:
       [de] Eindeutiger Identifikator (vorzugsweise Wikidata-ID oder URI).
 
   uri:
+    range: uriorcurie
     description: |
       [en] Globally valid identifier (e.g., politics.ld.admin.ch/party/1).
       [de] Global gültiger Identifikator (z.B. politics.ld.admin.ch/party/1).
