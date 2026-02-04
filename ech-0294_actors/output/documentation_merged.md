@@ -962,18 +962,847 @@ attributes:
 
 
 
+# Mitgliedschaften (Memberships)
 
-## Memberships
+## Einführung und Zielsetzung
 
-- ID Person
-- Role
-- ID Group
-- validFrom
-- validUntil
-- isActive (als Alternateive zu validFrom and validUntil)
+Das Membership-Schema bildet die Beziehung zwischen Personen und Gruppen ab. Es ist das zentrale Bindeglied im Actor-Schema und ermöglicht die Zuordnung von Personen zu Parteien, Fraktionen, Kommissionen, Parlamenten und anderen politischen Organen.
+
+**Kernziele:**
+- **Verknüpfung**: Strukturierte Verbindung zwischen Person und Group
+- **Rollen**: Erfassung der Funktion innerhalb der Gruppe
+- **Zeitliche Dimension**: Dokumentation von Beginn und Ende der Mitgliedschaft
+- **Status**: Unterscheidung zwischen aktiven und inaktiven Mitgliedschaften
+- **Stimmberechtigung**: Erfassung der Stimmberechtigung (relevant für Parlamente)
+
+## Anwendungsszenarien
+
+Memberships werden für verschiedene Zuordnungen verwendet:
+
+1. **Parteimitgliedschaften**: Zugehörigkeit zu politischen Parteien
+2. **Fraktionsmitgliedschaften**: Zuordnung zu parlamentarischen Fraktionen
+3. **Kommissionsmitgliedschaften**: Mitarbeit in parlamentarischen Kommissionen
+4. **Parlamentsmitgliedschaften**: Mandate in Parlamenten (Bund, Kantone, Gemeinden)
+5. **Regierungsmitgliedschaften**: Mitgliedschaft in Exekutivorganen
+6. **Delegationen**: Teilnahme an Delegationen
+7. **Gremien**: Mitwirkung in Gremien und Arbeitsgruppen
+
+## Technische Struktur
+
+### Identifikatoren und Referenzen
+
+Eine Membership verknüpft zwei Entitäten:
+
+| Attribut | Typ | Pflicht | Beschreibung |
+|----------|-----|---------|--------------|
+| `id` | URI | Ja | Eindeutiger Identifikator der Mitgliedschaft |
+| `person_id` | string | Ja | Referenz zur Person |
+| `group_id` | string | Ja | Referenz zur Gruppe |
+
+**Beispiel:**
+```yaml
+id: act:membership_jans_sp
+person_id: https://www.wikidata.org/wiki/Q813067
+group_id: act:sp_basel_stadt
+```
+
+## Datenstruktur
+
+### Pflichtfelder
+
+| Attribut | Datentyp | Beschreibung |
+|----------|----------|--------------|
+| `id` | URI | Eindeutiger Identifikator der Mitgliedschaft |
+| `person_id` | string | Referenz zur Person (Wikidata-ID oder lokale ID) |
+| `group_id` | string | Referenz zur Gruppe (lokale ID) |
+
+### Optionale Felder
+
+| Attribut | Datentyp | Beschreibung |
+|----------|----------|--------------|
+| `role` | string | Rolle/Funktion innerhalb der Gruppe |
+| `valid_from` | date | Beginn der Mitgliedschaft |
+| `valid_until` | date | Ende der Mitgliedschaft |
+| `is_active` | boolean | Gibt an, ob die Mitgliedschaft derzeit aktiv ist |
+| `authorized_to_vote` | boolean | Stimmberechtigung (relevant für Parlamente) |
+| `datetime_updated` | datetime | Letzte Aktualisierung des Datensatzes |
+| `datetime_created` | datetime | Erstellung des Datensatzes |
+
+## Rollen (role)
+
+Das Attribut `role` beschreibt die Funktion der Person in der Gruppe.
+
+### Typische Rollen in Parlamenten
+
+- **Mitglied**: Reguläres Parlamentsmitglied
+- **Präsident/Präsidentin**: Parlamentspräsident/in
+- **Vizepräsident/Vizepräsidentin**: Stellvertretung
+- **Ersatzmitglied**: Stellvertretende Person
+- **Beobachter/Beobachterin**: Beobachterstatus ohne Stimmrecht
+
+### Typische Rollen in Kommissionen
+
+- **Mitglied**: Reguläres Kommissionsmitglied
+- **Präsident/Präsidentin**: Kommissionspräsident/in
+- **Vizepräsident/Vizepräsidentin**: Stellvertretung
+- **Ersatzmitglied**: Stellvertretende Person
+- **Sekretär/Sekretärin**: Kommissionssekretär/in (oft nicht stimmberechtigtes Mitglied)
+
+### Typische Rollen in Parteien
+
+- **Mitglied**: Parteimitglied
+- **Präsident/Präsidentin**: Parteipräsident/in
+- **Vorstandsmitglied**: Mitglied des Parteivorstands
+- **Geschäftsführer/Geschäftsführerin**: Geschäftsführung
+- **Ehrenmitglied**: Ehrenmitgliedschaft
+
+### Typische Rollen in Regierungen
+
+- **Regierungsrat/Regierungsrätin**: Mitglied der Kantonsregierung
+- **Bundesrat/Bundesrätin**: Mitglied des Bundesrats
+- **Bundespräsident/Bundespräsidentin**: Rotierendes Amt
+- **Vizepräsident/Vizepräsidentin**: Stellvertretung
+
+## Zeitliche Validität
+
+### valid_from und valid_until
+
+Mitgliedschaften haben einen klar definierten Beginn und oft auch ein Ende:
+
+```yaml
+# Parlamentsmandat mit fester Amtszeit
+id: act:membership_caroni_sr
+person_id: https://www.wikidata.org/wiki/Q493598
+group_id: act:staenderat
+role: Mitglied
+valid_from: 2015-12-07  # Amtsantritt nach Wahl
+valid_until: 2023-11-30  # Ende der Amtsperiode
+authorized_to_vote: true
+```
+
+```yaml
+# Parteimitgliedschaft ohne Enddatum
+id: act:membership_riniker_fdp
+person_id: https://www.wikidata.org/wiki/Q77074968
+group_id: act:fdp_aargau
+role: Mitglied
+valid_from: 2000-01-01
+# valid_until nicht gesetzt = noch aktiv
+is_active: true
+```
+
+### is_active
+
+Alternative oder Ergänzung zu `valid_from`/`valid_until`:
+
+- `true`: Mitgliedschaft ist derzeit aktiv
+- `false`: Mitgliedschaft ist inaktiv/beendet
+- Nicht gesetzt: Aktivität wird aus `valid_from`/`valid_until` abgeleitet
+
+**Verwendung:**
+```yaml
+# Explizite Markierung als aktiv
+is_active: true
+valid_from: 2019-01-01
+
+# Explizite Markierung als beendet
+is_active: false
+valid_from: 2015-01-01
+valid_until: 2019-12-31
+```
+
+## Stimmberechtigung (authorized_to_vote)
+
+Das Attribut `authorized_to_vote` gibt an, ob die Person in der Gruppe stimmberechtigt ist.
+
+**Relevant für:**
+- Parlamentsmitgliedschaften
+- Kommissionsmitgliedschaften
+- Gremien mit Beschlussfassungen
+
+**Nicht stimmberechtigt können sein:**
+- Ersatzmitglieder (wenn nicht im Einsatz)
+- Beobachter/Beobachterinnen
+- Sekretärinnen/Sekretäre
+- Gäste
+
+**Beispiele:**
+```yaml
+# Stimmberechtigtes Mitglied
+role: Mitglied
+authorized_to_vote: true
+
+# Nicht stimmberechtigtes Ersatzmitglied
+role: Ersatzmitglied
+authorized_to_vote: false
+
+# Kommissionssekretär ohne Stimmrecht
+role: Sekretär
+authorized_to_vote: false
+```
+
+## Mehrfachmitgliedschaften
+
+Eine Person kann gleichzeitig mehrere Mitgliedschaften haben:
+
+```yaml
+# Container-Struktur
+persons:
+  - id: https://www.wikidata.org/wiki/Q493598
+    label: Andrea Caroni
+
+memberships:
+  # Parteimitgliedschaft
+  - id: act:membership_caroni_fdp
+    person_id: https://www.wikidata.org/wiki/Q493598
+    group_id: act:fdp_appenzell
+    role: Mitglied
+    valid_from: 1998-01-01
+    is_active: true
+
+  # Parlamentsmandat
+  - id: act:membership_caroni_sr
+    person_id: https://www.wikidata.org/wiki/Q493598
+    group_id: act:staenderat
+    role: Mitglied
+    valid_from: 2015-12-07
+    authorized_to_vote: true
+    is_active: true
+
+  # Fraktionsmitgliedschaft
+  - id: act:membership_caroni_fdp_fraktion
+    person_id: https://www.wikidata.org/wiki/Q493598
+    group_id: act:fdp_fraktion_sr
+    role: Mitglied
+    valid_from: 2015-12-07
+    is_active: true
+
+  # Kommissionsmitgliedschaft
+  - id: act:membership_caroni_rk_sr
+    person_id: https://www.wikidata.org/wiki/Q493598
+    group_id: act:rechtskommission_sr
+    role: Mitglied
+    valid_from: 2016-01-01
+    valid_until: 2019-12-31
+    authorized_to_vote: true
+    is_active: false
+```
+
+## Hierarchische Darstellung
+
+Memberships können auch hierarchisch organisiert werden:
+
+### Partei → Fraktion
+```yaml
+# Person ist Mitglied einer Partei
+- id: act:membership_jans_sp
+  person_id: https://www.wikidata.org/wiki/Q813067
+  group_id: act:sp_schweiz
+  role: Mitglied
+  valid_from: 1980-01-01
+
+# Person ist Mitglied der SP-Fraktion im Nationalrat
+- id: act:membership_jans_sp_fraktion
+  person_id: https://www.wikidata.org/wiki/Q813067
+  group_id: act:sp_fraktion_nr
+  role: Mitglied
+  valid_from: 2010-12-06
+```
+
+Die Fraktion selbst hat eine `parent_groups`-Beziehung zur Partei (siehe Group-Schema).
+
+## Wechsel und Nachfolge
+
+### Parteiwechsel
+
+```yaml
+# SP-Mitgliedschaft (beendet)
+- id: act:membership_mueller_sp
+  person_id: act:person_mueller
+  group_id: act:sp_zuerich
+  role: Mitglied
+  valid_from: 2010-01-01
+  valid_until: 2018-06-30
+  is_active: false
+
+# Grüne-Mitgliedschaft (neu)
+- id: act:membership_mueller_gruene
+  person_id: act:person_mueller
+  group_id: act:gruene_zuerich
+  role: Mitglied
+  valid_from: 2018-07-01
+  is_active: true
+```
+
+### Rollenwechsel innerhalb einer Gruppe
+
+```yaml
+# Reguläres Mitglied
+- id: act:membership_schmidt_kommission_1
+  person_id: act:person_schmidt
+  group_id: act:sik_nr
+  role: Mitglied
+  valid_from: 2016-01-01
+  valid_until: 2019-12-31
+
+# Präsidentin (Nachfolge-Membership)
+- id: act:membership_schmidt_kommission_2
+  person_id: act:person_schmidt
+  group_id: act:sik_nr
+  role: Präsidentin
+  valid_from: 2020-01-01
+  is_active: true
+```
+
+## Interoperabilität
+
+### Verknüpfung im Container
+
+```yaml
+id: act:political_actors_dataset
+persons:
+  - id: https://www.wikidata.org/wiki/Q813067
+    label: Beat Jans
+    # ... weitere Person-Attribute
+
+groups:
+  - id: act:sp_basel_stadt
+    group_type: party
+    name: [{text: "SP Basel-Stadt", language: de}]
+    # ... weitere Group-Attribute
+
+memberships:
+  - id: act:membership_jans_sp
+    person_id: https://www.wikidata.org/wiki/Q813067
+    group_id: act:sp_basel_stadt
+    role: Mitglied
+    valid_from: 1990-01-01
+    is_active: true
+```
+
+### Auswertungen
+
+**Nach Gruppe:**
+```sparql
+# Alle Mitglieder der SP Basel-Stadt
+SELECT ?person ?role WHERE {
+  ?membership a act:Membership ;
+    act:group_id act:sp_basel_stadt ;
+    act:person_id ?person ;
+    act:role ?role ;
+    act:isActive true .
+}
+```
+
+**Nach Person:**
+```sparql
+# Alle Gruppen von Beat Jans
+SELECT ?group ?role WHERE {
+  ?membership a act:Membership ;
+    act:person_id <https://www.wikidata.org/wiki/Q813067> ;
+    act:group_id ?group ;
+    act:role ?role ;
+    act:isActive true .
+}
+```
+
+## Anwendungsbeispiele
+
+### Beispiel 1: Nationalratsmandat
+
+```yaml
+id: act:membership_riniker_nr
+person_id: https://www.wikidata.org/wiki/Q77074968
+group_id: act:nationalrat
+role: Mitglied
+valid_from: 2019-12-02  # Amtsantritt nach Wahl 2019
+valid_until: 2023-11-30  # Ende der Legislaturperiode
+authorized_to_vote: true
+is_active: false  # Legislatur ist beendet
+datetime_created: 2019-12-02T00:00:00Z
+datetime_updated: 2023-11-30T00:00:00Z
+```
+
+### Beispiel 2: Kommissionsmitgliedschaft mit Präsidium
+
+```yaml
+# Reguläres Mitglied
+id: act:membership_caroni_rk_1
+person_id: https://www.wikidata.org/wiki/Q493598
+group_id: act:rechtskommission_sr
+role: Mitglied
+valid_from: 2016-01-01
+valid_until: 2019-12-31
+authorized_to_vote: true
+is_active: false
+
+# Präsident
+id: act:membership_caroni_rk_2
+person_id: https://www.wikidata.org/wiki/Q493598
+group_id: act:rechtskommission_sr
+role: Präsident
+valid_from: 2020-01-01
+valid_until: 2023-12-31
+authorized_to_vote: true
+is_active: false
+```
+
+### Beispiel 3: Parteimitgliedschaft über alle Ebenen
+
+```yaml
+# Bundesebene
+- id: act:membership_jans_sp_ch
+  person_id: https://www.wikidata.org/wiki/Q813067
+  group_id: act:sp_schweiz
+  role: Mitglied
+  valid_from: 1980-01-01
+  is_active: true
+
+# Kantonsebene
+- id: act:membership_jans_sp_bs
+  person_id: https://www.wikidata.org/wiki/Q813067
+  group_id: act:sp_basel_stadt
+  role: Mitglied
+  valid_from: 1980-01-01
+  is_active: true
+
+# Gemeinde (optional)
+- id: act:membership_jans_sp_basel
+  person_id: https://www.wikidata.org/wiki/Q813067
+  group_id: act:sp_stadt_basel
+  role: Vorstandsmitglied
+  valid_from: 2000-01-01
+  valid_until: 2010-12-31
+  is_active: false
+```
+
+### Beispiel 4: Bundesrat
+
+```yaml
+id: act:membership_luisier_vd_regierung
+person_id: https://www.wikidata.org/wiki/Q24699807
+group_id: act:regierungsrat_vaud
+role: Conseillère d'État
+valid_from: 2022-07-01
+is_active: true
+authorized_to_vote: true
+datetime_created: 2022-07-01T00:00:00Z
+```
+
+### Beispiel 5: Fraktionsmitgliedschaft
+
+```yaml
+id: act:membership_riniker_fdp_fraktion
+person_id: https://www.wikidata.org/wiki/Q77074968
+group_id: act:fdp_fraktion_nr
+role: Mitglied
+valid_from: 2019-12-02
+valid_until: 2023-11-30
+is_active: false
+datetime_created: 2019-12-02T00:00:00Z
+```
+
+### Beispiel 6: Ersatzmitglied
+
+```yaml
+id: act:membership_mueller_gpk_ersatz
+person_id: act:person_mueller
+group_id: act:gpk_nr
+role: Ersatzmitglied
+valid_from: 2020-01-01
+valid_until: 2023-12-31
+authorized_to_vote: false  # Ersatzmitglieder sind normalerweise nicht stimmberechtigt
+is_active: false
+```
+
+### Beispiel 7: Delegation
+
+```yaml
+id: act:membership_caroni_delegation
+person_id: https://www.wikidata.org/wiki/Q493598
+group_id: act:delegation_europarat
+role: Delegierter
+valid_from: 2016-01-01
+is_active: true
+authorized_to_vote: true
+```
+
+## Auswertungsmöglichkeiten
+
+### Aktive Mitgliedschaften
+
+Filtern nach `is_active: true` oder `valid_until` nicht gesetzt:
+```yaml
+SELECT * FROM memberships
+WHERE is_active = true
+OR (valid_from <= CURRENT_DATE AND (valid_until IS NULL OR valid_until >= CURRENT_DATE))
+```
+
+### Historische Analysen
+
+- Parteiwechsel über Zeit
+- Durchschnittliche Dauer von Mandaten
+- Fluktuation in Kommissionen
+- Karrierewege (Gemeinde → Kanton → Bund)
+
+### Netzwerkanalysen
+
+- Welche Personen sind in denselben Gruppen?
+- Ko-Mitgliedschaften in Kommissionen
+- Parteizugehörigkeit vs. Fraktionszugehörigkeit
+
+### Stimmberechtigungen
+
+- Anzahl stimmberechtigter Mitglieder pro Gruppe
+- Anteil von Ersatzmitgliedern
+- Quorum-Berechnungen
+
+## Unterschied zu InterestLink
+
+**Membership** vs. **InterestLink**:
+
+| Aspekt | Membership | InterestLink |
+|--------|-----------|--------------|
+| **Zweck** | Formale Zugehörigkeit zu politischen Gruppen | Interessenbindungen und Konflikte |
+| **Zielgruppe** | Gruppen im Actor-Schema | Externe Organisationen |
+| **Beispiele** | Parteimitglied, Kommissionsmitglied | Verwaltungsratsmandat, Vereinsvorstand |
+| **Transparenzpflicht** | Standard-Zuordnung | Offenlegungspflicht wegen Interessenkonflikten |
+| **Stimmberechtigung** | Ja (authorized_to_vote) | Nein |
+
+**Überschneidung:**
+Eine Person kann sowohl Membership (z.B. Nationalrat) als auch InterestLink (z.B. Verwaltungsrat bei Swisscom) haben.
+
+## Referenzen
+
+Siehe vollständige LinkML-Schema-Dokumentation:
+
+
+
+# Class: Membership 
+
+
+_[en] A membership relationship between a person and a group._
+
+_[de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe._
+
+__
+
+
+
+
+
+URI: [act:Membership](https://ch.paf.link/schema/actors/Membership)
+
+
+
+
+
+```mermaid
+ classDiagram
+    class Membership
+    click Membership href "../Membership/"
+      Membership : authorized_to_vote
+        
+      Membership : datetime_created
+        
+      Membership : datetime_updated
+        
+      Membership : group_id
+        
+      Membership : id
+        
+      Membership : is_active
+        
+      Membership : person_id
+        
+      Membership : role
+        
+      Membership : valid_from
+        
+      Membership : valid_until
+        
+      
+```
+
+
+
+
+<!-- no inheritance hierarchy -->
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [id](#id) | 1 <br/> [String](#String) | [en] Unique identifier (preferably Wikidata-ID or URI) | direct |
+| [person_id](#person_id) | 0..1 <br/> [String](#String) | [en] Reference to a person ID | direct |
+| [group_id](#group_id) | 0..1 <br/> [String](#String) | [en] Reference to a group ID | direct |
+| [role](#role) | 0..1 <br/> [String](#String) | [en] Role of the person in the membership or function | direct |
+| [valid_from](#valid_from) | 0..1 <br/> [Date](#Date) | [en] Start date of validity period | direct |
+| [valid_until](#valid_until) | 0..1 <br/> [Date](#Date) | [en] End date of validity period | direct |
+| [is_active](#is_active) | 0..1 <br/> [Boolean](#Boolean) | [en] Indicates if the membership is currently active | direct |
+| [authorized_to_vote](#authorized_to_vote) | 0..1 <br/> [Boolean](#Boolean) | [en] Indicates if the person is authorized to vote | direct |
+| [datetime_updated](#datetime_updated) | 0..1 <br/> [Datetime](#Datetime) | [en] The last time this record was updated | direct |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [en] The time this record was created | direct |
+
+
+
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Container](#Container) | [memberships](#memberships) | range | [Membership](#Membership) |
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://ch.paf.link/schema/actors
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | act:Membership |
+| native | act:Membership |
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: Membership
+description: '[en] A membership relationship between a person and a group.
+
+  [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe.
+
+  '
+from_schema: https://ch.paf.link/schema/actors
+slots:
+- id
+- person_id
+- group_id
+- role
+- valid_from
+- valid_until
+- is_active
 - authorized_to_vote
+- datetime_updated
+- datetime_created
 
-## 
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: Membership
+description: '[en] A membership relationship between a person and a group.
+
+  [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe.
+
+  '
+from_schema: https://ch.paf.link/schema/actors
+attributes:
+  id:
+    name: id
+    description: '[en] Unique identifier (preferably Wikidata-ID or URI).
+
+      [de] Eindeutiger Identifikator (vorzugsweise Wikidata-ID oder URI).
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    slot_uri: dcterm:identifier
+    identifier: true
+    alias: id
+    owner: Membership
+    domain_of:
+    - Container
+    - Person
+    - Group
+    - Membership
+    - InterestLink
+    - PersonReference
+    - GroupReference
+    range: string
+    required: true
+  person_id:
+    name: person_id
+    description: '[en] Reference to a person ID.
+
+      [de] Referenz zu einer Personen-ID.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    alias: person_id
+    owner: Membership
+    domain_of:
+    - Membership
+    - InterestLink
+    range: string
+  group_id:
+    name: group_id
+    description: '[en] Reference to a group ID.
+
+      [de] Referenz zu einer Gruppen-ID.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    alias: group_id
+    owner: Membership
+    domain_of:
+    - Membership
+    range: string
+  role:
+    name: role
+    description: '[en] Role of the person in the membership or function.
+
+      [de] Rolle der Person in der Mitgliedschaft oder Funktion.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    alias: role
+    owner: Membership
+    domain_of:
+    - Membership
+    - PersonReference
+    - GroupReference
+    range: string
+  valid_from:
+    name: valid_from
+    description: '[en] Start date of validity period.
+
+      [de] Startdatum der Gültigkeitsperiode.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    slot_uri: act:validFrom
+    alias: valid_from
+    owner: Membership
+    domain_of:
+    - Group
+    - Membership
+    - InterestLink
+    - Name
+    - Validity
+    - ElectoralDistrict
+    range: date
+  valid_until:
+    name: valid_until
+    description: '[en] End date of validity period.
+
+      [de] Enddatum der Gültigkeitsperiode.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    slot_uri: act:validUntil
+    alias: valid_until
+    owner: Membership
+    domain_of:
+    - Group
+    - Membership
+    - InterestLink
+    - Name
+    range: date
+  is_active:
+    name: is_active
+    description: '[en] Indicates if the membership is currently active.
+
+      [de] Gibt an, ob die Mitgliedschaft derzeit aktiv ist.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    slot_uri: act:isActive
+    alias: is_active
+    owner: Membership
+    domain_of:
+    - Membership
+    range: boolean
+  authorized_to_vote:
+    name: authorized_to_vote
+    description: '[en] Indicates if the person is authorized to vote.
+
+      [de] Gibt an, ob die Person stimmberechtigt ist.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    slot_uri: act:authorizedToVote
+    alias: authorized_to_vote
+    owner: Membership
+    domain_of:
+    - Membership
+    range: boolean
+  datetime_updated:
+    name: datetime_updated
+    description: '[en] The last time this record was updated.
+
+      [de] Der Zeitpunkt, zu dem dieser Datensatz zuletzt aktualisiert wurde.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    alias: datetime_updated
+    owner: Membership
+    domain_of:
+    - Person
+    - Group
+    - Membership
+    - InterestLink
+    range: datetime
+  datetime_created:
+    name: datetime_created
+    description: '[en] The time this record was created.
+
+      [de] Der Zeitpunkt, zu dem dieser Datensatz erstellt wurde.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    alias: datetime_created
+    owner: Membership
+    domain_of:
+    - Person
+    - Group
+    - Membership
+    - InterestLink
+    range: datetime
+
+```
+</details> 
 
 * Überlegungen zu Datenschutz / Öffentlichkeitsrecht  (Christian schaut sich das an).
   * ein Kapitel mit Analyse des IST Zustands / Rechtsgrundlage oder Toolkit ?

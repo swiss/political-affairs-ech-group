@@ -17,11 +17,11 @@ Alias: valid_until
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ElectoralDistrict](ElectoralDistrict.md) |  |  no  |
 | [Validity](Validity.md) |  |  no  |
-| [Citizenship](Citizenship.md) |  |  no  |
 | [Gender](Gender.md) |  |  no  |
+| [ElectoralDistrict](ElectoralDistrict.md) |  |  no  |
 | [Occupation](Occupation.md) |  |  no  |
+| [Citizenship](Citizenship.md) |  |  no  |
 
 
 
