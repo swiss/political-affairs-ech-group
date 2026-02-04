@@ -1,41 +1,41 @@
-
-
-# Slot: uri 
-
-
-
-URI: [act:uri](https://ch.paf.link/schema/actors/uri)
-Alias: uri
-
-<!-- no inheritance hierarchy -->
+# Type: Uri 
 
 
 
 
+_a complete URI_
 
-## Applicable Classes
 
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [GroupReference](GroupReference.md) | Reference to a group acting in a specific role |  no  |
-| [PersonReference](PersonReference.md) | Reference to a person acting in a specific role or function |  no  |
+
+URI: [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
+
+* [base](https://w3id.org/linkml/base): URI
+
+* [uri](https://w3id.org/linkml/uri): xsd:anyURI
+
+* [repr](https://w3id.org/linkml/repr): str
 
 
 
 
 
 
-## Properties
 
-* Range: [String](String.md)
+## Comments
 
-
-
+* in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node
 
 ## Identifier and Mapping Information
 
 
 
+
+
+
+### Schema Source
+
+
+* from schema: https://ch.paf.link/schema/actors
 
 
 
@@ -48,18 +48,3 @@ Alias: uri
 | native | act:uri |
 
 
-
-
-## LinkML Source
-
-<details>
-```yaml
-name: uri
-alias: uri
-domain_of:
-- PersonReference
-- GroupReference
-range: string
-
-```
-</details>

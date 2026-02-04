@@ -40,7 +40,7 @@
             "type": "object"
         },
         "AddressTypeEnum": {
-            "description": "",
+            "description": "[en] Types of addresses.\n[de] Adresstypen.",
             "enum": [
                 "privateAddress",
                 "businessAddress",
@@ -97,7 +97,7 @@
             "type": "object"
         },
         "ContactTypeEnum": {
-            "description": "",
+            "description": "[en] Types of contact information.\n[de] Kontaktinformationstypen.",
             "enum": [
                 "email",
                 "contact_website",
@@ -106,6 +106,61 @@
             ],
             "title": "ContactTypeEnum",
             "type": "string"
+        },
+        "Container": {
+            "additionalProperties": false,
+            "description": "[en] Root container holding all political actors, groups, and relationships.\n[de] Wurzelcontainer mit allen politischen Akteuren, Gruppen und Beziehungen.",
+            "properties": {
+                "groups": {
+                    "description": "[en] Collection of groups.\n[de] Sammlung von Gruppen.\n",
+                    "items": {
+                        "$ref": "#/$defs/Group"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "[en] Unique identifier (preferably Wikidata-ID or URI).\n[de] Eindeutiger Identifikator (vorzugsweise Wikidata-ID oder URI).\n",
+                    "type": "string"
+                },
+                "interest_links": {
+                    "description": "[en] Collection of interest links.\n[de] Sammlung von Interessenbindungen.\n",
+                    "items": {
+                        "$ref": "#/$defs/InterestLink"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "memberships": {
+                    "description": "[en] Collection of memberships.\n[de] Sammlung von Mitgliedschaften.\n",
+                    "items": {
+                        "$ref": "#/$defs/Membership"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "persons": {
+                    "description": "[en] Collection of persons.\n[de] Sammlung von Personen.\n",
+                    "items": {
+                        "$ref": "#/$defs/Person"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Container",
+            "type": "object"
         },
         "ElectoralDistrict": {
             "additionalProperties": false,
@@ -174,6 +229,160 @@
             "title": "Gender",
             "type": "object"
         },
+        "Group": {
+            "additionalProperties": false,
+            "description": "[en] A political group, organization, or body (e.g., party, committee, parliament, department).\n[de] Eine politische Gruppe, Organisation oder K\u00f6rperschaft (z.B. Partei, Kommission, Parlament, Departement).",
+            "properties": {
+                "abbreviation": {
+                    "description": "[en] Abbreviation (can be multilingual).\n[de] Abk\u00fcrzung (kann mehrsprachig sein).\n",
+                    "items": {
+                        "$ref": "#/$defs/MultilingualString"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "addresses": {
+                    "description": "[en] Addresses (private, business, local).\n[de] Adressen (privat, gesch\u00e4ftlich, lokal).\n",
+                    "items": {
+                        "$ref": "#/$defs/Address"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "contacts": {
+                    "description": "[en] Contact information (email, website, social media).\n[de] Kontaktinformationen (E-Mail, Website, Social Media).\n",
+                    "items": {
+                        "$ref": "#/$defs/Contact"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "datetime_created": {
+                    "description": "[en] The time this record was created.\n[de] Der Zeitpunkt, zu dem dieser Datensatz erstellt wurde.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_updated": {
+                    "description": "[en] The last time this record was updated.\n[de] Der Zeitpunkt, zu dem dieser Datensatz zuletzt aktualisiert wurde.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "[en] Description of the entity.\n[de] Beschreibung der Entit\u00e4t.\n",
+                    "items": {
+                        "$ref": "#/$defs/MultilingualString"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "group_type": {
+                    "$ref": "#/$defs/GroupTypeEnum",
+                    "description": "[en] Type of group (e.g., party, committee, parliament, department).\n[de] Art der Gruppe (z.B. Partei, Kommission, Parlament, Departement).\n"
+                },
+                "id": {
+                    "description": "[en] Unique identifier (preferably Wikidata-ID or URI).\n[de] Eindeutiger Identifikator (vorzugsweise Wikidata-ID oder URI).\n",
+                    "type": "string"
+                },
+                "landing_page": {
+                    "description": "[en] URL providing further information.\n[de] URL mit weiteren Informationen.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "[en] Name (can be multilingual).\n[de] Name (kann mehrsprachig sein).\n",
+                    "items": {
+                        "$ref": "#/$defs/MultilingualString"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "parent_groups": {
+                    "description": "[en] Parent group IDs (to model party hierarchy or bind parties to parliaments).\n[de] \u00dcbergeordnete Gruppen-IDs (um Parteihierarchie oder Bindung an Parlamente abzubilden).\n",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "party_color": {
+                    "description": "[en] Party color (optional for parties).\n[de] Parteifarbe (optional f\u00fcr Parteien).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "spatial": {
+                    "description": "[en] Spatial reference (municipality number, canton number, e.g., ld.admin.ch/municipality/234).\n[de] R\u00e4umliche Referenz (Gemeindenummer, Kantonsnummer, z.B. ld.admin.ch/municipality/234).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type_label": {
+                    "description": "[en] Custom type label when standard type values don't apply.\n[de] Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "uri": {
+                    "description": "[en] Globally valid identifier (e.g., politics.ld.admin.ch/party/1).\n[de] Global g\u00fcltiger Identifikator (z.B. politics.ld.admin.ch/party/1).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "url_statutes": {
+                    "description": "[en] URL to party statutes (optional for parties).\n[de] URL zu Parteistatuten (optional f\u00fcr Parteien).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "valid_from": {
+                    "description": "[en] Start date of validity period.\n[de] Startdatum der G\u00fcltigkeitsperiode.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "valid_until": {
+                    "description": "[en] End date of validity period.\n[de] Enddatum der G\u00fcltigkeitsperiode.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "group_type"
+            ],
+            "title": "Group",
+            "type": "object"
+        },
         "GroupReference": {
             "additionalProperties": false,
             "description": "Reference to a group acting in a specific role",
@@ -206,6 +415,152 @@
             "title": "GroupReference",
             "type": "object"
         },
+        "GroupTypeEnum": {
+            "description": "[en] Types of political groups and organizations.\n[de] Typen politischer Gruppen und Organisationen.",
+            "enum": [
+                "party",
+                "list",
+                "workgroup",
+                "parliament",
+                "delegation",
+                "commission",
+                "faction",
+                "parliamentary_bureau",
+                "presidency",
+                "government",
+                "department",
+                "office",
+                "extraparliamentary_commission",
+                "interest_group",
+                "control_body",
+                "parliamentary_services",
+                "court",
+                "association",
+                "petition_carrier",
+                "university",
+                "other"
+            ],
+            "title": "GroupTypeEnum",
+            "type": "string"
+        },
+        "InterestLink": {
+            "additionalProperties": false,
+            "description": "[en] An interest link (conflict of interest, political financing) of a person to an organization.\n[de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation.",
+            "properties": {
+                "committee": {
+                    "description": "[en] Committee or board (e.g., foundation board, board of directors).\n[de] Gremium (z.B. Stiftungsrat, Verwaltungsrat).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_created": {
+                    "description": "[en] The time this record was created.\n[de] Der Zeitpunkt, zu dem dieser Datensatz erstellt wurde.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_updated": {
+                    "description": "[en] The last time this record was updated.\n[de] Der Zeitpunkt, zu dem dieser Datensatz zuletzt aktualisiert wurde.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "function_role": {
+                    "description": "[en] Function or role in the organization.\n[de] Funktion oder Rolle in der Organisation.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "[en] Unique identifier (preferably Wikidata-ID or URI).\n[de] Eindeutiger Identifikator (vorzugsweise Wikidata-ID oder URI).\n",
+                    "type": "string"
+                },
+                "interest_type": {
+                    "$ref": "#/$defs/InterestTypeEnum",
+                    "description": "[en] Type of interest link (professional activity, political office, association).\n[de] Art der Interessenbindung (Berufliche T\u00e4tigkeit, Politische \u00c4mter, Verein).\n"
+                },
+                "legal_form": {
+                    "description": "[en] Legal form of the organization.\n[de] Rechtsform der Organisation.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "organization_address": {
+                    "description": "[en] Address of the organization.\n[de] Adresse der Organisation.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "organization_label": {
+                    "description": "[en] Label of the organization.\n[de] Bezeichnung der Organisation.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "organization_uid": {
+                    "description": "[en] UID of the organization (for analysis with NOGA codes, etc.).\n[de] UID der Organisation (f\u00fcr Auswertungen mit NOGA-Codes, etc.).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "paid": {
+                    "description": "[en] Indicates if the position is paid.\n[de] Gibt an, ob die Position bezahlt ist.\n",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "person_id": {
+                    "description": "[en] Reference to a person ID.\n[de] Referenz zu einer Personen-ID.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "valid_from": {
+                    "description": "[en] Start date of validity period.\n[de] Startdatum der G\u00fcltigkeitsperiode.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "valid_until": {
+                    "description": "[en] End date of validity period.\n[de] Enddatum der G\u00fcltigkeitsperiode.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "interest_type"
+            ],
+            "title": "InterestLink",
+            "type": "object"
+        },
+        "InterestTypeEnum": {
+            "description": "[en] Types of interest links (conflicts of interest, political financing).\n[de] Typen von Interessenbindungen (Interessenkonflikte, Politikfinanzierung).",
+            "enum": [
+                "professional_activity",
+                "political_office",
+                "association"
+            ],
+            "title": "InterestTypeEnum",
+            "type": "string"
+        },
         "LanguageProficiency": {
             "additionalProperties": false,
             "description": "",
@@ -233,6 +588,108 @@
                 "language"
             ],
             "title": "LanguageProficiency",
+            "type": "object"
+        },
+        "Membership": {
+            "additionalProperties": false,
+            "description": "[en] A membership relationship between a person and a group.\n[de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe.",
+            "properties": {
+                "authorized_to_vote": {
+                    "description": "[en] Indicates if the person is authorized to vote.\n[de] Gibt an, ob die Person stimmberechtigt ist.\n",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "datetime_created": {
+                    "description": "[en] The time this record was created.\n[de] Der Zeitpunkt, zu dem dieser Datensatz erstellt wurde.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_updated": {
+                    "description": "[en] The last time this record was updated.\n[de] Der Zeitpunkt, zu dem dieser Datensatz zuletzt aktualisiert wurde.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "group_id": {
+                    "description": "[en] Reference to a group ID.\n[de] Referenz zu einer Gruppen-ID.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "[en] Unique identifier (preferably Wikidata-ID or URI).\n[de] Eindeutiger Identifikator (vorzugsweise Wikidata-ID oder URI).\n",
+                    "type": "string"
+                },
+                "is_active": {
+                    "description": "[en] Indicates if the membership is currently active.\n[de] Gibt an, ob die Mitgliedschaft derzeit aktiv ist.\n",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "person_id": {
+                    "description": "[en] Reference to a person ID.\n[de] Referenz zu einer Personen-ID.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "role": {
+                    "description": "[en] Role of the person in the membership or function.\n[de] Rolle der Person in der Mitgliedschaft oder Funktion.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "valid_from": {
+                    "description": "[en] Start date of validity period.\n[de] Startdatum der G\u00fcltigkeitsperiode.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "valid_until": {
+                    "description": "[en] End date of validity period.\n[de] Enddatum der G\u00fcltigkeitsperiode.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Membership",
+            "type": "object"
+        },
+        "MultilingualString": {
+            "additionalProperties": false,
+            "description": "[en] A string that can contain text in multiple languages.\n[de] Ein String, der Text in mehreren Sprachen enthalten kann.",
+            "properties": {
+                "language": {
+                    "description": "[en] Language code in ISO 639-1 format.\n[de] Sprachcode im ISO 639-1 Format.\n",
+                    "pattern": "^[a-z]{2}$",
+                    "type": "string"
+                },
+                "text": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "text",
+                "language"
+            ],
+            "title": "MultilingualString",
             "type": "object"
         },
         "Name": {
@@ -269,7 +726,7 @@
             "type": "object"
         },
         "NameTypeEnum": {
-            "description": "",
+            "description": "[en] Categories of name types.\n[de] Kategorien von Namenstypen.",
             "enum": [
                 "familyNameOnForeignPassport",
                 "callName",
@@ -340,10 +797,10 @@
         },
         "Person": {
             "additionalProperties": false,
-            "description": "A person with identifiers, names, addresses, citizenships, and occupations.",
+            "description": "[en] A person with identifiers, names, addresses, citizenships, and occupations.\n[de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsb\u00fcrgerschaften und Berufen.",
             "properties": {
                 "addresses": {
-                    "description": "place of residence and work",
+                    "description": "[en] Addresses (private, business, local).\n[de] Adressen (privat, gesch\u00e4ftlich, lokal).\n",
                     "items": {
                         "$ref": "#/$defs/Address"
                     },
@@ -353,7 +810,7 @@
                     ]
                 },
                 "birthdate": {
-                    "description": "Exact date of birth",
+                    "description": "[en] Exact date of birth.\n[de] Genaues Geburtsdatum.\n",
                     "format": "date",
                     "type": [
                         "string",
@@ -361,7 +818,7 @@
                     ]
                 },
                 "birthyear": {
-                    "description": "Year of birth",
+                    "description": "[en] Year of birth.\n[de] Geburtsjahr.\n",
                     "type": [
                         "integer",
                         "null"
@@ -387,11 +844,28 @@
                     ]
                 },
                 "contacts": {
+                    "description": "[en] Contact information (email, website, social media).\n[de] Kontaktinformationen (E-Mail, Website, Social Media).\n",
                     "items": {
                         "$ref": "#/$defs/Contact"
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "datetime_created": {
+                    "description": "[en] The time this record was created.\n[de] Der Zeitpunkt, zu dem dieser Datensatz erstellt wurde.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_updated": {
+                    "description": "[en] The last time this record was updated.\n[de] Der Zeitpunkt, zu dem dieser Datensatz zuletzt aktualisiert wurde.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -415,15 +889,25 @@
                     ]
                 },
                 "id": {
-                    "description": "Wikidata-ID preferred",
+                    "description": "[en] Unique identifier (preferably Wikidata-ID or URI).\n[de] Eindeutiger Identifikator (vorzugsweise Wikidata-ID oder URI).\n",
                     "type": "string"
                 },
+                "interest_links_person": {
+                    "description": "[en] Interest links of the person.\n[de] Interessenbindungen der Person.\n",
+                    "items": {
+                        "$ref": "#/$defs/InterestLink"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "label": {
-                    "description": "Display name of the person",
+                    "description": "[en] Display name of the person.\n[de] Anzeigename der Person.\n",
                     "type": "string"
                 },
                 "label_long": {
-                    "description": "Extended display name (with title, etc.)",
+                    "description": "[en] Extended display name (with title, etc.).\n[de] Erweiterter Anzeigename (mit Titel, etc.).\n",
                     "type": [
                         "string",
                         "null"
@@ -457,7 +941,7 @@
                     ]
                 },
                 "picture": {
-                    "description": "Link to an image (preferred: PNG, then JPG, then GIF)",
+                    "description": "[en] Link to an image (preferred: PNG, then JPG, then GIF).\n[de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).\n",
                     "type": [
                         "string",
                         "null"
@@ -553,7 +1037,7 @@
             "type": "object"
         },
         "TrainingTypeEnum": {
-            "description": "",
+            "description": "[en] Types of training or education.\n[de] Ausbildungs- oder Bildungstypen.",
             "enum": [
                 "schulabschluss",
                 "efz",
@@ -591,75 +1075,13 @@
     "$id": "https://ch.paf.link/schema/actors",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
-    "description": "A person with identifiers, names, addresses, citizenships, and occupations.",
+    "description": "[en] Root container holding all political actors, groups, and relationships.\n[de] Wurzelcontainer mit allen politischen Akteuren, Gruppen und Beziehungen.",
     "metamodel_version": "1.7.0",
     "properties": {
-        "addresses": {
-            "description": "place of residence and work",
+        "groups": {
+            "description": "[en] Collection of groups.\n[de] Sammlung von Gruppen.\n",
             "items": {
-                "$ref": "#/$defs/Address"
-            },
-            "type": [
-                "array",
-                "null"
-            ]
-        },
-        "birthdate": {
-            "description": "Exact date of birth",
-            "format": "date",
-            "type": [
-                "string",
-                "null"
-            ]
-        },
-        "birthyear": {
-            "description": "Year of birth",
-            "type": [
-                "integer",
-                "null"
-            ]
-        },
-        "ch_citizenship": {
-            "anyOf": [
-                {
-                    "$ref": "#/$defs/Validity"
-                },
-                {
-                    "type": "null"
-                }
-            ]
-        },
-        "citizenships": {
-            "items": {
-                "$ref": "#/$defs/Citizenship"
-            },
-            "type": [
-                "array",
-                "null"
-            ]
-        },
-        "contacts": {
-            "items": {
-                "$ref": "#/$defs/Contact"
-            },
-            "type": [
-                "array",
-                "null"
-            ]
-        },
-        "electoral_district": {
-            "anyOf": [
-                {
-                    "$ref": "#/$defs/ElectoralDistrict"
-                },
-                {
-                    "type": "null"
-                }
-            ]
-        },
-        "genders": {
-            "items": {
-                "$ref": "#/$defs/Gender"
+                "$ref": "#/$defs/Group"
             },
             "type": [
                 "array",
@@ -667,57 +1089,33 @@
             ]
         },
         "id": {
-            "description": "Wikidata-ID preferred",
+            "description": "[en] Unique identifier (preferably Wikidata-ID or URI).\n[de] Eindeutiger Identifikator (vorzugsweise Wikidata-ID oder URI).\n",
             "type": "string"
         },
-        "label": {
-            "description": "Display name of the person",
-            "type": "string"
-        },
-        "label_long": {
-            "description": "Extended display name (with title, etc.)",
-            "type": [
-                "string",
-                "null"
-            ]
-        },
-        "languages": {
+        "interest_links": {
+            "description": "[en] Collection of interest links.\n[de] Sammlung von Interessenbindungen.\n",
             "items": {
-                "$ref": "#/$defs/LanguageProficiency"
+                "$ref": "#/$defs/InterestLink"
             },
             "type": [
                 "array",
                 "null"
             ]
         },
-        "names": {
+        "memberships": {
+            "description": "[en] Collection of memberships.\n[de] Sammlung von Mitgliedschaften.\n",
             "items": {
-                "$ref": "#/$defs/Name"
+                "$ref": "#/$defs/Membership"
             },
             "type": [
                 "array",
                 "null"
             ]
         },
-        "occupations": {
+        "persons": {
+            "description": "[en] Collection of persons.\n[de] Sammlung von Personen.\n",
             "items": {
-                "$ref": "#/$defs/Occupation"
-            },
-            "type": [
-                "array",
-                "null"
-            ]
-        },
-        "picture": {
-            "description": "Link to an image (preferred: PNG, then JPG, then GIF)",
-            "type": [
-                "string",
-                "null"
-            ]
-        },
-        "trainings": {
-            "items": {
-                "$ref": "#/$defs/Training"
+                "$ref": "#/$defs/Person"
             },
             "type": [
                 "array",
@@ -726,10 +1124,9 @@
         }
     },
     "required": [
-        "id",
-        "label"
+        "id"
     ],
-    "title": "PersonSchema",
+    "title": "ActorSchema",
     "type": "object",
     "version": null
 }

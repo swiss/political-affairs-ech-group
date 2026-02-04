@@ -1,7 +1,9 @@
 id: https://ch.paf.link/schema/actors
-name: PersonSchema
-title: Person Schema
-description: A schema describing a person with addresses, names, languages, citizenships, occupations, training, and contact details.
+name: ActorSchema
+title: Actor Schema
+description: |
+  [en] A schema describing political actors including persons, groups, memberships, and interest links.
+  [de] Ein Schema zur Beschreibung politischer Akteure einschließlich Personen, Gruppen, Mitgliedschaften und Interessenbindungen.
 license: CC-BY
 
 prefixes:
@@ -16,75 +18,103 @@ imports:
   - linkml:types
 
 classes:
-      
-  Person:
+
+  Container:
     tree_root: true
-    description: A person with identifiers, names, addresses, citizenships, and occupations.
-    attributes:
-      id:
-        identifier: true
-        required: true
-        description: Wikidata-ID preferred
-      label:
-        description: Display name of the person
-        required: true
-      label_long:
-        description: Extended display name (with title, etc.)
-      birthyear:
-        range: integer
-        description: Year of birth
-      birthdate:
-        range: date
-        description: Exact date of birth
-      picture:
-        description: "Link to an image (preferred: PNG, then JPG, then GIF)"
-      names:
-        range: Name
-        slot_uri: act:name
-        multivalued: true
-        inlined_as_list: true
-      addresses:
-        range: Address
-        slot_uri: act:address
-        multivalued: true
-        inlined_as_list: true
-        description: place of residence and work
-      languages:
-        range: LanguageProficiency
-        slot_uri: act:language
-        multivalued: true
-        inlined_as_list: true
-      ch_citizenship:
-        range: Validity
-        slot_uri: act:chCitizenship
-      citizenships:
-        range: Citizenship
-        slot_uri: act:citizenship
-        multivalued: true
-        inlined_as_list: true
-      genders:
-        range: Gender
-        slot_uri: act:gender
-        multivalued: true
-        inlined_as_list: true
-      occupations:
-        range: Occupation
-        slot_uri: act:occupation
-        multivalued: true
-        inlined_as_list: true
-      trainings:
-        range: Training
-        slot_uri: act:training
-        multivalued: true
-        inlined_as_list: true
-      contacts:
-        range: Contact
-        slot_uri: act:contact
-        multivalued: true
-        inlined_as_list: true
-      electoral_district:
-        range: ElectoralDistrict
-        slot_uri: act:electoralDistrict
+    description: |
+      [en] Root container holding all political actors, groups, and relationships.
+      [de] Wurzelcontainer mit allen politischen Akteuren, Gruppen und Beziehungen.
+    slots:
+      - id
+      - persons
+      - groups
+      - memberships
+      - interest_links
+
+  Person:
+    description: |
+      [en] A person with identifiers, names, addresses, citizenships, and occupations.
+      [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Berufen.
+    slots:
+      - id
+      - label
+      - label_long
+      - birthyear
+      - birthdate
+      - picture
+      - names
+      - addresses
+      - languages
+      - ch_citizenship
+      - citizenships
+      - genders
+      - occupations
+      - trainings
+      - contacts
+      - electoral_district
+      - interest_links_person
+      - datetime_updated
+      - datetime_created
+
+  Group:
+    description: |
+      [en] A political group, organization, or body (e.g., party, committee, parliament, department).
+      [de] Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommission, Parlament, Departement).
+    slots:
+      - id
+      - uri
+      - group_type
+      - type_label
+      - valid_from
+      - valid_until
+      - name
+      - abbreviation
+      - description
+      - landing_page
+      - parent_groups
+      - spatial
+      - contacts
+      - addresses
+      - url_statutes
+      - party_color
+      - datetime_updated
+      - datetime_created
+
+  Membership:
+    description: |
+      [en] A membership relationship between a person and a group.
+      [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe.
+    slots:
+      - id
+      - person_id
+      - group_id
+      - role
+      - valid_from
+      - valid_until
+      - is_active
+      - authorized_to_vote
+      - datetime_updated
+      - datetime_created
+
+  InterestLink:
+    description: |
+      [en] An interest link (conflict of interest, political financing) of a person to an organization.
+      [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation.
+    slots:
+      - id
+      - person_id
+      - interest_type
+      - organization_label
+      - organization_uid
+      - organization_address
+      - legal_form
+      - valid_from
+      - valid_until
+      - paid
+      - committee
+      - function_role
+      - datetime_updated
+      - datetime_created
 
   PersonReference:
     description: Reference to a person acting in a specific role or function
@@ -235,33 +265,577 @@ classes:
         range: date
         slot_uri: act:validUntil
 
+  MultilingualString:
+    description: |
+      [en] A string that can contain text in multiple languages.
+      [de] Ein String, der Text in mehreren Sprachen enthalten kann.
+    slots:
+      - text
+      - language
+
+slots:
+
+  id:
+    identifier: true
+    required: true
+    slot_uri: dcterm:identifier
+    description: |
+      [en] Unique identifier (preferably Wikidata-ID or URI).
+      [de] Eindeutiger Identifikator (vorzugsweise Wikidata-ID oder URI).
+
+  uri:
+    description: |
+      [en] Globally valid identifier (e.g., politics.ld.admin.ch/party/1).
+      [de] Global gültiger Identifikator (z.B. politics.ld.admin.ch/party/1).
+
+  label:
+    description: |
+      [en] Display name of the person.
+      [de] Anzeigename der Person.
+    required: true
+
+  label_long:
+    description: |
+      [en] Extended display name (with title, etc.).
+      [de] Erweiterter Anzeigename (mit Titel, etc.).
+
+  birthyear:
+    range: integer
+    description: |
+      [en] Year of birth.
+      [de] Geburtsjahr.
+
+  birthdate:
+    range: date
+    description: |
+      [en] Exact date of birth.
+      [de] Genaues Geburtsdatum.
+
+  picture:
+    description: |
+      [en] Link to an image (preferred: PNG, then JPG, then GIF).
+      [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).
+
+  group_type:
+    range: GroupTypeEnum
+    slot_uri: act:groupType
+    required: true
+    description: |
+      [en] Type of group (e.g., party, committee, parliament, department).
+      [de] Art der Gruppe (z.B. Partei, Kommission, Parlament, Departement).
+
+  type_label:
+    description: |
+      [en] Custom type label when standard type values don't apply.
+      [de] Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen.
+
+  valid_from:
+    range: date
+    slot_uri: act:validFrom
+    description: |
+      [en] Start date of validity period.
+      [de] Startdatum der Gültigkeitsperiode.
+
+  valid_until:
+    range: date
+    slot_uri: act:validUntil
+    description: |
+      [en] End date of validity period.
+      [de] Enddatum der Gültigkeitsperiode.
+
+  name:
+    range: MultilingualString
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      [en] Name (can be multilingual).
+      [de] Name (kann mehrsprachig sein).
+
+  abbreviation:
+    range: MultilingualString
+    multivalued: true
+    inlined_as_list: true
+    slot_uri: act:abbreviation
+    description: |
+      [en] Abbreviation (can be multilingual).
+      [de] Abkürzung (kann mehrsprachig sein).
+
+  description:
+    range: MultilingualString
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      [en] Description of the entity.
+      [de] Beschreibung der Entität.
+
+  landing_page:
+    slot_uri: act:landingPage
+    description: |
+      [en] URL providing further information.
+      [de] URL mit weiteren Informationen.
+
+  parent_groups:
+    range: string
+    multivalued: true
+    inlined_as_list: true
+    slot_uri: act:parentGroup
+    description: |
+      [en] Parent group IDs (to model party hierarchy or bind parties to parliaments).
+      [de] Übergeordnete Gruppen-IDs (um Parteihierarchie oder Bindung an Parlamente abzubilden).
+
+  spatial:
+    description: |
+      [en] Spatial reference (municipality number, canton number, e.g., ld.admin.ch/municipality/234).
+      [de] Räumliche Referenz (Gemeindenummer, Kantonsnummer, z.B. ld.admin.ch/municipality/234).
+
+  contacts:
+    range: Contact
+    slot_uri: act:contact
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      [en] Contact information (email, website, social media).
+      [de] Kontaktinformationen (E-Mail, Website, Social Media).
+
+  addresses:
+    range: Address
+    slot_uri: act:address
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      [en] Addresses (private, business, local).
+      [de] Adressen (privat, geschäftlich, lokal).
+
+  url_statutes:
+    slot_uri: act:urlStatutes
+    description: |
+      [en] URL to party statutes (optional for parties).
+      [de] URL zu Parteistatuten (optional für Parteien).
+
+  party_color:
+    slot_uri: act:partyColor
+    description: |
+      [en] Party color (optional for parties).
+      [de] Parteifarbe (optional für Parteien).
+
+  person_id:
+    description: |
+      [en] Reference to a person ID.
+      [de] Referenz zu einer Personen-ID.
+    range: string
+
+  group_id:
+    description: |
+      [en] Reference to a group ID.
+      [de] Referenz zu einer Gruppen-ID.
+    range: string
+
+  role:
+    description: |
+      [en] Role of the person in the membership or function.
+      [de] Rolle der Person in der Mitgliedschaft oder Funktion.
+
+  is_active:
+    range: boolean
+    slot_uri: act:isActive
+    description: |
+      [en] Indicates if the membership is currently active.
+      [de] Gibt an, ob die Mitgliedschaft derzeit aktiv ist.
+
+  authorized_to_vote:
+    range: boolean
+    slot_uri: act:authorizedToVote
+    description: |
+      [en] Indicates if the person is authorized to vote.
+      [de] Gibt an, ob die Person stimmberechtigt ist.
+
+  interest_type:
+    range: InterestTypeEnum
+    slot_uri: act:interestType
+    required: true
+    description: |
+      [en] Type of interest link (professional activity, political office, association).
+      [de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).
+
+  organization_label:
+    slot_uri: act:organizationLabel
+    description: |
+      [en] Label of the organization.
+      [de] Bezeichnung der Organisation.
+
+  organization_uid:
+    slot_uri: act:organizationUid
+    description: |
+      [en] UID of the organization (for analysis with NOGA codes, etc.).
+      [de] UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).
+
+  organization_address:
+    slot_uri: act:organizationAddress
+    description: |
+      [en] Address of the organization.
+      [de] Adresse der Organisation.
+
+  legal_form:
+    slot_uri: act:legalForm
+    description: |
+      [en] Legal form of the organization.
+      [de] Rechtsform der Organisation.
+
+  paid:
+    range: boolean
+    description: |
+      [en] Indicates if the position is paid.
+      [de] Gibt an, ob die Position bezahlt ist.
+
+  committee:
+    slot_uri: act:committee
+    description: |
+      [en] Committee or board (e.g., foundation board, board of directors).
+      [de] Gremium (z.B. Stiftungsrat, Verwaltungsrat).
+
+  function_role:
+    slot_uri: act:functionRole
+    description: |
+      [en] Function or role in the organization.
+      [de] Funktion oder Rolle in der Organisation.
+
+  datetime_updated:
+    range: datetime
+    description: |
+      [en] The last time this record was updated.
+      [de] Der Zeitpunkt, zu dem dieser Datensatz zuletzt aktualisiert wurde.
+
+  datetime_created:
+    range: datetime
+    description: |
+      [en] The time this record was created.
+      [de] Der Zeitpunkt, zu dem dieser Datensatz erstellt wurde.
+
+  names:
+    range: Name
+    slot_uri: act:name
+    multivalued: true
+    inlined_as_list: true
+
+  languages:
+    range: LanguageProficiency
+    slot_uri: act:language
+    multivalued: true
+    inlined_as_list: true
+
+  ch_citizenship:
+    range: Validity
+    slot_uri: act:chCitizenship
+
+  citizenships:
+    range: Citizenship
+    slot_uri: act:citizenship
+    multivalued: true
+    inlined_as_list: true
+
+  genders:
+    range: Gender
+    slot_uri: act:gender
+    multivalued: true
+    inlined_as_list: true
+
+  occupations:
+    range: Occupation
+    slot_uri: act:occupation
+    multivalued: true
+    inlined_as_list: true
+
+  trainings:
+    range: Training
+    slot_uri: act:training
+    multivalued: true
+    inlined_as_list: true
+
+  electoral_district:
+    range: ElectoralDistrict
+    slot_uri: act:electoralDistrict
+
+  interest_links_person:
+    range: InterestLink
+    slot_uri: act:interestLink
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      [en] Interest links of the person.
+      [de] Interessenbindungen der Person.
+
+  persons:
+    slot_uri: act:person
+    range: Person
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      [en] Collection of persons.
+      [de] Sammlung von Personen.
+
+  groups:
+    slot_uri: act:group
+    range: Group
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      [en] Collection of groups.
+      [de] Sammlung von Gruppen.
+
+  memberships:
+    slot_uri: act:membership
+    range: Membership
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      [en] Collection of memberships.
+      [de] Sammlung von Mitgliedschaften.
+
+  interest_links:
+    slot_uri: act:interestLink
+    range: InterestLink
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      [en] Collection of interest links.
+      [de] Sammlung von Interessenbindungen.
+
+  text:
+    required: true
+
+  language:
+    required: true
+    description: |
+      [en] Language code in ISO 639-1 format.
+      [de] Sprachcode im ISO 639-1 Format.
+    pattern: ^[a-z]{2}$
+
 enums:
+
   NameTypeEnum:
+    description: |
+      [en] Categories of name types.
+      [de] Kategorien von Namenstypen.
     permissible_values:
       familyNameOnForeignPassport:
+        description: |
+          [en] Family name on foreign passport.
+          [de] Familienname auf ausländischem Pass.
       callName:
+        description: |
+          [en] Call name.
+          [de] Rufname.
       officialGivenName:
+        description: |
+          [en] Official given name.
+          [de] Offizieller Vorname.
       officialLastName:
+        description: |
+          [en] Official last name.
+          [de] Offizieller Nachname.
       officialMiddleName:
+        description: |
+          [en] Official middle name.
+          [de] Offizieller Mittelname.
 
   AddressTypeEnum:
+    description: |
+      [en] Types of addresses.
+      [de] Adresstypen.
     permissible_values:
       privateAddress:
+        description: |
+          [en] Private address.
+          [de] Privatadresse.
       businessAddress:
+        description: |
+          [en] Business address.
+          [de] Geschäftsadresse.
       localAddress:
+        description: |
+          [en] Local address.
+          [de] Lokaladresse.
 
   TrainingTypeEnum:
+    description: |
+      [en] Types of training or education.
+      [de] Ausbildungs- oder Bildungstypen.
     permissible_values:
       schulabschluss:
+        description: |
+          [en] School diploma.
+          [de] Schulabschluss.
       efz:
+        description: |
+          [en] Federal certificate of proficiency (EFZ).
+          [de] Eidgenössisches Fähigkeitszeugnis (EFZ).
       uni:
+        description: |
+          [en] University degree.
+          [de] Universitätsabschluss.
       armee:
+        description: |
+          [en] Military service.
+          [de] Militärdienst.
       zivi:
+        description: |
+          [en] Civil service.
+          [de] Zivildienst.
       zischutz:
+        description: |
+          [en] Civil protection.
+          [de] Zivilschutz.
 
   ContactTypeEnum:
+    description: |
+      [en] Types of contact information.
+      [de] Kontaktinformationstypen.
     permissible_values:
       email:
+        description: |
+          [en] Email address.
+          [de] E-Mail-Adresse.
       contact_website:
+        description: |
+          [en] Contact website.
+          [de] Kontakt-Website.
       linked-in:
+        description: |
+          [en] LinkedIn profile.
+          [de] LinkedIn-Profil.
       twitter:
+        description: |
+          [en] Twitter profile.
+          [de] Twitter-Profil.
+
+  GroupTypeEnum:
+    description: |
+      [en] Types of political groups and organizations.
+      [de] Typen politischer Gruppen und Organisationen.
+    permissible_values:
+      party:
+        meaning: act:enum/group_type/party
+        description: |
+          [en] Political party.
+          [de] Politische Partei.
+      list:
+        meaning: act:enum/group_type/list
+        description: |
+          [en] Electoral list (can be part of a party or independent).
+          [de] Wahlliste (kann Teil einer Partei sein oder unabhängig).
+      workgroup:
+        meaning: act:enum/group_type/workgroup
+        description: |
+          [en] Working group.
+          [de] Arbeitsgruppe.
+      parliament:
+        meaning: act:enum/group_type/parliament
+        description: |
+          [en] Parliament at federal, cantonal, or municipal level.
+          [de] Parlament auf Bundes-, Kantons- oder Gemeindeebene.
+      delegation:
+        meaning: act:enum/group_type/delegation
+        description: |
+          [en] Delegation.
+          [de] Delegation.
+      commission:
+        meaning: act:enum/group_type/commission
+        description: |
+          [en] Commission (permanent or ad-hoc).
+          [de] Kommission (ständig oder ad-hoc).
+      faction:
+        meaning: act:enum/group_type/faction
+        description: |
+          [en] Parliamentary faction.
+          [de] Parlamentsfraktion.
+      parliamentary_bureau:
+        meaning: act:enum/group_type/parliamentary_bureau
+        description: |
+          [en] Parliamentary bureau.
+          [de] Parlamentsbüro.
+      presidency:
+        meaning: act:enum/group_type/presidency
+        description: |
+          [en] Presidency of parliament.
+          [de] Präsidium des Parlaments.
+      government:
+        meaning: act:enum/group_type/government
+        description: |
+          [en] Government / Executive.
+          [de] Regierung / Exekutive.
+      department:
+        meaning: act:enum/group_type/department
+        description: |
+          [en] Government department.
+          [de] Departement.
+      office:
+        meaning: act:enum/group_type/office
+        description: |
+          [en] Government office.
+          [de] Amt.
+      extraparliamentary_commission:
+        meaning: act:enum/group_type/extraparliamentary_commission
+        description: |
+          [en] Extra-parliamentary commission (e.g., Bank Council).
+          [de] Außerparlamentarische Kommission (z.B. Bankrat).
+      interest_group:
+        meaning: act:enum/group_type/interest_group
+        description: |
+          [en] Interest group from civil society.
+          [de] Interessengruppe aus der Zivilgesellschaft.
+      control_body:
+        meaning: act:enum/group_type/control_body
+        description: |
+          [en] Control body (e.g., financial control).
+          [de] Kontrollorgan (z.B. Finanzkontrolle).
+      parliamentary_services:
+        meaning: act:enum/group_type/parliamentary_services
+        description: |
+          [en] Parliamentary services.
+          [de] Parlamentsdienste.
+      court:
+        meaning: act:enum/group_type/court
+        description: |
+          [en] Court / Judiciary.
+          [de] Gericht / Judikative.
+      association:
+        meaning: act:enum/group_type/association
+        description: |
+          [en] Association.
+          [de] Verein.
+      petition_carrier:
+        meaning: act:enum/group_type/petition_carrier
+        description: |
+          [en] Petition carrier.
+          [de] Petitionsträger.
+      university:
+        meaning: act:enum/group_type/university
+        description: |
+          [en] University or educational institution.
+          [de] Universität oder Bildungseinrichtung.
+      other:
+        meaning: act:enum/group_type/other
+        description: |
+          [en] Other group type not covered by standard categories.
+          [de] Anderer Gruppentyp, nicht durch Standardkategorien abgedeckt.
+
+  InterestTypeEnum:
+    description: |
+      [en] Types of interest links (conflicts of interest, political financing).
+      [de] Typen von Interessenbindungen (Interessenkonflikte, Politikfinanzierung).
+    permissible_values:
+      professional_activity:
+        meaning: act:enum/interest_type/professional_activity
+        description: |
+          [en] Professional activity.
+          [de] Berufliche Tätigkeit.
+      political_office:
+        meaning: act:enum/interest_type/political_office
+        description: |
+          [en] Political office.
+          [de] Politische Ämter.
+      association:
+        meaning: act:enum/interest_type/association
+        description: |
+          [en] Association membership.
+          [de] Vereinsmitgliedschaft.

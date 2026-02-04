@@ -8,284 +8,167 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://ch.paf.link/schema/actors.owl.ttl> a owl:Ontology ;
-    rdfs:label "PersonSchema" ;
+    rdfs:label "ActorSchema" ;
     dcterm:license "CC-BY" ;
-    dcterm:title "Person Schema" ;
-    skos:definition "A schema describing a person with addresses, names, languages, citizenships, occupations, training, and contact details." .
+    dcterm:title "Actor Schema" ;
+    skos:definition """[en] A schema describing political actors including persons, groups, memberships, and interest links.
+[de] Ein Schema zur Beschreibung politischer Akteure einschließlich Personen, Gruppen, Mitgliedschaften und Interessenbindungen.
+""" .
+
+act:Container a owl:Class ;
+    rdfs:label "Container" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Group ;
+            owl:onProperty act:groups ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:memberships ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Person ;
+            owl:onProperty act:persons ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:interest_links ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:persons ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:InterestLink ;
+            owl:onProperty act:interest_links ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Membership ;
+            owl:onProperty act:memberships ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:groups ] ;
+    skos:definition """[en] Root container holding all political actors, groups, and relationships.
+[de] Wurzelcontainer mit allen politischen Akteuren, Gruppen und Beziehungen.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:GroupReference a owl:Class ;
     rdfs:label "GroupReference" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 1 ;
             owl:onProperty act:role ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:role ],
+            owl:onProperty act:id ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty act:uri ],
+            owl:onProperty act:role ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:name ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:uri ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:name ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:id ],
+            owl:onProperty act:role ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:uri ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:role ] ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:uri ] ;
     skos:definition "Reference to a group acting in a specific role" ;
-    skos:inScheme <https://ch.paf.link/schema/actors> .
-
-act:Person a owl:Class ;
-    rdfs:label "Person" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:languages ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:occupations ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty act:birthdate ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:integer ;
-            owl:onProperty act:birthyear ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Contact ;
-            owl:onProperty act:contacts ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:label_long ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:ch_citizenship ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:genders ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:label ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:picture ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Validity ;
-            owl:onProperty act:ch_citizenship ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:addresses ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:ch_citizenship ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:picture ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:citizenships ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:electoral_district ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Training ;
-            owl:onProperty act:trainings ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:picture ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Gender ;
-            owl:onProperty act:genders ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Citizenship ;
-            owl:onProperty act:citizenships ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:birthyear ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:electoral_district ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:birthdate ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:names ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:label ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Name ;
-            owl:onProperty act:names ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:label_long ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:trainings ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:label_long ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Address ;
-            owl:onProperty act:addresses ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Occupation ;
-            owl:onProperty act:occupations ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:label ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:contacts ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:birthdate ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:LanguageProficiency ;
-            owl:onProperty act:languages ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:birthyear ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:ElectoralDistrict ;
-            owl:onProperty act:electoral_district ] ;
-    skos:definition "A person with identifiers, names, addresses, citizenships, and occupations." ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:PersonReference a owl:Class ;
     rdfs:label "PersonReference" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:role ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:role ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:group ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:group ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:name ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:uri ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:role ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:uri ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:uri ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty act:function ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:group ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
+            owl:onProperty act:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:group ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty act:function ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty act:uri ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:uri ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:role ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:group ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:uri ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:role ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:role ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty act:function ] ;
     skos:definition "Reference to a person acting in a specific role or function" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
-act:Address a owl:Class ;
-    rdfs:label "Address" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:postal_code ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:address_URI ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:postal_code ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:address_type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:street_address ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:address_URI ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:address_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:AddressTypeEnum ;
-            owl:onProperty act:address_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:address_URI ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:postal_locality ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:postal_locality ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:postal_locality ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:street_address ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:postal_code ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:street_address ] ;
-    skos:inScheme <https://ch.paf.link/schema/actors> .
+<https://ch.paf.link/schema/actors/AddressTypeEnum#businessAddress> a owl:Class ;
+    rdfs:label "businessAddress" ;
+    rdfs:subClassOf act:AddressTypeEnum ;
+    skos:definition """[en] Business address.
+[de] Geschäftsadresse.
+""" .
+
+<https://ch.paf.link/schema/actors/AddressTypeEnum#localAddress> a owl:Class ;
+    rdfs:label "localAddress" ;
+    rdfs:subClassOf act:AddressTypeEnum ;
+    skos:definition """[en] Local address.
+[de] Lokaladresse.
+""" .
+
+<https://ch.paf.link/schema/actors/AddressTypeEnum#privateAddress> a owl:Class ;
+    rdfs:label "privateAddress" ;
+    rdfs:subClassOf act:AddressTypeEnum ;
+    skos:definition """[en] Private address.
+[de] Privatadresse.
+""" .
 
 act:Citizenship a owl:Class ;
     rdfs:label "Citizenship" ;
@@ -293,35 +176,41 @@ act:Citizenship a owl:Class ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:country ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 1 ;
             owl:onProperty act:country ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:maxCardinality 1 ;
             owl:onProperty act:country ],
         act:Validity ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
-act:Contact a owl:Class ;
-    rdfs:label "Contact" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:ContactTypeEnum ;
-            owl:onProperty act:type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:value ] ;
-    skos:inScheme <https://ch.paf.link/schema/actors> .
+<https://ch.paf.link/schema/actors/ContactTypeEnum#contact_website> a owl:Class ;
+    rdfs:label "contact_website" ;
+    rdfs:subClassOf act:ContactTypeEnum ;
+    skos:definition """[en] Contact website.
+[de] Kontakt-Website.
+""" .
+
+<https://ch.paf.link/schema/actors/ContactTypeEnum#email> a owl:Class ;
+    rdfs:label "email" ;
+    rdfs:subClassOf act:ContactTypeEnum ;
+    skos:definition """[en] Email address.
+[de] E-Mail-Adresse.
+""" .
+
+<https://ch.paf.link/schema/actors/ContactTypeEnum#linked-in> a owl:Class ;
+    rdfs:label "linked-in" ;
+    rdfs:subClassOf act:ContactTypeEnum ;
+    skos:definition """[en] LinkedIn profile.
+[de] LinkedIn-Profil.
+""" .
+
+<https://ch.paf.link/schema/actors/ContactTypeEnum#twitter> a owl:Class ;
+    rdfs:label "twitter" ;
+    rdfs:subClassOf act:ContactTypeEnum ;
+    skos:definition """[en] Twitter profile.
+[de] Twitter-Profil.
+""" .
 
 act:ElectoralDistrict a owl:Class ;
     rdfs:label "ElectoralDistrict" ;
@@ -329,29 +218,29 @@ act:ElectoralDistrict a owl:Class ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:district ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:district ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:valid_from ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty act:valid_from ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:valid_from ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty act:valid_until ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:valid_until ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty act:district ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:valid_until ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:district ] ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty act:valid_from ] ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:Gender a owl:Class ;
@@ -360,148 +249,582 @@ act:Gender a owl:Class ;
             owl:minCardinality 1 ;
             owl:onProperty act:value ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:pronouns ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty act:value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty act:value ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:pronouns ],
         act:Validity ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:Group a owl:Class ;
+    rdfs:label "Group" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:landing_page ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:spatial ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:party_color ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:datetime_created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:parent_groups ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:MultilingualString ;
+            owl:onProperty act:abbreviation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:spatial ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty act:datetime_created ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:spatial ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:parent_groups ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:uri ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:abbreviation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:url_statutes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty act:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:datetime_created ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:url_statutes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:uri ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:contacts ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:group_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:type_label ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Contact ;
+            owl:onProperty act:contacts ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:addresses ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Address ;
+            owl:onProperty act:addresses ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:type_label ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:landing_page ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:MultilingualString ;
+            owl:onProperty act:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:landing_page ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:GroupTypeEnum ;
+            owl:onProperty act:group_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:uri ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:party_color ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:type_label ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:party_color ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:MultilingualString ;
+            owl:onProperty act:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:url_statutes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:group_type ] ;
+    skos:definition """[en] A political group, organization, or body (e.g., party, committee, parliament, department).
+[de] Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommission, Parlament, Departement).
+""" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:LanguageProficiency a owl:Class ;
     rdfs:label "LanguageProficiency" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:correspondence ],
+            owl:onProperty act:native ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
             owl:onProperty act:correspondence ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:native ],
+            owl:onProperty act:correspondence ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
             owl:onProperty act:native ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:language ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:language ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:correspondence ],
+            owl:maxCardinality 1 ;
+            owl:onProperty act:language ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty act:language ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:native ] ;
+            owl:onProperty act:native ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:correspondence ] ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:Membership a owl:Class ;
+    rdfs:label "Membership" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:is_active ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty act:authorized_to_vote ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:group_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty act:datetime_created ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:authorized_to_vote ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:person_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:datetime_created ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:authorized_to_vote ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty act:is_active ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:group_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty act:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:role ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:role ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:datetime_created ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:role ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:group_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:is_active ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:person_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:person_id ] ;
+    skos:definition """[en] A membership relationship between a person and a group.
+[de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe.
+""" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:Name a owl:Class ;
     rdfs:label "Name" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:name_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:valid_until ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty act:name_type ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty act:valid_until ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:valid_until ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty act:valid_from ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty act:value ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:valid_from ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom xsd:date ;
             owl:onProperty act:valid_until ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:NameTypeEnum ;
             owl:onProperty act:name_type ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:valid_from ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:name_type ] ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:valid_from ] ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
+
+<https://ch.paf.link/schema/actors/NameTypeEnum#callName> a owl:Class ;
+    rdfs:label "callName" ;
+    rdfs:subClassOf act:NameTypeEnum ;
+    skos:definition """[en] Call name.
+[de] Rufname.
+""" .
+
+<https://ch.paf.link/schema/actors/NameTypeEnum#familyNameOnForeignPassport> a owl:Class ;
+    rdfs:label "familyNameOnForeignPassport" ;
+    rdfs:subClassOf act:NameTypeEnum ;
+    skos:definition """[en] Family name on foreign passport.
+[de] Familienname auf ausländischem Pass.
+""" .
+
+<https://ch.paf.link/schema/actors/NameTypeEnum#officialGivenName> a owl:Class ;
+    rdfs:label "officialGivenName" ;
+    rdfs:subClassOf act:NameTypeEnum ;
+    skos:definition """[en] Official given name.
+[de] Offizieller Vorname.
+""" .
+
+<https://ch.paf.link/schema/actors/NameTypeEnum#officialLastName> a owl:Class ;
+    rdfs:label "officialLastName" ;
+    rdfs:subClassOf act:NameTypeEnum ;
+    skos:definition """[en] Official last name.
+[de] Offizieller Nachname.
+""" .
+
+<https://ch.paf.link/schema/actors/NameTypeEnum#officialMiddleName> a owl:Class ;
+    rdfs:label "officialMiddleName" ;
+    rdfs:subClassOf act:NameTypeEnum ;
+    skos:definition """[en] Official middle name.
+[de] Offizieller Mittelname.
+""" .
 
 act:Occupation a owl:Class ;
     rdfs:label "Occupation" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty act:paid ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:enterprise_uid ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:paid ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:value ],
+            owl:onProperty act:active ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:enterprise_uid ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:occupation_isco19_code ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:paid ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
             owl:onProperty act:active ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:enterprise ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty act:enterprise_uid ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:enterprise ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:enterprise ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:occupation_isco19_code ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:active ],
+            owl:onProperty act:enterprise_uid ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:value ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:enterprise ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:occupation_isco19_code ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:value ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:active ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom xsd:boolean ;
             owl:onProperty act:paid ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:enterprise ],
+            owl:onProperty act:paid ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:enterprise_uid ],
+            owl:maxCardinality 1 ;
+            owl:onProperty act:occupation_isco19_code ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:enterprise ],
         act:Validity ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:Person a owl:Class ;
+    rdfs:label "Person" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:birthdate ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:datetime_created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty act:birthyear ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:names ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:birthyear ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:datetime_created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty act:birthdate ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Training ;
+            owl:onProperty act:trainings ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Contact ;
+            owl:onProperty act:contacts ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:interest_links_person ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:label_long ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:label_long ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Name ;
+            owl:onProperty act:names ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:label ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:contacts ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:InterestLink ;
+            owl:onProperty act:interest_links_person ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:trainings ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty act:datetime_created ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:languages ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:electoral_district ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:ch_citizenship ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:picture ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Occupation ;
+            owl:onProperty act:occupations ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:LanguageProficiency ;
+            owl:onProperty act:languages ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:label ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Gender ;
+            owl:onProperty act:genders ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty act:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:birthdate ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:ch_citizenship ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:electoral_district ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:label_long ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Citizenship ;
+            owl:onProperty act:citizenships ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:citizenships ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:picture ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:addresses ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:ElectoralDistrict ;
+            owl:onProperty act:electoral_district ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Address ;
+            owl:onProperty act:addresses ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:genders ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:birthyear ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:occupations ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Validity ;
+            owl:onProperty act:ch_citizenship ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:label ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:picture ] ;
+    skos:definition """[en] A person with identifiers, names, addresses, citizenships, and occupations.
+[de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Berufen.
+""" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:Training a owl:Class ;
@@ -510,130 +833,328 @@ act:Training a owl:Class ;
             owl:maxCardinality 1 ;
             owl:onProperty act:value ],
         [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:training_isco19_code ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:type ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:training_isco19_code ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:training_isco19_code ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:training_isco19_code ],
+            owl:minCardinality 0 ;
+            owl:onProperty act:value ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:value ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:type ],
-        [ a owl:Restriction ;
             owl:allValuesFrom act:TrainingTypeEnum ;
-            owl:onProperty act:type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:value ] ;
+            owl:onProperty act:type ] ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
-
-<https://ch.paf.link/schema/actors/AddressTypeEnum#businessAddress> a owl:Class ;
-    rdfs:label "businessAddress" ;
-    rdfs:subClassOf act:AddressTypeEnum .
-
-<https://ch.paf.link/schema/actors/AddressTypeEnum#localAddress> a owl:Class ;
-    rdfs:label "localAddress" ;
-    rdfs:subClassOf act:AddressTypeEnum .
-
-<https://ch.paf.link/schema/actors/AddressTypeEnum#privateAddress> a owl:Class ;
-    rdfs:label "privateAddress" ;
-    rdfs:subClassOf act:AddressTypeEnum .
-
-<https://ch.paf.link/schema/actors/ContactTypeEnum#contact_website> a owl:Class ;
-    rdfs:label "contact_website" ;
-    rdfs:subClassOf act:ContactTypeEnum .
-
-<https://ch.paf.link/schema/actors/ContactTypeEnum#email> a owl:Class ;
-    rdfs:label "email" ;
-    rdfs:subClassOf act:ContactTypeEnum .
-
-<https://ch.paf.link/schema/actors/ContactTypeEnum#linked-in> a owl:Class ;
-    rdfs:label "linked-in" ;
-    rdfs:subClassOf act:ContactTypeEnum .
-
-<https://ch.paf.link/schema/actors/ContactTypeEnum#twitter> a owl:Class ;
-    rdfs:label "twitter" ;
-    rdfs:subClassOf act:ContactTypeEnum .
-
-<https://ch.paf.link/schema/actors/NameTypeEnum#callName> a owl:Class ;
-    rdfs:label "callName" ;
-    rdfs:subClassOf act:NameTypeEnum .
-
-<https://ch.paf.link/schema/actors/NameTypeEnum#familyNameOnForeignPassport> a owl:Class ;
-    rdfs:label "familyNameOnForeignPassport" ;
-    rdfs:subClassOf act:NameTypeEnum .
-
-<https://ch.paf.link/schema/actors/NameTypeEnum#officialGivenName> a owl:Class ;
-    rdfs:label "officialGivenName" ;
-    rdfs:subClassOf act:NameTypeEnum .
-
-<https://ch.paf.link/schema/actors/NameTypeEnum#officialLastName> a owl:Class ;
-    rdfs:label "officialLastName" ;
-    rdfs:subClassOf act:NameTypeEnum .
-
-<https://ch.paf.link/schema/actors/NameTypeEnum#officialMiddleName> a owl:Class ;
-    rdfs:label "officialMiddleName" ;
-    rdfs:subClassOf act:NameTypeEnum .
 
 <https://ch.paf.link/schema/actors/TrainingTypeEnum#armee> a owl:Class ;
     rdfs:label "armee" ;
-    rdfs:subClassOf act:TrainingTypeEnum .
+    rdfs:subClassOf act:TrainingTypeEnum ;
+    skos:definition """[en] Military service.
+[de] Militärdienst.
+""" .
 
 <https://ch.paf.link/schema/actors/TrainingTypeEnum#efz> a owl:Class ;
     rdfs:label "efz" ;
-    rdfs:subClassOf act:TrainingTypeEnum .
+    rdfs:subClassOf act:TrainingTypeEnum ;
+    skos:definition """[en] Federal certificate of proficiency (EFZ).
+[de] Eidgenössisches Fähigkeitszeugnis (EFZ).
+""" .
 
 <https://ch.paf.link/schema/actors/TrainingTypeEnum#schulabschluss> a owl:Class ;
     rdfs:label "schulabschluss" ;
-    rdfs:subClassOf act:TrainingTypeEnum .
+    rdfs:subClassOf act:TrainingTypeEnum ;
+    skos:definition """[en] School diploma.
+[de] Schulabschluss.
+""" .
 
 <https://ch.paf.link/schema/actors/TrainingTypeEnum#uni> a owl:Class ;
     rdfs:label "uni" ;
-    rdfs:subClassOf act:TrainingTypeEnum .
+    rdfs:subClassOf act:TrainingTypeEnum ;
+    skos:definition """[en] University degree.
+[de] Universitätsabschluss.
+""" .
 
 <https://ch.paf.link/schema/actors/TrainingTypeEnum#zischutz> a owl:Class ;
     rdfs:label "zischutz" ;
-    rdfs:subClassOf act:TrainingTypeEnum .
+    rdfs:subClassOf act:TrainingTypeEnum ;
+    skos:definition """[en] Civil protection.
+[de] Zivilschutz.
+""" .
 
 <https://ch.paf.link/schema/actors/TrainingTypeEnum#zivi> a owl:Class ;
     rdfs:label "zivi" ;
-    rdfs:subClassOf act:TrainingTypeEnum .
+    rdfs:subClassOf act:TrainingTypeEnum ;
+    skos:definition """[en] Civil service.
+[de] Zivildienst.
+""" .
 
-act:addresses a owl:ObjectProperty ;
-    rdfs:label "addresses" ;
-    skos:definition "place of residence and work" ;
+act:abbreviation a owl:ObjectProperty ;
+    rdfs:label "abbreviation" ;
+    rdfs:range act:MultilingualString ;
+    skos:definition """[en] Abbreviation (can be multilingual).
+[de] Abkürzung (kann mehrsprachig sein).
+""" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:citizenships a owl:ObjectProperty ;
     rdfs:label "citizenships" ;
+    rdfs:range act:Citizenship ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
-act:contacts a owl:ObjectProperty ;
-    rdfs:label "contacts" ;
+act:description a owl:ObjectProperty ;
+    rdfs:label "description" ;
+    rdfs:range act:MultilingualString ;
+    skos:definition """[en] Description of the entity.
+[de] Beschreibung der Entität.
+""" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
+
+<https://ch.paf.link/schema/actors/enum/group_type/association> a owl:Class ;
+    rdfs:label "association" ;
+    rdfs:subClassOf act:GroupTypeEnum ;
+    skos:definition """[en] Association.
+[de] Verein.
+""" .
+
+<https://ch.paf.link/schema/actors/enum/group_type/commission> a owl:Class ;
+    rdfs:label "commission" ;
+    rdfs:subClassOf act:GroupTypeEnum ;
+    skos:definition """[en] Commission (permanent or ad-hoc).
+[de] Kommission (ständig oder ad-hoc).
+""" .
+
+<https://ch.paf.link/schema/actors/enum/group_type/control_body> a owl:Class ;
+    rdfs:label "control_body" ;
+    rdfs:subClassOf act:GroupTypeEnum ;
+    skos:definition """[en] Control body (e.g., financial control).
+[de] Kontrollorgan (z.B. Finanzkontrolle).
+""" .
+
+<https://ch.paf.link/schema/actors/enum/group_type/court> a owl:Class ;
+    rdfs:label "court" ;
+    rdfs:subClassOf act:GroupTypeEnum ;
+    skos:definition """[en] Court / Judiciary.
+[de] Gericht / Judikative.
+""" .
+
+<https://ch.paf.link/schema/actors/enum/group_type/delegation> a owl:Class ;
+    rdfs:label "delegation" ;
+    rdfs:subClassOf act:GroupTypeEnum ;
+    skos:definition """[en] Delegation.
+[de] Delegation.
+""" .
+
+<https://ch.paf.link/schema/actors/enum/group_type/department> a owl:Class ;
+    rdfs:label "department" ;
+    rdfs:subClassOf act:GroupTypeEnum ;
+    skos:definition """[en] Government department.
+[de] Departement.
+""" .
+
+<https://ch.paf.link/schema/actors/enum/group_type/extraparliamentary_commission> a owl:Class ;
+    rdfs:label "extraparliamentary_commission" ;
+    rdfs:subClassOf act:GroupTypeEnum ;
+    skos:definition """[en] Extra-parliamentary commission (e.g., Bank Council).
+[de] Außerparlamentarische Kommission (z.B. Bankrat).
+""" .
+
+<https://ch.paf.link/schema/actors/enum/group_type/faction> a owl:Class ;
+    rdfs:label "faction" ;
+    rdfs:subClassOf act:GroupTypeEnum ;
+    skos:definition """[en] Parliamentary faction.
+[de] Parlamentsfraktion.
+""" .
+
+<https://ch.paf.link/schema/actors/enum/group_type/government> a owl:Class ;
+    rdfs:label "government" ;
+    rdfs:subClassOf act:GroupTypeEnum ;
+    skos:definition """[en] Government / Executive.
+[de] Regierung / Exekutive.
+""" .
+
+<https://ch.paf.link/schema/actors/enum/group_type/interest_group> a owl:Class ;
+    rdfs:label "interest_group" ;
+    rdfs:subClassOf act:GroupTypeEnum ;
+    skos:definition """[en] Interest group from civil society.
+[de] Interessengruppe aus der Zivilgesellschaft.
+""" .
+
+<https://ch.paf.link/schema/actors/enum/group_type/list> a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:subClassOf act:GroupTypeEnum ;
+    skos:definition """[en] Electoral list (can be part of a party or independent).
+[de] Wahlliste (kann Teil einer Partei sein oder unabhängig).
+""" .
+
+<https://ch.paf.link/schema/actors/enum/group_type/office> a owl:Class ;
+    rdfs:label "office" ;
+    rdfs:subClassOf act:GroupTypeEnum ;
+    skos:definition """[en] Government office.
+[de] Amt.
+""" .
+
+<https://ch.paf.link/schema/actors/enum/group_type/other> a owl:Class ;
+    rdfs:label "other" ;
+    rdfs:subClassOf act:GroupTypeEnum ;
+    skos:definition """[en] Other group type not covered by standard categories.
+[de] Anderer Gruppentyp, nicht durch Standardkategorien abgedeckt.
+""" .
+
+<https://ch.paf.link/schema/actors/enum/group_type/parliament> a owl:Class ;
+    rdfs:label "parliament" ;
+    rdfs:subClassOf act:GroupTypeEnum ;
+    skos:definition """[en] Parliament at federal, cantonal, or municipal level.
+[de] Parlament auf Bundes-, Kantons- oder Gemeindeebene.
+""" .
+
+<https://ch.paf.link/schema/actors/enum/group_type/parliamentary_bureau> a owl:Class ;
+    rdfs:label "parliamentary_bureau" ;
+    rdfs:subClassOf act:GroupTypeEnum ;
+    skos:definition """[en] Parliamentary bureau.
+[de] Parlamentsbüro.
+""" .
+
+<https://ch.paf.link/schema/actors/enum/group_type/parliamentary_services> a owl:Class ;
+    rdfs:label "parliamentary_services" ;
+    rdfs:subClassOf act:GroupTypeEnum ;
+    skos:definition """[en] Parliamentary services.
+[de] Parlamentsdienste.
+""" .
+
+<https://ch.paf.link/schema/actors/enum/group_type/party> a owl:Class ;
+    rdfs:label "party" ;
+    rdfs:subClassOf act:GroupTypeEnum ;
+    skos:definition """[en] Political party.
+[de] Politische Partei.
+""" .
+
+<https://ch.paf.link/schema/actors/enum/group_type/petition_carrier> a owl:Class ;
+    rdfs:label "petition_carrier" ;
+    rdfs:subClassOf act:GroupTypeEnum ;
+    skos:definition """[en] Petition carrier.
+[de] Petitionsträger.
+""" .
+
+<https://ch.paf.link/schema/actors/enum/group_type/presidency> a owl:Class ;
+    rdfs:label "presidency" ;
+    rdfs:subClassOf act:GroupTypeEnum ;
+    skos:definition """[en] Presidency of parliament.
+[de] Präsidium des Parlaments.
+""" .
+
+<https://ch.paf.link/schema/actors/enum/group_type/university> a owl:Class ;
+    rdfs:label "university" ;
+    rdfs:subClassOf act:GroupTypeEnum ;
+    skos:definition """[en] University or educational institution.
+[de] Universität oder Bildungseinrichtung.
+""" .
+
+<https://ch.paf.link/schema/actors/enum/group_type/workgroup> a owl:Class ;
+    rdfs:label "workgroup" ;
+    rdfs:subClassOf act:GroupTypeEnum ;
+    skos:definition """[en] Working group.
+[de] Arbeitsgruppe.
+""" .
+
+<https://ch.paf.link/schema/actors/enum/interest_type/association> a owl:Class ;
+    rdfs:label "association" ;
+    rdfs:subClassOf act:InterestTypeEnum ;
+    skos:definition """[en] Association membership.
+[de] Vereinsmitgliedschaft.
+""" .
+
+<https://ch.paf.link/schema/actors/enum/interest_type/political_office> a owl:Class ;
+    rdfs:label "political_office" ;
+    rdfs:subClassOf act:InterestTypeEnum ;
+    skos:definition """[en] Political office.
+[de] Politische Ämter.
+""" .
+
+<https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> a owl:Class ;
+    rdfs:label "professional_activity" ;
+    rdfs:subClassOf act:InterestTypeEnum ;
+    skos:definition """[en] Professional activity.
+[de] Berufliche Tätigkeit.
+""" .
 
 act:genders a owl:ObjectProperty ;
     rdfs:label "genders" ;
+    rdfs:range act:Gender ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:groups a owl:ObjectProperty ;
+    rdfs:label "groups" ;
+    rdfs:range act:Group ;
+    skos:definition """[en] Collection of groups.
+[de] Sammlung von Gruppen.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:interest_links a owl:ObjectProperty ;
+    rdfs:label "interest_links" ;
+    rdfs:range act:InterestLink ;
+    skos:definition """[en] Collection of interest links.
+[de] Sammlung von Interessenbindungen.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:interest_links_person a owl:ObjectProperty ;
+    rdfs:label "interest_links_person" ;
+    rdfs:range act:InterestLink ;
+    skos:definition """[en] Interest links of the person.
+[de] Interessenbindungen der Person.
+""" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:languages a owl:ObjectProperty ;
     rdfs:label "languages" ;
+    rdfs:range act:LanguageProficiency ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:memberships a owl:ObjectProperty ;
+    rdfs:label "memberships" ;
+    rdfs:range act:Membership ;
+    skos:definition """[en] Collection of memberships.
+[de] Sammlung von Mitgliedschaften.
+""" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:names a owl:ObjectProperty ;
     rdfs:label "names" ;
+    rdfs:range act:Name ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:occupations a owl:ObjectProperty ;
     rdfs:label "occupations" ;
+    rdfs:range act:Occupation ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:parent_groups a owl:DatatypeProperty ;
+    rdfs:label "parent_groups" ;
+    rdfs:range xsd:string ;
+    skos:definition """[en] Parent group IDs (to model party hierarchy or bind parties to parliaments).
+[de] Übergeordnete Gruppen-IDs (um Parteihierarchie oder Bindung an Parlamente abzubilden).
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:persons a owl:ObjectProperty ;
+    rdfs:label "persons" ;
+    rdfs:range act:Person ;
+    skos:definition """[en] Collection of persons.
+[de] Sammlung von Personen.
+""" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:pronouns a owl:DatatypeProperty ;
@@ -643,6 +1164,78 @@ act:pronouns a owl:DatatypeProperty ;
 
 act:trainings a owl:ObjectProperty ;
     rdfs:label "trainings" ;
+    rdfs:range act:Training ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:Address a owl:Class ;
+    rdfs:label "Address" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:postal_locality ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:postal_code ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:AddressTypeEnum ;
+            owl:onProperty act:address_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:postal_locality ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:street_address ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:postal_code ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:street_address ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:address_URI ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:postal_code ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:postal_locality ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:address_URI ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:address_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:address_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:address_URI ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:street_address ] ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:Contact a owl:Class ;
+    rdfs:label "Contact" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:ContactTypeEnum ;
+            owl:onProperty act:type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:value ] ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:active a owl:DatatypeProperty ;
@@ -658,18 +1251,40 @@ act:address_type a owl:ObjectProperty ;
     rdfs:label "address-type" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
+act:authorized_to_vote a owl:DatatypeProperty ;
+    rdfs:label "authorized_to_vote" ;
+    rdfs:range xsd:boolean ;
+    skos:definition """[en] Indicates if the person is authorized to vote.
+[de] Gibt an, ob die Person stimmberechtigt ist.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
 act:birthdate a owl:DatatypeProperty ;
     rdfs:label "birthdate" ;
-    skos:definition "Exact date of birth" ;
+    rdfs:range xsd:date ;
+    skos:definition """[en] Exact date of birth.
+[de] Genaues Geburtsdatum.
+""" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:birthyear a owl:DatatypeProperty ;
     rdfs:label "birthyear" ;
-    skos:definition "Year of birth" ;
+    rdfs:range xsd:integer ;
+    skos:definition """[en] Year of birth.
+[de] Geburtsjahr.
+""" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:ch_citizenship a owl:ObjectProperty ;
     rdfs:label "ch_citizenship" ;
+    rdfs:range act:Validity ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:committee a owl:DatatypeProperty ;
+    rdfs:label "committee" ;
+    skos:definition """[en] Committee or board (e.g., foundation board, board of directors).
+[de] Gremium (z.B. Stiftungsrat, Verwaltungsrat).
+""" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:correspondence a owl:DatatypeProperty ;
@@ -688,6 +1303,7 @@ act:district a owl:DatatypeProperty ;
 
 act:electoral_district a owl:ObjectProperty ;
     rdfs:label "electoral_district" ;
+    rdfs:range act:ElectoralDistrict ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:enterprise a owl:DatatypeProperty ;
@@ -703,22 +1319,77 @@ act:function a owl:DatatypeProperty ;
     skos:definition "Function of the person (e.g. president, member)" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
+act:function_role a owl:DatatypeProperty ;
+    rdfs:label "function_role" ;
+    skos:definition """[en] Function or role in the organization.
+[de] Funktion oder Rolle in der Organisation.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
 act:group a owl:DatatypeProperty ;
     rdfs:label "group" ;
     skos:definition "Group or body the function applies to" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
+act:group_id a owl:DatatypeProperty ;
+    rdfs:label "group_id" ;
+    rdfs:range xsd:string ;
+    skos:definition """[en] Reference to a group ID.
+[de] Referenz zu einer Gruppen-ID.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:group_type a owl:ObjectProperty ;
+    rdfs:label "group_type" ;
+    rdfs:range act:GroupTypeEnum ;
+    skos:definition """[en] Type of group (e.g., party, committee, parliament, department).
+[de] Art der Gruppe (z.B. Partei, Kommission, Parlament, Departement).
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:interest_type a owl:ObjectProperty ;
+    rdfs:label "interest_type" ;
+    rdfs:range act:InterestTypeEnum ;
+    skos:definition """[en] Type of interest link (professional activity, political office, association).
+[de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:is_active a owl:DatatypeProperty ;
+    rdfs:label "is_active" ;
+    rdfs:range xsd:boolean ;
+    skos:definition """[en] Indicates if the membership is currently active.
+[de] Gibt an, ob die Mitgliedschaft derzeit aktiv ist.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
 act:label a owl:DatatypeProperty ;
     rdfs:label "label" ;
-    skos:definition "Display name of the person" ;
+    skos:definition """[en] Display name of the person.
+[de] Anzeigename der Person.
+""" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:label_long a owl:DatatypeProperty ;
     rdfs:label "label_long" ;
-    skos:definition "Extended display name (with title, etc.)" ;
+    skos:definition """[en] Extended display name (with title, etc.).
+[de] Erweiterter Anzeigename (mit Titel, etc.).
+""" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
-act:language a owl:DatatypeProperty .
+act:landing_page a owl:DatatypeProperty ;
+    rdfs:label "landing_page" ;
+    skos:definition """[en] URL providing further information.
+[de] URL mit weiteren Informationen.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:legal_form a owl:DatatypeProperty ;
+    rdfs:label "legal_form" ;
+    skos:definition """[en] Legal form of the organization.
+[de] Rechtsform der Organisation.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:name_type a owl:ObjectProperty ;
     rdfs:label "name_type" ;
@@ -734,13 +1405,39 @@ act:occupation_isco19_code a owl:DatatypeProperty ;
     rdfs:label "occupation_isco19_code" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
-act:paid a owl:DatatypeProperty ;
-    rdfs:label "paid" ;
+act:organization_address a owl:DatatypeProperty ;
+    rdfs:label "organization_address" ;
+    skos:definition """[en] Address of the organization.
+[de] Adresse der Organisation.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:organization_label a owl:DatatypeProperty ;
+    rdfs:label "organization_label" ;
+    skos:definition """[en] Label of the organization.
+[de] Bezeichnung der Organisation.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:organization_uid a owl:DatatypeProperty ;
+    rdfs:label "organization_uid" ;
+    skos:definition """[en] UID of the organization (for analysis with NOGA codes, etc.).
+[de] UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:party_color a owl:DatatypeProperty ;
+    rdfs:label "party_color" ;
+    skos:definition """[en] Party color (optional for parties).
+[de] Parteifarbe (optional für Parteien).
+""" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:picture a owl:DatatypeProperty ;
     rdfs:label "picture" ;
-    skos:definition "Link to an image (preferred: PNG, then JPG, then GIF)" ;
+    skos:definition """[en] Link to an image (preferred: PNG, then JPG, then GIF).
+[de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).
+""" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:postal_code a owl:DatatypeProperty ;
@@ -751,21 +1448,221 @@ act:postal_locality a owl:DatatypeProperty ;
     rdfs:label "postal-locality" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
+act:spatial a owl:DatatypeProperty ;
+    rdfs:label "spatial" ;
+    skos:definition """[en] Spatial reference (municipality number, canton number, e.g., ld.admin.ch/municipality/234).
+[de] Räumliche Referenz (Gemeindenummer, Kantonsnummer, z.B. ld.admin.ch/municipality/234).
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
 act:street_address a owl:DatatypeProperty ;
     rdfs:label "street-address" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:text a owl:DatatypeProperty ;
+    rdfs:label "text" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:training_isco19_code a owl:DatatypeProperty ;
     rdfs:label "training_isco19_code" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
+act:type_label a owl:DatatypeProperty ;
+    rdfs:label "type_label" ;
+    skos:definition """[en] Custom type label when standard type values don't apply.
+[de] Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:url_statutes a owl:DatatypeProperty ;
+    rdfs:label "url_statutes" ;
+    skos:definition """[en] URL to party statutes (optional for parties).
+[de] URL zu Parteistatuten (optional für Parteien).
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
 act:AddressTypeEnum a owl:Class ;
     rdfs:label "AddressTypeEnum" ;
     owl:unionOf ( <https://ch.paf.link/schema/actors/AddressTypeEnum#privateAddress> <https://ch.paf.link/schema/actors/AddressTypeEnum#businessAddress> <https://ch.paf.link/schema/actors/AddressTypeEnum#localAddress> ) ;
+    skos:definition """[en] Types of addresses.
+[de] Adresstypen.
+""" ;
     skos:inScheme <https://ch.paf.link/schema/actors> ;
     linkml:permissible_values <https://ch.paf.link/schema/actors/AddressTypeEnum#businessAddress>,
         <https://ch.paf.link/schema/actors/AddressTypeEnum#localAddress>,
         <https://ch.paf.link/schema/actors/AddressTypeEnum#privateAddress> .
+
+act:InterestLink a owl:Class ;
+    rdfs:label "InterestLink" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:committee ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:organization_uid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:organization_address ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:function_role ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:function_role ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:person_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty act:paid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:InterestTypeEnum ;
+            owl:onProperty act:interest_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:legal_form ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:organization_label ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:committee ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:interest_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:organization_label ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:legal_form ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty act:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:legal_form ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty act:datetime_created ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:datetime_updated ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:paid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:function_role ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:committee ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:person_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:paid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:person_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:interest_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:datetime_created ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:organization_address ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:organization_uid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:organization_uid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:organization_label ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:organization_address ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:datetime_created ] ;
+    skos:definition """[en] An interest link (conflict of interest, political financing) of a person to an organization.
+[de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:addresses a owl:ObjectProperty ;
+    rdfs:label "addresses" ;
+    rdfs:range act:Address ;
+    skos:definition """[en] Addresses (private, business, local).
+[de] Adressen (privat, geschäftlich, lokal).
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:contacts a owl:ObjectProperty ;
+    rdfs:label "contacts" ;
+    rdfs:range act:Contact ;
+    skos:definition """[en] Contact information (email, website, social media).
+[de] Kontaktinformationen (E-Mail, Website, Social Media).
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:ContactTypeEnum a owl:Class ;
+    rdfs:label "ContactTypeEnum" ;
+    owl:unionOf ( <https://ch.paf.link/schema/actors/ContactTypeEnum#email> <https://ch.paf.link/schema/actors/ContactTypeEnum#contact_website> <https://ch.paf.link/schema/actors/ContactTypeEnum#linked-in> <https://ch.paf.link/schema/actors/ContactTypeEnum#twitter> ) ;
+    skos:definition """[en] Types of contact information.
+[de] Kontaktinformationstypen.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> ;
+    linkml:permissible_values <https://ch.paf.link/schema/actors/ContactTypeEnum#contact_website>,
+        <https://ch.paf.link/schema/actors/ContactTypeEnum#email>,
+        <https://ch.paf.link/schema/actors/ContactTypeEnum#linked-in>,
+        <https://ch.paf.link/schema/actors/ContactTypeEnum#twitter> .
+
+act:InterestTypeEnum a owl:Class ;
+    rdfs:label "InterestTypeEnum" ;
+    owl:unionOf ( <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> <https://ch.paf.link/schema/actors/enum/interest_type/political_office> <https://ch.paf.link/schema/actors/enum/interest_type/association> ) ;
+    skos:definition """[en] Types of interest links (conflicts of interest, political financing).
+[de] Typen von Interessenbindungen (Interessenkonflikte, Politikfinanzierung).
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> ;
+    linkml:permissible_values <https://ch.paf.link/schema/actors/enum/interest_type/association>,
+        <https://ch.paf.link/schema/actors/enum/interest_type/political_office>,
+        <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> .
 
 act:Validity a owl:Class ;
     rdfs:label "Validity" ;
@@ -774,33 +1671,54 @@ act:Validity a owl:Class ;
             owl:onProperty act:valid_until ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:valid_until ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:valid_from ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty act:valid_until ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
-            owl:onProperty act:valid_from ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:valid_from ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:valid_until ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty act:valid_from ] ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
-act:ContactTypeEnum a owl:Class ;
-    rdfs:label "ContactTypeEnum" ;
-    owl:unionOf ( <https://ch.paf.link/schema/actors/ContactTypeEnum#email> <https://ch.paf.link/schema/actors/ContactTypeEnum#contact_website> <https://ch.paf.link/schema/actors/ContactTypeEnum#linked-in> <https://ch.paf.link/schema/actors/ContactTypeEnum#twitter> ) ;
-    skos:inScheme <https://ch.paf.link/schema/actors> ;
-    linkml:permissible_values <https://ch.paf.link/schema/actors/ContactTypeEnum#contact_website>,
-        <https://ch.paf.link/schema/actors/ContactTypeEnum#email>,
-        <https://ch.paf.link/schema/actors/ContactTypeEnum#linked-in>,
-        <https://ch.paf.link/schema/actors/ContactTypeEnum#twitter> .
+act:MultilingualString a owl:Class ;
+    rdfs:label "MultilingualString" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:language ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:language ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:text ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:string ;
+                    owl:withRestrictions ( [ xsd:pattern "^[a-z]{2}$" ] ) ] ;
+            owl:onProperty act:language ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:text ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:text ] ;
+    skos:definition """[en] A string that can contain text in multiple languages.
+[de] Ein String, der Text in mehreren Sprachen enthalten kann.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:NameTypeEnum a owl:Class ;
     rdfs:label "NameTypeEnum" ;
     owl:unionOf ( <https://ch.paf.link/schema/actors/NameTypeEnum#familyNameOnForeignPassport> <https://ch.paf.link/schema/actors/NameTypeEnum#callName> <https://ch.paf.link/schema/actors/NameTypeEnum#officialGivenName> <https://ch.paf.link/schema/actors/NameTypeEnum#officialLastName> <https://ch.paf.link/schema/actors/NameTypeEnum#officialMiddleName> ) ;
+    skos:definition """[en] Categories of name types.
+[de] Kategorien von Namenstypen.
+""" ;
     skos:inScheme <https://ch.paf.link/schema/actors> ;
     linkml:permissible_values <https://ch.paf.link/schema/actors/NameTypeEnum#callName>,
         <https://ch.paf.link/schema/actors/NameTypeEnum#familyNameOnForeignPassport>,
@@ -808,17 +1726,50 @@ act:NameTypeEnum a owl:Class ;
         <https://ch.paf.link/schema/actors/NameTypeEnum#officialLastName>,
         <https://ch.paf.link/schema/actors/NameTypeEnum#officialMiddleName> .
 
-act:name a owl:DatatypeProperty .
+act:language a owl:DatatypeProperty ;
+    rdfs:label "language" ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:onDatatype xsd:string ;
+            owl:withRestrictions ( [ xsd:pattern "^[a-z]{2}$" ] ) ] ;
+    skos:definition "ISO language code",
+        """[en] Language code in ISO 639-1 format.
+[de] Sprachcode im ISO 639-1 Format.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
 
-act:role a owl:DatatypeProperty .
+act:name a owl:DatatypeProperty,
+        owl:ObjectProperty ;
+    rdfs:label "name" ;
+    rdfs:range act:MultilingualString ;
+    skos:definition """[en] Name (can be multilingual).
+[de] Name (kann mehrsprachig sein).
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:paid a owl:DatatypeProperty ;
+    rdfs:label "paid" ;
+    rdfs:range xsd:boolean ;
+    skos:definition """[en] Indicates if the position is paid.
+[de] Gibt an, ob die Position bezahlt ist.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:person_id a owl:DatatypeProperty ;
+    rdfs:label "person_id" ;
+    rdfs:range xsd:string ;
+    skos:definition """[en] Reference to a person ID.
+[de] Referenz zu einer Personen-ID.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:type a owl:ObjectProperty .
-
-act:uri a owl:DatatypeProperty .
 
 act:TrainingTypeEnum a owl:Class ;
     rdfs:label "TrainingTypeEnum" ;
     owl:unionOf ( <https://ch.paf.link/schema/actors/TrainingTypeEnum#schulabschluss> <https://ch.paf.link/schema/actors/TrainingTypeEnum#efz> <https://ch.paf.link/schema/actors/TrainingTypeEnum#uni> <https://ch.paf.link/schema/actors/TrainingTypeEnum#armee> <https://ch.paf.link/schema/actors/TrainingTypeEnum#zivi> <https://ch.paf.link/schema/actors/TrainingTypeEnum#zischutz> ) ;
+    skos:definition """[en] Types of training or education.
+[de] Ausbildungs- oder Bildungstypen.
+""" ;
     skos:inScheme <https://ch.paf.link/schema/actors> ;
     linkml:permissible_values <https://ch.paf.link/schema/actors/TrainingTypeEnum#armee>,
         <https://ch.paf.link/schema/actors/TrainingTypeEnum#efz>,
@@ -827,17 +1778,89 @@ act:TrainingTypeEnum a owl:Class ;
         <https://ch.paf.link/schema/actors/TrainingTypeEnum#zischutz>,
         <https://ch.paf.link/schema/actors/TrainingTypeEnum#zivi> .
 
-act:id a owl:DatatypeProperty .
+act:role a owl:DatatypeProperty ;
+    rdfs:label "role" ;
+    skos:definition """[en] Role of the person in the membership or function.
+[de] Rolle der Person in der Mitgliedschaft oder Funktion.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:uri a owl:DatatypeProperty ;
+    rdfs:label "uri" ;
+    skos:definition """[en] Globally valid identifier (e.g., politics.ld.admin.ch/party/1).
+[de] Global gültiger Identifikator (z.B. politics.ld.admin.ch/party/1).
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:datetime_created a owl:DatatypeProperty ;
+    rdfs:label "datetime_created" ;
+    rdfs:range xsd:dateTime ;
+    skos:definition """[en] The time this record was created.
+[de] Der Zeitpunkt, zu dem dieser Datensatz erstellt wurde.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:datetime_updated a owl:DatatypeProperty ;
+    rdfs:label "datetime_updated" ;
+    rdfs:range xsd:dateTime ;
+    skos:definition """[en] The last time this record was updated.
+[de] Der Zeitpunkt, zu dem dieser Datensatz zuletzt aktualisiert wurde.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:value a owl:DatatypeProperty .
 
 act:valid_from a owl:DatatypeProperty ;
     rdfs:label "valid_from" ;
+    rdfs:range xsd:date ;
+    skos:definition """[en] Start date of validity period.
+[de] Startdatum der Gültigkeitsperiode.
+""" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
 act:valid_until a owl:DatatypeProperty ;
     rdfs:label "valid-until",
         "valid_until" ;
+    rdfs:range xsd:date ;
+    skos:definition """[en] End date of validity period.
+[de] Enddatum der Gültigkeitsperiode.
+""" ;
     skos:inScheme <https://ch.paf.link/schema/actors> .
 
-act:value a owl:DatatypeProperty .
+act:id a owl:DatatypeProperty ;
+    rdfs:label "id" ;
+    skos:definition """[en] Unique identifier (preferably Wikidata-ID or URI).
+[de] Eindeutiger Identifikator (vorzugsweise Wikidata-ID oder URI).
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> .
+
+act:GroupTypeEnum a owl:Class ;
+    rdfs:label "GroupTypeEnum" ;
+    owl:unionOf ( <https://ch.paf.link/schema/actors/enum/group_type/party> <https://ch.paf.link/schema/actors/enum/group_type/list> <https://ch.paf.link/schema/actors/enum/group_type/workgroup> <https://ch.paf.link/schema/actors/enum/group_type/parliament> <https://ch.paf.link/schema/actors/enum/group_type/delegation> <https://ch.paf.link/schema/actors/enum/group_type/commission> <https://ch.paf.link/schema/actors/enum/group_type/faction> <https://ch.paf.link/schema/actors/enum/group_type/parliamentary_bureau> <https://ch.paf.link/schema/actors/enum/group_type/presidency> <https://ch.paf.link/schema/actors/enum/group_type/government> <https://ch.paf.link/schema/actors/enum/group_type/department> <https://ch.paf.link/schema/actors/enum/group_type/office> <https://ch.paf.link/schema/actors/enum/group_type/extraparliamentary_commission> <https://ch.paf.link/schema/actors/enum/group_type/interest_group> <https://ch.paf.link/schema/actors/enum/group_type/control_body> <https://ch.paf.link/schema/actors/enum/group_type/parliamentary_services> <https://ch.paf.link/schema/actors/enum/group_type/court> <https://ch.paf.link/schema/actors/enum/group_type/association> <https://ch.paf.link/schema/actors/enum/group_type/petition_carrier> <https://ch.paf.link/schema/actors/enum/group_type/university> <https://ch.paf.link/schema/actors/enum/group_type/other> ) ;
+    skos:definition """[en] Types of political groups and organizations.
+[de] Typen politischer Gruppen und Organisationen.
+""" ;
+    skos:inScheme <https://ch.paf.link/schema/actors> ;
+    linkml:permissible_values <https://ch.paf.link/schema/actors/enum/group_type/association>,
+        <https://ch.paf.link/schema/actors/enum/group_type/commission>,
+        <https://ch.paf.link/schema/actors/enum/group_type/control_body>,
+        <https://ch.paf.link/schema/actors/enum/group_type/court>,
+        <https://ch.paf.link/schema/actors/enum/group_type/delegation>,
+        <https://ch.paf.link/schema/actors/enum/group_type/department>,
+        <https://ch.paf.link/schema/actors/enum/group_type/extraparliamentary_commission>,
+        <https://ch.paf.link/schema/actors/enum/group_type/faction>,
+        <https://ch.paf.link/schema/actors/enum/group_type/government>,
+        <https://ch.paf.link/schema/actors/enum/group_type/interest_group>,
+        <https://ch.paf.link/schema/actors/enum/group_type/list>,
+        <https://ch.paf.link/schema/actors/enum/group_type/office>,
+        <https://ch.paf.link/schema/actors/enum/group_type/other>,
+        <https://ch.paf.link/schema/actors/enum/group_type/parliament>,
+        <https://ch.paf.link/schema/actors/enum/group_type/parliamentary_bureau>,
+        <https://ch.paf.link/schema/actors/enum/group_type/parliamentary_services>,
+        <https://ch.paf.link/schema/actors/enum/group_type/party>,
+        <https://ch.paf.link/schema/actors/enum/group_type/petition_carrier>,
+        <https://ch.paf.link/schema/actors/enum/group_type/presidency>,
+        <https://ch.paf.link/schema/actors/enum/group_type/university>,
+        <https://ch.paf.link/schema/actors/enum/group_type/workgroup> .
 
 
