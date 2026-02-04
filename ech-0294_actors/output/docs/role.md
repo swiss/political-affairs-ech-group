@@ -26,8 +26,8 @@ Alias: role
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [PersonReference](PersonReference.md) | Reference to a person acting in a specific role or function |  no  |
 | [GroupReference](GroupReference.md) | Reference to a group acting in a specific role |  no  |
+| [PersonReference](PersonReference.md) | Reference to a person acting in a specific role or function |  no  |
 | [Membership](Membership.md) | [en] A membership relationship between a person and a group |  no  |
 
 

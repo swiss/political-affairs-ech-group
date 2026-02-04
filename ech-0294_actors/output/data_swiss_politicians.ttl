@@ -67,12 +67,12 @@ act:luca_campana_5261 a act:Person ;
             act:language "fr" ;
             act:native true ] ;
     act:name [ a act:Name ;
-            act:nameType "officialGivenName" ;
-            act:value "Christelle" ],
-        [ a act:Name ;
             act:nameType "officialLastName" ;
             act:validFrom "1974-01-01"^^xsd:date ;
-            act:value "Luisier Brodard" ] ;
+            act:value "Luisier Brodard" ],
+        [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Christelle" ] ;
     act:occupation [ a act:Occupation ;
             act:active true ;
             act:paid true ;
@@ -113,12 +113,12 @@ act:luca_campana_5261 a act:Person ;
             act:language "de" ;
             act:native true ] ;
     act:name [ a act:Name ;
-            act:nameType "officialGivenName" ;
-            act:value "Andrea" ],
-        [ a act:Name ;
             act:nameType "officialLastName" ;
             act:validFrom "1980-04-19"^^xsd:date ;
-            act:value "Caroni" ] ;
+            act:value "Caroni" ],
+        [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Andrea" ] ;
     act:occupation [ a act:Occupation ;
             act:active true ;
             act:paid true ;
@@ -134,14 +134,14 @@ act:luca_campana_5261 a act:Person ;
 
 <https://www.wikidata.org/wiki/Q77074968> a act:Person ;
     act:address [ a act:Address ;
-            act:addressType "businessAddress" ;
-            act:postalCode "3003" ;
-            act:postalLocality "Bern" ],
-        [ a act:Address ;
             act:addressType "privateAddress" ;
             act:postalCode "5034" ;
             act:postalLocality "Suhr" ;
-            act:streetAddress "Lindenweg 36" ] ;
+            act:streetAddress "Lindenweg 36" ],
+        [ a act:Address ;
+            act:addressType "businessAddress" ;
+            act:postalCode "3003" ;
+            act:postalLocality "Bern" ] ;
     act:birthdate "1978-05-23"^^xsd:date ;
     act:birthyear 1978 ;
     act:chCitizenship [ a act:Validity ;
@@ -150,14 +150,14 @@ act:luca_campana_5261 a act:Person ;
             act:country "CH" ;
             act:validFrom "1978-05-23"^^xsd:date ] ;
     act:contact [ a act:Contact ;
-            act:type "email" ;
-            act:value "maja.riniker@grossrat.ag.ch" ],
+            act:type "contact_website" ;
+            act:value "http://www.maja-riniker.ch" ],
         [ a act:Contact ;
             act:type "email" ;
             act:value "maja.riniker@parl.ch" ],
         [ a act:Contact ;
-            act:type "contact_website" ;
-            act:value "http://www.maja-riniker.ch" ] ;
+            act:type "email" ;
+            act:value "maja.riniker@grossrat.ag.ch" ] ;
     act:electoralDistrict [ a act:ElectoralDistrict ;
             act:district "Aargau" ;
             act:validFrom "2019-01-01"^^xsd:date ] ;
@@ -182,13 +182,13 @@ act:luca_campana_5261 a act:Person ;
     act:occupation [ a act:Occupation ;
             act:active true ;
             act:paid true ;
-            act:validFrom "2005-01-01"^^xsd:date ;
-            act:value "Projektleiterin" ],
+            act:validFrom "2000-01-01"^^xsd:date ;
+            act:value "Betriebsökonomin FH" ],
         [ a act:Occupation ;
             act:active true ;
             act:paid true ;
-            act:validFrom "2000-01-01"^^xsd:date ;
-            act:value "Betriebsökonomin FH" ] ;
+            act:validFrom "2005-01-01"^^xsd:date ;
+            act:value "Projektleiterin" ] ;
     act:training [ a act:Training ;
             act:type "uni" ;
             act:value "Betriebsökonomin FH" ] .

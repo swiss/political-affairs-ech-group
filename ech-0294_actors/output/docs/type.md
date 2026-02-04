@@ -17,8 +17,8 @@ Alias: type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Training](Training.md) |  |  no  |
 | [Contact](Contact.md) |  |  no  |
+| [Training](Training.md) |  |  no  |
 
 
 
