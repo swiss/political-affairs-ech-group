@@ -28,11 +28,11 @@ act:luca_campana_5261 a act:Person ;
             act:language "it" ;
             act:native true ] ;
     act:name [ a act:Name ;
-            act:nameType "officialLastName" ;
-            act:value "Campana" ],
-        [ a act:Name ;
             act:nameType "officialGivenName" ;
-            act:value "Luca" ] ;
+            act:value "Luca" ],
+        [ a act:Name ;
+            act:nameType "officialLastName" ;
+            act:value "Campana" ] ;
     act:occupation [ a act:Occupation ;
             act:active true ;
             act:value "Politico" ] .
@@ -67,12 +67,12 @@ act:luca_campana_5261 a act:Person ;
             act:language "fr" ;
             act:native true ] ;
     act:name [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Christelle" ],
+        [ a act:Name ;
             act:nameType "officialLastName" ;
             act:validFrom "1974-01-01"^^xsd:date ;
-            act:value "Luisier Brodard" ],
-        [ a act:Name ;
-            act:nameType "officialGivenName" ;
-            act:value "Christelle" ] ;
+            act:value "Luisier Brodard" ] ;
     act:occupation [ a act:Occupation ;
             act:active true ;
             act:paid true ;
@@ -127,21 +127,21 @@ act:luca_campana_5261 a act:Person ;
     act:picture "https://www.parlament.ch/en/%C3%BCber-das-parlament/parlamentsw%C3%B6rterbuch/parlamentsw%C3%B6rterbuch-detail?WordId=4075" ;
     act:training [ a act:Training ;
             act:type "uni" ;
-            act:value "Prof. Dr. iur." ],
+            act:value "MPA (Harvard)" ],
         [ a act:Training ;
             act:type "uni" ;
-            act:value "MPA (Harvard)" ] .
+            act:value "Prof. Dr. iur." ] .
 
 <https://www.wikidata.org/wiki/Q77074968> a act:Person ;
     act:address [ a act:Address ;
+            act:addressType "businessAddress" ;
+            act:postalCode "3003" ;
+            act:postalLocality "Bern" ],
+        [ a act:Address ;
             act:addressType "privateAddress" ;
             act:postalCode "5034" ;
             act:postalLocality "Suhr" ;
-            act:streetAddress "Lindenweg 36" ],
-        [ a act:Address ;
-            act:addressType "businessAddress" ;
-            act:postalCode "3003" ;
-            act:postalLocality "Bern" ] ;
+            act:streetAddress "Lindenweg 36" ] ;
     act:birthdate "1978-05-23"^^xsd:date ;
     act:birthyear 1978 ;
     act:chCitizenship [ a act:Validity ;
@@ -150,14 +150,14 @@ act:luca_campana_5261 a act:Person ;
             act:country "CH" ;
             act:validFrom "1978-05-23"^^xsd:date ] ;
     act:contact [ a act:Contact ;
+            act:type "email" ;
+            act:value "maja.riniker@grossrat.ag.ch" ],
+        [ a act:Contact ;
             act:type "contact_website" ;
             act:value "http://www.maja-riniker.ch" ],
         [ a act:Contact ;
             act:type "email" ;
-            act:value "maja.riniker@parl.ch" ],
-        [ a act:Contact ;
-            act:type "email" ;
-            act:value "maja.riniker@grossrat.ag.ch" ] ;
+            act:value "maja.riniker@parl.ch" ] ;
     act:electoralDistrict [ a act:ElectoralDistrict ;
             act:district "Aargau" ;
             act:validFrom "2019-01-01"^^xsd:date ] ;
@@ -173,12 +173,12 @@ act:luca_campana_5261 a act:Person ;
             act:language "de" ;
             act:native true ] ;
     act:name [ a act:Name ;
-            act:nameType "officialGivenName" ;
-            act:value "Maja" ],
-        [ a act:Name ;
             act:nameType "officialLastName" ;
             act:validFrom "1978-05-23"^^xsd:date ;
-            act:value "Riniker" ] ;
+            act:value "Riniker" ],
+        [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Maja" ] ;
     act:occupation [ a act:Occupation ;
             act:active true ;
             act:paid true ;
@@ -219,12 +219,12 @@ act:luca_campana_5261 a act:Person ;
             act:language "de" ;
             act:native true ] ;
     act:name [ a act:Name ;
-            act:nameType "officialGivenName" ;
-            act:value "Beat" ],
-        [ a act:Name ;
             act:nameType "officialLastName" ;
             act:validFrom "1964-07-12"^^xsd:date ;
-            act:value "Jans" ] ;
+            act:value "Jans" ],
+        [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Beat" ] ;
     act:occupation [ a act:Occupation ;
             act:active true ;
             act:validFrom "1964-01-01"^^xsd:date ;
