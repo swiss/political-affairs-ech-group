@@ -4,7 +4,7 @@
 
 # Fragen: 
 # - Wo ist der Link zu Gesetzen bie mehrere Vorlagen?
-# - Versionierung bei Korrekturen
+# - Versionierung bei Korrekturen: via date_type: last_update
 
 id: curiavista:container               
 works:
