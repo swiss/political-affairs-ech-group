@@ -8,7 +8,7 @@
   - eCH-0295: Parlamentarische Geschäfte (affairs): Jonas
   - eCH-0296: Erlasse und Gesetzestexte (laws): Martin
   - eCH-0297: Öffentliche Konsultationen (consultations): Michael
-  ...und [hier]([url](https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=1490648211#gid=1490648211)) eintragen/Eintrag anpassen mit Datenmodell=1
+  ...und [hier](https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=1490648211#gid=1490648211) eintragen/Eintrag anpassen mit Datenmodell=1
 
 
 ## Meeting Notes 19 Januar 2026
