@@ -1,7 +1,20 @@
+## Meeting Notes 16 February 2026
+- [Design Principles](https://github.com/swiss/political-affairs-ech-group/blob/main/docs/common/design_principles.md): reviewed
+- Beispiel durchgehen: https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/data_synopsis.yaml
+  - Versionierung von Korrekturen: nicht explizit, via date_type: last_update
+- To do bis nächster Sitzung: Bei den anderen Sub-Gruppen die "definitiven" Typen (Kategorien von Dokumenten) abholen inkl. Priorisierung:
+  - eCH-0293: Öffentlicher Ratsbetrieb (operations): Christian
+  - eCH-0294: Politische Akteure: Personen, Gruppen und Organe (actors): Fabian
+  - eCH-0295: Parlamentarische Geschäfte (affairs): Jonas
+  - eCH-0296: Erlasse und Gesetzestexte (laws): Martin
+  - eCH-0297: Öffentliche Konsultationen (consultations): Michael
+  ...und [hier]([url](https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=1490648211#gid=1490648211)) eintragen/Eintrag anpassen mit Datenmodell=1
+
+
 ## Meeting Notes 19 Januar 2026
 - [Design Principles](https://github.com/swiss/political-affairs-ech-group/blob/main/docs/common/design_principles.md) (review)
   - Grundsätzlich in der Obhut von Metadata
-- Beispiele zusammen Anschauen: neu Beisplie noch ausstehend, werden auf nächsten Termin umgesetzt
+- Beispiele zusammen Anschauen: neu Beispiele noch ausstehend, werden auf nächsten Termin umgesetzt
 - Referenzobjekt als Beispiel erstellt: https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/document_reference_example.yaml
 - Todo:
   - Dokumentieren damit man bei den anderen Sub-Gruppen die Typen (Kategorien von Dokumenten) einverlangen kann.
