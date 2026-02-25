@@ -19,9 +19,9 @@ URI: [act:Citizenship](https://ch.paf.link/schema/actors/Citizenship)
       
       Citizenship : country
         
-      Citizenship : valid_until
-        
       Citizenship : valid_from
+        
+      Citizenship : valid_until
         
       
 ```
@@ -144,14 +144,17 @@ attributes:
     - Validity
     - ElectoralDistrict
     range: date
-  valid-until:
-    name: valid-until
+  valid_until:
+    name: valid_until
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     slot_uri: act:validUntil
     alias: valid_until
     owner: Citizenship
     domain_of:
+    - Group
+    - Membership
+    - InterestLink
+    - Name
     - Validity
     - ElectoralDistrict
     range: date

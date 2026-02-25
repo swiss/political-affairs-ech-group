@@ -145,6 +145,8 @@ attributes:
     - Membership
     - InterestLink
     - Name
+    - Validity
+    - ElectoralDistrict
     range: date
 
 ```
@@ -208,6 +210,8 @@ attributes:
     - Membership
     - InterestLink
     - Name
+    - Validity
+    - ElectoralDistrict
     range: date
 
 ```

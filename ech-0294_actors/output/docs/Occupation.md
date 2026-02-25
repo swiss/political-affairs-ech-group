@@ -27,9 +27,9 @@ URI: [act:Occupation](https://ch.paf.link/schema/actors/Occupation)
         
       Occupation : paid
         
-      Occupation : valid_until
-        
       Occupation : valid_from
+        
+      Occupation : valid_until
         
       Occupation : value
         
@@ -242,14 +242,17 @@ attributes:
     - Validity
     - ElectoralDistrict
     range: date
-  valid-until:
-    name: valid-until
+  valid_until:
+    name: valid_until
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     slot_uri: act:validUntil
     alias: valid_until
     owner: Occupation
     domain_of:
+    - Group
+    - Membership
+    - InterestLink
+    - Name
     - Validity
     - ElectoralDistrict
     range: date

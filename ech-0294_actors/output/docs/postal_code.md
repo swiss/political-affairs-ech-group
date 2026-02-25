@@ -60,7 +60,7 @@ Alias: postal_code
 
 <details>
 ```yaml
-name: postal-code
+name: postal_code
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
 slot_uri: act:postalCode

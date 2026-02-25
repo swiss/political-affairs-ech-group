@@ -26,8 +26,8 @@ Alias: person_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Membership](Membership.md) | [en] A membership relationship between a person and a group |  no  |
 | [InterestLink](InterestLink.md) | [en] An interest link (conflict of interest, political financing) of a person... |  no  |
+| [Membership](Membership.md) | [en] A membership relationship between a person and a group |  no  |
 
 
 

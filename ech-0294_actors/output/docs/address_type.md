@@ -62,7 +62,7 @@ Alias: address_type
 
 <details>
 ```yaml
-name: address-type
+name: address_type
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
 slot_uri: act:addressType

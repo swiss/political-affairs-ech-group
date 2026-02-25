@@ -19,7 +19,7 @@ URI: [act:ContactTypeEnum](https://ch.paf.link/schema/actors/ContactTypeEnum)
 | --- | --- | --- |
 | email | None | [en] Email address |
 | contact_website | None | [en] Contact website |
-| linked-in | None | [en] LinkedIn profile |
+| linked_in | None | [en] LinkedIn profile |
 | twitter | None | [en] Twitter profile |
 
 
@@ -73,8 +73,8 @@ permissible_values:
       [de] Kontakt-Website.
 
       '
-  linked-in:
-    text: linked-in
+  linked_in:
+    text: linked_in
     description: '[en] LinkedIn profile.
 
       [de] LinkedIn-Profil.

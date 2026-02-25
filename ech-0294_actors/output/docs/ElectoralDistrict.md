@@ -16,9 +16,9 @@ URI: [act:ElectoralDistrict](https://ch.paf.link/schema/actors/ElectoralDistrict
     click ElectoralDistrict href "../ElectoralDistrict/"
       ElectoralDistrict : district
         
-      ElectoralDistrict : valid_until
-        
       ElectoralDistrict : valid_from
+        
+      ElectoralDistrict : valid_until
         
       
 ```
@@ -110,11 +110,15 @@ attributes:
     - Validity
     - ElectoralDistrict
     range: date
-  valid-until:
-    name: valid-until
+  valid_until:
+    name: valid_until
     from_schema: https://ch.paf.link/schema/actors
     slot_uri: act:validUntil
     domain_of:
+    - Group
+    - Membership
+    - InterestLink
+    - Name
     - Validity
     - ElectoralDistrict
     range: date
@@ -153,13 +157,17 @@ attributes:
     - Validity
     - ElectoralDistrict
     range: date
-  valid-until:
-    name: valid-until
+  valid_until:
+    name: valid_until
     from_schema: https://ch.paf.link/schema/actors
     slot_uri: act:validUntil
     alias: valid_until
     owner: ElectoralDistrict
     domain_of:
+    - Group
+    - Membership
+    - InterestLink
+    - Name
     - Validity
     - ElectoralDistrict
     range: date

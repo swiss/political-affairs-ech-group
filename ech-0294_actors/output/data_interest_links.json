@@ -458,6 +458,544 @@
           "function_role": "Beirat"
         }
       ]
+    },
+    {
+      "id": "act:opd_zh_18229",
+      "label": "Christian Müller",
+      "names": [
+        {
+          "name_type": "officialGivenName",
+          "value": "Christian"
+        },
+        {
+          "name_type": "officialLastName",
+          "value": "Müller"
+        }
+      ],
+      "electoral_district": {
+        "district": "Dielsdorf"
+      },
+      "interest_links_person": [
+        {
+          "id": "act:il_mueller_zh_001",
+          "interest_type": "professional_activity",
+          "person_id": "act:opd_zh_18229",
+          "organization_label": "F. + Ch. Müller AG",
+          "legal_form": "Aktiengesellschaft",
+          "valid_from": "1994-01-01",
+          "paid": true,
+          "committee": "Verwaltungsrat",
+          "function_role": "Präsident"
+        },
+        {
+          "id": "act:il_mueller_zh_002",
+          "interest_type": "professional_activity",
+          "person_id": "act:opd_zh_18229",
+          "organization_label": "Saturn Garage AG",
+          "legal_form": "Aktiengesellschaft",
+          "valid_from": "2016-01-01",
+          "paid": true,
+          "committee": "Verwaltungsrat",
+          "function_role": "Präsident"
+        },
+        {
+          "id": "act:il_mueller_zh_003",
+          "interest_type": "professional_activity",
+          "person_id": "act:opd_zh_18229",
+          "organization_label": "Sportanlage Erlen AG",
+          "legal_form": "Aktiengesellschaft",
+          "valid_from": "2014-01-01",
+          "paid": true,
+          "committee": "Verwaltungsrat",
+          "function_role": "Präsident"
+        },
+        {
+          "id": "act:il_mueller_zh_004",
+          "interest_type": "professional_activity",
+          "person_id": "act:opd_zh_18229",
+          "organization_label": "steinmuro AG",
+          "legal_form": "Aktiengesellschaft",
+          "valid_from": "2015-01-01",
+          "paid": true,
+          "committee": "Verwaltungsrat",
+          "function_role": "Präsident"
+        },
+        {
+          "id": "act:il_mueller_zh_005",
+          "interest_type": "professional_activity",
+          "person_id": "act:opd_zh_18229",
+          "organization_label": "Saturn Garage",
+          "valid_from": "1997-01-01",
+          "valid_until": "2017-01-01",
+          "paid": true,
+          "function_role": "Inhaber"
+        },
+        {
+          "id": "act:il_mueller_zh_006",
+          "interest_type": "professional_activity",
+          "person_id": "act:opd_zh_18229",
+          "organization_label": "Haro Garagen GmbH",
+          "legal_form": "Gesellschaft mit beschränkter Haftung",
+          "valid_from": "2007-01-01",
+          "valid_until": "2018-01-01",
+          "paid": true,
+          "function_role": "Inhaber"
+        },
+        {
+          "id": "act:il_mueller_zh_007",
+          "interest_type": "association",
+          "person_id": "act:opd_zh_18229",
+          "organization_label": "Autogewerbeverband der Schweiz AGVS Sektion Zürich",
+          "legal_form": "Verein",
+          "valid_from": "2016-01-01",
+          "paid": true,
+          "function_role": "Präsident"
+        },
+        {
+          "id": "act:il_mueller_zh_008",
+          "interest_type": "association",
+          "person_id": "act:opd_zh_18229",
+          "organization_label": "VZAI Vereinigung Zürcherischer Arbeitgeberverbände der Industrie",
+          "legal_form": "Verein",
+          "valid_from": "2018-11-29",
+          "paid": true,
+          "function_role": "Präsident"
+        },
+        {
+          "id": "act:il_mueller_zh_009",
+          "interest_type": "association",
+          "person_id": "act:opd_zh_18229",
+          "organization_label": "Familienausgleichskasse AGVS Zürich",
+          "legal_form": "Verein",
+          "valid_from": "2016-01-01",
+          "paid": true,
+          "committee": "Vorstand",
+          "function_role": "Präsident"
+        },
+        {
+          "id": "act:il_mueller_zh_010",
+          "interest_type": "political_office",
+          "person_id": "act:opd_zh_18229",
+          "organization_label": "Gemeinde Steinmaur",
+          "valid_from": "2014-01-01",
+          "paid": true,
+          "function_role": "Gemeinderat / Finanzvorstand"
+        },
+        {
+          "id": "act:il_mueller_zh_011",
+          "interest_type": "association",
+          "person_id": "act:opd_zh_18229",
+          "organization_label": "Schweizerische Technische Fachschule Winterthur STFW",
+          "legal_form": "Stiftung",
+          "valid_from": "2017-01-01",
+          "paid": false,
+          "committee": "Stiftungsrat",
+          "function_role": "Mitglied"
+        },
+        {
+          "id": "act:il_mueller_zh_012",
+          "interest_type": "political_office",
+          "person_id": "act:opd_zh_18229",
+          "organization_label": "Handelsgericht Zürich",
+          "valid_from": "2014-01-01",
+          "valid_until": "2016-01-01",
+          "paid": true,
+          "function_role": "Handelsrichter"
+        }
+      ]
+    },
+    {
+      "id": "act:opd_zh_17612",
+      "label": "Peter Reinhard",
+      "names": [
+        {
+          "name_type": "officialGivenName",
+          "value": "Peter"
+        },
+        {
+          "name_type": "officialLastName",
+          "value": "Reinhard"
+        }
+      ],
+      "interest_links_person": [
+        {
+          "id": "act:il_reinhard_001",
+          "interest_type": "political_office",
+          "person_id": "act:opd_zh_17612",
+          "organization_label": "EVP Evangelische Volkspartei",
+          "valid_from": "1994-01-01",
+          "paid": true,
+          "function_role": "Geschäftsführer"
+        },
+        {
+          "id": "act:il_reinhard_002",
+          "interest_type": "political_office",
+          "person_id": "act:opd_zh_17612",
+          "organization_label": "Kantonsrat Fraktion EVP",
+          "valid_from": "2003-01-01",
+          "paid": true,
+          "function_role": "Präsident"
+        },
+        {
+          "id": "act:il_reinhard_003",
+          "interest_type": "professional_activity",
+          "person_id": "act:opd_zh_17612",
+          "organization_label": "EKZ Elektrizitätswerke des Kantons Zürich",
+          "valid_from": "1994-01-01",
+          "paid": true,
+          "committee": "Verwaltungsrat",
+          "function_role": "Mitglied"
+        },
+        {
+          "id": "act:il_reinhard_004",
+          "interest_type": "professional_activity",
+          "person_id": "act:opd_zh_17612",
+          "organization_label": "AXPO",
+          "valid_from": "1994-01-01",
+          "paid": true,
+          "committee": "Verwaltungsrat",
+          "function_role": "Präsident"
+        },
+        {
+          "id": "act:il_reinhard_005",
+          "interest_type": "political_office",
+          "person_id": "act:opd_zh_17612",
+          "organization_label": "Kantonsrat Zürich",
+          "valid_from": "2007-01-01",
+          "valid_until": "2017-01-17",
+          "function_role": "Präsident Angestelltengruppe"
+        },
+        {
+          "id": "act:il_reinhard_006",
+          "interest_type": "political_office",
+          "person_id": "act:opd_zh_17612",
+          "organization_label": "Kantonsrat Zürich",
+          "valid_from": "2007-01-01",
+          "valid_until": "2010-05-07",
+          "function_role": "Delegierter Kantonsparlamente"
+        },
+        {
+          "id": "act:il_reinhard_007",
+          "interest_type": "association",
+          "person_id": "act:opd_zh_17612",
+          "organization_label": "VKPZ Verband Kantonspolizei Zürich",
+          "legal_form": "Verein",
+          "valid_from": "1994-01-01",
+          "paid": false,
+          "function_role": "Präsident"
+        },
+        {
+          "id": "act:il_reinhard_008",
+          "interest_type": "association",
+          "person_id": "act:opd_zh_17612",
+          "organization_label": "Vereinigte Personalverbände des Kantons Zürich",
+          "legal_form": "Verein",
+          "valid_from": "2013-07-05",
+          "paid": false,
+          "function_role": "Präsident"
+        },
+        {
+          "id": "act:il_reinhard_009",
+          "interest_type": "professional_activity",
+          "person_id": "act:opd_zh_17612",
+          "organization_label": "BGJ32 Baugenossenschaft Josefstrasse",
+          "legal_form": "Genossenschaft",
+          "valid_from": "1994-01-01",
+          "paid": true,
+          "function_role": "Geschäftsführer"
+        },
+        {
+          "id": "act:il_reinhard_010",
+          "interest_type": "political_office",
+          "person_id": "act:opd_zh_17612",
+          "organization_label": "Aufsichtskommission Gefängnisse Kanton Zürich",
+          "valid_from": "1994-01-01",
+          "paid": false,
+          "function_role": "Mitglied"
+        }
+      ]
+    },
+    {
+      "id": "act:opd_zh261_2850",
+      "label": "Michael Baumer",
+      "names": [
+        {
+          "name_type": "officialGivenName",
+          "value": "Michael"
+        },
+        {
+          "name_type": "officialLastName",
+          "value": "Baumer"
+        }
+      ],
+      "occupations": [
+        {
+          "active": true,
+          "paid": true,
+          "value": "Stadtrat"
+        }
+      ],
+      "interest_links_person": [
+        {
+          "id": "act:il_baumer_001",
+          "interest_type": "professional_activity",
+          "person_id": "act:opd_zh261_2850",
+          "organization_label": "Energie 360° AG",
+          "legal_form": "Aktiengesellschaft",
+          "paid": true,
+          "committee": "Verwaltungsrat",
+          "function_role": "Präsident"
+        },
+        {
+          "id": "act:il_baumer_002",
+          "interest_type": "professional_activity",
+          "person_id": "act:opd_zh261_2850",
+          "organization_label": "AG Kraftwerk Wägital",
+          "legal_form": "Aktiengesellschaft",
+          "paid": true,
+          "committee": "Verwaltungsrat",
+          "function_role": "Präsident"
+        },
+        {
+          "id": "act:il_baumer_003",
+          "interest_type": "professional_activity",
+          "person_id": "act:opd_zh261_2850",
+          "organization_label": "Erdgas Ostschweiz AG",
+          "legal_form": "Aktiengesellschaft",
+          "paid": true,
+          "committee": "Verwaltungsrat",
+          "function_role": "Mitglied"
+        },
+        {
+          "id": "act:il_baumer_004",
+          "interest_type": "professional_activity",
+          "person_id": "act:opd_zh261_2850",
+          "organization_label": "Swissgas AG",
+          "legal_form": "Aktiengesellschaft",
+          "paid": true,
+          "committee": "Verwaltungsrat",
+          "function_role": "Mitglied"
+        },
+        {
+          "id": "act:il_baumer_005",
+          "interest_type": "professional_activity",
+          "person_id": "act:opd_zh261_2850",
+          "organization_label": "Kernkraftwerk Gösgen-Däniken AG",
+          "legal_form": "Aktiengesellschaft",
+          "paid": true,
+          "committee": "Verwaltungsrat",
+          "function_role": "Mitglied"
+        },
+        {
+          "id": "act:il_baumer_006",
+          "interest_type": "professional_activity",
+          "person_id": "act:opd_zh261_2850",
+          "organization_label": "Kraftwerke Hinterrhein AG",
+          "legal_form": "Aktiengesellschaft",
+          "paid": true,
+          "committee": "Verwaltungsrat",
+          "function_role": "Mitglied"
+        },
+        {
+          "id": "act:il_baumer_007",
+          "interest_type": "professional_activity",
+          "person_id": "act:opd_zh261_2850",
+          "organization_label": "Kraftwerke Oberhasli AG",
+          "legal_form": "Aktiengesellschaft",
+          "paid": true,
+          "committee": "Verwaltungsrat",
+          "function_role": "Mitglied"
+        },
+        {
+          "id": "act:il_baumer_008",
+          "interest_type": "political_office",
+          "person_id": "act:opd_zh261_2850",
+          "organization_label": "Regionale Verkehrskonferenz Zürich",
+          "function_role": "Präsident"
+        },
+        {
+          "id": "act:il_baumer_009",
+          "interest_type": "association",
+          "person_id": "act:opd_zh261_2850",
+          "organization_label": "Stiftung Behinderten-Transporte Zürich",
+          "legal_form": "Stiftung",
+          "paid": false,
+          "committee": "Stiftungsrat",
+          "function_role": "Präsident"
+        },
+        {
+          "id": "act:il_baumer_010",
+          "interest_type": "professional_activity",
+          "person_id": "act:opd_zh261_2850",
+          "organization_label": "Meworla GmbH",
+          "legal_form": "Gesellschaft mit beschränkter Haftung",
+          "paid": true,
+          "function_role": "Inhaber"
+        },
+        {
+          "id": "act:il_baumer_011",
+          "interest_type": "association",
+          "person_id": "act:opd_zh261_2850",
+          "organization_label": "FDP Kanton Zürich",
+          "legal_form": "Verein",
+          "paid": false,
+          "committee": "Vorstand",
+          "function_role": "Mitglied"
+        }
+      ]
+    },
+    {
+      "id": "act:opd_bs_7882",
+      "label": "Claudio Miozzari",
+      "names": [
+        {
+          "name_type": "officialGivenName",
+          "value": "Claudio"
+        },
+        {
+          "name_type": "officialLastName",
+          "value": "Miozzari"
+        }
+      ],
+      "occupations": [
+        {
+          "active": true,
+          "paid": true,
+          "value": "Geschäftsführer Storie Kulturagentur GmbH"
+        }
+      ],
+      "interest_links_person": [
+        {
+          "id": "act:il_miozzari_001",
+          "interest_type": "professional_activity",
+          "person_id": "act:opd_bs_7882",
+          "organization_label": "Storie Kulturagentur GmbH, Basel",
+          "legal_form": "Gesellschaft mit beschränkter Haftung",
+          "paid": true,
+          "committee": "Geschäftsleitung",
+          "function_role": "Geschäftsführer / Inhaber"
+        },
+        {
+          "id": "act:il_miozzari_002",
+          "interest_type": "professional_activity",
+          "person_id": "act:opd_bs_7882",
+          "organization_label": "Abendrot Betriebs AG, Basel",
+          "legal_form": "Aktiengesellschaft",
+          "paid": true,
+          "committee": "Verwaltungsrat",
+          "function_role": "Präsident"
+        },
+        {
+          "id": "act:il_miozzari_003",
+          "interest_type": "professional_activity",
+          "person_id": "act:opd_bs_7882",
+          "organization_label": "Abendrot Immobilien AG, Basel",
+          "legal_form": "Aktiengesellschaft",
+          "paid": true,
+          "committee": "Verwaltungsrat",
+          "function_role": "Präsident"
+        },
+        {
+          "id": "act:il_miozzari_004",
+          "interest_type": "association",
+          "person_id": "act:opd_bs_7882",
+          "organization_label": "Stiftung Abendrot, Basel",
+          "legal_form": "Stiftung",
+          "paid": false,
+          "committee": "Stiftungsrat",
+          "function_role": "Mitglied"
+        }
+      ]
+    },
+    {
+      "id": "act:opd_be351_4098",
+      "label": "Jelena Filipovic",
+      "names": [
+        {
+          "name_type": "officialGivenName",
+          "value": "Jelena"
+        },
+        {
+          "name_type": "officialLastName",
+          "value": "Filipovic"
+        }
+      ],
+      "genders": [
+        {
+          "value": "female"
+        }
+      ],
+      "occupations": [
+        {
+          "active": true,
+          "paid": true,
+          "value": "Politologin, Campaignerin"
+        }
+      ],
+      "interest_links_person": [
+        {
+          "id": "act:il_filipovic_001",
+          "interest_type": "professional_activity",
+          "person_id": "act:opd_be351_4098",
+          "organization_label": "Grüne Schweiz, Bern",
+          "paid": true,
+          "function_role": "Bereichsleiterin Kommunikation und Kampagnen"
+        },
+        {
+          "id": "act:il_filipovic_002",
+          "interest_type": "political_office",
+          "person_id": "act:opd_be351_4098",
+          "organization_label": "Grünes Bündnis Bern",
+          "paid": false,
+          "committee": "Vorstand",
+          "function_role": "Mitglied"
+        },
+        {
+          "id": "act:il_filipovic_003",
+          "interest_type": "political_office",
+          "person_id": "act:opd_be351_4098",
+          "organization_label": "Grünes Bündnis Bern",
+          "paid": false,
+          "committee": "Geschäftsleitung",
+          "function_role": "Mitglied"
+        },
+        {
+          "id": "act:il_filipovic_004",
+          "interest_type": "political_office",
+          "person_id": "act:opd_be351_4098",
+          "organization_label": "Grünes Bündnis Bern",
+          "paid": true,
+          "function_role": "Politische Sekretärin"
+        },
+        {
+          "id": "act:il_filipovic_005",
+          "interest_type": "association",
+          "person_id": "act:opd_be351_4098",
+          "organization_label": "VCS Verkehrs-Club der Schweiz, Bern",
+          "legal_form": "Verein",
+          "paid": false,
+          "function_role": "Co-Präsidentin"
+        },
+        {
+          "id": "act:il_filipovic_006",
+          "interest_type": "association",
+          "person_id": "act:opd_be351_4098",
+          "organization_label": "Verein Landwirtschaft mit Zukunft, Bern",
+          "legal_form": "Verein",
+          "paid": false,
+          "function_role": "Co-Präsidentin"
+        },
+        {
+          "id": "act:il_filipovic_007",
+          "interest_type": "association",
+          "person_id": "act:opd_be351_4098",
+          "organization_label": "Läbigi Stadt, Bern",
+          "legal_form": "Verein",
+          "paid": false,
+          "committee": "Vorstand",
+          "function_role": "Mitglied"
+        }
+      ]
     }
   ],
   "interest_links": [
@@ -559,6 +1097,112 @@
       "paid": false,
       "committee": "Vorstand",
       "function_role": "Beirat"
+    },
+    {
+      "id": "act:il_mueller_zh_001",
+      "interest_type": "professional_activity",
+      "person_id": "act:opd_zh_18229",
+      "organization_label": "F. + Ch. Müller AG",
+      "legal_form": "Aktiengesellschaft",
+      "valid_from": "1994-01-01",
+      "paid": true,
+      "committee": "Verwaltungsrat",
+      "function_role": "Präsident"
+    },
+    {
+      "id": "act:il_mueller_zh_005",
+      "interest_type": "professional_activity",
+      "person_id": "act:opd_zh_18229",
+      "organization_label": "Saturn Garage",
+      "valid_from": "1997-01-01",
+      "valid_until": "2017-01-01",
+      "paid": true,
+      "function_role": "Inhaber"
+    },
+    {
+      "id": "act:il_mueller_zh_010",
+      "interest_type": "political_office",
+      "person_id": "act:opd_zh_18229",
+      "organization_label": "Gemeinde Steinmaur",
+      "valid_from": "2014-01-01",
+      "paid": true,
+      "function_role": "Gemeinderat / Finanzvorstand"
+    },
+    {
+      "id": "act:il_reinhard_003",
+      "interest_type": "professional_activity",
+      "person_id": "act:opd_zh_17612",
+      "organization_label": "EKZ Elektrizitätswerke des Kantons Zürich",
+      "valid_from": "1994-01-01",
+      "paid": true,
+      "committee": "Verwaltungsrat",
+      "function_role": "Mitglied"
+    },
+    {
+      "id": "act:il_reinhard_005",
+      "interest_type": "political_office",
+      "person_id": "act:opd_zh_17612",
+      "organization_label": "Kantonsrat Zürich",
+      "valid_from": "2007-01-01",
+      "valid_until": "2017-01-17",
+      "function_role": "Präsident Angestelltengruppe"
+    },
+    {
+      "id": "act:il_baumer_001",
+      "interest_type": "professional_activity",
+      "person_id": "act:opd_zh261_2850",
+      "organization_label": "Energie 360° AG",
+      "legal_form": "Aktiengesellschaft",
+      "paid": true,
+      "committee": "Verwaltungsrat",
+      "function_role": "Präsident"
+    },
+    {
+      "id": "act:il_baumer_005",
+      "interest_type": "professional_activity",
+      "person_id": "act:opd_zh261_2850",
+      "organization_label": "Kernkraftwerk Gösgen-Däniken AG",
+      "legal_form": "Aktiengesellschaft",
+      "paid": true,
+      "committee": "Verwaltungsrat",
+      "function_role": "Mitglied"
+    },
+    {
+      "id": "act:il_miozzari_001",
+      "interest_type": "professional_activity",
+      "person_id": "act:opd_bs_7882",
+      "organization_label": "Storie Kulturagentur GmbH, Basel",
+      "legal_form": "Gesellschaft mit beschränkter Haftung",
+      "paid": true,
+      "committee": "Geschäftsleitung",
+      "function_role": "Geschäftsführer / Inhaber"
+    },
+    {
+      "id": "act:il_miozzari_002",
+      "interest_type": "professional_activity",
+      "person_id": "act:opd_bs_7882",
+      "organization_label": "Abendrot Betriebs AG, Basel",
+      "legal_form": "Aktiengesellschaft",
+      "paid": true,
+      "committee": "Verwaltungsrat",
+      "function_role": "Präsident"
+    },
+    {
+      "id": "act:il_filipovic_001",
+      "interest_type": "professional_activity",
+      "person_id": "act:opd_be351_4098",
+      "organization_label": "Grüne Schweiz, Bern",
+      "paid": true,
+      "function_role": "Bereichsleiterin Kommunikation und Kampagnen"
+    },
+    {
+      "id": "act:il_filipovic_005",
+      "interest_type": "association",
+      "person_id": "act:opd_be351_4098",
+      "organization_label": "VCS Verkehrs-Club der Schweiz, Bern",
+      "legal_form": "Verein",
+      "paid": false,
+      "function_role": "Co-Präsidentin"
     }
   ],
   "@type": "Container"

@@ -19,9 +19,9 @@ URI: [act:Gender](https://ch.paf.link/schema/actors/Gender)
       
       Gender : pronouns
         
-      Gender : valid_until
-        
       Gender : valid_from
+        
+      Gender : valid_until
         
       Gender : value
         
@@ -176,14 +176,17 @@ attributes:
     - Validity
     - ElectoralDistrict
     range: date
-  valid-until:
-    name: valid-until
+  valid_until:
+    name: valid_until
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     slot_uri: act:validUntil
     alias: valid_until
     owner: Gender
     domain_of:
+    - Group
+    - Membership
+    - InterestLink
+    - Name
     - Validity
     - ElectoralDistrict
     range: date

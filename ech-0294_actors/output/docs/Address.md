@@ -107,8 +107,8 @@ URI: [act:Address](https://ch.paf.link/schema/actors/Address)
 name: Address
 from_schema: https://ch.paf.link/schema/actors
 attributes:
-  address-type:
-    name: address-type
+  address_type:
+    name: address_type
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
     slot_uri: act:addressType
@@ -116,30 +116,30 @@ attributes:
     - Address
     range: AddressTypeEnum
     required: true
-  address-URI:
-    name: address-URI
+  address_URI:
+    name: address_URI
     description: Preferred URI of address
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
     slot_uri: act:addressURI
     domain_of:
     - Address
-  street-address:
-    name: street-address
+  street_address:
+    name: street_address
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
     slot_uri: act:streetAddress
     domain_of:
     - Address
-  postal-code:
-    name: postal-code
+  postal_code:
+    name: postal_code
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
     slot_uri: act:postalCode
     domain_of:
     - Address
-  postal-locality:
-    name: postal-locality
+  postal_locality:
+    name: postal_locality
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
     slot_uri: act:postalLocality
@@ -156,8 +156,8 @@ attributes:
 name: Address
 from_schema: https://ch.paf.link/schema/actors
 attributes:
-  address-type:
-    name: address-type
+  address_type:
+    name: address_type
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
     slot_uri: act:addressType
@@ -167,8 +167,8 @@ attributes:
     - Address
     range: AddressTypeEnum
     required: true
-  address-URI:
-    name: address-URI
+  address_URI:
+    name: address_URI
     description: Preferred URI of address
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
@@ -178,8 +178,8 @@ attributes:
     domain_of:
     - Address
     range: string
-  street-address:
-    name: street-address
+  street_address:
+    name: street_address
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
     slot_uri: act:streetAddress
@@ -188,8 +188,8 @@ attributes:
     domain_of:
     - Address
     range: string
-  postal-code:
-    name: postal-code
+  postal_code:
+    name: postal_code
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
     slot_uri: act:postalCode
@@ -198,8 +198,8 @@ attributes:
     domain_of:
     - Address
     range: string
-  postal-locality:
-    name: postal-locality
+  postal_locality:
+    name: postal_locality
     from_schema: https://ch.paf.link/schema/actors
     rank: 1000
     slot_uri: act:postalLocality

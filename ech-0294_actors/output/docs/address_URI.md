@@ -65,7 +65,7 @@ Alias: address_URI
 
 <details>
 ```yaml
-name: address-URI
+name: address_URI
 description: Preferred URI of address
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000

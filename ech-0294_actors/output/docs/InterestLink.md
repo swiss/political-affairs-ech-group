@@ -334,6 +334,8 @@ attributes:
     - Membership
     - InterestLink
     - Name
+    - Validity
+    - ElectoralDistrict
     range: date
   paid:
     name: paid

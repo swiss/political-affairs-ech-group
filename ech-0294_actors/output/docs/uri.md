@@ -26,9 +26,9 @@ Alias: uri
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [PersonReference](PersonReference.md) | Reference to a person acting in a specific role or function |  no  |
 | [GroupReference](GroupReference.md) | Reference to a group acting in a specific role |  no  |
 | [Group](Group.md) | [en] A political group, organization, or body (e |  no  |
+| [PersonReference](PersonReference.md) | Reference to a person acting in a specific role or function |  no  |
 
 
 

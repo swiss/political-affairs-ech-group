@@ -2,20 +2,113 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 act:interest_links_example a act:Container ;
-    act:interestLink act:il_burkart_001,
+    act:interestLink act:il_baumer_001,
+        act:il_baumer_005,
+        act:il_burkart_001,
         act:il_burkart_005,
         act:il_burkart_007,
+        act:il_filipovic_001,
+        act:il_filipovic_005,
         act:il_glaettli_001,
         act:il_glaettli_002,
+        act:il_miozzari_001,
+        act:il_miozzari_002,
+        act:il_mueller_zh_001,
+        act:il_mueller_zh_005,
+        act:il_mueller_zh_010,
         act:il_pfister_001,
         act:il_pfister_003,
         act:il_pfister_010,
+        act:il_reinhard_003,
+        act:il_reinhard_005,
         act:il_wermuth_001,
         act:il_wermuth_002 ;
-    act:person <https://www.wikidata.org/wiki/Q117904>,
+    act:person act:opd_be351_4098,
+        act:opd_bs_7882,
+        act:opd_zh261_2850,
+        act:opd_zh_17612,
+        act:opd_zh_18229,
+        <https://www.wikidata.org/wiki/Q117904>,
         <https://www.wikidata.org/wiki/Q1387808>,
         <https://www.wikidata.org/wiki/Q23060472>,
         <https://www.wikidata.org/wiki/Q805606> .
+
+act:il_baumer_002 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Aktiengesellschaft" ;
+    act:organizationLabel "AG Kraftwerk Wägital" ;
+    act:paid true ;
+    act:person_id "act:opd_zh261_2850" .
+
+act:il_baumer_003 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Aktiengesellschaft" ;
+    act:organizationLabel "Erdgas Ostschweiz AG" ;
+    act:paid true ;
+    act:person_id "act:opd_zh261_2850" .
+
+act:il_baumer_004 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Aktiengesellschaft" ;
+    act:organizationLabel "Swissgas AG" ;
+    act:paid true ;
+    act:person_id "act:opd_zh261_2850" .
+
+act:il_baumer_006 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Aktiengesellschaft" ;
+    act:organizationLabel "Kraftwerke Hinterrhein AG" ;
+    act:paid true ;
+    act:person_id "act:opd_zh261_2850" .
+
+act:il_baumer_007 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Aktiengesellschaft" ;
+    act:organizationLabel "Kraftwerke Oberhasli AG" ;
+    act:paid true ;
+    act:person_id "act:opd_zh261_2850" .
+
+act:il_baumer_008 a act:InterestLink ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/political_office> ;
+    act:organizationLabel "Regionale Verkehrskonferenz Zürich" ;
+    act:person_id "act:opd_zh261_2850" .
+
+act:il_baumer_009 a act:InterestLink ;
+    act:committee "Stiftungsrat" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Stiftung" ;
+    act:organizationLabel "Stiftung Behinderten-Transporte Zürich" ;
+    act:paid false ;
+    act:person_id "act:opd_zh261_2850" .
+
+act:il_baumer_010 a act:InterestLink ;
+    act:functionRole "Inhaber" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Gesellschaft mit beschränkter Haftung" ;
+    act:organizationLabel "Meworla GmbH" ;
+    act:paid true ;
+    act:person_id "act:opd_zh261_2850" .
+
+act:il_baumer_011 a act:InterestLink ;
+    act:committee "Vorstand" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "FDP Kanton Zürich" ;
+    act:paid false ;
+    act:person_id "act:opd_zh261_2850" .
 
 act:il_burkart_002 a act:InterestLink ;
     act:committee "Verwaltungsrat" ;
@@ -89,6 +182,46 @@ act:il_burkart_011 a act:InterestLink ;
     act:paid false ;
     act:person_id "https://www.wikidata.org/wiki/Q23060472" .
 
+act:il_filipovic_002 a act:InterestLink ;
+    act:committee "Vorstand" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/political_office> ;
+    act:organizationLabel "Grünes Bündnis Bern" ;
+    act:paid false ;
+    act:person_id "act:opd_be351_4098" .
+
+act:il_filipovic_003 a act:InterestLink ;
+    act:committee "Geschäftsleitung" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/political_office> ;
+    act:organizationLabel "Grünes Bündnis Bern" ;
+    act:paid false ;
+    act:person_id "act:opd_be351_4098" .
+
+act:il_filipovic_004 a act:InterestLink ;
+    act:functionRole "Politische Sekretärin" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/political_office> ;
+    act:organizationLabel "Grünes Bündnis Bern" ;
+    act:paid true ;
+    act:person_id "act:opd_be351_4098" .
+
+act:il_filipovic_006 a act:InterestLink ;
+    act:functionRole "Co-Präsidentin" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "Verein Landwirtschaft mit Zukunft, Bern" ;
+    act:paid false ;
+    act:person_id "act:opd_be351_4098" .
+
+act:il_filipovic_007 a act:InterestLink ;
+    act:committee "Vorstand" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "Läbigi Stadt, Bern" ;
+    act:paid false ;
+    act:person_id "act:opd_be351_4098" .
+
 act:il_glaettli_003 a act:InterestLink ;
     act:committee "Beirat" ;
     act:functionRole "Experte" ;
@@ -133,6 +266,111 @@ act:il_glaettli_007 a act:InterestLink ;
     act:organizationLabel "Solidarité sans frontières" ;
     act:paid false ;
     act:person_id "https://www.wikidata.org/wiki/Q805606" .
+
+act:il_miozzari_003 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Aktiengesellschaft" ;
+    act:organizationLabel "Abendrot Immobilien AG, Basel" ;
+    act:paid true ;
+    act:person_id "act:opd_bs_7882" .
+
+act:il_miozzari_004 a act:InterestLink ;
+    act:committee "Stiftungsrat" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Stiftung" ;
+    act:organizationLabel "Stiftung Abendrot, Basel" ;
+    act:paid false ;
+    act:person_id "act:opd_bs_7882" .
+
+act:il_mueller_zh_002 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Aktiengesellschaft" ;
+    act:organizationLabel "Saturn Garage AG" ;
+    act:paid true ;
+    act:person_id "act:opd_zh_18229" ;
+    act:validFrom "2016-01-01"^^xsd:date .
+
+act:il_mueller_zh_003 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Aktiengesellschaft" ;
+    act:organizationLabel "Sportanlage Erlen AG" ;
+    act:paid true ;
+    act:person_id "act:opd_zh_18229" ;
+    act:validFrom "2014-01-01"^^xsd:date .
+
+act:il_mueller_zh_004 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Aktiengesellschaft" ;
+    act:organizationLabel "steinmuro AG" ;
+    act:paid true ;
+    act:person_id "act:opd_zh_18229" ;
+    act:validFrom "2015-01-01"^^xsd:date .
+
+act:il_mueller_zh_006 a act:InterestLink ;
+    act:functionRole "Inhaber" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Gesellschaft mit beschränkter Haftung" ;
+    act:organizationLabel "Haro Garagen GmbH" ;
+    act:paid true ;
+    act:person_id "act:opd_zh_18229" ;
+    act:validFrom "2007-01-01"^^xsd:date ;
+    act:validUntil "2018-01-01"^^xsd:date .
+
+act:il_mueller_zh_007 a act:InterestLink ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "Autogewerbeverband der Schweiz AGVS Sektion Zürich" ;
+    act:paid true ;
+    act:person_id "act:opd_zh_18229" ;
+    act:validFrom "2016-01-01"^^xsd:date .
+
+act:il_mueller_zh_008 a act:InterestLink ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "VZAI Vereinigung Zürcherischer Arbeitgeberverbände der Industrie" ;
+    act:paid true ;
+    act:person_id "act:opd_zh_18229" ;
+    act:validFrom "2018-11-29"^^xsd:date .
+
+act:il_mueller_zh_009 a act:InterestLink ;
+    act:committee "Vorstand" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "Familienausgleichskasse AGVS Zürich" ;
+    act:paid true ;
+    act:person_id "act:opd_zh_18229" ;
+    act:validFrom "2016-01-01"^^xsd:date .
+
+act:il_mueller_zh_011 a act:InterestLink ;
+    act:committee "Stiftungsrat" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Stiftung" ;
+    act:organizationLabel "Schweizerische Technische Fachschule Winterthur STFW" ;
+    act:paid false ;
+    act:person_id "act:opd_zh_18229" ;
+    act:validFrom "2017-01-01"^^xsd:date .
+
+act:il_mueller_zh_012 a act:InterestLink ;
+    act:functionRole "Handelsrichter" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/political_office> ;
+    act:organizationLabel "Handelsgericht Zürich" ;
+    act:paid true ;
+    act:person_id "act:opd_zh_18229" ;
+    act:validFrom "2014-01-01"^^xsd:date ;
+    act:validUntil "2016-01-01"^^xsd:date .
 
 act:il_pfister_002 a act:InterestLink ;
     act:committee "Verwaltungsrat" ;
@@ -233,6 +471,179 @@ act:il_pfister_014 a act:InterestLink ;
     act:paid false ;
     act:person_id "https://www.wikidata.org/wiki/Q1387808" .
 
+act:il_reinhard_001 a act:InterestLink ;
+    act:functionRole "Geschäftsführer" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/political_office> ;
+    act:organizationLabel "EVP Evangelische Volkspartei" ;
+    act:paid true ;
+    act:person_id "act:opd_zh_17612" ;
+    act:validFrom "1994-01-01"^^xsd:date .
+
+act:il_reinhard_002 a act:InterestLink ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/political_office> ;
+    act:organizationLabel "Kantonsrat Fraktion EVP" ;
+    act:paid true ;
+    act:person_id "act:opd_zh_17612" ;
+    act:validFrom "2003-01-01"^^xsd:date .
+
+act:il_reinhard_004 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:organizationLabel "AXPO" ;
+    act:paid true ;
+    act:person_id "act:opd_zh_17612" ;
+    act:validFrom "1994-01-01"^^xsd:date .
+
+act:il_reinhard_006 a act:InterestLink ;
+    act:functionRole "Delegierter Kantonsparlamente" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/political_office> ;
+    act:organizationLabel "Kantonsrat Zürich" ;
+    act:person_id "act:opd_zh_17612" ;
+    act:validFrom "2007-01-01"^^xsd:date ;
+    act:validUntil "2010-05-07"^^xsd:date .
+
+act:il_reinhard_007 a act:InterestLink ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "VKPZ Verband Kantonspolizei Zürich" ;
+    act:paid false ;
+    act:person_id "act:opd_zh_17612" ;
+    act:validFrom "1994-01-01"^^xsd:date .
+
+act:il_reinhard_008 a act:InterestLink ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "Vereinigte Personalverbände des Kantons Zürich" ;
+    act:paid false ;
+    act:person_id "act:opd_zh_17612" ;
+    act:validFrom "2013-07-05"^^xsd:date .
+
+act:il_reinhard_009 a act:InterestLink ;
+    act:functionRole "Geschäftsführer" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Genossenschaft" ;
+    act:organizationLabel "BGJ32 Baugenossenschaft Josefstrasse" ;
+    act:paid true ;
+    act:person_id "act:opd_zh_17612" ;
+    act:validFrom "1994-01-01"^^xsd:date .
+
+act:il_reinhard_010 a act:InterestLink ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/political_office> ;
+    act:organizationLabel "Aufsichtskommission Gefängnisse Kanton Zürich" ;
+    act:paid false ;
+    act:person_id "act:opd_zh_17612" ;
+    act:validFrom "1994-01-01"^^xsd:date .
+
+act:opd_be351_4098 a act:Person ;
+    act:gender [ a act:Gender ;
+            act:value "female" ] ;
+    act:interestLink act:il_filipovic_001,
+        act:il_filipovic_002,
+        act:il_filipovic_003,
+        act:il_filipovic_004,
+        act:il_filipovic_005,
+        act:il_filipovic_006,
+        act:il_filipovic_007 ;
+    act:label "Jelena Filipovic" ;
+    act:name [ a act:Name ;
+            act:nameType "officialLastName" ;
+            act:value "Filipovic" ],
+        [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Jelena" ] ;
+    act:occupation [ a act:Occupation ;
+            act:active true ;
+            act:paid true ;
+            act:value "Politologin, Campaignerin" ] .
+
+act:opd_bs_7882 a act:Person ;
+    act:interestLink act:il_miozzari_001,
+        act:il_miozzari_002,
+        act:il_miozzari_003,
+        act:il_miozzari_004 ;
+    act:label "Claudio Miozzari" ;
+    act:name [ a act:Name ;
+            act:nameType "officialLastName" ;
+            act:value "Miozzari" ],
+        [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Claudio" ] ;
+    act:occupation [ a act:Occupation ;
+            act:active true ;
+            act:paid true ;
+            act:value "Geschäftsführer Storie Kulturagentur GmbH" ] .
+
+act:opd_zh261_2850 a act:Person ;
+    act:interestLink act:il_baumer_001,
+        act:il_baumer_002,
+        act:il_baumer_003,
+        act:il_baumer_004,
+        act:il_baumer_005,
+        act:il_baumer_006,
+        act:il_baumer_007,
+        act:il_baumer_008,
+        act:il_baumer_009,
+        act:il_baumer_010,
+        act:il_baumer_011 ;
+    act:label "Michael Baumer" ;
+    act:name [ a act:Name ;
+            act:nameType "officialLastName" ;
+            act:value "Baumer" ],
+        [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Michael" ] ;
+    act:occupation [ a act:Occupation ;
+            act:active true ;
+            act:paid true ;
+            act:value "Stadtrat" ] .
+
+act:opd_zh_17612 a act:Person ;
+    act:interestLink act:il_reinhard_001,
+        act:il_reinhard_002,
+        act:il_reinhard_003,
+        act:il_reinhard_004,
+        act:il_reinhard_005,
+        act:il_reinhard_006,
+        act:il_reinhard_007,
+        act:il_reinhard_008,
+        act:il_reinhard_009,
+        act:il_reinhard_010 ;
+    act:label "Peter Reinhard" ;
+    act:name [ a act:Name ;
+            act:nameType "officialLastName" ;
+            act:value "Reinhard" ],
+        [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Peter" ] .
+
+act:opd_zh_18229 a act:Person ;
+    act:electoralDistrict [ a act:ElectoralDistrict ;
+            act:district "Dielsdorf" ] ;
+    act:interestLink act:il_mueller_zh_001,
+        act:il_mueller_zh_002,
+        act:il_mueller_zh_003,
+        act:il_mueller_zh_004,
+        act:il_mueller_zh_005,
+        act:il_mueller_zh_006,
+        act:il_mueller_zh_007,
+        act:il_mueller_zh_008,
+        act:il_mueller_zh_009,
+        act:il_mueller_zh_010,
+        act:il_mueller_zh_011,
+        act:il_mueller_zh_012 ;
+    act:label "Christian Müller" ;
+    act:name [ a act:Name ;
+            act:nameType "officialLastName" ;
+            act:value "Müller" ],
+        [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Christian" ] .
+
 <https://www.wikidata.org/wiki/Q117904> a act:Person ;
     act:birthyear 1986 ;
     act:contact [ a act:Contact ;
@@ -317,11 +728,11 @@ act:il_pfister_014 a act:InterestLink ;
 <https://www.wikidata.org/wiki/Q805606> a act:Person ;
     act:birthyear 1972 ;
     act:contact [ a act:Contact ;
-            act:type "contact_website" ;
-            act:value "http://www.balthasar-glaettli.ch" ],
-        [ a act:Contact ;
             act:type "email" ;
-            act:value "nationalrat@glaettli.ch" ] ;
+            act:value "nationalrat@glaettli.ch" ],
+        [ a act:Contact ;
+            act:type "contact_website" ;
+            act:value "http://www.balthasar-glaettli.ch" ] ;
     act:electoralDistrict [ a act:ElectoralDistrict ;
             act:district "Zürich" ] ;
     act:interestLink act:il_glaettli_001,
@@ -333,11 +744,29 @@ act:il_pfister_014 a act:InterestLink ;
         act:il_glaettli_007 ;
     act:label "Balthasar Glättli" ;
     act:name [ a act:Name ;
-            act:nameType "officialGivenName" ;
-            act:value "Balthasar" ],
-        [ a act:Name ;
             act:nameType "officialLastName" ;
-            act:value "Glättli" ] .
+            act:value "Glättli" ],
+        [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Balthasar" ] .
+
+act:il_baumer_001 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Aktiengesellschaft" ;
+    act:organizationLabel "Energie 360° AG" ;
+    act:paid true ;
+    act:person_id "act:opd_zh261_2850" .
+
+act:il_baumer_005 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Aktiengesellschaft" ;
+    act:organizationLabel "Kernkraftwerk Gösgen-Däniken AG" ;
+    act:paid true ;
+    act:person_id "act:opd_zh261_2850" .
 
 act:il_burkart_001 a act:InterestLink ;
     act:committee "Geschäftsleitung" ;
@@ -366,6 +795,21 @@ act:il_burkart_007 a act:InterestLink ;
     act:paid false ;
     act:person_id "https://www.wikidata.org/wiki/Q23060472" .
 
+act:il_filipovic_001 a act:InterestLink ;
+    act:functionRole "Bereichsleiterin Kommunikation und Kampagnen" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:organizationLabel "Grüne Schweiz, Bern" ;
+    act:paid true ;
+    act:person_id "act:opd_be351_4098" .
+
+act:il_filipovic_005 a act:InterestLink ;
+    act:functionRole "Co-Präsidentin" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "VCS Verkehrs-Club der Schweiz, Bern" ;
+    act:paid false ;
+    act:person_id "act:opd_be351_4098" .
+
 act:il_glaettli_001 a act:InterestLink ;
     act:committee "Stiftungsrat" ;
     act:functionRole "Präsident" ;
@@ -383,6 +827,51 @@ act:il_glaettli_002 a act:InterestLink ;
     act:organizationLabel "Trinationaler Atomschutzverband (TRAS)" ;
     act:paid false ;
     act:person_id "https://www.wikidata.org/wiki/Q805606" .
+
+act:il_miozzari_001 a act:InterestLink ;
+    act:committee "Geschäftsleitung" ;
+    act:functionRole "Geschäftsführer / Inhaber" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Gesellschaft mit beschränkter Haftung" ;
+    act:organizationLabel "Storie Kulturagentur GmbH, Basel" ;
+    act:paid true ;
+    act:person_id "act:opd_bs_7882" .
+
+act:il_miozzari_002 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Aktiengesellschaft" ;
+    act:organizationLabel "Abendrot Betriebs AG, Basel" ;
+    act:paid true ;
+    act:person_id "act:opd_bs_7882" .
+
+act:il_mueller_zh_001 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Aktiengesellschaft" ;
+    act:organizationLabel "F. + Ch. Müller AG" ;
+    act:paid true ;
+    act:person_id "act:opd_zh_18229" ;
+    act:validFrom "1994-01-01"^^xsd:date .
+
+act:il_mueller_zh_005 a act:InterestLink ;
+    act:functionRole "Inhaber" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:organizationLabel "Saturn Garage" ;
+    act:paid true ;
+    act:person_id "act:opd_zh_18229" ;
+    act:validFrom "1997-01-01"^^xsd:date ;
+    act:validUntil "2017-01-01"^^xsd:date .
+
+act:il_mueller_zh_010 a act:InterestLink ;
+    act:functionRole "Gemeinderat / Finanzvorstand" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/political_office> ;
+    act:organizationLabel "Gemeinde Steinmaur" ;
+    act:paid true ;
+    act:person_id "act:opd_zh_18229" ;
+    act:validFrom "2014-01-01"^^xsd:date .
 
 act:il_pfister_001 a act:InterestLink ;
     act:functionRole "Geschäftsführer" ;
@@ -409,6 +898,23 @@ act:il_pfister_010 a act:InterestLink ;
     act:organizationLabel "Winterhilfe Zug" ;
     act:paid false ;
     act:person_id "https://www.wikidata.org/wiki/Q1387808" .
+
+act:il_reinhard_003 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:organizationLabel "EKZ Elektrizitätswerke des Kantons Zürich" ;
+    act:paid true ;
+    act:person_id "act:opd_zh_17612" ;
+    act:validFrom "1994-01-01"^^xsd:date .
+
+act:il_reinhard_005 a act:InterestLink ;
+    act:functionRole "Präsident Angestelltengruppe" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/political_office> ;
+    act:organizationLabel "Kantonsrat Zürich" ;
+    act:person_id "act:opd_zh_17612" ;
+    act:validFrom "2007-01-01"^^xsd:date ;
+    act:validUntil "2017-01-17"^^xsd:date .
 
 act:il_wermuth_001 a act:InterestLink ;
     act:committee "Stiftungsrat" ;

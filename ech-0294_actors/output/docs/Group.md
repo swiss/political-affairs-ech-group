@@ -348,6 +348,8 @@ attributes:
     - Membership
     - InterestLink
     - Name
+    - Validity
+    - ElectoralDistrict
     range: date
   name:
     name: name

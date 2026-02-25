@@ -101,7 +101,7 @@
             "enum": [
                 "email",
                 "contact_website",
-                "linked-in",
+                "linked_in",
                 "twitter"
             ],
             "title": "ContactTypeEnum",

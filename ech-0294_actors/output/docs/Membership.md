@@ -257,6 +257,8 @@ attributes:
     - Membership
     - InterestLink
     - Name
+    - Validity
+    - ElectoralDistrict
     range: date
   is_active:
     name: is_active

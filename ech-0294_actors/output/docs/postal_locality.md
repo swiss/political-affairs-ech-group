@@ -60,7 +60,7 @@ Alias: postal_locality
 
 <details>
 ```yaml
-name: postal-locality
+name: postal_locality
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
 slot_uri: act:postalLocality

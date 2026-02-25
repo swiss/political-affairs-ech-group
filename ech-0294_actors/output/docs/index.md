@@ -107,7 +107,6 @@ Name: ActorSchema
 | [type_label](type_label.md) | [en] Custom type label when standard type values don't apply |
 | [uri](uri.md) | [en] Globally valid identifier (e |
 | [url_statutes](url_statutes.md) | [en] URL to party statutes (optional for parties) |
-| [valid_until](valid_until.md) |  |
 | [valid_from](valid_from.md) | [en] Start date of validity period |
 | [valid_until](valid_until.md) | [en] End date of validity period |
 | [value](value.md) |  |

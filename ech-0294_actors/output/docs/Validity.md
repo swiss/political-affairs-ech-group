@@ -21,9 +21,9 @@ URI: [act:Validity](https://ch.paf.link/schema/actors/Validity)
       Validity <|-- Occupation
         click Occupation href "../Occupation/"
       
-      Validity : valid_until
-        
       Validity : valid_from
+        
+      Validity : valid_until
         
       
 ```
@@ -113,12 +113,15 @@ attributes:
     - Validity
     - ElectoralDistrict
     range: date
-  valid-until:
-    name: valid-until
+  valid_until:
+    name: valid_until
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     slot_uri: act:validUntil
     domain_of:
+    - Group
+    - Membership
+    - InterestLink
+    - Name
     - Validity
     - ElectoralDistrict
     range: date
@@ -147,14 +150,17 @@ attributes:
     - Validity
     - ElectoralDistrict
     range: date
-  valid-until:
-    name: valid-until
+  valid_until:
+    name: valid_until
     from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
     slot_uri: act:validUntil
     alias: valid_until
     owner: Validity
     domain_of:
+    - Group
+    - Membership
+    - InterestLink
+    - Name
     - Validity
     - ElectoralDistrict
     range: date

@@ -60,7 +60,7 @@ Alias: street_address
 
 <details>
 ```yaml
-name: street-address
+name: street_address
 from_schema: https://ch.paf.link/schema/actors
 rank: 1000
 slot_uri: act:streetAddress
