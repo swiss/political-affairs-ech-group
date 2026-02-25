@@ -170,18 +170,18 @@ classes:
 
   Address:
     attributes:
-      address-type:
+      address_type:
         range: AddressTypeEnum
         slot_uri: act:addressType
         required: true
-      address-URI:
+      address_URI:
         slot_uri: act:addressURI
         description: Preferred URI of address
-      street-address:
+      street_address:
         slot_uri: act:streetAddress
-      postal-code:
+      postal_code:
         slot_uri: act:postalCode
-      postal-locality:
+      postal_locality:
         slot_uri: act:postalLocality
 
   LanguageProficiency:
@@ -201,7 +201,7 @@ classes:
       valid_from:
         range: date
         slot_uri: act:validFrom
-      valid-until:
+      valid_until:
         range: date
         slot_uri: act:validUntil
 
@@ -261,7 +261,7 @@ classes:
       valid_from:
         range: date
         slot_uri: act:validFrom
-      valid-until:
+      valid_until:
         range: date
         slot_uri: act:validUntil
 
@@ -700,7 +700,7 @@ enums:
         description: |
           [en] Contact website.
           [de] Kontakt-Website.
-      linked-in:
+      linked_in:
         description: |
           [en] LinkedIn profile.
           [de] LinkedIn-Profil.
