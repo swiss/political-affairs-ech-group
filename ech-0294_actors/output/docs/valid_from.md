@@ -26,15 +26,15 @@ Alias: valid_from
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Name](Name.md) |  |  no  |
-| [Validity](Validity.md) |  |  no  |
+| [Membership](Membership.md) | [en] A membership relationship between a person and a group |  no  |
 | [ElectoralDistrict](ElectoralDistrict.md) |  |  no  |
 | [Citizenship](Citizenship.md) |  |  no  |
-| [Group](Group.md) | [en] A political group, organization, or body (e |  no  |
-| [Membership](Membership.md) | [en] A membership relationship between a person and a group |  no  |
+| [Occupation](Occupation.md) |  |  no  |
 | [InterestLink](InterestLink.md) | [en] An interest link (conflict of interest, political financing) of a person... |  no  |
 | [Gender](Gender.md) |  |  no  |
-| [Occupation](Occupation.md) |  |  no  |
+| [Name](Name.md) |  |  no  |
+| [Group](Group.md) | [en] A political group, organization, or body (e |  no  |
+| [Validity](Validity.md) |  |  no  |
 
 
 

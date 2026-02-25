@@ -26,13 +26,13 @@ Alias: id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Container](Container.md) | [en] Root container holding all political actors, groups, and relationships |  no  |
-| [Group](Group.md) | [en] A political group, organization, or body (e |  no  |
-| [GroupReference](GroupReference.md) | Reference to a group acting in a specific role |  no  |
 | [Membership](Membership.md) | [en] A membership relationship between a person and a group |  no  |
 | [InterestLink](InterestLink.md) | [en] An interest link (conflict of interest, political financing) of a person... |  no  |
 | [PersonReference](PersonReference.md) | Reference to a person acting in a specific role or function |  no  |
+| [Container](Container.md) | [en] Root container holding all political actors, groups, and relationships |  no  |
+| [GroupReference](GroupReference.md) | Reference to a group acting in a specific role |  no  |
 | [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
+| [Group](Group.md) | [en] A political group, organization, or body (e |  no  |
 
 
 

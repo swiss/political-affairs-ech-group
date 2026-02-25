@@ -281,11 +281,11 @@ act:il_pfister_014 a act:InterestLink ;
     act:label "Gerhard Pfister" ;
     act:label_long "Dr. phil. I Gerhard Pfister" ;
     act:name [ a act:Name ;
-            act:nameType "officialGivenName" ;
-            act:value "Gerhard" ],
-        [ a act:Name ;
             act:nameType "officialLastName" ;
-            act:value "Pfister" ] .
+            act:value "Pfister" ],
+        [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Gerhard" ] .
 
 <https://www.wikidata.org/wiki/Q23060472> a act:Person ;
     act:birthyear 1975 ;

@@ -89,50 +89,19 @@ names:
     valid_from: 2010-06-16
 ```
 
-### Datentypen und Validierung
+### Datenmodell einer Person
+TODO: Einfügen des LinkML Snippets.
 
-| Attribut | Datentyp | Pflicht | Beschreibung |
-|----------|----------|---------|--------------|
-| `id` | URI | Ja | Eindeutiger Identifikator |
-| `label` | string | Ja | Anzeigename |
-| `birthyear` | integer | Nein | Geburtsjahr (4-stellig) |
-| `birthdate` | date | Nein | Exaktes Geburtsdatum (ISO 8601) |
-| `picture` | URI | Nein | Link zu Profilbild (bevorzugt PNG) |
-| `names` | Name[] | Nein | Liste strukturierter Namen |
-| `addresses` | Address[] | Nein | Wohn- und Geschäftsadressen |
-| `languages` | LanguageProficiency[] | Nein | Sprachkenntnisse |
-| `ch_citizenship` | Validity | Nein | Schweizer Bürgerrecht (zeitlich) |
-| `citizenships` | Citizenship[] | Nein | Weitere Staatsbürgerschaften |
-| `genders` | Gender[] | Nein | Geschlechtsidentität(en) |
-| `occupations` | Occupation[] | Nein | Berufliche Tätigkeiten |
-| `trainings` | Training[] | Nein | Ausbildungen |
-| `contacts` | Contact[] | Nein | Kontaktinformationen |
-| `electoral_district` | ElectoralDistrict | Nein | Wahlkreis |
-| `interest_links_person` | InterestLink[] | Nein | Interessenbindungen |
-
-## Strukturierte Unterklassen
-
-### Name
-
-Namen werden nach eCH-0044 strukturiert erfasst:
-
-```yaml
-names:
-  - name_type: officialGivenName
-    value: Andrea
-  - name_type: officialLastName
-    value: Caroni
-    valid_from: 1980-04-19
-  - name_type: callName
-    value: Andi
-```
 
 **Namenstypen** (`NameTypeEnum`):
+TODO: Referenz auf BFS / und oder eCH Standard.
+
 - `officialGivenName`: Offizieller Vorname
 - `officialLastName`: Offizieller Nachname
 - `officialMiddleName`: Offizieller Mittelname
 - `callName`: Rufname
 - `familyNameOnForeignPassport`: Familienname auf ausländischem Pass
+
 
 ### Adresse
 
@@ -154,7 +123,7 @@ addresses:
 - `businessAddress`: Geschäftsadresse
 - `localAddress`: Lokale Adresse (z.B. Parlamentsadresse)
 
-### Sprachkenntnisse
+### Sprachen
 
 ```yaml
 languages:
@@ -173,15 +142,16 @@ languages:
 ### Geschlecht
 
 ```yaml
-genders:
+gender:
   - value: female
+    label: # Für Klarifikation von diverse.
     valid_from: 1978-05-23
     pronouns:
       - sie
       - ihr
 ```
 
-- `value`: Geschlechtscode (male, female, diverse, etc.)
+- `value`: Geschlechtscode (male, female, diverse)
 - `pronouns`: Bevorzugte Pronomen (mehrsprachig möglich)
 - Unterstützt zeitliche Änderungen
 
