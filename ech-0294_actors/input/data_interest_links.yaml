@@ -1,0 +1,503 @@
+# Interessenbindungen Beispieldaten
+# Quelle: https://api.openparldata.ch/v1/interests/ und parlament.ch
+# Body: CHE (Bundesversammlung), BE (Kanton Bern), AG (Kanton Aargau)
+
+id: act:interest_links_example
+
+persons:
+  # --- Thierry Burkart (FDP, Ständerat AG) ---
+  - id: https://www.wikidata.org/wiki/Q23060472
+    label: Thierry Burkart
+    label_long: Thierry Burkart, lic. iur., LL.M., Rechtsanwalt
+    birthyear: 1975
+    names:
+      - name_type: officialGivenName
+        value: Thierry
+      - name_type: officialLastName
+        value: Burkart
+    contacts:
+      - type: contact_website
+        value: http://www.thierry-burkart.ch
+    electoral_district:
+      district: Aargau
+    interest_links_person:
+      # Berufliche Tätigkeit: eigene Beratungsfirma
+      - id: act:il_burkart_001
+        person_id: https://www.wikidata.org/wiki/Q23060472
+        interest_type: professional_activity
+        organization_label: Burkart Advisory GmbH, Baden
+        legal_form: Gesellschaft mit beschränkter Haftung
+        committee: Geschäftsleitung
+        function_role: Geschäftsführer
+        paid: true
+
+      # Verwaltungsrat AG
+      - id: act:il_burkart_002
+        person_id: https://www.wikidata.org/wiki/Q23060472
+        interest_type: professional_activity
+        organization_label: Birchmeier Holding AG, Döttingen
+        legal_form: Aktiengesellschaft
+        committee: Verwaltungsrat
+        function_role: Mitglied
+        paid: true
+
+      # Verwaltungsrat AG
+      - id: act:il_burkart_003
+        person_id: https://www.wikidata.org/wiki/Q23060472
+        interest_type: professional_activity
+        organization_label: Bovida Real Estate AG, Baar
+        legal_form: Aktiengesellschaft
+        committee: Verwaltungsrat
+        function_role: Mitglied
+        paid: true
+
+      # Verwaltungsrat IT-Unternehmen
+      - id: act:il_burkart_004
+        person_id: https://www.wikidata.org/wiki/Q23060472
+        interest_type: professional_activity
+        organization_label: ELCA Group SA, Lausanne
+        legal_form: Aktiengesellschaft
+        committee: Verwaltungsrat
+        function_role: Mitglied
+        paid: true
+
+      # Verbandspräsidium (bezahlt)
+      - id: act:il_burkart_005
+        person_id: https://www.wikidata.org/wiki/Q23060472
+        interest_type: association
+        organization_label: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+        legal_form: Verein
+        committee: Zentralvorstand
+        function_role: Präsident
+        paid: true
+
+      # Parteiamt
+      - id: act:il_burkart_006
+        person_id: https://www.wikidata.org/wiki/Q23060472
+        interest_type: association
+        organization_label: FDP.Die Liberalen
+        legal_form: Verein
+        committee: Vorstand
+        function_role: Präsident
+        paid: true
+
+      # Stiftung (ehrenamtlich)
+      - id: act:il_burkart_007
+        person_id: https://www.wikidata.org/wiki/Q23060472
+        interest_type: association
+        organization_label: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+        legal_form: Stiftung
+        committee: Stiftungsrat
+        function_role: Vizepräsident
+        paid: false
+
+      # Beirat Unternehmen
+      - id: act:il_burkart_008
+        person_id: https://www.wikidata.org/wiki/Q23060472
+        interest_type: professional_activity
+        organization_label: Stiebel Eltron AG, Lupfig
+        legal_form: Aktiengesellschaft
+        committee: Beirat
+        function_role: Beirat
+        paid: true
+
+      # Branchenverband (bezahlt)
+      - id: act:il_burkart_009
+        person_id: https://www.wikidata.org/wiki/Q23060472
+        interest_type: association
+        organization_label: SUISSEDIGITAL Verband für Kommunikationsnetze
+        legal_form: Verein
+        committee: Vorstand
+        function_role: Mitglied
+        paid: true
+
+      # Ehrenamtliche Vereinsmitgliedschaften
+      - id: act:il_burkart_010
+        person_id: https://www.wikidata.org/wiki/Q23060472
+        interest_type: association
+        organization_label: Allianz Sicherheit Schweiz, Baden
+        legal_form: Verein
+        committee: Vorstand
+        function_role: Präsident
+        paid: false
+
+      - id: act:il_burkart_011
+        person_id: https://www.wikidata.org/wiki/Q23060472
+        interest_type: association
+        organization_label: Verein Landesausstellung Svizra27, Aarau
+        legal_form: Verein
+        committee: Vorstand
+        function_role: Mitglied
+        paid: false
+
+  # --- Gerhard Pfister (Die Mitte, Nationalrat ZG) ---
+  - id: https://www.wikidata.org/wiki/Q1387808
+    label: Gerhard Pfister
+    label_long: Dr. phil. I Gerhard Pfister
+    birthyear: 1962
+    names:
+      - name_type: officialGivenName
+        value: Gerhard
+      - name_type: officialLastName
+        value: Pfister
+    contacts:
+      - type: email
+        value: gerhard.pfister@parl.ch
+      - type: contact_website
+        value: http://www.gpfister.ch
+    electoral_district:
+      district: Zug
+    interest_links_person:
+      # Eigenes Beratungsunternehmen
+      - id: act:il_pfister_001
+        person_id: https://www.wikidata.org/wiki/Q1387808
+        interest_type: professional_activity
+        organization_label: Pfister & Netzwerk, Zug
+        legal_form: Einfache Gesellschaft
+        function_role: Geschäftsführer
+        paid: true
+
+      # VR-Präsidium eigene Firma
+      - id: act:il_pfister_002
+        person_id: https://www.wikidata.org/wiki/Q1387808
+        interest_type: professional_activity
+        organization_label: Pfister Schnieper Consulting Zug
+        legal_form: Aktiengesellschaft
+        committee: Verwaltungsrat
+        function_role: Präsident
+        paid: true
+
+      # Verbandspräsidium Zement
+      - id: act:il_pfister_003
+        person_id: https://www.wikidata.org/wiki/Q1387808
+        interest_type: association
+        organization_label: Cemsuisse Verband der Schweizerischen Cementindustrie, Bern
+        legal_form: Verein
+        committee: Vorstand
+        function_role: Präsident
+        paid: true
+
+      # VR Klinik
+      - id: act:il_pfister_004
+        person_id: https://www.wikidata.org/wiki/Q1387808
+        interest_type: professional_activity
+        organization_label: Klinik Adelheid AG, Unterägeri
+        legal_form: Aktiengesellschaft
+        committee: Verwaltungsrat
+        function_role: Mitglied
+        paid: true
+
+      # VR Verlag
+      - id: act:il_pfister_005
+        person_id: https://www.wikidata.org/wiki/Q1387808
+        interest_type: professional_activity
+        organization_label: Klett und Balmer, Baar ZG
+        legal_form: Aktiengesellschaft
+        committee: Verwaltungsrat
+        function_role: Mitglied
+        paid: true
+
+      # Verbandspräsidium Privatschulen
+      - id: act:il_pfister_006
+        person_id: https://www.wikidata.org/wiki/Q1387808
+        interest_type: association
+        organization_label: Verband der Schweizerischen Privatschulen (VSP), Bern
+        legal_form: Verein
+        committee: Vorstand
+        function_role: Präsident
+        paid: true
+
+      # Casino Verband
+      - id: act:il_pfister_007
+        person_id: https://www.wikidata.org/wiki/Q1387808
+        interest_type: association
+        organization_label: Schweizer Casino Verband
+        legal_form: Verein
+        committee: Geschäftsleitung
+        function_role: Präsident
+        paid: true
+
+      # Stiftungsratspräsidium (bezahlt)
+      - id: act:il_pfister_008
+        person_id: https://www.wikidata.org/wiki/Q1387808
+        interest_type: professional_activity
+        organization_label: Stiftung Pädagogische Hochschule Schwyz
+        legal_form: Stiftung
+        committee: Stiftungsrat
+        function_role: Präsident
+        paid: true
+
+      # Stiftungsrat (bezahlt)
+      - id: act:il_pfister_009
+        person_id: https://www.wikidata.org/wiki/Q1387808
+        interest_type: professional_activity
+        organization_label: Alfred Müller Stiftung, Baar
+        legal_form: Stiftung
+        committee: Stiftungsrat
+        function_role: Mitglied
+        paid: true
+
+      # Ehrenamtliche Stiftungsräte
+      - id: act:il_pfister_010
+        person_id: https://www.wikidata.org/wiki/Q1387808
+        interest_type: association
+        organization_label: Winterhilfe Zug
+        legal_form: Stiftung
+        committee: Stiftungsrat
+        function_role: Präsident
+        paid: false
+
+      - id: act:il_pfister_011
+        person_id: https://www.wikidata.org/wiki/Q1387808
+        interest_type: association
+        organization_label: Stiftung für hochbegabte Kinder, Zürich
+        legal_form: Stiftung
+        committee: Stiftungsrat
+        function_role: Mitglied
+        paid: false
+
+      - id: act:il_pfister_012
+        person_id: https://www.wikidata.org/wiki/Q1387808
+        interest_type: association
+        organization_label: Fondation 1792, Appenzell
+        legal_form: Stiftung
+        committee: Stiftungsrat
+        function_role: Mitglied
+        paid: false
+
+      - id: act:il_pfister_013
+        person_id: https://www.wikidata.org/wiki/Q1387808
+        interest_type: association
+        organization_label: Zürcher Sprachheilschule, Unterägeri
+        legal_form: Stiftung
+        committee: Stiftungsrat
+        function_role: Mitglied
+        paid: false
+
+      # VR-Präsidium ehrenamtlich
+      - id: act:il_pfister_014
+        person_id: https://www.wikidata.org/wiki/Q1387808
+        interest_type: professional_activity
+        organization_label: Ägerisee Schifffahrt AG, Oberägeri
+        legal_form: Aktiengesellschaft
+        committee: Verwaltungsrat
+        function_role: Präsident
+        paid: false
+
+  # --- Balthasar Glättli (Grüne, Nationalrat ZH) ---
+  - id: https://www.wikidata.org/wiki/Q805606
+    label: Balthasar Glättli
+    birthyear: 1972
+    names:
+      - name_type: officialGivenName
+        value: Balthasar
+      - name_type: officialLastName
+        value: Glättli
+    contacts:
+      - type: email
+        value: nationalrat@glaettli.ch
+      - type: contact_website
+        value: http://www.balthasar-glaettli.ch
+    electoral_district:
+      district: Zürich
+    interest_links_person:
+      # Stiftungspräsidium (bezahlt)
+      - id: act:il_glaettli_001
+        person_id: https://www.wikidata.org/wiki/Q805606
+        interest_type: professional_activity
+        organization_label: ECAP
+        legal_form: Stiftung
+        committee: Stiftungsrat
+        function_role: Präsident
+        paid: true
+
+      # Vereinspräsidium Atomschutz (ehrenamtlich)
+      - id: act:il_glaettli_002
+        person_id: https://www.wikidata.org/wiki/Q805606
+        interest_type: association
+        organization_label: Trinationaler Atomschutzverband (TRAS)
+        legal_form: Verein
+        committee: Vorstand
+        function_role: Präsident
+        paid: false
+
+      # Digitale Zivilgesellschaft
+      - id: act:il_glaettli_003
+        person_id: https://www.wikidata.org/wiki/Q805606
+        interest_type: association
+        organization_label: Swiss Data Alliance
+        legal_form: Verein
+        committee: Beirat
+        function_role: Experte
+        paid: false
+
+      - id: act:il_glaettli_004
+        person_id: https://www.wikidata.org/wiki/Q805606
+        interest_type: association
+        organization_label: Swiss Data Alliance
+        legal_form: Verein
+        committee: Patronat
+        function_role: Mitglied
+        paid: false
+
+      # Engagement Zivilgesellschaft
+      - id: act:il_glaettli_005
+        person_id: https://www.wikidata.org/wiki/Q805606
+        interest_type: association
+        organization_label: Campax, Zürich
+        legal_form: Verein
+        committee: Vorstand
+        function_role: Mitglied
+        paid: false
+
+      - id: act:il_glaettli_006
+        person_id: https://www.wikidata.org/wiki/Q805606
+        interest_type: association
+        organization_label: Gesellschaft Minderheiten Schweiz GMS
+        legal_form: Verein
+        committee: Vorstand
+        function_role: Mitglied
+        paid: false
+
+      - id: act:il_glaettli_007
+        person_id: https://www.wikidata.org/wiki/Q805606
+        interest_type: association
+        organization_label: Solidarité sans frontières
+        legal_form: Verein
+        committee: Vorstand
+        function_role: Mitglied
+        paid: false
+
+  # --- Cédric Wermuth (SP, Nationalrat AG) ---
+  - id: https://www.wikidata.org/wiki/Q117904
+    label: Cédric Wermuth
+    label_long: Cédric Wermuth, lic. phil. / Master of Arts UZH
+    birthyear: 1986
+    names:
+      - name_type: officialGivenName
+        value: Cédric
+      - name_type: officialLastName
+        value: Wermuth
+    contacts:
+      - type: email
+        value: cedric.wermuth@parl.ch
+      - type: contact_website
+        value: http://www.cedricwermuth.ch
+    electoral_district:
+      district: Aargau
+    interest_links_person:
+      # Stiftungsrat (ehrenamtlich)
+      - id: act:il_wermuth_001
+        person_id: https://www.wikidata.org/wiki/Q117904
+        interest_type: association
+        organization_label: Stiftung Arbeiterstrandbad Tennwil
+        legal_form: Stiftung
+        committee: Stiftungsrat
+        function_role: Mitglied
+        paid: false
+
+      # Vereinsvorstand (ehrenamtlich)
+      - id: act:il_wermuth_002
+        person_id: https://www.wikidata.org/wiki/Q117904
+        interest_type: association
+        organization_label: Unterstützungsverein der Archive der Aargauer Arbeiterbewegung
+        legal_form: Verein
+        committee: Vorstand
+        function_role: Beirat
+        paid: false
+
+# Duplizierung der Interessenbindungen auf Container-Ebene
+# (alternative Darstellung zur Einbettung bei der Person)
+interest_links:
+  # Burkart: Auswahl auf Container-Ebene
+  - id: act:il_burkart_001
+    person_id: https://www.wikidata.org/wiki/Q23060472
+    interest_type: professional_activity
+    organization_label: Burkart Advisory GmbH, Baden
+    legal_form: Gesellschaft mit beschränkter Haftung
+    committee: Geschäftsleitung
+    function_role: Geschäftsführer
+    paid: true
+
+  - id: act:il_burkart_005
+    person_id: https://www.wikidata.org/wiki/Q23060472
+    interest_type: association
+    organization_label: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+    legal_form: Verein
+    committee: Zentralvorstand
+    function_role: Präsident
+    paid: true
+
+  - id: act:il_burkart_007
+    person_id: https://www.wikidata.org/wiki/Q23060472
+    interest_type: association
+    organization_label: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+    legal_form: Stiftung
+    committee: Stiftungsrat
+    function_role: Vizepräsident
+    paid: false
+
+  # Pfister: Auswahl auf Container-Ebene
+  - id: act:il_pfister_001
+    person_id: https://www.wikidata.org/wiki/Q1387808
+    interest_type: professional_activity
+    organization_label: Pfister & Netzwerk, Zug
+    legal_form: Einfache Gesellschaft
+    function_role: Geschäftsführer
+    paid: true
+
+  - id: act:il_pfister_003
+    person_id: https://www.wikidata.org/wiki/Q1387808
+    interest_type: association
+    organization_label: Cemsuisse Verband der Schweizerischen Cementindustrie, Bern
+    legal_form: Verein
+    committee: Vorstand
+    function_role: Präsident
+    paid: true
+
+  - id: act:il_pfister_010
+    person_id: https://www.wikidata.org/wiki/Q1387808
+    interest_type: association
+    organization_label: Winterhilfe Zug
+    legal_form: Stiftung
+    committee: Stiftungsrat
+    function_role: Präsident
+    paid: false
+
+  # Glättli: Auswahl auf Container-Ebene
+  - id: act:il_glaettli_001
+    person_id: https://www.wikidata.org/wiki/Q805606
+    interest_type: professional_activity
+    organization_label: ECAP
+    legal_form: Stiftung
+    committee: Stiftungsrat
+    function_role: Präsident
+    paid: true
+
+  - id: act:il_glaettli_002
+    person_id: https://www.wikidata.org/wiki/Q805606
+    interest_type: association
+    organization_label: Trinationaler Atomschutzverband (TRAS)
+    legal_form: Verein
+    committee: Vorstand
+    function_role: Präsident
+    paid: false
+
+  # Wermuth: alle auf Container-Ebene
+  - id: act:il_wermuth_001
+    person_id: https://www.wikidata.org/wiki/Q117904
+    interest_type: association
+    organization_label: Stiftung Arbeiterstrandbad Tennwil
+    legal_form: Stiftung
+    committee: Stiftungsrat
+    function_role: Mitglied
+    paid: false
+
+  - id: act:il_wermuth_002
+    person_id: https://www.wikidata.org/wiki/Q117904
+    interest_type: association
+    organization_label: Unterstützungsverein der Archive der Aargauer Arbeiterbewegung
+    legal_form: Verein
+    committee: Vorstand
+    function_role: Beirat
+    paid: false
