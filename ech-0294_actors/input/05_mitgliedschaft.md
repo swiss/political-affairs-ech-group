@@ -48,9 +48,12 @@ group_id: act:sp_basel_stadt
 
 | Attribut | Datentyp | Beschreibung |
 |----------|----------|--------------|
-| `id` | URI | Eindeutiger Identifikator der Mitgliedschaft |
-| `person_id` | string | Referenz zur Person (Wikidata-ID oder lokale ID) |
+| `id` | string | Eindeutiger Identifikator der Mitgliedschaft |
+| `person_id` | string | Referenz zur Person (lokale ID) |
+| `person_uri` | string | Referenz zur Person (Wikidata-ID) |
 | `group_id` | string | Referenz zur Gruppe (lokale ID) |
+| `group_uri` | string | Referenz zur Gruppe (lokale ID) |
+
 
 ### Optionale Felder
 
