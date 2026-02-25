@@ -19,9 +19,9 @@ Alias: valid_until
 | --- | --- | --- |
 | [Occupation](Occupation.md) |  |  no  |
 | [Gender](Gender.md) |  |  no  |
+| [Citizenship](Citizenship.md) |  |  no  |
 | [Validity](Validity.md) |  |  no  |
 | [ElectoralDistrict](ElectoralDistrict.md) |  |  no  |
-| [Citizenship](Citizenship.md) |  |  no  |
 
 
 

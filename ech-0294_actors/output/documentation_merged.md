@@ -53,39 +53,29 @@ Currently we are working in the following order on the different topics regardin
 
 ## Einführung und Zielsetzung
 
-Das Person-Schema beschreibt natürliche Personen im politischen Kontext mit dem Ziel, eine präzise und gleichzeitig flexible Datenstruktur bereitzustellen. Der Standard ermöglicht es, sowohl hochgradig strukturierte als auch offene Informationen zu erfassen, um unterschiedliche Datenqualitäten und Verfügbarkeiten abzubilden.
+Das Personenschema beschreibt natürliche Personen im politischen Kontext und zielt darauf ab, eine präzise und gleichzeitig flexible Datenstruktur bereitzustellen. Die Umsetzung soll es ermöglichen, vorhandene Informationen hochgradig strukturiert abzubilden (z.B. der Name nach Typisierung vom BFS), aber auch Informationen, die weniger klar und vollständing sind, darzustellen. Das Ziel ist es zu ermöglichen die Qualität kontinuierlich zu verbessern.
 
 **Kernziele:**
-- **Präzision**: Unterstützung von zeitlich gültigen Attributen (z.B. Namen, Adressen, Geschlecht)
-- **Flexibilität**: Optionale Felder erlauben schrittweise Datenanreicherung
-- **Interoperabilität**: Verwendung von Wikidata-IDs und URIs als globale Identifikatoren
-- **Mehrsprachigkeit**: Unterstützung mehrsprachiger Inhalte gemäß Schweizer Anforderungen
+- **Präzision**: Unterstützung von zeitlich gültigen Attributen (z.B. Namen, Adressen, Geschlecht).
+- **Flexibilität**: Optionale Felder erlauben schrittweise Datenanreicherung.
+- **Interoperabilität**: URIs als globale Identifikatoren wo vorhanden, inklusive der Möglichkeit auf Wikidata Einträge zu verweisen.
+- **Mehrsprachigkeit**: Unterstützung mehrsprachiger Inhalte gemäss Schweizer Anforderungen.
+
+Notiz: Die Verknüpfung von Personen im öffentlichen Interesse (Politikerinnen und Politiker) über die federalen Ebenen hinweg wird als ein wichtiges Langzeitziel gesehen. Eine zentrale Datenbank oder Identifizierungstelle der Personen kann nicht durch die Fachgruppe realisiert werden. Es gibt Ansätze im Datenmodell, damit man kontinuierlich die Identifikatoren über die Stufen hinweg harmonisieren kann. Zum einen durch die Benutzung von Global eindeutigen Identifikatoren (URIs), sowie von Vorschlägen welche bestehenden offenen Datenbanken zu verwenden (Wikidata). 
 
 ## Technische Struktur
 
 ### Identifikatoren
 
-Das Person-Schema verwendet eine hierarchische Identifikationsstrategie:
+Das Person-Schema verwendet:
 
-1. **Primärer Identifikator (`id`)**:
-   - **Präferenz**: Wikidata-ID (z.B. `https://www.wikidata.org/wiki/Q813067`)
-   - **Alternative**: Lokaler URI (z.B. `act:person_12345`)
-   - **Anforderung**: Eindeutig, persistent, global auflösbar (wenn möglich)
+1. **Interne Identifikator (`id`)**: Ein systeminterner Identifikator welcher vom publizierenden System genutzt wird, wenn nicht schon ausschliesslich eine URI benutzt wird.
 
-2. **Anzeigenamen**:
-   - `label`: Kurzer Anzeigename (z.B. "Beat Jans")
-   - `label_long`: Erweiterter Anzeigename mit Titeln (z.B. "Prof. Dr. iur. Andrea Caroni, MPA (Harvard)")
+2. **Globaler Identifikator (`uri`)**: Ein globaler Identifikator welcher über verschiedene Systeme hinweg gültig ist. Bei Personen kann dabei die URI der Person in Wikidata benutzt werden. Z.b. (http://www.wikidata.org/entity/Q115531 für Adolf Ogi).
 
 ### Temporale Validität
 
-Viele Attribute unterstützen zeitliche Gültigkeit durch `valid_from` und `valid_until`:
-
-- **Name**: Namen können sich ändern (Heirat, Geschlechtsanpassung)
-- **Adresse**: Wohn- und Geschäftsadressen ändern sich
-- **Geschlecht**: Geschlechtsidentität kann sich entwickeln
-- **Staatsbürgerschaft**: Mehrfache Staatsbürgerschaften mit unterschiedlichen Gültigkeitsperioden
-- **Beruf**: Berufliche Tätigkeiten mit Start- und Enddatum
-- **Wahlkreis**: Wahlkreis kann sich bei Neuwahlen ändern
+Viele Attribute unterstützen zeitliche Gültigkeit durch `valid_from` und `valid_until`, wie z.B. Name, Adresse, Geschlecht, Staatsbürgerschaft, Beruf und Wahlkreis.
 
 **Beispiel:**
 ```yaml
@@ -96,7 +86,7 @@ names:
     valid_until: 2010-06-15
   - name_type: officialLastName
     value: Meier-Müller
-    valid_from: 2010-06-15
+    valid_from: 2010-06-16
 ```
 
 ### Datentypen und Validierung
@@ -376,6 +366,13 @@ names:
     value: Meier-Schmidt
     valid_from: 2005-06-20
 ```
+
+## Globale Identifikation über Wikidata
+### Umsetzung und Beispiele
+
+### Diskussion
+TODO: Pros und Cons
+
 
 ## Referenzen
 
