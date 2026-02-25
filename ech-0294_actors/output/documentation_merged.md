@@ -3014,6 +3014,810 @@ attributes:
 ```
 </details> 
 
+# Interessenbindungen (Interest Links)
+
+## Einführung und Zielsetzung
+
+Das InterestLink-Schema erfasst Interessenbindungen, Interessenkonflikte und Verflechtungen von Personen im politischen Kontext mit Organisationen. Der Standard orientiert sich an den Transparenzanforderungen für Parlamentsmitglieder gemäss [Bundesversammlung - Interessenbindungen](https://www.parlament.ch/centers/documents/de/interessen-nr.pdf).
+
+**Kernziele:**
+- **Transparenz**: Offenlegung von potenziellen Interessenkonflikten
+- **Strukturierte Erfassung**: Einheitliche Klassifikation nach Art der Interessenbindung
+- **Auswertbarkeit**: Verknüpfung mit UID-Register für statistische Analysen (NOGA-Codes)
+- **Zeitliche Nachvollziehbarkeit**: Dokumentation von Start und Ende der Bindung
+
+## Technische Struktur
+
+### Identifikatoren und Referenzen
+
+Das InterestLink-Schema verknüpft Personen mit Organisationen:
+
+| Attribut | Typ | Pflicht | Beschreibung |
+|----------|-----|---------|--------------|
+| `id` | URI | Ja | Eindeutiger Identifikator der Interessenbindung |
+| `person_id` | string | Ja | Referenz zur Person (act:person_123 oder Wikidata-ID) |
+
+**Beispiel:**
+```yaml
+id: act:interest_link_12345
+person_id: https://www.wikidata.org/wiki/Q493598
+```
+
+## Datenstruktur
+
+### Pflichtfelder
+
+| Attribut | Datentyp | Beschreibung |
+|----------|----------|--------------|
+| `id` | URI | Eindeutiger Identifikator |
+| `person_id` | string | Referenz zur Person |
+| `interest_type` | InterestTypeEnum | Art der Interessenbindung (siehe unten) |
+
+### Optionale Felder
+
+| Attribut | Datentyp | Beschreibung |
+|----------|----------|--------------|
+| `organization_label` | string | Name/Bezeichnung der Organisation |
+| `organization_uid` | string | UID-Nummer der Organisation (eCH-0097) |
+| `organization_address` | string | Adresse der Organisation |
+| `legal_form` | string | Rechtsform (AG, GmbH, Verein, Stiftung, etc.) |
+| `valid_from` | date | Beginn der Interessenbindung |
+| `valid_until` | date | Ende der Interessenbindung |
+| `paid` | boolean | Gibt an, ob die Position bezahlt ist |
+| `committee` | string | Gremium (Stiftungsrat, Verwaltungsrat, etc.) |
+| `function_role` | string | Funktion/Rolle in der Organisation |
+| `datetime_updated` | datetime | Letzte Aktualisierung des Datensatzes |
+| `datetime_created` | datetime | Erstellung des Datensatzes |
+
+## Klassifikation: InterestTypeEnum
+
+Interessenbindungen werden in drei Hauptkategorien klassifiziert:
+
+### 1. professional_activity (Berufliche Tätigkeit)
+
+Berufliche Tätigkeiten ausserhalb des politischen Mandats.
+
+**Beispiele:**
+- Anstellung in einem Unternehmen
+- Selbstständige Tätigkeit
+- Beratungsmandate
+- Verwaltungsratsmandate in Privatunternehmen
+
+```yaml
+interest_type: professional_activity
+organization_label: Swisscom AG
+organization_uid: CHE-116.281.426
+legal_form: Aktiengesellschaft
+committee: Verwaltungsrat
+function_role: Mitglied
+paid: true
+```
+
+### 2. political_office (Politische Ämter)
+
+Politische Ämter und Mandate auf anderen föderalen Ebenen oder in anderen Körperschaften.
+
+**Beispiele:**
+- Mitgliedschaft in kantonalen oder kommunalen Parlamenten
+- Regierungsräte
+- Kommissionsmitgliedschaften
+- Ämter in ausserparlamentarischen Kommissionen
+
+```yaml
+interest_type: political_office
+organization_label: Gemeinderat Herisau
+organization_address: Rathaus, 9100 Herisau
+function_role: Gemeinderat
+valid_from: 2018-01-01
+paid: true
+```
+
+### 3. association (Vereinsmitgliedschaft)
+
+Mitgliedschaften in Vereinen, Verbänden und Interessenorganisationen.
+
+**Beispiele:**
+- Branchenverbände
+- Berufsverbände
+- Lobbyorganisationen
+- Gemeinnützige Vereine
+- Stiftungen
+
+```yaml
+interest_type: association
+organization_label: Schweizerischer Gewerbeverband
+organization_uid: CHE-105.967.319
+legal_form: Verein
+function_role: Vorstandsmitglied
+paid: false
+```
+
+## Organisation-UID und NOGA-Codes
+
+Die `organization_uid` ermöglicht die Verknüpfung mit dem eidgenössischen Unternehmensregister:
+
+**Vorteile:**
+- Automatische Zuordnung von NOGA-Codes (Branchenklassifikation)
+- Statistische Auswertungen nach Wirtschaftszweigen
+- Eindeutige Identifikation der Organisation
+- Verknüpfung mit Unternehmensdaten (Rechtsform, Adresse, etc.)
+
+**Format:** eCH-0097 konform (CHE-XXX.XXX.XXX)
+
+```yaml
+organization_uid: CHE-116.281.426  # Swisscom AG
+```
+
+**Nachschlagen:** https://www.uid.admin.ch/
+
+## Temporale Validität
+
+Interessenbindungen ändern sich im Laufe der Zeit:
+
+```yaml
+# Wechsel von Positionen
+- id: act:interest_link_001
+  person_id: https://www.wikidata.org/wiki/Q493598
+  interest_type: professional_activity
+  organization_label: Credit Suisse
+  committee: Verwaltungsrat
+  valid_from: 2015-01-01
+  valid_until: 2020-12-31
+  paid: true
+
+- id: act:interest_link_002
+  person_id: https://www.wikidata.org/wiki/Q493598
+  interest_type: professional_activity
+  organization_label: UBS AG
+  organization_uid: CHE-357.686.674
+  committee: Verwaltungsrat
+  valid_from: 2021-01-01
+  paid: true
+```
+
+## Gremien und Funktionen
+
+### Typische Gremien (`committee`)
+
+Nach Schweizer Recht und Praxis:
+
+- **Verwaltungsrat** (VR): Oberstes Führungsorgan einer AG
+- **Stiftungsrat**: Oberstes Organ einer Stiftung
+- **Vorstand**: Geschäftsführendes Organ eines Vereins
+- **Aufsichtsrat**: Kontrollgremium
+- **Beirat**: Beratendes Gremium
+- **Geschäftsleitung**: Operative Führung
+
+### Typische Funktionen (`function_role`)
+
+- Präsident/Präsidentin
+- Vizepräsident/Vizepräsidentin
+- Mitglied
+- Delegierter
+- Geschäftsführer/Geschäftsführerin
+- Berater/Beraterin
+
+## Bezahlung (paid)
+
+Das Attribut `paid` gibt an, ob die Position vergütet ist:
+
+- `true`: Bezahlte Position (Entschädigung, Honorar, Lohn)
+- `false`: Ehrenamtliche/unbezahlte Position
+
+Bereits kleine Entschädigungen (z.B. Sitzungsgelder) gelten als bezahlt.
+
+## Interoperabilität
+
+### Verknüpfung mit Person-Schema
+
+Interessenbindungen werden in zwei Formen referenziert:
+
+1. **In der Container-Struktur:**
+```yaml
+# Container-Ebene
+id: act:example_container
+persons:
+  - id: https://www.wikidata.org/wiki/Q493598
+    label: Andrea Caroni
+    # ... weitere Person-Attribute
+
+interest_links:
+  - id: act:interest_link_001
+    person_id: https://www.wikidata.org/wiki/Q493598
+    interest_type: professional_activity
+    organization_label: Universität St. Gallen
+```
+
+2. **Direkt bei der Person:**
+```yaml
+persons:
+  - id: https://www.wikidata.org/wiki/Q493598
+    label: Andrea Caroni
+    interest_links_person:
+      - id: act:interest_link_001
+        interest_type: professional_activity
+        organization_label: Universität St. Gallen
+```
+
+### Verknüpfung mit UID-Register
+
+Die UID ermöglicht Abfragen im Unternehmensregister:
+
+```yaml
+organization_uid: CHE-116.281.426
+```
+
+Liefert automatisch:
+- Firmenname
+- Rechtsform
+- Adresse
+- NOGA-Code (Branche)
+- Handelsregistereintrag
+
+## Unterschied zu Membership
+
+| Aspekt | Membership | InterestLink |
+|--------|-----------|--------------|
+| **Zweck** | Formale Zugehörigkeit zu politischen Gruppen | Interessenbindungen und Konflikte |
+| **Zielgruppe** | Gruppen im Actor-Schema | Externe Organisationen |
+| **Beispiele** | Parteimitglied, Kommissionsmitglied | Verwaltungsratsmandat, Vereinsvorstand |
+| **Transparenzpflicht** | Standard-Zuordnung | Offenlegungspflicht wegen Interessenkonflikten |
+| **Stimmberechtigung** | Ja (authorized_to_vote) | Nein |
+
+Eine Person kann sowohl Membership (z.B. Nationalrat) als auch InterestLink (z.B. Verwaltungsrat bei Swisscom) haben.
+
+## Anwendungsbeispiele
+
+### Beispiel 1: Verwaltungsratsmandat in AG
+
+```yaml
+id: act:interest_link_caroni_001
+person_id: https://www.wikidata.org/wiki/Q493598
+interest_type: professional_activity
+organization_label: Swiss Re AG
+organization_uid: CHE-101.458.980
+organization_address: Mythenquai 50/60, 8022 Zürich
+legal_form: Aktiengesellschaft
+committee: Verwaltungsrat
+function_role: Mitglied
+valid_from: 2018-04-01
+paid: true
+datetime_created: 2024-01-15T10:30:00Z
+datetime_updated: 2024-01-15T10:30:00Z
+```
+
+### Beispiel 2: Politisches Amt auf kantonaler Ebene
+
+```yaml
+id: act:interest_link_riniker_001
+person_id: https://www.wikidata.org/wiki/Q77074968
+interest_type: political_office
+organization_label: Grosser Rat des Kantons Aargau
+organization_address: Regierungsgebäude, 5001 Aarau
+function_role: Grossrätin
+valid_from: 2009-01-01
+valid_until: 2019-12-31
+paid: true
+```
+
+### Beispiel 3: Vereinsmitgliedschaft (ehrenamtlich)
+
+```yaml
+id: act:interest_link_jans_001
+person_id: https://www.wikidata.org/wiki/Q813067
+interest_type: association
+organization_label: Pro Natura Basel
+legal_form: Verein
+function_role: Vorstandsmitglied
+valid_from: 2010-01-01
+paid: false
+```
+
+### Beispiel 4: Stiftungsrat
+
+```yaml
+id: act:interest_link_luisier_001
+person_id: https://www.wikidata.org/wiki/Q24699807
+interest_type: professional_activity
+organization_label: Fondation pour le développement durable
+legal_form: Stiftung
+committee: Stiftungsrat
+function_role: Präsidentin
+valid_from: 2020-06-01
+paid: false
+```
+
+### Beispiel 5: Mehrere Interessenbindungen einer Person
+
+```yaml
+id: act:container_example
+persons:
+  - id: https://www.wikidata.org/wiki/Q493598
+    label: Andrea Caroni
+    interest_links_person:
+      - id: act:interest_001
+        interest_type: professional_activity
+        organization_label: Universität St. Gallen
+        organization_uid: CHE-105.817.549
+        function_role: Honorarprofessor
+        paid: true
+        valid_from: 2015-01-01
+
+      - id: act:interest_002
+        interest_type: association
+        organization_label: FDP Schweiz
+        legal_form: Verein
+        function_role: Mitglied
+        paid: false
+        valid_from: 2000-01-01
+
+      - id: act:interest_003
+        interest_type: professional_activity
+        organization_label: Rechtsanwaltskanzlei Caroni
+        legal_form: Einzelunternehmen
+        function_role: Inhaber
+        paid: true
+        valid_from: 2008-01-01
+```
+
+## Auswertungsmöglichkeiten
+
+### Nach Interessentyp
+
+Statistische Auswertung nach Art der Interessenbindung:
+- Anzahl beruflicher Tätigkeiten pro Person
+- Anteil politischer Ämter auf verschiedenen Ebenen
+- Vereinsmitgliedschaften nach Partei
+
+### Nach Branche (NOGA-Code)
+
+Über die UID-Verknüpfung:
+- Welche Wirtschaftszweige sind im Parlament vertreten?
+- Häufung von Mandaten in bestimmten Branchen
+- Verflechtungen zwischen Politik und Wirtschaft
+
+### Nach Bezahlung
+
+- Anteil bezahlter vs. ehrenamtlicher Tätigkeiten
+- Durchschnittliche Anzahl bezahlter Mandate
+- Kumulation von Einkommen
+
+### Zeitliche Entwicklung
+
+- Beginn/Ende von Interessenbindungen
+- Wechsel zwischen Organisationen
+- Dauer von Mandaten
+
+## Referenzen
+
+**Weiterführende Dokumentation:**
+- [Bundesversammlung - Interessenbindungen Nationalrat](https://www.parlament.ch/centers/documents/de/interessen-nr.pdf)
+- [UID-Register](https://www.uid.admin.ch/)
+- [eCH-0097: Unternehmens-Identifikationsnummer](https://www.ech.ch/de/ech/ech-0097)
+- [NOGA-Codes (Branchenklassifikation)](https://www.bfs.admin.ch/bfs/de/home/statistiken/industrie-dienstleistungen/nomenklatur/noga.html)
+
+Siehe vollständige LinkML-Schema-Dokumentation:
+
+
+
+# Class: InterestLink 
+
+
+_[en] An interest link (conflict of interest, political financing) of a person to an organization._
+
+_[de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation._
+
+__
+
+
+
+
+
+URI: [act:InterestLink](https://ch.paf.link/schema/actors/InterestLink)
+
+
+
+
+
+```mermaid
+ classDiagram
+    class InterestLink
+    click InterestLink href "../InterestLink/"
+      InterestLink : committee
+        
+      InterestLink : datetime_created
+        
+      InterestLink : datetime_updated
+        
+      InterestLink : function_role
+        
+      InterestLink : id
+        
+      InterestLink : interest_type
+        
+          
+    
+        
+        
+        InterestLink --> "1" InterestTypeEnum : interest_type
+        click InterestTypeEnum href "../InterestTypeEnum/"
+    
+
+        
+      InterestLink : legal_form
+        
+      InterestLink : organization_address
+        
+      InterestLink : organization_label
+        
+      InterestLink : organization_uid
+        
+      InterestLink : paid
+        
+      InterestLink : person_id
+        
+      InterestLink : valid_from
+        
+      InterestLink : valid_until
+        
+      
+```
+
+
+
+
+<!-- no inheritance hierarchy -->
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [id](#id) | 1 <br/> [String](#String) | [en] Unique identifier (preferably Wikidata-ID or URI) | direct |
+| [person_id](#person_id) | 0..1 <br/> [String](#String) | [en] Reference to a person ID | direct |
+| [interest_type](#interest_type) | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | [en] Type of interest link (professional activity, political office, associat... | direct |
+| [organization_label](#organization_label) | 0..1 <br/> [String](#String) | [en] Label of the organization | direct |
+| [organization_uid](#organization_uid) | 0..1 <br/> [String](#String) | [en] UID of the organization (for analysis with NOGA codes, etc | direct |
+| [organization_address](#organization_address) | 0..1 <br/> [String](#String) | [en] Address of the organization | direct |
+| [legal_form](#legal_form) | 0..1 <br/> [String](#String) | [en] Legal form of the organization | direct |
+| [valid_from](#valid_from) | 0..1 <br/> [Date](#Date) | [en] Start date of validity period | direct |
+| [valid_until](#valid_until) | 0..1 <br/> [Date](#Date) | [en] End date of validity period | direct |
+| [paid](#paid) | 0..1 <br/> [Boolean](#Boolean) | [en] Indicates if the position is paid | direct |
+| [committee](#committee) | 0..1 <br/> [String](#String) | [en] Committee or board (e | direct |
+| [function_role](#function_role) | 0..1 <br/> [String](#String) | [en] Function or role in the organization | direct |
+| [datetime_updated](#datetime_updated) | 0..1 <br/> [Datetime](#Datetime) | [en] The last time this record was updated | direct |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [en] The time this record was created | direct |
+
+
+
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Container](#Container) | [interest_links](#interest_links) | range | [InterestLink](#InterestLink) |
+| [Person](#Person) | [interest_links_person](#interest_links_person) | range | [InterestLink](#InterestLink) |
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://ch.paf.link/schema/actors
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | act:InterestLink |
+| native | act:InterestLink |
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: InterestLink
+description: '[en] An interest link (conflict of interest, political financing) of
+  a person to an organization.
+
+  [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person
+  zu einer Organisation.
+
+  '
+from_schema: https://ch.paf.link/schema/actors
+slots:
+- id
+- person_id
+- interest_type
+- organization_label
+- organization_uid
+- organization_address
+- legal_form
+- valid_from
+- valid_until
+- paid
+- committee
+- function_role
+- datetime_updated
+- datetime_created
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: InterestLink
+description: '[en] An interest link (conflict of interest, political financing) of
+  a person to an organization.
+
+  [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person
+  zu einer Organisation.
+
+  '
+from_schema: https://ch.paf.link/schema/actors
+attributes:
+  id:
+    name: id
+    description: '[en] Unique identifier (preferably Wikidata-ID or URI).
+
+      [de] Eindeutiger Identifikator (vorzugsweise Wikidata-ID oder URI).
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    slot_uri: dcterm:identifier
+    identifier: true
+    alias: id
+    owner: InterestLink
+    domain_of:
+    - Container
+    - Person
+    - Group
+    - Membership
+    - InterestLink
+    - PersonReference
+    - GroupReference
+    range: string
+    required: true
+  person_id:
+    name: person_id
+    description: '[en] Reference to a person ID.
+
+      [de] Referenz zu einer Personen-ID.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    alias: person_id
+    owner: InterestLink
+    domain_of:
+    - Membership
+    - InterestLink
+    range: string
+  interest_type:
+    name: interest_type
+    description: '[en] Type of interest link (professional activity, political office,
+      association).
+
+      [de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    slot_uri: act:interestType
+    alias: interest_type
+    owner: InterestLink
+    domain_of:
+    - InterestLink
+    range: InterestTypeEnum
+    required: true
+  organization_label:
+    name: organization_label
+    description: '[en] Label of the organization.
+
+      [de] Bezeichnung der Organisation.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    slot_uri: act:organizationLabel
+    alias: organization_label
+    owner: InterestLink
+    domain_of:
+    - InterestLink
+    range: string
+  organization_uid:
+    name: organization_uid
+    description: '[en] UID of the organization (for analysis with NOGA codes, etc.).
+
+      [de] UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    slot_uri: act:organizationUid
+    alias: organization_uid
+    owner: InterestLink
+    domain_of:
+    - InterestLink
+    range: string
+  organization_address:
+    name: organization_address
+    description: '[en] Address of the organization.
+
+      [de] Adresse der Organisation.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    slot_uri: act:organizationAddress
+    alias: organization_address
+    owner: InterestLink
+    domain_of:
+    - InterestLink
+    range: string
+  legal_form:
+    name: legal_form
+    description: '[en] Legal form of the organization.
+
+      [de] Rechtsform der Organisation.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    slot_uri: act:legalForm
+    alias: legal_form
+    owner: InterestLink
+    domain_of:
+    - InterestLink
+    range: string
+  valid_from:
+    name: valid_from
+    description: '[en] Start date of validity period.
+
+      [de] Startdatum der Gültigkeitsperiode.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    slot_uri: act:validFrom
+    alias: valid_from
+    owner: InterestLink
+    domain_of:
+    - Group
+    - Membership
+    - InterestLink
+    - Name
+    - Validity
+    - ElectoralDistrict
+    range: date
+  valid_until:
+    name: valid_until
+    description: '[en] End date of validity period.
+
+      [de] Enddatum der Gültigkeitsperiode.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    slot_uri: act:validUntil
+    alias: valid_until
+    owner: InterestLink
+    domain_of:
+    - Group
+    - Membership
+    - InterestLink
+    - Name
+    range: date
+  paid:
+    name: paid
+    description: '[en] Indicates if the position is paid.
+
+      [de] Gibt an, ob die Position bezahlt ist.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    alias: paid
+    owner: InterestLink
+    domain_of:
+    - InterestLink
+    - Occupation
+    range: boolean
+  committee:
+    name: committee
+    description: '[en] Committee or board (e.g., foundation board, board of directors).
+
+      [de] Gremium (z.B. Stiftungsrat, Verwaltungsrat).
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    slot_uri: act:committee
+    alias: committee
+    owner: InterestLink
+    domain_of:
+    - InterestLink
+    range: string
+  function_role:
+    name: function_role
+    description: '[en] Function or role in the organization.
+
+      [de] Funktion oder Rolle in der Organisation.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    slot_uri: act:functionRole
+    alias: function_role
+    owner: InterestLink
+    domain_of:
+    - InterestLink
+    range: string
+  datetime_updated:
+    name: datetime_updated
+    description: '[en] The last time this record was updated.
+
+      [de] Der Zeitpunkt, zu dem dieser Datensatz zuletzt aktualisiert wurde.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    alias: datetime_updated
+    owner: InterestLink
+    domain_of:
+    - Person
+    - Group
+    - Membership
+    - InterestLink
+    range: datetime
+  datetime_created:
+    name: datetime_created
+    description: '[en] The time this record was created.
+
+      [de] Der Zeitpunkt, zu dem dieser Datensatz erstellt wurde.
+
+      '
+    from_schema: https://ch.paf.link/schema/actors
+    rank: 1000
+    alias: datetime_created
+    owner: InterestLink
+    domain_of:
+    - Person
+    - Group
+    - Membership
+    - InterestLink
+    range: datetime
+
+```
+</details>
+
 * Überlegungen zu Datenschutz / Öffentlichkeitsrecht  (Christian schaut sich das an).
   * ein Kapitel mit Analyse des IST Zustands / Rechtsgrundlage oder Toolkit ?
   * Abklärung was ist rechtlich erlaubt.
