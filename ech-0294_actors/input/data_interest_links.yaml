@@ -1,6 +1,7 @@
 # Interessenbindungen Beispieldaten
 # Quelle: https://api.openparldata.ch/v1/interests/ und parlament.ch
-# Body: CHE (Bundesversammlung), BE (Kanton Bern), AG (Kanton Aargau)
+# Bodies: CHE (Bundesversammlung), ZH (Kanton Zürich), BS (Kanton Basel-Stadt),
+#         261 (Stadt Zürich), 351 (Stadt Bern)
 
 id: act:interest_links_example
 
@@ -406,6 +407,486 @@ persons:
         function_role: Beirat
         paid: false
 
+  # =====================================================
+  # Kantonale und städtische Ebene
+  # =====================================================
+
+  # --- Christian Müller (FDP, Kantonsrat ZH, Wahlkreis Dielsdorf) ---
+  # Body: ZH (Kanton Zürich) - hat begin_date/end_date Angaben
+  - id: act:opd_zh_18229
+    label: Christian Müller
+    names:
+      - name_type: officialGivenName
+        value: Christian
+      - name_type: officialLastName
+        value: Müller
+    electoral_district:
+      district: Dielsdorf
+    interest_links_person:
+      # Eigenes Unternehmen
+      - id: act:il_mueller_zh_001
+        person_id: act:opd_zh_18229
+        interest_type: professional_activity
+        organization_label: F. + Ch. Müller AG
+        legal_form: Aktiengesellschaft
+        committee: Verwaltungsrat
+        function_role: Präsident
+        paid: true
+        valid_from: "1994-01-01"
+
+      - id: act:il_mueller_zh_002
+        person_id: act:opd_zh_18229
+        interest_type: professional_activity
+        organization_label: Saturn Garage AG
+        legal_form: Aktiengesellschaft
+        committee: Verwaltungsrat
+        function_role: Präsident
+        paid: true
+        valid_from: "2016-01-01"
+
+      - id: act:il_mueller_zh_003
+        person_id: act:opd_zh_18229
+        interest_type: professional_activity
+        organization_label: Sportanlage Erlen AG
+        legal_form: Aktiengesellschaft
+        committee: Verwaltungsrat
+        function_role: Präsident
+        paid: true
+        valid_from: "2014-01-01"
+
+      - id: act:il_mueller_zh_004
+        person_id: act:opd_zh_18229
+        interest_type: professional_activity
+        organization_label: steinmuro AG
+        legal_form: Aktiengesellschaft
+        committee: Verwaltungsrat
+        function_role: Präsident
+        paid: true
+        valid_from: "2015-01-01"
+
+      # Beendete Tätigkeiten (mit valid_until)
+      - id: act:il_mueller_zh_005
+        person_id: act:opd_zh_18229
+        interest_type: professional_activity
+        organization_label: Saturn Garage
+        function_role: Inhaber
+        paid: true
+        valid_from: "1997-01-01"
+        valid_until: "2017-01-01"
+
+      - id: act:il_mueller_zh_006
+        person_id: act:opd_zh_18229
+        interest_type: professional_activity
+        organization_label: Haro Garagen GmbH
+        legal_form: Gesellschaft mit beschränkter Haftung
+        function_role: Inhaber
+        paid: true
+        valid_from: "2007-01-01"
+        valid_until: "2018-01-01"
+
+      # Verbandstätigkeit
+      - id: act:il_mueller_zh_007
+        person_id: act:opd_zh_18229
+        interest_type: association
+        organization_label: Autogewerbeverband der Schweiz AGVS Sektion Zürich
+        legal_form: Verein
+        function_role: Präsident
+        paid: true
+        valid_from: "2016-01-01"
+
+      - id: act:il_mueller_zh_008
+        person_id: act:opd_zh_18229
+        interest_type: association
+        organization_label: VZAI Vereinigung Zürcherischer Arbeitgeberverbände der Industrie
+        legal_form: Verein
+        function_role: Präsident
+        paid: true
+        valid_from: "2018-11-29"
+
+      - id: act:il_mueller_zh_009
+        person_id: act:opd_zh_18229
+        interest_type: association
+        organization_label: Familienausgleichskasse AGVS Zürich
+        legal_form: Verein
+        committee: Vorstand
+        function_role: Präsident
+        paid: true
+        valid_from: "2016-01-01"
+
+      # Politisches Amt auf kommunaler Ebene
+      - id: act:il_mueller_zh_010
+        person_id: act:opd_zh_18229
+        interest_type: political_office
+        organization_label: Gemeinde Steinmaur
+        function_role: Gemeinderat / Finanzvorstand
+        paid: true
+        valid_from: "2014-01-01"
+
+      # Stiftungsrat
+      - id: act:il_mueller_zh_011
+        person_id: act:opd_zh_18229
+        interest_type: association
+        organization_label: Schweizerische Technische Fachschule Winterthur STFW
+        legal_form: Stiftung
+        committee: Stiftungsrat
+        function_role: Mitglied
+        paid: false
+        valid_from: "2017-01-01"
+
+      # Beendete Tätigkeit als Handelsrichter
+      - id: act:il_mueller_zh_012
+        person_id: act:opd_zh_18229
+        interest_type: political_office
+        organization_label: Handelsgericht Zürich
+        function_role: Handelsrichter
+        paid: true
+        valid_from: "2014-01-01"
+        valid_until: "2016-01-01"
+
+  # --- Peter Reinhard (EVP, Kantonsrat ZH) ---
+  # Body: ZH - Beispiel mit vielen politischen Ämtern und Datumsangaben
+  - id: act:opd_zh_17612
+    label: Peter Reinhard
+    names:
+      - name_type: officialGivenName
+        value: Peter
+      - name_type: officialLastName
+        value: Reinhard
+    interest_links_person:
+      # Parteiamt
+      - id: act:il_reinhard_001
+        person_id: act:opd_zh_17612
+        interest_type: political_office
+        organization_label: EVP Evangelische Volkspartei
+        function_role: Geschäftsführer
+        paid: true
+        valid_from: "1994-01-01"
+
+      # Kantonsratsamt
+      - id: act:il_reinhard_002
+        person_id: act:opd_zh_17612
+        interest_type: political_office
+        organization_label: Kantonsrat Fraktion EVP
+        function_role: Präsident
+        paid: true
+        valid_from: "2003-01-01"
+
+      # VR bei öffentlichem Energieunternehmen
+      - id: act:il_reinhard_003
+        person_id: act:opd_zh_17612
+        interest_type: professional_activity
+        organization_label: EKZ Elektrizitätswerke des Kantons Zürich
+        committee: Verwaltungsrat
+        function_role: Mitglied
+        paid: true
+        valid_from: "1994-01-01"
+
+      # Energiekonzern (VR-Präsidium ab 2011)
+      - id: act:il_reinhard_004
+        person_id: act:opd_zh_17612
+        interest_type: professional_activity
+        organization_label: AXPO
+        committee: Verwaltungsrat
+        function_role: Präsident
+        paid: true
+        valid_from: "1994-01-01"
+
+      # Beendete politische Ämter
+      - id: act:il_reinhard_005
+        person_id: act:opd_zh_17612
+        interest_type: political_office
+        organization_label: Kantonsrat Zürich
+        function_role: Präsident Angestelltengruppe
+        valid_from: "2007-01-01"
+        valid_until: "2017-01-17"
+
+      - id: act:il_reinhard_006
+        person_id: act:opd_zh_17612
+        interest_type: political_office
+        organization_label: Kantonsrat Zürich
+        function_role: Delegierter Kantonsparlamente
+        valid_from: "2007-01-01"
+        valid_until: "2010-05-07"
+
+      # Vereinspräsidium
+      - id: act:il_reinhard_007
+        person_id: act:opd_zh_17612
+        interest_type: association
+        organization_label: VKPZ Verband Kantonspolizei Zürich
+        legal_form: Verein
+        function_role: Präsident
+        paid: false
+        valid_from: "1994-01-01"
+
+      # Vereinspräsidium
+      - id: act:il_reinhard_008
+        person_id: act:opd_zh_17612
+        interest_type: association
+        organization_label: Vereinigte Personalverbände des Kantons Zürich
+        legal_form: Verein
+        function_role: Präsident
+        paid: false
+        valid_from: "2013-07-05"
+
+      # Genossenschaft
+      - id: act:il_reinhard_009
+        person_id: act:opd_zh_17612
+        interest_type: professional_activity
+        organization_label: BGJ32 Baugenossenschaft Josefstrasse
+        legal_form: Genossenschaft
+        function_role: Geschäftsführer
+        paid: true
+        valid_from: "1994-01-01"
+
+      # Aufsichtskommission
+      - id: act:il_reinhard_010
+        person_id: act:opd_zh_17612
+        interest_type: political_office
+        organization_label: Aufsichtskommission Gefängnisse Kanton Zürich
+        function_role: Mitglied
+        paid: false
+        valid_from: "1994-01-01"
+
+  # --- Michael Baumer (FDP, Stadtrat Zürich) ---
+  # Body: 261 (Stadt Zürich) - Städtische Interessenvertretungen
+  - id: act:opd_zh261_2850
+    label: Michael Baumer
+    names:
+      - name_type: officialGivenName
+        value: Michael
+      - name_type: officialLastName
+        value: Baumer
+    occupations:
+      - value: Stadtrat
+        active: true
+        paid: true
+    interest_links_person:
+      # Städtische Interessenvertretungen (VR ex officio)
+      - id: act:il_baumer_001
+        person_id: act:opd_zh261_2850
+        interest_type: professional_activity
+        organization_label: Energie 360° AG
+        legal_form: Aktiengesellschaft
+        committee: Verwaltungsrat
+        function_role: Präsident
+        paid: true
+
+      - id: act:il_baumer_002
+        person_id: act:opd_zh261_2850
+        interest_type: professional_activity
+        organization_label: AG Kraftwerk Wägital
+        legal_form: Aktiengesellschaft
+        committee: Verwaltungsrat
+        function_role: Präsident
+        paid: true
+
+      - id: act:il_baumer_003
+        person_id: act:opd_zh261_2850
+        interest_type: professional_activity
+        organization_label: Erdgas Ostschweiz AG
+        legal_form: Aktiengesellschaft
+        committee: Verwaltungsrat
+        function_role: Mitglied
+        paid: true
+
+      - id: act:il_baumer_004
+        person_id: act:opd_zh261_2850
+        interest_type: professional_activity
+        organization_label: Swissgas AG
+        legal_form: Aktiengesellschaft
+        committee: Verwaltungsrat
+        function_role: Mitglied
+        paid: true
+
+      - id: act:il_baumer_005
+        person_id: act:opd_zh261_2850
+        interest_type: professional_activity
+        organization_label: Kernkraftwerk Gösgen-Däniken AG
+        legal_form: Aktiengesellschaft
+        committee: Verwaltungsrat
+        function_role: Mitglied
+        paid: true
+
+      - id: act:il_baumer_006
+        person_id: act:opd_zh261_2850
+        interest_type: professional_activity
+        organization_label: Kraftwerke Hinterrhein AG
+        legal_form: Aktiengesellschaft
+        committee: Verwaltungsrat
+        function_role: Mitglied
+        paid: true
+
+      - id: act:il_baumer_007
+        person_id: act:opd_zh261_2850
+        interest_type: professional_activity
+        organization_label: Kraftwerke Oberhasli AG
+        legal_form: Aktiengesellschaft
+        committee: Verwaltungsrat
+        function_role: Mitglied
+        paid: true
+
+      # Städtische Kommission/Konferenz
+      - id: act:il_baumer_008
+        person_id: act:opd_zh261_2850
+        interest_type: political_office
+        organization_label: Regionale Verkehrskonferenz Zürich
+        function_role: Präsident
+
+      - id: act:il_baumer_009
+        person_id: act:opd_zh261_2850
+        interest_type: association
+        organization_label: Stiftung Behinderten-Transporte Zürich
+        legal_form: Stiftung
+        committee: Stiftungsrat
+        function_role: Präsident
+        paid: false
+
+      # Eigene GmbH
+      - id: act:il_baumer_010
+        person_id: act:opd_zh261_2850
+        interest_type: professional_activity
+        organization_label: Meworla GmbH
+        legal_form: Gesellschaft mit beschränkter Haftung
+        function_role: Inhaber
+        paid: true
+
+      # Parteitätigkeit
+      - id: act:il_baumer_011
+        person_id: act:opd_zh261_2850
+        interest_type: association
+        organization_label: FDP Kanton Zürich
+        legal_form: Verein
+        committee: Vorstand
+        function_role: Mitglied
+        paid: false
+
+  # --- Claudio Miozzari (SP, Grosser Rat BS) ---
+  # Body: BS (Kanton Basel-Stadt)
+  - id: act:opd_bs_7882
+    label: Claudio Miozzari
+    names:
+      - name_type: officialGivenName
+        value: Claudio
+      - name_type: officialLastName
+        value: Miozzari
+    occupations:
+      - value: Geschäftsführer Storie Kulturagentur GmbH
+        active: true
+        paid: true
+    interest_links_person:
+      # Eigene Firma
+      - id: act:il_miozzari_001
+        person_id: act:opd_bs_7882
+        interest_type: professional_activity
+        organization_label: Storie Kulturagentur GmbH, Basel
+        legal_form: Gesellschaft mit beschränkter Haftung
+        committee: Geschäftsleitung
+        function_role: Geschäftsführer / Inhaber
+        paid: true
+
+      # VR-Präsidium Vorsorge-Unternehmen
+      - id: act:il_miozzari_002
+        person_id: act:opd_bs_7882
+        interest_type: professional_activity
+        organization_label: Abendrot Betriebs AG, Basel
+        legal_form: Aktiengesellschaft
+        committee: Verwaltungsrat
+        function_role: Präsident
+        paid: true
+
+      - id: act:il_miozzari_003
+        person_id: act:opd_bs_7882
+        interest_type: professional_activity
+        organization_label: Abendrot Immobilien AG, Basel
+        legal_form: Aktiengesellschaft
+        committee: Verwaltungsrat
+        function_role: Präsident
+        paid: true
+
+      # Stiftungsrat
+      - id: act:il_miozzari_004
+        person_id: act:opd_bs_7882
+        interest_type: association
+        organization_label: Stiftung Abendrot, Basel
+        legal_form: Stiftung
+        committee: Stiftungsrat
+        function_role: Mitglied
+        paid: false
+
+  # --- Jelena Filipovic (GB, Stadtrat Bern) ---
+  # Body: 351 (Stadt Bern) - Typische Kategorien einer Gemeinderätin
+  - id: act:opd_be351_4098
+    label: Jelena Filipovic
+    names:
+      - name_type: officialGivenName
+        value: Jelena
+      - name_type: officialLastName
+        value: Filipovic
+    genders:
+      - value: female
+    occupations:
+      - value: Politologin, Campaignerin
+        active: true
+        paid: true
+    interest_links_person:
+      # Berufliche Tätigkeit
+      - id: act:il_filipovic_001
+        person_id: act:opd_be351_4098
+        interest_type: professional_activity
+        organization_label: Grüne Schweiz, Bern
+        function_role: Bereichsleiterin Kommunikation und Kampagnen
+        paid: true
+
+      # Politische Ämter (Partei)
+      - id: act:il_filipovic_002
+        person_id: act:opd_be351_4098
+        interest_type: political_office
+        organization_label: Grünes Bündnis Bern
+        committee: Vorstand
+        function_role: Mitglied
+        paid: false
+
+      - id: act:il_filipovic_003
+        person_id: act:opd_be351_4098
+        interest_type: political_office
+        organization_label: Grünes Bündnis Bern
+        committee: Geschäftsleitung
+        function_role: Mitglied
+        paid: false
+
+      - id: act:il_filipovic_004
+        person_id: act:opd_be351_4098
+        interest_type: political_office
+        organization_label: Grünes Bündnis Bern
+        function_role: Politische Sekretärin
+        paid: true
+
+      # Vereinstätigkeiten
+      - id: act:il_filipovic_005
+        person_id: act:opd_be351_4098
+        interest_type: association
+        organization_label: VCS Verkehrs-Club der Schweiz, Bern
+        legal_form: Verein
+        function_role: Co-Präsidentin
+        paid: false
+
+      - id: act:il_filipovic_006
+        person_id: act:opd_be351_4098
+        interest_type: association
+        organization_label: Verein Landwirtschaft mit Zukunft, Bern
+        legal_form: Verein
+        function_role: Co-Präsidentin
+        paid: false
+
+      - id: act:il_filipovic_007
+        person_id: act:opd_be351_4098
+        interest_type: association
+        organization_label: Läbigi Stadt, Bern
+        legal_form: Verein
+        committee: Vorstand
+        function_role: Mitglied
+        paid: false
+
 # Duplizierung der Interessenbindungen auf Container-Ebene
 # (alternative Darstellung zur Einbettung bei der Person)
 interest_links:
@@ -500,4 +981,104 @@ interest_links:
     legal_form: Verein
     committee: Vorstand
     function_role: Beirat
+    paid: false
+
+  # Müller ZH: Auswahl mit Datumsangaben
+  - id: act:il_mueller_zh_001
+    person_id: act:opd_zh_18229
+    interest_type: professional_activity
+    organization_label: F. + Ch. Müller AG
+    legal_form: Aktiengesellschaft
+    committee: Verwaltungsrat
+    function_role: Präsident
+    paid: true
+    valid_from: "1994-01-01"
+
+  - id: act:il_mueller_zh_005
+    person_id: act:opd_zh_18229
+    interest_type: professional_activity
+    organization_label: Saturn Garage
+    function_role: Inhaber
+    paid: true
+    valid_from: "1997-01-01"
+    valid_until: "2017-01-01"
+
+  - id: act:il_mueller_zh_010
+    person_id: act:opd_zh_18229
+    interest_type: political_office
+    organization_label: Gemeinde Steinmaur
+    function_role: Gemeinderat / Finanzvorstand
+    paid: true
+    valid_from: "2014-01-01"
+
+  # Reinhard ZH: Auswahl mit Datumsangaben
+  - id: act:il_reinhard_003
+    person_id: act:opd_zh_17612
+    interest_type: professional_activity
+    organization_label: EKZ Elektrizitätswerke des Kantons Zürich
+    committee: Verwaltungsrat
+    function_role: Mitglied
+    paid: true
+    valid_from: "1994-01-01"
+
+  - id: act:il_reinhard_005
+    person_id: act:opd_zh_17612
+    interest_type: political_office
+    organization_label: Kantonsrat Zürich
+    function_role: Präsident Angestelltengruppe
+    valid_from: "2007-01-01"
+    valid_until: "2017-01-17"
+
+  # Baumer Stadt ZH: Auswahl
+  - id: act:il_baumer_001
+    person_id: act:opd_zh261_2850
+    interest_type: professional_activity
+    organization_label: Energie 360° AG
+    legal_form: Aktiengesellschaft
+    committee: Verwaltungsrat
+    function_role: Präsident
+    paid: true
+
+  - id: act:il_baumer_005
+    person_id: act:opd_zh261_2850
+    interest_type: professional_activity
+    organization_label: Kernkraftwerk Gösgen-Däniken AG
+    legal_form: Aktiengesellschaft
+    committee: Verwaltungsrat
+    function_role: Mitglied
+    paid: true
+
+  # Miozzari BS: Auswahl
+  - id: act:il_miozzari_001
+    person_id: act:opd_bs_7882
+    interest_type: professional_activity
+    organization_label: Storie Kulturagentur GmbH, Basel
+    legal_form: Gesellschaft mit beschränkter Haftung
+    committee: Geschäftsleitung
+    function_role: Geschäftsführer / Inhaber
+    paid: true
+
+  - id: act:il_miozzari_002
+    person_id: act:opd_bs_7882
+    interest_type: professional_activity
+    organization_label: Abendrot Betriebs AG, Basel
+    legal_form: Aktiengesellschaft
+    committee: Verwaltungsrat
+    function_role: Präsident
+    paid: true
+
+  # Filipovic Bern: Auswahl
+  - id: act:il_filipovic_001
+    person_id: act:opd_be351_4098
+    interest_type: professional_activity
+    organization_label: Grüne Schweiz, Bern
+    function_role: Bereichsleiterin Kommunikation und Kampagnen
+    paid: true
+
+  - id: act:il_filipovic_005
+    person_id: act:opd_be351_4098
+    interest_type: association
+    organization_label: VCS Verkehrs-Club der Schweiz, Bern
+    legal_form: Verein
+    function_role: Co-Präsidentin
     paid: false
