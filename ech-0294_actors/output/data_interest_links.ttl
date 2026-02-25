@@ -1,0 +1,431 @@
+@prefix act: <https://ch.paf.link/schema/actors/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+act:interest_links_example a act:Container ;
+    act:interestLink act:il_burkart_001,
+        act:il_burkart_005,
+        act:il_burkart_007,
+        act:il_glaettli_001,
+        act:il_glaettli_002,
+        act:il_pfister_001,
+        act:il_pfister_003,
+        act:il_pfister_010,
+        act:il_wermuth_001,
+        act:il_wermuth_002 ;
+    act:person <https://www.wikidata.org/wiki/Q117904>,
+        <https://www.wikidata.org/wiki/Q1387808>,
+        <https://www.wikidata.org/wiki/Q23060472>,
+        <https://www.wikidata.org/wiki/Q805606> .
+
+act:il_burkart_002 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Aktiengesellschaft" ;
+    act:organizationLabel "Birchmeier Holding AG, Döttingen" ;
+    act:paid true ;
+    act:person_id "https://www.wikidata.org/wiki/Q23060472" .
+
+act:il_burkart_003 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Aktiengesellschaft" ;
+    act:organizationLabel "Bovida Real Estate AG, Baar" ;
+    act:paid true ;
+    act:person_id "https://www.wikidata.org/wiki/Q23060472" .
+
+act:il_burkart_004 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Aktiengesellschaft" ;
+    act:organizationLabel "ELCA Group SA, Lausanne" ;
+    act:paid true ;
+    act:person_id "https://www.wikidata.org/wiki/Q23060472" .
+
+act:il_burkart_006 a act:InterestLink ;
+    act:committee "Vorstand" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "FDP.Die Liberalen" ;
+    act:paid true ;
+    act:person_id "https://www.wikidata.org/wiki/Q23060472" .
+
+act:il_burkart_008 a act:InterestLink ;
+    act:committee "Beirat" ;
+    act:functionRole "Beirat" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Aktiengesellschaft" ;
+    act:organizationLabel "Stiebel Eltron AG, Lupfig" ;
+    act:paid true ;
+    act:person_id "https://www.wikidata.org/wiki/Q23060472" .
+
+act:il_burkart_009 a act:InterestLink ;
+    act:committee "Vorstand" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "SUISSEDIGITAL Verband für Kommunikationsnetze" ;
+    act:paid true ;
+    act:person_id "https://www.wikidata.org/wiki/Q23060472" .
+
+act:il_burkart_010 a act:InterestLink ;
+    act:committee "Vorstand" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "Allianz Sicherheit Schweiz, Baden" ;
+    act:paid false ;
+    act:person_id "https://www.wikidata.org/wiki/Q23060472" .
+
+act:il_burkart_011 a act:InterestLink ;
+    act:committee "Vorstand" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "Verein Landesausstellung Svizra27, Aarau" ;
+    act:paid false ;
+    act:person_id "https://www.wikidata.org/wiki/Q23060472" .
+
+act:il_glaettli_003 a act:InterestLink ;
+    act:committee "Beirat" ;
+    act:functionRole "Experte" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "Swiss Data Alliance" ;
+    act:paid false ;
+    act:person_id "https://www.wikidata.org/wiki/Q805606" .
+
+act:il_glaettli_004 a act:InterestLink ;
+    act:committee "Patronat" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "Swiss Data Alliance" ;
+    act:paid false ;
+    act:person_id "https://www.wikidata.org/wiki/Q805606" .
+
+act:il_glaettli_005 a act:InterestLink ;
+    act:committee "Vorstand" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "Campax, Zürich" ;
+    act:paid false ;
+    act:person_id "https://www.wikidata.org/wiki/Q805606" .
+
+act:il_glaettli_006 a act:InterestLink ;
+    act:committee "Vorstand" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "Gesellschaft Minderheiten Schweiz GMS" ;
+    act:paid false ;
+    act:person_id "https://www.wikidata.org/wiki/Q805606" .
+
+act:il_glaettli_007 a act:InterestLink ;
+    act:committee "Vorstand" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "Solidarité sans frontières" ;
+    act:paid false ;
+    act:person_id "https://www.wikidata.org/wiki/Q805606" .
+
+act:il_pfister_002 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Aktiengesellschaft" ;
+    act:organizationLabel "Pfister Schnieper Consulting Zug" ;
+    act:paid true ;
+    act:person_id "https://www.wikidata.org/wiki/Q1387808" .
+
+act:il_pfister_004 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Aktiengesellschaft" ;
+    act:organizationLabel "Klinik Adelheid AG, Unterägeri" ;
+    act:paid true ;
+    act:person_id "https://www.wikidata.org/wiki/Q1387808" .
+
+act:il_pfister_005 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Aktiengesellschaft" ;
+    act:organizationLabel "Klett und Balmer, Baar ZG" ;
+    act:paid true ;
+    act:person_id "https://www.wikidata.org/wiki/Q1387808" .
+
+act:il_pfister_006 a act:InterestLink ;
+    act:committee "Vorstand" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "Verband der Schweizerischen Privatschulen (VSP), Bern" ;
+    act:paid true ;
+    act:person_id "https://www.wikidata.org/wiki/Q1387808" .
+
+act:il_pfister_007 a act:InterestLink ;
+    act:committee "Geschäftsleitung" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "Schweizer Casino Verband" ;
+    act:paid true ;
+    act:person_id "https://www.wikidata.org/wiki/Q1387808" .
+
+act:il_pfister_008 a act:InterestLink ;
+    act:committee "Stiftungsrat" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Stiftung" ;
+    act:organizationLabel "Stiftung Pädagogische Hochschule Schwyz" ;
+    act:paid true ;
+    act:person_id "https://www.wikidata.org/wiki/Q1387808" .
+
+act:il_pfister_009 a act:InterestLink ;
+    act:committee "Stiftungsrat" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Stiftung" ;
+    act:organizationLabel "Alfred Müller Stiftung, Baar" ;
+    act:paid true ;
+    act:person_id "https://www.wikidata.org/wiki/Q1387808" .
+
+act:il_pfister_011 a act:InterestLink ;
+    act:committee "Stiftungsrat" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Stiftung" ;
+    act:organizationLabel "Stiftung für hochbegabte Kinder, Zürich" ;
+    act:paid false ;
+    act:person_id "https://www.wikidata.org/wiki/Q1387808" .
+
+act:il_pfister_012 a act:InterestLink ;
+    act:committee "Stiftungsrat" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Stiftung" ;
+    act:organizationLabel "Fondation 1792, Appenzell" ;
+    act:paid false ;
+    act:person_id "https://www.wikidata.org/wiki/Q1387808" .
+
+act:il_pfister_013 a act:InterestLink ;
+    act:committee "Stiftungsrat" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Stiftung" ;
+    act:organizationLabel "Zürcher Sprachheilschule, Unterägeri" ;
+    act:paid false ;
+    act:person_id "https://www.wikidata.org/wiki/Q1387808" .
+
+act:il_pfister_014 a act:InterestLink ;
+    act:committee "Verwaltungsrat" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Aktiengesellschaft" ;
+    act:organizationLabel "Ägerisee Schifffahrt AG, Oberägeri" ;
+    act:paid false ;
+    act:person_id "https://www.wikidata.org/wiki/Q1387808" .
+
+<https://www.wikidata.org/wiki/Q117904> a act:Person ;
+    act:birthyear 1986 ;
+    act:contact [ a act:Contact ;
+            act:type "contact_website" ;
+            act:value "http://www.cedricwermuth.ch" ],
+        [ a act:Contact ;
+            act:type "email" ;
+            act:value "cedric.wermuth@parl.ch" ] ;
+    act:electoralDistrict [ a act:ElectoralDistrict ;
+            act:district "Aargau" ] ;
+    act:interestLink act:il_wermuth_001,
+        act:il_wermuth_002 ;
+    act:label "Cédric Wermuth" ;
+    act:label_long "Cédric Wermuth, lic. phil. / Master of Arts UZH" ;
+    act:name [ a act:Name ;
+            act:nameType "officialLastName" ;
+            act:value "Wermuth" ],
+        [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Cédric" ] .
+
+<https://www.wikidata.org/wiki/Q1387808> a act:Person ;
+    act:birthyear 1962 ;
+    act:contact [ a act:Contact ;
+            act:type "email" ;
+            act:value "gerhard.pfister@parl.ch" ],
+        [ a act:Contact ;
+            act:type "contact_website" ;
+            act:value "http://www.gpfister.ch" ] ;
+    act:electoralDistrict [ a act:ElectoralDistrict ;
+            act:district "Zug" ] ;
+    act:interestLink act:il_pfister_001,
+        act:il_pfister_002,
+        act:il_pfister_003,
+        act:il_pfister_004,
+        act:il_pfister_005,
+        act:il_pfister_006,
+        act:il_pfister_007,
+        act:il_pfister_008,
+        act:il_pfister_009,
+        act:il_pfister_010,
+        act:il_pfister_011,
+        act:il_pfister_012,
+        act:il_pfister_013,
+        act:il_pfister_014 ;
+    act:label "Gerhard Pfister" ;
+    act:label_long "Dr. phil. I Gerhard Pfister" ;
+    act:name [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Gerhard" ],
+        [ a act:Name ;
+            act:nameType "officialLastName" ;
+            act:value "Pfister" ] .
+
+<https://www.wikidata.org/wiki/Q23060472> a act:Person ;
+    act:birthyear 1975 ;
+    act:contact [ a act:Contact ;
+            act:type "contact_website" ;
+            act:value "http://www.thierry-burkart.ch" ] ;
+    act:electoralDistrict [ a act:ElectoralDistrict ;
+            act:district "Aargau" ] ;
+    act:interestLink act:il_burkart_001,
+        act:il_burkart_002,
+        act:il_burkart_003,
+        act:il_burkart_004,
+        act:il_burkart_005,
+        act:il_burkart_006,
+        act:il_burkart_007,
+        act:il_burkart_008,
+        act:il_burkart_009,
+        act:il_burkart_010,
+        act:il_burkart_011 ;
+    act:label "Thierry Burkart" ;
+    act:label_long "Thierry Burkart, lic. iur., LL.M., Rechtsanwalt" ;
+    act:name [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Thierry" ],
+        [ a act:Name ;
+            act:nameType "officialLastName" ;
+            act:value "Burkart" ] .
+
+<https://www.wikidata.org/wiki/Q805606> a act:Person ;
+    act:birthyear 1972 ;
+    act:contact [ a act:Contact ;
+            act:type "contact_website" ;
+            act:value "http://www.balthasar-glaettli.ch" ],
+        [ a act:Contact ;
+            act:type "email" ;
+            act:value "nationalrat@glaettli.ch" ] ;
+    act:electoralDistrict [ a act:ElectoralDistrict ;
+            act:district "Zürich" ] ;
+    act:interestLink act:il_glaettli_001,
+        act:il_glaettli_002,
+        act:il_glaettli_003,
+        act:il_glaettli_004,
+        act:il_glaettli_005,
+        act:il_glaettli_006,
+        act:il_glaettli_007 ;
+    act:label "Balthasar Glättli" ;
+    act:name [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Balthasar" ],
+        [ a act:Name ;
+            act:nameType "officialLastName" ;
+            act:value "Glättli" ] .
+
+act:il_burkart_001 a act:InterestLink ;
+    act:committee "Geschäftsleitung" ;
+    act:functionRole "Geschäftsführer" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Gesellschaft mit beschränkter Haftung" ;
+    act:organizationLabel "Burkart Advisory GmbH, Baden" ;
+    act:paid true ;
+    act:person_id "https://www.wikidata.org/wiki/Q23060472" .
+
+act:il_burkart_005 a act:InterestLink ;
+    act:committee "Zentralvorstand" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "ASTAG Schweizerischer Nutzfahrzeugverband, Bern" ;
+    act:paid true ;
+    act:person_id "https://www.wikidata.org/wiki/Q23060472" .
+
+act:il_burkart_007 a act:InterestLink ;
+    act:committee "Stiftungsrat" ;
+    act:functionRole "Vizepräsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Stiftung" ;
+    act:organizationLabel "FONDATION SUISSE DE DEMINAGE (FSD), Genf" ;
+    act:paid false ;
+    act:person_id "https://www.wikidata.org/wiki/Q23060472" .
+
+act:il_glaettli_001 a act:InterestLink ;
+    act:committee "Stiftungsrat" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Stiftung" ;
+    act:organizationLabel "ECAP" ;
+    act:paid true ;
+    act:person_id "https://www.wikidata.org/wiki/Q805606" .
+
+act:il_glaettli_002 a act:InterestLink ;
+    act:committee "Vorstand" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "Trinationaler Atomschutzverband (TRAS)" ;
+    act:paid false ;
+    act:person_id "https://www.wikidata.org/wiki/Q805606" .
+
+act:il_pfister_001 a act:InterestLink ;
+    act:functionRole "Geschäftsführer" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/professional_activity> ;
+    act:legalForm "Einfache Gesellschaft" ;
+    act:organizationLabel "Pfister & Netzwerk, Zug" ;
+    act:paid true ;
+    act:person_id "https://www.wikidata.org/wiki/Q1387808" .
+
+act:il_pfister_003 a act:InterestLink ;
+    act:committee "Vorstand" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "Cemsuisse Verband der Schweizerischen Cementindustrie, Bern" ;
+    act:paid true ;
+    act:person_id "https://www.wikidata.org/wiki/Q1387808" .
+
+act:il_pfister_010 a act:InterestLink ;
+    act:committee "Stiftungsrat" ;
+    act:functionRole "Präsident" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Stiftung" ;
+    act:organizationLabel "Winterhilfe Zug" ;
+    act:paid false ;
+    act:person_id "https://www.wikidata.org/wiki/Q1387808" .
+
+act:il_wermuth_001 a act:InterestLink ;
+    act:committee "Stiftungsrat" ;
+    act:functionRole "Mitglied" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Stiftung" ;
+    act:organizationLabel "Stiftung Arbeiterstrandbad Tennwil" ;
+    act:paid false ;
+    act:person_id "https://www.wikidata.org/wiki/Q117904" .
+
+act:il_wermuth_002 a act:InterestLink ;
+    act:committee "Vorstand" ;
+    act:functionRole "Beirat" ;
+    act:interestType <https://ch.paf.link/schema/actors/enum/interest_type/association> ;
+    act:legalForm "Verein" ;
+    act:organizationLabel "Unterstützungsverein der Archive der Aargauer Arbeiterbewegung" ;
+    act:paid false ;
+    act:person_id "https://www.wikidata.org/wiki/Q117904" .
+
+

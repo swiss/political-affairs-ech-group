@@ -26,8 +26,8 @@ Alias: datetime_updated
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Membership](Membership.md) | [en] A membership relationship between a person and a group |  no  |
 | [InterestLink](InterestLink.md) | [en] An interest link (conflict of interest, political financing) of a person... |  no  |
+| [Membership](Membership.md) | [en] A membership relationship between a person and a group |  no  |
 | [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
 | [Group](Group.md) | [en] A political group, organization, or body (e |  no  |
 

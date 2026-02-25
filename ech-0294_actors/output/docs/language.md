@@ -26,8 +26,8 @@ Alias: language
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MultilingualString](MultilingualString.md) | [en] A string that can contain text in multiple languages |  no  |
 | [LanguageProficiency](LanguageProficiency.md) |  |  no  |
+| [MultilingualString](MultilingualString.md) | [en] A string that can contain text in multiple languages |  no  |
 
 
 
