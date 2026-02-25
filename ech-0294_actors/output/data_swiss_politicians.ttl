@@ -93,11 +93,11 @@ act:luca_campana_5261 a act:Person ;
             act:country "CH" ;
             act:validFrom "1980-04-19"^^xsd:date ] ;
     act:contact [ a act:Contact ;
-            act:type "email" ;
-            act:value "andrea.caroni@parl.ch" ],
-        [ a act:Contact ;
             act:type "contact_website" ;
-            act:value "http://www.andrea-caroni.ch" ] ;
+            act:value "http://www.andrea-caroni.ch" ],
+        [ a act:Contact ;
+            act:type "email" ;
+            act:value "andrea.caroni@parl.ch" ] ;
     act:electoralDistrict [ a act:ElectoralDistrict ;
             act:district "Appenzell Ausserrhoden" ;
             act:validFrom "2015-01-01"^^xsd:date ] ;
@@ -113,12 +113,12 @@ act:luca_campana_5261 a act:Person ;
             act:language "de" ;
             act:native true ] ;
     act:name [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Andrea" ],
+        [ a act:Name ;
             act:nameType "officialLastName" ;
             act:validFrom "1980-04-19"^^xsd:date ;
-            act:value "Caroni" ],
-        [ a act:Name ;
-            act:nameType "officialGivenName" ;
-            act:value "Andrea" ] ;
+            act:value "Caroni" ] ;
     act:occupation [ a act:Occupation ;
             act:active true ;
             act:paid true ;
@@ -127,21 +127,21 @@ act:luca_campana_5261 a act:Person ;
     act:picture "https://www.parlament.ch/en/%C3%BCber-das-parlament/parlamentsw%C3%B6rterbuch/parlamentsw%C3%B6rterbuch-detail?WordId=4075" ;
     act:training [ a act:Training ;
             act:type "uni" ;
-            act:value "Prof. Dr. iur." ],
+            act:value "MPA (Harvard)" ],
         [ a act:Training ;
             act:type "uni" ;
-            act:value "MPA (Harvard)" ] .
+            act:value "Prof. Dr. iur." ] .
 
 <https://www.wikidata.org/wiki/Q77074968> a act:Person ;
     act:address [ a act:Address ;
-            act:addressType "businessAddress" ;
-            act:postalCode "3003" ;
-            act:postalLocality "Bern" ],
-        [ a act:Address ;
             act:addressType "privateAddress" ;
             act:postalCode "5034" ;
             act:postalLocality "Suhr" ;
-            act:streetAddress "Lindenweg 36" ] ;
+            act:streetAddress "Lindenweg 36" ],
+        [ a act:Address ;
+            act:addressType "businessAddress" ;
+            act:postalCode "3003" ;
+            act:postalLocality "Bern" ] ;
     act:birthdate "1978-05-23"^^xsd:date ;
     act:birthyear 1978 ;
     act:chCitizenship [ a act:Validity ;
@@ -182,13 +182,13 @@ act:luca_campana_5261 a act:Person ;
     act:occupation [ a act:Occupation ;
             act:active true ;
             act:paid true ;
-            act:validFrom "2005-01-01"^^xsd:date ;
-            act:value "Projektleiterin" ],
+            act:validFrom "2000-01-01"^^xsd:date ;
+            act:value "Betriebsökonomin FH" ],
         [ a act:Occupation ;
             act:active true ;
             act:paid true ;
-            act:validFrom "2000-01-01"^^xsd:date ;
-            act:value "Betriebsökonomin FH" ] ;
+            act:validFrom "2005-01-01"^^xsd:date ;
+            act:value "Projektleiterin" ] ;
     act:training [ a act:Training ;
             act:type "uni" ;
             act:value "Betriebsökonomin FH" ] .
@@ -219,12 +219,12 @@ act:luca_campana_5261 a act:Person ;
             act:language "de" ;
             act:native true ] ;
     act:name [ a act:Name ;
-            act:nameType "officialGivenName" ;
-            act:value "Beat" ],
-        [ a act:Name ;
             act:nameType "officialLastName" ;
             act:validFrom "1964-07-12"^^xsd:date ;
-            act:value "Jans" ] ;
+            act:value "Jans" ],
+        [ a act:Name ;
+            act:nameType "officialGivenName" ;
+            act:value "Beat" ] ;
     act:occupation [ a act:Occupation ;
             act:active true ;
             act:validFrom "1964-01-01"^^xsd:date ;
