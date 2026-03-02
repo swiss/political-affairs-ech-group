@@ -74,7 +74,7 @@ If a class and an attribute/slot share the same name but differ only in capitali
 When defining data types and formats in LinkML, consider the following guidelines:
 
 - if a slot is designated as `identifier: true`, the corresponding value must be a CURIE, e.g. `id: ops:1234` and not `id: 1234`.
-- if a slot needs to be a date with time, use `range: datetime` and give the value in the format `YYYY-MM-DDTHH:MM:SSZ` (UTC) or `YYYY-MM-DDTHH:MM:SS+01:00` (UTC + 1).
+- if a slot needs to be a date with time, use `range: datetime` and give the value in the format `YYYY-MM-DDTHH:MM:SSZ` (UTC) or `YYYY-MM-DDTHH:MM:SS+01:00` (UTC + 1). It is not possible to use `datetime` with only a date, so if there is only a date but no time, use `range: date` and give the value in the format `YYYY-MM-DD`.
 
 ## Hierarchies
 

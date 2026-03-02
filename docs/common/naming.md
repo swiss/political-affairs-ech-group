@@ -29,7 +29,7 @@ Avoid using classes and slots with the only difference in capitalization, becaus
 
 Dates and times are a very important part of political affairs data. When working with dates and times in LinkML, consider the following best practices:
 
-- Use the `date` range for dates without time and the `datetime` range for dates with time.
+- Use the `date` range for dates without time and the `datetime` range for dates with time (it is not possible to use `datetime` with only a date).
 - Start attributes with `date_` or `datetime_` to make it clear what type of data is expected and to group dates together in alphabetical order.
 - If a range of dates is needed, two separate attributes should be used, e.g. `date_begin` and `date_end`.
 - If a date is planned or expected but not yet fixed, use `date_planned` to indicate this. This can be combined with `date_actual` for the actual date once it is known.
