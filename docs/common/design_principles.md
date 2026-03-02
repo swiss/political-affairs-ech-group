@@ -34,10 +34,10 @@ This is a simplified example, in a real use case there would be more information
 
 ```yaml
 motion:
-  id: tutorial:m1
+  id: ex:m1
   title: "Motion 1"
   submitter: # local reference to person, class PersonReference
-    id: tutorial:p1
+    id: ex:p1
     name: "John Doe"
     party: "Party A"
     role: "Member of Parliament"
@@ -45,7 +45,7 @@ motion:
 
 ```yaml
 person:
-  id: tutorial:p1
+  id: ex:p1
   name: "John Doe"
   party: "Party B"
   role: "Minister"
