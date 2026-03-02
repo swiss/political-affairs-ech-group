@@ -23,3 +23,30 @@ An example of this would be the occupation of a person. Each occupation can have
 Some entities are referenced "locally" in addition to linking to the full entity. This is done to have useful local data without too much query complexity. This will also generate some form of Versioning implicitly, as the local reference will not change when the full entity changes.
 
 An example of this would be that a motion links to the person who submitted it. In addition to the link to the full person entity, the information of e.g. the political party at the time of the submission or the role of the person is stored "locally" in the motion entity. This way, even if the person changes party and/or role later on, the motion still contains the correct information at the time of submission.
+
+### Example of Local Reference
+
+The following example shows a motion with a local reference to the submitter (person) and the actual person entity. The motion contains the correct information about the submitter at the time of submission, even if the person changes party and/or role later on.
+
+In this case, the information about the person only shows the current data (no versioning at all).
+
+This is a simplified example, in a real use case there would be more information about the motion and the person.
+
+```yaml
+motion:
+  id: tutorial:m1
+  title: "Motion 1"
+  submitter: # local reference to person, class PersonReference
+    id: tutorial:p1
+    name: "John Doe"
+    party: "Party A"
+    role: "Member of Parliament"
+```
+
+```yaml
+person:
+  id: tutorial:p1
+  name: "John Doe"
+  party: "Party B"
+  role: "Minister"
+```
