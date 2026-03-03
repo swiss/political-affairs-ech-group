@@ -100,3 +100,7 @@ Pluralization: In RDF, there won't be any pluralization in predicates (e.g. no c
 Linking-Target: The linking should always be to the URI of the object and therefore there is no need to create predicates like parentMeetingId.
 
 Linking-Direction: There is no rule whether to use linking from above to below or vice-versa or always in both direction. Sometimes, there are so many child items that a linking only from child to parent is preferred to not "bloat" the parent object.
+
+## Inheritance
+
+- It is not possible to define a parent class as range for a slot and then use a child class item as value for this slot.
