@@ -1,1 +1,3 @@
 linkml
+jupyter
+yamlmagic
