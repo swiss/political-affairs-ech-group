@@ -1,11 +1,18 @@
 ## Meeting Notes 16 March 2026
 
-- Terminvorschlag: dritten Mo, 16 Uhr --> per Mail inkl. Reminder To-do
-- Arbeit öffentlich zugänglicher machen:
-    - Terminübersicht
-    - Calls aufzeichnen
-    - Subgruppen Read.me
-- 
+### Admin:
+- Terminvorschlag: dritten Mo, 16 Uhr -> per Mail inkl. Reminder To-dos 16. Februar
+- Arbeit der Fachgruppe öffentlich zugänglicher machen:
+    - Terminübersicht auf GitHub: Christian
+    - Calls aufzeichnen und verlinken (Subgruppenleiter)
+    - pro Subgruppen-Folder: Read.me inkl. Meeting-Protokolle
+
+### Dokumente:
+- To-dos vom 16.2. nicht gemacht :( -> bis zur nächsten Sitzung
+- Sync/reuse (-> Michael)
+    - FRBR innerhalb von [Akoma Ntoso](https://docs.oasis-open.org/legaldocml/) und [ELI](https://op.europa.eu/en/web/eu-vocabularies/eli) ontology
+    - [E-Government-Schnittstelle für Dossiers und Dokumente](https://www.ech.ch/de/ech/ech-0039/3.1)
+
 
 ## Meeting Notes 16 February 2026
 - [Design Principles](https://github.com/swiss/political-affairs-ech-group/blob/main/docs/common/design_principles.md): reviewed
