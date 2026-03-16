@@ -1,3 +1,12 @@
+## Meeting Notes 16 March 2026
+
+- Terminvorschlag: dritten Mo, 16 Uhr --> per Mail inkl. Reminder To-do
+- Arbeit öffentlich zugänglicher machen:
+    - Terminübersicht
+    - Calls aufzeichnen
+    - Subgruppen Read.me
+- 
+
 ## Meeting Notes 16 February 2026
 - [Design Principles](https://github.com/swiss/political-affairs-ech-group/blob/main/docs/common/design_principles.md): reviewed
 - Beispiel durchgehen: https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/data_synopsis.yaml
@@ -139,7 +148,7 @@ Mögliche Namen der Subgruppe:
   - Versionen / Publikationsdatum
   - Kommissionsberichte und Postulatsberichte
   - Referenden und Volksinitiativen (Ablaufen und Inkrafttreten)
-  - [FRBR Model]([url](https://www.loc.gov/catdir/cpso/frbreng.pdf)): Work (z.b. Geschäft) - Expression (e.g. DE/FR/EN) - Manifestation (e.g. PDF) (- Item)
+  - [FRBR Model](https://www.loc.gov/catdir/cpso/frbreng.pdf): Work (z.b. Geschäft) - Expression (e.g. DE/FR/EN) - Manifestation (e.g. PDF) (- Item)
 
 - Chronologie / Prozesse (Activities?)
   - Räte sehr unterschiedlich (teils einfacher)
