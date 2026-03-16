@@ -4,8 +4,8 @@
 - Terminvorschlag für monatliches Meeting ab Mai: dritten Mo, **16** Uhr -> Bestätigung per Mail inkl. Reminder To-dos vom 16. Februar
 - Arbeit der Fachgruppe öffentlich zugänglicher machen:
     - Terminübersicht auf GitHub: Christian
-    - Calls aufzeichnen und verlinken (Subgruppenleiter)
-    - pro Subgruppen-Folder: Read.me inkl. Meeting-Protokolle
+    - Calls aufzeichnen und auf GitHub verlinken (Subgruppenleiter)
+    - pro Subgruppen-Folder: Read.me inkl. Meeting-Protokolle (Christian)
 
 ### Dokumente:
 - To-dos vom 16.2. nicht gemacht :( (siehe unten) -> bis zur nächsten Sitzung
