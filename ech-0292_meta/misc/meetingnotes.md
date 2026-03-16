@@ -1,14 +1,14 @@
 ## Meeting Notes 16 March 2026
 
 ### Admin:
-- Terminvorschlag: dritten Mo, 16 Uhr -> per Mail inkl. Reminder To-dos 16. Februar
+- Terminvorschlag für monatliches Meeting ab Mai: dritten Mo, **16** Uhr -> Bestätigung per Mail inkl. Reminder To-dos vom 16. Februar
 - Arbeit der Fachgruppe öffentlich zugänglicher machen:
     - Terminübersicht auf GitHub: Christian
     - Calls aufzeichnen und verlinken (Subgruppenleiter)
     - pro Subgruppen-Folder: Read.me inkl. Meeting-Protokolle
 
 ### Dokumente:
-- To-dos vom 16.2. nicht gemacht :( -> bis zur nächsten Sitzung
+- To-dos vom 16.2. nicht gemacht :( (siehe unten) -> bis zur nächsten Sitzung
 - Sync/reuse (-> Michael)
     - FRBR innerhalb von [Akoma Ntoso](https://docs.oasis-open.org/legaldocml/) und [ELI](https://op.europa.eu/en/web/eu-vocabularies/eli) ontology
     - [E-Government-Schnittstelle für Dossiers und Dokumente](https://www.ech.ch/de/ech/ech-0039/3.1)
