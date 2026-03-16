@@ -8,7 +8,7 @@
     - pro Subgruppen-Folder: Read.me inkl. Meeting-Protokolle (Christian)
 
 ### Dokumente:
-- To-dos vom 16.2. nicht gemacht :( (siehe unten) -> bis zur nächsten Sitzung
+- To-dos vom 16.2. (siehe unten) -> bis zur nächsten Sitzung!
 - Sync with/reuse ontologies (-> Michael)
     - FRBR innerhalb von [Akoma Ntoso](https://docs.oasis-open.org/legaldocml/) und [ELI](https://op.europa.eu/en/web/eu-vocabularies/eli) ontology
     - [E-Government-Schnittstelle für Dossiers und Dokumente](https://www.ech.ch/de/ech/ech-0039/3.1)
@@ -18,7 +18,7 @@
 - [Design Principles](https://github.com/swiss/political-affairs-ech-group/blob/main/docs/common/design_principles.md): reviewed
 - Beispiel durchgehen: https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/data_synopsis.yaml
   - Versionierung von Korrekturen: nicht explizit, via date_type: last_update
-- To do bis nächster Sitzung: Bei den anderen Sub-Gruppen die "definitiven" Typen (Kategorien von Dokumenten) abholen inkl. Priorisierung:
+- **To do** bis nächster Sitzung: Bei den anderen Sub-Gruppen die "definitiven" Typen (Kategorien von Dokumenten) abholen inkl. Priorisierung:
   - eCH-0293: Öffentlicher Ratsbetrieb (operations): Christian
   - eCH-0294: Politische Akteure: Personen, Gruppen und Organe (actors): Fabian
   - eCH-0295: Parlamentarische Geschäfte (affairs): Jonas
