@@ -9,7 +9,7 @@
 
 ### Dokumente:
 - To-dos vom 16.2. nicht gemacht :( (siehe unten) -> bis zur nächsten Sitzung
-- Sync/reuse (-> Michael)
+- Sync with/reuse ontologies (-> Michael)
     - FRBR innerhalb von [Akoma Ntoso](https://docs.oasis-open.org/legaldocml/) und [ELI](https://op.europa.eu/en/web/eu-vocabularies/eli) ontology
     - [E-Government-Schnittstelle für Dossiers und Dokumente](https://www.ech.ch/de/ech/ech-0039/3.1)
 
