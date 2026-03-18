@@ -6,9 +6,9 @@ This repository contains the documents and resources of the [eCH](https://ech.ch
 
 The specialist group is divided into different subgroups. Each subgroup is responsible for a specific topic. The following subgroups exist:
 
-| Subgruppe | Nächstes Meeting | Link-Call |
+| Subgroup | Next Meeting | Call URL |
 |-----------|------------------|-----------|
-| eCH-0292: [Metaprozesse zu politischen Geschäften (meta)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0292_meta) | – | – |
+| eCH-0292: [Metaprozesse zu politischen Geschäften (meta)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0292_meta) | Mo 20.04.2026, 11:00–12:00 | [Teams](https://teams.microsoft.com/l/meetup-join/19%3ameeting_Zjg1OTkxMjEtNTYwMS00NjY5LTgxYmMtZDljOTNiYzliOWM1%40thread.v2/0?context=%7b%22Tid%22%3a%22d6a1cf8c-768e-4187-a738-b6e50c4deb4a%22%2c%22Oid%22%3a%2230c0957f-74ca-4ec3-b478-c24a6b696850%22%7d) |
 | eCH-0293: [Öffentlicher Ratsbetrieb (operations)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0293_operations) | Do 26.03.2026, 15:00–16:00 | [Teams](https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZDA4YzY1N2EtMzdiZi00ODNkLWEzMzAtODU1ZDgyYTg3OTBj%40thread.v2/0?context=%7b%22Tid%22%3a%22cb96f99a-a111-42d7-9f65-e111197ba4bb%22%2c%22Oid%22%3a%2218f87456-49c9-44ee-8a1a-4744fc430bc1%22%7d) |
 | eCH-0294: [Politische Akteure: Personen, Gruppen und Organe (actors)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0294_actors) | Mi 18.03.2026, 13:00–14:00 | [Teams](https://teams.microsoft.com/meet/35681497920980?p=Ot1sZHt9STHwGBCgRr) |
 | eCH-0295: [Parlamentarische Geschäfte (affairs)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0295_affairs) | – | – |
