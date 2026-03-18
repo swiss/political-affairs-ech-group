@@ -70,6 +70,7 @@ group_id: act:sp_basel_stadt
 ## Rollen (role)
 
 Das Attribut `role` beschreibt die Funktion der Person in der Gruppe.
+Unterstützende Personen einen Gruppierung (Regierung/Rat) sind Mitglieder des Gremiums und werten über die Rolle wie (Sekretär/Sekretärin etc.)
 
 ### Typische Rollen in Parlamenten
 
