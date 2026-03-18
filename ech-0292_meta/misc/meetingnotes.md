@@ -1,4 +1,13 @@
-## Meeting Notes 16 March 2026
+# Meeting Notes 
+
+_Internal note: update the next subgroup meeting in the [README](https://github.com/swiss/political-affairs-ech-group/tree/main) after every meeting._
+
+## 20 April 2026 (11:00–12:00 on [Teams](https://teams.microsoft.com/l/meetup-join/19%3ameeting_Zjg1OTkxMjEtNTYwMS00NjY5LTgxYmMtZDljOTNiYzliOWM1%40thread.v2/0?context=%7b%22Tid%22%3a%22d6a1cf8c-768e-4187-a738-b6e50c4deb4a%22%2c%22Oid%22%3a%2230c0957f-74ca-4ec3-b478-c24a6b696850%22%7d))
+
+- 
+
+
+## 16 March 2026
 
 ### Admin:
 - Terminvorschlag für monatliches Meeting ab Mai: dritten Mo, **16** Uhr -> Bestätigung per Mail inkl. Reminder To-dos vom 16. Februar
@@ -14,7 +23,7 @@
     - [E-Government-Schnittstelle für Dossiers und Dokumente](https://www.ech.ch/de/ech/ech-0039/3.1)
 
 
-## Meeting Notes 16 February 2026
+## 16 February 2026
 - [Design Principles](https://github.com/swiss/political-affairs-ech-group/blob/main/docs/common/design_principles.md): reviewed
 - Beispiel durchgehen: https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/data_synopsis.yaml
   - Versionierung von Korrekturen: nicht explizit, via date_type: last_update
@@ -27,7 +36,7 @@
   ...und [hier](https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=1490648211#gid=1490648211) eintragen/Eintrag anpassen mit Datenmodell=1
 
 
-## Meeting Notes 19 Januar 2026
+## 19 Januar 2026
 - [Design Principles](https://github.com/swiss/political-affairs-ech-group/blob/main/docs/common/design_principles.md) (review)
   - Grundsätzlich in der Obhut von Metadata
 - Beispiele zusammen Anschauen: neu Beispiele noch ausstehend, werden auf nächsten Termin umgesetzt
@@ -36,7 +45,7 @@
   - Dokumentieren damit man bei den anderen Sub-Gruppen die Typen (Kategorien von Dokumenten) einverlangen kann.
 - Ziel: Abschluss von Work geplant für April geplant.
 
-## Meeting Notes 15 Dezember 2025
+## 15 Dezember 2025
 
 - Beispiele: https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0292_meta/input
 - 2 Bsp durchgegangen
@@ -48,7 +57,7 @@
     - weitere Beispiele aufbereiten
     - Martin: Dokumenttypen ELI und Akoma Ntoso recherchieren für Orientierung
 
-## Meeting Notes 17 November 2025
+## 17 November 2025
 
 - [Liste](https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=1490648211#gid=1490648211)
 - (konsolidieren, wo nötig)
@@ -58,7 +67,7 @@
   - Beispiel: https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/data_fedlex%3Afga_2025_3069.yaml
   - als separates yaml-file in https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0292_meta/input
 
-## Meeting Notes 20 October 2025
+## 20 October 2025
 
 - [FRBR Model](https://www.loc.gov/catdir/cpso/frbreng.pdf)
   - Dokumente referenzieren mit verschiedenen Abstraktionsniveaus
@@ -78,7 +87,7 @@
       - eCH-0297: Öffentliche Konsultationen (consultations) – Fabian Ligibel (via Martin)
     - = Produkt der Meta-Subgruppe (?)
 
-## Meeting Notes 22 September 2025
+## 22 September 2025
 
 - dependencies (cf. https://github.com/swiss/political-affairs-ech-group/blob/main/docs/resolved_dependencies_2025-09-01.md)
      - Versionisierung (bei Fehlern): später
@@ -88,7 +97,7 @@
      - to do: Florin: [Liste Vokabular](https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=0#gid=0) von Fabian Ligibel ☑️
 - regelmässige Meetings: monatlich? 11:00 - 12:00 Montag -> Florin lädt ein ☑️
 
-## Meeting Notes 16. Juli 2025
+## 16. Juli 2025
  
  -  Activity i.e. event (vs. business object/state) based model
      - vgl. [paf.link](https://paf.link) / Prov-O
@@ -111,7 +120,7 @@
 - 8. Ablaufdaten für Links, Links zur Archivierung (vgl. [Kanton Uri](https://staur-digitalplattform.ch/tonaufnahmen/))
 
 
- ## Meeting Notes 10. Juni 2025
+ ## 10. Juni 2025
 
  - Review Mini Gap Analysis (siehe oben)
  - Prozess: Anforderungen zwischen Meta-Gruppe aus Subgruppen sammeln bzw. Kommunikations-/Entscheidungsfluss
@@ -127,7 +136,7 @@ https://sh.ch/CMS/Webseite/Kanton-Schaffhausen/Beh-rde/Parlament/Der-Kantonsrat/
 SH Regierung:
 https://sh.ch/CMS/Webseite/Kanton-Schaffhausen/Beh-rde/Parlament/Der-Kantonsrat/Portal-Kantonsrat---Ratsbetrieb/Vorlagen-Regierung-15910026-DE.html (ADS 24-146)
 
-## Meeting Notes 22. April 2025
+## 22. April 2025
 
 Mögliche Namen der Subgruppe:
 
@@ -136,9 +145,6 @@ Mögliche Namen der Subgruppe:
 3. “Generische Chronologie der politischen Geschäfte”
 4. “Metainformation und Links zu politischen Geschäften”
 5. **“Metaprozesse zu politischen Geschäften”** --> gewählt
-
-
-
 
 ## Zielgruppen und Prioritäten:
 
