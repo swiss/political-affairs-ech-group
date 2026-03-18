@@ -88,7 +88,8 @@ classes:
       - id
       - person_id
       - group_id
-      - role
+      - role (enum: member (default), president, stellvertreter, other - see label)
+      - role_label (mehrsprachig)
       - valid_from
       - valid_until
       - is_active
