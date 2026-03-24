@@ -16,7 +16,7 @@ default_range: string
 
 imports:
   - linkml:types
-  - ../../ech-0292_meta/input/schema_common.yaml
+  - ../../ech-0292_meta/input/schema_common
 
 classes:
 
