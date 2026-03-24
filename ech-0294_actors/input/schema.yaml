@@ -435,7 +435,6 @@ slots:
 
   role:
     range: RoleEnum
-    default: member
     description: |
       [en] Role of the person in the membership or function.
       [de] Rolle der Person in der Mitgliedschaft oder Funktion.
