@@ -302,17 +302,31 @@ slots:
       [en] Extended display name (with title, etc.).
 
 
-  birthyear:
+  birth_year:
     range: integer
     description: |
       [en] Year of birth.
       [de] Geburtsjahr.
 
-  birthdate:
+  birth_date:
     range: date
+    slot_uri: schema:birthDate
     description: |
       [en] Exact date of birth.
       [de] Genaues Geburtsdatum.
+
+  death_year:
+    range: integer
+    description: |
+      [en] Year of death.
+      [de] Todesjahr.
+
+  death_date:
+    range: date
+    slot_uri: schema:deathDate
+    description: |
+      [en] Exact date of death.
+      [de] Genaues Todesdatum.
 
   picture:
     description: |
