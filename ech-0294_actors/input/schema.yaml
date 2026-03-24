@@ -25,8 +25,9 @@ classes:
     description: |
       [en] Root container holding all political actors, groups, and relationships.
       [de] Container mit allen politischen Akteuren, Gruppen und Beziehungen.
+    mixins:
+      - Identification
     slots:
-      - id
       - persons
       - groups
       - memberships
@@ -62,13 +63,13 @@ classes:
     description: |
       [en] A political group, organization, or body (e.g., party, committee, parliament, department).
       [de] Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommission, Parlament, Departement).
+    mixins:
+      - Identification
+      - CreatedModified
+      - Validity
     slots:
-      - id
-      - uri
       - group_type
       - type_label
-      - valid_from
-      - valid_until
       - name
       - abbreviation
       - description
@@ -79,8 +80,6 @@ classes:
       - addresses
       - url_statutes
       - party_color
-      - datetime_updated
-      - datetime_created
 
   Membership:
     description: |
@@ -101,21 +100,20 @@ classes:
     description: |
       [en] An interest link (conflict of interest, political financing) of a person to an organization.
       [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation.
+    mixins:
+      - CreatedModified
+      - Identification
+      - Validity
     slots:
-      - id
       - person_id
       - interest_type
       - organization_label
       - organization_uid
       - organization_address
       - legal_form
-      - valid_from
-      - valid_until
       - paid
       - committee
       - function_role
-      - datetime_updated
-      - datetime_created
 
   PersonReference:
     description: Reference to a person acting in a specific role or function
