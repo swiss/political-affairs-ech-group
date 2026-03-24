@@ -1,0 +1,227 @@
+id: https://ch.paf.link/schema/meta-common
+name: meta-common
+description: |
+  [de] Dieses Schema modelliert Meta-Themen für die eCH Standards 0293-0297. In einem ersten Schritt werden FRBR-Entitäten modelliert, um die Verwaltung von Dokumenten und deren Übersetzungen zu ermöglichen.
+prefixes:
+  xsd: http://www.w3.org/2001/XMLSchema#
+  prov: http://www.w3.org/ns/prov#
+  dcterm: http://purl.org/dc/terms/
+  linkml: https://w3id.org/linkml/
+  meta: https://ch.paf.link/schema/meta-common/
+imports:
+  - linkml:types
+default_prefix: meta
+default_range: string
+
+
+classes:
+
+  HasDuration:
+    description: A mixin class that adds duration slots to a class.
+    mixin: true
+    slots:
+      - valid_from
+      - valid_through
+      - is_current #optional
+
+  Identification:
+    description: A mixin class that adds identification slots to a class.
+    mixin: true
+    slots:
+      - id
+      - uri
+      - wikidata_uri
+
+  InstantaneousEvent:
+    description: A mixin class that adds slots for instantaneous events (without time duration) to a class.
+    mixin: true
+    slots:
+        - date_actual
+        - datetime_actual
+        - date_planned
+        - datetime_planned
+
+  EventWithDuration:
+    description: A mixin class that adds slots for events with time duration to a class.
+    mixin: true
+    slots:
+        - date_begin_actual
+        - datetime_begin_actual
+        - date_begin_planned
+        - datetime_begin_planned
+        - date_end_actual
+        - datetime_end_actual
+        - date_end_planned
+        - datetime_end_planned
+
+  CreatedModified:
+    description: A mixin class that adds slots for created and modified dates to a class.
+    mixin: true
+    slots:
+        - date_created
+        - datetime_created
+        - date_modified
+        - datetime_modified
+
+slots:
+  
+  valid_from:
+    slot_uri: schema:validFrom
+    range: date
+    required: true
+
+  valid_through:
+    slot_uri: schema:validThrough
+    description: |
+      [de] Das Datum, bis und mit dem die Information gültig ist.
+      [en] The date until which the information is valid, inclusive.
+    range: date
+
+  is_current:
+    slot_uri: meta:isCurrent
+    range: boolean
+
+  id:
+    slot_uri: schema:identifier
+    description: |
+      [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+      [en] Local identifier. For example, a UUID from the council information system.
+    range: string
+    required: true
+
+  uri:
+    description: |
+      [de] Eine eindeutige, global gültige URI für die Entität, z.B. eine URL oder eine andere Form von URI.
+      [en] A unique, globally valid URI for the entity, e.g. a URL or other form of URI.
+    identifier: true
+    required: true
+
+  wikidata_uri:
+    description: |
+      [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz.
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.
+    range: uri
+    slot_uri: meta:wikidataUri
+
+  # instantaneous dates
+  # -------------------
+
+  date_actual:
+    description: |
+      [en] The actual date of an instantaneous event or occurrence (without time duration).
+      [de] Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer).
+    slot_uri: date:dateActual
+    range: date
+
+  datetime_actual:
+    description: |
+      [en] The actual date and time of an instantaneous event or occurrence (without time duration).
+      [de] Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer).
+    slot_uri: date:datetimeActual
+    range: datetime
+
+  date_planned:
+    description: |
+      [en] The planned date of an instantaneous event or occurrence (without time duration).
+      [de] Das geplante Datum eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer).
+    slot_uri: date:datePlanned
+    range: date
+
+  datetime_planned:
+    description: |
+      [en] The planned date and time of an instantaneous event or occurrence (without time duration).
+      [de] Das geplante Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer).
+    slot_uri: date:datetimePlanned
+    range: datetime
+
+# time durations
+# --------------
+
+  date_begin_actual:
+    description: |
+      [en] The actual start date of an event or occurrence with time duration.
+      [de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer.
+    slot_uri: date:dateBeginActual
+    range: date
+
+  datetime_begin_actual:
+    description: |
+      [en] The actual start date and time of an event or occurrence with time duration.
+      [de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.
+    slot_uri: date:datetimeBeginActual
+    range: datetime
+
+  date_begin_planned:
+    description: |
+      [en] The planned start date of an event or occurrence with time duration.
+      [de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer.
+    slot_uri: date:dateBeginPlanned
+    range: date
+
+  datetime_begin_planned:
+    description: |
+      [en] The planned start date and time of an event or occurrence with time duration.
+      [de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.
+    slot_uri: date:datetimeBeginPlanned
+    range: datetime
+
+  date_end_actual:
+    description: |
+      [en] The actual end date of an event or occurrence with time duration.
+      [de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer.
+    slot_uri: date:dateEndActual
+    range: date
+
+  datetime_end_actual:
+    description: |
+      [en] The actual end date and time of an event or occurrence with time duration.
+      [de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.
+    slot_uri: date:datetimeEndActual
+    range: datetime
+
+  date_end_planned:
+    description: |
+      [en] The planned end date of an event or occurrence with time duration.
+      [de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer.
+    slot_uri: date:dateEndPlanned
+    range: date
+
+  datetime_end_planned:
+    description: |
+      [en] The planned end date and time of an event or occurrence with time duration.
+      [de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.
+    slot_uri: date:datetimeEndPlanned
+    range: datetime
+
+# created and modified dates
+# --------------------------
+
+  date_created:
+    description: |
+      [en] The date when an entity was created.
+      [de] Das Datum, an dem eine Entität erstellt wurde.
+    slot_uri: date:dateCreated
+    range: date
+
+  datetime_created:
+    description: |
+      [en] The date and time when an entity was created.
+      [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+    slot_uri: date:datetimeCreated
+    range: datetime
+
+  date_modified:
+    description: |
+      [en] The date when an entity was last modified.
+      [de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+    slot_uri: date:dateModified
+    range: date
+
+  datetime_modified:
+    description: |
+      [en] The date and time when an entity was last modified.
+      [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
+    slot_uri: date:datetimeModified
+    range: datetime
+
+

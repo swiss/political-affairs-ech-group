@@ -1,4 +1,4 @@
-id: https://ch.paf.link/schema/actors
+id: https://ld.ech.ch/schema/0294/actors/
 name: ActorSchema
 title: Actor Schema
 description: |
@@ -8,7 +8,7 @@ license: CC-BY
 
 prefixes:
   linkml: https://w3id.org/linkml/
-  act: https://ch.paf.link/schema/actors/
+  act: https://ld.ech.ch/schema/0294/actors/
   dcterm: http://purl.org/dc/terms/
 
 default_prefix: act
@@ -16,6 +16,7 @@ default_range: string
 
 imports:
   - linkml:types
+  - ../../ech-0292_meta/input/schema_common.yaml
 
 classes:
 
@@ -23,7 +24,7 @@ classes:
     tree_root: true
     description: |
       [en] Root container holding all political actors, groups, and relationships.
-      [de] Wurzelcontainer mit allen politischen Akteuren, Gruppen und Beziehungen.
+      [de] Container mit allen politischen Akteuren, Gruppen und Beziehungen.
     slots:
       - id
       - persons
@@ -35,17 +36,20 @@ classes:
     description: |
       [en] A person with identifiers, names, addresses, citizenships, and occupations.
       [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Berufen.
+    mixin:
+      - Identification
+      - CreatedModified
     slots:
-      - id
       - label
       - label_long
-      - birthyear
-      - birthdate
+      - birth_year
+      - birth_date
+      - death_year
+      - death_date
       - picture
       - names
       - addresses
       - languages
-      - ch_citizenship
       - citizenships
       - genders
       - occupations
@@ -53,8 +57,6 @@ classes:
       - contacts
       - electoral_district
       - interest_links_person
-      - datetime_updated
-      - datetime_created
 
   Group:
     description: |
@@ -84,18 +86,16 @@ classes:
     description: |
       [en] A membership relationship between a person and a group.
       [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe.
+    mixin:
+      - CreatedModified
+      - Identification
+      - Validity
     slots:
-      - id
       - person_id
       - group_id
-      - role (enum: member (default), president, stellvertreter, other - see label)
-      - role_label (mehrsprachig)
-      - valid_from
-      - valid_until
-      - is_active
+      - role
+      - role_label
       - authorized_to_vote
-      - datetime_updated
-      - datetime_created
 
   InterestLink:
     description: |
@@ -292,14 +292,15 @@ slots:
 
   label:
     description: |
-      [en] Display name of the person.
-      [de] Anzeigename der Person.
+      [de] Anzeigename der Person. Damit ist sichergestellt, dass in einem Feld immer ein Name steht, auch wenn die Informationen zu Vorname und Nachname fehlen oder unvollständig sind.
+      [en] Display name of the person. This ensures that there is always a name in one field, even if the information on first name and last name is missing or incomplete.
     required: true
 
   label_long:
     description: |
-      [en] Extended display name (with title, etc.).
       [de] Erweiterter Anzeigename (mit Titel, etc.).
+      [en] Extended display name (with title, etc.).
+
 
   birthyear:
     range: integer
@@ -433,6 +434,8 @@ slots:
     range: string
 
   role:
+    range: RoleEnum
+    default: member
     description: |
       [en] Role of the person in the membership or function.
       [de] Rolle der Person in der Mitgliedschaft oder Funktion.
@@ -525,10 +528,6 @@ slots:
     multivalued: true
     inlined_as_list: true
 
-  ch_citizenship:
-    range: Validity
-    slot_uri: act:chCitizenship
-
   citizenships:
     range: Citizenship
     slot_uri: act:citizenship
@@ -612,13 +611,24 @@ slots:
       [de] Sprachcode im ISO 639-1 Format.
     pattern: ^[a-z]{2}$
 
+  role_label:
+    description: |
+      [en] Descriptive label for the role when 'other' is selected in the RoleEnum.
+      [de] Beschreibende Bezeichnung für die Rolle, wenn 'other' im RoleEnum ausgewählt ist.
+
 enums:
 
   NameTypeEnum:
     description: |
       [en] Categories of name types.
-      [de] Kategorien von Namenstypen.
+      [de] Kategorien von Namenstypen gemäss https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master resp. I14Y: https://www.i14y.admin.ch/de/catalog/concepts/5fd27bff-8bd7-49d9-a4e3-c68e4f791cef/description.
     permissible_values:
+      personOfficialName:
+        description: |
+          [de] Gemäss amtlichen Katalog der Merkmale (Nr. 211) Registerharmonisierung: Name gemäss amtlichen Unterlagen. Der amtliche Name entspricht dem Namen im schweizerischen Zivilstandsregister. Bei ausländischen Personen ohne Zivilstandsereignis in der Schweiz entspricht dieser Name dem Namen im ausländischen Pass oder auf der Identitätskarte (siehe 214 sowie Weisung des SEM über die Bestimmung und Schreibweise der Namen von ausländischen Staatsangehörigen vom 1. Januar 2012. Im Ausnahmefall siehe auch "Name nach Deklaration" (z. B. Asyl), wenn keine amtlichen Dokumente vorliegen). Der amtliche Name kann aus einem oder mehreren Teilen bestehen.  
+          [en] According to the official catalogue of characters (No. 211) for the harmonisation of registers: Name according to official documents. The official name corresponds to the name appearing in the Swiss civil register. For foreign nationals with no civil status events in Switzerland, the official name corresponds to the name appearing on the foreign passport or identity card (see ‘Name according to foreign passport’ or SEM guidelines on the determination and spelling of names of foreign nationals dated 1 January 2012. If no official documents exist, see also ‘Name according to declaration’ (e.g. in the case of asylum seekers). The official name may consist of one or more parts.
+      
+      
       familyNameOnForeignPassport:
         description: |
           [en] Family name on foreign passport.
@@ -709,6 +719,28 @@ enums:
         description: |
           [en] Twitter profile.
           [de] Twitter-Profil.
+
+  RoleEnum:
+    description: |
+      [en] Roles a person can have within a membership.
+      [de] Rollen, die eine Person im Rahmen einer Mitgliedschaft haben kann.
+    permissible_values:
+      member:
+        description: |
+          [en] Regular member (default).
+          [de] Gewöhnliches Mitglied (Standard).
+      president:
+        description: |
+          [en] President or chair of the group.
+          [de] Präsident oder Vorsitzender der Gruppe.
+      stellvertreter:
+        description: |
+          [en] Deputy/vice role (stellvertreter).
+          [de] Stellvertreter / Vize.
+      other:
+        description: |
+          [en] Other role; use role_label for a descriptive label.
+          [de] Andere Rolle; für eine beschreibende Bezeichnung role_label verwenden.
 
   GroupTypeEnum:
     description: |
