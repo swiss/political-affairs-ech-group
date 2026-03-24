@@ -36,7 +36,7 @@ classes:
     description: |
       [en] A person with identifiers, names, addresses, citizenships, and occupations.
       [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Berufen.
-    mixin:
+    mixins:
       - Identification
       - CreatedModified
     slots:
@@ -86,7 +86,7 @@ classes:
     description: |
       [en] A membership relationship between a person and a group.
       [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe.
-    mixin:
+    mixins:
       - CreatedModified
       - Identification
       - Validity
