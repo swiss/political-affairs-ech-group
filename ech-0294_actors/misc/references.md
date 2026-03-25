@@ -92,3 +92,4 @@
 - [The debates of the European Parliament as Linked Open Data](https://journals.sagepub.com/doi/full/10.3233/SW-160227)
 - [FI: ParliamentSampo Metadata Schema](https://www.ldf.fi/service/pylode?url=http://ldf.fi/schema/semparl/#)
 - [IT: Ontology of the Chamber of Deputies](https://dati.camera.it/en/ontology-chamber-deputies)
+- [EveryPolitician: global database of political office-holders, from rulers, law-makers to judges and more](https://everypolitician.org/)
