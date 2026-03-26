@@ -295,6 +295,8 @@ speech: # Synonym Votum oder speaker_segment (Teil eines AgendaItem)
 
 # "data" : [ {
 
+MeetingMinutes
+
 slots:
 
   id:
