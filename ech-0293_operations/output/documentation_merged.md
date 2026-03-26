@@ -168,7 +168,6 @@ URI: [ops:Legislature](https://ch.paf.link/schema/operations/Legislature)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -200,8 +199,12 @@ URI: [ops:Legislature](https://ch.paf.link/schema/operations/Legislature)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -579,7 +582,6 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -611,8 +613,12 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -1094,7 +1100,6 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -1144,8 +1149,12 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -1856,7 +1865,6 @@ URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -1886,8 +1894,12 @@ URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -2161,7 +2173,6 @@ URI: [ops:IndividualAttendance](https://ch.paf.link/schema/operations/Individual
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -2189,8 +2200,12 @@ URI: [ops:IndividualAttendance](https://ch.paf.link/schema/operations/Individual
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -2631,7 +2646,6 @@ URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -2674,8 +2688,12 @@ URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -3292,7 +3310,6 @@ URI: [ops:Resolution](https://ch.paf.link/schema/operations/Resolution)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -3318,8 +3335,12 @@ URI: [ops:Resolution](https://ch.paf.link/schema/operations/Resolution)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -3513,7 +3534,6 @@ URI: [ops:Motion](https://ch.paf.link/schema/operations/Motion)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -3531,8 +3551,12 @@ URI: [ops:Motion](https://ch.paf.link/schema/operations/Motion)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -3965,7 +3989,6 @@ URI: [ops:Voting](https://ch.paf.link/schema/operations/Voting)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -4016,8 +4039,12 @@ URI: [ops:Voting](https://ch.paf.link/schema/operations/Voting)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -4777,7 +4804,6 @@ URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -4808,8 +4834,12 @@ URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -5349,7 +5379,6 @@ URI: [ops:Election](https://ch.paf.link/schema/operations/Election)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -5389,8 +5418,12 @@ URI: [ops:Election](https://ch.paf.link/schema/operations/Election)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -5988,7 +6021,6 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -6027,8 +6059,12 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -6477,7 +6513,6 @@ URI: [ops:TextSegment](https://ch.paf.link/schema/operations/TextSegment)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -6494,8 +6529,12 @@ URI: [ops:TextSegment](https://ch.paf.link/schema/operations/TextSegment)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -6654,7 +6693,6 @@ URI: [ops:Media](https://ch.paf.link/schema/operations/Media)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -6675,8 +6713,12 @@ URI: [ops:Media](https://ch.paf.link/schema/operations/Media)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -6866,7 +6908,6 @@ URI: [ops:MultilingualString](https://ch.paf.link/schema/operations/Multilingual
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -6898,8 +6939,12 @@ URI: [ops:MultilingualString](https://ch.paf.link/schema/operations/Multilingual
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -7135,6 +7180,12 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
 
 <!-- no inheritance hierarchy -->
 
+## Class Properties
+
+| Property | Value |
+| --- | --- |
+| Tree Root | Yes |
+
 
 ## Slots
 
@@ -7162,8 +7213,12 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

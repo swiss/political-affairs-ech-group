@@ -61,7 +61,6 @@ URI: [ops:IndividualAttendance](https://ch.paf.link/schema/operations/Individual
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -89,8 +88,12 @@ URI: [ops:IndividualAttendance](https://ch.paf.link/schema/operations/Individual
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

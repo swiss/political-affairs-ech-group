@@ -36,13 +36,29 @@ Alias: parent_voting
 
 ## Properties
 
-* Range: [Voting](Voting.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Voting](Voting.md) |
+| Domain Of | [IndividualVote](IndividualVote.md), [IndividualAttendance](IndividualAttendance.md) |
+| Slot URI | [ops:parentVoting](https://ch.paf.link/schema/operations/parentVoting) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

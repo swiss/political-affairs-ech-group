@@ -107,7 +107,6 @@ URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -150,8 +149,12 @@ URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

@@ -31,15 +31,30 @@ Alias: votings
 
 ## Properties
 
-* Range: [Voting](Voting.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [Voting](Voting.md) |
+| Domain Of | [Container](Container.md) |
+| Slot URI | [ops:voting](https://ch.paf.link/schema/operations/voting) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

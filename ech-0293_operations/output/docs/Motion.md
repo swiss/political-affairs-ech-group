@@ -37,7 +37,6 @@ URI: [ops:Motion](https://ch.paf.link/schema/operations/Motion)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -55,8 +54,12 @@ URI: [ops:Motion](https://ch.paf.link/schema/operations/Motion)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

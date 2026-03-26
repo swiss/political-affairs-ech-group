@@ -17,9 +17,9 @@ Alias: url
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |  no  |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
-| [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |  no  |
 
 
 
@@ -28,15 +28,29 @@ Alias: url
 
 ## Properties
 
-* Range: [MultilingualString](MultilingualString.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [MultilingualString](MultilingualString.md) |
+| Domain Of | [Session](Session.md), [Meeting](Meeting.md), [Media](Media.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

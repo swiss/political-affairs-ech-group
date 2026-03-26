@@ -31,15 +31,30 @@ Alias: attendances
 
 ## Properties
 
-* Range: [Attendance](Attendance.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [Attendance](Attendance.md) |
+| Domain Of | [Container](Container.md) |
+| Slot URI | [ops:attendance](https://ch.paf.link/schema/operations/attendance) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

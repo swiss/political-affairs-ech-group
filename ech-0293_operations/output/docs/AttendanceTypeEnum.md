@@ -14,7 +14,6 @@ __
 URI: [ops:attendance_type_enum](https://ch.paf.link/schema/operations/attendance_type_enum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | remote | ops:enum/attendance_type/remote | [en] Remote participation |
@@ -34,8 +33,12 @@ URI: [ops:attendance_type_enum](https://ch.paf.link/schema/operations/attendance
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

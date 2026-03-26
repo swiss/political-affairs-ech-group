@@ -17,8 +17,8 @@ Alias: name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
+| [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
 
 
@@ -28,15 +28,29 @@ Alias: name
 
 ## Properties
 
-* Range: [MultilingualString](MultilingualString.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [MultilingualString](MultilingualString.md) |
+| Domain Of | [Legislature](Legislature.md), [Session](Session.md), [Meeting](Meeting.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

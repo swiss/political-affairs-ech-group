@@ -35,13 +35,28 @@ Alias: datetime_begin_actual
 
 ## Properties
 
-* Range: [Datetime](Datetime.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Datetime](Datetime.md) |
+| Domain Of | [AgendaItem](AgendaItem.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

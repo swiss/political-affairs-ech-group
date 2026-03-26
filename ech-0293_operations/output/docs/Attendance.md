@@ -47,7 +47,6 @@ URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -77,8 +76,12 @@ URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

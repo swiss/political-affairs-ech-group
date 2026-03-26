@@ -10,7 +10,6 @@ _State of the meeting_
 URI: [ops:state_enum](https://ch.paf.link/schema/operations/state_enum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | planned | ops:enum/state/planned |  |
@@ -30,8 +29,12 @@ URI: [ops:state_enum](https://ch.paf.link/schema/operations/state_enum)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

@@ -52,7 +52,6 @@ URI: [ops:Media](https://ch.paf.link/schema/operations/Media)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -73,8 +72,12 @@ URI: [ops:Media](https://ch.paf.link/schema/operations/Media)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

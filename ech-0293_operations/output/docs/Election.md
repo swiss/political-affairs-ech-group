@@ -85,7 +85,6 @@ URI: [ops:Election](https://ch.paf.link/schema/operations/Election)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -125,8 +124,12 @@ URI: [ops:Election](https://ch.paf.link/schema/operations/Election)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

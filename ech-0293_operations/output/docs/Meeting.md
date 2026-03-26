@@ -121,7 +121,6 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -171,8 +170,12 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

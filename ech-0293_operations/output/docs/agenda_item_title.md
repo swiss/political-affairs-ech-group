@@ -35,15 +35,29 @@ Alias: agenda_item_title
 
 ## Properties
 
-* Range: [MultilingualString](MultilingualString.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [MultilingualString](MultilingualString.md) |
+| Domain Of | [AgendaItem](AgendaItem.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

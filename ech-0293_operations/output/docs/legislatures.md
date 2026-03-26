@@ -26,15 +26,30 @@ Alias: legislatures
 
 ## Properties
 
-* Range: [Legislature](Legislature.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [Legislature](Legislature.md) |
+| Domain Of | [Container](Container.md) |
+| Slot URI | [ops:legislature](https://ch.paf.link/schema/operations/legislature) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

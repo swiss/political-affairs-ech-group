@@ -31,15 +31,30 @@ Alias: individual_attendances
 
 ## Properties
 
-* Range: [IndividualAttendance](IndividualAttendance.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [IndividualAttendance](IndividualAttendance.md) |
+| Domain Of | [Container](Container.md) |
+| Slot URI | [ops:individualAttendance](https://ch.paf.link/schema/operations/individualAttendance) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

@@ -35,7 +35,6 @@ URI: [ops:TextSegment](https://ch.paf.link/schema/operations/TextSegment)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -52,8 +51,12 @@ URI: [ops:TextSegment](https://ch.paf.link/schema/operations/TextSegment)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

@@ -145,6 +145,12 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
 
 <!-- no inheritance hierarchy -->
 
+## Class Properties
+
+| Property | Value |
+| --- | --- |
+| Tree Root | Yes |
+
 
 ## Slots
 
@@ -172,8 +178,12 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

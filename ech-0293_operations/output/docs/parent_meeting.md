@@ -26,10 +26,10 @@ Alias: parent_meeting
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
+| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
 
 
 
@@ -38,13 +38,28 @@ Alias: parent_meeting
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Voting](Voting.md), [Election](Election.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

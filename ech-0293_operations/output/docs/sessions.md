@@ -26,15 +26,30 @@ Alias: sessions
 
 ## Properties
 
-* Range: [Session](Session.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [Session](Session.md) |
+| Domain Of | [Container](Container.md) |
+| Slot URI | [ops:session](https://ch.paf.link/schema/operations/session) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

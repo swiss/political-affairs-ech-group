@@ -31,13 +31,28 @@ Alias: election_type
 
 ## Properties
 
-* Range: [ElectionTypeEnum](ElectionTypeEnum.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [ElectionTypeEnum](ElectionTypeEnum.md) |
+| Domain Of | [Election](Election.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

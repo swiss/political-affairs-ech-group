@@ -35,7 +35,6 @@ URI: [ops:TotalOther](https://ch.paf.link/schema/operations/TotalOther)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -59,8 +58,12 @@ URI: [ops:TotalOther](https://ch.paf.link/schema/operations/TotalOther)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

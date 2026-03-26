@@ -14,7 +14,6 @@ __
 URI: [ops:voting_type_enum](https://ch.paf.link/schema/operations/voting_type_enum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | preliminary_vote | ops:enum/voting_type/preliminary_vote | [en] Preliminary vote (Zwischenabstimmung) |
@@ -36,8 +35,12 @@ URI: [ops:voting_type_enum](https://ch.paf.link/schema/operations/voting_type_en
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

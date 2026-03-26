@@ -35,15 +35,29 @@ Alias: total_other
 
 ## Properties
 
-* Range: [TotalOther](TotalOther.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [TotalOther](TotalOther.md) |
+| Domain Of | [Voting](Voting.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

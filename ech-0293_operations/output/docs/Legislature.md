@@ -60,7 +60,6 @@ URI: [ops:Legislature](https://ch.paf.link/schema/operations/Legislature)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -92,8 +91,12 @@ URI: [ops:Legislature](https://ch.paf.link/schema/operations/Legislature)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

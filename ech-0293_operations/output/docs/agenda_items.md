@@ -27,15 +27,30 @@ Alias: agenda_items
 
 ## Properties
 
-* Range: [AgendaItem](AgendaItem.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [AgendaItem](AgendaItem.md) |
+| Domain Of | [Container](Container.md), [JointDebate](JointDebate.md) |
+| Slot URI | [ops:agendaItem](https://ch.paf.link/schema/operations/agendaItem) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

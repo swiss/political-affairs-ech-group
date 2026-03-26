@@ -26,13 +26,28 @@ Alias: state
 
 ## Properties
 
-* Range: [StateEnum](StateEnum.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [StateEnum](StateEnum.md) |
+| Domain Of | [Meeting](Meeting.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

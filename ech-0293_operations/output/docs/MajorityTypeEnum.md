@@ -10,7 +10,6 @@ _Type of majority required for the vote_
 URI: [ops:majority_type_enum](https://ch.paf.link/schema/operations/majority_type_enum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | absolute | ops:enum/majority_type/absolute |  |
@@ -30,8 +29,12 @@ URI: [ops:majority_type_enum](https://ch.paf.link/schema/operations/majority_typ
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

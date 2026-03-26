@@ -65,7 +65,6 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -104,8 +103,12 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

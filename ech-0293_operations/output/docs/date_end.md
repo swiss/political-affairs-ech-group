@@ -26,13 +26,28 @@ Alias: date_end
 
 ## Properties
 
-* Range: [Date](Date.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Date](Date.md) |
+| Domain Of | [Legislature](Legislature.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

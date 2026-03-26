@@ -31,15 +31,30 @@ Alias: speeches
 
 ## Properties
 
-* Range: [Speech](Speech.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [Speech](Speech.md) |
+| Domain Of | [Container](Container.md) |
+| Slot URI | [ops:speech](https://ch.paf.link/schema/operations/speech) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

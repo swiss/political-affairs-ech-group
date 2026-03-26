@@ -17,9 +17,9 @@ Alias: title
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |  no  |
 | [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |  no  |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
-| [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |  no  |
 
 
 
@@ -28,13 +28,28 @@ Alias: title
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [Election](Election.md), [Motion](Motion.md), [Media](Media.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

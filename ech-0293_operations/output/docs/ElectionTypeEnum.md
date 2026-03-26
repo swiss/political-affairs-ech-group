@@ -14,7 +14,6 @@ __
 URI: [ops:election_type_enum](https://ch.paf.link/schema/operations/election_type_enum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | secret | ops:enum/election_type/secret | [en] Secret election (Geheime Wahl) |
@@ -34,8 +33,12 @@ URI: [ops:election_type_enum](https://ch.paf.link/schema/operations/election_typ
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

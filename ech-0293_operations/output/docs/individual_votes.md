@@ -31,15 +31,30 @@ Alias: individual_votes
 
 ## Properties
 
-* Range: [IndividualVote](IndividualVote.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [IndividualVote](IndividualVote.md) |
+| Domain Of | [Container](Container.md) |
+| Slot URI | [ops:individualVote](https://ch.paf.link/schema/operations/individualVote) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

@@ -27,15 +27,30 @@ Alias: meetings
 
 ## Properties
 
-* Range: [Meeting](Meeting.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [Meeting](Meeting.md) |
+| Domain Of | [Container](Container.md), [Session](Session.md) |
+| Slot URI | [ops:meeting](https://ch.paf.link/schema/operations/meeting) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

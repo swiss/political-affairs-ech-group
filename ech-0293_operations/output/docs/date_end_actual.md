@@ -35,13 +35,28 @@ Alias: date_end_actual
 
 ## Properties
 
-* Range: [Date](Date.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Date](Date.md) |
+| Domain Of | [Meeting](Meeting.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

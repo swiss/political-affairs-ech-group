@@ -31,13 +31,28 @@ Alias: attendance_type
 
 ## Properties
 
-* Range: [AttendanceTypeEnum](AttendanceTypeEnum.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [AttendanceTypeEnum](AttendanceTypeEnum.md) |
+| Domain Of | [IndividualAttendance](IndividualAttendance.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

@@ -67,7 +67,6 @@ URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -98,8 +97,12 @@ URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

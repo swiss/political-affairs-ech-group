@@ -31,13 +31,29 @@ Alias: meeting_type
 
 ## Properties
 
-* Range: [MeetingTypeEnum](MeetingTypeEnum.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [MeetingTypeEnum](MeetingTypeEnum.md) |
+| Domain Of | [Meeting](Meeting.md) |
+| Slot URI | [ops:meetingType](https://ch.paf.link/schema/operations/meetingType) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

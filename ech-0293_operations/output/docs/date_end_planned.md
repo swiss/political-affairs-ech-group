@@ -36,13 +36,28 @@ Alias: date_end_planned
 
 ## Properties
 
-* Range: [Date](Date.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Date](Date.md) |
+| Domain Of | [Session](Session.md), [Meeting](Meeting.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

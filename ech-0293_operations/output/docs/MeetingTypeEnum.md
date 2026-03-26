@@ -10,7 +10,6 @@ _Type of the meeting_
 URI: [ops:meeting_type_enum](https://ch.paf.link/schema/operations/meeting_type_enum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | session | ops:enum/meeting_type/session |  |
@@ -31,8 +30,12 @@ URI: [ops:meeting_type_enum](https://ch.paf.link/schema/operations/meeting_type_
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

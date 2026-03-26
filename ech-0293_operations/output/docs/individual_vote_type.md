@@ -35,13 +35,28 @@ Alias: individual_vote_type
 
 ## Properties
 
-* Range: [IndividualVoteTypeEnum](IndividualVoteTypeEnum.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [IndividualVoteTypeEnum](IndividualVoteTypeEnum.md) |
+| Domain Of | [IndividualVote](IndividualVote.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

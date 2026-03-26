@@ -35,13 +35,28 @@ Alias: has_resolution
 
 ## Properties
 
-* Range: [Resolution](Resolution.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Resolution](Resolution.md) |
+| Domain Of | [AgendaItem](AgendaItem.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

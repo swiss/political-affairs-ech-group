@@ -14,7 +14,6 @@ __
 URI: [ops:individual_vote_type_enum](https://ch.paf.link/schema/operations/individual_vote_type_enum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | yes | ops:enum/individual_vote_type/yes | [en] Yes vote |
@@ -39,8 +38,12 @@ URI: [ops:individual_vote_type_enum](https://ch.paf.link/schema/operations/indiv
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

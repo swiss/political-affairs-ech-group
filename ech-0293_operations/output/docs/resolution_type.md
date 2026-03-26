@@ -35,13 +35,28 @@ Alias: resolution_type
 
 ## Properties
 
-* Range: [ResolutionTypeEnum](ResolutionTypeEnum.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [ResolutionTypeEnum](ResolutionTypeEnum.md) |
+| Domain Of | [Resolution](Resolution.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

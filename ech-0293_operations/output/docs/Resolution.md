@@ -46,7 +46,6 @@ URI: [ops:Resolution](https://ch.paf.link/schema/operations/Resolution)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -72,8 +71,12 @@ URI: [ops:Resolution](https://ch.paf.link/schema/operations/Resolution)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

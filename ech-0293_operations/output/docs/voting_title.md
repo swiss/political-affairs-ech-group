@@ -35,15 +35,29 @@ Alias: voting_title
 
 ## Properties
 
-* Range: [MultilingualString](MultilingualString.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [MultilingualString](MultilingualString.md) |
+| Domain Of | [Voting](Voting.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

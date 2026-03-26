@@ -36,13 +36,28 @@ Alias: majority_type
 
 ## Properties
 
-* Range: [MajorityTypeEnum](MajorityTypeEnum.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [MajorityTypeEnum](MajorityTypeEnum.md) |
+| Domain Of | [Voting](Voting.md), [Election](Election.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

@@ -27,9 +27,9 @@ Alias: type_label
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [IndividualVote](IndividualVote.md) | [en] An individual vote cast by a member during a voting procedure |  no  |
-| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 | [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 | [Resolution](Resolution.md) | [en] A resolutionor decision taken on an agenda item, including voting proced... |  no  |
+| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 
 
 
@@ -38,13 +38,28 @@ Alias: type_label
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [Resolution](Resolution.md), [Voting](Voting.md), [IndividualVote](IndividualVote.md), [Election](Election.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

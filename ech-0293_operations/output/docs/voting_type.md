@@ -35,13 +35,28 @@ Alias: voting_type
 
 ## Properties
 
-* Range: [VotingTypeEnum](VotingTypeEnum.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [VotingTypeEnum](VotingTypeEnum.md) |
+| Domain Of | [Voting](Voting.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

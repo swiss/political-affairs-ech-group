@@ -78,7 +78,6 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -110,8 +109,12 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

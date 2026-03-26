@@ -14,7 +14,6 @@ __
 URI: [ops:resolution_type_enum](https://ch.paf.link/schema/operations/resolution_type_enum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | accepted | ops:enum/resolution_type/accepted | [en] Accepted (Annahme) |
@@ -39,8 +38,12 @@ URI: [ops:resolution_type_enum](https://ch.paf.link/schema/operations/resolution
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

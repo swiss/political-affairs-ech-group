@@ -35,13 +35,28 @@ Alias: agenda_item_type
 
 ## Properties
 
-* Range: [AgendaItemTypeEnum](AgendaItemTypeEnum.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [AgendaItemTypeEnum](AgendaItemTypeEnum.md) |
+| Domain Of | [AgendaItem](AgendaItem.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

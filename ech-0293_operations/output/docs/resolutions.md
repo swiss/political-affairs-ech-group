@@ -31,15 +31,30 @@ Alias: resolutions
 
 ## Properties
 
-* Range: [Resolution](Resolution.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [Resolution](Resolution.md) |
+| Domain Of | [Container](Container.md) |
+| Slot URI | [ops:resolution](https://ch.paf.link/schema/operations/resolution) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

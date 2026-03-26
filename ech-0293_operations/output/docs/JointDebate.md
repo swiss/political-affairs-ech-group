@@ -42,7 +42,6 @@ URI: [ops:JointDebate](https://ch.paf.link/schema/operations/JointDebate)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -58,8 +57,12 @@ URI: [ops:JointDebate](https://ch.paf.link/schema/operations/JointDebate)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

@@ -14,7 +14,6 @@ __
 URI: [ops:agenda_item_type_enum](https://ch.paf.link/schema/operations/agenda_item_type_enum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | item | ops:enum/agenda_item_type/item | [en] Individual agenda item (Traktandum) |
@@ -33,8 +32,12 @@ URI: [ops:agenda_item_type_enum](https://ch.paf.link/schema/operations/agenda_it
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

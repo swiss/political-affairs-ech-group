@@ -121,7 +121,6 @@ URI: [ops:Voting](https://ch.paf.link/schema/operations/Voting)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -172,8 +171,12 @@ URI: [ops:Voting](https://ch.paf.link/schema/operations/Voting)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

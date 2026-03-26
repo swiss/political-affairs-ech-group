@@ -26,13 +26,27 @@ Alias: end_date_actual
 
 ## Properties
 
-* Range: [Date](Date.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Date](Date.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 
