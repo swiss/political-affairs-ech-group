@@ -184,6 +184,7 @@ attributes:
     owner: Name
     domain_of:
     - Name
+    - Training
     - Contact
     - MultilingualValue
     range: string

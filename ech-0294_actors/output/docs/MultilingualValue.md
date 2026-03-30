@@ -140,6 +140,7 @@ attributes:
     owner: MultilingualValue
     domain_of:
     - Name
+    - Training
     - Contact
     - MultilingualValue
     range: string

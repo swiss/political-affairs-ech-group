@@ -26,8 +26,8 @@ Alias: addresses
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 | [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
+| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 
 
 

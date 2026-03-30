@@ -26,12 +26,11 @@ Alias: label
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RoleType](RoleType.md) | [de] Rolle einer Person in einer Mitgliedschaft oder Funktion (z |  no  |
-| [Training](Training.md) | [de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z |  no  |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
-| [GroupType](GroupType.md) | [de] Art der Gruppe (z |  no  |
 | [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
 | [Occupation](Occupation.md) | [de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19... |  no  |
+| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [GroupType](GroupType.md) | [de] Art der Gruppe (z |  no  |
+| [RoleType](RoleType.md) | [de] Rolle einer Person in einer Mitgliedschaft oder Funktion (z |  no  |
 
 
 
@@ -45,7 +44,7 @@ Alias: label
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [Person](Person.md), [Group](Group.md), [Occupation](Occupation.md), [Training](Training.md), [GroupType](GroupType.md), [RoleType](RoleType.md) |
+| Domain Of | [Person](Person.md), [Group](Group.md), [Occupation](Occupation.md), [GroupType](GroupType.md), [RoleType](RoleType.md) |
 | Slot URI | [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label) |
 
 ### Cardinality and Requirements
@@ -106,7 +105,6 @@ domain_of:
 - Person
 - Group
 - Occupation
-- Training
 - GroupType
 - RoleType
 range: string

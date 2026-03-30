@@ -168,6 +168,7 @@ attributes:
     owner: Contact
     domain_of:
     - Name
+    - Training
     - Contact
     - MultilingualValue
     range: string

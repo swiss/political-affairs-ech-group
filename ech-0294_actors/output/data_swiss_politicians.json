@@ -58,7 +58,7 @@
       "trainings": [
         {
           "training_type": "uni",
-          "label": "dipl. nat. ETH"
+          "value": "dipl. nat. ETH"
         }
       ],
       "contacts": [

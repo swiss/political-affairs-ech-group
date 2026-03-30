@@ -63,7 +63,7 @@
       "trainings": [
         {
           "training_type": "schulabschluss",
-          "label": "High School Diploma"
+          "value": "High School Diploma"
         }
       ],
       "contacts": [

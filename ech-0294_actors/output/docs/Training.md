@@ -28,8 +28,6 @@ URI: [act:Training](https://ld.ech.ch/schema/0294/actors/Training)
       
       Training : is_active
         
-      Training : label
-        
       Training : training_code
         
       Training : training_type
@@ -46,6 +44,8 @@ URI: [act:Training](https://ld.ech.ch/schema/0294/actors/Training)
       Training : valid_from
         
       Training : valid_through
+        
+      Training : value
         
       
 ```
@@ -64,7 +64,7 @@ URI: [act:Training](https://ld.ech.ch/schema/0294/actors/Training)
 | ---  | --- | --- | --- |
 | [training_type](training_type.md) | 0..1 <br/> [TrainingTypeEnum](TrainingTypeEnum.md) | [de] Typ der Ausbildung oder Bildung | direct |
 | [training_code](training_code.md) | 0..1 <br/> [String](String.md) | [de] ISCO-19 Code der Ausbildung oder Bildung | direct |
-| [label](label.md) | 0..1 <br/> [String](String.md) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben ... | direct |
+| [value](value.md) | 0..1 <br/> [String](String.md) | [de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ... | direct |
 | [valid_from](valid_from.md) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity](HasTemporalValidity.md) |
 | [valid_through](valid_through.md) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity](HasTemporalValidity.md) |
 | [is_active](is_active.md) | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity](HasTemporalValidity.md) |
@@ -139,7 +139,7 @@ mixins:
 slots:
 - training_type
 - training_code
-- label
+- value
 
 ```
 </details>
@@ -191,27 +191,25 @@ attributes:
     domain_of:
     - Training
     range: string
-  label:
-    name: label
-    description: '[de] Möglichkeit bei einer strukturierten Information, ein Label
-      zu vergeben (bspw. Anzeigename, Anstellung, etc.).
+  value:
+    name: value
+    description: '[de] Der eigentliche Wert einer Information neben weiteren attributen
+      wie Typ, Sprache, etc.
 
-      [en] Option to assign a label to a structured piece of information (e.g., display
-      name, position, etc.).
+      [en] The value of an information besides other attributes such as type, language,
+      etc.
 
       '
     from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    slot_uri: mcm:label
-    alias: label
+    slot_uri: mcm:value
+    alias: value
     owner: Training
     domain_of:
-    - Person
-    - Group
-    - Occupation
+    - Name
     - Training
-    - GroupType
-    - RoleType
+    - Contact
+    - MultilingualValue
     range: string
   valid_from:
     name: valid_from

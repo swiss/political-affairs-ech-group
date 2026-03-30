@@ -51,7 +51,7 @@ act:douglas_adams_example a act:Container ;
             act:isPaid true ] ;
     act:picture "https://commons.wikimedia.org/wiki/File:Douglas_adams_portrait.jpg" ;
     act:training [ a act:Training ;
-            mcm:label "High School Diploma" ;
+            mcm:value "High School Diploma" ;
             act:trainingType "schulabschluss" ] .
 
 

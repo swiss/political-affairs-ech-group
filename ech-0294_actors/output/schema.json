@@ -1205,13 +1205,6 @@
                         "null"
                     ]
                 },
-                "label": {
-                    "description": "[de] M\u00f6glichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).\n[en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "training_code": {
                     "description": "[de] ISCO-19 Code der Ausbildung oder Bildung.\n[en] ISCO-19 code of the training or education.\n",
                     "type": [
@@ -1234,6 +1227,13 @@
                 "valid_through": {
                     "description": "[de] Das Datum, bis und mit dem die Information g\u00fcltig ist.\n[en] The date until which the information is valid, inclusive.\n",
                     "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "value": {
+                    "description": "[de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc.\n[en] The value of an information besides other attributes such as type, language, etc.\n",
                     "type": [
                         "string",
                         "null"

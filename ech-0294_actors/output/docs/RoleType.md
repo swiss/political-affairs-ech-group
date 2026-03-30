@@ -167,7 +167,6 @@ attributes:
     - Person
     - Group
     - Occupation
-    - Training
     - GroupType
     - RoleType
     range: string
