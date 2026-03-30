@@ -1,10 +1,10 @@
-id: act:douglas_adams_example
+global_uri: act:douglas_adams_example
 persons:
-  - id: https://www.wikidata.org/wiki/Q42
+  - global_uri: https://www.wikidata.org/wiki/Q42
     label: Douglas Adams
     label_long: Douglas Noël Adams
-    birthyear: 1952
-    birthdate: 1952-03-11
+    birth_year: 1952
+    birth_date: 1952-03-11
     picture: https://commons.wikimedia.org/wiki/File:Douglas_adams_portrait.jpg
     names:
       - name_type: callName
@@ -14,39 +14,36 @@ persons:
         valid_from: 1952-03-11
     addresses:
       - address_type: privateAddress
-        address_URI: https://www.wikidata.org/wiki/Q42#P969
+        address_uri: https://www.wikidata.org/wiki/Q42#P969
         street_address: 1234 Fictional St, London, UK
         postal_code: 12345
         postal_locality: London
-    languages:
+    language_proficiencies:
       - language: en
-        correspondence: true
-        native: true
-    ch_citizenship:
-      valid_from: 2020-01-01
-      valid_until: 2025-01-01
+        is_correspondence: true
+        is_native: true
     citizenships:
       - country: GB
         valid_from: 1952-03-11
     genders:
-      - value: male
+      - gender_code: male
         valid_from: 1952-03-11
         pronouns:
           - he
           - him
     occupations:
-      - value: writer
+      - label: writer
         valid_from: 1979-01-01
-        valid_until: 2001-05-11
-        active: false
-        paid: true
+        valid_through: 2001-05-11
+        is_active: false
+        is_paid: true
     trainings:
-      - type: schulabschluss
-        value: High School Diploma
+      - training_type: schulabschluss
+        label: High School Diploma
     contacts:
-      - type: email
+      - contact_type: email
         value: douglas.adams@adams-familiy.org
     electoral_district:
       district: London Central
       valid_from: 2020-01-01
-      valid_until: 2025-01-01
+      valid_through: 2025-01-01
