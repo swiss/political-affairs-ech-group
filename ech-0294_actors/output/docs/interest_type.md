@@ -3,9 +3,9 @@
 # Slot: interest_type 
 
 
-_[en] Type of interest link (professional activity, political office, association)._
-
 _[de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein)._
+
+_[en] Type of interest link (professional activity, political office, association)._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:interestType](https://ch.paf.link/schema/actors/interestType)
+URI: [act:interestType](https://ld.ech.ch/schema/0294/actors/interestType)
 Alias: interest_type
 
 <!-- no inheritance hierarchy -->
@@ -26,7 +26,7 @@ Alias: interest_type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [InterestLink](InterestLink.md) | [en] An interest link (conflict of interest, political financing) of a person... |  no  |
+| [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
 
 
 
@@ -35,9 +35,25 @@ Alias: interest_type
 
 ## Properties
 
-* Range: [InterestTypeEnum](InterestTypeEnum.md)
+### Type and Range
 
-* Required: True
+| Property | Value |
+| --- | --- |
+| Range | [InterestTypeEnum](InterestTypeEnum.md) |
+| Domain Of | [InterestLink](InterestLink.md) |
+| Slot URI | [act:interestType](https://ld.ech.ch/schema/0294/actors/interestType) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Required | Yes |
+
+
+
+
+
+
 
 
 
@@ -48,11 +64,10 @@ Alias: interest_type
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -72,13 +87,13 @@ Alias: interest_type
 <details>
 ```yaml
 name: interest_type
-description: '[en] Type of interest link (professional activity, political office,
-  association).
+description: '[de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter,
+  Verein).
 
-  [de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).
+  [en] Type of interest link (professional activity, political office, association).
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:interestType
 alias: interest_type

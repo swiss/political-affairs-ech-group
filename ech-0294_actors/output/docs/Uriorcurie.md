@@ -9,15 +9,22 @@ _a URI or a CURIE_
 
 URI: [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
 
-* [base](https://w3id.org/linkml/base): URIorCURIE
+## Type Properties
 
-* [uri](https://w3id.org/linkml/uri): xsd:anyURI
+| Property | Value |
+| --- | --- |
+| Base | `URIorCURIE` |
+| Type URI | [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) |
+| Representation | `str` |
 
-* [repr](https://w3id.org/linkml/repr): str
 
 
 
 
+
+## Notes
+
+* If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "uriorcurie".
 
 
 
@@ -27,11 +34,10 @@ URI: [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 

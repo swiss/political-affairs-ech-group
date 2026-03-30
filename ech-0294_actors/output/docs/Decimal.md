@@ -9,14 +9,21 @@ _A real number with arbitrary precision that conforms to the xsd:decimal specifi
 
 URI: [xsd:decimal](http://www.w3.org/2001/XMLSchema#decimal)
 
-* [base](https://w3id.org/linkml/base): Decimal
+## Type Properties
 
-* [uri](https://w3id.org/linkml/uri): xsd:decimal
+| Property | Value |
+| --- | --- |
+| Base | `Decimal` |
+| Type URI | [xsd:decimal](http://www.w3.org/2001/XMLSchema#decimal) |
 
 
 
 
 
+
+## Notes
+
+* If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "decimal".
 
 
 
@@ -26,11 +33,10 @@ URI: [xsd:decimal](http://www.w3.org/2001/XMLSchema#decimal)
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 

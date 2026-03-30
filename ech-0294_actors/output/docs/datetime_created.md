@@ -3,9 +3,9 @@
 # Slot: datetime_created 
 
 
-_[en] The time this record was created._
+_[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde._
 
-_[de] Der Zeitpunkt, zu dem dieser Datensatz erstellt wurde._
+_[en] The date and time when an entity was created._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:datetime_created](https://ch.paf.link/schema/actors/datetime_created)
+URI: [mcm:datetimeCreated](https://ld.ech.ch/schema/0292/meta-common/datetimeCreated)
 Alias: datetime_created
 
 <!-- no inheritance hierarchy -->
@@ -26,10 +26,11 @@ Alias: datetime_created
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Group](Group.md) | [en] A political group, organization, or body (e |  no  |
-| [InterestLink](InterestLink.md) | [en] An interest link (conflict of interest, political financing) of a person... |  no  |
-| [Membership](Membership.md) | [en] A membership relationship between a person and a group |  no  |
-| [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
+| [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |  no  |
+| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
+| [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
+| [HasCreationModificationDates](HasCreationModificationDates.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Ä... |  no  |
 
 
 
@@ -38,7 +39,24 @@ Alias: datetime_created
 
 ## Properties
 
-* Range: [Datetime](Datetime.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Datetime](Datetime.md) |
+| Domain Of | [HasCreationModificationDates](HasCreationModificationDates.md) |
+| Slot URI | [mcm:datetimeCreated](https://ld.ech.ch/schema/0292/meta-common/datetimeCreated) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -49,11 +67,10 @@ Alias: datetime_created
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -62,7 +79,7 @@ Alias: datetime_created
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:datetime_created |
+| self | mcm:datetimeCreated |
 | native | act:datetime_created |
 
 
@@ -73,19 +90,17 @@ Alias: datetime_created
 <details>
 ```yaml
 name: datetime_created
-description: '[en] The time this record was created.
+description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
 
-  [de] Der Zeitpunkt, zu dem dieser Datensatz erstellt wurde.
+  [en] The date and time when an entity was created.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
+slot_uri: mcm:datetimeCreated
 alias: datetime_created
 domain_of:
-- Person
-- Group
-- Membership
-- InterestLink
+- HasCreationModificationDates
 range: datetime
 
 ```

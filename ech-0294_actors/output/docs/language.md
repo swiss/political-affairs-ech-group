@@ -3,9 +3,9 @@
 # Slot: language 
 
 
-_[en] Language code in ISO 639-1 format._
-
 _[de] Sprachcode im ISO 639-1 Format._
+
+_[en] Language code in ISO 639-1 format._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:language](https://ch.paf.link/schema/actors/language)
+URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
 Alias: language
 
 <!-- no inheritance hierarchy -->
@@ -26,8 +26,8 @@ Alias: language
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MultilingualString](MultilingualString.md) | [en] A string that can contain text in multiple languages |  no  |
-| [LanguageProficiency](LanguageProficiency.md) |  |  no  |
+| [MultilingualValue](MultilingualValue.md) | [de] Ein mehrsprachiger String mit Angabe der Sprache |  no  |
+| [LanguageProficiency](LanguageProficiency.md) | [de] Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um d... |  no  |
 
 
 
@@ -36,11 +36,31 @@ Alias: language
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
 
-* Required: True
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [LanguageProficiency](LanguageProficiency.md), [MultilingualValue](MultilingualValue.md) |
+| Slot URI | [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language) |
 
-* Regex pattern: `^[a-z]{2}$`
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+### Value Constraints
+
+| Property | Value |
+| --- | --- |
+| Regex Pattern | `^[a-z]{2}$` |
+
+
+
+
+
+
+
+
 
 
 
@@ -51,11 +71,10 @@ Alias: language
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -64,7 +83,7 @@ Alias: language
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:language |
+| self | mcm:language |
 | native | act:language |
 
 
@@ -75,19 +94,19 @@ Alias: language
 <details>
 ```yaml
 name: language
-description: '[en] Language code in ISO 639-1 format.
+description: '[de] Sprachcode im ISO 639-1 Format.
 
-  [de] Sprachcode im ISO 639-1 Format.
+  [en] Language code in ISO 639-1 format.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
+slot_uri: mcm:language
 alias: language
 domain_of:
 - LanguageProficiency
-- MultilingualString
+- MultilingualValue
 range: string
-required: true
 pattern: ^[a-z]{2}$
 
 ```

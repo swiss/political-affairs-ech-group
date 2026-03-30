@@ -3,9 +3,9 @@
 # Slot: memberships 
 
 
-_[en] Collection of memberships._
-
 _[de] Sammlung von Mitgliedschaften._
+
+_[en] Collection of memberships._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:membership](https://ch.paf.link/schema/actors/membership)
+URI: [act:membership](https://ld.ech.ch/schema/0294/actors/membership)
 Alias: memberships
 
 <!-- no inheritance hierarchy -->
@@ -26,7 +26,7 @@ Alias: memberships
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Container](Container.md) | [en] Root container holding all political actors, groups, and relationships |  no  |
+| [Container](Container.md) | [de] Container für politische Akteure, Gruppen und Beziehungen |  no  |
 
 
 
@@ -35,9 +35,25 @@ Alias: memberships
 
 ## Properties
 
-* Range: [Membership](Membership.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [Membership](Membership.md) |
+| Domain Of | [Container](Container.md) |
+| Slot URI | [act:membership](https://ld.ech.ch/schema/0294/actors/membership) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
@@ -48,11 +64,10 @@ Alias: memberships
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -72,12 +87,12 @@ Alias: memberships
 <details>
 ```yaml
 name: memberships
-description: '[en] Collection of memberships.
+description: '[de] Sammlung von Mitgliedschaften.
 
-  [de] Sammlung von Mitgliedschaften.
+  [en] Collection of memberships.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:membership
 alias: memberships

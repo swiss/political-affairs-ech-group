@@ -3,8 +3,17 @@
 # Slot: genders 
 
 
+_[de] Geschlecht der Person._
 
-URI: [act:gender](https://ch.paf.link/schema/actors/gender)
+_[en] Gender of the person._
+
+__
+
+
+
+
+
+URI: [act:gender](https://ld.ech.ch/schema/0294/actors/gender)
 Alias: genders
 
 <!-- no inheritance hierarchy -->
@@ -17,7 +26,7 @@ Alias: genders
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
+| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
 
 
 
@@ -26,9 +35,25 @@ Alias: genders
 
 ## Properties
 
-* Range: [Gender](Gender.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [Gender](Gender.md) |
+| Domain Of | [Person](Person.md) |
+| Slot URI | [act:gender](https://ld.ech.ch/schema/0294/actors/gender) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
@@ -39,11 +64,10 @@ Alias: genders
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -63,7 +87,12 @@ Alias: genders
 <details>
 ```yaml
 name: genders
-from_schema: https://ch.paf.link/schema/actors
+description: '[de] Geschlecht der Person.
+
+  [en] Gender of the person.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:gender
 alias: genders

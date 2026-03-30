@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:contact](https://ch.paf.link/schema/actors/contact)
+URI: [act:contact](https://ld.ech.ch/schema/0294/actors/contact)
 Alias: contacts
 
 <!-- no inheritance hierarchy -->
@@ -26,8 +26,8 @@ Alias: contacts
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Group](Group.md) | [en] A political group, organization, or body (e |  no  |
-| [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
+| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
 
 
 
@@ -36,9 +36,25 @@ Alias: contacts
 
 ## Properties
 
-* Range: [Contact](Contact.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [Contact](Contact.md) |
+| Domain Of | [Person](Person.md), [Group](Group.md) |
+| Slot URI | [act:contact](https://ld.ech.ch/schema/0294/actors/contact) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
@@ -49,11 +65,10 @@ Alias: contacts
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -78,7 +93,7 @@ description: '[en] Contact information (email, website, social media).
   [de] Kontaktinformationen (E-Mail, Website, Social Media).
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:contact
 alias: contacts

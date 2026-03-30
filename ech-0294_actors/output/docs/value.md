@@ -3,8 +3,17 @@
 # Slot: value 
 
 
+_[de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc._
 
-URI: [act:value](https://ch.paf.link/schema/actors/value)
+_[en] The value of an information besides other attributes such as type, language, etc._
+
+__
+
+
+
+
+
+URI: [mcm:value](https://ld.ech.ch/schema/0292/meta-common/value)
 Alias: value
 
 <!-- no inheritance hierarchy -->
@@ -17,11 +26,9 @@ Alias: value
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Contact](Contact.md) |  |  no  |
-| [Gender](Gender.md) |  |  no  |
-| [Occupation](Occupation.md) |  |  no  |
-| [Name](Name.md) |  |  no  |
-| [Training](Training.md) |  |  no  |
+| [MultilingualValue](MultilingualValue.md) | [de] Ein mehrsprachiger String mit Angabe der Sprache |  no  |
+| [Name](Name.md) | [de] Ein Name mit einem Typ (z |  no  |
+| [Contact](Contact.md) | [de] Kontaktinformation einer Person mit Angabe eines Typs (z |  no  |
 
 
 
@@ -30,7 +37,24 @@ Alias: value
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [Name](Name.md), [Contact](Contact.md), [MultilingualValue](MultilingualValue.md) |
+| Slot URI | [mcm:value](https://ld.ech.ch/schema/0292/meta-common/value) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -41,13 +65,19 @@ Alias: value
 
 
 
+### Schema Source
+
+
+* from schema: https://ld.ech.ch/schema/0294/actors
+
+
 
 
 ## Mappings
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:value |
+| self | mcm:value |
 | native | act:value |
 
 
@@ -58,13 +88,21 @@ Alias: value
 <details>
 ```yaml
 name: value
+description: '[de] Der eigentliche Wert einer Information neben weiteren attributen
+  wie Typ, Sprache, etc.
+
+  [en] The value of an information besides other attributes such as type, language,
+  etc.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
+rank: 1000
+slot_uri: mcm:value
 alias: value
 domain_of:
 - Name
-- Gender
-- Occupation
-- Training
 - Contact
+- MultilingualValue
 range: string
 
 ```

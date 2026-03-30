@@ -11,10 +11,9 @@ __
 
 
 
-URI: [act:AddressTypeEnum](https://ch.paf.link/schema/actors/AddressTypeEnum)
+URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | privateAddress | None | [en] Private address |
@@ -28,7 +27,12 @@ URI: [act:AddressTypeEnum](https://ch.paf.link/schema/actors/AddressTypeEnum)
 
 | Name | Description |
 | ---  | --- |
-| [address_type](address_type.md) |  |
+| [address_type](address_type.md) | [de] Typ der Adresse |
+
+
+
+
+
 
 
 
@@ -40,11 +44,10 @@ URI: [act:AddressTypeEnum](https://ch.paf.link/schema/actors/AddressTypeEnum)
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -61,7 +64,7 @@ description: '[en] Types of addresses.
   [de] Adresstypen.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 permissible_values:
   privateAddress:

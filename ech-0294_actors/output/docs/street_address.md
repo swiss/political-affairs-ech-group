@@ -3,8 +3,17 @@
 # Slot: street_address 
 
 
+_[de] Strassenadresse._
 
-URI: [act:streetAddress](https://ch.paf.link/schema/actors/streetAddress)
+_[en] Street address._
+
+__
+
+
+
+
+
+URI: [act:streetAddress](https://ld.ech.ch/schema/0294/actors/streetAddress)
 Alias: street_address
 
 <!-- no inheritance hierarchy -->
@@ -17,7 +26,7 @@ Alias: street_address
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Address](Address.md) |  |  no  |
+| [Address](Address.md) | [de] Eine Adresse mit einem Typ (z |  no  |
 
 
 
@@ -26,7 +35,24 @@ Alias: street_address
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [Address](Address.md) |
+| Slot URI | [act:streetAddress](https://ld.ech.ch/schema/0294/actors/streetAddress) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -37,11 +63,10 @@ Alias: street_address
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -61,11 +86,15 @@ Alias: street_address
 <details>
 ```yaml
 name: street_address
-from_schema: https://ch.paf.link/schema/actors
+description: '[de] Strassenadresse.
+
+  [en] Street address.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:streetAddress
 alias: street_address
-owner: Address
 domain_of:
 - Address
 range: string

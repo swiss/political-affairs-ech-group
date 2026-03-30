@@ -3,9 +3,9 @@
 # Slot: label_long 
 
 
-_[en] Extended display name (with title, etc.)._
+_[de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.)._
 
-_[de] Erweiterter Anzeigename (mit Titel, etc.)._
+_[en] Option to assign an extended label to a structured piece of information (e.g., display name with title, position, etc.)._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:label_long](https://ch.paf.link/schema/actors/label_long)
+URI: [mcm:labelLong](https://ld.ech.ch/schema/0292/meta-common/labelLong)
 Alias: label_long
 
 <!-- no inheritance hierarchy -->
@@ -26,7 +26,7 @@ Alias: label_long
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
+| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
 
 
 
@@ -35,7 +35,24 @@ Alias: label_long
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [Person](Person.md) |
+| Slot URI | [mcm:labelLong](https://ld.ech.ch/schema/0292/meta-common/labelLong) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -46,11 +63,10 @@ Alias: label_long
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -59,7 +75,7 @@ Alias: label_long
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:label_long |
+| self | mcm:labelLong |
 | native | act:label_long |
 
 
@@ -70,13 +86,16 @@ Alias: label_long
 <details>
 ```yaml
 name: label_long
-description: '[en] Extended display name (with title, etc.).
+description: '[de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel
+  zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.).
 
-  [de] Erweiterter Anzeigename (mit Titel, etc.).
+  [en] Option to assign an extended label to a structured piece of information (e.g.,
+  display name with title, position, etc.).
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
+slot_uri: mcm:labelLong
 alias: label_long
 domain_of:
 - Person

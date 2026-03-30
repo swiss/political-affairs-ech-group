@@ -3,9 +3,9 @@
 # Class: Container 
 
 
-_[en] Root container holding all political actors, groups, and relationships._
+_[de] Container für politische Akteure, Gruppen und Beziehungen._
 
-_[de] Wurzelcontainer mit allen politischen Akteuren, Gruppen und Beziehungen._
+_[en] Container for political actors, groups, and relationships._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:Container](https://ch.paf.link/schema/actors/Container)
+URI: [act:Container](https://ld.ech.ch/schema/0294/actors/Container)
 
 
 
@@ -23,6 +23,11 @@ URI: [act:Container](https://ch.paf.link/schema/actors/Container)
  classDiagram
     class Container
     click Container href "../Container/"
+      HasIdentification <|-- Container
+        click HasIdentification href "../HasIdentification/"
+      
+      Container : global_uri
+        
       Container : groups
         
           
@@ -34,8 +39,6 @@ URI: [act:Container](https://ch.paf.link/schema/actors/Container)
     
 
         
-      Container : id
-        
       Container : interest_links
         
           
@@ -46,6 +49,8 @@ URI: [act:Container](https://ch.paf.link/schema/actors/Container)
         click InterestLink href "../InterestLink/"
     
 
+        
+      Container : local_id
         
       Container : memberships
         
@@ -69,24 +74,42 @@ URI: [act:Container](https://ch.paf.link/schema/actors/Container)
     
 
         
+      Container : wikidata_uri
+        
       
 ```
 
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **Container** [ [HasIdentification](HasIdentification.md)]
+
+
+## Class Properties
+
+| Property | Value |
+| --- | --- |
+| Tree Root | Yes |
 
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 1 <br/> [String](String.md) | [en] Unique identifier (preferably Wikidata-ID or URI) | direct |
-| [persons](persons.md) | * <br/> [Person](Person.md) | [en] Collection of persons | direct |
-| [groups](groups.md) | * <br/> [Group](Group.md) | [en] Collection of groups | direct |
-| [memberships](memberships.md) | * <br/> [Membership](Membership.md) | [en] Collection of memberships | direct |
-| [interest_links](interest_links.md) | * <br/> [InterestLink](InterestLink.md) | [en] Collection of interest links | direct |
+| [persons](persons.md) | * <br/> [Person](Person.md) | [de] Sammlung von Personen | direct |
+| [groups](groups.md) | * <br/> [Group](Group.md) | [de] Sammlung von Gruppen | direct |
+| [memberships](memberships.md) | * <br/> [Membership](Membership.md) | [de] Sammlung von Mitgliedschaften | direct |
+| [interest_links](interest_links.md) | * <br/> [InterestLink](InterestLink.md) | [de] Sammlung von Interessenbindungen | direct |
+| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |
+| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](HasIdentification.md) |
+| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](HasIdentification.md) |
+
+
+
+
+
 
 
 
@@ -103,11 +126,10 @@ URI: [act:Container](https://ch.paf.link/schema/actors/Container)
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -133,14 +155,15 @@ URI: [act:Container](https://ch.paf.link/schema/actors/Container)
 <details>
 ```yaml
 name: Container
-description: '[en] Root container holding all political actors, groups, and relationships.
+description: '[de] Container für politische Akteure, Gruppen und Beziehungen.
 
-  [de] Wurzelcontainer mit allen politischen Akteuren, Gruppen und Beziehungen.
+  [en] Container for political actors, groups, and relationships.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
+mixins:
+- HasIdentification
 slots:
-- id
 - persons
 - groups
 - memberships
@@ -155,44 +178,23 @@ tree_root: true
 <details>
 ```yaml
 name: Container
-description: '[en] Root container holding all political actors, groups, and relationships.
+description: '[de] Container für politische Akteure, Gruppen und Beziehungen.
 
-  [de] Wurzelcontainer mit allen politischen Akteuren, Gruppen und Beziehungen.
+  [en] Container for political actors, groups, and relationships.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
+mixins:
+- HasIdentification
 attributes:
-  id:
-    name: id
-    description: '[en] Unique identifier (preferably Wikidata-ID or URI).
-
-      [de] Eindeutiger Identifikator (vorzugsweise Wikidata-ID oder URI).
-
-      '
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: Container
-    domain_of:
-    - Container
-    - Person
-    - Group
-    - Membership
-    - InterestLink
-    - PersonReference
-    - GroupReference
-    range: string
-    required: true
   persons:
     name: persons
-    description: '[en] Collection of persons.
+    description: '[de] Sammlung von Personen.
 
-      [de] Sammlung von Personen.
+      [en] Collection of persons.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:person
     alias: persons
@@ -204,12 +206,12 @@ attributes:
     inlined_as_list: true
   groups:
     name: groups
-    description: '[en] Collection of groups.
+    description: '[de] Sammlung von Gruppen.
 
-      [de] Sammlung von Gruppen.
+      [en] Collection of groups.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:group
     alias: groups
@@ -221,12 +223,12 @@ attributes:
     inlined_as_list: true
   memberships:
     name: memberships
-    description: '[en] Collection of memberships.
+    description: '[de] Sammlung von Mitgliedschaften.
 
-      [de] Sammlung von Mitgliedschaften.
+      [en] Collection of memberships.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:membership
     alias: memberships
@@ -238,21 +240,71 @@ attributes:
     inlined_as_list: true
   interest_links:
     name: interest_links
-    description: '[en] Collection of interest links.
+    description: '[de] Sammlung von Interessenbindungen.
 
-      [de] Sammlung von Interessenbindungen.
+      [en] Collection of interest links.range: InterestLink
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:interestLink
     alias: interest_links
     owner: Container
     domain_of:
     - Container
+    - Person
     range: InterestLink
     multivalued: true
     inlined_as_list: true
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+      [en] Local identifier. For example, a UUID from the council information system.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:localId
+    alias: local_id
+    owner: Container
+    domain_of:
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+
+      [en] A unique, globally valid URI for the entity.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: Container
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: Container
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
 tree_root: true
 
 ```

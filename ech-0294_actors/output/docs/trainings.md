@@ -3,8 +3,17 @@
 # Slot: trainings 
 
 
+_[de] Ausbildungen oder Bildungen der Person._
 
-URI: [act:training](https://ch.paf.link/schema/actors/training)
+_[en] Trainings or educations of the person._
+
+__
+
+
+
+
+
+URI: [act:training](https://ld.ech.ch/schema/0294/actors/training)
 Alias: trainings
 
 <!-- no inheritance hierarchy -->
@@ -17,7 +26,7 @@ Alias: trainings
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
+| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
 
 
 
@@ -26,9 +35,25 @@ Alias: trainings
 
 ## Properties
 
-* Range: [Training](Training.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [Training](Training.md) |
+| Domain Of | [Person](Person.md) |
+| Slot URI | [act:training](https://ld.ech.ch/schema/0294/actors/training) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
@@ -39,11 +64,10 @@ Alias: trainings
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -63,7 +87,12 @@ Alias: trainings
 <details>
 ```yaml
 name: trainings
-from_schema: https://ch.paf.link/schema/actors
+description: '[de] Ausbildungen oder Bildungen der Person.
+
+  [en] Trainings or educations of the person.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:training
 alias: trainings

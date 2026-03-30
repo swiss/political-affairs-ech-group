@@ -3,8 +3,17 @@
 # Slot: enterprise 
 
 
+_[de] Name des Unternehmens._
 
-URI: [act:enterprise](https://ch.paf.link/schema/actors/enterprise)
+_[en] Name of the enterprise._
+
+__
+
+
+
+
+
+URI: [act:enterprise](https://ld.ech.ch/schema/0294/actors/enterprise)
 Alias: enterprise
 
 <!-- no inheritance hierarchy -->
@@ -17,7 +26,7 @@ Alias: enterprise
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Occupation](Occupation.md) |  |  no  |
+| [Occupation](Occupation.md) | [de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19... |  no  |
 
 
 
@@ -26,7 +35,24 @@ Alias: enterprise
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [Occupation](Occupation.md) |
+| Slot URI | [act:enterprise](https://ld.ech.ch/schema/0294/actors/enterprise) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -37,11 +63,10 @@ Alias: enterprise
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -61,10 +86,15 @@ Alias: enterprise
 <details>
 ```yaml
 name: enterprise
-from_schema: https://ch.paf.link/schema/actors
+description: '[de] Name des Unternehmens.
+
+  [en] Name of the enterprise.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
+slot_uri: act:enterprise
 alias: enterprise
-owner: Occupation
 domain_of:
 - Occupation
 range: string

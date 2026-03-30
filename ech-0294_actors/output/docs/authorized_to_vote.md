@@ -3,9 +3,9 @@
 # Slot: authorized_to_vote 
 
 
-_[en] Indicates if the person is authorized to vote._
-
 _[de] Gibt an, ob die Person stimmberechtigt ist._
+
+_[en] Indicates if the person is authorized to vote._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:authorizedToVote](https://ch.paf.link/schema/actors/authorizedToVote)
+URI: [act:authorizedToVote](https://ld.ech.ch/schema/0294/actors/authorizedToVote)
 Alias: authorized_to_vote
 
 <!-- no inheritance hierarchy -->
@@ -26,7 +26,7 @@ Alias: authorized_to_vote
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Membership](Membership.md) | [en] A membership relationship between a person and a group |  no  |
+| [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |  no  |
 
 
 
@@ -35,7 +35,24 @@ Alias: authorized_to_vote
 
 ## Properties
 
-* Range: [Boolean](Boolean.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Boolean](Boolean.md) |
+| Domain Of | [Membership](Membership.md) |
+| Slot URI | [act:authorizedToVote](https://ld.ech.ch/schema/0294/actors/authorizedToVote) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -46,11 +63,10 @@ Alias: authorized_to_vote
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -70,12 +86,12 @@ Alias: authorized_to_vote
 <details>
 ```yaml
 name: authorized_to_vote
-description: '[en] Indicates if the person is authorized to vote.
+description: '[de] Gibt an, ob die Person stimmberechtigt ist.
 
-  [de] Gibt an, ob die Person stimmberechtigt ist.
+  [en] Indicates if the person is authorized to vote.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:authorizedToVote
 alias: authorized_to_vote

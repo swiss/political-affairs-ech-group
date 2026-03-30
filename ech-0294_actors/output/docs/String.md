@@ -9,14 +9,21 @@ _A character string_
 
 URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
-* [base](https://w3id.org/linkml/base): str
+## Type Properties
 
-* [uri](https://w3id.org/linkml/uri): xsd:string
+| Property | Value |
+| --- | --- |
+| Base | `str` |
+| Type URI | [xsd:string](http://www.w3.org/2001/XMLSchema#string) |
 
 
 
 
 
+
+## Notes
+
+* In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "string".
 
 
 
@@ -26,11 +33,10 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 

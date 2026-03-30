@@ -3,8 +3,17 @@
 # Class: Training 
 
 
+_[de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z.B. Schulabschluss, Universitätsabschluss, Militärdienst), eines Labels, eines ISCO-19 Codes und der zeitlichen Gültigkeit._
 
-URI: [act:Training](https://ch.paf.link/schema/actors/Training)
+_[en] Training or education of a person indicating a type (e.g., school diploma, university degree, military service), a label, an ISCO-19 code, and temporal validity._
+
+__
+
+
+
+
+
+URI: [act:Training](https://ld.ech.ch/schema/0294/actors/Training)
 
 
 
@@ -14,20 +23,29 @@ URI: [act:Training](https://ch.paf.link/schema/actors/Training)
  classDiagram
     class Training
     click Training href "../Training/"
-      Training : training_isco19_code
+      HasTemporalValidity <|-- Training
+        click HasTemporalValidity href "../HasTemporalValidity/"
+      
+      Training : is_active
         
-      Training : type
+      Training : label
+        
+      Training : training_code
+        
+      Training : training_type
         
           
     
         
         
-        Training --> "1" TrainingTypeEnum : type
+        Training --> "0..1" TrainingTypeEnum : training_type
         click TrainingTypeEnum href "../TrainingTypeEnum/"
     
 
         
-      Training : value
+      Training : valid_from
+        
+      Training : valid_through
         
       
 ```
@@ -35,16 +53,21 @@ URI: [act:Training](https://ch.paf.link/schema/actors/Training)
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **Training** [ [HasTemporalValidity](HasTemporalValidity.md)]
 
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [type](type.md) | 1 <br/> [TrainingTypeEnum](TrainingTypeEnum.md) |  | direct |
-| [training_isco19_code](training_isco19_code.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [value](value.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [training_type](training_type.md) | 0..1 <br/> [TrainingTypeEnum](TrainingTypeEnum.md) | [de] Typ der Ausbildung oder Bildung | direct |
+| [training_code](training_code.md) | 0..1 <br/> [String](String.md) | [de] ISCO-19 Code der Ausbildung oder Bildung | direct |
+| [label](label.md) | 0..1 <br/> [String](String.md) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben ... | direct |
+| [valid_from](valid_from.md) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity](HasTemporalValidity.md) |
+| [valid_through](valid_through.md) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity](HasTemporalValidity.md) |
+| [is_active](is_active.md) | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity](HasTemporalValidity.md) |
 
 
 
@@ -62,8 +85,12 @@ URI: [act:Training](https://ch.paf.link/schema/actors/Training)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -72,7 +99,7 @@ URI: [act:Training](https://ch.paf.link/schema/actors/Training)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -98,33 +125,21 @@ URI: [act:Training](https://ch.paf.link/schema/actors/Training)
 <details>
 ```yaml
 name: Training
-from_schema: https://ch.paf.link/schema/actors
-attributes:
-  type:
-    name: type
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    domain_of:
-    - Training
-    - Contact
-    range: TrainingTypeEnum
-    required: true
-  training_isco19_code:
-    name: training_isco19_code
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:trainingIsco19Code
-    domain_of:
-    - Training
-  value:
-    name: value
-    from_schema: https://ch.paf.link/schema/actors
-    domain_of:
-    - Name
-    - Gender
-    - Occupation
-    - Training
-    - Contact
+description: '[de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z.B.
+  Schulabschluss, Universitätsabschluss, Militärdienst), eines Labels, eines ISCO-19
+  Codes und der zeitlichen Gültigkeit.
+
+  [en] Training or education of a person indicating a type (e.g., school diploma,
+  university degree, military service), a label, an ISCO-19 code, and temporal validity.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
+mixins:
+- HasTemporalValidity
+slots:
+- training_type
+- training_code
+- label
 
 ```
 </details>
@@ -134,41 +149,117 @@ attributes:
 <details>
 ```yaml
 name: Training
-from_schema: https://ch.paf.link/schema/actors
+description: '[de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z.B.
+  Schulabschluss, Universitätsabschluss, Militärdienst), eines Labels, eines ISCO-19
+  Codes und der zeitlichen Gültigkeit.
+
+  [en] Training or education of a person indicating a type (e.g., school diploma,
+  university degree, military service), a label, an ISCO-19 code, and temporal validity.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
+mixins:
+- HasTemporalValidity
 attributes:
-  type:
-    name: type
-    from_schema: https://ch.paf.link/schema/actors
+  training_type:
+    name: training_type
+    description: '[de] Typ der Ausbildung oder Bildung.
+
+      [en] Type of training or education.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    alias: type
+    slot_uri: act:trainingType
+    alias: training_type
     owner: Training
     domain_of:
     - Training
-    - Contact
     range: TrainingTypeEnum
-    required: true
-  training_isco19_code:
-    name: training_isco19_code
-    from_schema: https://ch.paf.link/schema/actors
+  training_code:
+    name: training_code
+    description: '[de] ISCO-19 Code der Ausbildung oder Bildung.
+
+      [en] ISCO-19 code of the training or education.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    slot_uri: act:trainingIsco19Code
-    alias: training_isco19_code
+    slot_uri: act:trainingCode
+    alias: training_code
     owner: Training
     domain_of:
     - Training
     range: string
-  value:
-    name: value
-    from_schema: https://ch.paf.link/schema/actors
-    alias: value
+  label:
+    name: label
+    description: '[de] Möglichkeit bei einer strukturierten Information, ein Label
+      zu vergeben (bspw. Anzeigename, Anstellung, etc.).
+
+      [en] Option to assign a label to a structured piece of information (e.g., display
+      name, position, etc.).
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:label
+    alias: label
     owner: Training
     domain_of:
-    - Name
-    - Gender
+    - Person
+    - Group
     - Occupation
     - Training
-    - Contact
+    - GroupType
+    - RoleType
     range: string
+  valid_from:
+    name: valid_from
+    description: '[de] Das Datum, ab dem die Information gültig ist.
+
+      [en] The date from which the information is valid.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: schema:validFrom
+    alias: valid_from
+    owner: Training
+    domain_of:
+    - HasTemporalValidity
+    range: date
+  valid_through:
+    name: valid_through
+    description: '[de] Das Datum, bis und mit dem die Information gültig ist.
+
+      [en] The date until which the information is valid, inclusive.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: schema:validThrough
+    alias: valid_through
+    owner: Training
+    domain_of:
+    - HasTemporalValidity
+    range: date
+  is_active:
+    name: is_active
+    description: '[de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich
+      sein, wenn diese Information explizit vorhanden ist.
+
+      [en] Indicates whether the information is currently valid. Can be useful when
+      this information is explicitly available.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:isCurrent
+    alias: is_active
+    owner: Training
+    domain_of:
+    - HasTemporalValidity
+    range: boolean
 
 ```
 </details>

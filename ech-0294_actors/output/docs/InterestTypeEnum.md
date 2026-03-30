@@ -11,10 +11,9 @@ __
 
 
 
-URI: [act:InterestTypeEnum](https://ch.paf.link/schema/actors/InterestTypeEnum)
+URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | professional_activity | act:enum/interest_type/professional_activity | [en] Professional activity |
@@ -28,7 +27,12 @@ URI: [act:InterestTypeEnum](https://ch.paf.link/schema/actors/InterestTypeEnum)
 
 | Name | Description |
 | ---  | --- |
-| [interest_type](interest_type.md) | [en] Type of interest link (professional activity, political office, associat... |
+| [interest_type](interest_type.md) | [de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verei... |
+
+
+
+
+
 
 
 
@@ -40,11 +44,10 @@ URI: [act:InterestTypeEnum](https://ch.paf.link/schema/actors/InterestTypeEnum)
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -61,7 +64,7 @@ description: '[en] Types of interest links (conflicts of interest, political fin
   [de] Typen von Interessenbindungen (Interessenkonflikte, Politikfinanzierung).
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 permissible_values:
   professional_activity:

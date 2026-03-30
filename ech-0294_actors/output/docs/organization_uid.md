@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:organizationUid](https://ch.paf.link/schema/actors/organizationUid)
+URI: [act:organizationUid](https://ld.ech.ch/schema/0294/actors/organizationUid)
 Alias: organization_uid
 
 <!-- no inheritance hierarchy -->
@@ -26,7 +26,7 @@ Alias: organization_uid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [InterestLink](InterestLink.md) | [en] An interest link (conflict of interest, political financing) of a person... |  no  |
+| [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
 
 
 
@@ -35,7 +35,24 @@ Alias: organization_uid
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [InterestLink](InterestLink.md) |
+| Slot URI | [act:organizationUid](https://ld.ech.ch/schema/0294/actors/organizationUid) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -46,11 +63,10 @@ Alias: organization_uid
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -75,7 +91,7 @@ description: '[en] UID of the organization (for analysis with NOGA codes, etc.).
   [de] UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:organizationUid
 alias: organization_uid

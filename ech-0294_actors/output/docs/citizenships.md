@@ -3,8 +3,17 @@
 # Slot: citizenships 
 
 
+_[de] Staatsbürgerschaften der Person._
 
-URI: [act:citizenship](https://ch.paf.link/schema/actors/citizenship)
+_[en] Citizenships of the person._
+
+__
+
+
+
+
+
+URI: [act:citizenship](https://ld.ech.ch/schema/0294/actors/citizenship)
 Alias: citizenships
 
 <!-- no inheritance hierarchy -->
@@ -17,7 +26,7 @@ Alias: citizenships
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
+| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
 
 
 
@@ -26,9 +35,25 @@ Alias: citizenships
 
 ## Properties
 
-* Range: [Citizenship](Citizenship.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [Citizenship](Citizenship.md) |
+| Domain Of | [Person](Person.md) |
+| Slot URI | [act:citizenship](https://ld.ech.ch/schema/0294/actors/citizenship) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
@@ -39,11 +64,10 @@ Alias: citizenships
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -63,7 +87,12 @@ Alias: citizenships
 <details>
 ```yaml
 name: citizenships
-from_schema: https://ch.paf.link/schema/actors
+description: '[de] Staatsbürgerschaften der Person.
+
+  [en] Citizenships of the person.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:citizenship
 alias: citizenships

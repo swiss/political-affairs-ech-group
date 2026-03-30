@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:organizationLabel](https://ch.paf.link/schema/actors/organizationLabel)
+URI: [act:organizationLabel](https://ld.ech.ch/schema/0294/actors/organizationLabel)
 Alias: organization_label
 
 <!-- no inheritance hierarchy -->
@@ -26,7 +26,7 @@ Alias: organization_label
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [InterestLink](InterestLink.md) | [en] An interest link (conflict of interest, political financing) of a person... |  no  |
+| [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
 
 
 
@@ -35,7 +35,24 @@ Alias: organization_label
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [InterestLink](InterestLink.md) |
+| Slot URI | [act:organizationLabel](https://ld.ech.ch/schema/0294/actors/organizationLabel) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -46,11 +63,10 @@ Alias: organization_label
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -75,7 +91,7 @@ description: '[en] Label of the organization.
   [de] Bezeichnung der Organisation.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:organizationLabel
 alias: organization_label

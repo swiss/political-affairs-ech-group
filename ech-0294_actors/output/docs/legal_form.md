@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:legalForm](https://ch.paf.link/schema/actors/legalForm)
+URI: [act:legalForm](https://ld.ech.ch/schema/0294/actors/legalForm)
 Alias: legal_form
 
 <!-- no inheritance hierarchy -->
@@ -26,7 +26,7 @@ Alias: legal_form
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [InterestLink](InterestLink.md) | [en] An interest link (conflict of interest, political financing) of a person... |  no  |
+| [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
 
 
 
@@ -35,7 +35,24 @@ Alias: legal_form
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [InterestLink](InterestLink.md) |
+| Slot URI | [act:legalForm](https://ld.ech.ch/schema/0294/actors/legalForm) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -46,11 +63,10 @@ Alias: legal_form
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -75,7 +91,7 @@ description: '[en] Legal form of the organization.
   [de] Rechtsform der Organisation.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:legalForm
 alias: legal_form

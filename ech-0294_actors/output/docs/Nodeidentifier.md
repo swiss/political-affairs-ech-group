@@ -9,15 +9,22 @@ _A URI, CURIE or BNODE that represents a node in a model._
 
 URI: [shex:nonLiteral](http://www.w3.org/ns/shex#nonLiteral)
 
-* [base](https://w3id.org/linkml/base): NodeIdentifier
+## Type Properties
 
-* [uri](https://w3id.org/linkml/uri): shex:nonLiteral
+| Property | Value |
+| --- | --- |
+| Base | `NodeIdentifier` |
+| Type URI | [shex:nonLiteral](http://www.w3.org/ns/shex#nonLiteral) |
+| Representation | `str` |
 
-* [repr](https://w3id.org/linkml/repr): str
 
 
 
 
+
+## Notes
+
+* If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "nodeidentifier".
 
 
 
@@ -27,11 +34,10 @@ URI: [shex:nonLiteral](http://www.w3.org/ns/shex#nonLiteral)
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 

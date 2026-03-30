@@ -3,8 +3,17 @@
 # Slot: address_type 
 
 
+_[de] Typ der Adresse._
 
-URI: [act:addressType](https://ch.paf.link/schema/actors/addressType)
+_[en] Type of address._
+
+__
+
+
+
+
+
+URI: [act:addressType](https://ld.ech.ch/schema/0294/actors/addressType)
 Alias: address_type
 
 <!-- no inheritance hierarchy -->
@@ -17,7 +26,7 @@ Alias: address_type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Address](Address.md) |  |  no  |
+| [Address](Address.md) | [de] Eine Adresse mit einem Typ (z |  no  |
 
 
 
@@ -26,9 +35,24 @@ Alias: address_type
 
 ## Properties
 
-* Range: [AddressTypeEnum](AddressTypeEnum.md)
+### Type and Range
 
-* Required: True
+| Property | Value |
+| --- | --- |
+| Range | [AddressTypeEnum](AddressTypeEnum.md) |
+| Domain Of | [Address](Address.md) |
+| Slot URI | [act:addressType](https://ld.ech.ch/schema/0294/actors/addressType) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -39,11 +63,10 @@ Alias: address_type
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -63,15 +86,18 @@ Alias: address_type
 <details>
 ```yaml
 name: address_type
-from_schema: https://ch.paf.link/schema/actors
+description: '[de] Typ der Adresse.
+
+  [en] Type of address.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:addressType
 alias: address_type
-owner: Address
 domain_of:
 - Address
 range: AddressTypeEnum
-required: true
 
 ```
 </details>

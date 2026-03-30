@@ -3,9 +3,9 @@
 # Slot: picture 
 
 
-_[en] Link to an image (preferred: PNG, then JPG, then GIF)._
-
 _[de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF)._
+
+_[en] Link to an image (preferred: PNG, then JPG, then GIF)._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:picture](https://ch.paf.link/schema/actors/picture)
+URI: [act:picture](https://ld.ech.ch/schema/0294/actors/picture)
 Alias: picture
 
 <!-- no inheritance hierarchy -->
@@ -26,7 +26,7 @@ Alias: picture
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
+| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
 
 
 
@@ -35,7 +35,23 @@ Alias: picture
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [Person](Person.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -46,11 +62,10 @@ Alias: picture
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -70,12 +85,12 @@ Alias: picture
 <details>
 ```yaml
 name: picture
-description: '[en] Link to an image (preferred: PNG, then JPG, then GIF).
+description: '[de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).
 
-  [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).
+  [en] Link to an image (preferred: PNG, then JPG, then GIF).
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 alias: picture
 domain_of:

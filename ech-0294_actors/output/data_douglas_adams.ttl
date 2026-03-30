@@ -1,58 +1,57 @@
-@prefix act: <https://ch.paf.link/schema/actors/> .
+@prefix act: <https://ld.ech.ch/schema/0294/actors/> .
+@prefix mcm: <https://ld.ech.ch/schema/0292/meta-common/> .
+@prefix schema1: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 act:douglas_adams_example a act:Container ;
     act:person <https://www.wikidata.org/wiki/Q42> .
 
 <https://www.wikidata.org/wiki/Q42> a act:Person ;
+    schema1:birthDate "1952-03-11"^^xsd:date ;
+    mcm:label "Douglas Adams" ;
+    mcm:labelLong "Douglas Noël Adams" ;
     act:address [ a act:Address ;
             act:addressType "privateAddress" ;
-            act:addressURI "https://www.wikidata.org/wiki/Q42#P969" ;
-            act:postalCode "12345" ;
+            act:addressURI "https://www.wikidata.org/wiki/Q42#P969"^^xsd:anyURI ;
+            act:postalCode 12345 ;
             act:postalLocality "London" ;
             act:streetAddress "1234 Fictional St, London, UK" ] ;
-    act:birthdate "1952-03-11"^^xsd:date ;
-    act:birthyear 1952 ;
-    act:chCitizenship [ a act:Validity ;
-            act:validFrom "2020-01-01"^^xsd:date ;
-            act:validUntil "2025-01-01"^^xsd:date ] ;
+    act:birthYear 1952 ;
     act:citizenship [ a act:Citizenship ;
-            act:country "GB" ;
-            act:validFrom "1952-03-11"^^xsd:date ] ;
+            schema1:validFrom "1952-03-11"^^xsd:date ;
+            act:country "GB" ] ;
     act:contact [ a act:Contact ;
-            act:type "email" ;
-            act:value "douglas.adams@adams-familiy.org" ] ;
+            mcm:value "douglas.adams@adams-familiy.org" ;
+            act:contactType "email" ] ;
     act:electoralDistrict [ a act:ElectoralDistrict ;
-            act:district "London Central" ;
-            act:validFrom "2020-01-01"^^xsd:date ;
-            act:validUntil "2025-01-01"^^xsd:date ] ;
+            schema1:validFrom "2020-01-01"^^xsd:date ;
+            schema1:validThrough "2025-01-01"^^xsd:date ;
+            act:district "London Central" ] ;
     act:gender [ a act:Gender ;
+            schema1:validFrom "1952-03-11"^^xsd:date ;
+            act:genderCode "male" ;
             act:pronouns "he",
-                "him" ;
-            act:validFrom "1952-03-11"^^xsd:date ;
-            act:value "male" ] ;
-    act:label "Douglas Adams" ;
-    act:label_long "Douglas Noël Adams" ;
-    act:language [ a act:LanguageProficiency ;
-            act:correspondence true ;
-            act:language "en" ;
-            act:native true ] ;
+                "him" ] ;
+    act:languageProficiency [ a act:LanguageProficiency ;
+            mcm:language "en" ;
+            act:isCorrespondence true ;
+            act:isNative true ] ;
     act:name [ a act:Name ;
-            act:nameType "callName" ;
-            act:value "Douglas" ],
+            schema1:validFrom "1952-03-11"^^xsd:date ;
+            mcm:value "Adams" ;
+            act:nameType "officialLastName" ],
         [ a act:Name ;
-            act:nameType "officialLastName" ;
-            act:validFrom "1952-03-11"^^xsd:date ;
-            act:value "Adams" ] ;
+            mcm:value "Douglas" ;
+            act:nameType "callName" ] ;
     act:occupation [ a act:Occupation ;
-            act:active false ;
-            act:paid true ;
-            act:validFrom "1979-01-01"^^xsd:date ;
-            act:validUntil "2001-05-11"^^xsd:date ;
-            act:value "writer" ] ;
+            schema1:validFrom "1979-01-01"^^xsd:date ;
+            schema1:validThrough "2001-05-11"^^xsd:date ;
+            mcm:isCurrent false ;
+            mcm:label "writer" ;
+            act:isPaid true ] ;
     act:picture "https://commons.wikimedia.org/wiki/File:Douglas_adams_portrait.jpg" ;
     act:training [ a act:Training ;
-            act:type "schulabschluss" ;
-            act:value "High School Diploma" ] .
+            mcm:label "High School Diploma" ;
+            act:trainingType "schulabschluss" ] .
 
 

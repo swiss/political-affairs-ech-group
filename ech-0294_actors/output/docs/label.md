@@ -3,9 +3,9 @@
 # Slot: label 
 
 
-_[en] Display name of the person._
+_[de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.)._
 
-_[de] Anzeigename der Person._
+_[en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.)._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:label](https://ch.paf.link/schema/actors/label)
+URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 Alias: label
 
 <!-- no inheritance hierarchy -->
@@ -26,7 +26,12 @@ Alias: label
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
+| [Training](Training.md) | [de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z |  no  |
+| [RoleType](RoleType.md) | [de] Rolle einer Person in einer Mitgliedschaft oder Funktion (z |  no  |
+| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
+| [Occupation](Occupation.md) | [de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19... |  no  |
+| [GroupType](GroupType.md) | [de] Art der Gruppe (z |  no  |
 
 
 
@@ -35,9 +40,24 @@ Alias: label
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
 
-* Required: True
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [Person](Person.md), [Group](Group.md), [Occupation](Occupation.md), [Training](Training.md), [GroupType](GroupType.md), [RoleType](RoleType.md) |
+| Slot URI | [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -48,11 +68,10 @@ Alias: label
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -61,7 +80,7 @@ Alias: label
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:label |
+| self | mcm:label |
 | native | act:label |
 
 
@@ -72,18 +91,25 @@ Alias: label
 <details>
 ```yaml
 name: label
-description: '[en] Display name of the person.
+description: '[de] Möglichkeit bei einer strukturierten Information, ein Label zu
+  vergeben (bspw. Anzeigename, Anstellung, etc.).
 
-  [de] Anzeigename der Person.
+  [en] Option to assign a label to a structured piece of information (e.g., display
+  name, position, etc.).
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
+slot_uri: mcm:label
 alias: label
 domain_of:
 - Person
+- Group
+- Occupation
+- Training
+- GroupType
+- RoleType
 range: string
-required: true
 
 ```
 </details>

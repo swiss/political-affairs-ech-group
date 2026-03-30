@@ -3,13 +3,17 @@
 # Slot: name_type 
 
 
-_categories of name types_
+_[de] Typ des Namens._
+
+_[en] Type of name._
+
+__
 
 
 
 
 
-URI: [act:nameType](https://ch.paf.link/schema/actors/nameType)
+URI: [act:nameType](https://ld.ech.ch/schema/0294/actors/nameType)
 Alias: name_type
 
 <!-- no inheritance hierarchy -->
@@ -22,7 +26,7 @@ Alias: name_type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Name](Name.md) |  |  no  |
+| [Name](Name.md) | [de] Ein Name mit einem Typ (z |  no  |
 
 
 
@@ -31,9 +35,24 @@ Alias: name_type
 
 ## Properties
 
-* Range: [NameTypeEnum](NameTypeEnum.md)
+### Type and Range
 
-* Required: True
+| Property | Value |
+| --- | --- |
+| Range | [NameTypeEnum](NameTypeEnum.md) |
+| Domain Of | [Name](Name.md) |
+| Slot URI | [act:nameType](https://ld.ech.ch/schema/0294/actors/nameType) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -44,11 +63,10 @@ Alias: name_type
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -68,16 +86,18 @@ Alias: name_type
 <details>
 ```yaml
 name: name_type
-description: categories of name types
-from_schema: https://ch.paf.link/schema/actors
+description: '[de] Typ des Namens.
+
+  [en] Type of name.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:nameType
 alias: name_type
-owner: Name
 domain_of:
 - Name
 range: NameTypeEnum
-required: true
 
 ```
 </details>

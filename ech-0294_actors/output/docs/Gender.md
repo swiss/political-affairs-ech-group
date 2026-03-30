@@ -3,8 +3,17 @@
 # Class: Gender 
 
 
+_[de] Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen Gültigkeit._
 
-URI: [act:Gender](https://ch.paf.link/schema/actors/Gender)
+_[en] Gender of a person indicating a gender code and temporal validity._
+
+__
+
+
+
+
+
+URI: [act:Gender](https://ld.ech.ch/schema/0294/actors/Gender)
 
 
 
@@ -14,16 +23,18 @@ URI: [act:Gender](https://ch.paf.link/schema/actors/Gender)
  classDiagram
     class Gender
     click Gender href "../Gender/"
-      Validity <|-- Gender
-        click Validity href "../Validity/"
+      HasTemporalValidity <|-- Gender
+        click HasTemporalValidity href "../HasTemporalValidity/"
       
+      Gender : gender_code
+        
+      Gender : is_active
+        
       Gender : pronouns
         
       Gender : valid_from
         
-      Gender : valid_until
-        
-      Gender : value
+      Gender : valid_through
         
       
 ```
@@ -33,19 +44,18 @@ URI: [act:Gender](https://ch.paf.link/schema/actors/Gender)
 
 
 ## Inheritance
-* [Validity](Validity.md)
-    * **Gender**
-
+* **Gender** [ [HasTemporalValidity](HasTemporalValidity.md)]
 
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [value](value.md) | 1 <br/> [String](String.md) | Gender code | direct |
-| [pronouns](pronouns.md) | * <br/> [String](String.md) | Pronouns used by the person | direct |
-| [valid_from](valid_from.md) | 0..1 <br/> [Date](Date.md) |  | [Validity](Validity.md) |
-| [valid_until](valid_until.md) | 0..1 <br/> [Date](Date.md) |  | [Validity](Validity.md) |
+| [gender_code](gender_code.md) | 0..1 <br/> [String](String.md) | [de] Geschlechtscode (z | direct |
+| [pronouns](pronouns.md) | * <br/> [String](String.md) | [de] Von der Person verwendete Pronomen | direct |
+| [valid_from](valid_from.md) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity](HasTemporalValidity.md) |
+| [valid_through](valid_through.md) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity](HasTemporalValidity.md) |
+| [is_active](is_active.md) | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity](HasTemporalValidity.md) |
 
 
 
@@ -63,8 +73,12 @@ URI: [act:Gender](https://ch.paf.link/schema/actors/Gender)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -73,7 +87,7 @@ URI: [act:Gender](https://ch.paf.link/schema/actors/Gender)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -99,30 +113,18 @@ URI: [act:Gender](https://ch.paf.link/schema/actors/Gender)
 <details>
 ```yaml
 name: Gender
-from_schema: https://ch.paf.link/schema/actors
-is_a: Validity
-attributes:
-  value:
-    name: value
-    description: Gender code
-    from_schema: https://ch.paf.link/schema/actors
-    domain_of:
-    - Name
-    - Gender
-    - Occupation
-    - Training
-    - Contact
-    required: true
-  pronouns:
-    name: pronouns
-    description: Pronouns used by the person
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    domain_of:
-    - Gender
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
+description: '[de] Geschlecht einer Person mit Angabe eines Geschlechtscodes und der
+  zeitlichen Gültigkeit.
+
+  [en] Gender of a person indicating a gender code and temporal validity.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
+mixins:
+- HasTemporalValidity
+slots:
+- gender_code
+- pronouns
 
 ```
 </details>
@@ -132,28 +134,41 @@ attributes:
 <details>
 ```yaml
 name: Gender
-from_schema: https://ch.paf.link/schema/actors
-is_a: Validity
+description: '[de] Geschlecht einer Person mit Angabe eines Geschlechtscodes und der
+  zeitlichen Gültigkeit.
+
+  [en] Gender of a person indicating a gender code and temporal validity.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
+mixins:
+- HasTemporalValidity
 attributes:
-  value:
-    name: value
-    description: Gender code
-    from_schema: https://ch.paf.link/schema/actors
-    alias: value
+  gender_code:
+    name: gender_code
+    description: '[de] Geschlechtscode (z.B. gemäß ISO 5218).
+
+      [en] Gender code (e.g., according to ISO 5218).
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: act:genderCode
+    alias: gender_code
     owner: Gender
     domain_of:
-    - Name
     - Gender
-    - Occupation
-    - Training
-    - Contact
     range: string
-    required: true
   pronouns:
     name: pronouns
-    description: Pronouns used by the person
-    from_schema: https://ch.paf.link/schema/actors
+    description: '[de] Von der Person verwendete Pronomen.
+
+      [en] Pronouns used by the person.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
+    slot_uri: act:pronouns
     alias: pronouns
     owner: Gender
     domain_of:
@@ -164,32 +179,51 @@ attributes:
     inlined_as_list: true
   valid_from:
     name: valid_from
-    from_schema: https://ch.paf.link/schema/actors
-    slot_uri: act:validFrom
+    description: '[de] Das Datum, ab dem die Information gültig ist.
+
+      [en] The date from which the information is valid.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: schema:validFrom
     alias: valid_from
     owner: Gender
     domain_of:
-    - Group
-    - Membership
-    - InterestLink
-    - Name
-    - Validity
-    - ElectoralDistrict
+    - HasTemporalValidity
     range: date
-  valid_until:
-    name: valid_until
-    from_schema: https://ch.paf.link/schema/actors
-    slot_uri: act:validUntil
-    alias: valid_until
+  valid_through:
+    name: valid_through
+    description: '[de] Das Datum, bis und mit dem die Information gültig ist.
+
+      [en] The date until which the information is valid, inclusive.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: schema:validThrough
+    alias: valid_through
     owner: Gender
     domain_of:
-    - Group
-    - Membership
-    - InterestLink
-    - Name
-    - Validity
-    - ElectoralDistrict
+    - HasTemporalValidity
     range: date
+  is_active:
+    name: is_active
+    description: '[de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich
+      sein, wenn diese Information explizit vorhanden ist.
+
+      [en] Indicates whether the information is currently valid. Can be useful when
+      this information is explicitly available.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:isCurrent
+    alias: is_active
+    owner: Gender
+    domain_of:
+    - HasTemporalValidity
+    range: boolean
 
 ```
 </details>

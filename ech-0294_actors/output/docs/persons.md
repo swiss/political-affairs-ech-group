@@ -3,9 +3,9 @@
 # Slot: persons 
 
 
-_[en] Collection of persons._
-
 _[de] Sammlung von Personen._
+
+_[en] Collection of persons._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:person](https://ch.paf.link/schema/actors/person)
+URI: [act:person](https://ld.ech.ch/schema/0294/actors/person)
 Alias: persons
 
 <!-- no inheritance hierarchy -->
@@ -26,7 +26,7 @@ Alias: persons
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Container](Container.md) | [en] Root container holding all political actors, groups, and relationships |  no  |
+| [Container](Container.md) | [de] Container für politische Akteure, Gruppen und Beziehungen |  no  |
 
 
 
@@ -35,9 +35,25 @@ Alias: persons
 
 ## Properties
 
-* Range: [Person](Person.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [Person](Person.md) |
+| Domain Of | [Container](Container.md) |
+| Slot URI | [act:person](https://ld.ech.ch/schema/0294/actors/person) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
@@ -48,11 +64,10 @@ Alias: persons
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -72,12 +87,12 @@ Alias: persons
 <details>
 ```yaml
 name: persons
-description: '[en] Collection of persons.
+description: '[de] Sammlung von Personen.
 
-  [de] Sammlung von Personen.
+  [en] Collection of persons.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:person
 alias: persons

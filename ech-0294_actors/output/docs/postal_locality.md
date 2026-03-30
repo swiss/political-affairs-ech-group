@@ -3,8 +3,17 @@
 # Slot: postal_locality 
 
 
+_[de] Ort._
 
-URI: [act:postalLocality](https://ch.paf.link/schema/actors/postalLocality)
+_[en] Locality._
+
+__
+
+
+
+
+
+URI: [act:postalLocality](https://ld.ech.ch/schema/0294/actors/postalLocality)
 Alias: postal_locality
 
 <!-- no inheritance hierarchy -->
@@ -17,7 +26,7 @@ Alias: postal_locality
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Address](Address.md) |  |  no  |
+| [Address](Address.md) | [de] Eine Adresse mit einem Typ (z |  no  |
 
 
 
@@ -26,7 +35,24 @@ Alias: postal_locality
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [Address](Address.md) |
+| Slot URI | [act:postalLocality](https://ld.ech.ch/schema/0294/actors/postalLocality) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -37,11 +63,10 @@ Alias: postal_locality
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -61,11 +86,15 @@ Alias: postal_locality
 <details>
 ```yaml
 name: postal_locality
-from_schema: https://ch.paf.link/schema/actors
+description: '[de] Ort.
+
+  [en] Locality.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:postalLocality
 alias: postal_locality
-owner: Address
 domain_of:
 - Address
 range: string

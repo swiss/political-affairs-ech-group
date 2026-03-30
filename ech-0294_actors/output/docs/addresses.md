@@ -3,9 +3,9 @@
 # Slot: addresses 
 
 
-_[en] Addresses (private, business, local)._
+_[de] Adressen mit Typ (privat, geschäftlich, lokal)._
 
-_[de] Adressen (privat, geschäftlich, lokal)._
+_[en] Addresses with type (private, business, local)._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:address](https://ch.paf.link/schema/actors/address)
+URI: [act:address](https://ld.ech.ch/schema/0294/actors/address)
 Alias: addresses
 
 <!-- no inheritance hierarchy -->
@@ -26,8 +26,8 @@ Alias: addresses
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Group](Group.md) | [en] A political group, organization, or body (e |  no  |
-| [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
+| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
 
 
 
@@ -36,9 +36,25 @@ Alias: addresses
 
 ## Properties
 
-* Range: [Address](Address.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [Address](Address.md) |
+| Domain Of | [Person](Person.md), [Group](Group.md) |
+| Slot URI | [act:address](https://ld.ech.ch/schema/0294/actors/address) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
@@ -49,11 +65,10 @@ Alias: addresses
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -73,12 +88,12 @@ Alias: addresses
 <details>
 ```yaml
 name: addresses
-description: '[en] Addresses (private, business, local).
+description: '[de] Adressen mit Typ (privat, geschäftlich, lokal).
 
-  [de] Adressen (privat, geschäftlich, lokal).
+  [en] Addresses with type (private, business, local).
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:address
 alias: addresses

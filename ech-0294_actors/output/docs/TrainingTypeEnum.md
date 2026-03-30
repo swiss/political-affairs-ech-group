@@ -11,10 +11,9 @@ __
 
 
 
-URI: [act:TrainingTypeEnum](https://ch.paf.link/schema/actors/TrainingTypeEnum)
+URI: [act:TrainingTypeEnum](https://ld.ech.ch/schema/0294/actors/TrainingTypeEnum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | schulabschluss | None | [en] School diploma |
@@ -31,7 +30,12 @@ URI: [act:TrainingTypeEnum](https://ch.paf.link/schema/actors/TrainingTypeEnum)
 
 | Name | Description |
 | ---  | --- |
-| [type](type.md) |  |
+| [training_type](training_type.md) | [de] Typ der Ausbildung oder Bildung |
+
+
+
+
+
 
 
 
@@ -43,11 +47,10 @@ URI: [act:TrainingTypeEnum](https://ch.paf.link/schema/actors/TrainingTypeEnum)
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -64,7 +67,7 @@ description: '[en] Types of training or education.
   [de] Ausbildungs- oder Bildungstypen.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 permissible_values:
   schulabschluss:

@@ -3,8 +3,17 @@
 # Slot: postal_code 
 
 
+_[de] Postleitzahl._
 
-URI: [act:postalCode](https://ch.paf.link/schema/actors/postalCode)
+_[en] Postal code._
+
+__
+
+
+
+
+
+URI: [act:postalCode](https://ld.ech.ch/schema/0294/actors/postalCode)
 Alias: postal_code
 
 <!-- no inheritance hierarchy -->
@@ -17,7 +26,7 @@ Alias: postal_code
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Address](Address.md) |  |  no  |
+| [Address](Address.md) | [de] Eine Adresse mit einem Typ (z |  no  |
 
 
 
@@ -26,7 +35,24 @@ Alias: postal_code
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Integer](Integer.md) |
+| Domain Of | [Address](Address.md) |
+| Slot URI | [act:postalCode](https://ld.ech.ch/schema/0294/actors/postalCode) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -37,11 +63,10 @@ Alias: postal_code
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -61,14 +86,18 @@ Alias: postal_code
 <details>
 ```yaml
 name: postal_code
-from_schema: https://ch.paf.link/schema/actors
+description: '[de] Postleitzahl.
+
+  [en] Postal code.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:postalCode
 alias: postal_code
-owner: Address
 domain_of:
 - Address
-range: string
+range: integer
 
 ```
 </details>

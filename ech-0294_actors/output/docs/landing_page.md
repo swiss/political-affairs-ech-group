@@ -3,9 +3,9 @@
 # Slot: landing_page 
 
 
-_[en] URL providing further information._
-
 _[de] URL mit weiteren Informationen._
+
+_[en] URL providing further information._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:landingPage](https://ch.paf.link/schema/actors/landingPage)
+URI: [act:landingPage](https://ld.ech.ch/schema/0294/actors/landingPage)
 Alias: landing_page
 
 <!-- no inheritance hierarchy -->
@@ -26,7 +26,7 @@ Alias: landing_page
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Group](Group.md) | [en] A political group, organization, or body (e |  no  |
+| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 
 
 
@@ -35,7 +35,24 @@ Alias: landing_page
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [Group](Group.md) |
+| Slot URI | [act:landingPage](https://ld.ech.ch/schema/0294/actors/landingPage) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -46,11 +63,10 @@ Alias: landing_page
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -70,12 +86,12 @@ Alias: landing_page
 <details>
 ```yaml
 name: landing_page
-description: '[en] URL providing further information.
+description: '[de] URL mit weiteren Informationen.
 
-  [de] URL mit weiteren Informationen.
+  [en] URL providing further information.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:landingPage
 alias: landing_page

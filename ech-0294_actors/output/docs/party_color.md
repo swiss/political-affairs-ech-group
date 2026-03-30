@@ -3,9 +3,9 @@
 # Slot: party_color 
 
 
-_[en] Party color (optional for parties)._
-
 _[de] Parteifarbe (optional für Parteien)._
+
+_[en] Party color (optional for parties)._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:partyColor](https://ch.paf.link/schema/actors/partyColor)
+URI: [act:partyColor](https://ld.ech.ch/schema/0294/actors/partyColor)
 Alias: party_color
 
 <!-- no inheritance hierarchy -->
@@ -26,7 +26,7 @@ Alias: party_color
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Group](Group.md) | [en] A political group, organization, or body (e |  no  |
+| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 
 
 
@@ -35,7 +35,24 @@ Alias: party_color
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [Group](Group.md) |
+| Slot URI | [act:partyColor](https://ld.ech.ch/schema/0294/actors/partyColor) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -46,11 +63,10 @@ Alias: party_color
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -70,12 +86,12 @@ Alias: party_color
 <details>
 ```yaml
 name: party_color
-description: '[en] Party color (optional for parties).
+description: '[de] Parteifarbe (optional für Parteien).
 
-  [de] Parteifarbe (optional für Parteien).
+  [en] Party color (optional for parties).
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:partyColor
 alias: party_color

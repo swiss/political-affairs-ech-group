@@ -11,16 +11,26 @@ __
 
 
 
-URI: [act:ContactTypeEnum](https://ch.paf.link/schema/actors/ContactTypeEnum)
+URI: [act:ContactTypeEnum](https://ld.ech.ch/schema/0294/actors/ContactTypeEnum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | email | None | [en] Email address |
 | contact_website | None | [en] Contact website |
 | linked_in | None | [en] LinkedIn profile |
 | twitter | None | [en] Twitter profile |
+
+
+
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [contact_type](contact_type.md) | [de] Typ der Kontaktinformation |
+
+
 
 
 
@@ -35,11 +45,10 @@ URI: [act:ContactTypeEnum](https://ch.paf.link/schema/actors/ContactTypeEnum)
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -56,7 +65,7 @@ description: '[en] Types of contact information.
   [de] Kontaktinformationstypen.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 permissible_values:
   email:

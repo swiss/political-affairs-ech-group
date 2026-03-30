@@ -3,8 +3,17 @@
 # Slot: occupations 
 
 
+_[de] Berufe oder Tätigkeiten der Person._
 
-URI: [act:occupation](https://ch.paf.link/schema/actors/occupation)
+_[en] Occupations or professions of the person._
+
+__
+
+
+
+
+
+URI: [act:occupation](https://ld.ech.ch/schema/0294/actors/occupation)
 Alias: occupations
 
 <!-- no inheritance hierarchy -->
@@ -17,7 +26,7 @@ Alias: occupations
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
+| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
 
 
 
@@ -26,9 +35,25 @@ Alias: occupations
 
 ## Properties
 
-* Range: [Occupation](Occupation.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [Occupation](Occupation.md) |
+| Domain Of | [Person](Person.md) |
+| Slot URI | [act:occupation](https://ld.ech.ch/schema/0294/actors/occupation) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
@@ -39,11 +64,10 @@ Alias: occupations
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -63,7 +87,12 @@ Alias: occupations
 <details>
 ```yaml
 name: occupations
-from_schema: https://ch.paf.link/schema/actors
+description: '[de] Berufe oder Tätigkeiten der Person.
+
+  [en] Occupations or professions of the person.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:occupation
 alias: occupations

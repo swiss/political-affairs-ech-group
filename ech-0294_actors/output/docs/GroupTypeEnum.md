@@ -11,10 +11,9 @@ __
 
 
 
-URI: [act:GroupTypeEnum](https://ch.paf.link/schema/actors/GroupTypeEnum)
+URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | party | act:enum/group_type/party | [en] Political party |
@@ -46,7 +45,12 @@ URI: [act:GroupTypeEnum](https://ch.paf.link/schema/actors/GroupTypeEnum)
 
 | Name | Description |
 | ---  | --- |
-| [group_type](group_type.md) | [en] Type of group (e |
+| [group_type_enum](group_type_enum.md) | [de] Link zum kontrollierten Vokabular für Gruppentypen |
+
+
+
+
+
 
 
 
@@ -58,11 +62,10 @@ URI: [act:GroupTypeEnum](https://ch.paf.link/schema/actors/GroupTypeEnum)
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -79,7 +82,7 @@ description: '[en] Types of political groups and organizations.
   [de] Typen politischer Gruppen und Organisationen.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 permissible_values:
   party:

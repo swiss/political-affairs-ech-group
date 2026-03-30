@@ -3,9 +3,9 @@
 # Slot: spatial 
 
 
-_[en] Spatial reference (municipality number, canton number, e.g., ld.admin.ch/municipality/234)._
-
 _[de] Räumliche Referenz (Gemeindenummer, Kantonsnummer, z.B. ld.admin.ch/municipality/234)._
+
+_[en] Spatial reference (municipality number, canton number, e.g., ld.admin.ch/municipality/234)._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:spatial](https://ch.paf.link/schema/actors/spatial)
+URI: [act:spatial](https://ld.ech.ch/schema/0294/actors/spatial)
 Alias: spatial
 
 <!-- no inheritance hierarchy -->
@@ -26,7 +26,7 @@ Alias: spatial
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Group](Group.md) | [en] A political group, organization, or body (e |  no  |
+| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 
 
 
@@ -35,7 +35,23 @@ Alias: spatial
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [Group](Group.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -46,11 +62,10 @@ Alias: spatial
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -70,12 +85,12 @@ Alias: spatial
 <details>
 ```yaml
 name: spatial
-description: '[en] Spatial reference (municipality number, canton number, e.g., ld.admin.ch/municipality/234).
+description: '[de] Räumliche Referenz (Gemeindenummer, Kantonsnummer, z.B. ld.admin.ch/municipality/234).
 
-  [de] Räumliche Referenz (Gemeindenummer, Kantonsnummer, z.B. ld.admin.ch/municipality/234).
+  [en] Spatial reference (municipality number, canton number, e.g., ld.admin.ch/municipality/234).
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 alias: spatial
 domain_of:

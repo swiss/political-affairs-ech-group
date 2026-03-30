@@ -3,8 +3,17 @@
 # Class: Contact 
 
 
+_[de] Kontaktinformation einer Person mit Angabe eines Typs (z.B. E-Mail, LinkedIn) und eines Werts._
 
-URI: [act:Contact](https://ch.paf.link/schema/actors/Contact)
+_[en] Contact information of a person indicating a type (e.g., email, LinkedIn) and a value._
+
+__
+
+
+
+
+
+URI: [act:Contact](https://ld.ech.ch/schema/0294/actors/Contact)
 
 
 
@@ -14,13 +23,13 @@ URI: [act:Contact](https://ch.paf.link/schema/actors/Contact)
  classDiagram
     class Contact
     click Contact href "../Contact/"
-      Contact : type
+      Contact : contact_type
         
           
     
         
         
-        Contact --> "1" ContactTypeEnum : type
+        Contact --> "0..1" ContactTypeEnum : contact_type
         click ContactTypeEnum href "../ContactTypeEnum/"
     
 
@@ -35,13 +44,12 @@ URI: [act:Contact](https://ch.paf.link/schema/actors/Contact)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [type](type.md) | 1 <br/> [ContactTypeEnum](ContactTypeEnum.md) |  | direct |
-| [value](value.md) | 1 <br/> [String](String.md) |  | direct |
+| [contact_type](contact_type.md) | 0..1 <br/> [ContactTypeEnum](ContactTypeEnum.md) | [de] Typ der Kontaktinformation | direct |
+| [value](value.md) | 0..1 <br/> [String](String.md) | [de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ... | direct |
 
 
 
@@ -60,8 +68,12 @@ URI: [act:Contact](https://ch.paf.link/schema/actors/Contact)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -70,7 +82,7 @@ URI: [act:Contact](https://ch.paf.link/schema/actors/Contact)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -96,26 +108,17 @@ URI: [act:Contact](https://ch.paf.link/schema/actors/Contact)
 <details>
 ```yaml
 name: Contact
-from_schema: https://ch.paf.link/schema/actors
-attributes:
-  type:
-    name: type
-    from_schema: https://ch.paf.link/schema/actors
-    domain_of:
-    - Training
-    - Contact
-    range: ContactTypeEnum
-    required: true
-  value:
-    name: value
-    from_schema: https://ch.paf.link/schema/actors
-    domain_of:
-    - Name
-    - Gender
-    - Occupation
-    - Training
-    - Contact
-    required: true
+description: '[de] Kontaktinformation einer Person mit Angabe eines Typs (z.B. E-Mail,
+  LinkedIn) und eines Werts.
+
+  [en] Contact information of a person indicating a type (e.g., email, LinkedIn) and
+  a value.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
+slots:
+- contact_type
+- value
 
 ```
 </details>
@@ -125,31 +128,49 @@ attributes:
 <details>
 ```yaml
 name: Contact
-from_schema: https://ch.paf.link/schema/actors
+description: '[de] Kontaktinformation einer Person mit Angabe eines Typs (z.B. E-Mail,
+  LinkedIn) und eines Werts.
+
+  [en] Contact information of a person indicating a type (e.g., email, LinkedIn) and
+  a value.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
 attributes:
-  type:
-    name: type
-    from_schema: https://ch.paf.link/schema/actors
-    alias: type
+  contact_type:
+    name: contact_type
+    description: '[de] Typ der Kontaktinformation.
+
+      [en] Type of contact information.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: act:contactType
+    alias: contact_type
     owner: Contact
     domain_of:
-    - Training
     - Contact
     range: ContactTypeEnum
-    required: true
   value:
     name: value
-    from_schema: https://ch.paf.link/schema/actors
+    description: '[de] Der eigentliche Wert einer Information neben weiteren attributen
+      wie Typ, Sprache, etc.
+
+      [en] The value of an information besides other attributes such as type, language,
+      etc.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:value
     alias: value
     owner: Contact
     domain_of:
     - Name
-    - Gender
-    - Occupation
-    - Training
     - Contact
+    - MultilingualValue
     range: string
-    required: true
 
 ```
 </details>

@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:organizationAddress](https://ch.paf.link/schema/actors/organizationAddress)
+URI: [act:organizationAddress](https://ld.ech.ch/schema/0294/actors/organizationAddress)
 Alias: organization_address
 
 <!-- no inheritance hierarchy -->
@@ -26,7 +26,7 @@ Alias: organization_address
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [InterestLink](InterestLink.md) | [en] An interest link (conflict of interest, political financing) of a person... |  no  |
+| [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
 
 
 
@@ -35,7 +35,24 @@ Alias: organization_address
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [InterestLink](InterestLink.md) |
+| Slot URI | [act:organizationAddress](https://ld.ech.ch/schema/0294/actors/organizationAddress) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -46,11 +63,10 @@ Alias: organization_address
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -75,7 +91,7 @@ description: '[en] Address of the organization.
   [de] Adresse der Organisation.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:organizationAddress
 alias: organization_address

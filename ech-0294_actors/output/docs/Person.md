@@ -3,9 +3,9 @@
 # Class: Person 
 
 
-_[en] A person with identifiers, names, addresses, citizenships, and occupations._
-
 _[de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Berufen._
+
+_[en] A person with identifiers, names, addresses, citizenships, and occupations._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:Person](https://ch.paf.link/schema/actors/Person)
+URI: [act:Person](https://ld.ech.ch/schema/0294/actors/Person)
 
 
 
@@ -23,6 +23,11 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
  classDiagram
     class Person
     click Person href "../Person/"
+      HasIdentification <|-- Person
+        click HasIdentification href "../HasIdentification/"
+      HasCreationModificationDates <|-- Person
+        click HasCreationModificationDates href "../HasCreationModificationDates/"
+      
       Person : addresses
         
           
@@ -34,20 +39,9 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
     
 
         
-      Person : birthdate
+      Person : birth_date
         
-      Person : birthyear
-        
-      Person : ch_citizenship
-        
-          
-    
-        
-        
-        Person --> "0..1" Validity : ch_citizenship
-        click Validity href "../Validity/"
-    
-
+      Person : birth_year
         
       Person : citizenships
         
@@ -71,9 +65,17 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
     
 
         
+      Person : date_created
+        
+      Person : date_modified
+        
       Person : datetime_created
         
-      Person : datetime_updated
+      Person : datetime_modified
+        
+      Person : death_date
+        
+      Person : death_year
         
       Person : electoral_district
         
@@ -97,15 +99,15 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
     
 
         
-      Person : id
+      Person : global_uri
         
-      Person : interest_links_person
+      Person : interest_links
         
           
     
         
         
-        Person --> "*" InterestLink : interest_links_person
+        Person --> "*" InterestLink : interest_links
         click InterestLink href "../InterestLink/"
     
 
@@ -114,16 +116,18 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
         
       Person : label_long
         
-      Person : languages
+      Person : language_proficiencies
         
           
     
         
         
-        Person --> "*" LanguageProficiency : languages
+        Person --> "*" LanguageProficiency : language_proficiencies
         click LanguageProficiency href "../LanguageProficiency/"
     
 
+        
+      Person : local_id
         
       Person : names
         
@@ -160,38 +164,47 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
     
 
         
+      Person : wikidata_uri
+        
       
 ```
 
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **Person** [ [HasIdentification](HasIdentification.md) [HasCreationModificationDates](HasCreationModificationDates.md)]
 
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 1 <br/> [String](String.md) | [en] Unique identifier (preferably Wikidata-ID or URI) | direct |
-| [label](label.md) | 1 <br/> [String](String.md) | [en] Display name of the person | direct |
-| [label_long](label_long.md) | 0..1 <br/> [String](String.md) | [en] Extended display name (with title, etc | direct |
-| [birthyear](birthyear.md) | 0..1 <br/> [Integer](Integer.md) | [en] Year of birth | direct |
-| [birthdate](birthdate.md) | 0..1 <br/> [Date](Date.md) | [en] Exact date of birth | direct |
-| [picture](picture.md) | 0..1 <br/> [String](String.md) | [en] Link to an image (preferred: PNG, then JPG, then GIF) | direct |
-| [names](names.md) | * <br/> [Name](Name.md) |  | direct |
-| [addresses](addresses.md) | * <br/> [Address](Address.md) | [en] Addresses (private, business, local) | direct |
-| [languages](languages.md) | * <br/> [LanguageProficiency](LanguageProficiency.md) |  | direct |
-| [ch_citizenship](ch_citizenship.md) | 0..1 <br/> [Validity](Validity.md) |  | direct |
-| [citizenships](citizenships.md) | * <br/> [Citizenship](Citizenship.md) |  | direct |
-| [genders](genders.md) | * <br/> [Gender](Gender.md) |  | direct |
-| [occupations](occupations.md) | * <br/> [Occupation](Occupation.md) |  | direct |
-| [trainings](trainings.md) | * <br/> [Training](Training.md) |  | direct |
+| [label](label.md) | 0..1 <br/> [String](String.md) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben ... | direct |
+| [label_long](label_long.md) | 0..1 <br/> [String](String.md) | [de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel z... | direct |
+| [birth_year](birth_year.md) | 0..1 <br/> [Integer](Integer.md) | [de] Geburtsjahr | direct |
+| [birth_date](birth_date.md) | 0..1 <br/> [Date](Date.md) | [de] Genaues Geburtsdatum | direct |
+| [death_year](death_year.md) | 0..1 <br/> [Integer](Integer.md) | [de] Todesjahr | direct |
+| [death_date](death_date.md) | 0..1 <br/> [Date](Date.md) | [de] Genaues Todesdatum | direct |
+| [picture](picture.md) | 0..1 <br/> [String](String.md) | [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF) | direct |
+| [names](names.md) | * <br/> [Name](Name.md) | [en] Names of the person with type and value | direct |
+| [addresses](addresses.md) | * <br/> [Address](Address.md) | [de] Adressen mit Typ (privat, geschäftlich, lokal) | direct |
+| [language_proficiencies](language_proficiencies.md) | * <br/> [LanguageProficiency](LanguageProficiency.md) | [de] Sprachkompetenzen der Person | direct |
+| [citizenships](citizenships.md) | * <br/> [Citizenship](Citizenship.md) | [de] Staatsbürgerschaften der Person | direct |
+| [genders](genders.md) | * <br/> [Gender](Gender.md) | [de] Geschlecht der Person | direct |
+| [occupations](occupations.md) | * <br/> [Occupation](Occupation.md) | [de] Berufe oder Tätigkeiten der Person | direct |
+| [trainings](trainings.md) | * <br/> [Training](Training.md) | [de] Ausbildungen oder Bildungen der Person | direct |
 | [contacts](contacts.md) | * <br/> [Contact](Contact.md) | [en] Contact information (email, website, social media) | direct |
-| [electoral_district](electoral_district.md) | 0..1 <br/> [ElectoralDistrict](ElectoralDistrict.md) |  | direct |
-| [interest_links_person](interest_links_person.md) | * <br/> [InterestLink](InterestLink.md) | [en] Interest links of the person | direct |
-| [datetime_updated](datetime_updated.md) | 0..1 <br/> [Datetime](Datetime.md) | [en] The last time this record was updated | direct |
-| [datetime_created](datetime_created.md) | 0..1 <br/> [Datetime](Datetime.md) | [en] The time this record was created | direct |
+| [electoral_district](electoral_district.md) | 0..1 <br/> [ElectoralDistrict](ElectoralDistrict.md) | [de] Link zum Wahlbezirk | direct |
+| [interest_links](interest_links.md) | * <br/> [InterestLink](InterestLink.md) | [de] Sammlung von Interessenbindungen | direct |
+| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |
+| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](HasIdentification.md) |
+| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](HasIdentification.md) |
+| [date_created](date_created.md) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](HasCreationModificationDates.md) |
+| [datetime_created](datetime_created.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](HasCreationModificationDates.md) |
+| [date_modified](date_modified.md) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](HasCreationModificationDates.md) |
+| [datetime_modified](datetime_modified.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](HasCreationModificationDates.md) |
 
 
 
@@ -202,6 +215,13 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [persons](persons.md) | range | [Person](Person.md) |
+| [Membership](Membership.md) | [concerned_person](concerned_person.md) | range | [Person](Person.md) |
+| [InterestLink](InterestLink.md) | [concerned_person](concerned_person.md) | range | [Person](Person.md) |
+
+
+
+
+
 
 
 
@@ -215,11 +235,10 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -245,34 +264,34 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
 <details>
 ```yaml
 name: Person
-description: '[en] A person with identifiers, names, addresses, citizenships, and
-  occupations.
+description: '[de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften
+  und Berufen.
 
-  [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und
-  Berufen.
+  [en] A person with identifiers, names, addresses, citizenships, and occupations.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
+mixins:
+- HasIdentification
+- HasCreationModificationDates
 slots:
-- id
 - label
 - label_long
-- birthyear
-- birthdate
+- birth_year
+- birth_date
+- death_year
+- death_date
 - picture
 - names
 - addresses
-- languages
-- ch_citizenship
+- language_proficiencies
 - citizenships
 - genders
 - occupations
 - trainings
 - contacts
 - electoral_district
-- interest_links_person
-- datetime_updated
-- datetime_created
+- interest_links
 
 ```
 </details>
@@ -282,103 +301,124 @@ slots:
 <details>
 ```yaml
 name: Person
-description: '[en] A person with identifiers, names, addresses, citizenships, and
-  occupations.
+description: '[de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften
+  und Berufen.
 
-  [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und
-  Berufen.
+  [en] A person with identifiers, names, addresses, citizenships, and occupations.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
+mixins:
+- HasIdentification
+- HasCreationModificationDates
 attributes:
-  id:
-    name: id
-    description: '[en] Unique identifier (preferably Wikidata-ID or URI).
-
-      [de] Eindeutiger Identifikator (vorzugsweise Wikidata-ID oder URI).
-
-      '
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: Person
-    domain_of:
-    - Container
-    - Person
-    - Group
-    - Membership
-    - InterestLink
-    - PersonReference
-    - GroupReference
-    range: string
-    required: true
   label:
     name: label
-    description: '[en] Display name of the person.
+    description: '[de] Möglichkeit bei einer strukturierten Information, ein Label
+      zu vergeben (bspw. Anzeigename, Anstellung, etc.).
 
-      [de] Anzeigename der Person.
+      [en] Option to assign a label to a structured piece of information (e.g., display
+      name, position, etc.).
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
+    slot_uri: mcm:label
     alias: label
     owner: Person
     domain_of:
     - Person
+    - Group
+    - Occupation
+    - Training
+    - GroupType
+    - RoleType
     range: string
-    required: true
   label_long:
     name: label_long
-    description: '[en] Extended display name (with title, etc.).
+    description: '[de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel
+      zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.).
 
-      [de] Erweiterter Anzeigename (mit Titel, etc.).
+      [en] Option to assign an extended label to a structured piece of information
+      (e.g., display name with title, position, etc.).
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
+    slot_uri: mcm:labelLong
     alias: label_long
     owner: Person
     domain_of:
     - Person
     range: string
-  birthyear:
-    name: birthyear
-    description: '[en] Year of birth.
+  birth_year:
+    name: birth_year
+    description: '[de] Geburtsjahr.
 
-      [de] Geburtsjahr.
+      [en] Year of birth.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    alias: birthyear
+    slot_uri: act:birthYear
+    alias: birth_year
     owner: Person
     domain_of:
     - Person
     range: integer
-  birthdate:
-    name: birthdate
-    description: '[en] Exact date of birth.
+  birth_date:
+    name: birth_date
+    description: '[de] Genaues Geburtsdatum.
 
-      [de] Genaues Geburtsdatum.
+      [en] Exact date of birth.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    alias: birthdate
+    slot_uri: schema:birthDate
+    alias: birth_date
+    owner: Person
+    domain_of:
+    - Person
+    range: date
+  death_year:
+    name: death_year
+    description: '[de] Todesjahr.
+
+      [en] Year of death.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: act:deathYear
+    alias: death_year
+    owner: Person
+    domain_of:
+    - Person
+    range: integer
+  death_date:
+    name: death_date
+    description: '[de] Genaues Todesdatum.
+
+      [en] Exact date of death.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: schema:deathDate
+    alias: death_date
     owner: Person
     domain_of:
     - Person
     range: date
   picture:
     name: picture
-    description: '[en] Link to an image (preferred: PNG, then JPG, then GIF).
+    description: '[de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).
 
-      [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).
+      [en] Link to an image (preferred: PNG, then JPG, then GIF).
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     alias: picture
     owner: Person
@@ -387,7 +427,12 @@ attributes:
     range: string
   names:
     name: names
-    from_schema: https://ch.paf.link/schema/actors
+    description: '[en] Names of the person with type and value.
+
+      [de] Namen der Person mit Typ und Wert.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:name
     alias: names
@@ -400,12 +445,12 @@ attributes:
     inlined_as_list: true
   addresses:
     name: addresses
-    description: '[en] Addresses (private, business, local).
+    description: '[de] Adressen mit Typ (privat, geschäftlich, lokal).
 
-      [de] Adressen (privat, geschäftlich, lokal).
+      [en] Addresses with type (private, business, local).
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:address
     alias: addresses
@@ -417,12 +462,17 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  languages:
-    name: languages
-    from_schema: https://ch.paf.link/schema/actors
+  language_proficiencies:
+    name: language_proficiencies
+    description: '[de] Sprachkompetenzen der Person.
+
+      [en] Language proficiencies of the person.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    slot_uri: act:language
-    alias: languages
+    slot_uri: act:languageProficiency
+    alias: language_proficiencies
     owner: Person
     domain_of:
     - Person
@@ -430,19 +480,14 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  ch_citizenship:
-    name: ch_citizenship
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:chCitizenship
-    alias: ch_citizenship
-    owner: Person
-    domain_of:
-    - Person
-    range: Validity
   citizenships:
     name: citizenships
-    from_schema: https://ch.paf.link/schema/actors
+    description: '[de] Staatsbürgerschaften der Person.
+
+      [en] Citizenships of the person.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:citizenship
     alias: citizenships
@@ -455,7 +500,12 @@ attributes:
     inlined_as_list: true
   genders:
     name: genders
-    from_schema: https://ch.paf.link/schema/actors
+    description: '[de] Geschlecht der Person.
+
+      [en] Gender of the person.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:gender
     alias: genders
@@ -468,7 +518,12 @@ attributes:
     inlined_as_list: true
   occupations:
     name: occupations
-    from_schema: https://ch.paf.link/schema/actors
+    description: '[de] Berufe oder Tätigkeiten der Person.
+
+      [en] Occupations or professions of the person.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:occupation
     alias: occupations
@@ -481,7 +536,12 @@ attributes:
     inlined_as_list: true
   trainings:
     name: trainings
-    from_schema: https://ch.paf.link/schema/actors
+    description: '[de] Ausbildungen oder Bildungen der Person.
+
+      [en] Trainings or educations of the person.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:training
     alias: trainings
@@ -499,7 +559,7 @@ attributes:
       [de] Kontaktinformationen (E-Mail, Website, Social Media).
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:contact
     alias: contacts
@@ -513,7 +573,12 @@ attributes:
     inlined_as_list: true
   electoral_district:
     name: electoral_district
-    from_schema: https://ch.paf.link/schema/actors
+    description: '[de] Link zum Wahlbezirk.
+
+      [en] Link to the electoral district.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:electoralDistrict
     alias: electoral_district
@@ -521,57 +586,134 @@ attributes:
     domain_of:
     - Person
     range: ElectoralDistrict
-  interest_links_person:
-    name: interest_links_person
-    description: '[en] Interest links of the person.
+  interest_links:
+    name: interest_links
+    description: '[de] Sammlung von Interessenbindungen.
 
-      [de] Interessenbindungen der Person.
+      [en] Collection of interest links.range: InterestLink
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:interestLink
-    alias: interest_links_person
+    alias: interest_links
     owner: Person
     domain_of:
+    - Container
     - Person
     range: InterestLink
     multivalued: true
     inlined: true
     inlined_as_list: true
-  datetime_updated:
-    name: datetime_updated
-    description: '[en] The last time this record was updated.
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [de] Der Zeitpunkt, zu dem dieser Datensatz zuletzt aktualisiert wurde.
+      [en] Local identifier. For example, a UUID from the council information system.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    alias: datetime_updated
+    slot_uri: mcm:localId
+    alias: local_id
     owner: Person
     domain_of:
-    - Person
-    - Group
-    - Membership
-    - InterestLink
-    range: datetime
-  datetime_created:
-    name: datetime_created
-    description: '[en] The time this record was created.
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
 
-      [de] Der Zeitpunkt, zu dem dieser Datensatz erstellt wurde.
+      [en] A unique, globally valid URI for the entity.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: Person
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: Person
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+  date_created:
+    name: date_created
+    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+
+      [en] The date when an entity was created.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:dateCreated
+    alias: date_created
+    owner: Person
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_created:
+    name: datetime_created
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+
+      [en] The date and time when an entity was created.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:datetimeCreated
     alias: datetime_created
     owner: Person
     domain_of:
-    - Person
-    - Group
-    - Membership
-    - InterestLink
+    - HasCreationModificationDates
+    range: datetime
+  date_modified:
+    name: date_modified
+    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+
+      [en] The date when an entity was last modified.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:dateModified
+    alias: date_modified
+    owner: Person
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_modified:
+    name: datetime_modified
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
+      wurde.
+
+      [en] The date and time when an entity was last modified.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:datetimeModified
+    alias: datetime_modified
+    owner: Person
+    domain_of:
+    - HasCreationModificationDates
     range: datetime
 
 ```

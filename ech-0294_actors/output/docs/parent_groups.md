@@ -3,9 +3,9 @@
 # Slot: parent_groups 
 
 
-_[en] Parent group IDs (to model party hierarchy or bind parties to parliaments)._
+_[de] Link zu übergeordneten Gruppen._
 
-_[de] Übergeordnete Gruppen-IDs (um Parteihierarchie oder Bindung an Parlamente abzubilden)._
+_[en] Link to parent groups._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:parentGroup](https://ch.paf.link/schema/actors/parentGroup)
+URI: [act:parentGroup](https://ld.ech.ch/schema/0294/actors/parentGroup)
 Alias: parent_groups
 
 <!-- no inheritance hierarchy -->
@@ -26,7 +26,7 @@ Alias: parent_groups
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Group](Group.md) | [en] A political group, organization, or body (e |  no  |
+| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 
 
 
@@ -35,9 +35,25 @@ Alias: parent_groups
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [Uriorcurie](Uriorcurie.md) |
+| Domain Of | [Group](Group.md) |
+| Slot URI | [act:parentGroup](https://ld.ech.ch/schema/0294/actors/parentGroup) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
@@ -48,11 +64,10 @@ Alias: parent_groups
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -72,18 +87,18 @@ Alias: parent_groups
 <details>
 ```yaml
 name: parent_groups
-description: '[en] Parent group IDs (to model party hierarchy or bind parties to parliaments).
+description: '[de] Link zu übergeordneten Gruppen.
 
-  [de] Übergeordnete Gruppen-IDs (um Parteihierarchie oder Bindung an Parlamente abzubilden).
+  [en] Link to parent groups.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:parentGroup
 alias: parent_groups
 domain_of:
 - Group
-range: string
+range: uriorcurie
 multivalued: true
 inlined: true
 inlined_as_list: true

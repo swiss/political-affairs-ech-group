@@ -3,8 +3,17 @@
 # Slot: district 
 
 
+_[de] Wahlkreis oder Wahlregion._
 
-URI: [act:district](https://ch.paf.link/schema/actors/district)
+_[en] Electoral district or region._
+
+__
+
+
+
+
+
+URI: [act:district](https://ld.ech.ch/schema/0294/actors/district)
 Alias: district
 
 <!-- no inheritance hierarchy -->
@@ -17,7 +26,7 @@ Alias: district
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ElectoralDistrict](ElectoralDistrict.md) |  |  no  |
+| [ElectoralDistrict](ElectoralDistrict.md) | [de] Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit z... |  no  |
 
 
 
@@ -26,9 +35,24 @@ Alias: district
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
 
-* Required: True
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [ElectoralDistrict](ElectoralDistrict.md) |
+| Slot URI | [act:district](https://ld.ech.ch/schema/0294/actors/district) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -39,11 +63,10 @@ Alias: district
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -63,14 +86,18 @@ Alias: district
 <details>
 ```yaml
 name: district
-from_schema: https://ch.paf.link/schema/actors
+description: '[de] Wahlkreis oder Wahlregion.
+
+  [en] Electoral district or region.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
+slot_uri: act:district
 alias: district
-owner: ElectoralDistrict
 domain_of:
 - ElectoralDistrict
 range: string
-required: true
 
 ```
 </details>

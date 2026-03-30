@@ -3,9 +3,9 @@
 # Slot: valid_from 
 
 
-_[en] Start date of validity period._
+_[de] Das Datum, ab dem die Information gültig ist._
 
-_[de] Startdatum der Gültigkeitsperiode._
+_[en] The date from which the information is valid._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:validFrom](https://ch.paf.link/schema/actors/validFrom)
+URI: [schema:validFrom](http://schema.org/validFrom)
 Alias: valid_from
 
 <!-- no inheritance hierarchy -->
@@ -26,15 +26,16 @@ Alias: valid_from
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [InterestLink](InterestLink.md) | [en] An interest link (conflict of interest, political financing) of a person... |  no  |
-| [Group](Group.md) | [en] A political group, organization, or body (e |  no  |
-| [Membership](Membership.md) | [en] A membership relationship between a person and a group |  no  |
-| [Gender](Gender.md) |  |  no  |
-| [Occupation](Occupation.md) |  |  no  |
-| [Citizenship](Citizenship.md) |  |  no  |
-| [Name](Name.md) |  |  no  |
-| [Validity](Validity.md) |  |  no  |
-| [ElectoralDistrict](ElectoralDistrict.md) |  |  no  |
+| [Training](Training.md) | [de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z |  no  |
+| [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |  no  |
+| [Name](Name.md) | [de] Ein Name mit einem Typ (z |  no  |
+| [Citizenship](Citizenship.md) | [de] Staatsbürgerschaft einer Person mit Angabe des Landes und der zeitlichen... |  no  |
+| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [ElectoralDistrict](ElectoralDistrict.md) | [de] Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit z... |  no  |
+| [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
+| [Occupation](Occupation.md) | [de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19... |  no  |
+| [HasTemporalValidity](HasTemporalValidity.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gülti... |  no  |
+| [Gender](Gender.md) | [de] Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitli... |  no  |
 
 
 
@@ -43,7 +44,24 @@ Alias: valid_from
 
 ## Properties
 
-* Range: [Date](Date.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Date](Date.md) |
+| Domain Of | [HasTemporalValidity](HasTemporalValidity.md) |
+| Slot URI | [schema:validFrom](http://schema.org/validFrom) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -54,11 +72,10 @@ Alias: valid_from
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -67,7 +84,7 @@ Alias: valid_from
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:validFrom |
+| self | schema:validFrom |
 | native | act:valid_from |
 
 
@@ -78,22 +95,17 @@ Alias: valid_from
 <details>
 ```yaml
 name: valid_from
-description: '[en] Start date of validity period.
+description: '[de] Das Datum, ab dem die Information gültig ist.
 
-  [de] Startdatum der Gültigkeitsperiode.
+  [en] The date from which the information is valid.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
-slot_uri: act:validFrom
+slot_uri: schema:validFrom
 alias: valid_from
 domain_of:
-- Group
-- Membership
-- InterestLink
-- Name
-- Validity
-- ElectoralDistrict
+- HasTemporalValidity
 range: date
 
 ```

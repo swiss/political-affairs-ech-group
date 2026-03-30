@@ -3,8 +3,17 @@
 # Slot: electoral_district 
 
 
+_[de] Link zum Wahlbezirk._
 
-URI: [act:electoralDistrict](https://ch.paf.link/schema/actors/electoralDistrict)
+_[en] Link to the electoral district._
+
+__
+
+
+
+
+
+URI: [act:electoralDistrict](https://ld.ech.ch/schema/0294/actors/electoralDistrict)
 Alias: electoral_district
 
 <!-- no inheritance hierarchy -->
@@ -17,7 +26,7 @@ Alias: electoral_district
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
+| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
 
 
 
@@ -26,7 +35,24 @@ Alias: electoral_district
 
 ## Properties
 
-* Range: [ElectoralDistrict](ElectoralDistrict.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [ElectoralDistrict](ElectoralDistrict.md) |
+| Domain Of | [Person](Person.md) |
+| Slot URI | [act:electoralDistrict](https://ld.ech.ch/schema/0294/actors/electoralDistrict) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -37,11 +63,10 @@ Alias: electoral_district
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -61,7 +86,12 @@ Alias: electoral_district
 <details>
 ```yaml
 name: electoral_district
-from_schema: https://ch.paf.link/schema/actors
+description: '[de] Link zum Wahlbezirk.
+
+  [en] Link to the electoral district.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:electoralDistrict
 alias: electoral_district

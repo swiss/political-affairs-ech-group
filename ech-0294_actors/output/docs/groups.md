@@ -3,9 +3,9 @@
 # Slot: groups 
 
 
-_[en] Collection of groups._
-
 _[de] Sammlung von Gruppen._
+
+_[en] Collection of groups._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:group](https://ch.paf.link/schema/actors/group)
+URI: [act:group](https://ld.ech.ch/schema/0294/actors/group)
 Alias: groups
 
 <!-- no inheritance hierarchy -->
@@ -26,7 +26,7 @@ Alias: groups
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Container](Container.md) | [en] Root container holding all political actors, groups, and relationships |  no  |
+| [Container](Container.md) | [de] Container für politische Akteure, Gruppen und Beziehungen |  no  |
 
 
 
@@ -35,9 +35,25 @@ Alias: groups
 
 ## Properties
 
-* Range: [Group](Group.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [Group](Group.md) |
+| Domain Of | [Container](Container.md) |
+| Slot URI | [act:group](https://ld.ech.ch/schema/0294/actors/group) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
@@ -48,11 +64,10 @@ Alias: groups
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -72,12 +87,12 @@ Alias: groups
 <details>
 ```yaml
 name: groups
-description: '[en] Collection of groups.
+description: '[de] Sammlung von Gruppen.
 
-  [de] Sammlung von Gruppen.
+  [en] Collection of groups.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:group
 alias: groups

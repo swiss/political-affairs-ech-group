@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:type_label](https://ch.paf.link/schema/actors/type_label)
+URI: [act:type_label](https://ld.ech.ch/schema/0294/actors/type_label)
 Alias: type_label
 
 <!-- no inheritance hierarchy -->
@@ -22,20 +22,26 @@ Alias: type_label
 
 
 
-## Applicable Classes
-
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [Group](Group.md) | [en] A political group, organization, or body (e |  no  |
-
-
-
-
 
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -46,11 +52,10 @@ Alias: type_label
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -75,11 +80,9 @@ description: '[en] Custom type label when standard type values don''t apply.
   [de] Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 alias: type_label
-domain_of:
-- Group
 range: string
 
 ```

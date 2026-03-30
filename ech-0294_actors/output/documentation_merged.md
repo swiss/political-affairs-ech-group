@@ -353,9 +353,9 @@ Siehe vollständige LinkML-Schema-Dokumentation:
 # Class: Person 
 
 
-_[en] A person with identifiers, names, addresses, citizenships, and occupations._
-
 _[de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Berufen._
+
+_[en] A person with identifiers, names, addresses, citizenships, and occupations._
 
 __
 
@@ -363,7 +363,7 @@ __
 
 
 
-URI: [act:Person](https://ch.paf.link/schema/actors/Person)
+URI: [act:Person](https://ld.ech.ch/schema/0294/actors/Person)
 
 
 
@@ -373,6 +373,11 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
  classDiagram
     class Person
     click Person href "../Person/"
+      HasIdentification <|-- Person
+        click HasIdentification href "../HasIdentification/"
+      HasCreationModificationDates <|-- Person
+        click HasCreationModificationDates href "../HasCreationModificationDates/"
+      
       Person : addresses
         
           
@@ -384,20 +389,9 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
     
 
         
-      Person : birthdate
+      Person : birth_date
         
-      Person : birthyear
-        
-      Person : ch_citizenship
-        
-          
-    
-        
-        
-        Person --> "0..1" Validity : ch_citizenship
-        click Validity href "../Validity/"
-    
-
+      Person : birth_year
         
       Person : citizenships
         
@@ -421,9 +415,17 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
     
 
         
+      Person : date_created
+        
+      Person : date_modified
+        
       Person : datetime_created
         
-      Person : datetime_updated
+      Person : datetime_modified
+        
+      Person : death_date
+        
+      Person : death_year
         
       Person : electoral_district
         
@@ -447,15 +449,15 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
     
 
         
-      Person : id
+      Person : global_uri
         
-      Person : interest_links_person
+      Person : interest_links
         
           
     
         
         
-        Person --> "*" InterestLink : interest_links_person
+        Person --> "*" InterestLink : interest_links
         click InterestLink href "../InterestLink/"
     
 
@@ -464,16 +466,18 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
         
       Person : label_long
         
-      Person : languages
+      Person : language_proficiencies
         
           
     
         
         
-        Person --> "*" LanguageProficiency : languages
+        Person --> "*" LanguageProficiency : language_proficiencies
         click LanguageProficiency href "../LanguageProficiency/"
     
 
+        
+      Person : local_id
         
       Person : names
         
@@ -510,38 +514,47 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
     
 
         
+      Person : wikidata_uri
+        
       
 ```
 
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **Person** [ [HasIdentification](# [HasIdentification) [HasCreationModificationDates](#HasCreationModificationDates)]
 
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](#id) | 1 <br/> [String](#String) | [en] Unique identifier (preferably Wikidata-ID or URI) | direct |
-| [label](#label) | 1 <br/> [String](#String) | [en] Display name of the person | direct |
-| [label_long](#label_long) | 0..1 <br/> [String](#String) | [en] Extended display name (with title, etc | direct |
-| [birthyear](#birthyear) | 0..1 <br/> [Integer](#Integer) | [en] Year of birth | direct |
-| [birthdate](#birthdate) | 0..1 <br/> [Date](#Date) | [en] Exact date of birth | direct |
-| [picture](#picture) | 0..1 <br/> [String](#String) | [en] Link to an image (preferred: PNG, then JPG, then GIF) | direct |
-| [names](#names) | * <br/> [Name](#Name) |  | direct |
-| [addresses](#addresses) | * <br/> [Address](#Address) | [en] Addresses (private, business, local) | direct |
-| [languages](#languages) | * <br/> [LanguageProficiency](#LanguageProficiency) |  | direct |
-| [ch_citizenship](#ch_citizenship) | 0..1 <br/> [Validity](#Validity) |  | direct |
-| [citizenships](#citizenships) | * <br/> [Citizenship](#Citizenship) |  | direct |
-| [genders](#genders) | * <br/> [Gender](#Gender) |  | direct |
-| [occupations](#occupations) | * <br/> [Occupation](#Occupation) |  | direct |
-| [trainings](#trainings) | * <br/> [Training](#Training) |  | direct |
+| [label](#label) | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben ... | direct |
+| [label_long](#label_long) | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel z... | direct |
+| [birth_year](#birth_year) | 0..1 <br/> [Integer](#Integer) | [de] Geburtsjahr | direct |
+| [birth_date](#birth_date) | 0..1 <br/> [Date](#Date) | [de] Genaues Geburtsdatum | direct |
+| [death_year](#death_year) | 0..1 <br/> [Integer](#Integer) | [de] Todesjahr | direct |
+| [death_date](#death_date) | 0..1 <br/> [Date](#Date) | [de] Genaues Todesdatum | direct |
+| [picture](#picture) | 0..1 <br/> [String](#String) | [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF) | direct |
+| [names](#names) | * <br/> [Name](#Name) | [en] Names of the person with type and value | direct |
+| [addresses](#addresses) | * <br/> [Address](#Address) | [de] Adressen mit Typ (privat, geschäftlich, lokal) | direct |
+| [language_proficiencies](#language_proficiencies) | * <br/> [LanguageProficiency](#LanguageProficiency) | [de] Sprachkompetenzen der Person | direct |
+| [citizenships](#citizenships) | * <br/> [Citizenship](#Citizenship) | [de] Staatsbürgerschaften der Person | direct |
+| [genders](#genders) | * <br/> [Gender](#Gender) | [de] Geschlecht der Person | direct |
+| [occupations](#occupations) | * <br/> [Occupation](#Occupation) | [de] Berufe oder Tätigkeiten der Person | direct |
+| [trainings](#trainings) | * <br/> [Training](#Training) | [de] Ausbildungen oder Bildungen der Person | direct |
 | [contacts](#contacts) | * <br/> [Contact](#Contact) | [en] Contact information (email, website, social media) | direct |
-| [electoral_district](#electoral_district) | 0..1 <br/> [ElectoralDistrict](#ElectoralDistrict) |  | direct |
-| [interest_links_person](#interest_links_person) | * <br/> [InterestLink](#InterestLink) | [en] Interest links of the person | direct |
-| [datetime_updated](#datetime_updated) | 0..1 <br/> [Datetime](#Datetime) | [en] The last time this record was updated | direct |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [en] The time this record was created | direct |
+| [electoral_district](#electoral_district) | 0..1 <br/> [ElectoralDistrict](#ElectoralDistrict) | [de] Link zum Wahlbezirk | direct |
+| [interest_links](#interest_links) | * <br/> [InterestLink](#InterestLink) | [de] Sammlung von Interessenbindungen | direct |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
 
 
 
@@ -552,6 +565,13 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Container](#Container) | [persons](#persons) | range | [Person](#Person) |
+| [Membership](#Membership) | [concerned_person](#concerned_person) | range | [Person](#Person) |
+| [InterestLink](#InterestLink) | [concerned_person](#concerned_person) | range | [Person](#Person) |
+
+
+
+
+
 
 
 
@@ -565,11 +585,10 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -595,34 +614,34 @@ URI: [act:Person](https://ch.paf.link/schema/actors/Person)
 <details>
 ```yaml
 name: Person
-description: '[en] A person with identifiers, names, addresses, citizenships, and
-  occupations.
+description: '[de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften
+  und Berufen.
 
-  [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und
-  Berufen.
+  [en] A person with identifiers, names, addresses, citizenships, and occupations.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
+mixins:
+- HasIdentification
+- HasCreationModificationDates
 slots:
-- id
 - label
 - label_long
-- birthyear
-- birthdate
+- birth_year
+- birth_date
+- death_year
+- death_date
 - picture
 - names
 - addresses
-- languages
-- ch_citizenship
+- language_proficiencies
 - citizenships
 - genders
 - occupations
 - trainings
 - contacts
 - electoral_district
-- interest_links_person
-- datetime_updated
-- datetime_created
+- interest_links
 
 ```
 </details>
@@ -632,103 +651,124 @@ slots:
 <details>
 ```yaml
 name: Person
-description: '[en] A person with identifiers, names, addresses, citizenships, and
-  occupations.
+description: '[de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften
+  und Berufen.
 
-  [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und
-  Berufen.
+  [en] A person with identifiers, names, addresses, citizenships, and occupations.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
+mixins:
+- HasIdentification
+- HasCreationModificationDates
 attributes:
-  id:
-    name: id
-    description: '[en] Unique identifier (preferably Wikidata-ID or URI).
-
-      [de] Eindeutiger Identifikator (vorzugsweise Wikidata-ID oder URI).
-
-      '
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: Person
-    domain_of:
-    - Container
-    - Person
-    - Group
-    - Membership
-    - InterestLink
-    - PersonReference
-    - GroupReference
-    range: string
-    required: true
   label:
     name: label
-    description: '[en] Display name of the person.
+    description: '[de] Möglichkeit bei einer strukturierten Information, ein Label
+      zu vergeben (bspw. Anzeigename, Anstellung, etc.).
 
-      [de] Anzeigename der Person.
+      [en] Option to assign a label to a structured piece of information (e.g., display
+      name, position, etc.).
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
+    slot_uri: mcm:label
     alias: label
     owner: Person
     domain_of:
     - Person
+    - Group
+    - Occupation
+    - Training
+    - GroupType
+    - RoleType
     range: string
-    required: true
   label_long:
     name: label_long
-    description: '[en] Extended display name (with title, etc.).
+    description: '[de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel
+      zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.).
 
-      [de] Erweiterter Anzeigename (mit Titel, etc.).
+      [en] Option to assign an extended label to a structured piece of information
+      (e.g., display name with title, position, etc.).
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
+    slot_uri: mcm:labelLong
     alias: label_long
     owner: Person
     domain_of:
     - Person
     range: string
-  birthyear:
-    name: birthyear
-    description: '[en] Year of birth.
+  birth_year:
+    name: birth_year
+    description: '[de] Geburtsjahr.
 
-      [de] Geburtsjahr.
+      [en] Year of birth.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    alias: birthyear
+    slot_uri: act:birthYear
+    alias: birth_year
     owner: Person
     domain_of:
     - Person
     range: integer
-  birthdate:
-    name: birthdate
-    description: '[en] Exact date of birth.
+  birth_date:
+    name: birth_date
+    description: '[de] Genaues Geburtsdatum.
 
-      [de] Genaues Geburtsdatum.
+      [en] Exact date of birth.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    alias: birthdate
+    slot_uri: schema:birthDate
+    alias: birth_date
+    owner: Person
+    domain_of:
+    - Person
+    range: date
+  death_year:
+    name: death_year
+    description: '[de] Todesjahr.
+
+      [en] Year of death.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: act:deathYear
+    alias: death_year
+    owner: Person
+    domain_of:
+    - Person
+    range: integer
+  death_date:
+    name: death_date
+    description: '[de] Genaues Todesdatum.
+
+      [en] Exact date of death.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: schema:deathDate
+    alias: death_date
     owner: Person
     domain_of:
     - Person
     range: date
   picture:
     name: picture
-    description: '[en] Link to an image (preferred: PNG, then JPG, then GIF).
+    description: '[de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).
 
-      [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).
+      [en] Link to an image (preferred: PNG, then JPG, then GIF).
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     alias: picture
     owner: Person
@@ -737,7 +777,12 @@ attributes:
     range: string
   names:
     name: names
-    from_schema: https://ch.paf.link/schema/actors
+    description: '[en] Names of the person with type and value.
+
+      [de] Namen der Person mit Typ und Wert.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:name
     alias: names
@@ -750,12 +795,12 @@ attributes:
     inlined_as_list: true
   addresses:
     name: addresses
-    description: '[en] Addresses (private, business, local).
+    description: '[de] Adressen mit Typ (privat, geschäftlich, lokal).
 
-      [de] Adressen (privat, geschäftlich, lokal).
+      [en] Addresses with type (private, business, local).
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:address
     alias: addresses
@@ -767,12 +812,17 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  languages:
-    name: languages
-    from_schema: https://ch.paf.link/schema/actors
+  language_proficiencies:
+    name: language_proficiencies
+    description: '[de] Sprachkompetenzen der Person.
+
+      [en] Language proficiencies of the person.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    slot_uri: act:language
-    alias: languages
+    slot_uri: act:languageProficiency
+    alias: language_proficiencies
     owner: Person
     domain_of:
     - Person
@@ -780,19 +830,14 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  ch_citizenship:
-    name: ch_citizenship
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:chCitizenship
-    alias: ch_citizenship
-    owner: Person
-    domain_of:
-    - Person
-    range: Validity
   citizenships:
     name: citizenships
-    from_schema: https://ch.paf.link/schema/actors
+    description: '[de] Staatsbürgerschaften der Person.
+
+      [en] Citizenships of the person.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:citizenship
     alias: citizenships
@@ -805,7 +850,12 @@ attributes:
     inlined_as_list: true
   genders:
     name: genders
-    from_schema: https://ch.paf.link/schema/actors
+    description: '[de] Geschlecht der Person.
+
+      [en] Gender of the person.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:gender
     alias: genders
@@ -818,7 +868,12 @@ attributes:
     inlined_as_list: true
   occupations:
     name: occupations
-    from_schema: https://ch.paf.link/schema/actors
+    description: '[de] Berufe oder Tätigkeiten der Person.
+
+      [en] Occupations or professions of the person.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:occupation
     alias: occupations
@@ -831,7 +886,12 @@ attributes:
     inlined_as_list: true
   trainings:
     name: trainings
-    from_schema: https://ch.paf.link/schema/actors
+    description: '[de] Ausbildungen oder Bildungen der Person.
+
+      [en] Trainings or educations of the person.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:training
     alias: trainings
@@ -849,7 +909,7 @@ attributes:
       [de] Kontaktinformationen (E-Mail, Website, Social Media).
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:contact
     alias: contacts
@@ -863,7 +923,12 @@ attributes:
     inlined_as_list: true
   electoral_district:
     name: electoral_district
-    from_schema: https://ch.paf.link/schema/actors
+    description: '[de] Link zum Wahlbezirk.
+
+      [en] Link to the electoral district.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:electoralDistrict
     alias: electoral_district
@@ -871,57 +936,134 @@ attributes:
     domain_of:
     - Person
     range: ElectoralDistrict
-  interest_links_person:
-    name: interest_links_person
-    description: '[en] Interest links of the person.
+  interest_links:
+    name: interest_links
+    description: '[de] Sammlung von Interessenbindungen.
 
-      [de] Interessenbindungen der Person.
+      [en] Collection of interest links.range: InterestLink
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:interestLink
-    alias: interest_links_person
+    alias: interest_links
     owner: Person
     domain_of:
+    - Container
     - Person
     range: InterestLink
     multivalued: true
     inlined: true
     inlined_as_list: true
-  datetime_updated:
-    name: datetime_updated
-    description: '[en] The last time this record was updated.
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [de] Der Zeitpunkt, zu dem dieser Datensatz zuletzt aktualisiert wurde.
+      [en] Local identifier. For example, a UUID from the council information system.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    alias: datetime_updated
+    slot_uri: mcm:localId
+    alias: local_id
     owner: Person
     domain_of:
-    - Person
-    - Group
-    - Membership
-    - InterestLink
-    range: datetime
-  datetime_created:
-    name: datetime_created
-    description: '[en] The time this record was created.
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
 
-      [de] Der Zeitpunkt, zu dem dieser Datensatz erstellt wurde.
+      [en] A unique, globally valid URI for the entity.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: Person
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: Person
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+  date_created:
+    name: date_created
+    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+
+      [en] The date when an entity was created.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:dateCreated
+    alias: date_created
+    owner: Person
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_created:
+    name: datetime_created
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+
+      [en] The date and time when an entity was created.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:datetimeCreated
     alias: datetime_created
     owner: Person
     domain_of:
-    - Person
-    - Group
-    - Membership
-    - InterestLink
+    - HasCreationModificationDates
+    range: datetime
+  date_modified:
+    name: date_modified
+    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+
+      [en] The date when an entity was last modified.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:dateModified
+    alias: date_modified
+    owner: Person
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_modified:
+    name: datetime_modified
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
+      wurde.
+
+      [en] The date and time when an entity was last modified.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:datetimeModified
+    alias: datetime_modified
+    owner: Person
+    domain_of:
+    - HasCreationModificationDates
     range: datetime
 
 ```
@@ -1583,9 +1725,9 @@ Siehe vollständige LinkML-Schema-Dokumentation:
 # Class: Group 
 
 
-_[en] A political group, organization, or body (e.g., party, committee, parliament, department)._
-
 _[de] Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommission, Parlament, Departement)._
+
+_[en] A political group, organization, or body (e.g., party, committee, parliament, department)._
 
 __
 
@@ -1593,7 +1735,7 @@ __
 
 
 
-URI: [act:Group](https://ch.paf.link/schema/actors/Group)
+URI: [act:Group](https://ld.ech.ch/schema/0294/actors/Group)
 
 
 
@@ -1603,14 +1745,21 @@ URI: [act:Group](https://ch.paf.link/schema/actors/Group)
  classDiagram
     class Group
     click Group href "../Group/"
+      HasIdentification <|-- Group
+        click HasIdentification href "../HasIdentification/"
+      HasCreationModificationDates <|-- Group
+        click HasCreationModificationDates href "../HasCreationModificationDates/"
+      HasTemporalValidity <|-- Group
+        click HasTemporalValidity href "../HasTemporalValidity/"
+      
       Group : abbreviation
         
           
     
         
         
-        Group --> "*" MultilingualString : abbreviation
-        click MultilingualString href "../MultilingualString/"
+        Group --> "*" MultilingualValue : abbreviation
+        click MultilingualValue href "../MultilingualValue/"
     
 
         
@@ -1636,9 +1785,13 @@ URI: [act:Group](https://ch.paf.link/schema/actors/Group)
     
 
         
+      Group : date_created
+        
+      Group : date_modified
+        
       Group : datetime_created
         
-      Group : datetime_updated
+      Group : datetime_modified
         
       Group : description
         
@@ -1646,10 +1799,12 @@ URI: [act:Group](https://ch.paf.link/schema/actors/Group)
     
         
         
-        Group --> "*" MultilingualString : description
-        click MultilingualString href "../MultilingualString/"
+        Group --> "*" MultilingualValue : description
+        click MultilingualValue href "../MultilingualValue/"
     
 
+        
+      Group : global_uri
         
       Group : group_type
         
@@ -1657,25 +1812,18 @@ URI: [act:Group](https://ch.paf.link/schema/actors/Group)
     
         
         
-        Group --> "1" GroupTypeEnum : group_type
-        click GroupTypeEnum href "../GroupTypeEnum/"
+        Group --> "0..1" GroupType : group_type
+        click GroupType href "../GroupType/"
     
 
         
-      Group : id
+      Group : is_active
+        
+      Group : label
         
       Group : landing_page
         
-      Group : name
-        
-          
-    
-        
-        
-        Group --> "*" MultilingualString : name
-        click MultilingualString href "../MultilingualString/"
-    
-
+      Group : local_id
         
       Group : parent_groups
         
@@ -1683,15 +1831,13 @@ URI: [act:Group](https://ch.paf.link/schema/actors/Group)
         
       Group : spatial
         
-      Group : type_label
-        
-      Group : uri
-        
-      Group : url_statutes
+      Group : statutes_url
         
       Group : valid_from
         
-      Group : valid_until
+      Group : valid_through
+        
+      Group : wikidata_uri
         
       
 ```
@@ -1699,31 +1845,36 @@ URI: [act:Group](https://ch.paf.link/schema/actors/Group)
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **Group** [ [HasIdentification](# [HasIdentification) [HasCreationModificationDates](#HasCreationModificationDates) [HasTemporalValidity](#HasTemporalValidity)]
 
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](#id) | 1 <br/> [String](#String) | [en] Unique identifier (preferably Wikidata-ID or URI) | direct |
-| [uri](#uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [en] Globally valid identifier (e | direct |
-| [group_type](#group_type) | 1 <br/> [GroupTypeEnum](#GroupTypeEnum) | [en] Type of group (e | direct |
-| [type_label](#type_label) | 0..1 <br/> [String](#String) | [en] Custom type label when standard type values don't apply | direct |
-| [valid_from](#valid_from) | 0..1 <br/> [Date](#Date) | [en] Start date of validity period | direct |
-| [valid_until](#valid_until) | 0..1 <br/> [Date](#Date) | [en] End date of validity period | direct |
-| [name](#name) | * <br/> [MultilingualString](#MultilingualString) | [en] Name (can be multilingual) | direct |
-| [abbreviation](#abbreviation) | * <br/> [MultilingualString](#MultilingualString) | [en] Abbreviation (can be multilingual) | direct |
-| [description](#description) | * <br/> [MultilingualString](#MultilingualString) | [en] Description of the entity | direct |
-| [landing_page](#landing_page) | 0..1 <br/> [String](#String) | [en] URL providing further information | direct |
-| [parent_groups](#parent_groups) | * <br/> [String](#String) | [en] Parent group IDs (to model party hierarchy or bind parties to parliament... | direct |
-| [spatial](#spatial) | 0..1 <br/> [String](#String) | [en] Spatial reference (municipality number, canton number, e | direct |
+| [group_type](#group_type) | 0..1 <br/> [GroupType](#GroupType) | [de] Link zum Gruppentyp | direct |
+| [label](#label) | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben ... | direct |
+| [abbreviation](#abbreviation) | * <br/> [MultilingualValue](#MultilingualValue) | [de] Abkürzung (kann mehrsprachig sein) | direct |
+| [description](#description) | * <br/> [MultilingualValue](#MultilingualValue) | [de] Beschreibung der Entität | direct |
+| [landing_page](#landing_page) | 0..1 <br/> [String](#String) | [de] URL mit weiteren Informationen | direct |
+| [parent_groups](#parent_groups) | * <br/> [Uriorcurie](#Uriorcurie) | [de] Link zu übergeordneten Gruppen | direct |
+| [spatial](#spatial) | 0..1 <br/> [String](#String) | [de] Räumliche Referenz (Gemeindenummer, Kantonsnummer, z | direct |
 | [contacts](#contacts) | * <br/> [Contact](#Contact) | [en] Contact information (email, website, social media) | direct |
-| [addresses](#addresses) | * <br/> [Address](#Address) | [en] Addresses (private, business, local) | direct |
-| [url_statutes](#url_statutes) | 0..1 <br/> [String](#String) | [en] URL to party statutes (optional for parties) | direct |
-| [party_color](#party_color) | 0..1 <br/> [String](#String) | [en] Party color (optional for parties) | direct |
-| [datetime_updated](#datetime_updated) | 0..1 <br/> [Datetime](#Datetime) | [en] The last time this record was updated | direct |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [en] The time this record was created | direct |
+| [addresses](#addresses) | * <br/> [Address](#Address) | [de] Adressen mit Typ (privat, geschäftlich, lokal) | direct |
+| [statutes_url](#statutes_url) | 0..1 <br/> [String](#String) | [de] URL zu Parteistatuten (optional für Parteien) | direct |
+| [party_color](#party_color) | 0..1 <br/> [String](#String) | [de] Parteifarbe (optional für Parteien) | direct |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [valid_from](#valid_from) | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity) |
+| [valid_through](#valid_through) | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity) |
+| [is_active](#is_active) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity) |
 
 
 
@@ -1734,6 +1885,12 @@ URI: [act:Group](https://ch.paf.link/schema/actors/Group)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Container](#Container) | [groups](#groups) | range | [Group](#Group) |
+| [Membership](#Membership) | [concerned_group](#concerned_group) | range | [Group](#Group) |
+
+
+
+
+
 
 
 
@@ -1747,11 +1904,10 @@ URI: [act:Group](https://ch.paf.link/schema/actors/Group)
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -1777,22 +1933,21 @@ URI: [act:Group](https://ch.paf.link/schema/actors/Group)
 <details>
 ```yaml
 name: Group
-description: '[en] A political group, organization, or body (e.g., party, committee,
-  parliament, department).
+description: '[de] Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei,
+  Kommission, Parlament, Departement).
 
-  [de] Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommission,
-  Parlament, Departement).
+  [en] A political group, organization, or body (e.g., party, committee, parliament,
+  department).
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
+mixins:
+- HasIdentification
+- HasCreationModificationDates
+- HasTemporalValidity
 slots:
-- id
-- uri
 - group_type
-- type_label
-- valid_from
-- valid_until
-- name
+- label
 - abbreviation
 - description
 - landing_page
@@ -1800,10 +1955,8 @@ slots:
 - spatial
 - contacts
 - addresses
-- url_statutes
+- statutes_url
 - party_color
-- datetime_updated
-- datetime_created
 
 ```
 </details>
@@ -1813,186 +1966,98 @@ slots:
 <details>
 ```yaml
 name: Group
-description: '[en] A political group, organization, or body (e.g., party, committee,
-  parliament, department).
+description: '[de] Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei,
+  Kommission, Parlament, Departement).
 
-  [de] Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommission,
-  Parlament, Departement).
+  [en] A political group, organization, or body (e.g., party, committee, parliament,
+  department).
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
+mixins:
+- HasIdentification
+- HasCreationModificationDates
+- HasTemporalValidity
 attributes:
-  id:
-    name: id
-    description: '[en] Unique identifier (preferably Wikidata-ID or URI).
-
-      [de] Eindeutiger Identifikator (vorzugsweise Wikidata-ID oder URI).
-
-      '
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: Group
-    domain_of:
-    - Container
-    - Person
-    - Group
-    - Membership
-    - InterestLink
-    - PersonReference
-    - GroupReference
-    range: string
-    required: true
-  uri:
-    name: uri
-    description: '[en] Globally valid identifier (e.g., politics.ld.admin.ch/party/1).
-
-      [de] Global gültiger Identifikator (z.B. politics.ld.admin.ch/party/1).
-
-      '
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    alias: uri
-    owner: Group
-    domain_of:
-    - Group
-    - PersonReference
-    - GroupReference
-    range: uriorcurie
   group_type:
     name: group_type
-    description: '[en] Type of group (e.g., party, committee, parliament, department).
+    description: '[de] Link zum Gruppentyp.
 
-      [de] Art der Gruppe (z.B. Partei, Kommission, Parlament, Departement).
+      [en] Link to the group type.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:groupType
     alias: group_type
     owner: Group
     domain_of:
     - Group
-    range: GroupTypeEnum
-    required: true
-  type_label:
-    name: type_label
-    description: '[en] Custom type label when standard type values don''t apply.
+    range: GroupType
+  label:
+    name: label
+    description: '[de] Möglichkeit bei einer strukturierten Information, ein Label
+      zu vergeben (bspw. Anzeigename, Anstellung, etc.).
 
-      [de] Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen.
+      [en] Option to assign a label to a structured piece of information (e.g., display
+      name, position, etc.).
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    alias: type_label
+    slot_uri: mcm:label
+    alias: label
     owner: Group
     domain_of:
+    - Person
     - Group
+    - Occupation
+    - Training
+    - GroupType
+    - RoleType
     range: string
-  valid_from:
-    name: valid_from
-    description: '[en] Start date of validity period.
-
-      [de] Startdatum der Gültigkeitsperiode.
-
-      '
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:validFrom
-    alias: valid_from
-    owner: Group
-    domain_of:
-    - Group
-    - Membership
-    - InterestLink
-    - Name
-    - Validity
-    - ElectoralDistrict
-    range: date
-  valid_until:
-    name: valid_until
-    description: '[en] End date of validity period.
-
-      [de] Enddatum der Gültigkeitsperiode.
-
-      '
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:validUntil
-    alias: valid_until
-    owner: Group
-    domain_of:
-    - Group
-    - Membership
-    - InterestLink
-    - Name
-    - Validity
-    - ElectoralDistrict
-    range: date
-  name:
-    name: name
-    description: '[en] Name (can be multilingual).
-
-      [de] Name (kann mehrsprachig sein).
-
-      '
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    alias: name
-    owner: Group
-    domain_of:
-    - Group
-    - PersonReference
-    - GroupReference
-    range: MultilingualString
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   abbreviation:
     name: abbreviation
-    description: '[en] Abbreviation (can be multilingual).
+    description: '[de] Abkürzung (kann mehrsprachig sein).
 
-      [de] Abkürzung (kann mehrsprachig sein).
+      [en] Abbreviation (can be multilingual).
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    slot_uri: act:abbreviation
     alias: abbreviation
     owner: Group
     domain_of:
     - Group
-    range: MultilingualString
+    range: MultilingualValue
     multivalued: true
     inlined: true
     inlined_as_list: true
   description:
     name: description
-    description: '[en] Description of the entity.
+    description: '[de] Beschreibung der Entität.
 
-      [de] Beschreibung der Entität.
+      [en] Description of the entity.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     alias: description
     owner: Group
     domain_of:
     - Group
-    range: MultilingualString
+    range: MultilingualValue
     multivalued: true
     inlined: true
     inlined_as_list: true
   landing_page:
     name: landing_page
-    description: '[en] URL providing further information.
+    description: '[de] URL mit weiteren Informationen.
 
-      [de] URL mit weiteren Informationen.
+      [en] URL providing further information.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:landingPage
     alias: landing_page
@@ -2002,33 +2067,30 @@ attributes:
     range: string
   parent_groups:
     name: parent_groups
-    description: '[en] Parent group IDs (to model party hierarchy or bind parties
-      to parliaments).
+    description: '[de] Link zu übergeordneten Gruppen.
 
-      [de] Übergeordnete Gruppen-IDs (um Parteihierarchie oder Bindung an Parlamente
-      abzubilden).
+      [en] Link to parent groups.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:parentGroup
     alias: parent_groups
     owner: Group
     domain_of:
     - Group
-    range: string
+    range: uriorcurie
     multivalued: true
     inlined: true
     inlined_as_list: true
   spatial:
     name: spatial
-    description: '[en] Spatial reference (municipality number, canton number, e.g.,
-      ld.admin.ch/municipality/234).
+    description: '[de] Räumliche Referenz (Gemeindenummer, Kantonsnummer, z.B. ld.admin.ch/municipality/234).
 
-      [de] Räumliche Referenz (Gemeindenummer, Kantonsnummer, z.B. ld.admin.ch/municipality/234).
+      [en] Spatial reference (municipality number, canton number, e.g., ld.admin.ch/municipality/234).
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     alias: spatial
     owner: Group
@@ -2042,7 +2104,7 @@ attributes:
       [de] Kontaktinformationen (E-Mail, Website, Social Media).
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:contact
     alias: contacts
@@ -2056,12 +2118,12 @@ attributes:
     inlined_as_list: true
   addresses:
     name: addresses
-    description: '[en] Addresses (private, business, local).
+    description: '[de] Adressen mit Typ (privat, geschäftlich, lokal).
 
-      [de] Adressen (privat, geschäftlich, lokal).
+      [en] Addresses with type (private, business, local).
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:address
     alias: addresses
@@ -2073,29 +2135,29 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  url_statutes:
-    name: url_statutes
-    description: '[en] URL to party statutes (optional for parties).
+  statutes_url:
+    name: statutes_url
+    description: '[de] URL zu Parteistatuten (optional für Parteien).
 
-      [de] URL zu Parteistatuten (optional für Parteien).
+      [en] URL to party statutes (optional for parties).
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    slot_uri: act:urlStatutes
-    alias: url_statutes
+    slot_uri: act:statutesURL
+    alias: statutes_url
     owner: Group
     domain_of:
     - Group
     range: string
   party_color:
     name: party_color
-    description: '[en] Party color (optional for parties).
+    description: '[de] Parteifarbe (optional für Parteien).
 
-      [de] Parteifarbe (optional für Parteien).
+      [en] Party color (optional for parties).
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:partyColor
     alias: party_color
@@ -2103,40 +2165,163 @@ attributes:
     domain_of:
     - Group
     range: string
-  datetime_updated:
-    name: datetime_updated
-    description: '[en] The last time this record was updated.
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [de] Der Zeitpunkt, zu dem dieser Datensatz zuletzt aktualisiert wurde.
+      [en] Local identifier. For example, a UUID from the council information system.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    alias: datetime_updated
+    slot_uri: mcm:localId
+    alias: local_id
     owner: Group
     domain_of:
-    - Person
-    - Group
-    - Membership
-    - InterestLink
-    range: datetime
-  datetime_created:
-    name: datetime_created
-    description: '[en] The time this record was created.
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
 
-      [de] Der Zeitpunkt, zu dem dieser Datensatz erstellt wurde.
+      [en] A unique, globally valid URI for the entity.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: Group
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: Group
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+  date_created:
+    name: date_created
+    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+
+      [en] The date when an entity was created.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:dateCreated
+    alias: date_created
+    owner: Group
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_created:
+    name: datetime_created
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+
+      [en] The date and time when an entity was created.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:datetimeCreated
     alias: datetime_created
     owner: Group
     domain_of:
-    - Person
-    - Group
-    - Membership
-    - InterestLink
+    - HasCreationModificationDates
     range: datetime
+  date_modified:
+    name: date_modified
+    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+
+      [en] The date when an entity was last modified.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:dateModified
+    alias: date_modified
+    owner: Group
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_modified:
+    name: datetime_modified
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
+      wurde.
+
+      [en] The date and time when an entity was last modified.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:datetimeModified
+    alias: datetime_modified
+    owner: Group
+    domain_of:
+    - HasCreationModificationDates
+    range: datetime
+  valid_from:
+    name: valid_from
+    description: '[de] Das Datum, ab dem die Information gültig ist.
+
+      [en] The date from which the information is valid.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: schema:validFrom
+    alias: valid_from
+    owner: Group
+    domain_of:
+    - HasTemporalValidity
+    range: date
+  valid_through:
+    name: valid_through
+    description: '[de] Das Datum, bis und mit dem die Information gültig ist.
+
+      [en] The date until which the information is valid, inclusive.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: schema:validThrough
+    alias: valid_through
+    owner: Group
+    domain_of:
+    - HasTemporalValidity
+    range: date
+  is_active:
+    name: is_active
+    description: '[de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich
+      sein, wenn diese Information explizit vorhanden ist.
+
+      [en] Indicates whether the information is currently valid. Can be useful when
+      this information is explicitly available.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:isCurrent
+    alias: is_active
+    owner: Group
+    domain_of:
+    - HasTemporalValidity
+    range: boolean
 
 ```
 </details>
@@ -2213,6 +2398,7 @@ group_id: act:sp_basel_stadt
 ## Rollen (role)
 
 Das Attribut `role` beschreibt die Funktion der Person in der Gruppe.
+Unterstützende Personen einen Gruppierung (Regierung/Rat) sind Mitglieder des Gremiums und werten über die Rolle wie (Sekretär/Sekretärin etc.)
 
 ### Typische Rollen in Parlamenten
 
@@ -2663,9 +2849,9 @@ Siehe vollständige LinkML-Schema-Dokumentation:
 # Class: Membership 
 
 
-_[en] A membership relationship between a person and a group._
-
 _[de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe._
+
+_[en] A membership relationship between a person and a group._
 
 __
 
@@ -2673,7 +2859,7 @@ __
 
 
 
-URI: [act:Membership](https://ch.paf.link/schema/actors/Membership)
+URI: [act:Membership](https://ld.ech.ch/schema/0294/actors/Membership)
 
 
 
@@ -2683,25 +2869,67 @@ URI: [act:Membership](https://ch.paf.link/schema/actors/Membership)
  classDiagram
     class Membership
     click Membership href "../Membership/"
+      HasIdentification <|-- Membership
+        click HasIdentification href "../HasIdentification/"
+      HasCreationModificationDates <|-- Membership
+        click HasCreationModificationDates href "../HasCreationModificationDates/"
+      HasTemporalValidity <|-- Membership
+        click HasTemporalValidity href "../HasTemporalValidity/"
+      
       Membership : authorized_to_vote
+        
+      Membership : concerned_group
+        
+          
+    
+        
+        
+        Membership --> "0..1" Group : concerned_group
+        click Group href "../Group/"
+    
+
+        
+      Membership : concerned_person
+        
+          
+    
+        
+        
+        Membership --> "0..1" Person : concerned_person
+        click Person href "../Person/"
+    
+
+        
+      Membership : date_created
+        
+      Membership : date_modified
         
       Membership : datetime_created
         
-      Membership : datetime_updated
+      Membership : datetime_modified
         
-      Membership : group_id
-        
-      Membership : id
+      Membership : global_uri
         
       Membership : is_active
         
-      Membership : person_id
+      Membership : local_id
         
-      Membership : role
+      Membership : role_type
+        
+          
+    
+        
+        
+        Membership --> "0..1" RoleType : role_type
+        click RoleType href "../RoleType/"
+    
+
         
       Membership : valid_from
         
-      Membership : valid_until
+      Membership : valid_through
+        
+      Membership : wikidata_uri
         
       
 ```
@@ -2709,23 +2937,29 @@ URI: [act:Membership](https://ch.paf.link/schema/actors/Membership)
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **Membership** [ [HasIdentification](# [HasIdentification) [HasCreationModificationDates](#HasCreationModificationDates) [HasTemporalValidity](#HasTemporalValidity)]
 
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](#id) | 1 <br/> [String](#String) | [en] Unique identifier (preferably Wikidata-ID or URI) | direct |
-| [person_id](#person_id) | 0..1 <br/> [String](#String) | [en] Reference to a person ID | direct |
-| [group_id](#group_id) | 0..1 <br/> [String](#String) | [en] Reference to a group ID | direct |
-| [role](#role) | 0..1 <br/> [String](#String) | [en] Role of the person in the membership or function | direct |
-| [valid_from](#valid_from) | 0..1 <br/> [Date](#Date) | [en] Start date of validity period | direct |
-| [valid_until](#valid_until) | 0..1 <br/> [Date](#Date) | [en] End date of validity period | direct |
-| [is_active](#is_active) | 0..1 <br/> [Boolean](#Boolean) | [en] Indicates if the membership is currently active | direct |
-| [authorized_to_vote](#authorized_to_vote) | 0..1 <br/> [Boolean](#Boolean) | [en] Indicates if the person is authorized to vote | direct |
-| [datetime_updated](#datetime_updated) | 0..1 <br/> [Datetime](#Datetime) | [en] The last time this record was updated | direct |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [en] The time this record was created | direct |
+| [concerned_person](#concerned_person) | 0..1 <br/> [Person](#Person) | [de] Link zu einer Person, auf die sich die Zugehörigkeit bezieht | direct |
+| [concerned_group](#concerned_group) | 0..1 <br/> [Group](#Group) | [de] Link zu einer Gruppe, auf die sich die Zugehörigkeit bezieht | direct |
+| [role_type](#role_type) | 0..1 <br/> [RoleType](#RoleType) | [en] Role of the person in the membership or function | direct |
+| [authorized_to_vote](#authorized_to_vote) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Person stimmberechtigt ist | direct |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [valid_from](#valid_from) | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity) |
+| [valid_through](#valid_through) | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity) |
+| [is_active](#is_active) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity) |
 
 
 
@@ -2743,8 +2977,12 @@ URI: [act:Membership](https://ch.paf.link/schema/actors/Membership)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -2753,7 +2991,7 @@ URI: [act:Membership](https://ch.paf.link/schema/actors/Membership)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -2779,23 +3017,21 @@ URI: [act:Membership](https://ch.paf.link/schema/actors/Membership)
 <details>
 ```yaml
 name: Membership
-description: '[en] A membership relationship between a person and a group.
+description: '[de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe.
 
-  [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe.
+  [en] A membership relationship between a person and a group.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
+mixins:
+- HasIdentification
+- HasCreationModificationDates
+- HasTemporalValidity
 slots:
-- id
-- person_id
-- group_id
-- role
-- valid_from
-- valid_until
-- is_active
+- concerned_person
+- concerned_group
+- role_type
 - authorized_to_vote
-- datetime_updated
-- datetime_created
 
 ```
 </details>
@@ -2805,144 +3041,71 @@ slots:
 <details>
 ```yaml
 name: Membership
-description: '[en] A membership relationship between a person and a group.
+description: '[de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe.
 
-  [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe.
+  [en] A membership relationship between a person and a group.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
+mixins:
+- HasIdentification
+- HasCreationModificationDates
+- HasTemporalValidity
 attributes:
-  id:
-    name: id
-    description: '[en] Unique identifier (preferably Wikidata-ID or URI).
+  concerned_person:
+    name: concerned_person
+    description: '[de] Link zu einer Person, auf die sich die Zugehörigkeit bezieht.
 
-      [de] Eindeutiger Identifikator (vorzugsweise Wikidata-ID oder URI).
-
-      '
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: Membership
-    domain_of:
-    - Container
-    - Person
-    - Group
-    - Membership
-    - InterestLink
-    - PersonReference
-    - GroupReference
-    range: string
-    required: true
-  person_id:
-    name: person_id
-    description: '[en] Reference to a person ID.
-
-      [de] Referenz zu einer Personen-ID.
+      [en] Link to a person that the affiliation concerns.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    alias: person_id
+    slot_uri: act:concernedPerson
+    alias: concerned_person
     owner: Membership
     domain_of:
     - Membership
     - InterestLink
-    range: string
-  group_id:
-    name: group_id
-    description: '[en] Reference to a group ID.
+    range: Person
+  concerned_group:
+    name: concerned_group
+    description: '[de] Link zu einer Gruppe, auf die sich die Zugehörigkeit bezieht.
 
-      [de] Referenz zu einer Gruppen-ID.
+      [en] Link to a group that the affiliation concerns.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    alias: group_id
+    slot_uri: act:concernedGroup
+    alias: concerned_group
     owner: Membership
     domain_of:
     - Membership
-    range: string
-  role:
-    name: role
+    range: Group
+  role_type:
+    name: role_type
     description: '[en] Role of the person in the membership or function.
 
       [de] Rolle der Person in der Mitgliedschaft oder Funktion.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    alias: role
+    slot_uri: act:roleType
+    alias: role_type
     owner: Membership
     domain_of:
     - Membership
-    - PersonReference
-    - GroupReference
-    range: string
-  valid_from:
-    name: valid_from
-    description: '[en] Start date of validity period.
-
-      [de] Startdatum der Gültigkeitsperiode.
-
-      '
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:validFrom
-    alias: valid_from
-    owner: Membership
-    domain_of:
-    - Group
-    - Membership
-    - InterestLink
-    - Name
-    - Validity
-    - ElectoralDistrict
-    range: date
-  valid_until:
-    name: valid_until
-    description: '[en] End date of validity period.
-
-      [de] Enddatum der Gültigkeitsperiode.
-
-      '
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:validUntil
-    alias: valid_until
-    owner: Membership
-    domain_of:
-    - Group
-    - Membership
-    - InterestLink
-    - Name
-    - Validity
-    - ElectoralDistrict
-    range: date
-  is_active:
-    name: is_active
-    description: '[en] Indicates if the membership is currently active.
-
-      [de] Gibt an, ob die Mitgliedschaft derzeit aktiv ist.
-
-      '
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:isActive
-    alias: is_active
-    owner: Membership
-    domain_of:
-    - Membership
-    range: boolean
+    range: RoleType
   authorized_to_vote:
     name: authorized_to_vote
-    description: '[en] Indicates if the person is authorized to vote.
+    description: '[de] Gibt an, ob die Person stimmberechtigt ist.
 
-      [de] Gibt an, ob die Person stimmberechtigt ist.
+      [en] Indicates if the person is authorized to vote.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:authorizedToVote
     alias: authorized_to_vote
@@ -2950,40 +3113,163 @@ attributes:
     domain_of:
     - Membership
     range: boolean
-  datetime_updated:
-    name: datetime_updated
-    description: '[en] The last time this record was updated.
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [de] Der Zeitpunkt, zu dem dieser Datensatz zuletzt aktualisiert wurde.
+      [en] Local identifier. For example, a UUID from the council information system.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    alias: datetime_updated
+    slot_uri: mcm:localId
+    alias: local_id
     owner: Membership
     domain_of:
-    - Person
-    - Group
-    - Membership
-    - InterestLink
-    range: datetime
-  datetime_created:
-    name: datetime_created
-    description: '[en] The time this record was created.
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
 
-      [de] Der Zeitpunkt, zu dem dieser Datensatz erstellt wurde.
+      [en] A unique, globally valid URI for the entity.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: Membership
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: Membership
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+  date_created:
+    name: date_created
+    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+
+      [en] The date when an entity was created.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:dateCreated
+    alias: date_created
+    owner: Membership
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_created:
+    name: datetime_created
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+
+      [en] The date and time when an entity was created.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:datetimeCreated
     alias: datetime_created
     owner: Membership
     domain_of:
-    - Person
-    - Group
-    - Membership
-    - InterestLink
+    - HasCreationModificationDates
     range: datetime
+  date_modified:
+    name: date_modified
+    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+
+      [en] The date when an entity was last modified.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:dateModified
+    alias: date_modified
+    owner: Membership
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_modified:
+    name: datetime_modified
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
+      wurde.
+
+      [en] The date and time when an entity was last modified.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:datetimeModified
+    alias: datetime_modified
+    owner: Membership
+    domain_of:
+    - HasCreationModificationDates
+    range: datetime
+  valid_from:
+    name: valid_from
+    description: '[de] Das Datum, ab dem die Information gültig ist.
+
+      [en] The date from which the information is valid.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: schema:validFrom
+    alias: valid_from
+    owner: Membership
+    domain_of:
+    - HasTemporalValidity
+    range: date
+  valid_through:
+    name: valid_through
+    description: '[de] Das Datum, bis und mit dem die Information gültig ist.
+
+      [en] The date until which the information is valid, inclusive.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: schema:validThrough
+    alias: valid_through
+    owner: Membership
+    domain_of:
+    - HasTemporalValidity
+    range: date
+  is_active:
+    name: is_active
+    description: '[de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich
+      sein, wenn diese Information explizit vorhanden ist.
+
+      [en] Indicates whether the information is currently valid. Can be useful when
+      this information is explicitly available.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:isCurrent
+    alias: is_active
+    owner: Membership
+    domain_of:
+    - HasTemporalValidity
+    range: boolean
 
 ```
 </details> 
@@ -3377,9 +3663,9 @@ Siehe vollständige LinkML-Schema-Dokumentation:
 # Class: InterestLink 
 
 
-_[en] An interest link (conflict of interest, political financing) of a person to an organization._
-
 _[de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation._
+
+_[en] An interest link (conflict of interest, political financing) of a person to an organization._
 
 __
 
@@ -3387,7 +3673,7 @@ __
 
 
 
-URI: [act:InterestLink](https://ch.paf.link/schema/actors/InterestLink)
+URI: [act:InterestLink](https://ld.ech.ch/schema/0294/actors/InterestLink)
 
 
 
@@ -3397,15 +3683,37 @@ URI: [act:InterestLink](https://ch.paf.link/schema/actors/InterestLink)
  classDiagram
     class InterestLink
     click InterestLink href "../InterestLink/"
+      HasIdentification <|-- InterestLink
+        click HasIdentification href "../HasIdentification/"
+      HasCreationModificationDates <|-- InterestLink
+        click HasCreationModificationDates href "../HasCreationModificationDates/"
+      HasTemporalValidity <|-- InterestLink
+        click HasTemporalValidity href "../HasTemporalValidity/"
+      
       InterestLink : committee
+        
+      InterestLink : concerned_person
+        
+          
+    
+        
+        
+        InterestLink --> "0..1" Person : concerned_person
+        click Person href "../Person/"
+    
+
+        
+      InterestLink : date_created
+        
+      InterestLink : date_modified
         
       InterestLink : datetime_created
         
-      InterestLink : datetime_updated
+      InterestLink : datetime_modified
         
       InterestLink : function_role
         
-      InterestLink : id
+      InterestLink : global_uri
         
       InterestLink : interest_type
         
@@ -3418,7 +3726,13 @@ URI: [act:InterestLink](https://ch.paf.link/schema/actors/InterestLink)
     
 
         
+      InterestLink : is_active
+        
+      InterestLink : is_paid
+        
       InterestLink : legal_form
+        
+      InterestLink : local_id
         
       InterestLink : organization_address
         
@@ -3426,13 +3740,11 @@ URI: [act:InterestLink](https://ch.paf.link/schema/actors/InterestLink)
         
       InterestLink : organization_uid
         
-      InterestLink : paid
-        
-      InterestLink : person_id
-        
       InterestLink : valid_from
         
-      InterestLink : valid_until
+      InterestLink : valid_through
+        
+      InterestLink : wikidata_uri
         
       
 ```
@@ -3440,27 +3752,34 @@ URI: [act:InterestLink](https://ch.paf.link/schema/actors/InterestLink)
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **InterestLink** [ [HasIdentification](# [HasIdentification) [HasCreationModificationDates](#HasCreationModificationDates) [HasTemporalValidity](#HasTemporalValidity)]
 
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](#id) | 1 <br/> [String](#String) | [en] Unique identifier (preferably Wikidata-ID or URI) | direct |
-| [person_id](#person_id) | 0..1 <br/> [String](#String) | [en] Reference to a person ID | direct |
-| [interest_type](#interest_type) | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | [en] Type of interest link (professional activity, political office, associat... | direct |
+| [concerned_person](#concerned_person) | 0..1 <br/> [Person](#Person) | [de] Link zu einer Person, auf die sich die Zugehörigkeit bezieht | direct |
+| [interest_type](#interest_type) | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | [de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verei... | direct |
 | [organization_label](#organization_label) | 0..1 <br/> [String](#String) | [en] Label of the organization | direct |
 | [organization_uid](#organization_uid) | 0..1 <br/> [String](#String) | [en] UID of the organization (for analysis with NOGA codes, etc | direct |
 | [organization_address](#organization_address) | 0..1 <br/> [String](#String) | [en] Address of the organization | direct |
 | [legal_form](#legal_form) | 0..1 <br/> [String](#String) | [en] Legal form of the organization | direct |
-| [valid_from](#valid_from) | 0..1 <br/> [Date](#Date) | [en] Start date of validity period | direct |
-| [valid_until](#valid_until) | 0..1 <br/> [Date](#Date) | [en] End date of validity period | direct |
-| [paid](#paid) | 0..1 <br/> [Boolean](#Boolean) | [en] Indicates if the position is paid | direct |
+| [is_paid](#is_paid) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Position bezahlt ist | direct |
 | [committee](#committee) | 0..1 <br/> [String](#String) | [en] Committee or board (e | direct |
 | [function_role](#function_role) | 0..1 <br/> [String](#String) | [en] Function or role in the organization | direct |
-| [datetime_updated](#datetime_updated) | 0..1 <br/> [Datetime](#Datetime) | [en] The last time this record was updated | direct |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [en] The time this record was created | direct |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [valid_from](#valid_from) | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity) |
+| [valid_through](#valid_through) | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity) |
+| [is_active](#is_active) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity) |
 
 
 
@@ -3471,7 +3790,12 @@ URI: [act:InterestLink](https://ch.paf.link/schema/actors/InterestLink)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Container](#Container) | [interest_links](#interest_links) | range | [InterestLink](#InterestLink) |
-| [Person](#Person) | [interest_links_person](#interest_links_person) | range | [InterestLink](#InterestLink) |
+| [Person](#Person) | [interest_links](#interest_links) | range | [InterestLink](#InterestLink) |
+
+
+
+
+
 
 
 
@@ -3485,11 +3809,10 @@ URI: [act:InterestLink](https://ch.paf.link/schema/actors/InterestLink)
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -3515,29 +3838,28 @@ URI: [act:InterestLink](https://ch.paf.link/schema/actors/InterestLink)
 <details>
 ```yaml
 name: InterestLink
-description: '[en] An interest link (conflict of interest, political financing) of
-  a person to an organization.
+description: '[de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung)
+  einer Person zu einer Organisation.
 
-  [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person
-  zu einer Organisation.
+  [en] An interest link (conflict of interest, political financing) of a person to
+  an organization.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
+mixins:
+- HasIdentification
+- HasCreationModificationDates
+- HasTemporalValidity
 slots:
-- id
-- person_id
+- concerned_person
 - interest_type
 - organization_label
 - organization_uid
 - organization_address
 - legal_form
-- valid_from
-- valid_until
-- paid
+- is_paid
 - committee
 - function_role
-- datetime_updated
-- datetime_created
 
 ```
 </details>
@@ -3547,62 +3869,44 @@ slots:
 <details>
 ```yaml
 name: InterestLink
-description: '[en] An interest link (conflict of interest, political financing) of
-  a person to an organization.
+description: '[de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung)
+  einer Person zu einer Organisation.
 
-  [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person
-  zu einer Organisation.
+  [en] An interest link (conflict of interest, political financing) of a person to
+  an organization.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
+mixins:
+- HasIdentification
+- HasCreationModificationDates
+- HasTemporalValidity
 attributes:
-  id:
-    name: id
-    description: '[en] Unique identifier (preferably Wikidata-ID or URI).
+  concerned_person:
+    name: concerned_person
+    description: '[de] Link zu einer Person, auf die sich die Zugehörigkeit bezieht.
 
-      [de] Eindeutiger Identifikator (vorzugsweise Wikidata-ID oder URI).
-
-      '
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: InterestLink
-    domain_of:
-    - Container
-    - Person
-    - Group
-    - Membership
-    - InterestLink
-    - PersonReference
-    - GroupReference
-    range: string
-    required: true
-  person_id:
-    name: person_id
-    description: '[en] Reference to a person ID.
-
-      [de] Referenz zu einer Personen-ID.
+      [en] Link to a person that the affiliation concerns.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    alias: person_id
+    slot_uri: act:concernedPerson
+    alias: concerned_person
     owner: InterestLink
     domain_of:
     - Membership
     - InterestLink
-    range: string
+    range: Person
   interest_type:
     name: interest_type
-    description: '[en] Type of interest link (professional activity, political office,
-      association).
+    description: '[de] Art der Interessenbindung (Berufliche Tätigkeit, Politische
+      Ämter, Verein).
 
-      [de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).
+      [en] Type of interest link (professional activity, political office, association).
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:interestType
     alias: interest_type
@@ -3618,7 +3922,7 @@ attributes:
       [de] Bezeichnung der Organisation.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:organizationLabel
     alias: organization_label
@@ -3633,7 +3937,7 @@ attributes:
       [de] UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:organizationUid
     alias: organization_uid
@@ -3648,7 +3952,7 @@ attributes:
       [de] Adresse der Organisation.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:organizationAddress
     alias: organization_address
@@ -3663,7 +3967,7 @@ attributes:
       [de] Rechtsform der Organisation.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:legalForm
     alias: legal_form
@@ -3671,56 +3975,17 @@ attributes:
     domain_of:
     - InterestLink
     range: string
-  valid_from:
-    name: valid_from
-    description: '[en] Start date of validity period.
+  is_paid:
+    name: is_paid
+    description: '[de] Gibt an, ob die Position bezahlt ist.
 
-      [de] Startdatum der Gültigkeitsperiode.
-
-      '
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:validFrom
-    alias: valid_from
-    owner: InterestLink
-    domain_of:
-    - Group
-    - Membership
-    - InterestLink
-    - Name
-    - Validity
-    - ElectoralDistrict
-    range: date
-  valid_until:
-    name: valid_until
-    description: '[en] End date of validity period.
-
-      [de] Enddatum der Gültigkeitsperiode.
+      [en] Indicates if the position is paid.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    slot_uri: act:validUntil
-    alias: valid_until
-    owner: InterestLink
-    domain_of:
-    - Group
-    - Membership
-    - InterestLink
-    - Name
-    - Validity
-    - ElectoralDistrict
-    range: date
-  paid:
-    name: paid
-    description: '[en] Indicates if the position is paid.
-
-      [de] Gibt an, ob die Position bezahlt ist.
-
-      '
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    alias: paid
+    slot_uri: act:isPaid
+    alias: is_paid
     owner: InterestLink
     domain_of:
     - InterestLink
@@ -3733,7 +3998,7 @@ attributes:
       [de] Gremium (z.B. Stiftungsrat, Verwaltungsrat).
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:committee
     alias: committee
@@ -3748,7 +4013,7 @@ attributes:
       [de] Funktion oder Rolle in der Organisation.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:functionRole
     alias: function_role
@@ -3756,40 +4021,163 @@ attributes:
     domain_of:
     - InterestLink
     range: string
-  datetime_updated:
-    name: datetime_updated
-    description: '[en] The last time this record was updated.
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [de] Der Zeitpunkt, zu dem dieser Datensatz zuletzt aktualisiert wurde.
+      [en] Local identifier. For example, a UUID from the council information system.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
-    alias: datetime_updated
+    slot_uri: mcm:localId
+    alias: local_id
     owner: InterestLink
     domain_of:
-    - Person
-    - Group
-    - Membership
-    - InterestLink
-    range: datetime
-  datetime_created:
-    name: datetime_created
-    description: '[en] The time this record was created.
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
 
-      [de] Der Zeitpunkt, zu dem dieser Datensatz erstellt wurde.
+      [en] A unique, globally valid URI for the entity.
 
       '
-    from_schema: https://ch.paf.link/schema/actors
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: InterestLink
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: InterestLink
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+  date_created:
+    name: date_created
+    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+
+      [en] The date when an entity was created.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:dateCreated
+    alias: date_created
+    owner: InterestLink
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_created:
+    name: datetime_created
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+
+      [en] The date and time when an entity was created.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:datetimeCreated
     alias: datetime_created
     owner: InterestLink
     domain_of:
-    - Person
-    - Group
-    - Membership
-    - InterestLink
+    - HasCreationModificationDates
     range: datetime
+  date_modified:
+    name: date_modified
+    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+
+      [en] The date when an entity was last modified.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:dateModified
+    alias: date_modified
+    owner: InterestLink
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_modified:
+    name: datetime_modified
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
+      wurde.
+
+      [en] The date and time when an entity was last modified.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:datetimeModified
+    alias: datetime_modified
+    owner: InterestLink
+    domain_of:
+    - HasCreationModificationDates
+    range: datetime
+  valid_from:
+    name: valid_from
+    description: '[de] Das Datum, ab dem die Information gültig ist.
+
+      [en] The date from which the information is valid.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: schema:validFrom
+    alias: valid_from
+    owner: InterestLink
+    domain_of:
+    - HasTemporalValidity
+    range: date
+  valid_through:
+    name: valid_through
+    description: '[de] Das Datum, bis und mit dem die Information gültig ist.
+
+      [en] The date until which the information is valid, inclusive.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: schema:validThrough
+    alias: valid_through
+    owner: InterestLink
+    domain_of:
+    - HasTemporalValidity
+    range: date
+  is_active:
+    name: is_active
+    description: '[de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich
+      sein, wenn diese Information explizit vorhanden ist.
+
+      [en] Indicates whether the information is currently valid. Can be useful when
+      this information is explicitly available.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
+    rank: 1000
+    slot_uri: mcm:isCurrent
+    alias: is_active
+    owner: InterestLink
+    domain_of:
+    - HasTemporalValidity
+    range: boolean
 
 ```
 </details>

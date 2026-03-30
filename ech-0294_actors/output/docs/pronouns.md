@@ -3,13 +3,17 @@
 # Slot: pronouns 
 
 
-_Pronouns used by the person_
+_[de] Von der Person verwendete Pronomen._
+
+_[en] Pronouns used by the person._
+
+__
 
 
 
 
 
-URI: [act:pronouns](https://ch.paf.link/schema/actors/pronouns)
+URI: [act:pronouns](https://ld.ech.ch/schema/0294/actors/pronouns)
 Alias: pronouns
 
 <!-- no inheritance hierarchy -->
@@ -22,7 +26,7 @@ Alias: pronouns
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Gender](Gender.md) |  |  no  |
+| [Gender](Gender.md) | [de] Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitli... |  no  |
 
 
 
@@ -31,9 +35,25 @@ Alias: pronouns
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [Gender](Gender.md) |
+| Slot URI | [act:pronouns](https://ld.ech.ch/schema/0294/actors/pronouns) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
@@ -44,11 +64,10 @@ Alias: pronouns
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -68,11 +87,15 @@ Alias: pronouns
 <details>
 ```yaml
 name: pronouns
-description: Pronouns used by the person
-from_schema: https://ch.paf.link/schema/actors
+description: '[de] Von der Person verwendete Pronomen.
+
+  [en] Pronouns used by the person.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
+slot_uri: act:pronouns
 alias: pronouns
-owner: Gender
 domain_of:
 - Gender
 range: string

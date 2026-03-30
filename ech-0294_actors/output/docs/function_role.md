@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:functionRole](https://ch.paf.link/schema/actors/functionRole)
+URI: [act:functionRole](https://ld.ech.ch/schema/0294/actors/functionRole)
 Alias: function_role
 
 <!-- no inheritance hierarchy -->
@@ -26,7 +26,7 @@ Alias: function_role
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [InterestLink](InterestLink.md) | [en] An interest link (conflict of interest, political financing) of a person... |  no  |
+| [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
 
 
 
@@ -35,7 +35,24 @@ Alias: function_role
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [InterestLink](InterestLink.md) |
+| Slot URI | [act:functionRole](https://ld.ech.ch/schema/0294/actors/functionRole) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -46,11 +63,10 @@ Alias: function_role
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -75,7 +91,7 @@ description: '[en] Function or role in the organization.
   [de] Funktion oder Rolle in der Organisation.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:functionRole
 alias: function_role

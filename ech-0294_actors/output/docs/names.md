@@ -3,8 +3,17 @@
 # Slot: names 
 
 
+_[en] Names of the person with type and value._
 
-URI: [act:name](https://ch.paf.link/schema/actors/name)
+_[de] Namen der Person mit Typ und Wert._
+
+__
+
+
+
+
+
+URI: [act:name](https://ld.ech.ch/schema/0294/actors/name)
 Alias: names
 
 <!-- no inheritance hierarchy -->
@@ -17,7 +26,7 @@ Alias: names
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [en] A person with identifiers, names, addresses, citizenships, and occupatio... |  no  |
+| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
 
 
 
@@ -26,9 +35,25 @@ Alias: names
 
 ## Properties
 
-* Range: [Name](Name.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [Name](Name.md) |
+| Domain Of | [Person](Person.md) |
+| Slot URI | [act:name](https://ld.ech.ch/schema/0294/actors/name) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
@@ -39,11 +64,10 @@ Alias: names
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -63,7 +87,12 @@ Alias: names
 <details>
 ```yaml
 name: names
-from_schema: https://ch.paf.link/schema/actors
+description: '[en] Names of the person with type and value.
+
+  [de] Namen der Person mit Typ und Wert.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:name
 alias: names

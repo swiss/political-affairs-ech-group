@@ -3,9 +3,9 @@
 # Slot: description 
 
 
-_[en] Description of the entity._
-
 _[de] Beschreibung der Entität._
+
+_[en] Description of the entity._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [act:description](https://ch.paf.link/schema/actors/description)
+URI: [act:description](https://ld.ech.ch/schema/0294/actors/description)
 Alias: description
 
 <!-- no inheritance hierarchy -->
@@ -26,7 +26,7 @@ Alias: description
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Group](Group.md) | [en] A political group, organization, or body (e |  no  |
+| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 
 
 
@@ -35,9 +35,24 @@ Alias: description
 
 ## Properties
 
-* Range: [MultilingualString](MultilingualString.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [MultilingualValue](MultilingualValue.md) |
+| Domain Of | [Group](Group.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
@@ -48,11 +63,10 @@ Alias: description
 
 
 
-
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -72,17 +86,17 @@ Alias: description
 <details>
 ```yaml
 name: description
-description: '[en] Description of the entity.
+description: '[de] Beschreibung der Entität.
 
-  [de] Beschreibung der Entität.
+  [en] Description of the entity.
 
   '
-from_schema: https://ch.paf.link/schema/actors
+from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 alias: description
 domain_of:
 - Group
-range: MultilingualString
+range: MultilingualValue
 multivalued: true
 inlined: true
 inlined_as_list: true

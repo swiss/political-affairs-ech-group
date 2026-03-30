@@ -3,8 +3,17 @@
 # Class: Address 
 
 
+_[de] Eine Adresse mit einem Typ (z.B. Privatadresse, Geschäftsadresse) und einem Wert._
 
-URI: [act:Address](https://ch.paf.link/schema/actors/Address)
+_[en] An address with a type (e.g., private address, business address) and a value._
+
+__
+
+
+
+
+
+URI: [act:Address](https://ld.ech.ch/schema/0294/actors/Address)
 
 
 
@@ -20,12 +29,12 @@ URI: [act:Address](https://ch.paf.link/schema/actors/Address)
     
         
         
-        Address --> "1" AddressTypeEnum : address_type
+        Address --> "0..1" AddressTypeEnum : address_type
         click AddressTypeEnum href "../AddressTypeEnum/"
     
 
         
-      Address : address_URI
+      Address : address_uri
         
       Address : postal_code
         
@@ -41,16 +50,15 @@ URI: [act:Address](https://ch.paf.link/schema/actors/Address)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [address_type](address_type.md) | 1 <br/> [AddressTypeEnum](AddressTypeEnum.md) |  | direct |
-| [address_URI](address_URI.md) | 0..1 <br/> [String](String.md) | Preferred URI of address | direct |
-| [street_address](street_address.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [postal_code](postal_code.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [postal_locality](postal_locality.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [address_type](address_type.md) | 0..1 <br/> [AddressTypeEnum](AddressTypeEnum.md) | [de] Typ der Adresse | direct |
+| [address_uri](address_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] URI der Adresse | direct |
+| [street_address](street_address.md) | 0..1 <br/> [String](String.md) | [de] Strassenadresse | direct |
+| [postal_code](postal_code.md) | 0..1 <br/> [Integer](Integer.md) | [de] Postleitzahl | direct |
+| [postal_locality](postal_locality.md) | 0..1 <br/> [String](String.md) | [de] Ort | direct |
 
 
 
@@ -69,8 +77,12 @@ URI: [act:Address](https://ch.paf.link/schema/actors/Address)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -79,7 +91,7 @@ URI: [act:Address](https://ch.paf.link/schema/actors/Address)
 ### Schema Source
 
 
-* from schema: https://ch.paf.link/schema/actors
+* from schema: https://ld.ech.ch/schema/0294/actors
 
 
 
@@ -105,46 +117,19 @@ URI: [act:Address](https://ch.paf.link/schema/actors/Address)
 <details>
 ```yaml
 name: Address
-from_schema: https://ch.paf.link/schema/actors
-attributes:
-  address_type:
-    name: address_type
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:addressType
-    domain_of:
-    - Address
-    range: AddressTypeEnum
-    required: true
-  address_URI:
-    name: address_URI
-    description: Preferred URI of address
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:addressURI
-    domain_of:
-    - Address
-  street_address:
-    name: street_address
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:streetAddress
-    domain_of:
-    - Address
-  postal_code:
-    name: postal_code
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:postalCode
-    domain_of:
-    - Address
-  postal_locality:
-    name: postal_locality
-    from_schema: https://ch.paf.link/schema/actors
-    rank: 1000
-    slot_uri: act:postalLocality
-    domain_of:
-    - Address
+description: '[de] Eine Adresse mit einem Typ (z.B. Privatadresse, Geschäftsadresse)
+  und einem Wert.
+
+  [en] An address with a type (e.g., private address, business address) and a value.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
+slots:
+- address_type
+- address_uri
+- street_address
+- postal_code
+- postal_locality
 
 ```
 </details>
@@ -154,11 +139,22 @@ attributes:
 <details>
 ```yaml
 name: Address
-from_schema: https://ch.paf.link/schema/actors
+description: '[de] Eine Adresse mit einem Typ (z.B. Privatadresse, Geschäftsadresse)
+  und einem Wert.
+
+  [en] An address with a type (e.g., private address, business address) and a value.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
 attributes:
   address_type:
     name: address_type
-    from_schema: https://ch.paf.link/schema/actors
+    description: '[de] Typ der Adresse.
+
+      [en] Type of address.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:addressType
     alias: address_type
@@ -166,21 +162,29 @@ attributes:
     domain_of:
     - Address
     range: AddressTypeEnum
-    required: true
-  address_URI:
-    name: address_URI
-    description: Preferred URI of address
-    from_schema: https://ch.paf.link/schema/actors
+  address_uri:
+    name: address_uri
+    description: '[de] URI der Adresse.
+
+      [en] URI of the address.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:addressURI
-    alias: address_URI
+    alias: address_uri
     owner: Address
     domain_of:
     - Address
-    range: string
+    range: uriorcurie
   street_address:
     name: street_address
-    from_schema: https://ch.paf.link/schema/actors
+    description: '[de] Strassenadresse.
+
+      [en] Street address.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:streetAddress
     alias: street_address
@@ -190,17 +194,27 @@ attributes:
     range: string
   postal_code:
     name: postal_code
-    from_schema: https://ch.paf.link/schema/actors
+    description: '[de] Postleitzahl.
+
+      [en] Postal code.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:postalCode
     alias: postal_code
     owner: Address
     domain_of:
     - Address
-    range: string
+    range: integer
   postal_locality:
     name: postal_locality
-    from_schema: https://ch.paf.link/schema/actors
+    description: '[de] Ort.
+
+      [en] Locality.
+
+      '
+    from_schema: https://ld.ech.ch/schema/0294/actors
     rank: 1000
     slot_uri: act:postalLocality
     alias: postal_locality
