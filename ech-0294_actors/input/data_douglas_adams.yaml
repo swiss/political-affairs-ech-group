@@ -39,7 +39,7 @@ persons:
         is_paid: true
     trainings:
       - training_type: schulabschluss
-        label: High School Diploma
+        value: High School Diploma
     contacts:
       - contact_type: email
         value: douglas.adams@adams-familiy.org

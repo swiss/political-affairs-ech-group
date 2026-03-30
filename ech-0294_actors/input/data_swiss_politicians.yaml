@@ -34,7 +34,7 @@ persons:
         is_active: true
     trainings:
       - training_type: uni
-        label: dipl. nat. ETH
+        value: dipl. nat. ETH
     contacts:
       - contact_type: email
         value: beat.jans@admin.ch
