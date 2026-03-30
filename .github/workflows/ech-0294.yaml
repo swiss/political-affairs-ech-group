@@ -33,7 +33,7 @@ jobs:
       - name: Convert schema.yaml to schema.ttl
         run: |
           mkdir -p ech-0294_actors/output
-          gen-owl ech-0294_actors/input/schema.yaml > ech-0294_actors/output/schema.ttl
+          gen-owl --no-use-native-uris ech-0294_actors/input/schema.yaml > ech-0294_actors/output/schema.ttl
 
       - name: Convert all data_*.yaml to data_*.json
         run: |
