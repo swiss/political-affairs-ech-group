@@ -6,10 +6,6 @@ In this section, we will share our learnings and experiences with LinkML. This i
 
 If there are entities that share all the same attributes with exception of one. It is better to define a common class and use a `type` attribute to distinguish between the different entities instead of defining separate classes for each entity.
 
-## Use of `value` vs. `label`
-
-- ...
-
 ## Multilingualism
 
 Unfortunately, LinkML does not support multilingualism out of the box. However there are some workarounds that we used to achieve some level of multilingualism:
@@ -112,3 +108,8 @@ Linking-Direction: There is no rule whether to use linking from above to below o
 ## CLI Tools
 
 - Validate Schema: `linkml-lint schema.yaml`
+
+## Use of `value` vs. `label`
+
+- `label` is used, if it is an alternative to a structured data element with e.g. type and value.
+- `value` is used, if it is the actual value of a structured data element with e.g. type and value.
