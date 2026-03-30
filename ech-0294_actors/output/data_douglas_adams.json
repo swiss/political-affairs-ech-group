@@ -10,11 +10,11 @@
       "picture": "https://commons.wikimedia.org/wiki/File:Douglas_adams_portrait.jpg",
       "names": [
         {
-          "name_type": "callName",
+          "name_type": "PersonFirstName",
           "value": "Douglas"
         },
         {
-          "name_type": "officialLastName",
+          "name_type": "PersonOfficialName",
           "value": "Adams",
           "valid_from": "1952-03-11"
         }

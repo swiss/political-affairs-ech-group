@@ -39,10 +39,10 @@ act:douglas_adams_example a act:Container ;
     act:name [ a act:Name ;
             schema1:validFrom "1952-03-11"^^xsd:date ;
             mcm:value "Adams" ;
-            act:nameType "officialLastName" ],
+            act:nameType <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonOfficialName> ],
         [ a act:Name ;
             mcm:value "Douglas" ;
-            act:nameType "callName" ] ;
+            act:nameType <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonFirstName> ] ;
     act:occupation [ a act:Occupation ;
             schema1:validFrom "1979-01-01"^^xsd:date ;
             schema1:validThrough "2001-05-11"^^xsd:date ;

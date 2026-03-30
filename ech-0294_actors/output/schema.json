@@ -868,14 +868,19 @@
             "type": "object"
         },
         "NameTypeEnum": {
-            "description": "[en] Categories of name types.\n[de] Kategorien von Namenstypen gem\u00e4ss https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master resp. I14Y: https://www.i14y.admin.ch/de/catalog/concepts/5fd27bff-8bd7-49d9-a4e3-c68e4f791cef/description.",
+            "description": "[de] Kategorien von Namenstypen gem\u00e4ss https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI gem\u00e4ss I14Y Identifier aber als Klasse und nicht als Atribut. Beschreibungen und \u00dcbersetzungen gem\u00e4ss I14Y.\n[en] Categories of name types according to https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI according to I14Y identifier but as class and not as attribute. Descriptions and translations according to I14Y.",
             "enum": [
-                "personOfficialName",
-                "familyNameOnForeignPassport",
-                "callName",
-                "officialGivenName",
-                "officialLastName",
-                "officialMiddleName"
+                "PersonOfficialName",
+                "PersonOriginalName",
+                "PersonAllianceName",
+                "PersonNameOnForeignPassport",
+                "PersonAliasName",
+                "PersonOtherName",
+                "PersonDeclaredForeignerName",
+                "PersonFirstName",
+                "PersonCallFirstName",
+                "PersonFirstNameOnForeignPassport",
+                "PersonDeclaredForeignerFirstName"
             ],
             "title": "NameTypeEnum",
             "type": "string"

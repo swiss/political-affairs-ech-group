@@ -140,7 +140,7 @@ Name: actors-schema
 | [ContactTypeEnum](ContactTypeEnum.md) | [en] Types of contact information |
 | [GroupTypeEnum](GroupTypeEnum.md) | [en] Types of political groups and organizations |
 | [InterestTypeEnum](InterestTypeEnum.md) | [en] Types of interest links (conflicts of interest, political financing) |
-| [NameTypeEnum](NameTypeEnum.md) | [en] Categories of name types |
+| [NameTypeEnum](NameTypeEnum.md) | [de] Kategorien von Namenstypen gemäss https://dam-api |
 | [RoleEnum](RoleEnum.md) | [en] Roles a person can have within a membership |
 | [TrainingTypeEnum](TrainingTypeEnum.md) | [en] Types of training or education |
 
