@@ -33,7 +33,7 @@ classes:
     slots:
       - valid_from
       - valid_through
-      - is_current
+      - is_active
 
   HasIdentification:
     mixin: true
@@ -41,8 +41,8 @@ classes:
       [de] Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfügung stellt.
       [en] A mixin class that provides slots for the identification of an entity.
     slots:
-      - id
-      - uri
+      - local_id
+      - global_uri
       - wikidata_uri
 
   IsInstantaneousEvent:
@@ -109,20 +109,21 @@ slots:
       [en] The date until which the information is valid, inclusive.
     range: date
 
-  is_current:
+  is_active:
     slot_uri: mcm:isCurrent
     description: |
       [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist.
       [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.
     range: boolean
 
-  id:
-    slot_uri: schema:identifier
+  local_id:
+    slot_uri: mcm:localId
     description: |
       [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
       [en] Local identifier. For example, a UUID from the council information system.
 
-  uri:
+  global_uri:
+    slot_uri: mcm:globalURI
     description: |
       [de] Eine eindeutige, global gültige URI für die Entität.
       [en] A unique, globally valid URI for the entity.
