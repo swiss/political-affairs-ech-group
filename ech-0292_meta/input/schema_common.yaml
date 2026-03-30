@@ -82,7 +82,7 @@ classes:
         - date_modified
         - datetime_modified
 
-  MultilingualString:
+  MultilingualValue:
     description: |
       [de] Ein mehrsprachiger String mit Angabe der Sprache.
       [en] A multilingual string with language specification.
@@ -250,6 +250,13 @@ slots:
       [en] The date and time when an entity was last modified.
     range: datetime
 
+  multilingual_value:
+    slot_uri: mcm:multilingualValue
+    description: |
+      [de] Ein mehrsprachiger Wert mit Angabe der Sprache.
+      [en] A multilingual value with language specification.
+    range: MultilingualValue
+  
   value:
     slot_uri: mcm:value
     description: |
