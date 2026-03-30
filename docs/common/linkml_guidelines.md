@@ -108,6 +108,7 @@ Linking-Direction: There is no rule whether to use linking from above to below o
 ## CLI Tools
 
 - Validate Schema: `linkml-lint schema.yaml`
+- Erstelle OWL Schema: `gen-owl --no-use-native-uris schema.yaml > schema.ttl` (--no-use-native-uris is needed so that `slot_uri` is used instead of the native URI of the slot)
 
 ## Use of `value` vs. `label`
 
