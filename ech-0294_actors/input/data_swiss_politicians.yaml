@@ -7,9 +7,9 @@ persons:
     birth_date: 1964-07-12
     picture: https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg
     names:
-      - name_type: officialGivenName
+      - name_type: PersonFirstName
         value: Beat
-      - name_type: officialLastName
+      - name_type: PersonOfficialName
         value: Jans
         valid_from: 1964-07-12
     addresses:
