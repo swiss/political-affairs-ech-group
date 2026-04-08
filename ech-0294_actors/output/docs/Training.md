@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Training 
 
@@ -11,44 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:Training](https://ld.ech.ch/schema/0294/actors/Training)
-
-
-
-
-
-```mermaid
- classDiagram
-    class Training
-    click Training href "../Training/"
-      HasTemporalValidity <|-- Training
-        click HasTemporalValidity href "../HasTemporalValidity/"
-      
-      Training : is_active
-        
-      Training : training_code
-        
-      Training : training_type
-        
-          
-    
-        
-        
-        Training --> "0..1" TrainingTypeEnum : training_type
-        click TrainingTypeEnum href "../TrainingTypeEnum/"
-    
-
-        
-      Training : valid_from
-        
-      Training : valid_through
-        
-      Training : value
-        
-      
-```
 
 
 
@@ -260,4 +230,4 @@ attributes:
     range: boolean
 
 ```
-</details>
+</details></div>

@@ -1,4 +1,7 @@
-# Enum: TrainingTypeEnum 
+---
+search:
+  boost: 2.0
+---# Enum: TrainingTypeEnum 
 
 
 
@@ -10,6 +13,8 @@ _[de] Ausbildungs- oder Bildungstypen._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 URI: [act:TrainingTypeEnum](https://ld.ech.ch/schema/0294/actors/TrainingTypeEnum)
 
@@ -115,3 +120,5 @@ permissible_values:
 
 ```
 </details>
+
+</div>

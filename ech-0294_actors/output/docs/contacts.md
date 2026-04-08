@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: contacts 
 
@@ -10,6 +13,8 @@ _[de] Kontaktinformationen (E-Mail, Website, Social Media)._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -26,8 +31,8 @@ Alias: contacts
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
 | [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
 
 
 
@@ -106,4 +111,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

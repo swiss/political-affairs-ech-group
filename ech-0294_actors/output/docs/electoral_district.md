@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: electoral_district 
 
@@ -10,6 +13,8 @@ _[en] Link to the electoral district._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -100,4 +105,4 @@ domain_of:
 range: ElectoralDistrict
 
 ```
-</details>
+</details></div>

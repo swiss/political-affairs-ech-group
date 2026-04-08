@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Gender 
 
@@ -11,33 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:Gender](https://ld.ech.ch/schema/0294/actors/Gender)
-
-
-
-
-
-```mermaid
- classDiagram
-    class Gender
-    click Gender href "../Gender/"
-      HasTemporalValidity <|-- Gender
-        click HasTemporalValidity href "../HasTemporalValidity/"
-      
-      Gender : gender_code
-        
-      Gender : is_active
-        
-      Gender : pronouns
-        
-      Gender : valid_from
-        
-      Gender : valid_through
-        
-      
-```
 
 
 
@@ -226,4 +207,4 @@ attributes:
     range: boolean
 
 ```
-</details>
+</details></div>

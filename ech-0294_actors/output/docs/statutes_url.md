@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: statutes_url 
 
@@ -10,6 +13,8 @@ _[en] URL to party statutes (optional for parties)._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -100,4 +105,4 @@ domain_of:
 range: string
 
 ```
-</details>
+</details></div>

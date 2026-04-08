@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Membership 
 
@@ -11,82 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:Membership](https://ld.ech.ch/schema/0294/actors/Membership)
-
-
-
-
-
-```mermaid
- classDiagram
-    class Membership
-    click Membership href "../Membership/"
-      HasIdentification <|-- Membership
-        click HasIdentification href "../HasIdentification/"
-      HasCreationModificationDates <|-- Membership
-        click HasCreationModificationDates href "../HasCreationModificationDates/"
-      HasTemporalValidity <|-- Membership
-        click HasTemporalValidity href "../HasTemporalValidity/"
-      
-      Membership : authorized_to_vote
-        
-      Membership : concerned_group
-        
-          
-    
-        
-        
-        Membership --> "0..1" Group : concerned_group
-        click Group href "../Group/"
-    
-
-        
-      Membership : concerned_person
-        
-          
-    
-        
-        
-        Membership --> "0..1" Person : concerned_person
-        click Person href "../Person/"
-    
-
-        
-      Membership : date_created
-        
-      Membership : date_modified
-        
-      Membership : datetime_created
-        
-      Membership : datetime_modified
-        
-      Membership : global_uri
-        
-      Membership : is_active
-        
-      Membership : local_id
-        
-      Membership : role_type
-        
-          
-    
-        
-        
-        Membership --> "0..1" RoleType : role_type
-        click RoleType href "../RoleType/"
-    
-
-        
-      Membership : valid_from
-        
-      Membership : valid_through
-        
-      Membership : wikidata_uri
-        
-      
-```
 
 
 
@@ -426,4 +358,4 @@ attributes:
     range: boolean
 
 ```
-</details>
+</details></div>

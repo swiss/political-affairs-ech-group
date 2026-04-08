@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: trainings 
 
@@ -10,6 +13,8 @@ _[en] Trainings or educations of the person._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -104,4 +109,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

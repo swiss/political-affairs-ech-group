@@ -1,4 +1,7 @@
-# Enum: InterestTypeEnum 
+---
+search:
+  boost: 2.0
+---# Enum: InterestTypeEnum 
 
 
 
@@ -10,6 +13,8 @@ _[de] Typen von Interessenbindungen (Interessenkonflikte, Politikfinanzierung)._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnum)
 
@@ -94,3 +99,5 @@ permissible_values:
 
 ```
 </details>
+
+</div>

@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Contact 
 
@@ -11,33 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:Contact](https://ld.ech.ch/schema/0294/actors/Contact)
-
-
-
-
-
-```mermaid
- classDiagram
-    class Contact
-    click Contact href "../Contact/"
-      Contact : contact_type
-        
-          
-    
-        
-        
-        Contact --> "0..1" ContactTypeEnum : contact_type
-        click ContactTypeEnum href "../ContactTypeEnum/"
-    
-
-        
-      Contact : value
-        
-      
-```
 
 
 
@@ -174,4 +155,4 @@ attributes:
     range: string
 
 ```
-</details>
+</details></div>

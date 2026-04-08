@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: interest_links 
 
@@ -10,6 +13,8 @@ _[en] Collection of interest links.range: InterestLink_
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -26,8 +31,8 @@ Alias: interest_links
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
 | [Container](Container.md) | [de] Container für politische Akteure, Gruppen und Beziehungen |  no  |
+| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
 
 
 
@@ -106,4 +111,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

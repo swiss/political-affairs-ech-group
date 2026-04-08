@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: concerned_group 
 
@@ -10,6 +13,8 @@ _[en] Link to a group that the affiliation concerns._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -100,4 +105,4 @@ domain_of:
 range: Group
 
 ```
-</details>
+</details></div>

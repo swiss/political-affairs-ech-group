@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: MultilingualValue 
 
@@ -11,24 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:MultilingualValue](https://ld.ech.ch/schema/0294/actors/MultilingualValue)
-
-
-
-
-
-```mermaid
- classDiagram
-    class MultilingualValue
-    click MultilingualValue href "../MultilingualValue/"
-      MultilingualValue : language
-        
-      MultilingualValue : value
-        
-      
-```
 
 
 
@@ -163,4 +153,4 @@ attributes:
     pattern: ^[a-z]{2}$
 
 ```
-</details>
+</details></div>

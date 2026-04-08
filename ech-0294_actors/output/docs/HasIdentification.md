@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: HasIdentification 
 
@@ -11,37 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:HasIdentification](https://ld.ech.ch/schema/0294/actors/HasIdentification)
-
-
-
-
-
-```mermaid
- classDiagram
-    class HasIdentification
-    click HasIdentification href "../HasIdentification/"
-      HasIdentification <|-- Container
-        click Container href "../Container/"
-      HasIdentification <|-- Person
-        click Person href "../Person/"
-      HasIdentification <|-- Group
-        click Group href "../Group/"
-      HasIdentification <|-- Membership
-        click Membership href "../Membership/"
-      HasIdentification <|-- InterestLink
-        click InterestLink href "../InterestLink/"
-      
-      HasIdentification : global_uri
-        
-      HasIdentification : local_id
-        
-      HasIdentification : wikidata_uri
-        
-      
-```
 
 
 
@@ -204,4 +181,4 @@ attributes:
     range: uriorcurie
 
 ```
-</details>
+</details></div>

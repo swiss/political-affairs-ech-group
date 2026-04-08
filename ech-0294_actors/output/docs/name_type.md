@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: name_type 
 
@@ -10,6 +13,8 @@ _[en] Type of name._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -100,4 +105,4 @@ domain_of:
 range: NameTypeEnum
 
 ```
-</details>
+</details></div>

@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: multilingual_value 
 
@@ -10,6 +13,8 @@ _[en] A multilingual value with language specification._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -88,4 +93,4 @@ alias: multilingual_value
 range: MultilingualValue
 
 ```
-</details>
+</details></div>

@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: gender_code 
 
@@ -10,6 +13,8 @@ _[en] Gender code (e.g., according to ISO 5218)._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -100,4 +105,4 @@ domain_of:
 range: string
 
 ```
-</details>
+</details></div>

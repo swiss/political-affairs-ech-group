@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: value 
 
@@ -10,6 +13,8 @@ _[en] The value of an information besides other attributes such as type, languag
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -27,9 +32,9 @@ Alias: value
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Contact](Contact.md) | [de] Kontaktinformation einer Person mit Angabe eines Typs (z |  no  |
-| [Name](Name.md) | [de] Ein Name mit einem Typ (z |  no  |
-| [MultilingualValue](MultilingualValue.md) | [de] Ein mehrsprachiger String mit Angabe der Sprache |  no  |
 | [Training](Training.md) | [de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z |  no  |
+| [MultilingualValue](MultilingualValue.md) | [de] Ein mehrsprachiger String mit Angabe der Sprache |  no  |
+| [Name](Name.md) | [de] Ein Name mit einem Typ (z |  no  |
 
 
 
@@ -108,4 +113,4 @@ domain_of:
 range: string
 
 ```
-</details>
+</details></div>

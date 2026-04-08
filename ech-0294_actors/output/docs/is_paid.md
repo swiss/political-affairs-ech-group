@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: is_paid 
 
@@ -10,6 +13,8 @@ _[en] Indicates if the position is paid._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -102,4 +107,4 @@ domain_of:
 range: boolean
 
 ```
-</details>
+</details></div>

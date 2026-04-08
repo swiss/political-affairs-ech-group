@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: spatial 
 
@@ -10,6 +13,8 @@ _[en] Spatial reference (municipality number, canton number, e.g., ld.admin.ch/m
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -98,4 +103,4 @@ domain_of:
 range: string
 
 ```
-</details>
+</details></div>

@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: GroupType 
 
@@ -11,33 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:GroupType](https://ld.ech.ch/schema/0294/actors/GroupType)
-
-
-
-
-
-```mermaid
- classDiagram
-    class GroupType
-    click GroupType href "../GroupType/"
-      GroupType : group_type_enum
-        
-          
-    
-        
-        
-        GroupType --> "0..1" GroupTypeEnum : group_type_enum
-        click GroupTypeEnum href "../GroupTypeEnum/"
-    
-
-        
-      GroupType : label
-        
-      
-```
 
 
 
@@ -170,4 +151,4 @@ attributes:
     range: string
 
 ```
-</details>
+</details></div>

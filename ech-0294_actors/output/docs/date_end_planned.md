@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: date_end_planned 
 
@@ -10,6 +13,8 @@ _[en] The planned end date of an event or occurrence with time duration._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -100,4 +105,4 @@ domain_of:
 range: date
 
 ```
-</details>
+</details></div>

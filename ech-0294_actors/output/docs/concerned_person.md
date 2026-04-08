@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: concerned_person 
 
@@ -10,6 +13,8 @@ _[en] Link to a person that the affiliation concerns._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -26,8 +31,8 @@ Alias: concerned_person
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |  no  |
 | [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
+| [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |  no  |
 
 
 
@@ -102,4 +107,4 @@ domain_of:
 range: Person
 
 ```
-</details>
+</details></div>

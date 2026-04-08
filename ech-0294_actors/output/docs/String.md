@@ -1,4 +1,7 @@
-# Type: String 
+---
+search:
+  boost: 1.0
+---# Type: String 
 
 
 
@@ -6,6 +9,8 @@
 _A character string_
 
 
+
+<div data-search-exclude markdown="1">
 
 URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
@@ -50,3 +55,6 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 | exact | schema:Text |
 
 
+
+
+</div>

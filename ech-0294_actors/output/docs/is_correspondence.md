@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: is_correspondence 
 
@@ -10,6 +13,8 @@ _[en] Indicates if this is the preferred language._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -100,4 +105,4 @@ domain_of:
 range: boolean
 
 ```
-</details>
+</details></div>
