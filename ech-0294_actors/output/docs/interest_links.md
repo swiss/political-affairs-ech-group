@@ -31,8 +31,8 @@ Alias: interest_links
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Container](Container.md) | [de] Container für politische Akteure, Gruppen und Beziehungen |  no  |
 | [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
+| [Container](Container.md) | [de] Container für politische Akteure, Gruppen und Beziehungen |  no  |
 
 
 

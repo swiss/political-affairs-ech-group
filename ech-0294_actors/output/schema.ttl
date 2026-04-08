@@ -11,73 +11,73 @@
     rdfs:label "IsEventWithDuration" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginPlanned> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginActual> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginPlanned> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndPlanned> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginActual> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndPlanned> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginActual> ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginPlanned> ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndActual> ],
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndPlanned> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:dateTime ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginActual> ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginActual> ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndActual> ],
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndPlanned> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginActual> ],
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndActual> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndActual> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndPlanned> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginPlanned> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndActual> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginPlanned> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginPlanned> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:dateTime ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndActual> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginActual> ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndPlanned> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndPlanned> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginPlanned> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginPlanned> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndPlanned> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndPlanned> ],
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndActual> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginPlanned> ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginActual> ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndActual> ],
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndPlanned> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginActual> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndActual> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginActual> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndPlanned> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginPlanned> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndActual> ] ;
@@ -90,40 +90,40 @@
     rdfs:label "IsInstantaneousEvent" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimePlanned> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimePlanned> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datePlanned> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimePlanned> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateActual> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datePlanned> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateActual> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateActual> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeActual> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datePlanned> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeActual> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeActual> ],
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimePlanned> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimePlanned> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datePlanned> ] ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datePlanned> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeActual> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimePlanned> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateActual> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datePlanned> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeActual> ] ;
     skos:definition """[de] Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereignissen oder Vorkommnissen (ohne Zeitdauer) zur Verfügung stellt.
 [en] A mixin class that provides slots for modeling instantaneous events or occurrences (without time duration).
 """ ;
@@ -148,14 +148,11 @@
 act:Container a owl:Class ;
     rdfs:label "Container" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom act:InterestLink ;
             owl:onProperty act:interestLink ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:membership ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Membership ;
-            owl:onProperty act:membership ],
+            owl:onProperty act:interestLink ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:group ],
@@ -163,11 +160,14 @@ act:Container a owl:Class ;
             owl:allValuesFrom act:Group ;
             owl:onProperty act:group ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:membership ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Membership ;
+            owl:onProperty act:membership ],
+        [ a owl:Restriction ;
             owl:allValuesFrom act:Person ;
             owl:onProperty act:person ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:InterestLink ;
-            owl:onProperty act:interestLink ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:person ],
@@ -265,10 +265,10 @@ act:ElectoralDistrict a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty act:district ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty act:district ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty act:district ],
         <https://ld.ech.ch/schema/0292/meta-common/HasTemporalValidity> ;
     skos:definition """[de] Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit zeitlicher Gültigkeit.
@@ -279,19 +279,19 @@ act:ElectoralDistrict a owl:Class ;
 act:Gender a owl:Class ;
     rdfs:label "Gender" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:pronouns ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty act:pronouns ],
+            owl:onProperty act:genderCode ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:genderCode ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:genderCode ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
+            owl:onProperty act:pronouns ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:pronouns ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty act:genderCode ],
         <https://ld.ech.ch/schema/0292/meta-common/HasTemporalValidity> ;
     skos:definition """[de] Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen Gültigkeit.
@@ -302,23 +302,23 @@ act:Gender a owl:Class ;
 act:GroupType a owl:Class ;
     rdfs:label "GroupType" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom act:GroupTypeEnum ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty act:groupTypeEnum ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom act:GroupTypeEnum ;
             owl:onProperty act:groupTypeEnum ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:groupTypeEnum ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ] ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:groupTypeEnum ] ;
     skos:definition """[de] Art der Gruppe (z.B. Partei, Kommission, Parlament, Departement).
 [en] Type of group (e.g., party, committee, parliament, department).
 """ ;
@@ -328,33 +328,33 @@ act:LanguageProficiency a owl:Class ;
     rdfs:label "LanguageProficiency" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:isNative ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:isNative ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/language> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/language> ],
+            owl:onProperty act:isCorrespondence ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
             owl:onProperty act:isCorrespondence ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:isCorrespondence ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty act:isNative ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty act:isCorrespondence ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:onDatatype xsd:string ;
                     owl:withRestrictions ( [ xsd:pattern "^[a-z]{2}$" ] ) ] ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/language> ] ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/language> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/language> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:isNative ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty act:isNative ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/language> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:isNative ] ;
     skos:definition """[de] Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um die bevorzugte Sprache oder die Muttersprache handelt.
 [en] Language proficiency of a person indicating the language and whether it is the preferred language or native language.
 """ ;
@@ -364,22 +364,19 @@ act:Membership a owl:Class ;
     rdfs:label "Membership" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:concernedPerson ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty act:roleType ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:authorizedToVote ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Group ;
-            owl:onProperty act:concernedGroup ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:Person ;
             owl:onProperty act:concernedPerson ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:concernedGroup ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:authorizedToVote ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:concernedPerson ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:concernedGroup ],
@@ -387,16 +384,19 @@ act:Membership a owl:Class ;
             owl:allValuesFrom xsd:boolean ;
             owl:onProperty act:authorizedToVote ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:concernedPerson ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Group ;
             owl:onProperty act:concernedGroup ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:RoleType ;
             owl:onProperty act:roleType ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:concernedPerson ],
+            owl:onProperty act:authorizedToVote ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty act:roleType ],
         <https://ld.ech.ch/schema/0292/meta-common/HasCreationModificationDates>,
         <https://ld.ech.ch/schema/0292/meta-common/HasIdentification>,
@@ -409,22 +409,22 @@ act:Membership a owl:Class ;
 act:Name a owl:Class ;
     rdfs:label "Name" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:nameType ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:nameType ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
+        [ a owl:Restriction ;
             owl:allValuesFrom act:NameTypeEnum ;
+            owl:onProperty act:nameType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:nameType ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty act:nameType ],
         <https://ld.ech.ch/schema/0292/meta-common/HasTemporalValidity> ;
     skos:definition """[de] Ein Name mit einem Typ (z.B. Rufname, amtlicher Name) und einem Wert und einer zeitlichen Gültigkeit.
@@ -435,23 +435,17 @@ act:Name a owl:Class ;
 act:Occupation a owl:Class ;
     rdfs:label "Occupation" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:enterprise ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:enterpriseUid ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:enterpriseUid ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:isPaid ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:occupationCode ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:isPaid ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:enterprise ],
@@ -460,25 +454,31 @@ act:Occupation a owl:Class ;
             owl:onProperty act:isPaid ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:isPaid ],
+            owl:onProperty act:enterpriseUid ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:occupationCode ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:occupationCode ],
+            owl:onProperty act:enterpriseUid ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty act:enterprise ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:enterpriseUid ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+            owl:onProperty act:occupationCode ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty act:isPaid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:enterprise ],
         <https://ld.ech.ch/schema/0292/meta-common/HasTemporalValidity> ;
     skos:definition """[de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Codes, ob die Position bezahlt ist, und der zeitlichen Gültigkeit.
 [en] Occupation or profession of a person indicating a label, an ISCO-19 code, whether the position is paid, and temporal validity.
@@ -516,23 +516,23 @@ act:Occupation a owl:Class ;
 act:RoleType a owl:Class ;
     rdfs:label "RoleType" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom act:RoleEnum ;
+            owl:onProperty act:roleTypeEnum ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:roleTypeEnum ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:roleTypeEnum ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:roleTypeEnum ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom act:RoleEnum ;
-            owl:onProperty act:roleTypeEnum ] ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ] ;
     skos:definition """[de] Rolle einer Person in einer Mitgliedschaft oder Funktion (z.B. Mitglied, Präsident, Stellvertreter).
 [en] Role of a person in a membership or function (e.g., member, president, deputy).
 """ ;
@@ -541,8 +541,8 @@ act:RoleType a owl:Class ;
 act:Training a owl:Class ;
     rdfs:label "Training" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:trainingType ],
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:TrainingTypeEnum ;
             owl:onProperty act:trainingType ],
@@ -550,23 +550,23 @@ act:Training a owl:Class ;
             owl:maxCardinality 1 ;
             owl:onProperty act:trainingCode ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:trainingCode ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty act:trainingType ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:trainingCode ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:trainingType ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:trainingCode ],
         <https://ld.ech.ch/schema/0292/meta-common/HasTemporalValidity> ;
     skos:definition """[de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z.B. Schulabschluss, Universitätsabschluss, Militärdienst), eines Labels, eines ISCO-19 Codes und der zeitlichen Gültigkeit.
 [en] Training or education of a person indicating a type (e.g., school diploma, university degree, military service), a label, an ISCO-19 code, and temporal validity.
@@ -1141,50 +1141,50 @@ act:training a owl:ObjectProperty ;
 act:Address a owl:Class ;
     rdfs:label "Address" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:postalCode ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:addressType ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:streetAddress ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:anyURI ;
-            owl:onProperty act:addressURI ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:AddressTypeEnum ;
-            owl:onProperty act:addressType ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:addressURI ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:postalLocality ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:addressURI ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:streetAddress ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:postalLocality ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:addressType ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:postalCode ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:integer ;
             owl:onProperty act:postalCode ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:streetAddress ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:postalLocality ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:addressURI ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty act:addressURI ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:postalCode ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:streetAddress ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:addressType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:addressType ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty act:postalLocality ] ;
+            owl:onProperty act:postalLocality ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:AddressTypeEnum ;
+            owl:onProperty act:addressType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:postalLocality ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:streetAddress ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:addressURI ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:postalCode ] ;
     skos:definition """[de] Eine Adresse mit einem Typ (z.B. Privatadresse, Geschäftsadresse) und einem Wert.
 [en] An address with a type (e.g., private address, business address) and a value.
 """ ;
@@ -1193,12 +1193,6 @@ act:Address a owl:Class ;
 act:Contact a owl:Class ;
     rdfs:label "Contact" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:contactType ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
         [ a owl:Restriction ;
@@ -1209,7 +1203,13 @@ act:Contact a owl:Class ;
             owl:onProperty act:contactType ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:ContactTypeEnum ;
-            owl:onProperty act:contactType ] ;
+            owl:onProperty act:contactType ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:contactType ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ] ;
     skos:definition """[de] Kontaktinformation einer Person mit Angabe eines Typs (z.B. E-Mail, LinkedIn) und eines Werts.
 [en] Contact information of a person indicating a type (e.g., email, LinkedIn) and a value.
 """ ;
@@ -1218,86 +1218,86 @@ act:Contact a owl:Class ;
 act:InterestLink a owl:Class ;
     rdfs:label "InterestLink" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:interestType ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:committee ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:organizationAddress ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:InterestTypeEnum ;
-            owl:onProperty act:interestType ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:functionRole ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:legalForm ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:organizationUid ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:organizationAddress ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:isPaid ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Person ;
-            owl:onProperty act:concernedPerson ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:committee ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty act:organizationUid ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty act:functionRole ],
+            owl:onProperty act:committee ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:organizationAddress ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:committee ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:concernedPerson ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:concernedPerson ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:functionRole ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:isPaid ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:organizationAddress ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty act:legalForm ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 0 ;
             owl:onProperty act:organizationLabel ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:organizationUid ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:interestType ],
+            owl:onProperty act:isPaid ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:legalForm ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty act:organizationLabel ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
             owl:onProperty act:isPaid ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:interestType ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Person ;
+            owl:onProperty act:concernedPerson ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:legalForm ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty act:organizationLabel ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:functionRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:functionRole ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:organizationAddress ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:interestType ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:InterestTypeEnum ;
+            owl:onProperty act:interestType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:organizationUid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:legalForm ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:organizationUid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:committee ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:concernedPerson ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:organizationAddress ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:concernedPerson ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:isPaid ],
         <https://ld.ech.ch/schema/0292/meta-common/HasCreationModificationDates>,
         <https://ld.ech.ch/schema/0292/meta-common/HasIdentification>,
         <https://ld.ech.ch/schema/0292/meta-common/HasTemporalValidity> ;
@@ -1596,17 +1596,17 @@ act:trainingType a owl:ObjectProperty ;
 <https://ld.ech.ch/schema/0292/meta-common/HasCreationModificationDates> a owl:Class ;
     rdfs:label "HasCreationModificationDates" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateModified> ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateCreated> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateModified> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeCreated> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeModified> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeCreated> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateCreated> ],
@@ -1614,22 +1614,22 @@ act:trainingType a owl:ObjectProperty ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeModified> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:date ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateModified> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeCreated> ],
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeModified> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateCreated> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateModified> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeModified> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:dateTime ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeCreated> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateCreated> ] ;
     skos:definition """[de] Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Änderungsdaten einer Entität zur Verfügung stellt.
 [en] A mixin class that provides slots for modeling creation and modification dates of an entity.
@@ -1639,89 +1639,89 @@ act:trainingType a owl:ObjectProperty ;
 act:Group a owl:Class ;
     rdfs:label "Group" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:address ],
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty act:parentGroup ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:landingPage ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:landingPage ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty act:statutesURL ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:landingPage ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:statutesURL ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
             owl:allValuesFrom <https://ld.ech.ch/schema/0292/meta-common/MultilingualValue> ;
             owl:onProperty act:description ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+            owl:minCardinality 0 ;
+            owl:onProperty act:groupType ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://ld.ech.ch/schema/0292/meta-common/MultilingualValue> ;
-            owl:onProperty act:abbreviation ],
+            owl:minCardinality 0 ;
+            owl:onProperty act:parentGroup ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+            owl:minCardinality 0 ;
+            owl:onProperty act:spatial ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:spatial ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:groupType ],
+            owl:onProperty act:landingPage ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 0 ;
             owl:onProperty act:partyColor ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:Contact ;
             owl:onProperty act:contact ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:abbreviation ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:partyColor ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:parentGroup ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:GroupType ;
-            owl:onProperty act:groupType ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:partyColor ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:anyURI ;
-            owl:onProperty act:parentGroup ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Address ;
-            owl:onProperty act:address ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:contact ],
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:spatial ],
+            owl:maxCardinality 1 ;
+            owl:onProperty act:landingPage ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:statutesURL ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:partyColor ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:GroupType ;
+            owl:onProperty act:groupType ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:groupType ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:spatial ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:contact ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:statutesURL ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Address ;
+            owl:onProperty act:address ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:address ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:abbreviation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:landingPage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://ld.ech.ch/schema/0292/meta-common/MultilingualValue> ;
+            owl:onProperty act:abbreviation ],
         <https://ld.ech.ch/schema/0292/meta-common/HasCreationModificationDates>,
         <https://ld.ech.ch/schema/0292/meta-common/HasIdentification>,
         <https://ld.ech.ch/schema/0292/meta-common/HasTemporalValidity> ;
@@ -1757,32 +1757,32 @@ act:interestLink a owl:ObjectProperty ;
 <https://ld.ech.ch/schema/0292/meta-common/HasIdentification> a owl:Class ;
     rdfs:label "HasIdentification" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/wikidataUri> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/globalURI> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/globalURI> ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/localId> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:anyURI ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/wikidataUri> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/globalURI> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:anyURI ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/globalURI> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/wikidataUri> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/localId> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/localId> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/wikidataUri> ],
+            owl:minCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/globalURI> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/localId> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/globalURI> ] ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/wikidataUri> ] ;
     skos:definition """[de] Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfügung stellt.
 [en] A mixin class that provides slots for the identification of an entity.
 """ ;
@@ -1791,6 +1791,12 @@ act:interestLink a owl:ObjectProperty ;
 <https://ld.ech.ch/schema/0292/meta-common/MultilingualValue> a owl:Class ;
     rdfs:label "MultilingualValue" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/language> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
+        [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:onDatatype xsd:string ;
                     owl:withRestrictions ( [ xsd:pattern "^[a-z]{2}$" ] ) ] ;
@@ -1799,17 +1805,11 @@ act:interestLink a owl:ObjectProperty ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/language> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/language> ] ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ] ;
     skos:definition """[de] Ein mehrsprachiger String mit Angabe der Sprache.
 [en] A multilingual string with language specification.
 """ ;
@@ -1840,131 +1840,131 @@ act:InterestTypeEnum a owl:Class ;
 act:Person a owl:Class ;
     rdfs:label "Person" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:deathYear ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:picture ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Training ;
-            owl:onProperty act:training ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:integer ;
-            owl:onProperty act:birthYear ],
-        [ a owl:Restriction ;
             owl:allValuesFrom act:Citizenship ;
             owl:onProperty act:citizenship ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty <http://schema.org/birthDate> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:birthYear ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:electoralDistrict ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:citizenship ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Name ;
-            owl:onProperty act:name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:address ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:contact ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Occupation ;
-            owl:onProperty act:occupation ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:picture ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://schema.org/deathDate> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Contact ;
-            owl:onProperty act:contact ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/labelLong> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:gender ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty act:interestLink ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:picture ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty act:languageProficiency ],
         [ a owl:Restriction ;
-            owl:allValuesFrom act:Address ;
-            owl:onProperty act:address ],
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty act:deathYear ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:birthYear ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Name ;
+            owl:onProperty act:name ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/labelLong> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:electoralDistrict ],
+            owl:maxCardinality 1 ;
+            owl:onProperty act:deathYear ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Occupation ;
+            owl:onProperty act:occupation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://schema.org/birthDate> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty <http://schema.org/birthDate> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/labelLong> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:name ],
+            owl:onProperty act:training ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:InterestLink ;
             owl:onProperty act:interestLink ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+            owl:onProperty act:name ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:interestLink ],
+            owl:onProperty act:deathYear ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:birthYear ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:ElectoralDistrict ;
-            owl:onProperty act:electoralDistrict ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty <http://schema.org/birthDate> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:picture ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:LanguageProficiency ;
             owl:onProperty act:languageProficiency ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:training ],
+            owl:allValuesFrom act:Gender ;
+            owl:onProperty act:gender ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <http://schema.org/birthDate> ],
+            owl:onProperty act:electoralDistrict ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:picture ],
+            owl:allValuesFrom act:ElectoralDistrict ;
+            owl:onProperty act:electoralDistrict ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:occupation ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:integer ;
-            owl:onProperty act:deathYear ],
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/labelLong> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom act:Gender ;
-            owl:onProperty act:gender ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:deathYear ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://schema.org/deathDate> ],
+            owl:minCardinality 0 ;
+            owl:onProperty act:citizenship ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
             owl:onProperty <http://schema.org/deathDate> ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:contact ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/labelLong> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty act:birthYear ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Training ;
+            owl:onProperty act:training ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:birthYear ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://schema.org/deathDate> ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:address ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Contact ;
+            owl:onProperty act:contact ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Address ;
+            owl:onProperty act:address ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:picture ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:electoralDistrict ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://schema.org/deathDate> ],
         <https://ld.ech.ch/schema/0292/meta-common/HasCreationModificationDates>,
         <https://ld.ech.ch/schema/0292/meta-common/HasIdentification> ;
     skos:definition """[de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Berufen.
@@ -2039,32 +2039,32 @@ act:TrainingTypeEnum a owl:Class ;
 <https://ld.ech.ch/schema/0292/meta-common/HasTemporalValidity> a owl:Class ;
     rdfs:label "HasTemporalValidity" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://schema.org/validThrough> ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/isCurrent> ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/isCurrent> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://schema.org/validThrough> ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/isCurrent> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty <http://schema.org/validThrough> ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <http://schema.org/validFrom> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://schema.org/validThrough> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://schema.org/validFrom> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://schema.org/validThrough> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
             owl:onProperty <http://schema.org/validFrom> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/isCurrent> ] ;
+            owl:onProperty <http://schema.org/validFrom> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty <http://schema.org/validThrough> ] ;
     skos:definition """[de] Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gültigkeit einer Information (nicht eines Events) zur Verfügung stellt.
 [en] A mixin class that provides slots for modeling a temporal validity of information (not of an event).
 """ ;

@@ -159,9 +159,6 @@ gender:
 ### Staatsbürgerschaft
 
 ```yaml
-ch_citizenship:
-  valid_from: 1980-04-19
-
 citizenships:
   - country: IT
     valid_from: 1980-04-19
@@ -170,7 +167,6 @@ citizenships:
     valid_until: 2020-12-31
 ```
 
-- `ch_citizenship`: Schweizer Bürgerrecht (Validity-Objekt)
 - `citizenships`: Weitere Staatsbürgerschaften mit ISO 3166 Ländercodes
 
 ### Beruf und Ausbildung
