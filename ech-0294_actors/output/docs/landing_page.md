@@ -6,9 +6,9 @@ search:
 # Slot: landing_page 
 
 
-_[de] URL mit weiteren Informationen._
+_[de] Website mit weiteren Informationen._
 
-_[en] URL providing further information._
+_[en] Website providing further information._
 
 __
 
@@ -44,7 +44,7 @@ Alias: landing_page
 
 | Property | Value |
 | --- | --- |
-| Range | [String](String.md) |
+| Range | [Uri](Uri.md) |
 | Domain Of | [Group](Group.md) |
 | Slot URI | [act:landingPage](https://ld.ech.ch/schema/0294/actors/landingPage) |
 
@@ -91,9 +91,9 @@ Alias: landing_page
 <details>
 ```yaml
 name: landing_page
-description: '[de] URL mit weiteren Informationen.
+description: '[de] Website mit weiteren Informationen.
 
-  [en] URL providing further information.
+  [en] Website providing further information.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors
@@ -102,7 +102,7 @@ slot_uri: act:landingPage
 alias: landing_page
 domain_of:
 - Group
-range: string
+range: uri
 
 ```
 </details></div>

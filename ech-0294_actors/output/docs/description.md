@@ -6,7 +6,7 @@ search:
 # Slot: description 
 
 
-_[de] Beschreibung der Entität._
+_[de] Kurze Beschreibung der Gruppierung._
 
 _[en] Description of the entity._
 
@@ -91,7 +91,7 @@ Alias: description
 <details>
 ```yaml
 name: description
-description: '[de] Beschreibung der Entität.
+description: '[de] Kurze Beschreibung der Gruppierung.
 
   [en] Description of the entity.
 

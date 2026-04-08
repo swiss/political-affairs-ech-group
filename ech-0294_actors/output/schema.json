@@ -341,7 +341,7 @@
                     ]
                 },
                 "description": {
-                    "description": "[de] Beschreibung der Entit\u00e4t.\n[en] Description of the entity.\n",
+                    "description": "[de] Kurze Beschreibung der Gruppierung.\n[en] Description of the entity.\n",
                     "items": {
                         "$ref": "#/$defs/MultilingualValue"
                     },
@@ -363,7 +363,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "[de] Link zum Gruppentyp.\n[en] Link to the group type.\n"
+                    "description": "[de] Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder \u00e4hnliches. Die genaue Bennenung und Beschreibung der Gruppierung wird \u00fcber `name` gemacht.\n[en] Link to the group type.\n"
                 },
                 "is_active": {
                     "description": "[de] Gibt an, ob die Information aktuell g\u00fcltig ist. Kann n\u00fctzlich sein, wenn diese Information explizit vorhanden ist.\n[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.\n",
@@ -380,7 +380,7 @@
                     ]
                 },
                 "landing_page": {
-                    "description": "[de] URL mit weiteren Informationen.\n[en] URL providing further information.\n",
+                    "description": "[de] Website mit weiteren Informationen.\n[en] Website providing further information.\n",
                     "type": [
                         "string",
                         "null"
@@ -394,7 +394,7 @@
                     ]
                 },
                 "parent_groups": {
-                    "description": "[de] Link zu \u00fcbergeordneten Gruppen.\n[en] Link to parent groups.\n",
+                    "description": "[de] \u00dcbergeordneten Gruppe. Zum Beispiel die Mutterpartei, zu Kantonalenparteien. Oder zur Beschreibung der Hierarchie in Exekutive. Verkn\u00fcpfung von Subkommissionen mit Kommissionen. (parentGroup wird immer im selben group_type verwendet.)\n[en] Link to parent groups.\n",
                     "items": {
                         "type": "string"
                     },
@@ -411,7 +411,7 @@
                     ]
                 },
                 "spatial": {
-                    "description": "[de] R\u00e4umliche Referenz (Gemeindenummer, Kantonsnummer, z.B. ld.admin.ch/municipality/234).\n[en] Spatial reference (municipality number, canton number, e.g., ld.admin.ch/municipality/234).\n",
+                    "description": "[de] R\u00e4umliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z.B. ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).\n[en] Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).\n",
                     "type": [
                         "string",
                         "null"
@@ -966,7 +966,7 @@
                     ]
                 },
                 "birth_date": {
-                    "description": "[de] Genaues Geburtsdatum.\n[en] Exact date of birth.\n",
+                    "description": "[de] Genaues Geburtsdatum.\n[en] Exact date of birth if available and public. This field has precedence over the field `birthYear`.\n",
                     "format": "date",
                     "type": [
                         "string",
@@ -974,7 +974,7 @@
                     ]
                 },
                 "birth_year": {
-                    "description": "[de] Geburtsjahr.\n[en] Year of birth.\n",
+                    "description": "[de] Geburtsjahr.\n[en] Year of birth. Only to be used, if there is no full `birthDate` available.\n",
                     "type": [
                         "integer",
                         "null"
@@ -1037,13 +1037,6 @@
                     "format": "date",
                     "type": [
                         "string",
-                        "null"
-                    ]
-                },
-                "death_year": {
-                    "description": "[de] Todesjahr.\n[en] Year of death.\n",
-                    "type": [
-                        "integer",
                         "null"
                     ]
                 },

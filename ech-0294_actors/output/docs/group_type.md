@@ -6,7 +6,7 @@ search:
 # Slot: group_type 
 
 
-_[de] Link zum Gruppentyp._
+_[de] Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder ähnliches. Die genaue Bennenung und Beschreibung der Gruppierung wird über `name` gemacht._
 
 _[en] Link to the group type._
 
@@ -91,7 +91,9 @@ Alias: group_type
 <details>
 ```yaml
 name: group_type
-description: '[de] Link zum Gruppentyp.
+description: '[de] Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament
+  oder ähnliches. Die genaue Bennenung und Beschreibung der Gruppierung wird über
+  `name` gemacht.
 
   [en] Link to the group type.
 

@@ -23,13 +23,13 @@ __
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [group_type](group_type.md) | 0..1 <br/> [GroupType](GroupType.md) | [de] Link zum Gruppentyp | direct |
+| [group_type](group_type.md) | 0..1 <br/> [GroupType](GroupType.md) | [de] Klasse der Gruppierung, wie z | direct |
 | [label](label.md) | 0..1 <br/> [String](String.md) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben ... | direct |
 | [abbreviation](abbreviation.md) | * <br/> [MultilingualValue](MultilingualValue.md) | [de] Abkürzung (kann mehrsprachig sein) | direct |
-| [description](description.md) | * <br/> [MultilingualValue](MultilingualValue.md) | [de] Beschreibung der Entität | direct |
-| [landing_page](landing_page.md) | 0..1 <br/> [String](String.md) | [de] URL mit weiteren Informationen | direct |
-| [parent_groups](parent_groups.md) | * <br/> [Uriorcurie](Uriorcurie.md) | [de] Link zu übergeordneten Gruppen | direct |
-| [spatial](spatial.md) | 0..1 <br/> [String](String.md) | [de] Räumliche Referenz (Gemeindenummer, Kantonsnummer, z | direct |
+| [description](description.md) | * <br/> [MultilingualValue](MultilingualValue.md) | [de] Kurze Beschreibung der Gruppierung | direct |
+| [landing_page](landing_page.md) | 0..1 <br/> [Uri](Uri.md) | [de] Website mit weiteren Informationen | direct |
+| [parent_groups](parent_groups.md) | * <br/> [Uriorcurie](Uriorcurie.md) | [de] Übergeordneten Gruppe | direct |
+| [spatial](spatial.md) | 0..1 <br/> [String](String.md) | [de] Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z | direct |
 | [contacts](contacts.md) | * <br/> [Contact](Contact.md) | [en] Contact information (email, website, social media) | direct |
 | [addresses](addresses.md) | * <br/> [Address](Address.md) | [de] Adressen mit Typ (privat, geschäftlich, lokal) | direct |
 | [statutes_url](statutes_url.md) | 0..1 <br/> [String](String.md) | [de] URL zu Parteistatuten (optional für Parteien) | direct |

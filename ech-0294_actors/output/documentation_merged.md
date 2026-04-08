@@ -374,9 +374,8 @@ __
 | [label_long](#label_long) | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel z... | direct |
 | [birth_year](#birth_year) | 0..1 <br/> [Integer](#Integer) | [de] Geburtsjahr | direct |
 | [birth_date](#birth_date) | 0..1 <br/> [Date](#Date) | [de] Genaues Geburtsdatum | direct |
-| [death_year](#death_year) | 0..1 <br/> [Integer](#Integer) | [de] Todesjahr | direct |
 | [death_date](#death_date) | 0..1 <br/> [Date](#Date) | [de] Genaues Todesdatum | direct |
-| [picture](#picture) | 0..1 <br/> [String](#String) | [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF) | direct |
+| [picture](#picture) | 0..1 <br/> [Uri](#Uri) | [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF) | direct |
 | [names](#names) | * <br/> [Name](#Name) | [en] Names of the person with type and value | direct |
 | [addresses](#addresses) | * <br/> [Address](#Address) | [de] Adressen mit Typ (privat, geschäftlich, lokal) | direct |
 | [language_proficiencies](#language_proficiencies) | * <br/> [LanguageProficiency](#LanguageProficiency) | [de] Sprachkompetenzen der Person | direct |
@@ -1123,13 +1122,13 @@ __
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [group_type](#group_type) | 0..1 <br/> [GroupType](#GroupType) | [de] Link zum Gruppentyp | direct |
+| [group_type](#group_type) | 0..1 <br/> [GroupType](#GroupType) | [de] Klasse der Gruppierung, wie z | direct |
 | [label](#label) | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben ... | direct |
 | [abbreviation](#abbreviation) | * <br/> [MultilingualValue](#MultilingualValue) | [de] Abkürzung (kann mehrsprachig sein) | direct |
-| [description](#description) | * <br/> [MultilingualValue](#MultilingualValue) | [de] Beschreibung der Entität | direct |
-| [landing_page](#landing_page) | 0..1 <br/> [String](#String) | [de] URL mit weiteren Informationen | direct |
-| [parent_groups](#parent_groups) | * <br/> [Uriorcurie](#Uriorcurie) | [de] Link zu übergeordneten Gruppen | direct |
-| [spatial](#spatial) | 0..1 <br/> [String](#String) | [de] Räumliche Referenz (Gemeindenummer, Kantonsnummer, z | direct |
+| [description](#description) | * <br/> [MultilingualValue](#MultilingualValue) | [de] Kurze Beschreibung der Gruppierung | direct |
+| [landing_page](#landing_page) | 0..1 <br/> [Uri](#Uri) | [de] Website mit weiteren Informationen | direct |
+| [parent_groups](#parent_groups) | * <br/> [Uriorcurie](#Uriorcurie) | [de] Übergeordneten Gruppe | direct |
+| [spatial](#spatial) | 0..1 <br/> [String](#String) | [de] Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z | direct |
 | [contacts](#contacts) | * <br/> [Contact](#Contact) | [en] Contact information (email, website, social media) | direct |
 | [addresses](#addresses) | * <br/> [Address](#Address) | [de] Adressen mit Typ (privat, geschäftlich, lokal) | direct |
 | [statutes_url](#statutes_url) | 0..1 <br/> [String](#String) | [de] URL zu Parteistatuten (optional für Parteien) | direct |

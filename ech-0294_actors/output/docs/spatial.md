@@ -6,9 +6,9 @@ search:
 # Slot: spatial 
 
 
-_[de] Räumliche Referenz (Gemeindenummer, Kantonsnummer, z.B. ld.admin.ch/municipality/234)._
+_[de] Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z.B. ld.admin.ch/municipality/1234, ld.admin.ch/canton/23)._
 
-_[en] Spatial reference (municipality number, canton number, e.g., ld.admin.ch/municipality/234)._
+_[en] Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234, ld.admin.ch/canton/23)._
 
 __
 
@@ -90,9 +90,11 @@ Alias: spatial
 <details>
 ```yaml
 name: spatial
-description: '[de] Räumliche Referenz (Gemeindenummer, Kantonsnummer, z.B. ld.admin.ch/municipality/234).
+description: '[de] Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z.B.
+  ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).
 
-  [en] Spatial reference (municipality number, canton number, e.g., ld.admin.ch/municipality/234).
+  [en] Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234,
+  ld.admin.ch/canton/23).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

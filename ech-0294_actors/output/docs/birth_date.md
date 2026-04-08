@@ -8,7 +8,7 @@ search:
 
 _[de] Genaues Geburtsdatum._
 
-_[en] Exact date of birth._
+_[en] Exact date of birth if available and public. This field has precedence over the field `birthYear`._
 
 __
 
@@ -93,7 +93,8 @@ Alias: birth_date
 name: birth_date
 description: '[de] Genaues Geburtsdatum.
 
-  [en] Exact date of birth.
+  [en] Exact date of birth if available and public. This field has precedence over
+  the field `birthYear`.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

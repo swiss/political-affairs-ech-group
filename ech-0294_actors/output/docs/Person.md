@@ -27,9 +27,8 @@ __
 | [label_long](label_long.md) | 0..1 <br/> [String](String.md) | [de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel z... | direct |
 | [birth_year](birth_year.md) | 0..1 <br/> [Integer](Integer.md) | [de] Geburtsjahr | direct |
 | [birth_date](birth_date.md) | 0..1 <br/> [Date](Date.md) | [de] Genaues Geburtsdatum | direct |
-| [death_year](death_year.md) | 0..1 <br/> [Integer](Integer.md) | [de] Todesjahr | direct |
 | [death_date](death_date.md) | 0..1 <br/> [Date](Date.md) | [de] Genaues Todesdatum | direct |
-| [picture](picture.md) | 0..1 <br/> [String](String.md) | [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF) | direct |
+| [picture](picture.md) | 0..1 <br/> [Uri](Uri.md) | [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF) | direct |
 | [names](names.md) | * <br/> [Name](Name.md) | [en] Names of the person with type and value | direct |
 | [addresses](addresses.md) | * <br/> [Address](Address.md) | [de] Adressen mit Typ (privat, geschäftlich, lokal) | direct |
 | [language_proficiencies](language_proficiencies.md) | * <br/> [LanguageProficiency](LanguageProficiency.md) | [de] Sprachkompetenzen der Person | direct |

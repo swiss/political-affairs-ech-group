@@ -49,7 +49,7 @@ act:douglas_adams_example a act:Container ;
             mcm:isCurrent false ;
             mcm:label "writer" ;
             act:isPaid true ] ;
-    act:picture "https://commons.wikimedia.org/wiki/File:Douglas_adams_portrait.jpg" ;
+    act:picture "https://commons.wikimedia.org/wiki/File:Douglas_adams_portrait.jpg"^^xsd:anyURI ;
     act:training [ a act:Training ;
             mcm:value "High School Diploma" ;
             act:trainingType "schulabschluss" ] .

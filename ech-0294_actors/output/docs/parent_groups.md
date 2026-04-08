@@ -6,7 +6,7 @@ search:
 # Slot: parent_groups 
 
 
-_[de] Link zu übergeordneten Gruppen._
+_[de] Übergeordneten Gruppe. Zum Beispiel die Mutterpartei, zu Kantonalenparteien. Oder zur Beschreibung der Hierarchie in Exekutive. Verknüpfung von Subkommissionen mit Kommissionen. (parentGroup wird immer im selben group_type verwendet.)_
 
 _[en] Link to parent groups._
 
@@ -92,7 +92,9 @@ Alias: parent_groups
 <details>
 ```yaml
 name: parent_groups
-description: '[de] Link zu übergeordneten Gruppen.
+description: '[de] Übergeordneten Gruppe. Zum Beispiel die Mutterpartei, zu Kantonalenparteien.
+  Oder zur Beschreibung der Hierarchie in Exekutive. Verknüpfung von Subkommissionen
+  mit Kommissionen. (parentGroup wird immer im selben group_type verwendet.)
 
   [en] Link to parent groups.
 

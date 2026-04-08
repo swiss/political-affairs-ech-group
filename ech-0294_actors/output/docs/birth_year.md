@@ -8,7 +8,7 @@ search:
 
 _[de] Geburtsjahr._
 
-_[en] Year of birth._
+_[en] Year of birth. Only to be used, if there is no full `birthDate` available._
 
 __
 
@@ -93,7 +93,7 @@ Alias: birth_year
 name: birth_year
 description: '[de] Geburtsjahr.
 
-  [en] Year of birth.
+  [en] Year of birth. Only to be used, if there is no full `birthDate` available.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

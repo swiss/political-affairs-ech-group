@@ -44,7 +44,7 @@ Alias: picture
 
 | Property | Value |
 | --- | --- |
-| Range | [String](String.md) |
+| Range | [Uri](Uri.md) |
 | Domain Of | [Person](Person.md) |
 
 ### Cardinality and Requirements
@@ -100,7 +100,7 @@ rank: 1000
 alias: picture
 domain_of:
 - Person
-range: string
+range: uri
 
 ```
 </details></div>

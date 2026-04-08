@@ -33,8 +33,8 @@ Alias: value
 | --- | --- | --- |
 | [Contact](Contact.md) | [de] Kontaktinformation einer Person mit Angabe eines Typs (z |  no  |
 | [Training](Training.md) | [de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z |  no  |
-| [Name](Name.md) | [de] Ein Name mit einem Typ (z |  no  |
 | [MultilingualValue](MultilingualValue.md) | [de] Ein mehrsprachiger String mit Angabe der Sprache |  no  |
+| [Name](Name.md) | [de] Ein Name mit einem Typ (z |  no  |
 
 
 

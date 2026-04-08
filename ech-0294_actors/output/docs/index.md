@@ -74,8 +74,7 @@ Name: actors-schema
 | [datetime_modified](datetime_modified.md) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde |
 | [datetime_planned](datetime_planned.md) | [de] Das geplante Datum und die Uhrzeit eines instantanen Ereignisses oder Vo... |
 | [death_date](death_date.md) | [de] Genaues Todesdatum |
-| [death_year](death_year.md) | [de] Todesjahr |
-| [description](description.md) | [de] Beschreibung der Entität |
+| [description](description.md) | [de] Kurze Beschreibung der Gruppierung |
 | [district](district.md) | [de] Wahlkreis oder Wahlregion |
 | [electoral_district](electoral_district.md) | [de] Link zum Wahlbezirk |
 | [enterprise](enterprise.md) | [de] Name des Unternehmens |
@@ -84,7 +83,7 @@ Name: actors-schema
 | [gender_code](gender_code.md) | [de] Geschlechtscode (z |
 | [genders](genders.md) | [de] Geschlecht der Person |
 | [global_uri](global_uri.md) | [de] Eine eindeutige, global gültige URI für die Entität |
-| [group_type](group_type.md) | [de] Link zum Gruppentyp |
+| [group_type](group_type.md) | [de] Klasse der Gruppierung, wie z |
 | [group_type_enum](group_type_enum.md) | [de] Link zum kontrollierten Vokabular für Gruppentypen |
 | [groups](groups.md) | [de] Sammlung von Gruppen |
 | [interest_links](interest_links.md) | [de] Sammlung von Interessenbindungen |
@@ -95,7 +94,7 @@ Name: actors-schema
 | [is_paid](is_paid.md) | [de] Gibt an, ob die Position bezahlt ist |
 | [label](label.md) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben ... |
 | [label_long](label_long.md) | [de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel z... |
-| [landing_page](landing_page.md) | [de] URL mit weiteren Informationen |
+| [landing_page](landing_page.md) | [de] Website mit weiteren Informationen |
 | [language](language.md) | [de] Sprachcode im ISO 639-1 Format |
 | [language_proficiencies](language_proficiencies.md) | [de] Sprachkompetenzen der Person |
 | [legal_form](legal_form.md) | [en] Legal form of the organization |
@@ -109,7 +108,7 @@ Name: actors-schema
 | [organization_address](organization_address.md) | [en] Address of the organization |
 | [organization_label](organization_label.md) | [en] Label of the organization |
 | [organization_uid](organization_uid.md) | [en] UID of the organization (for analysis with NOGA codes, etc |
-| [parent_groups](parent_groups.md) | [de] Link zu übergeordneten Gruppen |
+| [parent_groups](parent_groups.md) | [de] Übergeordneten Gruppe |
 | [party_color](party_color.md) | [de] Parteifarbe (optional für Parteien) |
 | [persons](persons.md) | [de] Sammlung von Personen |
 | [picture](picture.md) | [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF) |
@@ -119,13 +118,12 @@ Name: actors-schema
 | [role_label](role_label.md) | [en] Descriptive label for the role when 'other' is selected in the RoleEnum |
 | [role_type](role_type.md) | [en] Role of the person in the membership or function |
 | [role_type_enum](role_type_enum.md) | [en] Role of the person in the membership or function |
-| [spatial](spatial.md) | [de] Räumliche Referenz (Gemeindenummer, Kantonsnummer, z |
+| [spatial](spatial.md) | [de] Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z |
 | [statutes_url](statutes_url.md) | [de] URL zu Parteistatuten (optional für Parteien) |
 | [street_address](street_address.md) | [de] Strassenadresse |
 | [training_code](training_code.md) | [de] ISCO-19 Code der Ausbildung oder Bildung |
 | [training_type](training_type.md) | [de] Typ der Ausbildung oder Bildung |
 | [trainings](trainings.md) | [de] Ausbildungen oder Bildungen der Person |
-| [type_label](type_label.md) | [en] Custom type label when standard type values don't apply |
 | [valid_from](valid_from.md) | [de] Das Datum, ab dem die Information gültig ist |
 | [valid_through](valid_through.md) | [de] Das Datum, bis und mit dem die Information gültig ist |
 | [value](value.md) | [de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ... |
