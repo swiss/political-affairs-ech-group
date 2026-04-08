@@ -42,7 +42,7 @@ jobs:
           done
 
       - name: Generate LinkML documentation
-        run: gen-doc ech-0294_actors/input/schema.yaml --directory ech-0294_actors/output/docs
+        run: gen-doc ech-0294_actors/input/schema.yaml --directory ech-0294_actors/output/docs --template-directory ech-0292_meta/input/docgen
       
       - name: Merge Markdown documentation
         run: python merge_documentation.py ech-0294_actors
