@@ -44,11 +44,10 @@ classes:
       - HasIdentification
       - HasCreationModificationDates
     slots:
-      - label
-      - label_long
+      - label # Einfacher Name ohne Titel oder Berufsbezeichnung. 
+      - label_long # Name inklusive aller Titel und Berufsbezeichnungen.
       - birth_year
       - birth_date
-      - death_year
       - death_date
       - picture
       - names
@@ -357,22 +356,15 @@ slots:
     slot_uri: act:birthYear
     description: |
       [de] Geburtsjahr.
-      [en] Year of birth.
+      [en] Year of birth. Only to be used, if there is no full `birthDate` available.
     range: integer
 
   birth_date:
     slot_uri: schema:birthDate
     description: |
       [de] Genaues Geburtsdatum.
-      [en] Exact date of birth.
+      [en] Exact date of birth if available and public. This field has precedence over the field `birthYear`.
     range: date
-
-  death_year:
-    slot_uri: act:deathYear
-    description: |
-      [de] Todesjahr.
-      [en] Year of death.
-    range: integer
 
   death_date:
     slot_uri: schema:deathDate
@@ -382,6 +374,7 @@ slots:
     range: date
 
   picture:
+    range: uri
     description: |
       [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).
       [en] Link to an image (preferred: PNG, then JPG, then GIF).
@@ -390,7 +383,7 @@ slots:
     range: GroupType
     slot_uri: act:groupType
     description: |
-      [de] Link zum Gruppentyp.
+      [de] Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder ähnliches. Die genaue Bennenung und Beschreibung der Gruppierung wird über `name` gemacht.
       [en] Link to the group type.
 
   group_type_enum:
@@ -399,11 +392,6 @@ slots:
       [de] Link zum kontrollierten Vokabular für Gruppentypen.
       [en] Link to the controlled vocabulary for group types.
     range: GroupTypeEnum
-
-  type_label:
-    description: |
-      [en] Custom type label when standard type values don't apply.
-      [de] Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen.
 
   abbreviation:
     range: MultilingualValue
@@ -418,19 +406,20 @@ slots:
     multivalued: true
     inlined_as_list: true
     description: |
-      [de] Beschreibung der Entität.
+      [de] Kurze Beschreibung der Gruppierung.
       [en] Description of the entity.
 
   landing_page:
     slot_uri: act:landingPage
+    range: uri
     description: |
-      [de] URL mit weiteren Informationen.
-      [en] URL providing further information.
+      [de] Website mit weiteren Informationen.
+      [en] Website providing further information.
 
   parent_groups:
     slot_uri: act:parentGroup
     description: |
-      [de] Link zu übergeordneten Gruppen.
+      [de] Übergeordneten Gruppe. Zum Beispiel die Mutterpartei, zu Kantonalenparteien. Oder zur Beschreibung der Hierarchie in Exekutive. Verknüpfung von Subkommissionen mit Kommissionen. (parentGroup wird immer im selben group_type verwendet.)
       [en] Link to parent groups.
     range: uriorcurie
     multivalued: true
@@ -438,8 +427,8 @@ slots:
 
   spatial:
     description: |
-      [de] Räumliche Referenz (Gemeindenummer, Kantonsnummer, z.B. ld.admin.ch/municipality/234).
-      [en] Spatial reference (municipality number, canton number, e.g., ld.admin.ch/municipality/234).
+      [de] Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z.B. ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).
+      [en] Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).
 
   contacts:
     slot_uri: act:contact
