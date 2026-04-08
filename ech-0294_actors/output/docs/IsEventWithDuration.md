@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: IsEventWithDuration 
 
@@ -11,36 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:IsEventWithDuration](https://ld.ech.ch/schema/0294/actors/IsEventWithDuration)
-
-
-
-
-
-```mermaid
- classDiagram
-    class IsEventWithDuration
-    click IsEventWithDuration href "../IsEventWithDuration/"
-      IsEventWithDuration : date_begin_actual
-        
-      IsEventWithDuration : date_begin_planned
-        
-      IsEventWithDuration : date_end_actual
-        
-      IsEventWithDuration : date_end_planned
-        
-      IsEventWithDuration : datetime_begin_actual
-        
-      IsEventWithDuration : datetime_begin_planned
-        
-      IsEventWithDuration : datetime_end_actual
-        
-      IsEventWithDuration : datetime_end_planned
-        
-      
-```
 
 
 
@@ -289,4 +267,4 @@ attributes:
     range: datetime
 
 ```
-</details>
+</details></div>

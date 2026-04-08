@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: LanguageProficiency 
 
@@ -11,26 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:LanguageProficiency](https://ld.ech.ch/schema/0294/actors/LanguageProficiency)
-
-
-
-
-
-```mermaid
- classDiagram
-    class LanguageProficiency
-    click LanguageProficiency href "../LanguageProficiency/"
-      LanguageProficiency : is_correspondence
-        
-      LanguageProficiency : is_native
-        
-      LanguageProficiency : language
-        
-      
-```
 
 
 
@@ -180,4 +168,4 @@ attributes:
     range: boolean
 
 ```
-</details>
+</details></div>

@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: HasCreationModificationDates 
 
@@ -11,37 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:HasCreationModificationDates](https://ld.ech.ch/schema/0294/actors/HasCreationModificationDates)
-
-
-
-
-
-```mermaid
- classDiagram
-    class HasCreationModificationDates
-    click HasCreationModificationDates href "../HasCreationModificationDates/"
-      HasCreationModificationDates <|-- Person
-        click Person href "../Person/"
-      HasCreationModificationDates <|-- Group
-        click Group href "../Group/"
-      HasCreationModificationDates <|-- Membership
-        click Membership href "../Membership/"
-      HasCreationModificationDates <|-- InterestLink
-        click InterestLink href "../InterestLink/"
-      
-      HasCreationModificationDates : date_created
-        
-      HasCreationModificationDates : date_modified
-        
-      HasCreationModificationDates : datetime_created
-        
-      HasCreationModificationDates : datetime_modified
-        
-      
-```
 
 
 
@@ -219,4 +196,4 @@ attributes:
     range: datetime
 
 ```
-</details>
+</details></div>

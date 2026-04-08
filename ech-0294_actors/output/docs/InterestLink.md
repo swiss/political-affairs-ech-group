@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: InterestLink 
 
@@ -11,83 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:InterestLink](https://ld.ech.ch/schema/0294/actors/InterestLink)
-
-
-
-
-
-```mermaid
- classDiagram
-    class InterestLink
-    click InterestLink href "../InterestLink/"
-      HasIdentification <|-- InterestLink
-        click HasIdentification href "../HasIdentification/"
-      HasCreationModificationDates <|-- InterestLink
-        click HasCreationModificationDates href "../HasCreationModificationDates/"
-      HasTemporalValidity <|-- InterestLink
-        click HasTemporalValidity href "../HasTemporalValidity/"
-      
-      InterestLink : committee
-        
-      InterestLink : concerned_person
-        
-          
-    
-        
-        
-        InterestLink --> "0..1" Person : concerned_person
-        click Person href "../Person/"
-    
-
-        
-      InterestLink : date_created
-        
-      InterestLink : date_modified
-        
-      InterestLink : datetime_created
-        
-      InterestLink : datetime_modified
-        
-      InterestLink : function_role
-        
-      InterestLink : global_uri
-        
-      InterestLink : interest_type
-        
-          
-    
-        
-        
-        InterestLink --> "1" InterestTypeEnum : interest_type
-        click InterestTypeEnum href "../InterestTypeEnum/"
-    
-
-        
-      InterestLink : is_active
-        
-      InterestLink : is_paid
-        
-      InterestLink : legal_form
-        
-      InterestLink : local_id
-        
-      InterestLink : organization_address
-        
-      InterestLink : organization_label
-        
-      InterestLink : organization_uid
-        
-      InterestLink : valid_from
-        
-      InterestLink : valid_through
-        
-      InterestLink : wikidata_uri
-        
-      
-```
 
 
 
@@ -520,4 +451,4 @@ attributes:
     range: boolean
 
 ```
-</details>
+</details></div>

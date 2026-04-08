@@ -1,4 +1,7 @@
-# Enum: GroupTypeEnum 
+---
+search:
+  boost: 2.0
+---# Enum: GroupTypeEnum 
 
 
 
@@ -10,6 +13,8 @@ _[de] Typen politischer Gruppen und Organisationen._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 
@@ -256,3 +261,5 @@ permissible_values:
 
 ```
 </details>
+
+</div>

@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: HasTemporalValidity 
 
@@ -11,45 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:HasTemporalValidity](https://ld.ech.ch/schema/0294/actors/HasTemporalValidity)
-
-
-
-
-
-```mermaid
- classDiagram
-    class HasTemporalValidity
-    click HasTemporalValidity href "../HasTemporalValidity/"
-      HasTemporalValidity <|-- Group
-        click Group href "../Group/"
-      HasTemporalValidity <|-- Membership
-        click Membership href "../Membership/"
-      HasTemporalValidity <|-- InterestLink
-        click InterestLink href "../InterestLink/"
-      HasTemporalValidity <|-- Name
-        click Name href "../Name/"
-      HasTemporalValidity <|-- Citizenship
-        click Citizenship href "../Citizenship/"
-      HasTemporalValidity <|-- Gender
-        click Gender href "../Gender/"
-      HasTemporalValidity <|-- Occupation
-        click Occupation href "../Occupation/"
-      HasTemporalValidity <|-- Training
-        click Training href "../Training/"
-      HasTemporalValidity <|-- ElectoralDistrict
-        click ElectoralDistrict href "../ElectoralDistrict/"
-      
-      HasTemporalValidity : is_active
-        
-      HasTemporalValidity : valid_from
-        
-      HasTemporalValidity : valid_through
-        
-      
-```
 
 
 
@@ -216,4 +185,4 @@ attributes:
     range: boolean
 
 ```
-</details>
+</details></div>

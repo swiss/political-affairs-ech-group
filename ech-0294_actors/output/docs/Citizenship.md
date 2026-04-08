@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Citizenship 
 
@@ -11,31 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:Citizenship](https://ld.ech.ch/schema/0294/actors/Citizenship)
-
-
-
-
-
-```mermaid
- classDiagram
-    class Citizenship
-    click Citizenship href "../Citizenship/"
-      HasTemporalValidity <|-- Citizenship
-        click HasTemporalValidity href "../HasTemporalValidity/"
-      
-      Citizenship : country
-        
-      Citizenship : is_active
-        
-      Citizenship : valid_from
-        
-      Citizenship : valid_through
-        
-      
-```
 
 
 
@@ -205,4 +188,4 @@ attributes:
     range: boolean
 
 ```
-</details>
+</details></div>

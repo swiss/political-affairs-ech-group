@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: ElectoralDistrict 
 
@@ -11,31 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:ElectoralDistrict](https://ld.ech.ch/schema/0294/actors/ElectoralDistrict)
-
-
-
-
-
-```mermaid
- classDiagram
-    class ElectoralDistrict
-    click ElectoralDistrict href "../ElectoralDistrict/"
-      HasTemporalValidity <|-- ElectoralDistrict
-        click HasTemporalValidity href "../HasTemporalValidity/"
-      
-      ElectoralDistrict : district
-        
-      ElectoralDistrict : is_active
-        
-      ElectoralDistrict : valid_from
-        
-      ElectoralDistrict : valid_through
-        
-      
-```
 
 
 
@@ -206,4 +189,4 @@ attributes:
     range: boolean
 
 ```
-</details>
+</details></div>

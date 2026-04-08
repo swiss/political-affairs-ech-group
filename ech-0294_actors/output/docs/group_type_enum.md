@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: group_type_enum 
 
@@ -10,6 +13,8 @@ _[en] Link to the controlled vocabulary for group types._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -100,4 +105,4 @@ domain_of:
 range: GroupTypeEnum
 
 ```
-</details>
+</details></div>

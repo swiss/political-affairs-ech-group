@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: description 
 
@@ -10,6 +13,8 @@ _[en] Description of the entity._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -102,4 +107,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

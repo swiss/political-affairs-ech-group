@@ -1,4 +1,7 @@
-# Enum: AddressTypeEnum 
+---
+search:
+  boost: 2.0
+---# Enum: AddressTypeEnum 
 
 
 
@@ -10,6 +13,8 @@ _[de] Adresstypen._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 
@@ -91,3 +96,5 @@ permissible_values:
 
 ```
 </details>
+
+</div>

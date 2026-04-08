@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Group 
 
@@ -11,114 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:Group](https://ld.ech.ch/schema/0294/actors/Group)
-
-
-
-
-
-```mermaid
- classDiagram
-    class Group
-    click Group href "../Group/"
-      HasIdentification <|-- Group
-        click HasIdentification href "../HasIdentification/"
-      HasCreationModificationDates <|-- Group
-        click HasCreationModificationDates href "../HasCreationModificationDates/"
-      HasTemporalValidity <|-- Group
-        click HasTemporalValidity href "../HasTemporalValidity/"
-      
-      Group : abbreviation
-        
-          
-    
-        
-        
-        Group --> "*" MultilingualValue : abbreviation
-        click MultilingualValue href "../MultilingualValue/"
-    
-
-        
-      Group : addresses
-        
-          
-    
-        
-        
-        Group --> "*" Address : addresses
-        click Address href "../Address/"
-    
-
-        
-      Group : contacts
-        
-          
-    
-        
-        
-        Group --> "*" Contact : contacts
-        click Contact href "../Contact/"
-    
-
-        
-      Group : date_created
-        
-      Group : date_modified
-        
-      Group : datetime_created
-        
-      Group : datetime_modified
-        
-      Group : description
-        
-          
-    
-        
-        
-        Group --> "*" MultilingualValue : description
-        click MultilingualValue href "../MultilingualValue/"
-    
-
-        
-      Group : global_uri
-        
-      Group : group_type
-        
-          
-    
-        
-        
-        Group --> "0..1" GroupType : group_type
-        click GroupType href "../GroupType/"
-    
-
-        
-      Group : is_active
-        
-      Group : label
-        
-      Group : landing_page
-        
-      Group : local_id
-        
-      Group : parent_groups
-        
-      Group : party_color
-        
-      Group : spatial
-        
-      Group : statutes_url
-        
-      Group : valid_from
-        
-      Group : valid_through
-        
-      Group : wikidata_uri
-        
-      
-```
 
 
 
@@ -601,4 +501,4 @@ attributes:
     range: boolean
 
 ```
-</details>
+</details></div>

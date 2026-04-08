@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Person 
 
@@ -11,163 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:Person](https://ld.ech.ch/schema/0294/actors/Person)
-
-
-
-
-
-```mermaid
- classDiagram
-    class Person
-    click Person href "../Person/"
-      HasIdentification <|-- Person
-        click HasIdentification href "../HasIdentification/"
-      HasCreationModificationDates <|-- Person
-        click HasCreationModificationDates href "../HasCreationModificationDates/"
-      
-      Person : addresses
-        
-          
-    
-        
-        
-        Person --> "*" Address : addresses
-        click Address href "../Address/"
-    
-
-        
-      Person : birth_date
-        
-      Person : birth_year
-        
-      Person : citizenships
-        
-          
-    
-        
-        
-        Person --> "*" Citizenship : citizenships
-        click Citizenship href "../Citizenship/"
-    
-
-        
-      Person : contacts
-        
-          
-    
-        
-        
-        Person --> "*" Contact : contacts
-        click Contact href "../Contact/"
-    
-
-        
-      Person : date_created
-        
-      Person : date_modified
-        
-      Person : datetime_created
-        
-      Person : datetime_modified
-        
-      Person : death_date
-        
-      Person : death_year
-        
-      Person : electoral_district
-        
-          
-    
-        
-        
-        Person --> "0..1" ElectoralDistrict : electoral_district
-        click ElectoralDistrict href "../ElectoralDistrict/"
-    
-
-        
-      Person : genders
-        
-          
-    
-        
-        
-        Person --> "*" Gender : genders
-        click Gender href "../Gender/"
-    
-
-        
-      Person : global_uri
-        
-      Person : interest_links
-        
-          
-    
-        
-        
-        Person --> "*" InterestLink : interest_links
-        click InterestLink href "../InterestLink/"
-    
-
-        
-      Person : label
-        
-      Person : label_long
-        
-      Person : language_proficiencies
-        
-          
-    
-        
-        
-        Person --> "*" LanguageProficiency : language_proficiencies
-        click LanguageProficiency href "../LanguageProficiency/"
-    
-
-        
-      Person : local_id
-        
-      Person : names
-        
-          
-    
-        
-        
-        Person --> "*" Name : names
-        click Name href "../Name/"
-    
-
-        
-      Person : occupations
-        
-          
-    
-        
-        
-        Person --> "*" Occupation : occupations
-        click Occupation href "../Occupation/"
-    
-
-        
-      Person : picture
-        
-      Person : trainings
-        
-          
-    
-        
-        
-        Person --> "*" Training : trainings
-        click Training href "../Training/"
-    
-
-        
-      Person : wikidata_uri
-        
-      
-```
 
 
 
@@ -716,4 +567,4 @@ attributes:
     range: datetime
 
 ```
-</details>
+</details></div>

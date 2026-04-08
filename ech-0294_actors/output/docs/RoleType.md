@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: RoleType 
 
@@ -11,33 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:RoleType](https://ld.ech.ch/schema/0294/actors/RoleType)
-
-
-
-
-
-```mermaid
- classDiagram
-    class RoleType
-    click RoleType href "../RoleType/"
-      RoleType : label
-        
-      RoleType : role_type_enum
-        
-          
-    
-        
-        
-        RoleType --> "0..1" RoleEnum : role_type_enum
-        click RoleEnum href "../RoleEnum/"
-    
-
-        
-      
-```
 
 
 
@@ -172,4 +153,4 @@ attributes:
     range: string
 
 ```
-</details>
+</details></div>

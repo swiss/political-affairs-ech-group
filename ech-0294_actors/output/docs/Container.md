@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Container 
 
@@ -11,73 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:Container](https://ld.ech.ch/schema/0294/actors/Container)
-
-
-
-
-
-```mermaid
- classDiagram
-    class Container
-    click Container href "../Container/"
-      HasIdentification <|-- Container
-        click HasIdentification href "../HasIdentification/"
-      
-      Container : global_uri
-        
-      Container : groups
-        
-          
-    
-        
-        
-        Container --> "*" Group : groups
-        click Group href "../Group/"
-    
-
-        
-      Container : interest_links
-        
-          
-    
-        
-        
-        Container --> "*" InterestLink : interest_links
-        click InterestLink href "../InterestLink/"
-    
-
-        
-      Container : local_id
-        
-      Container : memberships
-        
-          
-    
-        
-        
-        Container --> "*" Membership : memberships
-        click Membership href "../Membership/"
-    
-
-        
-      Container : persons
-        
-          
-    
-        
-        
-        Container --> "*" Person : persons
-        click Person href "../Person/"
-    
-
-        
-      Container : wikidata_uri
-        
-      
-```
 
 
 
@@ -203,6 +144,7 @@ attributes:
     - Container
     range: Person
     multivalued: true
+    inlined: true
     inlined_as_list: true
   groups:
     name: groups
@@ -220,6 +162,7 @@ attributes:
     - Container
     range: Group
     multivalued: true
+    inlined: true
     inlined_as_list: true
   memberships:
     name: memberships
@@ -237,6 +180,7 @@ attributes:
     - Container
     range: Membership
     multivalued: true
+    inlined: true
     inlined_as_list: true
   interest_links:
     name: interest_links
@@ -255,6 +199,7 @@ attributes:
     - Person
     range: InterestLink
     multivalued: true
+    inlined: true
     inlined_as_list: true
   local_id:
     name: local_id
@@ -308,4 +253,4 @@ attributes:
 tree_root: true
 
 ```
-</details>
+</details></div>

@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Name 
 
@@ -11,42 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:Name](https://ld.ech.ch/schema/0294/actors/Name)
-
-
-
-
-
-```mermaid
- classDiagram
-    class Name
-    click Name href "../Name/"
-      HasTemporalValidity <|-- Name
-        click HasTemporalValidity href "../HasTemporalValidity/"
-      
-      Name : is_active
-        
-      Name : name_type
-        
-          
-    
-        
-        
-        Name --> "0..1" NameTypeEnum : name_type
-        click NameTypeEnum href "../NameTypeEnum/"
-    
-
-        
-      Name : valid_from
-        
-      Name : valid_through
-        
-      Name : value
-        
-      
-```
 
 
 
@@ -237,4 +209,4 @@ attributes:
     range: boolean
 
 ```
-</details>
+</details></div>

@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: label_long 
 
@@ -10,6 +13,8 @@ _[en] Option to assign an extended label to a structured piece of information (e
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -102,4 +107,4 @@ domain_of:
 range: string
 
 ```
-</details>
+</details></div>

@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Address 
 
@@ -11,39 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:Address](https://ld.ech.ch/schema/0294/actors/Address)
-
-
-
-
-
-```mermaid
- classDiagram
-    class Address
-    click Address href "../Address/"
-      Address : address_type
-        
-          
-    
-        
-        
-        Address --> "0..1" AddressTypeEnum : address_type
-        click AddressTypeEnum href "../AddressTypeEnum/"
-    
-
-        
-      Address : address_uri
-        
-      Address : postal_code
-        
-      Address : postal_locality
-        
-      Address : street_address
-        
-      
-```
 
 
 
@@ -224,4 +199,4 @@ attributes:
     range: string
 
 ```
-</details>
+</details></div>

@@ -1,4 +1,7 @@
-# Enum: RoleEnum 
+---
+search:
+  boost: 2.0
+---# Enum: RoleEnum 
 
 
 
@@ -10,6 +13,8 @@ _[de] Rollen, die eine Person im Rahmen einer Mitgliedschaft haben kann._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 
@@ -99,3 +104,5 @@ permissible_values:
 
 ```
 </details>
+
+</div>

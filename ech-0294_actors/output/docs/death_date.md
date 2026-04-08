@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: death_date 
 
@@ -10,6 +13,8 @@ _[en] Exact date of death._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -100,4 +105,4 @@ domain_of:
 range: date
 
 ```
-</details>
+</details></div>

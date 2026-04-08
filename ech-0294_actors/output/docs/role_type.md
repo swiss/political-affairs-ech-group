@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: role_type 
 
@@ -10,6 +13,8 @@ _[de] Rolle der Person in der Mitgliedschaft oder Funktion._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -100,4 +105,4 @@ domain_of:
 range: RoleType
 
 ```
-</details>
+</details></div>

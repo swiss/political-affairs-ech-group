@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Occupation 
 
@@ -11,39 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:Occupation](https://ld.ech.ch/schema/0294/actors/Occupation)
-
-
-
-
-
-```mermaid
- classDiagram
-    class Occupation
-    click Occupation href "../Occupation/"
-      HasTemporalValidity <|-- Occupation
-        click HasTemporalValidity href "../HasTemporalValidity/"
-      
-      Occupation : enterprise
-        
-      Occupation : enterprise_uid
-        
-      Occupation : is_active
-        
-      Occupation : is_paid
-        
-      Occupation : label
-        
-      Occupation : occupation_code
-        
-      Occupation : valid_from
-        
-      Occupation : valid_through
-        
-      
-```
 
 
 
@@ -289,4 +264,4 @@ attributes:
     range: boolean
 
 ```
-</details>
+</details></div>

@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: address_uri 
 
@@ -10,6 +13,8 @@ _[en] URI of the address._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -100,4 +105,4 @@ domain_of:
 range: uriorcurie
 
 ```
-</details>
+</details></div>

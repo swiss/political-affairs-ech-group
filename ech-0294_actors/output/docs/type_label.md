@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: type_label 
 
@@ -10,6 +13,8 @@ _[de] Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -86,4 +91,4 @@ alias: type_label
 range: string
 
 ```
-</details>
+</details></div>

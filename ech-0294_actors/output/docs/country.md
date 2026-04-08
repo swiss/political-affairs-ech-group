@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: country 
 
@@ -10,6 +13,8 @@ _[en] ISO 3166 country code._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -108,4 +113,4 @@ range: string
 pattern: ^[A-Z]{2}$
 
 ```
-</details>
+</details></div>

@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: IsInstantaneousEvent 
 
@@ -11,28 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:IsInstantaneousEvent](https://ld.ech.ch/schema/0294/actors/IsInstantaneousEvent)
-
-
-
-
-
-```mermaid
- classDiagram
-    class IsInstantaneousEvent
-    click IsInstantaneousEvent href "../IsInstantaneousEvent/"
-      IsInstantaneousEvent : date_actual
-        
-      IsInstantaneousEvent : date_planned
-        
-      IsInstantaneousEvent : datetime_actual
-        
-      IsInstantaneousEvent : datetime_planned
-        
-      
-```
 
 
 
@@ -212,4 +198,4 @@ attributes:
     range: datetime
 
 ```
-</details>
+</details></div>

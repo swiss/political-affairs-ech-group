@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: datetime_planned 
 
@@ -10,6 +13,8 @@ _[en] The planned date and time of an instantaneous event or occurrence (without
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -102,4 +107,4 @@ domain_of:
 range: datetime
 
 ```
-</details>
+</details></div>

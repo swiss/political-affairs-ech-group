@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: authorized_to_vote 
 
@@ -10,6 +13,8 @@ _[en] Indicates if the person is authorized to vote._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -100,4 +105,4 @@ domain_of:
 range: boolean
 
 ```
-</details>
+</details></div>

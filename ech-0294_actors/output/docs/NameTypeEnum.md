@@ -1,4 +1,7 @@
-# Enum: NameTypeEnum 
+---
+search:
+  boost: 2.0
+---# Enum: NameTypeEnum 
 
 
 
@@ -10,6 +13,8 @@ _[en] Categories of name types according to https://dam-api.bfs.admin.ch/hub/api
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 URI: [act:NameTypeEnum](https://ld.ech.ch/schema/0294/actors/NameTypeEnum)
 
@@ -171,3 +176,5 @@ permissible_values:
 
 ```
 </details>
+
+</div>

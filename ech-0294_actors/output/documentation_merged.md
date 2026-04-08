@@ -349,7 +349,10 @@ TODO: Pros und Cons
 
 Siehe vollständige LinkML-Schema-Dokumentation:
 
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Person 
 
@@ -362,163 +365,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:Person](https://ld.ech.ch/schema/0294/actors/Person)
-
-
-
-
-
-```mermaid
- classDiagram
-    class Person
-    click Person href "../Person/"
-      HasIdentification <|-- Person
-        click HasIdentification href "../HasIdentification/"
-      HasCreationModificationDates <|-- Person
-        click HasCreationModificationDates href "../HasCreationModificationDates/"
-      
-      Person : addresses
-        
-          
-    
-        
-        
-        Person --> "*" Address : addresses
-        click Address href "../Address/"
-    
-
-        
-      Person : birth_date
-        
-      Person : birth_year
-        
-      Person : citizenships
-        
-          
-    
-        
-        
-        Person --> "*" Citizenship : citizenships
-        click Citizenship href "../Citizenship/"
-    
-
-        
-      Person : contacts
-        
-          
-    
-        
-        
-        Person --> "*" Contact : contacts
-        click Contact href "../Contact/"
-    
-
-        
-      Person : date_created
-        
-      Person : date_modified
-        
-      Person : datetime_created
-        
-      Person : datetime_modified
-        
-      Person : death_date
-        
-      Person : death_year
-        
-      Person : electoral_district
-        
-          
-    
-        
-        
-        Person --> "0..1" ElectoralDistrict : electoral_district
-        click ElectoralDistrict href "../ElectoralDistrict/"
-    
-
-        
-      Person : genders
-        
-          
-    
-        
-        
-        Person --> "*" Gender : genders
-        click Gender href "../Gender/"
-    
-
-        
-      Person : global_uri
-        
-      Person : interest_links
-        
-          
-    
-        
-        
-        Person --> "*" InterestLink : interest_links
-        click InterestLink href "../InterestLink/"
-    
-
-        
-      Person : label
-        
-      Person : label_long
-        
-      Person : language_proficiencies
-        
-          
-    
-        
-        
-        Person --> "*" LanguageProficiency : language_proficiencies
-        click LanguageProficiency href "../LanguageProficiency/"
-    
-
-        
-      Person : local_id
-        
-      Person : names
-        
-          
-    
-        
-        
-        Person --> "*" Name : names
-        click Name href "../Name/"
-    
-
-        
-      Person : occupations
-        
-          
-    
-        
-        
-        Person --> "*" Occupation : occupations
-        click Occupation href "../Occupation/"
-    
-
-        
-      Person : picture
-        
-      Person : trainings
-        
-          
-    
-        
-        
-        Person --> "*" Training : trainings
-        click Training href "../Training/"
-    
-
-        
-      Person : wikidata_uri
-        
-      
-```
 
 
 
@@ -1067,7 +918,7 @@ attributes:
     range: datetime
 
 ```
-</details> 
+</details></div> 
 
 
 
@@ -1720,7 +1571,10 @@ landing_page: https://www.sp-ps.ch/fraktion
 
 Siehe vollständige LinkML-Schema-Dokumentation:
 
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Group 
 
@@ -1733,114 +1587,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:Group](https://ld.ech.ch/schema/0294/actors/Group)
-
-
-
-
-
-```mermaid
- classDiagram
-    class Group
-    click Group href "../Group/"
-      HasIdentification <|-- Group
-        click HasIdentification href "../HasIdentification/"
-      HasCreationModificationDates <|-- Group
-        click HasCreationModificationDates href "../HasCreationModificationDates/"
-      HasTemporalValidity <|-- Group
-        click HasTemporalValidity href "../HasTemporalValidity/"
-      
-      Group : abbreviation
-        
-          
-    
-        
-        
-        Group --> "*" MultilingualValue : abbreviation
-        click MultilingualValue href "../MultilingualValue/"
-    
-
-        
-      Group : addresses
-        
-          
-    
-        
-        
-        Group --> "*" Address : addresses
-        click Address href "../Address/"
-    
-
-        
-      Group : contacts
-        
-          
-    
-        
-        
-        Group --> "*" Contact : contacts
-        click Contact href "../Contact/"
-    
-
-        
-      Group : date_created
-        
-      Group : date_modified
-        
-      Group : datetime_created
-        
-      Group : datetime_modified
-        
-      Group : description
-        
-          
-    
-        
-        
-        Group --> "*" MultilingualValue : description
-        click MultilingualValue href "../MultilingualValue/"
-    
-
-        
-      Group : global_uri
-        
-      Group : group_type
-        
-          
-    
-        
-        
-        Group --> "0..1" GroupType : group_type
-        click GroupType href "../GroupType/"
-    
-
-        
-      Group : is_active
-        
-      Group : label
-        
-      Group : landing_page
-        
-      Group : local_id
-        
-      Group : parent_groups
-        
-      Group : party_color
-        
-      Group : spatial
-        
-      Group : statutes_url
-        
-      Group : valid_from
-        
-      Group : valid_through
-        
-      Group : wikidata_uri
-        
-      
-```
 
 
 
@@ -2323,7 +2074,7 @@ attributes:
     range: boolean
 
 ```
-</details>
+</details></div>
 
 # Mitgliedschaften (Memberships)
 
@@ -2843,7 +2594,10 @@ Eine Person kann sowohl Membership (z.B. Nationalrat) als auch InterestLink (z.B
 
 Siehe vollständige LinkML-Schema-Dokumentation:
 
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Membership 
 
@@ -2856,82 +2610,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:Membership](https://ld.ech.ch/schema/0294/actors/Membership)
-
-
-
-
-
-```mermaid
- classDiagram
-    class Membership
-    click Membership href "../Membership/"
-      HasIdentification <|-- Membership
-        click HasIdentification href "../HasIdentification/"
-      HasCreationModificationDates <|-- Membership
-        click HasCreationModificationDates href "../HasCreationModificationDates/"
-      HasTemporalValidity <|-- Membership
-        click HasTemporalValidity href "../HasTemporalValidity/"
-      
-      Membership : authorized_to_vote
-        
-      Membership : concerned_group
-        
-          
-    
-        
-        
-        Membership --> "0..1" Group : concerned_group
-        click Group href "../Group/"
-    
-
-        
-      Membership : concerned_person
-        
-          
-    
-        
-        
-        Membership --> "0..1" Person : concerned_person
-        click Person href "../Person/"
-    
-
-        
-      Membership : date_created
-        
-      Membership : date_modified
-        
-      Membership : datetime_created
-        
-      Membership : datetime_modified
-        
-      Membership : global_uri
-        
-      Membership : is_active
-        
-      Membership : local_id
-        
-      Membership : role_type
-        
-          
-    
-        
-        
-        Membership --> "0..1" RoleType : role_type
-        click RoleType href "../RoleType/"
-    
-
-        
-      Membership : valid_from
-        
-      Membership : valid_through
-        
-      Membership : wikidata_uri
-        
-      
-```
 
 
 
@@ -3271,7 +2954,7 @@ attributes:
     range: boolean
 
 ```
-</details> 
+</details></div> 
 
 # Interessenbindungen (Interest Links)
 
@@ -3657,7 +3340,10 @@ Statistische Auswertung nach Art der Interessenbindung:
 
 Siehe vollständige LinkML-Schema-Dokumentation:
 
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: InterestLink 
 
@@ -3670,83 +3356,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [act:InterestLink](https://ld.ech.ch/schema/0294/actors/InterestLink)
-
-
-
-
-
-```mermaid
- classDiagram
-    class InterestLink
-    click InterestLink href "../InterestLink/"
-      HasIdentification <|-- InterestLink
-        click HasIdentification href "../HasIdentification/"
-      HasCreationModificationDates <|-- InterestLink
-        click HasCreationModificationDates href "../HasCreationModificationDates/"
-      HasTemporalValidity <|-- InterestLink
-        click HasTemporalValidity href "../HasTemporalValidity/"
-      
-      InterestLink : committee
-        
-      InterestLink : concerned_person
-        
-          
-    
-        
-        
-        InterestLink --> "0..1" Person : concerned_person
-        click Person href "../Person/"
-    
-
-        
-      InterestLink : date_created
-        
-      InterestLink : date_modified
-        
-      InterestLink : datetime_created
-        
-      InterestLink : datetime_modified
-        
-      InterestLink : function_role
-        
-      InterestLink : global_uri
-        
-      InterestLink : interest_type
-        
-          
-    
-        
-        
-        InterestLink --> "1" InterestTypeEnum : interest_type
-        click InterestTypeEnum href "../InterestTypeEnum/"
-    
-
-        
-      InterestLink : is_active
-        
-      InterestLink : is_paid
-        
-      InterestLink : legal_form
-        
-      InterestLink : local_id
-        
-      InterestLink : organization_address
-        
-      InterestLink : organization_label
-        
-      InterestLink : organization_uid
-        
-      InterestLink : valid_from
-        
-      InterestLink : valid_through
-        
-      InterestLink : wikidata_uri
-        
-      
-```
 
 
 
@@ -4179,7 +3793,7 @@ attributes:
     range: boolean
 
 ```
-</details>
+</details></div>
 
 * Überlegungen zu Datenschutz / Öffentlichkeitsrecht  (Christian schaut sich das an).
   * ein Kapitel mit Analyse des IST Zustands / Rechtsgrundlage oder Toolkit ?

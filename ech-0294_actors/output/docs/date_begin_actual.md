@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: date_begin_actual 
 
@@ -10,6 +13,8 @@ _[en] The actual start date of an event or occurrence with time duration._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -101,4 +106,4 @@ domain_of:
 range: date
 
 ```
-</details>
+</details></div>

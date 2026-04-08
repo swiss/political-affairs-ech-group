@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: interest_type 
 
@@ -10,6 +13,8 @@ _[en] Type of interest link (professional activity, political office, associatio
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -103,4 +108,4 @@ range: InterestTypeEnum
 required: true
 
 ```
-</details>
+</details></div>

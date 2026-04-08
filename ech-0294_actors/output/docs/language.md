@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: language 
 
@@ -10,6 +13,8 @@ _[en] Language code in ISO 639-1 format._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -26,8 +31,8 @@ Alias: language
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [LanguageProficiency](LanguageProficiency.md) | [de] Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um d... |  no  |
 | [MultilingualValue](MultilingualValue.md) | [de] Ein mehrsprachiger String mit Angabe der Sprache |  no  |
+| [LanguageProficiency](LanguageProficiency.md) | [de] Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um d... |  no  |
 
 
 
@@ -110,4 +115,4 @@ range: string
 pattern: ^[a-z]{2}$
 
 ```
-</details>
+</details></div>
