@@ -18,14 +18,8 @@ __
 
 
 
-URI: [act:Address](https://ld.ech.ch/schema/0294/actors/Address)
 
-
-
-
-<!-- no inheritance hierarchy -->
-
-## Slots
+## Attribute
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
@@ -83,120 +77,4 @@ URI: [act:Address](https://ld.ech.ch/schema/0294/actors/Address)
 
 
 
-## LinkML Source
 
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: Address
-description: '[de] Eine Adresse mit einem Typ (z.B. Privatadresse, Geschäftsadresse)
-  und einem Wert.
-
-  [en] An address with a type (e.g., private address, business address) and a value.
-
-  '
-from_schema: https://ld.ech.ch/schema/0294/actors
-slots:
-- address_type
-- address_uri
-- street_address
-- postal_code
-- postal_locality
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: Address
-description: '[de] Eine Adresse mit einem Typ (z.B. Privatadresse, Geschäftsadresse)
-  und einem Wert.
-
-  [en] An address with a type (e.g., private address, business address) and a value.
-
-  '
-from_schema: https://ld.ech.ch/schema/0294/actors
-attributes:
-  address_type:
-    name: address_type
-    description: '[de] Typ der Adresse.
-
-      [en] Type of address.
-
-      '
-    from_schema: https://ld.ech.ch/schema/0294/actors
-    rank: 1000
-    slot_uri: act:addressType
-    alias: address_type
-    owner: Address
-    domain_of:
-    - Address
-    range: AddressTypeEnum
-  address_uri:
-    name: address_uri
-    description: '[de] URI der Adresse.
-
-      [en] URI of the address.
-
-      '
-    from_schema: https://ld.ech.ch/schema/0294/actors
-    rank: 1000
-    slot_uri: act:addressURI
-    alias: address_uri
-    owner: Address
-    domain_of:
-    - Address
-    range: uriorcurie
-  street_address:
-    name: street_address
-    description: '[de] Strassenadresse.
-
-      [en] Street address.
-
-      '
-    from_schema: https://ld.ech.ch/schema/0294/actors
-    rank: 1000
-    slot_uri: act:streetAddress
-    alias: street_address
-    owner: Address
-    domain_of:
-    - Address
-    range: string
-  postal_code:
-    name: postal_code
-    description: '[de] Postleitzahl.
-
-      [en] Postal code.
-
-      '
-    from_schema: https://ld.ech.ch/schema/0294/actors
-    rank: 1000
-    slot_uri: act:postalCode
-    alias: postal_code
-    owner: Address
-    domain_of:
-    - Address
-    range: integer
-  postal_locality:
-    name: postal_locality
-    description: '[de] Ort.
-
-      [en] Locality.
-
-      '
-    from_schema: https://ld.ech.ch/schema/0294/actors
-    rank: 1000
-    slot_uri: act:postalLocality
-    alias: postal_locality
-    owner: Address
-    domain_of:
-    - Address
-    range: string
-
-```
-</details></div>

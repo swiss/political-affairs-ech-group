@@ -18,14 +18,8 @@ __
 
 
 
-URI: [act:GroupType](https://ld.ech.ch/schema/0294/actors/GroupType)
 
-
-
-
-<!-- no inheritance hierarchy -->
-
-## Slots
+## Attribute
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
@@ -79,76 +73,4 @@ URI: [act:GroupType](https://ld.ech.ch/schema/0294/actors/GroupType)
 
 
 
-## LinkML Source
 
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: GroupType
-description: '[de] Art der Gruppe (z.B. Partei, Kommission, Parlament, Departement).
-
-  [en] Type of group (e.g., party, committee, parliament, department).
-
-  '
-from_schema: https://ld.ech.ch/schema/0294/actors
-slots:
-- group_type_enum
-- label
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: GroupType
-description: '[de] Art der Gruppe (z.B. Partei, Kommission, Parlament, Departement).
-
-  [en] Type of group (e.g., party, committee, parliament, department).
-
-  '
-from_schema: https://ld.ech.ch/schema/0294/actors
-attributes:
-  group_type_enum:
-    name: group_type_enum
-    description: '[de] Link zum kontrollierten Vokabular für Gruppentypen.
-
-      [en] Link to the controlled vocabulary for group types.
-
-      '
-    from_schema: https://ld.ech.ch/schema/0294/actors
-    rank: 1000
-    slot_uri: act:groupTypeEnum
-    alias: group_type_enum
-    owner: GroupType
-    domain_of:
-    - GroupType
-    range: GroupTypeEnum
-  label:
-    name: label
-    description: '[de] Möglichkeit bei einer strukturierten Information, ein Label
-      zu vergeben (bspw. Anzeigename, Anstellung, etc.).
-
-      [en] Option to assign a label to a structured piece of information (e.g., display
-      name, position, etc.).
-
-      '
-    from_schema: https://ld.ech.ch/schema/0294/actors
-    rank: 1000
-    slot_uri: mcm:label
-    alias: label
-    owner: GroupType
-    domain_of:
-    - Person
-    - Group
-    - Occupation
-    - GroupType
-    - RoleType
-    range: string
-
-```
-</details></div>

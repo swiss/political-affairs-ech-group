@@ -18,14 +18,8 @@ __
 
 
 
-URI: [act:MultilingualValue](https://ld.ech.ch/schema/0294/actors/MultilingualValue)
 
-
-
-
-<!-- no inheritance hierarchy -->
-
-## Slots
+## Attribute
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
@@ -80,77 +74,4 @@ URI: [act:MultilingualValue](https://ld.ech.ch/schema/0294/actors/MultilingualVa
 
 
 
-## LinkML Source
 
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: MultilingualValue
-description: '[de] Ein mehrsprachiger String mit Angabe der Sprache.
-
-  [en] A multilingual string with language specification.
-
-  '
-from_schema: https://ld.ech.ch/schema/0294/actors
-slots:
-- value
-- language
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: MultilingualValue
-description: '[de] Ein mehrsprachiger String mit Angabe der Sprache.
-
-  [en] A multilingual string with language specification.
-
-  '
-from_schema: https://ld.ech.ch/schema/0294/actors
-attributes:
-  value:
-    name: value
-    description: '[de] Der eigentliche Wert einer Information neben weiteren attributen
-      wie Typ, Sprache, etc.
-
-      [en] The value of an information besides other attributes such as type, language,
-      etc.
-
-      '
-    from_schema: https://ld.ech.ch/schema/0294/actors
-    rank: 1000
-    slot_uri: mcm:value
-    alias: value
-    owner: MultilingualValue
-    domain_of:
-    - Name
-    - Training
-    - Contact
-    - MultilingualValue
-    range: string
-  language:
-    name: language
-    description: '[de] Sprachcode im ISO 639-1 Format.
-
-      [en] Language code in ISO 639-1 format.
-
-      '
-    from_schema: https://ld.ech.ch/schema/0294/actors
-    rank: 1000
-    slot_uri: mcm:language
-    alias: language
-    owner: MultilingualValue
-    domain_of:
-    - LanguageProficiency
-    - MultilingualValue
-    range: string
-    pattern: ^[a-z]{2}$
-
-```
-</details></div>

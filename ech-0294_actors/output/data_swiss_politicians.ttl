@@ -18,11 +18,11 @@ act:swiss_politicians_example a act:Container ;
             schema1:validFrom "1964-07-12"^^xsd:date ;
             act:country "CH" ] ;
     act:contact [ a act:Contact ;
-            mcm:value "http://www.beat-jans.ch" ;
-            act:contactType "contact_website" ],
-        [ a act:Contact ;
             mcm:value "beat.jans@admin.ch" ;
-            act:contactType "email" ] ;
+            act:contactType "email" ],
+        [ a act:Contact ;
+            mcm:value "http://www.beat-jans.ch" ;
+            act:contactType "contact_website" ] ;
     act:electoralDistrict [ a act:ElectoralDistrict ;
             schema1:validFrom "2010-01-01"^^xsd:date ;
             act:district "Basel-Stadt" ] ;

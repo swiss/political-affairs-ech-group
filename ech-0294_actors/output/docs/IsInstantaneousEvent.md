@@ -18,21 +18,8 @@ __
 
 
 
-URI: [act:IsInstantaneousEvent](https://ld.ech.ch/schema/0294/actors/IsInstantaneousEvent)
 
-
-
-
-<!-- no inheritance hierarchy -->
-
-## Class Properties
-
-| Property | Value |
-| --- | --- |
-| Mixin | Yes |
-
-
-## Slots
+## Attribute
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
@@ -87,115 +74,4 @@ URI: [act:IsInstantaneousEvent](https://ld.ech.ch/schema/0294/actors/IsInstantan
 
 
 
-## LinkML Source
 
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: IsInstantaneousEvent
-description: '[de] Eine Mixin-Klasse, die Slots für die Modellierung von instantanen
-  Ereignissen oder Vorkommnissen (ohne Zeitdauer) zur Verfügung stellt.
-
-  [en] A mixin class that provides slots for modeling instantaneous events or occurrences
-  (without time duration).
-
-  '
-from_schema: https://ld.ech.ch/schema/0294/actors
-mixin: true
-slots:
-- date_actual
-- datetime_actual
-- date_planned
-- datetime_planned
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: IsInstantaneousEvent
-description: '[de] Eine Mixin-Klasse, die Slots für die Modellierung von instantanen
-  Ereignissen oder Vorkommnissen (ohne Zeitdauer) zur Verfügung stellt.
-
-  [en] A mixin class that provides slots for modeling instantaneous events or occurrences
-  (without time duration).
-
-  '
-from_schema: https://ld.ech.ch/schema/0294/actors
-mixin: true
-attributes:
-  date_actual:
-    name: date_actual
-    description: '[de] Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommens
-      (ohne Zeitdauer).
-
-      [en] The actual date of an instantaneous event or occurrence (without time duration).
-
-      '
-    from_schema: https://ld.ech.ch/schema/0294/actors
-    rank: 1000
-    slot_uri: mcm:dateActual
-    alias: date_actual
-    owner: IsInstantaneousEvent
-    domain_of:
-    - IsInstantaneousEvent
-    range: date
-  datetime_actual:
-    name: datetime_actual
-    description: '[de] Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses
-      oder Vorkommens (ohne Zeitdauer).
-
-      [en] The actual date and time of an instantaneous event or occurrence (without
-      time duration).
-
-      '
-    from_schema: https://ld.ech.ch/schema/0294/actors
-    rank: 1000
-    slot_uri: mcm:datetimeActual
-    alias: datetime_actual
-    owner: IsInstantaneousEvent
-    domain_of:
-    - IsInstantaneousEvent
-    range: datetime
-  date_planned:
-    name: date_planned
-    description: '[de] Das geplante Datum eines instantanen Ereignisses oder Vorkommens
-      (ohne Zeitdauer).
-
-      [en] The planned date of an instantaneous event or occurrence (without time
-      duration).
-
-      '
-    from_schema: https://ld.ech.ch/schema/0294/actors
-    rank: 1000
-    slot_uri: mcm:datePlanned
-    alias: date_planned
-    owner: IsInstantaneousEvent
-    domain_of:
-    - IsInstantaneousEvent
-    range: date
-  datetime_planned:
-    name: datetime_planned
-    description: '[de] Das geplante Datum und die Uhrzeit eines instantanen Ereignisses
-      oder Vorkommens (ohne Zeitdauer).
-
-      [en] The planned date and time of an instantaneous event or occurrence (without
-      time duration).
-
-      '
-    from_schema: https://ld.ech.ch/schema/0294/actors
-    rank: 1000
-    slot_uri: mcm:datetimePlanned
-    alias: datetime_planned
-    owner: IsInstantaneousEvent
-    domain_of:
-    - IsInstantaneousEvent
-    range: datetime
-
-```
-</details></div>

@@ -18,14 +18,8 @@ __
 
 
 
-URI: [act:RoleType](https://ld.ech.ch/schema/0294/actors/RoleType)
 
-
-
-
-<!-- no inheritance hierarchy -->
-
-## Slots
+## Attribute
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
@@ -79,78 +73,4 @@ URI: [act:RoleType](https://ld.ech.ch/schema/0294/actors/RoleType)
 
 
 
-## LinkML Source
 
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: RoleType
-description: '[de] Rolle einer Person in einer Mitgliedschaft oder Funktion (z.B.
-  Mitglied, Präsident, Stellvertreter).
-
-  [en] Role of a person in a membership or function (e.g., member, president, deputy).
-
-  '
-from_schema: https://ld.ech.ch/schema/0294/actors
-slots:
-- role_type_enum
-- label
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: RoleType
-description: '[de] Rolle einer Person in einer Mitgliedschaft oder Funktion (z.B.
-  Mitglied, Präsident, Stellvertreter).
-
-  [en] Role of a person in a membership or function (e.g., member, president, deputy).
-
-  '
-from_schema: https://ld.ech.ch/schema/0294/actors
-attributes:
-  role_type_enum:
-    name: role_type_enum
-    description: '[en] Role of the person in the membership or function.
-
-      [de] Rolle der Person in der Mitgliedschaft oder Funktion.
-
-      '
-    from_schema: https://ld.ech.ch/schema/0294/actors
-    rank: 1000
-    slot_uri: act:roleTypeEnum
-    alias: role_type_enum
-    owner: RoleType
-    domain_of:
-    - RoleType
-    range: RoleEnum
-  label:
-    name: label
-    description: '[de] Möglichkeit bei einer strukturierten Information, ein Label
-      zu vergeben (bspw. Anzeigename, Anstellung, etc.).
-
-      [en] Option to assign a label to a structured piece of information (e.g., display
-      name, position, etc.).
-
-      '
-    from_schema: https://ld.ech.ch/schema/0294/actors
-    rank: 1000
-    slot_uri: mcm:label
-    alias: label
-    owner: RoleType
-    domain_of:
-    - Person
-    - Group
-    - Occupation
-    - GroupType
-    - RoleType
-    range: string
-
-```
-</details></div>
