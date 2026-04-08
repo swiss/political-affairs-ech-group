@@ -41,13 +41,14 @@ _{{ element_description_line }}_
 
 <div data-search-exclude markdown="1">
 
+{# note: disable parts
+
 {% if element.abstract %}
 * __NOTE__: this is an abstract class and should not be instantiated directly
 {% endif %}
 
 URI: {{ gen.uri_link(element) }}
 
-{# note: disable graphics
 
 {% if diagram_type == "er_diagram" %}
 ```{{ gen.mermaid_directive() }}
@@ -61,7 +62,7 @@ URI: {{ gen.uri_link(element) }}
 {% include "class_diagram.md.jinja2" %}
 {% endif %}
 
-#}
+
 
 {% if schemaview.class_parents(element.name) or schemaview.class_children(element.name, mixins=False) %}
 
@@ -110,7 +111,11 @@ URI: {{ gen.uri_link(element) }}
 {%- endif %}
 
 {% endif %}
-## Slots
+
+#}
+
+
+## Attribute
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
@@ -267,6 +272,9 @@ The class must not satisfy any of:
 {% endfor %}
 {% endif %}
 
+
+{# disable LinkML Source
+
 ## LinkML Source
 
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
@@ -292,3 +300,4 @@ The class must not satisfy any of:
 {%- endif -%}
 
 </div>
+#}

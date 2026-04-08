@@ -56,6 +56,12 @@ jobs:
           -o ech-0294_actors/output/ech-0294_actors.docx \
           --reference-doc=ech-0294_actors/input/template.docx
 
+      - name: Convert Markdown to PDF with Pandoc
+        run: |
+          pandoc ech-0294_actors/output/documentation_merged.md \
+          -o ech-0294_actors/output/ech-0294_actors.pdf \
+          --reference-doc=ech-0294_actors/input/template.docx
+
       - name: Commit and push changes
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
