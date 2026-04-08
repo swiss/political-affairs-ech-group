@@ -15,7 +15,7 @@ Name: actors-schema
 | Class | Description |
 | --- | --- |
 | [Address](Address.md) | [de] Eine Adresse mit einem Typ (z |
-| [Citizenship](Citizenship.md) | [de] Staatsbürgerschaft einer Person mit Angabe des Landes und der zeitlichen... |
+| [Citizenship](Citizenship.md) | [de] Staatsangehörigkeit einer Person unter Angabe des Landes und der zeitlic... |
 | [Contact](Contact.md) | [de] Kontaktinformation einer Person mit Angabe eines Typs (z |
 | [Container](Container.md) | [de] Container für politische Akteure, Gruppen und Beziehungen |
 | [ElectoralDistrict](ElectoralDistrict.md) | [de] Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit z... |

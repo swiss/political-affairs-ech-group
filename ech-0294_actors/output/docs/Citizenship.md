@@ -6,9 +6,9 @@ search:
 # Class: Citizenship 
 
 
-_[de] Staatsbürgerschaft einer Person mit Angabe des Landes und der zeitlichen Gültigkeit._
+_[de] Staatsangehörigkeit einer Person unter Angabe des Landes und der zeitlichen Gültigkeit. Wenn kein `valid_from` angegeben ist, ist diese Information nicht bekannt. Ist bekannt, dass die Staatsangehörigkeit seit der Geburt gültig ist, ist das Geburtsdatum hier anzugeben. Wenn kein `valid_through` angegeben ist, ist die Staatsangehörigkeit weiterhin gültig._
 
-_[en] Citizenship of a person indicating the country and temporal validity._
+_[en] Citizenship (also used for Nationality) of a person indicating the country and temporal validity. If there is no `valid_from` provided, the information is not known. If it is known that the citizenship is valid from birth, the birthdate is to be repeated here. If there is no `valid_through`, the citizenship is still active._
 
 __
 

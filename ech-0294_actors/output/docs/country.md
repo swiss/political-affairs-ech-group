@@ -31,7 +31,7 @@ Alias: country
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Citizenship](Citizenship.md) | [de] Staatsbürgerschaft einer Person mit Angabe des Landes und der zeitlichen... |  no  |
+| [Citizenship](Citizenship.md) | [de] Staatsangehörigkeit einer Person unter Angabe des Landes und der zeitlic... |  no  |
 
 
 
