@@ -27,9 +27,9 @@ Alias: label
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
-| [Occupation](Occupation.md) | [de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19... |  no  |
 | [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 | [GroupType](GroupType.md) | [de] Art der Gruppe (z |  no  |
+| [Occupation](Occupation.md) | [de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19... |  no  |
 | [RoleType](RoleType.md) | [de] Rolle einer Person in einer Mitgliedschaft oder Funktion (z |  no  |
 
 
