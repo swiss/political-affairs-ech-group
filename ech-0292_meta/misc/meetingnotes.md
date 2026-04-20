@@ -4,6 +4,8 @@ _Internal note: update the next subgroup meeting in the [README](https://github.
 
 ## 20 April 2026 (11:00–12:00 on [Teams](https://teams.microsoft.com/l/meetup-join/19%3ameeting_Zjg1OTkxMjEtNTYwMS00NjY5LTgxYmMtZDljOTNiYzliOWM1%40thread.v2/0?context=%7b%22Tid%22%3a%22d6a1cf8c-768e-4187-a738-b6e50c4deb4a%22%2c%22Oid%22%3a%2230c0957f-74ca-4ec3-b478-c24a6b696850%22%7d))
 
+- To-dos vom 16.2. (siehe unten) -> bis zur nächsten Sitzung!
+- Benedikt stellt https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/schema_common.yaml vor: Dieses Schema stellt gemeinsame Elemente (Klassen, Slots) zur Nutzung in anderen eCH LinkML Schemata zur Verfügung.
 - 
 
 
