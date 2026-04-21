@@ -5,7 +5,7 @@ Welcome Text
 * Review erster Dokumente vor Sommer
 
 # Plenumstermine
-* Dienstag, 2. Juni 13:30 - 16:00 - Remote per Teams
+* Dienstag, 2. Juni 13:30 - 15:30 - Remote per Teams
 * Montag, 7. September Nachmittag, vor Ort
 
 
