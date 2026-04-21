@@ -1,5 +1,4 @@
 
-
 Welcome Text
 * Arbeiten sind weiterhin gut unterwegs.
 * Ziel 2 Plenums im 2026, erstes Online, 2. vor Ort
