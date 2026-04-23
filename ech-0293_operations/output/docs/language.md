@@ -26,9 +26,9 @@ Alias: language
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [MultilingualString](MultilingualString.md) | [en] A string that can contain text in multiple languages |  yes  |
 | [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
 | [MultilingualValue](MultilingualValue.md) | [de] Ein mehrsprachiger String mit Angabe der Sprache |  no  |
-| [MultilingualString](MultilingualString.md) | [en] A string that can contain text in multiple languages |  yes  |
 
 
 
