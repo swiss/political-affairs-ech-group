@@ -3,9 +3,9 @@
 # Slot: date_end_actual 
 
 
-_[en] Actual end date of the meeting or session._
+_[de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer._
 
-_[de] Tatsächliches Enddatum der Sitzung oder Session._
+_[en] The actual end date of an event or occurrence with time duration._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [ops:date_end_actual](https://ch.paf.link/schema/operations/date_end_actual)
+URI: [mcm:dateEndActual](https://ld.ech.ch/schema/0292/meta-common/dateEndActual)
 Alias: date_end_actual
 
 <!-- no inheritance hierarchy -->
@@ -27,6 +27,10 @@ Alias: date_end_actual
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
+| [IsEventWithDuration](IsEventWithDuration.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder V... |  no  |
+| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
+| [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
+| [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
 
 
 
@@ -40,7 +44,8 @@ Alias: date_end_actual
 | Property | Value |
 | --- | --- |
 | Range | [Date](Date.md) |
-| Domain Of | [Meeting](Meeting.md) |
+| Domain Of | [IsEventWithDuration](IsEventWithDuration.md) |
+| Slot URI | [mcm:dateEndActual](https://ld.ech.ch/schema/0292/meta-common/dateEndActual) |
 
 ### Cardinality and Requirements
 
@@ -74,7 +79,7 @@ Alias: date_end_actual
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ops:date_end_actual |
+| self | mcm:dateEndActual |
 | native | ops:date_end_actual |
 
 
@@ -85,16 +90,18 @@ Alias: date_end_actual
 <details>
 ```yaml
 name: date_end_actual
-description: '[en] Actual end date of the meeting or session.
+description: '[de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit
+  Zeitdauer.
 
-  [de] Tatsächliches Enddatum der Sitzung oder Session.
+  [en] The actual end date of an event or occurrence with time duration.
 
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
+slot_uri: mcm:dateEndActual
 alias: date_end_actual
 domain_of:
-- Meeting
+- IsEventWithDuration
 range: date
 
 ```

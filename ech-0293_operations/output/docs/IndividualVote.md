@@ -23,13 +23,22 @@ URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
  classDiagram
     class IndividualVote
     click IndividualVote href "../IndividualVote/"
+      HasIdentification <|-- IndividualVote
+        click HasIdentification href "../HasIdentification/"
+      HasCreationModificationDates <|-- IndividualVote
+        click HasCreationModificationDates href "../HasCreationModificationDates/"
+      
       IndividualVote : actor_id
+        
+      IndividualVote : date_created
+        
+      IndividualVote : date_modified
         
       IndividualVote : datetime_created
         
-      IndividualVote : datetime_updated
+      IndividualVote : datetime_modified
         
-      IndividualVote : id
+      IndividualVote : global_uri
         
       IndividualVote : individual_vote_type
         
@@ -41,6 +50,8 @@ URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
         click IndividualVoteTypeEnum href "../IndividualVoteTypeEnum/"
     
 
+        
+      IndividualVote : local_id
         
       IndividualVote : parent_voting
         
@@ -59,27 +70,36 @@ URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
         
       IndividualVote : weight
         
+      IndividualVote : wikidata_uri
+        
       
 ```
 
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **IndividualVote** [ [HasIdentification](HasIdentification.md) [HasCreationModificationDates](HasCreationModificationDates.md)]
+
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 1 <br/> [String](String.md) |  | direct |
 | [parent_voting](parent_voting.md) | 0..1 <br/> [Voting](Voting.md) | [en] The ID of the voting associated with the individual vote | direct |
 | [actor_id](actor_id.md) | 0..1 <br/> [String](String.md) | [en] The political body organized by the term of office (e | direct |
 | [seat_nr](seat_nr.md) | 0..1 <br/> [String](String.md) | [en] The seat number of the individual vote, if applicable | direct |
 | [weight](weight.md) | 0..1 <br/> [Integer](Integer.md) | [en] The number of votes held by the individual, if applicable (e | direct |
 | [individual_vote_type](individual_vote_type.md) | 0..1 <br/> [IndividualVoteTypeEnum](IndividualVoteTypeEnum.md) | [en] Type of vote cast (yes, no, abstention, absent, etc | direct |
 | [type_label](type_label.md) | 0..1 <br/> [String](String.md) | [en] Custom type label when standard type values don't apply | direct |
-| [datetime_updated](datetime_updated.md) | 0..1 <br/> [Datetime](Datetime.md) | The last time this record was updated | direct |
-| [datetime_created](datetime_created.md) | 0..1 <br/> [Datetime](Datetime.md) | The time this record was created | direct |
+| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |
+| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](HasIdentification.md) |
+| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](HasIdentification.md) |
+| [date_created](date_created.md) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](HasCreationModificationDates.md) |
+| [datetime_created](datetime_created.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](HasCreationModificationDates.md) |
+| [date_modified](date_modified.md) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](HasCreationModificationDates.md) |
+| [datetime_modified](datetime_modified.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](HasCreationModificationDates.md) |
 
 
 
@@ -143,16 +163,16 @@ description: '[en] An individual vote cast by a member during a voting procedure
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- HasCreationModificationDates
 slots:
-- id
 - parent_voting
 - actor_id
 - seat_nr
 - weight
 - individual_vote_type
 - type_label
-- datetime_updated
-- datetime_created
 
 ```
 </details>
@@ -168,32 +188,10 @@ description: '[en] An individual vote cast by a member during a voting procedure
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- HasCreationModificationDates
 attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: IndividualVote
-    domain_of:
-    - Container
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    - TextSegment
-    - Motion
-    - Media
-    range: string
-    required: true
   parent_voting:
     name: parent_voting
     description: '[en] The ID of the voting associated with the individual vote.
@@ -294,43 +292,115 @@ attributes:
     - IndividualVote
     - Election
     range: string
-  datetime_updated:
-    name: datetime_updated
-    description: The last time this record was updated
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+      [en] Local identifier. For example, a UUID from the council information system.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_updated
+    slot_uri: mcm:localId
+    alias: local_id
     owner: IndividualVote
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    range: datetime
-  datetime_created:
-    name: datetime_created
-    description: The time this record was created
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+
+      [en] A unique, globally valid URI for the entity.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: IndividualVote
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: IndividualVote
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+  date_created:
+    name: date_created
+    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+
+      [en] The date when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateCreated
+    alias: date_created
+    owner: IndividualVote
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_created:
+    name: datetime_created
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+
+      [en] The date and time when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeCreated
     alias: datetime_created
     owner: IndividualVote
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
+    - HasCreationModificationDates
+    range: datetime
+  date_modified:
+    name: date_modified
+    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+
+      [en] The date when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateModified
+    alias: date_modified
+    owner: IndividualVote
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_modified:
+    name: datetime_modified
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
+      wurde.
+
+      [en] The date and time when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeModified
+    alias: datetime_modified
+    owner: IndividualVote
+    domain_of:
+    - HasCreationModificationDates
     range: datetime
 
 ```

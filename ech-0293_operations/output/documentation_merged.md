@@ -131,23 +131,48 @@ URI: [ops:Legislature](https://ch.paf.link/schema/operations/Legislature)
  classDiagram
     class Legislature
     click Legislature href "../Legislature/"
+      HasIdentification <|-- Legislature
+        click HasIdentification href "../HasIdentification/"
+      IsEventWithDuration <|-- Legislature
+        click IsEventWithDuration href "../IsEventWithDuration/"
+      HasCreationModificationDates <|-- Legislature
+        click HasCreationModificationDates href "../HasCreationModificationDates/"
+      
       Legislature : actor_id
         
       Legislature : administrative_id
         
-      Legislature : date_begin
+      Legislature : date_begin_actual
         
-      Legislature : date_end
+      Legislature : date_begin_planned
+        
+      Legislature : date_created
+        
+      Legislature : date_end_actual
+        
+      Legislature : date_end_planned
+        
+      Legislature : date_modified
+        
+      Legislature : datetime_begin_actual
+        
+      Legislature : datetime_begin_planned
         
       Legislature : datetime_created
         
-      Legislature : datetime_updated
+      Legislature : datetime_end_actual
+        
+      Legislature : datetime_end_planned
+        
+      Legislature : datetime_modified
         
       Legislature : description
         
-      Legislature : id
+      Legislature : global_uri
         
       Legislature : landing_page
+        
+      Legislature : local_id
         
       Legislature : name
         
@@ -160,28 +185,43 @@ URI: [ops:Legislature](https://ch.paf.link/schema/operations/Legislature)
     
 
         
+      Legislature : wikidata_uri
+        
       
 ```
 
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **Legislature** [ [HasIdentification](# [HasIdentification) [IsEventWithDuration](#IsEventWithDuration) [HasCreationModificationDates](#HasCreationModificationDates)]
+
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](#id) | 1 <br/> [String](#String) |  | direct |
 | [administrative_id](#administrative_id) | 0..1 <br/> [String](#String) | [en] Administrative ID of the legislative body, such as a municipality, canto... | direct |
 | [name](#name) | * <br/> [MultilingualString](#MultilingualString) |  | direct |
 | [description](#description) | 0..1 <br/> [String](#String) |  | direct |
 | [landing_page](#landing_page) | 0..1 <br/> [String](#String) | [en] URL providing further information | direct |
 | [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
-| [date_begin](#date_begin) | 0..1 <br/> [Date](#Date) |  | direct |
-| [date_end](#date_end) | 0..1 <br/> [Date](#Date) |  | direct |
-| [datetime_updated](#datetime_updated) | 0..1 <br/> [Datetime](#Datetime) | The last time this record was updated | direct |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The time this record was created | direct |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
+| [date_begin_actual](#date_begin_actual) | 0..1 <br/> [Date](#Date) | [de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitda... | [IsEventWithDuration](#de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitda... | [IsEventWithDuration) |
+| [datetime_begin_actual](#datetime_begin_actual) | 0..1 <br/> [Datetime](#Datetime) | [de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorko... | [IsEventWithDuration](#de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorko... | [IsEventWithDuration) |
+| [date_begin_planned](#date_begin_planned) | 0..1 <br/> [Date](#Date) | [de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration](#de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration) |
+| [datetime_begin_planned](#datetime_begin_planned) | 0..1 <br/> [Datetime](#Datetime) | [de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommen... | [IsEventWithDuration](#de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommen... | [IsEventWithDuration) |
+| [date_end_actual](#date_end_actual) | 0..1 <br/> [Date](#Date) | [de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdaue... | [IsEventWithDuration](#de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdaue... | [IsEventWithDuration) |
+| [datetime_end_actual](#datetime_end_actual) | 0..1 <br/> [Datetime](#Datetime) | [de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkomm... | [IsEventWithDuration](#de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkomm... | [IsEventWithDuration) |
+| [date_end_planned](#date_end_planned) | 0..1 <br/> [Date](#Date) | [de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration](#de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration) |
+| [datetime_end_planned](#datetime_end_planned) | 0..1 <br/> [Datetime](#Datetime) | [de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens ... | [IsEventWithDuration](#de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens ... | [IsEventWithDuration) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
 
 
 
@@ -247,17 +287,16 @@ description: '[en] Term of office of a parliament as a legislative assembly. Usu
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- IsEventWithDuration
+- HasCreationModificationDates
 slots:
-- id
 - administrative_id
 - name
 - description
 - landing_page
 - actor_id
-- date_begin
-- date_end
-- datetime_updated
-- datetime_created
 
 ```
 </details>
@@ -275,32 +314,11 @@ description: '[en] Term of office of a parliament as a legislative assembly. Usu
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- IsEventWithDuration
+- HasCreationModificationDates
 attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: Legislature
-    domain_of:
-    - Container
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    - TextSegment
-    - Motion
-    - Media
-    range: string
-    required: true
   administrative_id:
     name: administrative_id
     description: '[en] Administrative ID of the legislative body, such as a municipality,
@@ -386,61 +404,243 @@ attributes:
     - IndividualAttendance
     - Speech
     range: string
-  date_begin:
-    name: date_begin
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+      [en] Local identifier. For example, a UUID from the council information system.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: date_begin
+    slot_uri: mcm:localId
+    alias: local_id
     owner: Legislature
     domain_of:
-    - Legislature
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+
+      [en] A unique, globally valid URI for the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: Legislature
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: Legislature
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+  date_begin_actual:
+    name: date_begin_actual
+    description: '[de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens
+      mit Zeitdauer.
+
+      [en] The actual start date of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateBeginActual
+    alias: date_begin_actual
+    owner: Legislature
+    domain_of:
+    - IsEventWithDuration
     range: date
-  date_end:
-    name: date_end
+  datetime_begin_actual:
+    name: datetime_begin_actual
+    description: '[de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses
+      oder Vorkommens mit Zeitdauer.
+
+      [en] The actual start date and time of an event or occurrence with time duration.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: date_end
+    slot_uri: mcm:datetimeBeginActual
+    alias: datetime_begin_actual
     owner: Legislature
     domain_of:
-    - Legislature
-    range: date
-  datetime_updated:
-    name: datetime_updated
-    description: The last time this record was updated
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: datetime_updated
-    owner: Legislature
-    domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
+    - IsEventWithDuration
     range: datetime
+  date_begin_planned:
+    name: date_begin_planned
+    description: '[de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit
+      Zeitdauer.
+
+      [en] The planned start date of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateBeginPlanned
+    alias: date_begin_planned
+    owner: Legislature
+    domain_of:
+    - IsEventWithDuration
+    range: date
+  datetime_begin_planned:
+    name: datetime_begin_planned
+    description: '[de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder
+      Vorkommens mit Zeitdauer.
+
+      [en] The planned start date and time of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeBeginPlanned
+    alias: datetime_begin_planned
+    owner: Legislature
+    domain_of:
+    - IsEventWithDuration
+    range: datetime
+  date_end_actual:
+    name: date_end_actual
+    description: '[de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens
+      mit Zeitdauer.
+
+      [en] The actual end date of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateEndActual
+    alias: date_end_actual
+    owner: Legislature
+    domain_of:
+    - IsEventWithDuration
+    range: date
+  datetime_end_actual:
+    name: datetime_end_actual
+    description: '[de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses
+      oder Vorkommens mit Zeitdauer.
+
+      [en] The actual end date and time of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeEndActual
+    alias: datetime_end_actual
+    owner: Legislature
+    domain_of:
+    - IsEventWithDuration
+    range: datetime
+  date_end_planned:
+    name: date_end_planned
+    description: '[de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit
+      Zeitdauer.
+
+      [en] The planned end date of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateEndPlanned
+    alias: date_end_planned
+    owner: Legislature
+    domain_of:
+    - IsEventWithDuration
+    range: date
+  datetime_end_planned:
+    name: datetime_end_planned
+    description: '[de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder
+      Vorkommens mit Zeitdauer.
+
+      [en] The planned end date and time of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeEndPlanned
+    alias: datetime_end_planned
+    owner: Legislature
+    domain_of:
+    - IsEventWithDuration
+    range: datetime
+  date_created:
+    name: date_created
+    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+
+      [en] The date when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateCreated
+    alias: date_created
+    owner: Legislature
+    domain_of:
+    - HasCreationModificationDates
+    range: date
   datetime_created:
     name: datetime_created
-    description: The time this record was created
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+
+      [en] The date and time when an entity was created.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
+    slot_uri: mcm:datetimeCreated
     alias: datetime_created
     owner: Legislature
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
+    - HasCreationModificationDates
+    range: datetime
+  date_modified:
+    name: date_modified
+    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+
+      [en] The date when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateModified
+    alias: date_modified
+    owner: Legislature
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_modified:
+    name: datetime_modified
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
+      wurde.
+
+      [en] The date and time when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeModified
+    alias: datetime_modified
+    owner: Legislature
+    domain_of:
+    - HasCreationModificationDates
     range: datetime
 
 ```
@@ -527,17 +727,42 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
  classDiagram
     class Session
     click Session href "../Session/"
+      HasIdentification <|-- Session
+        click HasIdentification href "../HasIdentification/"
+      IsEventWithDuration <|-- Session
+        click IsEventWithDuration href "../IsEventWithDuration/"
+      HasCreationModificationDates <|-- Session
+        click HasCreationModificationDates href "../HasCreationModificationDates/"
+      
       Session : body_key
+        
+      Session : date_begin_actual
         
       Session : date_begin_planned
         
+      Session : date_created
+        
+      Session : date_end_actual
+        
       Session : date_end_planned
+        
+      Session : date_modified
+        
+      Session : datetime_begin_actual
+        
+      Session : datetime_begin_planned
         
       Session : datetime_created
         
-      Session : datetime_updated
+      Session : datetime_end_actual
         
-      Session : id
+      Session : datetime_end_planned
+        
+      Session : datetime_modified
+        
+      Session : global_uri
+        
+      Session : local_id
         
       Session : meetings
         
@@ -574,28 +799,43 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
     
 
         
+      Session : wikidata_uri
+        
       
 ```
 
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **Session** [ [HasIdentification](# [HasIdentification) [IsEventWithDuration](#IsEventWithDuration) [HasCreationModificationDates](#HasCreationModificationDates)]
+
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](#id) | 1 <br/> [String](#String) |  | direct |
 | [body_key](#body_key) | 0..1 <br/> [String](#String) | [en] Key identifying the political body or jurisdiction (e | direct |
 | [name](#name) | * <br/> [MultilingualString](#MultilingualString) |  | direct |
 | [url](#url) | * <br/> [MultilingualString](#MultilingualString) |  | direct |
-| [date_begin_planned](#date_begin_planned) | 0..1 <br/> [Date](#Date) | [en] Planned start date of the meeting or session | direct |
-| [date_end_planned](#date_end_planned) | 0..1 <br/> [Date](#Date) | [en] Planned end date of the meeting or session | direct |
 | [parent_legislature](#parent_legislature) | 0..1 <br/> [String](#String) | [en] The legislative body in which the meeting is based | direct |
 | [meetings](#meetings) | * <br/> [Meeting](#Meeting) |  | direct |
-| [datetime_updated](#datetime_updated) | 0..1 <br/> [Datetime](#Datetime) | The last time this record was updated | direct |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The time this record was created | direct |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
+| [date_begin_actual](#date_begin_actual) | 0..1 <br/> [Date](#Date) | [de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitda... | [IsEventWithDuration](#de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitda... | [IsEventWithDuration) |
+| [datetime_begin_actual](#datetime_begin_actual) | 0..1 <br/> [Datetime](#Datetime) | [de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorko... | [IsEventWithDuration](#de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorko... | [IsEventWithDuration) |
+| [date_begin_planned](#date_begin_planned) | 0..1 <br/> [Date](#Date) | [de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration](#de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration) |
+| [datetime_begin_planned](#datetime_begin_planned) | 0..1 <br/> [Datetime](#Datetime) | [de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommen... | [IsEventWithDuration](#de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommen... | [IsEventWithDuration) |
+| [date_end_actual](#date_end_actual) | 0..1 <br/> [Date](#Date) | [de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdaue... | [IsEventWithDuration](#de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdaue... | [IsEventWithDuration) |
+| [datetime_end_actual](#datetime_end_actual) | 0..1 <br/> [Datetime](#Datetime) | [de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkomm... | [IsEventWithDuration](#de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkomm... | [IsEventWithDuration) |
+| [date_end_planned](#date_end_planned) | 0..1 <br/> [Date](#Date) | [de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration](#de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration) |
+| [datetime_end_planned](#datetime_end_planned) | 0..1 <br/> [Datetime](#Datetime) | [de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens ... | [IsEventWithDuration](#de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens ... | [IsEventWithDuration) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
 
 
 
@@ -661,17 +901,16 @@ description: '[en] A parliamentary session that groups multiple meetings and spa
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- IsEventWithDuration
+- HasCreationModificationDates
 slots:
-- id
 - body_key
 - name
 - url
-- date_begin_planned
-- date_end_planned
 - parent_legislature
 - meetings
-- datetime_updated
-- datetime_created
 
 ```
 </details>
@@ -689,32 +928,11 @@ description: '[en] A parliamentary session that groups multiple meetings and spa
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- IsEventWithDuration
+- HasCreationModificationDates
 attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: Session
-    domain_of:
-    - Container
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    - TextSegment
-    - Motion
-    - Media
-    range: string
-    required: true
   body_key:
     name: body_key
     description: '[en] Key identifying the political body or jurisdiction (e.g., BE
@@ -755,41 +973,12 @@ attributes:
     domain_of:
     - Session
     - Meeting
+    - AgendaItem
     - Media
     range: MultilingualString
     multivalued: true
     inlined: true
     inlined_as_list: true
-  date_begin_planned:
-    name: date_begin_planned
-    description: '[en] Planned start date of the meeting or session.
-
-      [de] Geplantes Startdatum der Sitzung oder Session.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: date_begin_planned
-    owner: Session
-    domain_of:
-    - Session
-    - Meeting
-    range: date
-  date_end_planned:
-    name: date_end_planned
-    description: '[en] Planned end date of the meeting or session.
-
-      [de] Geplantes Enddatum der Sitzung oder Session.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: date_end_planned
-    owner: Session
-    domain_of:
-    - Session
-    - Meeting
-    range: date
   parent_legislature:
     name: parent_legislature
     description: '[en] The legislative body in which the meeting is based.
@@ -819,43 +1008,243 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  datetime_updated:
-    name: datetime_updated
-    description: The last time this record was updated
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+      [en] Local identifier. For example, a UUID from the council information system.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_updated
+    slot_uri: mcm:localId
+    alias: local_id
     owner: Session
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    range: datetime
-  datetime_created:
-    name: datetime_created
-    description: The time this record was created
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+
+      [en] A unique, globally valid URI for the entity.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: Session
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: Session
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+  date_begin_actual:
+    name: date_begin_actual
+    description: '[de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens
+      mit Zeitdauer.
+
+      [en] The actual start date of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateBeginActual
+    alias: date_begin_actual
+    owner: Session
+    domain_of:
+    - IsEventWithDuration
+    range: date
+  datetime_begin_actual:
+    name: datetime_begin_actual
+    description: '[de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses
+      oder Vorkommens mit Zeitdauer.
+
+      [en] The actual start date and time of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeBeginActual
+    alias: datetime_begin_actual
+    owner: Session
+    domain_of:
+    - IsEventWithDuration
+    range: datetime
+  date_begin_planned:
+    name: date_begin_planned
+    description: '[de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit
+      Zeitdauer.
+
+      [en] The planned start date of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateBeginPlanned
+    alias: date_begin_planned
+    owner: Session
+    domain_of:
+    - IsEventWithDuration
+    range: date
+  datetime_begin_planned:
+    name: datetime_begin_planned
+    description: '[de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder
+      Vorkommens mit Zeitdauer.
+
+      [en] The planned start date and time of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeBeginPlanned
+    alias: datetime_begin_planned
+    owner: Session
+    domain_of:
+    - IsEventWithDuration
+    range: datetime
+  date_end_actual:
+    name: date_end_actual
+    description: '[de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens
+      mit Zeitdauer.
+
+      [en] The actual end date of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateEndActual
+    alias: date_end_actual
+    owner: Session
+    domain_of:
+    - IsEventWithDuration
+    range: date
+  datetime_end_actual:
+    name: datetime_end_actual
+    description: '[de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses
+      oder Vorkommens mit Zeitdauer.
+
+      [en] The actual end date and time of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeEndActual
+    alias: datetime_end_actual
+    owner: Session
+    domain_of:
+    - IsEventWithDuration
+    range: datetime
+  date_end_planned:
+    name: date_end_planned
+    description: '[de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit
+      Zeitdauer.
+
+      [en] The planned end date of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateEndPlanned
+    alias: date_end_planned
+    owner: Session
+    domain_of:
+    - IsEventWithDuration
+    range: date
+  datetime_end_planned:
+    name: datetime_end_planned
+    description: '[de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder
+      Vorkommens mit Zeitdauer.
+
+      [en] The planned end date and time of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeEndPlanned
+    alias: datetime_end_planned
+    owner: Session
+    domain_of:
+    - IsEventWithDuration
+    range: datetime
+  date_created:
+    name: date_created
+    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+
+      [en] The date when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateCreated
+    alias: date_created
+    owner: Session
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_created:
+    name: datetime_created
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+
+      [en] The date and time when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeCreated
     alias: datetime_created
     owner: Session
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
+    - HasCreationModificationDates
+    range: datetime
+  date_modified:
+    name: date_modified
+    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+
+      [en] The date when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateModified
+    alias: date_modified
+    owner: Session
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_modified:
+    name: datetime_modified
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
+      wurde.
+
+      [en] The date and time when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeModified
+    alias: datetime_modified
+    owner: Session
+    domain_of:
+    - HasCreationModificationDates
     range: datetime
 
 ```
@@ -1002,6 +1391,13 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
  classDiagram
     class Meeting
     click Meeting href "../Meeting/"
+      HasIdentification <|-- Meeting
+        click HasIdentification href "../HasIdentification/"
+      IsEventWithDuration <|-- Meeting
+        click IsEventWithDuration href "../IsEventWithDuration/"
+      HasCreationModificationDates <|-- Meeting
+        click HasCreationModificationDates href "../HasCreationModificationDates/"
+      
       Meeting : abbreviation
         
       Meeting : actor_id
@@ -1016,23 +1412,37 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
         
       Meeting : date_begin_planned
         
+      Meeting : date_created
+        
       Meeting : date_end_actual
         
       Meeting : date_end_planned
         
+      Meeting : date_modified
+        
+      Meeting : datetime_begin_actual
+        
+      Meeting : datetime_begin_planned
+        
       Meeting : datetime_created
         
-      Meeting : datetime_updated
+      Meeting : datetime_end_actual
+        
+      Meeting : datetime_end_planned
+        
+      Meeting : datetime_modified
         
       Meeting : description
+        
+      Meeting : global_uri
         
       Meeting : group_id
         
       Meeting : group_name
         
-      Meeting : id
-        
       Meeting : landing_page
+        
+      Meeting : local_id
         
       Meeting : location
         
@@ -1092,19 +1502,23 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
     
 
         
+      Meeting : wikidata_uri
+        
       
 ```
 
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **Meeting** [ [HasIdentification](# [HasIdentification) [IsEventWithDuration](#IsEventWithDuration) [HasCreationModificationDates](#HasCreationModificationDates)]
+
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](#id) | 1 <br/> [String](#String) |  | direct |
 | [body_key](#body_key) | 0..1 <br/> [String](#String) | [en] Key identifying the political body or jurisdiction (e | direct |
 | [meeting_type](#meeting_type) | 0..1 <br/> [MeetingTypeEnum](#MeetingTypeEnum) | Type of the meeting, e | direct |
 | [administrative_id](#administrative_id) | 0..1 <br/> [String](#String) | [en] Administrative ID of the legislative body, such as a municipality, canto... | direct |
@@ -1119,18 +1533,27 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 | [abbreviation](#abbreviation) | 0..1 <br/> [String](#String) |  | direct |
 | [actor_name](#actor_name) | 0..1 <br/> [String](#String) | [en] Name of the political body (e | direct |
 | [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
-| [date_begin_planned](#date_begin_planned) | 0..1 <br/> [Date](#Date) | [en] Planned start date of the meeting or session | direct |
-| [date_end_planned](#date_end_planned) | 0..1 <br/> [Date](#Date) | [en] Planned end date of the meeting or session | direct |
-| [date_begin_actual](#date_begin_actual) | 0..1 <br/> [Date](#Date) |  | direct |
-| [date_end_actual](#date_end_actual) | 0..1 <br/> [Date](#Date) | [en] Actual end date of the meeting or session | direct |
 | [state](#state) | 0..1 <br/> [StateEnum](#StateEnum) |  | direct |
 | [state_name](#state_name) | 0..1 <br/> [String](#String) | [en] Custom state description for the meeting | direct |
 | [description](#description) | 0..1 <br/> [String](#String) |  | direct |
 | [location](#location) | 0..1 <br/> [String](#String) |  | direct |
 | [parent_meeting](#parent_meeting) | 0..1 <br/> [String](#String) | [en] The linked meeting ID that groups the current meeting | direct |
 | [parent_legislature](#parent_legislature) | 0..1 <br/> [String](#String) | [en] The legislative body in which the meeting is based | direct |
-| [datetime_updated](#datetime_updated) | 0..1 <br/> [Datetime](#Datetime) | The last time this record was updated | direct |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The time this record was created | direct |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
+| [date_begin_actual](#date_begin_actual) | 0..1 <br/> [Date](#Date) | [de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitda... | [IsEventWithDuration](#de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitda... | [IsEventWithDuration) |
+| [datetime_begin_actual](#datetime_begin_actual) | 0..1 <br/> [Datetime](#Datetime) | [de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorko... | [IsEventWithDuration](#de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorko... | [IsEventWithDuration) |
+| [date_begin_planned](#date_begin_planned) | 0..1 <br/> [Date](#Date) | [de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration](#de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration) |
+| [datetime_begin_planned](#datetime_begin_planned) | 0..1 <br/> [Datetime](#Datetime) | [de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommen... | [IsEventWithDuration](#de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommen... | [IsEventWithDuration) |
+| [date_end_actual](#date_end_actual) | 0..1 <br/> [Date](#Date) | [de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdaue... | [IsEventWithDuration](#de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdaue... | [IsEventWithDuration) |
+| [datetime_end_actual](#datetime_end_actual) | 0..1 <br/> [Datetime](#Datetime) | [de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkomm... | [IsEventWithDuration](#de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkomm... | [IsEventWithDuration) |
+| [date_end_planned](#date_end_planned) | 0..1 <br/> [Date](#Date) | [de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration](#de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration) |
+| [datetime_end_planned](#datetime_end_planned) | 0..1 <br/> [Datetime](#Datetime) | [de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens ... | [IsEventWithDuration](#de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens ... | [IsEventWithDuration) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
 
 
 
@@ -1197,8 +1620,11 @@ description: '[en] A general meeting class used for Sessions, Comittee Meetings,
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- IsEventWithDuration
+- HasCreationModificationDates
 slots:
-- id
 - body_key
 - meeting_type
 - administrative_id
@@ -1213,18 +1639,12 @@ slots:
 - abbreviation
 - actor_name
 - actor_id
-- date_begin_planned
-- date_end_planned
-- date_begin_actual
-- date_end_actual
 - state
 - state_name
 - description
 - location
 - parent_meeting
 - parent_legislature
-- datetime_updated
-- datetime_created
 
 ```
 </details>
@@ -1242,32 +1662,11 @@ description: '[en] A general meeting class used for Sessions, Comittee Meetings,
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- IsEventWithDuration
+- HasCreationModificationDates
 attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: Meeting
-    domain_of:
-    - Container
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    - TextSegment
-    - Motion
-    - Media
-    range: string
-    required: true
   body_key:
     name: body_key
     description: '[en] Key identifying the political body or jurisdiction (e.g., BE
@@ -1336,6 +1735,7 @@ attributes:
     domain_of:
     - Session
     - Meeting
+    - AgendaItem
     - Media
     range: MultilingualString
     multivalued: true
@@ -1459,59 +1859,6 @@ attributes:
     - IndividualAttendance
     - Speech
     range: string
-  date_begin_planned:
-    name: date_begin_planned
-    description: '[en] Planned start date of the meeting or session.
-
-      [de] Geplantes Startdatum der Sitzung oder Session.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: date_begin_planned
-    owner: Meeting
-    domain_of:
-    - Session
-    - Meeting
-    range: date
-  date_end_planned:
-    name: date_end_planned
-    description: '[en] Planned end date of the meeting or session.
-
-      [de] Geplantes Enddatum der Sitzung oder Session.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: date_end_planned
-    owner: Meeting
-    domain_of:
-    - Session
-    - Meeting
-    range: date
-  date_begin_actual:
-    name: date_begin_actual
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: date_begin_actual
-    owner: Meeting
-    domain_of:
-    - Meeting
-    range: date
-  date_end_actual:
-    name: date_end_actual
-    description: '[en] Actual end date of the meeting or session.
-
-      [de] Tatsächliches Enddatum der Sitzung oder Session.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: date_end_actual
-    owner: Meeting
-    domain_of:
-    - Meeting
-    range: date
   state:
     name: state
     from_schema: https://ch.paf.link/schema/operations
@@ -1588,43 +1935,243 @@ attributes:
     - Session
     - Meeting
     range: string
-  datetime_updated:
-    name: datetime_updated
-    description: The last time this record was updated
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+      [en] Local identifier. For example, a UUID from the council information system.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_updated
+    slot_uri: mcm:localId
+    alias: local_id
     owner: Meeting
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    range: datetime
-  datetime_created:
-    name: datetime_created
-    description: The time this record was created
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+
+      [en] A unique, globally valid URI for the entity.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: Meeting
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: Meeting
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+  date_begin_actual:
+    name: date_begin_actual
+    description: '[de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens
+      mit Zeitdauer.
+
+      [en] The actual start date of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateBeginActual
+    alias: date_begin_actual
+    owner: Meeting
+    domain_of:
+    - IsEventWithDuration
+    range: date
+  datetime_begin_actual:
+    name: datetime_begin_actual
+    description: '[de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses
+      oder Vorkommens mit Zeitdauer.
+
+      [en] The actual start date and time of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeBeginActual
+    alias: datetime_begin_actual
+    owner: Meeting
+    domain_of:
+    - IsEventWithDuration
+    range: datetime
+  date_begin_planned:
+    name: date_begin_planned
+    description: '[de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit
+      Zeitdauer.
+
+      [en] The planned start date of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateBeginPlanned
+    alias: date_begin_planned
+    owner: Meeting
+    domain_of:
+    - IsEventWithDuration
+    range: date
+  datetime_begin_planned:
+    name: datetime_begin_planned
+    description: '[de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder
+      Vorkommens mit Zeitdauer.
+
+      [en] The planned start date and time of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeBeginPlanned
+    alias: datetime_begin_planned
+    owner: Meeting
+    domain_of:
+    - IsEventWithDuration
+    range: datetime
+  date_end_actual:
+    name: date_end_actual
+    description: '[de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens
+      mit Zeitdauer.
+
+      [en] The actual end date of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateEndActual
+    alias: date_end_actual
+    owner: Meeting
+    domain_of:
+    - IsEventWithDuration
+    range: date
+  datetime_end_actual:
+    name: datetime_end_actual
+    description: '[de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses
+      oder Vorkommens mit Zeitdauer.
+
+      [en] The actual end date and time of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeEndActual
+    alias: datetime_end_actual
+    owner: Meeting
+    domain_of:
+    - IsEventWithDuration
+    range: datetime
+  date_end_planned:
+    name: date_end_planned
+    description: '[de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit
+      Zeitdauer.
+
+      [en] The planned end date of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateEndPlanned
+    alias: date_end_planned
+    owner: Meeting
+    domain_of:
+    - IsEventWithDuration
+    range: date
+  datetime_end_planned:
+    name: datetime_end_planned
+    description: '[de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder
+      Vorkommens mit Zeitdauer.
+
+      [en] The planned end date and time of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeEndPlanned
+    alias: datetime_end_planned
+    owner: Meeting
+    domain_of:
+    - IsEventWithDuration
+    range: datetime
+  date_created:
+    name: date_created
+    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+
+      [en] The date when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateCreated
+    alias: date_created
+    owner: Meeting
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_created:
+    name: datetime_created
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+
+      [en] The date and time when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeCreated
     alias: datetime_created
     owner: Meeting
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
+    - HasCreationModificationDates
+    range: datetime
+  date_modified:
+    name: date_modified
+    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+
+      [en] The date when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateModified
+    alias: date_modified
+    owner: Meeting
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_modified:
+    name: datetime_modified
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
+      wurde.
+
+      [en] The date and time when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeModified
+    alias: datetime_modified
+    owner: Meeting
+    domain_of:
+    - HasCreationModificationDates
     range: datetime
 
 ```
@@ -1841,15 +2388,26 @@ URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
  classDiagram
     class Attendance
     click Attendance href "../Attendance/"
+      HasIdentification <|-- Attendance
+        click HasIdentification href "../HasIdentification/"
+      HasCreationModificationDates <|-- Attendance
+        click HasCreationModificationDates href "../HasCreationModificationDates/"
+      
       Attendance : actor_id
+        
+      Attendance : date_created
+        
+      Attendance : date_modified
         
       Attendance : datetime_begin
         
       Attendance : datetime_created
         
-      Attendance : datetime_updated
+      Attendance : datetime_modified
         
-      Attendance : id
+      Attendance : global_uri
+        
+      Attendance : local_id
         
       Attendance : total_absent
         
@@ -1857,26 +2415,35 @@ URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
         
       Attendance : total_present
         
+      Attendance : wikidata_uri
+        
       
 ```
 
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **Attendance** [ [HasIdentification](# [HasIdentification) [HasCreationModificationDates](#HasCreationModificationDates)]
+
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](#id) | 1 <br/> [String](#String) |  | direct |
 | [datetime_begin](#datetime_begin) | 0..1 <br/> [Datetime](#Datetime) | [en] The date and time when the meeting or voting begins | direct |
 | [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
 | [total_absent](#total_absent) | 0..1 <br/> [Integer](#Integer) | [en] Total number of absent members | direct |
 | [total_present](#total_present) | 0..1 <br/> [Integer](#Integer) | Total number of members present | direct |
 | [total_excused](#total_excused) | 0..1 <br/> [Integer](#Integer) | Total number of excused absences | direct |
-| [datetime_updated](#datetime_updated) | 0..1 <br/> [Datetime](#Datetime) | The last time this record was updated | direct |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The time this record was created | direct |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
 
 
 
@@ -1940,15 +2507,15 @@ description: '[en] Attendance record for a meeting or voting session.
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- HasCreationModificationDates
 slots:
-- id
 - datetime_begin
 - actor_id
 - total_absent
 - total_present
 - total_excused
-- datetime_updated
-- datetime_created
 
 ```
 </details>
@@ -1964,32 +2531,10 @@ description: '[en] Attendance record for a meeting or voting session.
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- HasCreationModificationDates
 attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: Attendance
-    domain_of:
-    - Container
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    - TextSegment
-    - Motion
-    - Media
-    range: string
-    required: true
   datetime_begin:
     name: datetime_begin
     description: '[en] The date and time when the meeting or voting begins.
@@ -2068,43 +2613,115 @@ attributes:
     domain_of:
     - Attendance
     range: integer
-  datetime_updated:
-    name: datetime_updated
-    description: The last time this record was updated
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+      [en] Local identifier. For example, a UUID from the council information system.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_updated
+    slot_uri: mcm:localId
+    alias: local_id
     owner: Attendance
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    range: datetime
-  datetime_created:
-    name: datetime_created
-    description: The time this record was created
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+
+      [en] A unique, globally valid URI for the entity.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: Attendance
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: Attendance
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+  date_created:
+    name: date_created
+    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+
+      [en] The date when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateCreated
+    alias: date_created
+    owner: Attendance
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_created:
+    name: datetime_created
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+
+      [en] The date and time when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeCreated
     alias: datetime_created
     owner: Attendance
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
+    - HasCreationModificationDates
+    range: datetime
+  date_modified:
+    name: date_modified
+    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+
+      [en] The date when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateModified
+    alias: date_modified
+    owner: Attendance
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_modified:
+    name: datetime_modified
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
+      wurde.
+
+      [en] The date and time when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeModified
+    alias: datetime_modified
+    owner: Attendance
+    domain_of:
+    - HasCreationModificationDates
     range: datetime
 
 ```
@@ -2135,6 +2752,11 @@ URI: [ops:IndividualAttendance](https://ch.paf.link/schema/operations/Individual
  classDiagram
     class IndividualAttendance
     click IndividualAttendance href "../IndividualAttendance/"
+      HasIdentification <|-- IndividualAttendance
+        click HasIdentification href "../HasIdentification/"
+      HasCreationModificationDates <|-- IndividualAttendance
+        click HasCreationModificationDates href "../HasCreationModificationDates/"
+      
       IndividualAttendance : actor_id
         
       IndividualAttendance : attendance_type
@@ -2148,11 +2770,17 @@ URI: [ops:IndividualAttendance](https://ch.paf.link/schema/operations/Individual
     
 
         
+      IndividualAttendance : date_created
+        
+      IndividualAttendance : date_modified
+        
       IndividualAttendance : datetime_created
         
-      IndividualAttendance : datetime_updated
+      IndividualAttendance : datetime_modified
         
-      IndividualAttendance : id
+      IndividualAttendance : global_uri
+        
+      IndividualAttendance : local_id
         
       IndividualAttendance : parent_voting
         
@@ -2165,24 +2793,33 @@ URI: [ops:IndividualAttendance](https://ch.paf.link/schema/operations/Individual
     
 
         
+      IndividualAttendance : wikidata_uri
+        
       
 ```
 
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **IndividualAttendance** [ [HasIdentification](# [HasIdentification) [HasCreationModificationDates](#HasCreationModificationDates)]
+
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](#id) | 1 <br/> [String](#String) |  | direct |
 | [parent_voting](#parent_voting) | 0..1 <br/> [Voting](#Voting) | [en] The ID of the voting associated with the individual vote | direct |
 | [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
 | [attendance_type](#attendance_type) | 0..1 <br/> [AttendanceTypeEnum](#AttendanceTypeEnum) | Type of individual attendance | direct |
-| [datetime_updated](#datetime_updated) | 0..1 <br/> [Datetime](#Datetime) | The last time this record was updated | direct |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The time this record was created | direct |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
 
 
 
@@ -2246,13 +2883,13 @@ description: '[en] Individual attendance record for a specific person.
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- HasCreationModificationDates
 slots:
-- id
 - parent_voting
 - actor_id
 - attendance_type
-- datetime_updated
-- datetime_created
 
 ```
 </details>
@@ -2268,32 +2905,10 @@ description: '[en] Individual attendance record for a specific person.
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- HasCreationModificationDates
 attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: IndividualAttendance
-    domain_of:
-    - Container
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    - TextSegment
-    - Motion
-    - Media
-    range: string
-    required: true
   parent_voting:
     name: parent_voting
     description: '[en] The ID of the voting associated with the individual vote.
@@ -2343,43 +2958,115 @@ attributes:
     domain_of:
     - IndividualAttendance
     range: attendance_type_enum
-  datetime_updated:
-    name: datetime_updated
-    description: The last time this record was updated
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+      [en] Local identifier. For example, a UUID from the council information system.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_updated
+    slot_uri: mcm:localId
+    alias: local_id
     owner: IndividualAttendance
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    range: datetime
-  datetime_created:
-    name: datetime_created
-    description: The time this record was created
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+
+      [en] A unique, globally valid URI for the entity.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: IndividualAttendance
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: IndividualAttendance
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+  date_created:
+    name: date_created
+    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+
+      [en] The date when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateCreated
+    alias: date_created
+    owner: IndividualAttendance
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_created:
+    name: datetime_created
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+
+      [en] The date and time when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeCreated
     alias: datetime_created
     owner: IndividualAttendance
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
+    - HasCreationModificationDates
+    range: datetime
+  date_modified:
+    name: date_modified
+    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+
+      [en] The date when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateModified
+    alias: date_modified
+    owner: IndividualAttendance
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_modified:
+    name: datetime_modified
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
+      wurde.
+
+      [en] The date and time when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeModified
+    alias: datetime_modified
+    owner: IndividualAttendance
+    domain_of:
+    - HasCreationModificationDates
     range: datetime
 
 ```
@@ -2544,7 +3231,7 @@ Ein AgendaItem ist das zentrale Bindeglied zwischen:
 
 _[en] An agenda item of a meeting._
 
-_[de] Ein Traktandum einer Sitzung.  _
+_[de] Ein Traktandum einer Sitzung._
 
 __
 
@@ -2562,6 +3249,13 @@ URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
  classDiagram
     class AgendaItem
     click AgendaItem href "../AgendaItem/"
+      HasIdentification <|-- AgendaItem
+        click HasIdentification href "../HasIdentification/"
+      IsEventWithDuration <|-- AgendaItem
+        click IsEventWithDuration href "../IsEventWithDuration/"
+      HasCreationModificationDates <|-- AgendaItem
+        click HasCreationModificationDates href "../HasCreationModificationDates/"
+      
       AgendaItem : affair_id
         
       AgendaItem : agenda_item_category
@@ -2603,13 +3297,31 @@ URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
     
 
         
+      AgendaItem : date_begin_actual
+        
+      AgendaItem : date_begin_planned
+        
+      AgendaItem : date_created
+        
+      AgendaItem : date_end_actual
+        
+      AgendaItem : date_end_planned
+        
+      AgendaItem : date_modified
+        
       AgendaItem : datetime_begin_actual
         
       AgendaItem : datetime_begin_planned
         
       AgendaItem : datetime_created
         
-      AgendaItem : datetime_updated
+      AgendaItem : datetime_end_actual
+        
+      AgendaItem : datetime_end_planned
+        
+      AgendaItem : datetime_modified
+        
+      AgendaItem : global_uri
         
       AgendaItem : has_resolution
         
@@ -2622,11 +3334,11 @@ URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
     
 
         
-      AgendaItem : id
-        
       AgendaItem : landing_page
         
       AgendaItem : leading_actor_id
+        
+      AgendaItem : local_id
         
       AgendaItem : parent_agenda_item
         
@@ -2638,23 +3350,36 @@ URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
         
       AgendaItem : state_name
         
+      AgendaItem : url
+        
+          
+    
+        
+        
+        AgendaItem --> "*" MultilingualString : url
+        click MultilingualString href "../MultilingualString/"
+    
+
+        
+      AgendaItem : wikidata_uri
+        
       
 ```
 
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **AgendaItem** [ [HasIdentification](# [HasIdentification) [IsEventWithDuration](#IsEventWithDuration) [HasCreationModificationDates](#HasCreationModificationDates)]
+
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](#id) | 1 <br/> [String](#String) |  | direct |
 | [parent_meeting](#parent_meeting) | 0..1 <br/> [String](#String) | [en] The linked meeting ID that groups the current meeting | direct |
 | [agenda_item_type](#agenda_item_type) | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | [en] Type of agenda item, distinguishing individual items from groups | direct |
-| [datetime_begin_planned](#datetime_begin_planned) | 0..1 <br/> [Datetime](#Datetime) | [en] Planned date and time for the start of the meeting or agenda item | direct |
-| [datetime_begin_actual](#datetime_begin_actual) | 0..1 <br/> [Datetime](#Datetime) | [en] Actual date and time for the start of the meeting or agenda item | direct |
 | [agenda_item_number](#agenda_item_number) | 0..1 <br/> [String](#String) | [en] Sequential number of the agenda item (string type to support roman numer... | direct |
 | [agenda_item_position](#agenda_item_position) | 0..1 <br/> [Integer](#Integer) | [en] Integer position of the agenda item in the meeting sequence | direct |
 | [leading_actor_id](#leading_actor_id) | 0..1 <br/> [String](#String) | [en] The leading department for the agenda item | direct |
@@ -2665,11 +3390,25 @@ URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
 | [state_id](#state_id) | 0..1 <br/> [String](#String) | State identifier (reference to state enum or custom state) | direct |
 | [state_name](#state_name) | 0..1 <br/> [String](#String) | [en] Custom state description for the meeting | direct |
 | [landing_page](#landing_page) | 0..1 <br/> [String](#String) | [en] URL providing further information | direct |
+| [url](#url) | * <br/> [MultilingualString](#MultilingualString) |  | direct |
 | [agenda_item_category](#agenda_item_category) | 0..1 <br/> [String](#String) | [en] Category for grouped agenda items (e | direct |
 | [parent_agenda_item](#parent_agenda_item) | 0..1 <br/> [String](#String) | [en] If needed, this slot builds a hierarchy of agenda items | direct |
 | [has_resolution](#has_resolution) | 0..1 <br/> [Resolution](#Resolution) | [en] The resolutionor decision taken on this agenda item | direct |
-| [datetime_updated](#datetime_updated) | 0..1 <br/> [Datetime](#Datetime) | The last time this record was updated | direct |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The time this record was created | direct |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
+| [date_begin_actual](#date_begin_actual) | 0..1 <br/> [Date](#Date) | [de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitda... | [IsEventWithDuration](#de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitda... | [IsEventWithDuration) |
+| [datetime_begin_actual](#datetime_begin_actual) | 0..1 <br/> [Datetime](#Datetime) | [de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorko... | [IsEventWithDuration](#de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorko... | [IsEventWithDuration) |
+| [date_begin_planned](#date_begin_planned) | 0..1 <br/> [Date](#Date) | [de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration](#de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration) |
+| [datetime_begin_planned](#datetime_begin_planned) | 0..1 <br/> [Datetime](#Datetime) | [de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommen... | [IsEventWithDuration](#de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommen... | [IsEventWithDuration) |
+| [date_end_actual](#date_end_actual) | 0..1 <br/> [Date](#Date) | [de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdaue... | [IsEventWithDuration](#de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdaue... | [IsEventWithDuration) |
+| [datetime_end_actual](#datetime_end_actual) | 0..1 <br/> [Datetime](#Datetime) | [de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkomm... | [IsEventWithDuration](#de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkomm... | [IsEventWithDuration) |
+| [date_end_planned](#date_end_planned) | 0..1 <br/> [Date](#Date) | [de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration](#de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration) |
+| [datetime_end_planned](#datetime_end_planned) | 0..1 <br/> [Datetime](#Datetime) | [de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens ... | [IsEventWithDuration](#de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens ... | [IsEventWithDuration) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
 
 
 
@@ -2728,15 +3467,19 @@ URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
 <details>
 ```yaml
 name: AgendaItem
-description: "[en] An agenda item of a meeting.\n[de] Ein Traktandum einer Sitzung.\
-  \  \n"
+description: '[en] An agenda item of a meeting.
+
+  [de] Ein Traktandum einer Sitzung.
+
+  '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- IsEventWithDuration
+- HasCreationModificationDates
 slots:
-- id
 - parent_meeting
 - agenda_item_type
-- datetime_begin_planned
-- datetime_begin_actual
 - agenda_item_number
 - agenda_item_position
 - leading_actor_id
@@ -2747,11 +3490,10 @@ slots:
 - state_id
 - state_name
 - landing_page
+- url
 - agenda_item_category
 - parent_agenda_item
 - has_resolution
-- datetime_updated
-- datetime_created
 
 ```
 </details>
@@ -2761,35 +3503,17 @@ slots:
 <details>
 ```yaml
 name: AgendaItem
-description: "[en] An agenda item of a meeting.\n[de] Ein Traktandum einer Sitzung.\
-  \  \n"
+description: '[en] An agenda item of a meeting.
+
+  [de] Ein Traktandum einer Sitzung.
+
+  '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- IsEventWithDuration
+- HasCreationModificationDates
 attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: AgendaItem
-    domain_of:
-    - Container
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    - TextSegment
-    - Motion
-    - Media
-    range: string
-    required: true
   parent_meeting:
     name: parent_meeting
     description: '[en] The linked meeting ID that groups the current meeting.
@@ -2821,36 +3545,6 @@ attributes:
     domain_of:
     - AgendaItem
     range: agenda_item_type_enum
-  datetime_begin_planned:
-    name: datetime_begin_planned
-    description: '[en] Planned date and time for the start of the meeting or agenda
-      item.
-
-      [de] Geplantes Datum und Uhrzeit für den Beginn der Sitzung oder des Tagesordnungspunkts.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: datetime_begin_planned
-    owner: AgendaItem
-    domain_of:
-    - AgendaItem
-    range: datetime
-  datetime_begin_actual:
-    name: datetime_begin_actual
-    description: '[en] Actual date and time for the start of the meeting or agenda
-      item.
-
-      [de] Tatsächliches Datum und Uhrzeit für den Beginn der Sitzung oder des Tagesordnungspunkts.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: datetime_begin_actual
-    owner: AgendaItem
-    domain_of:
-    - AgendaItem
-    range: datetime
   agenda_item_number:
     name: agenda_item_number
     description: '[en] Sequential number of the agenda item (string type to support
@@ -3004,6 +3698,21 @@ attributes:
     - Election
     - Speech
     range: string
+  url:
+    name: url
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: url
+    owner: AgendaItem
+    domain_of:
+    - Session
+    - Meeting
+    - AgendaItem
+    - Media
+    range: MultilingualString
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   agenda_item_category:
     name: agenda_item_category
     description: '[en] Category for grouped agenda items (e.g., introduction, by department,
@@ -3051,43 +3760,243 @@ attributes:
     domain_of:
     - AgendaItem
     range: Resolution
-  datetime_updated:
-    name: datetime_updated
-    description: The last time this record was updated
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+      [en] Local identifier. For example, a UUID from the council information system.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_updated
+    slot_uri: mcm:localId
+    alias: local_id
     owner: AgendaItem
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    range: datetime
-  datetime_created:
-    name: datetime_created
-    description: The time this record was created
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+
+      [en] A unique, globally valid URI for the entity.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: AgendaItem
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: AgendaItem
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+  date_begin_actual:
+    name: date_begin_actual
+    description: '[de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens
+      mit Zeitdauer.
+
+      [en] The actual start date of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateBeginActual
+    alias: date_begin_actual
+    owner: AgendaItem
+    domain_of:
+    - IsEventWithDuration
+    range: date
+  datetime_begin_actual:
+    name: datetime_begin_actual
+    description: '[de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses
+      oder Vorkommens mit Zeitdauer.
+
+      [en] The actual start date and time of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeBeginActual
+    alias: datetime_begin_actual
+    owner: AgendaItem
+    domain_of:
+    - IsEventWithDuration
+    range: datetime
+  date_begin_planned:
+    name: date_begin_planned
+    description: '[de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit
+      Zeitdauer.
+
+      [en] The planned start date of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateBeginPlanned
+    alias: date_begin_planned
+    owner: AgendaItem
+    domain_of:
+    - IsEventWithDuration
+    range: date
+  datetime_begin_planned:
+    name: datetime_begin_planned
+    description: '[de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder
+      Vorkommens mit Zeitdauer.
+
+      [en] The planned start date and time of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeBeginPlanned
+    alias: datetime_begin_planned
+    owner: AgendaItem
+    domain_of:
+    - IsEventWithDuration
+    range: datetime
+  date_end_actual:
+    name: date_end_actual
+    description: '[de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens
+      mit Zeitdauer.
+
+      [en] The actual end date of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateEndActual
+    alias: date_end_actual
+    owner: AgendaItem
+    domain_of:
+    - IsEventWithDuration
+    range: date
+  datetime_end_actual:
+    name: datetime_end_actual
+    description: '[de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses
+      oder Vorkommens mit Zeitdauer.
+
+      [en] The actual end date and time of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeEndActual
+    alias: datetime_end_actual
+    owner: AgendaItem
+    domain_of:
+    - IsEventWithDuration
+    range: datetime
+  date_end_planned:
+    name: date_end_planned
+    description: '[de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit
+      Zeitdauer.
+
+      [en] The planned end date of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateEndPlanned
+    alias: date_end_planned
+    owner: AgendaItem
+    domain_of:
+    - IsEventWithDuration
+    range: date
+  datetime_end_planned:
+    name: datetime_end_planned
+    description: '[de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder
+      Vorkommens mit Zeitdauer.
+
+      [en] The planned end date and time of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeEndPlanned
+    alias: datetime_end_planned
+    owner: AgendaItem
+    domain_of:
+    - IsEventWithDuration
+    range: datetime
+  date_created:
+    name: date_created
+    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+
+      [en] The date when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateCreated
+    alias: date_created
+    owner: AgendaItem
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_created:
+    name: datetime_created
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+
+      [en] The date and time when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeCreated
     alias: datetime_created
     owner: AgendaItem
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
+    - HasCreationModificationDates
+    range: datetime
+  date_modified:
+    name: date_modified
+    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+
+      [en] The date when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateModified
+    alias: date_modified
+    owner: AgendaItem
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_modified:
+    name: datetime_modified
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
+      wurde.
+
+      [en] The date and time when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeModified
+    alias: datetime_modified
+    owner: AgendaItem
+    domain_of:
+    - HasCreationModificationDates
     range: datetime
 
 ```
@@ -3215,7 +4124,7 @@ Das Feld **voting_id** verweist auf das zugehörige Voting, das die Abstimmungsd
 ### Zeitstempel
 
 - **datetime_created**: Zeitpunkt des Beschlusses
-- **datetime_updated**: Letzte Änderung (z.B. bei Korrekturen)
+- **datetime_modified**: Letzte Änderung (z.B. bei Korrekturen)
 
 ### URLs und Dokumentation
 
@@ -3520,11 +4429,18 @@ URI: [ops:Motion](https://ch.paf.link/schema/operations/Motion)
  classDiagram
     class Motion
     click Motion href "../Motion/"
+      HasIdentification <|-- Motion
+        click HasIdentification href "../HasIdentification/"
+      
       Motion : description
         
-      Motion : id
+      Motion : global_uri
+        
+      Motion : local_id
         
       Motion : title
+        
+      Motion : wikidata_uri
         
       
 ```
@@ -3532,15 +4448,20 @@ URI: [ops:Motion](https://ch.paf.link/schema/operations/Motion)
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **Motion** [ [HasIdentification](# [HasIdentification)]
+
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](#id) | 1 <br/> [String](#String) |  | direct |
 | [title](#title) | 0..1 <br/> [String](#String) |  | direct |
 | [description](#description) | 0..1 <br/> [String](#String) |  | direct |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
 
 
 
@@ -3597,8 +4518,9 @@ description: '[en] A formal proposal or motion submitted during proceedings.
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
 slots:
-- id
 - title
 - description
 
@@ -3616,32 +4538,9 @@ description: '[en] A formal proposal or motion submitted during proceedings.
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
 attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: Motion
-    domain_of:
-    - Container
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    - TextSegment
-    - Motion
-    - Media
-    range: string
-    required: true
   title:
     name: title
     from_schema: https://ch.paf.link/schema/operations
@@ -3664,6 +4563,55 @@ attributes:
     - Meeting
     - Motion
     range: string
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+      [en] Local identifier. For example, a UUID from the council information system.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:localId
+    alias: local_id
+    owner: Motion
+    domain_of:
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+
+      [en] A unique, globally valid URI for the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: Motion
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: Motion
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
 
 ```
 </details>
@@ -3863,7 +4811,7 @@ Voting
 ## Zeitstempel
 
 - **datetime_created**: Zeitpunkt der Durchführung der Abstimmung
-- **datetime_updated**: Letzte Aktualisierung (z.B. bei Korrekturen des Abstimmungsprotkolls)
+- **datetime_modified**: Letzte Aktualisierung (z.B. bei Korrekturen des Abstimmungsprotkolls)
 
 
 
@@ -3891,9 +4839,18 @@ URI: [ops:Voting](https://ch.paf.link/schema/operations/Voting)
  classDiagram
     class Voting
     click Voting href "../Voting/"
+      HasIdentification <|-- Voting
+        click HasIdentification href "../HasIdentification/"
+      HasCreationModificationDates <|-- Voting
+        click HasCreationModificationDates href "../HasCreationModificationDates/"
+      
       Voting : actor_id
         
       Voting : affair_id
+        
+      Voting : date_created
+        
+      Voting : date_modified
         
       Voting : datetime_begin
         
@@ -3901,9 +4858,9 @@ URI: [ops:Voting](https://ch.paf.link/schema/operations/Voting)
         
       Voting : datetime_end
         
-      Voting : datetime_updated
+      Voting : datetime_modified
         
-      Voting : id
+      Voting : global_uri
         
       Voting : label_abstention
         
@@ -3912,6 +4869,8 @@ URI: [ops:Voting](https://ch.paf.link/schema/operations/Voting)
       Voting : label_yes
         
       Voting : landing_page
+        
+      Voting : local_id
         
       Voting : majority_count
         
@@ -3981,19 +4940,23 @@ URI: [ops:Voting](https://ch.paf.link/schema/operations/Voting)
     
 
         
+      Voting : wikidata_uri
+        
       
 ```
 
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **Voting** [ [HasIdentification](# [HasIdentification) [HasCreationModificationDates](#HasCreationModificationDates)]
+
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](#id) | 1 <br/> [String](#String) |  | direct |
 | [datetime_begin](#datetime_begin) | 0..1 <br/> [Datetime](#Datetime) | [en] The date and time when the meeting or voting begins | direct |
 | [datetime_end](#datetime_end) | 0..1 <br/> [Datetime](#Datetime) | [en] The date and time when the meeting or voting ends | direct |
 | [voting_type](#voting_type) | 0..1 <br/> [VotingTypeEnum](#VotingTypeEnum) | [en] Type of voting procedure (preliminary, final, secret, etc | direct |
@@ -4018,8 +4981,13 @@ URI: [ops:Voting](https://ch.paf.link/schema/operations/Voting)
 | [parent_agenda_item](#parent_agenda_item) | 0..1 <br/> [String](#String) | [en] If needed, this slot builds a hierarchy of agenda items | direct |
 | [affair_id](#affair_id) | 0..1 <br/> [String](#String) | [en] The connection to the affairs (business items) of the agenda item | direct |
 | [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
-| [datetime_updated](#datetime_updated) | 0..1 <br/> [Datetime](#Datetime) | The last time this record was updated | direct |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The time this record was created | direct |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
 
 
 
@@ -4085,8 +5053,10 @@ description: '[en] A voting procedure with individual votes and results.
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- HasCreationModificationDates
 slots:
-- id
 - datetime_begin
 - datetime_end
 - voting_type
@@ -4111,8 +5081,6 @@ slots:
 - parent_agenda_item
 - affair_id
 - actor_id
-- datetime_updated
-- datetime_created
 
 ```
 </details>
@@ -4128,32 +5096,10 @@ description: '[en] A voting procedure with individual votes and results.
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- HasCreationModificationDates
 attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: Voting
-    domain_of:
-    - Container
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    - TextSegment
-    - Motion
-    - Media
-    range: string
-    required: true
   datetime_begin:
     name: datetime_begin
     description: '[en] The date and time when the meeting or voting begins.
@@ -4545,43 +5491,115 @@ attributes:
     - IndividualAttendance
     - Speech
     range: string
-  datetime_updated:
-    name: datetime_updated
-    description: The last time this record was updated
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+      [en] Local identifier. For example, a UUID from the council information system.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_updated
+    slot_uri: mcm:localId
+    alias: local_id
     owner: Voting
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    range: datetime
-  datetime_created:
-    name: datetime_created
-    description: The time this record was created
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+
+      [en] A unique, globally valid URI for the entity.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: Voting
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: Voting
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+  date_created:
+    name: date_created
+    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+
+      [en] The date when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateCreated
+    alias: date_created
+    owner: Voting
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_created:
+    name: datetime_created
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+
+      [en] The date and time when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeCreated
     alias: datetime_created
     owner: Voting
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
+    - HasCreationModificationDates
+    range: datetime
+  date_modified:
+    name: date_modified
+    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+
+      [en] The date when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateModified
+    alias: date_modified
+    owner: Voting
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_modified:
+    name: datetime_modified
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
+      wurde.
+
+      [en] The date and time when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeModified
+    alias: datetime_modified
+    owner: Voting
+    domain_of:
+    - HasCreationModificationDates
     range: datetime
 
 ```
@@ -4717,7 +5735,7 @@ Das Feld **description** kann zusätzliche Informationen erfassen:
 ## Zeitstempel
 
 - **datetime_created**: Zeitpunkt der Stimmabgabe
-- **datetime_updated**: Letzte Aktualisierung (z.B. bei Korrekturen) (Nicole: Bei Abstimmungen gibt es keine Korrekturen, sondern sie werden wiederholt)
+- **datetime_modified**: Letzte Aktualisierung (z.B. bei Korrekturen) (Nicole: Bei Abstimmungen gibt es keine Korrekturen, sondern sie werden wiederholt)
 
 ## Anwesenheit vs. Stimmabgabe
 
@@ -4760,13 +5778,22 @@ URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
  classDiagram
     class IndividualVote
     click IndividualVote href "../IndividualVote/"
+      HasIdentification <|-- IndividualVote
+        click HasIdentification href "../HasIdentification/"
+      HasCreationModificationDates <|-- IndividualVote
+        click HasCreationModificationDates href "../HasCreationModificationDates/"
+      
       IndividualVote : actor_id
+        
+      IndividualVote : date_created
+        
+      IndividualVote : date_modified
         
       IndividualVote : datetime_created
         
-      IndividualVote : datetime_updated
+      IndividualVote : datetime_modified
         
-      IndividualVote : id
+      IndividualVote : global_uri
         
       IndividualVote : individual_vote_type
         
@@ -4778,6 +5805,8 @@ URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
         click IndividualVoteTypeEnum href "../IndividualVoteTypeEnum/"
     
 
+        
+      IndividualVote : local_id
         
       IndividualVote : parent_voting
         
@@ -4796,27 +5825,36 @@ URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
         
       IndividualVote : weight
         
+      IndividualVote : wikidata_uri
+        
       
 ```
 
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **IndividualVote** [ [HasIdentification](# [HasIdentification) [HasCreationModificationDates](#HasCreationModificationDates)]
+
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](#id) | 1 <br/> [String](#String) |  | direct |
 | [parent_voting](#parent_voting) | 0..1 <br/> [Voting](#Voting) | [en] The ID of the voting associated with the individual vote | direct |
 | [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
 | [seat_nr](#seat_nr) | 0..1 <br/> [String](#String) | [en] The seat number of the individual vote, if applicable | direct |
 | [weight](#weight) | 0..1 <br/> [Integer](#Integer) | [en] The number of votes held by the individual, if applicable (e | direct |
 | [individual_vote_type](#individual_vote_type) | 0..1 <br/> [IndividualVoteTypeEnum](#IndividualVoteTypeEnum) | [en] Type of vote cast (yes, no, abstention, absent, etc | direct |
 | [type_label](#type_label) | 0..1 <br/> [String](#String) | [en] Custom type label when standard type values don't apply | direct |
-| [datetime_updated](#datetime_updated) | 0..1 <br/> [Datetime](#Datetime) | The last time this record was updated | direct |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The time this record was created | direct |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
 
 
 
@@ -4880,16 +5918,16 @@ description: '[en] An individual vote cast by a member during a voting procedure
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- HasCreationModificationDates
 slots:
-- id
 - parent_voting
 - actor_id
 - seat_nr
 - weight
 - individual_vote_type
 - type_label
-- datetime_updated
-- datetime_created
 
 ```
 </details>
@@ -4905,32 +5943,10 @@ description: '[en] An individual vote cast by a member during a voting procedure
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- HasCreationModificationDates
 attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: IndividualVote
-    domain_of:
-    - Container
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    - TextSegment
-    - Motion
-    - Media
-    range: string
-    required: true
   parent_voting:
     name: parent_voting
     description: '[en] The ID of the voting associated with the individual vote.
@@ -5031,43 +6047,115 @@ attributes:
     - IndividualVote
     - Election
     range: string
-  datetime_updated:
-    name: datetime_updated
-    description: The last time this record was updated
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+      [en] Local identifier. For example, a UUID from the council information system.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_updated
+    slot_uri: mcm:localId
+    alias: local_id
     owner: IndividualVote
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    range: datetime
-  datetime_created:
-    name: datetime_created
-    description: The time this record was created
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+
+      [en] A unique, globally valid URI for the entity.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: IndividualVote
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: IndividualVote
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+  date_created:
+    name: date_created
+    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+
+      [en] The date when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateCreated
+    alias: date_created
+    owner: IndividualVote
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_created:
+    name: datetime_created
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+
+      [en] The date and time when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeCreated
     alias: datetime_created
     owner: IndividualVote
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
+    - HasCreationModificationDates
+    range: datetime
+  date_modified:
+    name: date_modified
+    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+
+      [en] The date when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateModified
+    alias: date_modified
+    owner: IndividualVote
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_modified:
+    name: datetime_modified
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
+      wurde.
+
+      [en] The date and time when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeModified
+    alias: datetime_modified
+    owner: IndividualVote
+    domain_of:
+    - HasCreationModificationDates
     range: datetime
 
 ```
@@ -5247,7 +6335,7 @@ Jeder Wahlgang wird als separate Election-Entität erfasst, verbunden über das 
 ## Zeitstempel
 
 - **datetime_created**: Zeitpunkt der Durchführung
-- **datetime_updated**: Letzte Aktualisierung
+- **datetime_modified**: Letzte Aktualisierung
 
 ## URL und Dokumentation
 
@@ -5317,9 +6405,18 @@ URI: [ops:Election](https://ch.paf.link/schema/operations/Election)
  classDiagram
     class Election
     click Election href "../Election/"
+      HasIdentification <|-- Election
+        click HasIdentification href "../HasIdentification/"
+      HasCreationModificationDates <|-- Election
+        click HasCreationModificationDates href "../HasCreationModificationDates/"
+      
       Election : actor_id
         
       Election : affair_id
+        
+      Election : date_created
+        
+      Election : date_modified
         
       Election : datetime_begin
         
@@ -5327,7 +6424,7 @@ URI: [ops:Election](https://ch.paf.link/schema/operations/Election)
         
       Election : datetime_end
         
-      Election : datetime_updated
+      Election : datetime_modified
         
       Election : election_type
         
@@ -5340,9 +6437,11 @@ URI: [ops:Election](https://ch.paf.link/schema/operations/Election)
     
 
         
-      Election : id
+      Election : global_uri
         
       Election : landing_page
+        
+      Election : local_id
         
       Election : majority_count
         
@@ -5371,19 +6470,23 @@ URI: [ops:Election](https://ch.paf.link/schema/operations/Election)
         
       Election : type_label
         
+      Election : wikidata_uri
+        
       
 ```
 
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **Election** [ [HasIdentification](# [HasIdentification) [HasCreationModificationDates](#HasCreationModificationDates)]
+
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](#id) | 1 <br/> [String](#String) |  | direct |
 | [datetime_begin](#datetime_begin) | 0..1 <br/> [Datetime](#Datetime) | [en] The date and time when the meeting or voting begins | direct |
 | [datetime_end](#datetime_end) | 0..1 <br/> [Datetime](#Datetime) | [en] The date and time when the meeting or voting ends | direct |
 | [election_type](#election_type) | 0..1 <br/> [ElectionTypeEnum](#ElectionTypeEnum) | Type of election procedure | direct |
@@ -5399,8 +6502,13 @@ URI: [ops:Election](https://ch.paf.link/schema/operations/Election)
 | [parent_agenda_item](#parent_agenda_item) | 0..1 <br/> [String](#String) | [en] If needed, this slot builds a hierarchy of agenda items | direct |
 | [affair_id](#affair_id) | 0..1 <br/> [String](#String) | [en] The connection to the affairs (business items) of the agenda item | direct |
 | [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
-| [datetime_updated](#datetime_updated) | 0..1 <br/> [Datetime](#Datetime) | The last time this record was updated | direct |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The time this record was created | direct |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
 
 
 
@@ -5464,8 +6572,10 @@ description: '[en] An election procedure for selecting persons to positions.
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- HasCreationModificationDates
 slots:
-- id
 - datetime_begin
 - datetime_end
 - election_type
@@ -5481,8 +6591,6 @@ slots:
 - parent_agenda_item
 - affair_id
 - actor_id
-- datetime_updated
-- datetime_created
 
 ```
 </details>
@@ -5498,32 +6606,10 @@ description: '[en] An election procedure for selecting persons to positions.
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- HasCreationModificationDates
 attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: Election
-    domain_of:
-    - Container
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    - TextSegment
-    - Motion
-    - Media
-    range: string
-    required: true
   datetime_begin:
     name: datetime_begin
     description: '[en] The date and time when the meeting or voting begins.
@@ -5772,43 +6858,115 @@ attributes:
     - IndividualAttendance
     - Speech
     range: string
-  datetime_updated:
-    name: datetime_updated
-    description: The last time this record was updated
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+      [en] Local identifier. For example, a UUID from the council information system.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_updated
+    slot_uri: mcm:localId
+    alias: local_id
     owner: Election
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    range: datetime
-  datetime_created:
-    name: datetime_created
-    description: The time this record was created
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+
+      [en] A unique, globally valid URI for the entity.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: Election
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: Election
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+  date_created:
+    name: date_created
+    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+
+      [en] The date when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateCreated
+    alias: date_created
+    owner: Election
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_created:
+    name: datetime_created
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+
+      [en] The date and time when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeCreated
     alias: datetime_created
     owner: Election
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
+    - HasCreationModificationDates
+    range: datetime
+  date_modified:
+    name: date_modified
+    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+
+      [en] The date when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateModified
+    alias: date_modified
+    owner: Election
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_modified:
+    name: datetime_modified
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
+      wurde.
+
+      [en] The date and time when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeModified
+    alias: datetime_modified
+    owner: Election
+    domain_of:
+    - HasCreationModificationDates
     range: datetime
 
 ```
@@ -5979,9 +7137,18 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
  classDiagram
     class Speech
     click Speech href "../Speech/"
+      HasIdentification <|-- Speech
+        click HasIdentification href "../HasIdentification/"
+      HasCreationModificationDates <|-- Speech
+        click HasCreationModificationDates href "../HasCreationModificationDates/"
+      
       Speech : actor_fullname
         
       Speech : actor_id
+        
+      Speech : date_created
+        
+      Speech : date_modified
         
       Speech : datetime_begin
         
@@ -5989,13 +7156,15 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
         
       Speech : datetime_end
         
-      Speech : datetime_updated
+      Speech : datetime_modified
         
-      Speech : id
+      Speech : global_uri
         
       Speech : landing_page
         
       Speech : language
+        
+      Speech : local_id
         
       Speech : media_format
         
@@ -6013,20 +7182,24 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
         
       Speech : text_type
         
+      Speech : wikidata_uri
+        
       
 ```
 
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **Speech** [ [HasIdentification](# [HasIdentification) [HasCreationModificationDates](#HasCreationModificationDates)]
+
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](#id) | 1 <br/> [String](#String) |  | direct |
-| [language](#language) | 1 <br/> [String](#String) | Language code in ISO 639-1 format | direct |
+| [language](#language) | 0..1 <br/> [String](#String) | [de] Sprachcode im ISO 639-1 Format | direct |
 | [start](#start) | 0..1 <br/> [String](#String) | Start indicator or position | direct |
 | [datetime_begin](#datetime_begin) | 0..1 <br/> [Datetime](#Datetime) | [en] The date and time when the meeting or voting begins | direct |
 | [datetime_end](#datetime_end) | 0..1 <br/> [Datetime](#Datetime) | [en] The date and time when the meeting or voting ends | direct |
@@ -6040,8 +7213,13 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
 | [media_url](#media_url) | 0..1 <br/> [String](#String) | URL to media file (audio/video) | direct |
 | [media_type](#media_type) | 0..1 <br/> [String](#String) | Type of media (audio, video, document) | direct |
 | [media_format](#media_format) | 0..1 <br/> [String](#String) | MIME type of the media file | direct |
-| [datetime_updated](#datetime_updated) | 0..1 <br/> [Datetime](#Datetime) | The last time this record was updated | direct |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The time this record was created | direct |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
 
 
 
@@ -6106,8 +7284,10 @@ description: '[en] A speech or statement made during a meeting (also called Votu
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- HasCreationModificationDates
 slots:
-- id
 - language
 - start
 - datetime_begin
@@ -6122,8 +7302,6 @@ slots:
 - media_url
 - media_type
 - media_format
-- datetime_updated
-- datetime_created
 
 ```
 </details>
@@ -6140,44 +7318,27 @@ description: '[en] A speech or statement made during a meeting (also called Votu
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- HasCreationModificationDates
 attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: Speech
-    domain_of:
-    - Container
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    - TextSegment
-    - Motion
-    - Media
-    range: string
-    required: true
   language:
     name: language
-    description: Language code in ISO 639-1 format
+    description: '[de] Sprachcode im ISO 639-1 Format.
+
+      [en] Language code in ISO 639-1 format.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
+    slot_uri: mcm:language
     alias: language
     owner: Speech
     domain_of:
     - Speech
     - MultilingualString
+    - MultilingualValue
     range: string
-    required: true
     pattern: ^[a-z]{2}$
   start:
     name: start
@@ -6356,43 +7517,115 @@ attributes:
     domain_of:
     - Speech
     range: string
-  datetime_updated:
-    name: datetime_updated
-    description: The last time this record was updated
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+      [en] Local identifier. For example, a UUID from the council information system.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_updated
+    slot_uri: mcm:localId
+    alias: local_id
     owner: Speech
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    range: datetime
-  datetime_created:
-    name: datetime_created
-    description: The time this record was created
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+
+      [en] A unique, globally valid URI for the entity.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: Speech
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: Speech
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+  date_created:
+    name: date_created
+    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+
+      [en] The date when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateCreated
+    alias: date_created
+    owner: Speech
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_created:
+    name: datetime_created
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+
+      [en] The date and time when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeCreated
     alias: datetime_created
     owner: Speech
     domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
+    - HasCreationModificationDates
+    range: datetime
+  date_modified:
+    name: date_modified
+    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+
+      [en] The date when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateModified
+    alias: date_modified
+    owner: Speech
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_modified:
+    name: datetime_modified
+    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
+      wurde.
+
+      [en] The date and time when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeModified
+    alias: datetime_modified
+    owner: Speech
+    domain_of:
+    - HasCreationModificationDates
     range: datetime
 
 ```
@@ -6501,9 +7734,16 @@ URI: [ops:TextSegment](https://ch.paf.link/schema/operations/TextSegment)
  classDiagram
     class TextSegment
     click TextSegment href "../TextSegment/"
-      TextSegment : id
+      HasIdentification <|-- TextSegment
+        click HasIdentification href "../HasIdentification/"
+      
+      TextSegment : global_uri
+        
+      TextSegment : local_id
         
       TextSegment : text
+        
+      TextSegment : wikidata_uri
         
       
 ```
@@ -6511,14 +7751,19 @@ URI: [ops:TextSegment](https://ch.paf.link/schema/operations/TextSegment)
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **TextSegment** [ [HasIdentification](# [HasIdentification)]
+
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](#id) | 1 <br/> [String](#String) |  | direct |
 | [text](#text) | 1 <br/> [String](#String) |  | direct |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
 
 
 
@@ -6576,8 +7821,9 @@ description: '[en] A text segment such as cross-references or subtitles in meeti
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
 slots:
-- id
 - text
 
 ```
@@ -6595,32 +7841,9 @@ description: '[en] A text segment such as cross-references or subtitles in meeti
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
 attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: TextSegment
-    domain_of:
-    - Container
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    - TextSegment
-    - Motion
-    - Media
-    range: string
-    required: true
   text:
     name: text
     from_schema: https://ch.paf.link/schema/operations
@@ -6633,6 +7856,55 @@ attributes:
     - MultilingualString
     range: string
     required: true
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+      [en] Local identifier. For example, a UUID from the council information system.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:localId
+    alias: local_id
+    owner: TextSegment
+    domain_of:
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+
+      [en] A unique, globally valid URI for the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: TextSegment
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: TextSegment
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
 
 ```
 </details>
@@ -6664,7 +7936,12 @@ URI: [ops:Media](https://ch.paf.link/schema/operations/Media)
  classDiagram
     class Media
     click Media href "../Media/"
-      Media : id
+      HasIdentification <|-- Media
+        click HasIdentification href "../HasIdentification/"
+      
+      Media : global_uri
+        
+      Media : local_id
         
       Media : media_type
         
@@ -6685,24 +7962,31 @@ URI: [ops:Media](https://ch.paf.link/schema/operations/Media)
         
       Media : version
         
+      Media : wikidata_uri
+        
       
 ```
 
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **Media** [ [HasIdentification](# [HasIdentification)]
+
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](#id) | 1 <br/> [String](#String) |  | direct |
 | [title](#title) | 0..1 <br/> [String](#String) |  | direct |
 | [media_type](#media_type) | 0..1 <br/> [String](#String) | Type of media (audio, video, document) | direct |
 | [url](#url) | * <br/> [MultilingualString](#MultilingualString) |  | direct |
 | [version](#version) | 0..1 <br/> [String](#String) | Version number or identifier | direct |
 | [parent_type](#parent_type) | 0..1 <br/> [String](#String) | Type of parent object (meeting, agenda, speech, affair) | direct |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
 
 
 
@@ -6761,8 +8045,9 @@ description: '[en] Media files or documents (including protocols in PDF/HTML/WOR
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
 slots:
-- id
 - title
 - media_type
 - url
@@ -6785,32 +8070,9 @@ description: '[en] Media files or documents (including protocols in PDF/HTML/WOR
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
 attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: Media
-    domain_of:
-    - Container
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    - TextSegment
-    - Motion
-    - Media
-    range: string
-    required: true
   title:
     name: title
     from_schema: https://ch.paf.link/schema/operations
@@ -6842,6 +8104,7 @@ attributes:
     domain_of:
     - Session
     - Meeting
+    - AgendaItem
     - Media
     range: MultilingualString
     multivalued: true
@@ -6867,6 +8130,55 @@ attributes:
     domain_of:
     - Media
     range: string
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+      [en] Local identifier. For example, a UUID from the council information system.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:localId
+    alias: local_id
+    owner: Media
+    domain_of:
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+
+      [en] A unique, globally valid URI for the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: Media
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: Media
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
 
 ```
 </details>
@@ -6913,7 +8225,7 @@ URI: [ops:MultilingualString](https://ch.paf.link/schema/operations/Multilingual
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [text](#text) | 1 <br/> [String](#String) |  | direct |
-| [language](#language) | 1 <br/> [String](#String) | Language code in ISO 639-1 format | direct |
+| [language](#language) | 1 <br/> [String](#String) | [de] Sprachcode im ISO 639-1 Format | direct |
 
 
 
@@ -6930,6 +8242,7 @@ URI: [ops:MultilingualString](https://ch.paf.link/schema/operations/Multilingual
 | [Meeting](#Meeting) | [url](#url) | range | [MultilingualString](#MultilingualString) |
 | [AgendaItem](#AgendaItem) | [agenda_item_title](#agenda_item_title) | range | [MultilingualString](#MultilingualString) |
 | [AgendaItem](#AgendaItem) | [agenda_item_description](#agenda_item_description) | range | [MultilingualString](#MultilingualString) |
+| [AgendaItem](#AgendaItem) | [url](#url) | range | [MultilingualString](#MultilingualString) |
 | [Voting](#Voting) | [voting_title](#voting_title) | range | [MultilingualString](#MultilingualString) |
 | [Media](#Media) | [url](#url) | range | [MultilingualString](#MultilingualString) |
 
@@ -6988,6 +8301,10 @@ from_schema: https://ch.paf.link/schema/operations
 slots:
 - text
 - language
+slot_usage:
+  language:
+    name: language
+    required: true
 
 ```
 </details>
@@ -7003,6 +8320,10 @@ description: '[en] A string that can contain text in multiple languages.
 
   '
 from_schema: https://ch.paf.link/schema/operations
+slot_usage:
+  language:
+    name: language
+    required: true
 attributes:
   text:
     name: text
@@ -7018,14 +8339,20 @@ attributes:
     required: true
   language:
     name: language
-    description: Language code in ISO 639-1 format
+    description: '[de] Sprachcode im ISO 639-1 Format.
+
+      [en] Language code in ISO 639-1 format.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
+    slot_uri: mcm:language
     alias: language
     owner: MultilingualString
     domain_of:
     - Speech
     - MultilingualString
+    - MultilingualValue
     range: string
     required: true
     pattern: ^[a-z]{2}$
@@ -7049,6 +8376,9 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
  classDiagram
     class Container
     click Container href "../Container/"
+      HasIdentification <|-- Container
+        click HasIdentification href "../HasIdentification/"
+      
       Container : agenda_items
         
           
@@ -7082,7 +8412,7 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
     
 
         
-      Container : id
+      Container : global_uri
         
       Container : individual_attendances
         
@@ -7116,6 +8446,8 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
         click Legislature href "../Legislature/"
     
 
+        
+      Container : local_id
         
       Container : meetings
         
@@ -7172,13 +8504,18 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
     
 
         
+      Container : wikidata_uri
+        
       
 ```
 
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **Container** [ [HasIdentification](# [HasIdentification)]
+
 
 ## Class Properties
 
@@ -7191,7 +8528,6 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](#id) | 1 <br/> [String](#String) |  | direct |
 | [legislatures](#legislatures) | * <br/> [Legislature](#Legislature) |  | direct |
 | [sessions](#sessions) | * <br/> [Session](#Session) |  | direct |
 | [meetings](#meetings) | * <br/> [Meeting](#Meeting) |  | direct |
@@ -7203,6 +8539,9 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
 | [individual_attendances](#individual_attendances) | * <br/> [IndividualAttendance](#IndividualAttendance) | Collection of individual attendance records | direct |
 | [speeches](#speeches) | * <br/> [Speech](#Speech) | Collection of speech records | direct |
 | [resolutions](#resolutions) | * <br/> [Resolution](#Resolution) | Collection of resolutionrecords | direct |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
 
 
 
@@ -7254,8 +8593,9 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
 ```yaml
 name: Container
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
 slots:
-- id
 - legislatures
 - sessions
 - meetings
@@ -7278,32 +8618,9 @@ tree_root: true
 ```yaml
 name: Container
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
 attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: Container
-    domain_of:
-    - Container
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    - TextSegment
-    - Motion
-    - Media
-    range: string
-    required: true
   legislatures:
     name: legislatures
     from_schema: https://ch.paf.link/schema/operations
@@ -7445,6 +8762,55 @@ attributes:
     range: Resolution
     multivalued: true
     inlined_as_list: true
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+      [en] Local identifier. For example, a UUID from the council information system.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:localId
+    alias: local_id
+    owner: Container
+    domain_of:
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+
+      [en] A unique, globally valid URI for the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: Container
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: Container
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
 tree_root: true
 
 ```

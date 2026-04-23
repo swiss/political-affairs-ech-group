@@ -3,9 +3,9 @@
 # Slot: datetime_begin_actual 
 
 
-_[en] Actual date and time for the start of the meeting or agenda item._
+_[de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer._
 
-_[de] Tatsächliches Datum und Uhrzeit für den Beginn der Sitzung oder des Tagesordnungspunkts._
+_[en] The actual start date and time of an event or occurrence with time duration._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [ops:datetime_begin_actual](https://ch.paf.link/schema/operations/datetime_begin_actual)
+URI: [mcm:datetimeBeginActual](https://ld.ech.ch/schema/0292/meta-common/datetimeBeginActual)
 Alias: datetime_begin_actual
 
 <!-- no inheritance hierarchy -->
@@ -26,7 +26,11 @@ Alias: datetime_begin_actual
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
+| [IsEventWithDuration](IsEventWithDuration.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder V... |  no  |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
+| [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
+| [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
 
 
 
@@ -40,7 +44,8 @@ Alias: datetime_begin_actual
 | Property | Value |
 | --- | --- |
 | Range | [Datetime](Datetime.md) |
-| Domain Of | [AgendaItem](AgendaItem.md) |
+| Domain Of | [IsEventWithDuration](IsEventWithDuration.md) |
+| Slot URI | [mcm:datetimeBeginActual](https://ld.ech.ch/schema/0292/meta-common/datetimeBeginActual) |
 
 ### Cardinality and Requirements
 
@@ -74,7 +79,7 @@ Alias: datetime_begin_actual
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ops:datetime_begin_actual |
+| self | mcm:datetimeBeginActual |
 | native | ops:datetime_begin_actual |
 
 
@@ -85,16 +90,18 @@ Alias: datetime_begin_actual
 <details>
 ```yaml
 name: datetime_begin_actual
-description: '[en] Actual date and time for the start of the meeting or agenda item.
+description: '[de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder
+  Vorkommens mit Zeitdauer.
 
-  [de] Tatsächliches Datum und Uhrzeit für den Beginn der Sitzung oder des Tagesordnungspunkts.
+  [en] The actual start date and time of an event or occurrence with time duration.
 
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
+slot_uri: mcm:datetimeBeginActual
 alias: datetime_begin_actual
 domain_of:
-- AgendaItem
+- IsEventWithDuration
 range: datetime
 
 ```

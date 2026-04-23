@@ -3,9 +3,9 @@
 # Slot: date_begin_planned 
 
 
-_[en] Planned start date of the meeting or session._
+_[de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer._
 
-_[de] Geplantes Startdatum der Sitzung oder Session._
+_[en] The planned start date of an event or occurrence with time duration._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [ops:date_begin_planned](https://ch.paf.link/schema/operations/date_begin_planned)
+URI: [mcm:dateBeginPlanned](https://ld.ech.ch/schema/0292/meta-common/dateBeginPlanned)
 Alias: date_begin_planned
 
 <!-- no inheritance hierarchy -->
@@ -27,7 +27,10 @@ Alias: date_begin_planned
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
+| [IsEventWithDuration](IsEventWithDuration.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder V... |  no  |
+| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
+| [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
 
 
 
@@ -41,7 +44,8 @@ Alias: date_begin_planned
 | Property | Value |
 | --- | --- |
 | Range | [Date](Date.md) |
-| Domain Of | [Session](Session.md), [Meeting](Meeting.md) |
+| Domain Of | [IsEventWithDuration](IsEventWithDuration.md) |
+| Slot URI | [mcm:dateBeginPlanned](https://ld.ech.ch/schema/0292/meta-common/dateBeginPlanned) |
 
 ### Cardinality and Requirements
 
@@ -75,7 +79,7 @@ Alias: date_begin_planned
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ops:date_begin_planned |
+| self | mcm:dateBeginPlanned |
 | native | ops:date_begin_planned |
 
 
@@ -86,17 +90,17 @@ Alias: date_begin_planned
 <details>
 ```yaml
 name: date_begin_planned
-description: '[en] Planned start date of the meeting or session.
+description: '[de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer.
 
-  [de] Geplantes Startdatum der Sitzung oder Session.
+  [en] The planned start date of an event or occurrence with time duration.
 
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
+slot_uri: mcm:dateBeginPlanned
 alias: date_begin_planned
 domain_of:
-- Session
-- Meeting
+- IsEventWithDuration
 range: date
 
 ```

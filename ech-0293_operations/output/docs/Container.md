@@ -14,6 +14,9 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
  classDiagram
     class Container
     click Container href "../Container/"
+      HasIdentification <|-- Container
+        click HasIdentification href "../HasIdentification/"
+      
       Container : agenda_items
         
           
@@ -47,7 +50,7 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
     
 
         
-      Container : id
+      Container : global_uri
         
       Container : individual_attendances
         
@@ -81,6 +84,8 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
         click Legislature href "../Legislature/"
     
 
+        
+      Container : local_id
         
       Container : meetings
         
@@ -137,13 +142,18 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
     
 
         
+      Container : wikidata_uri
+        
       
 ```
 
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **Container** [ [HasIdentification](HasIdentification.md)]
+
 
 ## Class Properties
 
@@ -156,7 +166,6 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 1 <br/> [String](String.md) |  | direct |
 | [legislatures](legislatures.md) | * <br/> [Legislature](Legislature.md) |  | direct |
 | [sessions](sessions.md) | * <br/> [Session](Session.md) |  | direct |
 | [meetings](meetings.md) | * <br/> [Meeting](Meeting.md) |  | direct |
@@ -168,6 +177,9 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
 | [individual_attendances](individual_attendances.md) | * <br/> [IndividualAttendance](IndividualAttendance.md) | Collection of individual attendance records | direct |
 | [speeches](speeches.md) | * <br/> [Speech](Speech.md) | Collection of speech records | direct |
 | [resolutions](resolutions.md) | * <br/> [Resolution](Resolution.md) | Collection of resolutionrecords | direct |
+| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |
+| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](HasIdentification.md) |
+| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](HasIdentification.md) |
 
 
 
@@ -219,8 +231,9 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
 ```yaml
 name: Container
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
 slots:
-- id
 - legislatures
 - sessions
 - meetings
@@ -243,32 +256,9 @@ tree_root: true
 ```yaml
 name: Container
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
 attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: Container
-    domain_of:
-    - Container
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    - TextSegment
-    - Motion
-    - Media
-    range: string
-    required: true
   legislatures:
     name: legislatures
     from_schema: https://ch.paf.link/schema/operations
@@ -410,6 +400,55 @@ attributes:
     range: Resolution
     multivalued: true
     inlined_as_list: true
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+      [en] Local identifier. For example, a UUID from the council information system.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:localId
+    alias: local_id
+    owner: Container
+    domain_of:
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+
+      [en] A unique, globally valid URI for the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: Container
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: Container
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
 tree_root: true
 
 ```

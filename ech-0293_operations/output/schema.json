@@ -56,8 +56,56 @@
                     "$ref": "#/$defs/AgendaItemTypeEnum",
                     "description": "[en] Type of agenda item, distinguishing individual items from groups.\n[de] Art des Traktandums, unterscheidet Einzeltraktanden von Traktandengruppen.\n"
                 },
+                "date_begin_actual": {
+                    "description": "[de] Das tats\u00e4chliche Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual start date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_begin_planned": {
+                    "description": "[de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned start date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_created": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date when an entity was created.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_end_actual": {
+                    "description": "[de] Das tats\u00e4chliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual end date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_end_planned": {
+                    "description": "[de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned end date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_modified": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date when an entity was last modified.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "datetime_begin_actual": {
-                    "description": "[en] Actual date and time for the start of the meeting or agenda item.\n[de] Tats\u00e4chliches Datum und Uhrzeit f\u00fcr den Beginn der Sitzung oder des Tagesordnungspunkts.\n",
+                    "description": "[de] Das tats\u00e4chliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual start date and time of an event or occurrence with time duration.\n",
                     "format": "date-time",
                     "type": [
                         "string",
@@ -65,7 +113,7 @@
                     ]
                 },
                 "datetime_begin_planned": {
-                    "description": "[en] Planned date and time for the start of the meeting or agenda item.\n[de] Geplantes Datum und Uhrzeit f\u00fcr den Beginn der Sitzung oder des Tagesordnungspunkts.\n",
+                    "description": "[de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned start date and time of an event or occurrence with time duration.\n",
                     "format": "date-time",
                     "type": [
                         "string",
@@ -73,20 +121,40 @@
                     ]
                 },
                 "datetime_created": {
-                    "description": "The time this record was created",
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date and time when an entity was created.\n",
                     "format": "date-time",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "datetime_updated": {
-                    "description": "The last time this record was updated",
+                "datetime_end_actual": {
+                    "description": "[de] Das tats\u00e4chliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual end date and time of an event or occurrence with time duration.\n",
                     "format": "date-time",
                     "type": [
                         "string",
                         "null"
                     ]
+                },
+                "datetime_end_planned": {
+                    "description": "[de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned end date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_modified": {
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date and time when an entity was last modified.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "global_uri": {
+                    "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
+                    "type": "string"
                 },
                 "has_resolution": {
                     "anyOf": [
@@ -99,9 +167,6 @@
                     ],
                     "description": "[en] The resolutionor decision taken on this agenda item.\n[de] Die Resolution oder Entscheidung zu diesem Traktandum.\n"
                 },
-                "id": {
-                    "type": "string"
-                },
                 "landing_page": {
                     "description": "[en] URL providing further information.\n[de] URL mit weiteren Informationen.\n",
                     "type": [
@@ -111,6 +176,13 @@
                 },
                 "leading_actor_id": {
                     "description": "[en] The leading department for the agenda item.\n[de] Das federf\u00fchrende Departement f\u00fcr den Tagesordnungspunkt.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "local_id": {
+                    "description": "[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n[en] Local identifier. For example, a UUID from the council information system.\n",
                     "type": [
                         "string",
                         "null"
@@ -150,10 +222,26 @@
                         "string",
                         "null"
                     ]
+                },
+                "url": {
+                    "items": {
+                        "$ref": "#/$defs/MultilingualString"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "wikidata_uri": {
+                    "description": "[de] Eine URI, die auf eine Wikidata-Entit\u00e4t verweist, z.B. https://www.wikidata.org/wiki/Q39 f\u00fcr die Schweiz.\n[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "id"
+                "global_uri"
             ],
             "title": "AgendaItem",
             "type": "object"
@@ -178,6 +266,22 @@
                         "null"
                     ]
                 },
+                "date_created": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date when an entity was created.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_modified": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date when an entity was last modified.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "datetime_begin": {
                     "description": "[en] The date and time when the meeting or voting begins.\n[de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.\n",
                     "format": "date-time",
@@ -187,23 +291,31 @@
                     ]
                 },
                 "datetime_created": {
-                    "description": "The time this record was created",
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date and time when an entity was created.\n",
                     "format": "date-time",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "datetime_updated": {
-                    "description": "The last time this record was updated",
+                "datetime_modified": {
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date and time when an entity was last modified.\n",
                     "format": "date-time",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "id": {
+                "global_uri": {
+                    "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
                     "type": "string"
+                },
+                "local_id": {
+                    "description": "[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n[en] Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "total_absent": {
                     "description": "[en] Total number of absent members. Distinction between absent/excused absent - presence is tracked on attendance list.\n[de] Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.\n",
@@ -225,10 +337,17 @@
                         "integer",
                         "null"
                     ]
+                },
+                "wikidata_uri": {
+                    "description": "[de] Eine URI, die auf eine Wikidata-Entit\u00e4t verweist, z.B. https://www.wikidata.org/wiki/Q39 f\u00fcr die Schweiz.\n[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "id"
+                "global_uri"
             ],
             "title": "Attendance",
             "type": "object"
@@ -276,7 +395,8 @@
                         "null"
                     ]
                 },
-                "id": {
+                "global_uri": {
+                    "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
                     "type": "string"
                 },
                 "individual_attendances": {
@@ -305,6 +425,13 @@
                     },
                     "type": [
                         "array",
+                        "null"
+                    ]
+                },
+                "local_id": {
+                    "description": "[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n[en] Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
                         "null"
                     ]
                 },
@@ -355,10 +482,17 @@
                         "array",
                         "null"
                     ]
+                },
+                "wikidata_uri": {
+                    "description": "[de] Eine URI, die auf eine Wikidata-Entit\u00e4t verweist, z.B. https://www.wikidata.org/wiki/Q39 f\u00fcr die Schweiz.\n[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "id"
+                "global_uri"
             ],
             "title": "Container",
             "type": "object"
@@ -381,6 +515,22 @@
                         "null"
                     ]
                 },
+                "date_created": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date when an entity was created.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_modified": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date when an entity was last modified.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "datetime_begin": {
                     "description": "[en] The date and time when the meeting or voting begins.\n[de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.\n",
                     "format": "date-time",
@@ -390,7 +540,7 @@
                     ]
                 },
                 "datetime_created": {
-                    "description": "The time this record was created",
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date and time when an entity was created.\n",
                     "format": "date-time",
                     "type": [
                         "string",
@@ -405,8 +555,8 @@
                         "null"
                     ]
                 },
-                "datetime_updated": {
-                    "description": "The last time this record was updated",
+                "datetime_modified": {
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date and time when an entity was last modified.\n",
                     "format": "date-time",
                     "type": [
                         "string",
@@ -417,11 +567,19 @@
                     "$ref": "#/$defs/ElectionTypeEnum",
                     "description": "Type of election procedure"
                 },
-                "id": {
+                "global_uri": {
+                    "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
                     "type": "string"
                 },
                 "landing_page": {
                     "description": "[en] URL providing further information.\n[de] URL mit weiteren Informationen.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "local_id": {
+                    "description": "[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n[en] Local identifier. For example, a UUID from the council information system.\n",
                     "type": [
                         "string",
                         "null"
@@ -485,10 +643,17 @@
                         "string",
                         "null"
                     ]
+                },
+                "wikidata_uri": {
+                    "description": "[de] Eine URI, die auf eine Wikidata-Entit\u00e4t verweist, z.B. https://www.wikidata.org/wiki/Q39 f\u00fcr die Schweiz.\n[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "id"
+                "global_uri"
             ],
             "title": "Election",
             "type": "object"
@@ -518,24 +683,48 @@
                     "$ref": "#/$defs/AttendanceTypeEnum",
                     "description": "Type of individual attendance"
                 },
+                "date_created": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date when an entity was created.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_modified": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date when an entity was last modified.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "datetime_created": {
-                    "description": "The time this record was created",
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date and time when an entity was created.\n",
                     "format": "date-time",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "datetime_updated": {
-                    "description": "The last time this record was updated",
+                "datetime_modified": {
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date and time when an entity was last modified.\n",
                     "format": "date-time",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "id": {
+                "global_uri": {
+                    "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
                     "type": "string"
+                },
+                "local_id": {
+                    "description": "[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n[en] Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "parent_voting": {
                     "description": "[en] The ID of the voting associated with the individual vote.\n[de] Die ID der Abstimmung, die mit der Einzelstimme verbunden ist.\n",
@@ -543,10 +732,17 @@
                         "string",
                         "null"
                     ]
+                },
+                "wikidata_uri": {
+                    "description": "[de] Eine URI, die auf eine Wikidata-Entit\u00e4t verweist, z.B. https://www.wikidata.org/wiki/Q39 f\u00fcr die Schweiz.\n[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "id"
+                "global_uri"
             ],
             "title": "IndividualAttendance",
             "type": "object"
@@ -562,28 +758,52 @@
                         "null"
                     ]
                 },
+                "date_created": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date when an entity was created.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_modified": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date when an entity was last modified.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "datetime_created": {
-                    "description": "The time this record was created",
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date and time when an entity was created.\n",
                     "format": "date-time",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "datetime_updated": {
-                    "description": "The last time this record was updated",
+                "datetime_modified": {
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date and time when an entity was last modified.\n",
                     "format": "date-time",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "id": {
+                "global_uri": {
+                    "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
                     "type": "string"
                 },
                 "individual_vote_type": {
                     "$ref": "#/$defs/IndividualVoteTypeEnum",
                     "description": "[en] Type of vote cast (yes, no, abstention, absent, etc.).\n[de] Art der abgegebenen Stimme (ja, nein, Enthaltung, abwesend, etc.).\n"
+                },
+                "local_id": {
+                    "description": "[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n[en] Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "parent_voting": {
                     "description": "[en] The ID of the voting associated with the individual vote.\n[de] Die ID der Abstimmung, die mit der Einzelstimme verbunden ist.\n",
@@ -612,10 +832,17 @@
                         "integer",
                         "null"
                     ]
+                },
+                "wikidata_uri": {
+                    "description": "[de] Eine URI, die auf eine Wikidata-Entit\u00e4t verweist, z.B. https://www.wikidata.org/wiki/Q39 f\u00fcr die Schweiz.\n[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "id"
+                "global_uri"
             ],
             "title": "IndividualVote",
             "type": "object"
@@ -670,30 +897,96 @@
                         "null"
                     ]
                 },
-                "date_begin": {
+                "date_begin_actual": {
+                    "description": "[de] Das tats\u00e4chliche Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual start date of an event or occurrence with time duration.\n",
                     "format": "date",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "date_end": {
+                "date_begin_planned": {
+                    "description": "[de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned start date of an event or occurrence with time duration.\n",
                     "format": "date",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "datetime_created": {
-                    "description": "The time this record was created",
+                "date_created": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date when an entity was created.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_end_actual": {
+                    "description": "[de] Das tats\u00e4chliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual end date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_end_planned": {
+                    "description": "[de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned end date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_modified": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date when an entity was last modified.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_begin_actual": {
+                    "description": "[de] Das tats\u00e4chliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual start date and time of an event or occurrence with time duration.\n",
                     "format": "date-time",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "datetime_updated": {
-                    "description": "The last time this record was updated",
+                "datetime_begin_planned": {
+                    "description": "[de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned start date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_created": {
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date and time when an entity was created.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_end_actual": {
+                    "description": "[de] Das tats\u00e4chliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual end date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_end_planned": {
+                    "description": "[de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned end date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_modified": {
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date and time when an entity was last modified.\n",
                     "format": "date-time",
                     "type": [
                         "string",
@@ -706,11 +999,19 @@
                         "null"
                     ]
                 },
-                "id": {
+                "global_uri": {
+                    "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
                     "type": "string"
                 },
                 "landing_page": {
                     "description": "[en] URL providing further information.\n[de] URL mit weiteren Informationen.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "local_id": {
+                    "description": "[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n[en] Local identifier. For example, a UUID from the council information system.\n",
                     "type": [
                         "string",
                         "null"
@@ -724,10 +1025,17 @@
                         "array",
                         "null"
                     ]
+                },
+                "wikidata_uri": {
+                    "description": "[de] Eine URI, die auf eine Wikidata-Entit\u00e4t verweist, z.B. https://www.wikidata.org/wiki/Q39 f\u00fcr die Schweiz.\n[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "id"
+                "global_uri"
             ],
             "title": "Legislature",
             "type": "object"
@@ -746,8 +1054,16 @@
             "additionalProperties": false,
             "description": "[en] Media files or documents (including protocols in PDF/HTML/WORD or links to audio/video).\n[de] Mediendateien oder Dokumente (einschlie\u00dflich Protokolle in PDF/HTML/WORD oder Links zu Audio/Video).",
             "properties": {
-                "id": {
+                "global_uri": {
+                    "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
                     "type": "string"
+                },
+                "local_id": {
+                    "description": "[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n[en] Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "media_type": {
                     "description": "Type of media (audio, video, document)",
@@ -784,10 +1100,17 @@
                         "string",
                         "null"
                     ]
+                },
+                "wikidata_uri": {
+                    "description": "[de] Eine URI, die auf eine Wikidata-Entit\u00e4t verweist, z.B. https://www.wikidata.org/wiki/Q39 f\u00fcr die Schweiz.\n[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "id"
+                "global_uri"
             ],
             "title": "Media",
             "type": "object"
@@ -831,6 +1154,7 @@
                     ]
                 },
                 "date_begin_actual": {
+                    "description": "[de] Das tats\u00e4chliche Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual start date of an event or occurrence with time duration.\n",
                     "format": "date",
                     "type": [
                         "string",
@@ -838,7 +1162,15 @@
                     ]
                 },
                 "date_begin_planned": {
-                    "description": "[en] Planned start date of the meeting or session.\n[de] Geplantes Startdatum der Sitzung oder Session.\n",
+                    "description": "[de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned start date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_created": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date when an entity was created.\n",
                     "format": "date",
                     "type": [
                         "string",
@@ -846,7 +1178,7 @@
                     ]
                 },
                 "date_end_actual": {
-                    "description": "[en] Actual end date of the meeting or session.\n[de] Tats\u00e4chliches Enddatum der Sitzung oder Session.\n",
+                    "description": "[de] Das tats\u00e4chliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual end date of an event or occurrence with time duration.\n",
                     "format": "date",
                     "type": [
                         "string",
@@ -854,23 +1186,63 @@
                     ]
                 },
                 "date_end_planned": {
-                    "description": "[en] Planned end date of the meeting or session.\n[de] Geplantes Enddatum der Sitzung oder Session.\n",
+                    "description": "[de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned end date of an event or occurrence with time duration.\n",
                     "format": "date",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "datetime_created": {
-                    "description": "The time this record was created",
+                "date_modified": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date when an entity was last modified.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_begin_actual": {
+                    "description": "[de] Das tats\u00e4chliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual start date and time of an event or occurrence with time duration.\n",
                     "format": "date-time",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "datetime_updated": {
-                    "description": "The last time this record was updated",
+                "datetime_begin_planned": {
+                    "description": "[de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned start date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_created": {
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date and time when an entity was created.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_end_actual": {
+                    "description": "[de] Das tats\u00e4chliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual end date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_end_planned": {
+                    "description": "[de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned end date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_modified": {
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date and time when an entity was last modified.\n",
                     "format": "date-time",
                     "type": [
                         "string",
@@ -882,6 +1254,10 @@
                         "string",
                         "null"
                     ]
+                },
+                "global_uri": {
+                    "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
+                    "type": "string"
                 },
                 "group_id": {
                     "description": "Identifier of the group or body",
@@ -897,11 +1273,15 @@
                         "null"
                     ]
                 },
-                "id": {
-                    "type": "string"
-                },
                 "landing_page": {
                     "description": "[en] URL providing further information.\n[de] URL mit weiteren Informationen.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "local_id": {
+                    "description": "[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n[en] Local identifier. For example, a UUID from the council information system.\n",
                     "type": [
                         "string",
                         "null"
@@ -977,10 +1357,17 @@
                         "array",
                         "null"
                     ]
+                },
+                "wikidata_uri": {
+                    "description": "[de] Eine URI, die auf eine Wikidata-Entit\u00e4t verweist, z.B. https://www.wikidata.org/wiki/Q39 f\u00fcr die Schweiz.\n[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "id"
+                "global_uri"
             ],
             "title": "Meeting",
             "type": "object"
@@ -1006,10 +1393,25 @@
                         "null"
                     ]
                 },
-                "id": {
+                "global_uri": {
+                    "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
                     "type": "string"
                 },
+                "local_id": {
+                    "description": "[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n[en] Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "title": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "wikidata_uri": {
+                    "description": "[de] Eine URI, die auf eine Wikidata-Entit\u00e4t verweist, z.B. https://www.wikidata.org/wiki/Q39 f\u00fcr die Schweiz.\n[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
                     "type": [
                         "string",
                         "null"
@@ -1017,7 +1419,7 @@
                 }
             },
             "required": [
-                "id"
+                "global_uri"
             ],
             "title": "Motion",
             "type": "object"
@@ -1027,7 +1429,7 @@
             "description": "[en] A string that can contain text in multiple languages.\n[de] Ein String, der Text in mehreren Sprachen enthalten kann.",
             "properties": {
                 "language": {
-                    "description": "Language code in ISO 639-1 format",
+                    "description": "[de] Sprachcode im ISO 639-1 Format.\n[en] Language code in ISO 639-1 format.\n",
                     "pattern": "^[a-z]{2}$",
                     "type": "string"
                 },
@@ -1040,6 +1442,29 @@
                 "language"
             ],
             "title": "MultilingualString",
+            "type": "object"
+        },
+        "MultilingualValue": {
+            "additionalProperties": false,
+            "description": "[de] Ein mehrsprachiger String mit Angabe der Sprache.\n[en] A multilingual string with language specification.",
+            "properties": {
+                "language": {
+                    "description": "[de] Sprachcode im ISO 639-1 Format.\n[en] Language code in ISO 639-1 format.\n",
+                    "pattern": "^[a-z]{2}$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "value": {
+                    "description": "[de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc.\n[en] The value of an information besides other attributes such as type, language, etc.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "MultilingualValue",
             "type": "object"
         },
         "Resolution": {
@@ -1097,8 +1522,32 @@
                         "null"
                     ]
                 },
+                "date_begin_actual": {
+                    "description": "[de] Das tats\u00e4chliche Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual start date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "date_begin_planned": {
-                    "description": "[en] Planned start date of the meeting or session.\n[de] Geplantes Startdatum der Sitzung oder Session.\n",
+                    "description": "[de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned start date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_created": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date when an entity was created.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_end_actual": {
+                    "description": "[de] Das tats\u00e4chliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual end date of an event or occurrence with time duration.\n",
                     "format": "date",
                     "type": [
                         "string",
@@ -1106,31 +1555,79 @@
                     ]
                 },
                 "date_end_planned": {
-                    "description": "[en] Planned end date of the meeting or session.\n[de] Geplantes Enddatum der Sitzung oder Session.\n",
+                    "description": "[de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned end date of an event or occurrence with time duration.\n",
                     "format": "date",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
+                "date_modified": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date when an entity was last modified.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_begin_actual": {
+                    "description": "[de] Das tats\u00e4chliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual start date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_begin_planned": {
+                    "description": "[de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned start date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "datetime_created": {
-                    "description": "The time this record was created",
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date and time when an entity was created.\n",
                     "format": "date-time",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "datetime_updated": {
-                    "description": "The last time this record was updated",
+                "datetime_end_actual": {
+                    "description": "[de] Das tats\u00e4chliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual end date and time of an event or occurrence with time duration.\n",
                     "format": "date-time",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "id": {
+                "datetime_end_planned": {
+                    "description": "[de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned end date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_modified": {
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date and time when an entity was last modified.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "global_uri": {
+                    "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
                     "type": "string"
+                },
+                "local_id": {
+                    "description": "[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n[en] Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "meetings": {
                     "items": {
@@ -1165,10 +1662,17 @@
                         "array",
                         "null"
                     ]
+                },
+                "wikidata_uri": {
+                    "description": "[de] Eine URI, die auf eine Wikidata-Entit\u00e4t verweist, z.B. https://www.wikidata.org/wiki/Q39 f\u00fcr die Schweiz.\n[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "id"
+                "global_uri"
             ],
             "title": "Session",
             "type": "object"
@@ -1191,6 +1695,22 @@
                         "null"
                     ]
                 },
+                "date_created": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date when an entity was created.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_modified": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date when an entity was last modified.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "datetime_begin": {
                     "description": "[en] The date and time when the meeting or voting begins.\n[de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.\n",
                     "format": "date-time",
@@ -1200,7 +1720,7 @@
                     ]
                 },
                 "datetime_created": {
-                    "description": "The time this record was created",
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date and time when an entity was created.\n",
                     "format": "date-time",
                     "type": [
                         "string",
@@ -1215,15 +1735,16 @@
                         "null"
                     ]
                 },
-                "datetime_updated": {
-                    "description": "The last time this record was updated",
+                "datetime_modified": {
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date and time when an entity was last modified.\n",
                     "format": "date-time",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "id": {
+                "global_uri": {
+                    "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
                     "type": "string"
                 },
                 "landing_page": {
@@ -1234,9 +1755,19 @@
                     ]
                 },
                 "language": {
-                    "description": "Language code in ISO 639-1 format",
+                    "description": "[de] Sprachcode im ISO 639-1 Format.\n[en] Language code in ISO 639-1 format.\n",
                     "pattern": "^[a-z]{2}$",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "local_id": {
+                    "description": "[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n[en] Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "media_format": {
                     "description": "MIME type of the media file",
@@ -1289,12 +1820,18 @@
                         "string",
                         "null"
                     ]
+                },
+                "wikidata_uri": {
+                    "description": "[de] Eine URI, die auf eine Wikidata-Entit\u00e4t verweist, z.B. https://www.wikidata.org/wiki/Q39 f\u00fcr die Schweiz.\n[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "id",
-                "language",
-                "text"
+                "text",
+                "global_uri"
             ],
             "title": "Speech",
             "type": "object"
@@ -1313,16 +1850,31 @@
             "additionalProperties": false,
             "description": "[en] A text segment such as cross-references or subtitles in meeting protocols.\n[de] Ein Textsegment wie Querverweise oder Zwischentitel in Sitzungsprotokollen.",
             "properties": {
-                "id": {
+                "global_uri": {
+                    "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
                     "type": "string"
+                },
+                "local_id": {
+                    "description": "[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n[en] Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "text": {
                     "type": "string"
+                },
+                "wikidata_uri": {
+                    "description": "[de] Eine URI, die auf eine Wikidata-Entit\u00e4t verweist, z.B. https://www.wikidata.org/wiki/Q39 f\u00fcr die Schweiz.\n[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "id",
-                "text"
+                "text",
+                "global_uri"
             ],
             "title": "TextSegment",
             "type": "object"
@@ -1339,7 +1891,7 @@
                     ]
                 },
                 "label": {
-                    "description": "[en] The label or meaning of the vote in the total other category.\n[de] Das Etikett oder die Bedeutung der Stimme in der Kategorie \"Andere\".\n",
+                    "description": "[de] M\u00f6glichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).\n[en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
                     "type": [
                         "string",
                         "null"
@@ -1367,6 +1919,22 @@
                         "null"
                     ]
                 },
+                "date_created": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date when an entity was created.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_modified": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date when an entity was last modified.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "datetime_begin": {
                     "description": "[en] The date and time when the meeting or voting begins.\n[de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.\n",
                     "format": "date-time",
@@ -1376,7 +1944,7 @@
                     ]
                 },
                 "datetime_created": {
-                    "description": "The time this record was created",
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date and time when an entity was created.\n",
                     "format": "date-time",
                     "type": [
                         "string",
@@ -1391,15 +1959,16 @@
                         "null"
                     ]
                 },
-                "datetime_updated": {
-                    "description": "The last time this record was updated",
+                "datetime_modified": {
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date and time when an entity was last modified.\n",
                     "format": "date-time",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "id": {
+                "global_uri": {
+                    "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
                     "type": "string"
                 },
                 "label_abstention": {
@@ -1425,6 +1994,13 @@
                 },
                 "landing_page": {
                     "description": "[en] URL providing further information.\n[de] URL mit weiteren Informationen.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "local_id": {
+                    "description": "[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n[en] Local identifier. For example, a UUID from the council information system.\n",
                     "type": [
                         "string",
                         "null"
@@ -1541,10 +2117,17 @@
                 "voting_type": {
                     "$ref": "#/$defs/VotingTypeEnum",
                     "description": "[en] Type of voting procedure (preliminary, final, secret, etc.).\n[de] Art des Abstimmungsverfahrens (Zwischen-, Schlussabstimmung, geheim, etc.).\n"
+                },
+                "wikidata_uri": {
+                    "description": "[de] Eine URI, die auf eine Wikidata-Entit\u00e4t verweist, z.B. https://www.wikidata.org/wiki/Q39 f\u00fcr die Schweiz.\n[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "id"
+                "global_uri"
             ],
             "title": "Voting",
             "type": "object"
@@ -1597,7 +2180,8 @@
                 "null"
             ]
         },
-        "id": {
+        "global_uri": {
+            "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
             "type": "string"
         },
         "individual_attendances": {
@@ -1626,6 +2210,13 @@
             },
             "type": [
                 "array",
+                "null"
+            ]
+        },
+        "local_id": {
+            "description": "[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n[en] Local identifier. For example, a UUID from the council information system.\n",
+            "type": [
+                "string",
                 "null"
             ]
         },
@@ -1676,10 +2267,17 @@
                 "array",
                 "null"
             ]
+        },
+        "wikidata_uri": {
+            "description": "[de] Eine URI, die auf eine Wikidata-Entit\u00e4t verweist, z.B. https://www.wikidata.org/wiki/Q39 f\u00fcr die Schweiz.\n[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+            "type": [
+                "string",
+                "null"
+            ]
         }
     },
     "required": [
-        "id"
+        "global_uri"
     ],
     "title": "operations",
     "type": "object",

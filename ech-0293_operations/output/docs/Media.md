@@ -23,7 +23,12 @@ URI: [ops:Media](https://ch.paf.link/schema/operations/Media)
  classDiagram
     class Media
     click Media href "../Media/"
-      Media : id
+      HasIdentification <|-- Media
+        click HasIdentification href "../HasIdentification/"
+      
+      Media : global_uri
+        
+      Media : local_id
         
       Media : media_type
         
@@ -44,24 +49,31 @@ URI: [ops:Media](https://ch.paf.link/schema/operations/Media)
         
       Media : version
         
+      Media : wikidata_uri
+        
       
 ```
 
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **Media** [ [HasIdentification](HasIdentification.md)]
+
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 1 <br/> [String](String.md) |  | direct |
 | [title](title.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [media_type](media_type.md) | 0..1 <br/> [String](String.md) | Type of media (audio, video, document) | direct |
 | [url](url.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
 | [version](version.md) | 0..1 <br/> [String](String.md) | Version number or identifier | direct |
 | [parent_type](parent_type.md) | 0..1 <br/> [String](String.md) | Type of parent object (meeting, agenda, speech, affair) | direct |
+| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |
+| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](HasIdentification.md) |
+| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](HasIdentification.md) |
 
 
 
@@ -120,8 +132,9 @@ description: '[en] Media files or documents (including protocols in PDF/HTML/WOR
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
 slots:
-- id
 - title
 - media_type
 - url
@@ -144,32 +157,9 @@ description: '[en] Media files or documents (including protocols in PDF/HTML/WOR
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
 attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: Media
-    domain_of:
-    - Container
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    - TextSegment
-    - Motion
-    - Media
-    range: string
-    required: true
   title:
     name: title
     from_schema: https://ch.paf.link/schema/operations
@@ -201,6 +191,7 @@ attributes:
     domain_of:
     - Session
     - Meeting
+    - AgendaItem
     - Media
     range: MultilingualString
     multivalued: true
@@ -226,6 +217,55 @@ attributes:
     domain_of:
     - Media
     range: string
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+      [en] Local identifier. For example, a UUID from the council information system.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:localId
+    alias: local_id
+    owner: Media
+    domain_of:
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+
+      [en] A unique, globally valid URI for the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: Media
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: Media
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
 
 ```
 </details>

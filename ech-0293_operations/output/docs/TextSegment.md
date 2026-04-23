@@ -23,9 +23,16 @@ URI: [ops:TextSegment](https://ch.paf.link/schema/operations/TextSegment)
  classDiagram
     class TextSegment
     click TextSegment href "../TextSegment/"
-      TextSegment : id
+      HasIdentification <|-- TextSegment
+        click HasIdentification href "../HasIdentification/"
+      
+      TextSegment : global_uri
+        
+      TextSegment : local_id
         
       TextSegment : text
+        
+      TextSegment : wikidata_uri
         
       
 ```
@@ -33,14 +40,19 @@ URI: [ops:TextSegment](https://ch.paf.link/schema/operations/TextSegment)
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **TextSegment** [ [HasIdentification](HasIdentification.md)]
+
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 1 <br/> [String](String.md) |  | direct |
 | [text](text.md) | 1 <br/> [String](String.md) |  | direct |
+| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |
+| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](HasIdentification.md) |
+| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](HasIdentification.md) |
 
 
 
@@ -98,8 +110,9 @@ description: '[en] A text segment such as cross-references or subtitles in meeti
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
 slots:
-- id
 - text
 
 ```
@@ -117,32 +130,9 @@ description: '[en] A text segment such as cross-references or subtitles in meeti
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
 attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: TextSegment
-    domain_of:
-    - Container
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    - TextSegment
-    - Motion
-    - Media
-    range: string
-    required: true
   text:
     name: text
     from_schema: https://ch.paf.link/schema/operations
@@ -155,6 +145,55 @@ attributes:
     - MultilingualString
     range: string
     required: true
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+      [en] Local identifier. For example, a UUID from the council information system.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:localId
+    alias: local_id
+    owner: TextSegment
+    domain_of:
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+
+      [en] A unique, globally valid URI for the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: TextSegment
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: TextSegment
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
 
 ```
 </details>

@@ -40,7 +40,7 @@ URI: [ops:MultilingualString](https://ch.paf.link/schema/operations/Multilingual
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [text](text.md) | 1 <br/> [String](String.md) |  | direct |
-| [language](language.md) | 1 <br/> [String](String.md) | Language code in ISO 639-1 format | direct |
+| [language](language.md) | 1 <br/> [String](String.md) | [de] Sprachcode im ISO 639-1 Format | direct |
 
 
 
@@ -57,6 +57,7 @@ URI: [ops:MultilingualString](https://ch.paf.link/schema/operations/Multilingual
 | [Meeting](Meeting.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |
 | [AgendaItem](AgendaItem.md) | [agenda_item_title](agenda_item_title.md) | range | [MultilingualString](MultilingualString.md) |
 | [AgendaItem](AgendaItem.md) | [agenda_item_description](agenda_item_description.md) | range | [MultilingualString](MultilingualString.md) |
+| [AgendaItem](AgendaItem.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |
 | [Voting](Voting.md) | [voting_title](voting_title.md) | range | [MultilingualString](MultilingualString.md) |
 | [Media](Media.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |
 
@@ -115,6 +116,10 @@ from_schema: https://ch.paf.link/schema/operations
 slots:
 - text
 - language
+slot_usage:
+  language:
+    name: language
+    required: true
 
 ```
 </details>
@@ -130,6 +135,10 @@ description: '[en] A string that can contain text in multiple languages.
 
   '
 from_schema: https://ch.paf.link/schema/operations
+slot_usage:
+  language:
+    name: language
+    required: true
 attributes:
   text:
     name: text
@@ -145,14 +154,20 @@ attributes:
     required: true
   language:
     name: language
-    description: Language code in ISO 639-1 format
+    description: '[de] Sprachcode im ISO 639-1 Format.
+
+      [en] Language code in ISO 639-1 format.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
+    slot_uri: mcm:language
     alias: language
     owner: MultilingualString
     domain_of:
     - Speech
     - MultilingualString
+    - MultilingualValue
     range: string
     required: true
     pattern: ^[a-z]{2}$

@@ -23,11 +23,18 @@ URI: [ops:Motion](https://ch.paf.link/schema/operations/Motion)
  classDiagram
     class Motion
     click Motion href "../Motion/"
+      HasIdentification <|-- Motion
+        click HasIdentification href "../HasIdentification/"
+      
       Motion : description
         
-      Motion : id
+      Motion : global_uri
+        
+      Motion : local_id
         
       Motion : title
+        
+      Motion : wikidata_uri
         
       
 ```
@@ -35,15 +42,20 @@ URI: [ops:Motion](https://ch.paf.link/schema/operations/Motion)
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **Motion** [ [HasIdentification](HasIdentification.md)]
+
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 1 <br/> [String](String.md) |  | direct |
 | [title](title.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [description](description.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |
+| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](HasIdentification.md) |
+| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](HasIdentification.md) |
 
 
 
@@ -100,8 +112,9 @@ description: '[en] A formal proposal or motion submitted during proceedings.
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
 slots:
-- id
 - title
 - description
 
@@ -119,32 +132,9 @@ description: '[en] A formal proposal or motion submitted during proceedings.
 
   '
 from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
 attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: dcterm:identifier
-    identifier: true
-    alias: id
-    owner: Motion
-    domain_of:
-    - Container
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    - TextSegment
-    - Motion
-    - Media
-    range: string
-    required: true
   title:
     name: title
     from_schema: https://ch.paf.link/schema/operations
@@ -167,6 +157,55 @@ attributes:
     - Meeting
     - Motion
     range: string
+  local_id:
+    name: local_id
+    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+      [en] Local identifier. For example, a UUID from the council information system.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:localId
+    alias: local_id
+    owner: Motion
+    domain_of:
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+
+      [en] A unique, globally valid URI for the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    alias: global_uri
+    owner: Motion
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
+
+      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    alias: wikidata_uri
+    owner: Motion
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
 
 ```
 </details>

@@ -3,9 +3,9 @@
 # Slot: label 
 
 
-_[en] The label or meaning of the vote in the total other category._
+_[de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.)._
 
-_[de] Das Etikett oder die Bedeutung der Stimme in der Kategorie "Andere"._
+_[en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.)._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [ops:label](https://ch.paf.link/schema/operations/label)
+URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 Alias: label
 
 <!-- no inheritance hierarchy -->
@@ -41,6 +41,7 @@ Alias: label
 | --- | --- |
 | Range | [String](String.md) |
 | Domain Of | [TotalOther](TotalOther.md) |
+| Slot URI | [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label) |
 
 ### Cardinality and Requirements
 
@@ -74,7 +75,7 @@ Alias: label
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ops:label |
+| self | mcm:label |
 | native | ops:label |
 
 
@@ -85,13 +86,16 @@ Alias: label
 <details>
 ```yaml
 name: label
-description: '[en] The label or meaning of the vote in the total other category.
+description: '[de] Möglichkeit bei einer strukturierten Information, ein Label zu
+  vergeben (bspw. Anzeigename, Anstellung, etc.).
 
-  [de] Das Etikett oder die Bedeutung der Stimme in der Kategorie "Andere".
+  [en] Option to assign a label to a structured piece of information (e.g., display
+  name, position, etc.).
 
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
+slot_uri: mcm:label
 alias: label
 domain_of:
 - TotalOther

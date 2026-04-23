@@ -40,7 +40,7 @@ URI: [ops:TotalOther](https://ch.paf.link/schema/operations/TotalOther)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [count](count.md) | 0..1 <br/> [Integer](Integer.md) | [en] The count of votes for the total other category | direct |
-| [label](label.md) | 0..1 <br/> [String](String.md) | [en] The label or meaning of the vote in the total other category | direct |
+| [label](label.md) | 0..1 <br/> [String](String.md) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben ... | direct |
 
 
 
@@ -143,13 +143,16 @@ attributes:
     range: integer
   label:
     name: label
-    description: '[en] The label or meaning of the vote in the total other category.
+    description: '[de] Möglichkeit bei einer strukturierten Information, ein Label
+      zu vergeben (bspw. Anzeigename, Anstellung, etc.).
 
-      [de] Das Etikett oder die Bedeutung der Stimme in der Kategorie "Andere".
+      [en] Option to assign a label to a structured piece of information (e.g., display
+      name, position, etc.).
 
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
+    slot_uri: mcm:label
     alias: label
     owner: TotalOther
     domain_of:

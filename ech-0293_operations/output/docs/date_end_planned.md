@@ -3,9 +3,9 @@
 # Slot: date_end_planned 
 
 
-_[en] Planned end date of the meeting or session._
+_[de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer._
 
-_[de] Geplantes Enddatum der Sitzung oder Session._
+_[en] The planned end date of an event or occurrence with time duration._
 
 __
 
@@ -13,7 +13,7 @@ __
 
 
 
-URI: [ops:date_end_planned](https://ch.paf.link/schema/operations/date_end_planned)
+URI: [mcm:dateEndPlanned](https://ld.ech.ch/schema/0292/meta-common/dateEndPlanned)
 Alias: date_end_planned
 
 <!-- no inheritance hierarchy -->
@@ -27,7 +27,10 @@ Alias: date_end_planned
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
+| [IsEventWithDuration](IsEventWithDuration.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder V... |  no  |
+| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
+| [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
 
 
 
@@ -41,7 +44,8 @@ Alias: date_end_planned
 | Property | Value |
 | --- | --- |
 | Range | [Date](Date.md) |
-| Domain Of | [Session](Session.md), [Meeting](Meeting.md) |
+| Domain Of | [IsEventWithDuration](IsEventWithDuration.md) |
+| Slot URI | [mcm:dateEndPlanned](https://ld.ech.ch/schema/0292/meta-common/dateEndPlanned) |
 
 ### Cardinality and Requirements
 
@@ -75,7 +79,7 @@ Alias: date_end_planned
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ops:date_end_planned |
+| self | mcm:dateEndPlanned |
 | native | ops:date_end_planned |
 
 
@@ -86,17 +90,17 @@ Alias: date_end_planned
 <details>
 ```yaml
 name: date_end_planned
-description: '[en] Planned end date of the meeting or session.
+description: '[de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer.
 
-  [de] Geplantes Enddatum der Sitzung oder Session.
+  [en] The planned end date of an event or occurrence with time duration.
 
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
+slot_uri: mcm:dateEndPlanned
 alias: date_end_planned
 domain_of:
-- Session
-- Meeting
+- IsEventWithDuration
 range: date
 
 ```
