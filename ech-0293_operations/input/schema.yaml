@@ -14,6 +14,7 @@ prefixes:
   dcterm: http://purl.org/dc/terms/
 imports:
   - linkml:types
+  - ../../ech-0292_meta/input/schema_common
 default_prefix: ops
 default_range: string
 
@@ -21,8 +22,9 @@ classes:
 
   Container:
     tree_root: true
+    mixins:
+      - HasIdentification
     slots:
-      - id
       - legislatures
       - sessions
         # ist_schon_erfasst
@@ -40,40 +42,41 @@ classes:
     description: |
       [en] Term of office of a parliament as a legislative assembly. Usually lasts four years.
       [de] Amtsdauer eines Parlaments als gesetzgebender Versammlung. Dauert in der Regel vier Jahre.
+    mixins:
+      - HasIdentification
+      - IsEventWithDuration
+      - HasCreationModificationDates
     slots:
-      - id
       - administrative_id
       - name
       - description
       - landing_page
       - actor_id
-      - date_begin
-      - date_end
-      - datetime_updated
-      - datetime_created
 
   Session:
     description: |
       [en] A parliamentary session that groups multiple meetings and spans a specific time period.
       [de] Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen bestimmten Zeitraum erstreckt.
+    mixins:
+      - HasIdentification
+      - IsEventWithDuration
+      - HasCreationModificationDates
     slots:
-      - id
       - body_key
       - name
       - url
-      - date_begin_planned
-      - date_end_planned
       - parent_legislature
       - meetings
-      - datetime_updated
-      - datetime_created
 
   Meeting:
     description: |
       [en] A general meeting class used for Sessions, Comittee Meetings, individual session Sittings and other various Meetings.
       [de] Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessionssitzung und andere verschiedene Versammlungen verwendet wird.
+    mixins:
+      - HasIdentification
+      - IsEventWithDuration
+      - HasCreationModificationDates
     slots:
-      - id
       - body_key
       - meeting_type
       - administrative_id
@@ -88,29 +91,24 @@ classes:
       - abbreviation
       - actor_name
       - actor_id
-      - date_begin_planned
-      - date_end_planned
-      - date_begin_actual
-      - date_end_actual
       - state
       - state_name
       - description
       - location
       - parent_meeting
       - parent_legislature
-      - datetime_updated
-      - datetime_created
       
   AgendaItem:
     description: |
       [en] An agenda item of a meeting.
-      [de] Ein Traktandum einer Sitzung.  
+      [de] Ein Traktandum einer Sitzung.
+    mixins:
+      - HasIdentification
+      - IsEventWithDuration
+      - HasCreationModificationDates
     slots:
-      - id
       - parent_meeting
       - agenda_item_type
-      - datetime_begin_planned
-      - datetime_begin_actual
       - agenda_item_number
       - agenda_item_position
       - leading_actor_id
@@ -121,11 +119,10 @@ classes:
       - state_id
       - state_name
       - landing_page
+      - url
       - agenda_item_category
       - parent_agenda_item
       - has_resolution
-      - datetime_updated
-      - datetime_created
 
   JointDebate: 
     description: |
@@ -147,8 +144,10 @@ classes:
     description: |
       [en] A voting procedure with individual votes and results.
       [de] Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen.
+    mixins:
+      - HasIdentification
+      - HasCreationModificationDates
     slots:
-      - id
       - datetime_begin
       - datetime_end
       - voting_type
@@ -173,8 +172,6 @@ classes:
       - parent_agenda_item
       - affair_id
       - actor_id
-      - datetime_updated
-      - datetime_created
 
 # Handling Präsidiums-Votum wird als eigenes voting aufgenommen
 
@@ -183,23 +180,25 @@ classes:
     description: |
       [en] An individual vote cast by a member during a voting procedure.
       [de] Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens.
+    mixins:
+      - HasIdentification
+      - HasCreationModificationDates
     slots:
-      - id
       - parent_voting
       - actor_id
       - seat_nr
       - weight
       - individual_vote_type
       - type_label
-      - datetime_updated
-      - datetime_created
 
   Election: # Wahl
     description: |
       [en] An election procedure for selecting persons to positions.
       [de] Ein Wahlverfahren zur Wahl von Personen in Positionen.
+    mixins:
+      - HasIdentification
+      - HasCreationModificationDates
     slots:
-      - id
       - datetime_begin
       - datetime_end
       - election_type
@@ -215,41 +214,41 @@ classes:
       - parent_agenda_item
       - affair_id
       - actor_id
-      - datetime_updated
-      - datetime_created
 
   Attendance:
     description: |
       [en] Attendance record for a meeting or voting session.
       [de] Anwesenheitsliste für eine Sitzung oder Abstimmung.
+    mixins:
+      - HasIdentification
+      - HasCreationModificationDates
     slots:
-      - id
       - datetime_begin
       - actor_id
       - total_absent
       - total_present
       - total_excused
-      - datetime_updated
-      - datetime_created
 
   IndividualAttendance:
     description: |
       [en] Individual attendance record for a specific person.
       [de] Einzelne Anwesenheitsfeststellung für eine bestimmte Person.
+    mixins:
+      - HasIdentification
+      - HasCreationModificationDates
     slots:
-      - id
       - parent_voting
       - actor_id
       - attendance_type
-      - datetime_updated
-      - datetime_created
 
   Speech:
     description: |
       [en] A speech or statement made during a meeting (also called Votum or speaker segment).
       [de] Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt).
+    mixins:
+      - HasIdentification
+      - HasCreationModificationDates
     slots:
-      - id
       - language
       - start
       - datetime_begin
@@ -264,23 +263,23 @@ classes:
       - media_url
       - media_type
       - media_format
-      - datetime_updated
-      - datetime_created
 
   TextSegment:
     description: |
       [en] A text segment such as cross-references or subtitles in meeting protocols.
       [de] Ein Textsegment wie Querverweise oder Zwischentitel in Sitzungsprotokollen.
+    mixins:
+      - HasIdentification
     slots:
-      - id
       - text
 
   Motion:
     description: |
       [en] A formal proposal or motion submitted during proceedings.
       [de] Ein formeller Antrag, der während der Verhandlungen eingereicht wird.
+    mixins:
+      - HasIdentification
     slots:
-      - id
       - title
       - description
 
@@ -288,8 +287,9 @@ classes:
     description: |
       [en] Media files or documents (including protocols in PDF/HTML/WORD or links to audio/video).
       [de] Mediendateien oder Dokumente (einschließlich Protokolle in PDF/HTML/WORD oder Links zu Audio/Video).
+    mixins:
+      - HasIdentification
     slots:
-      - id
       - title
       - media_type
       - url
@@ -311,13 +311,11 @@ classes:
     slots:
       - text
       - language
+    slot_usage:
+      language:
+        required: true
 
 slots:
-
-  id:
-    identifier: true
-    required: true
-    slot_uri: dcterm:identifier
 
   administrative_id:
     description: |
@@ -404,24 +402,6 @@ slots:
       [en] Category for grouped agenda items (e.g., introduction, by department, technical agenda items).
       [de] Kategorie für gruppierte Traktanden (z.B. Einführung, nach Departement, technische Traktanden).
     range: string
-
-  date_begin_planned:
-    range: date
-    description: |
-      [en] Planned start date of the meeting or session.
-      [de] Geplantes Startdatum der Sitzung oder Session.
-
-  date_end_planned:
-    range: date
-    description: |
-      [en] Planned end date of the meeting or session.
-      [de] Geplantes Enddatum der Sitzung oder Session.
-
-  date_end_actual:
-    range: date
-    description: |
-      [en] Actual end date of the meeting or session.
-      [de] Tatsächliches Enddatum der Sitzung oder Session.
 
   sequential_number:
     description: |
@@ -529,11 +509,6 @@ slots:
       [en] The count of votes for the total other category.
       [de] Die Anzahl der Stimmen für die Kategorie "Andere".
     range: integer
-
-  label:
-    description: |
-      [en] The label or meaning of the vote in the total other category.
-      [de] Das Etikett oder die Bedeutung der Stimme in der Kategorie "Andere".
 
   parent_voting:
     slot_uri: ops:parentVoting
@@ -657,51 +632,6 @@ slots:
       [en] Free text describing the outcome of the vote, e.g., "Accepted with 78 votes".
       [de] Freitext zur Beschreibung des Ergebnisses der Abstimmung, z.B. "Mit 78 Stimmen angenommen".
   
-  date_begin:
-    range: date
-
-  date_begin_actual:
-    range: date
-  
-  date_end:
-    range: date
-
-  datetime_begin_planned:
-    range: datetime
-    description: |
-      [en] Planned date and time for the start of the meeting or agenda item.
-      [de] Geplantes Datum und Uhrzeit für den Beginn der Sitzung oder des Tagesordnungspunkts.
-
-  datetime_begin_actual:
-    range: datetime
-    description: |
-      [en] Actual date and time for the start of the meeting or agenda item.
-      [de] Tatsächliches Datum und Uhrzeit für den Beginn der Sitzung oder des Tagesordnungspunkts.
-
-  begin_date:
-    range: date
-    description: |
-      [en] The start date of the meeting or session.
-      [de] Das Startdatum der Sitzung oder Session.
-
-  end_date:
-    range: date
-    description: |
-      [en] The end date of the meeting or session.
-      [de] Das Enddatum der Sitzung oder Session.
-
-  begin_date_actual:
-    range: date
-    description: |
-      [en] The actual start date of the meeting or session.
-      [de] Das tatsächliche Startdatum der Sitzung oder Session.
-
-  end_date_actual:
-    range: date
-    description: |
-      [en] The actual end date of the meeting or session.
-      [de] Das tatsächliche Enddatum der Sitzung oder Session.
-  
   meeting_type:
     slot_uri: ops:meetingType
     description: "Type of the meeting, e.g. session, committee, sitting, various"
@@ -726,14 +656,6 @@ slots:
 
   category:
   
-  datetime_updated:
-    range: datetime
-    description: "The last time this record was updated"
-  
-  datetime_created:
-    range: datetime
-    description: "The time this record was created"
-
   legislatures:
     slot_uri: ops:legislature
     range: Legislature
@@ -859,11 +781,6 @@ slots:
 
   text:
     required: true
-  
-  language:
-    required: true
-    description: "Language code in ISO 639-1 format"
-    pattern: ^[a-z]{2}$
 
 enums:
 

@@ -273,7 +273,7 @@ Das Feld **voting_id** verweist auf das zugehörige Voting, das die Abstimmungsd
 ### Zeitstempel
 
 - **datetime_created**: Zeitpunkt des Beschlusses
-- **datetime_updated**: Letzte Änderung (z.B. bei Korrekturen)
+- **datetime_modified**: Letzte Änderung (z.B. bei Korrekturen)
 
 ### URLs und Dokumentation
 

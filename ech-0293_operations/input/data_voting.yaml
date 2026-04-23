@@ -1,125 +1,112 @@
-id: ops:voting_examples_2025
+global_uri: ops:voting_examples_2025
 
 votings:
 
-- id: ops:voting_sg_2025_001
-  body_key: "SG"
-  title:
+- global_uri: ops:voting_sg_2025_001
+  voting_title:
     - text: "Schlussabstimmung Energiegesetz"
       language: "de"
-  voting_type: "final"
-  procedure: "electronic"
-  is_nominal: true
-  date: "2025-03-15"
-  result: "passed"
-  yes_count: 78
-  no_count: 42
-  abstention_count: 5
-  absent_count: 3
-  total_count: 128
-  majority_type: "simple"
-  agenda_item_id: ops:agenda_item_sg_2025_015
-  meeting_id: ops:meeting_sg_2025_03_15
+  voting_type: "final_vote"
+  datetime_begin: "2025-03-15T14:30:00Z"
+  datetime_end: "2025-03-15T14:35:00Z"
+  total_count_yes: 78
+  total_count_no: 42
+  total_count_abstention: 5
+  total_absent: 3
+  total: 128
+  majority_type: "absolute"
+  majority_count: 65
+  result_text: "Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen"
+  parent_agenda_item: ops:agenda_item_sg_2025_015
+  parent_meeting: ops:meeting_sg_2025_03_15
+  actor_id: "actors:parliament_sg"
   datetime_created: "2025-03-15T14:30:00Z"
-  datetime_updated: "2025-03-15T14:35:00Z"
+  datetime_modified: "2025-03-15T14:35:00Z"
 
-- id: ops:voting_be_2025_042
-  body_key: "BE"
-  title:
+- global_uri: ops:voting_be_2025_042
+  voting_title:
     - text: "Änderungsantrag Art. 5 Abs. 2"
       language: "de"
     - text: "Proposition de modification art. 5 al. 2"
       language: "fr"
-  voting_type: "intermediate"
-  procedure: "show_of_hands"
-  is_nominal: false
-  date: "2025-06-05"
-  result: "failed"
-  yes_count: 45
-  no_count: 87
-  abstention_count: 8
-  absent_count: 10
-  total_count: 150
-  majority_type: "simple"
-  agenda_item_id: ops:agenda_item_be_2025_042
-  meeting_id: ops:meeting_be_2025_06_05
+  voting_type: "preliminary_vote"
+  datetime_begin: "2025-06-05T10:15:00Z"
+  datetime_end: "2025-06-05T10:17:00Z"
+  total_count_yes: 45
+  total_count_no: 87
+  total_count_abstention: 8
+  total_absent: 10
+  total: 150
+  majority_type: "absolute"
+  majority_count: 76
+  result_text: "Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt"
+  parent_agenda_item: ops:agenda_item_be_2025_042
+  parent_meeting: ops:meeting_be_2025_06_05
+  actor_id: "actors:parliament_be"
   datetime_created: "2025-06-05T10:15:00Z"
-  datetime_updated: "2025-06-05T10:15:00Z"
+  datetime_modified: "2025-06-05T10:15:00Z"
 
-- id: ops:voting_zh_budget_2026
-  body_key: "ZH"
-  title:
+- global_uri: ops:voting_zh_budget_2026
+  voting_title:
     - text: "Budgetbeschluss 2026"
       language: "de"
-  voting_type: "final"
-  procedure: "electronic"
-  is_nominal: true
-  date: "2025-11-20"
-  result: "passed"
-  yes_count: 105
-  no_count: 70
-  abstention_count: 5
-  absent_count: 0
-  total_count: 180
+  voting_type: "final_vote"
+  datetime_begin: "2025-11-20T16:45:00Z"
+  datetime_end: "2025-11-20T16:50:00Z"
+  total_count_yes: 105
+  total_count_no: 70
+  total_count_abstention: 5
+  total_absent: 0
+  total: 180
   majority_type: "absolute"
-  quorum: 90
-  agenda_item_id: ops:agenda_item_zh_budget_2026
-  meeting_id: ops:meeting_zh_2025_11_20
+  majority_count: 91
+  result_text: "Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen"
+  parent_agenda_item: ops:agenda_item_zh_budget_2026
+  parent_meeting: ops:meeting_zh_2025_11_20
+  actor_id: "actors:parliament_zh"
   datetime_created: "2025-11-20T16:45:00Z"
-  datetime_updated: "2025-11-20T16:50:00Z"
+  datetime_modified: "2025-11-20T16:50:00Z"
 
 individual_votes:
 
-- id: ops:vote_sg_2025_001_person_123
-  voting_id: ops:voting_sg_2025_001
-  person_id: actors:person_sg_123
-  person_name: "Maria Müller"
-  vote: "yes"
-  group_id: actors:group_sp_sg
-  position: 1
+- global_uri: ops:vote_sg_2025_001_person_123
+  parent_voting: ops:voting_sg_2025_001
+  actor_id: actors:person_sg_123
+  seat_nr: "1"
+  individual_vote_type: "yes"
   datetime_created: "2025-03-15T14:30:00Z"
 
-- id: ops:vote_sg_2025_001_person_456
-  voting_id: ops:voting_sg_2025_001
-  person_id: actors:person_sg_456
-  person_name: "Peter Schmidt"
-  vote: "no"
-  group_id: actors:group_svp_sg
-  position: 2
+- global_uri: ops:vote_sg_2025_001_person_456
+  parent_voting: ops:voting_sg_2025_001
+  actor_id: actors:person_sg_456
+  seat_nr: "2"
+  individual_vote_type: "no"
   datetime_created: "2025-03-15T14:30:00Z"
 
-- id: ops:vote_sg_2025_001_person_789
-  voting_id: ops:voting_sg_2025_001
-  person_id: actors:person_sg_789
-  person_name: "Anna Weber"
-  vote: "abstention"
-  group_id: actors:group_cvp_sg
-  position: 3
+- global_uri: ops:vote_sg_2025_001_person_789
+  parent_voting: ops:voting_sg_2025_001
+  actor_id: actors:person_sg_789
+  seat_nr: "3"
+  individual_vote_type: "abstention"
   datetime_created: "2025-03-15T14:30:00Z"
 
-- id: ops:vote_sg_2025_001_person_321
-  voting_id: ops:voting_sg_2025_001
-  person_id: actors:person_sg_321
-  person_name: "Hans Meier"
-  vote: "absent"
-  group_id: actors:group_fdp_sg
-  position: 4
+- global_uri: ops:vote_sg_2025_001_person_321
+  parent_voting: ops:voting_sg_2025_001
+  actor_id: actors:person_sg_321
+  seat_nr: "4"
+  individual_vote_type: "absent"
   datetime_created: "2025-03-15T14:30:00Z"
 
-- id: ops:vote_zh_budget_2026_person_101
-  voting_id: ops:voting_zh_budget_2026
-  person_id: actors:person_zh_101
-  person_name: "Sarah Fischer"
-  vote: "yes"
-  group_id: actors:group_gp_zh
-  position: 1
+- global_uri: ops:vote_zh_budget_2026_person_101
+  parent_voting: ops:voting_zh_budget_2026
+  actor_id: actors:person_zh_101
+  seat_nr: "1"
+  individual_vote_type: "yes"
   datetime_created: "2025-11-20T16:45:00Z"
 
-- id: ops:vote_zh_budget_2026_person_102
-  voting_id: ops:voting_zh_budget_2026
-  person_id: actors:person_zh_102
-  person_name: "Thomas Keller"
-  vote: "no"
-  group_id: actors:group_svp_zh
-  position: 2
+- global_uri: ops:vote_zh_budget_2026_person_102
+  parent_voting: ops:voting_zh_budget_2026
+  actor_id: actors:person_zh_102
+  seat_nr: "2"
+  individual_vote_type: "no"
   datetime_created: "2025-11-20T16:45:00Z"

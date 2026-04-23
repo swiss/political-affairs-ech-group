@@ -1,7 +1,7 @@
-id: ops:meetings_1
+global_uri: ops:meetings_1
 meetings:
   - body_key: "BE"
-    id: ops:340dcf932fb044dd8f8c5c943267fbcc
+    global_uri: ops:340dcf932fb044dd8f8c5c943267fbcc
     meeting_type: "session"
     name:
       - text: "Regierungssitzung vom 31. März 2021"
@@ -18,10 +18,10 @@ meetings:
     date_begin_planned: "2021-03-31"
     date_end_planned: "2021-03-31"
     datetime_created: "2024-10-28T01:22:26Z"
-    datetime_updated: "2024-11-27T20:40:57Z"
+    datetime_modified: "2024-11-27T20:40:57Z"
 
   - body_key: "BE"
-    id: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
+    global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
     meeting_type: "session"
     name:
       - text: "Donnerstag (Nachmittag)"
@@ -36,4 +36,4 @@ meetings:
     date_begin_planned: "2025-06-05"
     date_end_planned: "2025-06-05"
     datetime_created: "2025-04-25T11:10:25Z"
-    datetime_updated: "2025-05-19T01:06:45Z"
+    datetime_modified: "2025-05-19T01:06:45Z"

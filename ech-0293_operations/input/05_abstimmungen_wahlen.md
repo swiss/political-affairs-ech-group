@@ -193,7 +193,7 @@ Voting
 ## Zeitstempel
 
 - **datetime_created**: Zeitpunkt der Durchführung der Abstimmung
-- **datetime_updated**: Letzte Aktualisierung (z.B. bei Korrekturen des Abstimmungsprotkolls)
+- **datetime_modified**: Letzte Aktualisierung (z.B. bei Korrekturen des Abstimmungsprotkolls)
 
 
 {{include:ech-0293_operations/output/docs/Voting.md}}
@@ -328,7 +328,7 @@ Das Feld **description** kann zusätzliche Informationen erfassen:
 ## Zeitstempel
 
 - **datetime_created**: Zeitpunkt der Stimmabgabe
-- **datetime_updated**: Letzte Aktualisierung (z.B. bei Korrekturen) (Nicole: Bei Abstimmungen gibt es keine Korrekturen, sondern sie werden wiederholt)
+- **datetime_modified**: Letzte Aktualisierung (z.B. bei Korrekturen) (Nicole: Bei Abstimmungen gibt es keine Korrekturen, sondern sie werden wiederholt)
 
 ## Anwesenheit vs. Stimmabgabe
 
@@ -522,7 +522,7 @@ Jeder Wahlgang wird als separate Election-Entität erfasst, verbunden über das 
 ## Zeitstempel
 
 - **datetime_created**: Zeitpunkt der Durchführung
-- **datetime_updated**: Letzte Aktualisierung
+- **datetime_modified**: Letzte Aktualisierung
 
 ## URL und Dokumentation
 
