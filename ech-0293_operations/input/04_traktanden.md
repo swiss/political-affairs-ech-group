@@ -1,8 +1,10 @@
 ToDo: Michel
 
-# Traktanden und Beschlüsse
+# Tagesordnung (Traktandenliste), Protokoll und Beschlüsse
 
-Die Tagesordnung einer Sitzung wird durch Traktanden strukturiert. Zu jedem Traktandum können Anträge gestellt und Beschlüsse gefasst werden.
+Die Tagesordnung einer Sitzung wird durch Traktanden strukturiert. Die Traktanden gelten als Planung einer Sitzung und bleiben nach Beginn der Sitzung in den Daten nicht mehr geändert. Anschliessend werden die gleichen Datenelemente genutzt um das Protkoll und die enthaltenen Beschlüsse fest zu halten. 
+
+Im Falle dass es Änderungen der Traktanden während einer Sitzung gibt, werden diese im Protokoll erfasst, und damit die Traktandenliste der nächsten Sitzung angepasst.
 
 ## AgendaItem (Traktandum)
 
