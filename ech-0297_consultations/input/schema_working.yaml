@@ -27,7 +27,7 @@ Organizer
 - Group/Organization # Link Gremium
 - Person
 
-Participant  # Link to actors 
+Invitee  # Link to actors 
   - Person
     - Name
       - required
