@@ -35,6 +35,9 @@ Invitee  # Link to actors
       - required
     - Address 
   - Group/Organization
+  - Category (string)
+  - Stehende Einladung: Ja / Nein # vs Einzelfall-Einladung
+
 
 # Input Parteienliste (via APS) - Parteienliste sollte auch Adresse liefern
 
