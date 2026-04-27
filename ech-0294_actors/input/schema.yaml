@@ -717,15 +717,35 @@ enums:
       # ----------------------------------------------------------------
 
       PersonFirstName:
+        description: |
+          [de] Gemäss amtlichen Katalog der Merkmale (Nr. 221) Registerharmonisierung: Vornamen gemäss Geburtsurkunde oder Zivilstandsregister/Infostar in der aufgeführten Reihenfolge bzw. gemäss ausländischen Ausweispapieren.
+          [fr] Selon le catalogue officiel des caractères (n° 221) de l'harmonisation des registres : Prénoms tirés de l’acte de naissance, du registre de l’état civil (Infostar) dans l’ordre où ils figurent ou tirés des papiers d’identité étrangers.
+          [it] Secondo il catalogo ufficiale delle caratteristiche (n. 221) dell'armonizzazione dei registri: Nomi estratti dall’atto di nascita o dal registro dello stato civile nell’ordine corretto, rispettivamente da documenti di legittimazione stranieri.
+          [en] According to the official catalogue of characters (No. 221) for the harmonisation of registers: First names taken from the birth certificate, the civil registry (Infostar) in the order in which they appear, or taken from foreign identity documents.
         meaning: act:vocabulary/NameTypeEnum/PersonFirstName
 
       PersonCallFirstName:
+        description: |
+          [de] Gemäss amtlichen Katalog der Merkmale (Nr. 222) Registerharmonisierung: Eine Person hat das Recht, aus der Liste ihrer amtlichen Vornamen einen Rufnamen auszuwählen. Der Rufname kann aus einem oder mehreren Vornamen (aus den "amtlichen Vornamen") bestehen.
+          [fr] Selon le catalogue officiel des caractères (n° 222) de l'harmonisation des registres : Une personne peut choisir, dans la liste de ses prénoms officiels, un prénom usuel. Le prénom usuel peut se composer d’un ou de plusieurs prénoms (parmi ceux figurant sous "prénoms officiels").
+          [it] Secondo il catalogo ufficiale delle caratteristiche (n. 222) dell'armonizzazione dei registri: Una persona ha il diritto di scegliere un nome abituale dall’elenco dei suoi nomi ufficiali. Il nome abituale può essere composto da uno o più nomi (da "Nomi ufficiali").
+          [en] According to the official catalogue of characters (No. 222) for the harmonisation of registers: A person may choose a common first name from the list of their official first names. The common first name may consist of one or more first names (from those listed under ‘official first names’).
         meaning: act:vocabulary/NameTypeEnum/PersonCallFirstName
 
       PersonFirstNameOnForeignPassport:
+        description: |
+          [de] Gemäss amtlichen Katalog der Merkmale (Nr. 223) Registerharmonisierung: Für Personen mit ausländischer Nationalität. Zu benutzen in Verbindung mit dem Namen im ausländischen Pass."
+          [fr] Selon le catalogue officiel des caractères (n° 223) de l'harmonisation des registres : Pour les personnes de nationalité étrangère. A utiliser en combinaison avec le Nom selon le passeport étranger.
+          [it] Secondo il catalogo ufficiale delle caratteristiche (n. 223) dell'armonizzazione dei registri: Per persone di nazionalità straniera. Da utilizzare in collegamento con il cognome sul passaporto.
+          [en] According to the official catalogue of characters (No. 223) for the harmonisation of registers: For persons of foreign nationality. To be used in combination with the name as it appears on the foreign passport.
         meaning: act:vocabulary/NameTypeEnum/PersonFirstNameOnForeignPassport
       
       PersonDeclaredForeignerFirstName:
+        description: |
+          [de] Gemäss amtlichen Katalog der Merkmale (Nr. 224) Registerharmonisierung: Für Personen mit ausländischer Nationalität, die keine amtlichen Dokumente besitzen (hauptsächlich im Asylbereich). Zu benutzen in Verbindung mit dem Namen gemäss Deklaration.
+          [fr] Selon le catalogue officiel des caractères (n° 224) de l'harmonisation des registres : Pour les personnes de nationalité étrangère ne disposant pas de documents officiels (principalement dans le domaine de l’asile). A utiliser en combinaison avec le Nom selon déclaration défini.
+          [it] Secondo il catalogo ufficiale delle caratteristiche (n. 224) dell'armonizzazione dei registri: Per persone di nazionalità straniera che non possiedono documenti ufficiali (principalmente nel settore dell’asilo). Da utilizzare in collegamento con il cognome dichiarato.
+          [en] According to the official catalogue of characters (No. 224) for the harmonisation of registers: For persons of foreign nationality who do not have official documents (mainly in the field of asylum). To be used in combination with the defined Name according to declaration.
         meaning: act:vocabulary/NameTypeEnum/PersonDeclaredForeignerFirstName
 
 
