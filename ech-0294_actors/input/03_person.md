@@ -23,6 +23,14 @@ Das Person-Schema verwendet:
 
 2. **Globaler Identifikator (`uri`)**: Ein globaler Identifikator welcher über verschiedene Systeme hinweg gültig ist. Bei Personen kann dabei die URI der Person in Wikidata benutzt werden. Z.b. (http://www.wikidata.org/entity/Q115531 für Adolf Ogi).
 
+TODO: notes
+LocalID: 3456
+Mandatory - Global URI: ld.bs.ch/personen_id/3456
+WikiData: 
+
+LocalID: 
+Global URI: politics.ld.admin.ch/partyid/234
+
 ### Temporale Validität
 
 Viele Attribute unterstützen zeitliche Gültigkeit durch `valid_from` und `valid_until`, wie z.B. Name, Adresse, Geschlecht, Staatsbürgerschaft, Beruf und Wahlkreis.
