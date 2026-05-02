@@ -2,7 +2,7 @@
 
 _Internal note: update the next subgroup meeting in the [README](https://github.com/swiss/political-affairs-ech-group/tree/main) after every meeting._
 
-## 25 May 2026 (15-16.00) on [Teams](https://teams.microsoft.com/meet/3879512933733?p=rTdaRaFWPi0JWENkuE)
+## 1 June 2026 (15-16.00) on [Teams]([https://teams.microsoft.com/meet/3879512933733?p=rTdaRaFWPi0JWENkuE](https://teams.microsoft.com/meet/3879512933733?p=rTdaRaFWPi0JWENkuE))
 
 - 
 
