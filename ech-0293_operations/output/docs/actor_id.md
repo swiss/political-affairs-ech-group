@@ -26,14 +26,14 @@ Alias: actor_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
-| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
-| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [Attendance](Attendance.md) | [en] Aggregated attendance record for a meeting (number of members present, a... |  no  |
 | [IndividualVote](IndividualVote.md) | [en] An individual vote cast by a member during a voting procedure |  no  |
+| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 | [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
+| [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
 | [IndividualAttendance](IndividualAttendance.md) | [en] Individual attendance record for a specific person at a meeting (linked ... |  no  |
+| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 
 
 
