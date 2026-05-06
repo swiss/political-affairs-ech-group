@@ -11,7 +11,7 @@ __
 
 
 
-URI: [ops:attendance_type_enum](https://ch.paf.link/schema/operations/attendance_type_enum)
+URI: [ops:AttendanceTypeEnum](https://ch.paf.link/schema/operations/AttendanceTypeEnum)
 
 ## Permissible Values
 | Value | Meaning | Description |
@@ -58,7 +58,7 @@ URI: [ops:attendance_type_enum](https://ch.paf.link/schema/operations/attendance
 
 <details>
 ```yaml
-name: attendance_type_enum
+name: AttendanceTypeEnum
 description: '[en] Type of individual attendance.
 
   [de] Art der individuellen Anwesenheit.

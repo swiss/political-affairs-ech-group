@@ -17,10 +17,11 @@ Alias: url
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
-| [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |  no  |
+| [Manifestation](Manifestation.md) |  |  no  |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
+| [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |  no  |
+| [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
 
 
 
@@ -34,7 +35,7 @@ Alias: url
 | Property | Value |
 | --- | --- |
 | Range | [MultilingualString](MultilingualString.md) |
-| Domain Of | [Session](Session.md), [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Media](Media.md) |
+| Domain Of | [Session](Session.md), [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Media](Media.md), [Manifestation](Manifestation.md) |
 
 ### Cardinality and Requirements
 
@@ -88,6 +89,7 @@ domain_of:
 - Meeting
 - AgendaItem
 - Media
+- Manifestation
 range: MultilingualString
 multivalued: true
 inlined: true

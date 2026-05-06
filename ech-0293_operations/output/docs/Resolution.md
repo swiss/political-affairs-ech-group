@@ -23,6 +23,17 @@ URI: [ops:Resolution](https://ch.paf.link/schema/operations/Resolution)
  classDiagram
     class Resolution
     click Resolution href "../Resolution/"
+      Resolution : documents
+        
+          
+    
+        
+        
+        Resolution --> "*" Work : documents
+        click Work href "../Work/"
+    
+
+        
       Resolution : resolution_type
         
           
@@ -53,6 +64,7 @@ URI: [ops:Resolution](https://ch.paf.link/schema/operations/Resolution)
 | [resolution_type](resolution_type.md) | 0..1 <br/> [ResolutionTypeEnum](ResolutionTypeEnum.md) | [en] Type of resolutiontaken on the agenda item | direct |
 | [type_label](type_label.md) | 0..1 <br/> [String](String.md) | [en] Custom type label when standard type values don't apply | direct |
 | [vote_procedures](vote_procedures.md) | * <br/> [String](String.md) | [en] Procedures for voting, such as secret ballot or open vote | direct |
+| [documents](documents.md) | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
 
 
 
@@ -122,6 +134,7 @@ slots:
 - resolution_type
 - type_label
 - vote_procedures
+- documents
 
 ```
 </details>
@@ -152,7 +165,7 @@ attributes:
     owner: Resolution
     domain_of:
     - Resolution
-    range: resolution_type_enum
+    range: ResolutionTypeEnum
   type_label:
     name: type_label
     description: '[en] Custom type label when standard type values don''t apply.
@@ -184,6 +197,33 @@ attributes:
     domain_of:
     - Resolution
     range: string
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  documents:
+    name: documents
+    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
+      sind.
+
+      [en] List of documents (FRBR Works) linked to the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: meta:documents
+    alias: documents
+    owner: Resolution
+    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Resolution
+    - Voting
+    - Election
+    - Speech
+    - Motion
+    range: Work
     multivalued: true
     inlined: true
     inlined_as_list: true

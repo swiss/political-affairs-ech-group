@@ -81,7 +81,7 @@ rank: 1000
 alias: state
 domain_of:
 - Meeting
-range: state_enum
+range: StateEnum
 
 ```
 </details>

@@ -60,6 +60,7 @@ URI: [ops:MultilingualString](https://ch.paf.link/schema/operations/Multilingual
 | [AgendaItem](AgendaItem.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |
 | [Voting](Voting.md) | [voting_title](voting_title.md) | range | [MultilingualString](MultilingualString.md) |
 | [Media](Media.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |
+| [Manifestation](Manifestation.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |
 
 
 
@@ -168,6 +169,7 @@ attributes:
     - Speech
     - MultilingualString
     - MultilingualValue
+    - Expression
     range: string
     required: true
     pattern: ^[a-z]{2}$

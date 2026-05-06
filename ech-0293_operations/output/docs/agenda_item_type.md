@@ -95,7 +95,7 @@ rank: 1000
 alias: agenda_item_type
 domain_of:
 - AgendaItem
-range: agenda_item_type_enum
+range: AgendaItemTypeEnum
 
 ```
 </details>

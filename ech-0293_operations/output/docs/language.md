@@ -27,8 +27,9 @@ Alias: language
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [MultilingualValue](MultilingualValue.md) | [de] Ein mehrsprachiger String mit Angabe der Sprache |  no  |
-| [MultilingualString](MultilingualString.md) | [en] A string that can contain text in multiple languages |  yes  |
+| [Expression](Expression.md) |  |  no  |
 | [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
+| [MultilingualString](MultilingualString.md) | [en] A string that can contain text in multiple languages |  yes  |
 
 
 
@@ -42,7 +43,7 @@ Alias: language
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [Speech](Speech.md), [MultilingualString](MultilingualString.md), [MultilingualValue](MultilingualValue.md) |
+| Domain Of | [Speech](Speech.md), [MultilingualString](MultilingualString.md), [MultilingualValue](MultilingualValue.md), [Expression](Expression.md) |
 | Slot URI | [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language) |
 
 ### Cardinality and Requirements
@@ -108,6 +109,7 @@ domain_of:
 - Speech
 - MultilingualString
 - MultilingualValue
+- Expression
 range: string
 pattern: ^[a-z]{2}$
 

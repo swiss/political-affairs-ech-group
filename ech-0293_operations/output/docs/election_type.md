@@ -87,7 +87,7 @@ rank: 1000
 alias: election_type
 domain_of:
 - Election
-range: election_type_enum
+range: ElectionTypeEnum
 
 ```
 </details>

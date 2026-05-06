@@ -11,7 +11,7 @@ __
 
 
 
-URI: [ops:voting_type_enum](https://ch.paf.link/schema/operations/voting_type_enum)
+URI: [ops:VotingTypeEnum](https://ch.paf.link/schema/operations/VotingTypeEnum)
 
 ## Permissible Values
 | Value | Meaning | Description |
@@ -60,7 +60,7 @@ URI: [ops:voting_type_enum](https://ch.paf.link/schema/operations/voting_type_en
 
 <details>
 ```yaml
-name: voting_type_enum
+name: VotingTypeEnum
 description: '[en] Type of voting procedure.
 
   [de] Art des Abstimmungsverfahrens.

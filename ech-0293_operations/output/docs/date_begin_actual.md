@@ -26,11 +26,11 @@ Alias: date_begin_actual
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
+| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
-| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
 | [IsEventWithDuration](IsEventWithDuration.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder V... |  no  |
+| [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
 
 
 

@@ -7,7 +7,7 @@ _State of the meeting_
 
 
 
-URI: [ops:state_enum](https://ch.paf.link/schema/operations/state_enum)
+URI: [ops:StateEnum](https://ch.paf.link/schema/operations/StateEnum)
 
 ## Permissible Values
 | Value | Meaning | Description |
@@ -54,7 +54,7 @@ URI: [ops:state_enum](https://ch.paf.link/schema/operations/state_enum)
 
 <details>
 ```yaml
-name: state_enum
+name: StateEnum
 description: State of the meeting
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000

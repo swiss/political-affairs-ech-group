@@ -274,7 +274,7 @@ attributes:
     owner: IndividualVote
     domain_of:
     - IndividualVote
-    range: individual_vote_type_enum
+    range: IndividualVoteTypeEnum
   type_label:
     name: type_label
     description: '[en] Custom type label when standard type values don''t apply.

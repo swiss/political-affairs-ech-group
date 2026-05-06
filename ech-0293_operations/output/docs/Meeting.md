@@ -66,6 +66,17 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
         
       Meeting : description
         
+      Meeting : documents
+        
+          
+    
+        
+        
+        Meeting --> "*" Work : documents
+        click Work href "../Work/"
+    
+
+        
       Meeting : global_uri
         
       Meeting : group_id
@@ -171,6 +182,7 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 | [location](location.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [parent_meeting](parent_meeting.md) | 0..1 <br/> [String](String.md) | [en] The linked meeting ID that groups the current meeting | direct |
 | [parent_legislature](parent_legislature.md) | 0..1 <br/> [String](String.md) | [en] The legislative body in which the meeting is based | direct |
+| [documents](documents.md) | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
 | [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |
 | [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](HasIdentification.md) |
 | [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](HasIdentification.md) |
@@ -277,6 +289,7 @@ slots:
 - location
 - parent_meeting
 - parent_legislature
+- documents
 
 ```
 </details>
@@ -326,7 +339,7 @@ attributes:
     owner: Meeting
     domain_of:
     - Meeting
-    range: meeting_type_enum
+    range: MeetingTypeEnum
   administrative_id:
     name: administrative_id
     description: '[en] Administrative ID of the legislative body, such as a municipality,
@@ -369,6 +382,7 @@ attributes:
     - Meeting
     - AgendaItem
     - Media
+    - Manifestation
     range: MultilingualString
     multivalued: true
     inlined: true
@@ -499,7 +513,7 @@ attributes:
     owner: Meeting
     domain_of:
     - Meeting
-    range: state_enum
+    range: StateEnum
   state_name:
     name: state_name
     description: '[en] Custom state description for the meeting.
@@ -525,6 +539,7 @@ attributes:
     - Legislature
     - Meeting
     - Motion
+    - Expression
     range: string
   location:
     name: location
@@ -567,6 +582,33 @@ attributes:
     - Session
     - Meeting
     range: string
+  documents:
+    name: documents
+    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
+      sind.
+
+      [en] List of documents (FRBR Works) linked to the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: meta:documents
+    alias: documents
+    owner: Meeting
+    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Resolution
+    - Voting
+    - Election
+    - Speech
+    - Motion
+    range: Work
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   local_id:
     name: local_id
     description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.

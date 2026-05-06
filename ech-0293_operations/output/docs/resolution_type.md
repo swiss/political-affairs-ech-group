@@ -95,7 +95,7 @@ rank: 1000
 alias: resolution_type
 domain_of:
 - Resolution
-range: resolution_type_enum
+range: ResolutionTypeEnum
 
 ```
 </details>

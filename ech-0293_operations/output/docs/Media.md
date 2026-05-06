@@ -170,6 +170,7 @@ attributes:
     - Election
     - Motion
     - Media
+    - Expression
     range: string
   media_type:
     name: media_type
@@ -193,6 +194,7 @@ attributes:
     - Meeting
     - AgendaItem
     - Media
+    - Manifestation
     range: MultilingualString
     multivalued: true
     inlined: true

@@ -95,7 +95,7 @@ rank: 1000
 alias: voting_type
 domain_of:
 - Voting
-range: voting_type_enum
+range: VotingTypeEnum
 
 ```
 </details>

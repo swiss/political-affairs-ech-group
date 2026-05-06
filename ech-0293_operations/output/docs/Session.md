@@ -56,6 +56,17 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
         
       Session : datetime_modified
         
+      Session : documents
+        
+          
+    
+        
+        
+        Session --> "*" Work : documents
+        click Work href "../Work/"
+    
+
+        
       Session : global_uri
         
       Session : local_id
@@ -117,6 +128,7 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
 | [url](url.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
 | [parent_legislature](parent_legislature.md) | 0..1 <br/> [String](String.md) | [en] The legislative body in which the meeting is based | direct |
 | [meetings](meetings.md) | * <br/> [Meeting](Meeting.md) |  | direct |
+| [documents](documents.md) | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
 | [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |
 | [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](HasIdentification.md) |
 | [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](HasIdentification.md) |
@@ -207,6 +219,7 @@ slots:
 - url
 - parent_legislature
 - meetings
+- documents
 
 ```
 </details>
@@ -271,6 +284,7 @@ attributes:
     - Meeting
     - AgendaItem
     - Media
+    - Manifestation
     range: MultilingualString
     multivalued: true
     inlined: true
@@ -301,6 +315,33 @@ attributes:
     - Container
     - Session
     range: Meeting
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  documents:
+    name: documents
+    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
+      sind.
+
+      [en] List of documents (FRBR Works) linked to the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: meta:documents
+    alias: documents
+    owner: Session
+    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Resolution
+    - Voting
+    - Election
+    - Speech
+    - Motion
+    range: Work
     multivalued: true
     inlined: true
     inlined_as_list: true

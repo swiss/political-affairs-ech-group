@@ -228,7 +228,7 @@ attributes:
     owner: IndividualAttendance
     domain_of:
     - IndividualAttendance
-    range: attendance_type_enum
+    range: AttendanceTypeEnum
   local_id:
     name: local_id
     description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.

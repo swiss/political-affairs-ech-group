@@ -11,7 +11,7 @@ __
 
 
 
-URI: [ops:agenda_item_type_enum](https://ch.paf.link/schema/operations/agenda_item_type_enum)
+URI: [ops:AgendaItemTypeEnum](https://ch.paf.link/schema/operations/AgendaItemTypeEnum)
 
 ## Permissible Values
 | Value | Meaning | Description |
@@ -57,7 +57,7 @@ URI: [ops:agenda_item_type_enum](https://ch.paf.link/schema/operations/agenda_it
 
 <details>
 ```yaml
-name: agenda_item_type_enum
+name: AgendaItemTypeEnum
 description: '[en] Type of agenda item, distinguishing individual items from grouped
   items.
 

@@ -17,8 +17,9 @@ Alias: description
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
 | [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |  no  |
+| [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
+| [Expression](Expression.md) |  |  no  |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 
 
@@ -33,7 +34,7 @@ Alias: description
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [Legislature](Legislature.md), [Meeting](Meeting.md), [Motion](Motion.md) |
+| Domain Of | [Legislature](Legislature.md), [Meeting](Meeting.md), [Motion](Motion.md), [Expression](Expression.md) |
 
 ### Cardinality and Requirements
 
@@ -85,6 +86,7 @@ domain_of:
 - Legislature
 - Meeting
 - Motion
+- Expression
 range: string
 
 ```

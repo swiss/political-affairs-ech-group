@@ -17,8 +17,9 @@ Alias: title
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |  no  |
 | [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |  no  |
+| [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |  no  |
+| [Expression](Expression.md) |  |  no  |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 
 
@@ -33,7 +34,7 @@ Alias: title
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [Election](Election.md), [Motion](Motion.md), [Media](Media.md) |
+| Domain Of | [Election](Election.md), [Motion](Motion.md), [Media](Media.md), [Expression](Expression.md) |
 
 ### Cardinality and Requirements
 
@@ -85,6 +86,7 @@ domain_of:
 - Election
 - Motion
 - Media
+- Expression
 range: string
 
 ```

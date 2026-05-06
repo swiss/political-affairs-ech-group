@@ -7,7 +7,7 @@ _Type of the meeting_
 
 
 
-URI: [ops:meeting_type_enum](https://ch.paf.link/schema/operations/meeting_type_enum)
+URI: [ops:MeetingTypeEnum](https://ch.paf.link/schema/operations/MeetingTypeEnum)
 
 ## Permissible Values
 | Value | Meaning | Description |
@@ -55,7 +55,7 @@ URI: [ops:meeting_type_enum](https://ch.paf.link/schema/operations/meeting_type_
 
 <details>
 ```yaml
-name: meeting_type_enum
+name: MeetingTypeEnum
 description: Type of the meeting
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000

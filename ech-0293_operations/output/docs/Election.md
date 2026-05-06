@@ -44,6 +44,17 @@ URI: [ops:Election](https://ch.paf.link/schema/operations/Election)
         
       Election : datetime_modified
         
+      Election : documents
+        
+          
+    
+        
+        
+        Election --> "*" Work : documents
+        click Work href "../Work/"
+    
+
+        
       Election : election_type
         
           
@@ -120,6 +131,7 @@ URI: [ops:Election](https://ch.paf.link/schema/operations/Election)
 | [parent_agenda_item](parent_agenda_item.md) | 0..1 <br/> [String](String.md) | [en] If needed, this slot builds a hierarchy of agenda items | direct |
 | [affair_id](affair_id.md) | 0..1 <br/> [String](String.md) | [en] The connection to the affairs (business items) of the agenda item | direct |
 | [actor_id](actor_id.md) | 0..1 <br/> [String](String.md) | [en] The political body organized by the term of office (e | direct |
+| [documents](documents.md) | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
 | [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |
 | [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](HasIdentification.md) |
 | [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](HasIdentification.md) |
@@ -209,6 +221,7 @@ slots:
 - parent_agenda_item
 - affair_id
 - actor_id
+- documents
 
 ```
 </details>
@@ -270,7 +283,7 @@ attributes:
     owner: Election
     domain_of:
     - Election
-    range: election_type_enum
+    range: ElectionTypeEnum
   type_label:
     name: type_label
     description: '[en] Custom type label when standard type values don''t apply.
@@ -298,6 +311,7 @@ attributes:
     - Election
     - Motion
     - Media
+    - Expression
     range: string
   landing_page:
     name: landing_page
@@ -368,7 +382,7 @@ attributes:
     domain_of:
     - Voting
     - Election
-    range: majority_type_enum
+    range: MajorityTypeEnum
   majority_count:
     name: majority_count
     description: '[en] Number of votes required for the relevant majority threshold.
@@ -476,6 +490,33 @@ attributes:
     - IndividualAttendance
     - Speech
     range: string
+  documents:
+    name: documents
+    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
+      sind.
+
+      [en] List of documents (FRBR Works) linked to the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: meta:documents
+    alias: documents
+    owner: Election
+    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Resolution
+    - Voting
+    - Election
+    - Speech
+    - Motion
+    range: Work
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   local_id:
     name: local_id
     description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.

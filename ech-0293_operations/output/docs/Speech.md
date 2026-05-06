@@ -44,6 +44,17 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
         
       Speech : datetime_modified
         
+      Speech : documents
+        
+          
+    
+        
+        
+        Speech --> "*" Work : documents
+        click Work href "../Work/"
+    
+
+        
       Speech : global_uri
         
       Speech : landing_page
@@ -99,6 +110,7 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
 | [media_url](media_url.md) | 0..1 <br/> [String](String.md) | URL to media file (audio/video) | direct |
 | [media_type](media_type.md) | 0..1 <br/> [String](String.md) | Type of media (audio, video, document) | direct |
 | [media_format](media_format.md) | 0..1 <br/> [String](String.md) | MIME type of the media file | direct |
+| [documents](documents.md) | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
 | [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |
 | [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](HasIdentification.md) |
 | [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](HasIdentification.md) |
@@ -188,6 +200,7 @@ slots:
 - media_url
 - media_type
 - media_format
+- documents
 
 ```
 </details>
@@ -224,6 +237,7 @@ attributes:
     - Speech
     - MultilingualString
     - MultilingualValue
+    - Expression
     range: string
     pattern: ^[a-z]{2}$
   start:
@@ -403,6 +417,33 @@ attributes:
     domain_of:
     - Speech
     range: string
+  documents:
+    name: documents
+    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
+      sind.
+
+      [en] List of documents (FRBR Works) linked to the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: meta:documents
+    alias: documents
+    owner: Speech
+    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Resolution
+    - Voting
+    - Election
+    - Speech
+    - Motion
+    range: Work
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   local_id:
     name: local_id
     description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.

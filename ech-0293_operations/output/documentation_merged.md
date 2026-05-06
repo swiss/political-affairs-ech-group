@@ -168,6 +168,17 @@ URI: [ops:Legislature](https://ch.paf.link/schema/operations/Legislature)
         
       Legislature : description
         
+      Legislature : documents
+        
+          
+    
+        
+        
+        Legislature --> "*" Work : documents
+        click Work href "../Work/"
+    
+
+        
       Legislature : global_uri
         
       Legislature : landing_page
@@ -207,6 +218,7 @@ URI: [ops:Legislature](https://ch.paf.link/schema/operations/Legislature)
 | [description](#description) | 0..1 <br/> [String](#String) |  | direct |
 | [landing_page](#landing_page) | 0..1 <br/> [String](#String) | [en] URL providing further information | direct |
 | [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
+| [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
 | [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
 | [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
 | [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
@@ -297,6 +309,7 @@ slots:
 - description
 - landing_page
 - actor_id
+- documents
 
 ```
 </details>
@@ -360,6 +373,7 @@ attributes:
     - Legislature
     - Meeting
     - Motion
+    - Expression
     range: string
   landing_page:
     name: landing_page
@@ -404,6 +418,33 @@ attributes:
     - IndividualAttendance
     - Speech
     range: string
+  documents:
+    name: documents
+    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
+      sind.
+
+      [en] List of documents (FRBR Works) linked to the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: meta:documents
+    alias: documents
+    owner: Legislature
+    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Resolution
+    - Voting
+    - Election
+    - Speech
+    - Motion
+    range: Work
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   local_id:
     name: local_id
     description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
@@ -760,6 +801,17 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
         
       Session : datetime_modified
         
+      Session : documents
+        
+          
+    
+        
+        
+        Session --> "*" Work : documents
+        click Work href "../Work/"
+    
+
+        
       Session : global_uri
         
       Session : local_id
@@ -821,6 +873,7 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
 | [url](#url) | * <br/> [MultilingualString](#MultilingualString) |  | direct |
 | [parent_legislature](#parent_legislature) | 0..1 <br/> [String](#String) | [en] The legislative body in which the meeting is based | direct |
 | [meetings](#meetings) | * <br/> [Meeting](#Meeting) |  | direct |
+| [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
 | [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
 | [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
 | [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
@@ -911,6 +964,7 @@ slots:
 - url
 - parent_legislature
 - meetings
+- documents
 
 ```
 </details>
@@ -975,6 +1029,7 @@ attributes:
     - Meeting
     - AgendaItem
     - Media
+    - Manifestation
     range: MultilingualString
     multivalued: true
     inlined: true
@@ -1005,6 +1060,33 @@ attributes:
     - Container
     - Session
     range: Meeting
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  documents:
+    name: documents
+    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
+      sind.
+
+      [en] List of documents (FRBR Works) linked to the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: meta:documents
+    alias: documents
+    owner: Session
+    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Resolution
+    - Voting
+    - Election
+    - Speech
+    - Motion
+    range: Work
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -1434,6 +1516,17 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
         
       Meeting : description
         
+      Meeting : documents
+        
+          
+    
+        
+        
+        Meeting --> "*" Work : documents
+        click Work href "../Work/"
+    
+
+        
       Meeting : global_uri
         
       Meeting : group_id
@@ -1539,6 +1632,7 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 | [location](#location) | 0..1 <br/> [String](#String) |  | direct |
 | [parent_meeting](#parent_meeting) | 0..1 <br/> [String](#String) | [en] The linked meeting ID that groups the current meeting | direct |
 | [parent_legislature](#parent_legislature) | 0..1 <br/> [String](#String) | [en] The legislative body in which the meeting is based | direct |
+| [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
 | [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
 | [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
 | [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
@@ -1645,6 +1739,7 @@ slots:
 - location
 - parent_meeting
 - parent_legislature
+- documents
 
 ```
 </details>
@@ -1694,7 +1789,7 @@ attributes:
     owner: Meeting
     domain_of:
     - Meeting
-    range: meeting_type_enum
+    range: MeetingTypeEnum
   administrative_id:
     name: administrative_id
     description: '[en] Administrative ID of the legislative body, such as a municipality,
@@ -1737,6 +1832,7 @@ attributes:
     - Meeting
     - AgendaItem
     - Media
+    - Manifestation
     range: MultilingualString
     multivalued: true
     inlined: true
@@ -1867,7 +1963,7 @@ attributes:
     owner: Meeting
     domain_of:
     - Meeting
-    range: state_enum
+    range: StateEnum
   state_name:
     name: state_name
     description: '[en] Custom state description for the meeting.
@@ -1893,6 +1989,7 @@ attributes:
     - Legislature
     - Meeting
     - Motion
+    - Expression
     range: string
   location:
     name: location
@@ -1935,6 +2032,33 @@ attributes:
     - Session
     - Meeting
     range: string
+  documents:
+    name: documents
+    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
+      sind.
+
+      [en] List of documents (FRBR Works) linked to the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: meta:documents
+    alias: documents
+    owner: Meeting
+    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Resolution
+    - Voting
+    - Election
+    - Speech
+    - Motion
+    range: Work
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   local_id:
     name: local_id
     description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
@@ -2931,7 +3055,7 @@ attributes:
     owner: IndividualAttendance
     domain_of:
     - IndividualAttendance
-    range: attendance_type_enum
+    range: AttendanceTypeEnum
   local_id:
     name: local_id
     description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
@@ -3297,6 +3421,17 @@ URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
         
       AgendaItem : datetime_modified
         
+      AgendaItem : documents
+        
+          
+    
+        
+        
+        AgendaItem --> "*" Work : documents
+        click Work href "../Work/"
+    
+
+        
       AgendaItem : global_uri
         
       AgendaItem : has_resolution
@@ -3370,6 +3505,7 @@ URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
 | [agenda_item_category](#agenda_item_category) | 0..1 <br/> [String](#String) | [en] Category for grouped agenda items (e | direct |
 | [parent_agenda_item](#parent_agenda_item) | 0..1 <br/> [String](#String) | [en] If needed, this slot builds a hierarchy of agenda items | direct |
 | [has_resolution](#has_resolution) | 0..1 <br/> [Resolution](#Resolution) | [en] The resolutionor decision taken on this agenda item | direct |
+| [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
 | [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
 | [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
 | [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
@@ -3470,6 +3606,7 @@ slots:
 - agenda_item_category
 - parent_agenda_item
 - has_resolution
+- documents
 
 ```
 </details>
@@ -3520,7 +3657,7 @@ attributes:
     owner: AgendaItem
     domain_of:
     - AgendaItem
-    range: agenda_item_type_enum
+    range: AgendaItemTypeEnum
   agenda_item_number:
     name: agenda_item_number
     description: '[en] Sequential number of the agenda item (string type to support
@@ -3685,6 +3822,7 @@ attributes:
     - Meeting
     - AgendaItem
     - Media
+    - Manifestation
     range: MultilingualString
     multivalued: true
     inlined: true
@@ -3736,6 +3874,33 @@ attributes:
     domain_of:
     - AgendaItem
     range: Resolution
+  documents:
+    name: documents
+    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
+      sind.
+
+      [en] List of documents (FRBR Works) linked to the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: meta:documents
+    alias: documents
+    owner: AgendaItem
+    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Resolution
+    - Voting
+    - Election
+    - Speech
+    - Motion
+    range: Work
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   local_id:
     name: local_id
     description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
@@ -4172,6 +4337,17 @@ URI: [ops:Resolution](https://ch.paf.link/schema/operations/Resolution)
  classDiagram
     class Resolution
     click Resolution href "../Resolution/"
+      Resolution : documents
+        
+          
+    
+        
+        
+        Resolution --> "*" Work : documents
+        click Work href "../Work/"
+    
+
+        
       Resolution : resolution_type
         
           
@@ -4202,6 +4378,7 @@ URI: [ops:Resolution](https://ch.paf.link/schema/operations/Resolution)
 | [resolution_type](#resolution_type) | 0..1 <br/> [ResolutionTypeEnum](#ResolutionTypeEnum) | [en] Type of resolutiontaken on the agenda item | direct |
 | [type_label](#type_label) | 0..1 <br/> [String](#String) | [en] Custom type label when standard type values don't apply | direct |
 | [vote_procedures](#vote_procedures) | * <br/> [String](#String) | [en] Procedures for voting, such as secret ballot or open vote | direct |
+| [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
 
 
 
@@ -4271,6 +4448,7 @@ slots:
 - resolution_type
 - type_label
 - vote_procedures
+- documents
 
 ```
 </details>
@@ -4301,7 +4479,7 @@ attributes:
     owner: Resolution
     domain_of:
     - Resolution
-    range: resolution_type_enum
+    range: ResolutionTypeEnum
   type_label:
     name: type_label
     description: '[en] Custom type label when standard type values don''t apply.
@@ -4333,6 +4511,33 @@ attributes:
     domain_of:
     - Resolution
     range: string
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  documents:
+    name: documents
+    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
+      sind.
+
+      [en] List of documents (FRBR Works) linked to the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: meta:documents
+    alias: documents
+    owner: Resolution
+    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Resolution
+    - Voting
+    - Election
+    - Speech
+    - Motion
+    range: Work
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -4410,6 +4615,17 @@ URI: [ops:Motion](https://ch.paf.link/schema/operations/Motion)
       
       Motion : description
         
+      Motion : documents
+        
+          
+    
+        
+        
+        Motion --> "*" Work : documents
+        click Work href "../Work/"
+    
+
+        
       Motion : global_uri
         
       Motion : local_id
@@ -4435,6 +4651,7 @@ URI: [ops:Motion](https://ch.paf.link/schema/operations/Motion)
 | ---  | --- | --- | --- |
 | [title](#title) | 0..1 <br/> [String](#String) |  | direct |
 | [description](#description) | 0..1 <br/> [String](#String) |  | direct |
+| [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
 | [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
 | [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
 | [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
@@ -4499,6 +4716,7 @@ mixins:
 slots:
 - title
 - description
+- documents
 
 ```
 </details>
@@ -4527,6 +4745,7 @@ attributes:
     - Election
     - Motion
     - Media
+    - Expression
     range: string
   description:
     name: description
@@ -4538,7 +4757,35 @@ attributes:
     - Legislature
     - Meeting
     - Motion
+    - Expression
     range: string
+  documents:
+    name: documents
+    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
+      sind.
+
+      [en] List of documents (FRBR Works) linked to the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: meta:documents
+    alias: documents
+    owner: Motion
+    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Resolution
+    - Voting
+    - Election
+    - Speech
+    - Motion
+    range: Work
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   local_id:
     name: local_id
     description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
@@ -4836,6 +5083,17 @@ URI: [ops:Voting](https://ch.paf.link/schema/operations/Voting)
         
       Voting : datetime_modified
         
+      Voting : documents
+        
+          
+    
+        
+        
+        Voting --> "*" Work : documents
+        click Work href "../Work/"
+    
+
+        
       Voting : global_uri
         
       Voting : label_abstention
@@ -4957,6 +5215,7 @@ URI: [ops:Voting](https://ch.paf.link/schema/operations/Voting)
 | [parent_agenda_item](#parent_agenda_item) | 0..1 <br/> [String](#String) | [en] If needed, this slot builds a hierarchy of agenda items | direct |
 | [affair_id](#affair_id) | 0..1 <br/> [String](#String) | [en] The connection to the affairs (business items) of the agenda item | direct |
 | [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
+| [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
 | [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
 | [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
 | [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
@@ -5057,6 +5316,7 @@ slots:
 - parent_agenda_item
 - affair_id
 - actor_id
+- documents
 
 ```
 </details>
@@ -5122,7 +5382,7 @@ attributes:
     owner: Voting
     domain_of:
     - Voting
-    range: voting_type_enum
+    range: VotingTypeEnum
   type_label:
     name: type_label
     description: '[en] Custom type label when standard type values don''t apply.
@@ -5359,7 +5619,7 @@ attributes:
     domain_of:
     - Voting
     - Election
-    range: majority_type_enum
+    range: MajorityTypeEnum
   majority_count:
     name: majority_count
     description: '[en] Number of votes required for the relevant majority threshold.
@@ -5467,6 +5727,33 @@ attributes:
     - IndividualAttendance
     - Speech
     range: string
+  documents:
+    name: documents
+    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
+      sind.
+
+      [en] List of documents (FRBR Works) linked to the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: meta:documents
+    alias: documents
+    owner: Voting
+    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Resolution
+    - Voting
+    - Election
+    - Speech
+    - Motion
+    range: Work
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   local_id:
     name: local_id
     description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
@@ -6005,7 +6292,7 @@ attributes:
     owner: IndividualVote
     domain_of:
     - IndividualVote
-    range: individual_vote_type_enum
+    range: IndividualVoteTypeEnum
   type_label:
     name: type_label
     description: '[en] Custom type label when standard type values don''t apply.
@@ -6402,6 +6689,17 @@ URI: [ops:Election](https://ch.paf.link/schema/operations/Election)
         
       Election : datetime_modified
         
+      Election : documents
+        
+          
+    
+        
+        
+        Election --> "*" Work : documents
+        click Work href "../Work/"
+    
+
+        
       Election : election_type
         
           
@@ -6478,6 +6776,7 @@ URI: [ops:Election](https://ch.paf.link/schema/operations/Election)
 | [parent_agenda_item](#parent_agenda_item) | 0..1 <br/> [String](#String) | [en] If needed, this slot builds a hierarchy of agenda items | direct |
 | [affair_id](#affair_id) | 0..1 <br/> [String](#String) | [en] The connection to the affairs (business items) of the agenda item | direct |
 | [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
+| [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
 | [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
 | [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
 | [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
@@ -6567,6 +6866,7 @@ slots:
 - parent_agenda_item
 - affair_id
 - actor_id
+- documents
 
 ```
 </details>
@@ -6628,7 +6928,7 @@ attributes:
     owner: Election
     domain_of:
     - Election
-    range: election_type_enum
+    range: ElectionTypeEnum
   type_label:
     name: type_label
     description: '[en] Custom type label when standard type values don''t apply.
@@ -6656,6 +6956,7 @@ attributes:
     - Election
     - Motion
     - Media
+    - Expression
     range: string
   landing_page:
     name: landing_page
@@ -6726,7 +7027,7 @@ attributes:
     domain_of:
     - Voting
     - Election
-    range: majority_type_enum
+    range: MajorityTypeEnum
   majority_count:
     name: majority_count
     description: '[en] Number of votes required for the relevant majority threshold.
@@ -6834,6 +7135,33 @@ attributes:
     - IndividualAttendance
     - Speech
     range: string
+  documents:
+    name: documents
+    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
+      sind.
+
+      [en] List of documents (FRBR Works) linked to the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: meta:documents
+    alias: documents
+    owner: Election
+    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Resolution
+    - Voting
+    - Election
+    - Speech
+    - Motion
+    range: Work
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   local_id:
     name: local_id
     description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
@@ -7134,6 +7462,17 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
         
       Speech : datetime_modified
         
+      Speech : documents
+        
+          
+    
+        
+        
+        Speech --> "*" Work : documents
+        click Work href "../Work/"
+    
+
+        
       Speech : global_uri
         
       Speech : landing_page
@@ -7189,6 +7528,7 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
 | [media_url](#media_url) | 0..1 <br/> [String](#String) | URL to media file (audio/video) | direct |
 | [media_type](#media_type) | 0..1 <br/> [String](#String) | Type of media (audio, video, document) | direct |
 | [media_format](#media_format) | 0..1 <br/> [String](#String) | MIME type of the media file | direct |
+| [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
 | [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
 | [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
 | [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
@@ -7278,6 +7618,7 @@ slots:
 - media_url
 - media_type
 - media_format
+- documents
 
 ```
 </details>
@@ -7314,6 +7655,7 @@ attributes:
     - Speech
     - MultilingualString
     - MultilingualValue
+    - Expression
     range: string
     pattern: ^[a-z]{2}$
   start:
@@ -7493,6 +7835,33 @@ attributes:
     domain_of:
     - Speech
     range: string
+  documents:
+    name: documents
+    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
+      sind.
+
+      [en] List of documents (FRBR Works) linked to the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: meta:documents
+    alias: documents
+    owner: Speech
+    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Resolution
+    - Voting
+    - Election
+    - Speech
+    - Motion
+    range: Work
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   local_id:
     name: local_id
     description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
@@ -8059,6 +8428,7 @@ attributes:
     - Election
     - Motion
     - Media
+    - Expression
     range: string
   media_type:
     name: media_type
@@ -8082,6 +8452,7 @@ attributes:
     - Meeting
     - AgendaItem
     - Media
+    - Manifestation
     range: MultilingualString
     multivalued: true
     inlined: true
@@ -8221,6 +8592,7 @@ URI: [ops:MultilingualString](https://ch.paf.link/schema/operations/Multilingual
 | [AgendaItem](#AgendaItem) | [url](#url) | range | [MultilingualString](#MultilingualString) |
 | [Voting](#Voting) | [voting_title](#voting_title) | range | [MultilingualString](#MultilingualString) |
 | [Media](#Media) | [url](#url) | range | [MultilingualString](#MultilingualString) |
+| [Manifestation](#Manifestation) | [url](#url) | range | [MultilingualString](#MultilingualString) |
 
 
 
@@ -8329,6 +8701,7 @@ attributes:
     - Speech
     - MultilingualString
     - MultilingualValue
+    - Expression
     range: string
     required: true
     pattern: ^[a-z]{2}$

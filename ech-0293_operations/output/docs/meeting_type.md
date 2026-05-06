@@ -89,7 +89,7 @@ slot_uri: ops:meetingType
 alias: meeting_type
 domain_of:
 - Meeting
-range: meeting_type_enum
+range: MeetingTypeEnum
 
 ```
 </details>

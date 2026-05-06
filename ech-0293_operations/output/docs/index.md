@@ -17,7 +17,9 @@ Name: operations
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |
 | [Attendance](Attendance.md) | [en] Attendance record for a meeting or voting session |
 | [Container](Container.md) |  |
+| [Date](Date.md) |  |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |
+| [Expression](Expression.md) |  |
 | [HasCreationModificationDates](HasCreationModificationDates.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Ä... |
 | [HasIdentification](HasIdentification.md) | [de] Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Ve... |
 | [HasTemporalValidity](HasTemporalValidity.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gülti... |
@@ -27,6 +29,7 @@ Name: operations
 | [IsInstantaneousEvent](IsInstantaneousEvent.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereign... |
 | [JointDebate](JointDebate.md) | [en] Agenda Items which are debated together |
 | [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |
+| [Manifestation](Manifestation.md) |  |
 | [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |
 | [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |
@@ -38,6 +41,7 @@ Name: operations
 | [TextSegment](TextSegment.md) | [en] A text segment such as cross-references or subtitles in meeting protocol... |
 | [TotalOther](TotalOther.md) | [en] Additional vote counts when multiple options are presented (e |
 | [Voting](Voting.md) | [en] A voting procedure with individual votes and results |
+| [Work](Work.md) |  |
 
 
 
@@ -72,6 +76,8 @@ Name: operations
 | [date_end_planned](date_end_planned.md) | [de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer |
 | [date_modified](date_modified.md) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde |
 | [date_planned](date_planned.md) | [de] Das geplante Datum eines instantanen Ereignisses oder Vorkommens (ohne Z... |
+| [date_type](date_type.md) |  |
+| [dates](dates.md) |  |
 | [datetime_actual](datetime_actual.md) | [de] Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses ode... |
 | [datetime_begin](datetime_begin.md) | [en] The date and time when the meeting or voting begins |
 | [datetime_begin_actual](datetime_begin_actual.md) | [de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorko... |
@@ -83,12 +89,17 @@ Name: operations
 | [datetime_modified](datetime_modified.md) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde |
 | [datetime_planned](datetime_planned.md) | [de] Das geplante Datum und die Uhrzeit eines instantanen Ereignisses oder Vo... |
 | [description](description.md) |  |
+| [document_category](document_category.md) | [de] Kategorie des Dokuments |
+| [documents](documents.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind |
 | [election_type](election_type.md) | Type of election procedure |
 | [elections](elections.md) | Collection of election records |
+| [expressions](expressions.md) |  |
+| [format](format.md) | [en] The file format of the manifestation (e |
 | [global_uri](global_uri.md) | [de] Eine eindeutige, global gültige URI für die Entität |
 | [group_id](group_id.md) | Identifier of the group or body |
 | [group_name](group_name.md) | Name of the group or body |
 | [has_resolution](has_resolution.md) | [en] The resolutionor decision taken on this agenda item |
+| [id](id.md) |  |
 | [individual_attendances](individual_attendances.md) | Collection of individual attendance records |
 | [individual_vote_type](individual_vote_type.md) | [en] Type of vote cast (yes, no, abstention, absent, etc |
 | [individual_votes](individual_votes.md) | Collection of individual vote records |
@@ -106,6 +117,7 @@ Name: operations
 | [location](location.md) |  |
 | [majority_count](majority_count.md) | [en] Number of votes required for the relevant majority threshold |
 | [majority_type](majority_type.md) | [en] Type of majority required for the vote (absolute, two-thirds, etc |
+| [manifestations](manifestations.md) |  |
 | [media_format](media_format.md) | MIME type of the media file |
 | [media_type](media_type.md) | Type of media (audio, video, document) |
 | [media_url](media_url.md) | URL to media file (audio/video) |
@@ -162,6 +174,9 @@ Name: operations
 | [votings](votings.md) | Collection of voting records |
 | [weight](weight.md) | [en] The number of votes held by the individual, if applicable (e |
 | [wikidata_uri](wikidata_uri.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z |
+| [work_type](work_type.md) |  |
+| [works](works.md) |  |
+| [xdate](xdate.md) |  |
 
 
 ## Enumerations
@@ -170,6 +185,8 @@ Name: operations
 | --- | --- |
 | [AgendaItemTypeEnum](AgendaItemTypeEnum.md) | [en] Type of agenda item, distinguishing individual items from grouped items |
 | [AttendanceTypeEnum](AttendanceTypeEnum.md) | [en] Type of individual attendance |
+| [DateTypesEnum](DateTypesEnum.md) |  |
+| [DocumentCategoryEnum](DocumentCategoryEnum.md) | [de] Kategorien zur Klassifikation von Dokumenten, die in den eCH Standards 0... |
 | [ElectionTypeEnum](ElectionTypeEnum.md) | [en] Type of election procedure |
 | [IndividualVoteTypeEnum](IndividualVoteTypeEnum.md) | [en] Type of individual vote cast by a member |
 | [MajorityTypeEnum](MajorityTypeEnum.md) | Type of majority required for the vote |
@@ -177,6 +194,7 @@ Name: operations
 | [ResolutionTypeEnum](ResolutionTypeEnum.md) | [en] Type of resolutiontaken on an agenda item |
 | [StateEnum](StateEnum.md) | State of the meeting |
 | [VotingTypeEnum](VotingTypeEnum.md) | [en] Type of voting procedure |
+| [WorkTypesEnum](WorkTypesEnum.md) |  |
 
 
 ## Types

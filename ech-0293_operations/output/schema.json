@@ -152,6 +152,16 @@
                         "null"
                     ]
                 },
+                "documents": {
+                    "description": "[de] Liste von Dokumenten (FRBR Works), die mit der Entit\u00e4t verkn\u00fcpft sind.\n[en] List of documents (FRBR Works) linked to the entity.\n",
+                    "items": {
+                        "$ref": "#/$defs/Work"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "global_uri": {
                     "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
                     "type": "string"
@@ -497,6 +507,51 @@
             "title": "Container",
             "type": "object"
         },
+        "Date": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "date_type": {
+                    "$ref": "#/$defs/DateTypesEnum"
+                },
+                "xdate": {
+                    "format": "date",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "xdate",
+                "date_type"
+            ],
+            "title": "Date",
+            "type": "object"
+        },
+        "DateTypesEnum": {
+            "description": "",
+            "enum": [
+                "first_publication",
+                "last_revision"
+            ],
+            "title": "DateTypesEnum",
+            "type": "string"
+        },
+        "DocumentCategoryEnum": {
+            "description": "[de] Kategorien zur Klassifikation von Dokumenten, die in den eCH Standards 0292-0297 referenziert werden. Mehrsprachige Labels (DE/FR/IT/RM/EN) sind \u00fcber `annotations` (Konvention `label_xx`) abgebildet; Erstvorschl\u00e4ge f\u00fcr FR/IT/RM stehen unter Plenum-Review.\n[en] Categories for classifying documents referenced in eCH standards 0292-0297. Multilingual labels (DE/FR/IT/RM/EN) are encoded via `annotations` (convention `label_xx`); first proposals for FR/IT/RM are pending plenum review.",
+            "enum": [
+                "protocol",
+                "voting_result",
+                "meeting_documents",
+                "meeting_planning",
+                "media_release",
+                "group_documents",
+                "member_directory",
+                "person_documents",
+                "interest_disclosure",
+                "other"
+            ],
+            "title": "DocumentCategoryEnum",
+            "type": "string"
+        },
         "Election": {
             "additionalProperties": false,
             "description": "[en] An election procedure for selecting persons to positions.\n[de] Ein Wahlverfahren zur Wahl von Personen in Positionen.",
@@ -560,6 +615,16 @@
                     "format": "date-time",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "documents": {
+                    "description": "[de] Liste von Dokumenten (FRBR Works), die mit der Entit\u00e4t verkn\u00fcpft sind.\n[en] List of documents (FRBR Works) linked to the entity.\n",
+                    "items": {
+                        "$ref": "#/$defs/Work"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -667,6 +732,56 @@
             ],
             "title": "ElectionTypeEnum",
             "type": "string"
+        },
+        "Expression": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "dates": {
+                    "items": {
+                        "$ref": "#/$defs/Date"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "language": {
+                    "description": "[en] Language code in ISO 639-1 format.\n[de] Sprachcode im ISO 639-1-Format.\n",
+                    "pattern": "^[a-z]{2}$",
+                    "type": "string"
+                },
+                "manifestations": {
+                    "items": {
+                        "$ref": "#/$defs/Manifestation"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "title": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "language"
+            ],
+            "title": "Expression",
+            "type": "object"
         },
         "IndividualAttendance": {
             "additionalProperties": false,
@@ -999,6 +1114,16 @@
                         "null"
                     ]
                 },
+                "documents": {
+                    "description": "[de] Liste von Dokumenten (FRBR Works), die mit der Entit\u00e4t verkn\u00fcpft sind.\n[en] List of documents (FRBR Works) linked to the entity.\n",
+                    "items": {
+                        "$ref": "#/$defs/Work"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "global_uri": {
                     "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
                     "type": "string"
@@ -1044,11 +1169,50 @@
             "description": "Type of majority required for the vote",
             "enum": [
                 "absolute",
-                "two-third",
+                "two_thirds",
                 "other"
             ],
             "title": "MajorityTypeEnum",
             "type": "string"
+        },
+        "Manifestation": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "dates": {
+                    "items": {
+                        "$ref": "#/$defs/Date"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "format": {
+                    "description": "[en] The file format of the manifestation (e.g., pdf, html).\n[de] Das Dateiformat der Manifestation (z.B. pdf, html).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "url": {
+                    "items": {
+                        "$ref": "#/$defs/MultilingualString"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Manifestation",
+            "type": "object"
         },
         "Media": {
             "additionalProperties": false,
@@ -1255,6 +1419,16 @@
                         "null"
                     ]
                 },
+                "documents": {
+                    "description": "[de] Liste von Dokumenten (FRBR Works), die mit der Entit\u00e4t verkn\u00fcpft sind.\n[en] List of documents (FRBR Works) linked to the entity.\n",
+                    "items": {
+                        "$ref": "#/$defs/Work"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "global_uri": {
                     "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
                     "type": "string"
@@ -1393,6 +1567,16 @@
                         "null"
                     ]
                 },
+                "documents": {
+                    "description": "[de] Liste von Dokumenten (FRBR Works), die mit der Entit\u00e4t verkn\u00fcpft sind.\n[en] List of documents (FRBR Works) linked to the entity.\n",
+                    "items": {
+                        "$ref": "#/$defs/Work"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "global_uri": {
                     "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
                     "type": "string"
@@ -1429,7 +1613,7 @@
             "description": "[en] A string that can contain text in multiple languages.\n[de] Ein String, der Text in mehreren Sprachen enthalten kann.",
             "properties": {
                 "language": {
-                    "description": "[de] Sprachcode im ISO 639-1 Format.\n[en] Language code in ISO 639-1 format.\n",
+                    "description": "[en] Language code in ISO 639-1 format.\n[de] Sprachcode im ISO 639-1-Format.\n",
                     "pattern": "^[a-z]{2}$",
                     "type": "string"
                 },
@@ -1449,12 +1633,9 @@
             "description": "[de] Ein mehrsprachiger String mit Angabe der Sprache.\n[en] A multilingual string with language specification.",
             "properties": {
                 "language": {
-                    "description": "[de] Sprachcode im ISO 639-1 Format.\n[en] Language code in ISO 639-1 format.\n",
+                    "description": "[en] Language code in ISO 639-1 format.\n[de] Sprachcode im ISO 639-1-Format.\n",
                     "pattern": "^[a-z]{2}$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "value": {
                     "description": "[de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc.\n[en] The value of an information besides other attributes such as type, language, etc.\n",
@@ -1464,6 +1645,9 @@
                     ]
                 }
             },
+            "required": [
+                "language"
+            ],
             "title": "MultilingualValue",
             "type": "object"
         },
@@ -1471,6 +1655,16 @@
             "additionalProperties": false,
             "description": "[en] A resolutionor decision taken on an agenda item, including voting procedures.\n[de] Eine Resolution oder Entscheidung zu einem Traktandum, einschlie\u00dflich Abstimmungsverfahren.",
             "properties": {
+                "documents": {
+                    "description": "[de] Liste von Dokumenten (FRBR Works), die mit der Entit\u00e4t verkn\u00fcpft sind.\n[en] List of documents (FRBR Works) linked to the entity.\n",
+                    "items": {
+                        "$ref": "#/$defs/Work"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "resolution_type": {
                     "$ref": "#/$defs/ResolutionTypeEnum",
                     "description": "[en] Type of resolutiontaken on the agenda item.\n[de] Art der Resolution zum Traktandum.\n"
@@ -1618,6 +1812,16 @@
                         "null"
                     ]
                 },
+                "documents": {
+                    "description": "[de] Liste von Dokumenten (FRBR Works), die mit der Entit\u00e4t verkn\u00fcpft sind.\n[en] List of documents (FRBR Works) linked to the entity.\n",
+                    "items": {
+                        "$ref": "#/$defs/Work"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "global_uri": {
                     "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
                     "type": "string"
@@ -1743,6 +1947,16 @@
                         "null"
                     ]
                 },
+                "documents": {
+                    "description": "[de] Liste von Dokumenten (FRBR Works), die mit der Entit\u00e4t verkn\u00fcpft sind.\n[en] List of documents (FRBR Works) linked to the entity.\n",
+                    "items": {
+                        "$ref": "#/$defs/Work"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "global_uri": {
                     "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
                     "type": "string"
@@ -1755,12 +1969,9 @@
                     ]
                 },
                 "language": {
-                    "description": "[de] Sprachcode im ISO 639-1 Format.\n[en] Language code in ISO 639-1 format.\n",
+                    "description": "[en] Language code in ISO 639-1 format.\n[de] Sprachcode im ISO 639-1-Format.\n",
                     "pattern": "^[a-z]{2}$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "local_id": {
                     "description": "[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n[en] Local identifier. For example, a UUID from the council information system.\n",
@@ -1830,6 +2041,7 @@
                 }
             },
             "required": [
+                "language",
                 "text",
                 "global_uri"
             ],
@@ -1964,6 +2176,16 @@
                     "format": "date-time",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "documents": {
+                    "description": "[de] Liste von Dokumenten (FRBR Works), die mit der Entit\u00e4t verkn\u00fcpft sind.\n[en] List of documents (FRBR Works) linked to the entity.\n",
+                    "items": {
+                        "$ref": "#/$defs/Work"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -2142,6 +2364,46 @@
                 "other"
             ],
             "title": "VotingTypeEnum",
+            "type": "string"
+        },
+        "Work": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "document_category": {
+                    "$ref": "#/$defs/DocumentCategoryEnum",
+                    "description": "[de] Kategorie des Dokuments. Wenn nicht gesetzt, wird automatisch 'other' verwendet.\n[en] Category of the document. If not set, 'other' is automatically used.\n"
+                },
+                "expressions": {
+                    "items": {
+                        "$ref": "#/$defs/Expression"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "work_type": {
+                    "$ref": "#/$defs/WorkTypesEnum"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Work",
+            "type": "object"
+        },
+        "WorkTypesEnum": {
+            "description": "",
+            "enum": [
+                "pv",
+                "submitted_version",
+                "current_law"
+            ],
+            "title": "WorkTypesEnum",
             "type": "string"
         }
     },

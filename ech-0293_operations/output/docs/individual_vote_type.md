@@ -95,7 +95,7 @@ rank: 1000
 alias: individual_vote_type
 domain_of:
 - IndividualVote
-range: individual_vote_type_enum
+range: IndividualVoteTypeEnum
 
 ```
 </details>

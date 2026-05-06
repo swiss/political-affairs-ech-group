@@ -11,7 +11,7 @@ __
 
 
 
-URI: [ops:individual_vote_type_enum](https://ch.paf.link/schema/operations/individual_vote_type_enum)
+URI: [ops:IndividualVoteTypeEnum](https://ch.paf.link/schema/operations/IndividualVoteTypeEnum)
 
 ## Permissible Values
 | Value | Meaning | Description |
@@ -63,7 +63,7 @@ URI: [ops:individual_vote_type_enum](https://ch.paf.link/schema/operations/indiv
 
 <details>
 ```yaml
-name: individual_vote_type_enum
+name: IndividualVoteTypeEnum
 description: '[en] Type of individual vote cast by a member.
 
   [de] Art der Einzelstimme eines Mitglieds.

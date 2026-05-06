@@ -11,7 +11,7 @@ __
 
 
 
-URI: [ops:resolution_type_enum](https://ch.paf.link/schema/operations/resolution_type_enum)
+URI: [ops:ResolutionTypeEnum](https://ch.paf.link/schema/operations/ResolutionTypeEnum)
 
 ## Permissible Values
 | Value | Meaning | Description |
@@ -63,7 +63,7 @@ URI: [ops:resolution_type_enum](https://ch.paf.link/schema/operations/resolution
 
 <details>
 ```yaml
-name: resolution_type_enum
+name: ResolutionTypeEnum
 description: '[en] Type of resolutiontaken on an agenda item.
 
   [de] Art der Resolution zu einem Traktandum.

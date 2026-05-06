@@ -11,7 +11,7 @@ __
 
 
 
-URI: [ops:election_type_enum](https://ch.paf.link/schema/operations/election_type_enum)
+URI: [ops:ElectionTypeEnum](https://ch.paf.link/schema/operations/ElectionTypeEnum)
 
 ## Permissible Values
 | Value | Meaning | Description |
@@ -58,7 +58,7 @@ URI: [ops:election_type_enum](https://ch.paf.link/schema/operations/election_typ
 
 <details>
 ```yaml
-name: election_type_enum
+name: ElectionTypeEnum
 description: '[en] Type of election procedure.
 
   [de] Art des Wahlverfahrens.

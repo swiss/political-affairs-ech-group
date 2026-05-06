@@ -22,8 +22,8 @@ Alias: media_type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
 | [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |  no  |
+| [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
 
 
 

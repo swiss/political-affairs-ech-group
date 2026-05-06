@@ -87,7 +87,7 @@ rank: 1000
 alias: attendance_type
 domain_of:
 - IndividualAttendance
-range: attendance_type_enum
+range: AttendanceTypeEnum
 
 ```
 </details>

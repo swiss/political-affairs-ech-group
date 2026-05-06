@@ -95,6 +95,17 @@ URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
         
       AgendaItem : datetime_modified
         
+      AgendaItem : documents
+        
+          
+    
+        
+        
+        AgendaItem --> "*" Work : documents
+        click Work href "../Work/"
+    
+
+        
       AgendaItem : global_uri
         
       AgendaItem : has_resolution
@@ -168,6 +179,7 @@ URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
 | [agenda_item_category](agenda_item_category.md) | 0..1 <br/> [String](String.md) | [en] Category for grouped agenda items (e | direct |
 | [parent_agenda_item](parent_agenda_item.md) | 0..1 <br/> [String](String.md) | [en] If needed, this slot builds a hierarchy of agenda items | direct |
 | [has_resolution](has_resolution.md) | 0..1 <br/> [Resolution](Resolution.md) | [en] The resolutionor decision taken on this agenda item | direct |
+| [documents](documents.md) | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
 | [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |
 | [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](HasIdentification.md) |
 | [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](HasIdentification.md) |
@@ -268,6 +280,7 @@ slots:
 - agenda_item_category
 - parent_agenda_item
 - has_resolution
+- documents
 
 ```
 </details>
@@ -318,7 +331,7 @@ attributes:
     owner: AgendaItem
     domain_of:
     - AgendaItem
-    range: agenda_item_type_enum
+    range: AgendaItemTypeEnum
   agenda_item_number:
     name: agenda_item_number
     description: '[en] Sequential number of the agenda item (string type to support
@@ -483,6 +496,7 @@ attributes:
     - Meeting
     - AgendaItem
     - Media
+    - Manifestation
     range: MultilingualString
     multivalued: true
     inlined: true
@@ -534,6 +548,33 @@ attributes:
     domain_of:
     - AgendaItem
     range: Resolution
+  documents:
+    name: documents
+    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
+      sind.
+
+      [en] List of documents (FRBR Works) linked to the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: meta:documents
+    alias: documents
+    owner: AgendaItem
+    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Resolution
+    - Voting
+    - Election
+    - Speech
+    - Motion
+    range: Work
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   local_id:
     name: local_id
     description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.

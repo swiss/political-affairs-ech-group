@@ -149,6 +149,7 @@ attributes:
     - Speech
     - MultilingualString
     - MultilingualValue
+    - Expression
     range: string
     pattern: ^[a-z]{2}$
 
