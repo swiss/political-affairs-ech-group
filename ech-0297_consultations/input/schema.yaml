@@ -4,7 +4,7 @@ name: ch-paf-link-consultation
 prefixes:
   xsd: http://www.w3.org/2001/XMLSchema#
   prov: http://www.w3.org/ns/prov#
-  dcterm: http://purl.org/dc/terms/
+  dcterms: http://purl.org/dc/terms/
   linkml: https://w3id.org/linkml/
   paf: https://paf.link/
   chpaf: https://ch.paf.link/

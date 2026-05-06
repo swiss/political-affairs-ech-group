@@ -11,10 +11,11 @@ description: |
 prefixes:
   linkml: https://w3id.org/linkml/
   ops: https://ch.paf.link/schema/operations/
-  dcterm: http://purl.org/dc/terms/
+  dcterms: http://purl.org/dc/terms/
 imports:
   - linkml:types
   - ../../ech-0292_meta/input/schema_common
+  - ../../ech-0292_meta/input/schema
 default_prefix: ops
 default_range: string
 
@@ -52,6 +53,7 @@ classes:
       - description
       - landing_page
       - actor_id
+      - documents
 
   Session:
     description: |
@@ -67,6 +69,7 @@ classes:
       - url
       - parent_legislature
       - meetings
+      - documents
 
   Meeting:
     description: |
@@ -97,7 +100,8 @@ classes:
       - location
       - parent_meeting
       - parent_legislature
-      
+      - documents
+
   AgendaItem:
     description: |
       [en] An agenda item of a meeting.
@@ -123,6 +127,7 @@ classes:
       - agenda_item_category
       - parent_agenda_item
       - has_resolution
+      - documents
 
   JointDebate: 
     description: |
@@ -138,7 +143,8 @@ classes:
     slots:
       - resolution_type
       - type_label
-      - vote_procedures 
+      - vote_procedures
+      - documents
 
   Voting: # Abstimmung
     description: |
@@ -172,6 +178,7 @@ classes:
       - parent_agenda_item
       - affair_id
       - actor_id
+      - documents
 
 # Handling Präsidiums-Votum wird als eigenes voting aufgenommen
 
@@ -214,6 +221,7 @@ classes:
       - parent_agenda_item
       - affair_id
       - actor_id
+      - documents
 
   Attendance:
     description: |
@@ -263,6 +271,7 @@ classes:
       - media_url
       - media_type
       - media_format
+      - documents
 
   TextSegment:
     description: |
@@ -282,6 +291,7 @@ classes:
     slots:
       - title
       - description
+      - documents
 
   Media:
     description: |
@@ -341,7 +351,7 @@ slots:
     description: |
       [en] Type of voting procedure (preliminary, final, secret, etc.).
       [de] Art des Abstimmungsverfahrens (Zwischen-, Schlussabstimmung, geheim, etc.).
-    range: voting_type_enum
+    range: VotingTypeEnum
 
   voting_title:
     description: |
@@ -355,19 +365,19 @@ slots:
     description: |
       [en] Type of resolutiontaken on the agenda item.
       [de] Art der Resolution zum Traktandum.
-    range: resolution_type_enum
+    range: ResolutionTypeEnum
 
   individual_vote_type:
     description: |
       [en] Type of vote cast (yes, no, abstention, absent, etc.).
       [de] Art der abgegebenen Stimme (ja, nein, Enthaltung, abwesend, etc.).
-    range: individual_vote_type_enum
+    range: IndividualVoteTypeEnum
 
   agenda_item_type:
     description: |
       [en] Type of agenda item, distinguishing individual items from groups.
       [de] Art des Traktandums, unterscheidet Einzeltraktanden von Traktandengruppen.
-    range: agenda_item_type_enum
+    range: AgendaItemTypeEnum
 
   agenda_item_number:
     description: |
@@ -615,7 +625,7 @@ slots:
       [de] Gesamtzahl der Stimmen, ohne abwesende und Präsidentenstimmen.
 
   majority_type:
-    range: majority_type_enum
+    range: MajorityTypeEnum
     description: |
       [en] Type of majority required for the vote (absolute, two-thirds, etc.).
       [de] Art der für die Abstimmung erforderlichen Mehrheit (absolut, Zweidrittel usw.).
@@ -635,10 +645,10 @@ slots:
   meeting_type:
     slot_uri: ops:meetingType
     description: "Type of the meeting, e.g. session, committee, sitting, various"
-    range: meeting_type_enum
+    range: MeetingTypeEnum
   
   state:
-    range: state_enum
+    range: StateEnum
 
   status:
 
@@ -731,11 +741,11 @@ slots:
 
   election_type:
     description: Type of election procedure
-    range: election_type_enum
+    range: ElectionTypeEnum
 
   attendance_type:
     description: Type of individual attendance
-    range: attendance_type_enum
+    range: AttendanceTypeEnum
 
   total_present:
     range: integer
@@ -784,7 +794,7 @@ slots:
 
 enums:
 
-  state_enum:
+  StateEnum:
     description: "State of the meeting"
     permissible_values:
       "planned":
@@ -794,7 +804,7 @@ enums:
       "postponed":
         meaning: ops:enum/state/postponed
 
-  meeting_type_enum:
+  MeetingTypeEnum:
     description: "Type of the meeting"
     permissible_values:
       "session":
@@ -806,17 +816,17 @@ enums:
       "various":
         meaning: ops:enum/meeting_type/various
 
-  majority_type_enum:
+  MajorityTypeEnum:
     description: "Type of majority required for the vote"
     permissible_values:
       "absolute":
         meaning: ops:enum/majority_type/absolute
-      "two-third":
-        meaning: ops:enum/majority_type/two-third
+      "two_thirds":
+        meaning: ops:enum/majority_type/two_thirds
       "other":
         meaning: ops:enum/majority_type/other
 
-  resolution_type_enum:
+  ResolutionTypeEnum:
     description: |
       [en] Type of resolutiontaken on an agenda item.
       [de] Art der Resolution zu einem Traktandum.
@@ -862,7 +872,7 @@ enums:
           [en] Other resolutiontype not covered by standard categories
           [de] Andere Resolution, nicht durch Standardkategorien abgedeckt
 
-  voting_type_enum:
+  VotingTypeEnum:
     description: |
       [en] Type of voting procedure.
       [de] Art des Abstimmungsverfahrens.
@@ -893,7 +903,7 @@ enums:
           [en] Other voting type
           [de] Andere Abstimmungsart
 
-  individual_vote_type_enum:
+  IndividualVoteTypeEnum:
     description: |
       [en] Type of individual vote cast by a member.
       [de] Art der Einzelstimme eines Mitglieds.
@@ -939,7 +949,7 @@ enums:
           [en] Other vote type
           [de] Andere Stimmabgabe
 
-  agenda_item_type_enum:
+  AgendaItemTypeEnum:
     description: |
       [en] Type of agenda item, distinguishing individual items from grouped items.
       [de] Art des Traktandums, unterscheidet einzelne von gruppierten Traktanden.
@@ -955,7 +965,7 @@ enums:
           [en] Group of agenda items (Traktandengruppe)
           [de] Traktandengruppe
 
-  election_type_enum:
+  ElectionTypeEnum:
     description: |
       [en] Type of election procedure.
       [de] Art des Wahlverfahrens.
@@ -976,7 +986,7 @@ enums:
           [en] Silent election without opponent (Stille Wahl ohne Gegenkandidat)
           [de] Stille Wahl ohne Gegenkandidat
 
-  attendance_type_enum:
+  AttendanceTypeEnum:
     description: |
       [en] Type of individual attendance.
       [de] Art der individuellen Anwesenheit.

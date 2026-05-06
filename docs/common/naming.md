@@ -21,6 +21,25 @@ Examples: `Container`, `Legislature`, `MeetingItem`
 
 Examples: `id`, `body_key`, `meeting_items`
 
+### Enums
+
+- PascalCase
+- suffix `Enum` (visually distinguishes enums from classes in `range:` references and matches the LinkML default `standard_naming` linter rule)
+- English
+
+Examples: `DocumentCategoryEnum`, `MeetingTypeEnum`, `VotingTypeEnum`
+
+### Permissible Values
+
+- snake_case
+- English
+- no spaces, hyphens or punctuation in the key (use underscores)
+
+Examples (taken from existing schemas):
+
+- single word: `accepted`, `rejected`, `secret`, `open`, `yes`, `no`, `abstention`
+- multi-word: `final_vote`, `tie_breaker_president`, `accepted_point_by_point`, `nearly_unanimous`, `absent_excused`
+
 **Attention**:
 
 Avoid using classes and slots with the only difference in capitalization, because there will be documentation files generated (e.g. `Meeting.md` and `meeting.md`) that will lead to troubles on case-insensitive file systems (e.g. Win and Mac). In the case of wanting to state that some entity has an object of class Meeting, use `has_meeting` or `has_meetings` depending on the number of allowed objects (remember to set `slot_uri` always in singular).

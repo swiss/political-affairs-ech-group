@@ -57,6 +57,38 @@ name:
 
 There seems to be no simple solution to allow a string to either be a `MultilingualString` or a simple string. Therefore, we recommend to use the `MultilingualString` type for all strings that are in a certain language even if there is no translation intended.
 
+### Multilingual Labels for Enum Permissible Values
+
+LinkML does not provide a canonical mechanism for attaching multilingual labels to enum permissible values (see open LinkML [Discussion #2896](https://github.com/orgs/linkml/discussions/2896)). The metamodel's `structured_aliases` field cannot be used for `skos:prefLabel` because its `alias_predicate_enum` only accepts `EXACT_SYNONYM` / `RELATED_SYNONYM` / `BROAD_SYNONYM` / `NARROW_SYNONYM`.
+
+As a project convention, we use **annotations** with the keys `label_de`, `label_fr`, `label_it`, `label_rm`, `label_en` to attach multilingual labels to permissible values. The `text` (the permissible value key itself) is in English `snake_case`. The `title` field provides the canonical English display label (rendered as `rdfs:label` by `gen-owl`). The `description` field continues to use the existing `[de] ... [en] ...` convention for prose definitions and examples. The `meaning` field provides a stable CURIE that anchors each value semantically and can later be linked to an external SKOS scheme with proper language-tagged `skos:prefLabel` triples.
+
+Example:
+
+```yaml
+enums:
+  document_category_enum:
+    permissible_values:
+      protocol:
+        title: Protocol
+        description: |
+          [de] Protokolle aller Art (Entscheidungsprotokoll, Wortprotokoll, ...).
+          [en] Protocols of any kind (decision protocol, verbatim protocol, ...).
+        meaning: meta:vocabulary/document_category/Protocol
+        annotations:
+          label_de: Protokoll
+          label_fr: Procès-verbal
+          label_it: Verbale
+          label_rm: Protocol
+          label_en: Minutes
+```
+
+Caveats:
+
+- `gen-json-schema` and the default `gen-doc` enum template do not render `annotations` in their output. To surface the multilingual labels in the generated DOCX a custom Jinja template will be needed.
+- `gen-owl` emits each annotation as a triple `pv-uri annotation-key Literal(value)` without a language tag — language information lives in the annotation key (`label_de`), not as an RDF language tag. The recommended way to obtain proper RDF language tags is to maintain an external SKOS concept scheme referenced via `meaning`.
+- `gen-pydantic` ignores annotations on permissible values for class generation but they remain accessible via `SchemaView`.
+
 ## Reusing Slots
 
 It seems not possible to have a different descriptions for slots used in different classes. So slots should only be reused if a fairly general description is enough (like for a `id` or a `name`). For all other cases, it is better to define a new slot with a more specific name and description.
