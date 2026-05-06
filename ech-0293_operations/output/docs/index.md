@@ -15,7 +15,7 @@ Name: operations
 | Class | Description |
 | --- | --- |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |
-| [Attendance](Attendance.md) | [en] Attendance record for a meeting or voting session |
+| [Attendance](Attendance.md) | [en] Aggregated attendance record for a meeting (number of members present, a... |
 | [Container](Container.md) |  |
 | [Date](Date.md) |  |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |
@@ -23,7 +23,7 @@ Name: operations
 | [HasCreationModificationDates](HasCreationModificationDates.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Ä... |
 | [HasIdentification](HasIdentification.md) | [de] Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Ve... |
 | [HasTemporalValidity](HasTemporalValidity.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gülti... |
-| [IndividualAttendance](IndividualAttendance.md) | [en] Individual attendance record for a specific person |
+| [IndividualAttendance](IndividualAttendance.md) | [en] Individual attendance record for a specific person at a meeting (linked ... |
 | [IndividualVote](IndividualVote.md) | [en] An individual vote cast by a member during a voting procedure |
 | [IsEventWithDuration](IsEventWithDuration.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder V... |
 | [IsInstantaneousEvent](IsInstantaneousEvent.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereign... |
@@ -128,11 +128,13 @@ Name: operations
 | [number](number.md) |  |
 | [optional](optional.md) | [en] Indicates if the meeting or voting is optional |
 | [parent_agenda_item](parent_agenda_item.md) | [en] If needed, this slot builds a hierarchy of agenda items |
+| [parent_attendance](parent_attendance.md) | [en] The Attendance aggregate this individual attendance record belongs to |
 | [parent_legislature](parent_legislature.md) | [en] The legislative body in which the meeting is based |
 | [parent_meeting](parent_meeting.md) | [en] The linked meeting ID that groups the current meeting |
 | [parent_type](parent_type.md) | Type of parent object (meeting, agenda, speech, affair) |
 | [parent_voting](parent_voting.md) | [en] The ID of the voting associated with the individual vote |
 | [position](position.md) |  |
+| [reason](reason.md) | [en] Reason for absence or lateness (free-text, multilingual) |
 | [resolution_type](resolution_type.md) | [en] Type of resolutiontaken on the agenda item |
 | [resolutions](resolutions.md) | Collection of resolutionrecords |
 | [result](result.md) |  |
@@ -155,6 +157,7 @@ Name: operations
 | [title](title.md) |  |
 | [total](total.md) | [en] Total number of votes, excluding absent and president's vote |
 | [total_absent](total_absent.md) | [en] Total number of absent members |
+| [total_count](total_count.md) | [en] Total number of members of the body (reference value for quorum calculat... |
 | [total_count_abstention](total_count_abstention.md) | [en] Total number of abstentions |
 | [total_count_no](total_count_no.md) | [en] Total number of 'no' votes |
 | [total_count_yes](total_count_yes.md) | [en] Total number of 'yes' votes |

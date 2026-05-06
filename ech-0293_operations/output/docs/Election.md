@@ -432,6 +432,7 @@ attributes:
     - AgendaItem
     - Voting
     - Election
+    - Attendance
     range: string
   parent_agenda_item:
     name: parent_agenda_item

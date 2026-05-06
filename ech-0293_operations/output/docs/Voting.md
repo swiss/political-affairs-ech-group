@@ -195,7 +195,6 @@ URI: [ops:Voting](https://ch.paf.link/schema/operations/Voting)
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [votings](votings.md) | range | [Voting](Voting.md) |
 | [IndividualVote](IndividualVote.md) | [parent_voting](parent_voting.md) | range | [Voting](Voting.md) |
-| [IndividualAttendance](IndividualAttendance.md) | [parent_voting](parent_voting.md) | range | [Voting](Voting.md) |
 
 
 
@@ -630,6 +629,7 @@ attributes:
     - AgendaItem
     - Voting
     - Election
+    - Attendance
     range: string
   parent_agenda_item:
     name: parent_agenda_item

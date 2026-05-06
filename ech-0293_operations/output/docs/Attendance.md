@@ -3,9 +3,9 @@
 # Class: Attendance 
 
 
-_[en] Attendance record for a meeting or voting session._
+_[en] Aggregated attendance record for a meeting (number of members present, absent, excused)._
 
-_[de] Anwesenheitsliste für eine Sitzung oder Abstimmung._
+_[de] Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, Entschuldigte)._
 
 __
 
@@ -44,7 +44,11 @@ URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
         
       Attendance : local_id
         
+      Attendance : parent_meeting
+        
       Attendance : total_absent
+        
+      Attendance : total_count
         
       Attendance : total_excused
         
@@ -67,10 +71,12 @@ URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
+| [parent_meeting](parent_meeting.md) | 0..1 <br/> [String](String.md) | [en] The linked meeting ID that groups the current meeting | direct |
 | [datetime_begin](datetime_begin.md) | 0..1 <br/> [Datetime](Datetime.md) | [en] The date and time when the meeting or voting begins | direct |
 | [actor_id](actor_id.md) | 0..1 <br/> [String](String.md) | [en] The political body organized by the term of office (e | direct |
-| [total_absent](total_absent.md) | 0..1 <br/> [Integer](Integer.md) | [en] Total number of absent members | direct |
+| [total_count](total_count.md) | 0..1 <br/> [Integer](Integer.md) | [en] Total number of members of the body (reference value for quorum calculat... | direct |
 | [total_present](total_present.md) | 0..1 <br/> [Integer](Integer.md) | Total number of members present | direct |
+| [total_absent](total_absent.md) | 0..1 <br/> [Integer](Integer.md) | [en] Total number of absent members | direct |
 | [total_excused](total_excused.md) | 0..1 <br/> [Integer](Integer.md) | Total number of excused absences | direct |
 | [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |
 | [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](HasIdentification.md) |
@@ -89,6 +95,7 @@ URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [attendances](attendances.md) | range | [Attendance](Attendance.md) |
+| [IndividualAttendance](IndividualAttendance.md) | [parent_attendance](parent_attendance.md) | range | [Attendance](Attendance.md) |
 
 
 
@@ -136,9 +143,11 @@ URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
 <details>
 ```yaml
 name: Attendance
-description: '[en] Attendance record for a meeting or voting session.
+description: '[en] Aggregated attendance record for a meeting (number of members present,
+  absent, excused).
 
-  [de] Anwesenheitsliste für eine Sitzung oder Abstimmung.
+  [de] Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende,
+  Entschuldigte).
 
   '
 from_schema: https://ch.paf.link/schema/operations
@@ -146,10 +155,12 @@ mixins:
 - HasIdentification
 - HasCreationModificationDates
 slots:
+- parent_meeting
 - datetime_begin
 - actor_id
-- total_absent
+- total_count
 - total_present
+- total_absent
 - total_excused
 
 ```
@@ -160,9 +171,11 @@ slots:
 <details>
 ```yaml
 name: Attendance
-description: '[en] Attendance record for a meeting or voting session.
+description: '[en] Aggregated attendance record for a meeting (number of members present,
+  absent, excused).
 
-  [de] Anwesenheitsliste für eine Sitzung oder Abstimmung.
+  [de] Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende,
+  Entschuldigte).
 
   '
 from_schema: https://ch.paf.link/schema/operations
@@ -170,6 +183,24 @@ mixins:
 - HasIdentification
 - HasCreationModificationDates
 attributes:
+  parent_meeting:
+    name: parent_meeting
+    description: '[en] The linked meeting ID that groups the current meeting.
+
+      [de] Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: parent_meeting
+    owner: Attendance
+    domain_of:
+    - Meeting
+    - AgendaItem
+    - Voting
+    - Election
+    - Attendance
+    range: string
   datetime_begin:
     name: datetime_begin
     description: '[en] The date and time when the meeting or voting begins.
@@ -210,6 +241,31 @@ attributes:
     - IndividualAttendance
     - Speech
     range: string
+  total_count:
+    name: total_count
+    description: '[en] Total number of members of the body (reference value for quorum
+      calculations).
+
+      [de] Gesamtzahl aller Mitglieder des Gremiums (Bezugsgrösse für Quorum-Berechnungen).
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: total_count
+    owner: Attendance
+    domain_of:
+    - Attendance
+    range: integer
+  total_present:
+    name: total_present
+    description: Total number of members present
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: total_present
+    owner: Attendance
+    domain_of:
+    - Attendance
+    range: integer
   total_absent:
     name: total_absent
     description: '[en] Total number of absent members. Distinction between absent/excused
@@ -226,16 +282,6 @@ attributes:
     domain_of:
     - Voting
     - Election
-    - Attendance
-    range: integer
-  total_present:
-    name: total_present
-    description: Total number of members present
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: total_present
-    owner: Attendance
-    domain_of:
     - Attendance
     range: integer
   total_excused:

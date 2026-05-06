@@ -30,6 +30,8 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
       HasCreationModificationDates <|-- Session
         click HasCreationModificationDates href "../HasCreationModificationDates/"
       
+      Session : abbreviation
+        
       Session : body_key
         
       Session : date_begin_actual
@@ -93,7 +95,13 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
     
 
         
+      Session : number
+        
       Session : parent_legislature
+        
+      Session : position
+        
+      Session : sequential_number
         
       Session : url
         
@@ -125,6 +133,10 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
 | ---  | --- | --- | --- |
 | [body_key](body_key.md) | 0..1 <br/> [String](String.md) | [en] Key identifying the political body or jurisdiction (e | direct |
 | [name](name.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
+| [number](number.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [sequential_number](sequential_number.md) | 0..1 <br/> [Integer](Integer.md) | [en] Sequential number of the meeting, used for ordering | direct |
+| [position](position.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [abbreviation](abbreviation.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [url](url.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
 | [parent_legislature](parent_legislature.md) | 0..1 <br/> [String](String.md) | [en] The legislative body in which the meeting is based | direct |
 | [meetings](meetings.md) | * <br/> [Meeting](Meeting.md) |  | direct |
@@ -216,6 +228,10 @@ mixins:
 slots:
 - body_key
 - name
+- number
+- sequential_number
+- position
+- abbreviation
 - url
 - parent_legislature
 - meetings
@@ -273,6 +289,51 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  number:
+    name: number
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: number
+    owner: Session
+    domain_of:
+    - Session
+    - Meeting
+    range: string
+  sequential_number:
+    name: sequential_number
+    description: '[en] Sequential number of the meeting, used for ordering.
+
+      [de] Laufende Nummer der Sitzung, die zur Sortierung verwendet wird.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: sequential_number
+    owner: Session
+    domain_of:
+    - Session
+    - Meeting
+    range: integer
+  position:
+    name: position
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: position
+    owner: Session
+    domain_of:
+    - Session
+    - Meeting
+    range: string
+  abbreviation:
+    name: abbreviation
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: abbreviation
+    owner: Session
+    domain_of:
+    - Session
+    - Meeting
+    range: string
   url:
     name: url
     from_schema: https://ch.paf.link/schema/operations

@@ -89,8 +89,8 @@ URI: [ops:HasCreationModificationDates](https://ch.paf.link/schema/operations/Ha
 | [Voting](Voting.md) | [en] A voting procedure with individual votes and results |
 | [IndividualVote](IndividualVote.md) | [en] An individual vote cast by a member during a voting procedure |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |
-| [Attendance](Attendance.md) | [en] Attendance record for a meeting or voting session |
-| [IndividualAttendance](IndividualAttendance.md) | [en] Individual attendance record for a specific person |
+| [Attendance](Attendance.md) | [en] Aggregated attendance record for a meeting (number of members present, a... |
+| [IndividualAttendance](IndividualAttendance.md) | [en] Individual attendance record for a specific person at a meeting (linked ... |
 | [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |
 
 

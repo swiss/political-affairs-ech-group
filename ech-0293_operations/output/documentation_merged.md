@@ -91,20 +91,27 @@ Legislature (Legislaturperiode)
 
 Jede Legislature ist einem spezifischen parlamentarischen Organ zugeordnet, identifiziert durch:
 
-- **group_id**: Verweis auf das Parlament (z.B. Nationalrat, Kantonsrat)
-- **group_name**: Name des Organs für schnelle Referenz
-- **body_key**: Optionaler Schlüssel zur Unterscheidung (z.B. "NR" für Nationalrat, "SR" für Ständerat)
-
-Diese Verweise verwenden Identifikatoren aus dem eCH-0294 Actors Standard, der die politischen Akteure und Organe definiert.
+- **actor_id**: Verweis auf das Parlament als politischen Akteur (z.B. Nationalrat, Kantonsrat) gemäss eCH-0294 Actors
+- **administrative_id**: Verwaltungs-ID der gesetzgebenden Körperschaft (z.B. Gemeinde, Kanton, Land)
 
 ### Zeitliche Einordnung
 
-Eine Legislaturperiode wird charakterisiert durch:
+Eine Legislaturperiode wird über das Mixin `IsEventWithDuration` charakterisiert. Die wichtigsten Datumsfelder sind:
 
-- **begin_date**: Beginn der Legislaturperiode (meist nach Wahlen)
-- **end_date**: Ende der Legislaturperiode (vor den nächsten Wahlen)
+- **date_begin_planned** / **date_begin_actual**: Geplanter bzw. tatsächlicher Beginn der Legislaturperiode (meist nach Wahlen)
+- **date_end_planned** / **date_end_actual**: Geplantes bzw. tatsächliches Ende der Legislaturperiode (vor den nächsten Wahlen)
+
+Bei Bedarf gibt es analoge `datetime_*`-Varianten mit Uhrzeit.
 
 Beispiel Bundesebene: Die 51. Legislaturperiode des Schweizer Parlaments dauerte vom 5. Dezember 2019 bis zum 4. Dezember 2023.
+
+### Identifikation
+
+Über das Mixin `HasIdentification` stehen `local_id`, `global_uri` und `wikidata_uri` zur Verfügung. Der `global_uri` ist Pflicht und dient als eindeutiger Identifikator.
+
+### Verlinkte Dokumente
+
+Über den Slot **documents** können relevante Dokumente (z.B. Mitgliederverzeichnisse der Legislatur, Geschäftsverzeichnisse) als FRBR-Works verknüpft werden.
 
 
 
@@ -712,36 +719,44 @@ Legislature (51. Legislaturperiode)
 
 ### Zuordnung zu Organen
 
-Eine Session oder ein Meeting kann sich auf verschiedene parlamentarische Organe beziehen:
+Eine Session bezieht sich auf das politische Organ, das die Sessionen als Reihe von Sitzungen organisiert. Beispiele:
 
-- **Parlament**: Sessions eines Kantonsrats
---**Regiegerung**: Meetings des Bundesrats, Regierungsrat, oder Executive einer Gemeinde
+- **Parlament**: Sessions eines Kantonsrats oder der Bundesversammlung
 - **Kommissionen**: Sitzungsperioden parlamentarischer Kommissionen
 - **Gemeinsame Gremien**: Z.B. Sessions der Vereinigten Bundesversammlung
 
-Über **group_id** und **group_name** wird das betreffende Organ referenziert (gemäss eCH-0294 Actors).
+Über **body_key** kann das Organ (z.B. "NR" für Nationalrat, "SR" für Ständerat) als Schlüssel hinterlegt werden. Über **parent_legislature** wird die Session der zugehörigen Legislaturperiode zugeordnet.
 
 ### Identifikation und Nummerierung
 
-Sessions werden üblicherweise nummeriert:
+Sessions werden üblicherweise nummeriert. Folgende Slots stehen zur Verfügung — sie sind kompatibel mit der entsprechenden Modellierung bei Meeting:
 
-- **number**: Laufende Nummer innerhalb der Legislature oder des Jahres
+- **number**: Laufende Nummer (z.B. innerhalb der Legislature oder des Jahres)
+- **sequential_number**: Laufende Nummer als String (auch römische Ziffern möglich)
+- **position**: Ganzzahlige Position
 - **abbreviation**: Kurze Bezeichnung (z.B. "FS24" für Frühjahrssession 2024)
 - **name**: Mehrsprachige vollständige Bezeichnung
 
+Über das Mixin `HasIdentification` stehen zusätzlich `local_id`, `global_uri` und `wikidata_uri` zur Verfügung.
+
 ### Zeitliche Attribute
 
-- **begin_date**: Geplanter Beginn der Session
-- **end_date**: Geplantes Ende der Session
+Sessions nutzen das Mixin `IsEventWithDuration` und bieten damit dieselben Datumsfelder wie Legislatures und Meetings:
 
-Im Gegensatz zu Meetings gibt es auf Session-Ebene keine "actual" Daten, da die übergeordnete Planung meist eingehalten wird.
+- **date_begin_planned** / **datetime_begin_planned**: Geplanter Beginn der Session
+- **date_begin_actual** / **datetime_begin_actual**: Tatsächlicher Beginn
+- **date_end_planned** / **datetime_end_planned**: Geplantes Ende der Session
+- **date_end_actual** / **datetime_end_actual**: Tatsächliches Ende
+
+### Verknüpfungen
+
+- **meetings**: Liste der Sitzungen innerhalb der Session
+- **documents**: Verknüpfte FRBR-Works (z.B. Sessionsprogramm, Sessionsvorschau)
+- **url**: Landing Page der Session
 
 ### Flexibilität im Standard
 
-Der Standard ist bewusst flexibel gestaltet, um verschiedene Organisationsformen abzubilden:
-
-- Föderaleinheiten ohne formale Sessions können diese Entität optional nutzen oder direkt auf Meetings referenzieren
-- Die Verwendung von **type**-Feldern erlaubt die Differenzierung verschiedener Session-Arten
+Der Standard ist bewusst flexibel gestaltet, um verschiedene Organisationsformen abzubilden. Föderaleinheiten ohne formale Sessions können diese Entität optional nutzen oder direkt auf Meetings referenzieren.
 
 
 
@@ -775,6 +790,8 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
       HasCreationModificationDates <|-- Session
         click HasCreationModificationDates href "../HasCreationModificationDates/"
       
+      Session : abbreviation
+        
       Session : body_key
         
       Session : date_begin_actual
@@ -838,7 +855,13 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
     
 
         
+      Session : number
+        
       Session : parent_legislature
+        
+      Session : position
+        
+      Session : sequential_number
         
       Session : url
         
@@ -870,6 +893,10 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
 | ---  | --- | --- | --- |
 | [body_key](#body_key) | 0..1 <br/> [String](#String) | [en] Key identifying the political body or jurisdiction (e | direct |
 | [name](#name) | * <br/> [MultilingualString](#MultilingualString) |  | direct |
+| [number](#number) | 0..1 <br/> [String](#String) |  | direct |
+| [sequential_number](#sequential_number) | 0..1 <br/> [Integer](#Integer) | [en] Sequential number of the meeting, used for ordering | direct |
+| [position](#position) | 0..1 <br/> [String](#String) |  | direct |
+| [abbreviation](#abbreviation) | 0..1 <br/> [String](#String) |  | direct |
 | [url](#url) | * <br/> [MultilingualString](#MultilingualString) |  | direct |
 | [parent_legislature](#parent_legislature) | 0..1 <br/> [String](#String) | [en] The legislative body in which the meeting is based | direct |
 | [meetings](#meetings) | * <br/> [Meeting](#Meeting) |  | direct |
@@ -961,6 +988,10 @@ mixins:
 slots:
 - body_key
 - name
+- number
+- sequential_number
+- position
+- abbreviation
 - url
 - parent_legislature
 - meetings
@@ -1018,6 +1049,51 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  number:
+    name: number
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: number
+    owner: Session
+    domain_of:
+    - Session
+    - Meeting
+    range: string
+  sequential_number:
+    name: sequential_number
+    description: '[en] Sequential number of the meeting, used for ordering.
+
+      [de] Laufende Nummer der Sitzung, die zur Sortierung verwendet wird.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: sequential_number
+    owner: Session
+    domain_of:
+    - Session
+    - Meeting
+    range: integer
+  position:
+    name: position
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: position
+    owner: Session
+    domain_of:
+    - Session
+    - Meeting
+    range: string
+  abbreviation:
+    name: abbreviation
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: abbreviation
+    owner: Session
+    domain_of:
+    - Session
+    - Meeting
+    range: string
   url:
     name: url
     from_schema: https://ch.paf.link/schema/operations
@@ -1340,7 +1416,7 @@ Ein Meeting bezeichnet eine einzelne Sitzung eines parlamentarischen Organs. Die
 
 ### Arten von Meetings
 
-Der Standard unterscheidet verschiedene Meeting-Typen über das Feld **type**:
+Der Standard unterscheidet verschiedene Meeting-Typen über das Feld **meeting_type** (Enum `MeetingTypeEnum`):
 
 #### session
 Plenarsitzungen des gesamten Parlaments oder einer Kammer
@@ -1383,15 +1459,15 @@ Session (Frühjahrssession 2024)
 
 ### Zeitliche Planung vs. Realität
 
-Ein besonderes Merkmal der Meeting-Entität ist die Unterscheidung zwischen geplanten und tatsächlichen Zeitpunkten:
+Über das Mixin `IsEventWithDuration` unterscheidet das Meeting zwischen geplanten und tatsächlichen Zeitpunkten:
 
 #### Geplante Daten
-- **begin_date**: Geplanter Beginn
-- **end_date**: Geplantes Ende
+- **date_begin_planned** / **datetime_begin_planned**: Geplanter Beginn
+- **date_end_planned** / **datetime_end_planned**: Geplantes Ende
 
 #### Tatsächliche Daten
-- **begin_date_actual**: Tatsächlicher Beginn
-- **end_date_actual**: Tatsächliches Ende
+- **date_begin_actual** / **datetime_begin_actual**: Tatsächlicher Beginn
+- **date_end_actual** / **datetime_end_actual**: Tatsächliches Ende
 
 Diese Unterscheidung ist wichtig, da:
 - Sitzungen sich verzögern können
@@ -1402,11 +1478,13 @@ Diese Unterscheidung ist wichtig, da:
 
 ### Sitzungsstatus
 
-Das Feld **state** erfasst den aktuellen Status eines Meetings:
+Das Feld **state** (Enum `StateEnum`) erfasst den aktuellen Status eines Meetings:
 
 - **planned**: Die Sitzung ist geplant und wird wie vorgesehen stattfinden
 - **canceled**: Die Sitzung wurde abgesagt
 - **postponed**: Die Sitzung wurde verschoben
+
+Über **state_name** kann eine abweichende, freitextliche Statusbeschreibung ergänzt werden.
 
 Dieser Status ist wichtig für:
 - Aktuelle Informationen an Parlamentsmitglieder und Öffentlichkeit
@@ -1417,8 +1495,10 @@ Dieser Status ist wichtig für:
 
 Meetings werden identifiziert durch:
 
-- **id**: Eindeutiger Identifikator
+- **local_id** / **global_uri** / **wikidata_uri** (via Mixin `HasIdentification`)
 - **number**: Laufende Nummer (z.B. "5" für die 5. Sitzung einer Session)
+- **sequential_number**: Laufende Nummer als String (auch römische Ziffern möglich)
+- **position**: Ganzzahlige Position innerhalb der Session
 - **abbreviation**: Kurze Bezeichnung (z.B. "NR-24-05")
 - **name**: Mehrsprachige vollständige Bezeichnung
 
@@ -1432,11 +1512,16 @@ Das Feld **location** erfasst den Sitzungsort:
 
 ### Zuordnung zu Organen
 
-Wie bei Legislature und Session wird über **group_id**, **group_name** und **body_key** das zuständige Organ referenziert:
+Das zuständige Organ wird über **actor_id** (gemäss eCH-0294 Actors) referenziert. Über **actor_name** kann zusätzlich der Name des Organs für schnellen Zugriff festgehalten werden, über **body_key** ein kurzer Schlüssel (z.B. "NR", "SR"). Über **administrative_id** kann die Verwaltungsebene angegeben werden, **group_name** und **group_id** ergänzen Gruppierungen wo nötig.
 
 - Plenarsitzungen: Verweis auf das gesamte Parlament
 - Kommissionssitzungen: Verweis auf die spezifische Kommission
 - Gemeinsame Sitzungen: Verweis auf das gemeinsame Gremium
+
+### Hierarchische Verknüpfungen
+
+- **parent_meeting**: Falls ein Meeting Teil eines übergeordneten Meetings ist
+- **parent_legislature**: Die Legislatur, in deren Rahmen das Meeting stattfindet
 
 ### Beziehungen zu anderen Entitäten
 
@@ -1446,7 +1531,8 @@ Ein Meeting verbindet verschiedene Elemente des parlamentarischen Betriebs:
 - **Votings**: Abstimmungen während der Sitzung
 - **Elections**: Wahlen während der Sitzung
 - **Speeches**: Wortmeldungen und Voten
-- **Attendance**: Anwesenheitslisten
+- **Attendance**: Anwesenheitslisten (über `Attendance.parent_meeting`)
+- **documents**: Verknüpfte FRBR-Works (Protokolle, Sitzungsunterlagen, Tagblatt etc.)
 
 
 
@@ -1864,6 +1950,7 @@ attributes:
     alias: number
     owner: Meeting
     domain_of:
+    - Session
     - Meeting
     range: string
   landing_page:
@@ -1898,6 +1985,7 @@ attributes:
     alias: sequential_number
     owner: Meeting
     domain_of:
+    - Session
     - Meeting
     range: integer
   position:
@@ -1907,6 +1995,7 @@ attributes:
     alias: position
     owner: Meeting
     domain_of:
+    - Session
     - Meeting
     range: string
   abbreviation:
@@ -1916,6 +2005,7 @@ attributes:
     alias: abbreviation
     owner: Meeting
     domain_of:
+    - Session
     - Meeting
     range: string
   actor_name:
@@ -2016,6 +2106,7 @@ attributes:
     - AgendaItem
     - Voting
     - Election
+    - Attendance
     range: string
   parent_legislature:
     name: parent_legislature
@@ -2340,103 +2431,49 @@ Meeting (Nationalratssitzung 4. März 2024)
 
 ### Zuordnung zu Meeting und Organ
 
-- **meeting_id**: Verweis auf die spezifische Sitzung
-- **group_id**: Verweis auf das Organ (Parlament, Kommission)
-
-### Arten der Anwesenheitserfassung
-
-Das Feld **attendance_type** unterscheidet:
-
-#### start
-Anwesenheit zu Beginn der Sitzung
-
-**Anwendung:**
-- Feststellung der Beschlussfähigkeit
-- Offizielle Eröffnung der Sitzung
-- Basis für Präsenzlisten
-
-#### continuous
-Kontinuierliche Anwesenheitserfassung
-
-**Anwendung:**
-- Elektronische Systeme mit permanenter Erfassung
-- Erkennung von Zu- und Weggängen während der Sitzung
-
-#### end
-Anwesenheit am Ende der Sitzung
-
-**Anwendung:**
-- Abschliessende Kontrolle
-- Seltener verwendet
+- **parent_meeting**: Verweis auf die spezifische Sitzung, zu der die Anwesenheitsliste gehört
+- **actor_id**: Verweis auf das Organ (Parlament, Kommission) gemäss eCH-0294 Actors
+- **datetime_begin**: Zeitpunkt der Anwesenheitserfassung
 
 ### Aggregierte Zahlen
 
-- **present_count**: Anzahl anwesender Mitglieder
-- **absent_count**: Anzahl abwesender Mitglieder (unentschuldigt)
-- **excused_count**: Anzahl entschuldigter Mitglieder
-- **total_count**: Gesamtzahl der Mitglieder
+- **total_count**: Gesamtzahl aller Mitglieder des Gremiums (Bezugsgrösse für Quorum-Berechnungen, z.B. 200 für Nationalrat, 46 für Ständerat)
+- **total_present**: Anzahl anwesender Mitglieder
+- **total_excused**: Anzahl entschuldigter Mitglieder
+- **total_absent**: Anzahl unentschuldigt abwesender Mitglieder
 
 **Beispiel:**
+- Total: 200
 - Anwesend: 185
 - Entschuldigt: 12
 - Abwesend: 3
-- Total: 200
 
 ### Beschlussfähigkeit
 
-Das Feld **quorum_reached** zeigt an, ob das erforderliche Quorum erreicht wurde:
-
-- **true**: Sitzung ist beschlussfähig
-- **false**: Sitzung ist nicht beschlussfähig
-
-**Konsequenz bei nicht erreichtem Quorum:**
-- Sitzung kann nicht stattfinden oder muss unterbrochen werden
-- Keine gültigen Beschlüsse möglich
-- Vertag auf spätere Sitzung
+Die Beschlussfähigkeit (Quorum) ergibt sich aus dem Verhältnis von `total_present` zu `total_count` und den jeweiligen Quorum-Regeln des Gremiums. Sie wird daher nicht als eigenes Feld gespeichert, sondern bei Bedarf datenseitig berechnet.
 
 ## IndividualAttendance (Individuelle Ebene)
 
-### Identifikation der Person
+### Verknüpfung
 
-- **person_id**: Verweis auf die Person gemäss eCH-0294 Actors
-- **person_name**: Name für schnellen Zugriff
+- **parent_attendance**: Verweis auf das übergeordnete `Attendance`-Aggregat (das wiederum am Meeting hängt). So wird die individuelle Erfassung sauber dem Meeting zugeordnet.
+- **actor_id**: Verweis auf die Person gemäss eCH-0294 Actors
 
-### Status der Anwesenheit
+### Anwesenheitstyp
 
-Das Feld **status** erfasst den Anwesenheitsstatus:
+Das Feld **attendance_type** (Enum `AttendanceTypeEnum`) erfasst die Art der Anwesenheit:
 
-#### present
-Anwesend
+- **present**: Persönlich anwesend
+- **remote**: Per Fernzugriff (z.B. Videokonferenz) anwesend
+- **substitute**: Stellvertretung — eine andere Person hat in der Vertretung teilgenommen
 
-**Bedeutung:** Die Person war während der (gesamten) Sitzung anwesend
+> Die Modellierung der Stellvertretung (z.B. wer hat wen vertreten, mit welchem Stimmrecht) wird in [Issue #24](https://github.com/swiss/political-affairs-ech-group/issues/24) weiter ausgearbeitet.
+>
+> Eine zweite Status-Achse `present` / `excused` / `absent` ("ob anwesend") parallel zur bestehenden Achse "wie anwesend" ist als Erweiterung in Diskussion.
 
-#### excused
-Entschuldigt abwesend 
+### Grund
 
-**Bedeutung:** Die Person war nicht anwesend, aber ordnungsgemäss entschuldigt z.B wegen Krankheit, anderweitige offizielle Verpflichtunge, persönliche Gründe
-
-#### absent
-Abwesend (unentschuldigt)
-
-**Bedeutung:** Die Person war nicht anwesend und hatte keine Entschuldigung
-
-### Zeiterfassung
-
-- **arrival_time**: Zeitpunkt der Ankunft (bei Verspätung)
-- **departure_time**: Zeitpunkt des Verlassens (bei vorzeitigem Weggang)
-
-### Grund der Abwesenheit
-
-Das Feld **reason** kann den Grund für Abwesenheit oder allfällige Verspätung erfassen:
-
-### Stellvertretung
-
-Das Feld **substitute_person_id** erfasst, ob eine Stellvertretung anwesend war:
-
-**Anwendung:**
-- In Systemen, die Stellvertretung erlauben
-- Kantone mit Ersatzmitgliedern
-- Vertretungsregelungen in Kommissionen
+Das Feld **reason** (mehrsprachig) kann den Grund für Abwesenheit oder Verspätung als Freitext erfassen.
 
 ## Unterschied: Attendance vs. IndividualVote
 
@@ -2466,9 +2503,9 @@ Die Attendance-Entitäten ermöglichen:
 # Class: Attendance 
 
 
-_[en] Attendance record for a meeting or voting session._
+_[en] Aggregated attendance record for a meeting (number of members present, absent, excused)._
 
-_[de] Anwesenheitsliste für eine Sitzung oder Abstimmung._
+_[de] Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, Entschuldigte)._
 
 __
 
@@ -2507,7 +2544,11 @@ URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
         
       Attendance : local_id
         
+      Attendance : parent_meeting
+        
       Attendance : total_absent
+        
+      Attendance : total_count
         
       Attendance : total_excused
         
@@ -2530,10 +2571,12 @@ URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
+| [parent_meeting](#parent_meeting) | 0..1 <br/> [String](#String) | [en] The linked meeting ID that groups the current meeting | direct |
 | [datetime_begin](#datetime_begin) | 0..1 <br/> [Datetime](#Datetime) | [en] The date and time when the meeting or voting begins | direct |
 | [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
-| [total_absent](#total_absent) | 0..1 <br/> [Integer](#Integer) | [en] Total number of absent members | direct |
+| [total_count](#total_count) | 0..1 <br/> [Integer](#Integer) | [en] Total number of members of the body (reference value for quorum calculat... | direct |
 | [total_present](#total_present) | 0..1 <br/> [Integer](#Integer) | Total number of members present | direct |
+| [total_absent](#total_absent) | 0..1 <br/> [Integer](#Integer) | [en] Total number of absent members | direct |
 | [total_excused](#total_excused) | 0..1 <br/> [Integer](#Integer) | Total number of excused absences | direct |
 | [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
 | [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
@@ -2552,6 +2595,7 @@ URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Container](#Container) | [attendances](#attendances) | range | [Attendance](#Attendance) |
+| [IndividualAttendance](#IndividualAttendance) | [parent_attendance](#parent_attendance) | range | [Attendance](#Attendance) |
 
 
 
@@ -2599,9 +2643,11 @@ URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
 <details>
 ```yaml
 name: Attendance
-description: '[en] Attendance record for a meeting or voting session.
+description: '[en] Aggregated attendance record for a meeting (number of members present,
+  absent, excused).
 
-  [de] Anwesenheitsliste für eine Sitzung oder Abstimmung.
+  [de] Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende,
+  Entschuldigte).
 
   '
 from_schema: https://ch.paf.link/schema/operations
@@ -2609,10 +2655,12 @@ mixins:
 - HasIdentification
 - HasCreationModificationDates
 slots:
+- parent_meeting
 - datetime_begin
 - actor_id
-- total_absent
+- total_count
 - total_present
+- total_absent
 - total_excused
 
 ```
@@ -2623,9 +2671,11 @@ slots:
 <details>
 ```yaml
 name: Attendance
-description: '[en] Attendance record for a meeting or voting session.
+description: '[en] Aggregated attendance record for a meeting (number of members present,
+  absent, excused).
 
-  [de] Anwesenheitsliste für eine Sitzung oder Abstimmung.
+  [de] Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende,
+  Entschuldigte).
 
   '
 from_schema: https://ch.paf.link/schema/operations
@@ -2633,6 +2683,24 @@ mixins:
 - HasIdentification
 - HasCreationModificationDates
 attributes:
+  parent_meeting:
+    name: parent_meeting
+    description: '[en] The linked meeting ID that groups the current meeting.
+
+      [de] Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: parent_meeting
+    owner: Attendance
+    domain_of:
+    - Meeting
+    - AgendaItem
+    - Voting
+    - Election
+    - Attendance
+    range: string
   datetime_begin:
     name: datetime_begin
     description: '[en] The date and time when the meeting or voting begins.
@@ -2673,6 +2741,31 @@ attributes:
     - IndividualAttendance
     - Speech
     range: string
+  total_count:
+    name: total_count
+    description: '[en] Total number of members of the body (reference value for quorum
+      calculations).
+
+      [de] Gesamtzahl aller Mitglieder des Gremiums (Bezugsgrösse für Quorum-Berechnungen).
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: total_count
+    owner: Attendance
+    domain_of:
+    - Attendance
+    range: integer
+  total_present:
+    name: total_present
+    description: Total number of members present
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: total_present
+    owner: Attendance
+    domain_of:
+    - Attendance
+    range: integer
   total_absent:
     name: total_absent
     description: '[en] Total number of absent members. Distinction between absent/excused
@@ -2689,16 +2782,6 @@ attributes:
     domain_of:
     - Voting
     - Election
-    - Attendance
-    range: integer
-  total_present:
-    name: total_present
-    description: Total number of members present
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    alias: total_present
-    owner: Attendance
-    domain_of:
     - Attendance
     range: integer
   total_excused:
@@ -2830,9 +2913,9 @@ attributes:
 # Class: IndividualAttendance 
 
 
-_[en] Individual attendance record for a specific person._
+_[en] Individual attendance record for a specific person at a meeting (linked via the parent Attendance aggregate)._
 
-_[de] Einzelne Anwesenheitsfeststellung für eine bestimmte Person._
+_[de] Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft über das übergeordnete Attendance-Aggregat)._
 
 __
 
@@ -2880,14 +2963,25 @@ URI: [ops:IndividualAttendance](https://ch.paf.link/schema/operations/Individual
         
       IndividualAttendance : local_id
         
-      IndividualAttendance : parent_voting
+      IndividualAttendance : parent_attendance
         
           
     
         
         
-        IndividualAttendance --> "0..1" Voting : parent_voting
-        click Voting href "../Voting/"
+        IndividualAttendance --> "0..1" Attendance : parent_attendance
+        click Attendance href "../Attendance/"
+    
+
+        
+      IndividualAttendance : reason
+        
+          
+    
+        
+        
+        IndividualAttendance --> "*" MultilingualString : reason
+        click MultilingualString href "../MultilingualString/"
     
 
         
@@ -2908,9 +3002,10 @@ URI: [ops:IndividualAttendance](https://ch.paf.link/schema/operations/Individual
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [parent_voting](#parent_voting) | 0..1 <br/> [Voting](#Voting) | [en] The ID of the voting associated with the individual vote | direct |
+| [parent_attendance](#parent_attendance) | 0..1 <br/> [Attendance](#Attendance) | [en] The Attendance aggregate this individual attendance record belongs to | direct |
 | [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
 | [attendance_type](#attendance_type) | 0..1 <br/> [AttendanceTypeEnum](#AttendanceTypeEnum) | Type of individual attendance | direct |
+| [reason](#reason) | * <br/> [MultilingualString](#MultilingualString) | [en] Reason for absence or lateness (free-text, multilingual) | direct |
 | [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
 | [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
 | [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
@@ -2975,9 +3070,11 @@ URI: [ops:IndividualAttendance](https://ch.paf.link/schema/operations/Individual
 <details>
 ```yaml
 name: IndividualAttendance
-description: '[en] Individual attendance record for a specific person.
+description: '[en] Individual attendance record for a specific person at a meeting
+  (linked via the parent Attendance aggregate).
 
-  [de] Einzelne Anwesenheitsfeststellung für eine bestimmte Person.
+  [de] Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft
+  über das übergeordnete Attendance-Aggregat).
 
   '
 from_schema: https://ch.paf.link/schema/operations
@@ -2985,9 +3082,10 @@ mixins:
 - HasIdentification
 - HasCreationModificationDates
 slots:
-- parent_voting
+- parent_attendance
 - actor_id
 - attendance_type
+- reason
 
 ```
 </details>
@@ -2997,9 +3095,11 @@ slots:
 <details>
 ```yaml
 name: IndividualAttendance
-description: '[en] Individual attendance record for a specific person.
+description: '[en] Individual attendance record for a specific person at a meeting
+  (linked via the parent Attendance aggregate).
 
-  [de] Einzelne Anwesenheitsfeststellung für eine bestimmte Person.
+  [de] Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft
+  über das übergeordnete Attendance-Aggregat).
 
   '
 from_schema: https://ch.paf.link/schema/operations
@@ -3007,22 +3107,22 @@ mixins:
 - HasIdentification
 - HasCreationModificationDates
 attributes:
-  parent_voting:
-    name: parent_voting
-    description: '[en] The ID of the voting associated with the individual vote.
+  parent_attendance:
+    name: parent_attendance
+    description: '[en] The Attendance aggregate this individual attendance record
+      belongs to.
 
-      [de] Die ID der Abstimmung, die mit der Einzelstimme verbunden ist.
+      [de] Das Attendance-Aggregat, zu dem dieser einzelne Anwesenheits-Eintrag gehört.
 
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    slot_uri: ops:parentVoting
-    alias: parent_voting
+    slot_uri: ops:parentAttendance
+    alias: parent_attendance
     owner: IndividualAttendance
     domain_of:
-    - IndividualVote
     - IndividualAttendance
-    range: Voting
+    range: Attendance
   actor_id:
     name: actor_id
     description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
@@ -3056,6 +3156,23 @@ attributes:
     domain_of:
     - IndividualAttendance
     range: AttendanceTypeEnum
+  reason:
+    name: reason
+    description: '[en] Reason for absence or lateness (free-text, multilingual).
+
+      [de] Grund für Abwesenheit oder Verspätung (Freitext, mehrsprachig).
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: reason
+    owner: IndividualAttendance
+    domain_of:
+    - IndividualAttendance
+    range: MultilingualString
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   local_id:
     name: local_id
     description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
@@ -3643,6 +3760,7 @@ attributes:
     - AgendaItem
     - Voting
     - Election
+    - Attendance
     range: string
   agenda_item_type:
     name: agenda_item_type
@@ -5234,7 +5352,6 @@ URI: [ops:Voting](https://ch.paf.link/schema/operations/Voting)
 | ---  | --- | --- | --- |
 | [Container](#Container) | [votings](#votings) | range | [Voting](#Voting) |
 | [IndividualVote](#IndividualVote) | [parent_voting](#parent_voting) | range | [Voting](#Voting) |
-| [IndividualAttendance](#IndividualAttendance) | [parent_voting](#parent_voting) | range | [Voting](#Voting) |
 
 
 
@@ -5669,6 +5786,7 @@ attributes:
     - AgendaItem
     - Voting
     - Election
+    - Attendance
     range: string
   parent_agenda_item:
     name: parent_agenda_item
@@ -6224,7 +6342,6 @@ attributes:
     owner: IndividualVote
     domain_of:
     - IndividualVote
-    - IndividualAttendance
     range: Voting
   actor_id:
     name: actor_id
@@ -7077,6 +7194,7 @@ attributes:
     - AgendaItem
     - Voting
     - Election
+    - Attendance
     range: string
   parent_agenda_item:
     name: parent_agenda_item
@@ -8591,6 +8709,7 @@ URI: [ops:MultilingualString](https://ch.paf.link/schema/operations/Multilingual
 | [AgendaItem](#AgendaItem) | [agenda_item_description](#agenda_item_description) | range | [MultilingualString](#MultilingualString) |
 | [AgendaItem](#AgendaItem) | [url](#url) | range | [MultilingualString](#MultilingualString) |
 | [Voting](#Voting) | [voting_title](#voting_title) | range | [MultilingualString](#MultilingualString) |
+| [IndividualAttendance](#IndividualAttendance) | [reason](#reason) | range | [MultilingualString](#MultilingualString) |
 | [Media](#Media) | [url](#url) | range | [MultilingualString](#MultilingualString) |
 | [Manifestation](#Manifestation) | [url](#url) | range | [MultilingualString](#MultilingualString) |
 

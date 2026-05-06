@@ -26,10 +26,11 @@ Alias: parent_meeting
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
-| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
-| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
+| [Attendance](Attendance.md) | [en] Aggregated attendance record for a meeting (number of members present, a... |  no  |
 
 
 
@@ -43,7 +44,7 @@ Alias: parent_meeting
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Voting](Voting.md), [Election](Election.md) |
+| Domain Of | [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Voting](Voting.md), [Election](Election.md), [Attendance](Attendance.md) |
 
 ### Cardinality and Requirements
 
@@ -101,6 +102,7 @@ domain_of:
 - AgendaItem
 - Voting
 - Election
+- Attendance
 range: string
 
 ```

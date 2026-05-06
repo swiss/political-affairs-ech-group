@@ -206,7 +206,6 @@ attributes:
     owner: IndividualVote
     domain_of:
     - IndividualVote
-    - IndividualAttendance
     range: Voting
   actor_id:
     name: actor_id

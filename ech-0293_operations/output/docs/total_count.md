@@ -1,16 +1,20 @@
 
 
-# Slot: total_present 
+# Slot: total_count 
 
 
-_Total number of members present_
+_[en] Total number of members of the body (reference value for quorum calculations)._
+
+_[de] Gesamtzahl aller Mitglieder des Gremiums (Bezugsgrösse für Quorum-Berechnungen)._
+
+__
 
 
 
 
 
-URI: [ops:total_present](https://ch.paf.link/schema/operations/total_present)
-Alias: total_present
+URI: [ops:total_count](https://ch.paf.link/schema/operations/total_count)
+Alias: total_count
 
 <!-- no inheritance hierarchy -->
 
@@ -70,8 +74,8 @@ Alias: total_present
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ops:total_present |
-| native | ops:total_present |
+| self | ops:total_count |
+| native | ops:total_count |
 
 
 
@@ -80,11 +84,16 @@ Alias: total_present
 
 <details>
 ```yaml
-name: total_present
-description: Total number of members present
+name: total_count
+description: '[en] Total number of members of the body (reference value for quorum
+  calculations).
+
+  [de] Gesamtzahl aller Mitglieder des Gremiums (Bezugsgrösse für Quorum-Berechnungen).
+
+  '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: total_present
+alias: total_count
 domain_of:
 - Attendance
 range: integer

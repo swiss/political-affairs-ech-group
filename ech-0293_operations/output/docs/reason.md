@@ -1,16 +1,20 @@
 
 
-# Slot: attendance_type 
+# Slot: reason 
 
 
-_Type of individual attendance_
+_[en] Reason for absence or lateness (free-text, multilingual)._
+
+_[de] Grund für Abwesenheit oder Verspätung (Freitext, mehrsprachig)._
+
+__
 
 
 
 
 
-URI: [ops:attendance_type](https://ch.paf.link/schema/operations/attendance_type)
-Alias: attendance_type
+URI: [ops:reason](https://ch.paf.link/schema/operations/reason)
+Alias: reason
 
 <!-- no inheritance hierarchy -->
 
@@ -35,13 +39,14 @@ Alias: attendance_type
 
 | Property | Value |
 | --- | --- |
-| Range | [AttendanceTypeEnum](AttendanceTypeEnum.md) |
+| Range | [MultilingualString](MultilingualString.md) |
 | Domain Of | [IndividualAttendance](IndividualAttendance.md) |
 
 ### Cardinality and Requirements
 
 | Property | Value |
 | --- | --- |
+| Multivalued | Yes |
 
 
 
@@ -70,8 +75,8 @@ Alias: attendance_type
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ops:attendance_type |
-| native | ops:attendance_type |
+| self | ops:reason |
+| native | ops:reason |
 
 
 
@@ -80,14 +85,21 @@ Alias: attendance_type
 
 <details>
 ```yaml
-name: attendance_type
-description: Type of individual attendance
+name: reason
+description: '[en] Reason for absence or lateness (free-text, multilingual).
+
+  [de] Grund für Abwesenheit oder Verspätung (Freitext, mehrsprachig).
+
+  '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: attendance_type
+alias: reason
 domain_of:
 - IndividualAttendance
-range: AttendanceTypeEnum
+range: MultilingualString
+multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details>

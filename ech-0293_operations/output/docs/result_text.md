@@ -26,8 +26,8 @@ Alias: result_text
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 | [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
+| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 
 
 

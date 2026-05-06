@@ -414,6 +414,7 @@ attributes:
     alias: number
     owner: Meeting
     domain_of:
+    - Session
     - Meeting
     range: string
   landing_page:
@@ -448,6 +449,7 @@ attributes:
     alias: sequential_number
     owner: Meeting
     domain_of:
+    - Session
     - Meeting
     range: integer
   position:
@@ -457,6 +459,7 @@ attributes:
     alias: position
     owner: Meeting
     domain_of:
+    - Session
     - Meeting
     range: string
   abbreviation:
@@ -466,6 +469,7 @@ attributes:
     alias: abbreviation
     owner: Meeting
     domain_of:
+    - Session
     - Meeting
     range: string
   actor_name:
@@ -566,6 +570,7 @@ attributes:
     - AgendaItem
     - Voting
     - Election
+    - Attendance
     range: string
   parent_legislature:
     name: parent_legislature

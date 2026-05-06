@@ -317,6 +317,7 @@ attributes:
     - AgendaItem
     - Voting
     - Election
+    - Attendance
     range: string
   agenda_item_type:
     name: agenda_item_type

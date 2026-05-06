@@ -3,9 +3,9 @@
 # Class: IndividualAttendance 
 
 
-_[en] Individual attendance record for a specific person._
+_[en] Individual attendance record for a specific person at a meeting (linked via the parent Attendance aggregate)._
 
-_[de] Einzelne Anwesenheitsfeststellung für eine bestimmte Person._
+_[de] Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft über das übergeordnete Attendance-Aggregat)._
 
 __
 
@@ -53,14 +53,25 @@ URI: [ops:IndividualAttendance](https://ch.paf.link/schema/operations/Individual
         
       IndividualAttendance : local_id
         
-      IndividualAttendance : parent_voting
+      IndividualAttendance : parent_attendance
         
           
     
         
         
-        IndividualAttendance --> "0..1" Voting : parent_voting
-        click Voting href "../Voting/"
+        IndividualAttendance --> "0..1" Attendance : parent_attendance
+        click Attendance href "../Attendance/"
+    
+
+        
+      IndividualAttendance : reason
+        
+          
+    
+        
+        
+        IndividualAttendance --> "*" MultilingualString : reason
+        click MultilingualString href "../MultilingualString/"
     
 
         
@@ -81,9 +92,10 @@ URI: [ops:IndividualAttendance](https://ch.paf.link/schema/operations/Individual
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [parent_voting](parent_voting.md) | 0..1 <br/> [Voting](Voting.md) | [en] The ID of the voting associated with the individual vote | direct |
+| [parent_attendance](parent_attendance.md) | 0..1 <br/> [Attendance](Attendance.md) | [en] The Attendance aggregate this individual attendance record belongs to | direct |
 | [actor_id](actor_id.md) | 0..1 <br/> [String](String.md) | [en] The political body organized by the term of office (e | direct |
 | [attendance_type](attendance_type.md) | 0..1 <br/> [AttendanceTypeEnum](AttendanceTypeEnum.md) | Type of individual attendance | direct |
+| [reason](reason.md) | * <br/> [MultilingualString](MultilingualString.md) | [en] Reason for absence or lateness (free-text, multilingual) | direct |
 | [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |
 | [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](HasIdentification.md) |
 | [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](HasIdentification.md) |
@@ -148,9 +160,11 @@ URI: [ops:IndividualAttendance](https://ch.paf.link/schema/operations/Individual
 <details>
 ```yaml
 name: IndividualAttendance
-description: '[en] Individual attendance record for a specific person.
+description: '[en] Individual attendance record for a specific person at a meeting
+  (linked via the parent Attendance aggregate).
 
-  [de] Einzelne Anwesenheitsfeststellung für eine bestimmte Person.
+  [de] Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft
+  über das übergeordnete Attendance-Aggregat).
 
   '
 from_schema: https://ch.paf.link/schema/operations
@@ -158,9 +172,10 @@ mixins:
 - HasIdentification
 - HasCreationModificationDates
 slots:
-- parent_voting
+- parent_attendance
 - actor_id
 - attendance_type
+- reason
 
 ```
 </details>
@@ -170,9 +185,11 @@ slots:
 <details>
 ```yaml
 name: IndividualAttendance
-description: '[en] Individual attendance record for a specific person.
+description: '[en] Individual attendance record for a specific person at a meeting
+  (linked via the parent Attendance aggregate).
 
-  [de] Einzelne Anwesenheitsfeststellung für eine bestimmte Person.
+  [de] Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft
+  über das übergeordnete Attendance-Aggregat).
 
   '
 from_schema: https://ch.paf.link/schema/operations
@@ -180,22 +197,22 @@ mixins:
 - HasIdentification
 - HasCreationModificationDates
 attributes:
-  parent_voting:
-    name: parent_voting
-    description: '[en] The ID of the voting associated with the individual vote.
+  parent_attendance:
+    name: parent_attendance
+    description: '[en] The Attendance aggregate this individual attendance record
+      belongs to.
 
-      [de] Die ID der Abstimmung, die mit der Einzelstimme verbunden ist.
+      [de] Das Attendance-Aggregat, zu dem dieser einzelne Anwesenheits-Eintrag gehört.
 
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    slot_uri: ops:parentVoting
-    alias: parent_voting
+    slot_uri: ops:parentAttendance
+    alias: parent_attendance
     owner: IndividualAttendance
     domain_of:
-    - IndividualVote
     - IndividualAttendance
-    range: Voting
+    range: Attendance
   actor_id:
     name: actor_id
     description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
@@ -229,6 +246,23 @@ attributes:
     domain_of:
     - IndividualAttendance
     range: AttendanceTypeEnum
+  reason:
+    name: reason
+    description: '[en] Reason for absence or lateness (free-text, multilingual).
+
+      [de] Grund für Abwesenheit oder Verspätung (Freitext, mehrsprachig).
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    alias: reason
+    owner: IndividualAttendance
+    domain_of:
+    - IndividualAttendance
+    range: MultilingualString
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   local_id:
     name: local_id
     description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.

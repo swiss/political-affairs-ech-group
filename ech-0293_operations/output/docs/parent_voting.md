@@ -27,7 +27,6 @@ Alias: parent_voting
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [IndividualVote](IndividualVote.md) | [en] An individual vote cast by a member during a voting procedure |  no  |
-| [IndividualAttendance](IndividualAttendance.md) | [en] Individual attendance record for a specific person |  no  |
 
 
 
@@ -41,7 +40,7 @@ Alias: parent_voting
 | Property | Value |
 | --- | --- |
 | Range | [Voting](Voting.md) |
-| Domain Of | [IndividualVote](IndividualVote.md), [IndividualAttendance](IndividualAttendance.md) |
+| Domain Of | [IndividualVote](IndividualVote.md) |
 | Slot URI | [ops:parentVoting](https://ch.paf.link/schema/operations/parentVoting) |
 
 ### Cardinality and Requirements
@@ -98,7 +97,6 @@ slot_uri: ops:parentVoting
 alias: parent_voting
 domain_of:
 - IndividualVote
-- IndividualAttendance
 range: Voting
 
 ```

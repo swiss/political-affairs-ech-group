@@ -22,7 +22,7 @@ Alias: total_excused
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Attendance](Attendance.md) | [en] Attendance record for a meeting or voting session |  no  |
+| [Attendance](Attendance.md) | [en] Aggregated attendance record for a meeting (number of members present, a... |  no  |
 
 
 

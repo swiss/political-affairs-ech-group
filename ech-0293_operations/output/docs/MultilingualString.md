@@ -59,6 +59,7 @@ URI: [ops:MultilingualString](https://ch.paf.link/schema/operations/Multilingual
 | [AgendaItem](AgendaItem.md) | [agenda_item_description](agenda_item_description.md) | range | [MultilingualString](MultilingualString.md) |
 | [AgendaItem](AgendaItem.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |
 | [Voting](Voting.md) | [voting_title](voting_title.md) | range | [MultilingualString](MultilingualString.md) |
+| [IndividualAttendance](IndividualAttendance.md) | [reason](reason.md) | range | [MultilingualString](MultilingualString.md) |
 | [Media](Media.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |
 | [Manifestation](Manifestation.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |
 

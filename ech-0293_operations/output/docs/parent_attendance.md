@@ -1,16 +1,20 @@
 
 
-# Slot: attendance_type 
+# Slot: parent_attendance 
 
 
-_Type of individual attendance_
+_[en] The Attendance aggregate this individual attendance record belongs to._
+
+_[de] Das Attendance-Aggregat, zu dem dieser einzelne Anwesenheits-Eintrag gehört._
+
+__
 
 
 
 
 
-URI: [ops:attendance_type](https://ch.paf.link/schema/operations/attendance_type)
-Alias: attendance_type
+URI: [ops:parentAttendance](https://ch.paf.link/schema/operations/parentAttendance)
+Alias: parent_attendance
 
 <!-- no inheritance hierarchy -->
 
@@ -35,8 +39,9 @@ Alias: attendance_type
 
 | Property | Value |
 | --- | --- |
-| Range | [AttendanceTypeEnum](AttendanceTypeEnum.md) |
+| Range | [Attendance](Attendance.md) |
 | Domain Of | [IndividualAttendance](IndividualAttendance.md) |
+| Slot URI | [ops:parentAttendance](https://ch.paf.link/schema/operations/parentAttendance) |
 
 ### Cardinality and Requirements
 
@@ -70,8 +75,8 @@ Alias: attendance_type
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ops:attendance_type |
-| native | ops:attendance_type |
+| self | ops:parentAttendance |
+| native | ops:parent_attendance |
 
 
 
@@ -80,14 +85,20 @@ Alias: attendance_type
 
 <details>
 ```yaml
-name: attendance_type
-description: Type of individual attendance
+name: parent_attendance
+description: '[en] The Attendance aggregate this individual attendance record belongs
+  to.
+
+  [de] Das Attendance-Aggregat, zu dem dieser einzelne Anwesenheits-Eintrag gehört.
+
+  '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: attendance_type
+slot_uri: ops:parentAttendance
+alias: parent_attendance
 domain_of:
 - IndividualAttendance
-range: AttendanceTypeEnum
+range: Attendance
 
 ```
 </details>
