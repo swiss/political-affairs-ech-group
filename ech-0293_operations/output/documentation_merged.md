@@ -2286,35 +2286,15 @@ Anwesend
 
 **Bedeutung:** Die Person war während der (gesamten) Sitzung anwesend
 
+#### excused
+Entschuldigt abwesend 
+
+**Bedeutung:** Die Person war nicht anwesend, aber ordnungsgemäss entschuldigt z.B wegen Krankheit, anderweitige offizielle Verpflichtunge, persönliche Gründe
+
 #### absent
 Abwesend (unentschuldigt)
 
 **Bedeutung:** Die Person war nicht anwesend und hatte keine Entschuldigung
-
-**Mögliche Gründe:**
-- Vergessen
-- Private Gründe ohne Entschuldigung
-- Politisches Signal (Fernbleiben als Protest)
-
-#### excused
-Entschuldigt abwesend
-
-**Bedeutung:** Die Person war nicht anwesend, aber ordnungsgemäss entschuldigt
-
-**Gründe:**
-- Krankheit
-- Anderweitige offizielle Verpflichtungen
-- Persönliche Gründe (mit Genehmigung)
-
-#### late
-Verspätet eingetroffen
-
-**Bedeutung:** Die Person kam nach Sitzungsbeginn
-
-#### left_early
-Vorzeitig gegangen
-
-**Bedeutung:** Die Person verliess die Sitzung vor deren Ende
 
 ### Zeiterfassung
 
@@ -2323,13 +2303,7 @@ Vorzeitig gegangen
 
 ### Grund der Abwesenheit
 
-Das Feld **reason** kann den Grund für Abwesenheit oder Verspätung erfassen:
-
-**Beispiele:**
-- "Krankheit"
-- "Offizieller Auslandbesuch"
-- "Sitzung Kommission XY (Überschneidung)"
-- "Familiärer Notfall"
+Das Feld **reason** kann den Grund für Abwesenheit oder allfällige Verspätung erfassen:
 
 ### Stellvertretung
 
