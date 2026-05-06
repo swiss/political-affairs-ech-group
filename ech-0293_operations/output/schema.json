@@ -935,7 +935,7 @@
                 },
                 "individual_vote_type": {
                     "$ref": "#/$defs/IndividualVoteTypeEnum",
-                    "description": "[en] Type of vote cast (yes, no, abstention, absent, etc.).\n[de] Art der abgegebenen Stimme (ja, nein, Enthaltung, abwesend, etc.).\n"
+                    "description": "[en] Type of vote cast (yes, no, abstention, no vote, etc.).\n[de] Art der abgegebenen Stimme (Ja, Nein, Enthaltung, nicht abgestimmt, etc.).\n"
                 },
                 "local_id": {
                     "description": "[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n[en] Local identifier. For example, a UUID from the council information system.\n",
@@ -992,9 +992,7 @@
                 "yes",
                 "no",
                 "abstention",
-                "absent",
-                "absent_excused",
-                "abstention_president",
+                "not_voted",
                 "tie_breaker",
                 "other"
             ],

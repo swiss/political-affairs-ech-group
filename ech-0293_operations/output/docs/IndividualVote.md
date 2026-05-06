@@ -91,7 +91,7 @@ URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
 | [actor_id](actor_id.md) | 0..1 <br/> [String](String.md) | [en] The political body organized by the term of office (e | direct |
 | [seat_nr](seat_nr.md) | 0..1 <br/> [String](String.md) | [en] The seat number of the individual vote, if applicable | direct |
 | [weight](weight.md) | 0..1 <br/> [Integer](Integer.md) | [en] The number of votes held by the individual, if applicable (e | direct |
-| [individual_vote_type](individual_vote_type.md) | 0..1 <br/> [IndividualVoteTypeEnum](IndividualVoteTypeEnum.md) | [en] Type of vote cast (yes, no, abstention, absent, etc | direct |
+| [individual_vote_type](individual_vote_type.md) | 0..1 <br/> [IndividualVoteTypeEnum](IndividualVoteTypeEnum.md) | [en] Type of vote cast (yes, no, abstention, no vote, etc | direct |
 | [type_label](type_label.md) | 0..1 <br/> [String](String.md) | [en] Custom type label when standard type values don't apply | direct |
 | [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |
 | [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](HasIdentification.md) |
@@ -262,9 +262,9 @@ attributes:
     range: integer
   individual_vote_type:
     name: individual_vote_type
-    description: '[en] Type of vote cast (yes, no, abstention, absent, etc.).
+    description: '[en] Type of vote cast (yes, no, abstention, no vote, etc.).
 
-      [de] Art der abgegebenen Stimme (ja, nein, Enthaltung, abwesend, etc.).
+      [de] Art der abgegebenen Stimme (Ja, Nein, Enthaltung, nicht abgestimmt, etc.).
 
       '
     from_schema: https://ch.paf.link/schema/operations

@@ -27,8 +27,8 @@ Alias: total_absent
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
-| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 | [Attendance](Attendance.md) | [en] Aggregated attendance record for a meeting (number of members present, a... |  no  |
+| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 
 
 

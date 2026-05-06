@@ -16,13 +16,11 @@ URI: [ops:IndividualVoteTypeEnum](https://ch.paf.link/schema/operations/Individu
 ## Permissible Values
 | Value | Meaning | Description |
 | --- | --- | --- |
-| yes | ops:enum/individual_vote_type/yes | [en] Yes vote |
-| no | ops:enum/individual_vote_type/no | [en] No vote |
+| yes | ops:enum/individual_vote_type/yes | [en] Vote in favor (yes) |
+| no | ops:enum/individual_vote_type/no | [en] Vote against (no) |
 | abstention | ops:enum/individual_vote_type/abstention | [en] Abstention |
-| absent | ops:enum/individual_vote_type/absent | [en] Absent (not excused) |
-| absent_excused | ops:enum/individual_vote_type/absent_excused | [en] Absent (excused) |
-| abstention_president | ops:enum/individual_vote_type/abstention_president | [en] President abstains from voting |
-| tie_breaker | ops:enum/individual_vote_type/tie_breaker | [en] Tie-breaking vote |
+| not_voted | ops:enum/individual_vote_type/not_voted | [en] Not Voted |
+| tie_breaker | ops:enum/individual_vote_type/tie_breaker | [en] Tie-breaking vote, TODO english |
 | other | ops:enum/individual_vote_type/other | [en] Other vote type |
 
 
@@ -32,7 +30,7 @@ URI: [ops:IndividualVoteTypeEnum](https://ch.paf.link/schema/operations/Individu
 
 | Name | Description |
 | ---  | --- |
-| [individual_vote_type](individual_vote_type.md) | [en] Type of vote cast (yes, no, abstention, absent, etc |
+| [individual_vote_type](individual_vote_type.md) | [en] Type of vote cast (yes, no, abstention, no vote, etc |
 
 
 
@@ -74,7 +72,7 @@ rank: 1000
 permissible_values:
   'yes':
     text: 'yes'
-    description: '[en] Yes vote
+    description: '[en] Vote in favor (yes)
 
       [de] Ja-Stimme
 
@@ -82,7 +80,7 @@ permissible_values:
     meaning: ops:enum/individual_vote_type/yes
   'no':
     text: 'no'
-    description: '[en] No vote
+    description: '[en] Vote against (no)
 
       [de] Nein-Stimme
 
@@ -96,35 +94,19 @@ permissible_values:
 
       '
     meaning: ops:enum/individual_vote_type/abstention
-  absent:
-    text: absent
-    description: '[en] Absent (not excused)
+  not_voted:
+    text: not_voted
+    description: '[en] Not Voted
 
-      [de] Abwesend (nicht entschuldigt)
-
-      '
-    meaning: ops:enum/individual_vote_type/absent
-  absent_excused:
-    text: absent_excused
-    description: '[en] Absent (excused)
-
-      [de] Abwesend (entschuldigt)
+      [de] Nicht abgestimmt
 
       '
-    meaning: ops:enum/individual_vote_type/absent_excused
-  abstention_president:
-    text: abstention_president
-    description: '[en] President abstains from voting
-
-      [de] Präsident enthält sich der Stimme
-
-      '
-    meaning: ops:enum/individual_vote_type/abstention_president
+    meaning: ops:enum/individual_vote_type/not_voted
   tie_breaker:
     text: tie_breaker
-    description: '[en] Tie-breaking vote
+    description: '[en] Tie-breaking vote, TODO english
 
-      [de] Stichentscheid
+      [de] Stichentscheid, meist durch Präsidium
 
       '
     meaning: ops:enum/individual_vote_type/tie_breaker

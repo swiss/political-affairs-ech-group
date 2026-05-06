@@ -17,11 +17,11 @@ Alias: url
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |  no  |
-| [Manifestation](Manifestation.md) |  |  no  |
-| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
-| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
+| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
+| [Manifestation](Manifestation.md) |  |  no  |
+| [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |  no  |
 
 
 

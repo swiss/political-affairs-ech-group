@@ -101,7 +101,7 @@ Name: operations
 | [has_resolution](has_resolution.md) | [en] The resolutionor decision taken on this agenda item |
 | [id](id.md) |  |
 | [individual_attendances](individual_attendances.md) | Collection of individual attendance records |
-| [individual_vote_type](individual_vote_type.md) | [en] Type of vote cast (yes, no, abstention, absent, etc |
+| [individual_vote_type](individual_vote_type.md) | [en] Type of vote cast (yes, no, abstention, no vote, etc |
 | [individual_votes](individual_votes.md) | Collection of individual vote records |
 | [is_active](is_active.md) | [de] Gibt an, ob die Information aktuell gültig ist |
 | [label](label.md) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben ... |

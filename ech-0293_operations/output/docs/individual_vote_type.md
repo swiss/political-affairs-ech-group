@@ -3,9 +3,9 @@
 # Slot: individual_vote_type 
 
 
-_[en] Type of vote cast (yes, no, abstention, absent, etc.)._
+_[en] Type of vote cast (yes, no, abstention, no vote, etc.)._
 
-_[de] Art der abgegebenen Stimme (ja, nein, Enthaltung, abwesend, etc.)._
+_[de] Art der abgegebenen Stimme (Ja, Nein, Enthaltung, nicht abgestimmt, etc.)._
 
 __
 
@@ -85,9 +85,9 @@ Alias: individual_vote_type
 <details>
 ```yaml
 name: individual_vote_type
-description: '[en] Type of vote cast (yes, no, abstention, absent, etc.).
+description: '[en] Type of vote cast (yes, no, abstention, no vote, etc.).
 
-  [de] Art der abgegebenen Stimme (ja, nein, Enthaltung, abwesend, etc.).
+  [de] Art der abgegebenen Stimme (Ja, Nein, Enthaltung, nicht abgestimmt, etc.).
 
   '
 from_schema: https://ch.paf.link/schema/operations
