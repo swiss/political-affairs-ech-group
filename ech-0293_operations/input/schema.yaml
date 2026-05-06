@@ -376,8 +376,8 @@ slots:
 
   individual_vote_type:
     description: |
-      [en] Type of vote cast (yes, no, abstention, absent, etc.).
-      [de] Art der abgegebenen Stimme (ja, nein, Enthaltung, abwesend, etc.).
+      [en] Type of vote cast (yes, no, abstention, no vote, etc.).
+      [de] Art der abgegebenen Stimme (Ja, Nein, Enthaltung, nicht abgestimmt, etc.).
     range: IndividualVoteTypeEnum
 
   agenda_item_type:
@@ -939,38 +939,28 @@ enums:
       "yes":
         meaning: ops:enum/individual_vote_type/yes
         description: |
-          [en] Yes vote
+          [en] Vote in favor (yes)
           [de] Ja-Stimme
       "no":
         meaning: ops:enum/individual_vote_type/no
         description: |
-          [en] No vote
+          [en] Vote against (no)
           [de] Nein-Stimme
       "abstention":
         meaning: ops:enum/individual_vote_type/abstention
         description: |
           [en] Abstention
           [de] Enthaltung
-      "absent":
-        meaning: ops:enum/individual_vote_type/absent
+      "not_voted":
+        meaning: ops:enum/individual_vote_type/not_voted
         description: |
-          [en] Absent (not excused)
-          [de] Abwesend (nicht entschuldigt)
-      "absent_excused":
-        meaning: ops:enum/individual_vote_type/absent_excused
-        description: |
-          [en] Absent (excused)
-          [de] Abwesend (entschuldigt)
-      "abstention_president":
-        meaning: ops:enum/individual_vote_type/abstention_president
-        description: |
-          [en] President abstains from voting
-          [de] Präsident enthält sich der Stimme
+          [en] Not Voted
+          [de] Nicht abgestimmt
       "tie_breaker":
         meaning: ops:enum/individual_vote_type/tie_breaker
         description: |
-          [en] Tie-breaking vote
-          [de] Stichentscheid
+          [en] Tie-breaking vote, TODO english
+          [de] Stichentscheid, meist durch Präsidium
       "other":
         meaning: ops:enum/individual_vote_type/other
         description: |
