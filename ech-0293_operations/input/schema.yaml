@@ -66,6 +66,10 @@ classes:
     slots:
       - body_key
       - name
+      - number
+      - sequential_number
+      - position
+      - abbreviation
       - url
       - parent_legislature
       - meetings
@@ -225,29 +229,32 @@ classes:
 
   Attendance:
     description: |
-      [en] Attendance record for a meeting or voting session.
-      [de] Anwesenheitsliste für eine Sitzung oder Abstimmung.
+      [en] Aggregated attendance record for a meeting (number of members present, absent, excused).
+      [de] Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, Entschuldigte).
     mixins:
       - HasIdentification
       - HasCreationModificationDates
     slots:
+      - parent_meeting
       - datetime_begin
       - actor_id
-      - total_absent
+      - total_count
       - total_present
+      - total_absent
       - total_excused
 
   IndividualAttendance:
     description: |
-      [en] Individual attendance record for a specific person.
-      [de] Einzelne Anwesenheitsfeststellung für eine bestimmte Person.
+      [en] Individual attendance record for a specific person at a meeting (linked via the parent Attendance aggregate).
+      [de] Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft über das übergeordnete Attendance-Aggregat).
     mixins:
       - HasIdentification
       - HasCreationModificationDates
     slots:
-      - parent_voting
+      - parent_attendance
       - actor_id
       - attendance_type
+      - reason
 
   Speech:
     description: |
@@ -527,6 +534,13 @@ slots:
       [de] Die ID der Abstimmung, die mit der Einzelstimme verbunden ist.
     range: Voting
 
+  parent_attendance:
+    slot_uri: ops:parentAttendance
+    description: |
+      [en] The Attendance aggregate this individual attendance record belongs to.
+      [de] Das Attendance-Aggregat, zu dem dieser einzelne Anwesenheits-Eintrag gehört.
+    range: Attendance
+
   parent_agenda_item:
     description: |
       [en] If needed, this slot builds a hierarchy of agenda items.
@@ -746,6 +760,20 @@ slots:
   attendance_type:
     description: Type of individual attendance
     range: AttendanceTypeEnum
+
+  reason:
+    description: |
+      [en] Reason for absence or lateness (free-text, multilingual).
+      [de] Grund für Abwesenheit oder Verspätung (Freitext, mehrsprachig).
+    range: MultilingualString
+    multivalued: true
+    inlined_as_list: true
+
+  total_count:
+    range: integer
+    description: |
+      [en] Total number of members of the body (reference value for quorum calculations).
+      [de] Gesamtzahl aller Mitglieder des Gremiums (Bezugsgrösse für Quorum-Berechnungen).
 
   total_present:
     range: integer

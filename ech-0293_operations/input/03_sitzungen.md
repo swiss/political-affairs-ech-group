@@ -31,20 +31,27 @@ Legislature (Legislaturperiode)
 
 Jede Legislature ist einem spezifischen parlamentarischen Organ zugeordnet, identifiziert durch:
 
-- **group_id**: Verweis auf das Parlament (z.B. Nationalrat, Kantonsrat)
-- **group_name**: Name des Organs für schnelle Referenz
-- **body_key**: Optionaler Schlüssel zur Unterscheidung (z.B. "NR" für Nationalrat, "SR" für Ständerat)
-
-Diese Verweise verwenden Identifikatoren aus dem eCH-0294 Actors Standard, der die politischen Akteure und Organe definiert.
+- **actor_id**: Verweis auf das Parlament als politischen Akteur (z.B. Nationalrat, Kantonsrat) gemäss eCH-0294 Actors
+- **administrative_id**: Verwaltungs-ID der gesetzgebenden Körperschaft (z.B. Gemeinde, Kanton, Land)
 
 ### Zeitliche Einordnung
 
-Eine Legislaturperiode wird charakterisiert durch:
+Eine Legislaturperiode wird über das Mixin `IsEventWithDuration` charakterisiert. Die wichtigsten Datumsfelder sind:
 
-- **begin_date**: Beginn der Legislaturperiode (meist nach Wahlen)
-- **end_date**: Ende der Legislaturperiode (vor den nächsten Wahlen)
+- **date_begin_planned** / **date_begin_actual**: Geplanter bzw. tatsächlicher Beginn der Legislaturperiode (meist nach Wahlen)
+- **date_end_planned** / **date_end_actual**: Geplantes bzw. tatsächliches Ende der Legislaturperiode (vor den nächsten Wahlen)
+
+Bei Bedarf gibt es analoge `datetime_*`-Varianten mit Uhrzeit.
 
 Beispiel Bundesebene: Die 51. Legislaturperiode des Schweizer Parlaments dauerte vom 5. Dezember 2019 bis zum 4. Dezember 2023.
+
+### Identifikation
+
+Über das Mixin `HasIdentification` stehen `local_id`, `global_uri` und `wikidata_uri` zur Verfügung. Der `global_uri` ist Pflicht und dient als eindeutiger Identifikator.
+
+### Verlinkte Dokumente
+
+Über den Slot **documents** können relevante Dokumente (z.B. Mitgliederverzeichnisse der Legislatur, Geschäftsverzeichnisse) als FRBR-Works verknüpft werden.
 
 {{include:ech-0293_operations/output/docs/Legislature.md}}
 
@@ -73,36 +80,44 @@ Legislature (51. Legislaturperiode)
 
 ### Zuordnung zu Organen
 
-Eine Session oder ein Meeting kann sich auf verschiedene parlamentarische Organe beziehen:
+Eine Session bezieht sich auf das politische Organ, das die Sessionen als Reihe von Sitzungen organisiert. Beispiele:
 
-- **Parlament**: Sessions eines Kantonsrats
---**Regiegerung**: Meetings des Bundesrats, Regierungsrat, oder Executive einer Gemeinde
+- **Parlament**: Sessions eines Kantonsrats oder der Bundesversammlung
 - **Kommissionen**: Sitzungsperioden parlamentarischer Kommissionen
 - **Gemeinsame Gremien**: Z.B. Sessions der Vereinigten Bundesversammlung
 
-Über **group_id** und **group_name** wird das betreffende Organ referenziert (gemäss eCH-0294 Actors).
+Über **body_key** kann das Organ (z.B. "NR" für Nationalrat, "SR" für Ständerat) als Schlüssel hinterlegt werden. Über **parent_legislature** wird die Session der zugehörigen Legislaturperiode zugeordnet.
 
 ### Identifikation und Nummerierung
 
-Sessions werden üblicherweise nummeriert:
+Sessions werden üblicherweise nummeriert. Folgende Slots stehen zur Verfügung — sie sind kompatibel mit der entsprechenden Modellierung bei Meeting:
 
-- **number**: Laufende Nummer innerhalb der Legislature oder des Jahres
+- **number**: Laufende Nummer (z.B. innerhalb der Legislature oder des Jahres)
+- **sequential_number**: Laufende Nummer als String (auch römische Ziffern möglich)
+- **position**: Ganzzahlige Position
 - **abbreviation**: Kurze Bezeichnung (z.B. "FS24" für Frühjahrssession 2024)
 - **name**: Mehrsprachige vollständige Bezeichnung
 
+Über das Mixin `HasIdentification` stehen zusätzlich `local_id`, `global_uri` und `wikidata_uri` zur Verfügung.
+
 ### Zeitliche Attribute
 
-- **begin_date**: Geplanter Beginn der Session
-- **end_date**: Geplantes Ende der Session
+Sessions nutzen das Mixin `IsEventWithDuration` und bieten damit dieselben Datumsfelder wie Legislatures und Meetings:
 
-Im Gegensatz zu Meetings gibt es auf Session-Ebene keine "actual" Daten, da die übergeordnete Planung meist eingehalten wird.
+- **date_begin_planned** / **datetime_begin_planned**: Geplanter Beginn der Session
+- **date_begin_actual** / **datetime_begin_actual**: Tatsächlicher Beginn
+- **date_end_planned** / **datetime_end_planned**: Geplantes Ende der Session
+- **date_end_actual** / **datetime_end_actual**: Tatsächliches Ende
+
+### Verknüpfungen
+
+- **meetings**: Liste der Sitzungen innerhalb der Session
+- **documents**: Verknüpfte FRBR-Works (z.B. Sessionsprogramm, Sessionsvorschau)
+- **url**: Landing Page der Session
 
 ### Flexibilität im Standard
 
-Der Standard ist bewusst flexibel gestaltet, um verschiedene Organisationsformen abzubilden:
-
-- Föderaleinheiten ohne formale Sessions können diese Entität optional nutzen oder direkt auf Meetings referenzieren
-- Die Verwendung von **type**-Feldern erlaubt die Differenzierung verschiedener Session-Arten
+Der Standard ist bewusst flexibel gestaltet, um verschiedene Organisationsformen abzubilden. Föderaleinheiten ohne formale Sessions können diese Entität optional nutzen oder direkt auf Meetings referenzieren.
 
 {{include:ech-0293_operations/output/docs/Session.md}}
 
@@ -114,7 +129,7 @@ Ein Meeting bezeichnet eine einzelne Sitzung eines parlamentarischen Organs. Die
 
 ### Arten von Meetings
 
-Der Standard unterscheidet verschiedene Meeting-Typen über das Feld **type**:
+Der Standard unterscheidet verschiedene Meeting-Typen über das Feld **meeting_type** (Enum `MeetingTypeEnum`):
 
 #### session
 Plenarsitzungen des gesamten Parlaments oder einer Kammer
@@ -157,15 +172,15 @@ Session (Frühjahrssession 2024)
 
 ### Zeitliche Planung vs. Realität
 
-Ein besonderes Merkmal der Meeting-Entität ist die Unterscheidung zwischen geplanten und tatsächlichen Zeitpunkten:
+Über das Mixin `IsEventWithDuration` unterscheidet das Meeting zwischen geplanten und tatsächlichen Zeitpunkten:
 
 #### Geplante Daten
-- **begin_date**: Geplanter Beginn
-- **end_date**: Geplantes Ende
+- **date_begin_planned** / **datetime_begin_planned**: Geplanter Beginn
+- **date_end_planned** / **datetime_end_planned**: Geplantes Ende
 
 #### Tatsächliche Daten
-- **begin_date_actual**: Tatsächlicher Beginn
-- **end_date_actual**: Tatsächliches Ende
+- **date_begin_actual** / **datetime_begin_actual**: Tatsächlicher Beginn
+- **date_end_actual** / **datetime_end_actual**: Tatsächliches Ende
 
 Diese Unterscheidung ist wichtig, da:
 - Sitzungen sich verzögern können
@@ -176,11 +191,13 @@ Diese Unterscheidung ist wichtig, da:
 
 ### Sitzungsstatus
 
-Das Feld **state** erfasst den aktuellen Status eines Meetings:
+Das Feld **state** (Enum `StateEnum`) erfasst den aktuellen Status eines Meetings:
 
 - **planned**: Die Sitzung ist geplant und wird wie vorgesehen stattfinden
 - **canceled**: Die Sitzung wurde abgesagt
 - **postponed**: Die Sitzung wurde verschoben
+
+Über **state_name** kann eine abweichende, freitextliche Statusbeschreibung ergänzt werden.
 
 Dieser Status ist wichtig für:
 - Aktuelle Informationen an Parlamentsmitglieder und Öffentlichkeit
@@ -191,8 +208,10 @@ Dieser Status ist wichtig für:
 
 Meetings werden identifiziert durch:
 
-- **id**: Eindeutiger Identifikator
+- **local_id** / **global_uri** / **wikidata_uri** (via Mixin `HasIdentification`)
 - **number**: Laufende Nummer (z.B. "5" für die 5. Sitzung einer Session)
+- **sequential_number**: Laufende Nummer als String (auch römische Ziffern möglich)
+- **position**: Ganzzahlige Position innerhalb der Session
 - **abbreviation**: Kurze Bezeichnung (z.B. "NR-24-05")
 - **name**: Mehrsprachige vollständige Bezeichnung
 
@@ -206,11 +225,16 @@ Das Feld **location** erfasst den Sitzungsort:
 
 ### Zuordnung zu Organen
 
-Wie bei Legislature und Session wird über **group_id**, **group_name** und **body_key** das zuständige Organ referenziert:
+Das zuständige Organ wird über **actor_id** (gemäss eCH-0294 Actors) referenziert. Über **actor_name** kann zusätzlich der Name des Organs für schnellen Zugriff festgehalten werden, über **body_key** ein kurzer Schlüssel (z.B. "NR", "SR"). Über **administrative_id** kann die Verwaltungsebene angegeben werden, **group_name** und **group_id** ergänzen Gruppierungen wo nötig.
 
 - Plenarsitzungen: Verweis auf das gesamte Parlament
 - Kommissionssitzungen: Verweis auf die spezifische Kommission
 - Gemeinsame Sitzungen: Verweis auf das gemeinsame Gremium
+
+### Hierarchische Verknüpfungen
+
+- **parent_meeting**: Falls ein Meeting Teil eines übergeordneten Meetings ist
+- **parent_legislature**: Die Legislatur, in deren Rahmen das Meeting stattfindet
 
 ### Beziehungen zu anderen Entitäten
 
@@ -220,7 +244,8 @@ Ein Meeting verbindet verschiedene Elemente des parlamentarischen Betriebs:
 - **Votings**: Abstimmungen während der Sitzung
 - **Elections**: Wahlen während der Sitzung
 - **Speeches**: Wortmeldungen und Voten
-- **Attendance**: Anwesenheitslisten
+- **Attendance**: Anwesenheitslisten (über `Attendance.parent_meeting`)
+- **documents**: Verknüpfte FRBR-Works (Protokolle, Sitzungsunterlagen, Tagblatt etc.)
 
 {{include:ech-0293_operations/output/docs/Meeting.md}}
 
@@ -263,103 +288,49 @@ Meeting (Nationalratssitzung 4. März 2024)
 
 ### Zuordnung zu Meeting und Organ
 
-- **meeting_id**: Verweis auf die spezifische Sitzung
-- **group_id**: Verweis auf das Organ (Parlament, Kommission)
-
-### Arten der Anwesenheitserfassung
-
-Das Feld **attendance_type** unterscheidet:
-
-#### start
-Anwesenheit zu Beginn der Sitzung
-
-**Anwendung:**
-- Feststellung der Beschlussfähigkeit
-- Offizielle Eröffnung der Sitzung
-- Basis für Präsenzlisten
-
-#### continuous
-Kontinuierliche Anwesenheitserfassung
-
-**Anwendung:**
-- Elektronische Systeme mit permanenter Erfassung
-- Erkennung von Zu- und Weggängen während der Sitzung
-
-#### end
-Anwesenheit am Ende der Sitzung
-
-**Anwendung:**
-- Abschliessende Kontrolle
-- Seltener verwendet
+- **parent_meeting**: Verweis auf die spezifische Sitzung, zu der die Anwesenheitsliste gehört
+- **actor_id**: Verweis auf das Organ (Parlament, Kommission) gemäss eCH-0294 Actors
+- **datetime_begin**: Zeitpunkt der Anwesenheitserfassung
 
 ### Aggregierte Zahlen
 
-- **present_count**: Anzahl anwesender Mitglieder
-- **absent_count**: Anzahl abwesender Mitglieder (unentschuldigt)
-- **excused_count**: Anzahl entschuldigter Mitglieder
-- **total_count**: Gesamtzahl der Mitglieder
+- **total_count**: Gesamtzahl aller Mitglieder des Gremiums (Bezugsgrösse für Quorum-Berechnungen, z.B. 200 für Nationalrat, 46 für Ständerat)
+- **total_present**: Anzahl anwesender Mitglieder
+- **total_excused**: Anzahl entschuldigter Mitglieder
+- **total_absent**: Anzahl unentschuldigt abwesender Mitglieder
 
 **Beispiel:**
+- Total: 200
 - Anwesend: 185
 - Entschuldigt: 12
 - Abwesend: 3
-- Total: 200
 
 ### Beschlussfähigkeit
 
-Das Feld **quorum_reached** zeigt an, ob das erforderliche Quorum erreicht wurde:
-
-- **true**: Sitzung ist beschlussfähig
-- **false**: Sitzung ist nicht beschlussfähig
-
-**Konsequenz bei nicht erreichtem Quorum:**
-- Sitzung kann nicht stattfinden oder muss unterbrochen werden
-- Keine gültigen Beschlüsse möglich
-- Vertag auf spätere Sitzung
+Die Beschlussfähigkeit (Quorum) ergibt sich aus dem Verhältnis von `total_present` zu `total_count` und den jeweiligen Quorum-Regeln des Gremiums. Sie wird daher nicht als eigenes Feld gespeichert, sondern bei Bedarf datenseitig berechnet.
 
 ## IndividualAttendance (Individuelle Ebene)
 
-### Identifikation der Person
+### Verknüpfung
 
-- **person_id**: Verweis auf die Person gemäss eCH-0294 Actors
-- **person_name**: Name für schnellen Zugriff
+- **parent_attendance**: Verweis auf das übergeordnete `Attendance`-Aggregat (das wiederum am Meeting hängt). So wird die individuelle Erfassung sauber dem Meeting zugeordnet.
+- **actor_id**: Verweis auf die Person gemäss eCH-0294 Actors
 
-### Status der Anwesenheit
+### Anwesenheitstyp
 
-Das Feld **status** erfasst den Anwesenheitsstatus:
+Das Feld **attendance_type** (Enum `AttendanceTypeEnum`) erfasst die Art der Anwesenheit:
 
-#### present
-Anwesend
+- **present**: Persönlich anwesend
+- **remote**: Per Fernzugriff (z.B. Videokonferenz) anwesend
+- **substitute**: Stellvertretung — eine andere Person hat in der Vertretung teilgenommen
 
-**Bedeutung:** Die Person war während der (gesamten) Sitzung anwesend
+> Die Modellierung der Stellvertretung (z.B. wer hat wen vertreten, mit welchem Stimmrecht) wird in [Issue #24](https://github.com/swiss/political-affairs-ech-group/issues/24) weiter ausgearbeitet.
+>
+> Eine zweite Status-Achse `present` / `excused` / `absent` ("ob anwesend") parallel zur bestehenden Achse "wie anwesend" ist als Erweiterung in Diskussion.
 
-#### excused
-Entschuldigt abwesend 
+### Grund
 
-**Bedeutung:** Die Person war nicht anwesend, aber ordnungsgemäss entschuldigt z.B wegen Krankheit, anderweitige offizielle Verpflichtunge, persönliche Gründe
-
-#### absent
-Abwesend (unentschuldigt)
-
-**Bedeutung:** Die Person war nicht anwesend und hatte keine Entschuldigung
-
-### Zeiterfassung
-
-- **arrival_time**: Zeitpunkt der Ankunft (bei Verspätung)
-- **departure_time**: Zeitpunkt des Verlassens (bei vorzeitigem Weggang)
-
-### Grund der Abwesenheit
-
-Das Feld **reason** kann den Grund für Abwesenheit oder allfällige Verspätung erfassen:
-
-### Stellvertretung
-
-Das Feld **substitute_person_id** erfasst, ob eine Stellvertretung anwesend war:
-
-**Anwendung:**
-- In Systemen, die Stellvertretung erlauben
-- Kantone mit Ersatzmitgliedern
-- Vertretungsregelungen in Kommissionen
+Das Feld **reason** (mehrsprachig) kann den Grund für Abwesenheit oder Verspätung als Freitext erfassen.
 
 ## Unterschied: Attendance vs. IndividualVote
 
