@@ -228,6 +228,8 @@ Zusätzlich können weitere Identifikationsdaten erfasst werden:
 
 ## Arten von Stimmen
 
+TODO: Aufführen mit dem Umgang von "Anderen", Stimmen für möglichkeiten welche nicht Ja, Nein, Enthaltung umfassen.
+
 Das Feld **vote** erfasst die Art der Stimmabgabe:
 
 ### yes
@@ -244,44 +246,6 @@ Nein-Stimme (Ablehnung)
 Enthaltung
 
 **Bedeutung:** Die Person nimmt an der Abstimmung teil, enthält sich aber der Stimme. Bei elektronischer Stimmabgabe drückt sie den Knopf "Enthaltung". 
-
-
-### absent
-Nicht entschuldigt abwesend.
-
-**Bedeutung:** Die Person war zum Zeitpunkt der Abstimmung nicht anwesend. (Nicole: Das müssten wir nochmals überlegen. Abwesend bezieht sich auf die ganze Sitzung, nicht auf die Abstimmung. Das gehört wohl eher zu 03_sitzungen)
-
-**Gründe für Abwesenheit:**
-- Krankheit oder Unfall
-- Anderweitige Verpflichtungen
-- Ausstand (bei Interessenkonflikt)
-
-### excused
-Entschuldigt abwesend.
-
-**Bedeutung:** Die Person war abwesend, aber ordnungsgemäss entschuldigt.
-
-**Unterschied zu absent:**
-- **excused**: Vorherige Meldung und Genehmigung.
-- **absent**: Unentschuldigte Abwesenheit.
-
-### did_not_vote
-Hat nicht abgestimmt. 
-
-**Bedeutung:** Die Person war anwesend, hat aber nicht abgestimmt ***Nicole: Dieses Feld scheint mir überflüssig. Wie wollte man die Anwesenden zählen, wenn sie nicht abstimmen – wer sollte sie zählen? Mit "absent" ist dieser Fall meiner Meinung nach abgedeckt.***
-
-**Unterschied zu abstention:**
-- **abstention**: Bewusste Enthaltung (wird in einigen Parlamenten als aktive Handlung erfasst) 
-- **did_not_vote**: Passive Nicht-Teilnahme (in den meisten Parlamenten 
-
-### president
-Präsident/in (stimmt nicht ab, aber fällt bei Stimmengleichheit den Stichentscheid)
-
-**Bedeutung:** Die Person führt den Vorsitz und stimmt daher nicht ab
-
-**Anwendung:**
-- In vielen Parlamenten stimmt der/die Vorsitzende nur bei Stimmengleichheit (casting vote)
-- Im Normalfall wird die Stimme als "president" erfasst
 
 ## Stimmgewicht
 
@@ -327,8 +291,8 @@ Das Feld **description** kann zusätzliche Informationen erfassen:
 
 ## Zeitstempel
 
-- **datetime_created**: Zeitpunkt der Stimmabgabe
-- **datetime_modified**: Letzte Aktualisierung (z.B. bei Korrekturen) (Nicole: Bei Abstimmungen gibt es keine Korrekturen, sondern sie werden wiederholt)
+- **datetime_created**: Erste Publikation
+- **datetime_modified**: Letzte Aktualisierung (z.B. bei Korrekturen der Publikation)
 
 ## Anwesenheit vs. Stimmabgabe
 
