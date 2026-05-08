@@ -1,0 +1,1828 @@
+#
+# Syntaktisch korrekte Version
+# Working drafts: ../02_LinkML_files/*.yaml
+#
+# Konsolidiertes LinkML-Schema für ech-0295 Parlamentarische Geschäfte
+# (Motion, Postulat, Interpellation, Anfrage, Fragestunde-Frage,
+# Parlamentarische Initiative, Beschlussesentwurf).
+#
+
+id: https://ch.paf.link/schema/affairs
+name: affairs
+description: |
+  [en] Schema for parliamentary affairs (Motion, Postulat, Interpellation,
+  Anfrage, Question, Parliamentary Initiative, Draft Decree). Models the
+  affair lifecycle as a sequence of process steps reusing the shared
+  `IsProcessStep` mixin from ech-0292_meta.
+  [de] Schema für parlamentarische Geschäfte (Motion, Postulat,
+  Interpellation, Anfrage, Fragestunde-Frage, Parlamentarische Initiative,
+  Beschlussesentwurf). Modelliert den Geschäftslebenszyklus als Abfolge
+  von Prozessschritten unter Nutzung des gemeinsamen `IsProcessStep`-Mixins
+  aus ech-0292_meta.
+license: CC-BY
+prefixes:
+  xsd: http://www.w3.org/2001/XMLSchema#
+  prov: http://www.w3.org/ns/prov#
+  dcterms: http://purl.org/dc/terms/
+  linkml: https://w3id.org/linkml/
+  chpaf: https://ch.paf.link/
+  aff: https://ch.paf.link/schema/affairs/
+imports:
+  - linkml:types
+  - ../../ech-0292_meta/input/schema_common
+default_prefix: aff
+default_range: string
+
+# CLASSES
+# ----------------------------------------------------------------
+
+classes:
+
+  Container:
+    tree_root: true
+    mixins:
+      - HasIdentification
+    slots:
+      - affairs
+
+  # ---- Affair hierarchy ------------------------------------------
+
+  Affair:
+    abstract: true
+    description: |
+      [en] Abstract base class for any parliamentary affair (Geschäft).
+      Concrete subclasses (Motion, Postulate, Interpellation, etc.) share
+      a common lifecycle of process steps.
+      [de] Abstrakte Basisklasse für ein parlamentarisches Geschäft.
+      Konkrete Unterklassen (Motion, Postulat, Interpellation usw.) teilen
+      sich einen gemeinsamen Lebenszyklus aus Prozessschritten.
+    mixins:
+      - HasIdentification
+      - HasCreationModificationDates
+    slots:
+      - affair_number
+      - affair_type
+      - title
+      - linked_affairs
+      - submission
+      - submission_validation_steps
+      - assignment_steps
+      - response_steps
+      - committee_deliberation_steps
+      - plenary_debates
+      - lifecycle_flags
+      - current_state
+      - procedure_states
+    slot_usage:
+      affair_type:
+        required: true
+
+  Motion:
+    is_a: Affair
+    description: |
+      [en] A motion (Motion). Instructs the executive (or the bureau) to
+      submit a draft decree or take a specific measure.
+      [de] Eine Motion. Beauftragt die Exekutive (oder das Ratsbüro)
+      einen Erlassentwurf vorzulegen oder eine Massnahme zu treffen.
+
+  Postulate:
+    is_a: Affair
+    description: |
+      [en] A postulate (Postulat). Instructs the executive to examine
+      whether a bill should be drafted or a measure taken, and to report.
+      [de] Ein Postulat. Beauftragt die Exekutive, zu prüfen, ob ein
+      Erlass erlassen oder eine Massnahme getroffen werden soll, und
+      darüber Bericht zu erstatten.
+
+  Interpellation:
+    is_a: Affair
+    description: |
+      [en] An interpellation. Requests written information from the
+      executive on matters of policy or administration. Urgent
+      interpellations are answered in the same session and may be
+      discussed in the council.
+      [de] Eine Interpellation. Verlangt vom Bundesrat (bzw. der
+      kantonalen Exekutive) schriftlich Auskunft zu Angelegenheiten der
+      Politik oder Verwaltung. Dringliche Interpellationen werden in der
+      gleichen Session beantwortet und können im Rat diskutiert werden.
+
+  Request:
+    is_a: Affair
+    description: |
+      [en] A (small) request (Anfrage). Requests written information from
+      the executive; usually no debate.
+      [de] Eine (einfache) Anfrage. Verlangt von der Exekutive
+      schriftliche Auskunft; in der Regel ohne Debatte.
+
+  Question:
+    is_a: Affair
+    description: |
+      [en] A question for the question hour (Fragestunde-Frage).
+      Short oral question to the executive, answered in the same session.
+      [de] Eine Frage für die Fragestunde. Kurze mündliche Frage an die
+      Exekutive, in der gleichen Session beantwortet.
+
+  ParliamentaryInitiative:
+    is_a: Affair
+    description: |
+      [en] A parliamentary initiative (Parlamentarische Initiative).
+      A member or committee proposes a draft decree or the outline of a
+      decree.
+      [de] Eine Parlamentarische Initiative. Ein Ratsmitglied oder eine
+      Kommission schlägt einen Erlassentwurf oder die Grundzüge eines
+      Erlasses vor.
+
+  DraftDecree:
+    is_a: Affair
+    description: |
+      [en] A draft decree (Beschlussesentwurf / Erlassentwurf) brought
+      before parliament for deliberation.
+      [de] Ein Beschlussesentwurf bzw. Erlassentwurf, der dem Parlament
+      zur Beratung vorgelegt wird.
+
+  # ---- Process steps (use shared IsProcessStep mixin) ------------
+
+  Submission:
+    description: |
+      [en] The submission step of an affair: who submitted it, when, and
+      with which texts.
+      [de] Der Einreichungs-Schritt eines Geschäfts: wer hat es
+      eingereicht, wann und mit welchen Texten.
+    mixins:
+      - IsProcessStep
+    slots:
+      - submission_date
+      - sponsorship
+      - texts
+      - withdrawn_date
+      - reasoning_in_council
+
+  SubmissionValidationStep:
+    description: |
+      [en] A concrete validation step on a submitted affair (formal /
+      content check, urgency request).
+      [de] Ein konkreter Prüfungs-Schritt am eingereichten Geschäft
+      (Formal-/Inhaltsprüfung, Dringlichkeitsantrag).
+    mixins:
+      - IsProcessStep
+    slots:
+      - validation_step_type
+      - decided_by
+      - decision_result
+      - deadline
+
+  AssignmentStep:
+    description: |
+      [en] A formal assignment of the affair to an institution or actor
+      for further processing (chamber, committee, department).
+      [de] Eine formelle Zuteilung des Geschäfts an eine Institution oder
+      einen Akteur zur weiteren Bearbeitung (Kammer, Kommission,
+      Departement).
+    mixins:
+      - IsProcessStep
+    slots:
+      - assignment_step_type
+      - assigned_to
+      - deadline
+
+  ResponseStep:
+    description: |
+      [en] A formal response or reaction by the executive (e.g.
+      Bundesrat, Direktion) to an affair.
+      [de] Eine formelle Stellungnahme der Exekutive (z. B. Bundesrat,
+      Direktion) zu einem Geschäft.
+    mixins:
+      - IsProcessStep
+    slots:
+      - responder
+      - recommendation
+      - texts
+
+  CommitteeDeliberationStep:
+    description: |
+      [en] Committee-level deliberations preparing for the plenary debate
+      (meetings, recommendation, designated spokesperson).
+      [de] Beratungen auf Kommissionsebene zur Vorbereitung der
+      plenaren Debatte (Sitzungen, Empfehlung, Sprecher:in).
+    mixins:
+      - IsProcessStep
+    slots:
+      - committee
+      - council
+      - committee_decision
+      - spokesperson
+      - meeting_refs
+
+  PlenaryDebate:
+    description: |
+      [en] Treatment in the council (Behandlung im Rat). Contains the
+      chronologically ordered debate events (speeches, propositions,
+      votes).
+      [de] Behandlung im Rat. Enthält die chronologisch geordneten
+      Debatten-Ereignisse (Reden, Anträge, Abstimmungen).
+    mixins:
+      - IsProcessStep
+    slots:
+      - council
+      - debate_type
+      - meeting_ref
+      - debate_events
+
+  PlenaryDebateEvent:
+    description: |
+      [en] A single event within a plenary debate: a speech, a
+      proposition, or a vote — with sequence and timestamp.
+      [de] Ein einzelnes Ereignis innerhalb einer plenaren Debatte: eine
+      Rede, ein Antrag oder eine Abstimmung — mit Reihenfolge und
+      Zeitstempel.
+    mixins:
+      - HasIdentification
+    slots:
+      - sequence_number
+      - event_type
+      - speech
+      - proposition
+      - vote
+      - timestamp
+      - deadline
+
+  # ---- Helper classes --------------------------------------------
+
+  ProcedureState:
+    description: |
+      [en] Procedure state of the affair, expressed via four orthogonal
+      dimensions (status, phase, stage, decision) at a given date.
+      [de] Verfahrensstand des Geschäfts, ausgedrückt über vier
+      orthogonale Dimensionen (Status, Phase, Etappe, Entscheid) zu einem
+      bestimmten Datum.
+    mixins:
+      - HasIdentification
+    slots:
+      - as_of_date
+      - status
+      - phase
+      - stage
+      - decision
+      - remark
+
+  LifecycleFlags:
+    description: |
+      [en] General lifecycle metadata (urgency, withdrawal, etc.).
+      [de] Allgemeine Lebenszyklus-Metadaten (Dringlichkeit, Rückzug
+      usw.).
+    slots:
+      - flag_date
+      - urgent
+      - remark
+
+  Sponsorship:
+    description: |
+      [en] A time-bounded set of (co-)sponsors with their roles.
+      [de] Eine zeitlich begrenzte Menge von (Mit-)Urheber:innen mit
+      ihren Rollen.
+    slots:
+      - actor
+      - sponsor_role
+      - start_date
+      - end_date
+
+  CommitteeDecision:
+    description: |
+      [en] The committee's formal recommendation, with majority/minority
+      positions and supporters.
+      [de] Die formelle Empfehlung der Kommission, mit Mehrheits-/
+      Minderheits­positionen und Unterstützenden.
+    slots:
+      - decision_date
+      - positions
+      - text
+    slot_usage:
+      text:
+        range: TextBlock
+        inlined: true
+
+  CommitteePosition:
+    description: |
+      [en] A formal position taken by part of a committee (full
+      committee, majority, or minority), including a recommendation and
+      supporting members.
+      [de] Eine formelle Position eines Teils einer Kommission
+      (Gesamtkommission, Mehrheit oder Minderheit), inklusive Empfehlung
+      und unterstützenden Mitgliedern.
+    slots:
+      - position_type
+      - position_name
+      - recommendation
+      - supporters
+
+  CommitteeMeeting:
+    description: |
+      [en] A formal meeting of a parliamentary committee with attendance
+      and discussed affairs. May reference a Meeting in the operations
+      schema (ech-0293).
+      [de] Eine formelle Sitzung einer parlamentarischen Kommission mit
+      Anwesenheit und behandelten Geschäften. Kann auf eine Meeting in
+      ech-0293 (Operations) verweisen.
+    mixins:
+      - HasIdentification
+      - IsEventWithDuration
+    slots:
+      - committee
+      - president
+      - vice_president
+      - attendees
+      - absentees
+      - excused
+      - discussed_affairs
+
+  Vote:
+    description: |
+      [en] A formal vote in the plenary, including semantics, counts and
+      optional named (roll-call) individual votes.
+      [de] Eine formelle Abstimmung im Plenum, inklusive Semantik,
+      Stimmenzahlen und optional namentlichen Einzelstimmen.
+    mixins:
+      - HasIdentification
+    slots:
+      - vote_registration_number
+      - vote_type
+      - text
+      - vote_outcome
+      - vote_meaning_yes
+      - vote_meaning_no
+      - count_yes
+      - count_no
+      - count_abstain
+      - count_excused
+      - count_not_present
+      - named_votes
+    slot_usage:
+      text:
+        range: TextBlock
+        inlined: true
+
+  NamedVote:
+    description: |
+      [en] An individual vote cast by a named person in a roll-call vote.
+      [de] Eine Einzelstimme einer namentlich genannten Person bei einer
+      namentlichen Abstimmung.
+    slots:
+      - voter
+      - individual_vote
+      - remark
+
+  Proposition:
+    description: |
+      [en] A formal proposition (motion to accept, reject, or amend)
+      submitted during a debate.
+      [de] Ein formeller Antrag (Annahme-, Ablehnungs- oder
+      Änderungsantrag), der während einer Debatte eingereicht wird.
+    slots:
+      - proposer
+      - proposition_type
+      - text
+    slot_usage:
+      text:
+        range: TextBlock
+        inlined: true
+
+  Speech:
+    description: |
+      [en] A speech or statement made during a plenary debate.
+      [de] Eine Wortmeldung während einer plenaren Debatte.
+    slots:
+      - speaker
+      - debate_role
+      - text
+    slot_usage:
+      text:
+        range: TextBlock
+        inlined: true
+
+  TextBlock:
+    description: |
+      [en] A text element in a specific language, with optional metadata
+      for origin, type, and translation status. Optionally references an
+      external document.
+      [de] Ein Textelement in einer bestimmten Sprache, mit optionalen
+      Metadaten zu Herkunft, Typ und Übersetzungsstatus. Verweist
+      optional auf ein externes Dokument.
+    slots:
+      - text
+      - text_language
+      - text_type
+      - text_origin
+      - text_date
+      - document_url
+
+  MultilingualString:
+    description: |
+      [en] A string that can contain text in multiple languages.
+      [de] Ein String, der Text in mehreren Sprachen enthalten kann.
+    slots:
+      - text
+      - text_language
+    slot_usage:
+      text_language:
+        required: true
+
+  # ---- Actors (concrete classes; in future linked to ech-0294) ---
+
+  Actor:
+    description: |
+      [en] Generic actor (person or organization) involved in an affair.
+      Use a concrete subclass (Person, Organization, Committee, Chamber,
+      Department, ParliamentaryGroup) when the type is known. To be
+      linked to ech-0294 actor entities via `global_uri` / `wikidata_uri`.
+      [de] Allgemeine:r Akteur:in (Person oder Organisation) in einem
+      Geschäft. Bei bekanntem Typ konkrete Unterklasse nutzen (Person,
+      Organization, Committee, Chamber, Department, ParliamentaryGroup).
+      Soll über `global_uri` / `wikidata_uri` mit ech-0294-Akteuren
+      verknüpft werden.
+    mixins:
+      - HasIdentification
+    slots:
+      - name
+
+  Person:
+    is_a: Actor
+    description: |
+      [en] A natural person (e.g., MP, government member).
+      [de] Eine natürliche Person (z. B. Ratsmitglied, Regierungsmitglied).
+
+  Organization:
+    is_a: Actor
+    description: |
+      [en] A generic organization (use Committee / Chamber / Department /
+      ParliamentaryGroup for known types).
+      [de] Eine generische Organisation (für bekannte Typen Committee /
+      Chamber / Department / ParliamentaryGroup verwenden).
+
+  Committee:
+    is_a: Organization
+    description: |
+      [en] A parliamentary committee.
+      [de] Eine parlamentarische Kommission.
+
+  Chamber:
+    is_a: Organization
+    description: |
+      [en] A legislative chamber (e.g., Nationalrat, Ständerat,
+      kantonaler Grosser Rat).
+      [de] Eine gesetzgebende Kammer (z. B. Nationalrat, Ständerat,
+      kantonaler Grosser Rat).
+
+  Department:
+    is_a: Organization
+    description: |
+      [en] An executive department or office (e.g., Bundesrat, Direktion).
+      [de] Ein Departement oder Amt der Exekutive (z. B. Bundesrat,
+      Direktion).
+
+  ParliamentaryGroup:
+    is_a: Organization
+    description: |
+      [en] A parliamentary group / faction (Fraktion).
+      [de] Eine Fraktion.
+
+# SLOTS
+# ----------------------------------------------------------------
+
+slots:
+
+  # ---- Container ---------------------------------------------------
+
+  affairs:
+    slot_uri: aff:affair
+    description: |
+      [en] Collection of parliamentary affairs.
+      [de] Sammlung parlamentarischer Geschäfte.
+    range: Affair
+    multivalued: true
+    inlined_as_list: true
+
+  # ---- Affair core -------------------------------------------------
+
+  affair_number:
+    slot_uri: aff:affairNumber
+    description: |
+      [en] Official affair number (e.g., 24.3378). Issued by parliament's
+      registry.
+      [de] Offizielle Geschäftsnummer (z. B. 24.3378), vergeben durch
+      die Geschäftsstelle des Parlaments.
+    required: true
+
+  affair_type:
+    slot_uri: aff:affairType
+    description: |
+      [en] Type of the affair (motion, postulate, interpellation, etc.).
+      [de] Geschäftstyp (Motion, Postulat, Interpellation usw.).
+    range: AffairTypeEnum
+
+  title:
+    slot_uri: aff:title
+    description: |
+      [en] Title of the affair (multilingual; original and translations).
+      [de] Titel des Geschäfts (mehrsprachig; Original und Übersetzungen).
+    range: TextBlock
+    multivalued: true
+    inlined_as_list: true
+
+  linked_affairs:
+    slot_uri: aff:linkedAffair
+    description: |
+      [en] References to related affairs (e.g., identical motions in
+      both chambers, predecessor affairs).
+      [de] Verweise auf verwandte Geschäfte (z. B. gleichlautende
+      Motionen in beiden Kammern, frühere Geschäfte).
+    range: uriorcurie
+    multivalued: true
+
+  submission:
+    slot_uri: aff:submission
+    description: |
+      [en] The submission step of the affair.
+      [de] Der Einreichungs-Schritt des Geschäfts.
+    range: Submission
+    inlined: true
+
+  submission_validation_steps:
+    slot_uri: aff:submissionValidationStep
+    description: |
+      [en] Validation steps performed on the submitted affair (formal
+      checks, urgency requests).
+      [de] Prüfungs-Schritte am eingereichten Geschäft (Formalprüfung,
+      Dringlichkeitsanträge).
+    range: SubmissionValidationStep
+    multivalued: true
+    inlined_as_list: true
+
+  assignment_steps:
+    slot_uri: aff:assignmentStep
+    description: |
+      [en] Steps assigning the affair to a chamber, committee or
+      administrative body.
+      [de] Schritte, die das Geschäft einer Kammer, Kommission oder
+      Verwaltungs­einheit zuweisen.
+    range: AssignmentStep
+    multivalued: true
+    inlined_as_list: true
+
+  response_steps:
+    slot_uri: aff:responseStep
+    description: |
+      [en] Formal responses or recommendations from the executive.
+      [de] Formelle Stellungnahmen oder Empfehlungen der Exekutive.
+    range: ResponseStep
+    multivalued: true
+    inlined_as_list: true
+
+  committee_deliberation_steps:
+    slot_uri: aff:committeeDeliberationStep
+    description: |
+      [en] Committee-level deliberations.
+      [de] Beratungen auf Kommissionsebene.
+    range: CommitteeDeliberationStep
+    multivalued: true
+    inlined_as_list: true
+
+  plenary_debates:
+    slot_uri: aff:plenaryDebate
+    description: |
+      [en] Council debates on the affair.
+      [de] Ratsdebatten zum Geschäft.
+    range: PlenaryDebate
+    multivalued: true
+    inlined_as_list: true
+
+  lifecycle_flags:
+    slot_uri: aff:lifecycleFlag
+    description: |
+      [en] High-level lifecycle metadata (urgency, withdrawal, etc.).
+      [de] Übergeordnete Lebenszyklus-Metadaten (Dringlichkeit, Rückzug
+      usw.).
+    range: LifecycleFlags
+    multivalued: true
+    inlined_as_list: true
+
+  current_state:
+    slot_uri: aff:currentState
+    description: |
+      [en] Current (most recent) procedure state of the affair.
+      [de] Aktueller (jüngster) Verfahrensstand des Geschäfts.
+    range: ProcedureState
+    inlined: true
+
+  procedure_states:
+    slot_uri: aff:procedureState
+    description: |
+      [en] All historical procedure states of the affair, in chronological
+      order.
+      [de] Alle historischen Verfahrensstände des Geschäfts in
+      chronologischer Reihenfolge.
+    range: ProcedureState
+    multivalued: true
+    inlined_as_list: true
+
+  # ---- Submission step --------------------------------------------
+
+  submission_date:
+    slot_uri: aff:submissionDate
+    description: |
+      [en] Date the affair was officially submitted.
+      [de] Datum der offiziellen Einreichung des Geschäfts.
+    range: date
+
+  sponsorship:
+    slot_uri: aff:sponsorship
+    description: |
+      [en] (Co-)sponsorships with roles and time bounds.
+      [de] (Mit-)Urheberschaften mit Rollen und zeitlichen Grenzen.
+    range: Sponsorship
+    multivalued: true
+    inlined_as_list: true
+
+  texts:
+    slot_uri: aff:text
+    description: |
+      [en] Text blocks associated with this step (main text, reasoning,
+      response, recommendation, etc.).
+      [de] Mit diesem Schritt verbundene Textblöcke (Haupttext,
+      Begründung, Antwort, Empfehlung usw.).
+    range: TextBlock
+    multivalued: true
+    inlined_as_list: true
+
+  withdrawn_date:
+    slot_uri: aff:withdrawnDate
+    description: |
+      [en] Date the affair was officially withdrawn by the sponsor (if
+      applicable).
+      [de] Datum, an dem das Geschäft von der Urheberin/dem Urheber
+      zurückgezogen wurde (falls zutreffend).
+    range: date
+
+  reasoning_in_council:
+    slot_uri: aff:reasoningInCouncil
+    description: |
+      [en] Optional reference to the speech in council where the affair
+      was orally substantiated.
+      [de] Optionaler Verweis auf die Rede im Rat, in der das Geschäft
+      mündlich begründet wurde.
+    range: PlenaryDebate
+    inlined: true
+
+  # ---- Validation step --------------------------------------------
+
+  validation_step_type:
+    slot_uri: aff:validationStepType
+    description: |
+      [en] Whether the step is an initial check or an urgency request.
+      [de] Ob der Schritt eine Erstprüfung oder ein
+      Dringlichkeitsantrag ist.
+    range: SubmissionReviewStepTypeEnum
+
+  decided_by:
+    slot_uri: aff:decidedBy
+    description: |
+      [en] Entity that made the decision (chair, bureau, etc.).
+      [de] Einheit, die den Entscheid gefällt hat (Vorsitz, Büro usw.).
+    range: Actor
+    inlined: true
+
+  decision_result:
+    slot_uri: aff:decisionResult
+    description: |
+      [en] Outcome of the step (e.g., "valid", "invalid", "granted",
+      "rejected").
+      [de] Ergebnis des Schritts (z. B. "gültig", "ungültig", "erteilt",
+      "abgelehnt").
+    range: string
+
+  deadline:
+    slot_uri: aff:deadline
+    description: |
+      [en] Optional deadline by which the affair must be treated
+      (Beantwortungsfrist, Behandlungsfrist, Umsetzungsfrist,
+      Abschreibungsfrist, Referendumsfrist).
+      [de] Optionale Frist, innerhalb derer das Geschäft behandelt werden
+      muss (Beantwortungs-, Behandlungs-, Umsetzungs-, Abschreibungs- bzw.
+      Referendumsfrist).
+    range: date
+
+  # ---- Assignment step --------------------------------------------
+
+  assignment_step_type:
+    slot_uri: aff:assignmentStepType
+    description: |
+      [en] Type of assignment (chamber, committee, executive, agenda).
+      [de] Art der Zuteilung (Kammer, Kommission, Exekutive,
+      Traktanden­liste).
+    range: AssignmentStepTypeEnum
+
+  assigned_to:
+    slot_uri: aff:assignedTo
+    description: |
+      [en] The body to which the affair is assigned (e.g., Nationalrat,
+      SGK-NR, Gesundheitsdirektion ZH).
+      [de] Die Stelle, der das Geschäft zugewiesen wird (z. B.
+      Nationalrat, SGK-NR, Gesundheitsdirektion ZH).
+    range: Organization
+    inlined: true
+
+  # ---- Response step ----------------------------------------------
+
+  responder:
+    slot_uri: aff:responder
+    description: |
+      [en] The body that issued the response (e.g., Bundesrat, Direktion).
+      [de] Die Stelle, die die Stellungnahme abgegeben hat (z. B.
+      Bundesrat, Direktion).
+    range: Organization
+    inlined: true
+
+  recommendation:
+    slot_uri: aff:recommendation
+    description: |
+      [en] Formal recommendation of the responding body.
+      [de] Formelle Empfehlung der antwortenden Stelle.
+    range: RecommendationEnum
+
+  # ---- Committee deliberation step --------------------------------
+
+  committee:
+    slot_uri: aff:committee
+    description: |
+      [en] The committee responsible for the deliberation.
+      [de] Die für die Beratung zuständige Kommission.
+    range: Committee
+    inlined: true
+
+  council:
+    slot_uri: aff:council
+    description: |
+      [en] The chamber to which the committee belongs or in which the
+      debate takes place.
+      [de] Die Kammer, zu der die Kommission gehört oder in der die
+      Debatte stattfindet.
+    range: CouncilEnum
+
+  committee_decision:
+    slot_uri: aff:committeeDecision
+    description: |
+      [en] The committee's recommendation to the plenary, including
+      majority/minority positions.
+      [de] Die Empfehlung der Kommission ans Plenum, inklusive
+      Mehrheits-/Minderheits­positionen.
+    range: CommitteeDecision
+    inlined: true
+
+  spokesperson:
+    slot_uri: aff:spokesperson
+    description: |
+      [en] The person designated to speak in plenary for the committee
+      (Sprecher:in, Referent:in).
+      [de] Die für das Plenum bestimmte Sprecher:in / Referent:in der
+      Kommission.
+    range: Person
+    inlined: true
+
+  meeting_refs:
+    slot_uri: aff:meetingRef
+    description: |
+      [en] References to committee meetings (link to ech-0293 operations
+      meetings).
+      [de] Verweise auf Kommissionssitzungen (Link zu ech-0293
+      Operations-Sitzungen).
+    range: uriorcurie
+    multivalued: true
+
+  meeting_ref:
+    slot_uri: aff:meetingRef
+    description: |
+      [en] Reference to a single meeting (link to ech-0293 operations).
+      [de] Verweis auf eine einzelne Sitzung (Link zu ech-0293
+      Operations).
+    range: uriorcurie
+
+  # ---- Plenary debate ---------------------------------------------
+
+  debate_type:
+    slot_uri: aff:debateType
+    description: |
+      [en] Type of plenary debate (Eintreten, Detailberatung, etc.).
+      [de] Art der plenaren Debatte (Eintreten, Detailberatung usw.).
+    range: PlenaryDebateTypeEnum
+
+  debate_events:
+    slot_uri: aff:debateEvent
+    description: |
+      [en] Chronologically ordered events in the plenary debate.
+      [de] Chronologisch geordnete Ereignisse in der plenaren Debatte.
+    range: PlenaryDebateEvent
+    multivalued: true
+    inlined_as_list: true
+
+  sequence_number:
+    slot_uri: aff:sequenceNumber
+    description: |
+      [en] Position of the event within the debate (starting from 1).
+      [de] Position des Ereignisses in der Debatte (beginnend bei 1).
+    range: integer
+
+  event_type:
+    slot_uri: aff:eventType
+    description: |
+      [en] Type of debate event (speech, proposition, vote).
+      [de] Art des Debatten-Ereignisses (Rede, Antrag, Abstimmung).
+    range: PlenaryDebateEventTypeEnum
+
+  speech:
+    slot_uri: aff:speech
+    description: |
+      [en] The speech, if this event is a speech.
+      [de] Die Rede, falls dieses Ereignis eine Rede ist.
+    range: Speech
+    inlined: true
+
+  proposition:
+    slot_uri: aff:proposition
+    description: |
+      [en] The proposition, if this event involves a formal motion or
+      amendment.
+      [de] Der Antrag, falls dieses Ereignis einen formellen Antrag oder
+      Änderungs­antrag betrifft.
+    range: Proposition
+    inlined: true
+
+  vote:
+    slot_uri: aff:vote
+    description: |
+      [en] The vote, if this event is or follows with a vote.
+      [de] Die Abstimmung, falls dieses Ereignis eine Abstimmung ist
+      oder einer folgt.
+    range: Vote
+    inlined: true
+
+  timestamp:
+    slot_uri: aff:timestamp
+    description: |
+      [en] Timestamp of the event.
+      [de] Zeitstempel des Ereignisses.
+    range: datetime
+
+  # ---- Procedure state --------------------------------------------
+
+  as_of_date:
+    slot_uri: aff:asOfDate
+    description: |
+      [en] Date at which this state is valid.
+      [de] Datum, zu dem dieser Zustand gültig ist.
+    range: date
+
+  status:
+    slot_uri: aff:status
+    description: |
+      [en] Whether the affair is still open or closed.
+      [de] Ob das Geschäft noch offen oder geschlossen ist.
+    range: StatusEnum
+    required: true
+
+  phase:
+    slot_uri: aff:phase
+    description: |
+      [en] Pre-parliamentary, parliamentary, or post-parliamentary phase.
+      [de] Vorparlamentarische, parlamentarische oder
+      nachparlamentarische Phase.
+    range: ProcedurePhaseEnum
+    required: true
+
+  stage:
+    slot_uri: aff:stage
+    description: |
+      [en] The current stage within the phase.
+      [de] Die aktuelle Etappe innerhalb der Phase.
+    range: ProcedureStageEnum
+    required: true
+
+  decision:
+    slot_uri: aff:decision
+    description: |
+      [en] Decision/outcome associated with the current stage (if any).
+      [de] Entscheid/Ergebnis der aktuellen Etappe (falls vorhanden).
+    range: ProcedureDecisionEnum
+
+  # ---- Lifecycle flags --------------------------------------------
+
+  flag_date:
+    slot_uri: aff:flagDate
+    description: |
+      [en] Date this lifecycle flag became valid.
+      [de] Datum, an dem dieser Lifecycle-Flag gültig wurde.
+    range: date
+
+  urgent:
+    slot_uri: aff:urgent
+    description: |
+      [en] Whether the affair is declared urgent (Dringlichkeit).
+      [de] Ob das Geschäft als dringlich erklärt wurde.
+    range: boolean
+
+  # ---- Sponsorship ------------------------------------------------
+
+  actor:
+    slot_uri: aff:actor
+    description: |
+      [en] An actor (person or organization).
+      [de] Ein Akteur (Person oder Organisation).
+    range: Actor
+    inlined: true
+
+  sponsor_role:
+    slot_uri: aff:sponsorRole
+    description: |
+      [en] Role of the actor in the sponsorship (sponsor, cosponsor,
+      transferred).
+      [de] Rolle der Akteurin/des Akteurs in der Urheberschaft (Urheber:in,
+      Mitunterzeichner:in, übernommen).
+    range: SponsorRoleEnum
+    required: true
+
+  start_date:
+    slot_uri: aff:startDate
+    description: |
+      [en] Start date of the sponsorship.
+      [de] Beginn der Urheberschaft.
+    range: date
+
+  end_date:
+    slot_uri: aff:endDate
+    description: |
+      [en] End date of the sponsorship (e.g., when the seat changed).
+      [de] Ende der Urheberschaft (z. B. bei Sitzwechsel).
+    range: date
+
+  # ---- Committee decision / position ------------------------------
+
+  decision_date:
+    slot_uri: aff:decisionDate
+    description: |
+      [en] Date of the committee decision.
+      [de] Datum des Kommissions­entscheids.
+    range: date
+
+  positions:
+    slot_uri: aff:committeePosition
+    description: |
+      [en] Positions taken by parts of the committee (full / majority /
+      minority).
+      [de] Positionen von Teilen der Kommission (Gesamt / Mehrheit /
+      Minderheit).
+    range: CommitteePosition
+    multivalued: true
+    inlined_as_list: true
+
+  position_type:
+    slot_uri: aff:positionType
+    description: |
+      [en] Type of committee position (full, majority, minority).
+      [de] Art der Kommissionsposition (Gesamt, Mehrheit, Minderheit).
+    range: CommitteePositionTypeEnum
+    required: true
+
+  position_name:
+    slot_uri: aff:positionName
+    description: |
+      [en] Optional label for the position (e.g., "Minderheit I").
+      [de] Optionale Bezeichnung der Position (z. B. "Minderheit I").
+    range: string
+
+  supporters:
+    slot_uri: aff:supporter
+    description: |
+      [en] Members supporting this position.
+      [de] Mitglieder, die diese Position unterstützen.
+    range: Person
+    multivalued: true
+    inlined_as_list: true
+
+  # ---- Committee meeting ------------------------------------------
+
+  president:
+    slot_uri: aff:president
+    description: |
+      [en] Chair of the meeting.
+      [de] Vorsitz der Sitzung.
+    range: Person
+    inlined: true
+
+  vice_president:
+    slot_uri: aff:vicePresident
+    description: |
+      [en] Vice-chair of the meeting.
+      [de] Vize-Vorsitz der Sitzung.
+    range: Person
+    inlined: true
+
+  attendees:
+    slot_uri: aff:attendee
+    description: |
+      [en] Members present at the meeting.
+      [de] An der Sitzung anwesende Mitglieder.
+    range: Person
+    multivalued: true
+    inlined_as_list: true
+
+  absentees:
+    slot_uri: aff:absentee
+    description: |
+      [en] Members absent without excuse.
+      [de] Unentschuldigt abwesende Mitglieder.
+    range: Person
+    multivalued: true
+    inlined_as_list: true
+
+  excused:
+    slot_uri: aff:excused
+    description: |
+      [en] Members excused from the meeting.
+      [de] Entschuldigt abwesende Mitglieder.
+    range: Person
+    multivalued: true
+    inlined_as_list: true
+
+  discussed_affairs:
+    slot_uri: aff:discussedAffair
+    description: |
+      [en] Affairs discussed at the meeting (referenced by URI/CURIE).
+      [de] An der Sitzung behandelte Geschäfte (per URI/CURIE
+      referenziert).
+    range: uriorcurie
+    multivalued: true
+
+  # ---- Vote --------------------------------------------------------
+
+  vote_registration_number:
+    slot_uri: aff:voteRegistrationNumber
+    description: |
+      [en] Official ID/number of the vote (e.g., from the voting system).
+      [de] Offizielle ID/Nummer der Abstimmung (z. B. aus dem
+      Abstimmungs­system).
+
+  vote_type:
+    slot_uri: aff:voteType
+    description: |
+      [en] Type of vote (final, amendment, procedural, other).
+      [de] Art der Abstimmung (Schlussabstimmung, Änderungsantrag,
+      Verfahrens­frage, andere).
+    range: VoteTypeEnum
+
+  vote_outcome:
+    slot_uri: aff:voteOutcome
+    description: |
+      [en] Final outcome of the vote (adopted, rejected, etc.).
+      [de] Endgültiges Ergebnis der Abstimmung (angenommen, abgelehnt
+      usw.).
+    range: VoteOutcomeEnum
+
+  vote_meaning_yes:
+    slot_uri: aff:voteMeaningYes
+    description: |
+      [en] What a YES vote means in this context (e.g., "accept the
+      motion").
+      [de] Was eine JA-Stimme in diesem Kontext bedeutet (z. B.
+      "Motion annehmen").
+
+  vote_meaning_no:
+    slot_uri: aff:voteMeaningNo
+    description: |
+      [en] What a NO vote means in this context.
+      [de] Was eine NEIN-Stimme in diesem Kontext bedeutet.
+
+  count_yes:
+    slot_uri: aff:countYes
+    description: |
+      [en] Total number of YES votes.
+      [de] Gesamtzahl der JA-Stimmen.
+    range: integer
+
+  count_no:
+    slot_uri: aff:countNo
+    description: |
+      [en] Total number of NO votes.
+      [de] Gesamtzahl der NEIN-Stimmen.
+    range: integer
+
+  count_abstain:
+    slot_uri: aff:countAbstain
+    description: |
+      [en] Total number of abstentions.
+      [de] Gesamtzahl der Enthaltungen.
+    range: integer
+
+  count_excused:
+    slot_uri: aff:countExcused
+    description: |
+      [en] Total number of excused members.
+      [de] Gesamtzahl entschuldigter Mitglieder.
+    range: integer
+
+  count_not_present:
+    slot_uri: aff:countNotPresent
+    description: |
+      [en] Total number of members absent without excuse.
+      [de] Gesamtzahl unentschuldigt abwesender Mitglieder.
+    range: integer
+
+  named_votes:
+    slot_uri: aff:namedVote
+    description: |
+      [en] Individual votes in a named/roll-call procedure.
+      [de] Einzelstimmen in einer namentlichen Abstimmung.
+    range: NamedVote
+    multivalued: true
+    inlined_as_list: true
+
+  voter:
+    slot_uri: aff:voter
+    description: |
+      [en] The person casting the individual vote.
+      [de] Die Person, die die Einzelstimme abgibt.
+    range: Person
+    inlined: true
+
+  individual_vote:
+    slot_uri: aff:individualVote
+    description: |
+      [en] The vote cast (yes, no, abstain, excused, not_present).
+      [de] Die abgegebene Stimme (Ja, Nein, Enthaltung, entschuldigt,
+      abwesend).
+    range: IndividualVoteEnum
+    required: true
+
+  # ---- Proposition / Speech ---------------------------------------
+
+  proposer:
+    slot_uri: aff:proposer
+    description: |
+      [en] The actor proposing this proposition (person, committee,
+      group).
+      [de] Der/die Antragstellende (Person, Kommission, Fraktion).
+    range: Actor
+    inlined: true
+
+  proposition_type:
+    slot_uri: aff:propositionType
+    description: |
+      [en] Type of proposition (accept, reject, amend, etc.).
+      [de] Art des Antrags (Annahme, Ablehnung, Änderung usw.).
+    range: string
+
+  speaker:
+    slot_uri: aff:speaker
+    description: |
+      [en] The person speaking.
+      [de] Die sprechende Person.
+    range: Person
+    inlined: true
+
+  debate_role:
+    slot_uri: aff:debateRole
+    description: |
+      [en] The role in which the speaker speaks (MP, committee
+      spokesperson, etc.).
+      [de] Die Rolle, in der die Person spricht (MP, Kommissions­
+      sprecher:in usw.).
+    range: DebateRoleEnum
+
+  # ---- TextBlock ---------------------------------------------------
+
+  text:
+    slot_uri: aff:text
+    description: |
+      [en] The text content.
+      [de] Der Textinhalt.
+    range: string
+
+  text_language:
+    slot_uri: aff:textLanguage
+    description: |
+      [en] Language of the text (ISO 639-1).
+      [de] Sprache des Textes (ISO 639-1).
+    range: LanguageCodeEnum
+
+  text_type:
+    slot_uri: aff:textType
+    description: |
+      [en] Purpose or content type of the text (title, submitted text,
+      reasoning, response, etc.).
+      [de] Zweck oder Inhaltstyp des Textes (Titel, eingereichter Text,
+      Begründung, Antwort usw.).
+    range: TextTypeEnum
+
+  text_origin:
+    slot_uri: aff:textOrigin
+    description: |
+      [en] Whether this is an original or a translated/amended version.
+      [de] Ob es sich um eine Original- oder eine übersetzte/geänderte
+      Fassung handelt.
+    range: TextOriginEnum
+
+  text_date:
+    slot_uri: aff:textDate
+    description: |
+      [en] Date the text was produced or officially recorded.
+      [de] Datum, an dem der Text erstellt oder offiziell erfasst wurde.
+    range: date
+
+  document_url:
+    slot_uri: aff:documentUrl
+    description: |
+      [en] URL to the official document version (PDF, HTML, etc.).
+      [de] URL zur offiziellen Dokumenten-Fassung (PDF, HTML usw.).
+    range: uri
+
+  # ---- Generic actor name -----------------------------------------
+
+  name:
+    slot_uri: aff:name
+    description: |
+      [en] Display name of the actor (multilingual).
+      [de] Anzeigename der Akteurin/des Akteurs (mehrsprachig).
+    range: MultilingualString
+    multivalued: true
+    inlined_as_list: true
+
+# ENUMS
+# ----------------------------------------------------------------
+
+enums:
+
+  AffairTypeEnum:
+    description: |
+      [en] Type of parliamentary affair.
+      [de] Art des parlamentarischen Geschäfts.
+    permissible_values:
+      motion:
+        description: |
+          [en] Motion.
+          [de] Motion.
+      postulate:
+        description: |
+          [en] Postulate.
+          [de] Postulat.
+      interpellation:
+        description: |
+          [en] Interpellation.
+          [de] Interpellation.
+      request:
+        description: |
+          [en] Small request (Anfrage).
+          [de] (Einfache) Anfrage.
+      question:
+        description: |
+          [en] Question for the question hour.
+          [de] Frage für die Fragestunde.
+      parliamentary_initiative:
+        description: |
+          [en] Parliamentary initiative.
+          [de] Parlamentarische Initiative.
+      draft_decree:
+        description: |
+          [en] Draft decree (Beschlussesentwurf / Erlassentwurf).
+          [de] Beschlussesentwurf / Erlassentwurf.
+      motion_and_postulate:
+        description: |
+          [en] Combined motion-and-postulate.
+          [de] Motion und Postulat (kombiniert).
+      motion_then_postulate:
+        description: |
+          [en] Originally motion, later treated as a postulate.
+          [de] Ursprünglich Motion, später als Postulat behandelt.
+
+  LanguageCodeEnum:
+    description: |
+      [en] Language code (ISO 639-1).
+      [de] Sprachcode (ISO 639-1).
+    permissible_values:
+      de:
+        description: |
+          [en] German.
+          [de] Deutsch.
+      fr:
+        description: |
+          [en] French.
+          [de] Französisch.
+      it:
+        description: |
+          [en] Italian.
+          [de] Italienisch.
+      rm:
+        description: |
+          [en] Romansh.
+          [de] Rätoromanisch.
+      en:
+        description: |
+          [en] English.
+          [de] Englisch.
+
+  CouncilEnum:
+    description: |
+      [en] Legislative chamber.
+      [de] Gesetzgebende Kammer.
+    permissible_values:
+      nationalrat:
+        description: |
+          [en] National Council (Switzerland).
+          [de] Nationalrat.
+      staenderat:
+        description: |
+          [en] Council of States (Switzerland).
+          [de] Ständerat.
+      united_federal_assembly:
+        description: |
+          [en] United Federal Assembly.
+          [de] Vereinigte Bundesversammlung.
+      cantonal_parliament:
+        description: |
+          [en] Cantonal parliament (e.g., Grosser Rat, Kantonsrat).
+          [de] Kantonales Parlament (z. B. Grosser Rat, Kantonsrat).
+      municipal_parliament:
+        description: |
+          [en] Municipal parliament.
+          [de] Stadt-/Gemeindeparlament.
+      other:
+        description: |
+          [en] Other type of council not covered above.
+          [de] Andere, nicht oben aufgeführte Kammer.
+
+  TextOriginEnum:
+    description: |
+      [en] Origin of a text for multilingual / version tracking.
+      [de] Herkunft eines Textes für Mehrsprachigkeits- /
+      Versionierungs­zwecke.
+    permissible_values:
+      original:
+        description: |
+          [en] Originally submitted in this language.
+          [de] Original in dieser Sprache eingereicht.
+      amended:
+        description: |
+          [en] Edited (e.g., typo fix).
+          [de] Bearbeitet (z. B. Tippfehlerkorrektur).
+      translated:
+        description: |
+          [en] Translated from another language.
+          [de] Aus einer anderen Sprache übersetzt.
+
+  TextTypeEnum:
+    description: |
+      [en] Type / function of a text within an affair.
+      [de] Typ / Funktion eines Textes innerhalb eines Geschäfts.
+    permissible_values:
+      title:
+        description: |
+          [en] Official title of the affair.
+          [de] Offizieller Titel des Geschäfts.
+      short_title:
+        description: |
+          [en] Short title.
+          [de] Kurztitel.
+      submitted:
+        description: |
+          [en] Text submitted by the sponsor.
+          [de] Vom Urheber eingereichter Text.
+      reasoning:
+        description: |
+          [en] Reasoning / justification submitted by the sponsor.
+          [de] Begründung / Erläuterung der Urheberin/des Urhebers.
+      response:
+        description: |
+          [en] Response by the executive (e.g., Bundesrat).
+          [de] Antwort der Exekutive (z. B. Bundesrat).
+      recommendation:
+        description: |
+          [en] Formal recommendation regarding the affair.
+          [de] Formelle Empfehlung zum Geschäft.
+      summary:
+        description: |
+          [en] Administrative summary or synopsis.
+          [de] Verwaltungs­zusammenfassung oder Synopsis.
+
+  SponsorRoleEnum:
+    description: |
+      [en] Role of (co-)sponsors of an affair.
+      [de] Rolle der (Mit-)Urheber:innen eines Geschäfts.
+    permissible_values:
+      sponsor:
+        description: |
+          [en] Main sponsor (Urheber:in) submitting the affair.
+          [de] Urheber:in, die das Geschäft eingereicht hat.
+      cosponsor:
+        description: |
+          [en] Co-signing member.
+          [de] Mitunterzeichnende:r.
+      transferred:
+        description: |
+          [en] Took over the sponsorship after the original sponsor left.
+          [de] Hat die Urheberschaft nach Ausscheiden der ursprünglichen
+          Urheber:in übernommen.
+
+  SubmissionReviewStepTypeEnum:
+    description: |
+      [en] Type of submission validation step.
+      [de] Art des Prüfungs-Schritts einer Einreichung.
+    permissible_values:
+      initial_check:
+        description: |
+          [en] Formal or content check of the submission.
+          [de] Formal- oder Inhaltsprüfung der Einreichung.
+      urgency_request:
+        description: |
+          [en] Request for urgent treatment.
+          [de] Antrag auf dringliche Behandlung.
+
+  AssignmentStepTypeEnum:
+    description: |
+      [en] Type of assignment step.
+      [de] Art des Zuteilungs-Schritts.
+    permissible_values:
+      chamber_assignment:
+        description: |
+          [en] Assignment to a legislative chamber for first debate.
+          [de] Zuteilung an eine Kammer zur Erstberatung.
+      committee_referral:
+        description: |
+          [en] Referral to a committee.
+          [de] Zuweisung an eine Kommission.
+      executive_routing:
+        description: |
+          [en] Forwarding to a government department.
+          [de] Weiterleitung an ein Departement bzw. eine Direktion.
+      agenda_placement:
+        description: |
+          [en] Placement on the agenda of a specific session/meeting.
+          [de] Aufnahme in die Traktandenliste einer Session/Sitzung.
+
+  CommitteePositionTypeEnum:
+    description: |
+      [en] Type of committee position (full, majority, minority).
+      [de] Art der Kommissionsposition (Gesamt, Mehrheit, Minderheit).
+    permissible_values:
+      full_committee:
+        description: |
+          [en] Position adopted unanimously by the entire committee.
+          [de] Einstimmig von der gesamten Kommission verabschiedete
+          Position.
+      majority:
+        description: |
+          [en] Position adopted by the majority of the committee.
+          [de] Von der Mehrheit der Kommission verabschiedete Position.
+      minority:
+        description: |
+          [en] Dissenting / minority position held by a subset of members.
+          [de] Abweichende Minderheits­position eines Teils der Mitglieder.
+
+  RecommendationEnum:
+    description: |
+      [en] Recommendation made by a responder (e.g., executive,
+      committee) regarding the affair.
+      [de] Empfehlung einer antwortenden Stelle (z. B. Exekutive,
+      Kommission) zum Geschäft.
+    permissible_values:
+      accept:
+        description: |
+          [en] The affair is supported and should be adopted.
+          [de] Das Geschäft wird unterstützt und sollte angenommen werden.
+      reject:
+        description: |
+          [en] The affair is not supported and should be rejected.
+          [de] Das Geschäft wird nicht unterstützt und sollte abgelehnt
+          werden.
+      partial_acceptance:
+        description: |
+          [en] Some parts of the affair are supported.
+          [de] Teile des Geschäfts werden unterstützt.
+      already_done:
+        description: |
+          [en] The requested measures are already implemented.
+          [de] Die geforderten Massnahmen sind bereits umgesetzt.
+      no_competence:
+        description: |
+          [en] The body lacks the competence to act.
+          [de] Die Stelle ist nicht zuständig.
+      defer:
+        description: |
+          [en] The affair should be deferred.
+          [de] Das Geschäft sollte zurückgestellt werden.
+      neutral:
+        description: |
+          [en] No explicit recommendation provided.
+          [de] Keine explizite Empfehlung abgegeben.
+
+  DebateRoleEnum:
+    description: |
+      [en] Role of a speaker in a plenary debate.
+      [de] Rolle einer sprechenden Person in einer plenaren Debatte.
+    permissible_values:
+      mp:
+        description: |
+          [en] Regular member of parliament.
+          [de] Reguläres Ratsmitglied.
+      committee_spokesperson:
+        description: |
+          [en] Speaking on behalf of a committee.
+          [de] Spricht im Namen einer Kommission.
+      parliamentary_group_representative:
+        description: |
+          [en] Speaking for a parliamentary group / faction.
+          [de] Spricht für eine Fraktion.
+      government_representative:
+        description: |
+          [en] Speaking as a member of the executive.
+          [de] Spricht als Mitglied der Exekutive.
+
+  PlenaryDebateTypeEnum:
+    description: |
+      [en] Classification of debate type in the plenary.
+      [de] Klassifikation des Debattentyps im Plenum.
+    permissible_values:
+      eintreten:
+        description: |
+          [en] Debate on entering into the matter.
+          [de] Eintretensdebatte.
+      detailberatung:
+        description: |
+          [en] Detailed deliberation on content.
+          [de] Detailberatung.
+      beantwortung:
+        description: |
+          [en] Executive response is presented or debated.
+          [de] Beantwortung durch die Exekutive.
+      abschreibung:
+        description: |
+          [en] Affair is considered obsolete or no longer necessary.
+          [de] Abschreibung als gegenstandslos.
+      fristverlaengerung:
+        description: |
+          [en] Extension of a deadline is debated.
+          [de] Fristverlängerung wird beraten.
+      verzoegerung:
+        description: |
+          [en] Debate is postponed.
+          [de] Debatte wird verschoben.
+      other:
+        description: |
+          [en] Other type of debate.
+          [de] Andere Debattenart.
+
+  PlenaryDebateEventTypeEnum:
+    description: |
+      [en] Type of event within a plenary debate.
+      [de] Art eines Ereignisses innerhalb einer plenaren Debatte.
+    permissible_values:
+      speech:
+        description: |
+          [en] A verbal intervention.
+          [de] Eine Wortmeldung.
+      proposition:
+        description: |
+          [en] A formal proposition or amendment.
+          [de] Ein formeller Antrag oder Änderungs­antrag.
+      vote:
+        description: |
+          [en] A vote taken in the plenary.
+          [de] Eine Abstimmung im Plenum.
+
+  VoteTypeEnum:
+    description: |
+      [en] Type of plenary vote.
+      [de] Art einer plenaren Abstimmung.
+    permissible_values:
+      final:
+        description: |
+          [en] Final decision on the affair.
+          [de] Schlussabstimmung zum Geschäft.
+      amendment:
+        description: |
+          [en] Vote on a proposed amendment.
+          [de] Abstimmung über einen Änderungs­antrag.
+      procedural:
+        description: |
+          [en] Vote on process or rules.
+          [de] Abstimmung über Verfahren oder Geschäfts­ordnung.
+      other:
+        description: |
+          [en] Other type of vote.
+          [de] Andere Abstimmungsart.
+
+  VoteOutcomeEnum:
+    description: |
+      [en] Outcome of a vote.
+      [de] Ergebnis einer Abstimmung.
+    permissible_values:
+      adopted:
+        description: |
+          [en] The proposal was accepted.
+          [de] Der Antrag wurde angenommen.
+      rejected:
+        description: |
+          [en] The proposal was not accepted.
+          [de] Der Antrag wurde abgelehnt.
+      tied:
+        description: |
+          [en] The vote was tied.
+          [de] Die Abstimmung war unentschieden.
+      not_held:
+        description: |
+          [en] The vote was canceled or not held.
+          [de] Die Abstimmung wurde nicht durchgeführt.
+      invalid:
+        description: |
+          [en] The vote was ruled invalid.
+          [de] Die Abstimmung wurde als ungültig erklärt.
+      withdrawn:
+        description: |
+          [en] The proposal was withdrawn before the vote.
+          [de] Der Antrag wurde vor der Abstimmung zurückgezogen.
+
+  IndividualVoteEnum:
+    description: |
+      [en] An individual vote in a named/roll-call procedure.
+      [de] Eine Einzelstimme in einer namentlichen Abstimmung.
+    permissible_values:
+      "yes":
+        description: |
+          [en] Voted in favor.
+          [de] Ja-Stimme.
+      "no":
+        description: |
+          [en] Voted against.
+          [de] Nein-Stimme.
+      abstain:
+        description: |
+          [en] Abstained.
+          [de] Enthaltung.
+      excused:
+        description: |
+          [en] Officially excused.
+          [de] Offiziell entschuldigt.
+      not_present:
+        description: |
+          [en] Absent without excuse.
+          [de] Unentschuldigt abwesend.
+
+  StatusEnum:
+    description: |
+      [en] High-level status of an affair.
+      [de] Übergeordneter Status eines Geschäfts.
+    permissible_values:
+      open:
+        description: |
+          [en] The affair is still active / open.
+          [de] Das Geschäft ist noch aktiv / offen.
+      closed:
+        description: |
+          [en] The affair is closed / completed.
+          [de] Das Geschäft ist abgeschlossen.
+
+  ProcedurePhaseEnum:
+    description: |
+      [en] High-level phase of the affair lifecycle.
+      [de] Übergeordnete Phase im Lebenszyklus des Geschäfts.
+    permissible_values:
+      pre_parliamentary:
+        description: |
+          [en] Before parliamentary deliberation (submission, validation,
+          executive response).
+          [de] Vorparlamentarisch (Einreichung, Prüfung, Stellungnahme
+          der Exekutive).
+      parliamentary:
+        description: |
+          [en] Parliamentary deliberation (committees, plenary).
+          [de] Parlamentarische Beratung (Kommissionen, Plenum).
+      post_parliamentary:
+        description: |
+          [en] After parliamentary adoption (implementation, reporting).
+          [de] Nachparlamentarisch (Umsetzung, Bericht­erstattung).
+
+  ProcedureStageEnum:
+    description: |
+      [en] Stage within the affair lifecycle.
+      [de] Etappe innerhalb des Lebenszyklus des Geschäfts.
+    permissible_values:
+      preparation:
+        description: |
+          [en] Preparation prior to submission.
+          [de] Vorbereitung vor der Einreichung.
+      submission:
+        description: |
+          [en] Formal submission filed.
+          [de] Formelle Einreichung erfolgt.
+      submission_validation:
+        description: |
+          [en] Formal/content validation of the submission.
+          [de] Formal-/Inhaltsprüfung der Einreichung.
+      executive_response:
+        description: |
+          [en] Executive response issued.
+          [de] Stellungnahme der Exekutive abgegeben.
+      urgency_review:
+        description: |
+          [en] Urgency request reviewed/decided.
+          [de] Dringlichkeitsantrag geprüft/entschieden.
+      committee:
+        description: |
+          [en] In committee deliberation.
+          [de] In Kommissions­beratung.
+      plenary:
+        description: |
+          [en] In plenary deliberation.
+          [de] In plenarer Beratung.
+      withdrawal:
+        description: |
+          [en] Affair was withdrawn.
+          [de] Geschäft zurückgezogen.
+      forwarded_to_executive:
+        description: |
+          [en] Forwarded to the executive for implementation.
+          [de] An die Exekutive zur Umsetzung weitergeleitet.
+      report_submitted_to_council:
+        description: |
+          [en] Implementation/report submitted to the council.
+          [de] Umsetzungs-/Bericht dem Rat unterbreitet.
+      report_review_in_council:
+        description: |
+          [en] Council reviews the implementation/report.
+          [de] Rat berät die Umsetzung / den Bericht.
+
+  ProcedureDecisionEnum:
+    description: |
+      [en] Decision/outcome at a given stage.
+      [de] Entscheid/Ergebnis in einer bestimmten Etappe.
+    permissible_values:
+      none:
+        description: |
+          [en] No decision applicable / recorded for this stage.
+          [de] Kein Entscheid für diese Etappe anwendbar / erfasst.
+      validated:
+        description: |
+          [en] Validation passed.
+          [de] Prüfung bestanden.
+      failed_validation:
+        description: |
+          [en] Validation failed.
+          [de] Prüfung nicht bestanden.
+      recommended_for:
+        description: |
+          [en] Executive recommends adoption (dafür).
+          [de] Exekutive empfiehlt Annahme (dafür).
+      recommended_against:
+        description: |
+          [en] Executive recommends rejection (dagegen).
+          [de] Exekutive empfiehlt Ablehnung (dagegen).
+      urgency_granted:
+        description: |
+          [en] Urgency granted.
+          [de] Dringlichkeit gewährt.
+      urgency_denied:
+        description: |
+          [en] Urgency denied.
+          [de] Dringlichkeit abgelehnt.
+      adopted:
+        description: |
+          [en] Adopted / accepted.
+          [de] Angenommen.
+      rejected:
+        description: |
+          [en] Rejected.
+          [de] Abgelehnt.
+      partially_adopted:
+        description: |
+          [en] Partially adopted.
+          [de] Teilweise angenommen.
+      withdrawn:
+        description: |
+          [en] Withdrawn by the sponsor.
+          [de] Zurückgezogen durch die Urheber:in.
+      report_adopted:
+        description: |
+          [en] Report adopted / accepted.
+          [de] Bericht genehmigt.
+      report_rejected:
+        description: |
+          [en] Report rejected.
+          [de] Bericht abgelehnt.
+
+# OPEN POINTS / TODO
+# ----------------------------------------------------------------
+# - Link Person/Committee/Chamber/Department/ParliamentaryGroup to
+#   ech-0294 actor schema (Subgruppe Akteure) once that schema is stable.
+# - Link CommitteeMeeting to ech-0293 operations Meeting class.
+# - Deadlines (Beantwortungs-, Behandlungs-, Umsetzungs-, Abschreibungs-,
+#   Referendumsfrist): consider extracting into a dedicated `Deadline`
+#   class with a `deadline_type` enum if multiple deadlines per step.
+# - "Motion wird Postulat" / Typänderung: see AffairTypeEnum values
+#   `motion_and_postulate` and `motion_then_postulate` — to be refined.
+# - Sponsorship: how many "first/second/third sponsor" roles to model?
+#   (Sub-question for Jonas).

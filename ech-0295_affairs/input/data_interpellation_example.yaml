@@ -1,0 +1,76 @@
+# Beispiel: Demo-Interpellation
+# Demonstriert den Affair-Subtyp `interpellation` mit einer
+# Bundesrats­antwort.
+
+global_uri: aff:container/example/interpellation-demo
+
+affairs:
+  - affair_type: interpellation
+    global_uri: aff:interpellation/24.demo
+    affair_number: "24.DEMO"
+
+    title:
+      - text: "Demo-Interpellation zur Verkehrslage"
+        text_language: de
+        text_type: title
+        text_origin: original
+        text_date: "2024-03-04"
+      - text: "Interpellation de démonstration sur la situation du trafic"
+        text_language: fr
+        text_type: title
+        text_origin: translated
+        text_date: "2024-03-04"
+
+    submission:
+      global_uri: aff:interpellation/24.demo/submission
+      submission_date: "2024-03-04"
+      date_begin_actual: "2024-03-04"
+
+      sponsorship:
+        - actor:
+            global_uri: actor:person/demo-mp
+            name:
+              - text: "Demo MP"
+                text_language: de
+          sponsor_role: sponsor
+          start_date: "2024-03-04"
+
+      texts:
+        - text: |
+            Ich frage den Bundesrat: Welche Massnahmen plant er zur
+            Reduktion der Verkehrsbelastung in Agglomerationen?
+          text_language: de
+          text_type: submitted
+          text_origin: original
+          text_date: "2024-03-04"
+
+    response_steps:
+      - global_uri: aff:interpellation/24.demo/response
+        date_begin_actual: "2024-05-22"
+        responder:
+          global_uri: actor:department/CHE/bundesrat
+          name:
+            - text: "Bundesrat"
+              text_language: de
+        texts:
+          - text: |
+              Der Bundesrat verweist auf den am 15. Februar 2024
+              verabschiedeten Bericht zur Verkehrsentlastung in
+              Agglomerationen [...]
+            text_language: de
+            text_type: response
+            text_origin: original
+            text_date: "2024-05-22"
+
+    lifecycle_flags:
+      - flag_date: "2024-03-04"
+        urgent: true
+        remark: "Als dringliche Interpellation eingereicht."
+
+    current_state:
+      global_uri: aff:interpellation/24.demo/state/current
+      as_of_date: "2024-05-22"
+      status: closed
+      phase: pre_parliamentary
+      stage: executive_response
+      decision: none

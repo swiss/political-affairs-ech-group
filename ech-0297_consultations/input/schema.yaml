@@ -1,32 +1,51 @@
-# ech-0297_consultations/input/schema.yaml
+#
+# Syntaktisch korrekte Version
+# bitte in schema_working.yaml arbeiten!
+#
+
 id: https://ch.paf.link/schema/consultation
-name: ch-paf-link-consultation
+name: consultation
+description: |
+  [en] Schema for public consultations (Vernehmlassungen).
+  [de] Schema für öffentliche Konsultationen (Vernehmlassungen).
+license: CC-BY
 prefixes:
   xsd: http://www.w3.org/2001/XMLSchema#
   prov: http://www.w3.org/ns/prov#
   dcterms: http://purl.org/dc/terms/
   linkml: https://w3id.org/linkml/
-  paf: https://paf.link/
   chpaf: https://ch.paf.link/
-  con: https://politics.ld.admin.ch/consultation/
+  con: https://ch.paf.link/schema/consultation/
 imports:
   - linkml:types
-  # If there is a shared “meta” or “common” schema in the project, import it:
-  # - ../ech-0292_meta/input/schema.yaml
-default_prefix: chpaf
+  - ../../ech-0292_meta/input/schema_common
+default_prefix: con
 default_range: string
+
+# CLASSES
+# ----------------------------------------------------------------
 
 classes:
 
+  Container:
+    tree_root: true
+    mixins:
+      - HasIdentification
+    slots:
+      - consultations
+
   Consultation:
     description: |
-      Hauptklasse für öffentliche Konsultationen (Vernehmlassungen).
+      [en] Main class for public consultations (Vernehmlassungen). Holds
+      metadata, phases, involved actors, documents, etc.
+      [de] Hauptklasse für öffentliche Konsultationen (Vernehmlassungen).
       Enthält Metadaten, Phasen, beteiligte Akteure, Dokumente, etc.
+    mixins:
+      - HasIdentification
+      - HasCreationModificationDates
     slots:
-      - id
       - identifier
       - title
-      - title_short
       - description
       - status
       - landing_page
@@ -35,120 +54,482 @@ classes:
       - submission_deadline
       - responsible_organization
       - contact_person
-      - phases
-      - receivers
-      - content
+      - organizers
+      - invitees
+      - steps
+    slot_usage:
+      organizers:
+        multivalued: true
+        inlined_as_list: true
+      invitees:
+        multivalued: true
+        inlined_as_list: true
+      steps:
+        multivalued: true
+        inlined_as_list: true
 
-  ConsultationPhase:
+  ConsultationStep:
+    abstract: true
     description: |
-      Repräsentiert eine Phase im Lebenszyklus einer Konsultation.
-      Z. B. Vorbereitung, Publikation, Einreichungsphase, Auswertung etc.
+      [en] Abstract base class for a single step (phase) in the lifecycle
+      of a consultation. Each concrete subclass represents one phase type
+      with its own attributes. Reuses the shared `IsProcessStep` mixin
+      from `ech-0292_meta` so the same pattern can be applied to affair
+      process steps.
+      [de] Abstrakte Basisklasse für einen einzelnen Schritt (Phase) im
+      Lebenszyklus einer Konsultation. Jede konkrete Unterklasse
+      repräsentiert einen Phasentyp mit eigenen Attributen. Verwendet den
+      gemeinsamen Mixin `IsProcessStep` aus `ech-0292_meta`, sodass das
+      gleiche Muster auch auf Geschäfts-Prozessschritte angewendet werden
+      kann.
+    mixins:
+      - IsProcessStep
     slots:
-      - phase_name
-      - start
-      - end
+      - name
       - description
+      - responsible_entity
+      - responsible_person
+      - documents
 
-  Container:
-    tree_root: true
+  PreparationStep:
+    is_a: ConsultationStep
+    description: |
+      [en] Phase: in preparation. The consultation is being drafted
+      internally; date of publication is not yet announced.
+      [de] Phase: in Vorbereitung. Die Konsultation wird intern
+      ausgearbeitet; das Veröffentlichungsdatum ist noch nicht bekannt.
+
+  PublicationStep:
+    is_a: ConsultationStep
+    description: |
+      [en] Phase: planned / published. The consultation has been
+      announced; submissions are not yet open.
+      [de] Phase: geplant / publiziert. Die Konsultation ist
+      angekündigt; Einreichungen sind noch nicht offen.
+
+  SubmissionStep:
+    is_a: ConsultationStep
+    description: |
+      [en] Phase: open. Submissions are being collected up to the
+      submission deadline.
+      [de] Phase: offen. Stellungnahmen werden bis zur Einreichungsfrist
+      entgegengenommen.
     slots:
-      - id
-      - consultations
+      - statements_received_count
+
+  EvaluationStep:
+    is_a: ConsultationStep
+    description: |
+      [en] Phase: waiting_for_statements / evaluation. Late or pending
+      submissions are awaited and / or being processed internally.
+      [de] Phase: Wartezeit / Auswertung. Verspätete oder ausstehende
+      Stellungnahmen werden erwartet und / oder intern verarbeitet.
+    slots:
+      - statements_received_count
+
+  ReportStep:
+    is_a: ConsultationStep
+    description: |
+      [en] Phase: waiting_for_report. The evaluation report is being
+      prepared and will be published.
+      [de] Phase: Wartezeit Bericht. Der Auswertungsbericht wird erstellt
+      und publiziert.
+    slots:
+      - report_url
+
+  ClosureStep:
+    is_a: ConsultationStep
+    description: |
+      [en] Phase: closed. The consultation is formally concluded.
+      [de] Phase: abgeschlossen. Die Konsultation ist formell beendet.
+
+  CancellationStep:
+    is_a: ConsultationStep
+    description: |
+      [en] Phase: canceled. The consultation was canceled before normal
+      completion.
+      [de] Phase: abgebrochen. Die Konsultation wurde vor regulärem
+      Abschluss abgebrochen.
+    slots:
+      - cancellation_reason
+
+  Organizer:
+    description: |
+      [en] An organizing entity of a consultation. Can reference one or
+      more persons and/or one or more groups/organizations.
+      [de] Eine organisierende Einheit einer Konsultation. Kann eine oder
+      mehrere Personen und/oder eine oder mehrere Gruppen/Organisationen
+      referenzieren.
+    mixins:
+      - HasIdentification
+    slots:
+      - person
+      - group
+      
+  Invitee:
+    description: |
+      [en] An invited recipient of a consultation. Can reference one or
+      more persons, one or more groups/organizations, and/or one or more
+      free-text categories. May represent a standing invitation or a
+      one-time invitation.
+      [de] Eingeladene Empfängerin/Empfänger einer Konsultation. Kann eine
+      oder mehrere Personen, eine oder mehrere Gruppen/Organisationen
+      und/oder eine oder mehrere Freitext-Kategorien referenzieren. Kann
+      eine stehende Einladung oder eine Einzelfall-Einladung
+      repräsentieren.
+    mixins:
+      - HasIdentification
+    slots:
+      - person
+      - group
+      - category
+      - standing_invitation
+
+  Person:
+    description: |
+      [en] A natural person involved in a consultation.
+      [de] Eine natürliche Person, die an einer Konsultation beteiligt ist.
+    mixins:
+      - HasIdentification
+    slots:
+      - first_name
+      - last_name
+      - address
+    slot_usage:
+      first_name:
+        required: true
+      last_name:
+        required: true
+
+  Group:
+    description: |
+      [en] A group or organization involved in a consultation (e.g.,
+      department, party, association).
+      [de] Eine Gruppe oder Organisation, die an einer Konsultation
+      beteiligt ist (z. B. Departement, Partei, Verband).
+    mixins:
+      - HasIdentification
+    slots:
+      - name
+      - address
+
+  MultilingualString:
+    description: |
+      [en] A string that can contain text in multiple languages.
+      [de] Ein String, der Text in mehreren Sprachen enthalten kann.
+    slots:
+      - text
+      - language
+    slot_usage:
+      language:
+        required: true
+
+# SLOTS
+# ----------------------------------------------------------------
 
 slots:
 
-  id:
-    identifier: true
-    required: true
-
-  identifier:
-    description: Eindeutige Kennung (z. B. Projekt-ID)
-    required: true
-
-  title:
-    description: Vollständiger Titel (mehrsprachig)
-    required: true
-    annotations:
-      translatable: true
-
-  title_short:
-    description: Kurztitel (mehrsprachig)
-    annotations:
-      translatable: true
-
-  description:
-    description: Kurzbeschreibung / Einführung (mehrsprachig)
-    annotations:
-      translatable: true
-
-  status:
-    description: Aktueller Status der Konsultation
-    required: true
-    range: string
-    enum:
-      preparing: preparing
-      planned: planned
-      open: open
-      closed: closed
-      waiting_for_statements: waiting_for_statements
-      waiting_for_report: waiting_for_report
-      cancelled: cancelled
-      unknown: unknown
-
-  landing_page:
-    description: URL der Landing Page
-    range: uri
-
-  publication_date:
-    description: Datum der Veröffentlichung
-    range: datetime
-
-  start_date:
-    description: Datum des Beginns der Einreichungsphase
-    range: datetime
-
-  submission_deadline:
-    description: Datum des Endes der Einreichungsphase
-    range: datetime
-
-  responsible_organization:
-    description: Zuständige Organisation (z. B. Departement, Amt)
-    range: string
-
-  contact_person:
-    description: Name oder Rolle der Ansprechperson
-    range: string
-
-  phases:
-    description: Liste von Phasen mit Zeitpunkten
-    range: ConsultationPhase
-    multivalued: true
-    inlined_as_list: true
-
-  phase_name:
-    description: Name der Phase (z. B. Vorbereitung, Publikation, Einreichung etc.)
-    range: string
-
-  start:
-    description: Startdatum der Phase
-    range: datetime
-
-  end:
-    description: Enddatum der Phase
-    range: datetime
-
-  content:
-    description: Inhalt / Dokumentation oder Link zum Konsultationsinhalt
-    required: true
-
-  receivers:
-    description: Empfänger bzw. Adressaten der Konsultation
-    slot_uri: chpaf:receiver
-    multivalued: true
-    inlined_as_list: true
-
   consultations:
-    slot_uri: chpaf:consultation
+    slot_uri: con:consultation
+    description: |
+      [en] Collection of consultations.
+      [de] Sammlung von Konsultationen.
     range: Consultation
     multivalued: true
     inlined_as_list: true
+
+  identifier:
+    slot_uri: con:identifier
+    description: |
+      [en] Unique identifier of the consultation (e.g., project ID).
+      [de] Eindeutige Kennung der Konsultation (z. B. Projekt-ID).
+    required: true
+
+  title:
+    slot_uri: con:title
+    description: |
+      [en] Full title of the consultation (multilingual). Best practice:
+      keep below 150 characters.
+      [de] Vollständiger Titel der Konsultation (mehrsprachig). Best
+      Practice: unter 150 Zeichen halten.
+    required: true
+    range: MultilingualString
+    multivalued: true
+    inlined_as_list: true
+
+  description:
+    slot_uri: con:description
+    description: |
+      [en] Short description / introduction of the consultation
+      (multilingual). Maps to eConsultation `kurztext_id`.
+      [de] Kurzbeschreibung / Einführung der Konsultation (mehrsprachig).
+      Entspricht eConsultation `kurztext_id`.
+    range: MultilingualString
+    multivalued: true
+    inlined_as_list: true
+
+  status:
+    slot_uri: con:status
+    description: |
+      [en] Current status of the consultation. Maps to eConsultation
+      `state`.
+      [de] Aktueller Status der Konsultation. Entspricht eConsultation
+      `state`.
+    required: true
+    range: ConsultationStateEnum
+
+  landing_page:
+    slot_uri: con:landingPage
+    description: |
+      [en] External URL providing additional information about the
+      consultation.
+      [de] Externe URL mit zusätzlichen Informationen zur Konsultation.
+    range: uri
+
+  publication_date:
+    slot_uri: con:publicationDate
+    description: |
+      [en] Date of publication of the consultation. Maps to eConsultation
+      `published_on`.
+      [de] Datum der Veröffentlichung der Konsultation. Entspricht
+      eConsultation `published_on`.
+    range: datetime
+
+  start_date:
+    slot_uri: con:startDate
+    description: |
+      [en] Date when the submission phase opens. Maps to eConsultation
+      `opening`.
+      [de] Datum des Beginns der Einreichungsphase. Entspricht
+      eConsultation `opening`.
+    range: datetime
+
+  submission_deadline:
+    slot_uri: con:submissionDeadline
+    description: |
+      [en] Deadline for the submission phase.
+      [de] Datum des Endes der Einreichungsphase (Deadline).
+    range: datetime
+
+  responsible_organization:
+    slot_uri: con:responsibleOrganization
+    description: |
+      [en] Responsible organization (e.g., department, office).
+      [de] Zuständige Organisation (z. B. Departement, Amt).
+    range: Group
+    inlined: true
+
+  contact_person:
+    slot_uri: con:contactPerson
+    description: |
+      [en] Contact person for the consultation.
+      [de] Ansprechperson für die Konsultation.
+    range: Person
+    inlined: true
+
+  organizers:
+    slot_uri: con:organizer
+    description: |
+      [en] Organizing entities of the consultation.
+      [de] Organisierende Einheiten der Konsultation.
+    range: Organizer
+
+  invitees:
+    slot_uri: con:invitee
+    description: |
+      [en] Invited recipients of the consultation.
+      [de] Eingeladene Empfänger der Konsultation.
+    range: Invitee
+
+  steps:
+    slot_uri: con:step
+    description: |
+      [en] Lifecycle steps (phases) of the consultation. Each entry is a
+      concrete subclass of `ConsultationStep` (e.g., `PreparationStep`,
+      `SubmissionStep`).
+      [de] Lebenszyklus-Schritte (Phasen) der Konsultation. Jeder Eintrag
+      ist eine konkrete Unterklasse von `ConsultationStep` (z. B.
+      `PreparationStep`, `SubmissionStep`).
+    range: ConsultationStep
+
+  responsible_entity:
+    slot_uri: con:responsibleEntity
+    description: |
+      [en] The organization responsible for this step (e.g., department,
+      office).
+      [de] Die für diesen Schritt zuständige Organisation (z. B.
+      Departement, Amt).
+    range: Group
+    inlined: true
+
+  responsible_person:
+    slot_uri: con:responsiblePerson
+    description: |
+      [en] The person responsible for this step (e.g., contact, lead).
+      [de] Die für diesen Schritt zuständige Person (z. B. Ansprechperson,
+      Federführung).
+    range: Person
+    inlined: true
+
+  documents:
+    slot_uri: con:document
+    description: |
+      [en] URLs of documents associated with this step.
+      [de] URLs der Dokumente, die mit diesem Schritt verbunden sind.
+    range: uri
+    multivalued: true
+
+  statements_received_count:
+    slot_uri: con:statementsReceivedCount
+    description: |
+      [en] Number of statements received so far.
+      [de] Anzahl der bisher eingegangenen Stellungnahmen.
+    range: integer
+
+  report_url:
+    slot_uri: con:reportUrl
+    description: |
+      [en] URL of the published evaluation report.
+      [de] URL des publizierten Auswertungsberichts.
+    range: uri
+
+  cancellation_reason:
+    slot_uri: con:cancellationReason
+    description: |
+      [en] Reason why the consultation was canceled (multilingual).
+      [de] Grund für den Abbruch der Konsultation (mehrsprachig).
+    range: MultilingualString
+    multivalued: true
+    inlined_as_list: true
+
+  name:
+    slot_uri: con:name
+    description: |
+      [en] Display name (multilingual).
+      [de] Anzeigename (mehrsprachig).
+    range: MultilingualString
+    multivalued: true
+    inlined_as_list: true
+
+  person:
+    slot_uri: con:person
+    description: |
+      [en] A person reference.
+      [de] Referenz auf eine Person.
+    range: Person
+    inlined: true
+
+  group:
+    slot_uri: con:group
+    description: |
+      [en] A group or organization reference.
+      [de] Referenz auf eine Gruppe oder Organisation.
+    range: Group
+    inlined: true
+
+  category:
+    slot_uri: con:category
+    description: |
+      [en] Free-text category (e.g., "cantonal authorities").
+      [de] Freitext-Kategorie (z. B. "kantonale Behörden").
+    range: string
+
+  standing_invitation:
+    slot_uri: con:standingInvitation
+    description: |
+      [en] Indicates whether this is a standing (recurring) invitation
+      versus a one-time (case-by-case) invitation.
+      [de] Gibt an, ob es sich um eine stehende (wiederkehrende) Einladung
+      oder um eine Einzelfall-Einladung handelt.
+    range: boolean
+
+  first_name:
+    slot_uri: con:firstName
+    description: |
+      [en] First name of the person.
+      [de] Vorname der Person.
+    range: string
+
+  last_name:
+    slot_uri: con:lastName
+    description: |
+      [en] Last name of the person.
+      [de] Nachname der Person.
+    range: string
+
+  address:
+    slot_uri: con:address
+    description: |
+      [en] Postal address.
+      [de] Postanschrift.
+    range: string
+
+  text:
+    slot_uri: con:text
+    description: |
+      [en] The text content.
+      [de] Der Textinhalt.
+    required: true
+
+# ENUMS
+# ----------------------------------------------------------------
+
+enums:
+
+  ConsultationStateEnum:
+    description: |
+      [en] State of a consultation. Used for both the current `status` of
+      a consultation and the `phase_type` of a `ConsultationPhase`. Aligned
+      with the eConsultation / Fedlex `state` enumeration.
+      [de] Status einer Konsultation. Wird sowohl für den aktuellen
+      `status` einer Konsultation als auch für den `phase_type` einer
+      `ConsultationPhase` verwendet. Übereinstimmend mit der
+      eConsultation- / Fedlex-`state`-Aufzählung.
+    permissible_values:
+      preparing:
+        meaning: con:enum/state/preparing
+        description: |
+          [en] In preparation, not yet planned.
+          [de] In Vorbereitung, noch nicht geplant.
+      planned:
+        meaning: con:enum/state/planned
+        description: |
+          [en] Planned, not yet open.
+          [de] Geplant, noch nicht eröffnet.
+      open:
+        meaning: con:enum/state/open
+        description: |
+          [en] Open for submissions.
+          [de] Offen für Einreichungen.
+      waiting_for_statements:
+        meaning: con:enum/state/waiting_for_statements
+        description: |
+          [en] Closed, awaiting incoming statements.
+          [de] Geschlossen, Eingang von Stellungnahmen wird erwartet.
+      waiting_for_report:
+        meaning: con:enum/state/waiting_for_report
+        description: |
+          [en] Closed, awaiting publication of the evaluation report.
+          [de] Geschlossen, Veröffentlichung des Auswertungsberichts wird
+          erwartet.
+      closed:
+        meaning: con:enum/state/closed
+        description: |
+          [en] Closed, no further action expected.
+          [de] Geschlossen, keine weiteren Schritte erwartet.
+      canceled:
+        meaning: con:enum/state/canceled
+        description: |
+          [en] Canceled.
+          [de] Abgebrochen.
+      unknown:
+        meaning: con:enum/state/unknown
+        description: |
+          [en] State unknown.
+          [de] Status unbekannt.
+
+# OPEN POINTS / TODO (from schema_working.yaml)
+# ----------------------------------------------------------------
+# - Input Parteienliste (via APS) – soll auch Adresse liefern
+# - Interne Abläufe in Phasen modellieren
+# Bewusst weggelassen: review_status, public, counter_proposal_flag

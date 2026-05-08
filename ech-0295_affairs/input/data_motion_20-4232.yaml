@@ -1,0 +1,203 @@
+# Beispiel: Motion 20.4232 "Deklaration von Kokosprodukten aus
+# affenquälerischer Produktion"
+# Quelle: https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20204232
+# Eingereicht: 2020-09-25 von Aebischer Matthias (sponsor) + Mit­unterzeichnende
+# Stand: Bundesrat empfiehlt Ablehnung; WBK-S empfiehlt Ablehnung (2023-04-25)
+
+global_uri: aff:container/example/20-4232
+
+affairs:
+  - affair_type: motion
+    global_uri: aff:motion/20.4232
+    affair_number: "20.4232"
+
+    title:
+      - text: "Deklaration von Kokosprodukten aus affenquälerischer Produktion"
+        text_language: de
+        text_type: title
+        text_origin: original
+        text_date: "2020-09-25"
+
+    submission:
+      global_uri: aff:motion/20.4232/submission
+      submission_date: "2020-09-25"
+      date_begin_actual: "2020-09-25"
+
+      sponsorship:
+        - actor:
+            global_uri: actor:person/4289
+            name:
+              - text: "Aebischer Matthias"
+                text_language: de
+          sponsor_role: sponsor
+          start_date: "2020-09-25"
+        - actor:
+            global_uri: actor:person/4246
+            name:
+              - text: "Mitunterzeichner:in 1"
+                text_language: de
+          sponsor_role: cosponsor
+          start_date: "2020-09-25"
+        - actor:
+            global_uri: actor:person/4058
+            name:
+              - text: "Mitunterzeichner:in 2"
+                text_language: de
+          sponsor_role: cosponsor
+          start_date: "2020-09-25"
+
+      texts:
+        - text: |
+            Der Bundesrat wird beauftragt, eine Deklarationspflicht für
+            Kokosprodukte einzuführen, die unter Einbezug von Affen
+            produziert wurden. Der Code zur Nachverfolgbarkeit der
+            Herkunft soll dabei um einen für Konsumierende klaren Hinweis
+            auf die tierquälerische Produktion ergänzt werden.
+          text_language: de
+          text_type: submitted
+          text_origin: original
+          text_date: "2020-09-25"
+        - text: |
+            Wie der Tagesspiegel vom 10. Juli 2020 und verschiedene
+            weitere Medien berichteten, herrscht eine grosse
+            Tierschutzproblematik im Zusammenhang mit der Ernte von
+            Kokosnüssen in Thailand. Junge Affen werden in Thailand
+            angekettet, gewaltsam trainiert und gezwungen, Kokosnüsse zu
+            pflücken. [...] Da ein Code jedoch für Transparenz nicht
+            ausreicht, ist eine klare Deklaration erforderlich wie sie
+            bei anderen Produkten wie Käfigeiern bereits üblich ist.
+          text_language: de
+          text_type: reasoning
+          text_origin: original
+          text_date: "2020-09-25"
+
+    assignment_steps:
+      - global_uri: aff:motion/20.4232/assignment/nr
+        assignment_step_type: chamber_assignment
+        date_begin_actual: "2020-09-25"
+        deadline: "2022-09-24"
+        assigned_to:
+          global_uri: actor:chamber/CHE/nr
+          name:
+            - text: "Nationalrat"
+              text_language: de
+
+      - global_uri: aff:motion/20.4232/assignment/wbk-n
+        assignment_step_type: committee_referral
+        date_begin_actual: "2020-09-25"
+        assigned_to:
+          global_uri: actor:committee/CHE/wbk-n
+          name:
+            - text: "WBK-N"
+              text_language: de
+
+      - global_uri: aff:motion/20.4232/assignment/wbk-s
+        assignment_step_type: committee_referral
+        date_begin_actual: "2020-09-25"
+        assigned_to:
+          global_uri: actor:committee/CHE/wbk-s
+          name:
+            - text: "WBK-S"
+              text_language: de
+
+      - global_uri: aff:motion/20.4232/assignment/edi
+        assignment_step_type: executive_routing
+        date_begin_actual: "2020-09-25"
+        assigned_to:
+          global_uri: actor:department/CHE/edi
+          name:
+            - text: "EDI"
+              text_language: de
+
+    response_steps:
+      - global_uri: aff:motion/20.4232/response/br
+        date_begin_actual: "2020-11-25"
+        responder:
+          global_uri: actor:department/CHE/bundesrat
+          name:
+            - text: "Bundesrat"
+              text_language: de
+        recommendation: reject
+        texts:
+          - text: |
+              Die Pflicht zur Deklaration der Produktionsmethoden von
+              Nahrungsmitteln wurde bereits in mehreren parlamentarischen
+              Vorstössen behandelt. [...] Eine Deklarationspflicht müsste
+              zudem die Anforderungen der im Recht der Welthandels­
+              organisation (WTO) vorgesehenen Nichtdiskriminierung
+              erfüllen. [...]
+            text_language: de
+            text_type: response
+            text_origin: original
+            text_date: "2020-11-25"
+          - text: |
+              La déclaration obligatoire des méthodes de production des
+              denrées alimentaires a déjà fait l'objet de plusieurs
+              interventions parlementaires. [...]
+            text_language: fr
+            text_type: response
+            text_origin: translated
+            text_date: "2020-11-25"
+          - text: "Der Bundesrat beantragt die Ablehnung der Motion."
+            text_language: de
+            text_type: recommendation
+            text_origin: original
+            text_date: "2020-11-25"
+
+    committee_deliberation_steps:
+      - global_uri: aff:motion/20.4232/committee/wbk-s
+        date_begin_actual: "2023-04-25"
+        committee:
+          global_uri: actor:committee/CHE/wbk-s
+          name:
+            - text: "WBK-S"
+              text_language: de
+        council: staenderat
+        spokesperson:
+          global_uri: actor:person/wuerth
+          name:
+            - text: "Würth"
+              text_language: de
+        committee_decision:
+          decision_date: "2023-04-25"
+          positions:
+            - position_type: majority
+              recommendation: reject
+          text:
+            text: |
+              Kommissionsbericht WBK-S vom 25. April 2023:
+              Empfehlung Ablehnung.
+            text_language: de
+            text_type: response
+            text_date: "2023-04-25"
+            document_url: https://www.parlament.ch/centers/kb/Documents/2020/Kommissionsbericht_WBK-S_20.4232_2023-04-25.pdf
+
+    procedure_states:
+      - global_uri: aff:motion/20.4232/state/submission
+        as_of_date: "2020-09-25"
+        status: open
+        phase: pre_parliamentary
+        stage: submission
+        decision: none
+
+      - global_uri: aff:motion/20.4232/state/exec-response
+        as_of_date: "2020-11-25"
+        status: open
+        phase: pre_parliamentary
+        stage: executive_response
+        decision: recommended_against
+
+      - global_uri: aff:motion/20.4232/state/committee
+        as_of_date: "2023-04-25"
+        status: open
+        phase: parliamentary
+        stage: committee
+        decision: recommended_against
+
+    current_state:
+      global_uri: aff:motion/20.4232/state/current
+      as_of_date: "2023-04-25"
+      status: open
+      phase: parliamentary
+      stage: committee
+      decision: recommended_against

@@ -82,6 +82,24 @@ classes:
         - date_modified
         - datetime_modified
 
+  IsProcessStep:
+    mixin: true
+    description: |
+      [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem
+      mehrstufigen Prozess (z. B. Bearbeitungsschritt eines Geschäfts oder
+      Phasen­schritt einer Konsultation). Kombiniert Identifikations- und
+      Zeitdauer-Slots und ergänzt einen freien Bemerkungs-Slot. Konkrete
+      Step-Klassen ergänzen ihre eigenen typ-spezifischen Slots.
+      [en] A mixin class for a single step in a multi-stage process (e.g.,
+      a deliberation step of an affair or a phase step of a consultation).
+      Combines identification and event-duration slots and adds a free-text
+      remark slot. Concrete step classes add their own type-specific slots.
+    mixins:
+      - HasIdentification
+      - IsEventWithDuration
+    slots:
+      - remark
+
   MultilingualValue:
     description: |
       [de] Ein mehrsprachiger String mit Angabe der Sprache.
@@ -282,3 +300,10 @@ slots:
     description: |
       [de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.).
       [en] Option to assign an extended label to a structured piece of information (e.g., display name with title, position, etc.).
+
+  remark:
+    slot_uri: mcm:remark
+    description: |
+      [de] Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen Kontext zu einem Prozessschritt oder einer Entität.
+      [en] Free-text remark or note for edge cases or additional context on a process step or an entity.
+    range: string

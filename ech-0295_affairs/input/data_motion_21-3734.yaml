@@ -1,0 +1,70 @@
+# Beispiel: Motion 21.3734 (Demo-Beispiel)
+# Eingereicht 2021-06-16, am 2021-06-22 wieder zurückgezogen.
+# Zeigt den Lebenszyklus einer früh zurückgezogenen Motion.
+
+global_uri: aff:container/example/21-3734
+
+affairs:
+  - affair_type: motion
+    global_uri: aff:motion/21.3734
+    affair_number: "21.3734"
+
+    title:
+      - text: "Beispiel-Motion (zurückgezogen)"
+        text_language: de
+        text_type: title
+        text_origin: original
+        text_date: "2021-06-16"
+
+    submission:
+      global_uri: aff:motion/21.3734/submission
+      submission_date: "2021-06-16"
+      date_begin_actual: "2021-06-16"
+      withdrawn_date: "2021-06-22"
+
+      sponsorship:
+        - actor:
+            global_uri: actor:person/example-sponsor
+            name:
+              - text: "Beispiel Sponsor"
+                text_language: de
+          sponsor_role: sponsor
+          start_date: "2021-06-16"
+          end_date: "2021-06-22"
+
+      texts:
+        - text: |
+            Der Bundesrat wird eingeladen, eine Massnahme XY zu prüfen.
+            (Beispieltext für eine kurz zurückgezogene Motion.)
+          text_language: de
+          text_type: submitted
+          text_origin: original
+          text_date: "2021-06-16"
+
+    procedure_states:
+      - global_uri: aff:motion/21.3734/state/submission
+        as_of_date: "2021-06-16"
+        status: open
+        phase: pre_parliamentary
+        stage: submission
+        decision: none
+
+      - global_uri: aff:motion/21.3734/state/withdrawn
+        as_of_date: "2021-06-22"
+        status: closed
+        phase: pre_parliamentary
+        stage: withdrawal
+        decision: withdrawn
+
+    current_state:
+      global_uri: aff:motion/21.3734/state/current
+      as_of_date: "2021-06-22"
+      status: closed
+      phase: pre_parliamentary
+      stage: withdrawal
+      decision: withdrawn
+
+    lifecycle_flags:
+      - flag_date: "2021-06-22"
+        urgent: false
+        remark: "Vom Urheber zurückgezogen."
