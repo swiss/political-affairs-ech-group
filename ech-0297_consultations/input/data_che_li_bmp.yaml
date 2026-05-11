@@ -1,0 +1,550 @@
+# Beispiel: Eidgenössische Vernehmlassung 2026/2
+# "Abkommen zwischen dem Schweizerischen Bundesrat und der Regierung des
+# Fürstentums Liechtenstein über die gegenseitige Anerkennung von
+# Berufsmaturitätszeugnissen"
+#
+# Quellen (Originaldaten direkt von fedlex.admin.ch):
+#   - Projekt-URI: https://fedlex.data.admin.ch/eli/dl/proj/2026/2/cons_1
+#   - SPARQL-Endpoint: https://fedlex.data.admin.ch/sparqlendpoint
+#   - Dokumente:
+#     * doc_1: Vernehmlassungsvorlage
+#     * doc_2: Erläuternder Bericht
+#     * doc_3: Adressatenliste
+#     * doc_4 / doc_5: Begleitschreiben
+#
+# Hinweis: Die exakte Adressatenliste liegt als PDF unter doc_3 vor; ihre
+# binäre Auslieferung ist nur über das JS-gerenderte Fedlex-Frontend
+# möglich. Die unten gelisteten Adressaten entsprechen den offiziellen
+# Empfänger-Kategorien aus dem SPARQL-Endpoint (jolux:isOpinionOf →
+# Kantonsregierungen, Politische Parteien, Bürger) zuzüglich einer
+# realistischen Auswahl typischer bildungspolitischer Stakeholder.
+#
+# Stand der Daten: 2026-05-11 (letzter Tag der Frist).
+
+global_uri: con:container/example/che-li-bmp-2026
+
+consultations:
+  - global_uri: con:che/2026-2
+    identifier: "proj/2026/2/cons_1"
+
+    title:
+      - text: |
+          Abkommen zwischen dem Schweizerischen Bundesrat und der
+          Regierung des Fürstentums Liechtenstein über die gegenseitige
+          Anerkennung von Berufsmaturitätszeugnissen
+        language: de
+      - text: |
+          Accord entre le Conseil fédéral suisse et le gouvernement de
+          la Principauté du Liechtenstein sur la reconnaissance
+          mutuelle des certificats de maturité professionnelle
+        language: fr
+      - text: |
+          Accordo tra il Consiglio federale svizzero e il Governo del
+          Principato del Liechtenstein sul riconoscimento reciproco
+          degli attestati di maturità professionale
+        language: it
+
+    description:
+      - text: |
+          Der Entwurf des Abkommens sieht die gegenseitige Anerkennung
+          von Berufsmaturitätszeugnissen zwischen den beiden
+          Vertragsparteien vor.
+        language: de
+      - text: |
+          Le projet d'accord prévoit la reconnaissance des certificats
+          de maturité professionnelle entre les deux parties à
+          l'accord.
+        language: fr
+      - text: |
+          Il progetto di accordo prevede il riconoscimento dei
+          certificati di maturità professionale tra le due parti
+          dell'accordo.
+        language: it
+
+    status: open  # jolux:consultationStatus = .../consultation-status/2
+
+    landing_page: "https://fedlex.data.admin.ch/eli/dl/proj/2026/2/cons_1"
+
+    # jolux:dateApplicability der ConsultationPhase (cons-open) als
+    # Eröffnungsdatum; das jolux:Event "Eingereicht" liegt vor der
+    # Eröffnung.
+    publication_date: "2026-02-02T07:45:19+01:00"
+    start_date: "2026-02-02T00:00:00+01:00"
+    submission_deadline: "2026-05-11T23:59:59+02:00"
+
+    responsible_organization:
+      global_uri: actor:group/che/wbf/sbfi
+      name:
+        - text: "Staatssekretariat für Bildung, Forschung und Innovation (SBFI)"
+          language: de
+        - text: "Secrétariat d'État à la formation, à la recherche et à l'innovation (SEFRI)"
+          language: fr
+        - text: "Segreteria di Stato per la formazione, la ricerca e l'innovazione (SEFRI)"
+          language: it
+      address: "Einsteinstrasse 2, 3003 Bern"
+
+    organizers:
+      - global_uri: con:che/2026-2/organizer/sbfi
+        group:
+          global_uri: actor:group/che/wbf/sbfi
+          name:
+            - text: "Staatssekretariat für Bildung, Forschung und Innovation (SBFI)"
+              language: de
+
+      - global_uri: con:che/2026-2/organizer/bk
+        group:
+          global_uri: actor:group/che/bk
+          name:
+            - text: "Bundeskanzlei (Urheberin)"
+              language: de
+
+    # Offizielle Empfängerkreise gemäss jolux:isOpinionOf am
+    # Konsultations-Event. Für die strukturierte Darstellung der
+    # konkreten Adressaten wird zusätzlich eine repräsentative Auswahl
+    # typischer Adressaten einer bildungspolitischen Bundes-
+    # Vernehmlassung aufgeführt.
+    invitees:
+
+      # --- Empfänger-Kategorien (offiziell, jolux:isOpinionOf) ---
+      - global_uri: con:che/2026-2/invitee/cat/kantonsregierungen
+        category: "Kantonsregierungen"
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/cat/parteien
+        category: "In der Bundesversammlung vertretene politische Parteien"
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/cat/buerger
+        category: "Bürgerinnen und Bürger"
+        standing_invitation: true
+
+      # --- Kantonsregierungen (26) ---
+      - global_uri: con:che/2026-2/invitee/kt/zh
+        group:
+          global_uri: actor:group/canton/zh/regierungsrat
+          name:
+            - text: "Regierungsrat des Kantons Zürich"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/be
+        group:
+          global_uri: actor:group/canton/be/regierungsrat
+          name:
+            - text: "Regierungsrat des Kantons Bern"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/lu
+        group:
+          global_uri: actor:group/canton/lu/regierungsrat
+          name:
+            - text: "Regierungsrat des Kantons Luzern"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/ur
+        group:
+          global_uri: actor:group/canton/ur/regierungsrat
+          name:
+            - text: "Regierungsrat des Kantons Uri"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/sz
+        group:
+          global_uri: actor:group/canton/sz/regierungsrat
+          name:
+            - text: "Regierungsrat des Kantons Schwyz"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/ow
+        group:
+          global_uri: actor:group/canton/ow/regierungsrat
+          name:
+            - text: "Regierungsrat des Kantons Obwalden"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/nw
+        group:
+          global_uri: actor:group/canton/nw/regierungsrat
+          name:
+            - text: "Regierungsrat des Kantons Nidwalden"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/gl
+        group:
+          global_uri: actor:group/canton/gl/regierungsrat
+          name:
+            - text: "Regierungsrat des Kantons Glarus"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/zg
+        group:
+          global_uri: actor:group/canton/zg/regierungsrat
+          name:
+            - text: "Regierungsrat des Kantons Zug"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/fr
+        group:
+          global_uri: actor:group/canton/fr/conseildetat
+          name:
+            - text: "Conseil d'État du canton de Fribourg"
+              language: fr
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/so
+        group:
+          global_uri: actor:group/canton/so/regierungsrat
+          name:
+            - text: "Regierungsrat des Kantons Solothurn"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/bs
+        group:
+          global_uri: actor:group/canton/bs/regierungsrat
+          name:
+            - text: "Regierungsrat des Kantons Basel-Stadt"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/bl
+        group:
+          global_uri: actor:group/canton/bl/regierungsrat
+          name:
+            - text: "Regierungsrat des Kantons Basel-Landschaft"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/sh
+        group:
+          global_uri: actor:group/canton/sh/regierungsrat
+          name:
+            - text: "Regierungsrat des Kantons Schaffhausen"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/ar
+        group:
+          global_uri: actor:group/canton/ar/regierungsrat
+          name:
+            - text: "Regierungsrat des Kantons Appenzell Ausserrhoden"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/ai
+        group:
+          global_uri: actor:group/canton/ai/standeskommission
+          name:
+            - text: "Standeskommission des Kantons Appenzell Innerrhoden"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/sg
+        group:
+          global_uri: actor:group/canton/sg/regierungsrat
+          name:
+            - text: "Regierung des Kantons St. Gallen"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/gr
+        group:
+          global_uri: actor:group/canton/gr/regierungsrat
+          name:
+            - text: "Regierung des Kantons Graubünden"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/ag
+        group:
+          global_uri: actor:group/canton/ag/regierungsrat
+          name:
+            - text: "Regierungsrat des Kantons Aargau"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/tg
+        group:
+          global_uri: actor:group/canton/tg/regierungsrat
+          name:
+            - text: "Regierungsrat des Kantons Thurgau"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/ti
+        group:
+          global_uri: actor:group/canton/ti/consigliodistato
+          name:
+            - text: "Consiglio di Stato del Cantone Ticino"
+              language: it
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/vd
+        group:
+          global_uri: actor:group/canton/vd/conseildetat
+          name:
+            - text: "Conseil d'État du canton de Vaud"
+              language: fr
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/vs
+        group:
+          global_uri: actor:group/canton/vs/conseildetat
+          name:
+            - text: "Conseil d'État du canton du Valais"
+              language: fr
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/ne
+        group:
+          global_uri: actor:group/canton/ne/conseildetat
+          name:
+            - text: "Conseil d'État de la République et canton de Neuchâtel"
+              language: fr
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/ge
+        group:
+          global_uri: actor:group/canton/ge/conseildetat
+          name:
+            - text: "Conseil d'État de la République et canton de Genève"
+              language: fr
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/kt/ju
+        group:
+          global_uri: actor:group/canton/ju/gouvernement
+          name:
+            - text: "Gouvernement de la République et Canton du Jura"
+              language: fr
+        standing_invitation: true
+
+      # --- In der Bundesversammlung vertretene Parteien ---
+      - global_uri: con:che/2026-2/invitee/partei/svp
+        group:
+          global_uri: actor:group/party/svp
+          name:
+            - text: "Schweizerische Volkspartei (SVP)"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/partei/sp
+        group:
+          global_uri: actor:group/party/sp
+          name:
+            - text: "Sozialdemokratische Partei der Schweiz (SP)"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/partei/mitte
+        group:
+          global_uri: actor:group/party/mitte
+          name:
+            - text: "Die Mitte"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/partei/fdp
+        group:
+          global_uri: actor:group/party/fdp
+          name:
+            - text: "FDP. Die Liberalen"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/partei/gruene
+        group:
+          global_uri: actor:group/party/gruene
+          name:
+            - text: "Grüne Partei der Schweiz"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/partei/glp
+        group:
+          global_uri: actor:group/party/glp
+          name:
+            - text: "Grünliberale Partei Schweiz (GLP)"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/partei/evp
+        group:
+          global_uri: actor:group/party/evp
+          name:
+            - text: "Evangelische Volkspartei der Schweiz (EVP)"
+              language: de
+        standing_invitation: true
+
+      # --- Bildungs- und berufsbildungsspezifische Stakeholder ---
+      - global_uri: con:che/2026-2/invitee/edk
+        group:
+          global_uri: actor:group/edk
+          name:
+            - text: "Schweizerische Konferenz der kantonalen Erziehungsdirektoren (EDK)"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/sbbk
+        group:
+          global_uri: actor:group/sbbk
+          name:
+            - text: "Schweizerische Berufsbildungsämter-Konferenz (SBBK)"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/sgv
+        group:
+          global_uri: actor:group/sgv
+          name:
+            - text: "Schweizerischer Gewerbeverband (sgv)"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/sav
+        group:
+          global_uri: actor:group/sav
+          name:
+            - text: "Schweizerischer Arbeitgeberverband (SAV)"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/sgb
+        group:
+          global_uri: actor:group/sgb
+          name:
+            - text: "Schweizerischer Gewerkschaftsbund (SGB)"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/travailsuisse
+        group:
+          global_uri: actor:group/travail-suisse
+          name:
+            - text: "Travail.Suisse"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/economiesuisse
+        group:
+          global_uri: actor:group/economiesuisse
+          name:
+            - text: "economiesuisse"
+              language: de
+        standing_invitation: true
+
+      - global_uri: con:che/2026-2/invitee/sbv
+        group:
+          global_uri: actor:group/sbv
+          name:
+            - text: "Schweizerischer Bauernverband (SBV)"
+              language: de
+        standing_invitation: true
+
+      # --- Internationaler Vertragspartner ---
+      - global_uri: con:che/2026-2/invitee/li/regierung
+        group:
+          global_uri: actor:group/li/regierung
+          name:
+            - text: "Regierung des Fürstentums Liechtenstein"
+              language: de
+        standing_invitation: false
+
+    steps:
+      # PreparationStep — jolux:cons-planif (interne Vorbereitung).
+      - global_uri: con:che/2026-2/step/preparation
+        date_end_actual: "2026-02-01"
+        name:
+          - text: "Vorbereitung"
+            language: de
+        description:
+          - text: |
+              Interne Vorbereitung der Vernehmlassungsunterlagen
+              (jolux:ConsultationPreparation).
+            language: de
+        responsible_entity:
+          global_uri: actor:group/che/wbf/sbfi
+          name:
+            - text: "Staatssekretariat für Bildung, Forschung und Innovation (SBFI)"
+              language: de
+
+      # PublicationStep — Eingangsereignis "Eingereicht" (2026-01-07)
+      # gefolgt von Eröffnung der Vernehmlassung (2026-02-02).
+      - global_uri: con:che/2026-2/step/publication
+        date_begin_actual: "2026-01-07"
+        date_end_actual: "2026-02-01"
+        name:
+          - text: "Veröffentlichung"
+            language: de
+        description:
+          - text: |
+              Einreichung der Unterlagen am 7. Januar 2026, formelle
+              Eröffnung am 2. Februar 2026.
+            language: de
+        responsible_entity:
+          global_uri: actor:group/che/bk
+          name:
+            - text: "Bundeskanzlei"
+              language: de
+        documents:
+          - "https://fedlex.data.admin.ch/eli/dl/proj/2026/2/cons_1/doc_1"  # Vernehmlassungsvorlage
+          - "https://fedlex.data.admin.ch/eli/dl/proj/2026/2/cons_1/doc_2"  # Erläuternder Bericht
+          - "https://fedlex.data.admin.ch/eli/dl/proj/2026/2/cons_1/doc_3"  # Adressatenliste
+          - "https://fedlex.data.admin.ch/eli/dl/proj/2026/2/cons_1/doc_4"  # Begleitschreiben
+          - "https://fedlex.data.admin.ch/eli/dl/proj/2026/2/cons_1/doc_5"  # Begleitschreiben-2
+
+      # SubmissionStep — jolux:cons-open (Einreichungsphase).
+      - global_uri: con:che/2026-2/step/submission
+        date_begin_actual: "2026-02-02"
+        date_end_actual: "2026-05-11"
+        name:
+          - text: "Vernehmlassungsphase"
+            language: de
+        description:
+          - text: |
+              Offizielle Vernehmlassungsphase gemäss Art. 7 VlG. Frist:
+              11. Mai 2026 (3 Monate ab Eröffnung).
+            language: de
+        responsible_entity:
+          global_uri: actor:group/che/wbf/sbfi
+          name:
+            - text: "Staatssekretariat für Bildung, Forschung und Innovation (SBFI)"
+              language: de
+        documents:
+          - "https://fedlex.data.admin.ch/eli/dl/proj/2026/2/cons_1"
+
+      # EvaluationStep — Auswertung Stellungnahmen (geplant).
+      - global_uri: con:che/2026-2/step/evaluation
+        date_begin_planned: "2026-05-12"
+        name:
+          - text: "Auswertung der Stellungnahmen"
+            language: de
+        description:
+          - text: |
+              Verarbeitung und Auswertung der eingegangenen
+              Stellungnahmen durch das SBFI.
+            language: de
+        responsible_entity:
+          global_uri: actor:group/che/wbf/sbfi
+          name:
+            - text: "Staatssekretariat für Bildung, Forschung und Innovation (SBFI)"
+              language: de
+
+      # ReportStep — Ergebnisbericht (geplant).
+      - global_uri: con:che/2026-2/step/report
+        name:
+          - text: "Ergebnisbericht"
+            language: de
+        description:
+          - text: |
+              Publikation des Vernehmlassungsergebnisses auf
+              fedlex.admin.ch im Anschluss an die Auswertung.
+            language: de
