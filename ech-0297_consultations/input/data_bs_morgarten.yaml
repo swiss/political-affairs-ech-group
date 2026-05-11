@@ -1,0 +1,860 @@
+# Beispiel: Öffentliche Vernehmlassung "Entwicklungskonzept Stadtraum
+# Morgartenring", durchgeführt gemeinsam vom Kanton Basel-Stadt, der
+# Gemeinde Allschwil und dem Kanton Basel-Landschaft.
+#
+# Quellen:
+#   - https://www.bs.ch/regierungsrat/vernehmlassungen
+#   - Begleitschreiben mit Adressatenliste (12. Februar 2026):
+#     https://media.bs.ch/original_file/443dec83b02cbf84b6e8467e5401f3340fc7fd9e/vernehmlassung-entwicklungskonzept-stadtraum-morgarten-begle.pdf
+#   - Konzeptentwurf:
+#     https://media.bs.ch/original_file/62d285ed577503f957b6551ceeb2fe4ef458ac9c/entwicklungskonzept-stadtraum-morgartenring-entwurf-vernehml.pdf
+#   - E-Mitwirkungsplattform:
+#     https://mitwirkung.bs.ch/de/vernehmlassung-zum-entwicklungskonzept-stadtraum-morgartenring
+#
+# Stand der Daten: 2026-05-11 (Vernehmlassung läuft noch bis 2026-05-12).
+
+global_uri: con:container/example/morgartenring
+
+consultations:
+  - global_uri: con:morgartenring-2026
+    identifier: "V 2026-02-10"
+
+    title:
+      - text: "Entwicklungskonzept Stadtraum Morgartenring"
+        language: de
+
+    description:
+      - text: |
+          Für die geplante S-Bahn-Haltestelle Basel Neuallschwil
+          (Inbetriebnahme bis Ende 2030, Teil des Ausbauschrittes 2035
+          des STEP) wurde gemeinsam mit dem Kanton Basel-Stadt, der
+          Gemeinde Allschwil und dem Kanton Basel-Landschaft ein
+          Entwicklungskonzept für den Stadtraum Morgartenring
+          ausgearbeitet. Es zeigt auf, wie die Haltestelle in den
+          Stadtraum und das ÖV-Netz integriert und das entstehende
+          Entwicklungspotenzial genutzt werden kann.
+        language: de
+
+    status: open
+
+    landing_page: "https://www.bs.ch/regierungsrat/vernehmlassungen#entwicklungskonzept-stadtraum-morgartenring"
+
+    publication_date: "2026-02-10T00:00:00+01:00"
+    start_date: "2026-02-12T00:00:00+01:00"
+    submission_deadline: "2026-05-12T23:59:59+02:00"
+
+    responsible_organization:
+      global_uri: actor:group/bs/bvd/staedtebau-architektur
+      name:
+        - text: "Bau- und Verkehrsdepartement des Kantons Basel-Stadt, Städtebau & Architektur"
+          language: de
+      address: "Münsterplatz 11, Postfach, CH-4001 Basel"
+
+    contact_person:
+      global_uri: actor:person/aemisegger-silvan
+      first_name: "Silvan"
+      last_name: "Aemisegger"
+      # E-Mail: silvan.aemisegger@bs.ch (schema bietet aktuell kein E-Mail-Feld)
+
+    organizers:
+      - global_uri: con:morgartenring-2026/organizer/bs
+        person:
+          global_uri: actor:person/aeberhard-beat
+          first_name: "Beat"
+          last_name: "Aeberhard"
+          # Leiter Städtebau & Architektur, Kantonsbaumeister
+        group:
+          global_uri: actor:group/bs/bvd/staedtebau-architektur
+          name:
+            - text: "Städtebau & Architektur, Kanton Basel-Stadt"
+              language: de
+
+      - global_uri: con:morgartenring-2026/organizer/allschwil
+        person:
+          global_uri: actor:person/landmesser-adrian
+          first_name: "Adrian"
+          last_name: "Landmesser"
+          # Bereichsleiter Bau – Raumplanung – Umwelt
+        group:
+          global_uri: actor:group/allschwil/bau-raumplanung-umwelt
+          name:
+            - text: "Bereich Bau – Raumplanung – Umwelt, Gemeinde Allschwil"
+              language: de
+
+      - global_uri: con:morgartenring-2026/organizer/bl
+        person:
+          global_uri: actor:person/waltert-thom
+          first_name: "Thom"
+          last_name: "Waltert"
+          # Leiter Amt für Raumplanung, Kantonsplaner Basel-Landschaft
+        group:
+          global_uri: actor:group/bl/arp
+          name:
+            - text: "Amt für Raumplanung, Kanton Basel-Landschaft"
+              language: de
+
+    # Direkt angeschriebene Organisationen gemäss Adressatenliste im
+    # Begleitschreiben vom 12. Februar 2026 (per E-Mail). Es handelt sich
+    # um Einzelfall-Einladungen für diese spezifische Vernehmlassung
+    # (keine stehende Einladung).
+    invitees:
+      - global_uri: con:morgartenring-2026/invitee/acs-beider-basel
+        group:
+          global_uri: actor:group/acs-beider-basel
+          name:
+            - text: "ACS beider Basel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/arbeitgeberverband-basel
+        group:
+          global_uri: actor:group/arbeitgeberverband-basel
+          name:
+            - text: "Arbeitgeberverband Basel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/basel-tourismus
+        group:
+          global_uri: actor:group/basel-tourismus
+          name:
+            - text: "Basel Tourismus"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/baselbieter-heimatschutz
+        group:
+          global_uri: actor:group/baselbieter-heimatschutz
+          name:
+            - text: "Baselbieter Heimatschutz"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/baselland-tourismus
+        group:
+          global_uri: actor:group/baselland-tourismus
+          name:
+            - text: "Baselland Tourismus"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/basler-gewerkschaftsbund
+        group:
+          global_uri: actor:group/basler-gewerkschaftsbund
+          name:
+            - text: "Basler Gewerkschaftsbund"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/basta
+        group:
+          global_uri: actor:group/basta
+          name:
+            - text: "BastA! Basels starke Alternative"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/baukult
+        group:
+          global_uri: actor:group/baukult
+          name:
+            - text: "Baukult - Freiwillige Basler Denkmalpflege"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/behindertenforum
+        group:
+          global_uri: actor:group/behindertenforum
+          name:
+            - text: "Behindertenforum"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/behindertenforum-region-basel
+        group:
+          global_uri: actor:group/behindertenforum-region-basel
+          name:
+            - text: "Behindertenforum Region Basel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/bsla
+        group:
+          global_uri: actor:group/bsla
+          name:
+            - text: "BSLA Bund Schweizerischer Landschaftsarchitekt:innen"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/bsa-basel
+        group:
+          global_uri: actor:group/bsa-basel
+          name:
+            - text: "Bund Schweizer Architekten (BSA), Ortsgruppe Basel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/datenschutzbeauftragte-bs
+        group:
+          global_uri: actor:group/bs/datenschutzbeauftragte
+          name:
+            - text: "Datenschutzbeauftragte Kanton Basel-Stadt"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/die-mitte-allschwil
+        group:
+          global_uri: actor:group/die-mitte-allschwil
+          name:
+            - text: "Die Mitte Allschwil/Schönenbuch"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/die-mitte-bs
+        group:
+          global_uri: actor:group/die-mitte-bs
+          name:
+            - text: "Die Mitte Basel-Stadt"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/dorfverein-pro-kleinhueningen
+        group:
+          global_uri: actor:group/dorfverein-pro-kleinhueningen
+          name:
+            - text: "Dorfverein Pro Kleinhüningen"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/evp-allschwil
+        group:
+          global_uri: actor:group/evp-allschwil
+          name:
+            - text: "Evangelische Volkspartei Allschwil"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/evp-bs
+        group:
+          global_uri: actor:group/evp-bs
+          name:
+            - text: "Evangelische Volkspartei Basel-Stadt"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/fdp-allschwil
+        group:
+          global_uri: actor:group/fdp-allschwil
+          name:
+            - text: "FDP Allschwil Schönenbuch"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/fdp-bs
+        group:
+          global_uri: actor:group/fdp-bs
+          name:
+            - text: "FDP. Die Liberalen Basel-Stadt"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/fussverkehr-region-basel
+        group:
+          global_uri: actor:group/fussverkehr-region-basel
+          name:
+            - text: "Fussverkehr Region Basel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/gastrobaselland
+        group:
+          global_uri: actor:group/gastrobaselland
+          name:
+            - text: "GastroBaselland"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/gemeinde-bettingen
+        group:
+          global_uri: actor:group/gemeinde-bettingen
+          name:
+            - text: "Gemeindeverwaltung Bettingen"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/gemeinde-riehen
+        group:
+          global_uri: actor:group/gemeinde-riehen
+          name:
+            - text: "Gemeindeverwaltung Riehen"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/agglobasel
+        group:
+          global_uri: actor:group/agglobasel
+          name:
+            - text: "Geschäftsstelle Agglobasel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/gewerbeverband-bs
+        group:
+          global_uri: actor:group/gewerbeverband-bs
+          name:
+            - text: "Gewerbeverband Basel-Stadt"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/gruene-allschwil
+        group:
+          global_uri: actor:group/gruene-allschwil
+          name:
+            - text: "Grüne Allschwil"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/gruene-bs
+        group:
+          global_uri: actor:group/gruene-bs
+          name:
+            - text: "Grüne Partei Basel-Stadt"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/glp-bl-allschwil
+        group:
+          global_uri: actor:group/glp-bl-allschwil
+          name:
+            - text: "Grünliberale Partei Basel-Landschaft Sektion Allschwil-Schönenbuch"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/glp-bs
+        group:
+          global_uri: actor:group/glp-bs
+          name:
+            - text: "Grünliberale Partei Basel-Stadt"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/handels-gewerbeverein
+        group:
+          global_uri: actor:group/handels-gewerbeverein
+          name:
+            - text: "Handels- und Gewerbeverein"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/handelskammer-beider-basel
+        group:
+          global_uri: actor:group/handelskammer-beider-basel
+          name:
+            - text: "Handelskammer beider Basel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/hev-baselland
+        group:
+          global_uri: actor:group/hev-baselland
+          name:
+            - text: "Hauseigentümerverband Kanton Baselland"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/heimatschutz-basel
+        group:
+          global_uri: actor:group/heimatschutz-basel
+          name:
+            - text: "Heimatschutz Basel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/hev-bs
+        group:
+          global_uri: actor:group/hev-bs
+          name:
+            - text: "HEV Basel-Stadt"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/ig-kleinbasel
+        group:
+          global_uri: actor:group/ig-kleinbasel
+          name:
+            - text: "IG Kleinbasel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/ig-umfahrungsstrasse-allschwil
+        group:
+          global_uri: actor:group/ig-umfahrungsstrasse-allschwil
+          name:
+            - text: "IG Umfahrungsstrasse Allschwil - Stadtnahe Tangente"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/ig-vereine-allschwil
+        group:
+          global_uri: actor:group/ig-vereine-allschwil
+          name:
+            - text: "IG Vereine Allschwil"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/igoev-nwch
+        group:
+          global_uri: actor:group/igoev-nwch
+          name:
+            - text: "IGöV Nordwestschweiz"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/jgb-nordwest
+        group:
+          global_uri: actor:group/jgb-nordwest
+          name:
+            - text: "junges grünes bündnis nordwest"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/kmu-allschwil
+        group:
+          global_uri: actor:group/kmu-allschwil
+          name:
+            - text: "KMU Allschwil-Schönebuch"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/ldp-bs
+        group:
+          global_uri: actor:group/ldp-bs
+          name:
+            - text: "LDP Liberal-demokratische Partei Basel-Stadt"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/metrobasel
+        group:
+          global_uri: actor:group/metrobasel
+          name:
+            - text: "metrobasel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/mieterverband-basel
+        group:
+          global_uri: actor:group/mieterverband-basel
+          name:
+            - text: "Mieterinnen- und Mieterverband Basel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/nachbarschaft-loerracherstrasse
+        group:
+          global_uri: actor:group/nachbarschaft-loerracherstrasse
+          name:
+            - text: "Nachbarschaft Lörracherstrasse; Quartierverein"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/nqv-laaebe-innerstadt
+        group:
+          global_uri: actor:group/nqv-laaebe-innerstadt
+          name:
+            - text: "Neutraler Quartierverein \"Lääbe in der Innerstadt\""
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/nqv-bachletten-holbein
+        group:
+          global_uri: actor:group/nqv-bachletten-holbein
+          name:
+            - text: "Neutraler Quartierverein Bachletten-Holbein"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/nqv-breite-lehenmatt
+        group:
+          global_uri: actor:group/nqv-breite-lehenmatt
+          name:
+            - text: "Neutraler Quartierverein Breite-Lehenmatt"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/nqv-bruderholz
+        group:
+          global_uri: actor:group/nqv-bruderholz
+          name:
+            - text: "Neutraler Quartierverein Bruderholz"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/nqv-gundeldingen
+        group:
+          global_uri: actor:group/nqv-gundeldingen
+          name:
+            - text: "Neutraler Quartierverein Gundeldingen"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/nqv-hirzbrunnen
+        group:
+          global_uri: actor:group/nqv-hirzbrunnen
+          name:
+            - text: "Neutraler Quartierverein Hirzbrunnen"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/nqv-kannenfeld
+        group:
+          global_uri: actor:group/nqv-kannenfeld
+          name:
+            - text: "Neutraler Quartierverein Kannenfeld"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/nqv-neubad
+        group:
+          global_uri: actor:group/nqv-neubad
+          name:
+            - text: "Neutraler Quartierverein Neubad"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/nqv-oberes-kleinbasel
+        group:
+          global_uri: actor:group/nqv-oberes-kleinbasel
+          name:
+            - text: "Neutraler Quartierverein Oberes Kleinbasel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/nqv-riehen-nord-quarino
+        group:
+          global_uri: actor:group/nqv-riehen-nord-quarino
+          name:
+            - text: "Neutraler Quartierverein Riehen Nord QUARINO"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/nqv-spalen-gotthelf
+        group:
+          global_uri: actor:group/nqv-spalen-gotthelf
+          name:
+            - text: "Neutraler Quartierverein Spalen-Gotthelf"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/nqv-st-alban-gellert
+        group:
+          global_uri: actor:group/nqv-st-alban-gellert
+          name:
+            - text: "Neutraler Quartierverein St. Alban-Gellert"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/nqv-st-johann
+        group:
+          global_uri: actor:group/nqv-st-johann
+          name:
+            - text: "Neutraler Quartierverein St. Johann"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/nqv-unteres-kleinbasel
+        group:
+          global_uri: actor:group/nqv-unteres-kleinbasel
+          name:
+            - text: "Neutraler Quartierverein Unteres Kleinbasel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/nva-allschwil
+        group:
+          global_uri: actor:group/nva-allschwil
+          name:
+            - text: "NVA Natur- und Vogelschutz Allschwil"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/pro-natura-basel
+        group:
+          global_uri: actor:group/pro-natura-basel
+          name:
+            - text: "Pro Natura Basel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/pro-natura-baselland
+        group:
+          global_uri: actor:group/pro-natura-baselland
+          name:
+            - text: "Pro Natura Baselland"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/pro-velo-bb
+        group:
+          global_uri: actor:group/pro-velo-bb
+          name:
+            - text: "Pro Velo beider Basel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/qv-kornfeld-pfaffenloh
+        group:
+          global_uri: actor:group/qv-kornfeld-pfaffenloh
+          name:
+            - text: "Quartierverein Kornfeld und Pfaffenloh"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/regio-basiliensis
+        group:
+          global_uri: actor:group/regio-basiliensis
+          name:
+            - text: "Regio Basiliensis"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/usic-basel
+        group:
+          global_uri: actor:group/usic-basel
+          name:
+            - text: "Schweizerische Vereinigung Beratender Ingenieurunternehmungen USIC Regionalgruppe Basel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/svp-bs
+        group:
+          global_uri: actor:group/svp-bs
+          name:
+            - text: "Schweizerische Volkspartei SVP Basel-Stadt"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/sia-basel
+        group:
+          global_uri: actor:group/sia-basel
+          name:
+            - text: "Schweizerischer Ingenieur- und Architektenverein SIA Sektion Basel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/svit-bb
+        group:
+          global_uri: actor:group/svit-bb
+          name:
+            - text: "Schweizerischer Verband der Immobilienwirtschaft, Sektor beider Basel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/swb-basel
+        group:
+          global_uri: actor:group/swb-basel
+          name:
+            - text: "Schweizerischer Werkbund SWB Ortsgruppe Basel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/sp-allschwil
+        group:
+          global_uri: actor:group/sp-allschwil
+          name:
+            - text: "Sozialdemokratische Partei Allschwil - Schönenbuch"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/sp-bs
+        group:
+          global_uri: actor:group/sp-bs
+          name:
+            - text: "Sozialdemokratische Partei Basel-Stadt"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/stadtkonzeptbasel
+        group:
+          global_uri: actor:group/stadtkonzeptbasel
+          name:
+            - text: "StadtKonzeptBasel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/sts-basel-west
+        group:
+          global_uri: actor:group/sts-basel-west
+          name:
+            - text: "Stadtteilsekretariat Basel West"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/sts-kleinbasel
+        group:
+          global_uri: actor:group/sts-kleinbasel
+          name:
+            - text: "Stadtteilsekretariat Kleinbasel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/standortfoerderung-bl
+        group:
+          global_uri: actor:group/standortfoerderung-bl
+          name:
+            - text: "Standortförderung Baselland"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/svp-allschwil
+        group:
+          global_uri: actor:group/svp-allschwil
+          name:
+            - text: "SVP Allschwil/Schönenbuch"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/tcs-bb
+        group:
+          global_uri: actor:group/tcs-bb
+          name:
+            - text: "TCS beider Basel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/vcs-bb
+        group:
+          global_uri: actor:group/vcs-bb
+          name:
+            - text: "VCS beider Basel"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/vereinigung-rauracher
+        group:
+          global_uri: actor:group/vereinigung-rauracher
+          name:
+            - text: "Vereinigung Rauracher Zentrum"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/riehener-dorfgeschaefte
+        group:
+          global_uri: actor:group/riehener-dorfgeschaefte
+          name:
+            - text: "Vereinigung Riehener Dorfgeschäfte"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/wirteverband-bs
+        group:
+          global_uri: actor:group/wirteverband-bs
+          name:
+            - text: "Wirteverband Basel-Stadt"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/wirtschaftskammer-bl
+        group:
+          global_uri: actor:group/wirtschaftskammer-bl
+          name:
+            - text: "Wirtschaftskammer Baselland"
+              language: de
+        standing_invitation: false
+
+      - global_uri: con:morgartenring-2026/invitee/wwf-region-basel
+        group:
+          global_uri: actor:group/wwf-region-basel
+          name:
+            - text: "WWF Region Basel"
+              language: de
+        standing_invitation: false
+
+      # Offene Einladung an alle übrigen Stakeholder (Freitext-Kategorie).
+      - global_uri: con:morgartenring-2026/invitee/public
+        category: "Sämtliche weiteren Parteien, Organisationen, Vereine, Interessengruppierungen, Firmen und Privatpersonen"
+        standing_invitation: false
+
+    steps:
+      # PublicationStep — Veröffentlichung der Vernehmlassung.
+      - global_uri: con:morgartenring-2026/step/publication
+        date_begin_actual: "2026-02-10"
+        date_end_actual: "2026-02-11"
+        name:
+          - text: "Veröffentlichung"
+            language: de
+        description:
+          - text: |
+              Beschluss des Regierungsrats Basel-Stadt vom 10. Februar
+              2026; Publikation auf der Vernehmlassungsplattform.
+            language: de
+        responsible_entity:
+          global_uri: actor:group/bs/bvd/staedtebau-architektur
+          name:
+            - text: "Städtebau & Architektur, Kanton Basel-Stadt"
+              language: de
+        responsible_person:
+          global_uri: actor:person/aeberhard-beat
+          first_name: "Beat"
+          last_name: "Aeberhard"
+        documents:
+          - "https://media.bs.ch/original_file/443dec83b02cbf84b6e8467e5401f3340fc7fd9e/vernehmlassung-entwicklungskonzept-stadtraum-morgarten-begle.pdf"
+          - "https://media.bs.ch/original_file/62d285ed577503f957b6551ceeb2fe4ef458ac9c/entwicklungskonzept-stadtraum-morgartenring-entwurf-vernehml.pdf"
+
+      # SubmissionStep — laufende Einreichungsphase (12.02.2026 – 12.05.2026).
+      - global_uri: con:morgartenring-2026/step/submission
+        date_begin_actual: "2026-02-12"
+        date_end_planned: "2026-05-12"
+        name:
+          - text: "Öffentliche Vernehmlassung"
+            language: de
+        description:
+          - text: |
+              Gleichzeitige Vernehmlassung in den Kantonen Basel-Stadt
+              und Basel-Landschaft sowie in der Gemeinde Allschwil.
+              Stellungnahmen werden über die E-Mitwirkungsplattform des
+              Kantons Basel-Stadt eingereicht. Begleitend Informations-
+              veranstaltung am 19. März 2026.
+            language: de
+        responsible_entity:
+          global_uri: actor:group/bs/bvd/staedtebau-architektur
+          name:
+            - text: "Städtebau & Architektur, Kanton Basel-Stadt"
+              language: de
+        responsible_person:
+          global_uri: actor:person/aemisegger-silvan
+          first_name: "Silvan"
+          last_name: "Aemisegger"
+        documents:
+          - "https://mitwirkung.bs.ch/de/vernehmlassung-zum-entwicklungskonzept-stadtraum-morgartenring"
+        # statements_received_count noch nicht bekannt (Phase läuft).
+
+      # EvaluationStep — folgt nach Einreichungsfrist (geplant).
+      - global_uri: con:morgartenring-2026/step/evaluation
+        date_begin_planned: "2026-05-13"
+        name:
+          - text: "Auswertung der Stellungnahmen"
+            language: de
+        description:
+          - text: |
+              Verarbeitung der eingegangenen Stellungnahmen und
+              Anpassung des Konzeptentwurfs.
+            language: de
+        responsible_entity:
+          global_uri: actor:group/bs/bvd/staedtebau-architektur
+          name:
+            - text: "Städtebau & Architektur, Kanton Basel-Stadt"
+              language: de
+
+      # ReportStep — Vernehmlassungsbericht (geplant).
+      - global_uri: con:morgartenring-2026/step/report
+        name:
+          - text: "Vernehmlassungsbericht und Beschluss"
+            language: de
+        description:
+          - text: |
+              Vorlage des angepassten Konzeptentwurfs zusammen mit dem
+              Vernehmlassungsbericht an den Regierungsrat Basel-Stadt,
+              den Gemeinderat Allschwil und die Bau- und Umwelt-
+              schutzdirektion Basel-Landschaft.
+            language: de
