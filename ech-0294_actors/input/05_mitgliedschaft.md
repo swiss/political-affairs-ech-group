@@ -27,19 +27,31 @@ Memberships werden für verschiedene Zuordnungen verwendet:
 
 ### Identifikatoren und Referenzen
 
-Eine Membership verknüpft zwei Entitäten:
+Eine Membership verknüpft Person und Gruppe über deren `global_uri`:
 
 | Attribut | Typ | Pflicht | Beschreibung |
 |----------|-----|---------|--------------|
-| `id` | URI | Ja | Eindeutiger Identifikator der Mitgliedschaft |
-| `person_id` | string | Ja | Referenz zur Person |
-| `group_id` | string | Ja | Referenz zur Gruppe |
+| `global_uri` | URI | Ja | Identifikator der Mitgliedschaft |
+| `concerned_person` | URI | Nein | `global_uri` der Person (z.B. Wikidata) |
+| `concerned_group` | URI | Nein | `global_uri` der Gruppe |
 
 **Beispiel:**
 ```yaml
-id: act:membership_jans_sp
-person_id: https://www.wikidata.org/wiki/Q813067
-group_id: act:sp_basel_stadt
+global_uri: act:membership_jans_sp
+concerned_person: https://www.wikidata.org/wiki/Q813067
+concerned_group: act:sp_basel_stadt
+```
+
+### Datenmodell (LinkML-Auszug)
+
+```yaml
+global_uri: act:membership_jans_sp
+concerned_person: https://www.wikidata.org/wiki/Q813067
+concerned_group: act:sp_basel_stadt
+role_type:
+  role_type_enum: member
+valid_from: 1990-01-01
+is_active: true
 ```
 
 ## Datenstruktur
@@ -48,23 +60,20 @@ group_id: act:sp_basel_stadt
 
 | Attribut | Datentyp | Beschreibung |
 |----------|----------|--------------|
-| `id` | string | Eindeutiger Identifikator der Mitgliedschaft |
-| `person_id` | string | Referenz zur Person (lokale ID) |
-| `person_uri` | string | Referenz zur Person (Wikidata-ID) |
-| `group_id` | string | Referenz zur Gruppe (lokale ID) |
-| `group_uri` | string | Referenz zur Gruppe (lokale ID) |
-
+| `global_uri` | URI | Eindeutiger Identifikator der Mitgliedschaft |
 
 ### Optionale Felder
 
 | Attribut | Datentyp | Beschreibung |
 |----------|----------|--------------|
-| `role` | string | Rolle/Funktion innerhalb der Gruppe |
+| `concerned_person` | URI | Referenz zur Person (`global_uri`) |
+| `concerned_group` | URI | Referenz zur Gruppe (`global_uri`) |
+| `role_type` | RoleType | Rolle (`role_type_enum`, optional `label`) |
 | `valid_from` | date | Beginn der Mitgliedschaft |
-| `valid_until` | date | Ende der Mitgliedschaft |
+| `valid_through` | date | Ende der Mitgliedschaft |
 | `is_active` | boolean | Gibt an, ob die Mitgliedschaft derzeit aktiv ist |
 | `authorized_to_vote` | boolean | Stimmberechtigung (relevant für Parlamente) |
-| `datetime_updated` | datetime | Letzte Aktualisierung des Datensatzes |
+| `datetime_modified` | datetime | Letzte Aktualisierung des Datensatzes |
 | `datetime_created` | datetime | Erstellung des Datensatzes |
 
 ## Rollen (role)
