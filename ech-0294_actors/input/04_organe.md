@@ -36,6 +36,21 @@ global_uri: https://politics.ld.admin.ch/party/sp_basel_stadt
 local_id: act:sp_basel_stadt
 ```
 
+### Datenmodell (LinkML-Auszug)
+
+```yaml
+global_uri: https://politics.ld.admin.ch/party/sp_basel_stadt
+local_id: act:sp_basel_stadt
+group_type:
+  group_type_enum: party
+label: SP Basel-Stadt
+abbreviation:
+  - value: SP
+    language: de
+parent_groups:
+  - https://politics.ld.admin.ch/party/sp_schweiz
+```
+
 ## Datenstruktur
 
 ### Pflichtfelder
