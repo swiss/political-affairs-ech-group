@@ -26,13 +26,14 @@ Das Schema unterstützt verschiedene Einsatzszenarien:
 
 | Attribut | Typ | Pflicht | Beschreibung |
 |----------|-----|---------|--------------|
-| `id` | URI | Ja | Lokaler Identifikator |
-| `uri` | URI | Nein | Global gültiger Identifikator (z.B. politics.ld.admin.ch/party/1) |
+| `global_uri` | URI | Ja | Global gültiger Identifikator (z.B. `politics.ld.admin.ch/party/...`) |
+| `local_id` | string | Nein | Lokaler Identifikator im publizierenden System |
+| `wikidata_uri` | URI | Nein | Wikidata-Entität der Gruppe, falls vorhanden |
 
 **Beispiel:**
 ```yaml
-id: act:sp_basel_stadt
-uri: https://politics.ld.admin.ch/party/sp_basel_stadt
+global_uri: https://politics.ld.admin.ch/party/sp_basel_stadt
+local_id: act:sp_basel_stadt
 ```
 
 ## Datenstruktur
@@ -41,28 +42,28 @@ uri: https://politics.ld.admin.ch/party/sp_basel_stadt
 
 | Attribut | Datentyp | Beschreibung |
 |----------|----------|--------------|
-| `id` | URI | Eindeutiger Identifikator |
-| `group_type` | GroupTypeEnum | Art der Gruppe (siehe Klassifikation unten) |
+| `global_uri` | URI | Eindeutiger globaler Identifikator |
+| `group_type` | GroupType | Art der Gruppe (`group_type_enum`, optional `label`) |
 
 ### Optionale Felder
 
 | Attribut | Datentyp | Beschreibung |
 |----------|----------|--------------|
-| `uri` | URI | Global auflösbare URI (eCH-0285 kompatibel) |
-| `type_label` | string | Spezifischer lokaler Typ-Name (wenn Enum nicht ausreicht) |
+| `local_id` | string | Lokaler Identifikator |
+| `wikidata_uri` | URI | Wikidata-Referenz |
+| `label` | string | Anzeigename der Gruppe |
 | `valid_from` | date | Beginn der Gültigkeit |
-| `valid_until` | date | Ende der Gültigkeit |
-| `name` | MultilingualString[] | Name (mehrsprachig) |
-| `abbreviation` | MultilingualString[] | Abkürzung (mehrsprachig) |
-| `description` | MultilingualString[] | Beschreibung |
+| `valid_through` | date | Ende der Gültigkeit |
+| `abbreviation` | MultilingualValue[] | Abkürzung (mehrsprachig, `value`/`language`) |
+| `description` | MultilingualValue[] | Beschreibung (mehrsprachig) |
 | `landing_page` | URI | URL mit weiteren Informationen |
 | `parent_groups` | string[] | Übergeordnete Gruppen (0..n) |
 | `spatial` | string | Räumliche Referenz (Gemeinde-/Kantonsnummer) |
 | `contacts` | Contact[] | Kontaktinformationen |
 | `addresses` | Address[] | Adressen |
-| `url_statutes` | URI | URL zu Statuten (speziell für Parteien) |
+| `statutes_url` | URI | URL zu Statuten (speziell für Parteien) |
 | `party_color` | string | Parteifarbe (speziell für Parteien) |
-| `datetime_updated` | datetime | Letzte Aktualisierung |
+| `datetime_modified` | datetime | Letzte Aktualisierung |
 | `datetime_created` | datetime | Erstellung |
 
 ## Klassifikation: GroupTypeEnum
