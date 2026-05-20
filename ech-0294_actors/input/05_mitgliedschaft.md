@@ -359,16 +359,15 @@ memberships:
 ```
 
 ### Auswertungen
-### Auswertungen
 
 **Nach Gruppe:**
 ```sparql
 # Alle Mitglieder der SP Basel-Stadt
 SELECT ?person ?role WHERE {
   ?membership a act:Membership ;
-    act:group_id act:sp_basel_stadt ;
-    act:person_id ?person ;
-    act:role ?role ;
+    act:concernedGroup act:sp_basel_stadt ;
+    act:concernedPerson ?person ;
+    act:roleType ?role ;
     act:isActive true .
 }
 ```
@@ -378,9 +377,9 @@ SELECT ?person ?role WHERE {
 # Alle Gruppen von Beat Jans
 SELECT ?group ?role WHERE {
   ?membership a act:Membership ;
-    act:person_id <https://www.wikidata.org/wiki/Q813067> ;
-    act:group_id ?group ;
-    act:role ?role ;
+    act:concernedPerson <https://www.wikidata.org/wiki/Q813067> ;
+    act:concernedGroup ?group ;
+    act:roleType ?role ;
     act:isActive true .
 }
 ```
