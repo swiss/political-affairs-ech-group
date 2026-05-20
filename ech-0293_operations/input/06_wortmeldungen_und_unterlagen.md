@@ -1,6 +1,12 @@
 ToDo: David
 
 
+Debatte
+
+* -> Video Aufzeichnung -> Worttransskript
+*   -> Wortprotokol -> Text to Timestamp -> Text beinhaltet die Timestamps -> Textdokument (mit oder ohne definition vom Format (spantypen))
+*   -> Aufbereitetes Proktoll -> AgendaItem to Timestamp
+
 ## Speech (Wortmeldung, Votum)
 
 ## Begriff und Bedeutung
