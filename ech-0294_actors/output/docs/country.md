@@ -19,8 +19,6 @@ __
 
 
 URI: [act:country](https://ld.ech.ch/schema/0294/actors/country)
-Alias: country
-
 <!-- no inheritance hierarchy -->
 
 
@@ -106,7 +104,6 @@ description: '[de] ISO 3166 Ländercode.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:country
-alias: country
 domain_of:
 - Citizenship
 range: string

@@ -19,8 +19,6 @@ __
 
 
 URI: [act:picture](https://ld.ech.ch/schema/0294/actors/picture)
-Alias: picture
-
 <!-- no inheritance hierarchy -->
 
 
@@ -97,7 +95,6 @@ description: '[de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).
   '
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
-alias: picture
 domain_of:
 - Person
 range: uri

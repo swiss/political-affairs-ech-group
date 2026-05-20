@@ -19,8 +19,6 @@ __
 
 
 URI: [act:district](https://ld.ech.ch/schema/0294/actors/district)
-Alias: district
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: '[de] Wahlkreis oder Wahlregion.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:district
-alias: district
 domain_of:
 - ElectoralDistrict
 range: string

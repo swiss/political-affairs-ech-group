@@ -484,13 +484,29 @@ Das Schema unterstützt verschiedene Einsatzszenarien:
 
 | Attribut | Typ | Pflicht | Beschreibung |
 |----------|-----|---------|--------------|
-| `id` | URI | Ja | Lokaler Identifikator |
-| `uri` | URI | Nein | Global gültiger Identifikator (z.B. politics.ld.admin.ch/party/1) |
+| `global_uri` | URI | Ja | Global gültiger Identifikator (z.B. `politics.ld.admin.ch/party/...`) |
+| `local_id` | string | Nein | Lokaler Identifikator im publizierenden System |
+| `wikidata_uri` | URI | Nein | Wikidata-Entität der Gruppe, falls vorhanden |
 
 **Beispiel:**
 ```yaml
-id: act:sp_basel_stadt
-uri: https://politics.ld.admin.ch/party/sp_basel_stadt
+global_uri: https://politics.ld.admin.ch/party/sp_basel_stadt
+local_id: act:sp_basel_stadt
+```
+
+### Datenmodell (LinkML-Auszug)
+
+```yaml
+global_uri: https://politics.ld.admin.ch/party/sp_basel_stadt
+local_id: act:sp_basel_stadt
+group_type:
+  group_type_enum: party
+label: SP Basel-Stadt
+abbreviation:
+  - value: SP
+    language: de
+parent_groups:
+  - https://politics.ld.admin.ch/party/sp_schweiz
 ```
 
 ## Datenstruktur
@@ -499,28 +515,28 @@ uri: https://politics.ld.admin.ch/party/sp_basel_stadt
 
 | Attribut | Datentyp | Beschreibung |
 |----------|----------|--------------|
-| `id` | URI | Eindeutiger Identifikator |
-| `group_type` | GroupTypeEnum | Art der Gruppe (siehe Klassifikation unten) |
+| `global_uri` | URI | Eindeutiger globaler Identifikator |
+| `group_type` | GroupType | Art der Gruppe (`group_type_enum`, optional `label`) |
 
 ### Optionale Felder
 
 | Attribut | Datentyp | Beschreibung |
 |----------|----------|--------------|
-| `uri` | URI | Global auflösbare URI (eCH-0285 kompatibel) |
-| `type_label` | string | Spezifischer lokaler Typ-Name (wenn Enum nicht ausreicht) |
+| `local_id` | string | Lokaler Identifikator |
+| `wikidata_uri` | URI | Wikidata-Referenz |
+| `label` | string | Anzeigename der Gruppe |
 | `valid_from` | date | Beginn der Gültigkeit |
-| `valid_until` | date | Ende der Gültigkeit |
-| `name` | MultilingualString[] | Name (mehrsprachig) |
-| `abbreviation` | MultilingualString[] | Abkürzung (mehrsprachig) |
-| `description` | MultilingualString[] | Beschreibung |
+| `valid_through` | date | Ende der Gültigkeit |
+| `abbreviation` | MultilingualValue[] | Abkürzung (mehrsprachig, `value`/`language`) |
+| `description` | MultilingualValue[] | Beschreibung (mehrsprachig) |
 | `landing_page` | URI | URL mit weiteren Informationen |
 | `parent_groups` | string[] | Übergeordnete Gruppen (0..n) |
 | `spatial` | string | Räumliche Referenz (Gemeinde-/Kantonsnummer) |
 | `contacts` | Contact[] | Kontaktinformationen |
 | `addresses` | Address[] | Adressen |
-| `url_statutes` | URI | URL zu Statuten (speziell für Parteien) |
+| `statutes_url` | URI | URL zu Statuten (speziell für Parteien) |
 | `party_color` | string | Parteifarbe (speziell für Parteien) |
-| `datetime_updated` | datetime | Letzte Aktualisierung |
+| `datetime_modified` | datetime | Letzte Aktualisierung |
 | `datetime_created` | datetime | Erstellung |
 
 ## Klassifikation: GroupTypeEnum
@@ -539,13 +555,13 @@ Parlamente auf allen föderalen Ebenen.
 - Gemeindeparlament
 
 ```yaml
-group_type: parliament
-name:
-  - text: Nationalrat
-    language: de
-  - text: Conseil national
+group_type:
+  group_type_enum: parliament
+label: Nationalrat
+description:
+  - value: Conseil national
     language: fr
-  - text: Consiglio nazionale
+  - value: Consiglio nazionale
     language: it
 spatial: https://ld.admin.ch/country/1  # Schweiz
 ```
@@ -562,11 +578,10 @@ Ständige oder Ad-hoc-Kommissionen.
 - Rechnungsprüfungskommission
 
 ```yaml
-group_type: commission
-name:
-  - text: Geschäftsprüfungskommission des Nationalrats
-    language: de
-type_label: Ständige Aufsichtskommission
+group_type:
+  group_type_enum: commission
+  label: Ständige Aufsichtskommission
+label: Geschäftsprüfungskommission des Nationalrats
 parent_groups:
   - act:nationalrat
 ```
@@ -575,22 +590,20 @@ parent_groups:
 Parlamentarische Delegationen.
 
 ```yaml
-group_type: delegation
-name:
-  - text: Delegation für internationale Finanzfragen
-    language: de
+group_type:
+  group_type_enum: delegation
+label: Delegation für internationale Finanzfragen
 ```
 
 #### faction (Fraktion)
 Parlamentsfraktionen.
 
 ```yaml
-group_type: faction
-name:
-  - text: SP-Fraktion
-    language: de
+group_type:
+  group_type_enum: faction
+label: SP-Fraktion
 abbreviation:
-  - text: SP
+  - value: SP
     language: de
 parent_groups:
   - act:nationalrat
@@ -600,20 +613,18 @@ parent_groups:
 Organisatorisches Leitungsgremium.
 
 ```yaml
-group_type: parliamentary_bureau
-name:
-  - text: Büro des Nationalrats
-    language: de
+group_type:
+  group_type_enum: parliamentary_bureau
+label: Büro des Nationalrats
 ```
 
 #### presidency (Präsidium)
 Präsidium des Parlaments.
 
 ```yaml
-group_type: presidency
-name:
-  - text: Präsidium der Bundesversammlung
-    language: de
+group_type:
+  group_type_enum: presidency
+label: Präsidium der Bundesversammlung
 ```
 
 ### Exekutive
@@ -627,11 +638,11 @@ Regierung als Gesamtorgan.
 - Stadtrat / Gemeinderat
 
 ```yaml
-group_type: government
-name:
-  - text: Bundesrat
-    language: de
-  - text: Conseil fédéral
+group_type:
+  group_type_enum: government
+label: Bundesrat
+description:
+  - value: Conseil fédéral
     language: fr
 spatial: https://ld.admin.ch/country/1
 ```
@@ -640,12 +651,11 @@ spatial: https://ld.admin.ch/country/1
 Verwaltungsdepartemente.
 
 ```yaml
-group_type: department
-name:
-  - text: Eidgenössisches Departement des Innern
-    language: de
+group_type:
+  group_type_enum: department
+label: Eidgenössisches Departement des Innern
 abbreviation:
-  - text: EDI
+  - value: EDI
     language: de
 parent_groups:
   - act:bundesrat
@@ -655,12 +665,11 @@ parent_groups:
 Ämter innerhalb von Departementen.
 
 ```yaml
-group_type: office
-name:
-  - text: Bundesamt für Gesundheit
-    language: de
+group_type:
+  group_type_enum: office
+label: Bundesamt für Gesundheit
 abbreviation:
-  - text: BAG
+  - value: BAG
     language: de
 parent_groups:
   - act:edi
@@ -674,22 +683,20 @@ APK mit Regierungsauftrag.
 - Eidgenössische Finanzmarktaufsicht (FINMA)
 
 ```yaml
-group_type: extraparliamentary_commission
-name:
-  - text: Bankrat der SNB
-    language: de
+group_type:
+  group_type_enum: extraparliamentary_commission
+label: Bankrat der SNB
 ```
 
 #### workgroup (Arbeitsgruppe)
 Ad-hoc-Arbeitsgruppen.
 
 ```yaml
-group_type: workgroup
-name:
-  - text: Arbeitsgruppe Klimapolitik
-    language: de
+group_type:
+  group_type_enum: workgroup
+label: Arbeitsgruppe Klimapolitik
 valid_from: 2024-01-01
-valid_until: 2024-12-31
+valid_through: 2024-12-31
 ```
 
 ### Judikative
@@ -703,13 +710,13 @@ Gerichte aller Instanzen.
 - Bezirksgericht
 
 ```yaml
-group_type: court
-name:
-  - text: Bundesgericht
-    language: de
-  - text: Tribunal fédéral
+group_type:
+  group_type_enum: court
+label: Bundesgericht
+description:
+  - value: Tribunal fédéral
     language: fr
-  - text: Tribunale federale
+  - value: Tribunale federale
     language: it
 spatial: https://ld.admin.ch/country/1
 ```
@@ -722,14 +729,13 @@ Politische Parteien auf allen föderalen Ebenen.
 Jede föderale Ebene wird als eigene Gruppe geführt.
 
 ```yaml
-group_type: party
-name:
-  - text: SP Schweiz
-    language: de
+group_type:
+  group_type_enum: party
+label: SP Schweiz
 abbreviation:
-  - text: SP
+  - value: SP
     language: de
-url_statutes: https://www.sp-ps.ch/sites/default/files/documents/statuten_sp_d_0.pdf
+statutes_url: https://www.sp-ps.ch/sites/default/files/documents/statuten_sp_d_0.pdf
 party_color: "#FF0000"
 spatial: https://ld.admin.ch/country/1
 ```
@@ -737,22 +743,25 @@ spatial: https://ld.admin.ch/country/1
 **Hierarchie-Beispiel:**
 ```yaml
 # SP Schweiz (Bund)
-- id: act:sp_schweiz
-  group_type: party
-  name: [{text: "SP Schweiz", language: de}]
+- global_uri: act:sp_schweiz
+  group_type:
+    group_type_enum: party
+  label: SP Schweiz
   spatial: https://ld.admin.ch/country/1
 
 # SP Basel-Stadt (Kanton)
-- id: act:sp_basel_stadt
-  group_type: party
-  name: [{text: "SP Basel-Stadt", language: de}]
+- global_uri: act:sp_basel_stadt
+  group_type:
+    group_type_enum: party
+  label: SP Basel-Stadt
   parent_groups: [act:sp_schweiz]
   spatial: https://ld.admin.ch/canton/12
 
 # SP Riehen (Gemeinde)
-- id: act:sp_riehen
-  group_type: party
-  name: [{text: "SP Riehen", language: de}]
+- global_uri: act:sp_riehen
+  group_type:
+    group_type_enum: party
+  label: SP Riehen
   parent_groups: [act:sp_basel_stadt]
   spatial: https://ld.admin.ch/municipality/2703
 ```
@@ -761,10 +770,9 @@ spatial: https://ld.admin.ch/country/1
 Wahllisten, können Teil einer Partei sein oder unabhängig.
 
 ```yaml
-group_type: list
-name:
-  - text: Liste 1 - SP
-    language: de
+group_type:
+  group_type_enum: list
+label: Liste 1 - SP
 parent_groups:
   - act:sp_basel_stadt  # Optional: Zugehörigkeit zur Partei
 ```
@@ -773,30 +781,27 @@ parent_groups:
 Lobbyorganisationen und Interessenverbände.
 
 ```yaml
-group_type: interest_group
-name:
-  - text: Economiesuisse
-    language: de
+group_type:
+  group_type_enum: interest_group
+label: Economiesuisse
 ```
 
 #### association (Verein)
 Vereine und Verbände.
 
 ```yaml
-group_type: association
-name:
-  - text: Pro Natura
-    language: de
+group_type:
+  group_type_enum: association
+label: Pro Natura
 ```
 
 #### petition_carrier (Petitionsträger)
 Träger von Petitionen oder Volksinitiativen.
 
 ```yaml
-group_type: petition_carrier
-name:
-  - text: Komitee für bezahlbare Krankenkassen
-    language: de
+group_type:
+  group_type_enum: petition_carrier
+label: Komitee für bezahlbare Krankenkassen
 ```
 
 ### Andere Organe
@@ -809,12 +814,11 @@ Kontroll- und Aufsichtsorgane.
 - AB-BA (Aufsichtsbehörde)
 
 ```yaml
-group_type: control_body
-name:
-  - text: Eidgenössische Finanzkontrolle
-    language: de
+group_type:
+  group_type_enum: control_body
+label: Eidgenössische Finanzkontrolle
 abbreviation:
-  - text: EFK
+  - value: EFK
     language: de
 ```
 
@@ -822,22 +826,20 @@ abbreviation:
 Unterstützungsdienste des Parlaments.
 
 ```yaml
-group_type: parliamentary_services
-name:
-  - text: Parlamentsdienste der Bundesversammlung
-    language: de
+group_type:
+  group_type_enum: parliamentary_services
+label: Parlamentsdienste der Bundesversammlung
 ```
 
 #### university (Universität)
 Universitäten und Hochschulen (als ausgelagerte Träger öffentlicher Aufgaben).
 
 ```yaml
-group_type: university
-name:
-  - text: Universität Zürich
-    language: de
+group_type:
+  group_type_enum: university
+label: Universität Zürich
 abbreviation:
-  - text: UZH
+  - value: UZH
     language: de
 ```
 
@@ -849,15 +851,15 @@ Das Attribut `parent_groups` erlaubt die Abbildung von Organisationsstrukturen:
 
 ```yaml
 # National
-- id: act:fdp_schweiz
+- global_uri: act:fdp_schweiz
   parent_groups: []
 
 # Kantonal
-- id: act:fdp_zuerich
+- global_uri: act:fdp_zuerich
   parent_groups: [act:fdp_schweiz]
 
 # Kommunal
-- id: act:fdp_winterthur
+- global_uri: act:fdp_winterthur
   parent_groups: [act:fdp_zuerich]
 ```
 
@@ -865,15 +867,15 @@ Das Attribut `parent_groups` erlaubt die Abbildung von Organisationsstrukturen:
 
 ```yaml
 # Departement
-- id: act:edi
+- global_uri: act:edi
   parent_groups: [act:bundesrat]
 
 # Amt
-- id: act:bag
+- global_uri: act:bag
   parent_groups: [act:edi]
 
 # Abteilung
-- id: act:bag_abteilung_gesundheitspolitik
+- global_uri: act:bag_abteilung_gesundheitspolitik
   parent_groups: [act:bag]
 ```
 
@@ -881,13 +883,13 @@ Das Attribut `parent_groups` erlaubt die Abbildung von Organisationsstrukturen:
 
 ```yaml
 # Hauptkommission
-- id: act:sik_nr
-  name: [{text: "Sicherheitspolitische Kommission NR", language: de}]
+- global_uri: act:sik_nr
+  label: Sicherheitspolitische Kommission NR
   parent_groups: [act:nationalrat]
 
 # Subkommission
-- id: act:sik_nr_sub_cyber
-  name: [{text: "Subkommission Cybersicherheit", language: de}]
+- global_uri: act:sik_nr_sub_cyber
+  label: Subkommission Cybersicherheit
   parent_groups: [act:sik_nr]
 ```
 
@@ -917,30 +919,29 @@ spatial: https://ld.admin.ch/country/1
 Namen und Abkürzungen sind mehrsprachig erfassbar:
 
 ```yaml
-name:
-  - text: Bundesversammlung
-    language: de
-  - text: Assemblée fédérale
+label: Bundesversammlung
+description:
+  - value: Assemblée fédérale
     language: fr
-  - text: Assemblea federale
+  - value: Assemblea federale
     language: it
-  - text: Assamblea federala
+  - value: Assamblea federala
     language: rm
 
 abbreviation:
-  - text: BVers
+  - value: BVers
     language: de
-  - text: AsFed
+  - value: AsFed
     language: fr
 ```
 
 ## Partei-spezifische Attribute
 
-### url_statutes
+### statutes_url
 Link zu den Parteistatuten (PDF oder Webseite).
 
 ```yaml
-url_statutes: https://www.sp-ps.ch/sites/default/files/documents/statuten_sp_d_0.pdf
+statutes_url: https://www.sp-ps.ch/sites/default/files/documents/statuten_sp_d_0.pdf
 ```
 
 ### party_color
@@ -963,15 +964,17 @@ Gruppen werden über Memberships mit Personen verbunden:
 ```yaml
 # Container-Struktur
 groups:
-  - id: act:sp_basel_stadt
-    group_type: party
-    name: [{text: "SP Basel-Stadt", language: de}]
+  - global_uri: act:sp_basel_stadt
+    group_type:
+      group_type_enum: party
+    label: SP Basel-Stadt
 
 memberships:
-  - id: act:membership_jans_sp
-    person_id: https://www.wikidata.org/wiki/Q813067
-    group_id: act:sp_basel_stadt
-    role: Mitglied
+  - global_uri: act:membership_jans_sp
+    concerned_person: https://www.wikidata.org/wiki/Q813067
+    concerned_group: act:sp_basel_stadt
+    role_type:
+      role_type_enum: member
     valid_from: 1990-01-01
 ```
 
@@ -990,20 +993,20 @@ actor_name: Nationalrat
 ### Beispiel 1: Nationalrat
 
 ```yaml
-id: act:nationalrat
-uri: https://politics.ld.admin.ch/parliament/nationalrat
-group_type: parliament
-name:
-  - text: Nationalrat
-    language: de
-  - text: Conseil national
+global_uri: https://politics.ld.admin.ch/parliament/nationalrat
+local_id: act:nationalrat
+group_type:
+  group_type_enum: parliament
+label: Nationalrat
+description:
+  - value: Conseil national
     language: fr
-  - text: Consiglio nazionale
+  - value: Consiglio nazionale
     language: it
 abbreviation:
-  - text: NR
+  - value: NR
     language: de
-  - text: CN
+  - value: CN
     language: fr
 landing_page: https://www.parlament.ch/de/organe/nationalrat
 spatial: https://ld.admin.ch/country/1
@@ -1013,15 +1016,14 @@ datetime_created: 2024-01-01T00:00:00Z
 ### Beispiel 2: Geschäftsprüfungskommission
 
 ```yaml
-id: act:gpk_nr
-group_type: commission
-name:
-  - text: Geschäftsprüfungskommission des Nationalrats
-    language: de
+global_uri: act:gpk_nr
+group_type:
+  group_type_enum: commission
+  label: Ständige Aufsichtskommission
+label: Geschäftsprüfungskommission des Nationalrats
 abbreviation:
-  - text: GPK-N
+  - value: GPK-N
     language: de
-type_label: Ständige Aufsichtskommission
 parent_groups:
   - act:nationalrat
 landing_page: https://www.parlament.ch/de/organe/kommissionen/aufsichtskommissionen/gpk
@@ -1031,26 +1033,25 @@ landing_page: https://www.parlament.ch/de/organe/kommissionen/aufsichtskommissio
 
 ```yaml
 # Bundesebene
-- id: act:gruene_schweiz
-  group_type: party
-  name:
-    - text: Grüne Schweiz
-      language: de
-    - text: Les Verts Suisses
+- global_uri: act:gruene_schweiz
+  group_type:
+    group_type_enum: party
+  label: Grüne Schweiz
+  description:
+    - value: Les Verts Suisses
       language: fr
   abbreviation:
-    - text: GPS
+    - value: GPS
       language: de
   party_color: "#84B414"
-  url_statutes: https://www.gruene.ch/statuten
+  statutes_url: https://www.gruene.ch/statuten
   spatial: https://ld.admin.ch/country/1
 
 # Kantonsebene
-- id: act:gruene_bern
-  group_type: party
-  name:
-    - text: Grüne Kanton Bern
-      language: de
+- global_uri: act:gruene_bern
+  group_type:
+    group_type_enum: party
+  label: Grüne Kanton Bern
   parent_groups:
     - act:gruene_schweiz
   spatial: https://ld.admin.ch/canton/2
@@ -1060,22 +1061,22 @@ landing_page: https://www.parlament.ch/de/organe/kommissionen/aufsichtskommissio
 ### Beispiel 4: Bundesrat
 
 ```yaml
-id: act:bundesrat
-uri: https://politics.ld.admin.ch/government/bundesrat
-group_type: government
-name:
-  - text: Bundesrat
-    language: de
-  - text: Conseil fédéral
+global_uri: https://politics.ld.admin.ch/government/bundesrat
+local_id: act:bundesrat
+group_type:
+  group_type_enum: government
+label: Bundesrat
+description:
+  - value: Conseil fédéral
     language: fr
-  - text: Consiglio federale
+  - value: Consiglio federale
     language: it
 spatial: https://ld.admin.ch/country/1
 landing_page: https://www.admin.ch/gov/de/start/bundesrat.html
 contacts:
-  - type: email
+  - contact_type: email
     value: info@gs-uvek.admin.ch
-  - type: contact_website
+  - contact_type: contact_website
     value: https://www.admin.ch/gov/de/start/bundesrat.html
 addresses:
   - address_type: businessAddress
@@ -1087,13 +1088,12 @@ addresses:
 ### Beispiel 5: Fraktion
 
 ```yaml
-id: act:sp_fraktion_nr
-group_type: faction
-name:
-  - text: SP-Fraktion im Nationalrat
-    language: de
+global_uri: act:sp_fraktion_nr
+group_type:
+  group_type_enum: faction
+label: SP-Fraktion im Nationalrat
 abbreviation:
-  - text: SP
+  - value: SP
     language: de
 parent_groups:
   - act:nationalrat
@@ -1232,19 +1232,31 @@ Memberships werden für verschiedene Zuordnungen verwendet:
 
 ### Identifikatoren und Referenzen
 
-Eine Membership verknüpft zwei Entitäten:
+Eine Membership verknüpft Person und Gruppe über deren `global_uri`:
 
 | Attribut | Typ | Pflicht | Beschreibung |
 |----------|-----|---------|--------------|
-| `id` | URI | Ja | Eindeutiger Identifikator der Mitgliedschaft |
-| `person_id` | string | Ja | Referenz zur Person |
-| `group_id` | string | Ja | Referenz zur Gruppe |
+| `global_uri` | URI | Ja | Identifikator der Mitgliedschaft |
+| `concerned_person` | URI | Nein | `global_uri` der Person (z.B. Wikidata) |
+| `concerned_group` | URI | Nein | `global_uri` der Gruppe |
 
 **Beispiel:**
 ```yaml
-id: act:membership_jans_sp
-person_id: https://www.wikidata.org/wiki/Q813067
-group_id: act:sp_basel_stadt
+global_uri: act:membership_jans_sp
+concerned_person: https://www.wikidata.org/wiki/Q813067
+concerned_group: act:sp_basel_stadt
+```
+
+### Datenmodell (LinkML-Auszug)
+
+```yaml
+global_uri: act:membership_jans_sp
+concerned_person: https://www.wikidata.org/wiki/Q813067
+concerned_group: act:sp_basel_stadt
+role_type:
+  role_type_enum: member
+valid_from: 1990-01-01
+is_active: true
 ```
 
 ## Datenstruktur
@@ -1253,29 +1265,36 @@ group_id: act:sp_basel_stadt
 
 | Attribut | Datentyp | Beschreibung |
 |----------|----------|--------------|
-| `id` | string | Eindeutiger Identifikator der Mitgliedschaft |
-| `person_id` | string | Referenz zur Person (lokale ID) |
-| `person_uri` | string | Referenz zur Person (Wikidata-ID) |
-| `group_id` | string | Referenz zur Gruppe (lokale ID) |
-| `group_uri` | string | Referenz zur Gruppe (lokale ID) |
-
+| `global_uri` | URI | Eindeutiger Identifikator der Mitgliedschaft |
 
 ### Optionale Felder
 
 | Attribut | Datentyp | Beschreibung |
 |----------|----------|--------------|
-| `role` | string | Rolle/Funktion innerhalb der Gruppe |
+| `concerned_person` | URI | Referenz zur Person (`global_uri`) |
+| `concerned_group` | URI | Referenz zur Gruppe (`global_uri`) |
+| `role_type` | RoleType | Rolle (`role_type_enum`, optional `label`) |
 | `valid_from` | date | Beginn der Mitgliedschaft |
-| `valid_until` | date | Ende der Mitgliedschaft |
+| `valid_through` | date | Ende der Mitgliedschaft |
 | `is_active` | boolean | Gibt an, ob die Mitgliedschaft derzeit aktiv ist |
 | `authorized_to_vote` | boolean | Stimmberechtigung (relevant für Parlamente) |
-| `datetime_updated` | datetime | Letzte Aktualisierung des Datensatzes |
+| `datetime_modified` | datetime | Letzte Aktualisierung des Datensatzes |
 | `datetime_created` | datetime | Erstellung des Datensatzes |
 
-## Rollen (role)
+## Rollen (`role_type`)
 
-Das Attribut `role` beschreibt die Funktion der Person in der Gruppe.
-Unterstützende Personen einen Gruppierung (Regierung/Rat) sind Mitglieder des Gremiums und werten über die Rolle wie (Sekretär/Sekretärin etc.)
+Das Attribut `role_type` beschreibt die Funktion der Person in der Gruppe. Standardisierte Werte über `RoleEnum` (`member`, `president`, `stellvertreter`, `other`); bei `other` zusätzlich `label` (z.B. «Sekretär», «Ersatzmitglied»).
+
+Unterstützende Personen einer Gruppierung (Regierung/Rat) sind Mitglieder des Gremiums; die konkrete Funktion wird über `role_type` ausgedrückt (z.B. Sekretär/Sekretärin).
+
+### RoleEnum im Schema
+
+| `role_type_enum` | Verwendung |
+|------------------|------------|
+| `member` | Reguläres Mitglied (Standard) |
+| `president` | Präsident/in, Vorsitz |
+| `stellvertreter` | Stellvertretung |
+| `other` | Weitere Rollen; `label` setzen (siehe Listen unten) |
 
 ### Typische Rollen in Parlamenten
 
@@ -1310,39 +1329,41 @@ Unterstützende Personen einen Gruppierung (Regierung/Rat) sind Mitglieder des G
 
 ## Zeitliche Validität
 
-### valid_from und valid_until
+### valid_from und valid_through
 
 Mitgliedschaften haben einen klar definierten Beginn und oft auch ein Ende:
 
 ```yaml
 # Parlamentsmandat mit fester Amtszeit
-id: act:membership_caroni_sr
-person_id: https://www.wikidata.org/wiki/Q493598
-group_id: act:staenderat
-role: Mitglied
+global_uri: act:membership_caroni_sr
+concerned_person: https://www.wikidata.org/wiki/Q493598
+concerned_group: act:staenderat
+role_type:
+  role_type_enum: member
 valid_from: 2015-12-07  # Amtsantritt nach Wahl
-valid_until: 2023-11-30  # Ende der Amtsperiode
+valid_through: 2023-11-30  # Ende der Amtsperiode
 authorized_to_vote: true
 ```
 
 ```yaml
 # Parteimitgliedschaft ohne Enddatum
-id: act:membership_riniker_fdp
-person_id: https://www.wikidata.org/wiki/Q77074968
-group_id: act:fdp_aargau
-role: Mitglied
+global_uri: act:membership_riniker_fdp
+concerned_person: https://www.wikidata.org/wiki/Q77074968
+concerned_group: act:fdp_aargau
+role_type:
+  role_type_enum: member
 valid_from: 2000-01-01
-# valid_until nicht gesetzt = noch aktiv
+# valid_through nicht gesetzt = noch aktiv
 is_active: true
 ```
 
 ### is_active
 
-Alternative oder Ergänzung zu `valid_from`/`valid_until`:
+Alternative oder Ergänzung zu `valid_from`/`valid_through`:
 
 - `true`: Mitgliedschaft ist derzeit aktiv
 - `false`: Mitgliedschaft ist inaktiv/beendet
-- Nicht gesetzt: Aktivität wird aus `valid_from`/`valid_until` abgeleitet
+- Nicht gesetzt: Aktivität wird aus `valid_from`/`valid_through` abgeleitet
 
 **Verwendung:**
 ```yaml
@@ -1353,7 +1374,7 @@ valid_from: 2019-01-01
 # Explizite Markierung als beendet
 is_active: false
 valid_from: 2015-01-01
-valid_until: 2019-12-31
+valid_through: 2019-12-31
 ```
 
 ## Stimmberechtigung (authorized_to_vote)
@@ -1374,15 +1395,20 @@ Das Attribut `authorized_to_vote` gibt an, ob die Person in der Gruppe stimmbere
 **Beispiele:**
 ```yaml
 # Stimmberechtigtes Mitglied
-role: Mitglied
+role_type:
+  role_type_enum: member
 authorized_to_vote: true
 
 # Nicht stimmberechtigtes Ersatzmitglied
-role: Ersatzmitglied
+role_type:
+  role_type_enum: other
+  label: Ersatzmitglied
 authorized_to_vote: false
 
 # Kommissionssekretär ohne Stimmrecht
-role: Sekretär
+role_type:
+  role_type_enum: other
+  label: Sekretär
 authorized_to_vote: false
 ```
 
@@ -1393,42 +1419,46 @@ Eine Person kann gleichzeitig mehrere Mitgliedschaften haben:
 ```yaml
 # Container-Struktur
 persons:
-  - id: https://www.wikidata.org/wiki/Q493598
+  - global_uri: https://www.wikidata.org/wiki/Q493598
     label: Andrea Caroni
 
 memberships:
   # Parteimitgliedschaft
-  - id: act:membership_caroni_fdp
-    person_id: https://www.wikidata.org/wiki/Q493598
-    group_id: act:fdp_appenzell
-    role: Mitglied
+  - global_uri: act:membership_caroni_fdp
+    concerned_person: https://www.wikidata.org/wiki/Q493598
+    concerned_group: act:fdp_appenzell
+    role_type:
+      role_type_enum: member
     valid_from: 1998-01-01
     is_active: true
 
   # Parlamentsmandat
-  - id: act:membership_caroni_sr
-    person_id: https://www.wikidata.org/wiki/Q493598
-    group_id: act:staenderat
-    role: Mitglied
+  - global_uri: act:membership_caroni_sr
+    concerned_person: https://www.wikidata.org/wiki/Q493598
+    concerned_group: act:staenderat
+    role_type:
+      role_type_enum: member
     valid_from: 2015-12-07
     authorized_to_vote: true
     is_active: true
 
   # Fraktionsmitgliedschaft
-  - id: act:membership_caroni_fdp_fraktion
-    person_id: https://www.wikidata.org/wiki/Q493598
-    group_id: act:fdp_fraktion_sr
-    role: Mitglied
+  - global_uri: act:membership_caroni_fdp_fraktion
+    concerned_person: https://www.wikidata.org/wiki/Q493598
+    concerned_group: act:fdp_fraktion_sr
+    role_type:
+      role_type_enum: member
     valid_from: 2015-12-07
     is_active: true
 
   # Kommissionsmitgliedschaft
-  - id: act:membership_caroni_rk_sr
-    person_id: https://www.wikidata.org/wiki/Q493598
-    group_id: act:rechtskommission_sr
-    role: Mitglied
+  - global_uri: act:membership_caroni_rk_sr
+    concerned_person: https://www.wikidata.org/wiki/Q493598
+    concerned_group: act:rechtskommission_sr
+    role_type:
+      role_type_enum: member
     valid_from: 2016-01-01
-    valid_until: 2019-12-31
+    valid_through: 2019-12-31
     authorized_to_vote: true
     is_active: false
 ```
@@ -1440,17 +1470,19 @@ Memberships können auch hierarchisch organisiert werden:
 ### Partei → Fraktion
 ```yaml
 # Person ist Mitglied einer Partei
-- id: act:membership_jans_sp
-  person_id: https://www.wikidata.org/wiki/Q813067
-  group_id: act:sp_schweiz
-  role: Mitglied
+- global_uri: act:membership_jans_sp
+  concerned_person: https://www.wikidata.org/wiki/Q813067
+  concerned_group: act:sp_schweiz
+  role_type:
+    role_type_enum: member
   valid_from: 1980-01-01
 
 # Person ist Mitglied der SP-Fraktion im Nationalrat
-- id: act:membership_jans_sp_fraktion
-  person_id: https://www.wikidata.org/wiki/Q813067
-  group_id: act:sp_fraktion_nr
-  role: Mitglied
+- global_uri: act:membership_jans_sp_fraktion
+  concerned_person: https://www.wikidata.org/wiki/Q813067
+  concerned_group: act:sp_fraktion_nr
+  role_type:
+    role_type_enum: member
   valid_from: 2010-12-06
 ```
 
@@ -1462,19 +1494,21 @@ Die Fraktion selbst hat eine `parent_groups`-Beziehung zur Partei (siehe Group-S
 
 ```yaml
 # SP-Mitgliedschaft (beendet)
-- id: act:membership_mueller_sp
-  person_id: act:person_mueller
-  group_id: act:sp_zuerich
-  role: Mitglied
+- global_uri: act:membership_mueller_sp
+  concerned_person: act:person_mueller
+  concerned_group: act:sp_zuerich
+  role_type:
+    role_type_enum: member
   valid_from: 2010-01-01
-  valid_until: 2018-06-30
+  valid_through: 2018-06-30
   is_active: false
 
 # Grüne-Mitgliedschaft (neu)
-- id: act:membership_mueller_gruene
-  person_id: act:person_mueller
-  group_id: act:gruene_zuerich
-  role: Mitglied
+- global_uri: act:membership_mueller_gruene
+  concerned_person: act:person_mueller
+  concerned_group: act:gruene_zuerich
+  role_type:
+    role_type_enum: member
   valid_from: 2018-07-01
   is_active: true
 ```
@@ -1483,18 +1517,20 @@ Die Fraktion selbst hat eine `parent_groups`-Beziehung zur Partei (siehe Group-S
 
 ```yaml
 # Reguläres Mitglied
-- id: act:membership_schmidt_kommission_1
-  person_id: act:person_schmidt
-  group_id: act:sik_nr
-  role: Mitglied
+- global_uri: act:membership_schmidt_kommission_1
+  concerned_person: act:person_schmidt
+  concerned_group: act:sik_nr
+  role_type:
+    role_type_enum: member
   valid_from: 2016-01-01
-  valid_until: 2019-12-31
+  valid_through: 2019-12-31
 
 # Präsidentin (Nachfolge-Membership)
-- id: act:membership_schmidt_kommission_2
-  person_id: act:person_schmidt
-  group_id: act:sik_nr
-  role: Präsidentin
+- global_uri: act:membership_schmidt_kommission_2
+  concerned_person: act:person_schmidt
+  concerned_group: act:sik_nr
+  role_type:
+    role_type_enum: president
   valid_from: 2020-01-01
   is_active: true
 ```
@@ -1504,23 +1540,25 @@ Die Fraktion selbst hat eine `parent_groups`-Beziehung zur Partei (siehe Group-S
 ### Verknüpfung im Container
 
 ```yaml
-id: act:political_actors_dataset
+global_uri: act:political_actors_dataset
 persons:
-  - id: https://www.wikidata.org/wiki/Q813067
+  - global_uri: https://www.wikidata.org/wiki/Q813067
     label: Beat Jans
     # ... weitere Person-Attribute
 
 groups:
-  - id: act:sp_basel_stadt
-    group_type: party
-    name: [{text: "SP Basel-Stadt", language: de}]
+  - global_uri: act:sp_basel_stadt
+    group_type:
+      group_type_enum: party
+    label: SP Basel-Stadt
     # ... weitere Group-Attribute
 
 memberships:
-  - id: act:membership_jans_sp
-    person_id: https://www.wikidata.org/wiki/Q813067
-    group_id: act:sp_basel_stadt
-    role: Mitglied
+  - global_uri: act:membership_jans_sp
+    concerned_person: https://www.wikidata.org/wiki/Q813067
+    concerned_group: act:sp_basel_stadt
+    role_type:
+      role_type_enum: member
     valid_from: 1990-01-01
     is_active: true
 ```
@@ -1532,9 +1570,9 @@ memberships:
 # Alle Mitglieder der SP Basel-Stadt
 SELECT ?person ?role WHERE {
   ?membership a act:Membership ;
-    act:group_id act:sp_basel_stadt ;
-    act:person_id ?person ;
-    act:role ?role ;
+    act:concernedGroup act:sp_basel_stadt ;
+    act:concernedPerson ?person ;
+    act:roleType ?role ;
     act:isActive true .
 }
 ```
@@ -1544,9 +1582,9 @@ SELECT ?person ?role WHERE {
 # Alle Gruppen von Beat Jans
 SELECT ?group ?role WHERE {
   ?membership a act:Membership ;
-    act:person_id <https://www.wikidata.org/wiki/Q813067> ;
-    act:group_id ?group ;
-    act:role ?role ;
+    act:concernedPerson <https://www.wikidata.org/wiki/Q813067> ;
+    act:concernedGroup ?group ;
+    act:roleType ?role ;
     act:isActive true .
 }
 ```
@@ -1556,38 +1594,41 @@ SELECT ?group ?role WHERE {
 ### Beispiel 1: Nationalratsmandat
 
 ```yaml
-id: act:membership_riniker_nr
-person_id: https://www.wikidata.org/wiki/Q77074968
-group_id: act:nationalrat
-role: Mitglied
+global_uri: act:membership_riniker_nr
+concerned_person: https://www.wikidata.org/wiki/Q77074968
+concerned_group: act:nationalrat
+role_type:
+  role_type_enum: member
 valid_from: 2019-12-02  # Amtsantritt nach Wahl 2019
-valid_until: 2023-11-30  # Ende der Legislaturperiode
+valid_through: 2023-11-30  # Ende der Legislaturperiode
 authorized_to_vote: true
 is_active: false  # Legislatur ist beendet
 datetime_created: 2019-12-02T00:00:00Z
-datetime_updated: 2023-11-30T00:00:00Z
+datetime_modified: 2023-11-30T00:00:00Z
 ```
 
 ### Beispiel 2: Kommissionsmitgliedschaft mit Präsidium
 
 ```yaml
 # Reguläres Mitglied
-id: act:membership_caroni_rk_1
-person_id: https://www.wikidata.org/wiki/Q493598
-group_id: act:rechtskommission_sr
-role: Mitglied
+global_uri: act:membership_caroni_rk_1
+concerned_person: https://www.wikidata.org/wiki/Q493598
+concerned_group: act:rechtskommission_sr
+role_type:
+  role_type_enum: member
 valid_from: 2016-01-01
-valid_until: 2019-12-31
+valid_through: 2019-12-31
 authorized_to_vote: true
 is_active: false
 
 # Präsident
-id: act:membership_caroni_rk_2
-person_id: https://www.wikidata.org/wiki/Q493598
-group_id: act:rechtskommission_sr
-role: Präsident
+global_uri: act:membership_caroni_rk_2
+concerned_person: https://www.wikidata.org/wiki/Q493598
+concerned_group: act:rechtskommission_sr
+role_type:
+  role_type_enum: president
 valid_from: 2020-01-01
-valid_until: 2023-12-31
+valid_through: 2023-12-31
 authorized_to_vote: true
 is_active: false
 ```
@@ -1596,38 +1637,44 @@ is_active: false
 
 ```yaml
 # Bundesebene
-- id: act:membership_jans_sp_ch
-  person_id: https://www.wikidata.org/wiki/Q813067
-  group_id: act:sp_schweiz
-  role: Mitglied
+- global_uri: act:membership_jans_sp_ch
+  concerned_person: https://www.wikidata.org/wiki/Q813067
+  concerned_group: act:sp_schweiz
+  role_type:
+    role_type_enum: member
   valid_from: 1980-01-01
   is_active: true
 
 # Kantonsebene
-- id: act:membership_jans_sp_bs
-  person_id: https://www.wikidata.org/wiki/Q813067
-  group_id: act:sp_basel_stadt
-  role: Mitglied
+- global_uri: act:membership_jans_sp_bs
+  concerned_person: https://www.wikidata.org/wiki/Q813067
+  concerned_group: act:sp_basel_stadt
+  role_type:
+    role_type_enum: member
   valid_from: 1980-01-01
   is_active: true
 
 # Gemeinde (optional)
-- id: act:membership_jans_sp_basel
-  person_id: https://www.wikidata.org/wiki/Q813067
-  group_id: act:sp_stadt_basel
-  role: Vorstandsmitglied
+- global_uri: act:membership_jans_sp_basel
+  concerned_person: https://www.wikidata.org/wiki/Q813067
+  concerned_group: act:sp_stadt_basel
+  role_type:
+    role_type_enum: other
+    label: Vorstandsmitglied
   valid_from: 2000-01-01
-  valid_until: 2010-12-31
+  valid_through: 2010-12-31
   is_active: false
 ```
 
 ### Beispiel 4: Bundesrat
 
 ```yaml
-id: act:membership_luisier_vd_regierung
-person_id: https://www.wikidata.org/wiki/Q24699807
-group_id: act:regierungsrat_vaud
-role: Conseillère d'État
+global_uri: act:membership_luisier_vd_regierung
+concerned_person: https://www.wikidata.org/wiki/Q24699807
+concerned_group: act:regierungsrat_vaud
+role_type:
+  role_type_enum: other
+  label: Conseillère d'État
 valid_from: 2022-07-01
 is_active: true
 authorized_to_vote: true
@@ -1637,12 +1684,13 @@ datetime_created: 2022-07-01T00:00:00Z
 ### Beispiel 5: Fraktionsmitgliedschaft
 
 ```yaml
-id: act:membership_riniker_fdp_fraktion
-person_id: https://www.wikidata.org/wiki/Q77074968
-group_id: act:fdp_fraktion_nr
-role: Mitglied
+global_uri: act:membership_riniker_fdp_fraktion
+concerned_person: https://www.wikidata.org/wiki/Q77074968
+concerned_group: act:fdp_fraktion_nr
+role_type:
+  role_type_enum: member
 valid_from: 2019-12-02
-valid_until: 2023-11-30
+valid_through: 2023-11-30
 is_active: false
 datetime_created: 2019-12-02T00:00:00Z
 ```
@@ -1650,12 +1698,14 @@ datetime_created: 2019-12-02T00:00:00Z
 ### Beispiel 6: Ersatzmitglied
 
 ```yaml
-id: act:membership_mueller_gpk_ersatz
-person_id: act:person_mueller
-group_id: act:gpk_nr
-role: Ersatzmitglied
+global_uri: act:membership_mueller_gpk_ersatz
+concerned_person: act:person_mueller
+concerned_group: act:gpk_nr
+role_type:
+  role_type_enum: other
+  label: Ersatzmitglied
 valid_from: 2020-01-01
-valid_until: 2023-12-31
+valid_through: 2023-12-31
 authorized_to_vote: false  # Ersatzmitglieder sind normalerweise nicht stimmberechtigt
 is_active: false
 ```
@@ -1663,10 +1713,12 @@ is_active: false
 ### Beispiel 7: Delegation
 
 ```yaml
-id: act:membership_caroni_delegation
-person_id: https://www.wikidata.org/wiki/Q493598
-group_id: act:delegation_europarat
-role: Delegierter
+global_uri: act:membership_caroni_delegation
+concerned_person: https://www.wikidata.org/wiki/Q493598
+concerned_group: act:delegation_europarat
+role_type:
+  role_type_enum: other
+  label: Delegierter
 valid_from: 2016-01-01
 is_active: true
 authorized_to_vote: true
@@ -1676,11 +1728,11 @@ authorized_to_vote: true
 
 ### Aktive Mitgliedschaften
 
-Filtern nach `is_active: true` oder `valid_until` nicht gesetzt:
+Filtern nach `is_active: true` oder `valid_through` nicht gesetzt:
 ```yaml
 SELECT * FROM memberships
 WHERE is_active = true
-OR (valid_from <= CURRENT_DATE AND (valid_until IS NULL OR valid_until >= CURRENT_DATE))
+OR (valid_from <= CURRENT_DATE AND (valid_through IS NULL OR valid_through >= CURRENT_DATE))
 ```
 
 ### Historische Analysen

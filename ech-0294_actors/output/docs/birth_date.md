@@ -19,8 +19,6 @@ __
 
 
 URI: [schema:birthDate](http://schema.org/birthDate)
-Alias: birth_date
-
 <!-- no inheritance hierarchy -->
 
 
@@ -100,7 +98,6 @@ description: '[de] Genaues Geburtsdatum.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: schema:birthDate
-alias: birth_date
 domain_of:
 - Person
 range: date

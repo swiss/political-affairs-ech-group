@@ -19,8 +19,6 @@ __
 
 
 URI: [schema:deathDate](http://schema.org/deathDate)
-Alias: death_date
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: '[de] Genaues Todesdatum.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: schema:deathDate
-alias: death_date
 domain_of:
 - Person
 range: date

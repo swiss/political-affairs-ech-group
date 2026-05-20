@@ -19,8 +19,6 @@ __
 
 
 URI: [act:addressURI](https://ld.ech.ch/schema/0294/actors/addressURI)
-Alias: address_uri
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: '[de] URI der Adresse.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:addressURI
-alias: address_uri
 domain_of:
 - Address
 range: uriorcurie

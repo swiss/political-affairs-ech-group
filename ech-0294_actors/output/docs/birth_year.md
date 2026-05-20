@@ -19,8 +19,6 @@ __
 
 
 URI: [act:birthYear](https://ld.ech.ch/schema/0294/actors/birthYear)
-Alias: birth_year
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: '[de] Geburtsjahr.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:birthYear
-alias: birth_year
 domain_of:
 - Person
 range: integer

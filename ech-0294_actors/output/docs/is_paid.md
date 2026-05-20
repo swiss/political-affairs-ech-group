@@ -19,8 +19,6 @@ __
 
 
 URI: [act:isPaid](https://ld.ech.ch/schema/0294/actors/isPaid)
-Alias: is_paid
-
 <!-- no inheritance hierarchy -->
 
 
@@ -31,8 +29,8 @@ Alias: is_paid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Occupation](Occupation.md) | [de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19... |  no  |
 | [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
+| [Occupation](Occupation.md) | [de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19... |  no  |
 
 
 
@@ -100,7 +98,6 @@ description: '[de] Gibt an, ob die Position bezahlt ist.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:isPaid
-alias: is_paid
 domain_of:
 - InterestLink
 - Occupation

@@ -19,8 +19,6 @@ __
 
 
 URI: [act:address](https://ld.ech.ch/schema/0294/actors/address)
-Alias: addresses
-
 <!-- no inheritance hierarchy -->
 
 
@@ -31,8 +29,8 @@ Alias: addresses
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 | [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
+| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 
 
 
@@ -101,7 +99,6 @@ description: '[de] Adressen mit Typ (privat, geschäftlich, lokal).
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:address
-alias: addresses
 domain_of:
 - Person
 - Group

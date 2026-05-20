@@ -19,8 +19,6 @@ __
 
 
 URI: [act:group](https://ld.ech.ch/schema/0294/actors/group)
-Alias: groups
-
 <!-- no inheritance hierarchy -->
 
 
@@ -100,7 +98,6 @@ description: '[de] Sammlung von Gruppen.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:group
-alias: groups
 domain_of:
 - Container
 range: Group

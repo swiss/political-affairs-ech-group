@@ -46,7 +46,7 @@ act:swiss_politicians_example a act:Container ;
             schema1:validFrom "1964-01-01"^^xsd:date ;
             mcm:isCurrent true ;
             mcm:label "Politiker" ] ;
-    act:picture "https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg"^^xsd:anyURI ;
+    act:picture <https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg> ;
     act:training [ a act:Training ;
             mcm:value "dipl. nat. ETH" ;
             act:trainingType "uni" ] .

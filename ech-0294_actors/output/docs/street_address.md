@@ -19,8 +19,6 @@ __
 
 
 URI: [act:streetAddress](https://ld.ech.ch/schema/0294/actors/streetAddress)
-Alias: street_address
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: '[de] Strassenadresse.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:streetAddress
-alias: street_address
 domain_of:
 - Address
 range: string

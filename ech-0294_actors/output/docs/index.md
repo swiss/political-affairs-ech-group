@@ -28,6 +28,7 @@ Name: actors-schema
 | [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |
 | [IsEventWithDuration](IsEventWithDuration.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder V... |
 | [IsInstantaneousEvent](IsInstantaneousEvent.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereign... |
+| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |
 | [LanguageProficiency](LanguageProficiency.md) | [de] Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um d... |
 | [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |
 | [MultilingualValue](MultilingualValue.md) | [de] Ein mehrsprachiger String mit Angabe der Sprache |
@@ -115,6 +116,7 @@ Name: actors-schema
 | [postal_code](postal_code.md) | [de] Postleitzahl |
 | [postal_locality](postal_locality.md) | [de] Ort |
 | [pronouns](pronouns.md) | [de] Von der Person verwendete Pronomen |
+| [remark](remark.md) | [de] Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen Kontext ... |
 | [role_label](role_label.md) | [en] Descriptive label for the role when 'other' is selected in the RoleEnum |
 | [role_type](role_type.md) | [en] Role of the person in the membership or function |
 | [role_type_enum](role_type_enum.md) | [en] Role of the person in the membership or function |

@@ -19,8 +19,6 @@ __
 
 
 URI: [act:organizationUid](https://ld.ech.ch/schema/0294/actors/organizationUid)
-Alias: organization_uid
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: '[en] UID of the organization (for analysis with NOGA codes, etc.).
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:organizationUid
-alias: organization_uid
 domain_of:
 - InterestLink
 range: string

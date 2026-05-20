@@ -19,8 +19,6 @@ __
 
 
 URI: [act:organizationLabel](https://ld.ech.ch/schema/0294/actors/organizationLabel)
-Alias: organization_label
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: '[en] Label of the organization.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:organizationLabel
-alias: organization_label
 domain_of:
 - InterestLink
 range: string

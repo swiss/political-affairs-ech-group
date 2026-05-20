@@ -19,8 +19,6 @@ __
 
 
 URI: [act:interestLink](https://ld.ech.ch/schema/0294/actors/interestLink)
-Alias: interest_links
-
 <!-- no inheritance hierarchy -->
 
 
@@ -101,7 +99,6 @@ description: '[de] Sammlung von Interessenbindungen.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:interestLink
-alias: interest_links
 domain_of:
 - Container
 - Person

@@ -19,8 +19,6 @@ __
 
 
 URI: [act:groupTypeEnum](https://ld.ech.ch/schema/0294/actors/groupTypeEnum)
-Alias: group_type_enum
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: '[de] Link zum kontrollierten Vokabular für Gruppentypen.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:groupTypeEnum
-alias: group_type_enum
 domain_of:
 - GroupType
 range: GroupTypeEnum

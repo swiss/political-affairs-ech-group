@@ -19,8 +19,6 @@ __
 
 
 URI: [mcm:dateBeginPlanned](https://ld.ech.ch/schema/0292/meta-common/dateBeginPlanned)
-Alias: date_begin_planned
-
 <!-- no inheritance hierarchy -->
 
 
@@ -32,6 +30,7 @@ Alias: date_begin_planned
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [IsEventWithDuration](IsEventWithDuration.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder V... |  no  |
+| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |  no  |
 
 
 
@@ -99,7 +98,6 @@ description: '[de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:dateBeginPlanned
-alias: date_begin_planned
 domain_of:
 - IsEventWithDuration
 range: date

@@ -19,8 +19,6 @@ __
 
 
 URI: [act:trainingType](https://ld.ech.ch/schema/0294/actors/trainingType)
-Alias: training_type
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: '[de] Typ der Ausbildung oder Bildung.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:trainingType
-alias: training_type
 domain_of:
 - Training
 range: TrainingTypeEnum

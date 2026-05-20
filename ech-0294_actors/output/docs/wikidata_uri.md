@@ -19,8 +19,6 @@ __
 
 
 URI: [mcm:wikidataUri](https://ld.ech.ch/schema/0292/meta-common/wikidataUri)
-Alias: wikidata_uri
-
 <!-- no inheritance hierarchy -->
 
 
@@ -32,11 +30,12 @@ Alias: wikidata_uri
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [HasIdentification](HasIdentification.md) | [de] Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Ve... |  no  |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 | [Container](Container.md) | [de] Container für politische Akteure, Gruppen und Beziehungen |  no  |
-| [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |  no  |
 | [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
+| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |  no  |
 | [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
+| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |  no  |
 
 
 
@@ -106,7 +105,6 @@ description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:wikidataUri
-alias: wikidata_uri
 domain_of:
 - HasIdentification
 range: uriorcurie
