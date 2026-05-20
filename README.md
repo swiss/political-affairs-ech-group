@@ -9,11 +9,11 @@ The specialist group is divided into different subgroups. Each subgroup is respo
 | Subgroup | Next Meeting | Call URL |
 |-----------|------------------|-----------|
 | eCH-0292: [Metaprozesse zu politischen Geschäften (meta)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0292_meta) | Mo 01.06.2026, 15:00–16:00 | [Teams](https://teams.microsoft.com/meet/3879512933733?p=rTdaRaFWPi0JWENkuE)
-| eCH-0293: [Öffentlicher Ratsbetrieb (operations)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0293_operations) | Do 26.03.2026, 15:00–16:00 | [Teams](https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZDA4YzY1N2EtMzdiZi00ODNkLWEzMzAtODU1ZDgyYTg3OTBj%40thread.v2/0?context=%7b%22Tid%22%3a%22cb96f99a-a111-42d7-9f65-e111197ba4bb%22%2c%22Oid%22%3a%2218f87456-49c9-44ee-8a1a-4744fc430bc1%22%7d) |
-| eCH-0294: [Politische Akteure: Personen, Gruppen und Organe (actors)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0294_actors) | Mi 18.03.2026, 13:00–14:00 | [Teams](https://teams.microsoft.com/meet/35681497920980?p=Ot1sZHt9STHwGBCgRr) |
+| eCH-0293: [Öffentlicher Ratsbetrieb (operations)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0293_operations) | Mi 20.05.2026, 15:00–16:00 (alle 2 Wochen) | [Teams](https://teams.microsoft.com/meet/343723057878048?p=vtG4KYLW2wX5wR7T0K) |
+| eCH-0294: [Politische Akteure: Personen, Gruppen und Organe (actors)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0294_actors) | Mi 20.05.2026, 13:05–13:55 (alle 3 Wochen) | [Teams](https://teams.microsoft.com/meet/320265146373845?p=1feam13FJchomjU8mk) |
 | eCH-0295: [Parlamentarische Geschäfte (affairs)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0295_affairs) | – | – |
-| eCH-0296: [Erlasse und Gesetzestexte (laws)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0296_laws) | – | – |
-| eCH-0297: [Öffentliche Konsultationen (consultations)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0297_consultations) | Mo 23.03.2026, 11:00 | [Teams](https://m.teamspower.cloud/r/fkTh9Y1HHnMw6cdbxUVaYsdNUeV5wAXA) |
+| eCH-0296: [Erlasse und Gesetzestexte (laws)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0296_laws) | Mi 20.05.2026, 14:00–15:00 (alle 4 Wochen) | [Teams](https://teams.live.com/meet/935878754152?p=KQFraekT44wc13UZxd) |
+| eCH-0297: [Öffentliche Konsultationen (consultations)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0297_consultations) | Mo 25.05.2026, 11:00–12:00 (alle 2 Wochen) | [Teams](https://m.teamspower.cloud/r/fkTh9Y1HHnMw6cdbxUVaYsdNUeV5wAXA) |
 
 ## Data-Centric Approach
 
