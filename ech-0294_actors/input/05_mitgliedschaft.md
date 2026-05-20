@@ -76,10 +76,20 @@ is_active: true
 | `datetime_modified` | datetime | Letzte Aktualisierung des Datensatzes |
 | `datetime_created` | datetime | Erstellung des Datensatzes |
 
-## Rollen (role)
+## Rollen (`role_type`)
 
-Das Attribut `role` beschreibt die Funktion der Person in der Gruppe.
-Unterstützende Personen einen Gruppierung (Regierung/Rat) sind Mitglieder des Gremiums und werten über die Rolle wie (Sekretär/Sekretärin etc.)
+Das Attribut `role_type` beschreibt die Funktion der Person in der Gruppe. Standardisierte Werte über `RoleEnum` (`member`, `president`, `stellvertreter`, `other`); bei `other` zusätzlich `label` (z.B. «Sekretär», «Ersatzmitglied»).
+
+Unterstützende Personen einer Gruppierung (Regierung/Rat) sind Mitglieder des Gremiums; die konkrete Funktion wird über `role_type` ausgedrückt (z.B. Sekretär/Sekretärin).
+
+### RoleEnum im Schema
+
+| `role_type_enum` | Verwendung |
+|------------------|------------|
+| `member` | Reguläres Mitglied (Standard) |
+| `president` | Präsident/in, Vorsitz |
+| `stellvertreter` | Stellvertretung |
+| `other` | Weitere Rollen; `label` setzen (siehe Listen unten) |
 
 ### Typische Rollen in Parlamenten
 
