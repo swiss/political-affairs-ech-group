@@ -124,39 +124,41 @@ Unterstützende Personen einer Gruppierung (Regierung/Rat) sind Mitglieder des G
 
 ## Zeitliche Validität
 
-### valid_from und valid_until
+### valid_from und valid_through
 
 Mitgliedschaften haben einen klar definierten Beginn und oft auch ein Ende:
 
 ```yaml
 # Parlamentsmandat mit fester Amtszeit
-id: act:membership_caroni_sr
-person_id: https://www.wikidata.org/wiki/Q493598
-group_id: act:staenderat
-role: Mitglied
+global_uri: act:membership_caroni_sr
+concerned_person: https://www.wikidata.org/wiki/Q493598
+concerned_group: act:staenderat
+role_type:
+  role_type_enum: member
 valid_from: 2015-12-07  # Amtsantritt nach Wahl
-valid_until: 2023-11-30  # Ende der Amtsperiode
+valid_through: 2023-11-30  # Ende der Amtsperiode
 authorized_to_vote: true
 ```
 
 ```yaml
 # Parteimitgliedschaft ohne Enddatum
-id: act:membership_riniker_fdp
-person_id: https://www.wikidata.org/wiki/Q77074968
-group_id: act:fdp_aargau
-role: Mitglied
+global_uri: act:membership_riniker_fdp
+concerned_person: https://www.wikidata.org/wiki/Q77074968
+concerned_group: act:fdp_aargau
+role_type:
+  role_type_enum: member
 valid_from: 2000-01-01
-# valid_until nicht gesetzt = noch aktiv
+# valid_through nicht gesetzt = noch aktiv
 is_active: true
 ```
 
 ### is_active
 
-Alternative oder Ergänzung zu `valid_from`/`valid_until`:
+Alternative oder Ergänzung zu `valid_from`/`valid_through`:
 
 - `true`: Mitgliedschaft ist derzeit aktiv
 - `false`: Mitgliedschaft ist inaktiv/beendet
-- Nicht gesetzt: Aktivität wird aus `valid_from`/`valid_until` abgeleitet
+- Nicht gesetzt: Aktivität wird aus `valid_from`/`valid_through` abgeleitet
 
 **Verwendung:**
 ```yaml
@@ -167,7 +169,7 @@ valid_from: 2019-01-01
 # Explizite Markierung als beendet
 is_active: false
 valid_from: 2015-01-01
-valid_until: 2019-12-31
+valid_through: 2019-12-31
 ```
 
 ## Stimmberechtigung (authorized_to_vote)
@@ -188,15 +190,20 @@ Das Attribut `authorized_to_vote` gibt an, ob die Person in der Gruppe stimmbere
 **Beispiele:**
 ```yaml
 # Stimmberechtigtes Mitglied
-role: Mitglied
+role_type:
+  role_type_enum: member
 authorized_to_vote: true
 
 # Nicht stimmberechtigtes Ersatzmitglied
-role: Ersatzmitglied
+role_type:
+  role_type_enum: other
+  label: Ersatzmitglied
 authorized_to_vote: false
 
 # Kommissionssekretär ohne Stimmrecht
-role: Sekretär
+role_type:
+  role_type_enum: other
+  label: Sekretär
 authorized_to_vote: false
 ```
 
@@ -207,42 +214,46 @@ Eine Person kann gleichzeitig mehrere Mitgliedschaften haben:
 ```yaml
 # Container-Struktur
 persons:
-  - id: https://www.wikidata.org/wiki/Q493598
+  - global_uri: https://www.wikidata.org/wiki/Q493598
     label: Andrea Caroni
 
 memberships:
   # Parteimitgliedschaft
-  - id: act:membership_caroni_fdp
-    person_id: https://www.wikidata.org/wiki/Q493598
-    group_id: act:fdp_appenzell
-    role: Mitglied
+  - global_uri: act:membership_caroni_fdp
+    concerned_person: https://www.wikidata.org/wiki/Q493598
+    concerned_group: act:fdp_appenzell
+    role_type:
+      role_type_enum: member
     valid_from: 1998-01-01
     is_active: true
 
   # Parlamentsmandat
-  - id: act:membership_caroni_sr
-    person_id: https://www.wikidata.org/wiki/Q493598
-    group_id: act:staenderat
-    role: Mitglied
+  - global_uri: act:membership_caroni_sr
+    concerned_person: https://www.wikidata.org/wiki/Q493598
+    concerned_group: act:staenderat
+    role_type:
+      role_type_enum: member
     valid_from: 2015-12-07
     authorized_to_vote: true
     is_active: true
 
   # Fraktionsmitgliedschaft
-  - id: act:membership_caroni_fdp_fraktion
-    person_id: https://www.wikidata.org/wiki/Q493598
-    group_id: act:fdp_fraktion_sr
-    role: Mitglied
+  - global_uri: act:membership_caroni_fdp_fraktion
+    concerned_person: https://www.wikidata.org/wiki/Q493598
+    concerned_group: act:fdp_fraktion_sr
+    role_type:
+      role_type_enum: member
     valid_from: 2015-12-07
     is_active: true
 
   # Kommissionsmitgliedschaft
-  - id: act:membership_caroni_rk_sr
-    person_id: https://www.wikidata.org/wiki/Q493598
-    group_id: act:rechtskommission_sr
-    role: Mitglied
+  - global_uri: act:membership_caroni_rk_sr
+    concerned_person: https://www.wikidata.org/wiki/Q493598
+    concerned_group: act:rechtskommission_sr
+    role_type:
+      role_type_enum: member
     valid_from: 2016-01-01
-    valid_until: 2019-12-31
+    valid_through: 2019-12-31
     authorized_to_vote: true
     is_active: false
 ```
@@ -254,17 +265,19 @@ Memberships können auch hierarchisch organisiert werden:
 ### Partei → Fraktion
 ```yaml
 # Person ist Mitglied einer Partei
-- id: act:membership_jans_sp
-  person_id: https://www.wikidata.org/wiki/Q813067
-  group_id: act:sp_schweiz
-  role: Mitglied
+- global_uri: act:membership_jans_sp
+  concerned_person: https://www.wikidata.org/wiki/Q813067
+  concerned_group: act:sp_schweiz
+  role_type:
+    role_type_enum: member
   valid_from: 1980-01-01
 
 # Person ist Mitglied der SP-Fraktion im Nationalrat
-- id: act:membership_jans_sp_fraktion
-  person_id: https://www.wikidata.org/wiki/Q813067
-  group_id: act:sp_fraktion_nr
-  role: Mitglied
+- global_uri: act:membership_jans_sp_fraktion
+  concerned_person: https://www.wikidata.org/wiki/Q813067
+  concerned_group: act:sp_fraktion_nr
+  role_type:
+    role_type_enum: member
   valid_from: 2010-12-06
 ```
 
@@ -276,19 +289,21 @@ Die Fraktion selbst hat eine `parent_groups`-Beziehung zur Partei (siehe Group-S
 
 ```yaml
 # SP-Mitgliedschaft (beendet)
-- id: act:membership_mueller_sp
-  person_id: act:person_mueller
-  group_id: act:sp_zuerich
-  role: Mitglied
+- global_uri: act:membership_mueller_sp
+  concerned_person: act:person_mueller
+  concerned_group: act:sp_zuerich
+  role_type:
+    role_type_enum: member
   valid_from: 2010-01-01
-  valid_until: 2018-06-30
+  valid_through: 2018-06-30
   is_active: false
 
 # Grüne-Mitgliedschaft (neu)
-- id: act:membership_mueller_gruene
-  person_id: act:person_mueller
-  group_id: act:gruene_zuerich
-  role: Mitglied
+- global_uri: act:membership_mueller_gruene
+  concerned_person: act:person_mueller
+  concerned_group: act:gruene_zuerich
+  role_type:
+    role_type_enum: member
   valid_from: 2018-07-01
   is_active: true
 ```
@@ -297,18 +312,20 @@ Die Fraktion selbst hat eine `parent_groups`-Beziehung zur Partei (siehe Group-S
 
 ```yaml
 # Reguläres Mitglied
-- id: act:membership_schmidt_kommission_1
-  person_id: act:person_schmidt
-  group_id: act:sik_nr
-  role: Mitglied
+- global_uri: act:membership_schmidt_kommission_1
+  concerned_person: act:person_schmidt
+  concerned_group: act:sik_nr
+  role_type:
+    role_type_enum: member
   valid_from: 2016-01-01
-  valid_until: 2019-12-31
+  valid_through: 2019-12-31
 
 # Präsidentin (Nachfolge-Membership)
-- id: act:membership_schmidt_kommission_2
-  person_id: act:person_schmidt
-  group_id: act:sik_nr
-  role: Präsidentin
+- global_uri: act:membership_schmidt_kommission_2
+  concerned_person: act:person_schmidt
+  concerned_group: act:sik_nr
+  role_type:
+    role_type_enum: president
   valid_from: 2020-01-01
   is_active: true
 ```
@@ -318,27 +335,30 @@ Die Fraktion selbst hat eine `parent_groups`-Beziehung zur Partei (siehe Group-S
 ### Verknüpfung im Container
 
 ```yaml
-id: act:political_actors_dataset
+global_uri: act:political_actors_dataset
 persons:
-  - id: https://www.wikidata.org/wiki/Q813067
+  - global_uri: https://www.wikidata.org/wiki/Q813067
     label: Beat Jans
     # ... weitere Person-Attribute
 
 groups:
-  - id: act:sp_basel_stadt
-    group_type: party
-    name: [{text: "SP Basel-Stadt", language: de}]
+  - global_uri: act:sp_basel_stadt
+    group_type:
+      group_type_enum: party
+    label: SP Basel-Stadt
     # ... weitere Group-Attribute
 
 memberships:
-  - id: act:membership_jans_sp
-    person_id: https://www.wikidata.org/wiki/Q813067
-    group_id: act:sp_basel_stadt
-    role: Mitglied
+  - global_uri: act:membership_jans_sp
+    concerned_person: https://www.wikidata.org/wiki/Q813067
+    concerned_group: act:sp_basel_stadt
+    role_type:
+      role_type_enum: member
     valid_from: 1990-01-01
     is_active: true
 ```
 
+### Auswertungen
 ### Auswertungen
 
 **Nach Gruppe:**
@@ -370,38 +390,41 @@ SELECT ?group ?role WHERE {
 ### Beispiel 1: Nationalratsmandat
 
 ```yaml
-id: act:membership_riniker_nr
-person_id: https://www.wikidata.org/wiki/Q77074968
-group_id: act:nationalrat
-role: Mitglied
+global_uri: act:membership_riniker_nr
+concerned_person: https://www.wikidata.org/wiki/Q77074968
+concerned_group: act:nationalrat
+role_type:
+  role_type_enum: member
 valid_from: 2019-12-02  # Amtsantritt nach Wahl 2019
-valid_until: 2023-11-30  # Ende der Legislaturperiode
+valid_through: 2023-11-30  # Ende der Legislaturperiode
 authorized_to_vote: true
 is_active: false  # Legislatur ist beendet
 datetime_created: 2019-12-02T00:00:00Z
-datetime_updated: 2023-11-30T00:00:00Z
+datetime_modified: 2023-11-30T00:00:00Z
 ```
 
 ### Beispiel 2: Kommissionsmitgliedschaft mit Präsidium
 
 ```yaml
 # Reguläres Mitglied
-id: act:membership_caroni_rk_1
-person_id: https://www.wikidata.org/wiki/Q493598
-group_id: act:rechtskommission_sr
-role: Mitglied
+global_uri: act:membership_caroni_rk_1
+concerned_person: https://www.wikidata.org/wiki/Q493598
+concerned_group: act:rechtskommission_sr
+role_type:
+  role_type_enum: member
 valid_from: 2016-01-01
-valid_until: 2019-12-31
+valid_through: 2019-12-31
 authorized_to_vote: true
 is_active: false
 
 # Präsident
-id: act:membership_caroni_rk_2
-person_id: https://www.wikidata.org/wiki/Q493598
-group_id: act:rechtskommission_sr
-role: Präsident
+global_uri: act:membership_caroni_rk_2
+concerned_person: https://www.wikidata.org/wiki/Q493598
+concerned_group: act:rechtskommission_sr
+role_type:
+  role_type_enum: president
 valid_from: 2020-01-01
-valid_until: 2023-12-31
+valid_through: 2023-12-31
 authorized_to_vote: true
 is_active: false
 ```
@@ -410,38 +433,44 @@ is_active: false
 
 ```yaml
 # Bundesebene
-- id: act:membership_jans_sp_ch
-  person_id: https://www.wikidata.org/wiki/Q813067
-  group_id: act:sp_schweiz
-  role: Mitglied
+- global_uri: act:membership_jans_sp_ch
+  concerned_person: https://www.wikidata.org/wiki/Q813067
+  concerned_group: act:sp_schweiz
+  role_type:
+    role_type_enum: member
   valid_from: 1980-01-01
   is_active: true
 
 # Kantonsebene
-- id: act:membership_jans_sp_bs
-  person_id: https://www.wikidata.org/wiki/Q813067
-  group_id: act:sp_basel_stadt
-  role: Mitglied
+- global_uri: act:membership_jans_sp_bs
+  concerned_person: https://www.wikidata.org/wiki/Q813067
+  concerned_group: act:sp_basel_stadt
+  role_type:
+    role_type_enum: member
   valid_from: 1980-01-01
   is_active: true
 
 # Gemeinde (optional)
-- id: act:membership_jans_sp_basel
-  person_id: https://www.wikidata.org/wiki/Q813067
-  group_id: act:sp_stadt_basel
-  role: Vorstandsmitglied
+- global_uri: act:membership_jans_sp_basel
+  concerned_person: https://www.wikidata.org/wiki/Q813067
+  concerned_group: act:sp_stadt_basel
+  role_type:
+    role_type_enum: other
+    label: Vorstandsmitglied
   valid_from: 2000-01-01
-  valid_until: 2010-12-31
+  valid_through: 2010-12-31
   is_active: false
 ```
 
 ### Beispiel 4: Bundesrat
 
 ```yaml
-id: act:membership_luisier_vd_regierung
-person_id: https://www.wikidata.org/wiki/Q24699807
-group_id: act:regierungsrat_vaud
-role: Conseillère d'État
+global_uri: act:membership_luisier_vd_regierung
+concerned_person: https://www.wikidata.org/wiki/Q24699807
+concerned_group: act:regierungsrat_vaud
+role_type:
+  role_type_enum: other
+  label: Conseillère d'État
 valid_from: 2022-07-01
 is_active: true
 authorized_to_vote: true
@@ -451,12 +480,13 @@ datetime_created: 2022-07-01T00:00:00Z
 ### Beispiel 5: Fraktionsmitgliedschaft
 
 ```yaml
-id: act:membership_riniker_fdp_fraktion
-person_id: https://www.wikidata.org/wiki/Q77074968
-group_id: act:fdp_fraktion_nr
-role: Mitglied
+global_uri: act:membership_riniker_fdp_fraktion
+concerned_person: https://www.wikidata.org/wiki/Q77074968
+concerned_group: act:fdp_fraktion_nr
+role_type:
+  role_type_enum: member
 valid_from: 2019-12-02
-valid_until: 2023-11-30
+valid_through: 2023-11-30
 is_active: false
 datetime_created: 2019-12-02T00:00:00Z
 ```
@@ -464,12 +494,14 @@ datetime_created: 2019-12-02T00:00:00Z
 ### Beispiel 6: Ersatzmitglied
 
 ```yaml
-id: act:membership_mueller_gpk_ersatz
-person_id: act:person_mueller
-group_id: act:gpk_nr
-role: Ersatzmitglied
+global_uri: act:membership_mueller_gpk_ersatz
+concerned_person: act:person_mueller
+concerned_group: act:gpk_nr
+role_type:
+  role_type_enum: other
+  label: Ersatzmitglied
 valid_from: 2020-01-01
-valid_until: 2023-12-31
+valid_through: 2023-12-31
 authorized_to_vote: false  # Ersatzmitglieder sind normalerweise nicht stimmberechtigt
 is_active: false
 ```
@@ -477,10 +509,12 @@ is_active: false
 ### Beispiel 7: Delegation
 
 ```yaml
-id: act:membership_caroni_delegation
-person_id: https://www.wikidata.org/wiki/Q493598
-group_id: act:delegation_europarat
-role: Delegierter
+global_uri: act:membership_caroni_delegation
+concerned_person: https://www.wikidata.org/wiki/Q493598
+concerned_group: act:delegation_europarat
+role_type:
+  role_type_enum: other
+  label: Delegierter
 valid_from: 2016-01-01
 is_active: true
 authorized_to_vote: true
@@ -490,11 +524,11 @@ authorized_to_vote: true
 
 ### Aktive Mitgliedschaften
 
-Filtern nach `is_active: true` oder `valid_until` nicht gesetzt:
+Filtern nach `is_active: true` oder `valid_through` nicht gesetzt:
 ```yaml
 SELECT * FROM memberships
 WHERE is_active = true
-OR (valid_from <= CURRENT_DATE AND (valid_until IS NULL OR valid_until >= CURRENT_DATE))
+OR (valid_from <= CURRENT_DATE AND (valid_through IS NULL OR valid_through >= CURRENT_DATE))
 ```
 
 ### Historische Analysen
