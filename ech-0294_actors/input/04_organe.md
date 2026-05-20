@@ -97,13 +97,13 @@ Parlamente auf allen föderalen Ebenen.
 - Gemeindeparlament
 
 ```yaml
-group_type: parliament
-name:
-  - text: Nationalrat
-    language: de
-  - text: Conseil national
+group_type:
+  group_type_enum: parliament
+label: Nationalrat
+description:
+  - value: Conseil national
     language: fr
-  - text: Consiglio nazionale
+  - value: Consiglio nazionale
     language: it
 spatial: https://ld.admin.ch/country/1  # Schweiz
 ```
@@ -120,11 +120,10 @@ Ständige oder Ad-hoc-Kommissionen.
 - Rechnungsprüfungskommission
 
 ```yaml
-group_type: commission
-name:
-  - text: Geschäftsprüfungskommission des Nationalrats
-    language: de
-type_label: Ständige Aufsichtskommission
+group_type:
+  group_type_enum: commission
+  label: Ständige Aufsichtskommission
+label: Geschäftsprüfungskommission des Nationalrats
 parent_groups:
   - act:nationalrat
 ```
@@ -133,22 +132,20 @@ parent_groups:
 Parlamentarische Delegationen.
 
 ```yaml
-group_type: delegation
-name:
-  - text: Delegation für internationale Finanzfragen
-    language: de
+group_type:
+  group_type_enum: delegation
+label: Delegation für internationale Finanzfragen
 ```
 
 #### faction (Fraktion)
 Parlamentsfraktionen.
 
 ```yaml
-group_type: faction
-name:
-  - text: SP-Fraktion
-    language: de
+group_type:
+  group_type_enum: faction
+label: SP-Fraktion
 abbreviation:
-  - text: SP
+  - value: SP
     language: de
 parent_groups:
   - act:nationalrat
@@ -158,20 +155,18 @@ parent_groups:
 Organisatorisches Leitungsgremium.
 
 ```yaml
-group_type: parliamentary_bureau
-name:
-  - text: Büro des Nationalrats
-    language: de
+group_type:
+  group_type_enum: parliamentary_bureau
+label: Büro des Nationalrats
 ```
 
 #### presidency (Präsidium)
 Präsidium des Parlaments.
 
 ```yaml
-group_type: presidency
-name:
-  - text: Präsidium der Bundesversammlung
-    language: de
+group_type:
+  group_type_enum: presidency
+label: Präsidium der Bundesversammlung
 ```
 
 ### Exekutive
@@ -185,11 +180,11 @@ Regierung als Gesamtorgan.
 - Stadtrat / Gemeinderat
 
 ```yaml
-group_type: government
-name:
-  - text: Bundesrat
-    language: de
-  - text: Conseil fédéral
+group_type:
+  group_type_enum: government
+label: Bundesrat
+description:
+  - value: Conseil fédéral
     language: fr
 spatial: https://ld.admin.ch/country/1
 ```
@@ -198,12 +193,11 @@ spatial: https://ld.admin.ch/country/1
 Verwaltungsdepartemente.
 
 ```yaml
-group_type: department
-name:
-  - text: Eidgenössisches Departement des Innern
-    language: de
+group_type:
+  group_type_enum: department
+label: Eidgenössisches Departement des Innern
 abbreviation:
-  - text: EDI
+  - value: EDI
     language: de
 parent_groups:
   - act:bundesrat
@@ -213,12 +207,11 @@ parent_groups:
 Ämter innerhalb von Departementen.
 
 ```yaml
-group_type: office
-name:
-  - text: Bundesamt für Gesundheit
-    language: de
+group_type:
+  group_type_enum: office
+label: Bundesamt für Gesundheit
 abbreviation:
-  - text: BAG
+  - value: BAG
     language: de
 parent_groups:
   - act:edi
@@ -232,22 +225,20 @@ APK mit Regierungsauftrag.
 - Eidgenössische Finanzmarktaufsicht (FINMA)
 
 ```yaml
-group_type: extraparliamentary_commission
-name:
-  - text: Bankrat der SNB
-    language: de
+group_type:
+  group_type_enum: extraparliamentary_commission
+label: Bankrat der SNB
 ```
 
 #### workgroup (Arbeitsgruppe)
 Ad-hoc-Arbeitsgruppen.
 
 ```yaml
-group_type: workgroup
-name:
-  - text: Arbeitsgruppe Klimapolitik
-    language: de
+group_type:
+  group_type_enum: workgroup
+label: Arbeitsgruppe Klimapolitik
 valid_from: 2024-01-01
-valid_until: 2024-12-31
+valid_through: 2024-12-31
 ```
 
 ### Judikative
@@ -261,13 +252,13 @@ Gerichte aller Instanzen.
 - Bezirksgericht
 
 ```yaml
-group_type: court
-name:
-  - text: Bundesgericht
-    language: de
-  - text: Tribunal fédéral
+group_type:
+  group_type_enum: court
+label: Bundesgericht
+description:
+  - value: Tribunal fédéral
     language: fr
-  - text: Tribunale federale
+  - value: Tribunale federale
     language: it
 spatial: https://ld.admin.ch/country/1
 ```
@@ -280,14 +271,13 @@ Politische Parteien auf allen föderalen Ebenen.
 Jede föderale Ebene wird als eigene Gruppe geführt.
 
 ```yaml
-group_type: party
-name:
-  - text: SP Schweiz
-    language: de
+group_type:
+  group_type_enum: party
+label: SP Schweiz
 abbreviation:
-  - text: SP
+  - value: SP
     language: de
-url_statutes: https://www.sp-ps.ch/sites/default/files/documents/statuten_sp_d_0.pdf
+statutes_url: https://www.sp-ps.ch/sites/default/files/documents/statuten_sp_d_0.pdf
 party_color: "#FF0000"
 spatial: https://ld.admin.ch/country/1
 ```
@@ -295,22 +285,25 @@ spatial: https://ld.admin.ch/country/1
 **Hierarchie-Beispiel:**
 ```yaml
 # SP Schweiz (Bund)
-- id: act:sp_schweiz
-  group_type: party
-  name: [{text: "SP Schweiz", language: de}]
+- global_uri: act:sp_schweiz
+  group_type:
+    group_type_enum: party
+  label: SP Schweiz
   spatial: https://ld.admin.ch/country/1
 
 # SP Basel-Stadt (Kanton)
-- id: act:sp_basel_stadt
-  group_type: party
-  name: [{text: "SP Basel-Stadt", language: de}]
+- global_uri: act:sp_basel_stadt
+  group_type:
+    group_type_enum: party
+  label: SP Basel-Stadt
   parent_groups: [act:sp_schweiz]
   spatial: https://ld.admin.ch/canton/12
 
 # SP Riehen (Gemeinde)
-- id: act:sp_riehen
-  group_type: party
-  name: [{text: "SP Riehen", language: de}]
+- global_uri: act:sp_riehen
+  group_type:
+    group_type_enum: party
+  label: SP Riehen
   parent_groups: [act:sp_basel_stadt]
   spatial: https://ld.admin.ch/municipality/2703
 ```
@@ -319,10 +312,9 @@ spatial: https://ld.admin.ch/country/1
 Wahllisten, können Teil einer Partei sein oder unabhängig.
 
 ```yaml
-group_type: list
-name:
-  - text: Liste 1 - SP
-    language: de
+group_type:
+  group_type_enum: list
+label: Liste 1 - SP
 parent_groups:
   - act:sp_basel_stadt  # Optional: Zugehörigkeit zur Partei
 ```
@@ -331,30 +323,27 @@ parent_groups:
 Lobbyorganisationen und Interessenverbände.
 
 ```yaml
-group_type: interest_group
-name:
-  - text: Economiesuisse
-    language: de
+group_type:
+  group_type_enum: interest_group
+label: Economiesuisse
 ```
 
 #### association (Verein)
 Vereine und Verbände.
 
 ```yaml
-group_type: association
-name:
-  - text: Pro Natura
-    language: de
+group_type:
+  group_type_enum: association
+label: Pro Natura
 ```
 
 #### petition_carrier (Petitionsträger)
 Träger von Petitionen oder Volksinitiativen.
 
 ```yaml
-group_type: petition_carrier
-name:
-  - text: Komitee für bezahlbare Krankenkassen
-    language: de
+group_type:
+  group_type_enum: petition_carrier
+label: Komitee für bezahlbare Krankenkassen
 ```
 
 ### Andere Organe
@@ -367,12 +356,11 @@ Kontroll- und Aufsichtsorgane.
 - AB-BA (Aufsichtsbehörde)
 
 ```yaml
-group_type: control_body
-name:
-  - text: Eidgenössische Finanzkontrolle
-    language: de
+group_type:
+  group_type_enum: control_body
+label: Eidgenössische Finanzkontrolle
 abbreviation:
-  - text: EFK
+  - value: EFK
     language: de
 ```
 
@@ -380,22 +368,20 @@ abbreviation:
 Unterstützungsdienste des Parlaments.
 
 ```yaml
-group_type: parliamentary_services
-name:
-  - text: Parlamentsdienste der Bundesversammlung
-    language: de
+group_type:
+  group_type_enum: parliamentary_services
+label: Parlamentsdienste der Bundesversammlung
 ```
 
 #### university (Universität)
 Universitäten und Hochschulen (als ausgelagerte Träger öffentlicher Aufgaben).
 
 ```yaml
-group_type: university
-name:
-  - text: Universität Zürich
-    language: de
+group_type:
+  group_type_enum: university
+label: Universität Zürich
 abbreviation:
-  - text: UZH
+  - value: UZH
     language: de
 ```
 
@@ -407,15 +393,15 @@ Das Attribut `parent_groups` erlaubt die Abbildung von Organisationsstrukturen:
 
 ```yaml
 # National
-- id: act:fdp_schweiz
+- global_uri: act:fdp_schweiz
   parent_groups: []
 
 # Kantonal
-- id: act:fdp_zuerich
+- global_uri: act:fdp_zuerich
   parent_groups: [act:fdp_schweiz]
 
 # Kommunal
-- id: act:fdp_winterthur
+- global_uri: act:fdp_winterthur
   parent_groups: [act:fdp_zuerich]
 ```
 
@@ -423,15 +409,15 @@ Das Attribut `parent_groups` erlaubt die Abbildung von Organisationsstrukturen:
 
 ```yaml
 # Departement
-- id: act:edi
+- global_uri: act:edi
   parent_groups: [act:bundesrat]
 
 # Amt
-- id: act:bag
+- global_uri: act:bag
   parent_groups: [act:edi]
 
 # Abteilung
-- id: act:bag_abteilung_gesundheitspolitik
+- global_uri: act:bag_abteilung_gesundheitspolitik
   parent_groups: [act:bag]
 ```
 
@@ -439,13 +425,13 @@ Das Attribut `parent_groups` erlaubt die Abbildung von Organisationsstrukturen:
 
 ```yaml
 # Hauptkommission
-- id: act:sik_nr
-  name: [{text: "Sicherheitspolitische Kommission NR", language: de}]
+- global_uri: act:sik_nr
+  label: Sicherheitspolitische Kommission NR
   parent_groups: [act:nationalrat]
 
 # Subkommission
-- id: act:sik_nr_sub_cyber
-  name: [{text: "Subkommission Cybersicherheit", language: de}]
+- global_uri: act:sik_nr_sub_cyber
+  label: Subkommission Cybersicherheit
   parent_groups: [act:sik_nr]
 ```
 
@@ -475,30 +461,29 @@ spatial: https://ld.admin.ch/country/1
 Namen und Abkürzungen sind mehrsprachig erfassbar:
 
 ```yaml
-name:
-  - text: Bundesversammlung
-    language: de
-  - text: Assemblée fédérale
+label: Bundesversammlung
+description:
+  - value: Assemblée fédérale
     language: fr
-  - text: Assemblea federale
+  - value: Assemblea federale
     language: it
-  - text: Assamblea federala
+  - value: Assamblea federala
     language: rm
 
 abbreviation:
-  - text: BVers
+  - value: BVers
     language: de
-  - text: AsFed
+  - value: AsFed
     language: fr
 ```
 
 ## Partei-spezifische Attribute
 
-### url_statutes
+### statutes_url
 Link zu den Parteistatuten (PDF oder Webseite).
 
 ```yaml
-url_statutes: https://www.sp-ps.ch/sites/default/files/documents/statuten_sp_d_0.pdf
+statutes_url: https://www.sp-ps.ch/sites/default/files/documents/statuten_sp_d_0.pdf
 ```
 
 ### party_color
@@ -521,15 +506,17 @@ Gruppen werden über Memberships mit Personen verbunden:
 ```yaml
 # Container-Struktur
 groups:
-  - id: act:sp_basel_stadt
-    group_type: party
-    name: [{text: "SP Basel-Stadt", language: de}]
+  - global_uri: act:sp_basel_stadt
+    group_type:
+      group_type_enum: party
+    label: SP Basel-Stadt
 
 memberships:
-  - id: act:membership_jans_sp
-    person_id: https://www.wikidata.org/wiki/Q813067
-    group_id: act:sp_basel_stadt
-    role: Mitglied
+  - global_uri: act:membership_jans_sp
+    concerned_person: https://www.wikidata.org/wiki/Q813067
+    concerned_group: act:sp_basel_stadt
+    role_type:
+      role_type_enum: member
     valid_from: 1990-01-01
 ```
 
@@ -548,20 +535,20 @@ actor_name: Nationalrat
 ### Beispiel 1: Nationalrat
 
 ```yaml
-id: act:nationalrat
-uri: https://politics.ld.admin.ch/parliament/nationalrat
-group_type: parliament
-name:
-  - text: Nationalrat
-    language: de
-  - text: Conseil national
+global_uri: https://politics.ld.admin.ch/parliament/nationalrat
+local_id: act:nationalrat
+group_type:
+  group_type_enum: parliament
+label: Nationalrat
+description:
+  - value: Conseil national
     language: fr
-  - text: Consiglio nazionale
+  - value: Consiglio nazionale
     language: it
 abbreviation:
-  - text: NR
+  - value: NR
     language: de
-  - text: CN
+  - value: CN
     language: fr
 landing_page: https://www.parlament.ch/de/organe/nationalrat
 spatial: https://ld.admin.ch/country/1
@@ -571,15 +558,14 @@ datetime_created: 2024-01-01T00:00:00Z
 ### Beispiel 2: Geschäftsprüfungskommission
 
 ```yaml
-id: act:gpk_nr
-group_type: commission
-name:
-  - text: Geschäftsprüfungskommission des Nationalrats
-    language: de
+global_uri: act:gpk_nr
+group_type:
+  group_type_enum: commission
+  label: Ständige Aufsichtskommission
+label: Geschäftsprüfungskommission des Nationalrats
 abbreviation:
-  - text: GPK-N
+  - value: GPK-N
     language: de
-type_label: Ständige Aufsichtskommission
 parent_groups:
   - act:nationalrat
 landing_page: https://www.parlament.ch/de/organe/kommissionen/aufsichtskommissionen/gpk
@@ -589,26 +575,25 @@ landing_page: https://www.parlament.ch/de/organe/kommissionen/aufsichtskommissio
 
 ```yaml
 # Bundesebene
-- id: act:gruene_schweiz
-  group_type: party
-  name:
-    - text: Grüne Schweiz
-      language: de
-    - text: Les Verts Suisses
+- global_uri: act:gruene_schweiz
+  group_type:
+    group_type_enum: party
+  label: Grüne Schweiz
+  description:
+    - value: Les Verts Suisses
       language: fr
   abbreviation:
-    - text: GPS
+    - value: GPS
       language: de
   party_color: "#84B414"
-  url_statutes: https://www.gruene.ch/statuten
+  statutes_url: https://www.gruene.ch/statuten
   spatial: https://ld.admin.ch/country/1
 
 # Kantonsebene
-- id: act:gruene_bern
-  group_type: party
-  name:
-    - text: Grüne Kanton Bern
-      language: de
+- global_uri: act:gruene_bern
+  group_type:
+    group_type_enum: party
+  label: Grüne Kanton Bern
   parent_groups:
     - act:gruene_schweiz
   spatial: https://ld.admin.ch/canton/2
@@ -618,22 +603,22 @@ landing_page: https://www.parlament.ch/de/organe/kommissionen/aufsichtskommissio
 ### Beispiel 4: Bundesrat
 
 ```yaml
-id: act:bundesrat
-uri: https://politics.ld.admin.ch/government/bundesrat
-group_type: government
-name:
-  - text: Bundesrat
-    language: de
-  - text: Conseil fédéral
+global_uri: https://politics.ld.admin.ch/government/bundesrat
+local_id: act:bundesrat
+group_type:
+  group_type_enum: government
+label: Bundesrat
+description:
+  - value: Conseil fédéral
     language: fr
-  - text: Consiglio federale
+  - value: Consiglio federale
     language: it
 spatial: https://ld.admin.ch/country/1
 landing_page: https://www.admin.ch/gov/de/start/bundesrat.html
 contacts:
-  - type: email
+  - contact_type: email
     value: info@gs-uvek.admin.ch
-  - type: contact_website
+  - contact_type: contact_website
     value: https://www.admin.ch/gov/de/start/bundesrat.html
 addresses:
   - address_type: businessAddress
@@ -645,13 +630,12 @@ addresses:
 ### Beispiel 5: Fraktion
 
 ```yaml
-id: act:sp_fraktion_nr
-group_type: faction
-name:
-  - text: SP-Fraktion im Nationalrat
-    language: de
+global_uri: act:sp_fraktion_nr
+group_type:
+  group_type_enum: faction
+label: SP-Fraktion im Nationalrat
 abbreviation:
-  - text: SP
+  - value: SP
     language: de
 parent_groups:
   - act:nationalrat
