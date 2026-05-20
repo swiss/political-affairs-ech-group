@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: valid_from 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [schema:validFrom](http://schema.org/validFrom)
-Alias: valid_from
-
 <!-- no inheritance hierarchy -->
 
 
@@ -94,10 +97,9 @@ description: '[de] Das Datum, ab dem die Information gültig ist.
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: schema:validFrom
-alias: valid_from
 domain_of:
 - HasTemporalValidity
 range: date
 
 ```
-</details>
+</details></div>

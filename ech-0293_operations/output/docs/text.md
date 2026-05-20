@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: text 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [ops:text](https://ch.paf.link/schema/operations/text)
-Alias: text
-
 <!-- no inheritance hierarchy -->
 
 
@@ -17,8 +20,8 @@ Alias: text
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TextSegment](TextSegment.md) | [en] A text segment such as cross-references or subtitles in meeting protocol... |  no  |
 | [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
+| [TextSegment](TextSegment.md) | [en] A text segment such as cross-references or subtitles in meeting protocol... |  no  |
 | [MultilingualString](MultilingualString.md) | [en] A string that can contain text in multiple languages |  no  |
 
 
@@ -81,7 +84,6 @@ Alias: text
 name: text
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: text
 domain_of:
 - Speech
 - TextSegment
@@ -90,4 +92,4 @@ range: string
 required: true
 
 ```
-</details>
+</details></div>

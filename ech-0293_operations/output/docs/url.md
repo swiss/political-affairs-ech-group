@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: url 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [ops:url](https://ch.paf.link/schema/operations/url)
-Alias: url
-
 <!-- no inheritance hierarchy -->
 
 
@@ -17,11 +20,11 @@ Alias: url
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
-| [Manifestation](Manifestation.md) |  |  no  |
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
 | [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |  no  |
+| [Manifestation](Manifestation.md) |  |  no  |
 
 
 
@@ -83,7 +86,6 @@ Alias: url
 name: url
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: url
 domain_of:
 - Session
 - Meeting
@@ -96,4 +98,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

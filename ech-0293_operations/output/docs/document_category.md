@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: document_category 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [meta:documentCategory](https://ch.paf.link/schema/meta/documentCategory)
-Alias: document_category
-
 <!-- no inheritance hierarchy -->
 
 
@@ -103,10 +106,9 @@ from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: meta:documentCategory
 ifabsent: string(other)
-alias: document_category
 domain_of:
 - Work
 range: DocumentCategoryEnum
 
 ```
-</details>
+</details></div>

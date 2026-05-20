@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: date_type 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [meta:dateType](https://ch.paf.link/schema/meta/dateType)
-Alias: date_type
-
 <!-- no inheritance hierarchy -->
 
 
@@ -81,11 +84,10 @@ name: date_type
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: meta:dateType
-alias: date_type
 domain_of:
 - Date
 range: DateTypesEnum
 required: true
 
 ```
-</details>
+</details></div>

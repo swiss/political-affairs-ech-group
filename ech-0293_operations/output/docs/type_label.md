@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: type_label 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:type_label](https://ch.paf.link/schema/operations/type_label)
-Alias: type_label
-
 <!-- no inheritance hierarchy -->
 
 
@@ -26,10 +29,10 @@ Alias: type_label
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
-| [IndividualVote](IndividualVote.md) | [en] An individual vote cast by a member during a voting procedure |  no  |
-| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 | [Resolution](Resolution.md) | [en] A resolutionor decision taken on an agenda item, including voting proced... |  no  |
+| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
+| [IndividualVote](IndividualVote.md) | [en] An individual vote cast by a member during a voting procedure |  no  |
+| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 
 
 
@@ -95,7 +98,6 @@ description: '[en] Custom type label when standard type values don''t apply.
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: type_label
 domain_of:
 - Resolution
 - Voting
@@ -104,4 +106,4 @@ domain_of:
 range: string
 
 ```
-</details>
+</details></div>

@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: role 
 
@@ -7,11 +10,11 @@ _Role of the person (e.g., commission speaker)_
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:role](https://ch.paf.link/schema/operations/role)
-Alias: role
-
 <!-- no inheritance hierarchy -->
 
 
@@ -84,10 +87,9 @@ name: role
 description: Role of the person (e.g., commission speaker)
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: role
 domain_of:
 - Speech
 range: string
 
 ```
-</details>
+</details></div>

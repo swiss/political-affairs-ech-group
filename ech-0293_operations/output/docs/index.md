@@ -27,6 +27,7 @@ Name: operations
 | [IndividualVote](IndividualVote.md) | [en] An individual vote cast by a member during a voting procedure |
 | [IsEventWithDuration](IsEventWithDuration.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder V... |
 | [IsInstantaneousEvent](IsInstantaneousEvent.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereign... |
+| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |
 | [JointDebate](JointDebate.md) | [en] Agenda Items which are debated together |
 | [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |
 | [Manifestation](Manifestation.md) |  |
@@ -135,6 +136,7 @@ Name: operations
 | [parent_voting](parent_voting.md) | [en] The ID of the voting associated with the individual vote |
 | [position](position.md) |  |
 | [reason](reason.md) | [en] Reason for absence or lateness (free-text, multilingual) |
+| [remark](remark.md) | [de] Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen Kontext ... |
 | [resolution_type](resolution_type.md) | [en] Type of resolutiontaken on the agenda item |
 | [resolutions](resolutions.md) | Collection of resolutionrecords |
 | [result](result.md) |  |

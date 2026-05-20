@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: status 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [ops:status](https://ch.paf.link/schema/operations/status)
-Alias: status
-
 <!-- no inheritance hierarchy -->
 
 
@@ -68,8 +71,7 @@ Alias: status
 name: status
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: status
 range: string
 
 ```
-</details>
+</details></div>

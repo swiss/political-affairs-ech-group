@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Motion 
 
@@ -10,6 +13,8 @@ _[de] Ein formeller Antrag, der während der Verhandlungen eingereicht wird._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -152,7 +157,6 @@ attributes:
     name: title
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: title
     owner: Motion
     domain_of:
     - Election
@@ -164,7 +168,6 @@ attributes:
     name: description
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: description
     owner: Motion
     domain_of:
     - Legislature
@@ -183,7 +186,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: meta:documents
-    alias: documents
     owner: Motion
     domain_of:
     - Legislature
@@ -209,7 +211,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: Motion
     domain_of:
     - HasIdentification
@@ -225,7 +226,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: Motion
     domain_of:
     - HasIdentification
@@ -243,11 +243,10 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: Motion
     domain_of:
     - HasIdentification
     range: uriorcurie
 
 ```
-</details>
+</details></div>

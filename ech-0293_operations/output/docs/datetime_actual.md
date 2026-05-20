@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: datetime_actual 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [mcm:datetimeActual](https://ld.ech.ch/schema/0292/meta-common/datetimeActual)
-Alias: datetime_actual
-
 <!-- no inheritance hierarchy -->
 
 
@@ -96,10 +99,9 @@ description: '[de] Das tatsächliche Datum und die Uhrzeit eines instantanen Ere
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: mcm:datetimeActual
-alias: datetime_actual
 domain_of:
 - IsInstantaneousEvent
 range: datetime
 
 ```
-</details>
+</details></div>

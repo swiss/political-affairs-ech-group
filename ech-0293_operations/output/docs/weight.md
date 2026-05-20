@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: weight 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:weight](https://ch.paf.link/schema/operations/weight)
-Alias: weight
-
 <!-- no inheritance hierarchy -->
 
 
@@ -94,10 +97,9 @@ description: '[en] The number of votes held by the individual, if applicable (e.
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: weight
 domain_of:
 - IndividualVote
 range: integer
 
 ```
-</details>
+</details></div>

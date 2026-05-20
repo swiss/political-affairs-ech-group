@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: works 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [meta:works](https://ch.paf.link/schema/meta/works)
-Alias: works
-
 <!-- no inheritance hierarchy -->
 
 
@@ -71,10 +74,10 @@ name: works
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: meta:works
-alias: works
 range: Work
 multivalued: true
+inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

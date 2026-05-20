@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: datetime_end 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:datetime_end](https://ch.paf.link/schema/operations/datetime_end)
-Alias: datetime_end
-
 <!-- no inheritance hierarchy -->
 
 
@@ -26,9 +29,9 @@ Alias: datetime_end
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 | [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
-| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 
 
 
@@ -94,7 +97,6 @@ description: '[en] The date and time when the meeting or voting ends.
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: datetime_end
 domain_of:
 - Voting
 - Election
@@ -102,4 +104,4 @@ domain_of:
 range: datetime
 
 ```
-</details>
+</details></div>

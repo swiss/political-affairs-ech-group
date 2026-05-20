@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: resolutions 
 
@@ -7,11 +10,11 @@ _Collection of resolutionrecords_
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:resolution](https://ch.paf.link/schema/operations/resolution)
-Alias: resolutions
-
 <!-- no inheritance hierarchy -->
 
 
@@ -87,7 +90,6 @@ description: Collection of resolutionrecords
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: ops:resolution
-alias: resolutions
 domain_of:
 - Container
 range: Resolution
@@ -96,4 +98,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: legislatures 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [ops:legislature](https://ch.paf.link/schema/operations/legislature)
-Alias: legislatures
-
 <!-- no inheritance hierarchy -->
 
 
@@ -81,7 +84,6 @@ name: legislatures
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: ops:legislature
-alias: legislatures
 domain_of:
 - Container
 range: Legislature
@@ -90,4 +92,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

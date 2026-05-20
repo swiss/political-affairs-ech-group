@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: start 
 
@@ -7,11 +10,11 @@ _Start indicator or position_
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:start](https://ch.paf.link/schema/operations/start)
-Alias: start
-
 <!-- no inheritance hierarchy -->
 
 
@@ -84,10 +87,9 @@ name: start
 description: Start indicator or position
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: start
 domain_of:
 - Speech
 range: string
 
 ```
-</details>
+</details></div>

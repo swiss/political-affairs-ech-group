@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: count 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:count](https://ch.paf.link/schema/operations/count)
-Alias: count
-
 <!-- no inheritance hierarchy -->
 
 
@@ -92,10 +95,9 @@ description: '[en] The count of votes for the total other category.
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: count
 domain_of:
 - TotalOther
 range: integer
 
 ```
-</details>
+</details></div>

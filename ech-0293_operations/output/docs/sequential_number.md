@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: sequential_number 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:sequential_number](https://ch.paf.link/schema/operations/sequential_number)
-Alias: sequential_number
-
 <!-- no inheritance hierarchy -->
 
 
@@ -26,8 +29,8 @@ Alias: sequential_number
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 
 
 
@@ -93,11 +96,10 @@ description: '[en] Sequential number of the meeting, used for ordering.
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: sequential_number
 domain_of:
 - Session
 - Meeting
 range: integer
 
 ```
-</details>
+</details></div>

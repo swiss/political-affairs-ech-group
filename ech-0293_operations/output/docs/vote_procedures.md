@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: vote_procedures 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:vote_procedures](https://ch.paf.link/schema/operations/vote_procedures)
-Alias: vote_procedures
-
 <!-- no inheritance hierarchy -->
 
 
@@ -93,7 +96,6 @@ description: '[en] Procedures for voting, such as secret ballot or open vote.
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: vote_procedures
 domain_of:
 - Resolution
 range: string
@@ -102,4 +104,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

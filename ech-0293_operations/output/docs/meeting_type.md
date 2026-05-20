@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: meeting_type 
 
@@ -7,11 +10,11 @@ _Type of the meeting, e.g. session, committee, sitting, various_
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:meetingType](https://ch.paf.link/schema/operations/meetingType)
-Alias: meeting_type
-
 <!-- no inheritance hierarchy -->
 
 
@@ -86,10 +89,9 @@ description: Type of the meeting, e.g. session, committee, sitting, various
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: ops:meetingType
-alias: meeting_type
 domain_of:
 - Meeting
 range: MeetingTypeEnum
 
 ```
-</details>
+</details></div>

@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: majority_type 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:majority_type](https://ch.paf.link/schema/operations/majority_type)
-Alias: majority_type
-
 <!-- no inheritance hierarchy -->
 
 
@@ -26,8 +29,8 @@ Alias: majority_type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 | [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
+| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 
 
 
@@ -93,11 +96,10 @@ description: '[en] Type of majority required for the vote (absolute, two-thirds,
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: majority_type
 domain_of:
 - Voting
 - Election
 range: MajorityTypeEnum
 
 ```
-</details>
+</details></div>

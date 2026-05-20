@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: label_long 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [mcm:labelLong](https://ld.ech.ch/schema/0292/meta-common/labelLong)
-Alias: label_long
-
 <!-- no inheritance hierarchy -->
 
 
@@ -86,8 +89,7 @@ description: '[de] Möglichkeit bei einer strukturierten Information, ein erweit
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: mcm:labelLong
-alias: label_long
 range: string
 
 ```
-</details>
+</details></div>

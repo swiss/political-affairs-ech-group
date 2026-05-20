@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: datetime_begin 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:datetime_begin](https://ch.paf.link/schema/operations/datetime_begin)
-Alias: datetime_begin
-
 <!-- no inheritance hierarchy -->
 
 
@@ -26,10 +29,10 @@ Alias: datetime_begin
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 | [Attendance](Attendance.md) | [en] Aggregated attendance record for a meeting (number of members present, a... |  no  |
 | [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
-| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 
 
 
@@ -95,7 +98,6 @@ description: '[en] The date and time when the meeting or voting begins.
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: datetime_begin
 domain_of:
 - Voting
 - Election
@@ -104,4 +106,4 @@ domain_of:
 range: datetime
 
 ```
-</details>
+</details></div>

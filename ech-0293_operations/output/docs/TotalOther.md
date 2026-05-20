@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: TotalOther 
 
@@ -10,6 +13,8 @@ _[de] Zusätzliche Stimmzahlen, wenn mehrere Optionen zur Abstimmung gestellt we
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -136,7 +141,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: count
     owner: TotalOther
     domain_of:
     - TotalOther
@@ -153,11 +157,10 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:label
-    alias: label
     owner: TotalOther
     domain_of:
     - TotalOther
     range: string
 
 ```
-</details>
+</details></div>

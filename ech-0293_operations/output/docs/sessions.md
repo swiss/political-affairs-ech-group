@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: sessions 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [ops:session](https://ch.paf.link/schema/operations/session)
-Alias: sessions
-
 <!-- no inheritance hierarchy -->
 
 
@@ -81,7 +84,6 @@ name: sessions
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: ops:session
-alias: sessions
 domain_of:
 - Container
 range: Session
@@ -90,4 +92,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

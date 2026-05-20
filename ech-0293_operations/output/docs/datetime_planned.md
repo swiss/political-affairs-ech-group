@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: datetime_planned 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [mcm:datetimePlanned](https://ld.ech.ch/schema/0292/meta-common/datetimePlanned)
-Alias: datetime_planned
-
 <!-- no inheritance hierarchy -->
 
 
@@ -96,10 +99,9 @@ description: '[de] Das geplante Datum und die Uhrzeit eines instantanen Ereignis
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: mcm:datetimePlanned
-alias: datetime_planned
 domain_of:
 - IsInstantaneousEvent
 range: datetime
 
 ```
-</details>
+</details></div>

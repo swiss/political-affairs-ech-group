@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Media 
 
@@ -10,6 +13,8 @@ _[de] Mediendateien oder Dokumente (einschließlich Protokolle in PDF/HTML/WORD 
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -164,7 +169,6 @@ attributes:
     name: title
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: title
     owner: Media
     domain_of:
     - Election
@@ -177,7 +181,6 @@ attributes:
     description: Type of media (audio, video, document)
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: media_type
     owner: Media
     domain_of:
     - Speech
@@ -187,7 +190,6 @@ attributes:
     name: url
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: url
     owner: Media
     domain_of:
     - Session
@@ -204,7 +206,6 @@ attributes:
     description: Version number or identifier
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: version
     owner: Media
     domain_of:
     - Media
@@ -214,7 +215,6 @@ attributes:
     description: Type of parent object (meeting, agenda, speech, affair)
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: parent_type
     owner: Media
     domain_of:
     - Media
@@ -229,7 +229,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: Media
     domain_of:
     - HasIdentification
@@ -245,7 +244,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: Media
     domain_of:
     - HasIdentification
@@ -263,11 +261,10 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: Media
     domain_of:
     - HasIdentification
     range: uriorcurie
 
 ```
-</details>
+</details></div>

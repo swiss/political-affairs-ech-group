@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Election 
 
@@ -10,6 +13,8 @@ _[de] Ein Wahlverfahren zur Wahl von Personen in Positionen._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -250,7 +255,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_begin
     owner: Election
     domain_of:
     - Voting
@@ -267,7 +271,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_end
     owner: Election
     domain_of:
     - Voting
@@ -279,7 +282,6 @@ attributes:
     description: Type of election procedure
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: election_type
     owner: Election
     domain_of:
     - Election
@@ -293,7 +295,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: type_label
     owner: Election
     domain_of:
     - Resolution
@@ -305,7 +306,6 @@ attributes:
     name: title
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: title
     owner: Election
     domain_of:
     - Election
@@ -323,7 +323,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:landingPage
-    alias: landing_page
     owner: Election
     domain_of:
     - Legislature
@@ -344,7 +343,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total_absent
     owner: Election
     domain_of:
     - Voting
@@ -360,7 +358,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total
     owner: Election
     domain_of:
     - Voting
@@ -377,7 +374,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: majority_type
     owner: Election
     domain_of:
     - Voting
@@ -393,7 +389,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: majority_count
     owner: Election
     domain_of:
     - Voting
@@ -410,7 +405,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: result_text
     owner: Election
     domain_of:
     - Voting
@@ -425,7 +419,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: parent_meeting
     owner: Election
     domain_of:
     - Meeting
@@ -444,7 +437,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: parent_agenda_item
     owner: Election
     domain_of:
     - AgendaItem
@@ -461,7 +453,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: affair_id
     owner: Election
     domain_of:
     - AgendaItem
@@ -479,7 +470,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: actor_id
     owner: Election
     domain_of:
     - Legislature
@@ -502,7 +492,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: meta:documents
-    alias: documents
     owner: Election
     domain_of:
     - Legislature
@@ -528,7 +517,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: Election
     domain_of:
     - HasIdentification
@@ -544,7 +532,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: Election
     domain_of:
     - HasIdentification
@@ -562,7 +549,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: Election
     domain_of:
     - HasIdentification
@@ -577,7 +563,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateCreated
-    alias: date_created
     owner: Election
     domain_of:
     - HasCreationModificationDates
@@ -592,7 +577,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeCreated
-    alias: datetime_created
     owner: Election
     domain_of:
     - HasCreationModificationDates
@@ -607,7 +591,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateModified
-    alias: date_modified
     owner: Election
     domain_of:
     - HasCreationModificationDates
@@ -623,11 +606,10 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeModified
-    alias: datetime_modified
     owner: Election
     domain_of:
     - HasCreationModificationDates
     range: datetime
 
 ```
-</details>
+</details></div>

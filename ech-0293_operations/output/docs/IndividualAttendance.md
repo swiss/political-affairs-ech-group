@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: IndividualAttendance 
 
@@ -10,6 +13,8 @@ _[de] Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpf
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -208,7 +213,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:parentAttendance
-    alias: parent_attendance
     owner: IndividualAttendance
     domain_of:
     - IndividualAttendance
@@ -224,7 +228,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: actor_id
     owner: IndividualAttendance
     domain_of:
     - Legislature
@@ -241,7 +244,6 @@ attributes:
     description: Type of individual attendance
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: attendance_type
     owner: IndividualAttendance
     domain_of:
     - IndividualAttendance
@@ -255,7 +257,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: reason
     owner: IndividualAttendance
     domain_of:
     - IndividualAttendance
@@ -273,7 +274,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: IndividualAttendance
     domain_of:
     - HasIdentification
@@ -289,7 +289,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: IndividualAttendance
     domain_of:
     - HasIdentification
@@ -307,7 +306,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: IndividualAttendance
     domain_of:
     - HasIdentification
@@ -322,7 +320,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateCreated
-    alias: date_created
     owner: IndividualAttendance
     domain_of:
     - HasCreationModificationDates
@@ -337,7 +334,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeCreated
-    alias: datetime_created
     owner: IndividualAttendance
     domain_of:
     - HasCreationModificationDates
@@ -352,7 +348,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateModified
-    alias: date_modified
     owner: IndividualAttendance
     domain_of:
     - HasCreationModificationDates
@@ -368,11 +363,10 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeModified
-    alias: datetime_modified
     owner: IndividualAttendance
     domain_of:
     - HasCreationModificationDates
     range: datetime
 
 ```
-</details>
+</details></div>

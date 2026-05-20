@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: actor_fullname 
 
@@ -7,11 +10,11 @@ _Full name of the actor/person_
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:actor_fullname](https://ch.paf.link/schema/operations/actor_fullname)
-Alias: actor_fullname
-
 <!-- no inheritance hierarchy -->
 
 
@@ -84,10 +87,9 @@ name: actor_fullname
 description: Full name of the actor/person
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: actor_fullname
 domain_of:
 - Speech
 range: string
 
 ```
-</details>
+</details></div>

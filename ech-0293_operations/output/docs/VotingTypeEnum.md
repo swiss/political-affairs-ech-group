@@ -1,3 +1,9 @@
+---
+search:
+  boost: 2.0
+---
+
+
 # Enum: VotingTypeEnum 
 
 
@@ -10,6 +16,8 @@ _[de] Art des Abstimmungsverfahrens._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 URI: [ops:VotingTypeEnum](https://ch.paf.link/schema/operations/VotingTypeEnum)
 
@@ -112,3 +120,5 @@ permissible_values:
 
 ```
 </details>
+
+</div>

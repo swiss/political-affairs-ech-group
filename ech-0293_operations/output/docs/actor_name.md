@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: actor_name 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:actor_name](https://ch.paf.link/schema/operations/actor_name)
-Alias: actor_name
-
 <!-- no inheritance hierarchy -->
 
 
@@ -92,10 +95,9 @@ description: '[en] Name of the political body (e.g., Nationalrat).
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: actor_name
 domain_of:
 - Meeting
 range: string
 
 ```
-</details>
+</details></div>

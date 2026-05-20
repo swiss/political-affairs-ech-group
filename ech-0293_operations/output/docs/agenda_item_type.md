@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: agenda_item_type 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:agenda_item_type](https://ch.paf.link/schema/operations/agenda_item_type)
-Alias: agenda_item_type
-
 <!-- no inheritance hierarchy -->
 
 
@@ -92,10 +95,9 @@ description: '[en] Type of agenda item, distinguishing individual items from gro
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: agenda_item_type
 domain_of:
 - AgendaItem
 range: AgendaItemTypeEnum
 
 ```
-</details>
+</details></div>

@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: title 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [ops:title](https://ch.paf.link/schema/operations/title)
-Alias: title
-
 <!-- no inheritance hierarchy -->
 
 
@@ -17,10 +20,10 @@ Alias: title
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |  no  |
-| [Expression](Expression.md) |  |  no  |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
+| [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |  no  |
 | [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |  no  |
+| [Expression](Expression.md) |  |  no  |
 
 
 
@@ -81,7 +84,6 @@ Alias: title
 name: title
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: title
 domain_of:
 - Election
 - Motion
@@ -90,4 +92,4 @@ domain_of:
 range: string
 
 ```
-</details>
+</details></div>

@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: location 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [ops:location](https://ch.paf.link/schema/operations/location)
-Alias: location
-
 <!-- no inheritance hierarchy -->
 
 
@@ -78,10 +81,9 @@ Alias: location
 name: location
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: location
 domain_of:
 - Meeting
 range: string
 
 ```
-</details>
+</details></div>

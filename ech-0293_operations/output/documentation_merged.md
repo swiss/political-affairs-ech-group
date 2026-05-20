@@ -113,7 +113,10 @@ Beispiel Bundesebene: Die 51. Legislaturperiode des Schweizer Parlaments dauerte
 
 Über den Slot **documents** können relevante Dokumente (z.B. Mitgliederverzeichnisse der Legislatur, Geschäftsverzeichnisse) als FRBR-Works verknüpft werden.
 
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Legislature 
 
@@ -125,6 +128,8 @@ _[de] Amtsdauer eines Parlaments als gesetzgebender Versammlung. Dauert in der R
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -350,7 +355,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: administrative_id
     owner: Legislature
     domain_of:
     - Legislature
@@ -360,7 +364,6 @@ attributes:
     name: name
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: name
     owner: Legislature
     domain_of:
     - Legislature
@@ -374,7 +377,6 @@ attributes:
     name: description
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: description
     owner: Legislature
     domain_of:
     - Legislature
@@ -392,7 +394,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:landingPage
-    alias: landing_page
     owner: Legislature
     domain_of:
     - Legislature
@@ -413,7 +414,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: actor_id
     owner: Legislature
     domain_of:
     - Legislature
@@ -436,7 +436,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: meta:documents
-    alias: documents
     owner: Legislature
     domain_of:
     - Legislature
@@ -462,7 +461,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: Legislature
     domain_of:
     - HasIdentification
@@ -478,7 +476,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: Legislature
     domain_of:
     - HasIdentification
@@ -496,7 +493,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: Legislature
     domain_of:
     - HasIdentification
@@ -512,7 +508,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateBeginActual
-    alias: date_begin_actual
     owner: Legislature
     domain_of:
     - IsEventWithDuration
@@ -528,7 +523,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeBeginActual
-    alias: datetime_begin_actual
     owner: Legislature
     domain_of:
     - IsEventWithDuration
@@ -544,7 +538,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateBeginPlanned
-    alias: date_begin_planned
     owner: Legislature
     domain_of:
     - IsEventWithDuration
@@ -560,7 +553,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeBeginPlanned
-    alias: datetime_begin_planned
     owner: Legislature
     domain_of:
     - IsEventWithDuration
@@ -576,7 +568,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateEndActual
-    alias: date_end_actual
     owner: Legislature
     domain_of:
     - IsEventWithDuration
@@ -592,7 +583,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeEndActual
-    alias: datetime_end_actual
     owner: Legislature
     domain_of:
     - IsEventWithDuration
@@ -608,7 +598,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateEndPlanned
-    alias: date_end_planned
     owner: Legislature
     domain_of:
     - IsEventWithDuration
@@ -624,7 +613,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeEndPlanned
-    alias: datetime_end_planned
     owner: Legislature
     domain_of:
     - IsEventWithDuration
@@ -639,7 +627,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateCreated
-    alias: date_created
     owner: Legislature
     domain_of:
     - HasCreationModificationDates
@@ -654,7 +641,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeCreated
-    alias: datetime_created
     owner: Legislature
     domain_of:
     - HasCreationModificationDates
@@ -669,7 +655,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateModified
-    alias: date_modified
     owner: Legislature
     domain_of:
     - HasCreationModificationDates
@@ -685,14 +670,13 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeModified
-    alias: datetime_modified
     owner: Legislature
     domain_of:
     - HasCreationModificationDates
     range: datetime
 
 ```
-</details>
+</details></div>
 
 ## Session (Sitzungsperiode)
 
@@ -758,7 +742,10 @@ Sessions nutzen das Mixin `IsEventWithDuration` und bieten damit dieselben Datum
 
 Der Standard ist bewusst flexibel gestaltet, um verschiedene Organisationsformen abzubilden. Föderaleinheiten ohne formale Sessions können diese Entität optional nutzen oder direkt auf Meetings referenzieren.
 
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Session 
 
@@ -770,6 +757,8 @@ _[de] Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über ein
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -1029,7 +1018,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: body_key
     owner: Session
     domain_of:
     - Session
@@ -1039,7 +1027,6 @@ attributes:
     name: name
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: name
     owner: Session
     domain_of:
     - Legislature
@@ -1053,7 +1040,6 @@ attributes:
     name: number
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: number
     owner: Session
     domain_of:
     - Session
@@ -1068,7 +1054,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: sequential_number
     owner: Session
     domain_of:
     - Session
@@ -1078,7 +1063,6 @@ attributes:
     name: position
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: position
     owner: Session
     domain_of:
     - Session
@@ -1088,7 +1072,6 @@ attributes:
     name: abbreviation
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: abbreviation
     owner: Session
     domain_of:
     - Session
@@ -1098,7 +1081,6 @@ attributes:
     name: url
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: url
     owner: Session
     domain_of:
     - Session
@@ -1119,7 +1101,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: parent_legislature
     owner: Session
     domain_of:
     - Session
@@ -1130,7 +1111,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:meeting
-    alias: meetings
     owner: Session
     domain_of:
     - Container
@@ -1150,7 +1130,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: meta:documents
-    alias: documents
     owner: Session
     domain_of:
     - Legislature
@@ -1176,7 +1155,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: Session
     domain_of:
     - HasIdentification
@@ -1192,7 +1170,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: Session
     domain_of:
     - HasIdentification
@@ -1210,7 +1187,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: Session
     domain_of:
     - HasIdentification
@@ -1226,7 +1202,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateBeginActual
-    alias: date_begin_actual
     owner: Session
     domain_of:
     - IsEventWithDuration
@@ -1242,7 +1217,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeBeginActual
-    alias: datetime_begin_actual
     owner: Session
     domain_of:
     - IsEventWithDuration
@@ -1258,7 +1232,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateBeginPlanned
-    alias: date_begin_planned
     owner: Session
     domain_of:
     - IsEventWithDuration
@@ -1274,7 +1247,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeBeginPlanned
-    alias: datetime_begin_planned
     owner: Session
     domain_of:
     - IsEventWithDuration
@@ -1290,7 +1262,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateEndActual
-    alias: date_end_actual
     owner: Session
     domain_of:
     - IsEventWithDuration
@@ -1306,7 +1277,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeEndActual
-    alias: datetime_end_actual
     owner: Session
     domain_of:
     - IsEventWithDuration
@@ -1322,7 +1292,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateEndPlanned
-    alias: date_end_planned
     owner: Session
     domain_of:
     - IsEventWithDuration
@@ -1338,7 +1307,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeEndPlanned
-    alias: datetime_end_planned
     owner: Session
     domain_of:
     - IsEventWithDuration
@@ -1353,7 +1321,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateCreated
-    alias: date_created
     owner: Session
     domain_of:
     - HasCreationModificationDates
@@ -1368,7 +1335,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeCreated
-    alias: datetime_created
     owner: Session
     domain_of:
     - HasCreationModificationDates
@@ -1383,7 +1349,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateModified
-    alias: date_modified
     owner: Session
     domain_of:
     - HasCreationModificationDates
@@ -1399,14 +1364,13 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeModified
-    alias: datetime_modified
     owner: Session
     domain_of:
     - HasCreationModificationDates
     range: datetime
 
 ```
-</details>
+</details></div>
 
 ## Meeting (Einzelne Sitzung)
 
@@ -1534,7 +1498,10 @@ Ein Meeting verbindet verschiedene Elemente des parlamentarischen Betriebs:
 - **Attendance**: Anwesenheitslisten (über `Attendance.parent_meeting`)
 - **documents**: Verknüpfte FRBR-Works (Protokolle, Sitzungsunterlagen, Tagblatt etc.)
 
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Meeting 
 
@@ -1546,6 +1513,8 @@ _[de] Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, 
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -1859,7 +1828,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: body_key
     owner: Meeting
     domain_of:
     - Session
@@ -1871,7 +1839,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:meetingType
-    alias: meeting_type
     owner: Meeting
     domain_of:
     - Meeting
@@ -1887,7 +1854,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: administrative_id
     owner: Meeting
     domain_of:
     - Legislature
@@ -1897,7 +1863,6 @@ attributes:
     name: name
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: name
     owner: Meeting
     domain_of:
     - Legislature
@@ -1911,7 +1876,6 @@ attributes:
     name: url
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: url
     owner: Meeting
     domain_of:
     - Session
@@ -1928,7 +1892,6 @@ attributes:
     description: Name of the group or body
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: group_name
     owner: Meeting
     domain_of:
     - Meeting
@@ -1938,7 +1901,6 @@ attributes:
     description: Identifier of the group or body
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: group_id
     owner: Meeting
     domain_of:
     - Meeting
@@ -1947,7 +1909,6 @@ attributes:
     name: number
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: number
     owner: Meeting
     domain_of:
     - Session
@@ -1963,7 +1924,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:landingPage
-    alias: landing_page
     owner: Meeting
     domain_of:
     - Legislature
@@ -1982,7 +1942,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: sequential_number
     owner: Meeting
     domain_of:
     - Session
@@ -1992,7 +1951,6 @@ attributes:
     name: position
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: position
     owner: Meeting
     domain_of:
     - Session
@@ -2002,7 +1960,6 @@ attributes:
     name: abbreviation
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: abbreviation
     owner: Meeting
     domain_of:
     - Session
@@ -2017,7 +1974,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: actor_name
     owner: Meeting
     domain_of:
     - Meeting
@@ -2033,7 +1989,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: actor_id
     owner: Meeting
     domain_of:
     - Legislature
@@ -2049,7 +2004,6 @@ attributes:
     name: state
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: state
     owner: Meeting
     domain_of:
     - Meeting
@@ -2063,7 +2017,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: state_name
     owner: Meeting
     domain_of:
     - Meeting
@@ -2073,7 +2026,6 @@ attributes:
     name: description
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: description
     owner: Meeting
     domain_of:
     - Legislature
@@ -2085,7 +2037,6 @@ attributes:
     name: location
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: location
     owner: Meeting
     domain_of:
     - Meeting
@@ -2099,7 +2050,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: parent_meeting
     owner: Meeting
     domain_of:
     - Meeting
@@ -2117,7 +2067,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: parent_legislature
     owner: Meeting
     domain_of:
     - Session
@@ -2134,7 +2083,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: meta:documents
-    alias: documents
     owner: Meeting
     domain_of:
     - Legislature
@@ -2160,7 +2108,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: Meeting
     domain_of:
     - HasIdentification
@@ -2176,7 +2123,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: Meeting
     domain_of:
     - HasIdentification
@@ -2194,7 +2140,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: Meeting
     domain_of:
     - HasIdentification
@@ -2210,7 +2155,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateBeginActual
-    alias: date_begin_actual
     owner: Meeting
     domain_of:
     - IsEventWithDuration
@@ -2226,7 +2170,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeBeginActual
-    alias: datetime_begin_actual
     owner: Meeting
     domain_of:
     - IsEventWithDuration
@@ -2242,7 +2185,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateBeginPlanned
-    alias: date_begin_planned
     owner: Meeting
     domain_of:
     - IsEventWithDuration
@@ -2258,7 +2200,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeBeginPlanned
-    alias: datetime_begin_planned
     owner: Meeting
     domain_of:
     - IsEventWithDuration
@@ -2274,7 +2215,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateEndActual
-    alias: date_end_actual
     owner: Meeting
     domain_of:
     - IsEventWithDuration
@@ -2290,7 +2230,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeEndActual
-    alias: datetime_end_actual
     owner: Meeting
     domain_of:
     - IsEventWithDuration
@@ -2306,7 +2245,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateEndPlanned
-    alias: date_end_planned
     owner: Meeting
     domain_of:
     - IsEventWithDuration
@@ -2322,7 +2260,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeEndPlanned
-    alias: datetime_end_planned
     owner: Meeting
     domain_of:
     - IsEventWithDuration
@@ -2337,7 +2274,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateCreated
-    alias: date_created
     owner: Meeting
     domain_of:
     - HasCreationModificationDates
@@ -2352,7 +2288,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeCreated
-    alias: datetime_created
     owner: Meeting
     domain_of:
     - HasCreationModificationDates
@@ -2367,7 +2302,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateModified
-    alias: date_modified
     owner: Meeting
     domain_of:
     - HasCreationModificationDates
@@ -2383,14 +2317,13 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeModified
-    alias: datetime_modified
     owner: Meeting
     domain_of:
     - HasCreationModificationDates
     range: datetime
 
 ```
-</details>
+</details></div>
 
 # Anwesenheit und Wortmeldungen
 
@@ -2498,7 +2431,10 @@ Die Attendance-Entitäten ermöglichen:
 5. **Statistik**: Auswertung von Anwesenheitsquoten
 6. **Administration**: Berechnung von Entschädigungen und Spesen
 
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Attendance 
 
@@ -2510,6 +2446,8 @@ _[de] Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesen
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -2692,7 +2630,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: parent_meeting
     owner: Attendance
     domain_of:
     - Meeting
@@ -2710,7 +2647,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_begin
     owner: Attendance
     domain_of:
     - Voting
@@ -2729,7 +2665,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: actor_id
     owner: Attendance
     domain_of:
     - Legislature
@@ -2751,7 +2686,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total_count
     owner: Attendance
     domain_of:
     - Attendance
@@ -2761,7 +2695,6 @@ attributes:
     description: Total number of members present
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total_present
     owner: Attendance
     domain_of:
     - Attendance
@@ -2777,7 +2710,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total_absent
     owner: Attendance
     domain_of:
     - Voting
@@ -2789,7 +2721,6 @@ attributes:
     description: Total number of excused absences
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total_excused
     owner: Attendance
     domain_of:
     - Attendance
@@ -2804,7 +2735,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: Attendance
     domain_of:
     - HasIdentification
@@ -2820,7 +2750,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: Attendance
     domain_of:
     - HasIdentification
@@ -2838,7 +2767,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: Attendance
     domain_of:
     - HasIdentification
@@ -2853,7 +2781,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateCreated
-    alias: date_created
     owner: Attendance
     domain_of:
     - HasCreationModificationDates
@@ -2868,7 +2795,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeCreated
-    alias: datetime_created
     owner: Attendance
     domain_of:
     - HasCreationModificationDates
@@ -2883,7 +2809,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateModified
-    alias: date_modified
     owner: Attendance
     domain_of:
     - HasCreationModificationDates
@@ -2899,16 +2824,18 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeModified
-    alias: datetime_modified
     owner: Attendance
     domain_of:
     - HasCreationModificationDates
     range: datetime
 
 ```
-</details>
+</details></div>
 
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: IndividualAttendance 
 
@@ -2920,6 +2847,8 @@ _[de] Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpf
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -3118,7 +3047,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:parentAttendance
-    alias: parent_attendance
     owner: IndividualAttendance
     domain_of:
     - IndividualAttendance
@@ -3134,7 +3062,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: actor_id
     owner: IndividualAttendance
     domain_of:
     - Legislature
@@ -3151,7 +3078,6 @@ attributes:
     description: Type of individual attendance
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: attendance_type
     owner: IndividualAttendance
     domain_of:
     - IndividualAttendance
@@ -3165,7 +3091,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: reason
     owner: IndividualAttendance
     domain_of:
     - IndividualAttendance
@@ -3183,7 +3108,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: IndividualAttendance
     domain_of:
     - HasIdentification
@@ -3199,7 +3123,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: IndividualAttendance
     domain_of:
     - HasIdentification
@@ -3217,7 +3140,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: IndividualAttendance
     domain_of:
     - HasIdentification
@@ -3232,7 +3154,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateCreated
-    alias: date_created
     owner: IndividualAttendance
     domain_of:
     - HasCreationModificationDates
@@ -3247,7 +3168,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeCreated
-    alias: datetime_created
     owner: IndividualAttendance
     domain_of:
     - HasCreationModificationDates
@@ -3262,7 +3182,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateModified
-    alias: date_modified
     owner: IndividualAttendance
     domain_of:
     - HasCreationModificationDates
@@ -3278,14 +3197,13 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeModified
-    alias: datetime_modified
     owner: IndividualAttendance
     domain_of:
     - HasCreationModificationDates
     range: datetime
 
 ```
-</details>
+</details></div>
 
 
 ToDo: Michel
@@ -3441,7 +3359,10 @@ Ein AgendaItem ist das zentrale Bindeglied zwischen:
 3. Dokumentation von Status und Ergebnis pro Traktandum
 4. Grundlage für Sitzungsprotokolle und Publikationen
 
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: AgendaItem 
 
@@ -3453,6 +3374,8 @@ _[de] Ein Traktandum einer Sitzung._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -3753,7 +3676,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: parent_meeting
     owner: AgendaItem
     domain_of:
     - Meeting
@@ -3771,7 +3693,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: agenda_item_type
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -3786,7 +3707,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: agenda_item_number
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -3800,7 +3720,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: agenda_item_position
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -3814,7 +3733,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: leading_actor_id
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -3828,7 +3746,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: speaking_actor_id
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -3842,7 +3759,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: agenda_item_title
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -3860,7 +3776,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: affair_id
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -3876,7 +3791,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: agenda_item_description
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -3889,7 +3803,6 @@ attributes:
     description: State identifier (reference to state enum or custom state)
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: state_id
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -3903,7 +3816,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: state_name
     owner: AgendaItem
     domain_of:
     - Meeting
@@ -3919,7 +3831,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:landingPage
-    alias: landing_page
     owner: AgendaItem
     domain_of:
     - Legislature
@@ -3933,7 +3844,6 @@ attributes:
     name: url
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: url
     owner: AgendaItem
     domain_of:
     - Session
@@ -3956,7 +3866,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: agenda_item_category
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -3971,7 +3880,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: parent_agenda_item
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -3987,7 +3895,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: has_resolution
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -4003,7 +3910,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: meta:documents
-    alias: documents
     owner: AgendaItem
     domain_of:
     - Legislature
@@ -4029,7 +3935,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: AgendaItem
     domain_of:
     - HasIdentification
@@ -4045,7 +3950,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: AgendaItem
     domain_of:
     - HasIdentification
@@ -4063,7 +3967,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: AgendaItem
     domain_of:
     - HasIdentification
@@ -4079,7 +3982,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateBeginActual
-    alias: date_begin_actual
     owner: AgendaItem
     domain_of:
     - IsEventWithDuration
@@ -4095,7 +3997,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeBeginActual
-    alias: datetime_begin_actual
     owner: AgendaItem
     domain_of:
     - IsEventWithDuration
@@ -4111,7 +4012,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateBeginPlanned
-    alias: date_begin_planned
     owner: AgendaItem
     domain_of:
     - IsEventWithDuration
@@ -4127,7 +4027,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeBeginPlanned
-    alias: datetime_begin_planned
     owner: AgendaItem
     domain_of:
     - IsEventWithDuration
@@ -4143,7 +4042,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateEndActual
-    alias: date_end_actual
     owner: AgendaItem
     domain_of:
     - IsEventWithDuration
@@ -4159,7 +4057,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeEndActual
-    alias: datetime_end_actual
     owner: AgendaItem
     domain_of:
     - IsEventWithDuration
@@ -4175,7 +4072,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateEndPlanned
-    alias: date_end_planned
     owner: AgendaItem
     domain_of:
     - IsEventWithDuration
@@ -4191,7 +4087,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeEndPlanned
-    alias: datetime_end_planned
     owner: AgendaItem
     domain_of:
     - IsEventWithDuration
@@ -4206,7 +4101,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateCreated
-    alias: date_created
     owner: AgendaItem
     domain_of:
     - HasCreationModificationDates
@@ -4221,7 +4115,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeCreated
-    alias: datetime_created
     owner: AgendaItem
     domain_of:
     - HasCreationModificationDates
@@ -4236,7 +4129,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateModified
-    alias: date_modified
     owner: AgendaItem
     domain_of:
     - HasCreationModificationDates
@@ -4252,14 +4144,13 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeModified
-    alias: datetime_modified
     owner: AgendaItem
     domain_of:
     - HasCreationModificationDates
     range: datetime
 
 ```
-</details>
+</details></div>
 
 ## Resolution (Beschluss)
 
@@ -4430,7 +4321,10 @@ Bei mehrsprachigen Parlamenten (CH, BE, etc.) müssen Beschlusstexte in allen Am
 4. **Geschäftsführung**: Nachverfolgung von Beschlüssen und deren Umsetzung
 5. **Statistische Auswertung**: Annahme-/Ablehnungsquoten
 
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Resolution 
 
@@ -4442,6 +4336,8 @@ _[de] Eine Resolution oder Entscheidung zu einem Traktandum, einschließlich Abs
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -4593,7 +4489,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: resolution_type
     owner: Resolution
     domain_of:
     - Resolution
@@ -4607,7 +4502,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: type_label
     owner: Resolution
     domain_of:
     - Resolution
@@ -4624,7 +4518,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: vote_procedures
     owner: Resolution
     domain_of:
     - Resolution
@@ -4643,7 +4536,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: meta:documents
-    alias: documents
     owner: Resolution
     domain_of:
     - Legislature
@@ -4661,7 +4553,7 @@ attributes:
     inlined_as_list: true
 
 ```
-</details>
+</details></div>
 
 ## Motion (Anträge)
 
@@ -4703,7 +4595,10 @@ AgendaItem (Energiegesetz - Art. 15)
   └─ Voting (Abstimmung über Artikel in Gesamtheit)
 ```
 
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Motion 
 
@@ -4715,6 +4610,8 @@ _[de] Ein formeller Antrag, der während der Verhandlungen eingereicht wird._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -4857,7 +4754,6 @@ attributes:
     name: title
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: title
     owner: Motion
     domain_of:
     - Election
@@ -4869,7 +4765,6 @@ attributes:
     name: description
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: description
     owner: Motion
     domain_of:
     - Legislature
@@ -4888,7 +4783,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: meta:documents
-    alias: documents
     owner: Motion
     domain_of:
     - Legislature
@@ -4914,7 +4808,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: Motion
     domain_of:
     - HasIdentification
@@ -4930,7 +4823,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: Motion
     domain_of:
     - HasIdentification
@@ -4948,14 +4840,13 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: Motion
     domain_of:
     - HasIdentification
     range: uriorcurie
 
 ```
-</details>
+</details></div>
 
 ToDo: Nicole
 
@@ -5155,7 +5046,10 @@ Voting
 - **datetime_modified**: Letzte Aktualisierung (z.B. bei Korrekturen des Abstimmungsprotkolls)
 
 
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Voting 
 
@@ -5167,6 +5061,8 @@ _[de] Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -5462,7 +5358,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_begin
     owner: Voting
     domain_of:
     - Voting
@@ -5479,7 +5374,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_end
     owner: Voting
     domain_of:
     - Voting
@@ -5495,7 +5389,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: voting_type
     owner: Voting
     domain_of:
     - Voting
@@ -5509,7 +5402,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: type_label
     owner: Voting
     domain_of:
     - Resolution
@@ -5528,7 +5420,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: voting_title
     owner: Voting
     domain_of:
     - Voting
@@ -5545,7 +5436,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: optional
     owner: Voting
     domain_of:
     - Voting
@@ -5560,7 +5450,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:landingPage
-    alias: landing_page
     owner: Voting
     domain_of:
     - Legislature
@@ -5579,7 +5468,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: label_yes
     owner: Voting
     domain_of:
     - Voting
@@ -5593,7 +5481,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: label_no
     owner: Voting
     domain_of:
     - Voting
@@ -5607,7 +5494,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: label_abstention
     owner: Voting
     domain_of:
     - Voting
@@ -5621,7 +5507,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: tie_breaker
     owner: Voting
     domain_of:
     - Voting
@@ -5635,7 +5520,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total_count_yes
     owner: Voting
     domain_of:
     - Voting
@@ -5649,7 +5533,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total_count_no
     owner: Voting
     domain_of:
     - Voting
@@ -5663,7 +5546,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total_count_abstention
     owner: Voting
     domain_of:
     - Voting
@@ -5679,7 +5561,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total_other
     owner: Voting
     domain_of:
     - Voting
@@ -5698,7 +5579,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total_absent
     owner: Voting
     domain_of:
     - Voting
@@ -5714,7 +5594,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total
     owner: Voting
     domain_of:
     - Voting
@@ -5731,7 +5610,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: majority_type
     owner: Voting
     domain_of:
     - Voting
@@ -5747,7 +5625,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: majority_count
     owner: Voting
     domain_of:
     - Voting
@@ -5764,7 +5641,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: result_text
     owner: Voting
     domain_of:
     - Voting
@@ -5779,7 +5655,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: parent_meeting
     owner: Voting
     domain_of:
     - Meeting
@@ -5798,7 +5673,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: parent_agenda_item
     owner: Voting
     domain_of:
     - AgendaItem
@@ -5815,7 +5689,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: affair_id
     owner: Voting
     domain_of:
     - AgendaItem
@@ -5833,7 +5706,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: actor_id
     owner: Voting
     domain_of:
     - Legislature
@@ -5856,7 +5728,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: meta:documents
-    alias: documents
     owner: Voting
     domain_of:
     - Legislature
@@ -5882,7 +5753,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: Voting
     domain_of:
     - HasIdentification
@@ -5898,7 +5768,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: Voting
     domain_of:
     - HasIdentification
@@ -5916,7 +5785,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: Voting
     domain_of:
     - HasIdentification
@@ -5931,7 +5799,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateCreated
-    alias: date_created
     owner: Voting
     domain_of:
     - HasCreationModificationDates
@@ -5946,7 +5813,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeCreated
-    alias: datetime_created
     owner: Voting
     domain_of:
     - HasCreationModificationDates
@@ -5961,7 +5827,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateModified
-    alias: date_modified
     owner: Voting
     domain_of:
     - HasCreationModificationDates
@@ -5977,14 +5842,13 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeModified
-    alias: datetime_modified
     owner: Voting
     domain_of:
     - HasCreationModificationDates
     range: datetime
 
 ```
-</details>
+</details></div>
 
 ## Individual Vote (Einzelstimme)
 
@@ -6098,7 +5962,10 @@ IndividualVote-Entitäten werden nur bei namentlichen (offenen) Abstimmungen erf
 - **Namentliche Abstimmung**: Jede Stimme wird erfasst und ist öffentlich
 - **Geheime Abstimmung**: Nur das Gesamtergebnis wird erfasst, keine IndividualVotes
 
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: IndividualVote 
 
@@ -6110,6 +5977,8 @@ _[de] Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -6302,7 +6171,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:parentVoting
-    alias: parent_voting
     owner: IndividualVote
     domain_of:
     - IndividualVote
@@ -6318,7 +6186,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: actor_id
     owner: IndividualVote
     domain_of:
     - Legislature
@@ -6339,7 +6206,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: seat_nr
     owner: IndividualVote
     domain_of:
     - IndividualVote
@@ -6355,7 +6221,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: weight
     owner: IndividualVote
     domain_of:
     - IndividualVote
@@ -6369,7 +6234,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: individual_vote_type
     owner: IndividualVote
     domain_of:
     - IndividualVote
@@ -6383,7 +6247,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: type_label
     owner: IndividualVote
     domain_of:
     - Resolution
@@ -6401,7 +6264,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: IndividualVote
     domain_of:
     - HasIdentification
@@ -6417,7 +6279,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: IndividualVote
     domain_of:
     - HasIdentification
@@ -6435,7 +6296,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: IndividualVote
     domain_of:
     - HasIdentification
@@ -6450,7 +6310,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateCreated
-    alias: date_created
     owner: IndividualVote
     domain_of:
     - HasCreationModificationDates
@@ -6465,7 +6324,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeCreated
-    alias: datetime_created
     owner: IndividualVote
     domain_of:
     - HasCreationModificationDates
@@ -6480,7 +6338,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateModified
-    alias: date_modified
     owner: IndividualVote
     domain_of:
     - HasCreationModificationDates
@@ -6496,14 +6353,13 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeModified
-    alias: datetime_modified
     owner: IndividualVote
     domain_of:
     - HasCreationModificationDates
     range: datetime
 
 ```
-</details>
+</details></div>
 
 ## Election (Wahl)
 
@@ -6724,7 +6580,10 @@ Bei offenen Wahlen:
 - Höhere Transparenz
 - Potenzielle soziale Druckeffekte
 
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Election 
 
@@ -6736,6 +6595,8 @@ _[de] Ein Wahlverfahren zur Wahl von Personen in Positionen._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -6976,7 +6837,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_begin
     owner: Election
     domain_of:
     - Voting
@@ -6993,7 +6853,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_end
     owner: Election
     domain_of:
     - Voting
@@ -7005,7 +6864,6 @@ attributes:
     description: Type of election procedure
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: election_type
     owner: Election
     domain_of:
     - Election
@@ -7019,7 +6877,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: type_label
     owner: Election
     domain_of:
     - Resolution
@@ -7031,7 +6888,6 @@ attributes:
     name: title
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: title
     owner: Election
     domain_of:
     - Election
@@ -7049,7 +6905,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:landingPage
-    alias: landing_page
     owner: Election
     domain_of:
     - Legislature
@@ -7070,7 +6925,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total_absent
     owner: Election
     domain_of:
     - Voting
@@ -7086,7 +6940,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total
     owner: Election
     domain_of:
     - Voting
@@ -7103,7 +6956,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: majority_type
     owner: Election
     domain_of:
     - Voting
@@ -7119,7 +6971,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: majority_count
     owner: Election
     domain_of:
     - Voting
@@ -7136,7 +6987,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: result_text
     owner: Election
     domain_of:
     - Voting
@@ -7151,7 +7001,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: parent_meeting
     owner: Election
     domain_of:
     - Meeting
@@ -7170,7 +7019,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: parent_agenda_item
     owner: Election
     domain_of:
     - AgendaItem
@@ -7187,7 +7035,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: affair_id
     owner: Election
     domain_of:
     - AgendaItem
@@ -7205,7 +7052,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: actor_id
     owner: Election
     domain_of:
     - Legislature
@@ -7228,7 +7074,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: meta:documents
-    alias: documents
     owner: Election
     domain_of:
     - Legislature
@@ -7254,7 +7099,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: Election
     domain_of:
     - HasIdentification
@@ -7270,7 +7114,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: Election
     domain_of:
     - HasIdentification
@@ -7288,7 +7131,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: Election
     domain_of:
     - HasIdentification
@@ -7303,7 +7145,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateCreated
-    alias: date_created
     owner: Election
     domain_of:
     - HasCreationModificationDates
@@ -7318,7 +7159,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeCreated
-    alias: datetime_created
     owner: Election
     domain_of:
     - HasCreationModificationDates
@@ -7333,7 +7173,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateModified
-    alias: date_modified
     owner: Election
     domain_of:
     - HasCreationModificationDates
@@ -7349,17 +7188,22 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeModified
-    alias: datetime_modified
     owner: Election
     domain_of:
     - HasCreationModificationDates
     range: datetime
 
 ```
-</details>
+</details></div>
 
 ToDo: David
 
+
+Debatte
+
+* -> Video Aufzeichnung -> Worttransskript
+*   -> Wortprotokol -> Text to Timestamp -> Text beinhaltet die Timestamps -> Textdokument (mit oder ohne definition vom Format (spantypen))
+*   -> Aufbereitetes Proktoll -> AgendaItem to Timestamp
 
 ## Speech (Wortmeldung, Votum)
 
@@ -7498,7 +7342,10 @@ Das Feld **speech_type** kann verschiedene Arten unterscheiden:
 - **procedural**: Verfahrensantrag
 - **declaration**: Erklärung
 
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Speech 
 
@@ -7510,6 +7357,8 @@ _[de] Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genan
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -7731,7 +7580,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:language
-    alias: language
     owner: Speech
     domain_of:
     - Speech
@@ -7745,7 +7593,6 @@ attributes:
     description: Start indicator or position
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: start
     owner: Speech
     domain_of:
     - Speech
@@ -7759,7 +7606,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_begin
     owner: Speech
     domain_of:
     - Voting
@@ -7776,7 +7622,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_end
     owner: Speech
     domain_of:
     - Voting
@@ -7788,7 +7633,6 @@ attributes:
     description: Full name of the actor/person
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: actor_fullname
     owner: Speech
     domain_of:
     - Speech
@@ -7804,7 +7648,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: actor_id
     owner: Speech
     domain_of:
     - Legislature
@@ -7821,7 +7664,6 @@ attributes:
     description: Role of the person (e.g., commission speaker)
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: role
     owner: Speech
     domain_of:
     - Speech
@@ -7830,7 +7672,6 @@ attributes:
     name: text
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: text
     owner: Speech
     domain_of:
     - Speech
@@ -7847,7 +7688,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: text_format
     owner: Speech
     domain_of:
     - Speech
@@ -7861,7 +7701,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: text_type
     owner: Speech
     domain_of:
     - Speech
@@ -7876,7 +7715,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:landingPage
-    alias: landing_page
     owner: Speech
     domain_of:
     - Legislature
@@ -7891,7 +7729,6 @@ attributes:
     description: URL to media file (audio/video)
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: media_url
     owner: Speech
     domain_of:
     - Speech
@@ -7901,7 +7738,6 @@ attributes:
     description: Type of media (audio, video, document)
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: media_type
     owner: Speech
     domain_of:
     - Speech
@@ -7912,7 +7748,6 @@ attributes:
     description: MIME type of the media file
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: media_format
     owner: Speech
     domain_of:
     - Speech
@@ -7928,7 +7763,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: meta:documents
-    alias: documents
     owner: Speech
     domain_of:
     - Legislature
@@ -7954,7 +7788,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: Speech
     domain_of:
     - HasIdentification
@@ -7970,7 +7803,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: Speech
     domain_of:
     - HasIdentification
@@ -7988,7 +7820,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: Speech
     domain_of:
     - HasIdentification
@@ -8003,7 +7834,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateCreated
-    alias: date_created
     owner: Speech
     domain_of:
     - HasCreationModificationDates
@@ -8018,7 +7848,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeCreated
-    alias: datetime_created
     owner: Speech
     domain_of:
     - HasCreationModificationDates
@@ -8033,7 +7862,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateModified
-    alias: date_modified
     owner: Speech
     domain_of:
     - HasCreationModificationDates
@@ -8049,14 +7877,13 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeModified
-    alias: datetime_modified
     owner: Speech
     domain_of:
     - HasCreationModificationDates
     range: datetime
 
 ```
-</details>
+</details></div>
 
 
 # Texte und Medien
@@ -8136,7 +7963,10 @@ AgendaItem
 Meeting
   └─ Media (Livestream-URL)
 
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: TextSegment 
 
@@ -8148,6 +7978,8 @@ _[de] Ein Textsegment wie Querverweise oder Zwischentitel in Sitzungsprotokollen
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -8275,7 +8107,6 @@ attributes:
     name: text
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: text
     owner: TextSegment
     domain_of:
     - Speech
@@ -8293,7 +8124,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: TextSegment
     domain_of:
     - HasIdentification
@@ -8309,7 +8139,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: TextSegment
     domain_of:
     - HasIdentification
@@ -8327,18 +8156,20 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: TextSegment
     domain_of:
     - HasIdentification
     range: uriorcurie
 
 ```
-</details>
+</details></div>
 
 
 
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Media 
 
@@ -8350,6 +8181,8 @@ _[de] Mediendateien oder Dokumente (einschließlich Protokolle in PDF/HTML/WORD 
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -8504,7 +8337,6 @@ attributes:
     name: title
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: title
     owner: Media
     domain_of:
     - Election
@@ -8517,7 +8349,6 @@ attributes:
     description: Type of media (audio, video, document)
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: media_type
     owner: Media
     domain_of:
     - Speech
@@ -8527,7 +8358,6 @@ attributes:
     name: url
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: url
     owner: Media
     domain_of:
     - Session
@@ -8544,7 +8374,6 @@ attributes:
     description: Version number or identifier
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: version
     owner: Media
     domain_of:
     - Media
@@ -8554,7 +8383,6 @@ attributes:
     description: Type of parent object (meeting, agenda, speech, affair)
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: parent_type
     owner: Media
     domain_of:
     - Media
@@ -8569,7 +8397,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: Media
     domain_of:
     - HasIdentification
@@ -8585,7 +8412,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: Media
     domain_of:
     - HasIdentification
@@ -8603,16 +8429,18 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: Media
     domain_of:
     - HasIdentification
     range: uriorcurie
 
 ```
-</details>
+</details></div>
 
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: MultilingualString 
 
@@ -8624,6 +8452,8 @@ _[de] Ein String, der Text in mehreren Sprachen enthalten kann._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -8760,7 +8590,6 @@ attributes:
     name: text
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: text
     owner: MultilingualString
     domain_of:
     - Speech
@@ -8778,7 +8607,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:language
-    alias: language
     owner: MultilingualString
     domain_of:
     - Speech
@@ -8790,11 +8618,16 @@ attributes:
     pattern: ^[a-z]{2}$
 
 ```
-</details>
+</details></div>
 
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Container 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -9058,50 +8891,50 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:legislature
-    alias: legislatures
     owner: Container
     domain_of:
     - Container
     range: Legislature
     multivalued: true
+    inlined: true
     inlined_as_list: true
   sessions:
     name: sessions
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:session
-    alias: sessions
     owner: Container
     domain_of:
     - Container
     range: Session
     multivalued: true
+    inlined: true
     inlined_as_list: true
   meetings:
     name: meetings
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:meeting
-    alias: meetings
     owner: Container
     domain_of:
     - Container
     - Session
     range: Meeting
     multivalued: true
+    inlined: true
     inlined_as_list: true
   agenda_items:
     name: agenda_items
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:agendaItem
-    alias: agenda_items
     owner: Container
     domain_of:
     - Container
     - JointDebate
     range: AgendaItem
     multivalued: true
+    inlined: true
     inlined_as_list: true
   votings:
     name: votings
@@ -9109,12 +8942,12 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:voting
-    alias: votings
     owner: Container
     domain_of:
     - Container
     range: Voting
     multivalued: true
+    inlined: true
     inlined_as_list: true
   elections:
     name: elections
@@ -9122,12 +8955,12 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:election
-    alias: elections
     owner: Container
     domain_of:
     - Container
     range: Election
     multivalued: true
+    inlined: true
     inlined_as_list: true
   individual_votes:
     name: individual_votes
@@ -9135,12 +8968,12 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:individualVote
-    alias: individual_votes
     owner: Container
     domain_of:
     - Container
     range: IndividualVote
     multivalued: true
+    inlined: true
     inlined_as_list: true
   attendances:
     name: attendances
@@ -9148,12 +8981,12 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:attendance
-    alias: attendances
     owner: Container
     domain_of:
     - Container
     range: Attendance
     multivalued: true
+    inlined: true
     inlined_as_list: true
   individual_attendances:
     name: individual_attendances
@@ -9161,12 +8994,12 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:individualAttendance
-    alias: individual_attendances
     owner: Container
     domain_of:
     - Container
     range: IndividualAttendance
     multivalued: true
+    inlined: true
     inlined_as_list: true
   speeches:
     name: speeches
@@ -9174,12 +9007,12 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:speech
-    alias: speeches
     owner: Container
     domain_of:
     - Container
     range: Speech
     multivalued: true
+    inlined: true
     inlined_as_list: true
   resolutions:
     name: resolutions
@@ -9187,12 +9020,12 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:resolution
-    alias: resolutions
     owner: Container
     domain_of:
     - Container
     range: Resolution
     multivalued: true
+    inlined: true
     inlined_as_list: true
   local_id:
     name: local_id
@@ -9204,7 +9037,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: Container
     domain_of:
     - HasIdentification
@@ -9220,7 +9052,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: Container
     domain_of:
     - HasIdentification
@@ -9238,7 +9069,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: Container
     domain_of:
     - HasIdentification
@@ -9246,6 +9076,6 @@ attributes:
 tree_root: true
 
 ```
-</details>
+</details></div>
 
 

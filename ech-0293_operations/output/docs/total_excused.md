@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: total_excused 
 
@@ -7,11 +10,11 @@ _Total number of excused absences_
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:total_excused](https://ch.paf.link/schema/operations/total_excused)
-Alias: total_excused
-
 <!-- no inheritance hierarchy -->
 
 
@@ -84,10 +87,9 @@ name: total_excused
 description: Total number of excused absences
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: total_excused
 domain_of:
 - Attendance
 range: integer
 
 ```
-</details>
+</details></div>

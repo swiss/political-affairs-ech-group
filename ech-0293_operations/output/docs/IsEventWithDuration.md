@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: IsEventWithDuration 
 
@@ -10,6 +13,8 @@ _[en] A mixin class that provides slots for modeling events or occurrences with 
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -31,6 +36,8 @@ URI: [ops:IsEventWithDuration](https://ch.paf.link/schema/operations/IsEventWith
         click Meeting href "../Meeting/"
       IsEventWithDuration <|-- AgendaItem
         click AgendaItem href "../AgendaItem/"
+      IsEventWithDuration <|-- IsProcessStep
+        click IsProcessStep href "../IsProcessStep/"
       
       IsEventWithDuration : date_begin_actual
         
@@ -86,6 +93,7 @@ URI: [ops:IsEventWithDuration](https://ch.paf.link/schema/operations/IsEventWith
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |
+| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |
 
 
 
@@ -183,7 +191,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateBeginActual
-    alias: date_begin_actual
     owner: IsEventWithDuration
     domain_of:
     - IsEventWithDuration
@@ -199,7 +206,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeBeginActual
-    alias: datetime_begin_actual
     owner: IsEventWithDuration
     domain_of:
     - IsEventWithDuration
@@ -215,7 +221,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateBeginPlanned
-    alias: date_begin_planned
     owner: IsEventWithDuration
     domain_of:
     - IsEventWithDuration
@@ -231,7 +236,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeBeginPlanned
-    alias: datetime_begin_planned
     owner: IsEventWithDuration
     domain_of:
     - IsEventWithDuration
@@ -247,7 +251,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateEndActual
-    alias: date_end_actual
     owner: IsEventWithDuration
     domain_of:
     - IsEventWithDuration
@@ -263,7 +266,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeEndActual
-    alias: datetime_end_actual
     owner: IsEventWithDuration
     domain_of:
     - IsEventWithDuration
@@ -279,7 +281,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateEndPlanned
-    alias: date_end_planned
     owner: IsEventWithDuration
     domain_of:
     - IsEventWithDuration
@@ -295,11 +296,10 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeEndPlanned
-    alias: datetime_end_planned
     owner: IsEventWithDuration
     domain_of:
     - IsEventWithDuration
     range: datetime
 
 ```
-</details>
+</details></div>

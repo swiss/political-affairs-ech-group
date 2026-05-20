@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: speaking_actor_id 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:speaking_actor_id](https://ch.paf.link/schema/operations/speaking_actor_id)
-Alias: speaking_actor_id
-
 <!-- no inheritance hierarchy -->
 
 
@@ -92,10 +95,9 @@ description: '[en] The speaker or head of the department for the agenda item.
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: speaking_actor_id
 domain_of:
 - AgendaItem
 range: string
 
 ```
-</details>
+</details></div>

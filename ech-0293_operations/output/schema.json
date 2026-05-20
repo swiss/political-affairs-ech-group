@@ -797,6 +797,106 @@
             "title": "Expression",
             "type": "object"
         },
+        "HasCreationModificationDates": {
+            "additionalProperties": false,
+            "description": "[de] Eine Mixin-Klasse, die Slots f\u00fcr die Modellierung von Erstellungs- und \u00c4nderungsdaten einer Entit\u00e4t zur Verf\u00fcgung stellt.\n[en] A mixin class that provides slots for modeling creation and modification dates of an entity.",
+            "properties": {
+                "date_created": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date when an entity was created.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_modified": {
+                    "description": "[de] Das Datum, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date when an entity was last modified.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_created": {
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date and time when an entity was created.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_modified": {
+                    "description": "[de] Das Datum und die Uhrzeit, an dem eine Entit\u00e4t zuletzt ge\u00e4ndert wurde.\n[en] The date and time when an entity was last modified.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "HasCreationModificationDates",
+            "type": "object"
+        },
+        "HasIdentification": {
+            "additionalProperties": false,
+            "description": "[de] Eine Mixin-Klasse, die Slots f\u00fcr die Identifikation einer Entit\u00e4t zur Verf\u00fcgung stellt.\n[en] A mixin class that provides slots for the identification of an entity.",
+            "properties": {
+                "global_uri": {
+                    "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
+                    "type": "string"
+                },
+                "local_id": {
+                    "description": "[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n[en] Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "wikidata_uri": {
+                    "description": "[de] Eine URI, die auf eine Wikidata-Entit\u00e4t verweist, z.B. https://www.wikidata.org/wiki/Q39 f\u00fcr die Schweiz.\n[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "global_uri"
+            ],
+            "title": "HasIdentification",
+            "type": "object"
+        },
+        "HasTemporalValidity": {
+            "additionalProperties": false,
+            "description": "[de] Eine Mixin-Klasse, die Slots f\u00fcr die Modellierung einer zeitlichen G\u00fcltigkeit einer Information (nicht eines Events) zur Verf\u00fcgung stellt.\n[en] A mixin class that provides slots for modeling a temporal validity of information (not of an event).",
+            "properties": {
+                "is_active": {
+                    "description": "[de] Gibt an, ob die Information aktuell g\u00fcltig ist. Kann n\u00fctzlich sein, wenn diese Information explizit vorhanden ist.\n[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.\n",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "valid_from": {
+                    "description": "[de] Das Datum, ab dem die Information g\u00fcltig ist.\n[en] The date from which the information is valid.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "valid_through": {
+                    "description": "[de] Das Datum, bis und mit dem die Information g\u00fcltig ist.\n[en] The date until which the information is valid, inclusive.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "HasTemporalValidity",
+            "type": "object"
+        },
         "IndividualAttendance": {
             "additionalProperties": false,
             "description": "[en] Individual attendance record for a specific person at a meeting (linked via the parent Attendance aggregate).\n[de] Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verkn\u00fcpft \u00fcber das \u00fcbergeordnete Attendance-Aggregat).",
@@ -998,6 +1098,218 @@
             ],
             "title": "IndividualVoteTypeEnum",
             "type": "string"
+        },
+        "IsEventWithDuration": {
+            "additionalProperties": false,
+            "description": "[de] Eine Mixin-Klasse, die Slots f\u00fcr die Modellierung von Ereignissen oder Vorkommnissen mit Zeitdauer zur Verf\u00fcgung stellt.\n[en] A mixin class that provides slots for modeling events or occurrences with time duration.",
+            "properties": {
+                "date_begin_actual": {
+                    "description": "[de] Das tats\u00e4chliche Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual start date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_begin_planned": {
+                    "description": "[de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned start date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_end_actual": {
+                    "description": "[de] Das tats\u00e4chliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual end date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_end_planned": {
+                    "description": "[de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned end date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_begin_actual": {
+                    "description": "[de] Das tats\u00e4chliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual start date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_begin_planned": {
+                    "description": "[de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned start date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_end_actual": {
+                    "description": "[de] Das tats\u00e4chliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual end date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_end_planned": {
+                    "description": "[de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned end date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "IsEventWithDuration",
+            "type": "object"
+        },
+        "IsInstantaneousEvent": {
+            "additionalProperties": false,
+            "description": "[de] Eine Mixin-Klasse, die Slots f\u00fcr die Modellierung von instantanen Ereignissen oder Vorkommnissen (ohne Zeitdauer) zur Verf\u00fcgung stellt.\n[en] A mixin class that provides slots for modeling instantaneous events or occurrences (without time duration).",
+            "properties": {
+                "date_actual": {
+                    "description": "[de] Das tats\u00e4chliche Datum eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer).\n[en] The actual date of an instantaneous event or occurrence (without time duration).\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_planned": {
+                    "description": "[de] Das geplante Datum eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer).\n[en] The planned date of an instantaneous event or occurrence (without time duration).\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_actual": {
+                    "description": "[de] Das tats\u00e4chliche Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer).\n[en] The actual date and time of an instantaneous event or occurrence (without time duration).\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_planned": {
+                    "description": "[de] Das geplante Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer).\n[en] The planned date and time of an instantaneous event or occurrence (without time duration).\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "IsInstantaneousEvent",
+            "type": "object"
+        },
+        "IsProcessStep": {
+            "additionalProperties": false,
+            "description": "[de] Eine Mixin-Klasse f\u00fcr einen einzelnen Schritt in einem\nmehrstufigen Prozess (z. B. Bearbeitungsschritt eines Gesch\u00e4fts oder\nPhasen\u00adschritt einer Konsultation). Kombiniert Identifikations- und\nZeitdauer-Slots und erg\u00e4nzt einen freien Bemerkungs-Slot. Konkrete\nStep-Klassen erg\u00e4nzen ihre eigenen typ-spezifischen Slots.\n[en] A mixin class for a single step in a multi-stage process (e.g.,\na deliberation step of an affair or a phase step of a consultation).\nCombines identification and event-duration slots and adds a free-text\nremark slot. Concrete step classes add their own type-specific slots.",
+            "properties": {
+                "date_begin_actual": {
+                    "description": "[de] Das tats\u00e4chliche Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual start date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_begin_planned": {
+                    "description": "[de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned start date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_end_actual": {
+                    "description": "[de] Das tats\u00e4chliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual end date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_end_planned": {
+                    "description": "[de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned end date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_begin_actual": {
+                    "description": "[de] Das tats\u00e4chliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual start date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_begin_planned": {
+                    "description": "[de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned start date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_end_actual": {
+                    "description": "[de] Das tats\u00e4chliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The actual end date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_end_planned": {
+                    "description": "[de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.\n[en] The planned end date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "global_uri": {
+                    "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
+                    "type": "string"
+                },
+                "local_id": {
+                    "description": "[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n[en] Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "remark": {
+                    "description": "[de] Freitext-Bemerkung oder Notiz f\u00fcr Sonderf\u00e4lle oder zus\u00e4tzlichen Kontext zu einem Prozessschritt oder einer Entit\u00e4t.\n[en] Free-text remark or note for edge cases or additional context on a process step or an entity.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "wikidata_uri": {
+                    "description": "[de] Eine URI, die auf eine Wikidata-Entit\u00e4t verweist, z.B. https://www.wikidata.org/wiki/Q39 f\u00fcr die Schweiz.\n[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "global_uri"
+            ],
+            "title": "IsProcessStep",
+            "type": "object"
         },
         "JointDebate": {
             "additionalProperties": false,
@@ -2458,7 +2770,7 @@
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
     "description": "",
-    "metamodel_version": "1.7.0",
+    "metamodel_version": "1.11.0",
     "properties": {
         "agenda_items": {
             "items": {

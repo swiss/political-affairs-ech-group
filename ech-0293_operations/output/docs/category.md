@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: category 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [ops:category](https://ch.paf.link/schema/operations/category)
-Alias: category
-
 <!-- no inheritance hierarchy -->
 
 
@@ -68,8 +71,7 @@ Alias: category
 name: category
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: category
 range: string
 
 ```
-</details>
+</details></div>

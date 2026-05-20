@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: format 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [meta:format](https://ch.paf.link/schema/meta/format)
-Alias: format
-
 <!-- no inheritance hierarchy -->
 
 
@@ -94,10 +97,9 @@ description: '[en] The file format of the manifestation (e.g., pdf, html).
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: meta:format
-alias: format
 domain_of:
 - Manifestation
 range: string
 
 ```
-</details>
+</details></div>

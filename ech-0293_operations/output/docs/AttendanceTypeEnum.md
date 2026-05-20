@@ -1,3 +1,9 @@
+---
+search:
+  boost: 2.0
+---
+
+
 # Enum: AttendanceTypeEnum 
 
 
@@ -10,6 +16,8 @@ _[de] Art der individuellen Anwesenheit._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 URI: [ops:AttendanceTypeEnum](https://ch.paf.link/schema/operations/AttendanceTypeEnum)
 
@@ -94,3 +102,5 @@ permissible_values:
 
 ```
 </details>
+
+</div>

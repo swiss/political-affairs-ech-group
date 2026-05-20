@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Voting 
 
@@ -10,6 +13,8 @@ _[de] Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -305,7 +310,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_begin
     owner: Voting
     domain_of:
     - Voting
@@ -322,7 +326,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_end
     owner: Voting
     domain_of:
     - Voting
@@ -338,7 +341,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: voting_type
     owner: Voting
     domain_of:
     - Voting
@@ -352,7 +354,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: type_label
     owner: Voting
     domain_of:
     - Resolution
@@ -371,7 +372,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: voting_title
     owner: Voting
     domain_of:
     - Voting
@@ -388,7 +388,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: optional
     owner: Voting
     domain_of:
     - Voting
@@ -403,7 +402,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:landingPage
-    alias: landing_page
     owner: Voting
     domain_of:
     - Legislature
@@ -422,7 +420,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: label_yes
     owner: Voting
     domain_of:
     - Voting
@@ -436,7 +433,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: label_no
     owner: Voting
     domain_of:
     - Voting
@@ -450,7 +446,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: label_abstention
     owner: Voting
     domain_of:
     - Voting
@@ -464,7 +459,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: tie_breaker
     owner: Voting
     domain_of:
     - Voting
@@ -478,7 +472,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total_count_yes
     owner: Voting
     domain_of:
     - Voting
@@ -492,7 +485,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total_count_no
     owner: Voting
     domain_of:
     - Voting
@@ -506,7 +498,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total_count_abstention
     owner: Voting
     domain_of:
     - Voting
@@ -522,7 +513,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total_other
     owner: Voting
     domain_of:
     - Voting
@@ -541,7 +531,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total_absent
     owner: Voting
     domain_of:
     - Voting
@@ -557,7 +546,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total
     owner: Voting
     domain_of:
     - Voting
@@ -574,7 +562,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: majority_type
     owner: Voting
     domain_of:
     - Voting
@@ -590,7 +577,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: majority_count
     owner: Voting
     domain_of:
     - Voting
@@ -607,7 +593,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: result_text
     owner: Voting
     domain_of:
     - Voting
@@ -622,7 +607,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: parent_meeting
     owner: Voting
     domain_of:
     - Meeting
@@ -641,7 +625,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: parent_agenda_item
     owner: Voting
     domain_of:
     - AgendaItem
@@ -658,7 +641,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: affair_id
     owner: Voting
     domain_of:
     - AgendaItem
@@ -676,7 +658,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: actor_id
     owner: Voting
     domain_of:
     - Legislature
@@ -699,7 +680,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: meta:documents
-    alias: documents
     owner: Voting
     domain_of:
     - Legislature
@@ -725,7 +705,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: Voting
     domain_of:
     - HasIdentification
@@ -741,7 +720,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: Voting
     domain_of:
     - HasIdentification
@@ -759,7 +737,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: Voting
     domain_of:
     - HasIdentification
@@ -774,7 +751,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateCreated
-    alias: date_created
     owner: Voting
     domain_of:
     - HasCreationModificationDates
@@ -789,7 +765,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeCreated
-    alias: datetime_created
     owner: Voting
     domain_of:
     - HasCreationModificationDates
@@ -804,7 +779,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateModified
-    alias: date_modified
     owner: Voting
     domain_of:
     - HasCreationModificationDates
@@ -820,11 +794,10 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeModified
-    alias: datetime_modified
     owner: Voting
     domain_of:
     - HasCreationModificationDates
     range: datetime
 
 ```
-</details>
+</details></div>

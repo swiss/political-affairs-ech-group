@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: work_type 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [meta:workType](https://ch.paf.link/schema/meta/workType)
-Alias: work_type
-
 <!-- no inheritance hierarchy -->
 
 
@@ -80,10 +83,9 @@ name: work_type
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: meta:workType
-alias: work_type
 domain_of:
 - Work
 range: WorkTypesEnum
 
 ```
-</details>
+</details></div>

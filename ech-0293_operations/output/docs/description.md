@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: description 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [ops:description](https://ch.paf.link/schema/operations/description)
-Alias: description
-
 <!-- no inheritance hierarchy -->
 
 
@@ -17,10 +20,10 @@ Alias: description
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
-| [Expression](Expression.md) |  |  no  |
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |  no  |
+| [Expression](Expression.md) |  |  no  |
 
 
 
@@ -81,7 +84,6 @@ Alias: description
 name: description
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: description
 domain_of:
 - Legislature
 - Meeting
@@ -90,4 +92,4 @@ domain_of:
 range: string
 
 ```
-</details>
+</details></div>

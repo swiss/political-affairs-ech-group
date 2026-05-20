@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: text_type 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:text_type](https://ch.paf.link/schema/operations/text_type)
-Alias: text_type
-
 <!-- no inheritance hierarchy -->
 
 
@@ -92,10 +95,9 @@ description: '[en] Type of text (raw draft, edited version)
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: text_type
 domain_of:
 - Speech
 range: string
 
 ```
-</details>
+</details></div>

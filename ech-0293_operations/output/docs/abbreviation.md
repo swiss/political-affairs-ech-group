@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: abbreviation 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [ops:abbreviation](https://ch.paf.link/schema/operations/abbreviation)
-Alias: abbreviation
-
 <!-- no inheritance hierarchy -->
 
 
@@ -17,8 +20,8 @@ Alias: abbreviation
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 
 
 
@@ -79,11 +82,10 @@ Alias: abbreviation
 name: abbreviation
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: abbreviation
 domain_of:
 - Session
 - Meeting
 range: string
 
 ```
-</details>
+</details></div>

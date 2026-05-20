@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: name 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [ops:name](https://ch.paf.link/schema/operations/name)
-Alias: name
-
 <!-- no inheritance hierarchy -->
 
 
@@ -17,9 +20,9 @@ Alias: name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 
 
 
@@ -81,7 +84,6 @@ Alias: name
 name: name
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: name
 domain_of:
 - Legislature
 - Session
@@ -92,4 +94,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

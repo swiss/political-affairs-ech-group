@@ -1,3 +1,9 @@
+---
+search:
+  boost: 2.0
+---
+
+
 # Enum: MajorityTypeEnum 
 
 
@@ -6,6 +12,8 @@
 _Type of majority required for the vote_
 
 
+
+<div data-search-exclude markdown="1">
 
 URI: [ops:MajorityTypeEnum](https://ch.paf.link/schema/operations/MajorityTypeEnum)
 
@@ -71,3 +79,5 @@ permissible_values:
 
 ```
 </details>
+
+</div>

@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Speech 
 
@@ -10,6 +13,8 @@ _[de] Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genan
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -231,7 +236,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:language
-    alias: language
     owner: Speech
     domain_of:
     - Speech
@@ -245,7 +249,6 @@ attributes:
     description: Start indicator or position
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: start
     owner: Speech
     domain_of:
     - Speech
@@ -259,7 +262,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_begin
     owner: Speech
     domain_of:
     - Voting
@@ -276,7 +278,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_end
     owner: Speech
     domain_of:
     - Voting
@@ -288,7 +289,6 @@ attributes:
     description: Full name of the actor/person
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: actor_fullname
     owner: Speech
     domain_of:
     - Speech
@@ -304,7 +304,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: actor_id
     owner: Speech
     domain_of:
     - Legislature
@@ -321,7 +320,6 @@ attributes:
     description: Role of the person (e.g., commission speaker)
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: role
     owner: Speech
     domain_of:
     - Speech
@@ -330,7 +328,6 @@ attributes:
     name: text
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: text
     owner: Speech
     domain_of:
     - Speech
@@ -347,7 +344,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: text_format
     owner: Speech
     domain_of:
     - Speech
@@ -361,7 +357,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: text_type
     owner: Speech
     domain_of:
     - Speech
@@ -376,7 +371,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:landingPage
-    alias: landing_page
     owner: Speech
     domain_of:
     - Legislature
@@ -391,7 +385,6 @@ attributes:
     description: URL to media file (audio/video)
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: media_url
     owner: Speech
     domain_of:
     - Speech
@@ -401,7 +394,6 @@ attributes:
     description: Type of media (audio, video, document)
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: media_type
     owner: Speech
     domain_of:
     - Speech
@@ -412,7 +404,6 @@ attributes:
     description: MIME type of the media file
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: media_format
     owner: Speech
     domain_of:
     - Speech
@@ -428,7 +419,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: meta:documents
-    alias: documents
     owner: Speech
     domain_of:
     - Legislature
@@ -454,7 +444,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: Speech
     domain_of:
     - HasIdentification
@@ -470,7 +459,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: Speech
     domain_of:
     - HasIdentification
@@ -488,7 +476,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: Speech
     domain_of:
     - HasIdentification
@@ -503,7 +490,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateCreated
-    alias: date_created
     owner: Speech
     domain_of:
     - HasCreationModificationDates
@@ -518,7 +504,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeCreated
-    alias: datetime_created
     owner: Speech
     domain_of:
     - HasCreationModificationDates
@@ -533,7 +518,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateModified
-    alias: date_modified
     owner: Speech
     domain_of:
     - HasCreationModificationDates
@@ -549,11 +533,10 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeModified
-    alias: datetime_modified
     owner: Speech
     domain_of:
     - HasCreationModificationDates
     range: datetime
 
 ```
-</details>
+</details></div>

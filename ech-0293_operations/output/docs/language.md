@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: language 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
-Alias: language
-
 <!-- no inheritance hierarchy -->
 
 
@@ -26,10 +29,10 @@ Alias: language
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Expression](Expression.md) |  |  no  |
 | [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
-| [MultilingualValue](MultilingualValue.md) | [de] Ein mehrsprachiger String mit Angabe der Sprache |  no  |
 | [MultilingualString](MultilingualString.md) | [en] A string that can contain text in multiple languages |  yes  |
+| [MultilingualValue](MultilingualValue.md) | [de] Ein mehrsprachiger String mit Angabe der Sprache |  no  |
+| [Expression](Expression.md) |  |  no  |
 
 
 
@@ -104,7 +107,6 @@ description: '[de] Sprachcode im ISO 639-1 Format.
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: mcm:language
-alias: language
 domain_of:
 - Speech
 - MultilingualString
@@ -114,4 +116,4 @@ range: string
 pattern: ^[a-z]{2}$
 
 ```
-</details>
+</details></div>

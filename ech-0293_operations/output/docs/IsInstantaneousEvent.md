@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: IsInstantaneousEvent 
 
@@ -10,6 +13,8 @@ _[en] A mixin class that provides slots for modeling instantaneous events or occ
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -154,7 +159,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateActual
-    alias: date_actual
     owner: IsInstantaneousEvent
     domain_of:
     - IsInstantaneousEvent
@@ -171,7 +175,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeActual
-    alias: datetime_actual
     owner: IsInstantaneousEvent
     domain_of:
     - IsInstantaneousEvent
@@ -188,7 +191,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datePlanned
-    alias: date_planned
     owner: IsInstantaneousEvent
     domain_of:
     - IsInstantaneousEvent
@@ -205,11 +207,10 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimePlanned
-    alias: datetime_planned
     owner: IsInstantaneousEvent
     domain_of:
     - IsInstantaneousEvent
     range: datetime
 
 ```
-</details>
+</details></div>

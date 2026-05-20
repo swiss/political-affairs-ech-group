@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: value 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [mcm:value](https://ld.ech.ch/schema/0292/meta-common/value)
-Alias: value
-
 <!-- no inheritance hierarchy -->
 
 
@@ -96,10 +99,9 @@ description: '[de] Der eigentliche Wert einer Information neben weiteren attribu
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: mcm:value
-alias: value
 domain_of:
 - MultilingualValue
 range: string
 
 ```
-</details>
+</details></div>

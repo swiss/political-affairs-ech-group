@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: voting_title 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:voting_title](https://ch.paf.link/schema/operations/voting_title)
-Alias: voting_title
-
 <!-- no inheritance hierarchy -->
 
 
@@ -95,7 +98,6 @@ description: '[en] Title or question being voted on. If no specific subject exis
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: voting_title
 domain_of:
 - Voting
 range: MultilingualString
@@ -104,4 +106,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: AgendaItem 
 
@@ -10,6 +13,8 @@ _[de] Ein Traktandum einer Sitzung._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -310,7 +315,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: parent_meeting
     owner: AgendaItem
     domain_of:
     - Meeting
@@ -328,7 +332,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: agenda_item_type
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -343,7 +346,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: agenda_item_number
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -357,7 +359,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: agenda_item_position
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -371,7 +372,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: leading_actor_id
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -385,7 +385,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: speaking_actor_id
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -399,7 +398,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: agenda_item_title
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -417,7 +415,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: affair_id
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -433,7 +430,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: agenda_item_description
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -446,7 +442,6 @@ attributes:
     description: State identifier (reference to state enum or custom state)
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: state_id
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -460,7 +455,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: state_name
     owner: AgendaItem
     domain_of:
     - Meeting
@@ -476,7 +470,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:landingPage
-    alias: landing_page
     owner: AgendaItem
     domain_of:
     - Legislature
@@ -490,7 +483,6 @@ attributes:
     name: url
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: url
     owner: AgendaItem
     domain_of:
     - Session
@@ -513,7 +505,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: agenda_item_category
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -528,7 +519,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: parent_agenda_item
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -544,7 +534,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: has_resolution
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -560,7 +549,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: meta:documents
-    alias: documents
     owner: AgendaItem
     domain_of:
     - Legislature
@@ -586,7 +574,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: AgendaItem
     domain_of:
     - HasIdentification
@@ -602,7 +589,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: AgendaItem
     domain_of:
     - HasIdentification
@@ -620,7 +606,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: AgendaItem
     domain_of:
     - HasIdentification
@@ -636,7 +621,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateBeginActual
-    alias: date_begin_actual
     owner: AgendaItem
     domain_of:
     - IsEventWithDuration
@@ -652,7 +636,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeBeginActual
-    alias: datetime_begin_actual
     owner: AgendaItem
     domain_of:
     - IsEventWithDuration
@@ -668,7 +651,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateBeginPlanned
-    alias: date_begin_planned
     owner: AgendaItem
     domain_of:
     - IsEventWithDuration
@@ -684,7 +666,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeBeginPlanned
-    alias: datetime_begin_planned
     owner: AgendaItem
     domain_of:
     - IsEventWithDuration
@@ -700,7 +681,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateEndActual
-    alias: date_end_actual
     owner: AgendaItem
     domain_of:
     - IsEventWithDuration
@@ -716,7 +696,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeEndActual
-    alias: datetime_end_actual
     owner: AgendaItem
     domain_of:
     - IsEventWithDuration
@@ -732,7 +711,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateEndPlanned
-    alias: date_end_planned
     owner: AgendaItem
     domain_of:
     - IsEventWithDuration
@@ -748,7 +726,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeEndPlanned
-    alias: datetime_end_planned
     owner: AgendaItem
     domain_of:
     - IsEventWithDuration
@@ -763,7 +740,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateCreated
-    alias: date_created
     owner: AgendaItem
     domain_of:
     - HasCreationModificationDates
@@ -778,7 +754,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeCreated
-    alias: datetime_created
     owner: AgendaItem
     domain_of:
     - HasCreationModificationDates
@@ -793,7 +768,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateModified
-    alias: date_modified
     owner: AgendaItem
     domain_of:
     - HasCreationModificationDates
@@ -809,11 +783,10 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeModified
-    alias: datetime_modified
     owner: AgendaItem
     domain_of:
     - HasCreationModificationDates
     range: datetime
 
 ```
-</details>
+</details></div>

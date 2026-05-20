@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: individual_votes 
 
@@ -7,11 +10,11 @@ _Collection of individual vote records_
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:individualVote](https://ch.paf.link/schema/operations/individualVote)
-Alias: individual_votes
-
 <!-- no inheritance hierarchy -->
 
 
@@ -87,7 +90,6 @@ description: Collection of individual vote records
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: ops:individualVote
-alias: individual_votes
 domain_of:
 - Container
 range: IndividualVote
@@ -96,4 +98,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

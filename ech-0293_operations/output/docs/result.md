@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: result 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [ops:result](https://ch.paf.link/schema/operations/result)
-Alias: result
-
 <!-- no inheritance hierarchy -->
 
 
@@ -68,8 +71,7 @@ Alias: result
 name: result
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: result
 range: string
 
 ```
-</details>
+</details></div>

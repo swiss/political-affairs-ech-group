@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: affair_id 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:affair_id](https://ch.paf.link/schema/operations/affair_id)
-Alias: affair_id
-
 <!-- no inheritance hierarchy -->
 
 
@@ -27,8 +30,8 @@ Alias: affair_id
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
-| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 | [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
+| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 
 
 
@@ -94,7 +97,6 @@ description: '[en] The connection to the affairs (business items) of the agenda 
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: affair_id
 domain_of:
 - AgendaItem
 - Voting
@@ -102,4 +104,4 @@ domain_of:
 range: string
 
 ```
-</details>
+</details></div>

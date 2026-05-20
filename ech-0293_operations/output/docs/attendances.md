@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: attendances 
 
@@ -7,11 +10,11 @@ _Collection of attendance records_
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:attendance](https://ch.paf.link/schema/operations/attendance)
-Alias: attendances
-
 <!-- no inheritance hierarchy -->
 
 
@@ -87,7 +90,6 @@ description: Collection of attendance records
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: ops:attendance
-alias: attendances
 domain_of:
 - Container
 range: Attendance
@@ -96,4 +98,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>
