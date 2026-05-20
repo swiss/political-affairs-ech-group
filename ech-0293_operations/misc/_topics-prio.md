@@ -5,4 +5,4 @@ Meeting 08.05.2025:
 3. Abstimmungen
 4. Präsenz / Anwesenheit
 5. Wortmeldungen (Text / Audio / Video) 
-6. Verknüpfung zu Gesetzesfahnen u. ä. Dokumenten
+6. Verknüpfung zu Gesetzesfahnen u. ä. Dokumenten, Synopsis
