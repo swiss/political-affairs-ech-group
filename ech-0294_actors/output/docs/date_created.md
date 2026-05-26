@@ -19,8 +19,6 @@ __
 
 
 URI: [mcm:dateCreated](https://ld.ech.ch/schema/0292/meta-common/dateCreated)
-Alias: date_created
-
 <!-- no inheritance hierarchy -->
 
 
@@ -32,9 +30,9 @@ Alias: date_created
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [HasCreationModificationDates](HasCreationModificationDates.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Ä... |  no  |
-| [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |  no  |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 | [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
+| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |  no  |
 | [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
 
 
@@ -103,7 +101,6 @@ description: '[de] Das Datum, an dem eine Entität erstellt wurde.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:dateCreated
-alias: date_created
 domain_of:
 - HasCreationModificationDates
 range: date

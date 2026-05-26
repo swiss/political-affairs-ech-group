@@ -19,8 +19,6 @@ __
 
 
 URI: [mcm:datePlanned](https://ld.ech.ch/schema/0292/meta-common/datePlanned)
-Alias: date_planned
-
 <!-- no inheritance hierarchy -->
 
 
@@ -100,7 +98,6 @@ description: '[de] Das geplante Datum eines instantanen Ereignisses oder Vorkomm
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:datePlanned
-alias: date_planned
 domain_of:
 - IsInstantaneousEvent
 range: date

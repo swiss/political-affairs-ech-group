@@ -19,8 +19,6 @@ __
 
 
 URI: [act:landingPage](https://ld.ech.ch/schema/0294/actors/landingPage)
-Alias: landing_page
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: '[de] Website mit weiteren Informationen.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:landingPage
-alias: landing_page
 domain_of:
 - Group
 range: uri

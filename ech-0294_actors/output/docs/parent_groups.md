@@ -19,8 +19,6 @@ __
 
 
 URI: [act:parentGroup](https://ld.ech.ch/schema/0294/actors/parentGroup)
-Alias: parent_groups
-
 <!-- no inheritance hierarchy -->
 
 
@@ -102,7 +100,6 @@ description: '[de] Übergeordneten Gruppe. Zum Beispiel die Mutterpartei, zu Kan
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:parentGroup
-alias: parent_groups
 domain_of:
 - Group
 range: uriorcurie

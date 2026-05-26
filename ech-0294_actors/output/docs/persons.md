@@ -19,8 +19,6 @@ __
 
 
 URI: [act:person](https://ld.ech.ch/schema/0294/actors/person)
-Alias: persons
-
 <!-- no inheritance hierarchy -->
 
 
@@ -100,7 +98,6 @@ description: '[de] Sammlung von Personen.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:person
-alias: persons
 domain_of:
 - Container
 range: Person

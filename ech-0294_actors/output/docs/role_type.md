@@ -19,8 +19,6 @@ __
 
 
 URI: [act:roleType](https://ld.ech.ch/schema/0294/actors/roleType)
-Alias: role_type
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: '[en] Role of the person in the membership or function.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:roleType
-alias: role_type
 domain_of:
 - Membership
 range: RoleType

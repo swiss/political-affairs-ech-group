@@ -19,8 +19,6 @@ __
 
 
 URI: [act:contactType](https://ld.ech.ch/schema/0294/actors/contactType)
-Alias: contact_type
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: '[de] Typ der Kontaktinformation.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:contactType
-alias: contact_type
 domain_of:
 - Contact
 range: ContactTypeEnum

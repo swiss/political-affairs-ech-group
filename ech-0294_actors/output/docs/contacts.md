@@ -19,8 +19,6 @@ __
 
 
 URI: [act:contact](https://ld.ech.ch/schema/0294/actors/contact)
-Alias: contacts
-
 <!-- no inheritance hierarchy -->
 
 
@@ -31,8 +29,8 @@ Alias: contacts
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 | [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
+| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 
 
 
@@ -101,7 +99,6 @@ description: '[en] Contact information (email, website, social media).
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:contact
-alias: contacts
 domain_of:
 - Person
 - Group

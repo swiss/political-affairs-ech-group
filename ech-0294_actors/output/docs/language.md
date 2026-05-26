@@ -19,8 +19,6 @@ __
 
 
 URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
-Alias: language
-
 <!-- no inheritance hierarchy -->
 
 
@@ -107,7 +105,6 @@ description: '[de] Sprachcode im ISO 639-1 Format.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:language
-alias: language
 domain_of:
 - LanguageProficiency
 - MultilingualValue

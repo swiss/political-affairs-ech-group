@@ -19,8 +19,6 @@ __
 
 
 URI: [act:nameType](https://ld.ech.ch/schema/0294/actors/nameType)
-Alias: name_type
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: '[de] Typ des Namens.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:nameType
-alias: name_type
 domain_of:
 - Name
 range: NameTypeEnum

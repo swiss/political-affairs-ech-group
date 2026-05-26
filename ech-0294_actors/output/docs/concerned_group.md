@@ -19,8 +19,6 @@ __
 
 
 URI: [act:concernedGroup](https://ld.ech.ch/schema/0294/actors/concernedGroup)
-Alias: concerned_group
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: '[de] Link zu einer Gruppe, auf die sich die Zugehörigkeit bezieht
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:concernedGroup
-alias: concerned_group
 domain_of:
 - Membership
 range: Group

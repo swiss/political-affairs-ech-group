@@ -38,6 +38,7 @@ __
 
 | mixed into | description |
 | --- | --- |
+| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |
 
 
 

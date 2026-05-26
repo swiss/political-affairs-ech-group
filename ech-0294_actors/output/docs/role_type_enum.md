@@ -19,8 +19,6 @@ __
 
 
 URI: [act:roleTypeEnum](https://ld.ech.ch/schema/0294/actors/roleTypeEnum)
-Alias: role_type_enum
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: '[en] Role of the person in the membership or function.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:roleTypeEnum
-alias: role_type_enum
 domain_of:
 - RoleType
 range: RoleEnum

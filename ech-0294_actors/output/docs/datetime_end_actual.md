@@ -19,8 +19,6 @@ __
 
 
 URI: [mcm:datetimeEndActual](https://ld.ech.ch/schema/0292/meta-common/datetimeEndActual)
-Alias: datetime_end_actual
-
 <!-- no inheritance hierarchy -->
 
 
@@ -32,6 +30,7 @@ Alias: datetime_end_actual
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [IsEventWithDuration](IsEventWithDuration.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder V... |  no  |
+| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |  no  |
 
 
 
@@ -100,7 +99,6 @@ description: '[de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses 
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:datetimeEndActual
-alias: datetime_end_actual
 domain_of:
 - IsEventWithDuration
 range: datetime

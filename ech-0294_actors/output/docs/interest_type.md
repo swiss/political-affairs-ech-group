@@ -19,8 +19,6 @@ __
 
 
 URI: [act:interestType](https://ld.ech.ch/schema/0294/actors/interestType)
-Alias: interest_type
-
 <!-- no inheritance hierarchy -->
 
 
@@ -101,7 +99,6 @@ description: '[de] Art der Interessenbindung (Berufliche Tätigkeit, Politische 
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:interestType
-alias: interest_type
 domain_of:
 - InterestLink
 range: InterestTypeEnum

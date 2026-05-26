@@ -19,8 +19,6 @@ __
 
 
 URI: [mcm:datetimeEndPlanned](https://ld.ech.ch/schema/0292/meta-common/datetimeEndPlanned)
-Alias: datetime_end_planned
-
 <!-- no inheritance hierarchy -->
 
 
@@ -32,6 +30,7 @@ Alias: datetime_end_planned
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [IsEventWithDuration](IsEventWithDuration.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder V... |  no  |
+| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |  no  |
 
 
 
@@ -100,7 +99,6 @@ description: '[de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder 
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:datetimeEndPlanned
-alias: datetime_end_planned
 domain_of:
 - IsEventWithDuration
 range: datetime

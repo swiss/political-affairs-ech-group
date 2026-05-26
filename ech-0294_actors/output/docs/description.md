@@ -19,8 +19,6 @@ __
 
 
 URI: [act:description](https://ld.ech.ch/schema/0294/actors/description)
-Alias: description
-
 <!-- no inheritance hierarchy -->
 
 
@@ -98,7 +96,6 @@ description: '[de] Kurze Beschreibung der Gruppierung.
   '
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
-alias: description
 domain_of:
 - Group
 range: MultilingualValue

@@ -19,8 +19,6 @@ __
 
 
 URI: [act:partyColor](https://ld.ech.ch/schema/0294/actors/partyColor)
-Alias: party_color
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: '[de] Parteifarbe (optional für Parteien).
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:partyColor
-alias: party_color
 domain_of:
 - Group
 range: string

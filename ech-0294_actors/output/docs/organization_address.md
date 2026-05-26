@@ -19,8 +19,6 @@ __
 
 
 URI: [act:organizationAddress](https://ld.ech.ch/schema/0294/actors/organizationAddress)
-Alias: organization_address
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: '[en] Address of the organization.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:organizationAddress
-alias: organization_address
 domain_of:
 - InterestLink
 range: string

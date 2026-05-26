@@ -19,8 +19,6 @@ __
 
 
 URI: [act:occupationCode](https://ld.ech.ch/schema/0294/actors/occupationCode)
-Alias: occupation_code
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: '[de] ISCO-19 Code der Tätigkeit.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:occupationCode
-alias: occupation_code
 domain_of:
 - Occupation
 range: string

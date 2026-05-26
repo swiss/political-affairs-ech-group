@@ -19,8 +19,6 @@ __
 
 
 URI: [act:address](https://ld.ech.ch/schema/0294/actors/address)
-Alias: addresses
-
 <!-- no inheritance hierarchy -->
 
 
@@ -31,8 +29,8 @@ Alias: addresses
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 | [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
+| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 
 
 
@@ -61,6 +59,13 @@ Alias: addresses
 
 
 
+
+
+## Examples
+
+| Value |
+| --- |
+| [{'address_type': 'businessAddress', 'address_URI': 'https://ld.admin.ch/address/12345', 'street_address': 'Bundesplatz 3', 'postal_code': '3003', 'postal_locality': 'Bern'}, {'address_type': 'privateAddress', 'postal_locality': 'Zürich'}] |
 
 
 
@@ -98,10 +103,13 @@ description: '[de] Adressen mit Typ (privat, geschäftlich, lokal).
   [en] Addresses with type (private, business, local).
 
   '
+examples:
+- value: '[{''address_type'': ''businessAddress'', ''address_URI'': ''https://ld.admin.ch/address/12345'',
+    ''street_address'': ''Bundesplatz 3'', ''postal_code'': ''3003'', ''postal_locality'':
+    ''Bern''}, {''address_type'': ''privateAddress'', ''postal_locality'': ''Zürich''}]'
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:address
-alias: addresses
 domain_of:
 - Person
 - Group
