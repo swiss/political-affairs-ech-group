@@ -19,8 +19,6 @@ __
 
 
 URI: [act:genderCode](https://ld.ech.ch/schema/0294/actors/genderCode)
-Alias: gender_code
-
 <!-- no inheritance hierarchy -->
 
 
@@ -108,7 +106,6 @@ examples:
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:genderCode
-alias: gender_code
 domain_of:
 - Gender
 range: string

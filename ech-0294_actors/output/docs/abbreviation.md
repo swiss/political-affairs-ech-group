@@ -19,8 +19,6 @@ __
 
 
 URI: [act:abbreviation](https://ld.ech.ch/schema/0294/actors/abbreviation)
-Alias: abbreviation
-
 <!-- no inheritance hierarchy -->
 
 
@@ -98,7 +96,6 @@ description: '[de] Abkürzung (kann mehrsprachig sein).
   '
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
-alias: abbreviation
 domain_of:
 - Group
 range: MultilingualValue

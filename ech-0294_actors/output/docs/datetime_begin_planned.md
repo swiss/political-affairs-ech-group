@@ -19,8 +19,6 @@ __
 
 
 URI: [mcm:datetimeBeginPlanned](https://ld.ech.ch/schema/0292/meta-common/datetimeBeginPlanned)
-Alias: datetime_begin_planned
-
 <!-- no inheritance hierarchy -->
 
 
@@ -101,7 +99,6 @@ description: '[de] Das geplante Startdatum und die Uhrzeit eines Ereignisses ode
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:datetimeBeginPlanned
-alias: datetime_begin_planned
 domain_of:
 - IsEventWithDuration
 range: datetime

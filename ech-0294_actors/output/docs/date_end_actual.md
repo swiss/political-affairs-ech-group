@@ -19,8 +19,6 @@ __
 
 
 URI: [mcm:dateEndActual](https://ld.ech.ch/schema/0292/meta-common/dateEndActual)
-Alias: date_end_actual
-
 <!-- no inheritance hierarchy -->
 
 
@@ -101,7 +99,6 @@ description: '[de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens 
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:dateEndActual
-alias: date_end_actual
 domain_of:
 - IsEventWithDuration
 range: date

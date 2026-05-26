@@ -19,8 +19,6 @@ __
 
 
 URI: [act:pronouns](https://ld.ech.ch/schema/0294/actors/pronouns)
-Alias: pronouns
-
 <!-- no inheritance hierarchy -->
 
 
@@ -100,7 +98,6 @@ description: '[de] Von der Person verwendete Pronomen.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:pronouns
-alias: pronouns
 domain_of:
 - Gender
 range: string

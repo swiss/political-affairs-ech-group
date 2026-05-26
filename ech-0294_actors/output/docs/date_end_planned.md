@@ -19,8 +19,6 @@ __
 
 
 URI: [mcm:dateEndPlanned](https://ld.ech.ch/schema/0292/meta-common/dateEndPlanned)
-Alias: date_end_planned
-
 <!-- no inheritance hierarchy -->
 
 
@@ -100,7 +98,6 @@ description: '[de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Z
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:dateEndPlanned
-alias: date_end_planned
 domain_of:
 - IsEventWithDuration
 range: date

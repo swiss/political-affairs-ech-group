@@ -19,8 +19,6 @@ __
 
 
 URI: [act:languageProficiency](https://ld.ech.ch/schema/0294/actors/languageProficiency)
-Alias: language_proficiencies
-
 <!-- no inheritance hierarchy -->
 
 
@@ -100,7 +98,6 @@ description: '[de] Sprachkompetenzen der Person.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:languageProficiency
-alias: language_proficiencies
 domain_of:
 - Person
 range: LanguageProficiency

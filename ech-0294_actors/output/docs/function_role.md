@@ -19,8 +19,6 @@ __
 
 
 URI: [act:functionRole](https://ld.ech.ch/schema/0294/actors/functionRole)
-Alias: function_role
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: '[en] Function or role in the organization.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:functionRole
-alias: function_role
 domain_of:
 - InterestLink
 range: string

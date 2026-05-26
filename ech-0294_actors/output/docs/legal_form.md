@@ -19,8 +19,6 @@ __
 
 
 URI: [act:legalForm](https://ld.ech.ch/schema/0294/actors/legalForm)
-Alias: legal_form
-
 <!-- no inheritance hierarchy -->
 
 
@@ -112,7 +110,6 @@ examples:
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:legalForm
-alias: legal_form
 domain_of:
 - InterestLink
 range: string

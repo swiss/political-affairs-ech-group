@@ -19,8 +19,6 @@ __
 
 
 URI: [act:trainingCode](https://ld.ech.ch/schema/0294/actors/trainingCode)
-Alias: training_code
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: '[de] ISCO-19 Code der Ausbildung oder Bildung.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:trainingCode
-alias: training_code
 domain_of:
 - Training
 range: string

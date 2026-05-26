@@ -19,8 +19,6 @@ __
 
 
 URI: [act:electoralDistrict](https://ld.ech.ch/schema/0294/actors/electoralDistrict)
-Alias: electoral_district
-
 <!-- no inheritance hierarchy -->
 
 
@@ -99,7 +97,6 @@ description: '[de] Link zum Wahlbezirk.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:electoralDistrict
-alias: electoral_district
 domain_of:
 - Person
 range: ElectoralDistrict
