@@ -44,6 +44,8 @@ SLOT_TO_CLASS = {
     "trainings": "Training",
     "contacts": "Contact",
     "electoral_district": "ElectoralDistrict",
+    "person_reference": "PersonReference",
+    "group_reference": "GroupReference",
     # Group-level
     "group_types": "GroupType",
     "role_types": "RoleType",

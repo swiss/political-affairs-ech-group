@@ -1,5 +1,8 @@
 global_uri: act:il_burkart_009
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: SUISSEDIGITAL Verband für Kommunikationsnetze
 legal_form: Verein

@@ -80,6 +80,34 @@ classes:
     - addresses
     - statutes_url
     - party_color
+  PersonReference:
+    description: '[de] Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt
+      der Verknüpfung. Ermöglicht historische Korrektheit auch wenn sich die Person später ändert.
+
+      [en] Lightweight reference to a person with key identification data at time of linking. Preserves historical accuracy
+      even if the person changes later.
+
+      '
+    mixins:
+    - HasIdentification
+    slots:
+    - label
+    - label_long
+    - role_type
+    - group_label
+  GroupReference:
+    description: '[de] Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt
+      der Verknüpfung.
+
+      [en] Lightweight reference to a group with key identification data at time of linking.
+
+      '
+    mixins:
+    - HasIdentification
+    slots:
+    - label
+    - abbreviation
+    - group_type
   Membership:
     description: '[de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe.
 
@@ -91,8 +119,8 @@ classes:
     - HasCreationModificationDates
     - HasTemporalValidity
     slots:
-    - concerned_person
-    - concerned_group
+    - person_reference
+    - group_reference
     - role_type
     - authorized_to_vote
   InterestLink:
@@ -106,7 +134,7 @@ classes:
     - HasCreationModificationDates
     - HasTemporalValidity
     slots:
-    - concerned_person
+    - person_reference
     - interest_type
     - organization_label
     - organization_uid
@@ -555,22 +583,31 @@ slots:
       [en] Party color (optional for parties).
 
       '
-  concerned_person:
-    slot_uri: act:concernedPerson
-    description: '[de] Link zu einer Person, auf die sich die Zugehörigkeit bezieht.
+  person_reference:
+    slot_uri: act:personReference
+    description: '[de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
 
-      [en] Link to a person that the affiliation concerns.
-
-      '
-    range: Person
-  concerned_group:
-    slot_uri: act:concernedGroup
-    description: '[de] Link zu einer Gruppe, auf die sich die Zugehörigkeit bezieht.
-
-      [en] Link to a group that the affiliation concerns.
+      [en] Reference to a person with snapshot data at time of linking.
 
       '
-    range: Group
+    range: PersonReference
+    inlined: true
+  group_reference:
+    slot_uri: act:groupReference
+    description: '[de] Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
+
+      [en] Reference to a group with snapshot data at time of linking.
+
+      '
+    range: GroupReference
+    inlined: true
+  group_label:
+    slot_uri: act:groupLabel
+    description: '[de] Name des Gremiums zum Zeitpunkt der Verknüpfung.
+
+      [en] Name of the body/group at time of linking.
+
+      '
   role_type:
     slot_uri: act:roleType
     description: '[en] Role of the person in the membership or function.

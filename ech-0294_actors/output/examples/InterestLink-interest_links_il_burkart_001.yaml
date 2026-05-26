@@ -1,5 +1,8 @@
 global_uri: act:il_burkart_001
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_label: Burkart Advisory GmbH, Baden
 legal_form: Gesellschaft mit beschränkter Haftung
