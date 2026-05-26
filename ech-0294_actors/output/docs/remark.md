@@ -19,8 +19,6 @@ __
 
 
 URI: [mcm:remark](https://ld.ech.ch/schema/0292/meta-common/remark)
-Alias: remark
-
 <!-- no inheritance hierarchy -->
 
 
@@ -101,7 +99,6 @@ description: '[de] Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzl
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:remark
-alias: remark
 domain_of:
 - IsProcessStep
 range: string

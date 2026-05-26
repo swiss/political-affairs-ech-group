@@ -19,8 +19,6 @@ __
 
 
 URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
-Alias: label
-
 <!-- no inheritance hierarchy -->
 
 
@@ -31,11 +29,11 @@ Alias: label
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GroupType](GroupType.md) | [de] Art der Gruppe (z |  no  |
-| [Occupation](Occupation.md) | [de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19... |  no  |
-| [RoleType](RoleType.md) | [de] Rolle einer Person in einer Mitgliedschaft oder Funktion (z |  no  |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 | [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
+| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [Occupation](Occupation.md) | [de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19... |  no  |
+| [GroupType](GroupType.md) | [de] Art der Gruppe (z |  no  |
+| [RoleType](RoleType.md) | [de] Rolle einer Person in einer Mitgliedschaft oder Funktion (z |  no  |
 
 
 
@@ -105,7 +103,6 @@ description: '[de] Möglichkeit bei einer strukturierten Information, ein Label 
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:label
-alias: label
 domain_of:
 - Person
 - Group
