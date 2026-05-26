@@ -447,6 +447,15 @@ slots:
     range: Address
     multivalued: true
     inlined_as_list: true
+    examples:
+      value:
+        - address_type: businessAddress
+          address_URI: https://ld.admin.ch/address/12345
+          street_address: Bundesplatz 3
+          postal_code: "3003"
+          postal_locality: Bern
+        - address_type: privateAddress
+          postal_locality: Zürich
 
   statutes_url:
     slot_uri: act:statutesURL
