@@ -77,6 +77,26 @@ __
 
 
 
+## Examples
+### Example: Occupation-douglas_adams_Douglas_Adams_writer
+
+```yaml
+label: writer
+valid_from: 1979-01-01
+valid_through: 2001-05-11
+is_active: false
+is_paid: true
+
+```
+### Example: Occupation-swiss_politicians_Beat_Jans_Politiker
+
+```yaml
+label: Politiker
+valid_from: 1964-01-01
+is_active: true
+
+```
+
 
 
 

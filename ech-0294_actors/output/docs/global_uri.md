@@ -19,6 +19,8 @@ __
 
 
 URI: [mcm:globalURI](https://ld.ech.ch/schema/0292/meta-common/globalURI)
+Alias: global_uri
+
 <!-- no inheritance hierarchy -->
 
 
@@ -29,13 +31,13 @@ URI: [mcm:globalURI](https://ld.ech.ch/schema/0292/meta-common/globalURI)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [HasIdentification](HasIdentification.md) | [de] Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Ve... |  no  |
 | [Container](Container.md) | [de] Container für politische Akteure, Gruppen und Beziehungen |  no  |
-| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |  no  |
 | [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |  no  |
 | [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
-| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |  no  |
+| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [HasIdentification](HasIdentification.md) | [de] Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Ve... |  no  |
+| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
 
 
 
@@ -112,6 +114,7 @@ from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:globalURI
 identifier: true
+alias: global_uri
 domain_of:
 - HasIdentification
 range: uriorcurie

@@ -73,6 +73,23 @@ __
 
 
 
+## Examples
+### Example: ElectoralDistrict-swiss_politicians_Beat_Jans_1
+
+```yaml
+district: Basel-Stadt
+valid_from: 2010-01-01
+
+```
+### Example: ElectoralDistrict-douglas_adams_Douglas_Adams_1
+
+```yaml
+district: London Central
+valid_from: 2020-01-01
+valid_through: 2025-01-01
+
+```
+
 
 
 

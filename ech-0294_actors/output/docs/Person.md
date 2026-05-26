@@ -94,6 +94,108 @@ __
 
 
 
+## Examples
+### Example: Person-douglas_adams_Douglas_Adams
+
+```yaml
+global_uri: https://www.wikidata.org/wiki/Q42
+label: Douglas Adams
+label_long: Douglas Noël Adams
+birth_year: 1952
+birth_date: 1952-03-11
+picture: https://commons.wikimedia.org/wiki/File:Douglas_adams_portrait.jpg
+names:
+- name_type: PersonFirstName
+  value: Douglas
+- name_type: PersonOfficialName
+  value: Adams
+  valid_from: 1952-03-11
+addresses:
+- address_type: privateAddress
+  address_uri: https://www.wikidata.org/wiki/Q42#P969
+  street_address: 1234 Fictional St, London, UK
+  postal_code: 12345
+  postal_locality: London
+language_proficiencies:
+- language: en
+  is_correspondence: true
+  is_native: true
+citizenships:
+- country: GB
+  valid_from: 1952-03-11
+genders:
+- gender_code: male
+  valid_from: 1952-03-11
+  pronouns:
+  - he
+  - him
+occupations:
+- label: writer
+  valid_from: 1979-01-01
+  valid_through: 2001-05-11
+  is_active: false
+  is_paid: true
+trainings:
+- training_type: schulabschluss
+  value: High School Diploma
+contacts:
+- contact_type: email
+  value: douglas.adams@adams-familiy.org
+electoral_district:
+  district: London Central
+  valid_from: 2020-01-01
+  valid_through: 2025-01-01
+
+```
+### Example: Person-swiss_politicians_Beat_Jans
+
+```yaml
+global_uri: https://www.wikidata.org/wiki/Q813067
+label: Beat Jans
+label_long: Beat Jans, dipl. nat. ETH
+birth_year: 1964
+birth_date: 1964-07-12
+picture: https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg
+names:
+- name_type: PersonFirstName
+  value: Beat
+- name_type: PersonOfficialName
+  value: Jans
+  valid_from: 1964-07-12
+addresses:
+- address_type: businessAddress
+  postal_locality: Basel-Stadt
+language_proficiencies:
+- language: de
+  is_correspondence: true
+  is_native: true
+citizenships:
+- country: CH
+  valid_from: 1964-07-12
+genders:
+- gender_code: male
+  valid_from: 1964-07-12
+  pronouns:
+  - er
+  - ihm
+occupations:
+- label: Politiker
+  valid_from: 1964-01-01
+  is_active: true
+trainings:
+- training_type: uni
+  value: dipl. nat. ETH
+contacts:
+- contact_type: email
+  value: beat.jans@admin.ch
+- contact_type: contact_website
+  value: http://www.beat-jans.ch
+electoral_district:
+  district: Basel-Stadt
+  valid_from: 2010-01-01
+
+```
+
 
 
 

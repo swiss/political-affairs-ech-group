@@ -29,8 +29,8 @@ URI: [act:concernedPerson](https://ld.ech.ch/schema/0294/actors/concernedPerson)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |  no  |
 | [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
+| [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |  no  |
 
 
 

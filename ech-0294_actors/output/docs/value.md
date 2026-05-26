@@ -19,6 +19,8 @@ __
 
 
 URI: [mcm:value](https://ld.ech.ch/schema/0292/meta-common/value)
+Alias: value
+
 <!-- no inheritance hierarchy -->
 
 
@@ -29,10 +31,10 @@ URI: [mcm:value](https://ld.ech.ch/schema/0292/meta-common/value)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Name](Name.md) | [de] Ein Name mit einem Typ (z |  no  |
 | [Training](Training.md) | [de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z |  no  |
-| [Contact](Contact.md) | [de] Kontaktinformation einer Person mit Angabe eines Typs (z |  no  |
 | [MultilingualValue](MultilingualValue.md) | [de] Ein mehrsprachiger String mit Angabe der Sprache |  no  |
+| [Name](Name.md) | [de] Ein Name mit einem Typ (z |  no  |
+| [Contact](Contact.md) | [de] Kontaktinformation einer Person mit Angabe eines Typs (z |  no  |
 
 
 
@@ -102,6 +104,7 @@ description: '[de] Der eigentliche Wert einer Information neben weiteren attribu
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:value
+alias: value
 domain_of:
 - Name
 - Training

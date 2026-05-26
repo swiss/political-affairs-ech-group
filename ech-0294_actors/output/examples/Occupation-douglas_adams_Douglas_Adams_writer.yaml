@@ -1,0 +1,5 @@
+label: writer
+valid_from: 1979-01-01
+valid_through: 2001-05-11
+is_active: false
+is_paid: true

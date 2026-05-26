@@ -89,6 +89,151 @@ __
 
 
 
+## Examples
+### Example: InterestLink-interest_links_il_burkart_011
+
+```yaml
+global_uri: act:il_burkart_011
+concerned_person: https://www.wikidata.org/wiki/Q23060472
+interest_type: association
+organization_label: Verein Landesausstellung Svizra27, Aarau
+legal_form: Verein
+committee: Vorstand
+function_role: Mitglied
+is_paid: false
+
+```
+### Example: InterestLink-interest_links_il_burkart_007
+
+```yaml
+global_uri: act:il_burkart_007
+concerned_person: https://www.wikidata.org/wiki/Q23060472
+interest_type: association
+organization_label: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+legal_form: Stiftung
+committee: Stiftungsrat
+function_role: Vizepräsident
+is_paid: false
+
+```
+### Example: InterestLink-interest_links_il_burkart_006
+
+```yaml
+global_uri: act:il_burkart_006
+concerned_person: https://www.wikidata.org/wiki/Q23060472
+interest_type: association
+organization_label: FDP.Die Liberalen
+legal_form: Verein
+committee: Vorstand
+function_role: Präsident
+is_paid: true
+
+```
+### Example: InterestLink-interest_links_il_burkart_010
+
+```yaml
+global_uri: act:il_burkart_010
+concerned_person: https://www.wikidata.org/wiki/Q23060472
+interest_type: association
+organization_label: Allianz Sicherheit Schweiz, Baden
+legal_form: Verein
+committee: Vorstand
+function_role: Präsident
+is_paid: false
+
+```
+### Example: InterestLink-interest_links_il_burkart_001
+
+```yaml
+global_uri: act:il_burkart_001
+concerned_person: https://www.wikidata.org/wiki/Q23060472
+interest_type: professional_activity
+organization_label: Burkart Advisory GmbH, Baden
+legal_form: Gesellschaft mit beschränkter Haftung
+committee: Geschäftsleitung
+function_role: Geschäftsführer
+is_paid: true
+
+```
+### Example: InterestLink-interest_links_il_burkart_003
+
+```yaml
+global_uri: act:il_burkart_003
+concerned_person: https://www.wikidata.org/wiki/Q23060472
+interest_type: professional_activity
+organization_label: Bovida Real Estate AG, Baar
+legal_form: Aktiengesellschaft
+committee: Verwaltungsrat
+function_role: Mitglied
+is_paid: true
+
+```
+### Example: InterestLink-interest_links_il_burkart_002
+
+```yaml
+global_uri: act:il_burkart_002
+concerned_person: https://www.wikidata.org/wiki/Q23060472
+interest_type: professional_activity
+organization_label: Birchmeier Holding AG, Döttingen
+legal_form: Aktiengesellschaft
+committee: Verwaltungsrat
+function_role: Mitglied
+is_paid: true
+
+```
+### Example: InterestLink-interest_links_il_burkart_005
+
+```yaml
+global_uri: act:il_burkart_005
+concerned_person: https://www.wikidata.org/wiki/Q23060472
+interest_type: association
+organization_label: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+legal_form: Verein
+committee: Zentralvorstand
+function_role: Präsident
+is_paid: true
+
+```
+### Example: InterestLink-interest_links_il_burkart_009
+
+```yaml
+global_uri: act:il_burkart_009
+concerned_person: https://www.wikidata.org/wiki/Q23060472
+interest_type: association
+organization_label: SUISSEDIGITAL Verband für Kommunikationsnetze
+legal_form: Verein
+committee: Vorstand
+function_role: Mitglied
+is_paid: true
+
+```
+### Example: InterestLink-interest_links_il_burkart_008
+
+```yaml
+global_uri: act:il_burkart_008
+concerned_person: https://www.wikidata.org/wiki/Q23060472
+interest_type: professional_activity
+organization_label: Stiebel Eltron AG, Lupfig
+legal_form: Aktiengesellschaft
+committee: Beirat
+function_role: Beirat
+is_paid: true
+
+```
+### Example: InterestLink-interest_links_il_burkart_004
+
+```yaml
+global_uri: act:il_burkart_004
+concerned_person: https://www.wikidata.org/wiki/Q23060472
+interest_type: professional_activity
+organization_label: ELCA Group SA, Lausanne
+legal_form: Aktiengesellschaft
+committee: Verwaltungsrat
+function_role: Mitglied
+is_paid: true
+
+```
+
 
 
 

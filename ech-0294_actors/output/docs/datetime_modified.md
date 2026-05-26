@@ -19,6 +19,8 @@ __
 
 
 URI: [mcm:datetimeModified](https://ld.ech.ch/schema/0292/meta-common/datetimeModified)
+Alias: datetime_modified
+
 <!-- no inheritance hierarchy -->
 
 
@@ -29,11 +31,11 @@ URI: [mcm:datetimeModified](https://ld.ech.ch/schema/0292/meta-common/datetimeMo
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [HasCreationModificationDates](HasCreationModificationDates.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Ä... |  no  |
-| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 | [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |  no  |
 | [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
+| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [HasCreationModificationDates](HasCreationModificationDates.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Ä... |  no  |
+| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
 
 
 
@@ -102,6 +104,7 @@ description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geän
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:datetimeModified
+alias: datetime_modified
 domain_of:
 - HasCreationModificationDates
 range: datetime

@@ -1,0 +1,16 @@
+# Configuration for extract_examples.py
+# Controls which classes get example entries in the generated documentation.
+#
+# classes: list of class names to extract examples for.
+#   - Container examples (full data files) are always generated.
+#   - Listed classes get individual instance examples extracted from data_*.yaml.
+#   - Classes NOT listed here are skipped, even if data exists.
+
+classes:
+  - Person
+  - InterestLink
+  - Membership
+  - Group
+  - Address
+  - Occupation
+  - ElectoralDistrict
