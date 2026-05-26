@@ -19,6 +19,8 @@ __
 
 
 URI: [mcm:dateBeginActual](https://ld.ech.ch/schema/0292/meta-common/dateBeginActual)
+Alias: date_begin_actual
+
 <!-- no inheritance hierarchy -->
 
 
@@ -99,6 +101,7 @@ description: '[de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommen
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:dateBeginActual
+alias: date_begin_actual
 domain_of:
 - IsEventWithDuration
 range: date

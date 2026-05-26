@@ -19,6 +19,8 @@ __
 
 
 URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
+Alias: language
+
 <!-- no inheritance hierarchy -->
 
 
@@ -29,8 +31,8 @@ URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [LanguageProficiency](LanguageProficiency.md) | [de] Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um d... |  no  |
 | [MultilingualValue](MultilingualValue.md) | [de] Ein mehrsprachiger String mit Angabe der Sprache |  no  |
+| [LanguageProficiency](LanguageProficiency.md) | [de] Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um d... |  no  |
 
 
 
@@ -105,6 +107,7 @@ description: '[de] Sprachcode im ISO 639-1 Format.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:language
+alias: language
 domain_of:
 - LanguageProficiency
 - MultilingualValue

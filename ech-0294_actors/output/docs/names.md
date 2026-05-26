@@ -19,6 +19,8 @@ __
 
 
 URI: [act:name](https://ld.ech.ch/schema/0294/actors/name)
+Alias: names
+
 <!-- no inheritance hierarchy -->
 
 
@@ -98,6 +100,7 @@ description: '[en] Names of the person with type and value.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:name
+alias: names
 domain_of:
 - Person
 range: Name

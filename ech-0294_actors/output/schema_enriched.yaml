@@ -1,0 +1,1316 @@
+id: https://ld.ech.ch/schema/0294/actors
+name: actors-schema
+title: Actors Schema
+description: '[de] Ein Schema zur Beschreibung politischer Akteure einschliesslich Personen, Gruppen, Mitgliedschaften und
+  Interessenbindungen.
+
+  [en] A schema describing political actors including persons, groups, memberships, and interest links.
+
+  '
+license: CC-BY
+prefixes:
+  linkml: https://w3id.org/linkml/
+  act: https://ld.ech.ch/schema/0294/actors/
+  dcterms: http://purl.org/dc/terms/
+default_prefix: act
+default_range: string
+imports:
+- linkml:types
+- ../../ech-0292_meta/input/schema_common
+classes:
+  Container:
+    tree_root: true
+    description: '[de] Container für politische Akteure, Gruppen und Beziehungen.
+
+      [en] Container for political actors, groups, and relationships.
+
+      '
+    mixins:
+    - HasIdentification
+    slots:
+    - persons
+    - groups
+    - memberships
+    - interest_links
+  Person:
+    description: '[de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Berufen.
+
+      [en] A person with identifiers, names, addresses, citizenships, and occupations.
+
+      '
+    mixins:
+    - HasIdentification
+    - HasCreationModificationDates
+    slots:
+    - label
+    - label_long
+    - birth_year
+    - birth_date
+    - death_date
+    - picture
+    - names
+    - addresses
+    - language_proficiencies
+    - citizenships
+    - genders
+    - occupations
+    - trainings
+    - contacts
+    - electoral_district
+    - interest_links
+  Group:
+    description: '[de] Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommission, Parlament, Departement).
+
+      [en] A political group, organization, or body (e.g., party, committee, parliament, department).
+
+      '
+    mixins:
+    - HasIdentification
+    - HasCreationModificationDates
+    - HasTemporalValidity
+    slots:
+    - group_type
+    - label
+    - abbreviation
+    - description
+    - landing_page
+    - parent_groups
+    - spatial
+    - contacts
+    - addresses
+    - statutes_url
+    - party_color
+  Membership:
+    description: '[de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe.
+
+      [en] A membership relationship between a person and a group.
+
+      '
+    mixins:
+    - HasIdentification
+    - HasCreationModificationDates
+    - HasTemporalValidity
+    slots:
+    - concerned_person
+    - concerned_group
+    - role_type
+    - authorized_to_vote
+  InterestLink:
+    description: '[de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation.
+
+      [en] An interest link (conflict of interest, political financing) of a person to an organization.
+
+      '
+    mixins:
+    - HasIdentification
+    - HasCreationModificationDates
+    - HasTemporalValidity
+    slots:
+    - concerned_person
+    - interest_type
+    - organization_label
+    - organization_uid
+    - organization_address
+    - legal_form
+    - is_paid
+    - committee
+    - function_role
+  Name:
+    description: '[de] Ein Name mit einem Typ (z.B. Rufname, amtlicher Name) und einem Wert und einer zeitlichen Gültigkeit.
+
+      [en] A name with a type (e.g., call name, official name) and a value.
+
+      '
+    mixins:
+    - HasTemporalValidity
+    slots:
+    - name_type
+    - value
+  Address:
+    description: '[de] Eine Adresse mit einem Typ (z.B. Privatadresse, Geschäftsadresse) und einem Wert.
+
+      [en] An address with a type (e.g., private address, business address) and a value.
+
+      '
+    slots:
+    - address_type
+    - address_uri
+    - street_address
+    - postal_code
+    - postal_locality
+  LanguageProficiency:
+    description: '[de] Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um die bevorzugte Sprache oder
+      die Muttersprache handelt.
+
+      [en] Language proficiency of a person indicating the language and whether it is the preferred language or native language.
+
+      '
+    slots:
+    - language
+    - is_correspondence
+    - is_native
+  Citizenship:
+    description: '[de] Staatsangehörigkeit einer Person unter Angabe des Landes und der zeitlichen Gültigkeit. Wenn kein `valid_from`
+      angegeben ist, ist diese Information nicht bekannt. Ist bekannt, dass die Staatsangehörigkeit seit der Geburt gültig
+      ist, ist das Geburtsdatum hier anzugeben. Wenn kein `valid_through` angegeben ist, ist die Staatsangehörigkeit weiterhin
+      gültig.
+
+      [en] Citizenship (also used for Nationality) of a person indicating the country and temporal validity. If there is no
+      `valid_from` provided, the information is not known. If it is known that the citizenship is valid from birth, the birthdate
+      is to be repeated here. If there is no `valid_through`, the citizenship is still active.
+
+      '
+    mixins:
+    - HasTemporalValidity
+    slots:
+    - country
+  Gender:
+    description: '[de] Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen Gültigkeit.
+
+      [en] Gender of a person indicating a gender code and temporal validity.
+
+      '
+    mixins:
+    - HasTemporalValidity
+    slots:
+    - gender_code
+    - pronouns
+  Occupation:
+    description: '[de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Codes, ob die Position bezahlt
+      ist, und der zeitlichen Gültigkeit.
+
+      [en] Occupation or profession of a person indicating a label, an ISCO-19 code, whether the position is paid, and temporal
+      validity.
+
+      '
+    mixins:
+    - HasTemporalValidity
+    slots:
+    - is_paid
+    - occupation_code
+    - label
+    - enterprise_uid
+    - enterprise
+  Training:
+    description: '[de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z.B. Schulabschluss, Universitätsabschluss,
+      Militärdienst), eines Labels, eines ISCO-19 Codes und der zeitlichen Gültigkeit.
+
+      [en] Training or education of a person indicating a type (e.g., school diploma, university degree, military service),
+      a label, an ISCO-19 code, and temporal validity.
+
+      '
+    mixins:
+    - HasTemporalValidity
+    slots:
+    - training_type
+    - training_code
+    - value
+  Contact:
+    description: '[de] Kontaktinformation einer Person mit Angabe eines Typs (z.B. E-Mail, LinkedIn) und eines Werts.
+
+      [en] Contact information of a person indicating a type (e.g., email, LinkedIn) and a value.
+
+      '
+    slots:
+    - contact_type
+    - value
+  ElectoralDistrict:
+    description: '[de] Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit zeitlicher Gültigkeit.
+
+      [en] Electoral district or region where a person is politically active; with temporal validity.
+
+      '
+    mixins:
+    - HasTemporalValidity
+    slots:
+    - district
+  GroupType:
+    description: '[de] Art der Gruppe (z.B. Partei, Kommission, Parlament, Departement).
+
+      [en] Type of group (e.g., party, committee, parliament, department).
+
+      '
+    slots:
+    - group_type_enum
+    - label
+  RoleType:
+    description: '[de] Rolle einer Person in einer Mitgliedschaft oder Funktion (z.B. Mitglied, Präsident, Stellvertreter).
+
+      [en] Role of a person in a membership or function (e.g., member, president, deputy).
+
+      '
+    slots:
+    - role_type_enum
+    - label
+slots:
+  name_type:
+    slot_uri: act:nameType
+    description: '[de] Typ des Namens.
+
+      [en] Type of name.
+
+      '
+    range: NameTypeEnum
+    examples:
+    - value: PersonFirstName
+    - value: PersonOfficialName
+  address_type:
+    slot_uri: act:addressType
+    description: '[de] Typ der Adresse.
+
+      [en] Type of address.
+
+      '
+    range: AddressTypeEnum
+    examples:
+    - value: businessAddress
+    - value: privateAddress
+  address_uri:
+    slot_uri: act:addressURI
+    description: '[de] URI der Adresse.
+
+      [en] URI of the address.
+
+      '
+    range: uriorcurie
+  street_address:
+    slot_uri: act:streetAddress
+    description: '[de] Strassenadresse.
+
+      [en] Street address.
+
+      '
+  postal_code:
+    slot_uri: act:postalCode
+    description: '[de] Postleitzahl.
+
+      [en] Postal code.
+
+      '
+    range: integer
+  postal_locality:
+    slot_uri: act:postalLocality
+    description: '[de] Ort.
+
+      [en] Locality.
+
+      '
+    examples:
+    - value: Basel-Stadt
+    - value: London
+  is_correspondence:
+    slot_uri: act:isCorrespondence
+    description: '[de] Gibt an, ob es sich um die bevorzugte Sprache handelt.
+
+      [en] Indicates if this is the preferred language.
+
+      '
+    range: boolean
+  is_native:
+    slot_uri: act:isNative
+    description: '[de] Gibt an, ob es sich um die Muttersprache handelt.
+
+      [en] Indicates if this is the native language.
+
+      '
+    range: boolean
+  country:
+    slot_uri: act:country
+    description: '[de] ISO 3166 Ländercode.
+
+      [en] ISO 3166 country code.
+
+      '
+    pattern: ^[A-Z]{2}$
+    examples:
+    - value: CH
+    - value: GB
+  gender_code:
+    slot_uri: act:genderCode
+    description: '[de] Geschlechtscode (z.B. gemäß ISO 5218).
+
+      [en] Gender code (e.g., according to ISO 5218).
+
+      '
+    examples:
+    - value: male
+  pronouns:
+    slot_uri: act:pronouns
+    description: '[de] Von der Person verwendete Pronomen.
+
+      [en] Pronouns used by the person.
+
+      '
+    multivalued: true
+    inlined_as_list: true
+  is_paid:
+    slot_uri: act:isPaid
+    description: '[de] Gibt an, ob die Position bezahlt ist.
+
+      [en] Indicates if the position is paid.
+
+      '
+    range: boolean
+    examples:
+    - value: 'False'
+    - value: 'True'
+  occupation_code:
+    slot_uri: act:occupationCode
+    description: '[de] ISCO-19 Code der Tätigkeit.
+
+      [en] ISCO-19 code of the occupation.
+
+      '
+  enterprise_uid:
+    slot_uri: act:enterpriseUid
+    description: '[de] UID des Unternehmens.
+
+      [en] UID of the enterprise.
+
+      '
+  enterprise:
+    slot_uri: act:enterprise
+    description: '[de] Name des Unternehmens.
+
+      [en] Name of the enterprise.
+
+      '
+  training_type:
+    slot_uri: act:trainingType
+    description: '[de] Typ der Ausbildung oder Bildung.
+
+      [en] Type of training or education.
+
+      '
+    range: TrainingTypeEnum
+    examples:
+    - value: schulabschluss
+    - value: uni
+  training_code:
+    slot_uri: act:trainingCode
+    description: '[de] ISCO-19 Code der Ausbildung oder Bildung.
+
+      [en] ISCO-19 code of the training or education.
+
+      '
+  contact_type:
+    slot_uri: act:contactType
+    description: '[de] Typ der Kontaktinformation.
+
+      [en] Type of contact information.
+
+      '
+    range: ContactTypeEnum
+    examples:
+    - value: contact_website
+    - value: email
+  district:
+    slot_uri: act:district
+    description: '[de] Wahlkreis oder Wahlregion.
+
+      [en] Electoral district or region.
+
+      '
+    examples:
+    - value: Basel-Stadt
+    - value: London Central
+  birth_year:
+    slot_uri: act:birthYear
+    description: '[de] Geburtsjahr.
+
+      [en] Year of birth. Only to be used, if there is no full `birthDate` available.
+
+      '
+    range: integer
+    examples:
+    - value: '1952'
+    - value: '1964'
+  birth_date:
+    slot_uri: schema:birthDate
+    description: '[de] Genaues Geburtsdatum.
+
+      [en] Exact date of birth if available and public. This field has precedence over the field `birthYear`.
+
+      '
+    range: date
+    examples:
+    - value: '1952-03-11'
+    - value: '1964-07-12'
+  death_date:
+    slot_uri: schema:deathDate
+    description: '[de] Genaues Todesdatum.
+
+      [en] Exact date of death.
+
+      '
+    range: date
+  picture:
+    range: uri
+    description: '[de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).
+
+      [en] Link to an image (preferred: PNG, then JPG, then GIF).
+
+      '
+  group_type:
+    range: GroupType
+    slot_uri: act:groupType
+    description: '[de] Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder ähnliches. Die genaue Bennenung
+      und Beschreibung der Gruppierung wird über `name` gemacht.
+
+      [en] Link to the group type.
+
+      '
+  group_type_enum:
+    slot_uri: act:groupTypeEnum
+    description: '[de] Link zum kontrollierten Vokabular für Gruppentypen.
+
+      [en] Link to the controlled vocabulary for group types.
+
+      '
+    range: GroupTypeEnum
+  abbreviation:
+    range: MultilingualValue
+    multivalued: true
+    inlined_as_list: true
+    description: '[de] Abkürzung (kann mehrsprachig sein).
+
+      [en] Abbreviation (can be multilingual).
+
+      '
+  description:
+    range: MultilingualValue
+    multivalued: true
+    inlined_as_list: true
+    description: '[de] Kurze Beschreibung der Gruppierung.
+
+      [en] Description of the entity.
+
+      '
+  landing_page:
+    slot_uri: act:landingPage
+    range: uri
+    description: '[de] Website mit weiteren Informationen.
+
+      [en] Website providing further information.
+
+      '
+  parent_groups:
+    slot_uri: act:parentGroup
+    description: '[de] Übergeordneten Gruppe. Zum Beispiel die Mutterpartei, zu Kantonalenparteien. Oder zur Beschreibung
+      der Hierarchie in Exekutive. Verknüpfung von Subkommissionen mit Kommissionen. (parentGroup wird immer im selben group_type
+      verwendet.)
+
+      [en] Link to parent groups.
+
+      '
+    range: uriorcurie
+    multivalued: true
+    inlined_as_list: true
+  spatial:
+    description: '[de] Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z.B. ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).
+
+      [en] Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).
+
+      '
+  contacts:
+    slot_uri: act:contact
+    description: '[en] Contact information (email, website, social media).
+
+      [de] Kontaktinformationen (E-Mail, Website, Social Media).
+
+      '
+    range: Contact
+    multivalued: true
+    inlined_as_list: true
+  addresses:
+    slot_uri: act:address
+    description: '[de] Adressen mit Typ (privat, geschäftlich, lokal).
+
+      [en] Addresses with type (private, business, local).
+
+      '
+    range: Address
+    multivalued: true
+    inlined_as_list: true
+    examples:
+      value:
+      - address_type: businessAddress
+        address_URI: https://ld.admin.ch/address/12345
+        street_address: Bundesplatz 3
+        postal_code: '3003'
+        postal_locality: Bern
+      - address_type: privateAddress
+        postal_locality: Zürich
+  statutes_url:
+    slot_uri: act:statutesURL
+    description: '[de] URL zu Parteistatuten (optional für Parteien).
+
+      [en] URL to party statutes (optional for parties).
+
+      '
+  party_color:
+    slot_uri: act:partyColor
+    description: '[de] Parteifarbe (optional für Parteien).
+
+      [en] Party color (optional for parties).
+
+      '
+  concerned_person:
+    slot_uri: act:concernedPerson
+    description: '[de] Link zu einer Person, auf die sich die Zugehörigkeit bezieht.
+
+      [en] Link to a person that the affiliation concerns.
+
+      '
+    range: Person
+  concerned_group:
+    slot_uri: act:concernedGroup
+    description: '[de] Link zu einer Gruppe, auf die sich die Zugehörigkeit bezieht.
+
+      [en] Link to a group that the affiliation concerns.
+
+      '
+    range: Group
+  role_type:
+    slot_uri: act:roleType
+    description: '[en] Role of the person in the membership or function.
+
+      [de] Rolle der Person in der Mitgliedschaft oder Funktion.
+
+      '
+    range: RoleType
+  role_type_enum:
+    slot_uri: act:roleTypeEnum
+    range: RoleEnum
+    description: '[en] Role of the person in the membership or function.
+
+      [de] Rolle der Person in der Mitgliedschaft oder Funktion.
+
+      '
+  authorized_to_vote:
+    range: boolean
+    slot_uri: act:authorizedToVote
+    description: '[de] Gibt an, ob die Person stimmberechtigt ist.
+
+      [en] Indicates if the person is authorized to vote.
+
+      '
+  interest_type:
+    range: InterestTypeEnum
+    slot_uri: act:interestType
+    required: true
+    description: '[de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).
+
+      [en] Type of interest link (professional activity, political office, association).
+
+      '
+    examples:
+    - value: association
+    - value: professional_activity
+  organization_label:
+    slot_uri: act:organizationLabel
+    description: '[en] Label of the organization.
+
+      [de] Bezeichnung der Organisation.
+
+      '
+    examples:
+    - value: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+    - value: Allianz Sicherheit Schweiz, Baden
+    - value: Birchmeier Holding AG, Döttingen
+  organization_uid:
+    slot_uri: act:organizationUid
+    description: '[en] UID of the organization (for analysis with NOGA codes, etc.).
+
+      [de] UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).
+
+      '
+  organization_address:
+    slot_uri: act:organizationAddress
+    description: '[en] Address of the organization.
+
+      [de] Adresse der Organisation.
+
+      '
+  legal_form:
+    slot_uri: act:legalForm
+    description: '[en] Legal form of the organization.
+
+      [de] Rechtsform der Organisation.
+
+      '
+    examples:
+    - value: Aktiengesellschaft
+    - value: Gesellschaft mit beschränkter Haftung
+    - value: Stiftung
+  committee:
+    slot_uri: act:committee
+    description: '[en] Committee or board (e.g., foundation board, board of directors).
+
+      [de] Gremium (z.B. Stiftungsrat, Verwaltungsrat).
+
+      '
+  function_role:
+    slot_uri: act:functionRole
+    description: '[en] Function or role in the organization.
+
+      [de] Funktion oder Rolle in der Organisation.
+
+      '
+  names:
+    slot_uri: act:name
+    description: '[en] Names of the person with type and value.
+
+      [de] Namen der Person mit Typ und Wert.
+
+      '
+    range: Name
+    multivalued: true
+    inlined_as_list: true
+  language_proficiencies:
+    slot_uri: act:languageProficiency
+    description: '[de] Sprachkompetenzen der Person.
+
+      [en] Language proficiencies of the person.
+
+      '
+    range: LanguageProficiency
+    multivalued: true
+    inlined_as_list: true
+  citizenships:
+    slot_uri: act:citizenship
+    description: '[de] Staatsbürgerschaften der Person.
+
+      [en] Citizenships of the person.
+
+      '
+    range: Citizenship
+    multivalued: true
+    inlined_as_list: true
+  genders:
+    slot_uri: act:gender
+    description: '[de] Geschlecht der Person.
+
+      [en] Gender of the person.
+
+      '
+    range: Gender
+    multivalued: true
+    inlined_as_list: true
+  occupations:
+    slot_uri: act:occupation
+    description: '[de] Berufe oder Tätigkeiten der Person.
+
+      [en] Occupations or professions of the person.
+
+      '
+    range: Occupation
+    multivalued: true
+    inlined_as_list: true
+  trainings:
+    slot_uri: act:training
+    description: '[de] Ausbildungen oder Bildungen der Person.
+
+      [en] Trainings or educations of the person.
+
+      '
+    range: Training
+    multivalued: true
+    inlined_as_list: true
+  electoral_district:
+    slot_uri: act:electoralDistrict
+    description: '[de] Link zum Wahlbezirk.
+
+      [en] Link to the electoral district.
+
+      '
+    range: ElectoralDistrict
+  persons:
+    slot_uri: act:person
+    description: '[de] Sammlung von Personen.
+
+      [en] Collection of persons.
+
+      '
+    range: Person
+    multivalued: true
+    inlined_as_list: true
+  groups:
+    slot_uri: act:group
+    description: '[de] Sammlung von Gruppen.
+
+      [en] Collection of groups.
+
+      '
+    range: Group
+    multivalued: true
+    inlined_as_list: true
+  memberships:
+    slot_uri: act:membership
+    description: '[de] Sammlung von Mitgliedschaften.
+
+      [en] Collection of memberships.
+
+      '
+    range: Membership
+    multivalued: true
+    inlined_as_list: true
+  interest_links:
+    slot_uri: act:interestLink
+    description: '[de] Sammlung von Interessenbindungen.
+
+      [en] Collection of interest links.range: InterestLink
+
+      '
+    range: InterestLink
+    multivalued: true
+    inlined_as_list: true
+  role_label:
+    description: '[en] Descriptive label for the role when ''other'' is selected in the RoleEnum.
+
+      [de] Beschreibende Bezeichnung für die Rolle, wenn ''other'' im RoleEnum ausgewählt ist.
+
+      '
+enums:
+  NameTypeEnum:
+    description: '[de] Kategorien von Namenstypen gemäss https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master,
+      URI gemäss I14Y Identifier aber als Klasse und nicht als Atribut. Beschreibungen und Übersetzungen gemäss I14Y.
+
+      [en] Categories of name types according to https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI according
+      to I14Y identifier but as class and not as attribute. Descriptions and translations according to I14Y.
+
+      '
+    permissible_values:
+      PersonOfficialName:
+        description: "[de] Gemäss amtlichen Katalog der Merkmale (Nr. 211) Registerharmonisierung: Name gemäss amtlichen Unterlagen.\
+          \ Der amtliche Name entspricht dem Namen im schweizerischen Zivilstandsregister. Bei ausländischen Personen ohne\
+          \ Zivilstandsereignis in der Schweiz entspricht dieser Name dem Namen im ausländischen Pass oder auf der Identitätskarte\
+          \ (siehe 214 sowie Weisung des SEM über die Bestimmung und Schreibweise der Namen von ausländischen Staatsangehörigen\
+          \ vom 1. Januar 2012. Im Ausnahmefall siehe auch \"Name nach Deklaration\" (z. B. Asyl), wenn keine amtlichen Dokumente\
+          \ vorliegen). Der amtliche Name kann aus einem oder mehreren Teilen bestehen.  \n[fr] Selon le catalogue officiel\
+          \ des caractères (n° 211) de l'harmonisation des registres : Nom selon les documents officiels. Le nom officiel\
+          \ correspond au nom figurant dans le registre suisse de l’état civil. Pour les personnes de nationalité étrangère\
+          \ sans événement d’état civil en Suisse, le nom officiel correspond au nom figurant sur le passeport étranger ou\
+          \ la carte d’identité (voir \"Nom selon le passeport étranger\" ou directives du SEM sur la détermination et l’orthographe\
+          \ des noms de ressortissants étrangers du 1er janvier 2012. Si des documents officiels n’existent pas, voir aussi\
+          \ \"Nom selon déclaration\" (par ex. en cas d’asile). Le nom officiel peut se composer d’une ou de plusieurs parties.\n\
+          [it] Secondo il catalogo ufficiale delle caratteristiche (n. 211) dell'armonizzazione dei registri: Cognome secondo\
+          \ i documenti ufficiali. Il cognome ufficiale corrisponde a quello riportato nel registro svizzero dello stato civile.\
+          \ Per le persone straniere senza evento dello stato civile in Svizzera il cognome ufficiale corrisponde a quello\
+          \ indicato sul passaporto straniero o sulla carta d’identità (si veda \"Cognome sul passaporto straniero\" e l’istruzione\
+          \ della SEM sulla determinazione e l’ortografia dei nomi di cittadini stranieri del 1° gennaio 2012. In casi eccezionali\
+          \ si veda anche la voce \"Cognome dichiarato\" (es. asilo), in mancanza di documenti ufficiali). Il cognome ufficiale\
+          \ può anche essere composto.\n[en] According to the official catalogue of characters (No. 211) for the harmonisation\
+          \ of registers: Name according to official documents. The official name corresponds to the name appearing in the\
+          \ Swiss civil register. For foreign nationals with no civil status events in Switzerland, the official name corresponds\
+          \ to the name appearing on the foreign passport or identity card (see ‘Name according to foreign passport’ or SEM\
+          \ guidelines on the determination and spelling of names of foreign nationals dated 1 January 2012. If no official\
+          \ documents exist, see also ‘Name according to declaration’ (e.g. in the case of asylum seekers). The official name\
+          \ may consist of one or more parts.\n"
+        meaning: act:vocabulary/NameTypeEnum/PersonOfficialName
+      PersonOriginalName:
+        description: "[de] Gemäss amtlichen Katalog der Merkmale (Nr. 212) Registerharmonisierung: Angestammter Name gemäss\
+          \ amtlichen Unterlagen, den eine Person unmittelbar vor ihrer ersten Eheschliessung oder Begründung einer eingetragenen\
+          \ Partnerschaft geführt hat oder, gestützt auf einen Namensänderungsentscheid, als neuen Ledignamen erworben hat\
+          \ (Art. 24 Abs. 2 ZStV, SR 211.112.2).\n[fr] Selon le catalogue officiel des caractères (n° 212) de l'harmonisation\
+          \ des registres : Nom de filiation selon les documents officiels, lequel correspond au nom de la personne avant\
+          \ son premier mariage ou partenariat enregistré. Il peut aussi s’agir d’un nom de célibataire acquis par décision\
+          \ de changement de nom (cf. art. 24, al. 2 OEC, RS 211.112.2). \n[it] Secondo il catalogo ufficiale delle caratteristiche\
+          \ (n. 212) dell'armonizzazione dei registri: Cognome riportato sulla documentazione ufficiale che una persona aveva\
+          \ immediatamente prima della celebrazione del primo matrimonio o della costituzione della prima unione domestica\
+          \ registrata o che ha acquisito come nuovo cognome da celibe / nubile in seguito alla decisione concernente il cambiamento\
+          \ del cognome (art. 24 cpv. 2 OSC, RS 211.112.2).\n[en] According to the official catalogue of characters (No. 212)\
+          \ for the harmonisation of registers: Name of filiation according to official documents, which corresponds to the\
+          \ person's name before their first marriage or registered partnership. It may also be a maiden name acquired by\
+          \ decision to change one's name (see Art. 24, para. 2 OEC, RS 211.112.2).\n"
+        meaning: act:vocabulary/NameTypeEnum/PersonOriginalName
+      PersonAllianceName:
+        description: '[de] Gemäss amtlichen Katalog der Merkmale (Nr. 213) Registerharmonisierung: Der Allianzname zeigt die
+          Verbindung von zwei Personen auf, die verheiratet sind oder in einer eingetragenen Partnerschaft leben. Ein bereits
+          verwendeter Allianzname kann nach Auflösung der Ehe oder der Partnerschaft weiterverwendet werden, wenn der amtliche
+          Name bei der Auflösung nicht geändert wurde. Dabei wird dem amtlichen Namen mittels Bindestrich der Ledigname des
+          Partners/der Partnerin oder der eigene Ledigname angehängt. Der Allianzname kann auf Antrag im Pass oder auf der
+          Identitätskarte eingetragen werden.
+
+          [fr] Selon le catalogue officiel des caractères (n° 213) de l''harmonisation des registres : Le nom d’alliance montre
+          la relation entre deux personnes qui sont mariées ou vivent en partenariat enregistré. Un nom d’alliance déjà utilisé
+          peut être conservé, après la dissolution du mariage ou du partenariat, si le nom officiel n’a pas été modifié lors
+          de la dissolution. Il est accolé par un trait d’union au nom officiel et est formé avec le nom de célibataire du
+          ou de la partenaire ou par le propre nom de célibataire de la personne. Sur demande, le nom d’alliance peut être
+          inscrit dans le passeport ou sur la carte d’identité.
+
+          [it] Secondo il catalogo ufficiale delle caratteristiche (n. 213) dell''armonizzazione dei registri: Il cognome
+          d’affinità indica il legame tra due persone che sono coniugate o vivono in unione domestica registrata. Il cognome
+          d’affinità può continuare ad essere impiegato dopo lo scioglimento del matrimonio o dell’unione domestica registrata
+          solo se il cognome ufficiale non è stato modificato al momento dello scioglimento. In questo caso accanto al cognome
+          ufficiale viene inserito il proprio cognome da celibe/nubile o quello del/la partner separato da trattino. Il cognome
+          d’affinità può essere aggiunto sul passaporto o sulla carta d’identità, su richiesta.
+
+          [en] According to the official catalogue of characters (No. 213) for the harmonisation of registers: The alliance
+          name shows the relationship between two people who are married or living in a registered partnership. An alliance
+          name that has already been used may be retained after the dissolution of the marriage or partnership if the official
+          name has not been changed upon dissolution. It is attached to the official name with a hyphen and is formed with
+          the partner''s maiden name or the person''s own maiden name. Upon request, the alliance name may be entered in the
+          passport or on the identity card.
+
+          '
+        meaning: act:vocabulary/NameTypeEnum/PersonAllianceName
+      PersonNameOnForeignPassport:
+        description: '[de] Gemäss amtlichen Katalog der Merkmale (Nr. 214) Registerharmonisierung: Für Personen mit ausländischer
+          Nationalität. Dieser Name entspricht dem Eintrag im Reisepass gemäss der maschinenlesbaren Zone (MRZ) des Reisepasses.
+          Enthält die MRZ abgekürzte Namen oder Vornamen, sind diese möglichst in voller Länge gemäss visuell lesbarer Zone
+          des Ausweispapiers zu erfassen.
+
+          [fr] Selon le catalogue officiel des caractères (n° 214) de l''harmonisation des registres : Pour les personnes
+          de nationalité étrangère. Ce nom correspond à l’inscription marquée dans la zone lisible par machine du passeport.
+          Si cette zone comprend des noms ou prénoms abrégés, ceux-ci doivent dans la mesure du possible être enregistrés
+          de manière complète, selon l’inscription contenue dans le passeport.
+
+          [it] Secondo il catalogo ufficiale delle caratteristiche (n. 214) dell''armonizzazione dei registri: Per persone
+          di nazionalità straniera. Questo cognome corrisponde all’iscrizione nel passaporto nella parte a lettura ottica
+          (MRZ). Se la parte a lettura ottica contiene cognomi o nomi abbreviati, essi vanno riportati possibilmente in forma
+          estesa conformemente alla parte a lettura visiva del documento di identità.
+
+          [en] According to the official catalogue of characters (No. 214) for the harmonisation of registers: For persons
+          of foreign nationality. This name corresponds to the entry marked in the machine-readable zone of the passport.
+          If this zone includes abbreviated surnames or first names, these must, as far as possible, be recorded in full,
+          according to the entry in the passport.
+
+          '
+        meaning: act:vocabulary/NameTypeEnum/PersonNameOnForeignPassport
+      PersonAliasName:
+        description: '[de] Gemäss amtlichen Katalog der Merkmale (Nr. 215) Registerharmonisierung: Name (z. B. Künstler- oder
+          Ordensname), der aufgrund eines bewilligten Gesuchs geführt werden darf. Der Aliasname kann aus einem oder mehreren
+          Teilen (z. B. auch aus Aliasvorname und Aliasname) bestehen.
+
+          [fr] Selon le catalogue officiel des caractères (n° 215) de l''harmonisation des registres : Nom (p. ex. nom d’artiste,
+          nom d’ordre religieux) qui, sur la base d’une demande acceptée, peut être utilisé par la personne. Le nom alias
+          peut se composer d’une ou de plusieurs parties (p. ex. aussi du prénom alias et du nom alias).
+
+          [it] Secondo il catalogo ufficiale delle caratteristiche (n. 215) dell''armonizzazione dei registri: Cognome (p.
+          es. nome d’arte o nome religioso) che può essere portato in base a una domanda autorizzata. Lo pseudonimo può essere
+          composto da una o più parti (p. es. anche un nome e un cognome).
+
+          [en] According to the official character catalogue (No. 215) for the harmonisation of registers: Name (e.g. stage
+          name, religious name) which, on the basis of an accepted application, may be used by the person. The alias name
+          may consist of one or more parts (e.g. also the alias first name and alias surname).
+
+          '
+        meaning: act:vocabulary/NameTypeEnum/PersonAliasName
+      PersonOtherName:
+        description: '[de] Gemäss amtlichen Katalog der Merkmale (Nr. 216) Registerharmonisierung: Weitere amtliche Namen
+          gemäss schweizerischen Zivilstandsdokumenten (Art. 24 Abs. 3 ZStV) oder ausländischen Dokumenten, welche weder Familiennamen
+          noch Vornamen sind.
+
+          [fr] Selon le catalogue officiel des caractères (n° 216) de l''harmonisation des registres : Autres noms officiels
+          selon les documents suisses d’état civil (art. 24, al. 3 OEC) ou selon des documents étrangers, qui ne sont ni des
+          noms de famille ni des prénoms.
+
+          [it] Secondo il catalogo ufficiale delle caratteristiche (n. 216) dell''armonizzazione dei registri: Altri cognomi
+          ufficiali secondo i documenti svizzeri dello stato civile (art. 24 cpv.3 OSC) o secondo i documenti stranieri, che
+          non sono cognomi né nomi.
+
+          [en] According to the official catalogue of characters (No. 216) for the harmonisation of registers: Other official
+          names according to Swiss civil status documents (Art. 24, para. 3 OEC) or according to foreign documents, which
+          are neither surnames nor first names.
+
+          '
+        meaning: act:vocabulary/NameTypeEnum/PersonOtherName
+      PersonDeclaredForeignerName:
+        description: '[de] Gemäss amtlichen Katalog der Merkmale (Nr. 217) Registerharmonisierung: Für Personen mit ausländischer
+          Nationalität, die keine offiziellen Dokumente besitzen (hauptsächlich im Asylbereich).
+
+          [fr] Selon le catalogue officiel des caractères (n° 217) de l''harmonisation des registres : Pour les personnes
+          de nationalité étrangère ne disposant pas de documents officiels (principalement dans le domaine de l’asile).
+
+          [it] Secondo il catalogo ufficiale delle caratteristiche (n. 217) dell''armonizzazione dei registri: Per persone
+          di nazionalità straniera che non possiedono documenti ufficiali (principalmente nel settore dell’asilo).
+
+          [en] According to the official catalogue of characters (No. 217) for the harmonisation of registers: For foreign
+          nationals who do not have official documents (mainly in the field of asylum).
+
+          '
+        meaning: act:vocabulary/NameTypeEnum/PersonDeclaredForeignerName
+      PersonFirstName:
+        description: '[de] Gemäss amtlichen Katalog der Merkmale (Nr. 221) Registerharmonisierung: Vornamen gemäss Geburtsurkunde
+          oder Zivilstandsregister/Infostar in der aufgeführten Reihenfolge bzw. gemäss ausländischen Ausweispapieren.
+
+          [fr] Selon le catalogue officiel des caractères (n° 221) de l''harmonisation des registres : Prénoms tirés de l’acte
+          de naissance, du registre de l’état civil (Infostar) dans l’ordre où ils figurent ou tirés des papiers d’identité
+          étrangers.
+
+          [it] Secondo il catalogo ufficiale delle caratteristiche (n. 221) dell''armonizzazione dei registri: Nomi estratti
+          dall’atto di nascita o dal registro dello stato civile nell’ordine corretto, rispettivamente da documenti di legittimazione
+          stranieri.
+
+          [en] According to the official catalogue of characters (No. 221) for the harmonisation of registers: First names
+          taken from the birth certificate, the civil registry (Infostar) in the order in which they appear, or taken from
+          foreign identity documents.
+
+          '
+        meaning: act:vocabulary/NameTypeEnum/PersonFirstName
+      PersonCallFirstName:
+        description: '[de] Gemäss amtlichen Katalog der Merkmale (Nr. 222) Registerharmonisierung: Eine Person hat das Recht,
+          aus der Liste ihrer amtlichen Vornamen einen Rufnamen auszuwählen. Der Rufname kann aus einem oder mehreren Vornamen
+          (aus den "amtlichen Vornamen") bestehen.
+
+          [fr] Selon le catalogue officiel des caractères (n° 222) de l''harmonisation des registres : Une personne peut choisir,
+          dans la liste de ses prénoms officiels, un prénom usuel. Le prénom usuel peut se composer d’un ou de plusieurs prénoms
+          (parmi ceux figurant sous "prénoms officiels").
+
+          [it] Secondo il catalogo ufficiale delle caratteristiche (n. 222) dell''armonizzazione dei registri: Una persona
+          ha il diritto di scegliere un nome abituale dall’elenco dei suoi nomi ufficiali. Il nome abituale può essere composto
+          da uno o più nomi (da "Nomi ufficiali").
+
+          [en] According to the official catalogue of characters (No. 222) for the harmonisation of registers: A person may
+          choose a common first name from the list of their official first names. The common first name may consist of one
+          or more first names (from those listed under ‘official first names’).
+
+          '
+        meaning: act:vocabulary/NameTypeEnum/PersonCallFirstName
+      PersonFirstNameOnForeignPassport:
+        description: '[de] Gemäss amtlichen Katalog der Merkmale (Nr. 223) Registerharmonisierung: Für Personen mit ausländischer
+          Nationalität. Zu benutzen in Verbindung mit dem Namen im ausländischen Pass."
+
+          [fr] Selon le catalogue officiel des caractères (n° 223) de l''harmonisation des registres : Pour les personnes
+          de nationalité étrangère. A utiliser en combinaison avec le Nom selon le passeport étranger.
+
+          [it] Secondo il catalogo ufficiale delle caratteristiche (n. 223) dell''armonizzazione dei registri: Per persone
+          di nazionalità straniera. Da utilizzare in collegamento con il cognome sul passaporto.
+
+          [en] According to the official catalogue of characters (No. 223) for the harmonisation of registers: For persons
+          of foreign nationality. To be used in combination with the name as it appears on the foreign passport.
+
+          '
+        meaning: act:vocabulary/NameTypeEnum/PersonFirstNameOnForeignPassport
+      PersonDeclaredForeignerFirstName:
+        description: '[de] Gemäss amtlichen Katalog der Merkmale (Nr. 224) Registerharmonisierung: Für Personen mit ausländischer
+          Nationalität, die keine amtlichen Dokumente besitzen (hauptsächlich im Asylbereich). Zu benutzen in Verbindung mit
+          dem Namen gemäss Deklaration.
+
+          [fr] Selon le catalogue officiel des caractères (n° 224) de l''harmonisation des registres : Pour les personnes
+          de nationalité étrangère ne disposant pas de documents officiels (principalement dans le domaine de l’asile). A
+          utiliser en combinaison avec le Nom selon déclaration défini.
+
+          [it] Secondo il catalogo ufficiale delle caratteristiche (n. 224) dell''armonizzazione dei registri: Per persone
+          di nazionalità straniera che non possiedono documenti ufficiali (principalmente nel settore dell’asilo). Da utilizzare
+          in collegamento con il cognome dichiarato.
+
+          [en] According to the official catalogue of characters (No. 224) for the harmonisation of registers: For persons
+          of foreign nationality who do not have official documents (mainly in the field of asylum). To be used in combination
+          with the defined Name according to declaration.
+
+          '
+        meaning: act:vocabulary/NameTypeEnum/PersonDeclaredForeignerFirstName
+  AddressTypeEnum:
+    description: '[en] Types of addresses.
+
+      [de] Adresstypen.
+
+      '
+    permissible_values:
+      privateAddress:
+        description: '[en] Private address.
+
+          [de] Privatadresse.
+
+          '
+      businessAddress:
+        description: '[en] Business address.
+
+          [de] Geschäftsadresse.
+
+          '
+      localAddress:
+        description: '[en] Local address.
+
+          [de] Lokaladresse.
+
+          '
+  TrainingTypeEnum:
+    description: '[en] Types of training or education.
+
+      [de] Ausbildungs- oder Bildungstypen.
+
+      '
+    permissible_values:
+      schulabschluss:
+        description: '[en] School diploma.
+
+          [de] Schulabschluss.
+
+          '
+      efz:
+        description: '[en] Federal certificate of proficiency (EFZ).
+
+          [de] Eidgenössisches Fähigkeitszeugnis (EFZ).
+
+          '
+      uni:
+        description: '[en] University degree.
+
+          [de] Universitätsabschluss.
+
+          '
+      armee:
+        description: '[en] Military service.
+
+          [de] Militärdienst.
+
+          '
+      zivi:
+        description: '[en] Civil service.
+
+          [de] Zivildienst.
+
+          '
+      zischutz:
+        description: '[en] Civil protection.
+
+          [de] Zivilschutz.
+
+          '
+  ContactTypeEnum:
+    description: '[en] Types of contact information.
+
+      [de] Kontaktinformationstypen.
+
+      '
+    permissible_values:
+      email:
+        description: '[en] Email address.
+
+          [de] E-Mail-Adresse.
+
+          '
+      contact_website:
+        description: '[en] Contact website.
+
+          [de] Kontakt-Website.
+
+          '
+      linked_in:
+        description: '[en] LinkedIn profile.
+
+          [de] LinkedIn-Profil.
+
+          '
+      twitter:
+        description: '[en] Twitter profile.
+
+          [de] Twitter-Profil.
+
+          '
+  RoleEnum:
+    description: '[en] Roles a person can have within a membership.
+
+      [de] Rollen, die eine Person im Rahmen einer Mitgliedschaft haben kann.
+
+      '
+    permissible_values:
+      member:
+        description: '[en] Regular member (default).
+
+          [de] Gewöhnliches Mitglied (Standard).
+
+          '
+      president:
+        description: '[en] President or chair of the group.
+
+          [de] Präsident oder Vorsitzender der Gruppe.
+
+          '
+      stellvertreter:
+        description: '[en] Deputy/vice role (stellvertreter).
+
+          [de] Stellvertreter / Vize.
+
+          '
+      other:
+        description: '[en] Other role; use role_label for a descriptive label.
+
+          [de] Andere Rolle; für eine beschreibende Bezeichnung role_label verwenden.
+
+          '
+  GroupTypeEnum:
+    description: '[en] Types of political groups and organizations.
+
+      [de] Typen politischer Gruppen und Organisationen.
+
+      '
+    permissible_values:
+      party:
+        meaning: act:enum/group_type/party
+        description: '[en] Political party.
+
+          [de] Politische Partei.
+
+          '
+      list:
+        meaning: act:enum/group_type/list
+        description: '[en] Electoral list (can be part of a party or independent).
+
+          [de] Wahlliste (kann Teil einer Partei sein oder unabhängig).
+
+          '
+      workgroup:
+        meaning: act:enum/group_type/workgroup
+        description: '[en] Working group.
+
+          [de] Arbeitsgruppe.
+
+          '
+      parliament:
+        meaning: act:enum/group_type/parliament
+        description: '[en] Parliament at federal, cantonal, or municipal level.
+
+          [de] Parlament auf Bundes-, Kantons- oder Gemeindeebene.
+
+          '
+      delegation:
+        meaning: act:enum/group_type/delegation
+        description: '[en] Delegation.
+
+          [de] Delegation.
+
+          '
+      commission:
+        meaning: act:enum/group_type/commission
+        description: '[en] Commission (permanent or ad-hoc).
+
+          [de] Kommission (ständig oder ad-hoc).
+
+          '
+      faction:
+        meaning: act:enum/group_type/faction
+        description: '[en] Parliamentary faction.
+
+          [de] Parlamentsfraktion.
+
+          '
+      parliamentary_bureau:
+        meaning: act:enum/group_type/parliamentary_bureau
+        description: '[en] Parliamentary bureau.
+
+          [de] Parlamentsbüro.
+
+          '
+      presidency:
+        meaning: act:enum/group_type/presidency
+        description: '[en] Presidency of parliament.
+
+          [de] Präsidium des Parlaments.
+
+          '
+      government:
+        meaning: act:enum/group_type/government
+        description: '[en] Government / Executive.
+
+          [de] Regierung / Exekutive.
+
+          '
+      department:
+        meaning: act:enum/group_type/department
+        description: '[en] Government department.
+
+          [de] Departement.
+
+          '
+      office:
+        meaning: act:enum/group_type/office
+        description: '[en] Government office.
+
+          [de] Amt.
+
+          '
+      extraparliamentary_commission:
+        meaning: act:enum/group_type/extraparliamentary_commission
+        description: '[en] Extra-parliamentary commission (e.g., Bank Council).
+
+          [de] Außerparlamentarische Kommission (z.B. Bankrat).
+
+          '
+      interest_group:
+        meaning: act:enum/group_type/interest_group
+        description: '[en] Interest group from civil society.
+
+          [de] Interessengruppe aus der Zivilgesellschaft.
+
+          '
+      control_body:
+        meaning: act:enum/group_type/control_body
+        description: '[en] Control body (e.g., financial control).
+
+          [de] Kontrollorgan (z.B. Finanzkontrolle).
+
+          '
+      parliamentary_services:
+        meaning: act:enum/group_type/parliamentary_services
+        description: '[en] Parliamentary services.
+
+          [de] Parlamentsdienste.
+
+          '
+      court:
+        meaning: act:enum/group_type/court
+        description: '[en] Court / Judiciary.
+
+          [de] Gericht / Judikative.
+
+          '
+      association:
+        meaning: act:enum/group_type/association
+        description: '[en] Association.
+
+          [de] Verein.
+
+          '
+      petition_carrier:
+        meaning: act:enum/group_type/petition_carrier
+        description: '[en] Petition carrier.
+
+          [de] Petitionsträger.
+
+          '
+      university:
+        meaning: act:enum/group_type/university
+        description: '[en] University or educational institution.
+
+          [de] Universität oder Bildungseinrichtung.
+
+          '
+      other:
+        meaning: act:enum/group_type/other
+        description: '[en] Other group type not covered by standard categories.
+
+          [de] Anderer Gruppentyp, nicht durch Standardkategorien abgedeckt.
+
+          '
+  InterestTypeEnum:
+    description: '[en] Types of interest links (conflicts of interest, political financing).
+
+      [de] Typen von Interessenbindungen (Interessenkonflikte, Politikfinanzierung).
+
+      '
+    permissible_values:
+      professional_activity:
+        meaning: act:enum/interest_type/professional_activity
+        description: '[en] Professional activity.
+
+          [de] Berufliche Tätigkeit.
+
+          '
+      political_office:
+        meaning: act:enum/interest_type/political_office
+        description: '[en] Political office.
+
+          [de] Politische Ämter.
+
+          '
+      association:
+        meaning: act:enum/interest_type/association
+        description: '[en] Association membership.
+
+          [de] Vereinsmitgliedschaft.
+
+          '

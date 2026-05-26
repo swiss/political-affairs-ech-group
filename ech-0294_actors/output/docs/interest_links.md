@@ -19,6 +19,8 @@ __
 
 
 URI: [act:interestLink](https://ld.ech.ch/schema/0294/actors/interestLink)
+Alias: interest_links
+
 <!-- no inheritance hierarchy -->
 
 
@@ -29,8 +31,8 @@ URI: [act:interestLink](https://ld.ech.ch/schema/0294/actors/interestLink)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Container](Container.md) | [de] Container für politische Akteure, Gruppen und Beziehungen |  no  |
 | [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
+| [Container](Container.md) | [de] Container für politische Akteure, Gruppen und Beziehungen |  no  |
 
 
 
@@ -99,6 +101,7 @@ description: '[de] Sammlung von Interessenbindungen.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:interestLink
+alias: interest_links
 domain_of:
 - Container
 - Person

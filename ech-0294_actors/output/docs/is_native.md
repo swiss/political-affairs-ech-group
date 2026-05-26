@@ -19,6 +19,8 @@ __
 
 
 URI: [act:isNative](https://ld.ech.ch/schema/0294/actors/isNative)
+Alias: is_native
+
 <!-- no inheritance hierarchy -->
 
 
@@ -97,6 +99,7 @@ description: '[de] Gibt an, ob es sich um die Muttersprache handelt.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:isNative
+alias: is_native
 domain_of:
 - LanguageProficiency
 range: boolean

@@ -19,6 +19,8 @@ __
 
 
 URI: [act:role_label](https://ld.ech.ch/schema/0294/actors/role_label)
+Alias: role_label
+
 <!-- no inheritance hierarchy -->
 
 
@@ -87,6 +89,7 @@ description: '[en] Descriptive label for the role when ''other'' is selected in 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
+alias: role_label
 range: string
 
 ```

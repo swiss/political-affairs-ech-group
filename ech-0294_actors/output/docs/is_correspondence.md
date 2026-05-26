@@ -19,6 +19,8 @@ __
 
 
 URI: [act:isCorrespondence](https://ld.ech.ch/schema/0294/actors/isCorrespondence)
+Alias: is_correspondence
+
 <!-- no inheritance hierarchy -->
 
 
@@ -97,6 +99,7 @@ description: '[de] Gibt an, ob es sich um die bevorzugte Sprache handelt.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:isCorrespondence
+alias: is_correspondence
 domain_of:
 - LanguageProficiency
 range: boolean

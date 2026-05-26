@@ -19,6 +19,8 @@ __
 
 
 URI: [mcm:labelLong](https://ld.ech.ch/schema/0292/meta-common/labelLong)
+Alias: label_long
+
 <!-- no inheritance hierarchy -->
 
 
@@ -99,6 +101,7 @@ description: '[de] Möglichkeit bei einer strukturierten Information, ein erweit
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:labelLong
+alias: label_long
 domain_of:
 - Person
 range: string

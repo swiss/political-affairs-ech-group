@@ -19,6 +19,8 @@ __
 
 
 URI: [act:statutesURL](https://ld.ech.ch/schema/0294/actors/statutesURL)
+Alias: statutes_url
+
 <!-- no inheritance hierarchy -->
 
 
@@ -97,6 +99,7 @@ description: '[de] URL zu Parteistatuten (optional für Parteien).
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:statutesURL
+alias: statutes_url
 domain_of:
 - Group
 range: string

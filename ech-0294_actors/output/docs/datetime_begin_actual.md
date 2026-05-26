@@ -19,6 +19,8 @@ __
 
 
 URI: [mcm:datetimeBeginActual](https://ld.ech.ch/schema/0292/meta-common/datetimeBeginActual)
+Alias: datetime_begin_actual
+
 <!-- no inheritance hierarchy -->
 
 
@@ -99,6 +101,7 @@ description: '[de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisse
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:datetimeBeginActual
+alias: datetime_begin_actual
 domain_of:
 - IsEventWithDuration
 range: datetime

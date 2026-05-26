@@ -1,11 +1,10 @@
-"""Extract per-class examples from Container-level data_*.yaml files.
+"""Extract per-class and per-slot examples from Container-level data_*.yaml files.
 
-Creates an examples/ folder with:
-- Container-<name>.yaml  (full file, for Container-class docs)
-- <ClassName>-<label>.yaml  (individual instances, for per-class docs)
+Creates:
+- output/examples/  → Class-level YAML example files for gen-doc --example-directory
+- output/schema_enriched.yaml → Copy of schema with slot examples injected
 
-Which classes get examples is controlled by:
-    <ech-folder>/input/pipeline_examples_generator_config.yaml
+Controlled by: <ech-folder>/input/pipeline_examples_generator_config.yaml
 
 Usage:
     python extract_examples.py <ech-folder>
@@ -18,6 +17,7 @@ import sys
 import re
 import shutil
 from pathlib import Path
+from collections import defaultdict
 
 import yaml
 
@@ -73,7 +73,7 @@ def label_for_instance(obj, index: int) -> str:
 
 
 def extract_nested(obj, context: str, allowed_classes: set, parent_label: str = "") -> list:
-    """Recursively extract examples for allowed classes from nested data."""
+    """Recursively extract class-level examples for allowed classes."""
     results = []
     if not isinstance(obj, dict):
         return results
@@ -97,7 +97,43 @@ def extract_nested(obj, context: str, allowed_classes: set, parent_label: str = 
     return results
 
 
-def load_config(ech_folder: Path) -> set:
+def collect_slot_values(obj, allowed_slots: set, collected: dict):
+    """Recursively collect values for configured slots from nested data."""
+    if isinstance(obj, dict):
+        for key, value in obj.items():
+            if key in allowed_slots and not isinstance(value, (dict, list)):
+                collected[key].add(str(value))
+            collect_slot_values(value, allowed_slots, collected)
+    elif isinstance(obj, list):
+        for item in obj:
+            collect_slot_values(item, allowed_slots, collected)
+
+
+def enrich_schema(schema_path: Path, output_path: Path, slot_examples: dict, max_examples: int):
+    """Write a copy of schema.yaml with examples: injected on configured slots."""
+    with open(schema_path, encoding="utf-8") as f:
+        schema = yaml.safe_load(f)
+
+    slots = schema.get("slots", {})
+    for slot_name, values in slot_examples.items():
+        if slot_name not in slots:
+            continue
+        if slots[slot_name] is None:
+            slots[slot_name] = {}
+        examples = [{"value": v} for v in sorted(values)[:max_examples]]
+        slots[slot_name]["examples"] = examples
+
+    with open(output_path, "w", encoding="utf-8") as f:
+        yaml.dump(schema, f, default_flow_style=False, allow_unicode=True,
+                  sort_keys=False, width=120)
+
+    print(f"\nEnriched schema written to {output_path}")
+    for slot_name, values in sorted(slot_examples.items()):
+        shown = sorted(values)[:max_examples]
+        print(f"  {slot_name}: {shown}")
+
+
+def load_config(ech_folder: Path) -> dict:
     config_path = ech_folder / "input" / "pipeline_examples_generator_config.yaml"
     if not config_path.exists():
         print(f"ERROR: Config not found: {config_path}")
@@ -106,9 +142,7 @@ def load_config(ech_folder: Path) -> set:
     with open(config_path, encoding="utf-8") as f:
         config = yaml.safe_load(f)
 
-    classes = set(config.get("classes", []))
-    print(f"Config: generating examples for {sorted(classes)}")
-    return classes
+    return config
 
 
 def extract(ech_folder: str):
@@ -117,7 +151,13 @@ def extract(ech_folder: str):
     output_dir = base / "output"
     examples_dir = output_dir / "examples"
 
-    allowed_classes = load_config(base)
+    config = load_config(base)
+    allowed_classes = set(config.get("classes", []))
+    allowed_slots = set(config.get("slots", []))
+    max_examples = config.get("max_examples_per_slot", 3)
+
+    print(f"Config: classes={sorted(allowed_classes)}")
+    print(f"Config: slots={sorted(allowed_slots)}")
 
     if examples_dir.exists():
         shutil.rmtree(examples_dir)
@@ -128,6 +168,8 @@ def extract(ech_folder: str):
     if not data_files:
         print(f"No data_*.yaml files found in {input_dir}")
         sys.exit(1)
+
+    slot_values = defaultdict(set)
 
     for data_file in data_files:
         stem = data_file.stem.replace("data_", "")
@@ -142,6 +184,7 @@ def extract(ech_folder: str):
         if not isinstance(data, dict):
             continue
 
+        # Class examples
         extracted = extract_nested(data, stem, allowed_classes)
         for filename, item in extracted:
             filepath = examples_dir / filename
@@ -150,7 +193,17 @@ def extract(ech_folder: str):
                           allow_unicode=True, sort_keys=False)
             print(f"  {filename}")
 
-    print(f"\nExamples written to {examples_dir}")
+        # Slot values
+        if allowed_slots:
+            collect_slot_values(data, allowed_slots, slot_values)
+
+    print(f"\nClass examples written to {examples_dir}")
+
+    # Enriched schema
+    if allowed_slots and slot_values:
+        schema_path = input_dir / "schema.yaml"
+        enriched_path = output_dir / "schema_enriched.yaml"
+        enrich_schema(schema_path, enriched_path, slot_values, max_examples)
 
 
 if __name__ == "__main__":

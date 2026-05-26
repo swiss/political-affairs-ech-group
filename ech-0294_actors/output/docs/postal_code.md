@@ -19,6 +19,8 @@ __
 
 
 URI: [act:postalCode](https://ld.ech.ch/schema/0294/actors/postalCode)
+Alias: postal_code
+
 <!-- no inheritance hierarchy -->
 
 
@@ -97,6 +99,7 @@ description: '[de] Postleitzahl.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:postalCode
+alias: postal_code
 domain_of:
 - Address
 range: integer

@@ -19,6 +19,8 @@ __
 
 
 URI: [act:isPaid](https://ld.ech.ch/schema/0294/actors/isPaid)
+Alias: is_paid
+
 <!-- no inheritance hierarchy -->
 
 
@@ -60,6 +62,14 @@ URI: [act:isPaid](https://ld.ech.ch/schema/0294/actors/isPaid)
 
 
 
+## Examples
+
+| Value |
+| --- |
+| False |
+| True |
+
+
 
 ## Identifier and Mapping Information
 
@@ -95,9 +105,13 @@ description: '[de] Gibt an, ob die Position bezahlt ist.
   [en] Indicates if the position is paid.
 
   '
+examples:
+- value: 'False'
+- value: 'True'
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:isPaid
+alias: is_paid
 domain_of:
 - InterestLink
 - Occupation

@@ -19,6 +19,8 @@ __
 
 
 URI: [act:spatial](https://ld.ech.ch/schema/0294/actors/spatial)
+Alias: spatial
+
 <!-- no inheritance hierarchy -->
 
 
@@ -97,6 +99,7 @@ description: '[de] Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z
   '
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
+alias: spatial
 domain_of:
 - Group
 range: string

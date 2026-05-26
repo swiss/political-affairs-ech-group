@@ -19,6 +19,8 @@ __
 
 
 URI: [mcm:multilingualValue](https://ld.ech.ch/schema/0292/meta-common/multilingualValue)
+Alias: multilingual_value
+
 <!-- no inheritance hierarchy -->
 
 
@@ -87,6 +89,7 @@ description: '[de] Ein mehrsprachiger Wert mit Angabe der Sprache.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:multilingualValue
+alias: multilingual_value
 range: MultilingualValue
 
 ```

@@ -19,6 +19,8 @@ __
 
 
 URI: [act:committee](https://ld.ech.ch/schema/0294/actors/committee)
+Alias: committee
+
 <!-- no inheritance hierarchy -->
 
 
@@ -97,6 +99,7 @@ description: '[en] Committee or board (e.g., foundation board, board of director
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:committee
+alias: committee
 domain_of:
 - InterestLink
 range: string

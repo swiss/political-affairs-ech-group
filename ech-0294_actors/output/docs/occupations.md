@@ -19,6 +19,8 @@ __
 
 
 URI: [act:occupation](https://ld.ech.ch/schema/0294/actors/occupation)
+Alias: occupations
+
 <!-- no inheritance hierarchy -->
 
 
@@ -98,6 +100,7 @@ description: '[de] Berufe oder Tätigkeiten der Person.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:occupation
+alias: occupations
 domain_of:
 - Person
 range: Occupation

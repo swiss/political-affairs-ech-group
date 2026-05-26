@@ -19,6 +19,8 @@ __
 
 
 URI: [act:membership](https://ld.ech.ch/schema/0294/actors/membership)
+Alias: memberships
+
 <!-- no inheritance hierarchy -->
 
 
@@ -98,6 +100,7 @@ description: '[de] Sammlung von Mitgliedschaften.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:membership
+alias: memberships
 domain_of:
 - Container
 range: Membership

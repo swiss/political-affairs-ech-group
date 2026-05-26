@@ -19,6 +19,8 @@ __
 
 
 URI: [act:enterprise](https://ld.ech.ch/schema/0294/actors/enterprise)
+Alias: enterprise
+
 <!-- no inheritance hierarchy -->
 
 
@@ -97,6 +99,7 @@ description: '[de] Name des Unternehmens.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:enterprise
+alias: enterprise
 domain_of:
 - Occupation
 range: string

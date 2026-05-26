@@ -19,6 +19,8 @@ __
 
 
 URI: [mcm:dateActual](https://ld.ech.ch/schema/0292/meta-common/dateActual)
+Alias: date_actual
+
 <!-- no inheritance hierarchy -->
 
 
@@ -98,6 +100,7 @@ description: '[de] Das tatsächliche Datum eines instantanen Ereignisses oder Vo
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:dateActual
+alias: date_actual
 domain_of:
 - IsInstantaneousEvent
 range: date

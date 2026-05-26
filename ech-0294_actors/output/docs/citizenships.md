@@ -19,6 +19,8 @@ __
 
 
 URI: [act:citizenship](https://ld.ech.ch/schema/0294/actors/citizenship)
+Alias: citizenships
+
 <!-- no inheritance hierarchy -->
 
 
@@ -98,6 +100,7 @@ description: '[de] Staatsbürgerschaften der Person.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:citizenship
+alias: citizenships
 domain_of:
 - Person
 range: Citizenship

@@ -19,6 +19,8 @@ __
 
 
 URI: [act:groupType](https://ld.ech.ch/schema/0294/actors/groupType)
+Alias: group_type
+
 <!-- no inheritance hierarchy -->
 
 
@@ -99,6 +101,7 @@ description: '[de] Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlamen
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:groupType
+alias: group_type
 domain_of:
 - Group
 range: GroupType

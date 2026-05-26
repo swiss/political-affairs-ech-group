@@ -19,6 +19,8 @@ __
 
 
 URI: [act:gender](https://ld.ech.ch/schema/0294/actors/gender)
+Alias: genders
+
 <!-- no inheritance hierarchy -->
 
 
@@ -98,6 +100,7 @@ description: '[de] Geschlecht der Person.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:gender
+alias: genders
 domain_of:
 - Person
 range: Gender

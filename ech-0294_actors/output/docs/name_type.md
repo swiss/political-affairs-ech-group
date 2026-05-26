@@ -19,6 +19,8 @@ __
 
 
 URI: [act:nameType](https://ld.ech.ch/schema/0294/actors/nameType)
+Alias: name_type
+
 <!-- no inheritance hierarchy -->
 
 
@@ -59,6 +61,14 @@ URI: [act:nameType](https://ld.ech.ch/schema/0294/actors/nameType)
 
 
 
+## Examples
+
+| Value |
+| --- |
+| PersonFirstName |
+| PersonOfficialName |
+
+
 
 ## Identifier and Mapping Information
 
@@ -94,9 +104,13 @@ description: '[de] Typ des Namens.
   [en] Type of name.
 
   '
+examples:
+- value: PersonFirstName
+- value: PersonOfficialName
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:nameType
+alias: name_type
 domain_of:
 - Name
 range: NameTypeEnum

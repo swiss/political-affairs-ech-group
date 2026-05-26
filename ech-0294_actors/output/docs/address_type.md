@@ -19,6 +19,8 @@ __
 
 
 URI: [act:addressType](https://ld.ech.ch/schema/0294/actors/addressType)
+Alias: address_type
+
 <!-- no inheritance hierarchy -->
 
 
@@ -59,6 +61,14 @@ URI: [act:addressType](https://ld.ech.ch/schema/0294/actors/addressType)
 
 
 
+## Examples
+
+| Value |
+| --- |
+| businessAddress |
+| privateAddress |
+
+
 
 ## Identifier and Mapping Information
 
@@ -94,9 +104,13 @@ description: '[de] Typ der Adresse.
   [en] Type of address.
 
   '
+examples:
+- value: businessAddress
+- value: privateAddress
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:addressType
+alias: address_type
 domain_of:
 - Address
 range: AddressTypeEnum

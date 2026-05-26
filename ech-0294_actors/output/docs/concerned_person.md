@@ -19,6 +19,8 @@ __
 
 
 URI: [act:concernedPerson](https://ld.ech.ch/schema/0294/actors/concernedPerson)
+Alias: concerned_person
+
 <!-- no inheritance hierarchy -->
 
 
@@ -98,6 +100,7 @@ description: '[de] Link zu einer Person, auf die sich die Zugehörigkeit bezieht
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:concernedPerson
+alias: concerned_person
 domain_of:
 - Membership
 - InterestLink

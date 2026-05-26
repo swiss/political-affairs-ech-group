@@ -19,6 +19,8 @@ __
 
 
 URI: [act:authorizedToVote](https://ld.ech.ch/schema/0294/actors/authorizedToVote)
+Alias: authorized_to_vote
+
 <!-- no inheritance hierarchy -->
 
 
@@ -97,6 +99,7 @@ description: '[de] Gibt an, ob die Person stimmberechtigt ist.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:authorizedToVote
+alias: authorized_to_vote
 domain_of:
 - Membership
 range: boolean

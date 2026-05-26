@@ -19,6 +19,8 @@ __
 
 
 URI: [act:training](https://ld.ech.ch/schema/0294/actors/training)
+Alias: trainings
+
 <!-- no inheritance hierarchy -->
 
 
@@ -98,6 +100,7 @@ description: '[de] Ausbildungen oder Bildungen der Person.
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:training
+alias: trainings
 domain_of:
 - Person
 range: Training

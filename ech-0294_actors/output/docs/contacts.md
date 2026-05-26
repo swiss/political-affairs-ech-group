@@ -19,6 +19,8 @@ __
 
 
 URI: [act:contact](https://ld.ech.ch/schema/0294/actors/contact)
+Alias: contacts
+
 <!-- no inheritance hierarchy -->
 
 
@@ -99,6 +101,7 @@ description: '[en] Contact information (email, website, social media).
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:contact
+alias: contacts
 domain_of:
 - Person
 - Group

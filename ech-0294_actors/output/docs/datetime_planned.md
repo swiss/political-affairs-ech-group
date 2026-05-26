@@ -19,6 +19,8 @@ __
 
 
 URI: [mcm:datetimePlanned](https://ld.ech.ch/schema/0292/meta-common/datetimePlanned)
+Alias: datetime_planned
+
 <!-- no inheritance hierarchy -->
 
 
@@ -99,6 +101,7 @@ description: '[de] Das geplante Datum und die Uhrzeit eines instantanen Ereignis
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:datetimePlanned
+alias: datetime_planned
 domain_of:
 - IsInstantaneousEvent
 range: datetime

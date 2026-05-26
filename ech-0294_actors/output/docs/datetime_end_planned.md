@@ -19,6 +19,8 @@ __
 
 
 URI: [mcm:datetimeEndPlanned](https://ld.ech.ch/schema/0292/meta-common/datetimeEndPlanned)
+Alias: datetime_end_planned
+
 <!-- no inheritance hierarchy -->
 
 
@@ -99,6 +101,7 @@ description: '[de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder 
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:datetimeEndPlanned
+alias: datetime_end_planned
 domain_of:
 - IsEventWithDuration
 range: datetime
