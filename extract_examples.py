@@ -202,7 +202,7 @@ def extract(ech_folder: str):
     # Enriched schema
     if allowed_slots and slot_values:
         schema_path = input_dir / "schema.yaml"
-        enriched_path = output_dir / "schema_enriched.yaml"
+        enriched_path = output_dir / "pipeline_examples_generator_schema.yaml"
         enrich_schema(schema_path, enriched_path, slot_values, max_examples)
 
 
