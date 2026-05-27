@@ -4,7 +4,7 @@
     {%- set title = gen.name(element) -%}
 {%- endif -%}
 
-# Enum: {{ title }} {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong></span> {% endif %}
+## Enum: {{ title }} {% if element.deprecated %} <span style="color: red;"><strong> (DEPRECATED) </strong></span> {% endif %}
 
 {% if element.description %}
 {% set element_description_lines = element.description.split('\n') %}
