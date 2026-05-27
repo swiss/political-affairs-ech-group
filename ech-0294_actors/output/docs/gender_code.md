@@ -67,28 +67,6 @@ URI: [act:genderCode](https://ld.ech.ch/schema/0294/actors/genderCode)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:genderCode |
-| native | act:gender_code |
-
-
 
 
 ## LinkML Source

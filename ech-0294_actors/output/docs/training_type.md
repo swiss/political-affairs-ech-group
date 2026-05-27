@@ -68,28 +68,6 @@ URI: [act:trainingType](https://ld.ech.ch/schema/0294/actors/trainingType)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:trainingType |
-| native | act:training_type |
-
-
 
 
 ## LinkML Source

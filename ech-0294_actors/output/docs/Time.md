@@ -34,29 +34,6 @@ URI: [xsd:time](http://www.w3.org/2001/XMLSchema#time)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:time |
-| native | act:time |
-| exact | schema:Time |
-
-
 
 
 </div>

@@ -60,28 +60,6 @@ URI: [act:isCorrespondence](https://ld.ech.ch/schema/0294/actors/isCorrespondenc
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:isCorrespondence |
-| native | act:is_correspondence |
-
-
 
 
 ## LinkML Source

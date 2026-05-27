@@ -68,28 +68,6 @@ URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:language |
-| native | act:language |
-
-
 
 
 ## LinkML Source

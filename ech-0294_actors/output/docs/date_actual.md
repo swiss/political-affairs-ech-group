@@ -60,28 +60,6 @@ URI: [mcm:dateActual](https://ld.ech.ch/schema/0292/meta-common/dateActual)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:dateActual |
-| native | act:date_actual |
-
-
 
 
 ## LinkML Source

@@ -32,29 +32,6 @@ URI: [xsd:float](http://www.w3.org/2001/XMLSchema#float)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:float |
-| native | act:float |
-| exact | schema:Float |
-
-
 
 
 </div>

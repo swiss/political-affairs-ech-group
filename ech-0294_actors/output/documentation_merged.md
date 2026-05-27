@@ -29,6 +29,7 @@ Management summary of the document.
 < manually insert TOC here >
 
 
+
 # Einführung
 
 Der Inhalt dieses Substandards sind die politischen Akteure, seien es Personen (Rats- oder Verwaltungsmitglieder) oder Gruppen (Parteien, Fraktionen, Gremien, Kommissionen und Verbände).
@@ -61,6 +62,7 @@ Folgende Themen wurden in der aufgeführten Reihenfolge seit 2025 in der Subgrup
 2. Gruppen / Organe / Interessengruppen: Parteien, Fraktionen, Gremien, Kommissionen, Verbände
 3. Interessenbindungen, Konflikte, Politikfinanzierung
 4. Verknüpfungen gleicher Personen über föderale Stufen hinweg
+
 # Person
 
 ## Einführung und Zielsetzung
@@ -170,28 +172,6 @@ __
 
 
 
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:Person |
-| native | act:Person |
 
 
 
@@ -354,28 +334,6 @@ __
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:Address |
-| native | act:Address |
-
-
 
 
 ### Examples
@@ -404,10 +362,7 @@ postal_locality: London
 
 </div> 
 
----
-search:
-  boost: 2.0
----# Enum: AddressTypeEnum 
+# Enum: AddressTypeEnum 
 
 
 
@@ -424,7 +379,7 @@ __
 
 URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 
-## Permissible Values
+### Permissible Values
 | Value | Meaning | Description |
 | --- | --- | --- |
 | privateAddress | None | [en] Private address |
@@ -434,74 +389,8 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 
 
 
-## Slots
-
-| Name | Description |
-| ---  | --- |
-| [address_type](#address_type) | [de] Typ der Adresse |
 
 
-
-
-
-
-
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-
-
-## LinkML Source
-
-<details>
-```yaml
-name: AddressTypeEnum
-description: '[en] Types of addresses.
-
-  [de] Adresstypen.
-
-  '
-from_schema: https://ld.ech.ch/schema/0294/actors
-rank: 1000
-permissible_values:
-  privateAddress:
-    text: privateAddress
-    description: '[en] Private address.
-
-      [de] Privatadresse.
-
-      '
-  businessAddress:
-    text: businessAddress
-    description: '[en] Business address.
-
-      [de] Geschäftsadresse.
-
-      '
-  localAddress:
-    text: localAddress
-    description: '[en] Local address.
-
-      [de] Lokaladresse.
-
-      '
-
-```
-</details>
 
 </div> 
 
@@ -551,28 +440,6 @@ __
 
 
 
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:Citizenship |
-| native | act:Citizenship |
 
 
 
@@ -629,28 +496,6 @@ __
 
 
 
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:LanguageProficiency |
-| native | act:LanguageProficiency |
 
 
 
@@ -1379,28 +1224,6 @@ __
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:Group |
-| native | act:Group |
-
-
 
 
 
@@ -2088,28 +1911,6 @@ __
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:Membership |
-| native | act:Membership |
-
-
 
 
 
@@ -2565,28 +2366,6 @@ __
 
 
 
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:InterestLink |
-| native | act:InterestLink |
 
 
 

@@ -60,28 +60,6 @@ URI: [act:description](https://ld.ech.ch/schema/0294/actors/description)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:description |
-| native | act:description |
-
-
 
 
 ## LinkML Source

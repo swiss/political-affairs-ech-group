@@ -60,28 +60,6 @@ URI: [act:addressURI](https://ld.ech.ch/schema/0294/actors/addressURI)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:addressURI |
-| native | act:address_uri |
-
-
 
 
 ## LinkML Source

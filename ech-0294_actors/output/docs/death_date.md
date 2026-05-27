@@ -60,28 +60,6 @@ URI: [schema:deathDate](http://schema.org/deathDate)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | schema:deathDate |
-| native | act:death_date |
-
-
 
 
 ## LinkML Source

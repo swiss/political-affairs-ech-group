@@ -59,28 +59,6 @@ URI: [act:spatial](https://ld.ech.ch/schema/0294/actors/spatial)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:spatial |
-| native | act:spatial |
-
-
 
 
 ## LinkML Source

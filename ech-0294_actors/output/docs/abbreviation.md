@@ -61,28 +61,6 @@ URI: [act:abbreviation](https://ld.ech.ch/schema/0294/actors/abbreviation)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:abbreviation |
-| native | act:abbreviation |
-
-
 
 
 ## LinkML Source

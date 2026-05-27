@@ -68,28 +68,6 @@ URI: [act:nameType](https://ld.ech.ch/schema/0294/actors/nameType)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:nameType |
-| native | act:name_type |
-
-
 
 
 ## LinkML Source

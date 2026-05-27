@@ -68,28 +68,6 @@ URI: [schema:birthDate](http://schema.org/birthDate)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | schema:birthDate |
-| native | act:birth_date |
-
-
 
 
 ## LinkML Source

@@ -60,28 +60,6 @@ URI: [act:landingPage](https://ld.ech.ch/schema/0294/actors/landingPage)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:landingPage |
-| native | act:landing_page |
-
-
 
 
 ## LinkML Source

@@ -60,28 +60,6 @@ URI: [mcm:remark](https://ld.ech.ch/schema/0292/meta-common/remark)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:remark |
-| native | act:remark |
-
-
 
 
 ## LinkML Source

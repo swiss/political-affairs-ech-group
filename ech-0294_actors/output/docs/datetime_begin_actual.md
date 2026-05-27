@@ -61,28 +61,6 @@ URI: [mcm:datetimeBeginActual](https://ld.ech.ch/schema/0292/meta-common/datetim
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:datetimeBeginActual |
-| native | act:datetime_begin_actual |
-
-
 
 
 ## LinkML Source

@@ -64,28 +64,6 @@ URI: [mcm:dateCreated](https://ld.ech.ch/schema/0292/meta-common/dateCreated)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:dateCreated |
-| native | act:date_created |
-
-
 
 
 ## LinkML Source

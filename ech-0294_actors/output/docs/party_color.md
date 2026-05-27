@@ -60,28 +60,6 @@ URI: [act:partyColor](https://ld.ech.ch/schema/0294/actors/partyColor)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:partyColor |
-| native | act:party_color |
-
-
 
 
 ## LinkML Source

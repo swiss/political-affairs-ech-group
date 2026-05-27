@@ -60,28 +60,6 @@ URI: [act:trainingCode](https://ld.ech.ch/schema/0294/actors/trainingCode)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:trainingCode |
-| native | act:training_code |
-
-
 
 
 ## LinkML Source

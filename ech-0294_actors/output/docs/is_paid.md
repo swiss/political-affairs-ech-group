@@ -69,28 +69,6 @@ URI: [act:isPaid](https://ld.ech.ch/schema/0294/actors/isPaid)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:isPaid |
-| native | act:is_paid |
-
-
 
 
 ## LinkML Source

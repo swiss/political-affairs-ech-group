@@ -50,28 +50,6 @@ URI: [mcm:multilingualValue](https://ld.ech.ch/schema/0292/meta-common/multiling
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:multilingualValue |
-| native | act:multilingual_value |
-
-
 
 
 ## LinkML Source

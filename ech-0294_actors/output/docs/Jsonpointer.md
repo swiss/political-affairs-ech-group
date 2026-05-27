@@ -33,28 +33,6 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:string |
-| native | act:jsonpointer |
-
-
 
 
 </div>

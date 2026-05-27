@@ -61,28 +61,6 @@ URI: [act:citizenship](https://ld.ech.ch/schema/0294/actors/citizenship)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:citizenship |
-| native | act:citizenships |
-
-
 
 
 ## LinkML Source

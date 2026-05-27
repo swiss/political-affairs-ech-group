@@ -68,28 +68,6 @@ URI: [act:birthYear](https://ld.ech.ch/schema/0294/actors/birthYear)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:birthYear |
-| native | act:birth_year |
-
-
 
 
 ## LinkML Source
