@@ -49,3 +49,5 @@ names:
 {{include:ech-0294_actors/output/docs/AddressTypeEnum.md}} 
 
 {{include:ech-0294_actors/output/docs/Citizenship.md}} 
+
+{{include:ech-0294_actors/output/docs/LanguageProficiency.md}} 

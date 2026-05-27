@@ -116,13 +116,13 @@ URI: {{ gen.uri_link(element) }}
 | ---  | --- | --- |
 {% if gen.get_direct_slots(element)|length > 0 %}
 {%- for slot in gen.get_direct_slots(element) -%}
-| {{ slot.name }} | {{ gen.cardinality(slot) }} <br/> {{ compute_range(slot) }} | {{ slot.description }} |
+| {{ slot.name }} | {{ gen.cardinality(slot) }} <br/> {{ compute_range(slot) }} | {{ slot.description | replace('\r\n', ' ') | replace('\n', ' ') | replace('\r', ' ') }} |
 {% endfor -%}
 {% endif -%}
 {% if gen.get_indirect_slots(element)|length > 0 %}
 {%- for slot in gen.get_indirect_slots(element) -%}
 {%- set inherited_from = gen.links(gen.get_slot_inherited_from(element.name, slot.name))|join(', ') -%}
-| {{ slot.name }} | {{ gen.cardinality(slot) }} <br/> {{ compute_range(slot) }} | {{ slot.description }}{% if inherited_from %}<br/><br/>Inheritance: {{ inherited_from }}{% endif %} |
+| {{ slot.name }} | {{ gen.cardinality(slot) }} <br/> {{ compute_range(slot) }} | {{ slot.description | replace('\r\n', ' ') | replace('\n', ' ') | replace('\r', ' ') }}{% if inherited_from %}<br/><br/>Inheritance: {{ inherited_from }}{% endif %} |
 {% endfor -%}
 {% endif %}
 
