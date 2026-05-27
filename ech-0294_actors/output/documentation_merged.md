@@ -286,6 +286,64 @@ electoral_district:
 
 
 
+# Class: Name 
+
+
+_[de] Ein Name mit einem Typ (z.B. Rufname, amtlicher Name) und einem Wert und einer zeitlichen Gültigkeit._
+
+_[en] A name with a type (e.g., call name, official name) and a value._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+### Attribute
+
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| name_type | 0..1 <br/> [NameTypeEnum](#NameTypeEnum) | [de] Typ des Namens. [en] Type of name.  |
+| value | 0..1 <br/> [String](#String) | [de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc. [en] The value of an information besides other attributes such as type, language, etc.  |
+| valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity) |
+
+
+
+
+
+### Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Person](#Person) | [names](#names) | range | [Name](#Name) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div> 
+
+
+
 # Class: Address 
 
 
@@ -396,6 +454,62 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 
 
 
+# Class: LanguageProficiency 
+
+
+_[de] Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um die bevorzugte Sprache oder die Muttersprache handelt._
+
+_[en] Language proficiency of a person indicating the language and whether it is the preferred language or native language._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+### Attribute
+
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| language | 0..1 <br/> [String](#String) | [de] Sprachcode im ISO 639-1 Format. [en] Language code in ISO 639-1 format.  |
+| is_correspondence | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob es sich um die bevorzugte Sprache handelt. [en] Indicates if this is the preferred language.  |
+| is_native | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob es sich um die Muttersprache handelt. [en] Indicates if this is the native language.  |
+
+
+
+
+
+### Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Person](#Person) | [language_proficiencies](#language_proficiencies) | range | [LanguageProficiency](#LanguageProficiency) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div> 
+
+
+
 # Class: Citizenship 
 
 
@@ -453,12 +567,12 @@ __
 
 
 
-# Class: LanguageProficiency 
+# Class: Gender 
 
 
-_[de] Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um die bevorzugte Sprache oder die Muttersprache handelt._
+_[de] Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen Gültigkeit._
 
-_[en] Language proficiency of a person indicating the language and whether it is the preferred language or native language._
+_[en] Gender of a person indicating a gender code and temporal validity._
 
 __
 
@@ -473,9 +587,11 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| language | 0..1 <br/> [String](#String) | [de] Sprachcode im ISO 639-1 Format. [en] Language code in ISO 639-1 format.  |
-| is_correspondence | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob es sich um die bevorzugte Sprache handelt. [en] Indicates if this is the preferred language.  |
-| is_native | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob es sich um die Muttersprache handelt. [en] Indicates if this is the native language.  |
+| gender_code | 0..1 <br/> [String](#String) | [de] Geschlechtscode (z.B. gemäß ISO 5218). [en] Gender code (e.g., according to ISO 5218).  |
+| pronouns | * <br/> [String](#String) | [de] Von der Person verwendete Pronomen. [en] Pronouns used by the person.  |
+| valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity) |
 
 
 
@@ -485,7 +601,7 @@ __
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Person](#Person) | [language_proficiencies](#language_proficiencies) | range | [LanguageProficiency](#LanguageProficiency) |
+| [Person](#Person) | [genders](#genders) | range | [Gender](#Gender) |
 
 
 
@@ -506,6 +622,528 @@ __
 
 
 </div> 
+
+
+
+# Class: Occupation 
+
+
+_[de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Codes, ob die Position bezahlt ist, und der zeitlichen Gültigkeit._
+
+_[en] Occupation or profession of a person indicating a label, an ISCO-19 code, whether the position is paid, and temporal validity._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+### Attribute
+
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| is_paid | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Position bezahlt ist. [en] Indicates if the position is paid.  |
+| occupation_code | 0..1 <br/> [String](#String) | [de] ISCO-19 Code der Tätigkeit. [en] ISCO-19 code of the occupation.  |
+| label | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.). [en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).  |
+| enterprise_uid | 0..1 <br/> [String](#String) | [de] UID des Unternehmens. [en] UID of the enterprise.  |
+| enterprise | 0..1 <br/> [String](#String) | [de] Name des Unternehmens. [en] Name of the enterprise.  |
+| valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity) |
+
+
+
+
+
+### Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Person](#Person) | [occupations](#occupations) | range | [Occupation](#Occupation) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Examples
+#### Example: Occupation-douglas_adams_Douglas_Adams_writer
+
+```yaml
+label: writer
+valid_from: 1979-01-01
+valid_through: 2001-05-11
+is_active: false
+is_paid: true
+
+```
+#### Example: Occupation-swiss_politicians_Beat_Jans_Politiker
+
+```yaml
+label: Politiker
+valid_from: 1964-01-01
+is_active: true
+
+```
+
+
+
+
+
+
+</div> 
+
+
+
+# Class: Training 
+
+
+_[de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z.B. Schulabschluss, Universitätsabschluss, Militärdienst), eines Labels, eines ISCO-19 Codes und der zeitlichen Gültigkeit._
+
+_[en] Training or education of a person indicating a type (e.g., school diploma, university degree, military service), a label, an ISCO-19 code, and temporal validity._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+### Attribute
+
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| training_type | 0..1 <br/> [TrainingTypeEnum](#TrainingTypeEnum) | [de] Typ der Ausbildung oder Bildung. [en] Type of training or education.  |
+| training_code | 0..1 <br/> [String](#String) | [de] ISCO-19 Code der Ausbildung oder Bildung. [en] ISCO-19 code of the training or education.  |
+| value | 0..1 <br/> [String](#String) | [de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc. [en] The value of an information besides other attributes such as type, language, etc.  |
+| valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity) |
+
+
+
+
+
+### Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Person](#Person) | [trainings](#trainings) | range | [Training](#Training) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div> 
+
+
+
+# Class: Contact 
+
+
+_[de] Kontaktinformation einer Person mit Angabe eines Typs (z.B. E-Mail, LinkedIn) und eines Werts._
+
+_[en] Contact information of a person indicating a type (e.g., email, LinkedIn) and a value._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+### Attribute
+
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| contact_type | 0..1 <br/> [ContactTypeEnum](#ContactTypeEnum) | [de] Typ der Kontaktinformation. [en] Type of contact information.  |
+| value | 0..1 <br/> [String](#String) | [de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc. [en] The value of an information besides other attributes such as type, language, etc.  |
+
+
+
+
+
+### Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Person](#Person) | [contacts](#contacts) | range | [Contact](#Contact) |
+| [Group](#Group) | [contacts](#contacts) | range | [Contact](#Contact) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div> 
+
+
+
+# Class: ElectoralDistrict 
+
+
+_[de] Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit zeitlicher Gültigkeit._
+
+_[en] Electoral district or region where a person is politically active; with temporal validity._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+### Attribute
+
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| district | 0..1 <br/> [String](#String) | [de] Wahlkreis oder Wahlregion. [en] Electoral district or region.  |
+| valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity) |
+
+
+
+
+
+### Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Person](#Person) | [electoral_district](#electoral_district) | range | [ElectoralDistrict](#ElectoralDistrict) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Examples
+#### Example: ElectoralDistrict-douglas_adams_Douglas_Adams_1
+
+```yaml
+district: London Central
+valid_from: 2020-01-01
+valid_through: 2025-01-01
+
+```
+#### Example: ElectoralDistrict-swiss_politicians_Beat_Jans_1
+
+```yaml
+district: Basel-Stadt
+valid_from: 2010-01-01
+
+```
+
+
+
+
+
+
+</div>
+
+
+
+# Class: InterestLink 
+
+
+_[de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation._
+
+_[en] An interest link (conflict of interest, political financing) of a person to an organization._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+### Attribute
+
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung. [en] Reference to a person with snapshot data at time of linking.  |
+| interest_type | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | [de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein). [en] Type of interest link (professional activity, political office, association).  |
+| organization_label | 0..1 <br/> [String](#String) | [en] Label of the organization. [de] Bezeichnung der Organisation.  |
+| organization_uid | 0..1 <br/> [String](#String) | [en] UID of the organization (for analysis with NOGA codes, etc.). [de] UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).  |
+| organization_address | 0..1 <br/> [String](#String) | [en] Address of the organization. [de] Adresse der Organisation.  |
+| legal_form | 0..1 <br/> [String](#String) | [en] Legal form of the organization. [de] Rechtsform der Organisation.  |
+| is_paid | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Position bezahlt ist. [en] Indicates if the position is paid.  |
+| committee | 0..1 <br/> [String](#String) | [en] Committee or board (e.g., foundation board, board of directors). [de] Gremium (z.B. Stiftungsrat, Verwaltungsrat).  |
+| function_role | 0..1 <br/> [String](#String) | [en] Function or role in the organization. [de] Funktion oder Rolle in der Organisation.  |
+| local_id | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification) |
+| date_created | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde. [en] The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde. [en] The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. [en] The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. [en] The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates) |
+| date_modified | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde. [en] The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde. [en] The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde. [en] The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde. [en] The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates) |
+| valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity) |
+
+
+
+
+
+### Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Container](#Container) | [interest_links](#interest_links) | range | [InterestLink](#InterestLink) |
+| [Person](#Person) | [interest_links](#interest_links) | range | [InterestLink](#InterestLink) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Examples
+#### Example: InterestLink-interest_links_il_burkart_003
+
+```yaml
+global_uri: act:il_burkart_003
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: professional_activity
+organization_label: Bovida Real Estate AG, Baar
+legal_form: Aktiengesellschaft
+committee: Verwaltungsrat
+function_role: Mitglied
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_002
+
+```yaml
+global_uri: act:il_burkart_002
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: professional_activity
+organization_label: Birchmeier Holding AG, Döttingen
+legal_form: Aktiengesellschaft
+committee: Verwaltungsrat
+function_role: Mitglied
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_001
+
+```yaml
+global_uri: act:il_burkart_001
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: professional_activity
+organization_label: Burkart Advisory GmbH, Baden
+legal_form: Gesellschaft mit beschränkter Haftung
+committee: Geschäftsleitung
+function_role: Geschäftsführer
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_004
+
+```yaml
+global_uri: act:il_burkart_004
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: professional_activity
+organization_label: ELCA Group SA, Lausanne
+legal_form: Aktiengesellschaft
+committee: Verwaltungsrat
+function_role: Mitglied
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_011
+
+```yaml
+global_uri: act:il_burkart_011
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: Verein Landesausstellung Svizra27, Aarau
+legal_form: Verein
+committee: Vorstand
+function_role: Mitglied
+is_paid: false
+
+```
+#### Example: InterestLink-interest_links_il_burkart_009
+
+```yaml
+global_uri: act:il_burkart_009
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: SUISSEDIGITAL Verband für Kommunikationsnetze
+legal_form: Verein
+committee: Vorstand
+function_role: Mitglied
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_006
+
+```yaml
+global_uri: act:il_burkart_006
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: FDP.Die Liberalen
+legal_form: Verein
+committee: Vorstand
+function_role: Präsident
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_008
+
+```yaml
+global_uri: act:il_burkart_008
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: professional_activity
+organization_label: Stiebel Eltron AG, Lupfig
+legal_form: Aktiengesellschaft
+committee: Beirat
+function_role: Beirat
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_005
+
+```yaml
+global_uri: act:il_burkart_005
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+legal_form: Verein
+committee: Zentralvorstand
+function_role: Präsident
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_010
+
+```yaml
+global_uri: act:il_burkart_010
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: Allianz Sicherheit Schweiz, Baden
+legal_form: Verein
+committee: Vorstand
+function_role: Präsident
+is_paid: false
+
+```
+#### Example: InterestLink-interest_links_il_burkart_007
+
+```yaml
+global_uri: act:il_burkart_007
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+legal_form: Stiftung
+committee: Stiftungsrat
+function_role: Vizepräsident
+is_paid: false
+
+```
+
+
+
+
+
+
+</div>
+
 # Gruppen und Organe (Groups)
 
 ## Einführung und Zielsetzung
