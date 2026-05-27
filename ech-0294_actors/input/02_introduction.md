@@ -30,4 +30,3 @@ Folgende Themen wurden in der aufgeführten Reihenfolge seit 2025 in der Subgrup
 2. Gruppen / Organe / Interessengruppen: Parteien, Fraktionen, Gremien, Kommissionen, Verbände
 3. Interessenbindungen, Konflikte, Politikfinanzierung
 4. Verknüpfungen gleicher Personen über föderale Stufen hinweg
-

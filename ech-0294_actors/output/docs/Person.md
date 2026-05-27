@@ -96,7 +96,9 @@ __
 ### Example: Person-swiss_politicians_Beat_Jans
 
 ```yaml
-global_uri: https://www.wikidata.org/wiki/Q813067
+local_id: 4032
+global_uri: https://data-example.parlament.ch/person/4032
+wikidata_uri: https://www.wikidata.org/wiki/Q813067
 label: Beat Jans
 label_long: Beat Jans, dipl. nat. ETH
 birth_year: 1964
@@ -121,9 +123,6 @@ citizenships:
 genders:
 - gender_code: male
   valid_from: 1964-07-12
-  pronouns:
-  - er
-  - ihm
 occupations:
 - label: Politiker
   valid_from: 1964-01-01

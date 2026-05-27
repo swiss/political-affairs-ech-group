@@ -6,7 +6,7 @@ toc: false
 
 | **Name**              | **Öffentlicher Ratsbetrieb**                                                                                               |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------|
-| **eCH-Nummer**        | eCH-XXXX                                                                                                                   |
+| **eCH-Nummer**        | eCH-0293                                                                                                                   |
 | **Kategorie**         | Entwurf                                                                                                                    |
 | **Reifegrad**         |                                                                                                                            |
 | **Version**           | 0.1                                                                                                                        |
@@ -19,6 +19,7 @@ toc: false
 | **Sprachen**          | English (Original)                                                                                                         |
 | **Autoren**           | Fachgruppe politische Geschäfte: Nicole Aeby, David Imseng, Jonas Schärer, Lena Mina Friedrich, Manuel Weingartner, Orhan Saeedi, Michel Moret, Laurens Abu-Talib |
 | **Herausgeber / Vertrieb** | Verein eCH, Räffelstr. 20, 8045                                                                                       |
+
 
 # Zusammenfassung
 

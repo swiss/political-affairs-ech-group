@@ -4,17 +4,17 @@ lang: de
 toc: false
 ---
 
-| **Name**              | **Politische Akteure: Personen, Gruppen und Organe**                                                                                               |
+| **Name**              | **Politische Akteure: Personen, Gruppen und Organe**                                                                       |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------|
 | **eCH-Nummer**        | eCH-0294                                                                                                                   |
 | **Kategorie**         | Entwurf                                                                                                                    |
-| **Reifegrad**         |                                                                                                                            |
+| **Reifegrad**         | Fachgruppen Internes Review                                                                                                |
 | **Version**           | 0.1                                                                                                                        |
 | **Status**            |                                                                                                                            |
 | **Beschluss am**      |                                                                                                                            |
 | **Ausgabedatum**      |                                                                                                                            |
 | **Ersetzt Version**   | 0.0                                                                                                                        |
-| **Voraussetzungen**   | ?                                                                                                                          |
+| **Voraussetzungen**   | eCH-0292 (Gemeinsame Datenelemente)                                                                                        |
 | **Beilagen**          | -                                                                                                                          |
 | **Sprachen**          | English (Original)                                                                                                         |
 | **Autoren**           | Fachgruppe politische Geschäfte: Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi   |
@@ -61,8 +61,6 @@ Folgende Themen wurden in der aufgeführten Reihenfolge seit 2025 in der Subgrup
 2. Gruppen / Organe / Interessengruppen: Parteien, Fraktionen, Gremien, Kommissionen, Verbände
 3. Interessenbindungen, Konflikte, Politikfinanzierung
 4. Verknüpfungen gleicher Personen über föderale Stufen hinweg
-
-
 # Person
 
 ## Einführung und Zielsetzung
@@ -84,17 +82,12 @@ Notiz: Die Verknüpfung von Personen im öffentlichen Interesse (Politikerinnen 
 
 Das Person-Schema verwendet:
 
-1. **Interne Identifikator (`id`)**: Ein systeminterner Identifikator welcher vom publizierenden System genutzt wird, wenn nicht schon ausschliesslich eine URI benutzt wird.
+1. **Lokaler Identifikator (`local_id`)**: Ein systeminterner Identifikator welcher vom publizierenden System genutzt wird, wenn nicht schon ausschliesslich eine `global_uri` benutzt wird. (Optional)
 
-2. **Globaler Identifikator (`uri`)**: Ein globaler Identifikator welcher über verschiedene Systeme hinweg gültig ist. Bei Personen kann dabei die URI der Person in Wikidata benutzt werden. Z.b. (http://www.wikidata.org/entity/Q115531 für Adolf Ogi).
+2. **Globaler Identifikator (`global_uri`)**: Ein globaler Identifikator welcher über verschiedene Systeme hinweg gültig ist. (z.B. https://ld.bs.ch/personen_id/3456) (Zwingend)
 
-TODO: notes
-LocalID: 3456
-Mandatory - Global URI: ld.bs.ch/personen_id/3456
-WikiData: 
+3. **Wikidata Identifikator (`wikidata_uri`)**: Eine Wikidata Identifikator, um Personen und Gruppen Systemübergreifend zu identifizieren (z.B. http://www.wikidata.org/entity/Q115531 für Adolf Ogi) (Optional)
 
-LocalID: 
-Global URI: politics.ld.admin.ch/partyid/234
 
 ### Temporale Validität
 
@@ -111,261 +104,6 @@ names:
     value: Meier-Müller
     valid_from: 2010-06-16
 ```
-
-### Datenmodell einer Person
-TODO: Einfügen des LinkML Snippets.
-
-
-**Namenstypen** (`NameTypeEnum`):
-TODO: Referenz auf BFS / und oder eCH Standard.
-
-- `officialGivenName`: Offizieller Vorname
-- `officialLastName`: Offizieller Nachname
-- `officialMiddleName`: Offizieller Mittelname
-- `callName`: Rufname
-- `familyNameOnForeignPassport`: Familienname auf ausländischem Pass
-
-
-### Adresse
-
-Adressen folgen eCH-0010 Standard:
-
-```yaml
-addresses:
-  - address_type: businessAddress
-    address_URI: https://ld.admin.ch/address/12345
-    street_address: Bundesplatz 3
-    postal_code: "3003"
-    postal_locality: Bern
-  - address_type: privateAddress
-    postal_locality: Zürich
-```
-
-**Adresstypen** (`AddressTypeEnum`):
-- `privateAddress`: Privatadresse
-- `businessAddress`: Geschäftsadresse
-- `localAddress`: Lokale Adresse (z.B. Parlamentsadresse)
-
-### Sprachen
-
-```yaml
-languages:
-  - language: de
-    correspondence: true
-    native: true
-  - language: fr
-    correspondence: false
-    native: false
-```
-
-- `language`: ISO 639-1 Sprachcode (de, fr, it, rm, en)
-- `correspondence`: Bevorzugte Korrespondenzsprache
-- `native`: Muttersprache
-
-### Geschlecht
-
-```yaml
-gender:
-  - value: female
-    label: # Für Klarifikation von diverse.
-    valid_from: 1978-05-23
-    pronouns:
-      - sie
-      - ihr
-```
-
-- `value`: Geschlechtscode (male, female, diverse)
-- `pronouns`: Bevorzugte Pronomen (mehrsprachig möglich)
-- Unterstützt zeitliche Änderungen
-
-### Staatsbürgerschaft
-
-```yaml
-citizenships:
-  - country: IT
-    valid_from: 1980-04-19
-  - country: DE
-    valid_from: 2005-01-15
-    valid_until: 2020-12-31
-```
-
-- `citizenships`: Weitere Staatsbürgerschaften mit ISO 3166 Ländercodes
-
-### Beruf und Ausbildung
-
-```yaml
-occupations:
-  - value: Honorarprofessor
-    occupation_isco19_code: "2421"
-    valid_from: 2010-01-01
-    active: true
-    paid: true
-    enterprise_uid: CHE-123.456.789
-    enterprise: Universität St. Gallen
-
-trainings:
-  - type: uni
-    value: Prof. Dr. iur.
-    training_isco19_code: "0421"
-  - type: uni
-    value: MPA (Harvard)
-```
-
-- `occupation_isco19_code`: ISCO-19 Berufsklassifikation
-- `enterprise_uid`: UID-Nummer des Unternehmens (eCH-0097)
-- `active`: Aktuelle Tätigkeit
-- `paid`: Bezahlte Position
-
-**Ausbildungstypen** (`TrainingTypeEnum`):
-- `schulabschluss`: Schulabschluss
-- `efz`: Eidgenössisches Fähigkeitszeugnis
-- `uni`: Universitätsabschluss
-- `armee`: Militärdienst
-- `zivi`: Zivildienst
-- `zischutz`: Zivilschutz
-
-### Kontaktinformationen
-
-```yaml
-contacts:
-  - type: email
-    value: andrea.caroni@parl.ch
-  - type: contact_website
-    value: http://www.andrea-caroni.ch
-  - type: linked-in
-    value: https://linkedin.com/in/andrea-caroni
-  - type: twitter
-    value: https://twitter.com/acaroni
-```
-
-**Kontakttypen** (`ContactTypeEnum`):
-- `email`: E-Mail-Adresse
-- `contact_website`: Persönliche Website
-- `linked-in`: LinkedIn-Profil
-- `twitter`: Twitter/X-Profil
-
-### Wahlkreis
-
-```yaml
-electoral_district:
-  district: Appenzell Ausserrhoden
-  valid_from: 2015-01-01
-  valid_until: 2023-11-30
-```
-
-## Interoperabilität
-
-### Globale Identifikatoren
-
-- **Wikidata**: Primäre Quelle für Personen-IDs
-- **eCH-0285**: Kompatibilität mit eCH-Standard für semantische Identifikatoren
-- **Linked Open Data**: URIs erlauben Verlinkung mit anderen Datenquellen
-
-### Referenzierung in anderen Schemas
-
-Personen werden in anderen eCH-Standards referenziert:
-- **eCH-0293** (Operations): `actor_id` verweist auf Person
-- **eCH-0294** (Actors): `person_id` in Memberships und InterestLinks
-- **eCH-0295** (Affairs): Autoren, Einreicher, Mitunterzeichner
-
-## Anwendungsbeispiele
-
-### Beispiel 1: Nationalrat mit vollständigen Angaben
-
-```yaml
-id: https://www.wikidata.org/wiki/Q493598
-label: Andrea Caroni
-label_long: Prof. Dr. iur. Andrea Caroni, MPA (Harvard)
-birthyear: 1980
-birthdate: 1980-04-19
-picture: https://www.parlament.ch/[...]
-names:
-  - name_type: officialGivenName
-    value: Andrea
-  - name_type: officialLastName
-    value: Caroni
-    valid_from: 1980-04-19
-addresses:
-  - address_type: businessAddress
-    street_address: Poststrasse 1
-    postal_code: "9100"
-    postal_locality: Herisau
-languages:
-  - language: de
-    correspondence: true
-    native: true
-ch_citizenship:
-  valid_from: 1980-04-19
-genders:
-  - value: male
-    valid_from: 1980-04-19
-    pronouns:
-      - er
-      - ihm
-occupations:
-  - value: Honorarprofessor
-    valid_from: 2010-01-01
-    active: true
-    paid: true
-trainings:
-  - type: uni
-    value: Prof. Dr. iur.
-  - type: uni
-    value: MPA (Harvard)
-contacts:
-  - type: email
-    value: andrea.caroni@parl.ch
-  - type: contact_website
-    value: http://www.andrea-caroni.ch
-electoral_district:
-  district: Appenzell Ausserrhoden
-  valid_from: 2015-01-01
-```
-
-### Beispiel 2: Minimale Angaben
-
-```yaml
-id: act:person_local_123
-label: Max Muster
-names:
-  - name_type: officialGivenName
-    value: Max
-  - name_type: officialLastName
-    value: Muster
-languages:
-  - language: de
-    native: true
-ch_citizenship:
-  valid_from: 1970-01-01
-```
-
-### Beispiel 3: Person mit Namensänderung
-
-```yaml
-id: https://www.wikidata.org/wiki/Q123456
-label: Petra Meier-Schmidt
-names:
-  - name_type: officialGivenName
-    value: Petra
-  - name_type: officialLastName
-    value: Schmidt
-    valid_from: 1975-03-15
-    valid_until: 2005-06-20
-  - name_type: officialLastName
-    value: Meier-Schmidt
-    valid_from: 2005-06-20
-```
-
-## Globale Identifikation über Wikidata
-### Umsetzung und Beispiele
-
-### Diskussion
-TODO: Pros und Cons
-
-
-## Referenzen
-
-Siehe vollständige LinkML-Schema-Dokumentation:
 
 ---
 search:
@@ -465,7 +203,9 @@ __
 ### Example: Person-swiss_politicians_Beat_Jans
 
 ```yaml
-global_uri: https://www.wikidata.org/wiki/Q813067
+local_id: 4032
+global_uri: https://data-example.parlament.ch/person/4032
+wikidata_uri: https://www.wikidata.org/wiki/Q813067
 label: Beat Jans
 label_long: Beat Jans, dipl. nat. ETH
 birth_year: 1964
@@ -490,9 +230,6 @@ citizenships:
 genders:
 - gender_code: male
   valid_from: 1964-07-12
-  pronouns:
-  - er
-  - ihm
 occupations:
 - label: Politiker
   valid_from: 1964-01-01
@@ -567,7 +304,6 @@ electoral_district:
 
 
  
-
 
 
 # Gruppen und Organe (Groups)
@@ -1085,12 +821,8 @@ groups:
 
 memberships:
   - global_uri: act:membership_jans_sp
-    person_reference:
-      global_uri: https://www.wikidata.org/wiki/Q813067
-      label: Beat Jans
-    group_reference:
-      global_uri: act:sp_basel_stadt
-      label: SP Basel-Stadt
+    concerned_person: https://www.wikidata.org/wiki/Q813067
+    concerned_group: act:sp_basel_stadt
     role_type:
       role_type_enum: member
     valid_from: 1990-01-01
@@ -1349,31 +1081,27 @@ Memberships werden für verschiedene Zuordnungen verwendet:
 
 ### Identifikatoren und Referenzen
 
-Eine Membership verknüpft Person und Gruppe über eingebettete **`PersonReference`** / **`GroupReference`** (Snapshot zum Zeitpunkt der Verknüpfung, jeweils mit `global_uri`):
+Eine Membership verknüpft Person und Gruppe über deren `global_uri`:
 
 | Attribut | Typ | Pflicht | Beschreibung |
 |----------|-----|---------|--------------|
 | `global_uri` | URI | Ja | Identifikator der Mitgliedschaft |
-| `person_reference` | PersonReference | Nein | Referenz auf die Person (mind. `global_uri`, optional `label`) |
-| `group_reference` | GroupReference | Nein | Referenz auf die Gruppe (mind. `global_uri`, optional `label`) |
+| `concerned_person` | URI | Nein | `global_uri` der Person (z.B. Wikidata) |
+| `concerned_group` | URI | Nein | `global_uri` der Gruppe |
 
 **Beispiel:**
 ```yaml
 global_uri: act:membership_jans_sp
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q813067
-group_reference:
-  global_uri: act:sp_basel_stadt
+concerned_person: https://www.wikidata.org/wiki/Q813067
+concerned_group: act:sp_basel_stadt
 ```
 
 ### Datenmodell (LinkML-Auszug)
 
 ```yaml
 global_uri: act:membership_jans_sp
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q813067
-group_reference:
-  global_uri: act:sp_basel_stadt
+concerned_person: https://www.wikidata.org/wiki/Q813067
+concerned_group: act:sp_basel_stadt
 role_type:
   role_type_enum: member
 valid_from: 1990-01-01
@@ -1392,8 +1120,8 @@ is_active: true
 
 | Attribut | Datentyp | Beschreibung |
 |----------|----------|--------------|
-| `person_reference` | PersonReference | Referenz zur Person |
-| `group_reference` | GroupReference | Referenz zur Gruppe |
+| `concerned_person` | URI | Referenz zur Person (`global_uri`) |
+| `concerned_group` | URI | Referenz zur Gruppe (`global_uri`) |
 | `role_type` | RoleType | Rolle (`role_type_enum`, optional `label`) |
 | `valid_from` | date | Beginn der Mitgliedschaft |
 | `valid_through` | date | Ende der Mitgliedschaft |
@@ -1457,10 +1185,8 @@ Mitgliedschaften haben einen klar definierten Beginn und oft auch ein Ende:
 ```yaml
 # Parlamentsmandat mit fester Amtszeit
 global_uri: act:membership_caroni_sr
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q493598
-group_reference:
-  global_uri: act:staenderat
+concerned_person: https://www.wikidata.org/wiki/Q493598
+concerned_group: act:staenderat
 role_type:
   role_type_enum: member
 valid_from: 2015-12-07  # Amtsantritt nach Wahl
@@ -1471,10 +1197,8 @@ authorized_to_vote: true
 ```yaml
 # Parteimitgliedschaft ohne Enddatum
 global_uri: act:membership_riniker_fdp
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q77074968
-group_reference:
-  global_uri: act:fdp_aargau
+concerned_person: https://www.wikidata.org/wiki/Q77074968
+concerned_group: act:fdp_aargau
 role_type:
   role_type_enum: member
 valid_from: 2000-01-01
@@ -1550,10 +1274,8 @@ persons:
 memberships:
   # Parteimitgliedschaft
   - global_uri: act:membership_caroni_fdp
-    person_reference:
-      global_uri: https://www.wikidata.org/wiki/Q493598
-    group_reference:
-      global_uri: act:fdp_appenzell
+    concerned_person: https://www.wikidata.org/wiki/Q493598
+    concerned_group: act:fdp_appenzell
     role_type:
       role_type_enum: member
     valid_from: 1998-01-01
@@ -1561,10 +1283,8 @@ memberships:
 
   # Parlamentsmandat
   - global_uri: act:membership_caroni_sr
-    person_reference:
-      global_uri: https://www.wikidata.org/wiki/Q493598
-    group_reference:
-      global_uri: act:staenderat
+    concerned_person: https://www.wikidata.org/wiki/Q493598
+    concerned_group: act:staenderat
     role_type:
       role_type_enum: member
     valid_from: 2015-12-07
@@ -1573,10 +1293,8 @@ memberships:
 
   # Fraktionsmitgliedschaft
   - global_uri: act:membership_caroni_fdp_fraktion
-    person_reference:
-      global_uri: https://www.wikidata.org/wiki/Q493598
-    group_reference:
-      global_uri: act:fdp_fraktion_sr
+    concerned_person: https://www.wikidata.org/wiki/Q493598
+    concerned_group: act:fdp_fraktion_sr
     role_type:
       role_type_enum: member
     valid_from: 2015-12-07
@@ -1584,10 +1302,8 @@ memberships:
 
   # Kommissionsmitgliedschaft
   - global_uri: act:membership_caroni_rk_sr
-    person_reference:
-      global_uri: https://www.wikidata.org/wiki/Q493598
-    group_reference:
-      global_uri: act:rechtskommission_sr
+    concerned_person: https://www.wikidata.org/wiki/Q493598
+    concerned_group: act:rechtskommission_sr
     role_type:
       role_type_enum: member
     valid_from: 2016-01-01
@@ -1604,20 +1320,16 @@ Memberships können auch hierarchisch organisiert werden:
 ```yaml
 # Person ist Mitglied einer Partei
 - global_uri: act:membership_jans_sp
-  person_reference:
-    global_uri: https://www.wikidata.org/wiki/Q813067
-  group_reference:
-    global_uri: act:sp_schweiz
+  concerned_person: https://www.wikidata.org/wiki/Q813067
+  concerned_group: act:sp_schweiz
   role_type:
     role_type_enum: member
   valid_from: 1980-01-01
 
 # Person ist Mitglied der SP-Fraktion im Nationalrat
 - global_uri: act:membership_jans_sp_fraktion
-  person_reference:
-    global_uri: https://www.wikidata.org/wiki/Q813067
-  group_reference:
-    global_uri: act:sp_fraktion_nr
+  concerned_person: https://www.wikidata.org/wiki/Q813067
+  concerned_group: act:sp_fraktion_nr
   role_type:
     role_type_enum: member
   valid_from: 2010-12-06
@@ -1632,10 +1344,8 @@ Die Fraktion selbst hat eine `parent_groups`-Beziehung zur Partei (siehe Group-S
 ```yaml
 # SP-Mitgliedschaft (beendet)
 - global_uri: act:membership_mueller_sp
-  person_reference:
-    global_uri: act:person_mueller
-  group_reference:
-    global_uri: act:sp_zuerich
+  concerned_person: act:person_mueller
+  concerned_group: act:sp_zuerich
   role_type:
     role_type_enum: member
   valid_from: 2010-01-01
@@ -1644,10 +1354,8 @@ Die Fraktion selbst hat eine `parent_groups`-Beziehung zur Partei (siehe Group-S
 
 # Grüne-Mitgliedschaft (neu)
 - global_uri: act:membership_mueller_gruene
-  person_reference:
-    global_uri: act:person_mueller
-  group_reference:
-    global_uri: act:gruene_zuerich
+  concerned_person: act:person_mueller
+  concerned_group: act:gruene_zuerich
   role_type:
     role_type_enum: member
   valid_from: 2018-07-01
@@ -1659,10 +1367,8 @@ Die Fraktion selbst hat eine `parent_groups`-Beziehung zur Partei (siehe Group-S
 ```yaml
 # Reguläres Mitglied
 - global_uri: act:membership_schmidt_kommission_1
-  person_reference:
-    global_uri: act:person_schmidt
-  group_reference:
-    global_uri: act:sik_nr
+  concerned_person: act:person_schmidt
+  concerned_group: act:sik_nr
   role_type:
     role_type_enum: member
   valid_from: 2016-01-01
@@ -1670,10 +1376,8 @@ Die Fraktion selbst hat eine `parent_groups`-Beziehung zur Partei (siehe Group-S
 
 # Präsidentin (Nachfolge-Membership)
 - global_uri: act:membership_schmidt_kommission_2
-  person_reference:
-    global_uri: act:person_schmidt
-  group_reference:
-    global_uri: act:sik_nr
+  concerned_person: act:person_schmidt
+  concerned_group: act:sik_nr
   role_type:
     role_type_enum: president
   valid_from: 2020-01-01
@@ -1700,10 +1404,8 @@ groups:
 
 memberships:
   - global_uri: act:membership_jans_sp
-    person_reference:
-      global_uri: https://www.wikidata.org/wiki/Q813067
-    group_reference:
-      global_uri: act:sp_basel_stadt
+    concerned_person: https://www.wikidata.org/wiki/Q813067
+    concerned_group: act:sp_basel_stadt
     role_type:
       role_type_enum: member
     valid_from: 1990-01-01
@@ -1717,8 +1419,8 @@ memberships:
 # Alle Mitglieder der SP Basel-Stadt
 SELECT ?person ?role WHERE {
   ?membership a act:Membership ;
-    act:groupReference act:sp_basel_stadt ;
-    act:personReference ?person ;
+    act:concernedGroup act:sp_basel_stadt ;
+    act:concernedPerson ?person ;
     act:roleType ?role ;
     act:isActive true .
 }
@@ -1729,8 +1431,8 @@ SELECT ?person ?role WHERE {
 # Alle Gruppen von Beat Jans
 SELECT ?group ?role WHERE {
   ?membership a act:Membership ;
-    act:personReference <https://www.wikidata.org/wiki/Q813067> ;
-    act:groupReference ?group ;
+    act:concernedPerson <https://www.wikidata.org/wiki/Q813067> ;
+    act:concernedGroup ?group ;
     act:roleType ?role ;
     act:isActive true .
 }
@@ -1742,10 +1444,8 @@ SELECT ?group ?role WHERE {
 
 ```yaml
 global_uri: act:membership_riniker_nr
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q77074968
-group_reference:
-  global_uri: act:nationalrat
+concerned_person: https://www.wikidata.org/wiki/Q77074968
+concerned_group: act:nationalrat
 role_type:
   role_type_enum: member
 valid_from: 2019-12-02  # Amtsantritt nach Wahl 2019
@@ -1761,10 +1461,8 @@ datetime_modified: 2023-11-30T00:00:00Z
 ```yaml
 # Reguläres Mitglied
 global_uri: act:membership_caroni_rk_1
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q493598
-group_reference:
-  global_uri: act:rechtskommission_sr
+concerned_person: https://www.wikidata.org/wiki/Q493598
+concerned_group: act:rechtskommission_sr
 role_type:
   role_type_enum: member
 valid_from: 2016-01-01
@@ -1774,10 +1472,8 @@ is_active: false
 
 # Präsident
 global_uri: act:membership_caroni_rk_2
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q493598
-group_reference:
-  global_uri: act:rechtskommission_sr
+concerned_person: https://www.wikidata.org/wiki/Q493598
+concerned_group: act:rechtskommission_sr
 role_type:
   role_type_enum: president
 valid_from: 2020-01-01
@@ -1791,10 +1487,8 @@ is_active: false
 ```yaml
 # Bundesebene
 - global_uri: act:membership_jans_sp_ch
-  person_reference:
-    global_uri: https://www.wikidata.org/wiki/Q813067
-  group_reference:
-    global_uri: act:sp_schweiz
+  concerned_person: https://www.wikidata.org/wiki/Q813067
+  concerned_group: act:sp_schweiz
   role_type:
     role_type_enum: member
   valid_from: 1980-01-01
@@ -1802,10 +1496,8 @@ is_active: false
 
 # Kantonsebene
 - global_uri: act:membership_jans_sp_bs
-  person_reference:
-    global_uri: https://www.wikidata.org/wiki/Q813067
-  group_reference:
-    global_uri: act:sp_basel_stadt
+  concerned_person: https://www.wikidata.org/wiki/Q813067
+  concerned_group: act:sp_basel_stadt
   role_type:
     role_type_enum: member
   valid_from: 1980-01-01
@@ -1813,10 +1505,8 @@ is_active: false
 
 # Gemeinde (optional)
 - global_uri: act:membership_jans_sp_basel
-  person_reference:
-    global_uri: https://www.wikidata.org/wiki/Q813067
-  group_reference:
-    global_uri: act:sp_stadt_basel
+  concerned_person: https://www.wikidata.org/wiki/Q813067
+  concerned_group: act:sp_stadt_basel
   role_type:
     role_type_enum: other
     label: Vorstandsmitglied
@@ -1829,10 +1519,8 @@ is_active: false
 
 ```yaml
 global_uri: act:membership_luisier_vd_regierung
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q24699807
-group_reference:
-  global_uri: act:regierungsrat_vaud
+concerned_person: https://www.wikidata.org/wiki/Q24699807
+concerned_group: act:regierungsrat_vaud
 role_type:
   role_type_enum: other
   label: Conseillère d'État
@@ -1846,10 +1534,8 @@ datetime_created: 2022-07-01T00:00:00Z
 
 ```yaml
 global_uri: act:membership_riniker_fdp_fraktion
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q77074968
-group_reference:
-  global_uri: act:fdp_fraktion_nr
+concerned_person: https://www.wikidata.org/wiki/Q77074968
+concerned_group: act:fdp_fraktion_nr
 role_type:
   role_type_enum: member
 valid_from: 2019-12-02
@@ -1862,10 +1548,8 @@ datetime_created: 2019-12-02T00:00:00Z
 
 ```yaml
 global_uri: act:membership_mueller_gpk_ersatz
-person_reference:
-  global_uri: act:person_mueller
-group_reference:
-  global_uri: act:gpk_nr
+concerned_person: act:person_mueller
+concerned_group: act:gpk_nr
 role_type:
   role_type_enum: other
   label: Ersatzmitglied
@@ -1879,10 +1563,8 @@ is_active: false
 
 ```yaml
 global_uri: act:membership_caroni_delegation
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q493598
-group_reference:
-  global_uri: act:delegation_europarat
+concerned_person: https://www.wikidata.org/wiki/Q493598
+concerned_group: act:delegation_europarat
 role_type:
   role_type_enum: other
   label: Delegierter
@@ -2506,20 +2188,68 @@ __
 
 
 ## Examples
-### Example: InterestLink-interest_links_il_burkart_003
+### Example: InterestLink-interest_links_il_burkart_001
 
 ```yaml
-global_uri: act:il_burkart_003
+global_uri: act:il_burkart_001
 person_reference:
   global_uri: https://www.wikidata.org/wiki/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_label: Bovida Real Estate AG, Baar
-legal_form: Aktiengesellschaft
-committee: Verwaltungsrat
-function_role: Mitglied
+organization_label: Burkart Advisory GmbH, Baden
+legal_form: Gesellschaft mit beschränkter Haftung
+committee: Geschäftsleitung
+function_role: Geschäftsführer
 is_paid: true
+
+```
+### Example: InterestLink-interest_links_il_burkart_007
+
+```yaml
+global_uri: act:il_burkart_007
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+legal_form: Stiftung
+committee: Stiftungsrat
+function_role: Vizepräsident
+is_paid: false
+
+```
+### Example: InterestLink-interest_links_il_burkart_011
+
+```yaml
+global_uri: act:il_burkart_011
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: Verein Landesausstellung Svizra27, Aarau
+legal_form: Verein
+committee: Vorstand
+function_role: Mitglied
+is_paid: false
+
+```
+### Example: InterestLink-interest_links_il_burkart_010
+
+```yaml
+global_uri: act:il_burkart_010
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: Allianz Sicherheit Schweiz, Baden
+legal_form: Verein
+committee: Vorstand
+function_role: Präsident
+is_paid: false
 
 ```
 ### Example: InterestLink-interest_links_il_burkart_002
@@ -2535,22 +2265,6 @@ organization_label: Birchmeier Holding AG, Döttingen
 legal_form: Aktiengesellschaft
 committee: Verwaltungsrat
 function_role: Mitglied
-is_paid: true
-
-```
-### Example: InterestLink-interest_links_il_burkart_001
-
-```yaml
-global_uri: act:il_burkart_001
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_label: Burkart Advisory GmbH, Baden
-legal_form: Gesellschaft mit beschränkter Haftung
-committee: Geschäftsleitung
-function_role: Geschäftsführer
 is_paid: true
 
 ```
@@ -2570,34 +2284,18 @@ function_role: Mitglied
 is_paid: true
 
 ```
-### Example: InterestLink-interest_links_il_burkart_011
+### Example: InterestLink-interest_links_il_burkart_003
 
 ```yaml
-global_uri: act:il_burkart_011
+global_uri: act:il_burkart_003
 person_reference:
   global_uri: https://www.wikidata.org/wiki/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
-interest_type: association
-organization_label: Verein Landesausstellung Svizra27, Aarau
-legal_form: Verein
-committee: Vorstand
-function_role: Mitglied
-is_paid: false
-
-```
-### Example: InterestLink-interest_links_il_burkart_009
-
-```yaml
-global_uri: act:il_burkart_009
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_label: SUISSEDIGITAL Verband für Kommunikationsnetze
-legal_form: Verein
-committee: Vorstand
+interest_type: professional_activity
+organization_label: Bovida Real Estate AG, Baar
+legal_form: Aktiengesellschaft
+committee: Verwaltungsrat
 function_role: Mitglied
 is_paid: true
 
@@ -2634,6 +2332,22 @@ function_role: Beirat
 is_paid: true
 
 ```
+### Example: InterestLink-interest_links_il_burkart_009
+
+```yaml
+global_uri: act:il_burkart_009
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: SUISSEDIGITAL Verband für Kommunikationsnetze
+legal_form: Verein
+committee: Vorstand
+function_role: Mitglied
+is_paid: true
+
+```
 ### Example: InterestLink-interest_links_il_burkart_005
 
 ```yaml
@@ -2650,50 +2364,9 @@ function_role: Präsident
 is_paid: true
 
 ```
-### Example: InterestLink-interest_links_il_burkart_010
-
-```yaml
-global_uri: act:il_burkart_010
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_label: Allianz Sicherheit Schweiz, Baden
-legal_form: Verein
-committee: Vorstand
-function_role: Präsident
-is_paid: false
-
-```
-### Example: InterestLink-interest_links_il_burkart_007
-
-```yaml
-global_uri: act:il_burkart_007
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_label: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-legal_form: Stiftung
-committee: Stiftungsrat
-function_role: Vizepräsident
-is_paid: false
-
-```
 
 
 
 
 
-
-* Überlegungen zu Datenschutz / Öffentlichkeitsrecht  (Christian schaut sich das an).
-  * ein Kapitel mit Analyse des IST Zustands / Rechtsgrundlage oder Toolkit ?
-  * Abklärung was ist rechtlich erlaubt.
-  * Was wäre ethisch verantwortbar.
-  * Personen des öffentlichen Interesses.
-  
-  * [Ersetzung der privaten Wohnadresse als Identifikator der Urheber von Volksinitiativen](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20243425)
-  * [Verhinderung der Pflicht zur Veröffentlichung der Wohnadressen von Parlamentsmitgliedern](https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20233913)
 
