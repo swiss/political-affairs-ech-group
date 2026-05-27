@@ -1,7 +1,4 @@
----
-search:
-  boost: 10.0
----
+
 
 # Class: LanguageProficiency 
 
@@ -19,19 +16,25 @@ __
 
 
 
-## Attribute
+### Attribute
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [language](language.md) | 0..1 <br/> [String](String.md) | [de] Sprachcode im ISO 639-1 Format | direct |
-| [is_correspondence](is_correspondence.md) | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob es sich um die bevorzugte Sprache handelt | direct |
-| [is_native](is_native.md) | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob es sich um die Muttersprache handelt | direct |
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| language | 0..1 <br/> [String](String.md) | [de] Sprachcode im ISO 639-1 Format.
+[en] Language code in ISO 639-1 format.
+ |
+| is_correspondence | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob es sich um die bevorzugte Sprache handelt.
+[en] Indicates if this is the preferred language.
+ |
+| is_native | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob es sich um die Muttersprache handelt.
+[en] Indicates if this is the native language.
+ |
 
 
 
 
 
-## Usages
+### Usages
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |

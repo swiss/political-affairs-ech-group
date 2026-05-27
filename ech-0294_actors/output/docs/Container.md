@@ -1,7 +1,4 @@
----
-search:
-  boost: 10.0
----
+
 
 # Class: Container 
 
@@ -19,17 +16,31 @@ __
 
 
 
-## Attribute
+### Attribute
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [persons](persons.md) | * <br/> [Person](Person.md) | [de] Sammlung von Personen | direct |
-| [groups](groups.md) | * <br/> [Group](Group.md) | [de] Sammlung von Gruppen | direct |
-| [memberships](memberships.md) | * <br/> [Membership](Membership.md) | [de] Sammlung von Mitgliedschaften | direct |
-| [interest_links](interest_links.md) | * <br/> [InterestLink](InterestLink.md) | [de] Sammlung von Interessenbindungen | direct |
-| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |
-| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](HasIdentification.md) |
-| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](HasIdentification.md) |
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| persons | * <br/> [Person](Person.md) | [de] Sammlung von Personen.
+[en] Collection of persons.
+ |
+| groups | * <br/> [Group](Group.md) | [de] Sammlung von Gruppen.
+[en] Collection of groups.
+ |
+| memberships | * <br/> [Membership](Membership.md) | [de] Sammlung von Mitgliedschaften.
+[en] Collection of memberships.
+ |
+| interest_links | * <br/> [InterestLink](InterestLink.md) | [de] Sammlung von Interessenbindungen.
+[en] Collection of interest links.range: InterestLink
+ |
+| local_id | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+[en] Local identifier. For example, a UUID from the council information system.
+<br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität.
+[en] A unique, globally valid URI for the entity.
+<br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz.
+[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.
+<br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 
 
 
@@ -69,8 +80,8 @@ __
 
 
 
-## Examples
-### Example: Container-interest_links
+### Examples
+#### Example: Container-interest_links
 
 ```yaml
 # Interessenbindungen Beispieldaten
@@ -225,7 +236,7 @@ interest_links:
     function_role: Mitglied
     is_paid: false
 ```
-### Example: Container-douglas_adams
+#### Example: Container-douglas_adams
 
 ```yaml
 global_uri: act:douglas_adams_example
@@ -279,7 +290,7 @@ persons:
       valid_through: 2025-01-01
 
 ```
-### Example: Container-swiss_politicians
+#### Example: Container-swiss_politicians
 
 ```yaml
 global_uri: act:swiss_politicians_example
