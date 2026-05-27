@@ -60,28 +60,6 @@ URI: [act:groupTypeEnum](https://ld.ech.ch/schema/0294/actors/groupTypeEnum)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:groupTypeEnum |
-| native | act:group_type_enum |
-
-
 
 
 ## LinkML Source

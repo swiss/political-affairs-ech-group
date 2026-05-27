@@ -60,28 +60,6 @@ URI: [mcm:datetimePlanned](https://ld.ech.ch/schema/0292/meta-common/datetimePla
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:datetimePlanned |
-| native | act:datetime_planned |
-
-
 
 
 ## LinkML Source

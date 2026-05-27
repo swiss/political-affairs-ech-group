@@ -61,28 +61,6 @@ URI: [act:roleType](https://ld.ech.ch/schema/0294/actors/roleType)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:roleType |
-| native | act:role_type |
-
-
 
 
 ## LinkML Source

@@ -61,28 +61,6 @@ URI: [act:person](https://ld.ech.ch/schema/0294/actors/person)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:person |
-| native | act:persons |
-
-
 
 
 ## LinkML Source

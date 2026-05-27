@@ -68,28 +68,6 @@ URI: [act:contactType](https://ld.ech.ch/schema/0294/actors/contactType)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:contactType |
-| native | act:contact_type |
-
-
 
 
 ## LinkML Source

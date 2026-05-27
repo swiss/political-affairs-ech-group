@@ -32,29 +32,6 @@ URI: [xsd:double](http://www.w3.org/2001/XMLSchema#double)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:double |
-| native | act:double |
-| close | schema:Float |
-
-
 
 
 </div>

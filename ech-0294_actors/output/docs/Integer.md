@@ -32,29 +32,6 @@ URI: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:integer |
-| native | act:integer |
-| exact | schema:Integer |
-
-
 
 
 </div>

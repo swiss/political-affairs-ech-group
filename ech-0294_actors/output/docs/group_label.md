@@ -60,28 +60,6 @@ URI: [act:groupLabel](https://ld.ech.ch/schema/0294/actors/groupLabel)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:groupLabel |
-| native | act:group_label |
-
-
 
 
 ## LinkML Source

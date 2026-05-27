@@ -60,28 +60,6 @@ URI: [mcm:datePlanned](https://ld.ech.ch/schema/0292/meta-common/datePlanned)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:datePlanned |
-| native | act:date_planned |
-
-
 
 
 ## LinkML Source

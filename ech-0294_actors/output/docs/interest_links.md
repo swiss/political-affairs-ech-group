@@ -62,28 +62,6 @@ URI: [act:interestLink](https://ld.ech.ch/schema/0294/actors/interestLink)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:interestLink |
-| native | act:interest_links |
-
-
 
 
 ## LinkML Source

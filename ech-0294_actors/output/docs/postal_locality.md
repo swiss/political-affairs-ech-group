@@ -68,28 +68,6 @@ URI: [act:postalLocality](https://ld.ech.ch/schema/0294/actors/postalLocality)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:postalLocality |
-| native | act:postal_locality |
-
-
 
 
 ## LinkML Source

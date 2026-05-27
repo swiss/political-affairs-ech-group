@@ -75,28 +75,6 @@ URI: [act:country](https://ld.ech.ch/schema/0294/actors/country)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:country |
-| native | act:country |
-
-
 
 
 ## LinkML Source

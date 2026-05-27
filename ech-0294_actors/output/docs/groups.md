@@ -61,28 +61,6 @@ URI: [act:group](https://ld.ech.ch/schema/0294/actors/group)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:group |
-| native | act:groups |
-
-
 
 
 ## LinkML Source

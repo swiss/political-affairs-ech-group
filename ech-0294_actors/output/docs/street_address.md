@@ -60,28 +60,6 @@ URI: [act:streetAddress](https://ld.ech.ch/schema/0294/actors/streetAddress)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:streetAddress |
-| native | act:street_address |
-
-
 
 
 ## LinkML Source

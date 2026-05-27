@@ -60,28 +60,6 @@ URI: [act:functionRole](https://ld.ech.ch/schema/0294/actors/functionRole)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:functionRole |
-| native | act:function_role |
-
-
 
 
 ## LinkML Source

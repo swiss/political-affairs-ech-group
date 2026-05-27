@@ -63,28 +63,6 @@ URI: [mcm:value](https://ld.ech.ch/schema/0292/meta-common/value)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:value |
-| native | act:value |
-
-
 
 
 ## LinkML Source

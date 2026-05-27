@@ -69,28 +69,6 @@ URI: [act:address](https://ld.ech.ch/schema/0294/actors/address)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:address |
-| native | act:addresses |
-
-
 
 
 ## LinkML Source

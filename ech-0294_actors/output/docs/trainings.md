@@ -61,28 +61,6 @@ URI: [act:training](https://ld.ech.ch/schema/0294/actors/training)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:training |
-| native | act:trainings |
-
-
 
 
 ## LinkML Source

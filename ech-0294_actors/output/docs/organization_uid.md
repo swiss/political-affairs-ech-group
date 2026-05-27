@@ -60,28 +60,6 @@ URI: [act:organizationUid](https://ld.ech.ch/schema/0294/actors/organizationUid)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:organizationUid |
-| native | act:organization_uid |
-
-
 
 
 ## LinkML Source

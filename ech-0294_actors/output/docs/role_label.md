@@ -49,28 +49,6 @@ URI: [act:role_label](https://ld.ech.ch/schema/0294/actors/role_label)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:role_label |
-| native | act:role_label |
-
-
 
 
 ## LinkML Source

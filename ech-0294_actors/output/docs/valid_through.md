@@ -69,28 +69,6 @@ URI: [schema:validThrough](http://schema.org/validThrough)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | schema:validThrough |
-| native | act:valid_through |
-
-
 
 
 ## LinkML Source

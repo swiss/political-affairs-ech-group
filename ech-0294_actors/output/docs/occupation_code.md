@@ -60,28 +60,6 @@ URI: [act:occupationCode](https://ld.ech.ch/schema/0294/actors/occupationCode)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:occupationCode |
-| native | act:occupation_code |
-
-
 
 
 ## LinkML Source

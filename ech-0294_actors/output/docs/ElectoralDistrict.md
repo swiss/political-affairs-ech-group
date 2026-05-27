@@ -46,28 +46,6 @@ __
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ld.ech.ch/schema/0294/actors
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | act:ElectoralDistrict |
-| native | act:ElectoralDistrict |
-
-
 
 
 ### Examples
