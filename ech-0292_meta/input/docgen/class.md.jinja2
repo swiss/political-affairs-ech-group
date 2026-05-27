@@ -126,12 +126,12 @@ URI: {{ gen.uri_link(element) }}
 | --  | -- | ------- | -- |
 {% if gen.get_direct_slots(element)|length > 0 %}
 {%- for slot in gen.get_direct_slots(element) -%}
-| {{ slot }} | {{ gen.cardinality(slot) }} <br/> {{ compute_range(slot) }} | {{ slot.description }} | direct |
+| {{ gen.links(slot) }} | {{ gen.cardinality(slot) }} <br/> {{ compute_range(slot) }} | {{ slot.description }} | direct |
 {% endfor -%}
 {% endif -%}
 {% if gen.get_indirect_slots(element)|length > 0 %}
 {%- for slot in gen.get_indirect_slots(element) -%}
-| {{ slot }} | {{ gen.cardinality(slot) }} <br/> {{ compute_range(slot) }} | {{ slot.description }} | {{ gen.links(gen.get_slot_inherited_from(element.name, slot.name))|join(', ') }} |
+| {{ gen.links(slot) }} | {{ gen.cardinality(slot) }} <br/> {{ compute_range(slot) }} | {{ slot.description }} | {{ gen.links(gen.get_slot_inherited_from(element.name, slot.name))|join(', ') }} |
 {% endfor -%}
 {% endif %}
 
