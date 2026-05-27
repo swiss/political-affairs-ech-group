@@ -45,10 +45,24 @@ names:
 
 {{include:ech-0294_actors/output/docs/Person.md}} 
 
+{{include:ech-0294_actors/output/docs/Name.md}} 
+
 {{include:ech-0294_actors/output/docs/Address.md}} 
 
 {{include:ech-0294_actors/output/docs/AddressTypeEnum.md}} 
 
+{{include:ech-0294_actors/output/docs/LanguageProficiency.md}} 
+
 {{include:ech-0294_actors/output/docs/Citizenship.md}} 
 
-{{include:ech-0294_actors/output/docs/LanguageProficiency.md}} 
+{{include:ech-0294_actors/output/docs/Gender.md}} 
+
+{{include:ech-0294_actors/output/docs/Occupation.md}} 
+
+{{include:ech-0294_actors/output/docs/Training.md}} 
+
+{{include:ech-0294_actors/output/docs/Contact.md}} 
+
+{{include:ech-0294_actors/output/docs/ElectoralDistrict.md}}
+
+{{include:ech-0294_actors/output/docs/InterestLink.md}}
