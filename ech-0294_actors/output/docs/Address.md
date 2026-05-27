@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Address 
 
@@ -19,89 +22,12 @@ __
 ## Attribute
 
 | Name | Cardinality and Range | Description | Inheritance |
-| --  | -- | ------- | -- |
-| SlotDefinition({
-  'name': 'address_type',
-  'local_names': JsonObj(),
-  'extensions': JsonObj(),
-  'annotations': JsonObj(),
-  'description': '[de] Typ der Adresse.\n[en] Type of address.\n',
-  'alt_descriptions': JsonObj(),
-  'examples': [Example({'value': 'businessAddress'}), Example({'value': 'privateAddress'})],
-  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
-  'rank': 1000,
-  'slot_uri': 'act:addressType',
-  'owner': 'Address',
-  'domain_of': ['Address'],
-  'range': 'AddressTypeEnum'
-}) | 0..1 <br/> [AddressTypeEnum](AddressTypeEnum.md) | [de] Typ der Adresse.
-[en] Type of address.
- | direct |
-| SlotDefinition({
-  'name': 'address_uri',
-  'local_names': JsonObj(),
-  'extensions': JsonObj(),
-  'annotations': JsonObj(),
-  'description': '[de] URI der Adresse.\n[en] URI of the address.\n',
-  'alt_descriptions': JsonObj(),
-  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
-  'rank': 1000,
-  'slot_uri': 'act:addressURI',
-  'owner': 'Address',
-  'domain_of': ['Address'],
-  'range': 'uriorcurie'
-}) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] URI der Adresse.
-[en] URI of the address.
- | direct |
-| SlotDefinition({
-  'name': 'street_address',
-  'local_names': JsonObj(),
-  'extensions': JsonObj(),
-  'annotations': JsonObj(),
-  'description': '[de] Strassenadresse.\n[en] Street address.\n',
-  'alt_descriptions': JsonObj(),
-  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
-  'rank': 1000,
-  'slot_uri': 'act:streetAddress',
-  'owner': 'Address',
-  'domain_of': ['Address'],
-  'range': 'string'
-}) | 0..1 <br/> [String](String.md) | [de] Strassenadresse.
-[en] Street address.
- | direct |
-| SlotDefinition({
-  'name': 'postal_code',
-  'local_names': JsonObj(),
-  'extensions': JsonObj(),
-  'annotations': JsonObj(),
-  'description': '[de] Postleitzahl.\n[en] Postal code.\n',
-  'alt_descriptions': JsonObj(),
-  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
-  'rank': 1000,
-  'slot_uri': 'act:postalCode',
-  'owner': 'Address',
-  'domain_of': ['Address'],
-  'range': 'integer'
-}) | 0..1 <br/> [Integer](Integer.md) | [de] Postleitzahl.
-[en] Postal code.
- | direct |
-| SlotDefinition({
-  'name': 'postal_locality',
-  'local_names': JsonObj(),
-  'extensions': JsonObj(),
-  'annotations': JsonObj(),
-  'description': '[de] Ort.\n[en] Locality.\n',
-  'alt_descriptions': JsonObj(),
-  'examples': [Example({'value': 'Basel-Stadt'}), Example({'value': 'London'})],
-  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
-  'rank': 1000,
-  'slot_uri': 'act:postalLocality',
-  'owner': 'Address',
-  'domain_of': ['Address'],
-  'range': 'string'
-}) | 0..1 <br/> [String](String.md) | [de] Ort.
-[en] Locality.
- | direct |
+| ---  | --- | --- | --- |
+| [address_type](address_type.md) | 0..1 <br/> [AddressTypeEnum](AddressTypeEnum.md) | [de] Typ der Adresse | direct |
+| [address_uri](address_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] URI der Adresse | direct |
+| [street_address](street_address.md) | 0..1 <br/> [String](String.md) | [de] Strassenadresse | direct |
+| [postal_code](postal_code.md) | 0..1 <br/> [Integer](Integer.md) | [de] Postleitzahl | direct |
+| [postal_locality](postal_locality.md) | 0..1 <br/> [String](String.md) | [de] Ort | direct |
 
 
 
@@ -171,3 +97,6 @@ postal_locality: London
 
 
 
+
+
+</div>

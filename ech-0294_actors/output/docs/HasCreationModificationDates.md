@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: HasCreationModificationDates 
 
@@ -19,75 +22,11 @@ __
 ## Attribute
 
 | Name | Cardinality and Range | Description | Inheritance |
-| --  | -- | ------- | -- |
-| SlotDefinition({
-  'name': 'date_created',
-  'local_names': JsonObj(),
-  'extensions': JsonObj(),
-  'annotations': JsonObj(),
-  'description': ('[de] Das Datum, an dem eine Entität erstellt wurde.\n'
-     '[en] The date when an entity was created.\n'),
-  'alt_descriptions': JsonObj(),
-  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
-  'rank': 1000,
-  'slot_uri': 'mcm:dateCreated',
-  'owner': 'HasCreationModificationDates',
-  'domain_of': ['HasCreationModificationDates'],
-  'range': 'date'
-}) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, an dem eine Entität erstellt wurde.
-[en] The date when an entity was created.
- | direct |
-| SlotDefinition({
-  'name': 'datetime_created',
-  'local_names': JsonObj(),
-  'extensions': JsonObj(),
-  'annotations': JsonObj(),
-  'description': ('[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.\n'
-     '[en] The date and time when an entity was created.\n'),
-  'alt_descriptions': JsonObj(),
-  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
-  'rank': 1000,
-  'slot_uri': 'mcm:datetimeCreated',
-  'owner': 'HasCreationModificationDates',
-  'domain_of': ['HasCreationModificationDates'],
-  'range': 'datetime'
-}) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
-[en] The date and time when an entity was created.
- | direct |
-| SlotDefinition({
-  'name': 'date_modified',
-  'local_names': JsonObj(),
-  'extensions': JsonObj(),
-  'annotations': JsonObj(),
-  'description': ('[de] Das Datum, an dem eine Entität zuletzt geändert wurde.\n'
-     '[en] The date when an entity was last modified.\n'),
-  'alt_descriptions': JsonObj(),
-  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
-  'rank': 1000,
-  'slot_uri': 'mcm:dateModified',
-  'owner': 'HasCreationModificationDates',
-  'domain_of': ['HasCreationModificationDates'],
-  'range': 'date'
-}) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde.
-[en] The date when an entity was last modified.
- | direct |
-| SlotDefinition({
-  'name': 'datetime_modified',
-  'local_names': JsonObj(),
-  'extensions': JsonObj(),
-  'annotations': JsonObj(),
-  'description': ('[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.\n'
-     '[en] The date and time when an entity was last modified.\n'),
-  'alt_descriptions': JsonObj(),
-  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
-  'rank': 1000,
-  'slot_uri': 'mcm:datetimeModified',
-  'owner': 'HasCreationModificationDates',
-  'domain_of': ['HasCreationModificationDates'],
-  'range': 'datetime'
-}) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
-[en] The date and time when an entity was last modified.
- | direct |
+| ---  | --- | --- | --- |
+| [date_created](date_created.md) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, an dem eine Entität erstellt wurde | direct |
+| [datetime_created](datetime_created.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | direct |
+| [date_modified](date_modified.md) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | direct |
+| [datetime_modified](datetime_modified.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | direct |
 
 
 
@@ -140,3 +79,6 @@ __
 
 
 
+
+
+</div>

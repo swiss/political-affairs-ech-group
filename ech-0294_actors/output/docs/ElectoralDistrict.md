@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: ElectoralDistrict 
 
@@ -19,77 +22,11 @@ __
 ## Attribute
 
 | Name | Cardinality and Range | Description | Inheritance |
-| --  | -- | ------- | -- |
-| SlotDefinition({
-  'name': 'district',
-  'local_names': JsonObj(),
-  'extensions': JsonObj(),
-  'annotations': JsonObj(),
-  'description': '[de] Wahlkreis oder Wahlregion.\n[en] Electoral district or region.\n',
-  'alt_descriptions': JsonObj(),
-  'examples': [Example({'value': 'Basel-Stadt'}), Example({'value': 'London Central'})],
-  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
-  'rank': 1000,
-  'slot_uri': 'act:district',
-  'owner': 'ElectoralDistrict',
-  'domain_of': ['ElectoralDistrict'],
-  'range': 'string'
-}) | 0..1 <br/> [String](String.md) | [de] Wahlkreis oder Wahlregion.
-[en] Electoral district or region.
- | direct |
-| SlotDefinition({
-  'name': 'valid_from',
-  'local_names': JsonObj(),
-  'extensions': JsonObj(),
-  'annotations': JsonObj(),
-  'description': ('[de] Das Datum, ab dem die Information gültig ist.\n'
-     '[en] The date from which the information is valid.\n'),
-  'alt_descriptions': JsonObj(),
-  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
-  'rank': 1000,
-  'slot_uri': 'schema:validFrom',
-  'owner': 'ElectoralDistrict',
-  'domain_of': ['HasTemporalValidity'],
-  'range': 'date'
-}) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, ab dem die Information gültig ist.
-[en] The date from which the information is valid.
- | [HasTemporalValidity](HasTemporalValidity.md) |
-| SlotDefinition({
-  'name': 'valid_through',
-  'local_names': JsonObj(),
-  'extensions': JsonObj(),
-  'annotations': JsonObj(),
-  'description': ('[de] Das Datum, bis und mit dem die Information gültig ist.\n'
-     '[en] The date until which the information is valid, inclusive.\n'),
-  'alt_descriptions': JsonObj(),
-  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
-  'rank': 1000,
-  'slot_uri': 'schema:validThrough',
-  'owner': 'ElectoralDistrict',
-  'domain_of': ['HasTemporalValidity'],
-  'range': 'date'
-}) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, bis und mit dem die Information gültig ist.
-[en] The date until which the information is valid, inclusive.
- | [HasTemporalValidity](HasTemporalValidity.md) |
-| SlotDefinition({
-  'name': 'is_active',
-  'local_names': JsonObj(),
-  'extensions': JsonObj(),
-  'annotations': JsonObj(),
-  'description': ('[de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, '
-     'wenn diese Information explizit vorhanden ist.\n'
-     '[en] Indicates whether the information is currently valid. Can be useful '
-     'when this information is explicitly available.\n'),
-  'alt_descriptions': JsonObj(),
-  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
-  'rank': 1000,
-  'slot_uri': 'mcm:isCurrent',
-  'owner': 'ElectoralDistrict',
-  'domain_of': ['HasTemporalValidity'],
-  'range': 'boolean'
-}) | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist.
-[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.
- | [HasTemporalValidity](HasTemporalValidity.md) |
+| ---  | --- | --- | --- |
+| [district](district.md) | 0..1 <br/> [String](String.md) | [de] Wahlkreis oder Wahlregion | direct |
+| [valid_from](valid_from.md) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity](HasTemporalValidity.md) |
+| [valid_through](valid_through.md) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity](HasTemporalValidity.md) |
+| [is_active](is_active.md) | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity](HasTemporalValidity.md) |
 
 
 
@@ -156,3 +93,6 @@ valid_from: 2010-01-01
 
 
 
+
+
+</div>
