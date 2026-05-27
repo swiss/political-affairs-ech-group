@@ -1,0 +1,41 @@
+# Configuration for extract_examples.py
+# Controls which classes and slots get examples in the generated documentation.
+#
+# classes:
+#   - Container examples (full data files) are always generated.
+#   - Listed classes get individual instance examples extracted from data_*.yaml.
+#
+# slots:
+#   - Listed slots get example values extracted from data_*.yaml.
+#   - Values are injected into output/schema_enriched.yaml (input schema stays unchanged).
+#   - max_examples_per_slot controls how many distinct values are shown (default: 3).
+
+classes:
+  - Person
+  - InterestLink
+  - Membership
+  - Group
+  - Address
+  - Occupation
+  - ElectoralDistrict
+
+slots:
+  - birth_date
+  - birth_year
+  - label
+  - label_long
+  - address_type
+  - postal_locality
+  - gender_code
+  - contact_type
+  - interest_type
+  - organization_label
+  - legal_form
+  - is_paid
+  - language
+  - country
+  - district
+  - training_type
+  - name_type
+
+max_examples_per_slot: 3

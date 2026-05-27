@@ -1,6 +1,14 @@
+---
+search:
+  boost: 2.0
+---
+
+
 # Enum: WorkTypesEnum 
 
 
+
+<div data-search-exclude markdown="1">
 
 URI: [ops:WorkTypesEnum](https://ch.paf.link/schema/operations/WorkTypesEnum)
 
@@ -65,3 +73,5 @@ permissible_values:
 
 ```
 </details>
+
+</div>

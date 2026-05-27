@@ -3,12 +3,12 @@ search:
   boost: 5.0
 ---
 
-# Slot: concerned_group 
+# Slot: group_reference 
 
 
-_[de] Link zu einer Gruppe, auf die sich die Zugehörigkeit bezieht._
+_[de] Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung._
 
-_[en] Link to a group that the affiliation concerns._
+_[en] Reference to a group with snapshot data at time of linking._
 
 __
 
@@ -18,7 +18,7 @@ __
 
 
 
-URI: [act:concernedGroup](https://ld.ech.ch/schema/0294/actors/concernedGroup)
+URI: [act:groupReference](https://ld.ech.ch/schema/0294/actors/groupReference)
 <!-- no inheritance hierarchy -->
 
 
@@ -42,9 +42,9 @@ URI: [act:concernedGroup](https://ld.ech.ch/schema/0294/actors/concernedGroup)
 
 | Property | Value |
 | --- | --- |
-| Range | [Group](Group.md) |
+| Range | [GroupReference](GroupReference.md) |
 | Domain Of | [Membership](Membership.md) |
-| Slot URI | [act:concernedGroup](https://ld.ech.ch/schema/0294/actors/concernedGroup) |
+| Slot URI | [act:groupReference](https://ld.ech.ch/schema/0294/actors/groupReference) |
 
 ### Cardinality and Requirements
 
@@ -78,8 +78,8 @@ URI: [act:concernedGroup](https://ld.ech.ch/schema/0294/actors/concernedGroup)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:concernedGroup |
-| native | act:concerned_group |
+| self | act:groupReference |
+| native | act:group_reference |
 
 
 
@@ -88,18 +88,19 @@ URI: [act:concernedGroup](https://ld.ech.ch/schema/0294/actors/concernedGroup)
 
 <details>
 ```yaml
-name: concerned_group
-description: '[de] Link zu einer Gruppe, auf die sich die Zugehörigkeit bezieht.
+name: group_reference
+description: '[de] Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
 
-  [en] Link to a group that the affiliation concerns.
+  [en] Reference to a group with snapshot data at time of linking.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
-slot_uri: act:concernedGroup
+slot_uri: act:groupReference
 domain_of:
 - Membership
-range: Group
+range: GroupReference
+inlined: true
 
 ```
 </details></div>

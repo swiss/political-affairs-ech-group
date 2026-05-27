@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: agenda_item_ids 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:agenda_item_ids](https://ch.paf.link/schema/operations/agenda_item_ids)
-Alias: agenda_item_ids
-
 <!-- no inheritance hierarchy -->
 
 
@@ -83,10 +86,10 @@ description: '[en] The agenda items associated with the voting.
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: agenda_item_ids
 range: string
 multivalued: true
+inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

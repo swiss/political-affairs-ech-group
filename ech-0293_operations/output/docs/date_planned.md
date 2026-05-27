@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: date_planned 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [mcm:datePlanned](https://ld.ech.ch/schema/0292/meta-common/datePlanned)
-Alias: date_planned
-
 <!-- no inheritance hierarchy -->
 
 
@@ -95,10 +98,9 @@ description: '[de] Das geplante Datum eines instantanen Ereignisses oder Vorkomm
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: mcm:datePlanned
-alias: date_planned
 domain_of:
 - IsInstantaneousEvent
 range: date
 
 ```
-</details>
+</details></div>

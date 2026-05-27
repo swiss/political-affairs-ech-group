@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: manifestations 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [meta:manifestations](https://ch.paf.link/schema/meta/manifestations)
-Alias: manifestations
-
 <!-- no inheritance hierarchy -->
 
 
@@ -81,7 +84,6 @@ name: manifestations
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: meta:manifestations
-alias: manifestations
 domain_of:
 - Expression
 range: Manifestation
@@ -90,4 +92,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

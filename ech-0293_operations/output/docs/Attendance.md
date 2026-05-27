@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Attendance 
 
@@ -10,6 +13,8 @@ _[de] Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesen
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -192,7 +197,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: parent_meeting
     owner: Attendance
     domain_of:
     - Meeting
@@ -210,7 +214,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: datetime_begin
     owner: Attendance
     domain_of:
     - Voting
@@ -229,7 +232,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: actor_id
     owner: Attendance
     domain_of:
     - Legislature
@@ -251,7 +253,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total_count
     owner: Attendance
     domain_of:
     - Attendance
@@ -261,7 +262,6 @@ attributes:
     description: Total number of members present
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total_present
     owner: Attendance
     domain_of:
     - Attendance
@@ -277,7 +277,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total_absent
     owner: Attendance
     domain_of:
     - Voting
@@ -289,7 +288,6 @@ attributes:
     description: Total number of excused absences
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: total_excused
     owner: Attendance
     domain_of:
     - Attendance
@@ -304,7 +302,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: Attendance
     domain_of:
     - HasIdentification
@@ -320,7 +317,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: Attendance
     domain_of:
     - HasIdentification
@@ -338,7 +334,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: Attendance
     domain_of:
     - HasIdentification
@@ -353,7 +348,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateCreated
-    alias: date_created
     owner: Attendance
     domain_of:
     - HasCreationModificationDates
@@ -368,7 +362,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeCreated
-    alias: datetime_created
     owner: Attendance
     domain_of:
     - HasCreationModificationDates
@@ -383,7 +376,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateModified
-    alias: date_modified
     owner: Attendance
     domain_of:
     - HasCreationModificationDates
@@ -399,11 +391,10 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeModified
-    alias: datetime_modified
     owner: Attendance
     domain_of:
     - HasCreationModificationDates
     range: datetime
 
 ```
-</details>
+</details></div>

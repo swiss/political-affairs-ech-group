@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: resolution_type 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:resolution_type](https://ch.paf.link/schema/operations/resolution_type)
-Alias: resolution_type
-
 <!-- no inheritance hierarchy -->
 
 
@@ -92,10 +95,9 @@ description: '[en] Type of resolutiontaken on the agenda item.
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: resolution_type
 domain_of:
 - Resolution
 range: ResolutionTypeEnum
 
 ```
-</details>
+</details></div>

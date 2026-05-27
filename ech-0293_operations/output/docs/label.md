@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: label 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
-Alias: label
-
 <!-- no inheritance hierarchy -->
 
 
@@ -96,10 +99,9 @@ description: '[de] Möglichkeit bei einer strukturierten Information, ein Label 
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: mcm:label
-alias: label
 domain_of:
 - TotalOther
 range: string
 
 ```
-</details>
+</details></div>

@@ -1,3 +1,9 @@
+---
+search:
+  boost: 2.0
+---
+
+
 # Enum: ResolutionTypeEnum 
 
 
@@ -10,6 +16,8 @@ _[de] Art der Resolution zu einem Traktandum._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 URI: [ops:ResolutionTypeEnum](https://ch.paf.link/schema/operations/ResolutionTypeEnum)
 
@@ -139,3 +147,5 @@ permissible_values:
 
 ```
 </details>
+
+</div>

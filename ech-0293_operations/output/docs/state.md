@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: state 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [ops:state](https://ch.paf.link/schema/operations/state)
-Alias: state
-
 <!-- no inheritance hierarchy -->
 
 
@@ -78,10 +81,9 @@ Alias: state
 name: state
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: state
 domain_of:
 - Meeting
 range: StateEnum
 
 ```
-</details>
+</details></div>

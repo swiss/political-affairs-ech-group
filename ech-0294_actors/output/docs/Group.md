@@ -54,7 +54,6 @@ __
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [groups](groups.md) | range | [Group](Group.md) |
-| [Membership](Membership.md) | [concerned_group](concerned_group.md) | range | [Group](Group.md) |
 
 
 

@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: expressions 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [meta:expressions](https://ch.paf.link/schema/meta/expressions)
-Alias: expressions
-
 <!-- no inheritance hierarchy -->
 
 
@@ -81,7 +84,6 @@ name: expressions
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: meta:expressions
-alias: expressions
 domain_of:
 - Work
 range: Expression
@@ -90,4 +92,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

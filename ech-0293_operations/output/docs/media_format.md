@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: media_format 
 
@@ -7,11 +10,11 @@ _MIME type of the media file_
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:media_format](https://ch.paf.link/schema/operations/media_format)
-Alias: media_format
-
 <!-- no inheritance hierarchy -->
 
 
@@ -84,10 +87,9 @@ name: media_format
 description: MIME type of the media file
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: media_format
 domain_of:
 - Speech
 range: string
 
 ```
-</details>
+</details></div>

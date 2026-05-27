@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: parent_attendance 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:parentAttendance](https://ch.paf.link/schema/operations/parentAttendance)
-Alias: parent_attendance
-
 <!-- no inheritance hierarchy -->
 
 
@@ -95,10 +98,9 @@ description: '[en] The Attendance aggregate this individual attendance record be
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: ops:parentAttendance
-alias: parent_attendance
 domain_of:
 - IndividualAttendance
 range: Attendance
 
 ```
-</details>
+</details></div>

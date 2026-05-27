@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: result_text 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:result_text](https://ch.paf.link/schema/operations/result_text)
-Alias: result_text
-
 <!-- no inheritance hierarchy -->
 
 
@@ -26,8 +29,8 @@ Alias: result_text
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 | [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
+| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 
 
 
@@ -95,11 +98,10 @@ description: '[en] Free text describing the outcome of the vote, e.g., "Accepted
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: result_text
 domain_of:
 - Voting
 - Election
 range: string
 
 ```
-</details>
+</details></div>

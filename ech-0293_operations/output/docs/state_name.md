@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: state_name 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:state_name](https://ch.paf.link/schema/operations/state_name)
-Alias: state_name
-
 <!-- no inheritance hierarchy -->
 
 
@@ -26,8 +29,8 @@ Alias: state_name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
+| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
 
 
 
@@ -93,11 +96,10 @@ description: '[en] Custom state description for the meeting.
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: state_name
 domain_of:
 - Meeting
 - AgendaItem
 range: string
 
 ```
-</details>
+</details></div>

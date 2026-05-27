@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: speeches 
 
@@ -7,11 +10,11 @@ _Collection of speech records_
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:speech](https://ch.paf.link/schema/operations/speech)
-Alias: speeches
-
 <!-- no inheritance hierarchy -->
 
 
@@ -87,7 +90,6 @@ description: Collection of speech records
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: ops:speech
-alias: speeches
 domain_of:
 - Container
 range: Speech
@@ -96,4 +98,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

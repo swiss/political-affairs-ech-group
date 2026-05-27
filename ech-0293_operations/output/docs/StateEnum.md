@@ -1,3 +1,9 @@
+---
+search:
+  boost: 2.0
+---
+
+
 # Enum: StateEnum 
 
 
@@ -6,6 +12,8 @@
 _State of the meeting_
 
 
+
+<div data-search-exclude markdown="1">
 
 URI: [ops:StateEnum](https://ch.paf.link/schema/operations/StateEnum)
 
@@ -71,3 +79,5 @@ permissible_values:
 
 ```
 </details>
+
+</div>

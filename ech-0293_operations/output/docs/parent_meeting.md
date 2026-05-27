@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: parent_meeting 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:parent_meeting](https://ch.paf.link/schema/operations/parent_meeting)
-Alias: parent_meeting
-
 <!-- no inheritance hierarchy -->
 
 
@@ -27,10 +30,10 @@ Alias: parent_meeting
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
-| [Attendance](Attendance.md) | [en] Aggregated attendance record for a meeting (number of members present, a... |  no  |
-| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
 | [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
+| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
+| [Attendance](Attendance.md) | [en] Aggregated attendance record for a meeting (number of members present, a... |  no  |
 
 
 
@@ -96,7 +99,6 @@ description: '[en] The linked meeting ID that groups the current meeting.
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: parent_meeting
 domain_of:
 - Meeting
 - AgendaItem
@@ -106,4 +108,4 @@ domain_of:
 range: string
 
 ```
-</details>
+</details></div>

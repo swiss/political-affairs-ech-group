@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: tie_breaker 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:tie_breaker](https://ch.paf.link/schema/operations/tie_breaker)
-Alias: tie_breaker
-
 <!-- no inheritance hierarchy -->
 
 
@@ -92,10 +95,9 @@ description: '[en] Indicates if a tie-breaker was used in the voting.
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: tie_breaker
 domain_of:
 - Voting
 range: boolean
 
 ```
-</details>
+</details></div>

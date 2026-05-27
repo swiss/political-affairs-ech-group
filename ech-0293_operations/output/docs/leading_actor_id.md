@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: leading_actor_id 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:leading_actor_id](https://ch.paf.link/schema/operations/leading_actor_id)
-Alias: leading_actor_id
-
 <!-- no inheritance hierarchy -->
 
 
@@ -92,10 +95,9 @@ description: '[en] The leading department for the agenda item.
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: leading_actor_id
 domain_of:
 - AgendaItem
 range: string
 
 ```
-</details>
+</details></div>

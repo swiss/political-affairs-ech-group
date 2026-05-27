@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: HasCreationModificationDates 
 
@@ -10,6 +13,8 @@ _[en] A mixin class that provides slots for modeling creation and modification d
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -184,7 +189,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateCreated
-    alias: date_created
     owner: HasCreationModificationDates
     domain_of:
     - HasCreationModificationDates
@@ -199,7 +203,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeCreated
-    alias: datetime_created
     owner: HasCreationModificationDates
     domain_of:
     - HasCreationModificationDates
@@ -214,7 +217,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateModified
-    alias: date_modified
     owner: HasCreationModificationDates
     domain_of:
     - HasCreationModificationDates
@@ -230,11 +232,10 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeModified
-    alias: datetime_modified
     owner: HasCreationModificationDates
     domain_of:
     - HasCreationModificationDates
     range: datetime
 
 ```
-</details>
+</details></div>

@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: xdate 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [dcterms:date](http://purl.org/dc/terms/date)
-Alias: xdate
-
 <!-- no inheritance hierarchy -->
 
 
@@ -81,11 +84,10 @@ name: xdate
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: dcterms:date
-alias: xdate
 domain_of:
 - Date
 range: date
 required: true
 
 ```
-</details>
+</details></div>

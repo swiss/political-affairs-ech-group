@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: agenda_item_category 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:agenda_item_category](https://ch.paf.link/schema/operations/agenda_item_category)
-Alias: agenda_item_category
-
 <!-- no inheritance hierarchy -->
 
 
@@ -94,10 +97,9 @@ description: '[en] Category for grouped agenda items (e.g., introduction, by dep
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: agenda_item_category
 domain_of:
 - AgendaItem
 range: string
 
 ```
-</details>
+</details></div>

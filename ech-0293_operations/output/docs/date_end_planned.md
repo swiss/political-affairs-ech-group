@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: date_end_planned 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [mcm:dateEndPlanned](https://ld.ech.ch/schema/0292/meta-common/dateEndPlanned)
-Alias: date_end_planned
-
 <!-- no inheritance hierarchy -->
 
 
@@ -26,11 +29,12 @@ Alias: date_end_planned
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [IsEventWithDuration](IsEventWithDuration.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder V... |  no  |
-| [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
-| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
 | [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
+| [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
+| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
+| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |  no  |
 
 
 
@@ -98,10 +102,9 @@ description: '[de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Z
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: mcm:dateEndPlanned
-alias: date_end_planned
 domain_of:
 - IsEventWithDuration
 range: date
 
 ```
-</details>
+</details></div>

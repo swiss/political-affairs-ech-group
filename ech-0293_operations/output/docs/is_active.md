@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: is_active 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [mcm:isCurrent](https://ld.ech.ch/schema/0292/meta-common/isCurrent)
-Alias: is_active
-
 <!-- no inheritance hierarchy -->
 
 
@@ -96,10 +99,9 @@ description: '[de] Gibt an, ob die Information aktuell gültig ist. Kann nützli
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: mcm:isCurrent
-alias: is_active
 domain_of:
 - HasTemporalValidity
 range: boolean
 
 ```
-</details>
+</details></div>

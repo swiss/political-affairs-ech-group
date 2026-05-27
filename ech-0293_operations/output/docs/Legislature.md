@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Legislature 
 
@@ -10,6 +13,8 @@ _[de] Amtsdauer eines Parlaments als gesetzgebender Versammlung. Dauert in der R
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -235,7 +240,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: administrative_id
     owner: Legislature
     domain_of:
     - Legislature
@@ -245,7 +249,6 @@ attributes:
     name: name
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: name
     owner: Legislature
     domain_of:
     - Legislature
@@ -259,7 +262,6 @@ attributes:
     name: description
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: description
     owner: Legislature
     domain_of:
     - Legislature
@@ -277,7 +279,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:landingPage
-    alias: landing_page
     owner: Legislature
     domain_of:
     - Legislature
@@ -298,7 +299,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: actor_id
     owner: Legislature
     domain_of:
     - Legislature
@@ -321,7 +321,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: meta:documents
-    alias: documents
     owner: Legislature
     domain_of:
     - Legislature
@@ -347,7 +346,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: Legislature
     domain_of:
     - HasIdentification
@@ -363,7 +361,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: Legislature
     domain_of:
     - HasIdentification
@@ -381,7 +378,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: Legislature
     domain_of:
     - HasIdentification
@@ -397,7 +393,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateBeginActual
-    alias: date_begin_actual
     owner: Legislature
     domain_of:
     - IsEventWithDuration
@@ -413,7 +408,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeBeginActual
-    alias: datetime_begin_actual
     owner: Legislature
     domain_of:
     - IsEventWithDuration
@@ -429,7 +423,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateBeginPlanned
-    alias: date_begin_planned
     owner: Legislature
     domain_of:
     - IsEventWithDuration
@@ -445,7 +438,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeBeginPlanned
-    alias: datetime_begin_planned
     owner: Legislature
     domain_of:
     - IsEventWithDuration
@@ -461,7 +453,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateEndActual
-    alias: date_end_actual
     owner: Legislature
     domain_of:
     - IsEventWithDuration
@@ -477,7 +468,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeEndActual
-    alias: datetime_end_actual
     owner: Legislature
     domain_of:
     - IsEventWithDuration
@@ -493,7 +483,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateEndPlanned
-    alias: date_end_planned
     owner: Legislature
     domain_of:
     - IsEventWithDuration
@@ -509,7 +498,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeEndPlanned
-    alias: datetime_end_planned
     owner: Legislature
     domain_of:
     - IsEventWithDuration
@@ -524,7 +512,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateCreated
-    alias: date_created
     owner: Legislature
     domain_of:
     - HasCreationModificationDates
@@ -539,7 +526,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeCreated
-    alias: datetime_created
     owner: Legislature
     domain_of:
     - HasCreationModificationDates
@@ -554,7 +540,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateModified
-    alias: date_modified
     owner: Legislature
     domain_of:
     - HasCreationModificationDates
@@ -570,11 +555,10 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeModified
-    alias: datetime_modified
     owner: Legislature
     domain_of:
     - HasCreationModificationDates
     range: datetime
 
 ```
-</details>
+</details></div>

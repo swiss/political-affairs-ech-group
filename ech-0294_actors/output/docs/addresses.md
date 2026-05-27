@@ -61,6 +61,13 @@ URI: [act:address](https://ld.ech.ch/schema/0294/actors/address)
 
 
 
+## Examples
+
+| Value |
+| --- |
+| [{'address_type': 'businessAddress', 'address_URI': 'https://ld.admin.ch/address/12345', 'street_address': 'Bundesplatz 3', 'postal_code': '3003', 'postal_locality': 'Bern'}, {'address_type': 'privateAddress', 'postal_locality': 'Zürich'}] |
+
+
 
 ## Identifier and Mapping Information
 
@@ -96,6 +103,10 @@ description: '[de] Adressen mit Typ (privat, geschäftlich, lokal).
   [en] Addresses with type (private, business, local).
 
   '
+examples:
+- value: '[{''address_type'': ''businessAddress'', ''address_URI'': ''https://ld.admin.ch/address/12345'',
+    ''street_address'': ''Bundesplatz 3'', ''postal_code'': ''3003'', ''postal_locality'':
+    ''Bern''}, {''address_type'': ''privateAddress'', ''postal_locality'': ''Zürich''}]'
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:address

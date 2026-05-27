@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: total_absent 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:total_absent](https://ch.paf.link/schema/operations/total_absent)
-Alias: total_absent
-
 <!-- no inheritance hierarchy -->
 
 
@@ -26,9 +29,9 @@ Alias: total_absent
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 | [Attendance](Attendance.md) | [en] Aggregated attendance record for a meeting (number of members present, a... |  no  |
-| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 
 
 
@@ -96,7 +99,6 @@ description: '[en] Total number of absent members. Distinction between absent/ex
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: total_absent
 domain_of:
 - Voting
 - Election
@@ -104,4 +106,4 @@ domain_of:
 range: integer
 
 ```
-</details>
+</details></div>

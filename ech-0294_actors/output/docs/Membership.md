@@ -23,8 +23,8 @@ __
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [concerned_person](concerned_person.md) | 0..1 <br/> [Person](Person.md) | [de] Link zu einer Person, auf die sich die Zugehörigkeit bezieht | direct |
-| [concerned_group](concerned_group.md) | 0..1 <br/> [Group](Group.md) | [de] Link zu einer Gruppe, auf die sich die Zugehörigkeit bezieht | direct |
+| [person_reference](person_reference.md) | 0..1 <br/> [PersonReference](PersonReference.md) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfun... | direct |
+| [group_reference](group_reference.md) | 0..1 <br/> [GroupReference](GroupReference.md) | [de] Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfun... | direct |
 | [role_type](role_type.md) | 0..1 <br/> [RoleType](RoleType.md) | [en] Role of the person in the membership or function | direct |
 | [authorized_to_vote](authorized_to_vote.md) | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob die Person stimmberechtigt ist | direct |
 | [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |

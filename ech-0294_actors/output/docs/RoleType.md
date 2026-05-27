@@ -34,6 +34,7 @@ __
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
+| [PersonReference](PersonReference.md) | [role_type](role_type.md) | range | [RoleType](RoleType.md) |
 | [Membership](Membership.md) | [role_type](role_type.md) | range | [RoleType](RoleType.md) |
 
 

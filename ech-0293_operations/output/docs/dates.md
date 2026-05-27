@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: dates 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [meta:dates](https://ch.paf.link/schema/meta/dates)
-Alias: dates
-
 <!-- no inheritance hierarchy -->
 
 
@@ -82,7 +85,6 @@ name: dates
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: meta:dates
-alias: dates
 domain_of:
 - Expression
 - Manifestation
@@ -92,4 +94,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

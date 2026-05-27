@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: seat_nr 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:seat_nr](https://ch.paf.link/schema/operations/seat_nr)
-Alias: seat_nr
-
 <!-- no inheritance hierarchy -->
 
 
@@ -92,10 +95,9 @@ description: '[en] The seat number of the individual vote, if applicable.
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: seat_nr
 domain_of:
 - IndividualVote
 range: string
 
 ```
-</details>
+</details></div>

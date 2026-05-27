@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Resolution 
 
@@ -10,6 +13,8 @@ _[de] Eine Resolution oder Entscheidung zu einem Traktandum, einschließlich Abs
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -161,7 +166,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: resolution_type
     owner: Resolution
     domain_of:
     - Resolution
@@ -175,7 +179,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: type_label
     owner: Resolution
     domain_of:
     - Resolution
@@ -192,7 +195,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: vote_procedures
     owner: Resolution
     domain_of:
     - Resolution
@@ -211,7 +213,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: meta:documents
-    alias: documents
     owner: Resolution
     domain_of:
     - Legislature
@@ -229,4 +230,4 @@ attributes:
     inlined_as_list: true
 
 ```
-</details>
+</details></div>

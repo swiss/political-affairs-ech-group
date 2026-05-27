@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: HasTemporalValidity 
 
@@ -10,6 +13,8 @@ _[en] A mixin class that provides slots for modeling a temporal validity of info
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -149,7 +154,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: schema:validFrom
-    alias: valid_from
     owner: HasTemporalValidity
     domain_of:
     - HasTemporalValidity
@@ -164,7 +168,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: schema:validThrough
-    alias: valid_through
     owner: HasTemporalValidity
     domain_of:
     - HasTemporalValidity
@@ -181,11 +184,10 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:isCurrent
-    alias: is_active
     owner: HasTemporalValidity
     domain_of:
     - HasTemporalValidity
     range: boolean
 
 ```
-</details>
+</details></div>

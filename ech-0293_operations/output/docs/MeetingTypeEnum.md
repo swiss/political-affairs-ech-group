@@ -1,3 +1,9 @@
+---
+search:
+  boost: 2.0
+---
+
+
 # Enum: MeetingTypeEnum 
 
 
@@ -6,6 +12,8 @@
 _Type of the meeting_
 
 
+
+<div data-search-exclude markdown="1">
 
 URI: [ops:MeetingTypeEnum](https://ch.paf.link/schema/operations/MeetingTypeEnum)
 
@@ -75,3 +83,5 @@ permissible_values:
 
 ```
 </details>
+
+</div>

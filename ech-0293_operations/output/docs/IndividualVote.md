@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: IndividualVote 
 
@@ -10,6 +13,8 @@ _[de] Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -202,7 +207,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:parentVoting
-    alias: parent_voting
     owner: IndividualVote
     domain_of:
     - IndividualVote
@@ -218,7 +222,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: actor_id
     owner: IndividualVote
     domain_of:
     - Legislature
@@ -239,7 +242,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: seat_nr
     owner: IndividualVote
     domain_of:
     - IndividualVote
@@ -255,7 +257,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: weight
     owner: IndividualVote
     domain_of:
     - IndividualVote
@@ -269,7 +270,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: individual_vote_type
     owner: IndividualVote
     domain_of:
     - IndividualVote
@@ -283,7 +283,6 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: type_label
     owner: IndividualVote
     domain_of:
     - Resolution
@@ -301,7 +300,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: IndividualVote
     domain_of:
     - HasIdentification
@@ -317,7 +315,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: IndividualVote
     domain_of:
     - HasIdentification
@@ -335,7 +332,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: IndividualVote
     domain_of:
     - HasIdentification
@@ -350,7 +346,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateCreated
-    alias: date_created
     owner: IndividualVote
     domain_of:
     - HasCreationModificationDates
@@ -365,7 +360,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeCreated
-    alias: datetime_created
     owner: IndividualVote
     domain_of:
     - HasCreationModificationDates
@@ -380,7 +374,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateModified
-    alias: date_modified
     owner: IndividualVote
     domain_of:
     - HasCreationModificationDates
@@ -396,11 +389,10 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeModified
-    alias: datetime_modified
     owner: IndividualVote
     domain_of:
     - HasCreationModificationDates
     range: datetime
 
 ```
-</details>
+</details></div>

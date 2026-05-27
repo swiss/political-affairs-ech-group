@@ -66,6 +66,14 @@ URI: [act:country](https://ld.ech.ch/schema/0294/actors/country)
 
 
 
+## Examples
+
+| Value |
+| --- |
+| CH |
+| GB |
+
+
 
 ## Identifier and Mapping Information
 
@@ -101,6 +109,9 @@ description: '[de] ISO 3166 Ländercode.
   [en] ISO 3166 country code.
 
   '
+examples:
+- value: CH
+- value: GB
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:country

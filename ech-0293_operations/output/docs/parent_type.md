@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: parent_type 
 
@@ -7,11 +10,11 @@ _Type of parent object (meeting, agenda, speech, affair)_
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:parent_type](https://ch.paf.link/schema/operations/parent_type)
-Alias: parent_type
-
 <!-- no inheritance hierarchy -->
 
 
@@ -84,10 +87,9 @@ name: parent_type
 description: Type of parent object (meeting, agenda, speech, affair)
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: parent_type
 domain_of:
 - Media
 range: string
 
 ```
-</details>
+</details></div>

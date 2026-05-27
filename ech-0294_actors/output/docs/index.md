@@ -21,6 +21,7 @@ Name: actors-schema
 | [ElectoralDistrict](ElectoralDistrict.md) | [de] Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit z... |
 | [Gender](Gender.md) | [de] Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitli... |
 | [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |
+| [GroupReference](GroupReference.md) | [de] Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifika... |
 | [GroupType](GroupType.md) | [de] Art der Gruppe (z |
 | [HasCreationModificationDates](HasCreationModificationDates.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Ä... |
 | [HasIdentification](HasIdentification.md) | [de] Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Ve... |
@@ -35,6 +36,7 @@ Name: actors-schema
 | [Name](Name.md) | [de] Ein Name mit einem Typ (z |
 | [Occupation](Occupation.md) | [de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19... |
 | [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |
+| [PersonReference](PersonReference.md) | [de] Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifika... |
 | [RoleType](RoleType.md) | [de] Rolle einer Person in einer Mitgliedschaft oder Funktion (z |
 | [Training](Training.md) | [de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z |
 
@@ -53,8 +55,6 @@ Name: actors-schema
 | [birth_year](birth_year.md) | [de] Geburtsjahr |
 | [citizenships](citizenships.md) | [de] Staatsbürgerschaften der Person |
 | [committee](committee.md) | [en] Committee or board (e |
-| [concerned_group](concerned_group.md) | [de] Link zu einer Gruppe, auf die sich die Zugehörigkeit bezieht |
-| [concerned_person](concerned_person.md) | [de] Link zu einer Person, auf die sich die Zugehörigkeit bezieht |
 | [contact_type](contact_type.md) | [de] Typ der Kontaktinformation |
 | [contacts](contacts.md) | [en] Contact information (email, website, social media) |
 | [country](country.md) | [de] ISO 3166 Ländercode |
@@ -84,6 +84,8 @@ Name: actors-schema
 | [gender_code](gender_code.md) | [de] Geschlechtscode (z |
 | [genders](genders.md) | [de] Geschlecht der Person |
 | [global_uri](global_uri.md) | [de] Eine eindeutige, global gültige URI für die Entität |
+| [group_label](group_label.md) | [de] Name des Gremiums zum Zeitpunkt der Verknüpfung |
+| [group_reference](group_reference.md) | [de] Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfun... |
 | [group_type](group_type.md) | [de] Klasse der Gruppierung, wie z |
 | [group_type_enum](group_type_enum.md) | [de] Link zum kontrollierten Vokabular für Gruppentypen |
 | [groups](groups.md) | [de] Sammlung von Gruppen |
@@ -111,6 +113,7 @@ Name: actors-schema
 | [organization_uid](organization_uid.md) | [en] UID of the organization (for analysis with NOGA codes, etc |
 | [parent_groups](parent_groups.md) | [de] Übergeordneten Gruppe |
 | [party_color](party_color.md) | [de] Parteifarbe (optional für Parteien) |
+| [person_reference](person_reference.md) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfun... |
 | [persons](persons.md) | [de] Sammlung von Personen |
 | [picture](picture.md) | [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF) |
 | [postal_code](postal_code.md) | [de] Postleitzahl |

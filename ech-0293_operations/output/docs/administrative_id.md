@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: administrative_id 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:administrative_id](https://ch.paf.link/schema/operations/administrative_id)
-Alias: administrative_id
-
 <!-- no inheritance hierarchy -->
 
 
@@ -26,8 +29,8 @@ Alias: administrative_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 
 
 
@@ -94,11 +97,10 @@ description: '[en] Administrative ID of the legislative body, such as a municipa
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: administrative_id
 domain_of:
 - Legislature
 - Meeting
 range: string
 
 ```
-</details>
+</details></div>

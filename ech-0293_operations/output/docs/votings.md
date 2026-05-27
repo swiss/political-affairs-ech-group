@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: votings 
 
@@ -7,11 +10,11 @@ _Collection of voting records_
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:voting](https://ch.paf.link/schema/operations/voting)
-Alias: votings
-
 <!-- no inheritance hierarchy -->
 
 
@@ -87,7 +90,6 @@ description: Collection of voting records
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: ops:voting
-alias: votings
 domain_of:
 - Container
 range: Voting
@@ -96,4 +98,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: JointDebate 
 
@@ -10,6 +13,8 @@ _[de] Traktanden die gemeinsam behandelt werden._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -126,7 +131,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:agendaItem
-    alias: agenda_items
     owner: JointDebate
     domain_of:
     - Container
@@ -137,4 +141,4 @@ attributes:
     inlined_as_list: true
 
 ```
-</details>
+</details></div>

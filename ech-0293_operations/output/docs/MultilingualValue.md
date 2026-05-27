@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: MultilingualValue 
 
@@ -10,6 +13,8 @@ _[en] A multilingual string with language specification._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -128,7 +133,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:value
-    alias: value
     owner: MultilingualValue
     domain_of:
     - MultilingualValue
@@ -143,7 +147,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:language
-    alias: language
     owner: MultilingualValue
     domain_of:
     - Speech
@@ -154,4 +157,4 @@ attributes:
     pattern: ^[a-z]{2}$
 
 ```
-</details>
+</details></div>

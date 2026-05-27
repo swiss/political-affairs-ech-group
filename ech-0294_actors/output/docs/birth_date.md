@@ -59,6 +59,14 @@ URI: [schema:birthDate](http://schema.org/birthDate)
 
 
 
+## Examples
+
+| Value |
+| --- |
+| 1952-03-11 |
+| 1964-07-12 |
+
+
 
 ## Identifier and Mapping Information
 
@@ -95,6 +103,9 @@ description: '[de] Genaues Geburtsdatum.
   the field `birthYear`.
 
   '
+examples:
+- value: '1952-03-11'
+- value: '1964-07-12'
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: schema:birthDate

@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: agenda_item_position 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:agenda_item_position](https://ch.paf.link/schema/operations/agenda_item_position)
-Alias: agenda_item_position
-
 <!-- no inheritance hierarchy -->
 
 
@@ -92,10 +95,9 @@ description: '[en] Integer position of the agenda item in the meeting sequence.
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: agenda_item_position
 domain_of:
 - AgendaItem
 range: integer
 
 ```
-</details>
+</details></div>

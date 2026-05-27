@@ -31,6 +31,8 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 | --- | --- | --- |
 | [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
 | [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [PersonReference](PersonReference.md) | [de] Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifika... |  no  |
+| [GroupReference](GroupReference.md) | [de] Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifika... |  no  |
 | [Occupation](Occupation.md) | [de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19... |  no  |
 | [GroupType](GroupType.md) | [de] Art der Gruppe (z |  no  |
 | [RoleType](RoleType.md) | [de] Rolle einer Person in einer Mitgliedschaft oder Funktion (z |  no  |
@@ -47,7 +49,7 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [Person](Person.md), [Group](Group.md), [Occupation](Occupation.md), [GroupType](GroupType.md), [RoleType](RoleType.md) |
+| Domain Of | [Person](Person.md), [Group](Group.md), [PersonReference](PersonReference.md), [GroupReference](GroupReference.md), [Occupation](Occupation.md), [GroupType](GroupType.md), [RoleType](RoleType.md) |
 | Slot URI | [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label) |
 
 ### Cardinality and Requirements
@@ -106,6 +108,8 @@ slot_uri: mcm:label
 domain_of:
 - Person
 - Group
+- PersonReference
+- GroupReference
 - Occupation
 - GroupType
 - RoleType

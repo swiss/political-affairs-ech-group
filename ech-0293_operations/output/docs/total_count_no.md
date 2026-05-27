@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: total_count_no 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:total_count_no](https://ch.paf.link/schema/operations/total_count_no)
-Alias: total_count_no
-
 <!-- no inheritance hierarchy -->
 
 
@@ -92,10 +95,9 @@ description: '[en] Total number of ''no'' votes.
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: total_count_no
 domain_of:
 - Voting
 range: integer
 
 ```
-</details>
+</details></div>

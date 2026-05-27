@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: version 
 
@@ -7,11 +10,11 @@ _Version number or identifier_
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:version](https://ch.paf.link/schema/operations/version)
-Alias: version
-
 <!-- no inheritance hierarchy -->
 
 
@@ -84,10 +87,9 @@ name: version
 description: Version number or identifier
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: version
 domain_of:
 - Media
 range: string
 
 ```
-</details>
+</details></div>

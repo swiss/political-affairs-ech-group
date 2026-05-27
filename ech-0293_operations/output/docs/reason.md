@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: reason 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:reason](https://ch.paf.link/schema/operations/reason)
-Alias: reason
-
 <!-- no inheritance hierarchy -->
 
 
@@ -93,7 +96,6 @@ description: '[en] Reason for absence or lateness (free-text, multilingual).
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: reason
 domain_of:
 - IndividualAttendance
 range: MultilingualString
@@ -102,4 +104,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

@@ -1,3 +1,9 @@
+---
+search:
+  boost: 2.0
+---
+
+
 # Enum: AgendaItemTypeEnum 
 
 
@@ -10,6 +16,8 @@ _[de] Art des Traktandums, unterscheidet einzelne von gruppierten Traktanden._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 URI: [ops:AgendaItemTypeEnum](https://ch.paf.link/schema/operations/AgendaItemTypeEnum)
 
@@ -86,3 +94,5 @@ permissible_values:
 
 ```
 </details>
+
+</div>

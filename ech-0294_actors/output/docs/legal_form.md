@@ -59,6 +59,15 @@ URI: [act:legalForm](https://ld.ech.ch/schema/0294/actors/legalForm)
 
 
 
+## Examples
+
+| Value |
+| --- |
+| Aktiengesellschaft |
+| Gesellschaft mit beschränkter Haftung |
+| Stiftung |
+
+
 
 ## Identifier and Mapping Information
 
@@ -94,6 +103,10 @@ description: '[en] Legal form of the organization.
   [de] Rechtsform der Organisation.
 
   '
+examples:
+- value: Aktiengesellschaft
+- value: Gesellschaft mit beschränkter Haftung
+- value: Stiftung
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:legalForm

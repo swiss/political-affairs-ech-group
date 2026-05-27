@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: parent_voting 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:parentVoting](https://ch.paf.link/schema/operations/parentVoting)
-Alias: parent_voting
-
 <!-- no inheritance hierarchy -->
 
 
@@ -94,10 +97,9 @@ description: '[en] The ID of the voting associated with the individual vote.
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: ops:parentVoting
-alias: parent_voting
 domain_of:
 - IndividualVote
 range: Voting
 
 ```
-</details>
+</details></div>

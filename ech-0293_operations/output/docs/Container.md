@@ -1,6 +1,11 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Container 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -264,50 +269,50 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:legislature
-    alias: legislatures
     owner: Container
     domain_of:
     - Container
     range: Legislature
     multivalued: true
+    inlined: true
     inlined_as_list: true
   sessions:
     name: sessions
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:session
-    alias: sessions
     owner: Container
     domain_of:
     - Container
     range: Session
     multivalued: true
+    inlined: true
     inlined_as_list: true
   meetings:
     name: meetings
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:meeting
-    alias: meetings
     owner: Container
     domain_of:
     - Container
     - Session
     range: Meeting
     multivalued: true
+    inlined: true
     inlined_as_list: true
   agenda_items:
     name: agenda_items
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:agendaItem
-    alias: agenda_items
     owner: Container
     domain_of:
     - Container
     - JointDebate
     range: AgendaItem
     multivalued: true
+    inlined: true
     inlined_as_list: true
   votings:
     name: votings
@@ -315,12 +320,12 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:voting
-    alias: votings
     owner: Container
     domain_of:
     - Container
     range: Voting
     multivalued: true
+    inlined: true
     inlined_as_list: true
   elections:
     name: elections
@@ -328,12 +333,12 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:election
-    alias: elections
     owner: Container
     domain_of:
     - Container
     range: Election
     multivalued: true
+    inlined: true
     inlined_as_list: true
   individual_votes:
     name: individual_votes
@@ -341,12 +346,12 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:individualVote
-    alias: individual_votes
     owner: Container
     domain_of:
     - Container
     range: IndividualVote
     multivalued: true
+    inlined: true
     inlined_as_list: true
   attendances:
     name: attendances
@@ -354,12 +359,12 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:attendance
-    alias: attendances
     owner: Container
     domain_of:
     - Container
     range: Attendance
     multivalued: true
+    inlined: true
     inlined_as_list: true
   individual_attendances:
     name: individual_attendances
@@ -367,12 +372,12 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:individualAttendance
-    alias: individual_attendances
     owner: Container
     domain_of:
     - Container
     range: IndividualAttendance
     multivalued: true
+    inlined: true
     inlined_as_list: true
   speeches:
     name: speeches
@@ -380,12 +385,12 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:speech
-    alias: speeches
     owner: Container
     domain_of:
     - Container
     range: Speech
     multivalued: true
+    inlined: true
     inlined_as_list: true
   resolutions:
     name: resolutions
@@ -393,12 +398,12 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:resolution
-    alias: resolutions
     owner: Container
     domain_of:
     - Container
     range: Resolution
     multivalued: true
+    inlined: true
     inlined_as_list: true
   local_id:
     name: local_id
@@ -410,7 +415,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: Container
     domain_of:
     - HasIdentification
@@ -426,7 +430,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: Container
     domain_of:
     - HasIdentification
@@ -444,7 +447,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: Container
     domain_of:
     - HasIdentification
@@ -452,4 +454,4 @@ attributes:
 tree_root: true
 
 ```
-</details>
+</details></div>

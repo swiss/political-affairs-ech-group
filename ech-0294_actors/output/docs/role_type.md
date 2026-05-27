@@ -29,6 +29,7 @@ URI: [act:roleType](https://ld.ech.ch/schema/0294/actors/roleType)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [PersonReference](PersonReference.md) | [de] Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifika... |  no  |
 | [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |  no  |
 
 
@@ -43,7 +44,7 @@ URI: [act:roleType](https://ld.ech.ch/schema/0294/actors/roleType)
 | Property | Value |
 | --- | --- |
 | Range | [RoleType](RoleType.md) |
-| Domain Of | [Membership](Membership.md) |
+| Domain Of | [PersonReference](PersonReference.md), [Membership](Membership.md) |
 | Slot URI | [act:roleType](https://ld.ech.ch/schema/0294/actors/roleType) |
 
 ### Cardinality and Requirements
@@ -98,6 +99,7 @@ from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:roleType
 domain_of:
+- PersonReference
 - Membership
 range: RoleType
 

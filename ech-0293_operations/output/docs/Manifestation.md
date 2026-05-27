@@ -1,6 +1,11 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Manifestation 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -135,7 +140,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     identifier: true
-    alias: id
     owner: Manifestation
     domain_of:
     - Work
@@ -148,7 +152,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: meta:dates
-    alias: dates
     owner: Manifestation
     domain_of:
     - Expression
@@ -167,7 +170,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: meta:format
-    alias: format
     owner: Manifestation
     domain_of:
     - Manifestation
@@ -176,7 +178,6 @@ attributes:
     name: url
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: url
     owner: Manifestation
     domain_of:
     - Session
@@ -190,4 +191,4 @@ attributes:
     inlined_as_list: true
 
 ```
-</details>
+</details></div>

@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: individual_vote_type 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:individual_vote_type](https://ch.paf.link/schema/operations/individual_vote_type)
-Alias: individual_vote_type
-
 <!-- no inheritance hierarchy -->
 
 
@@ -92,10 +95,9 @@ description: '[en] Type of vote cast (yes, no, abstention, no vote, etc.).
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: individual_vote_type
 domain_of:
 - IndividualVote
 range: IndividualVoteTypeEnum
 
 ```
-</details>
+</details></div>

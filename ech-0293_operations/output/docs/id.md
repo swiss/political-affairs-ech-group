@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: id 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [ops:id](https://ch.paf.link/schema/operations/id)
-Alias: id
-
 <!-- no inheritance hierarchy -->
 
 
@@ -17,9 +20,9 @@ Alias: id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Work](Work.md) |  |  no  |
 | [Expression](Expression.md) |  |  no  |
 | [Manifestation](Manifestation.md) |  |  no  |
-| [Work](Work.md) |  |  no  |
 
 
 
@@ -89,7 +92,6 @@ name: id
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 identifier: true
-alias: id
 domain_of:
 - Work
 - Expression
@@ -98,4 +100,4 @@ range: string
 required: true
 
 ```
-</details>
+</details></div>

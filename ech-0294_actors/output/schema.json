@@ -455,6 +455,63 @@
             "title": "Group",
             "type": "object"
         },
+        "GroupReference": {
+            "additionalProperties": false,
+            "description": "[de] Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verkn\u00fcpfung.\n[en] Lightweight reference to a group with key identification data at time of linking.",
+            "properties": {
+                "abbreviation": {
+                    "description": "[de] Abk\u00fcrzung (kann mehrsprachig sein).\n[en] Abbreviation (can be multilingual).\n",
+                    "items": {
+                        "$ref": "#/$defs/MultilingualValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "global_uri": {
+                    "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
+                    "type": "string"
+                },
+                "group_type": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/GroupType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "[de] Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder \u00e4hnliches. Die genaue Bennenung und Beschreibung der Gruppierung wird \u00fcber `name` gemacht.\n[en] Link to the group type.\n"
+                },
+                "label": {
+                    "description": "[de] M\u00f6glichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).\n[en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "local_id": {
+                    "description": "[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n[en] Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "wikidata_uri": {
+                    "description": "[de] Eine URI, die auf eine Wikidata-Entit\u00e4t verweist, z.B. https://www.wikidata.org/wiki/Q39 f\u00fcr die Schweiz.\n[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "global_uri"
+            ],
+            "title": "GroupReference",
+            "type": "object"
+        },
         "GroupType": {
             "additionalProperties": false,
             "description": "[de] Art der Gruppe (z.B. Partei, Kommission, Parlament, Departement).\n[en] Type of group (e.g., party, committee, parliament, department).",
@@ -613,13 +670,6 @@
                         "null"
                     ]
                 },
-                "concerned_person": {
-                    "description": "[de] Link zu einer Person, auf die sich die Zugeh\u00f6rigkeit bezieht.\n[en] Link to a person that the affiliation concerns.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "date_created": {
                     "description": "[de] Das Datum, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date when an entity was created.\n",
                     "format": "date",
@@ -715,6 +765,17 @@
                         "string",
                         "null"
                     ]
+                },
+                "person_reference": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/PersonReference"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "[de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verkn\u00fcpfung.\n[en] Reference to a person with snapshot data at time of linking.\n"
                 },
                 "valid_from": {
                     "description": "[de] Das Datum, ab dem die Information g\u00fcltig ist.\n[en] The date from which the information is valid.\n",
@@ -1010,20 +1071,6 @@
                         "null"
                     ]
                 },
-                "concerned_group": {
-                    "description": "[de] Link zu einer Gruppe, auf die sich die Zugeh\u00f6rigkeit bezieht.\n[en] Link to a group that the affiliation concerns.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "concerned_person": {
-                    "description": "[de] Link zu einer Person, auf die sich die Zugeh\u00f6rigkeit bezieht.\n[en] Link to a person that the affiliation concerns.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "date_created": {
                     "description": "[de] Das Datum, an dem eine Entit\u00e4t erstellt wurde.\n[en] The date when an entity was created.\n",
                     "format": "date",
@@ -1060,6 +1107,17 @@
                     "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
                     "type": "string"
                 },
+                "group_reference": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/GroupReference"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "[de] Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verkn\u00fcpfung.\n[en] Reference to a group with snapshot data at time of linking.\n"
+                },
                 "is_active": {
                     "description": "[de] Gibt an, ob die Information aktuell g\u00fcltig ist. Kann n\u00fctzlich sein, wenn diese Information explizit vorhanden ist.\n[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.\n",
                     "type": [
@@ -1073,6 +1131,17 @@
                         "string",
                         "null"
                     ]
+                },
+                "person_reference": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/PersonReference"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "[de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verkn\u00fcpfung.\n[en] Reference to a person with snapshot data at time of linking.\n"
                 },
                 "role_type": {
                     "anyOf": [
@@ -1469,6 +1538,67 @@
                 "global_uri"
             ],
             "title": "Person",
+            "type": "object"
+        },
+        "PersonReference": {
+            "additionalProperties": false,
+            "description": "[de] Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verkn\u00fcpfung. Erm\u00f6glicht historische Korrektheit auch wenn sich die Person sp\u00e4ter \u00e4ndert.\n[en] Lightweight reference to a person with key identification data at time of linking. Preserves historical accuracy even if the person changes later.",
+            "properties": {
+                "global_uri": {
+                    "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
+                    "type": "string"
+                },
+                "group_label": {
+                    "description": "[de] Name des Gremiums zum Zeitpunkt der Verkn\u00fcpfung.\n[en] Name of the body/group at time of linking.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "description": "[de] M\u00f6glichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).\n[en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "label_long": {
+                    "description": "[de] M\u00f6glichkeit bei einer strukturierten Information, ein erweitertesLabel zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.).\n[en] Option to assign an extended label to a structured piece of information (e.g., display name with title, position, etc.).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "local_id": {
+                    "description": "[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n[en] Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "role_type": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/RoleType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "[en] Role of the person in the membership or function.\n[de] Rolle der Person in der Mitgliedschaft oder Funktion.\n"
+                },
+                "wikidata_uri": {
+                    "description": "[de] Eine URI, die auf eine Wikidata-Entit\u00e4t verweist, z.B. https://www.wikidata.org/wiki/Q39 f\u00fcr die Schweiz.\n[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "global_uri"
+            ],
+            "title": "PersonReference",
             "type": "object"
         },
         "RoleEnum": {

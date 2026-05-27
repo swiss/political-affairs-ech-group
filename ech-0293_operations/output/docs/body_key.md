@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: body_key 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:body_key](https://ch.paf.link/schema/operations/body_key)
-Alias: body_key
-
 <!-- no inheritance hierarchy -->
 
 
@@ -26,8 +29,8 @@ Alias: body_key
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 
 
 
@@ -95,11 +98,10 @@ description: '[en] Key identifying the political body or jurisdiction (e.g., BE 
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: body_key
 domain_of:
 - Session
 - Meeting
 range: string
 
 ```
-</details>
+</details></div>

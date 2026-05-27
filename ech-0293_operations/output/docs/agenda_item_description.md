@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: agenda_item_description 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:agenda_item_description](https://ch.paf.link/schema/operations/agenda_item_description)
-Alias: agenda_item_description
-
 <!-- no inheritance hierarchy -->
 
 
@@ -93,7 +96,6 @@ description: '[en] Subtitle or detailed description of the agenda item.
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: agenda_item_description
 domain_of:
 - AgendaItem
 range: MultilingualString
@@ -102,4 +104,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

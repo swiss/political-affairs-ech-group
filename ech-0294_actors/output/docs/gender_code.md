@@ -59,6 +59,13 @@ URI: [act:genderCode](https://ld.ech.ch/schema/0294/actors/genderCode)
 
 
 
+## Examples
+
+| Value |
+| --- |
+| male |
+
+
 
 ## Identifier and Mapping Information
 
@@ -94,6 +101,8 @@ description: '[de] Geschlechtscode (z.B. gemäß ISO 5218).
   [en] Gender code (e.g., according to ISO 5218).
 
   '
+examples:
+- value: male
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:genderCode

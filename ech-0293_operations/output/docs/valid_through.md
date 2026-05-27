@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: valid_through 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [schema:validThrough](http://schema.org/validThrough)
-Alias: valid_through
-
 <!-- no inheritance hierarchy -->
 
 
@@ -94,10 +97,9 @@ description: '[de] Das Datum, bis und mit dem die Information gültig ist.
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: schema:validThrough
-alias: valid_through
 domain_of:
 - HasTemporalValidity
 range: date
 
 ```
-</details>
+</details></div>

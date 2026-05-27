@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: total_count 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:total_count](https://ch.paf.link/schema/operations/total_count)
-Alias: total_count
-
 <!-- no inheritance hierarchy -->
 
 
@@ -93,10 +96,9 @@ description: '[en] Total number of members of the body (reference value for quor
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: total_count
 domain_of:
 - Attendance
 range: integer
 
 ```
-</details>
+</details></div>

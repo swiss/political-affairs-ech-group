@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: parent_agenda_item 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:parent_agenda_item](https://ch.paf.link/schema/operations/parent_agenda_item)
-Alias: parent_agenda_item
-
 <!-- no inheritance hierarchy -->
 
 
@@ -27,8 +30,8 @@ Alias: parent_agenda_item
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
-| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 | [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
+| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 
 
 
@@ -95,7 +98,6 @@ description: '[en] If needed, this slot builds a hierarchy of agenda items.
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: parent_agenda_item
 domain_of:
 - AgendaItem
 - Voting
@@ -103,4 +105,4 @@ domain_of:
 range: string
 
 ```
-</details>
+</details></div>

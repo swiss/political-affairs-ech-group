@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: label_abstention 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:label_abstention](https://ch.paf.link/schema/operations/label_abstention)
-Alias: label_abstention
-
 <!-- no inheritance hierarchy -->
 
 
@@ -92,10 +95,9 @@ description: '[en] Meaning of an ''abstention'' vote.
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: label_abstention
 domain_of:
 - Voting
 range: string
 
 ```
-</details>
+</details></div>

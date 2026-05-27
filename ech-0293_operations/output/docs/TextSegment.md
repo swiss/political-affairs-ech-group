@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: TextSegment 
 
@@ -10,6 +13,8 @@ _[de] Ein Textsegment wie Querverweise oder Zwischentitel in Sitzungsprotokollen
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -137,7 +142,6 @@ attributes:
     name: text
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    alias: text
     owner: TextSegment
     domain_of:
     - Speech
@@ -155,7 +159,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: TextSegment
     domain_of:
     - HasIdentification
@@ -171,7 +174,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: TextSegment
     domain_of:
     - HasIdentification
@@ -189,11 +191,10 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: TextSegment
     domain_of:
     - HasIdentification
     range: uriorcurie
 
 ```
-</details>
+</details></div>

@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: media_type 
 
@@ -7,11 +10,11 @@ _Type of media (audio, video, document)_
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:media_type](https://ch.paf.link/schema/operations/media_type)
-Alias: media_type
-
 <!-- no inheritance hierarchy -->
 
 
@@ -85,11 +88,10 @@ name: media_type
 description: Type of media (audio, video, document)
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: media_type
 domain_of:
 - Speech
 - Media
 range: string
 
 ```
-</details>
+</details></div>

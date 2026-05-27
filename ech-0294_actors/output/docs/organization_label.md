@@ -59,6 +59,15 @@ URI: [act:organizationLabel](https://ld.ech.ch/schema/0294/actors/organizationLa
 
 
 
+## Examples
+
+| Value |
+| --- |
+| ASTAG Schweizerischer Nutzfahrzeugverband, Bern |
+| Allianz Sicherheit Schweiz, Baden |
+| Birchmeier Holding AG, Döttingen |
+
+
 
 ## Identifier and Mapping Information
 
@@ -94,6 +103,10 @@ description: '[en] Label of the organization.
   [de] Bezeichnung der Organisation.
 
   '
+examples:
+- value: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+- value: Allianz Sicherheit Schweiz, Baden
+- value: Birchmeier Holding AG, Döttingen
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:organizationLabel

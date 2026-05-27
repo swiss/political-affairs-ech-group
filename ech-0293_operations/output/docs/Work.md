@@ -1,6 +1,11 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Work 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -152,7 +157,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     identifier: true
-    alias: id
     owner: Work
     domain_of:
     - Work
@@ -165,7 +169,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: meta:workType
-    alias: work_type
     owner: Work
     domain_of:
     - Work
@@ -182,7 +185,6 @@ attributes:
     rank: 1000
     slot_uri: meta:documentCategory
     ifabsent: string(other)
-    alias: document_category
     owner: Work
     domain_of:
     - Work
@@ -192,7 +194,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: meta:expressions
-    alias: expressions
     owner: Work
     domain_of:
     - Work
@@ -202,4 +203,4 @@ attributes:
     inlined_as_list: true
 
 ```
-</details>
+</details></div>

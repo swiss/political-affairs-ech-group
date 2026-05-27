@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: agenda_item_number 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:agenda_item_number](https://ch.paf.link/schema/operations/agenda_item_number)
-Alias: agenda_item_number
-
 <!-- no inheritance hierarchy -->
 
 
@@ -93,10 +96,9 @@ description: '[en] Sequential number of the agenda item (string type to support 
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: agenda_item_number
 domain_of:
 - AgendaItem
 range: string
 
 ```
-</details>
+</details></div>

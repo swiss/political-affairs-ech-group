@@ -60,6 +60,14 @@ URI: [act:interestType](https://ld.ech.ch/schema/0294/actors/interestType)
 
 
 
+## Examples
+
+| Value |
+| --- |
+| association |
+| professional_activity |
+
+
 
 ## Identifier and Mapping Information
 
@@ -96,6 +104,9 @@ description: '[de] Art der Interessenbindung (Berufliche Tätigkeit, Politische 
   [en] Type of interest link (professional activity, political office, association).
 
   '
+examples:
+- value: association
+- value: professional_activity
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:interestType

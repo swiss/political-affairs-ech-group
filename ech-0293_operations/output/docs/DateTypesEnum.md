@@ -1,6 +1,14 @@
+---
+search:
+  boost: 2.0
+---
+
+
 # Enum: DateTypesEnum 
 
 
+
+<div data-search-exclude markdown="1">
 
 URI: [ops:DateTypesEnum](https://ch.paf.link/schema/operations/DateTypesEnum)
 
@@ -61,3 +69,5 @@ permissible_values:
 
 ```
 </details>
+
+</div>

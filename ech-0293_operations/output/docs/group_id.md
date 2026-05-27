@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: group_id 
 
@@ -7,11 +10,11 @@ _Identifier of the group or body_
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:group_id](https://ch.paf.link/schema/operations/group_id)
-Alias: group_id
-
 <!-- no inheritance hierarchy -->
 
 
@@ -84,10 +87,9 @@ name: group_id
 description: Identifier of the group or body
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: group_id
 domain_of:
 - Meeting
 range: string
 
 ```
-</details>
+</details></div>

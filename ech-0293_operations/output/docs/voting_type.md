@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: voting_type 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:voting_type](https://ch.paf.link/schema/operations/voting_type)
-Alias: voting_type
-
 <!-- no inheritance hierarchy -->
 
 
@@ -92,10 +95,9 @@ description: '[en] Type of voting procedure (preliminary, final, secret, etc.).
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: voting_type
 domain_of:
 - Voting
 range: VotingTypeEnum
 
 ```
-</details>
+</details></div>

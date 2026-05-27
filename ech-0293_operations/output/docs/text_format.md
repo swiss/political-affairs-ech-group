@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: text_format 
 
@@ -11,11 +14,11 @@ __
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:text_format](https://ch.paf.link/schema/operations/text_format)
-Alias: text_format
-
 <!-- no inheritance hierarchy -->
 
 
@@ -92,10 +95,9 @@ description: '[en] Format of text (text, html, html_with_timestamps)
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: text_format
 domain_of:
 - Speech
 range: string
 
 ```
-</details>
+</details></div>

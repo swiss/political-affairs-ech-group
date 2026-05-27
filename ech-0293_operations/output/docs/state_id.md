@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: state_id 
 
@@ -7,11 +10,11 @@ _State identifier (reference to state enum or custom state)_
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:state_id](https://ch.paf.link/schema/operations/state_id)
-Alias: state_id
-
 <!-- no inheritance hierarchy -->
 
 
@@ -84,10 +87,9 @@ name: state_id
 description: State identifier (reference to state enum or custom state)
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: state_id
 domain_of:
 - AgendaItem
 range: string
 
 ```
-</details>
+</details></div>

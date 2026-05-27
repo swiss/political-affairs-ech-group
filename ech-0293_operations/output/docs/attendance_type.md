@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: attendance_type 
 
@@ -7,11 +10,11 @@ _Type of individual attendance_
 
 
 
+<div data-search-exclude markdown="1">
+
 
 
 URI: [ops:attendance_type](https://ch.paf.link/schema/operations/attendance_type)
-Alias: attendance_type
-
 <!-- no inheritance hierarchy -->
 
 
@@ -84,10 +87,9 @@ name: attendance_type
 description: Type of individual attendance
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-alias: attendance_type
 domain_of:
 - IndividualAttendance
 range: AttendanceTypeEnum
 
 ```
-</details>
+</details></div>

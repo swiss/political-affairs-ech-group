@@ -1,4 +1,7 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: HasIdentification 
 
@@ -10,6 +13,8 @@ _[en] A mixin class that provides slots for the identification of an entity._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -51,6 +56,8 @@ URI: [ops:HasIdentification](https://ch.paf.link/schema/operations/HasIdentifica
         click Motion href "../Motion/"
       HasIdentification <|-- Media
         click Media href "../Media/"
+      HasIdentification <|-- IsProcessStep
+        click IsProcessStep href "../IsProcessStep/"
       
       HasIdentification : global_uri
         
@@ -101,6 +108,7 @@ URI: [ops:HasIdentification](https://ch.paf.link/schema/operations/HasIdentifica
 | [TextSegment](TextSegment.md) | [en] A text segment such as cross-references or subtitles in meeting protocol... |
 | [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |
 | [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |
+| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |
 
 
 
@@ -190,7 +198,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    alias: local_id
     owner: HasIdentification
     domain_of:
     - HasIdentification
@@ -206,7 +213,6 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    alias: global_uri
     owner: HasIdentification
     domain_of:
     - HasIdentification
@@ -224,11 +230,10 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    alias: wikidata_uri
     owner: HasIdentification
     domain_of:
     - HasIdentification
     range: uriorcurie
 
 ```
-</details>
+</details></div>

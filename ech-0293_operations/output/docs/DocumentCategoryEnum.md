@@ -1,3 +1,9 @@
+---
+search:
+  boost: 2.0
+---
+
+
 # Enum: DocumentCategoryEnum 
 
 
@@ -10,6 +16,8 @@ _[en] Categories for classifying documents referenced in eCH standards 0292-0297
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 URI: [ops:DocumentCategoryEnum](https://ch.paf.link/schema/operations/DocumentCategoryEnum)
 
@@ -364,3 +372,5 @@ permissible_values:
 
 ```
 </details>
+
+</div>

@@ -59,6 +59,14 @@ URI: [act:trainingType](https://ld.ech.ch/schema/0294/actors/trainingType)
 
 
 
+## Examples
+
+| Value |
+| --- |
+| schulabschluss |
+| uni |
+
+
 
 ## Identifier and Mapping Information
 
@@ -94,6 +102,9 @@ description: '[de] Typ der Ausbildung oder Bildung.
   [en] Type of training or education.
 
   '
+examples:
+- value: schulabschluss
+- value: uni
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:trainingType

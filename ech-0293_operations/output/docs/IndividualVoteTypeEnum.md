@@ -1,3 +1,9 @@
+---
+search:
+  boost: 2.0
+---
+
+
 # Enum: IndividualVoteTypeEnum 
 
 
@@ -10,6 +16,8 @@ _[de] Art der Einzelstimme eines Mitglieds._
 __
 
 
+
+<div data-search-exclude markdown="1">
 
 URI: [ops:IndividualVoteTypeEnum](https://ch.paf.link/schema/operations/IndividualVoteTypeEnum)
 
@@ -121,3 +129,5 @@ permissible_values:
 
 ```
 </details>
+
+</div>
