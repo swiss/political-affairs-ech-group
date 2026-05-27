@@ -1,7 +1,4 @@
----
-search:
-  boost: 10.0
----
+
 
 # Class: Container 
 
@@ -22,14 +19,140 @@ __
 ## Attribute
 
 | Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [persons](persons.md) | * <br/> [Person](Person.md) | [de] Sammlung von Personen | direct |
-| [groups](groups.md) | * <br/> [Group](Group.md) | [de] Sammlung von Gruppen | direct |
-| [memberships](memberships.md) | * <br/> [Membership](Membership.md) | [de] Sammlung von Mitgliedschaften | direct |
-| [interest_links](interest_links.md) | * <br/> [InterestLink](InterestLink.md) | [de] Sammlung von Interessenbindungen | direct |
-| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |
-| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](HasIdentification.md) |
-| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](HasIdentification.md) |
+| --  | -- | ------- | -- |
+| SlotDefinition({
+  'name': 'persons',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': '[de] Sammlung von Personen.\n[en] Collection of persons.\n',
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:person',
+  'owner': 'Container',
+  'domain_of': ['Container'],
+  'range': 'Person',
+  'multivalued': True,
+  'inlined': True,
+  'inlined_as_list': True
+}) | * <br/> [Person](Person.md) | [de] Sammlung von Personen.
+[en] Collection of persons.
+ | direct |
+| SlotDefinition({
+  'name': 'groups',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': '[de] Sammlung von Gruppen.\n[en] Collection of groups.\n',
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:group',
+  'owner': 'Container',
+  'domain_of': ['Container'],
+  'range': 'Group',
+  'multivalued': True,
+  'inlined': True,
+  'inlined_as_list': True
+}) | * <br/> [Group](Group.md) | [de] Sammlung von Gruppen.
+[en] Collection of groups.
+ | direct |
+| SlotDefinition({
+  'name': 'memberships',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': '[de] Sammlung von Mitgliedschaften.\n[en] Collection of memberships.\n',
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:membership',
+  'owner': 'Container',
+  'domain_of': ['Container'],
+  'range': 'Membership',
+  'multivalued': True,
+  'inlined': True,
+  'inlined_as_list': True
+}) | * <br/> [Membership](Membership.md) | [de] Sammlung von Mitgliedschaften.
+[en] Collection of memberships.
+ | direct |
+| SlotDefinition({
+  'name': 'interest_links',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Sammlung von Interessenbindungen.\n'
+     '[en] Collection of interest links.range: InterestLink\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:interestLink',
+  'owner': 'Container',
+  'domain_of': ['Container', 'Person'],
+  'range': 'InterestLink',
+  'multivalued': True,
+  'inlined': True,
+  'inlined_as_list': True
+}) | * <br/> [InterestLink](InterestLink.md) | [de] Sammlung von Interessenbindungen.
+[en] Collection of interest links.range: InterestLink
+ | direct |
+| SlotDefinition({
+  'name': 'local_id',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n'
+     '[en] Local identifier. For example, a UUID from the council information '
+     'system.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:localId',
+  'owner': 'Container',
+  'domain_of': ['HasIdentification'],
+  'range': 'string'
+}) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+[en] Local identifier. For example, a UUID from the council information system.
+ | [HasIdentification](HasIdentification.md) |
+| SlotDefinition({
+  'name': 'global_uri',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Eine eindeutige, global gültige URI für die Entität.\n'
+     '[en] A unique, globally valid URI for the entity.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:globalURI',
+  'identifier': True,
+  'owner': 'Container',
+  'domain_of': ['HasIdentification'],
+  'range': 'uriorcurie',
+  'required': True
+}) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität.
+[en] A unique, globally valid URI for the entity.
+ | [HasIdentification](HasIdentification.md) |
+| SlotDefinition({
+  'name': 'wikidata_uri',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. '
+     'https://www.wikidata.org/wiki/Q39 für die Schweiz.\n'
+     '[en] A URI that refers to a Wikidata entity, e.g. '
+     'https://www.wikidata.org/wiki/Q39 for Switzerland.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:wikidataUri',
+  'owner': 'Container',
+  'domain_of': ['HasIdentification'],
+  'range': 'uriorcurie'
+}) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz.
+[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.
+ | [HasIdentification](HasIdentification.md) |
 
 
 
@@ -70,54 +193,6 @@ __
 
 
 ## Examples
-### Example: Container-swiss_politicians
-
-```yaml
-global_uri: act:swiss_politicians_example
-persons:
-  - local_id: 4032
-    global_uri: https://data-example.parlament.ch/person/4032
-    wikidata_uri: https://www.wikidata.org/wiki/Q813067
-    label: Beat Jans
-    label_long: Beat Jans, dipl. nat. ETH
-    birth_year: 1964
-    birth_date: 1964-07-12
-    picture: https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg
-    names:
-      - name_type: PersonFirstName
-        value: Beat
-      - name_type: PersonOfficialName
-        value: Jans
-        valid_from: 1964-07-12
-    addresses:
-      - address_type: businessAddress
-        postal_locality: Basel-Stadt
-    language_proficiencies:
-      - language: de
-        is_correspondence: true
-        is_native: true
-    citizenships:
-      - country: CH
-        valid_from: 1964-07-12
-    genders:
-      - gender_code: male
-        valid_from: 1964-07-12
-    occupations:
-      - label: Politiker
-        valid_from: 1964-01-01
-        is_active: true
-    trainings:
-      - training_type: uni
-        value: dipl. nat. ETH
-    contacts:
-      - contact_type: email
-        value: beat.jans@admin.ch
-      - contact_type: contact_website
-        value: http://www.beat-jans.ch
-    electoral_district:
-      district: Basel-Stadt
-      valid_from: 2010-01-01
-```
 ### Example: Container-interest_links
 
 ```yaml
@@ -326,6 +401,54 @@ persons:
       valid_from: 2020-01-01
       valid_through: 2025-01-01
 
+```
+### Example: Container-swiss_politicians
+
+```yaml
+global_uri: act:swiss_politicians_example
+persons:
+  - local_id: 4032
+    global_uri: https://data-example.parlament.ch/person/4032
+    wikidata_uri: https://www.wikidata.org/wiki/Q813067
+    label: Beat Jans
+    label_long: Beat Jans, dipl. nat. ETH
+    birth_year: 1964
+    birth_date: 1964-07-12
+    picture: https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg
+    names:
+      - name_type: PersonFirstName
+        value: Beat
+      - name_type: PersonOfficialName
+        value: Jans
+        valid_from: 1964-07-12
+    addresses:
+      - address_type: businessAddress
+        postal_locality: Basel-Stadt
+    language_proficiencies:
+      - language: de
+        is_correspondence: true
+        is_native: true
+    citizenships:
+      - country: CH
+        valid_from: 1964-07-12
+    genders:
+      - gender_code: male
+        valid_from: 1964-07-12
+    occupations:
+      - label: Politiker
+        valid_from: 1964-01-01
+        is_active: true
+    trainings:
+      - training_type: uni
+        value: dipl. nat. ETH
+    contacts:
+      - contact_type: email
+        value: beat.jans@admin.ch
+      - contact_type: contact_website
+        value: http://www.beat-jans.ch
+    electoral_district:
+      district: Basel-Stadt
+      valid_from: 2010-01-01
 ```
 
 

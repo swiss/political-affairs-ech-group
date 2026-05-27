@@ -1,7 +1,4 @@
----
-search:
-  boost: 10.0
----
+
 
 # Class: LanguageProficiency 
 
@@ -22,10 +19,59 @@ __
 ## Attribute
 
 | Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [language](language.md) | 0..1 <br/> [String](String.md) | [de] Sprachcode im ISO 639-1 Format | direct |
-| [is_correspondence](is_correspondence.md) | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob es sich um die bevorzugte Sprache handelt | direct |
-| [is_native](is_native.md) | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob es sich um die Muttersprache handelt | direct |
+| --  | -- | ------- | -- |
+| SlotDefinition({
+  'name': 'language',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Sprachcode im ISO 639-1 Format.\n'
+     '[en] Language code in ISO 639-1 format.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:language',
+  'owner': 'LanguageProficiency',
+  'domain_of': ['LanguageProficiency', 'MultilingualValue'],
+  'range': 'string',
+  'pattern': '^[a-z]{2}$'
+}) | 0..1 <br/> [String](String.md) | [de] Sprachcode im ISO 639-1 Format.
+[en] Language code in ISO 639-1 format.
+ | direct |
+| SlotDefinition({
+  'name': 'is_correspondence',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Gibt an, ob es sich um die bevorzugte Sprache handelt.\n'
+     '[en] Indicates if this is the preferred language.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:isCorrespondence',
+  'owner': 'LanguageProficiency',
+  'domain_of': ['LanguageProficiency'],
+  'range': 'boolean'
+}) | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob es sich um die bevorzugte Sprache handelt.
+[en] Indicates if this is the preferred language.
+ | direct |
+| SlotDefinition({
+  'name': 'is_native',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Gibt an, ob es sich um die Muttersprache handelt.\n'
+     '[en] Indicates if this is the native language.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:isNative',
+  'owner': 'LanguageProficiency',
+  'domain_of': ['LanguageProficiency'],
+  'range': 'boolean'
+}) | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob es sich um die Muttersprache handelt.
+[en] Indicates if this is the native language.
+ | direct |
 
 
 

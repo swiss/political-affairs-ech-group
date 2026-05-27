@@ -105,10 +105,7 @@ names:
     valid_from: 2010-06-16
 ```
 
----
-search:
-  boost: 10.0
----
+
 
 # Class: Person 
 
@@ -129,30 +126,440 @@ __
 ## Attribute
 
 | Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [label](#label) | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben ... | direct |
-| [label_long](#label_long) | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel z... | direct |
-| [birth_year](#birth_year) | 0..1 <br/> [Integer](#Integer) | [de] Geburtsjahr | direct |
-| [birth_date](#birth_date) | 0..1 <br/> [Date](#Date) | [de] Genaues Geburtsdatum | direct |
-| [death_date](#death_date) | 0..1 <br/> [Date](#Date) | [de] Genaues Todesdatum | direct |
-| [picture](#picture) | 0..1 <br/> [Uri](#Uri) | [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF) | direct |
-| [names](#names) | * <br/> [Name](#Name) | [en] Names of the person with type and value | direct |
-| [addresses](#addresses) | * <br/> [Address](#Address) | [de] Adressen mit Typ (privat, geschäftlich, lokal) | direct |
-| [language_proficiencies](#language_proficiencies) | * <br/> [LanguageProficiency](#LanguageProficiency) | [de] Sprachkompetenzen der Person | direct |
-| [citizenships](#citizenships) | * <br/> [Citizenship](#Citizenship) | [de] Staatsbürgerschaften der Person | direct |
-| [genders](#genders) | * <br/> [Gender](#Gender) | [de] Geschlecht der Person | direct |
-| [occupations](#occupations) | * <br/> [Occupation](#Occupation) | [de] Berufe oder Tätigkeiten der Person | direct |
-| [trainings](#trainings) | * <br/> [Training](#Training) | [de] Ausbildungen oder Bildungen der Person | direct |
-| [contacts](#contacts) | * <br/> [Contact](#Contact) | [en] Contact information (email, website, social media) | direct |
-| [electoral_district](#electoral_district) | 0..1 <br/> [ElectoralDistrict](#ElectoralDistrict) | [de] Link zum Wahlbezirk | direct |
-| [interest_links](#interest_links) | * <br/> [InterestLink](#InterestLink) | [de] Sammlung von Interessenbindungen | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
-| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| --  | -- | ------- | -- |
+| SlotDefinition({
+  'name': 'label',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben '
+     '(bspw. Anzeigename, Anstellung, etc.).\n'
+     '[en] Option to assign a label to a structured piece of information (e.g., '
+     'display name, position, etc.).\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:label',
+  'owner': 'Person',
+  'domain_of': ['Person', 'Group', 'PersonReference', 'GroupReference', 'Occupation',
+    'GroupType', 'RoleType'],
+  'range': 'string'
+}) | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).
+[en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).
+ | direct |
+| SlotDefinition({
+  'name': 'label_long',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel '
+     'zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.).\n'
+     '[en] Option to assign an extended label to a structured piece of information '
+     '(e.g., display name with title, position, etc.).\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:labelLong',
+  'owner': 'Person',
+  'domain_of': ['Person', 'PersonReference'],
+  'range': 'string'
+}) | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.).
+[en] Option to assign an extended label to a structured piece of information (e.g., display name with title, position, etc.).
+ | direct |
+| SlotDefinition({
+  'name': 'birth_year',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Geburtsjahr.\n'
+     '[en] Year of birth. Only to be used, if there is no full `birthDate` '
+     'available.\n'),
+  'alt_descriptions': JsonObj(),
+  'examples': [Example({'value': '1952'}), Example({'value': '1964'})],
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:birthYear',
+  'owner': 'Person',
+  'domain_of': ['Person'],
+  'range': 'integer'
+}) | 0..1 <br/> [Integer](#Integer) | [de] Geburtsjahr.
+[en] Year of birth. Only to be used, if there is no full `birthDate` available.
+ | direct |
+| SlotDefinition({
+  'name': 'birth_date',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Genaues Geburtsdatum.\n'
+     '[en] Exact date of birth if available and public. This field has precedence '
+     'over the field `birthYear`.\n'),
+  'alt_descriptions': JsonObj(),
+  'examples': [Example({'value': '1952-03-11'}), Example({'value': '1964-07-12'})],
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'schema:birthDate',
+  'owner': 'Person',
+  'domain_of': ['Person'],
+  'range': 'date'
+}) | 0..1 <br/> [Date](#Date) | [de] Genaues Geburtsdatum.
+[en] Exact date of birth if available and public. This field has precedence over the field `birthYear`.
+ | direct |
+| SlotDefinition({
+  'name': 'death_date',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': '[de] Genaues Todesdatum.\n[en] Exact date of death.\n',
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'schema:deathDate',
+  'owner': 'Person',
+  'domain_of': ['Person'],
+  'range': 'date'
+}) | 0..1 <br/> [Date](#Date) | [de] Genaues Todesdatum.
+[en] Exact date of death.
+ | direct |
+| SlotDefinition({
+  'name': 'picture',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).\n'
+     '[en] Link to an image (preferred: PNG, then JPG, then GIF).\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'owner': 'Person',
+  'domain_of': ['Person'],
+  'range': 'uri'
+}) | 0..1 <br/> [Uri](#Uri) | [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).
+[en] Link to an image (preferred: PNG, then JPG, then GIF).
+ | direct |
+| SlotDefinition({
+  'name': 'names',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[en] Names of the person with type and value.\n'
+     '[de] Namen der Person mit Typ und Wert.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:name',
+  'owner': 'Person',
+  'domain_of': ['Person'],
+  'range': 'Name',
+  'multivalued': True,
+  'inlined': True,
+  'inlined_as_list': True
+}) | * <br/> [Name](#Name) | [en] Names of the person with type and value.
+[de] Namen der Person mit Typ und Wert.
+ | direct |
+| SlotDefinition({
+  'name': 'addresses',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Adressen mit Typ (privat, geschäftlich, lokal).\n'
+     '[en] Addresses with type (private, business, local).\n'),
+  'alt_descriptions': JsonObj(),
+  'examples': [Example({
+      'value': ("[{'address_type': 'businessAddress', 'address_URI': "
+         "'https://ld.admin.ch/address/12345', 'street_address': 'Bundesplatz 3', "
+         "'postal_code': '3003', 'postal_locality': 'Bern'}, {'address_type': "
+         "'privateAddress', 'postal_locality': 'Zürich'}]")
+    })],
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:address',
+  'owner': 'Person',
+  'domain_of': ['Person', 'Group'],
+  'range': 'Address',
+  'multivalued': True,
+  'inlined': True,
+  'inlined_as_list': True
+}) | * <br/> [Address](#Address) | [de] Adressen mit Typ (privat, geschäftlich, lokal).
+[en] Addresses with type (private, business, local).
+ | direct |
+| SlotDefinition({
+  'name': 'language_proficiencies',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Sprachkompetenzen der Person.\n'
+     '[en] Language proficiencies of the person.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:languageProficiency',
+  'owner': 'Person',
+  'domain_of': ['Person'],
+  'range': 'LanguageProficiency',
+  'multivalued': True,
+  'inlined': True,
+  'inlined_as_list': True
+}) | * <br/> [LanguageProficiency](#LanguageProficiency) | [de] Sprachkompetenzen der Person.
+[en] Language proficiencies of the person.
+ | direct |
+| SlotDefinition({
+  'name': 'citizenships',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': '[de] Staatsbürgerschaften der Person.\n[en] Citizenships of the person.\n',
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:citizenship',
+  'owner': 'Person',
+  'domain_of': ['Person'],
+  'range': 'Citizenship',
+  'multivalued': True,
+  'inlined': True,
+  'inlined_as_list': True
+}) | * <br/> [Citizenship](#Citizenship) | [de] Staatsbürgerschaften der Person.
+[en] Citizenships of the person.
+ | direct |
+| SlotDefinition({
+  'name': 'genders',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': '[de] Geschlecht der Person.\n[en] Gender of the person.\n',
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:gender',
+  'owner': 'Person',
+  'domain_of': ['Person'],
+  'range': 'Gender',
+  'multivalued': True,
+  'inlined': True,
+  'inlined_as_list': True
+}) | * <br/> [Gender](#Gender) | [de] Geschlecht der Person.
+[en] Gender of the person.
+ | direct |
+| SlotDefinition({
+  'name': 'occupations',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Berufe oder Tätigkeiten der Person.\n'
+     '[en] Occupations or professions of the person.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:occupation',
+  'owner': 'Person',
+  'domain_of': ['Person'],
+  'range': 'Occupation',
+  'multivalued': True,
+  'inlined': True,
+  'inlined_as_list': True
+}) | * <br/> [Occupation](#Occupation) | [de] Berufe oder Tätigkeiten der Person.
+[en] Occupations or professions of the person.
+ | direct |
+| SlotDefinition({
+  'name': 'trainings',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Ausbildungen oder Bildungen der Person.\n'
+     '[en] Trainings or educations of the person.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:training',
+  'owner': 'Person',
+  'domain_of': ['Person'],
+  'range': 'Training',
+  'multivalued': True,
+  'inlined': True,
+  'inlined_as_list': True
+}) | * <br/> [Training](#Training) | [de] Ausbildungen oder Bildungen der Person.
+[en] Trainings or educations of the person.
+ | direct |
+| SlotDefinition({
+  'name': 'contacts',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[en] Contact information (email, website, social media).\n'
+     '[de] Kontaktinformationen (E-Mail, Website, Social Media).\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:contact',
+  'owner': 'Person',
+  'domain_of': ['Person', 'Group'],
+  'range': 'Contact',
+  'multivalued': True,
+  'inlined': True,
+  'inlined_as_list': True
+}) | * <br/> [Contact](#Contact) | [en] Contact information (email, website, social media).
+[de] Kontaktinformationen (E-Mail, Website, Social Media).
+ | direct |
+| SlotDefinition({
+  'name': 'electoral_district',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': '[de] Link zum Wahlbezirk.\n[en] Link to the electoral district.\n',
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:electoralDistrict',
+  'owner': 'Person',
+  'domain_of': ['Person'],
+  'range': 'ElectoralDistrict'
+}) | 0..1 <br/> [ElectoralDistrict](#ElectoralDistrict) | [de] Link zum Wahlbezirk.
+[en] Link to the electoral district.
+ | direct |
+| SlotDefinition({
+  'name': 'interest_links',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Sammlung von Interessenbindungen.\n'
+     '[en] Collection of interest links.range: InterestLink\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:interestLink',
+  'owner': 'Person',
+  'domain_of': ['Container', 'Person'],
+  'range': 'InterestLink',
+  'multivalued': True,
+  'inlined': True,
+  'inlined_as_list': True
+}) | * <br/> [InterestLink](#InterestLink) | [de] Sammlung von Interessenbindungen.
+[en] Collection of interest links.range: InterestLink
+ | direct |
+| SlotDefinition({
+  'name': 'local_id',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n'
+     '[en] Local identifier. For example, a UUID from the council information '
+     'system.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:localId',
+  'owner': 'Person',
+  'domain_of': ['HasIdentification'],
+  'range': 'string'
+}) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+[en] Local identifier. For example, a UUID from the council information system.
+ | [HasIdentification](#HasIdentification) |
+| SlotDefinition({
+  'name': 'global_uri',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Eine eindeutige, global gültige URI für die Entität.\n'
+     '[en] A unique, globally valid URI for the entity.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:globalURI',
+  'identifier': True,
+  'owner': 'Person',
+  'domain_of': ['HasIdentification'],
+  'range': 'uriorcurie',
+  'required': True
+}) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität.
+[en] A unique, globally valid URI for the entity.
+ | [HasIdentification](#HasIdentification) |
+| SlotDefinition({
+  'name': 'wikidata_uri',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. '
+     'https://www.wikidata.org/wiki/Q39 für die Schweiz.\n'
+     '[en] A URI that refers to a Wikidata entity, e.g. '
+     'https://www.wikidata.org/wiki/Q39 for Switzerland.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:wikidataUri',
+  'owner': 'Person',
+  'domain_of': ['HasIdentification'],
+  'range': 'uriorcurie'
+}) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz.
+[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.
+ | [HasIdentification](#HasIdentification) |
+| SlotDefinition({
+  'name': 'date_created',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum, an dem eine Entität erstellt wurde.\n'
+     '[en] The date when an entity was created.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:dateCreated',
+  'owner': 'Person',
+  'domain_of': ['HasCreationModificationDates'],
+  'range': 'date'
+}) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde.
+[en] The date when an entity was created.
+ | [HasCreationModificationDates](#HasCreationModificationDates) |
+| SlotDefinition({
+  'name': 'datetime_created',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.\n'
+     '[en] The date and time when an entity was created.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:datetimeCreated',
+  'owner': 'Person',
+  'domain_of': ['HasCreationModificationDates'],
+  'range': 'datetime'
+}) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+[en] The date and time when an entity was created.
+ | [HasCreationModificationDates](#HasCreationModificationDates) |
+| SlotDefinition({
+  'name': 'date_modified',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum, an dem eine Entität zuletzt geändert wurde.\n'
+     '[en] The date when an entity was last modified.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:dateModified',
+  'owner': 'Person',
+  'domain_of': ['HasCreationModificationDates'],
+  'range': 'date'
+}) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+[en] The date when an entity was last modified.
+ | [HasCreationModificationDates](#HasCreationModificationDates) |
+| SlotDefinition({
+  'name': 'datetime_modified',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.\n'
+     '[en] The date and time when an entity was last modified.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:datetimeModified',
+  'owner': 'Person',
+  'domain_of': ['HasCreationModificationDates'],
+  'range': 'datetime'
+}) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
+[en] The date and time when an entity was last modified.
+ | [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -959,10 +1366,7 @@ landing_page: https://www.sp-ps.ch/fraktion
 
 Siehe vollständige LinkML-Schema-Dokumentation:
 
----
-search:
-  boost: 10.0
----
+
 
 # Class: Group 
 
@@ -983,28 +1387,398 @@ __
 ## Attribute
 
 | Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [group_type](#group_type) | 0..1 <br/> [GroupType](#GroupType) | [de] Klasse der Gruppierung, wie z | direct |
-| [label](#label) | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben ... | direct |
-| [abbreviation](#abbreviation) | * <br/> [MultilingualValue](#MultilingualValue) | [de] Abkürzung (kann mehrsprachig sein) | direct |
-| [description](#description) | * <br/> [MultilingualValue](#MultilingualValue) | [de] Kurze Beschreibung der Gruppierung | direct |
-| [landing_page](#landing_page) | 0..1 <br/> [Uri](#Uri) | [de] Website mit weiteren Informationen | direct |
-| [parent_groups](#parent_groups) | * <br/> [Uriorcurie](#Uriorcurie) | [de] Übergeordneten Gruppe | direct |
-| [spatial](#spatial) | 0..1 <br/> [String](#String) | [de] Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z | direct |
-| [contacts](#contacts) | * <br/> [Contact](#Contact) | [en] Contact information (email, website, social media) | direct |
-| [addresses](#addresses) | * <br/> [Address](#Address) | [de] Adressen mit Typ (privat, geschäftlich, lokal) | direct |
-| [statutes_url](#statutes_url) | 0..1 <br/> [String](#String) | [de] URL zu Parteistatuten (optional für Parteien) | direct |
-| [party_color](#party_color) | 0..1 <br/> [String](#String) | [de] Parteifarbe (optional für Parteien) | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
-| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [valid_from](#valid_from) | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity) |
-| [valid_through](#valid_through) | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity) |
-| [is_active](#is_active) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity) |
+| --  | -- | ------- | -- |
+| SlotDefinition({
+  'name': 'group_type',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder '
+     'ähnliches. Die genaue Bennenung und Beschreibung der Gruppierung wird über '
+     '`name` gemacht.\n'
+     '[en] Link to the group type.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:groupType',
+  'owner': 'Group',
+  'domain_of': ['Group', 'GroupReference'],
+  'range': 'GroupType'
+}) | 0..1 <br/> [GroupType](#GroupType) | [de] Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder ähnliches. Die genaue Bennenung und Beschreibung der Gruppierung wird über `name` gemacht.
+[en] Link to the group type.
+ | direct |
+| SlotDefinition({
+  'name': 'label',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben '
+     '(bspw. Anzeigename, Anstellung, etc.).\n'
+     '[en] Option to assign a label to a structured piece of information (e.g., '
+     'display name, position, etc.).\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:label',
+  'owner': 'Group',
+  'domain_of': ['Person', 'Group', 'PersonReference', 'GroupReference', 'Occupation',
+    'GroupType', 'RoleType'],
+  'range': 'string'
+}) | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).
+[en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).
+ | direct |
+| SlotDefinition({
+  'name': 'abbreviation',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Abkürzung (kann mehrsprachig sein).\n'
+     '[en] Abbreviation (can be multilingual).\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'owner': 'Group',
+  'domain_of': ['Group', 'GroupReference'],
+  'range': 'MultilingualValue',
+  'multivalued': True,
+  'inlined': True,
+  'inlined_as_list': True
+}) | * <br/> [MultilingualValue](#MultilingualValue) | [de] Abkürzung (kann mehrsprachig sein).
+[en] Abbreviation (can be multilingual).
+ | direct |
+| SlotDefinition({
+  'name': 'description',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': '[de] Kurze Beschreibung der Gruppierung.\n[en] Description of the entity.\n',
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'owner': 'Group',
+  'domain_of': ['Group'],
+  'range': 'MultilingualValue',
+  'multivalued': True,
+  'inlined': True,
+  'inlined_as_list': True
+}) | * <br/> [MultilingualValue](#MultilingualValue) | [de] Kurze Beschreibung der Gruppierung.
+[en] Description of the entity.
+ | direct |
+| SlotDefinition({
+  'name': 'landing_page',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Website mit weiteren Informationen.\n'
+     '[en] Website providing further information.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:landingPage',
+  'owner': 'Group',
+  'domain_of': ['Group'],
+  'range': 'uri'
+}) | 0..1 <br/> [Uri](#Uri) | [de] Website mit weiteren Informationen.
+[en] Website providing further information.
+ | direct |
+| SlotDefinition({
+  'name': 'parent_groups',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Übergeordneten Gruppe. Zum Beispiel die Mutterpartei, zu '
+     'Kantonalenparteien. Oder zur Beschreibung der Hierarchie in Exekutive. '
+     'Verknüpfung von Subkommissionen mit Kommissionen. (parentGroup wird immer im '
+     'selben group_type verwendet.)\n'
+     '[en] Link to parent groups.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:parentGroup',
+  'owner': 'Group',
+  'domain_of': ['Group'],
+  'range': 'uriorcurie',
+  'multivalued': True,
+  'inlined': True,
+  'inlined_as_list': True
+}) | * <br/> [Uriorcurie](#Uriorcurie) | [de] Übergeordneten Gruppe. Zum Beispiel die Mutterpartei, zu Kantonalenparteien. Oder zur Beschreibung der Hierarchie in Exekutive. Verknüpfung von Subkommissionen mit Kommissionen. (parentGroup wird immer im selben group_type verwendet.)
+[en] Link to parent groups.
+ | direct |
+| SlotDefinition({
+  'name': 'spatial',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z.B. '
+     'ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).\n'
+     '[en] Spatial reference (fos-municipality number, fos-canton number, e.g., '
+     'ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'owner': 'Group',
+  'domain_of': ['Group'],
+  'range': 'string'
+}) | 0..1 <br/> [String](#String) | [de] Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z.B. ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).
+[en] Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).
+ | direct |
+| SlotDefinition({
+  'name': 'contacts',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[en] Contact information (email, website, social media).\n'
+     '[de] Kontaktinformationen (E-Mail, Website, Social Media).\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:contact',
+  'owner': 'Group',
+  'domain_of': ['Person', 'Group'],
+  'range': 'Contact',
+  'multivalued': True,
+  'inlined': True,
+  'inlined_as_list': True
+}) | * <br/> [Contact](#Contact) | [en] Contact information (email, website, social media).
+[de] Kontaktinformationen (E-Mail, Website, Social Media).
+ | direct |
+| SlotDefinition({
+  'name': 'addresses',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Adressen mit Typ (privat, geschäftlich, lokal).\n'
+     '[en] Addresses with type (private, business, local).\n'),
+  'alt_descriptions': JsonObj(),
+  'examples': [Example({
+      'value': ("[{'address_type': 'businessAddress', 'address_URI': "
+         "'https://ld.admin.ch/address/12345', 'street_address': 'Bundesplatz 3', "
+         "'postal_code': '3003', 'postal_locality': 'Bern'}, {'address_type': "
+         "'privateAddress', 'postal_locality': 'Zürich'}]")
+    })],
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:address',
+  'owner': 'Group',
+  'domain_of': ['Person', 'Group'],
+  'range': 'Address',
+  'multivalued': True,
+  'inlined': True,
+  'inlined_as_list': True
+}) | * <br/> [Address](#Address) | [de] Adressen mit Typ (privat, geschäftlich, lokal).
+[en] Addresses with type (private, business, local).
+ | direct |
+| SlotDefinition({
+  'name': 'statutes_url',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] URL zu Parteistatuten (optional für Parteien).\n'
+     '[en] URL to party statutes (optional for parties).\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:statutesURL',
+  'owner': 'Group',
+  'domain_of': ['Group'],
+  'range': 'string'
+}) | 0..1 <br/> [String](#String) | [de] URL zu Parteistatuten (optional für Parteien).
+[en] URL to party statutes (optional for parties).
+ | direct |
+| SlotDefinition({
+  'name': 'party_color',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Parteifarbe (optional für Parteien).\n'
+     '[en] Party color (optional for parties).\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:partyColor',
+  'owner': 'Group',
+  'domain_of': ['Group'],
+  'range': 'string'
+}) | 0..1 <br/> [String](#String) | [de] Parteifarbe (optional für Parteien).
+[en] Party color (optional for parties).
+ | direct |
+| SlotDefinition({
+  'name': 'local_id',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n'
+     '[en] Local identifier. For example, a UUID from the council information '
+     'system.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:localId',
+  'owner': 'Group',
+  'domain_of': ['HasIdentification'],
+  'range': 'string'
+}) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+[en] Local identifier. For example, a UUID from the council information system.
+ | [HasIdentification](#HasIdentification) |
+| SlotDefinition({
+  'name': 'global_uri',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Eine eindeutige, global gültige URI für die Entität.\n'
+     '[en] A unique, globally valid URI for the entity.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:globalURI',
+  'identifier': True,
+  'owner': 'Group',
+  'domain_of': ['HasIdentification'],
+  'range': 'uriorcurie',
+  'required': True
+}) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität.
+[en] A unique, globally valid URI for the entity.
+ | [HasIdentification](#HasIdentification) |
+| SlotDefinition({
+  'name': 'wikidata_uri',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. '
+     'https://www.wikidata.org/wiki/Q39 für die Schweiz.\n'
+     '[en] A URI that refers to a Wikidata entity, e.g. '
+     'https://www.wikidata.org/wiki/Q39 for Switzerland.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:wikidataUri',
+  'owner': 'Group',
+  'domain_of': ['HasIdentification'],
+  'range': 'uriorcurie'
+}) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz.
+[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.
+ | [HasIdentification](#HasIdentification) |
+| SlotDefinition({
+  'name': 'date_created',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum, an dem eine Entität erstellt wurde.\n'
+     '[en] The date when an entity was created.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:dateCreated',
+  'owner': 'Group',
+  'domain_of': ['HasCreationModificationDates'],
+  'range': 'date'
+}) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde.
+[en] The date when an entity was created.
+ | [HasCreationModificationDates](#HasCreationModificationDates) |
+| SlotDefinition({
+  'name': 'datetime_created',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.\n'
+     '[en] The date and time when an entity was created.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:datetimeCreated',
+  'owner': 'Group',
+  'domain_of': ['HasCreationModificationDates'],
+  'range': 'datetime'
+}) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+[en] The date and time when an entity was created.
+ | [HasCreationModificationDates](#HasCreationModificationDates) |
+| SlotDefinition({
+  'name': 'date_modified',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum, an dem eine Entität zuletzt geändert wurde.\n'
+     '[en] The date when an entity was last modified.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:dateModified',
+  'owner': 'Group',
+  'domain_of': ['HasCreationModificationDates'],
+  'range': 'date'
+}) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+[en] The date when an entity was last modified.
+ | [HasCreationModificationDates](#HasCreationModificationDates) |
+| SlotDefinition({
+  'name': 'datetime_modified',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.\n'
+     '[en] The date and time when an entity was last modified.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:datetimeModified',
+  'owner': 'Group',
+  'domain_of': ['HasCreationModificationDates'],
+  'range': 'datetime'
+}) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
+[en] The date and time when an entity was last modified.
+ | [HasCreationModificationDates](#HasCreationModificationDates) |
+| SlotDefinition({
+  'name': 'valid_from',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum, ab dem die Information gültig ist.\n'
+     '[en] The date from which the information is valid.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'schema:validFrom',
+  'owner': 'Group',
+  'domain_of': ['HasTemporalValidity'],
+  'range': 'date'
+}) | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist.
+[en] The date from which the information is valid.
+ | [HasTemporalValidity](#HasTemporalValidity) |
+| SlotDefinition({
+  'name': 'valid_through',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum, bis und mit dem die Information gültig ist.\n'
+     '[en] The date until which the information is valid, inclusive.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'schema:validThrough',
+  'owner': 'Group',
+  'domain_of': ['HasTemporalValidity'],
+  'range': 'date'
+}) | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist.
+[en] The date until which the information is valid, inclusive.
+ | [HasTemporalValidity](#HasTemporalValidity) |
+| SlotDefinition({
+  'name': 'is_active',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, '
+     'wenn diese Information explizit vorhanden ist.\n'
+     '[en] Indicates whether the information is currently valid. Can be useful '
+     'when this information is explicitly available.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:isCurrent',
+  'owner': 'Group',
+  'domain_of': ['HasTemporalValidity'],
+  'range': 'boolean'
+}) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist.
+[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.
+ | [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
@@ -1676,10 +2450,7 @@ Eine Person kann sowohl Membership (z.B. Nationalrat) als auch InterestLink (z.B
 
 Siehe vollständige LinkML-Schema-Dokumentation:
 
----
-search:
-  boost: 10.0
----
+
 
 # Class: Membership 
 
@@ -1700,21 +2471,256 @@ __
 ## Attribute
 
 | Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [person_reference](#person_reference) | 0..1 <br/> [PersonReference](#PersonReference) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfun... | direct |
-| [group_reference](#group_reference) | 0..1 <br/> [GroupReference](#GroupReference) | [de] Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfun... | direct |
-| [role_type](#role_type) | 0..1 <br/> [RoleType](#RoleType) | [en] Role of the person in the membership or function | direct |
-| [authorized_to_vote](#authorized_to_vote) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Person stimmberechtigt ist | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
-| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [valid_from](#valid_from) | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity) |
-| [valid_through](#valid_through) | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity) |
-| [is_active](#is_active) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity) |
+| --  | -- | ------- | -- |
+| SlotDefinition({
+  'name': 'person_reference',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der '
+     'Verknüpfung.\n'
+     '[en] Reference to a person with snapshot data at time of linking.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:personReference',
+  'owner': 'Membership',
+  'domain_of': ['Membership', 'InterestLink'],
+  'range': 'PersonReference',
+  'inlined': True
+}) | 0..1 <br/> [PersonReference](#PersonReference) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
+[en] Reference to a person with snapshot data at time of linking.
+ | direct |
+| SlotDefinition({
+  'name': 'group_reference',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der '
+     'Verknüpfung.\n'
+     '[en] Reference to a group with snapshot data at time of linking.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:groupReference',
+  'owner': 'Membership',
+  'domain_of': ['Membership'],
+  'range': 'GroupReference',
+  'inlined': True
+}) | 0..1 <br/> [GroupReference](#GroupReference) | [de] Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
+[en] Reference to a group with snapshot data at time of linking.
+ | direct |
+| SlotDefinition({
+  'name': 'role_type',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[en] Role of the person in the membership or function.\n'
+     '[de] Rolle der Person in der Mitgliedschaft oder Funktion.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:roleType',
+  'owner': 'Membership',
+  'domain_of': ['PersonReference', 'Membership'],
+  'range': 'RoleType'
+}) | 0..1 <br/> [RoleType](#RoleType) | [en] Role of the person in the membership or function.
+[de] Rolle der Person in der Mitgliedschaft oder Funktion.
+ | direct |
+| SlotDefinition({
+  'name': 'authorized_to_vote',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Gibt an, ob die Person stimmberechtigt ist.\n'
+     '[en] Indicates if the person is authorized to vote.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:authorizedToVote',
+  'owner': 'Membership',
+  'domain_of': ['Membership'],
+  'range': 'boolean'
+}) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Person stimmberechtigt ist.
+[en] Indicates if the person is authorized to vote.
+ | direct |
+| SlotDefinition({
+  'name': 'local_id',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n'
+     '[en] Local identifier. For example, a UUID from the council information '
+     'system.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:localId',
+  'owner': 'Membership',
+  'domain_of': ['HasIdentification'],
+  'range': 'string'
+}) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+[en] Local identifier. For example, a UUID from the council information system.
+ | [HasIdentification](#HasIdentification) |
+| SlotDefinition({
+  'name': 'global_uri',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Eine eindeutige, global gültige URI für die Entität.\n'
+     '[en] A unique, globally valid URI for the entity.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:globalURI',
+  'identifier': True,
+  'owner': 'Membership',
+  'domain_of': ['HasIdentification'],
+  'range': 'uriorcurie',
+  'required': True
+}) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität.
+[en] A unique, globally valid URI for the entity.
+ | [HasIdentification](#HasIdentification) |
+| SlotDefinition({
+  'name': 'wikidata_uri',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. '
+     'https://www.wikidata.org/wiki/Q39 für die Schweiz.\n'
+     '[en] A URI that refers to a Wikidata entity, e.g. '
+     'https://www.wikidata.org/wiki/Q39 for Switzerland.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:wikidataUri',
+  'owner': 'Membership',
+  'domain_of': ['HasIdentification'],
+  'range': 'uriorcurie'
+}) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz.
+[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.
+ | [HasIdentification](#HasIdentification) |
+| SlotDefinition({
+  'name': 'date_created',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum, an dem eine Entität erstellt wurde.\n'
+     '[en] The date when an entity was created.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:dateCreated',
+  'owner': 'Membership',
+  'domain_of': ['HasCreationModificationDates'],
+  'range': 'date'
+}) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde.
+[en] The date when an entity was created.
+ | [HasCreationModificationDates](#HasCreationModificationDates) |
+| SlotDefinition({
+  'name': 'datetime_created',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.\n'
+     '[en] The date and time when an entity was created.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:datetimeCreated',
+  'owner': 'Membership',
+  'domain_of': ['HasCreationModificationDates'],
+  'range': 'datetime'
+}) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+[en] The date and time when an entity was created.
+ | [HasCreationModificationDates](#HasCreationModificationDates) |
+| SlotDefinition({
+  'name': 'date_modified',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum, an dem eine Entität zuletzt geändert wurde.\n'
+     '[en] The date when an entity was last modified.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:dateModified',
+  'owner': 'Membership',
+  'domain_of': ['HasCreationModificationDates'],
+  'range': 'date'
+}) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+[en] The date when an entity was last modified.
+ | [HasCreationModificationDates](#HasCreationModificationDates) |
+| SlotDefinition({
+  'name': 'datetime_modified',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.\n'
+     '[en] The date and time when an entity was last modified.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:datetimeModified',
+  'owner': 'Membership',
+  'domain_of': ['HasCreationModificationDates'],
+  'range': 'datetime'
+}) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
+[en] The date and time when an entity was last modified.
+ | [HasCreationModificationDates](#HasCreationModificationDates) |
+| SlotDefinition({
+  'name': 'valid_from',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum, ab dem die Information gültig ist.\n'
+     '[en] The date from which the information is valid.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'schema:validFrom',
+  'owner': 'Membership',
+  'domain_of': ['HasTemporalValidity'],
+  'range': 'date'
+}) | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist.
+[en] The date from which the information is valid.
+ | [HasTemporalValidity](#HasTemporalValidity) |
+| SlotDefinition({
+  'name': 'valid_through',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum, bis und mit dem die Information gültig ist.\n'
+     '[en] The date until which the information is valid, inclusive.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'schema:validThrough',
+  'owner': 'Membership',
+  'domain_of': ['HasTemporalValidity'],
+  'range': 'date'
+}) | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist.
+[en] The date until which the information is valid, inclusive.
+ | [HasTemporalValidity](#HasTemporalValidity) |
+| SlotDefinition({
+  'name': 'is_active',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, '
+     'wenn diese Information explizit vorhanden ist.\n'
+     '[en] Indicates whether the information is currently valid. Can be useful '
+     'when this information is explicitly available.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:isCurrent',
+  'owner': 'Membership',
+  'domain_of': ['HasTemporalValidity'],
+  'range': 'boolean'
+}) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist.
+[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.
+ | [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
@@ -2150,10 +3156,7 @@ Statistische Auswertung nach Art der Interessenbindung:
 
 Siehe vollständige LinkML-Schema-Dokumentation:
 
----
-search:
-  boost: 10.0
----
+
 
 # Class: InterestLink 
 
@@ -2174,26 +3177,347 @@ __
 ## Attribute
 
 | Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [person_reference](#person_reference) | 0..1 <br/> [PersonReference](#PersonReference) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfun... | direct |
-| [interest_type](#interest_type) | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | [de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verei... | direct |
-| [organization_label](#organization_label) | 0..1 <br/> [String](#String) | [en] Label of the organization | direct |
-| [organization_uid](#organization_uid) | 0..1 <br/> [String](#String) | [en] UID of the organization (for analysis with NOGA codes, etc | direct |
-| [organization_address](#organization_address) | 0..1 <br/> [String](#String) | [en] Address of the organization | direct |
-| [legal_form](#legal_form) | 0..1 <br/> [String](#String) | [en] Legal form of the organization | direct |
-| [is_paid](#is_paid) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Position bezahlt ist | direct |
-| [committee](#committee) | 0..1 <br/> [String](#String) | [en] Committee or board (e | direct |
-| [function_role](#function_role) | 0..1 <br/> [String](#String) | [en] Function or role in the organization | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
-| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [valid_from](#valid_from) | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity) |
-| [valid_through](#valid_through) | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity) |
-| [is_active](#is_active) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity) |
+| --  | -- | ------- | -- |
+| SlotDefinition({
+  'name': 'person_reference',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der '
+     'Verknüpfung.\n'
+     '[en] Reference to a person with snapshot data at time of linking.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:personReference',
+  'owner': 'InterestLink',
+  'domain_of': ['Membership', 'InterestLink'],
+  'range': 'PersonReference',
+  'inlined': True
+}) | 0..1 <br/> [PersonReference](#PersonReference) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
+[en] Reference to a person with snapshot data at time of linking.
+ | direct |
+| SlotDefinition({
+  'name': 'interest_type',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, '
+     'Verein).\n'
+     '[en] Type of interest link (professional activity, political office, '
+     'association).\n'),
+  'alt_descriptions': JsonObj(),
+  'examples': [Example({'value': 'association'}), Example({'value': 'professional_activity'})],
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:interestType',
+  'owner': 'InterestLink',
+  'domain_of': ['InterestLink'],
+  'range': 'InterestTypeEnum',
+  'required': True
+}) | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | [de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).
+[en] Type of interest link (professional activity, political office, association).
+ | direct |
+| SlotDefinition({
+  'name': 'organization_label',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': '[en] Label of the organization.\n[de] Bezeichnung der Organisation.\n',
+  'alt_descriptions': JsonObj(),
+  'examples': [Example({'value': 'ASTAG Schweizerischer Nutzfahrzeugverband, Bern'}),
+    Example({'value': 'Allianz Sicherheit Schweiz, Baden'}),
+    Example({'value': 'Birchmeier Holding AG, Döttingen'})],
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:organizationLabel',
+  'owner': 'InterestLink',
+  'domain_of': ['InterestLink'],
+  'range': 'string'
+}) | 0..1 <br/> [String](#String) | [en] Label of the organization.
+[de] Bezeichnung der Organisation.
+ | direct |
+| SlotDefinition({
+  'name': 'organization_uid',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[en] UID of the organization (for analysis with NOGA codes, etc.).\n'
+     '[de] UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:organizationUid',
+  'owner': 'InterestLink',
+  'domain_of': ['InterestLink'],
+  'range': 'string'
+}) | 0..1 <br/> [String](#String) | [en] UID of the organization (for analysis with NOGA codes, etc.).
+[de] UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).
+ | direct |
+| SlotDefinition({
+  'name': 'organization_address',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': '[en] Address of the organization.\n[de] Adresse der Organisation.\n',
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:organizationAddress',
+  'owner': 'InterestLink',
+  'domain_of': ['InterestLink'],
+  'range': 'string'
+}) | 0..1 <br/> [String](#String) | [en] Address of the organization.
+[de] Adresse der Organisation.
+ | direct |
+| SlotDefinition({
+  'name': 'legal_form',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': '[en] Legal form of the organization.\n[de] Rechtsform der Organisation.\n',
+  'alt_descriptions': JsonObj(),
+  'examples': [Example({'value': 'Aktiengesellschaft'}),
+    Example({'value': 'Gesellschaft mit beschränkter Haftung'}),
+    Example({'value': 'Stiftung'})],
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:legalForm',
+  'owner': 'InterestLink',
+  'domain_of': ['InterestLink'],
+  'range': 'string'
+}) | 0..1 <br/> [String](#String) | [en] Legal form of the organization.
+[de] Rechtsform der Organisation.
+ | direct |
+| SlotDefinition({
+  'name': 'is_paid',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Gibt an, ob die Position bezahlt ist.\n'
+     '[en] Indicates if the position is paid.\n'),
+  'alt_descriptions': JsonObj(),
+  'examples': [Example({'value': 'False'}), Example({'value': 'True'})],
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:isPaid',
+  'owner': 'InterestLink',
+  'domain_of': ['InterestLink', 'Occupation'],
+  'range': 'boolean'
+}) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Position bezahlt ist.
+[en] Indicates if the position is paid.
+ | direct |
+| SlotDefinition({
+  'name': 'committee',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[en] Committee or board (e.g., foundation board, board of directors).\n'
+     '[de] Gremium (z.B. Stiftungsrat, Verwaltungsrat).\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:committee',
+  'owner': 'InterestLink',
+  'domain_of': ['InterestLink'],
+  'range': 'string'
+}) | 0..1 <br/> [String](#String) | [en] Committee or board (e.g., foundation board, board of directors).
+[de] Gremium (z.B. Stiftungsrat, Verwaltungsrat).
+ | direct |
+| SlotDefinition({
+  'name': 'function_role',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[en] Function or role in the organization.\n'
+     '[de] Funktion oder Rolle in der Organisation.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'act:functionRole',
+  'owner': 'InterestLink',
+  'domain_of': ['InterestLink'],
+  'range': 'string'
+}) | 0..1 <br/> [String](#String) | [en] Function or role in the organization.
+[de] Funktion oder Rolle in der Organisation.
+ | direct |
+| SlotDefinition({
+  'name': 'local_id',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.\n'
+     '[en] Local identifier. For example, a UUID from the council information '
+     'system.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:localId',
+  'owner': 'InterestLink',
+  'domain_of': ['HasIdentification'],
+  'range': 'string'
+}) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+[en] Local identifier. For example, a UUID from the council information system.
+ | [HasIdentification](#HasIdentification) |
+| SlotDefinition({
+  'name': 'global_uri',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Eine eindeutige, global gültige URI für die Entität.\n'
+     '[en] A unique, globally valid URI for the entity.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:globalURI',
+  'identifier': True,
+  'owner': 'InterestLink',
+  'domain_of': ['HasIdentification'],
+  'range': 'uriorcurie',
+  'required': True
+}) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität.
+[en] A unique, globally valid URI for the entity.
+ | [HasIdentification](#HasIdentification) |
+| SlotDefinition({
+  'name': 'wikidata_uri',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. '
+     'https://www.wikidata.org/wiki/Q39 für die Schweiz.\n'
+     '[en] A URI that refers to a Wikidata entity, e.g. '
+     'https://www.wikidata.org/wiki/Q39 for Switzerland.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:wikidataUri',
+  'owner': 'InterestLink',
+  'domain_of': ['HasIdentification'],
+  'range': 'uriorcurie'
+}) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz.
+[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.
+ | [HasIdentification](#HasIdentification) |
+| SlotDefinition({
+  'name': 'date_created',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum, an dem eine Entität erstellt wurde.\n'
+     '[en] The date when an entity was created.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:dateCreated',
+  'owner': 'InterestLink',
+  'domain_of': ['HasCreationModificationDates'],
+  'range': 'date'
+}) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde.
+[en] The date when an entity was created.
+ | [HasCreationModificationDates](#HasCreationModificationDates) |
+| SlotDefinition({
+  'name': 'datetime_created',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.\n'
+     '[en] The date and time when an entity was created.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:datetimeCreated',
+  'owner': 'InterestLink',
+  'domain_of': ['HasCreationModificationDates'],
+  'range': 'datetime'
+}) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+[en] The date and time when an entity was created.
+ | [HasCreationModificationDates](#HasCreationModificationDates) |
+| SlotDefinition({
+  'name': 'date_modified',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum, an dem eine Entität zuletzt geändert wurde.\n'
+     '[en] The date when an entity was last modified.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:dateModified',
+  'owner': 'InterestLink',
+  'domain_of': ['HasCreationModificationDates'],
+  'range': 'date'
+}) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+[en] The date when an entity was last modified.
+ | [HasCreationModificationDates](#HasCreationModificationDates) |
+| SlotDefinition({
+  'name': 'datetime_modified',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.\n'
+     '[en] The date and time when an entity was last modified.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:datetimeModified',
+  'owner': 'InterestLink',
+  'domain_of': ['HasCreationModificationDates'],
+  'range': 'datetime'
+}) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
+[en] The date and time when an entity was last modified.
+ | [HasCreationModificationDates](#HasCreationModificationDates) |
+| SlotDefinition({
+  'name': 'valid_from',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum, ab dem die Information gültig ist.\n'
+     '[en] The date from which the information is valid.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'schema:validFrom',
+  'owner': 'InterestLink',
+  'domain_of': ['HasTemporalValidity'],
+  'range': 'date'
+}) | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist.
+[en] The date from which the information is valid.
+ | [HasTemporalValidity](#HasTemporalValidity) |
+| SlotDefinition({
+  'name': 'valid_through',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Das Datum, bis und mit dem die Information gültig ist.\n'
+     '[en] The date until which the information is valid, inclusive.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'schema:validThrough',
+  'owner': 'InterestLink',
+  'domain_of': ['HasTemporalValidity'],
+  'range': 'date'
+}) | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist.
+[en] The date until which the information is valid, inclusive.
+ | [HasTemporalValidity](#HasTemporalValidity) |
+| SlotDefinition({
+  'name': 'is_active',
+  'local_names': JsonObj(),
+  'extensions': JsonObj(),
+  'annotations': JsonObj(),
+  'description': ('[de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, '
+     'wenn diese Information explizit vorhanden ist.\n'
+     '[en] Indicates whether the information is currently valid. Can be useful '
+     'when this information is explicitly available.\n'),
+  'alt_descriptions': JsonObj(),
+  'from_schema': 'https://ld.ech.ch/schema/0294/actors',
+  'rank': 1000,
+  'slot_uri': 'mcm:isCurrent',
+  'owner': 'InterestLink',
+  'domain_of': ['HasTemporalValidity'],
+  'range': 'boolean'
+}) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist.
+[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.
+ | [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
@@ -2242,68 +3566,20 @@ __
 
 
 ## Examples
-### Example: InterestLink-interest_links_il_burkart_001
+### Example: InterestLink-interest_links_il_burkart_003
 
 ```yaml
-global_uri: act:il_burkart_001
+global_uri: act:il_burkart_003
 person_reference:
   global_uri: https://www.wikidata.org/wiki/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_label: Burkart Advisory GmbH, Baden
-legal_form: Gesellschaft mit beschränkter Haftung
-committee: Geschäftsleitung
-function_role: Geschäftsführer
-is_paid: true
-
-```
-### Example: InterestLink-interest_links_il_burkart_007
-
-```yaml
-global_uri: act:il_burkart_007
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_label: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-legal_form: Stiftung
-committee: Stiftungsrat
-function_role: Vizepräsident
-is_paid: false
-
-```
-### Example: InterestLink-interest_links_il_burkart_011
-
-```yaml
-global_uri: act:il_burkart_011
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_label: Verein Landesausstellung Svizra27, Aarau
-legal_form: Verein
-committee: Vorstand
+organization_label: Bovida Real Estate AG, Baar
+legal_form: Aktiengesellschaft
+committee: Verwaltungsrat
 function_role: Mitglied
-is_paid: false
-
-```
-### Example: InterestLink-interest_links_il_burkart_010
-
-```yaml
-global_uri: act:il_burkart_010
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_label: Allianz Sicherheit Schweiz, Baden
-legal_form: Verein
-committee: Vorstand
-function_role: Präsident
-is_paid: false
+is_paid: true
 
 ```
 ### Example: InterestLink-interest_links_il_burkart_002
@@ -2319,6 +3595,22 @@ organization_label: Birchmeier Holding AG, Döttingen
 legal_form: Aktiengesellschaft
 committee: Verwaltungsrat
 function_role: Mitglied
+is_paid: true
+
+```
+### Example: InterestLink-interest_links_il_burkart_001
+
+```yaml
+global_uri: act:il_burkart_001
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: professional_activity
+organization_label: Burkart Advisory GmbH, Baden
+legal_form: Gesellschaft mit beschränkter Haftung
+committee: Geschäftsleitung
+function_role: Geschäftsführer
 is_paid: true
 
 ```
@@ -2338,18 +3630,34 @@ function_role: Mitglied
 is_paid: true
 
 ```
-### Example: InterestLink-interest_links_il_burkart_003
+### Example: InterestLink-interest_links_il_burkart_011
 
 ```yaml
-global_uri: act:il_burkart_003
+global_uri: act:il_burkart_011
 person_reference:
   global_uri: https://www.wikidata.org/wiki/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_label: Bovida Real Estate AG, Baar
-legal_form: Aktiengesellschaft
-committee: Verwaltungsrat
+interest_type: association
+organization_label: Verein Landesausstellung Svizra27, Aarau
+legal_form: Verein
+committee: Vorstand
+function_role: Mitglied
+is_paid: false
+
+```
+### Example: InterestLink-interest_links_il_burkart_009
+
+```yaml
+global_uri: act:il_burkart_009
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: SUISSEDIGITAL Verband für Kommunikationsnetze
+legal_form: Verein
+committee: Vorstand
 function_role: Mitglied
 is_paid: true
 
@@ -2386,22 +3694,6 @@ function_role: Beirat
 is_paid: true
 
 ```
-### Example: InterestLink-interest_links_il_burkart_009
-
-```yaml
-global_uri: act:il_burkart_009
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_label: SUISSEDIGITAL Verband für Kommunikationsnetze
-legal_form: Verein
-committee: Vorstand
-function_role: Mitglied
-is_paid: true
-
-```
 ### Example: InterestLink-interest_links_il_burkart_005
 
 ```yaml
@@ -2416,6 +3708,38 @@ legal_form: Verein
 committee: Zentralvorstand
 function_role: Präsident
 is_paid: true
+
+```
+### Example: InterestLink-interest_links_il_burkart_010
+
+```yaml
+global_uri: act:il_burkart_010
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: Allianz Sicherheit Schweiz, Baden
+legal_form: Verein
+committee: Vorstand
+function_role: Präsident
+is_paid: false
+
+```
+### Example: InterestLink-interest_links_il_burkart_007
+
+```yaml
+global_uri: act:il_burkart_007
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+legal_form: Stiftung
+committee: Stiftungsrat
+function_role: Vizepräsident
+is_paid: false
 
 ```
 
