@@ -4,12 +4,14 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 act:swiss_politicians_example a act:Container ;
-    act:person <https://www.wikidata.org/wiki/Q813067> .
+    act:person <https://data-example.parlament.ch/person/4032> .
 
-<https://www.wikidata.org/wiki/Q813067> a act:Person ;
+<https://data-example.parlament.ch/person/4032> a act:Person ;
     schema1:birthDate "1964-07-12"^^xsd:date ;
     mcm:label "Beat Jans" ;
     mcm:labelLong "Beat Jans, dipl. nat. ETH" ;
+    mcm:localId "4032" ;
+    mcm:wikidataUri <https://www.wikidata.org/wiki/Q813067> ;
     act:address [ a act:Address ;
             act:addressType "businessAddress" ;
             act:postalLocality "Basel-Stadt" ] ;
@@ -28,9 +30,7 @@ act:swiss_politicians_example a act:Container ;
             act:district "Basel-Stadt" ] ;
     act:gender [ a act:Gender ;
             schema1:validFrom "1964-07-12"^^xsd:date ;
-            act:genderCode "male" ;
-            act:pronouns "er",
-                "ihm" ] ;
+            act:genderCode "male" ] ;
     act:languageProficiency [ a act:LanguageProficiency ;
             mcm:language "de" ;
             act:isCorrespondence true ;
