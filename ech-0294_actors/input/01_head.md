@@ -4,17 +4,17 @@ lang: de
 toc: false
 ---
 
-| **Name**              | **Politische Akteure: Personen, Gruppen und Organe**                                                                                               |
+| **Name**              | **Politische Akteure: Personen, Gruppen und Organe**                                                                       |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------|
 | **eCH-Nummer**        | eCH-0294                                                                                                                   |
 | **Kategorie**         | Entwurf                                                                                                                    |
-| **Reifegrad**         |                                                                                                                            |
+| **Reifegrad**         | Fachgruppen Internes Review                                                                                                |
 | **Version**           | 0.1                                                                                                                        |
 | **Status**            |                                                                                                                            |
 | **Beschluss am**      |                                                                                                                            |
 | **Ausgabedatum**      |                                                                                                                            |
 | **Ersetzt Version**   | 0.0                                                                                                                        |
-| **Voraussetzungen**   | ?                                                                                                                          |
+| **Voraussetzungen**   | eCH-0292 (Gemeinsame Datenelemente)                                                                                        |
 | **Beilagen**          | -                                                                                                                          |
 | **Sprachen**          | English (Original)                                                                                                         |
 | **Autoren**           | Fachgruppe politische Geschäfte: Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi   |
