@@ -3,12 +3,12 @@ search:
   boost: 5.0
 ---
 
-# Slot: concerned_person 
+# Slot: person_reference 
 
 
-_[de] Link zu einer Person, auf die sich die Zugehörigkeit bezieht._
+_[de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung._
 
-_[en] Link to a person that the affiliation concerns._
+_[en] Reference to a person with snapshot data at time of linking._
 
 __
 
@@ -18,7 +18,7 @@ __
 
 
 
-URI: [act:concernedPerson](https://ld.ech.ch/schema/0294/actors/concernedPerson)
+URI: [act:personReference](https://ld.ech.ch/schema/0294/actors/personReference)
 <!-- no inheritance hierarchy -->
 
 
@@ -43,9 +43,9 @@ URI: [act:concernedPerson](https://ld.ech.ch/schema/0294/actors/concernedPerson)
 
 | Property | Value |
 | --- | --- |
-| Range | [Person](Person.md) |
+| Range | [PersonReference](PersonReference.md) |
 | Domain Of | [Membership](Membership.md), [InterestLink](InterestLink.md) |
-| Slot URI | [act:concernedPerson](https://ld.ech.ch/schema/0294/actors/concernedPerson) |
+| Slot URI | [act:personReference](https://ld.ech.ch/schema/0294/actors/personReference) |
 
 ### Cardinality and Requirements
 
@@ -79,8 +79,8 @@ URI: [act:concernedPerson](https://ld.ech.ch/schema/0294/actors/concernedPerson)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:concernedPerson |
-| native | act:concerned_person |
+| self | act:personReference |
+| native | act:person_reference |
 
 
 
@@ -89,19 +89,20 @@ URI: [act:concernedPerson](https://ld.ech.ch/schema/0294/actors/concernedPerson)
 
 <details>
 ```yaml
-name: concerned_person
-description: '[de] Link zu einer Person, auf die sich die Zugehörigkeit bezieht.
+name: person_reference
+description: '[de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
 
-  [en] Link to a person that the affiliation concerns.
+  [en] Reference to a person with snapshot data at time of linking.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
-slot_uri: act:concernedPerson
+slot_uri: act:personReference
 domain_of:
 - Membership
 - InterestLink
-range: Person
+range: PersonReference
+inlined: true
 
 ```
 </details></div>

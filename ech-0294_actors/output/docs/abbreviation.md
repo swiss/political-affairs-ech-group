@@ -30,6 +30,7 @@ URI: [act:abbreviation](https://ld.ech.ch/schema/0294/actors/abbreviation)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [GroupReference](GroupReference.md) | [de] Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifika... |  no  |
 
 
 
@@ -43,7 +44,7 @@ URI: [act:abbreviation](https://ld.ech.ch/schema/0294/actors/abbreviation)
 | Property | Value |
 | --- | --- |
 | Range | [MultilingualValue](MultilingualValue.md) |
-| Domain Of | [Group](Group.md) |
+| Domain Of | [Group](Group.md), [GroupReference](GroupReference.md) |
 
 ### Cardinality and Requirements
 
@@ -98,6 +99,7 @@ from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 domain_of:
 - Group
+- GroupReference
 range: MultilingualValue
 multivalued: true
 inlined: true

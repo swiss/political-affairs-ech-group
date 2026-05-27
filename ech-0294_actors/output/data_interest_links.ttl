@@ -1,4 +1,5 @@
 @prefix act: <https://ld.ech.ch/schema/0294/actors/> .
+@prefix mcm: <https://ld.ech.ch/schema/0292/meta-common/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 act:interest_links_example a act:Container ;
@@ -16,101 +17,105 @@ act:interest_links_example a act:Container ;
 
 act:il_burkart_001 a act:InterestLink ;
     act:committee "Geschäftsleitung" ;
-    act:concernedPerson <https://www.wikidata.org/wiki/Q23060472> ;
     act:functionRole "Geschäftsführer" ;
     act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/professional_activity> ;
     act:isPaid true ;
     act:legalForm "Gesellschaft mit beschränkter Haftung" ;
-    act:organizationLabel "Burkart Advisory GmbH, Baden" .
+    act:organizationLabel "Burkart Advisory GmbH, Baden" ;
+    act:personReference <https://www.wikidata.org/wiki/Q23060472> .
 
 act:il_burkart_002 a act:InterestLink ;
     act:committee "Verwaltungsrat" ;
-    act:concernedPerson <https://www.wikidata.org/wiki/Q23060472> ;
     act:functionRole "Mitglied" ;
     act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/professional_activity> ;
     act:isPaid true ;
     act:legalForm "Aktiengesellschaft" ;
-    act:organizationLabel "Birchmeier Holding AG, Döttingen" .
+    act:organizationLabel "Birchmeier Holding AG, Döttingen" ;
+    act:personReference <https://www.wikidata.org/wiki/Q23060472> .
 
 act:il_burkart_003 a act:InterestLink ;
     act:committee "Verwaltungsrat" ;
-    act:concernedPerson <https://www.wikidata.org/wiki/Q23060472> ;
     act:functionRole "Mitglied" ;
     act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/professional_activity> ;
     act:isPaid true ;
     act:legalForm "Aktiengesellschaft" ;
-    act:organizationLabel "Bovida Real Estate AG, Baar" .
+    act:organizationLabel "Bovida Real Estate AG, Baar" ;
+    act:personReference <https://www.wikidata.org/wiki/Q23060472> .
 
 act:il_burkart_004 a act:InterestLink ;
     act:committee "Verwaltungsrat" ;
-    act:concernedPerson <https://www.wikidata.org/wiki/Q23060472> ;
     act:functionRole "Mitglied" ;
     act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/professional_activity> ;
     act:isPaid true ;
     act:legalForm "Aktiengesellschaft" ;
-    act:organizationLabel "ELCA Group SA, Lausanne" .
+    act:organizationLabel "ELCA Group SA, Lausanne" ;
+    act:personReference <https://www.wikidata.org/wiki/Q23060472> .
 
 act:il_burkart_005 a act:InterestLink ;
     act:committee "Zentralvorstand" ;
-    act:concernedPerson <https://www.wikidata.org/wiki/Q23060472> ;
     act:functionRole "Präsident" ;
     act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/association> ;
     act:isPaid true ;
     act:legalForm "Verein" ;
-    act:organizationLabel "ASTAG Schweizerischer Nutzfahrzeugverband, Bern" .
+    act:organizationLabel "ASTAG Schweizerischer Nutzfahrzeugverband, Bern" ;
+    act:personReference <https://www.wikidata.org/wiki/Q23060472> .
 
 act:il_burkart_006 a act:InterestLink ;
     act:committee "Vorstand" ;
-    act:concernedPerson <https://www.wikidata.org/wiki/Q23060472> ;
     act:functionRole "Präsident" ;
     act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/association> ;
     act:isPaid true ;
     act:legalForm "Verein" ;
-    act:organizationLabel "FDP.Die Liberalen" .
+    act:organizationLabel "FDP.Die Liberalen" ;
+    act:personReference <https://www.wikidata.org/wiki/Q23060472> .
 
 act:il_burkart_007 a act:InterestLink ;
     act:committee "Stiftungsrat" ;
-    act:concernedPerson <https://www.wikidata.org/wiki/Q23060472> ;
     act:functionRole "Vizepräsident" ;
     act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/association> ;
     act:isPaid false ;
     act:legalForm "Stiftung" ;
-    act:organizationLabel "FONDATION SUISSE DE DEMINAGE (FSD), Genf" .
+    act:organizationLabel "FONDATION SUISSE DE DEMINAGE (FSD), Genf" ;
+    act:personReference <https://www.wikidata.org/wiki/Q23060472> .
 
 act:il_burkart_008 a act:InterestLink ;
     act:committee "Beirat" ;
-    act:concernedPerson <https://www.wikidata.org/wiki/Q23060472> ;
     act:functionRole "Beirat" ;
     act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/professional_activity> ;
     act:isPaid true ;
     act:legalForm "Aktiengesellschaft" ;
-    act:organizationLabel "Stiebel Eltron AG, Lupfig" .
+    act:organizationLabel "Stiebel Eltron AG, Lupfig" ;
+    act:personReference <https://www.wikidata.org/wiki/Q23060472> .
 
 act:il_burkart_009 a act:InterestLink ;
     act:committee "Vorstand" ;
-    act:concernedPerson <https://www.wikidata.org/wiki/Q23060472> ;
     act:functionRole "Mitglied" ;
     act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/association> ;
     act:isPaid true ;
     act:legalForm "Verein" ;
-    act:organizationLabel "SUISSEDIGITAL Verband für Kommunikationsnetze" .
+    act:organizationLabel "SUISSEDIGITAL Verband für Kommunikationsnetze" ;
+    act:personReference <https://www.wikidata.org/wiki/Q23060472> .
 
 act:il_burkart_010 a act:InterestLink ;
     act:committee "Vorstand" ;
-    act:concernedPerson <https://www.wikidata.org/wiki/Q23060472> ;
     act:functionRole "Präsident" ;
     act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/association> ;
     act:isPaid false ;
     act:legalForm "Verein" ;
-    act:organizationLabel "Allianz Sicherheit Schweiz, Baden" .
+    act:organizationLabel "Allianz Sicherheit Schweiz, Baden" ;
+    act:personReference <https://www.wikidata.org/wiki/Q23060472> .
 
 act:il_burkart_011 a act:InterestLink ;
     act:committee "Vorstand" ;
-    act:concernedPerson <https://www.wikidata.org/wiki/Q23060472> ;
     act:functionRole "Mitglied" ;
     act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/association> ;
     act:isPaid false ;
     act:legalForm "Verein" ;
-    act:organizationLabel "Verein Landesausstellung Svizra27, Aarau" .
+    act:organizationLabel "Verein Landesausstellung Svizra27, Aarau" ;
+    act:personReference <https://www.wikidata.org/wiki/Q23060472> .
+
+<https://www.wikidata.org/wiki/Q23060472> a act:PersonReference ;
+    mcm:label "Thierry Burkart" ;
+    act:groupLabel "FDP.Die Liberalen" .
 
 

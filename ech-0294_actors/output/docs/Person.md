@@ -56,8 +56,6 @@ __
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [persons](persons.md) | range | [Person](Person.md) |
-| [Membership](Membership.md) | [concerned_person](concerned_person.md) | range | [Person](Person.md) |
-| [InterestLink](InterestLink.md) | [concerned_person](concerned_person.md) | range | [Person](Person.md) |
 
 
 

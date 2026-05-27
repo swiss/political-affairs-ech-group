@@ -23,7 +23,7 @@ __
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [concerned_person](concerned_person.md) | 0..1 <br/> [Person](Person.md) | [de] Link zu einer Person, auf die sich die Zugehörigkeit bezieht | direct |
+| [person_reference](person_reference.md) | 0..1 <br/> [PersonReference](PersonReference.md) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfun... | direct |
 | [interest_type](interest_type.md) | 1 <br/> [InterestTypeEnum](InterestTypeEnum.md) | [de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verei... | direct |
 | [organization_label](organization_label.md) | 0..1 <br/> [String](String.md) | [en] Label of the organization | direct |
 | [organization_uid](organization_uid.md) | 0..1 <br/> [String](String.md) | [en] UID of the organization (for analysis with NOGA codes, etc | direct |
@@ -94,7 +94,10 @@ __
 
 ```yaml
 global_uri: act:il_burkart_003
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_label: Bovida Real Estate AG, Baar
 legal_form: Aktiengesellschaft
@@ -107,7 +110,10 @@ is_paid: true
 
 ```yaml
 global_uri: act:il_burkart_002
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_label: Birchmeier Holding AG, Döttingen
 legal_form: Aktiengesellschaft
@@ -120,7 +126,10 @@ is_paid: true
 
 ```yaml
 global_uri: act:il_burkart_001
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_label: Burkart Advisory GmbH, Baden
 legal_form: Gesellschaft mit beschränkter Haftung
@@ -133,7 +142,10 @@ is_paid: true
 
 ```yaml
 global_uri: act:il_burkart_004
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_label: ELCA Group SA, Lausanne
 legal_form: Aktiengesellschaft
@@ -146,7 +158,10 @@ is_paid: true
 
 ```yaml
 global_uri: act:il_burkart_011
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: Verein Landesausstellung Svizra27, Aarau
 legal_form: Verein
@@ -159,7 +174,10 @@ is_paid: false
 
 ```yaml
 global_uri: act:il_burkart_009
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: SUISSEDIGITAL Verband für Kommunikationsnetze
 legal_form: Verein
@@ -172,7 +190,10 @@ is_paid: true
 
 ```yaml
 global_uri: act:il_burkart_006
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: FDP.Die Liberalen
 legal_form: Verein
@@ -185,7 +206,10 @@ is_paid: true
 
 ```yaml
 global_uri: act:il_burkart_008
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_label: Stiebel Eltron AG, Lupfig
 legal_form: Aktiengesellschaft
@@ -198,7 +222,10 @@ is_paid: true
 
 ```yaml
 global_uri: act:il_burkart_005
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
 legal_form: Verein
@@ -211,7 +238,10 @@ is_paid: true
 
 ```yaml
 global_uri: act:il_burkart_010
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: Allianz Sicherheit Schweiz, Baden
 legal_form: Verein
@@ -224,7 +254,10 @@ is_paid: false
 
 ```yaml
 global_uri: act:il_burkart_007
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: FONDATION SUISSE DE DEMINAGE (FSD), Genf
 legal_form: Stiftung

@@ -3,12 +3,12 @@ search:
   boost: 5.0
 ---
 
-# Slot: role_type 
+# Slot: group_label 
 
 
-_[en] Role of the person in the membership or function._
+_[de] Name des Gremiums zum Zeitpunkt der Verknüpfung._
 
-_[de] Rolle der Person in der Mitgliedschaft oder Funktion._
+_[en] Name of the body/group at time of linking._
 
 __
 
@@ -18,7 +18,7 @@ __
 
 
 
-URI: [act:roleType](https://ld.ech.ch/schema/0294/actors/roleType)
+URI: [act:groupLabel](https://ld.ech.ch/schema/0294/actors/groupLabel)
 <!-- no inheritance hierarchy -->
 
 
@@ -30,7 +30,6 @@ URI: [act:roleType](https://ld.ech.ch/schema/0294/actors/roleType)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [PersonReference](PersonReference.md) | [de] Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifika... |  no  |
-| [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |  no  |
 
 
 
@@ -43,9 +42,9 @@ URI: [act:roleType](https://ld.ech.ch/schema/0294/actors/roleType)
 
 | Property | Value |
 | --- | --- |
-| Range | [RoleType](RoleType.md) |
-| Domain Of | [PersonReference](PersonReference.md), [Membership](Membership.md) |
-| Slot URI | [act:roleType](https://ld.ech.ch/schema/0294/actors/roleType) |
+| Range | [String](String.md) |
+| Domain Of | [PersonReference](PersonReference.md) |
+| Slot URI | [act:groupLabel](https://ld.ech.ch/schema/0294/actors/groupLabel) |
 
 ### Cardinality and Requirements
 
@@ -79,8 +78,8 @@ URI: [act:roleType](https://ld.ech.ch/schema/0294/actors/roleType)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | act:roleType |
-| native | act:role_type |
+| self | act:groupLabel |
+| native | act:group_label |
 
 
 
@@ -89,19 +88,18 @@ URI: [act:roleType](https://ld.ech.ch/schema/0294/actors/roleType)
 
 <details>
 ```yaml
-name: role_type
-description: '[en] Role of the person in the membership or function.
+name: group_label
+description: '[de] Name des Gremiums zum Zeitpunkt der Verknüpfung.
 
-  [de] Rolle der Person in der Mitgliedschaft oder Funktion.
+  [en] Name of the body/group at time of linking.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
-slot_uri: act:roleType
+slot_uri: act:groupLabel
 domain_of:
 - PersonReference
-- Membership
-range: RoleType
+range: string
 
 ```
 </details></div>

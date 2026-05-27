@@ -30,6 +30,7 @@ URI: [act:groupType](https://ld.ech.ch/schema/0294/actors/groupType)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [GroupReference](GroupReference.md) | [de] Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifika... |  no  |
 
 
 
@@ -43,7 +44,7 @@ URI: [act:groupType](https://ld.ech.ch/schema/0294/actors/groupType)
 | Property | Value |
 | --- | --- |
 | Range | [GroupType](GroupType.md) |
-| Domain Of | [Group](Group.md) |
+| Domain Of | [Group](Group.md), [GroupReference](GroupReference.md) |
 | Slot URI | [act:groupType](https://ld.ech.ch/schema/0294/actors/groupType) |
 
 ### Cardinality and Requirements
@@ -101,6 +102,7 @@ rank: 1000
 slot_uri: act:groupType
 domain_of:
 - Group
+- GroupReference
 range: GroupType
 
 ```

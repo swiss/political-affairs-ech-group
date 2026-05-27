@@ -4,7 +4,11 @@
     {
       "global_uri": "act:il_burkart_001",
       "interest_type": "professional_activity",
-      "concerned_person": "https://www.wikidata.org/wiki/Q23060472",
+      "person_reference": {
+        "global_uri": "https://www.wikidata.org/wiki/Q23060472",
+        "label": "Thierry Burkart",
+        "group_label": "FDP.Die Liberalen"
+      },
       "organization_label": "Burkart Advisory GmbH, Baden",
       "legal_form": "Gesellschaft mit beschränkter Haftung",
       "is_paid": true,
@@ -14,7 +18,11 @@
     {
       "global_uri": "act:il_burkart_002",
       "interest_type": "professional_activity",
-      "concerned_person": "https://www.wikidata.org/wiki/Q23060472",
+      "person_reference": {
+        "global_uri": "https://www.wikidata.org/wiki/Q23060472",
+        "label": "Thierry Burkart",
+        "group_label": "FDP.Die Liberalen"
+      },
       "organization_label": "Birchmeier Holding AG, Döttingen",
       "legal_form": "Aktiengesellschaft",
       "is_paid": true,
@@ -24,7 +32,11 @@
     {
       "global_uri": "act:il_burkart_003",
       "interest_type": "professional_activity",
-      "concerned_person": "https://www.wikidata.org/wiki/Q23060472",
+      "person_reference": {
+        "global_uri": "https://www.wikidata.org/wiki/Q23060472",
+        "label": "Thierry Burkart",
+        "group_label": "FDP.Die Liberalen"
+      },
       "organization_label": "Bovida Real Estate AG, Baar",
       "legal_form": "Aktiengesellschaft",
       "is_paid": true,
@@ -34,7 +46,11 @@
     {
       "global_uri": "act:il_burkart_004",
       "interest_type": "professional_activity",
-      "concerned_person": "https://www.wikidata.org/wiki/Q23060472",
+      "person_reference": {
+        "global_uri": "https://www.wikidata.org/wiki/Q23060472",
+        "label": "Thierry Burkart",
+        "group_label": "FDP.Die Liberalen"
+      },
       "organization_label": "ELCA Group SA, Lausanne",
       "legal_form": "Aktiengesellschaft",
       "is_paid": true,
@@ -44,7 +60,11 @@
     {
       "global_uri": "act:il_burkart_005",
       "interest_type": "association",
-      "concerned_person": "https://www.wikidata.org/wiki/Q23060472",
+      "person_reference": {
+        "global_uri": "https://www.wikidata.org/wiki/Q23060472",
+        "label": "Thierry Burkart",
+        "group_label": "FDP.Die Liberalen"
+      },
       "organization_label": "ASTAG Schweizerischer Nutzfahrzeugverband, Bern",
       "legal_form": "Verein",
       "is_paid": true,
@@ -54,7 +74,11 @@
     {
       "global_uri": "act:il_burkart_006",
       "interest_type": "association",
-      "concerned_person": "https://www.wikidata.org/wiki/Q23060472",
+      "person_reference": {
+        "global_uri": "https://www.wikidata.org/wiki/Q23060472",
+        "label": "Thierry Burkart",
+        "group_label": "FDP.Die Liberalen"
+      },
       "organization_label": "FDP.Die Liberalen",
       "legal_form": "Verein",
       "is_paid": true,
@@ -64,7 +88,11 @@
     {
       "global_uri": "act:il_burkart_007",
       "interest_type": "association",
-      "concerned_person": "https://www.wikidata.org/wiki/Q23060472",
+      "person_reference": {
+        "global_uri": "https://www.wikidata.org/wiki/Q23060472",
+        "label": "Thierry Burkart",
+        "group_label": "FDP.Die Liberalen"
+      },
       "organization_label": "FONDATION SUISSE DE DEMINAGE (FSD), Genf",
       "legal_form": "Stiftung",
       "is_paid": false,
@@ -74,7 +102,11 @@
     {
       "global_uri": "act:il_burkart_008",
       "interest_type": "professional_activity",
-      "concerned_person": "https://www.wikidata.org/wiki/Q23060472",
+      "person_reference": {
+        "global_uri": "https://www.wikidata.org/wiki/Q23060472",
+        "label": "Thierry Burkart",
+        "group_label": "FDP.Die Liberalen"
+      },
       "organization_label": "Stiebel Eltron AG, Lupfig",
       "legal_form": "Aktiengesellschaft",
       "is_paid": true,
@@ -84,7 +116,11 @@
     {
       "global_uri": "act:il_burkart_009",
       "interest_type": "association",
-      "concerned_person": "https://www.wikidata.org/wiki/Q23060472",
+      "person_reference": {
+        "global_uri": "https://www.wikidata.org/wiki/Q23060472",
+        "label": "Thierry Burkart",
+        "group_label": "FDP.Die Liberalen"
+      },
       "organization_label": "SUISSEDIGITAL Verband für Kommunikationsnetze",
       "legal_form": "Verein",
       "is_paid": true,
@@ -94,7 +130,11 @@
     {
       "global_uri": "act:il_burkart_010",
       "interest_type": "association",
-      "concerned_person": "https://www.wikidata.org/wiki/Q23060472",
+      "person_reference": {
+        "global_uri": "https://www.wikidata.org/wiki/Q23060472",
+        "label": "Thierry Burkart",
+        "group_label": "FDP.Die Liberalen"
+      },
       "organization_label": "Allianz Sicherheit Schweiz, Baden",
       "legal_form": "Verein",
       "is_paid": false,
@@ -104,7 +144,11 @@
     {
       "global_uri": "act:il_burkart_011",
       "interest_type": "association",
-      "concerned_person": "https://www.wikidata.org/wiki/Q23060472",
+      "person_reference": {
+        "global_uri": "https://www.wikidata.org/wiki/Q23060472",
+        "label": "Thierry Burkart",
+        "group_label": "FDP.Die Liberalen"
+      },
       "organization_label": "Verein Landesausstellung Svizra27, Aarau",
       "legal_form": "Verein",
       "is_paid": false,

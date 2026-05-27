@@ -29,24 +29,38 @@ Management summary of the document.
 < manually insert TOC here >
 
 
+# Einführung
 
+Der Inhalt dieses Substandards sind die politischen Akteure, seien es Personen (Rats- oder Verwaltungsmitglieder) oder Gruppen (Parteien, Fraktionen, Gremien, Kommissionen und Verbände).
 
-# Introduction
+Zum einen wird eine Struktur definiert, die es erlaubt, Informationen in Ratsinformationssystemen oder ähnlichen Systemen der Öffentlichkeit strukturiert zur Verfügung zu stellen. Zum anderen werden den politischen Akteuren eindeutige Identifikatoren zugeteilt, mit dem Ziel, aus anderen Standards dieser Fachgruppe darauf referenzieren zu können.
 
-## Scope of this Document
+Es wurde bei der Definition darauf geachtet, dass es den publizierenden Organisationen ermöglicht wird, alle Informationen möglichst strukturiert zu veröffentlichen. Dies erlaubt es, für die Konsumenten einen maximalen Nutzen zu erzielen. Es ist aber jeweils auch möglich auszudrücken, wenn Informationen nicht in der maximalen Detailstufe vorhanden sind. (Es kann zum Beispiel bei einem Vornamen angegeben werden, ob es sich um den Rufnamen oder den amtlichen Namen handelt. Falls diese Information aber nicht vorhanden ist, kann der Name auch ohne diese Zusatzinformation publiziert werden.)
 
-## Identified Gaps on Political Actors
+## Ziele des Standards und erhoffte Wirkung
 
-## Goals of this Document
+Das Ziel des Standards ist es, Organisationen, welche Informationen zu politischen Geschäften veröffentlichen, ein Datenmodell zur Verfügung zu stellen. Die Wirkung, die dabei erhofft wird, ist eine einheitliche Informationsgrundlage zu den politischen Geschäften in der Schweiz über alle föderalen Ebenen hinweg. Damit können die Informationen im politischen Diskurs besser gelesen, verarbeitet und verstanden werden. Die Transparenz und Nachvollziehbarkeit der Entscheidungen im politischen System der Schweiz soll weiter erhöht werden.
 
+Besondere Ziele des Substandards sind, die Akteure im politischen Prozess identifizierbar zu machen und mit den rechtlich nötigen Informationen auszugestalten. Als weiteres Ziel wird ein langfristiger Abgleich der Akteure über die föderalen Stufen angestrebt. Der Substandard bietet eine Struktur an, welche von den jeweiligen Organisationen (Städte, Kantone und Bund) nach deren Anforderungen und rechtlichem Kontext umgesetzt werden kann.
 
+## Identifizierte Zielgruppen
 
-## Work Plan as of November 2025
-Currently we are working in the following order on the different topics regarding political actors (agents):
-1) Personen: Ratsmitglieder, Verwaltungsmitglieder
-2) Gruppen / Organe / Interessengruppe: Parteien, Fraktionen, Gremien, Kommissionen, Verbände
-3) Interessenbindungen / Konflikte (Politikfinanzierungen)
-4) Verknüpfungen gleicher Personen übergreifend CH / Kanton
+Die Arbeitsgruppe hat folgende Zielgruppen für den Standard identifiziert, welche direkt oder indirekt angesprochen werden. Diese Zielgruppen wurden als Leitfaden bei Entscheidungen zum Standard als Bedarfsträger identifiziert.
+
+* Städte/Gemeinden, Kantone und Eidgenossenschaft (Publikation im Auftrag)
+* Politikerinnen und Politiker (Entstehung und Konsum)
+* Journalismus, Forschung: Politikwissenschaft, Historiker, Open-Data-Portale, Politmonitor/OParlData (Konsum, Monitoring und Veredelung von Informationen)
+* Öffentliche Verwaltung: Statistikämter und Archive (Auswertung, Monitoring, Archivierung)
+* Öffentlichkeit (Konsum)
+
+## Arbeitsvorgang
+
+Folgende Themen wurden in der aufgeführten Reihenfolge seit 2025 in der Subgruppe angegangen:
+
+1. Personen: Ratsmitglieder, Verwaltungsmitglieder
+2. Gruppen / Organe / Interessengruppen: Parteien, Fraktionen, Gremien, Kommissionen, Verbände
+3. Interessenbindungen, Konflikte, Politikfinanzierung
+4. Verknüpfungen gleicher Personen über föderale Stufen hinweg
 
 
 # Person
@@ -411,8 +425,6 @@ __
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Container](#Container) | [persons](#persons) | range | [Person](#Person) |
-| [Membership](#Membership) | [concerned_person](#concerned_person) | range | [Person](#Person) |
-| [InterestLink](#InterestLink) | [concerned_person](#concerned_person) | range | [Person](#Person) |
 
 
 
@@ -1263,7 +1275,6 @@ __
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Container](#Container) | [groups](#groups) | range | [Group](#Group) |
-| [Membership](#Membership) | [concerned_group](#concerned_group) | range | [Group](#Group) |
 
 
 
@@ -1848,8 +1859,8 @@ __
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [concerned_person](#concerned_person) | 0..1 <br/> [Person](#Person) | [de] Link zu einer Person, auf die sich die Zugehörigkeit bezieht | direct |
-| [concerned_group](#concerned_group) | 0..1 <br/> [Group](#Group) | [de] Link zu einer Gruppe, auf die sich die Zugehörigkeit bezieht | direct |
+| [person_reference](#person_reference) | 0..1 <br/> [PersonReference](#PersonReference) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfun... | direct |
+| [group_reference](#group_reference) | 0..1 <br/> [GroupReference](#GroupReference) | [de] Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfun... | direct |
 | [role_type](#role_type) | 0..1 <br/> [RoleType](#RoleType) | [en] Role of the person in the membership or function | direct |
 | [authorized_to_vote](#authorized_to_vote) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Person stimmberechtigt ist | direct |
 | [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
@@ -2322,7 +2333,7 @@ __
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [concerned_person](#concerned_person) | 0..1 <br/> [Person](#Person) | [de] Link zu einer Person, auf die sich die Zugehörigkeit bezieht | direct |
+| [person_reference](#person_reference) | 0..1 <br/> [PersonReference](#PersonReference) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfun... | direct |
 | [interest_type](#interest_type) | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | [de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verei... | direct |
 | [organization_label](#organization_label) | 0..1 <br/> [String](#String) | [en] Label of the organization | direct |
 | [organization_uid](#organization_uid) | 0..1 <br/> [String](#String) | [en] UID of the organization (for analysis with NOGA codes, etc | direct |
@@ -2393,7 +2404,10 @@ __
 
 ```yaml
 global_uri: act:il_burkart_003
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_label: Bovida Real Estate AG, Baar
 legal_form: Aktiengesellschaft
@@ -2406,7 +2420,10 @@ is_paid: true
 
 ```yaml
 global_uri: act:il_burkart_002
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_label: Birchmeier Holding AG, Döttingen
 legal_form: Aktiengesellschaft
@@ -2419,7 +2436,10 @@ is_paid: true
 
 ```yaml
 global_uri: act:il_burkart_001
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_label: Burkart Advisory GmbH, Baden
 legal_form: Gesellschaft mit beschränkter Haftung
@@ -2432,7 +2452,10 @@ is_paid: true
 
 ```yaml
 global_uri: act:il_burkart_004
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_label: ELCA Group SA, Lausanne
 legal_form: Aktiengesellschaft
@@ -2445,7 +2468,10 @@ is_paid: true
 
 ```yaml
 global_uri: act:il_burkart_011
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: Verein Landesausstellung Svizra27, Aarau
 legal_form: Verein
@@ -2458,7 +2484,10 @@ is_paid: false
 
 ```yaml
 global_uri: act:il_burkart_009
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: SUISSEDIGITAL Verband für Kommunikationsnetze
 legal_form: Verein
@@ -2471,7 +2500,10 @@ is_paid: true
 
 ```yaml
 global_uri: act:il_burkart_006
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: FDP.Die Liberalen
 legal_form: Verein
@@ -2484,7 +2516,10 @@ is_paid: true
 
 ```yaml
 global_uri: act:il_burkart_008
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_label: Stiebel Eltron AG, Lupfig
 legal_form: Aktiengesellschaft
@@ -2497,7 +2532,10 @@ is_paid: true
 
 ```yaml
 global_uri: act:il_burkart_005
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
 legal_form: Verein
@@ -2510,7 +2548,10 @@ is_paid: true
 
 ```yaml
 global_uri: act:il_burkart_010
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: Allianz Sicherheit Schweiz, Baden
 legal_form: Verein
@@ -2523,7 +2564,10 @@ is_paid: false
 
 ```yaml
 global_uri: act:il_burkart_007
-concerned_person: https://www.wikidata.org/wiki/Q23060472
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: FONDATION SUISSE DE DEMINAGE (FSD), Genf
 legal_form: Stiftung

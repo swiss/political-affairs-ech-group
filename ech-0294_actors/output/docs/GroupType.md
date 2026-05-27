@@ -35,6 +35,7 @@ __
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Group](Group.md) | [group_type](group_type.md) | range | [GroupType](GroupType.md) |
+| [GroupReference](GroupReference.md) | [group_type](group_type.md) | range | [GroupType](GroupType.md) |
 
 
 
