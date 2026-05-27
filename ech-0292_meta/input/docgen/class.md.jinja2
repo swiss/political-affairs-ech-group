@@ -1,8 +1,3 @@
----
-search:
-  boost: {% if element.deprecated %}0.5{% else %}10.0{% endif %}
----
-
 {%- if element.title %}
     {%- set title = element.title ~ ' (' ~ element.name ~ ')' -%}
 {%- else %}
@@ -115,7 +110,7 @@ URI: {{ gen.uri_link(element) }}
 #}
 
 
-## Attribute
+### Attribute
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
@@ -132,10 +127,10 @@ URI: {{ gen.uri_link(element) }}
 {% endif %}
 
 {%- if element.unique_keys %}
-## Unique Keys
+### Unique Keys
 
 {% for uk in element.unique_keys.values() %}
-### {{ uk.unique_key_name }}
+#### {{ uk.unique_key_name }}
 
 **Unique key slots:** {{ uk.unique_key_slots | join(', ') }}
 {%- if uk.consider_nulls_inequal %}
@@ -146,7 +141,7 @@ Considers null values as inequal
 {% endif %}
 
 {%- if element.defining_slots %}
-## Defining Slots
+### Defining Slots
 
 This class is defined by the following slots:
 
@@ -163,7 +158,7 @@ This class is defined by the following slots:
 <summary>Expressions & Logic</summary>
 
 {%- if element.any_of %}
-#### Any Of
+##### Any Of
 
 The class must satisfy at least one of:
 
@@ -173,7 +168,7 @@ The class must satisfy at least one of:
 {%- endif %}
 
 {%- if element.all_of %}
-#### All Of
+##### All Of
 
 The class must satisfy all of:
 
@@ -183,7 +178,7 @@ The class must satisfy all of:
 {%- endif %}
 
 {%- if element.exactly_one_of %}
-#### Exactly One Of
+##### Exactly One Of
 
 The class must satisfy exactly one of:
 
@@ -193,7 +188,7 @@ The class must satisfy exactly one of:
 {%- endif %}
 
 {%- if element.none_of %}
-#### None Of
+##### None Of
 
 The class must not satisfy any of:
 
@@ -203,7 +198,7 @@ The class must not satisfy any of:
 {%- endif %}
 
 {%- if element.slot_conditions %}
-#### Slot Conditions
+##### Slot Conditions
 
 {%- for slot_name, conditions in element.slot_conditions.items() %}
 - **{{ gen.link(slot_name) }}**: {{ conditions }}
@@ -214,7 +209,7 @@ The class must not satisfy any of:
 {% endif %}
 
 {% if schemaview.is_mixin(element.name) %}
-## Mixin Usage
+### Mixin Usage
 
 | mixed into | description |
 | --- | --- |
@@ -224,7 +219,7 @@ The class must not satisfy any of:
 {% endif %}
 
 {% if schemaview.usage_index().get(element.name) %}
-## Usages
+### Usages
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
@@ -234,10 +229,10 @@ The class must not satisfy any of:
 {% endif %}
 
 {% if element.rules %}
-## Rules
+### Rules
 
 {% for rule in gen.classrule_to_dict_view(element) %}
-### {{ rule.title }}
+#### {{ rule.title }}
 
 | Rule Applied | Preconditions | Postconditions | Elseconditions |
 |--------------|---------------|----------------|----------------|
@@ -263,9 +258,9 @@ The class must not satisfy any of:
 {% include "common_metadata.md.jinja2" %}
 
 {% if gen.example_object_blobs(element.name) -%}
-## Examples
+### Examples
 {% for name, blob in gen.example_object_blobs(element.name) -%}
-### Example: {{ name }}
+#### Example: {{ name }}
 
 ```yaml
 {{ blob }}
@@ -276,11 +271,11 @@ The class must not satisfy any of:
 
 {# disable LinkML Source
 
-## LinkML Source
+### LinkML Source
 
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 
-### Direct
+#### Direct
 
 <details>
 ```yaml
@@ -288,7 +283,7 @@ The class must not satisfy any of:
 ```
 </details>
 
-### Induced
+#### Induced
 
 <details>
 ```yaml

@@ -46,4 +46,6 @@ names:
 
 {{include:ech-0294_actors/output/docs/Address.md}} 
 
+{{include:ech-0294_actors/output/docs/AddressTypeEnum.md}} 
+
 {{include:ech-0294_actors/output/docs/Citizenship.md}} 
