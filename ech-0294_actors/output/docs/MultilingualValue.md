@@ -20,12 +20,8 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| value | 0..1 <br/> [String](String.md) | [de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc.
-[en] The value of an information besides other attributes such as type, language, etc.
- |
-| language | 0..1 <br/> [String](String.md) | [de] Sprachcode im ISO 639-1 Format.
-[en] Language code in ISO 639-1 format.
- |
+| value | 0..1 <br/> [String](String.md) | [de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc. [en] The value of an information besides other attributes such as type, language, etc.  |
+| language | 0..1 <br/> [String](String.md) | [de] Sprachcode im ISO 639-1 Format. [en] Language code in ISO 639-1 format.  |
 
 
 

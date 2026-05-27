@@ -20,15 +20,9 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| language | 0..1 <br/> [String](String.md) | [de] Sprachcode im ISO 639-1 Format.
-[en] Language code in ISO 639-1 format.
- |
-| is_correspondence | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob es sich um die bevorzugte Sprache handelt.
-[en] Indicates if this is the preferred language.
- |
-| is_native | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob es sich um die Muttersprache handelt.
-[en] Indicates if this is the native language.
- |
+| language | 0..1 <br/> [String](String.md) | [de] Sprachcode im ISO 639-1 Format. [en] Language code in ISO 639-1 format.  |
+| is_correspondence | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob es sich um die bevorzugte Sprache handelt. [en] Indicates if this is the preferred language.  |
+| is_native | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob es sich um die Muttersprache handelt. [en] Indicates if this is the native language.  |
 
 
 

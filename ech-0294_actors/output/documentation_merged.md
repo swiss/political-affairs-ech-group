@@ -127,75 +127,29 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| label | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).
-[en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).
- |
-| label_long | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.).
-[en] Option to assign an extended label to a structured piece of information (e.g., display name with title, position, etc.).
- |
-| birth_year | 0..1 <br/> [Integer](#Integer) | [de] Geburtsjahr.
-[en] Year of birth. Only to be used, if there is no full `birthDate` available.
- |
-| birth_date | 0..1 <br/> [Date](#Date) | [de] Genaues Geburtsdatum.
-[en] Exact date of birth if available and public. This field has precedence over the field `birthYear`.
- |
-| death_date | 0..1 <br/> [Date](#Date) | [de] Genaues Todesdatum.
-[en] Exact date of death.
- |
-| picture | 0..1 <br/> [Uri](#Uri) | [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).
-[en] Link to an image (preferred: PNG, then JPG, then GIF).
- |
-| names | * <br/> [Name](#Name) | [en] Names of the person with type and value.
-[de] Namen der Person mit Typ und Wert.
- |
-| addresses | * <br/> [Address](#Address) | [de] Adressen mit Typ (privat, geschäftlich, lokal).
-[en] Addresses with type (private, business, local).
- |
-| language_proficiencies | * <br/> [LanguageProficiency](#LanguageProficiency) | [de] Sprachkompetenzen der Person.
-[en] Language proficiencies of the person.
- |
-| citizenships | * <br/> [Citizenship](#Citizenship) | [de] Staatsbürgerschaften der Person.
-[en] Citizenships of the person.
- |
-| genders | * <br/> [Gender](#Gender) | [de] Geschlecht der Person.
-[en] Gender of the person.
- |
-| occupations | * <br/> [Occupation](#Occupation) | [de] Berufe oder Tätigkeiten der Person.
-[en] Occupations or professions of the person.
- |
-| trainings | * <br/> [Training](#Training) | [de] Ausbildungen oder Bildungen der Person.
-[en] Trainings or educations of the person.
- |
-| contacts | * <br/> [Contact](#Contact) | [en] Contact information (email, website, social media).
-[de] Kontaktinformationen (E-Mail, Website, Social Media).
- |
-| electoral_district | 0..1 <br/> [ElectoralDistrict](#ElectoralDistrict) | [de] Link zum Wahlbezirk.
-[en] Link to the electoral district.
- |
-| interest_links | * <br/> [InterestLink](#InterestLink) | [de] Sammlung von Interessenbindungen.
-[en] Collection of interest links.range: InterestLink
- |
-| local_id | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
-[en] Local identifier. For example, a UUID from the council information system.
-<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität.
-[en] A unique, globally valid URI for the entity.
-<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz.
-[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.
-<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| date_created | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde.
-[en] The date when an entity was created.
-<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
-[en] The date and time when an entity was created.
-<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde.
-[en] The date when an entity was last modified.
-<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
-[en] The date and time when an entity was last modified.
-<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| label | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.). [en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).  |
+| label_long | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.). [en] Option to assign an extended label to a structured piece of information (e.g., display name with title, position, etc.).  |
+| birth_year | 0..1 <br/> [Integer](#Integer) | [de] Geburtsjahr. [en] Year of birth. Only to be used, if there is no full `birthDate` available.  |
+| birth_date | 0..1 <br/> [Date](#Date) | [de] Genaues Geburtsdatum. [en] Exact date of birth if available and public. This field has precedence over the field `birthYear`.  |
+| death_date | 0..1 <br/> [Date](#Date) | [de] Genaues Todesdatum. [en] Exact date of death.  |
+| picture | 0..1 <br/> [Uri](#Uri) | [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF). [en] Link to an image (preferred: PNG, then JPG, then GIF).  |
+| names | * <br/> [Name](#Name) | [en] Names of the person with type and value. [de] Namen der Person mit Typ und Wert.  |
+| addresses | * <br/> [Address](#Address) | [de] Adressen mit Typ (privat, geschäftlich, lokal). [en] Addresses with type (private, business, local).  |
+| language_proficiencies | * <br/> [LanguageProficiency](#LanguageProficiency) | [de] Sprachkompetenzen der Person. [en] Language proficiencies of the person.  |
+| citizenships | * <br/> [Citizenship](#Citizenship) | [de] Staatsbürgerschaften der Person. [en] Citizenships of the person.  |
+| genders | * <br/> [Gender](#Gender) | [de] Geschlecht der Person. [en] Gender of the person.  |
+| occupations | * <br/> [Occupation](#Occupation) | [de] Berufe oder Tätigkeiten der Person. [en] Occupations or professions of the person.  |
+| trainings | * <br/> [Training](#Training) | [de] Ausbildungen oder Bildungen der Person. [en] Trainings or educations of the person.  |
+| contacts | * <br/> [Contact](#Contact) | [en] Contact information (email, website, social media). [de] Kontaktinformationen (E-Mail, Website, Social Media).  |
+| electoral_district | 0..1 <br/> [ElectoralDistrict](#ElectoralDistrict) | [de] Link zum Wahlbezirk. [en] Link to the electoral district.  |
+| interest_links | * <br/> [InterestLink](#InterestLink) | [de] Sammlung von Interessenbindungen. [en] Collection of interest links.range: InterestLink  |
+| local_id | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification) |
+| date_created | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde. [en] The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde. [en] The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. [en] The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. [en] The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates) |
+| date_modified | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde. [en] The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde. [en] The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde. [en] The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde. [en] The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates) |
 
 
 
@@ -372,21 +326,11 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| address_type | 0..1 <br/> [AddressTypeEnum](#AddressTypeEnum) | [de] Typ der Adresse.
-[en] Type of address.
- |
-| address_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] URI der Adresse.
-[en] URI of the address.
- |
-| street_address | 0..1 <br/> [String](#String) | [de] Strassenadresse.
-[en] Street address.
- |
-| postal_code | 0..1 <br/> [Integer](#Integer) | [de] Postleitzahl.
-[en] Postal code.
- |
-| postal_locality | 0..1 <br/> [String](#String) | [de] Ort.
-[en] Locality.
- |
+| address_type | 0..1 <br/> [AddressTypeEnum](#AddressTypeEnum) | [de] Typ der Adresse. [en] Type of address.  |
+| address_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] URI der Adresse. [en] URI of the address.  |
+| street_address | 0..1 <br/> [String](#String) | [de] Strassenadresse. [en] Street address.  |
+| postal_code | 0..1 <br/> [Integer](#Integer) | [de] Postleitzahl. [en] Postal code.  |
+| postal_locality | 0..1 <br/> [String](#String) | [de] Ort. [en] Locality.  |
 
 
 
@@ -583,18 +527,10 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| country | 0..1 <br/> [String](#String) | [de] ISO 3166 Ländercode.
-[en] ISO 3166 country code.
- |
-| valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist.
-[en] The date from which the information is valid.
-<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist.
-[en] The date until which the information is valid, inclusive.
-<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist.
-[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.
-<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+| country | 0..1 <br/> [String](#String) | [de] ISO 3166 Ländercode. [en] ISO 3166 country code.  |
+| valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity) |
 
 
 
@@ -648,6 +584,83 @@ __
 
 </div> 
 
+
+
+# Class: LanguageProficiency 
+
+
+_[de] Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um die bevorzugte Sprache oder die Muttersprache handelt._
+
+_[en] Language proficiency of a person indicating the language and whether it is the preferred language or native language._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+### Attribute
+
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| language | 0..1 <br/> [String](#String) | [de] Sprachcode im ISO 639-1 Format. [en] Language code in ISO 639-1 format.  |
+| is_correspondence | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob es sich um die bevorzugte Sprache handelt. [en] Indicates if this is the preferred language.  |
+| is_native | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob es sich um die Muttersprache handelt. [en] Indicates if this is the native language.  |
+
+
+
+
+
+### Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Person](#Person) | [language_proficiencies](#language_proficiencies) | range | [LanguageProficiency](#LanguageProficiency) |
+
+
+
+
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://ld.ech.ch/schema/0294/actors
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | act:LanguageProficiency |
+| native | act:LanguageProficiency |
+
+
+
+
+
+
+
+
+
+</div> 
 # Gruppen und Organe (Groups)
 
 ## Einführung und Zielsetzung
@@ -1323,69 +1336,27 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| group_type | 0..1 <br/> [GroupType](#GroupType) | [de] Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder ähnliches. Die genaue Bennenung und Beschreibung der Gruppierung wird über `name` gemacht.
-[en] Link to the group type.
- |
-| label | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).
-[en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).
- |
-| abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | [de] Abkürzung (kann mehrsprachig sein).
-[en] Abbreviation (can be multilingual).
- |
-| description | * <br/> [MultilingualValue](#MultilingualValue) | [de] Kurze Beschreibung der Gruppierung.
-[en] Description of the entity.
- |
-| landing_page | 0..1 <br/> [Uri](#Uri) | [de] Website mit weiteren Informationen.
-[en] Website providing further information.
- |
-| parent_groups | * <br/> [Uriorcurie](#Uriorcurie) | [de] Übergeordneten Gruppe. Zum Beispiel die Mutterpartei, zu Kantonalenparteien. Oder zur Beschreibung der Hierarchie in Exekutive. Verknüpfung von Subkommissionen mit Kommissionen. (parentGroup wird immer im selben group_type verwendet.)
-[en] Link to parent groups.
- |
-| spatial | 0..1 <br/> [String](#String) | [de] Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z.B. ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).
-[en] Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).
- |
-| contacts | * <br/> [Contact](#Contact) | [en] Contact information (email, website, social media).
-[de] Kontaktinformationen (E-Mail, Website, Social Media).
- |
-| addresses | * <br/> [Address](#Address) | [de] Adressen mit Typ (privat, geschäftlich, lokal).
-[en] Addresses with type (private, business, local).
- |
-| statutes_url | 0..1 <br/> [String](#String) | [de] URL zu Parteistatuten (optional für Parteien).
-[en] URL to party statutes (optional for parties).
- |
-| party_color | 0..1 <br/> [String](#String) | [de] Parteifarbe (optional für Parteien).
-[en] Party color (optional for parties).
- |
-| local_id | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
-[en] Local identifier. For example, a UUID from the council information system.
-<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität.
-[en] A unique, globally valid URI for the entity.
-<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz.
-[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.
-<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| date_created | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde.
-[en] The date when an entity was created.
-<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
-[en] The date and time when an entity was created.
-<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde.
-[en] The date when an entity was last modified.
-<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
-[en] The date and time when an entity was last modified.
-<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist.
-[en] The date from which the information is valid.
-<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist.
-[en] The date until which the information is valid, inclusive.
-<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist.
-[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.
-<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+| group_type | 0..1 <br/> [GroupType](#GroupType) | [de] Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder ähnliches. Die genaue Bennenung und Beschreibung der Gruppierung wird über `name` gemacht. [en] Link to the group type.  |
+| label | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.). [en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).  |
+| abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | [de] Abkürzung (kann mehrsprachig sein). [en] Abbreviation (can be multilingual).  |
+| description | * <br/> [MultilingualValue](#MultilingualValue) | [de] Kurze Beschreibung der Gruppierung. [en] Description of the entity.  |
+| landing_page | 0..1 <br/> [Uri](#Uri) | [de] Website mit weiteren Informationen. [en] Website providing further information.  |
+| parent_groups | * <br/> [Uriorcurie](#Uriorcurie) | [de] Übergeordneten Gruppe. Zum Beispiel die Mutterpartei, zu Kantonalenparteien. Oder zur Beschreibung der Hierarchie in Exekutive. Verknüpfung von Subkommissionen mit Kommissionen. (parentGroup wird immer im selben group_type verwendet.) [en] Link to parent groups.  |
+| spatial | 0..1 <br/> [String](#String) | [de] Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z.B. ld.admin.ch/municipality/1234, ld.admin.ch/canton/23). [en] Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).  |
+| contacts | * <br/> [Contact](#Contact) | [en] Contact information (email, website, social media). [de] Kontaktinformationen (E-Mail, Website, Social Media).  |
+| addresses | * <br/> [Address](#Address) | [de] Adressen mit Typ (privat, geschäftlich, lokal). [en] Addresses with type (private, business, local).  |
+| statutes_url | 0..1 <br/> [String](#String) | [de] URL zu Parteistatuten (optional für Parteien). [en] URL to party statutes (optional for parties).  |
+| party_color | 0..1 <br/> [String](#String) | [de] Parteifarbe (optional für Parteien). [en] Party color (optional for parties).  |
+| local_id | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification) |
+| date_created | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde. [en] The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde. [en] The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. [en] The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. [en] The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates) |
+| date_modified | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde. [en] The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde. [en] The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde. [en] The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde. [en] The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates) |
+| valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity) |
 
 
 
@@ -2081,48 +2052,20 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
-[en] Reference to a person with snapshot data at time of linking.
- |
-| group_reference | 0..1 <br/> [GroupReference](#GroupReference) | [de] Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
-[en] Reference to a group with snapshot data at time of linking.
- |
-| role_type | 0..1 <br/> [RoleType](#RoleType) | [en] Role of the person in the membership or function.
-[de] Rolle der Person in der Mitgliedschaft oder Funktion.
- |
-| authorized_to_vote | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Person stimmberechtigt ist.
-[en] Indicates if the person is authorized to vote.
- |
-| local_id | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
-[en] Local identifier. For example, a UUID from the council information system.
-<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität.
-[en] A unique, globally valid URI for the entity.
-<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz.
-[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.
-<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| date_created | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde.
-[en] The date when an entity was created.
-<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
-[en] The date and time when an entity was created.
-<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde.
-[en] The date when an entity was last modified.
-<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
-[en] The date and time when an entity was last modified.
-<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist.
-[en] The date from which the information is valid.
-<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist.
-[en] The date until which the information is valid, inclusive.
-<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist.
-[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.
-<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung. [en] Reference to a person with snapshot data at time of linking.  |
+| group_reference | 0..1 <br/> [GroupReference](#GroupReference) | [de] Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung. [en] Reference to a group with snapshot data at time of linking.  |
+| role_type | 0..1 <br/> [RoleType](#RoleType) | [en] Role of the person in the membership or function. [de] Rolle der Person in der Mitgliedschaft oder Funktion.  |
+| authorized_to_vote | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Person stimmberechtigt ist. [en] Indicates if the person is authorized to vote.  |
+| local_id | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification) |
+| date_created | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde. [en] The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde. [en] The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. [en] The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. [en] The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates) |
+| date_modified | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde. [en] The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde. [en] The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde. [en] The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde. [en] The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates) |
+| valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity) |
 
 
 
@@ -2582,63 +2525,25 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
-[en] Reference to a person with snapshot data at time of linking.
- |
-| interest_type | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | [de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).
-[en] Type of interest link (professional activity, political office, association).
- |
-| organization_label | 0..1 <br/> [String](#String) | [en] Label of the organization.
-[de] Bezeichnung der Organisation.
- |
-| organization_uid | 0..1 <br/> [String](#String) | [en] UID of the organization (for analysis with NOGA codes, etc.).
-[de] UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).
- |
-| organization_address | 0..1 <br/> [String](#String) | [en] Address of the organization.
-[de] Adresse der Organisation.
- |
-| legal_form | 0..1 <br/> [String](#String) | [en] Legal form of the organization.
-[de] Rechtsform der Organisation.
- |
-| is_paid | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Position bezahlt ist.
-[en] Indicates if the position is paid.
- |
-| committee | 0..1 <br/> [String](#String) | [en] Committee or board (e.g., foundation board, board of directors).
-[de] Gremium (z.B. Stiftungsrat, Verwaltungsrat).
- |
-| function_role | 0..1 <br/> [String](#String) | [en] Function or role in the organization.
-[de] Funktion oder Rolle in der Organisation.
- |
-| local_id | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
-[en] Local identifier. For example, a UUID from the council information system.
-<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität.
-[en] A unique, globally valid URI for the entity.
-<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz.
-[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.
-<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| date_created | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde.
-[en] The date when an entity was created.
-<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
-[en] The date and time when an entity was created.
-<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde.
-[en] The date when an entity was last modified.
-<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
-[en] The date and time when an entity was last modified.
-<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist.
-[en] The date from which the information is valid.
-<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist.
-[en] The date until which the information is valid, inclusive.
-<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist.
-[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.
-<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung. [en] Reference to a person with snapshot data at time of linking.  |
+| interest_type | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | [de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein). [en] Type of interest link (professional activity, political office, association).  |
+| organization_label | 0..1 <br/> [String](#String) | [en] Label of the organization. [de] Bezeichnung der Organisation.  |
+| organization_uid | 0..1 <br/> [String](#String) | [en] UID of the organization (for analysis with NOGA codes, etc.). [de] UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).  |
+| organization_address | 0..1 <br/> [String](#String) | [en] Address of the organization. [de] Adresse der Organisation.  |
+| legal_form | 0..1 <br/> [String](#String) | [en] Legal form of the organization. [de] Rechtsform der Organisation.  |
+| is_paid | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Position bezahlt ist. [en] Indicates if the position is paid.  |
+| committee | 0..1 <br/> [String](#String) | [en] Committee or board (e.g., foundation board, board of directors). [de] Gremium (z.B. Stiftungsrat, Verwaltungsrat).  |
+| function_role | 0..1 <br/> [String](#String) | [en] Function or role in the organization. [de] Funktion oder Rolle in der Organisation.  |
+| local_id | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification) |
+| date_created | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde. [en] The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde. [en] The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. [en] The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. [en] The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates) |
+| date_modified | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde. [en] The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde. [en] The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde. [en] The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde. [en] The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates) |
+| valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity) |
 
 
 

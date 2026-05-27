@@ -20,18 +20,10 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| date_actual | 0..1 <br/> [Date](Date.md) | [de] Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer).
-[en] The actual date of an instantaneous event or occurrence (without time duration).
- |
-| datetime_actual | 0..1 <br/> [Datetime](Datetime.md) | [de] Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer).
-[en] The actual date and time of an instantaneous event or occurrence (without time duration).
- |
-| date_planned | 0..1 <br/> [Date](Date.md) | [de] Das geplante Datum eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer).
-[en] The planned date of an instantaneous event or occurrence (without time duration).
- |
-| datetime_planned | 0..1 <br/> [Datetime](Datetime.md) | [de] Das geplante Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer).
-[en] The planned date and time of an instantaneous event or occurrence (without time duration).
- |
+| date_actual | 0..1 <br/> [Date](Date.md) | [de] Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer). [en] The actual date of an instantaneous event or occurrence (without time duration).  |
+| datetime_actual | 0..1 <br/> [Datetime](Datetime.md) | [de] Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer). [en] The actual date and time of an instantaneous event or occurrence (without time duration).  |
+| date_planned | 0..1 <br/> [Date](Date.md) | [de] Das geplante Datum eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer). [en] The planned date of an instantaneous event or occurrence (without time duration).  |
+| datetime_planned | 0..1 <br/> [Datetime](Datetime.md) | [de] Das geplante Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer). [en] The planned date and time of an instantaneous event or occurrence (without time duration).  |
 
 
 
