@@ -80,6 +80,7 @@
 {%- endfor %}
 {% endif %}
 
+{# -----------
 ## Identifier and Mapping Information
 
 {%- set has_admin_metadata = element.status or (element.rank is not none and element.rank != 1000) %}
@@ -95,6 +96,9 @@
 {% endif -%}
 
 {% endif %}
+
+
+
 {% if element.id_prefixes %}
 ### Valid ID Prefixes
 
@@ -140,3 +144,5 @@ Instances of this class *should* have identifiers with one of the following pref
 {% endfor %}
 
 {% endif -%}
+
+------------ #}

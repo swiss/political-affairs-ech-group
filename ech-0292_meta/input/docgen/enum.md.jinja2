@@ -1,8 +1,3 @@
----
-search:
-  boost: {% if element.deprecated %}0.5{% else %}2.0{% endif %}
----
-
 {%- if element.title and element.title != element.name %}
     {%- set title = element.title ~ ' (' ~ element.name ~ ')' -%}
 {%- else %}
@@ -31,7 +26,7 @@ URI: {{ gen.uri_link(element) }}
     or element.matches or element.concepts %}
 
 {%- if has_enum_source %}
-## Enumeration Source
+### Enumeration Source
 
 {%- if element.code_set %}
 **Code Set:** {{ gen.uri_link(element.code_set) }}
@@ -81,7 +76,7 @@ URI: {{ gen.uri_link(element) }}
     {%- set has_pv_extras.found = true -%}
   {%- endif -%}
 {%- endfor -%}
-## Permissible Values
+### Permissible Values
 
 {%- if has_pv_extras.found %}
 | Value | Meaning | Description | Additional Info |
@@ -108,7 +103,7 @@ _This is a dynamic enum_
 {%- set has_enum_ops = element.inherits or element.include or element.minus %}
 
 {%- if has_enum_ops %}
-## Enumeration Operations
+### Enumeration Operations
 
 {%- if element.inherits %}
 **Inherits From:** {{ gen.links(element.inherits) | join(', ') }}
@@ -125,8 +120,11 @@ _This is a dynamic enum_
 {% endif %}
 
 {% set slots_for_enum = schemaview.get_slots_by_enum(element.name) %}
+
+{#
+
 {% if slots_for_enum is defined and slots_for_enum|length > 0 -%}
-## Slots
+### Slots
 
 | Name | Description |
 | ---  | --- |
@@ -137,12 +135,13 @@ _This is a dynamic enum_
 
 {% include "common_metadata.md.jinja2" %}
 
-## LinkML Source
+### LinkML Source
 
 <details>
 ```yaml
 {{ gen.yaml(element) }}
 ```
 </details>
+#}
 
 </div>
