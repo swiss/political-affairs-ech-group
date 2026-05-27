@@ -70,54 +70,6 @@ __
 
 
 ## Examples
-### Example: Container-swiss_politicians
-
-```yaml
-global_uri: act:swiss_politicians_example
-persons:
-  - local_id: 4032
-    global_uri: https://data-example.parlament.ch/person/4032
-    wikidata_uri: https://www.wikidata.org/wiki/Q813067
-    label: Beat Jans
-    label_long: Beat Jans, dipl. nat. ETH
-    birth_year: 1964
-    birth_date: 1964-07-12
-    picture: https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg
-    names:
-      - name_type: PersonFirstName
-        value: Beat
-      - name_type: PersonOfficialName
-        value: Jans
-        valid_from: 1964-07-12
-    addresses:
-      - address_type: businessAddress
-        postal_locality: Basel-Stadt
-    language_proficiencies:
-      - language: de
-        is_correspondence: true
-        is_native: true
-    citizenships:
-      - country: CH
-        valid_from: 1964-07-12
-    genders:
-      - gender_code: male
-        valid_from: 1964-07-12
-    occupations:
-      - label: Politiker
-        valid_from: 1964-01-01
-        is_active: true
-    trainings:
-      - training_type: uni
-        value: dipl. nat. ETH
-    contacts:
-      - contact_type: email
-        value: beat.jans@admin.ch
-      - contact_type: contact_website
-        value: http://www.beat-jans.ch
-    electoral_district:
-      district: Basel-Stadt
-      valid_from: 2010-01-01
-```
 ### Example: Container-interest_links
 
 ```yaml
@@ -326,6 +278,54 @@ persons:
       valid_from: 2020-01-01
       valid_through: 2025-01-01
 
+```
+### Example: Container-swiss_politicians
+
+```yaml
+global_uri: act:swiss_politicians_example
+persons:
+  - local_id: 4032
+    global_uri: https://data-example.parlament.ch/person/4032
+    wikidata_uri: https://www.wikidata.org/wiki/Q813067
+    label: Beat Jans
+    label_long: Beat Jans, dipl. nat. ETH
+    birth_year: 1964
+    birth_date: 1964-07-12
+    picture: https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg
+    names:
+      - name_type: PersonFirstName
+        value: Beat
+      - name_type: PersonOfficialName
+        value: Jans
+        valid_from: 1964-07-12
+    addresses:
+      - address_type: businessAddress
+        postal_locality: Basel-Stadt
+    language_proficiencies:
+      - language: de
+        is_correspondence: true
+        is_native: true
+    citizenships:
+      - country: CH
+        valid_from: 1964-07-12
+    genders:
+      - gender_code: male
+        valid_from: 1964-07-12
+    occupations:
+      - label: Politiker
+        valid_from: 1964-01-01
+        is_active: true
+    trainings:
+      - training_type: uni
+        value: dipl. nat. ETH
+    contacts:
+      - contact_type: email
+        value: beat.jans@admin.ch
+      - contact_type: contact_website
+        value: http://www.beat-jans.ch
+    electoral_district:
+      district: Basel-Stadt
+      valid_from: 2010-01-01
 ```
 
 
