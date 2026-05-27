@@ -1,12 +1,7 @@
-{# note: disable search preamble
-
 ---
 search:
   boost: {% if element.deprecated %}0.5{% else %}10.0{% endif %}
--
---
-#}
-
+---
 
 {%- if element.title %}
     {%- set title = element.title ~ ' (' ~ element.name ~ ')' -%}
@@ -44,8 +39,9 @@ _{{ element_description_line }}_
 {% endfor %}
 {% endif %}
 
+<div data-search-exclude markdown="1">
 
-{# ------------------------ note: disable parts
+{# note: disable parts
 
 {% if element.abstract %}
 * __NOTE__: this is an abstract class and should not be instantiated directly
@@ -116,21 +112,21 @@ URI: {{ gen.uri_link(element) }}
 
 {% endif %}
 
------------------------- #}
+#}
 
 
 ## Attribute
 
 | Name | Cardinality and Range | Description | Inheritance |
-| --  | -- | ------- | -- |
+| ---  | --- | --- | --- |
 {% if gen.get_direct_slots(element)|length > 0 %}
 {%- for slot in gen.get_direct_slots(element) -%}
-| {{ gen.links(slot) }} | {{ gen.cardinality(slot) }} <br/> {{ compute_range(slot) }} | {{ slot.description }} | direct |
+| {{ gen.link(slot) }} | {{ gen.cardinality(slot) }} <br/> {{ compute_range(slot) }} | {{ slot.description|enshorten }} | direct |
 {% endfor -%}
 {% endif -%}
 {% if gen.get_indirect_slots(element)|length > 0 %}
 {%- for slot in gen.get_indirect_slots(element) -%}
-| {{ gen.links(slot) }} | {{ gen.cardinality(slot) }} <br/> {{ compute_range(slot) }} | {{ slot.description }} | {{ gen.links(gen.get_slot_inherited_from(element.name, slot.name))|join(', ') }} |
+| {{ gen.link(slot) }} | {{ gen.cardinality(slot) }} <br/> {{ compute_range(slot) }} | {{ slot.description|enshorten }} | {{ gen.links(gen.get_slot_inherited_from(element.name, slot.name))|join(', ') }} |
 {% endfor -%}
 {% endif %}
 
@@ -302,5 +298,6 @@ The class must not satisfy any of:
 {%- if footer -%}
 {{ footer }}
 {%- endif -%}
-
 #}
+
+</div>
