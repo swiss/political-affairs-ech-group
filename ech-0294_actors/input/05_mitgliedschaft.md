@@ -27,27 +27,31 @@ Memberships werden für verschiedene Zuordnungen verwendet:
 
 ### Identifikatoren und Referenzen
 
-Eine Membership verknüpft Person und Gruppe über deren `global_uri`:
+Eine Membership verknüpft Person und Gruppe über eingebettete **`PersonReference`** / **`GroupReference`** (Snapshot zum Zeitpunkt der Verknüpfung, jeweils mit `global_uri`):
 
 | Attribut | Typ | Pflicht | Beschreibung |
 |----------|-----|---------|--------------|
 | `global_uri` | URI | Ja | Identifikator der Mitgliedschaft |
-| `concerned_person` | URI | Nein | `global_uri` der Person (z.B. Wikidata) |
-| `concerned_group` | URI | Nein | `global_uri` der Gruppe |
+| `person_reference` | PersonReference | Nein | Referenz auf die Person (mind. `global_uri`, optional `label`) |
+| `group_reference` | GroupReference | Nein | Referenz auf die Gruppe (mind. `global_uri`, optional `label`) |
 
 **Beispiel:**
 ```yaml
 global_uri: act:membership_jans_sp
-concerned_person: https://www.wikidata.org/wiki/Q813067
-concerned_group: act:sp_basel_stadt
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q813067
+group_reference:
+  global_uri: act:sp_basel_stadt
 ```
 
 ### Datenmodell (LinkML-Auszug)
 
 ```yaml
 global_uri: act:membership_jans_sp
-concerned_person: https://www.wikidata.org/wiki/Q813067
-concerned_group: act:sp_basel_stadt
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q813067
+group_reference:
+  global_uri: act:sp_basel_stadt
 role_type:
   role_type_enum: member
 valid_from: 1990-01-01
@@ -66,8 +70,8 @@ is_active: true
 
 | Attribut | Datentyp | Beschreibung |
 |----------|----------|--------------|
-| `concerned_person` | URI | Referenz zur Person (`global_uri`) |
-| `concerned_group` | URI | Referenz zur Gruppe (`global_uri`) |
+| `person_reference` | PersonReference | Referenz zur Person |
+| `group_reference` | GroupReference | Referenz zur Gruppe |
 | `role_type` | RoleType | Rolle (`role_type_enum`, optional `label`) |
 | `valid_from` | date | Beginn der Mitgliedschaft |
 | `valid_through` | date | Ende der Mitgliedschaft |
@@ -131,8 +135,10 @@ Mitgliedschaften haben einen klar definierten Beginn und oft auch ein Ende:
 ```yaml
 # Parlamentsmandat mit fester Amtszeit
 global_uri: act:membership_caroni_sr
-concerned_person: https://www.wikidata.org/wiki/Q493598
-concerned_group: act:staenderat
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q493598
+group_reference:
+  global_uri: act:staenderat
 role_type:
   role_type_enum: member
 valid_from: 2015-12-07  # Amtsantritt nach Wahl
@@ -143,8 +149,10 @@ authorized_to_vote: true
 ```yaml
 # Parteimitgliedschaft ohne Enddatum
 global_uri: act:membership_riniker_fdp
-concerned_person: https://www.wikidata.org/wiki/Q77074968
-concerned_group: act:fdp_aargau
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q77074968
+group_reference:
+  global_uri: act:fdp_aargau
 role_type:
   role_type_enum: member
 valid_from: 2000-01-01
@@ -220,8 +228,10 @@ persons:
 memberships:
   # Parteimitgliedschaft
   - global_uri: act:membership_caroni_fdp
-    concerned_person: https://www.wikidata.org/wiki/Q493598
-    concerned_group: act:fdp_appenzell
+    person_reference:
+      global_uri: https://www.wikidata.org/wiki/Q493598
+    group_reference:
+      global_uri: act:fdp_appenzell
     role_type:
       role_type_enum: member
     valid_from: 1998-01-01
@@ -229,8 +239,10 @@ memberships:
 
   # Parlamentsmandat
   - global_uri: act:membership_caroni_sr
-    concerned_person: https://www.wikidata.org/wiki/Q493598
-    concerned_group: act:staenderat
+    person_reference:
+      global_uri: https://www.wikidata.org/wiki/Q493598
+    group_reference:
+      global_uri: act:staenderat
     role_type:
       role_type_enum: member
     valid_from: 2015-12-07
@@ -239,8 +251,10 @@ memberships:
 
   # Fraktionsmitgliedschaft
   - global_uri: act:membership_caroni_fdp_fraktion
-    concerned_person: https://www.wikidata.org/wiki/Q493598
-    concerned_group: act:fdp_fraktion_sr
+    person_reference:
+      global_uri: https://www.wikidata.org/wiki/Q493598
+    group_reference:
+      global_uri: act:fdp_fraktion_sr
     role_type:
       role_type_enum: member
     valid_from: 2015-12-07
@@ -248,8 +262,10 @@ memberships:
 
   # Kommissionsmitgliedschaft
   - global_uri: act:membership_caroni_rk_sr
-    concerned_person: https://www.wikidata.org/wiki/Q493598
-    concerned_group: act:rechtskommission_sr
+    person_reference:
+      global_uri: https://www.wikidata.org/wiki/Q493598
+    group_reference:
+      global_uri: act:rechtskommission_sr
     role_type:
       role_type_enum: member
     valid_from: 2016-01-01
@@ -266,16 +282,20 @@ Memberships können auch hierarchisch organisiert werden:
 ```yaml
 # Person ist Mitglied einer Partei
 - global_uri: act:membership_jans_sp
-  concerned_person: https://www.wikidata.org/wiki/Q813067
-  concerned_group: act:sp_schweiz
+  person_reference:
+    global_uri: https://www.wikidata.org/wiki/Q813067
+  group_reference:
+    global_uri: act:sp_schweiz
   role_type:
     role_type_enum: member
   valid_from: 1980-01-01
 
 # Person ist Mitglied der SP-Fraktion im Nationalrat
 - global_uri: act:membership_jans_sp_fraktion
-  concerned_person: https://www.wikidata.org/wiki/Q813067
-  concerned_group: act:sp_fraktion_nr
+  person_reference:
+    global_uri: https://www.wikidata.org/wiki/Q813067
+  group_reference:
+    global_uri: act:sp_fraktion_nr
   role_type:
     role_type_enum: member
   valid_from: 2010-12-06
@@ -290,8 +310,10 @@ Die Fraktion selbst hat eine `parent_groups`-Beziehung zur Partei (siehe Group-S
 ```yaml
 # SP-Mitgliedschaft (beendet)
 - global_uri: act:membership_mueller_sp
-  concerned_person: act:person_mueller
-  concerned_group: act:sp_zuerich
+  person_reference:
+    global_uri: act:person_mueller
+  group_reference:
+    global_uri: act:sp_zuerich
   role_type:
     role_type_enum: member
   valid_from: 2010-01-01
@@ -300,8 +322,10 @@ Die Fraktion selbst hat eine `parent_groups`-Beziehung zur Partei (siehe Group-S
 
 # Grüne-Mitgliedschaft (neu)
 - global_uri: act:membership_mueller_gruene
-  concerned_person: act:person_mueller
-  concerned_group: act:gruene_zuerich
+  person_reference:
+    global_uri: act:person_mueller
+  group_reference:
+    global_uri: act:gruene_zuerich
   role_type:
     role_type_enum: member
   valid_from: 2018-07-01
@@ -313,8 +337,10 @@ Die Fraktion selbst hat eine `parent_groups`-Beziehung zur Partei (siehe Group-S
 ```yaml
 # Reguläres Mitglied
 - global_uri: act:membership_schmidt_kommission_1
-  concerned_person: act:person_schmidt
-  concerned_group: act:sik_nr
+  person_reference:
+    global_uri: act:person_schmidt
+  group_reference:
+    global_uri: act:sik_nr
   role_type:
     role_type_enum: member
   valid_from: 2016-01-01
@@ -322,8 +348,10 @@ Die Fraktion selbst hat eine `parent_groups`-Beziehung zur Partei (siehe Group-S
 
 # Präsidentin (Nachfolge-Membership)
 - global_uri: act:membership_schmidt_kommission_2
-  concerned_person: act:person_schmidt
-  concerned_group: act:sik_nr
+  person_reference:
+    global_uri: act:person_schmidt
+  group_reference:
+    global_uri: act:sik_nr
   role_type:
     role_type_enum: president
   valid_from: 2020-01-01
@@ -350,8 +378,10 @@ groups:
 
 memberships:
   - global_uri: act:membership_jans_sp
-    concerned_person: https://www.wikidata.org/wiki/Q813067
-    concerned_group: act:sp_basel_stadt
+    person_reference:
+      global_uri: https://www.wikidata.org/wiki/Q813067
+    group_reference:
+      global_uri: act:sp_basel_stadt
     role_type:
       role_type_enum: member
     valid_from: 1990-01-01
@@ -365,8 +395,8 @@ memberships:
 # Alle Mitglieder der SP Basel-Stadt
 SELECT ?person ?role WHERE {
   ?membership a act:Membership ;
-    act:concernedGroup act:sp_basel_stadt ;
-    act:concernedPerson ?person ;
+    act:groupReference act:sp_basel_stadt ;
+    act:personReference ?person ;
     act:roleType ?role ;
     act:isActive true .
 }
@@ -377,8 +407,8 @@ SELECT ?person ?role WHERE {
 # Alle Gruppen von Beat Jans
 SELECT ?group ?role WHERE {
   ?membership a act:Membership ;
-    act:concernedPerson <https://www.wikidata.org/wiki/Q813067> ;
-    act:concernedGroup ?group ;
+    act:personReference <https://www.wikidata.org/wiki/Q813067> ;
+    act:groupReference ?group ;
     act:roleType ?role ;
     act:isActive true .
 }
@@ -390,8 +420,10 @@ SELECT ?group ?role WHERE {
 
 ```yaml
 global_uri: act:membership_riniker_nr
-concerned_person: https://www.wikidata.org/wiki/Q77074968
-concerned_group: act:nationalrat
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q77074968
+group_reference:
+  global_uri: act:nationalrat
 role_type:
   role_type_enum: member
 valid_from: 2019-12-02  # Amtsantritt nach Wahl 2019
@@ -407,8 +439,10 @@ datetime_modified: 2023-11-30T00:00:00Z
 ```yaml
 # Reguläres Mitglied
 global_uri: act:membership_caroni_rk_1
-concerned_person: https://www.wikidata.org/wiki/Q493598
-concerned_group: act:rechtskommission_sr
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q493598
+group_reference:
+  global_uri: act:rechtskommission_sr
 role_type:
   role_type_enum: member
 valid_from: 2016-01-01
@@ -418,8 +452,10 @@ is_active: false
 
 # Präsident
 global_uri: act:membership_caroni_rk_2
-concerned_person: https://www.wikidata.org/wiki/Q493598
-concerned_group: act:rechtskommission_sr
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q493598
+group_reference:
+  global_uri: act:rechtskommission_sr
 role_type:
   role_type_enum: president
 valid_from: 2020-01-01
@@ -433,8 +469,10 @@ is_active: false
 ```yaml
 # Bundesebene
 - global_uri: act:membership_jans_sp_ch
-  concerned_person: https://www.wikidata.org/wiki/Q813067
-  concerned_group: act:sp_schweiz
+  person_reference:
+    global_uri: https://www.wikidata.org/wiki/Q813067
+  group_reference:
+    global_uri: act:sp_schweiz
   role_type:
     role_type_enum: member
   valid_from: 1980-01-01
@@ -442,8 +480,10 @@ is_active: false
 
 # Kantonsebene
 - global_uri: act:membership_jans_sp_bs
-  concerned_person: https://www.wikidata.org/wiki/Q813067
-  concerned_group: act:sp_basel_stadt
+  person_reference:
+    global_uri: https://www.wikidata.org/wiki/Q813067
+  group_reference:
+    global_uri: act:sp_basel_stadt
   role_type:
     role_type_enum: member
   valid_from: 1980-01-01
@@ -451,8 +491,10 @@ is_active: false
 
 # Gemeinde (optional)
 - global_uri: act:membership_jans_sp_basel
-  concerned_person: https://www.wikidata.org/wiki/Q813067
-  concerned_group: act:sp_stadt_basel
+  person_reference:
+    global_uri: https://www.wikidata.org/wiki/Q813067
+  group_reference:
+    global_uri: act:sp_stadt_basel
   role_type:
     role_type_enum: other
     label: Vorstandsmitglied
@@ -465,8 +507,10 @@ is_active: false
 
 ```yaml
 global_uri: act:membership_luisier_vd_regierung
-concerned_person: https://www.wikidata.org/wiki/Q24699807
-concerned_group: act:regierungsrat_vaud
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q24699807
+group_reference:
+  global_uri: act:regierungsrat_vaud
 role_type:
   role_type_enum: other
   label: Conseillère d'État
@@ -480,8 +524,10 @@ datetime_created: 2022-07-01T00:00:00Z
 
 ```yaml
 global_uri: act:membership_riniker_fdp_fraktion
-concerned_person: https://www.wikidata.org/wiki/Q77074968
-concerned_group: act:fdp_fraktion_nr
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q77074968
+group_reference:
+  global_uri: act:fdp_fraktion_nr
 role_type:
   role_type_enum: member
 valid_from: 2019-12-02
@@ -494,8 +540,10 @@ datetime_created: 2019-12-02T00:00:00Z
 
 ```yaml
 global_uri: act:membership_mueller_gpk_ersatz
-concerned_person: act:person_mueller
-concerned_group: act:gpk_nr
+person_reference:
+  global_uri: act:person_mueller
+group_reference:
+  global_uri: act:gpk_nr
 role_type:
   role_type_enum: other
   label: Ersatzmitglied
@@ -509,8 +557,10 @@ is_active: false
 
 ```yaml
 global_uri: act:membership_caroni_delegation
-concerned_person: https://www.wikidata.org/wiki/Q493598
-concerned_group: act:delegation_europarat
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q493598
+group_reference:
+  global_uri: act:delegation_europarat
 role_type:
   role_type_enum: other
   label: Delegierter

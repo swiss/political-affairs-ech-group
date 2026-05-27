@@ -513,8 +513,12 @@ groups:
 
 memberships:
   - global_uri: act:membership_jans_sp
-    concerned_person: https://www.wikidata.org/wiki/Q813067
-    concerned_group: act:sp_basel_stadt
+    person_reference:
+      global_uri: https://www.wikidata.org/wiki/Q813067
+      label: Beat Jans
+    group_reference:
+      global_uri: act:sp_basel_stadt
+      label: SP Basel-Stadt
     role_type:
       role_type_enum: member
     valid_from: 1990-01-01

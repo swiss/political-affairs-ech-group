@@ -90,68 +90,20 @@ __
 
 
 ## Examples
-### Example: InterestLink-interest_links_il_burkart_001
+### Example: InterestLink-interest_links_il_burkart_003
 
 ```yaml
-global_uri: act:il_burkart_001
+global_uri: act:il_burkart_003
 person_reference:
   global_uri: https://www.wikidata.org/wiki/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_label: Burkart Advisory GmbH, Baden
-legal_form: Gesellschaft mit beschränkter Haftung
-committee: Geschäftsleitung
-function_role: Geschäftsführer
-is_paid: true
-
-```
-### Example: InterestLink-interest_links_il_burkart_007
-
-```yaml
-global_uri: act:il_burkart_007
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_label: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-legal_form: Stiftung
-committee: Stiftungsrat
-function_role: Vizepräsident
-is_paid: false
-
-```
-### Example: InterestLink-interest_links_il_burkart_011
-
-```yaml
-global_uri: act:il_burkart_011
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_label: Verein Landesausstellung Svizra27, Aarau
-legal_form: Verein
-committee: Vorstand
+organization_label: Bovida Real Estate AG, Baar
+legal_form: Aktiengesellschaft
+committee: Verwaltungsrat
 function_role: Mitglied
-is_paid: false
-
-```
-### Example: InterestLink-interest_links_il_burkart_010
-
-```yaml
-global_uri: act:il_burkart_010
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_label: Allianz Sicherheit Schweiz, Baden
-legal_form: Verein
-committee: Vorstand
-function_role: Präsident
-is_paid: false
+is_paid: true
 
 ```
 ### Example: InterestLink-interest_links_il_burkart_002
@@ -167,6 +119,22 @@ organization_label: Birchmeier Holding AG, Döttingen
 legal_form: Aktiengesellschaft
 committee: Verwaltungsrat
 function_role: Mitglied
+is_paid: true
+
+```
+### Example: InterestLink-interest_links_il_burkart_001
+
+```yaml
+global_uri: act:il_burkart_001
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: professional_activity
+organization_label: Burkart Advisory GmbH, Baden
+legal_form: Gesellschaft mit beschränkter Haftung
+committee: Geschäftsleitung
+function_role: Geschäftsführer
 is_paid: true
 
 ```
@@ -186,18 +154,34 @@ function_role: Mitglied
 is_paid: true
 
 ```
-### Example: InterestLink-interest_links_il_burkart_003
+### Example: InterestLink-interest_links_il_burkart_011
 
 ```yaml
-global_uri: act:il_burkart_003
+global_uri: act:il_burkart_011
 person_reference:
   global_uri: https://www.wikidata.org/wiki/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_label: Bovida Real Estate AG, Baar
-legal_form: Aktiengesellschaft
-committee: Verwaltungsrat
+interest_type: association
+organization_label: Verein Landesausstellung Svizra27, Aarau
+legal_form: Verein
+committee: Vorstand
+function_role: Mitglied
+is_paid: false
+
+```
+### Example: InterestLink-interest_links_il_burkart_009
+
+```yaml
+global_uri: act:il_burkart_009
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: SUISSEDIGITAL Verband für Kommunikationsnetze
+legal_form: Verein
+committee: Vorstand
 function_role: Mitglied
 is_paid: true
 
@@ -234,22 +218,6 @@ function_role: Beirat
 is_paid: true
 
 ```
-### Example: InterestLink-interest_links_il_burkart_009
-
-```yaml
-global_uri: act:il_burkart_009
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_label: SUISSEDIGITAL Verband für Kommunikationsnetze
-legal_form: Verein
-committee: Vorstand
-function_role: Mitglied
-is_paid: true
-
-```
 ### Example: InterestLink-interest_links_il_burkart_005
 
 ```yaml
@@ -264,6 +232,38 @@ legal_form: Verein
 committee: Zentralvorstand
 function_role: Präsident
 is_paid: true
+
+```
+### Example: InterestLink-interest_links_il_burkart_010
+
+```yaml
+global_uri: act:il_burkart_010
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: Allianz Sicherheit Schweiz, Baden
+legal_form: Verein
+committee: Vorstand
+function_role: Präsident
+is_paid: false
+
+```
+### Example: InterestLink-interest_links_il_burkart_007
+
+```yaml
+global_uri: act:il_burkart_007
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+legal_form: Stiftung
+committee: Stiftungsrat
+function_role: Vizepräsident
+is_paid: false
 
 ```
 
