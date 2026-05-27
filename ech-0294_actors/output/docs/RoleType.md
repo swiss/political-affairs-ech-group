@@ -1,7 +1,4 @@
----
-search:
-  boost: 10.0
----
+
 
 # Class: RoleType 
 
@@ -19,18 +16,22 @@ __
 
 
 
-## Attribute
+### Attribute
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [role_type_enum](role_type_enum.md) | 0..1 <br/> [RoleEnum](RoleEnum.md) | [en] Role of the person in the membership or function | direct |
-| [label](label.md) | 0..1 <br/> [String](String.md) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben ... | direct |
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| role_type_enum | 0..1 <br/> [RoleEnum](RoleEnum.md) | [en] Role of the person in the membership or function.
+[de] Rolle der Person in der Mitgliedschaft oder Funktion.
+ |
+| label | 0..1 <br/> [String](String.md) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).
+[en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).
+ |
 
 
 
 
 
-## Usages
+### Usages
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |

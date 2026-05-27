@@ -1,7 +1,4 @@
----
-search:
-  boost: 10.0
----
+
 
 # Class: Address 
 
@@ -19,21 +16,31 @@ __
 
 
 
-## Attribute
+### Attribute
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [address_type](address_type.md) | 0..1 <br/> [AddressTypeEnum](AddressTypeEnum.md) | [de] Typ der Adresse | direct |
-| [address_uri](address_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] URI der Adresse | direct |
-| [street_address](street_address.md) | 0..1 <br/> [String](String.md) | [de] Strassenadresse | direct |
-| [postal_code](postal_code.md) | 0..1 <br/> [Integer](Integer.md) | [de] Postleitzahl | direct |
-| [postal_locality](postal_locality.md) | 0..1 <br/> [String](String.md) | [de] Ort | direct |
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| address_type | 0..1 <br/> [AddressTypeEnum](AddressTypeEnum.md) | [de] Typ der Adresse.
+[en] Type of address.
+ |
+| address_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] URI der Adresse.
+[en] URI of the address.
+ |
+| street_address | 0..1 <br/> [String](String.md) | [de] Strassenadresse.
+[en] Street address.
+ |
+| postal_code | 0..1 <br/> [Integer](Integer.md) | [de] Postleitzahl.
+[en] Postal code.
+ |
+| postal_locality | 0..1 <br/> [String](String.md) | [de] Ort.
+[en] Locality.
+ |
 
 
 
 
 
-## Usages
+### Usages
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
@@ -75,15 +82,15 @@ __
 
 
 
-## Examples
-### Example: Address-swiss_politicians_Beat_Jans_1
+### Examples
+#### Example: Address-swiss_politicians_Beat_Jans_1
 
 ```yaml
 address_type: businessAddress
 postal_locality: Basel-Stadt
 
 ```
-### Example: Address-douglas_adams_Douglas_Adams_1
+#### Example: Address-douglas_adams_Douglas_Adams_1
 
 ```yaml
 address_type: privateAddress

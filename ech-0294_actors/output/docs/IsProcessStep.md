@@ -1,7 +1,4 @@
----
-search:
-  boost: 10.0
----
+
 
 # Class: IsProcessStep 
 
@@ -33,26 +30,50 @@ __
 
 
 
-## Attribute
+### Attribute
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [remark](remark.md) | 0..1 <br/> [String](String.md) | [de] Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen Kontext ... | direct |
-| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |
-| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](HasIdentification.md) |
-| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](HasIdentification.md) |
-| [date_begin_actual](date_begin_actual.md) | 0..1 <br/> [Date](Date.md) | [de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitda... | [IsEventWithDuration](IsEventWithDuration.md) |
-| [datetime_begin_actual](datetime_begin_actual.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorko... | [IsEventWithDuration](IsEventWithDuration.md) |
-| [date_begin_planned](date_begin_planned.md) | 0..1 <br/> [Date](Date.md) | [de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration](IsEventWithDuration.md) |
-| [datetime_begin_planned](datetime_begin_planned.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommen... | [IsEventWithDuration](IsEventWithDuration.md) |
-| [date_end_actual](date_end_actual.md) | 0..1 <br/> [Date](Date.md) | [de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdaue... | [IsEventWithDuration](IsEventWithDuration.md) |
-| [datetime_end_actual](datetime_end_actual.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkomm... | [IsEventWithDuration](IsEventWithDuration.md) |
-| [date_end_planned](date_end_planned.md) | 0..1 <br/> [Date](Date.md) | [de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration](IsEventWithDuration.md) |
-| [datetime_end_planned](datetime_end_planned.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens ... | [IsEventWithDuration](IsEventWithDuration.md) |
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| remark | 0..1 <br/> [String](String.md) | [de] Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen Kontext zu einem Prozessschritt oder einer Entität.
+[en] Free-text remark or note for edge cases or additional context on a process step or an entity.
+ |
+| local_id | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+[en] Local identifier. For example, a UUID from the council information system.
+<br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität.
+[en] A unique, globally valid URI for the entity.
+<br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz.
+[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.
+<br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| date_begin_actual | 0..1 <br/> [Date](Date.md) | [de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer.
+[en] The actual start date of an event or occurrence with time duration.
+<br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| datetime_begin_actual | 0..1 <br/> [Datetime](Datetime.md) | [de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.
+[en] The actual start date and time of an event or occurrence with time duration.
+<br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| date_begin_planned | 0..1 <br/> [Date](Date.md) | [de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer.
+[en] The planned start date of an event or occurrence with time duration.
+<br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| datetime_begin_planned | 0..1 <br/> [Datetime](Datetime.md) | [de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.
+[en] The planned start date and time of an event or occurrence with time duration.
+<br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| date_end_actual | 0..1 <br/> [Date](Date.md) | [de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer.
+[en] The actual end date of an event or occurrence with time duration.
+<br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| datetime_end_actual | 0..1 <br/> [Datetime](Datetime.md) | [de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.
+[en] The actual end date and time of an event or occurrence with time duration.
+<br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| date_end_planned | 0..1 <br/> [Date](Date.md) | [de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer.
+[en] The planned end date of an event or occurrence with time duration.
+<br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| datetime_end_planned | 0..1 <br/> [Datetime](Datetime.md) | [de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.
+[en] The planned end date and time of an event or occurrence with time duration.
+<br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
 
 
 
-## Mixin Usage
+### Mixin Usage
 
 | mixed into | description |
 | --- | --- |

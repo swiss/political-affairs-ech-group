@@ -1,7 +1,4 @@
----
-search:
-  boost: 10.0
----
+
 
 # Class: Contact 
 
@@ -19,18 +16,22 @@ __
 
 
 
-## Attribute
+### Attribute
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [contact_type](contact_type.md) | 0..1 <br/> [ContactTypeEnum](ContactTypeEnum.md) | [de] Typ der Kontaktinformation | direct |
-| [value](value.md) | 0..1 <br/> [String](String.md) | [de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ... | direct |
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| contact_type | 0..1 <br/> [ContactTypeEnum](ContactTypeEnum.md) | [de] Typ der Kontaktinformation.
+[en] Type of contact information.
+ |
+| value | 0..1 <br/> [String](String.md) | [de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc.
+[en] The value of an information besides other attributes such as type, language, etc.
+ |
 
 
 
 
 
-## Usages
+### Usages
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |

@@ -1,7 +1,4 @@
----
-search:
-  boost: 10.0
----
+
 
 # Class: HasTemporalValidity 
 
@@ -19,17 +16,23 @@ __
 
 
 
-## Attribute
+### Attribute
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [valid_from](valid_from.md) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, ab dem die Information gültig ist | direct |
-| [valid_through](valid_through.md) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, bis und mit dem die Information gültig ist | direct |
-| [is_active](is_active.md) | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob die Information aktuell gültig ist | direct |
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| valid_from | 0..1 <br/> [Date](Date.md) | [de] Das Datum, ab dem die Information gültig ist.
+[en] The date from which the information is valid.
+ |
+| valid_through | 0..1 <br/> [Date](Date.md) | [de] Das Datum, bis und mit dem die Information gültig ist.
+[en] The date until which the information is valid, inclusive.
+ |
+| is_active | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist.
+[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.
+ |
 
 
 
-## Mixin Usage
+### Mixin Usage
 
 | mixed into | description |
 | --- | --- |

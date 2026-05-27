@@ -1,7 +1,4 @@
----
-search:
-  boost: 10.0
----
+
 
 # Class: IsInstantaneousEvent 
 
@@ -19,18 +16,26 @@ __
 
 
 
-## Attribute
+### Attribute
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [date_actual](date_actual.md) | 0..1 <br/> [Date](Date.md) | [de] Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommens (oh... | direct |
-| [datetime_actual](datetime_actual.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses ode... | direct |
-| [date_planned](date_planned.md) | 0..1 <br/> [Date](Date.md) | [de] Das geplante Datum eines instantanen Ereignisses oder Vorkommens (ohne Z... | direct |
-| [datetime_planned](datetime_planned.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das geplante Datum und die Uhrzeit eines instantanen Ereignisses oder Vo... | direct |
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| date_actual | 0..1 <br/> [Date](Date.md) | [de] Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer).
+[en] The actual date of an instantaneous event or occurrence (without time duration).
+ |
+| datetime_actual | 0..1 <br/> [Datetime](Datetime.md) | [de] Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer).
+[en] The actual date and time of an instantaneous event or occurrence (without time duration).
+ |
+| date_planned | 0..1 <br/> [Date](Date.md) | [de] Das geplante Datum eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer).
+[en] The planned date of an instantaneous event or occurrence (without time duration).
+ |
+| datetime_planned | 0..1 <br/> [Datetime](Datetime.md) | [de] Das geplante Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer).
+[en] The planned date and time of an instantaneous event or occurrence (without time duration).
+ |
 
 
 
-## Mixin Usage
+### Mixin Usage
 
 | mixed into | description |
 | --- | --- |

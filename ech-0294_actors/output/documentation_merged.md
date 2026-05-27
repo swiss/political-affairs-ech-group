@@ -105,10 +105,7 @@ names:
     valid_from: 2010-06-16
 ```
 
----
-search:
-  boost: 10.0
----
+
 
 # Class: Person 
 
@@ -126,39 +123,85 @@ __
 
 
 
-## Attribute
+### Attribute
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [label](#label) | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben ... | direct |
-| [label_long](#label_long) | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel z... | direct |
-| [birth_year](#birth_year) | 0..1 <br/> [Integer](#Integer) | [de] Geburtsjahr | direct |
-| [birth_date](#birth_date) | 0..1 <br/> [Date](#Date) | [de] Genaues Geburtsdatum | direct |
-| [death_date](#death_date) | 0..1 <br/> [Date](#Date) | [de] Genaues Todesdatum | direct |
-| [picture](#picture) | 0..1 <br/> [Uri](#Uri) | [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF) | direct |
-| [names](#names) | * <br/> [Name](#Name) | [en] Names of the person with type and value | direct |
-| [addresses](#addresses) | * <br/> [Address](#Address) | [de] Adressen mit Typ (privat, geschäftlich, lokal) | direct |
-| [language_proficiencies](#language_proficiencies) | * <br/> [LanguageProficiency](#LanguageProficiency) | [de] Sprachkompetenzen der Person | direct |
-| [citizenships](#citizenships) | * <br/> [Citizenship](#Citizenship) | [de] Staatsbürgerschaften der Person | direct |
-| [genders](#genders) | * <br/> [Gender](#Gender) | [de] Geschlecht der Person | direct |
-| [occupations](#occupations) | * <br/> [Occupation](#Occupation) | [de] Berufe oder Tätigkeiten der Person | direct |
-| [trainings](#trainings) | * <br/> [Training](#Training) | [de] Ausbildungen oder Bildungen der Person | direct |
-| [contacts](#contacts) | * <br/> [Contact](#Contact) | [en] Contact information (email, website, social media) | direct |
-| [electoral_district](#electoral_district) | 0..1 <br/> [ElectoralDistrict](#ElectoralDistrict) | [de] Link zum Wahlbezirk | direct |
-| [interest_links](#interest_links) | * <br/> [InterestLink](#InterestLink) | [de] Sammlung von Interessenbindungen | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
-| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| label | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).
+[en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).
+ |
+| label_long | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.).
+[en] Option to assign an extended label to a structured piece of information (e.g., display name with title, position, etc.).
+ |
+| birth_year | 0..1 <br/> [Integer](#Integer) | [de] Geburtsjahr.
+[en] Year of birth. Only to be used, if there is no full `birthDate` available.
+ |
+| birth_date | 0..1 <br/> [Date](#Date) | [de] Genaues Geburtsdatum.
+[en] Exact date of birth if available and public. This field has precedence over the field `birthYear`.
+ |
+| death_date | 0..1 <br/> [Date](#Date) | [de] Genaues Todesdatum.
+[en] Exact date of death.
+ |
+| picture | 0..1 <br/> [Uri](#Uri) | [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).
+[en] Link to an image (preferred: PNG, then JPG, then GIF).
+ |
+| names | * <br/> [Name](#Name) | [en] Names of the person with type and value.
+[de] Namen der Person mit Typ und Wert.
+ |
+| addresses | * <br/> [Address](#Address) | [de] Adressen mit Typ (privat, geschäftlich, lokal).
+[en] Addresses with type (private, business, local).
+ |
+| language_proficiencies | * <br/> [LanguageProficiency](#LanguageProficiency) | [de] Sprachkompetenzen der Person.
+[en] Language proficiencies of the person.
+ |
+| citizenships | * <br/> [Citizenship](#Citizenship) | [de] Staatsbürgerschaften der Person.
+[en] Citizenships of the person.
+ |
+| genders | * <br/> [Gender](#Gender) | [de] Geschlecht der Person.
+[en] Gender of the person.
+ |
+| occupations | * <br/> [Occupation](#Occupation) | [de] Berufe oder Tätigkeiten der Person.
+[en] Occupations or professions of the person.
+ |
+| trainings | * <br/> [Training](#Training) | [de] Ausbildungen oder Bildungen der Person.
+[en] Trainings or educations of the person.
+ |
+| contacts | * <br/> [Contact](#Contact) | [en] Contact information (email, website, social media).
+[de] Kontaktinformationen (E-Mail, Website, Social Media).
+ |
+| electoral_district | 0..1 <br/> [ElectoralDistrict](#ElectoralDistrict) | [de] Link zum Wahlbezirk.
+[en] Link to the electoral district.
+ |
+| interest_links | * <br/> [InterestLink](#InterestLink) | [de] Sammlung von Interessenbindungen.
+[en] Collection of interest links.range: InterestLink
+ |
+| local_id | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+[en] Local identifier. For example, a UUID from the council information system.
+<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität.
+[en] A unique, globally valid URI for the entity.
+<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz.
+[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.
+<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| date_created | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde.
+[en] The date when an entity was created.
+<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+[en] The date and time when an entity was created.
+<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+[en] The date when an entity was last modified.
+<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
+[en] The date and time when an entity was last modified.
+<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
 
 
-## Usages
+### Usages
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
@@ -199,8 +242,8 @@ __
 
 
 
-## Examples
-### Example: Person-swiss_politicians_Beat_Jans
+### Examples
+#### Example: Person-swiss_politicians_Beat_Jans
 
 ```yaml
 local_id: 4032
@@ -247,7 +290,7 @@ electoral_district:
   valid_from: 2010-01-01
 
 ```
-### Example: Person-douglas_adams_Douglas_Adams
+#### Example: Person-douglas_adams_Douglas_Adams
 
 ```yaml
 global_uri: https://www.wikidata.org/wiki/Q42
@@ -307,10 +350,7 @@ electoral_district:
 
 </div> 
 
----
-search:
-  boost: 10.0
----
+
 
 # Class: Address 
 
@@ -328,21 +368,31 @@ __
 
 
 
-## Attribute
+### Attribute
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [address_type](#address_type) | 0..1 <br/> [AddressTypeEnum](#AddressTypeEnum) | [de] Typ der Adresse | direct |
-| [address_uri](#address_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] URI der Adresse | direct |
-| [street_address](#street_address) | 0..1 <br/> [String](#String) | [de] Strassenadresse | direct |
-| [postal_code](#postal_code) | 0..1 <br/> [Integer](#Integer) | [de] Postleitzahl | direct |
-| [postal_locality](#postal_locality) | 0..1 <br/> [String](#String) | [de] Ort | direct |
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| address_type | 0..1 <br/> [AddressTypeEnum](#AddressTypeEnum) | [de] Typ der Adresse.
+[en] Type of address.
+ |
+| address_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] URI der Adresse.
+[en] URI of the address.
+ |
+| street_address | 0..1 <br/> [String](#String) | [de] Strassenadresse.
+[en] Street address.
+ |
+| postal_code | 0..1 <br/> [Integer](#Integer) | [de] Postleitzahl.
+[en] Postal code.
+ |
+| postal_locality | 0..1 <br/> [String](#String) | [de] Ort.
+[en] Locality.
+ |
 
 
 
 
 
-## Usages
+### Usages
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
@@ -384,15 +434,15 @@ __
 
 
 
-## Examples
-### Example: Address-swiss_politicians_Beat_Jans_1
+### Examples
+#### Example: Address-swiss_politicians_Beat_Jans_1
 
 ```yaml
 address_type: businessAddress
 postal_locality: Basel-Stadt
 
 ```
-### Example: Address-douglas_adams_Douglas_Adams_1
+#### Example: Address-douglas_adams_Douglas_Adams_1
 
 ```yaml
 address_type: privateAddress
@@ -412,8 +462,106 @@ postal_locality: London
 
 ---
 search:
-  boost: 10.0
----
+  boost: 2.0
+---# Enum: AddressTypeEnum 
+
+
+
+
+_[en] Types of addresses._
+
+_[de] Adresstypen._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
+
+## Permissible Values
+| Value | Meaning | Description |
+| --- | --- | --- |
+| privateAddress | None | [en] Private address |
+| businessAddress | None | [en] Business address |
+| localAddress | None | [en] Local address |
+
+
+
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [address_type](#address_type) | [de] Typ der Adresse |
+
+
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://ld.ech.ch/schema/0294/actors
+
+
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: AddressTypeEnum
+description: '[en] Types of addresses.
+
+  [de] Adresstypen.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
+rank: 1000
+permissible_values:
+  privateAddress:
+    text: privateAddress
+    description: '[en] Private address.
+
+      [de] Privatadresse.
+
+      '
+  businessAddress:
+    text: businessAddress
+    description: '[en] Business address.
+
+      [de] Geschäftsadresse.
+
+      '
+  localAddress:
+    text: localAddress
+    description: '[en] Local address.
+
+      [de] Lokaladresse.
+
+      '
+
+```
+</details>
+
+</div> 
+
+
 
 # Class: Citizenship 
 
@@ -431,20 +579,28 @@ __
 
 
 
-## Attribute
+### Attribute
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [country](#country) | 0..1 <br/> [String](#String) | [de] ISO 3166 Ländercode | direct |
-| [valid_from](#valid_from) | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity) |
-| [valid_through](#valid_through) | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity) |
-| [is_active](#is_active) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity) |
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| country | 0..1 <br/> [String](#String) | [de] ISO 3166 Ländercode.
+[en] ISO 3166 country code.
+ |
+| valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist.
+[en] The date from which the information is valid.
+<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist.
+[en] The date until which the information is valid, inclusive.
+<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist.
+[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.
+<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
 
 
-## Usages
+### Usages
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
@@ -1145,10 +1301,7 @@ landing_page: https://www.sp-ps.ch/fraktion
 
 Siehe vollständige LinkML-Schema-Dokumentation:
 
----
-search:
-  boost: 10.0
----
+
 
 # Class: Group 
 
@@ -1166,37 +1319,79 @@ __
 
 
 
-## Attribute
+### Attribute
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [group_type](#group_type) | 0..1 <br/> [GroupType](#GroupType) | [de] Klasse der Gruppierung, wie z | direct |
-| [label](#label) | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben ... | direct |
-| [abbreviation](#abbreviation) | * <br/> [MultilingualValue](#MultilingualValue) | [de] Abkürzung (kann mehrsprachig sein) | direct |
-| [description](#description) | * <br/> [MultilingualValue](#MultilingualValue) | [de] Kurze Beschreibung der Gruppierung | direct |
-| [landing_page](#landing_page) | 0..1 <br/> [Uri](#Uri) | [de] Website mit weiteren Informationen | direct |
-| [parent_groups](#parent_groups) | * <br/> [Uriorcurie](#Uriorcurie) | [de] Übergeordneten Gruppe | direct |
-| [spatial](#spatial) | 0..1 <br/> [String](#String) | [de] Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z | direct |
-| [contacts](#contacts) | * <br/> [Contact](#Contact) | [en] Contact information (email, website, social media) | direct |
-| [addresses](#addresses) | * <br/> [Address](#Address) | [de] Adressen mit Typ (privat, geschäftlich, lokal) | direct |
-| [statutes_url](#statutes_url) | 0..1 <br/> [String](#String) | [de] URL zu Parteistatuten (optional für Parteien) | direct |
-| [party_color](#party_color) | 0..1 <br/> [String](#String) | [de] Parteifarbe (optional für Parteien) | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
-| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [valid_from](#valid_from) | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity) |
-| [valid_through](#valid_through) | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity) |
-| [is_active](#is_active) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity) |
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| group_type | 0..1 <br/> [GroupType](#GroupType) | [de] Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder ähnliches. Die genaue Bennenung und Beschreibung der Gruppierung wird über `name` gemacht.
+[en] Link to the group type.
+ |
+| label | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).
+[en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).
+ |
+| abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | [de] Abkürzung (kann mehrsprachig sein).
+[en] Abbreviation (can be multilingual).
+ |
+| description | * <br/> [MultilingualValue](#MultilingualValue) | [de] Kurze Beschreibung der Gruppierung.
+[en] Description of the entity.
+ |
+| landing_page | 0..1 <br/> [Uri](#Uri) | [de] Website mit weiteren Informationen.
+[en] Website providing further information.
+ |
+| parent_groups | * <br/> [Uriorcurie](#Uriorcurie) | [de] Übergeordneten Gruppe. Zum Beispiel die Mutterpartei, zu Kantonalenparteien. Oder zur Beschreibung der Hierarchie in Exekutive. Verknüpfung von Subkommissionen mit Kommissionen. (parentGroup wird immer im selben group_type verwendet.)
+[en] Link to parent groups.
+ |
+| spatial | 0..1 <br/> [String](#String) | [de] Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z.B. ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).
+[en] Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).
+ |
+| contacts | * <br/> [Contact](#Contact) | [en] Contact information (email, website, social media).
+[de] Kontaktinformationen (E-Mail, Website, Social Media).
+ |
+| addresses | * <br/> [Address](#Address) | [de] Adressen mit Typ (privat, geschäftlich, lokal).
+[en] Addresses with type (private, business, local).
+ |
+| statutes_url | 0..1 <br/> [String](#String) | [de] URL zu Parteistatuten (optional für Parteien).
+[en] URL to party statutes (optional for parties).
+ |
+| party_color | 0..1 <br/> [String](#String) | [de] Parteifarbe (optional für Parteien).
+[en] Party color (optional for parties).
+ |
+| local_id | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+[en] Local identifier. For example, a UUID from the council information system.
+<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität.
+[en] A unique, globally valid URI for the entity.
+<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz.
+[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.
+<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| date_created | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde.
+[en] The date when an entity was created.
+<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+[en] The date and time when an entity was created.
+<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+[en] The date when an entity was last modified.
+<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
+[en] The date and time when an entity was last modified.
+<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist.
+[en] The date from which the information is valid.
+<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist.
+[en] The date until which the information is valid, inclusive.
+<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist.
+[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.
+<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
 
 
-## Usages
+### Usages
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
@@ -1864,10 +2059,7 @@ Eine Person kann sowohl Membership (z.B. Nationalrat) als auch InterestLink (z.B
 
 Siehe vollständige LinkML-Schema-Dokumentation:
 
----
-search:
-  boost: 10.0
----
+
 
 # Class: Membership 
 
@@ -1885,30 +2077,58 @@ __
 
 
 
-## Attribute
+### Attribute
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [person_reference](#person_reference) | 0..1 <br/> [PersonReference](#PersonReference) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfun... | direct |
-| [group_reference](#group_reference) | 0..1 <br/> [GroupReference](#GroupReference) | [de] Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfun... | direct |
-| [role_type](#role_type) | 0..1 <br/> [RoleType](#RoleType) | [en] Role of the person in the membership or function | direct |
-| [authorized_to_vote](#authorized_to_vote) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Person stimmberechtigt ist | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
-| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [valid_from](#valid_from) | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity) |
-| [valid_through](#valid_through) | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity) |
-| [is_active](#is_active) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity) |
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
+[en] Reference to a person with snapshot data at time of linking.
+ |
+| group_reference | 0..1 <br/> [GroupReference](#GroupReference) | [de] Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
+[en] Reference to a group with snapshot data at time of linking.
+ |
+| role_type | 0..1 <br/> [RoleType](#RoleType) | [en] Role of the person in the membership or function.
+[de] Rolle der Person in der Mitgliedschaft oder Funktion.
+ |
+| authorized_to_vote | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Person stimmberechtigt ist.
+[en] Indicates if the person is authorized to vote.
+ |
+| local_id | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+[en] Local identifier. For example, a UUID from the council information system.
+<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität.
+[en] A unique, globally valid URI for the entity.
+<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz.
+[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.
+<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| date_created | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde.
+[en] The date when an entity was created.
+<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+[en] The date and time when an entity was created.
+<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+[en] The date when an entity was last modified.
+<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
+[en] The date and time when an entity was last modified.
+<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist.
+[en] The date from which the information is valid.
+<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist.
+[en] The date until which the information is valid, inclusive.
+<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist.
+[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.
+<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
 
 
-## Usages
+### Usages
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
@@ -2340,10 +2560,7 @@ Statistische Auswertung nach Art der Interessenbindung:
 
 Siehe vollständige LinkML-Schema-Dokumentation:
 
----
-search:
-  boost: 10.0
----
+
 
 # Class: InterestLink 
 
@@ -2361,35 +2578,73 @@ __
 
 
 
-## Attribute
+### Attribute
 
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [person_reference](#person_reference) | 0..1 <br/> [PersonReference](#PersonReference) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfun... | direct |
-| [interest_type](#interest_type) | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | [de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verei... | direct |
-| [organization_label](#organization_label) | 0..1 <br/> [String](#String) | [en] Label of the organization | direct |
-| [organization_uid](#organization_uid) | 0..1 <br/> [String](#String) | [en] UID of the organization (for analysis with NOGA codes, etc | direct |
-| [organization_address](#organization_address) | 0..1 <br/> [String](#String) | [en] Address of the organization | direct |
-| [legal_form](#legal_form) | 0..1 <br/> [String](#String) | [en] Legal form of the organization | direct |
-| [is_paid](#is_paid) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Position bezahlt ist | direct |
-| [committee](#committee) | 0..1 <br/> [String](#String) | [en] Committee or board (e | direct |
-| [function_role](#function_role) | 0..1 <br/> [String](#String) | [en] Function or role in the organization | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
-| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [valid_from](#valid_from) | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist | [HasTemporalValidity) |
-| [valid_through](#valid_through) | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist | [HasTemporalValidity) |
-| [is_active](#is_active) | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist | [HasTemporalValidity) |
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
+[en] Reference to a person with snapshot data at time of linking.
+ |
+| interest_type | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | [de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).
+[en] Type of interest link (professional activity, political office, association).
+ |
+| organization_label | 0..1 <br/> [String](#String) | [en] Label of the organization.
+[de] Bezeichnung der Organisation.
+ |
+| organization_uid | 0..1 <br/> [String](#String) | [en] UID of the organization (for analysis with NOGA codes, etc.).
+[de] UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).
+ |
+| organization_address | 0..1 <br/> [String](#String) | [en] Address of the organization.
+[de] Adresse der Organisation.
+ |
+| legal_form | 0..1 <br/> [String](#String) | [en] Legal form of the organization.
+[de] Rechtsform der Organisation.
+ |
+| is_paid | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Position bezahlt ist.
+[en] Indicates if the position is paid.
+ |
+| committee | 0..1 <br/> [String](#String) | [en] Committee or board (e.g., foundation board, board of directors).
+[de] Gremium (z.B. Stiftungsrat, Verwaltungsrat).
+ |
+| function_role | 0..1 <br/> [String](#String) | [en] Function or role in the organization.
+[de] Funktion oder Rolle in der Organisation.
+ |
+| local_id | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+[en] Local identifier. For example, a UUID from the council information system.
+<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität.
+[en] A unique, globally valid URI for the entity.
+<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz.
+[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.
+<br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| date_created | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde.
+[en] The date when an entity was created.
+<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+[en] The date and time when an entity was created.
+<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+[en] The date when an entity was last modified.
+<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
+[en] The date and time when an entity was last modified.
+<br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist.
+[en] The date from which the information is valid.
+<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist.
+[en] The date until which the information is valid, inclusive.
+<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist.
+[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.
+<br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
 
 
-## Usages
+### Usages
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
@@ -2431,8 +2686,8 @@ __
 
 
 
-## Examples
-### Example: InterestLink-interest_links_il_burkart_003
+### Examples
+#### Example: InterestLink-interest_links_il_burkart_003
 
 ```yaml
 global_uri: act:il_burkart_003
@@ -2448,7 +2703,7 @@ function_role: Mitglied
 is_paid: true
 
 ```
-### Example: InterestLink-interest_links_il_burkart_002
+#### Example: InterestLink-interest_links_il_burkart_002
 
 ```yaml
 global_uri: act:il_burkart_002
@@ -2464,7 +2719,7 @@ function_role: Mitglied
 is_paid: true
 
 ```
-### Example: InterestLink-interest_links_il_burkart_001
+#### Example: InterestLink-interest_links_il_burkart_001
 
 ```yaml
 global_uri: act:il_burkart_001
@@ -2480,7 +2735,7 @@ function_role: Geschäftsführer
 is_paid: true
 
 ```
-### Example: InterestLink-interest_links_il_burkart_004
+#### Example: InterestLink-interest_links_il_burkart_004
 
 ```yaml
 global_uri: act:il_burkart_004
@@ -2496,7 +2751,7 @@ function_role: Mitglied
 is_paid: true
 
 ```
-### Example: InterestLink-interest_links_il_burkart_011
+#### Example: InterestLink-interest_links_il_burkart_011
 
 ```yaml
 global_uri: act:il_burkart_011
@@ -2512,7 +2767,7 @@ function_role: Mitglied
 is_paid: false
 
 ```
-### Example: InterestLink-interest_links_il_burkart_009
+#### Example: InterestLink-interest_links_il_burkart_009
 
 ```yaml
 global_uri: act:il_burkart_009
@@ -2528,7 +2783,7 @@ function_role: Mitglied
 is_paid: true
 
 ```
-### Example: InterestLink-interest_links_il_burkart_006
+#### Example: InterestLink-interest_links_il_burkart_006
 
 ```yaml
 global_uri: act:il_burkart_006
@@ -2544,7 +2799,7 @@ function_role: Präsident
 is_paid: true
 
 ```
-### Example: InterestLink-interest_links_il_burkart_008
+#### Example: InterestLink-interest_links_il_burkart_008
 
 ```yaml
 global_uri: act:il_burkart_008
@@ -2560,7 +2815,7 @@ function_role: Beirat
 is_paid: true
 
 ```
-### Example: InterestLink-interest_links_il_burkart_005
+#### Example: InterestLink-interest_links_il_burkart_005
 
 ```yaml
 global_uri: act:il_burkart_005
@@ -2576,7 +2831,7 @@ function_role: Präsident
 is_paid: true
 
 ```
-### Example: InterestLink-interest_links_il_burkart_010
+#### Example: InterestLink-interest_links_il_burkart_010
 
 ```yaml
 global_uri: act:il_burkart_010
@@ -2592,7 +2847,7 @@ function_role: Präsident
 is_paid: false
 
 ```
-### Example: InterestLink-interest_links_il_burkart_007
+#### Example: InterestLink-interest_links_il_burkart_007
 
 ```yaml
 global_uri: act:il_burkart_007
