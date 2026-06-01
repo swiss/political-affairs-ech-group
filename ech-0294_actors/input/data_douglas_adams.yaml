@@ -38,7 +38,7 @@ persons:
         is_active: false
         is_paid: true
     trainings:
-      - training_type: schulabschluss
+      - training_type: "2421"  # Baccalaureate / High School Diploma
         value: High School Diploma
     contacts:
       - contact_type: email

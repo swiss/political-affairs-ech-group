@@ -990,586 +990,308 @@ enums:
 
   TrainingTypeEnum:
     description: |
-      Types of training or education.
+      Types of training or education based on the Swiss BFS LEVEL_EDUC codelist (ISCED 2011).
     annotations:
       description_de: |
-        Ausbildungs- oder Bildungstypen.
+        Ausbildungs- oder Bildungstypen basierend auf der BFS LEVEL_EDUC Codeliste (ISCED 2011).
     permissible_values:
-      schulabschluss:
-        description: |
-          School diploma.
-        annotations:
-          description_de: |
-            Schulabschluss.
-      efz:
-        description: |
-          Federal certificate of proficiency (EFZ).
-        annotations:
-          description_de: |
-            Eidgenössisches Fähigkeitszeugnis (EFZ).
-      uni:
-        description: |
-          University degree.
-        annotations:
-          description_de: |
-            Universitätsabschluss.
-      armee:
-        description: |
-          Military service.
-        annotations:
-          description_de: |
-            Militärdienst.
-      zivi:
-        description: |
-          Civil service.
-        annotations:
-          description_de: |
-            Zivildienst.
-      zischutz:
-        description: |
-          Civil protection.
-        annotations:
-          description_de: |
-            Zivilschutz.
-
-  ContactTypeEnum:
-    description: |
-      Types of contact information.
-    annotations:
-      description_de: |
-        Kontaktinformationstypen.
-    permissible_values:
-      email:
-        description: |
-          Email address.
-        annotations:
-          description_de: |
-            E-Mail-Adresse.
-      contact_website:
-        description: |
-          Contact website.
-        annotations:
-          description_de: |
-            Kontakt-Website.
-      linked_in:
-        description: |
-          LinkedIn profile.
-        annotations:
-          description_de: |
-            LinkedIn-Profil.
-      twitter:
-        description: |
-          Twitter profile.
-        annotations:
-          description_de: |
-            Twitter-Profil.
-
-  RoleEnum:
-    description: |
-      Roles a person can have within a membership.
-    annotations:
-      description_de: |
-        Rollen, die eine Person im Rahmen einer Mitgliedschaft haben kann.
-    permissible_values:
-      member:
-        description: |
-          Regular member (default).
-        annotations:
-          description_de: |
-            Gewöhnliches Mitglied (Standard).
-      president:
-        description: |
-          President or chair of the group.
-        annotations:
-          description_de: |
-            Präsident oder Vorsitzender der Gruppe.
-      stellvertreter:
-        description: |
-          Deputy/vice role (stellvertreter).
-        annotations:
-          description_de: |
-            Stellvertreter / Vize.
-      other:
-        description: |
-          Other role; use role_label for a descriptive label.
-        annotations:
-          description_de: |
-            Andere Rolle; für eine beschreibende Bezeichnung role_label verwenden.
-
-  GroupTypeEnum:
-    description: |
-      Types of political groups and organizations.
-    annotations:
-      description_de: |
-        Typen politischer Gruppen und Organisationen.
-    permissible_values:
-      party:
-        meaning: act:enum/group_type/party
-        description: |
-          Political party at federal, cantonal, or municipal level. Each federal level is managed as its own group (e.g., national party, cantonal party, municipal party).
-        annotations:
-          description_de: |
-            Politische Partei auf Bundes-, Kantons- oder Gemeindeebene. Jede föderale Ebene wird als eigene Gruppe geführt (z.B. Bundespartei, Kantonspartei, Gemeindesektion).
-      list:
-        meaning: act:enum/group_type/list
-        description: |
-          Electoral list (can be part of a party or independent).
-        annotations:
-          description_de: |
-            Wahlliste (kann Teil einer Partei sein oder unabhängig).
-      workgroup:
-        meaning: act:enum/group_type/workgroup
-        description: |
-          Ad-hoc working group, typically with a limited duration.
-        annotations:
-          description_de: |
-            Ad-hoc-Arbeitsgruppe, typischerweise mit begrenzter Laufzeit.
-      parliament:
-        meaning: act:enum/group_type/parliament
-        description: |
-          Parliament at federal, cantonal, or municipal level (e.g., Federal Assembly, National Council, Council of States, Grand Council, cantonal parliament, municipal parliament).
-        annotations:
-          description_de: |
-            Parlament auf Bundes-, Kantons- oder Gemeindeebene (z.B. Bundesversammlung, Nationalrat, Ständerat, Grosser Rat, Kantonsrat, Gemeindeparlament).
-      delegation:
-        meaning: act:enum/group_type/delegation
-        description: |
-          Delegation.
-        annotations:
-          description_de: |
-            Delegation.
-      commission:
-        meaning: act:enum/group_type/commission
-        description: |
-          Commission (permanent or ad-hoc), including supervisory commissions (e.g., CPC), subject commissions, parliamentary investigation commissions (PIC), and audit commissions.
-        annotations:
-          description_de: |
-            Kommission (ständig oder ad-hoc), einschliesslich Aufsichtskommissionen (z.B. GPK), Sachkommissionen, Parlamentarische Untersuchungskommissionen (PUK) und Rechnungsprüfungskommissionen.
-      faction:
-        meaning: act:enum/group_type/faction
-        description: |
-          Parliamentary faction.
-        annotations:
-          description_de: |
-            Parlamentsfraktion.
-      parliamentary_bureau:
-        meaning: act:enum/group_type/parliamentary_bureau
-        description: |
-          Parliamentary bureau.
-        annotations:
-          description_de: |
-            Parlamentsbüro.
-      presidency:
-        meaning: act:enum/group_type/presidency
-        description: |
-          Presidency of parliament.
-        annotations:
-          description_de: |
-            Präsidium des Parlaments.
-      government:
-        meaning: act:enum/group_type/government
-        description: |
-          Government / Executive as a collective body (e.g., Federal Council, Cantonal Government, City or Municipal Council).
-        annotations:
-          description_de: |
-            Regierung / Exekutive als Gesamtorgan (z.B. Bundesrat, Regierungsrat, Stadtrat / Gemeinderat).
-      department:
-        meaning: act:enum/group_type/department
-        description: |
-          Government department.
-        annotations:
-          description_de: |
-            Departement.
-      office:
-        meaning: act:enum/group_type/office
-        description: |
-          Government office.
-        annotations:
-          description_de: |
-            Amt.
-      extraparliamentary_commission:
-        meaning: act:enum/group_type/extraparliamentary_commission
-        description: |
-          Extra-parliamentary commission with a government mandate (e.g., Bank Council of the Swiss National Bank, FINMA).
-        annotations:
-          description_de: |
-            Ausserparlamentarische Kommission mit Regierungsauftrag (z.B. Bankrat der Schweizerischen Nationalbank, FINMA).
-      interest_group:
-        meaning: act:enum/group_type/interest_group
-        description: |
-          Interest group from civil society.
-        annotations:
-          description_de: |
-            Interessengruppe aus der Zivilgesellschaft.
-      control_body:
-        meaning: act:enum/group_type/control_body
-        description: |
-          Control or supervisory body (e.g., Federal Finance Control EFC, supervisory authority AB-BA).
-        annotations:
-          description_de: |
-            Kontroll- oder Aufsichtsorgan (z.B. Eidgenössische Finanzkontrolle EFK, Aufsichtsbehörde AB-BA).
-      parliamentary_services:
-        meaning: act:enum/group_type/parliamentary_services
-        description: |
-          Parliamentary services.
-        annotations:
-          description_de: |
-            Parlamentsdienste.
-      court:
-        meaning: act:enum/group_type/court
-        description: |
-          Court / Judiciary at any level (e.g., Federal Court, Cantonal Court, District Court).
-        annotations:
-          description_de: |
-            Gericht / Judikative auf jeder Ebene (z.B. Bundesgericht, Kantonsgericht, Bezirksgericht).
-      association:
-        meaning: act:enum/group_type/association
-        description: |
-          Association.
-        annotations:
-          description_de: |
-            Verein.
-      petition_carrier:
-        meaning: act:enum/group_type/petition_carrier
-        description: |
-          Petition carrier.
-        annotations:
-          description_de: |
-            Petitionsträger.
-      university:
-        meaning: act:enum/group_type/university
-        description: |
-          University or educational institution as an outsourced provider of public tasks.
-        annotations:
-          description_de: |
-            Universität oder Bildungseinrichtung als ausgelagerter Träger öffentlicher Aufgaben.
-      other:
-        meaning: act:enum/group_type/other
-        description: |
-          Other group type not covered by standard categories.
-        annotations:
-          description_de: |
-            Anderer Gruppentyp, nicht durch Standardkategorien abgedeckt.
-
-  InterestTypeEnum:
-    description: |
-      Types of interest links (conflicts of interest, political financing).
-    annotations:
-      description_de: |
-        Typen von Interessenbindungen (Interessenkonflikte, Politikfinanzierung).
-    permissible_values:
-      professional_activity:
-        meaning: act:enum/interest_type/professional_activity
-        description: |
-          Professional activity outside the political mandate (e.g., employment, self-employment, consulting, board mandates in private companies).
-        annotations:
-          description_de: |
-            Berufliche Tätigkeit ausserhalb des politischen Mandats (z.B. Anstellung, selbstständige Tätigkeit, Beratungsmandate, Verwaltungsratsmandate in Privatunternehmen).
-      political_office:
-        meaning: act:enum/interest_type/political_office
-        description: |
-          Political office or mandate at other federal levels or in other bodies (e.g., cantonal/municipal parliament membership, government council, extra-parliamentary commission).
-        annotations:
-          description_de: |
-            Politisches Amt oder Mandat auf anderen föderalen Ebenen oder in anderen Körperschaften (z.B. Mitgliedschaft in kantonalen/kommunalen Parlamenten, Regierungsrat, ausserparlamentarische Kommission).
-      association:
-        meaning: act:enum/interest_type/association
-        description: |
-          Membership in associations, federations, or interest organizations (e.g., industry associations, professional associations, lobby organizations, foundations, charitable associations).
-        annotations:
-          description_de: |
-            Mitgliedschaft in Vereinen, Verbänden oder Interessenorganisationen (z.B. Branchenverbände, Berufsverbände, Lobbyorganisationen, Stiftungen, gemeinnützige Vereine).
-
-  GenderCodeEnum:
-    description: |
-      Gender codes for persons.
-    annotations:
-      description_de: |
-        Geschlechtscodes für Personen.
-    permissible_values:
-      male:
-        description: Male.
-        annotations:
-          description_de: Männlich.
-      female:
-        description: Female.
-        annotations:
-          description_de: Weiblich.
-      diverse:
-        description: Diverse / non-binary.
-        annotations:
-          description_de: Divers / nicht-binär.
-
-  LegalFormEnum:
-    description: |
-      Legal forms based on the Swiss UID register codelist (eCH-0097). See https://register.ld.admin.ch/i14y/concept/legalForm
-    annotations:
-      description_de: |
-        Rechtsformen basierend auf der Codeliste des eidgenössischen UID-Registers (eCH-0097). Siehe https://register.ld.admin.ch/i14y/concept/legalForm
-    permissible_values:
-      "0101":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0101
-        description: Sole proprietorship.
-        annotations:
-          description_de: Einzelunternehmen.
-          description_fr: Entreprise individuelle.
-          description_it: Impresa individuale.
-      "0103":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0103
-        description: General partnership (GP).
-        annotations:
-          description_de: Kollektivgesellschaft (KlG).
-          description_fr: Société en nom collectif (SNC).
-          description_it: Società in nome collettivo (SNC).
-      "0104":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0104
-        description: Limited partnership (LP).
-        annotations:
-          description_de: Kommanditgesellschaft (KmG).
-          description_fr: Société en commandite (SCm).
-          description_it: Società in accomandita (SAc).
-      "0105":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0105
-        description: Corporation with unlimited partners (CUP).
-        annotations:
-          description_de: Kommanditaktiengesellschaft (KmAG).
-          description_fr: Société en commandite par actions (SCmA).
-          description_it: Società in accomandita per azioni (SAcA).
-      "0106":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0106
-        description: Corporation (Ltd).
-        annotations:
-          description_de: Aktiengesellschaft (AG).
-          description_fr: Société anonyme (SA).
-          description_it: Società anonima (SA).
-      "0107":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0107
-        description: Limited liability company (LLC).
-        annotations:
-          description_de: Gesellschaft mit beschränkter Haftung (GmbH).
-          description_fr: Société à responsabilité limitée (Sàrl).
-          description_it: Società a garanzia limitata (Sagl).
-      "0108":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0108
-        description: Cooperative.
-        annotations:
-          description_de: Genossenschaft.
-          description_fr: Société coopérative.
-          description_it: Società cooperativa.
-      "0109":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0109
-        description: Association.
-        annotations:
-          description_de: Verein.
-          description_fr: Association.
-          description_it: Associazione.
-      "0110":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0110
-        description: Foundation.
-        annotations:
-          description_de: Stiftung.
-          description_fr: Fondation.
-          description_it: Fondazione.
-      "0111":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0111
-        description: Branch of a foreign company.
-        annotations:
-          description_de: Zweigniederlassung eines ausländischen Unternehmens.
-          description_fr: Succursale d'une entreprise étrangère.
-          description_it: Succursale di un'impresa straniera.
-      "0113":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0113
-        description: Special legal form.
-        annotations:
-          description_de: Besondere Rechtsform.
-          description_fr: Forme juridique particulière.
-          description_it: Forma giuridica speciale.
-      "0114":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0114
-        description: Limited Partnership for collective investment schemes (LPCI).
-        annotations:
-          description_de: Kommanditgesellschaft für kollektive Kapitalanlagen (KmGK).
-          description_fr: Société en commandite de placements collectifs (SCmPC).
-          description_it: Società in accomandita per investimenti collettivi di capitale (SAcCol).
-      "0115":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0115
-        description: Limited Partnership for collective investment schemes with a variable capital (SICAV).
-        annotations:
-          description_de: Investmentgesellschaft mit variablem Kapital (SICAV).
-          description_fr: Société d'investissement à capital variable (SICAV).
-          description_it: Società d'investimento a capitale variabile (SICAV).
-      "0116":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0116
-        description: Limited Partnership for collective investment schemes with a fixed capital (SICAF).
-        annotations:
-          description_de: Investmentgesellschaft mit festem Kapital (SICAF).
-          description_fr: Société d'investissement à capital fixe (SICAF).
-          description_it: Società d'investimento a capitale fisso (SICAF).
-      "0117":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0117
-        description: Public-law institution.
-        annotations:
-          description_de: Institut des öffentlichen Rechts.
-          description_fr: Institut de droit public.
-          description_it: Istituto di diritto pubblico.
-      "0118":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0118
-        description: Non-commercial power of attorney.
-        annotations:
-          description_de: Nichtkaufmännische Prokura.
-          description_fr: Procuration non-commerciale.
-          description_it: Procura non commerciale.
-      "0119":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0119
-        description: Representative of the community of property.
-        annotations:
-          description_de: Haupt von Gemeinderschaft.
-          description_fr: Représentant d'indivision.
-          description_it: Rappresentanti dell'indivisione.
-      "0151":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0151
-        description: Branch.
-        annotations:
-          description_de: Zweigniederlassung.
-          description_fr: Succursale.
-          description_it: Succursale.
-      "0220":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0220
-        description: Administrative unit of the Confederation.
-        annotations:
-          description_de: Verwaltungseinheit des Bundes.
-          description_fr: Unité de l'administration fédérale.
-          description_it: Unità amministrativa della Confederazione.
-      "0221":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0221
-        description: Administrative unit of the canton.
-        annotations:
-          description_de: Verwaltungseinheit des Kantons.
-          description_fr: Unité de l'administration cantonale.
-          description_it: Unità amministrativa del cantone.
-      "0222":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0222
-        description: Administrative unit of the district.
-        annotations:
-          description_de: Verwaltungseinheit des Bezirks.
-          description_fr: Unité de l'administration du district.
-          description_it: Unità amministrativa del distretto.
-      "0223":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0223
-        description: Administrative unit of the commune.
-        annotations:
-          description_de: Verwaltungseinheit der Gemeinde.
-          description_fr: Unité de l'administration communale.
-          description_it: Unità amministrativa del comune.
-      "0224":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0224
-        description: Other public-law administrative unit.
-        annotations:
-          description_de: Andere öffentlich-rechtliche Verwaltungseinheit.
-          description_fr: Autre unité de l'administration de droit public.
-          description_it: Altra unità amministrativa di diritto pubblico.
-      "0230":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0230
-        description: Public-law institution of the Confederation.
-        annotations:
-          description_de: Einrichtung des öffentlichen Rechts des Bundes.
-          description_fr: Institution de droit public fédérale.
-          description_it: Istituzione di diritto pubblico della Confederazione.
-      "0231":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0231
-        description: Public-law institution of the canton.
-        annotations:
-          description_de: Einrichtung des öffentlichen Rechts des Kantons.
-          description_fr: Institution de droit public cantonale.
-          description_it: Istituzione di diritto pubblico del cantone.
-      "0232":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0232
-        description: Public-law institution of the district.
-        annotations:
-          description_de: Einrichtung des öffentlichen Rechts des Bezirks.
-          description_fr: Institution de droit public du district.
-          description_it: Istituzione di diritto pubblico del distretto.
-      "0233":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0233
-        description: Public-law institution of the commune.
-        annotations:
-          description_de: Einrichtung des öffentlichen Rechts der Gemeinde.
-          description_fr: Institution de droit public communale.
-          description_it: Istituzione di diritto pubblico del comune.
-      "0234":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0234
-        description: Other public-law institution.
-        annotations:
-          description_de: Andere Einrichtung des öffentlichen Rechts.
-          description_fr: Autre institution de droit public.
-          description_it: Altra istituzione di diritto pubblico.
-      "0302":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0302
-        description: Simple partnership.
-        annotations:
-          description_de: Einfache Gesellschaft.
-          description_fr: Société simple.
-          description_it: Società semplice.
-      "0312":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0312
-        description: Permanent establishment or swiss representation of a foreign company.
-        annotations:
-          description_de: Betriebsstätte oder Schweizer Vertretung eines ausländischen Unternehmens.
-          description_fr: Établissement stable ou représentant suisse d'une entreprise étrangère.
-          description_it: Stabilimento o rappresentanza svizzera di un'impresa straniera.
-      "0327":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0327
-        description: Foreign public company.
-        annotations:
-          description_de: Ausländisches öffentliches Unternehmen.
-          description_fr: Entreprise publique étrangère.
-          description_it: Impresa pubblica estera.
-      "0328":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0328
-        description: Foreign public administration.
-        annotations:
-          description_de: Ausländische öffentliche Verwaltung.
-          description_fr: Administration publique étrangère.
-          description_it: Amministrazione pubblica estera.
-      "0329":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0329
-        description: International organisation.
-        annotations:
-          description_de: Internationale Organisation.
-          description_fr: Organisation internationale.
-          description_it: Organizzazione internazionale.
-      "0355":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0355
-        description: Other cooperative.
-        annotations:
-          description_de: Übrige Genossenschaft.
-          description_fr: Autre société coopérative.
-          description_it: Altra società cooperativa.
-      "0361":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0361
-        description: Trust.
-        annotations:
-          description_de: Trust.
-          description_fr: Trust.
-          description_it: Trust.
-      "0362":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0362
-        description: Fund.
-        annotations:
-          description_de: Fonds.
-          description_fr: Fonds.
-          description_it: Fondo.
-      "0441":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0441
-        description: Foreign company.
-        annotations:
-          description_de: Ausländisches Unternehmen.
-          description_fr: Entreprise étrangère.
-          description_it: Impresa estera.
-      "0571":
-        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0571
-        description: Legal form undefined or unknown.
-        annotations:
-          description_de: Rechtsform unbestimmt oder unbekannt.
-          description_fr: Forme juridique non déterminée ou inconnue.
-          description_it: Forma giuridica indefinita o sconosciuta.
+      "10":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/10
+        description: Maximum compulsory school.
+        annotations:
+          description_de: Maximal obligatorische Schule.
+          description_fr: École obligatoire au maximum.
+          description_it: Scuola dell'obbligo al massimo.
+      "110":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/110
+        description: No education (ISCED 2011: 0).
+        annotations:
+          description_de: Keine Ausbildung.
+          description_fr: Aucune formation.
+          description_it: Nessuna formazione.
+      "120":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/120
+        description: Compulsory school attended but not completed (ISCED 2011: 1).
+        annotations:
+          description_de: Obligatorische Schule besucht, aber nicht abgeschlossen.
+          description_fr: École obligatoire inachevée.
+          description_it: Scuola dell'obbligo non portata a termine.
+      "130":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/130
+        description: Compulsory school (ISCED 2011: 2).
+        annotations:
+          description_de: Obligatorische Schule.
+          description_fr: École obligatoire.
+          description_it: Scuola dell'obbligo.
+      "140":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/140
+        description: 1 year of education / transitional education (ISCED 2011: 2).
+        annotations:
+          description_de: 1-jährige Ausbildung / Brückenangebot.
+          description_fr: Formation d'un an / offre de transition.
+          description_it: Formazione di 1 anno / formazione transitoria.
+      "20":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/20
+        description: Upper secondary level (ISCED 2011: 3).
+        annotations:
+          description_de: Sekundarstufe II.
+          description_fr: Degré secondaire II.
+          description_it: Livello secondario II.
+      "22":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/22
+        description: Upper secondary level - Vocational education and training (VET) (ISCED 2011: 35).
+        annotations:
+          description_de: Sekundarstufe II - Berufsbildung.
+          description_fr: Degré secondaire II - formation professionnelle.
+          description_it: Livello secondario II - formazione professionale.
+      "220":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/220
+        description: Apprenticeship in a company (EFZ/EBA) / basic vocational training / vocational school / trade school (ISCED 2011: 35).
+        annotations:
+          description_de: Berufslehre im Betrieb (EFZ / EBA) / Anlehre / Berufsschule / Handelsschule.
+          description_fr: Apprentissage en entreprise (CFC/AFP) / formation professionnelle élémentaire / école professionnelle / école de commerce.
+          description_it: Tirocinio in azienda (CFP/AFC) / formazione professionale di base / scuola professionale / scuola di commercio.
+      "2210":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2210
+        description: Apprenticeship 2 years (EBA) / basic vocational training / vocational school / trade school (ISCED 2011: 353).
+        annotations:
+          description_de: 2-jährige Berufslehre im Betrieb (EBA) / Anlehre / Berufsschule / Handelsschule.
+          description_fr: Apprentissage en entreprise (AFP) 2 ans / formation prof. élémentaire / école professionnelle / école de commerce.
+          description_it: Tirocinio in azienda (AFC) 2 anni / formazione professionale di base / scuola professionale / scuola di commercio.
+      "2211":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2211
+        description: Apprenticeship in a company 2 years (EBA) / basic vocational training (ISCED 2011: 353).
+        annotations:
+          description_de: 2-jährige Berufslehre im Betrieb (EBA) / Anlehre.
+          description_fr: Apprentissage en entreprise d'une durée de 2 ans (AFP) / formation professionnelle élémentaire.
+          description_it: Tirocinio in azienda della durata di 2 anni (AFC) / formazione professionale di base.
+      "2212":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2212
+        description: Vocational school / trade school 2 years (ISCED 2011: 353).
+        annotations:
+          description_de: 2-jährige Berufsschule / Handelsschule.
+          description_fr: École professionnelle / école de commerce d'une durée de 2 ans.
+          description_it: Scuola professionale / scuola di commercio della durata di 2 anni.
+      "2220":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2220
+        description: Apprenticeship 3-4 years (EFZ) / vocational school / trade school (ISCED 2011: 354).
+        annotations:
+          description_de: 3- bis 4-jährige Berufslehre im Betrieb (EFZ) / Berufsschule / Handelsschule.
+          description_fr: Apprentissage en entreprise (CFC) 3-4 ans / école professionnelle / école de commerce.
+          description_it: Tirocinio in azienda (CFP) 3-4 anni / scuola professionale / scuola di commercio.
+      "2221":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2221
+        description: Apprenticeship in a company 3-4 years (EFZ) (ISCED 2011: 354).
+        annotations:
+          description_de: 3- bis 4-jährige Berufslehre im Betrieb (EFZ).
+          description_fr: Apprentissage en entreprise d'une durée de 3 à 4 ans (CFC).
+          description_it: Tirocinio in azienda della durata di 3 a 4 anni (CFP).
+      "2222":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2222
+        description: Vocational school / trade school 3-4 years (ISCED 2011: 354).
+        annotations:
+          description_de: 3- bis 4-jährige Berufsschule / Handelsschule.
+          description_fr: École professionnelle / école de commerce d'une durée de 3 a 4 ans.
+          description_it: Scuola professionale / scuola di commercio della durata di 3 a 4 anni.
+      "24":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/24
+        description: Upper secondary level - general education (ISCED 2011: 34).
+        annotations:
+          description_de: Sekundarstufe II - Allgemeinbildung.
+          description_fr: Degré secondaire II - formation générale.
+          description_it: Livello secondario II - formazione generale.
+      "241":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/241
+        description: Upper secondary specialised schools / diploma middle school (ISCED 2011: 34).
+        annotations:
+          description_de: Fachmittelschule / Diplommittelschule.
+          description_fr: École de culture générale / école de degré diplôme.
+          description_it: Scuola specializzata / scuola di diploma.
+      "2411":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2411
+        description: Upper secondary specialised schools / diploma middle school 2 years (ISCED 2011: 343).
+        annotations:
+          description_de: 2-jährige Fachmittelschule / Diplommittelschule.
+          description_fr: École de culture générale / école de degré diplôme d'une durée de 2 ans.
+          description_it: Scuola specializzata / scuola di diploma della durata di 2 anni.
+      "2412":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2412
+        description: Upper secondary specialised schools / diploma middle school 3 years (ISCED 2011: 344).
+        annotations:
+          description_de: 3-jährige Fachmittelschule / Diplommittelschule.
+          description_fr: École de culture générale / école de degré diplôme d'une durée de 3 ans.
+          description_it: Scuola specializzata / scuola di diploma della durata di 3 anni.
+      "242":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/242
+        description: Baccalaureate / teaching diploma (ISCED 2011: 344).
+        annotations:
+          description_de: Gymnasiale Maturität / Lehrkräfteseminar.
+          description_fr: Maturité ou école normale.
+          description_it: Maturità liceale / scuola magistrale o abilitazione all'insegnamento.
+      "2421":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2421
+        description: Baccalaureate (ISCED 2011: 344).
+        annotations:
+          description_de: Gymnasiale Maturität.
+          description_fr: Maturité gymnasiale.
+          description_it: Maturità liceale.
+      "2422":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2422
+        description: Teaching diploma (ISCED 2011: 344).
+        annotations:
+          description_de: Lehrkräfteseminar.
+          description_fr: Brevet d'enseignement.
+          description_it: Scuola magistrale o abilitazione all'insegnamento.
+      "243":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/243
+        description: Vocational / specialised baccalaureate (ISCED 2011: 344).
+        annotations:
+          description_de: Berufs- oder Fachmaturität.
+          description_fr: Maturité professionnelle / spécialisée.
+          description_it: Maturità professionale / specializzata.
+      "2431":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2431
+        description: Vocational baccalaureate (ISCED 2011: 344).
+        annotations:
+          description_de: Berufsmaturität.
+          description_fr: Maturité professionnelle.
+          description_it: Maturità professionale.
+      "2432":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2432
+        description: Specialised baccalaureate (ISCED 2011: 344).
+        annotations:
+          description_de: Fachmaturität.
+          description_fr: Maturité spécialisée.
+          description_it: Maturità specializzata.
+      "30":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/30
+        description: Tertiary level.
+        annotations:
+          description_de: Tertiärstufe.
+          description_fr: Degré tertiaire.
+          description_it: Livello terziario.
+      "31":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/31
+        description: Professional education.
+        annotations:
+          description_de: Höhere Berufsbildung.
+          description_fr: Formation professionnelle supérieure.
+          description_it: Formazione professionale superiore.
+      "310":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/310
+        description: Professional examination with federal diploma / advanced federal diploma / PET diploma.
+        annotations:
+          description_de: Berufsprüfung mit eidg. Fachausweis / Höhere Fachprüfung mit eidg. Diplom / Meisterdiplom.
+          description_fr: Examen professionnel avec brevet fédéral / examen professionnel supérieur avec diplôme fédéral/maîtrise.
+          description_it: Esame professionale superiore con attestato professionale federale / esame professionale superiore con diploma federale / maestria federale.
+      "311":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/311
+        description: Professional examination with federal diploma of higher education (ISCED 2011: 6).
+        annotations:
+          description_de: Berufsprüfung mit eidg. Fachausweis.
+          description_fr: Examen professionnel avec brevet fédéral.
+          description_it: Esame professionale superiore con attestato professionale federale.
+      "312":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/312
+        description: Professional examination with advanced federal diploma of higher education / PET diploma (ISCED 2011: 7).
+        annotations:
+          description_de: Höhere Fachprüfung mit eidg. Diplom / Meisterdiplom.
+          description_fr: Examen professionnel supérieur avec diplôme fédéral/maîtrise.
+          description_it: Esame professionale superiore con diploma federale / maestria federale.
+      "313":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/313
+        description: College of Higher Education (ISCED 2011: 6).
+        annotations:
+          description_de: Höhere Fachschule.
+          description_fr: École supérieure (ES).
+          description_it: Scuola specializzata superiore (SSS).
+      "3131":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3131
+        description: College of Higher Education 2 years full time or 3 years part-time (ISCED 2011: 6).
+        annotations:
+          description_de: Höhere Fachschule (HF) 2 Jahre Voll- oder 3 Jahre Teilzeitstudium.
+          description_fr: École supérieure (ES) 2 ans plein temps ou 3 ans temps partiel.
+          description_it: Scuola specializzata superiore (SSS) 2 anni a tempo pieno o 3 anni a tempo parziale.
+      "3132":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3132
+        description: College of Higher Education 3 years full time or 4 years part-time (ISCED 2011: 6).
+        annotations:
+          description_de: Höhere Fachschule (HF) 3 Jahre Voll- oder 4 Jahre Teilzeitstudium.
+          description_fr: École supérieure (ES) 3 ans plein temps ou 4 ans temps partiel.
+          description_it: Scuola specializzata superiore (SSS) 3 anni a tempo pieno o 4 anni a tempo parziale.
+      "32":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/32
+        description: Higher education institutions.
+        annotations:
+          description_de: Hochschule.
+          description_fr: Haute école.
+          description_it: Scuola universitaria.
+      "321":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/321
+        description: Bachelor universities, institutes of technology, universities of applied sciences, universities of teacher education (ISCED 2011: 6).
+        annotations:
+          description_de: Bachelor Universität, ETH, Fachhochschule, pädagogische Hochschule (inklusive Diplom FH / PH).
+          description_fr: Bachelor université, EPF, haute école spécialisée, haute école pédagogique (y compris diplôme HES/HEP).
+          description_it: Bachelor università, PF, scuola universitaria professionale, alta scuola pedagogica (incluso il diploma SUP / ASP).
+      "3211":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3211
+        description: Bachelor universities of applied sciences (including UAS diploma) (ISCED 2011: 6).
+        annotations:
+          description_de: Bachelor Fachhochschule (inklusive Diplom FH).
+          description_fr: Bachelor haute école spécialisée (y compris diplôme HES).
+          description_it: Bachelor scuola universitaria professionale (incluso il diploma SUP).
+      "3212":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3212
+        description: Bachelor universities of teacher education (including UTE first degree) (ISCED 2011: 6).
+        annotations:
+          description_de: Bachelor pädagogische Hochschule (inklusive Diplom PH).
+          description_fr: Bachelor haute école pédagogique (y compris diplôme HEP).
+          description_it: Bachelor alta scuola pedagogica (incluso il diploma ASP).
+      "3213":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3213
+        description: Bachelor universities, institutes of technology (UIT) (ISCED 2011: 6).
+        annotations:
+          description_de: Bachelor Universität, ETH.
+          description_fr: Bachelor université, EPF.
+          description_it: Bachelor università.
+      "322":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/322
+        description: Master universities, institutes of technology, universities of applied sciences, universities of teacher education (ISCED 2011: 7).
+        annotations:
+          description_de: Master Universität, ETH, Fachhochschule, pädagogische Hochschule (inklusive Lizentiat / Diplom).
+          description_fr: Master université, EPF, haute école spécialisée, haute école pédagogique (y compris licence/diplôme).
+          description_it: Master università, PF, scuola universitaria professionale, alta scuola pedagogica (inclusi la laurea / il diploma).
+      "3221":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3221
+        description: Master universities of applied sciences (ISCED 2011: 7).
+        annotations:
+          description_de: Master Fachhochschule.
+          description_fr: Master haute école spécialisée.
+          description_it: Master scuola universitaria professionale.
+      "3222":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3222
+        description: Master universities of teacher education (ISCED 2011: 7).
+        annotations:
+          description_de: Master pädagogische Hochschule.
+          description_fr: Master haute école pédagogique.
+          description_it: Master alta scuola pedagogica.
+      "3223":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3223
+        description: Master universities, institutes of technology (UIT) including UNI / UIT diploma (ISCED 2011: 7).
+        annotations:
+          description_de: Master Universität, ETH (inklusive Lizentiat / Diplom Universität / ETH).
+          description_fr: Master université, EPF (y compris licence/diplôme université/EPF).
+          description_it: Master università, PF (inclusi la laurea / il diploma universitari / PF).
+      "323":
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/323
+        description: Doctorate or habilitation (ISCED 2011: 8).
+        annotations:
+          description_de: Doktorat / Habilitation.
+          description_fr: Doctorat / habilitation.
+          description_it: Dottorato / abilitazione.
+      military:
+        description: Military service (Swiss army). Use `value` to specify the rank reached.
+        annotations:
+          description_de: Militärdienst (Schweizer Armee). Den erreichten Grad im Feld `value` angeben.
+          description_fr: Service militaire (armée suisse). Indiquer le grade atteint dans le champ `value`.
+          description_it: Servizio militare (esercito svizzero). Indicare il grado raggiunto nel campo `value`.

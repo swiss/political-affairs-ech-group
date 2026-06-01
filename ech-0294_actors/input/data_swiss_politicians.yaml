@@ -32,7 +32,7 @@ persons:
         valid_from: 1964-01-01
         is_active: true
     trainings:
-      - training_type: uni
+      - training_type: "3223"  # Master Universität, ETH (inklusive Lizentiat / Diplom)
         value: dipl. nat. ETH
     contacts:
       - contact_type: email
