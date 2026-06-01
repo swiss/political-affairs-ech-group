@@ -6,9 +6,7 @@ search:
 # Slot: value 
 
 
-_[de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc._
-
-_[en] The value of an information besides other attributes such as type, language, etc._
+_The value of an information besides other attributes such as type, language, etc._
 
 __
 
@@ -32,7 +30,7 @@ URI: [mcm:value](https://ld.ech.ch/schema/0292/meta-common/value)
 | [Name](Name.md) | A name with a type (e |  no  |
 | [Training](Training.md) | Training or education of a person indicating a type (e |  no  |
 | [Contact](Contact.md) | Contact information of a person indicating a type (e |  no  |
-| [MultilingualValue](MultilingualValue.md) | [de] Ein mehrsprachiger String mit Angabe der Sprache |  no  |
+| [MultilingualValue](MultilingualValue.md) | A multilingual string with language specification |  no  |
 
 
 
@@ -70,10 +68,14 @@ URI: [mcm:value](https://ld.ech.ch/schema/0292/meta-common/value)
 <details>
 ```yaml
 name: value
-description: '[de] Der eigentliche Wert einer Information neben weiteren attributen
-  wie Typ, Sprache, etc.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Der eigentliche Wert einer Information neben weiteren attributen wie Typ,
+      Sprache, etc.
 
-  [en] The value of an information besides other attributes such as type, language,
+      '
+description: 'The value of an information besides other attributes such as type, language,
   etc.
 
   '

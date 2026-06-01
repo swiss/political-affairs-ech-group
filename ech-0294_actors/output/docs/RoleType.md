@@ -19,7 +19,7 @@ __
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
 | role_type_enum | 0..1 <br/> [RoleEnum](RoleEnum.md) | Role of the person in the membership or function.  |
-| label | 0..1 <br/> [String](String.md) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.). [en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).  |
+| label | 0..1 <br/> [String](String.md) | Option to assign a label to a structured piece of information (e.g., display name, position, etc.).  |
 
 
 

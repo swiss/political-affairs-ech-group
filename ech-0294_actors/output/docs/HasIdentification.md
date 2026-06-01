@@ -3,9 +3,7 @@
 ## Class: HasIdentification 
 
 
-_[de] Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfügung stellt._
-
-_[en] A mixin class that provides slots for the identification of an entity._
+_A mixin class that provides slots for the identification of an entity._
 
 __
 
@@ -20,9 +18,9 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| local_id | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system.  |
-| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity.  |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.  |
+| local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system.  |
+| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity.  |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.  |
 
 
 
@@ -37,7 +35,7 @@ __
 | [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |
 | [Membership](Membership.md) | A membership relationship between a person and a group |
 | [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |
-| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |
+| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |
 
 
 

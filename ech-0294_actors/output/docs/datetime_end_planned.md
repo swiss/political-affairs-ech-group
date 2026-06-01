@@ -6,9 +6,7 @@ search:
 # Slot: datetime_end_planned 
 
 
-_[de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer._
-
-_[en] The planned end date and time of an event or occurrence with time duration._
+_The planned end date and time of an event or occurrence with time duration._
 
 __
 
@@ -29,8 +27,8 @@ URI: [mcm:datetimeEndPlanned](https://ld.ech.ch/schema/0292/meta-common/datetime
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [IsEventWithDuration](IsEventWithDuration.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder V... |  no  |
-| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |  no  |
+| [IsEventWithDuration](IsEventWithDuration.md) | A mixin class that provides slots for modeling events or occurrences with tim... |  no  |
+| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
 
 
 
@@ -68,10 +66,14 @@ URI: [mcm:datetimeEndPlanned](https://ld.ech.ch/schema/0292/meta-common/datetime
 <details>
 ```yaml
 name: datetime_end_planned
-description: '[de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens
-  mit Zeitdauer.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+      mit Zeitdauer.
 
-  [en] The planned end date and time of an event or occurrence with time duration.
+      '
+description: 'The planned end date and time of an event or occurrence with time duration.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

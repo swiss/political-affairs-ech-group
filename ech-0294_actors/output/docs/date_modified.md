@@ -6,9 +6,7 @@ search:
 # Slot: date_modified 
 
 
-_[de] Das Datum, an dem eine Entität zuletzt geändert wurde._
-
-_[en] The date when an entity was last modified._
+_The date when an entity was last modified._
 
 __
 
@@ -29,7 +27,7 @@ URI: [mcm:dateModified](https://ld.ech.ch/schema/0292/meta-common/dateModified)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [HasCreationModificationDates](HasCreationModificationDates.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Ä... |  no  |
+| [HasCreationModificationDates](HasCreationModificationDates.md) | A mixin class that provides slots for modeling creation and modification date... |  no  |
 | [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
 | [Group](Group.md) | A political group, organization, or body (e |  no  |
 | [Membership](Membership.md) | A membership relationship between a person and a group |  no  |
@@ -71,9 +69,13 @@ URI: [mcm:dateModified](https://ld.ech.ch/schema/0292/meta-common/dateModified)
 <details>
 ```yaml
 name: date_modified
-description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
 
-  [en] The date when an entity was last modified.
+      '
+description: 'The date when an entity was last modified.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

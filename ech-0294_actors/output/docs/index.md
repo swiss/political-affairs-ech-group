@@ -22,16 +22,16 @@ Name: actors-schema
 | [Group](Group.md) | A political group, organization, or body (e |
 | [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |
 | [GroupType](GroupType.md) | Type of group (e |
-| [HasCreationModificationDates](HasCreationModificationDates.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Ä... |
-| [HasIdentification](HasIdentification.md) | [de] Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Ve... |
-| [HasTemporalValidity](HasTemporalValidity.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gülti... |
+| [HasCreationModificationDates](HasCreationModificationDates.md) | A mixin class that provides slots for modeling creation and modification date... |
+| [HasIdentification](HasIdentification.md) | A mixin class that provides slots for the identification of an entity |
+| [HasTemporalValidity](HasTemporalValidity.md) | A mixin class that provides slots for modeling a temporal validity of informa... |
 | [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |
-| [IsEventWithDuration](IsEventWithDuration.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder V... |
-| [IsInstantaneousEvent](IsInstantaneousEvent.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereign... |
-| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |
+| [IsEventWithDuration](IsEventWithDuration.md) | A mixin class that provides slots for modeling events or occurrences with tim... |
+| [IsInstantaneousEvent](IsInstantaneousEvent.md) | A mixin class that provides slots for modeling instantaneous events or occurr... |
+| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |
 | [LanguageProficiency](LanguageProficiency.md) | Language proficiency of a person indicating the language and whether it is th... |
 | [Membership](Membership.md) | A membership relationship between a person and a group |
-| [MultilingualValue](MultilingualValue.md) | [de] Ein mehrsprachiger String mit Angabe der Sprache |
+| [MultilingualValue](MultilingualValue.md) | A multilingual string with language specification |
 | [Name](Name.md) | A name with a type (e |
 | [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |
 | [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |
@@ -57,22 +57,22 @@ Name: actors-schema
 | [contact_type](contact_type.md) | Type of contact information |
 | [contacts](contacts.md) | Contact information (email, website, social media) |
 | [country](country.md) | ISO 3166 country code |
-| [date_actual](date_actual.md) | [de] Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommens (oh... |
-| [date_begin_actual](date_begin_actual.md) | [de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitda... |
-| [date_begin_planned](date_begin_planned.md) | [de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer |
-| [date_created](date_created.md) | [de] Das Datum, an dem eine Entität erstellt wurde |
-| [date_end_actual](date_end_actual.md) | [de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdaue... |
-| [date_end_planned](date_end_planned.md) | [de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer |
-| [date_modified](date_modified.md) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde |
-| [date_planned](date_planned.md) | [de] Das geplante Datum eines instantanen Ereignisses oder Vorkommens (ohne Z... |
-| [datetime_actual](datetime_actual.md) | [de] Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses ode... |
-| [datetime_begin_actual](datetime_begin_actual.md) | [de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorko... |
-| [datetime_begin_planned](datetime_begin_planned.md) | [de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommen... |
-| [datetime_created](datetime_created.md) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde |
-| [datetime_end_actual](datetime_end_actual.md) | [de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkomm... |
-| [datetime_end_planned](datetime_end_planned.md) | [de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens ... |
-| [datetime_modified](datetime_modified.md) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde |
-| [datetime_planned](datetime_planned.md) | [de] Das geplante Datum und die Uhrzeit eines instantanen Ereignisses oder Vo... |
+| [date_actual](date_actual.md) | The actual date of an instantaneous event or occurrence (without time duratio... |
+| [date_begin_actual](date_begin_actual.md) | The actual start date of an event or occurrence with time duration |
+| [date_begin_planned](date_begin_planned.md) | The planned start date of an event or occurrence with time duration |
+| [date_created](date_created.md) | The date when an entity was created |
+| [date_end_actual](date_end_actual.md) | The actual end date of an event or occurrence with time duration |
+| [date_end_planned](date_end_planned.md) | The planned end date of an event or occurrence with time duration |
+| [date_modified](date_modified.md) | The date when an entity was last modified |
+| [date_planned](date_planned.md) | The planned date of an instantaneous event or occurrence (without time durati... |
+| [datetime_actual](datetime_actual.md) | The actual date and time of an instantaneous event or occurrence (without tim... |
+| [datetime_begin_actual](datetime_begin_actual.md) | The actual start date and time of an event or occurrence with time duration |
+| [datetime_begin_planned](datetime_begin_planned.md) | The planned start date and time of an event or occurrence with time duration |
+| [datetime_created](datetime_created.md) | The date and time when an entity was created |
+| [datetime_end_actual](datetime_end_actual.md) | The actual end date and time of an event or occurrence with time duration |
+| [datetime_end_planned](datetime_end_planned.md) | The planned end date and time of an event or occurrence with time duration |
+| [datetime_modified](datetime_modified.md) | The date and time when an entity was last modified |
+| [datetime_planned](datetime_planned.md) | The planned date and time of an instantaneous event or occurrence (without ti... |
 | [death_date](death_date.md) | Exact date of death |
 | [description](description.md) | Description of the entity |
 | [district](district.md) | Electoral district or region |
@@ -82,7 +82,7 @@ Name: actors-schema
 | [function_role](function_role.md) | Function or role in the organization |
 | [gender_code](gender_code.md) | Gender code (e |
 | [genders](genders.md) | Gender of the person |
-| [global_uri](global_uri.md) | [de] Eine eindeutige, global gültige URI für die Entität |
+| [global_uri](global_uri.md) | A unique, globally valid URI for the entity |
 | [group_label](group_label.md) | Name of the body/group at time of linking |
 | [group_reference](group_reference.md) | Reference to a group with snapshot data at time of linking |
 | [group_type](group_type.md) | Link to the group type |
@@ -90,19 +90,19 @@ Name: actors-schema
 | [groups](groups.md) | Collection of groups |
 | [interest_links](interest_links.md) | Collection of interest links |
 | [interest_type](interest_type.md) | Type of interest link (professional activity, political office, association) |
-| [is_active](is_active.md) | [de] Gibt an, ob die Information aktuell gültig ist |
+| [is_active](is_active.md) | Indicates whether the information is currently valid |
 | [is_correspondence](is_correspondence.md) | Indicates if this is the preferred language |
 | [is_native](is_native.md) | Indicates if this is the native language |
 | [is_paid](is_paid.md) | Indicates if the position is paid |
-| [label](label.md) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben ... |
-| [label_long](label_long.md) | [de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel z... |
+| [label](label.md) | Option to assign a label to a structured piece of information (e |
+| [label_long](label_long.md) | Option to assign an extended label to a structured piece of information (e |
 | [landing_page](landing_page.md) | Website providing further information |
-| [language](language.md) | [de] Sprachcode im ISO 639-1 Format |
+| [language](language.md) | Language code in ISO 639-1 format |
 | [language_proficiencies](language_proficiencies.md) | Language proficiencies of the person |
 | [legal_form](legal_form.md) | Legal form of the organization |
-| [local_id](local_id.md) | [de] Lokaler Identifikator |
+| [local_id](local_id.md) | Local identifier |
 | [memberships](memberships.md) | Collection of memberships |
-| [multilingual_value](multilingual_value.md) | [de] Ein mehrsprachiger Wert mit Angabe der Sprache |
+| [multilingual_value](multilingual_value.md) | A multilingual value with language specification |
 | [name_type](name_type.md) | Type of name |
 | [names](names.md) | Names of the person with type and value |
 | [occupation_code](occupation_code.md) | ISCO-19 code of the occupation |
@@ -118,7 +118,7 @@ Name: actors-schema
 | [postal_code](postal_code.md) | Postal code |
 | [postal_locality](postal_locality.md) | Locality |
 | [pronouns](pronouns.md) | Pronouns used by the person |
-| [remark](remark.md) | [de] Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen Kontext ... |
+| [remark](remark.md) | Free-text remark or note for edge cases or additional context on a process st... |
 | [role_label](role_label.md) | Descriptive label for the role when 'other' is selected in the RoleEnum |
 | [role_type](role_type.md) | Role of the person in the membership or function |
 | [role_type_enum](role_type_enum.md) | Role of the person in the membership or function |
@@ -128,10 +128,10 @@ Name: actors-schema
 | [training_code](training_code.md) | ISCO-19 code of the training or education |
 | [training_type](training_type.md) | Type of training or education |
 | [trainings](trainings.md) | Trainings or educations of the person |
-| [valid_from](valid_from.md) | [de] Das Datum, ab dem die Information gültig ist |
-| [valid_through](valid_through.md) | [de] Das Datum, bis und mit dem die Information gültig ist |
-| [value](value.md) | [de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ... |
-| [wikidata_uri](wikidata_uri.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z |
+| [valid_from](valid_from.md) | The date from which the information is valid |
+| [valid_through](valid_through.md) | The date until which the information is valid, inclusive |
+| [value](value.md) | The value of an information besides other attributes such as type, language, ... |
+| [wikidata_uri](wikidata_uri.md) | A URI that refers to a Wikidata entity, e |
 
 
 ## Enumerations

@@ -6,9 +6,7 @@ search:
 # Slot: datetime_created 
 
 
-_[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde._
-
-_[en] The date and time when an entity was created._
+_The date and time when an entity was created._
 
 __
 
@@ -29,7 +27,7 @@ URI: [mcm:datetimeCreated](https://ld.ech.ch/schema/0292/meta-common/datetimeCre
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [HasCreationModificationDates](HasCreationModificationDates.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Ä... |  no  |
+| [HasCreationModificationDates](HasCreationModificationDates.md) | A mixin class that provides slots for modeling creation and modification date... |  no  |
 | [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
 | [Group](Group.md) | A political group, organization, or body (e |  no  |
 | [Membership](Membership.md) | A membership relationship between a person and a group |  no  |
@@ -71,9 +69,13 @@ URI: [mcm:datetimeCreated](https://ld.ech.ch/schema/0292/meta-common/datetimeCre
 <details>
 ```yaml
 name: datetime_created
-description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
 
-  [en] The date and time when an entity was created.
+      '
+description: 'The date and time when an entity was created.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

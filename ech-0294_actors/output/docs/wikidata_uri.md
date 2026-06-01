@@ -6,9 +6,7 @@ search:
 # Slot: wikidata_uri 
 
 
-_[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz._
-
-_[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland._
+_A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland._
 
 __
 
@@ -29,7 +27,7 @@ URI: [mcm:wikidataUri](https://ld.ech.ch/schema/0292/meta-common/wikidataUri)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [HasIdentification](HasIdentification.md) | [de] Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Ve... |  no  |
+| [HasIdentification](HasIdentification.md) | A mixin class that provides slots for the identification of an entity |  no  |
 | [Container](Container.md) | Container for political actors, groups, and relationships |  no  |
 | [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
 | [Group](Group.md) | A political group, organization, or body (e |  no  |
@@ -37,7 +35,7 @@ URI: [mcm:wikidataUri](https://ld.ech.ch/schema/0292/meta-common/wikidataUri)
 | [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |  no  |
 | [Membership](Membership.md) | A membership relationship between a person and a group |  no  |
 | [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
-| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |  no  |
+| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
 
 
 
@@ -75,10 +73,14 @@ URI: [mcm:wikidataUri](https://ld.ech.ch/schema/0292/meta-common/wikidataUri)
 <details>
 ```yaml
 name: wikidata_uri
-description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-  für die Schweiz.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+      für die Schweiz.
 
-  [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      '
+description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
   for Switzerland.
 
   '

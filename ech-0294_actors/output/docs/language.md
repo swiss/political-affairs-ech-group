@@ -6,9 +6,7 @@ search:
 # Slot: language 
 
 
-_[de] Sprachcode im ISO 639-1 Format._
-
-_[en] Language code in ISO 639-1 format._
+_Language code in ISO 639-1 format._
 
 __
 
@@ -30,7 +28,7 @@ URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [LanguageProficiency](LanguageProficiency.md) | Language proficiency of a person indicating the language and whether it is th... |  no  |
-| [MultilingualValue](MultilingualValue.md) | [de] Ein mehrsprachiger String mit Angabe der Sprache |  no  |
+| [MultilingualValue](MultilingualValue.md) | A multilingual string with language specification |  no  |
 
 
 
@@ -75,9 +73,13 @@ URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
 <details>
 ```yaml
 name: language
-description: '[de] Sprachcode im ISO 639-1 Format.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Sprachcode im ISO 639-1 Format.
 
-  [en] Language code in ISO 639-1 format.
+      '
+description: 'Language code in ISO 639-1 format.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

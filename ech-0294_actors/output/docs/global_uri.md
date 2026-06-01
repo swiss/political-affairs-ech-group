@@ -6,9 +6,7 @@ search:
 # Slot: global_uri 
 
 
-_[de] Eine eindeutige, global gültige URI für die Entität._
-
-_[en] A unique, globally valid URI for the entity._
+_A unique, globally valid URI for the entity._
 
 __
 
@@ -29,7 +27,7 @@ URI: [mcm:globalURI](https://ld.ech.ch/schema/0292/meta-common/globalURI)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [HasIdentification](HasIdentification.md) | [de] Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Ve... |  no  |
+| [HasIdentification](HasIdentification.md) | A mixin class that provides slots for the identification of an entity |  no  |
 | [Container](Container.md) | Container for political actors, groups, and relationships |  no  |
 | [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
 | [Group](Group.md) | A political group, organization, or body (e |  no  |
@@ -37,7 +35,7 @@ URI: [mcm:globalURI](https://ld.ech.ch/schema/0292/meta-common/globalURI)
 | [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |  no  |
 | [Membership](Membership.md) | A membership relationship between a person and a group |  no  |
 | [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
-| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |  no  |
+| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
 
 
 
@@ -83,9 +81,13 @@ URI: [mcm:globalURI](https://ld.ech.ch/schema/0292/meta-common/globalURI)
 <details>
 ```yaml
 name: global_uri
-description: '[de] Eine eindeutige, global gültige URI für die Entität.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Eine eindeutige, global gültige URI für die Entität.
 
-  [en] A unique, globally valid URI for the entity.
+      '
+description: 'A unique, globally valid URI for the entity.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

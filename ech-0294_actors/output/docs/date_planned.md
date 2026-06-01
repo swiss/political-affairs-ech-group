@@ -6,9 +6,7 @@ search:
 # Slot: date_planned 
 
 
-_[de] Das geplante Datum eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer)._
-
-_[en] The planned date of an instantaneous event or occurrence (without time duration)._
+_The planned date of an instantaneous event or occurrence (without time duration)._
 
 __
 
@@ -29,7 +27,7 @@ URI: [mcm:datePlanned](https://ld.ech.ch/schema/0292/meta-common/datePlanned)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [IsInstantaneousEvent](IsInstantaneousEvent.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereign... |  no  |
+| [IsInstantaneousEvent](IsInstantaneousEvent.md) | A mixin class that provides slots for modeling instantaneous events or occurr... |  no  |
 
 
 
@@ -67,10 +65,15 @@ URI: [mcm:datePlanned](https://ld.ech.ch/schema/0292/meta-common/datePlanned)
 <details>
 ```yaml
 name: date_planned
-description: '[de] Das geplante Datum eines instantanen Ereignisses oder Vorkommens
-  (ohne Zeitdauer).
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das geplante Datum eines instantanen Ereignisses oder Vorkommnissen (ohne
+      Zeitdauer).
 
-  [en] The planned date of an instantaneous event or occurrence (without time duration).
+      '
+description: 'The planned date of an instantaneous event or occurrence (without time
+  duration).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors
