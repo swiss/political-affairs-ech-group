@@ -1357,7 +1357,7 @@ postal_locality: Basel-Stadt
 
 
 
-</div> 
+</div>
 
 ## Enum: AddressTypeEnum 
 
@@ -1387,7 +1387,7 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 
 
 
-</div> 
+</div>
 
 
 
@@ -1441,6 +1441,4 @@ __
 
 
 
-</div> 
-
-
+</div>
