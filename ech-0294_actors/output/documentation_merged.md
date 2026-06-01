@@ -35,6 +35,7 @@ Der Standard richtet sich an öffentliche Stellen aller Staatsebenen, politische
 < manually insert TOC here >
 
 
+\newpage
 
 # Einführung
 
@@ -108,6 +109,7 @@ names:
     value: Meier-Müller
     valid_from: 2010-06-16
 ```
+\newpage
 
 # Person
 
@@ -374,28 +376,39 @@ URI: [act:NameTypeEnum](https://ld.ech.ch/schema/0294/actors/NameTypeEnum)
 ### Permissible Values
 | Value | Description |
 | --- | --- |
-| PersonOfficialName | https://register.ld.admin.ch/i14y/concept/personOfficialName |
-| | According to the official catalogue of characters (No |
-| PersonOriginalName | https://register.ld.admin.ch/i14y/concept/personOriginalName |
-| | According to the official catalogue of characters (No |
-| PersonAllianceName | https://register.ld.admin.ch/i14y/concept/personAllianceName |
-| | According to the official catalogue of characters (No |
-| PersonNameOnForeignPassport | https://register.ld.admin.ch/i14y/concept/personNameOnForeignPassport |
-| | According to the official catalogue of characters (No |
-| PersonAliasName | https://register.ld.admin.ch/i14y/concept/personAliasName |
-| | According to the official character catalogue (No |
-| PersonOtherName | https://register.ld.admin.ch/i14y/concept/personOtherName |
-| | According to the official catalogue of characters (No |
-| PersonDeclaredForeignerName | https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerName |
-| | According to the official catalogue of characters (No |
-| PersonFirstName | https://register.ld.admin.ch/i14y/concept/personFirstName |
-| | First names taken from the birth certificate, the civil registry (Infostar) i... |
-| PersonCallFirstName | https://register.ld.admin.ch/i14y/concept/personCallFirstName |
-| | A person has the right to choose a common first name from the list of their o... |
-| PersonFirstNameOnForeignPassport | https://register.ld.admin.ch/i14y/concept/personFirstNameOnForeignPassport |
-| | For persons of foreign nationality |
-| PersonDeclaredForeignerFirstName | https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerFirstName |
-| | For persons of foreign nationality who do not have official documents (mainly... |
+| PersonOfficialName |  According to the official catalogue of characters (No. 211) for the harmonisation of registers: Name according to official documents. The official name corresponds to the name appearing in the Swiss civil register. For foreign nationals with no civil status events in Switzerland, the official name corresponds to the name appearing on the foreign passport or identity card (see ‘Name according to foreign passport’ or SEM guidelines on the determination and spelling of names of foreign nationals dated 1 January 2012. If no official documents exist, see also ‘Name according to declaration’ (e.g. in the case of asylum seekers). The official name may consist of one or more parts.
+ |
+| | [https://register.ld.admin.ch/i14y/concept/personOfficialName](https://register.ld.admin.ch/i14y/concept/personOfficialName) |
+| PersonOriginalName |  According to the official catalogue of characters (No. 212) for the harmonisation of registers: Name of filiation according to official documents, which corresponds to the person's name before their first marriage or registered partnership. It may also be a maiden name acquired by decision to change one's name (see Art. 24, para. 2 OEC, RS 211.112.2).
+ |
+| | [https://register.ld.admin.ch/i14y/concept/personOriginalName](https://register.ld.admin.ch/i14y/concept/personOriginalName) |
+| PersonAllianceName |  According to the official catalogue of characters (No. 213) for the harmonisation of registers: The alliance name shows the connection between two people who are married or living in a registered partnership. An alliance name that has already been used may be retained after the dissolution of the marriage or partnership if the official name has not been changed upon dissolution. It is attached to the official name with a hyphen and is formed with the partner's maiden name or the person's own maiden name. Upon request, the alliance name may be entered in the passport or on the identity card.
+ |
+| | [https://register.ld.admin.ch/i14y/concept/personAllianceName](https://register.ld.admin.ch/i14y/concept/personAllianceName) |
+| PersonNameOnForeignPassport |  According to the official catalogue of characters (No. 214) for the harmonisation of registers: For persons of foreign nationality. This name corresponds to the entry marked in the machine-readable zone of the passport. If this zone includes abbreviated surnames or first names, these must, as far as possible, be recorded in full, according to the entry in the passport.
+ |
+| | [https://register.ld.admin.ch/i14y/concept/personNameOnForeignPassport](https://register.ld.admin.ch/i14y/concept/personNameOnForeignPassport) |
+| PersonAliasName |  According to the official character catalogue (No. 215) for the harmonisation of registers: Name (e.g. stage name, religious name) which, on the basis of an accepted application, may be used by the person. The alias name may consist of one or more parts (e.g. also the alias first name and alias surname).
+ |
+| | [https://register.ld.admin.ch/i14y/concept/personAliasName](https://register.ld.admin.ch/i14y/concept/personAliasName) |
+| PersonOtherName |  According to the official catalogue of characters (No. 216) for the harmonisation of registers: Other official names according to Swiss civil status documents (Art. 24, para. 3 OEC) or according to foreign documents, which are neither surnames nor first names.
+ |
+| | [https://register.ld.admin.ch/i14y/concept/personOtherName](https://register.ld.admin.ch/i14y/concept/personOtherName) |
+| PersonDeclaredForeignerName |  According to the official catalogue of characters (No. 217) for the harmonisation of registers: For foreign nationals who do not have official documents (mainly in the field of asylum).
+ |
+| | [https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerName](https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerName) |
+| PersonFirstName |  First names taken from the birth certificate, the civil registry (Infostar) in the order in which they appear, or taken from foreign identity documents.
+ |
+| | [https://register.ld.admin.ch/i14y/concept/personFirstName](https://register.ld.admin.ch/i14y/concept/personFirstName) |
+| PersonCallFirstName |  A person has the right to choose a common first name from the list of their official first names. The common first name may consist of one or more first names (from those listed under ‘official first names’).
+ |
+| | [https://register.ld.admin.ch/i14y/concept/personCallFirstName](https://register.ld.admin.ch/i14y/concept/personCallFirstName) |
+| PersonFirstNameOnForeignPassport |  For persons of foreign nationality. To be used in combination with the name as it appears on the foreign passport.
+ |
+| | [https://register.ld.admin.ch/i14y/concept/personFirstNameOnForeignPassport](https://register.ld.admin.ch/i14y/concept/personFirstNameOnForeignPassport) |
+| PersonDeclaredForeignerFirstName |  For persons of foreign nationality who do not have official documents (mainly in the field of asylum). To be used in combination with the defined Name according to declaration.
+ |
+| | [https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerFirstName](https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerFirstName) |
 
 
 
@@ -724,92 +737,92 @@ URI: [act:TrainingTypeEnum](https://ld.ech.ch/schema/0294/actors/TrainingTypeEnu
 ### Permissible Values
 | Value | Description |
 | --- | --- |
-| 10 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/10 |
-| | Maximum compulsory school |
-| 110 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/110 |
-| | No education |
-| 120 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/120 |
-| | Compulsory school attended but not completed |
-| 130 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/130 |
-| | Compulsory school |
-| 140 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/140 |
-| | 1 year of education / transitional education |
-| 20 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/20 |
-| | Upper secondary level |
-| 22 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/22 |
-| | Upper secondary level - Vocational education and training (VET) |
-| 220 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/220 |
-| | Apprenticeship in a company (EFZ/EBA) / basic vocational training / vocationa... |
-| 2210 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2210 |
-| | Apprenticeship 2 years (EBA) / basic vocational training / vocational school ... |
-| 2211 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2211 |
-| | Apprenticeship in a company 2 years (EBA) / basic vocational training |
-| 2212 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2212 |
-| | Vocational school / trade school 2 years |
-| 2220 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2220 |
-| | Apprenticeship 3-4 years (EFZ) / vocational school / trade school |
-| 2221 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2221 |
-| | Apprenticeship in a company 3-4 years (EFZ) |
-| 2222 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2222 |
-| | Vocational school / trade school 3-4 years |
-| 24 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/24 |
-| | Upper secondary level - general education |
-| 241 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/241 |
-| | Upper secondary specialised schools / diploma middle school |
-| 2411 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2411 |
-| | Upper secondary specialised schools / diploma middle school 2 years |
-| 2412 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2412 |
-| | Upper secondary specialised schools / diploma middle school 3 years |
-| 242 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/242 |
-| | Baccalaureate / teaching diploma |
-| 2421 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2421 |
-| | Baccalaureate |
-| 2422 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2422 |
-| | Teaching diploma |
-| 243 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/243 |
-| | Vocational / specialised baccalaureate |
-| 2431 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2431 |
-| | Vocational baccalaureate |
-| 2432 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2432 |
-| | Specialised baccalaureate |
-| 30 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/30 |
-| | Tertiary level |
-| 31 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/31 |
-| | Professional education |
-| 310 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/310 |
-| | Professional examination with federal diploma / advanced federal diploma / PE... |
-| 311 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/311 |
-| | Professional examination with federal diploma of higher education |
-| 312 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/312 |
-| | Professional examination with advanced federal diploma of higher education / ... |
-| 313 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/313 |
-| | College of Higher Education |
-| 3131 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3131 |
-| | College of Higher Education 2 years full time or 3 years part-time |
-| 3132 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3132 |
-| | College of Higher Education 3 years full time or 4 years part-time |
-| 32 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/32 |
-| | Higher education institutions |
-| 321 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/321 |
-| | Bachelor universities, institutes of technology, universities of applied scie... |
-| 3211 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3211 |
-| | Bachelor universities of applied sciences (including UAS diploma) |
-| 3212 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3212 |
-| | Bachelor universities of teacher education (including UTE first degree) |
-| 3213 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3213 |
-| | Bachelor universities, institutes of technology (UIT) |
-| 322 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/322 |
-| | Master universities, institutes of technology, universities of applied scienc... |
-| 3221 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3221 |
-| | Master universities of applied sciences |
-| 3222 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3222 |
-| | Master universities of teacher education |
-| 3223 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3223 |
-| | Master universities, institutes of technology (UIT) including UNI / UIT diplo... |
-| 323 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/323 |
-| | Doctorate or habilitation |
-| military | None |
-| | Military service (Swiss army) |
+| 10 |  Maximum compulsory school. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/10](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/10) |
+| 110 |  No education. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/110](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/110) |
+| 120 |  Compulsory school attended but not completed. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/120](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/120) |
+| 130 |  Compulsory school. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/130](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/130) |
+| 140 |  1 year of education / transitional education. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/140](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/140) |
+| 20 |  Upper secondary level. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/20](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/20) |
+| 22 |  Upper secondary level - Vocational education and training (VET). |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/22](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/22) |
+| 220 |  Apprenticeship in a company (EFZ/EBA) / basic vocational training / vocational school / trade school. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/220](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/220) |
+| 2210 |  Apprenticeship 2 years (EBA) / basic vocational training / vocational school / trade school. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2210](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2210) |
+| 2211 |  Apprenticeship in a company 2 years (EBA) / basic vocational training. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2211](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2211) |
+| 2212 |  Vocational school / trade school 2 years. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2212](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2212) |
+| 2220 |  Apprenticeship 3-4 years (EFZ) / vocational school / trade school. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2220](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2220) |
+| 2221 |  Apprenticeship in a company 3-4 years (EFZ). |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2221](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2221) |
+| 2222 |  Vocational school / trade school 3-4 years. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2222](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2222) |
+| 24 |  Upper secondary level - general education. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/24](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/24) |
+| 241 |  Upper secondary specialised schools / diploma middle school. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/241](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/241) |
+| 2411 |  Upper secondary specialised schools / diploma middle school 2 years. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2411](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2411) |
+| 2412 |  Upper secondary specialised schools / diploma middle school 3 years. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2412](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2412) |
+| 242 |  Baccalaureate / teaching diploma. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/242](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/242) |
+| 2421 |  Baccalaureate. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2421](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2421) |
+| 2422 |  Teaching diploma. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2422](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2422) |
+| 243 |  Vocational / specialised baccalaureate. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/243](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/243) |
+| 2431 |  Vocational baccalaureate. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2431](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2431) |
+| 2432 |  Specialised baccalaureate. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2432](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2432) |
+| 30 |  Tertiary level. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/30](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/30) |
+| 31 |  Professional education. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/31](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/31) |
+| 310 |  Professional examination with federal diploma / advanced federal diploma / PET diploma. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/310](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/310) |
+| 311 |  Professional examination with federal diploma of higher education. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/311](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/311) |
+| 312 |  Professional examination with advanced federal diploma of higher education / PET diploma. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/312](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/312) |
+| 313 |  College of Higher Education. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/313](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/313) |
+| 3131 |  College of Higher Education 2 years full time or 3 years part-time. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3131](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3131) |
+| 3132 |  College of Higher Education 3 years full time or 4 years part-time. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3132](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3132) |
+| 32 |  Higher education institutions. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/32](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/32) |
+| 321 |  Bachelor universities, institutes of technology, universities of applied sciences, universities of teacher education. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/321](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/321) |
+| 3211 |  Bachelor universities of applied sciences (including UAS diploma). |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3211](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3211) |
+| 3212 |  Bachelor universities of teacher education (including UTE first degree). |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3212](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3212) |
+| 3213 |  Bachelor universities, institutes of technology (UIT). |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3213](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3213) |
+| 322 |  Master universities, institutes of technology, universities of applied sciences, universities of teacher education. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/322](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/322) |
+| 3221 |  Master universities of applied sciences. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3221](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3221) |
+| 3222 |  Master universities of teacher education. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3222](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3222) |
+| 3223 |  Master universities, institutes of technology (UIT) including UNI / UIT diploma. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3223](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3223) |
+| 323 |  Doctorate or habilitation. |
+| | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/323](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/323) |
+| military |  Military service (Swiss army). Use `value` to specify the rank reached. |
+| |  |
 
 
 
@@ -890,6 +903,8 @@ valid_from: 2010-01-01
 
 
 </div>
+
+\newpage
 
 # Gruppen und Organe (Groups)
 
@@ -1058,48 +1073,69 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 ### Permissible Values
 | Value | Description |
 | --- | --- |
-| party | act:enum/group_type/party |
-| | Political party at federal, cantonal, or municipal level |
-| list | act:enum/group_type/list |
-| | Electoral list (can be part of a party or independent) |
-| workgroup | act:enum/group_type/workgroup |
-| | Ad-hoc working group, typically with a limited duration |
-| parliament | act:enum/group_type/parliament |
-| | Parliament at federal, cantonal, or municipal level (e |
-| delegation | act:enum/group_type/delegation |
-| | Delegation |
-| commission | act:enum/group_type/commission |
-| | Commission (permanent or ad-hoc), including supervisory commissions (e |
-| faction | act:enum/group_type/faction |
-| | Parliamentary faction |
-| parliamentary_bureau | act:enum/group_type/parliamentary_bureau |
-| | Parliamentary bureau |
-| presidency | act:enum/group_type/presidency |
-| | Presidency of parliament |
-| government | act:enum/group_type/government |
-| | Government / Executive as a collective body (e |
-| department | act:enum/group_type/department |
-| | Government department |
-| office | act:enum/group_type/office |
-| | Government office |
-| extraparliamentary_commission | act:enum/group_type/extraparliamentary_commission |
-| | Extra-parliamentary commission with a government mandate (e |
-| interest_group | act:enum/group_type/interest_group |
-| | Interest group from civil society |
-| control_body | act:enum/group_type/control_body |
-| | Control or supervisory body (e |
-| parliamentary_services | act:enum/group_type/parliamentary_services |
-| | Parliamentary services |
-| court | act:enum/group_type/court |
-| | Court / Judiciary at any level (e |
-| association | act:enum/group_type/association |
-| | Association |
-| petition_carrier | act:enum/group_type/petition_carrier |
-| | Petition carrier |
-| university | act:enum/group_type/university |
-| | University or educational institution as an outsourced provider of public tas... |
-| other | act:enum/group_type/other |
-| | Other group type not covered by standard categories |
+| party |  Political party at federal, cantonal, or municipal level. Each federal level is managed as its own group (e.g., national party, cantonal party, municipal party).
+ |
+| | [act:enum/group_type/party](act:enum/group_type/party) |
+| list |  Electoral list (can be part of a party or independent).
+ |
+| | [act:enum/group_type/list](act:enum/group_type/list) |
+| workgroup |  Ad-hoc working group, typically with a limited duration.
+ |
+| | [act:enum/group_type/workgroup](act:enum/group_type/workgroup) |
+| parliament |  Parliament at federal, cantonal, or municipal level (e.g., Federal Assembly, National Council, Council of States, Grand Council, cantonal parliament, municipal parliament).
+ |
+| | [act:enum/group_type/parliament](act:enum/group_type/parliament) |
+| delegation |  Delegation.
+ |
+| | [act:enum/group_type/delegation](act:enum/group_type/delegation) |
+| commission |  Commission (permanent or ad-hoc), including supervisory commissions (e.g., CPC), subject commissions, parliamentary investigation commissions (PIC), and audit commissions.
+ |
+| | [act:enum/group_type/commission](act:enum/group_type/commission) |
+| faction |  Parliamentary faction.
+ |
+| | [act:enum/group_type/faction](act:enum/group_type/faction) |
+| parliamentary_bureau |  Parliamentary bureau.
+ |
+| | [act:enum/group_type/parliamentary_bureau](act:enum/group_type/parliamentary_bureau) |
+| presidency |  Presidency of parliament.
+ |
+| | [act:enum/group_type/presidency](act:enum/group_type/presidency) |
+| government |  Government / Executive as a collective body (e.g., Federal Council, Cantonal Government, City or Municipal Council).
+ |
+| | [act:enum/group_type/government](act:enum/group_type/government) |
+| department |  Government department.
+ |
+| | [act:enum/group_type/department](act:enum/group_type/department) |
+| office |  Government office.
+ |
+| | [act:enum/group_type/office](act:enum/group_type/office) |
+| extraparliamentary_commission |  Extra-parliamentary commission with a government mandate (e.g., Bank Council of the Swiss National Bank, FINMA).
+ |
+| | [act:enum/group_type/extraparliamentary_commission](act:enum/group_type/extraparliamentary_commission) |
+| interest_group |  Interest group from civil society.
+ |
+| | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |
+| control_body |  Control or supervisory body (e.g., Federal Finance Control EFC, supervisory authority AB-BA).
+ |
+| | [act:enum/group_type/control_body](act:enum/group_type/control_body) |
+| parliamentary_services |  Parliamentary services.
+ |
+| | [act:enum/group_type/parliamentary_services](act:enum/group_type/parliamentary_services) |
+| court |  Court / Judiciary at any level (e.g., Federal Court, Cantonal Court, District Court).
+ |
+| | [act:enum/group_type/court](act:enum/group_type/court) |
+| association |  Association.
+ |
+| | [act:enum/group_type/association](act:enum/group_type/association) |
+| petition_carrier |  Petition carrier.
+ |
+| | [act:enum/group_type/petition_carrier](act:enum/group_type/petition_carrier) |
+| university |  University or educational institution as an outsourced provider of public tasks.
+ |
+| | [act:enum/group_type/university](act:enum/group_type/university) |
+| other |  Other group type not covered by standard categories.
+ |
+| | [act:enum/group_type/other](act:enum/group_type/other) |
 
 
 
@@ -1108,6 +1144,8 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 
 
 </div>
+\newpage
+
 # Mitgliedschaften (Memberships)
 
 ## Einführung und Zielsetzung
@@ -1198,6 +1236,8 @@ __
 
 
 </div> 
+
+\newpage
 
 # Interessenbindungen (Interest Links)
 
@@ -1481,12 +1521,15 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 ### Permissible Values
 | Value | Description |
 | --- | --- |
-| professional_activity | act:enum/interest_type/professional_activity |
-| | Professional activity outside the political mandate (e |
-| political_office | act:enum/interest_type/political_office |
-| | Political office or mandate at other federal levels or in other bodies (e |
-| association | act:enum/interest_type/association |
-| | Membership in associations, federations, or interest organizations (e |
+| professional_activity |  Professional activity outside the political mandate (e.g., employment, self-employment, consulting, board mandates in private companies).
+ |
+| | [act:enum/interest_type/professional_activity](act:enum/interest_type/professional_activity) |
+| political_office |  Political office or mandate at other federal levels or in other bodies (e.g., cantonal/municipal parliament membership, government council, extra-parliamentary commission).
+ |
+| | [act:enum/interest_type/political_office](act:enum/interest_type/political_office) |
+| association |  Membership in associations, federations, or interest organizations (e.g., industry associations, professional associations, lobby organizations, foundations, charitable associations).
+ |
+| | [act:enum/interest_type/association](act:enum/interest_type/association) |
 
 
 
@@ -1514,82 +1557,82 @@ URI: [act:LegalFormEnum](https://ld.ech.ch/schema/0294/actors/LegalFormEnum)
 ### Permissible Values
 | Value | Description |
 | --- | --- |
-| 0101 | https://register.ld.admin.ch/i14y/concept/legalForm/0101 |
-| | Sole proprietorship |
-| 0103 | https://register.ld.admin.ch/i14y/concept/legalForm/0103 |
-| | General partnership (GP) |
-| 0104 | https://register.ld.admin.ch/i14y/concept/legalForm/0104 |
-| | Limited partnership (LP) |
-| 0105 | https://register.ld.admin.ch/i14y/concept/legalForm/0105 |
-| | Corporation with unlimited partners (CUP) |
-| 0106 | https://register.ld.admin.ch/i14y/concept/legalForm/0106 |
-| | Corporation (Ltd) |
-| 0107 | https://register.ld.admin.ch/i14y/concept/legalForm/0107 |
-| | Limited liability company (LLC) |
-| 0108 | https://register.ld.admin.ch/i14y/concept/legalForm/0108 |
-| | Cooperative |
-| 0109 | https://register.ld.admin.ch/i14y/concept/legalForm/0109 |
-| | Association |
-| 0110 | https://register.ld.admin.ch/i14y/concept/legalForm/0110 |
-| | Foundation |
-| 0111 | https://register.ld.admin.ch/i14y/concept/legalForm/0111 |
-| | Branch of a foreign company |
-| 0113 | https://register.ld.admin.ch/i14y/concept/legalForm/0113 |
-| | Special legal form |
-| 0114 | https://register.ld.admin.ch/i14y/concept/legalForm/0114 |
-| | Limited Partnership for collective investment schemes (LPCI) |
-| 0115 | https://register.ld.admin.ch/i14y/concept/legalForm/0115 |
-| | Limited Partnership for collective investment schemes with a variable capital... |
-| 0116 | https://register.ld.admin.ch/i14y/concept/legalForm/0116 |
-| | Limited Partnership for collective investment schemes with a fixed capital (S... |
-| 0117 | https://register.ld.admin.ch/i14y/concept/legalForm/0117 |
-| | Public-law institution |
-| 0118 | https://register.ld.admin.ch/i14y/concept/legalForm/0118 |
-| | Non-commercial power of attorney |
-| 0119 | https://register.ld.admin.ch/i14y/concept/legalForm/0119 |
-| | Representative of the community of property |
-| 0151 | https://register.ld.admin.ch/i14y/concept/legalForm/0151 |
-| | Branch |
-| 0220 | https://register.ld.admin.ch/i14y/concept/legalForm/0220 |
-| | Administrative unit of the Confederation |
-| 0221 | https://register.ld.admin.ch/i14y/concept/legalForm/0221 |
-| | Administrative unit of the canton |
-| 0222 | https://register.ld.admin.ch/i14y/concept/legalForm/0222 |
-| | Administrative unit of the district |
-| 0223 | https://register.ld.admin.ch/i14y/concept/legalForm/0223 |
-| | Administrative unit of the commune |
-| 0224 | https://register.ld.admin.ch/i14y/concept/legalForm/0224 |
-| | Other public-law administrative unit |
-| 0230 | https://register.ld.admin.ch/i14y/concept/legalForm/0230 |
-| | Public-law institution of the Confederation |
-| 0231 | https://register.ld.admin.ch/i14y/concept/legalForm/0231 |
-| | Public-law institution of the canton |
-| 0232 | https://register.ld.admin.ch/i14y/concept/legalForm/0232 |
-| | Public-law institution of the district |
-| 0233 | https://register.ld.admin.ch/i14y/concept/legalForm/0233 |
-| | Public-law institution of the commune |
-| 0234 | https://register.ld.admin.ch/i14y/concept/legalForm/0234 |
-| | Other public-law institution |
-| 0302 | https://register.ld.admin.ch/i14y/concept/legalForm/0302 |
-| | Simple partnership |
-| 0312 | https://register.ld.admin.ch/i14y/concept/legalForm/0312 |
-| | Permanent establishment or swiss representation of a foreign company |
-| 0327 | https://register.ld.admin.ch/i14y/concept/legalForm/0327 |
-| | Foreign public company |
-| 0328 | https://register.ld.admin.ch/i14y/concept/legalForm/0328 |
-| | Foreign public administration |
-| 0329 | https://register.ld.admin.ch/i14y/concept/legalForm/0329 |
-| | International organisation |
-| 0355 | https://register.ld.admin.ch/i14y/concept/legalForm/0355 |
-| | Other cooperative |
-| 0361 | https://register.ld.admin.ch/i14y/concept/legalForm/0361 |
-| | Trust |
-| 0362 | https://register.ld.admin.ch/i14y/concept/legalForm/0362 |
-| | Fund |
-| 0441 | https://register.ld.admin.ch/i14y/concept/legalForm/0441 |
-| | Foreign company |
-| 0571 | https://register.ld.admin.ch/i14y/concept/legalForm/0571 |
-| | Legal form undefined or unknown |
+| 0101 |  Sole proprietorship. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0101](https://register.ld.admin.ch/i14y/concept/legalForm/0101) |
+| 0103 |  General partnership (GP). |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0103](https://register.ld.admin.ch/i14y/concept/legalForm/0103) |
+| 0104 |  Limited partnership (LP). |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0104](https://register.ld.admin.ch/i14y/concept/legalForm/0104) |
+| 0105 |  Corporation with unlimited partners (CUP). |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0105](https://register.ld.admin.ch/i14y/concept/legalForm/0105) |
+| 0106 |  Corporation (Ltd). |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0106](https://register.ld.admin.ch/i14y/concept/legalForm/0106) |
+| 0107 |  Limited liability company (LLC). |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0107](https://register.ld.admin.ch/i14y/concept/legalForm/0107) |
+| 0108 |  Cooperative. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0108](https://register.ld.admin.ch/i14y/concept/legalForm/0108) |
+| 0109 |  Association. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0109](https://register.ld.admin.ch/i14y/concept/legalForm/0109) |
+| 0110 |  Foundation. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0110](https://register.ld.admin.ch/i14y/concept/legalForm/0110) |
+| 0111 |  Branch of a foreign company. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0111](https://register.ld.admin.ch/i14y/concept/legalForm/0111) |
+| 0113 |  Special legal form. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0113](https://register.ld.admin.ch/i14y/concept/legalForm/0113) |
+| 0114 |  Limited Partnership for collective investment schemes (LPCI). |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0114](https://register.ld.admin.ch/i14y/concept/legalForm/0114) |
+| 0115 |  Limited Partnership for collective investment schemes with a variable capital (SICAV). |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0115](https://register.ld.admin.ch/i14y/concept/legalForm/0115) |
+| 0116 |  Limited Partnership for collective investment schemes with a fixed capital (SICAF). |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0116](https://register.ld.admin.ch/i14y/concept/legalForm/0116) |
+| 0117 |  Public-law institution. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0117](https://register.ld.admin.ch/i14y/concept/legalForm/0117) |
+| 0118 |  Non-commercial power of attorney. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0118](https://register.ld.admin.ch/i14y/concept/legalForm/0118) |
+| 0119 |  Representative of the community of property. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0119](https://register.ld.admin.ch/i14y/concept/legalForm/0119) |
+| 0151 |  Branch. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0151](https://register.ld.admin.ch/i14y/concept/legalForm/0151) |
+| 0220 |  Administrative unit of the Confederation. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0220](https://register.ld.admin.ch/i14y/concept/legalForm/0220) |
+| 0221 |  Administrative unit of the canton. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0221](https://register.ld.admin.ch/i14y/concept/legalForm/0221) |
+| 0222 |  Administrative unit of the district. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0222](https://register.ld.admin.ch/i14y/concept/legalForm/0222) |
+| 0223 |  Administrative unit of the commune. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0223](https://register.ld.admin.ch/i14y/concept/legalForm/0223) |
+| 0224 |  Other public-law administrative unit. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0224](https://register.ld.admin.ch/i14y/concept/legalForm/0224) |
+| 0230 |  Public-law institution of the Confederation. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0230](https://register.ld.admin.ch/i14y/concept/legalForm/0230) |
+| 0231 |  Public-law institution of the canton. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0231](https://register.ld.admin.ch/i14y/concept/legalForm/0231) |
+| 0232 |  Public-law institution of the district. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0232](https://register.ld.admin.ch/i14y/concept/legalForm/0232) |
+| 0233 |  Public-law institution of the commune. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0233](https://register.ld.admin.ch/i14y/concept/legalForm/0233) |
+| 0234 |  Other public-law institution. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0234](https://register.ld.admin.ch/i14y/concept/legalForm/0234) |
+| 0302 |  Simple partnership. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0302](https://register.ld.admin.ch/i14y/concept/legalForm/0302) |
+| 0312 |  Permanent establishment or swiss representation of a foreign company. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0312](https://register.ld.admin.ch/i14y/concept/legalForm/0312) |
+| 0327 |  Foreign public company. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0327](https://register.ld.admin.ch/i14y/concept/legalForm/0327) |
+| 0328 |  Foreign public administration. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0328](https://register.ld.admin.ch/i14y/concept/legalForm/0328) |
+| 0329 |  International organisation. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0329](https://register.ld.admin.ch/i14y/concept/legalForm/0329) |
+| 0355 |  Other cooperative. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0355](https://register.ld.admin.ch/i14y/concept/legalForm/0355) |
+| 0361 |  Trust. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0361](https://register.ld.admin.ch/i14y/concept/legalForm/0361) |
+| 0362 |  Fund. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0362](https://register.ld.admin.ch/i14y/concept/legalForm/0362) |
+| 0441 |  Foreign company. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0441](https://register.ld.admin.ch/i14y/concept/legalForm/0441) |
+| 0571 |  Legal form undefined or unknown. |
+| | [https://register.ld.admin.ch/i14y/concept/legalForm/0571](https://register.ld.admin.ch/i14y/concept/legalForm/0571) |
 
 
 
@@ -1598,6 +1641,8 @@ URI: [act:LegalFormEnum](https://ld.ech.ch/schema/0294/actors/LegalFormEnum)
 
 
 </div>
+\newpage
+
 # Geteilte Elemente
 
 ## Reference Classes
@@ -1824,12 +1869,15 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 ### Permissible Values
 | Value | Description |
 | --- | --- |
-| privateAddress | None |
-| | Private address |
-| businessAddress | None |
-| | Business address |
-| localAddress | None |
-| | Local address |
+| privateAddress |  Private address.
+ |
+| |  |
+| businessAddress |  Business address.
+ |
+| |  |
+| localAddress |  Local address.
+ |
+| |  |
 
 
 
