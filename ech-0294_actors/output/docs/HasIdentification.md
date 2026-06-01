@@ -1,6 +1,6 @@
 
 
-# Class: HasIdentification 
+## Class: HasIdentification 
 
 
 _[de] Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfügung stellt._

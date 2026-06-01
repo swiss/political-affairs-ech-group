@@ -1,6 +1,6 @@
 
 
-# Class: RoleType 
+## Class: RoleType 
 
 
 _[de] Rolle einer Person in einer Mitgliedschaft oder Funktion (z.B. Mitglied, Präsident, Stellvertreter)._

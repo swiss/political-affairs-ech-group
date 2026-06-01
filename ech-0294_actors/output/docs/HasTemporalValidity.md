@@ -1,6 +1,6 @@
 
 
-# Class: HasTemporalValidity 
+## Class: HasTemporalValidity 
 
 
 _[de] Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gültigkeit einer Information (nicht eines Events) zur Verfügung stellt._

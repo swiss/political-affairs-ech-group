@@ -1,6 +1,6 @@
 
 
-# Class: Membership 
+## Class: Membership 
 
 
 _[de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe._

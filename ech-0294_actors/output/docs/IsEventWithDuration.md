@@ -1,6 +1,6 @@
 
 
-# Class: IsEventWithDuration 
+## Class: IsEventWithDuration 
 
 
 _[de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder Vorkommnissen mit Zeitdauer zur Verfügung stellt._

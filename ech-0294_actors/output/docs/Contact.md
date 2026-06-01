@@ -1,6 +1,6 @@
 
 
-# Class: Contact 
+## Class: Contact 
 
 
 _[de] Kontaktinformation einer Person mit Angabe eines Typs (z.B. E-Mail, LinkedIn) und eines Werts._

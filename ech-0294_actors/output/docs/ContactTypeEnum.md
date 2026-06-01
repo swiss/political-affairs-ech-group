@@ -1,4 +1,4 @@
-# Enum: ContactTypeEnum 
+## Enum: ContactTypeEnum 
 
 
 

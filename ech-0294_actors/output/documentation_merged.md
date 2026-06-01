@@ -63,30 +63,15 @@ Folgende Themen wurden in der aufgeführten Reihenfolge seit 2025 in der Subgrup
 3. Interessenbindungen, Konflikte, Politikfinanzierung
 4. Verknüpfungen gleicher Personen über föderale Stufen hinweg
 
-# Person
-
-## Einführung und Zielsetzung
-
-Das Personenschema beschreibt natürliche Personen im politischen Kontext und zielt darauf ab, eine präzise und gleichzeitig flexible Datenstruktur bereitzustellen. Die Umsetzung soll es ermöglichen, vorhandene Informationen hochgradig strukturiert abzubilden (z.B. der Name nach Typisierung vom BFS), aber auch Informationen, die weniger klar und vollständing sind, darzustellen. Das Ziel ist es zu ermöglichen die Qualität kontinuierlich zu verbessern.
-
-**Kernziele:**
-
-- **Präzision**: Unterstützung von zeitlich gültigen Attributen (z.B. Namen, Adressen, Geschlecht).
-- **Flexibilität**: Optionale Felder erlauben schrittweise Datenanreicherung.
-- **Interoperabilität**: URIs als globale Identifikatoren wo vorhanden, inklusive der Möglichkeit auf Wikidata Einträge zu verweisen.
-- **Mehrsprachigkeit**: Unterstützung mehrsprachiger Inhalte gemäss Schweizer Anforderungen.
-
-Notiz: Die Verknüpfung von Personen im öffentlichen Interesse (Politikerinnen und Politiker) über die federalen Ebenen hinweg wird als ein wichtiges Langzeitziel gesehen. Eine zentrale Datenbank oder Identifizierungstelle der Personen kann nicht durch die Fachgruppe realisiert werden. Es gibt Ansätze im Datenmodell, damit man kontinuierlich die Identifikatoren über die Stufen hinweg harmonisieren kann. Zum einen durch die Benutzung von Global eindeutigen Identifikatoren (URIs), sowie von Vorschlägen welche bestehenden offenen Datenbanken zu verwenden (Wikidata). 
-
-## Technische Struktur
+## Allgemeine übergreifende Technische Informationen
 
 ### Identifikatoren
 
-Das Person-Schema verwendet:
+Das vorliegende Daten-Modell erlaubt es folgende Typen von Identifikatoren zu verwenden:
 
 1. **Lokaler Identifikator (`local_id`)**: Ein systeminterner Identifikator welcher vom publizierenden System genutzt wird, wenn nicht schon ausschliesslich eine `global_uri` benutzt wird. (Optional)
 
-2. **Globaler Identifikator (`global_uri`)**: Ein globaler Identifikator welcher über verschiedene Systeme hinweg gültig ist. (z.B. https://ld.bs.ch/personen_id/3456) (Zwingend)
+2. **Globaler Identifikator (`global_uri`)**: Ein globaler Identifikator welcher über verschiedene Systeme hinweg gültig ist. Dieser besteht meist aus einem Namespace (Domainnamen) der publizierenden Organisation zusammen mit einem lokalen Identifikator. (z.B. https://ld.bs.ch/personen_id/3456) (Zwingend)
 
 3. **Wikidata Identifikator (`wikidata_uri`)**: Eine Wikidata Identifikator, um Personen und Gruppen Systemübergreifend zu identifizieren (z.B. http://www.wikidata.org/entity/Q115531 für Adolf Ogi) (Optional)
 
@@ -107,9 +92,25 @@ names:
     valid_from: 2010-06-16
 ```
 
+# Person
+
+## Einführung und Zielsetzung
+
+Das Personenschema beschreibt natürliche Personen im politischen Kontext und zielt darauf ab, eine präzise und gleichzeitig flexible Datenstruktur bereitzustellen. Die Umsetzung soll es ermöglichen, vorhandene Informationen hochgradig strukturiert abzubilden (z.B. der Name nach Typisierung vom BFS), aber auch Informationen, die weniger klar und vollständing sind, darzustellen. Das Ziel ist es zu ermöglichen die Qualität kontinuierlich zu verbessern.
+
+**Kernziele:**
+
+- **Präzision**: Unterstützung von zeitlich gültigen Attributen (z.B. Namen, Adressen, Geschlecht).
+- **Flexibilität**: Optionale Felder erlauben schrittweise Datenanreicherung.
+- **Interoperabilität**: URIs als globale Identifikatoren wo vorhanden, inklusive der Möglichkeit auf Wikidata Einträge zu verweisen.
+- **Mehrsprachigkeit**: Unterstützung mehrsprachiger Inhalte gemäss Schweizer Anforderungen.
+
+Notiz: *Die Verknüpfung von Personen im öffentlichen Interesse (Politikerinnen und Politiker) über die federalen Ebenen hinweg wird als ein wichtiges Langzeitziel gesehen. Eine zentrale Datenbank oder Identifizierungstelle der Personen kann nicht durch die Fachgruppe realisiert werden. Es gibt Ansätze im Datenmodell, damit man kontinuierlich die Identifikatoren über die Stufen hinweg harmonisieren kann. Zum einen durch die Benutzung von Global eindeutigen Identifikatoren (URIs), sowie von Vorschlägen welche bestehenden offenen Datenbanken zu verwenden (Wikidata). *
 
 
-# Class: Person 
+
+
+## Class: Person 
 
 
 _[de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Berufen._
@@ -286,7 +287,7 @@ electoral_district:
 
 
 
-# Class: Name 
+## Class: Name 
 
 
 _[de] Ein Name mit einem Typ (z.B. Rufname, amtlicher Name) und einem Wert und einer zeitlichen Gültigkeit._
@@ -344,7 +345,7 @@ __
 
 
 
-# Class: Address 
+## Class: Address 
 
 
 _[de] Eine Adresse mit einem Typ (z.B. Privatadresse, Geschäftsadresse) und einem Wert._
@@ -395,13 +396,6 @@ __
 
 
 ### Examples
-#### Example: Address-swiss_politicians_Beat_Jans_1
-
-```yaml
-address_type: businessAddress
-postal_locality: Basel-Stadt
-
-```
 #### Example: Address-douglas_adams_Douglas_Adams_1
 
 ```yaml
@@ -412,6 +406,13 @@ postal_code: 12345
 postal_locality: London
 
 ```
+#### Example: Address-swiss_politicians_Beat_Jans_1
+
+```yaml
+address_type: businessAddress
+postal_locality: Basel-Stadt
+
+```
 
 
 
@@ -420,7 +421,7 @@ postal_locality: London
 
 </div> 
 
-# Enum: AddressTypeEnum 
+## Enum: AddressTypeEnum 
 
 
 
@@ -454,7 +455,7 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 
 
 
-# Class: LanguageProficiency 
+## Class: LanguageProficiency 
 
 
 _[de] Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um die bevorzugte Sprache oder die Muttersprache handelt._
@@ -510,7 +511,7 @@ __
 
 
 
-# Class: Citizenship 
+## Class: Citizenship 
 
 
 _[de] Staatsangehörigkeit einer Person unter Angabe des Landes und der zeitlichen Gültigkeit. Wenn kein `valid_from` angegeben ist, ist diese Information nicht bekannt. Ist bekannt, dass die Staatsangehörigkeit seit der Geburt gültig ist, ist das Geburtsdatum hier anzugeben. Wenn kein `valid_through` angegeben ist, ist die Staatsangehörigkeit weiterhin gültig._
@@ -567,7 +568,7 @@ __
 
 
 
-# Class: Gender 
+## Class: Gender 
 
 
 _[de] Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen Gültigkeit._
@@ -625,7 +626,7 @@ __
 
 
 
-# Class: Occupation 
+## Class: Occupation 
 
 
 _[de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Codes, ob die Position bezahlt ist, und der zeitlichen Gültigkeit._
@@ -706,7 +707,7 @@ is_active: true
 
 
 
-# Class: Training 
+## Class: Training 
 
 
 _[de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z.B. Schulabschluss, Universitätsabschluss, Militärdienst), eines Labels, eines ISCO-19 Codes und der zeitlichen Gültigkeit._
@@ -765,7 +766,7 @@ __
 
 
 
-# Class: Contact 
+## Class: Contact 
 
 
 _[de] Kontaktinformation einer Person mit Angabe eines Typs (z.B. E-Mail, LinkedIn) und eines Werts._
@@ -821,7 +822,7 @@ __
 
 
 
-# Class: ElectoralDistrict 
+## Class: ElectoralDistrict 
 
 
 _[de] Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit zeitlicher Gültigkeit._
@@ -895,7 +896,7 @@ valid_from: 2010-01-01
 
 
 
-# Class: InterestLink 
+## Class: InterestLink 
 
 
 _[de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation._
@@ -960,20 +961,68 @@ __
 
 
 ### Examples
-#### Example: InterestLink-interest_links_il_burkart_003
+#### Example: InterestLink-interest_links_il_burkart_001
 
 ```yaml
-global_uri: act:il_burkart_003
+global_uri: act:il_burkart_001
 person_reference:
   global_uri: https://www.wikidata.org/wiki/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_label: Bovida Real Estate AG, Baar
-legal_form: Aktiengesellschaft
-committee: Verwaltungsrat
-function_role: Mitglied
+organization_label: Burkart Advisory GmbH, Baden
+legal_form: Gesellschaft mit beschränkter Haftung
+committee: Geschäftsleitung
+function_role: Geschäftsführer
 is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_007
+
+```yaml
+global_uri: act:il_burkart_007
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+legal_form: Stiftung
+committee: Stiftungsrat
+function_role: Vizepräsident
+is_paid: false
+
+```
+#### Example: InterestLink-interest_links_il_burkart_011
+
+```yaml
+global_uri: act:il_burkart_011
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: Verein Landesausstellung Svizra27, Aarau
+legal_form: Verein
+committee: Vorstand
+function_role: Mitglied
+is_paid: false
+
+```
+#### Example: InterestLink-interest_links_il_burkart_010
+
+```yaml
+global_uri: act:il_burkart_010
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: Allianz Sicherheit Schweiz, Baden
+legal_form: Verein
+committee: Vorstand
+function_role: Präsident
+is_paid: false
 
 ```
 #### Example: InterestLink-interest_links_il_burkart_002
@@ -989,22 +1038,6 @@ organization_label: Birchmeier Holding AG, Döttingen
 legal_form: Aktiengesellschaft
 committee: Verwaltungsrat
 function_role: Mitglied
-is_paid: true
-
-```
-#### Example: InterestLink-interest_links_il_burkart_001
-
-```yaml
-global_uri: act:il_burkart_001
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_label: Burkart Advisory GmbH, Baden
-legal_form: Gesellschaft mit beschränkter Haftung
-committee: Geschäftsleitung
-function_role: Geschäftsführer
 is_paid: true
 
 ```
@@ -1024,34 +1057,18 @@ function_role: Mitglied
 is_paid: true
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_011
+#### Example: InterestLink-interest_links_il_burkart_003
 
 ```yaml
-global_uri: act:il_burkart_011
+global_uri: act:il_burkart_003
 person_reference:
   global_uri: https://www.wikidata.org/wiki/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
-interest_type: association
-organization_label: Verein Landesausstellung Svizra27, Aarau
-legal_form: Verein
-committee: Vorstand
-function_role: Mitglied
-is_paid: false
-
-```
-#### Example: InterestLink-interest_links_il_burkart_009
-
-```yaml
-global_uri: act:il_burkart_009
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_label: SUISSEDIGITAL Verband für Kommunikationsnetze
-legal_form: Verein
-committee: Vorstand
+interest_type: professional_activity
+organization_label: Bovida Real Estate AG, Baar
+legal_form: Aktiengesellschaft
+committee: Verwaltungsrat
 function_role: Mitglied
 is_paid: true
 
@@ -1088,6 +1105,22 @@ function_role: Beirat
 is_paid: true
 
 ```
+#### Example: InterestLink-interest_links_il_burkart_009
+
+```yaml
+global_uri: act:il_burkart_009
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: SUISSEDIGITAL Verband für Kommunikationsnetze
+legal_form: Verein
+committee: Vorstand
+function_role: Mitglied
+is_paid: true
+
+```
 #### Example: InterestLink-interest_links_il_burkart_005
 
 ```yaml
@@ -1102,38 +1135,6 @@ legal_form: Verein
 committee: Zentralvorstand
 function_role: Präsident
 is_paid: true
-
-```
-#### Example: InterestLink-interest_links_il_burkart_010
-
-```yaml
-global_uri: act:il_burkart_010
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_label: Allianz Sicherheit Schweiz, Baden
-legal_form: Verein
-committee: Vorstand
-function_role: Präsident
-is_paid: false
-
-```
-#### Example: InterestLink-interest_links_il_burkart_007
-
-```yaml
-global_uri: act:il_burkart_007
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_label: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-legal_form: Stiftung
-committee: Stiftungsrat
-function_role: Vizepräsident
-is_paid: false
 
 ```
 
@@ -1166,640 +1167,9 @@ Das Schema unterstützt verschiedene Einsatzszenarien:
 4. **Analysen**: Untersuchungen von Gruppenzusammensetzungen und Netzwerken
 5. **Parteilisten**: Verwaltung von Wahllisten (z.B. UNIBE Parteilisten-Datenbank)
 
-## Technische Struktur
 
-### Identifikatoren
 
-| Attribut | Typ | Pflicht | Beschreibung |
-|----------|-----|---------|--------------|
-| `global_uri` | URI | Ja | Global gültiger Identifikator (z.B. `politics.ld.admin.ch/party/...`) |
-| `local_id` | string | Nein | Lokaler Identifikator im publizierenden System |
-| `wikidata_uri` | URI | Nein | Wikidata-Entität der Gruppe, falls vorhanden |
-
-**Beispiel:**
-```yaml
-global_uri: https://politics.ld.admin.ch/party/sp_basel_stadt
-local_id: act:sp_basel_stadt
-```
-
-### Datenmodell (LinkML-Auszug)
-
-```yaml
-global_uri: https://politics.ld.admin.ch/party/sp_basel_stadt
-local_id: act:sp_basel_stadt
-group_type:
-  group_type_enum: party
-label: SP Basel-Stadt
-abbreviation:
-  - value: SP
-    language: de
-parent_groups:
-  - https://politics.ld.admin.ch/party/sp_schweiz
-```
-
-## Datenstruktur
-
-### Pflichtfelder
-
-| Attribut | Datentyp | Beschreibung |
-|----------|----------|--------------|
-| `global_uri` | URI | Eindeutiger globaler Identifikator |
-| `group_type` | GroupType | Art der Gruppe (`group_type_enum`, optional `label`) |
-
-### Optionale Felder
-
-| Attribut | Datentyp | Beschreibung |
-|----------|----------|--------------|
-| `local_id` | string | Lokaler Identifikator |
-| `wikidata_uri` | URI | Wikidata-Referenz |
-| `label` | string | Anzeigename der Gruppe |
-| `valid_from` | date | Beginn der Gültigkeit |
-| `valid_through` | date | Ende der Gültigkeit |
-| `abbreviation` | MultilingualValue[] | Abkürzung (mehrsprachig, `value`/`language`) |
-| `description` | MultilingualValue[] | Beschreibung (mehrsprachig) |
-| `landing_page` | URI | URL mit weiteren Informationen |
-| `parent_groups` | string[] | Übergeordnete Gruppen (0..n) |
-| `spatial` | string | Räumliche Referenz (Gemeinde-/Kantonsnummer) |
-| `contacts` | Contact[] | Kontaktinformationen |
-| `addresses` | Address[] | Adressen |
-| `statutes_url` | URI | URL zu Statuten (speziell für Parteien) |
-| `party_color` | string | Parteifarbe (speziell für Parteien) |
-| `datetime_modified` | datetime | Letzte Aktualisierung |
-| `datetime_created` | datetime | Erstellung |
-
-## Klassifikation: GroupTypeEnum
-
-### Legislative
-
-#### parliament (Parlament)
-Parlamente auf allen föderalen Ebenen.
-
-**Beispiele:**
-- Bundesversammlung (Bund)
-- Nationalrat
-- Ständerat
-- Grosser Rat (Kanton)
-- Kantonsrat
-- Gemeindeparlament
-
-```yaml
-group_type:
-  group_type_enum: parliament
-label: Nationalrat
-description:
-  - value: Conseil national
-    language: fr
-  - value: Consiglio nazionale
-    language: it
-spatial: https://ld.admin.ch/country/1  # Schweiz
-```
-
-#### commission (Kommission)
-Ständige oder Ad-hoc-Kommissionen.
-
-**Untertypen:**
-- Ständige Kommissionen (z.B. Finanzkommission)
-- Ad-hoc-Kommissionen
-- Aufsichtskommissionen (Geschäftsprüfungskommission, GPK)
-- Sachkommissionen
-- PUK (Parlamentarische Untersuchungskommission)
-- Rechnungsprüfungskommission
-
-```yaml
-group_type:
-  group_type_enum: commission
-  label: Ständige Aufsichtskommission
-label: Geschäftsprüfungskommission des Nationalrats
-parent_groups:
-  - act:nationalrat
-```
-
-#### delegation (Delegation)
-Parlamentarische Delegationen.
-
-```yaml
-group_type:
-  group_type_enum: delegation
-label: Delegation für internationale Finanzfragen
-```
-
-#### faction (Fraktion)
-Parlamentsfraktionen.
-
-```yaml
-group_type:
-  group_type_enum: faction
-label: SP-Fraktion
-abbreviation:
-  - value: SP
-    language: de
-parent_groups:
-  - act:nationalrat
-```
-
-#### parliamentary_bureau (Parlamentsbüro)
-Organisatorisches Leitungsgremium.
-
-```yaml
-group_type:
-  group_type_enum: parliamentary_bureau
-label: Büro des Nationalrats
-```
-
-#### presidency (Präsidium)
-Präsidium des Parlaments.
-
-```yaml
-group_type:
-  group_type_enum: presidency
-label: Präsidium der Bundesversammlung
-```
-
-### Exekutive
-
-#### government (Regierung)
-Regierung als Gesamtorgan.
-
-**Beispiele:**
-- Bundesrat
-- Regierungsrat (Kantone)
-- Stadtrat / Gemeinderat
-
-```yaml
-group_type:
-  group_type_enum: government
-label: Bundesrat
-description:
-  - value: Conseil fédéral
-    language: fr
-spatial: https://ld.admin.ch/country/1
-```
-
-#### department (Departement)
-Verwaltungsdepartemente.
-
-```yaml
-group_type:
-  group_type_enum: department
-label: Eidgenössisches Departement des Innern
-abbreviation:
-  - value: EDI
-    language: de
-parent_groups:
-  - act:bundesrat
-```
-
-#### office (Amt)
-Ämter innerhalb von Departementen.
-
-```yaml
-group_type:
-  group_type_enum: office
-label: Bundesamt für Gesundheit
-abbreviation:
-  - value: BAG
-    language: de
-parent_groups:
-  - act:edi
-```
-
-#### extraparliamentary_commission (Ausserparlamentarische Kommission)
-APK mit Regierungsauftrag.
-
-**Beispiele:**
-- Bankrat der Schweizerischen Nationalbank
-- Eidgenössische Finanzmarktaufsicht (FINMA)
-
-```yaml
-group_type:
-  group_type_enum: extraparliamentary_commission
-label: Bankrat der SNB
-```
-
-#### workgroup (Arbeitsgruppe)
-Ad-hoc-Arbeitsgruppen.
-
-```yaml
-group_type:
-  group_type_enum: workgroup
-label: Arbeitsgruppe Klimapolitik
-valid_from: 2024-01-01
-valid_through: 2024-12-31
-```
-
-### Judikative
-
-#### court (Gericht)
-Gerichte aller Instanzen.
-
-**Beispiele:**
-- Bundesgericht
-- Kantonsgericht
-- Bezirksgericht
-
-```yaml
-group_type:
-  group_type_enum: court
-label: Bundesgericht
-description:
-  - value: Tribunal fédéral
-    language: fr
-  - value: Tribunale federale
-    language: it
-spatial: https://ld.admin.ch/country/1
-```
-
-### Zivilgesellschaft
-
-#### party (Partei)
-Politische Parteien auf allen föderalen Ebenen.
-
-Jede föderale Ebene wird als eigene Gruppe geführt.
-
-```yaml
-group_type:
-  group_type_enum: party
-label: SP Schweiz
-abbreviation:
-  - value: SP
-    language: de
-statutes_url: https://www.sp-ps.ch/sites/default/files/documents/statuten_sp_d_0.pdf
-party_color: "#FF0000"
-spatial: https://ld.admin.ch/country/1
-```
-
-**Hierarchie-Beispiel:**
-```yaml
-# SP Schweiz (Bund)
-- global_uri: act:sp_schweiz
-  group_type:
-    group_type_enum: party
-  label: SP Schweiz
-  spatial: https://ld.admin.ch/country/1
-
-# SP Basel-Stadt (Kanton)
-- global_uri: act:sp_basel_stadt
-  group_type:
-    group_type_enum: party
-  label: SP Basel-Stadt
-  parent_groups: [act:sp_schweiz]
-  spatial: https://ld.admin.ch/canton/12
-
-# SP Riehen (Gemeinde)
-- global_uri: act:sp_riehen
-  group_type:
-    group_type_enum: party
-  label: SP Riehen
-  parent_groups: [act:sp_basel_stadt]
-  spatial: https://ld.admin.ch/municipality/2703
-```
-
-#### list (Liste)
-Wahllisten, können Teil einer Partei sein oder unabhängig.
-
-```yaml
-group_type:
-  group_type_enum: list
-label: Liste 1 - SP
-parent_groups:
-  - act:sp_basel_stadt  # Optional: Zugehörigkeit zur Partei
-```
-
-#### interest_group (Interessengruppe)
-Lobbyorganisationen und Interessenverbände.
-
-```yaml
-group_type:
-  group_type_enum: interest_group
-label: Economiesuisse
-```
-
-#### association (Verein)
-Vereine und Verbände.
-
-```yaml
-group_type:
-  group_type_enum: association
-label: Pro Natura
-```
-
-#### petition_carrier (Petitionsträger)
-Träger von Petitionen oder Volksinitiativen.
-
-```yaml
-group_type:
-  group_type_enum: petition_carrier
-label: Komitee für bezahlbare Krankenkassen
-```
-
-### Andere Organe
-
-#### control_body (Kontrollorgan)
-Kontroll- und Aufsichtsorgane.
-
-**Beispiele:**
-- Eidgenössische Finanzkontrolle (EFK)
-- AB-BA (Aufsichtsbehörde)
-
-```yaml
-group_type:
-  group_type_enum: control_body
-label: Eidgenössische Finanzkontrolle
-abbreviation:
-  - value: EFK
-    language: de
-```
-
-#### parliamentary_services (Parlamentsdienste)
-Unterstützungsdienste des Parlaments.
-
-```yaml
-group_type:
-  group_type_enum: parliamentary_services
-label: Parlamentsdienste der Bundesversammlung
-```
-
-#### university (Universität)
-Universitäten und Hochschulen (als ausgelagerte Träger öffentlicher Aufgaben).
-
-```yaml
-group_type:
-  group_type_enum: university
-label: Universität Zürich
-abbreviation:
-  - value: UZH
-    language: de
-```
-
-## Hierarchien und parent_groups
-
-Das Attribut `parent_groups` erlaubt die Abbildung von Organisationsstrukturen:
-
-### Parteihierarchie (Föderalismus)
-
-```yaml
-# National
-- global_uri: act:fdp_schweiz
-  parent_groups: []
-
-# Kantonal
-- global_uri: act:fdp_zuerich
-  parent_groups: [act:fdp_schweiz]
-
-# Kommunal
-- global_uri: act:fdp_winterthur
-  parent_groups: [act:fdp_zuerich]
-```
-
-### Verwaltungshierarchie
-
-```yaml
-# Departement
-- global_uri: act:edi
-  parent_groups: [act:bundesrat]
-
-# Amt
-- global_uri: act:bag
-  parent_groups: [act:edi]
-
-# Abteilung
-- global_uri: act:bag_abteilung_gesundheitspolitik
-  parent_groups: [act:bag]
-```
-
-### Kommissionshierarchie
-
-```yaml
-# Hauptkommission
-- global_uri: act:sik_nr
-  label: Sicherheitspolitische Kommission NR
-  parent_groups: [act:nationalrat]
-
-# Subkommission
-- global_uri: act:sik_nr_sub_cyber
-  label: Subkommission Cybersicherheit
-  parent_groups: [act:sik_nr]
-```
-
-## Räumliche Referenz (spatial)
-
-Das Attribut `spatial` verknüpft Gruppen mit Gemeinden, Kantonen oder dem Bund:
-
-**Formate:**
-- Gemeinde: `https://ld.admin.ch/municipality/[BFS-Nr]`
-- Kanton: `https://ld.admin.ch/canton/[Kantonsnr]`
-- Bund: `https://ld.admin.ch/country/1`
-
-**Beispiele:**
-```yaml
-# Gemeinde Zürich (BFS 261)
-spatial: https://ld.admin.ch/municipality/261
-
-# Kanton Zürich
-spatial: https://ld.admin.ch/canton/1
-
-# Bund
-spatial: https://ld.admin.ch/country/1
-```
-
-## Mehrsprachigkeit
-
-Namen und Abkürzungen sind mehrsprachig erfassbar:
-
-```yaml
-label: Bundesversammlung
-description:
-  - value: Assemblée fédérale
-    language: fr
-  - value: Assemblea federale
-    language: it
-  - value: Assamblea federala
-    language: rm
-
-abbreviation:
-  - value: BVers
-    language: de
-  - value: AsFed
-    language: fr
-```
-
-## Partei-spezifische Attribute
-
-### statutes_url
-Link zu den Parteistatuten (PDF oder Webseite).
-
-```yaml
-statutes_url: https://www.sp-ps.ch/sites/default/files/documents/statuten_sp_d_0.pdf
-```
-
-### party_color
-Parteifarbe als Hexadezimalwert.
-
-```yaml
-party_color: "#FF0000"  # SP
-party_color: "#0066CC"  # FDP
-party_color: "#008000"  # Grüne
-party_color: "#FF6600"  # SVP
-party_color: "#FF9900"  # CVP/Mitte
-```
-
-## Interoperabilität
-
-### Verknüpfung mit Memberships
-
-Gruppen werden über Memberships mit Personen verbunden:
-
-```yaml
-# Container-Struktur
-groups:
-  - global_uri: act:sp_basel_stadt
-    group_type:
-      group_type_enum: party
-    label: SP Basel-Stadt
-
-memberships:
-  - global_uri: act:membership_jans_sp
-    person_reference:
-      global_uri: https://www.wikidata.org/wiki/Q813067
-      label: Beat Jans
-    group_reference:
-      global_uri: act:sp_basel_stadt
-      label: SP Basel-Stadt
-    role_type:
-      role_type_enum: member
-    valid_from: 1990-01-01
-```
-
-### Verknüpfung mit eCH-0293 (Operations)
-
-Gruppen werden in Operations als `actor_id` referenziert:
-
-```yaml
-# eCH-0293 Meeting
-actor_id: act:nationalrat
-actor_name: Nationalrat
-```
-
-## Anwendungsbeispiele
-
-### Beispiel 1: Nationalrat
-
-```yaml
-global_uri: https://politics.ld.admin.ch/parliament/nationalrat
-local_id: act:nationalrat
-group_type:
-  group_type_enum: parliament
-label: Nationalrat
-description:
-  - value: Conseil national
-    language: fr
-  - value: Consiglio nazionale
-    language: it
-abbreviation:
-  - value: NR
-    language: de
-  - value: CN
-    language: fr
-landing_page: https://www.parlament.ch/de/organe/nationalrat
-spatial: https://ld.admin.ch/country/1
-datetime_created: 2024-01-01T00:00:00Z
-```
-
-### Beispiel 2: Geschäftsprüfungskommission
-
-```yaml
-global_uri: act:gpk_nr
-group_type:
-  group_type_enum: commission
-  label: Ständige Aufsichtskommission
-label: Geschäftsprüfungskommission des Nationalrats
-abbreviation:
-  - value: GPK-N
-    language: de
-parent_groups:
-  - act:nationalrat
-landing_page: https://www.parlament.ch/de/organe/kommissionen/aufsichtskommissionen/gpk
-```
-
-### Beispiel 3: Partei mit Hierarchie
-
-```yaml
-# Bundesebene
-- global_uri: act:gruene_schweiz
-  group_type:
-    group_type_enum: party
-  label: Grüne Schweiz
-  description:
-    - value: Les Verts Suisses
-      language: fr
-  abbreviation:
-    - value: GPS
-      language: de
-  party_color: "#84B414"
-  statutes_url: https://www.gruene.ch/statuten
-  spatial: https://ld.admin.ch/country/1
-
-# Kantonsebene
-- global_uri: act:gruene_bern
-  group_type:
-    group_type_enum: party
-  label: Grüne Kanton Bern
-  parent_groups:
-    - act:gruene_schweiz
-  spatial: https://ld.admin.ch/canton/2
-  landing_page: https://www.gruenebern.ch
-```
-
-### Beispiel 4: Bundesrat
-
-```yaml
-global_uri: https://politics.ld.admin.ch/government/bundesrat
-local_id: act:bundesrat
-group_type:
-  group_type_enum: government
-label: Bundesrat
-description:
-  - value: Conseil fédéral
-    language: fr
-  - value: Consiglio federale
-    language: it
-spatial: https://ld.admin.ch/country/1
-landing_page: https://www.admin.ch/gov/de/start/bundesrat.html
-contacts:
-  - contact_type: email
-    value: info@gs-uvek.admin.ch
-  - contact_type: contact_website
-    value: https://www.admin.ch/gov/de/start/bundesrat.html
-addresses:
-  - address_type: businessAddress
-    street_address: Bundeshaus West
-    postal_code: "3003"
-    postal_locality: Bern
-```
-
-### Beispiel 5: Fraktion
-
-```yaml
-global_uri: act:sp_fraktion_nr
-group_type:
-  group_type_enum: faction
-label: SP-Fraktion im Nationalrat
-abbreviation:
-  - value: SP
-    language: de
-parent_groups:
-  - act:nationalrat
-  - act:sp_schweiz  # Verbindung zur Partei
-landing_page: https://www.sp-ps.ch/fraktion
-```
-
-## Referenzen
-
-Siehe vollständige LinkML-Schema-Dokumentation:
-
-
-
-# Class: Group 
+## Class: Group 
 
 
 _[de] Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommission, Parlament, Departement)._
@@ -2493,7 +1863,7 @@ Siehe vollständige LinkML-Schema-Dokumentation:
 
 
 
-# Class: Membership 
+## Class: Membership 
 
 
 _[de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe._
@@ -2944,7 +2314,7 @@ Siehe vollständige LinkML-Schema-Dokumentation:
 
 
 
-# Class: InterestLink 
+## Class: InterestLink 
 
 
 _[de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation._
@@ -3009,20 +2379,68 @@ __
 
 
 ### Examples
-#### Example: InterestLink-interest_links_il_burkart_003
+#### Example: InterestLink-interest_links_il_burkart_001
 
 ```yaml
-global_uri: act:il_burkart_003
+global_uri: act:il_burkart_001
 person_reference:
   global_uri: https://www.wikidata.org/wiki/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_label: Bovida Real Estate AG, Baar
-legal_form: Aktiengesellschaft
-committee: Verwaltungsrat
-function_role: Mitglied
+organization_label: Burkart Advisory GmbH, Baden
+legal_form: Gesellschaft mit beschränkter Haftung
+committee: Geschäftsleitung
+function_role: Geschäftsführer
 is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_007
+
+```yaml
+global_uri: act:il_burkart_007
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+legal_form: Stiftung
+committee: Stiftungsrat
+function_role: Vizepräsident
+is_paid: false
+
+```
+#### Example: InterestLink-interest_links_il_burkart_011
+
+```yaml
+global_uri: act:il_burkart_011
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: Verein Landesausstellung Svizra27, Aarau
+legal_form: Verein
+committee: Vorstand
+function_role: Mitglied
+is_paid: false
+
+```
+#### Example: InterestLink-interest_links_il_burkart_010
+
+```yaml
+global_uri: act:il_burkart_010
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: Allianz Sicherheit Schweiz, Baden
+legal_form: Verein
+committee: Vorstand
+function_role: Präsident
+is_paid: false
 
 ```
 #### Example: InterestLink-interest_links_il_burkart_002
@@ -3038,22 +2456,6 @@ organization_label: Birchmeier Holding AG, Döttingen
 legal_form: Aktiengesellschaft
 committee: Verwaltungsrat
 function_role: Mitglied
-is_paid: true
-
-```
-#### Example: InterestLink-interest_links_il_burkart_001
-
-```yaml
-global_uri: act:il_burkart_001
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_label: Burkart Advisory GmbH, Baden
-legal_form: Gesellschaft mit beschränkter Haftung
-committee: Geschäftsleitung
-function_role: Geschäftsführer
 is_paid: true
 
 ```
@@ -3073,34 +2475,18 @@ function_role: Mitglied
 is_paid: true
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_011
+#### Example: InterestLink-interest_links_il_burkart_003
 
 ```yaml
-global_uri: act:il_burkart_011
+global_uri: act:il_burkart_003
 person_reference:
   global_uri: https://www.wikidata.org/wiki/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
-interest_type: association
-organization_label: Verein Landesausstellung Svizra27, Aarau
-legal_form: Verein
-committee: Vorstand
-function_role: Mitglied
-is_paid: false
-
-```
-#### Example: InterestLink-interest_links_il_burkart_009
-
-```yaml
-global_uri: act:il_burkart_009
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_label: SUISSEDIGITAL Verband für Kommunikationsnetze
-legal_form: Verein
-committee: Vorstand
+interest_type: professional_activity
+organization_label: Bovida Real Estate AG, Baar
+legal_form: Aktiengesellschaft
+committee: Verwaltungsrat
 function_role: Mitglied
 is_paid: true
 
@@ -3137,6 +2523,22 @@ function_role: Beirat
 is_paid: true
 
 ```
+#### Example: InterestLink-interest_links_il_burkart_009
+
+```yaml
+global_uri: act:il_burkart_009
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_label: SUISSEDIGITAL Verband für Kommunikationsnetze
+legal_form: Verein
+committee: Vorstand
+function_role: Mitglied
+is_paid: true
+
+```
 #### Example: InterestLink-interest_links_il_burkart_005
 
 ```yaml
@@ -3151,38 +2553,6 @@ legal_form: Verein
 committee: Zentralvorstand
 function_role: Präsident
 is_paid: true
-
-```
-#### Example: InterestLink-interest_links_il_burkart_010
-
-```yaml
-global_uri: act:il_burkart_010
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_label: Allianz Sicherheit Schweiz, Baden
-legal_form: Verein
-committee: Vorstand
-function_role: Präsident
-is_paid: false
-
-```
-#### Example: InterestLink-interest_links_il_burkart_007
-
-```yaml
-global_uri: act:il_burkart_007
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_label: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-legal_form: Stiftung
-committee: Stiftungsrat
-function_role: Vizepräsident
-is_paid: false
 
 ```
 

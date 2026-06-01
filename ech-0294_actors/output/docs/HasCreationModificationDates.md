@@ -1,6 +1,6 @@
 
 
-# Class: HasCreationModificationDates 
+## Class: HasCreationModificationDates 
 
 
 _[de] Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Änderungsdaten einer Entität zur Verfügung stellt._

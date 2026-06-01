@@ -1,6 +1,6 @@
 
 
-# Class: Person 
+## Class: Person 
 
 
 _[de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Berufen._
