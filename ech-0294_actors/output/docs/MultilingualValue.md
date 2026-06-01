@@ -1,6 +1,6 @@
 
 
-# Class: MultilingualValue 
+## Class: MultilingualValue 
 
 
 _[de] Ein mehrsprachiger String mit Angabe der Sprache._

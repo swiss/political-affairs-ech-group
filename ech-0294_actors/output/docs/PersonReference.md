@@ -1,6 +1,6 @@
 
 
-# Class: PersonReference 
+## Class: PersonReference 
 
 
 _[de] Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung. Ermöglicht historische Korrektheit auch wenn sich die Person später ändert._

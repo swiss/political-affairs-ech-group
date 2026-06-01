@@ -1,6 +1,6 @@
 
 
-# Class: LanguageProficiency 
+## Class: LanguageProficiency 
 
 
 _[de] Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um die bevorzugte Sprache oder die Muttersprache handelt._

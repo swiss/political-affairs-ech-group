@@ -1,6 +1,6 @@
 
 
-# Class: ElectoralDistrict 
+## Class: ElectoralDistrict 
 
 
 _[de] Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit zeitlicher Gültigkeit._

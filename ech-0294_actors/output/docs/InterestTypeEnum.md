@@ -1,4 +1,4 @@
-# Enum: InterestTypeEnum 
+## Enum: InterestTypeEnum 
 
 
 

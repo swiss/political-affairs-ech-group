@@ -1,4 +1,4 @@
-# Enum: NameTypeEnum 
+## Enum: NameTypeEnum 
 
 
 

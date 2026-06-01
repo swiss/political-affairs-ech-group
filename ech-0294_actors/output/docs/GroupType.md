@@ -1,6 +1,6 @@
 
 
-# Class: GroupType 
+## Class: GroupType 
 
 
 _[de] Art der Gruppe (z.B. Partei, Kommission, Parlament, Departement)._

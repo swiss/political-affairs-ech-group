@@ -1,6 +1,6 @@
 
 
-# Class: Group 
+## Class: Group 
 
 
 _[de] Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommission, Parlament, Departement)._

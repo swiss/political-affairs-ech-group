@@ -1,6 +1,6 @@
 
 
-# Class: Occupation 
+## Class: Occupation 
 
 
 _[de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Codes, ob die Position bezahlt ist, und der zeitlichen Gültigkeit._

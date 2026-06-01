@@ -1,4 +1,4 @@
-# Enum: TrainingTypeEnum 
+## Enum: TrainingTypeEnum 
 
 
 

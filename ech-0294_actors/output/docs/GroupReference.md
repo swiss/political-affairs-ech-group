@@ -1,6 +1,6 @@
 
 
-# Class: GroupReference 
+## Class: GroupReference 
 
 
 _[de] Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung._

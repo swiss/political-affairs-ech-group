@@ -1,4 +1,4 @@
-# Enum: GroupTypeEnum 
+## Enum: GroupTypeEnum 
 
 
 

@@ -1,6 +1,6 @@
 
 
-# Class: Name 
+## Class: Name 
 
 
 _[de] Ein Name mit einem Typ (z.B. Rufname, amtlicher Name) und einem Wert und einer zeitlichen Gültigkeit._

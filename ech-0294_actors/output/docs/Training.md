@@ -1,6 +1,6 @@
 
 
-# Class: Training 
+## Class: Training 
 
 
 _[de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z.B. Schulabschluss, Universitätsabschluss, Militärdienst), eines Labels, eines ISCO-19 Codes und der zeitlichen Gültigkeit._
