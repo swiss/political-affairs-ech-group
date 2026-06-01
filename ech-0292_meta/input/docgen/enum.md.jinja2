@@ -79,10 +79,10 @@ URI: {{ gen.uri_link(element) }}
 ### Permissible Values
 
 {%- if has_pv_extras.found %}
-| Value | Meaning | Description | Additional Info |
-| --- | --- | --- | --- |
+| Value | Description | Additional Info |
+| --- | --- | --- |
 {% for pv in element.permissible_values.values() -%}
-| {{ pv.text }} | {{ pv.meaning }} | {{ pv.description|enshorten }} |
+| {{ pv.text }}{% if pv.meaning %} ({{ pv.meaning }}){% endif %} | {{ pv.description }} |
 {%- if pv.title %} Title: {{ pv.title }}<br>{% endif -%}
 {%- if pv.is_a %} Is-A: {{ gen.link(pv.is_a) }}<br>{% endif -%}
 {%- if pv.mixins %} Mixins: {{ gen.links(pv.mixins) | join(', ') }}<br>{% endif -%}
@@ -90,10 +90,10 @@ URI: {{ gen.uri_link(element) }}
  |
 {% endfor %}
 {%- else %}
-| Value | Meaning | Description |
-| --- | --- | --- |
+| Value | Description |
+| --- | --- |
 {% for pv in element.permissible_values.values() -%}
-| {{ pv.text }} | {{ pv.meaning }} | {{ pv.description|enshorten }} |
+| {{ pv.text }}{% if pv.meaning %} ({{ pv.meaning }}){% endif %} | {{ pv.description|enshorten }} |
 {% endfor %}
 {%- endif %}
 {% else %}

@@ -53,11 +53,17 @@ jobs:
       - name: Install Pandoc
         run: sudo apt update && sudo apt install -y pandoc
 
+      - name: Download Pandoc pagebreak Lua filter
+        run: |
+          curl -L https://raw.githubusercontent.com/pandoc/lua-filters/master/pagebreak/pagebreak.lua \
+          -o pagebreak.lua
+
       - name: Convert Markdown to Word with Pandoc
         run: |
           pandoc ech-0294_actors/output/documentation_merged.md \
           -o ech-0294_actors/output/ech-0294_actors.docx \
-          --reference-doc=ech-0294_actors/input/template.docx
+          --reference-doc=ech-0294_actors/input/template.docx \
+          --lua-filter=pagebreak.lua
 
       - name: Commit and push changes
         env:
