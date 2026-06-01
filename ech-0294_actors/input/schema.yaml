@@ -49,8 +49,8 @@ classes:
       - HasIdentification
       - HasCreationModificationDates
     slots:
-      - label # Einfacher Name ohne Titel oder Berufsbezeichnung. 
-      - label_long # Name inklusive aller Titel und Berufsbezeichnungen.
+      - label # Mandatory short display name to identify the person within the organisation (e.g. added birthyear).
+      - label_long # Display name with academic titles.
       - birth_year
       - birth_date
       - death_date
@@ -65,6 +65,20 @@ classes:
       - contacts
       - electoral_district
       - interest_links
+    slot_usage:
+      label:
+        description: |
+          Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name).
+        annotations:
+          description_de: |
+            Obligatorischer Kurzname zur Identifikation der Person innerhalb der Organisation (z.B. mit Geburtsjahr zur Unterscheidung von Personen mit gleichem Namen).
+        required: true
+      label_long:
+        description: |
+          Optional long display name including academic titles and full official name (e.g. "Dr. Maria Muster-Beispiel").
+        annotations:
+          description_de: |
+            Optionaler langer Anzeigename mit akademischen Titeln und vollständigem amtlichem Namen (z.B. "Dr. Maria Muster-Beispiel").
 
   Group:
     description: |
@@ -102,6 +116,20 @@ classes:
       - label_long
       - role_type
       - group_label
+    slot_usage:
+      label:
+        description: |
+          Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name).
+        annotations:
+          description_de: |
+            Obligatorischer Kurzname zur Identifikation der Person innerhalb der Organisation (z.B. mit Geburtsjahr zur Unterscheidung von Personen mit gleichem Namen).
+        required: true
+      label_long:
+        description: |
+          Optional long display name including academic titles and full official name (e.g. "Dr. Maria Muster-Beispiel").
+        annotations:
+          description_de: |
+            Optionaler langer Anzeigename mit akademischen Titeln und vollständigem amtlichem Namen (z.B. "Dr. Maria Muster-Beispiel").
 
   GroupReference:
     description: |
@@ -865,7 +893,7 @@ enums:
         annotations:
           description_de: |
             Gemäss amtlichen Katalog der Merkmale (Nr. 211) Registerharmonisierung: Name gemäss amtlichen Unterlagen. Der amtliche Name entspricht dem Namen im schweizerischen Zivilstandsregister. Bei ausländischen Personen ohne Zivilstandsereignis in der Schweiz entspricht dieser Name dem Namen im ausländischen Pass oder auf der Identitätskarte (siehe 214 sowie Weisung des SEM über die Bestimmung und Schreibweise der Namen von ausländischen Staatsangehörigen vom 1. Januar 2012. Im Ausnahmefall siehe auch "Name nach Deklaration" (z. B. Asyl), wenn keine amtlichen Dokumente vorliegen). Der amtliche Name kann aus einem oder mehreren Teilen bestehen.
-        meaning: act:vocabulary/NameTypeEnum/PersonOfficialName
+        meaning: https://register.ld.admin.ch/i14y/concept/personOfficialName
 
       PersonOriginalName:
         description: |
@@ -873,7 +901,7 @@ enums:
         annotations:
           description_de: |
             Gemäss amtlichen Katalog der Merkmale (Nr. 212) Registerharmonisierung: Angestammter Name gemäss amtlichen Unterlagen, den eine Person unmittelbar vor ihrer ersten Eheschliessung oder Begründung einer eingetragenen Partnerschaft geführt hat oder, gestützt auf einen Namensänderungsentscheid, als neuen Ledignamen erworben hat (Art. 24 Abs. 2 ZStV, SR 211.112.2).
-        meaning: act:vocabulary/NameTypeEnum/PersonOriginalName
+        meaning: https://register.ld.admin.ch/i14y/concept/personOriginalName
 
       PersonAllianceName:
         description: |
@@ -881,7 +909,7 @@ enums:
         annotations:
           description_de: |
             Gemäss amtlichen Katalog der Merkmale (Nr. 213) Registerharmonisierung: Der Allianzname zeigt die Verbindung von zwei Personen auf, die verheiratet sind oder in einer eingetragenen Partnerschaft leben. Ein bereits verwendeter Allianzname kann nach Auflösung der Ehe oder der Partnerschaft weiterverwendet werden, wenn der amtliche Name bei der Auflösung nicht geändert wurde. Dabei wird dem amtlichen Namen mittels Bindestrich der Ledigname des Partners/der Partnerin oder der eigene Ledigname angehängt. Der Allianzname kann auf Antrag im Pass oder auf der Identitätskarte eingetragen werden.
-        meaning: act:vocabulary/NameTypeEnum/PersonAllianceName
+        meaning: https://register.ld.admin.ch/i14y/concept/personAllianceName
 
       PersonNameOnForeignPassport:
         description: |
@@ -889,7 +917,7 @@ enums:
         annotations:
           description_de: |
             Gemäss amtlichen Katalog der Merkmale (Nr. 214) Registerharmonisierung: Für Personen mit ausländischer Nationalität. Dieser Name entspricht dem Eintrag im Reisepass gemäss der maschinenlesbaren Zone (MRZ) des Reisepasses. Enthält die MRZ abgekürzte Namen oder Vornamen, sind diese möglichst in voller Länge gemäss visuell lesbarer Zone des Ausweispapieres zu erfassen.
-        meaning: act:vocabulary/NameTypeEnum/PersonNameOnForeignPassport
+        meaning: https://register.ld.admin.ch/i14y/concept/personNameOnForeignPassport
 
       PersonAliasName:
         description: |
@@ -897,7 +925,7 @@ enums:
         annotations:
           description_de: |
             Gemäss amtlichen Katalog der Merkmale (Nr. 215) Registerharmonisierung: Name (z. B. Künstler- oder Ordensname), der aufgrund eines bewilligten Gesuchs geführt werden darf. Der Aliasname kann aus einem oder mehreren Teilen (z. B. auch aus Aliasvorname und Aliasname) bestehen.
-        meaning: act:vocabulary/NameTypeEnum/PersonAliasName
+        meaning: https://register.ld.admin.ch/i14y/concept/personAliasName
 
       PersonOtherName:
         description: |
@@ -905,7 +933,7 @@ enums:
         annotations:
           description_de: |
             Gemäss amtlichen Katalog der Merkmale (Nr. 216) Registerharmonisierung: Weitere amtliche Namen gemäss schweizerischen Zivilstandsdokumenten (Art. 24 Abs. 3 ZStV) oder ausländischen Dokumenten, welche weder Familiennamen noch Vornamen sind.
-        meaning: act:vocabulary/NameTypeEnum/PersonOtherName
+        meaning: https://register.ld.admin.ch/i14y/concept/personOtherName
 
       PersonDeclaredForeignerName:
         description: |
@@ -913,7 +941,7 @@ enums:
         annotations:
           description_de: |
             Gemäss amtlichen Katalog der Merkmale (Nr. 217) Registerharmonisierung: Für Personen mit ausländischer Nationalität, die keine offiziellen Dokumente besitzen (hauptsächlich im Asylbereich).
-        meaning: act:vocabulary/NameTypeEnum/PersonDeclaredForeignerName
+        meaning: https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerName
       
 
       # First Names
@@ -925,7 +953,7 @@ enums:
         annotations:
           description_de: |
             Gemäss amtlichen Katalog der Merkmale (Nr. 221) Registerharmonisierung: Vornamen gemäss Geburtsurkunde oder Zivilstandsregister/Infostar in der aufgeführten Reihenfolge bzw. gemäss ausländischen Ausweispapieren.
-        meaning: act:vocabulary/NameTypeEnum/PersonFirstName
+        meaning: https://register.ld.admin.ch/i14y/concept/personFirstName
 
       PersonCallFirstName:
         description: |
@@ -933,7 +961,7 @@ enums:
         annotations:
           description_de: |
             Gemäss amtlichen Katalog der Merkmale (Nr. 222) Registerharmonisierung: Eine Person hat das Recht, aus der Liste ihrer amtlichen Vornamen einen Rufnamen auszuwählen. Der Rufname kann aus einem oder mehreren Vornamen (aus den "amtlichen Vornamen") bestehen.
-        meaning: act:vocabulary/NameTypeEnum/PersonCallFirstName
+        meaning: https://register.ld.admin.ch/i14y/concept/personCallFirstName
 
       PersonFirstNameOnForeignPassport:
         description: |
@@ -941,7 +969,7 @@ enums:
         annotations:
           description_de: |
             Gemäss amtlichen Katalog der Merkmale (Nr. 223) Registerharmonisierung: Für Personen mit ausländischer Nationalität. Zu benutzen in Verbindung mit dem Namen im ausländischen Pass."
-        meaning: act:vocabulary/NameTypeEnum/PersonFirstNameOnForeignPassport
+        meaning: https://register.ld.admin.ch/i14y/concept/personFirstNameOnForeignPassport
       
       PersonDeclaredForeignerFirstName:
         description: |
@@ -949,7 +977,7 @@ enums:
         annotations:
           description_de: |
             Gemäss amtlichen Katalog der Merkmale (Nr. 224) Registerharmonisierung: Für Personen mit ausländischer Nationalität, die keine amtlichen Dokumente besitzen (hauptsächlich im Asylbereich). Zu benutzen in Verbindung mit dem Namen gemäss Deklaration.
-        meaning: act:vocabulary/NameTypeEnum/PersonDeclaredForeignerFirstName
+        meaning: https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerFirstName
 
 
   AddressTypeEnum:
