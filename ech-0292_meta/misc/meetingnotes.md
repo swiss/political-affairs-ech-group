@@ -4,7 +4,17 @@ _Internal note: update the next subgroup meeting in the [README](https://github.
 
 ## 1 June 2026 (15-16.00) on [Teams]([https://teams.microsoft.com/meet/3879512933733?p=rTdaRaFWPi0JWENkuE](https://teams.microsoft.com/meet/3879512933733?p=rTdaRaFWPi0JWENkuE))
 
-- 
+- [Dokumenttypen](https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=1490648211#gid=1490648211)
+    - Dokumentenkategorien (Spalte A) auf Basis von Dokumenttyp (B)
+    - law ist noch nicht so weit
+    - Vernehmlassungsdokumente gruppiert
+ - **To dos Dokumente:**
+     - Sync with/reuse ontologies (-> Benedikt)
+     - FRBR innerhalb von [Akoma Ntoso](https://docs.oasis-open.org/legaldocml/) und [ELI](https://op.europa.eu/en/web/eu-vocabularies/eli) ontology
+    - [E-Government-Schnittstelle für Dossiers und Dokumente](https://www.ech.ch/de/ech/ech-0039/3.1)
+- https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/schema_common.yaml
+    - description: Sprachen getrennt
+
 
 
 ## 20 April 2026
