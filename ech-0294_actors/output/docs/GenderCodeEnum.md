@@ -14,11 +14,11 @@ __
 URI: [act:GenderCodeEnum](https://ld.ech.ch/schema/0294/actors/GenderCodeEnum)
 
 ### Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| male | None | Male |
-| female | None | Female |
-| diverse | None | Diverse / non-binary |
+| Value | Description |
+| --- | --- |
+| male | Male |
+| female | Female |
+| diverse | Diverse / non-binary |
 
 
 

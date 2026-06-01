@@ -14,11 +14,11 @@ __
 URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 
 ### Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| privateAddress | None | Private address |
-| businessAddress | None | Business address |
-| localAddress | None | Local address |
+| Value | Description |
+| --- | --- |
+| privateAddress | Private address |
+| businessAddress | Business address |
+| localAddress | Local address |
 
 
 
