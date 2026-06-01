@@ -31,3 +31,32 @@ Folgende Themen wurden in der aufgeführten Reihenfolge seit 2025 in der Subgrup
 2. Gruppen / Organe / Interessengruppen: Parteien, Fraktionen, Gremien, Kommissionen, Verbände
 3. Interessenbindungen, Konflikte, Politikfinanzierung
 4. Verknüpfungen gleicher Personen über föderale Stufen hinweg
+
+## Allgemeine übergreifende Technische Informationen
+
+### Identifikatoren
+
+Das vorliegende Daten-Modell erlaubt es folgende Typen von Identifikatoren zu verwenden:
+
+1. **Lokaler Identifikator (`local_id`)**: Ein systeminterner Identifikator welcher vom publizierenden System genutzt wird, wenn nicht schon ausschliesslich eine `global_uri` benutzt wird. (Optional)
+
+2. **Globaler Identifikator (`global_uri`)**: Ein globaler Identifikator welcher über verschiedene Systeme hinweg gültig ist. Dieser besteht meist aus einem Namespace (Domainnamen) der publizierenden Organisation zusammen mit einem lokalen Identifikator. (z.B. https://ld.bs.ch/personen_id/3456) (Zwingend)
+
+3. **Wikidata Identifikator (`wikidata_uri`)**: Eine Wikidata Identifikator, um Personen und Gruppen Systemübergreifend zu identifizieren (z.B. http://www.wikidata.org/entity/Q115531 für Adolf Ogi) (Optional)
+
+
+### Temporale Validität
+
+Viele Attribute unterstützen zeitliche Gültigkeit durch `valid_from` und `valid_until`, wie z.B. Name, Adresse, Geschlecht, Staatsbürgerschaft, Beruf und Wahlkreis.
+
+**Beispiel:**
+```yaml
+names:
+  - name_type: officialLastName
+    value: Müller
+    valid_from: 1980-01-01
+    valid_until: 2010-06-15
+  - name_type: officialLastName
+    value: Meier-Müller
+    valid_from: 2010-06-16
+```
