@@ -317,10 +317,10 @@ slots:
   name_type:
     slot_uri: act:nameType
     description: |
-      Type of name.
+      Type of name according to eCH-0011 (personNameData).
     annotations:
       description_de: |
-        Typ des Namens.
+        Typ des Namens gemäss eCH-0011 (personNameData).
     range: NameTypeEnum
 
   address_type:
@@ -335,10 +335,10 @@ slots:
   address_uri:
     slot_uri: act:addressURI
     description: |
-      URI of the address.
+      URI of the address from the Swiss federal building address register. The layer can be accessed at https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis. Example of a valid URI: https://geo.ld.admin.ch/location/address/101904050
     annotations:
       description_de: |
-        URI der Adresse.
+        URI der Adresse aus dem eidgenössischen Gebäudeadressverzeichnis. Der Layer ist zugänglich unter https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis. Beispiel einer gültigen URI: https://geo.ld.admin.ch/location/address/101904050
     range: uriorcurie
 
   street_address:
@@ -882,10 +882,10 @@ slots:
 enums:
   NameTypeEnum:
     description: |
-      Categories of name types according to https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI according to I14Y identifier but as class and not as attribute. Descriptions and translations according to I14Y.
+      Categories of name types according to eCH-0011 (personNameData) and https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI according to I14Y identifier but as class and not as attribute. Descriptions and translations according to I14Y.
     annotations:
       description_de: |
-        Kategorien von Namenstypen gemäss https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI gemäss I14Y Identifier aber als Klasse und nicht als Atribut. Beschreibungen und Übersetzungen gemäss I14Y.
+        Kategorien von Namenstypen gemäss eCH-0011 (personNameData) und https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI gemäss I14Y Identifier aber als Klasse und nicht als Attribut. Beschreibungen und Übersetzungen gemäss I14Y.
     permissible_values:
       PersonOfficialName:
         description: |
