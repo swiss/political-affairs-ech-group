@@ -16,7 +16,7 @@ toc: false
 | **Ersetzt Version**   | 0.0                                                                                                                        |
 | **Voraussetzungen**   | eCH-0292 (Gemeinsame Datenelemente)                                                                                        |
 | **Beilagen**          | -                                                                                                                          |
-| **Sprachen**          | English (Original)                                                                                                         |
+| **Sprachen**          | Deutsch (Original) - English (Datamodel)                                                                                    |
 | **Autoren**           | Fachgruppe politische Geschäfte: Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi   |
 | **Herausgeber / Vertrieb** | Verein eCH, Räffelstr. 20, 8045                                                                                       |
 

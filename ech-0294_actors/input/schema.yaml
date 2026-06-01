@@ -118,10 +118,10 @@ classes:
 
   Membership:
     description: |
-      A membership relationship between a person and a group.
+      A membership relationship between a person and a group, representing formal affiliation (e.g., party member, commission member, parliamentarian). Distinct from InterestLink, which covers external interest bindings and conflicts of interest to organizations outside the actor schema.
     annotations:
       description_de: |
-        Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe.
+        Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe, die eine formale Zugehörigkeit darstellt (z.B. Parteimitglied, Kommissionsmitglied, Parlamentarier/in). Im Unterschied zu InterestLink, der externe Interessenbindungen und Interessenkonflikte zu Organisationen ausserhalb des Akteur-Schemas abbildet.
     mixins:
       - HasIdentification
       - HasCreationModificationDates
@@ -131,13 +131,14 @@ classes:
       - group_reference
       - role_type
       - authorized_to_vote
+      - is_active
 
   InterestLink:
     description: |
-      An interest link (conflict of interest, political financing) of a person to an organization.
+      An interest link (conflict of interest, political financing) of a person to an organization outside the actor schema.
     annotations:
       description_de: |
-        Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation.
+        Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation ausserhalb des Akteur-Schemas.
     mixins:
       - HasIdentification
       - HasCreationModificationDates
@@ -155,7 +156,7 @@ classes:
   
   Name:
     description: |
-      A name with a type (e.g., call name, official name) and a value.
+      A name with a type (e.g., call name, official name), a value, and a temporal validity.
     annotations:
       description_de: |
         Ein Name mit einem Typ (z.B. Rufname, amtlicher Name) und einem Wert und einer zeitlichen Gültigkeit.
@@ -194,7 +195,7 @@ classes:
       Citizenship (also used for Nationality) of a person indicating the country and temporal validity. If there is no `valid_from` provided, the information is not known. If it is known that the citizenship is valid from birth, the birthdate is to be repeated here. If there is no `valid_through`, the citizenship is still active.
     annotations:
       description_de: |
-        Staatsangehörigkeit einer Person unter Angabe des Landes und der zeitlichen Gültigkeit. Wenn kein `valid_from` angegeben ist, ist diese Information nicht bekannt. Ist bekannt, dass die Staatsangehörigkeit seit der Geburt gültig ist, ist das Geburtsdatum hier anzugeben. Wenn kein `valid_through` angegeben ist, ist die Staatsangehörigkeit weiterhin gültig.
+        Staatsangehörigkeit (wird auch für Nationalität verwendet) einer Person unter Angabe des Landes und der zeitlichen Gültigkeit. Wenn kein `valid_from` angegeben ist, ist diese Information nicht bekannt. Ist bekannt, dass die Staatsangehörigkeit seit der Geburt gültig ist, ist das Geburtsdatum hier anzugeben. Wenn kein `valid_through` angegeben ist, ist die Staatsangehörigkeit weiterhin gültig.
     mixins: 
       - HasTemporalValidity
     slots:
@@ -367,10 +368,11 @@ slots:
   gender_code:
     slot_uri: act:genderCode
     description: |
-      Gender code (e.g., according to ISO 5218).
+      Gender code. Recommended values: male, female, diverse.
     annotations:
       description_de: |
-        Geschlechtscode (z.B. gemäß ISO 5218).
+        Geschlechtscode. Empfohlene Werte: male, female, diverse .
+    range: GenderCodeEnum
 
   pronouns:
     slot_uri: act:pronouns
@@ -455,7 +457,7 @@ slots:
       Year of birth. Only to be used, if there is no full `birthDate` available.
     annotations:
       description_de: |
-        Geburtsjahr.
+        Geburtsjahr. Nur zu verwenden, wenn kein vollständiges `birthDate` vorhanden ist.
     range: integer
 
   birth_date:
@@ -464,7 +466,7 @@ slots:
       Exact date of birth if available and public. This field has precedence over the field `birthYear`.
     annotations:
       description_de: |
-        Genaues Geburtsdatum.
+        Genaues Geburtsdatum, sofern verfügbar und öffentlich. Dieses Feld hat Vorrang vor dem Feld `birthYear`.
     range: date
 
   death_date:
@@ -488,10 +490,10 @@ slots:
     range: GroupType
     slot_uri: act:groupType
     description: |
-      Link to the group type.
+      Type of group (e.g., party, commission, parliament, or similar). The exact naming and description of the group is provided via `label`.
     annotations:
       description_de: |
-        Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder ähnliches. Die genaue Bennenung und Beschreibung der Gruppierung wird über `name` gemacht.
+        Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder ähnliches. Die genaue Benennung und Beschreibung der Gruppierung wird über `label` gemacht.
 
   group_type_enum:
     slot_uri: act:groupTypeEnum
@@ -534,28 +536,28 @@ slots:
   parent_groups:
     slot_uri: act:parentGroup
     description: |
-      Link to parent groups.
+      Link to parent groups. For example, the parent party for cantonal parties, or to describe the hierarchy in the executive. Also used to link sub-commissions to commissions, or factions to both their parliament and their party. (parentGroup is typically used within the same group_type, but cross-type links are permitted, e.g., faction → parliament and faction → party.)
     annotations:
       description_de: |
-        Übergeordneten Gruppe. Zum Beispiel die Mutterpartei, zu Kantonalenparteien. Oder zur Beschreibung der Hierarchie in Exekutive. Verknüpfung von Subkommissionen mit Kommissionen. (parentGroup wird immer im selben group_type verwendet.)
+        Übergeordnete Gruppe. Zum Beispiel die Mutterpartei zu Kantonalparteien, oder zur Beschreibung der Hierarchie in der Exekutive. Auch zur Verknüpfung von Subkommissionen mit Kommissionen oder Fraktionen mit Parlament und Partei. (parentGroup wird typischerweise im selben group_type verwendet, typenübergreifende Verknüpfungen sind aber erlaubt, z.B. Fraktion → Parlament und Fraktion → Partei.)
     range: uriorcurie
     multivalued: true
     inlined_as_list: true
 
   spatial:
     description: |
-      Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).
+      Spatial reference (fos-municipality number, fos-canton number, or country). Formats: municipality: ld.admin.ch/municipality/1234, canton: ld.admin.ch/canton/23, country: ld.admin.ch/country/CHE.
     annotations:
       description_de: |
-        Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z.B. ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).
+        Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer oder Land). Formate: Gemeinde: ld.admin.ch/municipality/1234, Kanton: ld.admin.ch/canton/23, Bund: ld.admin.ch/country/CHE.
 
   contacts:
     slot_uri: act:contact
     description: |
-      Contact information (email, website, social media).
+      Contact information (email, website, social media). Guideline: email is quasi-mandatory and should always be provided where available.
     annotations:
       description_de: |
-        Kontaktinformationen (E-Mail, Website, Social Media).
+        Kontaktinformationen (E-Mail, Website, Social Media). Richtlinie: E-Mail ist quasi-obligatorisch und sollte wenn vorhanden immer angegeben werden.
     range: Contact
     multivalued: true
     inlined_as_list: true
@@ -583,18 +585,18 @@ slots:
   statutes_url:
     slot_uri: act:statutesURL
     description: |
-      URL to party statutes (optional for parties).
+      URL to party statutes (PDF or webpage; optional for parties).
     annotations:
       description_de: |
-        URL zu Parteistatuten (optional für Parteien).
+        URL zu Parteistatuten (PDF oder Webseite; optional für Parteien).
 
   party_color:
     slot_uri: act:partyColor
     description: |
-      Party color (optional for parties).
+      Party color as hexadecimal value (optional for parties, e.g., "#FF0000").
     annotations:
       description_de: |
-        Parteifarbe (optional für Parteien).
+        Parteifarbe als Hexadezimalwert (optional für Parteien, z.B. "#FF0000").
 
   person_reference:
     slot_uri: act:personReference
@@ -646,11 +648,20 @@ slots:
     range: boolean
     slot_uri: act:authorizedToVote
     description: |
-      Indicates if the person is authorized to vote.
+      Indicates if the person is authorized to vote in the group. Typically false for substitute members (when not deputizing), observers, secretaries, and guests.
     annotations:
       description_de: |
-        Gibt an, ob die Person stimmberechtigt ist.
+        Gibt an, ob die Person in der Gruppe stimmberechtigt ist. Typischerweise false für Ersatzmitglieder (wenn nicht im Einsatz), Beobachter/innen, Sekretär/innen und Gäste.
 
+  is_active:
+    range: boolean
+    slot_uri: act:isActive
+    description: |
+      Indicates if the membership is currently active. Can complement or replace `valid_from`/`valid_through`. If not set, activity is derived from the temporal validity fields.
+    annotations:
+      description_de: |
+        Gibt an, ob die Mitgliedschaft derzeit aktiv ist. Kann `valid_from`/`valid_through` ergänzen oder ersetzen. Wenn nicht gesetzt, wird die Aktivität aus den zeitlichen Gültigkeitsfeldern abgeleitet.
+  
   interest_type:
     range: InterestTypeEnum
     slot_uri: act:interestType
@@ -672,10 +683,11 @@ slots:
   organization_uid:
     slot_uri: act:organizationUid
     description: |
-      UID of the organization (for analysis with NOGA codes, etc.).
+      UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).
     annotations:
       description_de: |
         UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).
+    pattern: ^CHE-\d{3}\.\d{3}\.\d{3}$
 
   organization_address:
     slot_uri: act:organizationAddress
@@ -688,26 +700,27 @@ slots:
   legal_form:
     slot_uri: act:legalForm
     description: |
-      Legal form of the organization.
+      Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm
     annotations:
       description_de: |
-        Rechtsform der Organisation.
+        Rechtsform der Organisation. Siehe kontrolliertes Vokabular: https://register.ld.admin.ch/i14y/concept/legalForm
+    range: LegalFormEnum
 
   committee:
     slot_uri: act:committee
     description: |
-      Committee or board (e.g., foundation board, board of directors).
+      Committee or board within the organization (e.g., Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).
     annotations:
       description_de: |
-        Gremium (z.B. Stiftungsrat, Verwaltungsrat).
+        Gremium innerhalb der Organisation (z.B. Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).
 
   function_role:
     slot_uri: act:functionRole
     description: |
-      Function or role in the organization.
+      Function or role in the organization (e.g., Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in).
     annotations:
       description_de: |
-        Funktion oder Rolle in der Organisation.
+        Funktion oder Rolle in der Organisation (z.B. Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in).
 
   names:
     slot_uri: act:name
@@ -767,10 +780,10 @@ slots:
   trainings:
     slot_uri: act:training
     description: |
-      Trainings or educations of the person.
+      Trainings or educations of the person. Guideline: generally only provide the highest qualification obtained.
     annotations:
       description_de: |
-        Ausbildungen oder Bildungen der Person.
+        Ausbildungen oder Bildungen der Person. Richtlinie: Im Grundsatz nur die höchste Ausbildung angeben.
     range: Training
     multivalued: true
     inlined_as_list: true
@@ -820,7 +833,7 @@ slots:
   interest_links:
     slot_uri: act:interestLink
     description: |
-      Collection of interest links.range: InterestLink
+      Collection of interest links.
     annotations:
       description_de: |
         Sammlung von Interessenbindungen.
@@ -875,7 +888,7 @@ enums:
           According to the official catalogue of characters (No. 214) for the harmonisation of registers: For persons of foreign nationality. This name corresponds to the entry marked in the machine-readable zone of the passport. If this zone includes abbreviated surnames or first names, these must, as far as possible, be recorded in full, according to the entry in the passport.
         annotations:
           description_de: |
-            Gemäss amtlichen Katalog der Merkmale (Nr. 214) Registerharmonisierung: Für Personen mit ausländischer Nationalität. Dieser Name entspricht dem Eintrag im Reisepass gemäss der maschinenlesbaren Zone (MRZ) des Reisepasses. Enthält die MRZ abgekürzte Namen oder Vornamen, sind diese möglichst in voller Länge gemäss visuell lesbarer Zone des Ausweispapiers zu erfassen.
+            Gemäss amtlichen Katalog der Merkmale (Nr. 214) Registerharmonisierung: Für Personen mit ausländischer Nationalität. Dieser Name entspricht dem Eintrag im Reisepass gemäss der maschinenlesbaren Zone (MRZ) des Reisepasses. Enthält die MRZ abgekürzte Namen oder Vornamen, sind diese möglichst in voller Länge gemäss visuell lesbarer Zone des Ausweispapieres zu erfassen.
         meaning: act:vocabulary/NameTypeEnum/PersonNameOnForeignPassport
 
       PersonAliasName:
@@ -1083,10 +1096,10 @@ enums:
       party:
         meaning: act:enum/group_type/party
         description: |
-          Political party.
+          Political party at federal, cantonal, or municipal level. Each federal level is managed as its own group (e.g., national party, cantonal party, municipal party).
         annotations:
           description_de: |
-            Politische Partei.
+            Politische Partei auf Bundes-, Kantons- oder Gemeindeebene. Jede föderale Ebene wird als eigene Gruppe geführt (z.B. Bundespartei, Kantonspartei, Gemeindesektion).
       list:
         meaning: act:enum/group_type/list
         description: |
@@ -1097,17 +1110,17 @@ enums:
       workgroup:
         meaning: act:enum/group_type/workgroup
         description: |
-          Working group.
+          Ad-hoc working group, typically with a limited duration.
         annotations:
           description_de: |
-            Arbeitsgruppe.
+            Ad-hoc-Arbeitsgruppe, typischerweise mit begrenzter Laufzeit.
       parliament:
         meaning: act:enum/group_type/parliament
         description: |
-          Parliament at federal, cantonal, or municipal level.
+          Parliament at federal, cantonal, or municipal level (e.g., Federal Assembly, National Council, Council of States, Grand Council, cantonal parliament, municipal parliament).
         annotations:
           description_de: |
-            Parlament auf Bundes-, Kantons- oder Gemeindeebene.
+            Parlament auf Bundes-, Kantons- oder Gemeindeebene (z.B. Bundesversammlung, Nationalrat, Ständerat, Grosser Rat, Kantonsrat, Gemeindeparlament).
       delegation:
         meaning: act:enum/group_type/delegation
         description: |
@@ -1118,10 +1131,10 @@ enums:
       commission:
         meaning: act:enum/group_type/commission
         description: |
-          Commission (permanent or ad-hoc).
+          Commission (permanent or ad-hoc), including supervisory commissions (e.g., CPC), subject commissions, parliamentary investigation commissions (PIC), and audit commissions.
         annotations:
           description_de: |
-            Kommission (ständig oder ad-hoc).
+            Kommission (ständig oder ad-hoc), einschliesslich Aufsichtskommissionen (z.B. GPK), Sachkommissionen, Parlamentarische Untersuchungskommissionen (PUK) und Rechnungsprüfungskommissionen.
       faction:
         meaning: act:enum/group_type/faction
         description: |
@@ -1146,10 +1159,10 @@ enums:
       government:
         meaning: act:enum/group_type/government
         description: |
-          Government / Executive.
+          Government / Executive as a collective body (e.g., Federal Council, Cantonal Government, City or Municipal Council).
         annotations:
           description_de: |
-            Regierung / Exekutive.
+            Regierung / Exekutive als Gesamtorgan (z.B. Bundesrat, Regierungsrat, Stadtrat / Gemeinderat).
       department:
         meaning: act:enum/group_type/department
         description: |
@@ -1167,10 +1180,10 @@ enums:
       extraparliamentary_commission:
         meaning: act:enum/group_type/extraparliamentary_commission
         description: |
-          Extra-parliamentary commission (e.g., Bank Council).
+          Extra-parliamentary commission with a government mandate (e.g., Bank Council of the Swiss National Bank, FINMA).
         annotations:
           description_de: |
-            Außerparlamentarische Kommission (z.B. Bankrat).
+            Ausserparlamentarische Kommission mit Regierungsauftrag (z.B. Bankrat der Schweizerischen Nationalbank, FINMA).
       interest_group:
         meaning: act:enum/group_type/interest_group
         description: |
@@ -1181,10 +1194,10 @@ enums:
       control_body:
         meaning: act:enum/group_type/control_body
         description: |
-          Control body (e.g., financial control).
+          Control or supervisory body (e.g., Federal Finance Control EFC, supervisory authority AB-BA).
         annotations:
           description_de: |
-            Kontrollorgan (z.B. Finanzkontrolle).
+            Kontroll- oder Aufsichtsorgan (z.B. Eidgenössische Finanzkontrolle EFK, Aufsichtsbehörde AB-BA).
       parliamentary_services:
         meaning: act:enum/group_type/parliamentary_services
         description: |
@@ -1195,10 +1208,10 @@ enums:
       court:
         meaning: act:enum/group_type/court
         description: |
-          Court / Judiciary.
+          Court / Judiciary at any level (e.g., Federal Court, Cantonal Court, District Court).
         annotations:
           description_de: |
-            Gericht / Judikative.
+            Gericht / Judikative auf jeder Ebene (z.B. Bundesgericht, Kantonsgericht, Bezirksgericht).
       association:
         meaning: act:enum/group_type/association
         description: |
@@ -1216,10 +1229,10 @@ enums:
       university:
         meaning: act:enum/group_type/university
         description: |
-          University or educational institution.
+          University or educational institution as an outsourced provider of public tasks.
         annotations:
           description_de: |
-            Universität oder Bildungseinrichtung.
+            Universität oder Bildungseinrichtung als ausgelagerter Träger öffentlicher Aufgaben.
       other:
         meaning: act:enum/group_type/other
         description: |
@@ -1238,21 +1251,315 @@ enums:
       professional_activity:
         meaning: act:enum/interest_type/professional_activity
         description: |
-          Professional activity.
+          Professional activity outside the political mandate (e.g., employment, self-employment, consulting, board mandates in private companies).
         annotations:
           description_de: |
-            Berufliche Tätigkeit.
+            Berufliche Tätigkeit ausserhalb des politischen Mandats (z.B. Anstellung, selbstständige Tätigkeit, Beratungsmandate, Verwaltungsratsmandate in Privatunternehmen).
       political_office:
         meaning: act:enum/interest_type/political_office
         description: |
-          Political office.
+          Political office or mandate at other federal levels or in other bodies (e.g., cantonal/municipal parliament membership, government council, extra-parliamentary commission).
         annotations:
           description_de: |
-            Politische Ämter.
+            Politisches Amt oder Mandat auf anderen föderalen Ebenen oder in anderen Körperschaften (z.B. Mitgliedschaft in kantonalen/kommunalen Parlamenten, Regierungsrat, ausserparlamentarische Kommission).
       association:
         meaning: act:enum/interest_type/association
         description: |
-          Association membership.
+          Membership in associations, federations, or interest organizations (e.g., industry associations, professional associations, lobby organizations, foundations, charitable associations).
         annotations:
           description_de: |
-            Vereinsmitgliedschaft.
+            Mitgliedschaft in Vereinen, Verbänden oder Interessenorganisationen (z.B. Branchenverbände, Berufsverbände, Lobbyorganisationen, Stiftungen, gemeinnützige Vereine).
+
+  GenderCodeEnum:
+    description: |
+      Gender codes for persons.
+    annotations:
+      description_de: |
+        Geschlechtscodes für Personen.
+    permissible_values:
+      male:
+        description: Male.
+        annotations:
+          description_de: Männlich.
+      female:
+        description: Female.
+        annotations:
+          description_de: Weiblich.
+      diverse:
+        description: Diverse / non-binary.
+        annotations:
+          description_de: Divers / nicht-binär.
+
+  LegalFormEnum:
+    description: |
+      Legal forms based on the Swiss UID register codelist (eCH-0097). See https://register.ld.admin.ch/i14y/concept/legalForm
+    annotations:
+      description_de: |
+        Rechtsformen basierend auf der Codeliste des eidgenössischen UID-Registers (eCH-0097). Siehe https://register.ld.admin.ch/i14y/concept/legalForm
+    permissible_values:
+      "0101":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0101
+        description: Sole proprietorship.
+        annotations:
+          description_de: Einzelunternehmen.
+          description_fr: Entreprise individuelle.
+          description_it: Impresa individuale.
+      "0103":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0103
+        description: General partnership (GP).
+        annotations:
+          description_de: Kollektivgesellschaft (KlG).
+          description_fr: Société en nom collectif (SNC).
+          description_it: Società in nome collettivo (SNC).
+      "0104":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0104
+        description: Limited partnership (LP).
+        annotations:
+          description_de: Kommanditgesellschaft (KmG).
+          description_fr: Société en commandite (SCm).
+          description_it: Società in accomandita (SAc).
+      "0105":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0105
+        description: Corporation with unlimited partners (CUP).
+        annotations:
+          description_de: Kommanditaktiengesellschaft (KmAG).
+          description_fr: Société en commandite par actions (SCmA).
+          description_it: Società in accomandita per azioni (SAcA).
+      "0106":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0106
+        description: Corporation (Ltd).
+        annotations:
+          description_de: Aktiengesellschaft (AG).
+          description_fr: Société anonyme (SA).
+          description_it: Società anonima (SA).
+      "0107":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0107
+        description: Limited liability company (LLC).
+        annotations:
+          description_de: Gesellschaft mit beschränkter Haftung (GmbH).
+          description_fr: Société à responsabilité limitée (Sàrl).
+          description_it: Società a garanzia limitata (Sagl).
+      "0108":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0108
+        description: Cooperative.
+        annotations:
+          description_de: Genossenschaft.
+          description_fr: Société coopérative.
+          description_it: Società cooperativa.
+      "0109":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0109
+        description: Association.
+        annotations:
+          description_de: Verein.
+          description_fr: Association.
+          description_it: Associazione.
+      "0110":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0110
+        description: Foundation.
+        annotations:
+          description_de: Stiftung.
+          description_fr: Fondation.
+          description_it: Fondazione.
+      "0111":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0111
+        description: Branch of a foreign company.
+        annotations:
+          description_de: Zweigniederlassung eines ausländischen Unternehmens.
+          description_fr: Succursale d'une entreprise étrangère.
+          description_it: Succursale di un'impresa straniera.
+      "0113":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0113
+        description: Special legal form.
+        annotations:
+          description_de: Besondere Rechtsform.
+          description_fr: Forme juridique particulière.
+          description_it: Forma giuridica speciale.
+      "0114":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0114
+        description: Limited Partnership for collective investment schemes (LPCI).
+        annotations:
+          description_de: Kommanditgesellschaft für kollektive Kapitalanlagen (KmGK).
+          description_fr: Société en commandite de placements collectifs (SCmPC).
+          description_it: Società in accomandita per investimenti collettivi di capitale (SAcCol).
+      "0115":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0115
+        description: Limited Partnership for collective investment schemes with a variable capital (SICAV).
+        annotations:
+          description_de: Investmentgesellschaft mit variablem Kapital (SICAV).
+          description_fr: Société d'investissement à capital variable (SICAV).
+          description_it: Società d'investimento a capitale variabile (SICAV).
+      "0116":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0116
+        description: Limited Partnership for collective investment schemes with a fixed capital (SICAF).
+        annotations:
+          description_de: Investmentgesellschaft mit festem Kapital (SICAF).
+          description_fr: Société d'investissement à capital fixe (SICAF).
+          description_it: Società d'investimento a capitale fisso (SICAF).
+      "0117":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0117
+        description: Public-law institution.
+        annotations:
+          description_de: Institut des öffentlichen Rechts.
+          description_fr: Institut de droit public.
+          description_it: Istituto di diritto pubblico.
+      "0118":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0118
+        description: Non-commercial power of attorney.
+        annotations:
+          description_de: Nichtkaufmännische Prokura.
+          description_fr: Procuration non-commerciale.
+          description_it: Procura non commerciale.
+      "0119":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0119
+        description: Representative of the community of property.
+        annotations:
+          description_de: Haupt von Gemeinderschaft.
+          description_fr: Représentant d'indivision.
+          description_it: Rappresentanti dell'indivisione.
+      "0151":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0151
+        description: Branch.
+        annotations:
+          description_de: Zweigniederlassung.
+          description_fr: Succursale.
+          description_it: Succursale.
+      "0220":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0220
+        description: Administrative unit of the Confederation.
+        annotations:
+          description_de: Verwaltungseinheit des Bundes.
+          description_fr: Unité de l'administration fédérale.
+          description_it: Unità amministrativa della Confederazione.
+      "0221":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0221
+        description: Administrative unit of the canton.
+        annotations:
+          description_de: Verwaltungseinheit des Kantons.
+          description_fr: Unité de l'administration cantonale.
+          description_it: Unità amministrativa del cantone.
+      "0222":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0222
+        description: Administrative unit of the district.
+        annotations:
+          description_de: Verwaltungseinheit des Bezirks.
+          description_fr: Unité de l'administration du district.
+          description_it: Unità amministrativa del distretto.
+      "0223":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0223
+        description: Administrative unit of the commune.
+        annotations:
+          description_de: Verwaltungseinheit der Gemeinde.
+          description_fr: Unité de l'administration communale.
+          description_it: Unità amministrativa del comune.
+      "0224":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0224
+        description: Other public-law administrative unit.
+        annotations:
+          description_de: Andere öffentlich-rechtliche Verwaltungseinheit.
+          description_fr: Autre unité de l'administration de droit public.
+          description_it: Altra unità amministrativa di diritto pubblico.
+      "0230":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0230
+        description: Public-law institution of the Confederation.
+        annotations:
+          description_de: Einrichtung des öffentlichen Rechts des Bundes.
+          description_fr: Institution de droit public fédérale.
+          description_it: Istituzione di diritto pubblico della Confederazione.
+      "0231":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0231
+        description: Public-law institution of the canton.
+        annotations:
+          description_de: Einrichtung des öffentlichen Rechts des Kantons.
+          description_fr: Institution de droit public cantonale.
+          description_it: Istituzione di diritto pubblico del cantone.
+      "0232":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0232
+        description: Public-law institution of the district.
+        annotations:
+          description_de: Einrichtung des öffentlichen Rechts des Bezirks.
+          description_fr: Institution de droit public du district.
+          description_it: Istituzione di diritto pubblico del distretto.
+      "0233":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0233
+        description: Public-law institution of the commune.
+        annotations:
+          description_de: Einrichtung des öffentlichen Rechts der Gemeinde.
+          description_fr: Institution de droit public communale.
+          description_it: Istituzione di diritto pubblico del comune.
+      "0234":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0234
+        description: Other public-law institution.
+        annotations:
+          description_de: Andere Einrichtung des öffentlichen Rechts.
+          description_fr: Autre institution de droit public.
+          description_it: Altra istituzione di diritto pubblico.
+      "0302":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0302
+        description: Simple partnership.
+        annotations:
+          description_de: Einfache Gesellschaft.
+          description_fr: Société simple.
+          description_it: Società semplice.
+      "0312":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0312
+        description: Permanent establishment or swiss representation of a foreign company.
+        annotations:
+          description_de: Betriebsstätte oder Schweizer Vertretung eines ausländischen Unternehmens.
+          description_fr: Établissement stable ou représentant suisse d'une entreprise étrangère.
+          description_it: Stabilimento o rappresentanza svizzera di un'impresa straniera.
+      "0327":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0327
+        description: Foreign public company.
+        annotations:
+          description_de: Ausländisches öffentliches Unternehmen.
+          description_fr: Entreprise publique étrangère.
+          description_it: Impresa pubblica estera.
+      "0328":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0328
+        description: Foreign public administration.
+        annotations:
+          description_de: Ausländische öffentliche Verwaltung.
+          description_fr: Administration publique étrangère.
+          description_it: Amministrazione pubblica estera.
+      "0329":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0329
+        description: International organisation.
+        annotations:
+          description_de: Internationale Organisation.
+          description_fr: Organisation internationale.
+          description_it: Organizzazione internazionale.
+      "0355":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0355
+        description: Other cooperative.
+        annotations:
+          description_de: Übrige Genossenschaft.
+          description_fr: Autre société coopérative.
+          description_it: Altra società cooperativa.
+      "0361":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0361
+        description: Trust.
+        annotations:
+          description_de: Trust.
+          description_fr: Trust.
+          description_it: Trust.
+      "0362":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0362
+        description: Fund.
+        annotations:
+          description_de: Fonds.
+          description_fr: Fonds.
+          description_it: Fondo.
+      "0441":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0441
+        description: Foreign company.
+        annotations:
+          description_de: Ausländisches Unternehmen.
+          description_fr: Entreprise étrangère.
+          description_it: Impresa estera.
+      "0571":
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0571
+        description: Legal form undefined or unknown.
+        annotations:
+          description_de: Rechtsform unbestimmt oder unbekannt.
+          description_fr: Forme juridique non déterminée ou inconnue.
+          description_it: Forma giuridica indefinita o sconosciuta.
