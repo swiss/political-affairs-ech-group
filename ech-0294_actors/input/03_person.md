@@ -31,4 +31,6 @@ Notiz: *Die Verknüpfung von Personen im öffentlichen Interesse (Politikerinnen
 
 {{include:ech-0294_actors/output/docs/Training.md}} 
 
+{{include:ech-0294_actors/output/docs/TrainingTypeEnum.md}} 
+
 {{include:ech-0294_actors/output/docs/ElectoralDistrict.md}}
