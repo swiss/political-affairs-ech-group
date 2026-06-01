@@ -159,7 +159,13 @@ classes:
       - group_reference
       - role_type
       - authorized_to_vote
-      - is_active
+    slot_usage:
+      is_active:
+        description: |
+          Indicates if the membership is currently active. Can complement or replace `valid_from`/`valid_through`. If not set, activity is derived from the temporal validity fields.
+        annotations:
+          description_de: |
+            Gibt an, ob die Mitgliedschaft derzeit aktiv ist. Kann `valid_from`/`valid_through` ergänzen oder ersetzen. Wenn nicht gesetzt, wird die Aktivität aus den zeitlichen Gültigkeitsfeldern abgeleitet.
 
   InterestLink:
     description: |
