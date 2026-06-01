@@ -7,6 +7,7 @@
 Ein Beispiel: Eine Motion verweist auf die Person, die sie eingereicht hat. Zusätzlich zum Link auf die vollständige Personen-Entität speichert die Motion lokal Informationen wie die politische Partei oder die Rolle der Person **zum Zeitpunkt der Einreichung**. Wechselt die Person später die Partei oder die Rolle, bleibt die Information in der Motion dennoch korrekt und unveränderlich.
 
 Dies dient drei Zwecken:
+
 - **Nützliche lokale Daten** ohne aufwändige Abfragen der vollständigen Entität
 - **Keine Redundanz**, da nicht alle Informationen bei jeder Erwähnung wiederholt werden müssen
 - **Implizite Versionierung**, da die lokale Referenz unverändert bleibt, auch wenn sich die verknüpfte Entität später ändert

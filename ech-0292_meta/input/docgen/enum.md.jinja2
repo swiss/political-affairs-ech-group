@@ -93,7 +93,8 @@ URI: {{ gen.uri_link(element) }}
 | Value | Description |
 | --- | --- |
 {% for pv in element.permissible_values.values() -%}
-| {{ pv.text }}{% if pv.meaning %} ({{ pv.meaning }}){% endif %} | {{ pv.description|enshorten }} |
+| {{ pv.text }} | {{ pv.meaning }} |
+| | {{ pv.description|enshorten }} |
 {% endfor %}
 {%- endif %}
 {% else %}
