@@ -6,7 +6,7 @@ search:
 # Slot: label_long 
 
 
-_Option to assign an extended label to a structured piece of information (e.g., display name with title, position, etc.)._
+_Assign an extended label to a structured piece of information (e.g., display name with title, position, etc.)._
 
 __
 
@@ -73,8 +73,8 @@ annotations:
       zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.).
 
       '
-description: 'Option to assign an extended label to a structured piece of information
-  (e.g., display name with title, position, etc.).
+description: 'Assign an extended label to a structured piece of information (e.g.,
+  display name with title, position, etc.).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

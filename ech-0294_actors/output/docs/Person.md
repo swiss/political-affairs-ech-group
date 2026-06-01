@@ -18,7 +18,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| label | 1 <br/> [String](String.md) | Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name).  |
+| label | 1 <br/> [String](String.md) | Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name). Preferred: PersonOfficialName combined with PersonCallFirstName.  |
 | label_long | 0..1 <br/> [String](String.md) | Optional long display name including academic titles and full official name (e.g. "Dr. Maria Muster-Beispiel").  |
 | birth_year | 0..1 <br/> [Integer](Integer.md) | Year of birth. Only to be used, if there is no full `birthDate` available.  |
 | birth_date | 0..1 <br/> [Date](Date.md) | Exact date of birth if available and public. This field has precedence over the field `birthYear`.  |
@@ -101,7 +101,7 @@ occupations:
   valid_from: 1964-01-01
   is_active: true
 trainings:
-- training_type: uni
+- training_type: '3223'
   value: dipl. nat. ETH
 contacts:
 - contact_type: email
@@ -154,7 +154,7 @@ occupations:
   is_active: false
   is_paid: true
 trainings:
-- training_type: schulabschluss
+- training_type: '2421'
   value: High School Diploma
 contacts:
 - contact_type: email

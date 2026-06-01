@@ -67,12 +67,13 @@ classes:
     slot_usage:
       label:
         description: 'Mandatory short display name to identify the person within the organisation (e.g. with added birth year
-          to distinguish persons with the same name).
+          to distinguish persons with the same name). Preferred: PersonOfficialName combined with PersonCallFirstName.
 
           '
         annotations:
           description_de: 'Obligatorischer Kurzname zur Identifikation der Person innerhalb der Organisation (z.B. mit Geburtsjahr
-            zur Unterscheidung von Personen mit gleichem Namen).
+            zur Unterscheidung von Personen mit gleichem Namen). Bevorzugt: PersonOfficialName (amtlicher Name) kombiniert
+            mit PersonCallFirstName (Rufname).
 
             '
         required: true
@@ -212,7 +213,7 @@ classes:
     slots:
     - person_reference
     - interest_type
-    - organization_label
+    - organization_name
     - organization_uid
     - organization_address
     - legal_form
@@ -306,8 +307,8 @@ classes:
     - is_paid
     - occupation_code
     - label
-    - enterprise_uid
-    - enterprise
+    - organization_uid
+    - organization_name
   Training:
     description: 'Training or education of a person indicating a type (e.g., school diploma, university degree, military service),
       a label, an ISCO-19 code, and temporal validity.
@@ -461,11 +462,11 @@ slots:
     range: boolean
   country:
     slot_uri: act:country
-    description: 'ISO 3166 country code.
+    description: 'ISO 3166-1 alpha-2 country code.
 
       '
     annotations:
-      description_de: 'ISO 3166 Ländercode.
+      description_de: 'ISO 3166-1 alpha-2 Ländercode.
 
         '
     pattern: ^[A-Z]{2}$
@@ -517,24 +518,6 @@ slots:
       description_de: 'ISCO-19 Code der Tätigkeit.
 
         '
-  enterprise_uid:
-    slot_uri: act:enterpriseUid
-    description: 'UID of the enterprise.
-
-      '
-    annotations:
-      description_de: 'UID des Unternehmens.
-
-        '
-  enterprise:
-    slot_uri: act:enterprise
-    description: 'Name of the enterprise.
-
-      '
-    annotations:
-      description_de: 'Name des Unternehmens.
-
-        '
   training_type:
     slot_uri: act:trainingType
     description: 'Type of training or education.
@@ -546,8 +529,8 @@ slots:
         '
     range: TrainingTypeEnum
     examples:
-    - value: schulabschluss
-    - value: uni
+    - value: '2421'
+    - value: '3223'
   training_code:
     slot_uri: act:trainingCode
     description: 'ISCO-19 code of the training or education.
@@ -839,19 +822,15 @@ slots:
     examples:
     - value: association
     - value: professional_activity
-  organization_label:
-    slot_uri: act:organizationLabel
-    description: 'Label of the organization.
+  organization_name:
+    slot_uri: act:organizationName
+    description: 'Name of the organization or enterprise.
 
       '
     annotations:
-      description_de: 'Bezeichnung der Organisation.
+      description_de: 'Name der Organisation oder des Unternehmens.
 
         '
-    examples:
-    - value: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
-    - value: Allianz Sicherheit Schweiz, Baden
-    - value: Birchmeier Holding AG, Döttingen
   organization_uid:
     slot_uri: act:organizationUid
     description: 'UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).
@@ -1242,62 +1221,323 @@ enums:
 
             '
   TrainingTypeEnum:
-    description: 'Types of training or education.
+    description: 'Types of training or education based on the Swiss BFS LEVEL_EDUC codelist.
 
       '
     annotations:
-      description_de: 'Ausbildungs- oder Bildungstypen.
+      description_de: 'Ausbildungs- oder Bildungstypen basierend auf der BFS LEVEL_EDUC Codeliste.
 
         '
     permissible_values:
-      schulabschluss:
-        description: 'School diploma.
-
-          '
+      '10':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/10
+        description: Maximum compulsory school.
         annotations:
-          description_de: 'Schulabschluss.
-
-            '
-      efz:
-        description: 'Federal certificate of proficiency (EFZ).
-
-          '
+          description_de: Maximal obligatorische Schule.
+          description_fr: École obligatoire au maximum.
+          description_it: Scuola dell'obbligo al massimo.
+      '110':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/110
+        description: No education.
         annotations:
-          description_de: 'Eidgenössisches Fähigkeitszeugnis (EFZ).
-
-            '
-      uni:
-        description: 'University degree.
-
-          '
+          description_de: Keine Ausbildung.
+          description_fr: Aucune formation.
+          description_it: Nessuna formazione.
+      '120':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/120
+        description: Compulsory school attended but not completed.
         annotations:
-          description_de: 'Universitätsabschluss.
-
-            '
-      armee:
-        description: 'Military service.
-
-          '
+          description_de: Obligatorische Schule besucht, aber nicht abgeschlossen.
+          description_fr: École obligatoire inachevée.
+          description_it: Scuola dell'obbligo non portata a termine.
+      '130':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/130
+        description: Compulsory school.
         annotations:
-          description_de: 'Militärdienst.
-
-            '
-      zivi:
-        description: 'Civil service.
-
-          '
+          description_de: Obligatorische Schule.
+          description_fr: École obligatoire.
+          description_it: Scuola dell'obbligo.
+      '140':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/140
+        description: 1 year of education / transitional education.
         annotations:
-          description_de: 'Zivildienst.
-
-            '
-      zischutz:
-        description: 'Civil protection.
-
-          '
+          description_de: 1-jährige Ausbildung / Brückenangebot.
+          description_fr: Formation d'un an / offre de transition.
+          description_it: Formazione di 1 anno / formazione transitoria.
+      '20':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/20
+        description: Upper secondary level.
         annotations:
-          description_de: 'Zivilschutz.
-
-            '
+          description_de: Sekundarstufe II.
+          description_fr: Degré secondaire II.
+          description_it: Livello secondario II.
+      '22':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/22
+        description: Upper secondary level - Vocational education and training (VET).
+        annotations:
+          description_de: Sekundarstufe II - Berufsbildung.
+          description_fr: Degré secondaire II - formation professionnelle.
+          description_it: Livello secondario II - formazione professionale.
+      '220':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/220
+        description: Apprenticeship in a company (EFZ/EBA) / basic vocational training / vocational school / trade school.
+        annotations:
+          description_de: Berufslehre im Betrieb (EFZ / EBA) / Anlehre / Berufsschule / Handelsschule.
+          description_fr: Apprentissage en entreprise (CFC/AFP) / formation professionnelle élémentaire / école professionnelle
+            / école de commerce.
+          description_it: Tirocinio in azienda (CFP/AFC) / formazione professionale di base / scuola professionale / scuola
+            di commercio.
+      '2210':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2210
+        description: Apprenticeship 2 years (EBA) / basic vocational training / vocational school / trade school.
+        annotations:
+          description_de: 2-jährige Berufslehre im Betrieb (EBA) / Anlehre / Berufsschule / Handelsschule.
+          description_fr: Apprentissage en entreprise (AFP) 2 ans / formation prof. élémentaire / école professionnelle /
+            école de commerce.
+          description_it: Tirocinio in azienda (AFC) 2 anni / formazione professionale di base / scuola professionale / scuola
+            di commercio.
+      '2211':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2211
+        description: Apprenticeship in a company 2 years (EBA) / basic vocational training.
+        annotations:
+          description_de: 2-jährige Berufslehre im Betrieb (EBA) / Anlehre.
+          description_fr: Apprentissage en entreprise d'une durée de 2 ans (AFP) / formation professionnelle élémentaire.
+          description_it: Tirocinio in azienda della durata di 2 anni (AFC) / formazione professionale di base.
+      '2212':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2212
+        description: Vocational school / trade school 2 years.
+        annotations:
+          description_de: 2-jährige Berufsschule / Handelsschule.
+          description_fr: École professionnelle / école de commerce d'une durée de 2 ans.
+          description_it: Scuola professionale / scuola di commercio della durata di 2 anni.
+      '2220':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2220
+        description: Apprenticeship 3-4 years (EFZ) / vocational school / trade school.
+        annotations:
+          description_de: 3- bis 4-jährige Berufslehre im Betrieb (EFZ) / Berufsschule / Handelsschule.
+          description_fr: Apprentissage en entreprise (CFC) 3-4 ans / école professionnelle / école de commerce.
+          description_it: Tirocinio in azienda (CFP) 3-4 anni / scuola professionale / scuola di commercio.
+      '2221':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2221
+        description: Apprenticeship in a company 3-4 years (EFZ).
+        annotations:
+          description_de: 3- bis 4-jährige Berufslehre im Betrieb (EFZ).
+          description_fr: Apprentissage en entreprise d'une durée de 3 à 4 ans (CFC).
+          description_it: Tirocinio in azienda della durata di 3 a 4 anni (CFP).
+      '2222':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2222
+        description: Vocational school / trade school 3-4 years.
+        annotations:
+          description_de: 3- bis 4-jährige Berufsschule / Handelsschule.
+          description_fr: École professionnelle / école de commerce d'une durée de 3 a 4 ans.
+          description_it: Scuola professionale / scuola di commercio della durata di 3 a 4 anni.
+      '24':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/24
+        description: Upper secondary level - general education.
+        annotations:
+          description_de: Sekundarstufe II - Allgemeinbildung.
+          description_fr: Degré secondaire II - formation générale.
+          description_it: Livello secondario II - formazione generale.
+      '241':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/241
+        description: Upper secondary specialised schools / diploma middle school.
+        annotations:
+          description_de: Fachmittelschule / Diplommittelschule.
+          description_fr: École de culture générale / école de degré diplôme.
+          description_it: Scuola specializzata / scuola di diploma.
+      '2411':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2411
+        description: Upper secondary specialised schools / diploma middle school 2 years.
+        annotations:
+          description_de: 2-jährige Fachmittelschule / Diplommittelschule.
+          description_fr: École de culture générale / école de degré diplôme d'une durée de 2 ans.
+          description_it: Scuola specializzata / scuola di diploma della durata di 2 anni.
+      '2412':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2412
+        description: Upper secondary specialised schools / diploma middle school 3 years.
+        annotations:
+          description_de: 3-jährige Fachmittelschule / Diplommittelschule.
+          description_fr: École de culture générale / école de degré diplôme d'une durée de 3 ans.
+          description_it: Scuola specializzata / scuola di diploma della durata di 3 anni.
+      '242':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/242
+        description: Baccalaureate / teaching diploma.
+        annotations:
+          description_de: Gymnasiale Maturität / Lehrkräfteseminar.
+          description_fr: Maturité ou école normale.
+          description_it: Maturità liceale / scuola magistrale o abilitazione all'insegnamento.
+      '2421':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2421
+        description: Baccalaureate.
+        annotations:
+          description_de: Gymnasiale Maturität.
+          description_fr: Maturité gymnasiale.
+          description_it: Maturità liceale.
+      '2422':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2422
+        description: Teaching diploma.
+        annotations:
+          description_de: Lehrkräfteseminar.
+          description_fr: Brevet d'enseignement.
+          description_it: Scuola magistrale o abilitazione all'insegnamento.
+      '243':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/243
+        description: Vocational / specialised baccalaureate.
+        annotations:
+          description_de: Berufs- oder Fachmaturität.
+          description_fr: Maturité professionnelle / spécialisée.
+          description_it: Maturità professionale / specializzata.
+      '2431':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2431
+        description: Vocational baccalaureate.
+        annotations:
+          description_de: Berufsmaturität.
+          description_fr: Maturité professionnelle.
+          description_it: Maturità professionale.
+      '2432':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2432
+        description: Specialised baccalaureate.
+        annotations:
+          description_de: Fachmaturität.
+          description_fr: Maturité spécialisée.
+          description_it: Maturità specializzata.
+      '30':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/30
+        description: Tertiary level.
+        annotations:
+          description_de: Tertiärstufe.
+          description_fr: Degré tertiaire.
+          description_it: Livello terziario.
+      '31':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/31
+        description: Professional education.
+        annotations:
+          description_de: Höhere Berufsbildung.
+          description_fr: Formation professionnelle supérieure.
+          description_it: Formazione professionale superiore.
+      '310':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/310
+        description: Professional examination with federal diploma / advanced federal diploma / PET diploma.
+        annotations:
+          description_de: Berufsprüfung mit eidg. Fachausweis / Höhere Fachprüfung mit eidg. Diplom / Meisterdiplom.
+          description_fr: Examen professionnel avec brevet fédéral / examen professionnel supérieur avec diplôme fédéral/maîtrise.
+          description_it: Esame professionale superiore con attestato professionale federale / esame professionale superiore
+            con diploma federale / maestria federale.
+      '311':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/311
+        description: Professional examination with federal diploma of higher education.
+        annotations:
+          description_de: Berufsprüfung mit eidg. Fachausweis.
+          description_fr: Examen professionnel avec brevet fédéral.
+          description_it: Esame professionale superiore con attestato professionale federale.
+      '312':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/312
+        description: Professional examination with advanced federal diploma of higher education / PET diploma.
+        annotations:
+          description_de: Höhere Fachprüfung mit eidg. Diplom / Meisterdiplom.
+          description_fr: Examen professionnel supérieur avec diplôme fédéral/maîtrise.
+          description_it: Esame professionale superiore con diploma federale / maestria federale.
+      '313':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/313
+        description: College of Higher Education.
+        annotations:
+          description_de: Höhere Fachschule.
+          description_fr: École supérieure (ES).
+          description_it: Scuola specializzata superiore (SSS).
+      '3131':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3131
+        description: College of Higher Education 2 years full time or 3 years part-time.
+        annotations:
+          description_de: Höhere Fachschule (HF) 2 Jahre Voll- oder 3 Jahre Teilzeitstudium.
+          description_fr: École supérieure (ES) 2 ans plein temps ou 3 ans temps partiel.
+          description_it: Scuola specializzata superiore (SSS) 2 anni a tempo pieno o 3 anni a tempo parziale.
+      '3132':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3132
+        description: College of Higher Education 3 years full time or 4 years part-time.
+        annotations:
+          description_de: Höhere Fachschule (HF) 3 Jahre Voll- oder 4 Jahre Teilzeitstudium.
+          description_fr: École supérieure (ES) 3 ans plein temps ou 4 ans temps partiel.
+          description_it: Scuola specializzata superiore (SSS) 3 anni a tempo pieno o 4 anni a tempo parziale.
+      '32':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/32
+        description: Higher education institutions.
+        annotations:
+          description_de: Hochschule.
+          description_fr: Haute école.
+          description_it: Scuola universitaria.
+      '321':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/321
+        description: Bachelor universities, institutes of technology, universities of applied sciences, universities of teacher
+          education.
+        annotations:
+          description_de: Bachelor Universität, ETH, Fachhochschule, pädagogische Hochschule (inklusive Diplom FH / PH).
+          description_fr: Bachelor université, EPF, haute école spécialisée, haute école pédagogique (y compris diplôme HES/HEP).
+          description_it: Bachelor università, PF, scuola universitaria professionale, alta scuola pedagogica (incluso il
+            diploma SUP / ASP).
+      '3211':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3211
+        description: Bachelor universities of applied sciences (including UAS diploma).
+        annotations:
+          description_de: Bachelor Fachhochschule (inklusive Diplom FH).
+          description_fr: Bachelor haute école spécialisée (y compris diplôme HES).
+          description_it: Bachelor scuola universitaria professionale (incluso il diploma SUP).
+      '3212':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3212
+        description: Bachelor universities of teacher education (including UTE first degree).
+        annotations:
+          description_de: Bachelor pädagogische Hochschule (inklusive Diplom PH).
+          description_fr: Bachelor haute école pédagogique (y compris diplôme HEP).
+          description_it: Bachelor alta scuola pedagogica (incluso il diploma ASP).
+      '3213':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3213
+        description: Bachelor universities, institutes of technology (UIT).
+        annotations:
+          description_de: Bachelor Universität, ETH.
+          description_fr: Bachelor université, EPF.
+          description_it: Bachelor università.
+      '322':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/322
+        description: Master universities, institutes of technology, universities of applied sciences, universities of teacher
+          education.
+        annotations:
+          description_de: Master Universität, ETH, Fachhochschule, pädagogische Hochschule (inklusive Lizentiat / Diplom).
+          description_fr: Master université, EPF, haute école spécialisée, haute école pédagogique (y compris licence/diplôme).
+          description_it: Master università, PF, scuola universitaria professionale, alta scuola pedagogica (inclusi la laurea
+            / il diploma).
+      '3221':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3221
+        description: Master universities of applied sciences.
+        annotations:
+          description_de: Master Fachhochschule.
+          description_fr: Master haute école spécialisée.
+          description_it: Master scuola universitaria professionale.
+      '3222':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3222
+        description: Master universities of teacher education.
+        annotations:
+          description_de: Master pädagogische Hochschule.
+          description_fr: Master haute école pédagogique.
+          description_it: Master alta scuola pedagogica.
+      '3223':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3223
+        description: Master universities, institutes of technology (UIT) including UNI / UIT diploma.
+        annotations:
+          description_de: Master Universität, ETH (inklusive Lizentiat / Diplom Universität / ETH).
+          description_fr: Master université, EPF (y compris licence/diplôme université/EPF).
+          description_it: Master università, PF (inclusi la laurea / il diploma universitari / PF).
+      '323':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/323
+        description: Doctorate or habilitation.
+        annotations:
+          description_de: Doktorat / Habilitation.
+          description_fr: Doctorat / habilitation.
+          description_it: Dottorato / abilitazione.
+      military:
+        description: Military service (Swiss army). Use `value` to specify the rank reached.
+        annotations:
+          description_de: Militärdienst (Schweizer Armee). Den erreichten Grad im Feld `value` angeben.
+          description_fr: Service militaire (armée suisse). Indiquer le grade atteint dans le champ `value`.
+          description_it: Servizio militare (esercito svizzero). Indicare il grado raggiunto nel campo `value`.
   ContactTypeEnum:
     description: 'Types of contact information.
 

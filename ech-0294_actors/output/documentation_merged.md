@@ -130,7 +130,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| label | 1 <br/> [String](#String) | Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name).  |
+| label | 1 <br/> [String](#String) | Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name). Preferred: PersonOfficialName combined with PersonCallFirstName.  |
 | label_long | 0..1 <br/> [String](#String) | Optional long display name including academic titles and full official name (e.g. "Dr. Maria Muster-Beispiel").  |
 | birth_year | 0..1 <br/> [Integer](#Integer) | Year of birth. Only to be used, if there is no full `birthDate` available.  |
 | birth_date | 0..1 <br/> [Date](#Date) | Exact date of birth if available and public. This field has precedence over the field `birthYear`.  |
@@ -213,7 +213,7 @@ occupations:
   valid_from: 1964-01-01
   is_active: true
 trainings:
-- training_type: uni
+- training_type: '3223'
   value: dipl. nat. ETH
 contacts:
 - contact_type: email
@@ -266,7 +266,7 @@ occupations:
   is_active: false
   is_paid: true
 trainings:
-- training_type: schulabschluss
+- training_type: '2421'
   value: High School Diploma
 contacts:
 - contact_type: email
@@ -341,6 +341,44 @@ __
 
 </div> 
 
+## Enum: NameTypeEnum 
+
+
+
+
+_Categories of name types according to eCH-0011 (personNameData) and https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI according to I14Y identifier but as class and not as attribute. Descriptions and translations according to I14Y._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [act:NameTypeEnum](https://ld.ech.ch/schema/0294/actors/NameTypeEnum)
+
+### Permissible Values
+| Value | Meaning | Description |
+| --- | --- | --- |
+| PersonOfficialName | https://register.ld.admin.ch/i14y/concept/personOfficialName | According to the official catalogue of characters (No |
+| PersonOriginalName | https://register.ld.admin.ch/i14y/concept/personOriginalName | According to the official catalogue of characters (No |
+| PersonAllianceName | https://register.ld.admin.ch/i14y/concept/personAllianceName | According to the official catalogue of characters (No |
+| PersonNameOnForeignPassport | https://register.ld.admin.ch/i14y/concept/personNameOnForeignPassport | According to the official catalogue of characters (No |
+| PersonAliasName | https://register.ld.admin.ch/i14y/concept/personAliasName | According to the official character catalogue (No |
+| PersonOtherName | https://register.ld.admin.ch/i14y/concept/personOtherName | According to the official catalogue of characters (No |
+| PersonDeclaredForeignerName | https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerName | According to the official catalogue of characters (No |
+| PersonFirstName | https://register.ld.admin.ch/i14y/concept/personFirstName | First names taken from the birth certificate, the civil registry (Infostar) i... |
+| PersonCallFirstName | https://register.ld.admin.ch/i14y/concept/personCallFirstName | A person has the right to choose a common first name from the list of their o... |
+| PersonFirstNameOnForeignPassport | https://register.ld.admin.ch/i14y/concept/personFirstNameOnForeignPassport | For persons of foreign nationality |
+| PersonDeclaredForeignerFirstName | https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerFirstName | For persons of foreign nationality who do not have official documents (mainly... |
+
+
+
+
+
+
+
+</div> 
+
 
 
 ## Class: LanguageProficiency 
@@ -361,7 +399,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| language | 0..1 <br/> [String](#String) | Language code in ISO 639-1 format.  |
+| language | 0..1 <br/> [String](#String) | Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en").  |
 | is_correspondence | 0..1 <br/> [Boolean](#Boolean) | Indicates if this is the preferred language.  |
 | is_native | 0..1 <br/> [Boolean](#Boolean) | Indicates if this is the native language.  |
 
@@ -415,7 +453,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| country | 0..1 <br/> [String](#String) | ISO 3166 country code.  |
+| country | 0..1 <br/> [String](#String) | ISO 3166-1 alpha-2 country code.  |
 | valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 | valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 | is_active | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
@@ -528,9 +566,9 @@ __
 | ---  | --- | --- |
 | is_paid | 0..1 <br/> [Boolean](#Boolean) | Indicates if the position is paid.  |
 | occupation_code | 0..1 <br/> [String](#String) | ISCO-19 code of the occupation.  |
-| label | 0..1 <br/> [String](#String) | Option to assign a label to a structured piece of information (e.g., display name, position, etc.).  |
-| enterprise_uid | 0..1 <br/> [String](#String) | UID of the enterprise.  |
-| enterprise | 0..1 <br/> [String](#String) | Name of the enterprise.  |
+| label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
+| organization_uid | 0..1 <br/> [String](#String) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).  |
+| organization_name | 0..1 <br/> [String](#String) | Name of the organization or enterprise.  |
 | valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 | valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 | is_active | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
@@ -758,7 +796,7 @@ __
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
 | group_type | 0..1 <br/> [GroupType](#GroupType) | Type of group (e.g., party, commission, parliament, or similar). The exact naming and description of the group is provided via `label`.  |
-| label | 0..1 <br/> [String](#String) | Option to assign a label to a structured piece of information (e.g., display name, position, etc.).  |
+| label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
 | abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abbreviation (can be multilingual).  |
 | description | * <br/> [MultilingualValue](#MultilingualValue) | Description of the entity.  |
 | landing_page | 0..1 <br/> [Uri](#Uri) | Website providing further information.  |
@@ -830,7 +868,7 @@ __
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
 | group_type_enum | 0..1 <br/> [GroupTypeEnum](#GroupTypeEnum) | Link to the controlled vocabulary for group types.  |
-| label | 0..1 <br/> [String](#String) | Option to assign a label to a structured piece of information (e.g., display name, position, etc.).  |
+| label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
 
 
 
@@ -1038,7 +1076,7 @@ __
 | ---  | --- | --- |
 | person_reference | 0..1 <br/> [PersonReference](#PersonReference) | Reference to a person with snapshot data at time of linking.  |
 | interest_type | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | Type of interest link (professional activity, political office, association).  |
-| organization_label | 0..1 <br/> [String](#String) | Label of the organization.  |
+| organization_name | 0..1 <br/> [String](#String) | Name of the organization or enterprise.  |
 | organization_uid | 0..1 <br/> [String](#String) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).  |
 | organization_address | 0..1 <br/> [String](#String) | Address of the organization.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm  |
@@ -1090,7 +1128,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_label: Burkart Advisory GmbH, Baden
+organization_name: Burkart Advisory GmbH, Baden
 legal_form: '0107'
 committee: Geschäftsleitung
 function_role: Geschäftsführer
@@ -1106,7 +1144,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: association
-organization_label: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
 legal_form: '0110'
 committee: Stiftungsrat
 function_role: Vizepräsident
@@ -1122,7 +1160,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: association
-organization_label: Verein Landesausstellung Svizra27, Aarau
+organization_name: Verein Landesausstellung Svizra27, Aarau
 legal_form: 0109
 committee: Vorstand
 function_role: Mitglied
@@ -1138,7 +1176,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: association
-organization_label: Allianz Sicherheit Schweiz, Baden
+organization_name: Allianz Sicherheit Schweiz, Baden
 legal_form: 0109
 committee: Vorstand
 function_role: Präsident
@@ -1154,7 +1192,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_label: Birchmeier Holding AG, Döttingen
+organization_name: Birchmeier Holding AG, Döttingen
 legal_form: '0106'
 committee: Verwaltungsrat
 function_role: Mitglied
@@ -1170,7 +1208,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_label: ELCA Group SA, Lausanne
+organization_name: ELCA Group SA, Lausanne
 legal_form: '0106'
 committee: Verwaltungsrat
 function_role: Mitglied
@@ -1186,7 +1224,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_label: Bovida Real Estate AG, Baar
+organization_name: Bovida Real Estate AG, Baar
 legal_form: '0106'
 committee: Verwaltungsrat
 function_role: Mitglied
@@ -1202,7 +1240,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: association
-organization_label: FDP.Die Liberalen
+organization_name: FDP.Die Liberalen
 legal_form: 0109
 committee: Vorstand
 function_role: Präsident
@@ -1218,7 +1256,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_label: Stiebel Eltron AG, Lupfig
+organization_name: Stiebel Eltron AG, Lupfig
 legal_form: '0106'
 committee: Beirat
 function_role: Beirat
@@ -1234,7 +1272,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: association
-organization_label: SUISSEDIGITAL Verband für Kommunikationsnetze
+organization_name: SUISSEDIGITAL Verband für Kommunikationsnetze
 legal_form: 0109
 committee: Vorstand
 function_role: Mitglied
@@ -1250,7 +1288,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: association
-organization_label: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
 legal_form: 0109
 committee: Zentralvorstand
 function_role: Präsident
@@ -1376,7 +1414,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| label | 0..1 <br/> [String](#String) | Option to assign a label to a structured piece of information (e.g., display name, position, etc.).  |
+| label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
 | abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abbreviation (can be multilingual).  |
 | group_type | 0..1 <br/> [GroupType](#GroupType) | Type of group (e.g., party, commission, parliament, or similar). The exact naming and description of the group is provided via `label`.  |
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |

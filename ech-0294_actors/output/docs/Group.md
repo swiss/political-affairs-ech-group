@@ -19,7 +19,7 @@ __
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
 | group_type | 0..1 <br/> [GroupType](GroupType.md) | Type of group (e.g., party, commission, parliament, or similar). The exact naming and description of the group is provided via `label`.  |
-| label | 0..1 <br/> [String](String.md) | Option to assign a label to a structured piece of information (e.g., display name, position, etc.).  |
+| label | 0..1 <br/> [String](String.md) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
 | abbreviation | * <br/> [MultilingualValue](MultilingualValue.md) | Abbreviation (can be multilingual).  |
 | description | * <br/> [MultilingualValue](MultilingualValue.md) | Description of the entity.  |
 | landing_page | 0..1 <br/> [Uri](Uri.md) | Website providing further information.  |

@@ -56,7 +56,7 @@ Name: actors-schema
 | [committee](committee.md) | Committee or board within the organization (e |
 | [contact_type](contact_type.md) | Type of contact information |
 | [contacts](contacts.md) | Contact information (email, website, social media) |
-| [country](country.md) | ISO 3166 country code |
+| [country](country.md) | ISO 3166-1 alpha-2 country code |
 | [date_actual](date_actual.md) | The actual date of an instantaneous event or occurrence (without time duratio... |
 | [date_begin_actual](date_begin_actual.md) | The actual start date of an event or occurrence with time duration |
 | [date_begin_planned](date_begin_planned.md) | The planned start date of an event or occurrence with time duration |
@@ -77,8 +77,6 @@ Name: actors-schema
 | [description](description.md) | Description of the entity |
 | [district](district.md) | Electoral district or region |
 | [electoral_district](electoral_district.md) | Link to the electoral district |
-| [enterprise](enterprise.md) | Name of the enterprise |
-| [enterprise_uid](enterprise_uid.md) | UID of the enterprise |
 | [function_role](function_role.md) | Function or role in the organization (e |
 | [gender_code](gender_code.md) | Gender code |
 | [genders](genders.md) | Gender of the person |
@@ -94,10 +92,10 @@ Name: actors-schema
 | [is_correspondence](is_correspondence.md) | Indicates if this is the preferred language |
 | [is_native](is_native.md) | Indicates if this is the native language |
 | [is_paid](is_paid.md) | Indicates if the position is paid |
-| [label](label.md) | Option to assign a label to a structured piece of information (e |
-| [label_long](label_long.md) | Option to assign an extended label to a structured piece of information (e |
+| [label](label.md) | Assign a label to a structured piece of information (e |
+| [label_long](label_long.md) | Assign an extended label to a structured piece of information (e |
 | [landing_page](landing_page.md) | Website providing further information |
-| [language](language.md) | Language code in ISO 639-1 format |
+| [language](language.md) | Language code in ISO 639-1 format (two lowercase letters, e |
 | [language_proficiencies](language_proficiencies.md) | Language proficiencies of the person |
 | [legal_form](legal_form.md) | Legal form of the organization |
 | [local_id](local_id.md) | Local identifier |
@@ -108,7 +106,7 @@ Name: actors-schema
 | [occupation_code](occupation_code.md) | ISCO-19 code of the occupation |
 | [occupations](occupations.md) | Occupations or professions of the person |
 | [organization_address](organization_address.md) | Address of the organization |
-| [organization_label](organization_label.md) | Label of the organization |
+| [organization_name](organization_name.md) | Name of the organization or enterprise |
 | [organization_uid](organization_uid.md) | UID of the organization (eCH-0097 format: CHE-XXX |
 | [parent_groups](parent_groups.md) | Link to parent groups |
 | [party_color](party_color.md) | Party color as hexadecimal value (optional for parties, e |
@@ -146,7 +144,7 @@ Name: actors-schema
 | [LegalFormEnum](LegalFormEnum.md) | Legal forms based on the Swiss UID register codelist (eCH-0097) |
 | [NameTypeEnum](NameTypeEnum.md) | Categories of name types according to eCH-0011 (personNameData) and https://d... |
 | [RoleEnum](RoleEnum.md) | Roles a person can have within a membership |
-| [TrainingTypeEnum](TrainingTypeEnum.md) | Types of training or education |
+| [TrainingTypeEnum](TrainingTypeEnum.md) | Types of training or education based on the Swiss BFS LEVEL_EDUC codelist |
 
 
 ## Types

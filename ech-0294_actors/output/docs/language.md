@@ -6,7 +6,7 @@ search:
 # Slot: language 
 
 
-_Language code in ISO 639-1 format._
+_Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en")._
 
 __
 
@@ -76,10 +76,12 @@ name: language
 annotations:
   description_de:
     tag: description_de
-    value: 'Sprachcode im ISO 639-1 Format.
+    value: 'Sprachcode im ISO 639-1 Format (zwei Kleinbuchstaben, z.B. "de", "fr",
+      "it", "en").
 
       '
-description: 'Language code in ISO 639-1 format.
+description: 'Language code in ISO 639-1 format (two lowercase letters, e.g. "de",
+  "fr", "it", "en").
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

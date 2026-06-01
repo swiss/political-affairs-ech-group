@@ -6,7 +6,7 @@ search:
 # Slot: label 
 
 
-_Option to assign a label to a structured piece of information (e.g., display name, position, etc.)._
+_Assign a label to a structured piece of information (e.g., display name, position, etc.)._
 
 __
 
@@ -78,8 +78,8 @@ annotations:
       (bspw. Anzeigename, Anstellung, etc.).
 
       '
-description: 'Option to assign a label to a structured piece of information (e.g.,
-  display name, position, etc.).
+description: 'Assign a label to a structured piece of information (e.g., display name,
+  position, etc.).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

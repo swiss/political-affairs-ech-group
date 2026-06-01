@@ -20,7 +20,7 @@ __
 | ---  | --- | --- |
 | person_reference | 0..1 <br/> [PersonReference](PersonReference.md) | Reference to a person with snapshot data at time of linking.  |
 | interest_type | 1 <br/> [InterestTypeEnum](InterestTypeEnum.md) | Type of interest link (professional activity, political office, association).  |
-| organization_label | 0..1 <br/> [String](String.md) | Label of the organization.  |
+| organization_name | 0..1 <br/> [String](String.md) | Name of the organization or enterprise.  |
 | organization_uid | 0..1 <br/> [String](String.md) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).  |
 | organization_address | 0..1 <br/> [String](String.md) | Address of the organization.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](LegalFormEnum.md) | Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm  |
@@ -72,7 +72,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_label: Burkart Advisory GmbH, Baden
+organization_name: Burkart Advisory GmbH, Baden
 legal_form: '0107'
 committee: Geschäftsleitung
 function_role: Geschäftsführer
@@ -88,7 +88,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: association
-organization_label: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
 legal_form: '0110'
 committee: Stiftungsrat
 function_role: Vizepräsident
@@ -104,7 +104,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: association
-organization_label: Verein Landesausstellung Svizra27, Aarau
+organization_name: Verein Landesausstellung Svizra27, Aarau
 legal_form: 0109
 committee: Vorstand
 function_role: Mitglied
@@ -120,7 +120,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: association
-organization_label: Allianz Sicherheit Schweiz, Baden
+organization_name: Allianz Sicherheit Schweiz, Baden
 legal_form: 0109
 committee: Vorstand
 function_role: Präsident
@@ -136,7 +136,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_label: Birchmeier Holding AG, Döttingen
+organization_name: Birchmeier Holding AG, Döttingen
 legal_form: '0106'
 committee: Verwaltungsrat
 function_role: Mitglied
@@ -152,7 +152,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_label: ELCA Group SA, Lausanne
+organization_name: ELCA Group SA, Lausanne
 legal_form: '0106'
 committee: Verwaltungsrat
 function_role: Mitglied
@@ -168,7 +168,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_label: Bovida Real Estate AG, Baar
+organization_name: Bovida Real Estate AG, Baar
 legal_form: '0106'
 committee: Verwaltungsrat
 function_role: Mitglied
@@ -184,7 +184,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: association
-organization_label: FDP.Die Liberalen
+organization_name: FDP.Die Liberalen
 legal_form: 0109
 committee: Vorstand
 function_role: Präsident
@@ -200,7 +200,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_label: Stiebel Eltron AG, Lupfig
+organization_name: Stiebel Eltron AG, Lupfig
 legal_form: '0106'
 committee: Beirat
 function_role: Beirat
@@ -216,7 +216,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: association
-organization_label: SUISSEDIGITAL Verband für Kommunikationsnetze
+organization_name: SUISSEDIGITAL Verband für Kommunikationsnetze
 legal_form: 0109
 committee: Vorstand
 function_role: Mitglied
@@ -232,7 +232,7 @@ person_reference:
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: association
-organization_label: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
 legal_form: 0109
 committee: Zentralvorstand
 function_role: Präsident

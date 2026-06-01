@@ -55,7 +55,7 @@
             "description": "Citizenship (also used for Nationality) of a person indicating the country and temporal validity. If there is no `valid_from` provided, the information is not known. If it is known that the citizenship is valid from birth, the birthdate is to be repeated here. If there is no `valid_through`, the citizenship is still active.",
             "properties": {
                 "country": {
-                    "description": "ISO 3166 country code.\n",
+                    "description": "ISO 3166-1 alpha-2 country code.\n",
                     "pattern": "^[A-Z]{2}$",
                     "type": [
                         "string",
@@ -380,7 +380,7 @@
                     ]
                 },
                 "label": {
-                    "description": "Option to assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
+                    "description": "Assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
                     "type": [
                         "string",
                         "null"
@@ -492,7 +492,7 @@
                     "description": "Type of group (e.g., party, commission, parliament, or similar). The exact naming and description of the group is provided via `label`.\n"
                 },
                 "label": {
-                    "description": "Option to assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
+                    "description": "Assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
                     "type": [
                         "string",
                         "null"
@@ -528,7 +528,7 @@
                     "description": "Link to the controlled vocabulary for group types.\n"
                 },
                 "label": {
-                    "description": "Option to assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
+                    "description": "Assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
                     "type": [
                         "string",
                         "null"
@@ -756,8 +756,8 @@
                         "null"
                     ]
                 },
-                "organization_label": {
-                    "description": "Label of the organization.\n",
+                "organization_name": {
+                    "description": "Name of the organization or enterprise.\n",
                     "type": [
                         "string",
                         "null"
@@ -1054,7 +1054,7 @@
                     ]
                 },
                 "language": {
-                    "description": "Language code in ISO 639-1 format.\n",
+                    "description": "Language code in ISO 639-1 format (two lowercase letters, e.g. \"de\", \"fr\", \"it\", \"en\").\n",
                     "pattern": "^[a-z]{2}$",
                     "type": [
                         "string",
@@ -1239,7 +1239,7 @@
             "description": "A multilingual string with language specification.",
             "properties": {
                 "language": {
-                    "description": "Language code in ISO 639-1 format.\n",
+                    "description": "Language code in ISO 639-1 format (two lowercase letters, e.g. \"de\", \"fr\", \"it\", \"en\").\n",
                     "pattern": "^[a-z]{2}$",
                     "type": [
                         "string",
@@ -1321,20 +1321,6 @@
             "additionalProperties": false,
             "description": "Occupation or profession of a person indicating a label, an ISCO-19 code, whether the position is paid, and temporal validity.",
             "properties": {
-                "enterprise": {
-                    "description": "Name of the enterprise.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "enterprise_uid": {
-                    "description": "UID of the enterprise.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "is_active": {
                     "description": "Indicates whether the information is currently valid. Can be useful when this information is explicitly available.\n",
                     "type": [
@@ -1350,7 +1336,7 @@
                     ]
                 },
                 "label": {
-                    "description": "Option to assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
+                    "description": "Assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
                     "type": [
                         "string",
                         "null"
@@ -1358,6 +1344,21 @@
                 },
                 "occupation_code": {
                     "description": "ISCO-19 code of the occupation.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "organization_name": {
+                    "description": "Name of the organization or enterprise.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "organization_uid": {
+                    "description": "UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).\n",
+                    "pattern": "^CHE-\\d{3}\\.\\d{3}\\.\\d{3}$",
                     "type": [
                         "string",
                         "null"
@@ -1508,7 +1509,7 @@
                     ]
                 },
                 "label": {
-                    "description": "Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name).\n",
+                    "description": "Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name). Preferred: PersonOfficialName combined with PersonCallFirstName.\n",
                     "type": "string"
                 },
                 "label_long": {
@@ -1663,7 +1664,7 @@
             "description": "Role of a person in a membership or function (e.g., member, president, deputy).",
             "properties": {
                 "label": {
-                    "description": "Option to assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
+                    "description": "Assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
                     "type": [
                         "string",
                         "null"
@@ -1727,14 +1728,51 @@
             "type": "object"
         },
         "TrainingTypeEnum": {
-            "description": "Types of training or education.",
+            "description": "Types of training or education based on the Swiss BFS LEVEL_EDUC codelist.",
             "enum": [
-                "schulabschluss",
-                "efz",
-                "uni",
-                "armee",
-                "zivi",
-                "zischutz"
+                "10",
+                "110",
+                "120",
+                "130",
+                "140",
+                "20",
+                "22",
+                "220",
+                "2210",
+                "2211",
+                "2212",
+                "2220",
+                "2221",
+                "2222",
+                "24",
+                "241",
+                "2411",
+                "2412",
+                "242",
+                "2421",
+                "2422",
+                "243",
+                "2431",
+                "2432",
+                "30",
+                "31",
+                "310",
+                "311",
+                "312",
+                "313",
+                "3131",
+                "3132",
+                "32",
+                "321",
+                "3211",
+                "3212",
+                "3213",
+                "322",
+                "3221",
+                "3222",
+                "3223",
+                "323",
+                "military"
             ],
             "title": "TrainingTypeEnum",
             "type": "string"

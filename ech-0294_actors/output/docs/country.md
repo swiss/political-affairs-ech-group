@@ -6,7 +6,7 @@ search:
 # Slot: country 
 
 
-_ISO 3166 country code._
+_ISO 3166-1 alpha-2 country code._
 
 __
 
@@ -83,10 +83,10 @@ name: country
 annotations:
   description_de:
     tag: description_de
-    value: 'ISO 3166 Ländercode.
+    value: 'ISO 3166-1 alpha-2 Ländercode.
 
       '
-description: 'ISO 3166 country code.
+description: 'ISO 3166-1 alpha-2 country code.
 
   '
 examples:

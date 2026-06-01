@@ -3,10 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: organization_label 
+# Slot: organization_name 
 
 
-_Label of the organization._
+_Name of the organization or enterprise._
 
 __
 
@@ -16,7 +16,7 @@ __
 
 
 
-URI: [act:organizationLabel](https://ld.ech.ch/schema/0294/actors/organizationLabel)
+URI: [act:organizationName](https://ld.ech.ch/schema/0294/actors/organizationName)
 <!-- no inheritance hierarchy -->
 
 
@@ -28,6 +28,7 @@ URI: [act:organizationLabel](https://ld.ech.ch/schema/0294/actors/organizationLa
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
+| [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |  no  |
 
 
 
@@ -41,8 +42,8 @@ URI: [act:organizationLabel](https://ld.ech.ch/schema/0294/actors/organizationLa
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [InterestLink](InterestLink.md) |
-| Slot URI | [act:organizationLabel](https://ld.ech.ch/schema/0294/actors/organizationLabel) |
+| Domain Of | [InterestLink](InterestLink.md), [Occupation](Occupation.md) |
+| Slot URI | [act:organizationName](https://ld.ech.ch/schema/0294/actors/organizationName) |
 
 ### Cardinality and Requirements
 
@@ -57,15 +58,6 @@ URI: [act:organizationLabel](https://ld.ech.ch/schema/0294/actors/organizationLa
 
 
 
-## Examples
-
-| Value |
-| --- |
-| ASTAG Schweizerischer Nutzfahrzeugverband, Bern |
-| Allianz Sicherheit Schweiz, Baden |
-| Birchmeier Holding AG, Döttingen |
-
-
 
 
 
@@ -73,25 +65,22 @@ URI: [act:organizationLabel](https://ld.ech.ch/schema/0294/actors/organizationLa
 
 <details>
 ```yaml
-name: organization_label
+name: organization_name
 annotations:
   description_de:
     tag: description_de
-    value: 'Bezeichnung der Organisation.
+    value: 'Name der Organisation oder des Unternehmens.
 
       '
-description: 'Label of the organization.
+description: 'Name of the organization or enterprise.
 
   '
-examples:
-- value: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
-- value: Allianz Sicherheit Schweiz, Baden
-- value: Birchmeier Holding AG, Döttingen
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
-slot_uri: act:organizationLabel
+slot_uri: act:organizationName
 domain_of:
 - InterestLink
+- Occupation
 range: string
 
 ```

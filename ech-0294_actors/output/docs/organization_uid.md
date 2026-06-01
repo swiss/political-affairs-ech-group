@@ -28,6 +28,7 @@ URI: [act:organizationUid](https://ld.ech.ch/schema/0294/actors/organizationUid)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
+| [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |  no  |
 
 
 
@@ -41,7 +42,7 @@ URI: [act:organizationUid](https://ld.ech.ch/schema/0294/actors/organizationUid)
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [InterestLink](InterestLink.md) |
+| Domain Of | [InterestLink](InterestLink.md), [Occupation](Occupation.md) |
 | Slot URI | [act:organizationUid](https://ld.ech.ch/schema/0294/actors/organizationUid) |
 
 ### Cardinality and Requirements
@@ -87,6 +88,7 @@ rank: 1000
 slot_uri: act:organizationUid
 domain_of:
 - InterestLink
+- Occupation
 range: string
 pattern: ^CHE-\d{3}\.\d{3}\.\d{3}$
 

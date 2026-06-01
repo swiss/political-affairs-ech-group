@@ -9,7 +9,7 @@
         "label": "Thierry Burkart",
         "group_label": "FDP.Die Liberalen"
       },
-      "organization_label": "Burkart Advisory GmbH, Baden",
+      "organization_name": "Burkart Advisory GmbH, Baden",
       "legal_form": "0107",
       "is_paid": true,
       "committee": "Geschäftsleitung",
@@ -23,7 +23,7 @@
         "label": "Thierry Burkart",
         "group_label": "FDP.Die Liberalen"
       },
-      "organization_label": "Birchmeier Holding AG, Döttingen",
+      "organization_name": "Birchmeier Holding AG, Döttingen",
       "legal_form": "0106",
       "is_paid": true,
       "committee": "Verwaltungsrat",
@@ -37,7 +37,7 @@
         "label": "Thierry Burkart",
         "group_label": "FDP.Die Liberalen"
       },
-      "organization_label": "Bovida Real Estate AG, Baar",
+      "organization_name": "Bovida Real Estate AG, Baar",
       "legal_form": "0106",
       "is_paid": true,
       "committee": "Verwaltungsrat",
@@ -51,7 +51,7 @@
         "label": "Thierry Burkart",
         "group_label": "FDP.Die Liberalen"
       },
-      "organization_label": "ELCA Group SA, Lausanne",
+      "organization_name": "ELCA Group SA, Lausanne",
       "legal_form": "0106",
       "is_paid": true,
       "committee": "Verwaltungsrat",
@@ -65,7 +65,7 @@
         "label": "Thierry Burkart",
         "group_label": "FDP.Die Liberalen"
       },
-      "organization_label": "ASTAG Schweizerischer Nutzfahrzeugverband, Bern",
+      "organization_name": "ASTAG Schweizerischer Nutzfahrzeugverband, Bern",
       "legal_form": "0109",
       "is_paid": true,
       "committee": "Zentralvorstand",
@@ -79,7 +79,7 @@
         "label": "Thierry Burkart",
         "group_label": "FDP.Die Liberalen"
       },
-      "organization_label": "FDP.Die Liberalen",
+      "organization_name": "FDP.Die Liberalen",
       "legal_form": "0109",
       "is_paid": true,
       "committee": "Vorstand",
@@ -93,7 +93,7 @@
         "label": "Thierry Burkart",
         "group_label": "FDP.Die Liberalen"
       },
-      "organization_label": "FONDATION SUISSE DE DEMINAGE (FSD), Genf",
+      "organization_name": "FONDATION SUISSE DE DEMINAGE (FSD), Genf",
       "legal_form": "0110",
       "is_paid": false,
       "committee": "Stiftungsrat",
@@ -107,7 +107,7 @@
         "label": "Thierry Burkart",
         "group_label": "FDP.Die Liberalen"
       },
-      "organization_label": "Stiebel Eltron AG, Lupfig",
+      "organization_name": "Stiebel Eltron AG, Lupfig",
       "legal_form": "0106",
       "is_paid": true,
       "committee": "Beirat",
@@ -121,7 +121,7 @@
         "label": "Thierry Burkart",
         "group_label": "FDP.Die Liberalen"
       },
-      "organization_label": "SUISSEDIGITAL Verband für Kommunikationsnetze",
+      "organization_name": "SUISSEDIGITAL Verband für Kommunikationsnetze",
       "legal_form": "0109",
       "is_paid": true,
       "committee": "Vorstand",
@@ -135,7 +135,7 @@
         "label": "Thierry Burkart",
         "group_label": "FDP.Die Liberalen"
       },
-      "organization_label": "Allianz Sicherheit Schweiz, Baden",
+      "organization_name": "Allianz Sicherheit Schweiz, Baden",
       "legal_form": "0109",
       "is_paid": false,
       "committee": "Vorstand",
@@ -149,7 +149,7 @@
         "label": "Thierry Burkart",
         "group_label": "FDP.Die Liberalen"
       },
-      "organization_label": "Verein Landesausstellung Svizra27, Aarau",
+      "organization_name": "Verein Landesausstellung Svizra27, Aarau",
       "legal_form": "0109",
       "is_paid": false,
       "committee": "Vorstand",

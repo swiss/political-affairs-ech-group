@@ -36,7 +36,7 @@ occupations:
   is_active: false
   is_paid: true
 trainings:
-- training_type: schulabschluss
+- training_type: '2421'
   value: High School Diploma
 contacts:
 - contact_type: email
