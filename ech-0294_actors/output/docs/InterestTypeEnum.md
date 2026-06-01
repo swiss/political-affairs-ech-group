@@ -16,9 +16,12 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 ### Permissible Values
 | Value | Description |
 | --- | --- |
-| professional_activity (act:enum/interest_type/professional_activity) | Professional activity outside the political mandate (e |
-| political_office (act:enum/interest_type/political_office) | Political office or mandate at other federal levels or in other bodies (e |
-| association (act:enum/interest_type/association) | Membership in associations, federations, or interest organizations (e |
+| professional_activity | act:enum/interest_type/professional_activity |
+| | Professional activity outside the political mandate (e |
+| political_office | act:enum/interest_type/political_office |
+| | Political office or mandate at other federal levels or in other bodies (e |
+| association | act:enum/interest_type/association |
+| | Membership in associations, federations, or interest organizations (e |
 
 
 
