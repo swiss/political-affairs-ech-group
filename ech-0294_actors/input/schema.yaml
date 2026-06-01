@@ -159,6 +159,7 @@ classes:
       - group_reference
       - role_type
       - authorized_to_vote
+      - is_active
     slot_usage:
       is_active:
         description: |
