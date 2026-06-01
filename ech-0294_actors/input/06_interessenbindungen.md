@@ -5,6 +5,7 @@
 Das InterestLink-Schema erfasst Interessenbindungen, Interessenkonflikte und Verflechtungen von Personen im politischen Kontext mit Organisationen. Der Standard orientiert sich an den Transparenzanforderungen für Parlamentsmitglieder gemäss [Bundesversammlung - Interessenbindungen](https://www.parlament.ch/centers/documents/de/interessen-nr.pdf).
 
 **Kernziele:**
+
 - **Transparenz**: Offenlegung von potenziellen Interessenkonflikten
 - **Strukturierte Erfassung**: Einheitliche Klassifikation nach Art der Interessenbindung
 - **Auswertbarkeit**: Verknüpfung mit UID-Register für statistische Analysen (NOGA-Codes)

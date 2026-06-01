@@ -5,6 +5,7 @@
 Das Membership-Schema bildet die Beziehung zwischen Personen und Gruppen ab. Es ist das zentrale Bindeglied im Actor-Schema und ermöglicht die Zuordnung von Personen zu Parteien, Fraktionen, Kommissionen, Parlamenten und anderen politischen Organen.
 
 **Kernziele:**
+
 - **Verknüpfung**: Strukturierte Verbindung zwischen Person und Group
 - **Rollen**: Erfassung der Funktion innerhalb der Gruppe
 - **Zeitliche Dimension**: Dokumentation von Beginn und Ende der Mitgliedschaft

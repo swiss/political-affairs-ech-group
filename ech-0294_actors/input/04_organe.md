@@ -5,6 +5,7 @@
 Das Group-Schema beschreibt politische Gruppen, Organisationen und Körperschaften im schweizerischen politischen System. Ein Organ ist in dieser Definition eine Ansammlung von Personen, die durch einen Typ und weitere Attribute charakterisiert wird.
 
 **Kernziele:**
+
 - **Strukturierung**: Einheitliche Erfassung aller politischen Akteure (Legislative, Exekutive, Judikative, Zivilgesellschaft)
 - **Hierarchien**: Abbildung von Organisationsstrukturen (Parteien, Kommissionen, Departemente)
 - **Föderalismus**: Unterstützung aller föderalen Ebenen (Bund, Kantone, Gemeinden)

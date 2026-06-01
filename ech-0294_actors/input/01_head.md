@@ -10,7 +10,7 @@ toc: false
 | **Kategorie**         | Entwurf                                                                                                                    |
 | **Reifegrad**         | Fachgruppen Internes Review                                                                                                |
 | **Version**           | 0.1                                                                                                                        |
-| **Status**            |                                                                                                                            |
+| **Status**            | Fachgruppen interner Review                                                                                                |
 | **Beschluss am**      |                                                                                                                            |
 | **Ausgabedatum**      |                                                                                                                            |
 | **Ersetzt Version**   | 0.0                                                                                                                        |
@@ -22,7 +22,9 @@ toc: false
 
 # Summary
 
-Management summary of the document.
+Der Entwurf eCH-0294 „Politische Akteure: Personen, Gruppen und Organe“ definiert ein einheitliches Datenmodell zur strukturierten Publikation politischer Akteure in der Schweiz. Er umfasst natürliche Personen, politische Gruppen und Organe, Mitgliedschaften zwischen Personen und Gruppen sowie Interessenbindungen. Ziel ist es, föderal übergreifend vergleichbare, maschinenlesbare und nachnutzbare Informationen bereitzustellen, um Transparenz, Nachvollziehbarkeit und Analysefähigkeit politischer Prozesse zu verbessern.
+
+Der Standard richtet sich an öffentliche Stellen aller Staatsebenen, politische Akteure, Medien, Forschung, Verwaltung und Öffentlichkeit und schafft eine Grundlage für interoperable politische Informationssysteme in der Schweiz.
 
 # Table of Contents
 
