@@ -680,6 +680,76 @@ __
 
 </div> 
 
+## Enum: TrainingTypeEnum 
+
+
+
+
+_Types of training or education based on the Swiss BFS LEVEL_EDUC codelist._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [act:TrainingTypeEnum](https://ld.ech.ch/schema/0294/actors/TrainingTypeEnum)
+
+### Permissible Values
+| Value | Meaning | Description |
+| --- | --- | --- |
+| 10 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/10 | Maximum compulsory school |
+| 110 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/110 | No education |
+| 120 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/120 | Compulsory school attended but not completed |
+| 130 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/130 | Compulsory school |
+| 140 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/140 | 1 year of education / transitional education |
+| 20 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/20 | Upper secondary level |
+| 22 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/22 | Upper secondary level - Vocational education and training (VET) |
+| 220 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/220 | Apprenticeship in a company (EFZ/EBA) / basic vocational training / vocationa... |
+| 2210 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2210 | Apprenticeship 2 years (EBA) / basic vocational training / vocational school ... |
+| 2211 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2211 | Apprenticeship in a company 2 years (EBA) / basic vocational training |
+| 2212 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2212 | Vocational school / trade school 2 years |
+| 2220 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2220 | Apprenticeship 3-4 years (EFZ) / vocational school / trade school |
+| 2221 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2221 | Apprenticeship in a company 3-4 years (EFZ) |
+| 2222 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2222 | Vocational school / trade school 3-4 years |
+| 24 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/24 | Upper secondary level - general education |
+| 241 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/241 | Upper secondary specialised schools / diploma middle school |
+| 2411 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2411 | Upper secondary specialised schools / diploma middle school 2 years |
+| 2412 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2412 | Upper secondary specialised schools / diploma middle school 3 years |
+| 242 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/242 | Baccalaureate / teaching diploma |
+| 2421 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2421 | Baccalaureate |
+| 2422 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2422 | Teaching diploma |
+| 243 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/243 | Vocational / specialised baccalaureate |
+| 2431 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2431 | Vocational baccalaureate |
+| 2432 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2432 | Specialised baccalaureate |
+| 30 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/30 | Tertiary level |
+| 31 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/31 | Professional education |
+| 310 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/310 | Professional examination with federal diploma / advanced federal diploma / PE... |
+| 311 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/311 | Professional examination with federal diploma of higher education |
+| 312 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/312 | Professional examination with advanced federal diploma of higher education / ... |
+| 313 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/313 | College of Higher Education |
+| 3131 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3131 | College of Higher Education 2 years full time or 3 years part-time |
+| 3132 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3132 | College of Higher Education 3 years full time or 4 years part-time |
+| 32 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/32 | Higher education institutions |
+| 321 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/321 | Bachelor universities, institutes of technology, universities of applied scie... |
+| 3211 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3211 | Bachelor universities of applied sciences (including UAS diploma) |
+| 3212 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3212 | Bachelor universities of teacher education (including UTE first degree) |
+| 3213 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3213 | Bachelor universities, institutes of technology (UIT) |
+| 322 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/322 | Master universities, institutes of technology, universities of applied scienc... |
+| 3221 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3221 | Master universities of applied sciences |
+| 3222 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3222 | Master universities of teacher education |
+| 3223 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3223 | Master universities, institutes of technology (UIT) including UNI / UIT diplo... |
+| 323 | https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/323 | Doctorate or habilitation |
+| military | None | Military service (Swiss army) |
+
+
+
+
+
+
+
+</div> 
+
 
 
 ## Class: ElectoralDistrict 
@@ -1332,8 +1402,83 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 
 
 </div>
+
+## Enum: LegalFormEnum 
+
+
+
+
+_Legal forms based on the Swiss UID register codelist (eCH-0097). See https://register.ld.admin.ch/i14y/concept/legalForm_
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [act:LegalFormEnum](https://ld.ech.ch/schema/0294/actors/LegalFormEnum)
+
+### Permissible Values
+| Value | Meaning | Description |
+| --- | --- | --- |
+| 0101 | https://register.ld.admin.ch/i14y/concept/legalForm/0101 | Sole proprietorship |
+| 0103 | https://register.ld.admin.ch/i14y/concept/legalForm/0103 | General partnership (GP) |
+| 0104 | https://register.ld.admin.ch/i14y/concept/legalForm/0104 | Limited partnership (LP) |
+| 0105 | https://register.ld.admin.ch/i14y/concept/legalForm/0105 | Corporation with unlimited partners (CUP) |
+| 0106 | https://register.ld.admin.ch/i14y/concept/legalForm/0106 | Corporation (Ltd) |
+| 0107 | https://register.ld.admin.ch/i14y/concept/legalForm/0107 | Limited liability company (LLC) |
+| 0108 | https://register.ld.admin.ch/i14y/concept/legalForm/0108 | Cooperative |
+| 0109 | https://register.ld.admin.ch/i14y/concept/legalForm/0109 | Association |
+| 0110 | https://register.ld.admin.ch/i14y/concept/legalForm/0110 | Foundation |
+| 0111 | https://register.ld.admin.ch/i14y/concept/legalForm/0111 | Branch of a foreign company |
+| 0113 | https://register.ld.admin.ch/i14y/concept/legalForm/0113 | Special legal form |
+| 0114 | https://register.ld.admin.ch/i14y/concept/legalForm/0114 | Limited Partnership for collective investment schemes (LPCI) |
+| 0115 | https://register.ld.admin.ch/i14y/concept/legalForm/0115 | Limited Partnership for collective investment schemes with a variable capital... |
+| 0116 | https://register.ld.admin.ch/i14y/concept/legalForm/0116 | Limited Partnership for collective investment schemes with a fixed capital (S... |
+| 0117 | https://register.ld.admin.ch/i14y/concept/legalForm/0117 | Public-law institution |
+| 0118 | https://register.ld.admin.ch/i14y/concept/legalForm/0118 | Non-commercial power of attorney |
+| 0119 | https://register.ld.admin.ch/i14y/concept/legalForm/0119 | Representative of the community of property |
+| 0151 | https://register.ld.admin.ch/i14y/concept/legalForm/0151 | Branch |
+| 0220 | https://register.ld.admin.ch/i14y/concept/legalForm/0220 | Administrative unit of the Confederation |
+| 0221 | https://register.ld.admin.ch/i14y/concept/legalForm/0221 | Administrative unit of the canton |
+| 0222 | https://register.ld.admin.ch/i14y/concept/legalForm/0222 | Administrative unit of the district |
+| 0223 | https://register.ld.admin.ch/i14y/concept/legalForm/0223 | Administrative unit of the commune |
+| 0224 | https://register.ld.admin.ch/i14y/concept/legalForm/0224 | Other public-law administrative unit |
+| 0230 | https://register.ld.admin.ch/i14y/concept/legalForm/0230 | Public-law institution of the Confederation |
+| 0231 | https://register.ld.admin.ch/i14y/concept/legalForm/0231 | Public-law institution of the canton |
+| 0232 | https://register.ld.admin.ch/i14y/concept/legalForm/0232 | Public-law institution of the district |
+| 0233 | https://register.ld.admin.ch/i14y/concept/legalForm/0233 | Public-law institution of the commune |
+| 0234 | https://register.ld.admin.ch/i14y/concept/legalForm/0234 | Other public-law institution |
+| 0302 | https://register.ld.admin.ch/i14y/concept/legalForm/0302 | Simple partnership |
+| 0312 | https://register.ld.admin.ch/i14y/concept/legalForm/0312 | Permanent establishment or swiss representation of a foreign company |
+| 0327 | https://register.ld.admin.ch/i14y/concept/legalForm/0327 | Foreign public company |
+| 0328 | https://register.ld.admin.ch/i14y/concept/legalForm/0328 | Foreign public administration |
+| 0329 | https://register.ld.admin.ch/i14y/concept/legalForm/0329 | International organisation |
+| 0355 | https://register.ld.admin.ch/i14y/concept/legalForm/0355 | Other cooperative |
+| 0361 | https://register.ld.admin.ch/i14y/concept/legalForm/0361 | Trust |
+| 0362 | https://register.ld.admin.ch/i14y/concept/legalForm/0362 | Fund |
+| 0441 | https://register.ld.admin.ch/i14y/concept/legalForm/0441 | Foreign company |
+| 0571 | https://register.ld.admin.ch/i14y/concept/legalForm/0571 | Legal form undefined or unknown |
+
+
+
+
+
+
+
+</div>
 # Geteilte Elemente
 
+## Reference Classes
+
+`PersonReference` und `GroupReference` werden verwendet, um Personen bzw. Gruppen **lokal** innerhalb einer anderen Entität zu referenzieren. Neben dem eigentlichen Link zur vollständigen Entität werden dabei nur die relevanten Informationen zum **Zeitpunkt der Verknüpfung** gespeichert – es müssen also nicht alle Informationen einer Person oder Gruppe bei jeder Erwähnung wiederholt werden.
+
+Ein Beispiel: Eine Motion verweist auf die Person, die sie eingereicht hat. Zusätzlich zum Link auf die vollständige Personen-Entität speichert die Motion lokal Informationen wie die politische Partei oder die Rolle der Person **zum Zeitpunkt der Einreichung**. Wechselt die Person später die Partei oder die Rolle, bleibt die Information in der Motion dennoch korrekt und unveränderlich.
+
+Dies dient drei Zwecken:
+- **Nützliche lokale Daten** ohne aufwändige Abfragen der vollständigen Entität
+- **Keine Redundanz**, da nicht alle Informationen bei jeder Erwähnung wiederholt werden müssen
+- **Implizite Versionierung**, da die lokale Referenz unverändert bleibt, auch wenn sich die verknüpfte Entität später ändert
 
 
 
@@ -1450,6 +1595,8 @@ __
 
 
 </div>
+
+## Mehrfach benutzte Klassen
 
 
 
