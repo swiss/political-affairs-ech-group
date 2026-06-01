@@ -348,16 +348,16 @@ slots:
   language:
     slot_uri: mcm:language
     description: |
-      Language code in ISO 639-1 format.
+      Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en").
     annotations:
       description_de: |
-        Sprachcode im ISO 639-1 Format.
+        Sprachcode im ISO 639-1 Format (zwei Kleinbuchstaben, z.B. "de", "fr", "it", "en").
     pattern: ^[a-z]{2}$
 
   label:
     slot_uri: mcm:label
     description: |
-      Option to assign a label to a structured piece of information (e.g., display name, position, etc.).
+      Assign a label to a structured piece of information (e.g., display name, position, etc.).
     annotations:
       description_de: |
         Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).
@@ -365,7 +365,7 @@ slots:
   label_long:
     slot_uri: mcm:labelLong
     description: |
-      Option to assign an extended label to a structured piece of information (e.g., display name with title, position, etc.).
+      Assign an extended label to a structured piece of information (e.g., display name with title, position, etc.).
     annotations:
       description_de: |
         Möglichkeit bei einer strukturierten Information, ein erweitertesLabel zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.).

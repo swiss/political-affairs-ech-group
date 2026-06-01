@@ -19,6 +19,8 @@ Notiz: *Die Verknüpfung von Personen im öffentlichen Interesse (Politikerinnen
 
 {{include:ech-0294_actors/output/docs/Name.md}} 
 
+{{include:ech-0294_actors/output/docs/NameTypeEnum.md}} 
+
 {{include:ech-0294_actors/output/docs/LanguageProficiency.md}} 
 
 {{include:ech-0294_actors/output/docs/Citizenship.md}} 

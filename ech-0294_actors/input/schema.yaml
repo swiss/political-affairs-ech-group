@@ -68,10 +68,10 @@ classes:
     slot_usage:
       label:
         description: |
-          Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name).
+          Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name). Preferred: PersonOfficialName combined with PersonCallFirstName.
         annotations:
           description_de: |
-            Obligatorischer Kurzname zur Identifikation der Person innerhalb der Organisation (z.B. mit Geburtsjahr zur Unterscheidung von Personen mit gleichem Namen).
+            Obligatorischer Kurzname zur Identifikation der Person innerhalb der Organisation (z.B. mit Geburtsjahr zur Unterscheidung von Personen mit gleichem Namen). Bevorzugt: PersonOfficialName (amtlicher Name) kombiniert mit PersonCallFirstName (Rufname).
         required: true
       label_long:
         description: |
@@ -181,7 +181,7 @@ classes:
     slots:
       - person_reference
       - interest_type
-      - organization_label
+      - organization_name
       - organization_uid
       - organization_address
       - legal_form
@@ -260,8 +260,8 @@ classes:
       - is_paid
       - occupation_code
       - label
-      - enterprise_uid
-      - enterprise
+      - organization_uid
+      - organization_name
 
   Training:
     description: |
@@ -394,10 +394,10 @@ slots:
   country:
     slot_uri: act:country
     description: |
-      ISO 3166 country code.
+      ISO 3166-1 alpha-2 country code.
     annotations:
       description_de: |
-        ISO 3166 Ländercode.
+        ISO 3166-1 alpha-2 Ländercode.
     pattern: ^[A-Z]{2}$
 
   gender_code:
@@ -435,22 +435,6 @@ slots:
     annotations:
       description_de: |
         ISCO-19 Code der Tätigkeit.
-
-  enterprise_uid:
-    slot_uri: act:enterpriseUid
-    description: |
-      UID of the enterprise.
-    annotations:
-      description_de: |
-        UID des Unternehmens.
-
-  enterprise:
-    slot_uri: act:enterprise
-    description: |
-      Name of the enterprise.
-    annotations:
-      description_de: |
-        Name des Unternehmens.
 
   training_type:
     slot_uri: act:trainingType
@@ -698,13 +682,13 @@ slots:
       description_de: |
         Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).
 
-  organization_label:
-    slot_uri: act:organizationLabel
+  organization_name:
+    slot_uri: act:organizationName
     description: |
-      Label of the organization.
+      Name of the organization or enterprise.
     annotations:
       description_de: |
-        Bezeichnung der Organisation.
+        Name der Organisation oder des Unternehmens.
 
   organization_uid:
     slot_uri: act:organizationUid
