@@ -82,7 +82,7 @@ URI: {{ gen.uri_link(element) }}
 | Value | Description | Additional Info |
 | --- | --- | --- |
 {% for pv in element.permissible_values.values() -%}
-| {{ pv.text }}{% if pv.meaning %} ({{ pv.meaning }}){% endif %} | {{ pv.description }} |
+| {{ pv.text }}{% if pv.meaning %} ([{{ pv.meaning }}]({{ pv.meaning }})){% endif %} | {{ pv.description }} |
 {%- if pv.title %} Title: {{ pv.title }}<br>{% endif -%}
 {%- if pv.is_a %} Is-A: {{ gen.link(pv.is_a) }}<br>{% endif -%}
 {%- if pv.mixins %} Mixins: {{ gen.links(pv.mixins) | join(', ') }}<br>{% endif -%}
@@ -93,8 +93,8 @@ URI: {{ gen.uri_link(element) }}
 | Value | Description |
 | --- | --- |
 {% for pv in element.permissible_values.values() -%}
-| {{ pv.text }} | {{ pv.meaning }} |
-| | {{ pv.description|enshorten }} |
+| {{ pv.text }} |  {{ pv.description }} |
+| | {% if pv.meaning %}[{{ pv.meaning }}]({{ pv.meaning }}){% endif %} |
 {% endfor %}
 {%- endif %}
 {% else %}
