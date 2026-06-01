@@ -6,7 +6,7 @@ search:
 # Slot: group_type 
 
 
-_Link to the group type._
+_Type of group (e.g., party, commission, parliament, or similar). The exact naming and description of the group is provided via `label`._
 
 __
 
@@ -70,10 +70,11 @@ annotations:
   description_de:
     tag: description_de
     value: 'Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder ähnliches.
-      Die genaue Bennenung und Beschreibung der Gruppierung wird über `name` gemacht.
+      Die genaue Benennung und Beschreibung der Gruppierung wird über `label` gemacht.
 
       '
-description: 'Link to the group type.
+description: 'Type of group (e.g., party, commission, parliament, or similar). The
+  exact naming and description of the group is provided via `label`.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

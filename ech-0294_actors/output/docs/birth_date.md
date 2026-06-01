@@ -76,7 +76,8 @@ name: birth_date
 annotations:
   description_de:
     tag: description_de
-    value: 'Genaues Geburtsdatum.
+    value: 'Genaues Geburtsdatum, sofern verfügbar und öffentlich. Dieses Feld hat
+      Vorrang vor dem Feld `birthYear`.
 
       '
 description: 'Exact date of birth if available and public. This field has precedence

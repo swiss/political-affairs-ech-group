@@ -6,7 +6,7 @@ search:
 # Slot: gender_code 
 
 
-_Gender code (e.g., according to ISO 5218)._
+_Gender code. Recommended values: male, female, diverse._
 
 __
 
@@ -40,7 +40,7 @@ URI: [act:genderCode](https://ld.ech.ch/schema/0294/actors/genderCode)
 
 | Property | Value |
 | --- | --- |
-| Range | [String](String.md) |
+| Range | [GenderCodeEnum](GenderCodeEnum.md) |
 | Domain Of | [Gender](Gender.md) |
 | Slot URI | [act:genderCode](https://ld.ech.ch/schema/0294/actors/genderCode) |
 
@@ -75,10 +75,10 @@ name: gender_code
 annotations:
   description_de:
     tag: description_de
-    value: 'Geschlechtscode (z.B. gemäß ISO 5218).
+    value: 'Geschlechtscode. Empfohlene Werte: male, female, diverse .
 
       '
-description: 'Gender code (e.g., according to ISO 5218).
+description: 'Gender code. Recommended values: male, female, diverse.
 
   '
 examples:
@@ -88,7 +88,7 @@ rank: 1000
 slot_uri: act:genderCode
 domain_of:
 - Gender
-range: string
+range: GenderCodeEnum
 
 ```
 </details></div>

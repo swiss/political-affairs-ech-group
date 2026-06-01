@@ -6,7 +6,7 @@ search:
 # Slot: parent_groups 
 
 
-_Link to parent groups._
+_Link to parent groups. For example, the parent party for cantonal parties, or to describe the hierarchy in the executive. Also used to link sub-commissions to commissions, or factions to both their parliament and their party. (parentGroup is typically used within the same group_type, but cross-type links are permitted, e.g., faction → parliament and faction → party.)_
 
 __
 
@@ -69,12 +69,18 @@ name: parent_groups
 annotations:
   description_de:
     tag: description_de
-    value: 'Übergeordneten Gruppe. Zum Beispiel die Mutterpartei, zu Kantonalenparteien.
-      Oder zur Beschreibung der Hierarchie in Exekutive. Verknüpfung von Subkommissionen
-      mit Kommissionen. (parentGroup wird immer im selben group_type verwendet.)
+    value: 'Übergeordnete Gruppe. Zum Beispiel die Mutterpartei zu Kantonalparteien,
+      oder zur Beschreibung der Hierarchie in der Exekutive. Auch zur Verknüpfung
+      von Subkommissionen mit Kommissionen oder Fraktionen mit Parlament und Partei.
+      (parentGroup wird typischerweise im selben group_type verwendet, typenübergreifende
+      Verknüpfungen sind aber erlaubt, z.B. Fraktion → Parlament und Fraktion → Partei.)
 
       '
-description: 'Link to parent groups.
+description: 'Link to parent groups. For example, the parent party for cantonal parties,
+  or to describe the hierarchy in the executive. Also used to link sub-commissions
+  to commissions, or factions to both their parliament and their party. (parentGroup
+  is typically used within the same group_type, but cross-type links are permitted,
+  e.g., faction → parliament and faction → party.)
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

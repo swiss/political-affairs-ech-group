@@ -9,7 +9,7 @@
                     "description": "Type of address.\n"
                 },
                 "address_uri": {
-                    "description": "URI of the address.\n",
+                    "description": "URI of the address from the Swiss federal building address register. The layer can be accessed at https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis. Example of a valid URI: https://geo.ld.admin.ch/location/address/101904050\n",
                     "type": [
                         "string",
                         "null"
@@ -138,7 +138,7 @@
                     ]
                 },
                 "interest_links": {
-                    "description": "Collection of interest links.range: InterestLink\n",
+                    "description": "Collection of interest links.\n",
                     "items": {
                         "$ref": "#/$defs/InterestLink"
                     },
@@ -231,11 +231,8 @@
             "description": "Gender of a person indicating a gender code and temporal validity.",
             "properties": {
                 "gender_code": {
-                    "description": "Gender code (e.g., according to ISO 5218).\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "$ref": "#/$defs/GenderCodeEnum",
+                    "description": "Gender code. Recommended values: male, female, diverse.\n"
                 },
                 "is_active": {
                     "description": "Indicates whether the information is currently valid. Can be useful when this information is explicitly available.\n",
@@ -274,6 +271,16 @@
             "title": "Gender",
             "type": "object"
         },
+        "GenderCodeEnum": {
+            "description": "Gender codes for persons.",
+            "enum": [
+                "male",
+                "female",
+                "diverse"
+            ],
+            "title": "GenderCodeEnum",
+            "type": "string"
+        },
         "Group": {
             "additionalProperties": false,
             "description": "A political group, organization, or body (e.g., party, committee, parliament, department).",
@@ -299,7 +306,7 @@
                     ]
                 },
                 "contacts": {
-                    "description": "Contact information (email, website, social media).\n",
+                    "description": "Contact information (email, website, social media). Guideline: email is quasi-mandatory and should always be provided where available.\n",
                     "items": {
                         "$ref": "#/$defs/Contact"
                     },
@@ -363,7 +370,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "Link to the group type.\n"
+                    "description": "Type of group (e.g., party, commission, parliament, or similar). The exact naming and description of the group is provided via `label`.\n"
                 },
                 "is_active": {
                     "description": "Indicates whether the information is currently valid. Can be useful when this information is explicitly available.\n",
@@ -395,7 +402,7 @@
                     ]
                 },
                 "parent_groups": {
-                    "description": "Link to parent groups.\n",
+                    "description": "Link to parent groups. For example, the parent party for cantonal parties, or to describe the hierarchy in the executive. Also used to link sub-commissions to commissions, or factions to both their parliament and their party. (parentGroup is typically used within the same group_type, but cross-type links are permitted, e.g., faction \u2192 parliament and faction \u2192 party.)\n",
                     "items": {
                         "type": "string"
                     },
@@ -405,21 +412,21 @@
                     ]
                 },
                 "party_color": {
-                    "description": "Party color (optional for parties).\n",
+                    "description": "Party color as hexadecimal value (optional for parties, e.g., \"#FF0000\").\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "spatial": {
-                    "description": "Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).\n",
+                    "description": "Spatial reference (fos-municipality number, fos-canton number, or country). Formats: municipality: ld.admin.ch/municipality/1234, canton: ld.admin.ch/canton/23, country: ld.admin.ch/country/CHE.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "statutes_url": {
-                    "description": "URL to party statutes (optional for parties).\n",
+                    "description": "URL to party statutes (PDF or webpage; optional for parties).\n",
                     "type": [
                         "string",
                         "null"
@@ -482,7 +489,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "Link to the group type.\n"
+                    "description": "Type of group (e.g., party, commission, parliament, or similar). The exact naming and description of the group is provided via `label`.\n"
                 },
                 "label": {
                     "description": "Option to assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
@@ -661,10 +668,10 @@
         },
         "InterestLink": {
             "additionalProperties": false,
-            "description": "An interest link (conflict of interest, political financing) of a person to an organization.",
+            "description": "An interest link (conflict of interest, political financing) of a person to an organization outside the actor schema.",
             "properties": {
                 "committee": {
-                    "description": "Committee or board (e.g., foundation board, board of directors).\n",
+                    "description": "Committee or board within the organization (e.g., Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Gesch\u00e4ftsleitung).\n",
                     "type": [
                         "string",
                         "null"
@@ -703,7 +710,7 @@
                     ]
                 },
                 "function_role": {
-                    "description": "Function or role in the organization.\n",
+                    "description": "Function or role in the organization (e.g., Pr\u00e4sident/in, Vizepr\u00e4sident/in, Mitglied, Delegierter, Gesch\u00e4ftsf\u00fchrer/in, Berater/in).\n",
                     "type": [
                         "string",
                         "null"
@@ -732,11 +739,8 @@
                     ]
                 },
                 "legal_form": {
-                    "description": "Legal form of the organization.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "$ref": "#/$defs/LegalFormEnum",
+                    "description": "Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm\n"
                 },
                 "local_id": {
                     "description": "Local identifier. For example, a UUID from the council information system.\n",
@@ -760,7 +764,8 @@
                     ]
                 },
                 "organization_uid": {
-                    "description": "UID of the organization (for analysis with NOGA codes, etc.).\n",
+                    "description": "UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).\n",
+                    "pattern": "^CHE-\\d{3}\\.\\d{3}\\.\\d{3}$",
                     "type": [
                         "string",
                         "null"
@@ -1060,12 +1065,57 @@
             "title": "LanguageProficiency",
             "type": "object"
         },
+        "LegalFormEnum": {
+            "description": "Legal forms based on the Swiss UID register codelist (eCH-0097). See https://register.ld.admin.ch/i14y/concept/legalForm",
+            "enum": [
+                "0101",
+                "0103",
+                "0104",
+                "0105",
+                "0106",
+                "0107",
+                "0108",
+                "0109",
+                "0110",
+                "0111",
+                "0113",
+                "0114",
+                "0115",
+                "0116",
+                "0117",
+                "0118",
+                "0119",
+                "0151",
+                "0220",
+                "0221",
+                "0222",
+                "0223",
+                "0224",
+                "0230",
+                "0231",
+                "0232",
+                "0233",
+                "0234",
+                "0302",
+                "0312",
+                "0327",
+                "0328",
+                "0329",
+                "0355",
+                "0361",
+                "0362",
+                "0441",
+                "0571"
+            ],
+            "title": "LegalFormEnum",
+            "type": "string"
+        },
         "Membership": {
             "additionalProperties": false,
-            "description": "A membership relationship between a person and a group.",
+            "description": "A membership relationship between a person and a group, representing formal affiliation (e.g., party member, commission member, parliamentarian). Distinct from InterestLink, which covers external interest bindings and conflicts of interest to organizations outside the actor schema.",
             "properties": {
                 "authorized_to_vote": {
-                    "description": "Indicates if the person is authorized to vote.\n",
+                    "description": "Indicates if the person is authorized to vote in the group. Typically false for substitute members (when not deputizing), observers, secretaries, and guests.\n",
                     "type": [
                         "boolean",
                         "null"
@@ -1119,7 +1169,7 @@
                     "description": "Reference to a group with snapshot data at time of linking.\n"
                 },
                 "is_active": {
-                    "description": "Indicates whether the information is currently valid. Can be useful when this information is explicitly available.\n",
+                    "description": "Indicates if the membership is currently active. Can complement or replace `valid_from`/`valid_through`. If not set, activity is derived from the temporal validity fields.\n",
                     "type": [
                         "boolean",
                         "null"
@@ -1209,7 +1259,7 @@
         },
         "Name": {
             "additionalProperties": false,
-            "description": "A name with a type (e.g., call name, official name) and a value.",
+            "description": "A name with a type (e.g., call name, official name), a value, and a temporal validity.",
             "properties": {
                 "is_active": {
                     "description": "Indicates whether the information is currently valid. Can be useful when this information is explicitly available.\n",
@@ -1220,7 +1270,7 @@
                 },
                 "name_type": {
                     "$ref": "#/$defs/NameTypeEnum",
-                    "description": "Type of name.\n"
+                    "description": "Type of name according to eCH-0011 (personNameData).\n"
                 },
                 "valid_from": {
                     "description": "The date from which the information is valid.\n",
@@ -1250,7 +1300,7 @@
             "type": "object"
         },
         "NameTypeEnum": {
-            "description": "Categories of name types according to https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI according to I14Y identifier but as class and not as attribute. Descriptions and translations according to I14Y.",
+            "description": "Categories of name types according to eCH-0011 (personNameData) and https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI according to I14Y identifier but as class and not as attribute. Descriptions and translations according to I14Y.",
             "enum": [
                 "PersonOfficialName",
                 "PersonOriginalName",
@@ -1373,7 +1423,7 @@
                     ]
                 },
                 "contacts": {
-                    "description": "Contact information (email, website, social media).\n",
+                    "description": "Contact information (email, website, social media). Guideline: email is quasi-mandatory and should always be provided where available.\n",
                     "items": {
                         "$ref": "#/$defs/Contact"
                     },
@@ -1448,7 +1498,7 @@
                     "type": "string"
                 },
                 "interest_links": {
-                    "description": "Collection of interest links.range: InterestLink\n",
+                    "description": "Collection of interest links.\n",
                     "items": {
                         "$ref": "#/$defs/InterestLink"
                     },
@@ -1458,14 +1508,11 @@
                     ]
                 },
                 "label": {
-                    "description": "Option to assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "description": "Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name).\n",
+                    "type": "string"
                 },
                 "label_long": {
-                    "description": "Option to assign an extended label to a structured piece of information (e.g., display name with title, position, etc.).\n",
+                    "description": "Optional long display name including academic titles and full official name (e.g. \"Dr. Maria Muster-Beispiel\").\n",
                     "type": [
                         "string",
                         "null"
@@ -1517,7 +1564,7 @@
                     ]
                 },
                 "trainings": {
-                    "description": "Trainings or educations of the person.\n",
+                    "description": "Trainings or educations of the person. Guideline: generally only provide the highest qualification obtained.\n",
                     "items": {
                         "$ref": "#/$defs/Training"
                     },
@@ -1535,6 +1582,7 @@
                 }
             },
             "required": [
+                "label",
                 "global_uri"
             ],
             "title": "Person",
@@ -1556,14 +1604,11 @@
                     ]
                 },
                 "label": {
-                    "description": "Option to assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "description": "Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name).\n",
+                    "type": "string"
                 },
                 "label_long": {
-                    "description": "Option to assign an extended label to a structured piece of information (e.g., display name with title, position, etc.).\n",
+                    "description": "Optional long display name including academic titles and full official name (e.g. \"Dr. Maria Muster-Beispiel\").\n",
                     "type": [
                         "string",
                         "null"
@@ -1596,6 +1641,7 @@
                 }
             },
             "required": [
+                "label",
                 "global_uri"
             ],
             "title": "PersonReference",
@@ -1715,7 +1761,7 @@
             ]
         },
         "interest_links": {
-            "description": "Collection of interest links.range: InterestLink\n",
+            "description": "Collection of interest links.\n",
             "items": {
                 "$ref": "#/$defs/InterestLink"
             },

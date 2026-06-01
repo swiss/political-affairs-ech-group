@@ -27,7 +27,7 @@ URI: [act:personReference](https://ld.ech.ch/schema/0294/actors/personReference)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Membership](Membership.md) | A membership relationship between a person and a group |  no  |
+| [Membership](Membership.md) | A membership relationship between a person and a group, representing formal a... |  no  |
 | [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
 
 

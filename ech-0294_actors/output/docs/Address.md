@@ -19,7 +19,7 @@ __
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
 | address_type | 0..1 <br/> [AddressTypeEnum](AddressTypeEnum.md) | Type of address.  |
-| address_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | URI of the address.  |
+| address_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | URI of the address from the Swiss federal building address register. The layer can be accessed at https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis. Example of a valid URI: https://geo.ld.admin.ch/location/address/101904050  |
 | street_address | 0..1 <br/> [String](String.md) | Street address.  |
 | postal_code | 0..1 <br/> [Integer](Integer.md) | Postal code.  |
 | postal_locality | 0..1 <br/> [String](String.md) | Locality.  |

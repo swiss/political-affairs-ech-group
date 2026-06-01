@@ -6,7 +6,7 @@ search:
 # Slot: legal_form 
 
 
-_Legal form of the organization._
+_Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm_
 
 __
 
@@ -40,7 +40,7 @@ URI: [act:legalForm](https://ld.ech.ch/schema/0294/actors/legalForm)
 
 | Property | Value |
 | --- | --- |
-| Range | [String](String.md) |
+| Range | [LegalFormEnum](LegalFormEnum.md) |
 | Domain Of | [InterestLink](InterestLink.md) |
 | Slot URI | [act:legalForm](https://ld.ech.ch/schema/0294/actors/legalForm) |
 
@@ -61,9 +61,9 @@ URI: [act:legalForm](https://ld.ech.ch/schema/0294/actors/legalForm)
 
 | Value |
 | --- |
-| Aktiengesellschaft |
-| Gesellschaft mit beschränkter Haftung |
-| Stiftung |
+| 0106 |
+| 0107 |
+| 0109 |
 
 
 
@@ -77,22 +77,22 @@ name: legal_form
 annotations:
   description_de:
     tag: description_de
-    value: 'Rechtsform der Organisation.
+    value: 'Rechtsform der Organisation. Siehe kontrolliertes Vokabular: https://register.ld.admin.ch/i14y/concept/legalForm
 
       '
-description: 'Legal form of the organization.
+description: 'Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm
 
   '
 examples:
-- value: Aktiengesellschaft
-- value: Gesellschaft mit beschränkter Haftung
-- value: Stiftung
+- value: '0106'
+- value: '0107'
+- value: 0109
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:legalForm
 domain_of:
 - InterestLink
-range: string
+range: LegalFormEnum
 
 ```
 </details></div>

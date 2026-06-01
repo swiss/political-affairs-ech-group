@@ -6,7 +6,7 @@ search:
 # Slot: committee 
 
 
-_Committee or board (e.g., foundation board, board of directors)._
+_Committee or board within the organization (e.g., Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung)._
 
 __
 
@@ -68,10 +68,12 @@ name: committee
 annotations:
   description_de:
     tag: description_de
-    value: 'Gremium (z.B. Stiftungsrat, Verwaltungsrat).
+    value: 'Gremium innerhalb der Organisation (z.B. Verwaltungsrat, Stiftungsrat,
+      Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).
 
       '
-description: 'Committee or board (e.g., foundation board, board of directors).
+description: 'Committee or board within the organization (e.g., Verwaltungsrat, Stiftungsrat,
+  Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

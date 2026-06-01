@@ -6,7 +6,7 @@ search:
 # Slot: trainings 
 
 
-_Trainings or educations of the person._
+_Trainings or educations of the person. Guideline: generally only provide the highest qualification obtained._
 
 __
 
@@ -69,10 +69,12 @@ name: trainings
 annotations:
   description_de:
     tag: description_de
-    value: 'Ausbildungen oder Bildungen der Person.
+    value: 'Ausbildungen oder Bildungen der Person. Richtlinie: Im Grundsatz nur die
+      höchste Ausbildung angeben.
 
       '
-description: 'Trainings or educations of the person.
+description: 'Trainings or educations of the person. Guideline: generally only provide
+  the highest qualification obtained.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

@@ -6,7 +6,7 @@ search:
 # Slot: party_color 
 
 
-_Party color (optional for parties)._
+_Party color as hexadecimal value (optional for parties, e.g., "#FF0000")._
 
 __
 
@@ -68,10 +68,10 @@ name: party_color
 annotations:
   description_de:
     tag: description_de
-    value: 'Parteifarbe (optional für Parteien).
+    value: 'Parteifarbe als Hexadezimalwert (optional für Parteien, z.B. "#FF0000").
 
       '
-description: 'Party color (optional for parties).
+description: 'Party color as hexadecimal value (optional for parties, e.g., "#FF0000").
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

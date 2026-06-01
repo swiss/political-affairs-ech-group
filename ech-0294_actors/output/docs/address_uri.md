@@ -6,7 +6,7 @@ search:
 # Slot: address_uri 
 
 
-_URI of the address._
+_URI of the address from the Swiss federal building address register. The layer can be accessed at https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis. Example of a valid URI: https://geo.ld.admin.ch/location/address/101904050_
 
 __
 
@@ -68,10 +68,14 @@ name: address_uri
 annotations:
   description_de:
     tag: description_de
-    value: 'URI der Adresse.
+    value: 'URI der Adresse aus dem eidgenössischen Gebäudeadressverzeichnis. Der
+      Layer ist zugänglich unter https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis.
+      Beispiel einer gültigen URI: https://geo.ld.admin.ch/location/address/101904050
 
       '
-description: 'URI of the address.
+description: 'URI of the address from the Swiss federal building address register.
+  The layer can be accessed at https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis.
+  Example of a valid URI: https://geo.ld.admin.ch/location/address/101904050
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

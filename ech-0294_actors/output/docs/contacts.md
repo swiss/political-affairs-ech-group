@@ -6,7 +6,7 @@ search:
 # Slot: contacts 
 
 
-_Contact information (email, website, social media)._
+_Contact information (email, website, social media). Guideline: email is quasi-mandatory and should always be provided where available._
 
 __
 
@@ -70,10 +70,12 @@ name: contacts
 annotations:
   description_de:
     tag: description_de
-    value: 'Kontaktinformationen (E-Mail, Website, Social Media).
+    value: 'Kontaktinformationen (E-Mail, Website, Social Media). Richtlinie: E-Mail
+      ist quasi-obligatorisch und sollte wenn vorhanden immer angegeben werden.
 
       '
-description: 'Contact information (email, website, social media).
+description: 'Contact information (email, website, social media). Guideline: email
+  is quasi-mandatory and should always be provided where available.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

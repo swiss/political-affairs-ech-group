@@ -6,7 +6,7 @@ search:
 # Slot: spatial 
 
 
-_Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234, ld.admin.ch/canton/23)._
+_Spatial reference (fos-municipality number, fos-canton number, or country). Formats: municipality: ld.admin.ch/municipality/1234, canton: ld.admin.ch/canton/23, country: ld.admin.ch/country/CHE._
 
 __
 
@@ -67,12 +67,14 @@ name: spatial
 annotations:
   description_de:
     tag: description_de
-    value: 'Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z.B. ld.admin.ch/municipality/1234,
-      ld.admin.ch/canton/23).
+    value: 'Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer oder Land).
+      Formate: Gemeinde: ld.admin.ch/municipality/1234, Kanton: ld.admin.ch/canton/23,
+      Bund: ld.admin.ch/country/CHE.
 
       '
-description: 'Spatial reference (fos-municipality number, fos-canton number, e.g.,
-  ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).
+description: 'Spatial reference (fos-municipality number, fos-canton number, or country).
+  Formats: municipality: ld.admin.ch/municipality/1234, canton: ld.admin.ch/canton/23,
+  country: ld.admin.ch/country/CHE.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

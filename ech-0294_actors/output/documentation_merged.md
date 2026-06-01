@@ -16,8 +16,8 @@ toc: false
 | **Ersetzt Version**   | 0.0                                                                                                                        |
 | **Voraussetzungen**   | eCH-0292 (Gemeinsame Datenelemente)                                                                                        |
 | **Beilagen**          | -                                                                                                                          |
-| **Sprachen**          | English (Original)                                                                                                         |
-| **Autoren**           | Fachgruppe politische Geschäfte: Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi   |
+| **Sprachen**          | Deutsch (Original) - English (Datamodel)                                                                                    |
+| **Autoren**           | Fachgruppe politische Geschäfte: Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi, Christian Gutknecht, Michael Luggen |
 | **Herausgeber / Vertrieb** | Verein eCH, Räffelstr. 20, 8045                                                                                       |
 
 # Summary
@@ -130,8 +130,8 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| label | 0..1 <br/> [String](#String) | Option to assign a label to a structured piece of information (e.g., display name, position, etc.).  |
-| label_long | 0..1 <br/> [String](#String) | Option to assign an extended label to a structured piece of information (e.g., display name with title, position, etc.).  |
+| label | 1 <br/> [String](#String) | Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name).  |
+| label_long | 0..1 <br/> [String](#String) | Optional long display name including academic titles and full official name (e.g. "Dr. Maria Muster-Beispiel").  |
 | birth_year | 0..1 <br/> [Integer](#Integer) | Year of birth. Only to be used, if there is no full `birthDate` available.  |
 | birth_date | 0..1 <br/> [Date](#Date) | Exact date of birth if available and public. This field has precedence over the field `birthYear`.  |
 | death_date | 0..1 <br/> [Date](#Date) | Exact date of death.  |
@@ -142,10 +142,10 @@ __
 | citizenships | * <br/> [Citizenship](#Citizenship) | Citizenships of the person.  |
 | genders | * <br/> [Gender](#Gender) | Gender of the person.  |
 | occupations | * <br/> [Occupation](#Occupation) | Occupations or professions of the person.  |
-| trainings | * <br/> [Training](#Training) | Trainings or educations of the person.  |
-| contacts | * <br/> [Contact](#Contact) | Contact information (email, website, social media).  |
+| trainings | * <br/> [Training](#Training) | Trainings or educations of the person. Guideline: generally only provide the highest qualification obtained.  |
+| contacts | * <br/> [Contact](#Contact) | Contact information (email, website, social media). Guideline: email is quasi-mandatory and should always be provided where available.  |
 | electoral_district | 0..1 <br/> [ElectoralDistrict](#ElectoralDistrict) | Link to the electoral district.  |
-| interest_links | * <br/> [InterestLink](#InterestLink) | Collection of interest links.range: InterestLink  |
+| interest_links | * <br/> [InterestLink](#InterestLink) | Collection of interest links.  |
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
@@ -290,7 +290,7 @@ electoral_district:
 ## Class: Name 
 
 
-_A name with a type (e.g., call name, official name) and a value._
+_A name with a type (e.g., call name, official name), a value, and a temporal validity._
 
 __
 
@@ -305,7 +305,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| name_type | 0..1 <br/> [NameTypeEnum](#NameTypeEnum) | Type of name.  |
+| name_type | 0..1 <br/> [NameTypeEnum](#NameTypeEnum) | Type of name according to eCH-0011 (personNameData).  |
 | value | 0..1 <br/> [String](#String) | The value of an information besides other attributes such as type, language, etc.  |
 | valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 | valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
@@ -470,7 +470,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| gender_code | 0..1 <br/> [String](#String) | Gender code (e.g., according to ISO 5218).  |
+| gender_code | 0..1 <br/> [GenderCodeEnum](#GenderCodeEnum) | Gender code. Recommended values: male, female, diverse.  |
 | pronouns | * <br/> [String](#String) | Pronouns used by the person.  |
 | valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 | valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
@@ -757,17 +757,17 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| group_type | 0..1 <br/> [GroupType](#GroupType) | Link to the group type.  |
+| group_type | 0..1 <br/> [GroupType](#GroupType) | Type of group (e.g., party, commission, parliament, or similar). The exact naming and description of the group is provided via `label`.  |
 | label | 0..1 <br/> [String](#String) | Option to assign a label to a structured piece of information (e.g., display name, position, etc.).  |
 | abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abbreviation (can be multilingual).  |
 | description | * <br/> [MultilingualValue](#MultilingualValue) | Description of the entity.  |
 | landing_page | 0..1 <br/> [Uri](#Uri) | Website providing further information.  |
-| parent_groups | * <br/> [Uriorcurie](#Uriorcurie) | Link to parent groups.  |
-| spatial | 0..1 <br/> [String](#String) | Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).  |
-| contacts | * <br/> [Contact](#Contact) | Contact information (email, website, social media).  |
+| parent_groups | * <br/> [Uriorcurie](#Uriorcurie) | Link to parent groups. For example, the parent party for cantonal parties, or to describe the hierarchy in the executive. Also used to link sub-commissions to commissions, or factions to both their parliament and their party. (parentGroup is typically used within the same group_type, but cross-type links are permitted, e.g., faction → parliament and faction → party.)  |
+| spatial | 0..1 <br/> [String](#String) | Spatial reference (fos-municipality number, fos-canton number, or country). Formats: municipality: ld.admin.ch/municipality/1234, canton: ld.admin.ch/canton/23, country: ld.admin.ch/country/CHE.  |
+| contacts | * <br/> [Contact](#Contact) | Contact information (email, website, social media). Guideline: email is quasi-mandatory and should always be provided where available.  |
 | addresses | * <br/> [Address](#Address) | Addresses with type (private, business, local).  |
-| statutes_url | 0..1 <br/> [String](#String) | URL to party statutes (optional for parties).  |
-| party_color | 0..1 <br/> [String](#String) | Party color (optional for parties).  |
+| statutes_url | 0..1 <br/> [String](#String) | URL to party statutes (PDF or webpage; optional for parties).  |
+| party_color | 0..1 <br/> [String](#String) | Party color as hexadecimal value (optional for parties, e.g., "#FF0000").  |
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
@@ -809,6 +809,107 @@ __
 
 </div>
 
+
+
+## Class: GroupType 
+
+
+_Type of group (e.g., party, committee, parliament, department)._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+### Attribute
+
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| group_type_enum | 0..1 <br/> [GroupTypeEnum](#GroupTypeEnum) | Link to the controlled vocabulary for group types.  |
+| label | 0..1 <br/> [String](#String) | Option to assign a label to a structured piece of information (e.g., display name, position, etc.).  |
+
+
+
+
+
+### Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Group](#Group) | [group_type](#group_type) | range | [GroupType](#GroupType) |
+| [GroupReference](#GroupReference) | [group_type](#group_type) | range | [GroupType](#GroupType) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+## Enum: GroupTypeEnum 
+
+
+
+
+_Types of political groups and organizations._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
+
+### Permissible Values
+| Value | Meaning | Description |
+| --- | --- | --- |
+| party | act:enum/group_type/party | Political party at federal, cantonal, or municipal level |
+| list | act:enum/group_type/list | Electoral list (can be part of a party or independent) |
+| workgroup | act:enum/group_type/workgroup | Ad-hoc working group, typically with a limited duration |
+| parliament | act:enum/group_type/parliament | Parliament at federal, cantonal, or municipal level (e |
+| delegation | act:enum/group_type/delegation | Delegation |
+| commission | act:enum/group_type/commission | Commission (permanent or ad-hoc), including supervisory commissions (e |
+| faction | act:enum/group_type/faction | Parliamentary faction |
+| parliamentary_bureau | act:enum/group_type/parliamentary_bureau | Parliamentary bureau |
+| presidency | act:enum/group_type/presidency | Presidency of parliament |
+| government | act:enum/group_type/government | Government / Executive as a collective body (e |
+| department | act:enum/group_type/department | Government department |
+| office | act:enum/group_type/office | Government office |
+| extraparliamentary_commission | act:enum/group_type/extraparliamentary_commission | Extra-parliamentary commission with a government mandate (e |
+| interest_group | act:enum/group_type/interest_group | Interest group from civil society |
+| control_body | act:enum/group_type/control_body | Control or supervisory body (e |
+| parliamentary_services | act:enum/group_type/parliamentary_services | Parliamentary services |
+| court | act:enum/group_type/court | Court / Judiciary at any level (e |
+| association | act:enum/group_type/association | Association |
+| petition_carrier | act:enum/group_type/petition_carrier | Petition carrier |
+| university | act:enum/group_type/university | University or educational institution as an outsourced provider of public tas... |
+| other | act:enum/group_type/other | Other group type not covered by standard categories |
+
+
+
+
+
+
+
+</div>
 # Mitgliedschaften (Memberships)
 
 ## Einführung und Zielsetzung
@@ -840,7 +941,7 @@ Memberships werden für verschiedene Zuordnungen verwendet:
 ## Class: Membership 
 
 
-_A membership relationship between a person and a group._
+_A membership relationship between a person and a group, representing formal affiliation (e.g., party member, commission member, parliamentarian). Distinct from InterestLink, which covers external interest bindings and conflicts of interest to organizations outside the actor schema._
 
 __
 
@@ -858,7 +959,8 @@ __
 | person_reference | 0..1 <br/> [PersonReference](#PersonReference) | Reference to a person with snapshot data at time of linking.  |
 | group_reference | 0..1 <br/> [GroupReference](#GroupReference) | Reference to a group with snapshot data at time of linking.  |
 | role_type | 0..1 <br/> [RoleType](#RoleType) | Role of the person in the membership or function.  |
-| authorized_to_vote | 0..1 <br/> [Boolean](#Boolean) | Indicates if the person is authorized to vote.  |
+| authorized_to_vote | 0..1 <br/> [Boolean](#Boolean) | Indicates if the person is authorized to vote in the group. Typically false for substitute members (when not deputizing), observers, secretaries, and guests.  |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | Indicates if the membership is currently active. Can complement or replace `valid_from`/`valid_through`. If not set, activity is derived from the temporal validity fields.  |
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
@@ -868,7 +970,6 @@ __
 | datetime_modified | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 | valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
@@ -920,7 +1021,7 @@ Das InterestLink-Schema erfasst Interessenbindungen, Interessenkonflikte und Ver
 ## Class: InterestLink 
 
 
-_An interest link (conflict of interest, political financing) of a person to an organization._
+_An interest link (conflict of interest, political financing) of a person to an organization outside the actor schema._
 
 __
 
@@ -938,12 +1039,12 @@ __
 | person_reference | 0..1 <br/> [PersonReference](#PersonReference) | Reference to a person with snapshot data at time of linking.  |
 | interest_type | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | Type of interest link (professional activity, political office, association).  |
 | organization_label | 0..1 <br/> [String](#String) | Label of the organization.  |
-| organization_uid | 0..1 <br/> [String](#String) | UID of the organization (for analysis with NOGA codes, etc.).  |
+| organization_uid | 0..1 <br/> [String](#String) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).  |
 | organization_address | 0..1 <br/> [String](#String) | Address of the organization.  |
-| legal_form | 0..1 <br/> [String](#String) | Legal form of the organization.  |
+| legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm  |
 | is_paid | 0..1 <br/> [Boolean](#Boolean) | Indicates if the position is paid.  |
-| committee | 0..1 <br/> [String](#String) | Committee or board (e.g., foundation board, board of directors).  |
-| function_role | 0..1 <br/> [String](#String) | Function or role in the organization.  |
+| committee | 0..1 <br/> [String](#String) | Committee or board within the organization (e.g., Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).  |
+| function_role | 0..1 <br/> [String](#String) | Function or role in the organization (e.g., Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in).  |
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
@@ -990,7 +1091,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_label: Burkart Advisory GmbH, Baden
-legal_form: Gesellschaft mit beschränkter Haftung
+legal_form: '0107'
 committee: Geschäftsleitung
 function_role: Geschäftsführer
 is_paid: true
@@ -1006,7 +1107,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-legal_form: Stiftung
+legal_form: '0110'
 committee: Stiftungsrat
 function_role: Vizepräsident
 is_paid: false
@@ -1022,7 +1123,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: Verein Landesausstellung Svizra27, Aarau
-legal_form: Verein
+legal_form: 0109
 committee: Vorstand
 function_role: Mitglied
 is_paid: false
@@ -1038,7 +1139,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: Allianz Sicherheit Schweiz, Baden
-legal_form: Verein
+legal_form: 0109
 committee: Vorstand
 function_role: Präsident
 is_paid: false
@@ -1054,7 +1155,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_label: Birchmeier Holding AG, Döttingen
-legal_form: Aktiengesellschaft
+legal_form: '0106'
 committee: Verwaltungsrat
 function_role: Mitglied
 is_paid: true
@@ -1070,7 +1171,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_label: ELCA Group SA, Lausanne
-legal_form: Aktiengesellschaft
+legal_form: '0106'
 committee: Verwaltungsrat
 function_role: Mitglied
 is_paid: true
@@ -1086,7 +1187,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_label: Bovida Real Estate AG, Baar
-legal_form: Aktiengesellschaft
+legal_form: '0106'
 committee: Verwaltungsrat
 function_role: Mitglied
 is_paid: true
@@ -1102,7 +1203,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: FDP.Die Liberalen
-legal_form: Verein
+legal_form: 0109
 committee: Vorstand
 function_role: Präsident
 is_paid: true
@@ -1118,7 +1219,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_label: Stiebel Eltron AG, Lupfig
-legal_form: Aktiengesellschaft
+legal_form: '0106'
 committee: Beirat
 function_role: Beirat
 is_paid: true
@@ -1134,7 +1235,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: SUISSEDIGITAL Verband für Kommunikationsnetze
-legal_form: Verein
+legal_form: 0109
 committee: Vorstand
 function_role: Mitglied
 is_paid: true
@@ -1150,7 +1251,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
-legal_form: Verein
+legal_form: 0109
 committee: Zentralvorstand
 function_role: Präsident
 is_paid: true
@@ -1164,6 +1265,35 @@ is_paid: true
 
 </div>
 
+## Enum: InterestTypeEnum 
+
+
+
+
+_Types of interest links (conflicts of interest, political financing)._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnum)
+
+### Permissible Values
+| Value | Meaning | Description |
+| --- | --- | --- |
+| professional_activity | act:enum/interest_type/professional_activity | Professional activity outside the political mandate (e |
+| political_office | act:enum/interest_type/political_office | Political office or mandate at other federal levels or in other bodies (e |
+| association | act:enum/interest_type/association | Membership in associations, federations, or interest organizations (e |
+
+
+
+
+
+
+
+</div>
 # Geteilte Elemente
 
 
@@ -1187,8 +1317,8 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| label | 0..1 <br/> [String](#String) | Option to assign a label to a structured piece of information (e.g., display name, position, etc.).  |
-| label_long | 0..1 <br/> [String](#String) | Option to assign an extended label to a structured piece of information (e.g., display name with title, position, etc.).  |
+| label | 1 <br/> [String](#String) | Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name).  |
+| label_long | 0..1 <br/> [String](#String) | Optional long display name including academic titles and full official name (e.g. "Dr. Maria Muster-Beispiel").  |
 | role_type | 0..1 <br/> [RoleType](#RoleType) | Role of the person in the membership or function.  |
 | group_label | 0..1 <br/> [String](#String) | Name of the body/group at time of linking.  |
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
@@ -1248,7 +1378,7 @@ __
 | ---  | --- | --- |
 | label | 0..1 <br/> [String](#String) | Option to assign a label to a structured piece of information (e.g., display name, position, etc.).  |
 | abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abbreviation (can be multilingual).  |
-| group_type | 0..1 <br/> [GroupType](#GroupType) | Link to the group type.  |
+| group_type | 0..1 <br/> [GroupType](#GroupType) | Type of group (e.g., party, commission, parliament, or similar). The exact naming and description of the group is provided via `label`.  |
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
@@ -1304,7 +1434,7 @@ __
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
 | address_type | 0..1 <br/> [AddressTypeEnum](#AddressTypeEnum) | Type of address.  |
-| address_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | URI of the address.  |
+| address_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | URI of the address from the Swiss federal building address register. The layer can be accessed at https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis. Example of a valid URI: https://geo.ld.admin.ch/location/address/101904050  |
 | street_address | 0..1 <br/> [String](#String) | Street address.  |
 | postal_code | 0..1 <br/> [Integer](#Integer) | Postal code.  |
 | postal_locality | 0..1 <br/> [String](#String) | Locality.  |

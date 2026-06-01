@@ -6,7 +6,7 @@ search:
 # Slot: name_type 
 
 
-_Type of name._
+_Type of name according to eCH-0011 (personNameData)._
 
 __
 
@@ -76,10 +76,10 @@ name: name_type
 annotations:
   description_de:
     tag: description_de
-    value: 'Typ des Namens.
+    value: 'Typ des Namens gemäss eCH-0011 (personNameData).
 
       '
-description: 'Type of name.
+description: 'Type of name according to eCH-0011 (personNameData).
 
   '
 examples:

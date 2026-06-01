@@ -27,9 +27,9 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  yes  |
 | [Group](Group.md) | A political group, organization, or body (e |  no  |
-| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |  no  |
+| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |  yes  |
 | [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |  no  |
 | [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |  no  |
 | [GroupType](GroupType.md) | Type of group (e |  no  |

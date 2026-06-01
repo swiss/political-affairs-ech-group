@@ -18,8 +18,8 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| label | 0..1 <br/> [String](String.md) | Option to assign a label to a structured piece of information (e.g., display name, position, etc.).  |
-| label_long | 0..1 <br/> [String](String.md) | Option to assign an extended label to a structured piece of information (e.g., display name with title, position, etc.).  |
+| label | 1 <br/> [String](String.md) | Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name).  |
+| label_long | 0..1 <br/> [String](String.md) | Optional long display name including academic titles and full official name (e.g. "Dr. Maria Muster-Beispiel").  |
 | birth_year | 0..1 <br/> [Integer](Integer.md) | Year of birth. Only to be used, if there is no full `birthDate` available.  |
 | birth_date | 0..1 <br/> [Date](Date.md) | Exact date of birth if available and public. This field has precedence over the field `birthYear`.  |
 | death_date | 0..1 <br/> [Date](Date.md) | Exact date of death.  |
@@ -30,10 +30,10 @@ __
 | citizenships | * <br/> [Citizenship](Citizenship.md) | Citizenships of the person.  |
 | genders | * <br/> [Gender](Gender.md) | Gender of the person.  |
 | occupations | * <br/> [Occupation](Occupation.md) | Occupations or professions of the person.  |
-| trainings | * <br/> [Training](Training.md) | Trainings or educations of the person.  |
-| contacts | * <br/> [Contact](Contact.md) | Contact information (email, website, social media).  |
+| trainings | * <br/> [Training](Training.md) | Trainings or educations of the person. Guideline: generally only provide the highest qualification obtained.  |
+| contacts | * <br/> [Contact](Contact.md) | Contact information (email, website, social media). Guideline: email is quasi-mandatory and should always be provided where available.  |
 | electoral_district | 0..1 <br/> [ElectoralDistrict](ElectoralDistrict.md) | Link to the electoral district.  |
-| interest_links | * <br/> [InterestLink](InterestLink.md) | Collection of interest links.range: InterestLink  |
+| interest_links | * <br/> [InterestLink](InterestLink.md) | Collection of interest links.  |
 | local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |

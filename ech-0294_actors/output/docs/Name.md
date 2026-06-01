@@ -3,7 +3,7 @@
 ## Class: Name 
 
 
-_A name with a type (e.g., call name, official name) and a value._
+_A name with a type (e.g., call name, official name), a value, and a temporal validity._
 
 __
 
@@ -18,7 +18,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| name_type | 0..1 <br/> [NameTypeEnum](NameTypeEnum.md) | Type of name.  |
+| name_type | 0..1 <br/> [NameTypeEnum](NameTypeEnum.md) | Type of name according to eCH-0011 (personNameData).  |
 | value | 0..1 <br/> [String](String.md) | The value of an information besides other attributes such as type, language, etc.  |
 | valid_from | 0..1 <br/> [Date](Date.md) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |
 | valid_through | 0..1 <br/> [Date](Date.md) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |

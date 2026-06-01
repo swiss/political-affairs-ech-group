@@ -6,7 +6,7 @@ search:
 # Slot: statutes_url 
 
 
-_URL to party statutes (optional for parties)._
+_URL to party statutes (PDF or webpage; optional for parties)._
 
 __
 
@@ -68,10 +68,10 @@ name: statutes_url
 annotations:
   description_de:
     tag: description_de
-    value: 'URL zu Parteistatuten (optional für Parteien).
+    value: 'URL zu Parteistatuten (PDF oder Webseite; optional für Parteien).
 
       '
-description: 'URL to party statutes (optional for parties).
+description: 'URL to party statutes (PDF or webpage; optional for parties).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

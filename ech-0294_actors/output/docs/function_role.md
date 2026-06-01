@@ -6,7 +6,7 @@ search:
 # Slot: function_role 
 
 
-_Function or role in the organization._
+_Function or role in the organization (e.g., Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in)._
 
 __
 
@@ -68,10 +68,12 @@ name: function_role
 annotations:
   description_de:
     tag: description_de
-    value: 'Funktion oder Rolle in der Organisation.
+    value: 'Funktion oder Rolle in der Organisation (z.B. Präsident/in, Vizepräsident/in,
+      Mitglied, Delegierter, Geschäftsführer/in, Berater/in).
 
       '
-description: 'Function or role in the organization.
+description: 'Function or role in the organization (e.g., Präsident/in, Vizepräsident/in,
+  Mitglied, Delegierter, Geschäftsführer/in, Berater/in).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

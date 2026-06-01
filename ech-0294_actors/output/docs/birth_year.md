@@ -76,7 +76,8 @@ name: birth_year
 annotations:
   description_de:
     tag: description_de
-    value: 'Geburtsjahr.
+    value: 'Geburtsjahr. Nur zu verwenden, wenn kein vollständiges `birthDate` vorhanden
+      ist.
 
       '
 description: 'Year of birth. Only to be used, if there is no full `birthDate` available.

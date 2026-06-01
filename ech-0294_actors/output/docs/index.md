@@ -30,7 +30,7 @@ Name: actors-schema
 | [IsInstantaneousEvent](IsInstantaneousEvent.md) | A mixin class that provides slots for modeling instantaneous events or occurr... |
 | [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |
 | [LanguageProficiency](LanguageProficiency.md) | Language proficiency of a person indicating the language and whether it is th... |
-| [Membership](Membership.md) | A membership relationship between a person and a group |
+| [Membership](Membership.md) | A membership relationship between a person and a group, representing formal a... |
 | [MultilingualValue](MultilingualValue.md) | A multilingual string with language specification |
 | [Name](Name.md) | A name with a type (e |
 | [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |
@@ -47,13 +47,13 @@ Name: actors-schema
 | --- | --- |
 | [abbreviation](abbreviation.md) | Abbreviation (can be multilingual) |
 | [address_type](address_type.md) | Type of address |
-| [address_uri](address_uri.md) | URI of the address |
+| [address_uri](address_uri.md) | URI of the address from the Swiss federal building address register |
 | [addresses](addresses.md) | Addresses with type (private, business, local) |
-| [authorized_to_vote](authorized_to_vote.md) | Indicates if the person is authorized to vote |
+| [authorized_to_vote](authorized_to_vote.md) | Indicates if the person is authorized to vote in the group |
 | [birth_date](birth_date.md) | Exact date of birth if available and public |
 | [birth_year](birth_year.md) | Year of birth |
 | [citizenships](citizenships.md) | Citizenships of the person |
-| [committee](committee.md) | Committee or board (e |
+| [committee](committee.md) | Committee or board within the organization (e |
 | [contact_type](contact_type.md) | Type of contact information |
 | [contacts](contacts.md) | Contact information (email, website, social media) |
 | [country](country.md) | ISO 3166 country code |
@@ -79,13 +79,13 @@ Name: actors-schema
 | [electoral_district](electoral_district.md) | Link to the electoral district |
 | [enterprise](enterprise.md) | Name of the enterprise |
 | [enterprise_uid](enterprise_uid.md) | UID of the enterprise |
-| [function_role](function_role.md) | Function or role in the organization |
-| [gender_code](gender_code.md) | Gender code (e |
+| [function_role](function_role.md) | Function or role in the organization (e |
+| [gender_code](gender_code.md) | Gender code |
 | [genders](genders.md) | Gender of the person |
 | [global_uri](global_uri.md) | A unique, globally valid URI for the entity |
 | [group_label](group_label.md) | Name of the body/group at time of linking |
 | [group_reference](group_reference.md) | Reference to a group with snapshot data at time of linking |
-| [group_type](group_type.md) | Link to the group type |
+| [group_type](group_type.md) | Type of group (e |
 | [group_type_enum](group_type_enum.md) | Link to the controlled vocabulary for group types |
 | [groups](groups.md) | Collection of groups |
 | [interest_links](interest_links.md) | Collection of interest links |
@@ -103,15 +103,15 @@ Name: actors-schema
 | [local_id](local_id.md) | Local identifier |
 | [memberships](memberships.md) | Collection of memberships |
 | [multilingual_value](multilingual_value.md) | A multilingual value with language specification |
-| [name_type](name_type.md) | Type of name |
+| [name_type](name_type.md) | Type of name according to eCH-0011 (personNameData) |
 | [names](names.md) | Names of the person with type and value |
 | [occupation_code](occupation_code.md) | ISCO-19 code of the occupation |
 | [occupations](occupations.md) | Occupations or professions of the person |
 | [organization_address](organization_address.md) | Address of the organization |
 | [organization_label](organization_label.md) | Label of the organization |
-| [organization_uid](organization_uid.md) | UID of the organization (for analysis with NOGA codes, etc |
+| [organization_uid](organization_uid.md) | UID of the organization (eCH-0097 format: CHE-XXX |
 | [parent_groups](parent_groups.md) | Link to parent groups |
-| [party_color](party_color.md) | Party color (optional for parties) |
+| [party_color](party_color.md) | Party color as hexadecimal value (optional for parties, e |
 | [person_reference](person_reference.md) | Reference to a person with snapshot data at time of linking |
 | [persons](persons.md) | Collection of persons |
 | [picture](picture.md) | Link to an image (preferred: PNG, then JPG, then GIF) |
@@ -122,8 +122,8 @@ Name: actors-schema
 | [role_label](role_label.md) | Descriptive label for the role when 'other' is selected in the RoleEnum |
 | [role_type](role_type.md) | Role of the person in the membership or function |
 | [role_type_enum](role_type_enum.md) | Role of the person in the membership or function |
-| [spatial](spatial.md) | Spatial reference (fos-municipality number, fos-canton number, e |
-| [statutes_url](statutes_url.md) | URL to party statutes (optional for parties) |
+| [spatial](spatial.md) | Spatial reference (fos-municipality number, fos-canton number, or country) |
+| [statutes_url](statutes_url.md) | URL to party statutes (PDF or webpage; optional for parties) |
 | [street_address](street_address.md) | Street address |
 | [training_code](training_code.md) | ISCO-19 code of the training or education |
 | [training_type](training_type.md) | Type of training or education |
@@ -140,9 +140,11 @@ Name: actors-schema
 | --- | --- |
 | [AddressTypeEnum](AddressTypeEnum.md) | Types of addresses |
 | [ContactTypeEnum](ContactTypeEnum.md) | Types of contact information |
+| [GenderCodeEnum](GenderCodeEnum.md) | Gender codes for persons |
 | [GroupTypeEnum](GroupTypeEnum.md) | Types of political groups and organizations |
 | [InterestTypeEnum](InterestTypeEnum.md) | Types of interest links (conflicts of interest, political financing) |
-| [NameTypeEnum](NameTypeEnum.md) | Categories of name types according to https://dam-api |
+| [LegalFormEnum](LegalFormEnum.md) | Legal forms based on the Swiss UID register codelist (eCH-0097) |
+| [NameTypeEnum](NameTypeEnum.md) | Categories of name types according to eCH-0011 (personNameData) and https://d... |
 | [RoleEnum](RoleEnum.md) | Roles a person can have within a membership |
 | [TrainingTypeEnum](TrainingTypeEnum.md) | Types of training or education |
 

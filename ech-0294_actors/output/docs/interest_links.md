@@ -6,7 +6,7 @@ search:
 # Slot: interest_links 
 
 
-_Collection of interest links.range: InterestLink_
+_Collection of interest links._
 
 __
 
@@ -73,7 +73,7 @@ annotations:
     value: 'Sammlung von Interessenbindungen.
 
       '
-description: 'Collection of interest links.range: InterestLink
+description: 'Collection of interest links.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

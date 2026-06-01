@@ -3,7 +3,7 @@
 ## Class: InterestLink 
 
 
-_An interest link (conflict of interest, political financing) of a person to an organization._
+_An interest link (conflict of interest, political financing) of a person to an organization outside the actor schema._
 
 __
 
@@ -21,12 +21,12 @@ __
 | person_reference | 0..1 <br/> [PersonReference](PersonReference.md) | Reference to a person with snapshot data at time of linking.  |
 | interest_type | 1 <br/> [InterestTypeEnum](InterestTypeEnum.md) | Type of interest link (professional activity, political office, association).  |
 | organization_label | 0..1 <br/> [String](String.md) | Label of the organization.  |
-| organization_uid | 0..1 <br/> [String](String.md) | UID of the organization (for analysis with NOGA codes, etc.).  |
+| organization_uid | 0..1 <br/> [String](String.md) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).  |
 | organization_address | 0..1 <br/> [String](String.md) | Address of the organization.  |
-| legal_form | 0..1 <br/> [String](String.md) | Legal form of the organization.  |
+| legal_form | 0..1 <br/> [LegalFormEnum](LegalFormEnum.md) | Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm  |
 | is_paid | 0..1 <br/> [Boolean](Boolean.md) | Indicates if the position is paid.  |
-| committee | 0..1 <br/> [String](String.md) | Committee or board (e.g., foundation board, board of directors).  |
-| function_role | 0..1 <br/> [String](String.md) | Function or role in the organization.  |
+| committee | 0..1 <br/> [String](String.md) | Committee or board within the organization (e.g., Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).  |
+| function_role | 0..1 <br/> [String](String.md) | Function or role in the organization (e.g., Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in).  |
 | local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
@@ -73,7 +73,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_label: Burkart Advisory GmbH, Baden
-legal_form: Gesellschaft mit beschränkter Haftung
+legal_form: '0107'
 committee: Geschäftsleitung
 function_role: Geschäftsführer
 is_paid: true
@@ -89,7 +89,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-legal_form: Stiftung
+legal_form: '0110'
 committee: Stiftungsrat
 function_role: Vizepräsident
 is_paid: false
@@ -105,7 +105,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: Verein Landesausstellung Svizra27, Aarau
-legal_form: Verein
+legal_form: 0109
 committee: Vorstand
 function_role: Mitglied
 is_paid: false
@@ -121,7 +121,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: Allianz Sicherheit Schweiz, Baden
-legal_form: Verein
+legal_form: 0109
 committee: Vorstand
 function_role: Präsident
 is_paid: false
@@ -137,7 +137,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_label: Birchmeier Holding AG, Döttingen
-legal_form: Aktiengesellschaft
+legal_form: '0106'
 committee: Verwaltungsrat
 function_role: Mitglied
 is_paid: true
@@ -153,7 +153,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_label: ELCA Group SA, Lausanne
-legal_form: Aktiengesellschaft
+legal_form: '0106'
 committee: Verwaltungsrat
 function_role: Mitglied
 is_paid: true
@@ -169,7 +169,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_label: Bovida Real Estate AG, Baar
-legal_form: Aktiengesellschaft
+legal_form: '0106'
 committee: Verwaltungsrat
 function_role: Mitglied
 is_paid: true
@@ -185,7 +185,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: FDP.Die Liberalen
-legal_form: Verein
+legal_form: 0109
 committee: Vorstand
 function_role: Präsident
 is_paid: true
@@ -201,7 +201,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_label: Stiebel Eltron AG, Lupfig
-legal_form: Aktiengesellschaft
+legal_form: '0106'
 committee: Beirat
 function_role: Beirat
 is_paid: true
@@ -217,7 +217,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: SUISSEDIGITAL Verband für Kommunikationsnetze
-legal_form: Verein
+legal_form: 0109
 committee: Vorstand
 function_role: Mitglied
 is_paid: true
@@ -233,7 +233,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_label: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
-legal_form: Verein
+legal_form: 0109
 committee: Zentralvorstand
 function_role: Präsident
 is_paid: true

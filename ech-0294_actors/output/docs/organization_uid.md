@@ -6,7 +6,7 @@ search:
 # Slot: organization_uid 
 
 
-_UID of the organization (for analysis with NOGA codes, etc.)._
+_UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch)._
 
 __
 
@@ -48,6 +48,13 @@ URI: [act:organizationUid](https://ld.ech.ch/schema/0294/actors/organizationUid)
 
 | Property | Value |
 | --- | --- |
+### Value Constraints
+
+| Property | Value |
+| --- | --- |
+| Regex Pattern | `^CHE-\d{3}\.\d{3}\.\d{3}$` |
+
+
 
 
 
@@ -71,7 +78,8 @@ annotations:
     value: 'UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).
 
       '
-description: 'UID of the organization (for analysis with NOGA codes, etc.).
+description: 'UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX of the federal
+  UID register (uid.admin.ch).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors
@@ -80,6 +88,7 @@ slot_uri: act:organizationUid
 domain_of:
 - InterestLink
 range: string
+pattern: ^CHE-\d{3}\.\d{3}\.\d{3}$
 
 ```
 </details></div>

@@ -29,7 +29,7 @@ URI: [schema:validFrom](http://schema.org/validFrom)
 | --- | --- | --- |
 | [HasTemporalValidity](HasTemporalValidity.md) | A mixin class that provides slots for modeling a temporal validity of informa... |  no  |
 | [Group](Group.md) | A political group, organization, or body (e |  no  |
-| [Membership](Membership.md) | A membership relationship between a person and a group |  no  |
+| [Membership](Membership.md) | A membership relationship between a person and a group, representing formal a... |  no  |
 | [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
 | [Name](Name.md) | A name with a type (e |  no  |
 | [Citizenship](Citizenship.md) | Citizenship (also used for Nationality) of a person indicating the country an... |  no  |

@@ -27,9 +27,9 @@ URI: [mcm:isCurrent](https://ld.ech.ch/schema/0292/meta-common/isCurrent)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Membership](Membership.md) | A membership relationship between a person and a group, representing formal a... |  yes  |
 | [HasTemporalValidity](HasTemporalValidity.md) | A mixin class that provides slots for modeling a temporal validity of informa... |  no  |
 | [Group](Group.md) | A political group, organization, or body (e |  no  |
-| [Membership](Membership.md) | A membership relationship between a person and a group |  no  |
 | [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
 | [Name](Name.md) | A name with a type (e |  no  |
 | [Citizenship](Citizenship.md) | Citizenship (also used for Nationality) of a person indicating the country an... |  no  |
@@ -50,7 +50,7 @@ URI: [mcm:isCurrent](https://ld.ech.ch/schema/0292/meta-common/isCurrent)
 | Property | Value |
 | --- | --- |
 | Range | [Boolean](Boolean.md) |
-| Domain Of | [HasTemporalValidity](HasTemporalValidity.md) |
+| Domain Of | [Membership](Membership.md), [HasTemporalValidity](HasTemporalValidity.md) |
 | Slot URI | [mcm:isCurrent](https://ld.ech.ch/schema/0292/meta-common/isCurrent) |
 
 ### Cardinality and Requirements
@@ -89,6 +89,7 @@ from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: mcm:isCurrent
 domain_of:
+- Membership
 - HasTemporalValidity
 range: boolean
 

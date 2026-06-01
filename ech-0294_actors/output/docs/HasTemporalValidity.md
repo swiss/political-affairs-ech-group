@@ -29,7 +29,7 @@ __
 | mixed into | description |
 | --- | --- |
 | [Group](Group.md) | A political group, organization, or body (e |
-| [Membership](Membership.md) | A membership relationship between a person and a group |
+| [Membership](Membership.md) | A membership relationship between a person and a group, representing formal a... |
 | [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |
 | [Name](Name.md) | A name with a type (e |
 | [Citizenship](Citizenship.md) | Citizenship (also used for Nationality) of a person indicating the country an... |
