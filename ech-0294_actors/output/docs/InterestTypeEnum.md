@@ -3,9 +3,7 @@
 
 
 
-_[en] Types of interest links (conflicts of interest, political financing)._
-
-_[de] Typen von Interessenbindungen (Interessenkonflikte, Politikfinanzierung)._
+_Types of interest links (conflicts of interest, political financing)._
 
 __
 
@@ -18,9 +16,9 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 ### Permissible Values
 | Value | Meaning | Description |
 | --- | --- | --- |
-| professional_activity | act:enum/interest_type/professional_activity | [en] Professional activity |
-| political_office | act:enum/interest_type/political_office | [en] Political office |
-| association | act:enum/interest_type/association | [en] Association membership |
+| professional_activity | act:enum/interest_type/professional_activity | Professional activity |
+| political_office | act:enum/interest_type/political_office | Political office |
+| association | act:enum/interest_type/association | Association membership |
 
 
 

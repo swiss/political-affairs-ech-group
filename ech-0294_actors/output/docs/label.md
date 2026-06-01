@@ -29,13 +29,13 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
-| [PersonReference](PersonReference.md) | [de] Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifika... |  no  |
-| [GroupReference](GroupReference.md) | [de] Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifika... |  no  |
-| [Occupation](Occupation.md) | [de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19... |  no  |
-| [GroupType](GroupType.md) | [de] Art der Gruppe (z |  no  |
-| [RoleType](RoleType.md) | [de] Rolle einer Person in einer Mitgliedschaft oder Funktion (z |  no  |
+| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Group](Group.md) | A political group, organization, or body (e |  no  |
+| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |  no  |
+| [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |  no  |
+| [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |  no  |
+| [GroupType](GroupType.md) | Type of group (e |  no  |
+| [RoleType](RoleType.md) | Role of a person in a membership or function (e |  no  |
 
 
 

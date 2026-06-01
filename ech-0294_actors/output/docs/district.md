@@ -6,9 +6,7 @@ search:
 # Slot: district 
 
 
-_[de] Wahlkreis oder Wahlregion._
-
-_[en] Electoral district or region._
+_Electoral district or region._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:district](https://ld.ech.ch/schema/0294/actors/district)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ElectoralDistrict](ElectoralDistrict.md) | [de] Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit z... |  no  |
+| [ElectoralDistrict](ElectoralDistrict.md) | Electoral district or region where a person is politically active; with tempo... |  no  |
 
 
 
@@ -75,9 +73,13 @@ URI: [act:district](https://ld.ech.ch/schema/0294/actors/district)
 <details>
 ```yaml
 name: district
-description: '[de] Wahlkreis oder Wahlregion.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Wahlkreis oder Wahlregion.
 
-  [en] Electoral district or region.
+      '
+description: 'Electoral district or region.
 
   '
 examples:

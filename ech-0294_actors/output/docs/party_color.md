@@ -6,9 +6,7 @@ search:
 # Slot: party_color 
 
 
-_[de] Parteifarbe (optional für Parteien)._
-
-_[en] Party color (optional for parties)._
+_Party color (optional for parties)._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:partyColor](https://ld.ech.ch/schema/0294/actors/partyColor)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [Group](Group.md) | A political group, organization, or body (e |  no  |
 
 
 
@@ -67,9 +65,13 @@ URI: [act:partyColor](https://ld.ech.ch/schema/0294/actors/partyColor)
 <details>
 ```yaml
 name: party_color
-description: '[de] Parteifarbe (optional für Parteien).
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Parteifarbe (optional für Parteien).
 
-  [en] Party color (optional for parties).
+      '
+description: 'Party color (optional for parties).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

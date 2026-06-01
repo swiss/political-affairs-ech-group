@@ -6,9 +6,7 @@ search:
 # Slot: address_type 
 
 
-_[de] Typ der Adresse._
-
-_[en] Type of address._
+_Type of address._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:addressType](https://ld.ech.ch/schema/0294/actors/addressType)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Address](Address.md) | [de] Eine Adresse mit einem Typ (z |  no  |
+| [Address](Address.md) | An address with a type (e |  no  |
 
 
 
@@ -75,9 +73,13 @@ URI: [act:addressType](https://ld.ech.ch/schema/0294/actors/addressType)
 <details>
 ```yaml
 name: address_type
-description: '[de] Typ der Adresse.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Typ der Adresse.
 
-  [en] Type of address.
+      '
+description: 'Type of address.
 
   '
 examples:

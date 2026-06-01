@@ -3,9 +3,7 @@
 ## Class: ElectoralDistrict 
 
 
-_[de] Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit zeitlicher Gültigkeit._
-
-_[en] Electoral district or region where a person is politically active; with temporal validity._
+_Electoral district or region where a person is politically active; with temporal validity._
 
 __
 
@@ -20,7 +18,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| district | 0..1 <br/> [String](String.md) | [de] Wahlkreis oder Wahlregion. [en] Electoral district or region.  |
+| district | 0..1 <br/> [String](String.md) | Electoral district or region.  |
 | valid_from | 0..1 <br/> [Date](Date.md) | [de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |
 | valid_through | 0..1 <br/> [Date](Date.md) | [de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |
 | is_active | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |

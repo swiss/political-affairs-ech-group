@@ -6,9 +6,7 @@ search:
 # Slot: street_address 
 
 
-_[de] Strassenadresse._
-
-_[en] Street address._
+_Street address._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:streetAddress](https://ld.ech.ch/schema/0294/actors/streetAddress)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Address](Address.md) | [de] Eine Adresse mit einem Typ (z |  no  |
+| [Address](Address.md) | An address with a type (e |  no  |
 
 
 
@@ -67,9 +65,13 @@ URI: [act:streetAddress](https://ld.ech.ch/schema/0294/actors/streetAddress)
 <details>
 ```yaml
 name: street_address
-description: '[de] Strassenadresse.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Strassenadresse.
 
-  [en] Street address.
+      '
+description: 'Street address.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

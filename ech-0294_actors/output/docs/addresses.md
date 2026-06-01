@@ -6,9 +6,7 @@ search:
 # Slot: addresses 
 
 
-_[de] Adressen mit Typ (privat, geschäftlich, lokal)._
-
-_[en] Addresses with type (private, business, local)._
+_Addresses with type (private, business, local)._
 
 __
 
@@ -29,8 +27,8 @@ URI: [act:address](https://ld.ech.ch/schema/0294/actors/address)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Group](Group.md) | A political group, organization, or body (e |  no  |
 
 
 
@@ -76,9 +74,13 @@ URI: [act:address](https://ld.ech.ch/schema/0294/actors/address)
 <details>
 ```yaml
 name: addresses
-description: '[de] Adressen mit Typ (privat, geschäftlich, lokal).
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Adressen mit Typ (privat, geschäftlich, lokal).
 
-  [en] Addresses with type (private, business, local).
+      '
+description: 'Addresses with type (private, business, local).
 
   '
 examples:

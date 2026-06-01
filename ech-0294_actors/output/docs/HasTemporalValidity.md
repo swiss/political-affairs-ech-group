@@ -30,15 +30,15 @@ __
 
 | mixed into | description |
 | --- | --- |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |
-| [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |
-| [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |
-| [Name](Name.md) | [de] Ein Name mit einem Typ (z |
-| [Citizenship](Citizenship.md) | [de] Staatsangehörigkeit einer Person unter Angabe des Landes und der zeitlic... |
-| [Gender](Gender.md) | [de] Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitli... |
-| [Occupation](Occupation.md) | [de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19... |
-| [Training](Training.md) | [de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z |
-| [ElectoralDistrict](ElectoralDistrict.md) | [de] Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit z... |
+| [Group](Group.md) | A political group, organization, or body (e |
+| [Membership](Membership.md) | A membership relationship between a person and a group |
+| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |
+| [Name](Name.md) | A name with a type (e |
+| [Citizenship](Citizenship.md) | Citizenship (also used for Nationality) of a person indicating the country an... |
+| [Gender](Gender.md) | Gender of a person indicating a gender code and temporal validity |
+| [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |
+| [Training](Training.md) | Training or education of a person indicating a type (e |
+| [ElectoralDistrict](ElectoralDistrict.md) | Electoral district or region where a person is politically active; with tempo... |
 
 
 

@@ -6,9 +6,7 @@ search:
 # Slot: persons 
 
 
-_[de] Sammlung von Personen._
-
-_[en] Collection of persons._
+_Collection of persons._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:person](https://ld.ech.ch/schema/0294/actors/person)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Container](Container.md) | [de] Container für politische Akteure, Gruppen und Beziehungen |  no  |
+| [Container](Container.md) | Container for political actors, groups, and relationships |  no  |
 
 
 
@@ -68,9 +66,13 @@ URI: [act:person](https://ld.ech.ch/schema/0294/actors/person)
 <details>
 ```yaml
 name: persons
-description: '[de] Sammlung von Personen.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Sammlung von Personen.
 
-  [en] Collection of persons.
+      '
+description: 'Collection of persons.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

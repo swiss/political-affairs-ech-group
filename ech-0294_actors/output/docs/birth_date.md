@@ -6,9 +6,7 @@ search:
 # Slot: birth_date 
 
 
-_[de] Genaues Geburtsdatum._
-
-_[en] Exact date of birth if available and public. This field has precedence over the field `birthYear`._
+_Exact date of birth if available and public. This field has precedence over the field `birthYear`._
 
 __
 
@@ -29,7 +27,7 @@ URI: [schema:birthDate](http://schema.org/birthDate)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
+| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
 
 
 
@@ -75,10 +73,14 @@ URI: [schema:birthDate](http://schema.org/birthDate)
 <details>
 ```yaml
 name: birth_date
-description: '[de] Genaues Geburtsdatum.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Genaues Geburtsdatum.
 
-  [en] Exact date of birth if available and public. This field has precedence over
-  the field `birthYear`.
+      '
+description: 'Exact date of birth if available and public. This field has precedence
+  over the field `birthYear`.
 
   '
 examples:

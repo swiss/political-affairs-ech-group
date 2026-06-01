@@ -6,9 +6,7 @@ search:
 # Slot: is_correspondence 
 
 
-_[de] Gibt an, ob es sich um die bevorzugte Sprache handelt._
-
-_[en] Indicates if this is the preferred language._
+_Indicates if this is the preferred language._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:isCorrespondence](https://ld.ech.ch/schema/0294/actors/isCorrespondenc
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [LanguageProficiency](LanguageProficiency.md) | [de] Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um d... |  no  |
+| [LanguageProficiency](LanguageProficiency.md) | Language proficiency of a person indicating the language and whether it is th... |  no  |
 
 
 
@@ -67,9 +65,13 @@ URI: [act:isCorrespondence](https://ld.ech.ch/schema/0294/actors/isCorrespondenc
 <details>
 ```yaml
 name: is_correspondence
-description: '[de] Gibt an, ob es sich um die bevorzugte Sprache handelt.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Gibt an, ob es sich um die bevorzugte Sprache handelt.
 
-  [en] Indicates if this is the preferred language.
+      '
+description: 'Indicates if this is the preferred language.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

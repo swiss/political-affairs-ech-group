@@ -6,9 +6,7 @@ search:
 # Slot: memberships 
 
 
-_[de] Sammlung von Mitgliedschaften._
-
-_[en] Collection of memberships._
+_Collection of memberships._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:membership](https://ld.ech.ch/schema/0294/actors/membership)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Container](Container.md) | [de] Container für politische Akteure, Gruppen und Beziehungen |  no  |
+| [Container](Container.md) | Container for political actors, groups, and relationships |  no  |
 
 
 
@@ -68,9 +66,13 @@ URI: [act:membership](https://ld.ech.ch/schema/0294/actors/membership)
 <details>
 ```yaml
 name: memberships
-description: '[de] Sammlung von Mitgliedschaften.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Sammlung von Mitgliedschaften.
 
-  [en] Collection of memberships.
+      '
+description: 'Collection of memberships.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

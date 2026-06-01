@@ -6,9 +6,7 @@ search:
 # Slot: training_code 
 
 
-_[de] ISCO-19 Code der Ausbildung oder Bildung._
-
-_[en] ISCO-19 code of the training or education._
+_ISCO-19 code of the training or education._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:trainingCode](https://ld.ech.ch/schema/0294/actors/trainingCode)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Training](Training.md) | [de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z |  no  |
+| [Training](Training.md) | Training or education of a person indicating a type (e |  no  |
 
 
 
@@ -67,9 +65,13 @@ URI: [act:trainingCode](https://ld.ech.ch/schema/0294/actors/trainingCode)
 <details>
 ```yaml
 name: training_code
-description: '[de] ISCO-19 Code der Ausbildung oder Bildung.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'ISCO-19 Code der Ausbildung oder Bildung.
 
-  [en] ISCO-19 code of the training or education.
+      '
+description: 'ISCO-19 code of the training or education.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

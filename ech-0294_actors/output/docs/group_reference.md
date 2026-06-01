@@ -6,9 +6,7 @@ search:
 # Slot: group_reference 
 
 
-_[de] Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung._
-
-_[en] Reference to a group with snapshot data at time of linking._
+_Reference to a group with snapshot data at time of linking._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:groupReference](https://ld.ech.ch/schema/0294/actors/groupReference)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |  no  |
+| [Membership](Membership.md) | A membership relationship between a person and a group |  no  |
 
 
 
@@ -67,9 +65,13 @@ URI: [act:groupReference](https://ld.ech.ch/schema/0294/actors/groupReference)
 <details>
 ```yaml
 name: group_reference
-description: '[de] Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
 
-  [en] Reference to a group with snapshot data at time of linking.
+      '
+description: 'Reference to a group with snapshot data at time of linking.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

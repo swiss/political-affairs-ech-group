@@ -6,9 +6,7 @@ search:
 # Slot: death_date 
 
 
-_[de] Genaues Todesdatum._
-
-_[en] Exact date of death._
+_Exact date of death._
 
 __
 
@@ -29,7 +27,7 @@ URI: [schema:deathDate](http://schema.org/deathDate)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
+| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
 
 
 
@@ -67,9 +65,13 @@ URI: [schema:deathDate](http://schema.org/deathDate)
 <details>
 ```yaml
 name: death_date
-description: '[de] Genaues Todesdatum.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Genaues Todesdatum.
 
-  [en] Exact date of death.
+      '
+description: 'Exact date of death.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

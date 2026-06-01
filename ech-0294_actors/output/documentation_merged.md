@@ -115,9 +115,7 @@ Notiz: *Die Verknüpfung von Personen im öffentlichen Interesse (Politikerinnen
 ## Class: Person 
 
 
-_[de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Berufen._
-
-_[en] A person with identifiers, names, addresses, citizenships, and occupations._
+_A person with identifiers, names, addresses, citizenships, and occupations._
 
 __
 
@@ -134,20 +132,20 @@ __
 | ---  | --- | --- |
 | label | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.). [en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).  |
 | label_long | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.). [en] Option to assign an extended label to a structured piece of information (e.g., display name with title, position, etc.).  |
-| birth_year | 0..1 <br/> [Integer](#Integer) | [de] Geburtsjahr. [en] Year of birth. Only to be used, if there is no full `birthDate` available.  |
-| birth_date | 0..1 <br/> [Date](#Date) | [de] Genaues Geburtsdatum. [en] Exact date of birth if available and public. This field has precedence over the field `birthYear`.  |
-| death_date | 0..1 <br/> [Date](#Date) | [de] Genaues Todesdatum. [en] Exact date of death.  |
-| picture | 0..1 <br/> [Uri](#Uri) | [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF). [en] Link to an image (preferred: PNG, then JPG, then GIF).  |
-| names | * <br/> [Name](#Name) | [en] Names of the person with type and value. [de] Namen der Person mit Typ und Wert.  |
-| addresses | * <br/> [Address](#Address) | [de] Adressen mit Typ (privat, geschäftlich, lokal). [en] Addresses with type (private, business, local).  |
-| language_proficiencies | * <br/> [LanguageProficiency](#LanguageProficiency) | [de] Sprachkompetenzen der Person. [en] Language proficiencies of the person.  |
-| citizenships | * <br/> [Citizenship](#Citizenship) | [de] Staatsbürgerschaften der Person. [en] Citizenships of the person.  |
-| genders | * <br/> [Gender](#Gender) | [de] Geschlecht der Person. [en] Gender of the person.  |
-| occupations | * <br/> [Occupation](#Occupation) | [de] Berufe oder Tätigkeiten der Person. [en] Occupations or professions of the person.  |
-| trainings | * <br/> [Training](#Training) | [de] Ausbildungen oder Bildungen der Person. [en] Trainings or educations of the person.  |
-| contacts | * <br/> [Contact](#Contact) | [en] Contact information (email, website, social media). [de] Kontaktinformationen (E-Mail, Website, Social Media).  |
-| electoral_district | 0..1 <br/> [ElectoralDistrict](#ElectoralDistrict) | [de] Link zum Wahlbezirk. [en] Link to the electoral district.  |
-| interest_links | * <br/> [InterestLink](#InterestLink) | [de] Sammlung von Interessenbindungen. [en] Collection of interest links.range: InterestLink  |
+| birth_year | 0..1 <br/> [Integer](#Integer) | Year of birth. Only to be used, if there is no full `birthDate` available.  |
+| birth_date | 0..1 <br/> [Date](#Date) | Exact date of birth if available and public. This field has precedence over the field `birthYear`.  |
+| death_date | 0..1 <br/> [Date](#Date) | Exact date of death.  |
+| picture | 0..1 <br/> [Uri](#Uri) | Link to an image (preferred: PNG, then JPG, then GIF).  |
+| names | * <br/> [Name](#Name) | Names of the person with type and value.  |
+| addresses | * <br/> [Address](#Address) | Addresses with type (private, business, local).  |
+| language_proficiencies | * <br/> [LanguageProficiency](#LanguageProficiency) | Language proficiencies of the person.  |
+| citizenships | * <br/> [Citizenship](#Citizenship) | Citizenships of the person.  |
+| genders | * <br/> [Gender](#Gender) | Gender of the person.  |
+| occupations | * <br/> [Occupation](#Occupation) | Occupations or professions of the person.  |
+| trainings | * <br/> [Training](#Training) | Trainings or educations of the person.  |
+| contacts | * <br/> [Contact](#Contact) | Contact information (email, website, social media).  |
+| electoral_district | 0..1 <br/> [ElectoralDistrict](#ElectoralDistrict) | Link to the electoral district.  |
+| interest_links | * <br/> [InterestLink](#InterestLink) | Collection of interest links.range: InterestLink  |
 | local_id | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification) |
@@ -292,9 +290,7 @@ electoral_district:
 ## Class: Name 
 
 
-_[de] Ein Name mit einem Typ (z.B. Rufname, amtlicher Name) und einem Wert und einer zeitlichen Gültigkeit._
-
-_[en] A name with a type (e.g., call name, official name) and a value._
+_A name with a type (e.g., call name, official name) and a value._
 
 __
 
@@ -309,7 +305,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| name_type | 0..1 <br/> [NameTypeEnum](#NameTypeEnum) | [de] Typ des Namens. [en] Type of name.  |
+| name_type | 0..1 <br/> [NameTypeEnum](#NameTypeEnum) | Type of name.  |
 | value | 0..1 <br/> [String](#String) | [de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc. [en] The value of an information besides other attributes such as type, language, etc.  |
 | valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity) |
 | valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity) |
@@ -350,9 +346,7 @@ __
 ## Class: Address 
 
 
-_[de] Eine Adresse mit einem Typ (z.B. Privatadresse, Geschäftsadresse) und einem Wert._
-
-_[en] An address with a type (e.g., private address, business address) and a value._
+_An address with a type (e.g., private address, business address) and a value._
 
 __
 
@@ -367,11 +361,11 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| address_type | 0..1 <br/> [AddressTypeEnum](#AddressTypeEnum) | [de] Typ der Adresse. [en] Type of address.  |
-| address_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] URI der Adresse. [en] URI of the address.  |
-| street_address | 0..1 <br/> [String](#String) | [de] Strassenadresse. [en] Street address.  |
-| postal_code | 0..1 <br/> [Integer](#Integer) | [de] Postleitzahl. [en] Postal code.  |
-| postal_locality | 0..1 <br/> [String](#String) | [de] Ort. [en] Locality.  |
+| address_type | 0..1 <br/> [AddressTypeEnum](#AddressTypeEnum) | Type of address.  |
+| address_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | URI of the address.  |
+| street_address | 0..1 <br/> [String](#String) | Street address.  |
+| postal_code | 0..1 <br/> [Integer](#Integer) | Postal code.  |
+| postal_locality | 0..1 <br/> [String](#String) | Locality.  |
 
 
 
@@ -428,9 +422,7 @@ postal_locality: Basel-Stadt
 
 
 
-_[en] Types of addresses._
-
-_[de] Adresstypen._
+_Types of addresses._
 
 __
 
@@ -443,9 +435,9 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 ### Permissible Values
 | Value | Meaning | Description |
 | --- | --- | --- |
-| privateAddress | None | [en] Private address |
-| businessAddress | None | [en] Business address |
-| localAddress | None | [en] Local address |
+| privateAddress | None | Private address |
+| businessAddress | None | Business address |
+| localAddress | None | Local address |
 
 
 
@@ -460,9 +452,7 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 ## Class: LanguageProficiency 
 
 
-_[de] Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um die bevorzugte Sprache oder die Muttersprache handelt._
-
-_[en] Language proficiency of a person indicating the language and whether it is the preferred language or native language._
+_Language proficiency of a person indicating the language and whether it is the preferred language or native language._
 
 __
 
@@ -478,8 +468,8 @@ __
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
 | language | 0..1 <br/> [String](#String) | [de] Sprachcode im ISO 639-1 Format. [en] Language code in ISO 639-1 format.  |
-| is_correspondence | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob es sich um die bevorzugte Sprache handelt. [en] Indicates if this is the preferred language.  |
-| is_native | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob es sich um die Muttersprache handelt. [en] Indicates if this is the native language.  |
+| is_correspondence | 0..1 <br/> [Boolean](#Boolean) | Indicates if this is the preferred language.  |
+| is_native | 0..1 <br/> [Boolean](#Boolean) | Indicates if this is the native language.  |
 
 
 
@@ -516,9 +506,7 @@ __
 ## Class: Citizenship 
 
 
-_[de] Staatsangehörigkeit einer Person unter Angabe des Landes und der zeitlichen Gültigkeit. Wenn kein `valid_from` angegeben ist, ist diese Information nicht bekannt. Ist bekannt, dass die Staatsangehörigkeit seit der Geburt gültig ist, ist das Geburtsdatum hier anzugeben. Wenn kein `valid_through` angegeben ist, ist die Staatsangehörigkeit weiterhin gültig._
-
-_[en] Citizenship (also used for Nationality) of a person indicating the country and temporal validity. If there is no `valid_from` provided, the information is not known. If it is known that the citizenship is valid from birth, the birthdate is to be repeated here. If there is no `valid_through`, the citizenship is still active._
+_Citizenship (also used for Nationality) of a person indicating the country and temporal validity. If there is no `valid_from` provided, the information is not known. If it is known that the citizenship is valid from birth, the birthdate is to be repeated here. If there is no `valid_through`, the citizenship is still active._
 
 __
 
@@ -533,7 +521,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| country | 0..1 <br/> [String](#String) | [de] ISO 3166 Ländercode. [en] ISO 3166 country code.  |
+| country | 0..1 <br/> [String](#String) | ISO 3166 country code.  |
 | valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity) |
 | valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity) |
 | is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity) |
@@ -573,9 +561,7 @@ __
 ## Class: Gender 
 
 
-_[de] Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen Gültigkeit._
-
-_[en] Gender of a person indicating a gender code and temporal validity._
+_Gender of a person indicating a gender code and temporal validity._
 
 __
 
@@ -590,8 +576,8 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| gender_code | 0..1 <br/> [String](#String) | [de] Geschlechtscode (z.B. gemäß ISO 5218). [en] Gender code (e.g., according to ISO 5218).  |
-| pronouns | * <br/> [String](#String) | [de] Von der Person verwendete Pronomen. [en] Pronouns used by the person.  |
+| gender_code | 0..1 <br/> [String](#String) | Gender code (e.g., according to ISO 5218).  |
+| pronouns | * <br/> [String](#String) | Pronouns used by the person.  |
 | valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity) |
 | valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity) |
 | is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity) |
@@ -631,9 +617,7 @@ __
 ## Class: Occupation 
 
 
-_[de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Codes, ob die Position bezahlt ist, und der zeitlichen Gültigkeit._
-
-_[en] Occupation or profession of a person indicating a label, an ISCO-19 code, whether the position is paid, and temporal validity._
+_Occupation or profession of a person indicating a label, an ISCO-19 code, whether the position is paid, and temporal validity._
 
 __
 
@@ -648,11 +632,11 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| is_paid | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Position bezahlt ist. [en] Indicates if the position is paid.  |
-| occupation_code | 0..1 <br/> [String](#String) | [de] ISCO-19 Code der Tätigkeit. [en] ISCO-19 code of the occupation.  |
+| is_paid | 0..1 <br/> [Boolean](#Boolean) | Indicates if the position is paid.  |
+| occupation_code | 0..1 <br/> [String](#String) | ISCO-19 code of the occupation.  |
 | label | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.). [en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).  |
-| enterprise_uid | 0..1 <br/> [String](#String) | [de] UID des Unternehmens. [en] UID of the enterprise.  |
-| enterprise | 0..1 <br/> [String](#String) | [de] Name des Unternehmens. [en] Name of the enterprise.  |
+| enterprise_uid | 0..1 <br/> [String](#String) | UID of the enterprise.  |
+| enterprise | 0..1 <br/> [String](#String) | Name of the enterprise.  |
 | valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity) |
 | valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity) |
 | is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity) |
@@ -712,9 +696,7 @@ is_active: true
 ## Class: Training 
 
 
-_[de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z.B. Schulabschluss, Universitätsabschluss, Militärdienst), eines Labels, eines ISCO-19 Codes und der zeitlichen Gültigkeit._
-
-_[en] Training or education of a person indicating a type (e.g., school diploma, university degree, military service), a label, an ISCO-19 code, and temporal validity._
+_Training or education of a person indicating a type (e.g., school diploma, university degree, military service), a label, an ISCO-19 code, and temporal validity._
 
 __
 
@@ -729,8 +711,8 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| training_type | 0..1 <br/> [TrainingTypeEnum](#TrainingTypeEnum) | [de] Typ der Ausbildung oder Bildung. [en] Type of training or education.  |
-| training_code | 0..1 <br/> [String](#String) | [de] ISCO-19 Code der Ausbildung oder Bildung. [en] ISCO-19 code of the training or education.  |
+| training_type | 0..1 <br/> [TrainingTypeEnum](#TrainingTypeEnum) | Type of training or education.  |
+| training_code | 0..1 <br/> [String](#String) | ISCO-19 code of the training or education.  |
 | value | 0..1 <br/> [String](#String) | [de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc. [en] The value of an information besides other attributes such as type, language, etc.  |
 | valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity) |
 | valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity) |
@@ -771,9 +753,7 @@ __
 ## Class: Contact 
 
 
-_[de] Kontaktinformation einer Person mit Angabe eines Typs (z.B. E-Mail, LinkedIn) und eines Werts._
-
-_[en] Contact information of a person indicating a type (e.g., email, LinkedIn) and a value._
+_Contact information of a person indicating a type (e.g., email, LinkedIn) and a value._
 
 __
 
@@ -788,7 +768,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| contact_type | 0..1 <br/> [ContactTypeEnum](#ContactTypeEnum) | [de] Typ der Kontaktinformation. [en] Type of contact information.  |
+| contact_type | 0..1 <br/> [ContactTypeEnum](#ContactTypeEnum) | Type of contact information.  |
 | value | 0..1 <br/> [String](#String) | [de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc. [en] The value of an information besides other attributes such as type, language, etc.  |
 
 
@@ -827,9 +807,7 @@ __
 ## Class: ElectoralDistrict 
 
 
-_[de] Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit zeitlicher Gültigkeit._
-
-_[en] Electoral district or region where a person is politically active; with temporal validity._
+_Electoral district or region where a person is politically active; with temporal validity._
 
 __
 
@@ -844,7 +822,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| district | 0..1 <br/> [String](#String) | [de] Wahlkreis oder Wahlregion. [en] Electoral district or region.  |
+| district | 0..1 <br/> [String](#String) | Electoral district or region.  |
 | valid_from | 0..1 <br/> [Date](#Date) | [de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity) |
 | valid_through | 0..1 <br/> [Date](#Date) | [de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity) |
 | is_active | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity) |
@@ -901,9 +879,7 @@ valid_from: 2010-01-01
 ## Class: InterestLink 
 
 
-_[de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation._
-
-_[en] An interest link (conflict of interest, political financing) of a person to an organization._
+_An interest link (conflict of interest, political financing) of a person to an organization._
 
 __
 
@@ -918,15 +894,15 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung. [en] Reference to a person with snapshot data at time of linking.  |
-| interest_type | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | [de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein). [en] Type of interest link (professional activity, political office, association).  |
-| organization_label | 0..1 <br/> [String](#String) | [en] Label of the organization. [de] Bezeichnung der Organisation.  |
-| organization_uid | 0..1 <br/> [String](#String) | [en] UID of the organization (for analysis with NOGA codes, etc.). [de] UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).  |
-| organization_address | 0..1 <br/> [String](#String) | [en] Address of the organization. [de] Adresse der Organisation.  |
-| legal_form | 0..1 <br/> [String](#String) | [en] Legal form of the organization. [de] Rechtsform der Organisation.  |
-| is_paid | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Position bezahlt ist. [en] Indicates if the position is paid.  |
-| committee | 0..1 <br/> [String](#String) | [en] Committee or board (e.g., foundation board, board of directors). [de] Gremium (z.B. Stiftungsrat, Verwaltungsrat).  |
-| function_role | 0..1 <br/> [String](#String) | [en] Function or role in the organization. [de] Funktion oder Rolle in der Organisation.  |
+| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | Reference to a person with snapshot data at time of linking.  |
+| interest_type | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | Type of interest link (professional activity, political office, association).  |
+| organization_label | 0..1 <br/> [String](#String) | Label of the organization.  |
+| organization_uid | 0..1 <br/> [String](#String) | UID of the organization (for analysis with NOGA codes, etc.).  |
+| organization_address | 0..1 <br/> [String](#String) | Address of the organization.  |
+| legal_form | 0..1 <br/> [String](#String) | Legal form of the organization.  |
+| is_paid | 0..1 <br/> [Boolean](#Boolean) | Indicates if the position is paid.  |
+| committee | 0..1 <br/> [String](#String) | Committee or board (e.g., foundation board, board of directors).  |
+| function_role | 0..1 <br/> [String](#String) | Function or role in the organization.  |
 | local_id | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification) |
@@ -1175,9 +1151,7 @@ Das Schema unterstützt verschiedene Einsatzszenarien:
 ## Class: Group 
 
 
-_[de] Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommission, Parlament, Departement)._
-
-_[en] A political group, organization, or body (e.g., party, committee, parliament, department)._
+_A political group, organization, or body (e.g., party, committee, parliament, department)._
 
 __
 
@@ -1192,17 +1166,17 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| group_type | 0..1 <br/> [GroupType](#GroupType) | [de] Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder ähnliches. Die genaue Bennenung und Beschreibung der Gruppierung wird über `name` gemacht. [en] Link to the group type.  |
+| group_type | 0..1 <br/> [GroupType](#GroupType) | Link to the group type.  |
 | label | 0..1 <br/> [String](#String) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.). [en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).  |
-| abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | [de] Abkürzung (kann mehrsprachig sein). [en] Abbreviation (can be multilingual).  |
-| description | * <br/> [MultilingualValue](#MultilingualValue) | [de] Kurze Beschreibung der Gruppierung. [en] Description of the entity.  |
-| landing_page | 0..1 <br/> [Uri](#Uri) | [de] Website mit weiteren Informationen. [en] Website providing further information.  |
-| parent_groups | * <br/> [Uriorcurie](#Uriorcurie) | [de] Übergeordneten Gruppe. Zum Beispiel die Mutterpartei, zu Kantonalenparteien. Oder zur Beschreibung der Hierarchie in Exekutive. Verknüpfung von Subkommissionen mit Kommissionen. (parentGroup wird immer im selben group_type verwendet.) [en] Link to parent groups.  |
-| spatial | 0..1 <br/> [String](#String) | [de] Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z.B. ld.admin.ch/municipality/1234, ld.admin.ch/canton/23). [en] Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).  |
-| contacts | * <br/> [Contact](#Contact) | [en] Contact information (email, website, social media). [de] Kontaktinformationen (E-Mail, Website, Social Media).  |
-| addresses | * <br/> [Address](#Address) | [de] Adressen mit Typ (privat, geschäftlich, lokal). [en] Addresses with type (private, business, local).  |
-| statutes_url | 0..1 <br/> [String](#String) | [de] URL zu Parteistatuten (optional für Parteien). [en] URL to party statutes (optional for parties).  |
-| party_color | 0..1 <br/> [String](#String) | [de] Parteifarbe (optional für Parteien). [en] Party color (optional for parties).  |
+| abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abbreviation (can be multilingual).  |
+| description | * <br/> [MultilingualValue](#MultilingualValue) | Description of the entity.  |
+| landing_page | 0..1 <br/> [Uri](#Uri) | Website providing further information.  |
+| parent_groups | * <br/> [Uriorcurie](#Uriorcurie) | Link to parent groups.  |
+| spatial | 0..1 <br/> [String](#String) | Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).  |
+| contacts | * <br/> [Contact](#Contact) | Contact information (email, website, social media).  |
+| addresses | * <br/> [Address](#Address) | Addresses with type (private, business, local).  |
+| statutes_url | 0..1 <br/> [String](#String) | URL to party statutes (optional for parties).  |
+| party_color | 0..1 <br/> [String](#String) | Party color (optional for parties).  |
 | local_id | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification) |
@@ -1275,9 +1249,7 @@ Memberships werden für verschiedene Zuordnungen verwendet:
 ## Class: Membership 
 
 
-_[de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe._
-
-_[en] A membership relationship between a person and a group._
+_A membership relationship between a person and a group._
 
 __
 
@@ -1292,10 +1264,10 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung. [en] Reference to a person with snapshot data at time of linking.  |
-| group_reference | 0..1 <br/> [GroupReference](#GroupReference) | [de] Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung. [en] Reference to a group with snapshot data at time of linking.  |
-| role_type | 0..1 <br/> [RoleType](#RoleType) | [en] Role of the person in the membership or function. [de] Rolle der Person in der Mitgliedschaft oder Funktion.  |
-| authorized_to_vote | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Person stimmberechtigt ist. [en] Indicates if the person is authorized to vote.  |
+| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | Reference to a person with snapshot data at time of linking.  |
+| group_reference | 0..1 <br/> [GroupReference](#GroupReference) | Reference to a group with snapshot data at time of linking.  |
+| role_type | 0..1 <br/> [RoleType](#RoleType) | Role of the person in the membership or function.  |
+| authorized_to_vote | 0..1 <br/> [Boolean](#Boolean) | Indicates if the person is authorized to vote.  |
 | local_id | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification) |
@@ -1357,9 +1329,7 @@ Das InterestLink-Schema erfasst Interessenbindungen, Interessenkonflikte und Ver
 ## Class: InterestLink 
 
 
-_[de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation._
-
-_[en] An interest link (conflict of interest, political financing) of a person to an organization._
+_An interest link (conflict of interest, political financing) of a person to an organization._
 
 __
 
@@ -1374,15 +1344,15 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung. [en] Reference to a person with snapshot data at time of linking.  |
-| interest_type | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | [de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein). [en] Type of interest link (professional activity, political office, association).  |
-| organization_label | 0..1 <br/> [String](#String) | [en] Label of the organization. [de] Bezeichnung der Organisation.  |
-| organization_uid | 0..1 <br/> [String](#String) | [en] UID of the organization (for analysis with NOGA codes, etc.). [de] UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).  |
-| organization_address | 0..1 <br/> [String](#String) | [en] Address of the organization. [de] Adresse der Organisation.  |
-| legal_form | 0..1 <br/> [String](#String) | [en] Legal form of the organization. [de] Rechtsform der Organisation.  |
-| is_paid | 0..1 <br/> [Boolean](#Boolean) | [de] Gibt an, ob die Position bezahlt ist. [en] Indicates if the position is paid.  |
-| committee | 0..1 <br/> [String](#String) | [en] Committee or board (e.g., foundation board, board of directors). [de] Gremium (z.B. Stiftungsrat, Verwaltungsrat).  |
-| function_role | 0..1 <br/> [String](#String) | [en] Function or role in the organization. [de] Funktion oder Rolle in der Organisation.  |
+| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | Reference to a person with snapshot data at time of linking.  |
+| interest_type | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | Type of interest link (professional activity, political office, association).  |
+| organization_label | 0..1 <br/> [String](#String) | Label of the organization.  |
+| organization_uid | 0..1 <br/> [String](#String) | UID of the organization (for analysis with NOGA codes, etc.).  |
+| organization_address | 0..1 <br/> [String](#String) | Address of the organization.  |
+| legal_form | 0..1 <br/> [String](#String) | Legal form of the organization.  |
+| is_paid | 0..1 <br/> [Boolean](#Boolean) | Indicates if the position is paid.  |
+| committee | 0..1 <br/> [String](#String) | Committee or board (e.g., foundation board, board of directors).  |
+| function_role | 0..1 <br/> [String](#String) | Function or role in the organization.  |
 | local_id | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification) |

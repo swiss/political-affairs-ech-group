@@ -6,9 +6,7 @@ search:
 # Slot: statutes_url 
 
 
-_[de] URL zu Parteistatuten (optional für Parteien)._
-
-_[en] URL to party statutes (optional for parties)._
+_URL to party statutes (optional for parties)._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:statutesURL](https://ld.ech.ch/schema/0294/actors/statutesURL)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [Group](Group.md) | A political group, organization, or body (e |  no  |
 
 
 
@@ -67,9 +65,13 @@ URI: [act:statutesURL](https://ld.ech.ch/schema/0294/actors/statutesURL)
 <details>
 ```yaml
 name: statutes_url
-description: '[de] URL zu Parteistatuten (optional für Parteien).
+annotations:
+  description_de:
+    tag: description_de
+    value: 'URL zu Parteistatuten (optional für Parteien).
 
-  [en] URL to party statutes (optional for parties).
+      '
+description: 'URL to party statutes (optional for parties).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

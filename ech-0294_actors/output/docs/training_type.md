@@ -6,9 +6,7 @@ search:
 # Slot: training_type 
 
 
-_[de] Typ der Ausbildung oder Bildung._
-
-_[en] Type of training or education._
+_Type of training or education._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:trainingType](https://ld.ech.ch/schema/0294/actors/trainingType)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Training](Training.md) | [de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z |  no  |
+| [Training](Training.md) | Training or education of a person indicating a type (e |  no  |
 
 
 
@@ -75,9 +73,13 @@ URI: [act:trainingType](https://ld.ech.ch/schema/0294/actors/trainingType)
 <details>
 ```yaml
 name: training_type
-description: '[de] Typ der Ausbildung oder Bildung.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Typ der Ausbildung oder Bildung.
 
-  [en] Type of training or education.
+      '
+description: 'Type of training or education.
 
   '
 examples:

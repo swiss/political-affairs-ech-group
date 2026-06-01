@@ -6,9 +6,7 @@ search:
 # Slot: contacts 
 
 
-_[en] Contact information (email, website, social media)._
-
-_[de] Kontaktinformationen (E-Mail, Website, Social Media)._
+_Contact information (email, website, social media)._
 
 __
 
@@ -29,8 +27,8 @@ URI: [act:contact](https://ld.ech.ch/schema/0294/actors/contact)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Group](Group.md) | A political group, organization, or body (e |  no  |
 
 
 
@@ -69,9 +67,13 @@ URI: [act:contact](https://ld.ech.ch/schema/0294/actors/contact)
 <details>
 ```yaml
 name: contacts
-description: '[en] Contact information (email, website, social media).
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Kontaktinformationen (E-Mail, Website, Social Media).
 
-  [de] Kontaktinformationen (E-Mail, Website, Social Media).
+      '
+description: 'Contact information (email, website, social media).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

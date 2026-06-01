@@ -6,9 +6,7 @@ search:
 # Slot: role_type 
 
 
-_[en] Role of the person in the membership or function._
-
-_[de] Rolle der Person in der Mitgliedschaft oder Funktion._
+_Role of the person in the membership or function._
 
 __
 
@@ -29,8 +27,8 @@ URI: [act:roleType](https://ld.ech.ch/schema/0294/actors/roleType)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [PersonReference](PersonReference.md) | [de] Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifika... |  no  |
-| [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |  no  |
+| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |  no  |
+| [Membership](Membership.md) | A membership relationship between a person and a group |  no  |
 
 
 
@@ -68,9 +66,13 @@ URI: [act:roleType](https://ld.ech.ch/schema/0294/actors/roleType)
 <details>
 ```yaml
 name: role_type
-description: '[en] Role of the person in the membership or function.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Rolle der Person in der Mitgliedschaft oder Funktion.
 
-  [de] Rolle der Person in der Mitgliedschaft oder Funktion.
+      '
+description: 'Role of the person in the membership or function.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

@@ -3,9 +3,7 @@
 ## Class: Membership 
 
 
-_[de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe._
-
-_[en] A membership relationship between a person and a group._
+_A membership relationship between a person and a group._
 
 __
 
@@ -20,10 +18,10 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| person_reference | 0..1 <br/> [PersonReference](PersonReference.md) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung. [en] Reference to a person with snapshot data at time of linking.  |
-| group_reference | 0..1 <br/> [GroupReference](GroupReference.md) | [de] Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung. [en] Reference to a group with snapshot data at time of linking.  |
-| role_type | 0..1 <br/> [RoleType](RoleType.md) | [en] Role of the person in the membership or function. [de] Rolle der Person in der Mitgliedschaft oder Funktion.  |
-| authorized_to_vote | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob die Person stimmberechtigt ist. [en] Indicates if the person is authorized to vote.  |
+| person_reference | 0..1 <br/> [PersonReference](PersonReference.md) | Reference to a person with snapshot data at time of linking.  |
+| group_reference | 0..1 <br/> [GroupReference](GroupReference.md) | Reference to a group with snapshot data at time of linking.  |
+| role_type | 0..1 <br/> [RoleType](RoleType.md) | Role of the person in the membership or function.  |
+| authorized_to_vote | 0..1 <br/> [Boolean](Boolean.md) | Indicates if the person is authorized to vote.  |
 | local_id | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |

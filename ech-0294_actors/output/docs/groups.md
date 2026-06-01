@@ -6,9 +6,7 @@ search:
 # Slot: groups 
 
 
-_[de] Sammlung von Gruppen._
-
-_[en] Collection of groups._
+_Collection of groups._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:group](https://ld.ech.ch/schema/0294/actors/group)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Container](Container.md) | [de] Container für politische Akteure, Gruppen und Beziehungen |  no  |
+| [Container](Container.md) | Container for political actors, groups, and relationships |  no  |
 
 
 
@@ -68,9 +66,13 @@ URI: [act:group](https://ld.ech.ch/schema/0294/actors/group)
 <details>
 ```yaml
 name: groups
-description: '[de] Sammlung von Gruppen.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Sammlung von Gruppen.
 
-  [en] Collection of groups.
+      '
+description: 'Collection of groups.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

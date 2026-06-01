@@ -3,9 +3,7 @@
 ## Class: Address 
 
 
-_[de] Eine Adresse mit einem Typ (z.B. Privatadresse, Geschäftsadresse) und einem Wert._
-
-_[en] An address with a type (e.g., private address, business address) and a value._
+_An address with a type (e.g., private address, business address) and a value._
 
 __
 
@@ -20,11 +18,11 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| address_type | 0..1 <br/> [AddressTypeEnum](AddressTypeEnum.md) | [de] Typ der Adresse. [en] Type of address.  |
-| address_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] URI der Adresse. [en] URI of the address.  |
-| street_address | 0..1 <br/> [String](String.md) | [de] Strassenadresse. [en] Street address.  |
-| postal_code | 0..1 <br/> [Integer](Integer.md) | [de] Postleitzahl. [en] Postal code.  |
-| postal_locality | 0..1 <br/> [String](String.md) | [de] Ort. [en] Locality.  |
+| address_type | 0..1 <br/> [AddressTypeEnum](AddressTypeEnum.md) | Type of address.  |
+| address_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | URI of the address.  |
+| street_address | 0..1 <br/> [String](String.md) | Street address.  |
+| postal_code | 0..1 <br/> [Integer](Integer.md) | Postal code.  |
+| postal_locality | 0..1 <br/> [String](String.md) | Locality.  |
 
 
 

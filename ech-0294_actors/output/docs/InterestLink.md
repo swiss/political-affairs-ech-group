@@ -3,9 +3,7 @@
 ## Class: InterestLink 
 
 
-_[de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation._
-
-_[en] An interest link (conflict of interest, political financing) of a person to an organization._
+_An interest link (conflict of interest, political financing) of a person to an organization._
 
 __
 
@@ -20,15 +18,15 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| person_reference | 0..1 <br/> [PersonReference](PersonReference.md) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung. [en] Reference to a person with snapshot data at time of linking.  |
-| interest_type | 1 <br/> [InterestTypeEnum](InterestTypeEnum.md) | [de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein). [en] Type of interest link (professional activity, political office, association).  |
-| organization_label | 0..1 <br/> [String](String.md) | [en] Label of the organization. [de] Bezeichnung der Organisation.  |
-| organization_uid | 0..1 <br/> [String](String.md) | [en] UID of the organization (for analysis with NOGA codes, etc.). [de] UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).  |
-| organization_address | 0..1 <br/> [String](String.md) | [en] Address of the organization. [de] Adresse der Organisation.  |
-| legal_form | 0..1 <br/> [String](String.md) | [en] Legal form of the organization. [de] Rechtsform der Organisation.  |
-| is_paid | 0..1 <br/> [Boolean](Boolean.md) | [de] Gibt an, ob die Position bezahlt ist. [en] Indicates if the position is paid.  |
-| committee | 0..1 <br/> [String](String.md) | [en] Committee or board (e.g., foundation board, board of directors). [de] Gremium (z.B. Stiftungsrat, Verwaltungsrat).  |
-| function_role | 0..1 <br/> [String](String.md) | [en] Function or role in the organization. [de] Funktion oder Rolle in der Organisation.  |
+| person_reference | 0..1 <br/> [PersonReference](PersonReference.md) | Reference to a person with snapshot data at time of linking.  |
+| interest_type | 1 <br/> [InterestTypeEnum](InterestTypeEnum.md) | Type of interest link (professional activity, political office, association).  |
+| organization_label | 0..1 <br/> [String](String.md) | Label of the organization.  |
+| organization_uid | 0..1 <br/> [String](String.md) | UID of the organization (for analysis with NOGA codes, etc.).  |
+| organization_address | 0..1 <br/> [String](String.md) | Address of the organization.  |
+| legal_form | 0..1 <br/> [String](String.md) | Legal form of the organization.  |
+| is_paid | 0..1 <br/> [Boolean](Boolean.md) | Indicates if the position is paid.  |
+| committee | 0..1 <br/> [String](String.md) | Committee or board (e.g., foundation board, board of directors).  |
+| function_role | 0..1 <br/> [String](String.md) | Function or role in the organization.  |
 | local_id | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |

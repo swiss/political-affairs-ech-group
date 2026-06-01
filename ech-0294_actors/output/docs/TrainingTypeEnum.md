@@ -3,9 +3,7 @@
 
 
 
-_[en] Types of training or education._
-
-_[de] Ausbildungs- oder Bildungstypen._
+_Types of training or education._
 
 __
 
@@ -18,12 +16,12 @@ URI: [act:TrainingTypeEnum](https://ld.ech.ch/schema/0294/actors/TrainingTypeEnu
 ### Permissible Values
 | Value | Meaning | Description |
 | --- | --- | --- |
-| schulabschluss | None | [en] School diploma |
-| efz | None | [en] Federal certificate of proficiency (EFZ) |
-| uni | None | [en] University degree |
-| armee | None | [en] Military service |
-| zivi | None | [en] Civil service |
-| zischutz | None | [en] Civil protection |
+| schulabschluss | None | School diploma |
+| efz | None | Federal certificate of proficiency (EFZ) |
+| uni | None | University degree |
+| armee | None | Military service |
+| zivi | None | Civil service |
+| zischutz | None | Civil protection |
 
 
 

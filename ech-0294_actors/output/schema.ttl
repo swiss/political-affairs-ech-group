@@ -13,35 +13,35 @@
             owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimePlanned> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateActual> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeActual> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimePlanned> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateActual> ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateActual> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datePlanned> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeActual> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimePlanned> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:dateTime ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeActual> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datePlanned> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimePlanned> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeActual> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateActual> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datePlanned> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeActual> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimePlanned> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateActual> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datePlanned> ] ;
@@ -53,13 +53,13 @@
 <https://ld.ech.ch/schema/0292/meta-common/IsProcessStep> a owl:Class ;
     rdfs:label "IsProcessStep" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/remark> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/remark> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/remark> ],
         <https://ld.ech.ch/schema/0292/meta-common/HasIdentification>,
         <https://ld.ech.ch/schema/0292/meta-common/IsEventWithDuration> ;
@@ -87,123 +87,126 @@ remark slot. Concrete step classes add their own type-specific slots.
     rdfs:label "actors-schema" ;
     dcterms:license "CC-BY" ;
     dcterms:title "Actors Schema" ;
-    skos:definition """[de] Ein Schema zur Beschreibung politischer Akteure einschliesslich Personen, Gruppen, Mitgliedschaften und Interessenbindungen.
-[en] A schema describing political actors including persons, groups, memberships, and interest links.
+    skos:definition """A schema describing political actors including persons, groups, memberships, and interest links.
+""" ;
+    act:description_de """Ein Schema zur Beschreibung politischer Akteure einschliesslich Personen, Gruppen, Mitgliedschaften und Interessenbindungen.
 """ .
 
 act:Container a owl:Class ;
     rdfs:label "Container" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:person ],
+        [ a owl:Restriction ;
             owl:allValuesFrom act:Membership ;
             owl:onProperty act:membership ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:membership ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:group ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Group ;
-            owl:onProperty act:group ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:interestLink ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:Person ;
             owl:onProperty act:person ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:person ],
+            owl:onProperty act:membership ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Group ;
+            owl:onProperty act:group ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:group ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:interestLink ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:InterestLink ;
             owl:onProperty act:interestLink ],
         <https://ld.ech.ch/schema/0292/meta-common/HasIdentification> ;
-    skos:definition """[de] Container für politische Akteure, Gruppen und Beziehungen.
-[en] Container for political actors, groups, and relationships.
+    skos:definition """Container for political actors, groups, and relationships.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Container für politische Akteure, Gruppen und Beziehungen.
+""" .
 
 act:role_label a owl:DatatypeProperty ;
     rdfs:label "role_label" ;
-    skos:definition """[en] Descriptive label for the role when 'other' is selected in the RoleEnum.
-[de] Beschreibende Bezeichnung für die Rolle, wenn 'other' im RoleEnum ausgewählt ist.
+    skos:definition """Descriptive label for the role when 'other' is selected in the RoleEnum.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Beschreibende Bezeichnung für die Rolle, wenn 'other' im RoleEnum ausgewählt ist.
+""" .
 
 <https://ld.ech.ch/schema/0292/meta-common/IsEventWithDuration> a owl:Class ;
     rdfs:label "IsEventWithDuration" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndPlanned> ],
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndActual> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndActual> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginActual> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginPlanned> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndActual> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndPlanned> ],
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndActual> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:dateTime ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndActual> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndActual> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginPlanned> ],
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndPlanned> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginActual> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginActual> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndActual> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:dateTime ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginActual> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginPlanned> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndPlanned> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginPlanned> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndPlanned> ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndPlanned> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndPlanned> ],
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginActual> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:dateTime ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginPlanned> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndActual> ],
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginPlanned> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndActual> ],
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndPlanned> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndPlanned> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginPlanned> ],
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndPlanned> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginActual> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginActual> ] ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginPlanned> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginPlanned> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndPlanned> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginActual> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndPlanned> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndActual> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginActual> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginPlanned> ] ;
     skos:definition """[de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder Vorkommnissen mit Zeitdauer zur Verfügung stellt.
 [en] A mixin class that provides slots for modeling events or occurrences with time duration.
 """ ;
@@ -212,290 +215,300 @@ act:role_label a owl:DatatypeProperty ;
 <https://ld.ech.ch/schema/0294/actors/AddressTypeEnum#businessAddress> a owl:Class ;
     rdfs:label "businessAddress" ;
     rdfs:subClassOf act:AddressTypeEnum ;
-    skos:definition """[en] Business address.
-[de] Geschäftsadresse.
+    skos:definition """Business address.
+""" ;
+    act:description_de """Geschäftsadresse.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/AddressTypeEnum#localAddress> a owl:Class ;
     rdfs:label "localAddress" ;
     rdfs:subClassOf act:AddressTypeEnum ;
-    skos:definition """[en] Local address.
-[de] Lokaladresse.
+    skos:definition """Local address.
+""" ;
+    act:description_de """Lokaladresse.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/AddressTypeEnum#privateAddress> a owl:Class ;
     rdfs:label "privateAddress" ;
     rdfs:subClassOf act:AddressTypeEnum ;
-    skos:definition """[en] Private address.
-[de] Privatadresse.
+    skos:definition """Private address.
+""" ;
+    act:description_de """Privatadresse.
 """ .
 
 act:Citizenship a owl:Class ;
     rdfs:label "Citizenship" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:onDatatype xsd:string ;
-                    owl:withRestrictions ( [ xsd:pattern "^[A-Z]{2}$" ] ) ] ;
-            owl:onProperty act:country ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:country ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:country ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:string ;
+                    owl:withRestrictions ( [ xsd:pattern "^[A-Z]{2}$" ] ) ] ;
+            owl:onProperty act:country ],
         <https://ld.ech.ch/schema/0292/meta-common/HasTemporalValidity> ;
-    skos:definition """[de] Staatsangehörigkeit einer Person unter Angabe des Landes und der zeitlichen Gültigkeit. Wenn kein `valid_from` angegeben ist, ist diese Information nicht bekannt. Ist bekannt, dass die Staatsangehörigkeit seit der Geburt gültig ist, ist das Geburtsdatum hier anzugeben. Wenn kein `valid_through` angegeben ist, ist die Staatsangehörigkeit weiterhin gültig.
-[en] Citizenship (also used for Nationality) of a person indicating the country and temporal validity. If there is no `valid_from` provided, the information is not known. If it is known that the citizenship is valid from birth, the birthdate is to be repeated here. If there is no `valid_through`, the citizenship is still active.
+    skos:definition """Citizenship (also used for Nationality) of a person indicating the country and temporal validity. If there is no `valid_from` provided, the information is not known. If it is known that the citizenship is valid from birth, the birthdate is to be repeated here. If there is no `valid_through`, the citizenship is still active.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Staatsangehörigkeit einer Person unter Angabe des Landes und der zeitlichen Gültigkeit. Wenn kein `valid_from` angegeben ist, ist diese Information nicht bekannt. Ist bekannt, dass die Staatsangehörigkeit seit der Geburt gültig ist, ist das Geburtsdatum hier anzugeben. Wenn kein `valid_through` angegeben ist, ist die Staatsangehörigkeit weiterhin gültig.
+""" .
 
 <https://ld.ech.ch/schema/0294/actors/ContactTypeEnum#contact_website> a owl:Class ;
     rdfs:label "contact_website" ;
     rdfs:subClassOf act:ContactTypeEnum ;
-    skos:definition """[en] Contact website.
-[de] Kontakt-Website.
+    skos:definition """Contact website.
+""" ;
+    act:description_de """Kontakt-Website.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/ContactTypeEnum#email> a owl:Class ;
     rdfs:label "email" ;
     rdfs:subClassOf act:ContactTypeEnum ;
-    skos:definition """[en] Email address.
-[de] E-Mail-Adresse.
+    skos:definition """Email address.
+""" ;
+    act:description_de """E-Mail-Adresse.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/ContactTypeEnum#linked_in> a owl:Class ;
     rdfs:label "linked_in" ;
     rdfs:subClassOf act:ContactTypeEnum ;
-    skos:definition """[en] LinkedIn profile.
-[de] LinkedIn-Profil.
+    skos:definition """LinkedIn profile.
+""" ;
+    act:description_de """LinkedIn-Profil.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/ContactTypeEnum#twitter> a owl:Class ;
     rdfs:label "twitter" ;
     rdfs:subClassOf act:ContactTypeEnum ;
-    skos:definition """[en] Twitter profile.
-[de] Twitter-Profil.
+    skos:definition """Twitter profile.
+""" ;
+    act:description_de """Twitter-Profil.
 """ .
 
 act:ElectoralDistrict a owl:Class ;
     rdfs:label "ElectoralDistrict" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty act:district ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty act:district ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:district ],
         <https://ld.ech.ch/schema/0292/meta-common/HasTemporalValidity> ;
-    skos:definition """[de] Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit zeitlicher Gültigkeit.
-[en] Electoral district or region where a person is politically active; with temporal validity.
+    skos:definition """Electoral district or region where a person is politically active; with temporal validity.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit zeitlicher Gültigkeit.
+""" .
 
 act:Gender a owl:Class ;
     rdfs:label "Gender" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:pronouns ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:genderCode ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:pronouns ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:genderCode ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:genderCode ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:genderCode ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:pronouns ],
         <https://ld.ech.ch/schema/0292/meta-common/HasTemporalValidity> ;
-    skos:definition """[de] Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen Gültigkeit.
-[en] Gender of a person indicating a gender code and temporal validity.
+    skos:definition """Gender of a person indicating a gender code and temporal validity.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen Gültigkeit.
+""" .
 
 act:Group a owl:Class ;
     rdfs:label "Group" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty act:landingPage ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:partyColor ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:GroupType ;
-            owl:onProperty act:groupType ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:groupType ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty act:spatial ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:Contact ;
             owl:onProperty act:contact ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://ld.ech.ch/schema/0292/meta-common/MultilingualValue> ;
-            owl:onProperty act:abbreviation ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:address ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:partyColor ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:anyURI ;
-            owl:onProperty act:landingPage ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:spatial ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:statutesURL ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:landingPage ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:contact ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:statutesURL ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://ld.ech.ch/schema/0292/meta-common/MultilingualValue> ;
-            owl:onProperty act:description ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:groupType ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:partyColor ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:landingPage ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:anyURI ;
-            owl:onProperty act:parentGroup ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:parentGroup ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Address ;
-            owl:onProperty act:address ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:spatial ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:description ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:statutesURL ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:abbreviation ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
-        <https://ld.ech.ch/schema/0292/meta-common/HasCreationModificationDates>,
-        <https://ld.ech.ch/schema/0292/meta-common/HasIdentification>,
-        <https://ld.ech.ch/schema/0292/meta-common/HasTemporalValidity> ;
-    skos:definition """[de] Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommission, Parlament, Departement).
-[en] A political group, organization, or body (e.g., party, committee, parliament, department).
-""" ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
-
-act:GroupReference a owl:Class ;
-    rdfs:label "GroupReference" ;
-    rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom act:GroupType ;
             owl:onProperty act:groupType ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:groupType ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:address ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:spatial ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+            owl:onProperty act:groupType ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:partyColor ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+            owl:onProperty act:parentGroup ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:partyColor ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:landingPage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty act:parentGroup ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://ld.ech.ch/schema/0292/meta-common/MultilingualValue> ;
             owl:onProperty act:abbreviation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:abbreviation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Address ;
+            owl:onProperty act:address ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:statutesURL ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty act:landingPage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:statutesURL ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:statutesURL ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:partyColor ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://ld.ech.ch/schema/0292/meta-common/MultilingualValue> ;
+            owl:onProperty act:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:spatial ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:contact ],
+        <https://ld.ech.ch/schema/0292/meta-common/HasCreationModificationDates>,
+        <https://ld.ech.ch/schema/0292/meta-common/HasIdentification>,
+        <https://ld.ech.ch/schema/0292/meta-common/HasTemporalValidity> ;
+    skos:definition """A political group, organization, or body (e.g., party, committee, parliament, department).
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommission, Parlament, Departement).
+""" .
+
+act:GroupReference a owl:Class ;
+    rdfs:label "GroupReference" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty act:groupType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:groupType ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://ld.ech.ch/schema/0292/meta-common/MultilingualValue> ;
+            owl:onProperty act:abbreviation ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:abbreviation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:GroupType ;
+            owl:onProperty act:groupType ],
         <https://ld.ech.ch/schema/0292/meta-common/HasIdentification> ;
-    skos:definition """[de] Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung.
-[en] Lightweight reference to a group with key identification data at time of linking.
+    skos:definition """Lightweight reference to a group with key identification data at time of linking.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung.
+""" .
 
 act:LanguageProficiency a owl:Class ;
     rdfs:label "LanguageProficiency" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:isCorrespondence ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:isNative ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/language> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:isNative ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:isCorrespondence ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:isCorrespondence ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:onDatatype xsd:string ;
                     owl:withRestrictions ( [ xsd:pattern "^[a-z]{2}$" ] ) ] ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/language> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:boolean ;
             owl:onProperty act:isNative ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:isCorrespondence ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/language> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
             owl:onProperty act:isCorrespondence ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty act:isNative ] ;
-    skos:definition """[de] Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um die bevorzugte Sprache oder die Muttersprache handelt.
-[en] Language proficiency of a person indicating the language and whether it is the preferred language or native language.
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/language> ] ;
+    skos:definition """Language proficiency of a person indicating the language and whether it is the preferred language or native language.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um die bevorzugte Sprache oder die Muttersprache handelt.
+""" .
 
 act:Membership a owl:Class ;
     rdfs:label "Membership" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:personReference ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:groupReference ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:personReference ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:groupReference ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:boolean ;
             owl:onProperty act:authorizedToVote ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:roleType ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:groupReference ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:GroupReference ;
             owl:onProperty act:groupReference ],
@@ -503,715 +516,760 @@ act:Membership a owl:Class ;
             owl:allValuesFrom act:RoleType ;
             owl:onProperty act:roleType ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:authorizedToVote ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:PersonReference ;
+            owl:onProperty act:personReference ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:roleType ],
+            owl:onProperty act:personReference ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:authorizedToVote ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty act:groupReference ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty act:roleType ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty act:authorizedToVote ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:PersonReference ;
-            owl:onProperty act:personReference ],
         <https://ld.ech.ch/schema/0292/meta-common/HasCreationModificationDates>,
         <https://ld.ech.ch/schema/0292/meta-common/HasIdentification>,
         <https://ld.ech.ch/schema/0292/meta-common/HasTemporalValidity> ;
-    skos:definition """[de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe.
-[en] A membership relationship between a person and a group.
+    skos:definition """A membership relationship between a person and a group.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe.
+""" .
 
 act:Name a owl:Class ;
     rdfs:label "Name" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:nameType ],
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:NameTypeEnum ;
             owl:onProperty act:nameType ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
+            owl:onProperty act:nameType ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:nameType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
         <https://ld.ech.ch/schema/0292/meta-common/HasTemporalValidity> ;
-    skos:definition """[de] Ein Name mit einem Typ (z.B. Rufname, amtlicher Name) und einem Wert und einer zeitlichen Gültigkeit.
-[en] A name with a type (e.g., call name, official name) and a value.
+    skos:definition """A name with a type (e.g., call name, official name) and a value.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Ein Name mit einem Typ (z.B. Rufname, amtlicher Name) und einem Wert und einer zeitlichen Gültigkeit.
+""" .
 
 act:Occupation a owl:Class ;
     rdfs:label "Occupation" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:enterpriseUid ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:enterprise ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:occupationCode ],
+            owl:onProperty act:isPaid ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:occupationCode ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:isPaid ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:occupationCode ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:enterprise ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
             owl:onProperty act:isPaid ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:enterprise ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty act:occupationCode ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:enterpriseUid ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:enterprise ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:isPaid ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:enterpriseUid ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:enterprise ],
+            owl:onProperty act:occupationCode ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:enterprise ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:enterpriseUid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:enterpriseUid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:enterpriseUid ],
         <https://ld.ech.ch/schema/0292/meta-common/HasTemporalValidity> ;
-    skos:definition """[de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Codes, ob die Position bezahlt ist, und der zeitlichen Gültigkeit.
-[en] Occupation or profession of a person indicating a label, an ISCO-19 code, whether the position is paid, and temporal validity.
+    skos:definition """Occupation or profession of a person indicating a label, an ISCO-19 code, whether the position is paid, and temporal validity.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Codes, ob die Position bezahlt ist, und der zeitlichen Gültigkeit.
+""" .
 
 act:Person a owl:Class ;
     rdfs:label "Person" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:anyURI ;
-            owl:onProperty act:picture ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/labelLong> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:birthYear ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Address ;
-            owl:onProperty act:address ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:citizenship ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:interestLink ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Name ;
-            owl:onProperty act:name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://schema.org/birthDate> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:electoralDistrict ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <http://schema.org/deathDate> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://schema.org/deathDate> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/labelLong> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:LanguageProficiency ;
-            owl:onProperty act:languageProficiency ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty <http://schema.org/deathDate> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Citizenship ;
-            owl:onProperty act:citizenship ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Training ;
-            owl:onProperty act:training ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:integer ;
             owl:onProperty act:birthYear ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty act:interestLink ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:citizenship ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Address ;
+            owl:onProperty act:address ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Occupation ;
+            owl:onProperty act:occupation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Training ;
+            owl:onProperty act:training ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Name ;
+            owl:onProperty act:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:ElectoralDistrict ;
+            owl:onProperty act:electoralDistrict ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://schema.org/birthDate> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:languageProficiency ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:occupation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:LanguageProficiency ;
+            owl:onProperty act:languageProficiency ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/labelLong> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:contact ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://schema.org/deathDate> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:address ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/labelLong> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty act:picture ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:InterestLink ;
             owl:onProperty act:interestLink ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:training ],
+            owl:onProperty act:birthYear ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:gender ],
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty <http://schema.org/deathDate> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:contact ],
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty act:picture ],
         [ a owl:Restriction ;
-            owl:allValuesFrom act:Occupation ;
-            owl:onProperty act:occupation ],
+            owl:maxCardinality 1 ;
+            owl:onProperty act:electoralDistrict ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Citizenship ;
+            owl:onProperty act:citizenship ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <http://schema.org/birthDate> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:birthYear ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:languageProficiency ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/labelLong> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom act:ElectoralDistrict ;
-            owl:onProperty act:electoralDistrict ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:picture ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:address ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:occupation ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty act:electoralDistrict ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:Gender ;
-            owl:onProperty act:gender ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
             owl:onProperty <http://schema.org/birthDate> ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:gender ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:training ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:picture ],
+        [ a owl:Restriction ;
             owl:allValuesFrom act:Contact ;
             owl:onProperty act:contact ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:birthYear ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:Gender ;
+            owl:onProperty act:gender ],
         <https://ld.ech.ch/schema/0292/meta-common/HasCreationModificationDates>,
         <https://ld.ech.ch/schema/0292/meta-common/HasIdentification> ;
-    skos:definition """[de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Berufen.
-[en] A person with identifiers, names, addresses, citizenships, and occupations.
+    skos:definition """A person with identifiers, names, addresses, citizenships, and occupations.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Berufen.
+""" .
 
 <https://ld.ech.ch/schema/0294/actors/RoleEnum#member> a owl:Class ;
     rdfs:label "member" ;
     rdfs:subClassOf act:RoleEnum ;
-    skos:definition """[en] Regular member (default).
-[de] Gewöhnliches Mitglied (Standard).
+    skos:definition """Regular member (default).
+""" ;
+    act:description_de """Gewöhnliches Mitglied (Standard).
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/RoleEnum#other> a owl:Class ;
     rdfs:label "other" ;
     rdfs:subClassOf act:RoleEnum ;
-    skos:definition """[en] Other role; use role_label for a descriptive label.
-[de] Andere Rolle; für eine beschreibende Bezeichnung role_label verwenden.
+    skos:definition """Other role; use role_label for a descriptive label.
+""" ;
+    act:description_de """Andere Rolle; für eine beschreibende Bezeichnung role_label verwenden.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/RoleEnum#president> a owl:Class ;
     rdfs:label "president" ;
     rdfs:subClassOf act:RoleEnum ;
-    skos:definition """[en] President or chair of the group.
-[de] Präsident oder Vorsitzender der Gruppe.
+    skos:definition """President or chair of the group.
+""" ;
+    act:description_de """Präsident oder Vorsitzender der Gruppe.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/RoleEnum#stellvertreter> a owl:Class ;
     rdfs:label "stellvertreter" ;
     rdfs:subClassOf act:RoleEnum ;
-    skos:definition """[en] Deputy/vice role (stellvertreter).
-[de] Stellvertreter / Vize.
+    skos:definition """Deputy/vice role (stellvertreter).
+""" ;
+    act:description_de """Stellvertreter / Vize.
 """ .
 
 act:Training a owl:Class ;
     rdfs:label "Training" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty act:trainingCode ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:trainingType ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:trainingCode ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:trainingCode ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:trainingType ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:TrainingTypeEnum ;
             owl:onProperty act:trainingType ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:trainingCode ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:trainingType ],
         <https://ld.ech.ch/schema/0292/meta-common/HasTemporalValidity> ;
-    skos:definition """[de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z.B. Schulabschluss, Universitätsabschluss, Militärdienst), eines Labels, eines ISCO-19 Codes und der zeitlichen Gültigkeit.
-[en] Training or education of a person indicating a type (e.g., school diploma, university degree, military service), a label, an ISCO-19 code, and temporal validity.
+    skos:definition """Training or education of a person indicating a type (e.g., school diploma, university degree, military service), a label, an ISCO-19 code, and temporal validity.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Ausbildung oder Bildung einer Person mit Angabe eines Typs (z.B. Schulabschluss, Universitätsabschluss, Militärdienst), eines Labels, eines ISCO-19 Codes und der zeitlichen Gültigkeit.
+""" .
 
 <https://ld.ech.ch/schema/0294/actors/TrainingTypeEnum#armee> a owl:Class ;
     rdfs:label "armee" ;
     rdfs:subClassOf act:TrainingTypeEnum ;
-    skos:definition """[en] Military service.
-[de] Militärdienst.
+    skos:definition """Military service.
+""" ;
+    act:description_de """Militärdienst.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/TrainingTypeEnum#efz> a owl:Class ;
     rdfs:label "efz" ;
     rdfs:subClassOf act:TrainingTypeEnum ;
-    skos:definition """[en] Federal certificate of proficiency (EFZ).
-[de] Eidgenössisches Fähigkeitszeugnis (EFZ).
+    skos:definition """Federal certificate of proficiency (EFZ).
+""" ;
+    act:description_de """Eidgenössisches Fähigkeitszeugnis (EFZ).
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/TrainingTypeEnum#schulabschluss> a owl:Class ;
     rdfs:label "schulabschluss" ;
     rdfs:subClassOf act:TrainingTypeEnum ;
-    skos:definition """[en] School diploma.
-[de] Schulabschluss.
+    skos:definition """School diploma.
+""" ;
+    act:description_de """Schulabschluss.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/TrainingTypeEnum#uni> a owl:Class ;
     rdfs:label "uni" ;
     rdfs:subClassOf act:TrainingTypeEnum ;
-    skos:definition """[en] University degree.
-[de] Universitätsabschluss.
+    skos:definition """University degree.
+""" ;
+    act:description_de """Universitätsabschluss.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/TrainingTypeEnum#zischutz> a owl:Class ;
     rdfs:label "zischutz" ;
     rdfs:subClassOf act:TrainingTypeEnum ;
-    skos:definition """[en] Civil protection.
-[de] Zivilschutz.
+    skos:definition """Civil protection.
+""" ;
+    act:description_de """Zivilschutz.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/TrainingTypeEnum#zivi> a owl:Class ;
     rdfs:label "zivi" ;
     rdfs:subClassOf act:TrainingTypeEnum ;
-    skos:definition """[en] Civil service.
-[de] Zivildienst.
+    skos:definition """Civil service.
+""" ;
+    act:description_de """Zivildienst.
 """ .
 
 act:citizenship a owl:ObjectProperty ;
     rdfs:label "citizenships" ;
     rdfs:range act:Citizenship ;
-    skos:definition """[de] Staatsbürgerschaften der Person.
-[en] Citizenships of the person.
+    skos:definition """Citizenships of the person.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Staatsbürgerschaften der Person.
+""" .
 
 act:description a owl:ObjectProperty ;
     rdfs:label "description" ;
     rdfs:range <https://ld.ech.ch/schema/0292/meta-common/MultilingualValue> ;
-    skos:definition """[de] Kurze Beschreibung der Gruppierung.
-[en] Description of the entity.
+    skos:definition """Description of the entity.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Kurze Beschreibung der Gruppierung.
+""" .
 
 <https://ld.ech.ch/schema/0294/actors/enum/group_type/association> a owl:Class ;
     rdfs:label "association" ;
     rdfs:subClassOf act:GroupTypeEnum ;
-    skos:definition """[en] Association.
-[de] Verein.
+    skos:definition """Association.
+""" ;
+    act:description_de """Verein.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/group_type/commission> a owl:Class ;
     rdfs:label "commission" ;
     rdfs:subClassOf act:GroupTypeEnum ;
-    skos:definition """[en] Commission (permanent or ad-hoc).
-[de] Kommission (ständig oder ad-hoc).
+    skos:definition """Commission (permanent or ad-hoc).
+""" ;
+    act:description_de """Kommission (ständig oder ad-hoc).
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/group_type/control_body> a owl:Class ;
     rdfs:label "control_body" ;
     rdfs:subClassOf act:GroupTypeEnum ;
-    skos:definition """[en] Control body (e.g., financial control).
-[de] Kontrollorgan (z.B. Finanzkontrolle).
+    skos:definition """Control body (e.g., financial control).
+""" ;
+    act:description_de """Kontrollorgan (z.B. Finanzkontrolle).
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/group_type/court> a owl:Class ;
     rdfs:label "court" ;
     rdfs:subClassOf act:GroupTypeEnum ;
-    skos:definition """[en] Court / Judiciary.
-[de] Gericht / Judikative.
+    skos:definition """Court / Judiciary.
+""" ;
+    act:description_de """Gericht / Judikative.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/group_type/delegation> a owl:Class ;
     rdfs:label "delegation" ;
     rdfs:subClassOf act:GroupTypeEnum ;
-    skos:definition """[en] Delegation.
-[de] Delegation.
+    skos:definition """Delegation.
+""" ;
+    act:description_de """Delegation.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/group_type/department> a owl:Class ;
     rdfs:label "department" ;
     rdfs:subClassOf act:GroupTypeEnum ;
-    skos:definition """[en] Government department.
-[de] Departement.
+    skos:definition """Government department.
+""" ;
+    act:description_de """Departement.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/group_type/extraparliamentary_commission> a owl:Class ;
     rdfs:label "extraparliamentary_commission" ;
     rdfs:subClassOf act:GroupTypeEnum ;
-    skos:definition """[en] Extra-parliamentary commission (e.g., Bank Council).
-[de] Außerparlamentarische Kommission (z.B. Bankrat).
+    skos:definition """Extra-parliamentary commission (e.g., Bank Council).
+""" ;
+    act:description_de """Außerparlamentarische Kommission (z.B. Bankrat).
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/group_type/faction> a owl:Class ;
     rdfs:label "faction" ;
     rdfs:subClassOf act:GroupTypeEnum ;
-    skos:definition """[en] Parliamentary faction.
-[de] Parlamentsfraktion.
+    skos:definition """Parliamentary faction.
+""" ;
+    act:description_de """Parlamentsfraktion.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/group_type/government> a owl:Class ;
     rdfs:label "government" ;
     rdfs:subClassOf act:GroupTypeEnum ;
-    skos:definition """[en] Government / Executive.
-[de] Regierung / Exekutive.
+    skos:definition """Government / Executive.
+""" ;
+    act:description_de """Regierung / Exekutive.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/group_type/interest_group> a owl:Class ;
     rdfs:label "interest_group" ;
     rdfs:subClassOf act:GroupTypeEnum ;
-    skos:definition """[en] Interest group from civil society.
-[de] Interessengruppe aus der Zivilgesellschaft.
+    skos:definition """Interest group from civil society.
+""" ;
+    act:description_de """Interessengruppe aus der Zivilgesellschaft.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/group_type/list> a owl:Class ;
     rdfs:label "list" ;
     rdfs:subClassOf act:GroupTypeEnum ;
-    skos:definition """[en] Electoral list (can be part of a party or independent).
-[de] Wahlliste (kann Teil einer Partei sein oder unabhängig).
+    skos:definition """Electoral list (can be part of a party or independent).
+""" ;
+    act:description_de """Wahlliste (kann Teil einer Partei sein oder unabhängig).
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/group_type/office> a owl:Class ;
     rdfs:label "office" ;
     rdfs:subClassOf act:GroupTypeEnum ;
-    skos:definition """[en] Government office.
-[de] Amt.
+    skos:definition """Government office.
+""" ;
+    act:description_de """Amt.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/group_type/other> a owl:Class ;
     rdfs:label "other" ;
     rdfs:subClassOf act:GroupTypeEnum ;
-    skos:definition """[en] Other group type not covered by standard categories.
-[de] Anderer Gruppentyp, nicht durch Standardkategorien abgedeckt.
+    skos:definition """Other group type not covered by standard categories.
+""" ;
+    act:description_de """Anderer Gruppentyp, nicht durch Standardkategorien abgedeckt.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/group_type/parliament> a owl:Class ;
     rdfs:label "parliament" ;
     rdfs:subClassOf act:GroupTypeEnum ;
-    skos:definition """[en] Parliament at federal, cantonal, or municipal level.
-[de] Parlament auf Bundes-, Kantons- oder Gemeindeebene.
+    skos:definition """Parliament at federal, cantonal, or municipal level.
+""" ;
+    act:description_de """Parlament auf Bundes-, Kantons- oder Gemeindeebene.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/group_type/parliamentary_bureau> a owl:Class ;
     rdfs:label "parliamentary_bureau" ;
     rdfs:subClassOf act:GroupTypeEnum ;
-    skos:definition """[en] Parliamentary bureau.
-[de] Parlamentsbüro.
+    skos:definition """Parliamentary bureau.
+""" ;
+    act:description_de """Parlamentsbüro.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/group_type/parliamentary_services> a owl:Class ;
     rdfs:label "parliamentary_services" ;
     rdfs:subClassOf act:GroupTypeEnum ;
-    skos:definition """[en] Parliamentary services.
-[de] Parlamentsdienste.
+    skos:definition """Parliamentary services.
+""" ;
+    act:description_de """Parlamentsdienste.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/group_type/party> a owl:Class ;
     rdfs:label "party" ;
     rdfs:subClassOf act:GroupTypeEnum ;
-    skos:definition """[en] Political party.
-[de] Politische Partei.
+    skos:definition """Political party.
+""" ;
+    act:description_de """Politische Partei.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/group_type/petition_carrier> a owl:Class ;
     rdfs:label "petition_carrier" ;
     rdfs:subClassOf act:GroupTypeEnum ;
-    skos:definition """[en] Petition carrier.
-[de] Petitionsträger.
+    skos:definition """Petition carrier.
+""" ;
+    act:description_de """Petitionsträger.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/group_type/presidency> a owl:Class ;
     rdfs:label "presidency" ;
     rdfs:subClassOf act:GroupTypeEnum ;
-    skos:definition """[en] Presidency of parliament.
-[de] Präsidium des Parlaments.
+    skos:definition """Presidency of parliament.
+""" ;
+    act:description_de """Präsidium des Parlaments.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/group_type/university> a owl:Class ;
     rdfs:label "university" ;
     rdfs:subClassOf act:GroupTypeEnum ;
-    skos:definition """[en] University or educational institution.
-[de] Universität oder Bildungseinrichtung.
+    skos:definition """University or educational institution.
+""" ;
+    act:description_de """Universität oder Bildungseinrichtung.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/group_type/workgroup> a owl:Class ;
     rdfs:label "workgroup" ;
     rdfs:subClassOf act:GroupTypeEnum ;
-    skos:definition """[en] Working group.
-[de] Arbeitsgruppe.
+    skos:definition """Working group.
+""" ;
+    act:description_de """Arbeitsgruppe.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/interest_type/association> a owl:Class ;
     rdfs:label "association" ;
     rdfs:subClassOf act:InterestTypeEnum ;
-    skos:definition """[en] Association membership.
-[de] Vereinsmitgliedschaft.
+    skos:definition """Association membership.
+""" ;
+    act:description_de """Vereinsmitgliedschaft.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/interest_type/political_office> a owl:Class ;
     rdfs:label "political_office" ;
     rdfs:subClassOf act:InterestTypeEnum ;
-    skos:definition """[en] Political office.
-[de] Politische Ämter.
+    skos:definition """Political office.
+""" ;
+    act:description_de """Politische Ämter.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/enum/interest_type/professional_activity> a owl:Class ;
     rdfs:label "professional_activity" ;
     rdfs:subClassOf act:InterestTypeEnum ;
-    skos:definition """[en] Professional activity.
-[de] Berufliche Tätigkeit.
+    skos:definition """Professional activity.
+""" ;
+    act:description_de """Berufliche Tätigkeit.
 """ .
 
 act:gender a owl:ObjectProperty ;
     rdfs:label "genders" ;
     rdfs:range act:Gender ;
-    skos:definition """[de] Geschlecht der Person.
-[en] Gender of the person.
+    skos:definition """Gender of the person.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Geschlecht der Person.
+""" .
 
 act:group a owl:ObjectProperty ;
     rdfs:label "groups" ;
     rdfs:range act:Group ;
-    skos:definition """[de] Sammlung von Gruppen.
-[en] Collection of groups.
+    skos:definition """Collection of groups.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Sammlung von Gruppen.
+""" .
 
 act:languageProficiency a owl:ObjectProperty ;
     rdfs:label "language_proficiencies" ;
     rdfs:range act:LanguageProficiency ;
-    skos:definition """[de] Sprachkompetenzen der Person.
-[en] Language proficiencies of the person.
+    skos:definition """Language proficiencies of the person.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Sprachkompetenzen der Person.
+""" .
 
 act:membership a owl:ObjectProperty ;
     rdfs:label "memberships" ;
     rdfs:range act:Membership ;
-    skos:definition """[de] Sammlung von Mitgliedschaften.
-[en] Collection of memberships.
+    skos:definition """Collection of memberships.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Sammlung von Mitgliedschaften.
+""" .
 
 act:name a owl:ObjectProperty ;
     rdfs:label "names" ;
     rdfs:range act:Name ;
-    skos:definition """[en] Names of the person with type and value.
-[de] Namen der Person mit Typ und Wert.
+    skos:definition """Names of the person with type and value.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Namen der Person mit Typ und Wert.
+""" .
 
 act:occupation a owl:ObjectProperty ;
     rdfs:label "occupations" ;
     rdfs:range act:Occupation ;
-    skos:definition """[de] Berufe oder Tätigkeiten der Person.
-[en] Occupations or professions of the person.
+    skos:definition """Occupations or professions of the person.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Berufe oder Tätigkeiten der Person.
+""" .
 
 act:parentGroup a owl:DatatypeProperty ;
     rdfs:label "parent_groups" ;
     rdfs:range xsd:anyURI ;
-    skos:definition """[de] Übergeordneten Gruppe. Zum Beispiel die Mutterpartei, zu Kantonalenparteien. Oder zur Beschreibung der Hierarchie in Exekutive. Verknüpfung von Subkommissionen mit Kommissionen. (parentGroup wird immer im selben group_type verwendet.)
-[en] Link to parent groups.
+    skos:definition """Link to parent groups.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Übergeordneten Gruppe. Zum Beispiel die Mutterpartei, zu Kantonalenparteien. Oder zur Beschreibung der Hierarchie in Exekutive. Verknüpfung von Subkommissionen mit Kommissionen. (parentGroup wird immer im selben group_type verwendet.)
+""" .
 
 act:person a owl:ObjectProperty ;
     rdfs:label "persons" ;
     rdfs:range act:Person ;
-    skos:definition """[de] Sammlung von Personen.
-[en] Collection of persons.
+    skos:definition """Collection of persons.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Sammlung von Personen.
+""" .
 
 act:pronouns a owl:DatatypeProperty ;
     rdfs:label "pronouns" ;
-    skos:definition """[de] Von der Person verwendete Pronomen.
-[en] Pronouns used by the person.
+    skos:definition """Pronouns used by the person.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Von der Person verwendete Pronomen.
+""" .
 
 act:training a owl:ObjectProperty ;
     rdfs:label "trainings" ;
     rdfs:range act:Training ;
-    skos:definition """[de] Ausbildungen oder Bildungen der Person.
-[en] Trainings or educations of the person.
+    skos:definition """Trainings or educations of the person.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Ausbildungen oder Bildungen der Person.
+""" .
 
 <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonAliasName> a owl:Class ;
     rdfs:label "PersonAliasName" ;
     rdfs:subClassOf act:NameTypeEnum ;
-    skos:definition """[de] Gemäss amtlichen Katalog der Merkmale (Nr. 215) Registerharmonisierung: Name (z. B. Künstler- oder Ordensname), der aufgrund eines bewilligten Gesuchs geführt werden darf. Der Aliasname kann aus einem oder mehreren Teilen (z. B. auch aus Aliasvorname und Aliasname) bestehen.
-[fr] Selon le catalogue officiel des caractères (n° 215) de l'harmonisation des registres : Nom (p. ex. nom d’artiste, nom d’ordre religieux) qui, sur la base d’une demande acceptée, peut être utilisé par la personne. Le nom alias peut se composer d’une ou de plusieurs parties (p. ex. aussi du prénom alias et du nom alias).
-[it] Secondo il catalogo ufficiale delle caratteristiche (n. 215) dell'armonizzazione dei registri: Cognome (p. es. nome d’arte o nome religioso) che può essere portato in base a una domanda autorizzata. Lo pseudonimo può essere composto da una o più parti (p. es. anche un nome e un cognome).
-[en] According to the official character catalogue (No. 215) for the harmonisation of registers: Name (e.g. stage name, religious name) which, on the basis of an accepted application, may be used by the person. The alias name may consist of one or more parts (e.g. also the alias first name and alias surname).
+    skos:definition """According to the official character catalogue (No. 215) for the harmonisation of registers: Name (e.g. stage name, religious name) which, on the basis of an accepted application, may be used by the person. The alias name may consist of one or more parts (e.g. also the alias first name and alias surname).
+""" ;
+    act:description_de """Gemäss amtlichen Katalog der Merkmale (Nr. 215) Registerharmonisierung: Name (z. B. Künstler- oder Ordensname), der aufgrund eines bewilligten Gesuchs geführt werden darf. Der Aliasname kann aus einem oder mehreren Teilen (z. B. auch aus Aliasvorname und Aliasname) bestehen.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonAllianceName> a owl:Class ;
     rdfs:label "PersonAllianceName" ;
     rdfs:subClassOf act:NameTypeEnum ;
-    skos:definition """[de] Gemäss amtlichen Katalog der Merkmale (Nr. 213) Registerharmonisierung: Der Allianzname zeigt die Verbindung von zwei Personen auf, die verheiratet sind oder in einer eingetragenen Partnerschaft leben. Ein bereits verwendeter Allianzname kann nach Auflösung der Ehe oder der Partnerschaft weiterverwendet werden, wenn der amtliche Name bei der Auflösung nicht geändert wurde. Dabei wird dem amtlichen Namen mittels Bindestrich der Ledigname des Partners/der Partnerin oder der eigene Ledigname angehängt. Der Allianzname kann auf Antrag im Pass oder auf der Identitätskarte eingetragen werden.
-[fr] Selon le catalogue officiel des caractères (n° 213) de l'harmonisation des registres : Le nom d’alliance montre la relation entre deux personnes qui sont mariées ou vivent en partenariat enregistré. Un nom d’alliance déjà utilisé peut être conservé, après la dissolution du mariage ou du partenariat, si le nom officiel n’a pas été modifié lors de la dissolution. Il est accolé par un trait d’union au nom officiel et est formé avec le nom de célibataire du ou de la partenaire ou par le propre nom de célibataire de la personne. Sur demande, le nom d’alliance peut être inscrit dans le passeport ou sur la carte d’identité.
-[it] Secondo il catalogo ufficiale delle caratteristiche (n. 213) dell'armonizzazione dei registri: Il cognome d’affinità indica il legame tra due persone che sono coniugate o vivono in unione domestica registrata. Il cognome d’affinità può continuare ad essere impiegato dopo lo scioglimento del matrimonio o dell’unione domestica registrata solo se il cognome ufficiale non è stato modificato al momento dello scioglimento. In questo caso accanto al cognome ufficiale viene inserito il proprio cognome da celibe/nubile o quello del/la partner separato da trattino. Il cognome d’affinità può essere aggiunto sul passaporto o sulla carta d’identità, su richiesta.
-[en] According to the official catalogue of characters (No. 213) for the harmonisation of registers: The alliance name shows the relationship between two people who are married or living in a registered partnership. An alliance name that has already been used may be retained after the dissolution of the marriage or partnership if the official name has not been changed upon dissolution. It is attached to the official name with a hyphen and is formed with the partner's maiden name or the person's own maiden name. Upon request, the alliance name may be entered in the passport or on the identity card.
+    skos:definition """According to the official catalogue of characters (No. 213) for the harmonisation of registers: The alliance name shows the connection between two people who are married or living in a registered partnership. An alliance name that has already been used may be retained after the dissolution of the marriage or partnership if the official name has not been changed upon dissolution. It is attached to the official name with a hyphen and is formed with the partner's maiden name or the person's own maiden name. Upon request, the alliance name may be entered in the passport or on the identity card.
+""" ;
+    act:description_de """Gemäss amtlichen Katalog der Merkmale (Nr. 213) Registerharmonisierung: Der Allianzname zeigt die Verbindung von zwei Personen auf, die verheiratet sind oder in einer eingetragenen Partnerschaft leben. Ein bereits verwendeter Allianzname kann nach Auflösung der Ehe oder der Partnerschaft weiterverwendet werden, wenn der amtliche Name bei der Auflösung nicht geändert wurde. Dabei wird dem amtlichen Namen mittels Bindestrich der Ledigname des Partners/der Partnerin oder der eigene Ledigname angehängt. Der Allianzname kann auf Antrag im Pass oder auf der Identitätskarte eingetragen werden.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonCallFirstName> a owl:Class ;
     rdfs:label "PersonCallFirstName" ;
     rdfs:subClassOf act:NameTypeEnum ;
-    skos:definition """[de] Gemäss amtlichen Katalog der Merkmale (Nr. 222) Registerharmonisierung: Eine Person hat das Recht, aus der Liste ihrer amtlichen Vornamen einen Rufnamen auszuwählen. Der Rufname kann aus einem oder mehreren Vornamen (aus den "amtlichen Vornamen") bestehen.
-[fr] Selon le catalogue officiel des caractères (n° 222) de l'harmonisation des registres : Une personne peut choisir, dans la liste de ses prénoms officiels, un prénom usuel. Le prénom usuel peut se composer d’un ou de plusieurs prénoms (parmi ceux figurant sous "prénoms officiels").
-[it] Secondo il catalogo ufficiale delle caratteristiche (n. 222) dell'armonizzazione dei registri: Una persona ha il diritto di scegliere un nome abituale dall’elenco dei suoi nomi ufficiali. Il nome abituale può essere composto da uno o più nomi (da "Nomi ufficiali").
-[en] According to the official catalogue of characters (No. 222) for the harmonisation of registers: A person may choose a common first name from the list of their official first names. The common first name may consist of one or more first names (from those listed under ‘official first names’).
+    skos:definition """A person has the right to choose a common first name from the list of their official first names. The common first name may consist of one or more first names (from those listed under ‘official first names’).
+""" ;
+    act:description_de """Gemäss amtlichen Katalog der Merkmale (Nr. 222) Registerharmonisierung: Eine Person hat das Recht, aus der Liste ihrer amtlichen Vornamen einen Rufnamen auszuwählen. Der Rufname kann aus einem oder mehreren Vornamen (aus den "amtlichen Vornamen") bestehen.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonDeclaredForeignerFirstName> a owl:Class ;
     rdfs:label "PersonDeclaredForeignerFirstName" ;
     rdfs:subClassOf act:NameTypeEnum ;
-    skos:definition """[de] Gemäss amtlichen Katalog der Merkmale (Nr. 224) Registerharmonisierung: Für Personen mit ausländischer Nationalität, die keine amtlichen Dokumente besitzen (hauptsächlich im Asylbereich). Zu benutzen in Verbindung mit dem Namen gemäss Deklaration.
-[fr] Selon le catalogue officiel des caractères (n° 224) de l'harmonisation des registres : Pour les personnes de nationalité étrangère ne disposant pas de documents officiels (principalement dans le domaine de l’asile). A utiliser en combinaison avec le Nom selon déclaration défini.
-[it] Secondo il catalogo ufficiale delle caratteristiche (n. 224) dell'armonizzazione dei registri: Per persone di nazionalità straniera che non possiedono documenti ufficiali (principalmente nel settore dell’asilo). Da utilizzare in collegamento con il cognome dichiarato.
-[en] According to the official catalogue of characters (No. 224) for the harmonisation of registers: For persons of foreign nationality who do not have official documents (mainly in the field of asylum). To be used in combination with the defined Name according to declaration.
+    skos:definition """For persons of foreign nationality who do not have official documents (mainly in the field of asylum). To be used in combination with the defined Name according to declaration.
+""" ;
+    act:description_de """Gemäss amtlichen Katalog der Merkmale (Nr. 224) Registerharmonisierung: Für Personen mit ausländischer Nationalität, die keine amtlichen Dokumente besitzen (hauptsächlich im Asylbereich). Zu benutzen in Verbindung mit dem Namen gemäss Deklaration.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonDeclaredForeignerName> a owl:Class ;
     rdfs:label "PersonDeclaredForeignerName" ;
     rdfs:subClassOf act:NameTypeEnum ;
-    skos:definition """[de] Gemäss amtlichen Katalog der Merkmale (Nr. 217) Registerharmonisierung: Für Personen mit ausländischer Nationalität, die keine offiziellen Dokumente besitzen (hauptsächlich im Asylbereich).
-[fr] Selon le catalogue officiel des caractères (n° 217) de l'harmonisation des registres : Pour les personnes de nationalité étrangère ne disposant pas de documents officiels (principalement dans le domaine de l’asile).
-[it] Secondo il catalogo ufficiale delle caratteristiche (n. 217) dell'armonizzazione dei registri: Per persone di nazionalità straniera che non possiedono documenti ufficiali (principalmente nel settore dell’asilo).
-[en] According to the official catalogue of characters (No. 217) for the harmonisation of registers: For foreign nationals who do not have official documents (mainly in the field of asylum).
+    skos:definition """According to the official catalogue of characters (No. 217) for the harmonisation of registers: For foreign nationals who do not have official documents (mainly in the field of asylum).
+""" ;
+    act:description_de """Gemäss amtlichen Katalog der Merkmale (Nr. 217) Registerharmonisierung: Für Personen mit ausländischer Nationalität, die keine offiziellen Dokumente besitzen (hauptsächlich im Asylbereich).
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonFirstName> a owl:Class ;
     rdfs:label "PersonFirstName" ;
     rdfs:subClassOf act:NameTypeEnum ;
-    skos:definition """[de] Gemäss amtlichen Katalog der Merkmale (Nr. 221) Registerharmonisierung: Vornamen gemäss Geburtsurkunde oder Zivilstandsregister/Infostar in der aufgeführten Reihenfolge bzw. gemäss ausländischen Ausweispapieren.
-[fr] Selon le catalogue officiel des caractères (n° 221) de l'harmonisation des registres : Prénoms tirés de l’acte de naissance, du registre de l’état civil (Infostar) dans l’ordre où ils figurent ou tirés des papiers d’identité étrangers.
-[it] Secondo il catalogo ufficiale delle caratteristiche (n. 221) dell'armonizzazione dei registri: Nomi estratti dall’atto di nascita o dal registro dello stato civile nell’ordine corretto, rispettivamente da documenti di legittimazione stranieri.
-[en] According to the official catalogue of characters (No. 221) for the harmonisation of registers: First names taken from the birth certificate, the civil registry (Infostar) in the order in which they appear, or taken from foreign identity documents.
+    skos:definition """First names taken from the birth certificate, the civil registry (Infostar) in the order in which they appear, or taken from foreign identity documents.
+""" ;
+    act:description_de """Gemäss amtlichen Katalog der Merkmale (Nr. 221) Registerharmonisierung: Vornamen gemäss Geburtsurkunde oder Zivilstandsregister/Infostar in der aufgeführten Reihenfolge bzw. gemäss ausländischen Ausweispapieren.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonFirstNameOnForeignPassport> a owl:Class ;
     rdfs:label "PersonFirstNameOnForeignPassport" ;
     rdfs:subClassOf act:NameTypeEnum ;
-    skos:definition """[de] Gemäss amtlichen Katalog der Merkmale (Nr. 223) Registerharmonisierung: Für Personen mit ausländischer Nationalität. Zu benutzen in Verbindung mit dem Namen im ausländischen Pass."
-[fr] Selon le catalogue officiel des caractères (n° 223) de l'harmonisation des registres : Pour les personnes de nationalité étrangère. A utiliser en combinaison avec le Nom selon le passeport étranger.
-[it] Secondo il catalogo ufficiale delle caratteristiche (n. 223) dell'armonizzazione dei registri: Per persone di nazionalità straniera. Da utilizzare in collegamento con il cognome sul passaporto.
-[en] According to the official catalogue of characters (No. 223) for the harmonisation of registers: For persons of foreign nationality. To be used in combination with the name as it appears on the foreign passport.
+    skos:definition """For persons of foreign nationality. To be used in combination with the name as it appears on the foreign passport.
+""" ;
+    act:description_de """Gemäss amtlichen Katalog der Merkmale (Nr. 223) Registerharmonisierung: Für Personen mit ausländischer Nationalität. Zu benutzen in Verbindung mit dem Namen im ausländischen Pass."
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonNameOnForeignPassport> a owl:Class ;
     rdfs:label "PersonNameOnForeignPassport" ;
     rdfs:subClassOf act:NameTypeEnum ;
-    skos:definition """[de] Gemäss amtlichen Katalog der Merkmale (Nr. 214) Registerharmonisierung: Für Personen mit ausländischer Nationalität. Dieser Name entspricht dem Eintrag im Reisepass gemäss der maschinenlesbaren Zone (MRZ) des Reisepasses. Enthält die MRZ abgekürzte Namen oder Vornamen, sind diese möglichst in voller Länge gemäss visuell lesbarer Zone des Ausweispapiers zu erfassen.
-[fr] Selon le catalogue officiel des caractères (n° 214) de l'harmonisation des registres : Pour les personnes de nationalité étrangère. Ce nom correspond à l’inscription marquée dans la zone lisible par machine du passeport. Si cette zone comprend des noms ou prénoms abrégés, ceux-ci doivent dans la mesure du possible être enregistrés de manière complète, selon l’inscription contenue dans le passeport.
-[it] Secondo il catalogo ufficiale delle caratteristiche (n. 214) dell'armonizzazione dei registri: Per persone di nazionalità straniera. Questo cognome corrisponde all’iscrizione nel passaporto nella parte a lettura ottica (MRZ). Se la parte a lettura ottica contiene cognomi o nomi abbreviati, essi vanno riportati possibilmente in forma estesa conformemente alla parte a lettura visiva del documento di identità.
-[en] According to the official catalogue of characters (No. 214) for the harmonisation of registers: For persons of foreign nationality. This name corresponds to the entry marked in the machine-readable zone of the passport. If this zone includes abbreviated surnames or first names, these must, as far as possible, be recorded in full, according to the entry in the passport.
+    skos:definition """According to the official catalogue of characters (No. 214) for the harmonisation of registers: For persons of foreign nationality. This name corresponds to the entry marked in the machine-readable zone of the passport. If this zone includes abbreviated surnames or first names, these must, as far as possible, be recorded in full, according to the entry in the passport.
+""" ;
+    act:description_de """Gemäss amtlichen Katalog der Merkmale (Nr. 214) Registerharmonisierung: Für Personen mit ausländischer Nationalität. Dieser Name entspricht dem Eintrag im Reisepass gemäss der maschinenlesbaren Zone (MRZ) des Reisepasses. Enthält die MRZ abgekürzte Namen oder Vornamen, sind diese möglichst in voller Länge gemäss visuell lesbarer Zone des Ausweispapiers zu erfassen.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonOfficialName> a owl:Class ;
     rdfs:label "PersonOfficialName" ;
     rdfs:subClassOf act:NameTypeEnum ;
-    skos:definition """[de] Gemäss amtlichen Katalog der Merkmale (Nr. 211) Registerharmonisierung: Name gemäss amtlichen Unterlagen. Der amtliche Name entspricht dem Namen im schweizerischen Zivilstandsregister. Bei ausländischen Personen ohne Zivilstandsereignis in der Schweiz entspricht dieser Name dem Namen im ausländischen Pass oder auf der Identitätskarte (siehe 214 sowie Weisung des SEM über die Bestimmung und Schreibweise der Namen von ausländischen Staatsangehörigen vom 1. Januar 2012. Im Ausnahmefall siehe auch "Name nach Deklaration" (z. B. Asyl), wenn keine amtlichen Dokumente vorliegen). Der amtliche Name kann aus einem oder mehreren Teilen bestehen.  
-[fr] Selon le catalogue officiel des caractères (n° 211) de l'harmonisation des registres : Nom selon les documents officiels. Le nom officiel correspond au nom figurant dans le registre suisse de l’état civil. Pour les personnes de nationalité étrangère sans événement d’état civil en Suisse, le nom officiel correspond au nom figurant sur le passeport étranger ou la carte d’identité (voir "Nom selon le passeport étranger" ou directives du SEM sur la détermination et l’orthographe des noms de ressortissants étrangers du 1er janvier 2012. Si des documents officiels n’existent pas, voir aussi "Nom selon déclaration" (par ex. en cas d’asile). Le nom officiel peut se composer d’une ou de plusieurs parties.
-[it] Secondo il catalogo ufficiale delle caratteristiche (n. 211) dell'armonizzazione dei registri: Cognome secondo i documenti ufficiali. Il cognome ufficiale corrisponde a quello riportato nel registro svizzero dello stato civile. Per le persone straniere senza evento dello stato civile in Svizzera il cognome ufficiale corrisponde a quello indicato sul passaporto straniero o sulla carta d’identità (si veda "Cognome sul passaporto straniero" e l’istruzione della SEM sulla determinazione e l’ortografia dei nomi di cittadini stranieri del 1° gennaio 2012. In casi eccezionali si veda anche la voce "Cognome dichiarato" (es. asilo), in mancanza di documenti ufficiali). Il cognome ufficiale può anche essere composto.
-[en] According to the official catalogue of characters (No. 211) for the harmonisation of registers: Name according to official documents. The official name corresponds to the name appearing in the Swiss civil register. For foreign nationals with no civil status events in Switzerland, the official name corresponds to the name appearing on the foreign passport or identity card (see ‘Name according to foreign passport’ or SEM guidelines on the determination and spelling of names of foreign nationals dated 1 January 2012. If no official documents exist, see also ‘Name according to declaration’ (e.g. in the case of asylum seekers). The official name may consist of one or more parts.
+    skos:definition """According to the official catalogue of characters (No. 211) for the harmonisation of registers: Name according to official documents. The official name corresponds to the name appearing in the Swiss civil register. For foreign nationals with no civil status events in Switzerland, the official name corresponds to the name appearing on the foreign passport or identity card (see ‘Name according to foreign passport’ or SEM guidelines on the determination and spelling of names of foreign nationals dated 1 January 2012. If no official documents exist, see also ‘Name according to declaration’ (e.g. in the case of asylum seekers). The official name may consist of one or more parts.
+""" ;
+    act:description_de """Gemäss amtlichen Katalog der Merkmale (Nr. 211) Registerharmonisierung: Name gemäss amtlichen Unterlagen. Der amtliche Name entspricht dem Namen im schweizerischen Zivilstandsregister. Bei ausländischen Personen ohne Zivilstandsereignis in der Schweiz entspricht dieser Name dem Namen im ausländischen Pass oder auf der Identitätskarte (siehe 214 sowie Weisung des SEM über die Bestimmung und Schreibweise der Namen von ausländischen Staatsangehörigen vom 1. Januar 2012. Im Ausnahmefall siehe auch "Name nach Deklaration" (z. B. Asyl), wenn keine amtlichen Dokumente vorliegen). Der amtliche Name kann aus einem oder mehreren Teilen bestehen.
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonOriginalName> a owl:Class ;
     rdfs:label "PersonOriginalName" ;
     rdfs:subClassOf act:NameTypeEnum ;
-    skos:definition """[de] Gemäss amtlichen Katalog der Merkmale (Nr. 212) Registerharmonisierung: Angestammter Name gemäss amtlichen Unterlagen, den eine Person unmittelbar vor ihrer ersten Eheschliessung oder Begründung einer eingetragenen Partnerschaft geführt hat oder, gestützt auf einen Namensänderungsentscheid, als neuen Ledignamen erworben hat (Art. 24 Abs. 2 ZStV, SR 211.112.2).
-[fr] Selon le catalogue officiel des caractères (n° 212) de l'harmonisation des registres : Nom de filiation selon les documents officiels, lequel correspond au nom de la personne avant son premier mariage ou partenariat enregistré. Il peut aussi s’agir d’un nom de célibataire acquis par décision de changement de nom (cf. art. 24, al. 2 OEC, RS 211.112.2). 
-[it] Secondo il catalogo ufficiale delle caratteristiche (n. 212) dell'armonizzazione dei registri: Cognome riportato sulla documentazione ufficiale che una persona aveva immediatamente prima della celebrazione del primo matrimonio o della costituzione della prima unione domestica registrata o che ha acquisito come nuovo cognome da celibe / nubile in seguito alla decisione concernente il cambiamento del cognome (art. 24 cpv. 2 OSC, RS 211.112.2).
-[en] According to the official catalogue of characters (No. 212) for the harmonisation of registers: Name of filiation according to official documents, which corresponds to the person's name before their first marriage or registered partnership. It may also be a maiden name acquired by decision to change one's name (see Art. 24, para. 2 OEC, RS 211.112.2).
+    skos:definition """According to the official catalogue of characters (No. 212) for the harmonisation of registers: Name of filiation according to official documents, which corresponds to the person's name before their first marriage or registered partnership. It may also be a maiden name acquired by decision to change one's name (see Art. 24, para. 2 OEC, RS 211.112.2).
+""" ;
+    act:description_de """Gemäss amtlichen Katalog der Merkmale (Nr. 212) Registerharmonisierung: Angestammter Name gemäss amtlichen Unterlagen, den eine Person unmittelbar vor ihrer ersten Eheschliessung oder Begründung einer eingetragenen Partnerschaft geführt hat oder, gestützt auf einen Namensänderungsentscheid, als neuen Ledignamen erworben hat (Art. 24 Abs. 2 ZStV, SR 211.112.2).
 """ .
 
 <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonOtherName> a owl:Class ;
     rdfs:label "PersonOtherName" ;
     rdfs:subClassOf act:NameTypeEnum ;
-    skos:definition """[de] Gemäss amtlichen Katalog der Merkmale (Nr. 216) Registerharmonisierung: Weitere amtliche Namen gemäss schweizerischen Zivilstandsdokumenten (Art. 24 Abs. 3 ZStV) oder ausländischen Dokumenten, welche weder Familiennamen noch Vornamen sind.
-[fr] Selon le catalogue officiel des caractères (n° 216) de l'harmonisation des registres : Autres noms officiels selon les documents suisses d’état civil (art. 24, al. 3 OEC) ou selon des documents étrangers, qui ne sont ni des noms de famille ni des prénoms.
-[it] Secondo il catalogo ufficiale delle caratteristiche (n. 216) dell'armonizzazione dei registri: Altri cognomi ufficiali secondo i documenti svizzeri dello stato civile (art. 24 cpv.3 OSC) o secondo i documenti stranieri, che non sono cognomi né nomi.
-[en] According to the official catalogue of characters (No. 216) for the harmonisation of registers: Other official names according to Swiss civil status documents (Art. 24, para. 3 OEC) or according to foreign documents, which are neither surnames nor first names.
+    skos:definition """According to the official catalogue of characters (No. 216) for the harmonisation of registers: Other official names according to Swiss civil status documents (Art. 24, para. 3 OEC) or according to foreign documents, which are neither surnames nor first names.
+""" ;
+    act:description_de """Gemäss amtlichen Katalog der Merkmale (Nr. 216) Registerharmonisierung: Weitere amtliche Namen gemäss schweizerischen Zivilstandsdokumenten (Art. 24 Abs. 3 ZStV) oder ausländischen Dokumenten, welche weder Familiennamen noch Vornamen sind.
 """ .
 
 <http://schema.org/birthDate> a owl:DatatypeProperty ;
     rdfs:label "birth_date" ;
     rdfs:range xsd:date ;
-    skos:definition """[de] Genaues Geburtsdatum.
-[en] Exact date of birth if available and public. This field has precedence over the field `birthYear`.
+    skos:definition """Exact date of birth if available and public. This field has precedence over the field `birthYear`.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Genaues Geburtsdatum.
+""" .
 
 <http://schema.org/deathDate> a owl:DatatypeProperty ;
     rdfs:label "death_date" ;
     rdfs:range xsd:date ;
-    skos:definition """[de] Genaues Todesdatum.
-[en] Exact date of death.
+    skos:definition """Exact date of death.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Genaues Todesdatum.
+""" .
 
 <http://schema.org/validFrom> a owl:DatatypeProperty ;
     rdfs:label "valid_from" ;
@@ -1399,108 +1457,180 @@ act:training a owl:ObjectProperty ;
 act:Address a owl:Class ;
     rdfs:label "Address" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:postalLocality ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:postalLocality ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:streetAddress ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:integer ;
             owl:onProperty act:postalCode ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:streetAddress ],
+            owl:onProperty act:addressURI ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:integer ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:postalLocality ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:addressType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty act:postalCode ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:AddressTypeEnum ;
             owl:onProperty act:addressType ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:addressType ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:postalCode ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:addressURI ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:anyURI ;
+            owl:minCardinality 0 ;
             owl:onProperty act:addressURI ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty act:postalLocality ],
+            owl:onProperty act:streetAddress ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:streetAddress ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:addressType ],
+            owl:onProperty act:streetAddress ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:addressURI ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:postalLocality ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:addressType ] ;
-    skos:definition """[de] Eine Adresse mit einem Typ (z.B. Privatadresse, Geschäftsadresse) und einem Wert.
-[en] An address with a type (e.g., private address, business address) and a value.
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty act:addressURI ] ;
+    skos:definition """An address with a type (e.g., private address, business address) and a value.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Eine Adresse mit einem Typ (z.B. Privatadresse, Geschäftsadresse) und einem Wert.
+""" .
 
 act:Contact a owl:Class ;
     rdfs:label "Contact" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:contactType ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty act:contactType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:contactType ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:contactType ],
-        [ a owl:Restriction ;
             owl:allValuesFrom act:ContactTypeEnum ;
-            owl:onProperty act:contactType ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ] ;
-    skos:definition """[de] Kontaktinformation einer Person mit Angabe eines Typs (z.B. E-Mail, LinkedIn) und eines Werts.
-[en] Contact information of a person indicating a type (e.g., email, LinkedIn) and a value.
+            owl:onProperty act:contactType ] ;
+    skos:definition """Contact information of a person indicating a type (e.g., email, LinkedIn) and a value.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Kontaktinformation einer Person mit Angabe eines Typs (z.B. E-Mail, LinkedIn) und eines Werts.
+""" .
 
 act:GroupType a owl:Class ;
     rdfs:label "GroupType" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:groupTypeEnum ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:groupTypeEnum ],
-        [ a owl:Restriction ;
             owl:allValuesFrom act:GroupTypeEnum ;
             owl:onProperty act:groupTypeEnum ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:groupTypeEnum ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ] ;
-    skos:definition """[de] Art der Gruppe (z.B. Partei, Kommission, Parlament, Departement).
-[en] Type of group (e.g., party, committee, parliament, department).
+            owl:minCardinality 0 ;
+            owl:onProperty act:groupTypeEnum ] ;
+    skos:definition """Type of group (e.g., party, committee, parliament, department).
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Art der Gruppe (z.B. Partei, Kommission, Parlament, Departement).
+""" .
 
 act:InterestLink a owl:Class ;
     rdfs:label "InterestLink" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:organizationUid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:organizationLabel ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:organizationUid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:legalForm ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:legalForm ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:committee ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:functionRole ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:functionRole ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:personReference ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty act:isPaid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:isPaid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty act:interestType ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:organizationAddress ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:organizationAddress ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:organizationLabel ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:organizationUid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:committee ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:organizationLabel ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:personReference ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:InterestTypeEnum ;
+            owl:onProperty act:interestType ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:committee ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:isPaid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:interestType ],
+        [ a owl:Restriction ;
             owl:allValuesFrom act:PersonReference ;
             owl:onProperty act:personReference ],
         [ a owl:Restriction ;
@@ -1511,131 +1641,70 @@ act:InterestLink a owl:Class ;
             owl:onProperty act:legalForm ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:organizationUid ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:isPaid ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:organizationUid ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:committee ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:organizationLabel ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:isPaid ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:personReference ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:organizationLabel ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:functionRole ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:committee ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty act:organizationAddress ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:interestType ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:organizationAddress ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty act:interestType ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:legalForm ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:organizationAddress ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:organizationUid ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:functionRole ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:organizationLabel ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:personReference ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:committee ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:legalForm ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:InterestTypeEnum ;
-            owl:onProperty act:interestType ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty act:isPaid ],
         <https://ld.ech.ch/schema/0292/meta-common/HasCreationModificationDates>,
         <https://ld.ech.ch/schema/0292/meta-common/HasIdentification>,
         <https://ld.ech.ch/schema/0292/meta-common/HasTemporalValidity> ;
-    skos:definition """[de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation.
-[en] An interest link (conflict of interest, political financing) of a person to an organization.
+    skos:definition """An interest link (conflict of interest, political financing) of a person to an organization.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation.
+""" .
 
 act:PersonReference a owl:Class ;
     rdfs:label "PersonReference" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty act:roleType ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty act:roleType ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/labelLong> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty act:groupLabel ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty act:groupLabel ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty act:groupLabel ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+            owl:onProperty act:roleType ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/labelLong> ],
         [ a owl:Restriction ;
             owl:allValuesFrom act:RoleType ;
             owl:onProperty act:roleType ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/labelLong> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty act:groupLabel ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty act:groupLabel ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty act:groupLabel ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/labelLong> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
         <https://ld.ech.ch/schema/0292/meta-common/HasIdentification> ;
-    skos:definition """[de] Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung. Ermöglicht historische Korrektheit auch wenn sich die Person später ändert.
-[en] Lightweight reference to a person with key identification data at time of linking. Preserves historical accuracy even if the person changes later.
+    skos:definition """Lightweight reference to a person with key identification data at time of linking. Preserves historical accuracy even if the person changes later.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung. Ermöglicht historische Korrektheit auch wenn sich die Person später ändert.
+""" .
 
 act:RoleType a owl:Class ;
     rdfs:label "RoleType" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom act:RoleEnum ;
+            owl:onProperty act:roleTypeEnum ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty act:roleTypeEnum ],
         [ a owl:Restriction ;
@@ -1646,328 +1715,359 @@ act:RoleType a owl:Class ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty act:roleTypeEnum ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom act:RoleEnum ;
             owl:onProperty act:roleTypeEnum ] ;
-    skos:definition """[de] Rolle einer Person in einer Mitgliedschaft oder Funktion (z.B. Mitglied, Präsident, Stellvertreter).
-[en] Role of a person in a membership or function (e.g., member, president, deputy).
+    skos:definition """Role of a person in a membership or function (e.g., member, president, deputy).
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Rolle einer Person in einer Mitgliedschaft oder Funktion (z.B. Mitglied, Präsident, Stellvertreter).
+""" .
 
 act:addressType a owl:ObjectProperty ;
     rdfs:label "address_type" ;
     rdfs:range act:AddressTypeEnum ;
-    skos:definition """[de] Typ der Adresse.
-[en] Type of address.
+    skos:definition """Type of address.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Typ der Adresse.
+""" .
 
 act:addressURI a owl:DatatypeProperty ;
     rdfs:label "address_uri" ;
     rdfs:range xsd:anyURI ;
-    skos:definition """[de] URI der Adresse.
-[en] URI of the address.
+    skos:definition """URI of the address.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """URI der Adresse.
+""" .
 
 act:authorizedToVote a owl:DatatypeProperty ;
     rdfs:label "authorized_to_vote" ;
     rdfs:range xsd:boolean ;
-    skos:definition """[de] Gibt an, ob die Person stimmberechtigt ist.
-[en] Indicates if the person is authorized to vote.
+    skos:definition """Indicates if the person is authorized to vote.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Gibt an, ob die Person stimmberechtigt ist.
+""" .
 
 act:birthYear a owl:DatatypeProperty ;
     rdfs:label "birth_year" ;
     rdfs:range xsd:integer ;
-    skos:definition """[de] Geburtsjahr.
-[en] Year of birth. Only to be used, if there is no full `birthDate` available.
+    skos:definition """Year of birth. Only to be used, if there is no full `birthDate` available.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Geburtsjahr.
+""" .
 
 act:committee a owl:DatatypeProperty ;
     rdfs:label "committee" ;
-    skos:definition """[en] Committee or board (e.g., foundation board, board of directors).
-[de] Gremium (z.B. Stiftungsrat, Verwaltungsrat).
+    skos:definition """Committee or board (e.g., foundation board, board of directors).
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Gremium (z.B. Stiftungsrat, Verwaltungsrat).
+""" .
 
 act:contactType a owl:ObjectProperty ;
     rdfs:label "contact_type" ;
     rdfs:range act:ContactTypeEnum ;
-    skos:definition """[de] Typ der Kontaktinformation.
-[en] Type of contact information.
+    skos:definition """Type of contact information.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Typ der Kontaktinformation.
+""" .
 
 act:country a owl:DatatypeProperty ;
     rdfs:label "country" ;
     rdfs:range [ a rdfs:Datatype ;
             owl:onDatatype xsd:string ;
             owl:withRestrictions ( [ xsd:pattern "^[A-Z]{2}$" ] ) ] ;
-    skos:definition """[de] ISO 3166 Ländercode.
-[en] ISO 3166 country code.
+    skos:definition """ISO 3166 country code.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """ISO 3166 Ländercode.
+""" .
 
 act:district a owl:DatatypeProperty ;
     rdfs:label "district" ;
-    skos:definition """[de] Wahlkreis oder Wahlregion.
-[en] Electoral district or region.
+    skos:definition """Electoral district or region.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Wahlkreis oder Wahlregion.
+""" .
 
 act:electoralDistrict a owl:ObjectProperty ;
     rdfs:label "electoral_district" ;
     rdfs:range act:ElectoralDistrict ;
-    skos:definition """[de] Link zum Wahlbezirk.
-[en] Link to the electoral district.
+    skos:definition """Link to the electoral district.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Link zum Wahlbezirk.
+""" .
 
 act:enterprise a owl:DatatypeProperty ;
     rdfs:label "enterprise" ;
-    skos:definition """[de] Name des Unternehmens.
-[en] Name of the enterprise.
+    skos:definition """Name of the enterprise.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Name des Unternehmens.
+""" .
 
 act:enterpriseUid a owl:DatatypeProperty ;
     rdfs:label "enterprise_uid" ;
-    skos:definition """[de] UID des Unternehmens.
-[en] UID of the enterprise.
+    skos:definition """UID of the enterprise.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """UID des Unternehmens.
+""" .
 
 act:functionRole a owl:DatatypeProperty ;
     rdfs:label "function_role" ;
-    skos:definition """[en] Function or role in the organization.
-[de] Funktion oder Rolle in der Organisation.
+    skos:definition """Function or role in the organization.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Funktion oder Rolle in der Organisation.
+""" .
 
 act:genderCode a owl:DatatypeProperty ;
     rdfs:label "gender_code" ;
-    skos:definition """[de] Geschlechtscode (z.B. gemäß ISO 5218).
-[en] Gender code (e.g., according to ISO 5218).
+    skos:definition """Gender code (e.g., according to ISO 5218).
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Geschlechtscode (z.B. gemäß ISO 5218).
+""" .
 
 act:groupLabel a owl:DatatypeProperty ;
     rdfs:label "group_label" ;
-    skos:definition """[de] Name des Gremiums zum Zeitpunkt der Verknüpfung.
-[en] Name of the body/group at time of linking.
+    skos:definition """Name of the body/group at time of linking.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Name des Gremiums zum Zeitpunkt der Verknüpfung.
+""" .
 
 act:groupReference a owl:ObjectProperty ;
     rdfs:label "group_reference" ;
     rdfs:range act:GroupReference ;
-    skos:definition """[de] Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
-[en] Reference to a group with snapshot data at time of linking.
+    skos:definition """Reference to a group with snapshot data at time of linking.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
+""" .
 
 act:groupTypeEnum a owl:ObjectProperty ;
     rdfs:label "group_type_enum" ;
     rdfs:range act:GroupTypeEnum ;
-    skos:definition """[de] Link zum kontrollierten Vokabular für Gruppentypen.
-[en] Link to the controlled vocabulary for group types.
+    skos:definition """Link to the controlled vocabulary for group types.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Link zum kontrollierten Vokabular für Gruppentypen.
+""" .
 
 act:interestType a owl:ObjectProperty ;
     rdfs:label "interest_type" ;
     rdfs:range act:InterestTypeEnum ;
-    skos:definition """[de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).
-[en] Type of interest link (professional activity, political office, association).
+    skos:definition """Type of interest link (professional activity, political office, association).
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).
+""" .
 
 act:isCorrespondence a owl:DatatypeProperty ;
     rdfs:label "is_correspondence" ;
     rdfs:range xsd:boolean ;
-    skos:definition """[de] Gibt an, ob es sich um die bevorzugte Sprache handelt.
-[en] Indicates if this is the preferred language.
+    skos:definition """Indicates if this is the preferred language.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Gibt an, ob es sich um die bevorzugte Sprache handelt.
+""" .
 
 act:isNative a owl:DatatypeProperty ;
     rdfs:label "is_native" ;
     rdfs:range xsd:boolean ;
-    skos:definition """[de] Gibt an, ob es sich um die Muttersprache handelt.
-[en] Indicates if this is the native language.
+    skos:definition """Indicates if this is the native language.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Gibt an, ob es sich um die Muttersprache handelt.
+""" .
 
 act:landingPage a owl:DatatypeProperty ;
     rdfs:label "landing_page" ;
     rdfs:range xsd:anyURI ;
-    skos:definition """[de] Website mit weiteren Informationen.
-[en] Website providing further information.
+    skos:definition """Website providing further information.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Website mit weiteren Informationen.
+""" .
 
 act:legalForm a owl:DatatypeProperty ;
     rdfs:label "legal_form" ;
-    skos:definition """[en] Legal form of the organization.
-[de] Rechtsform der Organisation.
+    skos:definition """Legal form of the organization.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Rechtsform der Organisation.
+""" .
 
 act:nameType a owl:ObjectProperty ;
     rdfs:label "name_type" ;
     rdfs:range act:NameTypeEnum ;
-    skos:definition """[de] Typ des Namens.
-[en] Type of name.
+    skos:definition """Type of name.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Typ des Namens.
+""" .
 
 act:occupationCode a owl:DatatypeProperty ;
     rdfs:label "occupation_code" ;
-    skos:definition """[de] ISCO-19 Code der Tätigkeit.
-[en] ISCO-19 code of the occupation.
+    skos:definition """ISCO-19 code of the occupation.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """ISCO-19 Code der Tätigkeit.
+""" .
 
 act:organizationAddress a owl:DatatypeProperty ;
     rdfs:label "organization_address" ;
-    skos:definition """[en] Address of the organization.
-[de] Adresse der Organisation.
+    skos:definition """Address of the organization.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Adresse der Organisation.
+""" .
 
 act:organizationLabel a owl:DatatypeProperty ;
     rdfs:label "organization_label" ;
-    skos:definition """[en] Label of the organization.
-[de] Bezeichnung der Organisation.
+    skos:definition """Label of the organization.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Bezeichnung der Organisation.
+""" .
 
 act:organizationUid a owl:DatatypeProperty ;
     rdfs:label "organization_uid" ;
-    skos:definition """[en] UID of the organization (for analysis with NOGA codes, etc.).
-[de] UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).
+    skos:definition """UID of the organization (for analysis with NOGA codes, etc.).
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).
+""" .
 
 act:partyColor a owl:DatatypeProperty ;
     rdfs:label "party_color" ;
-    skos:definition """[de] Parteifarbe (optional für Parteien).
-[en] Party color (optional for parties).
+    skos:definition """Party color (optional for parties).
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Parteifarbe (optional für Parteien).
+""" .
 
 act:picture a owl:DatatypeProperty ;
     rdfs:label "picture" ;
     rdfs:range xsd:anyURI ;
-    skos:definition """[de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).
-[en] Link to an image (preferred: PNG, then JPG, then GIF).
+    skos:definition """Link to an image (preferred: PNG, then JPG, then GIF).
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).
+""" .
 
 act:postalCode a owl:DatatypeProperty ;
     rdfs:label "postal_code" ;
     rdfs:range xsd:integer ;
-    skos:definition """[de] Postleitzahl.
-[en] Postal code.
+    skos:definition """Postal code.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Postleitzahl.
+""" .
 
 act:postalLocality a owl:DatatypeProperty ;
     rdfs:label "postal_locality" ;
-    skos:definition """[de] Ort.
-[en] Locality.
+    skos:definition """Locality.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Ort.
+""" .
 
 act:roleTypeEnum a owl:ObjectProperty ;
     rdfs:label "role_type_enum" ;
     rdfs:range act:RoleEnum ;
-    skos:definition """[en] Role of the person in the membership or function.
-[de] Rolle der Person in der Mitgliedschaft oder Funktion.
+    skos:definition """Role of the person in the membership or function.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Rolle der Person in der Mitgliedschaft oder Funktion.
+""" .
 
 act:spatial a owl:DatatypeProperty ;
     rdfs:label "spatial" ;
-    skos:definition """[de] Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z.B. ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).
-[en] Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).
+    skos:definition """Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z.B. ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).
+""" .
 
 act:statutesURL a owl:DatatypeProperty ;
     rdfs:label "statutes_url" ;
-    skos:definition """[de] URL zu Parteistatuten (optional für Parteien).
-[en] URL to party statutes (optional for parties).
+    skos:definition """URL to party statutes (optional for parties).
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """URL zu Parteistatuten (optional für Parteien).
+""" .
 
 act:streetAddress a owl:DatatypeProperty ;
     rdfs:label "street_address" ;
-    skos:definition """[de] Strassenadresse.
-[en] Street address.
+    skos:definition """Street address.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Strassenadresse.
+""" .
 
 act:trainingCode a owl:DatatypeProperty ;
     rdfs:label "training_code" ;
-    skos:definition """[de] ISCO-19 Code der Ausbildung oder Bildung.
-[en] ISCO-19 code of the training or education.
+    skos:definition """ISCO-19 code of the training or education.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """ISCO-19 Code der Ausbildung oder Bildung.
+""" .
 
 act:trainingType a owl:ObjectProperty ;
     rdfs:label "training_type" ;
     rdfs:range act:TrainingTypeEnum ;
-    skos:definition """[de] Typ der Ausbildung oder Bildung.
-[en] Type of training or education.
+    skos:definition """Type of training or education.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Typ der Ausbildung oder Bildung.
+""" .
 
 <https://ld.ech.ch/schema/0292/meta-common/HasCreationModificationDates> a owl:Class ;
     rdfs:label "HasCreationModificationDates" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateCreated> ],
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateModified> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateCreated> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom xsd:dateTime ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeCreated> ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeModified> ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeModified> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateModified> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeModified> ],
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeCreated> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeCreated> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateCreated> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeModified> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:dateTime ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeModified> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateModified> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateCreated> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateModified> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeCreated> ] ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateCreated> ] ;
     skos:definition """[de] Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Änderungsdaten einer Entität zur Verfügung stellt.
 [en] A mixin class that provides slots for modeling creation and modification dates of an entity.
 """ ;
@@ -1976,42 +2076,47 @@ act:trainingType a owl:ObjectProperty ;
 act:abbreviation a owl:ObjectProperty ;
     rdfs:label "abbreviation" ;
     rdfs:range <https://ld.ech.ch/schema/0292/meta-common/MultilingualValue> ;
-    skos:definition """[de] Abkürzung (kann mehrsprachig sein).
-[en] Abbreviation (can be multilingual).
+    skos:definition """Abbreviation (can be multilingual).
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Abkürzung (kann mehrsprachig sein).
+""" .
 
 act:address a owl:ObjectProperty ;
     rdfs:label "addresses" ;
     rdfs:range act:Address ;
-    skos:definition """[de] Adressen mit Typ (privat, geschäftlich, lokal).
-[en] Addresses with type (private, business, local).
+    skos:definition """Addresses with type (private, business, local).
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Adressen mit Typ (privat, geschäftlich, lokal).
+""" .
 
 act:contact a owl:ObjectProperty ;
     rdfs:label "contacts" ;
     rdfs:range act:Contact ;
-    skos:definition """[en] Contact information (email, website, social media).
-[de] Kontaktinformationen (E-Mail, Website, Social Media).
+    skos:definition """Contact information (email, website, social media).
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Kontaktinformationen (E-Mail, Website, Social Media).
+""" .
 
 act:interestLink a owl:ObjectProperty ;
     rdfs:label "interest_links" ;
     rdfs:range act:InterestLink ;
-    skos:definition """[de] Sammlung von Interessenbindungen.
-[en] Collection of interest links.range: InterestLink
+    skos:definition """Collection of interest links.range: InterestLink
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Sammlung von Interessenbindungen.
+""" .
 
 act:AddressTypeEnum a owl:Class ;
     rdfs:label "AddressTypeEnum" ;
     owl:unionOf ( <https://ld.ech.ch/schema/0294/actors/AddressTypeEnum#privateAddress> <https://ld.ech.ch/schema/0294/actors/AddressTypeEnum#businessAddress> <https://ld.ech.ch/schema/0294/actors/AddressTypeEnum#localAddress> ) ;
-    skos:definition """[en] Types of addresses.
-[de] Adresstypen.
+    skos:definition """Types of addresses.
 """ ;
     skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Adresstypen.
+""" ;
     linkml:permissible_values <https://ld.ech.ch/schema/0294/actors/AddressTypeEnum#businessAddress>,
         <https://ld.ech.ch/schema/0294/actors/AddressTypeEnum#localAddress>,
         <https://ld.ech.ch/schema/0294/actors/AddressTypeEnum#privateAddress> .
@@ -2019,10 +2124,11 @@ act:AddressTypeEnum a owl:Class ;
 act:InterestTypeEnum a owl:Class ;
     rdfs:label "InterestTypeEnum" ;
     owl:unionOf ( <https://ld.ech.ch/schema/0294/actors/enum/interest_type/professional_activity> <https://ld.ech.ch/schema/0294/actors/enum/interest_type/political_office> <https://ld.ech.ch/schema/0294/actors/enum/interest_type/association> ) ;
-    skos:definition """[en] Types of interest links (conflicts of interest, political financing).
-[de] Typen von Interessenbindungen (Interessenkonflikte, Politikfinanzierung).
+    skos:definition """Types of interest links (conflicts of interest, political financing).
 """ ;
     skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Typen von Interessenbindungen (Interessenkonflikte, Politikfinanzierung).
+""" ;
     linkml:permissible_values <https://ld.ech.ch/schema/0294/actors/enum/interest_type/association>,
         <https://ld.ech.ch/schema/0294/actors/enum/interest_type/political_office>,
         <https://ld.ech.ch/schema/0294/actors/enum/interest_type/professional_activity> .
@@ -2030,25 +2136,25 @@ act:InterestTypeEnum a owl:Class ;
 <https://ld.ech.ch/schema/0292/meta-common/MultilingualValue> a owl:Class ;
     rdfs:label "MultilingualValue" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
+        [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:onDatatype xsd:string ;
                     owl:withRestrictions ( [ xsd:pattern "^[a-z]{2}$" ] ) ] ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/language> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/language> ],
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/language> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ] ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/language> ] ;
     skos:definition """[de] Ein mehrsprachiger String mit Angabe der Sprache.
 [en] A multilingual string with language specification.
 """ ;
@@ -2074,10 +2180,11 @@ act:InterestTypeEnum a owl:Class ;
 act:ContactTypeEnum a owl:Class ;
     rdfs:label "ContactTypeEnum" ;
     owl:unionOf ( <https://ld.ech.ch/schema/0294/actors/ContactTypeEnum#email> <https://ld.ech.ch/schema/0294/actors/ContactTypeEnum#contact_website> <https://ld.ech.ch/schema/0294/actors/ContactTypeEnum#linked_in> <https://ld.ech.ch/schema/0294/actors/ContactTypeEnum#twitter> ) ;
-    skos:definition """[en] Types of contact information.
-[de] Kontaktinformationstypen.
+    skos:definition """Types of contact information.
 """ ;
     skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Kontaktinformationstypen.
+""" ;
     linkml:permissible_values <https://ld.ech.ch/schema/0294/actors/ContactTypeEnum#contact_website>,
         <https://ld.ech.ch/schema/0294/actors/ContactTypeEnum#email>,
         <https://ld.ech.ch/schema/0294/actors/ContactTypeEnum#linked_in>,
@@ -2086,10 +2193,11 @@ act:ContactTypeEnum a owl:Class ;
 act:RoleEnum a owl:Class ;
     rdfs:label "RoleEnum" ;
     owl:unionOf ( <https://ld.ech.ch/schema/0294/actors/RoleEnum#member> <https://ld.ech.ch/schema/0294/actors/RoleEnum#president> <https://ld.ech.ch/schema/0294/actors/RoleEnum#stellvertreter> <https://ld.ech.ch/schema/0294/actors/RoleEnum#other> ) ;
-    skos:definition """[en] Roles a person can have within a membership.
-[de] Rollen, die eine Person im Rahmen einer Mitgliedschaft haben kann.
+    skos:definition """Roles a person can have within a membership.
 """ ;
     skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Rollen, die eine Person im Rahmen einer Mitgliedschaft haben kann.
+""" ;
     linkml:permissible_values <https://ld.ech.ch/schema/0294/actors/RoleEnum#member>,
         <https://ld.ech.ch/schema/0294/actors/RoleEnum#other>,
         <https://ld.ech.ch/schema/0294/actors/RoleEnum#president>,
@@ -2098,64 +2206,68 @@ act:RoleEnum a owl:Class ;
 act:groupType a owl:ObjectProperty ;
     rdfs:label "group_type" ;
     rdfs:range act:GroupType ;
-    skos:definition """[de] Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder ähnliches. Die genaue Bennenung und Beschreibung der Gruppierung wird über `name` gemacht.
-[en] Link to the group type.
+    skos:definition """Link to the group type.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder ähnliches. Die genaue Bennenung und Beschreibung der Gruppierung wird über `name` gemacht.
+""" .
 
 act:isPaid a owl:DatatypeProperty ;
     rdfs:label "is_paid" ;
     rdfs:range xsd:boolean ;
-    skos:definition """[de] Gibt an, ob die Position bezahlt ist.
-[en] Indicates if the position is paid.
+    skos:definition """Indicates if the position is paid.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Gibt an, ob die Position bezahlt ist.
+""" .
 
 act:personReference a owl:ObjectProperty ;
     rdfs:label "person_reference" ;
     rdfs:range act:PersonReference ;
-    skos:definition """[de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
-[en] Reference to a person with snapshot data at time of linking.
+    skos:definition """Reference to a person with snapshot data at time of linking.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
+""" .
 
 act:roleType a owl:ObjectProperty ;
     rdfs:label "role_type" ;
     rdfs:range act:RoleType ;
-    skos:definition """[en] Role of the person in the membership or function.
-[de] Rolle der Person in der Mitgliedschaft oder Funktion.
+    skos:definition """Role of the person in the membership or function.
 """ ;
-    skos:inScheme <https://ld.ech.ch/schema/0294/actors> .
+    skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Rolle der Person in der Mitgliedschaft oder Funktion.
+""" .
 
 <https://ld.ech.ch/schema/0292/meta-common/HasIdentification> a owl:Class ;
     rdfs:label "HasIdentification" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/wikidataUri> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/localId> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/globalURI> ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/globalURI> ],
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/wikidataUri> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/localId> ],
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/wikidataUri> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/localId> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:anyURI ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/wikidataUri> ],
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/globalURI> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/globalURI> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/localId> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/wikidataUri> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:anyURI ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/globalURI> ] ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/localId> ] ;
     skos:definition """[de] Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfügung stellt.
 [en] A mixin class that provides slots for the identification of an entity.
 """ ;
@@ -2164,10 +2276,11 @@ act:roleType a owl:ObjectProperty ;
 act:TrainingTypeEnum a owl:Class ;
     rdfs:label "TrainingTypeEnum" ;
     owl:unionOf ( <https://ld.ech.ch/schema/0294/actors/TrainingTypeEnum#schulabschluss> <https://ld.ech.ch/schema/0294/actors/TrainingTypeEnum#efz> <https://ld.ech.ch/schema/0294/actors/TrainingTypeEnum#uni> <https://ld.ech.ch/schema/0294/actors/TrainingTypeEnum#armee> <https://ld.ech.ch/schema/0294/actors/TrainingTypeEnum#zivi> <https://ld.ech.ch/schema/0294/actors/TrainingTypeEnum#zischutz> ) ;
-    skos:definition """[en] Types of training or education.
-[de] Ausbildungs- oder Bildungstypen.
+    skos:definition """Types of training or education.
 """ ;
     skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Ausbildungs- oder Bildungstypen.
+""" ;
     linkml:permissible_values <https://ld.ech.ch/schema/0294/actors/TrainingTypeEnum#armee>,
         <https://ld.ech.ch/schema/0294/actors/TrainingTypeEnum#efz>,
         <https://ld.ech.ch/schema/0294/actors/TrainingTypeEnum#schulabschluss>,
@@ -2178,32 +2291,32 @@ act:TrainingTypeEnum a owl:Class ;
 <https://ld.ech.ch/schema/0292/meta-common/HasTemporalValidity> a owl:Class ;
     rdfs:label "HasTemporalValidity" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty <http://schema.org/validFrom> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://schema.org/validFrom> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://schema.org/validThrough> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/isCurrent> ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://schema.org/validFrom> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://schema.org/validThrough> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/isCurrent> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://schema.org/validThrough> ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/isCurrent> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
             owl:onProperty <http://schema.org/validThrough> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://schema.org/validThrough> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty <http://schema.org/validFrom> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/isCurrent> ] ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty <http://schema.org/validFrom> ] ;
     skos:definition """[de] Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gültigkeit einer Information (nicht eines Events) zur Verfügung stellt.
 [en] A mixin class that provides slots for modeling a temporal validity of information (not of an event).
 """ ;
@@ -2219,10 +2332,11 @@ act:TrainingTypeEnum a owl:Class ;
 act:NameTypeEnum a owl:Class ;
     rdfs:label "NameTypeEnum" ;
     owl:unionOf ( <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonOfficialName> <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonOriginalName> <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonAllianceName> <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonNameOnForeignPassport> <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonAliasName> <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonOtherName> <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonDeclaredForeignerName> <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonFirstName> <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonCallFirstName> <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonFirstNameOnForeignPassport> <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonDeclaredForeignerFirstName> ) ;
-    skos:definition """[de] Kategorien von Namenstypen gemäss https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI gemäss I14Y Identifier aber als Klasse und nicht als Atribut. Beschreibungen und Übersetzungen gemäss I14Y.
-[en] Categories of name types according to https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI according to I14Y identifier but as class and not as attribute. Descriptions and translations according to I14Y.
+    skos:definition """Categories of name types according to https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI according to I14Y identifier but as class and not as attribute. Descriptions and translations according to I14Y.
 """ ;
     skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Kategorien von Namenstypen gemäss https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI gemäss I14Y Identifier aber als Klasse und nicht als Atribut. Beschreibungen und Übersetzungen gemäss I14Y.
+""" ;
     linkml:permissible_values <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonAliasName>,
         <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonAllianceName>,
         <https://ld.ech.ch/schema/0294/actors/vocabulary/NameTypeEnum/PersonCallFirstName>,
@@ -2245,10 +2359,11 @@ act:NameTypeEnum a owl:Class ;
 act:GroupTypeEnum a owl:Class ;
     rdfs:label "GroupTypeEnum" ;
     owl:unionOf ( <https://ld.ech.ch/schema/0294/actors/enum/group_type/party> <https://ld.ech.ch/schema/0294/actors/enum/group_type/list> <https://ld.ech.ch/schema/0294/actors/enum/group_type/workgroup> <https://ld.ech.ch/schema/0294/actors/enum/group_type/parliament> <https://ld.ech.ch/schema/0294/actors/enum/group_type/delegation> <https://ld.ech.ch/schema/0294/actors/enum/group_type/commission> <https://ld.ech.ch/schema/0294/actors/enum/group_type/faction> <https://ld.ech.ch/schema/0294/actors/enum/group_type/parliamentary_bureau> <https://ld.ech.ch/schema/0294/actors/enum/group_type/presidency> <https://ld.ech.ch/schema/0294/actors/enum/group_type/government> <https://ld.ech.ch/schema/0294/actors/enum/group_type/department> <https://ld.ech.ch/schema/0294/actors/enum/group_type/office> <https://ld.ech.ch/schema/0294/actors/enum/group_type/extraparliamentary_commission> <https://ld.ech.ch/schema/0294/actors/enum/group_type/interest_group> <https://ld.ech.ch/schema/0294/actors/enum/group_type/control_body> <https://ld.ech.ch/schema/0294/actors/enum/group_type/parliamentary_services> <https://ld.ech.ch/schema/0294/actors/enum/group_type/court> <https://ld.ech.ch/schema/0294/actors/enum/group_type/association> <https://ld.ech.ch/schema/0294/actors/enum/group_type/petition_carrier> <https://ld.ech.ch/schema/0294/actors/enum/group_type/university> <https://ld.ech.ch/schema/0294/actors/enum/group_type/other> ) ;
-    skos:definition """[en] Types of political groups and organizations.
-[de] Typen politischer Gruppen und Organisationen.
+    skos:definition """Types of political groups and organizations.
 """ ;
     skos:inScheme <https://ld.ech.ch/schema/0294/actors> ;
+    act:description_de """Typen politischer Gruppen und Organisationen.
+""" ;
     linkml:permissible_values <https://ld.ech.ch/schema/0294/actors/enum/group_type/association>,
         <https://ld.ech.ch/schema/0294/actors/enum/group_type/commission>,
         <https://ld.ech.ch/schema/0294/actors/enum/group_type/control_body>,

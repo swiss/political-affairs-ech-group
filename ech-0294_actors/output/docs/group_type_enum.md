@@ -6,9 +6,7 @@ search:
 # Slot: group_type_enum 
 
 
-_[de] Link zum kontrollierten Vokabular für Gruppentypen._
-
-_[en] Link to the controlled vocabulary for group types._
+_Link to the controlled vocabulary for group types._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:groupTypeEnum](https://ld.ech.ch/schema/0294/actors/groupTypeEnum)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GroupType](GroupType.md) | [de] Art der Gruppe (z |  no  |
+| [GroupType](GroupType.md) | Type of group (e |  no  |
 
 
 
@@ -67,9 +65,13 @@ URI: [act:groupTypeEnum](https://ld.ech.ch/schema/0294/actors/groupTypeEnum)
 <details>
 ```yaml
 name: group_type_enum
-description: '[de] Link zum kontrollierten Vokabular für Gruppentypen.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Link zum kontrollierten Vokabular für Gruppentypen.
 
-  [en] Link to the controlled vocabulary for group types.
+      '
+description: 'Link to the controlled vocabulary for group types.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

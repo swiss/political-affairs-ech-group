@@ -30,13 +30,13 @@ __
 
 | mixed into | description |
 | --- | --- |
-| [Container](Container.md) | [de] Container für politische Akteure, Gruppen und Beziehungen |
-| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |
-| [PersonReference](PersonReference.md) | [de] Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifika... |
-| [GroupReference](GroupReference.md) | [de] Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifika... |
-| [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |
-| [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |
+| [Container](Container.md) | Container for political actors, groups, and relationships |
+| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |
+| [Group](Group.md) | A political group, organization, or body (e |
+| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |
+| [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |
+| [Membership](Membership.md) | A membership relationship between a person and a group |
+| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |
 | [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |
 
 

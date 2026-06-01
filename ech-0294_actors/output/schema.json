@@ -2,35 +2,35 @@
     "$defs": {
         "Address": {
             "additionalProperties": false,
-            "description": "[de] Eine Adresse mit einem Typ (z.B. Privatadresse, Gesch\u00e4ftsadresse) und einem Wert.\n[en] An address with a type (e.g., private address, business address) and a value.",
+            "description": "An address with a type (e.g., private address, business address) and a value.",
             "properties": {
                 "address_type": {
                     "$ref": "#/$defs/AddressTypeEnum",
-                    "description": "[de] Typ der Adresse.\n[en] Type of address.\n"
+                    "description": "Type of address.\n"
                 },
                 "address_uri": {
-                    "description": "[de] URI der Adresse.\n[en] URI of the address.\n",
+                    "description": "URI of the address.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "postal_code": {
-                    "description": "[de] Postleitzahl.\n[en] Postal code.\n",
+                    "description": "Postal code.\n",
                     "type": [
                         "integer",
                         "null"
                     ]
                 },
                 "postal_locality": {
-                    "description": "[de] Ort.\n[en] Locality.\n",
+                    "description": "Locality.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "street_address": {
-                    "description": "[de] Strassenadresse.\n[en] Street address.\n",
+                    "description": "Street address.\n",
                     "type": [
                         "string",
                         "null"
@@ -41,7 +41,7 @@
             "type": "object"
         },
         "AddressTypeEnum": {
-            "description": "[en] Types of addresses.\n[de] Adresstypen.",
+            "description": "Types of addresses.",
             "enum": [
                 "privateAddress",
                 "businessAddress",
@@ -52,10 +52,10 @@
         },
         "Citizenship": {
             "additionalProperties": false,
-            "description": "[de] Staatsangeh\u00f6rigkeit einer Person unter Angabe des Landes und der zeitlichen G\u00fcltigkeit. Wenn kein `valid_from` angegeben ist, ist diese Information nicht bekannt. Ist bekannt, dass die Staatsangeh\u00f6rigkeit seit der Geburt g\u00fcltig ist, ist das Geburtsdatum hier anzugeben. Wenn kein `valid_through` angegeben ist, ist die Staatsangeh\u00f6rigkeit weiterhin g\u00fcltig.\n[en] Citizenship (also used for Nationality) of a person indicating the country and temporal validity. If there is no `valid_from` provided, the information is not known. If it is known that the citizenship is valid from birth, the birthdate is to be repeated here. If there is no `valid_through`, the citizenship is still active.",
+            "description": "Citizenship (also used for Nationality) of a person indicating the country and temporal validity. If there is no `valid_from` provided, the information is not known. If it is known that the citizenship is valid from birth, the birthdate is to be repeated here. If there is no `valid_through`, the citizenship is still active.",
             "properties": {
                 "country": {
-                    "description": "[de] ISO 3166 L\u00e4ndercode.\n[en] ISO 3166 country code.\n",
+                    "description": "ISO 3166 country code.\n",
                     "pattern": "^[A-Z]{2}$",
                     "type": [
                         "string",
@@ -91,11 +91,11 @@
         },
         "Contact": {
             "additionalProperties": false,
-            "description": "[de] Kontaktinformation einer Person mit Angabe eines Typs (z.B. E-Mail, LinkedIn) und eines Werts.\n[en] Contact information of a person indicating a type (e.g., email, LinkedIn) and a value.",
+            "description": "Contact information of a person indicating a type (e.g., email, LinkedIn) and a value.",
             "properties": {
                 "contact_type": {
                     "$ref": "#/$defs/ContactTypeEnum",
-                    "description": "[de] Typ der Kontaktinformation.\n[en] Type of contact information.\n"
+                    "description": "Type of contact information.\n"
                 },
                 "value": {
                     "description": "[de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc.\n[en] The value of an information besides other attributes such as type, language, etc.\n",
@@ -109,7 +109,7 @@
             "type": "object"
         },
         "ContactTypeEnum": {
-            "description": "[en] Types of contact information.\n[de] Kontaktinformationstypen.",
+            "description": "Types of contact information.",
             "enum": [
                 "email",
                 "contact_website",
@@ -121,14 +121,14 @@
         },
         "Container": {
             "additionalProperties": false,
-            "description": "[de] Container f\u00fcr politische Akteure, Gruppen und Beziehungen.\n[en] Container for political actors, groups, and relationships.",
+            "description": "Container for political actors, groups, and relationships.",
             "properties": {
                 "global_uri": {
                     "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
                     "type": "string"
                 },
                 "groups": {
-                    "description": "[de] Sammlung von Gruppen.\n[en] Collection of groups.\n",
+                    "description": "Collection of groups.\n",
                     "items": {
                         "$ref": "#/$defs/Group"
                     },
@@ -138,7 +138,7 @@
                     ]
                 },
                 "interest_links": {
-                    "description": "[de] Sammlung von Interessenbindungen.\n[en] Collection of interest links.range: InterestLink\n",
+                    "description": "Collection of interest links.range: InterestLink\n",
                     "items": {
                         "$ref": "#/$defs/InterestLink"
                     },
@@ -155,7 +155,7 @@
                     ]
                 },
                 "memberships": {
-                    "description": "[de] Sammlung von Mitgliedschaften.\n[en] Collection of memberships.\n",
+                    "description": "Collection of memberships.\n",
                     "items": {
                         "$ref": "#/$defs/Membership"
                     },
@@ -165,7 +165,7 @@
                     ]
                 },
                 "persons": {
-                    "description": "[de] Sammlung von Personen.\n[en] Collection of persons.\n",
+                    "description": "Collection of persons.\n",
                     "items": {
                         "$ref": "#/$defs/Person"
                     },
@@ -190,10 +190,10 @@
         },
         "ElectoralDistrict": {
             "additionalProperties": false,
-            "description": "[de] Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit zeitlicher G\u00fcltigkeit.\n[en] Electoral district or region where a person is politically active; with temporal validity.",
+            "description": "Electoral district or region where a person is politically active; with temporal validity.",
             "properties": {
                 "district": {
-                    "description": "[de] Wahlkreis oder Wahlregion.\n[en] Electoral district or region.\n",
+                    "description": "Electoral district or region.\n",
                     "type": [
                         "string",
                         "null"
@@ -228,10 +228,10 @@
         },
         "Gender": {
             "additionalProperties": false,
-            "description": "[de] Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen G\u00fcltigkeit.\n[en] Gender of a person indicating a gender code and temporal validity.",
+            "description": "Gender of a person indicating a gender code and temporal validity.",
             "properties": {
                 "gender_code": {
-                    "description": "[de] Geschlechtscode (z.B. gem\u00e4\u00df ISO 5218).\n[en] Gender code (e.g., according to ISO 5218).\n",
+                    "description": "Gender code (e.g., according to ISO 5218).\n",
                     "type": [
                         "string",
                         "null"
@@ -245,7 +245,7 @@
                     ]
                 },
                 "pronouns": {
-                    "description": "[de] Von der Person verwendete Pronomen.\n[en] Pronouns used by the person.\n",
+                    "description": "Pronouns used by the person.\n",
                     "items": {
                         "type": "string"
                     },
@@ -276,10 +276,10 @@
         },
         "Group": {
             "additionalProperties": false,
-            "description": "[de] Eine politische Gruppe, Organisation oder K\u00f6rperschaft (z.B. Partei, Kommission, Parlament, Departement).\n[en] A political group, organization, or body (e.g., party, committee, parliament, department).",
+            "description": "A political group, organization, or body (e.g., party, committee, parliament, department).",
             "properties": {
                 "abbreviation": {
-                    "description": "[de] Abk\u00fcrzung (kann mehrsprachig sein).\n[en] Abbreviation (can be multilingual).\n",
+                    "description": "Abbreviation (can be multilingual).\n",
                     "items": {
                         "$ref": "#/$defs/MultilingualValue"
                     },
@@ -289,7 +289,7 @@
                     ]
                 },
                 "addresses": {
-                    "description": "[de] Adressen mit Typ (privat, gesch\u00e4ftlich, lokal).\n[en] Addresses with type (private, business, local).\n",
+                    "description": "Addresses with type (private, business, local).\n",
                     "items": {
                         "$ref": "#/$defs/Address"
                     },
@@ -299,7 +299,7 @@
                     ]
                 },
                 "contacts": {
-                    "description": "[en] Contact information (email, website, social media).\n[de] Kontaktinformationen (E-Mail, Website, Social Media).\n",
+                    "description": "Contact information (email, website, social media).\n",
                     "items": {
                         "$ref": "#/$defs/Contact"
                     },
@@ -341,7 +341,7 @@
                     ]
                 },
                 "description": {
-                    "description": "[de] Kurze Beschreibung der Gruppierung.\n[en] Description of the entity.\n",
+                    "description": "Description of the entity.\n",
                     "items": {
                         "$ref": "#/$defs/MultilingualValue"
                     },
@@ -363,7 +363,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "[de] Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder \u00e4hnliches. Die genaue Bennenung und Beschreibung der Gruppierung wird \u00fcber `name` gemacht.\n[en] Link to the group type.\n"
+                    "description": "Link to the group type.\n"
                 },
                 "is_active": {
                     "description": "[de] Gibt an, ob die Information aktuell g\u00fcltig ist. Kann n\u00fctzlich sein, wenn diese Information explizit vorhanden ist.\n[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.\n",
@@ -380,7 +380,7 @@
                     ]
                 },
                 "landing_page": {
-                    "description": "[de] Website mit weiteren Informationen.\n[en] Website providing further information.\n",
+                    "description": "Website providing further information.\n",
                     "format": "uri",
                     "type": [
                         "string",
@@ -395,7 +395,7 @@
                     ]
                 },
                 "parent_groups": {
-                    "description": "[de] \u00dcbergeordneten Gruppe. Zum Beispiel die Mutterpartei, zu Kantonalenparteien. Oder zur Beschreibung der Hierarchie in Exekutive. Verkn\u00fcpfung von Subkommissionen mit Kommissionen. (parentGroup wird immer im selben group_type verwendet.)\n[en] Link to parent groups.\n",
+                    "description": "Link to parent groups.\n",
                     "items": {
                         "type": "string"
                     },
@@ -405,21 +405,21 @@
                     ]
                 },
                 "party_color": {
-                    "description": "[de] Parteifarbe (optional f\u00fcr Parteien).\n[en] Party color (optional for parties).\n",
+                    "description": "Party color (optional for parties).\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "spatial": {
-                    "description": "[de] R\u00e4umliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z.B. ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).\n[en] Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).\n",
+                    "description": "Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "statutes_url": {
-                    "description": "[de] URL zu Parteistatuten (optional f\u00fcr Parteien).\n[en] URL to party statutes (optional for parties).\n",
+                    "description": "URL to party statutes (optional for parties).\n",
                     "type": [
                         "string",
                         "null"
@@ -457,10 +457,10 @@
         },
         "GroupReference": {
             "additionalProperties": false,
-            "description": "[de] Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verkn\u00fcpfung.\n[en] Lightweight reference to a group with key identification data at time of linking.",
+            "description": "Lightweight reference to a group with key identification data at time of linking.",
             "properties": {
                 "abbreviation": {
-                    "description": "[de] Abk\u00fcrzung (kann mehrsprachig sein).\n[en] Abbreviation (can be multilingual).\n",
+                    "description": "Abbreviation (can be multilingual).\n",
                     "items": {
                         "$ref": "#/$defs/MultilingualValue"
                     },
@@ -482,7 +482,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "[de] Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder \u00e4hnliches. Die genaue Bennenung und Beschreibung der Gruppierung wird \u00fcber `name` gemacht.\n[en] Link to the group type.\n"
+                    "description": "Link to the group type.\n"
                 },
                 "label": {
                     "description": "[de] M\u00f6glichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).\n[en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
@@ -514,11 +514,11 @@
         },
         "GroupType": {
             "additionalProperties": false,
-            "description": "[de] Art der Gruppe (z.B. Partei, Kommission, Parlament, Departement).\n[en] Type of group (e.g., party, committee, parliament, department).",
+            "description": "Type of group (e.g., party, committee, parliament, department).",
             "properties": {
                 "group_type_enum": {
                     "$ref": "#/$defs/GroupTypeEnum",
-                    "description": "[de] Link zum kontrollierten Vokabular f\u00fcr Gruppentypen.\n[en] Link to the controlled vocabulary for group types.\n"
+                    "description": "Link to the controlled vocabulary for group types.\n"
                 },
                 "label": {
                     "description": "[de] M\u00f6glichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).\n[en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
@@ -532,7 +532,7 @@
             "type": "object"
         },
         "GroupTypeEnum": {
-            "description": "[en] Types of political groups and organizations.\n[de] Typen politischer Gruppen und Organisationen.",
+            "description": "Types of political groups and organizations.",
             "enum": [
                 "party",
                 "list",
@@ -661,10 +661,10 @@
         },
         "InterestLink": {
             "additionalProperties": false,
-            "description": "[de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation.\n[en] An interest link (conflict of interest, political financing) of a person to an organization.",
+            "description": "An interest link (conflict of interest, political financing) of a person to an organization.",
             "properties": {
                 "committee": {
-                    "description": "[en] Committee or board (e.g., foundation board, board of directors).\n[de] Gremium (z.B. Stiftungsrat, Verwaltungsrat).\n",
+                    "description": "Committee or board (e.g., foundation board, board of directors).\n",
                     "type": [
                         "string",
                         "null"
@@ -703,7 +703,7 @@
                     ]
                 },
                 "function_role": {
-                    "description": "[en] Function or role in the organization.\n[de] Funktion oder Rolle in der Organisation.\n",
+                    "description": "Function or role in the organization.\n",
                     "type": [
                         "string",
                         "null"
@@ -715,7 +715,7 @@
                 },
                 "interest_type": {
                     "$ref": "#/$defs/InterestTypeEnum",
-                    "description": "[de] Art der Interessenbindung (Berufliche T\u00e4tigkeit, Politische \u00c4mter, Verein).\n[en] Type of interest link (professional activity, political office, association).\n"
+                    "description": "Type of interest link (professional activity, political office, association).\n"
                 },
                 "is_active": {
                     "description": "[de] Gibt an, ob die Information aktuell g\u00fcltig ist. Kann n\u00fctzlich sein, wenn diese Information explizit vorhanden ist.\n[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.\n",
@@ -725,14 +725,14 @@
                     ]
                 },
                 "is_paid": {
-                    "description": "[de] Gibt an, ob die Position bezahlt ist.\n[en] Indicates if the position is paid.\n",
+                    "description": "Indicates if the position is paid.\n",
                     "type": [
                         "boolean",
                         "null"
                     ]
                 },
                 "legal_form": {
-                    "description": "[en] Legal form of the organization.\n[de] Rechtsform der Organisation.\n",
+                    "description": "Legal form of the organization.\n",
                     "type": [
                         "string",
                         "null"
@@ -746,21 +746,21 @@
                     ]
                 },
                 "organization_address": {
-                    "description": "[en] Address of the organization.\n[de] Adresse der Organisation.\n",
+                    "description": "Address of the organization.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "organization_label": {
-                    "description": "[en] Label of the organization.\n[de] Bezeichnung der Organisation.\n",
+                    "description": "Label of the organization.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "organization_uid": {
-                    "description": "[en] UID of the organization (for analysis with NOGA codes, etc.).\n[de] UID der Organisation (f\u00fcr Auswertungen mit NOGA-Codes, etc.).\n",
+                    "description": "UID of the organization (for analysis with NOGA codes, etc.).\n",
                     "type": [
                         "string",
                         "null"
@@ -775,7 +775,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "[de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verkn\u00fcpfung.\n[en] Reference to a person with snapshot data at time of linking.\n"
+                    "description": "Reference to a person with snapshot data at time of linking.\n"
                 },
                 "valid_from": {
                     "description": "[de] Das Datum, ab dem die Information g\u00fcltig ist.\n[en] The date from which the information is valid.\n",
@@ -809,7 +809,7 @@
             "type": "object"
         },
         "InterestTypeEnum": {
-            "description": "[en] Types of interest links (conflicts of interest, political financing).\n[de] Typen von Interessenbindungen (Interessenkonflikte, Politikfinanzierung).",
+            "description": "Types of interest links (conflicts of interest, political financing).",
             "enum": [
                 "professional_activity",
                 "political_office",
@@ -1032,17 +1032,17 @@
         },
         "LanguageProficiency": {
             "additionalProperties": false,
-            "description": "[de] Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um die bevorzugte Sprache oder die Muttersprache handelt.\n[en] Language proficiency of a person indicating the language and whether it is the preferred language or native language.",
+            "description": "Language proficiency of a person indicating the language and whether it is the preferred language or native language.",
             "properties": {
                 "is_correspondence": {
-                    "description": "[de] Gibt an, ob es sich um die bevorzugte Sprache handelt.\n[en] Indicates if this is the preferred language.\n",
+                    "description": "Indicates if this is the preferred language.\n",
                     "type": [
                         "boolean",
                         "null"
                     ]
                 },
                 "is_native": {
-                    "description": "[de] Gibt an, ob es sich um die Muttersprache handelt.\n[en] Indicates if this is the native language.\n",
+                    "description": "Indicates if this is the native language.\n",
                     "type": [
                         "boolean",
                         "null"
@@ -1062,10 +1062,10 @@
         },
         "Membership": {
             "additionalProperties": false,
-            "description": "[de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe.\n[en] A membership relationship between a person and a group.",
+            "description": "A membership relationship between a person and a group.",
             "properties": {
                 "authorized_to_vote": {
-                    "description": "[de] Gibt an, ob die Person stimmberechtigt ist.\n[en] Indicates if the person is authorized to vote.\n",
+                    "description": "Indicates if the person is authorized to vote.\n",
                     "type": [
                         "boolean",
                         "null"
@@ -1116,7 +1116,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "[de] Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verkn\u00fcpfung.\n[en] Reference to a group with snapshot data at time of linking.\n"
+                    "description": "Reference to a group with snapshot data at time of linking.\n"
                 },
                 "is_active": {
                     "description": "[de] Gibt an, ob die Information aktuell g\u00fcltig ist. Kann n\u00fctzlich sein, wenn diese Information explizit vorhanden ist.\n[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.\n",
@@ -1141,7 +1141,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "[de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verkn\u00fcpfung.\n[en] Reference to a person with snapshot data at time of linking.\n"
+                    "description": "Reference to a person with snapshot data at time of linking.\n"
                 },
                 "role_type": {
                     "anyOf": [
@@ -1152,7 +1152,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "[en] Role of the person in the membership or function.\n[de] Rolle der Person in der Mitgliedschaft oder Funktion.\n"
+                    "description": "Role of the person in the membership or function.\n"
                 },
                 "valid_from": {
                     "description": "[de] Das Datum, ab dem die Information g\u00fcltig ist.\n[en] The date from which the information is valid.\n",
@@ -1209,7 +1209,7 @@
         },
         "Name": {
             "additionalProperties": false,
-            "description": "[de] Ein Name mit einem Typ (z.B. Rufname, amtlicher Name) und einem Wert und einer zeitlichen G\u00fcltigkeit.\n[en] A name with a type (e.g., call name, official name) and a value.",
+            "description": "A name with a type (e.g., call name, official name) and a value.",
             "properties": {
                 "is_active": {
                     "description": "[de] Gibt an, ob die Information aktuell g\u00fcltig ist. Kann n\u00fctzlich sein, wenn diese Information explizit vorhanden ist.\n[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.\n",
@@ -1220,7 +1220,7 @@
                 },
                 "name_type": {
                     "$ref": "#/$defs/NameTypeEnum",
-                    "description": "[de] Typ des Namens.\n[en] Type of name.\n"
+                    "description": "Type of name.\n"
                 },
                 "valid_from": {
                     "description": "[de] Das Datum, ab dem die Information g\u00fcltig ist.\n[en] The date from which the information is valid.\n",
@@ -1250,7 +1250,7 @@
             "type": "object"
         },
         "NameTypeEnum": {
-            "description": "[de] Kategorien von Namenstypen gem\u00e4ss https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI gem\u00e4ss I14Y Identifier aber als Klasse und nicht als Atribut. Beschreibungen und \u00dcbersetzungen gem\u00e4ss I14Y.\n[en] Categories of name types according to https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI according to I14Y identifier but as class and not as attribute. Descriptions and translations according to I14Y.",
+            "description": "Categories of name types according to https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI according to I14Y identifier but as class and not as attribute. Descriptions and translations according to I14Y.",
             "enum": [
                 "PersonOfficialName",
                 "PersonOriginalName",
@@ -1269,17 +1269,17 @@
         },
         "Occupation": {
             "additionalProperties": false,
-            "description": "[de] Beruf oder T\u00e4tigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Codes, ob die Position bezahlt ist, und der zeitlichen G\u00fcltigkeit.\n[en] Occupation or profession of a person indicating a label, an ISCO-19 code, whether the position is paid, and temporal validity.",
+            "description": "Occupation or profession of a person indicating a label, an ISCO-19 code, whether the position is paid, and temporal validity.",
             "properties": {
                 "enterprise": {
-                    "description": "[de] Name des Unternehmens.\n[en] Name of the enterprise.\n",
+                    "description": "Name of the enterprise.\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "enterprise_uid": {
-                    "description": "[de] UID des Unternehmens.\n[en] UID of the enterprise.\n",
+                    "description": "UID of the enterprise.\n",
                     "type": [
                         "string",
                         "null"
@@ -1293,7 +1293,7 @@
                     ]
                 },
                 "is_paid": {
-                    "description": "[de] Gibt an, ob die Position bezahlt ist.\n[en] Indicates if the position is paid.\n",
+                    "description": "Indicates if the position is paid.\n",
                     "type": [
                         "boolean",
                         "null"
@@ -1307,7 +1307,7 @@
                     ]
                 },
                 "occupation_code": {
-                    "description": "[de] ISCO-19 Code der T\u00e4tigkeit.\n[en] ISCO-19 code of the occupation.\n",
+                    "description": "ISCO-19 code of the occupation.\n",
                     "type": [
                         "string",
                         "null"
@@ -1335,10 +1335,10 @@
         },
         "Person": {
             "additionalProperties": false,
-            "description": "[de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsb\u00fcrgerschaften und Berufen.\n[en] A person with identifiers, names, addresses, citizenships, and occupations.",
+            "description": "A person with identifiers, names, addresses, citizenships, and occupations.",
             "properties": {
                 "addresses": {
-                    "description": "[de] Adressen mit Typ (privat, gesch\u00e4ftlich, lokal).\n[en] Addresses with type (private, business, local).\n",
+                    "description": "Addresses with type (private, business, local).\n",
                     "items": {
                         "$ref": "#/$defs/Address"
                     },
@@ -1348,7 +1348,7 @@
                     ]
                 },
                 "birth_date": {
-                    "description": "[de] Genaues Geburtsdatum.\n[en] Exact date of birth if available and public. This field has precedence over the field `birthYear`.\n",
+                    "description": "Exact date of birth if available and public. This field has precedence over the field `birthYear`.\n",
                     "format": "date",
                     "type": [
                         "string",
@@ -1356,14 +1356,14 @@
                     ]
                 },
                 "birth_year": {
-                    "description": "[de] Geburtsjahr.\n[en] Year of birth. Only to be used, if there is no full `birthDate` available.\n",
+                    "description": "Year of birth. Only to be used, if there is no full `birthDate` available.\n",
                     "type": [
                         "integer",
                         "null"
                     ]
                 },
                 "citizenships": {
-                    "description": "[de] Staatsb\u00fcrgerschaften der Person.\n[en] Citizenships of the person.\n",
+                    "description": "Citizenships of the person.\n",
                     "items": {
                         "$ref": "#/$defs/Citizenship"
                     },
@@ -1373,7 +1373,7 @@
                     ]
                 },
                 "contacts": {
-                    "description": "[en] Contact information (email, website, social media).\n[de] Kontaktinformationen (E-Mail, Website, Social Media).\n",
+                    "description": "Contact information (email, website, social media).\n",
                     "items": {
                         "$ref": "#/$defs/Contact"
                     },
@@ -1415,7 +1415,7 @@
                     ]
                 },
                 "death_date": {
-                    "description": "[de] Genaues Todesdatum.\n[en] Exact date of death.\n",
+                    "description": "Exact date of death.\n",
                     "format": "date",
                     "type": [
                         "string",
@@ -1431,10 +1431,10 @@
                             "type": "null"
                         }
                     ],
-                    "description": "[de] Link zum Wahlbezirk.\n[en] Link to the electoral district.\n"
+                    "description": "Link to the electoral district.\n"
                 },
                 "genders": {
-                    "description": "[de] Geschlecht der Person.\n[en] Gender of the person.\n",
+                    "description": "Gender of the person.\n",
                     "items": {
                         "$ref": "#/$defs/Gender"
                     },
@@ -1448,7 +1448,7 @@
                     "type": "string"
                 },
                 "interest_links": {
-                    "description": "[de] Sammlung von Interessenbindungen.\n[en] Collection of interest links.range: InterestLink\n",
+                    "description": "Collection of interest links.range: InterestLink\n",
                     "items": {
                         "$ref": "#/$defs/InterestLink"
                     },
@@ -1472,7 +1472,7 @@
                     ]
                 },
                 "language_proficiencies": {
-                    "description": "[de] Sprachkompetenzen der Person.\n[en] Language proficiencies of the person.\n",
+                    "description": "Language proficiencies of the person.\n",
                     "items": {
                         "$ref": "#/$defs/LanguageProficiency"
                     },
@@ -1489,7 +1489,7 @@
                     ]
                 },
                 "names": {
-                    "description": "[en] Names of the person with type and value.\n[de] Namen der Person mit Typ und Wert.\n",
+                    "description": "Names of the person with type and value.\n",
                     "items": {
                         "$ref": "#/$defs/Name"
                     },
@@ -1499,7 +1499,7 @@
                     ]
                 },
                 "occupations": {
-                    "description": "[de] Berufe oder T\u00e4tigkeiten der Person.\n[en] Occupations or professions of the person.\n",
+                    "description": "Occupations or professions of the person.\n",
                     "items": {
                         "$ref": "#/$defs/Occupation"
                     },
@@ -1509,7 +1509,7 @@
                     ]
                 },
                 "picture": {
-                    "description": "[de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).\n[en] Link to an image (preferred: PNG, then JPG, then GIF).\n",
+                    "description": "Link to an image (preferred: PNG, then JPG, then GIF).\n",
                     "format": "uri",
                     "type": [
                         "string",
@@ -1517,7 +1517,7 @@
                     ]
                 },
                 "trainings": {
-                    "description": "[de] Ausbildungen oder Bildungen der Person.\n[en] Trainings or educations of the person.\n",
+                    "description": "Trainings or educations of the person.\n",
                     "items": {
                         "$ref": "#/$defs/Training"
                     },
@@ -1542,14 +1542,14 @@
         },
         "PersonReference": {
             "additionalProperties": false,
-            "description": "[de] Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verkn\u00fcpfung. Erm\u00f6glicht historische Korrektheit auch wenn sich die Person sp\u00e4ter \u00e4ndert.\n[en] Lightweight reference to a person with key identification data at time of linking. Preserves historical accuracy even if the person changes later.",
+            "description": "Lightweight reference to a person with key identification data at time of linking. Preserves historical accuracy even if the person changes later.",
             "properties": {
                 "global_uri": {
                     "description": "[de] Eine eindeutige, global g\u00fcltige URI f\u00fcr die Entit\u00e4t.\n[en] A unique, globally valid URI for the entity.\n",
                     "type": "string"
                 },
                 "group_label": {
-                    "description": "[de] Name des Gremiums zum Zeitpunkt der Verkn\u00fcpfung.\n[en] Name of the body/group at time of linking.\n",
+                    "description": "Name of the body/group at time of linking.\n",
                     "type": [
                         "string",
                         "null"
@@ -1585,7 +1585,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "[en] Role of the person in the membership or function.\n[de] Rolle der Person in der Mitgliedschaft oder Funktion.\n"
+                    "description": "Role of the person in the membership or function.\n"
                 },
                 "wikidata_uri": {
                     "description": "[de] Eine URI, die auf eine Wikidata-Entit\u00e4t verweist, z.B. https://www.wikidata.org/wiki/Q39 f\u00fcr die Schweiz.\n[en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
@@ -1602,7 +1602,7 @@
             "type": "object"
         },
         "RoleEnum": {
-            "description": "[en] Roles a person can have within a membership.\n[de] Rollen, die eine Person im Rahmen einer Mitgliedschaft haben kann.",
+            "description": "Roles a person can have within a membership.",
             "enum": [
                 "member",
                 "president",
@@ -1614,7 +1614,7 @@
         },
         "RoleType": {
             "additionalProperties": false,
-            "description": "[de] Rolle einer Person in einer Mitgliedschaft oder Funktion (z.B. Mitglied, Pr\u00e4sident, Stellvertreter).\n[en] Role of a person in a membership or function (e.g., member, president, deputy).",
+            "description": "Role of a person in a membership or function (e.g., member, president, deputy).",
             "properties": {
                 "label": {
                     "description": "[de] M\u00f6glichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).\n[en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
@@ -1625,7 +1625,7 @@
                 },
                 "role_type_enum": {
                     "$ref": "#/$defs/RoleEnum",
-                    "description": "[en] Role of the person in the membership or function.\n[de] Rolle der Person in der Mitgliedschaft oder Funktion.\n"
+                    "description": "Role of the person in the membership or function.\n"
                 }
             },
             "title": "RoleType",
@@ -1633,7 +1633,7 @@
         },
         "Training": {
             "additionalProperties": false,
-            "description": "[de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z.B. Schulabschluss, Universit\u00e4tsabschluss, Milit\u00e4rdienst), eines Labels, eines ISCO-19 Codes und der zeitlichen G\u00fcltigkeit.\n[en] Training or education of a person indicating a type (e.g., school diploma, university degree, military service), a label, an ISCO-19 code, and temporal validity.",
+            "description": "Training or education of a person indicating a type (e.g., school diploma, university degree, military service), a label, an ISCO-19 code, and temporal validity.",
             "properties": {
                 "is_active": {
                     "description": "[de] Gibt an, ob die Information aktuell g\u00fcltig ist. Kann n\u00fctzlich sein, wenn diese Information explizit vorhanden ist.\n[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.\n",
@@ -1643,7 +1643,7 @@
                     ]
                 },
                 "training_code": {
-                    "description": "[de] ISCO-19 Code der Ausbildung oder Bildung.\n[en] ISCO-19 code of the training or education.\n",
+                    "description": "ISCO-19 code of the training or education.\n",
                     "type": [
                         "string",
                         "null"
@@ -1651,7 +1651,7 @@
                 },
                 "training_type": {
                     "$ref": "#/$defs/TrainingTypeEnum",
-                    "description": "[de] Typ der Ausbildung oder Bildung.\n[en] Type of training or education.\n"
+                    "description": "Type of training or education.\n"
                 },
                 "valid_from": {
                     "description": "[de] Das Datum, ab dem die Information g\u00fcltig ist.\n[en] The date from which the information is valid.\n",
@@ -1681,7 +1681,7 @@
             "type": "object"
         },
         "TrainingTypeEnum": {
-            "description": "[en] Types of training or education.\n[de] Ausbildungs- oder Bildungstypen.",
+            "description": "Types of training or education.",
             "enum": [
                 "schulabschluss",
                 "efz",
@@ -1697,7 +1697,7 @@
     "$id": "https://ld.ech.ch/schema/0294/actors",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
-    "description": "[de] Container f\u00fcr politische Akteure, Gruppen und Beziehungen.\n[en] Container for political actors, groups, and relationships.",
+    "description": "Container for political actors, groups, and relationships.",
     "metamodel_version": "1.11.0",
     "properties": {
         "global_uri": {
@@ -1705,7 +1705,7 @@
             "type": "string"
         },
         "groups": {
-            "description": "[de] Sammlung von Gruppen.\n[en] Collection of groups.\n",
+            "description": "Collection of groups.\n",
             "items": {
                 "$ref": "#/$defs/Group"
             },
@@ -1715,7 +1715,7 @@
             ]
         },
         "interest_links": {
-            "description": "[de] Sammlung von Interessenbindungen.\n[en] Collection of interest links.range: InterestLink\n",
+            "description": "Collection of interest links.range: InterestLink\n",
             "items": {
                 "$ref": "#/$defs/InterestLink"
             },
@@ -1732,7 +1732,7 @@
             ]
         },
         "memberships": {
-            "description": "[de] Sammlung von Mitgliedschaften.\n[en] Collection of memberships.\n",
+            "description": "Collection of memberships.\n",
             "items": {
                 "$ref": "#/$defs/Membership"
             },
@@ -1742,7 +1742,7 @@
             ]
         },
         "persons": {
-            "description": "[de] Sammlung von Personen.\n[en] Collection of persons.\n",
+            "description": "Collection of persons.\n",
             "items": {
                 "$ref": "#/$defs/Person"
             },

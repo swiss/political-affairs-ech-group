@@ -3,9 +3,7 @@
 ## Class: Person 
 
 
-_[de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Berufen._
-
-_[en] A person with identifiers, names, addresses, citizenships, and occupations._
+_A person with identifiers, names, addresses, citizenships, and occupations._
 
 __
 
@@ -22,20 +20,20 @@ __
 | ---  | --- | --- |
 | label | 0..1 <br/> [String](String.md) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.). [en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).  |
 | label_long | 0..1 <br/> [String](String.md) | [de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.). [en] Option to assign an extended label to a structured piece of information (e.g., display name with title, position, etc.).  |
-| birth_year | 0..1 <br/> [Integer](Integer.md) | [de] Geburtsjahr. [en] Year of birth. Only to be used, if there is no full `birthDate` available.  |
-| birth_date | 0..1 <br/> [Date](Date.md) | [de] Genaues Geburtsdatum. [en] Exact date of birth if available and public. This field has precedence over the field `birthYear`.  |
-| death_date | 0..1 <br/> [Date](Date.md) | [de] Genaues Todesdatum. [en] Exact date of death.  |
-| picture | 0..1 <br/> [Uri](Uri.md) | [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF). [en] Link to an image (preferred: PNG, then JPG, then GIF).  |
-| names | * <br/> [Name](Name.md) | [en] Names of the person with type and value. [de] Namen der Person mit Typ und Wert.  |
-| addresses | * <br/> [Address](Address.md) | [de] Adressen mit Typ (privat, geschäftlich, lokal). [en] Addresses with type (private, business, local).  |
-| language_proficiencies | * <br/> [LanguageProficiency](LanguageProficiency.md) | [de] Sprachkompetenzen der Person. [en] Language proficiencies of the person.  |
-| citizenships | * <br/> [Citizenship](Citizenship.md) | [de] Staatsbürgerschaften der Person. [en] Citizenships of the person.  |
-| genders | * <br/> [Gender](Gender.md) | [de] Geschlecht der Person. [en] Gender of the person.  |
-| occupations | * <br/> [Occupation](Occupation.md) | [de] Berufe oder Tätigkeiten der Person. [en] Occupations or professions of the person.  |
-| trainings | * <br/> [Training](Training.md) | [de] Ausbildungen oder Bildungen der Person. [en] Trainings or educations of the person.  |
-| contacts | * <br/> [Contact](Contact.md) | [en] Contact information (email, website, social media). [de] Kontaktinformationen (E-Mail, Website, Social Media).  |
-| electoral_district | 0..1 <br/> [ElectoralDistrict](ElectoralDistrict.md) | [de] Link zum Wahlbezirk. [en] Link to the electoral district.  |
-| interest_links | * <br/> [InterestLink](InterestLink.md) | [de] Sammlung von Interessenbindungen. [en] Collection of interest links.range: InterestLink  |
+| birth_year | 0..1 <br/> [Integer](Integer.md) | Year of birth. Only to be used, if there is no full `birthDate` available.  |
+| birth_date | 0..1 <br/> [Date](Date.md) | Exact date of birth if available and public. This field has precedence over the field `birthYear`.  |
+| death_date | 0..1 <br/> [Date](Date.md) | Exact date of death.  |
+| picture | 0..1 <br/> [Uri](Uri.md) | Link to an image (preferred: PNG, then JPG, then GIF).  |
+| names | * <br/> [Name](Name.md) | Names of the person with type and value.  |
+| addresses | * <br/> [Address](Address.md) | Addresses with type (private, business, local).  |
+| language_proficiencies | * <br/> [LanguageProficiency](LanguageProficiency.md) | Language proficiencies of the person.  |
+| citizenships | * <br/> [Citizenship](Citizenship.md) | Citizenships of the person.  |
+| genders | * <br/> [Gender](Gender.md) | Gender of the person.  |
+| occupations | * <br/> [Occupation](Occupation.md) | Occupations or professions of the person.  |
+| trainings | * <br/> [Training](Training.md) | Trainings or educations of the person.  |
+| contacts | * <br/> [Contact](Contact.md) | Contact information (email, website, social media).  |
+| electoral_district | 0..1 <br/> [ElectoralDistrict](ElectoralDistrict.md) | Link to the electoral district.  |
+| interest_links | * <br/> [InterestLink](InterestLink.md) | Collection of interest links.range: InterestLink  |
 | local_id | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. [en] Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität. [en] A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz. [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |

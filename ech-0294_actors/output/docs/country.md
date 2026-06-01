@@ -6,9 +6,7 @@ search:
 # Slot: country 
 
 
-_[de] ISO 3166 Ländercode._
-
-_[en] ISO 3166 country code._
+_ISO 3166 country code._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:country](https://ld.ech.ch/schema/0294/actors/country)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Citizenship](Citizenship.md) | [de] Staatsangehörigkeit einer Person unter Angabe des Landes und der zeitlic... |  no  |
+| [Citizenship](Citizenship.md) | Citizenship (also used for Nationality) of a person indicating the country an... |  no  |
 
 
 
@@ -82,9 +80,13 @@ URI: [act:country](https://ld.ech.ch/schema/0294/actors/country)
 <details>
 ```yaml
 name: country
-description: '[de] ISO 3166 Ländercode.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'ISO 3166 Ländercode.
 
-  [en] ISO 3166 country code.
+      '
+description: 'ISO 3166 country code.
 
   '
 examples:

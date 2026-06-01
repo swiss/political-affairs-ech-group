@@ -6,9 +6,7 @@ search:
 # Slot: organization_uid 
 
 
-_[en] UID of the organization (for analysis with NOGA codes, etc.)._
-
-_[de] UID der Organisation (für Auswertungen mit NOGA-Codes, etc.)._
+_UID of the organization (for analysis with NOGA codes, etc.)._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:organizationUid](https://ld.ech.ch/schema/0294/actors/organizationUid)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
+| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
 
 
 
@@ -67,9 +65,13 @@ URI: [act:organizationUid](https://ld.ech.ch/schema/0294/actors/organizationUid)
 <details>
 ```yaml
 name: organization_uid
-description: '[en] UID of the organization (for analysis with NOGA codes, etc.).
+annotations:
+  description_de:
+    tag: description_de
+    value: 'UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).
 
-  [de] UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).
+      '
+description: 'UID of the organization (for analysis with NOGA codes, etc.).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

@@ -6,9 +6,7 @@ search:
 # Slot: authorized_to_vote 
 
 
-_[de] Gibt an, ob die Person stimmberechtigt ist._
-
-_[en] Indicates if the person is authorized to vote._
+_Indicates if the person is authorized to vote._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:authorizedToVote](https://ld.ech.ch/schema/0294/actors/authorizedToVot
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |  no  |
+| [Membership](Membership.md) | A membership relationship between a person and a group |  no  |
 
 
 
@@ -67,9 +65,13 @@ URI: [act:authorizedToVote](https://ld.ech.ch/schema/0294/actors/authorizedToVot
 <details>
 ```yaml
 name: authorized_to_vote
-description: '[de] Gibt an, ob die Person stimmberechtigt ist.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Gibt an, ob die Person stimmberechtigt ist.
 
-  [en] Indicates if the person is authorized to vote.
+      '
+description: 'Indicates if the person is authorized to vote.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

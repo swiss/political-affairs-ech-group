@@ -6,9 +6,7 @@ search:
 # Slot: enterprise_uid 
 
 
-_[de] UID des Unternehmens._
-
-_[en] UID of the enterprise._
+_UID of the enterprise._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:enterpriseUid](https://ld.ech.ch/schema/0294/actors/enterpriseUid)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Occupation](Occupation.md) | [de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19... |  no  |
+| [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |  no  |
 
 
 
@@ -67,9 +65,13 @@ URI: [act:enterpriseUid](https://ld.ech.ch/schema/0294/actors/enterpriseUid)
 <details>
 ```yaml
 name: enterprise_uid
-description: '[de] UID des Unternehmens.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'UID des Unternehmens.
 
-  [en] UID of the enterprise.
+      '
+description: 'UID of the enterprise.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

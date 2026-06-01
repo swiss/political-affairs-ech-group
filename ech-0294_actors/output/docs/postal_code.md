@@ -6,9 +6,7 @@ search:
 # Slot: postal_code 
 
 
-_[de] Postleitzahl._
-
-_[en] Postal code._
+_Postal code._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:postalCode](https://ld.ech.ch/schema/0294/actors/postalCode)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Address](Address.md) | [de] Eine Adresse mit einem Typ (z |  no  |
+| [Address](Address.md) | An address with a type (e |  no  |
 
 
 
@@ -67,9 +65,13 @@ URI: [act:postalCode](https://ld.ech.ch/schema/0294/actors/postalCode)
 <details>
 ```yaml
 name: postal_code
-description: '[de] Postleitzahl.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Postleitzahl.
 
-  [en] Postal code.
+      '
+description: 'Postal code.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

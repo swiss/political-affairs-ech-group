@@ -6,9 +6,7 @@ search:
 # Slot: group_label 
 
 
-_[de] Name des Gremiums zum Zeitpunkt der Verknüpfung._
-
-_[en] Name of the body/group at time of linking._
+_Name of the body/group at time of linking._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:groupLabel](https://ld.ech.ch/schema/0294/actors/groupLabel)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [PersonReference](PersonReference.md) | [de] Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifika... |  no  |
+| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |  no  |
 
 
 
@@ -67,9 +65,13 @@ URI: [act:groupLabel](https://ld.ech.ch/schema/0294/actors/groupLabel)
 <details>
 ```yaml
 name: group_label
-description: '[de] Name des Gremiums zum Zeitpunkt der Verknüpfung.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Name des Gremiums zum Zeitpunkt der Verknüpfung.
 
-  [en] Name of the body/group at time of linking.
+      '
+description: 'Name of the body/group at time of linking.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

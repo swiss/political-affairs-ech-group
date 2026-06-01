@@ -3,9 +3,7 @@
 
 
 
-_[en] Types of addresses._
-
-_[de] Adresstypen._
+_Types of addresses._
 
 __
 
@@ -18,9 +16,9 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 ### Permissible Values
 | Value | Meaning | Description |
 | --- | --- | --- |
-| privateAddress | None | [en] Private address |
-| businessAddress | None | [en] Business address |
-| localAddress | None | [en] Local address |
+| privateAddress | None | Private address |
+| businessAddress | None | Business address |
+| localAddress | None | Local address |
 
 
 

@@ -6,9 +6,7 @@ search:
 # Slot: enterprise 
 
 
-_[de] Name des Unternehmens._
-
-_[en] Name of the enterprise._
+_Name of the enterprise._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:enterprise](https://ld.ech.ch/schema/0294/actors/enterprise)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Occupation](Occupation.md) | [de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19... |  no  |
+| [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |  no  |
 
 
 
@@ -67,9 +65,13 @@ URI: [act:enterprise](https://ld.ech.ch/schema/0294/actors/enterprise)
 <details>
 ```yaml
 name: enterprise
-description: '[de] Name des Unternehmens.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Name des Unternehmens.
 
-  [en] Name of the enterprise.
+      '
+description: 'Name of the enterprise.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

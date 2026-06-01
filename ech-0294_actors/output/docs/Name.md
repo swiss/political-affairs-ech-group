@@ -3,9 +3,7 @@
 ## Class: Name 
 
 
-_[de] Ein Name mit einem Typ (z.B. Rufname, amtlicher Name) und einem Wert und einer zeitlichen Gültigkeit._
-
-_[en] A name with a type (e.g., call name, official name) and a value._
+_A name with a type (e.g., call name, official name) and a value._
 
 __
 
@@ -20,7 +18,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| name_type | 0..1 <br/> [NameTypeEnum](NameTypeEnum.md) | [de] Typ des Namens. [en] Type of name.  |
+| name_type | 0..1 <br/> [NameTypeEnum](NameTypeEnum.md) | Type of name.  |
 | value | 0..1 <br/> [String](String.md) | [de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc. [en] The value of an information besides other attributes such as type, language, etc.  |
 | valid_from | 0..1 <br/> [Date](Date.md) | [de] Das Datum, ab dem die Information gültig ist. [en] The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |
 | valid_through | 0..1 <br/> [Date](Date.md) | [de] Das Datum, bis und mit dem die Information gültig ist. [en] The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |

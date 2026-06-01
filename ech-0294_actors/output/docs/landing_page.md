@@ -6,9 +6,7 @@ search:
 # Slot: landing_page 
 
 
-_[de] Website mit weiteren Informationen._
-
-_[en] Website providing further information._
+_Website providing further information._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:landingPage](https://ld.ech.ch/schema/0294/actors/landingPage)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [Group](Group.md) | A political group, organization, or body (e |  no  |
 
 
 
@@ -67,9 +65,13 @@ URI: [act:landingPage](https://ld.ech.ch/schema/0294/actors/landingPage)
 <details>
 ```yaml
 name: landing_page
-description: '[de] Website mit weiteren Informationen.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Website mit weiteren Informationen.
 
-  [en] Website providing further information.
+      '
+description: 'Website providing further information.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

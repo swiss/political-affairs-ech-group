@@ -6,9 +6,7 @@ search:
 # Slot: postal_locality 
 
 
-_[de] Ort._
-
-_[en] Locality._
+_Locality._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:postalLocality](https://ld.ech.ch/schema/0294/actors/postalLocality)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Address](Address.md) | [de] Eine Adresse mit einem Typ (z |  no  |
+| [Address](Address.md) | An address with a type (e |  no  |
 
 
 
@@ -75,9 +73,13 @@ URI: [act:postalLocality](https://ld.ech.ch/schema/0294/actors/postalLocality)
 <details>
 ```yaml
 name: postal_locality
-description: '[de] Ort.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Ort.
 
-  [en] Locality.
+      '
+description: 'Locality.
 
   '
 examples:

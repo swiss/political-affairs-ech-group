@@ -6,9 +6,7 @@ search:
 # Slot: birth_year 
 
 
-_[de] Geburtsjahr._
-
-_[en] Year of birth. Only to be used, if there is no full `birthDate` available._
+_Year of birth. Only to be used, if there is no full `birthDate` available._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:birthYear](https://ld.ech.ch/schema/0294/actors/birthYear)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
+| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
 
 
 
@@ -75,9 +73,13 @@ URI: [act:birthYear](https://ld.ech.ch/schema/0294/actors/birthYear)
 <details>
 ```yaml
 name: birth_year
-description: '[de] Geburtsjahr.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Geburtsjahr.
 
-  [en] Year of birth. Only to be used, if there is no full `birthDate` available.
+      '
+description: 'Year of birth. Only to be used, if there is no full `birthDate` available.
 
   '
 examples:

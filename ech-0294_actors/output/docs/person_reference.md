@@ -6,9 +6,7 @@ search:
 # Slot: person_reference 
 
 
-_[de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung._
-
-_[en] Reference to a person with snapshot data at time of linking._
+_Reference to a person with snapshot data at time of linking._
 
 __
 
@@ -29,8 +27,8 @@ URI: [act:personReference](https://ld.ech.ch/schema/0294/actors/personReference)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |  no  |
-| [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
+| [Membership](Membership.md) | A membership relationship between a person and a group |  no  |
+| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
 
 
 
@@ -68,9 +66,13 @@ URI: [act:personReference](https://ld.ech.ch/schema/0294/actors/personReference)
 <details>
 ```yaml
 name: person_reference
-description: '[de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
 
-  [en] Reference to a person with snapshot data at time of linking.
+      '
+description: 'Reference to a person with snapshot data at time of linking.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

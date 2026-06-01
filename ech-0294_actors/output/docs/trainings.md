@@ -6,9 +6,7 @@ search:
 # Slot: trainings 
 
 
-_[de] Ausbildungen oder Bildungen der Person._
-
-_[en] Trainings or educations of the person._
+_Trainings or educations of the person._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:training](https://ld.ech.ch/schema/0294/actors/training)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
+| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
 
 
 
@@ -68,9 +66,13 @@ URI: [act:training](https://ld.ech.ch/schema/0294/actors/training)
 <details>
 ```yaml
 name: trainings
-description: '[de] Ausbildungen oder Bildungen der Person.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Ausbildungen oder Bildungen der Person.
 
-  [en] Trainings or educations of the person.
+      '
+description: 'Trainings or educations of the person.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

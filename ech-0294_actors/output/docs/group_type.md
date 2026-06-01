@@ -6,9 +6,7 @@ search:
 # Slot: group_type 
 
 
-_[de] Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder ähnliches. Die genaue Bennenung und Beschreibung der Gruppierung wird über `name` gemacht._
-
-_[en] Link to the group type._
+_Link to the group type._
 
 __
 
@@ -29,8 +27,8 @@ URI: [act:groupType](https://ld.ech.ch/schema/0294/actors/groupType)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
-| [GroupReference](GroupReference.md) | [de] Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifika... |  no  |
+| [Group](Group.md) | A political group, organization, or body (e |  no  |
+| [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |  no  |
 
 
 
@@ -68,11 +66,14 @@ URI: [act:groupType](https://ld.ech.ch/schema/0294/actors/groupType)
 <details>
 ```yaml
 name: group_type
-description: '[de] Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament
-  oder ähnliches. Die genaue Bennenung und Beschreibung der Gruppierung wird über
-  `name` gemacht.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder ähnliches.
+      Die genaue Bennenung und Beschreibung der Gruppierung wird über `name` gemacht.
 
-  [en] Link to the group type.
+      '
+description: 'Link to the group type.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

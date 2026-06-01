@@ -3,9 +3,7 @@
 
 
 
-_[en] Types of contact information._
-
-_[de] Kontaktinformationstypen._
+_Types of contact information._
 
 __
 
@@ -18,10 +16,10 @@ URI: [act:ContactTypeEnum](https://ld.ech.ch/schema/0294/actors/ContactTypeEnum)
 ### Permissible Values
 | Value | Meaning | Description |
 | --- | --- | --- |
-| email | None | [en] Email address |
-| contact_website | None | [en] Contact website |
-| linked_in | None | [en] LinkedIn profile |
-| twitter | None | [en] Twitter profile |
+| email | None | Email address |
+| contact_website | None | Contact website |
+| linked_in | None | LinkedIn profile |
+| twitter | None | Twitter profile |
 
 
 

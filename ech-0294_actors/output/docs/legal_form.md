@@ -6,9 +6,7 @@ search:
 # Slot: legal_form 
 
 
-_[en] Legal form of the organization._
-
-_[de] Rechtsform der Organisation._
+_Legal form of the organization._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:legalForm](https://ld.ech.ch/schema/0294/actors/legalForm)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
+| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
 
 
 
@@ -76,9 +74,13 @@ URI: [act:legalForm](https://ld.ech.ch/schema/0294/actors/legalForm)
 <details>
 ```yaml
 name: legal_form
-description: '[en] Legal form of the organization.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Rechtsform der Organisation.
 
-  [de] Rechtsform der Organisation.
+      '
+description: 'Legal form of the organization.
 
   '
 examples:

@@ -1,7 +1,6 @@
 # Actors Schema
 
-[de] Ein Schema zur Beschreibung politischer Akteure einschliesslich Personen, Gruppen, Mitgliedschaften und Interessenbindungen.
-[en] A schema describing political actors including persons, groups, memberships, and interest links.
+A schema describing political actors including persons, groups, memberships, and interest links.
 
 
 URI: https://ld.ech.ch/schema/0294/actors
@@ -14,31 +13,31 @@ Name: actors-schema
 
 | Class | Description |
 | --- | --- |
-| [Address](Address.md) | [de] Eine Adresse mit einem Typ (z |
-| [Citizenship](Citizenship.md) | [de] Staatsangehörigkeit einer Person unter Angabe des Landes und der zeitlic... |
-| [Contact](Contact.md) | [de] Kontaktinformation einer Person mit Angabe eines Typs (z |
-| [Container](Container.md) | [de] Container für politische Akteure, Gruppen und Beziehungen |
-| [ElectoralDistrict](ElectoralDistrict.md) | [de] Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit z... |
-| [Gender](Gender.md) | [de] Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitli... |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |
-| [GroupReference](GroupReference.md) | [de] Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifika... |
-| [GroupType](GroupType.md) | [de] Art der Gruppe (z |
+| [Address](Address.md) | An address with a type (e |
+| [Citizenship](Citizenship.md) | Citizenship (also used for Nationality) of a person indicating the country an... |
+| [Contact](Contact.md) | Contact information of a person indicating a type (e |
+| [Container](Container.md) | Container for political actors, groups, and relationships |
+| [ElectoralDistrict](ElectoralDistrict.md) | Electoral district or region where a person is politically active; with tempo... |
+| [Gender](Gender.md) | Gender of a person indicating a gender code and temporal validity |
+| [Group](Group.md) | A political group, organization, or body (e |
+| [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |
+| [GroupType](GroupType.md) | Type of group (e |
 | [HasCreationModificationDates](HasCreationModificationDates.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Ä... |
 | [HasIdentification](HasIdentification.md) | [de] Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Ve... |
 | [HasTemporalValidity](HasTemporalValidity.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gülti... |
-| [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |
+| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |
 | [IsEventWithDuration](IsEventWithDuration.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder V... |
 | [IsInstantaneousEvent](IsInstantaneousEvent.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereign... |
 | [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |
-| [LanguageProficiency](LanguageProficiency.md) | [de] Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um d... |
-| [Membership](Membership.md) | [de] Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe |
+| [LanguageProficiency](LanguageProficiency.md) | Language proficiency of a person indicating the language and whether it is th... |
+| [Membership](Membership.md) | A membership relationship between a person and a group |
 | [MultilingualValue](MultilingualValue.md) | [de] Ein mehrsprachiger String mit Angabe der Sprache |
-| [Name](Name.md) | [de] Ein Name mit einem Typ (z |
-| [Occupation](Occupation.md) | [de] Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19... |
-| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |
-| [PersonReference](PersonReference.md) | [de] Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifika... |
-| [RoleType](RoleType.md) | [de] Rolle einer Person in einer Mitgliedschaft oder Funktion (z |
-| [Training](Training.md) | [de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z |
+| [Name](Name.md) | A name with a type (e |
+| [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |
+| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |
+| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |
+| [RoleType](RoleType.md) | Role of a person in a membership or function (e |
+| [Training](Training.md) | Training or education of a person indicating a type (e |
 
 
 
@@ -46,18 +45,18 @@ Name: actors-schema
 
 | Slot | Description |
 | --- | --- |
-| [abbreviation](abbreviation.md) | [de] Abkürzung (kann mehrsprachig sein) |
-| [address_type](address_type.md) | [de] Typ der Adresse |
-| [address_uri](address_uri.md) | [de] URI der Adresse |
-| [addresses](addresses.md) | [de] Adressen mit Typ (privat, geschäftlich, lokal) |
-| [authorized_to_vote](authorized_to_vote.md) | [de] Gibt an, ob die Person stimmberechtigt ist |
-| [birth_date](birth_date.md) | [de] Genaues Geburtsdatum |
-| [birth_year](birth_year.md) | [de] Geburtsjahr |
-| [citizenships](citizenships.md) | [de] Staatsbürgerschaften der Person |
-| [committee](committee.md) | [en] Committee or board (e |
-| [contact_type](contact_type.md) | [de] Typ der Kontaktinformation |
-| [contacts](contacts.md) | [en] Contact information (email, website, social media) |
-| [country](country.md) | [de] ISO 3166 Ländercode |
+| [abbreviation](abbreviation.md) | Abbreviation (can be multilingual) |
+| [address_type](address_type.md) | Type of address |
+| [address_uri](address_uri.md) | URI of the address |
+| [addresses](addresses.md) | Addresses with type (private, business, local) |
+| [authorized_to_vote](authorized_to_vote.md) | Indicates if the person is authorized to vote |
+| [birth_date](birth_date.md) | Exact date of birth if available and public |
+| [birth_year](birth_year.md) | Year of birth |
+| [citizenships](citizenships.md) | Citizenships of the person |
+| [committee](committee.md) | Committee or board (e |
+| [contact_type](contact_type.md) | Type of contact information |
+| [contacts](contacts.md) | Contact information (email, website, social media) |
+| [country](country.md) | ISO 3166 country code |
 | [date_actual](date_actual.md) | [de] Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommens (oh... |
 | [date_begin_actual](date_begin_actual.md) | [de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitda... |
 | [date_begin_planned](date_begin_planned.md) | [de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer |
@@ -74,61 +73,61 @@ Name: actors-schema
 | [datetime_end_planned](datetime_end_planned.md) | [de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens ... |
 | [datetime_modified](datetime_modified.md) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde |
 | [datetime_planned](datetime_planned.md) | [de] Das geplante Datum und die Uhrzeit eines instantanen Ereignisses oder Vo... |
-| [death_date](death_date.md) | [de] Genaues Todesdatum |
-| [description](description.md) | [de] Kurze Beschreibung der Gruppierung |
-| [district](district.md) | [de] Wahlkreis oder Wahlregion |
-| [electoral_district](electoral_district.md) | [de] Link zum Wahlbezirk |
-| [enterprise](enterprise.md) | [de] Name des Unternehmens |
-| [enterprise_uid](enterprise_uid.md) | [de] UID des Unternehmens |
-| [function_role](function_role.md) | [en] Function or role in the organization |
-| [gender_code](gender_code.md) | [de] Geschlechtscode (z |
-| [genders](genders.md) | [de] Geschlecht der Person |
+| [death_date](death_date.md) | Exact date of death |
+| [description](description.md) | Description of the entity |
+| [district](district.md) | Electoral district or region |
+| [electoral_district](electoral_district.md) | Link to the electoral district |
+| [enterprise](enterprise.md) | Name of the enterprise |
+| [enterprise_uid](enterprise_uid.md) | UID of the enterprise |
+| [function_role](function_role.md) | Function or role in the organization |
+| [gender_code](gender_code.md) | Gender code (e |
+| [genders](genders.md) | Gender of the person |
 | [global_uri](global_uri.md) | [de] Eine eindeutige, global gültige URI für die Entität |
-| [group_label](group_label.md) | [de] Name des Gremiums zum Zeitpunkt der Verknüpfung |
-| [group_reference](group_reference.md) | [de] Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfun... |
-| [group_type](group_type.md) | [de] Klasse der Gruppierung, wie z |
-| [group_type_enum](group_type_enum.md) | [de] Link zum kontrollierten Vokabular für Gruppentypen |
-| [groups](groups.md) | [de] Sammlung von Gruppen |
-| [interest_links](interest_links.md) | [de] Sammlung von Interessenbindungen |
-| [interest_type](interest_type.md) | [de] Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verei... |
+| [group_label](group_label.md) | Name of the body/group at time of linking |
+| [group_reference](group_reference.md) | Reference to a group with snapshot data at time of linking |
+| [group_type](group_type.md) | Link to the group type |
+| [group_type_enum](group_type_enum.md) | Link to the controlled vocabulary for group types |
+| [groups](groups.md) | Collection of groups |
+| [interest_links](interest_links.md) | Collection of interest links |
+| [interest_type](interest_type.md) | Type of interest link (professional activity, political office, association) |
 | [is_active](is_active.md) | [de] Gibt an, ob die Information aktuell gültig ist |
-| [is_correspondence](is_correspondence.md) | [de] Gibt an, ob es sich um die bevorzugte Sprache handelt |
-| [is_native](is_native.md) | [de] Gibt an, ob es sich um die Muttersprache handelt |
-| [is_paid](is_paid.md) | [de] Gibt an, ob die Position bezahlt ist |
+| [is_correspondence](is_correspondence.md) | Indicates if this is the preferred language |
+| [is_native](is_native.md) | Indicates if this is the native language |
+| [is_paid](is_paid.md) | Indicates if the position is paid |
 | [label](label.md) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben ... |
 | [label_long](label_long.md) | [de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel z... |
-| [landing_page](landing_page.md) | [de] Website mit weiteren Informationen |
+| [landing_page](landing_page.md) | Website providing further information |
 | [language](language.md) | [de] Sprachcode im ISO 639-1 Format |
-| [language_proficiencies](language_proficiencies.md) | [de] Sprachkompetenzen der Person |
-| [legal_form](legal_form.md) | [en] Legal form of the organization |
+| [language_proficiencies](language_proficiencies.md) | Language proficiencies of the person |
+| [legal_form](legal_form.md) | Legal form of the organization |
 | [local_id](local_id.md) | [de] Lokaler Identifikator |
-| [memberships](memberships.md) | [de] Sammlung von Mitgliedschaften |
+| [memberships](memberships.md) | Collection of memberships |
 | [multilingual_value](multilingual_value.md) | [de] Ein mehrsprachiger Wert mit Angabe der Sprache |
-| [name_type](name_type.md) | [de] Typ des Namens |
-| [names](names.md) | [en] Names of the person with type and value |
-| [occupation_code](occupation_code.md) | [de] ISCO-19 Code der Tätigkeit |
-| [occupations](occupations.md) | [de] Berufe oder Tätigkeiten der Person |
-| [organization_address](organization_address.md) | [en] Address of the organization |
-| [organization_label](organization_label.md) | [en] Label of the organization |
-| [organization_uid](organization_uid.md) | [en] UID of the organization (for analysis with NOGA codes, etc |
-| [parent_groups](parent_groups.md) | [de] Übergeordneten Gruppe |
-| [party_color](party_color.md) | [de] Parteifarbe (optional für Parteien) |
-| [person_reference](person_reference.md) | [de] Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfun... |
-| [persons](persons.md) | [de] Sammlung von Personen |
-| [picture](picture.md) | [de] Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF) |
-| [postal_code](postal_code.md) | [de] Postleitzahl |
-| [postal_locality](postal_locality.md) | [de] Ort |
-| [pronouns](pronouns.md) | [de] Von der Person verwendete Pronomen |
+| [name_type](name_type.md) | Type of name |
+| [names](names.md) | Names of the person with type and value |
+| [occupation_code](occupation_code.md) | ISCO-19 code of the occupation |
+| [occupations](occupations.md) | Occupations or professions of the person |
+| [organization_address](organization_address.md) | Address of the organization |
+| [organization_label](organization_label.md) | Label of the organization |
+| [organization_uid](organization_uid.md) | UID of the organization (for analysis with NOGA codes, etc |
+| [parent_groups](parent_groups.md) | Link to parent groups |
+| [party_color](party_color.md) | Party color (optional for parties) |
+| [person_reference](person_reference.md) | Reference to a person with snapshot data at time of linking |
+| [persons](persons.md) | Collection of persons |
+| [picture](picture.md) | Link to an image (preferred: PNG, then JPG, then GIF) |
+| [postal_code](postal_code.md) | Postal code |
+| [postal_locality](postal_locality.md) | Locality |
+| [pronouns](pronouns.md) | Pronouns used by the person |
 | [remark](remark.md) | [de] Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen Kontext ... |
-| [role_label](role_label.md) | [en] Descriptive label for the role when 'other' is selected in the RoleEnum |
-| [role_type](role_type.md) | [en] Role of the person in the membership or function |
-| [role_type_enum](role_type_enum.md) | [en] Role of the person in the membership or function |
-| [spatial](spatial.md) | [de] Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z |
-| [statutes_url](statutes_url.md) | [de] URL zu Parteistatuten (optional für Parteien) |
-| [street_address](street_address.md) | [de] Strassenadresse |
-| [training_code](training_code.md) | [de] ISCO-19 Code der Ausbildung oder Bildung |
-| [training_type](training_type.md) | [de] Typ der Ausbildung oder Bildung |
-| [trainings](trainings.md) | [de] Ausbildungen oder Bildungen der Person |
+| [role_label](role_label.md) | Descriptive label for the role when 'other' is selected in the RoleEnum |
+| [role_type](role_type.md) | Role of the person in the membership or function |
+| [role_type_enum](role_type_enum.md) | Role of the person in the membership or function |
+| [spatial](spatial.md) | Spatial reference (fos-municipality number, fos-canton number, e |
+| [statutes_url](statutes_url.md) | URL to party statutes (optional for parties) |
+| [street_address](street_address.md) | Street address |
+| [training_code](training_code.md) | ISCO-19 code of the training or education |
+| [training_type](training_type.md) | Type of training or education |
+| [trainings](trainings.md) | Trainings or educations of the person |
 | [valid_from](valid_from.md) | [de] Das Datum, ab dem die Information gültig ist |
 | [valid_through](valid_through.md) | [de] Das Datum, bis und mit dem die Information gültig ist |
 | [value](value.md) | [de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ... |
@@ -139,13 +138,13 @@ Name: actors-schema
 
 | Enumeration | Description |
 | --- | --- |
-| [AddressTypeEnum](AddressTypeEnum.md) | [en] Types of addresses |
-| [ContactTypeEnum](ContactTypeEnum.md) | [en] Types of contact information |
-| [GroupTypeEnum](GroupTypeEnum.md) | [en] Types of political groups and organizations |
-| [InterestTypeEnum](InterestTypeEnum.md) | [en] Types of interest links (conflicts of interest, political financing) |
-| [NameTypeEnum](NameTypeEnum.md) | [de] Kategorien von Namenstypen gemäss https://dam-api |
-| [RoleEnum](RoleEnum.md) | [en] Roles a person can have within a membership |
-| [TrainingTypeEnum](TrainingTypeEnum.md) | [en] Types of training or education |
+| [AddressTypeEnum](AddressTypeEnum.md) | Types of addresses |
+| [ContactTypeEnum](ContactTypeEnum.md) | Types of contact information |
+| [GroupTypeEnum](GroupTypeEnum.md) | Types of political groups and organizations |
+| [InterestTypeEnum](InterestTypeEnum.md) | Types of interest links (conflicts of interest, political financing) |
+| [NameTypeEnum](NameTypeEnum.md) | Categories of name types according to https://dam-api |
+| [RoleEnum](RoleEnum.md) | Roles a person can have within a membership |
+| [TrainingTypeEnum](TrainingTypeEnum.md) | Types of training or education |
 
 
 ## Types

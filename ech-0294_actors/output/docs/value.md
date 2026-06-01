@@ -29,9 +29,9 @@ URI: [mcm:value](https://ld.ech.ch/schema/0292/meta-common/value)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Name](Name.md) | [de] Ein Name mit einem Typ (z |  no  |
-| [Training](Training.md) | [de] Ausbildung oder Bildung einer Person mit Angabe eines Typs (z |  no  |
-| [Contact](Contact.md) | [de] Kontaktinformation einer Person mit Angabe eines Typs (z |  no  |
+| [Name](Name.md) | A name with a type (e |  no  |
+| [Training](Training.md) | Training or education of a person indicating a type (e |  no  |
+| [Contact](Contact.md) | Contact information of a person indicating a type (e |  no  |
 | [MultilingualValue](MultilingualValue.md) | [de] Ein mehrsprachiger String mit Angabe der Sprache |  no  |
 
 

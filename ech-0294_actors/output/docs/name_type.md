@@ -6,9 +6,7 @@ search:
 # Slot: name_type 
 
 
-_[de] Typ des Namens._
-
-_[en] Type of name._
+_Type of name._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:nameType](https://ld.ech.ch/schema/0294/actors/nameType)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Name](Name.md) | [de] Ein Name mit einem Typ (z |  no  |
+| [Name](Name.md) | A name with a type (e |  no  |
 
 
 
@@ -75,9 +73,13 @@ URI: [act:nameType](https://ld.ech.ch/schema/0294/actors/nameType)
 <details>
 ```yaml
 name: name_type
-description: '[de] Typ des Namens.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Typ des Namens.
 
-  [en] Type of name.
+      '
+description: 'Type of name.
 
   '
 examples:

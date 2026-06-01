@@ -6,9 +6,7 @@ search:
 # Slot: spatial 
 
 
-_[de] Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z.B. ld.admin.ch/municipality/1234, ld.admin.ch/canton/23)._
-
-_[en] Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234, ld.admin.ch/canton/23)._
+_Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234, ld.admin.ch/canton/23)._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:spatial](https://ld.ech.ch/schema/0294/actors/spatial)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [Group](Group.md) | A political group, organization, or body (e |  no  |
 
 
 
@@ -66,11 +64,15 @@ URI: [act:spatial](https://ld.ech.ch/schema/0294/actors/spatial)
 <details>
 ```yaml
 name: spatial
-description: '[de] Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z.B.
-  ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer, z.B. ld.admin.ch/municipality/1234,
+      ld.admin.ch/canton/23).
 
-  [en] Spatial reference (fos-municipality number, fos-canton number, e.g., ld.admin.ch/municipality/1234,
-  ld.admin.ch/canton/23).
+      '
+description: 'Spatial reference (fos-municipality number, fos-canton number, e.g.,
+  ld.admin.ch/municipality/1234, ld.admin.ch/canton/23).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

@@ -6,9 +6,7 @@ search:
 # Slot: citizenships 
 
 
-_[de] Staatsbürgerschaften der Person._
-
-_[en] Citizenships of the person._
+_Citizenships of the person._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:citizenship](https://ld.ech.ch/schema/0294/actors/citizenship)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
+| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
 
 
 
@@ -68,9 +66,13 @@ URI: [act:citizenship](https://ld.ech.ch/schema/0294/actors/citizenship)
 <details>
 ```yaml
 name: citizenships
-description: '[de] Staatsbürgerschaften der Person.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Staatsbürgerschaften der Person.
 
-  [en] Citizenships of the person.
+      '
+description: 'Citizenships of the person.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

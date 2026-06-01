@@ -6,9 +6,7 @@ search:
 # Slot: parent_groups 
 
 
-_[de] Übergeordneten Gruppe. Zum Beispiel die Mutterpartei, zu Kantonalenparteien. Oder zur Beschreibung der Hierarchie in Exekutive. Verknüpfung von Subkommissionen mit Kommissionen. (parentGroup wird immer im selben group_type verwendet.)_
-
-_[en] Link to parent groups._
+_Link to parent groups._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:parentGroup](https://ld.ech.ch/schema/0294/actors/parentGroup)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [Group](Group.md) | A political group, organization, or body (e |  no  |
 
 
 
@@ -68,11 +66,15 @@ URI: [act:parentGroup](https://ld.ech.ch/schema/0294/actors/parentGroup)
 <details>
 ```yaml
 name: parent_groups
-description: '[de] Übergeordneten Gruppe. Zum Beispiel die Mutterpartei, zu Kantonalenparteien.
-  Oder zur Beschreibung der Hierarchie in Exekutive. Verknüpfung von Subkommissionen
-  mit Kommissionen. (parentGroup wird immer im selben group_type verwendet.)
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Übergeordneten Gruppe. Zum Beispiel die Mutterpartei, zu Kantonalenparteien.
+      Oder zur Beschreibung der Hierarchie in Exekutive. Verknüpfung von Subkommissionen
+      mit Kommissionen. (parentGroup wird immer im selben group_type verwendet.)
 
-  [en] Link to parent groups.
+      '
+description: 'Link to parent groups.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

@@ -6,9 +6,7 @@ search:
 # Slot: gender_code 
 
 
-_[de] Geschlechtscode (z.B. gemäß ISO 5218)._
-
-_[en] Gender code (e.g., according to ISO 5218)._
+_Gender code (e.g., according to ISO 5218)._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:genderCode](https://ld.ech.ch/schema/0294/actors/genderCode)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Gender](Gender.md) | [de] Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitli... |  no  |
+| [Gender](Gender.md) | Gender of a person indicating a gender code and temporal validity |  no  |
 
 
 
@@ -74,9 +72,13 @@ URI: [act:genderCode](https://ld.ech.ch/schema/0294/actors/genderCode)
 <details>
 ```yaml
 name: gender_code
-description: '[de] Geschlechtscode (z.B. gemäß ISO 5218).
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Geschlechtscode (z.B. gemäß ISO 5218).
 
-  [en] Gender code (e.g., according to ISO 5218).
+      '
+description: 'Gender code (e.g., according to ISO 5218).
 
   '
 examples:

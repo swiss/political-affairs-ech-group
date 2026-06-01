@@ -6,9 +6,7 @@ search:
 # Slot: description 
 
 
-_[de] Kurze Beschreibung der Gruppierung._
-
-_[en] Description of the entity._
+_Description of the entity._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:description](https://ld.ech.ch/schema/0294/actors/description)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [Group](Group.md) | A political group, organization, or body (e |  no  |
 
 
 
@@ -67,9 +65,13 @@ URI: [act:description](https://ld.ech.ch/schema/0294/actors/description)
 <details>
 ```yaml
 name: description
-description: '[de] Kurze Beschreibung der Gruppierung.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Kurze Beschreibung der Gruppierung.
 
-  [en] Description of the entity.
+      '
+description: 'Description of the entity.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

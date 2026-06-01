@@ -6,9 +6,7 @@ search:
 # Slot: function_role 
 
 
-_[en] Function or role in the organization._
-
-_[de] Funktion oder Rolle in der Organisation._
+_Function or role in the organization._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:functionRole](https://ld.ech.ch/schema/0294/actors/functionRole)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
+| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
 
 
 
@@ -67,9 +65,13 @@ URI: [act:functionRole](https://ld.ech.ch/schema/0294/actors/functionRole)
 <details>
 ```yaml
 name: function_role
-description: '[en] Function or role in the organization.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Funktion oder Rolle in der Organisation.
 
-  [de] Funktion oder Rolle in der Organisation.
+      '
+description: 'Function or role in the organization.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

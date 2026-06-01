@@ -6,9 +6,7 @@ search:
 # Slot: abbreviation 
 
 
-_[de] Abkürzung (kann mehrsprachig sein)._
-
-_[en] Abbreviation (can be multilingual)._
+_Abbreviation (can be multilingual)._
 
 __
 
@@ -29,8 +27,8 @@ URI: [act:abbreviation](https://ld.ech.ch/schema/0294/actors/abbreviation)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Group](Group.md) | [de] Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
-| [GroupReference](GroupReference.md) | [de] Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifika... |  no  |
+| [Group](Group.md) | A political group, organization, or body (e |  no  |
+| [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |  no  |
 
 
 
@@ -68,9 +66,13 @@ URI: [act:abbreviation](https://ld.ech.ch/schema/0294/actors/abbreviation)
 <details>
 ```yaml
 name: abbreviation
-description: '[de] Abkürzung (kann mehrsprachig sein).
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Abkürzung (kann mehrsprachig sein).
 
-  [en] Abbreviation (can be multilingual).
+      '
+description: 'Abbreviation (can be multilingual).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

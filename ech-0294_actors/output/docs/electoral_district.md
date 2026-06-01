@@ -6,9 +6,7 @@ search:
 # Slot: electoral_district 
 
 
-_[de] Link zum Wahlbezirk._
-
-_[en] Link to the electoral district._
+_Link to the electoral district._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:electoralDistrict](https://ld.ech.ch/schema/0294/actors/electoralDistr
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
+| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
 
 
 
@@ -67,9 +65,13 @@ URI: [act:electoralDistrict](https://ld.ech.ch/schema/0294/actors/electoralDistr
 <details>
 ```yaml
 name: electoral_district
-description: '[de] Link zum Wahlbezirk.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Link zum Wahlbezirk.
 
-  [en] Link to the electoral district.
+      '
+description: 'Link to the electoral district.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

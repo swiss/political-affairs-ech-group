@@ -6,9 +6,7 @@ search:
 # Slot: contact_type 
 
 
-_[de] Typ der Kontaktinformation._
-
-_[en] Type of contact information._
+_Type of contact information._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:contactType](https://ld.ech.ch/schema/0294/actors/contactType)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Contact](Contact.md) | [de] Kontaktinformation einer Person mit Angabe eines Typs (z |  no  |
+| [Contact](Contact.md) | Contact information of a person indicating a type (e |  no  |
 
 
 
@@ -75,9 +73,13 @@ URI: [act:contactType](https://ld.ech.ch/schema/0294/actors/contactType)
 <details>
 ```yaml
 name: contact_type
-description: '[de] Typ der Kontaktinformation.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Typ der Kontaktinformation.
 
-  [en] Type of contact information.
+      '
+description: 'Type of contact information.
 
   '
 examples:

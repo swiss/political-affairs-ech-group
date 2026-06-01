@@ -6,9 +6,7 @@ search:
 # Slot: organization_address 
 
 
-_[en] Address of the organization._
-
-_[de] Adresse der Organisation._
+_Address of the organization._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:organizationAddress](https://ld.ech.ch/schema/0294/actors/organization
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
+| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
 
 
 
@@ -67,9 +65,13 @@ URI: [act:organizationAddress](https://ld.ech.ch/schema/0294/actors/organization
 <details>
 ```yaml
 name: organization_address
-description: '[en] Address of the organization.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Adresse der Organisation.
 
-  [de] Adresse der Organisation.
+      '
+description: 'Address of the organization.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

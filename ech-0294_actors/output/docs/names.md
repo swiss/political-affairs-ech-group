@@ -6,9 +6,7 @@ search:
 # Slot: names 
 
 
-_[en] Names of the person with type and value._
-
-_[de] Namen der Person mit Typ und Wert._
+_Names of the person with type and value._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:name](https://ld.ech.ch/schema/0294/actors/name)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
+| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
 
 
 
@@ -68,9 +66,13 @@ URI: [act:name](https://ld.ech.ch/schema/0294/actors/name)
 <details>
 ```yaml
 name: names
-description: '[en] Names of the person with type and value.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Namen der Person mit Typ und Wert.
 
-  [de] Namen der Person mit Typ und Wert.
+      '
+description: 'Names of the person with type and value.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

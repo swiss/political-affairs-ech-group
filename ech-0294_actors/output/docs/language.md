@@ -29,7 +29,7 @@ URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [LanguageProficiency](LanguageProficiency.md) | [de] Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um d... |  no  |
+| [LanguageProficiency](LanguageProficiency.md) | Language proficiency of a person indicating the language and whether it is th... |  no  |
 | [MultilingualValue](MultilingualValue.md) | [de] Ein mehrsprachiger String mit Angabe der Sprache |  no  |
 
 

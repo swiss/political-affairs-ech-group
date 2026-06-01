@@ -6,9 +6,7 @@ search:
 # Slot: occupations 
 
 
-_[de] Berufe oder Tätigkeiten der Person._
-
-_[en] Occupations or professions of the person._
+_Occupations or professions of the person._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:occupation](https://ld.ech.ch/schema/0294/actors/occupation)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | [de] Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften u... |  no  |
+| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
 
 
 
@@ -68,9 +66,13 @@ URI: [act:occupation](https://ld.ech.ch/schema/0294/actors/occupation)
 <details>
 ```yaml
 name: occupations
-description: '[de] Berufe oder Tätigkeiten der Person.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Berufe oder Tätigkeiten der Person.
 
-  [en] Occupations or professions of the person.
+      '
+description: 'Occupations or professions of the person.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

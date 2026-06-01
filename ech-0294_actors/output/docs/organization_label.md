@@ -6,9 +6,7 @@ search:
 # Slot: organization_label 
 
 
-_[en] Label of the organization._
-
-_[de] Bezeichnung der Organisation._
+_Label of the organization._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:organizationLabel](https://ld.ech.ch/schema/0294/actors/organizationLa
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
+| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
 
 
 
@@ -76,9 +74,13 @@ URI: [act:organizationLabel](https://ld.ech.ch/schema/0294/actors/organizationLa
 <details>
 ```yaml
 name: organization_label
-description: '[en] Label of the organization.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Bezeichnung der Organisation.
 
-  [de] Bezeichnung der Organisation.
+      '
+description: 'Label of the organization.
 
   '
 examples:

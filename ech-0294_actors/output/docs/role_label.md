@@ -6,9 +6,7 @@ search:
 # Slot: role_label 
 
 
-_[en] Descriptive label for the role when 'other' is selected in the RoleEnum._
-
-_[de] Beschreibende Bezeichnung für die Rolle, wenn 'other' im RoleEnum ausgewählt ist._
+_Descriptive label for the role when 'other' is selected in the RoleEnum._
 
 __
 
@@ -56,11 +54,14 @@ URI: [act:role_label](https://ld.ech.ch/schema/0294/actors/role_label)
 <details>
 ```yaml
 name: role_label
-description: '[en] Descriptive label for the role when ''other'' is selected in the
-  RoleEnum.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Beschreibende Bezeichnung für die Rolle, wenn ''other'' im RoleEnum ausgewählt
+      ist.
 
-  [de] Beschreibende Bezeichnung für die Rolle, wenn ''other'' im RoleEnum ausgewählt
-  ist.
+      '
+description: 'Descriptive label for the role when ''other'' is selected in the RoleEnum.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

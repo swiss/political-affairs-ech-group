@@ -6,9 +6,7 @@ search:
 # Slot: committee 
 
 
-_[en] Committee or board (e.g., foundation board, board of directors)._
-
-_[de] Gremium (z.B. Stiftungsrat, Verwaltungsrat)._
+_Committee or board (e.g., foundation board, board of directors)._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:committee](https://ld.ech.ch/schema/0294/actors/committee)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [InterestLink](InterestLink.md) | [de] Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer P... |  no  |
+| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
 
 
 
@@ -67,9 +65,13 @@ URI: [act:committee](https://ld.ech.ch/schema/0294/actors/committee)
 <details>
 ```yaml
 name: committee
-description: '[en] Committee or board (e.g., foundation board, board of directors).
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Gremium (z.B. Stiftungsrat, Verwaltungsrat).
 
-  [de] Gremium (z.B. Stiftungsrat, Verwaltungsrat).
+      '
+description: 'Committee or board (e.g., foundation board, board of directors).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

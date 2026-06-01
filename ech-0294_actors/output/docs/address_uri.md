@@ -6,9 +6,7 @@ search:
 # Slot: address_uri 
 
 
-_[de] URI der Adresse._
-
-_[en] URI of the address._
+_URI of the address._
 
 __
 
@@ -29,7 +27,7 @@ URI: [act:addressURI](https://ld.ech.ch/schema/0294/actors/addressURI)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Address](Address.md) | [de] Eine Adresse mit einem Typ (z |  no  |
+| [Address](Address.md) | An address with a type (e |  no  |
 
 
 
@@ -67,9 +65,13 @@ URI: [act:addressURI](https://ld.ech.ch/schema/0294/actors/addressURI)
 <details>
 ```yaml
 name: address_uri
-description: '[de] URI der Adresse.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'URI der Adresse.
 
-  [en] URI of the address.
+      '
+description: 'URI of the address.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors
