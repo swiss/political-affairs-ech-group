@@ -1,15 +1,3 @@
-# Interessenbindungen (Interest Links)
-
-## Einführung und Zielsetzung
-
-Das InterestLink-Schema erfasst Interessenbindungen, Interessenkonflikte und Verflechtungen von Personen im politischen Kontext mit Organisationen. Der Standard orientiert sich an den Transparenzanforderungen für Parlamentsmitglieder gemäß [Bundesversammlung - Interessenbindungen](https://www.parlament.ch/centers/documents/de/interessen-nr.pdf).
-
-**Kernziele:**
-- **Transparenz**: Offenlegung von potenziellen Interessenkonflikten
-- **Strukturierte Erfassung**: Einheitliche Klassifikation nach Art der Interessenbindung
-- **Auswertbarkeit**: Verknüpfung mit UID-Register für statistische Analysen (NOGA-Codes)
-- **Zeitliche Nachvollziehbarkeit**: Dokumentation von Start und Ende der Bindung
-
 ## Technische Struktur
 
 ### Identifikatoren und Referenzen
@@ -59,7 +47,7 @@ Interessenbindungen werden in drei Hauptkategorien klassifiziert:
 
 ### 1. professional_activity (Berufliche Tätigkeit)
 
-Berufliche Tätigkeiten außerhalb des politischen Mandats.
+Berufliche Tätigkeiten ausserhalb des politischen Mandats.
 
 **Beispiele:**
 - Anstellung in einem Unternehmen
@@ -85,7 +73,7 @@ Politische Ämter und Mandate auf anderen föderalen Ebenen oder in anderen Kör
 - Mitgliedschaft in kantonalen oder kommunalen Parlamenten
 - Regierungsräte
 - Kommissionsmitgliedschaften
-- Ämter in außerparlamentarischen Kommissionen
+- Ämter in ausserparlamentarischen Kommissionen
 
 ```yaml
 interest_type: political_office
@@ -139,7 +127,7 @@ organization_uid: CHE-116.281.426  # Swisscom AG
 Interessenbindungen ändern sich im Laufe der Zeit:
 
 ```yaml
-# Beispiel: Wechsel von Positionen
+# Wechsel von Positionen
 - id: act:interest_link_001
   person_id: https://www.wikidata.org/wiki/Q493598
   interest_type: professional_activity
@@ -188,7 +176,7 @@ Das Attribut `paid` gibt an, ob die Position vergütet ist:
 - `true`: Bezahlte Position (Entschädigung, Honorar, Lohn)
 - `false`: Ehrenamtliche/unbezahlte Position
 
-**Wichtig:** Bereits kleine Entschädigungen (z.B. Sitzungsgelder) gelten als bezahlt.
+Bereits kleine Entschädigungen (z.B. Sitzungsgelder) gelten als bezahlt.
 
 ## Interoperabilität
 
@@ -237,6 +225,18 @@ Liefert automatisch:
 - Adresse
 - NOGA-Code (Branche)
 - Handelsregistereintrag
+
+## Unterschied zu Membership
+
+| Aspekt | Membership | InterestLink |
+|--------|-----------|--------------|
+| **Zweck** | Formale Zugehörigkeit zu politischen Gruppen | Interessenbindungen und Konflikte |
+| **Zielgruppe** | Gruppen im Actor-Schema | Externe Organisationen |
+| **Beispiele** | Parteimitglied, Kommissionsmitglied | Verwaltungsratsmandat, Vereinsvorstand |
+| **Transparenzpflicht** | Standard-Zuordnung | Offenlegungspflicht wegen Interessenkonflikten |
+| **Stimmberechtigung** | Ja (authorized_to_vote) | Nein |
+
+Eine Person kann sowohl Membership (z.B. Nationalrat) als auch InterestLink (z.B. Verwaltungsrat bei Swisscom) haben.
 
 ## Anwendungsbeispiele
 
@@ -369,5 +369,3 @@ Statistische Auswertung nach Art der Interessenbindung:
 - [NOGA-Codes (Branchenklassifikation)](https://www.bfs.admin.ch/bfs/de/home/statistiken/industrie-dienstleistungen/nomenklatur/noga.html)
 
 Siehe vollständige LinkML-Schema-Dokumentation:
-
-{{include:ech-0294_actors/output/docs/InterestLink.md}}
