@@ -12,7 +12,6 @@ act:douglas_adams_example a act:Container ;
     mcm:labelLong "Douglas Noël Adams" ;
     act:address [ a act:Address ;
             act:addressType "privateAddress" ;
-            act:addressURI <https://www.wikidata.org/wiki/Q42#P969> ;
             act:postalCode 12345 ;
             act:postalLocality "London" ;
             act:streetAddress "1234 Fictional St, London, UK" ] ;
