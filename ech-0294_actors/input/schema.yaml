@@ -687,15 +687,6 @@ slots:
       description_de: |
         Gibt an, ob die Person in der Gruppe stimmberechtigt ist. Typischerweise false für Ersatzmitglieder (wenn nicht im Einsatz), Beobachter/innen, Sekretär/innen und Gäste.
 
-  is_active:
-    range: boolean
-    slot_uri: act:isActive
-    description: |
-      Indicates if the membership is currently active. Can complement or replace `valid_from`/`valid_through`. If not set, activity is derived from the temporal validity fields.
-    annotations:
-      description_de: |
-        Gibt an, ob die Mitgliedschaft derzeit aktiv ist. Kann `valid_from`/`valid_through` ergänzen oder ersetzen. Wenn nicht gesetzt, wird die Aktivität aus den zeitlichen Gültigkeitsfeldern abgeleitet.
-  
   interest_type:
     range: InterestTypeEnum
     slot_uri: act:interestType
