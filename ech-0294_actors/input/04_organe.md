@@ -22,3 +22,7 @@ Das Schema unterstützt verschiedene Einsatzszenarien:
 5. **Parteilisten**: Verwaltung von Wahllisten (z.B. UNIBE Parteilisten-Datenbank)
 
 {{include:ech-0294_actors/output/docs/Group.md}}
+
+{{include:ech-0294_actors/output/docs/GroupType.md}}
+
+{{include:ech-0294_actors/output/docs/GroupTypeEnum.md}}

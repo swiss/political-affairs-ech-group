@@ -14,3 +14,5 @@ Das InterestLink-Schema erfasst Interessenbindungen, Interessenkonflikte und Ver
 
 
 {{include:ech-0294_actors/output/docs/InterestLink.md}}
+
+{{include:ech-0294_actors/output/docs/InterestTypeEnum.md}}
