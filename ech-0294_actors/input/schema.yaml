@@ -990,10 +990,10 @@ enums:
 
   TrainingTypeEnum:
     description: |
-      Types of training or education based on the Swiss BFS LEVEL_EDUC codelist (ISCED 2011).
+      Types of training or education based on the Swiss BFS LEVEL_EDUC codelist.
     annotations:
       description_de: |
-        Ausbildungs- oder Bildungstypen basierend auf der BFS LEVEL_EDUC Codeliste (ISCED 2011).
+        Ausbildungs- oder Bildungstypen basierend auf der BFS LEVEL_EDUC Codeliste.
     permissible_values:
       "10":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/10
@@ -1004,161 +1004,161 @@ enums:
           description_it: Scuola dell'obbligo al massimo.
       "110":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/110
-        description: No education (ISCED 2011: 0).
+        description: No education.
         annotations:
           description_de: Keine Ausbildung.
           description_fr: Aucune formation.
           description_it: Nessuna formazione.
       "120":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/120
-        description: Compulsory school attended but not completed (ISCED 2011: 1).
+        description: Compulsory school attended but not completed.
         annotations:
           description_de: Obligatorische Schule besucht, aber nicht abgeschlossen.
           description_fr: École obligatoire inachevée.
           description_it: Scuola dell'obbligo non portata a termine.
       "130":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/130
-        description: Compulsory school (ISCED 2011: 2).
+        description: Compulsory school.
         annotations:
           description_de: Obligatorische Schule.
           description_fr: École obligatoire.
           description_it: Scuola dell'obbligo.
       "140":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/140
-        description: 1 year of education / transitional education (ISCED 2011: 2).
+        description: 1 year of education / transitional education.
         annotations:
           description_de: 1-jährige Ausbildung / Brückenangebot.
           description_fr: Formation d'un an / offre de transition.
           description_it: Formazione di 1 anno / formazione transitoria.
       "20":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/20
-        description: Upper secondary level (ISCED 2011: 3).
+        description: Upper secondary level.
         annotations:
           description_de: Sekundarstufe II.
           description_fr: Degré secondaire II.
           description_it: Livello secondario II.
       "22":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/22
-        description: Upper secondary level - Vocational education and training (VET) (ISCED 2011: 35).
+        description: Upper secondary level - Vocational education and training (VET).
         annotations:
           description_de: Sekundarstufe II - Berufsbildung.
           description_fr: Degré secondaire II - formation professionnelle.
           description_it: Livello secondario II - formazione professionale.
       "220":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/220
-        description: Apprenticeship in a company (EFZ/EBA) / basic vocational training / vocational school / trade school (ISCED 2011: 35).
+        description: Apprenticeship in a company (EFZ/EBA) / basic vocational training / vocational school / trade school.
         annotations:
           description_de: Berufslehre im Betrieb (EFZ / EBA) / Anlehre / Berufsschule / Handelsschule.
           description_fr: Apprentissage en entreprise (CFC/AFP) / formation professionnelle élémentaire / école professionnelle / école de commerce.
           description_it: Tirocinio in azienda (CFP/AFC) / formazione professionale di base / scuola professionale / scuola di commercio.
       "2210":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2210
-        description: Apprenticeship 2 years (EBA) / basic vocational training / vocational school / trade school (ISCED 2011: 353).
+        description: Apprenticeship 2 years (EBA) / basic vocational training / vocational school / trade school.
         annotations:
           description_de: 2-jährige Berufslehre im Betrieb (EBA) / Anlehre / Berufsschule / Handelsschule.
           description_fr: Apprentissage en entreprise (AFP) 2 ans / formation prof. élémentaire / école professionnelle / école de commerce.
           description_it: Tirocinio in azienda (AFC) 2 anni / formazione professionale di base / scuola professionale / scuola di commercio.
       "2211":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2211
-        description: Apprenticeship in a company 2 years (EBA) / basic vocational training (ISCED 2011: 353).
+        description: Apprenticeship in a company 2 years (EBA) / basic vocational training.
         annotations:
           description_de: 2-jährige Berufslehre im Betrieb (EBA) / Anlehre.
           description_fr: Apprentissage en entreprise d'une durée de 2 ans (AFP) / formation professionnelle élémentaire.
           description_it: Tirocinio in azienda della durata di 2 anni (AFC) / formazione professionale di base.
       "2212":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2212
-        description: Vocational school / trade school 2 years (ISCED 2011: 353).
+        description: Vocational school / trade school 2 years.
         annotations:
           description_de: 2-jährige Berufsschule / Handelsschule.
           description_fr: École professionnelle / école de commerce d'une durée de 2 ans.
           description_it: Scuola professionale / scuola di commercio della durata di 2 anni.
       "2220":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2220
-        description: Apprenticeship 3-4 years (EFZ) / vocational school / trade school (ISCED 2011: 354).
+        description: Apprenticeship 3-4 years (EFZ) / vocational school / trade school.
         annotations:
           description_de: 3- bis 4-jährige Berufslehre im Betrieb (EFZ) / Berufsschule / Handelsschule.
           description_fr: Apprentissage en entreprise (CFC) 3-4 ans / école professionnelle / école de commerce.
           description_it: Tirocinio in azienda (CFP) 3-4 anni / scuola professionale / scuola di commercio.
       "2221":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2221
-        description: Apprenticeship in a company 3-4 years (EFZ) (ISCED 2011: 354).
+        description: Apprenticeship in a company 3-4 years (EFZ).
         annotations:
           description_de: 3- bis 4-jährige Berufslehre im Betrieb (EFZ).
           description_fr: Apprentissage en entreprise d'une durée de 3 à 4 ans (CFC).
           description_it: Tirocinio in azienda della durata di 3 a 4 anni (CFP).
       "2222":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2222
-        description: Vocational school / trade school 3-4 years (ISCED 2011: 354).
+        description: Vocational school / trade school 3-4 years.
         annotations:
           description_de: 3- bis 4-jährige Berufsschule / Handelsschule.
           description_fr: École professionnelle / école de commerce d'une durée de 3 a 4 ans.
           description_it: Scuola professionale / scuola di commercio della durata di 3 a 4 anni.
       "24":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/24
-        description: Upper secondary level - general education (ISCED 2011: 34).
+        description: Upper secondary level - general education.
         annotations:
           description_de: Sekundarstufe II - Allgemeinbildung.
           description_fr: Degré secondaire II - formation générale.
           description_it: Livello secondario II - formazione generale.
       "241":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/241
-        description: Upper secondary specialised schools / diploma middle school (ISCED 2011: 34).
+        description: Upper secondary specialised schools / diploma middle school.
         annotations:
           description_de: Fachmittelschule / Diplommittelschule.
           description_fr: École de culture générale / école de degré diplôme.
           description_it: Scuola specializzata / scuola di diploma.
       "2411":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2411
-        description: Upper secondary specialised schools / diploma middle school 2 years (ISCED 2011: 343).
+        description: Upper secondary specialised schools / diploma middle school 2 years.
         annotations:
           description_de: 2-jährige Fachmittelschule / Diplommittelschule.
           description_fr: École de culture générale / école de degré diplôme d'une durée de 2 ans.
           description_it: Scuola specializzata / scuola di diploma della durata di 2 anni.
       "2412":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2412
-        description: Upper secondary specialised schools / diploma middle school 3 years (ISCED 2011: 344).
+        description: Upper secondary specialised schools / diploma middle school 3 years.
         annotations:
           description_de: 3-jährige Fachmittelschule / Diplommittelschule.
           description_fr: École de culture générale / école de degré diplôme d'une durée de 3 ans.
           description_it: Scuola specializzata / scuola di diploma della durata di 3 anni.
       "242":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/242
-        description: Baccalaureate / teaching diploma (ISCED 2011: 344).
+        description: Baccalaureate / teaching diploma.
         annotations:
           description_de: Gymnasiale Maturität / Lehrkräfteseminar.
           description_fr: Maturité ou école normale.
           description_it: Maturità liceale / scuola magistrale o abilitazione all'insegnamento.
       "2421":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2421
-        description: Baccalaureate (ISCED 2011: 344).
+        description: Baccalaureate.
         annotations:
           description_de: Gymnasiale Maturität.
           description_fr: Maturité gymnasiale.
           description_it: Maturità liceale.
       "2422":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2422
-        description: Teaching diploma (ISCED 2011: 344).
+        description: Teaching diploma.
         annotations:
           description_de: Lehrkräfteseminar.
           description_fr: Brevet d'enseignement.
           description_it: Scuola magistrale o abilitazione all'insegnamento.
       "243":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/243
-        description: Vocational / specialised baccalaureate (ISCED 2011: 344).
+        description: Vocational / specialised baccalaureate.
         annotations:
           description_de: Berufs- oder Fachmaturität.
           description_fr: Maturité professionnelle / spécialisée.
           description_it: Maturità professionale / specializzata.
       "2431":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2431
-        description: Vocational baccalaureate (ISCED 2011: 344).
+        description: Vocational baccalaureate.
         annotations:
           description_de: Berufsmaturität.
           description_fr: Maturité professionnelle.
           description_it: Maturità professionale.
       "2432":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2432
-        description: Specialised baccalaureate (ISCED 2011: 344).
+        description: Specialised baccalaureate.
         annotations:
           description_de: Fachmaturität.
           description_fr: Maturité spécialisée.
@@ -1186,35 +1186,35 @@ enums:
           description_it: Esame professionale superiore con attestato professionale federale / esame professionale superiore con diploma federale / maestria federale.
       "311":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/311
-        description: Professional examination with federal diploma of higher education (ISCED 2011: 6).
+        description: Professional examination with federal diploma of higher education.
         annotations:
           description_de: Berufsprüfung mit eidg. Fachausweis.
           description_fr: Examen professionnel avec brevet fédéral.
           description_it: Esame professionale superiore con attestato professionale federale.
       "312":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/312
-        description: Professional examination with advanced federal diploma of higher education / PET diploma (ISCED 2011: 7).
+        description: Professional examination with advanced federal diploma of higher education / PET diploma.
         annotations:
           description_de: Höhere Fachprüfung mit eidg. Diplom / Meisterdiplom.
           description_fr: Examen professionnel supérieur avec diplôme fédéral/maîtrise.
           description_it: Esame professionale superiore con diploma federale / maestria federale.
       "313":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/313
-        description: College of Higher Education (ISCED 2011: 6).
+        description: College of Higher Education.
         annotations:
           description_de: Höhere Fachschule.
           description_fr: École supérieure (ES).
           description_it: Scuola specializzata superiore (SSS).
       "3131":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3131
-        description: College of Higher Education 2 years full time or 3 years part-time (ISCED 2011: 6).
+        description: College of Higher Education 2 years full time or 3 years part-time.
         annotations:
           description_de: Höhere Fachschule (HF) 2 Jahre Voll- oder 3 Jahre Teilzeitstudium.
           description_fr: École supérieure (ES) 2 ans plein temps ou 3 ans temps partiel.
           description_it: Scuola specializzata superiore (SSS) 2 anni a tempo pieno o 3 anni a tempo parziale.
       "3132":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3132
-        description: College of Higher Education 3 years full time or 4 years part-time (ISCED 2011: 6).
+        description: College of Higher Education 3 years full time or 4 years part-time.
         annotations:
           description_de: Höhere Fachschule (HF) 3 Jahre Voll- oder 4 Jahre Teilzeitstudium.
           description_fr: École supérieure (ES) 3 ans plein temps ou 4 ans temps partiel.
@@ -1228,63 +1228,63 @@ enums:
           description_it: Scuola universitaria.
       "321":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/321
-        description: Bachelor universities, institutes of technology, universities of applied sciences, universities of teacher education (ISCED 2011: 6).
+        description: Bachelor universities, institutes of technology, universities of applied sciences, universities of teacher education.
         annotations:
           description_de: Bachelor Universität, ETH, Fachhochschule, pädagogische Hochschule (inklusive Diplom FH / PH).
           description_fr: Bachelor université, EPF, haute école spécialisée, haute école pédagogique (y compris diplôme HES/HEP).
           description_it: Bachelor università, PF, scuola universitaria professionale, alta scuola pedagogica (incluso il diploma SUP / ASP).
       "3211":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3211
-        description: Bachelor universities of applied sciences (including UAS diploma) (ISCED 2011: 6).
+        description: Bachelor universities of applied sciences (including UAS diploma).
         annotations:
           description_de: Bachelor Fachhochschule (inklusive Diplom FH).
           description_fr: Bachelor haute école spécialisée (y compris diplôme HES).
           description_it: Bachelor scuola universitaria professionale (incluso il diploma SUP).
       "3212":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3212
-        description: Bachelor universities of teacher education (including UTE first degree) (ISCED 2011: 6).
+        description: Bachelor universities of teacher education (including UTE first degree).
         annotations:
           description_de: Bachelor pädagogische Hochschule (inklusive Diplom PH).
           description_fr: Bachelor haute école pédagogique (y compris diplôme HEP).
           description_it: Bachelor alta scuola pedagogica (incluso il diploma ASP).
       "3213":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3213
-        description: Bachelor universities, institutes of technology (UIT) (ISCED 2011: 6).
+        description: Bachelor universities, institutes of technology (UIT).
         annotations:
           description_de: Bachelor Universität, ETH.
           description_fr: Bachelor université, EPF.
           description_it: Bachelor università.
       "322":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/322
-        description: Master universities, institutes of technology, universities of applied sciences, universities of teacher education (ISCED 2011: 7).
+        description: Master universities, institutes of technology, universities of applied sciences, universities of teacher education.
         annotations:
           description_de: Master Universität, ETH, Fachhochschule, pädagogische Hochschule (inklusive Lizentiat / Diplom).
           description_fr: Master université, EPF, haute école spécialisée, haute école pédagogique (y compris licence/diplôme).
           description_it: Master università, PF, scuola universitaria professionale, alta scuola pedagogica (inclusi la laurea / il diploma).
       "3221":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3221
-        description: Master universities of applied sciences (ISCED 2011: 7).
+        description: Master universities of applied sciences.
         annotations:
           description_de: Master Fachhochschule.
           description_fr: Master haute école spécialisée.
           description_it: Master scuola universitaria professionale.
       "3222":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3222
-        description: Master universities of teacher education (ISCED 2011: 7).
+        description: Master universities of teacher education.
         annotations:
           description_de: Master pädagogische Hochschule.
           description_fr: Master haute école pédagogique.
           description_it: Master alta scuola pedagogica.
       "3223":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3223
-        description: Master universities, institutes of technology (UIT) including UNI / UIT diploma (ISCED 2011: 7).
+        description: Master universities, institutes of technology (UIT) including UNI / UIT diploma.
         annotations:
           description_de: Master Universität, ETH (inklusive Lizentiat / Diplom Universität / ETH).
           description_fr: Master université, EPF (y compris licence/diplôme université/EPF).
           description_it: Master università, PF (inclusi la laurea / il diploma universitari / PF).
       "323":
         meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/323
-        description: Doctorate or habilitation (ISCED 2011: 8).
+        description: Doctorate or habilitation.
         annotations:
           description_de: Doktorat / Habilitation.
           description_fr: Doctorat / habilitation.
