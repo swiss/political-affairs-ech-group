@@ -14,11 +14,11 @@ _Internal note: update the next subgroup meeting in the [README](https://github.
     - [E-Government-Schnittstelle für Dossiers und Dokumente](https://www.ech.ch/de/ech/ech-0039/3.1)
 - https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/schema_common.yaml
     - description: Sprachen getrennt
-- Nächstes Thema für Subgruppe (siehe [Gap-Analyse unten](https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/misc/meetingnotes.md#mini-gap-analysis-inkl-er%C3%A4nzungen-1006)):
-    - Chronologie / Prozesse (Activities?): wahrscheinlich zu früh
+- Nächstes Thema für Subgruppe (siehe [Gap-Analyse unten](https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/misc/meetingnotes.md#mini-gap-analysis-inkl-er%C3%A4nzungen-1006)) - Priorisierung:
+    - Chronologie / Prozesse (Activities?): wichtig, nicht dringend
     - Verknüpfungen (von Events): wahrscheinlich zu früh
     - Guidelines Zugriff (Files, API)
-    - Permanente URL/URI/DOI (gegen Linkrot) (ggf. via Hilfsmittel), an ELI orientieren (?) -> Vorschlag Prio morgen im Plenum
+    - Permanente URL/URI/DOI (gegen Linkrot) (ggf. via Hilfsmittel), an ELI orientieren (?) -> wichtig, dringend > Vorschlag Prio morgen im Plenum
     - Ablaufdaten für Links, Links zur Archivierung (vgl. [Kanton Uri](https://staur-digitalplattform.ch/tonaufnahmen/))
 
 
