@@ -32,7 +32,54 @@ Folgende Themen wurden in der aufgeführten Reihenfolge seit 2025 in der Subgrup
 3. Interessenbindungen, Konflikte, Politikfinanzierung
 4. Verknüpfungen gleicher Personen über föderale Stufen hinweg
 
-## Allgemeine übergreifende Technische Informationen
+## Allgemeine Technische Informationen
+
+### Übersicht der Hauptklassen
+
+Das Schema basiert auf vier Hauptklassen, die zusammen das politische Akteurssystem der Schweiz abbilden:
+
+- **Person** – Natürliche Personen im politischen Kontext
+- **Group** – Politische Gruppen, Organe und Organisationen
+- **Membership** – Verbindung zwischen Personen und Gruppen
+- **InterestLink** – Interessenbindungen von Personen an Organisationen
+
+```mermaid
+classDiagram
+    class Person {
+        +URI id
+        +Name[] names
+        +Gender gender
+        +Citizenship[] citizenships
+    }
+
+    class Group {
+        +URI id
+        +GroupType type
+        +MultilingualText[] names
+    }
+
+    class Membership {
+        +URI personId
+        +URI groupId
+        +String role
+        +Date start
+        +Date end
+    }
+
+    class InterestLink {
+        +URI personId
+        +InterestTypeEnum type
+        +String organisation
+        +Date start
+        +Date end
+    }
+
+    Person "1" --> "0..*" Membership : hat
+    Group "1" --> "0..*" Membership : umfasst
+    Person "1" --> "0..*" InterestLink : deklariert
+```
+
+`Membership` ist das zentrale Bindeglied zwischen `Person` und `Group` und ermöglicht die Zuordnung zu Parteien, Fraktionen, Kommissionen und Parlamenten. `InterestLink` ergänzt das Schema um Transparenzanforderungen gemäss den Vorgaben der Bundesversammlung.
 
 ### Identifikatoren
 
