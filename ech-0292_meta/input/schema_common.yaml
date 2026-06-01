@@ -5,8 +5,10 @@ id: https://ld.ech.ch/schema/0292/meta-common
 name: meta-common-schema
 title: Meta Common Schema
 description: |
-  [de] Dieses Schema stellt gemeinsame Elemente (Klassen, Slots) zur Nutzung in anderen eCH LinkML Schemata zur Verfügung.
-  [en] This schema provides common elements (classes, slots) for use in other eCH LinkML schemas.
+  This schema provides common elements (classes, slots) for use in other eCH LinkML schemas.
+annotations:
+  description_de: |
+    Dieses Schema stellt gemeinsame Elemente (Klassen, Slots) zur Nutzung in anderen eCH LinkML Schemata zur Verfügung.
 license: CC-BY
 prefixes:
   xsd: http://www.w3.org/2001/XMLSchema#
@@ -28,8 +30,10 @@ classes:
   HasTemporalValidity:
     mixin: true
     description: |
-      [de] Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gültigkeit einer Information (nicht eines Events) zur Verfügung stellt.
-      [en] A mixin class that provides slots for modeling a temporal validity of information (not of an event).
+      A mixin class that provides slots for modeling a temporal validity of information (not of an event).
+    annotations:
+      description_de: |
+        Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gültigkeit einer Information (nicht eines Events) zur Verfügung stellt.
     slots:
       - valid_from
       - valid_through
@@ -38,8 +42,10 @@ classes:
   HasIdentification:
     mixin: true
     description: |
-      [de] Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfügung stellt.
-      [en] A mixin class that provides slots for the identification of an entity.
+      A mixin class that provides slots for the identification of an entity.
+    annotations:
+      description_de: |
+        Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfügung stellt.
     slots:
       - local_id
       - global_uri
@@ -48,8 +54,10 @@ classes:
   IsInstantaneousEvent:
     mixin: true
     description: |
-      [de] Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereignissen oder Vorkommnissen (ohne Zeitdauer) zur Verfügung stellt.
-      [en] A mixin class that provides slots for modeling instantaneous events or occurrences (without time duration).
+      A mixin class that provides slots for modeling instantaneous events or occurrences (without time duration).
+    annotations:
+      description_de: |
+        Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereignissen oder Vorkommnissen (ohne Zeitdauer) zur Verfügung stellt.
     slots:
         - date_actual
         - datetime_actual
@@ -59,8 +67,10 @@ classes:
   IsEventWithDuration:
     mixin: true
     description: |
-      [de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder Vorkommnissen mit Zeitdauer zur Verfügung stellt.
-      [en] A mixin class that provides slots for modeling events or occurrences with time duration.
+      A mixin class that provides slots for modeling events or occurrences with time duration.
+    annotations:
+      description_de: |
+        Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder Vorkommnissen mit Zeitdauer zur Verfügung stellt.
     slots:
         - date_begin_actual
         - datetime_begin_actual
@@ -74,8 +84,10 @@ classes:
   HasCreationModificationDates:
     mixin: true
     description: |
-      [de] Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Änderungsdaten einer Entität zur Verfügung stellt.
-      [en] A mixin class that provides slots for modeling creation and modification dates of an entity.
+      A mixin class that provides slots for modeling creation and modification dates of an entity.
+    annotations:
+      description_de: |
+        Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Änderungsdaten einer Entität zur Verfügung stellt.
     slots:
         - date_created
         - datetime_created
@@ -85,15 +97,17 @@ classes:
   IsProcessStep:
     mixin: true
     description: |
-      [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem
-      mehrstufigen Prozess (z. B. Bearbeitungsschritt eines Geschäfts oder
-      Phasen­schritt einer Konsultation). Kombiniert Identifikations- und
-      Zeitdauer-Slots und ergänzt einen freien Bemerkungs-Slot. Konkrete
-      Step-Klassen ergänzen ihre eigenen typ-spezifischen Slots.
-      [en] A mixin class for a single step in a multi-stage process (e.g.,
+      A mixin class for a single step in a multi-stage process (e.g.,
       a deliberation step of an affair or a phase step of a consultation).
       Combines identification and event-duration slots and adds a free-text
       remark slot. Concrete step classes add their own type-specific slots.
+    annotations:
+      description_de: |
+        Eine Mixin-Klasse für einen einzelnen Schritt in einem
+        mehrstufigen Prozess (z. B. Bearbeitungsschritt eines Geschäfts oder
+        Phasen­schritt einer Konsultation). Kombiniert Identifikations- und
+        Zeitdauer-Slots und ergänzt einen freien Bemerkungs-Slot. Konkrete
+        Step-Klassen ergänzen ihre eigenen typ-spezifischen Slots.
     mixins:
       - HasIdentification
       - IsEventWithDuration
@@ -102,8 +116,10 @@ classes:
 
   MultilingualValue:
     description: |
-      [de] Ein mehrsprachiger String mit Angabe der Sprache.
-      [en] A multilingual string with language specification.
+      A multilingual string with language specification.
+    annotations:
+      description_de: |
+        Ein mehrsprachiger String mit Angabe der Sprache.
     slots:
       - value
       - language
@@ -116,35 +132,45 @@ slots:
   valid_from:
     slot_uri: schema:validFrom
     description: |
-      [de] Das Datum, ab dem die Information gültig ist.
-      [en] The date from which the information is valid.
+      The date from which the information is valid.
+    annotations:
+      description_de: |
+        Das Datum, ab dem die Information gültig ist.
     range: date
 
   valid_through:
     slot_uri: schema:validThrough
     description: |
-      [de] Das Datum, bis und mit dem die Information gültig ist.
-      [en] The date until which the information is valid, inclusive.
+      The date until which the information is valid, inclusive.
+    annotations:
+      description_de: |
+        Das Datum, bis und mit dem die Information gültig ist.
     range: date
 
   is_active:
     slot_uri: mcm:isCurrent
     description: |
-      [de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist.
-      [en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available.
+      Indicates whether the information is currently valid. Can be useful when this information is explicitly available.
+    annotations:
+      description_de: |
+        Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist.
     range: boolean
 
   local_id:
     slot_uri: mcm:localId
     description: |
-      [de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
-      [en] Local identifier. For example, a UUID from the council information system.
+      Local identifier. For example, a UUID from the council information system.
+    annotations:
+      description_de: |
+        Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
   global_uri:
     slot_uri: mcm:globalURI
     description: |
-      [de] Eine eindeutige, global gültige URI für die Entität.
-      [en] A unique, globally valid URI for the entity.
+      A unique, globally valid URI for the entity.
+    annotations:
+      description_de: |
+        Eine eindeutige, global gültige URI für die Entität.
     range: uriorcurie
     identifier: true
     required: true
@@ -152,158 +178,203 @@ slots:
   wikidata_uri:
     slot_uri: mcm:wikidataUri
     description: |
-      [de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz.
-      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.
+      A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.
+    annotations:
+      description_de: |
+        Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz.
     range: uriorcurie
 
   date_actual:
     slot_uri: mcm:dateActual
     description: |
-      [de] Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer).
-      [en] The actual date of an instantaneous event or occurrence (without time duration).
+      The actual date of an instantaneous event or occurrence (without time duration).
+    annotations:
+      description_de: |
+        Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer).
     range: date
 
   datetime_actual:
     slot_uri: mcm:datetimeActual
     description: |
-      [de] Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer).
-      [en] The actual date and time of an instantaneous event or occurrence (without time duration).
+      The actual date and time of an instantaneous event or occurrence (without time duration).
+    annotations:
+      description_de: |
+        Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer).
     range: datetime
 
   date_planned:
     slot_uri: mcm:datePlanned
     description: |
-      [de] Das geplante Datum eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer).
-      [en] The planned date of an instantaneous event or occurrence (without time duration).
+      The planned date of an instantaneous event or occurrence (without time duration).
+    annotations:
+      description_de: |
+        Das geplante Datum eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer).
     range: date
 
   datetime_planned:
     slot_uri: mcm:datetimePlanned
     description: |
-      [de] Das geplante Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer).
-      [en] The planned date and time of an instantaneous event or occurrence (without time duration).
+      The planned date and time of an instantaneous event or occurrence (without time duration).
+    annotations:
+      description_de: |
+        Das geplante Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer).
     range: datetime
 
   date_begin_actual:
     slot_uri: mcm:dateBeginActual
     description: |
-      [de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer.
-      [en] The actual start date of an event or occurrence with time duration.
+      The actual start date of an event or occurrence with time duration.
+    annotations:
+      description_de: |
+        Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
     range: date
 
   datetime_begin_actual:
     slot_uri: mcm:datetimeBeginActual
     description: |
-      [de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.
-      [en] The actual start date and time of an event or occurrence with time duration.
+      The actual start date and time of an event or occurrence with time duration.
+    annotations:
+      description_de: |
+        Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer.
     range: datetime
 
   date_begin_planned:
     slot_uri: mcm:dateBeginPlanned
     description: |
-      [de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer.
-      [en] The planned start date of an event or occurrence with time duration.
+      The planned start date of an event or occurrence with time duration.
+    annotations:
+      description_de: |
+        Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
     range: date
 
   datetime_begin_planned:
     slot_uri: mcm:datetimeBeginPlanned
     description: |
-      [de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.
-      [en] The planned start date and time of an event or occurrence with time duration.
+      The planned start date and time of an event or occurrence with time duration.
+    annotations:
+      description_de: |
+        Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer.
     range: datetime
 
   date_end_actual:
     slot_uri: mcm:dateEndActual
     description: |
-      [de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer.
-      [en] The actual end date of an event or occurrence with time duration.
+      The actual end date of an event or occurrence with time duration.
+    annotations:
+      description_de: |
+        Das tatsächliche Enddatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
     range: date
 
   datetime_end_actual:
     slot_uri: mcm:datetimeEndActual
     description: |
-      [de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.
-      [en] The actual end date and time of an event or occurrence with time duration.
+      The actual end date and time of an event or occurrence with time duration.
+    annotations:
+      description_de: |
+        Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer.
     range: datetime
 
   date_end_planned:
     slot_uri: mcm:dateEndPlanned
     description: |
-      [de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer.
-      [en] The planned end date of an event or occurrence with time duration.
+      The planned end date of an event or occurrence with time duration.
+    annotations:
+      description_de: |
+        Das geplante Enddatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
     range: date
 
   datetime_end_planned:
     slot_uri: mcm:datetimeEndPlanned
     description: |
-      [de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens mit Zeitdauer.
-      [en] The planned end date and time of an event or occurrence with time duration.
+      The planned end date and time of an event or occurrence with time duration.
+    annotations:
+      description_de: |
+        Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer.
     range: datetime
 
   date_created:
     slot_uri: mcm:dateCreated
     description: |
-      [de] Das Datum, an dem eine Entität erstellt wurde.
-      [en] The date when an entity was created.
+      The date when an entity was created.
+    annotations:
+      description_de: |
+        Das Datum, an dem eine Entität erstellt wurde.
     range: date
 
   datetime_created:
     slot_uri: mcm:datetimeCreated
     description: |
-      [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
-      [en] The date and time when an entity was created.
-
+      The date and time when an entity was created.
+    annotations:
+      description_de: |
+        Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
     range: datetime
 
   date_modified:
     slot_uri: mcm:dateModified
     description: |
-      [de] Das Datum, an dem eine Entität zuletzt geändert wurde.
-      [en] The date when an entity was last modified.
+      The date when an entity was last modified.
+    annotations:
+      description_de: |
+        Das Datum, an dem eine Entität zuletzt geändert wurde.
     range: date
 
   datetime_modified:
     slot_uri: mcm:datetimeModified
     description: |
-      [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
-      [en] The date and time when an entity was last modified.
+      The date and time when an entity was last modified.
+    annotations:
+      description_de: |
+        Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
     range: datetime
 
   multilingual_value:
     slot_uri: mcm:multilingualValue
     description: |
-      [de] Ein mehrsprachiger Wert mit Angabe der Sprache.
-      [en] A multilingual value with language specification.
+      A multilingual value with language specification.
+    annotations:
+      description_de: |
+        Ein mehrsprachiger Wert mit Angabe der Sprache.
     range: MultilingualValue
   
   value:
     slot_uri: mcm:value
     description: |
-      [de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc.
-      [en] The value of an information besides other attributes such as type, language, etc.
+      The value of an information besides other attributes such as type, language, etc.
+    annotations:
+      description_de: |
+        Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc.
 
   language:
     slot_uri: mcm:language
     description: |
-      [de] Sprachcode im ISO 639-1 Format.
-      [en] Language code in ISO 639-1 format.
+      Language code in ISO 639-1 format.
+    annotations:
+      description_de: |
+        Sprachcode im ISO 639-1 Format.
     pattern: ^[a-z]{2}$
 
   label:
     slot_uri: mcm:label
     description: |
-      [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).
-      [en] Option to assign a label to a structured piece of information (e.g., display name, position, etc.).
+      Option to assign a label to a structured piece of information (e.g., display name, position, etc.).
+    annotations:
+      description_de: |
+        Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).
 
   label_long:
     slot_uri: mcm:labelLong
     description: |
-      [de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.).
-      [en] Option to assign an extended label to a structured piece of information (e.g., display name with title, position, etc.).
+      Option to assign an extended label to a structured piece of information (e.g., display name with title, position, etc.).
+    annotations:
+      description_de: |
+        Möglichkeit bei einer strukturierten Information, ein erweitertesLabel zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.).
 
   remark:
     slot_uri: mcm:remark
     description: |
-      [de] Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen Kontext zu einem Prozessschritt oder einer Entität.
-      [en] Free-text remark or note for edge cases or additional context on a process step or an entity.
+      Free-text remark or note for edge cases or additional context on a process step or an entity.
+    annotations:
+      description_de: |
+        Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen Kontext zu einem Prozessschritt oder einer Entität.
     range: string
