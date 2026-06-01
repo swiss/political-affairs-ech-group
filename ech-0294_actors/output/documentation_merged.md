@@ -10,7 +10,7 @@ toc: false
 | **Kategorie**         | Entwurf                                                                                                                    |
 | **Reifegrad**         | Fachgruppen Internes Review                                                                                                |
 | **Version**           | 0.1                                                                                                                        |
-| **Status**            |                                                                                                                            |
+| **Status**            | Fachgruppen interner Review                                                                                                |
 | **Beschluss am**      |                                                                                                                            |
 | **Ausgabedatum**      |                                                                                                                            |
 | **Ersetzt Version**   | 0.0                                                                                                                        |
@@ -22,7 +22,9 @@ toc: false
 
 # Summary
 
-Management summary of the document.
+Der Entwurf eCH-0294 „Politische Akteure: Personen, Gruppen und Organe“ definiert ein einheitliches Datenmodell zur strukturierten Publikation politischer Akteure in der Schweiz. Er umfasst natürliche Personen, politische Gruppen und Organe, Mitgliedschaften zwischen Personen und Gruppen sowie Interessenbindungen. Ziel ist es, föderal übergreifend vergleichbare, maschinenlesbare und nachnutzbare Informationen bereitzustellen, um Transparenz, Nachvollziehbarkeit und Analysefähigkeit politischer Prozesse zu verbessern.
+
+Der Standard richtet sich an öffentliche Stellen aller Staatsebenen, politische Akteure, Medien, Forschung, Verwaltung und Öffentlichkeit und schafft eine Grundlage für interoperable politische Informationssysteme in der Schweiz.
 
 # Table of Contents
 
@@ -1152,6 +1154,7 @@ is_paid: true
 Das Group-Schema beschreibt politische Gruppen, Organisationen und Körperschaften im schweizerischen politischen System. Ein Organ ist in dieser Definition eine Ansammlung von Personen, die durch einen Typ und weitere Attribute charakterisiert wird.
 
 **Kernziele:**
+
 - **Strukturierung**: Einheitliche Erfassung aller politischen Akteure (Legislative, Exekutive, Judikative, Zivilgesellschaft)
 - **Hierarchien**: Abbildung von Organisationsstrukturen (Parteien, Kommissionen, Departemente)
 - **Föderalismus**: Unterstützung aller föderalen Ebenen (Bund, Kantone, Gemeinden)
@@ -1248,6 +1251,7 @@ __
 Das Membership-Schema bildet die Beziehung zwischen Personen und Gruppen ab. Es ist das zentrale Bindeglied im Actor-Schema und ermöglicht die Zuordnung von Personen zu Parteien, Fraktionen, Kommissionen, Parlamenten und anderen politischen Organen.
 
 **Kernziele:**
+
 - **Verknüpfung**: Strukturierte Verbindung zwischen Person und Group
 - **Rollen**: Erfassung der Funktion innerhalb der Gruppe
 - **Zeitliche Dimension**: Dokumentation von Beginn und Ende der Mitgliedschaft
@@ -1340,6 +1344,7 @@ __
 Das InterestLink-Schema erfasst Interessenbindungen, Interessenkonflikte und Verflechtungen von Personen im politischen Kontext mit Organisationen. Der Standard orientiert sich an den Transparenzanforderungen für Parlamentsmitglieder gemäss [Bundesversammlung - Interessenbindungen](https://www.parlament.ch/centers/documents/de/interessen-nr.pdf).
 
 **Kernziele:**
+
 - **Transparenz**: Offenlegung von potenziellen Interessenkonflikten
 - **Strukturierte Erfassung**: Einheitliche Klassifikation nach Art der Interessenbindung
 - **Auswertbarkeit**: Verknüpfung mit UID-Register für statistische Analysen (NOGA-Codes)
