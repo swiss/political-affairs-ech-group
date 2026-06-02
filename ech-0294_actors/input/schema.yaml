@@ -693,7 +693,7 @@ slots:
   organization_uid:
     slot_uri: act:organizationUid
     description: |
-      UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).
+      UID of the organization (eCH-0098 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).
     annotations:
       description_de: |
         UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).
@@ -1566,10 +1566,10 @@ enums:
 
   LegalFormEnum:
     description: |
-      Legal forms based on the Swiss UID register codelist (eCH-0097). See https://register.ld.admin.ch/i14y/concept/legalForm
+      Legal forms based on the Swiss UID register codelist (eCH-0098). See https://register.ld.admin.ch/i14y/concept/legalForm
     annotations:
       description_de: |
-        Rechtsformen basierend auf der Codeliste des eidgenössischen UID-Registers (eCH-0097). Siehe https://register.ld.admin.ch/i14y/concept/legalForm
+        Rechtsformen basierend auf der Codeliste des eidgenössischen UID-Registers (eCH-0098). Siehe https://register.ld.admin.ch/i14y/concept/legalForm
     permissible_values:
       "0101":
         meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0101
