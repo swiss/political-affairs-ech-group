@@ -605,7 +605,7 @@ __
 | is_paid | 0..1 <br/> [Boolean](#Boolean) | Indicates if the position is paid.  |
 | occupation_code | 0..1 <br/> [String](#String) | ISCO-19 code of the occupation.  |
 | label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
-| organization_uid | 0..1 <br/> [String](#String) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).  |
+| organization_uid | 0..1 <br/> [String](#String) | UID of the organization (eCH-0098 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).  |
 | organization_name | 0..1 <br/> [String](#String) | Name of the organization or enterprise.  |
 | valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 | valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
@@ -1276,7 +1276,7 @@ __
 | person_reference | 0..1 <br/> [PersonReference](#PersonReference) | Reference to a person with snapshot data at time of linking.  |
 | interest_type | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | Type of interest link (professional activity, political office, association).  |
 | organization_name | 0..1 <br/> [String](#String) | Name of the organization or enterprise.  |
-| organization_uid | 0..1 <br/> [String](#String) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).  |
+| organization_uid | 0..1 <br/> [String](#String) | UID of the organization (eCH-0098 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).  |
 | organization_address | 0..1 <br/> [String](#String) | Address of the organization.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm  |
 | is_paid | 0..1 <br/> [Boolean](#Boolean) | Indicates if the position is paid.  |
@@ -1543,7 +1543,7 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 
 
 
-_Legal forms based on the Swiss UID register codelist (eCH-0097). See https://register.ld.admin.ch/i14y/concept/legalForm_
+_Legal forms based on the Swiss UID register codelist (eCH-0098). See https://register.ld.admin.ch/i14y/concept/legalForm_
 
 __
 

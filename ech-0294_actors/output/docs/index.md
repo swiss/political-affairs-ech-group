@@ -107,7 +107,7 @@ Name: actors-schema
 | [occupations](occupations.md) | Occupations or professions of the person |
 | [organization_address](organization_address.md) | Address of the organization |
 | [organization_name](organization_name.md) | Name of the organization or enterprise |
-| [organization_uid](organization_uid.md) | UID of the organization (eCH-0097 format: CHE-XXX |
+| [organization_uid](organization_uid.md) | UID of the organization (eCH-0098 format: CHE-XXX |
 | [parent_groups](parent_groups.md) | Link to parent groups |
 | [party_color](party_color.md) | Party color as hexadecimal value (optional for parties, e |
 | [person_reference](person_reference.md) | Reference to a person with snapshot data at time of linking |
@@ -141,7 +141,7 @@ Name: actors-schema
 | [GenderCodeEnum](GenderCodeEnum.md) | Gender codes for persons |
 | [GroupTypeEnum](GroupTypeEnum.md) | Types of political groups and organizations |
 | [InterestTypeEnum](InterestTypeEnum.md) | Types of interest links (conflicts of interest, political financing) |
-| [LegalFormEnum](LegalFormEnum.md) | Legal forms based on the Swiss UID register codelist (eCH-0097) |
+| [LegalFormEnum](LegalFormEnum.md) | Legal forms based on the Swiss UID register codelist (eCH-0098) |
 | [NameTypeEnum](NameTypeEnum.md) | Categories of name types according to eCH-0011 (personNameData) and https://d... |
 | [RoleEnum](RoleEnum.md) | Roles a person can have within a membership |
 | [TrainingTypeEnum](TrainingTypeEnum.md) | Types of training or education based on the Swiss BFS LEVEL_EDUC codelist |

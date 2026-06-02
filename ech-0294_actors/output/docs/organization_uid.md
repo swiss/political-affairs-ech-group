@@ -6,7 +6,7 @@ search:
 # Slot: organization_uid 
 
 
-_UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch)._
+_UID of the organization (eCH-0098 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch)._
 
 __
 
@@ -79,7 +79,7 @@ annotations:
     value: 'UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).
 
       '
-description: 'UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX of the federal
+description: 'UID of the organization (eCH-0098 format: CHE-XXX.XXX.XXX of the federal
   UID register (uid.admin.ch).
 
   '

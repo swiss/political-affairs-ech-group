@@ -764,7 +764,7 @@
                     ]
                 },
                 "organization_uid": {
-                    "description": "UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).\n",
+                    "description": "UID of the organization (eCH-0098 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).\n",
                     "pattern": "^CHE-\\d{3}\\.\\d{3}\\.\\d{3}$",
                     "type": [
                         "string",
@@ -1066,7 +1066,7 @@
             "type": "object"
         },
         "LegalFormEnum": {
-            "description": "Legal forms based on the Swiss UID register codelist (eCH-0097). See https://register.ld.admin.ch/i14y/concept/legalForm",
+            "description": "Legal forms based on the Swiss UID register codelist (eCH-0098). See https://register.ld.admin.ch/i14y/concept/legalForm",
             "enum": [
                 "0101",
                 "0103",
@@ -1357,7 +1357,7 @@
                     ]
                 },
                 "organization_uid": {
-                    "description": "UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).\n",
+                    "description": "UID of the organization (eCH-0098 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).\n",
                     "pattern": "^CHE-\\d{3}\\.\\d{3}\\.\\d{3}$",
                     "type": [
                         "string",
