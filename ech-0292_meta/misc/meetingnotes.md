@@ -2,7 +2,15 @@
 
 _Internal note: update the next subgroup meeting in the [README](https://github.com/swiss/political-affairs-ech-group/tree/main) after every meeting._
 
-## 1 June 2026 (15-16.00) on [Teams]([https://teams.microsoft.com/meet/3879512933733?p=rTdaRaFWPi0JWENkuE](https://teams.microsoft.com/meet/3879512933733?p=rTdaRaFWPi0JWENkuE))
+
+## Next meeting: 22 June (15-16.00) – fourth Monday of every month on [Teams](https://teams.microsoft.com/meet/3879512933733?p=rTdaRaFWPi0JWENkuE)
+
+- 05_data_publishing.md
+- 06_richtext_definition.md
+- Permanente URL/URI/DOI
+- ...
+
+## 1 June 2026
 
 - [Dokumenttypen](https://docs.google.com/spreadsheets/d/1taUeu5BWyzboI01Hmde-G_TbGklVjgDgaKvjBqixMjs/edit?gid=1490648211#gid=1490648211)
     - Dokumentenkategorien (Spalte A) auf Basis von Dokumenttyp (B)
