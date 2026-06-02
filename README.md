@@ -8,7 +8,7 @@ The specialist group is divided into different subgroups. Each subgroup is respo
 
 | Subgroup | Next Meeting | Call URL |
 |-----------|------------------|-----------|
-| eCH-0292: [Metaprozesse zu politischen Geschäften (meta)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0292_meta) | Mo 22.06.2026, 15:00–16:00 (4. Montag d. Monats) | [Teams](https://teams.microsoft.com/meet/3879512933733?p=rTdaRaFWPi0JWENkuE)
+| eCH-0292: [Metaprozesse zu politischen Geschäften (meta)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0292_meta) | Mo 22.06.2026, 15:00–16:00 (4. Mo des Monats) | [Teams](https://teams.microsoft.com/meet/3879512933733?p=rTdaRaFWPi0JWENkuE)
 | eCH-0293: [Öffentlicher Ratsbetrieb (operations)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0293_operations) | Mi 20.05.2026, 15:00–16:00 (alle 2 Wochen) | [Teams](https://teams.microsoft.com/meet/343723057878048?p=vtG4KYLW2wX5wR7T0K) |
 | eCH-0294: [Politische Akteure: Personen, Gruppen und Organe (actors)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0294_actors) | Mi 20.05.2026, 13:05–13:55 (alle 3 Wochen) | [Teams](https://teams.microsoft.com/meet/320265146373845?p=1feam13FJchomjU8mk) |
 | eCH-0295: [Parlamentarische Geschäfte (affairs)](https://github.com/swiss/political-affairs-ech-group/tree/main/ech-0295_affairs) | – | – |
