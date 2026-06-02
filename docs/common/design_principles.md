@@ -35,6 +35,7 @@ This is a simplified example, in a real use case there would be more information
 ```yaml
 motion:
   id: ex:m1
+  date: 2012-04-01
   title: "Motion 1"
   submitter: # local reference to person, class PersonReference
     id: ex:p1
@@ -48,5 +49,10 @@ person:
   id: ex:p1
   name: "John Doe"
   party: "Party B"
-  role: "Minister"
+  roles: 
+    - role: "Minister"
+      valid_from: 2019-01-01
+    - role: "Member of Parliament"
+      valid_from: 2010-07-01
+      valid_through: 2018-12-31
 ```
