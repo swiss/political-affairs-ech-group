@@ -2,8 +2,9 @@
 
 _Internal note: update the next subgroup meeting in the [README](https://github.com/swiss/political-affairs-ech-group/tree/main) after every meeting._
 
+**Meeting Link:** https://teams.microsoft.com/meet/3879512933733?p=rTdaRaFWPi0JWENkuE
 
-## Next meeting: 22 June (15-16.00) – fourth Monday of every month on [Teams](https://teams.microsoft.com/meet/3879512933733?p=rTdaRaFWPi0JWENkuE)
+## Next meeting: 22 June (15-16.00) – 4th MO of every month
 
 - 05_data_publishing.md
 - 06_richtext_definition.md
