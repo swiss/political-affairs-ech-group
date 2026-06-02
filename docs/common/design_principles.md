@@ -28,9 +28,7 @@ An example of this would be that a motion links to the person who submitted it. 
 
 The following example shows a motion with a local reference to the submitter (person) and the actual person entity. The motion contains the correct information about the submitter at the time of submission, even if the person changes party and/or role later on.
 
-In this case, the information about the person only shows the current data (no versioning at all).
-
-This is a simplified example, in a real use case there would be more information about the motion and the person.
+This is a **simplified example**, in a real use case there would be more information about the motion and the person.
 
 ```yaml
 motion:
@@ -48,7 +46,12 @@ motion:
 person:
   id: ex:p1
   name: "John Doe"
-  party: "Party B"
+  parties: 
+    - party: "Party B"
+      valid_from: 2016-01-01
+    - party: "Party A"
+      valid_from: 1990-01-01
+      valid_through: 2015-12-31
   roles: 
     - role: "Minister"
       valid_from: 2019-01-01
