@@ -153,6 +153,41 @@ Ein AgendaItem ist das zentrale Bindeglied zwischen:
 
 {{include:ech-0293_operations/output/docs/AgendaItem.md}}
 
+{{include:ech-0293_operations/output/docs/AgendaItemTypeEnum.md}}
+
+## Protokoll (Protocol)
+
+### Zweck der Entität
+
+Während die Traktanden die **Planung** einer Sitzung abbilden, hält das Protokoll den **tatsächlichen Verlauf** nach der Sitzung fest. `Protocol` ist ein Wrapper-Container, der pro Sitzung (`Meeting`) genau einmal geführt wird und die effektiv behandelten Traktanden (`protocol_items`), Abstimmungen, Wortmeldungen sowie Wortlaut-Textsegmente und Dokumente bündelt.
+
+```
+Meeting
+  ├─ agenda_items   (vorher: geplante Traktanden)
+  └─ protocol_ref   (nachher: Niederschrift)
+        ├─ protocol_items  → ProtocolItem (wie AgendaItem)
+        ├─ votings
+        ├─ speeches
+        ├─ text_segments
+        └─ documents
+```
+
+{{include:ech-0293_operations/output/docs/Protocol.md}}
+
+### ProtocolItem (protokolliertes Traktandum)
+
+`ProtocolItem` erbt sämtliche Felder von `AgendaItem` (`is_a: AgendaItem`) und bildet ein Traktandum so ab, wie es im Protokoll tatsächlich festgehalten wurde.
+
+{{include:ech-0293_operations/output/docs/ProtocolItem.md}}
+
+## Gemeinsame Beratung (JointDebate)
+
+### Zweck der Entität
+
+`JointDebate` fasst mehrere Traktanden zusammen, die gemeinsam beraten werden – etwa inhaltlich zusammenhängende Geschäfte, die in einer einzigen Debatte behandelt werden.
+
+{{include:ech-0293_operations/output/docs/JointDebate.md}}
+
 ## Resolution (Beschluss)
 
 ### Zweck der Entität
@@ -323,6 +358,8 @@ Bei mehrsprachigen Parlamenten (CH, BE, etc.) müssen Beschlusstexte in allen Am
 5. **Statistische Auswertung**: Annahme-/Ablehnungsquoten
 
 {{include:ech-0293_operations/output/docs/Resolution.md}}
+
+{{include:ech-0293_operations/output/docs/ResolutionTypeEnum.md}}
 
 ## Motion (Anträge)
 

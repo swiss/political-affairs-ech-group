@@ -198,6 +198,10 @@ Voting
 
 {{include:ech-0293_operations/output/docs/Voting.md}}
 
+{{include:ech-0293_operations/output/docs/VotingTypeEnum.md}}
+
+{{include:ech-0293_operations/output/docs/MajorityTypeEnum.md}}
+
 ## Individual Vote (Einzelstimme)
 
 ## Zweck der Entität
@@ -311,6 +315,8 @@ IndividualVote-Entitäten werden nur bei namentlichen (offenen) Abstimmungen erf
 - **Geheime Abstimmung**: Nur das Gesamtergebnis wird erfasst, keine IndividualVotes
 
 {{include:ech-0293_operations/output/docs/IndividualVote.md}}
+
+{{include:ech-0293_operations/output/docs/IndividualVoteTypeEnum.md}}
 
 ## Election (Wahl)
 
@@ -532,3 +538,5 @@ Bei offenen Wahlen:
 - Potenzielle soziale Druckeffekte
 
 {{include:ech-0293_operations/output/docs/Election.md}}
+
+{{include:ech-0293_operations/output/docs/ElectionTypeEnum.md}}

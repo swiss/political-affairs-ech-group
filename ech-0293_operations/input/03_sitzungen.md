@@ -249,6 +249,10 @@ Ein Meeting verbindet verschiedene Elemente des parlamentarischen Betriebs:
 
 {{include:ech-0293_operations/output/docs/Meeting.md}}
 
+{{include:ech-0293_operations/output/docs/MeetingTypeEnum.md}}
+
+{{include:ech-0293_operations/output/docs/StateEnum.md}}
+
 # Anwesenheit und Wortmeldungen
 
 Neben den formalen Entscheidungen dokumentiert der Standard auch die Teilnahme an Sitzungen und die geführten Debatten. Anwesenheitslisten erfassen wer an einer Sitzung teilgenommen hat, während Wortmeldungen die parlamentarische Debatte mit Text- und Medienaufzeichnungen festhalten.
@@ -358,4 +362,6 @@ Die Attendance-Entitäten ermöglichen:
 {{include:ech-0293_operations/output/docs/Attendance.md}}
 
 {{include:ech-0293_operations/output/docs/IndividualAttendance.md}}
+
+{{include:ech-0293_operations/output/docs/AttendanceTypeEnum.md}}
 
