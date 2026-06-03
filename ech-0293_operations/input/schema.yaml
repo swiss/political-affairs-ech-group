@@ -31,6 +31,7 @@ classes:
         # ist_schon_erfasst
       - meetings
       - agenda_items
+      - protocols
       - votings
       - elections
       - individual_votes
@@ -105,6 +106,7 @@ classes:
       - parent_meeting
       - parent_legislature
       - documents
+      - protocol
 
   AgendaItem:
     description: |
@@ -133,7 +135,32 @@ classes:
       - has_resolution
       - documents
 
-  JointDebate: 
+  Protocol:
+    description: |
+      [en] The minutes of a meeting, recorded after the meeting. A wrapper container
+           bundling the actually handled agenda items (protocol_items), votings,
+           speeches, verbatim text segments and linked documents.
+      [de] Das nach der Sitzung erstellte Protokoll. Ein Wrapper-Container, der die
+           tatsächlich behandelten Traktanden (protocol_items), Abstimmungen, Wortmeldungen,
+           Wortlaut-Textsegmente und verknüpfte Dokumente bündelt.
+    mixins:
+      - HasIdentification
+      - HasCreationModificationDates
+    slots:
+      - parent_meeting
+      - protocol_items
+      - votings
+      - speeches
+      - text_segments
+      - documents
+
+  ProtocolItem:
+    is_a: AgendaItem
+    description: |
+      [en] An agenda item as actually recorded in the protocol.
+      [de] Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde.
+
+  JointDebate:
     description: |
       [en] Agenda Items which are debated together.
       [de] Traktanden die gemeinsam behandelt werden.
@@ -701,6 +728,37 @@ slots:
   agenda_items:
     slot_uri: ops:agendaItem
     range: AgendaItem
+    multivalued: true
+    inlined_as_list: true
+
+  protocols:
+    slot_uri: ops:protocol
+    description: Collection of protocol records
+    range: Protocol
+    multivalued: true
+    inlined_as_list: true
+
+  protocol:
+    slot_uri: ops:protocol
+    description: |
+      [en] The protocol (minutes) of this meeting, recorded after the meeting.
+      [de] Das nach der Sitzung erstellte Protokoll dieser Sitzung.
+    range: Protocol
+    inlined: true
+
+  protocol_items:
+    slot_uri: ops:protocolItem
+    description: |
+      [en] Agenda items as actually recorded in the protocol.
+      [de] Traktanden, wie sie im Protokoll tatsächlich festgehalten wurden.
+    range: ProtocolItem
+    multivalued: true
+    inlined_as_list: true
+
+  text_segments:
+    slot_uri: ops:textSegment
+    description: Collection of text segments (e.g. verbatim protocol)
+    range: TextSegment
     multivalued: true
     inlined_as_list: true
 
