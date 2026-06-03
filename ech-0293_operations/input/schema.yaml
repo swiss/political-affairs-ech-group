@@ -55,6 +55,13 @@ classes:
       - landing_page
       - actor_id
       - documents
+    slot_usage:
+      actor_id:
+        range: GroupReference
+        inlined: true
+        description: |
+          [en] Reference to the acting body/organ (lightweight snapshot at time of linking).
+          [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).
 
   Session:
     description: |
@@ -70,7 +77,7 @@ classes:
       - number
       - sequential_number
       - position
-      - abbreviation
+      - meeting_abbreviation
       - url
       - parent_legislature
       - meetings
@@ -96,7 +103,7 @@ classes:
       - landing_page
       - sequential_number
       - position
-      - abbreviation
+      - meeting_abbreviation
       - actor_name
       - actor_id
       - state
@@ -107,6 +114,13 @@ classes:
       - parent_legislature
       - documents
       - protocol
+    slot_usage:
+      actor_id:
+        range: GroupReference
+        inlined: true
+        description: |
+          [en] Reference to the acting body/organ (lightweight snapshot at time of linking).
+          [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).
 
   AgendaItem:
     description: |
@@ -210,6 +224,13 @@ classes:
       - affair_id
       - actor_id
       - documents
+    slot_usage:
+      actor_id:
+        range: GroupReference
+        inlined: true
+        description: |
+          [en] Reference to the acting body/organ (lightweight snapshot at time of linking).
+          [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).
 
 # Handling Präsidiums-Votum wird als eigenes voting aufgenommen
 
@@ -253,6 +274,13 @@ classes:
       - affair_id
       - actor_id
       - documents
+    slot_usage:
+      actor_id:
+        range: GroupReference
+        inlined: true
+        description: |
+          [en] Reference to the acting body/organ (lightweight snapshot at time of linking).
+          [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).
 
   Attendance:
     description: |
@@ -269,6 +297,13 @@ classes:
       - total_present
       - total_absent
       - total_excused
+    slot_usage:
+      actor_id:
+        range: GroupReference
+        inlined: true
+        description: |
+          [en] Reference to the acting body/organ (lightweight snapshot at time of linking).
+          [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).
 
   IndividualAttendance:
     description: |
@@ -368,8 +403,10 @@ slots:
 
   actor_id:
     description: |
-      [en] The political body organized by the term of office (e.g., Regierungsrat, Nationalrat, Ständerat).
-      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat, Nationalrat, Ständerat).
+      [en] Reference to the acting person (lightweight snapshot at time of linking).
+      [de] Referenz auf die handelnde Person (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).
+    range: PersonReference
+    inlined: true
 
   body_key:
     description: |
@@ -587,15 +624,18 @@ slots:
   
   number:
   
-  abbreviation:
-  
+  meeting_abbreviation:
+
   group_name:
     description: Name of the group or body
     range: string
 
   group_id:
-    description: Identifier of the group or body
-    range: string
+    description: |
+      [en] Reference to the group or body (lightweight snapshot at time of linking).
+      [de] Referenz auf die Gruppe oder das Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).
+    range: GroupReference
+    inlined: true
 
   landing_page:
     slot_uri: ops:landingPage

@@ -124,6 +124,45 @@ classes:
       - value
       - language
 
+  PersonReference:
+    description: |
+      Lightweight reference to a person with key identification data at time of linking. Preserves historical accuracy even if the person changes later.
+    annotations:
+      description_de: |
+        Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung. Ermöglicht historische Korrektheit auch wenn sich die Person später ändert.
+    mixins:
+      - HasIdentification
+    slots:
+      - label
+      - label_long
+      - group_label
+    slot_usage:
+      label:
+        description: |
+          Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name).
+        annotations:
+          description_de: |
+            Obligatorischer Kurzname zur Identifikation der Person innerhalb der Organisation (z.B. mit Geburtsjahr zur Unterscheidung von Personen mit gleichem Namen).
+        required: true
+      label_long:
+        description: |
+          Optional long display name including academic titles and full official name (e.g. "Dr. Maria Muster-Beispiel").
+        annotations:
+          description_de: |
+            Optionaler langer Anzeigename mit akademischen Titeln und vollständigem amtlichem Namen (z.B. "Dr. Maria Muster-Beispiel").
+
+  GroupReference:
+    description: |
+      Lightweight reference to a group with key identification data at time of linking.
+    annotations:
+      description_de: |
+        Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung.
+    mixins:
+      - HasIdentification
+    slots:
+      - label
+      - abbreviation
+
 # SLOTS
 # ----------------------------------------------------------------
 
@@ -378,3 +417,22 @@ slots:
       description_de: |
         Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen Kontext zu einem Prozessschritt oder einer Entität.
     range: string
+
+  group_label:
+    slot_uri: mcm:groupLabel
+    description: |
+      Name of the body/group at time of linking.
+    annotations:
+      description_de: |
+        Name des Gremiums zum Zeitpunkt der Verknüpfung.
+
+  abbreviation:
+    slot_uri: mcm:abbreviation
+    range: MultilingualValue
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      Abbreviation (can be multilingual).
+    annotations:
+      description_de: |
+        Abkürzung (kann mehrsprachig sein).

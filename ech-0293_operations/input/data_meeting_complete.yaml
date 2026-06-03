@@ -11,7 +11,12 @@ meetings:
   url:
     - text: "https://www.ratsinfo.sg.ch/sessions/2025-03-15"
       language: "de"
-  actor_id: actors:parliament_sg
+  actor_id:
+    global_uri: "https://api.openparldata.ch/v1/bodies/265"
+    label: "Kantonsrat St. Gallen"
+    abbreviation:
+      - value: "KR"
+        language: de
   actor_name: "Kantonsrat St. Gallen"
   datetime_begin_planned: "2025-03-15T08:00:00Z"
   datetime_end_planned: "2025-03-15T18:00:00Z"
@@ -34,7 +39,12 @@ meetings:
   url:
     - text: "https://www.gr.be.ch/kommissionen/wak/2025-05-12"
       language: "de"
-  actor_id: actors:committee_wak_be
+  actor_id:
+    global_uri: "actors:committee_wak_be"
+    label: "Kommission für Wirtschaft und Abgaben (WAK)"
+    abbreviation:
+      - value: "WAK"
+        language: de
   actor_name: "Kommission für Wirtschaft und Abgaben (WAK)"
   datetime_begin_planned: "2025-05-12T14:00:00Z"
   datetime_end_planned: "2025-05-12T17:00:00Z"
@@ -55,7 +65,12 @@ meetings:
   url:
     - text: "https://www.landsgemeinde.gl.ch/2025"
       language: "de"
-  actor_id: actors:landsgemeinde_gl
+  actor_id:
+    global_uri: "https://api.openparldata.ch/v1/bodies/258"
+    label: "Landsgemeinde Glarus"
+    abbreviation:
+      - value: "LG"
+        language: de
   actor_name: "Landsgemeinde Glarus"
   datetime_begin_planned: "2025-05-04T09:30:00Z"
   datetime_end_planned: "2025-05-04T14:00:00Z"
