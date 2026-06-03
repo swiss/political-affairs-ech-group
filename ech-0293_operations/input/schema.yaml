@@ -113,7 +113,7 @@ classes:
       - parent_meeting
       - parent_legislature
       - documents
-      - protocol
+      - protocol_ref
     slot_usage:
       actor_id:
         range: GroupReference
@@ -778,8 +778,8 @@ slots:
     multivalued: true
     inlined_as_list: true
 
-  protocol:
-    slot_uri: ops:protocol
+  protocol_ref:
+    slot_uri: ops:protocolRef
     description: |
       [en] The protocol (minutes) of this meeting, recorded after the meeting.
       [de] Das nach der Sitzung erstellte Protokoll dieser Sitzung.
