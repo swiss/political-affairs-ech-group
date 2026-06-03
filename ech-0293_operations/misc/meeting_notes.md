@@ -1,9 +1,7 @@
 ## 2026 ##
-Todos:
-- Bestimmung Roles Actor für Legislatur, meeting, Agenda_item Siehe GroupReference und ActorReference: https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0294_actors/input/schema.yaml
-- Cup Final (Mehrere Abstimmungsmöglichkeiten modellieren)
-- Absolutes / Relatives Mehr (ausweisen können)
-- Ausformulieren, Rollen bei Abstimmungen (Beispiel Gemeindeniveau: Rolle mit mehreren Stimmmen, Beispiel Stellvertretungen/Ersatzmitglieder ausweisen)
+Todos for first Version:
+- Beispiel erstellen für Cup-System (Mehrere Abstimmungsmöglichkeiten modellieren / https://www.notes.zh.ch/appl/zhlex_r.nsf/WebView/F73BBA22EBEAC70CC1258869002D0E35/$File/171.11_25.3.19_117.pdf)
+
 ## 29.01.2026 ##
 - Arbeit direkt in den Dokumentbeschreibungen
 - neues Todo
