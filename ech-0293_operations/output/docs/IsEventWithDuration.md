@@ -6,9 +6,7 @@ search:
 # Class: IsEventWithDuration 
 
 
-_[de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder Vorkommnissen mit Zeitdauer zur Verfügung stellt._
-
-_[en] A mixin class that provides slots for modeling events or occurrences with time duration._
+_A mixin class that provides slots for modeling events or occurrences with time duration._
 
 __
 
@@ -74,14 +72,14 @@ URI: [ops:IsEventWithDuration](https://ch.paf.link/schema/operations/IsEventWith
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [date_begin_actual](date_begin_actual.md) | 0..1 <br/> [Date](Date.md) | [de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitda... | direct |
-| [datetime_begin_actual](datetime_begin_actual.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorko... | direct |
-| [date_begin_planned](date_begin_planned.md) | 0..1 <br/> [Date](Date.md) | [de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer | direct |
-| [datetime_begin_planned](datetime_begin_planned.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommen... | direct |
-| [date_end_actual](date_end_actual.md) | 0..1 <br/> [Date](Date.md) | [de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdaue... | direct |
-| [datetime_end_actual](datetime_end_actual.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkomm... | direct |
-| [date_end_planned](date_end_planned.md) | 0..1 <br/> [Date](Date.md) | [de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer | direct |
-| [datetime_end_planned](datetime_end_planned.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens ... | direct |
+| [date_begin_actual](date_begin_actual.md) | 0..1 <br/> [Date](Date.md) | The actual start date of an event or occurrence with time duration | direct |
+| [datetime_begin_actual](datetime_begin_actual.md) | 0..1 <br/> [Datetime](Datetime.md) | The actual start date and time of an event or occurrence with time duration | direct |
+| [date_begin_planned](date_begin_planned.md) | 0..1 <br/> [Date](Date.md) | The planned start date of an event or occurrence with time duration | direct |
+| [datetime_begin_planned](datetime_begin_planned.md) | 0..1 <br/> [Datetime](Datetime.md) | The planned start date and time of an event or occurrence with time duration | direct |
+| [date_end_actual](date_end_actual.md) | 0..1 <br/> [Date](Date.md) | The actual end date of an event or occurrence with time duration | direct |
+| [datetime_end_actual](datetime_end_actual.md) | 0..1 <br/> [Datetime](Datetime.md) | The actual end date and time of an event or occurrence with time duration | direct |
+| [date_end_planned](date_end_planned.md) | 0..1 <br/> [Date](Date.md) | The planned end date of an event or occurrence with time duration | direct |
+| [datetime_end_planned](datetime_end_planned.md) | 0..1 <br/> [Datetime](Datetime.md) | The planned end date and time of an event or occurrence with time duration | direct |
 
 
 
@@ -93,7 +91,7 @@ URI: [ops:IsEventWithDuration](https://ch.paf.link/schema/operations/IsEventWith
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |
-| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |
+| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |
 
 
 
@@ -110,6 +108,14 @@ URI: [ops:IsEventWithDuration](https://ch.paf.link/schema/operations/IsEventWith
 
 ## Identifier and Mapping Information
 
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder Vorkommnissen mit Zeitdauer zur Verfügung stellt.
+ |
 
 
 
@@ -143,11 +149,15 @@ URI: [ops:IsEventWithDuration](https://ch.paf.link/schema/operations/IsEventWith
 <details>
 ```yaml
 name: IsEventWithDuration
-description: '[de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen
-  oder Vorkommnissen mit Zeitdauer zur Verfügung stellt.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder
+      Vorkommnissen mit Zeitdauer zur Verfügung stellt.
 
-  [en] A mixin class that provides slots for modeling events or occurrences with time
-  duration.
+      '
+description: 'A mixin class that provides slots for modeling events or occurrences
+  with time duration.
 
   '
 from_schema: https://ch.paf.link/schema/operations
@@ -170,11 +180,15 @@ slots:
 <details>
 ```yaml
 name: IsEventWithDuration
-description: '[de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen
-  oder Vorkommnissen mit Zeitdauer zur Verfügung stellt.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder
+      Vorkommnissen mit Zeitdauer zur Verfügung stellt.
 
-  [en] A mixin class that provides slots for modeling events or occurrences with time
-  duration.
+      '
+description: 'A mixin class that provides slots for modeling events or occurrences
+  with time duration.
 
   '
 from_schema: https://ch.paf.link/schema/operations
@@ -182,10 +196,14 @@ mixin: true
 attributes:
   date_begin_actual:
     name: date_begin_actual
-    description: '[de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens
-      mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit
+          Zeitdauer.
 
-      [en] The actual start date of an event or occurrence with time duration.
+          '
+    description: 'The actual start date of an event or occurrence with time duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -197,10 +215,15 @@ attributes:
     range: date
   datetime_begin_actual:
     name: datetime_begin_actual
-    description: '[de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses
-      oder Vorkommens mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder
+          Vorkommnissen mit Zeitdauer.
 
-      [en] The actual start date and time of an event or occurrence with time duration.
+          '
+    description: 'The actual start date and time of an event or occurrence with time
+      duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -212,10 +235,13 @@ attributes:
     range: datetime
   date_begin_planned:
     name: date_begin_planned
-    description: '[de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit
-      Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
 
-      [en] The planned start date of an event or occurrence with time duration.
+          '
+    description: 'The planned start date of an event or occurrence with time duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -227,10 +253,15 @@ attributes:
     range: date
   datetime_begin_planned:
     name: datetime_begin_planned
-    description: '[de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder
-      Vorkommens mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+          mit Zeitdauer.
 
-      [en] The planned start date and time of an event or occurrence with time duration.
+          '
+    description: 'The planned start date and time of an event or occurrence with time
+      duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -242,10 +273,14 @@ attributes:
     range: datetime
   date_end_actual:
     name: date_end_actual
-    description: '[de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens
-      mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Enddatum eines Ereignisses oder Vorkommnissen mit
+          Zeitdauer.
 
-      [en] The actual end date of an event or occurrence with time duration.
+          '
+    description: 'The actual end date of an event or occurrence with time duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -257,10 +292,15 @@ attributes:
     range: date
   datetime_end_actual:
     name: datetime_end_actual
-    description: '[de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses
-      oder Vorkommens mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+          mit Zeitdauer.
 
-      [en] The actual end date and time of an event or occurrence with time duration.
+          '
+    description: 'The actual end date and time of an event or occurrence with time
+      duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -272,10 +312,13 @@ attributes:
     range: datetime
   date_end_planned:
     name: date_end_planned
-    description: '[de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit
-      Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Enddatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
 
-      [en] The planned end date of an event or occurrence with time duration.
+          '
+    description: 'The planned end date of an event or occurrence with time duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -287,10 +330,15 @@ attributes:
     range: date
   datetime_end_planned:
     name: datetime_end_planned
-    description: '[de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder
-      Vorkommens mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+          mit Zeitdauer.
 
-      [en] The planned end date and time of an event or occurrence with time duration.
+          '
+    description: 'The planned end date and time of an event or occurrence with time
+      duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations

@@ -15,19 +15,20 @@ Name: operations
 | Class | Description |
 | --- | --- |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ProtocolItem](ProtocolItem.md) | [en] An agenda item as actually recorded in the protocol |
 | [Attendance](Attendance.md) | [en] Aggregated attendance record for a meeting (number of members present, a... |
 | [Container](Container.md) |  |
 | [Date](Date.md) |  |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |
 | [Expression](Expression.md) |  |
-| [HasCreationModificationDates](HasCreationModificationDates.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Ä... |
-| [HasIdentification](HasIdentification.md) | [de] Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Ve... |
-| [HasTemporalValidity](HasTemporalValidity.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gülti... |
+| [HasCreationModificationDates](HasCreationModificationDates.md) | A mixin class that provides slots for modeling creation and modification date... |
+| [HasIdentification](HasIdentification.md) | A mixin class that provides slots for the identification of an entity |
+| [HasTemporalValidity](HasTemporalValidity.md) | A mixin class that provides slots for modeling a temporal validity of informa... |
 | [IndividualAttendance](IndividualAttendance.md) | [en] Individual attendance record for a specific person at a meeting (linked ... |
 | [IndividualVote](IndividualVote.md) | [en] An individual vote cast by a member during a voting procedure |
-| [IsEventWithDuration](IsEventWithDuration.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder V... |
-| [IsInstantaneousEvent](IsInstantaneousEvent.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereign... |
-| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |
+| [IsEventWithDuration](IsEventWithDuration.md) | A mixin class that provides slots for modeling events or occurrences with tim... |
+| [IsInstantaneousEvent](IsInstantaneousEvent.md) | A mixin class that provides slots for modeling instantaneous events or occurr... |
+| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |
 | [JointDebate](JointDebate.md) | [en] Agenda Items which are debated together |
 | [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |
 | [Manifestation](Manifestation.md) |  |
@@ -35,7 +36,8 @@ Name: operations
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |
 | [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |
 | [MultilingualString](MultilingualString.md) | [en] A string that can contain text in multiple languages |
-| [MultilingualValue](MultilingualValue.md) | [de] Ein mehrsprachiger String mit Angabe der Sprache |
+| [MultilingualValue](MultilingualValue.md) | A multilingual string with language specification |
+| [Protocol](Protocol.md) | [en] The minutes of a meeting, recorded after the meeting |
 | [Resolution](Resolution.md) | [en] A resolutionor decision taken on an agenda item, including voting proced... |
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |
 | [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |
@@ -69,26 +71,26 @@ Name: operations
 | [body_key](body_key.md) | [en] Key identifying the political body or jurisdiction (e |
 | [category](category.md) |  |
 | [count](count.md) | [en] The count of votes for the total other category |
-| [date_actual](date_actual.md) | [de] Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommens (oh... |
-| [date_begin_actual](date_begin_actual.md) | [de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitda... |
-| [date_begin_planned](date_begin_planned.md) | [de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer |
-| [date_created](date_created.md) | [de] Das Datum, an dem eine Entität erstellt wurde |
-| [date_end_actual](date_end_actual.md) | [de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdaue... |
-| [date_end_planned](date_end_planned.md) | [de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer |
-| [date_modified](date_modified.md) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde |
-| [date_planned](date_planned.md) | [de] Das geplante Datum eines instantanen Ereignisses oder Vorkommens (ohne Z... |
+| [date_actual](date_actual.md) | The actual date of an instantaneous event or occurrence (without time duratio... |
+| [date_begin_actual](date_begin_actual.md) | The actual start date of an event or occurrence with time duration |
+| [date_begin_planned](date_begin_planned.md) | The planned start date of an event or occurrence with time duration |
+| [date_created](date_created.md) | The date when an entity was created |
+| [date_end_actual](date_end_actual.md) | The actual end date of an event or occurrence with time duration |
+| [date_end_planned](date_end_planned.md) | The planned end date of an event or occurrence with time duration |
+| [date_modified](date_modified.md) | The date when an entity was last modified |
+| [date_planned](date_planned.md) | The planned date of an instantaneous event or occurrence (without time durati... |
 | [date_type](date_type.md) |  |
 | [dates](dates.md) |  |
-| [datetime_actual](datetime_actual.md) | [de] Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses ode... |
+| [datetime_actual](datetime_actual.md) | The actual date and time of an instantaneous event or occurrence (without tim... |
 | [datetime_begin](datetime_begin.md) | [en] The date and time when the meeting or voting begins |
-| [datetime_begin_actual](datetime_begin_actual.md) | [de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorko... |
-| [datetime_begin_planned](datetime_begin_planned.md) | [de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommen... |
-| [datetime_created](datetime_created.md) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde |
+| [datetime_begin_actual](datetime_begin_actual.md) | The actual start date and time of an event or occurrence with time duration |
+| [datetime_begin_planned](datetime_begin_planned.md) | The planned start date and time of an event or occurrence with time duration |
+| [datetime_created](datetime_created.md) | The date and time when an entity was created |
 | [datetime_end](datetime_end.md) | [en] The date and time when the meeting or voting ends |
-| [datetime_end_actual](datetime_end_actual.md) | [de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkomm... |
-| [datetime_end_planned](datetime_end_planned.md) | [de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens ... |
-| [datetime_modified](datetime_modified.md) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde |
-| [datetime_planned](datetime_planned.md) | [de] Das geplante Datum und die Uhrzeit eines instantanen Ereignisses oder Vo... |
+| [datetime_end_actual](datetime_end_actual.md) | The actual end date and time of an event or occurrence with time duration |
+| [datetime_end_planned](datetime_end_planned.md) | The planned end date and time of an event or occurrence with time duration |
+| [datetime_modified](datetime_modified.md) | The date and time when an entity was last modified |
+| [datetime_planned](datetime_planned.md) | The planned date and time of an instantaneous event or occurrence (without ti... |
 | [description](description.md) |  |
 | [document_category](document_category.md) | [de] Kategorie des Dokuments |
 | [documents](documents.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind |
@@ -96,7 +98,7 @@ Name: operations
 | [elections](elections.md) | Collection of election records |
 | [expressions](expressions.md) |  |
 | [format](format.md) | [en] The file format of the manifestation (e |
-| [global_uri](global_uri.md) | [de] Eine eindeutige, global gültige URI für die Entität |
+| [global_uri](global_uri.md) | A unique, globally valid URI for the entity |
 | [group_id](group_id.md) | Identifier of the group or body |
 | [group_name](group_name.md) | Name of the group or body |
 | [has_resolution](has_resolution.md) | [en] The resolutionor decision taken on this agenda item |
@@ -104,17 +106,17 @@ Name: operations
 | [individual_attendances](individual_attendances.md) | Collection of individual attendance records |
 | [individual_vote_type](individual_vote_type.md) | [en] Type of vote cast (yes, no, abstention, no vote, etc |
 | [individual_votes](individual_votes.md) | Collection of individual vote records |
-| [is_active](is_active.md) | [de] Gibt an, ob die Information aktuell gültig ist |
-| [label](label.md) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben ... |
+| [is_active](is_active.md) | Indicates whether the information is currently valid |
+| [label](label.md) | Assign a label to a structured piece of information (e |
 | [label_abstention](label_abstention.md) | [en] Meaning of an 'abstention' vote |
-| [label_long](label_long.md) | [de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel z... |
+| [label_long](label_long.md) | Assign an extended label to a structured piece of information (e |
 | [label_no](label_no.md) | [en] Meaning of a 'no' vote |
 | [label_yes](label_yes.md) | [en] Meaning of a 'yes' vote |
 | [landing_page](landing_page.md) | [en] URL providing further information |
-| [language](language.md) | [de] Sprachcode im ISO 639-1 Format |
+| [language](language.md) | Language code in ISO 639-1 format (two lowercase letters, e |
 | [leading_actor_id](leading_actor_id.md) | [en] The leading department for the agenda item |
 | [legislatures](legislatures.md) |  |
-| [local_id](local_id.md) | [de] Lokaler Identifikator |
+| [local_id](local_id.md) | Local identifier |
 | [location](location.md) |  |
 | [majority_count](majority_count.md) | [en] Number of votes required for the relevant majority threshold |
 | [majority_type](majority_type.md) | [en] Type of majority required for the vote (absolute, two-thirds, etc |
@@ -124,7 +126,7 @@ Name: operations
 | [media_url](media_url.md) | URL to media file (audio/video) |
 | [meeting_type](meeting_type.md) | Type of the meeting, e |
 | [meetings](meetings.md) |  |
-| [multilingual_value](multilingual_value.md) | [de] Ein mehrsprachiger Wert mit Angabe der Sprache |
+| [multilingual_value](multilingual_value.md) | A multilingual value with language specification |
 | [name](name.md) |  |
 | [number](number.md) |  |
 | [optional](optional.md) | [en] Indicates if the meeting or voting is optional |
@@ -135,8 +137,11 @@ Name: operations
 | [parent_type](parent_type.md) | Type of parent object (meeting, agenda, speech, affair) |
 | [parent_voting](parent_voting.md) | [en] The ID of the voting associated with the individual vote |
 | [position](position.md) |  |
+| [protocol](protocol.md) | [en] The protocol (minutes) of this meeting, recorded after the meeting |
+| [protocol_items](protocol_items.md) | [en] Agenda items as actually recorded in the protocol |
+| [protocols](protocols.md) | Collection of protocol records |
 | [reason](reason.md) | [en] Reason for absence or lateness (free-text, multilingual) |
-| [remark](remark.md) | [de] Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen Kontext ... |
+| [remark](remark.md) | Free-text remark or note for edge cases or additional context on a process st... |
 | [resolution_type](resolution_type.md) | [en] Type of resolutiontaken on the agenda item |
 | [resolutions](resolutions.md) | Collection of resolutionrecords |
 | [result](result.md) |  |
@@ -154,6 +159,7 @@ Name: operations
 | [status](status.md) |  |
 | [text](text.md) |  |
 | [text_format](text_format.md) | [en] Format of text (text, html, html_with_timestamps) |
+| [text_segments](text_segments.md) | Collection of text segments (e |
 | [text_type](text_type.md) | [en] Type of text (raw draft, edited version) |
 | [tie_breaker](tie_breaker.md) | [en] Indicates if a tie-breaker was used in the voting |
 | [title](title.md) |  |
@@ -169,16 +175,16 @@ Name: operations
 | [type](type.md) |  |
 | [type_label](type_label.md) | [en] Custom type label when standard type values don't apply |
 | [url](url.md) |  |
-| [valid_from](valid_from.md) | [de] Das Datum, ab dem die Information gültig ist |
-| [valid_through](valid_through.md) | [de] Das Datum, bis und mit dem die Information gültig ist |
-| [value](value.md) | [de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ... |
+| [valid_from](valid_from.md) | The date from which the information is valid |
+| [valid_through](valid_through.md) | The date until which the information is valid, inclusive |
+| [value](value.md) | The value of an information besides other attributes such as type, language, ... |
 | [version](version.md) | Version number or identifier |
 | [vote_procedures](vote_procedures.md) | [en] Procedures for voting, such as secret ballot or open vote |
 | [voting_title](voting_title.md) | [en] Title or question being voted on |
 | [voting_type](voting_type.md) | [en] Type of voting procedure (preliminary, final, secret, etc |
 | [votings](votings.md) | Collection of voting records |
 | [weight](weight.md) | [en] The number of votes held by the individual, if applicable (e |
-| [wikidata_uri](wikidata_uri.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z |
+| [wikidata_uri](wikidata_uri.md) | A URI that refers to a Wikidata entity, e |
 | [work_type](work_type.md) |  |
 | [works](works.md) |  |
 | [xdate](xdate.md) |  |

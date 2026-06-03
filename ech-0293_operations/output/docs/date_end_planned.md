@@ -6,9 +6,7 @@ search:
 # Slot: date_end_planned 
 
 
-_[de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer._
-
-_[en] The planned end date of an event or occurrence with time duration._
+_The planned end date of an event or occurrence with time duration._
 
 __
 
@@ -29,12 +27,13 @@ URI: [mcm:dateEndPlanned](https://ld.ech.ch/schema/0292/meta-common/dateEndPlann
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [IsEventWithDuration](IsEventWithDuration.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder V... |  no  |
+| [IsEventWithDuration](IsEventWithDuration.md) | A mixin class that provides slots for modeling events or occurrences with tim... |  no  |
 | [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
-| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |  no  |
+| [ProtocolItem](ProtocolItem.md) | [en] An agenda item as actually recorded in the protocol |  no  |
+| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
 
 
 
@@ -69,6 +68,14 @@ URI: [mcm:dateEndPlanned](https://ld.ech.ch/schema/0292/meta-common/dateEndPlann
 
 
 
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Das geplante Enddatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
+ |
+
+
 
 
 ### Schema Source
@@ -94,9 +101,13 @@ URI: [mcm:dateEndPlanned](https://ld.ech.ch/schema/0292/meta-common/dateEndPlann
 <details>
 ```yaml
 name: date_end_planned
-description: '[de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das geplante Enddatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
 
-  [en] The planned end date of an event or occurrence with time duration.
+      '
+description: 'The planned end date of an event or occurrence with time duration.
 
   '
 from_schema: https://ch.paf.link/schema/operations

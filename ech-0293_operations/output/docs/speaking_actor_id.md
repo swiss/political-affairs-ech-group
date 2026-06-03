@@ -30,6 +30,7 @@ URI: [ops:speaking_actor_id](https://ch.paf.link/schema/operations/speaking_acto
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
+| [ProtocolItem](ProtocolItem.md) | [en] An agenda item as actually recorded in the protocol |  no  |
 
 
 

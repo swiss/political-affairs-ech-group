@@ -45,7 +45,7 @@ URI: [ops:MultilingualString](https://ch.paf.link/schema/operations/Multilingual
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [text](text.md) | 1 <br/> [String](String.md) |  | direct |
-| [language](language.md) | 1 <br/> [String](String.md) | [de] Sprachcode im ISO 639-1 Format | direct |
+| [language](language.md) | 1 <br/> [String](String.md) | Language code in ISO 639-1 format (two lowercase letters, e | direct |
 
 
 
@@ -63,6 +63,9 @@ URI: [ops:MultilingualString](https://ch.paf.link/schema/operations/Multilingual
 | [AgendaItem](AgendaItem.md) | [agenda_item_title](agenda_item_title.md) | range | [MultilingualString](MultilingualString.md) |
 | [AgendaItem](AgendaItem.md) | [agenda_item_description](agenda_item_description.md) | range | [MultilingualString](MultilingualString.md) |
 | [AgendaItem](AgendaItem.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |
+| [ProtocolItem](ProtocolItem.md) | [agenda_item_title](agenda_item_title.md) | range | [MultilingualString](MultilingualString.md) |
+| [ProtocolItem](ProtocolItem.md) | [agenda_item_description](agenda_item_description.md) | range | [MultilingualString](MultilingualString.md) |
+| [ProtocolItem](ProtocolItem.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |
 | [Voting](Voting.md) | [voting_title](voting_title.md) | range | [MultilingualString](MultilingualString.md) |
 | [IndividualAttendance](IndividualAttendance.md) | [reason](reason.md) | range | [MultilingualString](MultilingualString.md) |
 | [Media](Media.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |
@@ -160,9 +163,15 @@ attributes:
     required: true
   language:
     name: language
-    description: '[de] Sprachcode im ISO 639-1 Format.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Sprachcode im ISO 639-1 Format (zwei Kleinbuchstaben, z.B. "de", "fr",
+          "it", "en").
 
-      [en] Language code in ISO 639-1 format.
+          '
+    description: 'Language code in ISO 639-1 format (two lowercase letters, e.g. "de",
+      "fr", "it", "en").
 
       '
     from_schema: https://ch.paf.link/schema/operations

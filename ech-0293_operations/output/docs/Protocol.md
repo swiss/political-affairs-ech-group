@@ -3,12 +3,20 @@ search:
   boost: 10.0
 ---
 
-# Class: IndividualVote 
+# Class: Protocol 
 
 
-_[en] An individual vote cast by a member during a voting procedure._
+_[en] The minutes of a meeting, recorded after the meeting. A wrapper container_
 
-_[de] Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens._
+_     bundling the actually handled agenda items (protocol_items), votings,_
+
+_     speeches, verbatim text segments and linked documents._
+
+_[de] Das nach der Sitzung erstellte Protokoll. Ein Wrapper-Container, der die_
+
+_     tatsächlich behandelten Traktanden (protocol_items), Abstimmungen, Wortmeldungen,_
+
+_     Wortlaut-Textsegmente und verknüpfte Dokumente bündelt._
 
 __
 
@@ -18,7 +26,7 @@ __
 
 
 
-URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
+URI: [ops:Protocol](https://ch.paf.link/schema/operations/Protocol)
 
 
 
@@ -26,56 +34,83 @@ URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
 
 ```mermaid
  classDiagram
-    class IndividualVote
-    click IndividualVote href "../IndividualVote/"
-      HasIdentification <|-- IndividualVote
+    class Protocol
+    click Protocol href "../Protocol/"
+      HasIdentification <|-- Protocol
         click HasIdentification href "../HasIdentification/"
-      HasCreationModificationDates <|-- IndividualVote
+      HasCreationModificationDates <|-- Protocol
         click HasCreationModificationDates href "../HasCreationModificationDates/"
       
-      IndividualVote : actor_id
+      Protocol : date_created
         
-      IndividualVote : date_created
+      Protocol : date_modified
         
-      IndividualVote : date_modified
+      Protocol : datetime_created
         
-      IndividualVote : datetime_created
+      Protocol : datetime_modified
         
-      IndividualVote : datetime_modified
-        
-      IndividualVote : global_uri
-        
-      IndividualVote : individual_vote_type
+      Protocol : documents
         
           
     
         
         
-        IndividualVote --> "0..1" IndividualVoteTypeEnum : individual_vote_type
-        click IndividualVoteTypeEnum href "../IndividualVoteTypeEnum/"
+        Protocol --> "*" Work : documents
+        click Work href "../Work/"
     
 
         
-      IndividualVote : local_id
+      Protocol : global_uri
         
-      IndividualVote : parent_voting
+      Protocol : local_id
+        
+      Protocol : parent_meeting
+        
+      Protocol : protocol_items
         
           
     
         
         
-        IndividualVote --> "0..1" Voting : parent_voting
+        Protocol --> "*" ProtocolItem : protocol_items
+        click ProtocolItem href "../ProtocolItem/"
+    
+
+        
+      Protocol : speeches
+        
+          
+    
+        
+        
+        Protocol --> "*" Speech : speeches
+        click Speech href "../Speech/"
+    
+
+        
+      Protocol : text_segments
+        
+          
+    
+        
+        
+        Protocol --> "*" TextSegment : text_segments
+        click TextSegment href "../TextSegment/"
+    
+
+        
+      Protocol : votings
+        
+          
+    
+        
+        
+        Protocol --> "*" Voting : votings
         click Voting href "../Voting/"
     
 
         
-      IndividualVote : seat_nr
-        
-      IndividualVote : type_label
-        
-      IndividualVote : weight
-        
-      IndividualVote : wikidata_uri
+      Protocol : wikidata_uri
         
       
 ```
@@ -85,19 +120,19 @@ URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
 
 
 ## Inheritance
-* **IndividualVote** [ [HasIdentification](HasIdentification.md) [HasCreationModificationDates](HasCreationModificationDates.md)]
+* **Protocol** [ [HasIdentification](HasIdentification.md) [HasCreationModificationDates](HasCreationModificationDates.md)]
 
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [parent_voting](parent_voting.md) | 0..1 <br/> [Voting](Voting.md) | [en] The ID of the voting associated with the individual vote | direct |
-| [actor_id](actor_id.md) | 0..1 <br/> [String](String.md) | [en] The political body organized by the term of office (e | direct |
-| [seat_nr](seat_nr.md) | 0..1 <br/> [String](String.md) | [en] The seat number of the individual vote, if applicable | direct |
-| [weight](weight.md) | 0..1 <br/> [Integer](Integer.md) | [en] The number of votes held by the individual, if applicable (e | direct |
-| [individual_vote_type](individual_vote_type.md) | 0..1 <br/> [IndividualVoteTypeEnum](IndividualVoteTypeEnum.md) | [en] Type of vote cast (yes, no, abstention, no vote, etc | direct |
-| [type_label](type_label.md) | 0..1 <br/> [String](String.md) | [en] Custom type label when standard type values don't apply | direct |
+| [parent_meeting](parent_meeting.md) | 0..1 <br/> [String](String.md) | [en] The linked meeting ID that groups the current meeting | direct |
+| [protocol_items](protocol_items.md) | * <br/> [ProtocolItem](ProtocolItem.md) | [en] Agenda items as actually recorded in the protocol | direct |
+| [votings](votings.md) | * <br/> [Voting](Voting.md) | Collection of voting records | direct |
+| [speeches](speeches.md) | * <br/> [Speech](Speech.md) | Collection of speech records | direct |
+| [text_segments](text_segments.md) | * <br/> [TextSegment](TextSegment.md) | Collection of text segments (e | direct |
+| [documents](documents.md) | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
 | [local_id](local_id.md) | 0..1 <br/> [String](String.md) | Local identifier | [HasIdentification](HasIdentification.md) |
 | [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity | [HasIdentification](HasIdentification.md) |
 | [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e | [HasIdentification](HasIdentification.md) |
@@ -114,7 +149,8 @@ URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Container](Container.md) | [individual_votes](individual_votes.md) | range | [IndividualVote](IndividualVote.md) |
+| [Container](Container.md) | [protocols](protocols.md) | range | [Protocol](Protocol.md) |
+| [Meeting](Meeting.md) | [protocol](protocol.md) | range | [Protocol](Protocol.md) |
 
 
 
@@ -145,8 +181,8 @@ URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ops:IndividualVote |
-| native | ops:IndividualVote |
+| self | ops:Protocol |
+| native | ops:Protocol |
 
 
 
@@ -161,23 +197,24 @@ URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
 
 <details>
 ```yaml
-name: IndividualVote
-description: '[en] An individual vote cast by a member during a voting procedure.
-
-  [de] Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens.
-
-  '
+name: Protocol
+description: "[en] The minutes of a meeting, recorded after the meeting. A wrapper\
+  \ container\n     bundling the actually handled agenda items (protocol_items), votings,\n\
+  \     speeches, verbatim text segments and linked documents.\n[de] Das nach der\
+  \ Sitzung erstellte Protokoll. Ein Wrapper-Container, der die\n     tatsächlich\
+  \ behandelten Traktanden (protocol_items), Abstimmungen, Wortmeldungen,\n     Wortlaut-Textsegmente\
+  \ und verknüpfte Dokumente bündelt.\n"
 from_schema: https://ch.paf.link/schema/operations
 mixins:
 - HasIdentification
 - HasCreationModificationDates
 slots:
-- parent_voting
-- actor_id
-- seat_nr
-- weight
-- individual_vote_type
-- type_label
+- parent_meeting
+- protocol_items
+- votings
+- speeches
+- text_segments
+- documents
 
 ```
 </details>
@@ -186,110 +223,121 @@ slots:
 
 <details>
 ```yaml
-name: IndividualVote
-description: '[en] An individual vote cast by a member during a voting procedure.
-
-  [de] Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens.
-
-  '
+name: Protocol
+description: "[en] The minutes of a meeting, recorded after the meeting. A wrapper\
+  \ container\n     bundling the actually handled agenda items (protocol_items), votings,\n\
+  \     speeches, verbatim text segments and linked documents.\n[de] Das nach der\
+  \ Sitzung erstellte Protokoll. Ein Wrapper-Container, der die\n     tatsächlich\
+  \ behandelten Traktanden (protocol_items), Abstimmungen, Wortmeldungen,\n     Wortlaut-Textsegmente\
+  \ und verknüpfte Dokumente bündelt.\n"
 from_schema: https://ch.paf.link/schema/operations
 mixins:
 - HasIdentification
 - HasCreationModificationDates
 attributes:
-  parent_voting:
-    name: parent_voting
-    description: '[en] The ID of the voting associated with the individual vote.
+  parent_meeting:
+    name: parent_meeting
+    description: '[en] The linked meeting ID that groups the current meeting.
 
-      [de] Die ID der Abstimmung, die mit der Einzelstimme verbunden ist.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: ops:parentVoting
-    owner: IndividualVote
-    domain_of:
-    - IndividualVote
-    range: Voting
-  actor_id:
-    name: actor_id
-    description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
-      Nationalrat, Ständerat).
-
-      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
-      Nationalrat, Ständerat).
+      [de] Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.
 
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    owner: IndividualVote
+    owner: Protocol
     domain_of:
-    - Legislature
     - Meeting
+    - AgendaItem
+    - Protocol
     - Voting
-    - IndividualVote
     - Election
     - Attendance
-    - IndividualAttendance
-    - Speech
     range: string
-  seat_nr:
-    name: seat_nr
-    description: '[en] The seat number of the individual vote, if applicable.
+  protocol_items:
+    name: protocol_items
+    description: '[en] Agenda items as actually recorded in the protocol.
 
-      [de] Die Sitznummer der Einzelstimme, falls zutreffend.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: IndividualVote
-    domain_of:
-    - IndividualVote
-    range: string
-  weight:
-    name: weight
-    description: '[en] The number of votes held by the individual, if applicable (e.g.,
-      in cases where a person has multiple votes).
-
-      [de] Die Anzahl der Stimmen, die die Einzelperson hat, falls zutreffend (z.B.
-      in Fällen, in denen eine Person mehrere Stimmen hat).
+      [de] Traktanden, wie sie im Protokoll tatsächlich festgehalten wurden.
 
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    owner: IndividualVote
+    slot_uri: ops:protocolItem
+    owner: Protocol
     domain_of:
-    - IndividualVote
-    range: integer
-  individual_vote_type:
-    name: individual_vote_type
-    description: '[en] Type of vote cast (yes, no, abstention, no vote, etc.).
+    - Protocol
+    range: ProtocolItem
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  votings:
+    name: votings
+    description: Collection of voting records
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: ops:voting
+    owner: Protocol
+    domain_of:
+    - Container
+    - Protocol
+    range: Voting
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  speeches:
+    name: speeches
+    description: Collection of speech records
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: ops:speech
+    owner: Protocol
+    domain_of:
+    - Container
+    - Protocol
+    range: Speech
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  text_segments:
+    name: text_segments
+    description: Collection of text segments (e.g. verbatim protocol)
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: ops:textSegment
+    owner: Protocol
+    domain_of:
+    - Protocol
+    range: TextSegment
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  documents:
+    name: documents
+    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
+      sind.
 
-      [de] Art der abgegebenen Stimme (Ja, Nein, Enthaltung, nicht abgestimmt, etc.).
+      [en] List of documents (FRBR Works) linked to the entity.
 
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    owner: IndividualVote
+    slot_uri: meta:documents
+    owner: Protocol
     domain_of:
-    - IndividualVote
-    range: IndividualVoteTypeEnum
-  type_label:
-    name: type_label
-    description: '[en] Custom type label when standard type values don''t apply.
-
-      [de] Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: IndividualVote
-    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Protocol
     - Resolution
     - Voting
-    - IndividualVote
     - Election
-    range: string
+    - Speech
+    - Motion
+    range: Work
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   local_id:
     name: local_id
     annotations:
@@ -305,7 +353,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    owner: IndividualVote
+    owner: Protocol
     domain_of:
     - HasIdentification
     range: string
@@ -324,7 +372,7 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    owner: IndividualVote
+    owner: Protocol
     domain_of:
     - HasIdentification
     range: uriorcurie
@@ -345,7 +393,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    owner: IndividualVote
+    owner: Protocol
     domain_of:
     - HasIdentification
     range: uriorcurie
@@ -363,7 +411,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateCreated
-    owner: IndividualVote
+    owner: Protocol
     domain_of:
     - HasCreationModificationDates
     range: date
@@ -381,7 +429,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeCreated
-    owner: IndividualVote
+    owner: Protocol
     domain_of:
     - HasCreationModificationDates
     range: datetime
@@ -399,7 +447,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateModified
-    owner: IndividualVote
+    owner: Protocol
     domain_of:
     - HasCreationModificationDates
     range: date
@@ -417,7 +465,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeModified
-    owner: IndividualVote
+    owner: Protocol
     domain_of:
     - HasCreationModificationDates
     range: datetime

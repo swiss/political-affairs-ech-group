@@ -45,7 +45,7 @@ URI: [ops:TotalOther](https://ch.paf.link/schema/operations/TotalOther)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [count](count.md) | 0..1 <br/> [Integer](Integer.md) | [en] The count of votes for the total other category | direct |
-| [label](label.md) | 0..1 <br/> [String](String.md) | [de] Möglichkeit bei einer strukturierten Information, ein Label zu vergeben ... | direct |
+| [label](label.md) | 0..1 <br/> [String](String.md) | Assign a label to a structured piece of information (e | direct |
 
 
 
@@ -147,10 +147,14 @@ attributes:
     range: integer
   label:
     name: label
-    description: '[de] Möglichkeit bei einer strukturierten Information, ein Label
-      zu vergeben (bspw. Anzeigename, Anstellung, etc.).
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Möglichkeit bei einer strukturierten Information, ein Label zu vergeben
+          (bspw. Anzeigename, Anstellung, etc.).
 
-      [en] Option to assign a label to a structured piece of information (e.g., display
+          '
+    description: 'Assign a label to a structured piece of information (e.g., display
       name, position, etc.).
 
       '

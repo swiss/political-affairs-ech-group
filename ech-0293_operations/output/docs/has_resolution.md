@@ -30,6 +30,7 @@ URI: [ops:has_resolution](https://ch.paf.link/schema/operations/has_resolution)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
+| [ProtocolItem](ProtocolItem.md) | [en] An agenda item as actually recorded in the protocol |  no  |
 
 
 

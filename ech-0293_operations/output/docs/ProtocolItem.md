@@ -3,12 +3,12 @@ search:
   boost: 10.0
 ---
 
-# Class: Meeting 
+# Class: ProtocolItem 
 
 
-_[en] A general meeting class used for Sessions, Comittee Meetings, individual session Sittings and other various Meetings._
+_[en] An agenda item as actually recorded in the protocol._
 
-_[de] Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessionssitzung und andere verschiedene Versammlungen verwendet wird._
+_[de] Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde._
 
 __
 
@@ -18,7 +18,7 @@ __
 
 
 
-URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
+URI: [ops:ProtocolItem](https://ch.paf.link/schema/operations/ProtocolItem)
 
 
 
@@ -26,142 +26,128 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 
 ```mermaid
  classDiagram
-    class Meeting
-    click Meeting href "../Meeting/"
-      HasIdentification <|-- Meeting
-        click HasIdentification href "../HasIdentification/"
-      IsEventWithDuration <|-- Meeting
-        click IsEventWithDuration href "../IsEventWithDuration/"
-      HasCreationModificationDates <|-- Meeting
-        click HasCreationModificationDates href "../HasCreationModificationDates/"
+    class ProtocolItem
+    click ProtocolItem href "../ProtocolItem/"
+      AgendaItem <|-- ProtocolItem
+        click AgendaItem href "../AgendaItem/"
       
-      Meeting : abbreviation
+      ProtocolItem : affair_id
         
-      Meeting : actor_id
+      ProtocolItem : agenda_item_category
         
-      Meeting : actor_name
-        
-      Meeting : administrative_id
-        
-      Meeting : body_key
-        
-      Meeting : date_begin_actual
-        
-      Meeting : date_begin_planned
-        
-      Meeting : date_created
-        
-      Meeting : date_end_actual
-        
-      Meeting : date_end_planned
-        
-      Meeting : date_modified
-        
-      Meeting : datetime_begin_actual
-        
-      Meeting : datetime_begin_planned
-        
-      Meeting : datetime_created
-        
-      Meeting : datetime_end_actual
-        
-      Meeting : datetime_end_planned
-        
-      Meeting : datetime_modified
-        
-      Meeting : description
-        
-      Meeting : documents
+      ProtocolItem : agenda_item_description
         
           
     
         
         
-        Meeting --> "*" Work : documents
+        ProtocolItem --> "*" MultilingualString : agenda_item_description
+        click MultilingualString href "../MultilingualString/"
+    
+
+        
+      ProtocolItem : agenda_item_number
+        
+      ProtocolItem : agenda_item_position
+        
+      ProtocolItem : agenda_item_title
+        
+          
+    
+        
+        
+        ProtocolItem --> "*" MultilingualString : agenda_item_title
+        click MultilingualString href "../MultilingualString/"
+    
+
+        
+      ProtocolItem : agenda_item_type
+        
+          
+    
+        
+        
+        ProtocolItem --> "0..1" AgendaItemTypeEnum : agenda_item_type
+        click AgendaItemTypeEnum href "../AgendaItemTypeEnum/"
+    
+
+        
+      ProtocolItem : date_begin_actual
+        
+      ProtocolItem : date_begin_planned
+        
+      ProtocolItem : date_created
+        
+      ProtocolItem : date_end_actual
+        
+      ProtocolItem : date_end_planned
+        
+      ProtocolItem : date_modified
+        
+      ProtocolItem : datetime_begin_actual
+        
+      ProtocolItem : datetime_begin_planned
+        
+      ProtocolItem : datetime_created
+        
+      ProtocolItem : datetime_end_actual
+        
+      ProtocolItem : datetime_end_planned
+        
+      ProtocolItem : datetime_modified
+        
+      ProtocolItem : documents
+        
+          
+    
+        
+        
+        ProtocolItem --> "*" Work : documents
         click Work href "../Work/"
     
 
         
-      Meeting : global_uri
+      ProtocolItem : global_uri
         
-      Meeting : group_id
-        
-      Meeting : group_name
-        
-      Meeting : landing_page
-        
-      Meeting : local_id
-        
-      Meeting : location
-        
-      Meeting : meeting_type
+      ProtocolItem : has_resolution
         
           
     
         
         
-        Meeting --> "0..1" MeetingTypeEnum : meeting_type
-        click MeetingTypeEnum href "../MeetingTypeEnum/"
+        ProtocolItem --> "0..1" Resolution : has_resolution
+        click Resolution href "../Resolution/"
     
 
         
-      Meeting : name
+      ProtocolItem : landing_page
+        
+      ProtocolItem : leading_actor_id
+        
+      ProtocolItem : local_id
+        
+      ProtocolItem : parent_agenda_item
+        
+      ProtocolItem : parent_meeting
+        
+      ProtocolItem : speaking_actor_id
+        
+      ProtocolItem : state_id
+        
+      ProtocolItem : state_name
+        
+      ProtocolItem : url
         
           
     
         
         
-        Meeting --> "*" MultilingualString : name
+        ProtocolItem --> "*" MultilingualString : url
         click MultilingualString href "../MultilingualString/"
     
 
         
-      Meeting : number
-        
-      Meeting : parent_legislature
-        
-      Meeting : parent_meeting
-        
-      Meeting : position
-        
-      Meeting : protocol
-        
-          
-    
-        
-        
-        Meeting --> "0..1" Protocol : protocol
-        click Protocol href "../Protocol/"
-    
-
-        
-      Meeting : sequential_number
-        
-      Meeting : state
-        
-          
-    
-        
-        
-        Meeting --> "0..1" StateEnum : state
-        click StateEnum href "../StateEnum/"
-    
-
-        
-      Meeting : state_name
-        
-      Meeting : url
-        
-          
-    
-        
-        
-        Meeting --> "*" MultilingualString : url
-        click MultilingualString href "../MultilingualString/"
-    
-
-        
-      Meeting : wikidata_uri
+      ProtocolItem : wikidata_uri
         
       
 ```
@@ -171,35 +157,31 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 
 
 ## Inheritance
-* **Meeting** [ [HasIdentification](HasIdentification.md) [IsEventWithDuration](IsEventWithDuration.md) [HasCreationModificationDates](HasCreationModificationDates.md)]
+* [AgendaItem](AgendaItem.md) [ [HasIdentification](HasIdentification.md) [IsEventWithDuration](IsEventWithDuration.md) [HasCreationModificationDates](HasCreationModificationDates.md)]
+    * **ProtocolItem**
 
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [body_key](body_key.md) | 0..1 <br/> [String](String.md) | [en] Key identifying the political body or jurisdiction (e | direct |
-| [meeting_type](meeting_type.md) | 0..1 <br/> [MeetingTypeEnum](MeetingTypeEnum.md) | Type of the meeting, e | direct |
-| [administrative_id](administrative_id.md) | 0..1 <br/> [String](String.md) | [en] Administrative ID of the legislative body, such as a municipality, canto... | direct |
-| [name](name.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
-| [url](url.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
-| [group_name](group_name.md) | 0..1 <br/> [String](String.md) | Name of the group or body | direct |
-| [group_id](group_id.md) | 0..1 <br/> [String](String.md) | Identifier of the group or body | direct |
-| [number](number.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [landing_page](landing_page.md) | 0..1 <br/> [String](String.md) | [en] URL providing further information | direct |
-| [sequential_number](sequential_number.md) | 0..1 <br/> [Integer](Integer.md) | [en] Sequential number of the meeting, used for ordering | direct |
-| [position](position.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [abbreviation](abbreviation.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [actor_name](actor_name.md) | 0..1 <br/> [String](String.md) | [en] Name of the political body (e | direct |
-| [actor_id](actor_id.md) | 0..1 <br/> [String](String.md) | [en] The political body organized by the term of office (e | direct |
-| [state](state.md) | 0..1 <br/> [StateEnum](StateEnum.md) |  | direct |
-| [state_name](state_name.md) | 0..1 <br/> [String](String.md) | [en] Custom state description for the meeting | direct |
-| [description](description.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [location](location.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [parent_meeting](parent_meeting.md) | 0..1 <br/> [String](String.md) | [en] The linked meeting ID that groups the current meeting | direct |
-| [parent_legislature](parent_legislature.md) | 0..1 <br/> [String](String.md) | [en] The legislative body in which the meeting is based | direct |
-| [documents](documents.md) | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
-| [protocol](protocol.md) | 0..1 <br/> [Protocol](Protocol.md) | [en] The protocol (minutes) of this meeting, recorded after the meeting | direct |
+| [parent_meeting](parent_meeting.md) | 0..1 <br/> [String](String.md) | [en] The linked meeting ID that groups the current meeting | [AgendaItem](AgendaItem.md) |
+| [agenda_item_type](agenda_item_type.md) | 0..1 <br/> [AgendaItemTypeEnum](AgendaItemTypeEnum.md) | [en] Type of agenda item, distinguishing individual items from groups | [AgendaItem](AgendaItem.md) |
+| [agenda_item_number](agenda_item_number.md) | 0..1 <br/> [String](String.md) | [en] Sequential number of the agenda item (string type to support roman numer... | [AgendaItem](AgendaItem.md) |
+| [agenda_item_position](agenda_item_position.md) | 0..1 <br/> [Integer](Integer.md) | [en] Integer position of the agenda item in the meeting sequence | [AgendaItem](AgendaItem.md) |
+| [leading_actor_id](leading_actor_id.md) | 0..1 <br/> [String](String.md) | [en] The leading department for the agenda item | [AgendaItem](AgendaItem.md) |
+| [speaking_actor_id](speaking_actor_id.md) | 0..1 <br/> [String](String.md) | [en] The speaker or head of the department for the agenda item | [AgendaItem](AgendaItem.md) |
+| [agenda_item_title](agenda_item_title.md) | * <br/> [MultilingualString](MultilingualString.md) | [en] Title of the agenda item | [AgendaItem](AgendaItem.md) |
+| [affair_id](affair_id.md) | 0..1 <br/> [String](String.md) | [en] The connection to the affairs (business items) of the agenda item | [AgendaItem](AgendaItem.md) |
+| [agenda_item_description](agenda_item_description.md) | * <br/> [MultilingualString](MultilingualString.md) | [en] Subtitle or detailed description of the agenda item | [AgendaItem](AgendaItem.md) |
+| [state_id](state_id.md) | 0..1 <br/> [String](String.md) | State identifier (reference to state enum or custom state) | [AgendaItem](AgendaItem.md) |
+| [state_name](state_name.md) | 0..1 <br/> [String](String.md) | [en] Custom state description for the meeting | [AgendaItem](AgendaItem.md) |
+| [landing_page](landing_page.md) | 0..1 <br/> [String](String.md) | [en] URL providing further information | [AgendaItem](AgendaItem.md) |
+| [url](url.md) | * <br/> [MultilingualString](MultilingualString.md) |  | [AgendaItem](AgendaItem.md) |
+| [agenda_item_category](agenda_item_category.md) | 0..1 <br/> [String](String.md) | [en] Category for grouped agenda items (e | [AgendaItem](AgendaItem.md) |
+| [parent_agenda_item](parent_agenda_item.md) | 0..1 <br/> [String](String.md) | [en] If needed, this slot builds a hierarchy of agenda items | [AgendaItem](AgendaItem.md) |
+| [has_resolution](has_resolution.md) | 0..1 <br/> [Resolution](Resolution.md) | [en] The resolutionor decision taken on this agenda item | [AgendaItem](AgendaItem.md) |
+| [documents](documents.md) | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | [AgendaItem](AgendaItem.md) |
 | [local_id](local_id.md) | 0..1 <br/> [String](String.md) | Local identifier | [HasIdentification](HasIdentification.md) |
 | [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity | [HasIdentification](HasIdentification.md) |
 | [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e | [HasIdentification](HasIdentification.md) |
@@ -224,8 +206,7 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Container](Container.md) | [meetings](meetings.md) | range | [Meeting](Meeting.md) |
-| [Session](Session.md) | [meetings](meetings.md) | range | [Meeting](Meeting.md) |
+| [Protocol](Protocol.md) | [protocol_items](protocol_items.md) | range | [ProtocolItem](ProtocolItem.md) |
 
 
 
@@ -256,8 +237,8 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ops:Meeting |
-| native | ops:Meeting |
+| self | ops:ProtocolItem |
+| native | ops:ProtocolItem |
 
 
 
@@ -272,42 +253,14 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 
 <details>
 ```yaml
-name: Meeting
-description: '[en] A general meeting class used for Sessions, Comittee Meetings, individual
-  session Sittings and other various Meetings.
+name: ProtocolItem
+description: '[en] An agenda item as actually recorded in the protocol.
 
-  [de] Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessionssitzung
-  und andere verschiedene Versammlungen verwendet wird.
+  [de] Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde.
 
   '
 from_schema: https://ch.paf.link/schema/operations
-mixins:
-- HasIdentification
-- IsEventWithDuration
-- HasCreationModificationDates
-slots:
-- body_key
-- meeting_type
-- administrative_id
-- name
-- url
-- group_name
-- group_id
-- number
-- landing_page
-- sequential_number
-- position
-- abbreviation
-- actor_name
-- actor_id
-- state
-- state_name
-- description
-- location
-- parent_meeting
-- parent_legislature
-- documents
-- protocol
+is_a: AgendaItem
 
 ```
 </details>
@@ -316,116 +269,169 @@ slots:
 
 <details>
 ```yaml
-name: Meeting
-description: '[en] A general meeting class used for Sessions, Comittee Meetings, individual
-  session Sittings and other various Meetings.
+name: ProtocolItem
+description: '[en] An agenda item as actually recorded in the protocol.
 
-  [de] Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessionssitzung
-  und andere verschiedene Versammlungen verwendet wird.
+  [de] Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde.
 
   '
 from_schema: https://ch.paf.link/schema/operations
-mixins:
-- HasIdentification
-- IsEventWithDuration
-- HasCreationModificationDates
+is_a: AgendaItem
 attributes:
-  body_key:
-    name: body_key
-    description: '[en] Key identifying the political body or jurisdiction (e.g., BE
-      for Bern, CHE for Switzerland).
+  parent_meeting:
+    name: parent_meeting
+    description: '[en] The linked meeting ID that groups the current meeting.
 
-      [de] Schlüssel zur Identifizierung des politischen Organs oder der Gerichtsbarkeit
-      (z.B. BE für Bern, CHE für Schweiz).
+      [de] Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.
 
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
-    - Session
-    - Meeting
-    range: string
-  meeting_type:
-    name: meeting_type
-    description: Type of the meeting, e.g. session, committee, sitting, various
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: ops:meetingType
-    owner: Meeting
-    domain_of:
-    - Meeting
-    range: MeetingTypeEnum
-  administrative_id:
-    name: administrative_id
-    description: '[en] Administrative ID of the legislative body, such as a municipality,
-      canton, or country.
-
-      [de] Verwaltungs-ID des gesetzgebenden Körpers, wie z.B. Gemeinde, Kanton oder
-      Land.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Meeting
-    domain_of:
-    - Legislature
-    - Meeting
-    range: string
-  name:
-    name: name
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Meeting
-    domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    range: MultilingualString
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  url:
-    name: url
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Meeting
-    domain_of:
-    - Session
     - Meeting
     - AgendaItem
-    - Media
-    - Manifestation
+    - Protocol
+    - Voting
+    - Election
+    - Attendance
+    range: string
+  agenda_item_type:
+    name: agenda_item_type
+    description: '[en] Type of agenda item, distinguishing individual items from groups.
+
+      [de] Art des Traktandums, unterscheidet Einzeltraktanden von Traktandengruppen.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - AgendaItem
+    range: AgendaItemTypeEnum
+  agenda_item_number:
+    name: agenda_item_number
+    description: '[en] Sequential number of the agenda item (string type to support
+      roman numerals).
+
+      [de] Laufnummer des Traktandums (String-Typ zur Unterstützung römischer Ziffern).
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - AgendaItem
+    range: string
+  agenda_item_position:
+    name: agenda_item_position
+    description: '[en] Integer position of the agenda item in the meeting sequence.
+
+      [de] Ganzzahlige Position des Traktandums in der Sitzungsreihenfolge.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - AgendaItem
+    range: integer
+  leading_actor_id:
+    name: leading_actor_id
+    description: '[en] The leading department for the agenda item.
+
+      [de] Das federführende Departement für den Tagesordnungspunkt.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - AgendaItem
+    range: string
+  speaking_actor_id:
+    name: speaking_actor_id
+    description: '[en] The speaker or head of the department for the agenda item.
+
+      [de] Der Sprecher oder Departementsvorsteher für den Tagesordnungspunkt.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - AgendaItem
+    range: string
+  agenda_item_title:
+    name: agenda_item_title
+    description: '[en] Title of the agenda item.
+
+      [de] Titel des Traktandums.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - AgendaItem
     range: MultilingualString
     multivalued: true
     inlined: true
     inlined_as_list: true
-  group_name:
-    name: group_name
-    description: Name of the group or body
+  affair_id:
+    name: affair_id
+    description: '[en] The connection to the affairs (business items) of the agenda
+      item.
+
+      [de] Die Verbindung zu den Geschäften (Geschäftsgegenständen) des Tagesordnungspunkts.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
-    - Meeting
+    - AgendaItem
+    - Voting
+    - Election
     range: string
-  group_id:
-    name: group_id
-    description: Identifier of the group or body
+  agenda_item_description:
+    name: agenda_item_description
+    description: '[en] Subtitle or detailed description of the agenda item.
+
+      [de] Untertitel oder ausführliche Beschreibung des Traktandums.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
-    - Meeting
+    - AgendaItem
+    range: MultilingualString
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  state_id:
+    name: state_id
+    description: State identifier (reference to state enum or custom state)
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - AgendaItem
     range: string
-  number:
-    name: number
+  state_name:
+    name: state_name
+    description: '[en] Custom state description for the meeting.
+
+      [de] Benutzerdefinierte Zustandsbeschreibung für die Sitzung.
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
-    - Session
     - Meeting
+    - AgendaItem
     range: string
   landing_page:
     name: landing_page
@@ -437,7 +443,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: ops:landingPage
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
     - Legislature
     - Meeting
@@ -446,146 +452,65 @@ attributes:
     - Election
     - Speech
     range: string
-  sequential_number:
-    name: sequential_number
-    description: '[en] Sequential number of the meeting, used for ordering.
-
-      [de] Laufende Nummer der Sitzung, die zur Sortierung verwendet wird.
-
-      '
+  url:
+    name: url
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
     - Session
-    - Meeting
-    range: integer
-  position:
-    name: position
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Meeting
-    domain_of:
-    - Session
-    - Meeting
-    range: string
-  abbreviation:
-    name: abbreviation
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Meeting
-    domain_of:
-    - Session
-    - Meeting
-    range: string
-  actor_name:
-    name: actor_name
-    description: '[en] Name of the political body (e.g., Nationalrat).
-
-      [de] Name des politischen Organs (z.B. Nationalrat).
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Meeting
-    domain_of:
-    - Meeting
-    range: string
-  actor_id:
-    name: actor_id
-    description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
-      Nationalrat, Ständerat).
-
-      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
-      Nationalrat, Ständerat).
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Meeting
-    domain_of:
-    - Legislature
-    - Meeting
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    range: string
-  state:
-    name: state
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Meeting
-    domain_of:
-    - Meeting
-    range: StateEnum
-  state_name:
-    name: state_name
-    description: '[en] Custom state description for the meeting.
-
-      [de] Benutzerdefinierte Zustandsbeschreibung für die Sitzung.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Meeting
-    domain_of:
     - Meeting
     - AgendaItem
-    range: string
-  description:
-    name: description
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Meeting
-    domain_of:
-    - Legislature
-    - Meeting
-    - Motion
-    - Expression
-    range: string
-  location:
-    name: location
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Meeting
-    domain_of:
-    - Meeting
-    range: string
-  parent_meeting:
-    name: parent_meeting
-    description: '[en] The linked meeting ID that groups the current meeting.
+    - Media
+    - Manifestation
+    range: MultilingualString
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  agenda_item_category:
+    name: agenda_item_category
+    description: '[en] Category for grouped agenda items (e.g., introduction, by department,
+      technical agenda items).
 
-      [de] Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.
+      [de] Kategorie für gruppierte Traktanden (z.B. Einführung, nach Departement,
+      technische Traktanden).
 
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
-    - Meeting
     - AgendaItem
-    - Protocol
+    range: string
+  parent_agenda_item:
+    name: parent_agenda_item
+    description: '[en] If needed, this slot builds a hierarchy of agenda items.
+
+      [de] Wenn erforderlich, baut dieser Slot eine Hierarchie von Tagesordnungspunkten
+      auf.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - AgendaItem
     - Voting
     - Election
-    - Attendance
     range: string
-  parent_legislature:
-    name: parent_legislature
-    description: '[en] The legislative body in which the meeting is based.
+  has_resolution:
+    name: has_resolution
+    description: '[en] The resolutionor decision taken on this agenda item.
 
-      [de] Der gesetzgebende Körper, auf dem die Sitzung basiert.
+      [de] Die Resolution oder Entscheidung zu diesem Traktandum.
 
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
-    - Session
-    - Meeting
-    range: string
+    - AgendaItem
+    range: Resolution
   documents:
     name: documents
     description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
@@ -597,7 +522,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: meta:documents
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
     - Legislature
     - Session
@@ -613,22 +538,6 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  protocol:
-    name: protocol
-    description: '[en] The protocol (minutes) of this meeting, recorded after the
-      meeting.
-
-      [de] Das nach der Sitzung erstellte Protokoll dieser Sitzung.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: ops:protocol
-    owner: Meeting
-    domain_of:
-    - Meeting
-    range: Protocol
-    inlined: true
   local_id:
     name: local_id
     annotations:
@@ -644,7 +553,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:localId
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
     - HasIdentification
     range: string
@@ -663,7 +572,7 @@ attributes:
     rank: 1000
     slot_uri: mcm:globalURI
     identifier: true
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
     - HasIdentification
     range: uriorcurie
@@ -684,7 +593,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:wikidataUri
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
     - HasIdentification
     range: uriorcurie
@@ -703,7 +612,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateBeginActual
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
     - IsEventWithDuration
     range: date
@@ -723,7 +632,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeBeginActual
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
     - IsEventWithDuration
     range: datetime
@@ -741,7 +650,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateBeginPlanned
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
     - IsEventWithDuration
     range: date
@@ -761,7 +670,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeBeginPlanned
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
     - IsEventWithDuration
     range: datetime
@@ -780,7 +689,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateEndActual
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
     - IsEventWithDuration
     range: date
@@ -800,7 +709,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeEndActual
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
     - IsEventWithDuration
     range: datetime
@@ -818,7 +727,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateEndPlanned
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
     - IsEventWithDuration
     range: date
@@ -838,7 +747,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeEndPlanned
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
     - IsEventWithDuration
     range: datetime
@@ -856,7 +765,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateCreated
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
     - HasCreationModificationDates
     range: date
@@ -874,7 +783,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeCreated
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
     - HasCreationModificationDates
     range: datetime
@@ -892,7 +801,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:dateModified
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
     - HasCreationModificationDates
     range: date
@@ -910,7 +819,7 @@ attributes:
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     slot_uri: mcm:datetimeModified
-    owner: Meeting
+    owner: ProtocolItem
     domain_of:
     - HasCreationModificationDates
     range: datetime

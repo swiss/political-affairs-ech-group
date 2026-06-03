@@ -31,9 +31,11 @@ URI: [ops:parent_meeting](https://ch.paf.link/schema/operations/parent_meeting)
 | --- | --- | --- |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
+| [Protocol](Protocol.md) | [en] The minutes of a meeting, recorded after the meeting |  no  |
 | [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 | [Attendance](Attendance.md) | [en] Aggregated attendance record for a meeting (number of members present, a... |  no  |
+| [ProtocolItem](ProtocolItem.md) | [en] An agenda item as actually recorded in the protocol |  no  |
 
 
 
@@ -47,7 +49,7 @@ URI: [ops:parent_meeting](https://ch.paf.link/schema/operations/parent_meeting)
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Voting](Voting.md), [Election](Election.md), [Attendance](Attendance.md) |
+| Domain Of | [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Protocol](Protocol.md), [Voting](Voting.md), [Election](Election.md), [Attendance](Attendance.md) |
 
 ### Cardinality and Requirements
 
@@ -102,6 +104,7 @@ rank: 1000
 domain_of:
 - Meeting
 - AgendaItem
+- Protocol
 - Voting
 - Election
 - Attendance

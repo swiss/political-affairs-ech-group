@@ -6,9 +6,7 @@ search:
 # Slot: valid_from 
 
 
-_[de] Das Datum, ab dem die Information gültig ist._
-
-_[en] The date from which the information is valid._
+_The date from which the information is valid._
 
 __
 
@@ -29,7 +27,7 @@ URI: [schema:validFrom](http://schema.org/validFrom)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [HasTemporalValidity](HasTemporalValidity.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gülti... |  no  |
+| [HasTemporalValidity](HasTemporalValidity.md) | A mixin class that provides slots for modeling a temporal validity of informa... |  no  |
 
 
 
@@ -64,6 +62,14 @@ URI: [schema:validFrom](http://schema.org/validFrom)
 
 
 
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Das Datum, ab dem die Information gültig ist.
+ |
+
+
 
 
 ### Schema Source
@@ -89,9 +95,13 @@ URI: [schema:validFrom](http://schema.org/validFrom)
 <details>
 ```yaml
 name: valid_from
-description: '[de] Das Datum, ab dem die Information gültig ist.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das Datum, ab dem die Information gültig ist.
 
-  [en] The date from which the information is valid.
+      '
+description: 'The date from which the information is valid.
 
   '
 from_schema: https://ch.paf.link/schema/operations

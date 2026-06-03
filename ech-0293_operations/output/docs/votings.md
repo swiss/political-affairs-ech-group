@@ -26,6 +26,7 @@ URI: [ops:voting](https://ch.paf.link/schema/operations/voting)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Container](Container.md) |  |  no  |
+| [Protocol](Protocol.md) | [en] The minutes of a meeting, recorded after the meeting |  no  |
 
 
 
@@ -39,7 +40,7 @@ URI: [ops:voting](https://ch.paf.link/schema/operations/voting)
 | Property | Value |
 | --- | --- |
 | Range | [Voting](Voting.md) |
-| Domain Of | [Container](Container.md) |
+| Domain Of | [Container](Container.md), [Protocol](Protocol.md) |
 | Slot URI | [ops:voting](https://ch.paf.link/schema/operations/voting) |
 
 ### Cardinality and Requirements
@@ -92,6 +93,7 @@ rank: 1000
 slot_uri: ops:voting
 domain_of:
 - Container
+- Protocol
 range: Voting
 multivalued: true
 inlined: true

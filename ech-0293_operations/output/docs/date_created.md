@@ -6,9 +6,7 @@ search:
 # Slot: date_created 
 
 
-_[de] Das Datum, an dem eine Entität erstellt wurde._
-
-_[en] The date when an entity was created._
+_The date when an entity was created._
 
 __
 
@@ -29,11 +27,13 @@ URI: [mcm:dateCreated](https://ld.ech.ch/schema/0292/meta-common/dateCreated)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [HasCreationModificationDates](HasCreationModificationDates.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Ä... |  no  |
+| [HasCreationModificationDates](HasCreationModificationDates.md) | A mixin class that provides slots for modeling creation and modification date... |  no  |
 | [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
+| [Protocol](Protocol.md) | [en] The minutes of a meeting, recorded after the meeting |  no  |
+| [ProtocolItem](ProtocolItem.md) | [en] An agenda item as actually recorded in the protocol |  no  |
 | [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 | [IndividualVote](IndividualVote.md) | [en] An individual vote cast by a member during a voting procedure |  no  |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
@@ -74,6 +74,14 @@ URI: [mcm:dateCreated](https://ld.ech.ch/schema/0292/meta-common/dateCreated)
 
 
 
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Das Datum, an dem eine Entität erstellt wurde.
+ |
+
+
 
 
 ### Schema Source
@@ -99,9 +107,13 @@ URI: [mcm:dateCreated](https://ld.ech.ch/schema/0292/meta-common/dateCreated)
 <details>
 ```yaml
 name: date_created
-description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das Datum, an dem eine Entität erstellt wurde.
 
-  [en] The date when an entity was created.
+      '
+description: 'The date when an entity was created.
 
   '
 from_schema: https://ch.paf.link/schema/operations

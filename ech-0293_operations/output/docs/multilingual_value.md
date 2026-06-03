@@ -6,9 +6,7 @@ search:
 # Slot: multilingual_value 
 
 
-_[de] Ein mehrsprachiger Wert mit Angabe der Sprache._
-
-_[en] A multilingual value with language specification._
+_A multilingual value with language specification._
 
 __
 
@@ -54,6 +52,14 @@ URI: [mcm:multilingualValue](https://ld.ech.ch/schema/0292/meta-common/multiling
 
 
 
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Ein mehrsprachiger Wert mit Angabe der Sprache.
+ |
+
+
 
 
 ### Schema Source
@@ -79,9 +85,13 @@ URI: [mcm:multilingualValue](https://ld.ech.ch/schema/0292/meta-common/multiling
 <details>
 ```yaml
 name: multilingual_value
-description: '[de] Ein mehrsprachiger Wert mit Angabe der Sprache.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Ein mehrsprachiger Wert mit Angabe der Sprache.
 
-  [en] A multilingual value with language specification.
+      '
+description: 'A multilingual value with language specification.
 
   '
 from_schema: https://ch.paf.link/schema/operations

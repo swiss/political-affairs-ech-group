@@ -232,21 +232,21 @@ URI: [ops:Legislature](https://ch.paf.link/schema/operations/Legislature)
 | [landing_page](#landing_page) | 0..1 <br/> [String](#String) | [en] URL providing further information | direct |
 | [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
 | [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
-| [date_begin_actual](#date_begin_actual) | 0..1 <br/> [Date](#Date) | [de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitda... | [IsEventWithDuration](#de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitda... | [IsEventWithDuration) |
-| [datetime_begin_actual](#datetime_begin_actual) | 0..1 <br/> [Datetime](#Datetime) | [de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorko... | [IsEventWithDuration](#de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorko... | [IsEventWithDuration) |
-| [date_begin_planned](#date_begin_planned) | 0..1 <br/> [Date](#Date) | [de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration](#de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration) |
-| [datetime_begin_planned](#datetime_begin_planned) | 0..1 <br/> [Datetime](#Datetime) | [de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommen... | [IsEventWithDuration](#de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommen... | [IsEventWithDuration) |
-| [date_end_actual](#date_end_actual) | 0..1 <br/> [Date](#Date) | [de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdaue... | [IsEventWithDuration](#de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdaue... | [IsEventWithDuration) |
-| [datetime_end_actual](#datetime_end_actual) | 0..1 <br/> [Datetime](#Datetime) | [de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkomm... | [IsEventWithDuration](#de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkomm... | [IsEventWithDuration) |
-| [date_end_planned](#date_end_planned) | 0..1 <br/> [Date](#Date) | [de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration](#de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration) |
-| [datetime_end_planned](#datetime_end_planned) | 0..1 <br/> [Datetime](#Datetime) | [de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens ... | [IsEventWithDuration](#de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens ... | [IsEventWithDuration) |
-| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | Local identifier | [HasIdentification](#HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity | [HasIdentification](#HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e | [HasIdentification](#HasIdentification) |
+| [date_begin_actual](#date_begin_actual) | 0..1 <br/> [Date](#Date) | The actual start date of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [datetime_begin_actual](#datetime_begin_actual) | 0..1 <br/> [Datetime](#Datetime) | The actual start date and time of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [date_begin_planned](#date_begin_planned) | 0..1 <br/> [Date](#Date) | The planned start date of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [datetime_begin_planned](#datetime_begin_planned) | 0..1 <br/> [Datetime](#Datetime) | The planned start date and time of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [date_end_actual](#date_end_actual) | 0..1 <br/> [Date](#Date) | The actual end date of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [datetime_end_actual](#datetime_end_actual) | 0..1 <br/> [Datetime](#Datetime) | The actual end date and time of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [date_end_planned](#date_end_planned) | 0..1 <br/> [Date](#Date) | The planned end date of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [datetime_end_planned](#datetime_end_planned) | 0..1 <br/> [Datetime](#Datetime) | The planned end date and time of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | The date when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | The date when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -443,6 +443,7 @@ attributes:
     - Session
     - Meeting
     - AgendaItem
+    - Protocol
     - Resolution
     - Voting
     - Election
@@ -454,9 +455,14 @@ attributes:
     inlined_as_list: true
   local_id:
     name: local_id
-    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [en] Local identifier. For example, a UUID from the council information system.
+          '
+    description: 'Local identifier. For example, a UUID from the council information
+      system.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -468,9 +474,13 @@ attributes:
     range: string
   global_uri:
     name: global_uri
-    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine eindeutige, global gültige URI für die Entität.
 
-      [en] A unique, globally valid URI for the entity.
+          '
+    description: 'A unique, globally valid URI for the entity.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -484,10 +494,14 @@ attributes:
     required: true
   wikidata_uri:
     name: wikidata_uri
-    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-      für die Schweiz.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+          für die Schweiz.
 
-      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+          '
+    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
       for Switzerland.
 
       '
@@ -500,10 +514,14 @@ attributes:
     range: uriorcurie
   date_begin_actual:
     name: date_begin_actual
-    description: '[de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens
-      mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit
+          Zeitdauer.
 
-      [en] The actual start date of an event or occurrence with time duration.
+          '
+    description: 'The actual start date of an event or occurrence with time duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -515,10 +533,15 @@ attributes:
     range: date
   datetime_begin_actual:
     name: datetime_begin_actual
-    description: '[de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses
-      oder Vorkommens mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder
+          Vorkommnissen mit Zeitdauer.
 
-      [en] The actual start date and time of an event or occurrence with time duration.
+          '
+    description: 'The actual start date and time of an event or occurrence with time
+      duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -530,10 +553,13 @@ attributes:
     range: datetime
   date_begin_planned:
     name: date_begin_planned
-    description: '[de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit
-      Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
 
-      [en] The planned start date of an event or occurrence with time duration.
+          '
+    description: 'The planned start date of an event or occurrence with time duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -545,10 +571,15 @@ attributes:
     range: date
   datetime_begin_planned:
     name: datetime_begin_planned
-    description: '[de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder
-      Vorkommens mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+          mit Zeitdauer.
 
-      [en] The planned start date and time of an event or occurrence with time duration.
+          '
+    description: 'The planned start date and time of an event or occurrence with time
+      duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -560,10 +591,14 @@ attributes:
     range: datetime
   date_end_actual:
     name: date_end_actual
-    description: '[de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens
-      mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Enddatum eines Ereignisses oder Vorkommnissen mit
+          Zeitdauer.
 
-      [en] The actual end date of an event or occurrence with time duration.
+          '
+    description: 'The actual end date of an event or occurrence with time duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -575,10 +610,15 @@ attributes:
     range: date
   datetime_end_actual:
     name: datetime_end_actual
-    description: '[de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses
-      oder Vorkommens mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+          mit Zeitdauer.
 
-      [en] The actual end date and time of an event or occurrence with time duration.
+          '
+    description: 'The actual end date and time of an event or occurrence with time
+      duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -590,10 +630,13 @@ attributes:
     range: datetime
   date_end_planned:
     name: date_end_planned
-    description: '[de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit
-      Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Enddatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
 
-      [en] The planned end date of an event or occurrence with time duration.
+          '
+    description: 'The planned end date of an event or occurrence with time duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -605,10 +648,15 @@ attributes:
     range: date
   datetime_end_planned:
     name: datetime_end_planned
-    description: '[de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder
-      Vorkommens mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+          mit Zeitdauer.
 
-      [en] The planned end date and time of an event or occurrence with time duration.
+          '
+    description: 'The planned end date and time of an event or occurrence with time
+      duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -620,9 +668,13 @@ attributes:
     range: datetime
   date_created:
     name: date_created
-    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität erstellt wurde.
 
-      [en] The date when an entity was created.
+          '
+    description: 'The date when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -634,9 +686,13 @@ attributes:
     range: date
   datetime_created:
     name: datetime_created
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
 
-      [en] The date and time when an entity was created.
+          '
+    description: 'The date and time when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -648,9 +704,13 @@ attributes:
     range: datetime
   date_modified:
     name: date_modified
-    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date when an entity was last modified.
+          '
+    description: 'The date when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -662,10 +722,13 @@ attributes:
     range: date
   datetime_modified:
     name: datetime_modified
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
-      wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date and time when an entity was last modified.
+          '
+    description: 'The date and time when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -891,21 +954,21 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
 | [parent_legislature](#parent_legislature) | 0..1 <br/> [String](#String) | [en] The legislative body in which the meeting is based | direct |
 | [meetings](#meetings) | * <br/> [Meeting](#Meeting) |  | direct |
 | [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
-| [date_begin_actual](#date_begin_actual) | 0..1 <br/> [Date](#Date) | [de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitda... | [IsEventWithDuration](#de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitda... | [IsEventWithDuration) |
-| [datetime_begin_actual](#datetime_begin_actual) | 0..1 <br/> [Datetime](#Datetime) | [de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorko... | [IsEventWithDuration](#de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorko... | [IsEventWithDuration) |
-| [date_begin_planned](#date_begin_planned) | 0..1 <br/> [Date](#Date) | [de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration](#de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration) |
-| [datetime_begin_planned](#datetime_begin_planned) | 0..1 <br/> [Datetime](#Datetime) | [de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommen... | [IsEventWithDuration](#de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommen... | [IsEventWithDuration) |
-| [date_end_actual](#date_end_actual) | 0..1 <br/> [Date](#Date) | [de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdaue... | [IsEventWithDuration](#de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdaue... | [IsEventWithDuration) |
-| [datetime_end_actual](#datetime_end_actual) | 0..1 <br/> [Datetime](#Datetime) | [de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkomm... | [IsEventWithDuration](#de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkomm... | [IsEventWithDuration) |
-| [date_end_planned](#date_end_planned) | 0..1 <br/> [Date](#Date) | [de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration](#de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration) |
-| [datetime_end_planned](#datetime_end_planned) | 0..1 <br/> [Datetime](#Datetime) | [de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens ... | [IsEventWithDuration](#de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens ... | [IsEventWithDuration) |
-| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | Local identifier | [HasIdentification](#HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity | [HasIdentification](#HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e | [HasIdentification](#HasIdentification) |
+| [date_begin_actual](#date_begin_actual) | 0..1 <br/> [Date](#Date) | The actual start date of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [datetime_begin_actual](#datetime_begin_actual) | 0..1 <br/> [Datetime](#Datetime) | The actual start date and time of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [date_begin_planned](#date_begin_planned) | 0..1 <br/> [Date](#Date) | The planned start date of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [datetime_begin_planned](#datetime_begin_planned) | 0..1 <br/> [Datetime](#Datetime) | The planned start date and time of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [date_end_actual](#date_end_actual) | 0..1 <br/> [Date](#Date) | The actual end date of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [datetime_end_actual](#datetime_end_actual) | 0..1 <br/> [Datetime](#Datetime) | The actual end date and time of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [date_end_planned](#date_end_planned) | 0..1 <br/> [Date](#Date) | The planned end date of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [datetime_end_planned](#datetime_end_planned) | 0..1 <br/> [Datetime](#Datetime) | The planned end date and time of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | The date when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | The date when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -1137,6 +1200,7 @@ attributes:
     - Session
     - Meeting
     - AgendaItem
+    - Protocol
     - Resolution
     - Voting
     - Election
@@ -1148,9 +1212,14 @@ attributes:
     inlined_as_list: true
   local_id:
     name: local_id
-    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [en] Local identifier. For example, a UUID from the council information system.
+          '
+    description: 'Local identifier. For example, a UUID from the council information
+      system.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -1162,9 +1231,13 @@ attributes:
     range: string
   global_uri:
     name: global_uri
-    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine eindeutige, global gültige URI für die Entität.
 
-      [en] A unique, globally valid URI for the entity.
+          '
+    description: 'A unique, globally valid URI for the entity.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -1178,10 +1251,14 @@ attributes:
     required: true
   wikidata_uri:
     name: wikidata_uri
-    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-      für die Schweiz.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+          für die Schweiz.
 
-      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+          '
+    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
       for Switzerland.
 
       '
@@ -1194,10 +1271,14 @@ attributes:
     range: uriorcurie
   date_begin_actual:
     name: date_begin_actual
-    description: '[de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens
-      mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit
+          Zeitdauer.
 
-      [en] The actual start date of an event or occurrence with time duration.
+          '
+    description: 'The actual start date of an event or occurrence with time duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -1209,10 +1290,15 @@ attributes:
     range: date
   datetime_begin_actual:
     name: datetime_begin_actual
-    description: '[de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses
-      oder Vorkommens mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder
+          Vorkommnissen mit Zeitdauer.
 
-      [en] The actual start date and time of an event or occurrence with time duration.
+          '
+    description: 'The actual start date and time of an event or occurrence with time
+      duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -1224,10 +1310,13 @@ attributes:
     range: datetime
   date_begin_planned:
     name: date_begin_planned
-    description: '[de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit
-      Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
 
-      [en] The planned start date of an event or occurrence with time duration.
+          '
+    description: 'The planned start date of an event or occurrence with time duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -1239,10 +1328,15 @@ attributes:
     range: date
   datetime_begin_planned:
     name: datetime_begin_planned
-    description: '[de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder
-      Vorkommens mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+          mit Zeitdauer.
 
-      [en] The planned start date and time of an event or occurrence with time duration.
+          '
+    description: 'The planned start date and time of an event or occurrence with time
+      duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -1254,10 +1348,14 @@ attributes:
     range: datetime
   date_end_actual:
     name: date_end_actual
-    description: '[de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens
-      mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Enddatum eines Ereignisses oder Vorkommnissen mit
+          Zeitdauer.
 
-      [en] The actual end date of an event or occurrence with time duration.
+          '
+    description: 'The actual end date of an event or occurrence with time duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -1269,10 +1367,15 @@ attributes:
     range: date
   datetime_end_actual:
     name: datetime_end_actual
-    description: '[de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses
-      oder Vorkommens mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+          mit Zeitdauer.
 
-      [en] The actual end date and time of an event or occurrence with time duration.
+          '
+    description: 'The actual end date and time of an event or occurrence with time
+      duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -1284,10 +1387,13 @@ attributes:
     range: datetime
   date_end_planned:
     name: date_end_planned
-    description: '[de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit
-      Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Enddatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
 
-      [en] The planned end date of an event or occurrence with time duration.
+          '
+    description: 'The planned end date of an event or occurrence with time duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -1299,10 +1405,15 @@ attributes:
     range: date
   datetime_end_planned:
     name: datetime_end_planned
-    description: '[de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder
-      Vorkommens mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+          mit Zeitdauer.
 
-      [en] The planned end date and time of an event or occurrence with time duration.
+          '
+    description: 'The planned end date and time of an event or occurrence with time
+      duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -1314,9 +1425,13 @@ attributes:
     range: datetime
   date_created:
     name: date_created
-    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität erstellt wurde.
 
-      [en] The date when an entity was created.
+          '
+    description: 'The date when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -1328,9 +1443,13 @@ attributes:
     range: date
   datetime_created:
     name: datetime_created
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
 
-      [en] The date and time when an entity was created.
+          '
+    description: 'The date and time when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -1342,9 +1461,13 @@ attributes:
     range: datetime
   date_modified:
     name: date_modified
-    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date when an entity was last modified.
+          '
+    description: 'The date when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -1356,10 +1479,13 @@ attributes:
     range: date
   datetime_modified:
     name: datetime_modified
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
-      wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date and time when an entity was last modified.
+          '
+    description: 'The date and time when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -1625,6 +1751,17 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
         
       Meeting : position
         
+      Meeting : protocol
+        
+          
+    
+        
+        
+        Meeting --> "0..1" Protocol : protocol
+        click Protocol href "../Protocol/"
+    
+
+        
       Meeting : sequential_number
         
       Meeting : state
@@ -1689,21 +1826,22 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 | [parent_meeting](#parent_meeting) | 0..1 <br/> [String](#String) | [en] The linked meeting ID that groups the current meeting | direct |
 | [parent_legislature](#parent_legislature) | 0..1 <br/> [String](#String) | [en] The legislative body in which the meeting is based | direct |
 | [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
-| [date_begin_actual](#date_begin_actual) | 0..1 <br/> [Date](#Date) | [de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitda... | [IsEventWithDuration](#de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitda... | [IsEventWithDuration) |
-| [datetime_begin_actual](#datetime_begin_actual) | 0..1 <br/> [Datetime](#Datetime) | [de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorko... | [IsEventWithDuration](#de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorko... | [IsEventWithDuration) |
-| [date_begin_planned](#date_begin_planned) | 0..1 <br/> [Date](#Date) | [de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration](#de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration) |
-| [datetime_begin_planned](#datetime_begin_planned) | 0..1 <br/> [Datetime](#Datetime) | [de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommen... | [IsEventWithDuration](#de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommen... | [IsEventWithDuration) |
-| [date_end_actual](#date_end_actual) | 0..1 <br/> [Date](#Date) | [de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdaue... | [IsEventWithDuration](#de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdaue... | [IsEventWithDuration) |
-| [datetime_end_actual](#datetime_end_actual) | 0..1 <br/> [Datetime](#Datetime) | [de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkomm... | [IsEventWithDuration](#de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkomm... | [IsEventWithDuration) |
-| [date_end_planned](#date_end_planned) | 0..1 <br/> [Date](#Date) | [de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration](#de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration) |
-| [datetime_end_planned](#datetime_end_planned) | 0..1 <br/> [Datetime](#Datetime) | [de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens ... | [IsEventWithDuration](#de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens ... | [IsEventWithDuration) |
-| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [protocol](#protocol) | 0..1 <br/> [Protocol](#Protocol) | [en] The protocol (minutes) of this meeting, recorded after the meeting | direct |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | Local identifier | [HasIdentification](#HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity | [HasIdentification](#HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e | [HasIdentification](#HasIdentification) |
+| [date_begin_actual](#date_begin_actual) | 0..1 <br/> [Date](#Date) | The actual start date of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [datetime_begin_actual](#datetime_begin_actual) | 0..1 <br/> [Datetime](#Datetime) | The actual start date and time of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [date_begin_planned](#date_begin_planned) | 0..1 <br/> [Date](#Date) | The planned start date of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [datetime_begin_planned](#datetime_begin_planned) | 0..1 <br/> [Datetime](#Datetime) | The planned start date and time of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [date_end_actual](#date_end_actual) | 0..1 <br/> [Date](#Date) | The actual end date of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [datetime_end_actual](#datetime_end_actual) | 0..1 <br/> [Datetime](#Datetime) | The actual end date and time of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [date_end_planned](#date_end_planned) | 0..1 <br/> [Date](#Date) | The planned end date of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [datetime_end_planned](#datetime_end_planned) | 0..1 <br/> [Datetime](#Datetime) | The planned end date and time of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | The date when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | The date when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -1796,6 +1934,7 @@ slots:
 - parent_meeting
 - parent_legislature
 - documents
+- protocol
 
 ```
 </details>
@@ -2055,6 +2194,7 @@ attributes:
     domain_of:
     - Meeting
     - AgendaItem
+    - Protocol
     - Voting
     - Election
     - Attendance
@@ -2090,6 +2230,7 @@ attributes:
     - Session
     - Meeting
     - AgendaItem
+    - Protocol
     - Resolution
     - Voting
     - Election
@@ -2099,11 +2240,32 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  protocol:
+    name: protocol
+    description: '[en] The protocol (minutes) of this meeting, recorded after the
+      meeting.
+
+      [de] Das nach der Sitzung erstellte Protokoll dieser Sitzung.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: ops:protocol
+    owner: Meeting
+    domain_of:
+    - Meeting
+    range: Protocol
+    inlined: true
   local_id:
     name: local_id
-    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [en] Local identifier. For example, a UUID from the council information system.
+          '
+    description: 'Local identifier. For example, a UUID from the council information
+      system.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2115,9 +2277,13 @@ attributes:
     range: string
   global_uri:
     name: global_uri
-    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine eindeutige, global gültige URI für die Entität.
 
-      [en] A unique, globally valid URI for the entity.
+          '
+    description: 'A unique, globally valid URI for the entity.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2131,10 +2297,14 @@ attributes:
     required: true
   wikidata_uri:
     name: wikidata_uri
-    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-      für die Schweiz.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+          für die Schweiz.
 
-      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+          '
+    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
       for Switzerland.
 
       '
@@ -2147,10 +2317,14 @@ attributes:
     range: uriorcurie
   date_begin_actual:
     name: date_begin_actual
-    description: '[de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens
-      mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit
+          Zeitdauer.
 
-      [en] The actual start date of an event or occurrence with time duration.
+          '
+    description: 'The actual start date of an event or occurrence with time duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2162,10 +2336,15 @@ attributes:
     range: date
   datetime_begin_actual:
     name: datetime_begin_actual
-    description: '[de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses
-      oder Vorkommens mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder
+          Vorkommnissen mit Zeitdauer.
 
-      [en] The actual start date and time of an event or occurrence with time duration.
+          '
+    description: 'The actual start date and time of an event or occurrence with time
+      duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2177,10 +2356,13 @@ attributes:
     range: datetime
   date_begin_planned:
     name: date_begin_planned
-    description: '[de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit
-      Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
 
-      [en] The planned start date of an event or occurrence with time duration.
+          '
+    description: 'The planned start date of an event or occurrence with time duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2192,10 +2374,15 @@ attributes:
     range: date
   datetime_begin_planned:
     name: datetime_begin_planned
-    description: '[de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder
-      Vorkommens mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+          mit Zeitdauer.
 
-      [en] The planned start date and time of an event or occurrence with time duration.
+          '
+    description: 'The planned start date and time of an event or occurrence with time
+      duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2207,10 +2394,14 @@ attributes:
     range: datetime
   date_end_actual:
     name: date_end_actual
-    description: '[de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens
-      mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Enddatum eines Ereignisses oder Vorkommnissen mit
+          Zeitdauer.
 
-      [en] The actual end date of an event or occurrence with time duration.
+          '
+    description: 'The actual end date of an event or occurrence with time duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2222,10 +2413,15 @@ attributes:
     range: date
   datetime_end_actual:
     name: datetime_end_actual
-    description: '[de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses
-      oder Vorkommens mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+          mit Zeitdauer.
 
-      [en] The actual end date and time of an event or occurrence with time duration.
+          '
+    description: 'The actual end date and time of an event or occurrence with time
+      duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2237,10 +2433,13 @@ attributes:
     range: datetime
   date_end_planned:
     name: date_end_planned
-    description: '[de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit
-      Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Enddatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
 
-      [en] The planned end date of an event or occurrence with time duration.
+          '
+    description: 'The planned end date of an event or occurrence with time duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2252,10 +2451,15 @@ attributes:
     range: date
   datetime_end_planned:
     name: datetime_end_planned
-    description: '[de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder
-      Vorkommens mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+          mit Zeitdauer.
 
-      [en] The planned end date and time of an event or occurrence with time duration.
+          '
+    description: 'The planned end date and time of an event or occurrence with time
+      duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2267,9 +2471,13 @@ attributes:
     range: datetime
   date_created:
     name: date_created
-    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität erstellt wurde.
 
-      [en] The date when an entity was created.
+          '
+    description: 'The date when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2281,9 +2489,13 @@ attributes:
     range: date
   datetime_created:
     name: datetime_created
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
 
-      [en] The date and time when an entity was created.
+          '
+    description: 'The date and time when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2295,9 +2507,13 @@ attributes:
     range: datetime
   date_modified:
     name: date_modified
-    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date when an entity was last modified.
+          '
+    description: 'The date when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2309,10 +2525,13 @@ attributes:
     range: date
   datetime_modified:
     name: datetime_modified
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
-      wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date and time when an entity was last modified.
+          '
+    description: 'The date and time when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2517,13 +2736,13 @@ URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
 | [total_present](#total_present) | 0..1 <br/> [Integer](#Integer) | Total number of members present | direct |
 | [total_absent](#total_absent) | 0..1 <br/> [Integer](#Integer) | [en] Total number of absent members | direct |
 | [total_excused](#total_excused) | 0..1 <br/> [Integer](#Integer) | Total number of excused absences | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
-| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | Local identifier | [HasIdentification](#HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity | [HasIdentification](#HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e | [HasIdentification](#HasIdentification) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | The date when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | The date when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -2635,6 +2854,7 @@ attributes:
     domain_of:
     - Meeting
     - AgendaItem
+    - Protocol
     - Voting
     - Election
     - Attendance
@@ -2728,9 +2948,14 @@ attributes:
     range: integer
   local_id:
     name: local_id
-    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [en] Local identifier. For example, a UUID from the council information system.
+          '
+    description: 'Local identifier. For example, a UUID from the council information
+      system.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2742,9 +2967,13 @@ attributes:
     range: string
   global_uri:
     name: global_uri
-    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine eindeutige, global gültige URI für die Entität.
 
-      [en] A unique, globally valid URI for the entity.
+          '
+    description: 'A unique, globally valid URI for the entity.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2758,10 +2987,14 @@ attributes:
     required: true
   wikidata_uri:
     name: wikidata_uri
-    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-      für die Schweiz.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+          für die Schweiz.
 
-      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+          '
+    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
       for Switzerland.
 
       '
@@ -2774,9 +3007,13 @@ attributes:
     range: uriorcurie
   date_created:
     name: date_created
-    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität erstellt wurde.
 
-      [en] The date when an entity was created.
+          '
+    description: 'The date when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2788,9 +3025,13 @@ attributes:
     range: date
   datetime_created:
     name: datetime_created
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
 
-      [en] The date and time when an entity was created.
+          '
+    description: 'The date and time when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2802,9 +3043,13 @@ attributes:
     range: datetime
   date_modified:
     name: date_modified
-    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date when an entity was last modified.
+          '
+    description: 'The date when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2816,10 +3061,13 @@ attributes:
     range: date
   datetime_modified:
     name: datetime_modified
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
-      wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date and time when an entity was last modified.
+          '
+    description: 'The date and time when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2936,13 +3184,13 @@ URI: [ops:IndividualAttendance](https://ch.paf.link/schema/operations/Individual
 | [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
 | [attendance_type](#attendance_type) | 0..1 <br/> [AttendanceTypeEnum](#AttendanceTypeEnum) | Type of individual attendance | direct |
 | [reason](#reason) | * <br/> [MultilingualString](#MultilingualString) | [en] Reason for absence or lateness (free-text, multilingual) | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
-| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | Local identifier | [HasIdentification](#HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity | [HasIdentification](#HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e | [HasIdentification](#HasIdentification) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | The date when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | The date when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -3101,9 +3349,14 @@ attributes:
     inlined_as_list: true
   local_id:
     name: local_id
-    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [en] Local identifier. For example, a UUID from the council information system.
+          '
+    description: 'Local identifier. For example, a UUID from the council information
+      system.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -3115,9 +3368,13 @@ attributes:
     range: string
   global_uri:
     name: global_uri
-    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine eindeutige, global gültige URI für die Entität.
 
-      [en] A unique, globally valid URI for the entity.
+          '
+    description: 'A unique, globally valid URI for the entity.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -3131,10 +3388,14 @@ attributes:
     required: true
   wikidata_uri:
     name: wikidata_uri
-    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-      für die Schweiz.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+          für die Schweiz.
 
-      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+          '
+    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
       for Switzerland.
 
       '
@@ -3147,9 +3408,13 @@ attributes:
     range: uriorcurie
   date_created:
     name: date_created
-    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität erstellt wurde.
 
-      [en] The date when an entity was created.
+          '
+    description: 'The date when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -3161,9 +3426,13 @@ attributes:
     range: date
   datetime_created:
     name: datetime_created
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
 
-      [en] The date and time when an entity was created.
+          '
+    description: 'The date and time when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -3175,9 +3444,13 @@ attributes:
     range: datetime
   date_modified:
     name: date_modified
-    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date when an entity was last modified.
+          '
+    description: 'The date when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -3189,10 +3462,13 @@ attributes:
     range: date
   datetime_modified:
     name: datetime_modified
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
-      wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date and time when an entity was last modified.
+          '
+    description: 'The date and time when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -3397,6 +3673,11 @@ URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
       HasCreationModificationDates <|-- AgendaItem
         click HasCreationModificationDates href "../HasCreationModificationDates/"
       
+
+      AgendaItem <|-- ProtocolItem
+        click ProtocolItem href "../ProtocolItem/"
+      
+
       AgendaItem : affair_id
         
       AgendaItem : agenda_item_category
@@ -3524,6 +3805,7 @@ URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
 
 ## Inheritance
 * **AgendaItem** [ [HasIdentification](# [HasIdentification) [IsEventWithDuration](#IsEventWithDuration) [HasCreationModificationDates](#HasCreationModificationDates)]
+    * [ProtocolItem](#ProtocolItem)
 
 
 ## Slots
@@ -3547,21 +3829,21 @@ URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
 | [parent_agenda_item](#parent_agenda_item) | 0..1 <br/> [String](#String) | [en] If needed, this slot builds a hierarchy of agenda items | direct |
 | [has_resolution](#has_resolution) | 0..1 <br/> [Resolution](#Resolution) | [en] The resolutionor decision taken on this agenda item | direct |
 | [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
-| [date_begin_actual](#date_begin_actual) | 0..1 <br/> [Date](#Date) | [de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitda... | [IsEventWithDuration](#de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitda... | [IsEventWithDuration) |
-| [datetime_begin_actual](#datetime_begin_actual) | 0..1 <br/> [Datetime](#Datetime) | [de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorko... | [IsEventWithDuration](#de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorko... | [IsEventWithDuration) |
-| [date_begin_planned](#date_begin_planned) | 0..1 <br/> [Date](#Date) | [de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration](#de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration) |
-| [datetime_begin_planned](#datetime_begin_planned) | 0..1 <br/> [Datetime](#Datetime) | [de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommen... | [IsEventWithDuration](#de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommen... | [IsEventWithDuration) |
-| [date_end_actual](#date_end_actual) | 0..1 <br/> [Date](#Date) | [de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdaue... | [IsEventWithDuration](#de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens mit Zeitdaue... | [IsEventWithDuration) |
-| [datetime_end_actual](#datetime_end_actual) | 0..1 <br/> [Datetime](#Datetime) | [de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkomm... | [IsEventWithDuration](#de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkomm... | [IsEventWithDuration) |
-| [date_end_planned](#date_end_planned) | 0..1 <br/> [Date](#Date) | [de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration](#de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit Zeitdauer | [IsEventWithDuration) |
-| [datetime_end_planned](#datetime_end_planned) | 0..1 <br/> [Datetime](#Datetime) | [de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens ... | [IsEventWithDuration](#de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommens ... | [IsEventWithDuration) |
-| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | Local identifier | [HasIdentification](#HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity | [HasIdentification](#HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e | [HasIdentification](#HasIdentification) |
+| [date_begin_actual](#date_begin_actual) | 0..1 <br/> [Date](#Date) | The actual start date of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [datetime_begin_actual](#datetime_begin_actual) | 0..1 <br/> [Datetime](#Datetime) | The actual start date and time of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [date_begin_planned](#date_begin_planned) | 0..1 <br/> [Date](#Date) | The planned start date of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [datetime_begin_planned](#datetime_begin_planned) | 0..1 <br/> [Datetime](#Datetime) | The planned start date and time of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [date_end_actual](#date_end_actual) | 0..1 <br/> [Date](#Date) | The actual end date of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [datetime_end_actual](#datetime_end_actual) | 0..1 <br/> [Datetime](#Datetime) | The actual end date and time of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [date_end_planned](#date_end_planned) | 0..1 <br/> [Date](#Date) | The planned end date of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [datetime_end_planned](#datetime_end_planned) | 0..1 <br/> [Datetime](#Datetime) | The planned end date and time of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | The date when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | The date when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -3681,6 +3963,7 @@ attributes:
     domain_of:
     - Meeting
     - AgendaItem
+    - Protocol
     - Voting
     - Election
     - Attendance
@@ -3917,6 +4200,7 @@ attributes:
     - Session
     - Meeting
     - AgendaItem
+    - Protocol
     - Resolution
     - Voting
     - Election
@@ -3928,9 +4212,14 @@ attributes:
     inlined_as_list: true
   local_id:
     name: local_id
-    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [en] Local identifier. For example, a UUID from the council information system.
+          '
+    description: 'Local identifier. For example, a UUID from the council information
+      system.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -3942,9 +4231,13 @@ attributes:
     range: string
   global_uri:
     name: global_uri
-    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine eindeutige, global gültige URI für die Entität.
 
-      [en] A unique, globally valid URI for the entity.
+          '
+    description: 'A unique, globally valid URI for the entity.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -3958,10 +4251,14 @@ attributes:
     required: true
   wikidata_uri:
     name: wikidata_uri
-    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-      für die Schweiz.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+          für die Schweiz.
 
-      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+          '
+    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
       for Switzerland.
 
       '
@@ -3974,10 +4271,14 @@ attributes:
     range: uriorcurie
   date_begin_actual:
     name: date_begin_actual
-    description: '[de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens
-      mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit
+          Zeitdauer.
 
-      [en] The actual start date of an event or occurrence with time duration.
+          '
+    description: 'The actual start date of an event or occurrence with time duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -3989,10 +4290,15 @@ attributes:
     range: date
   datetime_begin_actual:
     name: datetime_begin_actual
-    description: '[de] Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses
-      oder Vorkommens mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder
+          Vorkommnissen mit Zeitdauer.
 
-      [en] The actual start date and time of an event or occurrence with time duration.
+          '
+    description: 'The actual start date and time of an event or occurrence with time
+      duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -4004,10 +4310,13 @@ attributes:
     range: datetime
   date_begin_planned:
     name: date_begin_planned
-    description: '[de] Das geplante Startdatum eines Ereignisses oder Vorkommens mit
-      Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
 
-      [en] The planned start date of an event or occurrence with time duration.
+          '
+    description: 'The planned start date of an event or occurrence with time duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -4019,10 +4328,15 @@ attributes:
     range: date
   datetime_begin_planned:
     name: datetime_begin_planned
-    description: '[de] Das geplante Startdatum und die Uhrzeit eines Ereignisses oder
-      Vorkommens mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+          mit Zeitdauer.
 
-      [en] The planned start date and time of an event or occurrence with time duration.
+          '
+    description: 'The planned start date and time of an event or occurrence with time
+      duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -4034,10 +4348,14 @@ attributes:
     range: datetime
   date_end_actual:
     name: date_end_actual
-    description: '[de] Das tatsächliche Enddatum eines Ereignisses oder Vorkommens
-      mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Enddatum eines Ereignisses oder Vorkommnissen mit
+          Zeitdauer.
 
-      [en] The actual end date of an event or occurrence with time duration.
+          '
+    description: 'The actual end date of an event or occurrence with time duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -4049,10 +4367,15 @@ attributes:
     range: date
   datetime_end_actual:
     name: datetime_end_actual
-    description: '[de] Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses
-      oder Vorkommens mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+          mit Zeitdauer.
 
-      [en] The actual end date and time of an event or occurrence with time duration.
+          '
+    description: 'The actual end date and time of an event or occurrence with time
+      duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -4064,10 +4387,13 @@ attributes:
     range: datetime
   date_end_planned:
     name: date_end_planned
-    description: '[de] Das geplante Enddatum eines Ereignisses oder Vorkommens mit
-      Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Enddatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
 
-      [en] The planned end date of an event or occurrence with time duration.
+          '
+    description: 'The planned end date of an event or occurrence with time duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -4079,10 +4405,15 @@ attributes:
     range: date
   datetime_end_planned:
     name: datetime_end_planned
-    description: '[de] Das geplante Enddatum und die Uhrzeit eines Ereignisses oder
-      Vorkommens mit Zeitdauer.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+          mit Zeitdauer.
 
-      [en] The planned end date and time of an event or occurrence with time duration.
+          '
+    description: 'The planned end date and time of an event or occurrence with time
+      duration.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -4094,9 +4425,13 @@ attributes:
     range: datetime
   date_created:
     name: date_created
-    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität erstellt wurde.
 
-      [en] The date when an entity was created.
+          '
+    description: 'The date when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -4108,9 +4443,13 @@ attributes:
     range: date
   datetime_created:
     name: datetime_created
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
 
-      [en] The date and time when an entity was created.
+          '
+    description: 'The date and time when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -4122,9 +4461,13 @@ attributes:
     range: datetime
   date_modified:
     name: date_modified
-    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date when an entity was last modified.
+          '
+    description: 'The date when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -4136,10 +4479,13 @@ attributes:
     range: date
   datetime_modified:
     name: datetime_modified
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
-      wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date and time when an entity was last modified.
+          '
+    description: 'The date and time when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -4405,6 +4751,7 @@ URI: [ops:Resolution](https://ch.paf.link/schema/operations/Resolution)
 | ---  | --- | --- | --- |
 | [Container](#Container) | [resolutions](#resolutions) | range | [Resolution](#Resolution) |
 | [AgendaItem](#AgendaItem) | [has_resolution](#has_resolution) | range | [Resolution](#Resolution) |
+| [ProtocolItem](#ProtocolItem) | [has_resolution](#has_resolution) | range | [Resolution](#Resolution) |
 
 
 
@@ -4543,6 +4890,7 @@ attributes:
     - Session
     - Meeting
     - AgendaItem
+    - Protocol
     - Resolution
     - Voting
     - Election
@@ -4668,9 +5016,9 @@ URI: [ops:Motion](https://ch.paf.link/schema/operations/Motion)
 | [title](#title) | 0..1 <br/> [String](#String) |  | direct |
 | [description](#description) | 0..1 <br/> [String](#String) |  | direct |
 | [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | Local identifier | [HasIdentification](#HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity | [HasIdentification](#HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e | [HasIdentification](#HasIdentification) |
 
 
 
@@ -4790,6 +5138,7 @@ attributes:
     - Session
     - Meeting
     - AgendaItem
+    - Protocol
     - Resolution
     - Voting
     - Election
@@ -4801,9 +5150,14 @@ attributes:
     inlined_as_list: true
   local_id:
     name: local_id
-    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [en] Local identifier. For example, a UUID from the council information system.
+          '
+    description: 'Local identifier. For example, a UUID from the council information
+      system.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -4815,9 +5169,13 @@ attributes:
     range: string
   global_uri:
     name: global_uri
-    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine eindeutige, global gültige URI für die Entität.
 
-      [en] A unique, globally valid URI for the entity.
+          '
+    description: 'A unique, globally valid URI for the entity.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -4831,10 +5189,14 @@ attributes:
     required: true
   wikidata_uri:
     name: wikidata_uri
-    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-      für die Schweiz.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+          für die Schweiz.
 
-      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+          '
+    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
       for Switzerland.
 
       '
@@ -5231,13 +5593,13 @@ URI: [ops:Voting](https://ch.paf.link/schema/operations/Voting)
 | [affair_id](#affair_id) | 0..1 <br/> [String](#String) | [en] The connection to the affairs (business items) of the agenda item | direct |
 | [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
 | [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
-| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | Local identifier | [HasIdentification](#HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity | [HasIdentification](#HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e | [HasIdentification](#HasIdentification) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | The date when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | The date when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -5248,6 +5610,7 @@ URI: [ops:Voting](https://ch.paf.link/schema/operations/Voting)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Container](#Container) | [votings](#votings) | range | [Voting](#Voting) |
+| [Protocol](#Protocol) | [votings](#votings) | range | [Voting](#Voting) |
 | [IndividualVote](#IndividualVote) | [parent_voting](#parent_voting) | range | [Voting](#Voting) |
 
 
@@ -5660,6 +6023,7 @@ attributes:
     domain_of:
     - Meeting
     - AgendaItem
+    - Protocol
     - Voting
     - Election
     - Attendance
@@ -5735,6 +6099,7 @@ attributes:
     - Session
     - Meeting
     - AgendaItem
+    - Protocol
     - Resolution
     - Voting
     - Election
@@ -5746,9 +6111,14 @@ attributes:
     inlined_as_list: true
   local_id:
     name: local_id
-    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [en] Local identifier. For example, a UUID from the council information system.
+          '
+    description: 'Local identifier. For example, a UUID from the council information
+      system.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -5760,9 +6130,13 @@ attributes:
     range: string
   global_uri:
     name: global_uri
-    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine eindeutige, global gültige URI für die Entität.
 
-      [en] A unique, globally valid URI for the entity.
+          '
+    description: 'A unique, globally valid URI for the entity.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -5776,10 +6150,14 @@ attributes:
     required: true
   wikidata_uri:
     name: wikidata_uri
-    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-      für die Schweiz.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+          für die Schweiz.
 
-      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+          '
+    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
       for Switzerland.
 
       '
@@ -5792,9 +6170,13 @@ attributes:
     range: uriorcurie
   date_created:
     name: date_created
-    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität erstellt wurde.
 
-      [en] The date when an entity was created.
+          '
+    description: 'The date when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -5806,9 +6188,13 @@ attributes:
     range: date
   datetime_created:
     name: datetime_created
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
 
-      [en] The date and time when an entity was created.
+          '
+    description: 'The date and time when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -5820,9 +6206,13 @@ attributes:
     range: datetime
   date_modified:
     name: date_modified
-    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date when an entity was last modified.
+          '
+    description: 'The date when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -5834,10 +6224,13 @@ attributes:
     range: date
   datetime_modified:
     name: datetime_modified
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
-      wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date and time when an entity was last modified.
+          '
+    description: 'The date and time when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -6063,13 +6456,13 @@ URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
 | [weight](#weight) | 0..1 <br/> [Integer](#Integer) | [en] The number of votes held by the individual, if applicable (e | direct |
 | [individual_vote_type](#individual_vote_type) | 0..1 <br/> [IndividualVoteTypeEnum](#IndividualVoteTypeEnum) | [en] Type of vote cast (yes, no, abstention, no vote, etc | direct |
 | [type_label](#type_label) | 0..1 <br/> [String](#String) | [en] Custom type label when standard type values don't apply | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
-| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | Local identifier | [HasIdentification](#HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity | [HasIdentification](#HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e | [HasIdentification](#HasIdentification) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | The date when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | The date when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -6257,9 +6650,14 @@ attributes:
     range: string
   local_id:
     name: local_id
-    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [en] Local identifier. For example, a UUID from the council information system.
+          '
+    description: 'Local identifier. For example, a UUID from the council information
+      system.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -6271,9 +6669,13 @@ attributes:
     range: string
   global_uri:
     name: global_uri
-    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine eindeutige, global gültige URI für die Entität.
 
-      [en] A unique, globally valid URI for the entity.
+          '
+    description: 'A unique, globally valid URI for the entity.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -6287,10 +6689,14 @@ attributes:
     required: true
   wikidata_uri:
     name: wikidata_uri
-    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-      für die Schweiz.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+          für die Schweiz.
 
-      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+          '
+    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
       for Switzerland.
 
       '
@@ -6303,9 +6709,13 @@ attributes:
     range: uriorcurie
   date_created:
     name: date_created
-    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität erstellt wurde.
 
-      [en] The date when an entity was created.
+          '
+    description: 'The date when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -6317,9 +6727,13 @@ attributes:
     range: date
   datetime_created:
     name: datetime_created
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
 
-      [en] The date and time when an entity was created.
+          '
+    description: 'The date and time when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -6331,9 +6745,13 @@ attributes:
     range: datetime
   date_modified:
     name: date_modified
-    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date when an entity was last modified.
+          '
+    description: 'The date when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -6345,10 +6763,13 @@ attributes:
     range: date
   datetime_modified:
     name: datetime_modified
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
-      wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date and time when an entity was last modified.
+          '
+    description: 'The date and time when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -6720,13 +7141,13 @@ URI: [ops:Election](https://ch.paf.link/schema/operations/Election)
 | [affair_id](#affair_id) | 0..1 <br/> [String](#String) | [en] The connection to the affairs (business items) of the agenda item | direct |
 | [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
 | [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
-| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | Local identifier | [HasIdentification](#HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity | [HasIdentification](#HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e | [HasIdentification](#HasIdentification) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | The date when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | The date when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -7006,6 +7427,7 @@ attributes:
     domain_of:
     - Meeting
     - AgendaItem
+    - Protocol
     - Voting
     - Election
     - Attendance
@@ -7081,6 +7503,7 @@ attributes:
     - Session
     - Meeting
     - AgendaItem
+    - Protocol
     - Resolution
     - Voting
     - Election
@@ -7092,9 +7515,14 @@ attributes:
     inlined_as_list: true
   local_id:
     name: local_id
-    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [en] Local identifier. For example, a UUID from the council information system.
+          '
+    description: 'Local identifier. For example, a UUID from the council information
+      system.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -7106,9 +7534,13 @@ attributes:
     range: string
   global_uri:
     name: global_uri
-    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine eindeutige, global gültige URI für die Entität.
 
-      [en] A unique, globally valid URI for the entity.
+          '
+    description: 'A unique, globally valid URI for the entity.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -7122,10 +7554,14 @@ attributes:
     required: true
   wikidata_uri:
     name: wikidata_uri
-    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-      für die Schweiz.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+          für die Schweiz.
 
-      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+          '
+    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
       for Switzerland.
 
       '
@@ -7138,9 +7574,13 @@ attributes:
     range: uriorcurie
   date_created:
     name: date_created
-    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität erstellt wurde.
 
-      [en] The date when an entity was created.
+          '
+    description: 'The date when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -7152,9 +7592,13 @@ attributes:
     range: date
   datetime_created:
     name: datetime_created
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
 
-      [en] The date and time when an entity was created.
+          '
+    description: 'The date and time when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -7166,9 +7610,13 @@ attributes:
     range: datetime
   date_modified:
     name: date_modified
-    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date when an entity was last modified.
+          '
+    description: 'The date when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -7180,10 +7628,13 @@ attributes:
     range: date
   datetime_modified:
     name: datetime_modified
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
-      wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date and time when an entity was last modified.
+          '
+    description: 'The date and time when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -7446,7 +7897,7 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [language](#language) | 0..1 <br/> [String](#String) | [de] Sprachcode im ISO 639-1 Format | direct |
+| [language](#language) | 0..1 <br/> [String](#String) | Language code in ISO 639-1 format (two lowercase letters, e | direct |
 | [start](#start) | 0..1 <br/> [String](#String) | Start indicator or position | direct |
 | [datetime_begin](#datetime_begin) | 0..1 <br/> [Datetime](#Datetime) | [en] The date and time when the meeting or voting begins | direct |
 | [datetime_end](#datetime_end) | 0..1 <br/> [Datetime](#Datetime) | [en] The date and time when the meeting or voting ends | direct |
@@ -7461,13 +7912,13 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
 | [media_type](#media_type) | 0..1 <br/> [String](#String) | Type of media (audio, video, document) | direct |
 | [media_format](#media_format) | 0..1 <br/> [String](#String) | MIME type of the media file | direct |
 | [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
-| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates) |
-| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
-| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](#de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates) |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | Local identifier | [HasIdentification](#HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity | [HasIdentification](#HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e | [HasIdentification](#HasIdentification) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | The date when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | The date when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -7478,6 +7929,7 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Container](#Container) | [speeches](#speeches) | range | [Speech](#Speech) |
+| [Protocol](#Protocol) | [speeches](#speeches) | range | [Speech](#Speech) |
 
 
 
@@ -7573,9 +8025,15 @@ mixins:
 attributes:
   language:
     name: language
-    description: '[de] Sprachcode im ISO 639-1 Format.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Sprachcode im ISO 639-1 Format (zwei Kleinbuchstaben, z.B. "de", "fr",
+          "it", "en").
 
-      [en] Language code in ISO 639-1 format.
+          '
+    description: 'Language code in ISO 639-1 format (two lowercase letters, e.g. "de",
+      "fr", "it", "en").
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -7770,6 +8228,7 @@ attributes:
     - Session
     - Meeting
     - AgendaItem
+    - Protocol
     - Resolution
     - Voting
     - Election
@@ -7781,9 +8240,14 @@ attributes:
     inlined_as_list: true
   local_id:
     name: local_id
-    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [en] Local identifier. For example, a UUID from the council information system.
+          '
+    description: 'Local identifier. For example, a UUID from the council information
+      system.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -7795,9 +8259,13 @@ attributes:
     range: string
   global_uri:
     name: global_uri
-    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine eindeutige, global gültige URI für die Entität.
 
-      [en] A unique, globally valid URI for the entity.
+          '
+    description: 'A unique, globally valid URI for the entity.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -7811,10 +8279,14 @@ attributes:
     required: true
   wikidata_uri:
     name: wikidata_uri
-    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-      für die Schweiz.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+          für die Schweiz.
 
-      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+          '
+    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
       for Switzerland.
 
       '
@@ -7827,9 +8299,13 @@ attributes:
     range: uriorcurie
   date_created:
     name: date_created
-    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität erstellt wurde.
 
-      [en] The date when an entity was created.
+          '
+    description: 'The date when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -7841,9 +8317,13 @@ attributes:
     range: date
   datetime_created:
     name: datetime_created
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
 
-      [en] The date and time when an entity was created.
+          '
+    description: 'The date and time when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -7855,9 +8335,13 @@ attributes:
     range: datetime
   date_modified:
     name: date_modified
-    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date when an entity was last modified.
+          '
+    description: 'The date when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -7869,10 +8353,13 @@ attributes:
     range: date
   datetime_modified:
     name: datetime_modified
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
-      wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date and time when an entity was last modified.
+          '
+    description: 'The date and time when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -8021,12 +8508,19 @@ URI: [ops:TextSegment](https://ch.paf.link/schema/operations/TextSegment)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [text](#text) | 1 <br/> [String](#String) |  | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | Local identifier | [HasIdentification](#HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity | [HasIdentification](#HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e | [HasIdentification](#HasIdentification) |
 
 
 
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Protocol](#Protocol) | [text_segments](#text_segments) | range | [TextSegment](#TextSegment) |
 
 
 
@@ -8117,9 +8611,14 @@ attributes:
     required: true
   local_id:
     name: local_id
-    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [en] Local identifier. For example, a UUID from the council information system.
+          '
+    description: 'Local identifier. For example, a UUID from the council information
+      system.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -8131,9 +8630,13 @@ attributes:
     range: string
   global_uri:
     name: global_uri
-    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine eindeutige, global gültige URI für die Entität.
 
-      [en] A unique, globally valid URI for the entity.
+          '
+    description: 'A unique, globally valid URI for the entity.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -8147,10 +8650,14 @@ attributes:
     required: true
   wikidata_uri:
     name: wikidata_uri
-    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-      für die Schweiz.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+          für die Schweiz.
 
-      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+          '
+    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
       for Switzerland.
 
       '
@@ -8245,9 +8752,9 @@ URI: [ops:Media](https://ch.paf.link/schema/operations/Media)
 | [url](#url) | * <br/> [MultilingualString](#MultilingualString) |  | direct |
 | [version](#version) | 0..1 <br/> [String](#String) | Version number or identifier | direct |
 | [parent_type](#parent_type) | 0..1 <br/> [String](#String) | Type of parent object (meeting, agenda, speech, affair) | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | Local identifier | [HasIdentification](#HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity | [HasIdentification](#HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e | [HasIdentification](#HasIdentification) |
 
 
 
@@ -8390,9 +8897,14 @@ attributes:
     range: string
   local_id:
     name: local_id
-    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [en] Local identifier. For example, a UUID from the council information system.
+          '
+    description: 'Local identifier. For example, a UUID from the council information
+      system.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -8404,9 +8916,13 @@ attributes:
     range: string
   global_uri:
     name: global_uri
-    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine eindeutige, global gültige URI für die Entität.
 
-      [en] A unique, globally valid URI for the entity.
+          '
+    description: 'A unique, globally valid URI for the entity.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -8420,10 +8936,14 @@ attributes:
     required: true
   wikidata_uri:
     name: wikidata_uri
-    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-      für die Schweiz.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+          für die Schweiz.
 
-      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+          '
+    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
       for Switzerland.
 
       '
@@ -8485,7 +9005,7 @@ URI: [ops:MultilingualString](https://ch.paf.link/schema/operations/Multilingual
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [text](#text) | 1 <br/> [String](#String) |  | direct |
-| [language](#language) | 1 <br/> [String](#String) | [de] Sprachcode im ISO 639-1 Format | direct |
+| [language](#language) | 1 <br/> [String](#String) | Language code in ISO 639-1 format (two lowercase letters, e | direct |
 
 
 
@@ -8503,6 +9023,9 @@ URI: [ops:MultilingualString](https://ch.paf.link/schema/operations/Multilingual
 | [AgendaItem](#AgendaItem) | [agenda_item_title](#agenda_item_title) | range | [MultilingualString](#MultilingualString) |
 | [AgendaItem](#AgendaItem) | [agenda_item_description](#agenda_item_description) | range | [MultilingualString](#MultilingualString) |
 | [AgendaItem](#AgendaItem) | [url](#url) | range | [MultilingualString](#MultilingualString) |
+| [ProtocolItem](#ProtocolItem) | [agenda_item_title](#agenda_item_title) | range | [MultilingualString](#MultilingualString) |
+| [ProtocolItem](#ProtocolItem) | [agenda_item_description](#agenda_item_description) | range | [MultilingualString](#MultilingualString) |
+| [ProtocolItem](#ProtocolItem) | [url](#url) | range | [MultilingualString](#MultilingualString) |
 | [Voting](#Voting) | [voting_title](#voting_title) | range | [MultilingualString](#MultilingualString) |
 | [IndividualAttendance](#IndividualAttendance) | [reason](#reason) | range | [MultilingualString](#MultilingualString) |
 | [Media](#Media) | [url](#url) | range | [MultilingualString](#MultilingualString) |
@@ -8600,9 +9123,15 @@ attributes:
     required: true
   language:
     name: language
-    description: '[de] Sprachcode im ISO 639-1 Format.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Sprachcode im ISO 639-1 Format (zwei Kleinbuchstaben, z.B. "de", "fr",
+          "it", "en").
 
-      [en] Language code in ISO 639-1 format.
+          '
+    description: 'Language code in ISO 639-1 format (two lowercase letters, e.g. "de",
+      "fr", "it", "en").
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -8726,6 +9255,17 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
     
 
         
+      Container : protocols
+        
+          
+    
+        
+        
+        Container --> "*" Protocol : protocols
+        click Protocol href "../Protocol/"
+    
+
+        
       Container : resolutions
         
           
@@ -8798,6 +9338,7 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
 | [sessions](#sessions) | * <br/> [Session](#Session) |  | direct |
 | [meetings](#meetings) | * <br/> [Meeting](#Meeting) |  | direct |
 | [agenda_items](#agenda_items) | * <br/> [AgendaItem](#AgendaItem) |  | direct |
+| [protocols](#protocols) | * <br/> [Protocol](#Protocol) | Collection of protocol records | direct |
 | [votings](#votings) | * <br/> [Voting](#Voting) | Collection of voting records | direct |
 | [elections](#elections) | * <br/> [Election](#Election) | Collection of election records | direct |
 | [individual_votes](#individual_votes) | * <br/> [IndividualVote](#IndividualVote) | Collection of individual vote records | direct |
@@ -8805,9 +9346,9 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
 | [individual_attendances](#individual_attendances) | * <br/> [IndividualAttendance](#IndividualAttendance) | Collection of individual attendance records | direct |
 | [speeches](#speeches) | * <br/> [Speech](#Speech) | Collection of speech records | direct |
 | [resolutions](#resolutions) | * <br/> [Resolution](#Resolution) | Collection of resolutionrecords | direct |
-| [local_id](#local_id) | 0..1 <br/> [String](#String) | [de] Lokaler Identifikator | [HasIdentification](#de] Lokaler Identifikator | [HasIdentification) |
-| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](#de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification) |
-| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](#de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification) |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | Local identifier | [HasIdentification](#HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity | [HasIdentification](#HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e | [HasIdentification](#HasIdentification) |
 
 
 
@@ -8866,6 +9407,7 @@ slots:
 - sessions
 - meetings
 - agenda_items
+- protocols
 - votings
 - elections
 - individual_votes
@@ -8937,6 +9479,19 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  protocols:
+    name: protocols
+    description: Collection of protocol records
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: ops:protocol
+    owner: Container
+    domain_of:
+    - Container
+    range: Protocol
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   votings:
     name: votings
     description: Collection of voting records
@@ -8946,6 +9501,7 @@ attributes:
     owner: Container
     domain_of:
     - Container
+    - Protocol
     range: Voting
     multivalued: true
     inlined: true
@@ -9011,6 +9567,7 @@ attributes:
     owner: Container
     domain_of:
     - Container
+    - Protocol
     range: Speech
     multivalued: true
     inlined: true
@@ -9030,9 +9587,14 @@ attributes:
     inlined_as_list: true
   local_id:
     name: local_id
-    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [en] Local identifier. For example, a UUID from the council information system.
+          '
+    description: 'Local identifier. For example, a UUID from the council information
+      system.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -9044,9 +9606,13 @@ attributes:
     range: string
   global_uri:
     name: global_uri
-    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine eindeutige, global gültige URI für die Entität.
 
-      [en] A unique, globally valid URI for the entity.
+          '
+    description: 'A unique, globally valid URI for the entity.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -9060,10 +9626,14 @@ attributes:
     required: true
   wikidata_uri:
     name: wikidata_uri
-    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-      für die Schweiz.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+          für die Schweiz.
 
-      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+          '
+    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
       for Switzerland.
 
       '

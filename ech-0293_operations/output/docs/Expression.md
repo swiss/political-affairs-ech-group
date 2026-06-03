@@ -63,7 +63,7 @@ URI: [ops:Expression](https://ch.paf.link/schema/operations/Expression)
 | ---  | --- | --- | --- |
 | [id](id.md) | 1 <br/> [String](String.md) |  | direct |
 | [dates](dates.md) | * <br/> [Date](Date.md) |  | direct |
-| [language](language.md) | 0..1 <br/> [String](String.md) | [de] Sprachcode im ISO 639-1 Format | direct |
+| [language](language.md) | 0..1 <br/> [String](String.md) | Language code in ISO 639-1 format (two lowercase letters, e | direct |
 | [title](title.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [description](description.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [manifestations](manifestations.md) | * <br/> [Manifestation](Manifestation.md) |  | direct |
@@ -170,9 +170,15 @@ attributes:
     inlined_as_list: true
   language:
     name: language
-    description: '[de] Sprachcode im ISO 639-1 Format.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Sprachcode im ISO 639-1 Format (zwei Kleinbuchstaben, z.B. "de", "fr",
+          "it", "en").
 
-      [en] Language code in ISO 639-1 format.
+          '
+    description: 'Language code in ISO 639-1 format (two lowercase letters, e.g. "de",
+      "fr", "it", "en").
 
       '
     from_schema: https://ch.paf.link/schema/operations

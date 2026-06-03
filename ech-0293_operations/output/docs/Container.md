@@ -103,6 +103,17 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
     
 
         
+      Container : protocols
+        
+          
+    
+        
+        
+        Container --> "*" Protocol : protocols
+        click Protocol href "../Protocol/"
+    
+
+        
       Container : resolutions
         
           
@@ -175,6 +186,7 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
 | [sessions](sessions.md) | * <br/> [Session](Session.md) |  | direct |
 | [meetings](meetings.md) | * <br/> [Meeting](Meeting.md) |  | direct |
 | [agenda_items](agenda_items.md) | * <br/> [AgendaItem](AgendaItem.md) |  | direct |
+| [protocols](protocols.md) | * <br/> [Protocol](Protocol.md) | Collection of protocol records | direct |
 | [votings](votings.md) | * <br/> [Voting](Voting.md) | Collection of voting records | direct |
 | [elections](elections.md) | * <br/> [Election](Election.md) | Collection of election records | direct |
 | [individual_votes](individual_votes.md) | * <br/> [IndividualVote](IndividualVote.md) | Collection of individual vote records | direct |
@@ -182,9 +194,9 @@ URI: [ops:Container](https://ch.paf.link/schema/operations/Container)
 | [individual_attendances](individual_attendances.md) | * <br/> [IndividualAttendance](IndividualAttendance.md) | Collection of individual attendance records | direct |
 | [speeches](speeches.md) | * <br/> [Speech](Speech.md) | Collection of speech records | direct |
 | [resolutions](resolutions.md) | * <br/> [Resolution](Resolution.md) | Collection of resolutionrecords | direct |
-| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |
-| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](HasIdentification.md) |
-| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](HasIdentification.md) |
+| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | Local identifier | [HasIdentification](HasIdentification.md) |
+| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity | [HasIdentification](HasIdentification.md) |
+| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e | [HasIdentification](HasIdentification.md) |
 
 
 
@@ -243,6 +255,7 @@ slots:
 - sessions
 - meetings
 - agenda_items
+- protocols
 - votings
 - elections
 - individual_votes
@@ -314,6 +327,19 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  protocols:
+    name: protocols
+    description: Collection of protocol records
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: ops:protocol
+    owner: Container
+    domain_of:
+    - Container
+    range: Protocol
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   votings:
     name: votings
     description: Collection of voting records
@@ -323,6 +349,7 @@ attributes:
     owner: Container
     domain_of:
     - Container
+    - Protocol
     range: Voting
     multivalued: true
     inlined: true
@@ -388,6 +415,7 @@ attributes:
     owner: Container
     domain_of:
     - Container
+    - Protocol
     range: Speech
     multivalued: true
     inlined: true
@@ -407,9 +435,14 @@ attributes:
     inlined_as_list: true
   local_id:
     name: local_id
-    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [en] Local identifier. For example, a UUID from the council information system.
+          '
+    description: 'Local identifier. For example, a UUID from the council information
+      system.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -421,9 +454,13 @@ attributes:
     range: string
   global_uri:
     name: global_uri
-    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine eindeutige, global gültige URI für die Entität.
 
-      [en] A unique, globally valid URI for the entity.
+          '
+    description: 'A unique, globally valid URI for the entity.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -437,10 +474,14 @@ attributes:
     required: true
   wikidata_uri:
     name: wikidata_uri
-    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-      für die Schweiz.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+          für die Schweiz.
 
-      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+          '
+    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
       for Switzerland.
 
       '

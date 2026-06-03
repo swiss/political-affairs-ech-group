@@ -6,9 +6,7 @@ search:
 # Slot: valid_through 
 
 
-_[de] Das Datum, bis und mit dem die Information gültig ist._
-
-_[en] The date until which the information is valid, inclusive._
+_The date until which the information is valid, inclusive._
 
 __
 
@@ -29,7 +27,7 @@ URI: [schema:validThrough](http://schema.org/validThrough)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [HasTemporalValidity](HasTemporalValidity.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gülti... |  no  |
+| [HasTemporalValidity](HasTemporalValidity.md) | A mixin class that provides slots for modeling a temporal validity of informa... |  no  |
 
 
 
@@ -64,6 +62,14 @@ URI: [schema:validThrough](http://schema.org/validThrough)
 
 
 
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Das Datum, bis und mit dem die Information gültig ist.
+ |
+
+
 
 
 ### Schema Source
@@ -89,9 +95,13 @@ URI: [schema:validThrough](http://schema.org/validThrough)
 <details>
 ```yaml
 name: valid_through
-description: '[de] Das Datum, bis und mit dem die Information gültig ist.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das Datum, bis und mit dem die Information gültig ist.
 
-  [en] The date until which the information is valid, inclusive.
+      '
+description: 'The date until which the information is valid, inclusive.
 
   '
 from_schema: https://ch.paf.link/schema/operations

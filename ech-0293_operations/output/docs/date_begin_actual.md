@@ -6,9 +6,7 @@ search:
 # Slot: date_begin_actual 
 
 
-_[de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit Zeitdauer._
-
-_[en] The actual start date of an event or occurrence with time duration._
+_The actual start date of an event or occurrence with time duration._
 
 __
 
@@ -29,12 +27,13 @@ URI: [mcm:dateBeginActual](https://ld.ech.ch/schema/0292/meta-common/dateBeginAc
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [IsEventWithDuration](IsEventWithDuration.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder V... |  no  |
+| [IsEventWithDuration](IsEventWithDuration.md) | A mixin class that provides slots for modeling events or occurrences with tim... |  no  |
 | [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
-| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |  no  |
+| [ProtocolItem](ProtocolItem.md) | [en] An agenda item as actually recorded in the protocol |  no  |
+| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
 
 
 
@@ -69,6 +68,14 @@ URI: [mcm:dateBeginActual](https://ld.ech.ch/schema/0292/meta-common/dateBeginAc
 
 
 
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
+ |
+
+
 
 
 ### Schema Source
@@ -94,10 +101,13 @@ URI: [mcm:dateBeginActual](https://ld.ech.ch/schema/0292/meta-common/dateBeginAc
 <details>
 ```yaml
 name: date_begin_actual
-description: '[de] Das tatsächliche Startdatum eines Ereignisses oder Vorkommens mit
-  Zeitdauer.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
 
-  [en] The actual start date of an event or occurrence with time duration.
+      '
+description: 'The actual start date of an event or occurrence with time duration.
 
   '
 from_schema: https://ch.paf.link/schema/operations

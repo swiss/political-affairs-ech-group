@@ -83,6 +83,8 @@ URI: [ops:Work](https://ch.paf.link/schema/operations/Work)
 | [Session](Session.md) | [documents](documents.md) | range | [Work](Work.md) |
 | [Meeting](Meeting.md) | [documents](documents.md) | range | [Work](Work.md) |
 | [AgendaItem](AgendaItem.md) | [documents](documents.md) | range | [Work](Work.md) |
+| [Protocol](Protocol.md) | [documents](documents.md) | range | [Work](Work.md) |
+| [ProtocolItem](ProtocolItem.md) | [documents](documents.md) | range | [Work](Work.md) |
 | [Resolution](Resolution.md) | [documents](documents.md) | range | [Work](Work.md) |
 | [Voting](Voting.md) | [documents](documents.md) | range | [Work](Work.md) |
 | [Election](Election.md) | [documents](documents.md) | range | [Work](Work.md) |

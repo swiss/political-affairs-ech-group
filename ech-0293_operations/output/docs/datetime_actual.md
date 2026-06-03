@@ -6,9 +6,7 @@ search:
 # Slot: datetime_actual 
 
 
-_[de] Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommens (ohne Zeitdauer)._
-
-_[en] The actual date and time of an instantaneous event or occurrence (without time duration)._
+_The actual date and time of an instantaneous event or occurrence (without time duration)._
 
 __
 
@@ -29,7 +27,7 @@ URI: [mcm:datetimeActual](https://ld.ech.ch/schema/0292/meta-common/datetimeActu
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [IsInstantaneousEvent](IsInstantaneousEvent.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereign... |  no  |
+| [IsInstantaneousEvent](IsInstantaneousEvent.md) | A mixin class that provides slots for modeling instantaneous events or occurr... |  no  |
 
 
 
@@ -64,6 +62,14 @@ URI: [mcm:datetimeActual](https://ld.ech.ch/schema/0292/meta-common/datetimeActu
 
 
 
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer).
+ |
+
+
 
 
 ### Schema Source
@@ -89,11 +95,15 @@ URI: [mcm:datetimeActual](https://ld.ech.ch/schema/0292/meta-common/datetimeActu
 <details>
 ```yaml
 name: datetime_actual
-description: '[de] Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses
-  oder Vorkommens (ohne Zeitdauer).
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses oder
+      Vorkommnissen (ohne Zeitdauer).
 
-  [en] The actual date and time of an instantaneous event or occurrence (without time
-  duration).
+      '
+description: 'The actual date and time of an instantaneous event or occurrence (without
+  time duration).
 
   '
 from_schema: https://ch.paf.link/schema/operations

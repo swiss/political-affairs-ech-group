@@ -6,9 +6,7 @@ search:
 # Slot: label_long 
 
 
-_[de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.)._
-
-_[en] Option to assign an extended label to a structured piece of information (e.g., display name with title, position, etc.)._
+_Assign an extended label to a structured piece of information (e.g., display name with title, position, etc.)._
 
 __
 
@@ -54,6 +52,14 @@ URI: [mcm:labelLong](https://ld.ech.ch/schema/0292/meta-common/labelLong)
 
 
 
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Möglichkeit bei einer strukturierten Information, ein erweitertesLabel zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.).
+ |
+
+
 
 
 ### Schema Source
@@ -79,10 +85,14 @@ URI: [mcm:labelLong](https://ld.ech.ch/schema/0292/meta-common/labelLong)
 <details>
 ```yaml
 name: label_long
-description: '[de] Möglichkeit bei einer strukturierten Information, ein erweitertesLabel
-  zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.).
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Möglichkeit bei einer strukturierten Information, ein erweitertesLabel
+      zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.).
 
-  [en] Option to assign an extended label to a structured piece of information (e.g.,
+      '
+description: 'Assign an extended label to a structured piece of information (e.g.,
   display name with title, position, etc.).
 
   '

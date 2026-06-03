@@ -3,14 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: agenda_item_title 
+# Slot: protocols 
 
 
-_[en] Title of the agenda item._
-
-_[de] Titel des Traktandums._
-
-__
+_Collection of protocol records_
 
 
 
@@ -18,7 +14,7 @@ __
 
 
 
-URI: [ops:agenda_item_title](https://ch.paf.link/schema/operations/agenda_item_title)
+URI: [ops:protocol](https://ch.paf.link/schema/operations/protocol)
 <!-- no inheritance hierarchy -->
 
 
@@ -29,8 +25,7 @@ URI: [ops:agenda_item_title](https://ch.paf.link/schema/operations/agenda_item_t
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
-| [ProtocolItem](ProtocolItem.md) | [en] An agenda item as actually recorded in the protocol |  no  |
+| [Container](Container.md) |  |  no  |
 
 
 
@@ -43,8 +38,9 @@ URI: [ops:agenda_item_title](https://ch.paf.link/schema/operations/agenda_item_t
 
 | Property | Value |
 | --- | --- |
-| Range | [MultilingualString](MultilingualString.md) |
-| Domain Of | [AgendaItem](AgendaItem.md) |
+| Range | [Protocol](Protocol.md) |
+| Domain Of | [Container](Container.md) |
+| Slot URI | [ops:protocol](https://ch.paf.link/schema/operations/protocol) |
 
 ### Cardinality and Requirements
 
@@ -79,8 +75,8 @@ URI: [ops:agenda_item_title](https://ch.paf.link/schema/operations/agenda_item_t
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ops:agenda_item_title |
-| native | ops:agenda_item_title |
+| self | ops:protocol |
+| native | ops:protocols |
 
 
 
@@ -89,17 +85,14 @@ URI: [ops:agenda_item_title](https://ch.paf.link/schema/operations/agenda_item_t
 
 <details>
 ```yaml
-name: agenda_item_title
-description: '[en] Title of the agenda item.
-
-  [de] Titel des Traktandums.
-
-  '
+name: protocols
+description: Collection of protocol records
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
+slot_uri: ops:protocol
 domain_of:
-- AgendaItem
-range: MultilingualString
+- Container
+range: Protocol
 multivalued: true
 inlined: true
 inlined_as_list: true

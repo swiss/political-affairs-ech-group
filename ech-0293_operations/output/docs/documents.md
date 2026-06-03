@@ -33,11 +33,13 @@ URI: [meta:documents](https://ch.paf.link/schema/meta/documents)
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
+| [Protocol](Protocol.md) | [en] The minutes of a meeting, recorded after the meeting |  no  |
 | [Resolution](Resolution.md) | [en] A resolutionor decision taken on an agenda item, including voting proced... |  no  |
 | [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
 | [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
 | [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |  no  |
+| [ProtocolItem](ProtocolItem.md) | [en] An agenda item as actually recorded in the protocol |  no  |
 
 
 
@@ -51,7 +53,7 @@ URI: [meta:documents](https://ch.paf.link/schema/meta/documents)
 | Property | Value |
 | --- | --- |
 | Range | [Work](Work.md) |
-| Domain Of | [Legislature](Legislature.md), [Session](Session.md), [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Resolution](Resolution.md), [Voting](Voting.md), [Election](Election.md), [Speech](Speech.md), [Motion](Motion.md) |
+| Domain Of | [Legislature](Legislature.md), [Session](Session.md), [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Protocol](Protocol.md), [Resolution](Resolution.md), [Voting](Voting.md), [Election](Election.md), [Speech](Speech.md), [Motion](Motion.md) |
 | Slot URI | [meta:documents](https://ch.paf.link/schema/meta/documents) |
 
 ### Cardinality and Requirements
@@ -112,6 +114,7 @@ domain_of:
 - Session
 - Meeting
 - AgendaItem
+- Protocol
 - Resolution
 - Voting
 - Election

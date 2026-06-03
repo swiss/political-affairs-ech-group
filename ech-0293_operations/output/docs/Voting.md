@@ -182,13 +182,13 @@ URI: [ops:Voting](https://ch.paf.link/schema/operations/Voting)
 | [affair_id](affair_id.md) | 0..1 <br/> [String](String.md) | [en] The connection to the affairs (business items) of the agenda item | direct |
 | [actor_id](actor_id.md) | 0..1 <br/> [String](String.md) | [en] The political body organized by the term of office (e | direct |
 | [documents](documents.md) | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
-| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |
-| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](HasIdentification.md) |
-| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](HasIdentification.md) |
-| [date_created](date_created.md) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](HasCreationModificationDates.md) |
-| [datetime_created](datetime_created.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](HasCreationModificationDates.md) |
-| [date_modified](date_modified.md) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](HasCreationModificationDates.md) |
-| [datetime_modified](datetime_modified.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](HasCreationModificationDates.md) |
+| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | Local identifier | [HasIdentification](HasIdentification.md) |
+| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity | [HasIdentification](HasIdentification.md) |
+| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e | [HasIdentification](HasIdentification.md) |
+| [date_created](date_created.md) | 0..1 <br/> [Date](Date.md) | The date when an entity was created | [HasCreationModificationDates](HasCreationModificationDates.md) |
+| [datetime_created](datetime_created.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was created | [HasCreationModificationDates](HasCreationModificationDates.md) |
+| [date_modified](date_modified.md) | 0..1 <br/> [Date](Date.md) | The date when an entity was last modified | [HasCreationModificationDates](HasCreationModificationDates.md) |
+| [datetime_modified](datetime_modified.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was last modified | [HasCreationModificationDates](HasCreationModificationDates.md) |
 
 
 
@@ -199,6 +199,7 @@ URI: [ops:Voting](https://ch.paf.link/schema/operations/Voting)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [votings](votings.md) | range | [Voting](Voting.md) |
+| [Protocol](Protocol.md) | [votings](votings.md) | range | [Voting](Voting.md) |
 | [IndividualVote](IndividualVote.md) | [parent_voting](parent_voting.md) | range | [Voting](Voting.md) |
 
 
@@ -611,6 +612,7 @@ attributes:
     domain_of:
     - Meeting
     - AgendaItem
+    - Protocol
     - Voting
     - Election
     - Attendance
@@ -686,6 +688,7 @@ attributes:
     - Session
     - Meeting
     - AgendaItem
+    - Protocol
     - Resolution
     - Voting
     - Election
@@ -697,9 +700,14 @@ attributes:
     inlined_as_list: true
   local_id:
     name: local_id
-    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [en] Local identifier. For example, a UUID from the council information system.
+          '
+    description: 'Local identifier. For example, a UUID from the council information
+      system.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -711,9 +719,13 @@ attributes:
     range: string
   global_uri:
     name: global_uri
-    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine eindeutige, global gültige URI für die Entität.
 
-      [en] A unique, globally valid URI for the entity.
+          '
+    description: 'A unique, globally valid URI for the entity.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -727,10 +739,14 @@ attributes:
     required: true
   wikidata_uri:
     name: wikidata_uri
-    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-      für die Schweiz.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+          für die Schweiz.
 
-      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+          '
+    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
       for Switzerland.
 
       '
@@ -743,9 +759,13 @@ attributes:
     range: uriorcurie
   date_created:
     name: date_created
-    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität erstellt wurde.
 
-      [en] The date when an entity was created.
+          '
+    description: 'The date when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -757,9 +777,13 @@ attributes:
     range: date
   datetime_created:
     name: datetime_created
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
 
-      [en] The date and time when an entity was created.
+          '
+    description: 'The date and time when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -771,9 +795,13 @@ attributes:
     range: datetime
   date_modified:
     name: date_modified
-    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date when an entity was last modified.
+          '
+    description: 'The date when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -785,10 +813,13 @@ attributes:
     range: date
   datetime_modified:
     name: datetime_modified
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
-      wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date and time when an entity was last modified.
+          '
+    description: 'The date and time when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations

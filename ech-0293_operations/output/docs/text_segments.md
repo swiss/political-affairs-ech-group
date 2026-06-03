@@ -3,14 +3,10 @@ search:
   boost: 5.0
 ---
 
-# Slot: agenda_item_title 
+# Slot: text_segments 
 
 
-_[en] Title of the agenda item._
-
-_[de] Titel des Traktandums._
-
-__
+_Collection of text segments (e.g. verbatim protocol)_
 
 
 
@@ -18,7 +14,7 @@ __
 
 
 
-URI: [ops:agenda_item_title](https://ch.paf.link/schema/operations/agenda_item_title)
+URI: [ops:textSegment](https://ch.paf.link/schema/operations/textSegment)
 <!-- no inheritance hierarchy -->
 
 
@@ -29,8 +25,7 @@ URI: [ops:agenda_item_title](https://ch.paf.link/schema/operations/agenda_item_t
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
-| [ProtocolItem](ProtocolItem.md) | [en] An agenda item as actually recorded in the protocol |  no  |
+| [Protocol](Protocol.md) | [en] The minutes of a meeting, recorded after the meeting |  no  |
 
 
 
@@ -43,8 +38,9 @@ URI: [ops:agenda_item_title](https://ch.paf.link/schema/operations/agenda_item_t
 
 | Property | Value |
 | --- | --- |
-| Range | [MultilingualString](MultilingualString.md) |
-| Domain Of | [AgendaItem](AgendaItem.md) |
+| Range | [TextSegment](TextSegment.md) |
+| Domain Of | [Protocol](Protocol.md) |
+| Slot URI | [ops:textSegment](https://ch.paf.link/schema/operations/textSegment) |
 
 ### Cardinality and Requirements
 
@@ -79,8 +75,8 @@ URI: [ops:agenda_item_title](https://ch.paf.link/schema/operations/agenda_item_t
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ops:agenda_item_title |
-| native | ops:agenda_item_title |
+| self | ops:textSegment |
+| native | ops:text_segments |
 
 
 
@@ -89,17 +85,14 @@ URI: [ops:agenda_item_title](https://ch.paf.link/schema/operations/agenda_item_t
 
 <details>
 ```yaml
-name: agenda_item_title
-description: '[en] Title of the agenda item.
-
-  [de] Titel des Traktandums.
-
-  '
+name: text_segments
+description: Collection of text segments (e.g. verbatim protocol)
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
+slot_uri: ops:textSegment
 domain_of:
-- AgendaItem
-range: MultilingualString
+- Protocol
+range: TextSegment
 multivalued: true
 inlined: true
 inlined_as_list: true

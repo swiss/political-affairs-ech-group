@@ -81,6 +81,7 @@ URI: [ops:Resolution](https://ch.paf.link/schema/operations/Resolution)
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [resolutions](resolutions.md) | range | [Resolution](Resolution.md) |
 | [AgendaItem](AgendaItem.md) | [has_resolution](has_resolution.md) | range | [Resolution](Resolution.md) |
+| [ProtocolItem](ProtocolItem.md) | [has_resolution](has_resolution.md) | range | [Resolution](Resolution.md) |
 
 
 
@@ -219,6 +220,7 @@ attributes:
     - Session
     - Meeting
     - AgendaItem
+    - Protocol
     - Resolution
     - Voting
     - Election

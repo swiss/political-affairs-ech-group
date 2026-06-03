@@ -6,9 +6,7 @@ search:
 # Class: MultilingualValue 
 
 
-_[de] Ein mehrsprachiger String mit Angabe der Sprache._
-
-_[en] A multilingual string with language specification._
+_A multilingual string with language specification._
 
 __
 
@@ -44,8 +42,8 @@ URI: [ops:MultilingualValue](https://ch.paf.link/schema/operations/MultilingualV
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [value](value.md) | 0..1 <br/> [String](String.md) | [de] Der eigentliche Wert einer Information neben weiteren attributen wie Typ... | direct |
-| [language](language.md) | 0..1 <br/> [String](String.md) | [de] Sprachcode im ISO 639-1 Format | direct |
+| [value](value.md) | 0..1 <br/> [String](String.md) | The value of an information besides other attributes such as type, language, ... | direct |
+| [language](language.md) | 0..1 <br/> [String](String.md) | Language code in ISO 639-1 format (two lowercase letters, e | direct |
 
 
 
@@ -63,6 +61,14 @@ URI: [ops:MultilingualValue](https://ch.paf.link/schema/operations/MultilingualV
 
 ## Identifier and Mapping Information
 
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Ein mehrsprachiger String mit Angabe der Sprache.
+ |
 
 
 
@@ -96,9 +102,13 @@ URI: [ops:MultilingualValue](https://ch.paf.link/schema/operations/MultilingualV
 <details>
 ```yaml
 name: MultilingualValue
-description: '[de] Ein mehrsprachiger String mit Angabe der Sprache.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Ein mehrsprachiger String mit Angabe der Sprache.
 
-  [en] A multilingual string with language specification.
+      '
+description: 'A multilingual string with language specification.
 
   '
 from_schema: https://ch.paf.link/schema/operations
@@ -114,20 +124,28 @@ slots:
 <details>
 ```yaml
 name: MultilingualValue
-description: '[de] Ein mehrsprachiger String mit Angabe der Sprache.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Ein mehrsprachiger String mit Angabe der Sprache.
 
-  [en] A multilingual string with language specification.
+      '
+description: 'A multilingual string with language specification.
 
   '
 from_schema: https://ch.paf.link/schema/operations
 attributes:
   value:
     name: value
-    description: '[de] Der eigentliche Wert einer Information neben weiteren attributen
-      wie Typ, Sprache, etc.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Der eigentliche Wert einer Information neben weiteren attributen wie
+          Typ, Sprache, etc.
 
-      [en] The value of an information besides other attributes such as type, language,
-      etc.
+          '
+    description: 'The value of an information besides other attributes such as type,
+      language, etc.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -139,9 +157,15 @@ attributes:
     range: string
   language:
     name: language
-    description: '[de] Sprachcode im ISO 639-1 Format.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Sprachcode im ISO 639-1 Format (zwei Kleinbuchstaben, z.B. "de", "fr",
+          "it", "en").
 
-      [en] Language code in ISO 639-1 format.
+          '
+    description: 'Language code in ISO 639-1 format (two lowercase letters, e.g. "de",
+      "fr", "it", "en").
 
       '
     from_schema: https://ch.paf.link/schema/operations

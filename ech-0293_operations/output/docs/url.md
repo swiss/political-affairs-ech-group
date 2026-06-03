@@ -25,6 +25,7 @@ URI: [ops:url](https://ch.paf.link/schema/operations/url)
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
 | [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |  no  |
 | [Manifestation](Manifestation.md) |  |  no  |
+| [ProtocolItem](ProtocolItem.md) | [en] An agenda item as actually recorded in the protocol |  no  |
 
 
 

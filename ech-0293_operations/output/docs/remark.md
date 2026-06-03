@@ -6,9 +6,7 @@ search:
 # Slot: remark 
 
 
-_[de] Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen Kontext zu einem Prozessschritt oder einer Entität._
-
-_[en] Free-text remark or note for edge cases or additional context on a process step or an entity._
+_Free-text remark or note for edge cases or additional context on a process step or an entity._
 
 __
 
@@ -29,7 +27,7 @@ URI: [mcm:remark](https://ld.ech.ch/schema/0292/meta-common/remark)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |  no  |
+| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
 
 
 
@@ -64,6 +62,14 @@ URI: [mcm:remark](https://ld.ech.ch/schema/0292/meta-common/remark)
 
 
 
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen Kontext zu einem Prozessschritt oder einer Entität.
+ |
+
+
 
 
 ### Schema Source
@@ -89,10 +95,14 @@ URI: [mcm:remark](https://ld.ech.ch/schema/0292/meta-common/remark)
 <details>
 ```yaml
 name: remark
-description: '[de] Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen
-  Kontext zu einem Prozessschritt oder einer Entität.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen Kontext
+      zu einem Prozessschritt oder einer Entität.
 
-  [en] Free-text remark or note for edge cases or additional context on a process
+      '
+description: 'Free-text remark or note for edge cases or additional context on a process
   step or an entity.
 
   '

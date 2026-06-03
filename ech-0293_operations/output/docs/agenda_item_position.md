@@ -30,6 +30,7 @@ URI: [ops:agenda_item_position](https://ch.paf.link/schema/operations/agenda_ite
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
+| [ProtocolItem](ProtocolItem.md) | [en] An agenda item as actually recorded in the protocol |  no  |
 
 
 

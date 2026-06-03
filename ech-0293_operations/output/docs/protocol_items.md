@@ -3,10 +3,14 @@ search:
   boost: 5.0
 ---
 
-# Slot: speeches 
+# Slot: protocol_items 
 
 
-_Collection of speech records_
+_[en] Agenda items as actually recorded in the protocol._
+
+_[de] Traktanden, wie sie im Protokoll tatsächlich festgehalten wurden._
+
+__
 
 
 
@@ -14,7 +18,7 @@ _Collection of speech records_
 
 
 
-URI: [ops:speech](https://ch.paf.link/schema/operations/speech)
+URI: [ops:protocolItem](https://ch.paf.link/schema/operations/protocolItem)
 <!-- no inheritance hierarchy -->
 
 
@@ -25,7 +29,6 @@ URI: [ops:speech](https://ch.paf.link/schema/operations/speech)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Container](Container.md) |  |  no  |
 | [Protocol](Protocol.md) | [en] The minutes of a meeting, recorded after the meeting |  no  |
 
 
@@ -39,9 +42,9 @@ URI: [ops:speech](https://ch.paf.link/schema/operations/speech)
 
 | Property | Value |
 | --- | --- |
-| Range | [Speech](Speech.md) |
-| Domain Of | [Container](Container.md), [Protocol](Protocol.md) |
-| Slot URI | [ops:speech](https://ch.paf.link/schema/operations/speech) |
+| Range | [ProtocolItem](ProtocolItem.md) |
+| Domain Of | [Protocol](Protocol.md) |
+| Slot URI | [ops:protocolItem](https://ch.paf.link/schema/operations/protocolItem) |
 
 ### Cardinality and Requirements
 
@@ -76,8 +79,8 @@ URI: [ops:speech](https://ch.paf.link/schema/operations/speech)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ops:speech |
-| native | ops:speeches |
+| self | ops:protocolItem |
+| native | ops:protocol_items |
 
 
 
@@ -86,15 +89,18 @@ URI: [ops:speech](https://ch.paf.link/schema/operations/speech)
 
 <details>
 ```yaml
-name: speeches
-description: Collection of speech records
+name: protocol_items
+description: '[en] Agenda items as actually recorded in the protocol.
+
+  [de] Traktanden, wie sie im Protokoll tatsächlich festgehalten wurden.
+
+  '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-slot_uri: ops:speech
+slot_uri: ops:protocolItem
 domain_of:
-- Container
 - Protocol
-range: Speech
+range: ProtocolItem
 multivalued: true
 inlined: true
 inlined_as_list: true

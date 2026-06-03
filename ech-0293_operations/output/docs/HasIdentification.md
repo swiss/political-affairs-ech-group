@@ -6,9 +6,7 @@ search:
 # Class: HasIdentification 
 
 
-_[de] Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfügung stellt._
-
-_[en] A mixin class that provides slots for the identification of an entity._
+_A mixin class that provides slots for the identification of an entity._
 
 __
 
@@ -38,6 +36,8 @@ URI: [ops:HasIdentification](https://ch.paf.link/schema/operations/HasIdentifica
         click Meeting href "../Meeting/"
       HasIdentification <|-- AgendaItem
         click AgendaItem href "../AgendaItem/"
+      HasIdentification <|-- Protocol
+        click Protocol href "../Protocol/"
       HasIdentification <|-- Voting
         click Voting href "../Voting/"
       HasIdentification <|-- IndividualVote
@@ -84,9 +84,9 @@ URI: [ops:HasIdentification](https://ch.paf.link/schema/operations/HasIdentifica
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | direct |
-| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | direct |
-| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | direct |
+| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | Local identifier | direct |
+| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity | direct |
+| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e | direct |
 
 
 
@@ -99,6 +99,7 @@ URI: [ops:HasIdentification](https://ch.paf.link/schema/operations/HasIdentifica
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |
+| [Protocol](Protocol.md) | [en] The minutes of a meeting, recorded after the meeting |
 | [Voting](Voting.md) | [en] A voting procedure with individual votes and results |
 | [IndividualVote](IndividualVote.md) | [en] An individual vote cast by a member during a voting procedure |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |
@@ -108,7 +109,7 @@ URI: [ops:HasIdentification](https://ch.paf.link/schema/operations/HasIdentifica
 | [TextSegment](TextSegment.md) | [en] A text segment such as cross-references or subtitles in meeting protocol... |
 | [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |
 | [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |
-| [IsProcessStep](IsProcessStep.md) | [de] Eine Mixin-Klasse für einen einzelnen Schritt in einem |
+| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |
 
 
 
@@ -125,6 +126,14 @@ URI: [ops:HasIdentification](https://ch.paf.link/schema/operations/HasIdentifica
 
 ## Identifier and Mapping Information
 
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfügung stellt.
+ |
 
 
 
@@ -158,10 +167,14 @@ URI: [ops:HasIdentification](https://ch.paf.link/schema/operations/HasIdentifica
 <details>
 ```yaml
 name: HasIdentification
-description: '[de] Eine Mixin-Klasse, die Slots für die Identifikation einer Entität
-  zur Verfügung stellt.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur
+      Verfügung stellt.
 
-  [en] A mixin class that provides slots for the identification of an entity.
+      '
+description: 'A mixin class that provides slots for the identification of an entity.
 
   '
 from_schema: https://ch.paf.link/schema/operations
@@ -179,10 +192,14 @@ slots:
 <details>
 ```yaml
 name: HasIdentification
-description: '[de] Eine Mixin-Klasse, die Slots für die Identifikation einer Entität
-  zur Verfügung stellt.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur
+      Verfügung stellt.
 
-  [en] A mixin class that provides slots for the identification of an entity.
+      '
+description: 'A mixin class that provides slots for the identification of an entity.
 
   '
 from_schema: https://ch.paf.link/schema/operations
@@ -190,9 +207,14 @@ mixin: true
 attributes:
   local_id:
     name: local_id
-    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [en] Local identifier. For example, a UUID from the council information system.
+          '
+    description: 'Local identifier. For example, a UUID from the council information
+      system.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -204,9 +226,13 @@ attributes:
     range: string
   global_uri:
     name: global_uri
-    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine eindeutige, global gültige URI für die Entität.
 
-      [en] A unique, globally valid URI for the entity.
+          '
+    description: 'A unique, globally valid URI for the entity.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -220,10 +246,14 @@ attributes:
     required: true
   wikidata_uri:
     name: wikidata_uri
-    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-      für die Schweiz.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+          für die Schweiz.
 
-      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+          '
+    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
       for Switzerland.
 
       '

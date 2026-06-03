@@ -6,9 +6,7 @@ search:
 # Class: IsInstantaneousEvent 
 
 
-_[de] Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereignissen oder Vorkommnissen (ohne Zeitdauer) zur Verfügung stellt._
-
-_[en] A mixin class that provides slots for modeling instantaneous events or occurrences (without time duration)._
+_A mixin class that provides slots for modeling instantaneous events or occurrences (without time duration)._
 
 __
 
@@ -55,10 +53,10 @@ URI: [ops:IsInstantaneousEvent](https://ch.paf.link/schema/operations/IsInstanta
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [date_actual](date_actual.md) | 0..1 <br/> [Date](Date.md) | [de] Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommens (oh... | direct |
-| [datetime_actual](datetime_actual.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses ode... | direct |
-| [date_planned](date_planned.md) | 0..1 <br/> [Date](Date.md) | [de] Das geplante Datum eines instantanen Ereignisses oder Vorkommens (ohne Z... | direct |
-| [datetime_planned](datetime_planned.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das geplante Datum und die Uhrzeit eines instantanen Ereignisses oder Vo... | direct |
+| [date_actual](date_actual.md) | 0..1 <br/> [Date](Date.md) | The actual date of an instantaneous event or occurrence (without time duratio... | direct |
+| [datetime_actual](datetime_actual.md) | 0..1 <br/> [Datetime](Datetime.md) | The actual date and time of an instantaneous event or occurrence (without tim... | direct |
+| [date_planned](date_planned.md) | 0..1 <br/> [Date](Date.md) | The planned date of an instantaneous event or occurrence (without time durati... | direct |
+| [datetime_planned](datetime_planned.md) | 0..1 <br/> [Datetime](Datetime.md) | The planned date and time of an instantaneous event or occurrence (without ti... | direct |
 
 
 
@@ -82,6 +80,14 @@ URI: [ops:IsInstantaneousEvent](https://ch.paf.link/schema/operations/IsInstanta
 
 ## Identifier and Mapping Information
 
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereignissen oder Vorkommnissen (ohne Zeitdauer) zur Verfügung stellt.
+ |
 
 
 
@@ -115,11 +121,15 @@ URI: [ops:IsInstantaneousEvent](https://ch.paf.link/schema/operations/IsInstanta
 <details>
 ```yaml
 name: IsInstantaneousEvent
-description: '[de] Eine Mixin-Klasse, die Slots für die Modellierung von instantanen
-  Ereignissen oder Vorkommnissen (ohne Zeitdauer) zur Verfügung stellt.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereignissen
+      oder Vorkommnissen (ohne Zeitdauer) zur Verfügung stellt.
 
-  [en] A mixin class that provides slots for modeling instantaneous events or occurrences
-  (without time duration).
+      '
+description: 'A mixin class that provides slots for modeling instantaneous events
+  or occurrences (without time duration).
 
   '
 from_schema: https://ch.paf.link/schema/operations
@@ -138,11 +148,15 @@ slots:
 <details>
 ```yaml
 name: IsInstantaneousEvent
-description: '[de] Eine Mixin-Klasse, die Slots für die Modellierung von instantanen
-  Ereignissen oder Vorkommnissen (ohne Zeitdauer) zur Verfügung stellt.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereignissen
+      oder Vorkommnissen (ohne Zeitdauer) zur Verfügung stellt.
 
-  [en] A mixin class that provides slots for modeling instantaneous events or occurrences
-  (without time duration).
+      '
+description: 'A mixin class that provides slots for modeling instantaneous events
+  or occurrences (without time duration).
 
   '
 from_schema: https://ch.paf.link/schema/operations
@@ -150,10 +164,15 @@ mixin: true
 attributes:
   date_actual:
     name: date_actual
-    description: '[de] Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommens
-      (ohne Zeitdauer).
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommnissen
+          (ohne Zeitdauer).
 
-      [en] The actual date of an instantaneous event or occurrence (without time duration).
+          '
+    description: 'The actual date of an instantaneous event or occurrence (without
+      time duration).
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -165,11 +184,15 @@ attributes:
     range: date
   datetime_actual:
     name: datetime_actual
-    description: '[de] Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses
-      oder Vorkommens (ohne Zeitdauer).
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses
+          oder Vorkommnissen (ohne Zeitdauer).
 
-      [en] The actual date and time of an instantaneous event or occurrence (without
-      time duration).
+          '
+    description: 'The actual date and time of an instantaneous event or occurrence
+      (without time duration).
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -181,11 +204,15 @@ attributes:
     range: datetime
   date_planned:
     name: date_planned
-    description: '[de] Das geplante Datum eines instantanen Ereignisses oder Vorkommens
-      (ohne Zeitdauer).
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Datum eines instantanen Ereignisses oder Vorkommnissen
+          (ohne Zeitdauer).
 
-      [en] The planned date of an instantaneous event or occurrence (without time
-      duration).
+          '
+    description: 'The planned date of an instantaneous event or occurrence (without
+      time duration).
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -197,11 +224,15 @@ attributes:
     range: date
   datetime_planned:
     name: datetime_planned
-    description: '[de] Das geplante Datum und die Uhrzeit eines instantanen Ereignisses
-      oder Vorkommens (ohne Zeitdauer).
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Datum und die Uhrzeit eines instantanen Ereignisses oder
+          Vorkommnissen (ohne Zeitdauer).
 
-      [en] The planned date and time of an instantaneous event or occurrence (without
-      time duration).
+          '
+    description: 'The planned date and time of an instantaneous event or occurrence
+      (without time duration).
 
       '
     from_schema: https://ch.paf.link/schema/operations

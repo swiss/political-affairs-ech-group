@@ -3,12 +3,12 @@ search:
   boost: 5.0
 ---
 
-# Slot: state_name 
+# Slot: protocol 
 
 
-_[en] Custom state description for the meeting._
+_[en] The protocol (minutes) of this meeting, recorded after the meeting._
 
-_[de] Benutzerdefinierte Zustandsbeschreibung für die Sitzung._
+_[de] Das nach der Sitzung erstellte Protokoll dieser Sitzung._
 
 __
 
@@ -18,7 +18,7 @@ __
 
 
 
-URI: [ops:state_name](https://ch.paf.link/schema/operations/state_name)
+URI: [ops:protocol](https://ch.paf.link/schema/operations/protocol)
 <!-- no inheritance hierarchy -->
 
 
@@ -30,8 +30,6 @@ URI: [ops:state_name](https://ch.paf.link/schema/operations/state_name)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
-| [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
-| [ProtocolItem](ProtocolItem.md) | [en] An agenda item as actually recorded in the protocol |  no  |
 
 
 
@@ -44,8 +42,9 @@ URI: [ops:state_name](https://ch.paf.link/schema/operations/state_name)
 
 | Property | Value |
 | --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [Meeting](Meeting.md), [AgendaItem](AgendaItem.md) |
+| Range | [Protocol](Protocol.md) |
+| Domain Of | [Meeting](Meeting.md) |
+| Slot URI | [ops:protocol](https://ch.paf.link/schema/operations/protocol) |
 
 ### Cardinality and Requirements
 
@@ -79,8 +78,8 @@ URI: [ops:state_name](https://ch.paf.link/schema/operations/state_name)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ops:state_name |
-| native | ops:state_name |
+| self | ops:protocol |
+| native | ops:protocol |
 
 
 
@@ -89,18 +88,19 @@ URI: [ops:state_name](https://ch.paf.link/schema/operations/state_name)
 
 <details>
 ```yaml
-name: state_name
-description: '[en] Custom state description for the meeting.
+name: protocol
+description: '[en] The protocol (minutes) of this meeting, recorded after the meeting.
 
-  [de] Benutzerdefinierte Zustandsbeschreibung für die Sitzung.
+  [de] Das nach der Sitzung erstellte Protokoll dieser Sitzung.
 
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
+slot_uri: ops:protocol
 domain_of:
 - Meeting
-- AgendaItem
-range: string
+range: Protocol
+inlined: true
 
 ```
 </details></div>

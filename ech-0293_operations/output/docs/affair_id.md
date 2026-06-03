@@ -32,6 +32,7 @@ URI: [ops:affair_id](https://ch.paf.link/schema/operations/affair_id)
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
 | [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
+| [ProtocolItem](ProtocolItem.md) | [en] An agenda item as actually recorded in the protocol |  no  |
 
 
 

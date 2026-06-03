@@ -101,7 +101,7 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [language](language.md) | 0..1 <br/> [String](String.md) | [de] Sprachcode im ISO 639-1 Format | direct |
+| [language](language.md) | 0..1 <br/> [String](String.md) | Language code in ISO 639-1 format (two lowercase letters, e | direct |
 | [start](start.md) | 0..1 <br/> [String](String.md) | Start indicator or position | direct |
 | [datetime_begin](datetime_begin.md) | 0..1 <br/> [Datetime](Datetime.md) | [en] The date and time when the meeting or voting begins | direct |
 | [datetime_end](datetime_end.md) | 0..1 <br/> [Datetime](Datetime.md) | [en] The date and time when the meeting or voting ends | direct |
@@ -116,13 +116,13 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
 | [media_type](media_type.md) | 0..1 <br/> [String](String.md) | Type of media (audio, video, document) | direct |
 | [media_format](media_format.md) | 0..1 <br/> [String](String.md) | MIME type of the media file | direct |
 | [documents](documents.md) | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
-| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | [de] Lokaler Identifikator | [HasIdentification](HasIdentification.md) |
-| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine eindeutige, global gültige URI für die Entität | [HasIdentification](HasIdentification.md) |
-| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | [de] Eine URI, die auf eine Wikidata-Entität verweist, z | [HasIdentification](HasIdentification.md) |
-| [date_created](date_created.md) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, an dem eine Entität erstellt wurde | [HasCreationModificationDates](HasCreationModificationDates.md) |
-| [datetime_created](datetime_created.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde | [HasCreationModificationDates](HasCreationModificationDates.md) |
-| [date_modified](date_modified.md) | 0..1 <br/> [Date](Date.md) | [de] Das Datum, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](HasCreationModificationDates.md) |
-| [datetime_modified](datetime_modified.md) | 0..1 <br/> [Datetime](Datetime.md) | [de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde | [HasCreationModificationDates](HasCreationModificationDates.md) |
+| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | Local identifier | [HasIdentification](HasIdentification.md) |
+| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity | [HasIdentification](HasIdentification.md) |
+| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e | [HasIdentification](HasIdentification.md) |
+| [date_created](date_created.md) | 0..1 <br/> [Date](Date.md) | The date when an entity was created | [HasCreationModificationDates](HasCreationModificationDates.md) |
+| [datetime_created](datetime_created.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was created | [HasCreationModificationDates](HasCreationModificationDates.md) |
+| [date_modified](date_modified.md) | 0..1 <br/> [Date](Date.md) | The date when an entity was last modified | [HasCreationModificationDates](HasCreationModificationDates.md) |
+| [datetime_modified](datetime_modified.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was last modified | [HasCreationModificationDates](HasCreationModificationDates.md) |
 
 
 
@@ -133,6 +133,7 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [speeches](speeches.md) | range | [Speech](Speech.md) |
+| [Protocol](Protocol.md) | [speeches](speeches.md) | range | [Speech](Speech.md) |
 
 
 
@@ -228,9 +229,15 @@ mixins:
 attributes:
   language:
     name: language
-    description: '[de] Sprachcode im ISO 639-1 Format.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Sprachcode im ISO 639-1 Format (zwei Kleinbuchstaben, z.B. "de", "fr",
+          "it", "en").
 
-      [en] Language code in ISO 639-1 format.
+          '
+    description: 'Language code in ISO 639-1 format (two lowercase letters, e.g. "de",
+      "fr", "it", "en").
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -425,6 +432,7 @@ attributes:
     - Session
     - Meeting
     - AgendaItem
+    - Protocol
     - Resolution
     - Voting
     - Election
@@ -436,9 +444,14 @@ attributes:
     inlined_as_list: true
   local_id:
     name: local_id
-    description: '[de] Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
-      [en] Local identifier. For example, a UUID from the council information system.
+          '
+    description: 'Local identifier. For example, a UUID from the council information
+      system.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -450,9 +463,13 @@ attributes:
     range: string
   global_uri:
     name: global_uri
-    description: '[de] Eine eindeutige, global gültige URI für die Entität.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine eindeutige, global gültige URI für die Entität.
 
-      [en] A unique, globally valid URI for the entity.
+          '
+    description: 'A unique, globally valid URI for the entity.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -466,10 +483,14 @@ attributes:
     required: true
   wikidata_uri:
     name: wikidata_uri
-    description: '[de] Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-      für die Schweiz.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+          für die Schweiz.
 
-      [en] A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+          '
+    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
       for Switzerland.
 
       '
@@ -482,9 +503,13 @@ attributes:
     range: uriorcurie
   date_created:
     name: date_created
-    description: '[de] Das Datum, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität erstellt wurde.
 
-      [en] The date when an entity was created.
+          '
+    description: 'The date when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -496,9 +521,13 @@ attributes:
     range: date
   datetime_created:
     name: datetime_created
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
 
-      [en] The date and time when an entity was created.
+          '
+    description: 'The date and time when an entity was created.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -510,9 +539,13 @@ attributes:
     range: datetime
   date_modified:
     name: date_modified
-    description: '[de] Das Datum, an dem eine Entität zuletzt geändert wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date when an entity was last modified.
+          '
+    description: 'The date when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -524,10 +557,13 @@ attributes:
     range: date
   datetime_modified:
     name: datetime_modified
-    description: '[de] Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert
-      wurde.
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
 
-      [en] The date and time when an entity was last modified.
+          '
+    description: 'The date and time when an entity was last modified.
 
       '
     from_schema: https://ch.paf.link/schema/operations

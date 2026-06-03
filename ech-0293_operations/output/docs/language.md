@@ -6,9 +6,7 @@ search:
 # Slot: language 
 
 
-_[de] Sprachcode im ISO 639-1 Format._
-
-_[en] Language code in ISO 639-1 format._
+_Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en")._
 
 __
 
@@ -31,7 +29,7 @@ URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
 | --- | --- | --- |
 | [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
 | [MultilingualString](MultilingualString.md) | [en] A string that can contain text in multiple languages |  yes  |
-| [MultilingualValue](MultilingualValue.md) | [de] Ein mehrsprachiger String mit Angabe der Sprache |  no  |
+| [MultilingualValue](MultilingualValue.md) | A multilingual string with language specification |  no  |
 | [Expression](Expression.md) |  |  no  |
 
 
@@ -74,6 +72,14 @@ URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
 
 
 
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Sprachcode im ISO 639-1 Format (zwei Kleinbuchstaben, z.B. "de", "fr", "it", "en").
+ |
+
+
 
 
 ### Schema Source
@@ -99,9 +105,15 @@ URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
 <details>
 ```yaml
 name: language
-description: '[de] Sprachcode im ISO 639-1 Format.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Sprachcode im ISO 639-1 Format (zwei Kleinbuchstaben, z.B. "de", "fr",
+      "it", "en").
 
-  [en] Language code in ISO 639-1 format.
+      '
+description: 'Language code in ISO 639-1 format (two lowercase letters, e.g. "de",
+  "fr", "it", "en").
 
   '
 from_schema: https://ch.paf.link/schema/operations

@@ -6,9 +6,7 @@ search:
 # Slot: is_active 
 
 
-_[de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist._
-
-_[en] Indicates whether the information is currently valid. Can be useful when this information is explicitly available._
+_Indicates whether the information is currently valid. Can be useful when this information is explicitly available._
 
 __
 
@@ -29,7 +27,7 @@ URI: [mcm:isCurrent](https://ld.ech.ch/schema/0292/meta-common/isCurrent)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [HasTemporalValidity](HasTemporalValidity.md) | [de] Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gülti... |  no  |
+| [HasTemporalValidity](HasTemporalValidity.md) | A mixin class that provides slots for modeling a temporal validity of informa... |  no  |
 
 
 
@@ -64,6 +62,14 @@ URI: [mcm:isCurrent](https://ld.ech.ch/schema/0292/meta-common/isCurrent)
 
 
 
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist.
+ |
+
+
 
 
 ### Schema Source
@@ -89,11 +95,15 @@ URI: [mcm:isCurrent](https://ld.ech.ch/schema/0292/meta-common/isCurrent)
 <details>
 ```yaml
 name: is_active
-description: '[de] Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein,
-  wenn diese Information explizit vorhanden ist.
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn
+      diese Information explizit vorhanden ist.
 
-  [en] Indicates whether the information is currently valid. Can be useful when this
-  information is explicitly available.
+      '
+description: 'Indicates whether the information is currently valid. Can be useful
+  when this information is explicitly available.
 
   '
 from_schema: https://ch.paf.link/schema/operations
