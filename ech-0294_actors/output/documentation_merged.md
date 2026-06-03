@@ -1032,7 +1032,6 @@ __
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Group](#Group) | [group_type](#group_type) | range | [GroupType](#GroupType) |
-| [GroupReference](#GroupReference) | [group_type](#group_type) | range | [GroupType](#GroupType) |
 
 
 
@@ -1678,7 +1677,6 @@ __
 | ---  | --- | --- |
 | label | 1 <br/> [String](#String) | Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name).  |
 | label_long | 0..1 <br/> [String](#String) | Optional long display name including academic titles and full official name (e.g. "Dr. Maria Muster-Beispiel").  |
-| role_type | 0..1 <br/> [RoleType](#RoleType) | Role of the person in the membership or function.  |
 | group_label | 0..1 <br/> [String](#String) | Name of the body/group at time of linking.  |
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
@@ -1737,7 +1735,6 @@ __
 | ---  | --- | --- |
 | label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
 | abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abbreviation (can be multilingual).  |
-| group_type | 0..1 <br/> [GroupType](#GroupType) | Type of group (e.g., party, commission, parliament, or similar). The exact naming and description of the group is provided via `label`.  |
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |

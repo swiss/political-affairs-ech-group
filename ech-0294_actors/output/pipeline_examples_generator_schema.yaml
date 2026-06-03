@@ -110,59 +110,6 @@ classes:
     - addresses
     - statutes_url
     - party_color
-  PersonReference:
-    description: 'Lightweight reference to a person with key identification data at time of linking. Preserves historical
-      accuracy even if the person changes later.
-
-      '
-    annotations:
-      description_de: 'Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt
-        der Verknüpfung. Ermöglicht historische Korrektheit auch wenn sich die Person später ändert.
-
-        '
-    mixins:
-    - HasIdentification
-    slots:
-    - label
-    - label_long
-    - role_type
-    - group_label
-    slot_usage:
-      label:
-        description: 'Mandatory short display name to identify the person within the organisation (e.g. with added birth year
-          to distinguish persons with the same name).
-
-          '
-        annotations:
-          description_de: 'Obligatorischer Kurzname zur Identifikation der Person innerhalb der Organisation (z.B. mit Geburtsjahr
-            zur Unterscheidung von Personen mit gleichem Namen).
-
-            '
-        required: true
-      label_long:
-        description: 'Optional long display name including academic titles and full official name (e.g. "Dr. Maria Muster-Beispiel").
-
-          '
-        annotations:
-          description_de: 'Optionaler langer Anzeigename mit akademischen Titeln und vollständigem amtlichem Namen (z.B. "Dr.
-            Maria Muster-Beispiel").
-
-            '
-  GroupReference:
-    description: 'Lightweight reference to a group with key identification data at time of linking.
-
-      '
-    annotations:
-      description_de: 'Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt
-        der Verknüpfung.
-
-        '
-    mixins:
-    - HasIdentification
-    slots:
-    - label
-    - abbreviation
-    - group_type
   Membership:
     description: 'A membership relationship between a person and a group, representing formal affiliation (e.g., party member,
       commission member, parliamentarian). Distinct from InterestLink, which covers external interest bindings and conflicts
@@ -632,17 +579,6 @@ slots:
 
         '
     range: GroupTypeEnum
-  abbreviation:
-    range: MultilingualValue
-    multivalued: true
-    inlined_as_list: true
-    description: 'Abbreviation (can be multilingual).
-
-      '
-    annotations:
-      description_de: 'Abkürzung (kann mehrsprachig sein).
-
-        '
   description:
     range: MultilingualValue
     multivalued: true
@@ -767,15 +703,6 @@ slots:
         '
     range: GroupReference
     inlined: true
-  group_label:
-    slot_uri: act:groupLabel
-    description: 'Name of the body/group at time of linking.
-
-      '
-    annotations:
-      description_de: 'Name des Gremiums zum Zeitpunkt der Verknüpfung.
-
-        '
   role_type:
     slot_uri: act:roleType
     description: 'Role of the person in the membership or function.

@@ -20,7 +20,6 @@ __
 | ---  | --- | --- |
 | label | 1 <br/> [String](String.md) | Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name).  |
 | label_long | 0..1 <br/> [String](String.md) | Optional long display name including academic titles and full official name (e.g. "Dr. Maria Muster-Beispiel").  |
-| role_type | 0..1 <br/> [RoleType](RoleType.md) | Role of the person in the membership or function.  |
 | group_label | 0..1 <br/> [String](String.md) | Name of the body/group at time of linking.  |
 | local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |

@@ -16,7 +16,7 @@ __
 
 
 
-URI: [act:abbreviation](https://ld.ech.ch/schema/0294/actors/abbreviation)
+URI: [mcm:abbreviation](https://ld.ech.ch/schema/0292/meta-common/abbreviation)
 <!-- no inheritance hierarchy -->
 
 
@@ -43,6 +43,7 @@ URI: [act:abbreviation](https://ld.ech.ch/schema/0294/actors/abbreviation)
 | --- | --- |
 | Range | [MultilingualValue](MultilingualValue.md) |
 | Domain Of | [Group](Group.md), [GroupReference](GroupReference.md) |
+| Slot URI | [mcm:abbreviation](https://ld.ech.ch/schema/0292/meta-common/abbreviation) |
 
 ### Cardinality and Requirements
 
@@ -77,6 +78,7 @@ description: 'Abbreviation (can be multilingual).
   '
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
+slot_uri: mcm:abbreviation
 domain_of:
 - Group
 - GroupReference

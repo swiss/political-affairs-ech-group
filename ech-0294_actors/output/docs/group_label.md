@@ -16,7 +16,7 @@ __
 
 
 
-URI: [act:groupLabel](https://ld.ech.ch/schema/0294/actors/groupLabel)
+URI: [mcm:groupLabel](https://ld.ech.ch/schema/0292/meta-common/groupLabel)
 <!-- no inheritance hierarchy -->
 
 
@@ -42,7 +42,7 @@ URI: [act:groupLabel](https://ld.ech.ch/schema/0294/actors/groupLabel)
 | --- | --- |
 | Range | [String](String.md) |
 | Domain Of | [PersonReference](PersonReference.md) |
-| Slot URI | [act:groupLabel](https://ld.ech.ch/schema/0294/actors/groupLabel) |
+| Slot URI | [mcm:groupLabel](https://ld.ech.ch/schema/0292/meta-common/groupLabel) |
 
 ### Cardinality and Requirements
 
@@ -76,7 +76,7 @@ description: 'Name of the body/group at time of linking.
   '
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
-slot_uri: act:groupLabel
+slot_uri: mcm:groupLabel
 domain_of:
 - PersonReference
 range: string
