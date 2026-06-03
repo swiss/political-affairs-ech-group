@@ -150,7 +150,7 @@ URI: [ops:Protocol](https://ch.paf.link/schema/operations/Protocol)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [protocols](protocols.md) | range | [Protocol](Protocol.md) |
-| [Meeting](Meeting.md) | [protocol](protocol.md) | range | [Protocol](Protocol.md) |
+| [Meeting](Meeting.md) | [protocol_ref](protocol_ref.md) | range | [Protocol](Protocol.md) |
 
 
 

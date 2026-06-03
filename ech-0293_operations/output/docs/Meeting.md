@@ -142,13 +142,13 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
         
       Meeting : position
         
-      Meeting : protocol
+      Meeting : protocol_ref
         
           
     
         
         
-        Meeting --> "0..1" Protocol : protocol
+        Meeting --> "0..1" Protocol : protocol_ref
         click Protocol href "../Protocol/"
     
 
@@ -217,7 +217,7 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 | [parent_meeting](parent_meeting.md) | 0..1 <br/> [String](String.md) | [en] The linked meeting ID that groups the current meeting | direct |
 | [parent_legislature](parent_legislature.md) | 0..1 <br/> [String](String.md) | [en] The legislative body in which the meeting is based | direct |
 | [documents](documents.md) | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
-| [protocol](protocol.md) | 0..1 <br/> [Protocol](Protocol.md) | [en] The protocol (minutes) of this meeting, recorded after the meeting | direct |
+| [protocol_ref](protocol_ref.md) | 0..1 <br/> [Protocol](Protocol.md) | [en] The protocol (minutes) of this meeting, recorded after the meeting | direct |
 | [local_id](local_id.md) | 0..1 <br/> [String](String.md) | Local identifier | [HasIdentification](HasIdentification.md) |
 | [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity | [HasIdentification](HasIdentification.md) |
 | [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e | [HasIdentification](HasIdentification.md) |
@@ -325,7 +325,7 @@ slots:
 - parent_meeting
 - parent_legislature
 - documents
-- protocol
+- protocol_ref
 slot_usage:
   actor_id:
     name: actor_id
@@ -663,8 +663,8 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  protocol:
-    name: protocol
+  protocol_ref:
+    name: protocol_ref
     description: '[en] The protocol (minutes) of this meeting, recorded after the
       meeting.
 
@@ -673,7 +673,7 @@ attributes:
       '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
-    slot_uri: ops:protocol
+    slot_uri: ops:protocolRef
     owner: Meeting
     domain_of:
     - Meeting

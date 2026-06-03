@@ -141,8 +141,8 @@ Name: operations
 | [parent_type](parent_type.md) | Type of parent object (meeting, agenda, speech, affair) |
 | [parent_voting](parent_voting.md) | [en] The ID of the voting associated with the individual vote |
 | [position](position.md) |  |
-| [protocol](protocol.md) | [en] The protocol (minutes) of this meeting, recorded after the meeting |
 | [protocol_items](protocol_items.md) | [en] Agenda items as actually recorded in the protocol |
+| [protocol_ref](protocol_ref.md) | [en] The protocol (minutes) of this meeting, recorded after the meeting |
 | [protocols](protocols.md) | Collection of protocol records |
 | [reason](reason.md) | [en] Reason for absence or lateness (free-text, multilingual) |
 | [remark](remark.md) | Free-text remark or note for edge cases or additional context on a process st... |

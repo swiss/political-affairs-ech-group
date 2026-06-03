@@ -1924,7 +1924,7 @@
                         "null"
                     ]
                 },
-                "protocol": {
+                "protocol_ref": {
                     "anyOf": [
                         {
                             "$ref": "#/$defs/Protocol"

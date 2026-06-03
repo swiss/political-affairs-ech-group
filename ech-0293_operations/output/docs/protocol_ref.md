@@ -3,7 +3,7 @@ search:
   boost: 5.0
 ---
 
-# Slot: protocol 
+# Slot: protocol_ref 
 
 
 _[en] The protocol (minutes) of this meeting, recorded after the meeting._
@@ -18,7 +18,7 @@ __
 
 
 
-URI: [ops:protocol](https://ch.paf.link/schema/operations/protocol)
+URI: [ops:protocolRef](https://ch.paf.link/schema/operations/protocolRef)
 <!-- no inheritance hierarchy -->
 
 
@@ -44,7 +44,7 @@ URI: [ops:protocol](https://ch.paf.link/schema/operations/protocol)
 | --- | --- |
 | Range | [Protocol](Protocol.md) |
 | Domain Of | [Meeting](Meeting.md) |
-| Slot URI | [ops:protocol](https://ch.paf.link/schema/operations/protocol) |
+| Slot URI | [ops:protocolRef](https://ch.paf.link/schema/operations/protocolRef) |
 
 ### Cardinality and Requirements
 
@@ -78,8 +78,8 @@ URI: [ops:protocol](https://ch.paf.link/schema/operations/protocol)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ops:protocol |
-| native | ops:protocol |
+| self | ops:protocolRef |
+| native | ops:protocol_ref |
 
 
 
@@ -88,7 +88,7 @@ URI: [ops:protocol](https://ch.paf.link/schema/operations/protocol)
 
 <details>
 ```yaml
-name: protocol
+name: protocol_ref
 description: '[en] The protocol (minutes) of this meeting, recorded after the meeting.
 
   [de] Das nach der Sitzung erstellte Protokoll dieser Sitzung.
@@ -96,7 +96,7 @@ description: '[en] The protocol (minutes) of this meeting, recorded after the me
   '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
-slot_uri: ops:protocol
+slot_uri: ops:protocolRef
 domain_of:
 - Meeting
 range: Protocol
