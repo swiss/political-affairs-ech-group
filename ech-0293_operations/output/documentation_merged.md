@@ -2629,6 +2629,178 @@ attributes:
 ```
 </details></div>
 
+---
+search:
+  boost: 2.0
+---
+
+
+# Enum: MeetingTypeEnum 
+
+
+
+
+_Type of the meeting_
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [ops:MeetingTypeEnum](https://ch.paf.link/schema/operations/MeetingTypeEnum)
+
+## Permissible Values
+| Value | Meaning | Description |
+| --- | --- | --- |
+| session | ops:enum/meeting_type/session |  |
+| committee | ops:enum/meeting_type/committee |  |
+| sitting | ops:enum/meeting_type/sitting |  |
+| various | ops:enum/meeting_type/various |  |
+
+
+
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [meeting_type](#meeting_type) | Type of the meeting, e |
+
+
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://ch.paf.link/schema/operations
+
+
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: MeetingTypeEnum
+description: Type of the meeting
+from_schema: https://ch.paf.link/schema/operations
+rank: 1000
+permissible_values:
+  session:
+    text: session
+    meaning: ops:enum/meeting_type/session
+  committee:
+    text: committee
+    meaning: ops:enum/meeting_type/committee
+  sitting:
+    text: sitting
+    meaning: ops:enum/meeting_type/sitting
+  various:
+    text: various
+    meaning: ops:enum/meeting_type/various
+
+```
+</details>
+
+</div>
+
+---
+search:
+  boost: 2.0
+---
+
+
+# Enum: StateEnum 
+
+
+
+
+_State of the meeting_
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [ops:StateEnum](https://ch.paf.link/schema/operations/StateEnum)
+
+## Permissible Values
+| Value | Meaning | Description |
+| --- | --- | --- |
+| planned | ops:enum/state/planned |  |
+| canceled | ops:enum/state/canceled |  |
+| postponed | ops:enum/state/postponed |  |
+
+
+
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [state](#state) |  |
+
+
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://ch.paf.link/schema/operations
+
+
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: StateEnum
+description: State of the meeting
+from_schema: https://ch.paf.link/schema/operations
+rank: 1000
+permissible_values:
+  planned:
+    text: planned
+    meaning: ops:enum/state/planned
+  canceled:
+    text: canceled
+    meaning: ops:enum/state/canceled
+  postponed:
+    text: postponed
+    meaning: ops:enum/state/postponed
+
+```
+</details>
+
+</div>
+
 # Anwesenheit und Wortmeldungen
 
 Neben den formalen Entscheidungen dokumentiert der Standard auch die Teilnahme an Sitzungen und die geführten Debatten. Anwesenheitslisten erfassen wer an einer Sitzung teilgenommen hat, während Wortmeldungen die parlamentarische Debatte mit Text- und Medienaufzeichnungen festhalten.
@@ -3609,6 +3781,113 @@ attributes:
 
 ```
 </details></div>
+
+---
+search:
+  boost: 2.0
+---
+
+
+# Enum: AttendanceTypeEnum 
+
+
+
+
+_[en] Type of individual attendance._
+
+_[de] Art der individuellen Anwesenheit._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [ops:AttendanceTypeEnum](https://ch.paf.link/schema/operations/AttendanceTypeEnum)
+
+## Permissible Values
+| Value | Meaning | Description |
+| --- | --- | --- |
+| remote | ops:enum/attendance_type/remote | [en] Remote participation |
+| substitute | ops:enum/attendance_type/substitute | [en] Substitute (Stellvertretung) |
+| present | ops:enum/attendance_type/present | [en] Present in person |
+
+
+
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [attendance_type](#attendance_type) | Type of individual attendance |
+
+
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://ch.paf.link/schema/operations
+
+
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: AttendanceTypeEnum
+description: '[en] Type of individual attendance.
+
+  [de] Art der individuellen Anwesenheit.
+
+  '
+from_schema: https://ch.paf.link/schema/operations
+rank: 1000
+permissible_values:
+  remote:
+    text: remote
+    description: '[en] Remote participation
+
+      [de] Teilnahme per Fernzugriff
+
+      '
+    meaning: ops:enum/attendance_type/remote
+  substitute:
+    text: substitute
+    description: '[en] Substitute (Stellvertretung)
+
+      [de] Stellvertretung
+
+      '
+    meaning: ops:enum/attendance_type/substitute
+  present:
+    text: present
+    description: '[en] Present in person
+
+      [de] Persönlich anwesend
+
+      '
+    meaning: ops:enum/attendance_type/present
+
+```
+</details>
+
+</div>
 
 
 ToDo: Michel
@@ -4627,6 +4906,1581 @@ attributes:
 ```
 </details></div>
 
+---
+search:
+  boost: 2.0
+---
+
+
+# Enum: AgendaItemTypeEnum 
+
+
+
+
+_[en] Type of agenda item, distinguishing individual items from grouped items._
+
+_[de] Art des Traktandums, unterscheidet einzelne von gruppierten Traktanden._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [ops:AgendaItemTypeEnum](https://ch.paf.link/schema/operations/AgendaItemTypeEnum)
+
+## Permissible Values
+| Value | Meaning | Description |
+| --- | --- | --- |
+| item | ops:enum/agenda_item_type/item | [en] Individual agenda item (Traktandum) |
+| group | ops:enum/agenda_item_type/group | [en] Group of agenda items (Traktandengruppe) |
+
+
+
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [agenda_item_type](#agenda_item_type) | [en] Type of agenda item, distinguishing individual items from groups |
+
+
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://ch.paf.link/schema/operations
+
+
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: AgendaItemTypeEnum
+description: '[en] Type of agenda item, distinguishing individual items from grouped
+  items.
+
+  [de] Art des Traktandums, unterscheidet einzelne von gruppierten Traktanden.
+
+  '
+from_schema: https://ch.paf.link/schema/operations
+rank: 1000
+permissible_values:
+  item:
+    text: item
+    description: '[en] Individual agenda item (Traktandum)
+
+      [de] Einzelnes Traktandum
+
+      '
+    meaning: ops:enum/agenda_item_type/item
+  group:
+    text: group
+    description: '[en] Group of agenda items (Traktandengruppe)
+
+      [de] Traktandengruppe
+
+      '
+    meaning: ops:enum/agenda_item_type/group
+
+```
+</details>
+
+</div>
+
+## Protokoll (Protocol)
+
+### Zweck der Entität
+
+Während die Traktanden die **Planung** einer Sitzung abbilden, hält das Protokoll den **tatsächlichen Verlauf** nach der Sitzung fest. `Protocol` ist ein Wrapper-Container, der pro Sitzung (`Meeting`) genau einmal geführt wird und die effektiv behandelten Traktanden (`protocol_items`), Abstimmungen, Wortmeldungen sowie Wortlaut-Textsegmente und Dokumente bündelt.
+
+```
+Meeting
+  ├─ agenda_items   (vorher: geplante Traktanden)
+  └─ protocol_ref   (nachher: Niederschrift)
+        ├─ protocol_items  → ProtocolItem (wie AgendaItem)
+        ├─ votings
+        ├─ speeches
+        ├─ text_segments
+        └─ documents
+```
+
+---
+search:
+  boost: 10.0
+---
+
+# Class: Protocol 
+
+
+_[en] The minutes of a meeting, recorded after the meeting. A wrapper container_
+
+_     bundling the actually handled agenda items (protocol_items), votings,_
+
+_     speeches, verbatim text segments and linked documents._
+
+_[de] Das nach der Sitzung erstellte Protokoll. Ein Wrapper-Container, der die_
+
+_     tatsächlich behandelten Traktanden (protocol_items), Abstimmungen, Wortmeldungen,_
+
+_     Wortlaut-Textsegmente und verknüpfte Dokumente bündelt._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+URI: [ops:Protocol](https://ch.paf.link/schema/operations/Protocol)
+
+
+
+
+
+```mermaid
+ classDiagram
+    class Protocol
+    click Protocol href "../Protocol/"
+      HasIdentification <|-- Protocol
+        click HasIdentification href "../HasIdentification/"
+      HasCreationModificationDates <|-- Protocol
+        click HasCreationModificationDates href "../HasCreationModificationDates/"
+      
+      Protocol : date_created
+        
+      Protocol : date_modified
+        
+      Protocol : datetime_created
+        
+      Protocol : datetime_modified
+        
+      Protocol : documents
+        
+          
+    
+        
+        
+        Protocol --> "*" Work : documents
+        click Work href "../Work/"
+    
+
+        
+      Protocol : global_uri
+        
+      Protocol : local_id
+        
+      Protocol : parent_meeting
+        
+      Protocol : protocol_items
+        
+          
+    
+        
+        
+        Protocol --> "*" ProtocolItem : protocol_items
+        click ProtocolItem href "../ProtocolItem/"
+    
+
+        
+      Protocol : speeches
+        
+          
+    
+        
+        
+        Protocol --> "*" Speech : speeches
+        click Speech href "../Speech/"
+    
+
+        
+      Protocol : text_segments
+        
+          
+    
+        
+        
+        Protocol --> "*" TextSegment : text_segments
+        click TextSegment href "../TextSegment/"
+    
+
+        
+      Protocol : votings
+        
+          
+    
+        
+        
+        Protocol --> "*" Voting : votings
+        click Voting href "../Voting/"
+    
+
+        
+      Protocol : wikidata_uri
+        
+      
+```
+
+
+
+
+
+## Inheritance
+* **Protocol** [ [HasIdentification](# [HasIdentification) [HasCreationModificationDates](#HasCreationModificationDates)]
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [parent_meeting](#parent_meeting) | 0..1 <br/> [String](#String) | [en] The linked meeting ID that groups the current meeting | direct |
+| [protocol_items](#protocol_items) | * <br/> [ProtocolItem](#ProtocolItem) | [en] Agenda items as actually recorded in the protocol | direct |
+| [votings](#votings) | * <br/> [Voting](#Voting) | Collection of voting records | direct |
+| [speeches](#speeches) | * <br/> [Speech](#Speech) | Collection of speech records | direct |
+| [text_segments](#text_segments) | * <br/> [TextSegment](#TextSegment) | Collection of text segments (e | direct |
+| [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | Local identifier | [HasIdentification](#HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity | [HasIdentification](#HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e | [HasIdentification](#HasIdentification) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | The date when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | The date when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
+
+
+
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Container](#Container) | [protocols](#protocols) | range | [Protocol](#Protocol) |
+| [Meeting](#Meeting) | [protocol_ref](#protocol_ref) | range | [Protocol](#Protocol) |
+
+
+
+
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://ch.paf.link/schema/operations
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ops:Protocol |
+| native | ops:Protocol |
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: Protocol
+description: "[en] The minutes of a meeting, recorded after the meeting. A wrapper\
+  \ container\n     bundling the actually handled agenda items (protocol_items), votings,\n\
+  \     speeches, verbatim text segments and linked documents.\n[de] Das nach der\
+  \ Sitzung erstellte Protokoll. Ein Wrapper-Container, der die\n     tatsächlich\
+  \ behandelten Traktanden (protocol_items), Abstimmungen, Wortmeldungen,\n     Wortlaut-Textsegmente\
+  \ und verknüpfte Dokumente bündelt.\n"
+from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- HasCreationModificationDates
+slots:
+- parent_meeting
+- protocol_items
+- votings
+- speeches
+- text_segments
+- documents
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: Protocol
+description: "[en] The minutes of a meeting, recorded after the meeting. A wrapper\
+  \ container\n     bundling the actually handled agenda items (protocol_items), votings,\n\
+  \     speeches, verbatim text segments and linked documents.\n[de] Das nach der\
+  \ Sitzung erstellte Protokoll. Ein Wrapper-Container, der die\n     tatsächlich\
+  \ behandelten Traktanden (protocol_items), Abstimmungen, Wortmeldungen,\n     Wortlaut-Textsegmente\
+  \ und verknüpfte Dokumente bündelt.\n"
+from_schema: https://ch.paf.link/schema/operations
+mixins:
+- HasIdentification
+- HasCreationModificationDates
+attributes:
+  parent_meeting:
+    name: parent_meeting
+    description: '[en] The linked meeting ID that groups the current meeting.
+
+      [de] Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: Protocol
+    domain_of:
+    - Meeting
+    - AgendaItem
+    - Protocol
+    - Voting
+    - Election
+    - Attendance
+    range: string
+  protocol_items:
+    name: protocol_items
+    description: '[en] Agenda items as actually recorded in the protocol.
+
+      [de] Traktanden, wie sie im Protokoll tatsächlich festgehalten wurden.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: ops:protocolItem
+    owner: Protocol
+    domain_of:
+    - Protocol
+    range: ProtocolItem
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  votings:
+    name: votings
+    description: Collection of voting records
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: ops:voting
+    owner: Protocol
+    domain_of:
+    - Container
+    - Protocol
+    range: Voting
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  speeches:
+    name: speeches
+    description: Collection of speech records
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: ops:speech
+    owner: Protocol
+    domain_of:
+    - Container
+    - Protocol
+    range: Speech
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  text_segments:
+    name: text_segments
+    description: Collection of text segments (e.g. verbatim protocol)
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: ops:textSegment
+    owner: Protocol
+    domain_of:
+    - Protocol
+    range: TextSegment
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  documents:
+    name: documents
+    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
+      sind.
+
+      [en] List of documents (FRBR Works) linked to the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: meta:documents
+    owner: Protocol
+    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Protocol
+    - Resolution
+    - Voting
+    - Election
+    - Speech
+    - Motion
+    range: Work
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  local_id:
+    name: local_id
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+          '
+    description: 'Local identifier. For example, a UUID from the council information
+      system.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:localId
+    owner: Protocol
+    domain_of:
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine eindeutige, global gültige URI für die Entität.
+
+          '
+    description: 'A unique, globally valid URI for the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    owner: Protocol
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+          für die Schweiz.
+
+          '
+    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    owner: Protocol
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+  date_created:
+    name: date_created
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität erstellt wurde.
+
+          '
+    description: 'The date when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateCreated
+    owner: Protocol
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_created:
+    name: datetime_created
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+
+          '
+    description: 'The date and time when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeCreated
+    owner: Protocol
+    domain_of:
+    - HasCreationModificationDates
+    range: datetime
+  date_modified:
+    name: date_modified
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
+
+          '
+    description: 'The date when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateModified
+    owner: Protocol
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_modified:
+    name: datetime_modified
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
+
+          '
+    description: 'The date and time when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeModified
+    owner: Protocol
+    domain_of:
+    - HasCreationModificationDates
+    range: datetime
+
+```
+</details></div>
+
+### ProtocolItem (protokolliertes Traktandum)
+
+`ProtocolItem` erbt sämtliche Felder von `AgendaItem` (`is_a: AgendaItem`) und bildet ein Traktandum so ab, wie es im Protokoll tatsächlich festgehalten wurde.
+
+---
+search:
+  boost: 10.0
+---
+
+# Class: ProtocolItem 
+
+
+_[en] An agenda item as actually recorded in the protocol._
+
+_[de] Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+URI: [ops:ProtocolItem](https://ch.paf.link/schema/operations/ProtocolItem)
+
+
+
+
+
+```mermaid
+ classDiagram
+    class ProtocolItem
+    click ProtocolItem href "../ProtocolItem/"
+      AgendaItem <|-- ProtocolItem
+        click AgendaItem href "../AgendaItem/"
+      
+      ProtocolItem : affair_id
+        
+      ProtocolItem : agenda_item_category
+        
+      ProtocolItem : agenda_item_description
+        
+          
+    
+        
+        
+        ProtocolItem --> "*" MultilingualString : agenda_item_description
+        click MultilingualString href "../MultilingualString/"
+    
+
+        
+      ProtocolItem : agenda_item_number
+        
+      ProtocolItem : agenda_item_position
+        
+      ProtocolItem : agenda_item_title
+        
+          
+    
+        
+        
+        ProtocolItem --> "*" MultilingualString : agenda_item_title
+        click MultilingualString href "../MultilingualString/"
+    
+
+        
+      ProtocolItem : agenda_item_type
+        
+          
+    
+        
+        
+        ProtocolItem --> "0..1" AgendaItemTypeEnum : agenda_item_type
+        click AgendaItemTypeEnum href "../AgendaItemTypeEnum/"
+    
+
+        
+      ProtocolItem : date_begin_actual
+        
+      ProtocolItem : date_begin_planned
+        
+      ProtocolItem : date_created
+        
+      ProtocolItem : date_end_actual
+        
+      ProtocolItem : date_end_planned
+        
+      ProtocolItem : date_modified
+        
+      ProtocolItem : datetime_begin_actual
+        
+      ProtocolItem : datetime_begin_planned
+        
+      ProtocolItem : datetime_created
+        
+      ProtocolItem : datetime_end_actual
+        
+      ProtocolItem : datetime_end_planned
+        
+      ProtocolItem : datetime_modified
+        
+      ProtocolItem : documents
+        
+          
+    
+        
+        
+        ProtocolItem --> "*" Work : documents
+        click Work href "../Work/"
+    
+
+        
+      ProtocolItem : global_uri
+        
+      ProtocolItem : has_resolution
+        
+          
+    
+        
+        
+        ProtocolItem --> "0..1" Resolution : has_resolution
+        click Resolution href "../Resolution/"
+    
+
+        
+      ProtocolItem : landing_page
+        
+      ProtocolItem : leading_actor_id
+        
+      ProtocolItem : local_id
+        
+      ProtocolItem : parent_agenda_item
+        
+      ProtocolItem : parent_meeting
+        
+      ProtocolItem : speaking_actor_id
+        
+      ProtocolItem : state_id
+        
+      ProtocolItem : state_name
+        
+      ProtocolItem : url
+        
+          
+    
+        
+        
+        ProtocolItem --> "*" MultilingualString : url
+        click MultilingualString href "../MultilingualString/"
+    
+
+        
+      ProtocolItem : wikidata_uri
+        
+      
+```
+
+
+
+
+
+## Inheritance
+* [AgendaItem](#AgendaItem) [ [HasIdentification](# [HasIdentification) [IsEventWithDuration](#IsEventWithDuration) [HasCreationModificationDates](#HasCreationModificationDates)]
+    * **ProtocolItem**
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [parent_meeting](#parent_meeting) | 0..1 <br/> [String](#String) | [en] The linked meeting ID that groups the current meeting | [AgendaItem](#en] The linked meeting ID that groups the current meeting | [AgendaItem) |
+| [agenda_item_type](#agenda_item_type) | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | [en] Type of agenda item, distinguishing individual items from groups | [AgendaItem](#en] Type of agenda item, distinguishing individual items from groups | [AgendaItem) |
+| [agenda_item_number](#agenda_item_number) | 0..1 <br/> [String](#String) | [en] Sequential number of the agenda item (string type to support roman numer... | [AgendaItem](#en] Sequential number of the agenda item (string type to support roman numer... | [AgendaItem) |
+| [agenda_item_position](#agenda_item_position) | 0..1 <br/> [Integer](#Integer) | [en] Integer position of the agenda item in the meeting sequence | [AgendaItem](#en] Integer position of the agenda item in the meeting sequence | [AgendaItem) |
+| [leading_actor_id](#leading_actor_id) | 0..1 <br/> [String](#String) | [en] The leading department for the agenda item | [AgendaItem](#en] The leading department for the agenda item | [AgendaItem) |
+| [speaking_actor_id](#speaking_actor_id) | 0..1 <br/> [String](#String) | [en] The speaker or head of the department for the agenda item | [AgendaItem](#en] The speaker or head of the department for the agenda item | [AgendaItem) |
+| [agenda_item_title](#agenda_item_title) | * <br/> [MultilingualString](#MultilingualString) | [en] Title of the agenda item | [AgendaItem](#en] Title of the agenda item | [AgendaItem) |
+| [affair_id](#affair_id) | 0..1 <br/> [String](#String) | [en] The connection to the affairs (business items) of the agenda item | [AgendaItem](#en] The connection to the affairs (business items) of the agenda item | [AgendaItem) |
+| [agenda_item_description](#agenda_item_description) | * <br/> [MultilingualString](#MultilingualString) | [en] Subtitle or detailed description of the agenda item | [AgendaItem](#en] Subtitle or detailed description of the agenda item | [AgendaItem) |
+| [state_id](#state_id) | 0..1 <br/> [String](#String) | State identifier (reference to state enum or custom state) | [AgendaItem](#AgendaItem) |
+| [state_name](#state_name) | 0..1 <br/> [String](#String) | [en] Custom state description for the meeting | [AgendaItem](#en] Custom state description for the meeting | [AgendaItem) |
+| [landing_page](#landing_page) | 0..1 <br/> [String](#String) | [en] URL providing further information | [AgendaItem](#en] URL providing further information | [AgendaItem) |
+| [url](#url) | * <br/> [MultilingualString](#MultilingualString) |  | [AgendaItem](#AgendaItem) |
+| [agenda_item_category](#agenda_item_category) | 0..1 <br/> [String](#String) | [en] Category for grouped agenda items (e | [AgendaItem](#en] Category for grouped agenda items (e | [AgendaItem) |
+| [parent_agenda_item](#parent_agenda_item) | 0..1 <br/> [String](#String) | [en] If needed, this slot builds a hierarchy of agenda items | [AgendaItem](#en] If needed, this slot builds a hierarchy of agenda items | [AgendaItem) |
+| [has_resolution](#has_resolution) | 0..1 <br/> [Resolution](#Resolution) | [en] The resolutionor decision taken on this agenda item | [AgendaItem](#en] The resolutionor decision taken on this agenda item | [AgendaItem) |
+| [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | [AgendaItem](#de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | [AgendaItem) |
+| [local_id](#local_id) | 0..1 <br/> [String](#String) | Local identifier | [HasIdentification](#HasIdentification) |
+| [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity | [HasIdentification](#HasIdentification) |
+| [wikidata_uri](#wikidata_uri) | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e | [HasIdentification](#HasIdentification) |
+| [date_begin_actual](#date_begin_actual) | 0..1 <br/> [Date](#Date) | The actual start date of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [datetime_begin_actual](#datetime_begin_actual) | 0..1 <br/> [Datetime](#Datetime) | The actual start date and time of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [date_begin_planned](#date_begin_planned) | 0..1 <br/> [Date](#Date) | The planned start date of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [datetime_begin_planned](#datetime_begin_planned) | 0..1 <br/> [Datetime](#Datetime) | The planned start date and time of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [date_end_actual](#date_end_actual) | 0..1 <br/> [Date](#Date) | The actual end date of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [datetime_end_actual](#datetime_end_actual) | 0..1 <br/> [Datetime](#Datetime) | The actual end date and time of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [date_end_planned](#date_end_planned) | 0..1 <br/> [Date](#Date) | The planned end date of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [datetime_end_planned](#datetime_end_planned) | 0..1 <br/> [Datetime](#Datetime) | The planned end date and time of an event or occurrence with time duration | [IsEventWithDuration](#IsEventWithDuration) |
+| [date_created](#date_created) | 0..1 <br/> [Date](#Date) | The date when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_created](#datetime_created) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [date_modified](#date_modified) | 0..1 <br/> [Date](#Date) | The date when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
+| [datetime_modified](#datetime_modified) | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified | [HasCreationModificationDates](#HasCreationModificationDates) |
+
+
+
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Protocol](#Protocol) | [protocol_items](#protocol_items) | range | [ProtocolItem](#ProtocolItem) |
+
+
+
+
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://ch.paf.link/schema/operations
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ops:ProtocolItem |
+| native | ops:ProtocolItem |
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: ProtocolItem
+description: '[en] An agenda item as actually recorded in the protocol.
+
+  [de] Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde.
+
+  '
+from_schema: https://ch.paf.link/schema/operations
+is_a: AgendaItem
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: ProtocolItem
+description: '[en] An agenda item as actually recorded in the protocol.
+
+  [de] Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde.
+
+  '
+from_schema: https://ch.paf.link/schema/operations
+is_a: AgendaItem
+attributes:
+  parent_meeting:
+    name: parent_meeting
+    description: '[en] The linked meeting ID that groups the current meeting.
+
+      [de] Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - Meeting
+    - AgendaItem
+    - Protocol
+    - Voting
+    - Election
+    - Attendance
+    range: string
+  agenda_item_type:
+    name: agenda_item_type
+    description: '[en] Type of agenda item, distinguishing individual items from groups.
+
+      [de] Art des Traktandums, unterscheidet Einzeltraktanden von Traktandengruppen.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - AgendaItem
+    range: AgendaItemTypeEnum
+  agenda_item_number:
+    name: agenda_item_number
+    description: '[en] Sequential number of the agenda item (string type to support
+      roman numerals).
+
+      [de] Laufnummer des Traktandums (String-Typ zur Unterstützung römischer Ziffern).
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - AgendaItem
+    range: string
+  agenda_item_position:
+    name: agenda_item_position
+    description: '[en] Integer position of the agenda item in the meeting sequence.
+
+      [de] Ganzzahlige Position des Traktandums in der Sitzungsreihenfolge.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - AgendaItem
+    range: integer
+  leading_actor_id:
+    name: leading_actor_id
+    description: '[en] The leading department for the agenda item.
+
+      [de] Das federführende Departement für den Tagesordnungspunkt.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - AgendaItem
+    range: string
+  speaking_actor_id:
+    name: speaking_actor_id
+    description: '[en] The speaker or head of the department for the agenda item.
+
+      [de] Der Sprecher oder Departementsvorsteher für den Tagesordnungspunkt.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - AgendaItem
+    range: string
+  agenda_item_title:
+    name: agenda_item_title
+    description: '[en] Title of the agenda item.
+
+      [de] Titel des Traktandums.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - AgendaItem
+    range: MultilingualString
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  affair_id:
+    name: affair_id
+    description: '[en] The connection to the affairs (business items) of the agenda
+      item.
+
+      [de] Die Verbindung zu den Geschäften (Geschäftsgegenständen) des Tagesordnungspunkts.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - AgendaItem
+    - Voting
+    - Election
+    range: string
+  agenda_item_description:
+    name: agenda_item_description
+    description: '[en] Subtitle or detailed description of the agenda item.
+
+      [de] Untertitel oder ausführliche Beschreibung des Traktandums.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - AgendaItem
+    range: MultilingualString
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  state_id:
+    name: state_id
+    description: State identifier (reference to state enum or custom state)
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - AgendaItem
+    range: string
+  state_name:
+    name: state_name
+    description: '[en] Custom state description for the meeting.
+
+      [de] Benutzerdefinierte Zustandsbeschreibung für die Sitzung.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - Meeting
+    - AgendaItem
+    range: string
+  landing_page:
+    name: landing_page
+    description: '[en] URL providing further information.
+
+      [de] URL mit weiteren Informationen.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: ops:landingPage
+    owner: ProtocolItem
+    domain_of:
+    - Legislature
+    - Meeting
+    - AgendaItem
+    - Voting
+    - Election
+    - Speech
+    range: string
+  url:
+    name: url
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - Session
+    - Meeting
+    - AgendaItem
+    - Media
+    - Manifestation
+    range: MultilingualString
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  agenda_item_category:
+    name: agenda_item_category
+    description: '[en] Category for grouped agenda items (e.g., introduction, by department,
+      technical agenda items).
+
+      [de] Kategorie für gruppierte Traktanden (z.B. Einführung, nach Departement,
+      technische Traktanden).
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - AgendaItem
+    range: string
+  parent_agenda_item:
+    name: parent_agenda_item
+    description: '[en] If needed, this slot builds a hierarchy of agenda items.
+
+      [de] Wenn erforderlich, baut dieser Slot eine Hierarchie von Tagesordnungspunkten
+      auf.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - AgendaItem
+    - Voting
+    - Election
+    range: string
+  has_resolution:
+    name: has_resolution
+    description: '[en] The resolutionor decision taken on this agenda item.
+
+      [de] Die Resolution oder Entscheidung zu diesem Traktandum.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    owner: ProtocolItem
+    domain_of:
+    - AgendaItem
+    range: Resolution
+  documents:
+    name: documents
+    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
+      sind.
+
+      [en] List of documents (FRBR Works) linked to the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: meta:documents
+    owner: ProtocolItem
+    domain_of:
+    - Legislature
+    - Session
+    - Meeting
+    - AgendaItem
+    - Protocol
+    - Resolution
+    - Voting
+    - Election
+    - Speech
+    - Motion
+    range: Work
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  local_id:
+    name: local_id
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+
+          '
+    description: 'Local identifier. For example, a UUID from the council information
+      system.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:localId
+    owner: ProtocolItem
+    domain_of:
+    - HasIdentification
+    range: string
+  global_uri:
+    name: global_uri
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine eindeutige, global gültige URI für die Entität.
+
+          '
+    description: 'A unique, globally valid URI for the entity.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:globalURI
+    identifier: true
+    owner: ProtocolItem
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+    required: true
+  wikidata_uri:
+    name: wikidata_uri
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+          für die Schweiz.
+
+          '
+    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+      for Switzerland.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:wikidataUri
+    owner: ProtocolItem
+    domain_of:
+    - HasIdentification
+    range: uriorcurie
+  date_begin_actual:
+    name: date_begin_actual
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit
+          Zeitdauer.
+
+          '
+    description: 'The actual start date of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateBeginActual
+    owner: ProtocolItem
+    domain_of:
+    - IsEventWithDuration
+    range: date
+  datetime_begin_actual:
+    name: datetime_begin_actual
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder
+          Vorkommnissen mit Zeitdauer.
+
+          '
+    description: 'The actual start date and time of an event or occurrence with time
+      duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeBeginActual
+    owner: ProtocolItem
+    domain_of:
+    - IsEventWithDuration
+    range: datetime
+  date_begin_planned:
+    name: date_begin_planned
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
+
+          '
+    description: 'The planned start date of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateBeginPlanned
+    owner: ProtocolItem
+    domain_of:
+    - IsEventWithDuration
+    range: date
+  datetime_begin_planned:
+    name: datetime_begin_planned
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+          mit Zeitdauer.
+
+          '
+    description: 'The planned start date and time of an event or occurrence with time
+      duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeBeginPlanned
+    owner: ProtocolItem
+    domain_of:
+    - IsEventWithDuration
+    range: datetime
+  date_end_actual:
+    name: date_end_actual
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Enddatum eines Ereignisses oder Vorkommnissen mit
+          Zeitdauer.
+
+          '
+    description: 'The actual end date of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateEndActual
+    owner: ProtocolItem
+    domain_of:
+    - IsEventWithDuration
+    range: date
+  datetime_end_actual:
+    name: datetime_end_actual
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+          mit Zeitdauer.
+
+          '
+    description: 'The actual end date and time of an event or occurrence with time
+      duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeEndActual
+    owner: ProtocolItem
+    domain_of:
+    - IsEventWithDuration
+    range: datetime
+  date_end_planned:
+    name: date_end_planned
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Enddatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
+
+          '
+    description: 'The planned end date of an event or occurrence with time duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateEndPlanned
+    owner: ProtocolItem
+    domain_of:
+    - IsEventWithDuration
+    range: date
+  datetime_end_planned:
+    name: datetime_end_planned
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+          mit Zeitdauer.
+
+          '
+    description: 'The planned end date and time of an event or occurrence with time
+      duration.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeEndPlanned
+    owner: ProtocolItem
+    domain_of:
+    - IsEventWithDuration
+    range: datetime
+  date_created:
+    name: date_created
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität erstellt wurde.
+
+          '
+    description: 'The date when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateCreated
+    owner: ProtocolItem
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_created:
+    name: datetime_created
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+
+          '
+    description: 'The date and time when an entity was created.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeCreated
+    owner: ProtocolItem
+    domain_of:
+    - HasCreationModificationDates
+    range: datetime
+  date_modified:
+    name: date_modified
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
+
+          '
+    description: 'The date when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:dateModified
+    owner: ProtocolItem
+    domain_of:
+    - HasCreationModificationDates
+    range: date
+  datetime_modified:
+    name: datetime_modified
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
+
+          '
+    description: 'The date and time when an entity was last modified.
+
+      '
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: mcm:datetimeModified
+    owner: ProtocolItem
+    domain_of:
+    - HasCreationModificationDates
+    range: datetime
+
+```
+</details></div>
+
+## Gemeinsame Beratung (JointDebate)
+
+### Zweck der Entität
+
+`JointDebate` fasst mehrere Traktanden zusammen, die gemeinsam beraten werden – etwa inhaltlich zusammenhängende Geschäfte, die in einer einzigen Debatte behandelt werden.
+
+---
+search:
+  boost: 10.0
+---
+
+# Class: JointDebate 
+
+
+_[en] Agenda Items which are debated together._
+
+_[de] Traktanden die gemeinsam behandelt werden._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+URI: [ops:JointDebate](https://ch.paf.link/schema/operations/JointDebate)
+
+
+
+
+
+```mermaid
+ classDiagram
+    class JointDebate
+    click JointDebate href "../JointDebate/"
+      JointDebate : agenda_items
+        
+          
+    
+        
+        
+        JointDebate --> "*" AgendaItem : agenda_items
+        click AgendaItem href "../AgendaItem/"
+    
+
+        
+      
+```
+
+
+
+
+<!-- no inheritance hierarchy -->
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [agenda_items](#agenda_items) | * <br/> [AgendaItem](#AgendaItem) |  | direct |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://ch.paf.link/schema/operations
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | ops:JointDebate |
+| native | ops:JointDebate |
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: JointDebate
+description: '[en] Agenda Items which are debated together.
+
+  [de] Traktanden die gemeinsam behandelt werden.
+
+  '
+from_schema: https://ch.paf.link/schema/operations
+slots:
+- agenda_items
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: JointDebate
+description: '[en] Agenda Items which are debated together.
+
+  [de] Traktanden die gemeinsam behandelt werden.
+
+  '
+from_schema: https://ch.paf.link/schema/operations
+attributes:
+  agenda_items:
+    name: agenda_items
+    from_schema: https://ch.paf.link/schema/operations
+    rank: 1000
+    slot_uri: ops:agendaItem
+    owner: JointDebate
+    domain_of:
+    - Container
+    - JointDebate
+    range: AgendaItem
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+
+```
+</details></div>
+
 ## Resolution (Beschluss)
 
 ### Zweck der Entität
@@ -5031,6 +6885,158 @@ attributes:
 
 ```
 </details></div>
+
+---
+search:
+  boost: 2.0
+---
+
+
+# Enum: ResolutionTypeEnum 
+
+
+
+
+_[en] Type of resolutiontaken on an agenda item._
+
+_[de] Art der Resolution zu einem Traktandum._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [ops:ResolutionTypeEnum](https://ch.paf.link/schema/operations/ResolutionTypeEnum)
+
+## Permissible Values
+| Value | Meaning | Description |
+| --- | --- | --- |
+| accepted | ops:enum/resolution_type/accepted | [en] Accepted (Annahme) |
+| rejected | ops:enum/resolution_type/rejected | [en] Rejected (Ablehnung) |
+| noted | ops:enum/resolution_type/noted | [en] Noted (Kenntnisnahme) |
+| accepted_point_by_point | ops:enum/resolution_type/accepted_point_by_point | [en] Accepted point by point (Punktweise Annahme) |
+| accepted_with_postulate | ops:enum/resolution_type/accepted_with_postulate | [en] Accepted with postulate (Annahme mit Postulat) |
+| orally_settled | ops:enum/resolution_type/orally_settled | [en] Orally settled (Mündlich erledigt) |
+| nearly_unanimous | ops:enum/resolution_type/nearly_unanimous | [en] Nearly unanimous (Beinahe einstimmig) |
+| other | ops:enum/resolution_type/other | [en] Other resolutiontype not covered by standard categories |
+
+
+
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [resolution_type](#resolution_type) | [en] Type of resolutiontaken on the agenda item |
+
+
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://ch.paf.link/schema/operations
+
+
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: ResolutionTypeEnum
+description: '[en] Type of resolutiontaken on an agenda item.
+
+  [de] Art der Resolution zu einem Traktandum.
+
+  '
+from_schema: https://ch.paf.link/schema/operations
+rank: 1000
+permissible_values:
+  accepted:
+    text: accepted
+    description: '[en] Accepted (Annahme)
+
+      [de] Annahme
+
+      '
+    meaning: ops:enum/resolution_type/accepted
+  rejected:
+    text: rejected
+    description: '[en] Rejected (Ablehnung)
+
+      [de] Ablehnung
+
+      '
+    meaning: ops:enum/resolution_type/rejected
+  noted:
+    text: noted
+    description: '[en] Noted (Kenntnisnahme)
+
+      [de] Kenntnisnahme
+
+      '
+    meaning: ops:enum/resolution_type/noted
+  accepted_point_by_point:
+    text: accepted_point_by_point
+    description: '[en] Accepted point by point (Punktweise Annahme)
+
+      [de] Punktweise Annahme
+
+      '
+    meaning: ops:enum/resolution_type/accepted_point_by_point
+  accepted_with_postulate:
+    text: accepted_with_postulate
+    description: '[en] Accepted with postulate (Annahme mit Postulat)
+
+      [de] Annahme mit Postulat
+
+      '
+    meaning: ops:enum/resolution_type/accepted_with_postulate
+  orally_settled:
+    text: orally_settled
+    description: '[en] Orally settled (Mündlich erledigt)
+
+      [de] Mündlich erledigt
+
+      '
+    meaning: ops:enum/resolution_type/orally_settled
+  nearly_unanimous:
+    text: nearly_unanimous
+    description: '[en] Nearly unanimous (Beinahe einstimmig)
+
+      [de] Beinahe einstimmig
+
+      '
+    meaning: ops:enum/resolution_type/nearly_unanimous
+  other:
+    text: other
+    description: '[en] Other resolutiontype not covered by standard categories
+
+      [de] Andere Resolution, nicht durch Standardkategorien abgedeckt
+
+      '
+    meaning: ops:enum/resolution_type/other
+
+```
+</details>
+
+</div>
 
 ## Motion (Anträge)
 
@@ -6406,6 +8412,215 @@ attributes:
 ```
 </details></div>
 
+---
+search:
+  boost: 2.0
+---
+
+
+# Enum: VotingTypeEnum 
+
+
+
+
+_[en] Type of voting procedure._
+
+_[de] Art des Abstimmungsverfahrens._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [ops:VotingTypeEnum](https://ch.paf.link/schema/operations/VotingTypeEnum)
+
+## Permissible Values
+| Value | Meaning | Description |
+| --- | --- | --- |
+| preliminary_vote | ops:enum/voting_type/preliminary_vote | [en] Preliminary vote (Zwischenabstimmung) |
+| final_vote | ops:enum/voting_type/final_vote | [en] Final vote (Schlussabstimmung) |
+| tie_breaker_president | ops:enum/voting_type/tie_breaker_president | [en] President's tie-breaking vote (Stichentscheid Präsidium) |
+| secret_vote | ops:enum/voting_type/secret_vote | [en] Secret ballot (Geheime Wahl/Abstimmung) |
+| other | ops:enum/voting_type/other | [en] Other voting type |
+
+
+
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [voting_type](#voting_type) | [en] Type of voting procedure (preliminary, final, secret, etc |
+
+
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://ch.paf.link/schema/operations
+
+
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: VotingTypeEnum
+description: '[en] Type of voting procedure.
+
+  [de] Art des Abstimmungsverfahrens.
+
+  '
+from_schema: https://ch.paf.link/schema/operations
+rank: 1000
+permissible_values:
+  preliminary_vote:
+    text: preliminary_vote
+    description: '[en] Preliminary vote (Zwischenabstimmung)
+
+      [de] Zwischenabstimmung
+
+      '
+    meaning: ops:enum/voting_type/preliminary_vote
+  final_vote:
+    text: final_vote
+    description: '[en] Final vote (Schlussabstimmung)
+
+      [de] Schlussabstimmung
+
+      '
+    meaning: ops:enum/voting_type/final_vote
+  tie_breaker_president:
+    text: tie_breaker_president
+    description: '[en] President''s tie-breaking vote (Stichentscheid Präsidium)
+
+      [de] Stichentscheid Präsidium
+
+      '
+    meaning: ops:enum/voting_type/tie_breaker_president
+  secret_vote:
+    text: secret_vote
+    description: '[en] Secret ballot (Geheime Wahl/Abstimmung)
+
+      [de] Geheime Wahl/Abstimmung
+
+      '
+    meaning: ops:enum/voting_type/secret_vote
+  other:
+    text: other
+    description: '[en] Other voting type
+
+      [de] Andere Abstimmungsart
+
+      '
+    meaning: ops:enum/voting_type/other
+
+```
+</details>
+
+</div>
+
+---
+search:
+  boost: 2.0
+---
+
+
+# Enum: MajorityTypeEnum 
+
+
+
+
+_Type of majority required for the vote_
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [ops:MajorityTypeEnum](https://ch.paf.link/schema/operations/MajorityTypeEnum)
+
+## Permissible Values
+| Value | Meaning | Description |
+| --- | --- | --- |
+| absolute | ops:enum/majority_type/absolute |  |
+| two_thirds | ops:enum/majority_type/two_thirds |  |
+| other | ops:enum/majority_type/other |  |
+
+
+
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [majority_type](#majority_type) | [en] Type of majority required for the vote (absolute, two-thirds, etc |
+
+
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://ch.paf.link/schema/operations
+
+
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: MajorityTypeEnum
+description: Type of majority required for the vote
+from_schema: https://ch.paf.link/schema/operations
+rank: 1000
+permissible_values:
+  absolute:
+    text: absolute
+    meaning: ops:enum/majority_type/absolute
+  two_thirds:
+    text: two_thirds
+    meaning: ops:enum/majority_type/two_thirds
+  other:
+    text: other
+    meaning: ops:enum/majority_type/other
+
+```
+</details>
+
+</div>
+
 ## Individual Vote (Einzelstimme)
 
 ## Zweck der Entität
@@ -6954,6 +9169,140 @@ attributes:
 
 ```
 </details></div>
+
+---
+search:
+  boost: 2.0
+---
+
+
+# Enum: IndividualVoteTypeEnum 
+
+
+
+
+_[en] Type of individual vote cast by a member._
+
+_[de] Art der Einzelstimme eines Mitglieds._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [ops:IndividualVoteTypeEnum](https://ch.paf.link/schema/operations/IndividualVoteTypeEnum)
+
+## Permissible Values
+| Value | Meaning | Description |
+| --- | --- | --- |
+| yes | ops:enum/individual_vote_type/yes | [en] Vote in favor (yes) |
+| no | ops:enum/individual_vote_type/no | [en] Vote against (no) |
+| abstention | ops:enum/individual_vote_type/abstention | [en] Abstention |
+| not_voted | ops:enum/individual_vote_type/not_voted | [en] Not Voted |
+| tie_breaker | ops:enum/individual_vote_type/tie_breaker | [en] Tie-breaking vote, TODO english |
+| other | ops:enum/individual_vote_type/other | [en] Other vote type |
+
+
+
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [individual_vote_type](#individual_vote_type) | [en] Type of vote cast (yes, no, abstention, no vote, etc |
+
+
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://ch.paf.link/schema/operations
+
+
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: IndividualVoteTypeEnum
+description: '[en] Type of individual vote cast by a member.
+
+  [de] Art der Einzelstimme eines Mitglieds.
+
+  '
+from_schema: https://ch.paf.link/schema/operations
+rank: 1000
+permissible_values:
+  'yes':
+    text: 'yes'
+    description: '[en] Vote in favor (yes)
+
+      [de] Ja-Stimme
+
+      '
+    meaning: ops:enum/individual_vote_type/yes
+  'no':
+    text: 'no'
+    description: '[en] Vote against (no)
+
+      [de] Nein-Stimme
+
+      '
+    meaning: ops:enum/individual_vote_type/no
+  abstention:
+    text: abstention
+    description: '[en] Abstention
+
+      [de] Enthaltung
+
+      '
+    meaning: ops:enum/individual_vote_type/abstention
+  not_voted:
+    text: not_voted
+    description: '[en] Not Voted
+
+      [de] Nicht abgestimmt
+
+      '
+    meaning: ops:enum/individual_vote_type/not_voted
+  tie_breaker:
+    text: tie_breaker
+    description: '[en] Tie-breaking vote, TODO english
+
+      [de] Stichentscheid, meist durch Präsidium
+
+      '
+    meaning: ops:enum/individual_vote_type/tie_breaker
+  other:
+    text: other
+    description: '[en] Other vote type
+
+      [de] Andere Stimmabgabe
+
+      '
+    meaning: ops:enum/individual_vote_type/other
+
+```
+</details>
+
+</div>
 
 ## Election (Wahl)
 
@@ -7853,6 +10202,113 @@ attributes:
 
 ```
 </details></div>
+
+---
+search:
+  boost: 2.0
+---
+
+
+# Enum: ElectionTypeEnum 
+
+
+
+
+_[en] Type of election procedure._
+
+_[de] Art des Wahlverfahrens._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [ops:ElectionTypeEnum](https://ch.paf.link/schema/operations/ElectionTypeEnum)
+
+## Permissible Values
+| Value | Meaning | Description |
+| --- | --- | --- |
+| secret | ops:enum/election_type/secret | [en] Secret election (Geheime Wahl) |
+| open | ops:enum/election_type/open | [en] Open election (Offene Wahl) |
+| silent | ops:enum/election_type/silent | [en] Silent election without opponent (Stille Wahl ohne Gegenkandidat) |
+
+
+
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [election_type](#election_type) | Type of election procedure |
+
+
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://ch.paf.link/schema/operations
+
+
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: ElectionTypeEnum
+description: '[en] Type of election procedure.
+
+  [de] Art des Wahlverfahrens.
+
+  '
+from_schema: https://ch.paf.link/schema/operations
+rank: 1000
+permissible_values:
+  secret:
+    text: secret
+    description: '[en] Secret election (Geheime Wahl)
+
+      [de] Geheime Wahl
+
+      '
+    meaning: ops:enum/election_type/secret
+  open:
+    text: open
+    description: '[en] Open election (Offene Wahl)
+
+      [de] Offene Wahl
+
+      '
+    meaning: ops:enum/election_type/open
+  silent:
+    text: silent
+    description: '[en] Silent election without opponent (Stille Wahl ohne Gegenkandidat)
+
+      [de] Stille Wahl ohne Gegenkandidat
+
+      '
+    meaning: ops:enum/election_type/silent
+
+```
+</details>
+
+</div>
 
 ToDo: David
 
