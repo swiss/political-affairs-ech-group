@@ -164,6 +164,8 @@ attributes:
     owner: TotalOther
     domain_of:
     - TotalOther
+    - PersonReference
+    - GroupReference
     range: string
 
 ```

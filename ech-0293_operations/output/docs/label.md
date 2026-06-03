@@ -28,6 +28,8 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [TotalOther](TotalOther.md) | [en] Additional vote counts when multiple options are presented (e |  no  |
+| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |  yes  |
+| [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |  no  |
 
 
 
@@ -41,7 +43,7 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [TotalOther](TotalOther.md) |
+| Domain Of | [TotalOther](TotalOther.md), [PersonReference](PersonReference.md), [GroupReference](GroupReference.md) |
 | Slot URI | [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label) |
 
 ### Cardinality and Requirements
@@ -111,6 +113,8 @@ rank: 1000
 slot_uri: mcm:label
 domain_of:
 - TotalOther
+- PersonReference
+- GroupReference
 range: string
 
 ```

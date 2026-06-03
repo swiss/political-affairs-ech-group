@@ -37,6 +37,15 @@ URI: [ops:Legislature](https://ch.paf.link/schema/operations/Legislature)
       
       Legislature : actor_id
         
+          
+    
+        
+        
+        Legislature --> "0..1" GroupReference : actor_id
+        click GroupReference href "../GroupReference/"
+    
+
+        
       Legislature : administrative_id
         
       Legislature : date_begin_actual
@@ -114,7 +123,7 @@ URI: [ops:Legislature](https://ch.paf.link/schema/operations/Legislature)
 | [name](name.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
 | [description](description.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [landing_page](landing_page.md) | 0..1 <br/> [String](String.md) | [en] URL providing further information | direct |
-| [actor_id](actor_id.md) | 0..1 <br/> [String](String.md) | [en] The political body organized by the term of office (e | direct |
+| [actor_id](actor_id.md) | 0..1 <br/> [GroupReference](GroupReference.md) | [en] Reference to the acting body/organ (lightweight snapshot at time of link... | direct |
 | [documents](documents.md) | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
 | [local_id](local_id.md) | 0..1 <br/> [String](String.md) | Local identifier | [HasIdentification](HasIdentification.md) |
 | [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity | [HasIdentification](HasIdentification.md) |
@@ -207,6 +216,18 @@ slots:
 - landing_page
 - actor_id
 - documents
+slot_usage:
+  actor_id:
+    name: actor_id
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
+
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
+
+      '
+    range: GroupReference
+    inlined: true
 
 ```
 </details>
@@ -228,6 +249,18 @@ mixins:
 - HasIdentification
 - IsEventWithDuration
 - HasCreationModificationDates
+slot_usage:
+  actor_id:
+    name: actor_id
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
+
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
+
+      '
+    range: GroupReference
+    inlined: true
 attributes:
   administrative_id:
     name: administrative_id
@@ -290,11 +323,11 @@ attributes:
     range: string
   actor_id:
     name: actor_id
-    description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
-      Nationalrat, Ständerat).
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
 
-      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
-      Nationalrat, Ständerat).
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -309,7 +342,8 @@ attributes:
     - Attendance
     - IndividualAttendance
     - Speech
-    range: string
+    range: GroupReference
+    inlined: true
   documents:
     name: documents
     description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft

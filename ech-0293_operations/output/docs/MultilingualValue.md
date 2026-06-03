@@ -49,6 +49,13 @@ URI: [ops:MultilingualValue](https://ch.paf.link/schema/operations/MultilingualV
 
 
 
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [GroupReference](GroupReference.md) | [abbreviation](abbreviation.md) | range | [MultilingualValue](MultilingualValue.md) |
+
+
 
 
 

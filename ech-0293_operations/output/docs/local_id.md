@@ -45,6 +45,8 @@ URI: [mcm:localId](https://ld.ech.ch/schema/0292/meta-common/localId)
 | [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |  no  |
 | [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |  no  |
 | [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
+| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |  no  |
+| [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |  no  |
 
 
 

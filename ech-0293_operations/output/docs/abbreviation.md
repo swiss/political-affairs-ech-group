@@ -5,11 +5,18 @@ search:
 
 # Slot: abbreviation 
 
+
+_Abbreviation (can be multilingual)._
+
+__
+
+
+
 <div data-search-exclude markdown="1">
 
 
 
-URI: [ops:abbreviation](https://ch.paf.link/schema/operations/abbreviation)
+URI: [mcm:abbreviation](https://ld.ech.ch/schema/0292/meta-common/abbreviation)
 <!-- no inheritance hierarchy -->
 
 
@@ -20,8 +27,7 @@ URI: [ops:abbreviation](https://ch.paf.link/schema/operations/abbreviation)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
-| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
+| [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |  no  |
 
 
 
@@ -34,13 +40,15 @@ URI: [ops:abbreviation](https://ch.paf.link/schema/operations/abbreviation)
 
 | Property | Value |
 | --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [Session](Session.md), [Meeting](Meeting.md) |
+| Range | [MultilingualValue](MultilingualValue.md) |
+| Domain Of | [GroupReference](GroupReference.md) |
+| Slot URI | [mcm:abbreviation](https://ld.ech.ch/schema/0292/meta-common/abbreviation) |
 
 ### Cardinality and Requirements
 
 | Property | Value |
 | --- | --- |
+| Multivalued | Yes |
 
 
 
@@ -53,6 +61,14 @@ URI: [ops:abbreviation](https://ch.paf.link/schema/operations/abbreviation)
 
 ## Identifier and Mapping Information
 
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Abkürzung (kann mehrsprachig sein).
+ |
 
 
 
@@ -69,7 +85,7 @@ URI: [ops:abbreviation](https://ch.paf.link/schema/operations/abbreviation)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ops:abbreviation |
+| self | mcm:abbreviation |
 | native | ops:abbreviation |
 
 
@@ -80,12 +96,24 @@ URI: [ops:abbreviation](https://ch.paf.link/schema/operations/abbreviation)
 <details>
 ```yaml
 name: abbreviation
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Abkürzung (kann mehrsprachig sein).
+
+      '
+description: 'Abbreviation (can be multilingual).
+
+  '
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
+slot_uri: mcm:abbreviation
 domain_of:
-- Session
-- Meeting
-range: string
+- GroupReference
+range: MultilingualValue
+multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details></div>

@@ -35,6 +35,15 @@ URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
       
       IndividualVote : actor_id
         
+          
+    
+        
+        
+        IndividualVote --> "0..1" PersonReference : actor_id
+        click PersonReference href "../PersonReference/"
+    
+
+        
       IndividualVote : date_created
         
       IndividualVote : date_modified
@@ -93,7 +102,7 @@ URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [parent_voting](parent_voting.md) | 0..1 <br/> [Voting](Voting.md) | [en] The ID of the voting associated with the individual vote | direct |
-| [actor_id](actor_id.md) | 0..1 <br/> [String](String.md) | [en] The political body organized by the term of office (e | direct |
+| [actor_id](actor_id.md) | 0..1 <br/> [PersonReference](PersonReference.md) | [en] Reference to the acting person (lightweight snapshot at time of linking) | direct |
 | [seat_nr](seat_nr.md) | 0..1 <br/> [String](String.md) | [en] The seat number of the individual vote, if applicable | direct |
 | [weight](weight.md) | 0..1 <br/> [Integer](Integer.md) | [en] The number of votes held by the individual, if applicable (e | direct |
 | [individual_vote_type](individual_vote_type.md) | 0..1 <br/> [IndividualVoteTypeEnum](IndividualVoteTypeEnum.md) | [en] Type of vote cast (yes, no, abstention, no vote, etc | direct |
@@ -213,11 +222,11 @@ attributes:
     range: Voting
   actor_id:
     name: actor_id
-    description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
-      Nationalrat, Ständerat).
+    description: '[en] Reference to the acting person (lightweight snapshot at time
+      of linking).
 
-      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
-      Nationalrat, Ständerat).
+      [de] Referenz auf die handelnde Person (leichtgewichtiger Snapshot zum Zeitpunkt
+      der Verknüpfung).
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -232,7 +241,8 @@ attributes:
     - Attendance
     - IndividualAttendance
     - Speech
-    range: string
+    range: PersonReference
+    inlined: true
   seat_nr:
     name: seat_nr
     description: '[en] The seat number of the individual vote, if applicable.

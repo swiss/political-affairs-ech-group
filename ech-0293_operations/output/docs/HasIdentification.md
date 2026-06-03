@@ -58,6 +58,10 @@ URI: [ops:HasIdentification](https://ch.paf.link/schema/operations/HasIdentifica
         click Media href "../Media/"
       HasIdentification <|-- IsProcessStep
         click IsProcessStep href "../IsProcessStep/"
+      HasIdentification <|-- PersonReference
+        click PersonReference href "../PersonReference/"
+      HasIdentification <|-- GroupReference
+        click GroupReference href "../GroupReference/"
       
       HasIdentification : global_uri
         
@@ -110,6 +114,8 @@ URI: [ops:HasIdentification](https://ch.paf.link/schema/operations/HasIdentifica
 | [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |
 | [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |
 | [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |
+| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |
+| [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |
 
 
 

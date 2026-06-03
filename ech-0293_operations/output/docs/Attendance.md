@@ -35,6 +35,15 @@ URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
       
       Attendance : actor_id
         
+          
+    
+        
+        
+        Attendance --> "0..1" GroupReference : actor_id
+        click GroupReference href "../GroupReference/"
+    
+
+        
       Attendance : date_created
         
       Attendance : date_modified
@@ -78,7 +87,7 @@ URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
 | ---  | --- | --- | --- |
 | [parent_meeting](parent_meeting.md) | 0..1 <br/> [String](String.md) | [en] The linked meeting ID that groups the current meeting | direct |
 | [datetime_begin](datetime_begin.md) | 0..1 <br/> [Datetime](Datetime.md) | [en] The date and time when the meeting or voting begins | direct |
-| [actor_id](actor_id.md) | 0..1 <br/> [String](String.md) | [en] The political body organized by the term of office (e | direct |
+| [actor_id](actor_id.md) | 0..1 <br/> [GroupReference](GroupReference.md) | [en] Reference to the acting body/organ (lightweight snapshot at time of link... | direct |
 | [total_count](total_count.md) | 0..1 <br/> [Integer](Integer.md) | [en] Total number of members of the body (reference value for quorum calculat... | direct |
 | [total_present](total_present.md) | 0..1 <br/> [Integer](Integer.md) | Total number of members present | direct |
 | [total_absent](total_absent.md) | 0..1 <br/> [Integer](Integer.md) | [en] Total number of absent members | direct |
@@ -167,6 +176,18 @@ slots:
 - total_present
 - total_absent
 - total_excused
+slot_usage:
+  actor_id:
+    name: actor_id
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
+
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
+
+      '
+    range: GroupReference
+    inlined: true
 
 ```
 </details>
@@ -187,6 +208,18 @@ from_schema: https://ch.paf.link/schema/operations
 mixins:
 - HasIdentification
 - HasCreationModificationDates
+slot_usage:
+  actor_id:
+    name: actor_id
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
+
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
+
+      '
+    range: GroupReference
+    inlined: true
 attributes:
   parent_meeting:
     name: parent_meeting
@@ -224,11 +257,11 @@ attributes:
     range: datetime
   actor_id:
     name: actor_id
-    description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
-      Nationalrat, Ständerat).
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
 
-      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
-      Nationalrat, Ständerat).
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -243,7 +276,8 @@ attributes:
     - Attendance
     - IndividualAttendance
     - Speech
-    range: string
+    range: GroupReference
+    inlined: true
   total_count:
     name: total_count
     description: '[en] Total number of members of the body (reference value for quorum

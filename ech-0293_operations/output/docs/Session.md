@@ -35,8 +35,6 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
       HasCreationModificationDates <|-- Session
         click HasCreationModificationDates href "../HasCreationModificationDates/"
       
-      Session : abbreviation
-        
       Session : body_key
         
       Session : date_begin_actual
@@ -77,6 +75,8 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
       Session : global_uri
         
       Session : local_id
+        
+      Session : meeting_abbreviation
         
       Session : meetings
         
@@ -141,7 +141,7 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
 | [number](number.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [sequential_number](sequential_number.md) | 0..1 <br/> [Integer](Integer.md) | [en] Sequential number of the meeting, used for ordering | direct |
 | [position](position.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [abbreviation](abbreviation.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [meeting_abbreviation](meeting_abbreviation.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [url](url.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
 | [parent_legislature](parent_legislature.md) | 0..1 <br/> [String](String.md) | [en] The legislative body in which the meeting is based | direct |
 | [meetings](meetings.md) | * <br/> [Meeting](Meeting.md) |  | direct |
@@ -236,7 +236,7 @@ slots:
 - number
 - sequential_number
 - position
-- abbreviation
+- meeting_abbreviation
 - url
 - parent_legislature
 - meetings
@@ -324,8 +324,8 @@ attributes:
     - Session
     - Meeting
     range: string
-  abbreviation:
-    name: abbreviation
+  meeting_abbreviation:
+    name: meeting_abbreviation
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     owner: Session

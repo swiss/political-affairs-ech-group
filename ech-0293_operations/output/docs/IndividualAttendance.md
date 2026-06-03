@@ -35,6 +35,15 @@ URI: [ops:IndividualAttendance](https://ch.paf.link/schema/operations/Individual
       
       IndividualAttendance : actor_id
         
+          
+    
+        
+        
+        IndividualAttendance --> "0..1" PersonReference : actor_id
+        click PersonReference href "../PersonReference/"
+    
+
+        
       IndividualAttendance : attendance_type
         
           
@@ -98,7 +107,7 @@ URI: [ops:IndividualAttendance](https://ch.paf.link/schema/operations/Individual
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [parent_attendance](parent_attendance.md) | 0..1 <br/> [Attendance](Attendance.md) | [en] The Attendance aggregate this individual attendance record belongs to | direct |
-| [actor_id](actor_id.md) | 0..1 <br/> [String](String.md) | [en] The political body organized by the term of office (e | direct |
+| [actor_id](actor_id.md) | 0..1 <br/> [PersonReference](PersonReference.md) | [en] Reference to the acting person (lightweight snapshot at time of linking) | direct |
 | [attendance_type](attendance_type.md) | 0..1 <br/> [AttendanceTypeEnum](AttendanceTypeEnum.md) | Type of individual attendance | direct |
 | [reason](reason.md) | * <br/> [MultilingualString](MultilingualString.md) | [en] Reason for absence or lateness (free-text, multilingual) | direct |
 | [local_id](local_id.md) | 0..1 <br/> [String](String.md) | Local identifier | [HasIdentification](HasIdentification.md) |
@@ -219,11 +228,11 @@ attributes:
     range: Attendance
   actor_id:
     name: actor_id
-    description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
-      Nationalrat, Ständerat).
+    description: '[en] Reference to the acting person (lightweight snapshot at time
+      of linking).
 
-      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
-      Nationalrat, Ständerat).
+      [de] Referenz auf die handelnde Person (leichtgewichtiger Snapshot zum Zeitpunkt
+      der Verknüpfung).
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -238,7 +247,8 @@ attributes:
     - Attendance
     - IndividualAttendance
     - Speech
-    range: string
+    range: PersonReference
+    inlined: true
   attendance_type:
     name: attendance_type
     description: Type of individual attendance

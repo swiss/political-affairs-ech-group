@@ -153,6 +153,15 @@ URI: [ops:Legislature](https://ch.paf.link/schema/operations/Legislature)
       
       Legislature : actor_id
         
+          
+    
+        
+        
+        Legislature --> "0..1" GroupReference : actor_id
+        click GroupReference href "../GroupReference/"
+    
+
+        
       Legislature : administrative_id
         
       Legislature : date_begin_actual
@@ -230,7 +239,7 @@ URI: [ops:Legislature](https://ch.paf.link/schema/operations/Legislature)
 | [name](#name) | * <br/> [MultilingualString](#MultilingualString) |  | direct |
 | [description](#description) | 0..1 <br/> [String](#String) |  | direct |
 | [landing_page](#landing_page) | 0..1 <br/> [String](#String) | [en] URL providing further information | direct |
-| [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
+| [actor_id](#actor_id) | 0..1 <br/> [GroupReference](#GroupReference) | [en] Reference to the acting body/organ (lightweight snapshot at time of link... | direct |
 | [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
 | [local_id](#local_id) | 0..1 <br/> [String](#String) | Local identifier | [HasIdentification](#HasIdentification) |
 | [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity | [HasIdentification](#HasIdentification) |
@@ -323,6 +332,18 @@ slots:
 - landing_page
 - actor_id
 - documents
+slot_usage:
+  actor_id:
+    name: actor_id
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
+
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
+
+      '
+    range: GroupReference
+    inlined: true
 
 ```
 </details>
@@ -344,6 +365,18 @@ mixins:
 - HasIdentification
 - IsEventWithDuration
 - HasCreationModificationDates
+slot_usage:
+  actor_id:
+    name: actor_id
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
+
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
+
+      '
+    range: GroupReference
+    inlined: true
 attributes:
   administrative_id:
     name: administrative_id
@@ -406,11 +439,11 @@ attributes:
     range: string
   actor_id:
     name: actor_id
-    description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
-      Nationalrat, Ständerat).
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
 
-      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
-      Nationalrat, Ständerat).
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -425,7 +458,8 @@ attributes:
     - Attendance
     - IndividualAttendance
     - Speech
-    range: string
+    range: GroupReference
+    inlined: true
   documents:
     name: documents
     description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
@@ -843,8 +877,6 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
       HasCreationModificationDates <|-- Session
         click HasCreationModificationDates href "../HasCreationModificationDates/"
       
-      Session : abbreviation
-        
       Session : body_key
         
       Session : date_begin_actual
@@ -885,6 +917,8 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
       Session : global_uri
         
       Session : local_id
+        
+      Session : meeting_abbreviation
         
       Session : meetings
         
@@ -949,7 +983,7 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
 | [number](#number) | 0..1 <br/> [String](#String) |  | direct |
 | [sequential_number](#sequential_number) | 0..1 <br/> [Integer](#Integer) | [en] Sequential number of the meeting, used for ordering | direct |
 | [position](#position) | 0..1 <br/> [String](#String) |  | direct |
-| [abbreviation](#abbreviation) | 0..1 <br/> [String](#String) |  | direct |
+| [meeting_abbreviation](#meeting_abbreviation) | 0..1 <br/> [String](#String) |  | direct |
 | [url](#url) | * <br/> [MultilingualString](#MultilingualString) |  | direct |
 | [parent_legislature](#parent_legislature) | 0..1 <br/> [String](#String) | [en] The legislative body in which the meeting is based | direct |
 | [meetings](#meetings) | * <br/> [Meeting](#Meeting) |  | direct |
@@ -1044,7 +1078,7 @@ slots:
 - number
 - sequential_number
 - position
-- abbreviation
+- meeting_abbreviation
 - url
 - parent_legislature
 - meetings
@@ -1132,8 +1166,8 @@ attributes:
     - Session
     - Meeting
     range: string
-  abbreviation:
-    name: abbreviation
+  meeting_abbreviation:
+    name: meeting_abbreviation
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     owner: Session
@@ -1662,9 +1696,16 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
       HasCreationModificationDates <|-- Meeting
         click HasCreationModificationDates href "../HasCreationModificationDates/"
       
-      Meeting : abbreviation
-        
       Meeting : actor_id
+        
+          
+    
+        
+        
+        Meeting --> "0..1" GroupReference : actor_id
+        click GroupReference href "../GroupReference/"
+    
+
         
       Meeting : actor_name
         
@@ -1713,6 +1754,15 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
         
       Meeting : group_id
         
+          
+    
+        
+        
+        Meeting --> "0..1" GroupReference : group_id
+        click GroupReference href "../GroupReference/"
+    
+
+        
       Meeting : group_name
         
       Meeting : landing_page
@@ -1720,6 +1770,8 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
       Meeting : local_id
         
       Meeting : location
+        
+      Meeting : meeting_abbreviation
         
       Meeting : meeting_type
         
@@ -1811,14 +1863,14 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 | [name](#name) | * <br/> [MultilingualString](#MultilingualString) |  | direct |
 | [url](#url) | * <br/> [MultilingualString](#MultilingualString) |  | direct |
 | [group_name](#group_name) | 0..1 <br/> [String](#String) | Name of the group or body | direct |
-| [group_id](#group_id) | 0..1 <br/> [String](#String) | Identifier of the group or body | direct |
+| [group_id](#group_id) | 0..1 <br/> [GroupReference](#GroupReference) | [en] Reference to the group or body (lightweight snapshot at time of linking) | direct |
 | [number](#number) | 0..1 <br/> [String](#String) |  | direct |
 | [landing_page](#landing_page) | 0..1 <br/> [String](#String) | [en] URL providing further information | direct |
 | [sequential_number](#sequential_number) | 0..1 <br/> [Integer](#Integer) | [en] Sequential number of the meeting, used for ordering | direct |
 | [position](#position) | 0..1 <br/> [String](#String) |  | direct |
-| [abbreviation](#abbreviation) | 0..1 <br/> [String](#String) |  | direct |
+| [meeting_abbreviation](#meeting_abbreviation) | 0..1 <br/> [String](#String) |  | direct |
 | [actor_name](#actor_name) | 0..1 <br/> [String](#String) | [en] Name of the political body (e | direct |
-| [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
+| [actor_id](#actor_id) | 0..1 <br/> [GroupReference](#GroupReference) | [en] Reference to the acting body/organ (lightweight snapshot at time of link... | direct |
 | [state](#state) | 0..1 <br/> [StateEnum](#StateEnum) |  | direct |
 | [state_name](#state_name) | 0..1 <br/> [String](#String) | [en] Custom state description for the meeting | direct |
 | [description](#description) | 0..1 <br/> [String](#String) |  | direct |
@@ -1924,7 +1976,7 @@ slots:
 - landing_page
 - sequential_number
 - position
-- abbreviation
+- meeting_abbreviation
 - actor_name
 - actor_id
 - state
@@ -1935,6 +1987,18 @@ slots:
 - parent_legislature
 - documents
 - protocol
+slot_usage:
+  actor_id:
+    name: actor_id
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
+
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
+
+      '
+    range: GroupReference
+    inlined: true
 
 ```
 </details>
@@ -1956,6 +2020,18 @@ mixins:
 - HasIdentification
 - IsEventWithDuration
 - HasCreationModificationDates
+slot_usage:
+  actor_id:
+    name: actor_id
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
+
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
+
+      '
+    range: GroupReference
+    inlined: true
 attributes:
   body_key:
     name: body_key
@@ -2038,13 +2114,20 @@ attributes:
     range: string
   group_id:
     name: group_id
-    description: Identifier of the group or body
+    description: '[en] Reference to the group or body (lightweight snapshot at time
+      of linking).
+
+      [de] Referenz auf die Gruppe oder das Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     owner: Meeting
     domain_of:
     - Meeting
-    range: string
+    range: GroupReference
+    inlined: true
   number:
     name: number
     from_schema: https://ch.paf.link/schema/operations
@@ -2096,8 +2179,8 @@ attributes:
     - Session
     - Meeting
     range: string
-  abbreviation:
-    name: abbreviation
+  meeting_abbreviation:
+    name: meeting_abbreviation
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     owner: Meeting
@@ -2120,11 +2203,11 @@ attributes:
     range: string
   actor_id:
     name: actor_id
-    description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
-      Nationalrat, Ständerat).
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
 
-      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
-      Nationalrat, Ständerat).
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2139,7 +2222,8 @@ attributes:
     - Attendance
     - IndividualAttendance
     - Speech
-    range: string
+    range: GroupReference
+    inlined: true
   state:
     name: state
     from_schema: https://ch.paf.link/schema/operations
@@ -2688,6 +2772,15 @@ URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
       
       Attendance : actor_id
         
+          
+    
+        
+        
+        Attendance --> "0..1" GroupReference : actor_id
+        click GroupReference href "../GroupReference/"
+    
+
+        
       Attendance : date_created
         
       Attendance : date_modified
@@ -2731,7 +2824,7 @@ URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
 | ---  | --- | --- | --- |
 | [parent_meeting](#parent_meeting) | 0..1 <br/> [String](#String) | [en] The linked meeting ID that groups the current meeting | direct |
 | [datetime_begin](#datetime_begin) | 0..1 <br/> [Datetime](#Datetime) | [en] The date and time when the meeting or voting begins | direct |
-| [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
+| [actor_id](#actor_id) | 0..1 <br/> [GroupReference](#GroupReference) | [en] Reference to the acting body/organ (lightweight snapshot at time of link... | direct |
 | [total_count](#total_count) | 0..1 <br/> [Integer](#Integer) | [en] Total number of members of the body (reference value for quorum calculat... | direct |
 | [total_present](#total_present) | 0..1 <br/> [Integer](#Integer) | Total number of members present | direct |
 | [total_absent](#total_absent) | 0..1 <br/> [Integer](#Integer) | [en] Total number of absent members | direct |
@@ -2820,6 +2913,18 @@ slots:
 - total_present
 - total_absent
 - total_excused
+slot_usage:
+  actor_id:
+    name: actor_id
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
+
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
+
+      '
+    range: GroupReference
+    inlined: true
 
 ```
 </details>
@@ -2840,6 +2945,18 @@ from_schema: https://ch.paf.link/schema/operations
 mixins:
 - HasIdentification
 - HasCreationModificationDates
+slot_usage:
+  actor_id:
+    name: actor_id
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
+
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
+
+      '
+    range: GroupReference
+    inlined: true
 attributes:
   parent_meeting:
     name: parent_meeting
@@ -2877,11 +2994,11 @@ attributes:
     range: datetime
   actor_id:
     name: actor_id
-    description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
-      Nationalrat, Ständerat).
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
 
-      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
-      Nationalrat, Ständerat).
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -2896,7 +3013,8 @@ attributes:
     - Attendance
     - IndividualAttendance
     - Speech
-    range: string
+    range: GroupReference
+    inlined: true
   total_count:
     name: total_count
     description: '[en] Total number of members of the body (reference value for quorum
@@ -3118,6 +3236,15 @@ URI: [ops:IndividualAttendance](https://ch.paf.link/schema/operations/Individual
       
       IndividualAttendance : actor_id
         
+          
+    
+        
+        
+        IndividualAttendance --> "0..1" PersonReference : actor_id
+        click PersonReference href "../PersonReference/"
+    
+
+        
       IndividualAttendance : attendance_type
         
           
@@ -3181,7 +3308,7 @@ URI: [ops:IndividualAttendance](https://ch.paf.link/schema/operations/Individual
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [parent_attendance](#parent_attendance) | 0..1 <br/> [Attendance](#Attendance) | [en] The Attendance aggregate this individual attendance record belongs to | direct |
-| [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
+| [actor_id](#actor_id) | 0..1 <br/> [PersonReference](#PersonReference) | [en] Reference to the acting person (lightweight snapshot at time of linking) | direct |
 | [attendance_type](#attendance_type) | 0..1 <br/> [AttendanceTypeEnum](#AttendanceTypeEnum) | Type of individual attendance | direct |
 | [reason](#reason) | * <br/> [MultilingualString](#MultilingualString) | [en] Reason for absence or lateness (free-text, multilingual) | direct |
 | [local_id](#local_id) | 0..1 <br/> [String](#String) | Local identifier | [HasIdentification](#HasIdentification) |
@@ -3302,11 +3429,11 @@ attributes:
     range: Attendance
   actor_id:
     name: actor_id
-    description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
-      Nationalrat, Ständerat).
+    description: '[en] Reference to the acting person (lightweight snapshot at time
+      of linking).
 
-      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
-      Nationalrat, Ständerat).
+      [de] Referenz auf die handelnde Person (leichtgewichtiger Snapshot zum Zeitpunkt
+      der Verknüpfung).
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -3321,7 +3448,8 @@ attributes:
     - Attendance
     - IndividualAttendance
     - Speech
-    range: string
+    range: PersonReference
+    inlined: true
   attendance_type:
     name: attendance_type
     description: Type of individual attendance
@@ -5446,6 +5574,15 @@ URI: [ops:Voting](https://ch.paf.link/schema/operations/Voting)
       
       Voting : actor_id
         
+          
+    
+        
+        
+        Voting --> "0..1" GroupReference : actor_id
+        click GroupReference href "../GroupReference/"
+    
+
+        
       Voting : affair_id
         
       Voting : date_created
@@ -5591,7 +5728,7 @@ URI: [ops:Voting](https://ch.paf.link/schema/operations/Voting)
 | [parent_meeting](#parent_meeting) | 0..1 <br/> [String](#String) | [en] The linked meeting ID that groups the current meeting | direct |
 | [parent_agenda_item](#parent_agenda_item) | 0..1 <br/> [String](#String) | [en] If needed, this slot builds a hierarchy of agenda items | direct |
 | [affair_id](#affair_id) | 0..1 <br/> [String](#String) | [en] The connection to the affairs (business items) of the agenda item | direct |
-| [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
+| [actor_id](#actor_id) | 0..1 <br/> [GroupReference](#GroupReference) | [en] Reference to the acting body/organ (lightweight snapshot at time of link... | direct |
 | [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
 | [local_id](#local_id) | 0..1 <br/> [String](#String) | Local identifier | [HasIdentification](#HasIdentification) |
 | [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity | [HasIdentification](#HasIdentification) |
@@ -5694,6 +5831,18 @@ slots:
 - affair_id
 - actor_id
 - documents
+slot_usage:
+  actor_id:
+    name: actor_id
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
+
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
+
+      '
+    range: GroupReference
+    inlined: true
 
 ```
 </details>
@@ -5712,6 +5861,18 @@ from_schema: https://ch.paf.link/schema/operations
 mixins:
 - HasIdentification
 - HasCreationModificationDates
+slot_usage:
+  actor_id:
+    name: actor_id
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
+
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
+
+      '
+    range: GroupReference
+    inlined: true
 attributes:
   datetime_begin:
     name: datetime_begin
@@ -6062,11 +6223,11 @@ attributes:
     range: string
   actor_id:
     name: actor_id
-    description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
-      Nationalrat, Ständerat).
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
 
-      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
-      Nationalrat, Ständerat).
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -6081,7 +6242,8 @@ attributes:
     - Attendance
     - IndividualAttendance
     - Speech
-    range: string
+    range: GroupReference
+    inlined: true
   documents:
     name: documents
     description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
@@ -6393,6 +6555,15 @@ URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
       
       IndividualVote : actor_id
         
+          
+    
+        
+        
+        IndividualVote --> "0..1" PersonReference : actor_id
+        click PersonReference href "../PersonReference/"
+    
+
+        
       IndividualVote : date_created
         
       IndividualVote : date_modified
@@ -6451,7 +6622,7 @@ URI: [ops:IndividualVote](https://ch.paf.link/schema/operations/IndividualVote)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [parent_voting](#parent_voting) | 0..1 <br/> [Voting](#Voting) | [en] The ID of the voting associated with the individual vote | direct |
-| [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
+| [actor_id](#actor_id) | 0..1 <br/> [PersonReference](#PersonReference) | [en] Reference to the acting person (lightweight snapshot at time of linking) | direct |
 | [seat_nr](#seat_nr) | 0..1 <br/> [String](#String) | [en] The seat number of the individual vote, if applicable | direct |
 | [weight](#weight) | 0..1 <br/> [Integer](#Integer) | [en] The number of votes held by the individual, if applicable (e | direct |
 | [individual_vote_type](#individual_vote_type) | 0..1 <br/> [IndividualVoteTypeEnum](#IndividualVoteTypeEnum) | [en] Type of vote cast (yes, no, abstention, no vote, etc | direct |
@@ -6571,11 +6742,11 @@ attributes:
     range: Voting
   actor_id:
     name: actor_id
-    description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
-      Nationalrat, Ständerat).
+    description: '[en] Reference to the acting person (lightweight snapshot at time
+      of linking).
 
-      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
-      Nationalrat, Ständerat).
+      [de] Referenz auf die handelnde Person (leichtgewichtiger Snapshot zum Zeitpunkt
+      der Verknüpfung).
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -6590,7 +6761,8 @@ attributes:
     - Attendance
     - IndividualAttendance
     - Speech
-    range: string
+    range: PersonReference
+    inlined: true
   seat_nr:
     name: seat_nr
     description: '[en] The seat number of the individual vote, if applicable.
@@ -7039,6 +7211,15 @@ URI: [ops:Election](https://ch.paf.link/schema/operations/Election)
       
       Election : actor_id
         
+          
+    
+        
+        
+        Election --> "0..1" GroupReference : actor_id
+        click GroupReference href "../GroupReference/"
+    
+
+        
       Election : affair_id
         
       Election : date_created
@@ -7139,7 +7320,7 @@ URI: [ops:Election](https://ch.paf.link/schema/operations/Election)
 | [parent_meeting](#parent_meeting) | 0..1 <br/> [String](#String) | [en] The linked meeting ID that groups the current meeting | direct |
 | [parent_agenda_item](#parent_agenda_item) | 0..1 <br/> [String](#String) | [en] If needed, this slot builds a hierarchy of agenda items | direct |
 | [affair_id](#affair_id) | 0..1 <br/> [String](#String) | [en] The connection to the affairs (business items) of the agenda item | direct |
-| [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
+| [actor_id](#actor_id) | 0..1 <br/> [GroupReference](#GroupReference) | [en] Reference to the acting body/organ (lightweight snapshot at time of link... | direct |
 | [documents](#documents) | * <br/> [Work](#Work) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
 | [local_id](#local_id) | 0..1 <br/> [String](#String) | Local identifier | [HasIdentification](#HasIdentification) |
 | [global_uri](#global_uri) | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity | [HasIdentification](#HasIdentification) |
@@ -7231,6 +7412,18 @@ slots:
 - affair_id
 - actor_id
 - documents
+slot_usage:
+  actor_id:
+    name: actor_id
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
+
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
+
+      '
+    range: GroupReference
+    inlined: true
 
 ```
 </details>
@@ -7249,6 +7442,18 @@ from_schema: https://ch.paf.link/schema/operations
 mixins:
 - HasIdentification
 - HasCreationModificationDates
+slot_usage:
+  actor_id:
+    name: actor_id
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
+
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
+
+      '
+    range: GroupReference
+    inlined: true
 attributes:
   datetime_begin:
     name: datetime_begin
@@ -7466,11 +7671,11 @@ attributes:
     range: string
   actor_id:
     name: actor_id
-    description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
-      Nationalrat, Ständerat).
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
 
-      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
-      Nationalrat, Ständerat).
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -7485,7 +7690,8 @@ attributes:
     - Attendance
     - IndividualAttendance
     - Speech
-    range: string
+    range: GroupReference
+    inlined: true
   documents:
     name: documents
     description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
@@ -7833,6 +8039,15 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
         
       Speech : actor_id
         
+          
+    
+        
+        
+        Speech --> "0..1" PersonReference : actor_id
+        click PersonReference href "../PersonReference/"
+    
+
+        
       Speech : date_created
         
       Speech : date_modified
@@ -7902,7 +8117,7 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
 | [datetime_begin](#datetime_begin) | 0..1 <br/> [Datetime](#Datetime) | [en] The date and time when the meeting or voting begins | direct |
 | [datetime_end](#datetime_end) | 0..1 <br/> [Datetime](#Datetime) | [en] The date and time when the meeting or voting ends | direct |
 | [actor_fullname](#actor_fullname) | 0..1 <br/> [String](#String) | Full name of the actor/person | direct |
-| [actor_id](#actor_id) | 0..1 <br/> [String](#String) | [en] The political body organized by the term of office (e | direct |
+| [actor_id](#actor_id) | 0..1 <br/> [PersonReference](#PersonReference) | [en] Reference to the acting person (lightweight snapshot at time of linking) | direct |
 | [role](#role) | 0..1 <br/> [String](#String) | Role of the person (e | direct |
 | [text](#text) | 1 <br/> [String](#String) |  | direct |
 | [text_format](#text_format) | 0..1 <br/> [String](#String) | [en] Format of text (text, html, html_with_timestamps) | direct |
@@ -8098,11 +8313,11 @@ attributes:
     range: string
   actor_id:
     name: actor_id
-    description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
-      Nationalrat, Ständerat).
+    description: '[en] Reference to the acting person (lightweight snapshot at time
+      of linking).
 
-      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
-      Nationalrat, Ständerat).
+      [de] Referenz auf die handelnde Person (leichtgewichtiger Snapshot zum Zeitpunkt
+      der Verknüpfung).
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -8117,7 +8332,8 @@ attributes:
     - Attendance
     - IndividualAttendance
     - Speech
-    range: string
+    range: PersonReference
+    inlined: true
   role:
     name: role
     description: Role of the person (e.g., commission speaker)

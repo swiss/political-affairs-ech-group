@@ -35,9 +35,16 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
       HasCreationModificationDates <|-- Meeting
         click HasCreationModificationDates href "../HasCreationModificationDates/"
       
-      Meeting : abbreviation
-        
       Meeting : actor_id
+        
+          
+    
+        
+        
+        Meeting --> "0..1" GroupReference : actor_id
+        click GroupReference href "../GroupReference/"
+    
+
         
       Meeting : actor_name
         
@@ -86,6 +93,15 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
         
       Meeting : group_id
         
+          
+    
+        
+        
+        Meeting --> "0..1" GroupReference : group_id
+        click GroupReference href "../GroupReference/"
+    
+
+        
       Meeting : group_name
         
       Meeting : landing_page
@@ -93,6 +109,8 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
       Meeting : local_id
         
       Meeting : location
+        
+      Meeting : meeting_abbreviation
         
       Meeting : meeting_type
         
@@ -184,14 +202,14 @@ URI: [ops:Meeting](https://ch.paf.link/schema/operations/Meeting)
 | [name](name.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
 | [url](url.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
 | [group_name](group_name.md) | 0..1 <br/> [String](String.md) | Name of the group or body | direct |
-| [group_id](group_id.md) | 0..1 <br/> [String](String.md) | Identifier of the group or body | direct |
+| [group_id](group_id.md) | 0..1 <br/> [GroupReference](GroupReference.md) | [en] Reference to the group or body (lightweight snapshot at time of linking) | direct |
 | [number](number.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [landing_page](landing_page.md) | 0..1 <br/> [String](String.md) | [en] URL providing further information | direct |
 | [sequential_number](sequential_number.md) | 0..1 <br/> [Integer](Integer.md) | [en] Sequential number of the meeting, used for ordering | direct |
 | [position](position.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [abbreviation](abbreviation.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [meeting_abbreviation](meeting_abbreviation.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [actor_name](actor_name.md) | 0..1 <br/> [String](String.md) | [en] Name of the political body (e | direct |
-| [actor_id](actor_id.md) | 0..1 <br/> [String](String.md) | [en] The political body organized by the term of office (e | direct |
+| [actor_id](actor_id.md) | 0..1 <br/> [GroupReference](GroupReference.md) | [en] Reference to the acting body/organ (lightweight snapshot at time of link... | direct |
 | [state](state.md) | 0..1 <br/> [StateEnum](StateEnum.md) |  | direct |
 | [state_name](state_name.md) | 0..1 <br/> [String](String.md) | [en] Custom state description for the meeting | direct |
 | [description](description.md) | 0..1 <br/> [String](String.md) |  | direct |
@@ -297,7 +315,7 @@ slots:
 - landing_page
 - sequential_number
 - position
-- abbreviation
+- meeting_abbreviation
 - actor_name
 - actor_id
 - state
@@ -308,6 +326,18 @@ slots:
 - parent_legislature
 - documents
 - protocol
+slot_usage:
+  actor_id:
+    name: actor_id
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
+
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
+
+      '
+    range: GroupReference
+    inlined: true
 
 ```
 </details>
@@ -329,6 +359,18 @@ mixins:
 - HasIdentification
 - IsEventWithDuration
 - HasCreationModificationDates
+slot_usage:
+  actor_id:
+    name: actor_id
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
+
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
+
+      '
+    range: GroupReference
+    inlined: true
 attributes:
   body_key:
     name: body_key
@@ -411,13 +453,20 @@ attributes:
     range: string
   group_id:
     name: group_id
-    description: Identifier of the group or body
+    description: '[en] Reference to the group or body (lightweight snapshot at time
+      of linking).
+
+      [de] Referenz auf die Gruppe oder das Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
+
+      '
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     owner: Meeting
     domain_of:
     - Meeting
-    range: string
+    range: GroupReference
+    inlined: true
   number:
     name: number
     from_schema: https://ch.paf.link/schema/operations
@@ -469,8 +518,8 @@ attributes:
     - Session
     - Meeting
     range: string
-  abbreviation:
-    name: abbreviation
+  meeting_abbreviation:
+    name: meeting_abbreviation
     from_schema: https://ch.paf.link/schema/operations
     rank: 1000
     owner: Meeting
@@ -493,11 +542,11 @@ attributes:
     range: string
   actor_id:
     name: actor_id
-    description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
-      Nationalrat, Ständerat).
+    description: '[en] Reference to the acting body/organ (lightweight snapshot at
+      time of linking).
 
-      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
-      Nationalrat, Ständerat).
+      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
+      Zeitpunkt der Verknüpfung).
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -512,7 +561,8 @@ attributes:
     - Attendance
     - IndividualAttendance
     - Speech
-    range: string
+    range: GroupReference
+    inlined: true
   state:
     name: state
     from_schema: https://ch.paf.link/schema/operations

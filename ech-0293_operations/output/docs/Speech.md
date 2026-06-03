@@ -37,6 +37,15 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
         
       Speech : actor_id
         
+          
+    
+        
+        
+        Speech --> "0..1" PersonReference : actor_id
+        click PersonReference href "../PersonReference/"
+    
+
+        
       Speech : date_created
         
       Speech : date_modified
@@ -106,7 +115,7 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
 | [datetime_begin](datetime_begin.md) | 0..1 <br/> [Datetime](Datetime.md) | [en] The date and time when the meeting or voting begins | direct |
 | [datetime_end](datetime_end.md) | 0..1 <br/> [Datetime](Datetime.md) | [en] The date and time when the meeting or voting ends | direct |
 | [actor_fullname](actor_fullname.md) | 0..1 <br/> [String](String.md) | Full name of the actor/person | direct |
-| [actor_id](actor_id.md) | 0..1 <br/> [String](String.md) | [en] The political body organized by the term of office (e | direct |
+| [actor_id](actor_id.md) | 0..1 <br/> [PersonReference](PersonReference.md) | [en] Reference to the acting person (lightweight snapshot at time of linking) | direct |
 | [role](role.md) | 0..1 <br/> [String](String.md) | Role of the person (e | direct |
 | [text](text.md) | 1 <br/> [String](String.md) |  | direct |
 | [text_format](text_format.md) | 0..1 <br/> [String](String.md) | [en] Format of text (text, html, html_with_timestamps) | direct |
@@ -302,11 +311,11 @@ attributes:
     range: string
   actor_id:
     name: actor_id
-    description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
-      Nationalrat, Ständerat).
+    description: '[en] Reference to the acting person (lightweight snapshot at time
+      of linking).
 
-      [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
-      Nationalrat, Ständerat).
+      [de] Referenz auf die handelnde Person (leichtgewichtiger Snapshot zum Zeitpunkt
+      der Verknüpfung).
 
       '
     from_schema: https://ch.paf.link/schema/operations
@@ -321,7 +330,8 @@ attributes:
     - Attendance
     - IndividualAttendance
     - Speech
-    range: string
+    range: PersonReference
+    inlined: true
   role:
     name: role
     description: Role of the person (e.g., commission speaker)

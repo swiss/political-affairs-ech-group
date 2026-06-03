@@ -6,9 +6,9 @@ search:
 # Slot: actor_id 
 
 
-_[en] The political body organized by the term of office (e.g., Regierungsrat, Nationalrat, Ständerat)._
+_[en] Reference to the acting person (lightweight snapshot at time of linking)._
 
-_[de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat, Nationalrat, Ständerat)._
+_[de] Referenz auf die handelnde Person (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung)._
 
 __
 
@@ -29,12 +29,12 @@ URI: [ops:actor_id](https://ch.paf.link/schema/operations/actor_id)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
-| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
-| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  no  |
+| [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  yes  |
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  yes  |
+| [Voting](Voting.md) | [en] A voting procedure with individual votes and results |  yes  |
 | [IndividualVote](IndividualVote.md) | [en] An individual vote cast by a member during a voting procedure |  no  |
-| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  no  |
-| [Attendance](Attendance.md) | [en] Aggregated attendance record for a meeting (number of members present, a... |  no  |
+| [Election](Election.md) | [en] An election procedure for selecting persons to positions |  yes  |
+| [Attendance](Attendance.md) | [en] Aggregated attendance record for a meeting (number of members present, a... |  yes  |
 | [IndividualAttendance](IndividualAttendance.md) | [en] Individual attendance record for a specific person at a meeting (linked ... |  no  |
 | [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
 
@@ -49,7 +49,7 @@ URI: [ops:actor_id](https://ch.paf.link/schema/operations/actor_id)
 
 | Property | Value |
 | --- | --- |
-| Range | [String](String.md) |
+| Range | [PersonReference](PersonReference.md) |
 | Domain Of | [Legislature](Legislature.md), [Meeting](Meeting.md), [Voting](Voting.md), [IndividualVote](IndividualVote.md), [Election](Election.md), [Attendance](Attendance.md), [IndividualAttendance](IndividualAttendance.md), [Speech](Speech.md) |
 
 ### Cardinality and Requirements
@@ -95,11 +95,11 @@ URI: [ops:actor_id](https://ch.paf.link/schema/operations/actor_id)
 <details>
 ```yaml
 name: actor_id
-description: '[en] The political body organized by the term of office (e.g., Regierungsrat,
-  Nationalrat, Ständerat).
+description: '[en] Reference to the acting person (lightweight snapshot at time of
+  linking).
 
-  [de] Das politische Organ, das durch die Amtsdauer organisiert wird (z.B. Regierungsrat,
-  Nationalrat, Ständerat).
+  [de] Referenz auf die handelnde Person (leichtgewichtiger Snapshot zum Zeitpunkt
+  der Verknüpfung).
 
   '
 from_schema: https://ch.paf.link/schema/operations
@@ -113,7 +113,8 @@ domain_of:
 - Attendance
 - IndividualAttendance
 - Speech
-range: string
+range: PersonReference
+inlined: true
 
 ```
 </details></div>

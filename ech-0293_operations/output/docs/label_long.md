@@ -23,6 +23,15 @@ URI: [mcm:labelLong](https://ld.ech.ch/schema/0292/meta-common/labelLong)
 
 
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |  yes  |
+
+
+
+
 
 
 ## Properties
@@ -32,6 +41,7 @@ URI: [mcm:labelLong](https://ld.ech.ch/schema/0292/meta-common/labelLong)
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
+| Domain Of | [PersonReference](PersonReference.md) |
 | Slot URI | [mcm:labelLong](https://ld.ech.ch/schema/0292/meta-common/labelLong) |
 
 ### Cardinality and Requirements
@@ -99,6 +109,8 @@ description: 'Assign an extended label to a structured piece of information (e.g
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: mcm:labelLong
+domain_of:
+- PersonReference
 range: string
 
 ```

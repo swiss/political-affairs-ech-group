@@ -21,6 +21,7 @@ Name: operations
 | [Date](Date.md) |  |
 | [Election](Election.md) | [en] An election procedure for selecting persons to positions |
 | [Expression](Expression.md) |  |
+| [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |
 | [HasCreationModificationDates](HasCreationModificationDates.md) | A mixin class that provides slots for modeling creation and modification date... |
 | [HasIdentification](HasIdentification.md) | A mixin class that provides slots for the identification of an entity |
 | [HasTemporalValidity](HasTemporalValidity.md) | A mixin class that provides slots for modeling a temporal validity of informa... |
@@ -37,6 +38,7 @@ Name: operations
 | [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |
 | [MultilingualString](MultilingualString.md) | [en] A string that can contain text in multiple languages |
 | [MultilingualValue](MultilingualValue.md) | A multilingual string with language specification |
+| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |
 | [Protocol](Protocol.md) | [en] The minutes of a meeting, recorded after the meeting |
 | [Resolution](Resolution.md) | [en] A resolutionor decision taken on an agenda item, including voting proced... |
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |
@@ -52,9 +54,9 @@ Name: operations
 
 | Slot | Description |
 | --- | --- |
-| [abbreviation](abbreviation.md) |  |
+| [abbreviation](abbreviation.md) | Abbreviation (can be multilingual) |
 | [actor_fullname](actor_fullname.md) | Full name of the actor/person |
-| [actor_id](actor_id.md) | [en] The political body organized by the term of office (e |
+| [actor_id](actor_id.md) | [en] Reference to the acting person (lightweight snapshot at time of linking) |
 | [actor_name](actor_name.md) | [en] Name of the political body (e |
 | [administrative_id](administrative_id.md) | [en] Administrative ID of the legislative body, such as a municipality, canto... |
 | [affair_id](affair_id.md) | [en] The connection to the affairs (business items) of the agenda item |
@@ -99,7 +101,8 @@ Name: operations
 | [expressions](expressions.md) |  |
 | [format](format.md) | [en] The file format of the manifestation (e |
 | [global_uri](global_uri.md) | A unique, globally valid URI for the entity |
-| [group_id](group_id.md) | Identifier of the group or body |
+| [group_id](group_id.md) | [en] Reference to the group or body (lightweight snapshot at time of linking) |
+| [group_label](group_label.md) | Name of the body/group at time of linking |
 | [group_name](group_name.md) | Name of the group or body |
 | [has_resolution](has_resolution.md) | [en] The resolutionor decision taken on this agenda item |
 | [id](id.md) |  |
@@ -124,6 +127,7 @@ Name: operations
 | [media_format](media_format.md) | MIME type of the media file |
 | [media_type](media_type.md) | Type of media (audio, video, document) |
 | [media_url](media_url.md) | URL to media file (audio/video) |
+| [meeting_abbreviation](meeting_abbreviation.md) |  |
 | [meeting_type](meeting_type.md) | Type of the meeting, e |
 | [meetings](meetings.md) |  |
 | [multilingual_value](multilingual_value.md) | A multilingual value with language specification |
