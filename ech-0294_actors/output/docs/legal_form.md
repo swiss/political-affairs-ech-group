@@ -57,15 +57,6 @@ URI: [act:legalForm](https://ld.ech.ch/schema/0294/actors/legalForm)
 
 
 
-## Examples
-
-| Value |
-| --- |
-| 0106 |
-| 0107 |
-| 0109 |
-
-
 
 
 
@@ -83,10 +74,6 @@ annotations:
 description: 'Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm
 
   '
-examples:
-- value: '0106'
-- value: '0107'
-- value: 0109
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:legalForm

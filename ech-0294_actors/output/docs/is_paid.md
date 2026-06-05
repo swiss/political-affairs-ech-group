@@ -58,14 +58,6 @@ URI: [act:isPaid](https://ld.ech.ch/schema/0294/actors/isPaid)
 
 
 
-## Examples
-
-| Value |
-| --- |
-| False |
-| True |
-
-
 
 
 
@@ -83,9 +75,6 @@ annotations:
 description: 'Indicates if the position is paid.
 
   '
-examples:
-- value: 'False'
-- value: 'True'
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:isPaid

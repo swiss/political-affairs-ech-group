@@ -57,14 +57,6 @@ URI: [act:addressType](https://ld.ech.ch/schema/0294/actors/addressType)
 
 
 
-## Examples
-
-| Value |
-| --- |
-| businessAddress |
-| privateAddress |
-
-
 
 
 
@@ -82,9 +74,6 @@ annotations:
 description: 'Type of address.
 
   '
-examples:
-- value: businessAddress
-- value: privateAddress
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:addressType

@@ -57,14 +57,6 @@ URI: [act:postalLocality](https://ld.ech.ch/schema/0294/actors/postalLocality)
 
 
 
-## Examples
-
-| Value |
-| --- |
-| Basel-Stadt |
-| London |
-
-
 
 
 
@@ -82,9 +74,6 @@ annotations:
 description: 'Locality.
 
   '
-examples:
-- value: Basel-Stadt
-- value: London
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:postalLocality
