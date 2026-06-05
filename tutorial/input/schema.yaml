@@ -11,7 +11,7 @@ prefixes:
   tutorial: https://ch.paf.link/schema/tutorial/
 imports:
   - linkml:types
-  - schema_dates
+  - ../../ech-0292_meta/input/schema_common
 default_prefix: tutorial
 default_range: string
   
