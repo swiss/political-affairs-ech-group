@@ -64,6 +64,14 @@ URI: [act:country](https://ld.ech.ch/schema/0294/actors/country)
 
 
 
+## Examples
+
+| Value |
+| --- |
+| CH |
+| GB |
+
+
 
 
 
@@ -81,6 +89,9 @@ annotations:
 description: 'ISO 3166-1 alpha-2 country code.
 
   '
+examples:
+- value: CH
+- value: GB
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:country

@@ -57,6 +57,13 @@ URI: [act:genderCode](https://ld.ech.ch/schema/0294/actors/genderCode)
 
 
 
+## Examples
+
+| Value |
+| --- |
+| male |
+
+
 
 
 
@@ -74,6 +81,8 @@ annotations:
 description: 'Gender code. Recommended values: male, female, diverse.
 
   '
+examples:
+- value: male
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:genderCode

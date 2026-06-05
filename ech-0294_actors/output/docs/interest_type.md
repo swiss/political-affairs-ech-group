@@ -58,6 +58,14 @@ URI: [act:interestType](https://ld.ech.ch/schema/0294/actors/interestType)
 
 
 
+## Examples
+
+| Value |
+| --- |
+| association |
+| professional_activity |
+
+
 
 
 
@@ -75,6 +83,9 @@ annotations:
 description: 'Type of interest link (professional activity, political office, association).
 
   '
+examples:
+- value: association
+- value: professional_activity
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:interestType

@@ -57,6 +57,14 @@ URI: [act:trainingType](https://ld.ech.ch/schema/0294/actors/trainingType)
 
 
 
+## Examples
+
+| Value |
+| --- |
+| 2421 |
+| 3223 |
+
+
 
 
 
@@ -74,6 +82,9 @@ annotations:
 description: 'Type of training or education.
 
   '
+examples:
+- value: '2421'
+- value: '3223'
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:trainingType
