@@ -1,0 +1,30 @@
+# Configuration for extract_examples.py
+# Controls which classes and slots get examples in the generated documentation.
+#
+# classes:
+#   - Container examples (full data files) are always generated.
+#   - Listed classes get individual instance examples extracted from data_*.yaml.
+#
+# slots:
+#   - Listed slots get example values extracted from data_*.yaml.
+#   - Values are injected into output/schema_enriched.yaml (input schema stays unchanged).
+#   - max_examples_per_slot controls how many distinct values are shown (default: 3).
+
+classes:
+  - Session
+  - AgendaItem
+  - Vote
+
+slots:
+  - id
+  - name
+  - sessions
+  - agenda_items
+  - votes
+  - question
+  - result
+  - text
+  - language
+  - is_part_of
+
+max_examples_per_slot: 3

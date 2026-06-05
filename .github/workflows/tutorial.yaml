@@ -7,6 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
+  
   tutorial:
     runs-on: ubuntu-latest
 
@@ -22,50 +23,47 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Clean output directory
-        run: rm -rf tutorial/output/*
-
-      - name: Convert schema.yaml to schema.json
+      - name: Prepare output directory
         run: |
-          mkdir -p tutorial/output
-          gen-json-schema tutorial/input/schema.yaml > tutorial/output/schema.json
-
-      - name: Convert schema.yaml to schema.ttl
-        run: |
-          mkdir -p tutorial/output
-          gen-owl tutorial/input/schema.yaml > tutorial/output/schema.ttl
-
-      - name: Convert all data_*.yaml to data_*.json
-        run: |
-          mkdir -p tutorial/output
-          for yaml_file in tutorial/input/data_*.yaml; do
-            base_name=$(basename "$yaml_file" .yaml)
-            linkml-convert -s tutorial/input/schema.yaml -t json "$yaml_file" > "tutorial/${base_name}.json"
-          done
-
-      - name: Convert data_*.yaml to data_*.ttl
-        run: |
-          mkdir -p tutorial/output
-          for yaml_file in tutorial/input/data_*.yaml; do
-            base_name=$(basename "$yaml_file" .yaml)
-            linkml-convert -s tutorial/input/schema.yaml -t rdf "$yaml_file" > "tutorial/output/${base_name}.ttl"
-          done
-
-      - name: Generate LinkML documentation
-        run: |
+          rm -rf tutorial/output
           mkdir -p tutorial/output/docs
-          gen-doc tutorial/input/schema.yaml --directory tutorial/output/docs
+
+      - name: Generate LinkML artefacts
+        run: |
+          cd tutorial/input
+          
+          gen-owl --no-use-native-uris schema.yaml > ../output/schema.ttl
+          gen-json-schema schema.yaml > ../output/schema.json
+
+          for yaml_file in data_*.yaml; do
+            base_name=$(basename "$yaml_file" .yaml)
+            linkml-convert -s schema.yaml -t json "$yaml_file" > "../output/${base_name}.json"
+            linkml-convert -s schema.yaml -t rdf "$yaml_file" > "../output/${base_name}.ttl"
+          done
+
+      - name: Extract examples from data files
+        run: python extract_examples.py tutorial
+      
+      - name: Generate LinkML documentation
+        run: gen-doc tutorial/output/pipeline_examples_generator_schema.yaml --directory tutorial/output/docs --template-directory tutorial/input/docgen --example-directory tutorial/output/examples
+      
       - name: Merge Markdown documentation
         run: python merge_documentation.py tutorial
+      
       - name: Install Pandoc
         run: sudo apt update && sudo apt install -y pandoc
 
+      - name: Download Pandoc pagebreak Lua filter
+        run: |
+          curl -L https://raw.githubusercontent.com/pandoc/lua-filters/master/pagebreak/pagebreak.lua \
+          -o pagebreak.lua
+
       - name: Convert Markdown to Word with Pandoc
         run: |
-          mkdir -p tutorial/output
           pandoc tutorial/output/documentation_merged.md \
           -o tutorial/output/tutorial.docx \
-          --reference-doc=tutorial/input/template.docx
+          --reference-doc=tutorial/input/template.docx \
+          --lua-filter=pagebreak.lua
 
       - name: Commit and push changes
         env:
