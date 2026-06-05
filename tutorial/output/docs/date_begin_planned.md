@@ -1,14 +1,34 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: date_begin_planned 
 
 
+_The planned start date of an event or occurrence with time duration._
 
-URI: [tutorial:date_begin_planned](https://ch.paf.link/schema/tutorial/date_begin_planned)
-Alias: date_begin_planned
+__
 
+
+
+<div data-search-exclude markdown="1">
+
+
+
+URI: [mcm:dateBeginPlanned](https://ld.ech.ch/schema/0292/meta-common/dateBeginPlanned)
 <!-- no inheritance hierarchy -->
 
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [IsEventWithDuration](IsEventWithDuration.md) | A mixin class that provides slots for modeling events or occurrences with tim... |  no  |
+| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
 
 
 
@@ -17,7 +37,24 @@ Alias: date_begin_planned
 
 ## Properties
 
-* Range: [Date](Date.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Date](Date.md) |
+| Domain Of | [IsEventWithDuration](IsEventWithDuration.md) |
+| Slot URI | [mcm:dateBeginPlanned](https://ld.ech.ch/schema/0292/meta-common/dateBeginPlanned) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -25,6 +62,13 @@ Alias: date_begin_planned
 ## Identifier and Mapping Information
 
 
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
+ |
 
 
 
@@ -41,7 +85,7 @@ Alias: date_begin_planned
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | tutorial:date_begin_planned |
+| self | mcm:dateBeginPlanned |
 | native | tutorial:date_begin_planned |
 
 
@@ -52,10 +96,21 @@ Alias: date_begin_planned
 <details>
 ```yaml
 name: date_begin_planned
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
+
+      '
+description: 'The planned start date of an event or occurrence with time duration.
+
+  '
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-alias: date_begin_planned
+slot_uri: mcm:dateBeginPlanned
+domain_of:
+- IsEventWithDuration
 range: date
 
 ```
-</details>
+</details></div>

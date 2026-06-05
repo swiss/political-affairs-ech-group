@@ -16,7 +16,15 @@ Name: tutorial
 | --- | --- |
 | [AgendaItem](AgendaItem.md) |  |
 | [Container](Container.md) |  |
-| [MultilingualString](MultilingualString.md) |  |
+| [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |
+| [HasCreationModificationDates](HasCreationModificationDates.md) | A mixin class that provides slots for modeling creation and modification date... |
+| [HasIdentification](HasIdentification.md) | A mixin class that provides slots for the identification of an entity |
+| [HasTemporalValidity](HasTemporalValidity.md) | A mixin class that provides slots for modeling a temporal validity of informa... |
+| [IsEventWithDuration](IsEventWithDuration.md) | A mixin class that provides slots for modeling events or occurrences with tim... |
+| [IsInstantaneousEvent](IsInstantaneousEvent.md) | A mixin class that provides slots for modeling instantaneous events or occurr... |
+| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |
+| [MultilingualValue](MultilingualValue.md) | A multilingual string with language specification |
+| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |
 | [Session](Session.md) |  |
 | [Vote](Vote.md) |  |
 
@@ -26,33 +34,46 @@ Name: tutorial
 
 | Slot | Description |
 | --- | --- |
+| [abbreviation](abbreviation.md) | Abbreviation (can be multilingual) |
 | [agenda_items](agenda_items.md) |  |
-| [date_actual](date_actual.md) |  |
-| [date_begin_actual](date_begin_actual.md) |  |
-| [date_begin_planned](date_begin_planned.md) |  |
-| [date_created](date_created.md) |  |
-| [date_end_actual](date_end_actual.md) |  |
-| [date_end_planned](date_end_planned.md) |  |
-| [date_modified](date_modified.md) |  |
-| [date_planned](date_planned.md) |  |
-| [datetime_actual](datetime_actual.md) |  |
-| [datetime_begin_actual](datetime_begin_actual.md) |  |
-| [datetime_begin_planned](datetime_begin_planned.md) |  |
-| [datetime_created](datetime_created.md) |  |
-| [datetime_end_actual](datetime_end_actual.md) |  |
-| [datetime_end_planned](datetime_end_planned.md) |  |
-| [datetime_modified](datetime_modified.md) |  |
-| [datetime_planned](datetime_planned.md) |  |
+| [date_actual](date_actual.md) | The actual date of an instantaneous event or occurrence (without time duratio... |
+| [date_begin_actual](date_begin_actual.md) | The actual start date of an event or occurrence with time duration |
+| [date_begin_planned](date_begin_planned.md) | The planned start date of an event or occurrence with time duration |
+| [date_created](date_created.md) | The date when an entity was created |
+| [date_end_actual](date_end_actual.md) | The actual end date of an event or occurrence with time duration |
+| [date_end_planned](date_end_planned.md) | The planned end date of an event or occurrence with time duration |
+| [date_modified](date_modified.md) | The date when an entity was last modified |
+| [date_planned](date_planned.md) | The planned date of an instantaneous event or occurrence (without time durati... |
+| [datetime_actual](datetime_actual.md) | The actual date and time of an instantaneous event or occurrence (without tim... |
+| [datetime_begin_actual](datetime_begin_actual.md) | The actual start date and time of an event or occurrence with time duration |
+| [datetime_begin_planned](datetime_begin_planned.md) | The planned start date and time of an event or occurrence with time duration |
+| [datetime_created](datetime_created.md) | The date and time when an entity was created |
+| [datetime_end_actual](datetime_end_actual.md) | The actual end date and time of an event or occurrence with time duration |
+| [datetime_end_planned](datetime_end_planned.md) | The planned end date and time of an event or occurrence with time duration |
+| [datetime_modified](datetime_modified.md) | The date and time when an entity was last modified |
+| [datetime_planned](datetime_planned.md) | The planned date and time of an instantaneous event or occurrence (without ti... |
+| [global_uri](global_uri.md) | A unique, globally valid URI for the entity |
+| [group_label](group_label.md) | Name of the body/group at time of linking |
 | [id](id.md) |  |
+| [is_active](is_active.md) | Indicates whether the information is currently valid |
 | [is_part_of](is_part_of.md) |  |
 | [is_part_of_agenda_item](is_part_of_agenda_item.md) |  |
-| [language](language.md) | [en] Language code in ISO 639-1 format |
+| [label](label.md) | Assign a label to a structured piece of information (e |
+| [label_long](label_long.md) | Assign an extended label to a structured piece of information (e |
+| [language](language.md) | Language code in ISO 639-1 format (two lowercase letters, e |
+| [local_id](local_id.md) | Local identifier |
+| [multilingual_value](multilingual_value.md) | A multilingual value with language specification |
 | [name](name.md) |  |
 | [question](question.md) |  |
+| [remark](remark.md) | Free-text remark or note for edge cases or additional context on a process st... |
 | [result](result.md) |  |
 | [sessions](sessions.md) |  |
 | [text](text.md) |  |
+| [valid_from](valid_from.md) | The date from which the information is valid |
+| [valid_through](valid_through.md) | The date until which the information is valid, inclusive |
+| [value](value.md) | The value of an information besides other attributes such as type, language, ... |
 | [votes](votes.md) |  |
+| [wikidata_uri](wikidata_uri.md) | A URI that refers to a Wikidata entity, e |
 
 
 ## Enumerations

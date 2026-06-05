@@ -1,14 +1,34 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: datetime_end_planned 
 
 
+_The planned end date and time of an event or occurrence with time duration._
 
-URI: [tutorial:datetime_end_planned](https://ch.paf.link/schema/tutorial/datetime_end_planned)
-Alias: datetime_end_planned
+__
 
+
+
+<div data-search-exclude markdown="1">
+
+
+
+URI: [mcm:datetimeEndPlanned](https://ld.ech.ch/schema/0292/meta-common/datetimeEndPlanned)
 <!-- no inheritance hierarchy -->
 
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [IsEventWithDuration](IsEventWithDuration.md) | A mixin class that provides slots for modeling events or occurrences with tim... |  no  |
+| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
 
 
 
@@ -17,7 +37,24 @@ Alias: datetime_end_planned
 
 ## Properties
 
-* Range: [Datetime](Datetime.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Datetime](Datetime.md) |
+| Domain Of | [IsEventWithDuration](IsEventWithDuration.md) |
+| Slot URI | [mcm:datetimeEndPlanned](https://ld.ech.ch/schema/0292/meta-common/datetimeEndPlanned) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -25,6 +62,13 @@ Alias: datetime_end_planned
 ## Identifier and Mapping Information
 
 
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer.
+ |
 
 
 
@@ -41,7 +85,7 @@ Alias: datetime_end_planned
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | tutorial:datetime_end_planned |
+| self | mcm:datetimeEndPlanned |
 | native | tutorial:datetime_end_planned |
 
 
@@ -52,10 +96,22 @@ Alias: datetime_end_planned
 <details>
 ```yaml
 name: datetime_end_planned
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+      mit Zeitdauer.
+
+      '
+description: 'The planned end date and time of an event or occurrence with time duration.
+
+  '
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-alias: datetime_end_planned
+slot_uri: mcm:datetimeEndPlanned
+domain_of:
+- IsEventWithDuration
 range: datetime
 
 ```
-</details>
+</details></div>

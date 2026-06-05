@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: agenda_items 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [tutorial:agendaItem](https://ch.paf.link/schema/tutorial/agendaItem)
-Alias: agenda_items
-
 <!-- no inheritance hierarchy -->
 
 
@@ -27,15 +30,30 @@ Alias: agenda_items
 
 ## Properties
 
-* Range: [AgendaItem](AgendaItem.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [AgendaItem](AgendaItem.md) |
+| Domain Of | [Session](Session.md), [Container](Container.md) |
+| Slot URI | [tutorial:agendaItem](https://ch.paf.link/schema/tutorial/agendaItem) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 
@@ -67,7 +85,6 @@ name: agenda_items
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
 slot_uri: tutorial:agendaItem
-alias: agenda_items
 domain_of:
 - Session
 - Container
@@ -77,4 +94,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

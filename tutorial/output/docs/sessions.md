@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: sessions 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [tutorial:session](https://ch.paf.link/schema/tutorial/session)
-Alias: sessions
-
 <!-- no inheritance hierarchy -->
 
 
@@ -26,15 +29,30 @@ Alias: sessions
 
 ## Properties
 
-* Range: [Session](Session.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [Session](Session.md) |
+| Domain Of | [Container](Container.md) |
+| Slot URI | [tutorial:session](https://ch.paf.link/schema/tutorial/session) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 
@@ -66,7 +84,6 @@ name: sessions
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
 slot_uri: tutorial:session
-alias: sessions
 domain_of:
 - Container
 range: Session
@@ -75,4 +92,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: result 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [tutorial:result](https://ch.paf.link/schema/tutorial/result)
-Alias: result
-
 <!-- no inheritance hierarchy -->
 
 
@@ -26,13 +29,36 @@ Alias: result
 
 ## Properties
 
-* Range: [ResultEnum](ResultEnum.md)
+### Type and Range
 
+| Property | Value |
+| --- | --- |
+| Range | [ResultEnum](ResultEnum.md) |
+| Domain Of | [Vote](Vote.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+| no |
+| yes |
 
 
 
 ## Identifier and Mapping Information
-
 
 
 
@@ -61,12 +87,14 @@ Alias: result
 <details>
 ```yaml
 name: result
+examples:
+- value: 'no'
+- value: 'yes'
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-alias: result
 domain_of:
 - Vote
 range: result_enum
 
 ```
-</details>
+</details></div>

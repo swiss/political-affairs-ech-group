@@ -1,12 +1,22 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: date_begin_actual 
 
 
+_The actual start date of an event or occurrence with time duration._
 
-URI: [tutorial:date_begin_actual](https://ch.paf.link/schema/tutorial/date_begin_actual)
-Alias: date_begin_actual
+__
 
+
+
+<div data-search-exclude markdown="1">
+
+
+
+URI: [mcm:dateBeginActual](https://ld.ech.ch/schema/0292/meta-common/dateBeginActual)
 <!-- no inheritance hierarchy -->
 
 
@@ -18,6 +28,8 @@ Alias: date_begin_actual
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Session](Session.md) |  |  no  |
+| [IsEventWithDuration](IsEventWithDuration.md) | A mixin class that provides slots for modeling events or occurrences with tim... |  no  |
+| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
 
 
 
@@ -26,7 +38,24 @@ Alias: date_begin_actual
 
 ## Properties
 
-* Range: [Date](Date.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Date](Date.md) |
+| Domain Of | [Session](Session.md), [IsEventWithDuration](IsEventWithDuration.md) |
+| Slot URI | [mcm:dateBeginActual](https://ld.ech.ch/schema/0292/meta-common/dateBeginActual) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -34,6 +63,13 @@ Alias: date_begin_actual
 ## Identifier and Mapping Information
 
 
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
+ |
 
 
 
@@ -50,7 +86,7 @@ Alias: date_begin_actual
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | tutorial:date_begin_actual |
+| self | mcm:dateBeginActual |
 | native | tutorial:date_begin_actual |
 
 
@@ -61,12 +97,22 @@ Alias: date_begin_actual
 <details>
 ```yaml
 name: date_begin_actual
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
+
+      '
+description: 'The actual start date of an event or occurrence with time duration.
+
+  '
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-alias: date_begin_actual
+slot_uri: mcm:dateBeginActual
 domain_of:
 - Session
+- IsEventWithDuration
 range: date
 
 ```
-</details>
+</details></div>

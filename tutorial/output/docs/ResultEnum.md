@@ -1,11 +1,18 @@
+---
+search:
+  boost: 2.0
+---
+
+
 # Enum: ResultEnum 
 
 
 
+<div data-search-exclude markdown="1">
+
 URI: [tutorial:result_enum](https://ch.paf.link/schema/tutorial/result_enum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | yes | tutorial:results/yes |  |
@@ -24,8 +31,12 @@ URI: [tutorial:result_enum](https://ch.paf.link/schema/tutorial/result_enum)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -58,3 +69,5 @@ permissible_values:
 
 ```
 </details>
+
+</div>

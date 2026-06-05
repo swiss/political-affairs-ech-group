@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: is_part_of 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [tutorial:is_part_of](https://ch.paf.link/schema/tutorial/is_part_of)
-Alias: is_part_of
-
 <!-- no inheritance hierarchy -->
 
 
@@ -26,13 +29,36 @@ Alias: is_part_of
 
 ## Properties
 
-* Range: [Uriorcurie](Uriorcurie.md)
+### Type and Range
 
+| Property | Value |
+| --- | --- |
+| Range | [Uriorcurie](Uriorcurie.md) |
+| Domain Of | [Vote](Vote.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+| tutorial:s2025-1_t1 |
+| tutorial:s2025-2_t1 |
 
 
 
 ## Identifier and Mapping Information
-
 
 
 
@@ -61,12 +87,14 @@ Alias: is_part_of
 <details>
 ```yaml
 name: is_part_of
+examples:
+- value: tutorial:s2025-1_t1
+- value: tutorial:s2025-2_t1
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-alias: is_part_of
 domain_of:
 - Vote
 range: uriorcurie
 
 ```
-</details>
+</details></div>

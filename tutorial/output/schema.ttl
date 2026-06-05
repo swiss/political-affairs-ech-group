@@ -6,71 +6,6 @@
 @prefix tutorial: <https://ch.paf.link/schema/tutorial/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://ch.paf.link/schema/td/date_actual> a owl:DatatypeProperty ;
-    rdfs:label "date_actual" ;
-    rdfs:range xsd:date ;
-    skos:inScheme <https://ch.paf.link/schema/td> .
-
-<https://ch.paf.link/schema/td/date_begin_planned> a owl:DatatypeProperty ;
-    rdfs:label "date_begin_planned" ;
-    rdfs:range xsd:date ;
-    skos:inScheme <https://ch.paf.link/schema/td> .
-
-<https://ch.paf.link/schema/td/date_created> a owl:DatatypeProperty ;
-    rdfs:label "date_created" ;
-    rdfs:range xsd:date ;
-    skos:inScheme <https://ch.paf.link/schema/td> .
-
-<https://ch.paf.link/schema/td/date_end_planned> a owl:DatatypeProperty ;
-    rdfs:label "date_end_planned" ;
-    rdfs:range xsd:date ;
-    skos:inScheme <https://ch.paf.link/schema/td> .
-
-<https://ch.paf.link/schema/td/date_modified> a owl:DatatypeProperty ;
-    rdfs:label "date_modified" ;
-    rdfs:range xsd:date ;
-    skos:inScheme <https://ch.paf.link/schema/td> .
-
-<https://ch.paf.link/schema/td/date_planned> a owl:DatatypeProperty ;
-    rdfs:label "date_planned" ;
-    rdfs:range xsd:date ;
-    skos:inScheme <https://ch.paf.link/schema/td> .
-
-<https://ch.paf.link/schema/td/datetime_begin_actual> a owl:DatatypeProperty ;
-    rdfs:label "datetime_begin_actual" ;
-    rdfs:range xsd:dateTime ;
-    skos:inScheme <https://ch.paf.link/schema/td> .
-
-<https://ch.paf.link/schema/td/datetime_begin_planned> a owl:DatatypeProperty ;
-    rdfs:label "datetime_begin_planned" ;
-    rdfs:range xsd:dateTime ;
-    skos:inScheme <https://ch.paf.link/schema/td> .
-
-<https://ch.paf.link/schema/td/datetime_created> a owl:DatatypeProperty ;
-    rdfs:label "datetime_created" ;
-    rdfs:range xsd:dateTime ;
-    skos:inScheme <https://ch.paf.link/schema/td> .
-
-<https://ch.paf.link/schema/td/datetime_end_actual> a owl:DatatypeProperty ;
-    rdfs:label "datetime_end_actual" ;
-    rdfs:range xsd:dateTime ;
-    skos:inScheme <https://ch.paf.link/schema/td> .
-
-<https://ch.paf.link/schema/td/datetime_end_planned> a owl:DatatypeProperty ;
-    rdfs:label "datetime_end_planned" ;
-    rdfs:range xsd:dateTime ;
-    skos:inScheme <https://ch.paf.link/schema/td> .
-
-<https://ch.paf.link/schema/td/datetime_modified> a owl:DatatypeProperty ;
-    rdfs:label "datetime_modified" ;
-    rdfs:range xsd:dateTime ;
-    skos:inScheme <https://ch.paf.link/schema/td> .
-
-<https://ch.paf.link/schema/td/datetime_planned> a owl:DatatypeProperty ;
-    rdfs:label "datetime_planned" ;
-    rdfs:range xsd:dateTime ;
-    skos:inScheme <https://ch.paf.link/schema/td> .
-
 <https://ch.paf.link/schema/tutorial.owl.ttl> a owl:Ontology ;
     rdfs:label "tutorial" ;
     skos:definition """[en] This is a dummy schema for a parliamentary affairs system, including sessions, agenda items, and votes. It is used to demonstrate the use of LinkML for defining data models. In this model, a session contains multiple agenda items and each agenda item can have multiple votes.
@@ -80,75 +15,377 @@
 tutorial:Container a owl:Class ;
     rdfs:label "Container" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty tutorial:votes ],
+            owl:allValuesFrom tutorial:AgendaItem ;
+            owl:onProperty tutorial:agendaItem ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty tutorial:agenda_items ],
+            owl:onProperty tutorial:agendaItem ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty tutorial:id ],
+            owl:minCardinality 0 ;
+            owl:onProperty tutorial:session ],
         [ a owl:Restriction ;
             owl:allValuesFrom tutorial:Session ;
-            owl:onProperty tutorial:sessions ],
+            owl:onProperty tutorial:session ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty tutorial:sessions ],
+            owl:onProperty tutorial:vote ],
         [ a owl:Restriction ;
-            owl:allValuesFrom tutorial:Vote ;
-            owl:onProperty tutorial:votes ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty tutorial:id ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty tutorial:id ],
         [ a owl:Restriction ;
-            owl:allValuesFrom tutorial:AgendaItem ;
-            owl:onProperty tutorial:agenda_items ] ;
+            owl:allValuesFrom tutorial:Vote ;
+            owl:onProperty tutorial:vote ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty tutorial:id ] ;
     skos:inScheme <https://ch.paf.link/schema/tutorial> .
+
+tutorial:text a owl:DatatypeProperty ;
+    rdfs:label "text" ;
+    skos:inScheme <https://ch.paf.link/schema/tutorial> .
+
+<https://ld.ech.ch/schema/0292/meta-common/GroupReference> a owl:Class ;
+    rdfs:label "GroupReference" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/abbreviation> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://ld.ech.ch/schema/0292/meta-common/MultilingualValue> ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/abbreviation> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        <https://ld.ech.ch/schema/0292/meta-common/HasIdentification> ;
+    skos:definition """Lightweight reference to a group with key identification data at time of linking.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/HasCreationModificationDates> a owl:Class ;
+    rdfs:label "HasCreationModificationDates" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeCreated> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateModified> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateModified> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateCreated> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeCreated> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateCreated> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateModified> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateCreated> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeModified> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeCreated> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeModified> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeModified> ] ;
+    skos:definition """A mixin class that provides slots for modeling creation and modification dates of an entity.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Änderungsdaten einer Entität zur Verfügung stellt.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/HasTemporalValidity> a owl:Class ;
+    rdfs:label "HasTemporalValidity" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://schema.org/validFrom> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/isCurrent> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty <http://schema.org/validFrom> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty <http://schema.org/validThrough> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/isCurrent> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://schema.org/validFrom> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/isCurrent> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://schema.org/validThrough> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://schema.org/validThrough> ] ;
+    skos:definition """A mixin class that provides slots for modeling a temporal validity of information (not of an event).
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gültigkeit einer Information (nicht eines Events) zur Verfügung stellt.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/IsInstantaneousEvent> a owl:Class ;
+    rdfs:label "IsInstantaneousEvent" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeActual> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimePlanned> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeActual> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeActual> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datePlanned> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datePlanned> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateActual> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateActual> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimePlanned> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datePlanned> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimePlanned> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateActual> ] ;
+    skos:definition """A mixin class that provides slots for modeling instantaneous events or occurrences (without time duration).
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereignissen oder Vorkommnissen (ohne Zeitdauer) zur Verfügung stellt.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/IsProcessStep> a owl:Class ;
+    rdfs:label "IsProcessStep" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/remark> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/remark> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/remark> ],
+        <https://ld.ech.ch/schema/0292/meta-common/HasIdentification>,
+        <https://ld.ech.ch/schema/0292/meta-common/IsEventWithDuration> ;
+    skos:definition """A mixin class for a single step in a multi-stage process (e.g.,
+a deliberation step of an affair or a phase step of a consultation).
+Combines identification and event-duration slots and adds a free-text
+remark slot. Concrete step classes add their own type-specific slots.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Eine Mixin-Klasse für einen einzelnen Schritt in einem
+mehrstufigen Prozess (z. B. Bearbeitungsschritt eines Geschäfts oder
+Phasen­schritt einer Konsultation). Kombiniert Identifikations- und
+Zeitdauer-Slots und ergänzt einen freien Bemerkungs-Slot. Konkrete
+Step-Klassen ergänzen ihre eigenen typ-spezifischen Slots.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/PersonReference> a owl:Class ;
+    rdfs:label "PersonReference" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/groupLabel> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/labelLong> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/groupLabel> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/labelLong> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/labelLong> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/label> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/groupLabel> ],
+        <https://ld.ech.ch/schema/0292/meta-common/HasIdentification> ;
+    skos:definition """Lightweight reference to a person with key identification data at time of linking. Preserves historical accuracy even if the person changes later.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung. Ermöglicht historische Korrektheit auch wenn sich die Person später ändert.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/multilingualValue> a owl:ObjectProperty ;
+    rdfs:label "multilingual_value" ;
+    rdfs:range <https://ld.ech.ch/schema/0292/meta-common/MultilingualValue> ;
+    skos:definition """A multilingual value with language specification.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Ein mehrsprachiger Wert mit Angabe der Sprache.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/IsEventWithDuration> a owl:Class ;
+    rdfs:label "IsEventWithDuration" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginPlanned> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndActual> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndActual> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginPlanned> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginActual> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginActual> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndActual> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginActual> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndPlanned> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginPlanned> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginPlanned> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndPlanned> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndActual> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndActual> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginActual> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginActual> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginActual> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndPlanned> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndPlanned> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndPlanned> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndActual> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeBeginPlanned> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginPlanned> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeEndPlanned> ] ;
+    skos:definition """A mixin class that provides slots for modeling events or occurrences with time duration.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder Vorkommnissen mit Zeitdauer zur Verfügung stellt.
+""" .
 
 tutorial:Session a owl:Class ;
     rdfs:label "Session" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ch.paf.link/schema/td/date_begin_actual> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ch.paf.link/schema/td/date_end_actual> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ch.paf.link/schema/td/date_begin_actual> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty tutorial:agenda_items ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty tutorial:id ],
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginActual> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:date ;
-            owl:onProperty <https://ch.paf.link/schema/td/date_end_actual> ],
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndActual> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginActual> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateBeginActual> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty tutorial:agendaItem ],
         [ a owl:Restriction ;
             owl:allValuesFrom tutorial:AgendaItem ;
-            owl:onProperty tutorial:agenda_items ],
+            owl:onProperty tutorial:agendaItem ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ch.paf.link/schema/td/date_end_actual> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty <https://ch.paf.link/schema/td/date_begin_actual> ],
+            owl:allValuesFrom <https://ld.ech.ch/schema/0292/meta-common/MultilingualValue> ;
+            owl:onProperty <http://schema.org/name> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty tutorial:id ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndActual> ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty tutorial:name ],
+            owl:onProperty <http://schema.org/name> ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty tutorial:id ],
         [ a owl:Restriction ;
-            owl:allValuesFrom tutorial:MultilingualString ;
-            owl:onProperty tutorial:name ] ;
+            owl:maxCardinality 1 ;
+            owl:onProperty tutorial:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/dateEndActual> ] ;
     skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
 <https://ch.paf.link/schema/tutorial/results/no> a owl:Class ;
@@ -159,106 +396,94 @@ tutorial:Session a owl:Class ;
     rdfs:label "yes" ;
     rdfs:subClassOf tutorial:ResultEnum .
 
-tutorial:sessions a owl:ObjectProperty ;
+tutorial:session a owl:ObjectProperty ;
     rdfs:label "sessions" ;
     rdfs:range tutorial:Session ;
     skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
-<https://ch.paf.link/schema/td/date_begin_actual> a owl:DatatypeProperty ;
-    rdfs:label "date_begin_actual" ;
+<https://ld.ech.ch/schema/0292/meta-common/abbreviation> a owl:ObjectProperty ;
+    rdfs:label "abbreviation" ;
+    rdfs:range <https://ld.ech.ch/schema/0292/meta-common/MultilingualValue> ;
+    skos:definition """Abbreviation (can be multilingual).
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Abkürzung (kann mehrsprachig sein).
+""" .
+
+<http://schema.org/validFrom> a owl:DatatypeProperty ;
+    rdfs:label "valid_from" ;
     rdfs:range xsd:date ;
-    skos:inScheme <https://ch.paf.link/schema/td> .
+    skos:definition """The date from which the information is valid.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Das Datum, ab dem die Information gültig ist.
+""" .
 
-<https://ch.paf.link/schema/td/date_end_actual> a owl:DatatypeProperty ;
-    rdfs:label "date_end_actual" ;
+<http://schema.org/validThrough> a owl:DatatypeProperty ;
+    rdfs:label "valid_through" ;
     rdfs:range xsd:date ;
-    skos:inScheme <https://ch.paf.link/schema/td> .
-
-<https://ch.paf.link/schema/td/datetime_actual> a owl:DatatypeProperty ;
-    rdfs:label "datetime_actual" ;
-    rdfs:range xsd:dateTime ;
-    skos:inScheme <https://ch.paf.link/schema/td> .
-
-tutorial:MultilingualString a owl:Class ;
-    rdfs:label "MultilingualString" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:onDatatype xsd:string ;
-                    owl:withRestrictions ( [ xsd:pattern "^[a-z]{2}$" ] ) ] ;
-            owl:onProperty tutorial:language ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty tutorial:text ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty tutorial:text ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty tutorial:language ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty tutorial:text ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty tutorial:language ] ;
-    skos:inScheme <https://ch.paf.link/schema/tutorial> .
+    skos:definition """The date until which the information is valid, inclusive.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Das Datum, bis und mit dem die Information gültig ist.
+""" .
 
 tutorial:Vote a owl:Class ;
     rdfs:label "Vote" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://ch.paf.link/schema/td/datetime_actual> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty tutorial:is_part_of ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeActual> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty tutorial:result ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty tutorial:result ],
+            owl:onProperty tutorial:is_part_of ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:anyURI ;
             owl:onProperty tutorial:is_part_of ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty tutorial:question ],
+            owl:onProperty tutorial:is_part_of_agenda_item ],
         [ a owl:Restriction ;
-            owl:allValuesFrom tutorial:ResultEnum ;
-            owl:onProperty tutorial:result ],
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeActual> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty tutorial:id ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty tutorial:question ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty tutorial:id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty <https://ch.paf.link/schema/td/datetime_actual> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom tutorial:AgendaItem ;
-            owl:onProperty tutorial:is_part_of_agenda_item ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty tutorial:is_part_of_agenda_item ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://ch.paf.link/schema/td/datetime_actual> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty tutorial:is_part_of_agenda_item ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty tutorial:is_part_of ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty tutorial:id ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty tutorial:is_part_of_agenda_item ],
+        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty tutorial:question ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty tutorial:id ] ;
+            owl:onProperty tutorial:question ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom tutorial:AgendaItem ;
+            owl:onProperty tutorial:is_part_of_agenda_item ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty tutorial:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty tutorial:result ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom tutorial:ResultEnum ;
+            owl:onProperty tutorial:result ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty tutorial:result ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/datetimeActual> ] ;
     skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
 tutorial:is_part_of a owl:DatatypeProperty ;
@@ -268,16 +493,6 @@ tutorial:is_part_of a owl:DatatypeProperty ;
 
 tutorial:is_part_of_agenda_item a owl:ObjectProperty ;
     rdfs:label "is_part_of_agenda_item" ;
-    skos:inScheme <https://ch.paf.link/schema/tutorial> .
-
-tutorial:language a owl:DatatypeProperty ;
-    rdfs:label "language" ;
-    rdfs:range [ a rdfs:Datatype ;
-            owl:onDatatype xsd:string ;
-            owl:withRestrictions ( [ xsd:pattern "^[a-z]{2}$" ] ) ] ;
-    skos:definition """[en] Language code in ISO 639-1 format.
-[de] Sprachcode im ISO 639-1-Format.
-""" ;
     skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
 tutorial:question a owl:DatatypeProperty ;
@@ -290,33 +505,265 @@ tutorial:result a owl:ObjectProperty ;
     rdfs:range tutorial:ResultEnum ;
     skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
-tutorial:text a owl:DatatypeProperty ;
-    rdfs:label "text" ;
+<https://ld.ech.ch/schema/0292/meta-common/HasIdentification> a owl:Class ;
+    rdfs:label "HasIdentification" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/wikidataUri> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/globalURI> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/globalURI> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/wikidataUri> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/localId> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/globalURI> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/localId> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/wikidataUri> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/localId> ] ;
+    skos:definition """A mixin class that provides slots for the identification of an entity.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfügung stellt.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/dateActual> a owl:DatatypeProperty ;
+    rdfs:label "date_actual" ;
+    rdfs:range xsd:date ;
+    skos:definition """The actual date of an instantaneous event or occurrence (without time duration).
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer).
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/dateBeginPlanned> a owl:DatatypeProperty ;
+    rdfs:label "date_begin_planned" ;
+    rdfs:range xsd:date ;
+    skos:definition """The planned start date of an event or occurrence with time duration.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/dateCreated> a owl:DatatypeProperty ;
+    rdfs:label "date_created" ;
+    rdfs:range xsd:date ;
+    skos:definition """The date when an entity was created.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Das Datum, an dem eine Entität erstellt wurde.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/dateEndPlanned> a owl:DatatypeProperty ;
+    rdfs:label "date_end_planned" ;
+    rdfs:range xsd:date ;
+    skos:definition """The planned end date of an event or occurrence with time duration.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Das geplante Enddatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/dateModified> a owl:DatatypeProperty ;
+    rdfs:label "date_modified" ;
+    rdfs:range xsd:date ;
+    skos:definition """The date when an entity was last modified.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Das Datum, an dem eine Entität zuletzt geändert wurde.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/datePlanned> a owl:DatatypeProperty ;
+    rdfs:label "date_planned" ;
+    rdfs:range xsd:date ;
+    skos:definition """The planned date of an instantaneous event or occurrence (without time duration).
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Das geplante Datum eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer).
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/datetimeBeginActual> a owl:DatatypeProperty ;
+    rdfs:label "datetime_begin_actual" ;
+    rdfs:range xsd:dateTime ;
+    skos:definition """The actual start date and time of an event or occurrence with time duration.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/datetimeBeginPlanned> a owl:DatatypeProperty ;
+    rdfs:label "datetime_begin_planned" ;
+    rdfs:range xsd:dateTime ;
+    skos:definition """The planned start date and time of an event or occurrence with time duration.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/datetimeCreated> a owl:DatatypeProperty ;
+    rdfs:label "datetime_created" ;
+    rdfs:range xsd:dateTime ;
+    skos:definition """The date and time when an entity was created.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/datetimeEndActual> a owl:DatatypeProperty ;
+    rdfs:label "datetime_end_actual" ;
+    rdfs:range xsd:dateTime ;
+    skos:definition """The actual end date and time of an event or occurrence with time duration.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/datetimeEndPlanned> a owl:DatatypeProperty ;
+    rdfs:label "datetime_end_planned" ;
+    rdfs:range xsd:dateTime ;
+    skos:definition """The planned end date and time of an event or occurrence with time duration.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/datetimeModified> a owl:DatatypeProperty ;
+    rdfs:label "datetime_modified" ;
+    rdfs:range xsd:dateTime ;
+    skos:definition """The date and time when an entity was last modified.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/datetimePlanned> a owl:DatatypeProperty ;
+    rdfs:label "datetime_planned" ;
+    rdfs:range xsd:dateTime ;
+    skos:definition """The planned date and time of an instantaneous event or occurrence (without time duration).
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Das geplante Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer).
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/globalURI> a owl:DatatypeProperty ;
+    rdfs:label "global_uri" ;
+    rdfs:range xsd:anyURI ;
+    skos:definition """A unique, globally valid URI for the entity.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Eine eindeutige, global gültige URI für die Entität.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/groupLabel> a owl:DatatypeProperty ;
+    rdfs:label "group_label" ;
+    skos:definition """Name of the body/group at time of linking.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Name des Gremiums zum Zeitpunkt der Verknüpfung.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/isCurrent> a owl:DatatypeProperty ;
+    rdfs:label "is_active" ;
+    rdfs:range xsd:boolean ;
+    skos:definition """Indicates whether the information is currently valid. Can be useful when this information is explicitly available.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/labelLong> a owl:DatatypeProperty ;
+    rdfs:label "label_long" ;
+    skos:definition """Assign an extended label to a structured piece of information (e.g., display name with title, position, etc.).
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Möglichkeit bei einer strukturierten Information, ein erweitertesLabel zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.).
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/language> a owl:DatatypeProperty ;
+    rdfs:label "language" ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:onDatatype xsd:string ;
+            owl:withRestrictions ( [ xsd:pattern "^[a-z]{2}$" ] ) ] ;
+    skos:definition """Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en").
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Sprachcode im ISO 639-1 Format (zwei Kleinbuchstaben, z.B. "de", "fr", "it", "en").
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/localId> a owl:DatatypeProperty ;
+    rdfs:label "local_id" ;
+    skos:definition """Local identifier. For example, a UUID from the council information system.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/remark> a owl:DatatypeProperty ;
+    rdfs:label "remark" ;
+    rdfs:range xsd:string ;
+    skos:definition """Free-text remark or note for edge cases or additional context on a process step or an entity.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen Kontext zu einem Prozessschritt oder einer Entität.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/value> a owl:DatatypeProperty ;
+    rdfs:label "value" ;
+    skos:definition """The value of an information besides other attributes such as type, language, etc.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/wikidataUri> a owl:DatatypeProperty ;
+    rdfs:label "wikidata_uri" ;
+    rdfs:range xsd:anyURI ;
+    skos:definition """A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz.
+""" .
+
+<http://schema.org/name> a owl:ObjectProperty ;
+    rdfs:label "name" ;
+    rdfs:range <https://ld.ech.ch/schema/0292/meta-common/MultilingualValue> ;
     skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
 tutorial:AgendaItem a owl:Class ;
     rdfs:label "AgendaItem" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom tutorial:Vote ;
-            owl:onProperty tutorial:votes ],
+            owl:maxCardinality 1 ;
+            owl:onProperty tutorial:id ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty tutorial:id ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty tutorial:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty tutorial:name ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty tutorial:id ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty tutorial:votes ],
+            owl:allValuesFrom <https://ld.ech.ch/schema/0292/meta-common/MultilingualValue> ;
+            owl:onProperty <http://schema.org/name> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom tutorial:MultilingualString ;
-            owl:onProperty tutorial:name ] ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://schema.org/name> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty tutorial:vote ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom tutorial:Vote ;
+            owl:onProperty tutorial:vote ] ;
     skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
 tutorial:ResultEnum a owl:Class ;
@@ -326,20 +773,78 @@ tutorial:ResultEnum a owl:Class ;
     linkml:permissible_values <https://ch.paf.link/schema/tutorial/results/no>,
         <https://ch.paf.link/schema/tutorial/results/yes> .
 
-tutorial:agenda_items a owl:ObjectProperty ;
+tutorial:agendaItem a owl:ObjectProperty ;
     rdfs:label "agenda_items" ;
     rdfs:range tutorial:AgendaItem ;
     skos:inScheme <https://ch.paf.link/schema/tutorial> .
 
-tutorial:name a owl:ObjectProperty ;
-    rdfs:label "name" ;
-    rdfs:range tutorial:MultilingualString ;
-    skos:inScheme <https://ch.paf.link/schema/tutorial> .
-
-tutorial:votes a owl:ObjectProperty ;
+tutorial:vote a owl:ObjectProperty ;
     rdfs:label "votes" ;
     rdfs:range tutorial:Vote ;
     skos:inScheme <https://ch.paf.link/schema/tutorial> .
+
+<https://ld.ech.ch/schema/0292/meta-common/MultilingualValue> a owl:Class ;
+    rdfs:label "MultilingualValue" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:onDatatype xsd:string ;
+                    owl:withRestrictions ( [ xsd:pattern "^[a-z]{2}$" ] ) ] ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/language> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/language> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/language> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://ld.ech.ch/schema/0292/meta-common/value> ] ;
+    skos:definition """A multilingual string with language specification.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Ein mehrsprachiger String mit Angabe der Sprache.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/dateBeginActual> a owl:DatatypeProperty ;
+    rdfs:label "date_begin_actual" ;
+    rdfs:range xsd:date ;
+    skos:definition """The actual start date of an event or occurrence with time duration.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/dateEndActual> a owl:DatatypeProperty ;
+    rdfs:label "date_end_actual" ;
+    rdfs:range xsd:date ;
+    skos:definition """The actual end date of an event or occurrence with time duration.
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Das tatsächliche Enddatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/datetimeActual> a owl:DatatypeProperty ;
+    rdfs:label "datetime_actual" ;
+    rdfs:range xsd:dateTime ;
+    skos:definition """The actual date and time of an instantaneous event or occurrence (without time duration).
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer).
+""" .
+
+<https://ld.ech.ch/schema/0292/meta-common/label> a owl:DatatypeProperty ;
+    rdfs:label "label" ;
+    skos:definition """Assign a label to a structured piece of information (e.g., display name, position, etc.).
+""" ;
+    skos:inScheme <https://ld.ech.ch/schema/0292/meta-common> ;
+    tutorial:description_de """Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).
+""" .
 
 tutorial:id a owl:DatatypeProperty ;
     rdfs:label "id" ;

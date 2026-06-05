@@ -1,14 +1,34 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: datetime_begin_planned 
 
 
+_The planned start date and time of an event or occurrence with time duration._
 
-URI: [tutorial:datetime_begin_planned](https://ch.paf.link/schema/tutorial/datetime_begin_planned)
-Alias: datetime_begin_planned
+__
 
+
+
+<div data-search-exclude markdown="1">
+
+
+
+URI: [mcm:datetimeBeginPlanned](https://ld.ech.ch/schema/0292/meta-common/datetimeBeginPlanned)
 <!-- no inheritance hierarchy -->
 
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [IsEventWithDuration](IsEventWithDuration.md) | A mixin class that provides slots for modeling events or occurrences with tim... |  no  |
+| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
 
 
 
@@ -17,7 +37,24 @@ Alias: datetime_begin_planned
 
 ## Properties
 
-* Range: [Datetime](Datetime.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Datetime](Datetime.md) |
+| Domain Of | [IsEventWithDuration](IsEventWithDuration.md) |
+| Slot URI | [mcm:datetimeBeginPlanned](https://ld.ech.ch/schema/0292/meta-common/datetimeBeginPlanned) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -25,6 +62,13 @@ Alias: datetime_begin_planned
 ## Identifier and Mapping Information
 
 
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer.
+ |
 
 
 
@@ -41,7 +85,7 @@ Alias: datetime_begin_planned
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | tutorial:datetime_begin_planned |
+| self | mcm:datetimeBeginPlanned |
 | native | tutorial:datetime_begin_planned |
 
 
@@ -52,10 +96,23 @@ Alias: datetime_begin_planned
 <details>
 ```yaml
 name: datetime_begin_planned
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+      mit Zeitdauer.
+
+      '
+description: 'The planned start date and time of an event or occurrence with time
+  duration.
+
+  '
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-alias: datetime_begin_planned
+slot_uri: mcm:datetimeBeginPlanned
+domain_of:
+- IsEventWithDuration
 range: datetime
 
 ```
-</details>
+</details></div>

@@ -1,14 +1,33 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: datetime_created 
 
 
+_The date and time when an entity was created._
 
-URI: [tutorial:datetime_created](https://ch.paf.link/schema/tutorial/datetime_created)
-Alias: datetime_created
+__
 
+
+
+<div data-search-exclude markdown="1">
+
+
+
+URI: [mcm:datetimeCreated](https://ld.ech.ch/schema/0292/meta-common/datetimeCreated)
 <!-- no inheritance hierarchy -->
 
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [HasCreationModificationDates](HasCreationModificationDates.md) | A mixin class that provides slots for modeling creation and modification date... |  no  |
 
 
 
@@ -17,7 +36,24 @@ Alias: datetime_created
 
 ## Properties
 
-* Range: [Datetime](Datetime.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Datetime](Datetime.md) |
+| Domain Of | [HasCreationModificationDates](HasCreationModificationDates.md) |
+| Slot URI | [mcm:datetimeCreated](https://ld.ech.ch/schema/0292/meta-common/datetimeCreated) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -25,6 +61,13 @@ Alias: datetime_created
 ## Identifier and Mapping Information
 
 
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+ |
 
 
 
@@ -41,7 +84,7 @@ Alias: datetime_created
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | tutorial:datetime_created |
+| self | mcm:datetimeCreated |
 | native | tutorial:datetime_created |
 
 
@@ -52,10 +95,21 @@ Alias: datetime_created
 <details>
 ```yaml
 name: datetime_created
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
+
+      '
+description: 'The date and time when an entity was created.
+
+  '
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-alias: datetime_created
+slot_uri: mcm:datetimeCreated
+domain_of:
+- HasCreationModificationDates
 range: datetime
 
 ```
-</details>
+</details></div>

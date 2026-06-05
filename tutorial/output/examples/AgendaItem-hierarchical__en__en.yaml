@@ -1,0 +1,11 @@
+id: tutorial:s2025-2_t1
+name:
+- value: Landeshymne
+  language: de
+- value: National Anthem
+  language: en
+votes:
+- id: tutorial:s2025-2_t1_a1
+  question: Soll die Hymne geändert werden?
+  datetime_actual: '2025-06-15T10:00:00+01:00'
+  result: 'no'

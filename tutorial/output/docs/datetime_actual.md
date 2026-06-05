@@ -1,12 +1,22 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: datetime_actual 
 
 
+_The actual date and time of an instantaneous event or occurrence (without time duration)._
 
-URI: [tutorial:datetime_actual](https://ch.paf.link/schema/tutorial/datetime_actual)
-Alias: datetime_actual
+__
 
+
+
+<div data-search-exclude markdown="1">
+
+
+
+URI: [mcm:datetimeActual](https://ld.ech.ch/schema/0292/meta-common/datetimeActual)
 <!-- no inheritance hierarchy -->
 
 
@@ -18,6 +28,7 @@ Alias: datetime_actual
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Vote](Vote.md) |  |  no  |
+| [IsInstantaneousEvent](IsInstantaneousEvent.md) | A mixin class that provides slots for modeling instantaneous events or occurr... |  no  |
 
 
 
@@ -26,7 +37,24 @@ Alias: datetime_actual
 
 ## Properties
 
-* Range: [Datetime](Datetime.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Datetime](Datetime.md) |
+| Domain Of | [Vote](Vote.md), [IsInstantaneousEvent](IsInstantaneousEvent.md) |
+| Slot URI | [mcm:datetimeActual](https://ld.ech.ch/schema/0292/meta-common/datetimeActual) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -34,6 +62,13 @@ Alias: datetime_actual
 ## Identifier and Mapping Information
 
 
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer).
+ |
 
 
 
@@ -50,7 +85,7 @@ Alias: datetime_actual
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | tutorial:datetime_actual |
+| self | mcm:datetimeActual |
 | native | tutorial:datetime_actual |
 
 
@@ -61,12 +96,24 @@ Alias: datetime_actual
 <details>
 ```yaml
 name: datetime_actual
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses oder
+      Vorkommnissen (ohne Zeitdauer).
+
+      '
+description: 'The actual date and time of an instantaneous event or occurrence (without
+  time duration).
+
+  '
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-alias: datetime_actual
+slot_uri: mcm:datetimeActual
 domain_of:
 - Vote
+- IsInstantaneousEvent
 range: datetime
 
 ```
-</details>
+</details></div>

@@ -1,14 +1,34 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: date_end_planned 
 
 
+_The planned end date of an event or occurrence with time duration._
 
-URI: [tutorial:date_end_planned](https://ch.paf.link/schema/tutorial/date_end_planned)
-Alias: date_end_planned
+__
 
+
+
+<div data-search-exclude markdown="1">
+
+
+
+URI: [mcm:dateEndPlanned](https://ld.ech.ch/schema/0292/meta-common/dateEndPlanned)
 <!-- no inheritance hierarchy -->
 
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [IsEventWithDuration](IsEventWithDuration.md) | A mixin class that provides slots for modeling events or occurrences with tim... |  no  |
+| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
 
 
 
@@ -17,7 +37,24 @@ Alias: date_end_planned
 
 ## Properties
 
-* Range: [Date](Date.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Date](Date.md) |
+| Domain Of | [IsEventWithDuration](IsEventWithDuration.md) |
+| Slot URI | [mcm:dateEndPlanned](https://ld.ech.ch/schema/0292/meta-common/dateEndPlanned) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -25,6 +62,13 @@ Alias: date_end_planned
 ## Identifier and Mapping Information
 
 
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Das geplante Enddatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
+ |
 
 
 
@@ -41,7 +85,7 @@ Alias: date_end_planned
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | tutorial:date_end_planned |
+| self | mcm:dateEndPlanned |
 | native | tutorial:date_end_planned |
 
 
@@ -52,10 +96,21 @@ Alias: date_end_planned
 <details>
 ```yaml
 name: date_end_planned
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das geplante Enddatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
+
+      '
+description: 'The planned end date of an event or occurrence with time duration.
+
+  '
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-alias: date_end_planned
+slot_uri: mcm:dateEndPlanned
+domain_of:
+- IsEventWithDuration
 range: date
 
 ```
-</details>
+</details></div>

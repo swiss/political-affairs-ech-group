@@ -9,7 +9,7 @@
                 },
                 "name": {
                     "items": {
-                        "$ref": "#/$defs/MultilingualString"
+                        "$ref": "#/$defs/MultilingualValue"
                     },
                     "type": [
                         "array",
@@ -73,24 +73,433 @@
             "title": "Container",
             "type": "object"
         },
-        "MultilingualString": {
+        "GroupReference": {
             "additionalProperties": false,
-            "description": "",
+            "description": "Lightweight reference to a group with key identification data at time of linking.",
             "properties": {
-                "language": {
-                    "description": "[en] Language code in ISO 639-1 format.\n[de] Sprachcode im ISO 639-1-Format.\n",
-                    "pattern": "^[a-z]{2}$",
+                "abbreviation": {
+                    "description": "Abbreviation (can be multilingual).\n",
+                    "items": {
+                        "$ref": "#/$defs/MultilingualValue"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "global_uri": {
+                    "description": "A unique, globally valid URI for the entity.\n",
                     "type": "string"
                 },
-                "text": {
-                    "type": "string"
+                "label": {
+                    "description": "Assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "local_id": {
+                    "description": "Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "wikidata_uri": {
+                    "description": "A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
-                "text",
-                "language"
+                "global_uri"
             ],
-            "title": "MultilingualString",
+            "title": "GroupReference",
+            "type": "object"
+        },
+        "HasCreationModificationDates": {
+            "additionalProperties": false,
+            "description": "A mixin class that provides slots for modeling creation and modification dates of an entity.",
+            "properties": {
+                "date_created": {
+                    "description": "The date when an entity was created.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_modified": {
+                    "description": "The date when an entity was last modified.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_created": {
+                    "description": "The date and time when an entity was created.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_modified": {
+                    "description": "The date and time when an entity was last modified.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "HasCreationModificationDates",
+            "type": "object"
+        },
+        "HasIdentification": {
+            "additionalProperties": false,
+            "description": "A mixin class that provides slots for the identification of an entity.",
+            "properties": {
+                "global_uri": {
+                    "description": "A unique, globally valid URI for the entity.\n",
+                    "type": "string"
+                },
+                "local_id": {
+                    "description": "Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "wikidata_uri": {
+                    "description": "A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "global_uri"
+            ],
+            "title": "HasIdentification",
+            "type": "object"
+        },
+        "HasTemporalValidity": {
+            "additionalProperties": false,
+            "description": "A mixin class that provides slots for modeling a temporal validity of information (not of an event).",
+            "properties": {
+                "is_active": {
+                    "description": "Indicates whether the information is currently valid. Can be useful when this information is explicitly available.\n",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "valid_from": {
+                    "description": "The date from which the information is valid.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "valid_through": {
+                    "description": "The date until which the information is valid, inclusive.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "HasTemporalValidity",
+            "type": "object"
+        },
+        "IsEventWithDuration": {
+            "additionalProperties": false,
+            "description": "A mixin class that provides slots for modeling events or occurrences with time duration.",
+            "properties": {
+                "date_begin_actual": {
+                    "description": "The actual start date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_begin_planned": {
+                    "description": "The planned start date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_end_actual": {
+                    "description": "The actual end date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_end_planned": {
+                    "description": "The planned end date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_begin_actual": {
+                    "description": "The actual start date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_begin_planned": {
+                    "description": "The planned start date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_end_actual": {
+                    "description": "The actual end date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_end_planned": {
+                    "description": "The planned end date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "IsEventWithDuration",
+            "type": "object"
+        },
+        "IsInstantaneousEvent": {
+            "additionalProperties": false,
+            "description": "A mixin class that provides slots for modeling instantaneous events or occurrences (without time duration).",
+            "properties": {
+                "date_actual": {
+                    "description": "The actual date of an instantaneous event or occurrence (without time duration).\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_planned": {
+                    "description": "The planned date of an instantaneous event or occurrence (without time duration).\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_actual": {
+                    "description": "The actual date and time of an instantaneous event or occurrence (without time duration).\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_planned": {
+                    "description": "The planned date and time of an instantaneous event or occurrence (without time duration).\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "IsInstantaneousEvent",
+            "type": "object"
+        },
+        "IsProcessStep": {
+            "additionalProperties": false,
+            "description": "A mixin class for a single step in a multi-stage process (e.g.,\na deliberation step of an affair or a phase step of a consultation).\nCombines identification and event-duration slots and adds a free-text\nremark slot. Concrete step classes add their own type-specific slots.",
+            "properties": {
+                "date_begin_actual": {
+                    "description": "The actual start date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_begin_planned": {
+                    "description": "The planned start date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_end_actual": {
+                    "description": "The actual end date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date_end_planned": {
+                    "description": "The planned end date of an event or occurrence with time duration.\n",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_begin_actual": {
+                    "description": "The actual start date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_begin_planned": {
+                    "description": "The planned start date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_end_actual": {
+                    "description": "The actual end date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datetime_end_planned": {
+                    "description": "The planned end date and time of an event or occurrence with time duration.\n",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "global_uri": {
+                    "description": "A unique, globally valid URI for the entity.\n",
+                    "type": "string"
+                },
+                "local_id": {
+                    "description": "Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "remark": {
+                    "description": "Free-text remark or note for edge cases or additional context on a process step or an entity.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "wikidata_uri": {
+                    "description": "A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "global_uri"
+            ],
+            "title": "IsProcessStep",
+            "type": "object"
+        },
+        "MultilingualValue": {
+            "additionalProperties": false,
+            "description": "A multilingual string with language specification.",
+            "properties": {
+                "language": {
+                    "description": "Language code in ISO 639-1 format (two lowercase letters, e.g. \"de\", \"fr\", \"it\", \"en\").\n",
+                    "pattern": "^[a-z]{2}$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "value": {
+                    "description": "The value of an information besides other attributes such as type, language, etc.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "MultilingualValue",
+            "type": "object"
+        },
+        "PersonReference": {
+            "additionalProperties": false,
+            "description": "Lightweight reference to a person with key identification data at time of linking. Preserves historical accuracy even if the person changes later.",
+            "properties": {
+                "global_uri": {
+                    "description": "A unique, globally valid URI for the entity.\n",
+                    "type": "string"
+                },
+                "group_label": {
+                    "description": "Name of the body/group at time of linking.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "description": "Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name).\n",
+                    "type": "string"
+                },
+                "label_long": {
+                    "description": "Optional long display name including academic titles and full official name (e.g. \"Dr. Maria Muster-Beispiel\").\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "local_id": {
+                    "description": "Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "wikidata_uri": {
+                    "description": "A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "label",
+                "global_uri"
+            ],
+            "title": "PersonReference",
             "type": "object"
         },
         "ResultEnum": {
@@ -116,6 +525,7 @@
                     ]
                 },
                 "date_begin_actual": {
+                    "description": "The actual start date of an event or occurrence with time duration.\n",
                     "format": "date",
                     "type": [
                         "string",
@@ -123,6 +533,7 @@
                     ]
                 },
                 "date_end_actual": {
+                    "description": "The actual end date of an event or occurrence with time duration.\n",
                     "format": "date",
                     "type": [
                         "string",
@@ -134,7 +545,7 @@
                 },
                 "name": {
                     "items": {
-                        "$ref": "#/$defs/MultilingualString"
+                        "$ref": "#/$defs/MultilingualValue"
                     },
                     "type": [
                         "array",
@@ -153,6 +564,7 @@
             "description": "",
             "properties": {
                 "datetime_actual": {
+                    "description": "The actual date and time of an instantaneous event or occurrence (without time duration).\n",
                     "format": "date-time",
                     "type": [
                         "string",
@@ -193,7 +605,7 @@
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
     "description": "",
-    "metamodel_version": "1.7.0",
+    "metamodel_version": "1.11.0",
     "properties": {
         "agenda_items": {
             "items": {

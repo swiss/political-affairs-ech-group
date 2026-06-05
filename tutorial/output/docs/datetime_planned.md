@@ -1,14 +1,33 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: datetime_planned 
 
 
+_The planned date and time of an instantaneous event or occurrence (without time duration)._
 
-URI: [tutorial:datetime_planned](https://ch.paf.link/schema/tutorial/datetime_planned)
-Alias: datetime_planned
+__
 
+
+
+<div data-search-exclude markdown="1">
+
+
+
+URI: [mcm:datetimePlanned](https://ld.ech.ch/schema/0292/meta-common/datetimePlanned)
 <!-- no inheritance hierarchy -->
 
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [IsInstantaneousEvent](IsInstantaneousEvent.md) | A mixin class that provides slots for modeling instantaneous events or occurr... |  no  |
 
 
 
@@ -17,7 +36,24 @@ Alias: datetime_planned
 
 ## Properties
 
-* Range: [Datetime](Datetime.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Datetime](Datetime.md) |
+| Domain Of | [IsInstantaneousEvent](IsInstantaneousEvent.md) |
+| Slot URI | [mcm:datetimePlanned](https://ld.ech.ch/schema/0292/meta-common/datetimePlanned) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -25,6 +61,13 @@ Alias: datetime_planned
 ## Identifier and Mapping Information
 
 
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Das geplante Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer).
+ |
 
 
 
@@ -41,7 +84,7 @@ Alias: datetime_planned
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | tutorial:datetime_planned |
+| self | mcm:datetimePlanned |
 | native | tutorial:datetime_planned |
 
 
@@ -52,10 +95,23 @@ Alias: datetime_planned
 <details>
 ```yaml
 name: datetime_planned
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das geplante Datum und die Uhrzeit eines instantanen Ereignisses oder
+      Vorkommnissen (ohne Zeitdauer).
+
+      '
+description: 'The planned date and time of an instantaneous event or occurrence (without
+  time duration).
+
+  '
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-alias: datetime_planned
+slot_uri: mcm:datetimePlanned
+domain_of:
+- IsInstantaneousEvent
 range: datetime
 
 ```
-</details>
+</details></div>

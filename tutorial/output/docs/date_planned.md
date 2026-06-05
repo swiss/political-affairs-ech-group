@@ -1,14 +1,33 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: date_planned 
 
 
+_The planned date of an instantaneous event or occurrence (without time duration)._
 
-URI: [tutorial:date_planned](https://ch.paf.link/schema/tutorial/date_planned)
-Alias: date_planned
+__
 
+
+
+<div data-search-exclude markdown="1">
+
+
+
+URI: [mcm:datePlanned](https://ld.ech.ch/schema/0292/meta-common/datePlanned)
 <!-- no inheritance hierarchy -->
 
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [IsInstantaneousEvent](IsInstantaneousEvent.md) | A mixin class that provides slots for modeling instantaneous events or occurr... |  no  |
 
 
 
@@ -17,7 +36,24 @@ Alias: date_planned
 
 ## Properties
 
-* Range: [Date](Date.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Date](Date.md) |
+| Domain Of | [IsInstantaneousEvent](IsInstantaneousEvent.md) |
+| Slot URI | [mcm:datePlanned](https://ld.ech.ch/schema/0292/meta-common/datePlanned) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -25,6 +61,13 @@ Alias: date_planned
 ## Identifier and Mapping Information
 
 
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Das geplante Datum eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer).
+ |
 
 
 
@@ -41,7 +84,7 @@ Alias: date_planned
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | tutorial:date_planned |
+| self | mcm:datePlanned |
 | native | tutorial:date_planned |
 
 
@@ -52,10 +95,23 @@ Alias: date_planned
 <details>
 ```yaml
 name: date_planned
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das geplante Datum eines instantanen Ereignisses oder Vorkommnissen (ohne
+      Zeitdauer).
+
+      '
+description: 'The planned date of an instantaneous event or occurrence (without time
+  duration).
+
+  '
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-alias: date_planned
+slot_uri: mcm:datePlanned
+domain_of:
+- IsInstantaneousEvent
 range: date
 
 ```
-</details>
+</details></div>

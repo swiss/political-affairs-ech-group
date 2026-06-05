@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: votes 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [tutorial:vote](https://ch.paf.link/schema/tutorial/vote)
-Alias: votes
-
 <!-- no inheritance hierarchy -->
 
 
@@ -27,15 +30,30 @@ Alias: votes
 
 ## Properties
 
-* Range: [Vote](Vote.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [Vote](Vote.md) |
+| Domain Of | [AgendaItem](AgendaItem.md), [Container](Container.md) |
+| Slot URI | [tutorial:vote](https://ch.paf.link/schema/tutorial/vote) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 
@@ -67,7 +85,6 @@ name: votes
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
 slot_uri: tutorial:vote
-alias: votes
 domain_of:
 - AgendaItem
 - Container
@@ -77,4 +94,4 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

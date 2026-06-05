@@ -1,6 +1,11 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: AgendaItem 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -22,8 +27,8 @@ URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
     
         
         
-        AgendaItem --> "*" MultilingualString : name
-        click MultilingualString href "../MultilingualString/"
+        AgendaItem --> "*" MultilingualValue : name
+        click MultilingualValue href "../MultilingualValue/"
     
 
         
@@ -46,13 +51,12 @@ URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [id](id.md) | 1 <br/> [String](String.md) |  | direct |
-| [name](name.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
+| [name](name.md) | * <br/> [MultilingualValue](MultilingualValue.md) |  | direct |
 | [votes](votes.md) | * <br/> [Vote](Vote.md) |  | direct |
 
 
@@ -73,8 +77,12 @@ URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -97,6 +105,33 @@ URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
 
 
 
+
+## Examples
+### Example: AgendaItem-hierarchical__en__en
+
+```yaml
+id: tutorial:s2025-2_t1
+name:
+- value: Landeshymne
+  language: de
+- value: National Anthem
+  language: en
+votes:
+- id: tutorial:s2025-2_t1_a1
+  question: Soll die Hymne geändert werden?
+  datetime_actual: '2025-06-15T10:00:00+01:00'
+  result: 'no'
+
+```
+### Example: AgendaItem-flat__de
+
+```yaml
+id: tutorial:s2025-2_t1
+name:
+- value: Landeshymne
+  language: de
+
+```
 
 
 
@@ -127,10 +162,13 @@ from_schema: https://ch.paf.link/schema/tutorial
 attributes:
   id:
     name: id
+    examples:
+    - value: tutorial:s2025
+    - value: tutorial:s2025-1
+    - value: tutorial:s2025-1_t1
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     identifier: true
-    alias: id
     owner: AgendaItem
     domain_of:
     - Session
@@ -144,12 +182,11 @@ attributes:
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     slot_uri: schema:name
-    alias: name
     owner: AgendaItem
     domain_of:
     - Session
     - AgendaItem
-    range: MultilingualString
+    range: MultilingualValue
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -158,7 +195,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     slot_uri: tutorial:vote
-    alias: votes
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -169,4 +205,4 @@ attributes:
     inlined_as_list: true
 
 ```
-</details>
+</details></div>

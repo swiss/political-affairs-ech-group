@@ -1,0 +1,76 @@
+{
+  "id": "tutorial:s2025",
+  "sessions": [
+    {
+      "id": "tutorial:s2025-1",
+      "date_begin_actual": "2025-03-01",
+      "date_end_actual": "2025-04-10",
+      "name": [
+        {
+          "value": "Frühlingssession 2025",
+          "language": "de"
+        },
+        {
+          "value": "Spring Session 2025",
+          "language": "en"
+        }
+      ]
+    },
+    {
+      "id": "tutorial:s2025-2",
+      "date_begin_actual": "2025-06-01",
+      "date_end_actual": "2025-07-10",
+      "name": [
+        {
+          "value": "Sommersession 2025",
+          "language": "de"
+        },
+        {
+          "value": "Summer Session 2025",
+          "language": "en"
+        }
+      ]
+    }
+  ],
+  "agenda_items": [
+    {
+      "id": "tutorial:s2025-1_t1",
+      "name": [
+        {
+          "value": "Fahnenfarbe",
+          "language": "de"
+        }
+      ]
+    },
+    {
+      "id": "tutorial:s2025-2_t1",
+      "name": [
+        {
+          "value": "Landeshymne",
+          "language": "de"
+        }
+      ]
+    }
+  ],
+  "votes": [
+    {
+      "id": "tutorial:s2025-1_t1_a1",
+      "question": "Soll die Farbe geändert werden?",
+      "is_part_of": "tutorial:s2025-1_t1",
+      "is_part_of_agenda_item": "tutorial:s2025-1_t1"
+    },
+    {
+      "id": "tutorial:s2025-1_t1_a2",
+      "question": "Soll die Farbe Auberginen-Oliv werden?",
+      "is_part_of": "tutorial:s2025-1_t1",
+      "is_part_of_agenda_item": "tutorial:s2025-1_t1"
+    },
+    {
+      "id": "tutorial:s2025-2_t1_a1",
+      "question": "Soll die Hymne geändert werden?",
+      "is_part_of": "tutorial:s2025-2_t1",
+      "is_part_of_agenda_item": "tutorial:s2025-2_t1"
+    }
+  ],
+  "@type": "Container"
+}

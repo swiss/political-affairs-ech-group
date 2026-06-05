@@ -1,12 +1,15 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: name 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [schema:name](http://schema.org/name)
-Alias: name
-
 <!-- no inheritance hierarchy -->
 
 
@@ -17,8 +20,8 @@ Alias: name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [AgendaItem](AgendaItem.md) |  |  no  |
 | [Session](Session.md) |  |  no  |
+| [AgendaItem](AgendaItem.md) |  |  no  |
 
 
 
@@ -27,15 +30,30 @@ Alias: name
 
 ## Properties
 
-* Range: [MultilingualString](MultilingualString.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [MultilingualValue](MultilingualValue.md) |
+| Domain Of | [Session](Session.md), [AgendaItem](AgendaItem.md) |
+| Slot URI | [schema:name](http://schema.org/name) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 
@@ -67,14 +85,13 @@ name: name
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
 slot_uri: schema:name
-alias: name
 domain_of:
 - Session
 - AgendaItem
-range: MultilingualString
+range: MultilingualValue
 multivalued: true
 inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>

@@ -1,6 +1,11 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Session 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -37,8 +42,8 @@ URI: [tutorial:Session](https://ch.paf.link/schema/tutorial/Session)
     
         
         
-        Session --> "*" MultilingualString : name
-        click MultilingualString href "../MultilingualString/"
+        Session --> "*" MultilingualValue : name
+        click MultilingualValue href "../MultilingualValue/"
     
 
         
@@ -50,15 +55,14 @@ URI: [tutorial:Session](https://ch.paf.link/schema/tutorial/Session)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [id](id.md) | 1 <br/> [String](String.md) |  | direct |
-| [date_begin_actual](date_begin_actual.md) | 0..1 <br/> [Date](Date.md) |  | direct |
-| [date_end_actual](date_end_actual.md) | 0..1 <br/> [Date](Date.md) |  | direct |
-| [name](name.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
+| [date_begin_actual](date_begin_actual.md) | 0..1 <br/> [Date](Date.md) | The actual start date of an event or occurrence with time duration | direct |
+| [date_end_actual](date_end_actual.md) | 0..1 <br/> [Date](Date.md) | The actual end date of an event or occurrence with time duration | direct |
+| [name](name.md) | * <br/> [MultilingualValue](MultilingualValue.md) |  | direct |
 | [agenda_items](agenda_items.md) | * <br/> [AgendaItem](AgendaItem.md) |  | direct |
 
 
@@ -77,8 +81,12 @@ URI: [tutorial:Session](https://ch.paf.link/schema/tutorial/Session)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -101,6 +109,46 @@ URI: [tutorial:Session](https://ch.paf.link/schema/tutorial/Session)
 
 
 
+
+## Examples
+### Example: Session-hierarchical__en
+
+```yaml
+id: tutorial:s2025-2
+date_begin_actual: '2025-06-01'
+date_end_actual: '2025-07-10'
+name:
+- value: Sommersession 2025
+  language: de
+- value: Summer Session 2025
+  language: en
+agenda_items:
+- id: tutorial:s2025-2_t1
+  name:
+  - value: Landeshymne
+    language: de
+  - value: National Anthem
+    language: en
+  votes:
+  - id: tutorial:s2025-2_t1_a1
+    question: Soll die Hymne geändert werden?
+    datetime_actual: '2025-06-15T10:00:00+01:00'
+    result: 'no'
+
+```
+### Example: Session-flat__en
+
+```yaml
+id: tutorial:s2025-2
+date_begin_actual: 2025-06-01
+date_end_actual: 2025-07-10
+name:
+- value: Sommersession 2025
+  language: de
+- value: Summer Session 2025
+  language: en
+
+```
 
 
 
@@ -133,10 +181,13 @@ from_schema: https://ch.paf.link/schema/tutorial
 attributes:
   id:
     name: id
+    examples:
+    - value: tutorial:s2025
+    - value: tutorial:s2025-1
+    - value: tutorial:s2025-1_t1
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     identifier: true
-    alias: id
     owner: Session
     domain_of:
     - Session
@@ -147,48 +198,70 @@ attributes:
     required: true
   date_begin_actual:
     name: date_begin_actual
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit
+          Zeitdauer.
+
+          '
+    description: 'The actual start date of an event or occurrence with time duration.
+
+      '
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    alias: date_begin_actual
+    slot_uri: mcm:dateBeginActual
     owner: Session
     domain_of:
     - Session
+    - IsEventWithDuration
     range: date
   date_end_actual:
     name: date_end_actual
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Enddatum eines Ereignisses oder Vorkommnissen mit
+          Zeitdauer.
+
+          '
+    description: 'The actual end date of an event or occurrence with time duration.
+
+      '
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    alias: date_end_actual
+    slot_uri: mcm:dateEndActual
     owner: Session
     domain_of:
     - Session
+    - IsEventWithDuration
     range: date
   name:
     name: name
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     slot_uri: schema:name
-    alias: name
     owner: Session
     domain_of:
     - Session
     - AgendaItem
-    range: MultilingualString
+    range: MultilingualValue
     multivalued: true
+    inlined: true
     inlined_as_list: true
   agenda_items:
     name: agenda_items
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     slot_uri: tutorial:agendaItem
-    alias: agenda_items
     owner: Session
     domain_of:
     - Session
     - Container
     range: AgendaItem
     multivalued: true
+    inlined: true
     inlined_as_list: true
 
 ```
-</details>
+</details></div>

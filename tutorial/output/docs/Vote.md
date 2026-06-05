@@ -1,6 +1,11 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Vote 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -52,7 +57,6 @@ URI: [tutorial:Vote](https://ch.paf.link/schema/tutorial/Vote)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -60,7 +64,7 @@ URI: [tutorial:Vote](https://ch.paf.link/schema/tutorial/Vote)
 | [id](id.md) | 1 <br/> [String](String.md) |  | direct |
 | [is_part_of](is_part_of.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) |  | direct |
 | [question](question.md) | 1 <br/> [String](String.md) |  | direct |
-| [datetime_actual](datetime_actual.md) | 0..1 <br/> [Datetime](Datetime.md) |  | direct |
+| [datetime_actual](datetime_actual.md) | 0..1 <br/> [Datetime](Datetime.md) | The actual date and time of an instantaneous event or occurrence (without tim... | direct |
 | [result](result.md) | 0..1 <br/> [ResultEnum](ResultEnum.md) |  | direct |
 | [is_part_of_agenda_item](is_part_of_agenda_item.md) | 0..1 <br/> [AgendaItem](AgendaItem.md) |  | direct |
 
@@ -81,8 +85,12 @@ URI: [tutorial:Vote](https://ch.paf.link/schema/tutorial/Vote)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -147,17 +155,19 @@ attributes:
     name: is_part_of_agenda_item
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    alias: is_part_of_agenda_item
     owner: Vote
     domain_of:
     - Vote
     range: AgendaItem
   id:
     name: id
+    examples:
+    - value: tutorial:s2025
+    - value: tutorial:s2025-1
+    - value: tutorial:s2025-1_t1
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     identifier: true
-    alias: id
     owner: Vote
     domain_of:
     - Session
@@ -168,18 +178,23 @@ attributes:
     required: true
   is_part_of:
     name: is_part_of
+    examples:
+    - value: tutorial:s2025-1_t1
+    - value: tutorial:s2025-2_t1
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    alias: is_part_of
     owner: Vote
     domain_of:
     - Vote
     range: uriorcurie
   question:
     name: question
+    examples:
+    - value: Soll die Farbe Auberginen-Oliv werden?
+    - value: Soll die Farbe geändert werden?
+    - value: Soll die Hymne geändert werden?
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    alias: question
     owner: Vote
     domain_of:
     - Vote
@@ -187,22 +202,36 @@ attributes:
     required: true
   datetime_actual:
     name: datetime_actual
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses
+          oder Vorkommnissen (ohne Zeitdauer).
+
+          '
+    description: 'The actual date and time of an instantaneous event or occurrence
+      (without time duration).
+
+      '
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    alias: datetime_actual
+    slot_uri: mcm:datetimeActual
     owner: Vote
     domain_of:
     - Vote
+    - IsInstantaneousEvent
     range: datetime
   result:
     name: result
+    examples:
+    - value: 'no'
+    - value: 'yes'
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    alias: result
     owner: Vote
     domain_of:
     - Vote
     range: result_enum
 
 ```
-</details>
+</details></div>

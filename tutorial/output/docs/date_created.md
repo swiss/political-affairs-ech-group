@@ -1,14 +1,33 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: date_created 
 
 
+_The date when an entity was created._
 
-URI: [tutorial:date_created](https://ch.paf.link/schema/tutorial/date_created)
-Alias: date_created
+__
 
+
+
+<div data-search-exclude markdown="1">
+
+
+
+URI: [mcm:dateCreated](https://ld.ech.ch/schema/0292/meta-common/dateCreated)
 <!-- no inheritance hierarchy -->
 
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [HasCreationModificationDates](HasCreationModificationDates.md) | A mixin class that provides slots for modeling creation and modification date... |  no  |
 
 
 
@@ -17,7 +36,24 @@ Alias: date_created
 
 ## Properties
 
-* Range: [Date](Date.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Date](Date.md) |
+| Domain Of | [HasCreationModificationDates](HasCreationModificationDates.md) |
+| Slot URI | [mcm:dateCreated](https://ld.ech.ch/schema/0292/meta-common/dateCreated) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -25,6 +61,13 @@ Alias: date_created
 ## Identifier and Mapping Information
 
 
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Das Datum, an dem eine Entität erstellt wurde.
+ |
 
 
 
@@ -41,7 +84,7 @@ Alias: date_created
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | tutorial:date_created |
+| self | mcm:dateCreated |
 | native | tutorial:date_created |
 
 
@@ -52,10 +95,21 @@ Alias: date_created
 <details>
 ```yaml
 name: date_created
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das Datum, an dem eine Entität erstellt wurde.
+
+      '
+description: 'The date when an entity was created.
+
+  '
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-alias: date_created
+slot_uri: mcm:dateCreated
+domain_of:
+- HasCreationModificationDates
 range: date
 
 ```
-</details>
+</details></div>

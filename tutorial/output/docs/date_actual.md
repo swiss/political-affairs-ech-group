@@ -1,14 +1,33 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: date_actual 
 
 
+_The actual date of an instantaneous event or occurrence (without time duration)._
 
-URI: [tutorial:date_actual](https://ch.paf.link/schema/tutorial/date_actual)
-Alias: date_actual
+__
 
+
+
+<div data-search-exclude markdown="1">
+
+
+
+URI: [mcm:dateActual](https://ld.ech.ch/schema/0292/meta-common/dateActual)
 <!-- no inheritance hierarchy -->
 
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [IsInstantaneousEvent](IsInstantaneousEvent.md) | A mixin class that provides slots for modeling instantaneous events or occurr... |  no  |
 
 
 
@@ -17,7 +36,24 @@ Alias: date_actual
 
 ## Properties
 
-* Range: [Date](Date.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Date](Date.md) |
+| Domain Of | [IsInstantaneousEvent](IsInstantaneousEvent.md) |
+| Slot URI | [mcm:dateActual](https://ld.ech.ch/schema/0292/meta-common/dateActual) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
@@ -25,6 +61,13 @@ Alias: date_actual
 ## Identifier and Mapping Information
 
 
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| description_de | Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer).
+ |
 
 
 
@@ -41,7 +84,7 @@ Alias: date_actual
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | tutorial:date_actual |
+| self | mcm:dateActual |
 | native | tutorial:date_actual |
 
 
@@ -52,10 +95,23 @@ Alias: date_actual
 <details>
 ```yaml
 name: date_actual
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommnissen
+      (ohne Zeitdauer).
+
+      '
+description: 'The actual date of an instantaneous event or occurrence (without time
+  duration).
+
+  '
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-alias: date_actual
+slot_uri: mcm:dateActual
+domain_of:
+- IsInstantaneousEvent
 range: date
 
 ```
-</details>
+</details></div>

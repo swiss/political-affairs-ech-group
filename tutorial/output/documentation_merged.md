@@ -17,9 +17,14 @@ Intro Text from the input markdown file.
 | [Session](#Session) | None |
 | [Vote](#Vote) | None |
 
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: AgendaItem 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -41,8 +46,8 @@ URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
     
         
         
-        AgendaItem --> "*" MultilingualString : name
-        click MultilingualString href "../MultilingualString/"
+        AgendaItem --> "*" MultilingualValue : name
+        click MultilingualValue href "../MultilingualValue/"
     
 
         
@@ -65,13 +70,12 @@ URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [id](#id) | 1 <br/> [String](#String) |  | direct |
-| [name](#name) | * <br/> [MultilingualString](#MultilingualString) |  | direct |
+| [name](#name) | * <br/> [MultilingualValue](#MultilingualValue) |  | direct |
 | [votes](#votes) | * <br/> [Vote](#Vote) |  | direct |
 
 
@@ -92,8 +96,12 @@ URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -116,6 +124,33 @@ URI: [tutorial:AgendaItem](https://ch.paf.link/schema/tutorial/AgendaItem)
 
 
 
+
+## Examples
+### Example: AgendaItem-hierarchical__en__en
+
+```yaml
+id: tutorial:s2025-2_t1
+name:
+- value: Landeshymne
+  language: de
+- value: National Anthem
+  language: en
+votes:
+- id: tutorial:s2025-2_t1_a1
+  question: Soll die Hymne geändert werden?
+  datetime_actual: '2025-06-15T10:00:00+01:00'
+  result: 'no'
+
+```
+### Example: AgendaItem-flat__de
+
+```yaml
+id: tutorial:s2025-2_t1
+name:
+- value: Landeshymne
+  language: de
+
+```
 
 
 
@@ -146,10 +181,13 @@ from_schema: https://ch.paf.link/schema/tutorial
 attributes:
   id:
     name: id
+    examples:
+    - value: tutorial:s2025
+    - value: tutorial:s2025-1
+    - value: tutorial:s2025-1_t1
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     identifier: true
-    alias: id
     owner: AgendaItem
     domain_of:
     - Session
@@ -163,12 +201,11 @@ attributes:
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     slot_uri: schema:name
-    alias: name
     owner: AgendaItem
     domain_of:
     - Session
     - AgendaItem
-    range: MultilingualString
+    range: MultilingualValue
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -177,7 +214,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     slot_uri: tutorial:vote
-    alias: votes
     owner: AgendaItem
     domain_of:
     - AgendaItem
@@ -188,10 +224,15 @@ attributes:
     inlined_as_list: true
 
 ```
-</details>
-
+</details></div>
+---
+search:
+  boost: 10.0
+---
 
 # Class: Container 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -248,6 +289,12 @@ URI: [tutorial:Container](https://ch.paf.link/schema/tutorial/Container)
 
 <!-- no inheritance hierarchy -->
 
+## Class Properties
+
+| Property | Value |
+| --- | --- |
+| Tree Root | Yes |
+
 
 ## Slots
 
@@ -267,8 +314,12 @@ URI: [tutorial:Container](https://ch.paf.link/schema/tutorial/Container)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -291,6 +342,102 @@ URI: [tutorial:Container](https://ch.paf.link/schema/tutorial/Container)
 
 
 
+
+## Examples
+### Example: Container-hierarchical
+
+```yaml
+id: tutorial:s2025
+sessions:
+  - id: tutorial:s2025-1
+    date_begin_actual: "2025-03-01"
+    date_end_actual: "2025-04-10"
+    name: 
+      - value: Frühlingssession 2025
+        language: de
+      - value: Spring Session 2025
+        language: en
+    agenda_items:
+      - id: tutorial:s2025-1_t1
+        name:
+          - value: Fahnenfarbe
+            language: de
+          - value: Flag Color
+            language: en
+        votes:
+          - id: tutorial:s2025-1_t1_a1
+            question: Soll die Farbe geändert werden?
+            datetime_actual: "2025-03-15T10:00:00Z"
+            result: "yes"
+          - id: tutorial:s2025-1_t1_a2
+            question: Soll die Farbe Auberginen-Oliv werden?
+            datetime_actual: "2025-03-16T10:00:00Z"
+            result: "no"
+  - id: tutorial:s2025-2
+    date_begin_actual: "2025-06-01"
+    date_end_actual: "2025-07-10"
+    name: 
+      - value: Sommersession 2025
+        language: de
+      - value: Summer Session 2025
+        language: en
+    agenda_items:
+      - id: tutorial:s2025-2_t1
+        name: 
+          - value: Landeshymne
+            language: de
+          - value: National Anthem
+            language: en
+        votes:
+          - id: tutorial:s2025-2_t1_a1
+            question: Soll die Hymne geändert werden?
+            datetime_actual: "2025-06-15T10:00:00+01:00"
+            result: "no"
+```
+### Example: Container-flat
+
+```yaml
+id: tutorial:s2025
+sessions: 
+  - id: tutorial:s2025-1
+    date_begin_actual: 2025-03-01
+    date_end_actual: 2025-04-10
+    name: 
+      - value: Frühlingssession 2025
+        language: de
+      - value: Spring Session 2025
+        language: en
+  - id: tutorial:s2025-2
+    date_begin_actual: 2025-06-01
+    date_end_actual: 2025-07-10
+    name: 
+      - value: Sommersession 2025
+        language: de
+      - value: Summer Session 2025
+        language: en
+agenda_items:
+  - id: tutorial:s2025-1_t1
+    name:
+      - value: Fahnenfarbe
+        language: de
+  - id: tutorial:s2025-2_t1
+    name: 
+      - value: Landeshymne
+        language: de
+votes:
+  - id: tutorial:s2025-1_t1_a1
+    is_part_of_agenda_item: tutorial:s2025-1_t1
+    is_part_of: tutorial:s2025-1_t1
+    question: Soll die Farbe geändert werden?
+  - id: tutorial:s2025-1_t1_a2
+    is_part_of_agenda_item: tutorial:s2025-1_t1
+    is_part_of: tutorial:s2025-1_t1
+    question: Soll die Farbe Auberginen-Oliv werden?
+  - id: tutorial:s2025-2_t1_a1
+    is_part_of_agenda_item: tutorial:s2025-2_t1
+    is_part_of: tutorial:s2025-2_t1
+    question: Soll die Hymne geändert werden?
+```
 
 
 
@@ -323,10 +470,13 @@ from_schema: https://ch.paf.link/schema/tutorial
 attributes:
   id:
     name: id
+    examples:
+    - value: tutorial:s2025
+    - value: tutorial:s2025-1
+    - value: tutorial:s2025-1_t1
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     identifier: true
-    alias: id
     owner: Container
     domain_of:
     - Session
@@ -340,7 +490,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     slot_uri: tutorial:session
-    alias: sessions
     owner: Container
     domain_of:
     - Container
@@ -353,7 +502,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     slot_uri: tutorial:agendaItem
-    alias: agenda_items
     owner: Container
     domain_of:
     - Session
@@ -367,7 +515,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     slot_uri: tutorial:vote
-    alias: votes
     owner: Container
     domain_of:
     - AgendaItem
@@ -379,10 +526,15 @@ attributes:
 tree_root: true
 
 ```
-</details>
-
+</details></div>
+---
+search:
+  boost: 10.0
+---
 
 # Class: Session 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -419,8 +571,8 @@ URI: [tutorial:Session](https://ch.paf.link/schema/tutorial/Session)
     
         
         
-        Session --> "*" MultilingualString : name
-        click MultilingualString href "../MultilingualString/"
+        Session --> "*" MultilingualValue : name
+        click MultilingualValue href "../MultilingualValue/"
     
 
         
@@ -432,15 +584,14 @@ URI: [tutorial:Session](https://ch.paf.link/schema/tutorial/Session)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [id](#id) | 1 <br/> [String](#String) |  | direct |
-| [date_begin_actual](#date_begin_actual) | 0..1 <br/> [Date](#Date) |  | direct |
-| [date_end_actual](#date_end_actual) | 0..1 <br/> [Date](#Date) |  | direct |
-| [name](#name) | * <br/> [MultilingualString](#MultilingualString) |  | direct |
+| [date_begin_actual](#date_begin_actual) | 0..1 <br/> [Date](#Date) | The actual start date of an event or occurrence with time duration | direct |
+| [date_end_actual](#date_end_actual) | 0..1 <br/> [Date](#Date) | The actual end date of an event or occurrence with time duration | direct |
+| [name](#name) | * <br/> [MultilingualValue](#MultilingualValue) |  | direct |
 | [agenda_items](#agenda_items) | * <br/> [AgendaItem](#AgendaItem) |  | direct |
 
 
@@ -459,8 +610,12 @@ URI: [tutorial:Session](https://ch.paf.link/schema/tutorial/Session)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -483,6 +638,46 @@ URI: [tutorial:Session](https://ch.paf.link/schema/tutorial/Session)
 
 
 
+
+## Examples
+### Example: Session-hierarchical__en
+
+```yaml
+id: tutorial:s2025-2
+date_begin_actual: '2025-06-01'
+date_end_actual: '2025-07-10'
+name:
+- value: Sommersession 2025
+  language: de
+- value: Summer Session 2025
+  language: en
+agenda_items:
+- id: tutorial:s2025-2_t1
+  name:
+  - value: Landeshymne
+    language: de
+  - value: National Anthem
+    language: en
+  votes:
+  - id: tutorial:s2025-2_t1_a1
+    question: Soll die Hymne geändert werden?
+    datetime_actual: '2025-06-15T10:00:00+01:00'
+    result: 'no'
+
+```
+### Example: Session-flat__en
+
+```yaml
+id: tutorial:s2025-2
+date_begin_actual: 2025-06-01
+date_end_actual: 2025-07-10
+name:
+- value: Sommersession 2025
+  language: de
+- value: Summer Session 2025
+  language: en
+
+```
 
 
 
@@ -515,10 +710,13 @@ from_schema: https://ch.paf.link/schema/tutorial
 attributes:
   id:
     name: id
+    examples:
+    - value: tutorial:s2025
+    - value: tutorial:s2025-1
+    - value: tutorial:s2025-1_t1
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     identifier: true
-    alias: id
     owner: Session
     domain_of:
     - Session
@@ -529,54 +727,81 @@ attributes:
     required: true
   date_begin_actual:
     name: date_begin_actual
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit
+          Zeitdauer.
+
+          '
+    description: 'The actual start date of an event or occurrence with time duration.
+
+      '
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    alias: date_begin_actual
+    slot_uri: mcm:dateBeginActual
     owner: Session
     domain_of:
     - Session
+    - IsEventWithDuration
     range: date
   date_end_actual:
     name: date_end_actual
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Enddatum eines Ereignisses oder Vorkommnissen mit
+          Zeitdauer.
+
+          '
+    description: 'The actual end date of an event or occurrence with time duration.
+
+      '
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    alias: date_end_actual
+    slot_uri: mcm:dateEndActual
     owner: Session
     domain_of:
     - Session
+    - IsEventWithDuration
     range: date
   name:
     name: name
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     slot_uri: schema:name
-    alias: name
     owner: Session
     domain_of:
     - Session
     - AgendaItem
-    range: MultilingualString
+    range: MultilingualValue
     multivalued: true
+    inlined: true
     inlined_as_list: true
   agenda_items:
     name: agenda_items
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     slot_uri: tutorial:agendaItem
-    alias: agenda_items
     owner: Session
     domain_of:
     - Session
     - Container
     range: AgendaItem
     multivalued: true
+    inlined: true
     inlined_as_list: true
 
 ```
-</details>
-
+</details></div>
+---
+search:
+  boost: 10.0
+---
 
 # Class: Vote 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -628,7 +853,6 @@ URI: [tutorial:Vote](https://ch.paf.link/schema/tutorial/Vote)
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -636,7 +860,7 @@ URI: [tutorial:Vote](https://ch.paf.link/schema/tutorial/Vote)
 | [id](#id) | 1 <br/> [String](#String) |  | direct |
 | [is_part_of](#is_part_of) | 0..1 <br/> [Uriorcurie](#Uriorcurie) |  | direct |
 | [question](#question) | 1 <br/> [String](#String) |  | direct |
-| [datetime_actual](#datetime_actual) | 0..1 <br/> [Datetime](#Datetime) |  | direct |
+| [datetime_actual](#datetime_actual) | 0..1 <br/> [Datetime](#Datetime) | The actual date and time of an instantaneous event or occurrence (without tim... | direct |
 | [result](#result) | 0..1 <br/> [ResultEnum](#ResultEnum) |  | direct |
 | [is_part_of_agenda_item](#is_part_of_agenda_item) | 0..1 <br/> [AgendaItem](#AgendaItem) |  | direct |
 
@@ -657,8 +881,12 @@ URI: [tutorial:Vote](https://ch.paf.link/schema/tutorial/Vote)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -723,17 +951,19 @@ attributes:
     name: is_part_of_agenda_item
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    alias: is_part_of_agenda_item
     owner: Vote
     domain_of:
     - Vote
     range: AgendaItem
   id:
     name: id
+    examples:
+    - value: tutorial:s2025
+    - value: tutorial:s2025-1
+    - value: tutorial:s2025-1_t1
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     identifier: true
-    alias: id
     owner: Vote
     domain_of:
     - Session
@@ -744,18 +974,23 @@ attributes:
     required: true
   is_part_of:
     name: is_part_of
+    examples:
+    - value: tutorial:s2025-1_t1
+    - value: tutorial:s2025-2_t1
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    alias: is_part_of
     owner: Vote
     domain_of:
     - Vote
     range: uriorcurie
   question:
     name: question
+    examples:
+    - value: Soll die Farbe Auberginen-Oliv werden?
+    - value: Soll die Farbe geändert werden?
+    - value: Soll die Hymne geändert werden?
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    alias: question
     owner: Vote
     domain_of:
     - Vote
@@ -763,22 +998,36 @@ attributes:
     required: true
   datetime_actual:
     name: datetime_actual
+    annotations:
+      description_de:
+        tag: description_de
+        value: 'Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses
+          oder Vorkommnissen (ohne Zeitdauer).
+
+          '
+    description: 'The actual date and time of an instantaneous event or occurrence
+      (without time duration).
+
+      '
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    alias: datetime_actual
+    slot_uri: mcm:datetimeActual
     owner: Vote
     domain_of:
     - Vote
+    - IsInstantaneousEvent
     range: datetime
   result:
     name: result
+    examples:
+    - value: 'no'
+    - value: 'yes'
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
-    alias: result
     owner: Vote
     domain_of:
     - Vote
     range: result_enum
 
 ```
-</details>
+</details></div>

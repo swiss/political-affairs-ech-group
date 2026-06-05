@@ -1,6 +1,11 @@
-
+---
+search:
+  boost: 10.0
+---
 
 # Class: Container 
+
+<div data-search-exclude markdown="1">
 
 
 
@@ -57,6 +62,12 @@ URI: [tutorial:Container](https://ch.paf.link/schema/tutorial/Container)
 
 <!-- no inheritance hierarchy -->
 
+## Class Properties
+
+| Property | Value |
+| --- | --- |
+| Tree Root | Yes |
+
 
 ## Slots
 
@@ -76,8 +87,12 @@ URI: [tutorial:Container](https://ch.paf.link/schema/tutorial/Container)
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 
@@ -100,6 +115,102 @@ URI: [tutorial:Container](https://ch.paf.link/schema/tutorial/Container)
 
 
 
+
+## Examples
+### Example: Container-hierarchical
+
+```yaml
+id: tutorial:s2025
+sessions:
+  - id: tutorial:s2025-1
+    date_begin_actual: "2025-03-01"
+    date_end_actual: "2025-04-10"
+    name: 
+      - value: Frühlingssession 2025
+        language: de
+      - value: Spring Session 2025
+        language: en
+    agenda_items:
+      - id: tutorial:s2025-1_t1
+        name:
+          - value: Fahnenfarbe
+            language: de
+          - value: Flag Color
+            language: en
+        votes:
+          - id: tutorial:s2025-1_t1_a1
+            question: Soll die Farbe geändert werden?
+            datetime_actual: "2025-03-15T10:00:00Z"
+            result: "yes"
+          - id: tutorial:s2025-1_t1_a2
+            question: Soll die Farbe Auberginen-Oliv werden?
+            datetime_actual: "2025-03-16T10:00:00Z"
+            result: "no"
+  - id: tutorial:s2025-2
+    date_begin_actual: "2025-06-01"
+    date_end_actual: "2025-07-10"
+    name: 
+      - value: Sommersession 2025
+        language: de
+      - value: Summer Session 2025
+        language: en
+    agenda_items:
+      - id: tutorial:s2025-2_t1
+        name: 
+          - value: Landeshymne
+            language: de
+          - value: National Anthem
+            language: en
+        votes:
+          - id: tutorial:s2025-2_t1_a1
+            question: Soll die Hymne geändert werden?
+            datetime_actual: "2025-06-15T10:00:00+01:00"
+            result: "no"
+```
+### Example: Container-flat
+
+```yaml
+id: tutorial:s2025
+sessions: 
+  - id: tutorial:s2025-1
+    date_begin_actual: 2025-03-01
+    date_end_actual: 2025-04-10
+    name: 
+      - value: Frühlingssession 2025
+        language: de
+      - value: Spring Session 2025
+        language: en
+  - id: tutorial:s2025-2
+    date_begin_actual: 2025-06-01
+    date_end_actual: 2025-07-10
+    name: 
+      - value: Sommersession 2025
+        language: de
+      - value: Summer Session 2025
+        language: en
+agenda_items:
+  - id: tutorial:s2025-1_t1
+    name:
+      - value: Fahnenfarbe
+        language: de
+  - id: tutorial:s2025-2_t1
+    name: 
+      - value: Landeshymne
+        language: de
+votes:
+  - id: tutorial:s2025-1_t1_a1
+    is_part_of_agenda_item: tutorial:s2025-1_t1
+    is_part_of: tutorial:s2025-1_t1
+    question: Soll die Farbe geändert werden?
+  - id: tutorial:s2025-1_t1_a2
+    is_part_of_agenda_item: tutorial:s2025-1_t1
+    is_part_of: tutorial:s2025-1_t1
+    question: Soll die Farbe Auberginen-Oliv werden?
+  - id: tutorial:s2025-2_t1_a1
+    is_part_of_agenda_item: tutorial:s2025-2_t1
+    is_part_of: tutorial:s2025-2_t1
+    question: Soll die Hymne geändert werden?
+```
 
 
 
@@ -132,10 +243,13 @@ from_schema: https://ch.paf.link/schema/tutorial
 attributes:
   id:
     name: id
+    examples:
+    - value: tutorial:s2025
+    - value: tutorial:s2025-1
+    - value: tutorial:s2025-1_t1
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     identifier: true
-    alias: id
     owner: Container
     domain_of:
     - Session
@@ -149,7 +263,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     slot_uri: tutorial:session
-    alias: sessions
     owner: Container
     domain_of:
     - Container
@@ -162,7 +275,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     slot_uri: tutorial:agendaItem
-    alias: agenda_items
     owner: Container
     domain_of:
     - Session
@@ -176,7 +288,6 @@ attributes:
     from_schema: https://ch.paf.link/schema/tutorial
     rank: 1000
     slot_uri: tutorial:vote
-    alias: votes
     owner: Container
     domain_of:
     - AgendaItem
@@ -188,4 +299,4 @@ attributes:
 tree_root: true
 
 ```
-</details>
+</details></div>

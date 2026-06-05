@@ -1,4 +1,7 @@
-# Type: Ncname 
+---
+search:
+  boost: 1.0
+---# Type: Ncname 
 
 
 
@@ -7,22 +10,30 @@ _Prefix part of CURIE_
 
 
 
+<div data-search-exclude markdown="1">
+
 URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
-* [base](https://w3id.org/linkml/base): NCName
+## Type Properties
 
-* [uri](https://w3id.org/linkml/uri): xsd:string
+| Property | Value |
+| --- | --- |
+| Base | `NCName` |
+| Type URI | [xsd:string](http://www.w3.org/2001/XMLSchema#string) |
+| Representation | `str` |
 
-* [repr](https://w3id.org/linkml/repr): str
 
 
 
 
+
+## Notes
+
+* If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "ncname".
 
 
 
 ## Identifier and Mapping Information
-
 
 
 
@@ -44,3 +55,6 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 | native | tutorial:ncname |
 
 
+
+
+</div>

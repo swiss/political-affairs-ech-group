@@ -1,23 +1,17 @@
-
+---
+search:
+  boost: 5.0
+---
 
 # Slot: text 
+
+<div data-search-exclude markdown="1">
 
 
 
 URI: [tutorial:text](https://ch.paf.link/schema/tutorial/text)
-Alias: text
-
 <!-- no inheritance hierarchy -->
 
-
-
-
-
-## Applicable Classes
-
-| Name | Description | Modifies Slot |
-| --- | --- | --- |
-| [MultilingualString](MultilingualString.md) |  |  no  |
 
 
 
@@ -26,15 +20,28 @@ Alias: text
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
 
-* Required: True
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Required | Yes |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 
@@ -65,11 +72,8 @@ Alias: text
 name: text
 from_schema: https://ch.paf.link/schema/tutorial
 rank: 1000
-alias: text
-domain_of:
-- MultilingualString
 range: string
 required: true
 
 ```
-</details>
+</details></div>
