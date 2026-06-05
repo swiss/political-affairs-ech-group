@@ -1,18 +1,27 @@
 # Documentation Workflow
 
-Manual steps:
+## Goal
+
+The goal of the documentation workflow in this repository is to maintain a single source of truth for the data schema, example data, and documentation for each subgroup. The workflow is designed to be efficient and automated, allowing for easy updates and maintenance of the documentation.
+
+## Source Files and Automated Steps
+
+Source files (hand-written by subgroup members):
 
 - Description of the data schema in YAML using LinkML in the `input` folder of each subgroup in the file `schema.yaml`.
-- Generate example data conforming to the schema in the files `data_xyz.yaml` in the `input` folder.
-- Write the accompanying documentation in Markdown with files in the form of `1_head.md`, `2_intro.md` (`number_subject.md`) in the `input` folder.
+- Example data conforming to the schema in the files `data_xyz.yaml` in the `input` folder.
+- Accompanying documentation in Markdown with files in the form of `1_head.md`, `2_intro.md` (`number_subject.md`) in the `input` folder.
 
-Automated steps (every commit that changes files in the `input` folder triggers a GitHub Action that automatically):
+Automated steps (every commit that changes files in the `input` folder triggers a GitHub Action that runs the following steps):
 
 - Generates a schema in JSON and OWL (TTL) format from the `schema.yaml` file and stores it in the `output` folder as `schema.json` and `schema.ttl`.
 - Converts the example data in `data_xyz.yaml` to JSON and RDF (TTL) format and stores it in the `output` folder as `data_xyz.json` and `data_xyz.ttl`.
-- Generates the documentation using the `linkml-doc` tool. The generated documentation is stored as individual Markdown files in the `output/docs` folder.
+- Creates example snippets in YAML in the folder `output/examples`.
+- Generates the documentation using the [gen-doc](https://linkml.io/linkml/generators/docgen.html) tool of LinkML, using some individually crafted [jinja2](https://jinja.palletsprojects.com/en/stable/) templates in `ech-0292_meta/input/docgen` and the created example files. The generated documentation is stored as individual Markdown files in the `output/docs` folder.
 - Creates a unified Markdown file from all the files in the `input` folder and stores it as `output/documentation_merged.md`.
-- Converts the unified Markdown file from the `output` folder to DOCX using `pandoc` and a `template.docx` file in the `input` folder and stores it in the `output` folder.
+- Converts the unified Markdown file from the `output` folder to DOCX using `pandoc` and a `template.docx` file in the `input` folder and stores it in the `output` folder adding also a specific [pagebreak filter](https://github.com/pandoc/lua-filters/tree/master/pagebreak).
+
+To see the detailed programmatic steps, see the GitHub Action workflow files `.github/workflows/ech-xxxx.yaml`.
 
 ## Building the DOCX Document
 
