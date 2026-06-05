@@ -34,29 +34,6 @@ URI: [xsd:time](http://www.w3.org/2001/XMLSchema#time)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:time |
-| native | tutorial:time |
-| exact | schema:Time |
-
-
 
 
 </div>

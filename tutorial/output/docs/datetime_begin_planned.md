@@ -59,36 +59,6 @@ URI: [mcm:datetimeBeginPlanned](https://ld.ech.ch/schema/0292/meta-common/dateti
 
 
 
-## Identifier and Mapping Information
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| description_de | Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer.
- |
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:datetimeBeginPlanned |
-| native | tutorial:datetime_begin_planned |
-
-
 
 
 ## LinkML Source

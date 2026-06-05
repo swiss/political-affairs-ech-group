@@ -61,36 +61,6 @@ URI: [mcm:wikidataUri](https://ld.ech.ch/schema/0292/meta-common/wikidataUri)
 
 
 
-## Identifier and Mapping Information
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| description_de | Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz.
- |
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:wikidataUri |
-| native | tutorial:wikidata_uri |
-
-
 
 
 ## LinkML Source

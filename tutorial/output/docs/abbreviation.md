@@ -59,36 +59,6 @@ URI: [mcm:abbreviation](https://ld.ech.ch/schema/0292/meta-common/abbreviation)
 
 
 
-## Identifier and Mapping Information
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| description_de | Abkürzung (kann mehrsprachig sein).
- |
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:abbreviation |
-| native | tutorial:abbreviation |
-
-
 
 
 ## LinkML Source

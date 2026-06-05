@@ -53,28 +53,6 @@ URI: [tutorial:agendaItem](https://ch.paf.link/schema/tutorial/agendaItem)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | tutorial:agendaItem |
-| native | tutorial:agenda_items |
-
-
 
 
 ## LinkML Source

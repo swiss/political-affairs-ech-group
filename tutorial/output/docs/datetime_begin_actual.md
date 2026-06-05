@@ -59,36 +59,6 @@ URI: [mcm:datetimeBeginActual](https://ld.ech.ch/schema/0292/meta-common/datetim
 
 
 
-## Identifier and Mapping Information
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| description_de | Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer.
- |
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:datetimeBeginActual |
-| native | tutorial:datetime_begin_actual |
-
-
 
 
 ## LinkML Source

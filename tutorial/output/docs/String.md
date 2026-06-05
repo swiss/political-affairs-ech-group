@@ -32,29 +32,6 @@ URI: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:string |
-| native | tutorial:string |
-| exact | schema:Text |
-
-
 
 
 </div>

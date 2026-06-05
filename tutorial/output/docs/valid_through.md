@@ -58,36 +58,6 @@ URI: [schema:validThrough](http://schema.org/validThrough)
 
 
 
-## Identifier and Mapping Information
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| description_de | Das Datum, bis und mit dem die Information gültig ist.
- |
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | schema:validThrough |
-| native | tutorial:valid_through |
-
-
 
 
 ## LinkML Source

@@ -1,82 +1,20 @@
----
-search:
-  boost: 10.0
----
 
-# Class: Container 
+
+## Class: Container 
 
 <div data-search-exclude markdown="1">
 
 
 
-URI: [tutorial:Container](https://ch.paf.link/schema/tutorial/Container)
 
+### Attribute
 
-
-
-
-```mermaid
- classDiagram
-    class Container
-    click Container href "../Container/"
-      Container : agenda_items
-        
-          
-    
-        
-        
-        Container --> "*" AgendaItem : agenda_items
-        click AgendaItem href "../AgendaItem/"
-    
-
-        
-      Container : id
-        
-      Container : sessions
-        
-          
-    
-        
-        
-        Container --> "*" Session : sessions
-        click Session href "../Session/"
-    
-
-        
-      Container : votes
-        
-          
-    
-        
-        
-        Container --> "*" Vote : votes
-        click Vote href "../Vote/"
-    
-
-        
-      
-```
-
-
-
-
-<!-- no inheritance hierarchy -->
-
-## Class Properties
-
-| Property | Value |
-| --- | --- |
-| Tree Root | Yes |
-
-
-## Slots
-
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [id](id.md) | 1 <br/> [String](String.md) |  | direct |
-| [sessions](sessions.md) | * <br/> [Session](Session.md) |  | direct |
-| [agenda_items](agenda_items.md) | * <br/> [AgendaItem](AgendaItem.md) |  | direct |
-| [votes](votes.md) | * <br/> [Vote](Vote.md) |  | direct |
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| id | 1 <br/> [String](String.md) | None |
+| sessions | * <br/> [Session](Session.md) | None |
+| agenda_items | * <br/> [AgendaItem](AgendaItem.md) | None |
+| votes | * <br/> [Vote](Vote.md) | None |
 
 
 
@@ -92,32 +30,10 @@ URI: [tutorial:Container](https://ch.paf.link/schema/tutorial/Container)
 
 
 
-## Identifier and Mapping Information
 
 
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | tutorial:Container |
-| native | tutorial:Container |
-
-
-
-
-## Examples
-### Example: Container-hierarchical
+### Examples
+#### Example: Container-hierarchical
 
 ```yaml
 id: tutorial:s2025
@@ -167,7 +83,7 @@ sessions:
             datetime_actual: "2025-06-15T10:00:00+01:00"
             result: "no"
 ```
-### Example: Container-flat
+#### Example: Container-flat
 
 ```yaml
 id: tutorial:s2025
@@ -214,89 +130,7 @@ votes:
 
 
 
-## LinkML Source
 
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 
-### Direct
 
-<details>
-```yaml
-name: Container
-from_schema: https://ch.paf.link/schema/tutorial
-slots:
-- id
-- sessions
-- agenda_items
-- votes
-tree_root: true
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: Container
-from_schema: https://ch.paf.link/schema/tutorial
-attributes:
-  id:
-    name: id
-    examples:
-    - value: tutorial:s2025
-    - value: tutorial:s2025-1
-    - value: tutorial:s2025-1_t1
-    from_schema: https://ch.paf.link/schema/tutorial
-    rank: 1000
-    identifier: true
-    owner: Container
-    domain_of:
-    - Session
-    - AgendaItem
-    - Vote
-    - Container
-    range: string
-    required: true
-  sessions:
-    name: sessions
-    from_schema: https://ch.paf.link/schema/tutorial
-    rank: 1000
-    slot_uri: tutorial:session
-    owner: Container
-    domain_of:
-    - Container
-    range: Session
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  agenda_items:
-    name: agenda_items
-    from_schema: https://ch.paf.link/schema/tutorial
-    rank: 1000
-    slot_uri: tutorial:agendaItem
-    owner: Container
-    domain_of:
-    - Session
-    - Container
-    range: AgendaItem
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  votes:
-    name: votes
-    from_schema: https://ch.paf.link/schema/tutorial
-    rank: 1000
-    slot_uri: tutorial:vote
-    owner: Container
-    domain_of:
-    - AgendaItem
-    - Container
-    range: Vote
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-tree_root: true
-
-```
-</details></div>
+</div>

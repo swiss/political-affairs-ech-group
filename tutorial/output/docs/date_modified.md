@@ -58,36 +58,6 @@ URI: [mcm:dateModified](https://ld.ech.ch/schema/0292/meta-common/dateModified)
 
 
 
-## Identifier and Mapping Information
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| description_de | Das Datum, an dem eine Entität zuletzt geändert wurde.
- |
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:dateModified |
-| native | tutorial:date_modified |
-
-
 
 
 ## LinkML Source

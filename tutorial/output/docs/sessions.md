@@ -52,28 +52,6 @@ URI: [tutorial:session](https://ch.paf.link/schema/tutorial/session)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | tutorial:session |
-| native | tutorial:sessions |
-
-
 
 
 ## LinkML Source

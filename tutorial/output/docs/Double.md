@@ -32,29 +32,6 @@ URI: [xsd:double](http://www.w3.org/2001/XMLSchema#double)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:double |
-| native | tutorial:double |
-| close | schema:Float |
-
-
 
 
 </div>

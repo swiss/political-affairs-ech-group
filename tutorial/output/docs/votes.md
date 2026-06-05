@@ -53,28 +53,6 @@ URI: [tutorial:vote](https://ch.paf.link/schema/tutorial/vote)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | tutorial:vote |
-| native | tutorial:votes |
-
-
 
 
 ## LinkML Source

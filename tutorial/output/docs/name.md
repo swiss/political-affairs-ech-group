@@ -53,28 +53,6 @@ URI: [schema:name](http://schema.org/name)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | schema:name |
-| native | tutorial:name |
-
-
 
 
 ## LinkML Source

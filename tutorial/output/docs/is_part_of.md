@@ -58,28 +58,6 @@ URI: [tutorial:is_part_of](https://ch.paf.link/schema/tutorial/is_part_of)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | tutorial:is_part_of |
-| native | tutorial:is_part_of |
-
-
 
 
 ## LinkML Source

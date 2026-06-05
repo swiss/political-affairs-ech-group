@@ -58,36 +58,6 @@ URI: [mcm:value](https://ld.ech.ch/schema/0292/meta-common/value)
 
 
 
-## Identifier and Mapping Information
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| description_de | Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc.
- |
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:value |
-| native | tutorial:value |
-
-
 
 
 ## LinkML Source

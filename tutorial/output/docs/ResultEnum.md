@@ -1,10 +1,4 @@
----
-search:
-  boost: 2.0
----
-
-
-# Enum: ResultEnum 
+## Enum: ResultEnum 
 
 
 
@@ -12,62 +6,18 @@ search:
 
 URI: [tutorial:result_enum](https://ch.paf.link/schema/tutorial/result_enum)
 
-## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| yes | tutorial:results/yes |  |
-| no | tutorial:results/no |  |
-
-
-
-
-## Slots
-
-| Name | Description |
-| ---  | --- |
-| [result](result.md) |  |
+### Permissible Values
+| Value | Description |
+| --- | --- |
+| yes |  None |
+| | [tutorial:results/yes](tutorial:results/yes) |
+| no |  None |
+| | [tutorial:results/no](tutorial:results/no) |
 
 
 
 
 
 
-
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-
-
-## LinkML Source
-
-<details>
-```yaml
-name: result_enum
-from_schema: https://ch.paf.link/schema/tutorial
-rank: 1000
-permissible_values:
-  'yes':
-    text: 'yes'
-    meaning: tutorial:results/yes
-  'no':
-    text: 'no'
-    meaning: tutorial:results/no
-
-```
-</details>
 
 </div>

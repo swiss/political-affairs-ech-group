@@ -58,36 +58,6 @@ URI: [mcm:datePlanned](https://ld.ech.ch/schema/0292/meta-common/datePlanned)
 
 
 
-## Identifier and Mapping Information
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| description_de | Das geplante Datum eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer).
- |
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:datePlanned |
-| native | tutorial:date_planned |
-
-
 
 
 ## LinkML Source

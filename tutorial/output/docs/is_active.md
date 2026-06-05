@@ -58,36 +58,6 @@ URI: [mcm:isCurrent](https://ld.ech.ch/schema/0292/meta-common/isCurrent)
 
 
 
-## Identifier and Mapping Information
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| description_de | Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist.
- |
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:isCurrent |
-| native | tutorial:is_active |
-
-
 
 
 ## LinkML Source

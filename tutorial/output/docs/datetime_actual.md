@@ -59,36 +59,6 @@ URI: [mcm:datetimeActual](https://ld.ech.ch/schema/0292/meta-common/datetimeActu
 
 
 
-## Identifier and Mapping Information
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| description_de | Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer).
- |
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:datetimeActual |
-| native | tutorial:datetime_actual |
-
-
 
 
 ## LinkML Source

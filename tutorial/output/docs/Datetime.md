@@ -33,29 +33,6 @@ URI: [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:dateTime |
-| native | tutorial:datetime |
-| exact | schema:DateTime |
-
-
 
 
 </div>

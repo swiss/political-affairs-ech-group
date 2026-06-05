@@ -32,29 +32,6 @@ URI: [xsd:decimal](http://www.w3.org/2001/XMLSchema#decimal)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | xsd:decimal |
-| native | tutorial:decimal |
-| broad | schema:Number |
-
-
 
 
 </div>

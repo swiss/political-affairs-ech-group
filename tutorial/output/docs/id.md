@@ -70,28 +70,6 @@ URI: [tutorial:id](https://ch.paf.link/schema/tutorial/id)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | tutorial:id |
-| native | tutorial:id |
-
-
 
 
 ## LinkML Source

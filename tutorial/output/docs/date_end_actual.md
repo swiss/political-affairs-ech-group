@@ -60,36 +60,6 @@ URI: [mcm:dateEndActual](https://ld.ech.ch/schema/0292/meta-common/dateEndActual
 
 
 
-## Identifier and Mapping Information
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| description_de | Das tatsächliche Enddatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
- |
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:dateEndActual |
-| native | tutorial:date_end_actual |
-
-
 
 
 ## LinkML Source

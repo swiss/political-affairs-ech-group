@@ -58,28 +58,6 @@ URI: [tutorial:result](https://ch.paf.link/schema/tutorial/result)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | tutorial:result |
-| native | tutorial:result |
-
-
 
 
 ## LinkML Source

@@ -41,28 +41,6 @@ URI: [tutorial:text](https://ch.paf.link/schema/tutorial/text)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | tutorial:text |
-| native | tutorial:text |
-
-
 
 
 ## LinkML Source

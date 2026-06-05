@@ -60,36 +60,6 @@ URI: [mcm:dateBeginActual](https://ld.ech.ch/schema/0292/meta-common/dateBeginAc
 
 
 
-## Identifier and Mapping Information
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| description_de | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
- |
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:dateBeginActual |
-| native | tutorial:date_begin_actual |
-
-
 
 
 ## LinkML Source

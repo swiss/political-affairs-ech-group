@@ -57,28 +57,6 @@ URI: [tutorial:is_part_of_agenda_item](https://ch.paf.link/schema/tutorial/is_pa
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | tutorial:is_part_of_agenda_item |
-| native | tutorial:is_part_of_agenda_item |
-
-
 
 
 ## LinkML Source

@@ -61,36 +61,6 @@ URI: [mcm:localId](https://ld.ech.ch/schema/0292/meta-common/localId)
 
 
 
-## Identifier and Mapping Information
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| description_de | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
- |
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:localId |
-| native | tutorial:local_id |
-
-
 
 
 ## LinkML Source

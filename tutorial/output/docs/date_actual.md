@@ -58,36 +58,6 @@ URI: [mcm:dateActual](https://ld.ech.ch/schema/0292/meta-common/dateActual)
 
 
 
-## Identifier and Mapping Information
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| description_de | Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer).
- |
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/tutorial
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:dateActual |
-| native | tutorial:date_actual |
-
-
 
 
 ## LinkML Source
