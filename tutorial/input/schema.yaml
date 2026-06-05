@@ -50,11 +50,6 @@ classes:
       - agenda_items
       - votes
 
-  MultilingualString:
-    slots:
-      - text
-      - language
-
 slots:
   
   id:
@@ -63,7 +58,7 @@ slots:
 
   name:
     slot_uri: schema:name
-    range: MultilingualString
+    range: MultilingualValue
     multivalued: true
     inlined_as_list: true
 
@@ -94,14 +89,6 @@ slots:
 
   text:
     required: true
-  
-  language:
-    required: true
-    description: |
-      [en] Language code in ISO 639-1 format.
-      [de] Sprachcode im ISO 639-1-Format.
-    pattern: ^[a-z]{2}$
-    slot_uri: dcterm:language
 
   is_part_of:
     range: uriorcurie # this will only create literals with xsd:anyURI datatype
