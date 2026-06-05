@@ -4,26 +4,26 @@ sessions:
     date_begin_actual: 2025-03-01
     date_end_actual: 2025-04-10
     name: 
-      - text: Frühlingssession 2025
+      - value: Frühlingssession 2025
         language: de
-      - text: Spring Session 2025
+      - value: Spring Session 2025
         language: en
   - id: tutorial:s2025-2
     date_begin_actual: 2025-06-01
     date_end_actual: 2025-07-10
     name: 
-      - text: Sommersession 2025
+      - value: Sommersession 2025
         language: de
-      - text: Summer Session 2025
+      - value: Summer Session 2025
         language: en
 agenda_items:
   - id: tutorial:s2025-1_t1
     name:
-      - text: Fahnenfarbe
+      - value: Fahnenfarbe
         language: de
   - id: tutorial:s2025-2_t1
     name: 
-      - text: Landeshymne
+      - value: Landeshymne
         language: de
 votes:
   - id: tutorial:s2025-1_t1_a1
