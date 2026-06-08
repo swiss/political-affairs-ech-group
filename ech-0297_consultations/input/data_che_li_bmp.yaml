@@ -74,29 +74,18 @@ consultations:
 
     responsible_organization:
       global_uri: actor:group/che/wbf/sbfi
-      name:
-        - text: "Staatssekretariat für Bildung, Forschung und Innovation (SBFI)"
-          language: de
-        - text: "Secrétariat d'État à la formation, à la recherche et à l'innovation (SEFRI)"
-          language: fr
-        - text: "Segreteria di Stato per la formazione, la ricerca e l'innovazione (SEFRI)"
-          language: it
-      address: "Einsteinstrasse 2, 3003 Bern"
+      label: "Staatssekretariat für Bildung, Forschung und Innovation (SBFI)"
 
     organizers:
       - global_uri: con:che/2026-2/organizer/sbfi
         group:
           global_uri: actor:group/che/wbf/sbfi
-          name:
-            - text: "Staatssekretariat für Bildung, Forschung und Innovation (SBFI)"
-              language: de
+          label: "Staatssekretariat für Bildung, Forschung und Innovation (SBFI)"
 
       - global_uri: con:che/2026-2/organizer/bk
         group:
           global_uri: actor:group/che/bk
-          name:
-            - text: "Bundeskanzlei (Urheberin)"
-              language: de
+          label: "Bundeskanzlei (Urheberin)"
 
     # Offizielle Empfängerkreise gemäss jolux:isOpinionOf am
     # Konsultations-Event. Für die strukturierte Darstellung der
@@ -122,340 +111,256 @@ consultations:
       - global_uri: con:che/2026-2/invitee/kt/zh
         group:
           global_uri: actor:group/canton/zh/regierungsrat
-          name:
-            - text: "Regierungsrat des Kantons Zürich"
-              language: de
+          label: "Regierungsrat des Kantons Zürich"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/be
         group:
           global_uri: actor:group/canton/be/regierungsrat
-          name:
-            - text: "Regierungsrat des Kantons Bern"
-              language: de
+          label: "Regierungsrat des Kantons Bern"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/lu
         group:
           global_uri: actor:group/canton/lu/regierungsrat
-          name:
-            - text: "Regierungsrat des Kantons Luzern"
-              language: de
+          label: "Regierungsrat des Kantons Luzern"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/ur
         group:
           global_uri: actor:group/canton/ur/regierungsrat
-          name:
-            - text: "Regierungsrat des Kantons Uri"
-              language: de
+          label: "Regierungsrat des Kantons Uri"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/sz
         group:
           global_uri: actor:group/canton/sz/regierungsrat
-          name:
-            - text: "Regierungsrat des Kantons Schwyz"
-              language: de
+          label: "Regierungsrat des Kantons Schwyz"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/ow
         group:
           global_uri: actor:group/canton/ow/regierungsrat
-          name:
-            - text: "Regierungsrat des Kantons Obwalden"
-              language: de
+          label: "Regierungsrat des Kantons Obwalden"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/nw
         group:
           global_uri: actor:group/canton/nw/regierungsrat
-          name:
-            - text: "Regierungsrat des Kantons Nidwalden"
-              language: de
+          label: "Regierungsrat des Kantons Nidwalden"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/gl
         group:
           global_uri: actor:group/canton/gl/regierungsrat
-          name:
-            - text: "Regierungsrat des Kantons Glarus"
-              language: de
+          label: "Regierungsrat des Kantons Glarus"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/zg
         group:
           global_uri: actor:group/canton/zg/regierungsrat
-          name:
-            - text: "Regierungsrat des Kantons Zug"
-              language: de
+          label: "Regierungsrat des Kantons Zug"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/fr
         group:
           global_uri: actor:group/canton/fr/conseildetat
-          name:
-            - text: "Conseil d'État du canton de Fribourg"
-              language: fr
+          label: "Conseil d'État du canton de Fribourg"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/so
         group:
           global_uri: actor:group/canton/so/regierungsrat
-          name:
-            - text: "Regierungsrat des Kantons Solothurn"
-              language: de
+          label: "Regierungsrat des Kantons Solothurn"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/bs
         group:
           global_uri: actor:group/canton/bs/regierungsrat
-          name:
-            - text: "Regierungsrat des Kantons Basel-Stadt"
-              language: de
+          label: "Regierungsrat des Kantons Basel-Stadt"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/bl
         group:
           global_uri: actor:group/canton/bl/regierungsrat
-          name:
-            - text: "Regierungsrat des Kantons Basel-Landschaft"
-              language: de
+          label: "Regierungsrat des Kantons Basel-Landschaft"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/sh
         group:
           global_uri: actor:group/canton/sh/regierungsrat
-          name:
-            - text: "Regierungsrat des Kantons Schaffhausen"
-              language: de
+          label: "Regierungsrat des Kantons Schaffhausen"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/ar
         group:
           global_uri: actor:group/canton/ar/regierungsrat
-          name:
-            - text: "Regierungsrat des Kantons Appenzell Ausserrhoden"
-              language: de
+          label: "Regierungsrat des Kantons Appenzell Ausserrhoden"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/ai
         group:
           global_uri: actor:group/canton/ai/standeskommission
-          name:
-            - text: "Standeskommission des Kantons Appenzell Innerrhoden"
-              language: de
+          label: "Standeskommission des Kantons Appenzell Innerrhoden"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/sg
         group:
           global_uri: actor:group/canton/sg/regierungsrat
-          name:
-            - text: "Regierung des Kantons St. Gallen"
-              language: de
+          label: "Regierung des Kantons St. Gallen"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/gr
         group:
           global_uri: actor:group/canton/gr/regierungsrat
-          name:
-            - text: "Regierung des Kantons Graubünden"
-              language: de
+          label: "Regierung des Kantons Graubünden"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/ag
         group:
           global_uri: actor:group/canton/ag/regierungsrat
-          name:
-            - text: "Regierungsrat des Kantons Aargau"
-              language: de
+          label: "Regierungsrat des Kantons Aargau"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/tg
         group:
           global_uri: actor:group/canton/tg/regierungsrat
-          name:
-            - text: "Regierungsrat des Kantons Thurgau"
-              language: de
+          label: "Regierungsrat des Kantons Thurgau"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/ti
         group:
           global_uri: actor:group/canton/ti/consigliodistato
-          name:
-            - text: "Consiglio di Stato del Cantone Ticino"
-              language: it
+          label: "Consiglio di Stato del Cantone Ticino"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/vd
         group:
           global_uri: actor:group/canton/vd/conseildetat
-          name:
-            - text: "Conseil d'État du canton de Vaud"
-              language: fr
+          label: "Conseil d'État du canton de Vaud"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/vs
         group:
           global_uri: actor:group/canton/vs/conseildetat
-          name:
-            - text: "Conseil d'État du canton du Valais"
-              language: fr
+          label: "Conseil d'État du canton du Valais"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/ne
         group:
           global_uri: actor:group/canton/ne/conseildetat
-          name:
-            - text: "Conseil d'État de la République et canton de Neuchâtel"
-              language: fr
+          label: "Conseil d'État de la République et canton de Neuchâtel"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/ge
         group:
           global_uri: actor:group/canton/ge/conseildetat
-          name:
-            - text: "Conseil d'État de la République et canton de Genève"
-              language: fr
+          label: "Conseil d'État de la République et canton de Genève"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/kt/ju
         group:
           global_uri: actor:group/canton/ju/gouvernement
-          name:
-            - text: "Gouvernement de la République et Canton du Jura"
-              language: fr
+          label: "Gouvernement de la République et Canton du Jura"
         standing_invitation: true
 
       # --- In der Bundesversammlung vertretene Parteien ---
       - global_uri: con:che/2026-2/invitee/partei/svp
         group:
           global_uri: actor:group/party/svp
-          name:
-            - text: "Schweizerische Volkspartei (SVP)"
-              language: de
+          label: "Schweizerische Volkspartei (SVP)"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/partei/sp
         group:
           global_uri: actor:group/party/sp
-          name:
-            - text: "Sozialdemokratische Partei der Schweiz (SP)"
-              language: de
+          label: "Sozialdemokratische Partei der Schweiz (SP)"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/partei/mitte
         group:
           global_uri: actor:group/party/mitte
-          name:
-            - text: "Die Mitte"
-              language: de
+          label: "Die Mitte"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/partei/fdp
         group:
           global_uri: actor:group/party/fdp
-          name:
-            - text: "FDP. Die Liberalen"
-              language: de
+          label: "FDP. Die Liberalen"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/partei/gruene
         group:
           global_uri: actor:group/party/gruene
-          name:
-            - text: "Grüne Partei der Schweiz"
-              language: de
+          label: "Grüne Partei der Schweiz"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/partei/glp
         group:
           global_uri: actor:group/party/glp
-          name:
-            - text: "Grünliberale Partei Schweiz (GLP)"
-              language: de
+          label: "Grünliberale Partei Schweiz (GLP)"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/partei/evp
         group:
           global_uri: actor:group/party/evp
-          name:
-            - text: "Evangelische Volkspartei der Schweiz (EVP)"
-              language: de
+          label: "Evangelische Volkspartei der Schweiz (EVP)"
         standing_invitation: true
 
       # --- Bildungs- und berufsbildungsspezifische Stakeholder ---
       - global_uri: con:che/2026-2/invitee/edk
         group:
           global_uri: actor:group/edk
-          name:
-            - text: "Schweizerische Konferenz der kantonalen Erziehungsdirektoren (EDK)"
-              language: de
+          label: "Schweizerische Konferenz der kantonalen Erziehungsdirektoren (EDK)"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/sbbk
         group:
           global_uri: actor:group/sbbk
-          name:
-            - text: "Schweizerische Berufsbildungsämter-Konferenz (SBBK)"
-              language: de
+          label: "Schweizerische Berufsbildungsämter-Konferenz (SBBK)"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/sgv
         group:
           global_uri: actor:group/sgv
-          name:
-            - text: "Schweizerischer Gewerbeverband (sgv)"
-              language: de
+          label: "Schweizerischer Gewerbeverband (sgv)"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/sav
         group:
           global_uri: actor:group/sav
-          name:
-            - text: "Schweizerischer Arbeitgeberverband (SAV)"
-              language: de
+          label: "Schweizerischer Arbeitgeberverband (SAV)"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/sgb
         group:
           global_uri: actor:group/sgb
-          name:
-            - text: "Schweizerischer Gewerkschaftsbund (SGB)"
-              language: de
+          label: "Schweizerischer Gewerkschaftsbund (SGB)"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/travailsuisse
         group:
           global_uri: actor:group/travail-suisse
-          name:
-            - text: "Travail.Suisse"
-              language: de
+          label: "Travail.Suisse"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/economiesuisse
         group:
           global_uri: actor:group/economiesuisse
-          name:
-            - text: "economiesuisse"
-              language: de
+          label: "economiesuisse"
         standing_invitation: true
 
       - global_uri: con:che/2026-2/invitee/sbv
         group:
           global_uri: actor:group/sbv
-          name:
-            - text: "Schweizerischer Bauernverband (SBV)"
-              language: de
+          label: "Schweizerischer Bauernverband (SBV)"
         standing_invitation: true
 
       # --- Internationaler Vertragspartner ---
       - global_uri: con:che/2026-2/invitee/li/regierung
         group:
           global_uri: actor:group/li/regierung
-          name:
-            - text: "Regierung des Fürstentums Liechtenstein"
-              language: de
+          label: "Regierung des Fürstentums Liechtenstein"
         standing_invitation: false
 
     steps:
@@ -472,9 +377,7 @@ consultations:
             language: de
         responsible_entity:
           global_uri: actor:group/che/wbf/sbfi
-          name:
-            - text: "Staatssekretariat für Bildung, Forschung und Innovation (SBFI)"
-              language: de
+          label: "Staatssekretariat für Bildung, Forschung und Innovation (SBFI)"
 
       # PublicationStep — Eingangsereignis "Eingereicht" (2026-01-07)
       # gefolgt von Eröffnung der Vernehmlassung (2026-02-02).
@@ -491,9 +394,7 @@ consultations:
             language: de
         responsible_entity:
           global_uri: actor:group/che/bk
-          name:
-            - text: "Bundeskanzlei"
-              language: de
+          label: "Bundeskanzlei"
         documents:
           - "https://fedlex.data.admin.ch/eli/dl/proj/2026/2/cons_1/doc_1"  # Vernehmlassungsvorlage
           - "https://fedlex.data.admin.ch/eli/dl/proj/2026/2/cons_1/doc_2"  # Erläuternder Bericht
@@ -515,9 +416,7 @@ consultations:
             language: de
         responsible_entity:
           global_uri: actor:group/che/wbf/sbfi
-          name:
-            - text: "Staatssekretariat für Bildung, Forschung und Innovation (SBFI)"
-              language: de
+          label: "Staatssekretariat für Bildung, Forschung und Innovation (SBFI)"
         documents:
           - "https://fedlex.data.admin.ch/eli/dl/proj/2026/2/cons_1"
 
@@ -534,9 +433,7 @@ consultations:
             language: de
         responsible_entity:
           global_uri: actor:group/che/wbf/sbfi
-          name:
-            - text: "Staatssekretariat für Bildung, Forschung und Innovation (SBFI)"
-              language: de
+          label: "Staatssekretariat für Bildung, Forschung und Innovation (SBFI)"
 
       # ReportStep — Ergebnisbericht (geplant).
       - global_uri: con:che/2026-2/step/report

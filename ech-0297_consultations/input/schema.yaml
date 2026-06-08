@@ -16,6 +16,8 @@ prefixes:
   linkml: https://w3id.org/linkml/
   chpaf: https://ch.paf.link/
   con: https://ch.paf.link/schema/consultation/
+  # Cross-references to ech-0294 actor entities (Person/Group records).
+  actor: https://ld.ech.ch/schema/0294/actors/
 imports:
   - linkml:types
   - ../../ech-0292_meta/input/schema_common
@@ -69,19 +71,20 @@ classes:
         inlined_as_list: true
 
   ConsultationStep:
-    abstract: true
     description: |
-      [en] Abstract base class for a single step (phase) in the lifecycle
-      of a consultation. Each concrete subclass represents one phase type
-      with its own attributes. Reuses the shared `IsProcessStep` mixin
-      from `ech-0292_meta` so the same pattern can be applied to affair
-      process steps.
-      [de] Abstrakte Basisklasse für einen einzelnen Schritt (Phase) im
-      Lebenszyklus einer Konsultation. Jede konkrete Unterklasse
-      repräsentiert einen Phasentyp mit eigenen Attributen. Verwendet den
-      gemeinsamen Mixin `IsProcessStep` aus `ech-0292_meta`, sodass das
-      gleiche Muster auch auf Geschäfts-Prozessschritte angewendet werden
-      kann.
+      [en] A single step (phase) in the lifecycle of a consultation. The
+      concrete subclasses below represent specific phase types with their
+      own attributes; a plain `ConsultationStep` carries the fields common
+      to all phases. Reuses the shared `IsProcessStep` mixin from
+      `ech-0292_meta` so the same pattern can be applied to affair process
+      steps.
+      [de] Ein einzelner Schritt (Phase) im Lebenszyklus einer
+      Konsultation. Die konkreten Unterklassen unten repräsentieren
+      bestimmte Phasentypen mit eigenen Attributen; ein einfacher
+      `ConsultationStep` trägt die für alle Phasen gemeinsamen Felder.
+      Verwendet den gemeinsamen Mixin `IsProcessStep` aus `ech-0292_meta`,
+      sodass das gleiche Muster auch auf Geschäfts-Prozessschritte
+      angewendet werden kann.
     mixins:
       - IsProcessStep
     slots:
@@ -185,33 +188,10 @@ classes:
       - category
       - standing_invitation
 
-  Person:
-    description: |
-      [en] A natural person involved in a consultation.
-      [de] Eine natürliche Person, die an einer Konsultation beteiligt ist.
-    mixins:
-      - HasIdentification
-    slots:
-      - first_name
-      - last_name
-      - address
-    slot_usage:
-      first_name:
-        required: true
-      last_name:
-        required: true
-
-  Group:
-    description: |
-      [en] A group or organization involved in a consultation (e.g.,
-      department, party, association).
-      [de] Eine Gruppe oder Organisation, die an einer Konsultation
-      beteiligt ist (z. B. Departement, Partei, Verband).
-    mixins:
-      - HasIdentification
-    slots:
-      - name
-      - address
+  # Person and Group are referenced via the lightweight PersonReference /
+  # GroupReference classes from ech-0292_meta/schema_common (imported above).
+  # They carry snapshot identification data (global_uri + label) at time of
+  # linking and point to the full records in ech-0294_actors.
 
   MultilingualString:
     description: |
@@ -316,7 +296,7 @@ slots:
     description: |
       [en] Responsible organization (e.g., department, office).
       [de] Zuständige Organisation (z. B. Departement, Amt).
-    range: Group
+    range: GroupReference
     inlined: true
 
   contact_person:
@@ -324,7 +304,7 @@ slots:
     description: |
       [en] Contact person for the consultation.
       [de] Ansprechperson für die Konsultation.
-    range: Person
+    range: PersonReference
     inlined: true
 
   organizers:
@@ -359,7 +339,7 @@ slots:
       office).
       [de] Die für diesen Schritt zuständige Organisation (z. B.
       Departement, Amt).
-    range: Group
+    range: GroupReference
     inlined: true
 
   responsible_person:
@@ -368,7 +348,7 @@ slots:
       [en] The person responsible for this step (e.g., contact, lead).
       [de] Die für diesen Schritt zuständige Person (z. B. Ansprechperson,
       Federführung).
-    range: Person
+    range: PersonReference
     inlined: true
 
   documents:
@@ -416,7 +396,7 @@ slots:
     description: |
       [en] A person reference.
       [de] Referenz auf eine Person.
-    range: Person
+    range: PersonReference
     inlined: true
 
   group:
@@ -424,7 +404,7 @@ slots:
     description: |
       [en] A group or organization reference.
       [de] Referenz auf eine Gruppe oder Organisation.
-    range: Group
+    range: GroupReference
     inlined: true
 
   category:
@@ -442,27 +422,6 @@ slots:
       [de] Gibt an, ob es sich um eine stehende (wiederkehrende) Einladung
       oder um eine Einzelfall-Einladung handelt.
     range: boolean
-
-  first_name:
-    slot_uri: con:firstName
-    description: |
-      [en] First name of the person.
-      [de] Vorname der Person.
-    range: string
-
-  last_name:
-    slot_uri: con:lastName
-    description: |
-      [en] Last name of the person.
-      [de] Nachname der Person.
-    range: string
-
-  address:
-    slot_uri: con:address
-    description: |
-      [en] Postal address.
-      [de] Postanschrift.
-    range: string
 
   text:
     slot_uri: con:text
