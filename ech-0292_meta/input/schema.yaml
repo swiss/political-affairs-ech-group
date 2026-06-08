@@ -26,9 +26,9 @@ classes:
     slots:
       - id
       - dates
-      - language
-      - title
-      - description
+      - expression_language
+      - expression_title
+      - expression_description
       - manifestations
 
   Manifestation:
@@ -36,10 +36,17 @@ classes:
       - id
       - dates
       - format
-      - url
+      - manifestation_url
 
-  Container:
-    tree_root: true
+  # Renamed from the generic `Container` so it does not collide with the
+  # `Container` tree_root that every consuming schema defines (e.g. ech-0293
+  # imports this schema for the `documents` slot). Newer LinkML treats two
+  # equally-named classes from different schemas as a hard error.
+  # Not a `tree_root`: this schema is imported by consumers (ech-0293) that
+  # define their own tree_root Container, and LinkML allows only one root in
+  # the merged schema. Convert meta's own example data with
+  # `--target-class WorkContainer`.
+  WorkContainer:
     slots:
       - id
       - works
@@ -77,20 +84,26 @@ slots:
     slot_uri: meta:workType
     range: WorkTypesEnum
 
-  language:
+
+  # Renamed from the generic `language`/`title`/`description` so they do not
+  # collide with same-named slots that consumer schemas (e.g. ech-0293) or
+  # schema_common define; newer LinkML treats import-shadowing of a slot name
+  # as a hard error.
+  expression_language:
+    slot_uri: dcterms:language
+    range: string
     required: true
+    pattern: ^[a-z]{2}$
     description: |
       [en] Language code in ISO 639-1 format.
       [de] Sprachcode im ISO 639-1-Format.
-    pattern: ^[a-z]{2}$
-    slot_uri: dcterms:language
 
-  title:
+  expression_title:
     slot_uri: meta:title
     range: string
     required: true
-  
-  description:
+
+  expression_description:
     slot_uri: schema:description
     range: string
 
@@ -101,7 +114,9 @@ slots:
       [en] The file format of the manifestation (e.g., pdf, html).
       [de] Das Dateiformat der Manifestation (z.B. pdf, html).
 
-  url:
+  # Renamed from the generic `url` to avoid colliding with consumer schemas
+  # that define their own `url` slot (ech-0293's is multilingual).
+  manifestation_url:
     slot_uri: meta:url
     range: uri
 
