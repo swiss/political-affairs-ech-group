@@ -42,7 +42,7 @@ URI: [mcm:dateBeginPlanned](https://ld.ech.ch/schema/0292/meta-common/dateBeginP
 | Property | Value |
 | --- | --- |
 | Range | [Date](Date.md) |
-| Domain Of | [IsEventWithDuration](IsEventWithDuration.md) |
+| Domain Of | [IsEventWithDuration](IsEventWithDuration.md), [IsProcessStep](IsProcessStep.md) |
 | Slot URI | [mcm:dateBeginPlanned](https://ld.ech.ch/schema/0292/meta-common/dateBeginPlanned) |
 
 ### Cardinality and Requirements
@@ -80,6 +80,7 @@ rank: 1000
 slot_uri: mcm:dateBeginPlanned
 domain_of:
 - IsEventWithDuration
+- IsProcessStep
 range: date
 
 ```

@@ -237,6 +237,7 @@ classes:
     - HasTemporalValidity
     slots:
     - gender_code
+    - label
     - pronouns
   Occupation:
     description: 'Occupation or profession of a person indicating a label, an ISCO-19 code, whether the position is paid,
@@ -1797,11 +1798,14 @@ enums:
 
             '
   GenderCodeEnum:
-    description: 'Gender codes for persons.
+    description: 'Gender codes for persons. If the gender is not known, no gender entry shall be added. The `diverse` code
+      shall be used together with a label to provide further details about the self-identified gender.
 
       '
     annotations:
-      description_de: 'Geschlechtscodes für Personen.
+      description_de: 'Geschlechtscodes für Personen. Wenn das Geschlecht nicht bekannt ist, soll kein Geschlechtseintrag
+        hinzugefügt werden. Der Code `diverse` soll zusammen mit einer Bezeichnung verwendet werden, um weitere Angaben zum
+        selbst deklarierten Geschlecht bereitzustellen.
 
         '
     permissible_values:
@@ -1818,7 +1822,7 @@ enums:
         annotations:
           description_de: Divers / nicht-binär.
   LegalFormEnum:
-    description: 'Legal forms based on the Swiss UID register codelist (eCH-0098). See https://register.ld.admin.ch/i14y/concept/legalForm
+    description: 'Legal forms based on the Swiss UID register codelist (eCH-0108). See https://register.ld.admin.ch/i14y/concept/legalForm
 
       '
     annotations:

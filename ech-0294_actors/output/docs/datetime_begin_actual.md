@@ -42,7 +42,7 @@ URI: [mcm:datetimeBeginActual](https://ld.ech.ch/schema/0292/meta-common/datetim
 | Property | Value |
 | --- | --- |
 | Range | [Datetime](Datetime.md) |
-| Domain Of | [IsEventWithDuration](IsEventWithDuration.md) |
+| Domain Of | [IsEventWithDuration](IsEventWithDuration.md), [IsProcessStep](IsProcessStep.md) |
 | Slot URI | [mcm:datetimeBeginActual](https://ld.ech.ch/schema/0292/meta-common/datetimeBeginActual) |
 
 ### Cardinality and Requirements
@@ -81,6 +81,7 @@ rank: 1000
 slot_uri: mcm:datetimeBeginActual
 domain_of:
 - IsEventWithDuration
+- IsProcessStep
 range: datetime
 
 ```

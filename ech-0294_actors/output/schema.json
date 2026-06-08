@@ -241,6 +241,13 @@
                         "null"
                     ]
                 },
+                "label": {
+                    "description": "Assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "pronouns": {
                     "description": "Pronouns used by the person.\n",
                     "items": {
@@ -272,7 +279,7 @@
             "type": "object"
         },
         "GenderCodeEnum": {
-            "description": "Gender codes for persons.",
+            "description": "Gender codes for persons. If the gender is not known, no gender entry shall be added. The `diverse` code shall be used together with a label to provide further details about the self-identified gender.",
             "enum": [
                 "male",
                 "female",
@@ -1055,7 +1062,7 @@
             "type": "object"
         },
         "LegalFormEnum": {
-            "description": "Legal forms based on the Swiss UID register codelist (eCH-0098). See https://register.ld.admin.ch/i14y/concept/legalForm",
+            "description": "Legal forms based on the Swiss UID register codelist (eCH-0108). See https://register.ld.admin.ch/i14y/concept/legalForm",
             "enum": [
                 "0101",
                 "0103",

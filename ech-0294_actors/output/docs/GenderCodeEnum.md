@@ -3,7 +3,7 @@
 
 
 
-_Gender codes for persons._
+_Gender codes for persons. If the gender is not known, no gender entry shall be added. The `diverse` code shall be used together with a label to provide further details about the self-identified gender._
 
 __
 
