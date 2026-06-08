@@ -61,28 +61,6 @@ URI: [ops:total_absent](https://ch.paf.link/schema/operations/total_absent)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:total_absent |
-| native | ops:total_absent |
-
-
 
 
 ## LinkML Source

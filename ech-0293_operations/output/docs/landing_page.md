@@ -66,28 +66,6 @@ URI: [ops:landingPage](https://ch.paf.link/schema/operations/landingPage)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:landingPage |
-| native | ops:landing_page |
-
-
 
 
 ## LinkML Source

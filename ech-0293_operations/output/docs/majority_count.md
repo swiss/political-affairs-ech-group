@@ -60,28 +60,6 @@ URI: [ops:majority_count](https://ch.paf.link/schema/operations/majority_count)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:majority_count |
-| native | ops:majority_count |
-
-
 
 
 ## LinkML Source

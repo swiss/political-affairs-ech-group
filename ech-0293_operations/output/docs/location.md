@@ -49,27 +49,14 @@ URI: [ops:location](https://ch.paf.link/schema/operations/location)
 
 
 
+## Examples
 
-## Identifier and Mapping Information
+| Value |
+| --- |
+| Kantonsratssaal, Regierungsgebäude St. Gallen |
+| Kommissionszimmer 301, Rathaus Bern |
+| Zaunplatz, Glarus |
 
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:location |
-| native | ops:location |
 
 
 
@@ -79,6 +66,10 @@ URI: [ops:location](https://ch.paf.link/schema/operations/location)
 <details>
 ```yaml
 name: location
+examples:
+- value: Kantonsratssaal, Regierungsgebäude St. Gallen
+- value: Kommissionszimmer 301, Rathaus Bern
+- value: Zaunplatz, Glarus
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:

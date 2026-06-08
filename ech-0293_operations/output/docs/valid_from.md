@@ -58,36 +58,6 @@ URI: [schema:validFrom](http://schema.org/validFrom)
 
 
 
-## Identifier and Mapping Information
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| description_de | Das Datum, ab dem die Information gültig ist.
- |
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | schema:validFrom |
-| native | ops:valid_from |
-
-
 
 
 ## LinkML Source

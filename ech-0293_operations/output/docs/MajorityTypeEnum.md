@@ -1,10 +1,4 @@
----
-search:
-  boost: 2.0
----
-
-
-# Enum: MajorityTypeEnum 
+## Enum: MajorityTypeEnum 
 
 
 
@@ -17,67 +11,20 @@ _Type of majority required for the vote_
 
 URI: [ops:MajorityTypeEnum](https://ch.paf.link/schema/operations/MajorityTypeEnum)
 
-## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| absolute | ops:enum/majority_type/absolute |  |
-| two_thirds | ops:enum/majority_type/two_thirds |  |
-| other | ops:enum/majority_type/other |  |
-
-
-
-
-## Slots
-
-| Name | Description |
-| ---  | --- |
-| [majority_type](majority_type.md) | [en] Type of majority required for the vote (absolute, two-thirds, etc |
+### Permissible Values
+| Value | Description |
+| --- | --- |
+| absolute |  None |
+| | [ops:enum/majority_type/absolute](ops:enum/majority_type/absolute) |
+| two_thirds |  None |
+| | [ops:enum/majority_type/two_thirds](ops:enum/majority_type/two_thirds) |
+| other |  None |
+| | [ops:enum/majority_type/other](ops:enum/majority_type/other) |
 
 
 
 
 
 
-
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-
-
-## LinkML Source
-
-<details>
-```yaml
-name: MajorityTypeEnum
-description: Type of majority required for the vote
-from_schema: https://ch.paf.link/schema/operations
-rank: 1000
-permissible_values:
-  absolute:
-    text: absolute
-    meaning: ops:enum/majority_type/absolute
-  two_thirds:
-    text: two_thirds
-    meaning: ops:enum/majority_type/two_thirds
-  other:
-    text: other
-    meaning: ops:enum/majority_type/other
-
-```
-</details>
 
 </div>

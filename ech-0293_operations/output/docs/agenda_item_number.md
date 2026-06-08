@@ -60,28 +60,6 @@ URI: [ops:agenda_item_number](https://ch.paf.link/schema/operations/agenda_item_
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:agenda_item_number |
-| native | ops:agenda_item_number |
-
-
 
 
 ## LinkML Source

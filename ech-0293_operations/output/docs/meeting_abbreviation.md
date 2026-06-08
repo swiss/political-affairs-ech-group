@@ -51,28 +51,6 @@ URI: [ops:meeting_abbreviation](https://ch.paf.link/schema/operations/meeting_ab
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:meeting_abbreviation |
-| native | ops:meeting_abbreviation |
-
-
 
 
 ## LinkML Source

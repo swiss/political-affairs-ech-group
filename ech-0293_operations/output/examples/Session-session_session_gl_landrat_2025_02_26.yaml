@@ -1,0 +1,12 @@
+global_uri: ops:session_gl_landrat_2025_02_26
+body_key: GL
+name:
+- text: Sitzung des Landrates vom 26.02.2025
+  language: de
+url:
+- text: https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239
+  language: de
+date_begin_planned: '2025-02-26'
+date_end_planned: '2025-02-26'
+datetime_modified: '2025-04-25T13:40:34Z'
+datetime_created: '2025-04-23T22:58:39Z'

@@ -60,28 +60,6 @@ URI: [ops:parent_legislature](https://ch.paf.link/schema/operations/parent_legis
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:parent_legislature |
-| native | ops:parent_legislature |
-
-
 
 
 ## LinkML Source

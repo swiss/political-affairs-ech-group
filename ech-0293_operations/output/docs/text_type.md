@@ -58,27 +58,12 @@ URI: [ops:text_type](https://ch.paf.link/schema/operations/text_type)
 
 
 
+## Examples
 
-## Identifier and Mapping Information
+| Value |
+| --- |
+| final |
 
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:text_type |
-| native | ops:text_type |
 
 
 
@@ -93,6 +78,8 @@ description: '[en] Type of text (raw draft, edited version)
   [de] Typ des Textes (Rohfassung, bearbeitete Fassung)
 
   '
+examples:
+- value: final
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:

@@ -1,0 +1,16 @@
+global_uri: ops:16155798_4
+parent_meeting: ops:meeting_schaffhausen_2025_03_31_b
+agenda_item_type: item
+datetime_begin_planned: '2025-03-31T00:00:00Z'
+agenda_item_position: 3
+agenda_item_number: '3'
+agenda_item_title:
+- text: 'Volksmotion Nr. 2024/1 von Sandro Mamedow und Livia Schraff (Erstunterzeichnende)
+    sowie weitere 150 Mitunterzeichnende vom 22. März 2024 mit dem Titel: «Für eine
+    Stimme der Studierenden im Hochschulrat der Pädagogischen Hochschule Schaffhausen
+    (PHSH)»'
+  language: de
+agenda_item_category: Traktanden
+affair_id: affairs:MOT_2024_1
+datetime_created: '2025-05-02T11:23:49Z'
+datetime_modified: '2025-05-02T11:23:49Z'

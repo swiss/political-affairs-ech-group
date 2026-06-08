@@ -28,12 +28,12 @@ URI: [mcm:datetimeEndActual](https://ld.ech.ch/schema/0292/meta-common/datetimeE
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [IsEventWithDuration](IsEventWithDuration.md) | A mixin class that provides slots for modeling events or occurrences with tim... |  no  |
+| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
 | [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
 | [ProtocolItem](ProtocolItem.md) | [en] An agenda item as actually recorded in the protocol |  no  |
-| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
 
 
 
@@ -47,7 +47,7 @@ URI: [mcm:datetimeEndActual](https://ld.ech.ch/schema/0292/meta-common/datetimeE
 | Property | Value |
 | --- | --- |
 | Range | [Datetime](Datetime.md) |
-| Domain Of | [IsEventWithDuration](IsEventWithDuration.md) |
+| Domain Of | [IsEventWithDuration](IsEventWithDuration.md), [IsProcessStep](IsProcessStep.md) |
 | Slot URI | [mcm:datetimeEndActual](https://ld.ech.ch/schema/0292/meta-common/datetimeEndActual) |
 
 ### Cardinality and Requirements
@@ -62,36 +62,6 @@ URI: [mcm:datetimeEndActual](https://ld.ech.ch/schema/0292/meta-common/datetimeE
 
 
 
-
-
-## Identifier and Mapping Information
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| description_de | Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer.
- |
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:datetimeEndActual |
-| native | ops:datetime_end_actual |
 
 
 
@@ -116,6 +86,7 @@ rank: 1000
 slot_uri: mcm:datetimeEndActual
 domain_of:
 - IsEventWithDuration
+- IsProcessStep
 range: datetime
 
 ```

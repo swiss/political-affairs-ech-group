@@ -53,28 +53,6 @@ URI: [meta:dates](https://ch.paf.link/schema/meta/dates)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | meta:dates |
-| native | ops:dates |
-
-
 
 
 ## LinkML Source

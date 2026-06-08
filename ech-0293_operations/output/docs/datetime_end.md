@@ -61,28 +61,6 @@ URI: [ops:datetime_end](https://ch.paf.link/schema/operations/datetime_end)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:datetime_end |
-| native | ops:datetime_end |
-
-
 
 
 ## LinkML Source

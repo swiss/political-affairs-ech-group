@@ -55,28 +55,6 @@ URI: [ops:start](https://ch.paf.link/schema/operations/start)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:start |
-| native | ops:start |
-
-
 
 
 ## LinkML Source

@@ -58,27 +58,13 @@ URI: [ops:voting_type](https://ch.paf.link/schema/operations/voting_type)
 
 
 
+## Examples
 
-## Identifier and Mapping Information
+| Value |
+| --- |
+| final_vote |
+| preliminary_vote |
 
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:voting_type |
-| native | ops:voting_type |
 
 
 
@@ -93,6 +79,9 @@ description: '[en] Type of voting procedure (preliminary, final, secret, etc.).
   [de] Art des Abstimmungsverfahrens (Zwischen-, Schlussabstimmung, geheim, etc.).
 
   '
+examples:
+- value: final_vote
+- value: preliminary_vote
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:

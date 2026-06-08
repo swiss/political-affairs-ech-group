@@ -57,28 +57,6 @@ URI: [ops:textSegment](https://ch.paf.link/schema/operations/textSegment)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:textSegment |
-| native | ops:text_segments |
-
-
 
 
 ## LinkML Source

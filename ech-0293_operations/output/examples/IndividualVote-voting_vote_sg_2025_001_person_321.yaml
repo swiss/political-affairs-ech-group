@@ -1,0 +1,8 @@
+global_uri: ops:vote_sg_2025_001_person_321
+parent_voting: ops:voting_sg_2025_001
+actor_id:
+  global_uri: https://api.openparldata.ch/v1/persons/25177
+  label: Ruedi Thomann
+seat_nr: '4'
+individual_vote_type: not_voted
+datetime_created: '2025-03-15T14:30:00Z'

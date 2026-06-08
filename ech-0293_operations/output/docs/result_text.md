@@ -59,27 +59,14 @@ URI: [ops:result_text](https://ch.paf.link/schema/operations/result_text)
 
 
 
+## Examples
 
-## Identifier and Mapping Information
+| Value |
+| --- |
+| Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen |
+| Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt |
+| Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen |
 
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:result_text |
-| native | ops:result_text |
 
 
 
@@ -96,6 +83,10 @@ description: '[en] Free text describing the outcome of the vote, e.g., "Accepted
   angenommen".
 
   '
+examples:
+- value: Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen
+- value: Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt
+- value: Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:

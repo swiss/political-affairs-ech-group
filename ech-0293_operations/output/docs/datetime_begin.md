@@ -62,28 +62,6 @@ URI: [ops:datetime_begin](https://ch.paf.link/schema/operations/datetime_begin)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:datetime_begin |
-| native | ops:datetime_begin |
-
-
 
 
 ## LinkML Source

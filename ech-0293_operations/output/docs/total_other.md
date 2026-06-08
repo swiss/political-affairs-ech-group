@@ -60,28 +60,6 @@ URI: [ops:total_other](https://ch.paf.link/schema/operations/total_other)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:total_other |
-| native | ops:total_other |
-
-
 
 
 ## LinkML Source

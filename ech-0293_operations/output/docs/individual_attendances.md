@@ -57,28 +57,6 @@ URI: [ops:individualAttendance](https://ch.paf.link/schema/operations/individual
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:individualAttendance |
-| native | ops:individual_attendances |
-
-
 
 
 ## LinkML Source

@@ -1,0 +1,160 @@
+@prefix mcm: <https://ld.ech.ch/schema/0292/meta-common/> .
+@prefix ops: <https://ch.paf.link/schema/operations/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ops:voting_examples_2025 a ops:Container ;
+    ops:individualVote ops:vote_sg_2025_001_person_123,
+        ops:vote_sg_2025_001_person_321,
+        ops:vote_sg_2025_001_person_456,
+        ops:vote_sg_2025_001_person_789,
+        ops:vote_zh_budget_2026_person_101,
+        ops:vote_zh_budget_2026_person_102 ;
+    ops:voting ops:voting_be_2025_042,
+        ops:voting_sg_2025_001,
+        ops:voting_zh_budget_2026 .
+
+<https://api.openparldata.ch/v1/bodies/253> a mcm:GroupReference ;
+    mcm:abbreviation [ a mcm:MultilingualValue ;
+            mcm:language "de" ;
+            mcm:value "GR" ] ;
+    mcm:label "Grosser Rat Bern" .
+
+<https://api.openparldata.ch/v1/bodies/265> a mcm:GroupReference ;
+    mcm:abbreviation [ a mcm:MultilingualValue ;
+            mcm:language "de" ;
+            mcm:value "KR" ] ;
+    mcm:label "Kantonsrat St. Gallen" .
+
+<https://api.openparldata.ch/v1/bodies/275> a mcm:GroupReference ;
+    mcm:abbreviation [ a mcm:MultilingualValue ;
+            mcm:language "de" ;
+            mcm:value "KR" ] ;
+    mcm:label "Kantonsrat Zürich" .
+
+<https://api.openparldata.ch/v1/persons/25177> a mcm:PersonReference ;
+    mcm:label "Ruedi Thomann" .
+
+<https://api.openparldata.ch/v1/persons/25208> a mcm:PersonReference ;
+    mcm:label "Jean-Daniel Strub" .
+
+<https://api.openparldata.ch/v1/persons/27233> a mcm:PersonReference ;
+    mcm:label "Thomas Ammann" .
+
+<https://api.openparldata.ch/v1/persons/27234> a mcm:PersonReference ;
+    mcm:label "Andreas Eggenberger" .
+
+<https://api.openparldata.ch/v1/persons/27235> a mcm:PersonReference ;
+    mcm:label "Paul Schlegel" .
+
+<https://api.openparldata.ch/v1/persons/27237> a mcm:PersonReference ;
+    mcm:label "Thomas Wolf" .
+
+ops:vote_sg_2025_001_person_123 a ops:IndividualVote ;
+    ops:actor_id <https://api.openparldata.ch/v1/persons/27235> ;
+    ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/yes> ;
+    ops:parentVoting ops:voting_sg_2025_001 ;
+    ops:seat_nr "1" ;
+    mcm:datetimeCreated "2025-03-15T14:30:00+00:00"^^xsd:dateTime .
+
+ops:vote_sg_2025_001_person_321 a ops:IndividualVote ;
+    ops:actor_id <https://api.openparldata.ch/v1/persons/25177> ;
+    ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/not_voted> ;
+    ops:parentVoting ops:voting_sg_2025_001 ;
+    ops:seat_nr "4" ;
+    mcm:datetimeCreated "2025-03-15T14:30:00+00:00"^^xsd:dateTime .
+
+ops:vote_sg_2025_001_person_456 a ops:IndividualVote ;
+    ops:actor_id <https://api.openparldata.ch/v1/persons/27234> ;
+    ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/no> ;
+    ops:parentVoting ops:voting_sg_2025_001 ;
+    ops:seat_nr "2" ;
+    mcm:datetimeCreated "2025-03-15T14:30:00+00:00"^^xsd:dateTime .
+
+ops:vote_sg_2025_001_person_789 a ops:IndividualVote ;
+    ops:actor_id <https://api.openparldata.ch/v1/persons/27233> ;
+    ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/abstention> ;
+    ops:parentVoting ops:voting_sg_2025_001 ;
+    ops:seat_nr "3" ;
+    mcm:datetimeCreated "2025-03-15T14:30:00+00:00"^^xsd:dateTime .
+
+ops:vote_zh_budget_2026_person_101 a ops:IndividualVote ;
+    ops:actor_id <https://api.openparldata.ch/v1/persons/27237> ;
+    ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/yes> ;
+    ops:parentVoting ops:voting_zh_budget_2026 ;
+    ops:seat_nr "1" ;
+    mcm:datetimeCreated "2025-11-20T16:45:00+00:00"^^xsd:dateTime .
+
+ops:vote_zh_budget_2026_person_102 a ops:IndividualVote ;
+    ops:actor_id <https://api.openparldata.ch/v1/persons/25208> ;
+    ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/no> ;
+    ops:parentVoting ops:voting_zh_budget_2026 ;
+    ops:seat_nr "2" ;
+    mcm:datetimeCreated "2025-11-20T16:45:00+00:00"^^xsd:dateTime .
+
+ops:voting_be_2025_042 a ops:Voting ;
+    ops:actor_id <https://api.openparldata.ch/v1/bodies/253> ;
+    ops:datetime_begin "2025-06-05T10:15:00+00:00"^^xsd:dateTime ;
+    ops:datetime_end "2025-06-05T10:17:00+00:00"^^xsd:dateTime ;
+    ops:majority_count 76 ;
+    ops:majority_type <https://ch.paf.link/schema/operations/enum/majority_type/absolute> ;
+    ops:parent_agenda_item "ops:agenda_item_be_2025_042" ;
+    ops:parent_meeting "ops:meeting_be_2025_06_05" ;
+    ops:result_text "Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt" ;
+    ops:total 150 ;
+    ops:total_absent 10 ;
+    ops:total_count_abstention 8 ;
+    ops:total_count_no 87 ;
+    ops:total_count_yes 45 ;
+    ops:voting_title [ a ops:MultilingualString ;
+            ops:text "Proposition de modification art. 5 al. 2" ;
+            mcm:language "fr" ],
+        [ a ops:MultilingualString ;
+            ops:text "Änderungsantrag Art. 5 Abs. 2" ;
+            mcm:language "de" ] ;
+    ops:voting_type <https://ch.paf.link/schema/operations/enum/voting_type/preliminary_vote> ;
+    mcm:datetimeCreated "2025-06-05T10:15:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeModified "2025-06-05T10:15:00+00:00"^^xsd:dateTime .
+
+ops:voting_zh_budget_2026 a ops:Voting ;
+    ops:actor_id <https://api.openparldata.ch/v1/bodies/275> ;
+    ops:datetime_begin "2025-11-20T16:45:00+00:00"^^xsd:dateTime ;
+    ops:datetime_end "2025-11-20T16:50:00+00:00"^^xsd:dateTime ;
+    ops:majority_count 91 ;
+    ops:majority_type <https://ch.paf.link/schema/operations/enum/majority_type/absolute> ;
+    ops:parent_agenda_item "ops:agenda_item_zh_budget_2026" ;
+    ops:parent_meeting "ops:meeting_zh_2025_11_20" ;
+    ops:result_text "Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen" ;
+    ops:total 180 ;
+    ops:total_absent 0 ;
+    ops:total_count_abstention 5 ;
+    ops:total_count_no 70 ;
+    ops:total_count_yes 105 ;
+    ops:voting_title [ a ops:MultilingualString ;
+            ops:text "Budgetbeschluss 2026" ;
+            mcm:language "de" ] ;
+    ops:voting_type <https://ch.paf.link/schema/operations/enum/voting_type/final_vote> ;
+    mcm:datetimeCreated "2025-11-20T16:45:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeModified "2025-11-20T16:50:00+00:00"^^xsd:dateTime .
+
+ops:voting_sg_2025_001 a ops:Voting ;
+    ops:actor_id <https://api.openparldata.ch/v1/bodies/265> ;
+    ops:datetime_begin "2025-03-15T14:30:00+00:00"^^xsd:dateTime ;
+    ops:datetime_end "2025-03-15T14:35:00+00:00"^^xsd:dateTime ;
+    ops:majority_count 65 ;
+    ops:majority_type <https://ch.paf.link/schema/operations/enum/majority_type/absolute> ;
+    ops:parent_agenda_item "ops:agenda_item_sg_2025_015" ;
+    ops:parent_meeting "ops:meeting_sg_2025_03_15" ;
+    ops:result_text "Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen" ;
+    ops:total 128 ;
+    ops:total_absent 3 ;
+    ops:total_count_abstention 5 ;
+    ops:total_count_no 42 ;
+    ops:total_count_yes 78 ;
+    ops:voting_title [ a ops:MultilingualString ;
+            ops:text "Schlussabstimmung Energiegesetz" ;
+            mcm:language "de" ] ;
+    ops:voting_type <https://ch.paf.link/schema/operations/enum/voting_type/final_vote> ;
+    mcm:datetimeCreated "2025-03-15T14:30:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeModified "2025-03-15T14:35:00+00:00"^^xsd:dateTime .
+
+

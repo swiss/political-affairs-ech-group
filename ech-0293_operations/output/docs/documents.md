@@ -71,28 +71,6 @@ URI: [meta:documents](https://ch.paf.link/schema/meta/documents)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | meta:documents |
-| native | ops:documents |
-
-
 
 
 ## LinkML Source

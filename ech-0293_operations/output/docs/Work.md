@@ -1,81 +1,26 @@
----
-search:
-  boost: 10.0
----
 
-# Class: Work 
+
+## Class: Work 
 
 <div data-search-exclude markdown="1">
 
 
 
-URI: [ops:Work](https://ch.paf.link/schema/operations/Work)
+
+### Attribute
+
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| id | 1 <br/> [String](String.md) | None |
+| work_type | 0..1 <br/> [WorkTypesEnum](WorkTypesEnum.md) | None |
+| document_category | 0..1 <br/> [DocumentCategoryEnum](DocumentCategoryEnum.md) | [de] Kategorie des Dokuments. Wenn nicht gesetzt, wird automatisch 'other' verwendet. [en] Category of the document. If not set, 'other' is automatically used.  |
+| expressions | * <br/> [Expression](Expression.md) | None |
 
 
 
 
 
-```mermaid
- classDiagram
-    class Work
-    click Work href "../Work/"
-      Work : document_category
-        
-          
-    
-        
-        
-        Work --> "0..1" DocumentCategoryEnum : document_category
-        click DocumentCategoryEnum href "../DocumentCategoryEnum/"
-    
-
-        
-      Work : expressions
-        
-          
-    
-        
-        
-        Work --> "*" Expression : expressions
-        click Expression href "../Expression/"
-    
-
-        
-      Work : id
-        
-      Work : work_type
-        
-          
-    
-        
-        
-        Work --> "0..1" WorkTypesEnum : work_type
-        click WorkTypesEnum href "../WorkTypesEnum/"
-    
-
-        
-      
-```
-
-
-
-
-<!-- no inheritance hierarchy -->
-
-## Slots
-
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [id](id.md) | 1 <br/> [String](String.md) |  | direct |
-| [work_type](work_type.md) | 0..1 <br/> [WorkTypesEnum](WorkTypesEnum.md) |  | direct |
-| [document_category](document_category.md) | 0..1 <br/> [DocumentCategoryEnum](DocumentCategoryEnum.md) | [de] Kategorie des Dokuments | direct |
-| [expressions](expressions.md) | * <br/> [Expression](Expression.md) |  | direct |
-
-
-
-
-
-## Usages
+### Usages
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
@@ -90,6 +35,7 @@ URI: [ops:Work](https://ch.paf.link/schema/operations/Work)
 | [Election](Election.md) | [documents](documents.md) | range | [Work](Work.md) |
 | [Speech](Speech.md) | [documents](documents.md) | range | [Work](Work.md) |
 | [Motion](Motion.md) | [documents](documents.md) | range | [Work](Work.md) |
+| [WorkContainer](WorkContainer.md) | [works](works.md) | range | [Work](Work.md) |
 
 
 
@@ -102,107 +48,11 @@ URI: [ops:Work](https://ch.paf.link/schema/operations/Work)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:Work |
-| native | ops:Work |
 
 
 
 
 
 
-## LinkML Source
 
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: Work
-from_schema: https://ch.paf.link/schema/operations
-slots:
-- id
-- work_type
-- document_category
-- expressions
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: Work
-from_schema: https://ch.paf.link/schema/operations
-attributes:
-  id:
-    name: id
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    identifier: true
-    owner: Work
-    domain_of:
-    - Work
-    - Expression
-    - Manifestation
-    range: string
-    required: true
-  work_type:
-    name: work_type
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: meta:workType
-    owner: Work
-    domain_of:
-    - Work
-    range: WorkTypesEnum
-  document_category:
-    name: document_category
-    description: '[de] Kategorie des Dokuments. Wenn nicht gesetzt, wird automatisch
-      ''other'' verwendet.
-
-      [en] Category of the document. If not set, ''other'' is automatically used.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: meta:documentCategory
-    ifabsent: string(other)
-    owner: Work
-    domain_of:
-    - Work
-    range: DocumentCategoryEnum
-  expressions:
-    name: expressions
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: meta:expressions
-    owner: Work
-    domain_of:
-    - Work
-    range: Expression
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-
-```
-</details></div>
+</div>

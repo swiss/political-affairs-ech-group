@@ -55,28 +55,6 @@ URI: [ops:version](https://ch.paf.link/schema/operations/version)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:version |
-| native | ops:version |
-
-
 
 
 ## LinkML Source

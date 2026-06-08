@@ -28,6 +28,7 @@ URI: [mcm:localId](https://ld.ech.ch/schema/0292/meta-common/localId)
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [HasIdentification](HasIdentification.md) | A mixin class that provides slots for the identification of an entity |  no  |
+| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
 | [Container](Container.md) |  |  no  |
 | [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
 | [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
@@ -44,7 +45,6 @@ URI: [mcm:localId](https://ld.ech.ch/schema/0292/meta-common/localId)
 | [TextSegment](TextSegment.md) | [en] A text segment such as cross-references or subtitles in meeting protocol... |  no  |
 | [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |  no  |
 | [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |  no  |
-| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
 | [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |  no  |
 | [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |  no  |
 
@@ -60,7 +60,7 @@ URI: [mcm:localId](https://ld.ech.ch/schema/0292/meta-common/localId)
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [HasIdentification](HasIdentification.md) |
+| Domain Of | [HasIdentification](HasIdentification.md), [IsProcessStep](IsProcessStep.md) |
 | Slot URI | [mcm:localId](https://ld.ech.ch/schema/0292/meta-common/localId) |
 
 ### Cardinality and Requirements
@@ -75,36 +75,6 @@ URI: [mcm:localId](https://ld.ech.ch/schema/0292/meta-common/localId)
 
 
 
-
-
-## Identifier and Mapping Information
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| description_de | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
- |
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:localId |
-| native | ops:local_id |
 
 
 
@@ -128,6 +98,7 @@ rank: 1000
 slot_uri: mcm:localId
 domain_of:
 - HasIdentification
+- IsProcessStep
 range: string
 
 ```

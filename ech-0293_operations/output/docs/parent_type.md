@@ -55,28 +55,6 @@ URI: [ops:parent_type](https://ch.paf.link/schema/operations/parent_type)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:parent_type |
-| native | ops:parent_type |
-
-
 
 
 ## LinkML Source

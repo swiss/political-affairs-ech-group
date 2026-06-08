@@ -58,27 +58,14 @@ URI: [ops:individual_vote_type](https://ch.paf.link/schema/operations/individual
 
 
 
+## Examples
 
-## Identifier and Mapping Information
+| Value |
+| --- |
+| abstention |
+| no |
+| not_voted |
 
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:individual_vote_type |
-| native | ops:individual_vote_type |
 
 
 
@@ -93,6 +80,10 @@ description: '[en] Type of vote cast (yes, no, abstention, no vote, etc.).
   [de] Art der abgegebenen Stimme (Ja, Nein, Enthaltung, nicht abgestimmt, etc.).
 
   '
+examples:
+- value: abstention
+- value: 'no'
+- value: not_voted
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:

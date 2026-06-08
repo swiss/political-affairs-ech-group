@@ -1,0 +1,18 @@
+global_uri: ops:agenda_item_sg_2025_015
+parent_meeting: ops:meeting_sg_2025_03_15
+agenda_item_type: item
+agenda_item_number: '15'
+agenda_item_position: 15
+agenda_item_title:
+- text: Energiegesetz - Schlussabstimmung
+  language: de
+agenda_item_description:
+- text: Schlussabstimmung über das revidierte Energiegesetz des Kantons St. Gallen
+  language: de
+agenda_item_category: Gesetzgebung
+state_id: completed
+datetime_begin_planned: '2025-03-15T14:00:00Z'
+datetime_begin_actual: '2025-03-15T14:30:00Z'
+affair_id: affairs:sg_2024_123_energiegesetz
+datetime_created: '2025-02-01T10:00:00Z'
+datetime_modified: '2025-03-15T14:35:00Z'

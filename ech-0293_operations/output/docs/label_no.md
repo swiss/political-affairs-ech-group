@@ -59,28 +59,6 @@ URI: [ops:label_no](https://ch.paf.link/schema/operations/label_no)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:label_no |
-| native | ops:label_no |
-
-
 
 
 ## LinkML Source

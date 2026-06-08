@@ -60,28 +60,6 @@ URI: [ops:voting_title](https://ch.paf.link/schema/operations/voting_title)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:voting_title |
-| native | ops:voting_title |
-
-
 
 
 ## LinkML Source

@@ -59,27 +59,12 @@ URI: [ops:agenda_item_type](https://ch.paf.link/schema/operations/agenda_item_ty
 
 
 
+## Examples
 
-## Identifier and Mapping Information
+| Value |
+| --- |
+| item |
 
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:agenda_item_type |
-| native | ops:agenda_item_type |
 
 
 
@@ -94,6 +79,8 @@ description: '[en] Type of agenda item, distinguishing individual items from gro
   [de] Art des Traktandums, unterscheidet Einzeltraktanden von Traktandengruppen.
 
   '
+examples:
+- value: item
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:

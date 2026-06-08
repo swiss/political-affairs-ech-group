@@ -59,28 +59,6 @@ URI: [ops:total_count_yes](https://ch.paf.link/schema/operations/total_count_yes
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:total_count_yes |
-| native | ops:total_count_yes |
-
-
 
 
 ## LinkML Source

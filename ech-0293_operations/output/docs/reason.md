@@ -60,28 +60,6 @@ URI: [ops:reason](https://ch.paf.link/schema/operations/reason)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:reason |
-| native | ops:reason |
-
-
 
 
 ## LinkML Source

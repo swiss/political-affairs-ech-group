@@ -54,27 +54,12 @@ URI: [ops:role](https://ch.paf.link/schema/operations/role)
 
 
 
+## Examples
 
-## Identifier and Mapping Information
+| Value |
+| --- |
+| speaker |
 
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:role |
-| native | ops:role |
 
 
 
@@ -85,6 +70,8 @@ URI: [ops:role](https://ch.paf.link/schema/operations/role)
 ```yaml
 name: role
 description: Role of the person (e.g., commission speaker)
+examples:
+- value: speaker
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:

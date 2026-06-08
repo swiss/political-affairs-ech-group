@@ -57,28 +57,6 @@ URI: [ops:election](https://ch.paf.link/schema/operations/election)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:election |
-| native | ops:elections |
-
-
 
 
 ## LinkML Source

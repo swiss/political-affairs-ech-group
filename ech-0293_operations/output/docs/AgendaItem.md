@@ -1,9 +1,6 @@
----
-search:
-  boost: 10.0
----
 
-# Class: AgendaItem 
+
+## Class: AgendaItem 
 
 
 _[en] An agenda item of a meeting._
@@ -18,200 +15,49 @@ __
 
 
 
-URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
+
+### Attribute
+
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| parent_meeting | 0..1 <br/> [String](String.md) | [en] The linked meeting ID that groups the current meeting. [de] Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.  |
+| agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](AgendaItemTypeEnum.md) | [en] Type of agenda item, distinguishing individual items from groups. [de] Art des Traktandums, unterscheidet Einzeltraktanden von Traktandengruppen.  |
+| agenda_item_number | 0..1 <br/> [String](String.md) | [en] Sequential number of the agenda item (string type to support roman numerals). [de] Laufnummer des Traktandums (String-Typ zur Unterstützung römischer Ziffern).  |
+| agenda_item_position | 0..1 <br/> [Integer](Integer.md) | [en] Integer position of the agenda item in the meeting sequence. [de] Ganzzahlige Position des Traktandums in der Sitzungsreihenfolge.  |
+| leading_actor_id | 0..1 <br/> [String](String.md) | [en] The leading department for the agenda item. [de] Das federführende Departement für den Tagesordnungspunkt.  |
+| speaking_actor_id | 0..1 <br/> [String](String.md) | [en] The speaker or head of the department for the agenda item. [de] Der Sprecher oder Departementsvorsteher für den Tagesordnungspunkt.  |
+| agenda_item_title | * <br/> [MultilingualString](MultilingualString.md) | [en] Title of the agenda item. [de] Titel des Traktandums.  |
+| affair_id | 0..1 <br/> [String](String.md) | [en] The connection to the affairs (business items) of the agenda item. [de] Die Verbindung zu den Geschäften (Geschäftsgegenständen) des Tagesordnungspunkts.  |
+| agenda_item_description | * <br/> [MultilingualString](MultilingualString.md) | [en] Subtitle or detailed description of the agenda item. [de] Untertitel oder ausführliche Beschreibung des Traktandums.  |
+| state_id | 0..1 <br/> [String](String.md) | State identifier (reference to state enum or custom state) |
+| state_name | 0..1 <br/> [String](String.md) | [en] Custom state description for the meeting. [de] Benutzerdefinierte Zustandsbeschreibung für die Sitzung.  |
+| landing_page | 0..1 <br/> [String](String.md) | [en] URL providing further information. [de] URL mit weiteren Informationen.  |
+| url | * <br/> [MultilingualString](MultilingualString.md) | None |
+| agenda_item_category | 0..1 <br/> [String](String.md) | [en] Category for grouped agenda items (e.g., introduction, by department, technical agenda items). [de] Kategorie für gruppierte Traktanden (z.B. Einführung, nach Departement, technische Traktanden).  |
+| parent_agenda_item | 0..1 <br/> [String](String.md) | [en] If needed, this slot builds a hierarchy of agenda items. [de] Wenn erforderlich, baut dieser Slot eine Hierarchie von Tagesordnungspunkten auf.  |
+| has_resolution | 0..1 <br/> [Resolution](Resolution.md) | [en] The resolutionor decision taken on this agenda item. [de] Die Resolution oder Entscheidung zu diesem Traktandum.  |
+| documents | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind. [en] List of documents (FRBR Works) linked to the entity.  |
+| local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| date_begin_actual | 0..1 <br/> [Date](Date.md) | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| datetime_begin_actual | 0..1 <br/> [Datetime](Datetime.md) | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| date_begin_planned | 0..1 <br/> [Date](Date.md) | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| datetime_begin_planned | 0..1 <br/> [Datetime](Datetime.md) | The planned start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| date_end_actual | 0..1 <br/> [Date](Date.md) | The actual end date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| datetime_end_actual | 0..1 <br/> [Datetime](Datetime.md) | The actual end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| date_end_planned | 0..1 <br/> [Date](Date.md) | The planned end date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| datetime_end_planned | 0..1 <br/> [Datetime](Datetime.md) | The planned end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| date_created | 0..1 <br/> [Date](Date.md) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
+| datetime_created | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
+| date_modified | 0..1 <br/> [Date](Date.md) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
+| datetime_modified | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
 
 
 
 
 
-```mermaid
- classDiagram
-    class AgendaItem
-    click AgendaItem href "../AgendaItem/"
-      HasIdentification <|-- AgendaItem
-        click HasIdentification href "../HasIdentification/"
-      IsEventWithDuration <|-- AgendaItem
-        click IsEventWithDuration href "../IsEventWithDuration/"
-      HasCreationModificationDates <|-- AgendaItem
-        click HasCreationModificationDates href "../HasCreationModificationDates/"
-      
-
-      AgendaItem <|-- ProtocolItem
-        click ProtocolItem href "../ProtocolItem/"
-      
-
-      AgendaItem : affair_id
-        
-      AgendaItem : agenda_item_category
-        
-      AgendaItem : agenda_item_description
-        
-          
-    
-        
-        
-        AgendaItem --> "*" MultilingualString : agenda_item_description
-        click MultilingualString href "../MultilingualString/"
-    
-
-        
-      AgendaItem : agenda_item_number
-        
-      AgendaItem : agenda_item_position
-        
-      AgendaItem : agenda_item_title
-        
-          
-    
-        
-        
-        AgendaItem --> "*" MultilingualString : agenda_item_title
-        click MultilingualString href "../MultilingualString/"
-    
-
-        
-      AgendaItem : agenda_item_type
-        
-          
-    
-        
-        
-        AgendaItem --> "0..1" AgendaItemTypeEnum : agenda_item_type
-        click AgendaItemTypeEnum href "../AgendaItemTypeEnum/"
-    
-
-        
-      AgendaItem : date_begin_actual
-        
-      AgendaItem : date_begin_planned
-        
-      AgendaItem : date_created
-        
-      AgendaItem : date_end_actual
-        
-      AgendaItem : date_end_planned
-        
-      AgendaItem : date_modified
-        
-      AgendaItem : datetime_begin_actual
-        
-      AgendaItem : datetime_begin_planned
-        
-      AgendaItem : datetime_created
-        
-      AgendaItem : datetime_end_actual
-        
-      AgendaItem : datetime_end_planned
-        
-      AgendaItem : datetime_modified
-        
-      AgendaItem : documents
-        
-          
-    
-        
-        
-        AgendaItem --> "*" Work : documents
-        click Work href "../Work/"
-    
-
-        
-      AgendaItem : global_uri
-        
-      AgendaItem : has_resolution
-        
-          
-    
-        
-        
-        AgendaItem --> "0..1" Resolution : has_resolution
-        click Resolution href "../Resolution/"
-    
-
-        
-      AgendaItem : landing_page
-        
-      AgendaItem : leading_actor_id
-        
-      AgendaItem : local_id
-        
-      AgendaItem : parent_agenda_item
-        
-      AgendaItem : parent_meeting
-        
-      AgendaItem : speaking_actor_id
-        
-      AgendaItem : state_id
-        
-      AgendaItem : state_name
-        
-      AgendaItem : url
-        
-          
-    
-        
-        
-        AgendaItem --> "*" MultilingualString : url
-        click MultilingualString href "../MultilingualString/"
-    
-
-        
-      AgendaItem : wikidata_uri
-        
-      
-```
-
-
-
-
-
-## Inheritance
-* **AgendaItem** [ [HasIdentification](HasIdentification.md) [IsEventWithDuration](IsEventWithDuration.md) [HasCreationModificationDates](HasCreationModificationDates.md)]
-    * [ProtocolItem](ProtocolItem.md)
-
-
-## Slots
-
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [parent_meeting](parent_meeting.md) | 0..1 <br/> [String](String.md) | [en] The linked meeting ID that groups the current meeting | direct |
-| [agenda_item_type](agenda_item_type.md) | 0..1 <br/> [AgendaItemTypeEnum](AgendaItemTypeEnum.md) | [en] Type of agenda item, distinguishing individual items from groups | direct |
-| [agenda_item_number](agenda_item_number.md) | 0..1 <br/> [String](String.md) | [en] Sequential number of the agenda item (string type to support roman numer... | direct |
-| [agenda_item_position](agenda_item_position.md) | 0..1 <br/> [Integer](Integer.md) | [en] Integer position of the agenda item in the meeting sequence | direct |
-| [leading_actor_id](leading_actor_id.md) | 0..1 <br/> [String](String.md) | [en] The leading department for the agenda item | direct |
-| [speaking_actor_id](speaking_actor_id.md) | 0..1 <br/> [String](String.md) | [en] The speaker or head of the department for the agenda item | direct |
-| [agenda_item_title](agenda_item_title.md) | * <br/> [MultilingualString](MultilingualString.md) | [en] Title of the agenda item | direct |
-| [affair_id](affair_id.md) | 0..1 <br/> [String](String.md) | [en] The connection to the affairs (business items) of the agenda item | direct |
-| [agenda_item_description](agenda_item_description.md) | * <br/> [MultilingualString](MultilingualString.md) | [en] Subtitle or detailed description of the agenda item | direct |
-| [state_id](state_id.md) | 0..1 <br/> [String](String.md) | State identifier (reference to state enum or custom state) | direct |
-| [state_name](state_name.md) | 0..1 <br/> [String](String.md) | [en] Custom state description for the meeting | direct |
-| [landing_page](landing_page.md) | 0..1 <br/> [String](String.md) | [en] URL providing further information | direct |
-| [url](url.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
-| [agenda_item_category](agenda_item_category.md) | 0..1 <br/> [String](String.md) | [en] Category for grouped agenda items (e | direct |
-| [parent_agenda_item](parent_agenda_item.md) | 0..1 <br/> [String](String.md) | [en] If needed, this slot builds a hierarchy of agenda items | direct |
-| [has_resolution](has_resolution.md) | 0..1 <br/> [Resolution](Resolution.md) | [en] The resolutionor decision taken on this agenda item | direct |
-| [documents](documents.md) | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
-| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | Local identifier | [HasIdentification](HasIdentification.md) |
-| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity | [HasIdentification](HasIdentification.md) |
-| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e | [HasIdentification](HasIdentification.md) |
-| [date_begin_actual](date_begin_actual.md) | 0..1 <br/> [Date](Date.md) | The actual start date of an event or occurrence with time duration | [IsEventWithDuration](IsEventWithDuration.md) |
-| [datetime_begin_actual](datetime_begin_actual.md) | 0..1 <br/> [Datetime](Datetime.md) | The actual start date and time of an event or occurrence with time duration | [IsEventWithDuration](IsEventWithDuration.md) |
-| [date_begin_planned](date_begin_planned.md) | 0..1 <br/> [Date](Date.md) | The planned start date of an event or occurrence with time duration | [IsEventWithDuration](IsEventWithDuration.md) |
-| [datetime_begin_planned](datetime_begin_planned.md) | 0..1 <br/> [Datetime](Datetime.md) | The planned start date and time of an event or occurrence with time duration | [IsEventWithDuration](IsEventWithDuration.md) |
-| [date_end_actual](date_end_actual.md) | 0..1 <br/> [Date](Date.md) | The actual end date of an event or occurrence with time duration | [IsEventWithDuration](IsEventWithDuration.md) |
-| [datetime_end_actual](datetime_end_actual.md) | 0..1 <br/> [Datetime](Datetime.md) | The actual end date and time of an event or occurrence with time duration | [IsEventWithDuration](IsEventWithDuration.md) |
-| [date_end_planned](date_end_planned.md) | 0..1 <br/> [Date](Date.md) | The planned end date of an event or occurrence with time duration | [IsEventWithDuration](IsEventWithDuration.md) |
-| [datetime_end_planned](datetime_end_planned.md) | 0..1 <br/> [Datetime](Datetime.md) | The planned end date and time of an event or occurrence with time duration | [IsEventWithDuration](IsEventWithDuration.md) |
-| [date_created](date_created.md) | 0..1 <br/> [Date](Date.md) | The date when an entity was created | [HasCreationModificationDates](HasCreationModificationDates.md) |
-| [datetime_created](datetime_created.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was created | [HasCreationModificationDates](HasCreationModificationDates.md) |
-| [date_modified](date_modified.md) | 0..1 <br/> [Date](Date.md) | The date when an entity was last modified | [HasCreationModificationDates](HasCreationModificationDates.md) |
-| [datetime_modified](datetime_modified.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was last modified | [HasCreationModificationDates](HasCreationModificationDates.md) |
-
-
-
-
-
-## Usages
+### Usages
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
@@ -229,634 +75,357 @@ URI: [ops:AgendaItem](https://ch.paf.link/schema/operations/AgendaItem)
 
 
 
-## Identifier and Mapping Information
 
 
+### Examples
+#### Example: AgendaItem-meeting_item_fa732e0e-7e5f-4d45-994a-fc74720c0781
 
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:AgendaItem |
-| native | ops:AgendaItem |
-
-
-
-
-
-
-## LinkML Source
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
 ```yaml
-name: AgendaItem
-description: '[en] An agenda item of a meeting.
-
-  [de] Ein Traktandum einer Sitzung.
-
-  '
-from_schema: https://ch.paf.link/schema/operations
-mixins:
-- HasIdentification
-- IsEventWithDuration
-- HasCreationModificationDates
-slots:
-- parent_meeting
-- agenda_item_type
-- agenda_item_number
-- agenda_item_position
-- leading_actor_id
-- speaking_actor_id
-- agenda_item_title
-- affair_id
-- agenda_item_description
-- state_id
-- state_name
-- landing_page
-- url
-- agenda_item_category
-- parent_agenda_item
-- has_resolution
-- documents
+global_uri: ops:fa732e0e-7e5f-4d45-994a-fc74720c0781
+parent_meeting: ops:meeting_luzern_2025_01_28_b
+agenda_item_type: item
+datetime_begin_planned: '2025-01-28T00:00:00Z'
+agenda_item_position: 14
+agenda_item_number: '14'
+agenda_item_title:
+- text: Postulat Stadelmann Karin Andrea und Mit. über die Überprüfung und Anpassung
+    der Kriterien zum früheren Eintritt von Kindern in die Basisstufe (den freiwilligen
+    Kindergarten) / Bildungs- und Kulturdepartement
+  language: de
+agenda_item_category: voting
+url:
+- text: https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=fa732e0e-7e5f-4d45-994a-fc74720c0781
+  language: de
+affair_id: affairs:2023P_102
+datetime_created: '2025-01-29T06:59:41Z'
+datetime_modified: '2025-01-29T06:59:41Z'
 
 ```
-</details>
+#### Example: AgendaItem-meeting_item_21c50b86d21b4b4baeb1a76738ff82a3_2025-04-02_1_de
 
-### Induced
-
-<details>
 ```yaml
-name: AgendaItem
-description: '[en] An agenda item of a meeting.
-
-  [de] Ein Traktandum einer Sitzung.
-
-  '
-from_schema: https://ch.paf.link/schema/operations
-mixins:
-- HasIdentification
-- IsEventWithDuration
-- HasCreationModificationDates
-attributes:
-  parent_meeting:
-    name: parent_meeting
-    description: '[en] The linked meeting ID that groups the current meeting.
-
-      [de] Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: AgendaItem
-    domain_of:
-    - Meeting
-    - AgendaItem
-    - Protocol
-    - Voting
-    - Election
-    - Attendance
-    range: string
-  agenda_item_type:
-    name: agenda_item_type
-    description: '[en] Type of agenda item, distinguishing individual items from groups.
-
-      [de] Art des Traktandums, unterscheidet Einzeltraktanden von Traktandengruppen.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: AgendaItem
-    domain_of:
-    - AgendaItem
-    range: AgendaItemTypeEnum
-  agenda_item_number:
-    name: agenda_item_number
-    description: '[en] Sequential number of the agenda item (string type to support
-      roman numerals).
-
-      [de] Laufnummer des Traktandums (String-Typ zur Unterstützung römischer Ziffern).
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: AgendaItem
-    domain_of:
-    - AgendaItem
-    range: string
-  agenda_item_position:
-    name: agenda_item_position
-    description: '[en] Integer position of the agenda item in the meeting sequence.
-
-      [de] Ganzzahlige Position des Traktandums in der Sitzungsreihenfolge.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: AgendaItem
-    domain_of:
-    - AgendaItem
-    range: integer
-  leading_actor_id:
-    name: leading_actor_id
-    description: '[en] The leading department for the agenda item.
-
-      [de] Das federführende Departement für den Tagesordnungspunkt.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: AgendaItem
-    domain_of:
-    - AgendaItem
-    range: string
-  speaking_actor_id:
-    name: speaking_actor_id
-    description: '[en] The speaker or head of the department for the agenda item.
-
-      [de] Der Sprecher oder Departementsvorsteher für den Tagesordnungspunkt.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: AgendaItem
-    domain_of:
-    - AgendaItem
-    range: string
-  agenda_item_title:
-    name: agenda_item_title
-    description: '[en] Title of the agenda item.
-
-      [de] Titel des Traktandums.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: AgendaItem
-    domain_of:
-    - AgendaItem
-    range: MultilingualString
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  affair_id:
-    name: affair_id
-    description: '[en] The connection to the affairs (business items) of the agenda
-      item.
-
-      [de] Die Verbindung zu den Geschäften (Geschäftsgegenständen) des Tagesordnungspunkts.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: AgendaItem
-    domain_of:
-    - AgendaItem
-    - Voting
-    - Election
-    range: string
-  agenda_item_description:
-    name: agenda_item_description
-    description: '[en] Subtitle or detailed description of the agenda item.
-
-      [de] Untertitel oder ausführliche Beschreibung des Traktandums.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: AgendaItem
-    domain_of:
-    - AgendaItem
-    range: MultilingualString
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  state_id:
-    name: state_id
-    description: State identifier (reference to state enum or custom state)
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: AgendaItem
-    domain_of:
-    - AgendaItem
-    range: string
-  state_name:
-    name: state_name
-    description: '[en] Custom state description for the meeting.
-
-      [de] Benutzerdefinierte Zustandsbeschreibung für die Sitzung.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: AgendaItem
-    domain_of:
-    - Meeting
-    - AgendaItem
-    range: string
-  landing_page:
-    name: landing_page
-    description: '[en] URL providing further information.
-
-      [de] URL mit weiteren Informationen.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: ops:landingPage
-    owner: AgendaItem
-    domain_of:
-    - Legislature
-    - Meeting
-    - AgendaItem
-    - Voting
-    - Election
-    - Speech
-    range: string
-  url:
-    name: url
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: AgendaItem
-    domain_of:
-    - Session
-    - Meeting
-    - AgendaItem
-    - Media
-    - Manifestation
-    range: MultilingualString
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  agenda_item_category:
-    name: agenda_item_category
-    description: '[en] Category for grouped agenda items (e.g., introduction, by department,
-      technical agenda items).
-
-      [de] Kategorie für gruppierte Traktanden (z.B. Einführung, nach Departement,
-      technische Traktanden).
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: AgendaItem
-    domain_of:
-    - AgendaItem
-    range: string
-  parent_agenda_item:
-    name: parent_agenda_item
-    description: '[en] If needed, this slot builds a hierarchy of agenda items.
-
-      [de] Wenn erforderlich, baut dieser Slot eine Hierarchie von Tagesordnungspunkten
-      auf.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: AgendaItem
-    domain_of:
-    - AgendaItem
-    - Voting
-    - Election
-    range: string
-  has_resolution:
-    name: has_resolution
-    description: '[en] The resolutionor decision taken on this agenda item.
-
-      [de] Die Resolution oder Entscheidung zu diesem Traktandum.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: AgendaItem
-    domain_of:
-    - AgendaItem
-    range: Resolution
-  documents:
-    name: documents
-    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
-      sind.
-
-      [en] List of documents (FRBR Works) linked to the entity.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: meta:documents
-    owner: AgendaItem
-    domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Protocol
-    - Resolution
-    - Voting
-    - Election
-    - Speech
-    - Motion
-    range: Work
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  local_id:
-    name: local_id
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
-
-          '
-    description: 'Local identifier. For example, a UUID from the council information
-      system.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:localId
-    owner: AgendaItem
-    domain_of:
-    - HasIdentification
-    range: string
-  global_uri:
-    name: global_uri
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Eine eindeutige, global gültige URI für die Entität.
-
-          '
-    description: 'A unique, globally valid URI for the entity.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:globalURI
-    identifier: true
-    owner: AgendaItem
-    domain_of:
-    - HasIdentification
-    range: uriorcurie
-    required: true
-  wikidata_uri:
-    name: wikidata_uri
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-          für die Schweiz.
-
-          '
-    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
-      for Switzerland.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:wikidataUri
-    owner: AgendaItem
-    domain_of:
-    - HasIdentification
-    range: uriorcurie
-  date_begin_actual:
-    name: date_begin_actual
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit
-          Zeitdauer.
-
-          '
-    description: 'The actual start date of an event or occurrence with time duration.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:dateBeginActual
-    owner: AgendaItem
-    domain_of:
-    - IsEventWithDuration
-    range: date
-  datetime_begin_actual:
-    name: datetime_begin_actual
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder
-          Vorkommnissen mit Zeitdauer.
-
-          '
-    description: 'The actual start date and time of an event or occurrence with time
-      duration.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:datetimeBeginActual
-    owner: AgendaItem
-    domain_of:
-    - IsEventWithDuration
-    range: datetime
-  date_begin_planned:
-    name: date_begin_planned
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
-
-          '
-    description: 'The planned start date of an event or occurrence with time duration.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:dateBeginPlanned
-    owner: AgendaItem
-    domain_of:
-    - IsEventWithDuration
-    range: date
-  datetime_begin_planned:
-    name: datetime_begin_planned
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
-          mit Zeitdauer.
-
-          '
-    description: 'The planned start date and time of an event or occurrence with time
-      duration.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:datetimeBeginPlanned
-    owner: AgendaItem
-    domain_of:
-    - IsEventWithDuration
-    range: datetime
-  date_end_actual:
-    name: date_end_actual
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das tatsächliche Enddatum eines Ereignisses oder Vorkommnissen mit
-          Zeitdauer.
-
-          '
-    description: 'The actual end date of an event or occurrence with time duration.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:dateEndActual
-    owner: AgendaItem
-    domain_of:
-    - IsEventWithDuration
-    range: date
-  datetime_end_actual:
-    name: datetime_end_actual
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
-          mit Zeitdauer.
-
-          '
-    description: 'The actual end date and time of an event or occurrence with time
-      duration.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:datetimeEndActual
-    owner: AgendaItem
-    domain_of:
-    - IsEventWithDuration
-    range: datetime
-  date_end_planned:
-    name: date_end_planned
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das geplante Enddatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
-
-          '
-    description: 'The planned end date of an event or occurrence with time duration.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:dateEndPlanned
-    owner: AgendaItem
-    domain_of:
-    - IsEventWithDuration
-    range: date
-  datetime_end_planned:
-    name: datetime_end_planned
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
-          mit Zeitdauer.
-
-          '
-    description: 'The planned end date and time of an event or occurrence with time
-      duration.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:datetimeEndPlanned
-    owner: AgendaItem
-    domain_of:
-    - IsEventWithDuration
-    range: datetime
-  date_created:
-    name: date_created
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das Datum, an dem eine Entität erstellt wurde.
-
-          '
-    description: 'The date when an entity was created.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:dateCreated
-    owner: AgendaItem
-    domain_of:
-    - HasCreationModificationDates
-    range: date
-  datetime_created:
-    name: datetime_created
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
-
-          '
-    description: 'The date and time when an entity was created.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:datetimeCreated
-    owner: AgendaItem
-    domain_of:
-    - HasCreationModificationDates
-    range: datetime
-  date_modified:
-    name: date_modified
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
-
-          '
-    description: 'The date when an entity was last modified.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:dateModified
-    owner: AgendaItem
-    domain_of:
-    - HasCreationModificationDates
-    range: date
-  datetime_modified:
-    name: datetime_modified
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
-
-          '
-    description: 'The date and time when an entity was last modified.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:datetimeModified
-    owner: AgendaItem
-    domain_of:
-    - HasCreationModificationDates
-    range: datetime
+global_uri: ops:21c50b86d21b4b4baeb1a76738ff82a3_2025-04-02_1_de
+parent_meeting: ops:meeting_bern_rr_2025_04_02
+agenda_item_type: item
+datetime_begin_planned: '2025-04-02T00:00:00Z'
+agenda_item_title:
+- text: 'Petition «Gleichberechtigung für Tagesfamilien: Gleich hohe Betreuungsgutscheine
+    für alle Anbieter im Kanton Bern». Regierungsrätliches Antwortschreiben'
+  language: de
+affair_id: affairs:2025.STA.622
+url:
+- text: https://www.rr.be.ch/de/start/beschluesse/suche/geschaeftsdetail.html?guid=21c50b86d21b4b4baeb1a76738ff82a3
+  language: de
+datetime_created: '2025-04-25T11:11:40Z'
+datetime_modified: '2025-04-25T11:11:40Z'
 
 ```
-</details></div>
+#### Example: AgendaItem-meeting_item_2023_10_03-52
+
+```yaml
+global_uri: ops:2023_10_03-52
+parent_meeting: ops:meeting_lausanne_2023_10_03
+agenda_item_type: item
+datetime_begin_planned: '2023-10-03T00:00:00Z'
+agenda_item_position: 52
+agenda_item_number: '52'
+agenda_item_title:
+- text: 'Postulat de Mme Franziska MEINHERZ : « Lausanne sans publicité commerciale
+    » (FIM)'
+  language: fr
+state_id: postponed
+agenda_item_category: RAPPORTS
+affair_id: affairs:POS22/029
+url:
+- text: https://www.lausanne.ch/apps/agir/affaire/81/b7157ea2a4994086b65cf176768c6381.htm
+  language: fr
+datetime_created: '2025-02-08T12:33:10Z'
+datetime_modified: '2025-02-08T12:33:10Z'
+
+```
+#### Example: AgendaItem-meeting_item_49_253
+
+```yaml
+global_uri: ops:49_253
+parent_meeting: ops:meeting_2025_03_31
+agenda_item_type: item
+datetime_begin_planned: '2025-03-31T00:00:00Z'
+agenda_item_position: 2
+agenda_item_number: '2'
+agenda_item_title:
+- text: Programmvereinbarungen 2024
+  language: de
+datetime_created: '2025-03-29T01:07:14Z'
+datetime_modified: '2025-03-29T01:07:14Z'
+
+```
+#### Example: AgendaItem-meeting_item_87b69a72919445a493a061d9b0daeba3
+
+```yaml
+global_uri: ops:87b69a72919445a493a061d9b0daeba3
+parent_meeting: ops:meeting_be_2025_06_02
+agenda_item_type: item
+datetime_begin_planned: '2025-06-02T00:00:00Z'
+agenda_item_title:
+- text: Differenzierte Anpassung des Gehalts von Lehrpersonen ohne Lehrdiplom
+  language: de
+affair_id: affairs:2025.GRPARL.81
+datetime_created: '2025-04-25T11:10:35Z'
+datetime_modified: '2025-04-25T11:10:35Z'
+
+```
+#### Example: AgendaItem-meeting_complete_agenda_item_be_2025_042
+
+```yaml
+global_uri: ops:agenda_item_be_2025_042
+parent_meeting: ops:meeting_be_committee_wak_2025_05_12
+agenda_item_type: item
+agenda_item_number: '4.2'
+agenda_item_position: 42
+agenda_item_title:
+- text: Steuergesetz - Detailberatung Art. 5
+  language: de
+- text: Loi fiscale - Délibération détaillée art. 5
+  language: fr
+agenda_item_description:
+- text: Beratung von Änderungsanträgen zu Artikel 5 des Steuergesetzes
+  language: de
+- text: Délibération sur les propositions de modification de l'article 5 de la loi
+    fiscale
+  language: fr
+agenda_item_category: Gesetzgebung
+state_id: completed
+datetime_begin_planned: '2025-05-12T15:00:00Z'
+datetime_begin_actual: '2025-05-12T15:15:00Z'
+affair_id: affairs:be_2024_089_steuergesetz
+datetime_created: '2025-04-15T09:00:00Z'
+datetime_modified: '2025-05-12T15:20:00Z'
+
+```
+#### Example: AgendaItem-meeting_item_0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
+
+```yaml
+global_uri: ops:0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
+parent_meeting: ops:meeting_luzern_2025_01_28
+agenda_item_type: item
+datetime_begin_planned: '2025-01-28T00:00:00Z'
+agenda_item_position: 29
+agenda_item_number: '29'
+agenda_item_title:
+- text: Postulat Widmer Reichlin Gisela und Mit. über Massnahmen zur Erfüllung des
+    Sonderschulkonkordats und zur gezielten Behebung des Fachkräftemangels im Bereich
+    schulische Heilpädagogik / Bildungs- und Kulturdepartement
+  language: de
+agenda_item_category: voting
+url:
+- text: https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
+  language: de
+affair_id: affairs:2024P_125
+datetime_created: '2025-01-29T06:59:41Z'
+datetime_modified: '2025-01-29T06:59:41Z'
+
+```
+#### Example: AgendaItem-meeting_item_16155798_3
+
+```yaml
+global_uri: ops:16155798_3
+parent_meeting: ops:meeting_schaffhausen_2025_03_31
+agenda_item_type: item
+datetime_begin_planned: '2025-03-31T00:00:00Z'
+agenda_item_position: 2
+agenda_item_number: '2'
+agenda_item_title:
+- text: Motion Nr. 2023/9 von Rainer Schmidig vom 18. Dezember 2023 betreffend zeitgemässe
+    Abzüge in den Art. 35 und 37 des Gesetzes über die direkten Steuern
+  language: de
+agenda_item_category: Traktanden
+affair_id: affairs:MOT_2023_9
+datetime_created: '2025-05-02T11:23:49Z'
+datetime_modified: '2025-05-02T11:23:49Z'
+
+```
+#### Example: AgendaItem-meeting_complete_agenda_item_sg_2025_015
+
+```yaml
+global_uri: ops:agenda_item_sg_2025_015
+parent_meeting: ops:meeting_sg_2025_03_15
+agenda_item_type: item
+agenda_item_number: '15'
+agenda_item_position: 15
+agenda_item_title:
+- text: Energiegesetz - Schlussabstimmung
+  language: de
+agenda_item_description:
+- text: Schlussabstimmung über das revidierte Energiegesetz des Kantons St. Gallen
+  language: de
+agenda_item_category: Gesetzgebung
+state_id: completed
+datetime_begin_planned: '2025-03-15T14:00:00Z'
+datetime_begin_actual: '2025-03-15T14:30:00Z'
+affair_id: affairs:sg_2024_123_energiegesetz
+datetime_created: '2025-02-01T10:00:00Z'
+datetime_modified: '2025-03-15T14:35:00Z'
+
+```
+#### Example: AgendaItem-meeting_item_7b3545e4-57dc-3901-aaa8-4020da6ab0c6
+
+```yaml
+global_uri: ops:7b3545e4-57dc-3901-aaa8-4020da6ab0c6
+parent_meeting: ops:meeting_vaud_2008_04_30
+agenda_item_type: item
+datetime_begin_planned: '2008-04-30T00:00:00Z'
+agenda_item_position: 7
+agenda_item_number: '7'
+agenda_item_title:
+- text: Révision partielle de sept ordonnances fédérales relatives aux produits chimiques
+  language: fr
+agenda_item_description:
+- text: 'Le Conseil d''Etat approuve le projet de révision partielle de sept ordonnances
+    fédérales relatives aux produits chimiques. Il salue la volonté des autorités
+    fédérales d''introduire dans la législation fédérale les modifications nécessaires
+    découlant des nouveaux règlements européens, afin d''éliminer des entraves au
+    commerce et d''augmenter la sécurité d''évaluation des produits chimiques.
+
+    '
+  language: fr
+url:
+- text: https://www.vd.ch/actualites/decisions-du-conseil-detat/seance-du-conseil-detat/seance/265632#7b3545e4-57dc-3901-aaa8-4020da6ab0c6
+  language: fr
+datetime_created: '2024-12-06T10:50:04Z'
+datetime_modified: '2024-12-06T10:50:04Z'
+
+```
+#### Example: AgendaItem-meeting_item_16155798_4
+
+```yaml
+global_uri: ops:16155798_4
+parent_meeting: ops:meeting_schaffhausen_2025_03_31_b
+agenda_item_type: item
+datetime_begin_planned: '2025-03-31T00:00:00Z'
+agenda_item_position: 3
+agenda_item_number: '3'
+agenda_item_title:
+- text: 'Volksmotion Nr. 2024/1 von Sandro Mamedow und Livia Schraff (Erstunterzeichnende)
+    sowie weitere 150 Mitunterzeichnende vom 22. März 2024 mit dem Titel: «Für eine
+    Stimme der Studierenden im Hochschulrat der Pädagogischen Hochschule Schaffhausen
+    (PHSH)»'
+  language: de
+agenda_item_category: Traktanden
+affair_id: affairs:MOT_2024_1
+datetime_created: '2025-05-02T11:23:49Z'
+datetime_modified: '2025-05-02T11:23:49Z'
+
+```
+#### Example: AgendaItem-meeting_item_06fb582b753c416d8fdb05fa13873545
+
+```yaml
+global_uri: ops:06fb582b753c416d8fdb05fa13873545
+parent_meeting: ops:meeting_2011_11_23
+agenda_item_type: item
+datetime_begin_planned: '2011-11-23T00:00:00Z'
+agenda_item_position: 2
+agenda_item_title:
+- text: Interpellation Peter Mark betr. elektronische Datenerfassung durch Mitarbeiter
+    im Werkhof – Versuchsphase
+  language: de
+datetime_created: '2025-03-21T23:15:19Z'
+datetime_modified: '2025-03-21T23:15:19Z'
+
+```
+#### Example: AgendaItem-meeting_complete_agenda_item_zh_budget_2026
+
+```yaml
+global_uri: ops:agenda_item_zh_budget_2026
+parent_meeting: ops:meeting_zh_2025_11_20
+agenda_item_type: item
+agenda_item_number: '8'
+agenda_item_position: 8
+agenda_item_title:
+- text: Budget 2026
+  language: de
+agenda_item_description:
+- text: Beratung und Beschlussfassung über das Kantonsbudget für das Jahr 2026
+  language: de
+agenda_item_category: Budget und Finanzen
+state_id: completed
+datetime_begin_planned: '2025-11-20T16:00:00Z'
+datetime_begin_actual: '2025-11-20T16:45:00Z'
+affair_id: affairs:zh_2025_budget_2026
+datetime_created: '2025-10-01T08:00:00Z'
+datetime_modified: '2025-11-20T16:50:00Z'
+
+```
+#### Example: AgendaItem-meeting_item_cea750a5bd7b420fa4da1c914f801384
+
+```yaml
+global_uri: ops:cea750a5bd7b420fa4da1c914f801384
+parent_meeting: ops:meeting_bern_2022_03_17
+agenda_item_type: item
+datetime_begin_planned: '2022-03-17T17:00:00Z'
+agenda_item_position: 29
+agenda_item_number: '8'
+agenda_item_title:
+- text: 'Interpellation Fraktion GB/JA! (Katharina Gallizzi, GB): Welche Konsequenzen
+    haben die Klimaziele für das Gasnetz in Bern?'
+  language: de
+affair_id: affairs:2020.SR.000007
+url:
+- text: https://stadtrat.bern.ch/de/sitzungen/detail.php?gid=000d6cf5f0bc4d89a5171e0123cfbff5#cea750a5bd7b420fa4da1c914f801384
+  language: de
+datetime_created: '2025-01-17T21:25:52Z'
+datetime_modified: '2025-01-17T21:25:52Z'
+
+```
+#### Example: AgendaItem-meeting_item_2025_05_20-23
+
+```yaml
+global_uri: ops:2025_05_20-23
+parent_meeting: ops:meeting_lausanne_2025_05_20
+agenda_item_type: item
+datetime_begin_planned: '2025-05-20T00:00:00Z'
+agenda_item_position: 23
+agenda_item_number: '23'
+agenda_item_title:
+- text: 'Interpellation urgente du 20 mai 2025 de M. Yusuf KULMIYE : « Interpellation
+    urgente de Kulmiye Yusuf et crts – Solidarité sans frontières, Lausanne en faveur
+    du respect du droit international et de la protection des populations civiles
+    à Gaza »'
+  language: fr
+state_id: not_treated
+agenda_item_category: ANNONCES ET INTERPELLATIONS
+affair_id: affairs:INT25/027
+url:
+- text: https://www.lausanne.ch/apps/agir/affaire/6c/049b6c612fe2428f9be66ea39522ac6c.htm
+  language: fr
+datetime_created: '2025-06-07T23:50:18Z'
+datetime_modified: '2025-06-07T23:50:18Z'
+
+```
+#### Example: AgendaItem-meeting_sr_winter25_Sitzung6_69905
+
+```yaml
+global_uri: ops:69905
+parent_meeting: parl:sr_winter25_sitzung_6
+agenda_item_type: item
+datetime_begin_planned: '2025-12-19T09:15:00+01:00'
+datetime_begin_actual: '2025-12-19T09:20:00+01:00'
+agenda_item_number: '6'
+agenda_item_position: 4
+agenda_item_title:
+- text: Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich
+    durchführen, um die Verzögerungen zu verstehen
+  language: de
+affair_id: affairs:24.4471
+landing_page: https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3
+agenda_item_category: agenda_item
+datetime_created: '2026-01-12T00:00:00+01:00'
+datetime_modified: '2026-01-12T00:00:00+01:00'
+
+```
+
+
+
+
+
+
+</div>

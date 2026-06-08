@@ -1,0 +1,10 @@
+global_uri: ops:87b69a72919445a493a061d9b0daeba3
+parent_meeting: ops:meeting_be_2025_06_02
+agenda_item_type: item
+datetime_begin_planned: '2025-06-02T00:00:00Z'
+agenda_item_title:
+- text: Differenzierte Anpassung des Gehalts von Lehrpersonen ohne Lehrdiplom
+  language: de
+affair_id: affairs:2025.GRPARL.81
+datetime_created: '2025-04-25T11:10:35Z'
+datetime_modified: '2025-04-25T11:10:35Z'

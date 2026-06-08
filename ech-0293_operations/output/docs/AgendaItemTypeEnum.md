@@ -1,10 +1,4 @@
----
-search:
-  boost: 2.0
----
-
-
-# Enum: AgendaItemTypeEnum 
+## Enum: AgendaItemTypeEnum 
 
 
 
@@ -21,78 +15,22 @@ __
 
 URI: [ops:AgendaItemTypeEnum](https://ch.paf.link/schema/operations/AgendaItemTypeEnum)
 
-## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| item | ops:enum/agenda_item_type/item | [en] Individual agenda item (Traktandum) |
-| group | ops:enum/agenda_item_type/group | [en] Group of agenda items (Traktandengruppe) |
-
-
-
-
-## Slots
-
-| Name | Description |
-| ---  | --- |
-| [agenda_item_type](agenda_item_type.md) | [en] Type of agenda item, distinguishing individual items from groups |
-
-
+### Permissible Values
+| Value | Description |
+| --- | --- |
+| item |  [en] Individual agenda item (Traktandum)
+[de] Einzelnes Traktandum
+ |
+| | [ops:enum/agenda_item_type/item](ops:enum/agenda_item_type/item) |
+| group |  [en] Group of agenda items (Traktandengruppe)
+[de] Traktandengruppe
+ |
+| | [ops:enum/agenda_item_type/group](ops:enum/agenda_item_type/group) |
 
 
 
 
 
 
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-
-
-## LinkML Source
-
-<details>
-```yaml
-name: AgendaItemTypeEnum
-description: '[en] Type of agenda item, distinguishing individual items from grouped
-  items.
-
-  [de] Art des Traktandums, unterscheidet einzelne von gruppierten Traktanden.
-
-  '
-from_schema: https://ch.paf.link/schema/operations
-rank: 1000
-permissible_values:
-  item:
-    text: item
-    description: '[en] Individual agenda item (Traktandum)
-
-      [de] Einzelnes Traktandum
-
-      '
-    meaning: ops:enum/agenda_item_type/item
-  group:
-    text: group
-    description: '[en] Group of agenda items (Traktandengruppe)
-
-      [de] Traktandengruppe
-
-      '
-    meaning: ops:enum/agenda_item_type/group
-
-```
-</details>
 
 </div>

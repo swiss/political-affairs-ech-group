@@ -55,28 +55,6 @@ URI: [ops:media_url](https://ch.paf.link/schema/operations/media_url)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:media_url |
-| native | ops:media_url |
-
-
 
 
 ## LinkML Source

@@ -55,28 +55,6 @@ URI: [ops:total_present](https://ch.paf.link/schema/operations/total_present)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:total_present |
-| native | ops:total_present |
-
-
 
 
 ## LinkML Source

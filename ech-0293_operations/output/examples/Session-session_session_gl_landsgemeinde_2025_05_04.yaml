@@ -1,0 +1,12 @@
+global_uri: ops:session_gl_landsgemeinde_2025_05_04
+body_key: GL
+name:
+- text: Landsgemeinde vom 04. Mai 2025
+  language: de
+url:
+- text: https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04
+  language: de
+date_begin_planned: '2025-05-04'
+date_end_planned: '2025-05-04'
+datetime_modified: '2025-04-25T13:40:34Z'
+datetime_created: '2025-04-23T22:58:39Z'

@@ -778,18 +778,21 @@
                         "null"
                     ]
                 },
-                "description": {
+                "expression_description": {
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "id": {
-                    "type": "string"
-                },
-                "language": {
+                "expression_language": {
                     "description": "[en] Language code in ISO 639-1 format.\n[de] Sprachcode im ISO 639-1-Format.\n",
                     "pattern": "^[a-z]{2}$",
+                    "type": "string"
+                },
+                "expression_title": {
+                    "type": "string"
+                },
+                "id": {
                     "type": "string"
                 },
                 "manifestations": {
@@ -800,17 +803,12 @@
                         "array",
                         "null"
                     ]
-                },
-                "title": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
                 }
             },
             "required": [
                 "id",
-                "language"
+                "expression_language",
+                "expression_title"
             ],
             "title": "Expression",
             "type": "object"
@@ -1608,12 +1606,10 @@
                 "id": {
                     "type": "string"
                 },
-                "url": {
-                    "items": {
-                        "$ref": "#/$defs/MultilingualString"
-                    },
+                "manifestation_url": {
+                    "format": "uri",
                     "type": [
-                        "array",
+                        "string",
                         "null"
                     ]
                 }
@@ -2042,7 +2038,7 @@
             "description": "[en] A string that can contain text in multiple languages.\n[de] Ein String, der Text in mehreren Sprachen enthalten kann.",
             "properties": {
                 "language": {
-                    "description": "[en] Language code in ISO 639-1 format.\n[de] Sprachcode im ISO 639-1-Format.\n",
+                    "description": "Language code in ISO 639-1 format (two lowercase letters, e.g. \"de\", \"fr\", \"it\", \"en\").\n",
                     "pattern": "^[a-z]{2}$",
                     "type": "string"
                 },
@@ -2062,9 +2058,12 @@
             "description": "A multilingual string with language specification.",
             "properties": {
                 "language": {
-                    "description": "[en] Language code in ISO 639-1 format.\n[de] Sprachcode im ISO 639-1-Format.\n",
+                    "description": "Language code in ISO 639-1 format (two lowercase letters, e.g. \"de\", \"fr\", \"it\", \"en\").\n",
                     "pattern": "^[a-z]{2}$",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "value": {
                     "description": "The value of an information besides other attributes such as type, language, etc.\n",
@@ -2074,9 +2073,6 @@
                     ]
                 }
             },
-            "required": [
-                "language"
-            ],
             "title": "MultilingualValue",
             "type": "object"
         },
@@ -2849,9 +2845,12 @@
                     ]
                 },
                 "language": {
-                    "description": "[en] Language code in ISO 639-1 format.\n[de] Sprachcode im ISO 639-1-Format.\n",
+                    "description": "Language code in ISO 639-1 format (two lowercase letters, e.g. \"de\", \"fr\", \"it\", \"en\").\n",
                     "pattern": "^[a-z]{2}$",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "local_id": {
                     "description": "Local identifier. For example, a UUID from the council information system.\n",
@@ -2921,7 +2920,6 @@
                 }
             },
             "required": [
-                "language",
                 "text",
                 "global_uri"
             ],
@@ -3278,6 +3276,29 @@
                 "id"
             ],
             "title": "Work",
+            "type": "object"
+        },
+        "WorkContainer": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "works": {
+                    "items": {
+                        "$ref": "#/$defs/Work"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "WorkContainer",
             "type": "object"
         },
         "WorkTypesEnum": {

@@ -62,28 +62,6 @@ URI: [ops:parent_agenda_item](https://ch.paf.link/schema/operations/parent_agend
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:parent_agenda_item |
-| native | ops:parent_agenda_item |
-
-
 
 
 ## LinkML Source

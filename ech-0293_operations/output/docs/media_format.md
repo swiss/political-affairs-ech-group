@@ -54,27 +54,12 @@ URI: [ops:media_format](https://ch.paf.link/schema/operations/media_format)
 
 
 
+## Examples
 
-## Identifier and Mapping Information
+| Value |
+| --- |
+| video/mp4 |
 
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:media_format |
-| native | ops:media_format |
 
 
 
@@ -85,6 +70,8 @@ URI: [ops:media_format](https://ch.paf.link/schema/operations/media_format)
 ```yaml
 name: media_format
 description: MIME type of the media file
+examples:
+- value: video/mp4
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:

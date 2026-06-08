@@ -1,9 +1,6 @@
----
-search:
-  boost: 10.0
----
 
-# Class: Attendance 
+
+## Class: Attendance 
 
 
 _[en] Aggregated attendance record for a meeting (number of members present, absent, excused)._
@@ -18,93 +15,31 @@ __
 
 
 
-URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
+
+### Attribute
+
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| parent_meeting | 0..1 <br/> [String](String.md) | [en] The linked meeting ID that groups the current meeting. [de] Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.  |
+| datetime_begin | 0..1 <br/> [Datetime](Datetime.md) | [en] The date and time when the meeting or voting begins. [de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.  |
+| actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | [en] Reference to the acting body/organ (lightweight snapshot at time of linking). [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).  |
+| total_count | 0..1 <br/> [Integer](Integer.md) | [en] Total number of members of the body (reference value for quorum calculations). [de] Gesamtzahl aller Mitglieder des Gremiums (Bezugsgrösse für Quorum-Berechnungen).  |
+| total_present | 0..1 <br/> [Integer](Integer.md) | Total number of members present |
+| total_absent | 0..1 <br/> [Integer](Integer.md) | [en] Total number of absent members. Distinction between absent/excused absent - presence is tracked on attendance list. [de] Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.  |
+| total_excused | 0..1 <br/> [Integer](Integer.md) | Total number of excused absences |
+| local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| date_created | 0..1 <br/> [Date](Date.md) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
+| datetime_created | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
+| date_modified | 0..1 <br/> [Date](Date.md) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
+| datetime_modified | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
 
 
 
 
 
-```mermaid
- classDiagram
-    class Attendance
-    click Attendance href "../Attendance/"
-      HasIdentification <|-- Attendance
-        click HasIdentification href "../HasIdentification/"
-      HasCreationModificationDates <|-- Attendance
-        click HasCreationModificationDates href "../HasCreationModificationDates/"
-      
-      Attendance : actor_id
-        
-          
-    
-        
-        
-        Attendance --> "0..1" GroupReference : actor_id
-        click GroupReference href "../GroupReference/"
-    
-
-        
-      Attendance : date_created
-        
-      Attendance : date_modified
-        
-      Attendance : datetime_begin
-        
-      Attendance : datetime_created
-        
-      Attendance : datetime_modified
-        
-      Attendance : global_uri
-        
-      Attendance : local_id
-        
-      Attendance : parent_meeting
-        
-      Attendance : total_absent
-        
-      Attendance : total_count
-        
-      Attendance : total_excused
-        
-      Attendance : total_present
-        
-      Attendance : wikidata_uri
-        
-      
-```
-
-
-
-
-
-## Inheritance
-* **Attendance** [ [HasIdentification](HasIdentification.md) [HasCreationModificationDates](HasCreationModificationDates.md)]
-
-
-## Slots
-
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [parent_meeting](parent_meeting.md) | 0..1 <br/> [String](String.md) | [en] The linked meeting ID that groups the current meeting | direct |
-| [datetime_begin](datetime_begin.md) | 0..1 <br/> [Datetime](Datetime.md) | [en] The date and time when the meeting or voting begins | direct |
-| [actor_id](actor_id.md) | 0..1 <br/> [GroupReference](GroupReference.md) | [en] Reference to the acting body/organ (lightweight snapshot at time of link... | direct |
-| [total_count](total_count.md) | 0..1 <br/> [Integer](Integer.md) | [en] Total number of members of the body (reference value for quorum calculat... | direct |
-| [total_present](total_present.md) | 0..1 <br/> [Integer](Integer.md) | Total number of members present | direct |
-| [total_absent](total_absent.md) | 0..1 <br/> [Integer](Integer.md) | [en] Total number of absent members | direct |
-| [total_excused](total_excused.md) | 0..1 <br/> [Integer](Integer.md) | Total number of excused absences | direct |
-| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | Local identifier | [HasIdentification](HasIdentification.md) |
-| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity | [HasIdentification](HasIdentification.md) |
-| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e | [HasIdentification](HasIdentification.md) |
-| [date_created](date_created.md) | 0..1 <br/> [Date](Date.md) | The date when an entity was created | [HasCreationModificationDates](HasCreationModificationDates.md) |
-| [datetime_created](datetime_created.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was created | [HasCreationModificationDates](HasCreationModificationDates.md) |
-| [date_modified](date_modified.md) | 0..1 <br/> [Date](Date.md) | The date when an entity was last modified | [HasCreationModificationDates](HasCreationModificationDates.md) |
-| [datetime_modified](datetime_modified.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was last modified | [HasCreationModificationDates](HasCreationModificationDates.md) |
-
-
-
-
-
-## Usages
+### Usages
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
@@ -122,342 +57,11 @@ URI: [ops:Attendance](https://ch.paf.link/schema/operations/Attendance)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:Attendance |
-| native | ops:Attendance |
 
 
 
 
 
 
-## LinkML Source
 
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: Attendance
-description: '[en] Aggregated attendance record for a meeting (number of members present,
-  absent, excused).
-
-  [de] Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende,
-  Entschuldigte).
-
-  '
-from_schema: https://ch.paf.link/schema/operations
-mixins:
-- HasIdentification
-- HasCreationModificationDates
-slots:
-- parent_meeting
-- datetime_begin
-- actor_id
-- total_count
-- total_present
-- total_absent
-- total_excused
-slot_usage:
-  actor_id:
-    name: actor_id
-    description: '[en] Reference to the acting body/organ (lightweight snapshot at
-      time of linking).
-
-      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
-      Zeitpunkt der Verknüpfung).
-
-      '
-    range: GroupReference
-    inlined: true
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: Attendance
-description: '[en] Aggregated attendance record for a meeting (number of members present,
-  absent, excused).
-
-  [de] Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende,
-  Entschuldigte).
-
-  '
-from_schema: https://ch.paf.link/schema/operations
-mixins:
-- HasIdentification
-- HasCreationModificationDates
-slot_usage:
-  actor_id:
-    name: actor_id
-    description: '[en] Reference to the acting body/organ (lightweight snapshot at
-      time of linking).
-
-      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
-      Zeitpunkt der Verknüpfung).
-
-      '
-    range: GroupReference
-    inlined: true
-attributes:
-  parent_meeting:
-    name: parent_meeting
-    description: '[en] The linked meeting ID that groups the current meeting.
-
-      [de] Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Attendance
-    domain_of:
-    - Meeting
-    - AgendaItem
-    - Protocol
-    - Voting
-    - Election
-    - Attendance
-    range: string
-  datetime_begin:
-    name: datetime_begin
-    description: '[en] The date and time when the meeting or voting begins.
-
-      [de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Attendance
-    domain_of:
-    - Voting
-    - Election
-    - Attendance
-    - Speech
-    range: datetime
-  actor_id:
-    name: actor_id
-    description: '[en] Reference to the acting body/organ (lightweight snapshot at
-      time of linking).
-
-      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
-      Zeitpunkt der Verknüpfung).
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Attendance
-    domain_of:
-    - Legislature
-    - Meeting
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    range: GroupReference
-    inlined: true
-  total_count:
-    name: total_count
-    description: '[en] Total number of members of the body (reference value for quorum
-      calculations).
-
-      [de] Gesamtzahl aller Mitglieder des Gremiums (Bezugsgrösse für Quorum-Berechnungen).
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Attendance
-    domain_of:
-    - Attendance
-    range: integer
-  total_present:
-    name: total_present
-    description: Total number of members present
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Attendance
-    domain_of:
-    - Attendance
-    range: integer
-  total_absent:
-    name: total_absent
-    description: '[en] Total number of absent members. Distinction between absent/excused
-      absent - presence is tracked on attendance list.
-
-      [de] Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt
-      abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Attendance
-    domain_of:
-    - Voting
-    - Election
-    - Attendance
-    range: integer
-  total_excused:
-    name: total_excused
-    description: Total number of excused absences
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Attendance
-    domain_of:
-    - Attendance
-    range: integer
-  local_id:
-    name: local_id
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
-
-          '
-    description: 'Local identifier. For example, a UUID from the council information
-      system.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:localId
-    owner: Attendance
-    domain_of:
-    - HasIdentification
-    range: string
-  global_uri:
-    name: global_uri
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Eine eindeutige, global gültige URI für die Entität.
-
-          '
-    description: 'A unique, globally valid URI for the entity.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:globalURI
-    identifier: true
-    owner: Attendance
-    domain_of:
-    - HasIdentification
-    range: uriorcurie
-    required: true
-  wikidata_uri:
-    name: wikidata_uri
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-          für die Schweiz.
-
-          '
-    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
-      for Switzerland.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:wikidataUri
-    owner: Attendance
-    domain_of:
-    - HasIdentification
-    range: uriorcurie
-  date_created:
-    name: date_created
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das Datum, an dem eine Entität erstellt wurde.
-
-          '
-    description: 'The date when an entity was created.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:dateCreated
-    owner: Attendance
-    domain_of:
-    - HasCreationModificationDates
-    range: date
-  datetime_created:
-    name: datetime_created
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
-
-          '
-    description: 'The date and time when an entity was created.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:datetimeCreated
-    owner: Attendance
-    domain_of:
-    - HasCreationModificationDates
-    range: datetime
-  date_modified:
-    name: date_modified
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
-
-          '
-    description: 'The date when an entity was last modified.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:dateModified
-    owner: Attendance
-    domain_of:
-    - HasCreationModificationDates
-    range: date
-  datetime_modified:
-    name: datetime_modified
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
-
-          '
-    description: 'The date and time when an entity was last modified.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:datetimeModified
-    owner: Attendance
-    domain_of:
-    - HasCreationModificationDates
-    range: datetime
-
-```
-</details></div>
+</div>

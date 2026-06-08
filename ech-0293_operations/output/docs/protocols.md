@@ -57,28 +57,6 @@ URI: [ops:protocol](https://ch.paf.link/schema/operations/protocol)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:protocol |
-| native | ops:protocols |
-
-
 
 
 ## LinkML Source

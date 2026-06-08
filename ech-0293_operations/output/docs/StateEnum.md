@@ -1,10 +1,4 @@
----
-search:
-  boost: 2.0
----
-
-
-# Enum: StateEnum 
+## Enum: StateEnum 
 
 
 
@@ -17,67 +11,20 @@ _State of the meeting_
 
 URI: [ops:StateEnum](https://ch.paf.link/schema/operations/StateEnum)
 
-## Permissible Values
-| Value | Meaning | Description |
-| --- | --- | --- |
-| planned | ops:enum/state/planned |  |
-| canceled | ops:enum/state/canceled |  |
-| postponed | ops:enum/state/postponed |  |
-
-
-
-
-## Slots
-
-| Name | Description |
-| ---  | --- |
-| [state](state.md) |  |
+### Permissible Values
+| Value | Description |
+| --- | --- |
+| planned |  None |
+| | [ops:enum/state/planned](ops:enum/state/planned) |
+| canceled |  None |
+| | [ops:enum/state/canceled](ops:enum/state/canceled) |
+| postponed |  None |
+| | [ops:enum/state/postponed](ops:enum/state/postponed) |
 
 
 
 
 
 
-
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-
-
-## LinkML Source
-
-<details>
-```yaml
-name: StateEnum
-description: State of the meeting
-from_schema: https://ch.paf.link/schema/operations
-rank: 1000
-permissible_values:
-  planned:
-    text: planned
-    meaning: ops:enum/state/planned
-  canceled:
-    text: canceled
-    meaning: ops:enum/state/canceled
-  postponed:
-    text: postponed
-    meaning: ops:enum/state/postponed
-
-```
-</details>
 
 </div>

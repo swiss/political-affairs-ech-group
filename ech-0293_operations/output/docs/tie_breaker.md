@@ -59,28 +59,6 @@ URI: [ops:tie_breaker](https://ch.paf.link/schema/operations/tie_breaker)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:tie_breaker |
-| native | ops:tie_breaker |
-
-
 
 
 ## LinkML Source

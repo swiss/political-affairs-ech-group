@@ -55,27 +55,12 @@ URI: [ops:media_type](https://ch.paf.link/schema/operations/media_type)
 
 
 
+## Examples
 
-## Identifier and Mapping Information
+| Value |
+| --- |
+| video |
 
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:media_type |
-| native | ops:media_type |
 
 
 
@@ -86,6 +71,8 @@ URI: [ops:media_type](https://ch.paf.link/schema/operations/media_type)
 ```yaml
 name: media_type
 description: Type of media (audio, video, document)
+examples:
+- value: video
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:

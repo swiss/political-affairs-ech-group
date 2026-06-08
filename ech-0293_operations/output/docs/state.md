@@ -49,27 +49,12 @@ URI: [ops:state](https://ch.paf.link/schema/operations/state)
 
 
 
+## Examples
 
-## Identifier and Mapping Information
+| Value |
+| --- |
+| planned |
 
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:state |
-| native | ops:state |
 
 
 
@@ -79,6 +64,8 @@ URI: [ops:state](https://ch.paf.link/schema/operations/state)
 <details>
 ```yaml
 name: state
+examples:
+- value: planned
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:

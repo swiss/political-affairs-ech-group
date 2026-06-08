@@ -53,28 +53,6 @@ URI: [ops:text](https://ch.paf.link/schema/operations/text)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:text |
-| native | ops:text |
-
-
 
 
 ## LinkML Source

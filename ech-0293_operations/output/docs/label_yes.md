@@ -59,28 +59,6 @@ URI: [ops:label_yes](https://ch.paf.link/schema/operations/label_yes)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:label_yes |
-| native | ops:label_yes |
-
-
 
 
 ## LinkML Source

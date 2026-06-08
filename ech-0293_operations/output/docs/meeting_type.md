@@ -55,27 +55,14 @@ URI: [ops:meetingType](https://ch.paf.link/schema/operations/meetingType)
 
 
 
+## Examples
 
-## Identifier and Mapping Information
+| Value |
+| --- |
+| committee |
+| session |
+| sitting |
 
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:meetingType |
-| native | ops:meeting_type |
 
 
 
@@ -86,6 +73,10 @@ URI: [ops:meetingType](https://ch.paf.link/schema/operations/meetingType)
 ```yaml
 name: meeting_type
 description: Type of the meeting, e.g. session, committee, sitting, various
+examples:
+- value: committee
+- value: session
+- value: sitting
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 slot_uri: ops:meetingType

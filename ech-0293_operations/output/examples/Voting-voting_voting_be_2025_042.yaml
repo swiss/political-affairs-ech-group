@@ -1,0 +1,27 @@
+global_uri: ops:voting_be_2025_042
+voting_title:
+- text: Änderungsantrag Art. 5 Abs. 2
+  language: de
+- text: Proposition de modification art. 5 al. 2
+  language: fr
+voting_type: preliminary_vote
+datetime_begin: '2025-06-05T10:15:00Z'
+datetime_end: '2025-06-05T10:17:00Z'
+total_count_yes: 45
+total_count_no: 87
+total_count_abstention: 8
+total_absent: 10
+total: 150
+majority_type: absolute
+majority_count: 76
+result_text: Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt
+parent_agenda_item: ops:agenda_item_be_2025_042
+parent_meeting: ops:meeting_be_2025_06_05
+actor_id:
+  global_uri: https://api.openparldata.ch/v1/bodies/253
+  label: Grosser Rat Bern
+  abbreviation:
+  - value: GR
+    language: de
+datetime_created: '2025-06-05T10:15:00Z'
+datetime_modified: '2025-06-05T10:15:00Z'

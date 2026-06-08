@@ -52,28 +52,6 @@ URI: [meta:manifestations](https://ch.paf.link/schema/meta/manifestations)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | meta:manifestations |
-| native | ops:manifestations |
-
-
 
 
 ## LinkML Source
