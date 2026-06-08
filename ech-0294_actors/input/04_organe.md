@@ -21,7 +21,6 @@ Das Schema unterstützt verschiedene Einsatzszenarien:
 2. **Publikation an die Öffentlichkeit**: Transparente Darstellung politischer Strukturen
 3. **Systeme mit politischen Personen**: Zuordnung von Personen zu Gruppen (Memberships)
 4. **Analysen**: Untersuchungen von Gruppenzusammensetzungen und Netzwerken
-5. **Parteilisten**: Verwaltung von Wahllisten (z.B. UNIBE Parteilisten-Datenbank)
 
 {{include:ech-0294_actors/output/docs/Group.md}}
 
