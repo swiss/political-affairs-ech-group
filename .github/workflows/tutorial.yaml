@@ -13,12 +13,12 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6
         with:
-          python-version: '3.11'
+          python-version: '3.14'
 
       - name: Install dependencies
         run: pip install -r requirements.txt
@@ -55,7 +55,7 @@ jobs:
 
       - name: Download Pandoc pagebreak Lua filter
         run: |
-          curl -L https://raw.githubusercontent.com/pandoc/lua-filters/master/pagebreak/pagebreak.lua \
+          curl -L https://raw.githubusercontent.com/pandoc-ext/pagebreak/refs/heads/main/pagebreak.lua \
           -o pagebreak.lua
 
       - name: Convert Markdown to Word with Pandoc
