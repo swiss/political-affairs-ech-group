@@ -34,11 +34,11 @@ tutorial:s2025-1_t1_a2 a tutorial:Vote ;
 
 tutorial:s2025-2 a tutorial:Session ;
     schema1:name [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Sommersession 2025" ],
-        [ a mcm:MultilingualValue ;
             mcm:language "en" ;
-            mcm:value "Summer Session 2025" ] ;
+            mcm:value "Summer Session 2025" ],
+        [ a mcm:MultilingualValue ;
+            mcm:language "de" ;
+            mcm:value "Sommersession 2025" ] ;
     mcm:dateBeginActual "2025-06-01"^^xsd:date ;
     mcm:dateEndActual "2025-07-10"^^xsd:date .
 

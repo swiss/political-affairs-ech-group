@@ -51,11 +51,11 @@ tutorial:s2025-2 a tutorial:Session ;
 
 tutorial:s2025-2_t1 a tutorial:AgendaItem ;
     schema1:name [ a mcm:MultilingualValue ;
-            mcm:language "en" ;
-            mcm:value "National Anthem" ],
-        [ a mcm:MultilingualValue ;
             mcm:language "de" ;
-            mcm:value "Landeshymne" ] ;
+            mcm:value "Landeshymne" ],
+        [ a mcm:MultilingualValue ;
+            mcm:language "en" ;
+            mcm:value "National Anthem" ] ;
     tutorial:vote tutorial:s2025-2_t1_a1 .
 
 tutorial:s2025-2_t1_a1 a tutorial:Vote ;
