@@ -125,13 +125,17 @@ Caveats:
 - `gen-owl` emits each annotation as a triple `pv-uri annotation-key Literal(value)` without a language tag — language information lives in the annotation key (`label_de`), not as an RDF language tag. The recommended way to obtain proper RDF language tags is to maintain an external SKOS concept scheme referenced via `meaning`.
 - `gen-pydantic` ignores annotations on permissible values for class generation but they remain accessible via `SchemaView`.
 
-## Reusing Slots
-
-It seems not possible to have a different descriptions for slots used in different classes. So slots should only be reused if a fairly general description is enough (like for a `id` or a `name`). For all other cases, it is better to define a new slot with a more specific name and description.
-
 ## Attributes vs Slots
 
 Properties can either be defined within a class as `attribute` and then, they are exclusive to that class or as `slot` which can be reused across different classes. If there are different classes that define the same `attribute` (even with different descriptions), this will result in a warning (but it seems that one can live with it).
+
+## Reusing Slots with Different Descriptions
+
+If a slot is reused across different classes, it will have the same description in all classes except if the class overrides the description of the slot by involving the `slot_usage` mechanism and defining a new description there. This overriden description will find its way into the generated documentation files and therefore allows to have different descriptions for the same slot in different classes.
+
+Caveat: The description of the slot in the `slot_usage` will not be used in the generated OWL file, so if there is a need to have different descriptions for the same slot in different classes in the OWL file, this cannot be achieved by using the `slot_usage` mechanism.
+
+Example: See [`label`](https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0294_actors/output/docs/label.md) and its use in [`Person`](https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0294_actors/output/docs/Person.md) and the created [`schema.ttl`](https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0294_actors/output/schema.ttl).
 
 ## Capitalization with Regards to Classes and Attributes/Slots
 
