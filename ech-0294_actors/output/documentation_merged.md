@@ -122,7 +122,7 @@ Das Personenschema beschreibt natürliche Personen im politischen Kontext und zi
 - **Präzision**: Unterstützung von zeitlich gültigen Attributen (z.B. Namen, Adressen, Geschlecht).
 - **Flexibilität**: Optionale Felder erlauben schrittweise Datenanreicherung.
 - **Interoperabilität**: URIs als globale Identifikatoren wo vorhanden, inklusive der Möglichkeit auf Wikidata-Einträge zu verweisen.
-- **Mehrsprachigkeit**: Unterstützung mehrsprachiger Inhalte gemäss Schweizer Anforderungen.
+- **Mehrsprachigkeit**: Unterstützung mehrsprachiger Inhalte gemäss schweizer Anforderungen.
 
 Notiz: *Die Verknüpfung von Personen im öffentlichen Interesse (Politikerinnen und Politiker) über die federalen Ebenen hinweg wird als ein wichtiges Langzeitziel gesehen. Eine zentrale Datenbank oder Identifizierungstelle der Personen kann nicht durch die Fachgruppe realisiert werden. Es gibt Ansätze im Datenmodell, damit man kontinuierlich die Identifikatoren über die Stufen hinweg harmonisieren kann. Zum einen durch die Benutzung von global eindeutigen Identifikatoren (URIs), sowie von Vorschlägen zu empfholenen bestehenden offenen Datenbanken (Wikidata). *
 
