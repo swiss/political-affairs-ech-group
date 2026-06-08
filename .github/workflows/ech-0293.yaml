@@ -7,67 +7,63 @@ on:
   workflow_dispatch:
 
 jobs:
+
   ech-0293_operations:
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6
         with:
-          python-version: '3.11'
+          python-version: '3.14'
 
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Clean output directory
-        run: rm -rf ech-0293_operations/output/*
-
-      - name: Convert schema.yaml to schema.json
+      - name: Prepare output directory
         run: |
-          mkdir -p ech-0293_operations/output
-          gen-json-schema ech-0293_operations/input/schema.yaml > ech-0293_operations/output/schema.json
+          rm -rf ech-0293_operations/output
+          mkdir -p ech-0293_operations/output/docs
 
-      - name: Convert schema.yaml to schema.ttl
+      - name: Generate LinkML artefacts
         run: |
-          mkdir -p ech-0293_operations/output
-          gen-owl ech-0293_operations/input/schema.yaml > ech-0293_operations/output/schema.ttl
+          cd ech-0293_operations/input
+          
+          gen-owl --no-use-native-uris schema.yaml > ../output/schema.ttl
+          gen-json-schema schema.yaml > ../output/schema.json
 
-      - name: Convert all data_*.yaml to data_*.json
-        continue-on-error: true
-        run: |
-          mkdir -p ech-0293_operations/output
-          for yaml_file in ech-0293_operations/input/data_*.yaml; do
+          for yaml_file in data_*.yaml; do
             base_name=$(basename "$yaml_file" .yaml)
-            linkml-convert -s ech-0293_operations/input/schema.yaml -t json "$yaml_file" > "ech-0293_operations/output/${base_name}.json" || echo "Warning: Could not convert $yaml_file to JSON"
+            linkml-convert -s schema.yaml -t json "$yaml_file" > "../output/${base_name}.json"
+            linkml-convert -s schema.yaml -t rdf "$yaml_file" > "../output/${base_name}.ttl"
           done
 
-      - name: Convert all data_*.yaml to data_*.ttl
-        continue-on-error: true
-        run: |
-          mkdir -p ech-0293_operations/output
-          for yaml_file in ech-0293_operations/input/data_*.yaml; do
-            base_name=$(basename "$yaml_file" .yaml)
-            linkml-convert -s ech-0293_operations/input/schema.yaml -t rdf "$yaml_file" > "ech-0293_operations/output/${base_name}.ttl" || echo "Warning: Could not convert $yaml_file to TTL"
-          done
+      - name: Extract examples from data files
+        run: python extract_examples.py ech-0293_operations
 
       - name: Generate LinkML documentation
-        run: |
-          mkdir -p ech-0293_operations/output/docs
-          gen-doc ech-0293_operations/input/schema.yaml --directory ech-0293_operations/output/docs
+        run: gen-doc ech-0293_operations/output/pipeline_examples_generator_schema.yaml --directory ech-0293_operations/output/docs --template-directory ech-0292_meta/input/docgen --example-directory ech-0293_operations/output/examples
+      
       - name: Merge Markdown documentation
         run: python merge_documentation.py ech-0293_operations
+      
       - name: Install Pandoc
         run: sudo apt update && sudo apt install -y pandoc
 
+      - name: Download Pandoc pagebreak Lua filter
+        run: |
+          curl -L https://raw.githubusercontent.com/pandoc-ext/pagebreak/refs/heads/main/pagebreak.lua \
+          -o pagebreak.lua
+
       - name: Convert Markdown to Word with Pandoc
         run: |
-          mkdir -p ech-0293_operations/output
           pandoc ech-0293_operations/output/documentation_merged.md \
           -o ech-0293_operations/output/ech-0293_operations.docx \
-          --reference-doc=ech-0293_operations/input/template.docx
+          --reference-doc=ech-0293_operations/input/template.docx \
+          --lua-filter=pagebreak.lua
 
       - name: Commit and push changes
         env:
