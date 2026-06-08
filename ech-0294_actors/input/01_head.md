@@ -8,9 +8,9 @@ toc: false
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------|
 | **eCH-Nummer**        | eCH-0294                                                                                                                   |
 | **Kategorie**         | Entwurf                                                                                                                    |
-| **Reifegrad**         | Fachgruppen Internes Review                                                                                                |
-| **Version**           | 0.1                                                                                                                        |
-| **Status**            | Fachgruppen interner Review                                                                                                |
+| **Reifegrad**         | Fachgruppen interner Review                                                                                                |
+| **Version**           | 0.2                                                                                                                        |
+| **Status**            |                                                                                                 |
 | **Beschluss am**      |                                                                                                                            |
 | **Ausgabedatum**      |                                                                                                                            |
 | **Ersetzt Version**   | 0.0                                                                                                                        |
@@ -18,7 +18,7 @@ toc: false
 | **Beilagen**          | -                                                                                                                          |
 | **Sprachen**          | Deutsch (Original) - English (Datamodel)                                                                                    |
 | **Autoren**           | Fachgruppe politische Geschäfte: Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi, Christian Gutknecht, Michael Luggen |
-| **Herausgeber / Vertrieb** | Verein eCH, Räffelstr. 20, 8045                                                                                       |
+| **Herausgeber / Vertrieb** | Verein eCH, [Affolternstrasse 52, 8050 Zürich](https://geo.ld.admin.ch/location/address/101218624)                             |
 
 \newpage
 
@@ -26,7 +26,7 @@ toc: false
 
 Der Entwurf eCH-0294 „Politische Akteure: Personen, Gruppen und Organe“ definiert ein einheitliches Datenmodell zur strukturierten Publikation politischer Akteure in der Schweiz. Er umfasst natürliche Personen, politische Gruppen und Organe, Mitgliedschaften zwischen Personen und Gruppen sowie Interessenbindungen. Ziel ist es, föderal übergreifend vergleichbare, maschinenlesbare und nachnutzbare Informationen bereitzustellen, um Transparenz, Nachvollziehbarkeit und Analysefähigkeit politischer Prozesse zu verbessern.
 
-Der Standard richtet sich an öffentliche Stellen aller Staatsebenen, politische Akteure, Medien, Forschung, Verwaltung und Öffentlichkeit und schafft eine Grundlage für interoperable politische Informationssysteme in der Schweiz.
+Der Standard richtet sich an öffentliche Stellen aller Staatsebenen, politische Akteure, Medien, Forschung und Öffentlichkeit und schafft eine Grundlage für interoperable politische Informationssysteme in der Schweiz.
 
 \newpage
 
