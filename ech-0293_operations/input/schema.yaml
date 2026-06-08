@@ -12,6 +12,10 @@ prefixes:
   linkml: https://w3id.org/linkml/
   ops: https://ch.paf.link/schema/operations/
   dcterms: http://purl.org/dc/terms/
+  # Cross-references to instance data of the sibling eCH standards.
+  actors: https://ld.ech.ch/schema/0294/actors/
+  affairs: https://ld.ech.ch/schema/0295/affairs/
+  parl: https://ld.ech.ch/schema/0293/operations/
 imports:
   - linkml:types
   - ../../ech-0292_meta/input/schema_common

@@ -60,28 +60,6 @@ URI: [ops:total](https://ch.paf.link/schema/operations/total)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:total |
-| native | ops:total |
-
-
 
 
 ## LinkML Source

@@ -52,28 +52,6 @@ URI: [dcterms:date](http://purl.org/dc/terms/date)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | dcterms:date |
-| native | ops:xdate |
-
-
 
 
 ## LinkML Source

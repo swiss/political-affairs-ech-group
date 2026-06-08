@@ -60,28 +60,6 @@ URI: [ops:vote_procedures](https://ch.paf.link/schema/operations/vote_procedures
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:vote_procedures |
-| native | ops:vote_procedures |
-
-
 
 
 ## LinkML Source

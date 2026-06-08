@@ -57,28 +57,6 @@ URI: [ops:attendance](https://ch.paf.link/schema/operations/attendance)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:attendance |
-| native | ops:attendances |
-
-
 
 
 ## LinkML Source

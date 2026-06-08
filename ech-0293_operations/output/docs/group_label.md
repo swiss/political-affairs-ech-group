@@ -58,36 +58,6 @@ URI: [mcm:groupLabel](https://ld.ech.ch/schema/0292/meta-common/groupLabel)
 
 
 
-## Identifier and Mapping Information
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| description_de | Name des Gremiums zum Zeitpunkt der Verknüpfung.
- |
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:groupLabel |
-| native | ops:group_label |
-
-
 
 
 ## LinkML Source

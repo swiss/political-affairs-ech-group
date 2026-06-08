@@ -59,28 +59,6 @@ URI: [ops:total_count_no](https://ch.paf.link/schema/operations/total_count_no)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:total_count_no |
-| native | ops:total_count_no |
-
-
 
 
 ## LinkML Source

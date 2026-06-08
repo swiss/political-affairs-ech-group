@@ -67,28 +67,6 @@ URI: [meta:documentCategory](https://ch.paf.link/schema/meta/documentCategory)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | meta:documentCategory |
-| native | ops:document_category |
-
-
 
 
 ## LinkML Source

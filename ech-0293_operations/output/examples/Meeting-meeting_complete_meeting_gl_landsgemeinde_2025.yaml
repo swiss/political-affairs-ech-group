@@ -1,0 +1,25 @@
+global_uri: ops:meeting_gl_landsgemeinde_2025
+body_key: GL
+meeting_type: sitting
+name:
+- text: Landsgemeinde 2025
+  language: de
+url:
+- text: https://www.landsgemeinde.gl.ch/2025
+  language: de
+actor_id:
+  global_uri: https://api.openparldata.ch/v1/bodies/258
+  label: Landsgemeinde Glarus
+  abbreviation:
+  - value: LG
+    language: de
+actor_name: Landsgemeinde Glarus
+datetime_begin_planned: '2025-05-04T09:30:00Z'
+datetime_end_planned: '2025-05-04T14:00:00Z'
+datetime_begin_actual: '2025-05-04T09:30:00Z'
+datetime_end_actual: '2025-05-04T13:45:00Z'
+state: planned
+location: Zaunplatz, Glarus
+parent_legislature: ops:legislature_gl_2024_2028
+datetime_created: '2025-01-10T12:00:00Z'
+datetime_modified: '2025-05-04T13:45:00Z'

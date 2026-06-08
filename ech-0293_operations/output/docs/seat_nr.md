@@ -59,28 +59,6 @@ URI: [ops:seat_nr](https://ch.paf.link/schema/operations/seat_nr)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:seat_nr |
-| native | ops:seat_nr |
-
-
 
 
 ## LinkML Source

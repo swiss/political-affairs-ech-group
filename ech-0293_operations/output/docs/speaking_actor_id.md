@@ -60,28 +60,6 @@ URI: [ops:speaking_actor_id](https://ch.paf.link/schema/operations/speaking_acto
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:speaking_actor_id |
-| native | ops:speaking_actor_id |
-
-
 
 
 ## LinkML Source

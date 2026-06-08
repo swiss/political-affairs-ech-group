@@ -59,27 +59,14 @@ URI: [ops:agenda_item_category](https://ch.paf.link/schema/operations/agenda_ite
 
 
 
+## Examples
 
-## Identifier and Mapping Information
+| Value |
+| --- |
+| ANNONCES ET INTERPELLATIONS |
+| Budget und Finanzen |
+| Gesetzgebung |
 
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:agenda_item_category |
-| native | ops:agenda_item_category |
 
 
 
@@ -96,6 +83,10 @@ description: '[en] Category for grouped agenda items (e.g., introduction, by dep
   Traktanden).
 
   '
+examples:
+- value: ANNONCES ET INTERPELLATIONS
+- value: Budget und Finanzen
+- value: Gesetzgebung
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:

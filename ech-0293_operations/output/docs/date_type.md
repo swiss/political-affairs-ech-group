@@ -52,28 +52,6 @@ URI: [meta:dateType](https://ch.paf.link/schema/meta/dateType)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | meta:dateType |
-| native | ops:date_type |
-
-
 
 
 ## LinkML Source

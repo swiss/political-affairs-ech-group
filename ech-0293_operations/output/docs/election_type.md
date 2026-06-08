@@ -55,28 +55,6 @@ URI: [ops:election_type](https://ch.paf.link/schema/operations/election_type)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:election_type |
-| native | ops:election_type |
-
-
 
 
 ## LinkML Source

@@ -52,28 +52,6 @@ URI: [meta:expressions](https://ch.paf.link/schema/meta/expressions)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | meta:expressions |
-| native | ops:expressions |
-
-
 
 
 ## LinkML Source

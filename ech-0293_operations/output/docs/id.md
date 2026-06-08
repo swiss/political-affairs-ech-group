@@ -23,6 +23,7 @@ URI: [ops:id](https://ch.paf.link/schema/operations/id)
 | [Work](Work.md) |  |  no  |
 | [Expression](Expression.md) |  |  no  |
 | [Manifestation](Manifestation.md) |  |  no  |
+| [WorkContainer](WorkContainer.md) |  |  no  |
 
 
 
@@ -36,7 +37,7 @@ URI: [ops:id](https://ch.paf.link/schema/operations/id)
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [Work](Work.md), [Expression](Expression.md), [Manifestation](Manifestation.md) |
+| Domain Of | [Work](Work.md), [Expression](Expression.md), [Manifestation](Manifestation.md), [WorkContainer](WorkContainer.md) |
 
 ### Cardinality and Requirements
 
@@ -60,28 +61,6 @@ URI: [ops:id](https://ch.paf.link/schema/operations/id)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:id |
-| native | ops:id |
-
-
 
 
 ## LinkML Source
@@ -96,6 +75,7 @@ domain_of:
 - Work
 - Expression
 - Manifestation
+- WorkContainer
 range: string
 required: true
 

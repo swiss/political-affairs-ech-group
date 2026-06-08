@@ -60,28 +60,6 @@ URI: [ops:sequential_number](https://ch.paf.link/schema/operations/sequential_nu
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:sequential_number |
-| native | ops:sequential_number |
-
-
 
 
 ## LinkML Source

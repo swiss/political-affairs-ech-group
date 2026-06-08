@@ -47,6 +47,7 @@ Name: operations
 | [TotalOther](TotalOther.md) | [en] Additional vote counts when multiple options are presented (e |
 | [Voting](Voting.md) | [en] A voting procedure with individual votes and results |
 | [Work](Work.md) |  |
+| [WorkContainer](WorkContainer.md) |  |
 
 
 
@@ -98,6 +99,9 @@ Name: operations
 | [documents](documents.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind |
 | [election_type](election_type.md) | Type of election procedure |
 | [elections](elections.md) | Collection of election records |
+| [expression_description](expression_description.md) |  |
+| [expression_language](expression_language.md) | [en] Language code in ISO 639-1 format |
+| [expression_title](expression_title.md) |  |
 | [expressions](expressions.md) |  |
 | [format](format.md) | [en] The file format of the manifestation (e |
 | [global_uri](global_uri.md) | A unique, globally valid URI for the entity |
@@ -123,6 +127,7 @@ Name: operations
 | [location](location.md) |  |
 | [majority_count](majority_count.md) | [en] Number of votes required for the relevant majority threshold |
 | [majority_type](majority_type.md) | [en] Type of majority required for the vote (absolute, two-thirds, etc |
+| [manifestation_url](manifestation_url.md) |  |
 | [manifestations](manifestations.md) |  |
 | [media_format](media_format.md) | MIME type of the media file |
 | [media_type](media_type.md) | Type of media (audio, video, document) |

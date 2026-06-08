@@ -1,9 +1,6 @@
----
-search:
-  boost: 10.0
----
 
-# Class: Speech 
+
+## Class: Speech 
 
 
 _[en] A speech or statement made during a meeting (also called Votum or speaker segment)._
@@ -18,126 +15,39 @@ __
 
 
 
-URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
+
+### Attribute
+
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| language | 0..1 <br/> [String](String.md) | Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en").  |
+| start | 0..1 <br/> [String](String.md) | Start indicator or position |
+| datetime_begin | 0..1 <br/> [Datetime](Datetime.md) | [en] The date and time when the meeting or voting begins. [de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.  |
+| datetime_end | 0..1 <br/> [Datetime](Datetime.md) | [en] The date and time when the meeting or voting ends. [de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung endet.  |
+| actor_fullname | 0..1 <br/> [String](String.md) | Full name of the actor/person |
+| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | [en] Reference to the acting person (lightweight snapshot at time of linking). [de] Referenz auf die handelnde Person (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).  |
+| role | 0..1 <br/> [String](String.md) | Role of the person (e.g., commission speaker) |
+| text | 1 <br/> [String](String.md) | None |
+| text_format | 0..1 <br/> [String](String.md) | [en] Format of text (text, html, html_with_timestamps) [de] Format des Textes (text, html, html_with_timestamps)  |
+| text_type | 0..1 <br/> [String](String.md) | [en] Type of text (raw draft, edited version) [de] Typ des Textes (Rohfassung, bearbeitete Fassung)  |
+| landing_page | 0..1 <br/> [String](String.md) | [en] URL providing further information. [de] URL mit weiteren Informationen.  |
+| media_url | 0..1 <br/> [String](String.md) | URL to media file (audio/video) |
+| media_type | 0..1 <br/> [String](String.md) | Type of media (audio, video, document) |
+| media_format | 0..1 <br/> [String](String.md) | MIME type of the media file |
+| documents | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind. [en] List of documents (FRBR Works) linked to the entity.  |
+| local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| date_created | 0..1 <br/> [Date](Date.md) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
+| datetime_created | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
+| date_modified | 0..1 <br/> [Date](Date.md) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
+| datetime_modified | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
 
 
 
 
 
-```mermaid
- classDiagram
-    class Speech
-    click Speech href "../Speech/"
-      HasIdentification <|-- Speech
-        click HasIdentification href "../HasIdentification/"
-      HasCreationModificationDates <|-- Speech
-        click HasCreationModificationDates href "../HasCreationModificationDates/"
-      
-      Speech : actor_fullname
-        
-      Speech : actor_id
-        
-          
-    
-        
-        
-        Speech --> "0..1" PersonReference : actor_id
-        click PersonReference href "../PersonReference/"
-    
-
-        
-      Speech : date_created
-        
-      Speech : date_modified
-        
-      Speech : datetime_begin
-        
-      Speech : datetime_created
-        
-      Speech : datetime_end
-        
-      Speech : datetime_modified
-        
-      Speech : documents
-        
-          
-    
-        
-        
-        Speech --> "*" Work : documents
-        click Work href "../Work/"
-    
-
-        
-      Speech : global_uri
-        
-      Speech : landing_page
-        
-      Speech : language
-        
-      Speech : local_id
-        
-      Speech : media_format
-        
-      Speech : media_type
-        
-      Speech : media_url
-        
-      Speech : role
-        
-      Speech : start
-        
-      Speech : text
-        
-      Speech : text_format
-        
-      Speech : text_type
-        
-      Speech : wikidata_uri
-        
-      
-```
-
-
-
-
-
-## Inheritance
-* **Speech** [ [HasIdentification](HasIdentification.md) [HasCreationModificationDates](HasCreationModificationDates.md)]
-
-
-## Slots
-
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [language](language.md) | 0..1 <br/> [String](String.md) | Language code in ISO 639-1 format (two lowercase letters, e | direct |
-| [start](start.md) | 0..1 <br/> [String](String.md) | Start indicator or position | direct |
-| [datetime_begin](datetime_begin.md) | 0..1 <br/> [Datetime](Datetime.md) | [en] The date and time when the meeting or voting begins | direct |
-| [datetime_end](datetime_end.md) | 0..1 <br/> [Datetime](Datetime.md) | [en] The date and time when the meeting or voting ends | direct |
-| [actor_fullname](actor_fullname.md) | 0..1 <br/> [String](String.md) | Full name of the actor/person | direct |
-| [actor_id](actor_id.md) | 0..1 <br/> [PersonReference](PersonReference.md) | [en] Reference to the acting person (lightweight snapshot at time of linking) | direct |
-| [role](role.md) | 0..1 <br/> [String](String.md) | Role of the person (e | direct |
-| [text](text.md) | 1 <br/> [String](String.md) |  | direct |
-| [text_format](text_format.md) | 0..1 <br/> [String](String.md) | [en] Format of text (text, html, html_with_timestamps) | direct |
-| [text_type](text_type.md) | 0..1 <br/> [String](String.md) | [en] Type of text (raw draft, edited version) | direct |
-| [landing_page](landing_page.md) | 0..1 <br/> [String](String.md) | [en] URL providing further information | direct |
-| [media_url](media_url.md) | 0..1 <br/> [String](String.md) | URL to media file (audio/video) | direct |
-| [media_type](media_type.md) | 0..1 <br/> [String](String.md) | Type of media (audio, video, document) | direct |
-| [media_format](media_format.md) | 0..1 <br/> [String](String.md) | MIME type of the media file | direct |
-| [documents](documents.md) | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
-| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | Local identifier | [HasIdentification](HasIdentification.md) |
-| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity | [HasIdentification](HasIdentification.md) |
-| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e | [HasIdentification](HasIdentification.md) |
-| [date_created](date_created.md) | 0..1 <br/> [Date](Date.md) | The date when an entity was created | [HasCreationModificationDates](HasCreationModificationDates.md) |
-| [datetime_created](datetime_created.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was created | [HasCreationModificationDates](HasCreationModificationDates.md) |
-| [date_modified](date_modified.md) | 0..1 <br/> [Date](Date.md) | The date when an entity was last modified | [HasCreationModificationDates](HasCreationModificationDates.md) |
-| [datetime_modified](datetime_modified.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was last modified | [HasCreationModificationDates](HasCreationModificationDates.md) |
-
-
-
-
-
-## Usages
+### Usages
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
@@ -155,434 +65,40 @@ URI: [ops:Speech](https://ch.paf.link/schema/operations/Speech)
 
 
 
-## Identifier and Mapping Information
 
 
+### Examples
+#### Example: Speech-meeting_sr_winter25_Sitzung6_366631
 
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:Speech |
-| native | ops:Speech |
-
-
-
-
-
-
-## LinkML Source
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
 ```yaml
-name: Speech
-description: '[en] A speech or statement made during a meeting (also called Votum
-  or speaker segment).
-
-  [de] Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt).
-
-  '
-from_schema: https://ch.paf.link/schema/operations
-mixins:
-- HasIdentification
-- HasCreationModificationDates
-slots:
-- language
-- start
-- datetime_begin
-- datetime_end
-- actor_fullname
-- actor_id
-- role
-- text
-- text_format
-- text_type
-- landing_page
-- media_url
-- media_type
-- media_format
-- documents
+global_uri: ops:366631
+language: fr
+datetime_begin: '2025-12-19T09:20:00+01:00'
+datetime_end: '2025-12-19T09:25:00+01:00'
+actor_fullname: Pascal Broulis
+actor_id:
+  global_uri: https://api.openparldata.ch/v1/persons/18682
+  wikidata_uri: https://www.wikidata.org/wiki/Q116407
+  label: Pascal Broulis
+role: speaker
+text: Je remercie la rapporteuse pour son rapport exhaustif. J'ai également lu avec
+  attention les différents commentaires qui ont été effectués sur mon postulat. Cela
+  reste un postulat, ce n'est pas une motion. D'abord, je ne partage pas l'avis selon
+  lequel ce postulat n'apporterait pas une valeur ajoutée. En effet, un "benchmark",
+  à savoir un modèle chiffré de performance, permettrait de mieux comprendre les raisons
+  des retards que notre pays rencontre en comparaison avec les principaux pays européens.
+text_format: html
+text_type: final
+landing_page: https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-videos?TranscriptId=366631
+media_url: https://par-pcache.simplex.tv/content?externalid=366631
+media_type: video
+media_format: video/mp4
 
 ```
-</details>
 
-### Induced
 
-<details>
-```yaml
-name: Speech
-description: '[en] A speech or statement made during a meeting (also called Votum
-  or speaker segment).
 
-  [de] Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt).
 
-  '
-from_schema: https://ch.paf.link/schema/operations
-mixins:
-- HasIdentification
-- HasCreationModificationDates
-attributes:
-  language:
-    name: language
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Sprachcode im ISO 639-1 Format (zwei Kleinbuchstaben, z.B. "de", "fr",
-          "it", "en").
 
-          '
-    description: 'Language code in ISO 639-1 format (two lowercase letters, e.g. "de",
-      "fr", "it", "en").
 
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:language
-    owner: Speech
-    domain_of:
-    - Speech
-    - MultilingualString
-    - MultilingualValue
-    - Expression
-    range: string
-    pattern: ^[a-z]{2}$
-  start:
-    name: start
-    description: Start indicator or position
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Speech
-    domain_of:
-    - Speech
-    range: string
-  datetime_begin:
-    name: datetime_begin
-    description: '[en] The date and time when the meeting or voting begins.
-
-      [de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Speech
-    domain_of:
-    - Voting
-    - Election
-    - Attendance
-    - Speech
-    range: datetime
-  datetime_end:
-    name: datetime_end
-    description: '[en] The date and time when the meeting or voting ends.
-
-      [de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung endet.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Speech
-    domain_of:
-    - Voting
-    - Election
-    - Speech
-    range: datetime
-  actor_fullname:
-    name: actor_fullname
-    description: Full name of the actor/person
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Speech
-    domain_of:
-    - Speech
-    range: string
-  actor_id:
-    name: actor_id
-    description: '[en] Reference to the acting person (lightweight snapshot at time
-      of linking).
-
-      [de] Referenz auf die handelnde Person (leichtgewichtiger Snapshot zum Zeitpunkt
-      der Verknüpfung).
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Speech
-    domain_of:
-    - Legislature
-    - Meeting
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    range: PersonReference
-    inlined: true
-  role:
-    name: role
-    description: Role of the person (e.g., commission speaker)
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Speech
-    domain_of:
-    - Speech
-    range: string
-  text:
-    name: text
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Speech
-    domain_of:
-    - Speech
-    - TextSegment
-    - MultilingualString
-    range: string
-    required: true
-  text_format:
-    name: text_format
-    description: '[en] Format of text (text, html, html_with_timestamps)
-
-      [de] Format des Textes (text, html, html_with_timestamps)
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Speech
-    domain_of:
-    - Speech
-    range: string
-  text_type:
-    name: text_type
-    description: '[en] Type of text (raw draft, edited version)
-
-      [de] Typ des Textes (Rohfassung, bearbeitete Fassung)
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Speech
-    domain_of:
-    - Speech
-    range: string
-  landing_page:
-    name: landing_page
-    description: '[en] URL providing further information.
-
-      [de] URL mit weiteren Informationen.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: ops:landingPage
-    owner: Speech
-    domain_of:
-    - Legislature
-    - Meeting
-    - AgendaItem
-    - Voting
-    - Election
-    - Speech
-    range: string
-  media_url:
-    name: media_url
-    description: URL to media file (audio/video)
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Speech
-    domain_of:
-    - Speech
-    range: string
-  media_type:
-    name: media_type
-    description: Type of media (audio, video, document)
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Speech
-    domain_of:
-    - Speech
-    - Media
-    range: string
-  media_format:
-    name: media_format
-    description: MIME type of the media file
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Speech
-    domain_of:
-    - Speech
-    range: string
-  documents:
-    name: documents
-    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
-      sind.
-
-      [en] List of documents (FRBR Works) linked to the entity.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: meta:documents
-    owner: Speech
-    domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Protocol
-    - Resolution
-    - Voting
-    - Election
-    - Speech
-    - Motion
-    range: Work
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  local_id:
-    name: local_id
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
-
-          '
-    description: 'Local identifier. For example, a UUID from the council information
-      system.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:localId
-    owner: Speech
-    domain_of:
-    - HasIdentification
-    range: string
-  global_uri:
-    name: global_uri
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Eine eindeutige, global gültige URI für die Entität.
-
-          '
-    description: 'A unique, globally valid URI for the entity.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:globalURI
-    identifier: true
-    owner: Speech
-    domain_of:
-    - HasIdentification
-    range: uriorcurie
-    required: true
-  wikidata_uri:
-    name: wikidata_uri
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-          für die Schweiz.
-
-          '
-    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
-      for Switzerland.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:wikidataUri
-    owner: Speech
-    domain_of:
-    - HasIdentification
-    range: uriorcurie
-  date_created:
-    name: date_created
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das Datum, an dem eine Entität erstellt wurde.
-
-          '
-    description: 'The date when an entity was created.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:dateCreated
-    owner: Speech
-    domain_of:
-    - HasCreationModificationDates
-    range: date
-  datetime_created:
-    name: datetime_created
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
-
-          '
-    description: 'The date and time when an entity was created.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:datetimeCreated
-    owner: Speech
-    domain_of:
-    - HasCreationModificationDates
-    range: datetime
-  date_modified:
-    name: date_modified
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
-
-          '
-    description: 'The date when an entity was last modified.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:dateModified
-    owner: Speech
-    domain_of:
-    - HasCreationModificationDates
-    range: date
-  datetime_modified:
-    name: datetime_modified
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
-
-          '
-    description: 'The date and time when an entity was last modified.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:datetimeModified
-    owner: Speech
-    domain_of:
-    - HasCreationModificationDates
-    range: datetime
-
-```
-</details></div>
+</div>

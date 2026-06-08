@@ -59,28 +59,6 @@ URI: [ops:optional](https://ch.paf.link/schema/operations/optional)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:optional |
-| native | ops:optional |
-
-
 
 
 ## LinkML Source

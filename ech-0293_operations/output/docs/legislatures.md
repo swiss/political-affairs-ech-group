@@ -52,28 +52,6 @@ URI: [ops:legislature](https://ch.paf.link/schema/operations/legislature)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:legislature |
-| native | ops:legislatures |
-
-
 
 
 ## LinkML Source

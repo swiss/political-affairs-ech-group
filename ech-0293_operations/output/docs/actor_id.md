@@ -66,28 +66,6 @@ URI: [ops:actor_id](https://ch.paf.link/schema/operations/actor_id)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:actor_id |
-| native | ops:actor_id |
-
-
 
 
 ## LinkML Source

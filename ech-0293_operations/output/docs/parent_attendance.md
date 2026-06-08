@@ -60,28 +60,6 @@ URI: [ops:parentAttendance](https://ch.paf.link/schema/operations/parentAttendan
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:parentAttendance |
-| native | ops:parent_attendance |
-
-
 
 
 ## LinkML Source

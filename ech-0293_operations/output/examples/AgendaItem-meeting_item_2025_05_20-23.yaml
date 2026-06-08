@@ -1,0 +1,20 @@
+global_uri: ops:2025_05_20-23
+parent_meeting: ops:meeting_lausanne_2025_05_20
+agenda_item_type: item
+datetime_begin_planned: '2025-05-20T00:00:00Z'
+agenda_item_position: 23
+agenda_item_number: '23'
+agenda_item_title:
+- text: 'Interpellation urgente du 20 mai 2025 de M. Yusuf KULMIYE : « Interpellation
+    urgente de Kulmiye Yusuf et crts – Solidarité sans frontières, Lausanne en faveur
+    du respect du droit international et de la protection des populations civiles
+    à Gaza »'
+  language: fr
+state_id: not_treated
+agenda_item_category: ANNONCES ET INTERPELLATIONS
+affair_id: affairs:INT25/027
+url:
+- text: https://www.lausanne.ch/apps/agir/affaire/6c/049b6c612fe2428f9be66ea39522ac6c.htm
+  language: fr
+datetime_created: '2025-06-07T23:50:18Z'
+datetime_modified: '2025-06-07T23:50:18Z'

@@ -62,28 +62,6 @@ URI: [ops:type_label](https://ch.paf.link/schema/operations/type_label)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:type_label |
-| native | ops:type_label |
-
-
 
 
 ## LinkML Source

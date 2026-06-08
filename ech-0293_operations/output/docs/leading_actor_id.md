@@ -60,28 +60,6 @@ URI: [ops:leading_actor_id](https://ch.paf.link/schema/operations/leading_actor_
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:leading_actor_id |
-| native | ops:leading_actor_id |
-
-
 
 
 ## LinkML Source

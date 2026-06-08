@@ -1,0 +1,25 @@
+global_uri: ops:voting_zh_budget_2026
+voting_title:
+- text: Budgetbeschluss 2026
+  language: de
+voting_type: final_vote
+datetime_begin: '2025-11-20T16:45:00Z'
+datetime_end: '2025-11-20T16:50:00Z'
+total_count_yes: 105
+total_count_no: 70
+total_count_abstention: 5
+total_absent: 0
+total: 180
+majority_type: absolute
+majority_count: 91
+result_text: Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen
+parent_agenda_item: ops:agenda_item_zh_budget_2026
+parent_meeting: ops:meeting_zh_2025_11_20
+actor_id:
+  global_uri: https://api.openparldata.ch/v1/bodies/275
+  label: Kantonsrat Zürich
+  abbreviation:
+  - value: KR
+    language: de
+datetime_created: '2025-11-20T16:45:00Z'
+datetime_modified: '2025-11-20T16:50:00Z'

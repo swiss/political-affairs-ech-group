@@ -58,28 +58,6 @@ URI: [ops:speech](https://ch.paf.link/schema/operations/speech)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:speech |
-| native | ops:speeches |
-
-
 
 
 ## LinkML Source

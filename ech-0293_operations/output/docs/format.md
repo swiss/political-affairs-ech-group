@@ -60,28 +60,6 @@ URI: [meta:format](https://ch.paf.link/schema/meta/format)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | meta:format |
-| native | ops:format |
-
-
 
 
 ## LinkML Source

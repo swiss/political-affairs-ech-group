@@ -51,28 +51,6 @@ URI: [meta:workType](https://ch.paf.link/schema/meta/workType)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | meta:workType |
-| native | ops:work_type |
-
-
 
 
 ## LinkML Source

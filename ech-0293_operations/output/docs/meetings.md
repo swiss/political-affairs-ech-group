@@ -53,28 +53,6 @@ URI: [ops:meeting](https://ch.paf.link/schema/operations/meeting)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:meeting |
-| native | ops:meetings |
-
-
 
 
 ## LinkML Source

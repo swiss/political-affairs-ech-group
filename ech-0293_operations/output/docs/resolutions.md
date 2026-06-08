@@ -57,28 +57,6 @@ URI: [ops:resolution](https://ch.paf.link/schema/operations/resolution)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:resolution |
-| native | ops:resolutions |
-
-
 
 
 ## LinkML Source

@@ -1,9 +1,6 @@
----
-search:
-  boost: 10.0
----
 
-# Class: Voting 
+
+## Class: Voting 
 
 
 _[en] A voting procedure with individual votes and results._
@@ -18,192 +15,49 @@ __
 
 
 
-URI: [ops:Voting](https://ch.paf.link/schema/operations/Voting)
+
+### Attribute
+
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| datetime_begin | 0..1 <br/> [Datetime](Datetime.md) | [en] The date and time when the meeting or voting begins. [de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.  |
+| datetime_end | 0..1 <br/> [Datetime](Datetime.md) | [en] The date and time when the meeting or voting ends. [de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung endet.  |
+| voting_type | 0..1 <br/> [VotingTypeEnum](VotingTypeEnum.md) | [en] Type of voting procedure (preliminary, final, secret, etc.). [de] Art des Abstimmungsverfahrens (Zwischen-, Schlussabstimmung, geheim, etc.).  |
+| type_label | 0..1 <br/> [String](String.md) | [en] Custom type label when standard type values don't apply. [de] Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen.  |
+| voting_title | * <br/> [MultilingualString](MultilingualString.md) | [en] Title or question being voted on. If no specific subject exists, do not use the business item title. [de] Abstimmungstitel bzw. Gegenstand oder Frage. Wenn kein Gegenstand vorhanden ist, sollte nicht der Geschäftstitel verwendet werden.  |
+| optional | 0..1 <br/> [Boolean](Boolean.md) | [en] Indicates if the meeting or voting is optional. [de] Gibt an, ob die Sitzung oder Abstimmung optional ist.  |
+| landing_page | 0..1 <br/> [String](String.md) | [en] URL providing further information. [de] URL mit weiteren Informationen.  |
+| label_yes | 0..1 <br/> [String](String.md) | [en] Meaning of a 'yes' vote. [de] Bedeutung einer 'Ja'-Stimme.  |
+| label_no | 0..1 <br/> [String](String.md) | [en] Meaning of a 'no' vote. [de] Bedeutung einer 'Nein'-Stimme.  |
+| label_abstention | 0..1 <br/> [String](String.md) | [en] Meaning of an 'abstention' vote. [de] Bedeutung einer Enthaltungsstimme.  |
+| tie_breaker | 0..1 <br/> [Boolean](Boolean.md) | [en] Indicates if a tie-breaker was used in the voting. [de] Gibt an, ob ein Stichentscheid bei der Abstimmung verwendet wurde.  |
+| total_count_yes | 0..1 <br/> [Integer](Integer.md) | [en] Total number of 'yes' votes. [de] Gesamtzahl der 'Ja'-Stimmen.  |
+| total_count_no | 0..1 <br/> [Integer](Integer.md) | [en] Total number of 'no' votes. [de] Gesamtzahl der 'Nein'-Stimmen.  |
+| total_count_abstention | 0..1 <br/> [Integer](Integer.md) | [en] Total number of abstentions. [de] Gesamtzahl der Enthaltungen.  |
+| total_other | * <br/> [TotalOther](TotalOther.md) | [en] Used when multiple options are presented for voting (e.g., 5 buttons in Zurich). [de] Wird verwendet, wenn mehrere Optionen zur Abstimmung gestellt werden (z.B. 5 Knöpfe in Zürich).  |
+| total_absent | 0..1 <br/> [Integer](Integer.md) | [en] Total number of absent members. Distinction between absent/excused absent - presence is tracked on attendance list. [de] Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.  |
+| total | 0..1 <br/> [Integer](Integer.md) | [en] Total number of votes, excluding absent and president's vote. [de] Gesamtzahl der Stimmen, ohne abwesende und Präsidentenstimmen.  |
+| majority_type | 0..1 <br/> [MajorityTypeEnum](MajorityTypeEnum.md) | [en] Type of majority required for the vote (absolute, two-thirds, etc.). [de] Art der für die Abstimmung erforderlichen Mehrheit (absolut, Zweidrittel usw.).  |
+| majority_count | 0..1 <br/> [Integer](Integer.md) | [en] Number of votes required for the relevant majority threshold. [de] Anzahl der Stimmen, die für die relevante Mehrheitsschwelle erforderlich sind.  |
+| result_text | 0..1 <br/> [String](String.md) | [en] Free text describing the outcome of the vote, e.g., "Accepted with 78 votes". [de] Freitext zur Beschreibung des Ergebnisses der Abstimmung, z.B. "Mit 78 Stimmen angenommen".  |
+| parent_meeting | 0..1 <br/> [String](String.md) | [en] The linked meeting ID that groups the current meeting. [de] Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.  |
+| parent_agenda_item | 0..1 <br/> [String](String.md) | [en] If needed, this slot builds a hierarchy of agenda items. [de] Wenn erforderlich, baut dieser Slot eine Hierarchie von Tagesordnungspunkten auf.  |
+| affair_id | 0..1 <br/> [String](String.md) | [en] The connection to the affairs (business items) of the agenda item. [de] Die Verbindung zu den Geschäften (Geschäftsgegenständen) des Tagesordnungspunkts.  |
+| actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | [en] Reference to the acting body/organ (lightweight snapshot at time of linking). [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).  |
+| documents | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind. [en] List of documents (FRBR Works) linked to the entity.  |
+| local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| date_created | 0..1 <br/> [Date](Date.md) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
+| datetime_created | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
+| date_modified | 0..1 <br/> [Date](Date.md) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
+| datetime_modified | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
 
 
 
 
 
-```mermaid
- classDiagram
-    class Voting
-    click Voting href "../Voting/"
-      HasIdentification <|-- Voting
-        click HasIdentification href "../HasIdentification/"
-      HasCreationModificationDates <|-- Voting
-        click HasCreationModificationDates href "../HasCreationModificationDates/"
-      
-      Voting : actor_id
-        
-          
-    
-        
-        
-        Voting --> "0..1" GroupReference : actor_id
-        click GroupReference href "../GroupReference/"
-    
-
-        
-      Voting : affair_id
-        
-      Voting : date_created
-        
-      Voting : date_modified
-        
-      Voting : datetime_begin
-        
-      Voting : datetime_created
-        
-      Voting : datetime_end
-        
-      Voting : datetime_modified
-        
-      Voting : documents
-        
-          
-    
-        
-        
-        Voting --> "*" Work : documents
-        click Work href "../Work/"
-    
-
-        
-      Voting : global_uri
-        
-      Voting : label_abstention
-        
-      Voting : label_no
-        
-      Voting : label_yes
-        
-      Voting : landing_page
-        
-      Voting : local_id
-        
-      Voting : majority_count
-        
-      Voting : majority_type
-        
-          
-    
-        
-        
-        Voting --> "0..1" MajorityTypeEnum : majority_type
-        click MajorityTypeEnum href "../MajorityTypeEnum/"
-    
-
-        
-      Voting : optional
-        
-      Voting : parent_agenda_item
-        
-      Voting : parent_meeting
-        
-      Voting : result_text
-        
-      Voting : tie_breaker
-        
-      Voting : total
-        
-      Voting : total_absent
-        
-      Voting : total_count_abstention
-        
-      Voting : total_count_no
-        
-      Voting : total_count_yes
-        
-      Voting : total_other
-        
-          
-    
-        
-        
-        Voting --> "*" TotalOther : total_other
-        click TotalOther href "../TotalOther/"
-    
-
-        
-      Voting : type_label
-        
-      Voting : voting_title
-        
-          
-    
-        
-        
-        Voting --> "*" MultilingualString : voting_title
-        click MultilingualString href "../MultilingualString/"
-    
-
-        
-      Voting : voting_type
-        
-          
-    
-        
-        
-        Voting --> "0..1" VotingTypeEnum : voting_type
-        click VotingTypeEnum href "../VotingTypeEnum/"
-    
-
-        
-      Voting : wikidata_uri
-        
-      
-```
-
-
-
-
-
-## Inheritance
-* **Voting** [ [HasIdentification](HasIdentification.md) [HasCreationModificationDates](HasCreationModificationDates.md)]
-
-
-## Slots
-
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [datetime_begin](datetime_begin.md) | 0..1 <br/> [Datetime](Datetime.md) | [en] The date and time when the meeting or voting begins | direct |
-| [datetime_end](datetime_end.md) | 0..1 <br/> [Datetime](Datetime.md) | [en] The date and time when the meeting or voting ends | direct |
-| [voting_type](voting_type.md) | 0..1 <br/> [VotingTypeEnum](VotingTypeEnum.md) | [en] Type of voting procedure (preliminary, final, secret, etc | direct |
-| [type_label](type_label.md) | 0..1 <br/> [String](String.md) | [en] Custom type label when standard type values don't apply | direct |
-| [voting_title](voting_title.md) | * <br/> [MultilingualString](MultilingualString.md) | [en] Title or question being voted on | direct |
-| [optional](optional.md) | 0..1 <br/> [Boolean](Boolean.md) | [en] Indicates if the meeting or voting is optional | direct |
-| [landing_page](landing_page.md) | 0..1 <br/> [String](String.md) | [en] URL providing further information | direct |
-| [label_yes](label_yes.md) | 0..1 <br/> [String](String.md) | [en] Meaning of a 'yes' vote | direct |
-| [label_no](label_no.md) | 0..1 <br/> [String](String.md) | [en] Meaning of a 'no' vote | direct |
-| [label_abstention](label_abstention.md) | 0..1 <br/> [String](String.md) | [en] Meaning of an 'abstention' vote | direct |
-| [tie_breaker](tie_breaker.md) | 0..1 <br/> [Boolean](Boolean.md) | [en] Indicates if a tie-breaker was used in the voting | direct |
-| [total_count_yes](total_count_yes.md) | 0..1 <br/> [Integer](Integer.md) | [en] Total number of 'yes' votes | direct |
-| [total_count_no](total_count_no.md) | 0..1 <br/> [Integer](Integer.md) | [en] Total number of 'no' votes | direct |
-| [total_count_abstention](total_count_abstention.md) | 0..1 <br/> [Integer](Integer.md) | [en] Total number of abstentions | direct |
-| [total_other](total_other.md) | * <br/> [TotalOther](TotalOther.md) | [en] Used when multiple options are presented for voting (e | direct |
-| [total_absent](total_absent.md) | 0..1 <br/> [Integer](Integer.md) | [en] Total number of absent members | direct |
-| [total](total.md) | 0..1 <br/> [Integer](Integer.md) | [en] Total number of votes, excluding absent and president's vote | direct |
-| [majority_type](majority_type.md) | 0..1 <br/> [MajorityTypeEnum](MajorityTypeEnum.md) | [en] Type of majority required for the vote (absolute, two-thirds, etc | direct |
-| [majority_count](majority_count.md) | 0..1 <br/> [Integer](Integer.md) | [en] Number of votes required for the relevant majority threshold | direct |
-| [result_text](result_text.md) | 0..1 <br/> [String](String.md) | [en] Free text describing the outcome of the vote, e | direct |
-| [parent_meeting](parent_meeting.md) | 0..1 <br/> [String](String.md) | [en] The linked meeting ID that groups the current meeting | direct |
-| [parent_agenda_item](parent_agenda_item.md) | 0..1 <br/> [String](String.md) | [en] If needed, this slot builds a hierarchy of agenda items | direct |
-| [affair_id](affair_id.md) | 0..1 <br/> [String](String.md) | [en] The connection to the affairs (business items) of the agenda item | direct |
-| [actor_id](actor_id.md) | 0..1 <br/> [GroupReference](GroupReference.md) | [en] Reference to the acting body/organ (lightweight snapshot at time of link... | direct |
-| [documents](documents.md) | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
-| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | Local identifier | [HasIdentification](HasIdentification.md) |
-| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity | [HasIdentification](HasIdentification.md) |
-| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e | [HasIdentification](HasIdentification.md) |
-| [date_created](date_created.md) | 0..1 <br/> [Date](Date.md) | The date when an entity was created | [HasCreationModificationDates](HasCreationModificationDates.md) |
-| [datetime_created](datetime_created.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was created | [HasCreationModificationDates](HasCreationModificationDates.md) |
-| [date_modified](date_modified.md) | 0..1 <br/> [Date](Date.md) | The date when an entity was last modified | [HasCreationModificationDates](HasCreationModificationDates.md) |
-| [datetime_modified](datetime_modified.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was last modified | [HasCreationModificationDates](HasCreationModificationDates.md) |
-
-
-
-
-
-## Usages
+### Usages
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
@@ -222,647 +76,105 @@ URI: [ops:Voting](https://ch.paf.link/schema/operations/Voting)
 
 
 
-## Identifier and Mapping Information
 
 
+### Examples
+#### Example: Voting-voting_voting_zh_budget_2026
 
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:Voting |
-| native | ops:Voting |
-
-
-
-
-
-
-## LinkML Source
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
 ```yaml
-name: Voting
-description: '[en] A voting procedure with individual votes and results.
-
-  [de] Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen.
-
-  '
-from_schema: https://ch.paf.link/schema/operations
-mixins:
-- HasIdentification
-- HasCreationModificationDates
-slots:
-- datetime_begin
-- datetime_end
-- voting_type
-- type_label
-- voting_title
-- optional
-- landing_page
-- label_yes
-- label_no
-- label_abstention
-- tie_breaker
-- total_count_yes
-- total_count_no
-- total_count_abstention
-- total_other
-- total_absent
-- total
-- majority_type
-- majority_count
-- result_text
-- parent_meeting
-- parent_agenda_item
-- affair_id
-- actor_id
-- documents
-slot_usage:
-  actor_id:
-    name: actor_id
-    description: '[en] Reference to the acting body/organ (lightweight snapshot at
-      time of linking).
-
-      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
-      Zeitpunkt der Verknüpfung).
-
-      '
-    range: GroupReference
-    inlined: true
+global_uri: ops:voting_zh_budget_2026
+voting_title:
+- text: Budgetbeschluss 2026
+  language: de
+voting_type: final_vote
+datetime_begin: '2025-11-20T16:45:00Z'
+datetime_end: '2025-11-20T16:50:00Z'
+total_count_yes: 105
+total_count_no: 70
+total_count_abstention: 5
+total_absent: 0
+total: 180
+majority_type: absolute
+majority_count: 91
+result_text: Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen
+parent_agenda_item: ops:agenda_item_zh_budget_2026
+parent_meeting: ops:meeting_zh_2025_11_20
+actor_id:
+  global_uri: https://api.openparldata.ch/v1/bodies/275
+  label: Kantonsrat Zürich
+  abbreviation:
+  - value: KR
+    language: de
+datetime_created: '2025-11-20T16:45:00Z'
+datetime_modified: '2025-11-20T16:50:00Z'
 
 ```
-</details>
+#### Example: Voting-voting_voting_be_2025_042
 
-### Induced
-
-<details>
 ```yaml
-name: Voting
-description: '[en] A voting procedure with individual votes and results.
-
-  [de] Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen.
-
-  '
-from_schema: https://ch.paf.link/schema/operations
-mixins:
-- HasIdentification
-- HasCreationModificationDates
-slot_usage:
-  actor_id:
-    name: actor_id
-    description: '[en] Reference to the acting body/organ (lightweight snapshot at
-      time of linking).
-
-      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
-      Zeitpunkt der Verknüpfung).
-
-      '
-    range: GroupReference
-    inlined: true
-attributes:
-  datetime_begin:
-    name: datetime_begin
-    description: '[en] The date and time when the meeting or voting begins.
-
-      [de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - Voting
-    - Election
-    - Attendance
-    - Speech
-    range: datetime
-  datetime_end:
-    name: datetime_end
-    description: '[en] The date and time when the meeting or voting ends.
-
-      [de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung endet.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - Voting
-    - Election
-    - Speech
-    range: datetime
-  voting_type:
-    name: voting_type
-    description: '[en] Type of voting procedure (preliminary, final, secret, etc.).
-
-      [de] Art des Abstimmungsverfahrens (Zwischen-, Schlussabstimmung, geheim, etc.).
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - Voting
-    range: VotingTypeEnum
-  type_label:
-    name: type_label
-    description: '[en] Custom type label when standard type values don''t apply.
-
-      [de] Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - Resolution
-    - Voting
-    - IndividualVote
-    - Election
-    range: string
-  voting_title:
-    name: voting_title
-    description: '[en] Title or question being voted on. If no specific subject exists,
-      do not use the business item title.
-
-      [de] Abstimmungstitel bzw. Gegenstand oder Frage. Wenn kein Gegenstand vorhanden
-      ist, sollte nicht der Geschäftstitel verwendet werden.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - Voting
-    range: MultilingualString
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  optional:
-    name: optional
-    description: '[en] Indicates if the meeting or voting is optional.
-
-      [de] Gibt an, ob die Sitzung oder Abstimmung optional ist.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - Voting
-    range: boolean
-  landing_page:
-    name: landing_page
-    description: '[en] URL providing further information.
-
-      [de] URL mit weiteren Informationen.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: ops:landingPage
-    owner: Voting
-    domain_of:
-    - Legislature
-    - Meeting
-    - AgendaItem
-    - Voting
-    - Election
-    - Speech
-    range: string
-  label_yes:
-    name: label_yes
-    description: '[en] Meaning of a ''yes'' vote.
-
-      [de] Bedeutung einer ''Ja''-Stimme.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - Voting
-    range: string
-  label_no:
-    name: label_no
-    description: '[en] Meaning of a ''no'' vote.
-
-      [de] Bedeutung einer ''Nein''-Stimme.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - Voting
-    range: string
-  label_abstention:
-    name: label_abstention
-    description: '[en] Meaning of an ''abstention'' vote.
-
-      [de] Bedeutung einer Enthaltungsstimme.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - Voting
-    range: string
-  tie_breaker:
-    name: tie_breaker
-    description: '[en] Indicates if a tie-breaker was used in the voting.
-
-      [de] Gibt an, ob ein Stichentscheid bei der Abstimmung verwendet wurde.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - Voting
-    range: boolean
-  total_count_yes:
-    name: total_count_yes
-    description: '[en] Total number of ''yes'' votes.
-
-      [de] Gesamtzahl der ''Ja''-Stimmen.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - Voting
-    range: integer
-  total_count_no:
-    name: total_count_no
-    description: '[en] Total number of ''no'' votes.
-
-      [de] Gesamtzahl der ''Nein''-Stimmen.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - Voting
-    range: integer
-  total_count_abstention:
-    name: total_count_abstention
-    description: '[en] Total number of abstentions.
-
-      [de] Gesamtzahl der Enthaltungen.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - Voting
-    range: integer
-  total_other:
-    name: total_other
-    description: '[en] Used when multiple options are presented for voting (e.g.,
-      5 buttons in Zurich).
-
-      [de] Wird verwendet, wenn mehrere Optionen zur Abstimmung gestellt werden (z.B.
-      5 Knöpfe in Zürich).
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - Voting
-    range: TotalOther
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  total_absent:
-    name: total_absent
-    description: '[en] Total number of absent members. Distinction between absent/excused
-      absent - presence is tracked on attendance list.
-
-      [de] Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt
-      abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - Voting
-    - Election
-    - Attendance
-    range: integer
-  total:
-    name: total
-    description: '[en] Total number of votes, excluding absent and president''s vote.
-
-      [de] Gesamtzahl der Stimmen, ohne abwesende und Präsidentenstimmen.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - Voting
-    - Election
-    range: integer
-  majority_type:
-    name: majority_type
-    description: '[en] Type of majority required for the vote (absolute, two-thirds,
-      etc.).
-
-      [de] Art der für die Abstimmung erforderlichen Mehrheit (absolut, Zweidrittel
-      usw.).
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - Voting
-    - Election
-    range: MajorityTypeEnum
-  majority_count:
-    name: majority_count
-    description: '[en] Number of votes required for the relevant majority threshold.
-
-      [de] Anzahl der Stimmen, die für die relevante Mehrheitsschwelle erforderlich
-      sind.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - Voting
-    - Election
-    range: integer
-  result_text:
-    name: result_text
-    description: '[en] Free text describing the outcome of the vote, e.g., "Accepted
-      with 78 votes".
-
-      [de] Freitext zur Beschreibung des Ergebnisses der Abstimmung, z.B. "Mit 78
-      Stimmen angenommen".
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - Voting
-    - Election
-    range: string
-  parent_meeting:
-    name: parent_meeting
-    description: '[en] The linked meeting ID that groups the current meeting.
-
-      [de] Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - Meeting
-    - AgendaItem
-    - Protocol
-    - Voting
-    - Election
-    - Attendance
-    range: string
-  parent_agenda_item:
-    name: parent_agenda_item
-    description: '[en] If needed, this slot builds a hierarchy of agenda items.
-
-      [de] Wenn erforderlich, baut dieser Slot eine Hierarchie von Tagesordnungspunkten
-      auf.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - AgendaItem
-    - Voting
-    - Election
-    range: string
-  affair_id:
-    name: affair_id
-    description: '[en] The connection to the affairs (business items) of the agenda
-      item.
-
-      [de] Die Verbindung zu den Geschäften (Geschäftsgegenständen) des Tagesordnungspunkts.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - AgendaItem
-    - Voting
-    - Election
-    range: string
-  actor_id:
-    name: actor_id
-    description: '[en] Reference to the acting body/organ (lightweight snapshot at
-      time of linking).
-
-      [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum
-      Zeitpunkt der Verknüpfung).
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Voting
-    domain_of:
-    - Legislature
-    - Meeting
-    - Voting
-    - IndividualVote
-    - Election
-    - Attendance
-    - IndividualAttendance
-    - Speech
-    range: GroupReference
-    inlined: true
-  documents:
-    name: documents
-    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
-      sind.
-
-      [en] List of documents (FRBR Works) linked to the entity.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: meta:documents
-    owner: Voting
-    domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Protocol
-    - Resolution
-    - Voting
-    - Election
-    - Speech
-    - Motion
-    range: Work
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  local_id:
-    name: local_id
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
-
-          '
-    description: 'Local identifier. For example, a UUID from the council information
-      system.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:localId
-    owner: Voting
-    domain_of:
-    - HasIdentification
-    range: string
-  global_uri:
-    name: global_uri
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Eine eindeutige, global gültige URI für die Entität.
-
-          '
-    description: 'A unique, globally valid URI for the entity.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:globalURI
-    identifier: true
-    owner: Voting
-    domain_of:
-    - HasIdentification
-    range: uriorcurie
-    required: true
-  wikidata_uri:
-    name: wikidata_uri
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-          für die Schweiz.
-
-          '
-    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
-      for Switzerland.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:wikidataUri
-    owner: Voting
-    domain_of:
-    - HasIdentification
-    range: uriorcurie
-  date_created:
-    name: date_created
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das Datum, an dem eine Entität erstellt wurde.
-
-          '
-    description: 'The date when an entity was created.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:dateCreated
-    owner: Voting
-    domain_of:
-    - HasCreationModificationDates
-    range: date
-  datetime_created:
-    name: datetime_created
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
-
-          '
-    description: 'The date and time when an entity was created.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:datetimeCreated
-    owner: Voting
-    domain_of:
-    - HasCreationModificationDates
-    range: datetime
-  date_modified:
-    name: date_modified
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
-
-          '
-    description: 'The date when an entity was last modified.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:dateModified
-    owner: Voting
-    domain_of:
-    - HasCreationModificationDates
-    range: date
-  datetime_modified:
-    name: datetime_modified
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
-
-          '
-    description: 'The date and time when an entity was last modified.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:datetimeModified
-    owner: Voting
-    domain_of:
-    - HasCreationModificationDates
-    range: datetime
+global_uri: ops:voting_be_2025_042
+voting_title:
+- text: Änderungsantrag Art. 5 Abs. 2
+  language: de
+- text: Proposition de modification art. 5 al. 2
+  language: fr
+voting_type: preliminary_vote
+datetime_begin: '2025-06-05T10:15:00Z'
+datetime_end: '2025-06-05T10:17:00Z'
+total_count_yes: 45
+total_count_no: 87
+total_count_abstention: 8
+total_absent: 10
+total: 150
+majority_type: absolute
+majority_count: 76
+result_text: Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt
+parent_agenda_item: ops:agenda_item_be_2025_042
+parent_meeting: ops:meeting_be_2025_06_05
+actor_id:
+  global_uri: https://api.openparldata.ch/v1/bodies/253
+  label: Grosser Rat Bern
+  abbreviation:
+  - value: GR
+    language: de
+datetime_created: '2025-06-05T10:15:00Z'
+datetime_modified: '2025-06-05T10:15:00Z'
 
 ```
-</details></div>
+#### Example: Voting-voting_voting_sg_2025_001
+
+```yaml
+global_uri: ops:voting_sg_2025_001
+voting_title:
+- text: Schlussabstimmung Energiegesetz
+  language: de
+voting_type: final_vote
+datetime_begin: '2025-03-15T14:30:00Z'
+datetime_end: '2025-03-15T14:35:00Z'
+total_count_yes: 78
+total_count_no: 42
+total_count_abstention: 5
+total_absent: 3
+total: 128
+majority_type: absolute
+majority_count: 65
+result_text: Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen
+parent_agenda_item: ops:agenda_item_sg_2025_015
+parent_meeting: ops:meeting_sg_2025_03_15
+actor_id:
+  global_uri: https://api.openparldata.ch/v1/bodies/265
+  label: Kantonsrat St. Gallen
+  abbreviation:
+  - value: KR
+    language: de
+datetime_created: '2025-03-15T14:30:00Z'
+datetime_modified: '2025-03-15T14:35:00Z'
+
+```
+
+
+
+
+
+
+</div>

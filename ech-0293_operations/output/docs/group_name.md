@@ -55,28 +55,6 @@ URI: [ops:group_name](https://ch.paf.link/schema/operations/group_name)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:group_name |
-| native | ops:group_name |
-
-
 
 
 ## LinkML Source

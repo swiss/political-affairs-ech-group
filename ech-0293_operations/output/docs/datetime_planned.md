@@ -58,36 +58,6 @@ URI: [mcm:datetimePlanned](https://ld.ech.ch/schema/0292/meta-common/datetimePla
 
 
 
-## Identifier and Mapping Information
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| description_de | Das geplante Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer).
- |
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:datetimePlanned |
-| native | ops:datetime_planned |
-
-
 
 
 ## LinkML Source

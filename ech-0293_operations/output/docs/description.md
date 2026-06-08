@@ -23,7 +23,6 @@ URI: [ops:description](https://ch.paf.link/schema/operations/description)
 | [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [Motion](Motion.md) | [en] A formal proposal or motion submitted during proceedings |  no  |
-| [Expression](Expression.md) |  |  no  |
 
 
 
@@ -37,7 +36,7 @@ URI: [ops:description](https://ch.paf.link/schema/operations/description)
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [Legislature](Legislature.md), [Meeting](Meeting.md), [Motion](Motion.md), [Expression](Expression.md) |
+| Domain Of | [Legislature](Legislature.md), [Meeting](Meeting.md), [Motion](Motion.md) |
 
 ### Cardinality and Requirements
 
@@ -53,28 +52,6 @@ URI: [ops:description](https://ch.paf.link/schema/operations/description)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:description |
-| native | ops:description |
-
-
 
 
 ## LinkML Source
@@ -88,7 +65,6 @@ domain_of:
 - Legislature
 - Meeting
 - Motion
-- Expression
 range: string
 
 ```

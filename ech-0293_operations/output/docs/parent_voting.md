@@ -60,28 +60,6 @@ URI: [ops:parentVoting](https://ch.paf.link/schema/operations/parentVoting)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:parentVoting |
-| native | ops:parent_voting |
-
-
 
 
 ## LinkML Source

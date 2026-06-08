@@ -70,36 +70,6 @@ URI: [mcm:dateCreated](https://ld.ech.ch/schema/0292/meta-common/dateCreated)
 
 
 
-## Identifier and Mapping Information
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| description_de | Das Datum, an dem eine Entität erstellt wurde.
- |
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:dateCreated |
-| native | ops:date_created |
-
-
 
 
 ## LinkML Source

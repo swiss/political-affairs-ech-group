@@ -59,28 +59,6 @@ URI: [ops:count](https://ch.paf.link/schema/operations/count)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:count |
-| native | ops:count |
-
-
 
 
 ## LinkML Source

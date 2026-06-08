@@ -56,28 +56,6 @@ URI: [ops:state_id](https://ch.paf.link/schema/operations/state_id)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:state_id |
-| native | ops:state_id |
-
-
 
 
 ## LinkML Source

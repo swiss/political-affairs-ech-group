@@ -1,9 +1,6 @@
----
-search:
-  boost: 10.0
----
 
-# Class: Session 
+
+## Class: Session 
 
 
 _[en] A parliamentary session that groups multiple meetings and spans a specific time period._
@@ -18,155 +15,42 @@ __
 
 
 
-URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
+
+### Attribute
+
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| body_key | 0..1 <br/> [String](String.md) | [en] Key identifying the political body or jurisdiction (e.g., BE for Bern, CHE for Switzerland). [de] Schlüssel zur Identifizierung des politischen Organs oder der Gerichtsbarkeit (z.B. BE für Bern, CHE für Schweiz).  |
+| name | * <br/> [MultilingualString](MultilingualString.md) | None |
+| number | 0..1 <br/> [String](String.md) | None |
+| sequential_number | 0..1 <br/> [Integer](Integer.md) | [en] Sequential number of the meeting, used for ordering. [de] Laufende Nummer der Sitzung, die zur Sortierung verwendet wird.  |
+| position | 0..1 <br/> [String](String.md) | None |
+| meeting_abbreviation | 0..1 <br/> [String](String.md) | None |
+| url | * <br/> [MultilingualString](MultilingualString.md) | None |
+| parent_legislature | 0..1 <br/> [String](String.md) | [en] The legislative body in which the meeting is based. [de] Der gesetzgebende Körper, auf dem die Sitzung basiert.  |
+| meetings | * <br/> [Meeting](Meeting.md) | None |
+| documents | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind. [en] List of documents (FRBR Works) linked to the entity.  |
+| local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| date_begin_actual | 0..1 <br/> [Date](Date.md) | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| datetime_begin_actual | 0..1 <br/> [Datetime](Datetime.md) | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| date_begin_planned | 0..1 <br/> [Date](Date.md) | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| datetime_begin_planned | 0..1 <br/> [Datetime](Datetime.md) | The planned start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| date_end_actual | 0..1 <br/> [Date](Date.md) | The actual end date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| datetime_end_actual | 0..1 <br/> [Datetime](Datetime.md) | The actual end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| date_end_planned | 0..1 <br/> [Date](Date.md) | The planned end date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| datetime_end_planned | 0..1 <br/> [Datetime](Datetime.md) | The planned end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
+| date_created | 0..1 <br/> [Date](Date.md) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
+| datetime_created | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
+| date_modified | 0..1 <br/> [Date](Date.md) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
+| datetime_modified | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
 
 
 
 
 
-```mermaid
- classDiagram
-    class Session
-    click Session href "../Session/"
-      HasIdentification <|-- Session
-        click HasIdentification href "../HasIdentification/"
-      IsEventWithDuration <|-- Session
-        click IsEventWithDuration href "../IsEventWithDuration/"
-      HasCreationModificationDates <|-- Session
-        click HasCreationModificationDates href "../HasCreationModificationDates/"
-      
-      Session : body_key
-        
-      Session : date_begin_actual
-        
-      Session : date_begin_planned
-        
-      Session : date_created
-        
-      Session : date_end_actual
-        
-      Session : date_end_planned
-        
-      Session : date_modified
-        
-      Session : datetime_begin_actual
-        
-      Session : datetime_begin_planned
-        
-      Session : datetime_created
-        
-      Session : datetime_end_actual
-        
-      Session : datetime_end_planned
-        
-      Session : datetime_modified
-        
-      Session : documents
-        
-          
-    
-        
-        
-        Session --> "*" Work : documents
-        click Work href "../Work/"
-    
-
-        
-      Session : global_uri
-        
-      Session : local_id
-        
-      Session : meeting_abbreviation
-        
-      Session : meetings
-        
-          
-    
-        
-        
-        Session --> "*" Meeting : meetings
-        click Meeting href "../Meeting/"
-    
-
-        
-      Session : name
-        
-          
-    
-        
-        
-        Session --> "*" MultilingualString : name
-        click MultilingualString href "../MultilingualString/"
-    
-
-        
-      Session : number
-        
-      Session : parent_legislature
-        
-      Session : position
-        
-      Session : sequential_number
-        
-      Session : url
-        
-          
-    
-        
-        
-        Session --> "*" MultilingualString : url
-        click MultilingualString href "../MultilingualString/"
-    
-
-        
-      Session : wikidata_uri
-        
-      
-```
-
-
-
-
-
-## Inheritance
-* **Session** [ [HasIdentification](HasIdentification.md) [IsEventWithDuration](IsEventWithDuration.md) [HasCreationModificationDates](HasCreationModificationDates.md)]
-
-
-## Slots
-
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [body_key](body_key.md) | 0..1 <br/> [String](String.md) | [en] Key identifying the political body or jurisdiction (e | direct |
-| [name](name.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
-| [number](number.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [sequential_number](sequential_number.md) | 0..1 <br/> [Integer](Integer.md) | [en] Sequential number of the meeting, used for ordering | direct |
-| [position](position.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [meeting_abbreviation](meeting_abbreviation.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [url](url.md) | * <br/> [MultilingualString](MultilingualString.md) |  | direct |
-| [parent_legislature](parent_legislature.md) | 0..1 <br/> [String](String.md) | [en] The legislative body in which the meeting is based | direct |
-| [meetings](meetings.md) | * <br/> [Meeting](Meeting.md) |  | direct |
-| [documents](documents.md) | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind | direct |
-| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | Local identifier | [HasIdentification](HasIdentification.md) |
-| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity | [HasIdentification](HasIdentification.md) |
-| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e | [HasIdentification](HasIdentification.md) |
-| [date_begin_actual](date_begin_actual.md) | 0..1 <br/> [Date](Date.md) | The actual start date of an event or occurrence with time duration | [IsEventWithDuration](IsEventWithDuration.md) |
-| [datetime_begin_actual](datetime_begin_actual.md) | 0..1 <br/> [Datetime](Datetime.md) | The actual start date and time of an event or occurrence with time duration | [IsEventWithDuration](IsEventWithDuration.md) |
-| [date_begin_planned](date_begin_planned.md) | 0..1 <br/> [Date](Date.md) | The planned start date of an event or occurrence with time duration | [IsEventWithDuration](IsEventWithDuration.md) |
-| [datetime_begin_planned](datetime_begin_planned.md) | 0..1 <br/> [Datetime](Datetime.md) | The planned start date and time of an event or occurrence with time duration | [IsEventWithDuration](IsEventWithDuration.md) |
-| [date_end_actual](date_end_actual.md) | 0..1 <br/> [Date](Date.md) | The actual end date of an event or occurrence with time duration | [IsEventWithDuration](IsEventWithDuration.md) |
-| [datetime_end_actual](datetime_end_actual.md) | 0..1 <br/> [Datetime](Datetime.md) | The actual end date and time of an event or occurrence with time duration | [IsEventWithDuration](IsEventWithDuration.md) |
-| [date_end_planned](date_end_planned.md) | 0..1 <br/> [Date](Date.md) | The planned end date of an event or occurrence with time duration | [IsEventWithDuration](IsEventWithDuration.md) |
-| [datetime_end_planned](datetime_end_planned.md) | 0..1 <br/> [Datetime](Datetime.md) | The planned end date and time of an event or occurrence with time duration | [IsEventWithDuration](IsEventWithDuration.md) |
-| [date_created](date_created.md) | 0..1 <br/> [Date](Date.md) | The date when an entity was created | [HasCreationModificationDates](HasCreationModificationDates.md) |
-| [datetime_created](datetime_created.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was created | [HasCreationModificationDates](HasCreationModificationDates.md) |
-| [date_modified](date_modified.md) | 0..1 <br/> [Date](Date.md) | The date when an entity was last modified | [HasCreationModificationDates](HasCreationModificationDates.md) |
-| [datetime_modified](datetime_modified.md) | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was last modified | [HasCreationModificationDates](HasCreationModificationDates.md) |
-
-
-
-
-
-## Usages
+### Usages
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
@@ -183,510 +67,94 @@ URI: [ops:Session](https://ch.paf.link/schema/operations/Session)
 
 
 
-## Identifier and Mapping Information
 
 
+### Examples
+#### Example: Session-session_session_gl_landrat_2025_02_26
 
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:Session |
-| native | ops:Session |
-
-
-
-
-
-
-## LinkML Source
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
 ```yaml
-name: Session
-description: '[en] A parliamentary session that groups multiple meetings and spans
-  a specific time period.
-
-  [de] Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen
-  bestimmten Zeitraum erstreckt.
-
-  '
-from_schema: https://ch.paf.link/schema/operations
-mixins:
-- HasIdentification
-- IsEventWithDuration
-- HasCreationModificationDates
-slots:
-- body_key
-- name
-- number
-- sequential_number
-- position
-- meeting_abbreviation
-- url
-- parent_legislature
-- meetings
-- documents
+global_uri: ops:session_gl_landrat_2025_02_26
+body_key: GL
+name:
+- text: Sitzung des Landrates vom 26.02.2025
+  language: de
+url:
+- text: https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239
+  language: de
+date_begin_planned: '2025-02-26'
+date_end_planned: '2025-02-26'
+datetime_modified: '2025-04-25T13:40:34Z'
+datetime_created: '2025-04-23T22:58:39Z'
 
 ```
-</details>
+#### Example: Session-session_session_5207
 
-### Induced
-
-<details>
 ```yaml
-name: Session
-description: '[en] A parliamentary session that groups multiple meetings and spans
-  a specific time period.
-
-  [de] Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen
-  bestimmten Zeitraum erstreckt.
-
-  '
-from_schema: https://ch.paf.link/schema/operations
-mixins:
-- HasIdentification
-- IsEventWithDuration
-- HasCreationModificationDates
-attributes:
-  body_key:
-    name: body_key
-    description: '[en] Key identifying the political body or jurisdiction (e.g., BE
-      for Bern, CHE for Switzerland).
-
-      [de] Schlüssel zur Identifizierung des politischen Organs oder der Gerichtsbarkeit
-      (z.B. BE für Bern, CHE für Schweiz).
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Session
-    domain_of:
-    - Session
-    - Meeting
-    range: string
-  name:
-    name: name
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Session
-    domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    range: MultilingualString
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  number:
-    name: number
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Session
-    domain_of:
-    - Session
-    - Meeting
-    range: string
-  sequential_number:
-    name: sequential_number
-    description: '[en] Sequential number of the meeting, used for ordering.
-
-      [de] Laufende Nummer der Sitzung, die zur Sortierung verwendet wird.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Session
-    domain_of:
-    - Session
-    - Meeting
-    range: integer
-  position:
-    name: position
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Session
-    domain_of:
-    - Session
-    - Meeting
-    range: string
-  meeting_abbreviation:
-    name: meeting_abbreviation
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Session
-    domain_of:
-    - Session
-    - Meeting
-    range: string
-  url:
-    name: url
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Session
-    domain_of:
-    - Session
-    - Meeting
-    - AgendaItem
-    - Media
-    - Manifestation
-    range: MultilingualString
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  parent_legislature:
-    name: parent_legislature
-    description: '[en] The legislative body in which the meeting is based.
-
-      [de] Der gesetzgebende Körper, auf dem die Sitzung basiert.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: Session
-    domain_of:
-    - Session
-    - Meeting
-    range: string
-  meetings:
-    name: meetings
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: ops:meeting
-    owner: Session
-    domain_of:
-    - Container
-    - Session
-    range: Meeting
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  documents:
-    name: documents
-    description: '[de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft
-      sind.
-
-      [en] List of documents (FRBR Works) linked to the entity.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: meta:documents
-    owner: Session
-    domain_of:
-    - Legislature
-    - Session
-    - Meeting
-    - AgendaItem
-    - Protocol
-    - Resolution
-    - Voting
-    - Election
-    - Speech
-    - Motion
-    range: Work
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-  local_id:
-    name: local_id
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
-
-          '
-    description: 'Local identifier. For example, a UUID from the council information
-      system.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:localId
-    owner: Session
-    domain_of:
-    - HasIdentification
-    range: string
-  global_uri:
-    name: global_uri
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Eine eindeutige, global gültige URI für die Entität.
-
-          '
-    description: 'A unique, globally valid URI for the entity.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:globalURI
-    identifier: true
-    owner: Session
-    domain_of:
-    - HasIdentification
-    range: uriorcurie
-    required: true
-  wikidata_uri:
-    name: wikidata_uri
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-          für die Schweiz.
-
-          '
-    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
-      for Switzerland.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:wikidataUri
-    owner: Session
-    domain_of:
-    - HasIdentification
-    range: uriorcurie
-  date_begin_actual:
-    name: date_begin_actual
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit
-          Zeitdauer.
-
-          '
-    description: 'The actual start date of an event or occurrence with time duration.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:dateBeginActual
-    owner: Session
-    domain_of:
-    - IsEventWithDuration
-    range: date
-  datetime_begin_actual:
-    name: datetime_begin_actual
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder
-          Vorkommnissen mit Zeitdauer.
-
-          '
-    description: 'The actual start date and time of an event or occurrence with time
-      duration.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:datetimeBeginActual
-    owner: Session
-    domain_of:
-    - IsEventWithDuration
-    range: datetime
-  date_begin_planned:
-    name: date_begin_planned
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
-
-          '
-    description: 'The planned start date of an event or occurrence with time duration.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:dateBeginPlanned
-    owner: Session
-    domain_of:
-    - IsEventWithDuration
-    range: date
-  datetime_begin_planned:
-    name: datetime_begin_planned
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
-          mit Zeitdauer.
-
-          '
-    description: 'The planned start date and time of an event or occurrence with time
-      duration.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:datetimeBeginPlanned
-    owner: Session
-    domain_of:
-    - IsEventWithDuration
-    range: datetime
-  date_end_actual:
-    name: date_end_actual
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das tatsächliche Enddatum eines Ereignisses oder Vorkommnissen mit
-          Zeitdauer.
-
-          '
-    description: 'The actual end date of an event or occurrence with time duration.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:dateEndActual
-    owner: Session
-    domain_of:
-    - IsEventWithDuration
-    range: date
-  datetime_end_actual:
-    name: datetime_end_actual
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
-          mit Zeitdauer.
-
-          '
-    description: 'The actual end date and time of an event or occurrence with time
-      duration.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:datetimeEndActual
-    owner: Session
-    domain_of:
-    - IsEventWithDuration
-    range: datetime
-  date_end_planned:
-    name: date_end_planned
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das geplante Enddatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
-
-          '
-    description: 'The planned end date of an event or occurrence with time duration.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:dateEndPlanned
-    owner: Session
-    domain_of:
-    - IsEventWithDuration
-    range: date
-  datetime_end_planned:
-    name: datetime_end_planned
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
-          mit Zeitdauer.
-
-          '
-    description: 'The planned end date and time of an event or occurrence with time
-      duration.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:datetimeEndPlanned
-    owner: Session
-    domain_of:
-    - IsEventWithDuration
-    range: datetime
-  date_created:
-    name: date_created
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das Datum, an dem eine Entität erstellt wurde.
-
-          '
-    description: 'The date when an entity was created.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:dateCreated
-    owner: Session
-    domain_of:
-    - HasCreationModificationDates
-    range: date
-  datetime_created:
-    name: datetime_created
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
-
-          '
-    description: 'The date and time when an entity was created.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:datetimeCreated
-    owner: Session
-    domain_of:
-    - HasCreationModificationDates
-    range: datetime
-  date_modified:
-    name: date_modified
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
-
-          '
-    description: 'The date when an entity was last modified.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:dateModified
-    owner: Session
-    domain_of:
-    - HasCreationModificationDates
-    range: date
-  datetime_modified:
-    name: datetime_modified
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.
-
-          '
-    description: 'The date and time when an entity was last modified.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:datetimeModified
-    owner: Session
-    domain_of:
-    - HasCreationModificationDates
-    range: datetime
+global_uri: ops:session_5207
+body_key: CHE
+name:
+- text: Frühjahrssession 2025
+  language: de
+- text: Session de printemps 2025
+  language: fr
+- text: Sessione primaverile 2025
+  language: it
+url:
+- text: https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025
+  language: de
+- text: https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025
+  language: fr
+- text: https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025
+  language: it
+date_begin_planned: '2025-03-03'
+date_end_planned: '2025-03-21'
+parent_legislature: ops:legislature_51
+datetime_modified: '2025-04-24T00:19:37Z'
+datetime_created: '2025-03-20T14:27:09Z'
 
 ```
-</details></div>
+#### Example: Session-session_session_gl_landsgemeinde_2025_05_04
+
+```yaml
+global_uri: ops:session_gl_landsgemeinde_2025_05_04
+body_key: GL
+name:
+- text: Landsgemeinde vom 04. Mai 2025
+  language: de
+url:
+- text: https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04
+  language: de
+date_begin_planned: '2025-05-04'
+date_end_planned: '2025-05-04'
+datetime_modified: '2025-04-25T13:40:34Z'
+datetime_created: '2025-04-23T22:58:39Z'
+
+```
+#### Example: Session-session_session_be_summer_2025
+
+```yaml
+global_uri: ops:session_be_summer_2025
+body_key: BE
+name:
+- text: Sommersession 2025
+  language: de
+- text: Session d'été 2025
+  language: fr
+url:
+- text: https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
+  language: de
+- text: https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
+  language: fr
+date_begin_planned: '2025-06-02'
+date_end_planned: '2025-06-12'
+datetime_modified: '2025-05-19T01:06:44Z'
+datetime_created: '2025-04-25T11:10:24Z'
+
+```
+
+
+
+
+
+
+</div>

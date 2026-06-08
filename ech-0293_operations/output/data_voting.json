@@ -1,0 +1,180 @@
+{
+  "global_uri": "ops:voting_examples_2025",
+  "votings": [
+    {
+      "global_uri": "ops:voting_sg_2025_001",
+      "datetime_begin": "2025-03-15T14:30:00+00:00",
+      "datetime_end": "2025-03-15T14:35:00+00:00",
+      "voting_type": "final_vote",
+      "voting_title": [
+        {
+          "text": "Schlussabstimmung Energiegesetz",
+          "language": "de"
+        }
+      ],
+      "total_count_yes": 78,
+      "total_count_no": 42,
+      "total_count_abstention": 5,
+      "total_absent": 3,
+      "total": 128,
+      "majority_type": "absolute",
+      "majority_count": 65,
+      "result_text": "Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen",
+      "parent_meeting": "ops:meeting_sg_2025_03_15",
+      "parent_agenda_item": "ops:agenda_item_sg_2025_015",
+      "actor_id": {
+        "global_uri": "https://api.openparldata.ch/v1/bodies/265",
+        "label": "Kantonsrat St. Gallen",
+        "abbreviation": [
+          {
+            "value": "KR",
+            "language": "de"
+          }
+        ]
+      },
+      "datetime_created": "2025-03-15T14:30:00+00:00",
+      "datetime_modified": "2025-03-15T14:35:00+00:00"
+    },
+    {
+      "global_uri": "ops:voting_be_2025_042",
+      "datetime_begin": "2025-06-05T10:15:00+00:00",
+      "datetime_end": "2025-06-05T10:17:00+00:00",
+      "voting_type": "preliminary_vote",
+      "voting_title": [
+        {
+          "text": "Änderungsantrag Art. 5 Abs. 2",
+          "language": "de"
+        },
+        {
+          "text": "Proposition de modification art. 5 al. 2",
+          "language": "fr"
+        }
+      ],
+      "total_count_yes": 45,
+      "total_count_no": 87,
+      "total_count_abstention": 8,
+      "total_absent": 10,
+      "total": 150,
+      "majority_type": "absolute",
+      "majority_count": 76,
+      "result_text": "Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt",
+      "parent_meeting": "ops:meeting_be_2025_06_05",
+      "parent_agenda_item": "ops:agenda_item_be_2025_042",
+      "actor_id": {
+        "global_uri": "https://api.openparldata.ch/v1/bodies/253",
+        "label": "Grosser Rat Bern",
+        "abbreviation": [
+          {
+            "value": "GR",
+            "language": "de"
+          }
+        ]
+      },
+      "datetime_created": "2025-06-05T10:15:00+00:00",
+      "datetime_modified": "2025-06-05T10:15:00+00:00"
+    },
+    {
+      "global_uri": "ops:voting_zh_budget_2026",
+      "datetime_begin": "2025-11-20T16:45:00+00:00",
+      "datetime_end": "2025-11-20T16:50:00+00:00",
+      "voting_type": "final_vote",
+      "voting_title": [
+        {
+          "text": "Budgetbeschluss 2026",
+          "language": "de"
+        }
+      ],
+      "total_count_yes": 105,
+      "total_count_no": 70,
+      "total_count_abstention": 5,
+      "total_absent": 0,
+      "total": 180,
+      "majority_type": "absolute",
+      "majority_count": 91,
+      "result_text": "Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen",
+      "parent_meeting": "ops:meeting_zh_2025_11_20",
+      "parent_agenda_item": "ops:agenda_item_zh_budget_2026",
+      "actor_id": {
+        "global_uri": "https://api.openparldata.ch/v1/bodies/275",
+        "label": "Kantonsrat Zürich",
+        "abbreviation": [
+          {
+            "value": "KR",
+            "language": "de"
+          }
+        ]
+      },
+      "datetime_created": "2025-11-20T16:45:00+00:00",
+      "datetime_modified": "2025-11-20T16:50:00+00:00"
+    }
+  ],
+  "individual_votes": [
+    {
+      "global_uri": "ops:vote_sg_2025_001_person_123",
+      "parent_voting": "ops:voting_sg_2025_001",
+      "actor_id": {
+        "global_uri": "https://api.openparldata.ch/v1/persons/27235",
+        "label": "Paul Schlegel"
+      },
+      "seat_nr": "1",
+      "individual_vote_type": "yes",
+      "datetime_created": "2025-03-15T14:30:00+00:00"
+    },
+    {
+      "global_uri": "ops:vote_sg_2025_001_person_456",
+      "parent_voting": "ops:voting_sg_2025_001",
+      "actor_id": {
+        "global_uri": "https://api.openparldata.ch/v1/persons/27234",
+        "label": "Andreas Eggenberger"
+      },
+      "seat_nr": "2",
+      "individual_vote_type": "no",
+      "datetime_created": "2025-03-15T14:30:00+00:00"
+    },
+    {
+      "global_uri": "ops:vote_sg_2025_001_person_789",
+      "parent_voting": "ops:voting_sg_2025_001",
+      "actor_id": {
+        "global_uri": "https://api.openparldata.ch/v1/persons/27233",
+        "label": "Thomas Ammann"
+      },
+      "seat_nr": "3",
+      "individual_vote_type": "abstention",
+      "datetime_created": "2025-03-15T14:30:00+00:00"
+    },
+    {
+      "global_uri": "ops:vote_sg_2025_001_person_321",
+      "parent_voting": "ops:voting_sg_2025_001",
+      "actor_id": {
+        "global_uri": "https://api.openparldata.ch/v1/persons/25177",
+        "label": "Ruedi Thomann"
+      },
+      "seat_nr": "4",
+      "individual_vote_type": "not_voted",
+      "datetime_created": "2025-03-15T14:30:00+00:00"
+    },
+    {
+      "global_uri": "ops:vote_zh_budget_2026_person_101",
+      "parent_voting": "ops:voting_zh_budget_2026",
+      "actor_id": {
+        "global_uri": "https://api.openparldata.ch/v1/persons/27237",
+        "label": "Thomas Wolf"
+      },
+      "seat_nr": "1",
+      "individual_vote_type": "yes",
+      "datetime_created": "2025-11-20T16:45:00+00:00"
+    },
+    {
+      "global_uri": "ops:vote_zh_budget_2026_person_102",
+      "parent_voting": "ops:voting_zh_budget_2026",
+      "actor_id": {
+        "global_uri": "https://api.openparldata.ch/v1/persons/25208",
+        "label": "Jean-Daniel Strub"
+      },
+      "seat_nr": "2",
+      "individual_vote_type": "no",
+      "datetime_created": "2025-11-20T16:45:00+00:00"
+    }
+  ],
+  "@type": "Container"
+}

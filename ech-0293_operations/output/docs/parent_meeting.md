@@ -65,28 +65,6 @@ URI: [ops:parent_meeting](https://ch.paf.link/schema/operations/parent_meeting)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:parent_meeting |
-| native | ops:parent_meeting |
-
-
 
 
 ## LinkML Source

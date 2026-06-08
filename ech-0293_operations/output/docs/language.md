@@ -30,7 +30,6 @@ URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
 | [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
 | [MultilingualString](MultilingualString.md) | [en] A string that can contain text in multiple languages |  yes  |
 | [MultilingualValue](MultilingualValue.md) | A multilingual string with language specification |  no  |
-| [Expression](Expression.md) |  |  no  |
 
 
 
@@ -44,7 +43,7 @@ URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [Speech](Speech.md), [MultilingualString](MultilingualString.md), [MultilingualValue](MultilingualValue.md), [Expression](Expression.md) |
+| Domain Of | [Speech](Speech.md), [MultilingualString](MultilingualString.md), [MultilingualValue](MultilingualValue.md) |
 | Slot URI | [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language) |
 
 ### Cardinality and Requirements
@@ -66,36 +65,6 @@ URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
 
 
 
-
-
-## Identifier and Mapping Information
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| description_de | Sprachcode im ISO 639-1 Format (zwei Kleinbuchstaben, z.B. "de", "fr", "it", "en").
- |
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | mcm:language |
-| native | ops:language |
 
 
 
@@ -123,7 +92,6 @@ domain_of:
 - Speech
 - MultilingualString
 - MultilingualValue
-- Expression
 range: string
 pattern: ^[a-z]{2}$
 

@@ -59,28 +59,6 @@ URI: [ops:group_id](https://ch.paf.link/schema/operations/group_id)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:group_id |
-| native | ops:group_id |
-
-
 
 
 ## LinkML Source

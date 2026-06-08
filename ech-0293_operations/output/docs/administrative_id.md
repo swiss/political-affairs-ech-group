@@ -60,28 +60,6 @@ URI: [ops:administrative_id](https://ch.paf.link/schema/operations/administrativ
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:administrative_id |
-| native | ops:administrative_id |
-
-
 
 
 ## LinkML Source

@@ -108,10 +108,27 @@ classes:
         Phasen­schritt einer Konsultation). Kombiniert Identifikations- und
         Zeitdauer-Slots und ergänzt einen freien Bemerkungs-Slot. Konkrete
         Step-Klassen ergänzen ihre eigenen typ-spezifischen Slots.
-    mixins:
-      - HasIdentification
-      - IsEventWithDuration
+    # NOTE: the identification and event-duration slots are listed directly
+    # rather than pulled in via `mixins: [HasIdentification, IsEventWithDuration]`.
+    # LinkML (1.9.x) does not resolve mixins-of-a-mixin transitively, so a
+    # consumer doing `mixins: [IsProcessStep]` would otherwise only inherit
+    # `remark`. Listing the slots here keeps a single `mixins: [IsProcessStep]`
+    # working for ConsultationStep (ech-0297) and the affair steps (ech-0295).
     slots:
+      # from HasIdentification
+      - local_id
+      - global_uri
+      - wikidata_uri
+      # from IsEventWithDuration
+      - date_begin_actual
+      - datetime_begin_actual
+      - date_begin_planned
+      - datetime_begin_planned
+      - date_end_actual
+      - datetime_end_actual
+      - date_end_planned
+      - datetime_end_planned
+      # process-step specific
       - remark
 
   MultilingualValue:

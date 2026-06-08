@@ -59,27 +59,12 @@ URI: [ops:majority_type](https://ch.paf.link/schema/operations/majority_type)
 
 
 
+## Examples
 
-## Identifier and Mapping Information
+| Value |
+| --- |
+| absolute |
 
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:majority_type |
-| native | ops:majority_type |
 
 
 
@@ -94,6 +79,8 @@ description: '[en] Type of majority required for the vote (absolute, two-thirds,
   [de] Art der für die Abstimmung erforderlichen Mehrheit (absolut, Zweidrittel usw.).
 
   '
+examples:
+- value: absolute
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:

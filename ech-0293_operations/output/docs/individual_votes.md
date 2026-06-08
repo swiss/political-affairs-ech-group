@@ -57,28 +57,6 @@ URI: [ops:individualVote](https://ch.paf.link/schema/operations/individualVote)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:individualVote |
-| native | ops:individual_votes |
-
-
 
 
 ## LinkML Source

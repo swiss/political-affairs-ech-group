@@ -37,28 +37,6 @@ URI: [shex:iri](http://www.w3.org/ns/shex#iri)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | shex:iri |
-| native | ops:objectidentifier |
-
-
 
 
 </div>

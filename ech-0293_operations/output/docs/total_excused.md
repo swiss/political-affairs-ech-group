@@ -55,28 +55,6 @@ URI: [ops:total_excused](https://ch.paf.link/schema/operations/total_excused)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:total_excused |
-| native | ops:total_excused |
-
-
 
 
 ## LinkML Source

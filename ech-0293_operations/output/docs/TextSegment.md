@@ -1,9 +1,6 @@
----
-search:
-  boost: 10.0
----
 
-# Class: TextSegment 
+
+## Class: TextSegment 
 
 
 _[en] A text segment such as cross-references or subtitles in meeting protocols._
@@ -18,52 +15,21 @@ __
 
 
 
-URI: [ops:TextSegment](https://ch.paf.link/schema/operations/TextSegment)
+
+### Attribute
+
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| text | 1 <br/> [String](String.md) | None |
+| local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 
 
 
 
 
-```mermaid
- classDiagram
-    class TextSegment
-    click TextSegment href "../TextSegment/"
-      HasIdentification <|-- TextSegment
-        click HasIdentification href "../HasIdentification/"
-      
-      TextSegment : global_uri
-        
-      TextSegment : local_id
-        
-      TextSegment : text
-        
-      TextSegment : wikidata_uri
-        
-      
-```
-
-
-
-
-
-## Inheritance
-* **TextSegment** [ [HasIdentification](HasIdentification.md)]
-
-
-## Slots
-
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [text](text.md) | 1 <br/> [String](String.md) |  | direct |
-| [local_id](local_id.md) | 0..1 <br/> [String](String.md) | Local identifier | [HasIdentification](HasIdentification.md) |
-| [global_uri](global_uri.md) | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity | [HasIdentification](HasIdentification.md) |
-| [wikidata_uri](wikidata_uri.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e | [HasIdentification](HasIdentification.md) |
-
-
-
-
-
-## Usages
+### Usages
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
@@ -80,141 +46,11 @@ URI: [ops:TextSegment](https://ch.paf.link/schema/operations/TextSegment)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:TextSegment |
-| native | ops:TextSegment |
 
 
 
 
 
 
-## LinkML Source
 
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: TextSegment
-description: '[en] A text segment such as cross-references or subtitles in meeting
-  protocols.
-
-  [de] Ein Textsegment wie Querverweise oder Zwischentitel in Sitzungsprotokollen.
-
-  '
-from_schema: https://ch.paf.link/schema/operations
-mixins:
-- HasIdentification
-slots:
-- text
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: TextSegment
-description: '[en] A text segment such as cross-references or subtitles in meeting
-  protocols.
-
-  [de] Ein Textsegment wie Querverweise oder Zwischentitel in Sitzungsprotokollen.
-
-  '
-from_schema: https://ch.paf.link/schema/operations
-mixins:
-- HasIdentification
-attributes:
-  text:
-    name: text
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: TextSegment
-    domain_of:
-    - Speech
-    - TextSegment
-    - MultilingualString
-    range: string
-    required: true
-  local_id:
-    name: local_id
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
-
-          '
-    description: 'Local identifier. For example, a UUID from the council information
-      system.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:localId
-    owner: TextSegment
-    domain_of:
-    - HasIdentification
-    range: string
-  global_uri:
-    name: global_uri
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Eine eindeutige, global gültige URI für die Entität.
-
-          '
-    description: 'A unique, globally valid URI for the entity.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:globalURI
-    identifier: true
-    owner: TextSegment
-    domain_of:
-    - HasIdentification
-    range: uriorcurie
-    required: true
-  wikidata_uri:
-    name: wikidata_uri
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
-          für die Schweiz.
-
-          '
-    description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
-      for Switzerland.
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:wikidataUri
-    owner: TextSegment
-    domain_of:
-    - HasIdentification
-    range: uriorcurie
-
-```
-</details></div>
+</div>

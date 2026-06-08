@@ -58,27 +58,12 @@ URI: [ops:text_format](https://ch.paf.link/schema/operations/text_format)
 
 
 
+## Examples
 
-## Identifier and Mapping Information
+| Value |
+| --- |
+| html |
 
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:text_format |
-| native | ops:text_format |
 
 
 
@@ -93,6 +78,8 @@ description: '[en] Format of text (text, html, html_with_timestamps)
   [de] Format des Textes (text, html, html_with_timestamps)
 
   '
+examples:
+- value: html
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:

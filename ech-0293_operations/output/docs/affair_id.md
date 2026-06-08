@@ -62,28 +62,6 @@ URI: [ops:affair_id](https://ch.paf.link/schema/operations/affair_id)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:affair_id |
-| native | ops:affair_id |
-
-
 
 
 ## LinkML Source

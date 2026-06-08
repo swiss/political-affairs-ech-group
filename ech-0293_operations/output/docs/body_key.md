@@ -60,28 +60,6 @@ URI: [ops:body_key](https://ch.paf.link/schema/operations/body_key)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:body_key |
-| native | ops:body_key |
-
-
 
 
 ## LinkML Source

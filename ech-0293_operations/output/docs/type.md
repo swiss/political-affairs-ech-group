@@ -40,28 +40,6 @@ URI: [ops:type](https://ch.paf.link/schema/operations/type)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:type |
-| native | ops:type |
-
-
 
 
 ## LinkML Source

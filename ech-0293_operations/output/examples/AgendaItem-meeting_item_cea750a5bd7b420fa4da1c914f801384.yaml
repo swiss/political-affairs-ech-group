@@ -1,0 +1,16 @@
+global_uri: ops:cea750a5bd7b420fa4da1c914f801384
+parent_meeting: ops:meeting_bern_2022_03_17
+agenda_item_type: item
+datetime_begin_planned: '2022-03-17T17:00:00Z'
+agenda_item_position: 29
+agenda_item_number: '8'
+agenda_item_title:
+- text: 'Interpellation Fraktion GB/JA! (Katharina Gallizzi, GB): Welche Konsequenzen
+    haben die Klimaziele für das Gasnetz in Bern?'
+  language: de
+affair_id: affairs:2020.SR.000007
+url:
+- text: https://stadtrat.bern.ch/de/sitzungen/detail.php?gid=000d6cf5f0bc4d89a5171e0123cfbff5#cea750a5bd7b420fa4da1c914f801384
+  language: de
+datetime_created: '2025-01-17T21:25:52Z'
+datetime_modified: '2025-01-17T21:25:52Z'

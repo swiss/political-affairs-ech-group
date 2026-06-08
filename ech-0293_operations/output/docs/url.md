@@ -24,7 +24,6 @@ URI: [ops:url](https://ch.paf.link/schema/operations/url)
 | [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
 | [AgendaItem](AgendaItem.md) | [en] An agenda item of a meeting |  no  |
 | [Media](Media.md) | [en] Media files or documents (including protocols in PDF/HTML/WORD or links ... |  no  |
-| [Manifestation](Manifestation.md) |  |  no  |
 | [ProtocolItem](ProtocolItem.md) | [en] An agenda item as actually recorded in the protocol |  no  |
 
 
@@ -39,7 +38,7 @@ URI: [ops:url](https://ch.paf.link/schema/operations/url)
 | Property | Value |
 | --- | --- |
 | Range | [MultilingualString](MultilingualString.md) |
-| Domain Of | [Session](Session.md), [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Media](Media.md), [Manifestation](Manifestation.md) |
+| Domain Of | [Session](Session.md), [Meeting](Meeting.md), [AgendaItem](AgendaItem.md), [Media](Media.md) |
 
 ### Cardinality and Requirements
 
@@ -56,28 +55,6 @@ URI: [ops:url](https://ch.paf.link/schema/operations/url)
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:url |
-| native | ops:url |
-
-
 
 
 ## LinkML Source
@@ -92,7 +69,6 @@ domain_of:
 - Meeting
 - AgendaItem
 - Media
-- Manifestation
 range: MultilingualString
 multivalued: true
 inlined: true

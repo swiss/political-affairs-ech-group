@@ -1,9 +1,6 @@
----
-search:
-  boost: 10.0
----
 
-# Class: MultilingualString 
+
+## Class: MultilingualString 
 
 
 _[en] A string that can contain text in multiple languages._
@@ -18,40 +15,19 @@ __
 
 
 
-URI: [ops:MultilingualString](https://ch.paf.link/schema/operations/MultilingualString)
+
+### Attribute
+
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| text | 1 <br/> [String](String.md) | None |
+| language | 1 <br/> [String](String.md) | Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en").  |
 
 
 
 
 
-```mermaid
- classDiagram
-    class MultilingualString
-    click MultilingualString href "../MultilingualString/"
-      MultilingualString : language
-        
-      MultilingualString : text
-        
-      
-```
-
-
-
-
-<!-- no inheritance hierarchy -->
-
-## Slots
-
-| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- |
-| [text](text.md) | 1 <br/> [String](String.md) |  | direct |
-| [language](language.md) | 1 <br/> [String](String.md) | Language code in ISO 639-1 format (two lowercase letters, e | direct |
-
-
-
-
-
-## Usages
+### Usages
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
@@ -69,7 +45,6 @@ URI: [ops:MultilingualString](https://ch.paf.link/schema/operations/Multilingual
 | [Voting](Voting.md) | [voting_title](voting_title.md) | range | [MultilingualString](MultilingualString.md) |
 | [IndividualAttendance](IndividualAttendance.md) | [reason](reason.md) | range | [MultilingualString](MultilingualString.md) |
 | [Media](Media.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |
-| [Manifestation](Manifestation.md) | [url](url.md) | range | [MultilingualString](MultilingualString.md) |
 
 
 
@@ -82,110 +57,11 @@ URI: [ops:MultilingualString](https://ch.paf.link/schema/operations/Multilingual
 
 
 
-## Identifier and Mapping Information
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ch.paf.link/schema/operations
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | ops:MultilingualString |
-| native | ops:MultilingualString |
 
 
 
 
 
 
-## LinkML Source
 
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: MultilingualString
-description: '[en] A string that can contain text in multiple languages.
-
-  [de] Ein String, der Text in mehreren Sprachen enthalten kann.
-
-  '
-from_schema: https://ch.paf.link/schema/operations
-slots:
-- text
-- language
-slot_usage:
-  language:
-    name: language
-    required: true
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: MultilingualString
-description: '[en] A string that can contain text in multiple languages.
-
-  [de] Ein String, der Text in mehreren Sprachen enthalten kann.
-
-  '
-from_schema: https://ch.paf.link/schema/operations
-slot_usage:
-  language:
-    name: language
-    required: true
-attributes:
-  text:
-    name: text
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    owner: MultilingualString
-    domain_of:
-    - Speech
-    - TextSegment
-    - MultilingualString
-    range: string
-    required: true
-  language:
-    name: language
-    annotations:
-      description_de:
-        tag: description_de
-        value: 'Sprachcode im ISO 639-1 Format (zwei Kleinbuchstaben, z.B. "de", "fr",
-          "it", "en").
-
-          '
-    description: 'Language code in ISO 639-1 format (two lowercase letters, e.g. "de",
-      "fr", "it", "en").
-
-      '
-    from_schema: https://ch.paf.link/schema/operations
-    rank: 1000
-    slot_uri: mcm:language
-    owner: MultilingualString
-    domain_of:
-    - Speech
-    - MultilingualString
-    - MultilingualValue
-    - Expression
-    range: string
-    required: true
-    pattern: ^[a-z]{2}$
-
-```
-</details></div>
+</div>

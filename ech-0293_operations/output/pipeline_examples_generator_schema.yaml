@@ -1,0 +1,1256 @@
+id: https://ch.paf.link/schema/operations
+name: operations
+description: '[en] Meeting Schema for various legislative bodies
+
+  [de] Sitzungs Schema für verschiedene gesetzgebende Körperschaften
+
+  '
+prefixes:
+  linkml: https://w3id.org/linkml/
+  ops: https://ch.paf.link/schema/operations/
+  dcterms: http://purl.org/dc/terms/
+  actors: https://ld.ech.ch/schema/0294/actors/
+  affairs: https://ld.ech.ch/schema/0295/affairs/
+  parl: https://ld.ech.ch/schema/0293/operations/
+imports:
+- linkml:types
+- ../../ech-0292_meta/input/schema_common
+- ../../ech-0292_meta/input/schema
+default_prefix: ops
+default_range: string
+classes:
+  Container:
+    tree_root: true
+    mixins:
+    - HasIdentification
+    slots:
+    - legislatures
+    - sessions
+    - meetings
+    - agenda_items
+    - protocols
+    - votings
+    - elections
+    - individual_votes
+    - attendances
+    - individual_attendances
+    - speeches
+    - resolutions
+  Legislature:
+    description: '[en] Term of office of a parliament as a legislative assembly. Usually lasts four years.
+
+      [de] Amtsdauer eines Parlaments als gesetzgebender Versammlung. Dauert in der Regel vier Jahre.
+
+      '
+    mixins:
+    - HasIdentification
+    - IsEventWithDuration
+    - HasCreationModificationDates
+    slots:
+    - administrative_id
+    - name
+    - description
+    - landing_page
+    - actor_id
+    - documents
+    slot_usage:
+      actor_id:
+        range: GroupReference
+        inlined: true
+        description: '[en] Reference to the acting body/organ (lightweight snapshot at time of linking).
+
+          [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).
+
+          '
+  Session:
+    description: '[en] A parliamentary session that groups multiple meetings and spans a specific time period.
+
+      [de] Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen bestimmten Zeitraum erstreckt.
+
+      '
+    mixins:
+    - HasIdentification
+    - IsEventWithDuration
+    - HasCreationModificationDates
+    slots:
+    - body_key
+    - name
+    - number
+    - sequential_number
+    - position
+    - meeting_abbreviation
+    - url
+    - parent_legislature
+    - meetings
+    - documents
+  Meeting:
+    description: '[en] A general meeting class used for Sessions, Comittee Meetings, individual session Sittings and other
+      various Meetings.
+
+      [de] Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessionssitzung und andere verschiedene
+      Versammlungen verwendet wird.
+
+      '
+    mixins:
+    - HasIdentification
+    - IsEventWithDuration
+    - HasCreationModificationDates
+    slots:
+    - body_key
+    - meeting_type
+    - administrative_id
+    - name
+    - url
+    - group_name
+    - group_id
+    - number
+    - landing_page
+    - sequential_number
+    - position
+    - meeting_abbreviation
+    - actor_name
+    - actor_id
+    - state
+    - state_name
+    - description
+    - location
+    - parent_meeting
+    - parent_legislature
+    - documents
+    - protocol_ref
+    slot_usage:
+      actor_id:
+        range: GroupReference
+        inlined: true
+        description: '[en] Reference to the acting body/organ (lightweight snapshot at time of linking).
+
+          [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).
+
+          '
+  AgendaItem:
+    description: '[en] An agenda item of a meeting.
+
+      [de] Ein Traktandum einer Sitzung.
+
+      '
+    mixins:
+    - HasIdentification
+    - IsEventWithDuration
+    - HasCreationModificationDates
+    slots:
+    - parent_meeting
+    - agenda_item_type
+    - agenda_item_number
+    - agenda_item_position
+    - leading_actor_id
+    - speaking_actor_id
+    - agenda_item_title
+    - affair_id
+    - agenda_item_description
+    - state_id
+    - state_name
+    - landing_page
+    - url
+    - agenda_item_category
+    - parent_agenda_item
+    - has_resolution
+    - documents
+  Protocol:
+    description: "[en] The minutes of a meeting, recorded after the meeting. A wrapper container\n     bundling the actually\
+      \ handled agenda items (protocol_items), votings,\n     speeches, verbatim text segments and linked documents.\n[de]\
+      \ Das nach der Sitzung erstellte Protokoll. Ein Wrapper-Container, der die\n     tatsächlich behandelten Traktanden\
+      \ (protocol_items), Abstimmungen, Wortmeldungen,\n     Wortlaut-Textsegmente und verknüpfte Dokumente bündelt.\n"
+    mixins:
+    - HasIdentification
+    - HasCreationModificationDates
+    slots:
+    - parent_meeting
+    - protocol_items
+    - votings
+    - speeches
+    - text_segments
+    - documents
+  ProtocolItem:
+    is_a: AgendaItem
+    description: '[en] An agenda item as actually recorded in the protocol.
+
+      [de] Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde.
+
+      '
+  JointDebate:
+    description: '[en] Agenda Items which are debated together.
+
+      [de] Traktanden die gemeinsam behandelt werden.
+
+      '
+    slots:
+    - agenda_items
+  Resolution:
+    description: '[en] A resolutionor decision taken on an agenda item, including voting procedures.
+
+      [de] Eine Resolution oder Entscheidung zu einem Traktandum, einschließlich Abstimmungsverfahren.
+
+      '
+    slots:
+    - resolution_type
+    - type_label
+    - vote_procedures
+    - documents
+  Voting:
+    description: '[en] A voting procedure with individual votes and results.
+
+      [de] Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen.
+
+      '
+    mixins:
+    - HasIdentification
+    - HasCreationModificationDates
+    slots:
+    - datetime_begin
+    - datetime_end
+    - voting_type
+    - type_label
+    - voting_title
+    - optional
+    - landing_page
+    - label_yes
+    - label_no
+    - label_abstention
+    - tie_breaker
+    - total_count_yes
+    - total_count_no
+    - total_count_abstention
+    - total_other
+    - total_absent
+    - total
+    - majority_type
+    - majority_count
+    - result_text
+    - parent_meeting
+    - parent_agenda_item
+    - affair_id
+    - actor_id
+    - documents
+    slot_usage:
+      actor_id:
+        range: GroupReference
+        inlined: true
+        description: '[en] Reference to the acting body/organ (lightweight snapshot at time of linking).
+
+          [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).
+
+          '
+  IndividualVote:
+    description: '[en] An individual vote cast by a member during a voting procedure.
+
+      [de] Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens.
+
+      '
+    mixins:
+    - HasIdentification
+    - HasCreationModificationDates
+    slots:
+    - parent_voting
+    - actor_id
+    - seat_nr
+    - weight
+    - individual_vote_type
+    - type_label
+  Election:
+    description: '[en] An election procedure for selecting persons to positions.
+
+      [de] Ein Wahlverfahren zur Wahl von Personen in Positionen.
+
+      '
+    mixins:
+    - HasIdentification
+    - HasCreationModificationDates
+    slots:
+    - datetime_begin
+    - datetime_end
+    - election_type
+    - type_label
+    - title
+    - landing_page
+    - total_absent
+    - total
+    - majority_type
+    - majority_count
+    - result_text
+    - parent_meeting
+    - parent_agenda_item
+    - affair_id
+    - actor_id
+    - documents
+    slot_usage:
+      actor_id:
+        range: GroupReference
+        inlined: true
+        description: '[en] Reference to the acting body/organ (lightweight snapshot at time of linking).
+
+          [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).
+
+          '
+  Attendance:
+    description: '[en] Aggregated attendance record for a meeting (number of members present, absent, excused).
+
+      [de] Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, Entschuldigte).
+
+      '
+    mixins:
+    - HasIdentification
+    - HasCreationModificationDates
+    slots:
+    - parent_meeting
+    - datetime_begin
+    - actor_id
+    - total_count
+    - total_present
+    - total_absent
+    - total_excused
+    slot_usage:
+      actor_id:
+        range: GroupReference
+        inlined: true
+        description: '[en] Reference to the acting body/organ (lightweight snapshot at time of linking).
+
+          [de] Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).
+
+          '
+  IndividualAttendance:
+    description: '[en] Individual attendance record for a specific person at a meeting (linked via the parent Attendance aggregate).
+
+      [de] Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft über das übergeordnete Attendance-Aggregat).
+
+      '
+    mixins:
+    - HasIdentification
+    - HasCreationModificationDates
+    slots:
+    - parent_attendance
+    - actor_id
+    - attendance_type
+    - reason
+  Speech:
+    description: '[en] A speech or statement made during a meeting (also called Votum or speaker segment).
+
+      [de] Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt).
+
+      '
+    mixins:
+    - HasIdentification
+    - HasCreationModificationDates
+    slots:
+    - language
+    - start
+    - datetime_begin
+    - datetime_end
+    - actor_fullname
+    - actor_id
+    - role
+    - text
+    - text_format
+    - text_type
+    - landing_page
+    - media_url
+    - media_type
+    - media_format
+    - documents
+  TextSegment:
+    description: '[en] A text segment such as cross-references or subtitles in meeting protocols.
+
+      [de] Ein Textsegment wie Querverweise oder Zwischentitel in Sitzungsprotokollen.
+
+      '
+    mixins:
+    - HasIdentification
+    slots:
+    - text
+  Motion:
+    description: '[en] A formal proposal or motion submitted during proceedings.
+
+      [de] Ein formeller Antrag, der während der Verhandlungen eingereicht wird.
+
+      '
+    mixins:
+    - HasIdentification
+    slots:
+    - title
+    - description
+    - documents
+  Media:
+    description: '[en] Media files or documents (including protocols in PDF/HTML/WORD or links to audio/video).
+
+      [de] Mediendateien oder Dokumente (einschließlich Protokolle in PDF/HTML/WORD oder Links zu Audio/Video).
+
+      '
+    mixins:
+    - HasIdentification
+    slots:
+    - title
+    - media_type
+    - url
+    - version
+    - parent_type
+  TotalOther:
+    description: '[en] Additional vote counts when multiple options are presented (e.g., Zurich uses 5 buttons).
+
+      [de] Zusätzliche Stimmzahlen, wenn mehrere Optionen zur Abstimmung gestellt werden (z.B. Zürich verwendet 5 Knöpfe).
+
+      '
+    slots:
+    - count
+    - label
+  MultilingualString:
+    description: '[en] A string that can contain text in multiple languages.
+
+      [de] Ein String, der Text in mehreren Sprachen enthalten kann.
+
+      '
+    slots:
+    - text
+    - language
+    slot_usage:
+      language:
+        required: true
+slots:
+  administrative_id:
+    description: '[en] Administrative ID of the legislative body, such as a municipality, canton, or country.
+
+      [de] Verwaltungs-ID des gesetzgebenden Körpers, wie z.B. Gemeinde, Kanton oder Land.
+
+      '
+  actor_id:
+    description: '[en] Reference to the acting person (lightweight snapshot at time of linking).
+
+      [de] Referenz auf die handelnde Person (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).
+
+      '
+    range: PersonReference
+    inlined: true
+  body_key:
+    description: '[en] Key identifying the political body or jurisdiction (e.g., BE for Bern, CHE for Switzerland).
+
+      [de] Schlüssel zur Identifizierung des politischen Organs oder der Gerichtsbarkeit (z.B. BE für Bern, CHE für Schweiz).
+
+      '
+  type_label:
+    description: '[en] Custom type label when standard type values don''t apply.
+
+      [de] Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen.
+
+      '
+  voting_type:
+    description: '[en] Type of voting procedure (preliminary, final, secret, etc.).
+
+      [de] Art des Abstimmungsverfahrens (Zwischen-, Schlussabstimmung, geheim, etc.).
+
+      '
+    range: VotingTypeEnum
+    examples:
+    - value: final_vote
+    - value: preliminary_vote
+  voting_title:
+    description: '[en] Title or question being voted on. If no specific subject exists, do not use the business item title.
+
+      [de] Abstimmungstitel bzw. Gegenstand oder Frage. Wenn kein Gegenstand vorhanden ist, sollte nicht der Geschäftstitel
+      verwendet werden.
+
+      '
+    range: MultilingualString
+    multivalued: true
+    inlined_as_list: true
+  resolution_type:
+    description: '[en] Type of resolutiontaken on the agenda item.
+
+      [de] Art der Resolution zum Traktandum.
+
+      '
+    range: ResolutionTypeEnum
+  individual_vote_type:
+    description: '[en] Type of vote cast (yes, no, abstention, no vote, etc.).
+
+      [de] Art der abgegebenen Stimme (Ja, Nein, Enthaltung, nicht abgestimmt, etc.).
+
+      '
+    range: IndividualVoteTypeEnum
+    examples:
+    - value: abstention
+    - value: 'no'
+    - value: not_voted
+  agenda_item_type:
+    description: '[en] Type of agenda item, distinguishing individual items from groups.
+
+      [de] Art des Traktandums, unterscheidet Einzeltraktanden von Traktandengruppen.
+
+      '
+    range: AgendaItemTypeEnum
+    examples:
+    - value: item
+  agenda_item_number:
+    description: '[en] Sequential number of the agenda item (string type to support roman numerals).
+
+      [de] Laufnummer des Traktandums (String-Typ zur Unterstützung römischer Ziffern).
+
+      '
+    range: string
+  agenda_item_position:
+    description: '[en] Integer position of the agenda item in the meeting sequence.
+
+      [de] Ganzzahlige Position des Traktandums in der Sitzungsreihenfolge.
+
+      '
+    range: integer
+  agenda_item_title:
+    description: '[en] Title of the agenda item.
+
+      [de] Titel des Traktandums.
+
+      '
+    range: MultilingualString
+    multivalued: true
+    inlined_as_list: true
+  agenda_item_description:
+    description: '[en] Subtitle or detailed description of the agenda item.
+
+      [de] Untertitel oder ausführliche Beschreibung des Traktandums.
+
+      '
+    range: MultilingualString
+    multivalued: true
+    inlined_as_list: true
+  agenda_item_category:
+    description: '[en] Category for grouped agenda items (e.g., introduction, by department, technical agenda items).
+
+      [de] Kategorie für gruppierte Traktanden (z.B. Einführung, nach Departement, technische Traktanden).
+
+      '
+    range: string
+    examples:
+    - value: ANNONCES ET INTERPELLATIONS
+    - value: Budget und Finanzen
+    - value: Gesetzgebung
+  sequential_number:
+    description: '[en] Sequential number of the meeting, used for ordering.
+
+      [de] Laufende Nummer der Sitzung, die zur Sortierung verwendet wird.
+
+      '
+    range: integer
+  actor_name:
+    description: '[en] Name of the political body (e.g., Nationalrat).
+
+      [de] Name des politischen Organs (z.B. Nationalrat).
+
+      '
+    range: string
+  state_name:
+    description: '[en] Custom state description for the meeting.
+
+      [de] Benutzerdefinierte Zustandsbeschreibung für die Sitzung.
+
+      '
+    range: string
+  parent_meeting:
+    description: '[en] The linked meeting ID that groups the current meeting.
+
+      [de] Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.
+
+      '
+    range: string
+  parent_legislature:
+    description: '[en] The legislative body in which the meeting is based.
+
+      [de] Der gesetzgebende Körper, auf dem die Sitzung basiert.
+
+      '
+  leading_actor_id:
+    description: '[en] The leading department for the agenda item.
+
+      [de] Das federführende Departement für den Tagesordnungspunkt.
+
+      '
+    range: string
+  speaking_actor_id:
+    description: '[en] The speaker or head of the department for the agenda item.
+
+      [de] Der Sprecher oder Departementsvorsteher für den Tagesordnungspunkt.
+
+      '
+  name:
+    range: MultilingualString
+    multivalued: true
+    inlined_as_list: true
+  vote_procedures:
+    description: '[en] Procedures for voting, such as secret ballot or open vote.
+
+      [de] Verfahren für die Abstimmung, wie geheime Abstimmung oder offene Abstimmung.
+
+      '
+    range: string
+    multivalued: true
+    inlined_as_list: true
+  affair_id:
+    description: '[en] The connection to the affairs (business items) of the agenda item.
+
+      [de] Die Verbindung zu den Geschäften (Geschäftsgegenständen) des Tagesordnungspunkts.
+
+      '
+    range: string
+  state_id:
+    description: State identifier (reference to state enum or custom state)
+    range: string
+  datetime_begin:
+    range: datetime
+    description: '[en] The date and time when the meeting or voting begins.
+
+      [de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.
+
+      '
+  datetime_end:
+    range: datetime
+    description: '[en] The date and time when the meeting or voting ends.
+
+      [de] Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung endet.
+
+      '
+  optional:
+    range: boolean
+    description: '[en] Indicates if the meeting or voting is optional.
+
+      [de] Gibt an, ob die Sitzung oder Abstimmung optional ist.
+
+      '
+  agenda_item_ids:
+    description: '[en] The agenda items associated with the voting.
+
+      [de] Die Tagesordnungspunkte, die mit der Abstimmung verbunden sind.
+
+      '
+    range: string
+    multivalued: true
+    inlined_as_list: true
+  seat_nr:
+    description: '[en] The seat number of the individual vote, if applicable.
+
+      [de] Die Sitznummer der Einzelstimme, falls zutreffend.
+
+      '
+    range: string
+  weight:
+    description: '[en] The number of votes held by the individual, if applicable (e.g., in cases where a person has multiple
+      votes).
+
+      [de] Die Anzahl der Stimmen, die die Einzelperson hat, falls zutreffend (z.B. in Fällen, in denen eine Person mehrere
+      Stimmen hat).
+
+      '
+    range: integer
+  count:
+    description: '[en] The count of votes for the total other category.
+
+      [de] Die Anzahl der Stimmen für die Kategorie "Andere".
+
+      '
+    range: integer
+  parent_voting:
+    slot_uri: ops:parentVoting
+    description: '[en] The ID of the voting associated with the individual vote.
+
+      [de] Die ID der Abstimmung, die mit der Einzelstimme verbunden ist.
+
+      '
+    range: Voting
+  parent_attendance:
+    slot_uri: ops:parentAttendance
+    description: '[en] The Attendance aggregate this individual attendance record belongs to.
+
+      [de] Das Attendance-Aggregat, zu dem dieser einzelne Anwesenheits-Eintrag gehört.
+
+      '
+    range: Attendance
+  parent_agenda_item:
+    description: '[en] If needed, this slot builds a hierarchy of agenda items.
+
+      [de] Wenn erforderlich, baut dieser Slot eine Hierarchie von Tagesordnungspunkten auf.
+
+      '
+    range: string
+  has_resolution:
+    description: '[en] The resolutionor decision taken on this agenda item.
+
+      [de] Die Resolution oder Entscheidung zu diesem Traktandum.
+
+      '
+    range: Resolution
+  url:
+    range: MultilingualString
+    multivalued: true
+    inlined_as_list: true
+  number: null
+  meeting_abbreviation: null
+  group_name:
+    description: Name of the group or body
+    range: string
+  group_id:
+    description: '[en] Reference to the group or body (lightweight snapshot at time of linking).
+
+      [de] Referenz auf die Gruppe oder das Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).
+
+      '
+    range: GroupReference
+    inlined: true
+  landing_page:
+    slot_uri: ops:landingPage
+    description: '[en] URL providing further information.
+
+      [de] URL mit weiteren Informationen.
+
+      '
+  tie_breaker:
+    range: boolean
+    description: '[en] Indicates if a tie-breaker was used in the voting.
+
+      [de] Gibt an, ob ein Stichentscheid bei der Abstimmung verwendet wurde.
+
+      '
+  label_yes:
+    range: string
+    description: '[en] Meaning of a ''yes'' vote.
+
+      [de] Bedeutung einer ''Ja''-Stimme.
+
+      '
+  label_no:
+    range: string
+    description: '[en] Meaning of a ''no'' vote.
+
+      [de] Bedeutung einer ''Nein''-Stimme.
+
+      '
+  label_abstention:
+    range: string
+    description: '[en] Meaning of an ''abstention'' vote.
+
+      [de] Bedeutung einer Enthaltungsstimme.
+
+      '
+  total_count_yes:
+    range: integer
+    description: '[en] Total number of ''yes'' votes.
+
+      [de] Gesamtzahl der ''Ja''-Stimmen.
+
+      '
+  total_count_no:
+    range: integer
+    description: '[en] Total number of ''no'' votes.
+
+      [de] Gesamtzahl der ''Nein''-Stimmen.
+
+      '
+  total_count_abstention:
+    range: integer
+    description: '[en] Total number of abstentions.
+
+      [de] Gesamtzahl der Enthaltungen.
+
+      '
+  total_other:
+    range: TotalOther
+    multivalued: true
+    inlined_as_list: true
+    description: '[en] Used when multiple options are presented for voting (e.g., 5 buttons in Zurich).
+
+      [de] Wird verwendet, wenn mehrere Optionen zur Abstimmung gestellt werden (z.B. 5 Knöpfe in Zürich).
+
+      '
+  total_absent:
+    range: integer
+    description: '[en] Total number of absent members. Distinction between absent/excused absent - presence is tracked on
+      attendance list.
+
+      [de] Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt abwesend - Anwesenheit wird auf
+      Anwesenheitsliste verfolgt.
+
+      '
+  total:
+    range: integer
+    description: '[en] Total number of votes, excluding absent and president''s vote.
+
+      [de] Gesamtzahl der Stimmen, ohne abwesende und Präsidentenstimmen.
+
+      '
+  majority_type:
+    range: MajorityTypeEnum
+    description: '[en] Type of majority required for the vote (absolute, two-thirds, etc.).
+
+      [de] Art der für die Abstimmung erforderlichen Mehrheit (absolut, Zweidrittel usw.).
+
+      '
+    examples:
+    - value: absolute
+  majority_count:
+    range: integer
+    description: '[en] Number of votes required for the relevant majority threshold.
+
+      [de] Anzahl der Stimmen, die für die relevante Mehrheitsschwelle erforderlich sind.
+
+      '
+  result_text:
+    range: string
+    description: '[en] Free text describing the outcome of the vote, e.g., "Accepted with 78 votes".
+
+      [de] Freitext zur Beschreibung des Ergebnisses der Abstimmung, z.B. "Mit 78 Stimmen angenommen".
+
+      '
+    examples:
+    - value: Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen
+    - value: Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt
+    - value: Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen
+  meeting_type:
+    slot_uri: ops:meetingType
+    description: Type of the meeting, e.g. session, committee, sitting, various
+    range: MeetingTypeEnum
+    examples:
+    - value: committee
+    - value: session
+    - value: sitting
+  state:
+    range: StateEnum
+    examples:
+    - value: planned
+  status: null
+  type: null
+  description: null
+  location:
+    examples:
+    - value: Kantonsratssaal, Regierungsgebäude St. Gallen
+    - value: Kommissionszimmer 301, Rathaus Bern
+    - value: Zaunplatz, Glarus
+  position: null
+  result: null
+  title: null
+  category: null
+  legislatures:
+    slot_uri: ops:legislature
+    range: Legislature
+    multivalued: true
+    inlined_as_list: true
+  sessions:
+    slot_uri: ops:session
+    range: Session
+    multivalued: true
+    inlined_as_list: true
+  meetings:
+    slot_uri: ops:meeting
+    range: Meeting
+    multivalued: true
+    inlined_as_list: true
+  agenda_items:
+    slot_uri: ops:agendaItem
+    range: AgendaItem
+    multivalued: true
+    inlined_as_list: true
+  protocols:
+    slot_uri: ops:protocol
+    description: Collection of protocol records
+    range: Protocol
+    multivalued: true
+    inlined_as_list: true
+  protocol_ref:
+    slot_uri: ops:protocolRef
+    description: '[en] The protocol (minutes) of this meeting, recorded after the meeting.
+
+      [de] Das nach der Sitzung erstellte Protokoll dieser Sitzung.
+
+      '
+    range: Protocol
+    inlined: true
+  protocol_items:
+    slot_uri: ops:protocolItem
+    description: '[en] Agenda items as actually recorded in the protocol.
+
+      [de] Traktanden, wie sie im Protokoll tatsächlich festgehalten wurden.
+
+      '
+    range: ProtocolItem
+    multivalued: true
+    inlined_as_list: true
+  text_segments:
+    slot_uri: ops:textSegment
+    description: Collection of text segments (e.g. verbatim protocol)
+    range: TextSegment
+    multivalued: true
+    inlined_as_list: true
+  votings:
+    slot_uri: ops:voting
+    description: Collection of voting records
+    range: Voting
+    multivalued: true
+    inlined_as_list: true
+  elections:
+    slot_uri: ops:election
+    description: Collection of election records
+    range: Election
+    multivalued: true
+    inlined_as_list: true
+  individual_votes:
+    slot_uri: ops:individualVote
+    description: Collection of individual vote records
+    range: IndividualVote
+    multivalued: true
+    inlined_as_list: true
+  attendances:
+    slot_uri: ops:attendance
+    description: Collection of attendance records
+    range: Attendance
+    multivalued: true
+    inlined_as_list: true
+  individual_attendances:
+    slot_uri: ops:individualAttendance
+    description: Collection of individual attendance records
+    range: IndividualAttendance
+    multivalued: true
+    inlined_as_list: true
+  speeches:
+    slot_uri: ops:speech
+    description: Collection of speech records
+    range: Speech
+    multivalued: true
+    inlined_as_list: true
+  resolutions:
+    slot_uri: ops:resolution
+    description: Collection of resolutionrecords
+    range: Resolution
+    multivalued: true
+    inlined_as_list: true
+  election_type:
+    description: Type of election procedure
+    range: ElectionTypeEnum
+  attendance_type:
+    description: Type of individual attendance
+    range: AttendanceTypeEnum
+  reason:
+    description: '[en] Reason for absence or lateness (free-text, multilingual).
+
+      [de] Grund für Abwesenheit oder Verspätung (Freitext, mehrsprachig).
+
+      '
+    range: MultilingualString
+    multivalued: true
+    inlined_as_list: true
+  total_count:
+    range: integer
+    description: '[en] Total number of members of the body (reference value for quorum calculations).
+
+      [de] Gesamtzahl aller Mitglieder des Gremiums (Bezugsgrösse für Quorum-Berechnungen).
+
+      '
+  total_present:
+    range: integer
+    description: Total number of members present
+  total_excused:
+    range: integer
+    description: Total number of excused absences
+  actor_fullname:
+    description: Full name of the actor/person
+  start:
+    description: Start indicator or position
+  role:
+    description: Role of the person (e.g., commission speaker)
+    examples:
+    - value: speaker
+  text_format:
+    description: '[en] Format of text (text, html, html_with_timestamps)
+
+      [de] Format des Textes (text, html, html_with_timestamps)
+
+      '
+    examples:
+    - value: html
+  text_type:
+    description: '[en] Type of text (raw draft, edited version)
+
+      [de] Typ des Textes (Rohfassung, bearbeitete Fassung)
+
+      '
+    examples:
+    - value: final
+  media_url:
+    description: URL to media file (audio/video)
+  media_type:
+    description: Type of media (audio, video, document)
+    examples:
+    - value: video
+  media_format:
+    description: MIME type of the media file
+    examples:
+    - value: video/mp4
+  parent_type:
+    description: Type of parent object (meeting, agenda, speech, affair)
+  version:
+    description: Version number or identifier
+  text:
+    required: true
+enums:
+  StateEnum:
+    description: State of the meeting
+    permissible_values:
+      planned:
+        meaning: ops:enum/state/planned
+      canceled:
+        meaning: ops:enum/state/canceled
+      postponed:
+        meaning: ops:enum/state/postponed
+  MeetingTypeEnum:
+    description: Type of the meeting
+    permissible_values:
+      session:
+        meaning: ops:enum/meeting_type/session
+      committee:
+        meaning: ops:enum/meeting_type/committee
+      sitting:
+        meaning: ops:enum/meeting_type/sitting
+      various:
+        meaning: ops:enum/meeting_type/various
+  MajorityTypeEnum:
+    description: Type of majority required for the vote
+    permissible_values:
+      absolute:
+        meaning: ops:enum/majority_type/absolute
+      two_thirds:
+        meaning: ops:enum/majority_type/two_thirds
+      other:
+        meaning: ops:enum/majority_type/other
+  ResolutionTypeEnum:
+    description: '[en] Type of resolutiontaken on an agenda item.
+
+      [de] Art der Resolution zu einem Traktandum.
+
+      '
+    permissible_values:
+      accepted:
+        meaning: ops:enum/resolution_type/accepted
+        description: '[en] Accepted (Annahme)
+
+          [de] Annahme
+
+          '
+      rejected:
+        meaning: ops:enum/resolution_type/rejected
+        description: '[en] Rejected (Ablehnung)
+
+          [de] Ablehnung
+
+          '
+      noted:
+        meaning: ops:enum/resolution_type/noted
+        description: '[en] Noted (Kenntnisnahme)
+
+          [de] Kenntnisnahme
+
+          '
+      accepted_point_by_point:
+        meaning: ops:enum/resolution_type/accepted_point_by_point
+        description: '[en] Accepted point by point (Punktweise Annahme)
+
+          [de] Punktweise Annahme
+
+          '
+      accepted_with_postulate:
+        meaning: ops:enum/resolution_type/accepted_with_postulate
+        description: '[en] Accepted with postulate (Annahme mit Postulat)
+
+          [de] Annahme mit Postulat
+
+          '
+      orally_settled:
+        meaning: ops:enum/resolution_type/orally_settled
+        description: '[en] Orally settled (Mündlich erledigt)
+
+          [de] Mündlich erledigt
+
+          '
+      nearly_unanimous:
+        meaning: ops:enum/resolution_type/nearly_unanimous
+        description: '[en] Nearly unanimous (Beinahe einstimmig)
+
+          [de] Beinahe einstimmig
+
+          '
+      other:
+        meaning: ops:enum/resolution_type/other
+        description: '[en] Other resolutiontype not covered by standard categories
+
+          [de] Andere Resolution, nicht durch Standardkategorien abgedeckt
+
+          '
+  VotingTypeEnum:
+    description: '[en] Type of voting procedure.
+
+      [de] Art des Abstimmungsverfahrens.
+
+      '
+    permissible_values:
+      preliminary_vote:
+        meaning: ops:enum/voting_type/preliminary_vote
+        description: '[en] Preliminary vote (Zwischenabstimmung)
+
+          [de] Zwischenabstimmung
+
+          '
+      final_vote:
+        meaning: ops:enum/voting_type/final_vote
+        description: '[en] Final vote (Schlussabstimmung)
+
+          [de] Schlussabstimmung
+
+          '
+      tie_breaker_president:
+        meaning: ops:enum/voting_type/tie_breaker_president
+        description: '[en] President''s tie-breaking vote (Stichentscheid Präsidium)
+
+          [de] Stichentscheid Präsidium
+
+          '
+      secret_vote:
+        meaning: ops:enum/voting_type/secret_vote
+        description: '[en] Secret ballot (Geheime Wahl/Abstimmung)
+
+          [de] Geheime Wahl/Abstimmung
+
+          '
+      other:
+        meaning: ops:enum/voting_type/other
+        description: '[en] Other voting type
+
+          [de] Andere Abstimmungsart
+
+          '
+  IndividualVoteTypeEnum:
+    description: '[en] Type of individual vote cast by a member.
+
+      [de] Art der Einzelstimme eines Mitglieds.
+
+      '
+    permissible_values:
+      'yes':
+        meaning: ops:enum/individual_vote_type/yes
+        description: '[en] Vote in favor (yes)
+
+          [de] Ja-Stimme
+
+          '
+      'no':
+        meaning: ops:enum/individual_vote_type/no
+        description: '[en] Vote against (no)
+
+          [de] Nein-Stimme
+
+          '
+      abstention:
+        meaning: ops:enum/individual_vote_type/abstention
+        description: '[en] Abstention
+
+          [de] Enthaltung
+
+          '
+      not_voted:
+        meaning: ops:enum/individual_vote_type/not_voted
+        description: '[en] Not Voted
+
+          [de] Nicht abgestimmt
+
+          '
+      tie_breaker:
+        meaning: ops:enum/individual_vote_type/tie_breaker
+        description: '[en] Tie-breaking vote, TODO english
+
+          [de] Stichentscheid, meist durch Präsidium
+
+          '
+      other:
+        meaning: ops:enum/individual_vote_type/other
+        description: '[en] Other vote type
+
+          [de] Andere Stimmabgabe
+
+          '
+  AgendaItemTypeEnum:
+    description: '[en] Type of agenda item, distinguishing individual items from grouped items.
+
+      [de] Art des Traktandums, unterscheidet einzelne von gruppierten Traktanden.
+
+      '
+    permissible_values:
+      item:
+        meaning: ops:enum/agenda_item_type/item
+        description: '[en] Individual agenda item (Traktandum)
+
+          [de] Einzelnes Traktandum
+
+          '
+      group:
+        meaning: ops:enum/agenda_item_type/group
+        description: '[en] Group of agenda items (Traktandengruppe)
+
+          [de] Traktandengruppe
+
+          '
+  ElectionTypeEnum:
+    description: '[en] Type of election procedure.
+
+      [de] Art des Wahlverfahrens.
+
+      '
+    permissible_values:
+      secret:
+        meaning: ops:enum/election_type/secret
+        description: '[en] Secret election (Geheime Wahl)
+
+          [de] Geheime Wahl
+
+          '
+      open:
+        meaning: ops:enum/election_type/open
+        description: '[en] Open election (Offene Wahl)
+
+          [de] Offene Wahl
+
+          '
+      silent:
+        meaning: ops:enum/election_type/silent
+        description: '[en] Silent election without opponent (Stille Wahl ohne Gegenkandidat)
+
+          [de] Stille Wahl ohne Gegenkandidat
+
+          '
+  AttendanceTypeEnum:
+    description: '[en] Type of individual attendance.
+
+      [de] Art der individuellen Anwesenheit.
+
+      '
+    permissible_values:
+      remote:
+        meaning: ops:enum/attendance_type/remote
+        description: '[en] Remote participation
+
+          [de] Teilnahme per Fernzugriff
+
+          '
+      substitute:
+        meaning: ops:enum/attendance_type/substitute
+        description: '[en] Substitute (Stellvertretung)
+
+          [de] Stellvertretung
+
+          '
+      present:
+        meaning: ops:enum/attendance_type/present
+        description: '[en] Present in person
+
+          [de] Persönlich anwesend
+
+          '
