@@ -16,17 +16,13 @@ URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 ### Permissible Values
 | Value | Description |
 | --- | --- |
-| member |  Regular member (default).
- |
+| member |  Regular member (default).  |
 | |  |
-| president |  President or chair of the group.
- |
+| president |  President or chair of the group.  |
 | |  |
-| stellvertreter |  Deputy/vice role (stellvertreter).
- |
+| stellvertreter |  Deputy/vice role (stellvertreter).  |
 | |  |
-| other |  Other role; use role_label for a descriptive label.
- |
+| other |  Other role; use role_label for a descriptive label.  |
 | |  |
 
 

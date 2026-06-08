@@ -16,17 +16,13 @@ URI: [act:ContactTypeEnum](https://ld.ech.ch/schema/0294/actors/ContactTypeEnum)
 ### Permissible Values
 | Value | Description |
 | --- | --- |
-| email |  Email address.
- |
+| email |  Email address.  |
 | |  |
-| contact_website |  Contact website.
- |
+| contact_website |  Contact website.  |
 | |  |
-| linked_in |  LinkedIn profile.
- |
+| linked_in |  LinkedIn profile.  |
 | |  |
-| twitter |  Twitter profile.
- |
+| twitter |  Twitter profile.  |
 | |  |
 
 
