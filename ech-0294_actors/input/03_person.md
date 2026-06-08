@@ -28,6 +28,8 @@ Notiz: *Die Verknüpfung von Personen im öffentlichen Interesse (Politikerinnen
 
 {{include:ech-0294_actors/output/docs/Gender.md}} 
 
+{{include:ech-0294_actors/output/docs/GenderTypeEnum.md}} 
+
 {{include:ech-0294_actors/output/docs/Occupation.md}} 
 
 {{include:ech-0294_actors/output/docs/Training.md}} 
