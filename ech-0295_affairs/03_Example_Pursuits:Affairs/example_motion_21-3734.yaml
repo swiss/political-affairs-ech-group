@@ -1,0 +1,235 @@
+# Extensive example instance: the real motion 21.3734, conforming to the Motion
+# profile. In contrast to 20.4232 (rejected), this motion was ADOPTED, treated in both chambers, MODIFIED by the Council of States (a "Differenz"), decided in the National Council against a named minority, and transmitted to the executive.
+#
+# Source: Curia Vista
+#   https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20213734
+
+affairs:
+  - affair_uid: "ch.parlament/business/20213734"
+    affair_number: "21.3734"
+    affair_type: motion
+    affair_status: closed   # Endstatus "Erledigt" (an Bundesrat überwiesen, dann abgeschrieben)
+    title:
+      - language: de
+        text: "Vaterschaftsurlaub auch beim Tod des ungeborenen Kindes"
+    linked_affairs:
+      - "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20213734"
+    remarks: >-
+      Erstrat: Nationalrat (Annahme 13.06.2023). Zweitrat: Ständerat (Annahme einer
+      geänderten Fassung). Differenzbereinigung im Nationalrat (Annahme der
+      geänderten Motion gegen Minderheit Glarner, 12.06.2024). Am 12.06.2024 an den
+      Bundesrat überwiesen; am 09.12.2025 erledigt.
+    procedure_steps:
+
+      # 1) Einreichung im Nationalrat (Urheberin + 16 Mitunterzeichnende)
+      - stage: submission
+        step_uid: "21.3734-s1"
+        as_of_date: "2021-06-16"
+        status: closed
+        phase: pre_parliamentary
+        submission_date: "2021-06-16"
+        sponsorships:
+          - sponsor_role: sponsor
+            person_reference:
+              id: "act:person/mp-4268"   # Gysin Greta
+              label: "Gysin Greta"
+            valid_from: "2021-06-16"
+          - sponsor_role: cosponsor       # 16 Mitunterzeichnende insgesamt; hier exemplarisch zwei
+            person_reference:
+              id: "act:person/mp-4070"
+            valid_from: "2021-06-16"
+          - sponsor_role: cosponsor
+            person_reference:
+              id: "act:person/mp-491"
+            valid_from: "2021-06-16"
+        texts:
+          - text_type: main_text
+            value:
+              - language: de
+                text: >-
+                  Der Bundesrat wird beauftragt, die Gesetzgebung so anzupassen,
+                  dass der Vaterschaftsurlaub in vollem Umfang gewährt wird, auch
+                  wenn das Kind tot geboren wird oder bei der Geburt stirbt.
+          - text_type: reasoning
+            value:
+              - language: de
+                text: >-
+                  Seit dem 1. Januar 2021 haben berufstätige Väter Anspruch auf zwei
+                  Wochen Vaterschaftsurlaub. [...] Diese Lücke muss geschlossen werden.
+
+      # 2) Stellungnahme des Bundesrats
+      - stage: executive_response
+        step_uid: "21.3734-r1"
+        as_of_date: "2021-09-01"
+        status: closed
+        phase: pre_parliamentary
+        responder:
+          id: "act:group/bundesrat"
+          label: "Bundesrat"
+        response_date: "2021-09-01"
+        recommendation: reject
+        texts:
+          - text_type: response
+            value:
+              - language: de
+                text: >-
+                  Der Bundesrat ist sich der schwierigen Situation bewusst [...].
+                  Der Bundesrat beantragt die Ablehnung der Motion.
+
+      # 3) Behandlung im Erstrat (Nationalrat): Annahme
+      - stage: plenary_debate
+        step_uid: "21.3734-p1"
+        as_of_date: "2023-06-13"
+        status: closed
+        phase: parliamentary
+        chamber:
+          id: "act:group/nationalrat"
+          label: "Nationalrat"
+        debate_type: single_debate
+        debate_date: "2023-06-13T13:00:00"
+        events:
+          - sequence_number: 1
+            event_type: vote
+            vote:
+              vote_result: accepted   # Ja = Annahme der Motion, Nein = Ablehnung (Vote-ID 30793)
+        result: accepted
+        step_remarks: "Vom Nationalrat angenommen; geht an den Zweitrat (Ständerat)."
+
+      # 4) Zuweisung an die ständerätliche Kommission (SGK-SR)
+      - stage: assignment
+        step_uid: "21.3734-a1"
+        as_of_date: "2023-06-13"
+        status: closed
+        phase: parliamentary
+        assignment_type: committee
+        assigned_to:
+          id: "act:group/sgk-sr"
+          label: "SGK-SR"
+        assignment_date: "2023-06-13"
+
+      # 5) Kommissionsberatung Ständerat (SGK-SR): Antrag auf geänderte Annahme
+      - stage: committee_deliberation
+        step_uid: "21.3734-c1"
+        as_of_date: "2024-01-31"
+        status: closed
+        phase: parliamentary
+        committee:
+          id: "act:group/sgk-sr"
+          label: "SGK-SR"
+        chamber:
+          id: "act:group/staenderat"
+          label: "Ständerat"
+        meeting_date: "2024-01-31"
+        positions:
+          - position_type: majority
+            recommendation: accept
+            text:
+              text_type: official_communication
+              value:
+                - language: de
+                  text: "Die Kommissionsmehrheit beantragt Annahme einer geänderten Fassung (10 Tage)."
+
+      # 6) Behandlung im Zweitrat (Ständerat): Annahme der geänderten Motion -> Differenz
+      - stage: plenary_debate
+        step_uid: "21.3734-p2"
+        as_of_date: "2024-03-04"
+        status: closed
+        phase: parliamentary
+        chamber:
+          id: "act:group/staenderat"
+          label: "Ständerat"
+        debate_type: single_debate
+        debate_date: "2024-03-04T00:00:00"   # (≈) Frühjahrssession 2024
+        events:
+          - sequence_number: 1
+            event_type: proposition
+            proposition:
+              text:
+                text_type: note
+                value:
+                  - language: de
+                    text: "Änderung der Motion (Anspruch auf 10 Tage)."
+          - sequence_number: 2
+            event_type: vote
+            vote:
+              vote_result: accepted
+        result: accepted
+        step_remarks: "Ständerat nimmt die geänderte Motion an -> Differenz, zurück an den Nationalrat."
+
+      # 7) Kommissionsberatung Nationalrat (SGK-NR) zur geänderten Fassung
+      - stage: committee_deliberation
+        step_uid: "21.3734-c2"
+        as_of_date: "2024-04-12"
+        status: closed
+        phase: parliamentary
+        committee:
+          id: "act:group/sgk-nr"
+          label: "SGK-NR"
+        chamber:
+          id: "act:group/nationalrat"
+          label: "Nationalrat"
+        meeting_date: "2024-04-12"
+        positions:
+          - position_type: majority
+            recommendation: accept
+            text:
+              text_type: official_communication
+              value:
+                - language: de
+                  text: "Mehrheit: Annahme der geänderten Motion."
+          - position_type: minority
+            label: "Minderheit Glarner"
+            recommendation: reject
+
+      # 8) Differenzbereinigung im Nationalrat: Annahme gegen Minderheit Glarner
+      - stage: plenary_debate
+        step_uid: "21.3734-p3"
+        as_of_date: "2024-06-12"
+        status: closed
+        phase: parliamentary
+        chamber:
+          id: "act:group/nationalrat"
+          label: "Nationalrat"
+        debate_type: single_debate
+        debate_date: "2024-06-12T11:00:00"
+        events:
+          - sequence_number: 1
+            event_type: proposition
+            proposition:
+              text:
+                text_type: note
+                value:
+                  - language: de
+                    text: "Antrag der Minderheit Glarner: Ablehnung der Motion."
+          - sequence_number: 2
+            event_type: vote
+            vote:
+              vote_result: accepted   # Mehrheit (Annahme geänderte Motion) vs Minderheit Glarner (Vote-ID 32870)
+        result: accepted
+        step_remarks: "Differenz bereinigt; geänderte Motion definitiv angenommen."
+
+      # 9) Überweisung an die Exekutive
+      - stage: assignment
+        step_uid: "21.3734-a2"
+        as_of_date: "2024-06-12"
+        status: closed
+        phase: post_parliamentary
+        assignment_type: executive
+        assigned_to:
+          id: "act:group/bundesrat"
+          label: "Bundesrat"
+        assignment_date: "2024-06-12"
+        step_remarks: "Status 'Überwiesen an den Bundesrat'."
+
+      # 10) Erledigung
+      - stage: implementation
+        step_uid: "21.3734-i1"
+        as_of_date: "2025-12-09"
+        status: closed
+        phase: post_parliamentary
+        disposition: written_off
+        responsible_body:
+          id: "act:group/bundesrat"
+          label: "Bundesrat"
+        disposition_date: "2025-12-09"
+        step_remarks: "Status 'Erledigt'."

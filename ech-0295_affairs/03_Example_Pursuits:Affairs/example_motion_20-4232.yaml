@@ -1,0 +1,112 @@
+# Example instance: the real motion 20.4232, conforming to the Motion profile.
+# Source: Curia Vista / parliament OData web service
+#   https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20204232
+#   https://ws.parlament.ch/odata.svc/Business(ID=20204232,Language='DE')
+#
+# Illustrative only. The inner field of MultilingualValue (here written as
+# `language` + `text`) and the fields of PersonReference / GroupReference
+# (here `id` + `label`) come from ech-0292_meta/schema_common — adjust to the
+# exact field names once that schema is at hand. Long texts are abbreviated
+# with "[...]" for readability.
+
+affairs:
+  - affair_uid: "ch.parlament/business/20204232"
+    affair_number: "20.4232"
+    affair_type: motion
+    title:
+      - language: de
+        text: "Deklaration von Kokosprodukten aus affenquälerischer Produktion"
+    linked_affairs:
+      - "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20204232"
+    remarks: "Erstrat: Nationalrat (angenommen). Zweitrat: Ständerat (abgelehnt). Endstatus: Erledigt."
+    procedure_steps:
+
+      # 1) Einreichung im Nationalrat
+      - stage: submission
+        step_uid: "20.4232-s1"
+        as_of_date: "2020-09-25"
+        status: closed
+        phase: pre_parliamentary
+        submission_date: "2020-09-25"
+        sponsorships:
+          - sponsor_role: sponsor
+            person_reference:
+              id: "act:person/schneider-meret"
+              label: "Schneider Meret"
+            valid_from: "2020-09-25"
+        texts:
+          - text_type: main_text
+            value:
+              - language: de
+                text: >-
+                  Der Bundesrat wird beauftragt, eine Deklarationspflicht für
+                  Kokosprodukte einzuführen, die unter Einbezug von Affen
+                  produziert wurden. Der Code zur Nachverfolgbarkeit der Herkunft
+                  soll dabei um einen für Konsumierende klaren Hinweis auf die
+                  tierquälerische Produktion ergänzt werden.
+          - text_type: reasoning
+            value:
+              - language: de
+                text: >-
+                  Wie der Tagesspiegel vom 10. Juli 2020 und verschiedene weitere
+                  Medien berichteten, herrscht eine grosse Tierschutzproblematik
+                  im Zusammenhang mit der Ernte von Kokosnüssen in Thailand. [...]
+
+      # 2) Stellungnahme des Bundesrats
+      - stage: executive_response
+        step_uid: "20.4232-r1"
+        as_of_date: "2020-11-25"
+        status: closed
+        phase: pre_parliamentary
+        responder:
+          id: "act:group/bundesrat"
+          label: "Bundesrat"
+        response_date: "2020-11-25"
+        recommendation: reject
+        texts:
+          - text_type: response
+            value:
+              - language: de
+                text: >-
+                  Die Pflicht zur Deklaration der Produktionsmethoden von
+                  Nahrungsmitteln wurde bereits in mehreren parlamentarischen
+                  Vorstössen behandelt. [...] Der Bundesrat beantragt die
+                  Ablehnung der Motion.
+
+      # 3) Behandlung im Erstrat (Nationalrat): angenommen, geht an den Zweitrat
+      - stage: plenary_debate
+        step_uid: "20.4232-p1"
+        as_of_date: "2022-09-27"
+        status: closed
+        phase: parliamentary
+        chamber:
+          id: "act:group/nationalrat"
+          label: "Nationalrat"
+        debate_type: single_debate
+        debate_date: "2022-09-27T00:00:00"
+        events:
+          - sequence_number: 1
+            event_type: vote
+            vote:
+              vote_result: accepted
+        result: accepted
+        step_remarks: "Status danach: 'Motion an 2. Rat'."
+
+      # 4) Behandlung im Zweitrat (Ständerat): abgelehnt -> Geschäft erledigt
+      - stage: plenary_debate
+        step_uid: "20.4232-p2"
+        as_of_date: "2023-06-08"
+        status: closed
+        phase: parliamentary
+        chamber:
+          id: "act:group/staenderat"
+          label: "Ständerat"
+        debate_type: single_debate
+        debate_date: "2023-06-08T00:00:00"
+        events:
+          - sequence_number: 1
+            event_type: vote
+            vote:
+              vote_result: rejected
+        result: rejected
+        step_remarks: "Status danach: 'Erledigt'."

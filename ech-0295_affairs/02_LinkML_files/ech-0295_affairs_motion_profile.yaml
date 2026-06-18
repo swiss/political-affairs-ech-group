@@ -1,0 +1,76 @@
+# HEADER
+# ----------------------------------------------------------------
+# Motion profile: a thin schema that imports the affairs core and defines the
+# concrete Motion class. To add another affair type (e.g., Postulate,
+# Interpellation), copy this file, change the class, fix `affair_type`, and
+# adjust the allowed process steps in the `procedure_steps` slot_usage (any_of).
+
+id: https://ld.ech.ch/schema/0295/affairs/motion
+name: motion-profile
+title: Motion Profile
+description: |
+  Profile schema for the affair type "motion". A motion instructs the executive
+  (or the bureau) to submit a draft act or take a measure. This profile imports
+  the affairs core schema and defines the concrete Motion class, fixing the
+  affair type and restricting the applicable process steps.
+annotations:
+  description_de: |
+    Profil-Schema für den Geschäftstyp "Motion". Eine Motion beauftragt die
+    Exekutive (oder das Büro), einen Erlassentwurf vorzulegen oder eine Massnahme
+    zu treffen. Dieses Profil importiert das affairs-Kern-Schema und definiert die
+    konkrete Motion-Klasse, legt den Geschäftstyp fest und schränkt die
+    anwendbaren Verfahrensschritte ein.
+license: CC-BY
+prefixes:
+  linkml: https://w3id.org/linkml/
+  aff: https://ld.ech.ch/schema/0295/affairs/
+  dcterms: http://purl.org/dc/terms/
+default_prefix: aff
+default_range: string
+imports:
+  - linkml:types
+  - ech-0295_affairs
+
+classes:
+
+  Motion:
+    is_a: Affair
+    description: |
+      A motion (Motion): the parliament instructs the executive (or the bureau) to
+      submit a draft act or take a measure. The motion lifecycle typically runs
+      through submission, validation, assignment, executive response, agenda
+      placement, committee deliberation, and plenary debate, and may end with a
+      withdrawal or an implementation/write-off. A motion is binding once adopted
+      (in bicameral parliaments, by both chambers).
+    annotations:
+      description_de: |
+        Eine Motion: das Parlament beauftragt die Exekutive (oder das Büro), einen
+        Erlassentwurf vorzulegen oder eine Massnahme zu treffen. Der Lebenszyklus
+        einer Motion verläuft typischerweise über Einreichung, Prüfung, Zuweisung,
+        Stellungnahme der Exekutive, Traktandierung, Kommissionsberatung und
+        Ratsdebatte und kann mit einem Rückzug oder einer Umsetzung/Abschreibung
+        enden. Eine Motion ist nach Annahme verbindlich (in Zweikammerparlamenten
+        durch beide Räte).
+    slot_usage:
+      affair_type:
+        equals_string: motion
+      procedure_steps:
+        description: |
+          Process steps applicable to a motion. A motion may use any of the
+          following step types; the executive response and at least one plenary
+          debate are normally present.
+        annotations:
+          description_de: |
+            Für eine Motion anwendbare Verfahrensschritte. Eine Motion kann jeden
+            der folgenden Schritt-Typen verwenden; die Stellungnahme der Exekutive
+            und mindestens eine Ratsdebatte sind normalerweise vorhanden.
+        any_of:
+          - range: SubmissionStep
+          - range: WithdrawalStep
+          - range: ValidationStep
+          - range: AssignmentStep
+          - range: ExecutiveResponseStep
+          - range: AgendaStep
+          - range: CommitteeDeliberationStep
+          - range: PlenaryDebateStep
+          - range: ImplementationStep

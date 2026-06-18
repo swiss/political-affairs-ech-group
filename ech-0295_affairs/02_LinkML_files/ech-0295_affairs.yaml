@@ -1,0 +1,1595 @@
+# HEADER
+# ----------------------------------------------------------------
+id: https://ld.ech.ch/schema/0295/affairs
+name: affairs-schema
+title: Affairs (Parliamentary Business) Schema
+description: |
+  A schema describing parliamentary affairs (parliamentary pursuits / Geschäfte) of Swiss
+  parliaments at the federal, cantonal, and municipal level. Every affair type
+  (e.g., motion, postulate, interpellation, parliamentary initiative) is encoded
+  through a shared, ordered sequence of process steps (ProcessStep). This core
+  schema defines the abstract Affair base class, the full catalogue of process
+  step types, supporting structures (texts, sponsorships, debate events, votes),
+  and the controlled vocabularies. Concrete affair types are defined in thin
+  profile schemas that import this core (see the Motion profile).
+annotations:
+  description_de: |
+    Ein Schema zur Beschreibung parlamentarischer Geschäfte schweizerischer
+    Parlamente auf Bundes-, Kantons- und Gemeindeebene. Jeder Geschäftstyp
+    (z.B. Motion, Postulat, Interpellation, Parlamentarische Initiative) wird
+    über eine gemeinsame, geordnete Abfolge von Verfahrensschritten (ProcessStep)
+    codiert. Dieses Kern-Schema definiert die abstrakte Basisklasse Affair, den
+    vollständigen Katalog der Verfahrensschritt-Typen, Hilfsstrukturen (Texte,
+    Urheberschaften, Debattenereignisse, Abstimmungen) sowie die kontrollierten
+    Vokabulare. Konkrete Geschäftstypen werden in schlanken Profil-Schemas
+    definiert, die dieses Kern-Schema importieren (siehe Motion-Profil).
+license: CC-BY
+prefixes:
+  linkml: https://w3id.org/linkml/
+  aff: https://ld.ech.ch/schema/0295/affairs/
+  act: https://ld.ech.ch/schema/0294/actors/
+  dcterms: http://purl.org/dc/terms/
+default_prefix: aff
+default_range: string
+imports:
+  - linkml:types
+  # Gemeinsame Mixins (HasIdentification, HasCreationModificationDates,
+  # HasTemporalValidity), Referenzen (PersonReference, GroupReference) und
+  # MultilingualValue stammen aus dem Meta-Schema – wie bei actors (ech-0294).
+  - ../../ech-0292_meta/input/schema_common
+
+# CLASSES
+# ----------------------------------------------------------------
+
+classes:
+
+  Container:
+    tree_root: true
+    description: |
+      Top-level container for a collection of parliamentary affairs.
+    annotations:
+      description_de: |
+        Oberster Container für eine Sammlung parlamentarischer Geschäfte.
+    mixins:
+      - HasIdentification
+    slots:
+      - affairs
+
+  Affair:
+    abstract: true
+    description: |
+      Abstract base class for any parliamentary affair (parliamentary pursuit / Geschäft).
+      It carries the stable identity of the affair (uid, official number, type,
+      title) and the ordered list of process steps that document its lifecycle.
+      Concrete affair types (Motion, Postulate, Interpellation, ...) specialise
+      this class in profile schemas and constrain which process steps and fields
+      apply to them.
+    annotations:
+      description_de: |
+        Abstrakte Basisklasse für jedes parlamentarische Geschäft. Sie trägt die
+        stabile Identität des Geschäfts (uid, amtliche Nummer, Typ, Titel) und die
+        geordnete Liste der Verfahrensschritte, die seinen Lebenszyklus
+        dokumentieren. Konkrete Geschäftstypen (Motion, Postulat, Interpellation,
+        ...) spezialisieren diese Klasse in Profil-Schemas und schränken ein,
+        welche Verfahrensschritte und Felder für sie gelten.
+    mixins:
+      - HasIdentification
+      - HasCreationModificationDates
+    slots:
+      - affair_uid
+      - affair_number
+      - affair_type
+      - title
+      - linked_affairs
+      - procedure_steps
+      - remarks
+
+  ProcessStep:
+    abstract: true
+    description: |
+      Abstract base class for a single step in the lifecycle of an affair. A step
+      is a dated, typed event with a processing status, a procedural phase, and a
+      stage discriminator. Concrete subclasses add the fields specific to that
+      stage. Steps are ordered chronologically within an affair via
+      `procedure_steps`.
+    annotations:
+      description_de: |
+        Abstrakte Basisklasse für einen einzelnen Schritt im Lebenszyklus eines
+        Geschäfts. Ein Schritt ist ein datiertes, typisiertes Ereignis mit einem
+        Bearbeitungsstatus, einer Verfahrensphase und einem Stage-Diskriminator.
+        Konkrete Unterklassen ergänzen die für diese Stufe spezifischen Felder.
+        Schritte werden innerhalb eines Geschäfts über `procedure_steps`
+        chronologisch geordnet.
+    slots:
+      - step_uid
+      - as_of_date
+      - status
+      - phase
+      - stage
+      - texts
+      - step_remarks
+
+  SubmissionStep:
+    is_a: ProcessStep
+    description: |
+      Formal submission (Einreichung) of the affair. Records when it was handed
+      in, by whom (sponsors and co-sponsors), and the submitted texts (main text,
+      reasoning). This is normally the first step of every affair.
+    annotations:
+      description_de: |
+        Formelle Einreichung des Geschäfts. Hält fest, wann es eingereicht wurde,
+        von wem (Urheber/innen und Mitunterzeichnende) und welche Texte
+        (Haupttext, Begründung) eingereicht wurden. Dies ist normalerweise der
+        erste Schritt jedes Geschäfts.
+    slot_usage:
+      stage:
+        equals_string: submission
+      texts:
+        required: true
+    slots:
+      - submission_date
+      - sponsorships
+      - oral_motivation
+
+  WithdrawalStep:
+    is_a: ProcessStep
+    description: |
+      Withdrawal (Rückzug) of the affair by its sponsor before final treatment.
+      Records the withdrawal date and an optional reason.
+    annotations:
+      description_de: |
+        Rückzug des Geschäfts durch die urhebende Person vor der abschliessenden
+        Behandlung. Hält das Rückzugsdatum und einen optionalen Grund fest.
+    slot_usage:
+      stage:
+        equals_string: withdrawal
+    slots:
+      - withdrawal_date
+      - reason
+
+  ValidationStep:
+    is_a: ProcessStep
+    description: |
+      Validation of the submission (Gültigkeits- bzw. Zulässigkeitsprüfung),
+      including any urgency request (Dringlichkeit). Records the type of check,
+      the deciding entity, the result, and any treatment deadline.
+    annotations:
+      description_de: |
+        Prüfung der Einreichung (Gültigkeits- bzw. Zulässigkeitsprüfung),
+        einschliesslich allfälliger Dringlichkeitsbegehren. Hält die Art der
+        Prüfung, die entscheidende Stelle, das Ergebnis und eine allfällige
+        Behandlungsfrist fest.
+    slot_usage:
+      stage:
+        equals_string: validation
+    slots:
+      - validation_type
+      - received_date
+      - decision_date
+      - decided_by
+      - validation_result
+      - deadline
+
+  AssignmentStep:
+    is_a: ProcessStep
+    description: |
+      Formal assignment (Zuweisung) of the affair to an institution or actor for
+      further processing, e.g., to a chamber, a committee, or the executive.
+    annotations:
+      description_de: |
+        Formelle Zuweisung des Geschäfts an eine Institution oder einen Akteur zur
+        weiteren Bearbeitung, z.B. an eine Kammer, eine Kommission oder die
+        Exekutive.
+    slot_usage:
+      stage:
+        equals_string: assignment
+    slots:
+      - assignment_type
+      - assigned_to
+      - assignment_date
+      - deadline
+
+  ExecutiveResponseStep:
+    is_a: ProcessStep
+    description: |
+      Formal statement or reaction by the executive authority (Stellungnahme der
+      Exekutive), e.g., the Federal Council, a cantonal government, or a municipal
+      executive. Records the responding body, the date, a recommendation, and the
+      response texts.
+    annotations:
+      description_de: |
+        Formelle Stellungnahme oder Reaktion der Exekutive, z.B. des Bundesrats,
+        einer Kantonsregierung oder einer Gemeindeexekutive. Hält die antwortende
+        Stelle, das Datum, eine Empfehlung und die Antworttexte fest.
+    slot_usage:
+      stage:
+        equals_string: executive_response
+      texts:
+        required: true
+    slots:
+      - responder
+      - response_date
+      - recommendation
+
+  AgendaStep:
+    is_a: ProcessStep
+    description: |
+      Placement of the affair on a meeting agenda (Traktandierung). Records who
+      scheduled it, the date, the treatment category, and the meeting it is
+      assigned to.
+    annotations:
+      description_de: |
+        Aufnahme des Geschäfts auf eine Sitzungstraktandenliste (Traktandierung).
+        Hält fest, wer traktandiert hat, das Datum, die Behandlungskategorie und
+        die Sitzung, auf die es gesetzt wird.
+    slot_usage:
+      stage:
+        equals_string: agenda
+    slots:
+      - scheduled_by
+      - agenda_date
+      - treatment_category
+      - meeting_reference
+
+  CommitteeDeliberationStep:
+    is_a: ProcessStep
+    description: |
+      Committee-level deliberation preparing the plenary debate
+      (Kommissionsberatung). Records the committee, the chamber it belongs to, the
+      meeting date, the committee positions (full committee, majority, minority),
+      the spokesperson, and references to the underlying meetings.
+    annotations:
+      description_de: |
+        Beratung auf Kommissionsebene zur Vorbereitung der Ratsdebatte
+        (Kommissionsberatung). Hält die Kommission, die zugehörige Kammer, das
+        Sitzungsdatum, die Kommissionspositionen (Gesamtkommission, Mehrheit,
+        Minderheit), die Sprecherin/den Sprecher und Verweise auf die
+        zugrundeliegenden Sitzungen fest.
+    slot_usage:
+      stage:
+        equals_string: committee_deliberation
+    slots:
+      - committee
+      - chamber
+      - meeting_date
+      - positions
+      - spokesperson
+      - meeting_references
+
+  PlenaryDebateStep:
+    is_a: ProcessStep
+    description: |
+      Treatment in the plenary (Behandlung im Rat). The debate is decomposed into
+      an ordered list of debate events (speeches, propositions, votes). Records the
+      chamber, the debate type, the date, the events, the outcome, and any
+      implementation deadline.
+    annotations:
+      description_de: |
+        Behandlung im Rat (Plenum). Die Debatte wird in eine geordnete Liste von
+        Debattenereignissen (Reden, Anträge, Abstimmungen) zerlegt. Hält die
+        Kammer, den Debattentyp, das Datum, die Ereignisse, das Ergebnis und eine
+        allfällige Umsetzungsfrist fest.
+    slot_usage:
+      stage:
+        equals_string: plenary_debate
+    slots:
+      - chamber
+      - debate_type
+      - debate_date
+      - events
+      - result
+      - deadline
+
+  ImplementationStep:
+    is_a: ProcessStep
+    description: |
+      Post-parliamentary implementation or write-off (Umsetzung bzw. Abschreibung)
+      of an adopted affair. Records the disposition, the responsible body, the
+      date, and any implementation deadline.
+    annotations:
+      description_de: |
+        Nachparlamentarische Umsetzung oder Abschreibung eines angenommenen
+        Geschäfts. Hält die Erledigungsart, die zuständige Stelle, das Datum und
+        eine allfällige Umsetzungsfrist fest.
+    slot_usage:
+      stage:
+        equals_string: implementation
+    slots:
+      - disposition
+      - responsible_body
+      - disposition_date
+      - deadline
+
+  TextBlock:
+    description: |
+      A typed, multilingual block of text associated with an affair or a process
+      step (e.g., main text, reasoning, response, official communication).
+      Optionally points to a source document.
+    annotations:
+      description_de: |
+        Ein typisierter, mehrsprachiger Textblock, der einem Geschäft oder einem
+        Verfahrensschritt zugeordnet ist (z.B. Haupttext, Begründung, Antwort,
+        offizielle Mitteilung). Verweist optional auf ein Quelldokument.
+    slots:
+      - text_type
+      - value
+      - document_url
+
+  Sponsorship:
+    description: |
+      Links an actor (a person, or a group such as a faction or committee) to an
+      affair in a sponsoring role (sponsor, co-sponsor, takeover), with a temporal
+      validity.
+    annotations:
+      description_de: |
+        Verknüpft einen Akteur (eine Person oder eine Gruppe wie eine Fraktion
+        oder Kommission) in einer urhebenden Rolle (Urheber/in, Mitunterzeichnung,
+        Übernahme) mit einem Geschäft, mit zeitlicher Gültigkeit.
+    mixins:
+      - HasTemporalValidity
+    slots:
+      - person_reference
+      - group_reference
+      - sponsor_role
+
+  CommitteePosition:
+    description: |
+      A position taken by a committee or a fraction of it (full committee,
+      majority, minority) on an affair, with its recommendation and supporters.
+    annotations:
+      description_de: |
+        Eine von einer Kommission oder einem Teil davon (Gesamtkommission,
+        Mehrheit, Minderheit) zu einem Geschäft eingenommene Position, mit ihrer
+        Empfehlung und ihren Unterstützenden.
+    slots:
+      - position_type
+      - label
+      - recommendation
+      - supporters
+      - text
+
+  DebateEvent:
+    description: |
+      A single chronologically ordered event within a plenary debate: a speech, a
+      proposition, or a vote. Exactly one of `speech`, `proposition`, or `vote`
+      should be populated, consistent with `event_type`.
+    annotations:
+      description_de: |
+        Ein einzelnes, chronologisch geordnetes Ereignis innerhalb einer
+        Ratsdebatte: eine Rede, ein Antrag oder eine Abstimmung. Genau eines der
+        Felder `speech`, `proposition` oder `vote` sollte befüllt sein, passend zu
+        `event_type`.
+    slots:
+      - sequence_number
+      - event_type
+      - speech
+      - proposition
+      - vote
+      - timestamp
+
+  Speech:
+    description: |
+      A speech held during a plenary debate, attributed to a speaker, with the
+      spoken text and an optional role (e.g., committee spokesperson, group
+      speaker, rapporteur).
+    annotations:
+      description_de: |
+        Eine während einer Ratsdebatte gehaltene Rede, einer sprechenden Person
+        zugeordnet, mit dem gesprochenen Text und einer optionalen Funktion (z.B.
+        Kommissionssprecher/in, Fraktionssprecher/in, Berichterstatter/in).
+    slots:
+      - speaker
+      - speaker_role
+      - text
+
+  Proposition:
+    description: |
+      A proposition or amendment (Antrag) raised during the treatment of an
+      affair, attributed to one or more proposers, with the proposed text.
+    annotations:
+      description_de: |
+        Ein während der Behandlung eines Geschäfts gestellter Antrag, einer oder
+        mehreren antragstellenden Personen zugeordnet, mit dem beantragten Text.
+    slots:
+      - proposers
+      - text
+
+  Vote:
+    description: |
+      A vote (Abstimmung) on an affair or a proposition, with the result and the
+      tally (yes / no / abstentions / not voting).
+    annotations:
+      description_de: |
+        Eine Abstimmung über ein Geschäft oder einen Antrag, mit dem Ergebnis und
+        dem Stimmenverhältnis (Ja / Nein / Enthaltungen / nicht teilgenommen).
+    slots:
+      - vote_result
+      - yes_count
+      - no_count
+      - abstention_count
+      - not_voting_count
+
+# SLOTS
+# ----------------------------------------------------------------
+
+slots:
+
+  affairs:
+    slot_uri: aff:affairs
+    description: |
+      Collection of parliamentary affairs.
+    annotations:
+      description_de: |
+        Sammlung parlamentarischer Geschäfte.
+    range: Affair
+    multivalued: true
+    inlined_as_list: true
+
+  affair_uid:
+    slot_uri: aff:affairUid
+    identifier: true
+    description: |
+      Unique, stable identifier of the affair within the issuing system.
+    annotations:
+      description_de: |
+        Eindeutiger, stabiler Identifikator des Geschäfts innerhalb des
+        herausgebenden Systems.
+
+  affair_number:
+    slot_uri: aff:affairNumber
+    required: true
+    description: |
+      Official business number of the affair as issued by the responsible
+      parliamentary service (e.g., "23.3456" for the Swiss Federal Assembly).
+    annotations:
+      description_de: |
+        Amtliche Geschäftsnummer des Geschäfts, vergeben durch den zuständigen
+        Parlamentsdienst (z.B. "23.3456" bei der Bundesversammlung).
+
+  affair_type:
+    slot_uri: aff:affairType
+    required: true
+    range: AffairTypeEnum
+    description: |
+      Type of the affair (e.g., motion, postulate, interpellation). Concrete
+      affair classes fix this value via slot_usage.
+    annotations:
+      description_de: |
+        Typ des Geschäfts (z.B. Motion, Postulat, Interpellation). Konkrete
+        Geschäftsklassen legen diesen Wert via slot_usage fest.
+
+  title:
+    slot_uri: aff:title
+    range: MultilingualValue
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      Title of the affair, optionally in several languages.
+    annotations:
+      description_de: |
+        Titel des Geschäfts, optional in mehreren Sprachen.
+
+  linked_affairs:
+    slot_uri: aff:linkedAffair
+    range: uriorcurie
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      Links to related affairs, e.g., identically worded motions submitted in
+      both chambers, or earlier affairs on the same subject.
+    annotations:
+      description_de: |
+        Verweise auf verwandte Geschäfte, z.B. gleichlautende Motionen in beiden
+        Räten oder frühere Geschäfte zum selben Thema.
+
+  procedure_steps:
+    slot_uri: aff:procedureStep
+    range: ProcessStep
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      Chronologically ordered list of process steps documenting the lifecycle of
+      the affair. Each item is an instance of a ProcessStep subclass; its concrete
+      type is given by `stage`.
+    annotations:
+      description_de: |
+        Chronologisch geordnete Liste der Verfahrensschritte, die den
+        Lebenszyklus des Geschäfts dokumentieren. Jedes Element ist eine Instanz
+        einer ProcessStep-Unterklasse; sein konkreter Typ ergibt sich aus `stage`.
+
+  remarks:
+    slot_uri: aff:remarks
+    description: |
+      Free-text explanation or notes about the affair as a whole.
+    annotations:
+      description_de: |
+        Freitext-Erläuterung oder Notizen zum Geschäft als Ganzes.
+
+  step_uid:
+    slot_uri: aff:stepUid
+    identifier: true
+    description: |
+      Unique, stable identifier of the process step.
+    annotations:
+      description_de: |
+        Eindeutiger, stabiler Identifikator des Verfahrensschritts.
+
+  as_of_date:
+    slot_uri: aff:asOfDate
+    range: date
+    description: |
+      Reference date on which the recorded state of the step is valid (snapshot
+      date).
+    annotations:
+      description_de: |
+        Stichtag, auf den sich der erfasste Zustand des Schritts bezieht
+        (Snapshot-Datum).
+
+  status:
+    slot_uri: aff:status
+    range: ProcedureStatusEnum
+    description: |
+      Processing status of the step (open or closed).
+    annotations:
+      description_de: |
+        Bearbeitungsstatus des Schritts (offen oder abgeschlossen).
+
+  phase:
+    slot_uri: aff:phase
+    range: ProcedurePhaseEnum
+    description: |
+      Procedural phase to which the step belongs (pre-parliamentary,
+      parliamentary, post-parliamentary).
+    annotations:
+      description_de: |
+        Verfahrensphase, zu der der Schritt gehört (vorparlamentarisch,
+        parlamentarisch, nachparlamentarisch).
+
+  stage:
+    slot_uri: aff:stage
+    range: ProcedureStageEnum
+    description: |
+      Stage discriminator identifying the concrete type of the process step. Acts
+      as the type designator so that a step is self-describing even in a flat
+      serialisation.
+    annotations:
+      description_de: |
+        Stage-Diskriminator, der den konkreten Typ des Verfahrensschritts
+        bestimmt. Dient als Typ-Bezeichner, damit ein Schritt auch in einer
+        flachen Serialisierung selbsterklärend ist.
+
+  texts:
+    slot_uri: aff:text
+    range: TextBlock
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      Texts associated with the step (e.g., main text, reasoning, response,
+      official communication), including translations and metadata.
+    annotations:
+      description_de: |
+        Mit dem Schritt verbundene Texte (z.B. Haupttext, Begründung, Antwort,
+        offizielle Mitteilung), einschliesslich Übersetzungen und Metadaten.
+
+  step_remarks:
+    slot_uri: aff:stepRemarks
+    description: |
+      Free-text notes about this individual step.
+    annotations:
+      description_de: |
+        Freitext-Notizen zu diesem einzelnen Schritt.
+
+  submission_date:
+    slot_uri: aff:submissionDate
+    range: date
+    required: true
+    description: |
+      Date on which the affair was formally submitted.
+    annotations:
+      description_de: |
+        Datum, an dem das Geschäft formell eingereicht wurde.
+
+  sponsorships:
+    slot_uri: aff:sponsorship
+    range: Sponsorship
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      Sponsors and co-sponsors of the affair with their roles and validity.
+    annotations:
+      description_de: |
+        Urheber/innen und Mitunterzeichnende des Geschäfts mit ihren Rollen und
+        ihrer Gültigkeit.
+
+  oral_motivation:
+    slot_uri: aff:oralMotivation
+    range: Speech
+    description: |
+      Optional oral motivation given in the chamber at submission
+      (Begründung im Rat).
+    annotations:
+      description_de: |
+        Optionale mündliche Begründung im Rat bei der Einreichung.
+
+  withdrawal_date:
+    slot_uri: aff:withdrawalDate
+    range: date
+    required: true
+    description: |
+      Date on which the affair was officially withdrawn by its sponsor.
+    annotations:
+      description_de: |
+        Datum, an dem das Geschäft offiziell durch die urhebende Person
+        zurückgezogen wurde.
+
+  reason:
+    slot_uri: aff:reason
+    range: MultilingualValue
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      Optional reason or justification (e.g., for a withdrawal).
+    annotations:
+      description_de: |
+        Optionaler Grund oder Begründung (z.B. für einen Rückzug).
+
+  validation_type:
+    slot_uri: aff:validationType
+    range: ValidationTypeEnum
+    required: true
+    description: |
+      Whether the step is an admissibility check or an urgency request.
+    annotations:
+      description_de: |
+        Ob es sich um eine Zulässigkeitsprüfung oder ein Dringlichkeitsbegehren
+        handelt.
+
+  received_date:
+    slot_uri: aff:receivedDate
+    range: date
+    description: |
+      Date on which the request or task was formally received.
+    annotations:
+      description_de: |
+        Datum, an dem das Begehren oder die Aufgabe formell eingegangen ist.
+
+  decision_date:
+    slot_uri: aff:decisionDate
+    range: date
+    description: |
+      Date on which the step was decided or completed.
+    annotations:
+      description_de: |
+        Datum, an dem der Schritt entschieden oder abgeschlossen wurde.
+
+  decided_by:
+    slot_uri: aff:decidedBy
+    range: GroupReference
+    inlined: true
+    description: |
+      Entity that made the decision (e.g., a bureau, presidency, or
+      administration).
+    annotations:
+      description_de: |
+        Stelle, die den Entscheid gefällt hat (z.B. ein Büro, ein Präsidium oder
+        die Verwaltung).
+
+  validation_result:
+    slot_uri: aff:validationResult
+    range: ValidationResultEnum
+    description: |
+      Outcome of the validation step (e.g., valid, invalid, urgent, not urgent).
+    annotations:
+      description_de: |
+        Ergebnis des Prüfschritts (z.B. gültig, ungültig, dringlich, nicht
+        dringlich).
+
+  deadline:
+    slot_uri: aff:deadline
+    range: date
+    description: |
+      Applicable deadline (e.g., response deadline, treatment deadline,
+      write-off deadline, implementation deadline), depending on the step.
+    annotations:
+      description_de: |
+        Anwendbare Frist (z.B. Beantwortungsfrist, Behandlungsfrist,
+        Abschreibungsfrist, Umsetzungsfrist), je nach Schritt.
+
+  assignment_type:
+    slot_uri: aff:assignmentType
+    range: AssignmentTypeEnum
+    required: true
+    description: |
+      Type of assignment (e.g., to a chamber, a committee, or the executive).
+    annotations:
+      description_de: |
+        Art der Zuweisung (z.B. an eine Kammer, eine Kommission oder die
+        Exekutive).
+
+  assigned_to:
+    slot_uri: aff:assignedTo
+    range: GroupReference
+    inlined: true
+    required: true
+    description: |
+      Body to which the affair is assigned (e.g., Nationalrat, SGK-NR,
+      Gesundheitsdirektion ZH).
+    annotations:
+      description_de: |
+        Stelle, der das Geschäft zugewiesen wird (z.B. Nationalrat, SGK-NR,
+        Gesundheitsdirektion ZH).
+
+  assignment_date:
+    slot_uri: aff:assignmentDate
+    range: date
+    required: true
+    description: |
+      Date of the assignment.
+    annotations:
+      description_de: |
+        Datum der Zuweisung.
+
+  responder:
+    slot_uri: aff:responder
+    range: GroupReference
+    inlined: true
+    required: true
+    description: |
+      Body that issued the response (e.g., Bundesrat, Regierungsrat, Gemeinderat).
+    annotations:
+      description_de: |
+        Stelle, welche die Stellungnahme abgegeben hat (z.B. Bundesrat,
+        Regierungsrat, Gemeinderat).
+
+  response_date:
+    slot_uri: aff:responseDate
+    range: date
+    required: true
+    description: |
+      Date of the executive response.
+    annotations:
+      description_de: |
+        Datum der Stellungnahme der Exekutive.
+
+  recommendation:
+    slot_uri: aff:recommendation
+    range: RecommendationEnum
+    description: |
+      Formal recommendation issued with the step (e.g., accept, reject, accept as
+      postulate).
+    annotations:
+      description_de: |
+        Formelle Empfehlung, die mit dem Schritt abgegeben wird (z.B. Annahme,
+        Ablehnung, Annahme als Postulat).
+
+  scheduled_by:
+    slot_uri: aff:scheduledBy
+    range: GroupReference
+    inlined: true
+    description: |
+      Body that placed the affair on the agenda.
+    annotations:
+      description_de: |
+        Stelle, die das Geschäft traktandiert hat.
+
+  agenda_date:
+    slot_uri: aff:agendaDate
+    range: date
+    description: |
+      Date on which the affair was placed on the agenda.
+    annotations:
+      description_de: |
+        Datum, an dem das Geschäft traktandiert wurde.
+
+  treatment_category:
+    slot_uri: aff:treatmentCategory
+    description: |
+      Treatment category assigned for the debate (e.g., "Kategorie IV"). Free text
+      because categories differ between parliaments.
+    annotations:
+      description_de: |
+        Für die Behandlung zugewiesene Kategorie (z.B. "Kategorie IV"). Freitext,
+        da die Kategorien zwischen Parlamenten variieren.
+
+  meeting_reference:
+    slot_uri: aff:meetingReference
+    range: uriorcurie
+    description: |
+      Reference (link) to the meeting on whose agenda the affair is placed.
+    annotations:
+      description_de: |
+        Verweis (Link) auf die Sitzung, auf deren Traktandenliste das Geschäft
+        gesetzt wird.
+
+  committee:
+    slot_uri: aff:committee
+    range: GroupReference
+    inlined: true
+    required: true
+    description: |
+      Committee responsible for the deliberation.
+    annotations:
+      description_de: |
+        Für die Beratung zuständige Kommission.
+
+  chamber:
+    slot_uri: aff:chamber
+    range: GroupReference
+    inlined: true
+    description: |
+      Chamber (parliament or council) in which the step takes place. Modelled as a
+      reference to a group so that it works for unicameral and bicameral
+      parliaments at any federal level (replaces a fixed council enum).
+    annotations:
+      description_de: |
+        Kammer (Parlament oder Rat), in der der Schritt stattfindet. Als Verweis
+        auf eine Gruppe modelliert, damit er für Ein- und Zweikammerparlamente auf
+        jeder föderalen Ebene funktioniert (ersetzt eine fixe Rats-Enumeration).
+
+  meeting_date:
+    slot_uri: aff:meetingDate
+    range: date
+    description: |
+      Date of the committee meeting.
+    annotations:
+      description_de: |
+        Datum der Kommissionssitzung.
+
+  positions:
+    slot_uri: aff:position
+    range: CommitteePosition
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      Positions of the committee and its minorities on the affair.
+    annotations:
+      description_de: |
+        Positionen der Kommission und ihrer Minderheiten zum Geschäft.
+
+  spokesperson:
+    slot_uri: aff:spokesperson
+    range: PersonReference
+    inlined: true
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      Person(s) designated to speak in plenary for the committee (Sprecher/in,
+      Berichterstatter/in, Referent/in).
+    annotations:
+      description_de: |
+        Für die Kommission im Plenum sprechende Person(en) (Sprecher/in,
+        Berichterstatter/in, Referent/in).
+
+  meeting_references:
+    slot_uri: aff:meetingReferences
+    range: uriorcurie
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      Links to the underlying meeting(s) of this deliberation.
+    annotations:
+      description_de: |
+        Verweise auf die zugrundeliegende(n) Sitzung(en) dieser Beratung.
+
+  debate_type:
+    slot_uri: aff:debateType
+    range: PlenaryDebateTypeEnum
+    required: true
+    description: |
+      Type of the plenary debate (e.g., entry debate, detailed consultation,
+      overall vote).
+    annotations:
+      description_de: |
+        Typ der Ratsdebatte (z.B. Eintretensdebatte, Detailberatung,
+        Gesamtabstimmung).
+
+  debate_date:
+    slot_uri: aff:debateDate
+    range: datetime
+    required: true
+    description: |
+      Date and time of the plenary debate.
+    annotations:
+      description_de: |
+        Datum und Uhrzeit der Ratsdebatte.
+
+  events:
+    slot_uri: aff:event
+    range: DebateEvent
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      Chronologically ordered events within the plenary debate.
+    annotations:
+      description_de: |
+        Chronologisch geordnete Ereignisse innerhalb der Ratsdebatte.
+
+  result:
+    slot_uri: aff:result
+    range: VoteResultEnum
+    description: |
+      Overall outcome of the step (e.g., accepted, rejected).
+    annotations:
+      description_de: |
+        Gesamtergebnis des Schritts (z.B. angenommen, abgelehnt).
+
+  disposition:
+    slot_uri: aff:disposition
+    range: DispositionEnum
+    description: |
+      Final disposition of the affair (e.g., implemented, written off, fulfilled).
+    annotations:
+      description_de: |
+        Abschliessende Erledigungsart des Geschäfts (z.B. umgesetzt,
+        abgeschrieben, erfüllt).
+
+  responsible_body:
+    slot_uri: aff:responsibleBody
+    range: GroupReference
+    inlined: true
+    description: |
+      Body responsible for the implementation or write-off.
+    annotations:
+      description_de: |
+        Für die Umsetzung oder Abschreibung zuständige Stelle.
+
+  disposition_date:
+    slot_uri: aff:dispositionDate
+    range: date
+    description: |
+      Date of the disposition.
+    annotations:
+      description_de: |
+        Datum der Erledigung.
+
+  text_type:
+    slot_uri: aff:textType
+    range: TextTypeEnum
+    description: |
+      Type of the text block (e.g., main text, reasoning, response).
+    annotations:
+      description_de: |
+        Typ des Textblocks (z.B. Haupttext, Begründung, Antwort).
+
+  value:
+    slot_uri: aff:value
+    range: MultilingualValue
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      The textual content, optionally in several languages.
+    annotations:
+      description_de: |
+        Der Textinhalt, optional in mehreren Sprachen.
+
+  document_url:
+    slot_uri: aff:documentUrl
+    range: uri
+    description: |
+      Link to a source document for this text (e.g., a PDF).
+    annotations:
+      description_de: |
+        Verweis auf ein Quelldokument für diesen Text (z.B. ein PDF).
+
+  person_reference:
+    slot_uri: aff:personReference
+    range: PersonReference
+    inlined: true
+    description: |
+      Reference to a person (from the actors schema) with snapshot data at the
+      time of linking.
+    annotations:
+      description_de: |
+        Referenz auf eine Person (aus dem actors-Schema) mit Snapshot-Daten zum
+        Zeitpunkt der Verknüpfung.
+
+  group_reference:
+    slot_uri: aff:groupReference
+    range: GroupReference
+    inlined: true
+    description: |
+      Reference to a group (from the actors schema), e.g., a faction or committee,
+      with snapshot data at the time of linking.
+    annotations:
+      description_de: |
+        Referenz auf eine Gruppe (aus dem actors-Schema), z.B. eine Fraktion oder
+        Kommission, mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
+
+  sponsor_role:
+    slot_uri: aff:sponsorRole
+    range: SponsorRoleEnum
+    required: true
+    description: |
+      Role of the actor in the sponsorship (sponsor, co-sponsor, takeover).
+    annotations:
+      description_de: |
+        Rolle des Akteurs in der Urheberschaft (Urheber/in, Mitunterzeichnung,
+        Übernahme).
+
+  position_type:
+    slot_uri: aff:positionType
+    range: CommitteePositionTypeEnum
+    required: true
+    description: |
+      Whether the position is that of the full committee, a majority, or a
+      minority.
+    annotations:
+      description_de: |
+        Ob es sich um die Position der Gesamtkommission, einer Mehrheit oder einer
+        Minderheit handelt.
+
+  label:
+    slot_uri: aff:label
+    description: |
+      Optional label of the position (e.g., "Minderheit I").
+    annotations:
+      description_de: |
+        Optionale Bezeichnung der Position (z.B. "Minderheit I").
+
+  supporters:
+    slot_uri: aff:supporters
+    range: PersonReference
+    inlined: true
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      Members who supported this position.
+    annotations:
+      description_de: |
+        Mitglieder, die diese Position unterstützt haben.
+
+  text:
+    slot_uri: aff:textRef
+    range: TextBlock
+    inlined: true
+    description: |
+      Text of the position or of an official communication.
+    annotations:
+      description_de: |
+        Text der Position oder einer offiziellen Mitteilung.
+
+  sequence_number:
+    slot_uri: aff:sequenceNumber
+    range: integer
+    required: true
+    description: |
+      Position of the event within the debate (starting from 1).
+    annotations:
+      description_de: |
+        Position des Ereignisses innerhalb der Debatte (beginnend bei 1).
+
+  event_type:
+    slot_uri: aff:eventType
+    range: PlenaryDebateEventTypeEnum
+    required: true
+    description: |
+      Type of the debate event (speech, proposition, or vote).
+    annotations:
+      description_de: |
+        Typ des Debattenereignisses (Rede, Antrag oder Abstimmung).
+
+  speech:
+    slot_uri: aff:speech
+    range: Speech
+    inlined: true
+    description: |
+      The speech, if this event is a speech.
+    annotations:
+      description_de: |
+        Die Rede, falls dieses Ereignis eine Rede ist.
+
+  proposition:
+    slot_uri: aff:proposition
+    range: Proposition
+    inlined: true
+    description: |
+      The proposition, if this event involves a specific amendment.
+    annotations:
+      description_de: |
+        Der Antrag, falls dieses Ereignis einen konkreten Änderungsantrag
+        betrifft.
+
+  vote:
+    slot_uri: aff:vote
+    range: Vote
+    inlined: true
+    description: |
+      The vote, if this event includes or concludes with a vote.
+    annotations:
+      description_de: |
+        Die Abstimmung, falls dieses Ereignis eine Abstimmung enthält oder mit
+        einer solchen abschliesst.
+
+  timestamp:
+    slot_uri: aff:timestamp
+    range: datetime
+    description: |
+      Timestamp of the event.
+    annotations:
+      description_de: |
+        Zeitstempel des Ereignisses.
+
+  speaker:
+    slot_uri: aff:speaker
+    range: PersonReference
+    inlined: true
+    description: |
+      Person who held the speech.
+    annotations:
+      description_de: |
+        Person, welche die Rede gehalten hat.
+
+  speaker_role:
+    slot_uri: aff:speakerRole
+    description: |
+      Role in which the speech was held (e.g., committee spokesperson, group
+      speaker, rapporteur, individual member).
+    annotations:
+      description_de: |
+        Funktion, in der die Rede gehalten wurde (z.B. Kommissionssprecher/in,
+        Fraktionssprecher/in, Berichterstatter/in, Einzelvotum).
+
+  proposers:
+    slot_uri: aff:proposers
+    range: PersonReference
+    inlined: true
+    multivalued: true
+    inlined_as_list: true
+    description: |
+      Person(s) who raised the proposition.
+    annotations:
+      description_de: |
+        Person(en), die den Antrag gestellt haben.
+
+  vote_result:
+    slot_uri: aff:voteResult
+    range: VoteResultEnum
+    description: |
+      Result of the vote.
+    annotations:
+      description_de: |
+        Ergebnis der Abstimmung.
+
+  yes_count:
+    slot_uri: aff:yesCount
+    range: integer
+    description: |
+      Number of yes votes.
+    annotations:
+      description_de: |
+        Anzahl Ja-Stimmen.
+
+  no_count:
+    slot_uri: aff:noCount
+    range: integer
+    description: |
+      Number of no votes.
+    annotations:
+      description_de: |
+        Anzahl Nein-Stimmen.
+
+  abstention_count:
+    slot_uri: aff:abstentionCount
+    range: integer
+    description: |
+      Number of abstentions.
+    annotations:
+      description_de: |
+        Anzahl Enthaltungen.
+
+  not_voting_count:
+    slot_uri: aff:notVotingCount
+    range: integer
+    description: |
+      Number of members not participating in the vote.
+    annotations:
+      description_de: |
+        Anzahl Mitglieder, die nicht an der Abstimmung teilgenommen haben.
+
+# ENUMS
+# ----------------------------------------------------------------
+
+enums:
+
+  AffairTypeEnum:
+    description: |
+      Types of parliamentary affairs (procedural instruments). Covers common
+      instruments across Swiss parliaments; not every instrument exists at every
+      level.
+    annotations:
+      description_de: |
+        Typen parlamentarischer Geschäfte (Verfahrensinstrumente). Deckt
+        gebräuchliche Instrumente schweizerischer Parlamente ab; nicht jedes
+        Instrument existiert auf jeder Ebene.
+    permissible_values:
+      motion:
+        description: |
+          Motion: instructs the executive (or the bureau) to submit a draft act or
+          take a measure. Binding if adopted by both chambers (where bicameral).
+        annotations:
+          description_de: |
+            Motion: beauftragt die Exekutive (oder das Büro), einen Erlassentwurf
+            vorzulegen oder eine Massnahme zu treffen. Verbindlich, wenn von beiden
+            Räten angenommen (bei Zweikammersystem).
+      postulate:
+        description: |
+          Postulate: instructs the executive to examine and report on the
+          expediency of a measure or draft act.
+        annotations:
+          description_de: |
+            Postulat: beauftragt die Exekutive zu prüfen und Bericht zu erstatten,
+            ob eine Massnahme oder ein Erlassentwurf angezeigt ist.
+      interpellation:
+        description: |
+          Interpellation: requests information from the executive on an important
+          event or matter; subject to debate.
+        annotations:
+          description_de: |
+            Interpellation: verlangt von der Exekutive Auskunft über ein wichtiges
+            Ereignis oder eine Angelegenheit; mit Diskussion.
+      question:
+        description: |
+          Question (e.g., simple question, question hour): requests information
+          from the executive, usually without debate.
+        annotations:
+          description_de: |
+            Anfrage / Frage (z.B. Einfache Anfrage, Fragestunde): verlangt von der
+            Exekutive Auskunft, in der Regel ohne Diskussion.
+      parliamentary_initiative:
+        description: |
+          Parliamentary initiative: proposes that the parliament itself draft an
+          act or a general resolution.
+        annotations:
+          description_de: |
+            Parlamentarische Initiative: schlägt vor, dass das Parlament selbst
+            einen Erlass oder einen Grundsatzbeschluss ausarbeitet.
+      cantonal_initiative:
+        description: |
+          Cantonal initiative: a canton's proposal to the Federal Assembly to draft
+          an act (federal level only).
+        annotations:
+          description_de: |
+            Standesinitiative: Vorschlag eines Kantons an die Bundesversammlung,
+            einen Erlass auszuarbeiten (nur Bundesebene).
+      petition:
+        description: |
+          Petition: a written request addressed to an authority by any person.
+        annotations:
+          description_de: |
+            Petition: schriftliches Begehren, das von einer beliebigen Person an
+            eine Behörde gerichtet wird.
+      other:
+        description: |
+          Other affair type not covered by the standard categories.
+        annotations:
+          description_de: |
+            Anderer Geschäftstyp, nicht durch die Standardkategorien abgedeckt.
+
+  ProcedureStatusEnum:
+    description: |
+      Processing status of a process step.
+    annotations:
+      description_de: |
+        Bearbeitungsstatus eines Verfahrensschritts.
+    permissible_values:
+      open:
+        description: The step is open / ongoing.
+        annotations:
+          description_de: Der Schritt ist offen / laufend.
+      closed:
+        description: The step is closed / completed.
+        annotations:
+          description_de: Der Schritt ist abgeschlossen / erledigt.
+
+  ProcedurePhaseEnum:
+    description: |
+      Procedural phase of a process step.
+    annotations:
+      description_de: |
+        Verfahrensphase eines Verfahrensschritts.
+    permissible_values:
+      pre_parliamentary:
+        description: Pre-parliamentary phase (submission, validation, response).
+        annotations:
+          description_de: Vorparlamentarische Phase (Einreichung, Prüfung, Antwort).
+      parliamentary:
+        description: Parliamentary phase (committee and plenary treatment).
+        annotations:
+          description_de: Parlamentarische Phase (Kommissions- und Ratsbehandlung).
+      post_parliamentary:
+        description: Post-parliamentary phase (implementation, write-off).
+        annotations:
+          description_de: Nachparlamentarische Phase (Umsetzung, Abschreibung).
+
+  ProcedureStageEnum:
+    description: |
+      Stage discriminator identifying the concrete process step type. Each value
+      corresponds to one ProcessStep subclass.
+    annotations:
+      description_de: |
+        Stage-Diskriminator, der den konkreten Verfahrensschritt-Typ bestimmt.
+        Jeder Wert entspricht einer ProcessStep-Unterklasse.
+    permissible_values:
+      submission:
+        description: Submission step (SubmissionStep).
+        annotations:
+          description_de: Einreichungsschritt (SubmissionStep).
+      withdrawal:
+        description: Withdrawal step (WithdrawalStep).
+        annotations:
+          description_de: Rückzugsschritt (WithdrawalStep).
+      validation:
+        description: Validation step (ValidationStep).
+        annotations:
+          description_de: Prüfungsschritt (ValidationStep).
+      assignment:
+        description: Assignment step (AssignmentStep).
+        annotations:
+          description_de: Zuweisungsschritt (AssignmentStep).
+      executive_response:
+        description: Executive response step (ExecutiveResponseStep).
+        annotations:
+          description_de: Stellungnahme-Schritt der Exekutive (ExecutiveResponseStep).
+      agenda:
+        description: Agenda placement step (AgendaStep).
+        annotations:
+          description_de: Traktandierungsschritt (AgendaStep).
+      committee_deliberation:
+        description: Committee deliberation step (CommitteeDeliberationStep).
+        annotations:
+          description_de: Kommissionsberatungsschritt (CommitteeDeliberationStep).
+      plenary_debate:
+        description: Plenary debate step (PlenaryDebateStep).
+        annotations:
+          description_de: Ratsdebattenschritt (PlenaryDebateStep).
+      implementation:
+        description: Implementation / write-off step (ImplementationStep).
+        annotations:
+          description_de: Umsetzungs- / Abschreibungsschritt (ImplementationStep).
+
+  SponsorRoleEnum:
+    description: |
+      Role of an actor in the sponsorship of an affair.
+    annotations:
+      description_de: |
+        Rolle eines Akteurs in der Urheberschaft eines Geschäfts.
+    permissible_values:
+      sponsor:
+        description: Primary sponsor / first signatory (Urheber/in, Erstunterzeichnung).
+        annotations:
+          description_de: Haupturheber/in / Erstunterzeichnung.
+      cosponsor:
+        description: Co-sponsor / co-signatory (Mitunterzeichnung).
+        annotations:
+          description_de: Mitunterzeichnung.
+      takeover:
+        description: Actor who took over the affair from the original sponsor (Übernahme).
+        annotations:
+          description_de: Akteur, der das Geschäft vom ursprünglichen Urheber übernommen hat (Übernahme).
+
+  ValidationTypeEnum:
+    description: |
+      Type of a validation step.
+    annotations:
+      description_de: |
+        Typ eines Prüfschritts.
+    permissible_values:
+      admissibility_check:
+        description: Initial admissibility / validity check (Zulässigkeitsprüfung).
+        annotations:
+          description_de: Erste Zulässigkeits- / Gültigkeitsprüfung.
+      urgency_request:
+        description: Request to treat the affair as urgent (Dringlichkeitsbegehren).
+        annotations:
+          description_de: Begehren, das Geschäft als dringlich zu behandeln.
+
+  ValidationResultEnum:
+    description: |
+      Outcome of a validation step.
+    annotations:
+      description_de: |
+        Ergebnis eines Prüfschritts.
+    permissible_values:
+      valid:
+        description: The submission is valid / admissible.
+        annotations:
+          description_de: Die Einreichung ist gültig / zulässig.
+      invalid:
+        description: The submission is invalid / inadmissible.
+        annotations:
+          description_de: Die Einreichung ist ungültig / unzulässig.
+      urgent:
+        description: Urgency granted.
+        annotations:
+          description_de: Dringlichkeit gewährt.
+      not_urgent:
+        description: Urgency denied.
+        annotations:
+          description_de: Dringlichkeit abgelehnt.
+
+  AssignmentTypeEnum:
+    description: |
+      Type of assignment of an affair.
+    annotations:
+      description_de: |
+        Art der Zuweisung eines Geschäfts.
+    permissible_values:
+      chamber:
+        description: Assignment to a chamber / council.
+        annotations:
+          description_de: Zuweisung an eine Kammer / einen Rat.
+      committee:
+        description: Assignment to a committee.
+        annotations:
+          description_de: Zuweisung an eine Kommission.
+      executive:
+        description: Assignment to the executive (government / administration).
+        annotations:
+          description_de: Zuweisung an die Exekutive (Regierung / Verwaltung).
+
+  RecommendationEnum:
+    description: |
+      Formal recommendations on how to treat an affair.
+    annotations:
+      description_de: |
+        Formelle Empfehlungen zur Behandlung eines Geschäfts.
+    permissible_values:
+      accept:
+        description: Recommend acceptance / adoption.
+        annotations:
+          description_de: Annahme empfehlen.
+      reject:
+        description: Recommend rejection.
+        annotations:
+          description_de: Ablehnung empfehlen.
+      accept_as_postulate:
+        description: Recommend acceptance as a postulate (for motions).
+        annotations:
+          description_de: Annahme als Postulat empfehlen (bei Motionen).
+      partial_acceptance:
+        description: Recommend partial acceptance.
+        annotations:
+          description_de: Teilweise Annahme empfehlen.
+      no_recommendation:
+        description: No recommendation issued.
+        annotations:
+          description_de: Keine Empfehlung abgegeben.
+
+  PlenaryDebateTypeEnum:
+    description: |
+      Types of plenary debate.
+    annotations:
+      description_de: |
+        Typen der Ratsdebatte.
+    permissible_values:
+      entry_debate:
+        description: Entry debate (Eintretensdebatte) deciding whether to enter into the matter.
+        annotations:
+          description_de: Eintretensdebatte zur Frage, ob auf das Geschäft eingetreten wird.
+      detailed_consultation:
+        description: Detailed consultation (Detailberatung) of individual provisions.
+        annotations:
+          description_de: Detailberatung der einzelnen Bestimmungen.
+      overall_vote:
+        description: Overall vote (Gesamtabstimmung).
+        annotations:
+          description_de: Gesamtabstimmung.
+      single_debate:
+        description: Single combined debate on the whole affair.
+        annotations:
+          description_de: Einzelne, zusammengefasste Beratung des ganzen Geschäfts.
+
+  PlenaryDebateEventTypeEnum:
+    description: |
+      Types of events within a plenary debate.
+    annotations:
+      description_de: |
+        Typen von Ereignissen innerhalb einer Ratsdebatte.
+    permissible_values:
+      speech:
+        description: A speech.
+        annotations:
+          description_de: Eine Rede.
+      proposition:
+        description: A proposition / amendment.
+        annotations:
+          description_de: Ein Antrag / Änderungsantrag.
+      vote:
+        description: A vote.
+        annotations:
+          description_de: Eine Abstimmung.
+
+  CommitteePositionTypeEnum:
+    description: |
+      Whether a committee position represents the full committee, a majority, or a
+      minority.
+    annotations:
+      description_de: |
+        Ob eine Kommissionsposition die Gesamtkommission, eine Mehrheit oder eine
+        Minderheit darstellt.
+    permissible_values:
+      full_committee:
+        description: Position of the full committee.
+        annotations:
+          description_de: Position der Gesamtkommission.
+      majority:
+        description: Majority position.
+        annotations:
+          description_de: Mehrheitsposition.
+      minority:
+        description: Minority position.
+        annotations:
+          description_de: Minderheitsposition.
+
+  VoteResultEnum:
+    description: |
+      Outcome of a vote or of a step that concludes with a vote.
+    annotations:
+      description_de: |
+        Ergebnis einer Abstimmung oder eines mit einer Abstimmung abschliessenden
+        Schritts.
+    permissible_values:
+      accepted:
+        description: Accepted / adopted.
+        annotations:
+          description_de: Angenommen.
+      rejected:
+        description: Rejected.
+        annotations:
+          description_de: Abgelehnt.
+      tied:
+        description: Tied vote (decided by the chair's casting vote, if applicable).
+        annotations:
+          description_de: Stimmengleichheit (ggf. durch Stichentscheid des Vorsitzes entschieden).
+      no_decision:
+        description: No decision reached (e.g., postponed).
+        annotations:
+          description_de: Kein Entscheid (z.B. verschoben).
+
+  DispositionEnum:
+    description: |
+      Final disposition of an affair after treatment.
+    annotations:
+      description_de: |
+        Abschliessende Erledigungsart eines Geschäfts nach der Behandlung.
+    permissible_values:
+      implemented:
+        description: Implemented / fulfilled by the executive.
+        annotations:
+          description_de: Durch die Exekutive umgesetzt / erfüllt.
+      written_off:
+        description: Written off (Abschreibung), e.g., because it was fulfilled or not implemented in time.
+        annotations:
+          description_de: Abgeschrieben, z.B. weil erfüllt oder nicht fristgerecht umgesetzt.
+      lapsed:
+        description: Lapsed (e.g., not treated within the legal deadline).
+        annotations:
+          description_de: Dahingefallen (z.B. nicht innert gesetzlicher Frist behandelt).
+
+  TextTypeEnum:
+    description: |
+      Types of text blocks associated with affairs and steps.
+    annotations:
+      description_de: |
+        Typen von Textblöcken, die Geschäften und Schritten zugeordnet sind.
+    permissible_values:
+      main_text:
+        description: Main text of the affair (the actual request / Wortlaut).
+        annotations:
+          description_de: Haupttext des Geschäfts (der eigentliche Wortlaut).
+      reasoning:
+        description: Reasoning / justification (Begründung).
+        annotations:
+          description_de: Begründung.
+      response:
+        description: Response text (e.g., of the executive).
+        annotations:
+          description_de: Antworttext (z.B. der Exekutive).
+      official_communication:
+        description: Official communication or press release.
+        annotations:
+          description_de: Offizielle Mitteilung oder Medienmitteilung.
+      note:
+        description: Internal or procedural note.
+        annotations:
+          description_de: Interne oder verfahrensbezogene Notiz.
