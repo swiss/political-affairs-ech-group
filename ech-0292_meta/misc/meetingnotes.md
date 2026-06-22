@@ -4,10 +4,12 @@ _Internal note: update the next subgroup meeting in the [README](https://github.
 
 **Meeting Link:** https://teams.microsoft.com/meet/3879512933733?p=rTdaRaFWPi0JWENkuE
 
-## Next meeting: 15-16.00 – 4th MO of every month
+## Next meeting: 24 August (15-16.00) – 4th MO of every month
 
+- 06_richtext_definition.md
+- ...
 
-## 22 June (15-16.00)
+## 22 June
 - Themenklassifikation: vgl. https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0297_consultations/misc/2026-06-19-session.md
     - Abgeschlossene Liste von Kategorien als Standard? (vs. Tags)
         - Aufwand/Ertrag fragwürdig
@@ -16,9 +18,7 @@ _Internal note: update the next subgroup meeting in the [README](https://github.
         - Mögliche Kategorisierungen/Listen: siehe https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0297_consultations/misc/2026-06-19-session.md
 - 05_data_publishing.md
     - https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/05_data_publishing.md
-- 06_richtext_definition.md
-- Permanente URL/URI/DOI
-- ...
+
 
 ## 1 June 2026
 
