@@ -4,9 +4,18 @@ _Internal note: update the next subgroup meeting in the [README](https://github.
 
 **Meeting Link:** https://teams.microsoft.com/meet/3879512933733?p=rTdaRaFWPi0JWENkuE
 
-## Next meeting: 22 June (15-16.00) – 4th MO of every month
+## Next meeting: 15-16.00 – 4th MO of every month
 
+
+## 22 June (15-16.00)
+- Themenklassifikation: vgl. https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0297_consultations/misc/2026-06-19-session.md
+    - Abgeschlossene Liste von Kategorien als Standard? (vs. Tags)
+        - Aufwand/Ertrag fragwürdig
+    - Vorschlag: einmaliges Mapping eigener Kategorisierung zu Wikidata
+    - Draft via separates Kapitel starten, aber erst für nächste Version des Meta-Standards
+        - Mögliche Kategorisierungen/Listen: siehe https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0297_consultations/misc/2026-06-19-session.md
 - 05_data_publishing.md
+    - https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/05_data_publishing.md
 - 06_richtext_definition.md
 - Permanente URL/URI/DOI
 - ...
