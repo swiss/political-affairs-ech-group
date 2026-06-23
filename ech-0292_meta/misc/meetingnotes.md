@@ -14,7 +14,7 @@ _Internal note: update the next subgroup meeting in the [README](https://github.
     - Abgeschlossene Liste von Kategorien als Standard? (vs. Tags)
         - Aufwand/Ertrag fragwürdig
     - Vorschlag: einmaliges Mapping eigener Kategorisierung zu Wikidata
-    - Draft via separates Kapitel starten, aber erst für nächste Version des Meta-Standards
+    - Draft via separates Kapitel starten, aber erst für nächste Version des Meta-Standards: https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/08_topic_list.md
         - Mögliche Kategorisierungen/Listen: siehe https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0297_consultations/misc/2026-06-19-session.md
 - 05_data_publishing.md
     - https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0292_meta/input/05_data_publishing.md
