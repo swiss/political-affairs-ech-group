@@ -30,9 +30,27 @@ Der Standard richtet sich an öffentliche Stellen aller Staatsebenen, politische
 
 \newpage
 
-# Inhaltsverzeichniss
+# Inhaltsverzeichnis
 
-< manually insert TOC here >
+```{=openxml}
+<w:p>
+  <w:r>
+    <w:fldChar w:fldCharType="begin" w:dirty="true"/>
+  </w:r>
+  <w:r>
+    <w:instrText xml:space="preserve"> TOC \o "1-3" \h \z \u </w:instrText>
+  </w:r>
+  <w:r>
+    <w:fldChar w:fldCharType="separate"/>
+  </w:r>
+  <w:r>
+    <w:t>Rechtsklick &gt; „Felder aktualisieren“, um das Inhaltsverzeichnis zu erzeugen.</w:t>
+  </w:r>
+  <w:r>
+    <w:fldChar w:fldCharType="end"/>
+  </w:r>
+</w:p>
+```
 
 
 \newpage
@@ -195,53 +213,6 @@ __
 
 
 ### Examples
-#### Example: Person-swiss_politicians_Beat_Jans
-
-```yaml
-local_id: 4032
-global_uri: https://data-example.parlament.ch/person/4032
-wikidata_uri: https://www.wikidata.org/wiki/Q813067
-label: Beat Jans
-label_long: Beat Jans, dipl. nat. ETH
-birth_year: 1964
-birth_date: 1964-07-12
-picture: https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg
-names:
-- name_type: PersonFirstName
-  value: Beat
-- name_type: PersonOfficialName
-  value: Jans
-  valid_from: 1964-07-12
-addresses:
-- address_type: businessAddress
-  postal_locality: Basel-Stadt
-language_proficiencies:
-- language: de
-  is_correspondence: true
-  is_native: true
-citizenships:
-- country: CH
-  valid_from: 1964-07-12
-genders:
-- gender_code: male
-  valid_from: 1964-07-12
-occupations:
-- label: Politiker
-  valid_from: 1964-01-01
-  is_active: true
-trainings:
-- training_type: '3223'
-  value: dipl. nat. ETH
-contacts:
-- contact_type: email
-  value: beat.jans@admin.ch
-- contact_type: contact_website
-  value: http://www.beat-jans.ch
-electoral_district:
-  district: Basel-Stadt
-  valid_from: 2010-01-01
-
-```
 #### Example: Person-douglas_adams_Douglas_Adams
 
 ```yaml
@@ -291,6 +262,53 @@ electoral_district:
   district: London Central
   valid_from: 2020-01-01
   valid_through: 2025-01-01
+
+```
+#### Example: Person-swiss_politicians_Beat_Jans
+
+```yaml
+local_id: 4032
+global_uri: https://data-example.parlament.ch/person/4032
+wikidata_uri: https://www.wikidata.org/wiki/Q813067
+label: Beat Jans
+label_long: Beat Jans, dipl. nat. ETH
+birth_year: 1964
+birth_date: 1964-07-12
+picture: https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg
+names:
+- name_type: PersonFirstName
+  value: Beat
+- name_type: PersonOfficialName
+  value: Jans
+  valid_from: 1964-07-12
+addresses:
+- address_type: businessAddress
+  postal_locality: Basel-Stadt
+language_proficiencies:
+- language: de
+  is_correspondence: true
+  is_native: true
+citizenships:
+- country: CH
+  valid_from: 1964-07-12
+genders:
+- gender_code: male
+  valid_from: 1964-07-12
+occupations:
+- label: Politiker
+  valid_from: 1964-01-01
+  is_active: true
+trainings:
+- training_type: '3223'
+  value: dipl. nat. ETH
+contacts:
+- contact_type: email
+  value: beat.jans@admin.ch
+- contact_type: contact_website
+  value: http://www.beat-jans.ch
+electoral_district:
+  district: Basel-Stadt
+  valid_from: 2010-01-01
 
 ```
 
@@ -1334,54 +1352,6 @@ function_role: Geschäftsführer
 is_paid: true
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_007
-
-```yaml
-global_uri: act:il_burkart_007
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-legal_form: '0110'
-committee: Stiftungsrat
-function_role: Vizepräsident
-is_paid: false
-
-```
-#### Example: InterestLink-interest_links_il_burkart_011
-
-```yaml
-global_uri: act:il_burkart_011
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: Verein Landesausstellung Svizra27, Aarau
-legal_form: 0109
-committee: Vorstand
-function_role: Mitglied
-is_paid: false
-
-```
-#### Example: InterestLink-interest_links_il_burkart_010
-
-```yaml
-global_uri: act:il_burkart_010
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: Allianz Sicherheit Schweiz, Baden
-legal_form: 0109
-committee: Vorstand
-function_role: Präsident
-is_paid: false
-
-```
 #### Example: InterestLink-interest_links_il_burkart_002
 
 ```yaml
@@ -1392,22 +1362,6 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_name: Birchmeier Holding AG, Döttingen
-legal_form: '0106'
-committee: Verwaltungsrat
-function_role: Mitglied
-is_paid: true
-
-```
-#### Example: InterestLink-interest_links_il_burkart_004
-
-```yaml
-global_uri: act:il_burkart_004
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: ELCA Group SA, Lausanne
 legal_form: '0106'
 committee: Verwaltungsrat
 function_role: Mitglied
@@ -1430,6 +1384,70 @@ function_role: Mitglied
 is_paid: true
 
 ```
+#### Example: InterestLink-interest_links_il_burkart_005
+
+```yaml
+global_uri: act:il_burkart_005
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+legal_form: 0109
+committee: Zentralvorstand
+function_role: Präsident
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_010
+
+```yaml
+global_uri: act:il_burkart_010
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: Allianz Sicherheit Schweiz, Baden
+legal_form: 0109
+committee: Vorstand
+function_role: Präsident
+is_paid: false
+
+```
+#### Example: InterestLink-interest_links_il_burkart_004
+
+```yaml
+global_uri: act:il_burkart_004
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: professional_activity
+organization_name: ELCA Group SA, Lausanne
+legal_form: '0106'
+committee: Verwaltungsrat
+function_role: Mitglied
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_007
+
+```yaml
+global_uri: act:il_burkart_007
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+legal_form: '0110'
+committee: Stiftungsrat
+function_role: Vizepräsident
+is_paid: false
+
+```
 #### Example: InterestLink-interest_links_il_burkart_006
 
 ```yaml
@@ -1446,20 +1464,20 @@ function_role: Präsident
 is_paid: true
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_008
+#### Example: InterestLink-interest_links_il_burkart_011
 
 ```yaml
-global_uri: act:il_burkart_008
+global_uri: act:il_burkart_011
 person_reference:
   global_uri: https://www.wikidata.org/wiki/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: Stiebel Eltron AG, Lupfig
-legal_form: '0106'
-committee: Beirat
-function_role: Beirat
-is_paid: true
+interest_type: association
+organization_name: Verein Landesausstellung Svizra27, Aarau
+legal_form: 0109
+committee: Vorstand
+function_role: Mitglied
+is_paid: false
 
 ```
 #### Example: InterestLink-interest_links_il_burkart_009
@@ -1478,19 +1496,19 @@ function_role: Mitglied
 is_paid: true
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_005
+#### Example: InterestLink-interest_links_il_burkart_008
 
 ```yaml
-global_uri: act:il_burkart_005
+global_uri: act:il_burkart_008
 person_reference:
   global_uri: https://www.wikidata.org/wiki/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
-legal_form: 0109
-committee: Zentralvorstand
-function_role: Präsident
+interest_type: professional_activity
+organization_name: Stiebel Eltron AG, Lupfig
+legal_form: '0106'
+committee: Beirat
+function_role: Beirat
 is_paid: true
 
 ```
@@ -1820,6 +1838,13 @@ __
 
 
 ### Examples
+#### Example: Address-swiss_politicians_Beat_Jans_1
+
+```yaml
+address_type: businessAddress
+postal_locality: Basel-Stadt
+
+```
 #### Example: Address-douglas_adams_Douglas_Adams_1
 
 ```yaml
@@ -1827,13 +1852,6 @@ address_type: privateAddress
 street_address: 1234 Fictional St, London, UK
 postal_code: 12345
 postal_locality: London
-
-```
-#### Example: Address-swiss_politicians_Beat_Jans_1
-
-```yaml
-address_type: businessAddress
-postal_locality: Basel-Stadt
 
 ```
 
