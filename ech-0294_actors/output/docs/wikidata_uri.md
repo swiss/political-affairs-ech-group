@@ -6,7 +6,7 @@ search:
 # Slot: wikidata_uri 
 
 
-_A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland._
+_A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland._
 
 __
 
@@ -76,11 +76,11 @@ name: wikidata_uri
 annotations:
   description_de:
     tag: description_de
-    value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39
+    value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q39
       für die Schweiz.
 
       '
-description: 'A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39
+description: 'A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39
   for Switzerland.
 
   '

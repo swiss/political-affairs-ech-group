@@ -36,7 +36,7 @@ __
 | interest_links | * <br/> [InterestLink](InterestLink.md) | Collection of interest links.  |
 | local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | date_created | 0..1 <br/> [Date](Date.md) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
 | datetime_created | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
 | date_modified | 0..1 <br/> [Date](Date.md) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
@@ -66,53 +66,6 @@ __
 
 
 ### Examples
-#### Example: Person-swiss_politicians_Beat_Jans
-
-```yaml
-local_id: 4032
-global_uri: https://data-example.parlament.ch/person/4032
-wikidata_uri: https://www.wikidata.org/wiki/Q813067
-label: Beat Jans
-label_long: Beat Jans, dipl. nat. ETH
-birth_year: 1964
-birth_date: 1964-07-12
-picture: https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg
-names:
-- name_type: PersonFirstName
-  value: Beat
-- name_type: PersonOfficialName
-  value: Jans
-  valid_from: 1964-07-12
-addresses:
-- address_type: businessAddress
-  postal_locality: Basel-Stadt
-language_proficiencies:
-- language: de
-  is_correspondence: true
-  is_native: true
-citizenships:
-- country: CH
-  valid_from: 1964-07-12
-genders:
-- gender_code: male
-  valid_from: 1964-07-12
-occupations:
-- label: Politiker
-  valid_from: 1964-01-01
-  is_active: true
-trainings:
-- training_type: '3223'
-  value: dipl. nat. ETH
-contacts:
-- contact_type: email
-  value: beat.jans@admin.ch
-- contact_type: contact_website
-  value: http://www.beat-jans.ch
-electoral_district:
-  district: Basel-Stadt
-  valid_from: 2010-01-01
-
-```
 #### Example: Person-douglas_adams_Douglas_Adams
 
 ```yaml
@@ -162,6 +115,53 @@ electoral_district:
   district: London Central
   valid_from: 2020-01-01
   valid_through: 2025-01-01
+
+```
+#### Example: Person-swiss_politicians_Beat_Jans
+
+```yaml
+local_id: 4032
+global_uri: https://data-example.parlament.ch/person/4032
+wikidata_uri: https://www.wikidata.org/wiki/Q813067
+label: Beat Jans
+label_long: Beat Jans, dipl. nat. ETH
+birth_year: 1964
+birth_date: 1964-07-12
+picture: https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg
+names:
+- name_type: PersonFirstName
+  value: Beat
+- name_type: PersonOfficialName
+  value: Jans
+  valid_from: 1964-07-12
+addresses:
+- address_type: businessAddress
+  postal_locality: Basel-Stadt
+language_proficiencies:
+- language: de
+  is_correspondence: true
+  is_native: true
+citizenships:
+- country: CH
+  valid_from: 1964-07-12
+genders:
+- gender_code: male
+  valid_from: 1964-07-12
+occupations:
+- label: Politiker
+  valid_from: 1964-01-01
+  is_active: true
+trainings:
+- training_type: '3223'
+  value: dipl. nat. ETH
+contacts:
+- contact_type: email
+  value: beat.jans@admin.ch
+- contact_type: contact_website
+  value: http://www.beat-jans.ch
+electoral_district:
+  district: Basel-Stadt
+  valid_from: 2010-01-01
 
 ```
 

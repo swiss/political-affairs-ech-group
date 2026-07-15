@@ -175,7 +175,7 @@
                     ]
                 },
                 "wikidata_uri": {
-                    "description": "A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
                     "type": [
                         "string",
                         "null"
@@ -456,7 +456,7 @@
                     ]
                 },
                 "wikidata_uri": {
-                    "description": "A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
                     "type": [
                         "string",
                         "null"
@@ -502,7 +502,7 @@
                     ]
                 },
                 "wikidata_uri": {
-                    "description": "A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
                     "type": [
                         "string",
                         "null"
@@ -618,7 +618,7 @@
                     ]
                 },
                 "wikidata_uri": {
-                    "description": "A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
                     "type": [
                         "string",
                         "null"
@@ -795,7 +795,7 @@
                     ]
                 },
                 "wikidata_uri": {
-                    "description": "A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
                     "type": [
                         "string",
                         "null"
@@ -1018,7 +1018,7 @@
                     ]
                 },
                 "wikidata_uri": {
-                    "description": "A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
                     "type": [
                         "string",
                         "null"
@@ -1217,7 +1217,7 @@
                     ]
                 },
                 "wikidata_uri": {
-                    "description": "A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
                     "type": [
                         "string",
                         "null"
@@ -1571,7 +1571,7 @@
                     ]
                 },
                 "wikidata_uri": {
-                    "description": "A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
                     "type": [
                         "string",
                         "null"
@@ -1619,7 +1619,7 @@
                     ]
                 },
                 "wikidata_uri": {
-                    "description": "A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
                     "type": [
                         "string",
                         "null"
@@ -1821,7 +1821,7 @@
             ]
         },
         "wikidata_uri": {
-            "description": "A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.\n",
+            "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
             "type": [
                 "string",
                 "null"
