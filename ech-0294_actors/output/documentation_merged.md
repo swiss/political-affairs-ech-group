@@ -59,7 +59,7 @@ Der Standard richtet sich an öffentliche Stellen aller Staatsebenen, politische
 
 ## Standards für politische Geschäfte
 
-Das politische Geschehen der Schweiz findet auf Bundes-, Kantons- und Gemeindeebene statt – in Parlamenten und Gemeindeversammlungen, in Exekutiven und Verwaltungen, in Vernehmlassungen und Konsultationen sowie über die direktdemokratische Mitwirkung der Stimmberechtigten. Der Schwerpunkt liegt zwar auf den legislativen Prozessen, doch lassen sich ebenso exekutive Organe, Behörden und weitere Ausprägungen politischer Willensbildung abbilden. Die Fachgruppe „Politische Geschäfte" des Vereins eCH entwickelt dafür eine Familie aufeinander abgestimmter Standards, welche diese Daten föderal übergreifend strukturiert, maschinenlesbar und vergleichbar bereitstellen. Die Standards nutzen gemeinsame Datenelemente (eCH-0292) und referenzieren sich gegenseitig über eindeutige Identifikatoren.
+Das politische Geschehen der Schweiz findet auf Bundes-, Kantons- und Gemeindeebene statt – in Parlamenten und Gemeindeversammlungen, in Exekutiven und Verwaltungen, in Vernehmlassungen und Konsultationen sowie über die direktdemokratische Mitwirkung der Stimmberechtigten. Die Fachgruppe „Politische Geschäfte" des Vereins eCH entwickelt dafür eine Familie aufeinander abgestimmter Standards, welche diese Daten föderal übergreifend strukturiert, maschinenlesbar und vergleichbar bereitstellen. Die Standards nutzen gemeinsame Datenelemente (eCH-0292) und referenzieren sich gegenseitig über eindeutige Identifikatoren.
 
 Die Familie umfasst:
 
@@ -77,7 +77,10 @@ Neben der Fachgruppe „Politische Geschäfte" besteht beim Verein eCH die Fachg
 - **Politische Geschäfte** (diese Standardfamilie) beschreibt den parlamentarischen und behördlichen Willensbildungs- und Entscheidungsprozess: die Akteure (eCH-0294), den Ratsbetrieb (eCH-0293), die parlamentarischen Geschäfte (eCH-0295), die daraus hervorgehenden Erlasse (eCH-0296) sowie die vorgelagerten Vernehmlassungen (eCH-0297).
 - **Politische Rechte** befasst sich mit der Ausübung der politischen Rechte durch die Stimmberechtigten: Stimm- und Wahlregister, die Durchführung von Volksabstimmungen und Wahlen, die elektronische Stimmabgabe (eVoting), Stimmrechtsausweise sowie Abstimmungs- und Wahlergebnisse (u.a. eCH-0045, eCH-0110, eCH-0155, eCH-0157, eCH-0159, eCH-0222, eCH-0228, eCH-0252, eCH-0310).
 
-Berührungspunkte bestehen vor allem bei Abstimmungen und Wahlen: eCH-0293 erfasst Abstimmungen und Wahlen **innerhalb des Ratsbetriebs** (z.B. namentliche Abstimmungen im Parlament oder die Wahl von Behördenmitgliedern durch den Rat), während Volksabstimmungen und Volkswahlen samt der zugehörigen Register, Durchführung und Ergebnisse von der Fachgruppe „Politische Rechte" abgedeckt werden.
+Berührungspunkte bestehen an zwei Stellen:
+
+- **Abstimmungen und Wahlen:** eCH-0293 erfasst Abstimmungen und Wahlen **innerhalb des Ratsbetriebs** (z.B. namentliche Abstimmungen im Parlament oder die Wahl von Behördenmitgliedern durch den Rat), während Volksabstimmungen und Volkswahlen samt der zugehörigen Register, Durchführung und Ergebnisse von der Fachgruppe „Politische Rechte" abgedeckt werden.
+- **Gewählte Personen:** In den Wahlergebnissen der Fachgruppe „Politische Rechte" erscheinen Kandidierende und Gewählte. Sobald Personen ein Mandat innehaben, werden sie in eCH-0294 als politische Akteurinnen und Akteure mit ihren Rollen und Mitgliedschaften geführt.
 
 ## Zu diesem Standard
 
@@ -238,53 +241,6 @@ __
 
 
 ### Examples
-#### Example: Person-swiss_politicians_Beat_Jans
-
-```yaml
-local_id: 4032
-global_uri: https://data-example.parlament.ch/person/4032
-wikidata_uri: https://www.wikidata.org/wiki/Q813067
-label: Beat Jans
-label_long: Beat Jans, dipl. nat. ETH
-birth_year: 1964
-birth_date: 1964-07-12
-picture: https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg
-names:
-- name_type: PersonFirstName
-  value: Beat
-- name_type: PersonOfficialName
-  value: Jans
-  valid_from: 1964-07-12
-addresses:
-- address_type: businessAddress
-  postal_locality: Basel-Stadt
-language_proficiencies:
-- language: de
-  is_correspondence: true
-  is_native: true
-citizenships:
-- country: CH
-  valid_from: 1964-07-12
-genders:
-- gender_code: male
-  valid_from: 1964-07-12
-occupations:
-- label: Politiker
-  valid_from: 1964-01-01
-  is_active: true
-trainings:
-- training_type: '3223'
-  value: dipl. nat. ETH
-contacts:
-- contact_type: email
-  value: beat.jans@admin.ch
-- contact_type: contact_website
-  value: http://www.beat-jans.ch
-electoral_district:
-  district: Basel-Stadt
-  valid_from: 2010-01-01
-
-```
 #### Example: Person-douglas_adams_Douglas_Adams
 
 ```yaml
@@ -334,6 +290,53 @@ electoral_district:
   district: London Central
   valid_from: 2020-01-01
   valid_through: 2025-01-01
+
+```
+#### Example: Person-swiss_politicians_Beat_Jans
+
+```yaml
+local_id: 4032
+global_uri: https://data-example.parlament.ch/person/4032
+wikidata_uri: https://www.wikidata.org/wiki/Q813067
+label: Beat Jans
+label_long: Beat Jans, dipl. nat. ETH
+birth_year: 1964
+birth_date: 1964-07-12
+picture: https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg
+names:
+- name_type: PersonFirstName
+  value: Beat
+- name_type: PersonOfficialName
+  value: Jans
+  valid_from: 1964-07-12
+addresses:
+- address_type: businessAddress
+  postal_locality: Basel-Stadt
+language_proficiencies:
+- language: de
+  is_correspondence: true
+  is_native: true
+citizenships:
+- country: CH
+  valid_from: 1964-07-12
+genders:
+- gender_code: male
+  valid_from: 1964-07-12
+occupations:
+- label: Politiker
+  valid_from: 1964-01-01
+  is_active: true
+trainings:
+- training_type: '3223'
+  value: dipl. nat. ETH
+contacts:
+- contact_type: email
+  value: beat.jans@admin.ch
+- contact_type: contact_website
+  value: http://www.beat-jans.ch
+electoral_district:
+  district: Basel-Stadt
+  valid_from: 2010-01-01
 
 ```
 
@@ -1361,22 +1364,6 @@ __
 
 
 ### Examples
-#### Example: InterestLink-interest_links_il_burkart_010
-
-```yaml
-global_uri: act:il_burkart_010
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: Allianz Sicherheit Schweiz, Baden
-legal_form: 0109
-committee: Vorstand
-function_role: Präsident
-is_paid: false
-
-```
 #### Example: InterestLink-interest_links_il_burkart_001
 
 ```yaml
@@ -1393,22 +1380,6 @@ function_role: Geschäftsführer
 is_paid: true
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_008
-
-```yaml
-global_uri: act:il_burkart_008
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: Stiebel Eltron AG, Lupfig
-legal_form: '0106'
-committee: Beirat
-function_role: Beirat
-is_paid: true
-
-```
 #### Example: InterestLink-interest_links_il_burkart_002
 
 ```yaml
@@ -1422,6 +1393,102 @@ organization_name: Birchmeier Holding AG, Döttingen
 legal_form: '0106'
 committee: Verwaltungsrat
 function_role: Mitglied
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_003
+
+```yaml
+global_uri: act:il_burkart_003
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: professional_activity
+organization_name: Bovida Real Estate AG, Baar
+legal_form: '0106'
+committee: Verwaltungsrat
+function_role: Mitglied
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_005
+
+```yaml
+global_uri: act:il_burkart_005
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+legal_form: 0109
+committee: Zentralvorstand
+function_role: Präsident
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_010
+
+```yaml
+global_uri: act:il_burkart_010
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: Allianz Sicherheit Schweiz, Baden
+legal_form: 0109
+committee: Vorstand
+function_role: Präsident
+is_paid: false
+
+```
+#### Example: InterestLink-interest_links_il_burkart_004
+
+```yaml
+global_uri: act:il_burkart_004
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: professional_activity
+organization_name: ELCA Group SA, Lausanne
+legal_form: '0106'
+committee: Verwaltungsrat
+function_role: Mitglied
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_007
+
+```yaml
+global_uri: act:il_burkart_007
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+legal_form: '0110'
+committee: Stiftungsrat
+function_role: Vizepräsident
+is_paid: false
+
+```
+#### Example: InterestLink-interest_links_il_burkart_006
+
+```yaml
+global_uri: act:il_burkart_006
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: FDP.Die Liberalen
+legal_form: 0109
+committee: Vorstand
+function_role: Präsident
 is_paid: true
 
 ```
@@ -1457,84 +1524,20 @@ function_role: Mitglied
 is_paid: true
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_005
+#### Example: InterestLink-interest_links_il_burkart_008
 
 ```yaml
-global_uri: act:il_burkart_005
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
-legal_form: 0109
-committee: Zentralvorstand
-function_role: Präsident
-is_paid: true
-
-```
-#### Example: InterestLink-interest_links_il_burkart_003
-
-```yaml
-global_uri: act:il_burkart_003
+global_uri: act:il_burkart_008
 person_reference:
   global_uri: https://www.wikidata.org/wiki/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_name: Bovida Real Estate AG, Baar
+organization_name: Stiebel Eltron AG, Lupfig
 legal_form: '0106'
-committee: Verwaltungsrat
-function_role: Mitglied
+committee: Beirat
+function_role: Beirat
 is_paid: true
-
-```
-#### Example: InterestLink-interest_links_il_burkart_004
-
-```yaml
-global_uri: act:il_burkart_004
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: ELCA Group SA, Lausanne
-legal_form: '0106'
-committee: Verwaltungsrat
-function_role: Mitglied
-is_paid: true
-
-```
-#### Example: InterestLink-interest_links_il_burkart_006
-
-```yaml
-global_uri: act:il_burkart_006
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: FDP.Die Liberalen
-legal_form: 0109
-committee: Vorstand
-function_role: Präsident
-is_paid: true
-
-```
-#### Example: InterestLink-interest_links_il_burkart_007
-
-```yaml
-global_uri: act:il_burkart_007
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-legal_form: '0110'
-committee: Stiftungsrat
-function_role: Vizepräsident
-is_paid: false
 
 ```
 
@@ -1863,6 +1866,13 @@ __
 
 
 ### Examples
+#### Example: Address-swiss_politicians_Beat_Jans_1
+
+```yaml
+address_type: businessAddress
+postal_locality: Basel-Stadt
+
+```
 #### Example: Address-douglas_adams_Douglas_Adams_1
 
 ```yaml
@@ -1870,13 +1880,6 @@ address_type: privateAddress
 street_address: 1234 Fictional St, London, UK
 postal_code: 12345
 postal_locality: London
-
-```
-#### Example: Address-swiss_politicians_Beat_Jans_1
-
-```yaml
-address_type: businessAddress
-postal_locality: Basel-Stadt
 
 ```
 
