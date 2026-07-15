@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+bikeshed/.venv/
+dokieli/node_modules/
+
+# Build outputs
+build/
+output/
+bikeshed/index.html
+bikeshed/*.html
+
+# Backups
+backup/
+
+# OS
+.DS_Store
+*.swp
+*.swo
+~*
+
+# IDE
+.vscode/
+.idea/
+*.iml

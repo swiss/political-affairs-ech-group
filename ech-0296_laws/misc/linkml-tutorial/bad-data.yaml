@@ -1,0 +1,8 @@
+persons:
+  - id: ORCID:1234
+    full_name: Clark Kent
+    age: 90
+    phone: 
+  - id: ORCID:5678
+    full_name: João
+    age: 33

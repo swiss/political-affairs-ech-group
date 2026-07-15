@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0" xmlns:akn4ch="http://legaldocml.ch/">
+    <documentType>
+        <meta>
+            <!-- Metadata -->
+        </meta>
+        <body>
+            <!-- Content -->
+        </body>
+    </documentType>
+</akomaNtoso>

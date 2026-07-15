@@ -1,0 +1,62 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# SPARQL Query samples to Fedlex\n\n## Sparql Notebook Einführung\n\nIn VS Code, install Sparql Notebook.\n\nDocumentation: https://marketplace.visualstudio.com/items?itemName=Zazuko.sparql-notebook\n\nConnect to a remote server by clicking the + button in the SPARQL Connections panel in the VS Code extension. Fill in the server URL and optional credentials.\n\nFedlex Endpoint: https://fedlex.data.admin.ch/sparqlendpoint\n\nThis connection is used throughout the entire notebook, except when a cell defines its own endpoint.\n\n## Bundesverfassung\nsiehe Tutorial.",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "SELECT DISTINCT ?Prädikat ?Objekt WHERE {\n    <https://fedlex.data.admin.ch/eli/cc/1999/404> ?Prädikat ?Objekt .\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Abfrage von SR-Nummer, Titel und Abkürzung der Bundesverfassung\n\nAusgehend von der URI der Bundesverfassung sowie dem Wissen über TaxonomyEntries und Expressions können wir nun die Information über SR-Nummer, Titel und Abkürzung der Bundesverfassung abfragen.\n\n0. Definition der Prefixes zur besseren Lesbarkeit\n1. Die erste Aussage wählt den TaxonomyEntry der Bundesverfassung aus.\n2. Vom TaxonomyEntry bekommen wir die SR-Nummer\n3. Als nächstes wählen wir alle Expressions (Sprachversionen) aus die durch jolux:isRealizedBy mit der Bundesverfassung verknüpft sind.\n4. Dann grenzen wir die Expressions auf diejenige mit der Sprache Deutsch ein.\n5. Die nächsten Aussagen fragen die gewünschen Daten ab, jeweils mit der Expression als Subjekt (möglich durch das Beenden der Aussage mit ; anstatt .)",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "\n# 0\nPREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n\nSELECT DISTINCT ?SR_Nummer ?Titel ?Abkürzung WHERE {\n    \n    # 1\n    <https://fedlex.data.admin.ch/eli/cc/1999/404> jolux:classifiedByTaxonomyEntry ?TaxonomyEntry .\n\n    # 2 \n    ?TaxonomyEntry skos:notation ?SR_Nummer .\n    \n    # 3\n    <https://fedlex.data.admin.ch/eli/cc/1999/404> jolux:isRealizedBy ?Expression .\n    \n    # 4\n    ?Expression jolux:language <http://publications.europa.eu/resource/authority/language/DEU> .\n    \n    # 5\n    ?Expression jolux:title ?Titel ;\n                jolux:titleShort ?Abkürzung .\n} \n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "\n## Liste aller SR-Einträge\n\nBasierend auf dem was wir bereits gelernt haben können wir nun ganz einfach eine Liste aller SR-Einträge und die dazugehörigen Metadaten abfragen, indem wir die URI der Bundesverfassung durch eine Variable ersetzen die vom rdf:type jolux:ConsolidationAbstract sein soll (also einen SR Eintrag darstellt):\n\n1. Alle Objekte vom Typ ConsolidationAbstract auswählen\n2. Alle TaxonomyEntries und Expressions der SR-Einträge auswählen\n3. Wir beschränken die Ausgabe auf die ersten 10 Einträge",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n\nSELECT DISTINCT ?SR_Nummer ?Titel ?Abkürzung ?SR_URI WHERE {\n    \n    # 1\n    ?SR_URI rdf:type jolux:ConsolidationAbstract .\n    \n    # 2\n    ?SR_URI jolux:classifiedByTaxonomyEntry ?TaxonomyEntry ;\n            jolux:isRealizedBy ?Expression .\n    \n    ?TaxonomyEntry skos:notation ?SR_Nummer .\n    \n    ?Expression jolux:language <http://publications.europa.eu/resource/authority/language/DEU> .\n    \n    ?Expression jolux:title ?Titel ;\n                jolux:titleShort ?Abkürzung .\n} \n\n# 3\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Durchsuchen der SR-Einträge nach Abkürzung\n\nFalls nach SR-Einträgen mit einer bestimmten Abkürzung gesucht werden soll, ist das mit einer kleinen Anpassung der vorherigen Abfrage möglich. Dazu muss lediglich die Variable `?Abkürzung` durch den gesuchten Wert (z.B. \"BankV\" für die Bankenverordnung) ersetzt werden. Da der gesuchte Wert ein Literal ist, muss er in Anführungszeichen gesetzt werden:\n\n1. Alle Objekte vom Typ ConsolidationAbstract auswählen\n2. Alle TaxonomyEntries und Expressions der SR-Einträge auswählen\n\nDie Suche nach \"BankV\" ergibt zwei Gesetze die sich sowohl die Abkürzung, als auch die SR-Nummer teilen. In diesem Fall wurde die Bankenverordung 2014 einer Totalrevision unterzogen. Im Gegensatz zur Änderung einzelner Abschnitte, hat hier also ein neues Gesetz das gesamte alte Gesetz von 1972 abgelöst.",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n\nSELECT DISTINCT ?SR_Nummer ?Titel ?Abkürzung ?SR_URI WHERE {\n    \n    # 1\n    ?SR_URI rdf:type jolux:ConsolidationAbstract .\n    \n    # 2\n    ?SR_URI jolux:classifiedByTaxonomyEntry ?TaxonomyEntry ;\n            jolux:isRealizedBy ?Expression .\n    \n    ?TaxonomyEntry skos:notation ?SR_Nummer .\n    \n    ?Expression jolux:language <http://publications.europa.eu/resource/authority/language/DEU> .\n    \n    ?Expression jolux:title ?Titel ;\n                jolux:titleShort \"BankV\" .\n} \n\n# Wir beschränken die Ausgabe auf die ersten 10 Einträge\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Filtern nach geltendem Recht\n\nIn der vorherigen Abfrage haben wir gesehen, dass die Datenbank sowohl geltendes Recht, als auch aufgehobenes Recht beinhaltet. Das Datum des erstmaligen Inkraftretens ist mit `jolux:dateEntryInForce` mit dem SR-Eintrag verknüpft. Einträge die nicht mehr in Kraft sind, haben ein zusätzliches Attribut `jolux:dateNoLongerInForce`, das das Datum der Aufhebung des Gesetzes beschreibt.\n\nWollen wir unsere Abfrage der SR-Einträge auf das aktuell geltende Recht beschränken, können wir die Ergebnisse entsprechend filtern:\n1. Auswählen des Datums des Inkrafttretens\n2. Auswählen der SR-Einträge die vor dem heutigen Datum in Kraft getreten sind\n3. Auswählen des Aufhebungsdatums, falls vorhanden\n4. Auswälen der SR-Einträge die entweder kein Aufhebungsdatum haben, oder bei denen es noch in der Zukunft liegt\n5. Wir sortieren die Einträge nach Datum des Inkrafttretens in aufsteigender Reihenfolge (älteste zuerst)",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n\nSELECT DISTINCT ?SR_Nummer ?Titel ?Abkürzung ?SR_URI WHERE {\n    \n    ?SR_URI rdf:type jolux:ConsolidationAbstract .\n    \n    # 1\n    ?SR_URI jolux:dateEntryInForce ?datumInKraft .\n\n    # 2\n    FILTER( ( xsd:date(?datumInKraft) <= xsd:date(now()) ) )\n    \n    # 3\n    OPTIONAL { ?SR_URI jolux:dateNoLongerInForce ?datumAufhebung . }\n\n    # 4\n    FILTER( !bound(?datumAufhebung) || xsd:date(?datumAufhebung) >= xsd:date(now()) )\n    \n    ?SR_URI jolux:classifiedByTaxonomyEntry ?TaxonomyEntry ;\n            jolux:isRealizedBy ?Expression .\n    \n    ?TaxonomyEntry skos:notation ?SR_Nummer .\n    \n    ?Expression jolux:language <http://publications.europa.eu/resource/authority/language/DEU> .\n    \n    ?Expression jolux:title ?Titel ;\n                jolux:titleShort ?Abkürzung .\n} \n\n# 5\nORDER BY ASC(?datumInKraft)\n\nLIMIT 10\n\n",
+    "metadata": {}
+  }
+]

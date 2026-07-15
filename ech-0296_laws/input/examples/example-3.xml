@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+    <act name="SR-220">
+        <meta>
+            <identification source="#editor">
+                <FRBRWork>
+                    <FRBRthis value="/ch/federal/act/SR-220/!akn"/>
+                </FRBRWork>
+            </identification>
+        </meta>
+    </act>
+</akomaNtoso>

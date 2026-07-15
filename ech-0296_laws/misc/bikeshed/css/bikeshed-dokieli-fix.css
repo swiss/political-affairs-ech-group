@@ -1,0 +1,14 @@
+/*
+ * bikeshed-dokieli-fix.css
+ *
+ * Fixes for conflicts between dokieli.css and Bikeshed's embedded stylesheet.
+ * Loaded in footer.include AFTER all Bikeshed <style> blocks and after dokieli.css.
+ *
+ * Current status: minimal — dokieli.css scopes almost all its screen rules to .do {}
+ * so there is little direct conflict with Bikeshed layout. Add here if new issues arise.
+ */
+
+/* dokieli adds class="h-entry" to <body>; no layout impact known */
+
+/* Annotation toolbar z-index: keep below Bikeshed's sticky TOC if needed */
+/* .do.editor-toolbar { z-index: 100; } */

@@ -1,0 +1,11 @@
+/* Table of Contents — Bikeshed provides all structural TOC styling.
+   Only minimal tweaks here. */
+
+nav#toc a:hover {
+  text-decoration: underline;
+}
+
+/* Hide the § self-link on unnumbered headings (Hinweis, Konformität, etc.) */
+.heading.no-num > a.self-link {
+  display: none;
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mox:static-options xmlns:mox="http://www.xml-project.com/morganaxproc">
+	<mox:option name="opt" value="'B'" /> <!-- This will REPLACE setting made in statics-defs.xml -->
+</mox:static-options>

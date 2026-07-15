@@ -1,0 +1,44 @@
+/* Copy button styling */
+
+.ech-copy-btn {
+  position: absolute;
+  top: 0;
+  right: 2.5em;
+  width: 2.5em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 0;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  color: inherit;
+  z-index: 10;
+}
+
+.ech-copy-btn:hover {
+  opacity: 1;
+}
+
+/* Self-link z-index below copy button */
+.example > a.self-link,
+.note > a.self-link {
+  z-index: 5;
+}
+
+/* Remove gray background from highlighted line number gutter */
+pre .line-no.highlight-line {
+  background: transparent;
+  color: gray;
+  font-weight: normal;
+}
+
+/* Monospace font lock */
+pre,
+code {
+  font-family: Menlo, Consolas, "DejaVu Sans Mono", Monaco, monospace;
+}

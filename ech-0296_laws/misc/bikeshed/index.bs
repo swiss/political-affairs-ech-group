@@ -1,0 +1,173 @@
+<pre class="metadata">
+Title: eCH-0296 – Erlasse und Gesetzestexte
+Shortname: ech-0296
+Level: 1
+Status: w3c/ED
+ED: https://legaldocml.ch
+URL: https://legaldocml.ch
+Editor: Martin Gajdos, martin.gajdos@me.com
+Abstract: Der Standard eCH-0296 beschreibt die Anwendungsprofile für Akoma Ntoso (AKN4CH, AKN-AP CH) und den European Legislation Identifier (ELI-AP CH) für die Schweiz. Er bildet die Grundlage für die Publikation und den Austausch von Erlassen und Gesetzestexten zwischen Bund, Kantonen und Gemeinden sowie mit dem Ausland.
+Markup Shorthands: markdown on
+Default Highlight: xml
+Line Numbers: yes
+Local Boilerplate: header yes, footer yes
+Metadata Include: This version off
+Text Macro: ECH-NAME Erlasse und Gesetzestexte
+Text Macro: ECH-NUMMER 0296
+Text Macro: ECH-KATEGORIE Standard
+Text Macro: ECH-REIFEGRAD Definiert
+Text Macro: ECH-VERSION 0.1.0
+Text Macro: ECH-STATUS In Arbeit
+Text Macro: ECH-BESCHLUSS-AM —
+Text Macro: ECH-AUSGABEDATUM —
+Text Macro: ECH-ERSETZT-VERSION Neu
+Text Macro: ECH-VORAUSSETZUNGEN —
+Text Macro: ECH-BEILAGEN eCH-0296.xsd
+Text Macro: ECH-SPRACHEN Deutsch (Original), Französisch (Übersetzung)
+Text Macro: ECH-FACHGRUPPE Fachgruppe Politische Geschäfte
+Text Macro: ECH-HERAUSGEBER Verein eCH, Räffelstrasse 20, 8045 Zürich — T 044 388 74 64 / info@ech.ch / www.ech.ch
+</pre>
+
+<pre class=biblio>
+{
+  "AKN": {
+    "title": "Legal Document Markup Language (LegalDocML) — Akoma Ntoso Version 3.0",
+    "href": "http://docs.oasis-open.org/legaldocml/akn-core/v1.0/",
+    "authors": ["OASIS"],
+    "status": "OASIS Standard",
+    "publisher": "OASIS"
+  },
+  "ELI": {
+    "title": "European Legislation Identifier (ELI)",
+    "href": "https://op.europa.eu/en/web/eu-vocabularies/eli",
+    "publisher": "European Commission"
+  },
+  "eCH-0122": {
+    "title": "eCH-0122 — E-Government-Architektur Schweiz",
+    "href": "https://www.ech.ch/de/ech/ech-0122",
+    "publisher": "eCH"
+  },
+  "eCH-0003": {
+    "title": "eCH-0003 — Namenskonventionen",
+    "href": "https://www.ech.ch/de/ech/ech-0003/11.1.0",
+    "publisher": "eCH"
+  },
+  "FRBROO": {
+    "title": "FRBRoo — Object Oriented Definition and Mapping of the FRBR",
+    "href": "http://iflastandards.info/ns/fr/frbr/frbroo/",
+    "publisher": "IFLA"
+  }
+}
+</pre>
+
+<section id="hinweis" class="no-num no-toc">
+<h2 class="no-num no-toc no-ref" id="hinweis-heading">Hinweis</h2>
+<pre class=include>
+path: sections/boilerplate/editorial.include
+</pre>
+</section>
+
+<div boilerplate="conformance"></div>
+<div boilerplate="copyright"></div>
+
+<section id="conformance" class="no-num no-toc">
+<h2 class="no-num no-toc no-ref" id="konformitaet">Konformität</h2>
+<p>Normative Anforderungen (Richtlinien) in diesem Dokument werden mit den Schlüsselwörtern MUSS (en: MUST) und DARF NICHT (en: MUST NOT) ausgedrückt. Empfehlungen werden mit SOLL (en: SHOULD) und SOLL NICHT (en: SHOULD NOT) ausgedrückt. Optionale Angaben werden mit KANN (en: MAY) ausgedrückt.</p>
+<p>Diese Schlüsselwörter beschreiben den normativen Charakter von Anforderungen und Empfehlungen und sind gemäss [[eCH-0003]] zu interpretieren (vgl. [[RFC2119]]).</p>
+</section>
+
+# Einleitung # {#einleitung}
+
+<pre class=include>
+path: sections/main/intro.md
+</pre>
+
+# Identifier # {#identifier}
+
+<pre class=include>
+path: sections/main/identifier.md
+</pre>
+
+<div class="example" id="example-3">
+<pre class=include-code>
+path: examples/example-3.xml
+highlight: xml
+line-numbers:
+</pre>
+</div>
+
+# Content # {#content}
+
+<pre class=include>
+path: sections/main/content.md
+</pre>
+
+# Metadata # {#metadata}
+
+<pre class=include>
+path: sections/main/metadata.md
+</pre>
+
+# Haftungsausschluss und Hinweise auf Rechte Dritter # {#haftungsausschluss}
+
+<pre class=include>
+path: sections/boilerplate/disclaimer.md
+</pre>
+
+# Urheberrechte # {#urheberrechte}
+
+<pre class=include>
+path: sections/boilerplate/copyright.md
+</pre>
+
+<div data-fill-with="references"></div>
+
+<section class="no-num" id="mitarbeit">
+<h2 class="no-num" id="mitarbeit-ueberpruefung">Mitarbeit &amp; Überprüfung</h2>
+<pre class=include>
+path: sections/contributors.md
+</pre>
+</section>
+
+<section class="no-num" id="index">
+<h2 class="no-num" id="index-h">Abkürzungen &amp; Glossar</h2>
+<pre class=include>
+path: sections/glossary.md
+</pre>
+<pre class=include>
+path: sections/appendix/index.md
+</pre>
+</section>
+
+<section class="no-num" id="aenderungen">
+<h2 class="no-num" id="aenderungen-vorversion">Änderungen gegenüber Vorversion</h2>
+<pre class=include>
+path: sections/changelog.md
+</pre>
+</section>
+
+<section class="no-num" id="tof">
+<h2 class="no-num" id="abbildungsverzeichnis">Abbildungsverzeichnis</h2>
+</section>
+
+<section class="no-num" id="tot">
+<h2 class="no-num" id="tabellenverzeichnis">Tabellenverzeichnis</h2>
+</section>
+
+<!-- Abhängigkeiten: uncomment when content is ready
+<section class="no-num" id="abhaengigkeiten">
+<h2 class="no-num" id="abhaengigkeiten-h">Abhängigkeiten</h2>
+<pre class=include>
+path: sections/appendix/dependencies.md
+</pre>
+</section>
+-->
+
+<section class="no-num" id="hilfsmittel">
+<h2 class="no-num" id="hilfsmittel-h">Hilfsmittel</h2>
+<pre class=include>
+path: sections/appendix/tooling.md
+</pre>
+</section>
+
+<link rel="stylesheet" href="styles.css">

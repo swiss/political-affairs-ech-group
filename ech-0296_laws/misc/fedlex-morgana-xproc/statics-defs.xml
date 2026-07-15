@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file demonstrate the format of the file(s) expected for -statics on the commandline. -->
+<mox:static-options xmlns:mox="http://www.xml-project.com/morganaxproc">
+    <mox:option name="opt" value="'A'" />	<!-- Will supply 'A' to option named 'opt' (in no namespace) -->
+    <mox:option name="Q{http://www.xml-project.com/morgana}opt1" value="'B'" />
+    <mox:option name="mox:opt2" value="5+4" /> <!-- Value is an XPath expression, so this will yield 9 -->
+    
+    <mox:statics uri="second-level-defs.xml" /> 
+    <!-- Invokes another file with statics. URI is relative, so it will be resolved against the URI
+    	 of THIS file. -->
+</mox:static-options>

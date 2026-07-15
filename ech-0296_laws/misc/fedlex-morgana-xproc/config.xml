@@ -1,0 +1,31 @@
+<!-- This is just a demo on how to do it -->
+<morgana-config xmlns="http://www.xml-project.com/morganaxproc">
+	<!-- Relative paths are resolved by uri of this file -->
+	
+	<path_to_iso_skeleton_schematron_1>ISO_SKELETON_SCHEMATRON_1</path_to_iso_skeleton_schematron_1>
+	<path_to_iso_skeleton_schematron_2>ISO_SKELETON_SCHEMATRON_2</path_to_iso_skeleton_schematron_2>
+	<path_to_SchXSLT_1>schxslt-1.4.5-sources/xslt/1.0</path_to_SchXSLT_1>
+	<path_to_SchXSLT_2>schxslt-1.4.5-sources/xslt/2.0</path_to_SchXSLT_2>		
+	
+	<!-- Explitly overright Saxon's default -->
+	<XSLTValidationMode>PRESERVE</XSLTValidationMode>
+	
+	<!--
+	<xslt-connector>Saxon10</xslt-connector>
+	<xquery-connector>Saxon10</xquery-connector>
+	<xslt-config>saxon-config.xml</xslt-config>
+	<schematron-connector>SchXSLT</schematron-connector>
+	
+	<fo-connector>com.xml_project.morganaxproc3.fop2x.ApacheFOP2xConnector</fo-connector>
+	<fo-connector>com.xml_project.fosupport.AHFormatterV65.AHF65Connector</fo-connector>
+	
+	<ixml-connector>com.xml_project.morganaxproc3.ninemlConnector.NineMLConnector</ixml-connector>
+	<ixml-connector>com.xml_project.morganaxproc3.markupblitzConnector.MarkupBlitzConnector</ixml-connector>
+
+	-->
+	
+	<mediatype-mapping>
+		<map file-extension="123" media-type="application/xml" />
+	</mediatype-mapping>
+	-->
+</morgana-config>

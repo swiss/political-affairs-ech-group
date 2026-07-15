@@ -1,0 +1,20 @@
+{
+  "name": "ech-0296",
+  "version": "0.2.0",
+  "description": "eCH-0296 – Erlasse und Gesetzestexte — annotation stack (dokieli + Recogito + pdf.js + Solid, W3C Web Annotation)",
+  "type": "module",
+  "license": "CC-BY-4.0",
+  "author": "Martin Gajdos <martin.gajdos@me.com>",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@inrupt/solid-client-authn-browser": "^5.0.0",
+    "@recogito/pdf-annotator": "^4.2.5",
+    "@recogito/text-annotator": "^4.2.5",
+    "@recogito/text-annotator-tei": "^4.2.5",
+    "CETEIcean": "^1.9.5",
+    "pdfjs-dist": "^6.1.200"
+  },
+  "comment:dokieli": "dokieli is not on npm and needs Node>=22 + a build (patch-package). Add via one of: (a) prebuilt self-hosted dist, or (b) 'npm i github:dokieli/dokieli' after upgrading Node and installing patch-package. See README."
+}

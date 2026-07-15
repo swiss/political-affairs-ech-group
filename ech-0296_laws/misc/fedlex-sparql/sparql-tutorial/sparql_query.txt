@@ -1,0 +1,3 @@
+SELECT DISTINCT ?Prädikat ?Objekt WHERE {
+    <https://fedlex.data.admin.ch/eli/cc/1999/404> ?Prädikat ?Objekt .
+}

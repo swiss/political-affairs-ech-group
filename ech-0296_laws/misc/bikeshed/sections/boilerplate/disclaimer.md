@@ -1,0 +1,3 @@
+eCH-Standards, welche der Verein eCH den Benutzenden zur unentgeltlichen Nutzung zur Verfügung stellen oder welche eCH referenzieren, haben nur den Status von Empfehlungen. Der Verein eCH haftet in keinem Fall für Entscheidungen oder Massnahmen, welche den Benutzenden auf Grund dieser Dokumente trifft und / oder ergreift. Die Benutzenden sind verpflichtet, die Dokumente vor deren Nutzung selbst zu beurteilen und sich gegebenenfalls beraten zu lassen.
+
+eCH-Standards können Verweise auf andere Standards, Normen und Dokumente enthalten. Für die Zugänglichkeit, Korrektheit und Vollständigkeit solcher referenzierter Dokumente übernimmt eCH keine Verantwortung.

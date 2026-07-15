@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>[TITLE]</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style data-fill-with="stylesheet">
+  </style>
+  <link href="dokieli.css" rel="stylesheet">
+  <!-- basic.css not needed: Bikeshed provides document typography; basic.css only required for dokieli-hosted documents
+  <link href="basic.css" rel="stylesheet">
+  -->
+  <script src="dokieli.js" defer></script>
+</head>
+<body class="h-entry">
+<div class="head">
+  <p class="ech-logo"><a href="https://www.ech.ch/de/ech/ech-0296"><img src="images/logo-ech.svg" alt="Verein eCH" width="200" height="42"></a></p>
+  <h1 id="title" class="p-name no-ref">[TITLE]</h1>
+  <h2 id="profile-and-date" class="no-num no-toc no-ref">[LONGSTATUS],
+    <time class="dt-updated" datetime="[ISODATE]">[DATE]</time></h2>
+  <table class="ech-metadata">
+    <tbody>
+      <tr><th>Name</th><td>[ECH-NAME]</td></tr>
+      <tr><th>eCH-Nummer</th><td>[ECH-NUMMER]</td></tr>
+      <tr><th>Kategorie</th><td>[ECH-KATEGORIE]</td></tr>
+      <tr><th>Reifegrad</th><td>[ECH-REIFEGRAD]</td></tr>
+      <tr><th>Version</th><td>[ECH-VERSION]</td></tr>
+      <tr><th>Status</th><td>[ECH-STATUS]</td></tr>
+      <tr><th>Beschluss am</th><td>[ECH-BESCHLUSS-AM]</td></tr>
+      <tr><th>Ausgabedatum</th><td>[ECH-AUSGABEDATUM]</td></tr>
+      <tr><th>Ersetzt Version</th><td>[ECH-ERSETZT-VERSION]</td></tr>
+      <tr><th>Voraussetzungen</th><td>[ECH-VORAUSSETZUNGEN]</td></tr>
+      <tr><th>Beilagen</th><td>[ECH-BEILAGEN]</td></tr>
+      <tr><th>Sprachen</th><td>[ECH-SPRACHEN]</td></tr>
+      <tr><th>Fachgruppe</th><td>[ECH-FACHGRUPPE]</td></tr>
+      <tr><th>Herausgeber / Vertrieb</th><td>[ECH-HERAUSGEBER]</td></tr>
+    </tbody>
+  </table>
+  <div data-fill-with="spec-metadata"></div>
+  <div data-fill-with="warning"></div>
+  <p class='copyright' data-fill-with='copyright'></p>
+  <hr title="Separator for header">
+</div>
+
+<div class="p-summary" data-fill-with="abstract"></div>
+<div data-fill-with="at-risk"></div>
+
+<nav data-fill-with="table-of-contents" id="toc"></nav>
+<main>

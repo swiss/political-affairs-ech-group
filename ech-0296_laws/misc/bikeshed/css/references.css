@@ -1,0 +1,18 @@
+/* References section styling */
+
+#normative-references,
+#informative-references {
+  margin-top: 2em;
+}
+
+#normative-references dt,
+#informative-references dt {
+  font-weight: bold;
+  margin-top: 0.5em;
+}
+
+#normative-references dd,
+#informative-references dd {
+  margin-left: 2em;
+  margin-bottom: 0.5em;
+}

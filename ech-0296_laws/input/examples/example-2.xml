@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0" xmlns:akn4ch="http://legaldocml.ch/">
+    <documentType>
+        <meta>
+            <identification>
+                <FRBRWork>
+                    <!-- Metadaten zur eindeutigen Identifikation des abstrakten Werks: URI, Datum, Autor, Land, Nummer, Name, Abkürzung -->
+                    <!-- ... -->
+                    <FRBRauthoritative value="true"/>
+                </FRBRWork>
+                <FRBRExpression>
+                    <!-- Metadaten zur eindeutigen Identifikation der konkreten Fassung eines Werks: URI, Datum, Autor + Sprache -->
+                    <!-- ... -->
+                    <FRBRlanguage language="de"/>
+                </FRBRExpression>
+                <FRBRManifestation>
+                    <!-- Metadaten zur eindeutigen Identifikation der konkreten Veröffentlichung einer Fassung eines Werks: URI, Datum, Autor + Format -->
+                    <!-- ... -->
+                    <FRBRformat value="xml"/>
+                </FRBRManifestation>
+            </identification>
+        </meta>
+        <body>
+            <!-- Content -->
+        </body>
+    </documentType>
+</akomaNtoso>
