@@ -645,7 +645,7 @@ slots:
       UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).
     annotations:
       description_de: |
-        UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).
+        UID der Organisation (Format eCH-0097: CHE-XXX.XXX.XXX) aus dem eidgenössischen UID-Register (uid.admin.ch).
     pattern: ^CHE-\d{3}\.\d{3}\.\d{3}$
 
   organization_address:
