@@ -1,6 +1,6 @@
 \newpage
 
-# Einführung
+# Einleitung
 
 ## Die Standardfamilie „Politische Geschäfte"
 
