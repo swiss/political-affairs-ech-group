@@ -65,6 +65,9 @@ jobs:
           --reference-doc=ech-0294_actors/input/template.docx \
           --lua-filter=pagebreak.lua
 
+      - name: Enable automatic TOC update in Word
+        run: python set_docx_updatefields.py ech-0294_actors/output/ech-0294_actors.docx
+
       - name: Commit and push changes
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
