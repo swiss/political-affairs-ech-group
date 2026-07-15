@@ -4,7 +4,7 @@
 
 ## Standards für politische Geschäfte
 
-Auf Bundes-, Kantons- und Gemeindeebene tagen Räte und Versammlungen, beraten über politische Geschäfte, fassen Beschlüsse und kontrollieren die Exekutive. Die Fachgruppe „Politische Geschäfte" des Vereins eCH entwickelt dafür eine Familie aufeinander abgestimmter Standards, welche diese Daten föderal übergreifend strukturiert, maschinenlesbar und vergleichbar bereitstellen. Die Standards nutzen gemeinsame Datenelemente (eCH-0292) und referenzieren sich gegenseitig über eindeutige Identifikatoren.
+Das politische Geschehen der Schweiz findet auf Bundes-, Kantons- und Gemeindeebene statt – in Parlamenten und Gemeindeversammlungen, in Exekutiven und Verwaltungen sowie über die direktdemokratische Mitwirkung der Stimmberechtigten. Der Schwerpunkt liegt zwar auf den legislativen Prozessen, doch lassen sich ebenso exekutive Organe, Behörden und weitere Ausprägungen politischer Willensbildung abbilden. Die Fachgruppe „Politische Geschäfte" des Vereins eCH entwickelt dafür eine Familie aufeinander abgestimmter Standards, welche diese Daten föderal übergreifend strukturiert, maschinenlesbar und vergleichbar bereitstellen. Die Standards nutzen gemeinsame Datenelemente (eCH-0292) und referenzieren sich gegenseitig über eindeutige Identifikatoren.
 
 Die Familie umfasst:
 
