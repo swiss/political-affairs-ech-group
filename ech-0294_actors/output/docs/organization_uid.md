@@ -76,7 +76,8 @@ name: organization_uid
 annotations:
   description_de:
     tag: description_de
-    value: 'UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).
+    value: 'UID der Organisation (Format eCH-0097: CHE-XXX.XXX.XXX) aus dem eidgenössischen
+      UID-Register (uid.admin.ch).
 
       '
 description: 'UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the

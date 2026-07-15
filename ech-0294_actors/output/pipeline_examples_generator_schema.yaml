@@ -765,7 +765,7 @@ slots:
 
       '
     annotations:
-      description_de: 'UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).
+      description_de: 'UID der Organisation (Format eCH-0097: CHE-XXX.XXX.XXX) aus dem eidgenössischen UID-Register (uid.admin.ch).
 
         '
     pattern: ^CHE-\d{3}\.\d{3}\.\d{3}$

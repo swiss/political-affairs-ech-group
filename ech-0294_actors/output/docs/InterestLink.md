@@ -63,22 +63,6 @@ __
 
 
 ### Examples
-#### Example: InterestLink-interest_links_il_burkart_010
-
-```yaml
-global_uri: act:il_burkart_010
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: Allianz Sicherheit Schweiz, Baden
-legal_form: 0109
-committee: Vorstand
-function_role: Präsident
-is_paid: false
-
-```
 #### Example: InterestLink-interest_links_il_burkart_001
 
 ```yaml
@@ -95,22 +79,6 @@ function_role: Geschäftsführer
 is_paid: true
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_008
-
-```yaml
-global_uri: act:il_burkart_008
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: Stiebel Eltron AG, Lupfig
-legal_form: '0106'
-committee: Beirat
-function_role: Beirat
-is_paid: true
-
-```
 #### Example: InterestLink-interest_links_il_burkart_002
 
 ```yaml
@@ -124,6 +92,102 @@ organization_name: Birchmeier Holding AG, Döttingen
 legal_form: '0106'
 committee: Verwaltungsrat
 function_role: Mitglied
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_003
+
+```yaml
+global_uri: act:il_burkart_003
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: professional_activity
+organization_name: Bovida Real Estate AG, Baar
+legal_form: '0106'
+committee: Verwaltungsrat
+function_role: Mitglied
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_005
+
+```yaml
+global_uri: act:il_burkart_005
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+legal_form: 0109
+committee: Zentralvorstand
+function_role: Präsident
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_010
+
+```yaml
+global_uri: act:il_burkart_010
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: Allianz Sicherheit Schweiz, Baden
+legal_form: 0109
+committee: Vorstand
+function_role: Präsident
+is_paid: false
+
+```
+#### Example: InterestLink-interest_links_il_burkart_004
+
+```yaml
+global_uri: act:il_burkart_004
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: professional_activity
+organization_name: ELCA Group SA, Lausanne
+legal_form: '0106'
+committee: Verwaltungsrat
+function_role: Mitglied
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_007
+
+```yaml
+global_uri: act:il_burkart_007
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+legal_form: '0110'
+committee: Stiftungsrat
+function_role: Vizepräsident
+is_paid: false
+
+```
+#### Example: InterestLink-interest_links_il_burkart_006
+
+```yaml
+global_uri: act:il_burkart_006
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: FDP.Die Liberalen
+legal_form: 0109
+committee: Vorstand
+function_role: Präsident
 is_paid: true
 
 ```
@@ -159,84 +223,20 @@ function_role: Mitglied
 is_paid: true
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_005
+#### Example: InterestLink-interest_links_il_burkart_008
 
 ```yaml
-global_uri: act:il_burkart_005
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
-legal_form: 0109
-committee: Zentralvorstand
-function_role: Präsident
-is_paid: true
-
-```
-#### Example: InterestLink-interest_links_il_burkart_003
-
-```yaml
-global_uri: act:il_burkart_003
+global_uri: act:il_burkart_008
 person_reference:
   global_uri: https://www.wikidata.org/wiki/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_name: Bovida Real Estate AG, Baar
+organization_name: Stiebel Eltron AG, Lupfig
 legal_form: '0106'
-committee: Verwaltungsrat
-function_role: Mitglied
+committee: Beirat
+function_role: Beirat
 is_paid: true
-
-```
-#### Example: InterestLink-interest_links_il_burkart_004
-
-```yaml
-global_uri: act:il_burkart_004
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: ELCA Group SA, Lausanne
-legal_form: '0106'
-committee: Verwaltungsrat
-function_role: Mitglied
-is_paid: true
-
-```
-#### Example: InterestLink-interest_links_il_burkart_006
-
-```yaml
-global_uri: act:il_burkart_006
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: FDP.Die Liberalen
-legal_form: 0109
-committee: Vorstand
-function_role: Präsident
-is_paid: true
-
-```
-#### Example: InterestLink-interest_links_il_burkart_007
-
-```yaml
-global_uri: act:il_burkart_007
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-legal_form: '0110'
-committee: Stiftungsrat
-function_role: Vizepräsident
-is_paid: false
 
 ```
 
