@@ -642,7 +642,7 @@ slots:
   organization_uid:
     slot_uri: act:organizationUid
     description: |
-      UID of the organization (eCH-0098 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).
+      UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).
     annotations:
       description_de: |
         UID der Organisation (für Auswertungen mit NOGA-Codes, etc.).
