@@ -234,10 +234,10 @@ slots:
   wikidata_uri:
     slot_uri: mcm:wikidataUri
     description: |
-      A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland.
+      A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.
     annotations:
       description_de: |
-        Eine URI, die auf eine Wikidata-Entität verweist, z.B. https://www.wikidata.org/wiki/Q39 für die Schweiz.
+        Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q39 für die Schweiz.
     range: uriorcurie
 
   date_actual:
