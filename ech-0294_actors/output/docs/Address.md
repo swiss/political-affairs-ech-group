@@ -49,6 +49,13 @@ __
 
 
 ### Examples
+#### Example: Address-swiss_politicians_Beat_Jans_1
+
+```yaml
+address_type: businessAddress
+postal_locality: Basel-Stadt
+
+```
 #### Example: Address-douglas_adams_Douglas_Adams_1
 
 ```yaml
@@ -56,13 +63,6 @@ address_type: privateAddress
 street_address: 1234 Fictional St, London, UK
 postal_code: 12345
 postal_locality: London
-
-```
-#### Example: Address-swiss_politicians_Beat_Jans_1
-
-```yaml
-address_type: businessAddress
-postal_locality: Basel-Stadt
 
 ```
 

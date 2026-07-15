@@ -98,18 +98,14 @@ Dieser Standard definiert vier Hauptklassen:
 
 # Person
 
-## Einführung und Zielsetzung
+Das Personenschema beschreibt natürliche Personen im politischen Kontext.
 
-Das Personenschema beschreibt natürliche Personen im politischen Kontext und zielt darauf ab, eine präzise und gleichzeitig flexible Datenstruktur bereitzustellen. Die Umsetzung soll es ermöglichen, vorhandene Informationen hochgradig strukturiert abzubilden (z.B. der Name nach Typisierung vom BFS), aber auch Informationen, die weniger klar und vollständing sind, darzustellen. Das Ziel ist es, damit die Qualität kontinuierlich verbessern zu können.
-
-**Kernziele:**
-
-- **Präzision**: Unterstützung von zeitlich gültigen Attributen (z.B. Namen, Adressen, Geschlecht).
-- **Flexibilität**: Optionale Felder erlauben schrittweise Datenanreicherung.
-- **Interoperabilität**: URIs als globale Identifikatoren wo vorhanden, inklusive der Möglichkeit auf Wikidata-Einträge zu verweisen.
-- **Mehrsprachigkeit**: Unterstützung mehrsprachiger Inhalte gemäss schweizer Anforderungen.
-
-Notiz: *Die Verknüpfung von Personen im öffentlichen Interesse (Politikerinnen und Politiker) über die federalen Ebenen hinweg wird als ein wichtiges Langzeitziel gesehen. Eine zentrale Datenbank oder Identifizierungstelle der Personen kann nicht durch die Fachgruppe realisiert werden. Es gibt Ansätze im Datenmodell, damit man kontinuierlich die Identifikatoren über die Stufen hinweg harmonisieren kann. Zum einen durch die Benutzung von global eindeutigen Identifikatoren (URIs), sowie von Vorschlägen zu empfholenen bestehenden offenen Datenbanken (Wikidata). *
+- **Stabile Person, zeitlich gültige Merkmale:** Die `Person` selbst trägt keine zeitliche Gültigkeit, ihre Merkmale hingegen schon – Name, Staatsangehörigkeit, Geschlecht, Beruf, Ausbildung und Wahlkreis tragen je eigene `valid_from`/`valid_through`. So bleibt die Identität der Person stabil, während sich einzelne Angaben über die Zeit ändern und die Historie erhalten bleibt (z. B. Namensänderung bei Heirat oder Wechsel des Wahlkreises).
+- **Obligatorischer Anzeigename (`label`) neben strukturierten Namen (`names`):** Jede Person hat einen zwingenden Kurznamen, damit auch bei unvollständigen Angaben immer ein Anzeigename vorhanden ist. Empfohlen wird die Kombination aus amtlichem Namen (`PersonOfficialName`) und Rufname (`PersonCallFirstName`), bei Namensgleichheit ergänzt um das Geburtsjahr. `label_long` nimmt zusätzlich akademische Titel auf; die feingliedrige, typisierte Namensstruktur (`names`) ist optional.
+- **Namenstypen nach amtlicher Systematik:** Die Namenstypen (`NameTypeEnum`) folgen der Registerharmonisierung des BFS bzw. eCH-0011 (u. a. amtlicher Name, angestammter Name, Allianzname, Rufname sowie Varianten für ausländische Ausweise). Damit sind die Namen mit den amtlichen Personenregistern kompatibel, statt eine eigene Systematik einzuführen.
+- **`birth_year` als datensparsame Alternative zu `birth_date`:** Ist das genaue Geburtsdatum nicht verfügbar oder nicht zur Veröffentlichung bestimmt, kann nur das Geburtsjahr angegeben werden. Liegt ein `birth_date` vor, hat es Vorrang.
+- **Mehrfachwerte statt Einzelwerte:** Namen, Staatsangehörigkeiten und Geschlechtsangaben sind als Listen mit zeitlicher Gültigkeit modelliert – etwa für Doppelbürgerschaften, Namensänderungen oder eine sich ändernde Geschlechtsangabe.
+- **Harmonisierung über föderale Ebenen (Langzeitziel):** Die Verknüpfung derselben Person über die föderalen Ebenen hinweg ist ein wichtiges Langzeitziel. Der Aufbau einer zentralen Personendatenbank läge ausserhalb des Auftrags der eCH-Fachgruppe. Da für diesen Zweck bereits eine offene, etablierte Infrastruktur besteht, wird **Wikidata als übergreifender Identifikator empfohlen** (`wikidata_uri`); zusammen mit global eindeutigen Identifikatoren (URIs) lässt sich die Zuordnung so schrittweise über die Systeme hinweg harmonisieren.
 
 
 
@@ -180,53 +176,6 @@ __
 
 
 ### Examples
-#### Example: Person-swiss_politicians_Beat_Jans
-
-```yaml
-local_id: 4032
-global_uri: https://data-example.parlament.ch/person/4032
-wikidata_uri: https://www.wikidata.org/wiki/Q813067
-label: Beat Jans
-label_long: Beat Jans, dipl. nat. ETH
-birth_year: 1964
-birth_date: 1964-07-12
-picture: https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg
-names:
-- name_type: PersonFirstName
-  value: Beat
-- name_type: PersonOfficialName
-  value: Jans
-  valid_from: 1964-07-12
-addresses:
-- address_type: businessAddress
-  postal_locality: Basel-Stadt
-language_proficiencies:
-- language: de
-  is_correspondence: true
-  is_native: true
-citizenships:
-- country: CH
-  valid_from: 1964-07-12
-genders:
-- gender_code: male
-  valid_from: 1964-07-12
-occupations:
-- label: Politiker
-  valid_from: 1964-01-01
-  is_active: true
-trainings:
-- training_type: '3223'
-  value: dipl. nat. ETH
-contacts:
-- contact_type: email
-  value: beat.jans@admin.ch
-- contact_type: contact_website
-  value: http://www.beat-jans.ch
-electoral_district:
-  district: Basel-Stadt
-  valid_from: 2010-01-01
-
-```
 #### Example: Person-douglas_adams_Douglas_Adams
 
 ```yaml
@@ -278,13 +227,60 @@ electoral_district:
   valid_through: 2025-01-01
 
 ```
+#### Example: Person-swiss_politicians_Beat_Jans
+
+```yaml
+local_id: 4032
+global_uri: https://data-example.parlament.ch/person/4032
+wikidata_uri: https://www.wikidata.org/wiki/Q813067
+label: Beat Jans
+label_long: Beat Jans, dipl. nat. ETH
+birth_year: 1964
+birth_date: 1964-07-12
+picture: https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg
+names:
+- name_type: PersonFirstName
+  value: Beat
+- name_type: PersonOfficialName
+  value: Jans
+  valid_from: 1964-07-12
+addresses:
+- address_type: businessAddress
+  postal_locality: Basel-Stadt
+language_proficiencies:
+- language: de
+  is_correspondence: true
+  is_native: true
+citizenships:
+- country: CH
+  valid_from: 1964-07-12
+genders:
+- gender_code: male
+  valid_from: 1964-07-12
+occupations:
+- label: Politiker
+  valid_from: 1964-01-01
+  is_active: true
+trainings:
+- training_type: '3223'
+  value: dipl. nat. ETH
+contacts:
+- contact_type: email
+  value: beat.jans@admin.ch
+- contact_type: contact_website
+  value: http://www.beat-jans.ch
+electoral_district:
+  district: Basel-Stadt
+  valid_from: 2010-01-01
+
+```
 
 
 
 
 
 
-</div> 
+</div>
 
 
 
@@ -340,7 +336,7 @@ __
 
 
 
-</div> 
+</div>
 
 ## Enum: NameTypeEnum 
 
@@ -389,7 +385,7 @@ URI: [act:NameTypeEnum](https://ld.ech.ch/schema/0294/actors/NameTypeEnum)
 
 
 
-</div> 
+</div>
 
 
 
@@ -443,7 +439,7 @@ __
 
 
 
-</div> 
+</div>
 
 
 
@@ -498,7 +494,7 @@ __
 
 
 
-</div> 
+</div>
 
 
 
@@ -555,7 +551,7 @@ __
 
 
 
-</div> 
+</div>
 
 ## Enum: GenderCodeEnum 
 
@@ -588,7 +584,7 @@ URI: [act:GenderCodeEnum](https://ld.ech.ch/schema/0294/actors/GenderCodeEnum)
 
 
 
-</div> 
+</div>
 
 
 
@@ -667,7 +663,7 @@ is_active: true
 
 
 
-</div> 
+</div>
 
 
 
@@ -724,7 +720,7 @@ __
 
 
 
-</div> 
+</div>
 
 ## Enum: TrainingTypeEnum 
 
@@ -837,7 +833,7 @@ URI: [act:TrainingTypeEnum](https://ld.ech.ch/schema/0294/actors/TrainingTypeEnu
 
 
 
-</div> 
+</div>
 
 
 
@@ -915,25 +911,11 @@ valid_from: 2010-01-01
 
 # Gruppen und Organe (Groups)
 
-## Einführung und Zielsetzung
+Das Group-Schema bildet politische Gruppen, Organisationen und Körperschaften ab.
 
-Das Group-Schema beschreibt politische Gruppen, Organisationen und Körperschaften im schweizerischen politischen System. Ein Organ ist in dieser Definition eine Ansammlung von Personen, die durch einen Typ und weitere Attribute charakterisiert wird.
-
-**Kernziele:**
-
-- **Strukturierung**: Einheitliche Erfassung aller politischen Akteure (Legislative, Exekutive, Judikative, Zivilgesellschaft)
-- **Hierarchien**: Abbildung von Organisationsstrukturen (Parteien, Kommissionen, Departemente)
-- **Föderalismus**: Unterstützung aller föderalen Ebenen (Bund, Kantone, Gemeinden)
-- **Mehrsprachigkeit**: Multilinguale Namen und Abkürzungen
-
-## Anwendungszwecke
-
-Das Schema unterstützt verschiedene Einsatzszenarien:
-
-1. **Organisation innerhalb eines Parlamentssystems**: Parlamente, Kommissionen, Fraktionen
-2. **Publikation an die Öffentlichkeit**: Transparente Darstellung politischer Strukturen
-3. **Systeme mit politischen Personen**: Zuordnung von Personen zu Gruppen (Memberships)
-4. **Analysen**: Untersuchungen von Gruppenzusammensetzungen und Netzwerken
+- **Ein generisches Modell statt vieler Spezialklassen:** Parlamente, Parteien, Fraktionen, Kommissionen, Departemente, Gerichte und zivilgesellschaftliche Organisationen werden alle als *eine* Klasse `Group` abgebildet und über `group_type` unterschieden. Das hält das Modell einfach und ohne Schemaänderung erweiterbar – Legislative, Exekutive, Judikative und Zivilgesellschaft sind damit gleichermassen abbildbar.
+- **Gruppen und Sub-Gruppen über `parent_groups`:** Untergeordnete Gruppen verweisen auf ihre übergeordnete Gruppe – z. B. eine Kommission des Ständerats, eine Subkommission innerhalb einer Kommission, eine Kantonalpartei unter ihrer Mutterpartei oder eine Behörde innerhalb einer Direktion. Die Hierarchie entsteht so aus diesen Verweisen statt aus einer festen Ebenenstruktur. Sie bleibt meist innerhalb desselben `group_type`; typenübergreifende und mehrfache Verweise sind aber möglich (z. B. eine Fraktion, die zugleich auf ihr Parlament und ihre Partei verweist).
+- **Zeitliche Gültigkeit auch für Gruppen:** Über `valid_from`/`valid_through` lassen sich z. B. nur während einer Legislatur bestehende Kommissionen oder Umbenennungen und Fusionen von Parteien abbilden.
 
 
 
@@ -1303,22 +1285,6 @@ __
 
 
 ### Examples
-#### Example: InterestLink-interest_links_il_burkart_010
-
-```yaml
-global_uri: act:il_burkart_010
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: Allianz Sicherheit Schweiz, Baden
-legal_form: 0109
-committee: Vorstand
-function_role: Präsident
-is_paid: false
-
-```
 #### Example: InterestLink-interest_links_il_burkart_001
 
 ```yaml
@@ -1335,22 +1301,6 @@ function_role: Geschäftsführer
 is_paid: true
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_008
-
-```yaml
-global_uri: act:il_burkart_008
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: Stiebel Eltron AG, Lupfig
-legal_form: '0106'
-committee: Beirat
-function_role: Beirat
-is_paid: true
-
-```
 #### Example: InterestLink-interest_links_il_burkart_002
 
 ```yaml
@@ -1364,6 +1314,102 @@ organization_name: Birchmeier Holding AG, Döttingen
 legal_form: '0106'
 committee: Verwaltungsrat
 function_role: Mitglied
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_003
+
+```yaml
+global_uri: act:il_burkart_003
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: professional_activity
+organization_name: Bovida Real Estate AG, Baar
+legal_form: '0106'
+committee: Verwaltungsrat
+function_role: Mitglied
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_005
+
+```yaml
+global_uri: act:il_burkart_005
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+legal_form: 0109
+committee: Zentralvorstand
+function_role: Präsident
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_010
+
+```yaml
+global_uri: act:il_burkart_010
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: Allianz Sicherheit Schweiz, Baden
+legal_form: 0109
+committee: Vorstand
+function_role: Präsident
+is_paid: false
+
+```
+#### Example: InterestLink-interest_links_il_burkart_004
+
+```yaml
+global_uri: act:il_burkart_004
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: professional_activity
+organization_name: ELCA Group SA, Lausanne
+legal_form: '0106'
+committee: Verwaltungsrat
+function_role: Mitglied
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_007
+
+```yaml
+global_uri: act:il_burkart_007
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+legal_form: '0110'
+committee: Stiftungsrat
+function_role: Vizepräsident
+is_paid: false
+
+```
+#### Example: InterestLink-interest_links_il_burkart_006
+
+```yaml
+global_uri: act:il_burkart_006
+person_reference:
+  global_uri: https://www.wikidata.org/wiki/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: FDP.Die Liberalen
+legal_form: 0109
+committee: Vorstand
+function_role: Präsident
 is_paid: true
 
 ```
@@ -1399,84 +1445,20 @@ function_role: Mitglied
 is_paid: true
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_005
+#### Example: InterestLink-interest_links_il_burkart_008
 
 ```yaml
-global_uri: act:il_burkart_005
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
-legal_form: 0109
-committee: Zentralvorstand
-function_role: Präsident
-is_paid: true
-
-```
-#### Example: InterestLink-interest_links_il_burkart_003
-
-```yaml
-global_uri: act:il_burkart_003
+global_uri: act:il_burkart_008
 person_reference:
   global_uri: https://www.wikidata.org/wiki/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_name: Bovida Real Estate AG, Baar
+organization_name: Stiebel Eltron AG, Lupfig
 legal_form: '0106'
-committee: Verwaltungsrat
-function_role: Mitglied
+committee: Beirat
+function_role: Beirat
 is_paid: true
-
-```
-#### Example: InterestLink-interest_links_il_burkart_004
-
-```yaml
-global_uri: act:il_burkart_004
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: ELCA Group SA, Lausanne
-legal_form: '0106'
-committee: Verwaltungsrat
-function_role: Mitglied
-is_paid: true
-
-```
-#### Example: InterestLink-interest_links_il_burkart_006
-
-```yaml
-global_uri: act:il_burkart_006
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: FDP.Die Liberalen
-legal_form: 0109
-committee: Vorstand
-function_role: Präsident
-is_paid: true
-
-```
-#### Example: InterestLink-interest_links_il_burkart_007
-
-```yaml
-global_uri: act:il_burkart_007
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-legal_form: '0110'
-committee: Stiftungsrat
-function_role: Vizepräsident
-is_paid: false
 
 ```
 
@@ -1805,6 +1787,13 @@ __
 
 
 ### Examples
+#### Example: Address-swiss_politicians_Beat_Jans_1
+
+```yaml
+address_type: businessAddress
+postal_locality: Basel-Stadt
+
+```
 #### Example: Address-douglas_adams_Douglas_Adams_1
 
 ```yaml
@@ -1812,13 +1801,6 @@ address_type: privateAddress
 street_address: 1234 Fictional St, London, UK
 postal_code: 12345
 postal_locality: London
-
-```
-#### Example: Address-swiss_politicians_Beat_Jans_1
-
-```yaml
-address_type: businessAddress
-postal_locality: Basel-Stadt
 
 ```
 
