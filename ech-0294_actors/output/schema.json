@@ -760,7 +760,7 @@
                     ]
                 },
                 "organization_uid": {
-                    "description": "UID of the organization (eCH-0098 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).\n",
+                    "description": "UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).\n",
                     "pattern": "^CHE-\\d{3}\\.\\d{3}\\.\\d{3}$",
                     "type": [
                         "string",
@@ -1353,7 +1353,7 @@
                     ]
                 },
                 "organization_uid": {
-                    "description": "UID of the organization (eCH-0098 format: CHE-XXX.XXX.XXX of the federal UID register (uid.admin.ch).\n",
+                    "description": "UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).\n",
                     "pattern": "^CHE-\\d{3}\\.\\d{3}\\.\\d{3}$",
                     "type": [
                         "string",
