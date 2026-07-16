@@ -14,4 +14,4 @@ Das Membership-Schema bildet die Beziehung zwischen Personen und Gruppen ab und 
 
 {{include:ech-0294_actors/output/docs/RoleType.md}}
 
-{{include:ech-0294_actors/output/docs/RoleTypeEnum.md}}
+{{include:ech-0294_actors/output/docs/RoleEnum.md}}

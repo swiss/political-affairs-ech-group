@@ -272,13 +272,20 @@ classes:
 
   RoleType:
     description: |
-      Role of a person in a membership or function (e.g., member, president, deputy).
+      Role of a person in a membership or function (e.g., member, president, deputy). If a role is not listed in the proposed RoleEnum vocabulary, the value 'other' can be used, and a descriptive label should be provided in the `role_label` slot. The label can also be used when a specific name is needed, even if a fitting semantic value exists in `role_type_enum`; it should be provided when `role_type_enum` is set to 'other'.
     annotations:
       description_de: |
-        Rolle einer Person in einer Mitgliedschaft oder Funktion (z.B. Mitglied, Präsident, Stellvertreter).
+        Rolle einer Person in einer Mitgliedschaft oder Funktion (z.B. Mitglied, Präsident/in, Stellvertreter/in). Wenn eine Rolle im vorgeschlagenen RoleEnum-Vokabular nicht enthalten ist, kann der Wert 'other' verwendet werden; in diesem Fall soll im Slot `role_label` eine beschreibende Bezeichnung angegeben werden. Die Bezeichnung kann auch verwendet werden, wenn eine spezifische Rollenbezeichnung nötig ist, selbst wenn in `role_type_enum` bereits ein passender semantischer Wert vorhanden ist; bei `role_type_enum = other` soll sie angegeben werden.
     slots:
       - role_type_enum
       - label
+    slot_usage:
+      label:
+        description: |
+          Specific role label. Use this when a specific role name is needed, even if a fitting semantic value exists in `role_type_enum`; provide this label when `role_type_enum` is set to 'other'.
+        annotations:
+          description_de: |
+            Spezifische Rollenbezeichnung. Dieses Feld kann verwendet werden, wenn eine konkrete Rollenbezeichnung benötigt wird, auch wenn in `role_type_enum` bereits ein passender semantischer Wert vorhanden ist; bei `role_type_enum = other` soll diese Bezeichnung angegeben werden.
 
 # SLOTS
 # ----------------------------------------------------------------
