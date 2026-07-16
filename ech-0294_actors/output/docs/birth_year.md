@@ -61,7 +61,6 @@ URI: [act:birthYear](https://ld.ech.ch/schema/0294/actors/birthYear)
 
 | Value |
 | --- |
-| 1952 |
 | 1964 |
 
 
@@ -84,7 +83,6 @@ description: 'Year of birth. Only to be used, if there is no full `birthDate` av
 
   '
 examples:
-- value: '1952'
 - value: '1964'
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000

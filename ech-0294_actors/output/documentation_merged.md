@@ -101,11 +101,11 @@ Dieser Standard definiert vier Hauptklassen:
 Das Personenschema beschreibt natürliche Personen im politischen Kontext.
 
 - **Stabile Person, zeitlich gültige Merkmale:** Die `Person` selbst trägt keine zeitliche Gültigkeit, ihre Merkmale hingegen schon – Name, Staatsangehörigkeit, Geschlecht, Beruf, Ausbildung und Wahlkreis tragen je eigene `valid_from`/`valid_through`. So bleibt die Identität der Person stabil, während sich einzelne Angaben über die Zeit ändern und die Historie erhalten bleibt (z. B. Namensänderung bei Heirat oder Wechsel des Wahlkreises).
-- **Obligatorischer Anzeigename (`label`) neben strukturierten Namen (`names`):** Jede Person hat einen zwingenden Kurznamen, damit auch bei unvollständigen Angaben immer ein Anzeigename vorhanden ist. Empfohlen wird die Kombination aus amtlichem Namen (`PersonOfficialName`) und Rufname (`PersonCallFirstName`), bei Namensgleichheit ergänzt um das Geburtsjahr. `label_long` nimmt zusätzlich akademische Titel auf; die feingliedrige, typisierte Namensstruktur (`names`) ist optional.
-- **Namenstypen nach amtlicher Systematik:** Die Namenstypen (`NameTypeEnum`) folgen der Registerharmonisierung des BFS bzw. eCH-0011 (u. a. amtlicher Name, angestammter Name, Allianzname, Rufname sowie Varianten für ausländische Ausweise). Damit sind die Namen mit den amtlichen Personenregistern kompatibel, statt eine eigene Systematik einzuführen.
+- **Obligatorischer Anzeigename (`label`) neben strukturierten Namen (`names`):** Jede Person hat einen zwingenden Kurznamen, damit auch bei unvollständigen Angaben immer ein Anzeigename vorhanden ist. Empfohlen wird die Kombination aus amtlichem Namen (`PersonOfficialName`) und Rufname (`PersonCallFirstName`), bei Namensgleichheit ergänzt um das Geburtsjahr. `label_long` nimmt zusätzlich akademische Titel auf; die feingliedrige, typisierte Namensstruktur (`names`) ist optional deren Nutzung ist aber angezeigt. In einigen Fällen ist die Benutzung von spezifischen Typen, wie der amtliche Name (`PersonOfficialName`) eine gesetzliche Vorrausetzung.
+- **Namenstypen nach amtlicher Systematik:** Die Namenstypen (`NameTypeEnum`) folgen der Registerharmonisierung des BFS bzw. eCH-0011 (u. a. amtlicher Name, angestammter Name, Allianzname, Rufname sowie Varianten für ausländische Ausweise). Damit sind die Namen mit den amtlichen Personenregistern kompatibel, und deren Semantik klar.
 - **`birth_year` als datensparsame Alternative zu `birth_date`:** Ist das genaue Geburtsdatum nicht verfügbar oder nicht zur Veröffentlichung bestimmt, kann nur das Geburtsjahr angegeben werden. Liegt ein `birth_date` vor, hat es Vorrang.
 - **Mehrfachwerte statt Einzelwerte:** Namen, Staatsangehörigkeiten und Geschlechtsangaben sind als Listen mit zeitlicher Gültigkeit modelliert – etwa für Doppelbürgerschaften, Namensänderungen oder eine sich ändernde Geschlechtsangabe.
-- **Harmonisierung über föderale Ebenen (Langzeitziel):** Die Verknüpfung derselben Person über die föderalen Ebenen hinweg ist ein wichtiges Langzeitziel. Der Aufbau einer zentralen Personendatenbank läge ausserhalb des Auftrags der eCH-Fachgruppe. Da für diesen Zweck bereits eine offene, etablierte Infrastruktur besteht, wird **Wikidata als übergreifender Identifikator empfohlen** (`wikidata_uri`); zusammen mit global eindeutigen Identifikatoren (URIs) lässt sich die Zuordnung so schrittweise über die Systeme hinweg harmonisieren.
+- **Harmonisierung über föderale Ebenen (Langzeitziel):** Die Verknüpfung derselben Person über die föderalen Ebenen hinweg ist ein wichtiges Langzeitziel. Der Aufbau einer zentralen Personendatenbank liegt ausserhalb des Auftrags der eCH-Fachgruppe. Da für diesen Zweck bereits eine offene, etablierte Infrastruktur besteht, wird **Wikidata als übergreifender Identifikator empfohlen** (`wikidata_uri`); zusammen mit global eindeutigen Identifikatoren (URIs) lässt sich die Zuordnung so schrittweise über die Systeme hinweg harmonisieren.
 
 
 
@@ -176,57 +176,6 @@ __
 
 
 ### Examples
-#### Example: Person-douglas_adams_Douglas_Adams
-
-```yaml
-global_uri: https://www.wikidata.org/wiki/Q42
-label: Douglas Adams
-label_long: Douglas Noël Adams
-birth_year: 1952
-birth_date: 1952-03-11
-picture: https://commons.wikimedia.org/wiki/File:Douglas_adams_portrait.jpg
-names:
-- name_type: PersonFirstName
-  value: Douglas
-- name_type: PersonOfficialName
-  value: Adams
-  valid_from: 1952-03-11
-addresses:
-- address_type: privateAddress
-  street_address: 1234 Fictional St, London, UK
-  postal_code: 12345
-  postal_locality: London
-language_proficiencies:
-- language: en
-  is_correspondence: true
-  is_native: true
-citizenships:
-- country: GB
-  valid_from: 1952-03-11
-genders:
-- gender_code: male
-  valid_from: 1952-03-11
-  pronouns:
-  - he
-  - him
-occupations:
-- label: writer
-  valid_from: 1979-01-01
-  valid_through: 2001-05-11
-  is_active: false
-  is_paid: true
-trainings:
-- training_type: '2421'
-  value: High School Diploma
-contacts:
-- contact_type: email
-  value: douglas.adams@adams-familiy.org
-electoral_district:
-  district: London Central
-  valid_from: 2020-01-01
-  valid_through: 2025-01-01
-
-```
 #### Example: Person-swiss_politicians_Beat_Jans
 
 ```yaml
@@ -639,16 +588,6 @@ __
 
 
 ### Examples
-#### Example: Occupation-douglas_adams_Douglas_Adams_writer
-
-```yaml
-label: writer
-valid_from: 1979-01-01
-valid_through: 2001-05-11
-is_active: false
-is_paid: true
-
-```
 #### Example: Occupation-swiss_politicians_Beat_Jans_Politiker
 
 ```yaml
@@ -884,14 +823,6 @@ __
 
 
 ### Examples
-#### Example: ElectoralDistrict-douglas_adams_Douglas_Adams_1
-
-```yaml
-district: London Central
-valid_from: 2020-01-01
-valid_through: 2025-01-01
-
-```
 #### Example: ElectoralDistrict-swiss_politicians_Beat_Jans_1
 
 ```yaml
@@ -1187,6 +1118,93 @@ __
 
 </div>
 
+
+
+## Class: RoleType 
+
+
+_Role of a person in a membership or function (e.g., member, president, deputy). If a role is not listed in the proposed RoleEnum vocabulary, the value 'other' can be used, and a descriptive label should be provided in the `role_label` slot. The label can also be used when a specific name is needed, even if a fitting semantic value exists in `role_type_enum`; it should be provided when `role_type_enum` is set to 'other'._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+### Attribute
+
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| role_type_enum | 0..1 <br/> [RoleEnum](#RoleEnum) | Role of the person in the membership or function.  |
+| label | 0..1 <br/> [String](#String) | Specific role label. Use this when a specific role name is needed, even if a fitting semantic value exists in `role_type_enum`; provide this label when `role_type_enum` is set to 'other'.  |
+
+
+
+
+
+### Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Membership](#Membership) | [role_type](#role_type) | range | [RoleType](#RoleType) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+## Enum: RoleEnum 
+
+
+
+
+_Roles a person can have within a membership._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
+
+### Permissible Values
+| Value | Description |
+| --- | --- |
+| member |  Regular member (default).  |
+| |  |
+| president |  President or chair of the group.  |
+| |  |
+| stellvertreter |  Deputy/vice role (stellvertreter).  |
+| |  |
+| other |  Other role; use role_label for a descriptive label.  |
+| |  |
+
+
+
+
+
+
+
+</div>
 \newpage
 
 # Interessenbindungen (Interest Links)
@@ -1772,15 +1790,6 @@ __
 ```yaml
 address_type: businessAddress
 postal_locality: Basel-Stadt
-
-```
-#### Example: Address-douglas_adams_Douglas_Adams_1
-
-```yaml
-address_type: privateAddress
-street_address: 1234 Fictional St, London, UK
-postal_code: 12345
-postal_locality: London
 
 ```
 

@@ -62,7 +62,6 @@ URI: [act:district](https://ld.ech.ch/schema/0294/actors/district)
 | Value |
 | --- |
 | Basel-Stadt |
-| London Central |
 
 
 
@@ -84,7 +83,6 @@ description: 'Electoral district or region.
   '
 examples:
 - value: Basel-Stadt
-- value: London Central
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:district

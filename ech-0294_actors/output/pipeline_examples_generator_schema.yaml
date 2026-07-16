@@ -308,16 +308,35 @@ classes:
     - group_type_enum
     - label
   RoleType:
-    description: 'Role of a person in a membership or function (e.g., member, president, deputy).
+    description: 'Role of a person in a membership or function (e.g., member, president, deputy). If a role is not listed
+      in the proposed RoleEnum vocabulary, the value ''other'' can be used, and a descriptive label should be provided in
+      the `role_label` slot. The label can also be used when a specific name is needed, even if a fitting semantic value exists
+      in `role_type_enum`; it should be provided when `role_type_enum` is set to ''other''.
 
       '
     annotations:
-      description_de: 'Rolle einer Person in einer Mitgliedschaft oder Funktion (z.B. Mitglied, Präsident, Stellvertreter).
+      description_de: 'Rolle einer Person in einer Mitgliedschaft oder Funktion (z.B. Mitglied, Präsident/in, Stellvertreter/in).
+        Wenn eine Rolle im vorgeschlagenen RoleEnum-Vokabular nicht enthalten ist, kann der Wert ''other'' verwendet werden;
+        in diesem Fall soll im Slot `role_label` eine beschreibende Bezeichnung angegeben werden. Die Bezeichnung kann auch
+        verwendet werden, wenn eine spezifische Rollenbezeichnung nötig ist, selbst wenn in `role_type_enum` bereits ein passender
+        semantischer Wert vorhanden ist; bei `role_type_enum = other` soll sie angegeben werden.
 
         '
     slots:
     - role_type_enum
     - label
+    slot_usage:
+      label:
+        description: 'Specific role label. Use this when a specific role name is needed, even if a fitting semantic value
+          exists in `role_type_enum`; provide this label when `role_type_enum` is set to ''other''.
+
+          '
+        annotations:
+          description_de: 'Spezifische Rollenbezeichnung. Dieses Feld kann verwendet werden, wenn eine konkrete Rollenbezeichnung
+            benötigt wird, auch wenn in `role_type_enum` bereits ein passender semantischer Wert vorhanden ist; bei `role_type_enum
+            = other` soll diese Bezeichnung angegeben werden.
+
+            '
 slots:
   name_type:
     slot_uri: act:nameType
@@ -344,7 +363,6 @@ slots:
     range: AddressTypeEnum
     examples:
     - value: businessAddress
-    - value: privateAddress
   address_uri:
     slot_uri: act:addressURI
     description: 'URI of the address from the Swiss federal building address register. The layer can be accessed at https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis.
@@ -387,7 +405,6 @@ slots:
         '
     examples:
     - value: Basel-Stadt
-    - value: London
   is_correspondence:
     slot_uri: act:isCorrespondence
     description: 'Indicates if this is the preferred language.
@@ -420,7 +437,6 @@ slots:
     pattern: ^[A-Z]{2}$
     examples:
     - value: CH
-    - value: GB
   gender_code:
     slot_uri: act:genderCode
     description: 'Gender code. Recommended values: male, female, diverse.
@@ -477,7 +493,6 @@ slots:
         '
     range: TrainingTypeEnum
     examples:
-    - value: '2421'
     - value: '3223'
   training_code:
     slot_uri: act:trainingCode
@@ -512,7 +527,6 @@ slots:
         '
     examples:
     - value: Basel-Stadt
-    - value: London Central
   birth_year:
     slot_uri: act:birthYear
     description: 'Year of birth. Only to be used, if there is no full `birthDate` available.
@@ -524,7 +538,6 @@ slots:
         '
     range: integer
     examples:
-    - value: '1952'
     - value: '1964'
   birth_date:
     slot_uri: schema:birthDate
@@ -537,7 +550,6 @@ slots:
         '
     range: date
     examples:
-    - value: '1952-03-11'
     - value: '1964-07-12'
   death_date:
     slot_uri: schema:deathDate

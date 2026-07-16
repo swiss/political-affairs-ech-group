@@ -66,57 +66,6 @@ __
 
 
 ### Examples
-#### Example: Person-douglas_adams_Douglas_Adams
-
-```yaml
-global_uri: https://www.wikidata.org/wiki/Q42
-label: Douglas Adams
-label_long: Douglas Noël Adams
-birth_year: 1952
-birth_date: 1952-03-11
-picture: https://commons.wikimedia.org/wiki/File:Douglas_adams_portrait.jpg
-names:
-- name_type: PersonFirstName
-  value: Douglas
-- name_type: PersonOfficialName
-  value: Adams
-  valid_from: 1952-03-11
-addresses:
-- address_type: privateAddress
-  street_address: 1234 Fictional St, London, UK
-  postal_code: 12345
-  postal_locality: London
-language_proficiencies:
-- language: en
-  is_correspondence: true
-  is_native: true
-citizenships:
-- country: GB
-  valid_from: 1952-03-11
-genders:
-- gender_code: male
-  valid_from: 1952-03-11
-  pronouns:
-  - he
-  - him
-occupations:
-- label: writer
-  valid_from: 1979-01-01
-  valid_through: 2001-05-11
-  is_active: false
-  is_paid: true
-trainings:
-- training_type: '2421'
-  value: High School Diploma
-contacts:
-- contact_type: email
-  value: douglas.adams@adams-familiy.org
-electoral_district:
-  district: London Central
-  valid_from: 2020-01-01
-  valid_through: 2025-01-01
-
-```
 #### Example: Person-swiss_politicians_Beat_Jans
 
 ```yaml

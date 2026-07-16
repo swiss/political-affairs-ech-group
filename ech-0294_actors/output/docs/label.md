@@ -32,7 +32,7 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 | [Gender](Gender.md) | Gender of a person indicating a gender code and temporal validity |  no  |
 | [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |  no  |
 | [GroupType](GroupType.md) | Type of group (e |  no  |
-| [RoleType](RoleType.md) | Role of a person in a membership or function (e |  no  |
+| [RoleType](RoleType.md) | Role of a person in a membership or function (e |  yes  |
 | [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |  yes  |
 | [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |  no  |
 
