@@ -11,3 +11,7 @@ Das Membership-Schema bildet die Beziehung zwischen Personen und Gruppen ab und 
 - **Rolle als kontrolliertes Vokabular mit Freitext-Option (`role_type`):** Die Rolle in der Gruppe (z. B. Mitglied, Präsidium, Stellvertretung) wird über ein kontrolliertes Vokabular (`RoleEnum`) angegeben; für nicht abgedeckte Rollen dient der Wert `other` mit einer freien Bezeichnung.
 
 {{include:ech-0294_actors/output/docs/Membership.md}}
+
+{{include:ech-0294_actors/output/docs/RoleType.md}}
+
+{{include:ech-0294_actors/output/docs/RoleTypeEnum.md}}
