@@ -27,7 +27,7 @@ URI: [act:country](https://ld.ech.ch/schema/0294/actors/country)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Citizenship](Citizenship.md) | Citizenship (also used for Nationality) of a person indicating the country an... |  no  |
+| [Citizenship](Citizenship.md) | Citizenship (also used for Nationality) of a person indicating the country an... |  yes  |
 
 
 

@@ -21,6 +21,19 @@ __
 | role_type_enum | 0..1 <br/> [RoleEnum](RoleEnum.md) | Role of the person in the membership or function.  |
 | label | 0..1 <br/> [String](String.md) | Specific role label. Use this when a specific role name is needed, even if a fitting semantic value exists in `role_type_enum`; provide this label when `role_type_enum` is set to 'other'.  |
 
+##### Constraints
+
+
+At least one of the following must be set:
+
+- [role_type_enum](role_type_enum.md)
+- [label](label.md)
+
+
+
+
+
+
 
 
 
@@ -32,6 +45,12 @@ __
 | [Membership](Membership.md) | [role_type](role_type.md) | range | [RoleType](RoleType.md) |
 
 
+
+
+##### Rules
+
+
+- If the role type is 'other', a descriptive label must be provided.
 
 
 

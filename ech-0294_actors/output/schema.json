@@ -2,6 +2,24 @@
     "$defs": {
         "Address": {
             "additionalProperties": false,
+            "anyOf": [
+                {
+                    "properties": {
+                        "postal_locality": {}
+                    },
+                    "required": [
+                        "postal_locality"
+                    ]
+                },
+                {
+                    "properties": {
+                        "address_uri": {}
+                    },
+                    "required": [
+                        "address_uri"
+                    ]
+                }
+            ],
             "description": "An address with a type (e.g., private address, business address) and a value.",
             "properties": {
                 "address_type": {
@@ -57,10 +75,7 @@
                 "country": {
                     "description": "ISO 3166-1 alpha-2 country code.\n",
                     "pattern": "^[A-Z]{2}$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "is_active": {
                     "description": "Indicates whether the information is currently valid. Can be useful when this information is explicitly available.\n",
@@ -86,6 +101,9 @@
                     ]
                 }
             },
+            "required": [
+                "country"
+            ],
             "title": "Citizenship",
             "type": "object"
         },
@@ -99,12 +117,13 @@
                 },
                 "value": {
                     "description": "The value of an information besides other attributes such as type, language, etc.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 }
             },
+            "required": [
+                "contact_type",
+                "value"
+            ],
             "title": "Contact",
             "type": "object"
         },
@@ -194,10 +213,7 @@
             "properties": {
                 "district": {
                     "description": "Electoral district or region.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "is_active": {
                     "description": "Indicates whether the information is currently valid. Can be useful when this information is explicitly available.\n",
@@ -223,6 +239,9 @@
                     ]
                 }
             },
+            "required": [
+                "district"
+            ],
             "title": "ElectoralDistrict",
             "type": "object"
         },
@@ -275,6 +294,9 @@
                     ]
                 }
             },
+            "required": [
+                "gender_code"
+            ],
             "title": "Gender",
             "type": "object"
         },
@@ -369,14 +391,7 @@
                     "type": "string"
                 },
                 "group_type": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/GroupType"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
+                    "$ref": "#/$defs/GroupType",
                     "description": "Type of group (e.g., party, commission, parliament, or similar). The exact naming and description of the group is provided via `label`.\n"
                 },
                 "is_active": {
@@ -388,10 +403,7 @@
                 },
                 "label": {
                     "description": "Assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "landing_page": {
                     "description": "Website providing further information.\n",
@@ -464,6 +476,8 @@
                 }
             },
             "required": [
+                "group_type",
+                "label",
                 "global_uri"
             ],
             "title": "Group",
@@ -664,6 +678,24 @@
         },
         "InterestLink": {
             "additionalProperties": false,
+            "anyOf": [
+                {
+                    "properties": {
+                        "organization_uid": {}
+                    },
+                    "required": [
+                        "organization_uid"
+                    ]
+                },
+                {
+                    "properties": {
+                        "organization_name": {}
+                    },
+                    "required": [
+                        "organization_name"
+                    ]
+                }
+            ],
             "description": "An interest link (conflict of interest, political financing) of a person to an organization outside the actor schema.",
             "properties": {
                 "committee": {
@@ -768,14 +800,7 @@
                     ]
                 },
                 "person_reference": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/PersonReference"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
+                    "$ref": "#/$defs/PersonReference",
                     "description": "Reference to a person with snapshot data at time of linking.\n"
                 },
                 "valid_from": {
@@ -803,6 +828,7 @@
                 }
             },
             "required": [
+                "person_reference",
                 "interest_type",
                 "global_uri"
             ],
@@ -1052,12 +1078,12 @@
                 "language": {
                     "description": "Language code in ISO 639-1 format (two lowercase letters, e.g. \"de\", \"fr\", \"it\", \"en\").\n",
                     "pattern": "^[a-z]{2}$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 }
             },
+            "required": [
+                "language"
+            ],
             "title": "LanguageProficiency",
             "type": "object"
         },
@@ -1154,14 +1180,7 @@
                     "type": "string"
                 },
                 "group_reference": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/GroupReference"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
+                    "$ref": "#/$defs/GroupReference",
                     "description": "Reference to a group with snapshot data at time of linking.\n"
                 },
                 "is_active": {
@@ -1179,14 +1198,7 @@
                     ]
                 },
                 "person_reference": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/PersonReference"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
+                    "$ref": "#/$defs/PersonReference",
                     "description": "Reference to a person with snapshot data at time of linking.\n"
                 },
                 "role_type": {
@@ -1225,6 +1237,8 @@
                 }
             },
             "required": [
+                "person_reference",
+                "group_reference",
                 "global_uri"
             ],
             "title": "Membership",
@@ -1244,12 +1258,12 @@
                 },
                 "value": {
                     "description": "The value of an information besides other attributes such as type, language, etc.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 }
             },
+            "required": [
+                "value"
+            ],
             "title": "MultilingualValue",
             "type": "object"
         },
@@ -1286,12 +1300,13 @@
                 },
                 "value": {
                     "description": "The value of an information besides other attributes such as type, language, etc.\n",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 }
             },
+            "required": [
+                "name_type",
+                "value"
+            ],
             "title": "Name",
             "type": "object"
         },
@@ -1315,6 +1330,24 @@
         },
         "Occupation": {
             "additionalProperties": false,
+            "anyOf": [
+                {
+                    "properties": {
+                        "occupation_code": {}
+                    },
+                    "required": [
+                        "occupation_code"
+                    ]
+                },
+                {
+                    "properties": {
+                        "label": {}
+                    },
+                    "required": [
+                        "label"
+                    ]
+                }
+            ],
             "description": "Occupation or profession of a person indicating a label, an ISCO-19 code, whether the position is paid, and temporal validity.",
             "properties": {
                 "is_active": {
@@ -1646,7 +1679,35 @@
         },
         "RoleType": {
             "additionalProperties": false,
+            "anyOf": [
+                {
+                    "properties": {
+                        "role_type_enum": {}
+                    },
+                    "required": [
+                        "role_type_enum"
+                    ]
+                },
+                {
+                    "properties": {
+                        "label": {}
+                    },
+                    "required": [
+                        "label"
+                    ]
+                }
+            ],
             "description": "Role of a person in a membership or function (e.g., member, president, deputy). If a role is not listed in the proposed RoleEnum vocabulary, the value 'other' can be used, and a descriptive label should be provided in the `role_label` slot. The label can also be used when a specific name is needed, even if a fitting semantic value exists in `role_type_enum`; it should be provided when `role_type_enum` is set to 'other'.",
+            "if": {
+                "properties": {
+                    "role_type_enum": {
+                        "const": "other"
+                    }
+                },
+                "required": [
+                    "role_type_enum"
+                ]
+            },
             "properties": {
                 "label": {
                     "description": "Specific role label. Use this when a specific role name is needed, even if a fitting semantic value exists in `role_type_enum`; provide this label when `role_type_enum` is set to 'other'.\n",
@@ -1660,11 +1721,45 @@
                     "description": "Role of the person in the membership or function.\n"
                 }
             },
+            "then": {
+                "properties": {
+                    "label": {}
+                },
+                "required": [
+                    "label"
+                ]
+            },
             "title": "RoleType",
             "type": "object"
         },
         "Training": {
             "additionalProperties": false,
+            "anyOf": [
+                {
+                    "properties": {
+                        "training_type": {}
+                    },
+                    "required": [
+                        "training_type"
+                    ]
+                },
+                {
+                    "properties": {
+                        "training_code": {}
+                    },
+                    "required": [
+                        "training_code"
+                    ]
+                },
+                {
+                    "properties": {
+                        "value": {}
+                    },
+                    "required": [
+                        "value"
+                    ]
+                }
+            ],
             "description": "Training or education of a person indicating a type (e.g., school diploma, university degree, military service), a label, an ISCO-19 code, and temporal validity.",
             "properties": {
                 "is_active": {

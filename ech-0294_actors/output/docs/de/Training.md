@@ -25,6 +25,20 @@ __
 | valid_through | 0..1 <br/> [Date](Date.md) | Das Datum, bis und mit dem die Information gültig ist. <br/><br/>Vererbung: [HasTemporalValidity](HasTemporalValidity.md) |
 | is_active | 0..1 <br/> [Boolean](Boolean.md) | Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist. <br/><br/>Vererbung: [HasTemporalValidity](HasTemporalValidity.md) |
 
+##### Einschränkungen
+
+
+Mindestens eines der folgenden Felder muss gesetzt sein:
+
+- [training_type](training_type.md)
+- [training_code](training_code.md)
+- [value](value.md)
+
+
+
+
+
+
 
 
 

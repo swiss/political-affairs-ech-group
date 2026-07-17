@@ -27,7 +27,7 @@ URI: [act:district](https://ld.ech.ch/schema/0294/actors/district)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [ElectoralDistrict](ElectoralDistrict.md) | Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit zeitli... |  no  |
+| [ElectoralDistrict](ElectoralDistrict.md) | Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit zeitli... |  yes  |
 
 
 

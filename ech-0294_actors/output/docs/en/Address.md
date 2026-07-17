@@ -24,6 +24,19 @@ __
 | postal_code | 0..1 <br/> [Integer](Integer.md) | Postal code.  |
 | postal_locality | 0..1 <br/> [String](String.md) | Locality.  |
 
+##### Constraints
+
+
+At least one of the following must be set:
+
+- [postal_locality](postal_locality.md)
+- [address_uri](address_uri.md)
+
+
+
+
+
+
 
 
 

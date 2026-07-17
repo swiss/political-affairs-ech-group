@@ -27,7 +27,7 @@ URI: [act:groupReference](https://ld.ech.ch/schema/0294/actors/groupReference)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Membership](Membership.md) | A membership relationship between a person and a group, representing formal a... |  no  |
+| [Membership](Membership.md) | A membership relationship between a person and a group, representing formal a... |  yes  |
 
 
 

@@ -27,7 +27,7 @@ URI: [act:nameType](https://ld.ech.ch/schema/0294/actors/nameType)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Name](Name.md) | A name with a type (e |  no  |
+| [Name](Name.md) | A name with a type (e |  yes  |
 
 
 

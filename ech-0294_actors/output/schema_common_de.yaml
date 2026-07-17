@@ -174,6 +174,9 @@ classes:
     slots:
     - value
     - language
+    slot_usage:
+      value:
+        required: true
   PersonReference:
     description: 'Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung. Ermöglicht historische Korrektheit auch wenn sich die Person später ändert.
 

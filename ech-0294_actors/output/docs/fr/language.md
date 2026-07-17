@@ -27,7 +27,7 @@ URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [LanguageProficiency](LanguageProficiency.md) | Compétences linguistiques d'une personne indiquant la langue et le fait qu'il... |  no  |
+| [LanguageProficiency](LanguageProficiency.md) | Compétences linguistiques d'une personne indiquant la langue et le fait qu'il... |  yes  |
 | [MultilingualValue](MultilingualValue.md) | Une chaîne de caractères multilingue avec indication de la langue |  no  |
 
 

@@ -18,8 +18,8 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| name_type | 0..1 <br/> [NameTypeEnum](NameTypeEnum.md) | Type of name according to eCH-0011 (personNameData).  |
-| value | 0..1 <br/> [String](String.md) | The value of an information besides other attributes such as type, language, etc.  |
+| name_type | 1 <br/> [NameTypeEnum](NameTypeEnum.md) | Type of name according to eCH-0011 (personNameData).  |
+| value | 1 <br/> [String](String.md) | The value of an information besides other attributes such as type, language, etc.  |
 | valid_from | 0..1 <br/> [Date](Date.md) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |
 | valid_through | 0..1 <br/> [Date](Date.md) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |
 | is_active | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |

@@ -27,10 +27,10 @@ URI: [mcm:value](https://ld.ech.ch/schema/0292/meta-common/value)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Name](Name.md) | Ein Name mit einem Typ (z |  no  |
+| [Name](Name.md) | Ein Name mit einem Typ (z |  yes  |
 | [Training](Training.md) | Ausbildung oder Bildung einer Person mit Angabe eines Typs (z |  no  |
-| [Contact](Contact.md) | Kontaktinformation einer Person mit Angabe eines Typs (z |  no  |
-| [MultilingualValue](MultilingualValue.md) | Ein mehrsprachiger String mit Angabe der Sprache |  no  |
+| [Contact](Contact.md) | Kontaktinformation einer Person mit Angabe eines Typs (z |  yes  |
+| [MultilingualValue](MultilingualValue.md) | Ein mehrsprachiger String mit Angabe der Sprache |  yes  |
 
 
 

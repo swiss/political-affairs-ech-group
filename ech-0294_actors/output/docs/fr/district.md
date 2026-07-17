@@ -27,7 +27,7 @@ URI: [act:district](https://ld.ech.ch/schema/0294/actors/district)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [ElectoralDistrict](ElectoralDistrict.md) | Circonscription ou région électorale dans laquelle une personne est politique... |  no  |
+| [ElectoralDistrict](ElectoralDistrict.md) | Circonscription ou région électorale dans laquelle une personne est politique... |  yes  |
 
 
 

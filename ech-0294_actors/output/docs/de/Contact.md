@@ -18,8 +18,8 @@ __
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
-| contact_type | 0..1 <br/> [ContactTypeEnum](ContactTypeEnum.md) | Typ der Kontaktinformation.  |
-| value | 0..1 <br/> [String](String.md) | Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc.  |
+| contact_type | 1 <br/> [ContactTypeEnum](ContactTypeEnum.md) | Typ der Kontaktinformation.  |
+| value | 1 <br/> [String](String.md) | Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc.  |
 
 
 

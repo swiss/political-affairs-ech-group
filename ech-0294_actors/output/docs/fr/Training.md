@@ -25,6 +25,20 @@ __
 | valid_through | 0..1 <br/> [Date](Date.md) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](HasTemporalValidity.md) |
 | is_active | 0..1 <br/> [Boolean](Boolean.md) | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](HasTemporalValidity.md) |
 
+##### Contraintes
+
+
+Au moins l'un des champs suivants doit être renseigné :
+
+- [training_type](training_type.md)
+- [training_code](training_code.md)
+- [value](value.md)
+
+
+
+
+
+
 
 
 

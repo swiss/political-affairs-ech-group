@@ -27,7 +27,7 @@ URI: [act:genderCode](https://ld.ech.ch/schema/0294/actors/genderCode)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Gender](Gender.md) | Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen ... |  no  |
+| [Gender](Gender.md) | Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen ... |  yes  |
 
 
 

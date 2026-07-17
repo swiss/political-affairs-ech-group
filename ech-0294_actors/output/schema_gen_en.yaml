@@ -123,6 +123,11 @@ classes:
     - addresses
     - statutes_url
     - party_color
+    slot_usage:
+      group_type:
+        required: true
+      label:
+        required: true
   Membership:
     description: 'A membership relationship between a person and a group, representing formal affiliation (e.g., party member, commission member, parliamentarian). Distinct from InterestLink, which covers external interest bindings and conflicts of interest to organizations outside the actor schema.
 
@@ -145,6 +150,10 @@ classes:
     - authorized_to_vote
     - is_active
     slot_usage:
+      person_reference:
+        required: true
+      group_reference:
+        required: true
       is_active:
         description: 'Indicates if the membership is currently active. Can complement or replace `valid_from`/`valid_through`. If not set, activity is derived from the temporal validity fields.
 
@@ -181,6 +190,16 @@ classes:
     - is_paid
     - committee
     - function_role
+    slot_usage:
+      person_reference:
+        required: true
+    any_of:
+    - slot_conditions:
+        organization_uid:
+          required: true
+    - slot_conditions:
+        organization_name:
+          required: true
   Name:
     description: 'A name with a type (e.g., call name, official name), a value, and a temporal validity.
 
@@ -197,6 +216,11 @@ classes:
     slots:
     - name_type
     - value
+    slot_usage:
+      name_type:
+        required: true
+      value:
+        required: true
   Address:
     description: 'An address with a type (e.g., private address, business address) and a value.
 
@@ -214,6 +238,13 @@ classes:
     - street_address
     - postal_code
     - postal_locality
+    any_of:
+    - slot_conditions:
+        postal_locality:
+          required: true
+    - slot_conditions:
+        address_uri:
+          required: true
   LanguageProficiency:
     description: 'Language proficiency of a person indicating the language and whether it is the preferred language or native language.
 
@@ -229,6 +260,9 @@ classes:
     - language
     - is_correspondence
     - is_native
+    slot_usage:
+      language:
+        required: true
   Citizenship:
     description: 'Citizenship (also used for Nationality) of a person indicating the country and temporal validity. If there is no `valid_from` provided, the information is not known. If it is known that the citizenship is valid from birth, the birthdate is to be repeated here. If there is no `valid_through`, the citizenship is still active.
 
@@ -244,6 +278,9 @@ classes:
     - HasTemporalValidity
     slots:
     - country
+    slot_usage:
+      country:
+        required: true
   Gender:
     description: 'Gender of a person indicating a gender code and temporal validity.
 
@@ -261,6 +298,9 @@ classes:
     - gender_code
     - label
     - pronouns
+    slot_usage:
+      gender_code:
+        required: true
   Occupation:
     description: 'Occupation or profession of a person indicating a label, an ISCO-19 code, whether the position is paid, and temporal validity.
 
@@ -280,6 +320,13 @@ classes:
     - label
     - organization_uid
     - organization_name
+    any_of:
+    - slot_conditions:
+        occupation_code:
+          required: true
+    - slot_conditions:
+        label:
+          required: true
   Training:
     description: 'Training or education of a person indicating a type (e.g., school diploma, university degree, military service), a label, an ISCO-19 code, and temporal validity.
 
@@ -297,6 +344,16 @@ classes:
     - training_type
     - training_code
     - value
+    any_of:
+    - slot_conditions:
+        training_type:
+          required: true
+    - slot_conditions:
+        training_code:
+          required: true
+    - slot_conditions:
+        value:
+          required: true
   Contact:
     description: 'Contact information of a person indicating a type (e.g., email, LinkedIn) and a value.
 
@@ -311,6 +368,11 @@ classes:
     slots:
     - contact_type
     - value
+    slot_usage:
+      contact_type:
+        required: true
+      value:
+        required: true
   ElectoralDistrict:
     description: 'Electoral district or region where a person is politically active; with temporal validity.
 
@@ -326,6 +388,9 @@ classes:
     - HasTemporalValidity
     slots:
     - district
+    slot_usage:
+      district:
+        required: true
   GroupType:
     description: 'Type of group (e.g., party, committee, parliament, department).
 
@@ -354,6 +419,26 @@ classes:
     slots:
     - role_type_enum
     - label
+    any_of:
+    - slot_conditions:
+        role_type_enum:
+          required: true
+    - slot_conditions:
+        label:
+          required: true
+    rules:
+    - description: If the role type is 'other', a descriptive label must be provided.
+      annotations:
+        description_de: Wenn der Rollentyp 'other' ist, muss eine beschreibende Bezeichnung angegeben werden.
+        description_fr: Si le type de rôle est « other », un libellé descriptif doit être fourni.
+      preconditions:
+        slot_conditions:
+          role_type_enum:
+            equals_string: other
+      postconditions:
+        slot_conditions:
+          label:
+            required: true
     slot_usage:
       label:
         description: 'Specific role label. Use this when a specific role name is needed, even if a fitting semantic value exists in `role_type_enum`; provide this label when `role_type_enum` is set to ''other''.

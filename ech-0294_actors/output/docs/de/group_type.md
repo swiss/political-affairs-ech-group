@@ -27,7 +27,7 @@ URI: [act:groupType](https://ld.ech.ch/schema/0294/actors/groupType)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [Group](Group.md) | Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [Group](Group.md) | Eine politische Gruppe, Organisation oder Körperschaft (z |  yes  |
 
 
 

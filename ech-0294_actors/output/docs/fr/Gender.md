@@ -18,7 +18,7 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| gender_code | 0..1 <br/> [GenderCodeEnum](GenderCodeEnum.md) | Code de sexe. Valeurs recommandées : male, female, diverse.  |
+| gender_code | 1 <br/> [GenderCodeEnum](GenderCodeEnum.md) | Code de sexe. Valeurs recommandées : male, female, diverse.  |
 | label | 0..1 <br/> [String](String.md) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
 | pronouns | * <br/> [String](String.md) | Pronoms utilisés par la personne.  |
 | valid_from | 0..1 <br/> [Date](Date.md) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](HasTemporalValidity.md) |

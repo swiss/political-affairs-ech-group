@@ -25,6 +25,20 @@ __
 | valid_through | 0..1 <br/> [Date](Date.md) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |
 | is_active | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |
 
+##### Constraints
+
+
+At least one of the following must be set:
+
+- [training_type](training_type.md)
+- [training_code](training_code.md)
+- [value](value.md)
+
+
+
+
+
+
 
 
 

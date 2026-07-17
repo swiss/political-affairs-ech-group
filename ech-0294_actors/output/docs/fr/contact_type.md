@@ -27,7 +27,7 @@ URI: [act:contactType](https://ld.ech.ch/schema/0294/actors/contactType)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Contact](Contact.md) | Informations de contact d'une personne indiquant un type (p |  no  |
+| [Contact](Contact.md) | Informations de contact d'une personne indiquant un type (p |  yes  |
 
 
 

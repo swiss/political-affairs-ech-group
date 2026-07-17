@@ -18,7 +18,7 @@ __
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
-| gender_code | 0..1 <br/> [GenderCodeEnum](GenderCodeEnum.md) | Geschlechtscode. Empfohlene Werte: male, female, diverse .  |
+| gender_code | 1 <br/> [GenderCodeEnum](GenderCodeEnum.md) | Geschlechtscode. Empfohlene Werte: male, female, diverse .  |
 | label | 0..1 <br/> [String](String.md) | Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).  |
 | pronouns | * <br/> [String](String.md) | Von der Person verwendete Pronomen.  |
 | valid_from | 0..1 <br/> [Date](Date.md) | Das Datum, ab dem die Information gültig ist. <br/><br/>Vererbung: [HasTemporalValidity](HasTemporalValidity.md) |

@@ -21,6 +21,19 @@ __
 | role_type_enum | 0..1 <br/> [RoleEnum](RoleEnum.md) | Rolle der Person in der Mitgliedschaft oder Funktion.  |
 | label | 0..1 <br/> [String](String.md) | Spezifische Rollenbezeichnung. Dieses Feld kann verwendet werden, wenn eine konkrete Rollenbezeichnung benötigt wird, auch wenn in `role_type_enum` bereits ein passender semantischer Wert vorhanden ist; bei `role_type_enum = other` soll diese Bezeichnung angegeben werden.  |
 
+##### Einschränkungen
+
+
+Mindestens eines der folgenden Felder muss gesetzt sein:
+
+- [role_type_enum](role_type_enum.md)
+- [label](label.md)
+
+
+
+
+
+
 
 
 
@@ -32,6 +45,12 @@ __
 | [Membership](Membership.md) | [role_type](role_type.md) | range | [RoleType](RoleType.md) |
 
 
+
+
+##### Regeln
+
+
+- Wenn der Rollentyp 'other' ist, muss eine beschreibende Bezeichnung angegeben werden.
 
 
 

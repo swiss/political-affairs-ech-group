@@ -123,6 +123,11 @@ classes:
     - addresses
     - statutes_url
     - party_color
+    slot_usage:
+      group_type:
+        required: true
+      label:
+        required: true
   Membership:
     description: 'Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe, die eine formale Zugehörigkeit darstellt (z.B. Parteimitglied, Kommissionsmitglied, Parlamentarier/in). Im Unterschied zu InterestLink, der externe Interessenbindungen und Interessenkonflikte zu Organisationen ausserhalb des Akteur-Schemas abbildet.
 
@@ -145,6 +150,10 @@ classes:
     - authorized_to_vote
     - is_active
     slot_usage:
+      person_reference:
+        required: true
+      group_reference:
+        required: true
       is_active:
         description: 'Gibt an, ob die Mitgliedschaft derzeit aktiv ist. Kann `valid_from`/`valid_through` ergänzen oder ersetzen. Wenn nicht gesetzt, wird die Aktivität aus den zeitlichen Gültigkeitsfeldern abgeleitet.
 
@@ -181,6 +190,16 @@ classes:
     - is_paid
     - committee
     - function_role
+    slot_usage:
+      person_reference:
+        required: true
+    any_of:
+    - slot_conditions:
+        organization_uid:
+          required: true
+    - slot_conditions:
+        organization_name:
+          required: true
   Name:
     description: 'Ein Name mit einem Typ (z.B. Rufname, amtlicher Name) und einem Wert und einer zeitlichen Gültigkeit.
 
@@ -197,6 +216,11 @@ classes:
     slots:
     - name_type
     - value
+    slot_usage:
+      name_type:
+        required: true
+      value:
+        required: true
   Address:
     description: 'Eine Adresse mit einem Typ (z.B. Privatadresse, Geschäftsadresse) und einem Wert.
 
@@ -214,6 +238,13 @@ classes:
     - street_address
     - postal_code
     - postal_locality
+    any_of:
+    - slot_conditions:
+        postal_locality:
+          required: true
+    - slot_conditions:
+        address_uri:
+          required: true
   LanguageProficiency:
     description: 'Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um die bevorzugte Sprache oder die Muttersprache handelt.
 
@@ -229,6 +260,9 @@ classes:
     - language
     - is_correspondence
     - is_native
+    slot_usage:
+      language:
+        required: true
   Citizenship:
     description: 'Staatsangehörigkeit (wird auch für Nationalität verwendet) einer Person unter Angabe des Landes und der zeitlichen Gültigkeit. Wenn kein `valid_from` angegeben ist, ist diese Information nicht bekannt. Ist bekannt, dass die Staatsangehörigkeit seit der Geburt gültig ist, ist das Geburtsdatum hier anzugeben. Wenn kein `valid_through` angegeben ist, ist die Staatsangehörigkeit weiterhin gültig.
 
@@ -244,6 +278,9 @@ classes:
     - HasTemporalValidity
     slots:
     - country
+    slot_usage:
+      country:
+        required: true
   Gender:
     description: 'Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen Gültigkeit.
 
@@ -261,6 +298,9 @@ classes:
     - gender_code
     - label
     - pronouns
+    slot_usage:
+      gender_code:
+        required: true
   Occupation:
     description: 'Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Codes, ob die Position bezahlt ist, und der zeitlichen Gültigkeit.
 
@@ -280,6 +320,13 @@ classes:
     - label
     - organization_uid
     - organization_name
+    any_of:
+    - slot_conditions:
+        occupation_code:
+          required: true
+    - slot_conditions:
+        label:
+          required: true
   Training:
     description: 'Ausbildung oder Bildung einer Person mit Angabe eines Typs (z.B. Schulabschluss, Universitätsabschluss, Militärdienst), eines Labels, eines ISCO-19 Codes und der zeitlichen Gültigkeit.
 
@@ -297,6 +344,16 @@ classes:
     - training_type
     - training_code
     - value
+    any_of:
+    - slot_conditions:
+        training_type:
+          required: true
+    - slot_conditions:
+        training_code:
+          required: true
+    - slot_conditions:
+        value:
+          required: true
   Contact:
     description: 'Kontaktinformation einer Person mit Angabe eines Typs (z.B. E-Mail, LinkedIn) und eines Werts.
 
@@ -311,6 +368,11 @@ classes:
     slots:
     - contact_type
     - value
+    slot_usage:
+      contact_type:
+        required: true
+      value:
+        required: true
   ElectoralDistrict:
     description: 'Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit zeitlicher Gültigkeit.
 
@@ -326,6 +388,9 @@ classes:
     - HasTemporalValidity
     slots:
     - district
+    slot_usage:
+      district:
+        required: true
   GroupType:
     description: 'Art der Gruppe (z.B. Partei, Kommission, Parlament, Departement).
 
@@ -354,6 +419,26 @@ classes:
     slots:
     - role_type_enum
     - label
+    any_of:
+    - slot_conditions:
+        role_type_enum:
+          required: true
+    - slot_conditions:
+        label:
+          required: true
+    rules:
+    - description: Wenn der Rollentyp 'other' ist, muss eine beschreibende Bezeichnung angegeben werden.
+      annotations:
+        description_de: Wenn der Rollentyp 'other' ist, muss eine beschreibende Bezeichnung angegeben werden.
+        description_fr: Si le type de rôle est « other », un libellé descriptif doit être fourni.
+      preconditions:
+        slot_conditions:
+          role_type_enum:
+            equals_string: other
+      postconditions:
+        slot_conditions:
+          label:
+            required: true
     slot_usage:
       label:
         description: 'Spezifische Rollenbezeichnung. Dieses Feld kann verwendet werden, wenn eine konkrete Rollenbezeichnung benötigt wird, auch wenn in `role_type_enum` bereits ein passender semantischer Wert vorhanden ist; bei `role_type_enum = other` soll diese Bezeichnung angegeben werden.

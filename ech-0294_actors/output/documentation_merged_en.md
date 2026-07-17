@@ -251,8 +251,8 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| name_type | 0..1 <br/> [NameTypeEnum](#NameTypeEnum) | Type of name according to eCH-0011 (personNameData).  |
-| value | 0..1 <br/> [String](#String) | The value of an information besides other attributes such as type, language, etc.  |
+| name_type | 1 <br/> [NameTypeEnum](#NameTypeEnum) | Type of name according to eCH-0011 (personNameData).  |
+| value | 1 <br/> [String](#String) | The value of an information besides other attributes such as type, language, etc.  |
 | valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 | valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 | is_active | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
@@ -356,7 +356,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| language | 0..1 <br/> [String](#String) | Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en").  |
+| language | 1 <br/> [String](#String) | Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en").  |
 | is_correspondence | 0..1 <br/> [Boolean](#Boolean) | Indicates if this is the preferred language.  |
 | is_native | 0..1 <br/> [Boolean](#Boolean) | Indicates if this is the native language.  |
 
@@ -410,7 +410,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| country | 0..1 <br/> [String](#String) | ISO 3166-1 alpha-2 country code.  |
+| country | 1 <br/> [String](#String) | ISO 3166-1 alpha-2 country code.  |
 | valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 | valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 | is_active | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
@@ -465,7 +465,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| gender_code | 0..1 <br/> [GenderCodeEnum](#GenderCodeEnum) | Gender code. Recommended values: male, female, diverse.  |
+| gender_code | 1 <br/> [GenderCodeEnum](#GenderCodeEnum) | Gender code. Recommended values: male, female, diverse.  |
 | label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
 | pronouns | * <br/> [String](#String) | Pronouns used by the person.  |
 | valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
@@ -564,6 +564,19 @@ __
 | valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 | is_active | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 
+##### Constraints
+
+
+At least one of the following must be set:
+
+- [occupation_code](#occupation_code)
+- [label](#label)
+
+
+
+
+
+
 
 
 
@@ -630,6 +643,20 @@ __
 | valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 | valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 | is_active | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+
+##### Constraints
+
+
+At least one of the following must be set:
+
+- [training_type](#training_type)
+- [training_code](#training_code)
+- [value](#value)
+
+
+
+
+
 
 
 
@@ -794,7 +821,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| district | 0..1 <br/> [String](#String) | Electoral district or region.  |
+| district | 1 <br/> [String](#String) | Electoral district or region.  |
 | valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 | valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 | is_active | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
@@ -868,8 +895,8 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| group_type | 0..1 <br/> [GroupType](#GroupType) | Type of group (e.g., party, commission, parliament, or similar). The exact naming and description of the group is provided via `label`.  |
-| label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
+| group_type | 1 <br/> [GroupType](#GroupType) | Type of group (e.g., party, commission, parliament, or similar). The exact naming and description of the group is provided via `label`.  |
+| label | 1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
 | abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abbreviation (can be multilingual).  |
 | description | * <br/> [MultilingualValue](#MultilingualValue) | Description of the entity.  |
 | landing_page | 0..1 <br/> [Uri](#Uri) | Website providing further information.  |
@@ -1074,8 +1101,8 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | Reference to a person with snapshot data at time of linking.  |
-| group_reference | 0..1 <br/> [GroupReference](#GroupReference) | Reference to a group with snapshot data at time of linking.  |
+| person_reference | 1 <br/> [PersonReference](#PersonReference) | Reference to a person with snapshot data at time of linking.  |
+| group_reference | 1 <br/> [GroupReference](#GroupReference) | Reference to a group with snapshot data at time of linking.  |
 | role_type | 0..1 <br/> [RoleType](#RoleType) | Role of the person in the membership or function.  |
 | authorized_to_vote | 0..1 <br/> [Boolean](#Boolean) | Indicates if the person is authorized to vote in the group. Typically false for substitute members (when not deputizing), observers, secretaries, and guests.  |
 | is_active | 0..1 <br/> [Boolean](#Boolean) | Indicates if the membership is currently active. Can complement or replace `valid_from`/`valid_through`. If not set, activity is derived from the temporal validity fields.  |
@@ -1142,6 +1169,19 @@ __
 | role_type_enum | 0..1 <br/> [RoleEnum](#RoleEnum) | Role of the person in the membership or function.  |
 | label | 0..1 <br/> [String](#String) | Specific role label. Use this when a specific role name is needed, even if a fitting semantic value exists in `role_type_enum`; provide this label when `role_type_enum` is set to 'other'.  |
 
+##### Constraints
+
+
+At least one of the following must be set:
+
+- [role_type_enum](#role_type_enum)
+- [label](#label)
+
+
+
+
+
+
 
 
 
@@ -1153,6 +1193,12 @@ __
 | [Membership](#Membership) | [role_type](#role_type) | range | [RoleType](#RoleType) |
 
 
+
+
+##### Rules
+
+
+- If the role type is 'other', a descriptive label must be provided.
 
 
 
@@ -1240,7 +1286,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | Reference to a person with snapshot data at time of linking.  |
+| person_reference | 1 <br/> [PersonReference](#PersonReference) | Reference to a person with snapshot data at time of linking.  |
 | interest_type | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | Type of interest link (professional activity, political office, association).  |
 | organization_name | 0..1 <br/> [String](#String) | Name of the organization or enterprise.  |
 | organization_uid | 0..1 <br/> [String](#String) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).  |
@@ -1259,6 +1305,19 @@ __
 | valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 | valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 | is_active | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+
+##### Constraints
+
+
+At least one of the following must be set:
+
+- [organization_uid](#organization_uid)
+- [organization_name](#organization_name)
+
+
+
+
+
 
 
 
@@ -1763,6 +1822,19 @@ __
 | postal_code | 0..1 <br/> [Integer](#Integer) | Postal code.  |
 | postal_locality | 0..1 <br/> [String](#String) | Locality.  |
 
+##### Constraints
+
+
+At least one of the following must be set:
+
+- [postal_locality](#postal_locality)
+- [address_uri](#address_uri)
+
+
+
+
+
+
 
 
 
@@ -1856,8 +1928,8 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| contact_type | 0..1 <br/> [ContactTypeEnum](#ContactTypeEnum) | Type of contact information.  |
-| value | 0..1 <br/> [String](#String) | The value of an information besides other attributes such as type, language, etc.  |
+| contact_type | 1 <br/> [ContactTypeEnum](#ContactTypeEnum) | Type of contact information.  |
+| value | 1 <br/> [String](#String) | The value of an information besides other attributes such as type, language, etc.  |
 
 
 

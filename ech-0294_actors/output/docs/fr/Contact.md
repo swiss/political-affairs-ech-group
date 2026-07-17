@@ -18,8 +18,8 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| contact_type | 0..1 <br/> [ContactTypeEnum](ContactTypeEnum.md) | Type d'informations de contact.  |
-| value | 0..1 <br/> [String](String.md) | La valeur proprement dite d'une information, en plus d'autres attributs tels que le type, la langue, etc.  |
+| contact_type | 1 <br/> [ContactTypeEnum](ContactTypeEnum.md) | Type d'informations de contact.  |
+| value | 1 <br/> [String](String.md) | La valeur proprement dite d'une information, en plus d'autres attributs tels que le type, la langue, etc.  |
 
 
 

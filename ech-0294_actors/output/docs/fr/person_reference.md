@@ -27,8 +27,8 @@ URI: [act:personReference](https://ld.ech.ch/schema/0294/actors/personReference)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Membership](Membership.md) | Une relation d'affiliation entre une personne et un groupe, représentant une ... |  no  |
-| [InterestLink](InterestLink.md) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |  no  |
+| [Membership](Membership.md) | Une relation d'affiliation entre une personne et un groupe, représentant une ... |  yes  |
+| [InterestLink](InterestLink.md) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |  yes  |
 
 
 

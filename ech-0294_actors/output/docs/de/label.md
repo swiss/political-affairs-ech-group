@@ -28,7 +28,7 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [Person](Person.md) | Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Be... |  yes  |
-| [Group](Group.md) | Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
+| [Group](Group.md) | Eine politische Gruppe, Organisation oder Körperschaft (z |  yes  |
 | [Gender](Gender.md) | Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen ... |  no  |
 | [Occupation](Occupation.md) | Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Code... |  no  |
 | [GroupType](GroupType.md) | Art der Gruppe (z |  no  |
