@@ -1,0 +1,73 @@
+---
+search:
+  boost: 5.0
+---
+
+# Slot: multilingual_value 
+
+
+_A multilingual value with language specification._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+URI: [mcm:multilingualValue](https://ld.ech.ch/schema/0292/meta-common/multilingualValue)
+<!-- no inheritance hierarchy -->
+
+
+
+
+
+
+
+## Eigenschaften
+
+### Typ und Wertebereich
+
+| Eigenschaft | Wert |
+| --- | --- |
+| Wertebereich | [MultilingualValue](MultilingualValue.md) |
+| Slot-URI | [mcm:multilingualValue](https://ld.ech.ch/schema/0292/meta-common/multilingualValue) |
+
+### Kardinalität und Anforderungen
+
+| Eigenschaft | Wert |
+| --- | --- |
+
+
+
+
+
+
+
+
+
+
+
+
+## LinkML-Quelle
+
+<details>
+```yaml
+name: multilingual_value
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Ein mehrsprachiger Wert mit Angabe der Sprache.
+
+      '
+description: 'A multilingual value with language specification.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
+rank: 1000
+slot_uri: mcm:multilingualValue
+range: MultilingualValue
+
+```
+</details></div>

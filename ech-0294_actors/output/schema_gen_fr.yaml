@@ -1,0 +1,1975 @@
+id: https://ld.ech.ch/schema/0294/actors
+name: actors-schema
+title: Actors Schema
+description: 'A schema describing political actors including persons, groups, memberships, and interest links.
+
+  '
+annotations:
+  description_de: 'Ein Schema zur Beschreibung politischer Akteure einschliesslich Personen, Gruppen, Mitgliedschaften und Interessenbindungen.
+
+    '
+license: CC-BY
+prefixes:
+  linkml: https://w3id.org/linkml/
+  act: https://ld.ech.ch/schema/0294/actors/
+  dcterms: http://purl.org/dc/terms/
+default_prefix: act
+default_range: string
+imports:
+- linkml:types
+- ../../ech-0292_meta/input/schema_common
+classes:
+  Container:
+    tree_root: true
+    description: 'Container for political actors, groups, and relationships.
+
+      '
+    annotations:
+      description_de: 'Container für politische Akteure, Gruppen und Beziehungen.
+
+        '
+    mixins:
+    - HasIdentification
+    slots:
+    - persons
+    - groups
+    - memberships
+    - interest_links
+  Person:
+    description: 'A person with identifiers, names, addresses, citizenships, and occupations.
+
+      '
+    annotations:
+      description_de: 'Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Berufen.
+
+        '
+    mixins:
+    - HasIdentification
+    - HasCreationModificationDates
+    slots:
+    - label
+    - label_long
+    - birth_year
+    - birth_date
+    - death_date
+    - picture
+    - names
+    - addresses
+    - language_proficiencies
+    - citizenships
+    - genders
+    - occupations
+    - trainings
+    - contacts
+    - electoral_district
+    - interest_links
+    slot_usage:
+      label:
+        description: 'Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name). Preferred: PersonOfficialName combined with PersonCallFirstName.
+
+          '
+        annotations:
+          description_de: 'Obligatorischer Kurzname zur Identifikation der Person innerhalb der Organisation (z.B. mit Geburtsjahr zur Unterscheidung von Personen mit gleichem Namen). Bevorzugt: PersonOfficialName (amtlicher Name) kombiniert mit PersonCallFirstName (Rufname).
+
+            '
+        required: true
+      label_long:
+        description: 'Optional long display name including academic titles and full official name (e.g. "Dr. Maria Muster-Beispiel").
+
+          '
+        annotations:
+          description_de: 'Optionaler langer Anzeigename mit akademischen Titeln und vollständigem amtlichem Namen (z.B. "Dr. Maria Muster-Beispiel").
+
+            '
+  Group:
+    description: 'A political group, organization, or body (e.g., party, committee, parliament, department).
+
+      '
+    annotations:
+      description_de: 'Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommission, Parlament, Departement).
+
+        '
+    mixins:
+    - HasIdentification
+    - HasCreationModificationDates
+    - HasTemporalValidity
+    slots:
+    - group_type
+    - label
+    - abbreviation
+    - description
+    - landing_page
+    - parent_groups
+    - spatial
+    - contacts
+    - addresses
+    - statutes_url
+    - party_color
+  Membership:
+    description: 'A membership relationship between a person and a group, representing formal affiliation (e.g., party member, commission member, parliamentarian). Distinct from InterestLink, which covers external interest bindings and conflicts of interest to organizations outside the actor schema.
+
+      '
+    annotations:
+      description_de: 'Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe, die eine formale Zugehörigkeit darstellt (z.B. Parteimitglied, Kommissionsmitglied, Parlamentarier/in). Im Unterschied zu InterestLink, der externe Interessenbindungen und Interessenkonflikte zu Organisationen ausserhalb des Akteur-Schemas abbildet.
+
+        '
+    mixins:
+    - HasIdentification
+    - HasCreationModificationDates
+    - HasTemporalValidity
+    slots:
+    - person_reference
+    - group_reference
+    - role_type
+    - authorized_to_vote
+    - is_active
+    slot_usage:
+      is_active:
+        description: 'Indicates if the membership is currently active. Can complement or replace `valid_from`/`valid_through`. If not set, activity is derived from the temporal validity fields.
+
+          '
+        annotations:
+          description_de: 'Gibt an, ob die Mitgliedschaft derzeit aktiv ist. Kann `valid_from`/`valid_through` ergänzen oder ersetzen. Wenn nicht gesetzt, wird die Aktivität aus den zeitlichen Gültigkeitsfeldern abgeleitet.
+
+            '
+  InterestLink:
+    description: 'An interest link (conflict of interest, political financing) of a person to an organization outside the actor schema.
+
+      '
+    annotations:
+      description_de: 'Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation ausserhalb des Akteur-Schemas.
+
+        '
+    mixins:
+    - HasIdentification
+    - HasCreationModificationDates
+    - HasTemporalValidity
+    slots:
+    - person_reference
+    - interest_type
+    - organization_name
+    - organization_uid
+    - organization_address
+    - legal_form
+    - is_paid
+    - committee
+    - function_role
+  Name:
+    description: 'A name with a type (e.g., call name, official name), a value, and a temporal validity.
+
+      '
+    annotations:
+      description_de: 'Ein Name mit einem Typ (z.B. Rufname, amtlicher Name) und einem Wert und einer zeitlichen Gültigkeit.
+
+        '
+    mixins:
+    - HasTemporalValidity
+    slots:
+    - name_type
+    - value
+  Address:
+    description: 'An address with a type (e.g., private address, business address) and a value.
+
+      '
+    annotations:
+      description_de: 'Eine Adresse mit einem Typ (z.B. Privatadresse, Geschäftsadresse) und einem Wert.
+
+        '
+    slots:
+    - address_type
+    - address_uri
+    - street_address
+    - postal_code
+    - postal_locality
+  LanguageProficiency:
+    description: 'Language proficiency of a person indicating the language and whether it is the preferred language or native language.
+
+      '
+    annotations:
+      description_de: 'Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um die bevorzugte Sprache oder die Muttersprache handelt.
+
+        '
+    slots:
+    - language
+    - is_correspondence
+    - is_native
+  Citizenship:
+    description: 'Citizenship (also used for Nationality) of a person indicating the country and temporal validity. If there is no `valid_from` provided, the information is not known. If it is known that the citizenship is valid from birth, the birthdate is to be repeated here. If there is no `valid_through`, the citizenship is still active.
+
+      '
+    annotations:
+      description_de: 'Staatsangehörigkeit (wird auch für Nationalität verwendet) einer Person unter Angabe des Landes und der zeitlichen Gültigkeit. Wenn kein `valid_from` angegeben ist, ist diese Information nicht bekannt. Ist bekannt, dass die Staatsangehörigkeit seit der Geburt gültig ist, ist das Geburtsdatum hier anzugeben. Wenn kein `valid_through` angegeben ist, ist die Staatsangehörigkeit weiterhin gültig.
+
+        '
+    mixins:
+    - HasTemporalValidity
+    slots:
+    - country
+  Gender:
+    description: 'Gender of a person indicating a gender code and temporal validity.
+
+      '
+    annotations:
+      description_de: 'Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen Gültigkeit.
+
+        '
+    mixins:
+    - HasTemporalValidity
+    slots:
+    - gender_code
+    - label
+    - pronouns
+  Occupation:
+    description: 'Occupation or profession of a person indicating a label, an ISCO-19 code, whether the position is paid, and temporal validity.
+
+      '
+    annotations:
+      description_de: 'Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Codes, ob die Position bezahlt ist, und der zeitlichen Gültigkeit.
+
+        '
+    mixins:
+    - HasTemporalValidity
+    slots:
+    - is_paid
+    - occupation_code
+    - label
+    - organization_uid
+    - organization_name
+  Training:
+    description: 'Training or education of a person indicating a type (e.g., school diploma, university degree, military service), a label, an ISCO-19 code, and temporal validity.
+
+      '
+    annotations:
+      description_de: 'Ausbildung oder Bildung einer Person mit Angabe eines Typs (z.B. Schulabschluss, Universitätsabschluss, Militärdienst), eines Labels, eines ISCO-19 Codes und der zeitlichen Gültigkeit.
+
+        '
+    mixins:
+    - HasTemporalValidity
+    slots:
+    - training_type
+    - training_code
+    - value
+  Contact:
+    description: 'Contact information of a person indicating a type (e.g., email, LinkedIn) and a value.
+
+      '
+    annotations:
+      description_de: 'Kontaktinformation einer Person mit Angabe eines Typs (z.B. E-Mail, LinkedIn) und eines Werts.
+
+        '
+    slots:
+    - contact_type
+    - value
+  ElectoralDistrict:
+    description: 'Electoral district or region where a person is politically active; with temporal validity.
+
+      '
+    annotations:
+      description_de: 'Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit zeitlicher Gültigkeit.
+
+        '
+    mixins:
+    - HasTemporalValidity
+    slots:
+    - district
+  GroupType:
+    description: 'Type of group (e.g., party, committee, parliament, department).
+
+      '
+    annotations:
+      description_de: 'Art der Gruppe (z.B. Partei, Kommission, Parlament, Departement).
+
+        '
+    slots:
+    - group_type_enum
+    - label
+  RoleType:
+    description: 'Role of a person in a membership or function (e.g., member, president, deputy). If a role is not listed in the proposed RoleEnum vocabulary, the value ''other'' can be used, and a descriptive label should be provided in the `role_label` slot. The label can also be used when a specific name is needed, even if a fitting semantic value exists in `role_type_enum`; it should be provided when `role_type_enum` is set to ''other''.
+
+      '
+    annotations:
+      description_de: 'Rolle einer Person in einer Mitgliedschaft oder Funktion (z.B. Mitglied, Präsident/in, Stellvertreter/in). Wenn eine Rolle im vorgeschlagenen RoleEnum-Vokabular nicht enthalten ist, kann der Wert ''other'' verwendet werden; in diesem Fall soll im Slot `role_label` eine beschreibende Bezeichnung angegeben werden. Die Bezeichnung kann auch verwendet werden, wenn eine spezifische Rollenbezeichnung nötig ist, selbst wenn in `role_type_enum` bereits ein passender semantischer Wert vorhanden ist; bei `role_type_enum = other` soll sie angegeben werden.
+
+        '
+    slots:
+    - role_type_enum
+    - label
+    slot_usage:
+      label:
+        description: 'Specific role label. Use this when a specific role name is needed, even if a fitting semantic value exists in `role_type_enum`; provide this label when `role_type_enum` is set to ''other''.
+
+          '
+        annotations:
+          description_de: 'Spezifische Rollenbezeichnung. Dieses Feld kann verwendet werden, wenn eine konkrete Rollenbezeichnung benötigt wird, auch wenn in `role_type_enum` bereits ein passender semantischer Wert vorhanden ist; bei `role_type_enum = other` soll diese Bezeichnung angegeben werden.
+
+            '
+slots:
+  name_type:
+    slot_uri: act:nameType
+    description: 'Type of name according to eCH-0011 (personNameData).
+
+      '
+    annotations:
+      description_de: 'Typ des Namens gemäss eCH-0011 (personNameData).
+
+        '
+    range: NameTypeEnum
+    examples:
+    - value: PersonFirstName
+    - value: PersonOfficialName
+  address_type:
+    slot_uri: act:addressType
+    description: 'Type of address.
+
+      '
+    annotations:
+      description_de: 'Typ der Adresse.
+
+        '
+    range: AddressTypeEnum
+    examples:
+    - value: businessAddress
+  address_uri:
+    slot_uri: act:addressURI
+    description: 'URI of the address from the Swiss federal building address register. The layer can be accessed at https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis. Example of a valid URI: https://geo.ld.admin.ch/location/address/101904050
+
+      '
+    annotations:
+      description_de: 'URI der Adresse aus dem eidgenössischen Gebäudeadressverzeichnis. Der Layer ist zugänglich unter https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis. Beispiel einer gültigen URI: https://geo.ld.admin.ch/location/address/101904050
+
+        '
+    range: uriorcurie
+  street_address:
+    slot_uri: act:streetAddress
+    description: 'Street address.
+
+      '
+    annotations:
+      description_de: 'Strassenadresse.
+
+        '
+  postal_code:
+    slot_uri: act:postalCode
+    description: 'Postal code.
+
+      '
+    annotations:
+      description_de: 'Postleitzahl.
+
+        '
+    range: integer
+  postal_locality:
+    slot_uri: act:postalLocality
+    description: 'Locality.
+
+      '
+    annotations:
+      description_de: 'Ort.
+
+        '
+    examples:
+    - value: Basel-Stadt
+  is_correspondence:
+    slot_uri: act:isCorrespondence
+    description: 'Indicates if this is the preferred language.
+
+      '
+    annotations:
+      description_de: 'Gibt an, ob es sich um die bevorzugte Sprache handelt.
+
+        '
+    range: boolean
+  is_native:
+    slot_uri: act:isNative
+    description: 'Indicates if this is the native language.
+
+      '
+    annotations:
+      description_de: 'Gibt an, ob es sich um die Muttersprache handelt.
+
+        '
+    range: boolean
+  country:
+    slot_uri: act:country
+    description: 'ISO 3166-1 alpha-2 country code.
+
+      '
+    annotations:
+      description_de: 'ISO 3166-1 alpha-2 Ländercode.
+
+        '
+    pattern: ^[A-Z]{2}$
+    examples:
+    - value: CH
+  gender_code:
+    slot_uri: act:genderCode
+    description: 'Gender code. Recommended values: male, female, diverse.
+
+      '
+    annotations:
+      description_de: 'Geschlechtscode. Empfohlene Werte: male, female, diverse .
+
+        '
+    range: GenderCodeEnum
+    examples:
+    - value: male
+  pronouns:
+    slot_uri: act:pronouns
+    description: 'Pronouns used by the person.
+
+      '
+    annotations:
+      description_de: 'Von der Person verwendete Pronomen.
+
+        '
+    multivalued: true
+    inlined_as_list: true
+  is_paid:
+    slot_uri: act:isPaid
+    description: 'Indicates if the position is paid.
+
+      '
+    annotations:
+      description_de: 'Gibt an, ob die Position bezahlt ist.
+
+        '
+    range: boolean
+    examples:
+    - value: 'False'
+    - value: 'True'
+  occupation_code:
+    slot_uri: act:occupationCode
+    description: 'ISCO-19 code of the occupation.
+
+      '
+    annotations:
+      description_de: 'ISCO-19 Code der Tätigkeit.
+
+        '
+  training_type:
+    slot_uri: act:trainingType
+    description: 'Type of training or education.
+
+      '
+    annotations:
+      description_de: 'Typ der Ausbildung oder Bildung.
+
+        '
+    range: TrainingTypeEnum
+    examples:
+    - value: '3223'
+  training_code:
+    slot_uri: act:trainingCode
+    description: 'ISCO-19 code of the training or education.
+
+      '
+    annotations:
+      description_de: 'ISCO-19 Code der Ausbildung oder Bildung.
+
+        '
+  contact_type:
+    slot_uri: act:contactType
+    description: 'Type of contact information.
+
+      '
+    annotations:
+      description_de: 'Typ der Kontaktinformation.
+
+        '
+    range: ContactTypeEnum
+    examples:
+    - value: contact_website
+    - value: email
+  district:
+    slot_uri: act:district
+    description: 'Electoral district or region.
+
+      '
+    annotations:
+      description_de: 'Wahlkreis oder Wahlregion.
+
+        '
+    examples:
+    - value: Basel-Stadt
+  birth_year:
+    slot_uri: act:birthYear
+    description: 'Year of birth. Only to be used, if there is no full `birthDate` available.
+
+      '
+    annotations:
+      description_de: 'Geburtsjahr. Nur zu verwenden, wenn kein vollständiges `birthDate` vorhanden ist.
+
+        '
+    range: integer
+    examples:
+    - value: '1964'
+  birth_date:
+    slot_uri: schema:birthDate
+    description: 'Exact date of birth if available and public. This field has precedence over the field `birthYear`.
+
+      '
+    annotations:
+      description_de: 'Genaues Geburtsdatum, sofern verfügbar und öffentlich. Dieses Feld hat Vorrang vor dem Feld `birthYear`.
+
+        '
+    range: date
+    examples:
+    - value: '1964-07-12'
+  death_date:
+    slot_uri: schema:deathDate
+    description: 'Exact date of death.
+
+      '
+    annotations:
+      description_de: 'Genaues Todesdatum.
+
+        '
+    range: date
+  picture:
+    range: uri
+    description: 'Link to an image (preferred: PNG, then JPG, then GIF).
+
+      '
+    annotations:
+      description_de: 'Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).
+
+        '
+  group_type:
+    range: GroupType
+    slot_uri: act:groupType
+    description: 'Type of group (e.g., party, commission, parliament, or similar). The exact naming and description of the group is provided via `label`.
+
+      '
+    annotations:
+      description_de: 'Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder ähnliches. Die genaue Benennung und Beschreibung der Gruppierung wird über `label` gemacht.
+
+        '
+  group_type_enum:
+    slot_uri: act:groupTypeEnum
+    description: 'Link to the controlled vocabulary for group types.
+
+      '
+    annotations:
+      description_de: 'Link zum kontrollierten Vokabular für Gruppentypen.
+
+        '
+    range: GroupTypeEnum
+  description:
+    range: MultilingualValue
+    multivalued: true
+    inlined_as_list: true
+    description: 'Description of the entity.
+
+      '
+    annotations:
+      description_de: 'Kurze Beschreibung der Gruppierung.
+
+        '
+  landing_page:
+    slot_uri: act:landingPage
+    range: uri
+    description: 'Website providing further information.
+
+      '
+    annotations:
+      description_de: 'Website mit weiteren Informationen.
+
+        '
+  parent_groups:
+    slot_uri: act:parentGroup
+    description: 'Link to parent groups. For example, the parent party for cantonal parties, or to describe the hierarchy in the executive. Also used to link sub-commissions to commissions, or factions to both their parliament and their party. (parentGroup is typically used within the same group_type, but cross-type links are permitted, e.g., faction → parliament and faction → party.)
+
+      '
+    annotations:
+      description_de: 'Übergeordnete Gruppe. Zum Beispiel die Mutterpartei zu Kantonalparteien, oder zur Beschreibung der Hierarchie in der Exekutive. Auch zur Verknüpfung von Subkommissionen mit Kommissionen oder Fraktionen mit Parlament und Partei. (parentGroup wird typischerweise im selben group_type verwendet, typenübergreifende Verknüpfungen sind aber erlaubt, z.B. Fraktion → Parlament und Fraktion → Partei.)
+
+        '
+    range: uriorcurie
+    multivalued: true
+    inlined_as_list: true
+  spatial:
+    description: 'Spatial reference (fos-municipality number, fos-canton number, or country). Formats: municipality: ld.admin.ch/municipality/1234, canton: ld.admin.ch/canton/23, country: ld.admin.ch/country/CHE.
+
+      '
+    annotations:
+      description_de: 'Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer oder Land). Formate: Gemeinde: ld.admin.ch/municipality/1234, Kanton: ld.admin.ch/canton/23, Bund: ld.admin.ch/country/CHE.
+
+        '
+  contacts:
+    slot_uri: act:contact
+    description: 'Contact information (email, website, social media). Guideline: email is quasi-mandatory and should always be provided where available.
+
+      '
+    annotations:
+      description_de: 'Kontaktinformationen (E-Mail, Website, Social Media). Richtlinie: E-Mail ist quasi-obligatorisch und sollte wenn vorhanden immer angegeben werden.
+
+        '
+    range: Contact
+    multivalued: true
+    inlined_as_list: true
+  addresses:
+    slot_uri: act:address
+    description: 'Addresses with type (private, business, local).
+
+      '
+    annotations:
+      description_de: 'Adressen mit Typ (privat, geschäftlich, lokal).
+
+        '
+    range: Address
+    multivalued: true
+    inlined_as_list: true
+    examples:
+      value:
+      - address_type: businessAddress
+        address_URI: https://ld.admin.ch/address/12345
+        street_address: Bundesplatz 3
+        postal_code: '3003'
+        postal_locality: Bern
+      - address_type: privateAddress
+        postal_locality: Zürich
+  statutes_url:
+    slot_uri: act:statutesURL
+    description: 'URL to party statutes (PDF or webpage; optional for parties).
+
+      '
+    annotations:
+      description_de: 'URL zu Parteistatuten (PDF oder Webseite; optional für Parteien).
+
+        '
+  party_color:
+    slot_uri: act:partyColor
+    description: 'Party color as hexadecimal value (optional for parties, e.g., "#FF0000").
+
+      '
+    annotations:
+      description_de: 'Parteifarbe als Hexadezimalwert (optional für Parteien, z.B. "#FF0000").
+
+        '
+  person_reference:
+    slot_uri: act:personReference
+    description: 'Reference to a person with snapshot data at time of linking.
+
+      '
+    annotations:
+      description_de: 'Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
+
+        '
+    range: PersonReference
+    inlined: true
+  group_reference:
+    slot_uri: act:groupReference
+    description: 'Reference to a group with snapshot data at time of linking.
+
+      '
+    annotations:
+      description_de: 'Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
+
+        '
+    range: GroupReference
+    inlined: true
+  role_type:
+    slot_uri: act:roleType
+    description: 'Role of the person in the membership or function.
+
+      '
+    annotations:
+      description_de: 'Rolle der Person in der Mitgliedschaft oder Funktion.
+
+        '
+    range: RoleType
+  role_type_enum:
+    slot_uri: act:roleTypeEnum
+    range: RoleEnum
+    description: 'Role of the person in the membership or function.
+
+      '
+    annotations:
+      description_de: 'Rolle der Person in der Mitgliedschaft oder Funktion.
+
+        '
+  authorized_to_vote:
+    range: boolean
+    slot_uri: act:authorizedToVote
+    description: 'Indicates if the person is authorized to vote in the group. Typically false for substitute members (when not deputizing), observers, secretaries, and guests.
+
+      '
+    annotations:
+      description_de: 'Gibt an, ob die Person in der Gruppe stimmberechtigt ist. Typischerweise false für Ersatzmitglieder (wenn nicht im Einsatz), Beobachter/innen, Sekretär/innen und Gäste.
+
+        '
+  interest_type:
+    range: InterestTypeEnum
+    slot_uri: act:interestType
+    required: true
+    description: 'Type of interest link (professional activity, political office, association).
+
+      '
+    annotations:
+      description_de: 'Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).
+
+        '
+    examples:
+    - value: association
+    - value: professional_activity
+  organization_name:
+    slot_uri: act:organizationName
+    description: 'Name of the organization or enterprise.
+
+      '
+    annotations:
+      description_de: 'Name der Organisation oder des Unternehmens.
+
+        '
+  organization_uid:
+    slot_uri: act:organizationUid
+    description: 'UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).
+
+      '
+    annotations:
+      description_de: 'UID der Organisation (Format eCH-0097: CHE-XXX.XXX.XXX) aus dem eidgenössischen UID-Register (uid.admin.ch).
+
+        '
+    pattern: ^CHE-\d{3}\.\d{3}\.\d{3}$
+  organization_address:
+    slot_uri: act:organizationAddress
+    description: 'Address of the organization.
+
+      '
+    annotations:
+      description_de: 'Adresse der Organisation.
+
+        '
+  legal_form:
+    slot_uri: act:legalForm
+    description: 'Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm
+
+      '
+    annotations:
+      description_de: 'Rechtsform der Organisation. Siehe kontrolliertes Vokabular: https://register.ld.admin.ch/i14y/concept/legalForm
+
+        '
+    range: LegalFormEnum
+    examples:
+    - value: '0106'
+    - value: '0107'
+    - value: 0109
+  committee:
+    slot_uri: act:committee
+    description: 'Committee or board within the organization (e.g., Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).
+
+      '
+    annotations:
+      description_de: 'Gremium innerhalb der Organisation (z.B. Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).
+
+        '
+  function_role:
+    slot_uri: act:functionRole
+    description: 'Function or role in the organization (e.g., Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in).
+
+      '
+    annotations:
+      description_de: 'Funktion oder Rolle in der Organisation (z.B. Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in).
+
+        '
+  names:
+    slot_uri: act:name
+    description: 'Names of the person with type and value.
+
+      '
+    annotations:
+      description_de: 'Namen der Person mit Typ und Wert.
+
+        '
+    range: Name
+    multivalued: true
+    inlined_as_list: true
+  language_proficiencies:
+    slot_uri: act:languageProficiency
+    description: 'Language proficiencies of the person.
+
+      '
+    annotations:
+      description_de: 'Sprachkompetenzen der Person.
+
+        '
+    range: LanguageProficiency
+    multivalued: true
+    inlined_as_list: true
+  citizenships:
+    slot_uri: act:citizenship
+    description: 'Citizenships of the person.
+
+      '
+    annotations:
+      description_de: 'Staatsbürgerschaften der Person.
+
+        '
+    range: Citizenship
+    multivalued: true
+    inlined_as_list: true
+  genders:
+    slot_uri: act:gender
+    description: 'Gender of the person.
+
+      '
+    annotations:
+      description_de: 'Geschlecht der Person.
+
+        '
+    range: Gender
+    multivalued: true
+    inlined_as_list: true
+  occupations:
+    slot_uri: act:occupation
+    description: 'Occupations or professions of the person.
+
+      '
+    annotations:
+      description_de: 'Berufe oder Tätigkeiten der Person.
+
+        '
+    range: Occupation
+    multivalued: true
+    inlined_as_list: true
+  trainings:
+    slot_uri: act:training
+    description: 'Trainings or educations of the person. Guideline: generally only provide the highest qualification obtained.
+
+      '
+    annotations:
+      description_de: 'Ausbildungen oder Bildungen der Person. Richtlinie: Im Grundsatz nur die höchste Ausbildung angeben.
+
+        '
+    range: Training
+    multivalued: true
+    inlined_as_list: true
+  electoral_district:
+    slot_uri: act:electoralDistrict
+    description: 'Link to the electoral district.
+
+      '
+    annotations:
+      description_de: 'Link zum Wahlbezirk.
+
+        '
+    range: ElectoralDistrict
+  persons:
+    slot_uri: act:person
+    description: 'Collection of persons.
+
+      '
+    annotations:
+      description_de: 'Sammlung von Personen.
+
+        '
+    range: Person
+    multivalued: true
+    inlined_as_list: true
+  groups:
+    slot_uri: act:group
+    description: 'Collection of groups.
+
+      '
+    annotations:
+      description_de: 'Sammlung von Gruppen.
+
+        '
+    range: Group
+    multivalued: true
+    inlined_as_list: true
+  memberships:
+    slot_uri: act:membership
+    description: 'Collection of memberships.
+
+      '
+    annotations:
+      description_de: 'Sammlung von Mitgliedschaften.
+
+        '
+    range: Membership
+    multivalued: true
+    inlined_as_list: true
+  interest_links:
+    slot_uri: act:interestLink
+    description: 'Collection of interest links.
+
+      '
+    annotations:
+      description_de: 'Sammlung von Interessenbindungen.
+
+        '
+    range: InterestLink
+    multivalued: true
+    inlined_as_list: true
+  role_label:
+    description: 'Descriptive label for the role when ''other'' is selected in the RoleEnum.
+
+      '
+    annotations:
+      description_de: 'Beschreibende Bezeichnung für die Rolle, wenn ''other'' im RoleEnum ausgewählt ist.
+
+        '
+enums:
+  NameTypeEnum:
+    description: 'Categories of name types according to eCH-0011 (personNameData) and https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI according to I14Y identifier but as class and not as attribute. Descriptions and translations according to I14Y.
+
+      '
+    annotations:
+      description_de: 'Kategorien von Namenstypen gemäss eCH-0011 (personNameData) und https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI gemäss I14Y Identifier aber als Klasse und nicht als Attribut. Beschreibungen und Übersetzungen gemäss I14Y.
+
+        '
+    permissible_values:
+      PersonOfficialName:
+        description: 'According to the official catalogue of characters (No. 211) for the harmonisation of registers: Name according to official documents. The official name corresponds to the name appearing in the Swiss civil register. For foreign nationals with no civil status events in Switzerland, the official name corresponds to the name appearing on the foreign passport or identity card (see ‘Name according to foreign passport’ or SEM guidelines on the determination and spelling of names of foreign nationals dated 1 January 2012. If no official documents exist, see also ‘Name according to declaration’ (e.g. in the case of asylum seekers). The official name may consist of one or more parts.
+
+          '
+        annotations:
+          description_de: 'Gemäss amtlichen Katalog der Merkmale (Nr. 211) Registerharmonisierung: Name gemäss amtlichen Unterlagen. Der amtliche Name entspricht dem Namen im schweizerischen Zivilstandsregister. Bei ausländischen Personen ohne Zivilstandsereignis in der Schweiz entspricht dieser Name dem Namen im ausländischen Pass oder auf der Identitätskarte (siehe 214 sowie Weisung des SEM über die Bestimmung und Schreibweise der Namen von ausländischen Staatsangehörigen vom 1. Januar 2012. Im Ausnahmefall siehe auch "Name nach Deklaration" (z. B. Asyl), wenn keine amtlichen Dokumente vorliegen). Der amtliche Name kann aus einem oder mehreren Teilen bestehen.
+
+            '
+        meaning: https://register.ld.admin.ch/i14y/concept/personOfficialName
+      PersonOriginalName:
+        description: 'According to the official catalogue of characters (No. 212) for the harmonisation of registers: Name of filiation according to official documents, which corresponds to the person''s name before their first marriage or registered partnership. It may also be a maiden name acquired by decision to change one''s name (see Art. 24, para. 2 OEC, RS 211.112.2).
+
+          '
+        annotations:
+          description_de: 'Gemäss amtlichen Katalog der Merkmale (Nr. 212) Registerharmonisierung: Angestammter Name gemäss amtlichen Unterlagen, den eine Person unmittelbar vor ihrer ersten Eheschliessung oder Begründung einer eingetragenen Partnerschaft geführt hat oder, gestützt auf einen Namensänderungsentscheid, als neuen Ledignamen erworben hat (Art. 24 Abs. 2 ZStV, SR 211.112.2).
+
+            '
+        meaning: https://register.ld.admin.ch/i14y/concept/personOriginalName
+      PersonAllianceName:
+        description: 'According to the official catalogue of characters (No. 213) for the harmonisation of registers: The alliance name shows the connection between two people who are married or living in a registered partnership. An alliance name that has already been used may be retained after the dissolution of the marriage or partnership if the official name has not been changed upon dissolution. It is attached to the official name with a hyphen and is formed with the partner''s maiden name or the person''s own maiden name. Upon request, the alliance name may be entered in the passport or on the identity card.
+
+          '
+        annotations:
+          description_de: 'Gemäss amtlichen Katalog der Merkmale (Nr. 213) Registerharmonisierung: Der Allianzname zeigt die Verbindung von zwei Personen auf, die verheiratet sind oder in einer eingetragenen Partnerschaft leben. Ein bereits verwendeter Allianzname kann nach Auflösung der Ehe oder der Partnerschaft weiterverwendet werden, wenn der amtliche Name bei der Auflösung nicht geändert wurde. Dabei wird dem amtlichen Namen mittels Bindestrich der Ledigname des Partners/der Partnerin oder der eigene Ledigname angehängt. Der Allianzname kann auf Antrag im Pass oder auf der Identitätskarte eingetragen werden.
+
+            '
+        meaning: https://register.ld.admin.ch/i14y/concept/personAllianceName
+      PersonNameOnForeignPassport:
+        description: 'According to the official catalogue of characters (No. 214) for the harmonisation of registers: For persons of foreign nationality. This name corresponds to the entry marked in the machine-readable zone of the passport. If this zone includes abbreviated surnames or first names, these must, as far as possible, be recorded in full, according to the entry in the passport.
+
+          '
+        annotations:
+          description_de: 'Gemäss amtlichen Katalog der Merkmale (Nr. 214) Registerharmonisierung: Für Personen mit ausländischer Nationalität. Dieser Name entspricht dem Eintrag im Reisepass gemäss der maschinenlesbaren Zone (MRZ) des Reisepasses. Enthält die MRZ abgekürzte Namen oder Vornamen, sind diese möglichst in voller Länge gemäss visuell lesbarer Zone des Ausweispapieres zu erfassen.
+
+            '
+        meaning: https://register.ld.admin.ch/i14y/concept/personNameOnForeignPassport
+      PersonAliasName:
+        description: 'According to the official character catalogue (No. 215) for the harmonisation of registers: Name (e.g. stage name, religious name) which, on the basis of an accepted application, may be used by the person. The alias name may consist of one or more parts (e.g. also the alias first name and alias surname).
+
+          '
+        annotations:
+          description_de: 'Gemäss amtlichen Katalog der Merkmale (Nr. 215) Registerharmonisierung: Name (z. B. Künstler- oder Ordensname), der aufgrund eines bewilligten Gesuchs geführt werden darf. Der Aliasname kann aus einem oder mehreren Teilen (z. B. auch aus Aliasvorname und Aliasname) bestehen.
+
+            '
+        meaning: https://register.ld.admin.ch/i14y/concept/personAliasName
+      PersonOtherName:
+        description: 'According to the official catalogue of characters (No. 216) for the harmonisation of registers: Other official names according to Swiss civil status documents (Art. 24, para. 3 OEC) or according to foreign documents, which are neither surnames nor first names.
+
+          '
+        annotations:
+          description_de: 'Gemäss amtlichen Katalog der Merkmale (Nr. 216) Registerharmonisierung: Weitere amtliche Namen gemäss schweizerischen Zivilstandsdokumenten (Art. 24 Abs. 3 ZStV) oder ausländischen Dokumenten, welche weder Familiennamen noch Vornamen sind.
+
+            '
+        meaning: https://register.ld.admin.ch/i14y/concept/personOtherName
+      PersonDeclaredForeignerName:
+        description: 'According to the official catalogue of characters (No. 217) for the harmonisation of registers: For foreign nationals who do not have official documents (mainly in the field of asylum).
+
+          '
+        annotations:
+          description_de: 'Gemäss amtlichen Katalog der Merkmale (Nr. 217) Registerharmonisierung: Für Personen mit ausländischer Nationalität, die keine offiziellen Dokumente besitzen (hauptsächlich im Asylbereich).
+
+            '
+        meaning: https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerName
+      PersonFirstName:
+        description: 'First names taken from the birth certificate, the civil registry (Infostar) in the order in which they appear, or taken from foreign identity documents.
+
+          '
+        annotations:
+          description_de: 'Gemäss amtlichen Katalog der Merkmale (Nr. 221) Registerharmonisierung: Vornamen gemäss Geburtsurkunde oder Zivilstandsregister/Infostar in der aufgeführten Reihenfolge bzw. gemäss ausländischen Ausweispapieren.
+
+            '
+        meaning: https://register.ld.admin.ch/i14y/concept/personFirstName
+      PersonCallFirstName:
+        description: 'A person has the right to choose a common first name from the list of their official first names. The common first name may consist of one or more first names (from those listed under ‘official first names’).
+
+          '
+        annotations:
+          description_de: 'Gemäss amtlichen Katalog der Merkmale (Nr. 222) Registerharmonisierung: Eine Person hat das Recht, aus der Liste ihrer amtlichen Vornamen einen Rufnamen auszuwählen. Der Rufname kann aus einem oder mehreren Vornamen (aus den "amtlichen Vornamen") bestehen.
+
+            '
+        meaning: https://register.ld.admin.ch/i14y/concept/personCallFirstName
+      PersonFirstNameOnForeignPassport:
+        description: 'For persons of foreign nationality. To be used in combination with the name as it appears on the foreign passport.
+
+          '
+        annotations:
+          description_de: 'Gemäss amtlichen Katalog der Merkmale (Nr. 223) Registerharmonisierung: Für Personen mit ausländischer Nationalität. Zu benutzen in Verbindung mit dem Namen im ausländischen Pass."
+
+            '
+        meaning: https://register.ld.admin.ch/i14y/concept/personFirstNameOnForeignPassport
+      PersonDeclaredForeignerFirstName:
+        description: 'For persons of foreign nationality who do not have official documents (mainly in the field of asylum). To be used in combination with the defined Name according to declaration.
+
+          '
+        annotations:
+          description_de: 'Gemäss amtlichen Katalog der Merkmale (Nr. 224) Registerharmonisierung: Für Personen mit ausländischer Nationalität, die keine amtlichen Dokumente besitzen (hauptsächlich im Asylbereich). Zu benutzen in Verbindung mit dem Namen gemäss Deklaration.
+
+            '
+        meaning: https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerFirstName
+  AddressTypeEnum:
+    description: 'Types of addresses.
+
+      '
+    annotations:
+      description_de: 'Adresstypen.
+
+        '
+    permissible_values:
+      privateAddress:
+        description: 'Private address.
+
+          '
+        annotations:
+          description_de: 'Privatadresse.
+
+            '
+      businessAddress:
+        description: 'Business address.
+
+          '
+        annotations:
+          description_de: 'Geschäftsadresse.
+
+            '
+      localAddress:
+        description: 'Local address.
+
+          '
+        annotations:
+          description_de: 'Lokaladresse.
+
+            '
+  TrainingTypeEnum:
+    description: 'Types of training or education based on the Swiss BFS LEVEL_EDUC codelist.
+
+      '
+    annotations:
+      description_de: 'Ausbildungs- oder Bildungstypen basierend auf der BFS LEVEL_EDUC Codeliste.
+
+        '
+    permissible_values:
+      '10':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/10
+        description: École obligatoire au maximum.
+        annotations:
+          description_de: Maximal obligatorische Schule.
+          description_fr: École obligatoire au maximum.
+          description_it: Scuola dell'obbligo al massimo.
+      '110':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/110
+        description: Aucune formation.
+        annotations:
+          description_de: Keine Ausbildung.
+          description_fr: Aucune formation.
+          description_it: Nessuna formazione.
+      '120':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/120
+        description: École obligatoire inachevée.
+        annotations:
+          description_de: Obligatorische Schule besucht, aber nicht abgeschlossen.
+          description_fr: École obligatoire inachevée.
+          description_it: Scuola dell'obbligo non portata a termine.
+      '130':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/130
+        description: École obligatoire.
+        annotations:
+          description_de: Obligatorische Schule.
+          description_fr: École obligatoire.
+          description_it: Scuola dell'obbligo.
+      '140':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/140
+        description: Formation d'un an / offre de transition.
+        annotations:
+          description_de: 1-jährige Ausbildung / Brückenangebot.
+          description_fr: Formation d'un an / offre de transition.
+          description_it: Formazione di 1 anno / formazione transitoria.
+      '20':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/20
+        description: Degré secondaire II.
+        annotations:
+          description_de: Sekundarstufe II.
+          description_fr: Degré secondaire II.
+          description_it: Livello secondario II.
+      '22':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/22
+        description: Degré secondaire II - formation professionnelle.
+        annotations:
+          description_de: Sekundarstufe II - Berufsbildung.
+          description_fr: Degré secondaire II - formation professionnelle.
+          description_it: Livello secondario II - formazione professionale.
+      '220':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/220
+        description: Apprentissage en entreprise (CFC/AFP) / formation professionnelle élémentaire / école professionnelle / école de commerce.
+        annotations:
+          description_de: Berufslehre im Betrieb (EFZ / EBA) / Anlehre / Berufsschule / Handelsschule.
+          description_fr: Apprentissage en entreprise (CFC/AFP) / formation professionnelle élémentaire / école professionnelle / école de commerce.
+          description_it: Tirocinio in azienda (CFP/AFC) / formazione professionale di base / scuola professionale / scuola di commercio.
+      '2210':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2210
+        description: Apprentissage en entreprise (AFP) 2 ans / formation prof. élémentaire / école professionnelle / école de commerce.
+        annotations:
+          description_de: 2-jährige Berufslehre im Betrieb (EBA) / Anlehre / Berufsschule / Handelsschule.
+          description_fr: Apprentissage en entreprise (AFP) 2 ans / formation prof. élémentaire / école professionnelle / école de commerce.
+          description_it: Tirocinio in azienda (AFC) 2 anni / formazione professionale di base / scuola professionale / scuola di commercio.
+      '2211':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2211
+        description: Apprentissage en entreprise d'une durée de 2 ans (AFP) / formation professionnelle élémentaire.
+        annotations:
+          description_de: 2-jährige Berufslehre im Betrieb (EBA) / Anlehre.
+          description_fr: Apprentissage en entreprise d'une durée de 2 ans (AFP) / formation professionnelle élémentaire.
+          description_it: Tirocinio in azienda della durata di 2 anni (AFC) / formazione professionale di base.
+      '2212':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2212
+        description: École professionnelle / école de commerce d'une durée de 2 ans.
+        annotations:
+          description_de: 2-jährige Berufsschule / Handelsschule.
+          description_fr: École professionnelle / école de commerce d'une durée de 2 ans.
+          description_it: Scuola professionale / scuola di commercio della durata di 2 anni.
+      '2220':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2220
+        description: Apprentissage en entreprise (CFC) 3-4 ans / école professionnelle / école de commerce.
+        annotations:
+          description_de: 3- bis 4-jährige Berufslehre im Betrieb (EFZ) / Berufsschule / Handelsschule.
+          description_fr: Apprentissage en entreprise (CFC) 3-4 ans / école professionnelle / école de commerce.
+          description_it: Tirocinio in azienda (CFP) 3-4 anni / scuola professionale / scuola di commercio.
+      '2221':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2221
+        description: Apprentissage en entreprise d'une durée de 3 à 4 ans (CFC).
+        annotations:
+          description_de: 3- bis 4-jährige Berufslehre im Betrieb (EFZ).
+          description_fr: Apprentissage en entreprise d'une durée de 3 à 4 ans (CFC).
+          description_it: Tirocinio in azienda della durata di 3 a 4 anni (CFP).
+      '2222':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2222
+        description: École professionnelle / école de commerce d'une durée de 3 a 4 ans.
+        annotations:
+          description_de: 3- bis 4-jährige Berufsschule / Handelsschule.
+          description_fr: École professionnelle / école de commerce d'une durée de 3 a 4 ans.
+          description_it: Scuola professionale / scuola di commercio della durata di 3 a 4 anni.
+      '24':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/24
+        description: Degré secondaire II - formation générale.
+        annotations:
+          description_de: Sekundarstufe II - Allgemeinbildung.
+          description_fr: Degré secondaire II - formation générale.
+          description_it: Livello secondario II - formazione generale.
+      '241':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/241
+        description: École de culture générale / école de degré diplôme.
+        annotations:
+          description_de: Fachmittelschule / Diplommittelschule.
+          description_fr: École de culture générale / école de degré diplôme.
+          description_it: Scuola specializzata / scuola di diploma.
+      '2411':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2411
+        description: École de culture générale / école de degré diplôme d'une durée de 2 ans.
+        annotations:
+          description_de: 2-jährige Fachmittelschule / Diplommittelschule.
+          description_fr: École de culture générale / école de degré diplôme d'une durée de 2 ans.
+          description_it: Scuola specializzata / scuola di diploma della durata di 2 anni.
+      '2412':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2412
+        description: École de culture générale / école de degré diplôme d'une durée de 3 ans.
+        annotations:
+          description_de: 3-jährige Fachmittelschule / Diplommittelschule.
+          description_fr: École de culture générale / école de degré diplôme d'une durée de 3 ans.
+          description_it: Scuola specializzata / scuola di diploma della durata di 3 anni.
+      '242':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/242
+        description: Maturité ou école normale.
+        annotations:
+          description_de: Gymnasiale Maturität / Lehrkräfteseminar.
+          description_fr: Maturité ou école normale.
+          description_it: Maturità liceale / scuola magistrale o abilitazione all'insegnamento.
+      '2421':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2421
+        description: Maturité gymnasiale.
+        annotations:
+          description_de: Gymnasiale Maturität.
+          description_fr: Maturité gymnasiale.
+          description_it: Maturità liceale.
+      '2422':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2422
+        description: Brevet d'enseignement.
+        annotations:
+          description_de: Lehrkräfteseminar.
+          description_fr: Brevet d'enseignement.
+          description_it: Scuola magistrale o abilitazione all'insegnamento.
+      '243':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/243
+        description: Maturité professionnelle / spécialisée.
+        annotations:
+          description_de: Berufs- oder Fachmaturität.
+          description_fr: Maturité professionnelle / spécialisée.
+          description_it: Maturità professionale / specializzata.
+      '2431':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2431
+        description: Maturité professionnelle.
+        annotations:
+          description_de: Berufsmaturität.
+          description_fr: Maturité professionnelle.
+          description_it: Maturità professionale.
+      '2432':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/2432
+        description: Maturité spécialisée.
+        annotations:
+          description_de: Fachmaturität.
+          description_fr: Maturité spécialisée.
+          description_it: Maturità specializzata.
+      '30':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/30
+        description: Degré tertiaire.
+        annotations:
+          description_de: Tertiärstufe.
+          description_fr: Degré tertiaire.
+          description_it: Livello terziario.
+      '31':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/31
+        description: Formation professionnelle supérieure.
+        annotations:
+          description_de: Höhere Berufsbildung.
+          description_fr: Formation professionnelle supérieure.
+          description_it: Formazione professionale superiore.
+      '310':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/310
+        description: Examen professionnel avec brevet fédéral / examen professionnel supérieur avec diplôme fédéral/maîtrise.
+        annotations:
+          description_de: Berufsprüfung mit eidg. Fachausweis / Höhere Fachprüfung mit eidg. Diplom / Meisterdiplom.
+          description_fr: Examen professionnel avec brevet fédéral / examen professionnel supérieur avec diplôme fédéral/maîtrise.
+          description_it: Esame professionale superiore con attestato professionale federale / esame professionale superiore con diploma federale / maestria federale.
+      '311':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/311
+        description: Examen professionnel avec brevet fédéral.
+        annotations:
+          description_de: Berufsprüfung mit eidg. Fachausweis.
+          description_fr: Examen professionnel avec brevet fédéral.
+          description_it: Esame professionale superiore con attestato professionale federale.
+      '312':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/312
+        description: Examen professionnel supérieur avec diplôme fédéral/maîtrise.
+        annotations:
+          description_de: Höhere Fachprüfung mit eidg. Diplom / Meisterdiplom.
+          description_fr: Examen professionnel supérieur avec diplôme fédéral/maîtrise.
+          description_it: Esame professionale superiore con diploma federale / maestria federale.
+      '313':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/313
+        description: École supérieure (ES).
+        annotations:
+          description_de: Höhere Fachschule.
+          description_fr: École supérieure (ES).
+          description_it: Scuola specializzata superiore (SSS).
+      '3131':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3131
+        description: École supérieure (ES) 2 ans plein temps ou 3 ans temps partiel.
+        annotations:
+          description_de: Höhere Fachschule (HF) 2 Jahre Voll- oder 3 Jahre Teilzeitstudium.
+          description_fr: École supérieure (ES) 2 ans plein temps ou 3 ans temps partiel.
+          description_it: Scuola specializzata superiore (SSS) 2 anni a tempo pieno o 3 anni a tempo parziale.
+      '3132':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3132
+        description: École supérieure (ES) 3 ans plein temps ou 4 ans temps partiel.
+        annotations:
+          description_de: Höhere Fachschule (HF) 3 Jahre Voll- oder 4 Jahre Teilzeitstudium.
+          description_fr: École supérieure (ES) 3 ans plein temps ou 4 ans temps partiel.
+          description_it: Scuola specializzata superiore (SSS) 3 anni a tempo pieno o 4 anni a tempo parziale.
+      '32':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/32
+        description: Haute école.
+        annotations:
+          description_de: Hochschule.
+          description_fr: Haute école.
+          description_it: Scuola universitaria.
+      '321':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/321
+        description: Bachelor université, EPF, haute école spécialisée, haute école pédagogique (y compris diplôme HES/HEP).
+        annotations:
+          description_de: Bachelor Universität, ETH, Fachhochschule, pädagogische Hochschule (inklusive Diplom FH / PH).
+          description_fr: Bachelor université, EPF, haute école spécialisée, haute école pédagogique (y compris diplôme HES/HEP).
+          description_it: Bachelor università, PF, scuola universitaria professionale, alta scuola pedagogica (incluso il diploma SUP / ASP).
+      '3211':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3211
+        description: Bachelor haute école spécialisée (y compris diplôme HES).
+        annotations:
+          description_de: Bachelor Fachhochschule (inklusive Diplom FH).
+          description_fr: Bachelor haute école spécialisée (y compris diplôme HES).
+          description_it: Bachelor scuola universitaria professionale (incluso il diploma SUP).
+      '3212':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3212
+        description: Bachelor haute école pédagogique (y compris diplôme HEP).
+        annotations:
+          description_de: Bachelor pädagogische Hochschule (inklusive Diplom PH).
+          description_fr: Bachelor haute école pédagogique (y compris diplôme HEP).
+          description_it: Bachelor alta scuola pedagogica (incluso il diploma ASP).
+      '3213':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3213
+        description: Bachelor université, EPF.
+        annotations:
+          description_de: Bachelor Universität, ETH.
+          description_fr: Bachelor université, EPF.
+          description_it: Bachelor università.
+      '322':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/322
+        description: Master université, EPF, haute école spécialisée, haute école pédagogique (y compris licence/diplôme).
+        annotations:
+          description_de: Master Universität, ETH, Fachhochschule, pädagogische Hochschule (inklusive Lizentiat / Diplom).
+          description_fr: Master université, EPF, haute école spécialisée, haute école pédagogique (y compris licence/diplôme).
+          description_it: Master università, PF, scuola universitaria professionale, alta scuola pedagogica (inclusi la laurea / il diploma).
+      '3221':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3221
+        description: Master haute école spécialisée.
+        annotations:
+          description_de: Master Fachhochschule.
+          description_fr: Master haute école spécialisée.
+          description_it: Master scuola universitaria professionale.
+      '3222':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3222
+        description: Master haute école pédagogique.
+        annotations:
+          description_de: Master pädagogische Hochschule.
+          description_fr: Master haute école pédagogique.
+          description_it: Master alta scuola pedagogica.
+      '3223':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/3223
+        description: Master université, EPF (y compris licence/diplôme université/EPF).
+        annotations:
+          description_de: Master Universität, ETH (inklusive Lizentiat / Diplom Universität / ETH).
+          description_fr: Master université, EPF (y compris licence/diplôme université/EPF).
+          description_it: Master università, PF (inclusi la laurea / il diploma universitari / PF).
+      '323':
+        meaning: https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/323
+        description: Doctorat / habilitation.
+        annotations:
+          description_de: Doktorat / Habilitation.
+          description_fr: Doctorat / habilitation.
+          description_it: Dottorato / abilitazione.
+      military:
+        description: Service militaire (armée suisse). Indiquer le grade atteint dans le champ `value`.
+        annotations:
+          description_de: Militärdienst (Schweizer Armee). Den erreichten Grad im Feld `value` angeben.
+          description_fr: Service militaire (armée suisse). Indiquer le grade atteint dans le champ `value`.
+          description_it: Servizio militare (esercito svizzero). Indicare il grado raggiunto nel campo `value`.
+  ContactTypeEnum:
+    description: 'Types of contact information.
+
+      '
+    annotations:
+      description_de: 'Kontaktinformationstypen.
+
+        '
+    permissible_values:
+      email:
+        description: 'Email address.
+
+          '
+        annotations:
+          description_de: 'E-Mail-Adresse.
+
+            '
+      contact_website:
+        description: 'Contact website.
+
+          '
+        annotations:
+          description_de: 'Kontakt-Website.
+
+            '
+      linked_in:
+        description: 'LinkedIn profile.
+
+          '
+        annotations:
+          description_de: 'LinkedIn-Profil.
+
+            '
+      twitter:
+        description: 'Twitter profile.
+
+          '
+        annotations:
+          description_de: 'Twitter-Profil.
+
+            '
+  RoleEnum:
+    description: 'Roles a person can have within a membership.
+
+      '
+    annotations:
+      description_de: 'Rollen, die eine Person im Rahmen einer Mitgliedschaft haben kann.
+
+        '
+    permissible_values:
+      member:
+        description: 'Regular member (default).
+
+          '
+        annotations:
+          description_de: 'Gewöhnliches Mitglied (Standard).
+
+            '
+      president:
+        description: 'President or chair of the group.
+
+          '
+        annotations:
+          description_de: 'Präsident oder Vorsitzender der Gruppe.
+
+            '
+      stellvertreter:
+        description: 'Deputy/vice role (stellvertreter).
+
+          '
+        annotations:
+          description_de: 'Stellvertreter / Vize.
+
+            '
+      other:
+        description: 'Other role; use role_label for a descriptive label.
+
+          '
+        annotations:
+          description_de: 'Andere Rolle; für eine beschreibende Bezeichnung role_label verwenden.
+
+            '
+  GroupTypeEnum:
+    description: 'Types of political groups and organizations.
+
+      '
+    annotations:
+      description_de: 'Typen politischer Gruppen und Organisationen.
+
+        '
+    permissible_values:
+      party:
+        meaning: act:enum/group_type/party
+        description: 'Political party at federal, cantonal, or municipal level. Each federal level is managed as its own group (e.g., national party, cantonal party, municipal party).
+
+          '
+        annotations:
+          description_de: 'Politische Partei auf Bundes-, Kantons- oder Gemeindeebene. Jede föderale Ebene wird als eigene Gruppe geführt (z.B. Bundespartei, Kantonspartei, Gemeindesektion).
+
+            '
+      list:
+        meaning: act:enum/group_type/list
+        description: 'Electoral list (can be part of a party or independent).
+
+          '
+        annotations:
+          description_de: 'Wahlliste (kann Teil einer Partei sein oder unabhängig).
+
+            '
+      workgroup:
+        meaning: act:enum/group_type/workgroup
+        description: 'Ad-hoc working group, typically with a limited duration.
+
+          '
+        annotations:
+          description_de: 'Ad-hoc-Arbeitsgruppe, typischerweise mit begrenzter Laufzeit.
+
+            '
+      parliament:
+        meaning: act:enum/group_type/parliament
+        description: 'Parliament at federal, cantonal, or municipal level (e.g., Federal Assembly, National Council, Council of States, Grand Council, cantonal parliament, municipal parliament).
+
+          '
+        annotations:
+          description_de: 'Parlament auf Bundes-, Kantons- oder Gemeindeebene (z.B. Bundesversammlung, Nationalrat, Ständerat, Grosser Rat, Kantonsrat, Gemeindeparlament).
+
+            '
+      delegation:
+        meaning: act:enum/group_type/delegation
+        description: 'Delegation.
+
+          '
+        annotations:
+          description_de: 'Delegation.
+
+            '
+      commission:
+        meaning: act:enum/group_type/commission
+        description: 'Commission (permanent or ad-hoc), including supervisory commissions (e.g., CPC), subject commissions, parliamentary investigation commissions (PIC), and audit commissions.
+
+          '
+        annotations:
+          description_de: 'Kommission (ständig oder ad-hoc), einschliesslich Aufsichtskommissionen (z.B. GPK), Sachkommissionen, Parlamentarische Untersuchungskommissionen (PUK) und Rechnungsprüfungskommissionen.
+
+            '
+      faction:
+        meaning: act:enum/group_type/faction
+        description: 'Parliamentary faction.
+
+          '
+        annotations:
+          description_de: 'Parlamentsfraktion.
+
+            '
+      parliamentary_bureau:
+        meaning: act:enum/group_type/parliamentary_bureau
+        description: 'Parliamentary bureau.
+
+          '
+        annotations:
+          description_de: 'Parlamentsbüro.
+
+            '
+      presidency:
+        meaning: act:enum/group_type/presidency
+        description: 'Presidency of parliament.
+
+          '
+        annotations:
+          description_de: 'Präsidium des Parlaments.
+
+            '
+      government:
+        meaning: act:enum/group_type/government
+        description: 'Government / Executive as a collective body (e.g., Federal Council, Cantonal Government, City or Municipal Council).
+
+          '
+        annotations:
+          description_de: 'Regierung / Exekutive als Gesamtorgan (z.B. Bundesrat, Regierungsrat, Stadtrat / Gemeinderat).
+
+            '
+      department:
+        meaning: act:enum/group_type/department
+        description: 'Government department.
+
+          '
+        annotations:
+          description_de: 'Departement.
+
+            '
+      office:
+        meaning: act:enum/group_type/office
+        description: 'Government office.
+
+          '
+        annotations:
+          description_de: 'Amt.
+
+            '
+      extraparliamentary_commission:
+        meaning: act:enum/group_type/extraparliamentary_commission
+        description: 'Extra-parliamentary commission with a government mandate (e.g., Bank Council of the Swiss National Bank, FINMA).
+
+          '
+        annotations:
+          description_de: 'Ausserparlamentarische Kommission mit Regierungsauftrag (z.B. Bankrat der Schweizerischen Nationalbank, FINMA).
+
+            '
+      interest_group:
+        meaning: act:enum/group_type/interest_group
+        description: 'Interest group from civil society.
+
+          '
+        annotations:
+          description_de: 'Interessengruppe aus der Zivilgesellschaft.
+
+            '
+      control_body:
+        meaning: act:enum/group_type/control_body
+        description: 'Control or supervisory body (e.g., Federal Finance Control EFC, supervisory authority AB-BA).
+
+          '
+        annotations:
+          description_de: 'Kontroll- oder Aufsichtsorgan (z.B. Eidgenössische Finanzkontrolle EFK, Aufsichtsbehörde AB-BA).
+
+            '
+      parliamentary_services:
+        meaning: act:enum/group_type/parliamentary_services
+        description: 'Parliamentary services.
+
+          '
+        annotations:
+          description_de: 'Parlamentsdienste.
+
+            '
+      court:
+        meaning: act:enum/group_type/court
+        description: 'Court / Judiciary at any level (e.g., Federal Court, Cantonal Court, District Court).
+
+          '
+        annotations:
+          description_de: 'Gericht / Judikative auf jeder Ebene (z.B. Bundesgericht, Kantonsgericht, Bezirksgericht).
+
+            '
+      association:
+        meaning: act:enum/group_type/association
+        description: 'Association.
+
+          '
+        annotations:
+          description_de: 'Verein.
+
+            '
+      petition_carrier:
+        meaning: act:enum/group_type/petition_carrier
+        description: 'Petition carrier.
+
+          '
+        annotations:
+          description_de: 'Petitionsträger.
+
+            '
+      university:
+        meaning: act:enum/group_type/university
+        description: 'University or educational institution as an outsourced provider of public tasks.
+
+          '
+        annotations:
+          description_de: 'Universität oder Bildungseinrichtung als ausgelagerter Träger öffentlicher Aufgaben.
+
+            '
+      other:
+        meaning: act:enum/group_type/other
+        description: 'Other group type not covered by standard categories.
+
+          '
+        annotations:
+          description_de: 'Anderer Gruppentyp, nicht durch Standardkategorien abgedeckt.
+
+            '
+  InterestTypeEnum:
+    description: 'Types of interest links (conflicts of interest, political financing).
+
+      '
+    annotations:
+      description_de: 'Typen von Interessenbindungen (Interessenkonflikte, Politikfinanzierung).
+
+        '
+    permissible_values:
+      professional_activity:
+        meaning: act:enum/interest_type/professional_activity
+        description: 'Professional activity outside the political mandate (e.g., employment, self-employment, consulting, board mandates in private companies).
+
+          '
+        annotations:
+          description_de: 'Berufliche Tätigkeit ausserhalb des politischen Mandats (z.B. Anstellung, selbstständige Tätigkeit, Beratungsmandate, Verwaltungsratsmandate in Privatunternehmen).
+
+            '
+      political_office:
+        meaning: act:enum/interest_type/political_office
+        description: 'Political office or mandate at other federal levels or in other bodies (e.g., cantonal/municipal parliament membership, government council, extra-parliamentary commission).
+
+          '
+        annotations:
+          description_de: 'Politisches Amt oder Mandat auf anderen föderalen Ebenen oder in anderen Körperschaften (z.B. Mitgliedschaft in kantonalen/kommunalen Parlamenten, Regierungsrat, ausserparlamentarische Kommission).
+
+            '
+      association:
+        meaning: act:enum/interest_type/association
+        description: 'Membership in associations, federations, or interest organizations (e.g., industry associations, professional associations, lobby organizations, foundations, charitable associations).
+
+          '
+        annotations:
+          description_de: 'Mitgliedschaft in Vereinen, Verbänden oder Interessenorganisationen (z.B. Branchenverbände, Berufsverbände, Lobbyorganisationen, Stiftungen, gemeinnützige Vereine).
+
+            '
+  GenderCodeEnum:
+    description: 'Gender codes for persons. If the gender is not known, no gender entry shall be added. The `diverse` code shall be used together with a label to provide further details about the self-identified gender.
+
+      '
+    annotations:
+      description_de: 'Geschlechtscodes für Personen. Wenn das Geschlecht nicht bekannt ist, soll kein Geschlechtseintrag hinzugefügt werden. Der Code `diverse` soll zusammen mit einer Bezeichnung verwendet werden, um weitere Angaben zum selbst deklarierten Geschlecht bereitzustellen.
+
+        '
+    permissible_values:
+      male:
+        description: Male.
+        annotations:
+          description_de: Männlich.
+      female:
+        description: Female.
+        annotations:
+          description_de: Weiblich.
+      diverse:
+        description: Diverse / non-binary.
+        annotations:
+          description_de: Divers / nicht-binär.
+  LegalFormEnum:
+    description: 'Legal forms based on the Swiss UID register codelist (eCH-0108). See https://register.ld.admin.ch/i14y/concept/legalForm
+
+      '
+    annotations:
+      description_de: 'Rechtsformen basierend auf der Codeliste des eidgenössischen UID-Registers (eCH-0098). Siehe https://register.ld.admin.ch/i14y/concept/legalForm
+
+        '
+    permissible_values:
+      '0101':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0101
+        description: Entreprise individuelle.
+        annotations:
+          description_de: Einzelunternehmen.
+          description_fr: Entreprise individuelle.
+          description_it: Impresa individuale.
+      '0103':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0103
+        description: Société en nom collectif (SNC).
+        annotations:
+          description_de: Kollektivgesellschaft (KlG).
+          description_fr: Société en nom collectif (SNC).
+          description_it: Società in nome collettivo (SNC).
+      '0104':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0104
+        description: Société en commandite (SCm).
+        annotations:
+          description_de: Kommanditgesellschaft (KmG).
+          description_fr: Société en commandite (SCm).
+          description_it: Società in accomandita (SAc).
+      '0105':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0105
+        description: Société en commandite par actions (SCmA).
+        annotations:
+          description_de: Kommanditaktiengesellschaft (KmAG).
+          description_fr: Société en commandite par actions (SCmA).
+          description_it: Società in accomandita per azioni (SAcA).
+      '0106':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0106
+        description: Société anonyme (SA).
+        annotations:
+          description_de: Aktiengesellschaft (AG).
+          description_fr: Société anonyme (SA).
+          description_it: Società anonima (SA).
+      '0107':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0107
+        description: Société à responsabilité limitée (Sàrl).
+        annotations:
+          description_de: Gesellschaft mit beschränkter Haftung (GmbH).
+          description_fr: Société à responsabilité limitée (Sàrl).
+          description_it: Società a garanzia limitata (Sagl).
+      0108:
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0108
+        description: Société coopérative.
+        annotations:
+          description_de: Genossenschaft.
+          description_fr: Société coopérative.
+          description_it: Società cooperativa.
+      0109:
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0109
+        description: Association.
+        annotations:
+          description_de: Verein.
+          description_fr: Association.
+          description_it: Associazione.
+      '0110':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0110
+        description: Fondation.
+        annotations:
+          description_de: Stiftung.
+          description_fr: Fondation.
+          description_it: Fondazione.
+      '0111':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0111
+        description: Succursale d'une entreprise étrangère.
+        annotations:
+          description_de: Zweigniederlassung eines ausländischen Unternehmens.
+          description_fr: Succursale d'une entreprise étrangère.
+          description_it: Succursale di un'impresa straniera.
+      '0113':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0113
+        description: Forme juridique particulière.
+        annotations:
+          description_de: Besondere Rechtsform.
+          description_fr: Forme juridique particulière.
+          description_it: Forma giuridica speciale.
+      '0114':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0114
+        description: Société en commandite de placements collectifs (SCmPC).
+        annotations:
+          description_de: Kommanditgesellschaft für kollektive Kapitalanlagen (KmGK).
+          description_fr: Société en commandite de placements collectifs (SCmPC).
+          description_it: Società in accomandita per investimenti collettivi di capitale (SAcCol).
+      '0115':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0115
+        description: Société d'investissement à capital variable (SICAV).
+        annotations:
+          description_de: Investmentgesellschaft mit variablem Kapital (SICAV).
+          description_fr: Société d'investissement à capital variable (SICAV).
+          description_it: Società d'investimento a capitale variabile (SICAV).
+      '0116':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0116
+        description: Société d'investissement à capital fixe (SICAF).
+        annotations:
+          description_de: Investmentgesellschaft mit festem Kapital (SICAF).
+          description_fr: Société d'investissement à capital fixe (SICAF).
+          description_it: Società d'investimento a capitale fisso (SICAF).
+      '0117':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0117
+        description: Institut de droit public.
+        annotations:
+          description_de: Institut des öffentlichen Rechts.
+          description_fr: Institut de droit public.
+          description_it: Istituto di diritto pubblico.
+      0118:
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0118
+        description: Procuration non-commerciale.
+        annotations:
+          description_de: Nichtkaufmännische Prokura.
+          description_fr: Procuration non-commerciale.
+          description_it: Procura non commerciale.
+      0119:
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0119
+        description: Représentant d'indivision.
+        annotations:
+          description_de: Haupt von Gemeinderschaft.
+          description_fr: Représentant d'indivision.
+          description_it: Rappresentanti dell'indivisione.
+      '0151':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0151
+        description: Succursale.
+        annotations:
+          description_de: Zweigniederlassung.
+          description_fr: Succursale.
+          description_it: Succursale.
+      '0220':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0220
+        description: Unité de l'administration fédérale.
+        annotations:
+          description_de: Verwaltungseinheit des Bundes.
+          description_fr: Unité de l'administration fédérale.
+          description_it: Unità amministrativa della Confederazione.
+      '0221':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0221
+        description: Unité de l'administration cantonale.
+        annotations:
+          description_de: Verwaltungseinheit des Kantons.
+          description_fr: Unité de l'administration cantonale.
+          description_it: Unità amministrativa del cantone.
+      '0222':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0222
+        description: Unité de l'administration du district.
+        annotations:
+          description_de: Verwaltungseinheit des Bezirks.
+          description_fr: Unité de l'administration du district.
+          description_it: Unità amministrativa del distretto.
+      '0223':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0223
+        description: Unité de l'administration communale.
+        annotations:
+          description_de: Verwaltungseinheit der Gemeinde.
+          description_fr: Unité de l'administration communale.
+          description_it: Unità amministrativa del comune.
+      '0224':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0224
+        description: Autre unité de l'administration de droit public.
+        annotations:
+          description_de: Andere öffentlich-rechtliche Verwaltungseinheit.
+          description_fr: Autre unité de l'administration de droit public.
+          description_it: Altra unità amministrativa di diritto pubblico.
+      '0230':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0230
+        description: Institution de droit public fédérale.
+        annotations:
+          description_de: Einrichtung des öffentlichen Rechts des Bundes.
+          description_fr: Institution de droit public fédérale.
+          description_it: Istituzione di diritto pubblico della Confederazione.
+      '0231':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0231
+        description: Institution de droit public cantonale.
+        annotations:
+          description_de: Einrichtung des öffentlichen Rechts des Kantons.
+          description_fr: Institution de droit public cantonale.
+          description_it: Istituzione di diritto pubblico del cantone.
+      '0232':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0232
+        description: Institution de droit public du district.
+        annotations:
+          description_de: Einrichtung des öffentlichen Rechts des Bezirks.
+          description_fr: Institution de droit public du district.
+          description_it: Istituzione di diritto pubblico del distretto.
+      '0233':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0233
+        description: Institution de droit public communale.
+        annotations:
+          description_de: Einrichtung des öffentlichen Rechts der Gemeinde.
+          description_fr: Institution de droit public communale.
+          description_it: Istituzione di diritto pubblico del comune.
+      '0234':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0234
+        description: Autre institution de droit public.
+        annotations:
+          description_de: Andere Einrichtung des öffentlichen Rechts.
+          description_fr: Autre institution de droit public.
+          description_it: Altra istituzione di diritto pubblico.
+      '0302':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0302
+        description: Société simple.
+        annotations:
+          description_de: Einfache Gesellschaft.
+          description_fr: Société simple.
+          description_it: Società semplice.
+      '0312':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0312
+        description: Établissement stable ou représentant suisse d'une entreprise étrangère.
+        annotations:
+          description_de: Betriebsstätte oder Schweizer Vertretung eines ausländischen Unternehmens.
+          description_fr: Établissement stable ou représentant suisse d'une entreprise étrangère.
+          description_it: Stabilimento o rappresentanza svizzera di un'impresa straniera.
+      '0327':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0327
+        description: Entreprise publique étrangère.
+        annotations:
+          description_de: Ausländisches öffentliches Unternehmen.
+          description_fr: Entreprise publique étrangère.
+          description_it: Impresa pubblica estera.
+      0328:
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0328
+        description: Administration publique étrangère.
+        annotations:
+          description_de: Ausländische öffentliche Verwaltung.
+          description_fr: Administration publique étrangère.
+          description_it: Amministrazione pubblica estera.
+      0329:
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0329
+        description: Organisation internationale.
+        annotations:
+          description_de: Internationale Organisation.
+          description_fr: Organisation internationale.
+          description_it: Organizzazione internazionale.
+      '0355':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0355
+        description: Autre société coopérative.
+        annotations:
+          description_de: Übrige Genossenschaft.
+          description_fr: Autre société coopérative.
+          description_it: Altra società cooperativa.
+      '0361':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0361
+        description: Trust.
+        annotations:
+          description_de: Trust.
+          description_fr: Trust.
+          description_it: Trust.
+      '0362':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0362
+        description: Fonds.
+        annotations:
+          description_de: Fonds.
+          description_fr: Fonds.
+          description_it: Fondo.
+      '0441':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0441
+        description: Entreprise étrangère.
+        annotations:
+          description_de: Ausländisches Unternehmen.
+          description_fr: Entreprise étrangère.
+          description_it: Impresa estera.
+      '0571':
+        meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0571
+        description: Forme juridique non déterminée ou inconnue.
+        annotations:
+          description_de: Rechtsform unbestimmt oder unbekannt.
+          description_fr: Forme juridique non déterminée ou inconnue.
+          description_it: Forma giuridica indefinita o sconosciuta.

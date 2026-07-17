@@ -1,0 +1,38 @@
+---
+search:
+  boost: 1.0
+---# Typ: Nodeidentifier 
+
+
+
+
+_A URI, CURIE or BNODE that represents a node in a model._
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [shex:nonLiteral](http://www.w3.org/ns/shex#nonLiteral)
+
+## Typ-Eigenschaften
+
+| Eigenschaft | Wert |
+| --- | --- |
+| Base | `NodeIdentifier` |
+| Type URI | [shex:nonLiteral](http://www.w3.org/ns/shex#nonLiteral) |
+| Representation | `str` |
+
+
+
+
+
+
+## Hinweise
+
+* If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "nodeidentifier".
+
+
+
+
+
+</div>
