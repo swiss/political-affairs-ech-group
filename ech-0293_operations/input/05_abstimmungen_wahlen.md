@@ -90,25 +90,55 @@ Die Wahl des Verfahrens beeinflusst, ob Einzelstimmen erfasst werden können:
 
 Das Ergebnis wird auf zwei Arten erfasst:
 
-### Gesamtergebnis (result)
-- **passed**: Angenommen
-- **failed**: Abgelehnt
-- **tied**: Stimmengleichheit (Ein möglicher Stichentscheid wird über eine neue Abstimmung modeliert.)
-
 ### Detaillierte Zahlen
-- **yes_count**: Anzahl Ja-Stimmen
-- **no_count**: Anzahl Nein-Stimmen
-- **abstention_count**: Anzahl Enthaltungen
-- **absent_count**: Anzahl Abwesende (die nicht abstimmen konnten) 
-- **total_count**: Gesamtzahl der abstimmenden Mitglieder
+- **total_count_yes**: Anzahl Ja-Stimmen
+- **total_count_no**: Anzahl Nein-Stimmen
+- **total_count_abstention**: Anzahl Enthaltungen
+- **total_other**: Stimmenzahlen für zusätzliche Optionen, wenn nicht nur Ja/Nein/Enthaltung zur Auswahl stehen (siehe Abschnitt "Mehrfachoptionen")
+- **total_absent**: Anzahl Abwesende (die nicht abstimmen konnten)
+- **total**: Gesamtzahl der abstimmenden Mitglieder (ohne Abwesende und Präsidiumsstimme)
+- **majority_count**: Anzahl Stimmen, die für die erforderliche Mehrheit nötig waren
 
-**Beispiel:** -> TODO: reale eher komplexere (stichentscheid, ordnungs antrag, Wiederholung, Cup-abstimmung) Bespiele aufbauen
-- Ja: 120
-- Nein: 75
-- Enthaltungen: 5
-- Abwesend: 0
-- Total: 200
-- Ergebnis: passed
+### Gesamtergebnis
+Das Ergebnis wird als Freitext im Feld **result_text** beschrieben (z.B. "Mit 120 zu 75 Stimmen bei 5 Enthaltungen angenommen"). Die kategorische Entscheidung (angenommen / abgelehnt / Kenntnisnahme usw.) wird nicht auf der Abstimmung selbst, sondern über die Klasse **Resolution** (Slot **resolution_type**) zum Traktandum festgehalten. Bei Stimmengleichheit wird ein allfälliger Stichentscheid des Präsidiums über eine eigene Abstimmung (`voting_type: tie_breaker_president`) bzw. eine neue Abstimmung modelliert.
+
+**Beispiel** (Schlussabstimmung, einfache Ja/Nein-Abstimmung):
+- total_count_yes: 120
+- total_count_no: 75
+- total_count_abstention: 5
+- total_absent: 0
+- total: 200
+- result_text: "Mit 120 zu 75 Stimmen bei 5 Enthaltungen angenommen"
+- Resolution.resolution_type: accepted
+
+<!-- TODO: weitere komplexere Beispiele ergänzen — Ordnungsantrag, Wiederholung einer Abstimmung. (Cup-/Mehrfachabstimmung und Stichentscheid sind abgedeckt.) -->
+
+### Mehrfachoptionen (Auswahlabstimmungen / "gleichgerichtete Anträge")
+
+Nicht jede Abstimmung kennt nur Ja, Nein und Enthaltung. Liegen zu derselben Sachfrage mehrere gleichgerichtete Anträge vor, stimmen die Mitglieder über mehr als zwei Varianten gleichzeitig ab (in Zürich umgangssprachlich "Cup-Abstimmung", technisch über mehrere Abstimmungsknöpfe). Die obsiegende Variante ist diejenige mit den meisten Stimmen.
+
+Solche Verfahren werden wie folgt abgebildet:
+
+- **voting_type** = `other`, ergänzt durch ein sprechendes **type_label** (z.B. "Gleichgerichtete Anträge (Mehrfachauswahl)").
+- Die Standardfelder **total_count_yes / total_count_no / total_count_abstention** bleiben leer, da die Optionen nicht Ja/Nein/Enthaltung entsprechen.
+- Jede Auswahloption erhält stattdessen einen Eintrag in **total_other** (Liste von `TotalOther` mit **count** und **label**). So lassen sich beliebig viele Optionen mit ihrer jeweiligen Stimmenzahl erfassen.
+- Auf Ebene der Einzelstimme wird **individual_vote_type** = `other` gesetzt und die gewählte Option über **type_label** (z.B. "Auswahl A") festgehalten; abwesende Mitglieder erhalten `not_voted`.
+- Als **majority_type** wird `other` verwendet, da nicht eine fixe Schwelle, sondern die relative Mehrheit unter den Optionen entscheidet.
+
+**Beispiel** (Gemeinderat der Stadt Zürich, 86. Sitzung vom 28.02.2024, Geschäft 2023/361 "Wohnhaus Magnusstrasse 27, Netto-Zusatzkredit") — gleichgerichtete Anträge mit vier Auswahloptionen:
+
+| Option | Stimmen |
+|--------|---------|
+| Auswahl A (obsiegend) | 75 |
+| Auswahl B | 25 |
+| Auswahl C | 12 |
+| Auswahl D | 0 |
+| Abwesend | 13 |
+
+- Total abgegeben: 112 (von 125 Mitgliedern)
+- Ergebnis: Auswahl A angenommen (relative Mehrheit)
+
+Die vollständige Modellierung dieses Falls findet sich in `data_voting.yaml` (`ops:voting_zh_gr_2024_2023_361`).
 
 ## Mehrheitstypen
 
