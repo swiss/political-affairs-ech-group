@@ -9,7 +9,7 @@ toc: false
 | **eCH-Nummer**        | eCH-0294                                                                                                                   |
 | **Kategorie**         | Entwurf                                                                                                                    |
 | **Reifegrad**         | Fachgruppen interner Review                                                                                                |
-| **Version**           | 0.2                                                                                                                        |
+| **Version**           | 0.5                                                                                                                        |
 | **Status**            |                                                                                                 |
 | **Beschluss am**      |                                                                                                                            |
 | **Ausgabedatum**      |                                                                                                                            |

@@ -9,7 +9,7 @@ toc: false
 | **eCH number**        | eCH-0294                                                                                                                   |
 | **Category**          | Draft                                                                                                                    |
 | **Maturity level**    | Specialist group internal review                                                                                                |
-| **Version**           | 0.2                                                                                                                        |
+| **Version**           | 0.5                                                                                                                        |
 | **Status**            |                                                                                                 |
 | **Adopted on**        |                                                                                                                            |
 | **Issue date**        |                                                                                                                            |
