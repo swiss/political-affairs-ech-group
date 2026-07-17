@@ -60,9 +60,6 @@ jobs:
       - name: Install Pandoc
         run: sudo apt update && sudo apt install -y pandoc
 
-      - name: Install LibreOffice (for PDF export with updated TOC)
-        run: sudo apt install -y libreoffice
-
       - name: Download Pandoc pagebreak Lua filter
         run: |
           curl -L https://raw.githubusercontent.com/pandoc-ext/pagebreak/refs/heads/main/pagebreak.lua \
@@ -78,9 +75,6 @@ jobs:
               --lua-filter=pagebreak.lua
             python set_docx_updatefields.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx"
             python shade_alternate_rows.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx"
-            bash docx_to_pdf.sh \
-              "ech-0294_actors/output/ech-0294_actors_${lang}.docx" \
-              "ech-0294_actors/output/ech-0294_actors_${lang}.pdf"
           done
 
       - name: Commit and push changes
