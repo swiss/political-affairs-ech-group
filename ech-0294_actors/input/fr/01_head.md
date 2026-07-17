@@ -9,7 +9,7 @@ toc: false
 | **Numéro eCH**        | eCH-0294                                                                                                                   |
 | **Catégorie**         | Projet                                                                                                                    |
 | **Degré de maturité** | Revue interne du groupe spécialisé                                                                                        |
-| **Version**           | 0.2                                                                                                                        |
+| **Version**           | 0.5                                                                                                                        |
 | **Statut**            |                                                                                                 |
 | **Décidé le**         |                                                                                                                            |
 | **Date de publication** |                                                                                                                          |
