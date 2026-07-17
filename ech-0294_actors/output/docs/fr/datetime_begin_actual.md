@@ -6,7 +6,7 @@ search:
 # Slot: datetime_begin_actual 
 
 
-_The actual start date and time of an event or occurrence with time duration._
+_La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée._
 
 __
 
@@ -27,8 +27,8 @@ URI: [mcm:datetimeBeginActual](https://ld.ech.ch/schema/0292/meta-common/datetim
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [IsEventWithDuration](IsEventWithDuration.md) | A mixin class that provides slots for modeling events or occurrences with tim... |  no  |
-| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
+| [IsEventWithDuration](IsEventWithDuration.md) | Une classe mixin qui fournit des slots pour modéliser des événements ou occur... |  no  |
+| [IsProcessStep](IsProcessStep.md) | Une classe mixin pour une étape unique dans un processus |  no  |
 
 
 
@@ -73,7 +73,14 @@ annotations:
       mit Zeitdauer.
 
       '
-description: 'The actual start date and time of an event or occurrence with time duration.
+  description_fr:
+    tag: description_fr
+    value: 'La date et l''heure de début effectives d''un événement ou d''une occurrence
+      avec durée.
+
+      '
+description: 'La date et l''heure de début effectives d''un événement ou d''une occurrence
+  avec durée.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

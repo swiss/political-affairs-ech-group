@@ -79,6 +79,12 @@ annotations:
       Vorrang vor dem Feld `birthYear`.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Date de naissance exacte si disponible et publique. Ce champ prime sur
+      le champ `birthYear`.
+
+      '
 description: 'Exact date of birth if available and public. This field has precedence
   over the field `birthYear`.
 

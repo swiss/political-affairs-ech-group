@@ -71,6 +71,11 @@ annotations:
     value: 'ISCO-19 Code der Ausbildung oder Bildung.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Code ISCO-19 de la formation ou de l''éducation.
+
+      '
 description: 'ISCO-19 code of the training or education.
 
   '

@@ -6,7 +6,7 @@ search:
 # Slot: label 
 
 
-_Assign a label to a structured piece of information (e.g., display name, position, etc.)._
+_Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.)._
 
 __
 
@@ -27,14 +27,14 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  yes  |
-| [Group](Group.md) | A political group, organization, or body (e |  no  |
-| [Gender](Gender.md) | Gender of a person indicating a gender code and temporal validity |  no  |
-| [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |  no  |
-| [GroupType](GroupType.md) | Type of group (e |  no  |
-| [RoleType](RoleType.md) | Role of a person in a membership or function (e |  yes  |
-| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |  yes  |
-| [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |  no  |
+| [Person](Person.md) | Une personne avec des identifiants, des noms, des adresses, des nationalités ... |  yes  |
+| [Group](Group.md) | Un groupe, une organisation ou une collectivité politique (p |  no  |
+| [Gender](Gender.md) | Sexe d'une personne indiquant un code de sexe et la validité temporelle |  no  |
+| [Occupation](Occupation.md) | Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si... |  no  |
+| [GroupType](GroupType.md) | Type de groupe (p |  no  |
+| [RoleType](RoleType.md) | Rôle d'une personne dans une affiliation ou une fonction (p |  yes  |
+| [PersonReference](PersonReference.md) | Référence légère à une personne avec les principales données d'identification... |  yes  |
+| [GroupReference](GroupReference.md) | Référence légère à un groupe avec les principales données d'identification au... |  no  |
 
 
 
@@ -79,8 +79,14 @@ annotations:
       (bspw. Anzeigename, Anstellung, etc.).
 
       '
-description: 'Assign a label to a structured piece of information (e.g., display name,
-  position, etc.).
+  description_fr:
+    tag: description_fr
+    value: 'Attribuer un label à une information structurée (par ex. nom d''affichage,
+      poste, etc.).
+
+      '
+description: 'Attribuer un label à une information structurée (par ex. nom d''affichage,
+  poste, etc.).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

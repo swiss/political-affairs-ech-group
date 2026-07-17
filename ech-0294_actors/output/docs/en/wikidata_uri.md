@@ -80,6 +80,12 @@ annotations:
       für die Schweiz.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q39
+      pour la Suisse.
+
+      '
 description: 'A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39
   for Switzerland.
 

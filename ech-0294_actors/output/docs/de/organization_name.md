@@ -72,6 +72,11 @@ annotations:
     value: 'Name der Organisation oder des Unternehmens.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Nom de l''organisation ou de l''entreprise.
+
+      '
 description: 'Name der Organisation oder des Unternehmens.
 
   '

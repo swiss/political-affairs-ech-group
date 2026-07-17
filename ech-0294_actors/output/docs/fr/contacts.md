@@ -6,7 +6,7 @@ search:
 # Slot: contacts 
 
 
-_Contact information (email, website, social media). Guideline: email is quasi-mandatory and should always be provided where available._
+_Informations de contact (e-mail, site web, réseaux sociaux). Directive : l'e-mail est quasi obligatoire et devrait toujours être fourni lorsqu'il est disponible._
 
 __
 
@@ -27,8 +27,8 @@ URI: [act:contact](https://ld.ech.ch/schema/0294/actors/contact)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
-| [Group](Group.md) | A political group, organization, or body (e |  no  |
+| [Person](Person.md) | Une personne avec des identifiants, des noms, des adresses, des nationalités ... |  no  |
+| [Group](Group.md) | Un groupe, une organisation ou une collectivité politique (p |  no  |
 
 
 
@@ -74,8 +74,16 @@ annotations:
       ist quasi-obligatorisch und sollte wenn vorhanden immer angegeben werden.
 
       '
-description: 'Contact information (email, website, social media). Guideline: email
-  is quasi-mandatory and should always be provided where available.
+  description_fr:
+    tag: description_fr
+    value: 'Informations de contact (e-mail, site web, réseaux sociaux). Directive
+      : l''e-mail est quasi obligatoire et devrait toujours être fourni lorsqu''il
+      est disponible.
+
+      '
+description: 'Informations de contact (e-mail, site web, réseaux sociaux). Directive
+  : l''e-mail est quasi obligatoire et devrait toujours être fourni lorsqu''il est
+  disponible.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

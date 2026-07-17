@@ -6,7 +6,7 @@ search:
 # Slot: persons 
 
 
-_Collection of persons._
+_Collection de personnes._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:person](https://ld.ech.ch/schema/0294/actors/person)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Container](Container.md) | Container for political actors, groups, and relationships |  no  |
+| [Container](Container.md) | Conteneur pour les acteurs politiques, les groupes et les relations |  no  |
 
 
 
@@ -72,7 +72,12 @@ annotations:
     value: 'Sammlung von Personen.
 
       '
-description: 'Collection of persons.
+  description_fr:
+    tag: description_fr
+    value: 'Collection de personnes.
+
+      '
+description: 'Collection de personnes.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

@@ -71,6 +71,12 @@ annotations:
     value: 'Parteifarbe als Hexadezimalwert (optional für Parteien, z.B. "#FF0000").
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Couleur du parti sous forme de valeur hexadécimale (facultatif pour les
+      partis, p. ex. « #FF0000 »).
+
+      '
 description: 'Party color as hexadecimal value (optional for parties, e.g., "#FF0000").
 
   '

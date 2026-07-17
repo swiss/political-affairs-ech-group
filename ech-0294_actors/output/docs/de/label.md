@@ -6,7 +6,7 @@ search:
 # Slot: label 
 
 
-_Assign a label to a structured piece of information (e.g., display name, position, etc.)._
+_Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.)._
 
 __
 
@@ -33,8 +33,8 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 | [Occupation](Occupation.md) | Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Code... |  no  |
 | [GroupType](GroupType.md) | Art der Gruppe (z |  no  |
 | [RoleType](RoleType.md) | Rolle einer Person in einer Mitgliedschaft oder Funktion (z |  yes  |
-| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |  yes  |
-| [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |  no  |
+| [PersonReference](PersonReference.md) | Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikations... |  yes  |
+| [GroupReference](GroupReference.md) | Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikations... |  no  |
 
 
 
@@ -79,8 +79,14 @@ annotations:
       (bspw. Anzeigename, Anstellung, etc.).
 
       '
-description: 'Assign a label to a structured piece of information (e.g., display name,
-  position, etc.).
+  description_fr:
+    tag: description_fr
+    value: 'Attribuer un label à une information structurée (par ex. nom d''affichage,
+      poste, etc.).
+
+      '
+description: 'Möglichkeit bei einer strukturierten Information, ein Label zu vergeben
+  (bspw. Anzeigename, Anstellung, etc.).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

@@ -72,6 +72,11 @@ annotations:
     value: 'Sammlung von Personen.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Collection de personnes.
+
+      '
 description: 'Sammlung von Personen.
 
   '

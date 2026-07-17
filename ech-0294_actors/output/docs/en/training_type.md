@@ -78,6 +78,11 @@ annotations:
     value: 'Typ der Ausbildung oder Bildung.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Type de formation ou d''éducation.
+
+      '
 description: 'Type of training or education.
 
   '

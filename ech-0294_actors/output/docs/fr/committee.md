@@ -6,7 +6,7 @@ search:
 # Slot: committee 
 
 
-_Committee or board within the organization (e.g., Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung)._
+_Comité ou organe au sein de l'organisation (p. ex. conseil d'administration, conseil de fondation, comité directeur, conseil de surveillance, comité consultatif, direction)._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:committee](https://ld.ech.ch/schema/0294/actors/committee)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
+| [InterestLink](InterestLink.md) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |  no  |
 
 
 
@@ -72,8 +72,16 @@ annotations:
       Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).
 
       '
-description: 'Committee or board within the organization (e.g., Verwaltungsrat, Stiftungsrat,
-  Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).
+  description_fr:
+    tag: description_fr
+    value: 'Comité ou organe au sein de l''organisation (p. ex. conseil d''administration,
+      conseil de fondation, comité directeur, conseil de surveillance, comité consultatif,
+      direction).
+
+      '
+description: 'Comité ou organe au sein de l''organisation (p. ex. conseil d''administration,
+  conseil de fondation, comité directeur, conseil de surveillance, comité consultatif,
+  direction).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

@@ -71,6 +71,11 @@ annotations:
     value: 'Strassenadresse.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Adresse (rue).
+
+      '
 description: 'Street address.
 
   '

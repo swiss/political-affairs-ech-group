@@ -72,6 +72,11 @@ annotations:
     value: 'Geschlecht der Person.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Sexe de la personne.
+
+      '
 description: 'Gender of the person.
 
   '

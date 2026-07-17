@@ -6,7 +6,7 @@ search:
 # Slot: contact_type 
 
 
-_Type of contact information._
+_Type d'informations de contact._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:contactType](https://ld.ech.ch/schema/0294/actors/contactType)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Contact](Contact.md) | Contact information of a person indicating a type (e |  no  |
+| [Contact](Contact.md) | Informations de contact d'une personne indiquant un type (p |  no  |
 
 
 
@@ -79,7 +79,12 @@ annotations:
     value: 'Typ der Kontaktinformation.
 
       '
-description: 'Type of contact information.
+  description_fr:
+    tag: description_fr
+    value: 'Type d''informations de contact.
+
+      '
+description: 'Type d''informations de contact.
 
   '
 examples:

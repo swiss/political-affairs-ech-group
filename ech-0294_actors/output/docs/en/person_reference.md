@@ -72,6 +72,12 @@ annotations:
     value: 'Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Référence à une personne avec des données instantanées au moment de la
+      mise en relation.
+
+      '
 description: 'Reference to a person with snapshot data at time of linking.
 
   '

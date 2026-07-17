@@ -6,7 +6,7 @@ search:
 # Slot: training_code 
 
 
-_ISCO-19 code of the training or education._
+_Code ISCO-19 de la formation ou de l'éducation._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:trainingCode](https://ld.ech.ch/schema/0294/actors/trainingCode)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Training](Training.md) | Training or education of a person indicating a type (e |  no  |
+| [Training](Training.md) | Formation ou éducation d'une personne indiquant un type (p |  no  |
 
 
 
@@ -71,7 +71,12 @@ annotations:
     value: 'ISCO-19 Code der Ausbildung oder Bildung.
 
       '
-description: 'ISCO-19 code of the training or education.
+  description_fr:
+    tag: description_fr
+    value: 'Code ISCO-19 de la formation ou de l''éducation.
+
+      '
+description: 'Code ISCO-19 de la formation ou de l''éducation.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

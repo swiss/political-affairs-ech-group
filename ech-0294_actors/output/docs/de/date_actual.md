@@ -6,7 +6,7 @@ search:
 # Slot: date_actual 
 
 
-_The actual date of an instantaneous event or occurrence (without time duration)._
+_Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer)._
 
 __
 
@@ -27,7 +27,7 @@ URI: [mcm:dateActual](https://ld.ech.ch/schema/0292/meta-common/dateActual)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [IsInstantaneousEvent](IsInstantaneousEvent.md) | A mixin class that provides slots for modeling instantaneous events or occurr... |  no  |
+| [IsInstantaneousEvent](IsInstantaneousEvent.md) | Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereignissen... |  no  |
 
 
 
@@ -72,8 +72,14 @@ annotations:
       (ohne Zeitdauer).
 
       '
-description: 'The actual date of an instantaneous event or occurrence (without time
-  duration).
+  description_fr:
+    tag: description_fr
+    value: 'La date effective d''un événement ou d''une occurrence instantané (sans
+      durée).
+
+      '
+description: 'Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommnissen
+  (ohne Zeitdauer).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

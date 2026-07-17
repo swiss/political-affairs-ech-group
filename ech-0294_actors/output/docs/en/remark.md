@@ -72,6 +72,12 @@ annotations:
       zu einem Prozessschritt oder einer Entität.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Remarque ou note en texte libre pour les cas particuliers ou pour un contexte
+      supplémentaire relatif à une étape de processus ou à une entité.
+
+      '
 description: 'Free-text remark or note for edge cases or additional context on a process
   step or an entity.
 

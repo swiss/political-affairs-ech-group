@@ -6,7 +6,7 @@ search:
 # Slot: datetime_end_actual 
 
 
-_The actual end date and time of an event or occurrence with time duration._
+_Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer._
 
 __
 
@@ -27,8 +27,8 @@ URI: [mcm:datetimeEndActual](https://ld.ech.ch/schema/0292/meta-common/datetimeE
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [IsEventWithDuration](IsEventWithDuration.md) | A mixin class that provides slots for modeling events or occurrences with tim... |  no  |
-| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
+| [IsEventWithDuration](IsEventWithDuration.md) | Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder Vorkom... |  no  |
+| [IsProcessStep](IsProcessStep.md) | Eine Mixin-Klasse für einen einzelnen Schritt in einem |  no  |
 
 
 
@@ -73,7 +73,14 @@ annotations:
       mit Zeitdauer.
 
       '
-description: 'The actual end date and time of an event or occurrence with time duration.
+  description_fr:
+    tag: description_fr
+    value: 'La date et l''heure de fin effectives d''un événement ou d''une occurrence
+      avec durée.
+
+      '
+description: 'Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+  mit Zeitdauer.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

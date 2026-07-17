@@ -71,6 +71,11 @@ annotations:
     value: 'URL zu Parteistatuten (PDF oder Webseite; optional für Parteien).
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'URL vers les statuts du parti (PDF ou page web ; facultatif pour les partis).
+
+      '
 description: 'URL to party statutes (PDF or webpage; optional for parties).
 
   '

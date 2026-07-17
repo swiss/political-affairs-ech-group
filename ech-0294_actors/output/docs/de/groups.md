@@ -72,6 +72,11 @@ annotations:
     value: 'Sammlung von Gruppen.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Collection de groupes.
+
+      '
 description: 'Sammlung von Gruppen.
 
   '

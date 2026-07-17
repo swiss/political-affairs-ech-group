@@ -6,7 +6,7 @@ search:
 # Slot: country 
 
 
-_ISO 3166-1 alpha-2 country code._
+_Code de pays ISO 3166-1 alpha-2._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:country](https://ld.ech.ch/schema/0294/actors/country)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Citizenship](Citizenship.md) | Citizenship (also used for Nationality) of a person indicating the country an... |  no  |
+| [Citizenship](Citizenship.md) | Nationalité (également utilisée pour la citoyenneté) d'une personne indiquant... |  no  |
 
 
 
@@ -85,7 +85,12 @@ annotations:
     value: 'ISO 3166-1 alpha-2 Ländercode.
 
       '
-description: 'ISO 3166-1 alpha-2 country code.
+  description_fr:
+    tag: description_fr
+    value: 'Code de pays ISO 3166-1 alpha-2.
+
+      '
+description: 'Code de pays ISO 3166-1 alpha-2.
 
   '
 examples:

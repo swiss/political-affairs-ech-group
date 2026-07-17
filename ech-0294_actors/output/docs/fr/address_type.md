@@ -6,7 +6,7 @@ search:
 # Slot: address_type 
 
 
-_Type of address._
+_Type d'adresse._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:addressType](https://ld.ech.ch/schema/0294/actors/addressType)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Address](Address.md) | An address with a type (e |  no  |
+| [Address](Address.md) | Une adresse avec un type (p |  no  |
 
 
 
@@ -78,7 +78,12 @@ annotations:
     value: 'Typ der Adresse.
 
       '
-description: 'Type of address.
+  description_fr:
+    tag: description_fr
+    value: 'Type d''adresse.
+
+      '
+description: 'Type d''adresse.
 
   '
 examples:

@@ -73,6 +73,12 @@ annotations:
       höchste Ausbildung angeben.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Formations ou éducations de la personne. Directive : n''indiquer en principe
+      que la qualification la plus élevée obtenue.
+
+      '
 description: 'Ausbildungen oder Bildungen der Person. Richtlinie: Im Grundsatz nur
   die höchste Ausbildung angeben.
 

@@ -73,6 +73,13 @@ annotations:
       Beispiel einer gültigen URI: https://geo.ld.admin.ch/location/address/101904050
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'URI de l''adresse issue du répertoire fédéral des adresses de bâtiments.
+      La couche est accessible à l''adresse https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis.
+      Exemple d''URI valide : https://geo.ld.admin.ch/location/address/101904050
+
+      '
 description: 'URI der Adresse aus dem eidgenössischen Gebäudeadressverzeichnis. Der
   Layer ist zugänglich unter https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis.
   Beispiel einer gültigen URI: https://geo.ld.admin.ch/location/address/101904050

@@ -3,13 +3,15 @@
 ## Klasse: IsProcessStep 
 
 
-_A mixin class for a single step in a multi-stage process (e.g.,_
+_Eine Mixin-Klasse für einen einzelnen Schritt in einem_
 
-_a deliberation step of an affair or a phase step of a consultation)._
+_mehrstufigen Prozess (z. B. Bearbeitungsschritt eines Geschäfts oder_
 
-_Combines identification and event-duration slots and adds a free-text_
+_Phasen­schritt einer Konsultation). Kombiniert Identifikations- und_
 
-_remark slot. Concrete step classes add their own type-specific slots._
+_Zeitdauer-Slots und ergänzt einen freien Bemerkungs-Slot. Konkrete_
+
+_Step-Klassen ergänzen ihre eigenen typ-spezifischen Slots._
 
 __
 
@@ -24,18 +26,18 @@ __
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
-| local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system.  |
-| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity.  |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.  |
-| date_begin_actual | 0..1 <br/> [Date](Date.md) | The actual start date of an event or occurrence with time duration.  |
-| datetime_begin_actual | 0..1 <br/> [Datetime](Datetime.md) | The actual start date and time of an event or occurrence with time duration.  |
-| date_begin_planned | 0..1 <br/> [Date](Date.md) | The planned start date of an event or occurrence with time duration.  |
-| datetime_begin_planned | 0..1 <br/> [Datetime](Datetime.md) | The planned start date and time of an event or occurrence with time duration.  |
-| date_end_actual | 0..1 <br/> [Date](Date.md) | The actual end date of an event or occurrence with time duration.  |
-| datetime_end_actual | 0..1 <br/> [Datetime](Datetime.md) | The actual end date and time of an event or occurrence with time duration.  |
-| date_end_planned | 0..1 <br/> [Date](Date.md) | The planned end date of an event or occurrence with time duration.  |
-| datetime_end_planned | 0..1 <br/> [Datetime](Datetime.md) | The planned end date and time of an event or occurrence with time duration.  |
-| remark | 0..1 <br/> [String](String.md) | Free-text remark or note for edge cases or additional context on a process step or an entity.  |
+| local_id | 0..1 <br/> [String](String.md) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.  |
+| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Eine eindeutige, global gültige URI für die Entität.  |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q39 für die Schweiz.  |
+| date_begin_actual | 0..1 <br/> [Date](Date.md) | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.  |
+| datetime_begin_actual | 0..1 <br/> [Datetime](Datetime.md) | Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer.  |
+| date_begin_planned | 0..1 <br/> [Date](Date.md) | Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.  |
+| datetime_begin_planned | 0..1 <br/> [Datetime](Datetime.md) | Das geplante Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer.  |
+| date_end_actual | 0..1 <br/> [Date](Date.md) | Das tatsächliche Enddatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.  |
+| datetime_end_actual | 0..1 <br/> [Datetime](Datetime.md) | Das tatsächliche Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer.  |
+| date_end_planned | 0..1 <br/> [Date](Date.md) | Das geplante Enddatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.  |
+| datetime_end_planned | 0..1 <br/> [Datetime](Datetime.md) | Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer.  |
+| remark | 0..1 <br/> [String](String.md) | Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen Kontext zu einem Prozessschritt oder einer Entität.  |
 
 
 

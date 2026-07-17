@@ -3,7 +3,7 @@
 ## Klasse: IsInstantaneousEvent 
 
 
-_A mixin class that provides slots for modeling instantaneous events or occurrences (without time duration)._
+_Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereignissen oder Vorkommnissen (ohne Zeitdauer) zur Verfügung stellt._
 
 __
 
@@ -18,10 +18,10 @@ __
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
-| date_actual | 0..1 <br/> [Date](Date.md) | The actual date of an instantaneous event or occurrence (without time duration).  |
-| datetime_actual | 0..1 <br/> [Datetime](Datetime.md) | The actual date and time of an instantaneous event or occurrence (without time duration).  |
-| date_planned | 0..1 <br/> [Date](Date.md) | The planned date of an instantaneous event or occurrence (without time duration).  |
-| datetime_planned | 0..1 <br/> [Datetime](Datetime.md) | The planned date and time of an instantaneous event or occurrence (without time duration).  |
+| date_actual | 0..1 <br/> [Date](Date.md) | Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer).  |
+| datetime_actual | 0..1 <br/> [Datetime](Datetime.md) | Das tatsächliche Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer).  |
+| date_planned | 0..1 <br/> [Date](Date.md) | Das geplante Datum eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer).  |
+| datetime_planned | 0..1 <br/> [Datetime](Datetime.md) | Das geplante Datum und die Uhrzeit eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer).  |
 
 
 

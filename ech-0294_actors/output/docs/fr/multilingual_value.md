@@ -6,7 +6,7 @@ search:
 # Slot: multilingual_value 
 
 
-_A multilingual value with language specification._
+_Une valeur multilingue avec indication de la langue._
 
 __
 
@@ -61,7 +61,12 @@ annotations:
     value: 'Ein mehrsprachiger Wert mit Angabe der Sprache.
 
       '
-description: 'A multilingual value with language specification.
+  description_fr:
+    tag: description_fr
+    value: 'Une valeur multilingue avec indication de la langue.
+
+      '
+description: 'Une valeur multilingue avec indication de la langue.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

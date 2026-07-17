@@ -6,7 +6,7 @@ search:
 # Slot: organization_name 
 
 
-_Name of the organization or enterprise._
+_Nom de l'organisation ou de l'entreprise._
 
 __
 
@@ -27,8 +27,8 @@ URI: [act:organizationName](https://ld.ech.ch/schema/0294/actors/organizationNam
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
-| [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |  no  |
+| [InterestLink](InterestLink.md) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |  no  |
+| [Occupation](Occupation.md) | Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si... |  no  |
 
 
 
@@ -72,7 +72,12 @@ annotations:
     value: 'Name der Organisation oder des Unternehmens.
 
       '
-description: 'Name of the organization or enterprise.
+  description_fr:
+    tag: description_fr
+    value: 'Nom de l''organisation ou de l''entreprise.
+
+      '
+description: 'Nom de l''organisation ou de l''entreprise.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

@@ -80,6 +80,11 @@ annotations:
     value: 'Gibt an, ob die Position bezahlt ist.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Indique si le poste est rémunéré.
+
+      '
 description: 'Gibt an, ob die Position bezahlt ist.
 
   '

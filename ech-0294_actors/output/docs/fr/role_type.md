@@ -6,7 +6,7 @@ search:
 # Slot: role_type 
 
 
-_Role of the person in the membership or function._
+_Rôle de la personne dans l'affiliation ou la fonction._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:roleType](https://ld.ech.ch/schema/0294/actors/roleType)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Membership](Membership.md) | A membership relationship between a person and a group, representing formal a... |  no  |
+| [Membership](Membership.md) | Une relation d'affiliation entre une personne et un groupe, représentant une ... |  no  |
 
 
 
@@ -71,7 +71,12 @@ annotations:
     value: 'Rolle der Person in der Mitgliedschaft oder Funktion.
 
       '
-description: 'Role of the person in the membership or function.
+  description_fr:
+    tag: description_fr
+    value: 'Rôle de la personne dans l''affiliation ou la fonction.
+
+      '
+description: 'Rôle de la personne dans l''affiliation ou la fonction.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

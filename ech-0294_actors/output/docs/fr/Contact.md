@@ -3,7 +3,7 @@
 ## Classe: Contact 
 
 
-_Contact information of a person indicating a type (e.g., email, LinkedIn) and a value._
+_Informations de contact d'une personne indiquant un type (p. ex. e-mail, LinkedIn) et une valeur._
 
 __
 
@@ -18,8 +18,8 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| contact_type | 0..1 <br/> [ContactTypeEnum](ContactTypeEnum.md) | Type of contact information.  |
-| value | 0..1 <br/> [String](String.md) | The value of an information besides other attributes such as type, language, etc.  |
+| contact_type | 0..1 <br/> [ContactTypeEnum](ContactTypeEnum.md) | Type d'informations de contact.  |
+| value | 0..1 <br/> [String](String.md) | La valeur proprement dite d'une information, en plus d'autres attributs tels que le type, la langue, etc.  |
 
 
 

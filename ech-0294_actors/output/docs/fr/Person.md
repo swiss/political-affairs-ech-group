@@ -3,7 +3,7 @@
 ## Classe: Person 
 
 
-_A person with identifiers, names, addresses, citizenships, and occupations._
+_Une personne avec des identifiants, des noms, des adresses, des nationalités et des professions._
 
 __
 
@@ -18,29 +18,29 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| label | 1 <br/> [String](String.md) | Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name). Preferred: PersonOfficialName combined with PersonCallFirstName.  |
-| label_long | 0..1 <br/> [String](String.md) | Optional long display name including academic titles and full official name (e.g. "Dr. Maria Muster-Beispiel").  |
-| birth_year | 0..1 <br/> [Integer](Integer.md) | Year of birth. Only to be used, if there is no full `birthDate` available.  |
-| birth_date | 0..1 <br/> [Date](Date.md) | Exact date of birth if available and public. This field has precedence over the field `birthYear`.  |
-| death_date | 0..1 <br/> [Date](Date.md) | Exact date of death.  |
-| picture | 0..1 <br/> [Uri](Uri.md) | Link to an image (preferred: PNG, then JPG, then GIF).  |
-| names | * <br/> [Name](Name.md) | Names of the person with type and value.  |
-| addresses | * <br/> [Address](Address.md) | Addresses with type (private, business, local).  |
-| language_proficiencies | * <br/> [LanguageProficiency](LanguageProficiency.md) | Language proficiencies of the person.  |
-| citizenships | * <br/> [Citizenship](Citizenship.md) | Citizenships of the person.  |
-| genders | * <br/> [Gender](Gender.md) | Gender of the person.  |
-| occupations | * <br/> [Occupation](Occupation.md) | Occupations or professions of the person.  |
-| trainings | * <br/> [Training](Training.md) | Trainings or educations of the person. Guideline: generally only provide the highest qualification obtained.  |
-| contacts | * <br/> [Contact](Contact.md) | Contact information (email, website, social media). Guideline: email is quasi-mandatory and should always be provided where available.  |
-| electoral_district | 0..1 <br/> [ElectoralDistrict](ElectoralDistrict.md) | Link to the electoral district.  |
-| interest_links | * <br/> [InterestLink](InterestLink.md) | Collection of interest links.  |
-| local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
-| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
-| date_created | 0..1 <br/> [Date](Date.md) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
-| datetime_created | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
-| date_modified | 0..1 <br/> [Date](Date.md) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
-| datetime_modified | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
+| label | 1 <br/> [String](String.md) | Nom d'affichage court et obligatoire permettant d'identifier la personne au sein de l'organisation (p. ex. avec l'ajout de l'année de naissance afin de distinguer des personnes portant le même nom). Recommandé : PersonOfficialName combiné avec PersonCallFirstName.  |
+| label_long | 0..1 <br/> [String](String.md) | Nom d'affichage long et facultatif comprenant les titres académiques et le nom officiel complet (p. ex. « Dr. Maria Muster-Beispiel »).  |
+| birth_year | 0..1 <br/> [Integer](Integer.md) | Année de naissance. À utiliser uniquement lorsqu'aucune `birthDate` complète n'est disponible.  |
+| birth_date | 0..1 <br/> [Date](Date.md) | Date de naissance exacte si disponible et publique. Ce champ prime sur le champ `birthYear`.  |
+| death_date | 0..1 <br/> [Date](Date.md) | Date de décès exacte.  |
+| picture | 0..1 <br/> [Uri](Uri.md) | Lien vers une image (de préférence : PNG, puis JPG, puis GIF).  |
+| names | * <br/> [Name](Name.md) | Noms de la personne avec type et valeur.  |
+| addresses | * <br/> [Address](Address.md) | Adresses avec type (privée, professionnelle, locale).  |
+| language_proficiencies | * <br/> [LanguageProficiency](LanguageProficiency.md) | Compétences linguistiques de la personne.  |
+| citizenships | * <br/> [Citizenship](Citizenship.md) | Nationalités de la personne.  |
+| genders | * <br/> [Gender](Gender.md) | Sexe de la personne.  |
+| occupations | * <br/> [Occupation](Occupation.md) | Métiers ou professions de la personne.  |
+| trainings | * <br/> [Training](Training.md) | Formations ou éducations de la personne. Directive : n'indiquer en principe que la qualification la plus élevée obtenue.  |
+| contacts | * <br/> [Contact](Contact.md) | Informations de contact (e-mail, site web, réseaux sociaux). Directive : l'e-mail est quasi obligatoire et devrait toujours être fourni lorsqu'il est disponible.  |
+| electoral_district | 0..1 <br/> [ElectoralDistrict](ElectoralDistrict.md) | Lien vers la circonscription électorale.  |
+| interest_links | * <br/> [InterestLink](InterestLink.md) | Collection de liens d'intérêts.  |
+| local_id | 0..1 <br/> [String](String.md) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
+| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q39 pour la Suisse. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
+| date_created | 0..1 <br/> [Date](Date.md) | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |
+| datetime_created | 0..1 <br/> [Datetime](Datetime.md) | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |
+| date_modified | 0..1 <br/> [Date](Date.md) | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |
+| datetime_modified | 0..1 <br/> [Datetime](Datetime.md) | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |
 
 
 

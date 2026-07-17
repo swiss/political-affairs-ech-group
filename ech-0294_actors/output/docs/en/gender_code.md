@@ -78,6 +78,11 @@ annotations:
     value: 'Geschlechtscode. Empfohlene Werte: male, female, diverse .
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Code de sexe. Valeurs recommandées : male, female, diverse.
+
+      '
 description: 'Gender code. Recommended values: male, female, diverse.
 
   '

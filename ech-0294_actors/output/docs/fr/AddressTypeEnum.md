@@ -3,7 +3,7 @@
 
 
 
-_Types of addresses._
+_Types d'adresses._
 
 __
 
@@ -16,11 +16,11 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 ### Valeurs admissibles
 | Valeur | Description |
 | --- | --- |
-| privateAddress |  Private address.  |
+| privateAddress |  Adresse privée.  |
 | |  |
-| businessAddress |  Business address.  |
+| businessAddress |  Adresse professionnelle.  |
 | |  |
-| localAddress |  Local address.  |
+| localAddress |  Adresse locale.  |
 | |  |
 
 

@@ -6,7 +6,7 @@ search:
 # Slot: label_long 
 
 
-_Assign an extended label to a structured piece of information (e.g., display name with title, position, etc.)._
+_Möglichkeit bei einer strukturierten Information, ein erweitertesLabel zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.)._
 
 __
 
@@ -28,7 +28,7 @@ URI: [mcm:labelLong](https://ld.ech.ch/schema/0292/meta-common/labelLong)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [Person](Person.md) | Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Be... |  yes  |
-| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |  yes  |
+| [PersonReference](PersonReference.md) | Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikations... |  yes  |
 
 
 
@@ -73,8 +73,14 @@ annotations:
       zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.).
 
       '
-description: 'Assign an extended label to a structured piece of information (e.g.,
-  display name with title, position, etc.).
+  description_fr:
+    tag: description_fr
+    value: 'Attribuer un label étendu à une information structurée (par ex. nom d''affichage
+      avec titre, poste, etc.).
+
+      '
+description: 'Möglichkeit bei einer strukturierten Information, ein erweitertesLabel
+  zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

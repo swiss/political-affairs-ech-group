@@ -72,6 +72,11 @@ annotations:
     value: 'Staatsbürgerschaften der Person.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Nationalités de la personne.
+
+      '
 description: 'Staatsbürgerschaften der Person.
 
   '

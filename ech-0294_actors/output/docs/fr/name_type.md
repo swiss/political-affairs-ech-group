@@ -6,7 +6,7 @@ search:
 # Slot: name_type 
 
 
-_Type of name according to eCH-0011 (personNameData)._
+_Type de nom selon eCH-0011 (personNameData)._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:nameType](https://ld.ech.ch/schema/0294/actors/nameType)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Name](Name.md) | A name with a type (e |  no  |
+| [Name](Name.md) | Un nom avec un type (p |  no  |
 
 
 
@@ -79,7 +79,12 @@ annotations:
     value: 'Typ des Namens gemäss eCH-0011 (personNameData).
 
       '
-description: 'Type of name according to eCH-0011 (personNameData).
+  description_fr:
+    tag: description_fr
+    value: 'Type de nom selon eCH-0011 (personNameData).
+
+      '
+description: 'Type de nom selon eCH-0011 (personNameData).
 
   '
 examples:

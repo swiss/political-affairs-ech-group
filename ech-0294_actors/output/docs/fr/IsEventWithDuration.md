@@ -3,7 +3,7 @@
 ## Classe: IsEventWithDuration 
 
 
-_A mixin class that provides slots for modeling events or occurrences with time duration._
+_Une classe mixin qui fournit des slots pour modéliser des événements ou occurrences avec une durée._
 
 __
 
@@ -18,14 +18,14 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| date_begin_actual | 0..1 <br/> [Date](Date.md) | The actual start date of an event or occurrence with time duration.  |
-| datetime_begin_actual | 0..1 <br/> [Datetime](Datetime.md) | The actual start date and time of an event or occurrence with time duration.  |
-| date_begin_planned | 0..1 <br/> [Date](Date.md) | The planned start date of an event or occurrence with time duration.  |
-| datetime_begin_planned | 0..1 <br/> [Datetime](Datetime.md) | The planned start date and time of an event or occurrence with time duration.  |
-| date_end_actual | 0..1 <br/> [Date](Date.md) | The actual end date of an event or occurrence with time duration.  |
-| datetime_end_actual | 0..1 <br/> [Datetime](Datetime.md) | The actual end date and time of an event or occurrence with time duration.  |
-| date_end_planned | 0..1 <br/> [Date](Date.md) | The planned end date of an event or occurrence with time duration.  |
-| datetime_end_planned | 0..1 <br/> [Datetime](Datetime.md) | The planned end date and time of an event or occurrence with time duration.  |
+| date_begin_actual | 0..1 <br/> [Date](Date.md) | La date de début effective d'un événement ou d'une occurrence avec durée.  |
+| datetime_begin_actual | 0..1 <br/> [Datetime](Datetime.md) | La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée.  |
+| date_begin_planned | 0..1 <br/> [Date](Date.md) | La date de début planifiée d'un événement ou d'une occurrence avec durée.  |
+| datetime_begin_planned | 0..1 <br/> [Datetime](Datetime.md) | La date et l'heure de début planifiées d'un événement ou d'une occurrence avec durée.  |
+| date_end_actual | 0..1 <br/> [Date](Date.md) | La date de fin effective d'un événement ou d'une occurrence avec durée.  |
+| datetime_end_actual | 0..1 <br/> [Datetime](Datetime.md) | La date et l'heure de fin effectives d'un événement ou d'une occurrence avec durée.  |
+| date_end_planned | 0..1 <br/> [Date](Date.md) | La date de fin planifiée d'un événement ou d'une occurrence avec durée.  |
+| datetime_end_planned | 0..1 <br/> [Datetime](Datetime.md) | La date et l'heure de fin planifiées d'un événement ou d'une occurrence avec durée.  |
 
 
 

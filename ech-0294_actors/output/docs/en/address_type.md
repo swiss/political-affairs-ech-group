@@ -78,6 +78,11 @@ annotations:
     value: 'Typ der Adresse.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Type d''adresse.
+
+      '
 description: 'Type of address.
 
   '

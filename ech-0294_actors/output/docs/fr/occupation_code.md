@@ -6,7 +6,7 @@ search:
 # Slot: occupation_code 
 
 
-_ISCO-19 code of the occupation._
+_Code ISCO-19 du métier._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:occupationCode](https://ld.ech.ch/schema/0294/actors/occupationCode)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |  no  |
+| [Occupation](Occupation.md) | Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si... |  no  |
 
 
 
@@ -71,7 +71,12 @@ annotations:
     value: 'ISCO-19 Code der Tätigkeit.
 
       '
-description: 'ISCO-19 code of the occupation.
+  description_fr:
+    tag: description_fr
+    value: 'Code ISCO-19 du métier.
+
+      '
+description: 'Code ISCO-19 du métier.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

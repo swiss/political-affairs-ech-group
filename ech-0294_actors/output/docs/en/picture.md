@@ -70,6 +70,11 @@ annotations:
     value: 'Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Lien vers une image (de préférence : PNG, puis JPG, puis GIF).
+
+      '
 description: 'Link to an image (preferred: PNG, then JPG, then GIF).
 
   '

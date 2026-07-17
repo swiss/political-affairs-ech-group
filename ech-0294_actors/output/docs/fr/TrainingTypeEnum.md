@@ -3,7 +3,7 @@
 
 
 
-_Types of training or education based on the Swiss BFS LEVEL_EDUC codelist._
+_Types de formation ou d'éducation basés sur la liste de codes suisse LEVEL_EDUC de l'OFS._
 
 __
 

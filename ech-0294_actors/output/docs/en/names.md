@@ -72,6 +72,11 @@ annotations:
     value: 'Namen der Person mit Typ und Wert.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Noms de la personne avec type et valeur.
+
+      '
 description: 'Names of the person with type and value.
 
   '

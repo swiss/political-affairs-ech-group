@@ -6,7 +6,7 @@ search:
 # Slot: postal_code 
 
 
-_Postal code._
+_Code postal._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:postalCode](https://ld.ech.ch/schema/0294/actors/postalCode)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Address](Address.md) | An address with a type (e |  no  |
+| [Address](Address.md) | Une adresse avec un type (p |  no  |
 
 
 
@@ -71,7 +71,12 @@ annotations:
     value: 'Postleitzahl.
 
       '
-description: 'Postal code.
+  description_fr:
+    tag: description_fr
+    value: 'Code postal.
+
+      '
+description: 'Code postal.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

@@ -73,6 +73,12 @@ annotations:
       zu vergeben (bspw. Anzeigename mit Titel, Anstellung, etc.).
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Attribuer un label étendu à une information structurée (par ex. nom d''affichage
+      avec titre, poste, etc.).
+
+      '
 description: 'Assign an extended label to a structured piece of information (e.g.,
   display name with title, position, etc.).
 

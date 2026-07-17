@@ -85,6 +85,11 @@ annotations:
     value: 'ISO 3166-1 alpha-2 Ländercode.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Code de pays ISO 3166-1 alpha-2.
+
+      '
 description: 'ISO 3166-1 alpha-2 country code.
 
   '

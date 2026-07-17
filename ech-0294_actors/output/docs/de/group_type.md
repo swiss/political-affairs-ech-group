@@ -72,6 +72,12 @@ annotations:
       Die genaue Benennung und Beschreibung der Gruppierung wird über `label` gemacht.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Type de groupe (p. ex. parti, commission, parlement ou similaire). La
+      désignation et la description exactes du groupe sont fournies via `label`.
+
+      '
 description: 'Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder
   ähnliches. Die genaue Benennung und Beschreibung der Gruppierung wird über `label`
   gemacht.

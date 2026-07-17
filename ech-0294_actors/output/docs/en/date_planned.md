@@ -72,6 +72,12 @@ annotations:
       Zeitdauer).
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'La date planifiée d''un événement ou d''une occurrence instantané (sans
+      durée).
+
+      '
 description: 'The planned date of an instantaneous event or occurrence (without time
   duration).
 

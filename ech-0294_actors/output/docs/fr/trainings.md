@@ -6,7 +6,7 @@ search:
 # Slot: trainings 
 
 
-_Trainings or educations of the person. Guideline: generally only provide the highest qualification obtained._
+_Formations ou éducations de la personne. Directive : n'indiquer en principe que la qualification la plus élevée obtenue._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:training](https://ld.ech.ch/schema/0294/actors/training)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Person](Person.md) | Une personne avec des identifiants, des noms, des adresses, des nationalités ... |  no  |
 
 
 
@@ -73,8 +73,14 @@ annotations:
       höchste Ausbildung angeben.
 
       '
-description: 'Trainings or educations of the person. Guideline: generally only provide
-  the highest qualification obtained.
+  description_fr:
+    tag: description_fr
+    value: 'Formations ou éducations de la personne. Directive : n''indiquer en principe
+      que la qualification la plus élevée obtenue.
+
+      '
+description: 'Formations ou éducations de la personne. Directive : n''indiquer en
+  principe que la qualification la plus élevée obtenue.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

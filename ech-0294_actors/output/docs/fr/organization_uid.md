@@ -6,7 +6,7 @@ search:
 # Slot: organization_uid 
 
 
-_UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch)._
+_IDE de l'organisation (format eCH-0097 : CHE-XXX.XXX.XXX) issu du registre fédéral IDE (uid.admin.ch)._
 
 __
 
@@ -27,8 +27,8 @@ URI: [act:organizationUid](https://ld.ech.ch/schema/0294/actors/organizationUid)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
-| [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |  no  |
+| [InterestLink](InterestLink.md) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |  no  |
+| [Occupation](Occupation.md) | Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si... |  no  |
 
 
 
@@ -80,8 +80,14 @@ annotations:
       UID-Register (uid.admin.ch).
 
       '
-description: 'UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the
-  federal UID register (uid.admin.ch).
+  description_fr:
+    tag: description_fr
+    value: 'IDE de l''organisation (format eCH-0097 : CHE-XXX.XXX.XXX) issu du registre
+      fédéral IDE (uid.admin.ch).
+
+      '
+description: 'IDE de l''organisation (format eCH-0097 : CHE-XXX.XXX.XXX) issu du registre
+  fédéral IDE (uid.admin.ch).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

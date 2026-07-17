@@ -72,6 +72,12 @@ annotations:
       Mitglied, Delegierter, Geschäftsführer/in, Berater/in).
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Fonction ou rôle dans l''organisation (p. ex. président/e, vice-président/e,
+      membre, délégué, directeur/directrice, conseiller/ère).
+
+      '
 description: 'Funktion oder Rolle in der Organisation (z.B. Präsident/in, Vizepräsident/in,
   Mitglied, Delegierter, Geschäftsführer/in, Berater/in).
 

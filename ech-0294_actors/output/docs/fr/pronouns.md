@@ -6,7 +6,7 @@ search:
 # Slot: pronouns 
 
 
-_Pronouns used by the person._
+_Pronoms utilisés par la personne._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:pronouns](https://ld.ech.ch/schema/0294/actors/pronouns)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Gender](Gender.md) | Gender of a person indicating a gender code and temporal validity |  no  |
+| [Gender](Gender.md) | Sexe d'une personne indiquant un code de sexe et la validité temporelle |  no  |
 
 
 
@@ -72,7 +72,12 @@ annotations:
     value: 'Von der Person verwendete Pronomen.
 
       '
-description: 'Pronouns used by the person.
+  description_fr:
+    tag: description_fr
+    value: 'Pronoms utilisés par la personne.
+
+      '
+description: 'Pronoms utilisés par la personne.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

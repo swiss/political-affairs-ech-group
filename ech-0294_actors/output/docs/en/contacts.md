@@ -74,6 +74,13 @@ annotations:
       ist quasi-obligatorisch und sollte wenn vorhanden immer angegeben werden.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Informations de contact (e-mail, site web, réseaux sociaux). Directive
+      : l''e-mail est quasi obligatoire et devrait toujours être fourni lorsqu''il
+      est disponible.
+
+      '
 description: 'Contact information (email, website, social media). Guideline: email
   is quasi-mandatory and should always be provided where available.
 

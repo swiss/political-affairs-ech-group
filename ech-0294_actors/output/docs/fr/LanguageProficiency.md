@@ -3,7 +3,7 @@
 ## Classe: LanguageProficiency 
 
 
-_Language proficiency of a person indicating the language and whether it is the preferred language or native language._
+_Compétences linguistiques d'une personne indiquant la langue et le fait qu'il s'agisse ou non de la langue préférée ou de la langue maternelle._
 
 __
 
@@ -18,9 +18,9 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| language | 0..1 <br/> [String](String.md) | Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en").  |
-| is_correspondence | 0..1 <br/> [Boolean](Boolean.md) | Indicates if this is the preferred language.  |
-| is_native | 0..1 <br/> [Boolean](Boolean.md) | Indicates if this is the native language.  |
+| language | 0..1 <br/> [String](String.md) | Code de langue au format ISO 639-1 (deux lettres minuscules, par ex. « de », « fr », « it », « en »).  |
+| is_correspondence | 0..1 <br/> [Boolean](Boolean.md) | Indique s'il s'agit de la langue préférée.  |
+| is_native | 0..1 <br/> [Boolean](Boolean.md) | Indique s'il s'agit de la langue maternelle.  |
 
 
 

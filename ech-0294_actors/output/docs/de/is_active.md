@@ -6,7 +6,7 @@ search:
 # Slot: is_active 
 
 
-_Indicates whether the information is currently valid. Can be useful when this information is explicitly available._
+_Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist._
 
 __
 
@@ -28,7 +28,7 @@ URI: [mcm:isCurrent](https://ld.ech.ch/schema/0292/meta-common/isCurrent)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [Membership](Membership.md) | Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe, die ein... |  yes  |
-| [HasTemporalValidity](HasTemporalValidity.md) | A mixin class that provides slots for modeling a temporal validity of informa... |  no  |
+| [HasTemporalValidity](HasTemporalValidity.md) | Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gültigkeit... |  no  |
 | [Group](Group.md) | Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 | [InterestLink](InterestLink.md) | Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person... |  no  |
 | [Name](Name.md) | Ein Name mit einem Typ (z |  no  |
@@ -81,8 +81,14 @@ annotations:
       diese Information explizit vorhanden ist.
 
       '
-description: 'Indicates whether the information is currently valid. Can be useful
-  when this information is explicitly available.
+  description_fr:
+    tag: description_fr
+    value: 'Indique si l''information est actuellement valable. Peut être utile lorsque
+      cette information est explicitement disponible.
+
+      '
+description: 'Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein,
+  wenn diese Information explizit vorhanden ist.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

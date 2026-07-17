@@ -73,6 +73,12 @@ annotations:
       mit Zeitdauer.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'La date et l''heure de fin effectives d''un événement ou d''une occurrence
+      avec durée.
+
+      '
 description: 'The actual end date and time of an event or occurrence with time duration.
 
   '

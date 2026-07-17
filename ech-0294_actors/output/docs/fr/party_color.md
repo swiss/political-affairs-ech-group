@@ -6,7 +6,7 @@ search:
 # Slot: party_color 
 
 
-_Party color as hexadecimal value (optional for parties, e.g., "#FF0000")._
+_Couleur du parti sous forme de valeur hexadécimale (facultatif pour les partis, p. ex. « #FF0000 »)._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:partyColor](https://ld.ech.ch/schema/0294/actors/partyColor)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Group](Group.md) | A political group, organization, or body (e |  no  |
+| [Group](Group.md) | Un groupe, une organisation ou une collectivité politique (p |  no  |
 
 
 
@@ -71,7 +71,14 @@ annotations:
     value: 'Parteifarbe als Hexadezimalwert (optional für Parteien, z.B. "#FF0000").
 
       '
-description: 'Party color as hexadecimal value (optional for parties, e.g., "#FF0000").
+  description_fr:
+    tag: description_fr
+    value: 'Couleur du parti sous forme de valeur hexadécimale (facultatif pour les
+      partis, p. ex. « #FF0000 »).
+
+      '
+description: 'Couleur du parti sous forme de valeur hexadécimale (facultatif pour
+  les partis, p. ex. « #FF0000 »).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

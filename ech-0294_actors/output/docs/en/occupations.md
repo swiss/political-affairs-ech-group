@@ -72,6 +72,11 @@ annotations:
     value: 'Berufe oder Tätigkeiten der Person.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Métiers ou professions de la personne.
+
+      '
 description: 'Occupations or professions of the person.
 
   '

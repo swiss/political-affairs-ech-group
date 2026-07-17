@@ -80,6 +80,12 @@ annotations:
     value: 'Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Type de lien d''intérêts (activité professionnelle, mandat politique,
+      association).
+
+      '
 description: 'Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).
 
   '

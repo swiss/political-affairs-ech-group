@@ -3,7 +3,7 @@
 
 
 
-_Roles a person can have within a membership._
+_Rôles qu'une personne peut occuper dans le cadre d'une affiliation._
 
 __
 
@@ -16,13 +16,13 @@ URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 ### Valeurs admissibles
 | Valeur | Description |
 | --- | --- |
-| member |  Regular member (default).  |
+| member |  Membre ordinaire (par défaut).  |
 | |  |
-| president |  President or chair of the group.  |
+| president |  Président ou président du groupe.  |
 | |  |
-| stellvertreter |  Deputy/vice role (stellvertreter).  |
+| stellvertreter |  Rôle de suppléant/vice (stellvertreter).  |
 | |  |
-| other |  Other role; use role_label for a descriptive label.  |
+| other |  Autre rôle ; utiliser role_label pour un libellé descriptif.  |
 | |  |
 
 

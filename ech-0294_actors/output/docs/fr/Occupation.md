@@ -3,7 +3,7 @@
 ## Classe: Occupation 
 
 
-_Occupation or profession of a person indicating a label, an ISCO-19 code, whether the position is paid, and temporal validity._
+_Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si le poste est rémunéré, ainsi que la validité temporelle._
 
 __
 
@@ -18,14 +18,14 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| is_paid | 0..1 <br/> [Boolean](Boolean.md) | Indicates if the position is paid.  |
-| occupation_code | 0..1 <br/> [String](String.md) | ISCO-19 code of the occupation.  |
-| label | 0..1 <br/> [String](String.md) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
-| organization_uid | 0..1 <br/> [String](String.md) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).  |
-| organization_name | 0..1 <br/> [String](String.md) | Name of the organization or enterprise.  |
-| valid_from | 0..1 <br/> [Date](Date.md) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |
-| valid_through | 0..1 <br/> [Date](Date.md) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |
-| is_active | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |
+| is_paid | 0..1 <br/> [Boolean](Boolean.md) | Indique si le poste est rémunéré.  |
+| occupation_code | 0..1 <br/> [String](String.md) | Code ISCO-19 du métier.  |
+| label | 0..1 <br/> [String](String.md) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
+| organization_uid | 0..1 <br/> [String](String.md) | IDE de l'organisation (format eCH-0097 : CHE-XXX.XXX.XXX) issu du registre fédéral IDE (uid.admin.ch).  |
+| organization_name | 0..1 <br/> [String](String.md) | Nom de l'organisation ou de l'entreprise.  |
+| valid_from | 0..1 <br/> [Date](Date.md) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](HasTemporalValidity.md) |
+| valid_through | 0..1 <br/> [Date](Date.md) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](HasTemporalValidity.md) |
+| is_active | 0..1 <br/> [Boolean](Boolean.md) | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](HasTemporalValidity.md) |
 
 
 

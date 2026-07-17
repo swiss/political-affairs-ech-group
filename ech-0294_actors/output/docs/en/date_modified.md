@@ -75,6 +75,11 @@ annotations:
     value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'La date à laquelle une entité a été modifiée pour la dernière fois.
+
+      '
 description: 'The date when an entity was last modified.
 
   '

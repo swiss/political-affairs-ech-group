@@ -6,7 +6,7 @@ search:
 # Slot: group_label 
 
 
-_Name of the body/group at time of linking._
+_Nom de l'organe/du groupe au moment de la liaison._
 
 __
 
@@ -27,7 +27,7 @@ URI: [mcm:groupLabel](https://ld.ech.ch/schema/0292/meta-common/groupLabel)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |  no  |
+| [PersonReference](PersonReference.md) | Référence légère à une personne avec les principales données d'identification... |  no  |
 
 
 
@@ -71,7 +71,12 @@ annotations:
     value: 'Name des Gremiums zum Zeitpunkt der Verknüpfung.
 
       '
-description: 'Name of the body/group at time of linking.
+  description_fr:
+    tag: description_fr
+    value: 'Nom de l''organe/du groupe au moment de la liaison.
+
+      '
+description: 'Nom de l''organe/du groupe au moment de la liaison.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

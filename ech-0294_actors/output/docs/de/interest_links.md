@@ -73,6 +73,11 @@ annotations:
     value: 'Sammlung von Interessenbindungen.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Collection de liens d''intérêts.
+
+      '
 description: 'Sammlung von Interessenbindungen.
 
   '

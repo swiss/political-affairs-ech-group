@@ -71,6 +71,11 @@ annotations:
     value: 'Genaues Todesdatum.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Date de décès exacte.
+
+      '
 description: 'Exact date of death.
 
   '

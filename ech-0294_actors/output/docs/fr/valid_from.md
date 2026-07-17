@@ -6,7 +6,7 @@ search:
 # Slot: valid_from 
 
 
-_The date from which the information is valid._
+_La date à partir de laquelle l'information est valable._
 
 __
 
@@ -27,16 +27,16 @@ URI: [schema:validFrom](http://schema.org/validFrom)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [HasTemporalValidity](HasTemporalValidity.md) | A mixin class that provides slots for modeling a temporal validity of informa... |  no  |
-| [Group](Group.md) | A political group, organization, or body (e |  no  |
-| [Membership](Membership.md) | A membership relationship between a person and a group, representing formal a... |  no  |
-| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
-| [Name](Name.md) | A name with a type (e |  no  |
-| [Citizenship](Citizenship.md) | Citizenship (also used for Nationality) of a person indicating the country an... |  no  |
-| [Gender](Gender.md) | Gender of a person indicating a gender code and temporal validity |  no  |
-| [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |  no  |
-| [Training](Training.md) | Training or education of a person indicating a type (e |  no  |
-| [ElectoralDistrict](ElectoralDistrict.md) | Electoral district or region where a person is politically active; with tempo... |  no  |
+| [HasTemporalValidity](HasTemporalValidity.md) | Une classe mixin qui fournit des slots pour modéliser la validité temporelle ... |  no  |
+| [Group](Group.md) | Un groupe, une organisation ou une collectivité politique (p |  no  |
+| [Membership](Membership.md) | Une relation d'affiliation entre une personne et un groupe, représentant une ... |  no  |
+| [InterestLink](InterestLink.md) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |  no  |
+| [Name](Name.md) | Un nom avec un type (p |  no  |
+| [Citizenship](Citizenship.md) | Nationalité (également utilisée pour la citoyenneté) d'une personne indiquant... |  no  |
+| [Gender](Gender.md) | Sexe d'une personne indiquant un code de sexe et la validité temporelle |  no  |
+| [Occupation](Occupation.md) | Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si... |  no  |
+| [Training](Training.md) | Formation ou éducation d'une personne indiquant un type (p |  no  |
+| [ElectoralDistrict](ElectoralDistrict.md) | Circonscription ou région électorale dans laquelle une personne est politique... |  no  |
 
 
 
@@ -80,7 +80,12 @@ annotations:
     value: 'Das Datum, ab dem die Information gültig ist.
 
       '
-description: 'The date from which the information is valid.
+  description_fr:
+    tag: description_fr
+    value: 'La date à partir de laquelle l''information est valable.
+
+      '
+description: 'La date à partir de laquelle l''information est valable.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

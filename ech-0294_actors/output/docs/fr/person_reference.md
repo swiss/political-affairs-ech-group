@@ -6,7 +6,7 @@ search:
 # Slot: person_reference 
 
 
-_Reference to a person with snapshot data at time of linking._
+_Référence à une personne avec des données instantanées au moment de la mise en relation._
 
 __
 
@@ -27,8 +27,8 @@ URI: [act:personReference](https://ld.ech.ch/schema/0294/actors/personReference)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Membership](Membership.md) | A membership relationship between a person and a group, representing formal a... |  no  |
-| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
+| [Membership](Membership.md) | Une relation d'affiliation entre une personne et un groupe, représentant une ... |  no  |
+| [InterestLink](InterestLink.md) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |  no  |
 
 
 
@@ -72,7 +72,14 @@ annotations:
     value: 'Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
 
       '
-description: 'Reference to a person with snapshot data at time of linking.
+  description_fr:
+    tag: description_fr
+    value: 'Référence à une personne avec des données instantanées au moment de la
+      mise en relation.
+
+      '
+description: 'Référence à une personne avec des données instantanées au moment de
+  la mise en relation.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

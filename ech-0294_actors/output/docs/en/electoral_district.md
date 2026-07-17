@@ -71,6 +71,11 @@ annotations:
     value: 'Link zum Wahlbezirk.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Lien vers la circonscription électorale.
+
+      '
 description: 'Link to the electoral district.
 
   '

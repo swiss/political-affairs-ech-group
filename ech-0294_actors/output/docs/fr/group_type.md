@@ -6,7 +6,7 @@ search:
 # Slot: group_type 
 
 
-_Type of group (e.g., party, commission, parliament, or similar). The exact naming and description of the group is provided via `label`._
+_Type de groupe (p. ex. parti, commission, parlement ou similaire). La désignation et la description exactes du groupe sont fournies via `label`._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:groupType](https://ld.ech.ch/schema/0294/actors/groupType)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Group](Group.md) | A political group, organization, or body (e |  no  |
+| [Group](Group.md) | Un groupe, une organisation ou une collectivité politique (p |  no  |
 
 
 
@@ -72,8 +72,14 @@ annotations:
       Die genaue Benennung und Beschreibung der Gruppierung wird über `label` gemacht.
 
       '
-description: 'Type of group (e.g., party, commission, parliament, or similar). The
-  exact naming and description of the group is provided via `label`.
+  description_fr:
+    tag: description_fr
+    value: 'Type de groupe (p. ex. parti, commission, parlement ou similaire). La
+      désignation et la description exactes du groupe sont fournies via `label`.
+
+      '
+description: 'Type de groupe (p. ex. parti, commission, parlement ou similaire). La
+  désignation et la description exactes du groupe sont fournies via `label`.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

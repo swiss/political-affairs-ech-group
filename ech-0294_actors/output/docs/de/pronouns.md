@@ -72,6 +72,11 @@ annotations:
     value: 'Von der Person verwendete Pronomen.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Pronoms utilisés par la personne.
+
+      '
 description: 'Von der Person verwendete Pronomen.
 
   '

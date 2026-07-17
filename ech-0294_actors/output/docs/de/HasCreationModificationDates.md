@@ -3,7 +3,7 @@
 ## Klasse: HasCreationModificationDates 
 
 
-_A mixin class that provides slots for modeling creation and modification dates of an entity._
+_Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Änderungsdaten einer Entität zur Verfügung stellt._
 
 __
 
@@ -18,10 +18,10 @@ __
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
-| date_created | 0..1 <br/> [Date](Date.md) | The date when an entity was created.  |
-| datetime_created | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was created.  |
-| date_modified | 0..1 <br/> [Date](Date.md) | The date when an entity was last modified.  |
-| datetime_modified | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was last modified.  |
+| date_created | 0..1 <br/> [Date](Date.md) | Das Datum, an dem eine Entität erstellt wurde.  |
+| datetime_created | 0..1 <br/> [Datetime](Datetime.md) | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.  |
+| date_modified | 0..1 <br/> [Date](Date.md) | Das Datum, an dem eine Entität zuletzt geändert wurde.  |
+| datetime_modified | 0..1 <br/> [Datetime](Datetime.md) | Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde.  |
 
 
 

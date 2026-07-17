@@ -6,7 +6,7 @@ search:
 # Slot: training_type 
 
 
-_Type of training or education._
+_Type de formation ou d'éducation._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:trainingType](https://ld.ech.ch/schema/0294/actors/trainingType)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Training](Training.md) | Training or education of a person indicating a type (e |  no  |
+| [Training](Training.md) | Formation ou éducation d'une personne indiquant un type (p |  no  |
 
 
 
@@ -78,7 +78,12 @@ annotations:
     value: 'Typ der Ausbildung oder Bildung.
 
       '
-description: 'Type of training or education.
+  description_fr:
+    tag: description_fr
+    value: 'Type de formation ou d''éducation.
+
+      '
+description: 'Type de formation ou d''éducation.
 
   '
 examples:

@@ -81,6 +81,12 @@ annotations:
       diese Information explizit vorhanden ist.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Indique si l''information est actuellement valable. Peut être utile lorsque
+      cette information est explicitement disponible.
+
+      '
 description: 'Indicates whether the information is currently valid. Can be useful
   when this information is explicitly available.
 

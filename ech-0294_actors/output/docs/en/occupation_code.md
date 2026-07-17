@@ -71,6 +71,11 @@ annotations:
     value: 'ISCO-19 Code der Tätigkeit.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Code ISCO-19 du métier.
+
+      '
 description: 'ISCO-19 code of the occupation.
 
   '

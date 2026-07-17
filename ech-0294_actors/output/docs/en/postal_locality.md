@@ -78,6 +78,11 @@ annotations:
     value: 'Ort.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Localité.
+
+      '
 description: 'Locality.
 
   '

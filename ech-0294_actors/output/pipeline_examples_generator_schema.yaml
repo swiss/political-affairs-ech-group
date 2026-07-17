@@ -9,6 +9,10 @@ annotations:
     Interessenbindungen.
 
     '
+  description_fr: 'Un schéma décrivant les acteurs politiques, y compris les personnes, les groupes, les affiliations et les
+    liens d''intérêts.
+
+    '
 license: CC-BY
 prefixes:
   linkml: https://w3id.org/linkml/
@@ -29,6 +33,9 @@ classes:
       description_de: 'Container für politische Akteure, Gruppen und Beziehungen.
 
         '
+      description_fr: 'Conteneur pour les acteurs politiques, les groupes et les relations.
+
+        '
     mixins:
     - HasIdentification
     slots:
@@ -42,6 +49,9 @@ classes:
       '
     annotations:
       description_de: 'Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Berufen.
+
+        '
+      description_fr: 'Une personne avec des identifiants, des noms, des adresses, des nationalités et des professions.
 
         '
     mixins:
@@ -76,6 +86,11 @@ classes:
             mit PersonCallFirstName (Rufname).
 
             '
+          description_fr: 'Nom d''affichage court et obligatoire permettant d''identifier la personne au sein de l''organisation
+            (p. ex. avec l''ajout de l''année de naissance afin de distinguer des personnes portant le même nom). Recommandé
+            : PersonOfficialName combiné avec PersonCallFirstName.
+
+            '
         required: true
       label_long:
         description: 'Optional long display name including academic titles and full official name (e.g. "Dr. Maria Muster-Beispiel").
@@ -86,12 +101,19 @@ classes:
             Maria Muster-Beispiel").
 
             '
+          description_fr: 'Nom d''affichage long et facultatif comprenant les titres académiques et le nom officiel complet
+            (p. ex. « Dr. Maria Muster-Beispiel »).
+
+            '
   Group:
     description: 'A political group, organization, or body (e.g., party, committee, parliament, department).
 
       '
     annotations:
       description_de: 'Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommission, Parlament, Departement).
+
+        '
+      description_fr: 'Un groupe, une organisation ou une collectivité politique (p. ex. parti, commission, parlement, département).
 
         '
     mixins:
@@ -122,6 +144,11 @@ classes:
         Interessenbindungen und Interessenkonflikte zu Organisationen ausserhalb des Akteur-Schemas abbildet.
 
         '
+      description_fr: 'Une relation d''affiliation entre une personne et un groupe, représentant une appartenance formelle
+        (p. ex. membre d''un parti, membre d''une commission, parlementaire). À distinguer de InterestLink, qui recouvre les
+        liens d''intérêts externes et les conflits d''intérêts avec des organisations situées en dehors du schéma des acteurs.
+
+        '
     mixins:
     - HasIdentification
     - HasCreationModificationDates
@@ -143,6 +170,10 @@ classes:
             ersetzen. Wenn nicht gesetzt, wird die Aktivität aus den zeitlichen Gültigkeitsfeldern abgeleitet.
 
             '
+          description_fr: 'Indique si l''affiliation est actuellement active. Peut compléter ou remplacer `valid_from`/`valid_through`.
+            Si cette valeur n''est pas renseignée, l''activité est déduite des champs de validité temporelle.
+
+            '
   InterestLink:
     description: 'An interest link (conflict of interest, political financing) of a person to an organization outside the
       actor schema.
@@ -151,6 +182,10 @@ classes:
     annotations:
       description_de: 'Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation
         ausserhalb des Akteur-Schemas.
+
+        '
+      description_fr: 'Un lien d''intérêts (conflit d''intérêts, financement politique) d''une personne avec une organisation
+        située en dehors du schéma des acteurs.
 
         '
     mixins:
@@ -175,6 +210,9 @@ classes:
       description_de: 'Ein Name mit einem Typ (z.B. Rufname, amtlicher Name) und einem Wert und einer zeitlichen Gültigkeit.
 
         '
+      description_fr: 'Un nom avec un type (p. ex. nom d''usage, nom officiel), une valeur et une validité temporelle.
+
+        '
     mixins:
     - HasTemporalValidity
     slots:
@@ -186,6 +224,9 @@ classes:
       '
     annotations:
       description_de: 'Eine Adresse mit einem Typ (z.B. Privatadresse, Geschäftsadresse) und einem Wert.
+
+        '
+      description_fr: 'Une adresse avec un type (p. ex. adresse privée, adresse professionnelle) et une valeur.
 
         '
     slots:
@@ -202,6 +243,10 @@ classes:
     annotations:
       description_de: 'Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um die bevorzugte Sprache oder
         die Muttersprache handelt.
+
+        '
+      description_fr: 'Compétences linguistiques d''une personne indiquant la langue et le fait qu''il s''agisse ou non de
+        la langue préférée ou de la langue maternelle.
 
         '
     slots:
@@ -221,6 +266,12 @@ classes:
         angegeben ist, ist die Staatsangehörigkeit weiterhin gültig.
 
         '
+      description_fr: 'Nationalité (également utilisée pour la citoyenneté) d''une personne indiquant le pays et la validité
+        temporelle. Si aucun `valid_from` n''est fourni, cette information n''est pas connue. S''il est établi que la nationalité
+        est valable depuis la naissance, la date de naissance doit être répétée ici. En l''absence de `valid_through`, la
+        nationalité est toujours en vigueur.
+
+        '
     mixins:
     - HasTemporalValidity
     slots:
@@ -231,6 +282,9 @@ classes:
       '
     annotations:
       description_de: 'Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen Gültigkeit.
+
+        '
+      description_fr: 'Sexe d''une personne indiquant un code de sexe et la validité temporelle.
 
         '
     mixins:
@@ -247,6 +301,10 @@ classes:
     annotations:
       description_de: 'Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Codes, ob die Position bezahlt
         ist, und der zeitlichen Gültigkeit.
+
+        '
+      description_fr: 'Métier ou profession d''une personne indiquant un libellé, un code ISCO-19, si le poste est rémunéré,
+        ainsi que la validité temporelle.
 
         '
     mixins:
@@ -267,6 +325,10 @@ classes:
         Militärdienst), eines Labels, eines ISCO-19 Codes und der zeitlichen Gültigkeit.
 
         '
+      description_fr: 'Formation ou éducation d''une personne indiquant un type (p. ex. diplôme scolaire, diplôme universitaire,
+        service militaire), un libellé, un code ISCO-19 et la validité temporelle.
+
+        '
     mixins:
     - HasTemporalValidity
     slots:
@@ -281,6 +343,9 @@ classes:
       description_de: 'Kontaktinformation einer Person mit Angabe eines Typs (z.B. E-Mail, LinkedIn) und eines Werts.
 
         '
+      description_fr: 'Informations de contact d''une personne indiquant un type (p. ex. e-mail, LinkedIn) et une valeur.
+
+        '
     slots:
     - contact_type
     - value
@@ -290,6 +355,10 @@ classes:
       '
     annotations:
       description_de: 'Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit zeitlicher Gültigkeit.
+
+        '
+      description_fr: 'Circonscription ou région électorale dans laquelle une personne est politiquement active ; avec validité
+        temporelle.
 
         '
     mixins:
@@ -302,6 +371,9 @@ classes:
       '
     annotations:
       description_de: 'Art der Gruppe (z.B. Partei, Kommission, Parlament, Departement).
+
+        '
+      description_fr: 'Type de groupe (p. ex. parti, commission, parlement, département).
 
         '
     slots:
@@ -322,6 +394,13 @@ classes:
         semantischer Wert vorhanden ist; bei `role_type_enum = other` soll sie angegeben werden.
 
         '
+      description_fr: 'Rôle d''une personne dans une affiliation ou une fonction (p. ex. membre, président, suppléant). Si
+        un rôle ne figure pas dans le vocabulaire RoleEnum proposé, la valeur « other » peut être utilisée, et un libellé
+        descriptif doit être fourni dans le slot `role_label`. Le libellé peut également être utilisé lorsqu''une désignation
+        spécifique est nécessaire, même s''il existe une valeur sémantique appropriée dans `role_type_enum` ; il doit être
+        fourni lorsque `role_type_enum` est réglé sur « other ».
+
+        '
     slots:
     - role_type_enum
     - label
@@ -337,6 +416,11 @@ classes:
             = other` soll diese Bezeichnung angegeben werden.
 
             '
+          description_fr: 'Libellé de rôle spécifique. À utiliser lorsqu''un nom de rôle spécifique est nécessaire, même s''il
+            existe une valeur sémantique appropriée dans `role_type_enum` ; fournir ce libellé lorsque `role_type_enum` est
+            réglé sur « other ».
+
+            '
 slots:
   name_type:
     slot_uri: act:nameType
@@ -345,6 +429,9 @@ slots:
       '
     annotations:
       description_de: 'Typ des Namens gemäss eCH-0011 (personNameData).
+
+        '
+      description_fr: 'Type de nom selon eCH-0011 (personNameData).
 
         '
     range: NameTypeEnum
@@ -358,6 +445,9 @@ slots:
       '
     annotations:
       description_de: 'Typ der Adresse.
+
+        '
+      description_fr: 'Type d''adresse.
 
         '
     range: AddressTypeEnum
@@ -374,6 +464,11 @@ slots:
         Beispiel einer gültigen URI: https://geo.ld.admin.ch/location/address/101904050
 
         '
+      description_fr: 'URI de l''adresse issue du répertoire fédéral des adresses de bâtiments. La couche est accessible à
+        l''adresse https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis. Exemple
+        d''URI valide : https://geo.ld.admin.ch/location/address/101904050
+
+        '
     range: uriorcurie
   street_address:
     slot_uri: act:streetAddress
@@ -382,6 +477,9 @@ slots:
       '
     annotations:
       description_de: 'Strassenadresse.
+
+        '
+      description_fr: 'Adresse (rue).
 
         '
   postal_code:
@@ -393,6 +491,9 @@ slots:
       description_de: 'Postleitzahl.
 
         '
+      description_fr: 'Code postal.
+
+        '
     range: integer
   postal_locality:
     slot_uri: act:postalLocality
@@ -401,6 +502,9 @@ slots:
       '
     annotations:
       description_de: 'Ort.
+
+        '
+      description_fr: 'Localité.
 
         '
     examples:
@@ -414,6 +518,9 @@ slots:
       description_de: 'Gibt an, ob es sich um die bevorzugte Sprache handelt.
 
         '
+      description_fr: 'Indique s''il s''agit de la langue préférée.
+
+        '
     range: boolean
   is_native:
     slot_uri: act:isNative
@@ -424,6 +531,9 @@ slots:
       description_de: 'Gibt an, ob es sich um die Muttersprache handelt.
 
         '
+      description_fr: 'Indique s''il s''agit de la langue maternelle.
+
+        '
     range: boolean
   country:
     slot_uri: act:country
@@ -432,6 +542,9 @@ slots:
       '
     annotations:
       description_de: 'ISO 3166-1 alpha-2 Ländercode.
+
+        '
+      description_fr: 'Code de pays ISO 3166-1 alpha-2.
 
         '
     pattern: ^[A-Z]{2}$
@@ -446,6 +559,9 @@ slots:
       description_de: 'Geschlechtscode. Empfohlene Werte: male, female, diverse .
 
         '
+      description_fr: 'Code de sexe. Valeurs recommandées : male, female, diverse.
+
+        '
     range: GenderCodeEnum
     examples:
     - value: male
@@ -458,6 +574,9 @@ slots:
       description_de: 'Von der Person verwendete Pronomen.
 
         '
+      description_fr: 'Pronoms utilisés par la personne.
+
+        '
     multivalued: true
     inlined_as_list: true
   is_paid:
@@ -467,6 +586,9 @@ slots:
       '
     annotations:
       description_de: 'Gibt an, ob die Position bezahlt ist.
+
+        '
+      description_fr: 'Indique si le poste est rémunéré.
 
         '
     range: boolean
@@ -482,6 +604,9 @@ slots:
       description_de: 'ISCO-19 Code der Tätigkeit.
 
         '
+      description_fr: 'Code ISCO-19 du métier.
+
+        '
   training_type:
     slot_uri: act:trainingType
     description: 'Type of training or education.
@@ -489,6 +614,9 @@ slots:
       '
     annotations:
       description_de: 'Typ der Ausbildung oder Bildung.
+
+        '
+      description_fr: 'Type de formation ou d''éducation.
 
         '
     range: TrainingTypeEnum
@@ -503,6 +631,9 @@ slots:
       description_de: 'ISCO-19 Code der Ausbildung oder Bildung.
 
         '
+      description_fr: 'Code ISCO-19 de la formation ou de l''éducation.
+
+        '
   contact_type:
     slot_uri: act:contactType
     description: 'Type of contact information.
@@ -510,6 +641,9 @@ slots:
       '
     annotations:
       description_de: 'Typ der Kontaktinformation.
+
+        '
+      description_fr: 'Type d''informations de contact.
 
         '
     range: ContactTypeEnum
@@ -525,6 +659,9 @@ slots:
       description_de: 'Wahlkreis oder Wahlregion.
 
         '
+      description_fr: 'Circonscription ou région électorale.
+
+        '
     examples:
     - value: Basel-Stadt
   birth_year:
@@ -534,6 +671,9 @@ slots:
       '
     annotations:
       description_de: 'Geburtsjahr. Nur zu verwenden, wenn kein vollständiges `birthDate` vorhanden ist.
+
+        '
+      description_fr: 'Année de naissance. À utiliser uniquement lorsqu''aucune `birthDate` complète n''est disponible.
 
         '
     range: integer
@@ -548,6 +688,9 @@ slots:
       description_de: 'Genaues Geburtsdatum, sofern verfügbar und öffentlich. Dieses Feld hat Vorrang vor dem Feld `birthYear`.
 
         '
+      description_fr: 'Date de naissance exacte si disponible et publique. Ce champ prime sur le champ `birthYear`.
+
+        '
     range: date
     examples:
     - value: '1964-07-12'
@@ -560,6 +703,9 @@ slots:
       description_de: 'Genaues Todesdatum.
 
         '
+      description_fr: 'Date de décès exacte.
+
+        '
     range: date
   picture:
     range: uri
@@ -568,6 +714,9 @@ slots:
       '
     annotations:
       description_de: 'Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF).
+
+        '
+      description_fr: 'Lien vers une image (de préférence : PNG, puis JPG, puis GIF).
 
         '
   group_type:
@@ -582,6 +731,10 @@ slots:
         und Beschreibung der Gruppierung wird über `label` gemacht.
 
         '
+      description_fr: 'Type de groupe (p. ex. parti, commission, parlement ou similaire). La désignation et la description
+        exactes du groupe sont fournies via `label`.
+
+        '
   group_type_enum:
     slot_uri: act:groupTypeEnum
     description: 'Link to the controlled vocabulary for group types.
@@ -589,6 +742,9 @@ slots:
       '
     annotations:
       description_de: 'Link zum kontrollierten Vokabular für Gruppentypen.
+
+        '
+      description_fr: 'Lien vers le vocabulaire contrôlé pour les types de groupes.
 
         '
     range: GroupTypeEnum
@@ -603,6 +759,9 @@ slots:
       description_de: 'Kurze Beschreibung der Gruppierung.
 
         '
+      description_fr: 'Description de l''entité.
+
+        '
   landing_page:
     slot_uri: act:landingPage
     range: uri
@@ -611,6 +770,9 @@ slots:
       '
     annotations:
       description_de: 'Website mit weiteren Informationen.
+
+        '
+      description_fr: 'Site web fournissant de plus amples informations.
 
         '
   parent_groups:
@@ -628,6 +790,13 @@ slots:
         aber erlaubt, z.B. Fraktion → Parlament und Fraktion → Partei.)
 
         '
+      description_fr: 'Lien vers les groupes parents. Par exemple, le parti faîtier pour les partis cantonaux, ou pour décrire
+        la hiérarchie au sein de l''exécutif. Utilisé également pour rattacher des sous-commissions à des commissions, ou
+        des groupes parlementaires à la fois à leur parlement et à leur parti. (parentGroup est généralement utilisé au sein
+        d''un même group_type, mais les liens intertypes sont autorisés, p. ex. groupe parlementaire → parlement et groupe
+        parlementaire → parti.)
+
+        '
     range: uriorcurie
     multivalued: true
     inlined_as_list: true
@@ -641,6 +810,10 @@ slots:
         Kanton: ld.admin.ch/canton/23, Bund: ld.admin.ch/country/CHE.
 
         '
+      description_fr: 'Référence spatiale (numéro OFS de commune, numéro OFS de canton ou pays). Formats : commune : ld.admin.ch/municipality/1234,
+        canton : ld.admin.ch/canton/23, pays : ld.admin.ch/country/CHE.
+
+        '
   contacts:
     slot_uri: act:contact
     description: 'Contact information (email, website, social media). Guideline: email is quasi-mandatory and should always
@@ -650,6 +823,10 @@ slots:
     annotations:
       description_de: 'Kontaktinformationen (E-Mail, Website, Social Media). Richtlinie: E-Mail ist quasi-obligatorisch und
         sollte wenn vorhanden immer angegeben werden.
+
+        '
+      description_fr: 'Informations de contact (e-mail, site web, réseaux sociaux). Directive : l''e-mail est quasi obligatoire
+        et devrait toujours être fourni lorsqu''il est disponible.
 
         '
     range: Contact
@@ -662,6 +839,9 @@ slots:
       '
     annotations:
       description_de: 'Adressen mit Typ (privat, geschäftlich, lokal).
+
+        '
+      description_fr: 'Adresses avec type (privée, professionnelle, locale).
 
         '
     range: Address
@@ -685,6 +865,9 @@ slots:
       description_de: 'URL zu Parteistatuten (PDF oder Webseite; optional für Parteien).
 
         '
+      description_fr: 'URL vers les statuts du parti (PDF ou page web ; facultatif pour les partis).
+
+        '
   party_color:
     slot_uri: act:partyColor
     description: 'Party color as hexadecimal value (optional for parties, e.g., "#FF0000").
@@ -694,6 +877,9 @@ slots:
       description_de: 'Parteifarbe als Hexadezimalwert (optional für Parteien, z.B. "#FF0000").
 
         '
+      description_fr: 'Couleur du parti sous forme de valeur hexadécimale (facultatif pour les partis, p. ex. « #FF0000 »).
+
+        '
   person_reference:
     slot_uri: act:personReference
     description: 'Reference to a person with snapshot data at time of linking.
@@ -701,6 +887,9 @@ slots:
       '
     annotations:
       description_de: 'Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
+
+        '
+      description_fr: 'Référence à une personne avec des données instantanées au moment de la mise en relation.
 
         '
     range: PersonReference
@@ -714,6 +903,9 @@ slots:
       description_de: 'Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
 
         '
+      description_fr: 'Référence à un groupe avec des données instantanées au moment de la mise en relation.
+
+        '
     range: GroupReference
     inlined: true
   role_type:
@@ -725,6 +917,9 @@ slots:
       description_de: 'Rolle der Person in der Mitgliedschaft oder Funktion.
 
         '
+      description_fr: 'Rôle de la personne dans l''affiliation ou la fonction.
+
+        '
     range: RoleType
   role_type_enum:
     slot_uri: act:roleTypeEnum
@@ -734,6 +929,9 @@ slots:
       '
     annotations:
       description_de: 'Rolle der Person in der Mitgliedschaft oder Funktion.
+
+        '
+      description_fr: 'Rôle de la personne dans l''affiliation ou la fonction.
 
         '
   authorized_to_vote:
@@ -748,6 +946,10 @@ slots:
         (wenn nicht im Einsatz), Beobachter/innen, Sekretär/innen und Gäste.
 
         '
+      description_fr: 'Indique si la personne dispose du droit de vote au sein du groupe. Généralement false pour les membres
+        suppléants (lorsqu''ils ne remplacent personne), les observateurs, les secrétaires et les invités.
+
+        '
   interest_type:
     range: InterestTypeEnum
     slot_uri: act:interestType
@@ -757,6 +959,9 @@ slots:
       '
     annotations:
       description_de: 'Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).
+
+        '
+      description_fr: 'Type de lien d''intérêts (activité professionnelle, mandat politique, association).
 
         '
     examples:
@@ -771,6 +976,9 @@ slots:
       description_de: 'Name der Organisation oder des Unternehmens.
 
         '
+      description_fr: 'Nom de l''organisation ou de l''entreprise.
+
+        '
   organization_uid:
     slot_uri: act:organizationUid
     description: 'UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).
@@ -778,6 +986,9 @@ slots:
       '
     annotations:
       description_de: 'UID der Organisation (Format eCH-0097: CHE-XXX.XXX.XXX) aus dem eidgenössischen UID-Register (uid.admin.ch).
+
+        '
+      description_fr: 'IDE de l''organisation (format eCH-0097 : CHE-XXX.XXX.XXX) issu du registre fédéral IDE (uid.admin.ch).
 
         '
     pattern: ^CHE-\d{3}\.\d{3}\.\d{3}$
@@ -790,6 +1001,9 @@ slots:
       description_de: 'Adresse der Organisation.
 
         '
+      description_fr: 'Adresse de l''organisation.
+
+        '
   legal_form:
     slot_uri: act:legalForm
     description: 'Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm
@@ -797,6 +1011,9 @@ slots:
       '
     annotations:
       description_de: 'Rechtsform der Organisation. Siehe kontrolliertes Vokabular: https://register.ld.admin.ch/i14y/concept/legalForm
+
+        '
+      description_fr: 'Forme juridique de l''organisation. Voir le vocabulaire contrôlé : https://register.ld.admin.ch/i14y/concept/legalForm
 
         '
     range: LegalFormEnum
@@ -815,6 +1032,10 @@ slots:
         Geschäftsleitung).
 
         '
+      description_fr: 'Comité ou organe au sein de l''organisation (p. ex. conseil d''administration, conseil de fondation,
+        comité directeur, conseil de surveillance, comité consultatif, direction).
+
+        '
   function_role:
     slot_uri: act:functionRole
     description: 'Function or role in the organization (e.g., Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in,
@@ -826,6 +1047,10 @@ slots:
         Geschäftsführer/in, Berater/in).
 
         '
+      description_fr: 'Fonction ou rôle dans l''organisation (p. ex. président/e, vice-président/e, membre, délégué, directeur/directrice,
+        conseiller/ère).
+
+        '
   names:
     slot_uri: act:name
     description: 'Names of the person with type and value.
@@ -833,6 +1058,9 @@ slots:
       '
     annotations:
       description_de: 'Namen der Person mit Typ und Wert.
+
+        '
+      description_fr: 'Noms de la personne avec type et valeur.
 
         '
     range: Name
@@ -847,6 +1075,9 @@ slots:
       description_de: 'Sprachkompetenzen der Person.
 
         '
+      description_fr: 'Compétences linguistiques de la personne.
+
+        '
     range: LanguageProficiency
     multivalued: true
     inlined_as_list: true
@@ -857,6 +1088,9 @@ slots:
       '
     annotations:
       description_de: 'Staatsbürgerschaften der Person.
+
+        '
+      description_fr: 'Nationalités de la personne.
 
         '
     range: Citizenship
@@ -871,6 +1105,9 @@ slots:
       description_de: 'Geschlecht der Person.
 
         '
+      description_fr: 'Sexe de la personne.
+
+        '
     range: Gender
     multivalued: true
     inlined_as_list: true
@@ -881,6 +1118,9 @@ slots:
       '
     annotations:
       description_de: 'Berufe oder Tätigkeiten der Person.
+
+        '
+      description_fr: 'Métiers ou professions de la personne.
 
         '
     range: Occupation
@@ -895,6 +1135,10 @@ slots:
       description_de: 'Ausbildungen oder Bildungen der Person. Richtlinie: Im Grundsatz nur die höchste Ausbildung angeben.
 
         '
+      description_fr: 'Formations ou éducations de la personne. Directive : n''indiquer en principe que la qualification la
+        plus élevée obtenue.
+
+        '
     range: Training
     multivalued: true
     inlined_as_list: true
@@ -907,6 +1151,9 @@ slots:
       description_de: 'Link zum Wahlbezirk.
 
         '
+      description_fr: 'Lien vers la circonscription électorale.
+
+        '
     range: ElectoralDistrict
   persons:
     slot_uri: act:person
@@ -915,6 +1162,9 @@ slots:
       '
     annotations:
       description_de: 'Sammlung von Personen.
+
+        '
+      description_fr: 'Collection de personnes.
 
         '
     range: Person
@@ -929,6 +1179,9 @@ slots:
       description_de: 'Sammlung von Gruppen.
 
         '
+      description_fr: 'Collection de groupes.
+
+        '
     range: Group
     multivalued: true
     inlined_as_list: true
@@ -939,6 +1192,9 @@ slots:
       '
     annotations:
       description_de: 'Sammlung von Mitgliedschaften.
+
+        '
+      description_fr: 'Collection d''affiliations.
 
         '
     range: Membership
@@ -953,6 +1209,9 @@ slots:
       description_de: 'Sammlung von Interessenbindungen.
 
         '
+      description_fr: 'Collection de liens d''intérêts.
+
+        '
     range: InterestLink
     multivalued: true
     inlined_as_list: true
@@ -964,6 +1223,9 @@ slots:
       description_de: 'Beschreibende Bezeichnung für die Rolle, wenn ''other'' im RoleEnum ausgewählt ist.
 
         '
+      description_fr: 'Libellé descriptif du rôle lorsque « other » est sélectionné dans RoleEnum.
+
+        '
 enums:
   NameTypeEnum:
     description: 'Categories of name types according to eCH-0011 (personNameData) and https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master,
@@ -973,6 +1235,11 @@ enums:
     annotations:
       description_de: 'Kategorien von Namenstypen gemäss eCH-0011 (personNameData) und https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master,
         URI gemäss I14Y Identifier aber als Klasse und nicht als Attribut. Beschreibungen und Übersetzungen gemäss I14Y.
+
+        '
+      description_fr: 'Catégories de types de noms selon eCH-0011 (personNameData) et https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master,
+        URI selon l''identifiant I14Y mais en tant que classe et non en tant qu''attribut. Descriptions et traductions selon
+        I14Y.
 
         '
     permissible_values:
@@ -994,6 +1261,15 @@ enums:
             vorliegen). Der amtliche Name kann aus einem oder mehreren Teilen bestehen.
 
             '
+          description_fr: 'Selon le catalogue officiel des caractères (n° 211) pour l''harmonisation des registres : nom selon
+            les documents officiels. Le nom officiel correspond au nom figurant dans le registre suisse de l''état civil.
+            Pour les ressortissants étrangers n''ayant pas d''événement d''état civil en Suisse, le nom officiel correspond
+            au nom figurant sur le passeport étranger ou la carte d''identité (voir « Nom selon le passeport étranger » ou
+            les directives du SEM sur la détermination et l''orthographe des noms des ressortissants étrangers du 1er janvier
+            2012. En l''absence de documents officiels, voir également « Nom selon la déclaration » (p. ex. dans le cas de
+            requérants d''asile). Le nom officiel peut se composer d''une ou de plusieurs parties.
+
+            '
         meaning: https://register.ld.admin.ch/i14y/concept/personOfficialName
       PersonOriginalName:
         description: 'According to the official catalogue of characters (No. 212) for the harmonisation of registers: Name
@@ -1007,6 +1283,12 @@ enums:
             amtlichen Unterlagen, den eine Person unmittelbar vor ihrer ersten Eheschliessung oder Begründung einer eingetragenen
             Partnerschaft geführt hat oder, gestützt auf einen Namensänderungsentscheid, als neuen Ledignamen erworben hat
             (Art. 24 Abs. 2 ZStV, SR 211.112.2).
+
+            '
+          description_fr: 'Selon le catalogue officiel des caractères (n° 212) pour l''harmonisation des registres : nom de
+            filiation selon les documents officiels, qui correspond au nom porté par la personne avant son premier mariage
+            ou son premier partenariat enregistré. Il peut également s''agir d''un nom de célibataire acquis par une décision
+            de changement de nom (voir art. 24, al. 2 OEC, RS 211.112.2).
 
             '
         meaning: https://register.ld.admin.ch/i14y/concept/personOriginalName
@@ -1028,6 +1310,14 @@ enums:
             der Identitätskarte eingetragen werden.
 
             '
+          description_fr: 'Selon le catalogue officiel des caractères (n° 213) pour l''harmonisation des registres : le nom
+            d''alliance montre le lien entre deux personnes mariées ou vivant en partenariat enregistré. Un nom d''alliance
+            déjà utilisé peut être conservé après la dissolution du mariage ou du partenariat si le nom officiel n''a pas
+            été modifié lors de la dissolution. Il est rattaché au nom officiel par un trait d''union et est formé avec le
+            nom de célibataire du partenaire ou son propre nom de célibataire. Sur demande, le nom d''alliance peut être inscrit
+            dans le passeport ou sur la carte d''identité.
+
+            '
         meaning: https://register.ld.admin.ch/i14y/concept/personAllianceName
       PersonNameOnForeignPassport:
         description: 'According to the official catalogue of characters (No. 214) for the harmonisation of registers: For
@@ -1043,6 +1333,12 @@ enums:
             des Ausweispapieres zu erfassen.
 
             '
+          description_fr: 'Selon le catalogue officiel des caractères (n° 214) pour l''harmonisation des registres : pour
+            les personnes de nationalité étrangère. Ce nom correspond à l''entrée figurant dans la zone lisible par machine
+            du passeport. Si cette zone comporte des noms de famille ou des prénoms abrégés, ceux-ci doivent, dans la mesure
+            du possible, être enregistrés dans leur intégralité, conformément à l''entrée figurant dans le passeport.
+
+            '
         meaning: https://register.ld.admin.ch/i14y/concept/personNameOnForeignPassport
       PersonAliasName:
         description: 'According to the official character catalogue (No. 215) for the harmonisation of registers: Name (e.g.
@@ -1054,6 +1350,12 @@ enums:
           description_de: 'Gemäss amtlichen Katalog der Merkmale (Nr. 215) Registerharmonisierung: Name (z. B. Künstler- oder
             Ordensname), der aufgrund eines bewilligten Gesuchs geführt werden darf. Der Aliasname kann aus einem oder mehreren
             Teilen (z. B. auch aus Aliasvorname und Aliasname) bestehen.
+
+            '
+          description_fr: 'Selon le catalogue officiel des caractères (n° 215) pour l''harmonisation des registres : nom (p.
+            ex. nom de scène, nom religieux) qui, sur la base d''une demande acceptée, peut être porté par la personne. Le
+            nom d''alias peut se composer d''une ou de plusieurs parties (p. ex. également le prénom d''alias et le nom de
+            famille d''alias).
 
             '
         meaning: https://register.ld.admin.ch/i14y/concept/personAliasName
@@ -1069,6 +1371,11 @@ enums:
             Familiennamen noch Vornamen sind.
 
             '
+          description_fr: 'Selon le catalogue officiel des caractères (n° 216) pour l''harmonisation des registres : autres
+            noms officiels selon les documents d''état civil suisses (art. 24, al. 3 OEC) ou selon des documents étrangers,
+            qui ne sont ni des noms de famille ni des prénoms.
+
+            '
         meaning: https://register.ld.admin.ch/i14y/concept/personOtherName
       PersonDeclaredForeignerName:
         description: 'According to the official catalogue of characters (No. 217) for the harmonisation of registers: For
@@ -1080,6 +1387,10 @@ enums:
             Nationalität, die keine offiziellen Dokumente besitzen (hauptsächlich im Asylbereich).
 
             '
+          description_fr: 'Selon le catalogue officiel des caractères (n° 217) pour l''harmonisation des registres : pour
+            les ressortissants étrangers qui ne disposent pas de documents officiels (principalement dans le domaine de l''asile).
+
+            '
         meaning: https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerName
       PersonFirstName:
         description: 'First names taken from the birth certificate, the civil registry (Infostar) in the order in which they
@@ -1089,6 +1400,10 @@ enums:
         annotations:
           description_de: 'Gemäss amtlichen Katalog der Merkmale (Nr. 221) Registerharmonisierung: Vornamen gemäss Geburtsurkunde
             oder Zivilstandsregister/Infostar in der aufgeführten Reihenfolge bzw. gemäss ausländischen Ausweispapieren.
+
+            '
+          description_fr: 'Prénoms tirés de l''acte de naissance, du registre de l''état civil (Infostar) dans l''ordre dans
+            lequel ils apparaissent, ou tirés de documents d''identité étrangers.
 
             '
         meaning: https://register.ld.admin.ch/i14y/concept/personFirstName
@@ -1103,6 +1418,10 @@ enums:
             (aus den "amtlichen Vornamen") bestehen.
 
             '
+          description_fr: 'Une personne a le droit de choisir un prénom usuel dans la liste de ses prénoms officiels. Le prénom
+            usuel peut se composer d''un ou de plusieurs prénoms (parmi ceux figurant sous « prénoms officiels »).
+
+            '
         meaning: https://register.ld.admin.ch/i14y/concept/personCallFirstName
       PersonFirstNameOnForeignPassport:
         description: 'For persons of foreign nationality. To be used in combination with the name as it appears on the foreign
@@ -1112,6 +1431,10 @@ enums:
         annotations:
           description_de: 'Gemäss amtlichen Katalog der Merkmale (Nr. 223) Registerharmonisierung: Für Personen mit ausländischer
             Nationalität. Zu benutzen in Verbindung mit dem Namen im ausländischen Pass."
+
+            '
+          description_fr: 'Pour les personnes de nationalité étrangère. À utiliser en combinaison avec le nom tel qu''il figure
+            sur le passeport étranger.
 
             '
         meaning: https://register.ld.admin.ch/i14y/concept/personFirstNameOnForeignPassport
@@ -1126,6 +1449,10 @@ enums:
             mit dem Namen gemäss Deklaration.
 
             '
+          description_fr: 'Pour les personnes de nationalité étrangère qui ne disposent pas de documents officiels (principalement
+            dans le domaine de l''asile). À utiliser en combinaison avec le nom défini selon la déclaration.
+
+            '
         meaning: https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerFirstName
   AddressTypeEnum:
     description: 'Types of addresses.
@@ -1133,6 +1460,9 @@ enums:
       '
     annotations:
       description_de: 'Adresstypen.
+
+        '
+      description_fr: 'Types d''adresses.
 
         '
     permissible_values:
@@ -1144,12 +1474,18 @@ enums:
           description_de: 'Privatadresse.
 
             '
+          description_fr: 'Adresse privée.
+
+            '
       businessAddress:
         description: 'Business address.
 
           '
         annotations:
           description_de: 'Geschäftsadresse.
+
+            '
+          description_fr: 'Adresse professionnelle.
 
             '
       localAddress:
@@ -1160,12 +1496,18 @@ enums:
           description_de: 'Lokaladresse.
 
             '
+          description_fr: 'Adresse locale.
+
+            '
   TrainingTypeEnum:
     description: 'Types of training or education based on the Swiss BFS LEVEL_EDUC codelist.
 
       '
     annotations:
       description_de: 'Ausbildungs- oder Bildungstypen basierend auf der BFS LEVEL_EDUC Codeliste.
+
+        '
+      description_fr: 'Types de formation ou d''éducation basés sur la liste de codes suisse LEVEL_EDUC de l''OFS.
 
         '
     permissible_values:
@@ -1486,6 +1828,9 @@ enums:
       description_de: 'Kontaktinformationstypen.
 
         '
+      description_fr: 'Types d''informations de contact.
+
+        '
     permissible_values:
       email:
         description: 'Email address.
@@ -1493,6 +1838,9 @@ enums:
           '
         annotations:
           description_de: 'E-Mail-Adresse.
+
+            '
+          description_fr: 'Adresse e-mail.
 
             '
       contact_website:
@@ -1503,12 +1851,18 @@ enums:
           description_de: 'Kontakt-Website.
 
             '
+          description_fr: 'Site web de contact.
+
+            '
       linked_in:
         description: 'LinkedIn profile.
 
           '
         annotations:
           description_de: 'LinkedIn-Profil.
+
+            '
+          description_fr: 'Profil LinkedIn.
 
             '
       twitter:
@@ -1519,12 +1873,18 @@ enums:
           description_de: 'Twitter-Profil.
 
             '
+          description_fr: 'Profil Twitter.
+
+            '
   RoleEnum:
     description: 'Roles a person can have within a membership.
 
       '
     annotations:
       description_de: 'Rollen, die eine Person im Rahmen einer Mitgliedschaft haben kann.
+
+        '
+      description_fr: 'Rôles qu''une personne peut occuper dans le cadre d''une affiliation.
 
         '
     permissible_values:
@@ -1536,12 +1896,18 @@ enums:
           description_de: 'Gewöhnliches Mitglied (Standard).
 
             '
+          description_fr: 'Membre ordinaire (par défaut).
+
+            '
       president:
         description: 'President or chair of the group.
 
           '
         annotations:
           description_de: 'Präsident oder Vorsitzender der Gruppe.
+
+            '
+          description_fr: 'Président ou président du groupe.
 
             '
       stellvertreter:
@@ -1552,6 +1918,9 @@ enums:
           description_de: 'Stellvertreter / Vize.
 
             '
+          description_fr: 'Rôle de suppléant/vice (stellvertreter).
+
+            '
       other:
         description: 'Other role; use role_label for a descriptive label.
 
@@ -1560,12 +1929,18 @@ enums:
           description_de: 'Andere Rolle; für eine beschreibende Bezeichnung role_label verwenden.
 
             '
+          description_fr: 'Autre rôle ; utiliser role_label pour un libellé descriptif.
+
+            '
   GroupTypeEnum:
     description: 'Types of political groups and organizations.
 
       '
     annotations:
       description_de: 'Typen politischer Gruppen und Organisationen.
+
+        '
+      description_fr: 'Types de groupes et d''organisations politiques.
 
         '
     permissible_values:
@@ -1580,6 +1955,10 @@ enums:
             Gruppe geführt (z.B. Bundespartei, Kantonspartei, Gemeindesektion).
 
             '
+          description_fr: 'Parti politique au niveau fédéral, cantonal ou communal. Chaque niveau fédéral est géré comme un
+            groupe distinct (p. ex. parti national, parti cantonal, parti communal).
+
+            '
       list:
         meaning: act:enum/group_type/list
         description: 'Electoral list (can be part of a party or independent).
@@ -1589,6 +1968,9 @@ enums:
           description_de: 'Wahlliste (kann Teil einer Partei sein oder unabhängig).
 
             '
+          description_fr: 'Liste électorale (peut faire partie d''un parti ou être indépendante).
+
+            '
       workgroup:
         meaning: act:enum/group_type/workgroup
         description: 'Ad-hoc working group, typically with a limited duration.
@@ -1596,6 +1978,9 @@ enums:
           '
         annotations:
           description_de: 'Ad-hoc-Arbeitsgruppe, typischerweise mit begrenzter Laufzeit.
+
+            '
+          description_fr: 'Groupe de travail ad hoc, généralement d''une durée limitée.
 
             '
       parliament:
@@ -1609,6 +1994,10 @@ enums:
             Grosser Rat, Kantonsrat, Gemeindeparlament).
 
             '
+          description_fr: 'Parlement au niveau fédéral, cantonal ou communal (p. ex. Assemblée fédérale, Conseil national,
+            Conseil des États, Grand Conseil, parlement cantonal, parlement communal).
+
+            '
       delegation:
         meaning: act:enum/group_type/delegation
         description: 'Delegation.
@@ -1616,6 +2005,9 @@ enums:
           '
         annotations:
           description_de: 'Delegation.
+
+            '
+          description_fr: 'Délégation.
 
             '
       commission:
@@ -1629,6 +2021,11 @@ enums:
             Parlamentarische Untersuchungskommissionen (PUK) und Rechnungsprüfungskommissionen.
 
             '
+          description_fr: 'Commission (permanente ou ad hoc), y compris les commissions de surveillance (p. ex. CdG), les
+            commissions thématiques, les commissions d''enquête parlementaire (CEP) et les commissions de vérification des
+            comptes.
+
+            '
       faction:
         meaning: act:enum/group_type/faction
         description: 'Parliamentary faction.
@@ -1636,6 +2033,9 @@ enums:
           '
         annotations:
           description_de: 'Parlamentsfraktion.
+
+            '
+          description_fr: 'Groupe parlementaire.
 
             '
       parliamentary_bureau:
@@ -1647,6 +2047,9 @@ enums:
           description_de: 'Parlamentsbüro.
 
             '
+          description_fr: 'Bureau du parlement.
+
+            '
       presidency:
         meaning: act:enum/group_type/presidency
         description: 'Presidency of parliament.
@@ -1654,6 +2057,9 @@ enums:
           '
         annotations:
           description_de: 'Präsidium des Parlaments.
+
+            '
+          description_fr: 'Présidence du parlement.
 
             '
       government:
@@ -1666,6 +2072,10 @@ enums:
           description_de: 'Regierung / Exekutive als Gesamtorgan (z.B. Bundesrat, Regierungsrat, Stadtrat / Gemeinderat).
 
             '
+          description_fr: 'Gouvernement / exécutif en tant qu''organe collégial (p. ex. Conseil fédéral, conseil d''État,
+            conseil municipal ou conseil communal).
+
+            '
       department:
         meaning: act:enum/group_type/department
         description: 'Government department.
@@ -1675,6 +2085,9 @@ enums:
           description_de: 'Departement.
 
             '
+          description_fr: 'Département gouvernemental.
+
+            '
       office:
         meaning: act:enum/group_type/office
         description: 'Government office.
@@ -1682,6 +2095,9 @@ enums:
           '
         annotations:
           description_de: 'Amt.
+
+            '
+          description_fr: 'Office gouvernemental.
 
             '
       extraparliamentary_commission:
@@ -1695,6 +2111,10 @@ enums:
             FINMA).
 
             '
+          description_fr: 'Commission extraparlementaire dotée d''un mandat gouvernemental (p. ex. Conseil de banque de la
+            Banque nationale suisse, FINMA).
+
+            '
       interest_group:
         meaning: act:enum/group_type/interest_group
         description: 'Interest group from civil society.
@@ -1702,6 +2122,9 @@ enums:
           '
         annotations:
           description_de: 'Interessengruppe aus der Zivilgesellschaft.
+
+            '
+          description_fr: 'Groupe d''intérêts issu de la société civile.
 
             '
       control_body:
@@ -1713,6 +2136,10 @@ enums:
           description_de: 'Kontroll- oder Aufsichtsorgan (z.B. Eidgenössische Finanzkontrolle EFK, Aufsichtsbehörde AB-BA).
 
             '
+          description_fr: 'Organe de contrôle ou de surveillance (p. ex. Contrôle fédéral des finances CDF, autorité de surveillance
+            AS-MPC).
+
+            '
       parliamentary_services:
         meaning: act:enum/group_type/parliamentary_services
         description: 'Parliamentary services.
@@ -1720,6 +2147,9 @@ enums:
           '
         annotations:
           description_de: 'Parlamentsdienste.
+
+            '
+          description_fr: 'Services du parlement.
 
             '
       court:
@@ -1731,6 +2161,10 @@ enums:
           description_de: 'Gericht / Judikative auf jeder Ebene (z.B. Bundesgericht, Kantonsgericht, Bezirksgericht).
 
             '
+          description_fr: 'Tribunal / pouvoir judiciaire à tout niveau (p. ex. Tribunal fédéral, tribunal cantonal, tribunal
+            de district).
+
+            '
       association:
         meaning: act:enum/group_type/association
         description: 'Association.
@@ -1738,6 +2172,9 @@ enums:
           '
         annotations:
           description_de: 'Verein.
+
+            '
+          description_fr: 'Association.
 
             '
       petition_carrier:
@@ -1749,6 +2186,9 @@ enums:
           description_de: 'Petitionsträger.
 
             '
+          description_fr: 'Porteur de pétition.
+
+            '
       university:
         meaning: act:enum/group_type/university
         description: 'University or educational institution as an outsourced provider of public tasks.
@@ -1756,6 +2196,9 @@ enums:
           '
         annotations:
           description_de: 'Universität oder Bildungseinrichtung als ausgelagerter Träger öffentlicher Aufgaben.
+
+            '
+          description_fr: 'Université ou établissement d''enseignement en tant que prestataire externalisé de tâches publiques.
 
             '
       other:
@@ -1767,12 +2210,18 @@ enums:
           description_de: 'Anderer Gruppentyp, nicht durch Standardkategorien abgedeckt.
 
             '
+          description_fr: 'Autre type de groupe non couvert par les catégories standard.
+
+            '
   InterestTypeEnum:
     description: 'Types of interest links (conflicts of interest, political financing).
 
       '
     annotations:
       description_de: 'Typen von Interessenbindungen (Interessenkonflikte, Politikfinanzierung).
+
+        '
+      description_fr: 'Types de liens d''intérêts (conflits d''intérêts, financement politique).
 
         '
     permissible_values:
@@ -1787,6 +2236,10 @@ enums:
             Beratungsmandate, Verwaltungsratsmandate in Privatunternehmen).
 
             '
+          description_fr: 'Activité professionnelle en dehors du mandat politique (p. ex. emploi salarié, activité indépendante,
+            conseil, mandats d''administrateur dans des entreprises privées).
+
+            '
       political_office:
         meaning: act:enum/interest_type/political_office
         description: 'Political office or mandate at other federal levels or in other bodies (e.g., cantonal/municipal parliament
@@ -1796,6 +2249,10 @@ enums:
         annotations:
           description_de: 'Politisches Amt oder Mandat auf anderen föderalen Ebenen oder in anderen Körperschaften (z.B. Mitgliedschaft
             in kantonalen/kommunalen Parlamenten, Regierungsrat, ausserparlamentarische Kommission).
+
+            '
+          description_fr: 'Mandat ou fonction politique à d''autres niveaux fédéraux ou dans d''autres collectivités (p. ex.
+            appartenance à un parlement cantonal/communal, conseil d''État, commission extraparlementaire).
 
             '
       association:
@@ -1809,6 +2266,10 @@ enums:
             Lobbyorganisationen, Stiftungen, gemeinnützige Vereine).
 
             '
+          description_fr: 'Appartenance à des associations, des fédérations ou des organisations d''intérêts (p. ex. associations
+            de branche, associations professionnelles, organisations de lobbying, fondations, associations d''utilité publique).
+
+            '
   GenderCodeEnum:
     description: 'Gender codes for persons. If the gender is not known, no gender entry shall be added. The `diverse` code
       shall be used together with a label to provide further details about the self-identified gender.
@@ -1820,25 +2281,41 @@ enums:
         selbst deklarierten Geschlecht bereitzustellen.
 
         '
+      description_fr: 'Codes de sexe pour les personnes. Si le sexe n''est pas connu, aucune entrée de sexe ne doit être ajoutée.
+        Le code `diverse` doit être utilisé avec un libellé afin de fournir de plus amples détails sur le sexe auto-déclaré.
+
+        '
     permissible_values:
       male:
         description: Male.
         annotations:
           description_de: Männlich.
+          description_fr: 'Masculin.
+
+            '
       female:
         description: Female.
         annotations:
           description_de: Weiblich.
+          description_fr: 'Féminin.
+
+            '
       diverse:
         description: Diverse / non-binary.
         annotations:
           description_de: Divers / nicht-binär.
+          description_fr: 'Divers / non binaire.
+
+            '
   LegalFormEnum:
     description: 'Legal forms based on the Swiss UID register codelist (eCH-0108). See https://register.ld.admin.ch/i14y/concept/legalForm
 
       '
     annotations:
       description_de: 'Rechtsformen basierend auf der Codeliste des eidgenössischen UID-Registers (eCH-0098). Siehe https://register.ld.admin.ch/i14y/concept/legalForm
+
+        '
+      description_fr: 'Formes juridiques basées sur la liste de codes du registre fédéral IDE (eCH-0108). Voir https://register.ld.admin.ch/i14y/concept/legalForm
 
         '
     permissible_values:

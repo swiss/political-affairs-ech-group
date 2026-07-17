@@ -6,7 +6,7 @@ search:
 # Slot: postal_locality 
 
 
-_Locality._
+_Localité._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:postalLocality](https://ld.ech.ch/schema/0294/actors/postalLocality)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Address](Address.md) | An address with a type (e |  no  |
+| [Address](Address.md) | Une adresse avec un type (p |  no  |
 
 
 
@@ -78,7 +78,12 @@ annotations:
     value: 'Ort.
 
       '
-description: 'Locality.
+  description_fr:
+    tag: description_fr
+    value: 'Localité.
+
+      '
+description: 'Localité.
 
   '
 examples:

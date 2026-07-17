@@ -6,7 +6,7 @@ search:
 # Slot: is_native 
 
 
-_Indicates if this is the native language._
+_Indique s'il s'agit de la langue maternelle._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:isNative](https://ld.ech.ch/schema/0294/actors/isNative)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [LanguageProficiency](LanguageProficiency.md) | Language proficiency of a person indicating the language and whether it is th... |  no  |
+| [LanguageProficiency](LanguageProficiency.md) | Compétences linguistiques d'une personne indiquant la langue et le fait qu'il... |  no  |
 
 
 
@@ -71,7 +71,12 @@ annotations:
     value: 'Gibt an, ob es sich um die Muttersprache handelt.
 
       '
-description: 'Indicates if this is the native language.
+  description_fr:
+    tag: description_fr
+    value: 'Indique s''il s''agit de la langue maternelle.
+
+      '
+description: 'Indique s''il s''agit de la langue maternelle.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

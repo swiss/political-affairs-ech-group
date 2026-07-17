@@ -6,7 +6,7 @@ search:
 # Slot: birth_date 
 
 
-_Exact date of birth if available and public. This field has precedence over the field `birthYear`._
+_Date de naissance exacte si disponible et publique. Ce champ prime sur le champ `birthYear`._
 
 __
 
@@ -27,7 +27,7 @@ URI: [schema:birthDate](http://schema.org/birthDate)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Person](Person.md) | Une personne avec des identifiants, des noms, des adresses, des nationalités ... |  no  |
 
 
 
@@ -79,8 +79,14 @@ annotations:
       Vorrang vor dem Feld `birthYear`.
 
       '
-description: 'Exact date of birth if available and public. This field has precedence
-  over the field `birthYear`.
+  description_fr:
+    tag: description_fr
+    value: 'Date de naissance exacte si disponible et publique. Ce champ prime sur
+      le champ `birthYear`.
+
+      '
+description: 'Date de naissance exacte si disponible et publique. Ce champ prime sur
+  le champ `birthYear`.
 
   '
 examples:

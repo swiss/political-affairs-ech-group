@@ -6,7 +6,7 @@ search:
 # Slot: memberships 
 
 
-_Collection of memberships._
+_Collection d'affiliations._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:membership](https://ld.ech.ch/schema/0294/actors/membership)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Container](Container.md) | Container for political actors, groups, and relationships |  no  |
+| [Container](Container.md) | Conteneur pour les acteurs politiques, les groupes et les relations |  no  |
 
 
 
@@ -72,7 +72,12 @@ annotations:
     value: 'Sammlung von Mitgliedschaften.
 
       '
-description: 'Collection of memberships.
+  description_fr:
+    tag: description_fr
+    value: 'Collection d''affiliations.
+
+      '
+description: 'Collection d''affiliations.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

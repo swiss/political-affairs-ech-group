@@ -73,6 +73,13 @@ annotations:
       und Gäste.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Indique si la personne dispose du droit de vote au sein du groupe. Généralement
+      false pour les membres suppléants (lorsqu''ils ne remplacent personne), les
+      observateurs, les secrétaires et les invités.
+
+      '
 description: 'Indicates if the person is authorized to vote in the group. Typically
   false for substitute members (when not deputizing), observers, secretaries, and
   guests.

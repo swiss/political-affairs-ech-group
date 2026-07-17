@@ -3,7 +3,7 @@
 ## Classe: HasIdentification 
 
 
-_A mixin class that provides slots for the identification of an entity._
+_Une classe mixin qui fournit des slots pour l'identification d'une entité._
 
 __
 
@@ -18,9 +18,9 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system.  |
-| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity.  |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.  |
+| local_id | 0..1 <br/> [String](String.md) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil.  |
+| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI unique et globalement valide pour l'entité.  |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q39 pour la Suisse.  |
 
 
 
@@ -28,13 +28,13 @@ __
 
 | mixed into | description |
 | --- | --- |
-| [Container](Container.md) | Container for political actors, groups, and relationships |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |
-| [Group](Group.md) | A political group, organization, or body (e |
-| [Membership](Membership.md) | A membership relationship between a person and a group, representing formal a... |
-| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |
-| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |
-| [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |
+| [Container](Container.md) | Conteneur pour les acteurs politiques, les groupes et les relations |
+| [Person](Person.md) | Une personne avec des identifiants, des noms, des adresses, des nationalités ... |
+| [Group](Group.md) | Un groupe, une organisation ou une collectivité politique (p |
+| [Membership](Membership.md) | Une relation d'affiliation entre une personne et un groupe, représentant une ... |
+| [InterestLink](InterestLink.md) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |
+| [PersonReference](PersonReference.md) | Référence légère à une personne avec les principales données d'identification... |
+| [GroupReference](GroupReference.md) | Référence légère à un groupe avec les principales données d'identification au... |
 
 
 

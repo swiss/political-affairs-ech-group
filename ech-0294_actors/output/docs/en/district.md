@@ -78,6 +78,11 @@ annotations:
     value: 'Wahlkreis oder Wahlregion.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Circonscription ou région électorale.
+
+      '
 description: 'Electoral district or region.
 
   '

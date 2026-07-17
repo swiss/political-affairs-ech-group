@@ -3,7 +3,7 @@
 ## Classe: MultilingualValue 
 
 
-_A multilingual string with language specification._
+_Une chaîne de caractères multilingue avec indication de la langue._
 
 __
 
@@ -18,8 +18,8 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| value | 0..1 <br/> [String](String.md) | The value of an information besides other attributes such as type, language, etc.  |
-| language | 0..1 <br/> [String](String.md) | Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en").  |
+| value | 0..1 <br/> [String](String.md) | La valeur proprement dite d'une information, en plus d'autres attributs tels que le type, la langue, etc.  |
+| language | 0..1 <br/> [String](String.md) | Code de langue au format ISO 639-1 (deux lettres minuscules, par ex. « de », « fr », « it », « en »).  |
 
 
 

@@ -6,7 +6,7 @@ search:
 # Slot: gender_code 
 
 
-_Gender code. Recommended values: male, female, diverse._
+_Code de sexe. Valeurs recommandées : male, female, diverse._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:genderCode](https://ld.ech.ch/schema/0294/actors/genderCode)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Gender](Gender.md) | Gender of a person indicating a gender code and temporal validity |  no  |
+| [Gender](Gender.md) | Sexe d'une personne indiquant un code de sexe et la validité temporelle |  no  |
 
 
 
@@ -78,7 +78,12 @@ annotations:
     value: 'Geschlechtscode. Empfohlene Werte: male, female, diverse .
 
       '
-description: 'Gender code. Recommended values: male, female, diverse.
+  description_fr:
+    tag: description_fr
+    value: 'Code de sexe. Valeurs recommandées : male, female, diverse.
+
+      '
+description: 'Code de sexe. Valeurs recommandées : male, female, diverse.
 
   '
 examples:

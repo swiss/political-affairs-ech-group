@@ -71,6 +71,12 @@ annotations:
     value: 'Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Référence à un groupe avec des données instantanées au moment de la mise
+      en relation.
+
+      '
 description: 'Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
 
   '

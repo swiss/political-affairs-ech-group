@@ -1,36 +1,36 @@
 ---
-title: "eCH-0294 Politische Akteure: Personen, Gruppen und Organe"
-lang: de
+title: "eCH-0294 Political Actors: Persons, Groups and Bodies"
+lang: en
 toc: false
 ---
 
-| **Name**              | **Politische Akteure: Personen, Gruppen und Organe**                                                                       |
+| **Name**              | **Political Actors: Persons, Groups and Bodies**                                                                       |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------|
-| **eCH-Nummer**        | eCH-0294                                                                                                                   |
-| **Kategorie**         | Entwurf                                                                                                                    |
-| **Reifegrad**         | Fachgruppen interner Review                                                                                                |
+| **eCH number**        | eCH-0294                                                                                                                   |
+| **Category**          | Draft                                                                                                                    |
+| **Maturity level**    | Specialist group internal review                                                                                                |
 | **Version**           | 0.2                                                                                                                        |
 | **Status**            |                                                                                                 |
-| **Beschluss am**      |                                                                                                                            |
-| **Ausgabedatum**      |                                                                                                                            |
-| **Ersetzt Version**   | 0.0                                                                                                                        |
-| **Voraussetzungen**   | eCH-0292 (Gemeinsame Datenelemente)                                                                                        |
-| **Beilagen**          | -                                                                                                                          |
-| **Sprachen**          | Deutsch (Original) - English (Datamodel)                                                                                    |
-| **Autoren**           | Fachgruppe politische Geschäfte: Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi, Christian Gutknecht, Michael Luggen |
-| **Herausgeber / Vertrieb** | Verein eCH, [Affolternstrasse 52, 8050 Zürich](https://geo.ld.admin.ch/location/address/101218624)                             |
+| **Adopted on**        |                                                                                                                            |
+| **Issue date**        |                                                                                                                            |
+| **Replaces version**  | 0.0                                                                                                                        |
+| **Prerequisites**     | eCH-0292 (Common Data Elements)                                                                        |
+| **Annexes**           | -                                                                                                                          |
+| **Languages**         | German (original) - English (data model)                                                                                    |
+| **Authors**           | Specialist group political affairs: Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi, Christian Gutknecht, Michael Luggen |
+| **Publisher / Distribution** | eCH Association, [Affolternstrasse 52, 8050 Zürich](https://geo.ld.admin.ch/location/address/101218624)                             |
 
 \newpage
 
-# Abstrakt
+# Abstract
 
-Der Entwurf eCH-0294 „Politische Akteure: Personen, Gruppen und Organe“ definiert ein einheitliches Datenmodell zur strukturierten Publikation politischer Akteure in der Schweiz. Er umfasst natürliche Personen, politische Gruppen und Organe, Mitgliedschaften zwischen Personen und Gruppen sowie Interessenbindungen. Ziel ist es, föderal übergreifend vergleichbare, maschinenlesbare und nachnutzbare Informationen bereitzustellen, um Transparenz, Nachvollziehbarkeit und Analysefähigkeit politischer Prozesse zu verbessern.
+The draft eCH-0294 "Political Actors: Persons, Groups and Bodies" defines a uniform data model for the structured publication of political actors in Switzerland. It covers natural persons, political groups and bodies, memberships between persons and groups, as well as interest links. The aim is to provide comparable, machine-readable and reusable information across all federal levels in order to improve the transparency, traceability and analytical capability of political processes.
 
-Der Standard richtet sich an öffentliche Stellen aller Staatsebenen, politische Akteure, Medien, Forschung und Öffentlichkeit und schafft eine Grundlage für interoperable politische Informationssysteme in der Schweiz.
+The standard is aimed at public bodies at all levels of government, political actors, the media, research and the general public, and it creates a foundation for interoperable political information systems in Switzerland.
 
 \newpage
 
-# Inhaltsverzeichnis
+# Table of Contents
 
 ```{=openxml}
 <w:p>
@@ -38,13 +38,13 @@ Der Standard richtet sich an öffentliche Stellen aller Staatsebenen, politische
     <w:fldChar w:fldCharType="begin" w:dirty="true"/>
   </w:r>
   <w:r>
-    <w:instrText xml:space="preserve"> TOC \o "1-3" \h \z \u </w:instrText>
+    <w:instrText xml:space="preserve"> TOC \o "1-2" \h \z \u </w:instrText>
   </w:r>
   <w:r>
     <w:fldChar w:fldCharType="separate"/>
   </w:r>
   <w:r>
-    <w:t>Rechtsklick &gt; „Felder aktualisieren“, um das Inhaltsverzeichnis zu erzeugen.</w:t>
+    <w:t>Right-click &gt; "Update field" to generate the table of contents.</w:t>
   </w:r>
   <w:r>
     <w:fldChar w:fldCharType="end"/>
@@ -52,60 +52,60 @@ Der Standard richtet sich an öffentliche Stellen aller Staatsebenen, politische
 </w:p>
 ```
 
-
 \newpage
 
-# Einleitung
+# Introduction
 
-## Die Standardfamilie „Politische Geschäfte"
+## The "Political Affairs" standard family
 
-Das politische Geschehen der Schweiz findet auf Bundes-, Kantons- und Gemeindeebene statt – in Parlamenten und Gemeindeversammlungen, in Exekutiven und Verwaltungen, in Vernehmlassungen und Konsultationen sowie über die direktdemokratische Mitwirkung der Stimmberechtigten. Die Fachgruppe „Politische Geschäfte" des Vereins eCH entwickelt dafür eine Familie aufeinander abgestimmter Standards, welche diese Daten föderal übergreifend strukturieren. Die Standards nutzen gemeinsame Datenelemente (eCH-0292) und referenzieren sich gegenseitig über eindeutige Identifikatoren.
+Political activity in Switzerland takes place at federal, cantonal and communal level – in parliaments and communal assemblies, in executives and administrations, in consultations and hearings, as well as through the direct-democratic participation of eligible voters. To this end, the "Political Affairs" specialist group of the eCH Association is developing a family of coordinated standards that structure this data across all federal levels. The standards use common data elements (eCH-0292) and reference one another via unique identifiers.
 
-Die Familie umfasst:
+The family comprises:
 
-- **eCH-0292 – Gemeinsame Datenelemente (Meta):** Definiert die übergreifend genutzten Datenelemente und Metaprozesse, auf denen die übrigen Standards aufbauen.
-- **eCH-0293 – Öffentlicher Ratsbetrieb (Operations):** Beschreibt den öffentlichen Ratsbetrieb – Sitzungen, Traktanden, Wortmeldungen sowie Abstimmungen und Wahlen.
-- **eCH-0294 – Politische Akteure (Actors) – dieser Standard:** Definiert Personen, Gruppen und Organe im politischen Kontext sowie deren Mitgliedschaften und Interessenbindungen. Die übrigen Standards referenzieren diese Akteure über ihre Identifikatoren.
-- **eCH-0295 – Parlamentarische Geschäfte (Affairs):** Beschreibt den Lebenszyklus politischer Geschäfte.
-- **eCH-0296 – Erlasse und Gesetzestexte (Laws):** Erfasst die Resultate des parlamentarischen Prozesses – die verabschiedeten Gesetze und Erlasse.
-- **eCH-0297 – Öffentliche Konsultationen (Consultations):** Strukturiert Vernehmlassungsverfahren, die oft Ausgangspunkt für parlamentarische Geschäfte sind.
+- **eCH-0292 – Common Data Elements (Meta):** Defines the cross-cutting data elements and meta-processes on which the other standards build.
+- **eCH-0293 – Public Council Operations (Operations):** Describes public council operations – meetings, agenda items, statements, as well as votes and elections.
+- **eCH-0294 – Political Actors (Actors) – this standard:** Defines persons, groups and bodies in the political context, as well as their memberships and interest links. The other standards reference these actors via their identifiers.
+- **eCH-0295 – Parliamentary Affairs (Affairs):** Describes the life cycle of political affairs.
+- **eCH-0296 – Enactments and Legal Texts (Laws):** Records the results of the parliamentary process – the adopted laws and enactments.
+- **eCH-0297 – Public Consultations (Consultations):** Structures consultation procedures, which are often the starting point for parliamentary affairs.
 
-Ziel dieser Standardfamilie ist es, eine gemeinsam nutzbare Struktur für politische Daten zu schaffen und Organisationen, die Informationen zu politischen Geschäften veröffentlichen, ein tragfähiges Datenmodell an die Hand zu geben.
+The aim of this standard family is to create a commonly usable structure for political data and to provide organisations that publish information on political affairs with a robust data model.
 
-## Abgrenzung zur Fachgruppe „Politische Rechte"
+## Distinction from the "Political Rights" specialist group
 
-Neben der Fachgruppe „Politische Geschäfte" besteht beim Verein eCH die Fachgruppe „Politische Rechte". Beide betreffen den politischen Bereich, decken aber unterschiedliche Domänen ab:
+Alongside the "Political Affairs" specialist group, the eCH Association also maintains the "Political Rights" specialist group. Both concern the political domain, but cover different areas:
 
-- **Politische Geschäfte** (diese Standardfamilie) beschreibt den parlamentarischen und behördlichen Willensbildungs- und Entscheidungsprozess: die Akteure (eCH-0294), den Ratsbetrieb (eCH-0293), die parlamentarischen Geschäfte (eCH-0295), die daraus hervorgehenden Erlasse (eCH-0296) sowie die vorgelagerten Vernehmlassungen (eCH-0297).
-- **Politische Rechte** befasst sich mit der Ausübung der politischen Rechte durch die Stimmberechtigten: Stimm- und Wahlregister, die Durchführung von Volksabstimmungen und Wahlen, die elektronische Stimmabgabe (eVoting), Stimmrechtsausweise sowie Abstimmungs- und Wahlergebnisse (u.a. eCH-0045, eCH-0110, eCH-0155, eCH-0157, eCH-0159, eCH-0222, eCH-0228, eCH-0252, eCH-0310).
+- **Political Affairs** (this standard family) describes the parliamentary and governmental process of forming opinions and reaching decisions: the actors (eCH-0294), council operations (eCH-0293), parliamentary affairs (eCH-0295), the enactments arising from them (eCH-0296), as well as the upstream consultations (eCH-0297).
+- **Political Rights** deals with the exercise of political rights by eligible voters: voting and electoral registers, the conduct of popular votes and elections, electronic voting (eVoting), voting cards, as well as voting and election results (among others eCH-0045, eCH-0110, eCH-0155, eCH-0157, eCH-0159, eCH-0222, eCH-0228, eCH-0252, eCH-0310).
 
-Berührungspunkte bestehen an zwei Stellen:
+There are two points of contact:
 
-- **Abstimmungen und Wahlen:** eCH-0293 erfasst Abstimmungen und Wahlen **innerhalb des Ratsbetriebs** (z.B. namentliche Abstimmungen im Parlament oder die Wahl von Behördenmitgliedern durch den Rat), während Volksabstimmungen und Volkswahlen samt der zugehörigen Register, Durchführung und Ergebnisse von der Fachgruppe „Politische Rechte" abgedeckt werden.
-- **Gewählte Personen:** In den Wahlergebnissen der Fachgruppe „Politische Rechte" erscheinen Kandidierende und Gewählte. Sobald Personen ein Mandat innehaben, werden sie in eCH-0294 als politische Akteurinnen und Akteure mit ihren Rollen und Mitgliedschaften geführt.
+- **Votes and elections:** eCH-0293 records votes and elections **within council operations** (e.g. recorded votes in parliament or the election of authority members by the council), whereas popular votes and popular elections, together with the associated registers, conduct and results, are covered by the "Political Rights" specialist group.
+- **Elected persons:** Candidates and elected persons appear in the election results of the "Political Rights" specialist group. As soon as persons hold a mandate, they are recorded in eCH-0294 as political actors with their roles and memberships.
 
-## Der Standard eCH-0294 – Politische Akteure
+## The eCH-0294 standard – Political Actors
 
-Dieser Standard definiert vier Hauptklassen:
+This standard defines four main classes:
 
-- **Person** – Natürliche Personen im politischen Kontext
-- **Group** – Gremien, Parteien, Fraktionen, Räte, Kommissionen, Organisationen etc.
-- **Membership** – Verbindung zwischen Personen und Gruppen
-- **InterestLink** – Interessenbindungen von Personen
+- **Person** – Natural persons in the political context
+- **Group** – Committees, parties, parliamentary groups, councils, commissions, organisations, etc.
+- **Membership** – Link between persons and groups
+- **InterestLink** – Interest links of persons
 
-`Membership` ist das zentrale Bindeglied zwischen `Person` und `Group` und hält fest, in welchem Parlament, in welcher Kommission etc. eine Person aktiv ist oder war. `InterestLink` ermöglicht die Beschreibung von Interessenbindungen.
+`Membership` is the central connecting element between `Person` and `Group` and records in which parliament, in which commission, etc. a person is or was active. `InterestLink` enables the description of interest links.
+
 \newpage
 
 # Person
 
-Das Personenschema beschreibt natürliche Personen im politischen Kontext.
+The person schema describes natural persons in the political context.
 
-- **Stabile Person, zeitlich gültige Merkmale:** Die `Person` selbst trägt keine zeitliche Gültigkeit, ihre Merkmale hingegen schon – Name, Staatsangehörigkeit, Geschlecht, Beruf, Ausbildung und Wahlkreis tragen je eigene `valid_from`/`valid_through`. So bleibt die Identität der Person stabil, während sich einzelne Angaben über die Zeit ändern und die Historie erhalten bleibt (z. B. Namensänderung bei Heirat oder Wechsel des Wahlkreises).
-- **Obligatorischer Anzeigename (`label`) neben strukturierten Namen (`names`):** Jede Person hat einen zwingenden Kurznamen, damit auch bei unvollständigen Angaben immer ein Anzeigename vorhanden ist. Empfohlen wird die Kombination aus amtlichem Namen (`PersonOfficialName`) und Rufname (`PersonCallFirstName`), bei Namensgleichheit ergänzt um das Geburtsjahr. `label_long` nimmt zusätzlich akademische Titel auf; die feingliedrige, typisierte Namensstruktur (`names`) ist optional deren Nutzung ist aber angezeigt. In einigen Fällen ist die Benutzung von spezifischen Typen, wie der amtliche Name (`PersonOfficialName`) eine gesetzliche Vorrausetzung.
-- **Namenstypen nach amtlicher Systematik:** Die Namenstypen (`NameTypeEnum`) folgen der Registerharmonisierung des BFS bzw. eCH-0011 (u. a. amtlicher Name, angestammter Name, Allianzname, Rufname sowie Varianten für ausländische Ausweise). Damit sind die Namen mit den amtlichen Personenregistern kompatibel, und deren Semantik klar.
-- **`birth_year` als datensparsame Alternative zu `birth_date`:** Ist das genaue Geburtsdatum nicht verfügbar oder nicht zur Veröffentlichung bestimmt, kann nur das Geburtsjahr angegeben werden. Liegt ein `birth_date` vor, hat es Vorrang.
-- **Mehrfachwerte statt Einzelwerte:** Namen, Staatsangehörigkeiten und Geschlechtsangaben sind als Listen mit zeitlicher Gültigkeit modelliert – etwa für Doppelbürgerschaften, Namensänderungen oder eine sich ändernde Geschlechtsangabe.
-- **Harmonisierung über föderale Ebenen (Langzeitziel):** Die Verknüpfung derselben Person über die föderalen Ebenen hinweg ist ein wichtiges Langzeitziel. Der Aufbau einer zentralen Personendatenbank liegt ausserhalb des Auftrags der eCH-Fachgruppe. Da für diesen Zweck bereits eine offene, etablierte Infrastruktur besteht, wird **Wikidata als übergreifender Identifikator empfohlen** (`wikidata_uri`); zusammen mit global eindeutigen Identifikatoren (URIs) lässt sich die Zuordnung so schrittweise über die Systeme hinweg harmonisieren.
+- **Stable person, temporally valid attributes:** The `Person` itself carries no temporal validity, but its attributes do – name, citizenship, gender, occupation, training and electoral district each carry their own `valid_from`/`valid_through`. This keeps the identity of the person stable while individual details change over time and the history is preserved (e.g. a change of name upon marriage or a change of electoral district).
+- **Mandatory display name (`label`) alongside structured names (`names`):** Every person has a mandatory short name so that a display name is always available even when the details are incomplete. The recommended combination is the official name (`PersonOfficialName`) and the call name (`PersonCallFirstName`), supplemented by the year of birth in the case of identical names. `label_long` additionally captures academic titles; the fine-grained, typed name structure (`names`) is optional, but its use is advised. In some cases, the use of specific types, such as the official name (`PersonOfficialName`), is a legal requirement.
+- **Name types according to the official taxonomy:** The name types (`NameTypeEnum`) follow the register harmonisation of the FSO, respectively eCH-0011 (including official name, original name, alliance name, call name, as well as variants for foreign identity documents). This makes the names compatible with the official person registers, and their semantics clear.
+- **`birth_year` as a data-minimising alternative to `birth_date`:** If the exact date of birth is not available or not intended for publication, only the year of birth may be given. If a `birth_date` is available, it takes precedence.
+- **Multiple values instead of single values:** Names, citizenships and gender entries are modelled as lists with temporal validity – for example for dual citizenships, changes of name or a changing gender entry.
+- **Harmonisation across federal levels (long-term goal):** Linking the same person across the federal levels is an important long-term goal. Building a central person database lies outside the mandate of the eCH specialist group. Since an open, established infrastructure already exists for this purpose, **Wikidata is recommended as a cross-cutting identifier** (`wikidata_uri`); together with globally unique identifiers (URIs), the mapping can thus be harmonised step by step across the systems.
 
 
 
@@ -840,13 +840,13 @@ valid_from: 2010-01-01
 
 \newpage
 
-# Gruppen und Organe (Groups)
+# Groups and Bodies (Groups)
 
-Das Group-Schema bildet politische Gruppen, Organisationen und Körperschaften ab.
+The group schema represents political groups, organisations and corporate bodies.
 
-- **Ein generisches Modell statt vieler Spezialklassen:** Parlamente, Parteien, Fraktionen, Kommissionen, Departemente, Gerichte und zivilgesellschaftliche Organisationen werden alle als *eine* Klasse `Group` abgebildet und über `group_type` unterschieden. Das hält das Modell einfach und ohne Schemaänderung erweiterbar – Legislative, Exekutive, Judikative und Zivilgesellschaft sind damit gleichermassen abbildbar.
-- **Gruppen und Sub-Gruppen über `parent_groups`:** Untergeordnete Gruppen verweisen auf ihre übergeordnete Gruppe – z. B. eine Kommission des Ständerats, eine Subkommission innerhalb einer Kommission, eine Kantonalpartei unter ihrer Mutterpartei oder eine Behörde innerhalb einer Direktion. Die Hierarchie entsteht so aus diesen Verweisen statt aus einer festen Ebenenstruktur. Sie bleibt meist innerhalb desselben `group_type`; typenübergreifende und mehrfache Verweise sind aber möglich (z. B. eine Fraktion, die zugleich auf ihr Parlament und ihre Partei verweist).
-- **Zeitliche Gültigkeit auch für Gruppen:** Über `valid_from`/`valid_through` lassen sich z. B. nur während einer Legislatur bestehende Kommissionen oder Umbenennungen und Fusionen von Parteien abbilden.
+- **One generic model instead of many special classes:** Parliaments, parties, parliamentary groups, commissions, departments, courts and civil-society organisations are all represented as *one* class `Group` and distinguished via `group_type`. This keeps the model simple and extensible without schema changes – the legislature, executive, judiciary and civil society can thus all be represented equally.
+- **Groups and sub-groups via `parent_groups`:** Subordinate groups reference their superordinate group – e.g. a commission of the Council of States, a subcommission within a commission, a cantonal party under its parent party, or an authority within a directorate. The hierarchy thus arises from these references rather than from a fixed level structure. It usually remains within the same `group_type`; however, cross-type and multiple references are possible (e.g. a parliamentary group that references both its parliament and its party).
+- **Temporal validity for groups as well:** Using `valid_from`/`valid_through`, it is possible to represent, for example, commissions that exist only during a legislative period, or renamings and mergers of parties.
 
 
 
@@ -1041,17 +1041,18 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 
 
 </div>
+
 \newpage
 
-# Mitgliedschaften (Memberships)
+# Memberships
 
-Das Membership-Schema bildet die Beziehung zwischen Personen und Gruppen ab und ist das zentrale Bindeglied im Akteur-Schema.
+The membership schema represents the relationship between persons and groups and is the central connecting element in the actor schema.
 
-- **Abgrenzung zu Interessenbindungen (`InterestLink`):** `Membership` erfasst die *formale Zugehörigkeit* einer Person zu einer Gruppe innerhalb des Akteur-Schemas (z. B. Partei-, Kommissions- oder Parlamentsmitgliedschaft). Interessenbindungen und Interessenkonflikte zu Organisationen *ausserhalb* des Schemas sind bewusst davon getrennt und werden über `InterestLink` abgebildet (siehe folgendes Kapitel).
-- **Referenzen mit Snapshot statt Einbettung (`person_reference`/`group_reference`):** Eine Mitgliedschaft verweist über leichtgewichtige Referenzen auf Person und Gruppe und hält dabei deren wichtigste Identifikationsmerkmale zum Zeitpunkt der Verknüpfung fest. So bleibt der Eintrag historisch korrekt, auch wenn sich Person oder Gruppe später ändern.
-- **Aktivität explizit oder abgeleitet (`is_active`):** Ob eine Mitgliedschaft aktiv ist, kann explizit über `is_active` gesetzt oder aus der zeitlichen Gültigkeit abgeleitet werden. Ist `is_active` nicht gesetzt, ergibt sich die Aktivität aus `valid_from`/`valid_through`.
-- **Mitgliedschaft ≠ Stimmrecht (`authorized_to_vote`):** Das Stimmrecht wird getrennt von der Mitgliedschaft geführt – typischerweise `false` bei Ersatzmitgliedern (ausser im Einsatz), Beobachtenden, dem Sekretariat und Gästen.
-- **Rolle als kontrolliertes Vokabular mit Freitext-Option (`role_type`):** Die Rolle in der Gruppe (z. B. Mitglied, Präsidium, Stellvertretung) wird über ein kontrolliertes Vokabular (`RoleEnum`) angegeben; für nicht abgedeckte Rollen dient der Wert `other` mit einer freien Bezeichnung.
+- **Distinction from interest links (`InterestLink`):** `Membership` records the *formal affiliation* of a person to a group within the actor schema (e.g. party, commission or parliament membership). Interest links and conflicts of interest with organisations *outside* the schema are deliberately kept separate and are represented via `InterestLink` (see the following chapter).
+- **References with snapshot instead of embedding (`person_reference`/`group_reference`):** A membership refers to a person and a group via lightweight references and thereby records their most important identifying attributes at the time of linking. This keeps the entry historically correct even if the person or group changes later.
+- **Activity explicit or derived (`is_active`):** Whether a membership is active can be set explicitly via `is_active` or derived from the temporal validity. If `is_active` is not set, activity is derived from `valid_from`/`valid_through`.
+- **Membership ≠ voting right (`authorized_to_vote`):** The voting right is recorded separately from the membership – typically `false` for substitute members (except when on duty), observers, the secretariat and guests.
+- **Role as a controlled vocabulary with free-text option (`role_type`):** The role in the group (e.g. member, presidency, deputy) is specified via a controlled vocabulary (`RoleEnum`); for roles not covered, the value `other` with a free-text designation is used.
 
 
 
@@ -1205,16 +1206,17 @@ URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 
 
 </div>
+
 \newpage
 
-# Interessenbindungen (Interest Links)
+# Interest Links
 
-Das InterestLink-Schema erfasst Interessenbindungen, Interessenkonflikte und Verflechtungen von Personen mit Organisationen. Es orientiert sich an den Transparenzanforderungen für Parlamentsmitglieder gemäss [Bundesversammlung – Interessenbindungen](https://www.parlament.ch/centers/documents/de/interessen-nr.pdf).
+The InterestLink schema records interest links, conflicts of interest and entanglements of persons with organisations. It is based on the transparency requirements for members of parliament according to [Federal Assembly – Interest Links](https://www.parlament.ch/centers/documents/de/interessen-nr.pdf).
 
-- **Abgrenzung zu Mitgliedschaften (`Membership`):** `InterestLink` bildet Bindungen zu Organisationen *ausserhalb* des Akteur-Schemas ab (Interessenkonflikte, Politikfinanzierung) – im Unterschied zur formalen Zugehörigkeit *innerhalb* des Schemas, die über `Membership` erfasst wird.
-- **Obligatorische Klassifikation (`interest_type`):** Jede Bindung wird zwingend nach Art eingeordnet (berufliche Tätigkeit, politische Ämter, Verein), angelehnt an die Offenlegungskategorien der Bundesversammlung.
-- **Organisation über UID referenzierbar (`organization_uid`):** Ist die Organisation im UID-Register erfasst, wird sie über ihre UID (eCH-0097, `CHE-XXX.XXX.XXX`) referenziert – das ermöglicht Auswertungen, z. B. mit NOGA-Codes. Für Organisationen ohne UID stehen `organization_name`/`organization_address` bereit; die Rechtsform folgt einem kontrollierten Vokabular (`LegalFormEnum`).
-- **Umfang und Entschädigung (`is_paid`, `committee`, `function_role`):** Neben Gremium und Funktion innerhalb der Organisation wird explizit festgehalten, ob die Position bezahlt ist – ein zentraler Transparenzaspekt.
+- **Distinction from memberships (`Membership`):** `InterestLink` represents links to organisations *outside* the actor schema (conflicts of interest, political financing) – in contrast to the formal affiliation *within* the schema, which is recorded via `Membership`.
+- **Mandatory classification (`interest_type`):** Every link is mandatorily categorised by type (professional activity, political offices, association), based on the disclosure categories of the Federal Assembly.
+- **Organisation referenceable via UID (`organization_uid`):** If the organisation is recorded in the UID register, it is referenced via its UID (eCH-0097, `CHE-XXX.XXX.XXX`) – this enables analyses, e.g. with NOGA codes. For organisations without a UID, `organization_name`/`organization_address` are available; the legal form follows a controlled vocabulary (`LegalFormEnum`).
+- **Scope and remuneration (`is_paid`, `committee`, `function_role`):** In addition to the committee and function within the organisation, it is explicitly recorded whether the position is paid – a central transparency aspect.
 
 
 
@@ -1602,21 +1604,22 @@ URI: [act:LegalFormEnum](https://ld.ech.ch/schema/0294/actors/LegalFormEnum)
 
 
 </div>
+
 \newpage
 
-# Geteilte Elemente
+# Shared Elements
 
 ## Reference Classes
 
-`PersonReference` und `GroupReference` werden verwendet, um Personen bzw. Gruppen **lokal** innerhalb einer anderen Entität zu referenzieren. Neben dem eigentlichen Link zur vollständigen Entität werden dabei nur die relevanten Informationen zum **Zeitpunkt der Verknüpfung** gespeichert – es müssen also nicht alle Informationen einer Person oder Gruppe bei jeder Erwähnung wiederholt werden.
+`PersonReference` and `GroupReference` are used to reference persons or groups **locally** within another entity. In addition to the actual link to the complete entity, only the relevant information at the **time of linking** is stored – so it is not necessary to repeat all the information about a person or group at every mention.
 
-Ein Beispiel: Eine Motion verweist auf die Person, die sie eingereicht hat. Zusätzlich zum Link auf die vollständige Personen-Entität speichert die Motion lokal Informationen wie die politische Partei oder die Rolle der Person **zum Zeitpunkt der Einreichung**. Wechselt die Person später die Partei oder die Rolle, bleibt die Information in der Motion dennoch korrekt und unveränderlich.
+An example: A motion references the person who submitted it. In addition to the link to the complete person entity, the motion stores locally information such as the person's political party or role **at the time of submission**. If the person later changes party or role, the information in the motion nevertheless remains correct and immutable.
 
-Dies dient drei Zwecken:
+This serves three purposes:
 
-- **Nützliche lokale Daten** ohne aufwändige Abfragen der vollständigen Entität
-- **Keine Redundanz**, da nicht alle Informationen bei jeder Erwähnung wiederholt werden müssen
-- **Implizite Versionierung**, da die lokale Referenz unverändert bleibt, auch wenn sich die verknüpfte Entität später ändert
+- **Useful local data** without costly queries of the complete entity
+- **No redundancy**, since not all information has to be repeated at every mention
+- **Implicit versioning**, since the local reference remains unchanged even if the linked entity changes later
 
 
 
@@ -1732,7 +1735,7 @@ __
 
 </div>
 
-## Mehrfach benutzte Klassen
+## Reused Classes
 
 
 
@@ -1886,3 +1889,4 @@ __
 
 
 </div>
+

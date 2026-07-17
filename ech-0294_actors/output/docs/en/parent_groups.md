@@ -76,6 +76,17 @@ annotations:
       Verknüpfungen sind aber erlaubt, z.B. Fraktion → Parlament und Fraktion → Partei.)
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Lien vers les groupes parents. Par exemple, le parti faîtier pour les
+      partis cantonaux, ou pour décrire la hiérarchie au sein de l''exécutif. Utilisé
+      également pour rattacher des sous-commissions à des commissions, ou des groupes
+      parlementaires à la fois à leur parlement et à leur parti. (parentGroup est
+      généralement utilisé au sein d''un même group_type, mais les liens intertypes
+      sont autorisés, p. ex. groupe parlementaire → parlement et groupe parlementaire
+      → parti.)
+
+      '
 description: 'Link to parent groups. For example, the parent party for cantonal parties,
   or to describe the hierarchy in the executive. Also used to link sub-commissions
   to commissions, or factions to both their parliament and their party. (parentGroup

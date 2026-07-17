@@ -3,7 +3,7 @@
 ## Classe: GroupType 
 
 
-_Type of group (e.g., party, committee, parliament, department)._
+_Type de groupe (p. ex. parti, commission, parlement, département)._
 
 __
 
@@ -18,8 +18,8 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| group_type_enum | 0..1 <br/> [GroupTypeEnum](GroupTypeEnum.md) | Link to the controlled vocabulary for group types.  |
-| label | 0..1 <br/> [String](String.md) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
+| group_type_enum | 0..1 <br/> [GroupTypeEnum](GroupTypeEnum.md) | Lien vers le vocabulaire contrôlé pour les types de groupes.  |
+| label | 0..1 <br/> [String](String.md) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
 
 
 

@@ -1,36 +1,36 @@
 ---
-title: "eCH-0294 Politische Akteure: Personen, Gruppen und Organe"
-lang: de
+title: "eCH-0294 Acteurs politiques : personnes, groupes et organes"
+lang: fr
 toc: false
 ---
 
-| **Name**              | **Politische Akteure: Personen, Gruppen und Organe**                                                                       |
+| **Nom**               | **Acteurs politiques : personnes, groupes et organes**                                                                       |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------|
-| **eCH-Nummer**        | eCH-0294                                                                                                                   |
-| **Kategorie**         | Entwurf                                                                                                                    |
-| **Reifegrad**         | Fachgruppen interner Review                                                                                                |
+| **Numéro eCH**        | eCH-0294                                                                                                                   |
+| **Catégorie**         | Projet                                                                                                                    |
+| **Degré de maturité** | Revue interne du groupe spécialisé                                                                                        |
 | **Version**           | 0.2                                                                                                                        |
-| **Status**            |                                                                                                 |
-| **Beschluss am**      |                                                                                                                            |
-| **Ausgabedatum**      |                                                                                                                            |
-| **Ersetzt Version**   | 0.0                                                                                                                        |
-| **Voraussetzungen**   | eCH-0292 (Gemeinsame Datenelemente)                                                                                        |
-| **Beilagen**          | -                                                                                                                          |
-| **Sprachen**          | Deutsch (Original) - English (Datamodel)                                                                                    |
-| **Autoren**           | Fachgruppe politische Geschäfte: Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi, Christian Gutknecht, Michael Luggen |
-| **Herausgeber / Vertrieb** | Verein eCH, [Affolternstrasse 52, 8050 Zürich](https://geo.ld.admin.ch/location/address/101218624)                             |
+| **Statut**            |                                                                                                 |
+| **Décidé le**         |                                                                                                                            |
+| **Date de publication** |                                                                                                                          |
+| **Remplace la version** | 0.0                                                                                                                      |
+| **Conditions préalables** | eCH-0292 (Éléments de données communs)                                                                                |
+| **Annexes**           | -                                                                                                                          |
+| **Langues**           | Allemand (original) - Anglais (modèle de données)                                                                          |
+| **Auteurs**           | Groupe spécialisé Affaires politiques : Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi, Christian Gutknecht, Michael Luggen |
+| **Éditeur / Distribution** | Association eCH, [Affolternstrasse 52, 8050 Zürich](https://geo.ld.admin.ch/location/address/101218624)                    |
 
 \newpage
 
-# Abstrakt
+# Résumé
 
-Der Entwurf eCH-0294 „Politische Akteure: Personen, Gruppen und Organe“ definiert ein einheitliches Datenmodell zur strukturierten Publikation politischer Akteure in der Schweiz. Er umfasst natürliche Personen, politische Gruppen und Organe, Mitgliedschaften zwischen Personen und Gruppen sowie Interessenbindungen. Ziel ist es, föderal übergreifend vergleichbare, maschinenlesbare und nachnutzbare Informationen bereitzustellen, um Transparenz, Nachvollziehbarkeit und Analysefähigkeit politischer Prozesse zu verbessern.
+Le projet eCH-0294 « Acteurs politiques : personnes, groupes et organes » définit un modèle de données uniforme pour la publication structurée des acteurs politiques en Suisse. Il englobe les personnes physiques, les groupes et organes politiques, les affiliations entre personnes et groupes ainsi que les liens d'intérêts. L'objectif est de mettre à disposition, par-delà les niveaux fédéraux, des informations comparables, lisibles par machine et réutilisables, afin d'améliorer la transparence, la traçabilité et la capacité d'analyse des processus politiques.
 
-Der Standard richtet sich an öffentliche Stellen aller Staatsebenen, politische Akteure, Medien, Forschung und Öffentlichkeit und schafft eine Grundlage für interoperable politische Informationssysteme in der Schweiz.
+La norme s'adresse aux organismes publics de tous les niveaux étatiques, aux acteurs politiques, aux médias, à la recherche et au public, et crée une base pour des systèmes d'information politiques interopérables en Suisse.
 
 \newpage
 
-# Inhaltsverzeichnis
+# Table des matières
 
 ```{=openxml}
 <w:p>
@@ -38,13 +38,13 @@ Der Standard richtet sich an öffentliche Stellen aller Staatsebenen, politische
     <w:fldChar w:fldCharType="begin" w:dirty="true"/>
   </w:r>
   <w:r>
-    <w:instrText xml:space="preserve"> TOC \o "1-3" \h \z \u </w:instrText>
+    <w:instrText xml:space="preserve"> TOC \o "1-2" \h \z \u </w:instrText>
   </w:r>
   <w:r>
     <w:fldChar w:fldCharType="separate"/>
   </w:r>
   <w:r>
-    <w:t>Rechtsklick &gt; „Felder aktualisieren“, um das Inhaltsverzeichnis zu erzeugen.</w:t>
+    <w:t>Clic droit &gt; « Mettre à jour les champs » pour générer la table des matières.</w:t>
   </w:r>
   <w:r>
     <w:fldChar w:fldCharType="end"/>
@@ -52,60 +52,59 @@ Der Standard richtet sich an öffentliche Stellen aller Staatsebenen, politische
 </w:p>
 ```
 
-
 \newpage
 
-# Einleitung
+# Introduction
 
-## Die Standardfamilie „Politische Geschäfte"
+## La famille de normes « Affaires politiques »
 
-Das politische Geschehen der Schweiz findet auf Bundes-, Kantons- und Gemeindeebene statt – in Parlamenten und Gemeindeversammlungen, in Exekutiven und Verwaltungen, in Vernehmlassungen und Konsultationen sowie über die direktdemokratische Mitwirkung der Stimmberechtigten. Die Fachgruppe „Politische Geschäfte" des Vereins eCH entwickelt dafür eine Familie aufeinander abgestimmter Standards, welche diese Daten föderal übergreifend strukturieren. Die Standards nutzen gemeinsame Datenelemente (eCH-0292) und referenzieren sich gegenseitig über eindeutige Identifikatoren.
+La vie politique de la Suisse se déroule aux niveaux fédéral, cantonal et communal – dans les parlements et les assemblées communales, dans les exécutifs et les administrations, dans les procédures de consultation et les consultations publiques, ainsi qu'à travers la participation démocratique directe des personnes ayant le droit de vote. Le groupe spécialisé « Affaires politiques » de l'association eCH développe à cet effet une famille de normes coordonnées entre elles, qui structurent ces données par-delà les niveaux fédéraux. Les normes utilisent des éléments de données communs (eCH-0292) et se référencent mutuellement au moyen d'identifiants univoques.
 
-Die Familie umfasst:
+La famille comprend :
 
-- **eCH-0292 – Gemeinsame Datenelemente (Meta):** Definiert die übergreifend genutzten Datenelemente und Metaprozesse, auf denen die übrigen Standards aufbauen.
-- **eCH-0293 – Öffentlicher Ratsbetrieb (Operations):** Beschreibt den öffentlichen Ratsbetrieb – Sitzungen, Traktanden, Wortmeldungen sowie Abstimmungen und Wahlen.
-- **eCH-0294 – Politische Akteure (Actors) – dieser Standard:** Definiert Personen, Gruppen und Organe im politischen Kontext sowie deren Mitgliedschaften und Interessenbindungen. Die übrigen Standards referenzieren diese Akteure über ihre Identifikatoren.
-- **eCH-0295 – Parlamentarische Geschäfte (Affairs):** Beschreibt den Lebenszyklus politischer Geschäfte.
-- **eCH-0296 – Erlasse und Gesetzestexte (Laws):** Erfasst die Resultate des parlamentarischen Prozesses – die verabschiedeten Gesetze und Erlasse.
-- **eCH-0297 – Öffentliche Konsultationen (Consultations):** Strukturiert Vernehmlassungsverfahren, die oft Ausgangspunkt für parlamentarische Geschäfte sind.
+- **eCH-0292 – Éléments de données communs (Meta) :** définit les éléments de données transversaux et les métaprocessus sur lesquels reposent les autres normes.
+- **eCH-0293 – Fonctionnement public des conseils (Operations) :** décrit le fonctionnement public des conseils – séances, points de l'ordre du jour, prises de parole ainsi que votes et élections.
+- **eCH-0294 – Acteurs politiques (Actors) – la présente norme :** définit les personnes, groupes et organes dans le contexte politique ainsi que leurs affiliations et liens d'intérêts. Les autres normes référencent ces acteurs au moyen de leurs identifiants.
+- **eCH-0295 – Affaires parlementaires (Affairs) :** décrit le cycle de vie des affaires politiques.
+- **eCH-0296 – Actes législatifs et textes de loi (Laws) :** consigne les résultats du processus parlementaire – les lois et actes législatifs adoptés.
+- **eCH-0297 – Consultations publiques (Consultations) :** structure les procédures de consultation, qui constituent souvent le point de départ des affaires parlementaires.
 
-Ziel dieser Standardfamilie ist es, eine gemeinsam nutzbare Struktur für politische Daten zu schaffen und Organisationen, die Informationen zu politischen Geschäften veröffentlichen, ein tragfähiges Datenmodell an die Hand zu geben.
+L'objectif de cette famille de normes est de créer une structure utilisable en commun pour les données politiques et de mettre à la disposition des organisations qui publient des informations sur les affaires politiques un modèle de données robuste.
 
-## Abgrenzung zur Fachgruppe „Politische Rechte"
+## Délimitation par rapport au groupe spécialisé « Droits politiques »
 
-Neben der Fachgruppe „Politische Geschäfte" besteht beim Verein eCH die Fachgruppe „Politische Rechte". Beide betreffen den politischen Bereich, decken aber unterschiedliche Domänen ab:
+Outre le groupe spécialisé « Affaires politiques », l'association eCH compte le groupe spécialisé « Droits politiques ». Tous deux concernent le domaine politique, mais couvrent des domaines différents :
 
-- **Politische Geschäfte** (diese Standardfamilie) beschreibt den parlamentarischen und behördlichen Willensbildungs- und Entscheidungsprozess: die Akteure (eCH-0294), den Ratsbetrieb (eCH-0293), die parlamentarischen Geschäfte (eCH-0295), die daraus hervorgehenden Erlasse (eCH-0296) sowie die vorgelagerten Vernehmlassungen (eCH-0297).
-- **Politische Rechte** befasst sich mit der Ausübung der politischen Rechte durch die Stimmberechtigten: Stimm- und Wahlregister, die Durchführung von Volksabstimmungen und Wahlen, die elektronische Stimmabgabe (eVoting), Stimmrechtsausweise sowie Abstimmungs- und Wahlergebnisse (u.a. eCH-0045, eCH-0110, eCH-0155, eCH-0157, eCH-0159, eCH-0222, eCH-0228, eCH-0252, eCH-0310).
+- **Affaires politiques** (la présente famille de normes) décrit le processus de formation de la volonté et de décision parlementaire et administratif : les acteurs (eCH-0294), le fonctionnement des conseils (eCH-0293), les affaires parlementaires (eCH-0295), les actes législatifs qui en découlent (eCH-0296) ainsi que les consultations en amont (eCH-0297).
+- **Droits politiques** traite de l'exercice des droits politiques par les personnes ayant le droit de vote : registres des électeurs et des candidats, déroulement des votations et élections populaires, vote électronique (eVoting), cartes de vote ainsi que résultats des votations et des élections (notamment eCH-0045, eCH-0110, eCH-0155, eCH-0157, eCH-0159, eCH-0222, eCH-0228, eCH-0252, eCH-0310).
 
-Berührungspunkte bestehen an zwei Stellen:
+Des points de contact existent à deux endroits :
 
-- **Abstimmungen und Wahlen:** eCH-0293 erfasst Abstimmungen und Wahlen **innerhalb des Ratsbetriebs** (z.B. namentliche Abstimmungen im Parlament oder die Wahl von Behördenmitgliedern durch den Rat), während Volksabstimmungen und Volkswahlen samt der zugehörigen Register, Durchführung und Ergebnisse von der Fachgruppe „Politische Rechte" abgedeckt werden.
-- **Gewählte Personen:** In den Wahlergebnissen der Fachgruppe „Politische Rechte" erscheinen Kandidierende und Gewählte. Sobald Personen ein Mandat innehaben, werden sie in eCH-0294 als politische Akteurinnen und Akteure mit ihren Rollen und Mitgliedschaften geführt.
+- **Votes et élections :** eCH-0293 consigne les votes et élections **au sein du fonctionnement des conseils** (p. ex. les votes nominaux au parlement ou l'élection des membres des autorités par le conseil), tandis que les votations et élections populaires ainsi que les registres, le déroulement et les résultats correspondants sont couverts par le groupe spécialisé « Droits politiques ».
+- **Personnes élues :** dans les résultats électoraux du groupe spécialisé « Droits politiques » figurent les candidats et les personnes élues. Dès qu'une personne exerce un mandat, elle est répertoriée dans eCH-0294 en tant qu'actrice ou acteur politique, avec ses rôles et ses affiliations.
 
-## Der Standard eCH-0294 – Politische Akteure
+## La norme eCH-0294 – Acteurs politiques
 
-Dieser Standard definiert vier Hauptklassen:
+La présente norme définit quatre classes principales :
 
-- **Person** – Natürliche Personen im politischen Kontext
-- **Group** – Gremien, Parteien, Fraktionen, Räte, Kommissionen, Organisationen etc.
-- **Membership** – Verbindung zwischen Personen und Gruppen
-- **InterestLink** – Interessenbindungen von Personen
+- **Person** – Personnes physiques dans le contexte politique
+- **Group** – Organes, partis, groupes parlementaires, conseils, commissions, organisations, etc.
+- **Membership** – Lien entre personnes et groupes
+- **InterestLink** – Liens d'intérêts des personnes
 
-`Membership` ist das zentrale Bindeglied zwischen `Person` und `Group` und hält fest, in welchem Parlament, in welcher Kommission etc. eine Person aktiv ist oder war. `InterestLink` ermöglicht die Beschreibung von Interessenbindungen.
+`Membership` est l'élément de liaison central entre `Person` et `Group` et consigne dans quel parlement, dans quelle commission, etc. une personne est ou a été active. `InterestLink` permet de décrire les liens d'intérêts.
 \newpage
 
 # Person
 
-Das Personenschema beschreibt natürliche Personen im politischen Kontext.
+Le schéma Person décrit les personnes physiques dans le contexte politique.
 
-- **Stabile Person, zeitlich gültige Merkmale:** Die `Person` selbst trägt keine zeitliche Gültigkeit, ihre Merkmale hingegen schon – Name, Staatsangehörigkeit, Geschlecht, Beruf, Ausbildung und Wahlkreis tragen je eigene `valid_from`/`valid_through`. So bleibt die Identität der Person stabil, während sich einzelne Angaben über die Zeit ändern und die Historie erhalten bleibt (z. B. Namensänderung bei Heirat oder Wechsel des Wahlkreises).
-- **Obligatorischer Anzeigename (`label`) neben strukturierten Namen (`names`):** Jede Person hat einen zwingenden Kurznamen, damit auch bei unvollständigen Angaben immer ein Anzeigename vorhanden ist. Empfohlen wird die Kombination aus amtlichem Namen (`PersonOfficialName`) und Rufname (`PersonCallFirstName`), bei Namensgleichheit ergänzt um das Geburtsjahr. `label_long` nimmt zusätzlich akademische Titel auf; die feingliedrige, typisierte Namensstruktur (`names`) ist optional deren Nutzung ist aber angezeigt. In einigen Fällen ist die Benutzung von spezifischen Typen, wie der amtliche Name (`PersonOfficialName`) eine gesetzliche Vorrausetzung.
-- **Namenstypen nach amtlicher Systematik:** Die Namenstypen (`NameTypeEnum`) folgen der Registerharmonisierung des BFS bzw. eCH-0011 (u. a. amtlicher Name, angestammter Name, Allianzname, Rufname sowie Varianten für ausländische Ausweise). Damit sind die Namen mit den amtlichen Personenregistern kompatibel, und deren Semantik klar.
-- **`birth_year` als datensparsame Alternative zu `birth_date`:** Ist das genaue Geburtsdatum nicht verfügbar oder nicht zur Veröffentlichung bestimmt, kann nur das Geburtsjahr angegeben werden. Liegt ein `birth_date` vor, hat es Vorrang.
-- **Mehrfachwerte statt Einzelwerte:** Namen, Staatsangehörigkeiten und Geschlechtsangaben sind als Listen mit zeitlicher Gültigkeit modelliert – etwa für Doppelbürgerschaften, Namensänderungen oder eine sich ändernde Geschlechtsangabe.
-- **Harmonisierung über föderale Ebenen (Langzeitziel):** Die Verknüpfung derselben Person über die föderalen Ebenen hinweg ist ein wichtiges Langzeitziel. Der Aufbau einer zentralen Personendatenbank liegt ausserhalb des Auftrags der eCH-Fachgruppe. Da für diesen Zweck bereits eine offene, etablierte Infrastruktur besteht, wird **Wikidata als übergreifender Identifikator empfohlen** (`wikidata_uri`); zusammen mit global eindeutigen Identifikatoren (URIs) lässt sich die Zuordnung so schrittweise über die Systeme hinweg harmonisieren.
+- **Personne stable, caractéristiques valables dans le temps :** la `Person` elle-même ne porte aucune validité temporelle, contrairement à ses caractéristiques – nom, nationalité, sexe, profession, formation et circonscription électorale portent chacune leurs propres `valid_from`/`valid_through`. Ainsi, l'identité de la personne reste stable, tandis que certaines indications changent au fil du temps et que l'historique est conservé (p. ex. changement de nom lors d'un mariage ou changement de circonscription électorale).
+- **Nom d'affichage obligatoire (`label`) en plus des noms structurés (`names`) :** chaque personne possède un nom abrégé obligatoire, afin qu'un nom d'affichage soit toujours disponible, même en cas d'indications incomplètes. Il est recommandé de combiner le nom officiel (`PersonOfficialName`) et le prénom usuel (`PersonCallFirstName`), complétés par l'année de naissance en cas d'homonymie. `label_long` reprend en outre les titres académiques ; la structure de noms détaillée et typée (`names`) est facultative, mais son utilisation est recommandée. Dans certains cas, l'emploi de types spécifiques, comme le nom officiel (`PersonOfficialName`), constitue une exigence légale.
+- **Types de noms selon la systématique officielle :** les types de noms (`NameTypeEnum`) suivent l'harmonisation des registres de l'OFS, respectivement eCH-0011 (notamment nom officiel, nom d'origine, nom d'alliance, prénom usuel ainsi que des variantes pour les pièces d'identité étrangères). Les noms sont ainsi compatibles avec les registres officiels des personnes, et leur sémantique est claire.
+- **`birth_year` comme alternative économe en données à `birth_date` :** si la date de naissance exacte n'est pas disponible ou n'est pas destinée à la publication, seule l'année de naissance peut être indiquée. Si une `birth_date` est disponible, elle prévaut.
+- **Valeurs multiples plutôt que valeurs uniques :** les noms, les nationalités et les indications de sexe sont modélisés sous forme de listes avec validité temporelle – par exemple pour les doubles nationalités, les changements de nom ou une indication de sexe évolutive.
+- **Harmonisation par-delà les niveaux fédéraux (objectif à long terme) :** la mise en relation d'une même personne à travers les niveaux fédéraux constitue un objectif important à long terme. La constitution d'une base de données centralisée des personnes ne relève pas du mandat du groupe spécialisé eCH. Comme une infrastructure ouverte et éprouvée existe déjà à cet effet, **Wikidata est recommandé comme identifiant transversal** (`wikidata_uri`) ; conjointement à des identifiants globalement univoques (URI), l'attribution peut ainsi être harmonisée progressivement à travers les systèmes.
 
 
 
@@ -113,7 +112,7 @@ Das Personenschema beschreibt natürliche Personen im politischen Kontext.
 ## Classe: Person 
 
 
-_A person with identifiers, names, addresses, citizenships, and occupations._
+_Une personne avec des identifiants, des noms, des adresses, des nationalités et des professions._
 
 __
 
@@ -128,29 +127,29 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| label | 1 <br/> [String](#String) | Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name). Preferred: PersonOfficialName combined with PersonCallFirstName.  |
-| label_long | 0..1 <br/> [String](#String) | Optional long display name including academic titles and full official name (e.g. "Dr. Maria Muster-Beispiel").  |
-| birth_year | 0..1 <br/> [Integer](#Integer) | Year of birth. Only to be used, if there is no full `birthDate` available.  |
-| birth_date | 0..1 <br/> [Date](#Date) | Exact date of birth if available and public. This field has precedence over the field `birthYear`.  |
-| death_date | 0..1 <br/> [Date](#Date) | Exact date of death.  |
-| picture | 0..1 <br/> [Uri](#Uri) | Link to an image (preferred: PNG, then JPG, then GIF).  |
-| names | * <br/> [Name](#Name) | Names of the person with type and value.  |
-| addresses | * <br/> [Address](#Address) | Addresses with type (private, business, local).  |
-| language_proficiencies | * <br/> [LanguageProficiency](#LanguageProficiency) | Language proficiencies of the person.  |
-| citizenships | * <br/> [Citizenship](#Citizenship) | Citizenships of the person.  |
-| genders | * <br/> [Gender](#Gender) | Gender of the person.  |
-| occupations | * <br/> [Occupation](#Occupation) | Occupations or professions of the person.  |
-| trainings | * <br/> [Training](#Training) | Trainings or educations of the person. Guideline: generally only provide the highest qualification obtained.  |
-| contacts | * <br/> [Contact](#Contact) | Contact information (email, website, social media). Guideline: email is quasi-mandatory and should always be provided where available.  |
-| electoral_district | 0..1 <br/> [ElectoralDistrict](#ElectoralDistrict) | Link to the electoral district.  |
-| interest_links | * <br/> [InterestLink](#InterestLink) | Collection of interest links.  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| label | 1 <br/> [String](#String) | Nom d'affichage court et obligatoire permettant d'identifier la personne au sein de l'organisation (p. ex. avec l'ajout de l'année de naissance afin de distinguer des personnes portant le même nom). Recommandé : PersonOfficialName combiné avec PersonCallFirstName.  |
+| label_long | 0..1 <br/> [String](#String) | Nom d'affichage long et facultatif comprenant les titres académiques et le nom officiel complet (p. ex. « Dr. Maria Muster-Beispiel »).  |
+| birth_year | 0..1 <br/> [Integer](#Integer) | Année de naissance. À utiliser uniquement lorsqu'aucune `birthDate` complète n'est disponible.  |
+| birth_date | 0..1 <br/> [Date](#Date) | Date de naissance exacte si disponible et publique. Ce champ prime sur le champ `birthYear`.  |
+| death_date | 0..1 <br/> [Date](#Date) | Date de décès exacte.  |
+| picture | 0..1 <br/> [Uri](#Uri) | Lien vers une image (de préférence : PNG, puis JPG, puis GIF).  |
+| names | * <br/> [Name](#Name) | Noms de la personne avec type et valeur.  |
+| addresses | * <br/> [Address](#Address) | Adresses avec type (privée, professionnelle, locale).  |
+| language_proficiencies | * <br/> [LanguageProficiency](#LanguageProficiency) | Compétences linguistiques de la personne.  |
+| citizenships | * <br/> [Citizenship](#Citizenship) | Nationalités de la personne.  |
+| genders | * <br/> [Gender](#Gender) | Sexe de la personne.  |
+| occupations | * <br/> [Occupation](#Occupation) | Métiers ou professions de la personne.  |
+| trainings | * <br/> [Training](#Training) | Formations ou éducations de la personne. Directive : n'indiquer en principe que la qualification la plus élevée obtenue.  |
+| contacts | * <br/> [Contact](#Contact) | Informations de contact (e-mail, site web, réseaux sociaux). Directive : l'e-mail est quasi obligatoire et devrait toujours être fourni lorsqu'il est disponible.  |
+| electoral_district | 0..1 <br/> [ElectoralDistrict](#ElectoralDistrict) | Lien vers la circonscription électorale.  |
+| interest_links | * <br/> [InterestLink](#InterestLink) | Collection de liens d'intérêts.  |
+| local_id | 0..1 <br/> [String](#String) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q39 pour la Suisse. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| date_created | 0..1 <br/> [Date](#Date) | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> [Datetime](#Datetime) | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> [Date](#Date) | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -236,7 +235,7 @@ electoral_district:
 ## Classe: Name 
 
 
-_A name with a type (e.g., call name, official name), a value, and a temporal validity._
+_Un nom avec un type (p. ex. nom d'usage, nom officiel), une valeur et une validité temporelle._
 
 __
 
@@ -251,11 +250,11 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| name_type | 0..1 <br/> [NameTypeEnum](#NameTypeEnum) | Type of name according to eCH-0011 (personNameData).  |
-| value | 0..1 <br/> [String](#String) | The value of an information besides other attributes such as type, language, etc.  |
-| valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+| name_type | 0..1 <br/> [NameTypeEnum](#NameTypeEnum) | Type de nom selon eCH-0011 (personNameData).  |
+| value | 0..1 <br/> [String](#String) | La valeur proprement dite d'une information, en plus d'autres attributs tels que le type, la langue, etc.  |
+| valid_from | 0..1 <br/> [Date](#Date) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
@@ -292,7 +291,7 @@ __
 
 
 
-_Categories of name types according to eCH-0011 (personNameData) and https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI according to I14Y identifier but as class and not as attribute. Descriptions and translations according to I14Y._
+_Catégories de types de noms selon eCH-0011 (personNameData) et https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI selon l'identifiant I14Y mais en tant que classe et non en tant qu'attribut. Descriptions et traductions selon I14Y._
 
 __
 
@@ -305,27 +304,27 @@ URI: [act:NameTypeEnum](https://ld.ech.ch/schema/0294/actors/NameTypeEnum)
 ### Valeurs admissibles
 | Valeur | Description |
 | --- | --- |
-| PersonOfficialName |  According to the official catalogue of characters (No. 211) for the harmonisation of registers: Name according to official documents. The official name corresponds to the name appearing in the Swiss civil register. For foreign nationals with no civil status events in Switzerland, the official name corresponds to the name appearing on the foreign passport or identity card (see ‘Name according to foreign passport’ or SEM guidelines on the determination and spelling of names of foreign nationals dated 1 January 2012. If no official documents exist, see also ‘Name according to declaration’ (e.g. in the case of asylum seekers). The official name may consist of one or more parts.  |
+| PersonOfficialName |  Selon le catalogue officiel des caractères (n° 211) pour l'harmonisation des registres : nom selon les documents officiels. Le nom officiel correspond au nom figurant dans le registre suisse de l'état civil. Pour les ressortissants étrangers n'ayant pas d'événement d'état civil en Suisse, le nom officiel correspond au nom figurant sur le passeport étranger ou la carte d'identité (voir « Nom selon le passeport étranger » ou les directives du SEM sur la détermination et l'orthographe des noms des ressortissants étrangers du 1er janvier 2012. En l'absence de documents officiels, voir également « Nom selon la déclaration » (p. ex. dans le cas de requérants d'asile). Le nom officiel peut se composer d'une ou de plusieurs parties.  |
 | | [https://register.ld.admin.ch/i14y/concept/personOfficialName](https://register.ld.admin.ch/i14y/concept/personOfficialName) |
-| PersonOriginalName |  According to the official catalogue of characters (No. 212) for the harmonisation of registers: Name of filiation according to official documents, which corresponds to the person's name before their first marriage or registered partnership. It may also be a maiden name acquired by decision to change one's name (see Art. 24, para. 2 OEC, RS 211.112.2).  |
+| PersonOriginalName |  Selon le catalogue officiel des caractères (n° 212) pour l'harmonisation des registres : nom de filiation selon les documents officiels, qui correspond au nom porté par la personne avant son premier mariage ou son premier partenariat enregistré. Il peut également s'agir d'un nom de célibataire acquis par une décision de changement de nom (voir art. 24, al. 2 OEC, RS 211.112.2).  |
 | | [https://register.ld.admin.ch/i14y/concept/personOriginalName](https://register.ld.admin.ch/i14y/concept/personOriginalName) |
-| PersonAllianceName |  According to the official catalogue of characters (No. 213) for the harmonisation of registers: The alliance name shows the connection between two people who are married or living in a registered partnership. An alliance name that has already been used may be retained after the dissolution of the marriage or partnership if the official name has not been changed upon dissolution. It is attached to the official name with a hyphen and is formed with the partner's maiden name or the person's own maiden name. Upon request, the alliance name may be entered in the passport or on the identity card.  |
+| PersonAllianceName |  Selon le catalogue officiel des caractères (n° 213) pour l'harmonisation des registres : le nom d'alliance montre le lien entre deux personnes mariées ou vivant en partenariat enregistré. Un nom d'alliance déjà utilisé peut être conservé après la dissolution du mariage ou du partenariat si le nom officiel n'a pas été modifié lors de la dissolution. Il est rattaché au nom officiel par un trait d'union et est formé avec le nom de célibataire du partenaire ou son propre nom de célibataire. Sur demande, le nom d'alliance peut être inscrit dans le passeport ou sur la carte d'identité.  |
 | | [https://register.ld.admin.ch/i14y/concept/personAllianceName](https://register.ld.admin.ch/i14y/concept/personAllianceName) |
-| PersonNameOnForeignPassport |  According to the official catalogue of characters (No. 214) for the harmonisation of registers: For persons of foreign nationality. This name corresponds to the entry marked in the machine-readable zone of the passport. If this zone includes abbreviated surnames or first names, these must, as far as possible, be recorded in full, according to the entry in the passport.  |
+| PersonNameOnForeignPassport |  Selon le catalogue officiel des caractères (n° 214) pour l'harmonisation des registres : pour les personnes de nationalité étrangère. Ce nom correspond à l'entrée figurant dans la zone lisible par machine du passeport. Si cette zone comporte des noms de famille ou des prénoms abrégés, ceux-ci doivent, dans la mesure du possible, être enregistrés dans leur intégralité, conformément à l'entrée figurant dans le passeport.  |
 | | [https://register.ld.admin.ch/i14y/concept/personNameOnForeignPassport](https://register.ld.admin.ch/i14y/concept/personNameOnForeignPassport) |
-| PersonAliasName |  According to the official character catalogue (No. 215) for the harmonisation of registers: Name (e.g. stage name, religious name) which, on the basis of an accepted application, may be used by the person. The alias name may consist of one or more parts (e.g. also the alias first name and alias surname).  |
+| PersonAliasName |  Selon le catalogue officiel des caractères (n° 215) pour l'harmonisation des registres : nom (p. ex. nom de scène, nom religieux) qui, sur la base d'une demande acceptée, peut être porté par la personne. Le nom d'alias peut se composer d'une ou de plusieurs parties (p. ex. également le prénom d'alias et le nom de famille d'alias).  |
 | | [https://register.ld.admin.ch/i14y/concept/personAliasName](https://register.ld.admin.ch/i14y/concept/personAliasName) |
-| PersonOtherName |  According to the official catalogue of characters (No. 216) for the harmonisation of registers: Other official names according to Swiss civil status documents (Art. 24, para. 3 OEC) or according to foreign documents, which are neither surnames nor first names.  |
+| PersonOtherName |  Selon le catalogue officiel des caractères (n° 216) pour l'harmonisation des registres : autres noms officiels selon les documents d'état civil suisses (art. 24, al. 3 OEC) ou selon des documents étrangers, qui ne sont ni des noms de famille ni des prénoms.  |
 | | [https://register.ld.admin.ch/i14y/concept/personOtherName](https://register.ld.admin.ch/i14y/concept/personOtherName) |
-| PersonDeclaredForeignerName |  According to the official catalogue of characters (No. 217) for the harmonisation of registers: For foreign nationals who do not have official documents (mainly in the field of asylum).  |
+| PersonDeclaredForeignerName |  Selon le catalogue officiel des caractères (n° 217) pour l'harmonisation des registres : pour les ressortissants étrangers qui ne disposent pas de documents officiels (principalement dans le domaine de l'asile).  |
 | | [https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerName](https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerName) |
-| PersonFirstName |  First names taken from the birth certificate, the civil registry (Infostar) in the order in which they appear, or taken from foreign identity documents.  |
+| PersonFirstName |  Prénoms tirés de l'acte de naissance, du registre de l'état civil (Infostar) dans l'ordre dans lequel ils apparaissent, ou tirés de documents d'identité étrangers.  |
 | | [https://register.ld.admin.ch/i14y/concept/personFirstName](https://register.ld.admin.ch/i14y/concept/personFirstName) |
-| PersonCallFirstName |  A person has the right to choose a common first name from the list of their official first names. The common first name may consist of one or more first names (from those listed under ‘official first names’).  |
+| PersonCallFirstName |  Une personne a le droit de choisir un prénom usuel dans la liste de ses prénoms officiels. Le prénom usuel peut se composer d'un ou de plusieurs prénoms (parmi ceux figurant sous « prénoms officiels »).  |
 | | [https://register.ld.admin.ch/i14y/concept/personCallFirstName](https://register.ld.admin.ch/i14y/concept/personCallFirstName) |
-| PersonFirstNameOnForeignPassport |  For persons of foreign nationality. To be used in combination with the name as it appears on the foreign passport.  |
+| PersonFirstNameOnForeignPassport |  Pour les personnes de nationalité étrangère. À utiliser en combinaison avec le nom tel qu'il figure sur le passeport étranger.  |
 | | [https://register.ld.admin.ch/i14y/concept/personFirstNameOnForeignPassport](https://register.ld.admin.ch/i14y/concept/personFirstNameOnForeignPassport) |
-| PersonDeclaredForeignerFirstName |  For persons of foreign nationality who do not have official documents (mainly in the field of asylum). To be used in combination with the defined Name according to declaration.  |
+| PersonDeclaredForeignerFirstName |  Pour les personnes de nationalité étrangère qui ne disposent pas de documents officiels (principalement dans le domaine de l'asile). À utiliser en combinaison avec le nom défini selon la déclaration.  |
 | | [https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerFirstName](https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerFirstName) |
 
 
@@ -341,7 +340,7 @@ URI: [act:NameTypeEnum](https://ld.ech.ch/schema/0294/actors/NameTypeEnum)
 ## Classe: LanguageProficiency 
 
 
-_Language proficiency of a person indicating the language and whether it is the preferred language or native language._
+_Compétences linguistiques d'une personne indiquant la langue et le fait qu'il s'agisse ou non de la langue préférée ou de la langue maternelle._
 
 __
 
@@ -356,9 +355,9 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| language | 0..1 <br/> [String](#String) | Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en").  |
-| is_correspondence | 0..1 <br/> [Boolean](#Boolean) | Indicates if this is the preferred language.  |
-| is_native | 0..1 <br/> [Boolean](#Boolean) | Indicates if this is the native language.  |
+| language | 0..1 <br/> [String](#String) | Code de langue au format ISO 639-1 (deux lettres minuscules, par ex. « de », « fr », « it », « en »).  |
+| is_correspondence | 0..1 <br/> [Boolean](#Boolean) | Indique s'il s'agit de la langue préférée.  |
+| is_native | 0..1 <br/> [Boolean](#Boolean) | Indique s'il s'agit de la langue maternelle.  |
 
 
 
@@ -395,7 +394,7 @@ __
 ## Classe: Citizenship 
 
 
-_Citizenship (also used for Nationality) of a person indicating the country and temporal validity. If there is no `valid_from` provided, the information is not known. If it is known that the citizenship is valid from birth, the birthdate is to be repeated here. If there is no `valid_through`, the citizenship is still active._
+_Nationalité (également utilisée pour la citoyenneté) d'une personne indiquant le pays et la validité temporelle. Si aucun `valid_from` n'est fourni, cette information n'est pas connue. S'il est établi que la nationalité est valable depuis la naissance, la date de naissance doit être répétée ici. En l'absence de `valid_through`, la nationalité est toujours en vigueur._
 
 __
 
@@ -410,10 +409,10 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| country | 0..1 <br/> [String](#String) | ISO 3166-1 alpha-2 country code.  |
-| valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+| country | 0..1 <br/> [String](#String) | Code de pays ISO 3166-1 alpha-2.  |
+| valid_from | 0..1 <br/> [Date](#Date) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
@@ -450,7 +449,7 @@ __
 ## Classe: Gender 
 
 
-_Gender of a person indicating a gender code and temporal validity._
+_Sexe d'une personne indiquant un code de sexe et la validité temporelle._
 
 __
 
@@ -465,12 +464,12 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| gender_code | 0..1 <br/> [GenderCodeEnum](#GenderCodeEnum) | Gender code. Recommended values: male, female, diverse.  |
-| label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
-| pronouns | * <br/> [String](#String) | Pronouns used by the person.  |
-| valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+| gender_code | 0..1 <br/> [GenderCodeEnum](#GenderCodeEnum) | Code de sexe. Valeurs recommandées : male, female, diverse.  |
+| label | 0..1 <br/> [String](#String) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
+| pronouns | * <br/> [String](#String) | Pronoms utilisés par la personne.  |
+| valid_from | 0..1 <br/> [Date](#Date) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
@@ -507,7 +506,7 @@ __
 
 
 
-_Gender codes for persons. If the gender is not known, no gender entry shall be added. The `diverse` code shall be used together with a label to provide further details about the self-identified gender._
+_Codes de sexe pour les personnes. Si le sexe n'est pas connu, aucune entrée de sexe ne doit être ajoutée. Le code `diverse` doit être utilisé avec un libellé afin de fournir de plus amples détails sur le sexe auto-déclaré._
 
 __
 
@@ -520,11 +519,11 @@ URI: [act:GenderCodeEnum](https://ld.ech.ch/schema/0294/actors/GenderCodeEnum)
 ### Valeurs admissibles
 | Valeur | Description |
 | --- | --- |
-| male |  Male. |
+| male |  Masculin.  |
 | |  |
-| female |  Female. |
+| female |  Féminin.  |
 | |  |
-| diverse |  Diverse / non-binary. |
+| diverse |  Divers / non binaire.  |
 | |  |
 
 
@@ -540,7 +539,7 @@ URI: [act:GenderCodeEnum](https://ld.ech.ch/schema/0294/actors/GenderCodeEnum)
 ## Classe: Occupation 
 
 
-_Occupation or profession of a person indicating a label, an ISCO-19 code, whether the position is paid, and temporal validity._
+_Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si le poste est rémunéré, ainsi que la validité temporelle._
 
 __
 
@@ -555,14 +554,14 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| is_paid | 0..1 <br/> [Boolean](#Boolean) | Indicates if the position is paid.  |
-| occupation_code | 0..1 <br/> [String](#String) | ISCO-19 code of the occupation.  |
-| label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
-| organization_uid | 0..1 <br/> [String](#String) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).  |
-| organization_name | 0..1 <br/> [String](#String) | Name of the organization or enterprise.  |
-| valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+| is_paid | 0..1 <br/> [Boolean](#Boolean) | Indique si le poste est rémunéré.  |
+| occupation_code | 0..1 <br/> [String](#String) | Code ISCO-19 du métier.  |
+| label | 0..1 <br/> [String](#String) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
+| organization_uid | 0..1 <br/> [String](#String) | IDE de l'organisation (format eCH-0097 : CHE-XXX.XXX.XXX) issu du registre fédéral IDE (uid.admin.ch).  |
+| organization_name | 0..1 <br/> [String](#String) | Nom de l'organisation ou de l'entreprise.  |
+| valid_from | 0..1 <br/> [Date](#Date) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
@@ -609,7 +608,7 @@ is_active: true
 ## Classe: Training 
 
 
-_Training or education of a person indicating a type (e.g., school diploma, university degree, military service), a label, an ISCO-19 code, and temporal validity._
+_Formation ou éducation d'une personne indiquant un type (p. ex. diplôme scolaire, diplôme universitaire, service militaire), un libellé, un code ISCO-19 et la validité temporelle._
 
 __
 
@@ -624,12 +623,12 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| training_type | 0..1 <br/> [TrainingTypeEnum](#TrainingTypeEnum) | Type of training or education.  |
-| training_code | 0..1 <br/> [String](#String) | ISCO-19 code of the training or education.  |
-| value | 0..1 <br/> [String](#String) | The value of an information besides other attributes such as type, language, etc.  |
-| valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+| training_type | 0..1 <br/> [TrainingTypeEnum](#TrainingTypeEnum) | Type de formation ou d'éducation.  |
+| training_code | 0..1 <br/> [String](#String) | Code ISCO-19 de la formation ou de l'éducation.  |
+| value | 0..1 <br/> [String](#String) | La valeur proprement dite d'une information, en plus d'autres attributs tels que le type, la langue, etc.  |
+| valid_from | 0..1 <br/> [Date](#Date) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
@@ -666,7 +665,7 @@ __
 
 
 
-_Types of training or education based on the Swiss BFS LEVEL_EDUC codelist._
+_Types de formation ou d'éducation basés sur la liste de codes suisse LEVEL_EDUC de l'OFS._
 
 __
 
@@ -779,7 +778,7 @@ URI: [act:TrainingTypeEnum](https://ld.ech.ch/schema/0294/actors/TrainingTypeEnu
 ## Classe: ElectoralDistrict 
 
 
-_Electoral district or region where a person is politically active; with temporal validity._
+_Circonscription ou région électorale dans laquelle une personne est politiquement active ; avec validité temporelle._
 
 __
 
@@ -794,10 +793,10 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| district | 0..1 <br/> [String](#String) | Electoral district or region.  |
-| valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+| district | 0..1 <br/> [String](#String) | Circonscription ou région électorale.  |
+| valid_from | 0..1 <br/> [Date](#Date) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
@@ -840,20 +839,20 @@ valid_from: 2010-01-01
 
 \newpage
 
-# Gruppen und Organe (Groups)
+# Groupes et organes (Groups)
 
-Das Group-Schema bildet politische Gruppen, Organisationen und Körperschaften ab.
+Le schéma Group représente les groupes, organisations et corporations politiques.
 
-- **Ein generisches Modell statt vieler Spezialklassen:** Parlamente, Parteien, Fraktionen, Kommissionen, Departemente, Gerichte und zivilgesellschaftliche Organisationen werden alle als *eine* Klasse `Group` abgebildet und über `group_type` unterschieden. Das hält das Modell einfach und ohne Schemaänderung erweiterbar – Legislative, Exekutive, Judikative und Zivilgesellschaft sind damit gleichermassen abbildbar.
-- **Gruppen und Sub-Gruppen über `parent_groups`:** Untergeordnete Gruppen verweisen auf ihre übergeordnete Gruppe – z. B. eine Kommission des Ständerats, eine Subkommission innerhalb einer Kommission, eine Kantonalpartei unter ihrer Mutterpartei oder eine Behörde innerhalb einer Direktion. Die Hierarchie entsteht so aus diesen Verweisen statt aus einer festen Ebenenstruktur. Sie bleibt meist innerhalb desselben `group_type`; typenübergreifende und mehrfache Verweise sind aber möglich (z. B. eine Fraktion, die zugleich auf ihr Parlament und ihre Partei verweist).
-- **Zeitliche Gültigkeit auch für Gruppen:** Über `valid_from`/`valid_through` lassen sich z. B. nur während einer Legislatur bestehende Kommissionen oder Umbenennungen und Fusionen von Parteien abbilden.
+- **Un modèle générique plutôt que de nombreuses classes spécialisées :** les parlements, partis, groupes parlementaires, commissions, départements, tribunaux et organisations de la société civile sont tous représentés par *une seule* classe `Group` et différenciés au moyen de `group_type`. Cela maintient le modèle simple et extensible sans modification du schéma – le législatif, l'exécutif, le judiciaire et la société civile peuvent ainsi être représentés de manière équivalente.
+- **Groupes et sous-groupes au moyen de `parent_groups` :** les groupes subordonnés renvoient à leur groupe supérieur – p. ex. une commission du Conseil des États, une sous-commission au sein d'une commission, un parti cantonal sous son parti mère ou une autorité au sein d'une direction. La hiérarchie découle ainsi de ces renvois plutôt que d'une structure de niveaux fixe. Elle reste le plus souvent au sein d'un même `group_type` ; des renvois transversaux et multiples sont toutefois possibles (p. ex. un groupe parlementaire qui renvoie à la fois à son parlement et à son parti).
+- **Validité temporelle également pour les groupes :** au moyen de `valid_from`/`valid_through`, il est possible de représenter p. ex. des commissions n'existant que durant une législature, ou des changements de nom et des fusions de partis.
 
 
 
 ## Classe: Group 
 
 
-_A political group, organization, or body (e.g., party, committee, parliament, department)._
+_Un groupe, une organisation ou une collectivité politique (p. ex. parti, commission, parlement, département)._
 
 __
 
@@ -868,27 +867,27 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| group_type | 0..1 <br/> [GroupType](#GroupType) | Type of group (e.g., party, commission, parliament, or similar). The exact naming and description of the group is provided via `label`.  |
-| label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
-| abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abbreviation (can be multilingual).  |
-| description | * <br/> [MultilingualValue](#MultilingualValue) | Description of the entity.  |
-| landing_page | 0..1 <br/> [Uri](#Uri) | Website providing further information.  |
-| parent_groups | * <br/> [Uriorcurie](#Uriorcurie) | Link to parent groups. For example, the parent party for cantonal parties, or to describe the hierarchy in the executive. Also used to link sub-commissions to commissions, or factions to both their parliament and their party. (parentGroup is typically used within the same group_type, but cross-type links are permitted, e.g., faction → parliament and faction → party.)  |
-| spatial | 0..1 <br/> [String](#String) | Spatial reference (fos-municipality number, fos-canton number, or country). Formats: municipality: ld.admin.ch/municipality/1234, canton: ld.admin.ch/canton/23, country: ld.admin.ch/country/CHE.  |
-| contacts | * <br/> [Contact](#Contact) | Contact information (email, website, social media). Guideline: email is quasi-mandatory and should always be provided where available.  |
-| addresses | * <br/> [Address](#Address) | Addresses with type (private, business, local).  |
-| statutes_url | 0..1 <br/> [String](#String) | URL to party statutes (PDF or webpage; optional for parties).  |
-| party_color | 0..1 <br/> [String](#String) | Party color as hexadecimal value (optional for parties, e.g., "#FF0000").  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+| group_type | 0..1 <br/> [GroupType](#GroupType) | Type de groupe (p. ex. parti, commission, parlement ou similaire). La désignation et la description exactes du groupe sont fournies via `label`.  |
+| label | 0..1 <br/> [String](#String) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
+| abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abréviation (peut être multilingue).  |
+| description | * <br/> [MultilingualValue](#MultilingualValue) | Description de l'entité.  |
+| landing_page | 0..1 <br/> [Uri](#Uri) | Site web fournissant de plus amples informations.  |
+| parent_groups | * <br/> [Uriorcurie](#Uriorcurie) | Lien vers les groupes parents. Par exemple, le parti faîtier pour les partis cantonaux, ou pour décrire la hiérarchie au sein de l'exécutif. Utilisé également pour rattacher des sous-commissions à des commissions, ou des groupes parlementaires à la fois à leur parlement et à leur parti. (parentGroup est généralement utilisé au sein d'un même group_type, mais les liens intertypes sont autorisés, p. ex. groupe parlementaire → parlement et groupe parlementaire → parti.)  |
+| spatial | 0..1 <br/> [String](#String) | Référence spatiale (numéro OFS de commune, numéro OFS de canton ou pays). Formats : commune : ld.admin.ch/municipality/1234, canton : ld.admin.ch/canton/23, pays : ld.admin.ch/country/CHE.  |
+| contacts | * <br/> [Contact](#Contact) | Informations de contact (e-mail, site web, réseaux sociaux). Directive : l'e-mail est quasi obligatoire et devrait toujours être fourni lorsqu'il est disponible.  |
+| addresses | * <br/> [Address](#Address) | Adresses avec type (privée, professionnelle, locale).  |
+| statutes_url | 0..1 <br/> [String](#String) | URL vers les statuts du parti (PDF ou page web ; facultatif pour les partis).  |
+| party_color | 0..1 <br/> [String](#String) | Couleur du parti sous forme de valeur hexadécimale (facultatif pour les partis, p. ex. « #FF0000 »).  |
+| local_id | 0..1 <br/> [String](#String) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q39 pour la Suisse. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| date_created | 0..1 <br/> [Date](#Date) | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> [Datetime](#Datetime) | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> [Date](#Date) | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| valid_from | 0..1 <br/> [Date](#Date) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
@@ -925,7 +924,7 @@ __
 ## Classe: GroupType 
 
 
-_Type of group (e.g., party, committee, parliament, department)._
+_Type de groupe (p. ex. parti, commission, parlement, département)._
 
 __
 
@@ -940,8 +939,8 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| group_type_enum | 0..1 <br/> [GroupTypeEnum](#GroupTypeEnum) | Link to the controlled vocabulary for group types.  |
-| label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
+| group_type_enum | 0..1 <br/> [GroupTypeEnum](#GroupTypeEnum) | Lien vers le vocabulaire contrôlé pour les types de groupes.  |
+| label | 0..1 <br/> [String](#String) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
 
 
 
@@ -978,7 +977,7 @@ __
 
 
 
-_Types of political groups and organizations._
+_Types de groupes et d'organisations politiques._
 
 __
 
@@ -991,47 +990,47 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 ### Valeurs admissibles
 | Valeur | Description |
 | --- | --- |
-| party |  Political party at federal, cantonal, or municipal level. Each federal level is managed as its own group (e.g., national party, cantonal party, municipal party).  |
+| party |  Parti politique au niveau fédéral, cantonal ou communal. Chaque niveau fédéral est géré comme un groupe distinct (p. ex. parti national, parti cantonal, parti communal).  |
 | | [act:enum/group_type/party](act:enum/group_type/party) |
-| list |  Electoral list (can be part of a party or independent).  |
+| list |  Liste électorale (peut faire partie d'un parti ou être indépendante).  |
 | | [act:enum/group_type/list](act:enum/group_type/list) |
-| workgroup |  Ad-hoc working group, typically with a limited duration.  |
+| workgroup |  Groupe de travail ad hoc, généralement d'une durée limitée.  |
 | | [act:enum/group_type/workgroup](act:enum/group_type/workgroup) |
-| parliament |  Parliament at federal, cantonal, or municipal level (e.g., Federal Assembly, National Council, Council of States, Grand Council, cantonal parliament, municipal parliament).  |
+| parliament |  Parlement au niveau fédéral, cantonal ou communal (p. ex. Assemblée fédérale, Conseil national, Conseil des États, Grand Conseil, parlement cantonal, parlement communal).  |
 | | [act:enum/group_type/parliament](act:enum/group_type/parliament) |
-| delegation |  Delegation.  |
+| delegation |  Délégation.  |
 | | [act:enum/group_type/delegation](act:enum/group_type/delegation) |
-| commission |  Commission (permanent or ad-hoc), including supervisory commissions (e.g., CPC), subject commissions, parliamentary investigation commissions (PIC), and audit commissions.  |
+| commission |  Commission (permanente ou ad hoc), y compris les commissions de surveillance (p. ex. CdG), les commissions thématiques, les commissions d'enquête parlementaire (CEP) et les commissions de vérification des comptes.  |
 | | [act:enum/group_type/commission](act:enum/group_type/commission) |
-| faction |  Parliamentary faction.  |
+| faction |  Groupe parlementaire.  |
 | | [act:enum/group_type/faction](act:enum/group_type/faction) |
-| parliamentary_bureau |  Parliamentary bureau.  |
+| parliamentary_bureau |  Bureau du parlement.  |
 | | [act:enum/group_type/parliamentary_bureau](act:enum/group_type/parliamentary_bureau) |
-| presidency |  Presidency of parliament.  |
+| presidency |  Présidence du parlement.  |
 | | [act:enum/group_type/presidency](act:enum/group_type/presidency) |
-| government |  Government / Executive as a collective body (e.g., Federal Council, Cantonal Government, City or Municipal Council).  |
+| government |  Gouvernement / exécutif en tant qu'organe collégial (p. ex. Conseil fédéral, conseil d'État, conseil municipal ou conseil communal).  |
 | | [act:enum/group_type/government](act:enum/group_type/government) |
-| department |  Government department.  |
+| department |  Département gouvernemental.  |
 | | [act:enum/group_type/department](act:enum/group_type/department) |
-| office |  Government office.  |
+| office |  Office gouvernemental.  |
 | | [act:enum/group_type/office](act:enum/group_type/office) |
-| extraparliamentary_commission |  Extra-parliamentary commission with a government mandate (e.g., Bank Council of the Swiss National Bank, FINMA).  |
+| extraparliamentary_commission |  Commission extraparlementaire dotée d'un mandat gouvernemental (p. ex. Conseil de banque de la Banque nationale suisse, FINMA).  |
 | | [act:enum/group_type/extraparliamentary_commission](act:enum/group_type/extraparliamentary_commission) |
-| interest_group |  Interest group from civil society.  |
+| interest_group |  Groupe d'intérêts issu de la société civile.  |
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |
-| control_body |  Control or supervisory body (e.g., Federal Finance Control EFC, supervisory authority AB-BA).  |
+| control_body |  Organe de contrôle ou de surveillance (p. ex. Contrôle fédéral des finances CDF, autorité de surveillance AS-MPC).  |
 | | [act:enum/group_type/control_body](act:enum/group_type/control_body) |
-| parliamentary_services |  Parliamentary services.  |
+| parliamentary_services |  Services du parlement.  |
 | | [act:enum/group_type/parliamentary_services](act:enum/group_type/parliamentary_services) |
-| court |  Court / Judiciary at any level (e.g., Federal Court, Cantonal Court, District Court).  |
+| court |  Tribunal / pouvoir judiciaire à tout niveau (p. ex. Tribunal fédéral, tribunal cantonal, tribunal de district).  |
 | | [act:enum/group_type/court](act:enum/group_type/court) |
 | association |  Association.  |
 | | [act:enum/group_type/association](act:enum/group_type/association) |
-| petition_carrier |  Petition carrier.  |
+| petition_carrier |  Porteur de pétition.  |
 | | [act:enum/group_type/petition_carrier](act:enum/group_type/petition_carrier) |
-| university |  University or educational institution as an outsourced provider of public tasks.  |
+| university |  Université ou établissement d'enseignement en tant que prestataire externalisé de tâches publiques.  |
 | | [act:enum/group_type/university](act:enum/group_type/university) |
-| other |  Other group type not covered by standard categories.  |
+| other |  Autre type de groupe non couvert par les catégories standard.  |
 | | [act:enum/group_type/other](act:enum/group_type/other) |
 
 
@@ -1043,22 +1042,22 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 </div>
 \newpage
 
-# Mitgliedschaften (Memberships)
+# Affiliations (Memberships)
 
-Das Membership-Schema bildet die Beziehung zwischen Personen und Gruppen ab und ist das zentrale Bindeglied im Akteur-Schema.
+Le schéma Membership représente la relation entre personnes et groupes et constitue l'élément de liaison central du schéma des acteurs.
 
-- **Abgrenzung zu Interessenbindungen (`InterestLink`):** `Membership` erfasst die *formale Zugehörigkeit* einer Person zu einer Gruppe innerhalb des Akteur-Schemas (z. B. Partei-, Kommissions- oder Parlamentsmitgliedschaft). Interessenbindungen und Interessenkonflikte zu Organisationen *ausserhalb* des Schemas sind bewusst davon getrennt und werden über `InterestLink` abgebildet (siehe folgendes Kapitel).
-- **Referenzen mit Snapshot statt Einbettung (`person_reference`/`group_reference`):** Eine Mitgliedschaft verweist über leichtgewichtige Referenzen auf Person und Gruppe und hält dabei deren wichtigste Identifikationsmerkmale zum Zeitpunkt der Verknüpfung fest. So bleibt der Eintrag historisch korrekt, auch wenn sich Person oder Gruppe später ändern.
-- **Aktivität explizit oder abgeleitet (`is_active`):** Ob eine Mitgliedschaft aktiv ist, kann explizit über `is_active` gesetzt oder aus der zeitlichen Gültigkeit abgeleitet werden. Ist `is_active` nicht gesetzt, ergibt sich die Aktivität aus `valid_from`/`valid_through`.
-- **Mitgliedschaft ≠ Stimmrecht (`authorized_to_vote`):** Das Stimmrecht wird getrennt von der Mitgliedschaft geführt – typischerweise `false` bei Ersatzmitgliedern (ausser im Einsatz), Beobachtenden, dem Sekretariat und Gästen.
-- **Rolle als kontrolliertes Vokabular mit Freitext-Option (`role_type`):** Die Rolle in der Gruppe (z. B. Mitglied, Präsidium, Stellvertretung) wird über ein kontrolliertes Vokabular (`RoleEnum`) angegeben; für nicht abgedeckte Rollen dient der Wert `other` mit einer freien Bezeichnung.
+- **Délimitation par rapport aux liens d'intérêts (`InterestLink`) :** `Membership` consigne l'*appartenance formelle* d'une personne à un groupe au sein du schéma des acteurs (p. ex. affiliation à un parti, à une commission ou à un parlement). Les liens d'intérêts et les conflits d'intérêts avec des organisations *extérieures* au schéma en sont délibérément séparés et sont représentés au moyen d'`InterestLink` (voir le chapitre suivant).
+- **Références avec instantané plutôt qu'intégration (`person_reference`/`group_reference`) :** une affiliation renvoie à la personne et au groupe au moyen de références légères et consigne à cette occasion leurs principales caractéristiques d'identification au moment de la mise en relation. L'enregistrement demeure ainsi historiquement correct, même si la personne ou le groupe change ultérieurement.
+- **Activité explicite ou déduite (`is_active`) :** le fait qu'une affiliation soit active peut être défini explicitement au moyen d'`is_active` ou déduit de la validité temporelle. Si `is_active` n'est pas défini, l'activité découle de `valid_from`/`valid_through`.
+- **Affiliation ≠ droit de vote (`authorized_to_vote`) :** le droit de vote est géré séparément de l'affiliation – typiquement `false` pour les membres suppléants (sauf lorsqu'ils sont en fonction), les personnes observatrices, le secrétariat et les invités.
+- **Rôle comme vocabulaire contrôlé avec option en texte libre (`role_type`) :** le rôle au sein du groupe (p. ex. membre, présidence, suppléance) est indiqué au moyen d'un vocabulaire contrôlé (`RoleEnum`) ; pour les rôles non couverts, la valeur `other` est utilisée, assortie d'une désignation libre.
 
 
 
 ## Classe: Membership 
 
 
-_A membership relationship between a person and a group, representing formal affiliation (e.g., party member, commission member, parliamentarian). Distinct from InterestLink, which covers external interest bindings and conflicts of interest to organizations outside the actor schema._
+_Une relation d'affiliation entre une personne et un groupe, représentant une appartenance formelle (p. ex. membre d'un parti, membre d'une commission, parlementaire). À distinguer de InterestLink, qui recouvre les liens d'intérêts externes et les conflits d'intérêts avec des organisations situées en dehors du schéma des acteurs._
 
 __
 
@@ -1073,20 +1072,20 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | Reference to a person with snapshot data at time of linking.  |
-| group_reference | 0..1 <br/> [GroupReference](#GroupReference) | Reference to a group with snapshot data at time of linking.  |
-| role_type | 0..1 <br/> [RoleType](#RoleType) | Role of the person in the membership or function.  |
-| authorized_to_vote | 0..1 <br/> [Boolean](#Boolean) | Indicates if the person is authorized to vote in the group. Typically false for substitute members (when not deputizing), observers, secretaries, and guests.  |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | Indicates if the membership is currently active. Can complement or replace `valid_from`/`valid_through`. If not set, activity is derived from the temporal validity fields.  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | Référence à une personne avec des données instantanées au moment de la mise en relation.  |
+| group_reference | 0..1 <br/> [GroupReference](#GroupReference) | Référence à un groupe avec des données instantanées au moment de la mise en relation.  |
+| role_type | 0..1 <br/> [RoleType](#RoleType) | Rôle de la personne dans l'affiliation ou la fonction.  |
+| authorized_to_vote | 0..1 <br/> [Boolean](#Boolean) | Indique si la personne dispose du droit de vote au sein du groupe. Généralement false pour les membres suppléants (lorsqu'ils ne remplacent personne), les observateurs, les secrétaires et les invités.  |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | Indique si l'affiliation est actuellement active. Peut compléter ou remplacer `valid_from`/`valid_through`. Si cette valeur n'est pas renseignée, l'activité est déduite des champs de validité temporelle.  |
+| local_id | 0..1 <br/> [String](#String) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q39 pour la Suisse. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| date_created | 0..1 <br/> [Date](#Date) | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> [Datetime](#Datetime) | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> [Date](#Date) | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| valid_from | 0..1 <br/> [Date](#Date) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
@@ -1123,7 +1122,7 @@ __
 ## Classe: RoleType 
 
 
-_Role of a person in a membership or function (e.g., member, president, deputy). If a role is not listed in the proposed RoleEnum vocabulary, the value 'other' can be used, and a descriptive label should be provided in the `role_label` slot. The label can also be used when a specific name is needed, even if a fitting semantic value exists in `role_type_enum`; it should be provided when `role_type_enum` is set to 'other'._
+_Rôle d'une personne dans une affiliation ou une fonction (p. ex. membre, président, suppléant). Si un rôle ne figure pas dans le vocabulaire RoleEnum proposé, la valeur « other » peut être utilisée, et un libellé descriptif doit être fourni dans le slot `role_label`. Le libellé peut également être utilisé lorsqu'une désignation spécifique est nécessaire, même s'il existe une valeur sémantique appropriée dans `role_type_enum` ; il doit être fourni lorsque `role_type_enum` est réglé sur « other »._
 
 __
 
@@ -1138,8 +1137,8 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| role_type_enum | 0..1 <br/> [RoleEnum](#RoleEnum) | Role of the person in the membership or function.  |
-| label | 0..1 <br/> [String](#String) | Specific role label. Use this when a specific role name is needed, even if a fitting semantic value exists in `role_type_enum`; provide this label when `role_type_enum` is set to 'other'.  |
+| role_type_enum | 0..1 <br/> [RoleEnum](#RoleEnum) | Rôle de la personne dans l'affiliation ou la fonction.  |
+| label | 0..1 <br/> [String](#String) | Libellé de rôle spécifique. À utiliser lorsqu'un nom de rôle spécifique est nécessaire, même s'il existe une valeur sémantique appropriée dans `role_type_enum` ; fournir ce libellé lorsque `role_type_enum` est réglé sur « other ».  |
 
 
 
@@ -1176,7 +1175,7 @@ __
 
 
 
-_Roles a person can have within a membership._
+_Rôles qu'une personne peut occuper dans le cadre d'une affiliation._
 
 __
 
@@ -1189,13 +1188,13 @@ URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 ### Valeurs admissibles
 | Valeur | Description |
 | --- | --- |
-| member |  Regular member (default).  |
+| member |  Membre ordinaire (par défaut).  |
 | |  |
-| president |  President or chair of the group.  |
+| president |  Président ou président du groupe.  |
 | |  |
-| stellvertreter |  Deputy/vice role (stellvertreter).  |
+| stellvertreter |  Rôle de suppléant/vice (stellvertreter).  |
 | |  |
-| other |  Other role; use role_label for a descriptive label.  |
+| other |  Autre rôle ; utiliser role_label pour un libellé descriptif.  |
 | |  |
 
 
@@ -1207,14 +1206,14 @@ URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 </div>
 \newpage
 
-# Interessenbindungen (Interest Links)
+# Liens d'intérêts (Interest Links)
 
-Das InterestLink-Schema erfasst Interessenbindungen, Interessenkonflikte und Verflechtungen von Personen mit Organisationen. Es orientiert sich an den Transparenzanforderungen für Parlamentsmitglieder gemäss [Bundesversammlung – Interessenbindungen](https://www.parlament.ch/centers/documents/de/interessen-nr.pdf).
+Le schéma InterestLink consigne les liens d'intérêts, les conflits d'intérêts et les imbrications des personnes avec des organisations. Il s'appuie sur les exigences de transparence applicables aux membres du parlement selon [Assemblée fédérale – Liens d'intérêts](https://www.parlament.ch/centers/documents/de/interessen-nr.pdf).
 
-- **Abgrenzung zu Mitgliedschaften (`Membership`):** `InterestLink` bildet Bindungen zu Organisationen *ausserhalb* des Akteur-Schemas ab (Interessenkonflikte, Politikfinanzierung) – im Unterschied zur formalen Zugehörigkeit *innerhalb* des Schemas, die über `Membership` erfasst wird.
-- **Obligatorische Klassifikation (`interest_type`):** Jede Bindung wird zwingend nach Art eingeordnet (berufliche Tätigkeit, politische Ämter, Verein), angelehnt an die Offenlegungskategorien der Bundesversammlung.
-- **Organisation über UID referenzierbar (`organization_uid`):** Ist die Organisation im UID-Register erfasst, wird sie über ihre UID (eCH-0097, `CHE-XXX.XXX.XXX`) referenziert – das ermöglicht Auswertungen, z. B. mit NOGA-Codes. Für Organisationen ohne UID stehen `organization_name`/`organization_address` bereit; die Rechtsform folgt einem kontrollierten Vokabular (`LegalFormEnum`).
-- **Umfang und Entschädigung (`is_paid`, `committee`, `function_role`):** Neben Gremium und Funktion innerhalb der Organisation wird explizit festgehalten, ob die Position bezahlt ist – ein zentraler Transparenzaspekt.
+- **Délimitation par rapport aux affiliations (`Membership`) :** `InterestLink` représente les liens avec des organisations *extérieures* au schéma des acteurs (conflits d'intérêts, financement de la politique) – par opposition à l'appartenance formelle *au sein* du schéma, qui est consignée au moyen de `Membership`.
+- **Classification obligatoire (`interest_type`) :** chaque lien est obligatoirement classé selon son type (activité professionnelle, mandats politiques, association), en s'appuyant sur les catégories de divulgation de l'Assemblée fédérale.
+- **Organisation référençable par IDE (`organization_uid`) :** si l'organisation est enregistrée dans le registre IDE, elle est référencée au moyen de son IDE (eCH-0097, `CHE-XXX.XXX.XXX`) – ce qui permet des analyses, p. ex. à l'aide de codes NOGA. Pour les organisations sans IDE, `organization_name`/`organization_address` sont disponibles ; la forme juridique suit un vocabulaire contrôlé (`LegalFormEnum`).
+- **Étendue et rémunération (`is_paid`, `committee`, `function_role`) :** outre l'organe et la fonction au sein de l'organisation, il est explicitement consigné si la position est rémunérée – un aspect central de la transparence.
 
 
 
@@ -1223,7 +1222,7 @@ Das InterestLink-Schema erfasst Interessenbindungen, Interessenkonflikte und Ver
 ## Classe: InterestLink 
 
 
-_An interest link (conflict of interest, political financing) of a person to an organization outside the actor schema._
+_Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne avec une organisation située en dehors du schéma des acteurs._
 
 __
 
@@ -1238,25 +1237,25 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | Reference to a person with snapshot data at time of linking.  |
-| interest_type | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | Type of interest link (professional activity, political office, association).  |
-| organization_name | 0..1 <br/> [String](#String) | Name of the organization or enterprise.  |
-| organization_uid | 0..1 <br/> [String](#String) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).  |
-| organization_address | 0..1 <br/> [String](#String) | Address of the organization.  |
-| legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm  |
-| is_paid | 0..1 <br/> [Boolean](#Boolean) | Indicates if the position is paid.  |
-| committee | 0..1 <br/> [String](#String) | Committee or board within the organization (e.g., Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).  |
-| function_role | 0..1 <br/> [String](#String) | Function or role in the organization (e.g., Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in).  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
+| person_reference | 0..1 <br/> [PersonReference](#PersonReference) | Référence à une personne avec des données instantanées au moment de la mise en relation.  |
+| interest_type | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | Type de lien d'intérêts (activité professionnelle, mandat politique, association).  |
+| organization_name | 0..1 <br/> [String](#String) | Nom de l'organisation ou de l'entreprise.  |
+| organization_uid | 0..1 <br/> [String](#String) | IDE de l'organisation (format eCH-0097 : CHE-XXX.XXX.XXX) issu du registre fédéral IDE (uid.admin.ch).  |
+| organization_address | 0..1 <br/> [String](#String) | Adresse de l'organisation.  |
+| legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Forme juridique de l'organisation. Voir le vocabulaire contrôlé : https://register.ld.admin.ch/i14y/concept/legalForm  |
+| is_paid | 0..1 <br/> [Boolean](#Boolean) | Indique si le poste est rémunéré.  |
+| committee | 0..1 <br/> [String](#String) | Comité ou organe au sein de l'organisation (p. ex. conseil d'administration, conseil de fondation, comité directeur, conseil de surveillance, comité consultatif, direction).  |
+| function_role | 0..1 <br/> [String](#String) | Fonction ou rôle dans l'organisation (p. ex. président/e, vice-président/e, membre, délégué, directeur/directrice, conseiller/ère).  |
+| local_id | 0..1 <br/> [String](#String) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q39 pour la Suisse. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| date_created | 0..1 <br/> [Date](#Date) | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> [Datetime](#Datetime) | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> [Date](#Date) | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| valid_from | 0..1 <br/> [Date](#Date) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| valid_through | 0..1 <br/> [Date](#Date) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| is_active | 0..1 <br/> [Boolean](#Boolean) | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
@@ -1472,7 +1471,7 @@ is_paid: false
 
 
 
-_Types of interest links (conflicts of interest, political financing)._
+_Types de liens d'intérêts (conflits d'intérêts, financement politique)._
 
 __
 
@@ -1485,11 +1484,11 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 ### Valeurs admissibles
 | Valeur | Description |
 | --- | --- |
-| professional_activity |  Professional activity outside the political mandate (e.g., employment, self-employment, consulting, board mandates in private companies).  |
+| professional_activity |  Activité professionnelle en dehors du mandat politique (p. ex. emploi salarié, activité indépendante, conseil, mandats d'administrateur dans des entreprises privées).  |
 | | [act:enum/interest_type/professional_activity](act:enum/interest_type/professional_activity) |
-| political_office |  Political office or mandate at other federal levels or in other bodies (e.g., cantonal/municipal parliament membership, government council, extra-parliamentary commission).  |
+| political_office |  Mandat ou fonction politique à d'autres niveaux fédéraux ou dans d'autres collectivités (p. ex. appartenance à un parlement cantonal/communal, conseil d'État, commission extraparlementaire).  |
 | | [act:enum/interest_type/political_office](act:enum/interest_type/political_office) |
-| association |  Membership in associations, federations, or interest organizations (e.g., industry associations, professional associations, lobby organizations, foundations, charitable associations).  |
+| association |  Appartenance à des associations, des fédérations ou des organisations d'intérêts (p. ex. associations de branche, associations professionnelles, organisations de lobbying, fondations, associations d'utilité publique).  |
 | | [act:enum/interest_type/association](act:enum/interest_type/association) |
 
 
@@ -1505,7 +1504,7 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 
 
 
-_Legal forms based on the Swiss UID register codelist (eCH-0108). See https://register.ld.admin.ch/i14y/concept/legalForm_
+_Formes juridiques basées sur la liste de codes du registre fédéral IDE (eCH-0108). Voir https://register.ld.admin.ch/i14y/concept/legalForm_
 
 __
 
@@ -1604,26 +1603,26 @@ URI: [act:LegalFormEnum](https://ld.ech.ch/schema/0294/actors/LegalFormEnum)
 </div>
 \newpage
 
-# Geteilte Elemente
+# Éléments partagés
 
 ## Reference Classes
 
-`PersonReference` und `GroupReference` werden verwendet, um Personen bzw. Gruppen **lokal** innerhalb einer anderen Entität zu referenzieren. Neben dem eigentlichen Link zur vollständigen Entität werden dabei nur die relevanten Informationen zum **Zeitpunkt der Verknüpfung** gespeichert – es müssen also nicht alle Informationen einer Person oder Gruppe bei jeder Erwähnung wiederholt werden.
+`PersonReference` et `GroupReference` sont utilisés pour référencer **localement** des personnes ou des groupes au sein d'une autre entité. Outre le lien proprement dit vers l'entité complète, seules les informations pertinentes au **moment de la mise en relation** sont enregistrées – il n'est donc pas nécessaire de répéter toutes les informations d'une personne ou d'un groupe à chaque mention.
 
-Ein Beispiel: Eine Motion verweist auf die Person, die sie eingereicht hat. Zusätzlich zum Link auf die vollständige Personen-Entität speichert die Motion lokal Informationen wie die politische Partei oder die Rolle der Person **zum Zeitpunkt der Einreichung**. Wechselt die Person später die Partei oder die Rolle, bleibt die Information in der Motion dennoch korrekt und unveränderlich.
+Un exemple : une motion renvoie à la personne qui l'a déposée. En plus du lien vers l'entité complète de la personne, la motion enregistre localement des informations telles que le parti politique ou le rôle de la personne **au moment du dépôt**. Si la personne change ultérieurement de parti ou de rôle, l'information dans la motion demeure néanmoins correcte et immuable.
 
-Dies dient drei Zwecken:
+Cela sert trois objectifs :
 
-- **Nützliche lokale Daten** ohne aufwändige Abfragen der vollständigen Entität
-- **Keine Redundanz**, da nicht alle Informationen bei jeder Erwähnung wiederholt werden müssen
-- **Implizite Versionierung**, da die lokale Referenz unverändert bleibt, auch wenn sich die verknüpfte Entität später ändert
+- **Des données locales utiles** sans requêtes coûteuses sur l'entité complète
+- **Aucune redondance**, car il n'est pas nécessaire de répéter toutes les informations à chaque mention
+- **Un versionnement implicite**, car la référence locale demeure inchangée, même si l'entité liée change ultérieurement
 
 
 
 ## Classe: PersonReference 
 
 
-_Lightweight reference to a person with key identification data at time of linking. Preserves historical accuracy even if the person changes later._
+_Référence légère à une personne avec les principales données d'identification au moment de la liaison. Préserve l'exactitude historique même si la personne change ultérieurement._
 
 __
 
@@ -1638,12 +1637,12 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| label | 1 <br/> [String](#String) | Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name).  |
-| label_long | 0..1 <br/> [String](#String) | Optional long display name including academic titles and full official name (e.g. "Dr. Maria Muster-Beispiel").  |
-| group_label | 0..1 <br/> [String](#String) | Name of the body/group at time of linking.  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| label | 1 <br/> [String](#String) | Nom d'affichage court obligatoire permettant d'identifier la personne au sein de l'organisation (par ex. avec l'ajout de l'année de naissance afin de distinguer les personnes portant le même nom).  |
+| label_long | 0..1 <br/> [String](#String) | Nom d'affichage long facultatif comprenant les titres académiques et le nom officiel complet (par ex. « Dr. Maria Muster-Beispiel »).  |
+| group_label | 0..1 <br/> [String](#String) | Nom de l'organe/du groupe au moment de la liaison.  |
+| local_id | 0..1 <br/> [String](#String) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q39 pour la Suisse. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 
 
 
@@ -1681,7 +1680,7 @@ __
 ## Classe: GroupReference 
 
 
-_Lightweight reference to a group with key identification data at time of linking._
+_Référence légère à un groupe avec les principales données d'identification au moment de la liaison._
 
 __
 
@@ -1696,11 +1695,11 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
-| abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abbreviation (can be multilingual).  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| label | 0..1 <br/> [String](#String) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
+| abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abréviation (peut être multilingue).  |
+| local_id | 0..1 <br/> [String](#String) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q39 pour la Suisse. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 
 
 
@@ -1732,14 +1731,14 @@ __
 
 </div>
 
-## Mehrfach benutzte Klassen
+## Classes utilisées à plusieurs reprises
 
 
 
 ## Classe: Address 
 
 
-_An address with a type (e.g., private address, business address) and a value._
+_Une adresse avec un type (p. ex. adresse privée, adresse professionnelle) et une valeur._
 
 __
 
@@ -1754,11 +1753,11 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| address_type | 0..1 <br/> [AddressTypeEnum](#AddressTypeEnum) | Type of address.  |
-| address_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | URI of the address from the Swiss federal building address register. The layer can be accessed at https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis. Example of a valid URI: https://geo.ld.admin.ch/location/address/101904050  |
-| street_address | 0..1 <br/> [String](#String) | Street address.  |
-| postal_code | 0..1 <br/> [Integer](#Integer) | Postal code.  |
-| postal_locality | 0..1 <br/> [String](#String) | Locality.  |
+| address_type | 0..1 <br/> [AddressTypeEnum](#AddressTypeEnum) | Type d'adresse.  |
+| address_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | URI de l'adresse issue du répertoire fédéral des adresses de bâtiments. La couche est accessible à l'adresse https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis. Exemple d'URI valide : https://geo.ld.admin.ch/location/address/101904050  |
+| street_address | 0..1 <br/> [String](#String) | Adresse (rue).  |
+| postal_code | 0..1 <br/> [Integer](#Integer) | Code postal.  |
+| postal_locality | 0..1 <br/> [String](#String) | Localité.  |
 
 
 
@@ -1805,7 +1804,7 @@ postal_locality: Basel-Stadt
 
 
 
-_Types of addresses._
+_Types d'adresses._
 
 __
 
@@ -1818,11 +1817,11 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 ### Valeurs admissibles
 | Valeur | Description |
 | --- | --- |
-| privateAddress |  Private address.  |
+| privateAddress |  Adresse privée.  |
 | |  |
-| businessAddress |  Business address.  |
+| businessAddress |  Adresse professionnelle.  |
 | |  |
-| localAddress |  Local address.  |
+| localAddress |  Adresse locale.  |
 | |  |
 
 
@@ -1838,7 +1837,7 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 ## Classe: Contact 
 
 
-_Contact information of a person indicating a type (e.g., email, LinkedIn) and a value._
+_Informations de contact d'une personne indiquant un type (p. ex. e-mail, LinkedIn) et une valeur._
 
 __
 
@@ -1853,8 +1852,8 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| contact_type | 0..1 <br/> [ContactTypeEnum](#ContactTypeEnum) | Type of contact information.  |
-| value | 0..1 <br/> [String](#String) | The value of an information besides other attributes such as type, language, etc.  |
+| contact_type | 0..1 <br/> [ContactTypeEnum](#ContactTypeEnum) | Type d'informations de contact.  |
+| value | 0..1 <br/> [String](#String) | La valeur proprement dite d'une information, en plus d'autres attributs tels que le type, la langue, etc.  |
 
 
 

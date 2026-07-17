@@ -61,6 +61,11 @@ annotations:
       ist.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Libellé descriptif du rôle lorsque « other » est sélectionné dans RoleEnum.
+
+      '
 description: 'Descriptive label for the role when ''other'' is selected in the RoleEnum.
 
   '

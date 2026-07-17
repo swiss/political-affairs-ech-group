@@ -6,7 +6,7 @@ search:
 # Slot: interest_type 
 
 
-_Type of interest link (professional activity, political office, association)._
+_Type de lien d'intérêts (activité professionnelle, mandat politique, association)._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:interestType](https://ld.ech.ch/schema/0294/actors/interestType)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
+| [InterestLink](InterestLink.md) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |  no  |
 
 
 
@@ -80,7 +80,14 @@ annotations:
     value: 'Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).
 
       '
-description: 'Type of interest link (professional activity, political office, association).
+  description_fr:
+    tag: description_fr
+    value: 'Type de lien d''intérêts (activité professionnelle, mandat politique,
+      association).
+
+      '
+description: 'Type de lien d''intérêts (activité professionnelle, mandat politique,
+  association).
 
   '
 examples:

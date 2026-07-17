@@ -3,7 +3,7 @@
 
 
 
-_Types of interest links (conflicts of interest, political financing)._
+_Types de liens d'intérêts (conflits d'intérêts, financement politique)._
 
 __
 
@@ -16,11 +16,11 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 ### Valeurs admissibles
 | Valeur | Description |
 | --- | --- |
-| professional_activity |  Professional activity outside the political mandate (e.g., employment, self-employment, consulting, board mandates in private companies).  |
+| professional_activity |  Activité professionnelle en dehors du mandat politique (p. ex. emploi salarié, activité indépendante, conseil, mandats d'administrateur dans des entreprises privées).  |
 | | [act:enum/interest_type/professional_activity](act:enum/interest_type/professional_activity) |
-| political_office |  Political office or mandate at other federal levels or in other bodies (e.g., cantonal/municipal parliament membership, government council, extra-parliamentary commission).  |
+| political_office |  Mandat ou fonction politique à d'autres niveaux fédéraux ou dans d'autres collectivités (p. ex. appartenance à un parlement cantonal/communal, conseil d'État, commission extraparlementaire).  |
 | | [act:enum/interest_type/political_office](act:enum/interest_type/political_office) |
-| association |  Membership in associations, federations, or interest organizations (e.g., industry associations, professional associations, lobby organizations, foundations, charitable associations).  |
+| association |  Appartenance à des associations, des fédérations ou des organisations d'intérêts (p. ex. associations de branche, associations professionnelles, organisations de lobbying, fondations, associations d'utilité publique).  |
 | | [act:enum/interest_type/association](act:enum/interest_type/association) |
 
 

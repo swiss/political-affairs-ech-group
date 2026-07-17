@@ -6,7 +6,7 @@ search:
 # Slot: electoral_district 
 
 
-_Link to the electoral district._
+_Lien vers la circonscription électorale._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:electoralDistrict](https://ld.ech.ch/schema/0294/actors/electoralDistr
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Person](Person.md) | Une personne avec des identifiants, des noms, des adresses, des nationalités ... |  no  |
 
 
 
@@ -71,7 +71,12 @@ annotations:
     value: 'Link zum Wahlbezirk.
 
       '
-description: 'Link to the electoral district.
+  description_fr:
+    tag: description_fr
+    value: 'Lien vers la circonscription électorale.
+
+      '
+description: 'Lien vers la circonscription électorale.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

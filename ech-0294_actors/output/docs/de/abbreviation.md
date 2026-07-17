@@ -6,7 +6,7 @@ search:
 # Slot: abbreviation 
 
 
-_Abbreviation (can be multilingual)._
+_Abkürzung (kann mehrsprachig sein)._
 
 __
 
@@ -28,7 +28,7 @@ URI: [mcm:abbreviation](https://ld.ech.ch/schema/0292/meta-common/abbreviation)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [Group](Group.md) | Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
-| [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |  no  |
+| [GroupReference](GroupReference.md) | Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikations... |  no  |
 
 
 
@@ -73,7 +73,12 @@ annotations:
     value: 'Abkürzung (kann mehrsprachig sein).
 
       '
-description: 'Abbreviation (can be multilingual).
+  description_fr:
+    tag: description_fr
+    value: 'Abréviation (peut être multilingue).
+
+      '
+description: 'Abkürzung (kann mehrsprachig sein).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

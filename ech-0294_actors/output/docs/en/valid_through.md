@@ -80,6 +80,11 @@ annotations:
     value: 'Das Datum, bis und mit dem die Information gültig ist.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'La date jusqu''à laquelle l''information est valable, incluse.
+
+      '
 description: 'The date until which the information is valid, inclusive.
 
   '

@@ -71,6 +71,11 @@ annotations:
     value: 'Kurze Beschreibung der Gruppierung.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Description de l''entité.
+
+      '
 description: 'Description of the entity.
 
   '

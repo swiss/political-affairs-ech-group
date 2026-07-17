@@ -79,6 +79,11 @@ annotations:
     value: 'Typ des Namens gemäss eCH-0011 (personNameData).
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Type de nom selon eCH-0011 (personNameData).
+
+      '
 description: 'Type of name according to eCH-0011 (personNameData).
 
   '

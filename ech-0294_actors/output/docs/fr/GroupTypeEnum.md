@@ -3,7 +3,7 @@
 
 
 
-_Types of political groups and organizations._
+_Types de groupes et d'organisations politiques._
 
 __
 
@@ -16,47 +16,47 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 ### Valeurs admissibles
 | Valeur | Description |
 | --- | --- |
-| party |  Political party at federal, cantonal, or municipal level. Each federal level is managed as its own group (e.g., national party, cantonal party, municipal party).  |
+| party |  Parti politique au niveau fédéral, cantonal ou communal. Chaque niveau fédéral est géré comme un groupe distinct (p. ex. parti national, parti cantonal, parti communal).  |
 | | [act:enum/group_type/party](act:enum/group_type/party) |
-| list |  Electoral list (can be part of a party or independent).  |
+| list |  Liste électorale (peut faire partie d'un parti ou être indépendante).  |
 | | [act:enum/group_type/list](act:enum/group_type/list) |
-| workgroup |  Ad-hoc working group, typically with a limited duration.  |
+| workgroup |  Groupe de travail ad hoc, généralement d'une durée limitée.  |
 | | [act:enum/group_type/workgroup](act:enum/group_type/workgroup) |
-| parliament |  Parliament at federal, cantonal, or municipal level (e.g., Federal Assembly, National Council, Council of States, Grand Council, cantonal parliament, municipal parliament).  |
+| parliament |  Parlement au niveau fédéral, cantonal ou communal (p. ex. Assemblée fédérale, Conseil national, Conseil des États, Grand Conseil, parlement cantonal, parlement communal).  |
 | | [act:enum/group_type/parliament](act:enum/group_type/parliament) |
-| delegation |  Delegation.  |
+| delegation |  Délégation.  |
 | | [act:enum/group_type/delegation](act:enum/group_type/delegation) |
-| commission |  Commission (permanent or ad-hoc), including supervisory commissions (e.g., CPC), subject commissions, parliamentary investigation commissions (PIC), and audit commissions.  |
+| commission |  Commission (permanente ou ad hoc), y compris les commissions de surveillance (p. ex. CdG), les commissions thématiques, les commissions d'enquête parlementaire (CEP) et les commissions de vérification des comptes.  |
 | | [act:enum/group_type/commission](act:enum/group_type/commission) |
-| faction |  Parliamentary faction.  |
+| faction |  Groupe parlementaire.  |
 | | [act:enum/group_type/faction](act:enum/group_type/faction) |
-| parliamentary_bureau |  Parliamentary bureau.  |
+| parliamentary_bureau |  Bureau du parlement.  |
 | | [act:enum/group_type/parliamentary_bureau](act:enum/group_type/parliamentary_bureau) |
-| presidency |  Presidency of parliament.  |
+| presidency |  Présidence du parlement.  |
 | | [act:enum/group_type/presidency](act:enum/group_type/presidency) |
-| government |  Government / Executive as a collective body (e.g., Federal Council, Cantonal Government, City or Municipal Council).  |
+| government |  Gouvernement / exécutif en tant qu'organe collégial (p. ex. Conseil fédéral, conseil d'État, conseil municipal ou conseil communal).  |
 | | [act:enum/group_type/government](act:enum/group_type/government) |
-| department |  Government department.  |
+| department |  Département gouvernemental.  |
 | | [act:enum/group_type/department](act:enum/group_type/department) |
-| office |  Government office.  |
+| office |  Office gouvernemental.  |
 | | [act:enum/group_type/office](act:enum/group_type/office) |
-| extraparliamentary_commission |  Extra-parliamentary commission with a government mandate (e.g., Bank Council of the Swiss National Bank, FINMA).  |
+| extraparliamentary_commission |  Commission extraparlementaire dotée d'un mandat gouvernemental (p. ex. Conseil de banque de la Banque nationale suisse, FINMA).  |
 | | [act:enum/group_type/extraparliamentary_commission](act:enum/group_type/extraparliamentary_commission) |
-| interest_group |  Interest group from civil society.  |
+| interest_group |  Groupe d'intérêts issu de la société civile.  |
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |
-| control_body |  Control or supervisory body (e.g., Federal Finance Control EFC, supervisory authority AB-BA).  |
+| control_body |  Organe de contrôle ou de surveillance (p. ex. Contrôle fédéral des finances CDF, autorité de surveillance AS-MPC).  |
 | | [act:enum/group_type/control_body](act:enum/group_type/control_body) |
-| parliamentary_services |  Parliamentary services.  |
+| parliamentary_services |  Services du parlement.  |
 | | [act:enum/group_type/parliamentary_services](act:enum/group_type/parliamentary_services) |
-| court |  Court / Judiciary at any level (e.g., Federal Court, Cantonal Court, District Court).  |
+| court |  Tribunal / pouvoir judiciaire à tout niveau (p. ex. Tribunal fédéral, tribunal cantonal, tribunal de district).  |
 | | [act:enum/group_type/court](act:enum/group_type/court) |
 | association |  Association.  |
 | | [act:enum/group_type/association](act:enum/group_type/association) |
-| petition_carrier |  Petition carrier.  |
+| petition_carrier |  Porteur de pétition.  |
 | | [act:enum/group_type/petition_carrier](act:enum/group_type/petition_carrier) |
-| university |  University or educational institution as an outsourced provider of public tasks.  |
+| university |  Université ou établissement d'enseignement en tant que prestataire externalisé de tâches publiques.  |
 | | [act:enum/group_type/university](act:enum/group_type/university) |
-| other |  Other group type not covered by standard categories.  |
+| other |  Autre type de groupe non couvert par les catégories standard.  |
 | | [act:enum/group_type/other](act:enum/group_type/other) |
 
 

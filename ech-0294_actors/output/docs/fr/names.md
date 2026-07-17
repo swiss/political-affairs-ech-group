@@ -6,7 +6,7 @@ search:
 # Slot: names 
 
 
-_Names of the person with type and value._
+_Noms de la personne avec type et valeur._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:name](https://ld.ech.ch/schema/0294/actors/name)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Person](Person.md) | Une personne avec des identifiants, des noms, des adresses, des nationalités ... |  no  |
 
 
 
@@ -72,7 +72,12 @@ annotations:
     value: 'Namen der Person mit Typ und Wert.
 
       '
-description: 'Names of the person with type and value.
+  description_fr:
+    tag: description_fr
+    value: 'Noms de la personne avec type et valeur.
+
+      '
+description: 'Noms de la personne avec type et valeur.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

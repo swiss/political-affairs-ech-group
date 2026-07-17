@@ -72,6 +72,11 @@ annotations:
     value: 'Sprachkompetenzen der Person.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Compétences linguistiques de la personne.
+
+      '
 description: 'Sprachkompetenzen der Person.
 
   '

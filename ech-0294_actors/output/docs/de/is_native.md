@@ -71,6 +71,11 @@ annotations:
     value: 'Gibt an, ob es sich um die Muttersprache handelt.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Indique s''il s''agit de la langue maternelle.
+
+      '
 description: 'Gibt an, ob es sich um die Muttersprache handelt.
 
   '

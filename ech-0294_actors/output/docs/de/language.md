@@ -6,7 +6,7 @@ search:
 # Slot: language 
 
 
-_Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en")._
+_Sprachcode im ISO 639-1 Format (zwei Kleinbuchstaben, z.B. "de", "fr", "it", "en")._
 
 __
 
@@ -28,7 +28,7 @@ URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
 | [LanguageProficiency](LanguageProficiency.md) | Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um die be... |  no  |
-| [MultilingualValue](MultilingualValue.md) | A multilingual string with language specification |  no  |
+| [MultilingualValue](MultilingualValue.md) | Ein mehrsprachiger String mit Angabe der Sprache |  no  |
 
 
 
@@ -80,8 +80,14 @@ annotations:
       "it", "en").
 
       '
-description: 'Language code in ISO 639-1 format (two lowercase letters, e.g. "de",
-  "fr", "it", "en").
+  description_fr:
+    tag: description_fr
+    value: 'Code de langue au format ISO 639-1 (deux lettres minuscules, par ex. «
+      de », « fr », « it », « en »).
+
+      '
+description: 'Sprachcode im ISO 639-1 Format (zwei Kleinbuchstaben, z.B. "de", "fr",
+  "it", "en").
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

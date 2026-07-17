@@ -6,7 +6,7 @@ search:
 # Slot: group_reference 
 
 
-_Reference to a group with snapshot data at time of linking._
+_Référence à un groupe avec des données instantanées au moment de la mise en relation._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:groupReference](https://ld.ech.ch/schema/0294/actors/groupReference)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Membership](Membership.md) | A membership relationship between a person and a group, representing formal a... |  no  |
+| [Membership](Membership.md) | Une relation d'affiliation entre une personne et un groupe, représentant une ... |  no  |
 
 
 
@@ -71,7 +71,14 @@ annotations:
     value: 'Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
 
       '
-description: 'Reference to a group with snapshot data at time of linking.
+  description_fr:
+    tag: description_fr
+    value: 'Référence à un groupe avec des données instantanées au moment de la mise
+      en relation.
+
+      '
+description: 'Référence à un groupe avec des données instantanées au moment de la
+  mise en relation.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

@@ -80,6 +80,11 @@ annotations:
     value: 'Adressen mit Typ (privat, geschäftlich, lokal).
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Adresses avec type (privée, professionnelle, locale).
+
+      '
 description: 'Addresses with type (private, business, local).
 
   '

@@ -3,7 +3,7 @@
 
 
 
-_Legal forms based on the Swiss UID register codelist (eCH-0108). See https://register.ld.admin.ch/i14y/concept/legalForm_
+_Formes juridiques basées sur la liste de codes du registre fédéral IDE (eCH-0108). Voir https://register.ld.admin.ch/i14y/concept/legalForm_
 
 __
 

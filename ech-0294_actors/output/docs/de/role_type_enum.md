@@ -71,6 +71,11 @@ annotations:
     value: 'Rolle der Person in der Mitgliedschaft oder Funktion.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Rôle de la personne dans l''affiliation ou la fonction.
+
+      '
 description: 'Rolle der Person in der Mitgliedschaft oder Funktion.
 
   '

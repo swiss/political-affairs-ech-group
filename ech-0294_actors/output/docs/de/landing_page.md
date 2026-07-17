@@ -71,6 +71,11 @@ annotations:
     value: 'Website mit weiteren Informationen.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Site web fournissant de plus amples informations.
+
+      '
 description: 'Website mit weiteren Informationen.
 
   '

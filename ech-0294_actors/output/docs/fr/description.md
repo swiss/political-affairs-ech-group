@@ -6,7 +6,7 @@ search:
 # Slot: description 
 
 
-_Description of the entity._
+_Description de l'entité._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:description](https://ld.ech.ch/schema/0294/actors/description)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Group](Group.md) | A political group, organization, or body (e |  no  |
+| [Group](Group.md) | Un groupe, une organisation ou une collectivité politique (p |  no  |
 
 
 
@@ -71,7 +71,12 @@ annotations:
     value: 'Kurze Beschreibung der Gruppierung.
 
       '
-description: 'Description of the entity.
+  description_fr:
+    tag: description_fr
+    value: 'Description de l''entité.
+
+      '
+description: 'Description de l''entité.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

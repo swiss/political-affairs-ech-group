@@ -6,7 +6,7 @@ search:
 # Slot: district 
 
 
-_Electoral district or region._
+_Circonscription ou région électorale._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:district](https://ld.ech.ch/schema/0294/actors/district)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [ElectoralDistrict](ElectoralDistrict.md) | Electoral district or region where a person is politically active; with tempo... |  no  |
+| [ElectoralDistrict](ElectoralDistrict.md) | Circonscription ou région électorale dans laquelle une personne est politique... |  no  |
 
 
 
@@ -78,7 +78,12 @@ annotations:
     value: 'Wahlkreis oder Wahlregion.
 
       '
-description: 'Electoral district or region.
+  description_fr:
+    tag: description_fr
+    value: 'Circonscription ou région électorale.
+
+      '
+description: 'Circonscription ou région électorale.
 
   '
 examples:

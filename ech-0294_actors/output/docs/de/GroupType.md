@@ -19,7 +19,7 @@ __
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
 | group_type_enum | 0..1 <br/> [GroupTypeEnum](GroupTypeEnum.md) | Link zum kontrollierten Vokabular für Gruppentypen.  |
-| label | 0..1 <br/> [String](String.md) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
+| label | 0..1 <br/> [String](String.md) | Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).  |
 
 
 

@@ -6,7 +6,7 @@ search:
 # Slot: citizenships 
 
 
-_Citizenships of the person._
+_Nationalités de la personne._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:citizenship](https://ld.ech.ch/schema/0294/actors/citizenship)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Person](Person.md) | Une personne avec des identifiants, des noms, des adresses, des nationalités ... |  no  |
 
 
 
@@ -72,7 +72,12 @@ annotations:
     value: 'Staatsbürgerschaften der Person.
 
       '
-description: 'Citizenships of the person.
+  description_fr:
+    tag: description_fr
+    value: 'Nationalités de la personne.
+
+      '
+description: 'Nationalités de la personne.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

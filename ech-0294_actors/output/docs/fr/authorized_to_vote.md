@@ -6,7 +6,7 @@ search:
 # Slot: authorized_to_vote 
 
 
-_Indicates if the person is authorized to vote in the group. Typically false for substitute members (when not deputizing), observers, secretaries, and guests._
+_Indique si la personne dispose du droit de vote au sein du groupe. Généralement false pour les membres suppléants (lorsqu'ils ne remplacent personne), les observateurs, les secrétaires et les invités._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:authorizedToVote](https://ld.ech.ch/schema/0294/actors/authorizedToVot
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Membership](Membership.md) | A membership relationship between a person and a group, representing formal a... |  no  |
+| [Membership](Membership.md) | Une relation d'affiliation entre une personne et un groupe, représentant une ... |  no  |
 
 
 
@@ -73,9 +73,16 @@ annotations:
       und Gäste.
 
       '
-description: 'Indicates if the person is authorized to vote in the group. Typically
-  false for substitute members (when not deputizing), observers, secretaries, and
-  guests.
+  description_fr:
+    tag: description_fr
+    value: 'Indique si la personne dispose du droit de vote au sein du groupe. Généralement
+      false pour les membres suppléants (lorsqu''ils ne remplacent personne), les
+      observateurs, les secrétaires et les invités.
+
+      '
+description: 'Indique si la personne dispose du droit de vote au sein du groupe. Généralement
+  false pour les membres suppléants (lorsqu''ils ne remplacent personne), les observateurs,
+  les secrétaires et les invités.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

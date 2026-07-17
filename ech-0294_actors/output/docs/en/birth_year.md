@@ -79,6 +79,12 @@ annotations:
       ist.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Année de naissance. À utiliser uniquement lorsqu''aucune `birthDate` complète
+      n''est disponible.
+
+      '
 description: 'Year of birth. Only to be used, if there is no full `birthDate` available.
 
   '

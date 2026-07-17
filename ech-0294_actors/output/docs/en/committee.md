@@ -72,6 +72,13 @@ annotations:
       Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Comité ou organe au sein de l''organisation (p. ex. conseil d''administration,
+      conseil de fondation, comité directeur, conseil de surveillance, comité consultatif,
+      direction).
+
+      '
 description: 'Committee or board within the organization (e.g., Verwaltungsrat, Stiftungsrat,
   Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).
 

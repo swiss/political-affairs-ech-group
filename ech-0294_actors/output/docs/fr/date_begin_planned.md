@@ -6,7 +6,7 @@ search:
 # Slot: date_begin_planned 
 
 
-_The planned start date of an event or occurrence with time duration._
+_La date de début planifiée d'un événement ou d'une occurrence avec durée._
 
 __
 
@@ -27,8 +27,8 @@ URI: [mcm:dateBeginPlanned](https://ld.ech.ch/schema/0292/meta-common/dateBeginP
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [IsEventWithDuration](IsEventWithDuration.md) | A mixin class that provides slots for modeling events or occurrences with tim... |  no  |
-| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
+| [IsEventWithDuration](IsEventWithDuration.md) | Une classe mixin qui fournit des slots pour modéliser des événements ou occur... |  no  |
+| [IsProcessStep](IsProcessStep.md) | Une classe mixin pour une étape unique dans un processus |  no  |
 
 
 
@@ -72,7 +72,13 @@ annotations:
     value: 'Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
 
       '
-description: 'The planned start date of an event or occurrence with time duration.
+  description_fr:
+    tag: description_fr
+    value: 'La date de début planifiée d''un événement ou d''une occurrence avec durée.
+
+      '
+description: 'La date de début planifiée d''un événement ou d''une occurrence avec
+  durée.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

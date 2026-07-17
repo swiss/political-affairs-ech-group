@@ -6,7 +6,7 @@ search:
 # Slot: spatial 
 
 
-_Spatial reference (fos-municipality number, fos-canton number, or country). Formats: municipality: ld.admin.ch/municipality/1234, canton: ld.admin.ch/canton/23, country: ld.admin.ch/country/CHE._
+_Référence spatiale (numéro OFS de commune, numéro OFS de canton ou pays). Formats : commune : ld.admin.ch/municipality/1234, canton : ld.admin.ch/canton/23, pays : ld.admin.ch/country/CHE._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:spatial](https://ld.ech.ch/schema/0294/actors/spatial)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Group](Group.md) | A political group, organization, or body (e |  no  |
+| [Group](Group.md) | Un groupe, une organisation ou une collectivité politique (p |  no  |
 
 
 
@@ -72,9 +72,16 @@ annotations:
       Bund: ld.admin.ch/country/CHE.
 
       '
-description: 'Spatial reference (fos-municipality number, fos-canton number, or country).
-  Formats: municipality: ld.admin.ch/municipality/1234, canton: ld.admin.ch/canton/23,
-  country: ld.admin.ch/country/CHE.
+  description_fr:
+    tag: description_fr
+    value: 'Référence spatiale (numéro OFS de commune, numéro OFS de canton ou pays).
+      Formats : commune : ld.admin.ch/municipality/1234, canton : ld.admin.ch/canton/23,
+      pays : ld.admin.ch/country/CHE.
+
+      '
+description: 'Référence spatiale (numéro OFS de commune, numéro OFS de canton ou pays).
+  Formats : commune : ld.admin.ch/municipality/1234, canton : ld.admin.ch/canton/23,
+  pays : ld.admin.ch/country/CHE.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

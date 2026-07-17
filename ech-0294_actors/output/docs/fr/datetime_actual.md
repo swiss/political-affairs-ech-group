@@ -6,7 +6,7 @@ search:
 # Slot: datetime_actual 
 
 
-_The actual date and time of an instantaneous event or occurrence (without time duration)._
+_La date et l'heure effectives d'un événement ou d'une occurrence instantané (sans durée)._
 
 __
 
@@ -27,7 +27,7 @@ URI: [mcm:datetimeActual](https://ld.ech.ch/schema/0292/meta-common/datetimeActu
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [IsInstantaneousEvent](IsInstantaneousEvent.md) | A mixin class that provides slots for modeling instantaneous events or occurr... |  no  |
+| [IsInstantaneousEvent](IsInstantaneousEvent.md) | Une classe mixin qui fournit des slots pour modéliser des événements ou occur... |  no  |
 
 
 
@@ -72,8 +72,14 @@ annotations:
       Vorkommnissen (ohne Zeitdauer).
 
       '
-description: 'The actual date and time of an instantaneous event or occurrence (without
-  time duration).
+  description_fr:
+    tag: description_fr
+    value: 'La date et l''heure effectives d''un événement ou d''une occurrence instantané
+      (sans durée).
+
+      '
+description: 'La date et l''heure effectives d''un événement ou d''une occurrence
+  instantané (sans durée).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

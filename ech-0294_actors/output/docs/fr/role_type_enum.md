@@ -6,7 +6,7 @@ search:
 # Slot: role_type_enum 
 
 
-_Role of the person in the membership or function._
+_Rôle de la personne dans l'affiliation ou la fonction._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:roleTypeEnum](https://ld.ech.ch/schema/0294/actors/roleTypeEnum)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [RoleType](RoleType.md) | Role of a person in a membership or function (e |  no  |
+| [RoleType](RoleType.md) | Rôle d'une personne dans une affiliation ou une fonction (p |  no  |
 
 
 
@@ -71,7 +71,12 @@ annotations:
     value: 'Rolle der Person in der Mitgliedschaft oder Funktion.
 
       '
-description: 'Role of the person in the membership or function.
+  description_fr:
+    tag: description_fr
+    value: 'Rôle de la personne dans l''affiliation ou la fonction.
+
+      '
+description: 'Rôle de la personne dans l''affiliation ou la fonction.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

@@ -80,6 +80,11 @@ annotations:
     value: 'Rechtsform der Organisation. Siehe kontrolliertes Vokabular: https://register.ld.admin.ch/i14y/concept/legalForm
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Forme juridique de l''organisation. Voir le vocabulaire contrôlé : https://register.ld.admin.ch/i14y/concept/legalForm
+
+      '
 description: 'Rechtsform der Organisation. Siehe kontrolliertes Vokabular: https://register.ld.admin.ch/i14y/concept/legalForm
 
   '

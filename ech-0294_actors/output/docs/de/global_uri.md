@@ -6,7 +6,7 @@ search:
 # Slot: global_uri 
 
 
-_A unique, globally valid URI for the entity._
+_Eine eindeutige, global gültige URI für die Entität._
 
 __
 
@@ -27,15 +27,15 @@ URI: [mcm:globalURI](https://ld.ech.ch/schema/0292/meta-common/globalURI)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [HasIdentification](HasIdentification.md) | A mixin class that provides slots for the identification of an entity |  no  |
-| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
+| [HasIdentification](HasIdentification.md) | Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfügu... |  no  |
+| [IsProcessStep](IsProcessStep.md) | Eine Mixin-Klasse für einen einzelnen Schritt in einem |  no  |
 | [Container](Container.md) | Container für politische Akteure, Gruppen und Beziehungen |  no  |
 | [Person](Person.md) | Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Be... |  no  |
 | [Group](Group.md) | Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 | [Membership](Membership.md) | Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe, die ein... |  no  |
 | [InterestLink](InterestLink.md) | Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person... |  no  |
-| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |  no  |
-| [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |  no  |
+| [PersonReference](PersonReference.md) | Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikations... |  no  |
+| [GroupReference](GroupReference.md) | Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikations... |  no  |
 
 
 
@@ -87,7 +87,12 @@ annotations:
     value: 'Eine eindeutige, global gültige URI für die Entität.
 
       '
-description: 'A unique, globally valid URI for the entity.
+  description_fr:
+    tag: description_fr
+    value: 'Une URI unique et globalement valide pour l''entité.
+
+      '
+description: 'Eine eindeutige, global gültige URI für die Entität.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

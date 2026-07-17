@@ -6,7 +6,7 @@ search:
 # Slot: date_modified 
 
 
-_The date when an entity was last modified._
+_La date à laquelle une entité a été modifiée pour la dernière fois._
 
 __
 
@@ -27,11 +27,11 @@ URI: [mcm:dateModified](https://ld.ech.ch/schema/0292/meta-common/dateModified)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [HasCreationModificationDates](HasCreationModificationDates.md) | A mixin class that provides slots for modeling creation and modification date... |  no  |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
-| [Group](Group.md) | A political group, organization, or body (e |  no  |
-| [Membership](Membership.md) | A membership relationship between a person and a group, representing formal a... |  no  |
-| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
+| [HasCreationModificationDates](HasCreationModificationDates.md) | Une classe mixin qui fournit des slots pour modéliser les dates de création e... |  no  |
+| [Person](Person.md) | Une personne avec des identifiants, des noms, des adresses, des nationalités ... |  no  |
+| [Group](Group.md) | Un groupe, une organisation ou une collectivité politique (p |  no  |
+| [Membership](Membership.md) | Une relation d'affiliation entre une personne et un groupe, représentant une ... |  no  |
+| [InterestLink](InterestLink.md) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |  no  |
 
 
 
@@ -75,7 +75,12 @@ annotations:
     value: 'Das Datum, an dem eine Entität zuletzt geändert wurde.
 
       '
-description: 'The date when an entity was last modified.
+  description_fr:
+    tag: description_fr
+    value: 'La date à laquelle une entité a été modifiée pour la dernière fois.
+
+      '
+description: 'La date à laquelle une entité a été modifiée pour la dernière fois.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

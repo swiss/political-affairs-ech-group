@@ -6,7 +6,7 @@ search:
 # Slot: addresses 
 
 
-_Addresses with type (private, business, local)._
+_Adresses avec type (privée, professionnelle, locale)._
 
 __
 
@@ -27,8 +27,8 @@ URI: [act:address](https://ld.ech.ch/schema/0294/actors/address)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
-| [Group](Group.md) | A political group, organization, or body (e |  no  |
+| [Person](Person.md) | Une personne avec des identifiants, des noms, des adresses, des nationalités ... |  no  |
+| [Group](Group.md) | Un groupe, une organisation ou une collectivité politique (p |  no  |
 
 
 
@@ -80,7 +80,12 @@ annotations:
     value: 'Adressen mit Typ (privat, geschäftlich, lokal).
 
       '
-description: 'Addresses with type (private, business, local).
+  description_fr:
+    tag: description_fr
+    value: 'Adresses avec type (privée, professionnelle, locale).
+
+      '
+description: 'Adresses avec type (privée, professionnelle, locale).
 
   '
 examples:

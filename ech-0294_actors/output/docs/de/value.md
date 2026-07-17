@@ -6,7 +6,7 @@ search:
 # Slot: value 
 
 
-_The value of an information besides other attributes such as type, language, etc._
+_Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc._
 
 __
 
@@ -30,7 +30,7 @@ URI: [mcm:value](https://ld.ech.ch/schema/0292/meta-common/value)
 | [Name](Name.md) | Ein Name mit einem Typ (z |  no  |
 | [Training](Training.md) | Ausbildung oder Bildung einer Person mit Angabe eines Typs (z |  no  |
 | [Contact](Contact.md) | Kontaktinformation einer Person mit Angabe eines Typs (z |  no  |
-| [MultilingualValue](MultilingualValue.md) | A multilingual string with language specification |  no  |
+| [MultilingualValue](MultilingualValue.md) | Ein mehrsprachiger String mit Angabe der Sprache |  no  |
 
 
 
@@ -75,8 +75,14 @@ annotations:
       Sprache, etc.
 
       '
-description: 'The value of an information besides other attributes such as type, language,
-  etc.
+  description_fr:
+    tag: description_fr
+    value: 'La valeur proprement dite d''une information, en plus d''autres attributs
+      tels que le type, la langue, etc.
+
+      '
+description: 'Der eigentliche Wert einer Information neben weiteren attributen wie
+  Typ, Sprache, etc.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

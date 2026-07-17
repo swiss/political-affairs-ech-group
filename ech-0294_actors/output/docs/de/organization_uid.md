@@ -80,6 +80,12 @@ annotations:
       UID-Register (uid.admin.ch).
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'IDE de l''organisation (format eCH-0097 : CHE-XXX.XXX.XXX) issu du registre
+      fédéral IDE (uid.admin.ch).
+
+      '
 description: 'UID der Organisation (Format eCH-0097: CHE-XXX.XXX.XXX) aus dem eidgenössischen
   UID-Register (uid.admin.ch).
 

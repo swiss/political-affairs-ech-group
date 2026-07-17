@@ -80,6 +80,12 @@ annotations:
       "it", "en").
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Code de langue au format ISO 639-1 (deux lettres minuscules, par ex. «
+      de », « fr », « it », « en »).
+
+      '
 description: 'Language code in ISO 639-1 format (two lowercase letters, e.g. "de",
   "fr", "it", "en").
 

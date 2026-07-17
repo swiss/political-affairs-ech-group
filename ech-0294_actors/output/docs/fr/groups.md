@@ -6,7 +6,7 @@ search:
 # Slot: groups 
 
 
-_Collection of groups._
+_Collection de groupes._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:group](https://ld.ech.ch/schema/0294/actors/group)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Container](Container.md) | Container for political actors, groups, and relationships |  no  |
+| [Container](Container.md) | Conteneur pour les acteurs politiques, les groupes et les relations |  no  |
 
 
 
@@ -72,7 +72,12 @@ annotations:
     value: 'Sammlung von Gruppen.
 
       '
-description: 'Collection of groups.
+  description_fr:
+    tag: description_fr
+    value: 'Collection de groupes.
+
+      '
+description: 'Collection de groupes.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

@@ -71,6 +71,11 @@ annotations:
     value: 'Postleitzahl.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Code postal.
+
+      '
 description: 'Postal code.
 
   '

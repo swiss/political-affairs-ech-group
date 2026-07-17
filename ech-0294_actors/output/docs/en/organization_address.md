@@ -71,6 +71,11 @@ annotations:
     value: 'Adresse der Organisation.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Adresse de l''organisation.
+
+      '
 description: 'Address of the organization.
 
   '

@@ -6,7 +6,7 @@ search:
 # Slot: birth_year 
 
 
-_Year of birth. Only to be used, if there is no full `birthDate` available._
+_Année de naissance. À utiliser uniquement lorsqu'aucune `birthDate` complète n'est disponible._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:birthYear](https://ld.ech.ch/schema/0294/actors/birthYear)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Person](Person.md) | Une personne avec des identifiants, des noms, des adresses, des nationalités ... |  no  |
 
 
 
@@ -79,7 +79,14 @@ annotations:
       ist.
 
       '
-description: 'Year of birth. Only to be used, if there is no full `birthDate` available.
+  description_fr:
+    tag: description_fr
+    value: 'Année de naissance. À utiliser uniquement lorsqu''aucune `birthDate` complète
+      n''est disponible.
+
+      '
+description: 'Année de naissance. À utiliser uniquement lorsqu''aucune `birthDate`
+  complète n''est disponible.
 
   '
 examples:

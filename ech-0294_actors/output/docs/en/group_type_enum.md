@@ -71,6 +71,11 @@ annotations:
     value: 'Link zum kontrollierten Vokabular für Gruppentypen.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Lien vers le vocabulaire contrôlé pour les types de groupes.
+
+      '
 description: 'Link to the controlled vocabulary for group types.
 
   '

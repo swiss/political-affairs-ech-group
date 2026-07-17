@@ -6,7 +6,7 @@ search:
 # Slot: address_uri 
 
 
-_URI of the address from the Swiss federal building address register. The layer can be accessed at https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis. Example of a valid URI: https://geo.ld.admin.ch/location/address/101904050_
+_URI de l'adresse issue du répertoire fédéral des adresses de bâtiments. La couche est accessible à l'adresse https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis. Exemple d'URI valide : https://geo.ld.admin.ch/location/address/101904050_
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:addressURI](https://ld.ech.ch/schema/0294/actors/addressURI)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Address](Address.md) | An address with a type (e |  no  |
+| [Address](Address.md) | Une adresse avec un type (p |  no  |
 
 
 
@@ -73,9 +73,16 @@ annotations:
       Beispiel einer gültigen URI: https://geo.ld.admin.ch/location/address/101904050
 
       '
-description: 'URI of the address from the Swiss federal building address register.
-  The layer can be accessed at https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis.
-  Example of a valid URI: https://geo.ld.admin.ch/location/address/101904050
+  description_fr:
+    tag: description_fr
+    value: 'URI de l''adresse issue du répertoire fédéral des adresses de bâtiments.
+      La couche est accessible à l''adresse https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis.
+      Exemple d''URI valide : https://geo.ld.admin.ch/location/address/101904050
+
+      '
+description: 'URI de l''adresse issue du répertoire fédéral des adresses de bâtiments.
+  La couche est accessible à l''adresse https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis.
+  Exemple d''URI valide : https://geo.ld.admin.ch/location/address/101904050
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

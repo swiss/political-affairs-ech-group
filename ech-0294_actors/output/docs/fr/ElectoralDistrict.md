@@ -3,7 +3,7 @@
 ## Classe: ElectoralDistrict 
 
 
-_Electoral district or region where a person is politically active; with temporal validity._
+_Circonscription ou région électorale dans laquelle une personne est politiquement active ; avec validité temporelle._
 
 __
 
@@ -18,10 +18,10 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| district | 0..1 <br/> [String](String.md) | Electoral district or region.  |
-| valid_from | 0..1 <br/> [Date](Date.md) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |
-| valid_through | 0..1 <br/> [Date](Date.md) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |
-| is_active | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |
+| district | 0..1 <br/> [String](String.md) | Circonscription ou région électorale.  |
+| valid_from | 0..1 <br/> [Date](Date.md) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](HasTemporalValidity.md) |
+| valid_through | 0..1 <br/> [Date](Date.md) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](HasTemporalValidity.md) |
+| is_active | 0..1 <br/> [Boolean](Boolean.md) | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](HasTemporalValidity.md) |
 
 
 

@@ -75,6 +75,11 @@ annotations:
     value: 'Das Datum, an dem eine Entität erstellt wurde.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'La date à laquelle une entité a été créée.
+
+      '
 description: 'The date when an entity was created.
 
   '

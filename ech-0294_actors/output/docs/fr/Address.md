@@ -3,7 +3,7 @@
 ## Classe: Address 
 
 
-_An address with a type (e.g., private address, business address) and a value._
+_Une adresse avec un type (p. ex. adresse privée, adresse professionnelle) et une valeur._
 
 __
 
@@ -18,11 +18,11 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| address_type | 0..1 <br/> [AddressTypeEnum](AddressTypeEnum.md) | Type of address.  |
-| address_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | URI of the address from the Swiss federal building address register. The layer can be accessed at https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis. Example of a valid URI: https://geo.ld.admin.ch/location/address/101904050  |
-| street_address | 0..1 <br/> [String](String.md) | Street address.  |
-| postal_code | 0..1 <br/> [Integer](Integer.md) | Postal code.  |
-| postal_locality | 0..1 <br/> [String](String.md) | Locality.  |
+| address_type | 0..1 <br/> [AddressTypeEnum](AddressTypeEnum.md) | Type d'adresse.  |
+| address_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | URI de l'adresse issue du répertoire fédéral des adresses de bâtiments. La couche est accessible à l'adresse https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis. Exemple d'URI valide : https://geo.ld.admin.ch/location/address/101904050  |
+| street_address | 0..1 <br/> [String](String.md) | Adresse (rue).  |
+| postal_code | 0..1 <br/> [Integer](Integer.md) | Code postal.  |
+| postal_locality | 0..1 <br/> [String](String.md) | Localité.  |
 
 
 

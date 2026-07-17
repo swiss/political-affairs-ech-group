@@ -72,6 +72,11 @@ annotations:
     value: 'Sammlung von Mitgliedschaften.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Collection d''affiliations.
+
+      '
 description: 'Collection of memberships.
 
   '

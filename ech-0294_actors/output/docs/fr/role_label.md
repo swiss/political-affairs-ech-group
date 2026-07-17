@@ -6,7 +6,7 @@ search:
 # Slot: role_label 
 
 
-_Descriptive label for the role when 'other' is selected in the RoleEnum._
+_Libellé descriptif du rôle lorsque « other » est sélectionné dans RoleEnum._
 
 __
 
@@ -61,7 +61,12 @@ annotations:
       ist.
 
       '
-description: 'Descriptive label for the role when ''other'' is selected in the RoleEnum.
+  description_fr:
+    tag: description_fr
+    value: 'Libellé descriptif du rôle lorsque « other » est sélectionné dans RoleEnum.
+
+      '
+description: 'Libellé descriptif du rôle lorsque « other » est sélectionné dans RoleEnum.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

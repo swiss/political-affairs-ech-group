@@ -6,7 +6,7 @@ search:
 # Slot: landing_page 
 
 
-_Website providing further information._
+_Site web fournissant de plus amples informations._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:landingPage](https://ld.ech.ch/schema/0294/actors/landingPage)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Group](Group.md) | A political group, organization, or body (e |  no  |
+| [Group](Group.md) | Un groupe, une organisation ou une collectivité politique (p |  no  |
 
 
 
@@ -71,7 +71,12 @@ annotations:
     value: 'Website mit weiteren Informationen.
 
       '
-description: 'Website providing further information.
+  description_fr:
+    tag: description_fr
+    value: 'Site web fournissant de plus amples informations.
+
+      '
+description: 'Site web fournissant de plus amples informations.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

@@ -6,7 +6,7 @@ search:
 # Slot: legal_form 
 
 
-_Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm_
+_Forme juridique de l'organisation. Voir le vocabulaire contrôlé : https://register.ld.admin.ch/i14y/concept/legalForm_
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:legalForm](https://ld.ech.ch/schema/0294/actors/legalForm)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
+| [InterestLink](InterestLink.md) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |  no  |
 
 
 
@@ -80,7 +80,12 @@ annotations:
     value: 'Rechtsform der Organisation. Siehe kontrolliertes Vokabular: https://register.ld.admin.ch/i14y/concept/legalForm
 
       '
-description: 'Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm
+  description_fr:
+    tag: description_fr
+    value: 'Forme juridique de l''organisation. Voir le vocabulaire contrôlé : https://register.ld.admin.ch/i14y/concept/legalForm
+
+      '
+description: 'Forme juridique de l''organisation. Voir le vocabulaire contrôlé : https://register.ld.admin.ch/i14y/concept/legalForm
 
   '
 examples:

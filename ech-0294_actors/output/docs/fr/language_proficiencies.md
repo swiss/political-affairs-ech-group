@@ -6,7 +6,7 @@ search:
 # Slot: language_proficiencies 
 
 
-_Language proficiencies of the person._
+_Compétences linguistiques de la personne._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:languageProficiency](https://ld.ech.ch/schema/0294/actors/languageProf
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Person](Person.md) | Une personne avec des identifiants, des noms, des adresses, des nationalités ... |  no  |
 
 
 
@@ -72,7 +72,12 @@ annotations:
     value: 'Sprachkompetenzen der Person.
 
       '
-description: 'Language proficiencies of the person.
+  description_fr:
+    tag: description_fr
+    value: 'Compétences linguistiques de la personne.
+
+      '
+description: 'Compétences linguistiques de la personne.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

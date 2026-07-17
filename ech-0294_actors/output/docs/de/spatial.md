@@ -72,6 +72,13 @@ annotations:
       Bund: ld.admin.ch/country/CHE.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Référence spatiale (numéro OFS de commune, numéro OFS de canton ou pays).
+      Formats : commune : ld.admin.ch/municipality/1234, canton : ld.admin.ch/canton/23,
+      pays : ld.admin.ch/country/CHE.
+
+      '
 description: 'Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer oder Land).
   Formate: Gemeinde: ld.admin.ch/municipality/1234, Kanton: ld.admin.ch/canton/23,
   Bund: ld.admin.ch/country/CHE.

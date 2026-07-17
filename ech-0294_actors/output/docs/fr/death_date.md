@@ -6,7 +6,7 @@ search:
 # Slot: death_date 
 
 
-_Exact date of death._
+_Date de décès exacte._
 
 __
 
@@ -27,7 +27,7 @@ URI: [schema:deathDate](http://schema.org/deathDate)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Person](Person.md) | Une personne avec des identifiants, des noms, des adresses, des nationalités ... |  no  |
 
 
 
@@ -71,7 +71,12 @@ annotations:
     value: 'Genaues Todesdatum.
 
       '
-description: 'Exact date of death.
+  description_fr:
+    tag: description_fr
+    value: 'Date de décès exacte.
+
+      '
+description: 'Date de décès exacte.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

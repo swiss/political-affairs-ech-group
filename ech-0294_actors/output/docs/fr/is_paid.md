@@ -6,7 +6,7 @@ search:
 # Slot: is_paid 
 
 
-_Indicates if the position is paid._
+_Indique si le poste est rémunéré._
 
 __
 
@@ -27,8 +27,8 @@ URI: [act:isPaid](https://ld.ech.ch/schema/0294/actors/isPaid)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
-| [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |  no  |
+| [InterestLink](InterestLink.md) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |  no  |
+| [Occupation](Occupation.md) | Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si... |  no  |
 
 
 
@@ -80,7 +80,12 @@ annotations:
     value: 'Gibt an, ob die Position bezahlt ist.
 
       '
-description: 'Indicates if the position is paid.
+  description_fr:
+    tag: description_fr
+    value: 'Indique si le poste est rémunéré.
+
+      '
+description: 'Indique si le poste est rémunéré.
 
   '
 examples:

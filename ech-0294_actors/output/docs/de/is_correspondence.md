@@ -71,6 +71,11 @@ annotations:
     value: 'Gibt an, ob es sich um die bevorzugte Sprache handelt.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Indique s''il s''agit de la langue préférée.
+
+      '
 description: 'Gibt an, ob es sich um die bevorzugte Sprache handelt.
 
   '

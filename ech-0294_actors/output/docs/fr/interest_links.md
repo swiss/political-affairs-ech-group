@@ -6,7 +6,7 @@ search:
 # Slot: interest_links 
 
 
-_Collection of interest links._
+_Collection de liens d'intérêts._
 
 __
 
@@ -27,8 +27,8 @@ URI: [act:interestLink](https://ld.ech.ch/schema/0294/actors/interestLink)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Container](Container.md) | Container for political actors, groups, and relationships |  no  |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Container](Container.md) | Conteneur pour les acteurs politiques, les groupes et les relations |  no  |
+| [Person](Person.md) | Une personne avec des identifiants, des noms, des adresses, des nationalités ... |  no  |
 
 
 
@@ -73,7 +73,12 @@ annotations:
     value: 'Sammlung von Interessenbindungen.
 
       '
-description: 'Collection of interest links.
+  description_fr:
+    tag: description_fr
+    value: 'Collection de liens d''intérêts.
+
+      '
+description: 'Collection de liens d''intérêts.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

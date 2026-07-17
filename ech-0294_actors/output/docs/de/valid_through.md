@@ -6,7 +6,7 @@ search:
 # Slot: valid_through 
 
 
-_The date until which the information is valid, inclusive._
+_Das Datum, bis und mit dem die Information gültig ist._
 
 __
 
@@ -27,7 +27,7 @@ URI: [schema:validThrough](http://schema.org/validThrough)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [HasTemporalValidity](HasTemporalValidity.md) | A mixin class that provides slots for modeling a temporal validity of informa... |  no  |
+| [HasTemporalValidity](HasTemporalValidity.md) | Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gültigkeit... |  no  |
 | [Group](Group.md) | Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 | [Membership](Membership.md) | Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe, die ein... |  no  |
 | [InterestLink](InterestLink.md) | Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person... |  no  |
@@ -80,7 +80,12 @@ annotations:
     value: 'Das Datum, bis und mit dem die Information gültig ist.
 
       '
-description: 'The date until which the information is valid, inclusive.
+  description_fr:
+    tag: description_fr
+    value: 'La date jusqu''à laquelle l''information est valable, incluse.
+
+      '
+description: 'Das Datum, bis und mit dem die Information gültig ist.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

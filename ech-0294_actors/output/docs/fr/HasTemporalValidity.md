@@ -3,7 +3,7 @@
 ## Classe: HasTemporalValidity 
 
 
-_A mixin class that provides slots for modeling a temporal validity of information (not of an event)._
+_Une classe mixin qui fournit des slots pour modéliser la validité temporelle d'une information (et non d'un événement)._
 
 __
 
@@ -18,9 +18,9 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| valid_from | 0..1 <br/> [Date](Date.md) | The date from which the information is valid.  |
-| valid_through | 0..1 <br/> [Date](Date.md) | The date until which the information is valid, inclusive.  |
-| is_active | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available.  |
+| valid_from | 0..1 <br/> [Date](Date.md) | La date à partir de laquelle l'information est valable.  |
+| valid_through | 0..1 <br/> [Date](Date.md) | La date jusqu'à laquelle l'information est valable, incluse.  |
+| is_active | 0..1 <br/> [Boolean](Boolean.md) | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible.  |
 
 
 
@@ -28,15 +28,15 @@ __
 
 | mixed into | description |
 | --- | --- |
-| [Group](Group.md) | A political group, organization, or body (e |
-| [Membership](Membership.md) | A membership relationship between a person and a group, representing formal a... |
-| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |
-| [Name](Name.md) | A name with a type (e |
-| [Citizenship](Citizenship.md) | Citizenship (also used for Nationality) of a person indicating the country an... |
-| [Gender](Gender.md) | Gender of a person indicating a gender code and temporal validity |
-| [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |
-| [Training](Training.md) | Training or education of a person indicating a type (e |
-| [ElectoralDistrict](ElectoralDistrict.md) | Electoral district or region where a person is politically active; with tempo... |
+| [Group](Group.md) | Un groupe, une organisation ou une collectivité politique (p |
+| [Membership](Membership.md) | Une relation d'affiliation entre une personne et un groupe, représentant une ... |
+| [InterestLink](InterestLink.md) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |
+| [Name](Name.md) | Un nom avec un type (p |
+| [Citizenship](Citizenship.md) | Nationalité (également utilisée pour la citoyenneté) d'une personne indiquant... |
+| [Gender](Gender.md) | Sexe d'une personne indiquant un code de sexe et la validité temporelle |
+| [Occupation](Occupation.md) | Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si... |
+| [Training](Training.md) | Formation ou éducation d'une personne indiquant un type (p |
+| [ElectoralDistrict](ElectoralDistrict.md) | Circonscription ou région électorale dans laquelle une personne est politique... |
 
 
 

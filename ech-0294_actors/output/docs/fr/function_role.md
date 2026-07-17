@@ -6,7 +6,7 @@ search:
 # Slot: function_role 
 
 
-_Function or role in the organization (e.g., Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in)._
+_Fonction ou rôle dans l'organisation (p. ex. président/e, vice-président/e, membre, délégué, directeur/directrice, conseiller/ère)._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:functionRole](https://ld.ech.ch/schema/0294/actors/functionRole)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
+| [InterestLink](InterestLink.md) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |  no  |
 
 
 
@@ -72,8 +72,14 @@ annotations:
       Mitglied, Delegierter, Geschäftsführer/in, Berater/in).
 
       '
-description: 'Function or role in the organization (e.g., Präsident/in, Vizepräsident/in,
-  Mitglied, Delegierter, Geschäftsführer/in, Berater/in).
+  description_fr:
+    tag: description_fr
+    value: 'Fonction ou rôle dans l''organisation (p. ex. président/e, vice-président/e,
+      membre, délégué, directeur/directrice, conseiller/ère).
+
+      '
+description: 'Fonction ou rôle dans l''organisation (p. ex. président/e, vice-président/e,
+  membre, délégué, directeur/directrice, conseiller/ère).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

@@ -6,7 +6,7 @@ search:
 # Slot: street_address 
 
 
-_Street address._
+_Adresse (rue)._
 
 __
 
@@ -27,7 +27,7 @@ URI: [act:streetAddress](https://ld.ech.ch/schema/0294/actors/streetAddress)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [Address](Address.md) | An address with a type (e |  no  |
+| [Address](Address.md) | Une adresse avec un type (p |  no  |
 
 
 
@@ -71,7 +71,12 @@ annotations:
     value: 'Strassenadresse.
 
       '
-description: 'Street address.
+  description_fr:
+    tag: description_fr
+    value: 'Adresse (rue).
+
+      '
+description: 'Adresse (rue).
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

@@ -79,6 +79,11 @@ annotations:
     value: 'Typ der Kontaktinformation.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Type d''informations de contact.
+
+      '
 description: 'Typ der Kontaktinformation.
 
   '

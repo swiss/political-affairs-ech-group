@@ -6,7 +6,7 @@ search:
 # Slot: valid_from 
 
 
-_The date from which the information is valid._
+_Das Datum, ab dem die Information gültig ist._
 
 __
 
@@ -27,7 +27,7 @@ URI: [schema:validFrom](http://schema.org/validFrom)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [HasTemporalValidity](HasTemporalValidity.md) | A mixin class that provides slots for modeling a temporal validity of informa... |  no  |
+| [HasTemporalValidity](HasTemporalValidity.md) | Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gültigkeit... |  no  |
 | [Group](Group.md) | Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 | [Membership](Membership.md) | Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe, die ein... |  no  |
 | [InterestLink](InterestLink.md) | Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person... |  no  |
@@ -80,7 +80,12 @@ annotations:
     value: 'Das Datum, ab dem die Information gültig ist.
 
       '
-description: 'The date from which the information is valid.
+  description_fr:
+    tag: description_fr
+    value: 'La date à partir de laquelle l''information est valable.
+
+      '
+description: 'Das Datum, ab dem die Information gültig ist.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors
