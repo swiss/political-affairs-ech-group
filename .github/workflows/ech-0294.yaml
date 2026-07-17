@@ -58,23 +58,43 @@ jobs:
           done
 
       - name: Install Pandoc
-        run: sudo apt update && sudo apt install -y pandoc
+        run: |
+          curl -fsSL https://github.com/jgm/pandoc/releases/download/3.5/pandoc-3.5-1-amd64.deb -o /tmp/pandoc.deb
+          sudo dpkg -i /tmp/pandoc.deb
+          pandoc --version | head -1
+
+      - name: Set up Typst (for PDF export)
+        uses: typst-community/setup-typst@v4
+
+      - name: Install Arial-compatible fonts (for PDF)
+        run: sudo apt-get update -qq && sudo apt-get install -y fonts-liberation
 
       - name: Download Pandoc pagebreak Lua filter
         run: |
           curl -L https://raw.githubusercontent.com/pandoc-ext/pagebreak/refs/heads/main/pagebreak.lua \
           -o pagebreak.lua
 
-      - name: Merge and convert to Word per language (de, fr, en)
+      - name: Merge, convert to Word and PDF per language (de, fr, en)
         run: |
           for lang in de fr en; do
             python merge_documentation.py ech-0294_actors "$lang"
+            # Word (DOCX) — unchanged pipeline
             pandoc "ech-0294_actors/output/documentation_merged_${lang}.md" \
               -o "ech-0294_actors/output/ech-0294_actors_${lang}.docx" \
               --reference-doc=ech-0294_actors/input/template.docx \
               --lua-filter=pagebreak.lua
             python set_docx_updatefields.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx"
             python shade_alternate_rows.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx"
+            # PDF via Typst (populated TOC, zebra, eCH branding)
+            pandoc "ech-0294_actors/output/documentation_merged_${lang}.md" \
+              -o "ech-0294_actors/output/ech-0294_actors_${lang}.pdf" \
+              --pdf-engine=typst \
+              --template=ech-0292_meta/input/typst-template.typ \
+              --pdf-engine-opt=--root="$PWD" \
+              -V footer-info="xxxx – Political Affairs / Actors / 0.0.1 / Draft / 2025-05-20" \
+              --lua-filter=pagebreak.lua \
+              --lua-filter=fix_dangling_links.lua \
+              --lua-filter=toc_typst.lua
           done
 
       - name: Commit and push changes
