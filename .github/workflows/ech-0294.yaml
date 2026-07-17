@@ -91,7 +91,7 @@ jobs:
               --pdf-engine=typst \
               --template=ech-0292_meta/input/typst-template.typ \
               --pdf-engine-opt=--root="$PWD" \
-              -V footer-info="xxxx – Political Affairs / Actors / 0.0.1 / Draft / 2025-05-20" \
+              -V footer-info="eCH-0294 – Political Affairs / Actors / 0.2 / Entwurf / 2026-07-17" \
               --lua-filter=pagebreak.lua \
               --lua-filter=fix_dangling_links.lua \
               --lua-filter=toc_typst.lua
