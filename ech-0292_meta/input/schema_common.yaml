@@ -160,6 +160,9 @@ classes:
     slots:
       - value
       - language
+    slot_usage:
+      value:
+        required: true
 
   PersonReference:
     description: |

@@ -114,6 +114,11 @@ classes:
       - addresses
       - statutes_url
       - party_color
+    slot_usage:
+      group_type:
+        required: true
+      label:
+        required: true
 
   # PersonReference and GroupReference moved to ech-0292_meta/schema_common
   # (shared lightweight references, imported here and by ech-0293_operations).
@@ -137,6 +142,10 @@ classes:
       - authorized_to_vote
       - is_active
     slot_usage:
+      person_reference:
+        required: true
+      group_reference:
+        required: true
       is_active:
         description: |
           Indicates if the membership is currently active. Can complement or replace `valid_from`/`valid_through`. If not set, activity is derived from the temporal validity fields.
@@ -168,6 +177,16 @@ classes:
       - is_paid
       - committee
       - function_role
+    slot_usage:
+      person_reference:
+        required: true
+    any_of:
+      - slot_conditions:
+          organization_uid:
+            required: true
+      - slot_conditions:
+          organization_name:
+            required: true
 
   Name:
     description: |
@@ -182,6 +201,11 @@ classes:
     slots:
       - name_type
       - value
+    slot_usage:
+      name_type:
+        required: true
+      value:
+        required: true
 
   Address:
     description: |
@@ -197,6 +221,13 @@ classes:
       - street_address
       - postal_code
       - postal_locality
+    any_of:
+      - slot_conditions:
+          postal_locality:
+            required: true
+      - slot_conditions:
+          address_uri:
+            required: true
 
   LanguageProficiency:
     description: |
@@ -210,6 +241,9 @@ classes:
       - language
       - is_correspondence
       - is_native
+    slot_usage:
+      language:
+        required: true
 
   Citizenship:
     description: |
@@ -223,6 +257,9 @@ classes:
       - HasTemporalValidity
     slots:
       - country
+    slot_usage:
+      country:
+        required: true
 
   Gender:
     description: |
@@ -238,6 +275,9 @@ classes:
       - gender_code
       - label
       - pronouns
+    slot_usage:
+      gender_code:
+        required: true
 
   Occupation:
     description: |
@@ -255,6 +295,13 @@ classes:
       - label
       - organization_uid
       - organization_name
+    any_of:
+      - slot_conditions:
+          occupation_code:
+            required: true
+      - slot_conditions:
+          label:
+            required: true
 
   Training:
     description: |
@@ -270,6 +317,16 @@ classes:
       - training_type
       - training_code
       - value
+    any_of:
+      - slot_conditions:
+          training_type:
+            required: true
+      - slot_conditions:
+          training_code:
+            required: true
+      - slot_conditions:
+          value:
+            required: true
 
   Contact:
     description: |
@@ -282,6 +339,11 @@ classes:
     slots:
       - contact_type
       - value
+    slot_usage:
+      contact_type:
+        required: true
+      value:
+        required: true
 
   ElectoralDistrict:
     description: |
@@ -295,6 +357,9 @@ classes:
       - HasTemporalValidity
     slots:
       - district
+    slot_usage:
+      district:
+        required: true
 
   GroupType:
     description: |
@@ -319,6 +384,26 @@ classes:
     slots:
       - role_type_enum
       - label
+    any_of:
+      - slot_conditions:
+          role_type_enum:
+            required: true
+      - slot_conditions:
+          label:
+            required: true
+    rules:
+      - description: If the role type is 'other', a descriptive label must be provided.
+        annotations:
+          description_de: Wenn der Rollentyp 'other' ist, muss eine beschreibende Bezeichnung angegeben werden.
+          description_fr: Si le type de rôle est « other », un libellé descriptif doit être fourni.
+        preconditions:
+          slot_conditions:
+            role_type_enum:
+              equals_string: other
+        postconditions:
+          slot_conditions:
+            label:
+              required: true
     slot_usage:
       label:
         description: |
