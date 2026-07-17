@@ -74,6 +74,7 @@ jobs:
               --reference-doc=ech-0294_actors/input/template.docx \
               --lua-filter=pagebreak.lua
             python set_docx_updatefields.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx"
+            python shade_alternate_rows.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx"
           done
 
       - name: Commit and push changes
