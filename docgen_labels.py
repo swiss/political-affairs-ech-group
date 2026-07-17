@@ -43,6 +43,7 @@ LABELS = {
     "### Slot Characteristics": {"de": "### Slot-Eigenschaften", "fr": "### Caractéristiques du slot"},
     "### Enumeration Source": {"de": "### Quelle der Aufzählung", "fr": "### Source de l'énumération"},
     "#### Example: ": {"de": "#### Beispiel: ", "fr": "#### Exemple : "},
+    "Inheritance: ": {"de": "Vererbung: ", "fr": "Héritage : "},
     "## Examples": {"de": "## Beispiele", "fr": "## Exemples"},
     "### Examples": {"de": "### Beispiele", "fr": "### Exemples"},
     "## Notes": {"de": "## Hinweise", "fr": "## Notes"},

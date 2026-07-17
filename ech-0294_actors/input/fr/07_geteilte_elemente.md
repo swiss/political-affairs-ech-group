@@ -1,24 +1,24 @@
 \newpage
 
-# Geteilte Elemente
+# Éléments partagés
 
 ## Reference Classes
 
-`PersonReference` und `GroupReference` werden verwendet, um Personen bzw. Gruppen **lokal** innerhalb einer anderen Entität zu referenzieren. Neben dem eigentlichen Link zur vollständigen Entität werden dabei nur die relevanten Informationen zum **Zeitpunkt der Verknüpfung** gespeichert – es müssen also nicht alle Informationen einer Person oder Gruppe bei jeder Erwähnung wiederholt werden.
+`PersonReference` et `GroupReference` sont utilisés pour référencer **localement** des personnes ou des groupes au sein d'une autre entité. Outre le lien proprement dit vers l'entité complète, seules les informations pertinentes au **moment de la mise en relation** sont enregistrées – il n'est donc pas nécessaire de répéter toutes les informations d'une personne ou d'un groupe à chaque mention.
 
-Ein Beispiel: Eine Motion verweist auf die Person, die sie eingereicht hat. Zusätzlich zum Link auf die vollständige Personen-Entität speichert die Motion lokal Informationen wie die politische Partei oder die Rolle der Person **zum Zeitpunkt der Einreichung**. Wechselt die Person später die Partei oder die Rolle, bleibt die Information in der Motion dennoch korrekt und unveränderlich.
+Un exemple : une motion renvoie à la personne qui l'a déposée. En plus du lien vers l'entité complète de la personne, la motion enregistre localement des informations telles que le parti politique ou le rôle de la personne **au moment du dépôt**. Si la personne change ultérieurement de parti ou de rôle, l'information dans la motion demeure néanmoins correcte et immuable.
 
-Dies dient drei Zwecken:
+Cela sert trois objectifs :
 
-- **Nützliche lokale Daten** ohne aufwändige Abfragen der vollständigen Entität
-- **Keine Redundanz**, da nicht alle Informationen bei jeder Erwähnung wiederholt werden müssen
-- **Implizite Versionierung**, da die lokale Referenz unverändert bleibt, auch wenn sich die verknüpfte Entität später ändert
+- **Des données locales utiles** sans requêtes coûteuses sur l'entité complète
+- **Aucune redondance**, car il n'est pas nécessaire de répéter toutes les informations à chaque mention
+- **Un versionnement implicite**, car la référence locale demeure inchangée, même si l'entité liée change ultérieurement
 
 {{include:ech-0294_actors/output/docs/PersonReference.md}}
 
 {{include:ech-0294_actors/output/docs/GroupReference.md}}
 
-## Mehrfach benutzte Klassen
+## Classes utilisées à plusieurs reprises
 
 {{include:ech-0294_actors/output/docs/Address.md}}
 

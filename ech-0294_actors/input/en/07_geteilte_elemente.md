@@ -1,24 +1,24 @@
 \newpage
 
-# Geteilte Elemente
+# Shared Elements
 
 ## Reference Classes
 
-`PersonReference` und `GroupReference` werden verwendet, um Personen bzw. Gruppen **lokal** innerhalb einer anderen Entität zu referenzieren. Neben dem eigentlichen Link zur vollständigen Entität werden dabei nur die relevanten Informationen zum **Zeitpunkt der Verknüpfung** gespeichert – es müssen also nicht alle Informationen einer Person oder Gruppe bei jeder Erwähnung wiederholt werden.
+`PersonReference` and `GroupReference` are used to reference persons or groups **locally** within another entity. In addition to the actual link to the complete entity, only the relevant information at the **time of linking** is stored – so it is not necessary to repeat all the information about a person or group at every mention.
 
-Ein Beispiel: Eine Motion verweist auf die Person, die sie eingereicht hat. Zusätzlich zum Link auf die vollständige Personen-Entität speichert die Motion lokal Informationen wie die politische Partei oder die Rolle der Person **zum Zeitpunkt der Einreichung**. Wechselt die Person später die Partei oder die Rolle, bleibt die Information in der Motion dennoch korrekt und unveränderlich.
+An example: A motion references the person who submitted it. In addition to the link to the complete person entity, the motion stores locally information such as the person's political party or role **at the time of submission**. If the person later changes party or role, the information in the motion nevertheless remains correct and immutable.
 
-Dies dient drei Zwecken:
+This serves three purposes:
 
-- **Nützliche lokale Daten** ohne aufwändige Abfragen der vollständigen Entität
-- **Keine Redundanz**, da nicht alle Informationen bei jeder Erwähnung wiederholt werden müssen
-- **Implizite Versionierung**, da die lokale Referenz unverändert bleibt, auch wenn sich die verknüpfte Entität später ändert
+- **Useful local data** without costly queries of the complete entity
+- **No redundancy**, since not all information has to be repeated at every mention
+- **Implicit versioning**, since the local reference remains unchanged even if the linked entity changes later
 
 {{include:ech-0294_actors/output/docs/PersonReference.md}}
 
 {{include:ech-0294_actors/output/docs/GroupReference.md}}
 
-## Mehrfach benutzte Klassen
+## Reused Classes
 
 {{include:ech-0294_actors/output/docs/Address.md}}
 

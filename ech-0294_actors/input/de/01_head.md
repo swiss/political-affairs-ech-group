@@ -38,7 +38,7 @@ Der Standard richtet sich an öffentliche Stellen aller Staatsebenen, politische
     <w:fldChar w:fldCharType="begin" w:dirty="true"/>
   </w:r>
   <w:r>
-    <w:instrText xml:space="preserve"> TOC \o "1-3" \h \z \u </w:instrText>
+    <w:instrText xml:space="preserve"> TOC \o "1-2" \h \z \u </w:instrText>
   </w:r>
   <w:r>
     <w:fldChar w:fldCharType="separate"/>

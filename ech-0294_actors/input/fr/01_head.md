@@ -1,36 +1,36 @@
 ---
-title: "eCH-0294 Politische Akteure: Personen, Gruppen und Organe"
-lang: de
+title: "eCH-0294 Acteurs politiques : personnes, groupes et organes"
+lang: fr
 toc: false
 ---
 
-| **Name**              | **Politische Akteure: Personen, Gruppen und Organe**                                                                       |
+| **Nom**               | **Acteurs politiques : personnes, groupes et organes**                                                                       |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------|
-| **eCH-Nummer**        | eCH-0294                                                                                                                   |
-| **Kategorie**         | Entwurf                                                                                                                    |
-| **Reifegrad**         | Fachgruppen interner Review                                                                                                |
+| **Numéro eCH**        | eCH-0294                                                                                                                   |
+| **Catégorie**         | Projet                                                                                                                    |
+| **Degré de maturité** | Revue interne du groupe spécialisé                                                                                        |
 | **Version**           | 0.2                                                                                                                        |
-| **Status**            |                                                                                                 |
-| **Beschluss am**      |                                                                                                                            |
-| **Ausgabedatum**      |                                                                                                                            |
-| **Ersetzt Version**   | 0.0                                                                                                                        |
-| **Voraussetzungen**   | eCH-0292 (Gemeinsame Datenelemente)                                                                                        |
-| **Beilagen**          | -                                                                                                                          |
-| **Sprachen**          | Deutsch (Original) - English (Datamodel)                                                                                    |
-| **Autoren**           | Fachgruppe politische Geschäfte: Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi, Christian Gutknecht, Michael Luggen |
-| **Herausgeber / Vertrieb** | Verein eCH, [Affolternstrasse 52, 8050 Zürich](https://geo.ld.admin.ch/location/address/101218624)                             |
+| **Statut**            |                                                                                                 |
+| **Décidé le**         |                                                                                                                            |
+| **Date de publication** |                                                                                                                          |
+| **Remplace la version** | 0.0                                                                                                                      |
+| **Conditions préalables** | eCH-0292 (Éléments de données communs)                                                                                |
+| **Annexes**           | -                                                                                                                          |
+| **Langues**           | Allemand (original) - Anglais (modèle de données)                                                                          |
+| **Auteurs**           | Groupe spécialisé Affaires politiques : Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi, Christian Gutknecht, Michael Luggen |
+| **Éditeur / Distribution** | Association eCH, [Affolternstrasse 52, 8050 Zürich](https://geo.ld.admin.ch/location/address/101218624)                    |
 
 \newpage
 
-# Abstrakt
+# Résumé
 
-Der Entwurf eCH-0294 „Politische Akteure: Personen, Gruppen und Organe“ definiert ein einheitliches Datenmodell zur strukturierten Publikation politischer Akteure in der Schweiz. Er umfasst natürliche Personen, politische Gruppen und Organe, Mitgliedschaften zwischen Personen und Gruppen sowie Interessenbindungen. Ziel ist es, föderal übergreifend vergleichbare, maschinenlesbare und nachnutzbare Informationen bereitzustellen, um Transparenz, Nachvollziehbarkeit und Analysefähigkeit politischer Prozesse zu verbessern.
+Le projet eCH-0294 « Acteurs politiques : personnes, groupes et organes » définit un modèle de données uniforme pour la publication structurée des acteurs politiques en Suisse. Il englobe les personnes physiques, les groupes et organes politiques, les affiliations entre personnes et groupes ainsi que les liens d'intérêts. L'objectif est de mettre à disposition, par-delà les niveaux fédéraux, des informations comparables, lisibles par machine et réutilisables, afin d'améliorer la transparence, la traçabilité et la capacité d'analyse des processus politiques.
 
-Der Standard richtet sich an öffentliche Stellen aller Staatsebenen, politische Akteure, Medien, Forschung und Öffentlichkeit und schafft eine Grundlage für interoperable politische Informationssysteme in der Schweiz.
+La norme s'adresse aux organismes publics de tous les niveaux étatiques, aux acteurs politiques, aux médias, à la recherche et au public, et crée une base pour des systèmes d'information politiques interopérables en Suisse.
 
 \newpage
 
-# Inhaltsverzeichnis
+# Table des matières
 
 ```{=openxml}
 <w:p>
@@ -38,17 +38,16 @@ Der Standard richtet sich an öffentliche Stellen aller Staatsebenen, politische
     <w:fldChar w:fldCharType="begin" w:dirty="true"/>
   </w:r>
   <w:r>
-    <w:instrText xml:space="preserve"> TOC \o "1-3" \h \z \u </w:instrText>
+    <w:instrText xml:space="preserve"> TOC \o "1-2" \h \z \u </w:instrText>
   </w:r>
   <w:r>
     <w:fldChar w:fldCharType="separate"/>
   </w:r>
   <w:r>
-    <w:t>Rechtsklick &gt; „Felder aktualisieren“, um das Inhaltsverzeichnis zu erzeugen.</w:t>
+    <w:t>Clic droit &gt; « Mettre à jour les champs » pour générer la table des matières.</w:t>
   </w:r>
   <w:r>
     <w:fldChar w:fldCharType="end"/>
   </w:r>
 </w:p>
 ```
-

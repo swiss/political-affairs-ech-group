@@ -1,13 +1,13 @@
 \newpage
 
-# Interessenbindungen (Interest Links)
+# Liens d'intérêts (Interest Links)
 
-Das InterestLink-Schema erfasst Interessenbindungen, Interessenkonflikte und Verflechtungen von Personen mit Organisationen. Es orientiert sich an den Transparenzanforderungen für Parlamentsmitglieder gemäss [Bundesversammlung – Interessenbindungen](https://www.parlament.ch/centers/documents/de/interessen-nr.pdf).
+Le schéma InterestLink consigne les liens d'intérêts, les conflits d'intérêts et les imbrications des personnes avec des organisations. Il s'appuie sur les exigences de transparence applicables aux membres du parlement selon [Assemblée fédérale – Liens d'intérêts](https://www.parlament.ch/centers/documents/de/interessen-nr.pdf).
 
-- **Abgrenzung zu Mitgliedschaften (`Membership`):** `InterestLink` bildet Bindungen zu Organisationen *ausserhalb* des Akteur-Schemas ab (Interessenkonflikte, Politikfinanzierung) – im Unterschied zur formalen Zugehörigkeit *innerhalb* des Schemas, die über `Membership` erfasst wird.
-- **Obligatorische Klassifikation (`interest_type`):** Jede Bindung wird zwingend nach Art eingeordnet (berufliche Tätigkeit, politische Ämter, Verein), angelehnt an die Offenlegungskategorien der Bundesversammlung.
-- **Organisation über UID referenzierbar (`organization_uid`):** Ist die Organisation im UID-Register erfasst, wird sie über ihre UID (eCH-0097, `CHE-XXX.XXX.XXX`) referenziert – das ermöglicht Auswertungen, z. B. mit NOGA-Codes. Für Organisationen ohne UID stehen `organization_name`/`organization_address` bereit; die Rechtsform folgt einem kontrollierten Vokabular (`LegalFormEnum`).
-- **Umfang und Entschädigung (`is_paid`, `committee`, `function_role`):** Neben Gremium und Funktion innerhalb der Organisation wird explizit festgehalten, ob die Position bezahlt ist – ein zentraler Transparenzaspekt.
+- **Délimitation par rapport aux affiliations (`Membership`) :** `InterestLink` représente les liens avec des organisations *extérieures* au schéma des acteurs (conflits d'intérêts, financement de la politique) – par opposition à l'appartenance formelle *au sein* du schéma, qui est consignée au moyen de `Membership`.
+- **Classification obligatoire (`interest_type`) :** chaque lien est obligatoirement classé selon son type (activité professionnelle, mandats politiques, association), en s'appuyant sur les catégories de divulgation de l'Assemblée fédérale.
+- **Organisation référençable par IDE (`organization_uid`) :** si l'organisation est enregistrée dans le registre IDE, elle est référencée au moyen de son IDE (eCH-0097, `CHE-XXX.XXX.XXX`) – ce qui permet des analyses, p. ex. à l'aide de codes NOGA. Pour les organisations sans IDE, `organization_name`/`organization_address` sont disponibles ; la forme juridique suit un vocabulaire contrôlé (`LegalFormEnum`).
+- **Étendue et rémunération (`is_paid`, `committee`, `function_role`) :** outre l'organe et la fonction au sein de l'organisation, il est explicitement consigné si la position est rémunérée – un aspect central de la transparence.
 
 
 
