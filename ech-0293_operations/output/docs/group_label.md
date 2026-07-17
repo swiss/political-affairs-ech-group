@@ -71,6 +71,11 @@ annotations:
     value: 'Name des Gremiums zum Zeitpunkt der Verknüpfung.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Nom de l''organe/du groupe au moment de la liaison.
+
+      '
 description: 'Name of the body/group at time of linking.
 
   '

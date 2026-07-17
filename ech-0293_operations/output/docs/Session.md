@@ -32,7 +32,7 @@ __
 | documents | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind. [en] List of documents (FRBR Works) linked to the entity.  |
 | local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | date_begin_actual | 0..1 <br/> [Date](Date.md) | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](Datetime.md) | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
 | date_begin_planned | 0..1 <br/> [Date](Date.md) | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
@@ -70,19 +70,40 @@ __
 
 
 ### Examples
-#### Example: Session-session_session_gl_landrat_2025_02_26
+#### Example: Session-session_session_be_summer_2025
 
 ```yaml
-global_uri: ops:session_gl_landrat_2025_02_26
+global_uri: ops:session_be_summer_2025
+body_key: BE
+name:
+- text: Sommersession 2025
+  language: de
+- text: Session d'été 2025
+  language: fr
+url:
+- text: https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
+  language: de
+- text: https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
+  language: fr
+date_begin_planned: '2025-06-02'
+date_end_planned: '2025-06-12'
+datetime_modified: '2025-05-19T01:06:44Z'
+datetime_created: '2025-04-25T11:10:24Z'
+
+```
+#### Example: Session-session_session_gl_landsgemeinde_2025_05_04
+
+```yaml
+global_uri: ops:session_gl_landsgemeinde_2025_05_04
 body_key: GL
 name:
-- text: Sitzung des Landrates vom 26.02.2025
+- text: Landsgemeinde vom 04. Mai 2025
   language: de
 url:
-- text: https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239
+- text: https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04
   language: de
-date_begin_planned: '2025-02-26'
-date_end_planned: '2025-02-26'
+date_begin_planned: '2025-05-04'
+date_end_planned: '2025-05-04'
 datetime_modified: '2025-04-25T13:40:34Z'
 datetime_created: '2025-04-23T22:58:39Z'
 
@@ -113,42 +134,21 @@ datetime_modified: '2025-04-24T00:19:37Z'
 datetime_created: '2025-03-20T14:27:09Z'
 
 ```
-#### Example: Session-session_session_gl_landsgemeinde_2025_05_04
+#### Example: Session-session_session_gl_landrat_2025_02_26
 
 ```yaml
-global_uri: ops:session_gl_landsgemeinde_2025_05_04
+global_uri: ops:session_gl_landrat_2025_02_26
 body_key: GL
 name:
-- text: Landsgemeinde vom 04. Mai 2025
+- text: Sitzung des Landrates vom 26.02.2025
   language: de
 url:
-- text: https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04
+- text: https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239
   language: de
-date_begin_planned: '2025-05-04'
-date_end_planned: '2025-05-04'
+date_begin_planned: '2025-02-26'
+date_end_planned: '2025-02-26'
 datetime_modified: '2025-04-25T13:40:34Z'
 datetime_created: '2025-04-23T22:58:39Z'
-
-```
-#### Example: Session-session_session_be_summer_2025
-
-```yaml
-global_uri: ops:session_be_summer_2025
-body_key: BE
-name:
-- text: Sommersession 2025
-  language: de
-- text: Session d'été 2025
-  language: fr
-url:
-- text: https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
-  language: de
-- text: https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
-  language: fr
-date_begin_planned: '2025-06-02'
-date_end_planned: '2025-06-12'
-datetime_modified: '2025-05-19T01:06:44Z'
-datetime_created: '2025-04-25T11:10:24Z'
 
 ```
 

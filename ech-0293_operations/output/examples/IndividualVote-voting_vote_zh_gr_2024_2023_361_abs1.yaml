@@ -1,0 +1,8 @@
+global_uri: ops:vote_zh_gr_2024_2023_361_abs1
+parent_voting: ops:voting_zh_gr_2024_2023_361
+actor_id:
+  global_uri: https://www.gemeinderat-zuerich.ch/personen/4
+  label: Abwesendes Mitglied
+seat_nr: '103'
+individual_vote_type: not_voted
+datetime_created: '2024-02-28T00:00:00Z'

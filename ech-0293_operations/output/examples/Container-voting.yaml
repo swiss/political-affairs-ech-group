@@ -82,7 +82,90 @@ votings:
   datetime_created: "2025-11-20T16:45:00Z"
   datetime_modified: "2025-11-20T16:50:00Z"
 
+# Realbeispiel Gemeinderat der Stadt Zürich (28.02.2024, 86. Sitzung):
+# "Gleichgerichtete Anträge" mit mehreren Auswahloptionen (Zürich: mehrere Knöpfe).
+# Die Optionen sind nicht Ja/Nein/Enthaltung, sondern Auswahl A–D und werden
+# deshalb über total_other (Liste von TotalOther {count, label}) abgebildet.
+# Quelle: https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=aa10c137274f424fa4eda877e7644a89
+- global_uri: ops:voting_zh_gr_2024_2023_361
+  voting_title:
+    - text: "Liegenschaften Stadt Zürich, Wohnhaus Magnusstrasse 27, Gesamtinstandsetzung, Grundrissanpassung, Netto-Zusatzkredit (Geschäft 2023/361)"
+      language: "de"
+  voting_type: "other"
+  type_label: "Gleichgerichtete Anträge (Mehrfachauswahl)"
+  datetime_begin: "2024-02-28T00:00:00Z"
+  datetime_end: "2024-02-28T00:00:00Z"
+  landing_page: "https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=aa10c137274f424fa4eda877e7644a89"
+  # Bei reinen Auswahlabstimmungen bleiben Ja/Nein/Enthaltung leer; jede Option
+  # erhält einen eigenen TotalOther-Eintrag mit Stimmenzahl und Bezeichnung.
+  total_other:
+    - count: 75
+      label: "Auswahl A (siegreich)"
+    - count: 25
+      label: "Auswahl B"
+    - count: 12
+      label: "Auswahl C"
+    - count: 0
+      label: "Auswahl D"
+  total_absent: 13
+  total: 112
+  majority_type: "other"
+  result_text: "Auswahl A mit 75 von 112 abgegebenen Stimmen angenommen (Auswahl B: 25, Auswahl C: 12, Auswahl D: 0; 13 abwesend von 125 Mitgliedern)."
+  parent_agenda_item: ops:agenda_item_zh_gr_2024_2023_361
+  parent_meeting: ops:meeting_zh_gr_2024_02_28
+  affair_id: "2023/361"
+  actor_id:
+    global_uri: "https://www.gemeinderat-zuerich.ch/"
+    label: "Gemeinderat der Stadt Zürich"
+    abbreviation:
+      - value: "GR"
+        language: de
+  datetime_created: "2024-02-28T00:00:00Z"
+  datetime_modified: "2024-02-28T00:00:00Z"
+
 individual_votes:
+
+# Einzelstimmen zum Zürcher Mehrfachoptionen-Beispiel: Da die Auswahloptionen
+# nicht Ja/Nein/Enthaltung sind, wird individual_vote_type "other" mit type_label
+# je gewählter Option verwendet; abwesende Mitglieder erhalten "not_voted".
+- global_uri: ops:vote_zh_gr_2024_2023_361_a1
+  parent_voting: ops:voting_zh_gr_2024_2023_361
+  actor_id:
+    global_uri: "https://www.gemeinderat-zuerich.ch/personen/1"
+    label: "Mitglied Auswahl A"
+  seat_nr: "12"
+  individual_vote_type: "other"
+  type_label: "Auswahl A"
+  datetime_created: "2024-02-28T00:00:00Z"
+
+- global_uri: ops:vote_zh_gr_2024_2023_361_b1
+  parent_voting: ops:voting_zh_gr_2024_2023_361
+  actor_id:
+    global_uri: "https://www.gemeinderat-zuerich.ch/personen/2"
+    label: "Mitglied Auswahl B"
+  seat_nr: "47"
+  individual_vote_type: "other"
+  type_label: "Auswahl B"
+  datetime_created: "2024-02-28T00:00:00Z"
+
+- global_uri: ops:vote_zh_gr_2024_2023_361_c1
+  parent_voting: ops:voting_zh_gr_2024_2023_361
+  actor_id:
+    global_uri: "https://www.gemeinderat-zuerich.ch/personen/3"
+    label: "Mitglied Auswahl C"
+  seat_nr: "88"
+  individual_vote_type: "other"
+  type_label: "Auswahl C"
+  datetime_created: "2024-02-28T00:00:00Z"
+
+- global_uri: ops:vote_zh_gr_2024_2023_361_abs1
+  parent_voting: ops:voting_zh_gr_2024_2023_361
+  actor_id:
+    global_uri: "https://www.gemeinderat-zuerich.ch/personen/4"
+    label: "Abwesendes Mitglied"
+  seat_nr: "103"
+  individual_vote_type: "not_voted"
+  datetime_created: "2024-02-28T00:00:00Z"
 
 - global_uri: ops:vote_sg_2025_001_person_123
   parent_voting: ops:voting_sg_2025_001

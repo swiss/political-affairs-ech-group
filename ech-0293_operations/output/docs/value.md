@@ -72,6 +72,12 @@ annotations:
       Sprache, etc.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'La valeur proprement dite d''une information, en plus d''autres attributs
+      tels que le type, la langue, etc.
+
+      '
 description: 'The value of an information besides other attributes such as type, language,
   etc.
 

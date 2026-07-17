@@ -28,7 +28,7 @@ __
 | type_label | 0..1 <br/> [String](String.md) | [en] Custom type label when standard type values don't apply. [de] Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen.  |
 | local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | date_created | 0..1 <br/> [Date](Date.md) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
 | datetime_created | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
 | date_modified | 0..1 <br/> [Date](Date.md) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
@@ -58,42 +58,29 @@ __
 
 
 ### Examples
-#### Example: IndividualVote-voting_vote_sg_2025_001_person_123
+#### Example: IndividualVote-voting_vote_zh_gr_2024_2023_361_abs1
 
 ```yaml
-global_uri: ops:vote_sg_2025_001_person_123
-parent_voting: ops:voting_sg_2025_001
+global_uri: ops:vote_zh_gr_2024_2023_361_abs1
+parent_voting: ops:voting_zh_gr_2024_2023_361
 actor_id:
-  global_uri: https://api.openparldata.ch/v1/persons/27235
-  label: Paul Schlegel
-seat_nr: '1'
-individual_vote_type: 'yes'
-datetime_created: '2025-03-15T14:30:00Z'
-
-```
-#### Example: IndividualVote-voting_vote_sg_2025_001_person_321
-
-```yaml
-global_uri: ops:vote_sg_2025_001_person_321
-parent_voting: ops:voting_sg_2025_001
-actor_id:
-  global_uri: https://api.openparldata.ch/v1/persons/25177
-  label: Ruedi Thomann
-seat_nr: '4'
+  global_uri: https://www.gemeinderat-zuerich.ch/personen/4
+  label: Abwesendes Mitglied
+seat_nr: '103'
 individual_vote_type: not_voted
-datetime_created: '2025-03-15T14:30:00Z'
+datetime_created: '2024-02-28T00:00:00Z'
 
 ```
-#### Example: IndividualVote-voting_vote_zh_budget_2026_person_101
+#### Example: IndividualVote-voting_vote_zh_budget_2026_person_102
 
 ```yaml
-global_uri: ops:vote_zh_budget_2026_person_101
+global_uri: ops:vote_zh_budget_2026_person_102
 parent_voting: ops:voting_zh_budget_2026
 actor_id:
-  global_uri: https://api.openparldata.ch/v1/persons/27237
-  label: Thomas Wolf
-seat_nr: '1'
-individual_vote_type: 'yes'
+  global_uri: https://api.openparldata.ch/v1/persons/25208
+  label: Jean-Daniel Strub
+seat_nr: '2'
+individual_vote_type: 'no'
 datetime_created: '2025-11-20T16:45:00Z'
 
 ```
@@ -110,17 +97,71 @@ individual_vote_type: abstention
 datetime_created: '2025-03-15T14:30:00Z'
 
 ```
-#### Example: IndividualVote-voting_vote_zh_budget_2026_person_102
+#### Example: IndividualVote-voting_vote_zh_gr_2024_2023_361_b1
 
 ```yaml
-global_uri: ops:vote_zh_budget_2026_person_102
+global_uri: ops:vote_zh_gr_2024_2023_361_b1
+parent_voting: ops:voting_zh_gr_2024_2023_361
+actor_id:
+  global_uri: https://www.gemeinderat-zuerich.ch/personen/2
+  label: Mitglied Auswahl B
+seat_nr: '47'
+individual_vote_type: other
+type_label: Auswahl B
+datetime_created: '2024-02-28T00:00:00Z'
+
+```
+#### Example: IndividualVote-voting_vote_zh_gr_2024_2023_361_a1
+
+```yaml
+global_uri: ops:vote_zh_gr_2024_2023_361_a1
+parent_voting: ops:voting_zh_gr_2024_2023_361
+actor_id:
+  global_uri: https://www.gemeinderat-zuerich.ch/personen/1
+  label: Mitglied Auswahl A
+seat_nr: '12'
+individual_vote_type: other
+type_label: Auswahl A
+datetime_created: '2024-02-28T00:00:00Z'
+
+```
+#### Example: IndividualVote-voting_vote_zh_budget_2026_person_101
+
+```yaml
+global_uri: ops:vote_zh_budget_2026_person_101
 parent_voting: ops:voting_zh_budget_2026
 actor_id:
-  global_uri: https://api.openparldata.ch/v1/persons/25208
-  label: Jean-Daniel Strub
-seat_nr: '2'
-individual_vote_type: 'no'
+  global_uri: https://api.openparldata.ch/v1/persons/27237
+  label: Thomas Wolf
+seat_nr: '1'
+individual_vote_type: 'yes'
 datetime_created: '2025-11-20T16:45:00Z'
+
+```
+#### Example: IndividualVote-voting_vote_sg_2025_001_person_321
+
+```yaml
+global_uri: ops:vote_sg_2025_001_person_321
+parent_voting: ops:voting_sg_2025_001
+actor_id:
+  global_uri: https://api.openparldata.ch/v1/persons/25177
+  label: Ruedi Thomann
+seat_nr: '4'
+individual_vote_type: not_voted
+datetime_created: '2025-03-15T14:30:00Z'
+
+```
+#### Example: IndividualVote-voting_vote_sg_2025_001_person_123
+
+```yaml
+global_uri: ops:vote_sg_2025_001_person_123
+parent_voting: ops:voting_sg_2025_001
+actor_id:
+  global_uri: https://api.openparldata.ch/v1/persons/27235
+  label: Paul Schlegel
+seat_nr: '1'
+individual_vote_type: 'yes'
+datetime_created: '2025-03-15T14:30:00Z'
 
 ```
 #### Example: IndividualVote-voting_vote_sg_2025_001_person_456
@@ -134,6 +175,20 @@ actor_id:
 seat_nr: '2'
 individual_vote_type: 'no'
 datetime_created: '2025-03-15T14:30:00Z'
+
+```
+#### Example: IndividualVote-voting_vote_zh_gr_2024_2023_361_c1
+
+```yaml
+global_uri: ops:vote_zh_gr_2024_2023_361_c1
+parent_voting: ops:voting_zh_gr_2024_2023_361
+actor_id:
+  global_uri: https://www.gemeinderat-zuerich.ch/personen/3
+  label: Mitglied Auswahl C
+seat_nr: '88'
+individual_vote_type: other
+type_label: Auswahl C
+datetime_created: '2024-02-28T00:00:00Z'
 
 ```
 

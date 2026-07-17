@@ -18,29 +18,17 @@ URI: [ops:IndividualVoteTypeEnum](https://ch.paf.link/schema/operations/Individu
 ### Permissible Values
 | Value | Description |
 | --- | --- |
-| yes |  [en] Vote in favor (yes)
-[de] Ja-Stimme
- |
+| yes |  [en] Vote in favor (yes) [de] Ja-Stimme  |
 | | [ops:enum/individual_vote_type/yes](ops:enum/individual_vote_type/yes) |
-| no |  [en] Vote against (no)
-[de] Nein-Stimme
- |
+| no |  [en] Vote against (no) [de] Nein-Stimme  |
 | | [ops:enum/individual_vote_type/no](ops:enum/individual_vote_type/no) |
-| abstention |  [en] Abstention
-[de] Enthaltung
- |
+| abstention |  [en] Abstention [de] Enthaltung  |
 | | [ops:enum/individual_vote_type/abstention](ops:enum/individual_vote_type/abstention) |
-| not_voted |  [en] Not Voted
-[de] Nicht abgestimmt
- |
+| not_voted |  [en] Not Voted [de] Nicht abgestimmt  |
 | | [ops:enum/individual_vote_type/not_voted](ops:enum/individual_vote_type/not_voted) |
-| tie_breaker |  [en] Tie-breaking vote, TODO english
-[de] Stichentscheid, meist durch Präsidium
- |
+| tie_breaker |  [en] Tie-breaking vote, TODO english [de] Stichentscheid, meist durch Präsidium  |
 | | [ops:enum/individual_vote_type/tie_breaker](ops:enum/individual_vote_type/tie_breaker) |
-| other |  [en] Other vote type
-[de] Andere Stimmabgabe
- |
+| other |  [en] Other vote type [de] Andere Stimmabgabe  |
 | | [ops:enum/individual_vote_type/other](ops:enum/individual_vote_type/other) |
 
 

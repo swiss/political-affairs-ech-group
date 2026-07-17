@@ -83,6 +83,11 @@ annotations:
     value: 'Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'La date et l''heure auxquelles une entité a été créée.
+
+      '
 description: 'The date and time when an entity was created.
 
   '

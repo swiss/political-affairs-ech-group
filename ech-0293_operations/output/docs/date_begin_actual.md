@@ -77,6 +77,11 @@ annotations:
     value: 'Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'La date de début effective d''un événement ou d''une occurrence avec durée.
+
+      '
 description: 'The actual start date of an event or occurrence with time duration.
 
   '

@@ -72,6 +72,12 @@ annotations:
       Vorkommnissen (ohne Zeitdauer).
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'La date et l''heure effectives d''un événement ou d''une occurrence instantané
+      (sans durée).
+
+      '
 description: 'The actual date and time of an instantaneous event or occurrence (without
   time duration).
 

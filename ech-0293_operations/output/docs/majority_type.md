@@ -64,6 +64,7 @@ URI: [ops:majority_type](https://ch.paf.link/schema/operations/majority_type)
 | Value |
 | --- |
 | absolute |
+| other |
 
 
 
@@ -81,6 +82,7 @@ description: '[en] Type of majority required for the vote (absolute, two-thirds,
   '
 examples:
 - value: absolute
+- value: other
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:

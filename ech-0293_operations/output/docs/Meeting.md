@@ -44,7 +44,7 @@ __
 | protocol_ref | 0..1 <br/> [Protocol](Protocol.md) | [en] The protocol (minutes) of this meeting, recorded after the meeting. [de] Das nach der Sitzung erstellte Protokoll dieser Sitzung.  |
 | local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. https://www.wikidata.org/wiki/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | date_begin_actual | 0..1 <br/> [Date](Date.md) | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](Datetime.md) | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
 | date_begin_planned | 0..1 <br/> [Date](Date.md) | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
@@ -83,63 +83,6 @@ __
 
 
 ### Examples
-#### Example: Meeting-meeting_e7c5d453-848a-430a-b024-1dd2f6873aa6
-
-```yaml
-body_key: BE
-global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
-meeting_type: session
-name:
-- text: Donnerstag (Nachmittag)
-  language: de
-url:
-- text: https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
-  language: de
-- text: https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
-  language: fr
-actor_id:
-  global_uri: https://api.openparldata.ch/v1/bodies/253
-  label: Grosser Rat Bern
-  abbreviation:
-  - value: GR
-    language: de
-actor_name: Grosser Rat Bern
-date_begin_planned: '2025-06-05'
-date_end_planned: '2025-06-05'
-datetime_created: '2025-04-25T11:10:25Z'
-datetime_modified: '2025-05-19T01:06:45Z'
-
-```
-#### Example: Meeting-meeting_complete_meeting_gl_landsgemeinde_2025
-
-```yaml
-global_uri: ops:meeting_gl_landsgemeinde_2025
-body_key: GL
-meeting_type: sitting
-name:
-- text: Landsgemeinde 2025
-  language: de
-url:
-- text: https://www.landsgemeinde.gl.ch/2025
-  language: de
-actor_id:
-  global_uri: https://api.openparldata.ch/v1/bodies/258
-  label: Landsgemeinde Glarus
-  abbreviation:
-  - value: LG
-    language: de
-actor_name: Landsgemeinde Glarus
-datetime_begin_planned: '2025-05-04T09:30:00Z'
-datetime_end_planned: '2025-05-04T14:00:00Z'
-datetime_begin_actual: '2025-05-04T09:30:00Z'
-datetime_end_actual: '2025-05-04T13:45:00Z'
-state: planned
-location: Zaunplatz, Glarus
-parent_legislature: ops:legislature_gl_2024_2028
-datetime_created: '2025-01-10T12:00:00Z'
-datetime_modified: '2025-05-04T13:45:00Z'
-
-```
 #### Example: Meeting-meeting_340dcf932fb044dd8f8c5c943267fbcc
 
 ```yaml
@@ -193,6 +136,63 @@ actor_name: Ständerat
 datetime_begin_planned: '2025-12-19T08:15:00+01:00'
 datetime_created: '2026-01-12T00:00:00+01:00'
 datetime_modified: '2026-01-12T00:00:00+01:00'
+
+```
+#### Example: Meeting-meeting_complete_meeting_gl_landsgemeinde_2025
+
+```yaml
+global_uri: ops:meeting_gl_landsgemeinde_2025
+body_key: GL
+meeting_type: sitting
+name:
+- text: Landsgemeinde 2025
+  language: de
+url:
+- text: https://www.landsgemeinde.gl.ch/2025
+  language: de
+actor_id:
+  global_uri: https://api.openparldata.ch/v1/bodies/258
+  label: Landsgemeinde Glarus
+  abbreviation:
+  - value: LG
+    language: de
+actor_name: Landsgemeinde Glarus
+datetime_begin_planned: '2025-05-04T09:30:00Z'
+datetime_end_planned: '2025-05-04T14:00:00Z'
+datetime_begin_actual: '2025-05-04T09:30:00Z'
+datetime_end_actual: '2025-05-04T13:45:00Z'
+state: planned
+location: Zaunplatz, Glarus
+parent_legislature: ops:legislature_gl_2024_2028
+datetime_created: '2025-01-10T12:00:00Z'
+datetime_modified: '2025-05-04T13:45:00Z'
+
+```
+#### Example: Meeting-meeting_e7c5d453-848a-430a-b024-1dd2f6873aa6
+
+```yaml
+body_key: BE
+global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
+meeting_type: session
+name:
+- text: Donnerstag (Nachmittag)
+  language: de
+url:
+- text: https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
+  language: de
+- text: https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
+  language: fr
+actor_id:
+  global_uri: https://api.openparldata.ch/v1/bodies/253
+  label: Grosser Rat Bern
+  abbreviation:
+  - value: GR
+    language: de
+actor_name: Grosser Rat Bern
+date_begin_planned: '2025-06-05'
+date_end_planned: '2025-06-05'
+datetime_created: '2025-04-25T11:10:25Z'
+datetime_modified: '2025-05-19T01:06:45Z'
 
 ```
 #### Example: Meeting-meeting_complete_meeting_sg_2025_03_15

@@ -71,6 +71,11 @@ annotations:
     value: 'Das Datum, ab dem die Information gültig ist.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'La date à partir de laquelle l''information est valable.
+
+      '
 description: 'The date from which the information is valid.
 
   '

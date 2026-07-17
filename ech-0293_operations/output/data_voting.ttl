@@ -8,10 +8,15 @@ ops:voting_examples_2025 a ops:Container ;
         ops:vote_sg_2025_001_person_456,
         ops:vote_sg_2025_001_person_789,
         ops:vote_zh_budget_2026_person_101,
-        ops:vote_zh_budget_2026_person_102 ;
+        ops:vote_zh_budget_2026_person_102,
+        ops:vote_zh_gr_2024_2023_361_a1,
+        ops:vote_zh_gr_2024_2023_361_abs1,
+        ops:vote_zh_gr_2024_2023_361_b1,
+        ops:vote_zh_gr_2024_2023_361_c1 ;
     ops:voting ops:voting_be_2025_042,
         ops:voting_sg_2025_001,
-        ops:voting_zh_budget_2026 .
+        ops:voting_zh_budget_2026,
+        ops:voting_zh_gr_2024_2023_361 .
 
 <https://api.openparldata.ch/v1/bodies/253> a mcm:GroupReference ;
     mcm:abbreviation [ a mcm:MultilingualValue ;
@@ -91,6 +96,37 @@ ops:vote_zh_budget_2026_person_102 a ops:IndividualVote ;
     ops:seat_nr "2" ;
     mcm:datetimeCreated "2025-11-20T16:45:00+00:00"^^xsd:dateTime .
 
+ops:vote_zh_gr_2024_2023_361_a1 a ops:IndividualVote ;
+    ops:actor_id <https://www.gemeinderat-zuerich.ch/personen/1> ;
+    ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/other> ;
+    ops:parentVoting ops:voting_zh_gr_2024_2023_361 ;
+    ops:seat_nr "12" ;
+    ops:type_label "Auswahl A" ;
+    mcm:datetimeCreated "2024-02-28T00:00:00+00:00"^^xsd:dateTime .
+
+ops:vote_zh_gr_2024_2023_361_abs1 a ops:IndividualVote ;
+    ops:actor_id <https://www.gemeinderat-zuerich.ch/personen/4> ;
+    ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/not_voted> ;
+    ops:parentVoting ops:voting_zh_gr_2024_2023_361 ;
+    ops:seat_nr "103" ;
+    mcm:datetimeCreated "2024-02-28T00:00:00+00:00"^^xsd:dateTime .
+
+ops:vote_zh_gr_2024_2023_361_b1 a ops:IndividualVote ;
+    ops:actor_id <https://www.gemeinderat-zuerich.ch/personen/2> ;
+    ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/other> ;
+    ops:parentVoting ops:voting_zh_gr_2024_2023_361 ;
+    ops:seat_nr "47" ;
+    ops:type_label "Auswahl B" ;
+    mcm:datetimeCreated "2024-02-28T00:00:00+00:00"^^xsd:dateTime .
+
+ops:vote_zh_gr_2024_2023_361_c1 a ops:IndividualVote ;
+    ops:actor_id <https://www.gemeinderat-zuerich.ch/personen/3> ;
+    ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/other> ;
+    ops:parentVoting ops:voting_zh_gr_2024_2023_361 ;
+    ops:seat_nr "88" ;
+    ops:type_label "Auswahl C" ;
+    mcm:datetimeCreated "2024-02-28T00:00:00+00:00"^^xsd:dateTime .
+
 ops:voting_be_2025_042 a ops:Voting ;
     ops:actor_id <https://api.openparldata.ch/v1/bodies/253> ;
     ops:datetime_begin "2025-06-05T10:15:00+00:00"^^xsd:dateTime ;
@@ -114,6 +150,24 @@ ops:voting_be_2025_042 a ops:Voting ;
     ops:voting_type <https://ch.paf.link/schema/operations/enum/voting_type/preliminary_vote> ;
     mcm:datetimeCreated "2025-06-05T10:15:00+00:00"^^xsd:dateTime ;
     mcm:datetimeModified "2025-06-05T10:15:00+00:00"^^xsd:dateTime .
+
+<https://www.gemeinderat-zuerich.ch/> a mcm:GroupReference ;
+    mcm:abbreviation [ a mcm:MultilingualValue ;
+            mcm:language "de" ;
+            mcm:value "GR" ] ;
+    mcm:label "Gemeinderat der Stadt Zürich" .
+
+<https://www.gemeinderat-zuerich.ch/personen/1> a mcm:PersonReference ;
+    mcm:label "Mitglied Auswahl A" .
+
+<https://www.gemeinderat-zuerich.ch/personen/2> a mcm:PersonReference ;
+    mcm:label "Mitglied Auswahl B" .
+
+<https://www.gemeinderat-zuerich.ch/personen/3> a mcm:PersonReference ;
+    mcm:label "Mitglied Auswahl C" .
+
+<https://www.gemeinderat-zuerich.ch/personen/4> a mcm:PersonReference ;
+    mcm:label "Abwesendes Mitglied" .
 
 ops:voting_zh_budget_2026 a ops:Voting ;
     ops:actor_id <https://api.openparldata.ch/v1/bodies/275> ;
@@ -156,5 +210,37 @@ ops:voting_sg_2025_001 a ops:Voting ;
     ops:voting_type <https://ch.paf.link/schema/operations/enum/voting_type/final_vote> ;
     mcm:datetimeCreated "2025-03-15T14:30:00+00:00"^^xsd:dateTime ;
     mcm:datetimeModified "2025-03-15T14:35:00+00:00"^^xsd:dateTime .
+
+ops:voting_zh_gr_2024_2023_361 a ops:Voting ;
+    ops:actor_id <https://www.gemeinderat-zuerich.ch/> ;
+    ops:affair_id "2023/361" ;
+    ops:datetime_begin "2024-02-28T00:00:00+00:00"^^xsd:dateTime ;
+    ops:datetime_end "2024-02-28T00:00:00+00:00"^^xsd:dateTime ;
+    ops:landingPage "https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=aa10c137274f424fa4eda877e7644a89" ;
+    ops:majority_type <https://ch.paf.link/schema/operations/enum/majority_type/other> ;
+    ops:parent_agenda_item "ops:agenda_item_zh_gr_2024_2023_361" ;
+    ops:parent_meeting "ops:meeting_zh_gr_2024_02_28" ;
+    ops:result_text "Auswahl A mit 75 von 112 abgegebenen Stimmen angenommen (Auswahl B: 25, Auswahl C: 12, Auswahl D: 0; 13 abwesend von 125 Mitgliedern)." ;
+    ops:total 112 ;
+    ops:total_absent 13 ;
+    ops:total_other [ a ops:TotalOther ;
+            ops:count 0 ;
+            mcm:label "Auswahl D" ],
+        [ a ops:TotalOther ;
+            ops:count 12 ;
+            mcm:label "Auswahl C" ],
+        [ a ops:TotalOther ;
+            ops:count 25 ;
+            mcm:label "Auswahl B" ],
+        [ a ops:TotalOther ;
+            ops:count 75 ;
+            mcm:label "Auswahl A (siegreich)" ] ;
+    ops:type_label "Gleichgerichtete Anträge (Mehrfachauswahl)" ;
+    ops:voting_title [ a ops:MultilingualString ;
+            ops:text "Liegenschaften Stadt Zürich, Wohnhaus Magnusstrasse 27, Gesamtinstandsetzung, Grundrissanpassung, Netto-Zusatzkredit (Geschäft 2023/361)" ;
+            mcm:language "de" ] ;
+    ops:voting_type <https://ch.paf.link/schema/operations/enum/voting_type/other> ;
+    mcm:datetimeCreated "2024-02-28T00:00:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeModified "2024-02-28T00:00:00+00:00"^^xsd:dateTime .
 
 

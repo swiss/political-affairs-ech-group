@@ -63,9 +63,9 @@ URI: [ops:result_text](https://ch.paf.link/schema/operations/result_text)
 
 | Value |
 | --- |
+| Auswahl A mit 75 von 112 abgegebenen Stimmen angenommen (Auswahl B: 25, Auswahl C: 12, Auswahl D: 0; 13 abwesend von 125 Mitgliedern). |
 | Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen |
 | Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt |
-| Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen |
 
 
 
@@ -84,9 +84,10 @@ description: '[en] Free text describing the outcome of the vote, e.g., "Accepted
 
   '
 examples:
+- value: 'Auswahl A mit 75 von 112 abgegebenen Stimmen angenommen (Auswahl B: 25,
+    Auswahl C: 12, Auswahl D: 0; 13 abwesend von 125 Mitgliedern).'
 - value: Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen
 - value: Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt
-- value: Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000
 domain_of:

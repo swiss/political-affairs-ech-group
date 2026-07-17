@@ -1,0 +1,35 @@
+global_uri: ops:voting_zh_gr_2024_2023_361
+voting_title:
+- text: Liegenschaften Stadt Zürich, Wohnhaus Magnusstrasse 27, Gesamtinstandsetzung,
+    Grundrissanpassung, Netto-Zusatzkredit (Geschäft 2023/361)
+  language: de
+voting_type: other
+type_label: Gleichgerichtete Anträge (Mehrfachauswahl)
+datetime_begin: '2024-02-28T00:00:00Z'
+datetime_end: '2024-02-28T00:00:00Z'
+landing_page: https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=aa10c137274f424fa4eda877e7644a89
+total_other:
+- count: 75
+  label: Auswahl A (siegreich)
+- count: 25
+  label: Auswahl B
+- count: 12
+  label: Auswahl C
+- count: 0
+  label: Auswahl D
+total_absent: 13
+total: 112
+majority_type: other
+result_text: 'Auswahl A mit 75 von 112 abgegebenen Stimmen angenommen (Auswahl B:
+  25, Auswahl C: 12, Auswahl D: 0; 13 abwesend von 125 Mitgliedern).'
+parent_agenda_item: ops:agenda_item_zh_gr_2024_2023_361
+parent_meeting: ops:meeting_zh_gr_2024_02_28
+affair_id: 2023/361
+actor_id:
+  global_uri: https://www.gemeinderat-zuerich.ch/
+  label: Gemeinderat der Stadt Zürich
+  abbreviation:
+  - value: GR
+    language: de
+datetime_created: '2024-02-28T00:00:00Z'
+datetime_modified: '2024-02-28T00:00:00Z'

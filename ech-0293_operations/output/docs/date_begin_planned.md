@@ -77,6 +77,11 @@ annotations:
     value: 'Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'La date de début planifiée d''un événement ou d''une occurrence avec durée.
+
+      '
 description: 'The planned start date of an event or occurrence with time duration.
 
   '

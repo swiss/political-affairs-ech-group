@@ -1,0 +1,9 @@
+global_uri: ops:vote_zh_gr_2024_2023_361_c1
+parent_voting: ops:voting_zh_gr_2024_2023_361
+actor_id:
+  global_uri: https://www.gemeinderat-zuerich.ch/personen/3
+  label: Mitglied Auswahl C
+seat_nr: '88'
+individual_vote_type: other
+type_label: Auswahl C
+datetime_created: '2024-02-28T00:00:00Z'

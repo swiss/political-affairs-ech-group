@@ -72,6 +72,11 @@ annotations:
     value: 'Abkürzung (kann mehrsprachig sein).
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Abréviation (peut être multilingue).
+
+      '
 description: 'Abbreviation (can be multilingual).
 
   '

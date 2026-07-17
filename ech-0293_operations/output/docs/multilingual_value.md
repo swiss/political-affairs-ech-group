@@ -61,6 +61,11 @@ annotations:
     value: 'Ein mehrsprachiger Wert mit Angabe der Sprache.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Une valeur multilingue avec indication de la langue.
+
+      '
 description: 'A multilingual value with language specification.
 
   '

@@ -63,6 +63,7 @@ URI: [ops:voting_type](https://ch.paf.link/schema/operations/voting_type)
 | Value |
 | --- |
 | final_vote |
+| other |
 | preliminary_vote |
 
 
@@ -81,6 +82,7 @@ description: '[en] Type of voting procedure (preliminary, final, secret, etc.).
   '
 examples:
 - value: final_vote
+- value: other
 - value: preliminary_vote
 from_schema: https://ch.paf.link/schema/operations
 rank: 1000

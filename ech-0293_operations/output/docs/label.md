@@ -74,6 +74,12 @@ annotations:
       (bspw. Anzeigename, Anstellung, etc.).
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Attribuer un label à une information structurée (par ex. nom d''affichage,
+      poste, etc.).
+
+      '
 description: 'Assign a label to a structured piece of information (e.g., display name,
   position, etc.).
 

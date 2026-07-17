@@ -98,6 +98,11 @@ annotations:
     value: 'Eine eindeutige, global gültige URI für die Entität.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Une URI unique et globalement valide pour l''entité.
+
+      '
 description: 'A unique, globally valid URI for the entity.
 
   '

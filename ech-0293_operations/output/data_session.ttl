@@ -11,11 +11,11 @@ ops:sessions_example_2025 a ops:Container ;
 ops:session_5207 a ops:Session ;
     ops:body_key "CHE" ;
     ops:name [ a ops:MultilingualString ;
-            ops:text "Session de printemps 2025" ;
-            mcm:language "fr" ],
-        [ a ops:MultilingualString ;
             ops:text "Sessione primaverile 2025" ;
             mcm:language "it" ],
+        [ a ops:MultilingualString ;
+            ops:text "Session de printemps 2025" ;
+            mcm:language "fr" ],
         [ a ops:MultilingualString ;
             ops:text "Frühjahrssession 2025" ;
             mcm:language "de" ] ;
@@ -43,11 +43,11 @@ ops:session_be_summer_2025 a ops:Session ;
             ops:text "Sommersession 2025" ;
             mcm:language "de" ] ;
     ops:url [ a ops:MultilingualString ;
-            ops:text "https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8" ;
-            mcm:language "de" ],
-        [ a ops:MultilingualString ;
             ops:text "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8" ;
-            mcm:language "fr" ] ;
+            mcm:language "fr" ],
+        [ a ops:MultilingualString ;
+            ops:text "https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8" ;
+            mcm:language "de" ] ;
     mcm:dateBeginPlanned "2025-06-02"^^xsd:date ;
     mcm:dateEndPlanned "2025-06-12"^^xsd:date ;
     mcm:datetimeCreated "2025-04-25T11:10:24+00:00"^^xsd:dateTime ;

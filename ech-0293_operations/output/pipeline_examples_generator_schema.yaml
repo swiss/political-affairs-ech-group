@@ -449,6 +449,7 @@ slots:
     range: VotingTypeEnum
     examples:
     - value: final_vote
+    - value: other
     - value: preliminary_vote
   voting_title:
     description: '[en] Title or question being voted on. If no specific subject exists, do not use the business item title.
@@ -790,6 +791,7 @@ slots:
       '
     examples:
     - value: absolute
+    - value: other
   majority_count:
     range: integer
     description: '[en] Number of votes required for the relevant majority threshold.
@@ -805,9 +807,10 @@ slots:
 
       '
     examples:
+    - value: 'Auswahl A mit 75 von 112 abgegebenen Stimmen angenommen (Auswahl B: 25, Auswahl C: 12, Auswahl D: 0; 13 abwesend
+        von 125 Mitgliedern).'
     - value: Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen
     - value: Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt
-    - value: Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen
   meeting_type:
     slot_uri: ops:meetingType
     description: Type of the meeting, e.g. session, committee, sitting, various

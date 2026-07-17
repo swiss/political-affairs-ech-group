@@ -18,13 +18,9 @@ URI: [ops:AgendaItemTypeEnum](https://ch.paf.link/schema/operations/AgendaItemTy
 ### Permissible Values
 | Value | Description |
 | --- | --- |
-| item |  [en] Individual agenda item (Traktandum)
-[de] Einzelnes Traktandum
- |
+| item |  [en] Individual agenda item (Traktandum) [de] Einzelnes Traktandum  |
 | | [ops:enum/agenda_item_type/item](ops:enum/agenda_item_type/item) |
-| group |  [en] Group of agenda items (Traktandengruppe)
-[de] Traktandengruppe
- |
+| group |  [en] Group of agenda items (Traktandengruppe) [de] Traktandengruppe  |
 | | [ops:enum/agenda_item_type/group](ops:enum/agenda_item_type/group) |
 
 

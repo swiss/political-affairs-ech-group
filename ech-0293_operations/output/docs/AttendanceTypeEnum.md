@@ -18,17 +18,11 @@ URI: [ops:AttendanceTypeEnum](https://ch.paf.link/schema/operations/AttendanceTy
 ### Permissible Values
 | Value | Description |
 | --- | --- |
-| remote |  [en] Remote participation
-[de] Teilnahme per Fernzugriff
- |
+| remote |  [en] Remote participation [de] Teilnahme per Fernzugriff  |
 | | [ops:enum/attendance_type/remote](ops:enum/attendance_type/remote) |
-| substitute |  [en] Substitute (Stellvertretung)
-[de] Stellvertretung
- |
+| substitute |  [en] Substitute (Stellvertretung) [de] Stellvertretung  |
 | | [ops:enum/attendance_type/substitute](ops:enum/attendance_type/substitute) |
-| present |  [en] Present in person
-[de] Persönlich anwesend
- |
+| present |  [en] Present in person [de] Persönlich anwesend  |
 | | [ops:enum/attendance_type/present](ops:enum/attendance_type/present) |
 
 

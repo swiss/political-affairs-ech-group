@@ -90,6 +90,12 @@ annotations:
     value: 'Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem.
 
       '
+  description_fr:
+    tag: description_fr
+    value: 'Identifiant local. Par exemple, un UUID issu du système d''information
+      du conseil.
+
+      '
 description: 'Local identifier. For example, a UUID from the council information system.
 
   '
