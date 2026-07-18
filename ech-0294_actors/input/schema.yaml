@@ -15,6 +15,7 @@ license: CC-BY
 prefixes:
   linkml: https://w3id.org/linkml/
   act: https://ld.ech.ch/schema/0294/actors/
+  ch: https://ld.admin.ch/
   dcterms: http://purl.org/dc/terms/
 default_prefix: act
 default_range: string
@@ -361,7 +362,7 @@ classes:
       global_uri:
         description: |
           For IRI references, LINDAS resources should be used.
-          The IRIs for the different administrative levels of Swiss spatial units are available at: https://ld.admin.ch/country/CHE.
+          The IRIs for the different administrative levels of Swiss spatial units are available at: ch:country/CHE.
           Under links in the schema:containsPlace section, the desired level can be selected.
           Examples for each administrative level:
           - Country - Switzerland: https://ld.admin.ch/country/CHE

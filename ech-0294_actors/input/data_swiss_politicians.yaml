@@ -47,7 +47,7 @@ memberships:
       global_uri: https://data-example.parlament.ch/person/4032
       label: Beat Jans
     group_reference:
-      global_uri: https://ld.admin.ch/FC
+      global_uri: ch:FC
       label: Bundesrat
     electoral_district:
-      global_uri: https://ld.admin.ch/canton/12
+      global_uri: ch:canton/12
