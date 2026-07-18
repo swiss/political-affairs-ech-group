@@ -46,5 +46,6 @@ memberships:
     group_reference:
       label: Nationalrat
     electoral_district:
-      district: Basel-Stadt
+      global_uri: https://ld.admin.ch/canton/12
+      label: Basel-Stadt
       valid_from: 2010-01-01

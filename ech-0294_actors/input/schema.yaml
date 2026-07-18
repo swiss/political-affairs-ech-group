@@ -357,9 +357,9 @@ classes:
       - HasIdentification
       - HasTemporalValidity
     slots:
-      - district
+      - label
     slot_usage:
-      district:
+      label:
         required: true
       global_uri:
         description: |
@@ -612,16 +612,6 @@ slots:
         Type d'informations de contact.
     range: ContactTypeEnum
 
-  district:
-    slot_uri: act:district
-    description: |
-      Electoral district or region.
-    annotations:
-      description_de: |
-        Wahlkreis oder Wahlregion.
-
-      description_fr: |
-        Circonscription ou région électorale.
   birth_year:
     slot_uri: act:birthYear
     description: |
