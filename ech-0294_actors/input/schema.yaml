@@ -358,8 +358,6 @@ classes:
     slots:
       - label
     slot_usage:
-      label:
-        required: true
       global_uri:
         description: |
           For IRI references, LINDAS resources should be used.
@@ -380,6 +378,15 @@ classes:
             - Kanton - Aargau: https://ld.admin.ch/canton/19
             - Bezirk - Brig: https://ld.admin.ch/district/2301
             - Gemeinde - Versoix: https://ld.admin.ch/municipality/6644
+          description_fr: |
+            Pour les références IRI, les ressources LINDAS doivent être utilisées.
+            Les IRI des différents niveaux administratifs des unités spatiales suisses sont disponibles à l'adresse : https://ld.admin.ch/country/CHE.
+            Sous les liens de la section schema:containsPlace, le niveau souhaité peut être sélectionné.
+            Exemples pour chaque niveau administratif :
+            - Pays - Suisse : https://ld.admin.ch/country/CHE
+            - Canton - Argovie : https://ld.admin.ch/canton/19
+            - District - Brigue : https://ld.admin.ch/district/2301
+            - Commune - Versoix : https://ld.admin.ch/municipality/6644
 
   GroupType:
     description: |
