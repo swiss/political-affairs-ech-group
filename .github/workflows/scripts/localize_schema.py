@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-localize_schema.py <input_schema.yaml> <lang> <output_schema.yaml>
+.github/workflows/scripts/localize_schema.py <input_schema.yaml> <lang> <output_schema.yaml>
 
 Produce a language-specific copy of a LinkML schema for `gen-doc`. For every
 element (schema, class, slot, enum, permissible value, type, subset) that carries
@@ -79,7 +79,7 @@ def localize_file(input_path, lang, output_path):
 
 def main():
     if len(sys.argv) != 4:
-        print("usage: localize_schema.py <input.yaml> <lang> <output.yaml>", file=sys.stderr)
+        print("usage: .github/workflows/scripts/localize_schema.py <input.yaml> <lang> <output.yaml>", file=sys.stderr)
         sys.exit(2)
     input_path, lang, output_path = sys.argv[1], sys.argv[2], sys.argv[3]
     localize_file(input_path, lang, output_path)

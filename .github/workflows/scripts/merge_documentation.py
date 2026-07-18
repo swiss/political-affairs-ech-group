@@ -124,7 +124,7 @@ def process_folder(path, lang=None):
 
 if __name__ == "__main__":
     if len(sys.argv) not in (2, 3):
-        print("Usage: python merge_documentation.py <path> [lang]")
+        print("Usage: python .github/workflows/scripts/merge_documentation.py <path> [lang]")
         sys.exit(1)
 
     path = sys.argv[1]

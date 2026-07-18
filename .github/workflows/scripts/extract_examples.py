@@ -7,10 +7,10 @@ Creates:
 Controlled by: <ech-folder>/input/pipeline_examples_generator_config.yaml
 
 Usage:
-    python extract_examples.py <ech-folder>
+    python .github/workflows/scripts/extract_examples.py <ech-folder>
 
 Example:
-    python extract_examples.py ech-0294_actors
+    python .github/workflows/scripts/extract_examples.py ech-0294_actors
 """
 
 import sys
@@ -210,6 +210,6 @@ def extract(ech_folder: str):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python extract_examples.py <ech-folder>")
+        print("Usage: python .github/workflows/scripts/extract_examples.py <ech-folder>")
         sys.exit(1)
     extract(sys.argv[1])

@@ -1,6 +1,7 @@
 name: ech-0294_actors
 
 on:
+  # Regenerate artifacts whenever source inputs for ech-0294 change.
   push:
     paths:
       - 'ech-0294_actors/input/**'
@@ -25,6 +26,7 @@ jobs:
 
       - name: Prepare output directory
         run: |
+          # Start from a clean output tree to avoid stale generated files.
           rm -rf ech-0294_actors/output
           mkdir -p ech-0294_actors/output/docs
 
@@ -32,9 +34,11 @@ jobs:
         run: |
           cd ech-0294_actors/input
           
+          # Canonical schema exports.
           gen-owl --no-use-native-uris schema.yaml > ../output/schema.ttl
           gen-json-schema schema.yaml > ../output/schema.json
 
+          # Convert every example data_*.yaml to JSON and RDF.
           for yaml_file in data_*.yaml; do
             base_name=$(basename "$yaml_file" .yaml)
             linkml-convert -s schema.yaml -t json "$yaml_file" > "../output/${base_name}.json"
@@ -42,22 +46,44 @@ jobs:
           done
 
       - name: Extract examples from data files
-        run: python extract_examples.py ech-0294_actors
+        # Inject examples into the schema used by gen-doc.
+        run: python .github/workflows/scripts/extract_examples.py ech-0294_actors
 
       - name: Generate localized LinkML documentation (de, fr, en)
         run: |
+          # Localized schema files are temporary helpers for docs only.
+          # Keeping them outside output avoids committing schema_gen_* copies.
+          TMP_SCHEMA_DIR=$(mktemp -d)
+          trap 'rm -rf "$TMP_SCHEMA_DIR"' EXIT
+
+          # The schema enriched by extract_examples.py is only needed for gen-doc.
+          # Move it to temp so it does not remain as an output artifact.
+          BASE_DOC_SCHEMA="$TMP_SCHEMA_DIR/pipeline_examples_generator_schema.yaml"
+          mv ech-0294_actors/output/pipeline_examples_generator_schema.yaml "$BASE_DOC_SCHEMA"
+
           for lang in de fr en; do
-            python localize_schema.py \
-              ech-0294_actors/output/pipeline_examples_generator_schema.yaml \
-              "$lang" \
-              "ech-0294_actors/output/schema_gen_${lang}.yaml"
-            gen-doc "ech-0294_actors/output/schema_gen_${lang}.yaml" \
+            # English descriptions are already in the base schema.
+            if [ "$lang" = "en" ]; then
+              DOC_SCHEMA="$BASE_DOC_SCHEMA"
+            else
+              # For de/fr, localize descriptions (including local imports)
+              # into a temporary schema consumed by gen-doc.
+              DOC_SCHEMA="$TMP_SCHEMA_DIR/schema_gen_${lang}.yaml"
+              python .github/workflows/scripts/localize_schema.py \
+                "$BASE_DOC_SCHEMA" \
+                "$lang" \
+                "$DOC_SCHEMA"
+            fi
+
+            # Generate per-language markdown fragments used later for docx/pdf.
+            gen-doc "$DOC_SCHEMA" \
               --directory "ech-0294_actors/output/docs/${lang}" \
               --template-directory "ech-0292_meta/input/docgen/${lang}" \
               --example-directory ech-0294_actors/output/examples
           done
 
       - name: Install Pandoc
+        # Fixed Pandoc version for deterministic conversion output.
         run: |
           curl -fsSL https://github.com/jgm/pandoc/releases/download/3.5/pandoc-3.5-1-amd64.deb -o /tmp/pandoc.deb
           sudo dpkg -i /tmp/pandoc.deb
@@ -70,6 +96,7 @@ jobs:
         run: sudo apt-get update -qq && sudo apt-get install -y fonts-liberation
 
       - name: Download Pandoc pagebreak Lua filter
+        # Used by pandoc when producing docx/pdf outputs.
         run: |
           curl -L https://raw.githubusercontent.com/pandoc-ext/pagebreak/refs/heads/main/pagebreak.lua \
           -o pagebreak.lua
@@ -77,35 +104,37 @@ jobs:
       - name: Merge, convert to Word and PDF per language (de, fr, en)
         run: |
           for lang in de fr en; do
-            python merge_documentation.py ech-0294_actors "$lang"
+            # Merge generated docs with hand-written language-specific content.
+            python .github/workflows/scripts/merge_documentation.py ech-0294_actors "$lang"
             # Word (DOCX) — unchanged pipeline
             pandoc "ech-0294_actors/output/documentation_merged_${lang}.md" \
               -o "ech-0294_actors/output/ech-0294_actors_${lang}.docx" \
               --reference-doc=ech-0294_actors/input/template.docx \
               --lua-filter=pagebreak.lua
-            python set_docx_updatefields.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx"
-            python shade_alternate_rows.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx"
+            python .github/workflows/scripts/set_docx_updatefields.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx"
+            python .github/workflows/scripts/shade_alternate_rows.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx"
             # PDF via Typst (populated TOC, zebra, eCH branding)
             pandoc "ech-0294_actors/output/documentation_merged_${lang}.md" \
               -o "ech-0294_actors/output/ech-0294_actors_${lang}.pdf" \
               --pdf-engine=typst \
               --template=ech-0292_meta/input/typst-template.typ \
               --pdf-engine-opt=--root="$PWD" \
-              -V footer-info="eCH-0294 – Political Affairs / Actors / 0.2 / Entwurf / 2026-07-17" \
               --lua-filter=pagebreak.lua \
-              --lua-filter=fix_dangling_links.lua \
-              --lua-filter=toc_typst.lua
+                --lua-filter=.github/workflows/scripts/fix_dangling_links.lua \
+                --lua-filter=.github/workflows/scripts/toc_typst.lua
           done
 
       - name: Commit and push changes
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+            # Commit only when generated output has changed.
             git config --global user.name "github-actions"
             git config --global user.email "github-actions@github.com"
             git add ech-0294_actors/output/
             git diff --quiet && git diff --staged --quiet || git commit -m "Auto-generated ech-0294_actors files"
             REMOTE="https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
+            # Retry push with rebase to handle concurrent updates.
             for attempt in 1 2 3 4 5; do
               git push "$REMOTE" HEAD:${{ github.ref }} && exit 0
               echo "Push rejected (attempt $attempt) — rebasing on ${{ github.ref_name }} and retrying"

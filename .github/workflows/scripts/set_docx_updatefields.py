@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-set_docx_updatefields.py <file.docx> [<file.docx> ...]
+.github/workflows/scripts/set_docx_updatefields.py <file.docx> [<file.docx> ...]
 
 Force Word to refresh all fields — most importantly the table of contents — when
 the document is opened, by setting <w:updateFields w:val="true"/> in the DOCX's

@@ -42,13 +42,13 @@ jobs:
           done
 
       - name: Extract examples from data files
-        run: python extract_examples.py tutorial
+        run: python .github/workflows/scripts/extract_examples.py tutorial
       
       - name: Generate LinkML documentation
         run: gen-doc tutorial/output/pipeline_examples_generator_schema.yaml --directory tutorial/output/docs --template-directory ech-0292_meta/input/docgen/en --example-directory tutorial/output/examples
       
       - name: Merge Markdown documentation
-        run: python merge_documentation.py tutorial
+        run: python .github/workflows/scripts/merge_documentation.py tutorial
       
       - name: Install Pandoc
         run: sudo apt update && sudo apt install -y pandoc

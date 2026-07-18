@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-shade_alternate_rows.py <file.docx> [<file.docx> ...]
+.github/workflows/scripts/shade_alternate_rows.py <file.docx> [<file.docx> ...]
 
 Bake zebra striping directly into every table: give every other body row a light
 gray cell background. Unlike table-style row banding (which Word renders only
@@ -67,7 +67,7 @@ def patch(path):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("usage: shade_alternate_rows.py <file.docx> ...", file=sys.stderr)
+        print("usage: .github/workflows/scripts/shade_alternate_rows.py <file.docx> ...", file=sys.stderr)
         sys.exit(2)
     for p in sys.argv[1:]:
         patch(p)
