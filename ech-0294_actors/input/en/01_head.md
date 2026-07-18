@@ -24,7 +24,7 @@ toc: false
 
 # Abstract
 
-The draft eCH-0294 "Political Actors: Persons, Groups and Bodies" defines a uniform data model for the structured publication of political actors in Switzerland. It covers natural persons, political groups and bodies, memberships between persons and groups, as well as interest links. The aim is to provide comparable, machine-readable and reusable information across all federal levels in order to improve the transparency, traceability and analytical capability of political processes.
+The standard eCH-0294 "Political Actors: Persons, Groups and Bodies" defines a uniform data model for the structured publication of political actors in Switzerland. It covers natural persons, political groups and bodies, memberships between persons and groups, as well as interest links. The aim is to provide comparable, machine-readable and reusable information across all federal levels in order to improve the transparency, traceability and analytical capability of political processes.
 
 The standard is aimed at public bodies at all levels of government, political actors, the media, research and the general public, and it creates a foundation for interoperable political information systems in Switzerland.
 

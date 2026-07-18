@@ -24,7 +24,7 @@ toc: false
 
 # Résumé
 
-Le projet eCH-0294 « Acteurs politiques : personnes, groupes et organes » définit un modèle de données uniforme pour la publication structurée des acteurs politiques en Suisse. Il englobe les personnes physiques, les groupes et organes politiques, les affiliations entre personnes et groupes ainsi que les liens d'intérêts. L'objectif est de mettre à disposition, par-delà les niveaux fédéraux, des informations comparables, lisibles par machine et réutilisables, afin d'améliorer la transparence, la traçabilité et la capacité d'analyse des processus politiques.
+La norme eCH-0294 « Acteurs politiques : personnes, groupes et organes » définit un modèle de données uniforme pour la publication structurée des acteurs politiques en Suisse. Il englobe les personnes physiques, les groupes et organes politiques, les affiliations entre personnes et groupes ainsi que les liens d'intérêts. L'objectif est de mettre à disposition, par-delà les niveaux fédéraux, des informations comparables, lisibles par machine et réutilisables, afin d'améliorer la transparence, la traçabilité et la capacité d'analyse des processus politiques.
 
 La norme s'adresse aux organismes publics de tous les niveaux étatiques, aux acteurs politiques, aux médias, à la recherche et au public, et crée une base pour des systèmes d'information politiques interopérables en Suisse.
 

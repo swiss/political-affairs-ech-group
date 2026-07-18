@@ -56,10 +56,9 @@ jobs:
           TMP_SCHEMA_DIR=$(mktemp -d)
           trap 'rm -rf "$TMP_SCHEMA_DIR"' EXIT
 
-          # The schema enriched by extract_examples.py is only needed for gen-doc.
-          # Move it to temp so it does not remain as an output artifact.
-          BASE_DOC_SCHEMA="$TMP_SCHEMA_DIR/pipeline_examples_generator_schema.yaml"
-          mv ech-0294_actors/output/pipeline_examples_generator_schema.yaml "$BASE_DOC_SCHEMA"
+          # Keep the enriched schema at its original relative location while
+          # localizing, so local imports (../../ech-0292_meta/...) resolve.
+          BASE_DOC_SCHEMA="ech-0294_actors/output/pipeline_examples_generator_schema.yaml"
 
           for lang in de fr en; do
             # English descriptions are already in the base schema.
@@ -81,6 +80,9 @@ jobs:
               --template-directory "ech-0292_meta/input/docgen/${lang}" \
               --example-directory ech-0294_actors/output/examples
           done
+
+          # This schema is an intermediate artifact for doc generation only.
+          rm -f "$BASE_DOC_SCHEMA"
 
       - name: Install Pandoc
         # Fixed Pandoc version for deterministic conversion output.
