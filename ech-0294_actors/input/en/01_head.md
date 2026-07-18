@@ -4,21 +4,21 @@ lang: en
 toc: false
 ---
 
-| **Name**              | **Political Actors: Persons, Groups and Bodies**                                                                       |
-|-----------------------|----------------------------------------------------------------------------------------------------------------------------|
-| **eCH number**        | eCH-0294                                                                                                                   |
-| **Category**          | Draft                                                                                                                    |
-| **Maturity level**    | Specialist group internal review                                                                                                |
-| **Version**           | 0.5                                                                                                                        |
-| **Status**            |                                                                                                 |
-| **Adopted on**        |                                                                                                                            |
-| **Issue date**        |                                                                                                                            |
-| **Replaces version**  | 0.0                                                                                                                        |
-| **Prerequisites**     | eCH-0292 (Common Data Elements)                                                                        |
-| **Annexes**           | -                                                                                                                          |
-| **Languages**         | German (original) - English (data model)                                                                                    |
-| **Authors**           | Specialist group political affairs: Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi, Christian Gutknecht, Michael Luggen |
-| **Publisher / Distribution** | eCH Association, [Affolternstrasse 52, 8050 Zürich](https://geo.ld.admin.ch/location/address/101218624)                             |
+|**Name**|**Political Actors: Persons, Groups and Bodies**|
+|---|---|
+|**eCH number**|eCH-0294|
+|**Category**|Standard|
+|**Maturity level**|Defined|
+|**Version**|1.0|
+|**Status**|Proposal|
+|**Adopted on**||
+|**Issue date**||
+|**Replaces version**||
+|**Prerequisites**||
+|**Annexes**|-|
+|**Languages**|German (original) - English (data model)|
+|**Authors**|Specialist group political affairs: Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi, Christian Gutknecht, Michael Luggen|
+|**Publisher / Distribution**|eCH Association, [Affolternstrasse 52, 8050 Zürich](https://geo.ld.admin.ch/location/address/101218624)|
 
 \newpage
 

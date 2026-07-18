@@ -4,21 +4,21 @@ lang: fr
 toc: false
 ---
 
-| **Nom**               | **Acteurs politiques : personnes, groupes et organes**                                                                       |
-|-----------------------|----------------------------------------------------------------------------------------------------------------------------|
-| **Numéro eCH**        | eCH-0294                                                                                                                   |
-| **Catégorie**         | Projet                                                                                                                    |
-| **Degré de maturité** | Revue interne du groupe spécialisé                                                                                        |
-| **Version**           | 0.5                                                                                                                        |
-| **Statut**            |                                                                                                 |
-| **Décidé le**         |                                                                                                                            |
-| **Date de publication** |                                                                                                                          |
-| **Remplace la version** | 0.0                                                                                                                      |
-| **Conditions préalables** | eCH-0292 (Éléments de données communs)                                                                                |
-| **Annexes**           | -                                                                                                                          |
-| **Langues**           | Allemand (original) - Anglais (modèle de données)                                                                          |
-| **Auteurs**           | Groupe spécialisé Affaires politiques : Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi, Christian Gutknecht, Michael Luggen |
-| **Éditeur / Distribution** | Association eCH, [Affolternstrasse 52, 8050 Zürich](https://geo.ld.admin.ch/location/address/101218624)                    |
+|**Nom**|**Acteurs politiques : personnes, groupes et organes**|
+|---|---|
+|**Numéro eCH**|eCH-0294|
+|**Catégorie**|Norme|
+|**Degré de maturité**|Défini|
+|**Version**|1.0|
+|**Statut**|Proposition|
+|**Décidé le**||
+|**Date de publication**||
+|**Remplace la version**||
+|**Conditions préalables**||
+|**Annexes**|-|
+|**Langues**|Allemand (original) - Anglais (modèle de données)|
+|**Auteurs**|Groupe spécialisé Affaires politiques : Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi, Christian Gutknecht, Michael Luggen|
+|**Éditeur / Distribution**|Association eCH, [Affolternstrasse 52, 8050 Zürich](https://geo.ld.admin.ch/location/address/101218624)|
 
 \newpage
 
