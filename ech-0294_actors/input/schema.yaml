@@ -69,7 +69,6 @@ classes:
       - occupations
       - trainings
       - contacts
-      - electoral_district
       - interest_links
     slot_usage:
       label:
@@ -138,6 +137,7 @@ classes:
     slots:
       - person_reference
       - group_reference
+      - electoral_district
       - role_type
       - authorized_to_vote
       - is_active
@@ -347,19 +347,40 @@ classes:
 
   ElectoralDistrict:
     description: |
-      Electoral district or region where a person is politically active; with temporal validity.
+      Electoral district or region where a membership is politically active; with temporal validity.
     annotations:
       description_de: |
-        Wahlkreis oder Wahlregion, in der eine Person politisch aktiv ist; mit zeitlicher Gültigkeit.
+        Wahlkreis oder Wahlregion, in der eine Mitgliedschaft politisch aktiv ist; mit zeitlicher Gültigkeit.
       description_fr: |
-        Circonscription ou région électorale dans laquelle une personne est politiquement active ; avec validité temporelle.
+        Circonscription ou région électorale dans laquelle une affiliation est politiquement active ; avec validité temporelle.
     mixins:
+      - HasIdentification
       - HasTemporalValidity
     slots:
       - district
     slot_usage:
       district:
         required: true
+      global_uri:
+        description: |
+          For IRI references, LINDAS resources should be used.
+          The IRIs for the different administrative levels of Swiss spatial units are available at: https://ld.admin.ch/country/CHE.
+          Under links in the schema:containsPlace section, the desired level can be selected.
+          Examples for each administrative level:
+          - Country - Switzerland: https://ld.admin.ch/country/CHE
+          - Canton - Aargau: https://ld.admin.ch/canton/19
+          - District - Brig: https://ld.admin.ch/district/2301
+          - Municipality - Versoix: https://ld.admin.ch/municipality/6644
+        annotations:
+          description_de: |
+            Für IRI-Referenzen sollen die LINDAS-Ressourcen verwendet werden.
+            Die IRI für die verschiedenen Verwaltungsebenen der Schweizer Raumeinheiten sind bei LINDAS zu finden: https://ld.admin.ch/country/CHE.
+            Unter den Links im Abschnitt schema:containsPlace kann die gewünschte Ebene gefunden werden.
+            Beispiele für die einzelnen Verwaltungsebenen:
+            - Land - Schweiz: https://ld.admin.ch/country/CHE
+            - Kanton - Aargau: https://ld.admin.ch/canton/19
+            - Bezirk - Brig: https://ld.admin.ch/district/2301
+            - Gemeinde - Versoix: https://ld.admin.ch/municipality/6644
 
   GroupType:
     description: |

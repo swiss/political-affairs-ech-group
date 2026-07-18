@@ -39,6 +39,12 @@ persons:
         value: beat.jans@admin.ch
       - contact_type: contact_website
         value: http://www.beat-jans.ch
+memberships:
+  - person_reference:
+      local_id: 4032
+      label: Beat Jans
+    group_reference:
+      label: Nationalrat
     electoral_district:
       district: Basel-Stadt
       valid_from: 2010-01-01
