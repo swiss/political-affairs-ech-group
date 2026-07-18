@@ -36,7 +36,6 @@ __
 | [Gender](Gender.md) | Sexe d'une personne indiquant un code de sexe et la validité temporelle |
 | [Occupation](Occupation.md) | Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si... |
 | [Training](Training.md) | Formation ou éducation d'une personne indiquant un type (p |
-| [ElectoralDistrict](ElectoralDistrict.md) | Circonscription ou région électorale dans laquelle une personne est politique... |
 
 
 

@@ -27,7 +27,7 @@ URI: [act:electoralDistrict](https://ld.ech.ch/schema/0294/actors/electoralDistr
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |  no  |
+| [Membership](Membership.md) | A membership relationship between a person and a group, representing formal a... |  no  |
 
 
 
@@ -41,7 +41,7 @@ URI: [act:electoralDistrict](https://ld.ech.ch/schema/0294/actors/electoralDistr
 | Property | Value |
 | --- | --- |
 | Range | [ElectoralDistrict](ElectoralDistrict.md) |
-| Domain Of | [Person](Person.md) |
+| Domain Of | [Membership](Membership.md) |
 | Slot URI | [act:electoralDistrict](https://ld.ech.ch/schema/0294/actors/electoralDistrict) |
 
 ### Cardinality and Requirements
@@ -83,7 +83,7 @@ from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:electoralDistrict
 domain_of:
-- Person
+- Membership
 range: ElectoralDistrict
 
 ```

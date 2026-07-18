@@ -32,7 +32,6 @@ __
 | occupations | * <br/> [Occupation](Occupation.md) | Berufe oder Tätigkeiten der Person.  |
 | trainings | * <br/> [Training](Training.md) | Ausbildungen oder Bildungen der Person. Richtlinie: Im Grundsatz nur die höchste Ausbildung angeben.  |
 | contacts | * <br/> [Contact](Contact.md) | Kontaktinformationen (E-Mail, Website, Social Media). Richtlinie: E-Mail ist quasi-obligatorisch und sollte wenn vorhanden immer angegeben werden.  |
-| electoral_district | 0..1 <br/> [ElectoralDistrict](ElectoralDistrict.md) | Link zum Wahlbezirk.  |
 | interest_links | * <br/> [InterestLink](InterestLink.md) | Sammlung von Interessenbindungen.  |
 | local_id | 0..1 <br/> [String](String.md) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
@@ -108,9 +107,6 @@ contacts:
   value: beat.jans@admin.ch
 - contact_type: contact_website
   value: http://www.beat-jans.ch
-electoral_district:
-  district: Basel-Stadt
-  valid_from: 2010-01-01
 
 ```
 

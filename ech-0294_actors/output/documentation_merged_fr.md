@@ -141,7 +141,6 @@ __
 | occupations | * <br/> [Occupation](#Occupation) | Métiers ou professions de la personne.  |
 | trainings | * <br/> [Training](#Training) | Formations ou éducations de la personne. Directive : n'indiquer en principe que la qualification la plus élevée obtenue.  |
 | contacts | * <br/> [Contact](#Contact) | Informations de contact (e-mail, site web, réseaux sociaux). Directive : l'e-mail est quasi obligatoire et devrait toujours être fourni lorsqu'il est disponible.  |
-| electoral_district | 0..1 <br/> [ElectoralDistrict](#ElectoralDistrict) | Lien vers la circonscription électorale.  |
 | interest_links | * <br/> [InterestLink](#InterestLink) | Collection de liens d'intérêts.  |
 | local_id | 0..1 <br/> [String](#String) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
@@ -217,9 +216,6 @@ contacts:
   value: beat.jans@admin.ch
 - contact_type: contact_website
   value: http://www.beat-jans.ch
-electoral_district:
-  district: Basel-Stadt
-  valid_from: 2010-01-01
 
 ```
 
@@ -805,7 +801,7 @@ URI: [act:TrainingTypeEnum](https://ld.ech.ch/schema/0294/actors/TrainingTypeEnu
 ## Classe: ElectoralDistrict 
 
 
-_Circonscription ou région électorale dans laquelle une personne est politiquement active ; avec validité temporelle._
+_Circonscription ou région électorale associée à une affiliation. La validité temporelle est héritée de l'affiliation englobante._
 
 __
 
@@ -820,10 +816,10 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| district | 1 <br/> [String](#String) | Circonscription ou région électorale.  |
-| valid_from | 0..1 <br/> [Date](#Date) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| label | 0..1 <br/> [String](#String) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
+| local_id | 0..1 <br/> [String](#String) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Pour les références IRI, les ressources LINDAS doivent être utilisées. Les IRI des différents niveaux administratifs des unités spatiales suisses sont disponibles à l'adresse : https://ld.admin.ch/country/CHE. Sous les liens de la section schema:containsPlace, le niveau souhaité peut être sélectionné. Exemples pour chaque niveau administratif : - Pays - Suisse : https://ld.admin.ch/country/CHE - Canton - Argovie : https://ld.admin.ch/canton/19 - District - Brigue : https://ld.admin.ch/district/2301 - Commune - Versoix : https://ld.admin.ch/municipality/6644 <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q39 pour la Suisse. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 
 
 
@@ -833,7 +829,7 @@ __
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Person](#Person) | [electoral_district](#electoral_district) | range | [ElectoralDistrict](#ElectoralDistrict) |
+| [Membership](#Membership) | [electoral_district](#electoral_district) | range | [ElectoralDistrict](#ElectoralDistrict) |
 
 
 
@@ -847,15 +843,6 @@ __
 
 
 
-
-### Exemples
-#### Exemple : ElectoralDistrict-swiss_politicians_Beat_Jans_1
-
-```yaml
-district: Basel-Stadt
-valid_from: 2010-01-01
-
-```
 
 
 
@@ -1101,6 +1088,7 @@ __
 | ---  | --- | --- |
 | person_reference | 1 <br/> [PersonReference](#PersonReference) | Référence à une personne avec des données instantanées au moment de la mise en relation.  |
 | group_reference | 1 <br/> [GroupReference](#GroupReference) | Référence à un groupe avec des données instantanées au moment de la mise en relation.  |
+| electoral_district | 0..1 <br/> [ElectoralDistrict](#ElectoralDistrict) | Lien vers la circonscription électorale.  |
 | role_type | 0..1 <br/> [RoleType](#RoleType) | Rôle de la personne dans l'affiliation ou la fonction.  |
 | authorized_to_vote | 0..1 <br/> [Boolean](#Boolean) | Indique si la personne dispose du droit de vote au sein du groupe. Généralement false pour les membres suppléants (lorsqu'ils ne remplacent personne), les observateurs, les secrétaires et les invités.  |
 | is_active | 0..1 <br/> [Boolean](#Boolean) | Indique si l'affiliation est actuellement active. Peut compléter ou remplacer `valid_from`/`valid_through`. Si cette valeur n'est pas renseignée, l'activité est déduite des champs de validité temporelle.  |

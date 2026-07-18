@@ -36,7 +36,6 @@ __
 | [Gender](Gender.md) | Gender of a person indicating a gender code and temporal validity |
 | [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |
 | [Training](Training.md) | Training or education of a person indicating a type (e |
-| [ElectoralDistrict](ElectoralDistrict.md) | Electoral district or region where a person is politically active; with tempo... |
 
 
 

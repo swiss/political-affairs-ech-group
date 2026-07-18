@@ -17,7 +17,7 @@ Name: actors-schema
 | [Citizenship](Citizenship.md) | Citizenship (also used for Nationality) of a person indicating the country an... |
 | [Contact](Contact.md) | Contact information of a person indicating a type (e |
 | [Container](Container.md) | Container for political actors, groups, and relationships |
-| [ElectoralDistrict](ElectoralDistrict.md) | Electoral district or region where a person is politically active; with tempo... |
+| [ElectoralDistrict](ElectoralDistrict.md) | Electoral district or region associated with a membership |
 | [Gender](Gender.md) | Gender of a person indicating a gender code and temporal validity |
 | [Group](Group.md) | A political group, organization, or body (e |
 | [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |
@@ -75,7 +75,6 @@ Name: actors-schema
 | [datetime_planned](datetime_planned.md) | The planned date and time of an instantaneous event or occurrence (without ti... |
 | [death_date](death_date.md) | Exact date of death |
 | [description](description.md) | Description of the entity |
-| [district](district.md) | Electoral district or region |
 | [electoral_district](electoral_district.md) | Link to the electoral district |
 | [function_role](function_role.md) | Function or role in the organization (e |
 | [gender_code](gender_code.md) | Gender code |

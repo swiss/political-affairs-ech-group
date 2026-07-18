@@ -209,30 +209,28 @@
         },
         "ElectoralDistrict": {
             "additionalProperties": false,
-            "description": "Electoral district or region where a person is politically active; with temporal validity.",
+            "description": "Electoral district or region associated with a membership. The temporal validity is inherited from the enclosing membership.",
             "properties": {
-                "district": {
-                    "description": "Electoral district or region.\n",
+                "global_uri": {
+                    "description": "For IRI references, LINDAS resources should be used.\nThe IRIs for the different administrative levels of Swiss spatial units are available at: ch:country/CHE.\nUnder links in the schema:containsPlace section, the desired level can be selected.\nExamples for each administrative level:\n- Country - Switzerland: https://ld.admin.ch/country/CHE\n- Canton - Aargau: https://ld.admin.ch/canton/19\n- District - Brig: https://ld.admin.ch/district/2301\n- Municipality - Versoix: https://ld.admin.ch/municipality/6644\n",
                     "type": "string"
                 },
-                "is_active": {
-                    "description": "Indicates whether the information is currently valid. Can be useful when this information is explicitly available.\n",
-                    "type": [
-                        "boolean",
-                        "null"
-                    ]
-                },
-                "valid_from": {
-                    "description": "The date from which the information is valid.\n",
-                    "format": "date",
+                "label": {
+                    "description": "Assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "valid_through": {
-                    "description": "The date until which the information is valid, inclusive.\n",
-                    "format": "date",
+                "local_id": {
+                    "description": "Local identifier. For example, a UUID from the council information system.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "wikidata_uri": {
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
                     "type": [
                         "string",
                         "null"
@@ -240,7 +238,7 @@
                 }
             },
             "required": [
-                "district"
+                "global_uri"
             ],
             "title": "ElectoralDistrict",
             "type": "object"
@@ -1175,6 +1173,13 @@
                         "null"
                     ]
                 },
+                "electoral_district": {
+                    "description": "Link to the electoral district.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "global_uri": {
                     "description": "A unique, globally valid URI for the entity.\n",
                     "type": "string"
@@ -1501,17 +1506,6 @@
                         "string",
                         "null"
                     ]
-                },
-                "electoral_district": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/ElectoralDistrict"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Link to the electoral district.\n"
                 },
                 "genders": {
                     "description": "Gender of the person.\n",

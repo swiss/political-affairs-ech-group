@@ -36,7 +36,6 @@ URI: [schema:validThrough](http://schema.org/validThrough)
 | [Gender](Gender.md) | Sexe d'une personne indiquant un code de sexe et la validité temporelle |  no  |
 | [Occupation](Occupation.md) | Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si... |  no  |
 | [Training](Training.md) | Formation ou éducation d'une personne indiquant un type (p |  no  |
-| [ElectoralDistrict](ElectoralDistrict.md) | Circonscription ou région électorale dans laquelle une personne est politique... |  no  |
 
 
 

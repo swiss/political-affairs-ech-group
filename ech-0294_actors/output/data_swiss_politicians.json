@@ -67,10 +67,6 @@
           "value": "http://www.beat-jans.ch"
         }
       ],
-      "electoral_district": {
-        "district": "Basel-Stadt",
-        "valid_from": "2010-01-01"
-      },
       "local_id": "4032",
       "wikidata_uri": "https://www.wikidata.org/wiki/Q813067"
     }

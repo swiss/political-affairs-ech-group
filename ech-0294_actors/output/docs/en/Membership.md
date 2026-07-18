@@ -20,6 +20,7 @@ __
 | ---  | --- | --- |
 | person_reference | 1 <br/> [PersonReference](PersonReference.md) | Reference to a person with snapshot data at time of linking.  |
 | group_reference | 1 <br/> [GroupReference](GroupReference.md) | Reference to a group with snapshot data at time of linking.  |
+| electoral_district | 0..1 <br/> [ElectoralDistrict](ElectoralDistrict.md) | Link to the electoral district.  |
 | role_type | 0..1 <br/> [RoleType](RoleType.md) | Role of the person in the membership or function.  |
 | authorized_to_vote | 0..1 <br/> [Boolean](Boolean.md) | Indicates if the person is authorized to vote in the group. Typically false for substitute members (when not deputizing), observers, secretaries, and guests.  |
 | is_active | 0..1 <br/> [Boolean](Boolean.md) | Indicates if the membership is currently active. Can complement or replace `valid_from`/`valid_through`. If not set, activity is derived from the temporal validity fields.  |

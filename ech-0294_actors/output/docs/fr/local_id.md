@@ -34,6 +34,7 @@ URI: [mcm:localId](https://ld.ech.ch/schema/0292/meta-common/localId)
 | [Group](Group.md) | Un groupe, une organisation ou une collectivité politique (p |  no  |
 | [Membership](Membership.md) | Une relation d'affiliation entre une personne et un groupe, représentant une ... |  no  |
 | [InterestLink](InterestLink.md) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |  no  |
+| [ElectoralDistrict](ElectoralDistrict.md) | Circonscription ou région électorale associée à une affiliation |  no  |
 | [PersonReference](PersonReference.md) | Référence légère à une personne avec les principales données d'identification... |  no  |
 | [GroupReference](GroupReference.md) | Référence légère à un groupe avec les principales données d'identification au... |  no  |
 

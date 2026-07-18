@@ -36,7 +36,6 @@ URI: [mcm:isCurrent](https://ld.ech.ch/schema/0292/meta-common/isCurrent)
 | [Gender](Gender.md) | Sexe d'une personne indiquant un code de sexe et la validité temporelle |  no  |
 | [Occupation](Occupation.md) | Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si... |  no  |
 | [Training](Training.md) | Formation ou éducation d'une personne indiquant un type (p |  no  |
-| [ElectoralDistrict](ElectoralDistrict.md) | Circonscription ou région électorale dans laquelle une personne est politique... |  no  |
 
 
 
