@@ -39,15 +39,15 @@ persons:
         value: beat.jans@admin.ch
       - contact_type: contact_website
         value: http://www.beat-jans.ch
-memberships:
-  - global_uri: https://data-example.parlament.ch/membership/4032-bundesrat
-    valid_from: 2023-12-13
-    person_reference:
-      local_id: 4032
-      global_uri: https://data-example.parlament.ch/person/4032
-      label: Beat Jans
-    group_reference:
-      global_uri: ch:FC
-      label: Bundesrat
-    electoral_district:
-      global_uri: ch:canton/12
+# memberships:
+#   - global_uri: https://data-example.parlament.ch/membership/4032-bundesrat
+#     valid_from: 2023-12-13
+#     person_reference:
+#       local_id: 4032
+#       global_uri: https://data-example.parlament.ch/person/4032
+#       label: Beat Jans
+#     group_reference:
+#       global_uri: ch:FC
+#       label: Bundesrat
+#     electoral_district:
+#       global_uri: ch:canton/12
