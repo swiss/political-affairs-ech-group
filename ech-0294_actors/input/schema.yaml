@@ -347,15 +347,14 @@ classes:
 
   ElectoralDistrict:
     description: |
-      Electoral district or region where a membership is politically active; with temporal validity.
+      Electoral district or region associated with a membership. The temporal validity is inherited from the enclosing membership.
     annotations:
       description_de: |
-        Wahlkreis oder Wahlregion, in der eine Mitgliedschaft politisch aktiv ist; mit zeitlicher Gültigkeit.
+        Wahlkreis oder Wahlregion, die einer Mitgliedschaft zugeordnet ist. Die zeitliche Gültigkeit wird von der umschliessenden Mitgliedschaft übernommen.
       description_fr: |
-        Circonscription ou région électorale dans laquelle une affiliation est politiquement active ; avec validité temporelle.
+        Circonscription ou région électorale associée à une affiliation. La validité temporelle est héritée de l'affiliation englobante.
     mixins:
       - HasIdentification
-      - HasTemporalValidity
     slots:
       - label
     slot_usage:
