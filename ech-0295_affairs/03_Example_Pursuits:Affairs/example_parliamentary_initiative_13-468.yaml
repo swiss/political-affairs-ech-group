@@ -1,0 +1,785 @@
+# EXAMPLE DATA INSTANCE
+# ----------------------------------------------------------------
+# Worked example for the Parliamentary Initiative Profile
+# (ech-0295_affairs_parliamentary_initiative_profile.yaml).
+#
+# Encodes the Swiss federal parliamentary initiative 13.468 "Ehe für alle"
+# (marriage for all), submitted by the Grünliberale Fraktion.
+# Source: Curia Vista, AffairId 20130468
+# https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20130468
+#
+# Chronology (substantive events):
+#   1. Eingereicht ....................... 2013-12-05  Nationalrat, Grünliberale Fraktion
+#   2. Zugewiesen an Kommission .......... (Datum n/a)  RK-N (Vorprüfung)
+#   3. Vorprüfung RK-N ................... 2015-02-20  Folge geben, 12:9:1
+#   4. Zustimmung RK-S .................. 2015-09-01  Folge geben (Zweitratskommission), 7:5:1
+#   5. Fristverlängerung Nationalrat .... 2017-06-16  Frist bis Sommersession 2019
+#   6. Grundsatzentscheid RK-N .......... 2018-07-05  Öffnung der Ehe via Gesetzesänderung, Etappierung
+#   7. Ausarbeitung / Vernehmlassung RK-N 2019-02-14  Kernvorlage; Vernehmlassung 14.3.–21.6.2019
+#   8. Erlassentwurf RK-N ............... 2019-08-30  Entwurf + Bericht verabschiedet, 17:7:1
+#   9. Fristverlängerung Nationalrat .... 2019-06-21  Frist bis Sommersession 2021
+#  10. Stellungnahme Bundesrat .......... (Datum n/a)  beantragt Eintreten und Zustimmung
+#  11. Nationalrat (Erstrat) ........... 2020-06-03  Eintreten 152:39:4 (Beginn der Debatte)
+#  12. Nationalrat (Erstrat) ........... 2020-06-11  Gesamtabstimmung 132:53:13 (abweichend vom Entwurf)
+#  13. Ständerat (Zweitrat) ............ 2020-12-01  Rückweisung abgelehnt 22:20:2; Gesamtabst. 22:15:7 (Abweichung)
+#  14. Nationalrat (Differenzen) ....... 2020-12-09  Zustimmung zum Ständerat, Minderheit abgelehnt 133:57
+#  15. Schlussabstimmung ............... 2020-12-18  NR 136:48:9, SR 24:11:1 → angenommen
+#  16. Referendum / Volksabstimmung .... 2021-09-26  angenommen mit 64,1 % Ja-Stimmen → in Kraft
+#
+# Vocabulary mapping (per project decision) — Pa.Iv.-specific decisions expressed
+# with the core enums, original wording kept in `label` / `*remarks`:
+#   "Folge geben" / "Zustimmung"  -> accept  ;  "keine Folge geben" -> reject
+#   plenary "Folge gegeben" / "Zustimmung" / "Annahme" -> VoteResultEnum: accepted
+#
+# NOTE ON AGENDA STEPS (Traktandierung): every committee session and every plenary
+# treatment is preceded by an AgendaStep, reflecting how the business is put on a
+# meeting agenda before it is dealt with. Committee sessions are scheduled by the
+# committee itself (RK-N / RK-S); plenary treatments are scheduled by the Büro of
+# the respective council (Büro-NR / Büro-SR) via the Sessionsprogramm. No agenda
+# step precedes the executive Stellungnahme, which is not scheduled by parliament.
+# The exact Traktandierungsdaten are mostly not published in Curia Vista and are
+# therefore left as NULL (as are the meeting_reference links, to be completed).
+#
+# CONTRAST WITH 23.432 / 23.451 (the other worked examples):
+#   * Group sponsorship: the sponsor is a parliamentary group (Grünliberale
+#     Fraktion), not a single person — uses `group_reference` in the Sponsorship.
+#   * Fully concluded, ADOPTED affair: unlike 23.432 (ongoing) and 23.451 (died in
+#     the first council), 13.468 ran the complete lifecycle, was adopted in the
+#     Schlussabstimmung and, after a successful referendum, entered into force.
+#     Steps before final adoption carry affair_stage: ongoing; the Schlussabstimmung
+#     and implementation carry affair_stage: adopted.
+#   * Bicameral, first council = Nationalrat (13.468) vs. Ständerat (23.432).
+#   * The initiative originally proposed a CONSTITUTIONAL amendment but was
+#     elaborated as a federal statute ("Kernvorlage", Bundesgesetz).
+#   * A final vote (Schlussabstimmung) and an optional referendum with a popular
+#     vote follow the parliamentary phase — captured in the ImplementationStep.
+#
+# NOTE ON SHARED TYPES: MultilingualValue / GroupReference / PersonReference come
+# from the ech-0292 meta schema (not bundled). Conventional field names are used
+# (language/text, group_id/name, person_id/first_name/last_name, valid_from);
+# align them if your schema_common differs.
+#
+# NOTE ON IDENTIFIERS: council IDs (parlch:council:1 = Nationalrat,
+# parlch:council:2 = Ständerat) and the parliamentary-group number
+# (parlch:parlgroup:137 = Grünliberale Fraktion) are taken from Curia Vista.
+# Committee IDs (RK-N / RK-S) and bureau IDs (Büro-NR / Büro-SR) are shown as
+# readable slugs — replace with the official actor IDs from your ech-0294 register.
+
+affairs:
+
+  - affair_uid: "urn:parlch:business:20130468"
+    affair_number: "13.468"
+    affair_type: parliamentary_initiative
+    title:
+      - language: de
+        text: "Ehe für alle"
+    remarks: |
+      Parlamentarische Initiative der Grünliberalen Fraktion. Ursprünglich als
+      Verfassungsänderung eingereicht, in der Folge als Gesetzesänderung
+      (Kernvorlage, Bundesgesetz) ausgearbeitet und umgesetzt. In der
+      Volksabstimmung vom 26. September 2021 mit 64,1 % Ja-Stimmen angenommen.
+    procedure_steps:
+
+      # 1) EINREICHUNG ----------------------------------------------------------
+      - step_uid: "urn:parlch:business:20130468:step:submission"
+        step_type: submission
+        as_of_date: 2013-12-05
+        step_status: closed
+        phase: pre_parliamentary
+        affair_stage: ongoing
+        submission_date: 2013-12-05
+        sponsorships:
+          - group_reference:
+              group_id: "parlch:parlgroup:137"
+              name: "Grünliberale Fraktion"
+            sponsor_role: sponsor
+            valid_from: 2013-12-05
+	 chamber: Nationalrat
+        texts:
+          - text_type: main_text
+            value:
+              - language: de
+                text: |
+                  Gestützt auf Artikel 160 Absatz 1 der Bundesverfassung und
+                  Artikel 107 des Parlamentsgesetzes reichen wir folgende
+                  parlamentarische Initiative ein: Die Bundesverfassung ist wie
+                  folgt zu ändern:
+                  Art. 14 Recht auf Ehe, Lebensgemeinschaft (neu) und Familie
+                  Abs. 1: Das Recht auf Ehe, Lebensgemeinschaft (neu) und Familie
+                  ist gewährleistet.
+                  Abs. 2: Die gesetzlich geregelten Lebensgemeinschaften stehen
+                  Paaren unabhängig von ihrem Geschlecht oder ihrer sexuellen
+                  Orientierung offen.
+                  Art. 38 Abs. 1 erster Satz: Der Bund regelt Erwerb und Verlust
+                  der Bürgerrechte durch Abstammung, gesetzlich geregelte
+                  Lebensgemeinschaft (neu) und Adoption. ...
+            document_url: NULL
+          - text_type: reasoning
+            value:
+              - language: de
+                text: |
+		    Die parlamentarische Initiative fordert den Gesetzgeber auf, alle rechtlich
+		    geregelten Lebensgemeinschaften für alle Paare zu öffnen, ungeachtet ihres
+		    Geschlechts oder ihrer sexuellen Orientierung. Auch gleichgeschlechtliche Paare
+		    sollten heiraten können, und ungleichgeschlechtliche Paare sollten (wie in
+		    Frankreich) eine eingetragene Partnerschaft begründen können. Der
+		    vorgeschlagene Artikel 14 Absatz 2 der Bundesverfassung hält dies fest. In
+		    Artikel 14 Absatz 1 wird der Begriff "Ehe" durch den umfassenderen Begriff
+		    Lebensgemeinschaft ersetzt. Dies ist notwendig, weil andere
+		    Lebensgemeinschaften wie die eingetragene Partnerschaft und das Konkubinat den
+		    gleichen Grundrechtsschutz verdienen wie die Ehe. Weiterhin nicht unter Artikel
+		    14 Absatz 1 fällt ein blosses Zusammenleben mehrerer Personen etwa in einer
+		    Wohngemeinschaft. Die Bestimmung verpflichtet den Gesetzgeber auch nicht,
+		    homosexuellen Paaren die Adoption zu ermöglichen. In Artikel 38 Absatz 1 erster
+		    Satz wird der Begriff "Heirat" durch den umfassenderen Begriff "(gesetzlich
+		    geregelte) Lebensgemeinschaft" ersetzt. Menschen heiraten unter anderem, weil
+		    sie ihre Lebensgemeinschaft auf eine dauerhafte Basis stellen wollen, sich
+		    gegenseitig finanziell absichern und gegenüber der Gesellschaft ihre
+		    Verbundenheit ausdrücken möchten. Einem Teil der Gesellschaft in der Schweiz
+		    werden diese Rechte jedoch verweigert, ihnen steht eine Ehe zweiter Klasse in
+		    Form der eingetragenen Partnerschaft zur Verfügung. Diese Deklassierung
+		    aufgrund biologischer Unterschiede ist mit einem liberalen Gesellschaftsbild
+		    und einem modernen Rechtsstaat unvereinbar. Deshalb haben weltweit weit über
+		    ein Dutzend Länder, darunter Frankreich, Spanien, Portugal, Belgien, die
+		    Niederlande, Norwegen, Schweden, Dänemark und Island, die gleichgeschlechtliche
+		    Ehe legalisiert. Mit der parlamentarischen Initiative wird nicht beabsichtigt,
+		    den Kirchen und anderen Religionsgemeinschaften vorzuschreiben, wer bei ihnen
+		    vor den Altar treten darf. Sie bestimmen dies weiterhin selber.
+            document_url: NULL
+        step_remarks: NULL
+
+      # 2) ZUWEISUNG AN DIE KOMMISSION (VORPRÜFUNG) -----------------------------
+      - step_uid: "urn:parlch:business:20130468:step:assignment"
+        step_type: assignment
+        as_of_date: NULL   # Zuweisungsdatum nicht mehr nachvollziehbar
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        assignment_type: committee
+        assigned_to:
+          group_id: "parlch:committee:rk-n"
+          name: "Kommission für Rechtsfragen des Nationalrates (RK-N)"
+        assignment_date: NULL
+        step_remarks: NULL
+
+      # 3) AGENDA (Traktandierung RK-N) -----------------------------------------
+      - step_uid: "urn:parlch:business:20130468:step:agenda-rk-n-vorpruefung"
+        step_type: agenda
+        as_of_date: NULL
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        scheduled_by:
+          group_id: "parlch:committee:rk-n"
+          name: "Kommission für Rechtsfragen des Nationalrates (RK-N)"
+        agenda_date: NULL
+        treatment_category: NULL
+        meeting_reference: NULL   # Link Ratsbetrieb (noch zu ergänzen)
+        step_remarks: NULL
+
+      # 4) VORPRÜFUNG DURCH DIE RK-N: FOLGE GEBEN -------------------------------
+      - step_uid: "urn:parlch:business:20130468:step:vorpruefung-rk-n"
+        step_type: committee_deliberation
+        as_of_date: 2015-02-20
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        committee:
+          group_id: "parlch:committee:rk-n"
+          name: "Kommission für Rechtsfragen des Nationalrates (RK-N)"
+        chamber:
+          group_id: "parlch:council:1"
+          name: "Nationalrat"
+        meeting_date: 2015-02-20
+        positions:
+          - position_type: majority
+            label: "Folge geben"
+            recommendation: accept
+        step_remarks: NULL
+
+      # 5) AGENDA (Traktandierung RK-S) -----------------------------------------
+      - step_uid: "urn:parlch:business:20130468:step:agenda-rk-s"
+        step_type: agenda
+        as_of_date: NULL
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        scheduled_by:
+          group_id: "parlch:committee:rk-s"
+          name: "Kommission für Rechtsfragen des Ständerates (RK-S)"
+        agenda_date: NULL
+        treatment_category: NULL
+        meeting_reference: NULL   # Link Ratsbetrieb (noch zu ergänzen)
+        step_remarks: NULL
+
+      # 6) ZUSTIMMUNG DER RK-S (ZWEITRATSKOMMISSION) ----------------------------
+      - step_uid: "urn:parlch:business:20130468:step:zustimmung-rk-s"
+        step_type: committee_deliberation
+        as_of_date: 2015-09-01
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        committee:
+          group_id: "parlch:committee:rk-s"
+          name: "Kommission für Rechtsfragen des Ständerates (RK-S)"
+        chamber:
+          group_id: "parlch:council:2"
+          name: "Ständerat"
+        meeting_date: 2015-09-01
+        positions:
+          - position_type: full_committee
+            label: "Zustimmung"
+            recommendation: accept
+        step_remarks: NULL
+
+
+      # 7) AGENDA (Traktandierung RK-N) -----------------------------------------
+      - step_uid: "urn:parlch:business:20130468:step:agenda-rk-n-vorpruefung"
+        step_type: agenda
+        as_of_date: NULL
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        scheduled_by:
+          group_id: "parlch:committee:rk-n"
+          name: "Kommission für Rechtsfragen des Nationalrates (RK-N)"
+        agenda_date: NULL
+        treatment_category: NULL
+        meeting_reference: NULL   # Link Ratsbetrieb (noch zu ergänzen)
+        step_remarks: NULL
+
+      # 8) Antrag Fristverlängerung DURCH DIE RK-N:  -------------------------------
+      - step_uid: "urn:parlch:business:20130468:step:vorpruefung-rk-n"
+        step_type: committee_deliberation
+        as_of_date: 2017-05-11
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        committee:
+          group_id: "parlch:committee:rk-n"
+          name: "Kommission für Rechtsfragen des Nationalrates (RK-N)"
+        chamber:
+          group_id: "parlch:council:1"
+          name: "Nationalrat"
+        meeting_date: 2017-05-11
+        positions:
+          - position_type: majority
+            label: "Fristverlängerung"
+            recommendation: accept
+	   - position:_type: minority
+	     label: "Abschreibung"
+	     recommendation: reject
+            supporters:
+              - person_id: "parlch:person:XX"
+                first_name: "XX"
+                last_name: "Nidegger"
+              - person_id: "parlch:person:XX"
+                first_name: "Andrea"
+                last_name: "Geissbühler"
+              - person_id: "parlch:person:XX"
+                first_name: "Lukas"
+                last_name: "Reimann"
+              - person_id: "parlch:person:XX"
+                first_name: "Natalie"
+                last_name: "Rickli"
+              - person_id: "parlch:person:XX"
+                first_name: "Pirmin"
+                last_name: "Schwander"
+              - person_id: "parlch:person:XX"
+                first_name: "Mauro"
+                last_name: "Tuena"
+              - person_id: "parlch:person:XX"
+                first_name: "XX"
+                last_name: "Walliser"
+              - person_id: "parlch:person:XX"
+                first_name: "Claudio"
+                last_name: "Zanetti"
+	  document_url: https://www.parlament.ch/centers/kb/Documents/2013/Kommissionsbericht_RK-N_13.468_2017-05-11.pdf	     
+        step_remarks: NULL
+
+      # 9) AGENDA (Traktandierung Büro-NR, Sessionsprogramm) --------------------
+      - step_uid: "urn:parlch:business:20130468:step:agenda-nr-fristverlaengerung-2017"
+        step_type: agenda
+        as_of_date: NULL
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        scheduled_by:
+          group_id: "parlch:bureau:nr"
+          name: "Büro des Nationalrates (Büro-NR)"
+        agenda_date: NULL
+        treatment_category: NULL
+        meeting_reference: NULL   # Link Ratsbetrieb (noch zu ergänzen)
+        step_remarks: NULL
+
+      # 10) FRISTVERLÄNGERUNG DURCH DEN NATIONALRAT ------------------------------
+      - step_uid: "urn:parlch:business:20130468:step:fristverlaengerung-2017"
+        step_type: plenary_debate
+        as_of_date: 2017-06-16
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        chamber:
+          group_id: "parlch:council:1"
+          name: "Nationalrat"
+        debate_type: Frist
+        debate_date: "2017-06-16"
+        events:
+          - sequence_number: 1
+	   	event_type: debate
+		## Link zu Operations
+          - sequence_number: 2
+            event_type: vote
+	     ## Link zu Operations
+        result: accepted
+        step_remarks: |
+          Verlängerung der Frist zur Ausarbeitung eines Erlassentwurfs bis zur
+          Sommersession 2019
+      
+       # 11) AGENDA (Traktandierung RK-N) -----------------------------------------
+       - step_uid: "urn:parlch:business:20130468:step:agenda-rk-n-vorpruefung"
+         step_type: agenda
+         as_of_date: NULL
+         step_status: closed
+         phase: parliamentary
+         affair_stage: ongoing
+         scheduled_by:
+           group_id: "parlch:committee:rk-n"
+           name: "Kommission für Rechtsfragen des Nationalrates (RK-N)"
+         agenda_date: NULL
+         treatment_category: NULL
+         meeting_reference: NULL   # Link Ratsbetrieb (noch zu ergänzen)
+         step_remarks: NULL
+
+       # 12) Antrag Fristverlängerung DURCH DIE RK-N:  -------------------------------
+       - step_uid: "urn:parlch:business:20130468:step:vorpruefung-rk-n"
+         step_type: committee_deliberation
+         as_of_date: 2019-05-05
+         step_status: closed
+         phase: parliamentary
+         affair_stage: ongoing
+         committee:
+           group_id: "parlch:committee:rk-n"
+           name: "Kommission für Rechtsfragen des Nationalrates (RK-N)"
+         chamber:
+           group_id: "parlch:council:1"
+           name: "Nationalrat"
+         meeting_date: 2019-05-05
+         positions:
+           - position_type: full_committee
+             label: "Fristverlängerung"
+             recommendation: accept
+  	  document_url: https://www.parlament.ch/centers/kb/Documents/2013/Kommissionsbericht_RK-N_13.468_2019-04-05.pdf
+         step_remarks: NULL
+       
+      # 13) ZWEITE FRISTVERLÄNGERUNG DURCH DEN NATIONALRAT ------------------------------
+      - step_uid: "urn:parlch:business:20130468:step:fristverlaengerung-2017"
+        step_type: plenary_debate
+        as_of_date: 2019-06-21
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        chamber:
+          group_id: "parlch:council:1"
+          name: "Nationalrat"
+        debate_type: Frist
+        debate_date: "2019-06-21"
+        events:
+          - sequence_number: 1
+	   	event_type: debate
+		## Link zu Operations
+          - sequence_number: 2
+            event_type: vote
+	     ## Link zu Operations => Merke: diese Abstimmung ist einstimmig
+        result: accepted
+        step_remarks: |
+	   Die Behandlungsfrist des Geschäftes wird verlängert (bis 2021)
+
+
+      # 14) AGENDA (Traktandierung RK-N) -----------------------------------------
+      - step_uid: "urn:parlch:business:20130468:step:agenda-rk-n-grundsatz"
+        step_type: agenda
+        as_of_date: NULL
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        scheduled_by:
+          group_id: "parlch:committee:rk-n"
+          name: "Kommission für Rechtsfragen des Nationalrates (RK-N)"
+        agenda_date: NULL
+        treatment_category: NULL
+        meeting_reference: NULL   # Link Ratsbetrieb (noch zu ergänzen)
+        step_remarks: NULL
+
+      # 15) Erlassentwurf DER RK-N ----------------------------------------
+      - step_uid: "urn:parlch:business:20130468:step:grundsatzentscheid-rk-n"
+        step_type: committee_deliberation
+        as_of_date: NULL #nicht mehr nachvollziehbar
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        committee:
+          group_id: "parlch:committee:rk-n"
+          name: "Kommission für Rechtsfragen des Nationalrates (RK-N)"
+        chamber:
+          group_id: "parlch:council:1"
+          name: "Nationalrat"
+        meeting_date: NULL #nicht mehr nachvollziehbar
+	 document_url: https://www.fedlex.admin.ch/eli/fga/2019/2985/de
+        step_remarks: NULL
+	 
+      # 16) Vernehmlassung Do, 14. März 2019 eröffnet
+      - step_uid: VERNEHMLASSUNG? 
+        step_type: vernehmlassung
+	 as_of_date: 2019-03-14
+	 step_status: closed
+	 phase: parliamentary
+	 affair_stage: ongoing
+	 document_url: https://fedlex.data.admin.ch/eli/dl/proj/6019/12/cons_1
+	 step_remarks: Kommissionsarbeit. Die Kommission übernimmt das Heraussenden an die affected organizations.
+	
+
+      # 17) STELLUNGNAHME DES BUNDESRATES ZUM ENTWURF ----------------------------
+      - step_uid: "urn:parlch:business:20230432:step:stellungnahme-br"
+        step_type: executive_response
+        as_of_date: 2020-01-29
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        responder:
+          group_id: "parlch:executive:bundesrat"
+          name: "Bundesrat"
+        response_date: 2020-01-29
+        recommendation: accept      
+        texts:
+          - text_type: background
+            value:
+              - language: de
+                text: |
+		    Am 5. Dezember 2013 reichte die Grünliberale Fraktion die parlamentarische
+		    Initia- tive «Ehe für alle» mit folgendem Text ein: «Die Bundesverfassung ist
+		    wie folgt zu ändern: Art. 14 Recht auf Ehe, Lebensgemeinschaft (neu) und
+		    Familie Abs. 1 Das Recht auf Ehe, Lebensgemeinschaft (neu) und Familie ist
+		    gewährleistet. Abs. 2 Die gesetzlich geregelten Lebensgemeinschaften stehen
+		    Paaren unabhängig von ihrem Geschlecht oder ihrer sexuellen Orientie- rung
+		    offen. Art. 38 Abs. 1 erster Satz Der Bund regelt Erwerb und Verlust der
+		    Bürgerrechte durch Ab- stammung, («Heirat» streichen) gesetzlich geregelte
+		    Lebensge- meinschaft (neu) und Adoption. …» Am 20. Februar 2015 gab die
+		    Kommission für Rechtsfragen des Nationalrates (RK-N) der Initiative mit 12 zu 9
+		    Stimmen bei 1 Enthaltung Folge. Die Kommission für Rechtsfragen des Ständerates
+		    (RK-S) stimmte diesem Beschluss am 1. September 2015 mit 7 zu 5 Stimmen bei 1
+		    Enthaltung zu. Am 16. Juni 2017 hat der Nationalrat die Frist zur Ausarbeitung
+		    eines Erlassentwurfs bis zur Sommerses- sion 2019 verlängert. Am 5. Juli 2018
+		    traf die RK-N den Grundsatzentscheid, die Öffnung der Ehe für Personen gleichen
+		    Geschlechts auf dem Wege der Gesetzesänderung vorzunehmen. Zudem sprach sie
+		    sich dafür aus, die Gesetzesrevision für die Öffnung des Rechtsin- stituts Ehe
+		    nicht in einer einmaligen Revision, sondern in Etappen anzugehen. Die
+		    Verwaltung wurde in der Folge beauftragt, zusammen mit externen Expertinnen und
+		    Experten eine «Kernvorlage» auszuarbeiten. Am 14. Februar 2019 stimmte die RK-N
+		    der von der Verwaltung erarbeiteten Kern- vorlage zu. Weiter beschloss sie,
+		    auch eine Änderung der Bestimmungen über die Entstehung des Kindesverhältnisses
+		    im Zivilgesetzbuch als eine «die Kernvorlage ergänzende Variante» in die
+		    Vernehmlassung zu schicken. Mit dieser Änderung würde gleichgeschlechtlichen
+		    weiblichen Ehepaaren der Zugang zur Samenspende ermöglicht. Die Vernehmlassung
+		    dauerte vom 14. März bis zum 21. Juni 2019. Am 30. August 2019 hat die RK-N von
+		    den Ergebnissen des Vernehmlassungsverfahrens Kenntnis genommen. Angesichts der
+		    Stellungnahmen in der Vernehmlassung hat die Mehrheit der Kom- mission
+		    entschieden, auf die Öffnung des Zugangs zur Samenspende für gleichge-
+		    schlechtliche weibliche Ehepaare zu verzichten und die Thematik der Fortpflan-
+		    zungsmedizin erst in einem nachfolgenden Schritt anzugehen. In der Folge hat
+		    die RK-N an der Sitzung vom 30. August 2019 den vorliegenden Erlassentwurf und
+		    Bericht mit 17 zu 7 Stimmen bei 1 Enthaltung verabschiedet. Eine Minderheit
+		    verlangt hingegen nach wie vor die Öffnung des Zugangs zur Samenspende für
+		    gleichgeschlechtliche weibliche Ehepaare. Eine zweite Minderheit beantragt
+		    Nichteintreten. Gestützt auf Artikel 112 Absatz 3 des Parlamentsgesetzes vom
+		    13. Dezember 20023 wurden Erlassentwurf und Bericht dem Bundesrat zur
+		    Stellungnahme überwiesen.
+		    
+          - text_type: reasoning
+            value:
+              - language: de
+                text: |
+		    In den vergangenen Jahren hat sich der Bundesrat wiederholt für eine
+		    Beseitigung der Ungleichbehandlung verschieden- und gleichgeschlechtlicher
+		    Paare ausgespro- chen, entweder durch eine Angleichung der eingetragenen
+		    Partnerschaft an die Ehe oder durch die Öffnung der Ehe für
+		    gleichgeschlechtliche Paare.4 Der Bundesrat begrüsst deshalb den klaren
+		    Entscheid der RK-N, die bestehende Ungleichbehand- lung zu beseitigen und das
+		    Rechtsinstitut der Ehe für alle Paare zu öffnen. Weil die eingetragene
+		    Partnerschaft als Pendant zur Ehe geschaffen wurde, erscheint es zudem
+		    konsequent, dass künftig keine neuen eingetragenen Partnerschaften mehr
+		    begründet werden können. Der Bundesrat begrüsst auch den Vorschlag der RK-N,
+		    dass Paare, die bereits in einer eingetragenen Partnerschaft leben, die
+		    Möglichkeit erhalten, ihre eingetragene Partnerschaft rasch und unbürokratisch
+		    in eine Ehe umwandeln zu können. Die Einführung einer weiteren
+		    Partnerschaftsform als Rechtsinstitut ausserhalb der Ehe und unabhängig von der
+		    Geschlechterzusammen- setzung wird im Rahmen des Berichts zu einem möglichen
+		    PACS für die Schweiz geprüft.5 Der Bundesrat schliesst sich auch den
+		    rechtlichen Überlegungen der RK-N an, wonach die Öffnung der Ehe auf dem Weg
+		    einer Gesetzesrevision erfolgen kann und dazu keine Revision der
+		    Bundesverfassung6 erforderlich ist. Als sachgerecht erachtet der Bundesrat
+		    schliesslich den Entscheid, die Revision in Etappen umzusetzen und in einem
+		    ersten Schritt nur die für die Öffnung der Ehe unbedingt notwendigen Punkte zu
+		    regeln. Die Erweiterung der Vorlage auf politisch heikle Fragen – wie zum
+		    Beispiel die Regelung der Hinterlassenenrenten – könnte den Erfolg der Vorla-
+		    ge als Ganzes gefährden oder jedenfalls ein Inkrafttreten um Jahre verzögern.
+		    Auch wenn der Bundesrat das Anliegen der Minderheit betreffend die Öffnung des
+		    Zugangs zur Samenspende für weibliche Ehepaare nachvollziehen kann, ist er mit
+		    der Mehrheit der Kommission der Ansicht, dass es angebracht ist, diese Frage
+		    erst in einem nächsten Schritt zu behandeln, damit die Vorlage nicht überladen
+		    wird. Zu- dem wurde die Frage der Notwendigkeit einer Verfassungsrevision noch
+		    nicht definitiv geklärt. Weiter sollen die Einwände, die in der Vernehmlassung
+		    gegen die Einführung einer Mutterschaftsvermutung der Ehefrau der Mutter
+		    vorgebracht wurden, unter dem Gesichtspunkt des Kindeswohls vertieft geprüft
+		    werden. Es stellt sich insbesondere die Frage der Vereinbarkeit einer solchen
+		    Vermutung mit dem verfassungsrechtlich garantierten Recht des Kindes auf
+		    Kenntnis seiner Abstam- mung, etwa wenn die Samenspende in einem Land
+		    durchgeführt wurde, in dem eine anonyme Spende möglich ist, oder wenn die
+		    Zeugung auf natürlichem Weg erfolgt ist. In diesem letzten Fall stellt sich
+		    zudem auch die Frage nach der rechtlichen Stellung des biologischen Vaters. Der
+		    Bundesrat ist der Ansicht, dass diese heiklen Fragen in grundsätzlicher Weise
+		    geklärt werden sollten, bevor eine neue Regelung eingeführt wird. Entsprechende
+		    Arbeiten sind denn auch bereits am Laufen: Mit der Überweisung des Postulats
+		    18.3714 «Überprüfung des Abstammungsrechts» der RK-S wurde der Bundesrat
+		    beauftragt, den Reformbedarf im Abstammungsrecht zu prüfen und dem Parlament in
+		    einem Bericht gegebenenfalls Empfehlungen für eine kohärente Gesamtreform zu
+		    unterbreiten. Eine externe interdisziplinäre Gruppe von Expertinnen und
+		    Experten wurde eingesetzt, die bis zum Sommer 2021 Empfehlun- gen formulieren
+		    wird. Somit können die erwähnten Fragen in einem Gesamtkontext diskutiert und
+		    angemessene Lösungen vorgeschlagen werden.
+		    
+           - text_type: recommendation
+             value:
+               - language: de
+                 text: |
+		     Der Bundesrat beantragt Eintreten und Zustimmung zur Vorlage der RK-N. Die
+		     Anträge der Minderheiten werden zur Ablehnung empfohlen.
+	    - document_url: https://www.fedlex.admin.ch/eli/fga/2020/273/de
+        step_remarks: NULL
+      	 
+
+      # 18) AGENDA (Traktandierung Büro-NR, Sommersession 2020) ----------------
+      - step_uid: "urn:parlch:business:20130468:step:agenda-nr-erstrat"
+        step_type: agenda
+        as_of_date: NULL
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        scheduled_by:
+          group_id: "parlch:bureau:nr"
+          name: "Büro des Nationalrates (Büro-NR)"
+        agenda_date: NULL
+        treatment_category: NULL
+        meeting_reference: NULL   # Link Ratsbetrieb (Sessionsprogramm Sommersession 2020)
+        step_remarks: |
+          Traktandierung der Erstratsbehandlung im Nationalrat (Sommersession
+          2020, umfasst Eintreten, Detailberatung und Gesamtabstimmung).
+
+      # 19) NATIONALRAT (ERSTRAT): START -----------------------------------
+      - step_uid: "urn:parlch:business:20130468:step:plenary-nr-eintreten"
+        step_type: plenary_debate
+        as_of_date: 2020-06-03
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        chamber:
+          group_id: "parlch:council:1"
+          name: "Nationalrat"
+        debate_type: Erstrat
+        debate_date: "2020-06-03T00:00:00+02:00"
+        events:
+          ## LINK Ratsbetrieb!
+        step_remarks: 
+
+      # 20) NATIONALRAT (ERSTRAT): FORTSTETZUNG und DETAILBERATUNG -----------------------------------
+      - step_uid: "urn:parlch:business:20130468:step:plenary-nr-fortsetzung"
+        step_type: plenary_debate
+        as_of_date: 2020-06-11
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        chamber:
+          group_id: "parlch:council:1"
+          name: "Nationalrat"
+        debate_type: Fortsetzung, Detailberatung
+        debate_date: "2020-06-03T00:00:00+02:00"
+        events:
+          ## LINK Ratsbetrieb!
+	   ## Debates, Changes, Gesamtabstimmung
+	 result: accepted with changes
+        step_remarks: |
+	   Beschluss abweichend vom Entwurf - Der Nationalrat nahm die Vorlage in
+          der Gesamtabstimmung mit 132 zu 53 Stimmen bei 13 Enthaltungen an und
+          erweiterte sie um den Zugang weiblicher Ehepaare zur Samenspende.
+
+
+      # 21) AGENDA (Traktandierung Büro-SR, Wintersession 2020) ----------------
+      - step_uid: "urn:parlch:business:20130468:step:agenda-sr"
+        step_type: agenda
+        as_of_date: NULL
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        scheduled_by:
+          group_id: "parlch:bureau:sr"
+          name: "Büro des Ständerates (Büro-SR)"
+        agenda_date: NULL
+        treatment_category: NULL
+        meeting_reference: NULL   # Link Ratsbetrieb (Sessionsprogramm Wintersession 2020)
+        step_remarks: NULL
+
+      # 22) STÄNDERAT (ZWEITRAT): RÜCKWEISUNG UND GESAMTABSTIMMUNG -------------
+      - step_uid: "urn:parlch:business:20130468:step:plenary-sr-gesamt"
+        step_type: plenary_debate
+        as_of_date: 2020-12-01
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        chamber:
+          group_id: "parlch:council:2"
+          name: "Ständerat"
+        debate_type: detailed_consultation
+        debate_date: "2020-12-01T00:00:00+01:00"
+        events: #RATSBETRIEB!
+          - sequence_number: 1
+            event_type: vote
+            vote:
+              vote_result: rejected   # Rückweisungsantrag (Verfassungsgrundlage) abgelehnt
+              yes_count: 20
+              no_count: 22
+              abstention_count: 2
+          - sequence_number: 2
+            event_type: vote
+            vote:
+              vote_result: accepted   # Gesamtabstimmung
+              yes_count: 22
+              no_count: 15
+              abstention_count: 7
+        result: accepted
+        step_remarks: |
+          "Abweichung": Rückweisung an die Kommission mit 22 zu 20 Stimmen bei 2
+          Enthaltungen abgelehnt. In der Detailberatung beschränkte der Ständerat
+          die Vermutung der Mutterschaft der Ehefrau auf Samenspenden in der
+          Schweiz und schloss die Anfechtungsklage aus. Gesamtabstimmung: 22 zu 15
+          Stimmen bei 7 Enthaltungen.
+
+      # 23) AGENDA (Traktandierung Büro-NR, Wintersession 2020) ----------------
+      - step_uid: "urn:parlch:business:20130468:step:agenda-nr-differenzen"
+        step_type: agenda
+        as_of_date: NULL
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        scheduled_by:
+          group_id: "parlch:bureau:nr"
+          name: "Büro des Nationalrates (Büro-NR)"
+        agenda_date: NULL
+        treatment_category: NULL
+        meeting_reference: NULL   # Link Ratsbetrieb (Sessionsprogramm Wintersession 2020)
+        step_remarks: NULL
+
+      # 24) NATIONALRAT: DIFFERENZBEREINIGUNG ----------------------------------
+      - step_uid: "urn:parlch:business:20130468:step:plenary-nr-differenzen"
+        step_type: plenary_debate
+        as_of_date: 2020-12-09
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        chamber:
+          group_id: "parlch:council:1"
+          name: "Nationalrat"
+        debate_type: Differenzen
+        debate_date: "2020-12-09T00:00:00+01:00"
+        events:
+         #Ratbetrieb
+        result: accepted
+        step_remarks: |
+          "Zustimmung": Der Nationalrat stimmte den Kompromissvorschlägen des
+          Ständerats zu und lehnte den Minderheitsantrag auf Streichung der
+          Samenspende mit 133 zu 57 Stimmen ab. Damit war die Differenzbereinigung
+          abgeschlossen.
+
+      # 25) AGENDA (Traktandierung Büro-NR / Büro-SR, Schlussabstimmung) -------
+      - step_uid: "urn:parlch:business:20130468:step:agenda-schlussabstimmung"
+        step_type: agenda
+        as_of_date: NULL
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        scheduled_by:
+          - group_id: "parlch:bureau:nr"
+            name: "Büro des Nationalrates"
+          - group_id: "parlch:bureau:sr"
+            name: "Büro des Ständerates"
+        agenda_date: NULL
+        treatment_category: NULL
+        meeting_reference: NULL   # Link Ratsbetrieb (Sessionsprogramm Wintersession 2020, Schlussabstimmung)
+        step_remarks: |
+          Traktandierung der Schlussabstimmung in beiden Räten am letzten Tag der
+          Wintersession 2020.
+
+	   
+      # 26) SCHLUSSABSTIMMUNG SR --------------------------------------------------
+      - step_uid: "urn:parlch:business:20130468:step:schlussabstimmung"
+        step_type: plenary_debate
+        as_of_date: 2020-12-18
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        chamber:
+	   - group_id: "parlch:council:2"
+            name: "Ständerat"
+        debate_type: final vote
+        debate_date: "2020-12-18T00:00:00+01:00"
+        events:
+         ##Ratsbetrieb
+        result: accepted
+        step_remarks: |
+          Annahme in der Schlussabstimmung vom 18. Dezember 2020: Nationalrat 136
+          zu 48 Stimmen bei 9 Enthaltungen, Ständerat 24 zu 11 Stimmen bei 1
+          Enthaltung. Gegen das Gesetz stimmte die Mehrheit der SVP- und der
+          Mitte-Fraktion.
+
+
+      # 27) SCHLUSSABSTIMMUNG NR --------------------------------------------------
+      - step_uid: "urn:parlch:business:20130468:step:schlussabstimmung"
+        step_type: plenary_debate
+        as_of_date: 2020-12-18
+        step_status: closed
+        phase: parliamentary
+        affair_stage: adopted
+        chamber:
+          - group_id: "parlch:council:1"
+            name: "Nationalrat"
+        debate_type: final vote
+        debate_date: "2020-12-18T00:00:00+01:00"
+        events:
+         ##Ratsbetrieb
+        result: accepted
+        step_remarks: |
+          Annahme in der Schlussabstimmung vom 18. Dezember 2020: Nationalrat 136
+          zu 48 Stimmen bei 9 Enthaltungen, Ständerat 24 zu 11 Stimmen bei 1
+          Enthaltung. Gegen das Gesetz stimmte die Mehrheit der SVP- und der
+          Mitte-Fraktion.
+
+      # 28) UMSETZUNG: REFERENDUM, VOLKSABSTIMMUNG UND INKRAFTTRETEN -----------
+	      # TODO Überdenken!
+	      # Was machen wir hier? 
+	      # Referendum? 
+      - step_uid: "urn:parlch:business:20130468:step:umsetzung"
+        step_type: implementation
+        as_of_date: 2021-09-26
+        step_status: closed
+        phase: post_parliamentary
+        affair_stage: adopted
+        disposition: implemented
+        responsible_body:
+          group_id: "parlch:executive:bundesrat"
+          name: "Bundesrat"
+        disposition_date: 2021-09-26
+        step_remarks: |
+          Gegen die am 18. Dezember 2020 verabschiedete Gesetzesänderung wurde das
+          Referendum ergriffen. In der Volksabstimmung vom 26. September 2021 wurde
+          die Vorlage mit 64,1 % Ja-Stimmen angenommen; das Gesetz trat in der
+          Folge in Kraft. Damit ist das Geschäft erledigt (Status Curia Vista:
+          "Erledigt").

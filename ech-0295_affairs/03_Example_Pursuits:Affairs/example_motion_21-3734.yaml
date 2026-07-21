@@ -42,7 +42,8 @@ affairs:
             person_reference:
               id: "act:person/mp-491"
             valid_from: "2021-06-16"
-        texts:
+        chamber: Nationalrat
+	 texts:
           - text_type: main_text
             value:
               - language: de

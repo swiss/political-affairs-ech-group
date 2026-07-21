@@ -1,0 +1,111 @@
+# HEADER
+# ----------------------------------------------------------------
+# Parliamentary-initiative profile: a thin schema that imports the affairs core
+# and defines the concrete ParliamentaryInitiative class. Built by copying the
+# Motion profile, changing the class, fixing `affair_type`, and adjusting the
+# allowed process steps in the `procedure_steps` slot_usage (any_of).
+#
+# Key difference from the Motion profile: a parliamentary initiative asks the
+# parliament to draft an act itself; it does NOT instruct the executive. The
+# preliminary examination (Vorprüfung) therefore has no executive response —
+# instead the responsible committee of the first council recommends whether to
+# give the initiative effect ("Folge geben"), and the councils decide. If effect
+# IS given, the initiating committee elaborates an act; on that drafted act the
+# executive does issue a Stellungnahme, so an ExecutiveResponseStep is allowed
+# (it belongs to the elaboration phase, not the Vorprüfung). See examples 23.451
+# (died in the Vorprüfung, no executive response) and 23.432 (given effect,
+# executive Stellungnahme on the drafted act).
+
+id: https://ld.ech.ch/schema/0295/affairs/parliamentary-initiative
+name: parliamentary-initiative-profile
+title: Parliamentary Initiative Profile
+description: |
+  Profile schema for the affair type "parliamentary initiative". A parliamentary
+  initiative proposes that the parliament itself draft an act or a general
+  resolution (rather than instructing the executive). This profile imports the
+  affairs core schema and defines the concrete ParliamentaryInitiative class,
+  fixing the affair type and restricting the applicable process steps.
+annotations:
+  description_de: |
+    Profil-Schema für den Geschäftstyp "Parlamentarische Initiative". Eine
+    parlamentarische Initiative schlägt vor, dass das Parlament selbst einen
+    Erlass oder einen Grundsatzbeschluss ausarbeitet (statt die Exekutive zu
+    beauftragen). Dieses Profil importiert das affairs-Kern-Schema und definiert
+    die konkrete ParliamentaryInitiative-Klasse, legt den Geschäftstyp fest und
+    schränkt die anwendbaren Verfahrensschritte ein.
+license: CC-BY
+prefixes:
+  linkml: https://w3id.org/linkml/
+  aff: https://ld.ech.ch/schema/0295/affairs/
+  dcterms: http://purl.org/dc/terms/
+default_prefix: aff
+default_range: string
+imports:
+  - linkml:types
+  - ech-0295_affairs
+
+classes:
+
+  ParliamentaryInitiative:
+    is_a: Affair
+    description: |
+      A parliamentary initiative (Parlamentarische Initiative): a member, a
+      parliamentary group, or a committee proposes that the parliament itself
+      draft an act or take a general resolution. Unlike a motion, it does not
+      instruct the executive, so the preliminary examination (Vorprüfung)
+      contains no executive response. The lifecycle typically runs through
+      submission, assignment to the responsible committee, a committee
+      preliminary examination that recommends whether to give the initiative
+      effect ("Folge geben"), and a first-council decision (in a bicameral
+      parliament, the second council's committee must consent). If effect is not
+      given, the initiative is settled (erledigt) at that point. If effect is
+      given, the initiating committee elaborates the corresponding act; the
+      executive issues a Stellungnahme on that drafted act (captured as an
+      ExecutiveResponseStep), and the councils then debate and adopt it like any
+      other bill.
+    annotations:
+      description_de: |
+        Eine parlamentarische Initiative: ein Ratsmitglied, eine Fraktion oder
+        eine Kommission schlägt vor, dass das Parlament selbst einen Erlass
+        ausarbeitet oder einen Grundsatzbeschluss fasst. Im Gegensatz zur Motion
+        beauftragt sie die Exekutive nicht, weshalb die Vorprüfung keine
+        Stellungnahme der Exekutive enthält. Der Lebenszyklus verläuft
+        typischerweise über Einreichung, Zuweisung an die zuständige Kommission,
+        eine Vorprüfung durch die Kommission (mit Empfehlung, ob der Initiative
+        Folge zu geben ist), Traktandierung und einen Entscheid des Erstrats.
+        Gibt der Erstrat der Initiative keine Folge, ist sie damit erledigt. Wird
+        ihr Folge gegeben, arbeitet die einreichende Kommission (nach Zustimmung
+        der Kommission des Zweitrats, sofern Zweikammersystem) den entsprechenden
+        Erlass aus, was als Umsetzungsschritt erfasst wird.
+    slot_usage:
+      affair_type:
+        equals_string: parliamentary_initiative
+      procedure_steps:
+        description: |
+          Process steps applicable to a parliamentary initiative. It may use any
+          of the following step types. The recommendation on whether to give
+          effect ("Folge geben") is expressed by the responsible committee in a
+          CommitteeDeliberationStep (Vorprüfung), and the decision is taken in a
+          PlenaryDebateStep. An ExecutiveResponseStep does NOT occur in the
+          Vorprüfung; it appears only in the elaboration phase, when the executive
+          issues a Stellungnahme on the act drafted by the initiating committee.
+        annotations:
+          description_de: |
+            Für eine parlamentarische Initiative anwendbare Verfahrensschritte.
+            Sie kann jeden der folgenden Schritt-Typen verwenden. Die Empfehlung,
+            ob der Initiative Folge zu geben ist, gibt die zuständige Kommission in
+            einem CommitteeDeliberationStep (Vorprüfung) ab, und der Entscheid
+            fällt in einem PlenaryDebateStep. Ein ExecutiveResponseStep kommt in
+            der Vorprüfung NICHT vor; er tritt erst in der Ausarbeitungsphase auf,
+            wenn die Exekutive zum von der Kommission ausgearbeiteten Erlass
+            Stellung nimmt.
+        any_of:
+          - range: SubmissionStep
+          - range: WithdrawalStep
+          - range: ValidationStep
+          - range: AssignmentStep
+          - range: AgendaStep
+          - range: CommitteeDeliberationStep
+          - range: ExecutiveResponseStep
+          - range: PlenaryDebateStep
+          - range: ImplementationStep

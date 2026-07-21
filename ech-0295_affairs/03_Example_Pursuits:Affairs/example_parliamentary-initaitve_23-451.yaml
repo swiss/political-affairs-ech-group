@@ -1,0 +1,195 @@
+# EXAMPLE DATA INSTANCE
+# ----------------------------------------------------------------
+# Worked example for the Parliamentary Initiative Profile
+# (ech-0295_affairs_parliamentary_initiative_profile.yaml).
+#
+# Encodes the Swiss federal parliamentary initiative 23.451
+# "Finanzierung der Krankenversicherung analog der Unfallversicherung"
+# (Grüne Fraktion). Source: Curia Vista, AffairId 20230451
+# https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20230451
+#
+# Lifecycle (as it actually ran):
+#   1. Eingereicht (submitted) ............ 2023-09-13, Nationalrat, Grüne Fraktion
+#   2. Zugewiesen an die Kommission ....... 2023-11-30, SGK-N
+#   3. Vorprüfung Kommission abgeschlossen  2024-05-02, SGK-N: Mehrheit "keine Folge
+#                                           geben"; Minderheit Weichelt "Folge geben"
+#   4. Nationalrat (Erstrat) .............. 2024-06-04: keine Folge geben
+#                                           (126 : 59, 15 nicht teilgenommen) -> ERLEDIGT
+#
+# The initiative "died" in the first council: no Ständerat treatment, and — unlike
+# a motion — no executive (Bundesrat) response in the preliminary examination.
+#
+# Vocabulary mapping (per project decision): the Pa.Iv.-specific decision
+# "Folge geben / keine Folge geben" is expressed with the core enums:
+#   "Folge geben"        -> RecommendationEnum: accept   / VoteResultEnum: accepted
+#   "keine Folge geben"  -> RecommendationEnum: reject   / VoteResultEnum: rejected
+# The original wording is preserved in the `label` / `*remarks` fields.
+#
+# NOTE ON SHARED TYPES: MultilingualValue, GroupReference and PersonReference come
+# from the ech-0292 meta schema (schema_common), which is not bundled here. The
+# field names below (language/text, group_id/name, person_id/first_name/last_name)
+# follow the conventional meta-schema shape; align them if your schema_common
+# differs.
+
+affairs:
+
+  - affair_uid: "urn:parlch:business:20230451"
+    affair_number: "23.451"
+    affair_type: parliamentary_initiative
+    title:
+      - language: de
+        text: "Finanzierung der Krankenversicherung analog der Unfallversicherung"
+    remarks: 
+    procedure_steps:
+      # 1) EINREICHUNG -----------------------------------------------------------
+      - step_uid: ""
+        step_type: submission
+        as_of_date: 2023-09-13
+        step_status: closed
+        phase: pre_parliamentary
+        affair_stage: ongoing
+        submission_date: 2023-09-13
+        sponsorships:
+          - group_reference:
+              group_id: "parlch:parlgroup:6"
+              name: "Grüne Fraktion"
+            sponsor_role: sponsor
+        chamber: Nationalrat
+	 texts:
+          - text_type: main_text
+            value:
+              - language: de
+                text: |
+                  Gestützt auf Artikel 160 Absatz 1 der BV und Art. 107 des
+                  Parlamentsgesetzes reicht die Grüne Fraktion folgende
+                  parlamentarische Initiative ein: Es sei eine Vorlage bezüglich
+                  Änderung des Bundesgesetzes über die Krankenversicherung
+                  auszuarbeiten und dem Parlament zu unterbreiten, welche
+                  einkommens- und vermögensabhängige Krankenkassenprämien vorsieht.
+            document_url: "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20230451"
+          - text_type: reasoning
+            value:
+              - language: de
+                text: |
+		    Die Krankenversicherungsprämien sind für einen grossen Teil
+		    der Bevölkerung nicht mehr tragbar. Eine Mehrheit der Befragten der
+		    Watson Umfrage findet denn auch, die Prämien sollten vom Einkommen
+		    abhängig sein. 63 % beantworteten die entsprechende Frage mit «Ja» oder
+		    «eher Ja», vgl.
+		    https://www.watson.ch/schweiz/gesundheit/808523780-einheitskasse-laut-umfr
+		    age-sind-80-prozent-fuer-nur-eine-krankenkasse#h4_3 Die ursprüngliche
+		    Idee, mit den Prämienverbilligungen (IPV) die Haushalte zu entlasten,
+		    funktioniert nur ungenügend. Bei Einführung der IPV versprachen Bundesrat
+		    und Parlament zur Ermittlung der sozialpolitischen Wirksamkeit der IPV,
+		    das Ziel der Prämienbelastung eines Haushaltes bei max. 8% des
+		    steuerbaren Einkommens auszumachen. Die vom Bundesrat angestrebten 8 %
+		    des steuerbaren Einkommens entsprechen in etwa 6 % des verfügbaren
+		    Einkommens. Neben der Nicht-Erreichung des Ziels der Solidarität und der
+		    genügenden Entlastung der Haushalte kommt hinzu, dass der administrative
+		    Aufwand enorm ist.
+		    Gerade wenn es um die Kostenentwicklung geht, ist der Unterschied
+		    zwischen Prämien und Kosten entscheidend. Während die OKP ­Prämien bei
+		    der Einführung des Krankenversicherungsgesetzes noch 29,9% der
+		    Gesundheitskosten finanzierten, sind es heute 37,9%. Die Prämien steigen
+		    folglich auch, weil wir immer mehr über Prämien finanzieren. Würden wir
+		    immer noch wie im Jahr 1996 lediglich 29,9% des Gesundheitswesens über
+		    die Prämien finanzieren, wären die Prämien heute um 21% niedriger.
+ 		    Eine Gleichsetzung von Prämien und Kosten blendet Fragen nach der
+		    Finanzierung aus. Die bevorstehenden Prämienerhöhungen werden denn auch
+		    besonders den einkommensschwachen Haushalten schaden. Die Mittel müssen
+		    sinnvoll eingesetzt und die Lasten fair über die Bevölkerung verteilt
+		    werden: Es braucht deshalb eine stärkere Finanzierung über die
+		    öffentliche Hand und die allgemeinen Steuern sowie ein Systemwechsel mit
+		    der Abschaffung der unsozialen Kopfprämien. Die Unfallversicherung zeigt
+		    uns wie es gehen kann.
+
+      # 2) ZUWEISUNG AN DIE KOMMISSION -------------------------------------------
+      - step_uid: "urn:parlch:business:20230451:step:assignment"
+      	 step_type: assignment
+        as_of_date: 2023-11-30
+        status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        assignment_type: committee
+        assigned_to:
+          group_id: "parlch:committee:6"
+          name: "Kommission für soziale Sicherheit und Gesundheit des Nationalrates (SGK-N)"
+        assignment_date: 2023-11-30
+
+      # 3) VORPRÜFUNG DURCH DIE KOMMISSION (SGK-N) -------------------------------
+      - step_uid: "urn:parlch:business:20230451:step:committee-deliberation"
+        step_type: committee_deliberation
+        as_of_date: 2024-05-02
+        status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        committee:
+          group_id: "parlch:committee:6"
+          name: "Kommission für soziale Sicherheit und Gesundheit des Nationalrates (SGK-N)"
+        chamber:
+          group_id: "parlch:council:1"
+          name: "Nationalrat"
+        meeting_date: 2024-05-02
+        positions:
+          - position_type: majority
+            label: "Mehrheit: keine Folge geben"
+            recommendation: reject
+          - position_type: minority
+            label: "Minderheit Weichelt: Folge geben"
+            recommendation: accept
+            supporters:
+              - person_id: "parlch:person:4298"
+                first_name: "Manuela"
+                last_name: "Weichelt"
+		- person_id: "..."
+       events:
+         - sequence_number: 1
+           event_type: vote
+           vote:
+             vote_result: recommendation to reject
+	      no_count: 9
+	      yes_count: 15
+	      abstention_count: 0
+	      timestamp: 2024-05-02
+	result: recommendation to reject
+       spokesperson:
+          - person_id: "parlch:person:4298"
+            first_name: "Manuela"
+            last_name: "Weichelt"
+      
+      
+      # 4) AGENDA STEP  
+      - step_uid: "XXX"
+	 step_type: agenda
+        status: closed
+	 phase: parliamentary
+	 affair_stage: ongoing
+	 scheduled_by: 
+          group_id: "XXX"
+          name: "Büro-NR"
+	 agenda_date: NULL	 
+      	 treatment_category: short debate (IV)
+      	 meeting_reference: #Link Ratsbetrieb
+      
+
+      # 5) BEHANDLUNG IM NATIONALRAT (ERSTRAT) -----------------------------------
+      - step_uid: plenary_debate
+        as_of_date: 2024-06-04
+        step_status: closed
+        phase: parliamentary
+        affair_stage: rejected
+	 passed_indicator: failed
+        chamber:
+          group_id: "parlch:council:1"
+          name: "Nationalrat"
+        debate_type: Vorprüfung #TODO: Harmonisierung?
+        debate_date: "2024-06-04T13:22:00+02:00"
+        events:
+          - sequence_number: 1
+	   	event_type: debate
+		## Link zu Operations
+          - sequence_number: 2
+            event_type: vote
+	     ## Link zu Operations
+        result: rejected #TODO: aus operations raus
+        

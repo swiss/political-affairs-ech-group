@@ -1,0 +1,493 @@
+# EXAMPLE DATA INSTANCE
+# ----------------------------------------------------------------
+# Worked example for the Parliamentary Initiative Profile
+# (ech-0295_affairs_parliamentary_initiative_profile.yaml).
+#
+# Encodes the Swiss federal parliamentary initiative 23.432
+# "Keine Abgangsentschädigungen ans Topkader der Bundesverwaltung und
+# bundesnaher Unternehmen" (Thomas Minder, taken over by Jakob Stark).
+# Source: Curia Vista, AffairId 20230432
+# https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20230432
+#
+# Chronology:
+#   1. Eingereicht ....................... 2023-05-30  Ständerat, Thomas Minder
+#   2. Übernahme ......................... 2023-12-07  Jakob Stark übernimmt
+#   3. Zugewiesen an Kommission .......... 2023-08-25  SPK-S (Vorprüfung)
+#   4. Vorprüfung SPK-S .................. 2024-04-09  Antrag: keine Folge geben
+#   5. Ständerat (Erstrat) .............. 2024-06-06  Folge gegeben (gegen SPK-S)
+#   6. Zustimmung SPK-N ................. 2024-11-14  Folge geben (Zweitratskommission)
+#   7. Ausarbeitung SPK-S .............. 2026-02-17  Erlassentwurf (BPG-Änderung)
+#                                                     angenommen, Gesamtabstimmung 10:0:1
+#   8. Stellungnahme Bundesrat ......... 2026-04-15  beantragt Ablehnung
+#   9. Ständerat (Erstrat) ............. 2026-06-18  Beschluss gemäss Entwurf, 21:13:9
+#  10. IN ARBEIT: in der SPK-N; Behandlung im Nationalrat ausstehend (Stand 2026-07-14)
+#
+# Vocabulary mapping (per project decision) — Pa.Iv.-specific decisions expressed
+# with the core enums, original wording kept in `label` / `*remarks`:
+#   "Folge geben" / "Zustimmung"  -> accept  ;  "keine Folge geben" -> reject
+#   plenary "Folge gegeben" / "Beschluss gemäss Entwurf" -> VoteResultEnum: accepted
+#
+# SCHEMA UPDATE (this revision): the ProcessStep discriminator/status fields were
+# renamed and one field was added. Every step now uses:
+#   step_type    (was `stage`)   — value from StepTypeEnum
+#   step_status  (was `status`)  — open / closed
+#   affair_stage (NEW)           — AffairStageEnum snapshot of the affair as a
+#                                  whole at this step: ongoing / rejected /
+#                                  adopted / concluded. Affair 23.432 is still in
+#                                  progress, so every step is `ongoing`.
+#
+# NOTE ON SHARED TYPES: MultilingualValue / GroupReference / PersonReference come
+# from the ech-0292 meta schema (not bundled). Conventional field names are used
+# (language/text, group_id/name, person_id/first_name/last_name, valid_from);
+# align them if your schema_common differs.
+
+affairs:
+
+  - affair_uid: "urn:parlch:business:20230432"
+    affair_number: "23.432"
+    affair_type: parliamentary_initiative
+    title:
+      - language: de
+        text: "Keine Abgangsentschädigungen ans Topkader der Bundesverwaltung und bundesnaher Unternehmen"
+    remarks: NULL
+    procedure_steps:
+
+      # 1) EINREICHUNG (mit späterer Übernahme) ----------------------------------
+      - step_uid: "urn:parlch:business:20230432:step:submission"
+        step_type: submission
+        as_of_date: 2023-05-30
+        step_status: closed
+        phase: pre_parliamentary
+        affair_stage: ongoing
+        submission_date: 2023-05-30
+        sponsorships:
+          - person_reference:
+              person_id: "parlch:person:4112"
+              first_name: "Thomas"
+              last_name: "Minder"
+            sponsor_role: sponsor
+            valid_from: 2023-05-30
+          - person_reference:
+              person_id: "parlch:person:4241"
+              first_name: "Jakob"
+              last_name: "Stark"
+            sponsor_role: takeover
+            valid_from: 2023-12-07   
+        chamber: Ständerat
+	 texts:
+          - text_type: main_text
+            value:
+              - language: de
+                text: |
+                  Das Bundespersonalgesetz und weitere spezifische Erlasse sind so
+                  anzupassen, dass Mitglieder der Geschäftsleitung (respektive der
+                  obersten operativen Stufe) und des Verwaltungsrates (respektive
+                  des übergeordneten strategischen Organs) der Bundesverwaltung und
+                  der bundesnahen Unternehmen und Anstalten keine
+                  Abgangsentschädigungen erhalten. Nicht als Abgangsentschädigungen
+                  gelten Vergütungen, die bis zur Beendigung des Vertrags geschuldet
+                  sind.
+            document_url: NULL
+          - text_type: reasoning
+            value:
+              - language: de
+                text: |
+		    Artikel 735c Ziffer 1 OR (vormals: Art. 20 Ziff. 1 VegüV) verbietet in
+		    Umsetzung der 2013 angenommenen Volksinitiative "gegen die Abzockerei" seit
+		    bald zehn Jahren Abgangsentschädigungen an die Mitglieder der Geschäftsleitung
+		    und des Verwaltungsrates von börsenkotierten Gesellschaften. Solche "goldenen
+		    Fallschirme" sind jedoch weiterhin möglich für das Topkader der
+		    Bundesverwaltung und von bundesnahen Betrieben. Solcherlei verpönte Vergütungen
+		    werden beim Bund auch weiterhin regelmässig ausgeschüttet, so in den letzten
+		    Jahren bei Armasuisse, beim Bundesamt für Statistik, Bundesamt für Migration
+		    (heute SEM), Eidgenössischen Personalamt, Bundesamt für Bauten und Logistik,
+		    bei der Suva, Billag, SRG, Armee, der Schweizerischen Post usw. Aktuell macht
+		    der abgetretene Direktor des Bundesamt für Zoll und Grenzsicherheit von sich
+		    reden, der eine Abgangsentschädigung von 12 Monatslöhnen oder grob 330 000
+		    Franken erhält. Es ist völlig unbegründet, dass das oberste Management von
+		    Bundesbetrieben weiterhin von dieser Vergütungsart profitieren soll. Die
+		    ordentlichen Entschädigungen sind hier bereits sehr hoch und übersteigen gar
+		    regelmässig das Gehalt eines Bundesrates. Die "Schleudersitzprämie" ist hier
+		    quasi bereits im ordentlichen Lohn mitinbegriffen. In Anlehnung an das Verbot
+		    bei privatrechtlichen Gesellschaften soll es fortan auch für das Topkader von
+		    Bundesbetrieben Geltung erlangen. Einer vergleichbaren parlamentarischen
+		    Initiative (18.428 s pa. iv. Minder. Bundesbetriebe und bundesnahe
+		    Unternehmungen. Keine Abgangsentschädigung ans Topkader) wurde am 12. Oktober
+		    2018 von der SPK-S (mit 5 zu 3 Stimmen bei 4 Enthaltungen) und am 31. Januar
+		    2019 von der SPK-N (mit 18 zu 5 Stimmen) Folge gegeben. Die SPK-N wollte das
+		    Anliegen in die Vorlage zur Umsetzung der parlamentarischen Initiative 16.438 n
+		    pa. iv. Leutenegger Oberholzer "Angemessene Bezüge und Stopp der Lohnexzesse
+		    bei den Bundes- und bundesnahen Unternehmen" einbauen, die eine Lohnobergrenze
+		    für das oberste Führungspersonal von Bundes- und bundesnahen Unternehmungen
+		    forderte. Mit zweimaligem Nichteintreten auf die Vorlage 16.438 durch den
+		    Ständerat wurde dabei auch gleichzeitig die pa. iv. 18.428 abgeschrieben und
+		    damit die Abschaffung der Abgangsentschädigungen beim Bund verhindert.
+        step_remarks: NULL
+
+      # 2) ZUWEISUNG AN DIE KOMMISSION (VORPRÜFUNG) ------------------------------
+      - step_uid: "urn:parlch:business:20230432:step:assignment"
+        step_type: assignment
+        as_of_date: NULL #nicht mehr nachvollziehbar
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        assignment_type: committee
+        assigned_to:
+          group_id: "parlch:committee:24"
+          name: "Staatspolitische Kommission des Ständerates (SPK-S)"
+        assignment_date: NULL
+	 
+	 
+        # 4) AGENDA der Kommission ----------------------
+      - step_uid: "XXX"
+   	 step_type: agenda
+           status: closed
+   	 phase: parliamentary
+   	 affair_stage: ongoing
+   	 scheduled_by: 
+             group_id: "XXX"
+             name: "SPK-S"
+   	 agenda_date: NULL	 
+             meeting_reference: #Link Ratsbetrieb
+	 
+
+
+      # 3) VORPRÜFUNG DURCH DIE SPK-S --------------------------------------------
+      - step_uid: "urn:parlch:business:20230432:step:vorpruefung-spk-s"
+        step_type: committee_deliberation
+        as_of_date: 2024-04-09
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        committee:
+          group_id: "parlch:committee:24"
+          name: "Staatspolitische Kommission des Ständerates (SPK-S)"
+        chamber:
+          group_id: "parlch:council:2"
+          name: "Ständerat"
+        meeting_date: 2024-04-09
+        positions:
+          - position_type: majority
+            label: "Antrag SPK-S: keine Folge geben"
+            recommendation: reject
+	   - position_type: minority
+            label: "Minderheit Salzmann, Gössi, Schwander: Folge geben"
+            recommendation: accept
+            supporters:
+              - person_id: "parlch:person:XX"
+                first_name: "Salzmann"
+                last_name: "Werner"
+              - person_id: "parlch:person:XX"
+                first_name: "Gössi"
+                last_name: "Petra"
+              - person_id: "parlch:person:XX"
+                first_name: "Schwander"
+                last_name: "Pirmin"
+        texts:
+          - text_type: committee_report
+            document_url: "https://www.parlament.ch/centers/kb/Documents/2023/Kommissionsbericht_SPK-S_23.432_2024-04-09.pdf"
+        step_remarks: NULL
+	 
+	 
+     # 4) AGENDA ----------------------
+      - step_uid: "XXX"
+	 step_type: agenda
+        status: closed
+	 phase: parliamentary
+	 affair_stage: ongoing
+	 scheduled_by: 
+          group_id: "XXX"
+          name: "Büro-SR"
+	 agenda_date: NULL	 
+      	 treatment_category: NULL
+      	 meeting_reference: #Link Ratsbetrieb
+       
+	 
+      # 5) ENTSCHEID DES STÄNDERATS (ERSTRAT): FOLGE GEBEN ----------------------
+      - step_uid: "urn:parlch:business:20230432:step:plenary-sr-folgegeben"
+        step_type: plenary_debate
+        as_of_date: 2024-06-06
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        chamber:
+          group_id: "parlch:council:2"
+          name: "Ständerat"
+        debate_type: Vorprüfung
+        debate_date: "2024-06-06T00:00:00+02:00"
+        events:
+          - sequence_number: 1
+	   	event_type: debate
+		## Link zu Operations
+          - sequence_number: 2
+            event_type: vote
+	     ## Link zu Operations
+        result: accepted       
+        step_remarks: NULL
+	 
+	 
+      # 4) AGENDA der 2. Kommission ----------------------
+      - step_uid: "XXX"
+   	 step_type: agenda
+           status: closed
+   	 phase: parliamentary
+   	 affair_stage: ongoing
+   	 scheduled_by: 
+             group_id: "XXX"
+             name: "SPK-N"
+   	 agenda_date: NULL	 
+             meeting_reference: #Link Ratsbetrieb
+      
+
+      # 6) ZUSTIMMUNG DER SPK-N (ZWEITRATSKOMMISSION) ---------------------------
+      - step_uid: "urn:parlch:business:20230432:step:zustimmung-spk-n"
+        step_type: committee_deliberation
+        as_of_date: 2024-11-14
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        committee:
+          group_id: "parlch:committee:11"
+          name: "Staatspolitische Kommission des Nationalrates (SPK-N)"
+        chamber:
+          group_id: "parlch:council:1"
+          name: "Nationalrat"
+        meeting_date: 2024-11-14
+        positions:
+          - position_type: full_committee
+            label: "Zustimmung (Folge geben)"
+            recommendation: accept
+        step_remarks: NULL
+
+      # 7) AUSARBEITUNG DES ERLASSENTWURFS DURCH DIE SPK-S ----------------------
+      - step_uid: "urn:parlch:business:20230432:step:ausarbeitung-spk-s"
+        step_type: committee_deliberation
+        as_of_date: 2026-02-17
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        committee:
+          group_id: "parlch:committee:24"
+          name: "Staatspolitische Kommission des Ständerates (SPK-S)"
+        chamber:
+          group_id: "parlch:council:2"
+          name: "Ständerat"
+        meeting_date: 2026-02-17
+        positions:
+          - position_type: full_committee
+            label: "Annahme des Erlassentwurfs in der Gesamtabstimmung (10 zu 0 bei 1 Enthaltung)"
+            recommendation: accept
+            text:
+              text_type: note
+              value:
+                - language: de
+                  text: |
+                    Entwurf einer Änderung des Bundespersonalgesetzes (BPG): Verbot
+                    von Abgangsentschädigungen an Mitglieder von Geschäftsleitungen
+                    der zentralen Bundesverwaltung sowie an Geschäftsleitungs- und
+                    Verwaltungsratsmitglieder bundesnaher Unternehmen; Ausnahme für
+                    unverschuldete Kündigungen (z.B. Reorganisation).
+        step_remarks: NULL
+
+      # 8) STELLUNGNAHME DES BUNDESRATES ZUM ENTWURF ----------------------------
+      - step_uid: "urn:parlch:business:20230432:step:stellungnahme-br"
+        step_type: executive_response
+        as_of_date: 2026-04-15
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        responder:
+          group_id: "parlch:executive:bundesrat"
+          name: "Bundesrat"
+        response_date: 2026-04-15
+        recommendation: reject      # "beantragt die Ablehnung der Vorlage"
+        texts:
+          - text_type: background
+            value:
+              - language: de
+                text: |
+		    Abgangsentschädigungen an das Topkader der Bundesverwaltung sind immer wieder
+		    Gegenstand politischer und öffentlicher Diskussionen. Am 30. Mai 2023 reichte
+		    der damalige Ständerat Thomas Minder eine parlamentarische Initiative ein.
+		    Diese fordert ein Verbot von Abgangsentschädigungen an Mitglieder der
+		    Geschäftsleitung (respektive der obersten operativen Stufe) und des
+		    Verwaltungsrates (respektive des übergeordneten strategischen Organs) der
+		    Bundesverwaltung und der Unternehmen und Anstalten des Bundes. Nach dem
+		    Ausscheiden von Thomas Minder aus dem Ständerat wurde die parlamentarische
+		    Initiative von Ständerat Jakob Stark aufgenommen. Die Staatspolitische
+		    Kommission des Ständerates (SPK-S) nahm an ihrer Sitzung vom 9. April 2024 die
+		    Vorprüfung der Initiative vor und beantragte ihrem Rat, der Initiative keine
+		    Folge zu geben. Ausschlaggebend dafür war neben den, gemessen am gesamten
+		    Personalaufwand, relativ geringen Beträgen insbesondere die Anerkennung der
+		    Abgangsentschädigungen als Instrument einer flexiblen Personalpolitik. Denn
+		    Abgangsentschädigungen sind im Bundespersonalrecht für bestimmte Funktionen im
+		    Zusammenhang mit vereinfachten Kündigungen vorgesehen. Der Ständerat folgte der
+		    Minderheit seiner Kommission und gab der Initiative an seiner Sitzung vom 6.
+		    Juni 2024 Folge. Auch die Staatspolitische Kommission des Nationalrates stimmte
+		    der parlamentarischen Initiative zu (Sitzung vom 14. November 2024). In der
+		    Folge wurde ein Entwurf für eine Änderung des Bundespersonalgesetzes vom 24.
+		    März 20003 (BPG) sowie der entsprechenden Spezialgesetze und ein erläuternder
+		    Bericht erarbeitet. Diesem Vorentwurf und dem dazugehörigen Bericht stimmte die
+		    Kommission am 17. Februar 2026 mit 10 zu 0 Stimmen und einer Enthaltung zu. Auf
+		    die Durchführung einer Vernehmlassung wurde verzichtet. Der Bundesrat wurde
+		    jedoch gebeten, die Vorlage auch den bundesnahmen Unternehmen und Anstalten für
+		    eine Stellungnahme zukommen zu lassen. Die SPK-S beantragt dem Ständerat, der
+		    Vorlage zuzustimmen. Mit Schreiben der SPK-S vom 19. Februar 2026 wurde der
+		    Bundesrat zur Stellungnahme eingeladen. Die Stellungnahmen der bundesnahen
+		    Unternehmen und Anstalten sind in die Stellungnahme des Bundesrates zu
+		    integrieren.
+                  
+          - text_type: reasoning
+            value:
+              - language: de
+                text: |
+		    Der Bundesrat lehnt das Verbot von Abgangsentschädigungen ans Topkader ab. Er
+		    unterstützt das Ansinnen, dass diese massvoll einzusetzen sind, vertritt jedoch
+		    die Ansicht, dass Abgangsentschädigungen situativ angebracht sein können. Diese
+		    konkreten Fälle sind im BPG und in der Bundespersonalverordnung vom 3. Juli
+		    20014 (BPV) festgehalten. Die Vorlage zielt auf die Abgangsentschädigungen im
+		    Zusammenhang mit vereinfachten Kündigungen: Gemäss BPV können
+		    Abgangsentschädigungen insbesondere für die obersten Kader (Staatssekretärinnen
+		    oder Staatssekretäre, Amtsdirektorinnen oder Amtsdirektoren,
+		    Generalsekretärinnen oder Generalsekretäre etc.) im Zusammenhang mit einer
+		    vereinfachten Kündigung infolge Wegfalls der gedeihlichen Zusammenarbeit oder
+		    Wegfalls des Willens der Departementsvorsteherin oder des
+		    Departementsvorstehers zur Zusammenarbeit ausgerichtet werden (Art. 26 Abs. 1
+		    und 3 sowie Art. 78 Abs. 2 BPV). In diesen Fällen braucht es keinen sachlichen
+		    Grund und keine weitere Begründung für die Kündigung. Die BPV sieht zwar vor,
+		    dass eine Abgangsentschädigung auch dann ausgerichtet werden kann, wenn die
+		    Auflösung des Arbeitsverhältnisses einvernehmlich erfolgt (Art. 19 Abs. 4 BPG
+		    in Verbindung mit Art. 78 Abs. 2bis BPV); aber auch bei einer einvernehmlichen
+		    Auflösung muss der Anstoss zur Auflösung des Arbeitsverhältnisses vom
+		    Arbeitgeber ausgehen. Bei einem freiwilligen Rücktritt gibt es keine
+		    Abgangsentschädigung. Die Abgangsentschädigung ist somit als Gegenleistung für
+		    das Risiko der vereinfachten Kündigung zu betrachten. Damit soll ein
+		    reibungsloser Wechsel an der Spitze von Verwaltungseinheiten ermöglicht und der
+		    Entstehung langwieriger und kostspieliger Rechtsstreitigkeiten vorgebeugt
+		    werden. Die Anwendungsfälle entstehen in der Regel bei einem Wechsel der
+		    Departementsvorsteherin oder des Departementsvorstehers. Bei einem Wegfall der
+		    Abgangsentschädigungen dürfte die erleichterte Kündigung aus Sicht der
+		    Arbeitnehmenden zu einem grösseren Risiko werden. Ein
+		    Abgangsentschädigungsverbot ohne alternative Massnahmen dürfte sich somit
+		    negativ auf die Attraktivität von Topkaderpositionen auswirken. Zumal die
+		    Bundesverwaltung in diesen Kaderbereichen in der Honorierung mit vergleichbaren
+		    Unternehmen der Privatwirtschaft nicht Schritt halten kann, wie die bisherigen
+		    Vergleichsstudien5 aufzeigen. Der Bundesrat erachtet das Instrument der
+		    vereinfachten Kündigung nach wie vor als wichtig und zielführend. Er anerkennt,
+		    dass ein Ausgleich für dieses Risiko anzubieten ist. Aus seiner Perspektive
+		    erscheint eine Abschaffung der Abgangsentschädigung ohne die Implementierung
+		    alternativer Massnahmen daher personalpolitisch nicht adäquat. In der
+		    Privatwirtschaft haben sich im Zuge der sogenannten «Abzocker-Initiative», mit
+		    der Abgangsentschädigungen für börsenkotierte Unternehmen verboten wurden,
+		    ebenfalls alternative Mechanismen wie längere Kündigungsfristen,
+		    Freistellungsfristen, Cooling-off-Perioden etc. etabliert. Im Falle der Annahme
+		    der parlamentarischen Initiative behält sich der Bundesrat daher vor,
+		    alternative Möglichkeiten zu prüfen und diese auf Verordnungsstufe zu regeln.
+		    Der Bundesrat ist jedoch überzeugt, dass die aktuelle Regelung der
+		    Abgangsentschädigung am zielführendsten ist. Die geltenden Rechtsgrundlagen
+		    stellen durch die klare Definition der möglichen Anwendungsbereiche, der
+		    betroffenen Personalkategorien und der Höhe der Entschädigung sicher, dass
+		    Abgangsentschädigungen nur in begründeten Einzelfällen ausgerichtet werden
+		    können. Ausserdem besteht eine Rückzahlungspflicht für Abgangsentschädigungen,
+		    welche der Bundesrat auf den 1. Januar 2026 nochmals erweitert hat (Art. 78a
+		    BPV). Zudem wird im Rahmen der Berichterstattung zum Personalmanagement
+		    transparent über die Anwendung dieses Instrumentes informiert. Bei allfälligen
+		    Alternativen müsste erst geprüft werden, ob und wie dies gewährleistet werden
+		    kann.
+                  
+		    Gemäss Schreiben der SPK-S vom 19. Februar 2026 sollen in die Stellungnahme des
+		    Bundesrates auch die Meinungen der von der Vorlage betroffenen bundesnahen
+		    Unternehmen und Anstalten einfliessen. Die bundesnahen Unternehmen und
+		    Anstalten wurden mit Schreiben der Direktorin des Eidgenössischen Personalamtes
+		    vom 20. Februar 2026 via die Generalsekretärinnen und Generalsekretäre der
+		    jeweils zuständigen Departemente zur Stellungnahme eingeladen. Die beim
+		    Eidgenössischen Personalamt eingegangenen Stellungnahmen ergeben folgendes
+		    Bild: Das Interesse der bundesnahen Unternehmen und Anstalten an der Vorlage
+		    ist unterschiedlich und hängt davon ab, wie stark die Einheit und ihr Handeln
+		    davon betroffen sind. In den meisten Einheiten sind keine vertraglich
+		    vereinbarten oder statutarisch festgelegten Abgangsentschädigungen für die
+		    Mitglieder des Verwaltungsrats oder der Geschäftsleitung vorgesehen. Diese
+		    Einheiten nehmen denn auch eine neutrale Haltung zur Vorlage ein. In einzelnen
+		    Einheiten ist die Ausrichtung von Abgangsentschädigungen aktuell möglich. Diese
+		    stehen entweder – wie in der Bundesverwaltung – im Zusammenhang mit
+		    vereinfachten Kündigungen oder können bei einvernehmlichen Auflösungen des
+		    Arbeitsverhältnisses eingesetzt werden, um eine reibungslose Ablösung zu
+		    ermöglichen und langwierige Rechtsstreitigkeiten zu vermeiden. Die betroffenen
+		    Einheiten teilen die Einschätzung des Bundesrates und lehnen das
+		    Abgangsentschädigungsverbot ab. In mehreren bundesnahen Unternehmen und
+		    Anstalten sind alternative Instrumente für die vereinfachte Vertragsauflösung
+		    mit Mitgliedern der Geschäftsleitung im Einsatz, wie beispielsweise
+		    Lohnfortzahlungen während einer Freistellung. Diese Einheiten weisen explizit
+		    darauf hin, dass solche Zahlungen weiterhin zulässig sind und nicht unter das
+		    Abgangsentschädigungsverbot gemäss der vorliegenden parlamentarischen
+		    Initiative fallen. Gleiches gilt für die Karenzfrist (cooling-off) für Behörden
+		    mit Aufsichts- und Regulierungsfunktionen und damit verbundene Entschädigungen.
+		    
+           - text_type: recommendation
+             value:
+               - language: de
+                 text: |
+                   Der Bundesrat beantragt die Ablehnung der Vorlage.
+        step_remarks: NULL
+	 
+      # 4) AGENDA Sessionsprogramm ----------------------
+      - step_uid: "XXX"
+   	 step_type: agenda
+           status: closed
+   	 phase: parliamentary
+   	 affair_stage: ongoing
+   	 scheduled_by: 
+             group_id: "XXX"
+             name: "Büro-S"
+   	 agenda_date: NULL	 
+             meeting_reference: #Link Ratsbetrieb
+      
+
+      # 9) BEHANDLUNG IM STÄNDERAT (ERSTRAT): ANNAHME DES ENTWURFS --------------
+      - step_uid: "urn:parlch:business:20230432:step:plenary-sr-entwurf"
+        step_type: plenary_debate
+        as_of_date: 2026-06-18
+        step_status: closed
+        phase: parliamentary
+        affair_stage: ongoing
+        chamber:
+          group_id: "parlch:council:2"
+          name: "Ständerat"
+        debate_type: plenary debate first council
+        debate_date: "2026-06-18T00:00:00+02:00"
+        events: ## LINK ZU OPERATIONS!    
+        result: accepted
+        step_remarks: NULL
+	 
+	 
+     # 11) Agenda-Step
+       - step_uid: "XXX"
+ 	 step_type: agenda
+         status: closed
+ 	 phase: parliamentary
+ 	 affair_stage: ongoing
+ 	 scheduled_by: 
+           group_id: "XXX"
+           name: "SPK-N"
+ 	 agenda_date: 2026-06-15
+       	 treatment_category: NULL
+       	 meeting_reference: #Link Ratsbetrieb
+	 text: 
+		 document_url: "https://www.parlament.ch/centers/documents/_layouts/15/DocIdRedir.aspx?ID=DOCID-1-11945" (WIRD ÜBERSCHRIEBEN!)
+
+      # 10) LAUFEND: IN DER SPK-N -------------------------------------------------
+      - step_uid: "urn:parlch:business:20230432:step:spk-n-pending"
+        step_type: committee_deliberation
+        as_of_date: 2026-04-09
+        step_status: open
+        phase: parliamentary
+        affair_stage: ongoing
+        committee:
+          group_id: "parlch:committee:11"
+          name: "Staatspolitische Kommission des Nationalrates (SPK-N)"
+        chamber:
+          group_id: "parlch:council:1"
+          name: "Nationalrat"
+        step_remarks: |
+          Die Vorlage liegt beim Nationalrat; die Beratung in der SPK-N ist noch
+          nicht abgeschlossen (offener Schritt, Stand 2026-07-14).

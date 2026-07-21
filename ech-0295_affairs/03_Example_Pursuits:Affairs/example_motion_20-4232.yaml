@@ -34,7 +34,8 @@ affairs:
               id: "act:person/schneider-meret"
               label: "Schneider Meret"
             valid_from: "2020-09-25"
-        texts:
+        chamber: NR
+	 texts:
           - text_type: main_text
             value:
               - language: de
@@ -91,6 +92,9 @@ affairs:
               vote_result: accepted
         result: accepted
         step_remarks: "Status danach: 'Motion an 2. Rat'."
+
+
+
 
       # 4) Behandlung im Zweitrat (Ständerat): abgelehnt -> Geschäft erledigt
       - stage: plenary_debate

@@ -102,10 +102,11 @@ classes:
         chronologisch geordnet.
     slots:
       - step_uid
+      - step_type
       - as_of_date
-      - status
+      - step_status
       - phase
-      - stage
+      - affair_stage
       - texts
       - step_remarks
 
@@ -122,13 +123,14 @@ classes:
         (Haupttext, Begründung) eingereicht wurden. Dies ist normalerweise der
         erste Schritt jedes Geschäfts.
     slot_usage:
-      stage:
-        equals_string: submission
+      step_type:
+       	equals_string: submission
       texts:
         required: true
     slots:
       - submission_date
       - sponsorships
+      - chamber
       - oral_motivation
 
   WithdrawalStep:
@@ -141,7 +143,7 @@ classes:
         Rückzug des Geschäfts durch die urhebende Person vor der abschliessenden
         Behandlung. Hält das Rückzugsdatum und einen optionalen Grund fest.
     slot_usage:
-      stage:
+      step_type:
         equals_string: withdrawal
     slots:
       - withdrawal_date
@@ -160,7 +162,7 @@ classes:
         Prüfung, die entscheidende Stelle, das Ergebnis und eine allfällige
         Behandlungsfrist fest.
     slot_usage:
-      stage:
+      step_type:
         equals_string: validation
     slots:
       - validation_type
@@ -181,7 +183,7 @@ classes:
         weiteren Bearbeitung, z.B. an eine Kammer, eine Kommission oder die
         Exekutive.
     slot_usage:
-      stage:
+      step_type:
         equals_string: assignment
     slots:
       - assignment_type
@@ -202,7 +204,7 @@ classes:
         einer Kantonsregierung oder einer Gemeindeexekutive. Hält die antwortende
         Stelle, das Datum, eine Empfehlung und die Antworttexte fest.
     slot_usage:
-      stage:
+      step_type:
         equals_string: executive_response
       texts:
         required: true
@@ -223,7 +225,7 @@ classes:
         Hält fest, wer traktandiert hat, das Datum, die Behandlungskategorie und
         die Sitzung, auf die es gesetzt wird.
     slot_usage:
-      stage:
+      step_type:
         equals_string: agenda
     slots:
       - scheduled_by
@@ -246,15 +248,18 @@ classes:
         Minderheit), die Sprecherin/den Sprecher und Verweise auf die
         zugrundeliegenden Sitzungen fest.
     slot_usage:
-      stage:
+      step_type:
         equals_string: committee_deliberation
     slots:
       - committee
       - chamber
       - meeting_date
       - positions
+      - events
+      - result
       - spokesperson
       - meeting_references
+      - text
 
   PlenaryDebateStep:
     is_a: ProcessStep
@@ -270,7 +275,7 @@ classes:
         Kammer, den Debattentyp, das Datum, die Ereignisse, das Ergebnis und eine
         allfällige Umsetzungsfrist fest.
     slot_usage:
-      stage:
+      step_type:
         equals_string: plenary_debate
     slots:
       - chamber
@@ -292,7 +297,7 @@ classes:
         Geschäfts. Hält die Erledigungsart, die zuständige Stelle, das Datum und
         eine allfällige Umsetzungsfrist fest.
     slot_usage:
-      stage:
+      step_type:
         equals_string: implementation
     slots:
       - disposition
@@ -505,7 +510,7 @@ slots:
       description_de: |
         Freitext-Erläuterung oder Notizen zum Geschäft als Ganzes.
 
-  step_uid:
+  step_uid: 
     slot_uri: aff:stepUid
     identifier: true
     description: |
@@ -513,7 +518,16 @@ slots:
     annotations:
       description_de: |
         Eindeutiger, stabiler Identifikator des Verfahrensschritts.
-
+    
+   step_type: 
+     range: stepTypeEnum
+     description: |
+       Name of step in which affair is currently in.
+     annotations:
+       description_de: |
+         Name des Steps. 
+     
+     
   as_of_date:
     slot_uri: aff:asOfDate
     range: date
@@ -525,9 +539,9 @@ slots:
         Stichtag, auf den sich der erfasste Zustand des Schritts bezieht
         (Snapshot-Datum).
 
-  status:
-    slot_uri: aff:status
-    range: ProcedureStatusEnum
+  step_status:
+    slot_uri: aff:step_status
+    range: ProcedureStepStatusEnum
     description: |
       Processing status of the step (open or closed).
     annotations:
@@ -545,18 +559,14 @@ slots:
         Verfahrensphase, zu der der Schritt gehört (vorparlamentarisch,
         parlamentarisch, nachparlamentarisch).
 
-  stage:
-    slot_uri: aff:stage
-    range: ProcedureStageEnum
+  affair_stage:
+    slot_uri: aff:affair_stage
+    range: AffairStageEnum
     description: |
-      Stage discriminator identifying the concrete type of the process step. Acts
-      as the type designator so that a step is self-describing even in a flat
-      serialisation.
+      offen, abgelehnt, angenommen
     annotations:
       description_de: |
-        Stage-Diskriminator, der den konkreten Typ des Verfahrensschritts
-        bestimmt. Dient als Typ-Bezeichner, damit ein Schritt auch in einer
-        flachen Serialisierung selbsterklärend ist.
+        offen, abgelehnt, angenommen
 
   texts:
     slot_uri: aff:text
@@ -1265,6 +1275,53 @@ enums:
           description_de: |
             Anderer Geschäftstyp, nicht durch die Standardkategorien abgedeckt.
 
+     
+  StepTypeEnum:
+	  description: 
+		  Namen der steps.
+	  annotations:
+	     description_de: |
+	         Namen des Steps. 
+     permissible_values:
+       submission:
+         description: Submission step (SubmissionStep).
+         annotations:
+           description_de: Einreichungsschritt (SubmissionStep).
+       withdrawal:
+         description: Withdrawal step (WithdrawalStep).
+         annotations:
+           description_de: Rückzugsschritt (WithdrawalStep).
+       validation:
+         description: Validation step (ValidationStep).
+         annotations:
+           description_de: Prüfungsschritt (ValidationStep).
+       assignment:
+         description: Assignment step (AssignmentStep).
+         annotations:
+           description_de: Zuweisungsschritt (AssignmentStep).
+       executive_response:
+         description: Executive response step (ExecutiveResponseStep).
+         annotations:
+           description_de: Stellungnahme-Schritt der Exekutive (ExecutiveResponseStep).
+       agenda:
+         description: Agenda placement step (AgendaStep).
+         annotations:
+           description_de: Traktandierungsschritt (AgendaStep).
+       committee_deliberation:
+         description: Committee deliberation step (CommitteeDeliberationStep).
+         annotations:
+           description_de: Kommissionsberatungsschritt (CommitteeDeliberationStep).
+       plenary_debate:
+         description: Plenary debate step (PlenaryDebateStep).
+         annotations:
+           description_de: Ratsdebattenschritt (PlenaryDebateStep).
+       implementation:
+         description: Implementation / write-off step (ImplementationStep).
+         annotations:
+           description_de: Umsetzungs- / Abschreibungsschritt (ImplementationStep).
+  
+
+
   ProcedureStatusEnum:
     description: |
       Processing status of a process step.
@@ -1301,51 +1358,21 @@ enums:
         annotations:
           description_de: Nachparlamentarische Phase (Umsetzung, Abschreibung).
 
-  ProcedureStageEnum:
+  AffairStageEnum:
     description: |
-      Stage discriminator identifying the concrete process step type. Each value
-      corresponds to one ProcessStep subclass.
+        XX
     annotations:
       description_de: |
-        Stage-Diskriminator, der den konkreten Verfahrensschritt-Typ bestimmt.
-        Jeder Wert entspricht einer ProcessStep-Unterklasse.
+        XX
     permissible_values:
-      submission:
-        description: Submission step (SubmissionStep).
-        annotations:
-          description_de: Einreichungsschritt (SubmissionStep).
-      withdrawal:
-        description: Withdrawal step (WithdrawalStep).
-        annotations:
-          description_de: Rückzugsschritt (WithdrawalStep).
-      validation:
-        description: Validation step (ValidationStep).
-        annotations:
-          description_de: Prüfungsschritt (ValidationStep).
-      assignment:
-        description: Assignment step (AssignmentStep).
-        annotations:
-          description_de: Zuweisungsschritt (AssignmentStep).
-      executive_response:
-        description: Executive response step (ExecutiveResponseStep).
-        annotations:
-          description_de: Stellungnahme-Schritt der Exekutive (ExecutiveResponseStep).
-      agenda:
-        description: Agenda placement step (AgendaStep).
-        annotations:
-          description_de: Traktandierungsschritt (AgendaStep).
-      committee_deliberation:
-        description: Committee deliberation step (CommitteeDeliberationStep).
-        annotations:
-          description_de: Kommissionsberatungsschritt (CommitteeDeliberationStep).
-      plenary_debate:
-        description: Plenary debate step (PlenaryDebateStep).
-        annotations:
-          description_de: Ratsdebattenschritt (PlenaryDebateStep).
-      implementation:
-        description: Implementation / write-off step (ImplementationStep).
-        annotations:
-          description_de: Umsetzungs- / Abschreibungsschritt (ImplementationStep).
+      ongoing: |
+      	das Geschäft ist noch offen/in Bearbeitung
+      rejected: |
+      	das Geschäft ist abgeschlossen und verworfen worden
+      adopted: |
+      	das Geschätt ist abgeschlossen und überwiesen
+      concluded: | 
+       das Geschäft hat einen Bericht erhalten/whatever :)
 
   SponsorRoleEnum:
     description: |
@@ -1545,6 +1572,8 @@ enums:
         description: No decision reached (e.g., postponed).
         annotations:
           description_de: Kein Entscheid (z.B. verschoben).
+	recommendation to reject: 
+		#TODO ERGàNZEN!
 
   DispositionEnum:
     description: |
