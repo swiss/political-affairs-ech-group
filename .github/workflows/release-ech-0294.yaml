@@ -1,0 +1,71 @@
+name: Release ech-0294
+
+# Manueller Release: du wählst die Versionsnummer selbst (z. B. 1.0.1) —
+# unabhängig von der Anzahl Commits. Der Workflow taggt den aktuellen Stand
+# als `ech-0294-v<version>` und veröffentlicht die generierten Artefakte
+# (Word, PDF, Schema, Beispiele) als GitHub Release.
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release-Version, z. B. 1.0.1 (frei wählbar)"
+        required: true
+        type: string
+      prerelease:
+        description: "Als Pre-Release markieren (Entwurf/Vorschlag, noch nicht genehmigt)"
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Artefakte einsammeln
+        run: |
+          mkdir -p release
+          # Fertige Dokumente (von der ech-0294-CI generiert und committet)
+          cp ech-0294_actors/output/ech-0294_actors_*.docx release/
+          cp ech-0294_actors/output/ech-0294_actors_*.pdf  release/
+          # Schema (Quelle + generierte Formate)
+          cp ech-0294_actors/input/schema.yaml   release/ech-0294_actors_schema.yaml
+          cp ech-0294_actors/output/schema.json  release/ech-0294_actors_schema.json
+          cp ech-0294_actors/output/schema.ttl   release/ech-0294_actors_schema.ttl
+          # Beispieldaten (Quelle + generierte Formate)
+          for f in ech-0294_actors/input/data_*.yaml; do cp "$f" release/; done
+          for f in ech-0294_actors/output/data_*.json ech-0294_actors/output/data_*.ttl; do
+            [ -f "$f" ] && cp "$f" release/
+          done
+          # Zusätzlich alles als ein ZIP bündeln
+          ( cd release && zip -q "ech-0294_actors_v${{ inputs.version }}.zip" ./* )
+          echo "=== Release-Assets ==="
+          ls -la release/
+
+      - name: Versions-Konsistenz prüfen (nur Warnung)
+        run: |
+          META=$(grep -oE '\*\*Version\*\*[^|]*\|[^|]*' ech-0294_actors/input/de/01_head.md \
+                 | grep -oE '[0-9]+\.[0-9]+(\.[0-9]+)?' | head -1)
+          echo "Release-Version: ${{ inputs.version }} | Metadaten-Version (01_head.md): ${META:-unbekannt}"
+          if [ -n "$META" ] && [ "$META" != "${{ inputs.version }}" ]; then
+            echo "::warning::Release-Version ${{ inputs.version }} weicht von der Metadaten-Version $META ab — ggf. 01_head.md anpassen."
+          fi
+
+      - name: GitHub Release erstellen
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="ech-0294-v${{ inputs.version }}"
+          FLAGS=""
+          [ "${{ inputs.prerelease }}" = "true" ] && FLAGS="--prerelease"
+          gh release create "$TAG" release/* \
+            --target "${{ github.sha }}" \
+            --title "eCH-0294 Politische Akteure — v${{ inputs.version }}" \
+            --notes "Generierte Artefakte für eCH-0294 v${{ inputs.version }} (Word/PDF in de/fr/en, Schema, Beispieldaten). Stand: Commit ${{ github.sha }}." \
+            $FLAGS
