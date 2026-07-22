@@ -20,7 +20,7 @@ URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 | |  |
 | president |  Präsident oder Vorsitzender der Gruppe.  |
 | |  |
-| stellvertreter |  Stellvertreter / Vize.  |
+| deputy |  Stellvertretung oder Vize.  |
 | |  |
 | other |  Andere Rolle; für eine beschreibende Bezeichnung role_label verwenden.  |
 | |  |

@@ -1665,7 +1665,7 @@
             "enum": [
                 "member",
                 "president",
-                "stellvertreter",
+                "deputy",
                 "other"
             ],
             "title": "RoleEnum",
@@ -1684,10 +1684,10 @@
                 },
                 {
                     "properties": {
-                        "label": {}
+                        "role_label": {}
                     },
                     "required": [
-                        "label"
+                        "role_label"
                     ]
                 }
             ],
@@ -1703,7 +1703,7 @@
                 ]
             },
             "properties": {
-                "label": {
+                "role_label": {
                     "description": "Specific role label. Use this when a specific role name is needed, even if a fitting semantic value exists in `role_type_enum`; provide this label when `role_type_enum` is set to 'other'.\n",
                     "type": [
                         "string",
@@ -1717,10 +1717,10 @@
             },
             "then": {
                 "properties": {
-                    "label": {}
+                    "role_label": {}
                 },
                 "required": [
-                    "label"
+                    "role_label"
                 ]
             },
             "title": "RoleType",

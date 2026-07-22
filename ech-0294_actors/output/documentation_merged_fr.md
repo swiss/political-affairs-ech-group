@@ -1153,7 +1153,7 @@ __
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
 | role_type_enum | 0..1 <br/> [RoleEnum](#RoleEnum) | Rôle de la personne dans l'affiliation ou la fonction.  |
-| label | 0..1 <br/> [String](#String) | Libellé de rôle spécifique. À utiliser lorsqu'un nom de rôle spécifique est nécessaire, même s'il existe une valeur sémantique appropriée dans `role_type_enum` ; fournir ce libellé lorsque `role_type_enum` est réglé sur « other ».  |
+| role_label | 0..1 <br/> [String](#String) | Libellé de rôle spécifique. À utiliser lorsqu'un nom de rôle spécifique est nécessaire, même s'il existe une valeur sémantique appropriée dans `role_type_enum` ; fournir ce libellé lorsque « role_type_enum » est réglé sur « other ».  |
 
 ##### Contraintes
 
@@ -1161,7 +1161,7 @@ __
 Au moins l'un des champs suivants doit être renseigné :
 
 - [role_type_enum](#role_type_enum)
-- [label](#label)
+- [role_label](#role_label)
 
 
 
@@ -1226,7 +1226,7 @@ URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 | |  |
 | president |  Président ou président du groupe.  |
 | |  |
-| stellvertreter |  Rôle de suppléant/vice (stellvertreter).  |
+| deputy |  Rôle de suppléance ou de vice-présidence.  |
 | |  |
 | other |  Autre rôle ; utiliser role_label pour un libellé descriptif.  |
 | |  |

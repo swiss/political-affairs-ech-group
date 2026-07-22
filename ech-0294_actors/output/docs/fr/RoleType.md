@@ -19,7 +19,7 @@ __
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
 | role_type_enum | 0..1 <br/> [RoleEnum](RoleEnum.md) | Rôle de la personne dans l'affiliation ou la fonction.  |
-| label | 0..1 <br/> [String](String.md) | Libellé de rôle spécifique. À utiliser lorsqu'un nom de rôle spécifique est nécessaire, même s'il existe une valeur sémantique appropriée dans `role_type_enum` ; fournir ce libellé lorsque `role_type_enum` est réglé sur « other ».  |
+| role_label | 0..1 <br/> [String](String.md) | Libellé de rôle spécifique. À utiliser lorsqu'un nom de rôle spécifique est nécessaire, même s'il existe une valeur sémantique appropriée dans `role_type_enum` ; fournir ce libellé lorsque « role_type_enum » est réglé sur « other ».  |
 
 ##### Contraintes
 
@@ -27,7 +27,7 @@ __
 Au moins l'un des champs suivants doit être renseigné :
 
 - [role_type_enum](role_type_enum.md)
-- [label](label.md)
+- [role_label](role_label.md)
 
 
 

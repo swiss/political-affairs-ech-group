@@ -1155,7 +1155,7 @@ __
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
 | role_type_enum | 0..1 <br/> [RoleEnum](#RoleEnum) | Role of the person in the membership or function.  |
-| label | 0..1 <br/> [String](#String) | Specific role label. Use this when a specific role name is needed, even if a fitting semantic value exists in `role_type_enum`; provide this label when `role_type_enum` is set to 'other'.  |
+| role_label | 0..1 <br/> [String](#String) | Specific role label. Use this when a specific role name is needed, even if a fitting semantic value exists in `role_type_enum`; provide this label when `role_type_enum` is set to 'other'.  |
 
 ##### Constraints
 
@@ -1163,7 +1163,7 @@ __
 At least one of the following must be set:
 
 - [role_type_enum](#role_type_enum)
-- [label](#label)
+- [role_label](#role_label)
 
 
 
@@ -1228,7 +1228,7 @@ URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 | |  |
 | president |  President or chair of the group.  |
 | |  |
-| stellvertreter |  Deputy/vice role (stellvertreter).  |
+| deputy |  Deputy or vice-chair role.  |
 | |  |
 | other |  Other role; use role_label for a descriptive label.  |
 | |  |

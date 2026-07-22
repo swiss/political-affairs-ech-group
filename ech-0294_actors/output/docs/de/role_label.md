@@ -6,7 +6,7 @@ search:
 # Slot: role_label 
 
 
-_Beschreibende Bezeichnung für die Rolle, wenn 'other' im RoleEnum ausgewählt ist._
+_Spezifische Rollenbezeichnung. Dieses Feld kann verwendet werden, wenn eine konkrete Rollenbezeichnung benötigt wird, auch wenn in `role_type_enum` bereits ein passender semantischer Wert vorhanden ist; bei `role_type_enum = other` soll diese Bezeichnung angegeben werden._
 
 __
 
@@ -23,6 +23,15 @@ URI: [act:role_label](https://ld.ech.ch/schema/0294/actors/role_label)
 
 
 
+## Anwendbare Klassen
+
+| Name | Beschreibung | Ändert Slot |
+| --- | --- | --- |
+| [RoleType](RoleType.md) | Rolle einer Person in einer Mitgliedschaft oder Funktion (z |  no  |
+
+
+
+
 
 
 ## Eigenschaften
@@ -32,6 +41,7 @@ URI: [act:role_label](https://ld.ech.ch/schema/0294/actors/role_label)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [String](String.md) |
+| Domäne von | [RoleType](RoleType.md) |
 
 ### Kardinalität und Anforderungen
 
@@ -57,21 +67,29 @@ name: role_label
 annotations:
   description_de:
     tag: description_de
-    value: 'Beschreibende Bezeichnung für die Rolle, wenn ''other'' im RoleEnum ausgewählt
-      ist.
+    value: 'Spezifische Rollenbezeichnung. Dieses Feld kann verwendet werden, wenn
+      eine konkrete Rollenbezeichnung benötigt wird, auch wenn in `role_type_enum`
+      bereits ein passender semantischer Wert vorhanden ist; bei `role_type_enum =
+      other` soll diese Bezeichnung angegeben werden.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Libellé descriptif du rôle lorsque « other » est sélectionné dans RoleEnum.
+    value: 'Libellé de rôle spécifique. À utiliser lorsqu''un nom de rôle spécifique
+      est nécessaire, même s''il existe une valeur sémantique appropriée dans `role_type_enum`
+      ; fournir ce libellé lorsque « role_type_enum » est réglé sur « other ».
 
       '
-description: 'Beschreibende Bezeichnung für die Rolle, wenn ''other'' im RoleEnum
-  ausgewählt ist.
+description: 'Spezifische Rollenbezeichnung. Dieses Feld kann verwendet werden, wenn
+  eine konkrete Rollenbezeichnung benötigt wird, auch wenn in `role_type_enum` bereits
+  ein passender semantischer Wert vorhanden ist; bei `role_type_enum = other` soll
+  diese Bezeichnung angegeben werden.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
+domain_of:
+- RoleType
 range: string
 
 ```

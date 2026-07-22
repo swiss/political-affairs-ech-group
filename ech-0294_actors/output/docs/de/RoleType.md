@@ -19,7 +19,7 @@ __
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
 | role_type_enum | 0..1 <br/> [RoleEnum](RoleEnum.md) | Rolle der Person in der Mitgliedschaft oder Funktion.  |
-| label | 0..1 <br/> [String](String.md) | Spezifische Rollenbezeichnung. Dieses Feld kann verwendet werden, wenn eine konkrete Rollenbezeichnung benötigt wird, auch wenn in `role_type_enum` bereits ein passender semantischer Wert vorhanden ist; bei `role_type_enum = other` soll diese Bezeichnung angegeben werden.  |
+| role_label | 0..1 <br/> [String](String.md) | Spezifische Rollenbezeichnung. Dieses Feld kann verwendet werden, wenn eine konkrete Rollenbezeichnung benötigt wird, auch wenn in `role_type_enum` bereits ein passender semantischer Wert vorhanden ist; bei `role_type_enum = other` soll diese Bezeichnung angegeben werden.  |
 
 ##### Einschränkungen
 
@@ -27,7 +27,7 @@ __
 Mindestens eines der folgenden Felder muss gesetzt sein:
 
 - [role_type_enum](role_type_enum.md)
-- [label](label.md)
+- [role_label](role_label.md)
 
 
 

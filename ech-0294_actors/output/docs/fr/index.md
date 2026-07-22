@@ -116,7 +116,7 @@ Name: actors-schema
 | [postal_locality](postal_locality.md) | Localité |
 | [pronouns](pronouns.md) | Pronoms utilisés par la personne |
 | [remark](remark.md) | Remarque ou note en texte libre pour les cas particuliers ou pour un contexte... |
-| [role_label](role_label.md) | Libellé descriptif du rôle lorsque « other » est sélectionné dans RoleEnum |
+| [role_label](role_label.md) | Libellé de rôle spécifique |
 | [role_type](role_type.md) | Rôle de la personne dans l'affiliation ou la fonction |
 | [role_type_enum](role_type_enum.md) | Rôle de la personne dans l'affiliation ou la fonction |
 | [spatial](spatial.md) | Référence spatiale (numéro OFS de commune, numéro OFS de canton ou pays) |

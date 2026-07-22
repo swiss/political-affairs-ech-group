@@ -33,7 +33,6 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 | [Occupation](Occupation.md) | Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si... |  no  |
 | [ElectoralDistrict](ElectoralDistrict.md) | Circonscription ou région électorale associée à une affiliation |  no  |
 | [GroupType](GroupType.md) | Type de groupe (p |  no  |
-| [RoleType](RoleType.md) | Rôle d'une personne dans une affiliation ou une fonction (p |  yes  |
 | [PersonReference](PersonReference.md) | Référence légère à une personne avec les principales données d'identification... |  yes  |
 | [GroupReference](GroupReference.md) | Référence légère à un groupe avec les principales données d'identification au... |  no  |
 
@@ -49,7 +48,7 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 | Propriété | Valeur |
 | --- | --- |
 | Plage | [String](String.md) |
-| Domaine de | [Person](Person.md), [Group](Group.md), [Gender](Gender.md), [Occupation](Occupation.md), [ElectoralDistrict](ElectoralDistrict.md), [GroupType](GroupType.md), [RoleType](RoleType.md), [PersonReference](PersonReference.md), [GroupReference](GroupReference.md) |
+| Domaine de | [Person](Person.md), [Group](Group.md), [Gender](Gender.md), [Occupation](Occupation.md), [ElectoralDistrict](ElectoralDistrict.md), [GroupType](GroupType.md), [PersonReference](PersonReference.md), [GroupReference](GroupReference.md) |
 | URI du slot | [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label) |
 
 ### Cardinalité et exigences
@@ -100,7 +99,6 @@ domain_of:
 - Occupation
 - ElectoralDistrict
 - GroupType
-- RoleType
 - PersonReference
 - GroupReference
 range: string

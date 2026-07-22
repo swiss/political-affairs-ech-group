@@ -116,7 +116,7 @@ Name: actors-schema
 | [postal_locality](postal_locality.md) | Locality |
 | [pronouns](pronouns.md) | Pronouns used by the person |
 | [remark](remark.md) | Free-text remark or note for edge cases or additional context on a process st... |
-| [role_label](role_label.md) | Descriptive label for the role when 'other' is selected in the RoleEnum |
+| [role_label](role_label.md) | Specific role label |
 | [role_type](role_type.md) | Role of the person in the membership or function |
 | [role_type_enum](role_type_enum.md) | Role of the person in the membership or function |
 | [spatial](spatial.md) | Spatial reference (fos-municipality number, fos-canton number, or country) |
