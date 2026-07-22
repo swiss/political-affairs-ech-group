@@ -83,7 +83,7 @@ Des points de contact existent à deux endroits :
 - **Votes et élections :** eCH-0293 consigne les votes et élections **au sein du fonctionnement des conseils** (p. ex. les votes nominaux au parlement ou l'élection des membres des autorités par le conseil), tandis que les votations et élections populaires ainsi que les registres, le déroulement et les résultats correspondants sont couverts par le groupe spécialisé « Droits politiques ».
 - **Personnes élues :** dans les résultats électoraux du groupe spécialisé « Droits politiques » figurent les candidats et les personnes élues. Dès qu'une personne exerce un mandat, elle est répertoriée dans eCH-0294 en tant qu'actrice ou acteur politique, avec ses rôles et ses affiliations.
 
-## La norme eCH-0294 – Acteurs politiques
+## La norme eCH-0294 – Acteurs politiques : personnes, groupes et organes
 
 La présente norme définit quatre classes principales :
 

@@ -1,4 +1,4 @@
-# Actors Schema
+# eCH-0294 – Political Actors: Persons, Groups and Bodies
 
 A schema describing political actors including persons, groups, memberships, and interest links.
 
