@@ -17,7 +17,7 @@ toc: false
 |**Voraussetzungen**||
 |**Beilagen**|-|
 |**Sprachen**|Deutsch (Original) - English (Datamodel)|
-|**Autoren**|Fachgruppe politische Geschäfte: Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi, Christian Gutknecht, Michael Luggen|
+|**Autoren**|Fachgruppe Politische Geschäfte: Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi, Christian Gutknecht, Michael Luggen|
 |**Herausgeber / Vertrieb**|Verein eCH, [Affolternstrasse 52, 8050 Zürich](https://geo.ld.admin.ch/location/address/101218624)|
 
 \newpage

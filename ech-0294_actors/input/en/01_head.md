@@ -17,7 +17,7 @@ toc: false
 |**Prerequisites**||
 |**Annexes**|-|
 |**Languages**|German (original) - English (data model)|
-|**Authors**|Specialist group political affairs: Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi, Christian Gutknecht, Michael Luggen|
+|**Authors**|Political Affairs specialist group: Julie Silberstein, Laurence Brandenberger, Daniela Koller, Thomas Roth, Stefan Oderbolz, Fabian Davolio, Orhan Saeedi, Christian Gutknecht, Michael Luggen|
 |**Publisher / Distribution**|eCH Association, [Affolternstrasse 52, 8050 Zürich](https://geo.ld.admin.ch/location/address/101218624)|
 
 \newpage

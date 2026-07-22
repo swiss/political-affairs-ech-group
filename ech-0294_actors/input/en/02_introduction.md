@@ -29,7 +29,7 @@ There are two points of contact:
 - **Votes and elections:** eCH-0293 records votes and elections **within council operations** (e.g. recorded votes in parliament or the election of authority members by the council), whereas popular votes and popular elections, together with the associated registers, conduct and results, are covered by the "Political Rights" specialist group.
 - **Elected persons:** Candidates and elected persons appear in the election results of the "Political Rights" specialist group. As soon as persons hold a mandate, they are recorded in eCH-0294 as political actors with their roles and memberships.
 
-## The eCH-0294 standard – Political Actors
+## The eCH-0294 standard – Political Actors: Persons, Groups and Bodies
 
 This standard defines four main classes:
 

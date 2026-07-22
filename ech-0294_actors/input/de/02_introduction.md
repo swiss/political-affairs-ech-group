@@ -29,7 +29,7 @@ Berührungspunkte bestehen an zwei Stellen:
 - **Abstimmungen und Wahlen:** eCH-0293 erfasst Abstimmungen und Wahlen **innerhalb des Ratsbetriebs** (z.B. namentliche Abstimmungen im Parlament oder die Wahl von Behördenmitgliedern durch den Rat), während Volksabstimmungen und Volkswahlen samt der zugehörigen Register, Durchführung und Ergebnisse von der Fachgruppe „Politische Rechte" abgedeckt werden.
 - **Gewählte Personen:** In den Wahlergebnissen der Fachgruppe „Politische Rechte" erscheinen Kandidierende und Gewählte. Sobald Personen ein Mandat innehaben, werden sie in eCH-0294 als politische Akteurinnen und Akteure mit ihren Rollen und Mitgliedschaften geführt.
 
-## Der Standard eCH-0294 – Politische Akteure
+## Der Standard eCH-0294 – Politische Akteure: Personen, Gruppen und Organe
 
 Dieser Standard definiert vier Hauptklassen:
 
