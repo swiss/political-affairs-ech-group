@@ -3,7 +3,7 @@ name: Release ech-0294
 # Manueller Release: du wählst die Versionsnummer selbst (z. B. 1.0.1) —
 # unabhängig von der Anzahl Commits. Der Workflow taggt den aktuellen Stand
 # als `ech-0294-v<version>` und veröffentlicht die generierten Artefakte
-# (Word, PDF, Schema, Beispiele) als GitHub Release.
+# (Word, Schema, Beispiele) als GitHub Release.
 
 on:
   workflow_dispatch:
@@ -31,9 +31,8 @@ jobs:
       - name: Artefakte einsammeln
         run: |
           mkdir -p release
-          # Fertige Dokumente (von der ech-0294-CI generiert und committet)
+          # Fertige Word-Dokumente (von der ech-0294-CI generiert und committet)
           cp ech-0294_actors/output/ech-0294_actors_*.docx release/
-          cp ech-0294_actors/output/ech-0294_actors_*.pdf  release/
           # Schema (Quelle + generierte Formate)
           cp ech-0294_actors/input/schema.yaml   release/ech-0294_actors_schema.yaml
           cp ech-0294_actors/output/schema.json  release/ech-0294_actors_schema.json
@@ -67,5 +66,5 @@ jobs:
           gh release create "$TAG" release/* \
             --target "${{ github.sha }}" \
             --title "eCH-0294 Politische Akteure — v${{ inputs.version }}" \
-            --notes "Generierte Artefakte für eCH-0294 v${{ inputs.version }} (Word/PDF in de/fr/en, Schema, Beispieldaten). Stand: Commit ${{ github.sha }}." \
+            --notes "Generierte Artefakte für eCH-0294 v${{ inputs.version }} (Word in de/fr/en, Schema, Beispieldaten). Stand: Commit ${{ github.sha }}." \
             $FLAGS
