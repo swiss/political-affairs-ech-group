@@ -411,13 +411,13 @@ classes:
         Rôle d'une personne dans une affiliation ou une fonction (p. ex. membre, président, suppléant). Si un rôle ne figure pas dans le vocabulaire RoleEnum proposé, la valeur « other » peut être utilisée, et un libellé descriptif doit être fourni dans le slot `role_label`. Le libellé peut également être utilisé lorsqu'une désignation spécifique est nécessaire, même s'il existe une valeur sémantique appropriée dans `role_type_enum` ; il doit être fourni lorsque `role_type_enum` est réglé sur « other ».
     slots:
       - role_type_enum
-      - label
+      - role_label
     any_of:
       - slot_conditions:
           role_type_enum:
             required: true
       - slot_conditions:
-          label:
+          role_label:
             required: true
     rules:
       - description: If the role type is 'other', a descriptive label must be provided.
@@ -430,21 +430,12 @@ classes:
               equals_string: other
         postconditions:
           slot_conditions:
-            label:
+            role_label:
               required: true
-    slot_usage:
-      label:
-        description: |
-          Specific role label. Use this when a specific role name is needed, even if a fitting semantic value exists in `role_type_enum`; provide this label when `role_type_enum` is set to 'other'.
-        annotations:
-          description_de: |
-            Spezifische Rollenbezeichnung. Dieses Feld kann verwendet werden, wenn eine konkrete Rollenbezeichnung benötigt wird, auch wenn in `role_type_enum` bereits ein passender semantischer Wert vorhanden ist; bei `role_type_enum = other` soll diese Bezeichnung angegeben werden.
 
 # SLOTS
 # ----------------------------------------------------------------
 
-          description_fr: |
-            Libellé de rôle spécifique. À utiliser lorsqu'un nom de rôle spécifique est nécessaire, même s'il existe une valeur sémantique appropriée dans `role_type_enum` ; fournir ce libellé lorsque `role_type_enum` est réglé sur « other ».
 slots:
   name_type:
     slot_uri: act:nameType
@@ -1062,16 +1053,16 @@ slots:
 
   role_label:
     description: |
-      Descriptive label for the role when 'other' is selected in the RoleEnum.
+      Specific role label. Use this when a specific role name is needed, even if a fitting semantic value exists in `role_type_enum`; provide this label when `role_type_enum` is set to 'other'.
     annotations:
       description_de: |
-        Beschreibende Bezeichnung für die Rolle, wenn 'other' im RoleEnum ausgewählt ist.
+        Spezifische Rollenbezeichnung. Dieses Feld kann verwendet werden, wenn eine konkrete Rollenbezeichnung benötigt wird, auch wenn in `role_type_enum` bereits ein passender semantischer Wert vorhanden ist; bei `role_type_enum = other` soll diese Bezeichnung angegeben werden.
+      description_fr: |
+        Libellé de rôle spécifique. À utiliser lorsqu'un nom de rôle spécifique est nécessaire, même s'il existe une valeur sémantique appropriée dans `role_type_enum` ; fournir ce libellé lorsque « role_type_enum » est réglé sur « other ».
 
 # ENUMS
 # ----------------------------------------------------------------
 
-      description_fr: |
-        Libellé descriptif du rôle lorsque « other » est sélectionné dans RoleEnum.
 enums:
   NameTypeEnum:
     description: |
@@ -1608,14 +1599,14 @@ enums:
             Präsident oder Vorsitzender der Gruppe.
           description_fr: |
             Président ou président du groupe.
-      stellvertreter:
+      deputy:
         description: |
-          Deputy/vice role (stellvertreter).
+          Deputy or vice-chair role.
         annotations:
           description_de: |
-            Stellvertreter / Vize.
+            Stellvertretung oder Vize.
           description_fr: |
-            Rôle de suppléant/vice (stellvertreter).
+            Rôle de suppléance ou de vice-présidence.
       other:
         description: |
           Other role; use role_label for a descriptive label.
