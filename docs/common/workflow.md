@@ -117,7 +117,8 @@ For each of `de`, `fr`, `en`:
 
 - **Table of contents**: `01_head.md` contains a raw Word TOC field (`{=openxml}` block, depth `\o "1-2"`). `set_docx_updatefields.py` sets `updateFields=true` so Word fills the TOC on open.
 - **Zebra tables**: `shade_alternate_rows.py` bakes an alternating light-grey fill into every other table row directly into the DOCX (Word renders style-based row banding unreliably, so the shading is explicit).
-- **Fonts / cover**: styled via `input/template.docx` (`--reference-doc`), including the footer and the eCH logo.
+- **Fonts / cover / logo**: styled via `input/template.docx` (`--reference-doc`).
+- **Footer**: the template footer holds only a placeholder; `set_docx_footer.py` overwrites it with the value derived from `01_head.md` (same string the PDF uses), so version/status in the Word footer never drift.
 
 ### PDF specifics (Typst)
 

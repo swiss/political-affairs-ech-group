@@ -108,16 +108,18 @@ jobs:
           for lang in de fr en; do
             # Merge generated docs with hand-written language-specific content.
             python .github/workflows/scripts/merge_documentation.py ech-0294_actors "$lang"
-            # Word (DOCX) — unchanged pipeline
+            # Footer (version/status) derived from 01_head.md — shared by DOCX and
+            # PDF so both stay in sync with the metadata table.
+            footer="$(python .github/workflows/scripts/pdf_footer_info.py "ech-0294_actors/input/${lang}/01_head.md")"
+            # Word (DOCX)
             pandoc "ech-0294_actors/output/documentation_merged_${lang}.md" \
               -o "ech-0294_actors/output/ech-0294_actors_${lang}.docx" \
               --reference-doc=ech-0294_actors/input/template.docx \
               --lua-filter=pagebreak.lua
             python .github/workflows/scripts/set_docx_updatefields.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx"
             python .github/workflows/scripts/shade_alternate_rows.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx"
-            # PDF via Typst (populated TOC, zebra, eCH branding);
-            # footer (version/status) derived from 01_head.md so it stays in sync.
-            footer="$(python .github/workflows/scripts/pdf_footer_info.py "ech-0294_actors/input/${lang}/01_head.md")"
+            python .github/workflows/scripts/set_docx_footer.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx" "$footer"
+            # PDF via Typst (populated TOC, zebra, eCH branding)
             pandoc "ech-0294_actors/output/documentation_merged_${lang}.md" \
               -o "ech-0294_actors/output/ech-0294_actors_${lang}.pdf" \
               --pdf-engine=typst \
