@@ -3,7 +3,7 @@
 
 id: https://ld.ech.ch/schema/0294/actors
 name: actors-schema
-title: eCH-0294 – Political Actors: Persons, Groups and Bodies
+title: "eCH-0294 – Political Actors: Persons, Groups and Bodies"
 description: |
   A schema describing political actors including persons, groups, memberships, and interest links.
 annotations:
