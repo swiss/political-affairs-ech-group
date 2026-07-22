@@ -9,7 +9,7 @@ toc: false
 |**eCH-Nummer**|eCH-0294|
 |**Kategorie**|Standard|
 |**Reifegrad**|Definiert|
-|**Version**|1.0|
+|**Version**|1.0.0|
 |**Status**|Vorschlag|
 |**Beschluss am**||
 |**Ausgabedatum**||

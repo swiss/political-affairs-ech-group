@@ -20,13 +20,24 @@ def field(head, *labels):
     return ""
 
 
+# "<Fachgruppe> / <Standard>" label per language (matches the document language).
+LABELS = {
+    "de": "Politische Geschäfte / Akteure",
+    "fr": "Affaires politiques / Acteurs",
+    "en": "Political Affairs / Actors",
+}
+
+
 def main():
-    head = open(sys.argv[1], encoding="utf-8").read()
+    path = sys.argv[1]
+    head = open(path, encoding="utf-8").read()
+    lang_match = re.search(r"/(de|fr|en)/", path)
+    label = LABELS.get(lang_match.group(1) if lang_match else "en", LABELS["en"])
     number = field(head, "eCH-Nummer", "eCH number", "Numéro eCH") or "eCH-0294"
     version = field(head, "Version")
     status = field(head, "Status", "Statut")
     date = field(head, "Ausgabedatum", "Issue date", "Date de publication")
-    parts = [f"{number} – Political Affairs / Actors", version, status, date]
+    parts = [f"{number} – {label}", version, status, date]
     print(" / ".join(p for p in parts if p))
 
 
