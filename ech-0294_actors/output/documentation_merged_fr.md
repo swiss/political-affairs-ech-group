@@ -9,7 +9,7 @@ toc: false
 |**Numéro eCH**|eCH-0294|
 |**Catégorie**|Norme|
 |**Degré de maturité**|Défini|
-|**Version**|1.0|
+|**Version**|1.0.0|
 |**Statut**|Proposition|
 |**Décidé le**||
 |**Date de publication**||

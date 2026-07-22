@@ -9,7 +9,7 @@ toc: false
 |**eCH number**|eCH-0294|
 |**Category**|Standard|
 |**Maturity level**|Defined|
-|**Version**|1.0|
+|**Version**|1.0.0|
 |**Status**|Proposal|
 |**Adopted on**||
 |**Issue date**||
