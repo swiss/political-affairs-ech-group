@@ -45,6 +45,8 @@ jobs:
             stem="$(python .github/workflows/scripts/ech_doc_filename.py \
                      "ech-0294_actors/input/${lang}/01_head.md" "$code" "${{ inputs.version }}")"
             cp "ech-0294_actors/output/ech-0294_actors_${lang}.docx" "release/${stem}.docx"
+            # PDF (Typst, im Word-Design, mit befülltem Inhaltsverzeichnis)
+            cp "ech-0294_actors/output/ech-0294_actors_${lang}.pdf" "release/${stem}.pdf"
           done
           # Schema (Quelle + generierte Formate)
           cp ech-0294_actors/input/schema.yaml   release/ech-0294_actors_schema.yaml
@@ -81,5 +83,5 @@ jobs:
           gh release create "$TAG" release/* \
             --target "${{ github.sha }}" \
             --title "eCH-0294 Politische Akteure — v${{ inputs.version }}" \
-            --notes "Generierte Artefakte für eCH-0294 v${{ inputs.version }} (Word in de/fr/en, Schema, Beispieldaten). Stand: Commit ${{ github.sha }}." \
+            --notes "Generierte Artefakte für eCH-0294 v${{ inputs.version }} (Word + PDF in de/fr/en, Schema, Beispieldaten). Stand: Commit ${{ github.sha }}." \
             $FLAGS
