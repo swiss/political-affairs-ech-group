@@ -138,6 +138,7 @@ Per eCH-0003, the `Version` is three-part (`X.Y.Z`) and the lifecycle **Status**
 Generated artifacts are published as **GitHub Releases** so that specific, versioned states can be referenced and downloaded. Releases are triggered **manually** with a freely chosen version number — independent of the number of commits.
 
 - **Trigger:** GitHub → *Actions* → *Release ech-0294* → *Run workflow* (top-right button in the blue `workflow_dispatch` banner). Select the branch (`main`), enter a **Version** (e.g. `1.0.1`) and tick **Pre-Release** for states that are not yet approved (Status *Vorschlag* / *Entwurf*). CLI equivalent:
+- **Draft option:** tick **Draft** (`-f draft=true`) to build the release *quietly* — no git tag, not visible to watchers, **no notification email**. The draft (with all assets, incl. the Word documents) is visible only to people with write access under *Releases*; it becomes public and sends the notification only when you click **Publish release**. Use it to review the generated documents before the specialist group is notified.
   ```
   gh workflow run release-ech-0294.yaml -f version=1.0.1 -f prerelease=true
   ```

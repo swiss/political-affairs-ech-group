@@ -17,6 +17,11 @@ on:
         required: false
         type: boolean
         default: true
+      draft:
+        description: "Nur als Entwurf (Draft) erstellen — still, ohne Tag und ohne Benachrichtigung; erst beim manuellen 'Publish' sichtbar"
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -70,7 +75,9 @@ jobs:
         run: |
           TAG="ech-0294-v${{ inputs.version }}"
           FLAGS=""
-          [ "${{ inputs.prerelease }}" = "true" ] && FLAGS="--prerelease"
+          [ "${{ inputs.prerelease }}" = "true" ] && FLAGS="$FLAGS --prerelease"
+          # Draft: still, kein Tag, keine Benachrichtigung (erst beim Publish).
+          [ "${{ inputs.draft }}" = "true" ] && FLAGS="$FLAGS --draft"
           gh release create "$TAG" release/* \
             --target "${{ github.sha }}" \
             --title "eCH-0294 Politische Akteure — v${{ inputs.version }}" \
