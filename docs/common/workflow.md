@@ -93,6 +93,45 @@ subgroup-name/
 │   ├── subgroup-name.docx
 ```
 
+## Multilingual Output and PDF (ech-0294)
+
+Most subgroups produce a single German DOCX. **ech-0294** additionally builds the document in **three languages (de / fr / en)** and, per language, also a **PDF**. The base pipeline above is run once per language.
+
+### Where the languages live
+
+- **Prose** is kept per language in `ech-0294_actors/input/<lang>/NN_*.md` (`de`, `fr`, `en`), i.e. one translated set of chapter files per language. `merge_documentation.py <subgroup> <lang>` reads `input/<lang>/` and writes `output/documentation_merged_<lang>.md`.
+- **Schema descriptions** are trilingual: English in `description:`, German in `annotations.description_de:`, French in `annotations.description_fr:`. **Keep all three in sync** — when you add or change a description, update the other two. A missing translation falls back to English, so gaps show up as English text in an otherwise translated document.
+- **gen-doc templates** exist per language in `ech-0292_meta/input/docgen/{en,de,fr}/`. `en` is the source of truth; `docgen_labels.py` regenerates `de/` and `fr/` from it, translating the static UI labels (e.g. *Class* → *Klasse*). Re-run it after changing the English templates.
+
+### Per-language build steps (in the GitHub Action)
+
+For each of `de`, `fr`, `en`:
+
+1. `localize_schema.py <base_schema> <lang> <out>` — produces a language copy of the (examples-enriched) schema in which each `description` is replaced by its `description_<lang>` (falling back to English). It also localizes the imported `schema_common` so inherited slots (`global_uri`, `valid_from`, …) render in the target language.
+2. `gen-doc` runs against that localized schema with `--template-directory ech-0292_meta/input/docgen/<lang>` → `output/docs/<lang>/`.
+3. `merge_documentation.py ech-0294_actors <lang>` merges `input/<lang>/*.md`, redirecting `{{include:…/output/docs/…}}` to `output/docs/<lang>/`.
+4. `pandoc … --reference-doc=input/template.docx` → `output/ech-0294_actors_<lang>.docx`, then `set_docx_updatefields.py` and `shade_alternate_rows.py` (see below).
+5. `pandoc … --pdf-engine=typst` → `output/ech-0294_actors_<lang>.pdf` (see below).
+
+### DOCX specifics
+
+- **Table of contents**: `01_head.md` contains a raw Word TOC field (`{=openxml}` block, depth `\o "1-2"`). `set_docx_updatefields.py` sets `updateFields=true` so Word fills the TOC on open.
+- **Zebra tables**: `shade_alternate_rows.py` bakes an alternating light-grey fill into every other table row directly into the DOCX (Word renders style-based row banding unreliably, so the shading is explicit).
+- **Fonts / cover**: styled via `input/template.docx` (`--reference-doc`), including the footer and the eCH logo.
+
+### PDF specifics (Typst)
+
+The PDF is produced with `pandoc --pdf-engine=typst` — a single lightweight binary, so no LaTeX/LibreOffice is needed and the TOC comes out populated.
+
+- **Template** `ech-0292_meta/input/typst-template.typ` provides the eCH look: logo header, *Page X of Y*, footer line, Arial (`Liberation Sans` on Linux), heading numbering and zebra tables. The logo (`ech-0292_meta/input/ech-logo.png`) is resolved via `--pdf-engine-opt=--root="$PWD"`.
+- **Lua filters** (in `.github/workflows/scripts/`): `pagebreak.lua` (`\newpage` → `#pagebreak()`), `fix_dangling_links.lua` (turns internal links to non-existent anchors into plain text, which Typst requires), `toc_typst.lua` (replaces the Word TOC field with a Typst `#outline()` at the same spot).
+- **Footer** is derived from the metadata table so it never drifts: `pdf_footer_info.py input/<lang>/01_head.md` prints e.g. `eCH-0294 – Political Affairs / Actors / 1.0.0 / Vorschlag`, passed to Typst via `-V footer-info=…`.
+- **CI needs**: a recent Pandoc (`--pdf-engine=typst` requires ≥ 3.1.7), Typst (via `typst-community/setup-typst`) and `fonts-liberation`.
+
+### eCH metadata (version / status)
+
+Per eCH-0003, the `Version` is three-part (`X.Y.Z`) and the lifecycle **Status** progresses `In Arbeit` → `Entwurf` (public consultation) → `Vorschlag` (submitted for approval, reviewed by the referents) → `Genehmigt`. `Kategorie` is `Standard`; `Reifegrad` is one of `Definiert`, `Experimentell`, … These values live in `input/<lang>/01_head.md` and are the single source for the derived PDF footer.
+
 ## Publishing Releases
 
 Generated artifacts are published as **GitHub Releases** so that specific, versioned states can be referenced and downloaded. Releases are triggered **manually** with a freely chosen version number — independent of the number of commits.

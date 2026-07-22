@@ -115,12 +115,15 @@ jobs:
               --lua-filter=pagebreak.lua
             python .github/workflows/scripts/set_docx_updatefields.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx"
             python .github/workflows/scripts/shade_alternate_rows.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx"
-            # PDF via Typst (populated TOC, zebra, eCH branding)
+            # PDF via Typst (populated TOC, zebra, eCH branding);
+            # footer (version/status) derived from 01_head.md so it stays in sync.
+            footer="$(python .github/workflows/scripts/pdf_footer_info.py "ech-0294_actors/input/${lang}/01_head.md")"
             pandoc "ech-0294_actors/output/documentation_merged_${lang}.md" \
               -o "ech-0294_actors/output/ech-0294_actors_${lang}.pdf" \
               --pdf-engine=typst \
               --template=ech-0292_meta/input/typst-template.typ \
               --pdf-engine-opt=--root="$PWD" \
+              -V footer-info="$footer" \
               --lua-filter=pagebreak.lua \
                 --lua-filter=.github/workflows/scripts/fix_dangling_links.lua \
                 --lua-filter=.github/workflows/scripts/toc_typst.lua
