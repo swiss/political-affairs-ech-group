@@ -93,6 +93,19 @@ subgroup-name/
 │   ├── subgroup-name.docx
 ```
 
+## Publishing Releases
+
+Generated artifacts are published as **GitHub Releases** so that specific, versioned states can be referenced and downloaded. Releases are triggered **manually** with a freely chosen version number — independent of the number of commits.
+
+- **Trigger:** GitHub → *Actions* → *Release ech-0294* → *Run workflow* (top-right button in the blue `workflow_dispatch` banner). Select the branch (`main`), enter a **Version** (e.g. `1.0.1`) and tick **Pre-Release** for states that are not yet approved (Status *Vorschlag* / *Entwurf*). CLI equivalent:
+  ```
+  gh workflow run release-ech-0294.yaml -f version=1.0.1 -f prerelease=true
+  ```
+- **What it does:** tags the current commit as `ech-0294-v<version>` and creates a GitHub Release *"eCH-0294 Politische Akteure — v<version>"* with the artifacts attached.
+- **Assets:** the three Word documents (`ech-0294_actors_{de,fr,en}.docx`), the schema (`schema.yaml` / `.json` / `.ttl`), the example data (`data_*.yaml` + generated JSON/RDF) and a **ZIP bundle** of all of them. (The PDFs are intentionally not part of the release.)
+- **Versioning:** the version lives in the **tag** and is chosen per release — it is *not* derived from the commit count. A later release is simply another run with a higher number (`1.0.2`, `1.1.0`, …), each producing its own tag and Release, giving a clean, linkable history. The workflow emits a warning if the entered version differs from the **Version** field in `01_head.md`.
+- **Per standard:** the workflow lives in `.github/workflows/release-ech-0294.yaml` and is specific to ech-0294. Copy it per subgroup (`release-ech-0295.yaml`, …) to release the other standards.
+
 ## Tutorial
 
 There is also the folder `tutorial` that demonstrates, how to use the [LinkML](https://linkml.io/linkml/index.html) toolchain to create a data model for the eCH Specialist Group Political Affairs.
