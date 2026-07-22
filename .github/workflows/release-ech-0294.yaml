@@ -31,8 +31,16 @@ jobs:
       - name: Artefakte einsammeln
         run: |
           mkdir -p release
-          # Fertige Word-Dokumente (von der ech-0294-CI generiert und committet)
-          cp ech-0294_actors/output/ech-0294_actors_*.docx release/
+          # Fertige Word-Dokumente (von der ech-0294-CI generiert und committet),
+          # benannt nach eCH-0003-Nomenklatur:
+          #   <TYP>_<d|f|e>_<STATUS>_<Datum>_eCH-0294_V<Version>_<Titel>.docx
+          # Alle Bestandteile werden aus der Metadaten-Tabelle (01_head.md) abgeleitet.
+          for pair in de:d fr:f en:e; do
+            lang="${pair%%:*}"; code="${pair##*:}"
+            stem="$(python .github/workflows/scripts/ech_doc_filename.py \
+                     "ech-0294_actors/input/${lang}/01_head.md" "$code" "${{ inputs.version }}")"
+            cp "ech-0294_actors/output/ech-0294_actors_${lang}.docx" "release/${stem}.docx"
+          done
           # Schema (Quelle + generierte Formate)
           cp ech-0294_actors/input/schema.yaml   release/ech-0294_actors_schema.yaml
           cp ech-0294_actors/output/schema.json  release/ech-0294_actors_schema.json

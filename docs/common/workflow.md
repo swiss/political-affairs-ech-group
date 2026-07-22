@@ -126,7 +126,7 @@ The PDF is produced with `pandoc --pdf-engine=typst` — a single lightweight bi
 
 - **Template** `ech-0292_meta/input/typst-template.typ` provides the eCH look: logo header, *Page X of Y*, footer line, Arial (`Liberation Sans` on Linux), heading numbering and zebra tables. The logo (`ech-0292_meta/input/ech-logo.png`) is resolved via `--pdf-engine-opt=--root="$PWD"`.
 - **Lua filters** (in `.github/workflows/scripts/`): `pagebreak.lua` (`\newpage` → `#pagebreak()`), `fix_dangling_links.lua` (turns internal links to non-existent anchors into plain text, which Typst requires), `toc_typst.lua` (replaces the Word TOC field with a Typst `#outline()` at the same spot).
-- **Footer** is derived from the metadata table so it never drifts: `pdf_footer_info.py input/<lang>/01_head.md` prints e.g. `eCH-0294 – Political Affairs / Actors / 1.0.0 / Vorschlag`, passed to Typst via `-V footer-info=…`.
+- **Footer** is derived from the metadata table so it never drifts: `pdf_footer_info.py input/<lang>/01_head.md` prints `<number> – <official name> / <version> / <status> / <issue date>` (e.g. `eCH-0294 – Politische Akteure: Personen, Gruppen und Organe / 1.0.0 / Vorschlag / 2026-07-22`), passed to Typst via `-V footer-info=…`. The date is the `Ausgabedatum` field and only appears once that field is filled in.
 - **CI needs**: a recent Pandoc (`--pdf-engine=typst` requires ≥ 3.1.7), Typst (via `typst-community/setup-typst`) and `fonts-liberation`.
 
 ### eCH metadata (version / status)
@@ -142,7 +142,8 @@ Generated artifacts are published as **GitHub Releases** so that specific, versi
   gh workflow run release-ech-0294.yaml -f version=1.0.1 -f prerelease=true
   ```
 - **What it does:** tags the current commit as `ech-0294-v<version>` and creates a GitHub Release *"eCH-0294 Politische Akteure — v<version>"* with the artifacts attached.
-- **Assets:** the three Word documents (`ech-0294_actors_{de,fr,en}.docx`), the schema (`schema.yaml` / `.json` / `.ttl`), the example data (`data_*.yaml` + generated JSON/RDF) and a **ZIP bundle** of all of them. (The PDFs are intentionally not part of the release.)
+- **Assets:** the three Word documents, the schema (`schema.yaml` / `.json` / `.ttl`), the example data (`data_*.yaml` + generated JSON/RDF) and a **ZIP bundle** of all of them. (The PDFs are intentionally not part of the release.)
+- **eCH-0003 file naming:** the released Word documents are renamed to the eCH-0003 nomenclature `<TYP>_<d|f|e>_<STATUS>_<YYYY-MM-DD>_eCH-0294_V<version>_<Titel>.docx` (e.g. `STAN_d_DRA_2026-07-22_eCH-0294_V1.0.0_Politische Akteure - Personen, Gruppen und Organe.docx`). `TYP` comes from `Kategorie` (`Standard` → `STAN`), the status code from `Status` (pre-approval `In Arbeit`/`Entwurf`/`Vorschlag` → `DRA`, `Genehmigt` → `DEF`), the rest from the metadata table — derived by `ech_doc_filename.py`. Schema/data assets keep their descriptive names.
 - **Versioning:** the version lives in the **tag** and is chosen per release — it is *not* derived from the commit count. A later release is simply another run with a higher number (`1.0.2`, `1.1.0`, …), each producing its own tag and Release, giving a clean, linkable history. The workflow emits a warning if the entered version differs from the **Version** field in `01_head.md`.
 - **Per standard:** the workflow lives in `.github/workflows/release-ech-0294.yaml` and is specific to ech-0294. Copy it per subgroup (`release-ech-0295.yaml`, …) to release the other standards.
 
