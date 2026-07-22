@@ -111,7 +111,7 @@ For each of `de`, `fr`, `en`:
 2. `gen-doc` runs against that localized schema with `--template-directory ech-0292_meta/input/docgen/<lang>` → `output/docs/<lang>/`.
 3. `merge_documentation.py ech-0294_actors <lang>` merges `input/<lang>/*.md`, redirecting `{{include:…/output/docs/…}}` to `output/docs/<lang>/`.
 4. `pandoc … --reference-doc=input/template.docx` → `output/ech-0294_actors_<lang>.docx`, then `set_docx_updatefields.py` and `shade_alternate_rows.py` (see below).
-5. `pandoc … --pdf-engine=typst` → `output/ech-0294_actors_<lang>.pdf` (see below).
+5. `docx_to_pdf.sh` converts the finished `output/ech-0294_actors_<lang>.docx` directly to `output/ech-0294_actors_<lang>.pdf` via LibreOffice (see below).
 
 ### DOCX specifics
 
@@ -120,14 +120,15 @@ For each of `de`, `fr`, `en`:
 - **Fonts / cover / logo**: styled via `input/template.docx` (`--reference-doc`).
 - **Footer**: the template footer holds only a placeholder; `set_docx_footer.py` overwrites it with the value derived from `01_head.md` (same string the PDF uses), so version/status in the Word footer never drift.
 
-### PDF specifics (Typst)
+### PDF specifics (direct LibreOffice conversion)
 
-The PDF is produced with `pandoc --pdf-engine=typst` — a single lightweight binary, so no LaTeX/LibreOffice is needed and the TOC comes out populated.
+The PDF is a **direct conversion of the finished Word document** — not a re-render — so it is faithful to the DOCX (reference-doc styling, tables, footer). `docx_to_pdf.sh <in.docx> <out.pdf>` drives LibreOffice headless.
 
-- **Template** `ech-0292_meta/input/typst-template.typ` provides the eCH look: logo header, *Page X of Y*, footer line, Arial (`Liberation Sans` on Linux), heading numbering and zebra tables. The logo (`ech-0292_meta/input/ech-logo.png`) is resolved via `--pdf-engine-opt=--root="$PWD"`.
-- **Lua filters** (in `.github/workflows/scripts/`): `pagebreak.lua` (`\newpage` → `#pagebreak()`), `fix_dangling_links.lua` (turns internal links to non-existent anchors into plain text, which Typst requires), `toc_typst.lua` (replaces the Word TOC field with a Typst `#outline()` at the same spot).
-- **Footer** is derived from the metadata table so it never drifts: `pdf_footer_info.py input/<lang>/01_head.md` prints `<number> – <official name> / <version> / <status> / <issue date>` (e.g. `eCH-0294 – Politische Akteure: Personen, Gruppen und Organe / 1.0.0 / Vorschlag / 2026-07-22`), passed to Typst via `-V footer-info=…`. The date is the `Ausgabedatum` field and only appears once that field is filled in.
-- **CI needs**: a recent Pandoc (`--pdf-engine=typst` requires ≥ 3.1.7), Typst (via `typst-community/setup-typst`) and `fonts-liberation`.
+- **TOC update**: a plain `soffice --convert-to pdf` leaves the Word TOC field as its placeholder text. The script therefore runs a small Basic macro (`.github/workflows/scripts/lo-macro/`, module `Standard.Module1.Run`) that opens the DOCX, refreshes all text fields and **updates every document index (the TOC)**, then exports PDF — so the table of contents is populated with page numbers.
+- **Profile warm-up**: a Basic library is not recognised in a not-yet-initialised LibreOffice profile, so the script first runs `soffice --terminate_after_init` on a fresh throw-away profile, *then* seeds the macro and converts. Paths are passed via the `LO_IN` / `LO_OUT` env vars (command-line macro arguments are unreliable).
+- **Footer**: comes straight from the DOCX (already set by `set_docx_footer.py`), so the PDF footer matches the Word footer automatically — no separate footer wiring for the PDF.
+- **Fonts**: `fonts-liberation` substitutes Arial with matching metrics.
+- **CI needs**: `libreoffice-writer` and `fonts-liberation` (installed via `apt-get`). Adds ~1–2 min to the run for the install; the conversion itself is a few seconds per language.
 
 ### eCH metadata (version / status)
 

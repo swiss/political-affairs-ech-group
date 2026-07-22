@@ -91,11 +91,13 @@ jobs:
           sudo dpkg -i /tmp/pandoc.deb
           pandoc --version | head -1
 
-      - name: Set up Typst (for PDF export)
-        uses: typst-community/setup-typst@v5
-
-      - name: Install Arial-compatible fonts (for PDF)
-        run: sudo apt-get update -qq && sudo apt-get install -y fonts-liberation
+      - name: Install LibreOffice (for direct DOCX -> PDF)
+        # LibreOffice converts the finished Word document directly to PDF;
+        # fonts-liberation substitutes Arial with matching metrics.
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends libreoffice-writer fonts-liberation
+          soffice --version | head -1
 
       - name: Download Pandoc pagebreak Lua filter
         # Used by pandoc when producing docx/pdf outputs.
@@ -119,16 +121,11 @@ jobs:
             python .github/workflows/scripts/set_docx_updatefields.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx"
             python .github/workflows/scripts/shade_alternate_rows.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx"
             python .github/workflows/scripts/set_docx_footer.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx" "$footer"
-            # PDF via Typst (populated TOC, zebra, eCH branding)
-            pandoc "ech-0294_actors/output/documentation_merged_${lang}.md" \
-              -o "ech-0294_actors/output/ech-0294_actors_${lang}.pdf" \
-              --pdf-engine=typst \
-              --template=ech-0292_meta/input/typst-template.typ \
-              --pdf-engine-opt=--root="$PWD" \
-              -V footer-info="$footer" \
-              --lua-filter=pagebreak.lua \
-                --lua-filter=.github/workflows/scripts/fix_dangling_links.lua \
-                --lua-filter=.github/workflows/scripts/toc_typst.lua
+            # PDF: direct conversion of the finished Word document via LibreOffice,
+            # updating fields + the table of contents so the TOC is populated.
+            bash .github/workflows/scripts/docx_to_pdf.sh \
+              "ech-0294_actors/output/ech-0294_actors_${lang}.docx" \
+              "ech-0294_actors/output/ech-0294_actors_${lang}.pdf"
           done
 
       - name: Commit and push changes

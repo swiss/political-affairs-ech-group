@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="Module1" script:language="StarBasic">
+&apos; Direct DOCX -&gt; PDF conversion. Reads input/output paths from the
+&apos; LO_IN / LO_OUT environment variables, updates all text fields and
+&apos; document indexes (the table of contents) so it is populated in the PDF,
+&apos; exports as PDF, then terminates LibreOffice.
+Sub Run()
+  Dim sIn As String, sOut As String
+  sIn = Environ(&quot;LO_IN&quot;)
+  sOut = Environ(&quot;LO_OUT&quot;)
+  Dim oDoc As Object
+  Dim oArgs(0) As New com.sun.star.beans.PropertyValue
+  oArgs(0).Name = &quot;Hidden&quot; : oArgs(0).Value = True
+  oDoc = StarDesktop.loadComponentFromURL(ConvertToURL(sIn), &quot;_blank&quot;, 0, oArgs())
+  On Error Resume Next
+  oDoc.getTextFields().refresh()
+  Dim oIdx As Object, i As Integer
+  oIdx = oDoc.getDocumentIndexes()
+  For i = 0 To oIdx.getCount() - 1
+    oIdx.getByIndex(i).update()
+  Next i
+  On Error Goto 0
+  Dim oPdf(0) As New com.sun.star.beans.PropertyValue
+  oPdf(0).Name = &quot;FilterName&quot; : oPdf(0).Value = &quot;writer_pdf_Export&quot;
+  oDoc.storeToURL(ConvertToURL(sOut), oPdf())
+  oDoc.close(False)
+  StarDesktop.terminate()
+End Sub
+</script:module>
