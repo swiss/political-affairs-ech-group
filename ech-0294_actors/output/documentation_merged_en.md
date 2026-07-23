@@ -223,7 +223,7 @@ contacts:
 
 ```yaml
 local_id: 1269
-global_uri: https://www4.ti.ch/poteri/gc/parlamento/deputati/1269
+global_uri: https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
 label: Gerri Beretta-Piccoli
 names:
 - name_type: PersonFirstName
@@ -232,6 +232,21 @@ names:
   value: Gerri
 - name_type: PersonOfficialName
   value: Beretta-Piccoli
+
+```
+#### Example: Person-swiss_politicians_Cristina_Bozzi-Brunel
+
+```yaml
+local_id: 280958
+global_uri: https://parlament.winterthur.ch/behoerdenmitglieder/280958
+label: Cristina Bozzi-Brunel
+names:
+- name_type: PersonFirstName
+  value: Cristina
+- name_type: PersonOfficialName
+  value: Bozzi-Brunel
+- name_type: PersonOriginalName
+  value: Brunel
 
 ```
 #### Example: Person-swiss_politicians_Alois_Arnold_1965

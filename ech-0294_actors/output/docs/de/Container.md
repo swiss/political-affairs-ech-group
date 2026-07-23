@@ -270,7 +270,7 @@ persons:
   # PersonFirstName) weicht vom Rufnamen ("Gerri", PersonCallFirstName) ab;
   # das `label` nutzt den Rufnamen.
   - local_id: 1269
-    global_uri: https://www4.ti.ch/poteri/gc/parlamento/deputati/1269
+    global_uri: "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269"
     label: Gerri Beretta-Piccoli
     names:
       - name_type: PersonFirstName
@@ -279,6 +279,21 @@ persons:
         value: Gerri
       - name_type: PersonOfficialName
         value: Beretta-Piccoli
+
+  # Use case Namensverwendung — Namensvariante (echter Fall, Stadtparlament
+  # Winterthur): "Cristina Bozzi-Brunel" wird auch als "Cristina Brunel" geführt.
+  # Der amtliche Doppelname und der Ledigname werden über typisierte `names`
+  # abgebildet (Annahme: Brunel = Ledigname/PersonOriginalName — bei Bedarf anpassen).
+  - local_id: 280958
+    global_uri: https://parlament.winterthur.ch/behoerdenmitglieder/280958
+    label: Cristina Bozzi-Brunel
+    names:
+      - name_type: PersonFirstName
+        value: Cristina
+      - name_type: PersonOfficialName
+        value: Bozzi-Brunel
+      - name_type: PersonOriginalName
+        value: Brunel
 # memberships:
 #   - global_uri: https://data-example.parlament.ch/membership/4032-bundesrat
 #     valid_from: 2023-12-13

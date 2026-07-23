@@ -5,9 +5,10 @@
 
 act:swiss_politicians_example a act:Container ;
     act:person <https://data-example.parlament.ch/person/4032>,
+        <https://parlament.winterthur.ch/behoerdenmitglieder/280958>,
         <https://www.ur.ch/behoerdenmitglieder/6370>,
         <https://www.ur.ch/behoerdenmitglieder/6447>,
-        <https://www4.ti.ch/poteri/gc/parlamento/deputati/1269> .
+        <https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269> .
 
 <https://data-example.parlament.ch/person/4032> a act:Person ;
     schema1:birthDate "1964-07-12"^^xsd:date ;
@@ -51,10 +52,34 @@ act:swiss_politicians_example a act:Container ;
             mcm:value "dipl. nat. ETH" ;
             act:trainingType "3223" ] .
 
+<https://parlament.winterthur.ch/behoerdenmitglieder/280958> a act:Person ;
+    mcm:label "Cristina Bozzi-Brunel" ;
+    mcm:localId "280958" ;
+    act:name [ a act:Name ;
+            mcm:value "Brunel" ;
+            act:nameType "PersonOriginalName" ],
+        [ a act:Name ;
+            mcm:value "Cristina" ;
+            act:nameType "PersonFirstName" ],
+        [ a act:Name ;
+            mcm:value "Bozzi-Brunel" ;
+            act:nameType "PersonOfficialName" ] .
+
 <https://www.ur.ch/behoerdenmitglieder/6370> a act:Person ;
     mcm:label "Alois Arnold (1965)" ;
     mcm:localId "6370" ;
     act:birthYear 1965 ;
+    act:name [ a act:Name ;
+            mcm:value "Alois" ;
+            act:nameType "PersonFirstName" ],
+        [ a act:Name ;
+            mcm:value "Arnold" ;
+            act:nameType "PersonOfficialName" ] .
+
+<https://www.ur.ch/behoerdenmitglieder/6447> a act:Person ;
+    mcm:label "Alois Arnold (1981)" ;
+    mcm:localId "6447" ;
+    act:birthYear 1981 ;
     act:name [ a act:Name ;
             mcm:value "Arnold" ;
             act:nameType "PersonOfficialName" ],
@@ -62,28 +87,17 @@ act:swiss_politicians_example a act:Container ;
             mcm:value "Alois" ;
             act:nameType "PersonFirstName" ] .
 
-<https://www.ur.ch/behoerdenmitglieder/6447> a act:Person ;
-    mcm:label "Alois Arnold (1981)" ;
-    mcm:localId "6447" ;
-    act:birthYear 1981 ;
-    act:name [ a act:Name ;
-            mcm:value "Alois" ;
-            act:nameType "PersonFirstName" ],
-        [ a act:Name ;
-            mcm:value "Arnold" ;
-            act:nameType "PersonOfficialName" ] .
-
-<https://www4.ti.ch/poteri/gc/parlamento/deputati/1269> a act:Person ;
+<https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269> a act:Person ;
     mcm:label "Gerri Beretta-Piccoli" ;
     mcm:localId "1269" ;
     act:name [ a act:Name ;
-            mcm:value "Gerri" ;
-            act:nameType "PersonCallFirstName" ],
+            mcm:value "Beretta-Piccoli" ;
+            act:nameType "PersonOfficialName" ],
         [ a act:Name ;
             mcm:value "Fausto" ;
             act:nameType "PersonFirstName" ],
         [ a act:Name ;
-            mcm:value "Beretta-Piccoli" ;
-            act:nameType "PersonOfficialName" ] .
+            mcm:value "Gerri" ;
+            act:nameType "PersonCallFirstName" ] .
 
 
