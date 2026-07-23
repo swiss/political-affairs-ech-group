@@ -242,6 +242,43 @@ persons:
         value: beat.jans@admin.ch
       - contact_type: contact_website
         value: http://www.beat-jans.ch
+
+  # Use case Namensverwendung — Gleichnamigkeit: Im Kanton Uri gibt es zwei
+  # verschiedene Personen mit identischem Namen "Alois Arnold". Das obligatorische
+  # `label` unterscheidet sie über das Geburtsjahr.
+  - local_id: 6447
+    global_uri: https://www.ur.ch/behoerdenmitglieder/6447
+    label: Alois Arnold (1981)
+    birth_year: 1981
+    names:
+      - name_type: PersonFirstName
+        value: Alois
+      - name_type: PersonOfficialName
+        value: Arnold
+
+  - local_id: 6370
+    global_uri: https://www.ur.ch/behoerdenmitglieder/6370
+    label: Alois Arnold (1965)
+    birth_year: 1965
+    names:
+      - name_type: PersonFirstName
+        value: Alois
+      - name_type: PersonOfficialName
+        value: Arnold
+
+  # Use case Namensverwendung — Rufname: Der amtliche Vorname ("Fausto",
+  # PersonFirstName) weicht vom Rufnamen ("Gerri", PersonCallFirstName) ab;
+  # das `label` nutzt den Rufnamen.
+  - local_id: 1269
+    global_uri: https://www4.ti.ch/poteri/gc/parlamento/deputati/1269
+    label: Gerri Beretta-Piccoli
+    names:
+      - name_type: PersonFirstName
+        value: Fausto
+      - name_type: PersonCallFirstName
+        value: Gerri
+      - name_type: PersonOfficialName
+        value: Beretta-Piccoli
 # memberships:
 #   - global_uri: https://data-example.parlament.ch/membership/4032-bundesrat
 #     valid_from: 2023-12-13

@@ -61,6 +61,7 @@ URI: [act:nameType](https://ld.ech.ch/schema/0294/actors/nameType)
 
 | Wert |
 | --- |
+| PersonCallFirstName |
 | PersonFirstName |
 | PersonOfficialName |
 
@@ -88,6 +89,7 @@ description: 'Typ des Namens gemäss eCH-0011 (personNameData).
 
   '
 examples:
+- value: PersonCallFirstName
 - value: PersonFirstName
 - value: PersonOfficialName
 from_schema: https://ld.ech.ch/schema/0294/actors
