@@ -1,3 +1,9 @@
 .local
 .DS_Store
 .venv
+
+# Generierte Artefakte: Sie entstehen bei jedem CI-Lauf neu (LinkML-Exporte,
+# gen-doc-Ausgaben, zusammengeführte Markdown-Dateien, DOCX/PDF) und werden
+# nicht mehr ins Repository committet. Die fertigen Dokumente stehen als
+# Workflow-Artefakt und in den GitHub Releases zur Verfügung.
+*/output/

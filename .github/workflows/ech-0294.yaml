@@ -6,6 +6,9 @@ on:
     paths:
       - 'ech-0294_actors/input/**'
   workflow_dispatch:
+  # Erlaubt dem Release-Workflow, denselben Build wiederzuverwenden, statt die
+  # generierten Dateien aus dem Repository zu lesen (sie sind nicht mehr eingecheckt).
+  workflow_call:
 
 jobs:
   
@@ -128,21 +131,9 @@ jobs:
               "ech-0294_actors/output/ech-0294_actors_${lang}.pdf"
           done
 
-      - name: Commit and push changes
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-            # Commit only when generated output has changed.
-            git config --global user.name "github-actions"
-            git config --global user.email "github-actions@github.com"
-            git add ech-0294_actors/output/
-            git diff --quiet && git diff --staged --quiet || git commit -m "Auto-generated ech-0294_actors files"
-            REMOTE="https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
-            # Retry push with rebase to handle concurrent updates.
-            for attempt in 1 2 3 4 5; do
-              git push "$REMOTE" HEAD:${{ github.ref }} && exit 0
-              echo "Push rejected (attempt $attempt) — rebasing on ${{ github.ref_name }} and retrying"
-              git pull --rebase "$REMOTE" ${{ github.ref_name }} || exit 1
-              sleep $((RANDOM % 5 + 2))
-            done
-            echo "::error::Auto-generated push failed after 5 attempts" && exit 1
+      - name: Upload generated output as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ech-0294-output
+          path: ech-0294_actors/output/
+          retention-days: 90

@@ -103,6 +103,7 @@ persons:
         value: Fisch
     genders:
       - gender_code: non_binary
+        label: divers
     occupations:
       - label: Jurist*in
         is_active: true
