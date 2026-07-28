@@ -110,7 +110,7 @@ spatial: https://ld.admin.ch/canton/12
 
 ```yaml
 local_id: 5000
-global_uri: https://api.openparldata.ch/v1/groups/5000
+global_uri: https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
 label:
 - value: Freiburger Delegation IPK strafrechtliche Einschliessung
   language: de

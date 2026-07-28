@@ -38,7 +38,7 @@
       "valid_from": "2012-01-01"
     },
     {
-      "global_uri": "https://api.openparldata.ch/v1/groups/700",
+      "global_uri": "https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html",
       "group_type": {
         "group_type_enum": "parliament",
         "label": "Parlament (Legislativrat)"
@@ -64,6 +64,12 @@
           "language": "de"
         }
       ],
+      "landing_page": [
+        {
+          "value": "https://grosserrat.bs.ch/gremien/parteien-und-fraktionen",
+          "language": "de"
+        }
+      ],
       "spatial": "https://ld.admin.ch/canton/12",
       "local_id": "20"
     },
@@ -82,6 +88,12 @@
       "abbreviation": [
         {
           "value": "GPK",
+          "language": "de"
+        }
+      ],
+      "landing_page": [
+        {
+          "value": "https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/",
           "language": "de"
         }
       ],
@@ -104,7 +116,7 @@
       "local_id": "50"
     },
     {
-      "global_uri": "https://api.openparldata.ch/v1/groups/5000",
+      "global_uri": "https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5",
       "group_type": {
         "group_type_enum": "delegation",
         "label": "Delegation"
