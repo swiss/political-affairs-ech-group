@@ -919,6 +919,7 @@ __
 | abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abbreviation (can be multilingual).  |
 | description | * <br/> [MultilingualValue](#MultilingualValue) | Description of the entity.  |
 | organization_uid | 0..1 <br/> [String](#String) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).  |
+| legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm  |
 | landing_page | * <br/> [MultilingualUri](#MultilingualUri) | Website providing further information. Where the site is published under a separate address per language, one entry per language is recorded.  |
 | parent_groups | * <br/> [Uriorcurie](#Uriorcurie) | Link to parent groups. For example, the parent party for cantonal parties, or to describe the hierarchy in the executive. Also used to link sub-commissions to commissions, or factions to both their parliament and their party. (parentGroup is typically used within the same group_type, but cross-type links are permitted, e.g., faction → parliament and faction → party.)  |
 | spatial | 0..1 <br/> [String](#String) | Spatial reference (fos-municipality number, fos-canton number, or country). Formats: municipality: ld.admin.ch/municipality/1234, canton: ld.admin.ch/canton/23, country: ld.admin.ch/country/CHE.  |
@@ -975,23 +976,6 @@ group_type:
 spatial: https://ld.admin.ch/canton/12
 
 ```
-#### Example: Association with a UID from the commercial register
-
-```yaml
-global_uri: https://www.frc.ch/
-organization_uid: CHE-106.063.525
-label:
-- value: Fédération romande des consommateurs
-  language: fr
-abbreviation:
-- value: FRC
-  language: fr
-group_type:
-  group_type_enum: association
-  label: Verein
-spatial: https://ld.admin.ch/canton/22
-
-```
 #### Example: Council bureau
 
 ```yaml
@@ -1003,7 +987,7 @@ label:
 parent_groups:
 - https://www.grosserrat.bs.ch/
 group_type:
-  group_type_enum: parliamentary_bureau
+  group_type_enum: council_bureau
   label: Ratsbüro
 spatial: https://ld.admin.ch/canton/12
 
@@ -1092,6 +1076,24 @@ group_type:
   group_type_enum: committee_standing
   label: Kommission
 spatial: https://ld.admin.ch/canton/15
+
+```
+#### Example: Association with UID and legal form from the commercial register
+
+```yaml
+global_uri: https://www.frc.ch/
+organization_uid: CHE-106.063.525
+legal_form: 0109
+label:
+- value: Fédération romande des consommateurs
+  language: fr
+abbreviation:
+- value: FRC
+  language: fr
+group_type:
+  group_type_enum: association
+  label: Verein
+spatial: https://ld.admin.ch/canton/22
 
 ```
 #### Example: Interest group with a trilingual name and contact
@@ -1232,10 +1234,10 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/committee_ad_hoc](act:enum/group_type/committee_ad_hoc) |
 | parliamentary_group |  Parliamentary faction.  |
 | | [act:enum/group_type/parliamentary_group](act:enum/group_type/parliamentary_group) |
-| parliamentary_bureau |  Parliamentary bureau.  |
-| | [act:enum/group_type/parliamentary_bureau](act:enum/group_type/parliamentary_bureau) |
-| presidency |  Presidency of parliament.  |
-| | [act:enum/group_type/presidency](act:enum/group_type/presidency) |
+| council_bureau |  Body managing the business of a council, whatever it is called locally (bureau, council management, executive board). Used for the legislative as well as the executive council; the local designation is recorded in the label.  |
+| | [act:enum/group_type/council_bureau](act:enum/group_type/council_bureau) |
+| council_presidency |  Presidency of a council, for the legislative as well as the executive council.  |
+| | [act:enum/group_type/council_presidency](act:enum/group_type/council_presidency) |
 | council_executive |  Government / Executive as a collective body (e.g., Federal Council, Cantonal Government, City or Municipal Council).  |
 | | [act:enum/group_type/council_executive](act:enum/group_type/council_executive) |
 | department |  Government department.  |
@@ -1248,8 +1250,8 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |
 | control_body |  Control or supervisory body (e.g., Federal Finance Control EFC, supervisory authority AB-BA).  |
 | | [act:enum/group_type/control_body](act:enum/group_type/control_body) |
-| parliamentary_services |  Parliamentary services.  |
-| | [act:enum/group_type/parliamentary_services](act:enum/group_type/parliamentary_services) |
+| council_secretariat |  Administrative unit serving a council, whatever it is called locally (parliamentary services, council secretariat, city or municipal chancellery). Used for the legislative as well as the executive council.  |
+| | [act:enum/group_type/council_secretariat](act:enum/group_type/council_secretariat) |
 | court |  Court / Judiciary at any level (e.g., Federal Court, Cantonal Court, District Court).  |
 | | [act:enum/group_type/court](act:enum/group_type/court) |
 | association |  Association.  |

@@ -34,10 +34,10 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/committee_ad_hoc](act:enum/group_type/committee_ad_hoc) |
 | parliamentary_group |  Parlamentsfraktion.  |
 | | [act:enum/group_type/parliamentary_group](act:enum/group_type/parliamentary_group) |
-| parliamentary_bureau |  Parlamentsbüro.  |
-| | [act:enum/group_type/parliamentary_bureau](act:enum/group_type/parliamentary_bureau) |
-| presidency |  Präsidium des Parlaments.  |
-| | [act:enum/group_type/presidency](act:enum/group_type/presidency) |
+| council_bureau |  Organ, das den Geschäftsgang eines Rates leitet, unabhängig von der örtlichen Bezeichnung (Büro, Ratsleitung, Geschäftsleitung). Wird für den Legislativ- wie für den Exekutivrat verwendet; die örtliche Benennung wird im Label festgehalten.  |
+| | [act:enum/group_type/council_bureau](act:enum/group_type/council_bureau) |
+| council_presidency |  Präsidium eines Rates, für den Legislativ- wie für den Exekutivrat.  |
+| | [act:enum/group_type/council_presidency](act:enum/group_type/council_presidency) |
 | council_executive |  Regierung / Exekutive als Gesamtorgan (z.B. Bundesrat, Regierungsrat, Stadtrat / Gemeinderat).  |
 | | [act:enum/group_type/council_executive](act:enum/group_type/council_executive) |
 | department |  Departement.  |
@@ -50,8 +50,8 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |
 | control_body |  Kontroll- oder Aufsichtsorgan (z.B. Eidgenössische Finanzkontrolle EFK, Aufsichtsbehörde AB-BA).  |
 | | [act:enum/group_type/control_body](act:enum/group_type/control_body) |
-| parliamentary_services |  Parlamentsdienste.  |
-| | [act:enum/group_type/parliamentary_services](act:enum/group_type/parliamentary_services) |
+| council_secretariat |  Verwaltungseinheit, die einen Rat bedient, unabhängig von der örtlichen Bezeichnung (Parlamentsdienste, Ratssekretariat, Stadt- oder Gemeindekanzlei). Wird für den Legislativ- wie für den Exekutivrat verwendet.  |
+| | [act:enum/group_type/council_secretariat](act:enum/group_type/council_secretariat) |
 | court |  Gericht / Judikative auf jeder Ebene (z.B. Bundesgericht, Kantonsgericht, Bezirksgericht).  |
 | | [act:enum/group_type/court](act:enum/group_type/court) |
 | association |  Verein.  |

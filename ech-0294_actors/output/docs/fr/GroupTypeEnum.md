@@ -34,10 +34,10 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/committee_ad_hoc](act:enum/group_type/committee_ad_hoc) |
 | parliamentary_group |  Groupe parlementaire.  |
 | | [act:enum/group_type/parliamentary_group](act:enum/group_type/parliamentary_group) |
-| parliamentary_bureau |  Bureau du parlement.  |
-| | [act:enum/group_type/parliamentary_bureau](act:enum/group_type/parliamentary_bureau) |
-| presidency |  Présidence du parlement.  |
-| | [act:enum/group_type/presidency](act:enum/group_type/presidency) |
+| council_bureau |  Organe dirigeant la marche des affaires d'un conseil, quelle que soit sa désignation locale (bureau, direction du conseil, comité de direction). S'emploie aussi bien pour le conseil législatif que pour le conseil exécutif ; la désignation locale est consignée dans le libellé.  |
+| | [act:enum/group_type/council_bureau](act:enum/group_type/council_bureau) |
+| council_presidency |  Présidence d'un conseil, pour le conseil législatif comme pour le conseil exécutif.  |
+| | [act:enum/group_type/council_presidency](act:enum/group_type/council_presidency) |
 | council_executive |  Gouvernement / exécutif en tant qu'organe collégial (p. ex. Conseil fédéral, conseil d'État, conseil municipal ou conseil communal).  |
 | | [act:enum/group_type/council_executive](act:enum/group_type/council_executive) |
 | department |  Département gouvernemental.  |
@@ -50,8 +50,8 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |
 | control_body |  Organe de contrôle ou de surveillance (p. ex. Contrôle fédéral des finances CDF, autorité de surveillance AS-MPC).  |
 | | [act:enum/group_type/control_body](act:enum/group_type/control_body) |
-| parliamentary_services |  Services du parlement.  |
-| | [act:enum/group_type/parliamentary_services](act:enum/group_type/parliamentary_services) |
+| council_secretariat |  Unité administrative au service d'un conseil, quelle que soit sa désignation locale (services du parlement, secrétariat du conseil, chancellerie communale ou municipale). S'emploie aussi bien pour le conseil législatif que pour le conseil exécutif.  |
+| | [act:enum/group_type/council_secretariat](act:enum/group_type/council_secretariat) |
 | court |  Tribunal / pouvoir judiciaire à tout niveau (p. ex. Tribunal fédéral, tribunal cantonal, tribunal de district).  |
 | | [act:enum/group_type/court](act:enum/group_type/court) |
 | association |  Association.  |

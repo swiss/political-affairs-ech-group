@@ -432,6 +432,10 @@
                         "null"
                     ]
                 },
+                "legal_form": {
+                    "$ref": "#/$defs/LegalFormEnum",
+                    "description": "Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm\n"
+                },
                 "local_id": {
                     "description": "Local identifier. For example, a UUID from the council information system.\n",
                     "type": [
@@ -587,15 +591,15 @@
                 "committee_standing",
                 "committee_ad_hoc",
                 "parliamentary_group",
-                "parliamentary_bureau",
-                "presidency",
+                "council_bureau",
+                "council_presidency",
                 "council_executive",
                 "department",
                 "office",
                 "committee_extraparliamentary",
                 "interest_group",
                 "control_body",
-                "parliamentary_services",
+                "council_secretariat",
                 "court",
                 "association",
                 "petition_carrier",

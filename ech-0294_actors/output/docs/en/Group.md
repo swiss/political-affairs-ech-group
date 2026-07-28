@@ -23,6 +23,7 @@ __
 | abbreviation | * <br/> [MultilingualValue](MultilingualValue.md) | Abbreviation (can be multilingual).  |
 | description | * <br/> [MultilingualValue](MultilingualValue.md) | Description of the entity.  |
 | organization_uid | 0..1 <br/> [String](String.md) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).  |
+| legal_form | 0..1 <br/> [LegalFormEnum](LegalFormEnum.md) | Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm  |
 | landing_page | * <br/> [MultilingualUri](MultilingualUri.md) | Website providing further information. Where the site is published under a separate address per language, one entry per language is recorded.  |
 | parent_groups | * <br/> [Uriorcurie](Uriorcurie.md) | Link to parent groups. For example, the parent party for cantonal parties, or to describe the hierarchy in the executive. Also used to link sub-commissions to commissions, or factions to both their parliament and their party. (parentGroup is typically used within the same group_type, but cross-type links are permitted, e.g., faction → parliament and faction → party.)  |
 | spatial | 0..1 <br/> [String](String.md) | Spatial reference (fos-municipality number, fos-canton number, or country). Formats: municipality: ld.admin.ch/municipality/1234, canton: ld.admin.ch/canton/23, country: ld.admin.ch/country/CHE.  |
@@ -79,23 +80,6 @@ group_type:
 spatial: https://ld.admin.ch/canton/12
 
 ```
-#### Example: Association with a UID from the commercial register
-
-```yaml
-global_uri: https://www.frc.ch/
-organization_uid: CHE-106.063.525
-label:
-- value: Fédération romande des consommateurs
-  language: fr
-abbreviation:
-- value: FRC
-  language: fr
-group_type:
-  group_type_enum: association
-  label: Verein
-spatial: https://ld.admin.ch/canton/22
-
-```
 #### Example: Council bureau
 
 ```yaml
@@ -107,7 +91,7 @@ label:
 parent_groups:
 - https://www.grosserrat.bs.ch/
 group_type:
-  group_type_enum: parliamentary_bureau
+  group_type_enum: council_bureau
   label: Ratsbüro
 spatial: https://ld.admin.ch/canton/12
 
@@ -196,6 +180,24 @@ group_type:
   group_type_enum: committee_standing
   label: Kommission
 spatial: https://ld.admin.ch/canton/15
+
+```
+#### Example: Association with UID and legal form from the commercial register
+
+```yaml
+global_uri: https://www.frc.ch/
+organization_uid: CHE-106.063.525
+legal_form: 0109
+label:
+- value: Fédération romande des consommateurs
+  language: fr
+abbreviation:
+- value: FRC
+  language: fr
+group_type:
+  group_type_enum: association
+  label: Verein
+spatial: https://ld.admin.ch/canton/22
 
 ```
 #### Example: Interest group with a trilingual name and contact

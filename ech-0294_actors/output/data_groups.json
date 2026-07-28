@@ -78,6 +78,7 @@
         }
       ],
       "organization_uid": "CHE-106.063.525",
+      "legal_form": "0109",
       "spatial": "https://ld.admin.ch/canton/22"
     },
     {
@@ -160,7 +161,7 @@
     {
       "global_uri": "https://grosserrat.bs.ch/gremien/praesidium-und-buero",
       "group_type": {
-        "group_type_enum": "parliamentary_bureau",
+        "group_type_enum": "council_bureau",
         "label": "Ratsbüro"
       },
       "label": [

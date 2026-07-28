@@ -6,6 +6,6 @@ label:
 parent_groups:
 - https://www.grosserrat.bs.ch/
 group_type:
-  group_type_enum: parliamentary_bureau
+  group_type_enum: council_bureau
   label: Ratsbüro
 spatial: https://ld.admin.ch/canton/12

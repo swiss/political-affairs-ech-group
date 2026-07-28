@@ -61,6 +61,7 @@ groups:
   # die Webadresse, die sich bei jedem Relaunch ändern kann.
   - global_uri: https://www.frc.ch/
     organization_uid: CHE-106.063.525
+    legal_form: "0109"  # Verein
     label:
       - value: Fédération romande des consommateurs
         language: fr
@@ -140,7 +141,7 @@ groups:
     parent_groups:
       - https://www.grosserrat.bs.ch/
     group_type:
-      group_type_enum: parliamentary_bureau
+      group_type_enum: council_bureau
       label: Ratsbüro
     spatial: https://ld.admin.ch/canton/12
 

@@ -27,6 +27,7 @@ URI: [act:legalForm](https://ld.ech.ch/schema/0294/actors/legalForm)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
+| [Group](Group.md) | Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 | [InterestLink](InterestLink.md) | Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person... |  no  |
 
 
@@ -41,7 +42,7 @@ URI: [act:legalForm](https://ld.ech.ch/schema/0294/actors/legalForm)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [LegalFormEnum](LegalFormEnum.md) |
-| Domäne von | [InterestLink](InterestLink.md) |
+| Domäne von | [Group](Group.md), [InterestLink](InterestLink.md) |
 | Slot-URI | [act:legalForm](https://ld.ech.ch/schema/0294/actors/legalForm) |
 
 ### Kardinalität und Anforderungen
@@ -96,6 +97,7 @@ from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:legalForm
 domain_of:
+- Group
 - InterestLink
 range: LegalFormEnum
 
