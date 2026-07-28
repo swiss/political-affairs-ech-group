@@ -1074,6 +1074,37 @@ group_type:
 spatial: https://ld.admin.ch/canton/12
 
 ```
+#### Beispiel: Ausserparlamentarische Kommission mit Entscheidbefugnis
+
+```yaml
+global_uri: https://www.weko.admin.ch/
+label:
+- value: Wettbewerbskommission
+  language: de
+- value: Commission de la concurrence
+  language: fr
+- value: Commissione della concorrenza
+  language: it
+abbreviation:
+- value: WEKO
+  language: de
+- value: COMCO
+  language: fr
+- value: COMCO
+  language: it
+landing_page:
+- value: https://www.weko.admin.ch/de
+  language: de
+- value: https://www.weko.admin.ch/fr
+  language: fr
+- value: https://www.weko.admin.ch/it
+  language: it
+group_type:
+  group_type_enum: committee_extraparliamentary
+  label: Ausserparlamentarische Kommission
+spatial: https://ld.admin.ch/country/CHE
+
+```
 #### Beispiel: Gemeindeparlament mit räumlicher Referenz
 
 ```yaml
@@ -1274,7 +1305,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/department](act:enum/group_type/department) |
 | office |  Amt.  |
 | | [act:enum/group_type/office](act:enum/group_type/office) |
-| committee_extraparliamentary |  Kommission, die von der Regierung eingesetzt wird, um die Verwaltung dauernd zu beraten oder an ihrer Stelle zu entscheiden. Sie unterscheidet sich von einer parlamentarischen Kommission nicht durch ihre Stellung in der Hierarchie, sondern durch Zusammensetzung und Rechtsgrundlage: Ihre Mitglieder sind externe Fachleute und Interessenvertreterinnen und -vertreter statt Ratsmitglieder, und sie stützt sich auf das Regierungs- und Verwaltungsorganisationsrecht statt auf das Parlamentsrecht (z.B. Eidgenössische Kommission für Konsumentenfragen als beratende Verwaltungskommission, Wettbewerbskommission als entscheidende Behördenkommission). Leitungsorgane von Organisationen des Bundes wie der Bankrat der Schweizerischen Nationalbank zählen ausdrücklich nicht dazu.  |
+| committee_extraparliamentary |  Kommission, die von der Regierung eingesetzt wird, um die Verwaltung dauernd zu beraten oder an ihrer Stelle zu entscheiden. Sie unterscheidet sich von einer parlamentarischen Kommission nicht durch ihre Stellung in der Hierarchie, sondern durch Zusammensetzung und Rechtsgrundlage: Ihre Mitglieder sind externe Fachleute und Interessenvertreterinnen und -vertreter statt Ratsmitglieder, und sie stützt sich auf das Organisationsrecht von Regierung und Verwaltung statt auf das Parlamentsrecht. Den Typ gibt es auf Bundes- wie auf Kantonsebene, teils unter anderer Bezeichnung (z.B. die Wettbewerbskommission des Bundes; im Kanton Waadt die commissions extraparlementaires; im Kanton Zürich die Kommissionen des Regierungsrates).  |
 | | [act:enum/group_type/committee_extraparliamentary](act:enum/group_type/committee_extraparliamentary) |
 | interest_group |  Interessengruppe aus der Zivilgesellschaft.  |
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |

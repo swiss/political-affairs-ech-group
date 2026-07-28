@@ -178,6 +178,37 @@ group_type:
 spatial: https://ld.admin.ch/canton/12
 
 ```
+#### Exemple : Extra-parliamentary commission with decision-making powers
+
+```yaml
+global_uri: https://www.weko.admin.ch/
+label:
+- value: Wettbewerbskommission
+  language: de
+- value: Commission de la concurrence
+  language: fr
+- value: Commissione della concorrenza
+  language: it
+abbreviation:
+- value: WEKO
+  language: de
+- value: COMCO
+  language: fr
+- value: COMCO
+  language: it
+landing_page:
+- value: https://www.weko.admin.ch/de
+  language: de
+- value: https://www.weko.admin.ch/fr
+  language: fr
+- value: https://www.weko.admin.ch/it
+  language: it
+group_type:
+  group_type_enum: committee_extraparliamentary
+  label: Ausserparlamentarische Kommission
+spatial: https://ld.admin.ch/country/CHE
+
+```
 #### Exemple : Municipal parliament with spatial reference
 
 ```yaml

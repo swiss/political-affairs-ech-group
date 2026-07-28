@@ -1073,6 +1073,37 @@ group_type:
 spatial: https://ld.admin.ch/canton/12
 
 ```
+#### Exemple : Commission extraparlementaire dotée du pouvoir de décision
+
+```yaml
+global_uri: https://www.weko.admin.ch/
+label:
+- value: Wettbewerbskommission
+  language: de
+- value: Commission de la concurrence
+  language: fr
+- value: Commissione della concorrenza
+  language: it
+abbreviation:
+- value: WEKO
+  language: de
+- value: COMCO
+  language: fr
+- value: COMCO
+  language: it
+landing_page:
+- value: https://www.weko.admin.ch/de
+  language: de
+- value: https://www.weko.admin.ch/fr
+  language: fr
+- value: https://www.weko.admin.ch/it
+  language: it
+group_type:
+  group_type_enum: committee_extraparliamentary
+  label: Ausserparlamentarische Kommission
+spatial: https://ld.admin.ch/country/CHE
+
+```
 #### Exemple : Parlement communal avec référence spatiale
 
 ```yaml
@@ -1273,7 +1304,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/department](act:enum/group_type/department) |
 | office |  Office gouvernemental.  |
 | | [act:enum/group_type/office](act:enum/group_type/office) |
-| committee_extraparliamentary |  Commission instituée par le gouvernement pour conseiller l'administration de manière permanente ou pour décider à sa place. Ce qui la distingue d'une commission parlementaire n'est pas sa position dans la hiérarchie, mais sa composition et sa base légale : ses membres sont des spécialistes externes et des représentantes et représentants d'intérêts plutôt que des membres du conseil, et elle se fonde sur le droit de l'organisation du gouvernement et de l'administration et non sur le droit parlementaire (p. ex. la Commission fédérale de la consommation comme commission consultative, la Commission de la concurrence comme commission décisionnelle). Les organes de direction d'organisations de la Confédération, tels que le Conseil de banque de la Banque nationale suisse, n'en font expressément pas partie.  |
+| committee_extraparliamentary |  Commission instituée par le gouvernement pour conseiller l'administration de manière permanente ou pour décider à sa place. Ce qui la distingue d'une commission parlementaire n'est pas sa position dans la hiérarchie, mais sa composition et sa base légale : ses membres sont des spécialistes externes et des représentantes et représentants d'intérêts plutôt que des membres du conseil, et elle se fonde sur le droit régissant l'organisation du gouvernement et de l'administration et non sur le droit parlementaire. Ce type existe tant au niveau fédéral qu'au niveau cantonal, parfois sous une autre désignation (p. ex. la Commission de la concurrence de la Confédération ; les commissions extraparlementaires du canton de Vaud ; les commissions du Conseil d'État du canton de Zurich).  |
 | | [act:enum/group_type/committee_extraparliamentary](act:enum/group_type/committee_extraparliamentary) |
 | interest_group |  Groupe d'intérêts issu de la société civile.  |
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |

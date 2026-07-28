@@ -1074,6 +1074,37 @@ group_type:
 spatial: https://ld.admin.ch/canton/12
 
 ```
+#### Example: Extra-parliamentary commission with decision-making powers
+
+```yaml
+global_uri: https://www.weko.admin.ch/
+label:
+- value: Wettbewerbskommission
+  language: de
+- value: Commission de la concurrence
+  language: fr
+- value: Commissione della concorrenza
+  language: it
+abbreviation:
+- value: WEKO
+  language: de
+- value: COMCO
+  language: fr
+- value: COMCO
+  language: it
+landing_page:
+- value: https://www.weko.admin.ch/de
+  language: de
+- value: https://www.weko.admin.ch/fr
+  language: fr
+- value: https://www.weko.admin.ch/it
+  language: it
+group_type:
+  group_type_enum: committee_extraparliamentary
+  label: Ausserparlamentarische Kommission
+spatial: https://ld.admin.ch/country/CHE
+
+```
 #### Example: Municipal parliament with spatial reference
 
 ```yaml
@@ -1274,7 +1305,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/department](act:enum/group_type/department) |
 | office |  Government office.  |
 | | [act:enum/group_type/office](act:enum/group_type/office) |
-| committee_extraparliamentary |  Commission appointed by the government to advise the administration on an ongoing basis or to decide in its stead. What sets it apart from a parliamentary committee is not its position in the hierarchy but its composition and legal basis: its members are external experts and interest-group representatives rather than members of the council, and it rests on government organisation law rather than on parliament law (e.g., Federal Consumer Affairs Commission as an advisory body, Competition Commission as a decision-making one). Governing bodies of federal organisations, such as the Bank Council of the Swiss National Bank, are expressly not part of this category.  |
+| committee_extraparliamentary |  Commission appointed by the government to advise the administration on an ongoing basis or to decide in its stead. What sets it apart from a parliamentary committee is not its position in the hierarchy but its composition and legal basis: its members are external experts and interest-group representatives rather than members of the council, and it rests on the law governing the organisation of the government and the administration rather than on parliament law. The type exists at federal and at cantonal level alike, sometimes under a different name (e.g., the federal Competition Commission; the commissions extraparlementaires in the canton of Vaud; the commissions of the government council in the canton of Zurich).  |
 | | [act:enum/group_type/committee_extraparliamentary](act:enum/group_type/committee_extraparliamentary) |
 | interest_group |  Interest group from civil society.  |
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |

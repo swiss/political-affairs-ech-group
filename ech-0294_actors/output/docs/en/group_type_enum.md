@@ -63,7 +63,7 @@ URI: [act:groupTypeEnum](https://ld.ech.ch/schema/0294/actors/groupTypeEnum)
 | --- |
 | association |
 | committee |
-| council_bureau |
+| committee_extraparliamentary |
 
 
 
@@ -91,7 +91,7 @@ description: 'Link to the controlled vocabulary for group types.
 examples:
 - value: association
 - value: committee
-- value: council_bureau
+- value: committee_extraparliamentary
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:groupTypeEnum
