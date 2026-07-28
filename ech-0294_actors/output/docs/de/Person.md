@@ -84,7 +84,8 @@ names:
 
 ```yaml
 local_id: 1269
-global_uri: https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
+global_uri: >-
+  https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
 label: Gerri Beretta-Piccoli
 names:
 - name_type: PersonFirstName
@@ -99,7 +100,8 @@ names:
 
 ```yaml
 local_id: 72c7232be92944e3876f3b6723824ff9
-global_uri: https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9
+global_uri: >-
+  https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9
 label: Sofia Fisch
 birth_year: 1996
 names:

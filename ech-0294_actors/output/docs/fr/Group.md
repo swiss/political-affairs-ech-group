@@ -83,7 +83,8 @@ groups:
       language: de
   spatial: https://ld.admin.ch/canton/15
 - local_id: 3
-  global_uri: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/
+  global_uri: >-
+    https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/
   label:
   - value: Geschäftsprüfungskommission
     language: de
@@ -146,11 +147,15 @@ abbreviation:
 - value: Del-DetPen
   language: fr
 description:
-- value: Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht aus 18 Grossrätinnen
-    und Grossräten aus den sechs Vertragskantonen Freiburg, Genf, Jura, Neuenburg, Waadt und Wallis.
+- value: >-
+    Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht
+    aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg, Genf,
+    Jura, Neuenburg, Waadt und Wallis.
   language: de
-- value: 'La Commission interparlementaire de contrôle détention pénale est composée de 18 députés issus
-    des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel, Vaud et Valais.'
+- value: >-
+    La Commission interparlementaire de contrôle détention pénale est composée de
+    18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel,
+    Vaud et Valais.
   language: fr
 landing_page:
 - value: https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
@@ -262,7 +267,8 @@ spatial: https://ld.admin.ch/canton/12
 
 ```yaml
 local_id: 700
-global_uri: https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
+global_uri: >-
+  https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
 label:
 - value: Stadtparlament St. Gallen
   language: de
@@ -337,9 +343,11 @@ label:
 - value: Informazione e tutela dei consumatori
   language: it
 description:
-- value: L'intergroupe parlementaire « Information et défense des consommateurs » réunit toutes les sensibilités
-    politiques. Cet intergroupe a pour mission d'informer et de sensibiliser les élu·e·s aux questions
-    relatives à la défense des consommateur·rice·s en Suisse.
+- value: >-
+    L'intergroupe parlementaire « Information et défense des consommateurs » réunit
+    toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer
+    et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s
+    en Suisse.
   language: fr
 landing_page:
 - value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
@@ -354,7 +362,8 @@ contacts:
 addresses:
 - address_type: businessAddress
   address_uri: https://geo.ld.admin.ch/location/address/101009806
-  street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale 585
+  street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
+    585
   postal_code: '1001'
   postal_locality: Lausanne
   country: CH

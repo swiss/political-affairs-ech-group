@@ -11,7 +11,8 @@ groups:
       language: de
   spatial: https://ld.admin.ch/canton/15
 - local_id: 3
-  global_uri: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/
+  global_uri: >-
+    https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/
   label:
   - value: Geschäftsprüfungskommission
     language: de

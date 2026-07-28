@@ -195,7 +195,8 @@ names:
 
 ```yaml
 local_id: 1269
-global_uri: https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
+global_uri: >-
+  https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
 label: Gerri Beretta-Piccoli
 names:
 - name_type: PersonFirstName
@@ -210,7 +211,8 @@ names:
 
 ```yaml
 local_id: 72c7232be92944e3876f3b6723824ff9
-global_uri: https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9
+global_uri: >-
+  https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9
 label: Sofia Fisch
 birth_year: 1996
 names:
@@ -979,7 +981,8 @@ groups:
       language: de
   spatial: https://ld.admin.ch/canton/15
 - local_id: 3
-  global_uri: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/
+  global_uri: >-
+    https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/
   label:
   - value: Geschäftsprüfungskommission
     language: de
@@ -1042,11 +1045,15 @@ abbreviation:
 - value: Del-DetPen
   language: fr
 description:
-- value: Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht aus 18 Grossrätinnen
-    und Grossräten aus den sechs Vertragskantonen Freiburg, Genf, Jura, Neuenburg, Waadt und Wallis.
+- value: >-
+    Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht
+    aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg, Genf,
+    Jura, Neuenburg, Waadt und Wallis.
   language: de
-- value: 'La Commission interparlementaire de contrôle détention pénale est composée de 18 députés issus
-    des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel, Vaud et Valais.'
+- value: >-
+    La Commission interparlementaire de contrôle détention pénale est composée de
+    18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel,
+    Vaud et Valais.
   language: fr
 landing_page:
 - value: https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
@@ -1158,7 +1165,8 @@ spatial: https://ld.admin.ch/canton/12
 
 ```yaml
 local_id: 700
-global_uri: https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
+global_uri: >-
+  https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
 label:
 - value: Stadtparlament St. Gallen
   language: de
@@ -1233,9 +1241,11 @@ label:
 - value: Informazione e tutela dei consumatori
   language: it
 description:
-- value: L'intergroupe parlementaire « Information et défense des consommateurs » réunit toutes les sensibilités
-    politiques. Cet intergroupe a pour mission d'informer et de sensibiliser les élu·e·s aux questions
-    relatives à la défense des consommateur·rice·s en Suisse.
+- value: >-
+    L'intergroupe parlementaire « Information et défense des consommateurs » réunit
+    toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer
+    et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s
+    en Suisse.
   language: fr
 landing_page:
 - value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
@@ -1250,7 +1260,8 @@ contacts:
 addresses:
 - address_type: businessAddress
   address_uri: https://geo.ld.admin.ch/location/address/101009806
-  street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale 585
+  street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
+    585
   postal_code: '1001'
   postal_locality: Lausanne
   country: CH
@@ -1500,7 +1511,7 @@ __
 ## Klasse: RoleType 
 
 
-_Rolle einer Person in einer Mitgliedschaft oder Funktion (z.B. Mitglied, Präsident/in, Stellvertreter/in). Wenn eine Rolle im vorgeschlagenen RoleEnum-Vokabular nicht enthalten ist, kann der Wert 'other' verwendet werden; in diesem Fall soll im Slot `role_label` eine beschreibende Bezeichnung angegeben werden. Die Bezeichnung kann auch verwendet werden, wenn eine spezifische Rollenbezeichnung nötig ist, selbst wenn in `role_type_enum` bereits ein passender semantischer Wert vorhanden ist; bei `role_type_enum = other` soll sie angegeben werden. Die Bezeichnung wird mit der Sprache erfasst, in der sie publiziert wird; wird sie in mehreren Sprachen publiziert, wird pro Sprache ein Eintrag erfasst._
+_Rolle einer Person in einer Mitgliedschaft oder Funktion (z.B. Mitglied, Präsident/in, Stellvertreter/in). Wenn eine Rolle im vorgeschlagenen RoleEnum-Vokabular nicht enthalten ist, kann der Wert 'other' verwendet werden; in diesem Fall soll im Slot `role_label` eine beschreibende Bezeichnung angegeben werden. Die Bezeichnung kann auch verwendet werden, wenn eine spezifische Rollenbezeichnung nötig ist, selbst wenn in `role_type_enum` bereits ein passender semantischer Wert vorhanden ist; bei `role_type_enum = other` soll sie angegeben werden._
 
 __
 
@@ -1516,7 +1527,7 @@ __
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
 | role_type_enum | 0..1 <br/> [RoleEnum](#RoleEnum) | Rolle der Person in der Mitgliedschaft oder Funktion.  |
-| role_label | * <br/> [MultilingualValue](#MultilingualValue) | Spezifische Rollenbezeichnung. Dieses Feld kann verwendet werden, wenn eine konkrete Rollenbezeichnung benötigt wird, auch wenn in `role_type_enum` bereits ein passender semantischer Wert vorhanden ist; bei `role_type_enum = other` soll diese Bezeichnung angegeben werden.  |
+| role_label | * <br/> [MultilingualValue](#MultilingualValue) | Spezifische Rollenbezeichnung. Dieses Feld kann verwendet werden, wenn eine konkrete Rollenbezeichnung benötigt wird, auch wenn in `role_type_enum` bereits ein passender semantischer Wert vorhanden ist; bei `role_type_enum = other` soll diese Bezeichnung angegeben werden. Die Bezeichnung wird mit der Sprache erfasst, in der sie publiziert wird; wird sie in mehreren Sprachen publiziert, wird pro Sprache ein Eintrag erfasst.  |
 
 ##### Einschränkungen
 
@@ -2272,7 +2283,8 @@ postal_locality: Basel-Stadt
 ```yaml
 address_type: businessAddress
 address_uri: https://geo.ld.admin.ch/location/address/101009806
-street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale 585
+street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
+  585
 postal_code: '1001'
 postal_locality: Lausanne
 country: CH

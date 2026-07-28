@@ -8,9 +8,11 @@ label:
 - value: Informazione e tutela dei consumatori
   language: it
 description:
-- value: L'intergroupe parlementaire « Information et défense des consommateurs » réunit toutes les sensibilités
-    politiques. Cet intergroupe a pour mission d'informer et de sensibiliser les élu·e·s aux questions
-    relatives à la défense des consommateur·rice·s en Suisse.
+- value: >-
+    L'intergroupe parlementaire « Information et défense des consommateurs » réunit
+    toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer
+    et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s
+    en Suisse.
   language: fr
 landing_page:
 - value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
@@ -25,7 +27,8 @@ contacts:
 addresses:
 - address_type: businessAddress
   address_uri: https://geo.ld.admin.ch/location/address/101009806
-  street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale 585
+  street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
+    585
   postal_code: '1001'
   postal_locality: Lausanne
   country: CH

@@ -360,7 +360,11 @@ groups:
       - value: Informazione e tutela dei consumatori
         language: it
     description:
-      - value: L'intergroupe parlementaire « Information et défense des consommateurs » réunit toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s en Suisse.
+      - value: >-
+          L'intergroupe parlementaire « Information et défense des consommateurs » réunit toutes
+          les sensibilités politiques. Cet intergroupe a pour mission d'informer et de
+          sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s
+          en Suisse.
         language: fr
     landing_page:
       - value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
@@ -620,9 +624,15 @@ groups:
       - value: Del-DetPen
         language: fr
     description:
-      - value: Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg, Genf, Jura, Neuenburg, Waadt und Wallis.
+      - value: >-
+          Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht
+          aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg, Genf,
+          Jura, Neuenburg, Waadt und Wallis.
         language: de
-      - value: "La Commission interparlementaire de contrôle détention pénale est composée de 18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel, Vaud et Valais."
+      - value: >-
+          La Commission interparlementaire de contrôle détention pénale est composée de 18
+          députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel, Vaud et
+          Valais.
         language: fr
     landing_page:
       - value: https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5

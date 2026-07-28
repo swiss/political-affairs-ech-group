@@ -1,5 +1,6 @@
 local_id: 700
-global_uri: https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
+global_uri: >-
+  https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
 label:
 - value: Stadtparlament St. Gallen
   language: de
