@@ -176,18 +176,19 @@ __
 
 
 ### Beispiele
-#### Beispiel: Gleichnamige Personen ueber das Label unterscheiden
+#### Beispiel: Namensvariante neben dem amtlichen Doppelnamen
 
 ```yaml
-local_id: 6447
-global_uri: https://www.ur.ch/behoerdenmitglieder/6447
-label: Alois Arnold (1981)
-birth_year: 1981
+local_id: 280958
+global_uri: https://parlament.winterthur.ch/behoerdenmitglieder/280958
+label: Cristina Bozzi-Brunel
 names:
 - name_type: PersonFirstName
-  value: Alois
+  value: Cristina
 - name_type: PersonOfficialName
-  value: Arnold
+  value: Bozzi-Brunel
+- name_type: PersonOriginalName
+  value: Brunel
 
 ```
 #### Beispiel: Rufname weicht vom amtlichen Vornamen ab
@@ -203,35 +204,6 @@ names:
   value: Gerri
 - name_type: PersonOfficialName
   value: Beretta-Piccoli
-
-```
-#### Beispiel: Gleichnamige Personen ueber das Label unterscheiden zweite P
-
-```yaml
-local_id: 6370
-global_uri: https://www.ur.ch/behoerdenmitglieder/6370
-label: Alois Arnold (1965)
-birth_year: 1965
-names:
-- name_type: PersonFirstName
-  value: Alois
-- name_type: PersonOfficialName
-  value: Arnold
-
-```
-#### Beispiel: Namensvariante neben dem amtlichen Doppelnamen
-
-```yaml
-local_id: 280958
-global_uri: https://parlament.winterthur.ch/behoerdenmitglieder/280958
-label: Cristina Bozzi-Brunel
-names:
-- name_type: PersonFirstName
-  value: Cristina
-- name_type: PersonOfficialName
-  value: Bozzi-Brunel
-- name_type: PersonOriginalName
-  value: Brunel
 
 ```
 #### Beispiel: Nicht-binaere Geschlechtsangabe mit Beruf und Abschluss
@@ -255,6 +227,20 @@ occupations:
 trainings:
 - training_type: '3223'
   value: MLaw
+
+```
+#### Beispiel: Gleichnamige Personen ueber das Label unterscheiden
+
+```yaml
+local_id: 6447
+global_uri: https://www.ur.ch/behoerdenmitglieder/6447
+label: Alois Arnold (1981)
+birth_year: 1981
+names:
+- name_type: PersonFirstName
+  value: Alois
+- name_type: PersonOfficialName
+  value: Arnold
 
 ```
 #### Beispiel: Vollstaendig erfasste Person
@@ -299,6 +285,20 @@ contacts:
   value: beat.jans@admin.ch
 - contact_type: contact_website
   value: http://www.beat-jans.ch
+
+```
+#### Beispiel: Telling apart persons with identical names via the label sec
+
+```yaml
+local_id: 6370
+global_uri: https://www.ur.ch/behoerdenmitglieder/6370
+label: Alois Arnold (1965)
+birth_year: 1965
+names:
+- name_type: PersonFirstName
+  value: Alois
+- name_type: PersonOfficialName
+  value: Arnold
 
 ```
 
@@ -960,6 +960,20 @@ __
 
 
 ### Beispiele
+#### Beispiel: Ratsbuero
+
+```yaml
+local_id: 50
+global_uri: https://grosserrat.bs.ch/gremien/praesidium-und-buero
+label:
+- value: Büro des Grossen Rates
+  language: de
+group_type:
+  group_type_enum: parliamentary_bureau
+  label: Ratsbüro
+spatial: https://ld.admin.ch/canton/12
+
+```
 #### Beispiel: Zweisprachige Delegation in ein interkantonales Gremium
 
 ```yaml
@@ -994,20 +1008,6 @@ spatial: https://ld.admin.ch/canton/10
 valid_from: 2007-12-12
 
 ```
-#### Beispiel: Gemeindeparlament mit raeumlicher Referenz
-
-```yaml
-local_id: 700
-global_uri: https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
-label:
-- value: Stadtparlament St. Gallen
-  language: de
-group_type:
-  group_type_enum: parliament
-  label: Parlament (Legislativrat)
-spatial: https://ld.admin.ch/municipality/3203
-
-```
 #### Beispiel: Fraktion eines Kantonsparlaments
 
 ```yaml
@@ -1025,11 +1025,45 @@ group_type:
 spatial: https://ld.admin.ch/canton/12
 
 ```
+#### Beispiel: Gemeindeparlament mit raeumlicher Referenz
+
+```yaml
+local_id: 700
+global_uri: https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
+label:
+- value: Stadtparlament St. Gallen
+  language: de
+group_type:
+  group_type_enum: parliament
+  label: Parlament (Legislativrat)
+spatial: https://ld.admin.ch/municipality/3203
+
+```
+#### Beispiel: Kommission mit gebraeuchlicher Abkuerzung
+
+```yaml
+local_id: 3
+global_uri: https://api.openparldata.ch/v1/groups/3
+label:
+- value: Geschäftsprüfungskommission
+  language: de
+abbreviation:
+- value: GPK
+  language: de
+landing_page:
+- value: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/
+  language: de
+group_type:
+  group_type_enum: commission
+  label: Kommission
+spatial: https://ld.admin.ch/canton/15
+
+```
 #### Beispiel: Interessengruppe mit dreisprachigem Namen und Kontakt
 
 ```yaml
 local_id: 6627
-global_uri: https://api.openparldata.ch/v1/groups/6627
+global_uri: https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz
 label:
 - value: Konsumenteninformation und -schutz
   language: de
@@ -1064,40 +1098,6 @@ group_type:
   label: Interessengruppe
 spatial: https://ld.admin.ch/country/CHE
 valid_from: 2012-01-01
-
-```
-#### Beispiel: Kommission mit gebraeuchlicher Abkuerzung
-
-```yaml
-local_id: 3
-global_uri: https://api.openparldata.ch/v1/groups/3
-label:
-- value: Geschäftsprüfungskommission
-  language: de
-abbreviation:
-- value: GPK
-  language: de
-landing_page:
-- value: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/
-  language: de
-group_type:
-  group_type_enum: commission
-  label: Kommission
-spatial: https://ld.admin.ch/canton/15
-
-```
-#### Beispiel: Ratsbuero
-
-```yaml
-local_id: 50
-global_uri: https://grosserrat.bs.ch/gremien/praesidium-und-buero
-label:
-- value: Büro des Grossen Rates
-  language: de
-group_type:
-  group_type_enum: parliamentary_bureau
-  label: Ratsbüro
-spatial: https://ld.admin.ch/canton/12
 
 ```
 

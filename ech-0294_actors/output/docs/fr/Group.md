@@ -64,7 +64,7 @@ __
 
 
 ### Exemples
-#### Exemple : Bureau du conseil
+#### Exemple : Council bureau
 
 ```yaml
 local_id: 50
@@ -78,41 +78,7 @@ group_type:
 spatial: https://ld.admin.ch/canton/12
 
 ```
-#### Exemple : Commission avec abreviation usuelle
-
-```yaml
-local_id: 3
-global_uri: https://api.openparldata.ch/v1/groups/3
-label:
-- value: Geschäftsprüfungskommission
-  language: de
-abbreviation:
-- value: GPK
-  language: de
-landing_page:
-- value: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/
-  language: de
-group_type:
-  group_type_enum: commission
-  label: Kommission
-spatial: https://ld.admin.ch/canton/15
-
-```
-#### Exemple : Parlement communal avec reference spatiale
-
-```yaml
-local_id: 700
-global_uri: https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
-label:
-- value: Stadtparlament St. Gallen
-  language: de
-group_type:
-  group_type_enum: parliament
-  label: Parlament (Legislativrat)
-spatial: https://ld.admin.ch/municipality/3203
-
-```
-#### Exemple : Delegation bilingue aupres d un organe intercantonal
+#### Exemple : Bilingual delegation to an intercantonal body
 
 ```yaml
 local_id: 5000
@@ -146,11 +112,62 @@ spatial: https://ld.admin.ch/canton/10
 valid_from: 2007-12-12
 
 ```
-#### Exemple : Groupe d interet avec nom trilingue et contact
+#### Exemple : Faction of a cantonal parliament
+
+```yaml
+local_id: 20
+global_uri: https://api.openparldata.ch/v1/groups/20
+label:
+- value: Evangelische Volkspartei
+  language: de
+landing_page:
+- value: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen
+  language: de
+group_type:
+  group_type_enum: faction
+  label: Fraktion
+spatial: https://ld.admin.ch/canton/12
+
+```
+#### Exemple : Municipal parliament with spatial reference
+
+```yaml
+local_id: 700
+global_uri: https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
+label:
+- value: Stadtparlament St. Gallen
+  language: de
+group_type:
+  group_type_enum: parliament
+  label: Parlament (Legislativrat)
+spatial: https://ld.admin.ch/municipality/3203
+
+```
+#### Exemple : Commission with a common abbreviation
+
+```yaml
+local_id: 3
+global_uri: https://api.openparldata.ch/v1/groups/3
+label:
+- value: Geschäftsprüfungskommission
+  language: de
+abbreviation:
+- value: GPK
+  language: de
+landing_page:
+- value: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/
+  language: de
+group_type:
+  group_type_enum: commission
+  label: Kommission
+spatial: https://ld.admin.ch/canton/15
+
+```
+#### Exemple : Interest group with a trilingual name and contact
 
 ```yaml
 local_id: 6627
-global_uri: https://api.openparldata.ch/v1/groups/6627
+global_uri: https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz
 label:
 - value: Konsumenteninformation und -schutz
   language: de
@@ -185,23 +202,6 @@ group_type:
   label: Interessengruppe
 spatial: https://ld.admin.ch/country/CHE
 valid_from: 2012-01-01
-
-```
-#### Exemple : Groupe parlementaire d un parlement cantonal
-
-```yaml
-local_id: 20
-global_uri: https://api.openparldata.ch/v1/groups/20
-label:
-- value: Evangelische Volkspartei
-  language: de
-landing_page:
-- value: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen
-  language: de
-group_type:
-  group_type_enum: faction
-  label: Fraktion
-spatial: https://ld.admin.ch/canton/12
 
 ```
 

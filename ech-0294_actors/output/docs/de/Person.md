@@ -65,50 +65,7 @@ __
 
 
 ### Beispiele
-#### Beispiel: Gleichnamige Personen ueber das Label unterscheiden
-
-```yaml
-local_id: 6447
-global_uri: https://www.ur.ch/behoerdenmitglieder/6447
-label: Alois Arnold (1981)
-birth_year: 1981
-names:
-- name_type: PersonFirstName
-  value: Alois
-- name_type: PersonOfficialName
-  value: Arnold
-
-```
-#### Beispiel: Rufname weicht vom amtlichen Vornamen ab
-
-```yaml
-local_id: 1269
-global_uri: https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
-label: Gerri Beretta-Piccoli
-names:
-- name_type: PersonFirstName
-  value: Fausto
-- name_type: PersonCallFirstName
-  value: Gerri
-- name_type: PersonOfficialName
-  value: Beretta-Piccoli
-
-```
-#### Beispiel: Gleichnamige Personen ueber das Label unterscheiden zweite P
-
-```yaml
-local_id: 6370
-global_uri: https://www.ur.ch/behoerdenmitglieder/6370
-label: Alois Arnold (1965)
-birth_year: 1965
-names:
-- name_type: PersonFirstName
-  value: Alois
-- name_type: PersonOfficialName
-  value: Arnold
-
-```
-#### Beispiel: Namensvariante neben dem amtlichen Doppelnamen
+#### Beispiel: Name variant alongside the official double name
 
 ```yaml
 local_id: 280958
@@ -123,7 +80,22 @@ names:
   value: Brunel
 
 ```
-#### Beispiel: Nicht-binaere Geschlechtsangabe mit Beruf und Abschluss
+#### Beispiel: Call name differing from the official first name
+
+```yaml
+local_id: 1269
+global_uri: https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
+label: Gerri Beretta-Piccoli
+names:
+- name_type: PersonFirstName
+  value: Fausto
+- name_type: PersonCallFirstName
+  value: Gerri
+- name_type: PersonOfficialName
+  value: Beretta-Piccoli
+
+```
+#### Beispiel: Non-binary gender entry with occupation and training
 
 ```yaml
 local_id: 72c7232be92944e3876f3b6723824ff9
@@ -146,7 +118,21 @@ trainings:
   value: MLaw
 
 ```
-#### Beispiel: Vollstaendig erfasste Person
+#### Beispiel: Telling apart persons with identical names via the label
+
+```yaml
+local_id: 6447
+global_uri: https://www.ur.ch/behoerdenmitglieder/6447
+label: Alois Arnold (1981)
+birth_year: 1981
+names:
+- name_type: PersonFirstName
+  value: Alois
+- name_type: PersonOfficialName
+  value: Arnold
+
+```
+#### Beispiel: Fully recorded person
 
 ```yaml
 local_id: 4032
@@ -188,6 +174,20 @@ contacts:
   value: beat.jans@admin.ch
 - contact_type: contact_website
   value: http://www.beat-jans.ch
+
+```
+#### Beispiel: Telling apart persons with identical names via the label sec
+
+```yaml
+local_id: 6370
+global_uri: https://www.ur.ch/behoerdenmitglieder/6370
+label: Alois Arnold (1965)
+birth_year: 1965
+names:
+- name_type: PersonFirstName
+  value: Alois
+- name_type: PersonOfficialName
+  value: Arnold
 
 ```
 

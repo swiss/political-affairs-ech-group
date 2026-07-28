@@ -64,7 +64,21 @@ __
 
 
 ### Beispiele
-#### Beispiel: Zweisprachige Delegation in ein interkantonales Gremium
+#### Beispiel: Council bureau
+
+```yaml
+local_id: 50
+global_uri: https://grosserrat.bs.ch/gremien/praesidium-und-buero
+label:
+- value: Büro des Grossen Rates
+  language: de
+group_type:
+  group_type_enum: parliamentary_bureau
+  label: Ratsbüro
+spatial: https://ld.admin.ch/canton/12
+
+```
+#### Beispiel: Bilingual delegation to an intercantonal body
 
 ```yaml
 local_id: 5000
@@ -98,21 +112,7 @@ spatial: https://ld.admin.ch/canton/10
 valid_from: 2007-12-12
 
 ```
-#### Beispiel: Gemeindeparlament mit raeumlicher Referenz
-
-```yaml
-local_id: 700
-global_uri: https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
-label:
-- value: Stadtparlament St. Gallen
-  language: de
-group_type:
-  group_type_enum: parliament
-  label: Parlament (Legislativrat)
-spatial: https://ld.admin.ch/municipality/3203
-
-```
-#### Beispiel: Fraktion eines Kantonsparlaments
+#### Beispiel: Faction of a cantonal parliament
 
 ```yaml
 local_id: 20
@@ -129,11 +129,45 @@ group_type:
 spatial: https://ld.admin.ch/canton/12
 
 ```
-#### Beispiel: Interessengruppe mit dreisprachigem Namen und Kontakt
+#### Beispiel: Municipal parliament with spatial reference
+
+```yaml
+local_id: 700
+global_uri: https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
+label:
+- value: Stadtparlament St. Gallen
+  language: de
+group_type:
+  group_type_enum: parliament
+  label: Parlament (Legislativrat)
+spatial: https://ld.admin.ch/municipality/3203
+
+```
+#### Beispiel: Commission with a common abbreviation
+
+```yaml
+local_id: 3
+global_uri: https://api.openparldata.ch/v1/groups/3
+label:
+- value: Geschäftsprüfungskommission
+  language: de
+abbreviation:
+- value: GPK
+  language: de
+landing_page:
+- value: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/
+  language: de
+group_type:
+  group_type_enum: commission
+  label: Kommission
+spatial: https://ld.admin.ch/canton/15
+
+```
+#### Beispiel: Interest group with a trilingual name and contact
 
 ```yaml
 local_id: 6627
-global_uri: https://api.openparldata.ch/v1/groups/6627
+global_uri: https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz
 label:
 - value: Konsumenteninformation und -schutz
   language: de
@@ -168,40 +202,6 @@ group_type:
   label: Interessengruppe
 spatial: https://ld.admin.ch/country/CHE
 valid_from: 2012-01-01
-
-```
-#### Beispiel: Kommission mit gebraeuchlicher Abkuerzung
-
-```yaml
-local_id: 3
-global_uri: https://api.openparldata.ch/v1/groups/3
-label:
-- value: Geschäftsprüfungskommission
-  language: de
-abbreviation:
-- value: GPK
-  language: de
-landing_page:
-- value: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/
-  language: de
-group_type:
-  group_type_enum: commission
-  label: Kommission
-spatial: https://ld.admin.ch/canton/15
-
-```
-#### Beispiel: Ratsbuero
-
-```yaml
-local_id: 50
-global_uri: https://grosserrat.bs.ch/gremien/praesidium-und-buero
-label:
-- value: Büro des Grossen Rates
-  language: de
-group_type:
-  group_type_enum: parliamentary_bureau
-  label: Ratsbüro
-spatial: https://ld.admin.ch/canton/12
 
 ```
 

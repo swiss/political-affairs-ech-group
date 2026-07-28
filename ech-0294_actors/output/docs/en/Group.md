@@ -167,7 +167,7 @@ spatial: https://ld.admin.ch/canton/15
 
 ```yaml
 local_id: 6627
-global_uri: https://api.openparldata.ch/v1/groups/6627
+global_uri: https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz
 label:
 - value: Konsumenteninformation und -schutz
   language: de
