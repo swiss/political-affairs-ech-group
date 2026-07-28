@@ -26,10 +26,10 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/parliament](act:enum/group_type/parliament) |
 | delegation |  Delegation.  |
 | | [act:enum/group_type/delegation](act:enum/group_type/delegation) |
-| commission |  Kommission (ständig oder ad-hoc), einschliesslich Aufsichtskommissionen (z.B. GPK), Sachkommissionen, Parlamentarische Untersuchungskommissionen (PUK) und Rechnungsprüfungskommissionen.  |
-| | [act:enum/group_type/commission](act:enum/group_type/commission) |
-| faction |  Parlamentsfraktion.  |
-| | [act:enum/group_type/faction](act:enum/group_type/faction) |
+| committee |  Kommission (ständig oder ad-hoc), einschliesslich Aufsichtskommissionen (z.B. GPK), Sachkommissionen, Parlamentarische Untersuchungskommissionen (PUK) und Rechnungsprüfungskommissionen.  |
+| | [act:enum/group_type/committee](act:enum/group_type/committee) |
+| parliamentary_group |  Parlamentsfraktion.  |
+| | [act:enum/group_type/parliamentary_group](act:enum/group_type/parliamentary_group) |
 | parliamentary_bureau |  Parlamentsbüro.  |
 | | [act:enum/group_type/parliamentary_bureau](act:enum/group_type/parliamentary_bureau) |
 | presidency |  Präsidium des Parlaments.  |
@@ -40,8 +40,8 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/department](act:enum/group_type/department) |
 | office |  Amt.  |
 | | [act:enum/group_type/office](act:enum/group_type/office) |
-| extraparliamentary_commission |  Ausserparlamentarische Kommission mit Regierungsauftrag (z.B. Bankrat der Schweizerischen Nationalbank, FINMA).  |
-| | [act:enum/group_type/extraparliamentary_commission](act:enum/group_type/extraparliamentary_commission) |
+| extraparliamentary_committee |  Ausserparlamentarische Kommission mit Regierungsauftrag (z.B. Bankrat der Schweizerischen Nationalbank, FINMA).  |
+| | [act:enum/group_type/extraparliamentary_committee](act:enum/group_type/extraparliamentary_committee) |
 | interest_group |  Interessengruppe aus der Zivilgesellschaft.  |
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |
 | control_body |  Kontroll- oder Aufsichtsorgan (z.B. Eidgenössische Finanzkontrolle EFK, Aufsichtsbehörde AB-BA).  |

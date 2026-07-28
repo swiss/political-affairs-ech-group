@@ -18,7 +18,7 @@ act:groups_example a act:Container ;
     mcm:localId "20" ;
     act:groupType [ a act:GroupType ;
             mcm:label "Fraktion" ;
-            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/faction> ] ;
+            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/parliamentary_group> ] ;
     act:landingPage [ a mcm:MultilingualUri ;
             mcm:language "de" ;
             mcm:value <https://grosserrat.bs.ch/gremien/parteien-und-fraktionen> ] ;
@@ -34,7 +34,7 @@ act:groups_example a act:Container ;
     mcm:localId "3" ;
     act:groupType [ a act:GroupType ;
             mcm:label "Kommission" ;
-            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/commission> ] ;
+            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/committee> ] ;
     act:landingPage [ a mcm:MultilingualUri ;
             mcm:language "de" ;
             mcm:value <https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/> ] ;
@@ -123,11 +123,11 @@ act:groups_example a act:Container ;
             mcm:label "Delegation" ;
             act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/delegation> ] ;
     act:landingPage [ a mcm:MultilingualUri ;
-            mcm:language "fr" ;
-            mcm:value <https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5> ],
-        [ a mcm:MultilingualUri ;
             mcm:language "de" ;
-            mcm:value <https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5> ] ;
+            mcm:value <https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5> ],
+        [ a mcm:MultilingualUri ;
+            mcm:language "fr" ;
+            mcm:value <https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5> ] ;
     act:spatial "https://ld.admin.ch/canton/10" .
 
 

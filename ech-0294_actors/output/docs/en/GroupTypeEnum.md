@@ -26,10 +26,10 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/parliament](act:enum/group_type/parliament) |
 | delegation |  Delegation.  |
 | | [act:enum/group_type/delegation](act:enum/group_type/delegation) |
-| commission |  Commission (permanent or ad-hoc), including supervisory commissions (e.g., CPC), subject commissions, parliamentary investigation commissions (PIC), and audit commissions.  |
-| | [act:enum/group_type/commission](act:enum/group_type/commission) |
-| faction |  Parliamentary faction.  |
-| | [act:enum/group_type/faction](act:enum/group_type/faction) |
+| committee |  Commission (permanent or ad-hoc), including supervisory commissions (e.g., CPC), subject commissions, parliamentary investigation commissions (PIC), and audit commissions.  |
+| | [act:enum/group_type/committee](act:enum/group_type/committee) |
+| parliamentary_group |  Parliamentary faction.  |
+| | [act:enum/group_type/parliamentary_group](act:enum/group_type/parliamentary_group) |
 | parliamentary_bureau |  Parliamentary bureau.  |
 | | [act:enum/group_type/parliamentary_bureau](act:enum/group_type/parliamentary_bureau) |
 | presidency |  Presidency of parliament.  |
@@ -40,8 +40,8 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/department](act:enum/group_type/department) |
 | office |  Government office.  |
 | | [act:enum/group_type/office](act:enum/group_type/office) |
-| extraparliamentary_commission |  Extra-parliamentary commission with a government mandate (e.g., Bank Council of the Swiss National Bank, FINMA).  |
-| | [act:enum/group_type/extraparliamentary_commission](act:enum/group_type/extraparliamentary_commission) |
+| extraparliamentary_committee |  Extra-parliamentary commission with a government mandate (e.g., Bank Council of the Swiss National Bank, FINMA).  |
+| | [act:enum/group_type/extraparliamentary_committee](act:enum/group_type/extraparliamentary_committee) |
 | interest_group |  Interest group from civil society.  |
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |
 | control_body |  Control or supervisory body (e.g., Federal Finance Control EFC, supervisory authority AB-BA).  |

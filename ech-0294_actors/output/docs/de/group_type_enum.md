@@ -61,9 +61,9 @@ URI: [act:groupTypeEnum](https://ld.ech.ch/schema/0294/actors/groupTypeEnum)
 
 | Wert |
 | --- |
-| commission |
+| committee |
 | delegation |
-| faction |
+| interest_group |
 
 
 
@@ -89,9 +89,9 @@ description: 'Link zum kontrollierten Vokabular für Gruppentypen.
 
   '
 examples:
-- value: commission
+- value: committee
 - value: delegation
-- value: faction
+- value: interest_group
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:groupTypeEnum

@@ -77,7 +77,7 @@
     {
       "global_uri": "https://api.openparldata.ch/v1/groups/20",
       "group_type": {
-        "group_type_enum": "faction",
+        "group_type_enum": "parliamentary_group",
         "label": "Fraktion"
       },
       "label": [
@@ -98,7 +98,7 @@
     {
       "global_uri": "https://api.openparldata.ch/v1/groups/3",
       "group_type": {
-        "group_type_enum": "commission",
+        "group_type_enum": "committee",
         "label": "Kommission"
       },
       "label": [

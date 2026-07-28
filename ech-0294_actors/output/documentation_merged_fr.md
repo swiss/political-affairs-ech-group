@@ -175,7 +175,7 @@ __
 
 
 ### Exemples
-#### Exemple : Variante de nom a cote du double nom officiel
+#### Exemple : Variante de nom à côté du double nom officiel
 
 ```yaml
 local_id: 280958
@@ -190,7 +190,7 @@ names:
   value: Brunel
 
 ```
-#### Exemple : Prenom usuel different du prenom officiel
+#### Exemple : Prénom usuel différent du prénom officiel
 
 ```yaml
 local_id: 1269
@@ -242,7 +242,7 @@ names:
   value: Arnold
 
 ```
-#### Exemple : Personne saisie de maniere complete
+#### Exemple : Personne saisie de manière complète
 
 ```yaml
 local_id: 4032
@@ -973,7 +973,7 @@ group_type:
 spatial: https://ld.admin.ch/canton/12
 
 ```
-#### Exemple : Delegation bilingue aupres d un organe intercantonal
+#### Exemple : Délégation bilingue auprès d'un organe intercantonal
 
 ```yaml
 local_id: 5000
@@ -1007,7 +1007,7 @@ spatial: https://ld.admin.ch/canton/10
 valid_from: 2007-12-12
 
 ```
-#### Exemple : Groupe parlementaire d un parlement cantonal
+#### Exemple : Groupe parlementaire d'un parlement cantonal
 
 ```yaml
 local_id: 20
@@ -1019,12 +1019,12 @@ landing_page:
 - value: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen
   language: de
 group_type:
-  group_type_enum: faction
+  group_type_enum: parliamentary_group
   label: Fraktion
 spatial: https://ld.admin.ch/canton/12
 
 ```
-#### Exemple : Parlement communal avec reference spatiale
+#### Exemple : Parlement communal avec référence spatiale
 
 ```yaml
 local_id: 700
@@ -1038,7 +1038,7 @@ group_type:
 spatial: https://ld.admin.ch/municipality/3203
 
 ```
-#### Exemple : Commission avec abreviation usuelle
+#### Exemple : Commission avec abréviation usuelle
 
 ```yaml
 local_id: 3
@@ -1053,12 +1053,12 @@ landing_page:
 - value: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/
   language: de
 group_type:
-  group_type_enum: commission
+  group_type_enum: committee
   label: Kommission
 spatial: https://ld.admin.ch/canton/15
 
 ```
-#### Exemple : Groupe d interet avec nom trilingue et contact
+#### Exemple : Groupe d'intérêt avec nom trilingue et contact
 
 ```yaml
 local_id: 6627
@@ -1188,10 +1188,10 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/parliament](act:enum/group_type/parliament) |
 | delegation |  Délégation.  |
 | | [act:enum/group_type/delegation](act:enum/group_type/delegation) |
-| commission |  Commission (permanente ou ad hoc), y compris les commissions de surveillance (p. ex. CdG), les commissions thématiques, les commissions d'enquête parlementaire (CEP) et les commissions de vérification des comptes.  |
-| | [act:enum/group_type/commission](act:enum/group_type/commission) |
-| faction |  Groupe parlementaire.  |
-| | [act:enum/group_type/faction](act:enum/group_type/faction) |
+| committee |  Commission (permanente ou ad hoc), y compris les commissions de surveillance (p. ex. CdG), les commissions thématiques, les commissions d'enquête parlementaire (CEP) et les commissions de vérification des comptes.  |
+| | [act:enum/group_type/committee](act:enum/group_type/committee) |
+| parliamentary_group |  Groupe parlementaire.  |
+| | [act:enum/group_type/parliamentary_group](act:enum/group_type/parliamentary_group) |
 | parliamentary_bureau |  Bureau du parlement.  |
 | | [act:enum/group_type/parliamentary_bureau](act:enum/group_type/parliamentary_bureau) |
 | presidency |  Présidence du parlement.  |
@@ -1202,8 +1202,8 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/department](act:enum/group_type/department) |
 | office |  Office gouvernemental.  |
 | | [act:enum/group_type/office](act:enum/group_type/office) |
-| extraparliamentary_commission |  Commission extraparlementaire dotée d'un mandat gouvernemental (p. ex. Conseil de banque de la Banque nationale suisse, FINMA).  |
-| | [act:enum/group_type/extraparliamentary_commission](act:enum/group_type/extraparliamentary_commission) |
+| extraparliamentary_committee |  Commission extraparlementaire dotée d'un mandat gouvernemental (p. ex. Conseil de banque de la Banque nationale suisse, FINMA).  |
+| | [act:enum/group_type/extraparliamentary_committee](act:enum/group_type/extraparliamentary_committee) |
 | interest_group |  Groupe d'intérêts issu de la société civile.  |
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |
 | control_body |  Organe de contrôle ou de surveillance (p. ex. Contrôle fédéral des finances CDF, autorité de surveillance AS-MPC).  |

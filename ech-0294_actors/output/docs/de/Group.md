@@ -124,7 +124,7 @@ landing_page:
 - value: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen
   language: de
 group_type:
-  group_type_enum: faction
+  group_type_enum: parliamentary_group
   label: Fraktion
 spatial: https://ld.admin.ch/canton/12
 
@@ -158,7 +158,7 @@ landing_page:
 - value: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/
   language: de
 group_type:
-  group_type_enum: commission
+  group_type_enum: committee
   label: Kommission
 spatial: https://ld.admin.ch/canton/15
 

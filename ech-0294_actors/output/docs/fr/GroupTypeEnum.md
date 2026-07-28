@@ -26,10 +26,10 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/parliament](act:enum/group_type/parliament) |
 | delegation |  Délégation.  |
 | | [act:enum/group_type/delegation](act:enum/group_type/delegation) |
-| commission |  Commission (permanente ou ad hoc), y compris les commissions de surveillance (p. ex. CdG), les commissions thématiques, les commissions d'enquête parlementaire (CEP) et les commissions de vérification des comptes.  |
-| | [act:enum/group_type/commission](act:enum/group_type/commission) |
-| faction |  Groupe parlementaire.  |
-| | [act:enum/group_type/faction](act:enum/group_type/faction) |
+| committee |  Commission (permanente ou ad hoc), y compris les commissions de surveillance (p. ex. CdG), les commissions thématiques, les commissions d'enquête parlementaire (CEP) et les commissions de vérification des comptes.  |
+| | [act:enum/group_type/committee](act:enum/group_type/committee) |
+| parliamentary_group |  Groupe parlementaire.  |
+| | [act:enum/group_type/parliamentary_group](act:enum/group_type/parliamentary_group) |
 | parliamentary_bureau |  Bureau du parlement.  |
 | | [act:enum/group_type/parliamentary_bureau](act:enum/group_type/parliamentary_bureau) |
 | presidency |  Présidence du parlement.  |
@@ -40,8 +40,8 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/department](act:enum/group_type/department) |
 | office |  Office gouvernemental.  |
 | | [act:enum/group_type/office](act:enum/group_type/office) |
-| extraparliamentary_commission |  Commission extraparlementaire dotée d'un mandat gouvernemental (p. ex. Conseil de banque de la Banque nationale suisse, FINMA).  |
-| | [act:enum/group_type/extraparliamentary_commission](act:enum/group_type/extraparliamentary_commission) |
+| extraparliamentary_committee |  Commission extraparlementaire dotée d'un mandat gouvernemental (p. ex. Conseil de banque de la Banque nationale suisse, FINMA).  |
+| | [act:enum/group_type/extraparliamentary_committee](act:enum/group_type/extraparliamentary_committee) |
 | interest_group |  Groupe d'intérêts issu de la société civile.  |
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |
 | control_body |  Organe de contrôle ou de surveillance (p. ex. Contrôle fédéral des finances CDF, autorité de surveillance AS-MPC).  |
