@@ -73,11 +73,17 @@ def slugify(text: str) -> str:
 def title_for_instance(obj, titles: dict, lang: str) -> str:
     """Return the configured, language-specific title for an instance, if any.
 
-    Keyed by `local_id`, so a data file can be reordered or renamed without
-    breaking the mapping. Falls back to German, then to any language present.
+    Keyed by `local_id`, or by `global_uri` where an instance carries no local
+    identifier, so a data file can be reordered or renamed without breaking the
+    mapping. Falls back to German, then to any language present.
     """
-    key = str(obj.get("local_id", "")) if isinstance(obj, dict) else ""
-    entry = titles.get(key)
+    if not isinstance(obj, dict):
+        return ""
+    entry = None
+    for key in ("local_id", "global_uri"):
+        entry = titles.get(str(obj.get(key, "")))
+        if entry:
+            break
     if not entry:
         return ""
     if isinstance(entry, str):

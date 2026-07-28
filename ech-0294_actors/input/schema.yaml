@@ -107,6 +107,7 @@ classes:
       - label
       - abbreviation
       - description
+      - organization_uid
       - landing_page
       - parent_groups
       - spatial

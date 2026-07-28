@@ -38,6 +38,7 @@ slots:
   - training_type
   - name_type
   - group_type_enum
+  - organization_uid
   - spatial
 
 max_examples_per_slot: 3
@@ -79,10 +80,18 @@ example_titles:
     de: Gemeindeparlament mit räumlicher Referenz
     fr: Parlement communal avec référence spatiale
     en: Municipal parliament with spatial reference
-  "20":
-    de: Fraktion eines Kantonsparlaments
-    fr: "Groupe parlementaire d'un parlement cantonal"
-    en: Parliamentary group of a cantonal parliament
+  "33":
+    de: Kantonsparlament als übergeordnete Gruppe
+    fr: Parlement cantonal comme groupe supérieur
+    en: Cantonal parliament as a superordinate group
+  "1266":
+    de: Fraktion mit Verweis auf Parlament und tragende Parteien
+    fr: Groupe parlementaire renvoyant au parlement et aux partis porteurs
+    en: Parliamentary group referencing its parliament and supporting parties
+  "https://www.frc.ch/":
+    de: Verein mit UID aus dem Handelsregister
+    fr: Association avec IDE du registre du commerce
+    en: Association with a UID from the commercial register
   "3":
     de: Kommission mit gebräuchlicher Abkürzung
     fr: Commission avec abréviation usuelle
