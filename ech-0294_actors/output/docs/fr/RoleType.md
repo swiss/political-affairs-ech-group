@@ -3,7 +3,7 @@
 ## Classe: RoleType 
 
 
-_Rôle d'une personne dans une affiliation ou une fonction (p. ex. membre, président, suppléant). Si un rôle ne figure pas dans le vocabulaire RoleEnum proposé, la valeur « other » peut être utilisée, et un libellé descriptif doit être fourni dans le slot `role_label`. Le libellé peut également être utilisé lorsqu'une désignation spécifique est nécessaire, même s'il existe une valeur sémantique appropriée dans `role_type_enum` ; il doit être fourni lorsque `role_type_enum` est réglé sur « other »._
+_Rôle d'une personne dans une affiliation ou une fonction (p. ex. membre, président, suppléant). Si un rôle ne figure pas dans le vocabulaire RoleEnum proposé, la valeur « other » peut être utilisée, et un libellé descriptif doit être fourni dans le slot `role_label`. Le libellé peut également être utilisé lorsqu'une désignation spécifique est nécessaire, même s'il existe une valeur sémantique appropriée dans `role_type_enum` ; il doit être fourni lorsque `role_type_enum` est réglé sur « other ». La désignation est saisie avec la langue dans laquelle elle est publiée ; lorsqu'elle est publiée en plusieurs langues, une entrée est saisie par langue._
 
 __
 
@@ -19,7 +19,7 @@ __
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
 | role_type_enum | 0..1 <br/> [RoleEnum](RoleEnum.md) | Rôle de la personne dans l'affiliation ou la fonction.  |
-| role_label | 0..1 <br/> [String](String.md) | Libellé de rôle spécifique. À utiliser lorsqu'un nom de rôle spécifique est nécessaire, même s'il existe une valeur sémantique appropriée dans `role_type_enum` ; fournir ce libellé lorsque « role_type_enum » est réglé sur « other ».  |
+| role_label | * <br/> [MultilingualValue](MultilingualValue.md) | Libellé de rôle spécifique. À utiliser lorsqu'un nom de rôle spécifique est nécessaire, même s'il existe une valeur sémantique appropriée dans `role_type_enum` ; fournir ce libellé lorsque « role_type_enum » est réglé sur « other ».  |
 
 ##### Contraintes
 

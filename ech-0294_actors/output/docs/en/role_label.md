@@ -40,13 +40,14 @@ URI: [act:role_label](https://ld.ech.ch/schema/0294/actors/role_label)
 
 | Property | Value |
 | --- | --- |
-| Range | [String](String.md) |
+| Range | [MultilingualValue](MultilingualValue.md) |
 | Domain Of | [RoleType](RoleType.md) |
 
 ### Cardinality and Requirements
 
 | Property | Value |
 | --- | --- |
+| Multivalued | Yes |
 
 
 
@@ -89,7 +90,10 @@ from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 domain_of:
 - RoleType
-range: string
+range: MultilingualValue
+multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details></div>
