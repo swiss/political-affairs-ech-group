@@ -97,6 +97,20 @@ def process_includes(file_link, lang=None):
 
     return content
 
+def slugify(text):
+    """Mirror of `slugify()` in extract_examples.py.
+
+    The example file names are built from the title with that function, and
+    gen-doc turns the file name back into the heading. To match a heading to
+    its configured title, the same transformation has to be applied here —
+    matching on the raw title would fail wherever it contains punctuation
+    (brackets, apostrophes) or exceeds the length limit.
+    """
+    text = text.replace(" ", "_").replace("/", "_").replace(".", "_")
+    text = re.sub(r"[^A-Za-z0-9_-]", "", text)
+    return text[:80]
+
+
 def localize_example_headings(content, path, lang):
     """Translate the example headings into `lang`.
 
@@ -126,7 +140,7 @@ def localize_example_headings(content, path, lang):
         written = entry.get(source_lang)
         wanted = entry.get(lang)
         if written and wanted and written != wanted:
-            mapping[written.replace("_", " ")] = wanted
+            mapping[slugify(written).replace("_", " ")] = wanted
 
     if not mapping:
         return content

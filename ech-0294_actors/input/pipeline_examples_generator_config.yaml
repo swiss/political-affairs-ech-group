@@ -82,11 +82,11 @@ example_titles:
   "20":
     de: Fraktion eines Kantonsparlaments
     fr: "Groupe parlementaire d'un parlement cantonal"
-    en: Faction of a cantonal parliament
+    en: Parliamentary group of a cantonal parliament
   "3":
     de: Kommission mit gebräuchlicher Abkürzung
     fr: Commission avec abréviation usuelle
-    en: Commission with a common abbreviation
+    en: Committee with a common abbreviation
   "50":
     de: Ratsbüro
     fr: Bureau du conseil

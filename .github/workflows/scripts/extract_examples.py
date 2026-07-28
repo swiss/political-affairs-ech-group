@@ -60,9 +60,14 @@ SLOT_TO_CLASS = {
 
 
 def slugify(text: str) -> str:
+    """Turn a title into a file name; gen-doc renders it back as the heading.
+
+    Kept in sync with `slugify()` in merge_documentation.py, which reproduces
+    the same transformation to match a heading back to its configured title.
+    """
     text = text.replace(" ", "_").replace("/", "_").replace(".", "_")
     text = re.sub(r"[^A-Za-z0-9_-]", "", text)
-    return text[:60]
+    return text[:80]
 
 
 def title_for_instance(obj, titles: dict, lang: str) -> str:
