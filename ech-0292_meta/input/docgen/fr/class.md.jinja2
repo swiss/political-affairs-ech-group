@@ -215,7 +215,7 @@ Aucun des champs suivants ne doit être renseigné :
 {% if gen.example_object_blobs(element.name) -%}
 ### Exemples
 {% for name, blob in gen.example_object_blobs(element.name) -%}
-#### Exemple : {{ name }}
+#### Exemple : {{ (name.split('-', 1)[1] if '-' in name else name) | replace('_', ' ') }}
 
 ```yaml
 {{ blob }}

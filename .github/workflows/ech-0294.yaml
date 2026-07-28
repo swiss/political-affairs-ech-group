@@ -78,7 +78,7 @@ jobs:
             gen-doc "$DOC_SCHEMA" \
               --directory "ech-0294_actors/output/docs/${lang}" \
               --template-directory "ech-0292_meta/input/docgen/${lang}" \
-              --example-directory ech-0294_actors/output/examples
+              --example-directory "ech-0294_actors/output/examples/${lang}"
           done
 
           # This schema is an intermediate artifact for doc generation only.

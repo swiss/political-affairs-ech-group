@@ -65,6 +65,21 @@ def slugify(text: str) -> str:
     return text[:60]
 
 
+def title_for_instance(obj, titles: dict, lang: str) -> str:
+    """Return the configured, language-specific title for an instance, if any.
+
+    Keyed by `local_id`, so a data file can be reordered or renamed without
+    breaking the mapping. Falls back to German, then to any language present.
+    """
+    key = str(obj.get("local_id", "")) if isinstance(obj, dict) else ""
+    entry = titles.get(key)
+    if not entry:
+        return ""
+    if isinstance(entry, str):
+        return slugify(entry)
+    return slugify(entry.get(lang) or entry.get("de") or next(iter(entry.values()), ""))
+
+
 def label_for_instance(obj, index: int) -> str:
     for key in ("label", "global_uri", "name", "id"):
         if key in obj and obj[key]:
@@ -74,7 +89,8 @@ def label_for_instance(obj, index: int) -> str:
     return str(index + 1)
 
 
-def extract_nested(obj, context: str, allowed_classes: set, parent_label: str = "") -> list:
+def extract_nested(obj, context: str, allowed_classes: set, parent_label: str = "",
+                   titles: dict = None, lang: str = "de") -> list:
     """Recursively extract class-level examples for allowed classes."""
     results = []
     if not isinstance(obj, dict):
@@ -91,10 +107,15 @@ def extract_nested(obj, context: str, allowed_classes: set, parent_label: str = 
                 continue
             item_label = label_for_instance(item, i)
             if class_name in allowed_classes:
-                prefix = f"{parent_label}_" if parent_label else ""
-                filename = f"{class_name}-{context}_{prefix}{item_label}.yaml"
+                title = title_for_instance(item, titles or {}, lang)
+                if title:
+                    filename = f"{class_name}-{title}.yaml"
+                else:
+                    prefix = f"{parent_label}_" if parent_label else ""
+                    filename = f"{class_name}-{context}_{prefix}{item_label}.yaml"
                 results.append((filename, item))
-            results.extend(extract_nested(item, context, allowed_classes, item_label))
+            results.extend(extract_nested(item, context, allowed_classes, item_label,
+                                          titles, lang))
 
     return results
 
@@ -157,6 +178,11 @@ def extract(ech_folder: str):
     allowed_classes = set(config.get("classes", []))
     allowed_slots = set(config.get("slots", []))
     max_examples = config.get("max_examples_per_slot", 3)
+    example_titles = config.get("example_titles", {}) or {}
+    # One example set per document language: the YAML content is identical, only
+    # the file names differ, and gen-doc renders the file name as the heading.
+    languages = sorted({lang for entry in example_titles.values()
+                        if isinstance(entry, dict) for lang in entry}) or ["de"]
 
     print(f"Config: classes={sorted(allowed_classes)}")
     print(f"Config: slots={sorted(allowed_slots)}")
@@ -186,13 +212,23 @@ def extract(ech_folder: str):
         if not isinstance(data, dict):
             continue
 
-        # Class examples
+        # Class examples, one directory per language
+        for lang in languages:
+            lang_dir = examples_dir / lang
+            lang_dir.mkdir(parents=True, exist_ok=True)
+            for filename, item in extract_nested(data, stem, allowed_classes,
+                                                 titles=example_titles, lang=lang):
+                with open(lang_dir / filename, "w", encoding="utf-8") as f:
+                    yaml.dump(item, f, default_flow_style=False,
+                              allow_unicode=True, sort_keys=False, width=100)
+            shutil.copy2(data_file, lang_dir / f"Container-{stem}.yaml")
+
         extracted = extract_nested(data, stem, allowed_classes)
         for filename, item in extracted:
             filepath = examples_dir / filename
             with open(filepath, "w", encoding="utf-8") as f:
                 yaml.dump(item, f, default_flow_style=False,
-                          allow_unicode=True, sort_keys=False)
+                          allow_unicode=True, sort_keys=False, width=100)
             print(f"  {filename}")
 
         # Slot values
