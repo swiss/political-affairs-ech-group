@@ -1,9 +1,0 @@
-local_id: 33
-global_uri: https://www.grosserrat.bs.ch/
-label:
-- value: Grosser Rat Basel-Stadt
-  language: de
-group_type:
-  group_type_enum: council_legislative
-  label: Parlament (Legislativrat)
-spatial: https://ld.admin.ch/canton/12

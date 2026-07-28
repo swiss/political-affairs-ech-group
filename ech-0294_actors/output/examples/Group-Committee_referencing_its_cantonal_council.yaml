@@ -1,0 +1,24 @@
+groups:
+- local_id: 34
+  global_uri: https://www.ar.ch/kantonsrat/
+  label:
+  - value: Kantonsrat Appenzell Ausserrhoden
+    language: de
+  group_type:
+    group_type_enum: council_legislative
+    label: Parlament (Legislativrat)
+  spatial: https://ld.admin.ch/canton/15
+- local_id: 3
+  global_uri: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/
+  label:
+  - value: Geschäftsprüfungskommission
+    language: de
+  parent_groups:
+  - https://www.ar.ch/kantonsrat/
+  abbreviation:
+  - value: GPK
+    language: de
+  group_type:
+    group_type_enum: committee
+    label: Kommission
+  spatial: https://ld.admin.ch/canton/15

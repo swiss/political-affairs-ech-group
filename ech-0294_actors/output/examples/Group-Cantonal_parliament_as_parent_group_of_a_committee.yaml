@@ -1,9 +1,0 @@
-local_id: 34
-global_uri: https://www.ar.ch/kantonsrat/
-label:
-- value: Kantonsrat Appenzell Ausserrhoden
-  language: de
-group_type:
-  group_type_enum: council_legislative
-  label: Parlament (Legislativrat)
-spatial: https://ld.admin.ch/canton/15
