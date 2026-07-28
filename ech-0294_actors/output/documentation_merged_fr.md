@@ -1043,6 +1043,36 @@ group_type:
 spatial: https://ld.admin.ch/canton/12
 
 ```
+#### Exemple : Chancellerie d'État comme état-major de l'exécutif
+
+```yaml
+local_id: 7172
+global_uri: https://www.bs.ch/regierungsrat/staatskanzlei
+label:
+- value: Staatskanzlei Basel-Stadt
+  language: de
+parent_groups:
+- https://www.regierungsrat.bs.ch/
+group_type:
+  group_type_enum: council_secretariat
+  label: Staatskanzlei
+spatial: https://ld.admin.ch/canton/12
+
+```
+#### Exemple : Conseil exécutif d'un canton
+
+```yaml
+local_id: 1300
+global_uri: https://www.regierungsrat.bs.ch/
+label:
+- value: Regierungsrat Basel-Stadt
+  language: de
+group_type:
+  group_type_enum: council_executive
+  label: Regierung (Exekutivrat)
+spatial: https://ld.admin.ch/canton/12
+
+```
 #### Exemple : Parlement communal avec référence spatiale
 
 ```yaml
@@ -1249,7 +1279,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |
 | control_body |  Organe de contrôle ou de surveillance (p. ex. Contrôle fédéral des finances CDF, autorité de surveillance AS-MPC).  |
 | | [act:enum/group_type/control_body](act:enum/group_type/control_body) |
-| council_secretariat |  Unité administrative au service d'un conseil, quelle que soit sa désignation locale (services du parlement, secrétariat du conseil, chancellerie communale ou municipale). S'emploie aussi bien pour le conseil législatif que pour le conseil exécutif.  |
+| council_secretariat |  Unité administrative au service d'un conseil, quelle que soit sa désignation locale (services du parlement, secrétariat du conseil, chancellerie d'État, cantonale ou communale). S'emploie aussi bien pour le conseil législatif que pour le conseil exécutif : la chancellerie d'État est l'état-major du conseil exécutif, les services du parlement celui du conseil législatif.  |
 | | [act:enum/group_type/council_secretariat](act:enum/group_type/council_secretariat) |
 | court |  Tribunal / pouvoir judiciaire à tout niveau (p. ex. Tribunal fédéral, tribunal cantonal, tribunal de district).  |
 | | [act:enum/group_type/court](act:enum/group_type/court) |

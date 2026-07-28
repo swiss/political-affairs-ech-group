@@ -1044,6 +1044,36 @@ group_type:
 spatial: https://ld.admin.ch/canton/12
 
 ```
+#### Example: State chancellery as the staff unit of the executive
+
+```yaml
+local_id: 7172
+global_uri: https://www.bs.ch/regierungsrat/staatskanzlei
+label:
+- value: Staatskanzlei Basel-Stadt
+  language: de
+parent_groups:
+- https://www.regierungsrat.bs.ch/
+group_type:
+  group_type_enum: council_secretariat
+  label: Staatskanzlei
+spatial: https://ld.admin.ch/canton/12
+
+```
+#### Example: Executive council of a canton
+
+```yaml
+local_id: 1300
+global_uri: https://www.regierungsrat.bs.ch/
+label:
+- value: Regierungsrat Basel-Stadt
+  language: de
+group_type:
+  group_type_enum: council_executive
+  label: Regierung (Exekutivrat)
+spatial: https://ld.admin.ch/canton/12
+
+```
 #### Example: Municipal parliament with spatial reference
 
 ```yaml
@@ -1250,7 +1280,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |
 | control_body |  Control or supervisory body (e.g., Federal Finance Control EFC, supervisory authority AB-BA).  |
 | | [act:enum/group_type/control_body](act:enum/group_type/control_body) |
-| council_secretariat |  Administrative unit serving a council, whatever it is called locally (parliamentary services, council secretariat, city or municipal chancellery). Used for the legislative as well as the executive council.  |
+| council_secretariat |  Administrative unit serving a council, whatever it is called locally (parliamentary services, council secretariat, state, cantonal or municipal chancellery). Used for the legislative as well as the executive council: the state chancellery is the staff unit of the executive council, the parliamentary services are that of the legislative council.  |
 | | [act:enum/group_type/council_secretariat](act:enum/group_type/council_secretariat) |
 | court |  Court / Judiciary at any level (e.g., Federal Court, Cantonal Court, District Court).  |
 | | [act:enum/group_type/court](act:enum/group_type/court) |

@@ -148,6 +148,36 @@ group_type:
 spatial: https://ld.admin.ch/canton/12
 
 ```
+#### Exemple : State chancellery as the staff unit of the executive
+
+```yaml
+local_id: 7172
+global_uri: https://www.bs.ch/regierungsrat/staatskanzlei
+label:
+- value: Staatskanzlei Basel-Stadt
+  language: de
+parent_groups:
+- https://www.regierungsrat.bs.ch/
+group_type:
+  group_type_enum: council_secretariat
+  label: Staatskanzlei
+spatial: https://ld.admin.ch/canton/12
+
+```
+#### Exemple : Executive council of a canton
+
+```yaml
+local_id: 1300
+global_uri: https://www.regierungsrat.bs.ch/
+label:
+- value: Regierungsrat Basel-Stadt
+  language: de
+group_type:
+  group_type_enum: council_executive
+  label: Regierung (Exekutivrat)
+spatial: https://ld.admin.ch/canton/12
+
+```
 #### Exemple : Municipal parliament with spatial reference
 
 ```yaml

@@ -428,6 +428,32 @@ groups:
       label: Parlament (Legislativrat)
     spatial: https://ld.admin.ch/canton/12
 
+  # Exekutivrat desselben Kantons, mit der Staatskanzlei als nachgeordneter
+  # Stabsstelle. Das Paar zeigt, dass `council_secretariat` nicht auf das
+  # Parlament beschränkt ist: Die Staatskanzlei bedient die Exekutive, die
+  # Parlamentsdienste die Legislative — derselbe Typ, verschiedene Räte.
+  - local_id: 1300
+    global_uri: https://www.regierungsrat.bs.ch/
+    label:
+      - value: Regierungsrat Basel-Stadt
+        language: de
+    group_type:
+      group_type_enum: council_executive
+      label: Regierung (Exekutivrat)
+    spatial: https://ld.admin.ch/canton/12
+
+  - local_id: 7172
+    global_uri: https://www.bs.ch/regierungsrat/staatskanzlei
+    label:
+      - value: Staatskanzlei Basel-Stadt
+        language: de
+    parent_groups:
+      - https://www.regierungsrat.bs.ch/
+    group_type:
+      group_type_enum: council_secretariat
+      label: Staatskanzlei
+    spatial: https://ld.admin.ch/canton/12
+
   # Fraktion im Grossen Rat Basel-Stadt. Sie zeigt den typenübergreifenden und
   # mehrfachen Verweis über `parent_groups`: Die Fraktion gehört zum Parlament
   # und wird zugleich von zwei Parteien getragen, die je eine eigene Gruppe

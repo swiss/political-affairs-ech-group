@@ -50,7 +50,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |
 | control_body |  Control or supervisory body (e.g., Federal Finance Control EFC, supervisory authority AB-BA).  |
 | | [act:enum/group_type/control_body](act:enum/group_type/control_body) |
-| council_secretariat |  Administrative unit serving a council, whatever it is called locally (parliamentary services, council secretariat, city or municipal chancellery). Used for the legislative as well as the executive council.  |
+| council_secretariat |  Administrative unit serving a council, whatever it is called locally (parliamentary services, council secretariat, state, cantonal or municipal chancellery). Used for the legislative as well as the executive council: the state chancellery is the staff unit of the executive council, the parliamentary services are that of the legislative council.  |
 | | [act:enum/group_type/council_secretariat](act:enum/group_type/council_secretariat) |
 | court |  Court / Judiciary at any level (e.g., Federal Court, Cantonal Court, District Court).  |
 | | [act:enum/group_type/court](act:enum/group_type/court) |
