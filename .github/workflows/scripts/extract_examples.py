@@ -116,9 +116,25 @@ def label_for_instance(obj, index: int) -> str:
     return str(index + 1)
 
 
+def instance_key(obj) -> str:
+    """The key an instance is addressed by in the configuration."""
+    if not isinstance(obj, dict):
+        return ""
+    for key in ("local_id", "global_uri"):
+        value = obj.get(key)
+        if value:
+            return str(value)
+    return ""
+
+
 def extract_nested(obj, context: str, allowed_classes: set, parent_label: str = "",
-                   titles: dict = None, lang: str = "de") -> list:
-    """Recursively extract class-level examples for allowed classes."""
+                   titles: dict = None, lang: str = "de",
+                   held_back: set = None, collected: dict = None) -> list:
+    """Recursively extract class-level examples for allowed classes.
+
+    Instances listed in `held_back` are not written on their own; they are put
+    into `collected` so that a composite example can assemble them afterwards.
+    """
     results = []
     if not isinstance(obj, dict):
         return results
@@ -134,15 +150,19 @@ def extract_nested(obj, context: str, allowed_classes: set, parent_label: str = 
                 continue
             item_label = label_for_instance(item, i)
             if class_name in allowed_classes:
-                title = title_for_instance(item, titles or {}, lang)
-                if title:
-                    filename = f"{class_name}-{title}.yaml"
+                key = instance_key(item)
+                if held_back and key in held_back:
+                    collected[key] = item
                 else:
-                    prefix = f"{parent_label}_" if parent_label else ""
-                    filename = f"{class_name}-{context}_{prefix}{item_label}.yaml"
-                results.append((filename, item))
+                    title = title_for_instance(item, titles or {}, lang)
+                    if title:
+                        filename = f"{class_name}-{title}.yaml"
+                    else:
+                        prefix = f"{parent_label}_" if parent_label else ""
+                        filename = f"{class_name}-{context}_{prefix}{item_label}.yaml"
+                    results.append((filename, item))
             results.extend(extract_nested(item, context, allowed_classes, item_label,
-                                          titles, lang))
+                                          titles, lang, held_back, collected))
 
     return results
 
@@ -195,6 +215,34 @@ def load_config(ech_folder: Path) -> dict:
     return config
 
 
+CLASS_TO_SLOT = {cls: slot for slot, cls in SLOT_TO_CLASS.items()}
+
+
+def write_composites(composites: list, collected: dict, examples_dir: Path, lang: str):
+    """Write one file per composite example, holding all its members.
+
+    The members are wrapped in their container slot, so the file reads like an
+    excerpt of a data file and a relation between the instances -- who refers to
+    whom -- can be followed within the one listing.
+    """
+    for composite in composites:
+        class_name = composite.get("class")
+        slot_name = CLASS_TO_SLOT.get(class_name)
+        title = composite.get(lang) or composite.get("de") or ""
+        members = [collected[m] for m in (composite.get("members") or []) if m in collected]
+        missing = [m for m in (composite.get("members") or []) if m not in collected]
+        if missing:
+            print(f"  WARNING: composite '{title}' misses members {missing}")
+        if not (class_name and slot_name and title and members):
+            print(f"  WARNING: composite '{title}' skipped (class/slot/title/members missing)")
+            continue
+        filename = f"{class_name}-{slugify(title)}.yaml"
+        with open(examples_dir / filename, "w", encoding="utf-8") as f:
+            yaml.dump({slot_name: members}, f, default_flow_style=False,
+                      allow_unicode=True, sort_keys=False, width=100)
+        print(f"  {filename}  (composite of {len(members)})")
+
+
 def extract(ech_folder: str):
     base = Path(ech_folder)
     input_dir = base / "input"
@@ -210,6 +258,11 @@ def extract(ech_folder: str):
     # -- which gen-doc renders as the heading -- are written in the schema
     # language (English) rather than duplicated per language.
     title_lang = config.get("example_title_language", "en")
+    # Composite examples show several instances together -- the only way to make
+    # a relation between them, such as parent_groups, visible in one listing.
+    composites = config.get("composite_examples") or []
+    held_back = {m for c in composites for m in (c.get("members") or [])}
+    collected = {}
 
     print(f"Config: classes={sorted(allowed_classes)}")
     print(f"Config: slots={sorted(allowed_slots)}")
@@ -241,7 +294,8 @@ def extract(ech_folder: str):
 
         # Class examples
         extracted = extract_nested(data, stem, allowed_classes,
-                                   titles=example_titles, lang=title_lang)
+                                   titles=example_titles, lang=title_lang,
+                                   held_back=held_back, collected=collected)
         for filename, item in extracted:
             filepath = examples_dir / filename
             with open(filepath, "w", encoding="utf-8") as f:
@@ -252,6 +306,8 @@ def extract(ech_folder: str):
         # Slot values
         if allowed_slots:
             collect_slot_values(data, allowed_slots, slot_values)
+
+    write_composites(composites, collected, examples_dir, title_lang)
 
     print(f"\nClass examples written to {examples_dir}")
 

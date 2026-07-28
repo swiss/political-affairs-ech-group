@@ -132,9 +132,13 @@ def localize_example_headings(content, path, lang):
     titles = config.get("example_titles") or {}
     source_lang = config.get("example_title_language", "en")
 
+    # Composite examples carry their titles inline rather than keyed by an
+    # instance, but their headings are localized in exactly the same way.
+    entries = list(titles.values()) + list(config.get("composite_examples") or [])
+
     # Heading as written by gen-doc -> title in the target language.
     mapping = {}
-    for entry in titles.values():
+    for entry in entries:
         if not isinstance(entry, dict):
             continue
         written = entry.get(source_lang)

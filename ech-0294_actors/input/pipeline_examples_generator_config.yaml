@@ -80,26 +80,10 @@ example_titles:
     de: Gemeindeparlament mit räumlicher Referenz
     fr: Parlement communal avec référence spatiale
     en: Municipal parliament with spatial reference
-  "33":
-    de: Kantonsparlament als übergeordnete Gruppe von Büro und Fraktion
-    fr: "Parlement cantonal, groupe supérieur du bureau et d'un groupe parlementaire"
-    en: Cantonal parliament as parent group of bureau and parliamentary group
   "https://www.weko.admin.ch/":
     de: Ausserparlamentarische Kommission mit Entscheidbefugnis
     fr: Commission extraparlementaire dotée du pouvoir de décision
     en: Extra-parliamentary commission with decision-making powers
-  "1300":
-    de: Exekutivrat eines Kantons
-    fr: "Conseil exécutif d'un canton"
-    en: Executive council of a canton
-  "7172":
-    de: Staatskanzlei als Stabsstelle der Exekutive
-    fr: "Chancellerie d'État comme état-major de l'exécutif"
-    en: State chancellery as the staff unit of the executive
-  "34":
-    de: Kantonsparlament als übergeordnete Gruppe einer Kommission
-    fr: "Parlement cantonal comme groupe supérieur d'une commission"
-    en: Cantonal parliament as parent group of a committee
   "https://bs.die-mitte.ch/":
     de: Kantonalpartei, welche eine Fraktionsgemeinschaft mitträgt
     fr: Parti cantonal co-portant un groupe parlementaire commun
@@ -116,14 +100,6 @@ example_titles:
     de: Verein mit UID und Rechtsform aus dem Handelsregister
     fr: Association avec IDE et forme juridique du registre du commerce
     en: Association with UID and legal form from the commercial register
-  "3":
-    de: Kommission mit gebräuchlicher Abkürzung
-    fr: Commission avec abréviation usuelle
-    en: Committee with a common abbreviation
-  "50":
-    de: Ratsbüro
-    fr: Bureau du conseil
-    en: Council bureau
   "5000":
     de: Zweisprachige Delegation in ein interkantonales Gremium
     fr: "Délégation bilingue auprès d'un organe intercantonal"
@@ -174,3 +150,23 @@ example_titles:
     de: Ehrenamtliche Mitwirkung im Trägerverein eines Grossprojekts
     fr: "Participation bénévole à l'association porteuse d'un grand projet"
     en: Voluntary involvement in the association carrying a major project
+# Zusammengesetzte Beispiele. Sie bündeln mehrere Instanzen in einer Auflistung,
+# damit eine Beziehung zwischen ihnen — etwa `parent_groups` — überhaupt
+# sichtbar wird; ein Beispiel je Instanz kann das nicht zeigen. Die genannten
+# Instanzen erscheinen dafür nicht mehr einzeln.
+composite_examples:
+  - class: Group
+    members: ["33", "50"]
+    de: Ratsbüro mit Verweis auf sein Parlament
+    fr: Bureau du conseil renvoyant à son parlement
+    en: Council bureau referencing its parliament
+  - class: Group
+    members: ["34", "3"]
+    de: Kommission mit Verweis auf ihren Kantonsrat
+    fr: Commission renvoyant à son conseil cantonal
+    en: Committee referencing its cantonal council
+  - class: Group
+    members: ["1300", "7172"]
+    de: Staatskanzlei mit Verweis auf ihre Regierung
+    fr: "Chancellerie d'État renvoyant à son gouvernement"
+    en: State chancellery referencing its government
