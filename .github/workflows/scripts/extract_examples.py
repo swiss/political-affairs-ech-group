@@ -179,10 +179,10 @@ def extract(ech_folder: str):
     allowed_slots = set(config.get("slots", []))
     max_examples = config.get("max_examples_per_slot", 3)
     example_titles = config.get("example_titles", {}) or {}
-    # One example set per document language: the YAML content is identical, only
-    # the file names differ, and gen-doc renders the file name as the heading.
-    languages = sorted({lang for entry in example_titles.values()
-                        if isinstance(entry, dict) for lang in entry}) or ["de"]
+    # The same example files are used for every document language, so their names
+    # -- which gen-doc renders as the heading -- are written in the schema
+    # language (English) rather than duplicated per language.
+    title_lang = config.get("example_title_language", "en")
 
     print(f"Config: classes={sorted(allowed_classes)}")
     print(f"Config: slots={sorted(allowed_slots)}")
@@ -212,18 +212,9 @@ def extract(ech_folder: str):
         if not isinstance(data, dict):
             continue
 
-        # Class examples, one directory per language
-        for lang in languages:
-            lang_dir = examples_dir / lang
-            lang_dir.mkdir(parents=True, exist_ok=True)
-            for filename, item in extract_nested(data, stem, allowed_classes,
-                                                 titles=example_titles, lang=lang):
-                with open(lang_dir / filename, "w", encoding="utf-8") as f:
-                    yaml.dump(item, f, default_flow_style=False,
-                              allow_unicode=True, sort_keys=False, width=100)
-            shutil.copy2(data_file, lang_dir / f"Container-{stem}.yaml")
-
-        extracted = extract_nested(data, stem, allowed_classes)
+        # Class examples
+        extracted = extract_nested(data, stem, allowed_classes,
+                                   titles=example_titles, lang=title_lang)
         for filename, item in extracted:
             filepath = examples_dir / filename
             with open(filepath, "w", encoding="utf-8") as f:
