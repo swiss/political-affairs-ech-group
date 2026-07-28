@@ -287,7 +287,7 @@ contacts:
   value: http://www.beat-jans.ch
 
 ```
-#### Beispiel: Telling apart persons with identical names via the label sec
+#### Beispiel: Gleichnamige Personen über das Label unterscheiden (zweite Person)
 
 ```yaml
 local_id: 6370
@@ -960,6 +960,23 @@ __
 
 
 ### Beispiele
+#### Beispiel: Fraktion eines Kantonsparlaments
+
+```yaml
+local_id: 20
+global_uri: https://api.openparldata.ch/v1/groups/20
+label:
+- value: Evangelische Volkspartei
+  language: de
+landing_page:
+- value: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen
+  language: de
+group_type:
+  group_type_enum: parliamentary_group
+  label: Fraktion
+spatial: https://ld.admin.ch/canton/12
+
+```
 #### Beispiel: Ratsbüro
 
 ```yaml
@@ -1006,23 +1023,6 @@ group_type:
   label: Delegation
 spatial: https://ld.admin.ch/canton/10
 valid_from: 2007-12-12
-
-```
-#### Beispiel: Fraktion eines Kantonsparlaments
-
-```yaml
-local_id: 20
-global_uri: https://api.openparldata.ch/v1/groups/20
-label:
-- value: Evangelische Volkspartei
-  language: de
-landing_page:
-- value: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen
-  language: de
-group_type:
-  group_type_enum: parliamentary_group
-  label: Fraktion
-spatial: https://ld.admin.ch/canton/12
 
 ```
 #### Beispiel: Gemeindeparlament mit räumlicher Referenz

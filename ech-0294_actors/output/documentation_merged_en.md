@@ -287,7 +287,7 @@ contacts:
   value: http://www.beat-jans.ch
 
 ```
-#### Example: Telling apart persons with identical names via the label sec
+#### Example: Telling apart persons with identical names via the label second person
 
 ```yaml
 local_id: 6370
@@ -890,9 +890,9 @@ URI: [act:TrainingTypeEnum](https://ld.ech.ch/schema/0294/actors/TrainingTypeEnu
 
 The group schema represents political groups, organisations and corporate bodies.
 
-- **One generic model instead of many special classes:** Parliaments, parties, parliamentary groups, commissions, departments, courts and civil-society organisations are all represented as *one* class `Group` and distinguished via `group_type`. This keeps the model simple and extensible without schema changes – the legislature, executive, judiciary and civil society can thus all be represented equally.
-- **Groups and sub-groups via `parent_groups`:** Subordinate groups reference their superordinate group – e.g. a commission of the Council of States, a subcommission within a commission, a cantonal party under its parent party, or an authority within a directorate. The hierarchy thus arises from these references rather than from a fixed level structure. It usually remains within the same `group_type`; however, cross-type and multiple references are possible (e.g. a parliamentary group that references both its parliament and its party).
-- **Temporal validity for groups as well:** Using `valid_from`/`valid_through`, it is possible to represent, for example, commissions that exist only during a legislative period, or renamings and mergers of parties.
+- **One generic model instead of many special classes:** Parliaments, parties, parliamentary groups, committees, departments, courts and civil-society organisations are all represented as *one* class `Group` and distinguished via `group_type`. This keeps the model simple and extensible without schema changes – the legislature, executive, judiciary and civil society can thus all be represented equally.
+- **Groups and sub-groups via `parent_groups`:** Subordinate groups reference their superordinate group – e.g. a committee of the Council of States, a subcommittee within a committee, a cantonal party under its parent party, or an authority within a directorate. The hierarchy thus arises from these references rather than from a fixed level structure. It usually remains within the same `group_type`; however, cross-type and multiple references are possible (e.g. a parliamentary group that references both its parliament and its party).
+- **Temporal validity for groups as well:** Using `valid_from`/`valid_through`, it is possible to represent, for example, committees that exist only during a legislative period, or renamings and mergers of parties.
 
 
 
@@ -960,6 +960,23 @@ __
 
 
 ### Examples
+#### Example: Parliamentary group of a cantonal parliament
+
+```yaml
+local_id: 20
+global_uri: https://api.openparldata.ch/v1/groups/20
+label:
+- value: Evangelische Volkspartei
+  language: de
+landing_page:
+- value: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen
+  language: de
+group_type:
+  group_type_enum: parliamentary_group
+  label: Fraktion
+spatial: https://ld.admin.ch/canton/12
+
+```
 #### Example: Council bureau
 
 ```yaml
@@ -1008,23 +1025,6 @@ spatial: https://ld.admin.ch/canton/10
 valid_from: 2007-12-12
 
 ```
-#### Example: Faction of a cantonal parliament
-
-```yaml
-local_id: 20
-global_uri: https://api.openparldata.ch/v1/groups/20
-label:
-- value: Evangelische Volkspartei
-  language: de
-landing_page:
-- value: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen
-  language: de
-group_type:
-  group_type_enum: parliamentary_group
-  label: Fraktion
-spatial: https://ld.admin.ch/canton/12
-
-```
 #### Example: Municipal parliament with spatial reference
 
 ```yaml
@@ -1039,7 +1039,7 @@ group_type:
 spatial: https://ld.admin.ch/municipality/3203
 
 ```
-#### Example: Commission with a common abbreviation
+#### Example: Committee with a common abbreviation
 
 ```yaml
 local_id: 3

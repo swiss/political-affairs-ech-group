@@ -176,7 +176,7 @@ contacts:
   value: http://www.beat-jans.ch
 
 ```
-#### Beispiel: Telling apart persons with identical names via the label sec
+#### Beispiel: Telling apart persons with identical names via the label second person
 
 ```yaml
 local_id: 6370

@@ -64,6 +64,23 @@ __
 
 
 ### Beispiele
+#### Beispiel: Parliamentary group of a cantonal parliament
+
+```yaml
+local_id: 20
+global_uri: https://api.openparldata.ch/v1/groups/20
+label:
+- value: Evangelische Volkspartei
+  language: de
+landing_page:
+- value: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen
+  language: de
+group_type:
+  group_type_enum: parliamentary_group
+  label: Fraktion
+spatial: https://ld.admin.ch/canton/12
+
+```
 #### Beispiel: Council bureau
 
 ```yaml
@@ -112,23 +129,6 @@ spatial: https://ld.admin.ch/canton/10
 valid_from: 2007-12-12
 
 ```
-#### Beispiel: Faction of a cantonal parliament
-
-```yaml
-local_id: 20
-global_uri: https://api.openparldata.ch/v1/groups/20
-label:
-- value: Evangelische Volkspartei
-  language: de
-landing_page:
-- value: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen
-  language: de
-group_type:
-  group_type_enum: parliamentary_group
-  label: Fraktion
-spatial: https://ld.admin.ch/canton/12
-
-```
 #### Beispiel: Municipal parliament with spatial reference
 
 ```yaml
@@ -143,7 +143,7 @@ group_type:
 spatial: https://ld.admin.ch/municipality/3203
 
 ```
-#### Beispiel: Commission with a common abbreviation
+#### Beispiel: Committee with a common abbreviation
 
 ```yaml
 local_id: 3
