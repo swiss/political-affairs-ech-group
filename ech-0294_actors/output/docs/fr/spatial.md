@@ -56,6 +56,15 @@ URI: [act:spatial](https://ld.ech.ch/schema/0294/actors/spatial)
 
 
 
+## Exemples
+
+| Valeur |
+| --- |
+| https://ld.admin.ch/canton/10 |
+| https://ld.admin.ch/canton/12 |
+| https://ld.admin.ch/canton/15 |
+
+
 
 
 
@@ -84,6 +93,10 @@ description: 'Référence spatiale (numéro OFS de commune, numéro OFS de canto
   pays : ld.admin.ch/country/CHE.
 
   '
+examples:
+- value: https://ld.admin.ch/canton/10
+- value: https://ld.admin.ch/canton/12
+- value: https://ld.admin.ch/canton/15
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 domain_of:

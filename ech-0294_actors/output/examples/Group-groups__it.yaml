@@ -1,0 +1,20 @@
+local_id: 6627
+global_uri: https://api.openparldata.ch/v1/groups/6627
+label:
+- value: Konsumenteninformation und -schutz
+  language: de
+- value: Information et défense des consommateurs
+  language: fr
+- value: Informazione e tutela dei consumatori
+  language: it
+description:
+- value: L'intergroupe parlementaire « Information et défense des consommateurs »
+    réunit toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer
+    et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s
+    en Suisse.
+  language: fr
+group_type:
+  group_type_enum: interest_group
+  label: Interessengruppe
+spatial: https://ld.admin.ch/country/CHE
+valid_from: 2012-01-01

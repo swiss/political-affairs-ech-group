@@ -915,10 +915,10 @@ __
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
 | group_type | 1 <br/> [GroupType](#GroupType) | Type of group (e.g., party, commission, parliament, or similar). The exact naming and description of the group is provided via `label`.  |
-| label | 1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
+| label | 1..* <br/> [MultilingualValue](#MultilingualValue) | Name of the group, with the language it is published in. Where a group is officially named in several languages, one entry per language is recorded.  |
 | abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abbreviation (can be multilingual).  |
 | description | * <br/> [MultilingualValue](#MultilingualValue) | Description of the entity.  |
-| landing_page | 0..1 <br/> [Uri](#Uri) | Website providing further information.  |
+| landing_page | * <br/> [MultilingualUri](#MultilingualUri) | Website providing further information. Where the site is published under a separate address per language, one entry per language is recorded.  |
 | parent_groups | * <br/> [Uriorcurie](#Uriorcurie) | Link to parent groups. For example, the parent party for cantonal parties, or to describe the hierarchy in the executive. Also used to link sub-commissions to commissions, or factions to both their parliament and their party. (parentGroup is typically used within the same group_type, but cross-type links are permitted, e.g., faction → parliament and faction → party.)  |
 | spatial | 0..1 <br/> [String](#String) | Spatial reference (fos-municipality number, fos-canton number, or country). Formats: municipality: ld.admin.ch/municipality/1234, canton: ld.admin.ch/canton/23, country: ld.admin.ch/country/CHE.  |
 | contacts | * <br/> [Contact](#Contact) | Contact information (email, website, social media). Guideline: email is quasi-mandatory and should always be provided where available.  |
@@ -958,6 +958,86 @@ __
 
 
 
+
+### Examples
+#### Example: Group-groups__it
+
+```yaml
+local_id: 6627
+global_uri: https://api.openparldata.ch/v1/groups/6627
+label:
+- value: Konsumenteninformation und -schutz
+  language: de
+- value: Information et défense des consommateurs
+  language: fr
+- value: Informazione e tutela dei consumatori
+  language: it
+description:
+- value: L'intergroupe parlementaire « Information et défense des consommateurs »
+    réunit toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer
+    et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s
+    en Suisse.
+  language: fr
+group_type:
+  group_type_enum: interest_group
+  label: Interessengruppe
+spatial: https://ld.admin.ch/country/CHE
+valid_from: 2012-01-01
+
+```
+#### Example: Group-groups__de
+
+```yaml
+local_id: 50
+global_uri: https://api.openparldata.ch/v1/groups/50
+label:
+- value: Büro des Grossen Rates
+  language: de
+group_type:
+  group_type_enum: parliamentary_bureau
+  label: Ratsbüro
+spatial: https://ld.admin.ch/canton/12
+
+```
+#### Example: Group-groups__fr
+
+```yaml
+local_id: 5000
+global_uri: https://api.openparldata.ch/v1/groups/5000
+label:
+- value: Freiburger Delegation IPK strafrechtliche Einschliessung
+  language: de
+- value: Délégation FR à la CIP détention pénale
+  language: fr
+abbreviation:
+- value: Del-StRFE
+  language: de
+- value: Del-DetPen
+  language: fr
+description:
+- value: Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung
+    besteht aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg,
+    Genf, Jura, Neuenburg, Waadt und Wallis. Sie ist für die parlamentarische Aufsicht
+    über den Vollzug der beiden lateinischen Konkordate über den strafrechtlichen
+    Freiheitsentzug zuständig.
+  language: de
+- value: 'La Commission interparlementaire de contrôle détention pénale est composée
+    de 18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel,
+    Vaud et Valais. Elle est chargée de la surveillance parlementaire de l''exécution
+    des deux concordats latins sur la détention pénale.'
+  language: fr
+landing_page:
+- value: https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
+  language: de
+- value: https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
+  language: fr
+group_type:
+  group_type_enum: delegation
+  label: Delegation
+spatial: https://ld.admin.ch/canton/10
+valid_from: 2007-12-12
+
+```
 
 
 

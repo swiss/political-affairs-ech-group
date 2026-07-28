@@ -57,6 +57,15 @@ URI: [act:groupTypeEnum](https://ld.ech.ch/schema/0294/actors/groupTypeEnum)
 
 
 
+## Examples
+
+| Value |
+| --- |
+| commission |
+| delegation |
+| faction |
+
+
 
 
 
@@ -79,6 +88,10 @@ annotations:
 description: 'Link to the controlled vocabulary for group types.
 
   '
+examples:
+- value: commission
+- value: delegation
+- value: faction
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:groupTypeEnum

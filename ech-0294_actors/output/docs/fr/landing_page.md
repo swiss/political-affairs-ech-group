@@ -6,7 +6,7 @@ search:
 # Slot: landing_page 
 
 
-_Site web fournissant de plus amples informations._
+_Site web fournissant de plus amples informations. Lorsque le site est publié à une adresse propre par langue, une entrée est saisie par langue._
 
 __
 
@@ -40,7 +40,7 @@ URI: [act:landingPage](https://ld.ech.ch/schema/0294/actors/landingPage)
 
 | Propriété | Valeur |
 | --- | --- |
-| Plage | [Uri](Uri.md) |
+| Plage | [MultilingualUri](MultilingualUri.md) |
 | Domaine de | [Group](Group.md) |
 | URI du slot | [act:landingPage](https://ld.ech.ch/schema/0294/actors/landingPage) |
 
@@ -48,6 +48,7 @@ URI: [act:landingPage](https://ld.ech.ch/schema/0294/actors/landingPage)
 
 | Propriété | Valeur |
 | --- | --- |
+| Multivalué | Yes |
 
 
 
@@ -68,15 +69,18 @@ name: landing_page
 annotations:
   description_de:
     tag: description_de
-    value: 'Website mit weiteren Informationen.
+    value: 'Website mit weiteren Informationen. Wird die Website je Sprache unter
+      einer eigenen Adresse publiziert, wird pro Sprache ein Eintrag erfasst.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Site web fournissant de plus amples informations.
+    value: 'Site web fournissant de plus amples informations. Lorsque le site est
+      publié à une adresse propre par langue, une entrée est saisie par langue.
 
       '
-description: 'Site web fournissant de plus amples informations.
+description: 'Site web fournissant de plus amples informations. Lorsque le site est
+  publié à une adresse propre par langue, une entrée est saisie par langue.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors
@@ -84,7 +88,10 @@ rank: 1000
 slot_uri: act:landingPage
 domain_of:
 - Group
-range: uri
+range: MultilingualUri
+multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details></div>

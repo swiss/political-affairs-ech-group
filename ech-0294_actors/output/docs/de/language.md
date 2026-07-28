@@ -29,6 +29,7 @@ URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
 | --- | --- | --- |
 | [LanguageProficiency](LanguageProficiency.md) | Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um die be... |  yes  |
 | [MultilingualValue](MultilingualValue.md) | Ein mehrsprachiger String mit Angabe der Sprache |  no  |
+| [MultilingualUri](MultilingualUri.md) | Eine URI zusammen mit der Sprache der Ressource, auf die sie verweist |  yes  |
 
 
 
@@ -42,7 +43,7 @@ URI: [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [String](String.md) |
-| Domäne von | [LanguageProficiency](LanguageProficiency.md), [MultilingualValue](MultilingualValue.md) |
+| Domäne von | [LanguageProficiency](LanguageProficiency.md), [MultilingualValue](MultilingualValue.md), [MultilingualUri](MultilingualUri.md) |
 | Slot-URI | [mcm:language](https://ld.ech.ch/schema/0292/meta-common/language) |
 
 ### Kardinalität und Anforderungen
@@ -96,6 +97,7 @@ slot_uri: mcm:language
 domain_of:
 - LanguageProficiency
 - MultilingualValue
+- MultilingualUri
 range: string
 pattern: ^[a-z]{2}$
 

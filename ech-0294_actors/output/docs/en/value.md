@@ -31,6 +31,7 @@ URI: [mcm:value](https://ld.ech.ch/schema/0292/meta-common/value)
 | [Training](Training.md) | Training or education of a person indicating a type (e |  no  |
 | [Contact](Contact.md) | Contact information of a person indicating a type (e |  yes  |
 | [MultilingualValue](MultilingualValue.md) | A multilingual string with language specification |  yes  |
+| [MultilingualUri](MultilingualUri.md) | A URI together with the language of the resource it points to |  yes  |
 
 
 
@@ -44,7 +45,7 @@ URI: [mcm:value](https://ld.ech.ch/schema/0292/meta-common/value)
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [Name](Name.md), [Training](Training.md), [Contact](Contact.md), [MultilingualValue](MultilingualValue.md) |
+| Domain Of | [Name](Name.md), [Training](Training.md), [Contact](Contact.md), [MultilingualValue](MultilingualValue.md), [MultilingualUri](MultilingualUri.md) |
 | Slot URI | [mcm:value](https://ld.ech.ch/schema/0292/meta-common/value) |
 
 ### Cardinality and Requirements
@@ -93,6 +94,7 @@ domain_of:
 - Training
 - Contact
 - MultilingualValue
+- MultilingualUri
 range: string
 
 ```

@@ -29,6 +29,7 @@ __
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
+| [Group](Group.md) | [label](label.md) | range | [MultilingualValue](MultilingualValue.md) |
 | [Group](Group.md) | [abbreviation](abbreviation.md) | range | [MultilingualValue](MultilingualValue.md) |
 | [Group](Group.md) | [description](description.md) | range | [MultilingualValue](MultilingualValue.md) |
 | [GroupReference](GroupReference.md) | [abbreviation](abbreviation.md) | range | [MultilingualValue](MultilingualValue.md) |

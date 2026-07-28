@@ -400,14 +400,19 @@
                     ]
                 },
                 "label": {
-                    "description": "Assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
-                    "type": "string"
+                    "description": "Name of the group, with the language it is published in. Where a group is officially named in several languages, one entry per language is recorded.\n",
+                    "items": {
+                        "$ref": "#/$defs/MultilingualValue"
+                    },
+                    "type": "array"
                 },
                 "landing_page": {
-                    "description": "Website providing further information.\n",
-                    "format": "uri",
+                    "description": "Website providing further information. Where the site is published under a separate address per language, one entry per language is recorded.\n",
+                    "items": {
+                        "$ref": "#/$defs/MultilingualUri"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
@@ -1247,6 +1252,28 @@
                 "global_uri"
             ],
             "title": "Membership",
+            "type": "object"
+        },
+        "MultilingualUri": {
+            "additionalProperties": false,
+            "description": "A URI together with the language of the resource it points to. Same structure as MultilingualValue, but the value is a URI: it is used where the same content is published under a separate address per language.",
+            "properties": {
+                "language": {
+                    "description": "Language code in ISO 639-1 format (two lowercase letters, e.g. \"de\", \"fr\", \"it\", \"en\").\n",
+                    "pattern": "^[a-z]{2}$",
+                    "type": "string"
+                },
+                "value": {
+                    "description": "The value of an information besides other attributes such as type, language, etc.\n",
+                    "format": "uri",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "value",
+                "language"
+            ],
+            "title": "MultilingualUri",
             "type": "object"
         },
         "MultilingualValue": {

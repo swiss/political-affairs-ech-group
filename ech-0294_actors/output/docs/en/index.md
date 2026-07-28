@@ -31,6 +31,7 @@ Name: actors-schema
 | [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |
 | [LanguageProficiency](LanguageProficiency.md) | Language proficiency of a person indicating the language and whether it is th... |
 | [Membership](Membership.md) | A membership relationship between a person and a group, representing formal a... |
+| [MultilingualUri](MultilingualUri.md) | A URI together with the language of the resource it points to |
 | [MultilingualValue](MultilingualValue.md) | A multilingual string with language specification |
 | [Name](Name.md) | A name with a type (e |
 | [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |

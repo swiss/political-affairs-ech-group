@@ -1,0 +1,152 @@
+{
+  "global_uri": "act:groups_example",
+  "groups": [
+    {
+      "global_uri": "https://api.openparldata.ch/v1/groups/6627",
+      "group_type": {
+        "group_type_enum": "interest_group",
+        "label": "Interessengruppe"
+      },
+      "label": [
+        {
+          "value": "Konsumenteninformation und -schutz",
+          "language": "de"
+        },
+        {
+          "value": "Information et défense des consommateurs",
+          "language": "fr"
+        },
+        {
+          "value": "Informazione e tutela dei consumatori",
+          "language": "it"
+        }
+      ],
+      "description": [
+        {
+          "value": "L'intergroupe parlementaire « Information et défense des consommateurs » réunit toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s en Suisse.",
+          "language": "fr"
+        }
+      ],
+      "spatial": "https://ld.admin.ch/country/CHE",
+      "local_id": "6627",
+      "valid_from": "2012-01-01"
+    },
+    {
+      "global_uri": "https://api.openparldata.ch/v1/groups/700",
+      "group_type": {
+        "group_type_enum": "parliament",
+        "label": "Parlament (Legislativrat)"
+      },
+      "label": [
+        {
+          "value": "Stadtparlament St. Gallen",
+          "language": "de"
+        }
+      ],
+      "spatial": "https://ld.admin.ch/municipality/3203",
+      "local_id": "700"
+    },
+    {
+      "global_uri": "https://api.openparldata.ch/v1/groups/20",
+      "group_type": {
+        "group_type_enum": "faction",
+        "label": "Fraktion"
+      },
+      "label": [
+        {
+          "value": "Evangelische Volkspartei",
+          "language": "de"
+        }
+      ],
+      "spatial": "https://ld.admin.ch/canton/12",
+      "local_id": "20"
+    },
+    {
+      "global_uri": "https://api.openparldata.ch/v1/groups/3",
+      "group_type": {
+        "group_type_enum": "commission",
+        "label": "Kommission"
+      },
+      "label": [
+        {
+          "value": "Geschäftsprüfungskommission",
+          "language": "de"
+        }
+      ],
+      "abbreviation": [
+        {
+          "value": "GPK",
+          "language": "de"
+        }
+      ],
+      "spatial": "https://ld.admin.ch/canton/15",
+      "local_id": "3"
+    },
+    {
+      "global_uri": "https://api.openparldata.ch/v1/groups/50",
+      "group_type": {
+        "group_type_enum": "parliamentary_bureau",
+        "label": "Ratsbüro"
+      },
+      "label": [
+        {
+          "value": "Büro des Grossen Rates",
+          "language": "de"
+        }
+      ],
+      "spatial": "https://ld.admin.ch/canton/12",
+      "local_id": "50"
+    },
+    {
+      "global_uri": "https://api.openparldata.ch/v1/groups/5000",
+      "group_type": {
+        "group_type_enum": "delegation",
+        "label": "Delegation"
+      },
+      "label": [
+        {
+          "value": "Freiburger Delegation IPK strafrechtliche Einschliessung",
+          "language": "de"
+        },
+        {
+          "value": "Délégation FR à la CIP détention pénale",
+          "language": "fr"
+        }
+      ],
+      "abbreviation": [
+        {
+          "value": "Del-StRFE",
+          "language": "de"
+        },
+        {
+          "value": "Del-DetPen",
+          "language": "fr"
+        }
+      ],
+      "description": [
+        {
+          "value": "Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg, Genf, Jura, Neuenburg, Waadt und Wallis. Sie ist für die parlamentarische Aufsicht über den Vollzug der beiden lateinischen Konkordate über den strafrechtlichen Freiheitsentzug zuständig.",
+          "language": "de"
+        },
+        {
+          "value": "La Commission interparlementaire de contrôle détention pénale est composée de 18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel, Vaud et Valais. Elle est chargée de la surveillance parlementaire de l'exécution des deux concordats latins sur la détention pénale.",
+          "language": "fr"
+        }
+      ],
+      "landing_page": [
+        {
+          "value": "https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5",
+          "language": "de"
+        },
+        {
+          "value": "https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5",
+          "language": "fr"
+        }
+      ],
+      "spatial": "https://ld.admin.ch/canton/10",
+      "local_id": "5000",
+      "valid_from": "2007-12-12"
+    }
+  ],
+  "@type": "Container"
+}

@@ -31,6 +31,7 @@ URI: [mcm:value](https://ld.ech.ch/schema/0292/meta-common/value)
 | [Training](Training.md) | Formation ou éducation d'une personne indiquant un type (p |  no  |
 | [Contact](Contact.md) | Informations de contact d'une personne indiquant un type (p |  yes  |
 | [MultilingualValue](MultilingualValue.md) | Une chaîne de caractères multilingue avec indication de la langue |  yes  |
+| [MultilingualUri](MultilingualUri.md) | Une URI accompagnée de la langue de la ressource vers laquelle elle renvoie |  yes  |
 
 
 
@@ -44,7 +45,7 @@ URI: [mcm:value](https://ld.ech.ch/schema/0292/meta-common/value)
 | Propriété | Valeur |
 | --- | --- |
 | Plage | [String](String.md) |
-| Domaine de | [Name](Name.md), [Training](Training.md), [Contact](Contact.md), [MultilingualValue](MultilingualValue.md) |
+| Domaine de | [Name](Name.md), [Training](Training.md), [Contact](Contact.md), [MultilingualValue](MultilingualValue.md), [MultilingualUri](MultilingualUri.md) |
 | URI du slot | [mcm:value](https://ld.ech.ch/schema/0292/meta-common/value) |
 
 ### Cardinalité et exigences
@@ -93,6 +94,7 @@ domain_of:
 - Training
 - Contact
 - MultilingualValue
+- MultilingualUri
 range: string
 
 ```

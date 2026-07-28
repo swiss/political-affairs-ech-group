@@ -915,10 +915,10 @@ __
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
 | group_type | 1 <br/> [GroupType](#GroupType) | Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder ähnliches. Die genaue Benennung und Beschreibung der Gruppierung wird über `label` gemacht.  |
-| label | 1 <br/> [String](#String) | Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).  |
+| label | 1..* <br/> [MultilingualValue](#MultilingualValue) | Bezeichnung der Gruppe mit der Sprache, in der sie publiziert wird. Ist eine Gruppe amtlich in mehreren Sprachen benannt, wird pro Sprache ein Eintrag erfasst.  |
 | abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abkürzung (kann mehrsprachig sein).  |
 | description | * <br/> [MultilingualValue](#MultilingualValue) | Kurze Beschreibung der Gruppierung.  |
-| landing_page | 0..1 <br/> [Uri](#Uri) | Website mit weiteren Informationen.  |
+| landing_page | * <br/> [MultilingualUri](#MultilingualUri) | Website mit weiteren Informationen. Wird die Website je Sprache unter einer eigenen Adresse publiziert, wird pro Sprache ein Eintrag erfasst.  |
 | parent_groups | * <br/> [Uriorcurie](#Uriorcurie) | Übergeordnete Gruppe. Zum Beispiel die Mutterpartei zu Kantonalparteien, oder zur Beschreibung der Hierarchie in der Exekutive. Auch zur Verknüpfung von Subkommissionen mit Kommissionen oder Fraktionen mit Parlament und Partei. (parentGroup wird typischerweise im selben group_type verwendet, typenübergreifende Verknüpfungen sind aber erlaubt, z.B. Fraktion → Parlament und Fraktion → Partei.)  |
 | spatial | 0..1 <br/> [String](#String) | Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer oder Land). Formate: Gemeinde: ld.admin.ch/municipality/1234, Kanton: ld.admin.ch/canton/23, Bund: ld.admin.ch/country/CHE.  |
 | contacts | * <br/> [Contact](#Contact) | Kontaktinformationen (E-Mail, Website, Social Media). Richtlinie: E-Mail ist quasi-obligatorisch und sollte wenn vorhanden immer angegeben werden.  |
@@ -958,6 +958,86 @@ __
 
 
 
+
+### Beispiele
+#### Beispiel: Group-groups__it
+
+```yaml
+local_id: 6627
+global_uri: https://api.openparldata.ch/v1/groups/6627
+label:
+- value: Konsumenteninformation und -schutz
+  language: de
+- value: Information et défense des consommateurs
+  language: fr
+- value: Informazione e tutela dei consumatori
+  language: it
+description:
+- value: L'intergroupe parlementaire « Information et défense des consommateurs »
+    réunit toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer
+    et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s
+    en Suisse.
+  language: fr
+group_type:
+  group_type_enum: interest_group
+  label: Interessengruppe
+spatial: https://ld.admin.ch/country/CHE
+valid_from: 2012-01-01
+
+```
+#### Beispiel: Group-groups__de
+
+```yaml
+local_id: 50
+global_uri: https://api.openparldata.ch/v1/groups/50
+label:
+- value: Büro des Grossen Rates
+  language: de
+group_type:
+  group_type_enum: parliamentary_bureau
+  label: Ratsbüro
+spatial: https://ld.admin.ch/canton/12
+
+```
+#### Beispiel: Group-groups__fr
+
+```yaml
+local_id: 5000
+global_uri: https://api.openparldata.ch/v1/groups/5000
+label:
+- value: Freiburger Delegation IPK strafrechtliche Einschliessung
+  language: de
+- value: Délégation FR à la CIP détention pénale
+  language: fr
+abbreviation:
+- value: Del-StRFE
+  language: de
+- value: Del-DetPen
+  language: fr
+description:
+- value: Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung
+    besteht aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg,
+    Genf, Jura, Neuenburg, Waadt und Wallis. Sie ist für die parlamentarische Aufsicht
+    über den Vollzug der beiden lateinischen Konkordate über den strafrechtlichen
+    Freiheitsentzug zuständig.
+  language: de
+- value: 'La Commission interparlementaire de contrôle détention pénale est composée
+    de 18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel,
+    Vaud et Valais. Elle est chargée de la surveillance parlementaire de l''exécution
+    des deux concordats latins sur la détention pénale.'
+  language: fr
+landing_page:
+- value: https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
+  language: de
+- value: https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
+  language: fr
+group_type:
+  group_type_enum: delegation
+  label: Delegation
+spatial: https://ld.admin.ch/canton/10
+valid_from: 2007-12-12
+
+```
 
 
 

@@ -1,0 +1,9 @@
+local_id: 50
+global_uri: https://api.openparldata.ch/v1/groups/50
+label:
+- value: Büro des Grossen Rates
+  language: de
+group_type:
+  group_type_enum: parliamentary_bureau
+  label: Ratsbüro
+spatial: https://ld.admin.ch/canton/12

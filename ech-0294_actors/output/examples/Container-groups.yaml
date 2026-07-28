@@ -1,0 +1,106 @@
+# Beispiele für Gruppen und Organe unterschiedlicher Typen. Alle Einträge sind
+# echte Fälle aus der Plattform openparldata.ch; `global_uri` verweist auf den
+# jeweiligen API-Datensatz, `local_id` ist die dortige Kennung.
+#
+# `group_type` zeigt das Zusammenspiel von kontrolliertem Vokabular
+# (`group_type_enum`) und der herkunftsspezifischen Bezeichnung (`label`):
+# Der Enum-Wert macht Gruppen über Kantone und Ebenen hinweg vergleichbar,
+# das Label bewahrt die Benennung der publizierenden Stelle.
+global_uri: act:groups_example
+groups:
+  # Interessengruppe (parlamentarische Gruppe) der Bundesversammlung. Der Name
+  # ist dreisprachig geführt, die Beschreibung nur auf Französisch — beides
+  # bildet `MultilingualValue` mit je einem Eintrag pro vorhandener Sprache ab.
+  - local_id: 6627
+    global_uri: https://api.openparldata.ch/v1/groups/6627
+    label:
+      - value: Konsumenteninformation und -schutz
+        language: de
+      - value: Information et défense des consommateurs
+        language: fr
+      - value: Informazione e tutela dei consumatori
+        language: it
+    description:
+      - value: L'intergroupe parlementaire « Information et défense des consommateurs » réunit toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s en Suisse.
+        language: fr
+    group_type:
+      group_type_enum: interest_group
+      label: Interessengruppe
+    spatial: https://ld.admin.ch/country/CHE
+    valid_from: 2012-01-01
+
+  # Gemeindeparlament — `spatial` verweist auf die BFS-Gemeindenummer
+  - local_id: 700
+    global_uri: https://api.openparldata.ch/v1/groups/700
+    label:
+      - value: Stadtparlament St. Gallen
+        language: de
+    group_type:
+      group_type_enum: parliament
+      label: Parlament (Legislativrat)
+    spatial: https://ld.admin.ch/municipality/3203
+
+  # Fraktion im Grossen Rat Basel-Stadt
+  - local_id: 20
+    global_uri: https://api.openparldata.ch/v1/groups/20
+    label:
+      - value: Evangelische Volkspartei
+        language: de
+    group_type:
+      group_type_enum: faction
+      label: Fraktion
+    spatial: https://ld.admin.ch/canton/12
+
+  # Ständige Kommission mit gebräuchlicher Abkürzung
+  - local_id: 3
+    global_uri: https://api.openparldata.ch/v1/groups/3
+    label:
+      - value: Geschäftsprüfungskommission
+        language: de
+    abbreviation:
+      - value: GPK
+        language: de
+    group_type:
+      group_type_enum: commission
+      label: Kommission
+    spatial: https://ld.admin.ch/canton/15
+
+  # Ratsbüro
+  - local_id: 50
+    global_uri: https://api.openparldata.ch/v1/groups/50
+    label:
+      - value: Büro des Grossen Rates
+        language: de
+    group_type:
+      group_type_enum: parliamentary_bureau
+      label: Ratsbüro
+    spatial: https://ld.admin.ch/canton/12
+
+  # Delegation in ein interkantonales Gremium
+  - local_id: 5000
+    global_uri: https://api.openparldata.ch/v1/groups/5000
+    label:
+      - value: Freiburger Delegation IPK strafrechtliche Einschliessung
+        language: de
+      - value: Délégation FR à la CIP détention pénale
+        language: fr
+    abbreviation:
+      - value: Del-StRFE
+        language: de
+      - value: Del-DetPen
+        language: fr
+    description:
+      - value: Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg, Genf, Jura, Neuenburg, Waadt und Wallis. Sie ist für die parlamentarische Aufsicht über den Vollzug der beiden lateinischen Konkordate über den strafrechtlichen Freiheitsentzug zuständig.
+        language: de
+      - value: "La Commission interparlementaire de contrôle détention pénale est composée de 18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel, Vaud et Valais. Elle est chargée de la surveillance parlementaire de l'exécution des deux concordats latins sur la détention pénale."
+        language: fr
+    landing_page:
+      - value: https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
+        language: de
+      - value: https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
+        language: fr
+    group_type:
+      group_type_enum: delegation
+      label: Delegation
+    spatial: https://ld.admin.ch/canton/10
+    valid_from: 2007-12-12
