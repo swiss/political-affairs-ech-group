@@ -418,6 +418,20 @@ classes:
     slots:
       - group_type_enum
       - label
+    slot_usage:
+      # The type designation follows the group's name: a body published in
+      # several languages also carries its type designation in each of them.
+      label:
+        description: |
+          Designation of the type as used by the publishing body, with the language it is published in. Where a body publishes the designation in several languages, one entry per language is recorded.
+        annotations:
+          description_de: |
+            Bezeichnung des Typs, wie ihn die publizierende Stelle verwendet, mit der Sprache, in der sie publiziert wird. Publiziert eine Stelle die Bezeichnung in mehreren Sprachen, wird pro Sprache ein Eintrag erfasst.
+          description_fr: |
+            Désignation du type telle que l'emploie l'organe qui la publie, avec la langue dans laquelle elle est publiée. Lorsqu'un organe publie la désignation en plusieurs langues, une entrée est saisie par langue.
+        range: MultilingualValue
+        multivalued: true
+        inlined_as_list: true
 
   RoleType:
     description: |
