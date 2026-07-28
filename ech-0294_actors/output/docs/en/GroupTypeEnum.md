@@ -28,10 +28,10 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/council_legislative](act:enum/group_type/council_legislative) |
 | delegation |  Delegation.  |
 | | [act:enum/group_type/delegation](act:enum/group_type/delegation) |
-| committee |  Standing committee, including supervisory committees (e.g., CPC), subject commissions, parliamentary investigation commissions (PIC), and audit commissions.  |
-| | [act:enum/group_type/committee](act:enum/group_type/committee) |
-| ad_hoc_committee |  Committee set up for a single task and dissolved once it is completed, in contrast to a standing committee.  |
-| | [act:enum/group_type/ad_hoc_committee](act:enum/group_type/ad_hoc_committee) |
+| committee_standing |  Standing committee, including supervisory committees (e.g., CPC), subject commissions, parliamentary investigation commissions (PIC), and audit commissions.  |
+| | [act:enum/group_type/committee_standing](act:enum/group_type/committee_standing) |
+| committee_ad_hoc |  Committee set up for a single task and dissolved once it is completed, in contrast to a standing committee.  |
+| | [act:enum/group_type/committee_ad_hoc](act:enum/group_type/committee_ad_hoc) |
 | parliamentary_group |  Parliamentary faction.  |
 | | [act:enum/group_type/parliamentary_group](act:enum/group_type/parliamentary_group) |
 | parliamentary_bureau |  Parliamentary bureau.  |
@@ -44,8 +44,8 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/department](act:enum/group_type/department) |
 | office |  Government office.  |
 | | [act:enum/group_type/office](act:enum/group_type/office) |
-| extraparliamentary_committee |  Extra-parliamentary commission with a government mandate (e.g., Bank Council of the Swiss National Bank, FINMA).  |
-| | [act:enum/group_type/extraparliamentary_committee](act:enum/group_type/extraparliamentary_committee) |
+| committee_extraparliamentary |  Extra-parliamentary commission with a government mandate (e.g., Bank Council of the Swiss National Bank, FINMA).  |
+| | [act:enum/group_type/committee_extraparliamentary](act:enum/group_type/committee_extraparliamentary) |
 | interest_group |  Interest group from civil society.  |
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |
 | control_body |  Control or supervisory body (e.g., Federal Finance Control EFC, supervisory authority AB-BA).  |

@@ -34,7 +34,7 @@ act:groups_example a act:Container ;
     mcm:localId "3" ;
     act:groupType [ a act:GroupType ;
             mcm:label "Kommission" ;
-            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/committee> ] ;
+            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/committee_standing> ] ;
     act:landingPage [ a mcm:MultilingualUri ;
             mcm:language "de" ;
             mcm:value <https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/> ] ;
@@ -71,12 +71,12 @@ act:groups_example a act:Container ;
             act:streetAddress "Fédération romande des consommateurs, Rue de Genève 17, case postale 585" ] ;
     act:contact [ a act:Contact ;
             mcm:label "Sekretariat" ;
-            mcm:value "l.altwegg@frc.ch" ;
-            act:contactType "email" ],
+            mcm:value "+41 21 331 00 95" ;
+            act:contactType "phone" ],
         [ a act:Contact ;
             mcm:label "Sekretariat" ;
-            mcm:value "+41 21 331 00 95" ;
-            act:contactType "phone" ] ;
+            mcm:value "l.altwegg@frc.ch" ;
+            act:contactType "email" ] ;
     act:description [ a mcm:MultilingualValue ;
             mcm:language "fr" ;
             mcm:value "L'intergroupe parlementaire « Information et défense des consommateurs » réunit toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s en Suisse." ] ;
@@ -101,11 +101,11 @@ act:groups_example a act:Container ;
 <https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5> a act:Group ;
     schema1:validFrom "2007-12-12"^^xsd:date ;
     mcm:abbreviation [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Del-StRFE" ],
-        [ a mcm:MultilingualValue ;
             mcm:language "fr" ;
-            mcm:value "Del-DetPen" ] ;
+            mcm:value "Del-DetPen" ],
+        [ a mcm:MultilingualValue ;
+            mcm:language "de" ;
+            mcm:value "Del-StRFE" ] ;
     mcm:label [ a mcm:MultilingualValue ;
             mcm:language "de" ;
             mcm:value "Freiburger Delegation IPK strafrechtliche Einschliessung" ],
@@ -123,11 +123,11 @@ act:groups_example a act:Container ;
             mcm:label "Delegation" ;
             act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/delegation> ] ;
     act:landingPage [ a mcm:MultilingualUri ;
-            mcm:language "fr" ;
-            mcm:value <https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5> ],
-        [ a mcm:MultilingualUri ;
             mcm:language "de" ;
-            mcm:value <https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5> ] ;
+            mcm:value <https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5> ],
+        [ a mcm:MultilingualUri ;
+            mcm:language "fr" ;
+            mcm:value <https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5> ] ;
     act:spatial "https://ld.admin.ch/canton/10" .
 
 
