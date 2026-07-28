@@ -23,6 +23,7 @@ __
 | street_address | 0..1 <br/> [String](String.md) | Strassenadresse.  |
 | postal_code | 0..1 <br/> [Integer](Integer.md) | Postleitzahl.  |
 | postal_locality | 0..1 <br/> [String](String.md) | Ort.  |
+| country | 0..1 <br/> [String](String.md) | ISO 3166-1 alpha-2 Ländercode.  |
 
 ##### Einschränkungen
 
@@ -67,6 +68,18 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 ```yaml
 address_type: businessAddress
 postal_locality: Basel-Stadt
+
+```
+#### Beispiel: Address-groups__it_1
+
+```yaml
+address_type: businessAddress
+address_uri: https://geo.ld.admin.ch/location/address/101009806
+street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
+  585
+postal_code: '1001'
+postal_locality: Lausanne
+country: CH
 
 ```
 

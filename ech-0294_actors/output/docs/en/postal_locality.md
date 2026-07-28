@@ -62,6 +62,7 @@ URI: [act:postalLocality](https://ld.ech.ch/schema/0294/actors/postalLocality)
 | Value |
 | --- |
 | Basel-Stadt |
+| Lausanne |
 
 
 
@@ -88,6 +89,7 @@ description: 'Locality.
   '
 examples:
 - value: Basel-Stadt
+- value: Lausanne
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:postalLocality

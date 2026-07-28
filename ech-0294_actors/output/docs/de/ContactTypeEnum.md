@@ -17,6 +17,7 @@ URI: [act:ContactTypeEnum](https://ld.ech.ch/schema/0294/actors/ContactTypeEnum)
 | Wert | Beschreibung |
 | --- | --- |
 | email |  E-Mail-Adresse.  |
+| phone |  Telefonnummer im internationalen Format (z.B. +41 21 331 00 95).  |
 | contact_website |  Kontakt-Website.  |
 | linked_in |  LinkedIn-Profil.  |
 | twitter |  Twitter-Profil.  |

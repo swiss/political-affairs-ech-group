@@ -27,6 +27,7 @@ URI: [act:country](https://ld.ech.ch/schema/0294/actors/country)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
+| [Address](Address.md) | Une adresse avec un type (p |  no  |
 | [Citizenship](Citizenship.md) | Nationalité (également utilisée pour la citoyenneté) d'une personne indiquant... |  yes  |
 
 
@@ -41,7 +42,7 @@ URI: [act:country](https://ld.ech.ch/schema/0294/actors/country)
 | Propriété | Valeur |
 | --- | --- |
 | Plage | [String](String.md) |
-| Domaine de | [Citizenship](Citizenship.md) |
+| Domaine de | [Address](Address.md), [Citizenship](Citizenship.md) |
 | URI du slot | [act:country](https://ld.ech.ch/schema/0294/actors/country) |
 
 ### Cardinalité et exigences
@@ -99,6 +100,7 @@ from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:country
 domain_of:
+- Address
 - Citizenship
 range: string
 pattern: ^[A-Z]{2}$

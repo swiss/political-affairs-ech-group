@@ -63,6 +63,7 @@ URI: [act:contactType](https://ld.ech.ch/schema/0294/actors/contactType)
 | --- |
 | contact_website |
 | email |
+| phone |
 
 
 
@@ -90,6 +91,7 @@ description: 'Typ der Kontaktinformation.
 examples:
 - value: contact_website
 - value: email
+- value: phone
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:contactType

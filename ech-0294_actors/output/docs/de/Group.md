@@ -85,6 +85,21 @@ description:
 landing_page:
 - value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
   language: de
+contacts:
+- contact_type: email
+  value: l.altwegg@frc.ch
+  label: Sekretariat
+- contact_type: phone
+  value: +41 21 331 00 95
+  label: Sekretariat
+addresses:
+- address_type: businessAddress
+  address_uri: https://geo.ld.admin.ch/location/address/101009806
+  street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
+    585
+  postal_code: '1001'
+  postal_locality: Lausanne
+  country: CH
 group_type:
   group_type_enum: interest_group
   label: Interessengruppe

@@ -31,6 +31,7 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 | [Group](Group.md) | A political group, organization, or body (e |  yes  |
 | [Gender](Gender.md) | Gender of a person indicating a gender code and temporal validity |  no  |
 | [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |  no  |
+| [Contact](Contact.md) | Contact information of a person indicating a type (e |  no  |
 | [ElectoralDistrict](ElectoralDistrict.md) | Electoral district or region associated with a membership |  no  |
 | [GroupType](GroupType.md) | Type of group (e |  no  |
 | [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |  yes  |
@@ -48,7 +49,7 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [Person](Person.md), [Group](Group.md), [Gender](Gender.md), [Occupation](Occupation.md), [ElectoralDistrict](ElectoralDistrict.md), [GroupType](GroupType.md), [PersonReference](PersonReference.md), [GroupReference](GroupReference.md) |
+| Domain Of | [Person](Person.md), [Group](Group.md), [Gender](Gender.md), [Occupation](Occupation.md), [Contact](Contact.md), [ElectoralDistrict](ElectoralDistrict.md), [GroupType](GroupType.md), [PersonReference](PersonReference.md), [GroupReference](GroupReference.md) |
 | Slot URI | [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label) |
 
 ### Cardinality and Requirements
@@ -97,6 +98,7 @@ domain_of:
 - Group
 - Gender
 - Occupation
+- Contact
 - ElectoralDistrict
 - GroupType
 - PersonReference

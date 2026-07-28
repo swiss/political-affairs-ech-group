@@ -981,6 +981,21 @@ description:
 landing_page:
 - value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
   language: de
+contacts:
+- contact_type: email
+  value: l.altwegg@frc.ch
+  label: Sekretariat
+- contact_type: phone
+  value: +41 21 331 00 95
+  label: Sekretariat
+addresses:
+- address_type: businessAddress
+  address_uri: https://geo.ld.admin.ch/location/address/101009806
+  street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
+    585
+  postal_code: '1001'
+  postal_locality: Lausanne
+  country: CH
 group_type:
   group_type_enum: interest_group
   label: Interessengruppe
@@ -1973,6 +1988,7 @@ __
 | street_address | 0..1 <br/> [String](#String) | Street address.  |
 | postal_code | 0..1 <br/> [Integer](#Integer) | Postal code.  |
 | postal_locality | 0..1 <br/> [String](#String) | Locality.  |
+| country | 0..1 <br/> [String](#String) | ISO 3166-1 alpha-2 country code.  |
 
 ##### Constraints
 
@@ -2017,6 +2033,18 @@ At least one of the following must be set:
 ```yaml
 address_type: businessAddress
 postal_locality: Basel-Stadt
+
+```
+#### Example: Address-groups__it_1
+
+```yaml
+address_type: businessAddress
+address_uri: https://geo.ld.admin.ch/location/address/101009806
+street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
+  585
+postal_code: '1001'
+postal_locality: Lausanne
+country: CH
 
 ```
 
@@ -2079,6 +2107,7 @@ __
 | ---  | --- | --- |
 | contact_type | 1 <br/> [ContactTypeEnum](#ContactTypeEnum) | Type of contact information.  |
 | value | 1 <br/> [String](#String) | The value of an information besides other attributes such as type, language, etc.  |
+| label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
 
 
 

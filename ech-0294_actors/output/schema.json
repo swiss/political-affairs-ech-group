@@ -33,6 +33,14 @@
                         "null"
                     ]
                 },
+                "country": {
+                    "description": "ISO 3166-1 alpha-2 country code.\n",
+                    "pattern": "^[A-Z]{2}$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "postal_code": {
                     "description": "Postal code.\n",
                     "type": [
@@ -115,6 +123,13 @@
                     "$ref": "#/$defs/ContactTypeEnum",
                     "description": "Type of contact information.\n"
                 },
+                "label": {
+                    "description": "Assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "value": {
                     "description": "The value of an information besides other attributes such as type, language, etc.\n",
                     "type": "string"
@@ -131,6 +146,7 @@
             "description": "Types of contact information.",
             "enum": [
                 "email",
+                "phone",
                 "contact_website",
                 "linked_in",
                 "twitter"

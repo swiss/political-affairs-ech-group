@@ -20,6 +20,7 @@ __
 | ---  | --- | --- |
 | contact_type | 1 <br/> [ContactTypeEnum](ContactTypeEnum.md) | Typ der Kontaktinformation.  |
 | value | 1 <br/> [String](String.md) | Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc.  |
+| label | 0..1 <br/> [String](String.md) | Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).  |
 
 
 
