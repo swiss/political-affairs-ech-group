@@ -723,15 +723,18 @@ slots:
   parent_groups:
     slot_uri: act:parentGroup
     description: |
-      Link to parent groups. For example, the parent party for cantonal parties, or to describe the hierarchy in the executive. Also used to link sub-commissions to commissions, or factions to both their parliament and their party. (parentGroup is typically used within the same group_type, but cross-type links are permitted, e.g., faction → parliament and faction → party.)
+      Reference to the parent groups, stated by their identifier (global_uri). For example, the parent party for cantonal parties, or to describe the hierarchy in the executive. Also used to link sub-commissions to commissions, or factions to both their parliament and their party. (parentGroup is typically used within the same group_type, but cross-type links are permitted, e.g., faction → parliament and faction → party.)
     annotations:
       description_de: |
-        Übergeordnete Gruppe. Zum Beispiel die Mutterpartei zu Kantonalparteien, oder zur Beschreibung der Hierarchie in der Exekutive. Auch zur Verknüpfung von Subkommissionen mit Kommissionen oder Fraktionen mit Parlament und Partei. (parentGroup wird typischerweise im selben group_type verwendet, typenübergreifende Verknüpfungen sind aber erlaubt, z.B. Fraktion → Parlament und Fraktion → Partei.)
+        Verweis auf die übergeordneten Gruppen, angegeben über deren Identifikator (global_uri). Zum Beispiel die Mutterpartei zu Kantonalparteien, oder zur Beschreibung der Hierarchie in der Exekutive. Auch zur Verknüpfung von Subkommissionen mit Kommissionen oder Fraktionen mit Parlament und Partei. (parentGroup wird typischerweise im selben group_type verwendet, typenübergreifende Verknüpfungen sind aber erlaubt, z.B. Fraktion → Parlament und Fraktion → Partei.)
       description_fr: |
-        Lien vers les groupes parents. Par exemple, le parti faîtier pour les partis cantonaux, ou pour décrire la hiérarchie au sein de l'exécutif. Utilisé également pour rattacher des sous-commissions à des commissions, ou des groupes parlementaires à la fois à leur parlement et à leur parti. (parentGroup est généralement utilisé au sein d'un même group_type, mais les liens intertypes sont autorisés, p. ex. groupe parlementaire → parlement et groupe parlementaire → parti.)
-    range: uriorcurie
+        Référence aux groupes supérieurs, indiquée au moyen de leur identifiant (global_uri). Par exemple, le parti faîtier pour les partis cantonaux, ou pour décrire la hiérarchie au sein de l'exécutif. Utilisé également pour rattacher des sous-commissions à des commissions, ou des groupes parlementaires à la fois à leur parlement et à leur parti. (parentGroup est généralement utilisé au sein d'un même group_type, mais les liens intertypes sont autorisés, p. ex. groupe parlementaire → parlement et groupe parlementaire → parti.)
+    # The reference points at a Group, not at a free-form address: the value is
+    # the global_uri of the parent group. The referenced group does not have to
+    # be part of the same delivery, so a hierarchy may reach beyond it.
+    range: Group
     multivalued: true
-    inlined_as_list: true
+    inlined: false
 
   spatial:
     description: |
@@ -1652,6 +1655,8 @@ enums:
 
       Values that belong together share a prefix. The council_ family does not distinguish by council: a state chancellery and parliamentary services are both a council_secretariat, and which council a body belongs to is stated by its parent group. The same applies to the committee_ family, with committee as the base case.
 
+      The three council bodies differ as follows: council_presidency chairs the sittings and represents the council; council_bureau manages its business and additionally includes the parliamentary group representation; council_secretariat is the administrative unit, staffed by employees rather than by elected members.
+
       Legal form does not belong here but in legal_form.
     annotations:
       description_de: |
@@ -1661,6 +1666,8 @@ enums:
 
         Zusammengehörende Werte tragen ein Präfix. Die Familie council_ unterscheidet nicht nach Rat: Staatskanzlei und Parlamentsdienste sind beide ein council_secretariat; welchem Rat ein Organ zugehört, sagt die übergeordnete Gruppe. Ebenso die Familie committee_ mit committee als Grundfall.
 
+        Die drei Ratsorgane grenzen sich so ab: council_presidency führt die Sitzungen und vertritt den Rat; council_bureau leitet den Geschäftsgang und ist um die Fraktionsvertretung erweitert; council_secretariat ist die Verwaltungseinheit, besetzt mit Angestellten statt mit gewählten Mitgliedern.
+
         Die Rechtsform gehört nicht hierher, sondern in legal_form.
       description_fr: |
         Types de groupes et d'organisations politiques. Trois conventions s'appliquent.
@@ -1668,6 +1675,8 @@ enums:
         La valeur désigne la fonction politique, le libellé du groupe conserve la désignation locale. Büro, Ratsleitung et Ufficio presidenziale sont tous saisis comme council_bureau et restent ainsi comparables.
 
         Les valeurs qui vont ensemble partagent un préfixe. La famille council_ ne distingue pas selon le conseil : une chancellerie d'État et les services du parlement sont tous deux un council_secretariat ; le conseil auquel un organe se rattache est indiqué par le groupe supérieur. Il en va de même de la famille committee_, avec committee comme cas de base.
+
+        Les trois organes du conseil se distinguent ainsi : council_presidency préside les séances et représente le conseil ; council_bureau dirige la marche des affaires et comprend en outre la représentation des groupes ; council_secretariat est l'unité administrative, composée d'employés et non de membres élus.
 
         La forme juridique ne relève pas d'ici, mais de legal_form.
     permissible_values:
