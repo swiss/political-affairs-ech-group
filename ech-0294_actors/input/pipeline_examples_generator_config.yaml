@@ -37,5 +37,7 @@ slots:
   - district
   - training_type
   - name_type
+  - group_type_enum
+  - spatial
 
 max_examples_per_slot: 3
