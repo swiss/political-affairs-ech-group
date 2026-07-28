@@ -15,8 +15,12 @@ groups:
   # Interessengruppe (parlamentarische Gruppe) der Bundesversammlung. Der Name
   # ist dreisprachig geführt, die Beschreibung nur auf Französisch — beides
   # bildet `MultilingualValue` mit je einem Eintrag pro vorhandener Sprache ab.
+  # `global_uri` ist hier fiktiv: Die Bundesversammlung publiziert ihre
+  # parlamentarischen Gruppen nur gesammelt in einem PDF und vergibt je Gruppe
+  # keine eigene Adresse. So saehe ein eindeutiger Identifikator in ihrem
+  # Namensraum aus; das Sammel-PDF steht als `landing_page`.
   - local_id: 6627
-    global_uri: https://api.openparldata.ch/v1/groups/6627
+    global_uri: https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz
     label:
       - value: Konsumenteninformation und -schutz
         language: de
