@@ -236,6 +236,7 @@ classes:
       - street_address
       - postal_code
       - postal_locality
+      - country
     any_of:
       - slot_conditions:
           postal_locality:
@@ -354,6 +355,7 @@ classes:
     slots:
       - contact_type
       - value
+      - label
     slot_usage:
       contact_type:
         required: true
@@ -1565,6 +1567,14 @@ enums:
             E-Mail-Adresse.
           description_fr: |
             Adresse e-mail.
+      phone:
+        description: |
+          Telephone number in international format (e.g. +41 21 331 00 95).
+        annotations:
+          description_de: |
+            Telefonnummer im internationalen Format (z.B. +41 21 331 00 95).
+          description_fr: |
+            Numéro de téléphone au format international (p. ex. +41 21 331 00 95).
       contact_website:
         description: |
           Contact website.

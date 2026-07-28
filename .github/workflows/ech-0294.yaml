@@ -121,6 +121,9 @@ jobs:
             python .github/workflows/scripts/set_docx_updatefields.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx"
             python .github/workflows/scripts/shade_alternate_rows.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx"
             python .github/workflows/scripts/set_docx_footer.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx" "$footer"
+            # Seitenzaehler der Kopfzeile uebersetzen ("Seite 3 von 47" / "Page 3 sur 47");
+            # das Word-Template fuehrt nur eine sprachneutrale Vorlage.
+            python .github/workflows/scripts/set_docx_page_label.py "ech-0294_actors/output/ech-0294_actors_${lang}.docx" "$lang"
             # PDF: direct conversion of the finished Word document via LibreOffice,
             # updating fields + the table of contents so the TOC is populated.
             bash .github/workflows/scripts/docx_to_pdf.sh \
