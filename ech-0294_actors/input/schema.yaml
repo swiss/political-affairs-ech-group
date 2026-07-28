@@ -1646,12 +1646,30 @@ enums:
             Autre rôle ; utiliser role_label pour un libellé descriptif.
   GroupTypeEnum:
     description: |
-      Types of political groups and organizations.
+      Types of political groups and organizations. Three conventions govern this vocabulary.
+
+      First, the value states the political function, while the designation used locally is preserved in the group's label. The same body is called Büro in one canton, Ratsleitung or Geschäftsleitung in another, Ufficio presidenziale in Ticino; all of these are recorded as council_bureau so that they remain comparable across cantons and levels, without the local name being lost.
+
+      Second, values that belong together share a prefix. The council_ family covers the councils and their bodies, and it deliberately does not distinguish by council: a state chancellery serves the executive, parliamentary services serve the legislature, yet both are a council_secretariat. Which council a body belongs to follows from its parent group, not from its type. The committee_ family works the same way, with committee as the base case and committee_ad_hoc and committee_extraparliamentary as its qualified variants.
+
+      Third, this vocabulary does not record legal form. Whether an organization is an association, a foundation or a public limited company is stated in legal_form using the code list of the federal UID register; group_type remains reserved for the political function.
     annotations:
       description_de: |
-        Typen politischer Gruppen und Organisationen.
+        Typen politischer Gruppen und Organisationen. Für dieses Vokabular gelten drei Konventionen.
+
+        Erstens benennt der Wert die politische Funktion, während die örtlich verwendete Bezeichnung im Label der Gruppe erhalten bleibt. Dasselbe Organ heisst im einen Kanton Büro, im andern Ratsleitung oder Geschäftsleitung, im Tessin Ufficio presidenziale; alle werden als council_bureau erfasst, damit sie über Kantone und Ebenen hinweg vergleichbar bleiben, ohne dass die örtliche Benennung verloren geht.
+
+        Zweitens tragen zusammengehörende Werte ein gemeinsames Präfix. Die Familie council_ umfasst die Räte und ihre Organe und unterscheidet bewusst nicht nach Rat: Eine Staatskanzlei bedient die Exekutive, die Parlamentsdienste bedienen die Legislative, beide sind aber ein council_secretariat. Welchem Rat ein Organ zugehört, ergibt sich aus der übergeordneten Gruppe, nicht aus dem Typ. Gleich verhält sich die Familie committee_, mit committee als Grundfall und committee_ad_hoc sowie committee_extraparliamentary als dessen Sonderformen.
+
+        Drittens hält dieses Vokabular keine Rechtsform fest. Ob eine Organisation ein Verein, eine Stiftung oder eine Aktiengesellschaft ist, wird in legal_form über die Codeliste des eidgenössischen UID-Registers angegeben; group_type bleibt der politischen Funktion vorbehalten.
       description_fr: |
-        Types de groupes et d'organisations politiques.
+        Types de groupes et d'organisations politiques. Trois conventions régissent ce vocabulaire.
+
+        Premièrement, la valeur désigne la fonction politique, tandis que la désignation employée localement est conservée dans le libellé du groupe. Le même organe s'appelle Büro dans un canton, Ratsleitung ou Geschäftsleitung dans un autre, Ufficio presidenziale au Tessin ; tous sont saisis comme council_bureau, afin qu'ils restent comparables par-delà les cantons et les niveaux, sans que la désignation locale se perde.
+
+        Deuxièmement, les valeurs qui vont ensemble partagent un préfixe. La famille council_ regroupe les conseils et leurs organes et ne distingue délibérément pas selon le conseil : une chancellerie d'État sert l'exécutif, les services du parlement servent le législatif, mais les deux sont un council_secretariat. Le conseil auquel un organe se rattache ressort du groupe supérieur, non du type. La famille committee_ fonctionne de même, avec committee comme cas de base et committee_ad_hoc ainsi que committee_extraparliamentary comme variantes qualifiées.
+
+        Troisièmement, ce vocabulaire ne consigne pas la forme juridique. Qu'une organisation soit une association, une fondation ou une société anonyme s'indique dans legal_form au moyen de la liste de codes du registre IDE fédéral ; group_type reste réservé à la fonction politique.
     permissible_values:
       party:
         meaning: act:enum/group_type/party

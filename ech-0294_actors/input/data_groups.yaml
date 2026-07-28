@@ -173,12 +173,17 @@ groups:
       label: Fraktion
     spatial: https://ld.admin.ch/canton/12
 
-  # Ständige Kommission mit gebräuchlicher Abkürzung
+  # Ständige Kommission mit gebräuchlicher Abkürzung. Der Verweis auf den
+  # Kantonsrat zeigt, dass eine übergeordnete Gruppe über ihre URI benannt wird
+  # und nicht in derselben Lieferung enthalten sein muss — erst dieser Verweis
+  # macht sichtbar, welchem Rat die Kommission zugehört.
   - local_id: 3
     global_uri: https://api.openparldata.ch/v1/groups/3
     label:
       - value: Geschäftsprüfungskommission
         language: de
+    parent_groups:
+      - https://www.ar.ch/kantonsrat/
     abbreviation:
       - value: GPK
         language: de

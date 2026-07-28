@@ -7,6 +7,13 @@ on:
       - 'ech-0294_actors/input/**'
   workflow_dispatch:
 
+# Zwei gleichzeitige Laeufe erzeugen dieselben Dateien und kollidieren beim
+# Push. Bei mehreren Pushes kurz hintereinander zaehlt ohnehin nur der letzte,
+# da er den neusten Input verarbeitet -- laufende Laeufe werden abgebrochen.
+concurrency:
+  group: ech-0294_actors
+  cancel-in-progress: true
+
 jobs:
   
   ech-0294_actors:
@@ -141,11 +148,20 @@ jobs:
             git add ech-0294_actors/output/
             git diff --quiet && git diff --staged --quiet || git commit -m "Auto-generated ech-0294_actors files"
             REMOTE="https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
-            # Retry push with rebase to handle concurrent updates.
+            # Retry on rejection. A rebase is not an option here: docx and pdf
+            # are binary and can never be merged. Instead move onto the new
+            # upstream tip and place our freshly generated output/ on top of it
+            # unchanged — everything else (notably input/) is taken from
+            # upstream, so concurrent input changes are not reverted.
             for attempt in 1 2 3 4 5; do
               git push "$REMOTE" HEAD:${{ github.ref }} && exit 0
-              echo "Push rejected (attempt $attempt) — rebasing on ${{ github.ref_name }} and retrying"
-              git pull --rebase "$REMOTE" ${{ github.ref_name }} || exit 1
+              echo "Push rejected (attempt $attempt) — re-applying output/ onto ${{ github.ref_name }}"
+              git fetch "$REMOTE" ${{ github.ref_name }} || exit 1
+              git reset --soft FETCH_HEAD || exit 1
+              git reset || exit 1
+              git add ech-0294_actors/output/
+              git diff --staged --quiet && echo "Nothing left to commit" && exit 0
+              git commit -m "Auto-generated ech-0294_actors files" || exit 1
               sleep $((RANDOM % 5 + 2))
             done
             echo "::error::Auto-generated push failed after 5 attempts" && exit 1
