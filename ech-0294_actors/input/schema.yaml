@@ -1678,8 +1678,17 @@ enums:
             Ad-hoc-Arbeitsgruppe, typischerweise mit begrenzter Laufzeit.
           description_fr: |
             Groupe de travail ad hoc, généralement d'une durée limitée.
-      parliament:
-        meaning: act:enum/group_type/parliament
+      assembly:
+        meaning: act:enum/group_type/assembly
+        description: |
+          Assembly of the persons entitled to vote acting as the legislative body, in particular the communal assembly ("Gemeindeversammlung"). Unlike a council, it is not an elected body.
+        annotations:
+          description_de: |
+            Versammlung der Stimmberechtigten als gesetzgebendes Organ, insbesondere die Gemeindeversammlung. Anders als ein Rat ist sie kein gewähltes Gremium.
+          description_fr: |
+            Assemblée des personnes ayant le droit de vote en tant qu'organe législatif, en particulier l'assemblée communale. Contrairement à un conseil, elle n'est pas un organe élu.
+      council_legislative:
+        meaning: act:enum/group_type/council_legislative
         description: |
           Parliament at federal, cantonal, or municipal level (e.g., Federal Assembly, National Council, Council of States, Grand Council, cantonal parliament, municipal parliament).
         annotations:
@@ -1699,12 +1708,21 @@ enums:
       committee:
         meaning: act:enum/group_type/committee
         description: |
-          Commission (permanent or ad-hoc), including supervisory commissions (e.g., CPC), subject commissions, parliamentary investigation commissions (PIC), and audit commissions.
+          Standing committee, including supervisory committees (e.g., CPC), subject commissions, parliamentary investigation commissions (PIC), and audit commissions.
         annotations:
           description_de: |
-            Kommission (ständig oder ad-hoc), einschliesslich Aufsichtskommissionen (z.B. GPK), Sachkommissionen, Parlamentarische Untersuchungskommissionen (PUK) und Rechnungsprüfungskommissionen.
+            Ständige Kommission, einschliesslich Aufsichtskommissionen (z.B. GPK), Sachkommissionen, Parlamentarische Untersuchungskommissionen (PUK) und Rechnungsprüfungskommissionen.
           description_fr: |
-            Commission (permanente ou ad hoc), y compris les commissions de surveillance (p. ex. CdG), les commissions thématiques, les commissions d'enquête parlementaire (CEP) et les commissions de vérification des comptes.
+            Commission permanente, y compris les commissions de surveillance (p. ex. CdG), les commissions thématiques, les commissions d'enquête parlementaire (CEP) et les commissions de vérification des comptes.
+      ad_hoc_committee:
+        meaning: act:enum/group_type/ad_hoc_committee
+        description: |
+          Committee set up for a single task and dissolved once it is completed, in contrast to a standing committee.
+        annotations:
+          description_de: |
+            Kommission, die für eine einzelne Aufgabe eingesetzt und nach deren Erledigung wieder aufgelöst wird, im Unterschied zur ständigen Kommission.
+          description_fr: |
+            Commission instituée pour une tâche unique et dissoute une fois celle-ci accomplie, par opposition à une commission permanente.
       parliamentary_group:
         meaning: act:enum/group_type/parliamentary_group
         description: |
@@ -1732,8 +1750,8 @@ enums:
             Präsidium des Parlaments.
           description_fr: |
             Présidence du parlement.
-      government:
-        meaning: act:enum/group_type/government
+      council_executive:
+        meaning: act:enum/group_type/council_executive
         description: |
           Government / Executive as a collective body (e.g., Federal Council, Cantonal Government, City or Municipal Council).
         annotations:
