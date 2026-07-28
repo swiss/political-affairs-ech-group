@@ -1696,8 +1696,8 @@ enums:
             Delegation.
           description_fr: |
             Délégation.
-      commission:
-        meaning: act:enum/group_type/commission
+      committee:
+        meaning: act:enum/group_type/committee
         description: |
           Commission (permanent or ad-hoc), including supervisory commissions (e.g., CPC), subject commissions, parliamentary investigation commissions (PIC), and audit commissions.
         annotations:
@@ -1705,8 +1705,8 @@ enums:
             Kommission (ständig oder ad-hoc), einschliesslich Aufsichtskommissionen (z.B. GPK), Sachkommissionen, Parlamentarische Untersuchungskommissionen (PUK) und Rechnungsprüfungskommissionen.
           description_fr: |
             Commission (permanente ou ad hoc), y compris les commissions de surveillance (p. ex. CdG), les commissions thématiques, les commissions d'enquête parlementaire (CEP) et les commissions de vérification des comptes.
-      faction:
-        meaning: act:enum/group_type/faction
+      parliamentary_group:
+        meaning: act:enum/group_type/parliamentary_group
         description: |
           Parliamentary faction.
         annotations:
@@ -1759,8 +1759,8 @@ enums:
             Amt.
           description_fr: |
             Office gouvernemental.
-      extraparliamentary_commission:
-        meaning: act:enum/group_type/extraparliamentary_commission
+      extraparliamentary_committee:
+        meaning: act:enum/group_type/extraparliamentary_committee
         description: |
           Extra-parliamentary commission with a government mandate (e.g., Bank Council of the Swiss National Bank, FINMA).
         annotations:
