@@ -134,6 +134,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+organization_uid: CHE-109.810.537
 legal_form: '0110'
 committee: Stiftungsrat
 function_role: Vizepräsident

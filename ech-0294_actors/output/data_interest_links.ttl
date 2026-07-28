@@ -76,6 +76,7 @@ act:il_burkart_007 a act:InterestLink ;
     act:isPaid false ;
     act:legalForm "0110" ;
     act:organizationName "FONDATION SUISSE DE DEMINAGE (FSD), Genf" ;
+    act:organizationUid "CHE-109.810.537" ;
     act:personReference <http://www.wikidata.org/entity/Q23060472> .
 
 act:il_burkart_008 a act:InterestLink ;
