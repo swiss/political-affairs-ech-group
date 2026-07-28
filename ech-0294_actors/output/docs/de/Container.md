@@ -381,7 +381,13 @@ groups:
         country: CH
     group_type:
       group_type_enum: interest_group
-      label: Interessengruppe
+      label:
+        - value: Interessengruppe
+          language: de
+        - value: Groupe d'intérêt
+          language: fr
+        - value: Gruppo d'interesse
+          language: it
     spatial: https://ld.admin.ch/country/CHE
     valid_from: 2012-01-01
 
@@ -401,7 +407,9 @@ groups:
         language: fr
     group_type:
       group_type_enum: association
-      label: Verein
+      label:
+        - value: Verein
+          language: de
     spatial: https://ld.admin.ch/canton/22
 
   # Gemeindeparlament — `spatial` verweist auf die BFS-Gemeindenummer
@@ -412,7 +420,9 @@ groups:
         language: de
     group_type:
       group_type_enum: council_legislative
-      label: Parlament (Legislativrat)
+      label:
+        - value: Parlament (Legislativrat)
+          language: de
     spatial: https://ld.admin.ch/municipality/3203
 
   # Ausserparlamentarische Kommission des Bundes: Ihre Mitglieder sind externe
@@ -444,7 +454,9 @@ groups:
         language: it
     group_type:
       group_type_enum: committee_extraparliamentary
-      label: Ausserparlamentarische Kommission
+      label:
+        - value: Ausserparlamentarische Kommission
+          language: de
     spatial: https://ld.admin.ch/country/CHE
 
   # Kantonsparlament — dient den beiden folgenden Einträgen als übergeordnete
@@ -456,7 +468,9 @@ groups:
         language: de
     group_type:
       group_type_enum: council_legislative
-      label: Parlament (Legislativrat)
+      label:
+        - value: Parlament (Legislativrat)
+          language: de
     spatial: https://ld.admin.ch/canton/12
 
   # Exekutivrat desselben Kantons, mit der Staatskanzlei als nachgeordneter
@@ -470,7 +484,9 @@ groups:
         language: de
     group_type:
       group_type_enum: council_executive
-      label: Regierung (Exekutivrat)
+      label:
+        - value: Regierung (Exekutivrat)
+          language: de
     spatial: https://ld.admin.ch/canton/12
 
   - local_id: 7172
@@ -482,7 +498,9 @@ groups:
       - https://www.regierungsrat.bs.ch/
     group_type:
       group_type_enum: council_secretariat
-      label: Staatskanzlei
+      label:
+        - value: Staatskanzlei
+          language: de
     spatial: https://ld.admin.ch/canton/12
 
   # Die beiden Kantonalparteien, welche die folgende Fraktion tragen. Ihr
@@ -498,7 +516,9 @@ groups:
       - https://www.die-mitte.ch/
     group_type:
       group_type_enum: party
-      label: Partei
+      label:
+        - value: Partei
+          language: de
     spatial: https://ld.admin.ch/canton/12
 
   - global_uri: https://www.evp-bs.ch/
@@ -512,7 +532,9 @@ groups:
       - https://www.evppev.ch/
     group_type:
       group_type_enum: party
-      label: Partei
+      label:
+        - value: Partei
+          language: de
     spatial: https://ld.admin.ch/canton/12
 
   # Fraktion im Grossen Rat Basel-Stadt. Sie zeigt den typenübergreifenden und
@@ -531,7 +553,9 @@ groups:
       - https://www.evp-bs.ch/
     group_type:
       group_type_enum: parliamentary_group
-      label: Fraktion
+      label:
+        - value: Fraktion
+          language: de
     spatial: https://ld.admin.ch/canton/12
 
   # Kantonsparlament — übergeordnete Gruppe der folgenden Kommission
@@ -542,7 +566,9 @@ groups:
         language: de
     group_type:
       group_type_enum: council_legislative
-      label: Parlament (Legislativrat)
+      label:
+        - value: Parlament (Legislativrat)
+          language: de
     spatial: https://ld.admin.ch/canton/15
 
   # Ständige Kommission mit gebräuchlicher Abkürzung. Erst der Verweis auf den
@@ -560,7 +586,9 @@ groups:
         language: de
     group_type:
       group_type_enum: committee
-      label: Kommission
+      label:
+        - value: Kommission
+          language: de
     spatial: https://ld.admin.ch/canton/15
 
   # Ratsbüro
@@ -573,7 +601,9 @@ groups:
       - https://www.grosserrat.bs.ch/
     group_type:
       group_type_enum: council_bureau
-      label: Ratsbüro
+      label:
+        - value: Ratsbüro
+          language: de
     spatial: https://ld.admin.ch/canton/12
 
   # Delegation in ein interkantonales Gremium
@@ -601,7 +631,11 @@ groups:
         language: fr
     group_type:
       group_type_enum: delegation
-      label: Delegation
+      label:
+        - value: Delegation
+          language: de
+        - value: Délégation
+          language: fr
     spatial: https://ld.admin.ch/canton/10
     valid_from: 2007-12-12
 

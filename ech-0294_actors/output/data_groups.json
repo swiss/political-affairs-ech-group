@@ -5,7 +5,20 @@
       "global_uri": "https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz",
       "group_type": {
         "group_type_enum": "interest_group",
-        "label": "Interessengruppe"
+        "label": [
+          {
+            "value": "Interessengruppe",
+            "language": "de"
+          },
+          {
+            "value": "Groupe d'intérêt",
+            "language": "fr"
+          },
+          {
+            "value": "Gruppo d'interesse",
+            "language": "it"
+          }
+        ]
       },
       "label": [
         {
@@ -63,7 +76,12 @@
       "global_uri": "https://www.frc.ch/",
       "group_type": {
         "group_type_enum": "association",
-        "label": "Verein"
+        "label": [
+          {
+            "value": "Verein",
+            "language": "de"
+          }
+        ]
       },
       "label": [
         {
@@ -85,7 +103,12 @@
       "global_uri": "https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html",
       "group_type": {
         "group_type_enum": "council_legislative",
-        "label": "Parlament (Legislativrat)"
+        "label": [
+          {
+            "value": "Parlament (Legislativrat)",
+            "language": "de"
+          }
+        ]
       },
       "label": [
         {
@@ -100,7 +123,12 @@
       "global_uri": "https://www.weko.admin.ch/",
       "group_type": {
         "group_type_enum": "committee_extraparliamentary",
-        "label": "Ausserparlamentarische Kommission"
+        "label": [
+          {
+            "value": "Ausserparlamentarische Kommission",
+            "language": "de"
+          }
+        ]
       },
       "label": [
         {
@@ -150,7 +178,12 @@
       "global_uri": "https://www.grosserrat.bs.ch/",
       "group_type": {
         "group_type_enum": "council_legislative",
-        "label": "Parlament (Legislativrat)"
+        "label": [
+          {
+            "value": "Parlament (Legislativrat)",
+            "language": "de"
+          }
+        ]
       },
       "label": [
         {
@@ -165,7 +198,12 @@
       "global_uri": "https://www.regierungsrat.bs.ch/",
       "group_type": {
         "group_type_enum": "council_executive",
-        "label": "Regierung (Exekutivrat)"
+        "label": [
+          {
+            "value": "Regierung (Exekutivrat)",
+            "language": "de"
+          }
+        ]
       },
       "label": [
         {
@@ -180,7 +218,12 @@
       "global_uri": "https://www.bs.ch/regierungsrat/staatskanzlei",
       "group_type": {
         "group_type_enum": "council_secretariat",
-        "label": "Staatskanzlei"
+        "label": [
+          {
+            "value": "Staatskanzlei",
+            "language": "de"
+          }
+        ]
       },
       "label": [
         {
@@ -198,7 +241,12 @@
       "global_uri": "https://bs.die-mitte.ch/",
       "group_type": {
         "group_type_enum": "party",
-        "label": "Partei"
+        "label": [
+          {
+            "value": "Partei",
+            "language": "de"
+          }
+        ]
       },
       "label": [
         {
@@ -215,7 +263,12 @@
       "global_uri": "https://www.evp-bs.ch/",
       "group_type": {
         "group_type_enum": "party",
-        "label": "Partei"
+        "label": [
+          {
+            "value": "Partei",
+            "language": "de"
+          }
+        ]
       },
       "label": [
         {
@@ -238,7 +291,12 @@
       "global_uri": "https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp",
       "group_type": {
         "group_type_enum": "parliamentary_group",
-        "label": "Fraktion"
+        "label": [
+          {
+            "value": "Fraktion",
+            "language": "de"
+          }
+        ]
       },
       "label": [
         {
@@ -258,7 +316,12 @@
       "global_uri": "https://www.ar.ch/kantonsrat/",
       "group_type": {
         "group_type_enum": "council_legislative",
-        "label": "Parlament (Legislativrat)"
+        "label": [
+          {
+            "value": "Parlament (Legislativrat)",
+            "language": "de"
+          }
+        ]
       },
       "label": [
         {
@@ -273,7 +336,12 @@
       "global_uri": "https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/",
       "group_type": {
         "group_type_enum": "committee",
-        "label": "Kommission"
+        "label": [
+          {
+            "value": "Kommission",
+            "language": "de"
+          }
+        ]
       },
       "label": [
         {
@@ -297,7 +365,12 @@
       "global_uri": "https://grosserrat.bs.ch/gremien/praesidium-und-buero",
       "group_type": {
         "group_type_enum": "council_bureau",
-        "label": "Ratsbüro"
+        "label": [
+          {
+            "value": "Ratsbüro",
+            "language": "de"
+          }
+        ]
       },
       "label": [
         {
@@ -315,7 +388,16 @@
       "global_uri": "https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5",
       "group_type": {
         "group_type_enum": "delegation",
-        "label": "Delegation"
+        "label": [
+          {
+            "value": "Delegation",
+            "language": "de"
+          },
+          {
+            "value": "Délégation",
+            "language": "fr"
+          }
+        ]
       },
       "label": [
         {

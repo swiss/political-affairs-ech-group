@@ -24,6 +24,10 @@ landing_page:
   language: fr
 group_type:
   group_type_enum: delegation
-  label: Delegation
+  label:
+  - value: Delegation
+    language: de
+  - value: Délégation
+    language: fr
 spatial: https://ld.admin.ch/canton/10
 valid_from: 2007-12-12

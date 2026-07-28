@@ -22,5 +22,7 @@ landing_page:
   language: it
 group_type:
   group_type_enum: committee_extraparliamentary
-  label: Ausserparlamentarische Kommission
+  label:
+  - value: Ausserparlamentarische Kommission
+    language: de
 spatial: https://ld.admin.ch/country/CHE

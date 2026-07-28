@@ -78,7 +78,9 @@ groups:
     language: de
   group_type:
     group_type_enum: council_legislative
-    label: Parlament (Legislativrat)
+    label:
+    - value: Parlament (Legislativrat)
+      language: de
   spatial: https://ld.admin.ch/canton/15
 - local_id: 3
   global_uri: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/
@@ -92,7 +94,9 @@ groups:
     language: de
   group_type:
     group_type_enum: committee
-    label: Kommission
+    label:
+    - value: Kommission
+      language: de
   spatial: https://ld.admin.ch/canton/15
 
 ```
@@ -107,7 +111,9 @@ groups:
     language: de
   group_type:
     group_type_enum: council_executive
-    label: Regierung (Exekutivrat)
+    label:
+    - value: Regierung (Exekutivrat)
+      language: de
   spatial: https://ld.admin.ch/canton/12
 - local_id: 7172
   global_uri: https://www.bs.ch/regierungsrat/staatskanzlei
@@ -118,7 +124,9 @@ groups:
   - https://www.regierungsrat.bs.ch/
   group_type:
     group_type_enum: council_secretariat
-    label: Staatskanzlei
+    label:
+    - value: Staatskanzlei
+      language: de
   spatial: https://ld.admin.ch/canton/12
 
 ```
@@ -151,7 +159,11 @@ landing_page:
   language: fr
 group_type:
   group_type_enum: delegation
-  label: Delegation
+  label:
+  - value: Delegation
+    language: de
+  - value: Délégation
+    language: fr
 spatial: https://ld.admin.ch/canton/10
 valid_from: 2007-12-12
 
@@ -170,7 +182,9 @@ parent_groups:
 - https://www.evp-bs.ch/
 group_type:
   group_type_enum: parliamentary_group
-  label: Fraktion
+  label:
+  - value: Fraktion
+    language: de
 spatial: https://ld.admin.ch/canton/12
 
 ```
@@ -185,7 +199,9 @@ parent_groups:
 - https://www.die-mitte.ch/
 group_type:
   group_type_enum: party
-  label: Partei
+  label:
+  - value: Partei
+    language: de
 spatial: https://ld.admin.ch/canton/12
 
 ```
@@ -216,7 +232,9 @@ landing_page:
   language: it
 group_type:
   group_type_enum: committee_extraparliamentary
-  label: Ausserparlamentarische Kommission
+  label:
+  - value: Ausserparlamentarische Kommission
+    language: de
 spatial: https://ld.admin.ch/country/CHE
 
 ```
@@ -234,7 +252,9 @@ parent_groups:
 - https://www.evppev.ch/
 group_type:
   group_type_enum: party
-  label: Partei
+  label:
+  - value: Partei
+    language: de
 spatial: https://ld.admin.ch/canton/12
 
 ```
@@ -248,7 +268,9 @@ label:
   language: de
 group_type:
   group_type_enum: council_legislative
-  label: Parlament (Legislativrat)
+  label:
+  - value: Parlament (Legislativrat)
+    language: de
 spatial: https://ld.admin.ch/municipality/3203
 
 ```
@@ -266,7 +288,9 @@ abbreviation:
   language: fr
 group_type:
   group_type_enum: association
-  label: Verein
+  label:
+  - value: Verein
+    language: de
 spatial: https://ld.admin.ch/canton/22
 
 ```
@@ -281,7 +305,9 @@ groups:
     language: de
   group_type:
     group_type_enum: council_legislative
-    label: Parlament (Legislativrat)
+    label:
+    - value: Parlament (Legislativrat)
+      language: de
   spatial: https://ld.admin.ch/canton/12
 - local_id: 50
   global_uri: https://grosserrat.bs.ch/gremien/praesidium-und-buero
@@ -292,7 +318,9 @@ groups:
   - https://www.grosserrat.bs.ch/
   group_type:
     group_type_enum: council_bureau
-    label: Ratsbüro
+    label:
+    - value: Ratsbüro
+      language: de
   spatial: https://ld.admin.ch/canton/12
 
 ```
@@ -332,7 +360,13 @@ addresses:
   country: CH
 group_type:
   group_type_enum: interest_group
-  label: Interessengruppe
+  label:
+  - value: Interessengruppe
+    language: de
+  - value: Groupe d'intérêt
+    language: fr
+  - value: Gruppo d'interesse
+    language: it
 spatial: https://ld.admin.ch/country/CHE
 valid_from: 2012-01-01
 

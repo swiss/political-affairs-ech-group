@@ -9,5 +9,7 @@ parent_groups:
 - https://www.evppev.ch/
 group_type:
   group_type_enum: party
-  label: Partei
+  label:
+  - value: Partei
+    language: de
 spatial: https://ld.admin.ch/canton/12

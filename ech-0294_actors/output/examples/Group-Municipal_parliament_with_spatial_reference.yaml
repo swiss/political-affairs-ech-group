@@ -5,5 +5,7 @@ label:
   language: de
 group_type:
   group_type_enum: council_legislative
-  label: Parlament (Legislativrat)
+  label:
+  - value: Parlament (Legislativrat)
+    language: de
 spatial: https://ld.admin.ch/municipality/3203

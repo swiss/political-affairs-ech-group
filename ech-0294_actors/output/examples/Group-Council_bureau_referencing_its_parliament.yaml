@@ -6,7 +6,9 @@ groups:
     language: de
   group_type:
     group_type_enum: council_legislative
-    label: Parlament (Legislativrat)
+    label:
+    - value: Parlament (Legislativrat)
+      language: de
   spatial: https://ld.admin.ch/canton/12
 - local_id: 50
   global_uri: https://grosserrat.bs.ch/gremien/praesidium-und-buero
@@ -17,5 +19,7 @@ groups:
   - https://www.grosserrat.bs.ch/
   group_type:
     group_type_enum: council_bureau
-    label: Ratsbüro
+    label:
+    - value: Ratsbüro
+      language: de
   spatial: https://ld.admin.ch/canton/12

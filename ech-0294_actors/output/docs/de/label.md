@@ -33,7 +33,7 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 | [Occupation](Occupation.md) | Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Code... |  no  |
 | [Contact](Contact.md) | Kontaktinformation einer Person mit Angabe eines Typs (z |  no  |
 | [ElectoralDistrict](ElectoralDistrict.md) | Wahlkreis oder Wahlregion, die einer Mitgliedschaft zugeordnet ist |  no  |
-| [GroupType](GroupType.md) | Art der Gruppe (z |  no  |
+| [GroupType](GroupType.md) | Art der Gruppe (z |  yes  |
 | [PersonReference](PersonReference.md) | Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikations... |  yes  |
 | [GroupReference](GroupReference.md) | Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikations... |  no  |
 

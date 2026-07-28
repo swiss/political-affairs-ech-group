@@ -6,7 +6,9 @@ groups:
     language: de
   group_type:
     group_type_enum: council_legislative
-    label: Parlament (Legislativrat)
+    label:
+    - value: Parlament (Legislativrat)
+      language: de
   spatial: https://ld.admin.ch/canton/15
 - local_id: 3
   global_uri: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/
@@ -20,5 +22,7 @@ groups:
     language: de
   group_type:
     group_type_enum: committee
-    label: Kommission
+    label:
+    - value: Kommission
+      language: de
   spatial: https://ld.admin.ch/canton/15

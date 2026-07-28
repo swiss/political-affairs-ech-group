@@ -9,5 +9,7 @@ parent_groups:
 - https://www.evp-bs.ch/
 group_type:
   group_type_enum: parliamentary_group
-  label: Fraktion
+  label:
+  - value: Fraktion
+    language: de
 spatial: https://ld.admin.ch/canton/12

@@ -31,6 +31,12 @@ addresses:
   country: CH
 group_type:
   group_type_enum: interest_group
-  label: Interessengruppe
+  label:
+  - value: Interessengruppe
+    language: de
+  - value: Groupe d'intérêt
+    language: fr
+  - value: Gruppo d'interesse
+    language: it
 spatial: https://ld.admin.ch/country/CHE
 valid_from: 2012-01-01

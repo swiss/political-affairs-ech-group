@@ -6,7 +6,9 @@ groups:
     language: de
   group_type:
     group_type_enum: council_executive
-    label: Regierung (Exekutivrat)
+    label:
+    - value: Regierung (Exekutivrat)
+      language: de
   spatial: https://ld.admin.ch/canton/12
 - local_id: 7172
   global_uri: https://www.bs.ch/regierungsrat/staatskanzlei
@@ -17,5 +19,7 @@ groups:
   - https://www.regierungsrat.bs.ch/
   group_type:
     group_type_enum: council_secretariat
-    label: Staatskanzlei
+    label:
+    - value: Staatskanzlei
+      language: de
   spatial: https://ld.admin.ch/canton/12

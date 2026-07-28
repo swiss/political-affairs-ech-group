@@ -19,7 +19,7 @@ __
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
 | group_type_enum | 0..1 <br/> [GroupTypeEnum](GroupTypeEnum.md) | Link to the controlled vocabulary for group types.  |
-| label | 0..1 <br/> [String](String.md) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
+| label | * <br/> [MultilingualValue](MultilingualValue.md) | Designation of the type as used by the publishing body, with the language it is published in. Where a body publishes the designation in several languages, one entry per language is recorded.  |
 
 
 
