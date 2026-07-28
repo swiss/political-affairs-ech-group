@@ -1,10 +1,9 @@
 # Beispiele für Gruppen und Organe unterschiedlicher Typen. Alle Einträge sind
 # echte Fälle. `global_uri` ist der Identifikator und muss die einzelne Gruppe
-# eindeutig bezeichnen: wo die publizierende Stelle eine gruppenspezifische
-# Adresse führt, wird diese verwendet; führt sie nur eine Übersichtsseite über
-# alle Fraktionen bzw. Kommissionen, steht dort die eindeutige URI der Plattform
-# openparldata.ch, über die die Daten bezogen wurden, und die amtliche Übersicht
-# erscheint als `landing_page`. `local_id` ist die Kennung von openparldata.ch.
+# eindeutig bezeichnen; verwendet wird durchwegs die gruppenspezifische Adresse
+# der publizierenden Stelle. Eine Übersichtsseite über alle Fraktionen oder
+# Kommissionen taugt dafür nicht, weil sie mehrere Gruppen bezeichnet.
+# `local_id` ist die Kennung von openparldata.ch.
 #
 # `group_type` zeigt das Zusammenspiel von kontrolliertem Vokabular
 # (`group_type_enum`) und der herkunftsspezifischen Bezeichnung (`label`):
@@ -154,6 +153,36 @@ groups:
       label: Staatskanzlei
     spatial: https://ld.admin.ch/canton/12
 
+  # Die beiden Kantonalparteien, welche die folgende Fraktion tragen. Ihr
+  # Verweis geht auf die jeweilige Bundespartei — jede föderale Ebene ist eine
+  # eigene Gruppe. Die Bundesparteien sind hier nicht mitgeliefert; eine
+  # übergeordnete Gruppe wird über ihre URI benannt und muss nicht Teil
+  # derselben Lieferung sein.
+  - global_uri: https://bs.die-mitte.ch/
+    label:
+      - value: Die Mitte Basel-Stadt
+        language: de
+    parent_groups:
+      - https://www.die-mitte.ch/
+    group_type:
+      group_type_enum: party
+      label: Partei
+    spatial: https://ld.admin.ch/canton/12
+
+  - global_uri: https://www.evp-bs.ch/
+    label:
+      - value: Evangelische Volkspartei Basel-Stadt
+        language: de
+    abbreviation:
+      - value: EVP BS
+        language: de
+    parent_groups:
+      - https://www.evppev.ch/
+    group_type:
+      group_type_enum: party
+      label: Partei
+    spatial: https://ld.admin.ch/canton/12
+
   # Fraktion im Grossen Rat Basel-Stadt. Sie zeigt den typenübergreifenden und
   # mehrfachen Verweis über `parent_groups`: Die Fraktion gehört zum Parlament
   # und wird zugleich von zwei Parteien getragen, die je eine eigene Gruppe
@@ -173,12 +202,22 @@ groups:
       label: Fraktion
     spatial: https://ld.admin.ch/canton/12
 
-  # Ständige Kommission mit gebräuchlicher Abkürzung. Der Verweis auf den
-  # Kantonsrat zeigt, dass eine übergeordnete Gruppe über ihre URI benannt wird
-  # und nicht in derselben Lieferung enthalten sein muss — erst dieser Verweis
-  # macht sichtbar, welchem Rat die Kommission zugehört.
+  # Kantonsparlament — übergeordnete Gruppe der folgenden Kommission
+  - local_id: 34
+    global_uri: https://www.ar.ch/kantonsrat/
+    label:
+      - value: Kantonsrat Appenzell Ausserrhoden
+        language: de
+    group_type:
+      group_type_enum: council_legislative
+      label: Parlament (Legislativrat)
+    spatial: https://ld.admin.ch/canton/15
+
+  # Ständige Kommission mit gebräuchlicher Abkürzung. Erst der Verweis auf den
+  # Kantonsrat macht sichtbar, welchem Rat sie zugehört — der Typ allein sagt
+  # das nicht.
   - local_id: 3
-    global_uri: https://api.openparldata.ch/v1/groups/3
+    global_uri: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/
     label:
       - value: Geschäftsprüfungskommission
         language: de
@@ -186,9 +225,6 @@ groups:
       - https://www.ar.ch/kantonsrat/
     abbreviation:
       - value: GPK
-        language: de
-    landing_page:
-      - value: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/
         language: de
     group_type:
       group_type_enum: committee

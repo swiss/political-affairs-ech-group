@@ -96,6 +96,10 @@ example_titles:
     de: Staatskanzlei als Stabsstelle der Exekutive
     fr: "Chancellerie d'État comme état-major de l'exécutif"
     en: State chancellery as the staff unit of the executive
+  "https://www.evp-bs.ch/":
+    de: Kantonalpartei mit Verweis auf die Bundespartei
+    fr: Parti cantonal renvoyant au parti national
+    en: Cantonal party referencing its national party
   "1266":
     de: Fraktion mit Verweis auf Parlament und tragende Parteien
     fr: Groupe parlementaire renvoyant au parlement et aux partis porteurs
