@@ -1,0 +1,11 @@
+global_uri: act:il_burkart_001
+person_reference:
+  global_uri: http://www.wikidata.org/entity/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: professional_activity
+organization_name: Burkart Advisory GmbH, Baden
+legal_form: '0107'
+committee: Geschäftsleitung
+function_role: Geschäftsführer
+is_paid: true

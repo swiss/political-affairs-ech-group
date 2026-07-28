@@ -64,14 +64,14 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 
 ### Beispiele
-#### Beispiel: Occupation-swiss_politicians_Sofia_Fisch_Juristin
+#### Beispiel: swiss politicians Sofia Fisch Juristin
 
 ```yaml
 label: Jurist*in
 is_active: true
 
 ```
-#### Beispiel: Occupation-swiss_politicians_Beat_Jans_Politiker
+#### Beispiel: swiss politicians Beat Jans Politiker
 
 ```yaml
 label: Politiker

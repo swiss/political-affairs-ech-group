@@ -176,7 +176,7 @@ __
 
 
 ### Examples
-#### Example: Person-swiss_politicians_Cristina_Bozzi-Brunel
+#### Example: Name variant alongside the official double name
 
 ```yaml
 local_id: 280958
@@ -191,21 +191,7 @@ names:
   value: Brunel
 
 ```
-#### Example: Person-swiss_politicians_Alois_Arnold_1981
-
-```yaml
-local_id: 6447
-global_uri: https://www.ur.ch/behoerdenmitglieder/6447
-label: Alois Arnold (1981)
-birth_year: 1981
-names:
-- name_type: PersonFirstName
-  value: Alois
-- name_type: PersonOfficialName
-  value: Arnold
-
-```
-#### Example: Person-swiss_politicians_Gerri_Beretta-Piccoli
+#### Example: Call name differing from the official first name
 
 ```yaml
 local_id: 1269
@@ -220,7 +206,7 @@ names:
   value: Beretta-Piccoli
 
 ```
-#### Example: Person-swiss_politicians_Sofia_Fisch
+#### Example: Non-binary gender entry with occupation and training
 
 ```yaml
 local_id: 72c7232be92944e3876f3b6723824ff9
@@ -243,13 +229,13 @@ trainings:
   value: MLaw
 
 ```
-#### Example: Person-swiss_politicians_Alois_Arnold_1965
+#### Example: Telling apart persons with identical names via the label
 
 ```yaml
-local_id: 6370
-global_uri: https://www.ur.ch/behoerdenmitglieder/6370
-label: Alois Arnold (1965)
-birth_year: 1965
+local_id: 6447
+global_uri: https://www.ur.ch/behoerdenmitglieder/6447
+label: Alois Arnold (1981)
+birth_year: 1981
 names:
 - name_type: PersonFirstName
   value: Alois
@@ -257,7 +243,7 @@ names:
   value: Arnold
 
 ```
-#### Example: Person-swiss_politicians_Beat_Jans
+#### Example: Fully recorded person
 
 ```yaml
 local_id: 4032
@@ -299,6 +285,20 @@ contacts:
   value: beat.jans@admin.ch
 - contact_type: contact_website
   value: http://www.beat-jans.ch
+
+```
+#### Example: Telling apart persons with identical names via the label sec
+
+```yaml
+local_id: 6370
+global_uri: https://www.ur.ch/behoerdenmitglieder/6370
+label: Alois Arnold (1965)
+birth_year: 1965
+names:
+- name_type: PersonFirstName
+  value: Alois
+- name_type: PersonOfficialName
+  value: Arnold
 
 ```
 
@@ -678,14 +678,14 @@ At least one of the following must be set:
 
 
 ### Examples
-#### Example: Occupation-swiss_politicians_Sofia_Fisch_Juristin
+#### Example: swiss politicians Sofia Fisch Juristin
 
 ```yaml
 label: Jurist*in
 is_active: true
 
 ```
-#### Example: Occupation-swiss_politicians_Beat_Jans_Politiker
+#### Example: swiss politicians Beat Jans Politiker
 
 ```yaml
 label: Politiker
@@ -960,50 +960,7 @@ __
 
 
 ### Examples
-#### Example: Group-groups__it
-
-```yaml
-local_id: 6627
-global_uri: https://api.openparldata.ch/v1/groups/6627
-label:
-- value: Konsumenteninformation und -schutz
-  language: de
-- value: Information et défense des consommateurs
-  language: fr
-- value: Informazione e tutela dei consumatori
-  language: it
-description:
-- value: L'intergroupe parlementaire « Information et défense des consommateurs »
-    réunit toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer
-    et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s
-    en Suisse.
-  language: fr
-landing_page:
-- value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
-  language: de
-contacts:
-- contact_type: email
-  value: l.altwegg@frc.ch
-  label: Sekretariat
-- contact_type: phone
-  value: +41 21 331 00 95
-  label: Sekretariat
-addresses:
-- address_type: businessAddress
-  address_uri: https://geo.ld.admin.ch/location/address/101009806
-  street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
-    585
-  postal_code: '1001'
-  postal_locality: Lausanne
-  country: CH
-group_type:
-  group_type_enum: interest_group
-  label: Interessengruppe
-spatial: https://ld.admin.ch/country/CHE
-valid_from: 2012-01-01
-
-```
-#### Example: Group-groups__de
+#### Example: Council bureau
 
 ```yaml
 local_id: 50
@@ -1017,7 +974,7 @@ group_type:
 spatial: https://ld.admin.ch/canton/12
 
 ```
-#### Example: Group-groups__fr
+#### Example: Bilingual delegation to an intercantonal body
 
 ```yaml
 local_id: 5000
@@ -1033,13 +990,11 @@ abbreviation:
 - value: Del-DetPen
   language: fr
 description:
-- value: Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung
-    besteht aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg,
-    Genf, Jura, Neuenburg, Waadt und Wallis.
+- value: Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht aus 18 Grossrätinnen
+    und Grossräten aus den sechs Vertragskantonen Freiburg, Genf, Jura, Neuenburg, Waadt und Wallis.
   language: de
-- value: 'La Commission interparlementaire de contrôle détention pénale est composée
-    de 18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel,
-    Vaud et Valais.'
+- value: 'La Commission interparlementaire de contrôle détention pénale est composée de 18 députés issus
+    des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel, Vaud et Valais.'
   language: fr
 landing_page:
 - value: https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
@@ -1051,6 +1006,98 @@ group_type:
   label: Delegation
 spatial: https://ld.admin.ch/canton/10
 valid_from: 2007-12-12
+
+```
+#### Example: Faction of a cantonal parliament
+
+```yaml
+local_id: 20
+global_uri: https://api.openparldata.ch/v1/groups/20
+label:
+- value: Evangelische Volkspartei
+  language: de
+landing_page:
+- value: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen
+  language: de
+group_type:
+  group_type_enum: faction
+  label: Fraktion
+spatial: https://ld.admin.ch/canton/12
+
+```
+#### Example: Municipal parliament with spatial reference
+
+```yaml
+local_id: 700
+global_uri: https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
+label:
+- value: Stadtparlament St. Gallen
+  language: de
+group_type:
+  group_type_enum: parliament
+  label: Parlament (Legislativrat)
+spatial: https://ld.admin.ch/municipality/3203
+
+```
+#### Example: Commission with a common abbreviation
+
+```yaml
+local_id: 3
+global_uri: https://api.openparldata.ch/v1/groups/3
+label:
+- value: Geschäftsprüfungskommission
+  language: de
+abbreviation:
+- value: GPK
+  language: de
+landing_page:
+- value: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/
+  language: de
+group_type:
+  group_type_enum: commission
+  label: Kommission
+spatial: https://ld.admin.ch/canton/15
+
+```
+#### Example: Interest group with a trilingual name and contact
+
+```yaml
+local_id: 6627
+global_uri: https://api.openparldata.ch/v1/groups/6627
+label:
+- value: Konsumenteninformation und -schutz
+  language: de
+- value: Information et défense des consommateurs
+  language: fr
+- value: Informazione e tutela dei consumatori
+  language: it
+description:
+- value: L'intergroupe parlementaire « Information et défense des consommateurs » réunit toutes les sensibilités
+    politiques. Cet intergroupe a pour mission d'informer et de sensibiliser les élu·e·s aux questions
+    relatives à la défense des consommateur·rice·s en Suisse.
+  language: fr
+landing_page:
+- value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
+  language: de
+contacts:
+- contact_type: email
+  value: l.altwegg@frc.ch
+  label: Sekretariat
+- contact_type: phone
+  value: +41 21 331 00 95
+  label: Sekretariat
+addresses:
+- address_type: businessAddress
+  address_uri: https://geo.ld.admin.ch/location/address/101009806
+  street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale 585
+  postal_code: '1001'
+  postal_locality: Lausanne
+  country: CH
+group_type:
+  group_type_enum: interest_group
+  label: Interessengruppe
+spatial: https://ld.admin.ch/country/CHE
+valid_from: 2012-01-01
 
 ```
 
@@ -1511,7 +1558,7 @@ At least one of the following must be set:
 
 
 ### Examples
-#### Example: InterestLink-interest_links_il_burkart_008
+#### Example: interest links il burkart 008
 
 ```yaml
 global_uri: act:il_burkart_008
@@ -1527,7 +1574,7 @@ function_role: Beirat
 is_paid: true
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_010
+#### Example: interest links il burkart 010
 
 ```yaml
 global_uri: act:il_burkart_010
@@ -1543,7 +1590,7 @@ function_role: Präsident
 is_paid: false
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_002
+#### Example: interest links il burkart 002
 
 ```yaml
 global_uri: act:il_burkart_002
@@ -1559,7 +1606,7 @@ function_role: Mitglied
 is_paid: true
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_007
+#### Example: interest links il burkart 007
 
 ```yaml
 global_uri: act:il_burkart_007
@@ -1575,7 +1622,7 @@ function_role: Vizepräsident
 is_paid: false
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_005
+#### Example: interest links il burkart 005
 
 ```yaml
 global_uri: act:il_burkart_005
@@ -1591,7 +1638,7 @@ function_role: Präsident
 is_paid: true
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_001
+#### Example: interest links il burkart 001
 
 ```yaml
 global_uri: act:il_burkart_001
@@ -1607,7 +1654,7 @@ function_role: Geschäftsführer
 is_paid: true
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_003
+#### Example: interest links il burkart 003
 
 ```yaml
 global_uri: act:il_burkart_003
@@ -1623,7 +1670,7 @@ function_role: Mitglied
 is_paid: true
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_011
+#### Example: interest links il burkart 011
 
 ```yaml
 global_uri: act:il_burkart_011
@@ -1639,7 +1686,7 @@ function_role: Mitglied
 is_paid: false
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_004
+#### Example: interest links il burkart 004
 
 ```yaml
 global_uri: act:il_burkart_004
@@ -1655,7 +1702,7 @@ function_role: Mitglied
 is_paid: true
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_006
+#### Example: interest links il burkart 006
 
 ```yaml
 global_uri: act:il_burkart_006
@@ -1671,7 +1718,7 @@ function_role: Präsident
 is_paid: true
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_009
+#### Example: interest links il burkart 009
 
 ```yaml
 global_uri: act:il_burkart_009
@@ -2028,20 +2075,19 @@ At least one of the following must be set:
 
 
 ### Examples
-#### Example: Address-swiss_politicians_Beat_Jans_1
+#### Example: swiss politicians Beat Jans 1
 
 ```yaml
 address_type: businessAddress
 postal_locality: Basel-Stadt
 
 ```
-#### Example: Address-groups__it_1
+#### Example: groups  it 1
 
 ```yaml
 address_type: businessAddress
 address_uri: https://geo.ld.admin.ch/location/address/101009806
-street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
-  585
+street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale 585
 postal_code: '1001'
 postal_locality: Lausanne
 country: CH

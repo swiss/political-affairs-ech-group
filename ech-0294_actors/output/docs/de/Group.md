@@ -64,64 +64,7 @@ __
 
 
 ### Beispiele
-#### Beispiel: Group-groups__it
-
-```yaml
-local_id: 6627
-global_uri: https://api.openparldata.ch/v1/groups/6627
-label:
-- value: Konsumenteninformation und -schutz
-  language: de
-- value: Information et défense des consommateurs
-  language: fr
-- value: Informazione e tutela dei consumatori
-  language: it
-description:
-- value: L'intergroupe parlementaire « Information et défense des consommateurs »
-    réunit toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer
-    et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s
-    en Suisse.
-  language: fr
-landing_page:
-- value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
-  language: de
-contacts:
-- contact_type: email
-  value: l.altwegg@frc.ch
-  label: Sekretariat
-- contact_type: phone
-  value: +41 21 331 00 95
-  label: Sekretariat
-addresses:
-- address_type: businessAddress
-  address_uri: https://geo.ld.admin.ch/location/address/101009806
-  street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
-    585
-  postal_code: '1001'
-  postal_locality: Lausanne
-  country: CH
-group_type:
-  group_type_enum: interest_group
-  label: Interessengruppe
-spatial: https://ld.admin.ch/country/CHE
-valid_from: 2012-01-01
-
-```
-#### Beispiel: Group-groups__de
-
-```yaml
-local_id: 50
-global_uri: https://grosserrat.bs.ch/gremien/praesidium-und-buero
-label:
-- value: Büro des Grossen Rates
-  language: de
-group_type:
-  group_type_enum: parliamentary_bureau
-  label: Ratsbüro
-spatial: https://ld.admin.ch/canton/12
-
-```
-#### Beispiel: Group-groups__fr
+#### Beispiel: Zweisprachige Delegation in ein interkantonales Gremium
 
 ```yaml
 local_id: 5000
@@ -137,13 +80,11 @@ abbreviation:
 - value: Del-DetPen
   language: fr
 description:
-- value: Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung
-    besteht aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg,
-    Genf, Jura, Neuenburg, Waadt und Wallis.
+- value: Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht aus 18 Grossrätinnen
+    und Grossräten aus den sechs Vertragskantonen Freiburg, Genf, Jura, Neuenburg, Waadt und Wallis.
   language: de
-- value: 'La Commission interparlementaire de contrôle détention pénale est composée
-    de 18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel,
-    Vaud et Valais.'
+- value: 'La Commission interparlementaire de contrôle détention pénale est composée de 18 députés issus
+    des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel, Vaud et Valais.'
   language: fr
 landing_page:
 - value: https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
@@ -155,6 +96,112 @@ group_type:
   label: Delegation
 spatial: https://ld.admin.ch/canton/10
 valid_from: 2007-12-12
+
+```
+#### Beispiel: Gemeindeparlament mit raeumlicher Referenz
+
+```yaml
+local_id: 700
+global_uri: https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
+label:
+- value: Stadtparlament St. Gallen
+  language: de
+group_type:
+  group_type_enum: parliament
+  label: Parlament (Legislativrat)
+spatial: https://ld.admin.ch/municipality/3203
+
+```
+#### Beispiel: Fraktion eines Kantonsparlaments
+
+```yaml
+local_id: 20
+global_uri: https://api.openparldata.ch/v1/groups/20
+label:
+- value: Evangelische Volkspartei
+  language: de
+landing_page:
+- value: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen
+  language: de
+group_type:
+  group_type_enum: faction
+  label: Fraktion
+spatial: https://ld.admin.ch/canton/12
+
+```
+#### Beispiel: Interessengruppe mit dreisprachigem Namen und Kontakt
+
+```yaml
+local_id: 6627
+global_uri: https://api.openparldata.ch/v1/groups/6627
+label:
+- value: Konsumenteninformation und -schutz
+  language: de
+- value: Information et défense des consommateurs
+  language: fr
+- value: Informazione e tutela dei consumatori
+  language: it
+description:
+- value: L'intergroupe parlementaire « Information et défense des consommateurs » réunit toutes les sensibilités
+    politiques. Cet intergroupe a pour mission d'informer et de sensibiliser les élu·e·s aux questions
+    relatives à la défense des consommateur·rice·s en Suisse.
+  language: fr
+landing_page:
+- value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
+  language: de
+contacts:
+- contact_type: email
+  value: l.altwegg@frc.ch
+  label: Sekretariat
+- contact_type: phone
+  value: +41 21 331 00 95
+  label: Sekretariat
+addresses:
+- address_type: businessAddress
+  address_uri: https://geo.ld.admin.ch/location/address/101009806
+  street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale 585
+  postal_code: '1001'
+  postal_locality: Lausanne
+  country: CH
+group_type:
+  group_type_enum: interest_group
+  label: Interessengruppe
+spatial: https://ld.admin.ch/country/CHE
+valid_from: 2012-01-01
+
+```
+#### Beispiel: Kommission mit gebraeuchlicher Abkuerzung
+
+```yaml
+local_id: 3
+global_uri: https://api.openparldata.ch/v1/groups/3
+label:
+- value: Geschäftsprüfungskommission
+  language: de
+abbreviation:
+- value: GPK
+  language: de
+landing_page:
+- value: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/
+  language: de
+group_type:
+  group_type_enum: commission
+  label: Kommission
+spatial: https://ld.admin.ch/canton/15
+
+```
+#### Beispiel: Ratsbuero
+
+```yaml
+local_id: 50
+global_uri: https://grosserrat.bs.ch/gremien/praesidium-und-buero
+label:
+- value: Büro des Grossen Rates
+  language: de
+group_type:
+  group_type_enum: parliamentary_bureau
+  label: Ratsbüro
+spatial: https://ld.admin.ch/canton/12
 
 ```
 

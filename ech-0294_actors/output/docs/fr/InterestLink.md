@@ -76,7 +76,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 
 ### Exemples
-#### Exemple : InterestLink-interest_links_il_burkart_008
+#### Exemple : interest links il burkart 008
 
 ```yaml
 global_uri: act:il_burkart_008
@@ -92,7 +92,7 @@ function_role: Beirat
 is_paid: true
 
 ```
-#### Exemple : InterestLink-interest_links_il_burkart_010
+#### Exemple : interest links il burkart 010
 
 ```yaml
 global_uri: act:il_burkart_010
@@ -108,7 +108,7 @@ function_role: Präsident
 is_paid: false
 
 ```
-#### Exemple : InterestLink-interest_links_il_burkart_002
+#### Exemple : interest links il burkart 002
 
 ```yaml
 global_uri: act:il_burkart_002
@@ -124,7 +124,7 @@ function_role: Mitglied
 is_paid: true
 
 ```
-#### Exemple : InterestLink-interest_links_il_burkart_007
+#### Exemple : interest links il burkart 007
 
 ```yaml
 global_uri: act:il_burkart_007
@@ -140,7 +140,7 @@ function_role: Vizepräsident
 is_paid: false
 
 ```
-#### Exemple : InterestLink-interest_links_il_burkart_005
+#### Exemple : interest links il burkart 005
 
 ```yaml
 global_uri: act:il_burkart_005
@@ -156,7 +156,7 @@ function_role: Präsident
 is_paid: true
 
 ```
-#### Exemple : InterestLink-interest_links_il_burkart_001
+#### Exemple : interest links il burkart 001
 
 ```yaml
 global_uri: act:il_burkart_001
@@ -172,7 +172,7 @@ function_role: Geschäftsführer
 is_paid: true
 
 ```
-#### Exemple : InterestLink-interest_links_il_burkart_003
+#### Exemple : interest links il burkart 003
 
 ```yaml
 global_uri: act:il_burkart_003
@@ -188,7 +188,7 @@ function_role: Mitglied
 is_paid: true
 
 ```
-#### Exemple : InterestLink-interest_links_il_burkart_011
+#### Exemple : interest links il burkart 011
 
 ```yaml
 global_uri: act:il_burkart_011
@@ -204,7 +204,7 @@ function_role: Mitglied
 is_paid: false
 
 ```
-#### Exemple : InterestLink-interest_links_il_burkart_004
+#### Exemple : interest links il burkart 004
 
 ```yaml
 global_uri: act:il_burkart_004
@@ -220,7 +220,7 @@ function_role: Mitglied
 is_paid: true
 
 ```
-#### Exemple : InterestLink-interest_links_il_burkart_006
+#### Exemple : interest links il burkart 006
 
 ```yaml
 global_uri: act:il_burkart_006
@@ -236,7 +236,7 @@ function_role: Präsident
 is_paid: true
 
 ```
-#### Exemple : InterestLink-interest_links_il_burkart_009
+#### Exemple : interest links il burkart 009
 
 ```yaml
 global_uri: act:il_burkart_009

@@ -63,20 +63,19 @@ At least one of the following must be set:
 
 
 ### Examples
-#### Example: Address-swiss_politicians_Beat_Jans_1
+#### Example: swiss politicians Beat Jans 1
 
 ```yaml
 address_type: businessAddress
 postal_locality: Basel-Stadt
 
 ```
-#### Example: Address-groups__it_1
+#### Example: groups  it 1
 
 ```yaml
 address_type: businessAddress
 address_uri: https://geo.ld.admin.ch/location/address/101009806
-street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
-  585
+street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale 585
 postal_code: '1001'
 postal_locality: Lausanne
 country: CH

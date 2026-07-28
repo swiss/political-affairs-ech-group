@@ -43,7 +43,7 @@ __
 
 
 ### Exemples
-#### Exemple : Container-interest_links
+#### Exemple : interest links
 
 ```yaml
 # Interessenbindungen Beispieldaten
@@ -198,7 +198,7 @@ interest_links:
     function_role: Mitglied
     is_paid: false
 ```
-#### Exemple : Container-swiss_politicians
+#### Exemple : swiss politicians
 
 ```yaml
 global_uri: act:swiss_politicians_example
@@ -326,7 +326,7 @@ persons:
 #     electoral_district:
 #       global_uri: ch:canton/12
 ```
-#### Exemple : Container-groups
+#### Exemple : groups
 
 ```yaml
 # Beispiele für Gruppen und Organe unterschiedlicher Typen. Alle Einträge sind

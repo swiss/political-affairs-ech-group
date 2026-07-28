@@ -1,0 +1,18 @@
+local_id: 72c7232be92944e3876f3b6723824ff9
+global_uri: https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9
+label: Sofia Fisch
+birth_year: 1996
+names:
+- name_type: PersonFirstName
+  value: Sofia
+- name_type: PersonOfficialName
+  value: Fisch
+genders:
+- gender_code: non_binary
+  label: divers
+occupations:
+- label: Jurist*in
+  is_active: true
+trainings:
+- training_type: '3223'
+  value: MLaw

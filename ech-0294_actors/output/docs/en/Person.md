@@ -65,7 +65,7 @@ __
 
 
 ### Examples
-#### Example: Person-swiss_politicians_Cristina_Bozzi-Brunel
+#### Example: Name variant alongside the official double name
 
 ```yaml
 local_id: 280958
@@ -80,21 +80,7 @@ names:
   value: Brunel
 
 ```
-#### Example: Person-swiss_politicians_Alois_Arnold_1981
-
-```yaml
-local_id: 6447
-global_uri: https://www.ur.ch/behoerdenmitglieder/6447
-label: Alois Arnold (1981)
-birth_year: 1981
-names:
-- name_type: PersonFirstName
-  value: Alois
-- name_type: PersonOfficialName
-  value: Arnold
-
-```
-#### Example: Person-swiss_politicians_Gerri_Beretta-Piccoli
+#### Example: Call name differing from the official first name
 
 ```yaml
 local_id: 1269
@@ -109,7 +95,7 @@ names:
   value: Beretta-Piccoli
 
 ```
-#### Example: Person-swiss_politicians_Sofia_Fisch
+#### Example: Non-binary gender entry with occupation and training
 
 ```yaml
 local_id: 72c7232be92944e3876f3b6723824ff9
@@ -132,13 +118,13 @@ trainings:
   value: MLaw
 
 ```
-#### Example: Person-swiss_politicians_Alois_Arnold_1965
+#### Example: Telling apart persons with identical names via the label
 
 ```yaml
-local_id: 6370
-global_uri: https://www.ur.ch/behoerdenmitglieder/6370
-label: Alois Arnold (1965)
-birth_year: 1965
+local_id: 6447
+global_uri: https://www.ur.ch/behoerdenmitglieder/6447
+label: Alois Arnold (1981)
+birth_year: 1981
 names:
 - name_type: PersonFirstName
   value: Alois
@@ -146,7 +132,7 @@ names:
   value: Arnold
 
 ```
-#### Example: Person-swiss_politicians_Beat_Jans
+#### Example: Fully recorded person
 
 ```yaml
 local_id: 4032
@@ -188,6 +174,20 @@ contacts:
   value: beat.jans@admin.ch
 - contact_type: contact_website
   value: http://www.beat-jans.ch
+
+```
+#### Example: Telling apart persons with identical names via the label sec
+
+```yaml
+local_id: 6370
+global_uri: https://www.ur.ch/behoerdenmitglieder/6370
+label: Alois Arnold (1965)
+birth_year: 1965
+names:
+- name_type: PersonFirstName
+  value: Alois
+- name_type: PersonOfficialName
+  value: Arnold
 
 ```
 
