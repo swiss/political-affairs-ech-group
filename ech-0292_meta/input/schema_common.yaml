@@ -164,6 +164,24 @@ classes:
       value:
         required: true
 
+  MultilingualUri:
+    description: |
+      A URI together with the language of the resource it points to. Same structure as MultilingualValue, but the value is a URI: it is used where the same content is published under a separate address per language.
+    annotations:
+      description_de: |
+        Eine URI zusammen mit der Sprache der Ressource, auf die sie verweist. Gleich aufgebaut wie MultilingualValue, der Wert ist jedoch eine URI: Sie wird dort verwendet, wo derselbe Inhalt je Sprache unter einer eigenen Adresse publiziert wird.
+      description_fr: |
+        Une URI accompagnée de la langue de la ressource vers laquelle elle renvoie. Structure identique à MultilingualValue, mais la valeur est une URI : elle est utilisée là où le même contenu est publié à une adresse propre par langue.
+    slots:
+      - value
+      - language
+    slot_usage:
+      value:
+        required: true
+        range: uri
+      language:
+        required: true
+
   PersonReference:
     description: |
       Lightweight reference to a person with key identification data at time of linking. Preserves historical accuracy even if the person changes later.

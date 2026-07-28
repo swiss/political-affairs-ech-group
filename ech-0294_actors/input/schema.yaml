@@ -118,7 +118,21 @@ classes:
       group_type:
         required: true
       label:
+        # Unlike a person, whose display name is the same in every language, a
+        # group is often published officially in several languages (e.g. "Frauen"
+        # / "Femmes"). The label therefore carries the text together with its
+        # language code, one entry per language.
+        description: |
+          Name of the group, with the language it is published in. Where a group is officially named in several languages, one entry per language is recorded.
+        annotations:
+          description_de: |
+            Bezeichnung der Gruppe mit der Sprache, in der sie publiziert wird. Ist eine Gruppe amtlich in mehreren Sprachen benannt, wird pro Sprache ein Eintrag erfasst.
+          description_fr: |
+            Désignation du groupe avec la langue dans laquelle elle est publiée. Lorsqu'un groupe porte officiellement un nom dans plusieurs langues, une entrée est saisie par langue.
         required: true
+        range: MultilingualValue
+        multivalued: true
+        inlined_as_list: true
 
   # PersonReference and GroupReference moved to ech-0292_meta/schema_common
   # (shared lightweight references, imported here and by ech-0293_operations).
@@ -691,15 +705,17 @@ slots:
         Description de l'entité.
   landing_page:
     slot_uri: act:landingPage
-    range: uri
+    range: MultilingualUri
+    multivalued: true
+    inlined_as_list: true
     description: |
-      Website providing further information.
+      Website providing further information. Where the site is published under a separate address per language, one entry per language is recorded.
     annotations:
       description_de: |
-        Website mit weiteren Informationen.
+        Website mit weiteren Informationen. Wird die Website je Sprache unter einer eigenen Adresse publiziert, wird pro Sprache ein Eintrag erfasst.
 
       description_fr: |
-        Site web fournissant de plus amples informations.
+        Site web fournissant de plus amples informations. Lorsque le site est publié à une adresse propre par langue, une entrée est saisie par langue.
   parent_groups:
     slot_uri: act:parentGroup
     description: |
