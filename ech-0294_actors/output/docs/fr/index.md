@@ -90,7 +90,7 @@ Name: actors-schema
 | [is_active](is_active.md) | Indique si l'information est actuellement valable |
 | [is_correspondence](is_correspondence.md) | Indique s'il s'agit de la langue préférée |
 | [is_native](is_native.md) | Indique s'il s'agit de la langue maternelle |
-| [is_paid](is_paid.md) | Indique si le poste est rémunéré |
+| [is_paid](is_paid.md) | Indique si l'activité est rémunérée |
 | [label](label.md) | Attribuer un label à une information structurée (par ex |
 | [label_long](label_long.md) | Attribuer un label étendu à une information structurée (par ex |
 | [landing_page](landing_page.md) | Site web fournissant de plus amples informations |
@@ -141,7 +141,7 @@ Name: actors-schema
 | [GroupTypeEnum](GroupTypeEnum.md) | Types de groupes et d'organisations politiques |
 | [InterestTypeEnum](InterestTypeEnum.md) | Types de liens d'intérêts (conflits d'intérêts, financement politique) |
 | [LegalFormEnum](LegalFormEnum.md) | Formes juridiques basées sur la liste de codes du registre fédéral IDE (eCH-0... |
-| [NameTypeEnum](NameTypeEnum.md) | Catégories de types de noms selon eCH-0011 (personNameData) et https://dam-ap... |
+| [NameTypeEnum](NameTypeEnum.md) | Catégories de types de noms selon eCH-0011 (personNameData) et le Catalogue o... |
 | [RoleEnum](RoleEnum.md) | Rôles qu'une personne peut occuper dans le cadre d'une affiliation |
 | [TrainingTypeEnum](TrainingTypeEnum.md) | Types de formation ou d'éducation basés sur la liste de codes suisse LEVEL_ED... |
 

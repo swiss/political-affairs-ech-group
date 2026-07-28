@@ -3,7 +3,7 @@
 ## Classe: Occupation 
 
 
-_Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si le poste est rémunéré, ainsi que la validité temporelle._
+_Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si l'activité est rémunérée, ainsi que la validité temporelle._
 
 __
 
@@ -18,7 +18,7 @@ __
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| is_paid | 0..1 <br/> [Boolean](Boolean.md) | Indique si le poste est rémunéré.  |
+| is_paid | 0..1 <br/> [Boolean](Boolean.md) | Indique si l'activité est rémunérée.  |
 | occupation_code | 0..1 <br/> [String](String.md) | Code ISCO-19 du métier.  |
 | label | 0..1 <br/> [String](String.md) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
 | organization_uid | 0..1 <br/> [String](String.md) | IDE de l'organisation (format eCH-0097 : CHE-XXX.XXX.XXX) issu du registre fédéral IDE (uid.admin.ch).  |
@@ -64,6 +64,13 @@ Au moins l'un des champs suivants doit être renseigné :
 
 
 ### Exemples
+#### Exemple : Occupation-swiss_politicians_Sofia_Fisch_Juristin
+
+```yaml
+label: Jurist*in
+is_active: true
+
+```
 #### Exemple : Occupation-swiss_politicians_Beat_Jans_Politiker
 
 ```yaml

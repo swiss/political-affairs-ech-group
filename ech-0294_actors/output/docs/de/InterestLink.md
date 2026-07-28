@@ -24,7 +24,7 @@ __
 | organization_uid | 0..1 <br/> [String](String.md) | UID der Organisation (Format eCH-0097: CHE-XXX.XXX.XXX) aus dem eidgenössischen UID-Register (uid.admin.ch).  |
 | organization_address | 0..1 <br/> [String](String.md) | Adresse der Organisation.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](LegalFormEnum.md) | Rechtsform der Organisation. Siehe kontrolliertes Vokabular: https://register.ld.admin.ch/i14y/concept/legalForm  |
-| is_paid | 0..1 <br/> [Boolean](Boolean.md) | Gibt an, ob die Position bezahlt ist.  |
+| is_paid | 0..1 <br/> [Boolean](Boolean.md) | Gibt an, ob die Tätigkeit bezahlt ist.  |
 | committee | 0..1 <br/> [String](String.md) | Gremium innerhalb der Organisation (z.B. Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).  |
 | function_role | 0..1 <br/> [String](String.md) | Funktion oder Rolle in der Organisation (z.B. Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in).  |
 | local_id | 0..1 <br/> [String](String.md) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |

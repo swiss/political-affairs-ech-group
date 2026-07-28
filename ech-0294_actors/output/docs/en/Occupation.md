@@ -3,7 +3,7 @@
 ## Class: Occupation 
 
 
-_Occupation or profession of a person indicating a label, an ISCO-19 code, whether the position is paid, and temporal validity._
+_Occupation or profession of a person indicating a label, an ISCO-19 code, whether the activity is paid, and temporal validity._
 
 __
 
@@ -18,7 +18,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| is_paid | 0..1 <br/> [Boolean](Boolean.md) | Indicates if the position is paid.  |
+| is_paid | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether the activity is paid.  |
 | occupation_code | 0..1 <br/> [String](String.md) | ISCO-19 code of the occupation.  |
 | label | 0..1 <br/> [String](String.md) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
 | organization_uid | 0..1 <br/> [String](String.md) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).  |
@@ -64,6 +64,13 @@ At least one of the following must be set:
 
 
 ### Examples
+#### Example: Occupation-swiss_politicians_Sofia_Fisch_Juristin
+
+```yaml
+label: Jurist*in
+is_active: true
+
+```
 #### Example: Occupation-swiss_politicians_Beat_Jans_Politiker
 
 ```yaml

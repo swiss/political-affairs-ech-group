@@ -90,7 +90,7 @@ Name: actors-schema
 | [is_active](is_active.md) | Gibt an, ob die Information aktuell gültig ist |
 | [is_correspondence](is_correspondence.md) | Gibt an, ob es sich um die bevorzugte Sprache handelt |
 | [is_native](is_native.md) | Gibt an, ob es sich um die Muttersprache handelt |
-| [is_paid](is_paid.md) | Gibt an, ob die Position bezahlt ist |
+| [is_paid](is_paid.md) | Gibt an, ob die Tätigkeit bezahlt ist |
 | [label](label.md) | Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw |
 | [label_long](label_long.md) | Möglichkeit bei einer strukturierten Information, ein erweitertesLabel zu ver... |
 | [landing_page](landing_page.md) | Website mit weiteren Informationen |
@@ -141,7 +141,7 @@ Name: actors-schema
 | [GroupTypeEnum](GroupTypeEnum.md) | Typen politischer Gruppen und Organisationen |
 | [InterestTypeEnum](InterestTypeEnum.md) | Typen von Interessenbindungen (Interessenkonflikte, Politikfinanzierung) |
 | [LegalFormEnum](LegalFormEnum.md) | Rechtsformen basierend auf der Codeliste des eidgenössischen UID-Registers (e... |
-| [NameTypeEnum](NameTypeEnum.md) | Kategorien von Namenstypen gemäss eCH-0011 (personNameData) und https://dam-a... |
+| [NameTypeEnum](NameTypeEnum.md) | Kategorien von Namenstypen gemäss eCH-0011 (personNameData) und dem Amtlichen... |
 | [RoleEnum](RoleEnum.md) | Rollen, die eine Person im Rahmen einer Mitgliedschaft haben kann |
 | [TrainingTypeEnum](TrainingTypeEnum.md) | Ausbildungs- oder Bildungstypen basierend auf der BFS LEVEL_EDUC Codeliste |
 

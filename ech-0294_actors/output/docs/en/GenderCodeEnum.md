@@ -3,7 +3,7 @@
 
 
 
-_Gender codes for persons. If the gender is not known, no gender entry shall be added. The `diverse` code shall be used together with a label to provide further details about the self-identified gender._
+_Gender codes for persons. If the gender is not known, no gender entry shall be added. The `non_binary` code shall be used together with a label to provide further details about the self-identified gender._
 
 __
 
@@ -17,11 +17,10 @@ URI: [act:GenderCodeEnum](https://ld.ech.ch/schema/0294/actors/GenderCodeEnum)
 | Value | Description |
 | --- | --- |
 | male |  Male. |
-| |  |
+| | [https://register.ld.admin.ch/i14y/concept/sex/1](https://register.ld.admin.ch/i14y/concept/sex/1) |
 | female |  Female. |
-| |  |
-| diverse |  Diverse / non-binary. |
-| |  |
+| | [https://register.ld.admin.ch/i14y/concept/sex/2](https://register.ld.admin.ch/i14y/concept/sex/2) |
+| non_binary |  Diverse / non-binary. |
 
 
 

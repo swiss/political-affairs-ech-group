@@ -249,7 +249,7 @@
             "properties": {
                 "gender_code": {
                     "$ref": "#/$defs/GenderCodeEnum",
-                    "description": "Gender code. Recommended values: male, female, diverse.\n"
+                    "description": "Gender code. Recommended values: male, female, non_binary.\n"
                 },
                 "is_active": {
                     "description": "Indicates whether the information is currently valid. Can be useful when this information is explicitly available.\n",
@@ -299,11 +299,11 @@
             "type": "object"
         },
         "GenderCodeEnum": {
-            "description": "Gender codes for persons. If the gender is not known, no gender entry shall be added. The `diverse` code shall be used together with a label to provide further details about the self-identified gender.",
+            "description": "Gender codes for persons. If the gender is not known, no gender entry shall be added. The `non_binary` code shall be used together with a label to provide further details about the self-identified gender.",
             "enum": [
                 "male",
                 "female",
-                "diverse"
+                "non_binary"
             ],
             "title": "GenderCodeEnum",
             "type": "string"
@@ -758,7 +758,7 @@
                     ]
                 },
                 "is_paid": {
-                    "description": "Indicates if the position is paid.\n",
+                    "description": "Indicates whether the activity is paid.\n",
                     "type": [
                         "boolean",
                         "null"
@@ -1316,7 +1316,7 @@
             "type": "object"
         },
         "NameTypeEnum": {
-            "description": "Categories of name types according to eCH-0011 (personNameData) and https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI according to I14Y identifier but as class and not as attribute. Descriptions and translations according to I14Y.",
+            "description": "Categories of name types according to eCH-0011 (personNameData) and the official catalogue of attributes of the register harmonisation (https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/nomenklaturen.assetdetail.24565576.html), URI according to I14Y identifier but as class and not as attribute. Descriptions and translations according to I14Y.",
             "enum": [
                 "PersonOfficialName",
                 "PersonOriginalName",
@@ -1353,7 +1353,7 @@
                     ]
                 }
             ],
-            "description": "Occupation or profession of a person indicating a label, an ISCO-19 code, whether the position is paid, and temporal validity.",
+            "description": "Occupation or profession of a person indicating a label, an ISCO-19 code, whether the activity is paid, and temporal validity.",
             "properties": {
                 "is_active": {
                     "description": "Indicates whether the information is currently valid. Can be useful when this information is explicitly available.\n",
@@ -1363,7 +1363,7 @@
                     ]
                 },
                 "is_paid": {
-                    "description": "Indicates if the position is paid.\n",
+                    "description": "Indicates whether the activity is paid.\n",
                     "type": [
                         "boolean",
                         "null"

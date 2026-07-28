@@ -102,9 +102,10 @@ The person schema describes natural persons in the political context.
 
 - **Stable person, temporally valid attributes:** The `Person` itself carries no temporal validity, but its attributes do – name, citizenship, gender, occupation and training each carry their own `valid_from`/`valid_through`. This keeps the identity of the person stable while individual details change over time and the history is preserved (e.g. a change of name upon marriage). The electoral district, by contrast, is not an attribute of the person: it is attached to the `Membership` (`electoral_district`) and inherits its temporal validity – a change of electoral district is therefore reflected in the respective membership.
 - **Display name (`label`) mandatory, name structure (`names`) optional:** Every person has a short display name. This means a name is always available, even when the details are incomplete. The recommended combination is the official name (`PersonOfficialName`) and the call name (`PersonCallFirstName`). Academic titles can also be represented via `label_long`.
-- **Name types according to the official taxonomy:** The name types (`NameTypeEnum`) follow the register harmonisation of the FSO, respectively eCH-0011 (including official name, original name, alliance name, call name, as well as variants for foreign identity documents). This makes the names compatible with the official person registers, and their semantics clear.
+- **Name types according to the official taxonomy:** The name types (`NameTypeEnum`) adopt the taxonomy of the register harmonisation (including official name, original name, alliance name, call name, as well as variants for foreign identity documents). The authoritative reference is the [official catalogue of attributes](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/nomenklaturen.assetdetail.24565576.html), published by the Federal Statistical Office under Art. 4 of the Register Harmonisation Act (RHG, SR 431.02); the numbers in the value descriptions (211–224) are the attribute numbers of that catalogue. The corresponding exchange format is defined by the eCH standard [eCH-0011 Personal Data Standard](https://www.ech.ch/de/ech/ech-0011/9.0.0), on which this standard builds. This makes the names compatible with the official person registers and their semantics clear.
 - **Date of birth at two levels of precision (`birth_year` / `birth_date`):** If the exact date of birth is not available or not intended for publication, only the year of birth may be given. If a `birth_date` is available, it takes precedence.
 - **Multiple values instead of single values:** Names, citizenships and gender entries are modelled as lists with temporal validity – for example for dual citizenships, changes of name or a changing gender entry.
+- **Gender: official codes plus an open category (`GenderCodeEnum`):** `male` and `female` correspond to the values of the register harmonisation and refer via `meaning` to the I14Y concepts `sex/1` and `sex/2`. For `non_binary` there is deliberately no counterpart: the official code list only knows "undefined" as its third value, which means something different from a positive statement beyond male and female. If the gender is not known, no entry is created at all — a missing entry and `non_binary` are to be clearly distinguished.
 - **Harmonisation across federal levels (long-term goal):** Linking the same person across the federal levels is an important long-term goal. Building a central person database is beyond the means of the eCH specialist group. Since an open, established infrastructure already exists for this purpose, **Wikidata is recommended as a cross-cutting identifier** (`wikidata_uri`); together with globally unique identifiers (URIs), the mapping can thus be harmonised step by step across the systems.
 
 
@@ -217,6 +218,29 @@ names:
   value: Gerri
 - name_type: PersonOfficialName
   value: Beretta-Piccoli
+
+```
+#### Example: Person-swiss_politicians_Sofia_Fisch
+
+```yaml
+local_id: 72c7232be92944e3876f3b6723824ff9
+global_uri: https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9
+label: Sofia Fisch
+birth_year: 1996
+names:
+- name_type: PersonFirstName
+  value: Sofia
+- name_type: PersonOfficialName
+  value: Fisch
+genders:
+- gender_code: non_binary
+  label: divers
+occupations:
+- label: Jurist*in
+  is_active: true
+trainings:
+- training_type: '3223'
+  value: MLaw
 
 ```
 #### Example: Person-swiss_politicians_Alois_Arnold_1965
@@ -346,7 +370,7 @@ __
 
 
 
-_Categories of name types according to eCH-0011 (personNameData) and https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI according to I14Y identifier but as class and not as attribute. Descriptions and translations according to I14Y._
+_Categories of name types according to eCH-0011 (personNameData) and the official catalogue of attributes of the register harmonisation (https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/nomenklaturen.assetdetail.24565576.html), URI according to I14Y identifier but as class and not as attribute. Descriptions and translations according to I14Y._
 
 __
 
@@ -359,27 +383,27 @@ URI: [act:NameTypeEnum](https://ld.ech.ch/schema/0294/actors/NameTypeEnum)
 ### Permissible Values
 | Value | Description |
 | --- | --- |
-| PersonOfficialName |  According to the official catalogue of characters (No. 211) for the harmonisation of registers: Name according to official documents. The official name corresponds to the name appearing in the Swiss civil register. For foreign nationals with no civil status events in Switzerland, the official name corresponds to the name appearing on the foreign passport or identity card (see ‘Name according to foreign passport’ or SEM guidelines on the determination and spelling of names of foreign nationals dated 1 January 2012. If no official documents exist, see also ‘Name according to declaration’ (e.g. in the case of asylum seekers). The official name may consist of one or more parts.  |
+| PersonOfficialName |  Name according to official documents. The official name corresponds to the name appearing in the Swiss civil register. For foreign nationals with no civil status events in Switzerland, the official name corresponds to the name appearing on the foreign passport or identity card (see ‘Name according to foreign passport’ or SEM guidelines on the determination and spelling of names of foreign nationals dated 1 January 2012. If no official documents exist, see also ‘Name according to declaration’ (e.g. in the case of asylum seekers). The official name may consist of one or more parts. According to the official catalogue of attributes (No. 211) for the harmonisation of registers.  |
 | | [https://register.ld.admin.ch/i14y/concept/personOfficialName](https://register.ld.admin.ch/i14y/concept/personOfficialName) |
-| PersonOriginalName |  According to the official catalogue of characters (No. 212) for the harmonisation of registers: Name of filiation according to official documents, which corresponds to the person's name before their first marriage or registered partnership. It may also be a maiden name acquired by decision to change one's name (see Art. 24, para. 2 OEC, RS 211.112.2).  |
+| PersonOriginalName |  Name of filiation according to official documents, which corresponds to the person's name before their first marriage or registered partnership. It may also be a maiden name acquired by decision to change one's name (see Art. 24, para. 2 OEC, RS 211.112.2). According to the official catalogue of attributes (No. 212) for the harmonisation of registers.  |
 | | [https://register.ld.admin.ch/i14y/concept/personOriginalName](https://register.ld.admin.ch/i14y/concept/personOriginalName) |
-| PersonAllianceName |  According to the official catalogue of characters (No. 213) for the harmonisation of registers: The alliance name shows the connection between two people who are married or living in a registered partnership. An alliance name that has already been used may be retained after the dissolution of the marriage or partnership if the official name has not been changed upon dissolution. It is attached to the official name with a hyphen and is formed with the partner's maiden name or the person's own maiden name. Upon request, the alliance name may be entered in the passport or on the identity card.  |
+| PersonAllianceName |  The alliance name shows the connection between two people who are married or living in a registered partnership. An alliance name that has already been used may be retained after the dissolution of the marriage or partnership if the official name has not been changed upon dissolution. It is attached to the official name with a hyphen and is formed with the partner's maiden name or the person's own maiden name. Upon request, the alliance name may be entered in the passport or on the identity card. According to the official catalogue of attributes (No. 213) for the harmonisation of registers.  |
 | | [https://register.ld.admin.ch/i14y/concept/personAllianceName](https://register.ld.admin.ch/i14y/concept/personAllianceName) |
-| PersonNameOnForeignPassport |  According to the official catalogue of characters (No. 214) for the harmonisation of registers: For persons of foreign nationality. This name corresponds to the entry marked in the machine-readable zone of the passport. If this zone includes abbreviated surnames or first names, these must, as far as possible, be recorded in full, according to the entry in the passport.  |
+| PersonNameOnForeignPassport |  For persons of foreign nationality. This name corresponds to the entry marked in the machine-readable zone of the passport. If this zone includes abbreviated surnames or first names, these must, as far as possible, be recorded in full, according to the entry in the passport. According to the official catalogue of attributes (No. 214) for the harmonisation of registers.  |
 | | [https://register.ld.admin.ch/i14y/concept/personNameOnForeignPassport](https://register.ld.admin.ch/i14y/concept/personNameOnForeignPassport) |
-| PersonAliasName |  According to the official character catalogue (No. 215) for the harmonisation of registers: Name (e.g. stage name, religious name) which, on the basis of an accepted application, may be used by the person. The alias name may consist of one or more parts (e.g. also the alias first name and alias surname).  |
+| PersonAliasName |  Name (e.g. stage name, religious name) which, on the basis of an accepted application, may be used by the person. The alias name may consist of one or more parts (e.g. also the alias first name and alias surname). According to the official catalogue of attributes (No. 215) for the harmonisation of registers.  |
 | | [https://register.ld.admin.ch/i14y/concept/personAliasName](https://register.ld.admin.ch/i14y/concept/personAliasName) |
-| PersonOtherName |  According to the official catalogue of characters (No. 216) for the harmonisation of registers: Other official names according to Swiss civil status documents (Art. 24, para. 3 OEC) or according to foreign documents, which are neither surnames nor first names.  |
+| PersonOtherName |  Other official names according to Swiss civil status documents (Art. 24, para. 3 OEC) or according to foreign documents, which are neither surnames nor first names. According to the official catalogue of attributes (No. 216) for the harmonisation of registers.  |
 | | [https://register.ld.admin.ch/i14y/concept/personOtherName](https://register.ld.admin.ch/i14y/concept/personOtherName) |
-| PersonDeclaredForeignerName |  According to the official catalogue of characters (No. 217) for the harmonisation of registers: For foreign nationals who do not have official documents (mainly in the field of asylum).  |
+| PersonDeclaredForeignerName |  For foreign nationals who do not have official documents (mainly in the field of asylum). According to the official catalogue of attributes (No. 217) for the harmonisation of registers.  |
 | | [https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerName](https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerName) |
-| PersonFirstName |  First names taken from the birth certificate, the civil registry (Infostar) in the order in which they appear, or taken from foreign identity documents.  |
+| PersonFirstName |  First names taken from the birth certificate, the civil registry (Infostar) in the order in which they appear, or taken from foreign identity documents. According to the official catalogue of attributes (No. 221) for the harmonisation of registers.  |
 | | [https://register.ld.admin.ch/i14y/concept/personFirstName](https://register.ld.admin.ch/i14y/concept/personFirstName) |
-| PersonCallFirstName |  A person has the right to choose a common first name from the list of their official first names. The common first name may consist of one or more first names (from those listed under ‘official first names’).  |
+| PersonCallFirstName |  A person has the right to choose a common first name from the list of their official first names. The common first name may consist of one or more first names (from those listed under ‘official first names’). According to the official catalogue of attributes (No. 222) for the harmonisation of registers.  |
 | | [https://register.ld.admin.ch/i14y/concept/personCallFirstName](https://register.ld.admin.ch/i14y/concept/personCallFirstName) |
-| PersonFirstNameOnForeignPassport |  For persons of foreign nationality. To be used in combination with the name as it appears on the foreign passport.  |
+| PersonFirstNameOnForeignPassport |  For persons of foreign nationality. To be used in combination with the name as it appears on the foreign passport. According to the official catalogue of attributes (No. 223) for the harmonisation of registers.  |
 | | [https://register.ld.admin.ch/i14y/concept/personFirstNameOnForeignPassport](https://register.ld.admin.ch/i14y/concept/personFirstNameOnForeignPassport) |
-| PersonDeclaredForeignerFirstName |  For persons of foreign nationality who do not have official documents (mainly in the field of asylum). To be used in combination with the defined Name according to declaration.  |
+| PersonDeclaredForeignerFirstName |  For persons of foreign nationality who do not have official documents (mainly in the field of asylum). To be used in combination with the defined Name according to declaration. According to the official catalogue of attributes (No. 224) for the harmonisation of registers.  |
 | | [https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerFirstName](https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerFirstName) |
 
 
@@ -519,7 +543,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| gender_code | 1 <br/> [GenderCodeEnum](#GenderCodeEnum) | Gender code. Recommended values: male, female, diverse.  |
+| gender_code | 1 <br/> [GenderCodeEnum](#GenderCodeEnum) | Gender code. Recommended values: male, female, non_binary.  |
 | label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
 | pronouns | * <br/> [String](#String) | Pronouns used by the person.  |
 | valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
@@ -561,7 +585,7 @@ __
 
 
 
-_Gender codes for persons. If the gender is not known, no gender entry shall be added. The `diverse` code shall be used together with a label to provide further details about the self-identified gender._
+_Gender codes for persons. If the gender is not known, no gender entry shall be added. The `non_binary` code shall be used together with a label to provide further details about the self-identified gender._
 
 __
 
@@ -575,11 +599,10 @@ URI: [act:GenderCodeEnum](https://ld.ech.ch/schema/0294/actors/GenderCodeEnum)
 | Value | Description |
 | --- | --- |
 | male |  Male. |
-| |  |
+| | [https://register.ld.admin.ch/i14y/concept/sex/1](https://register.ld.admin.ch/i14y/concept/sex/1) |
 | female |  Female. |
-| |  |
-| diverse |  Diverse / non-binary. |
-| |  |
+| | [https://register.ld.admin.ch/i14y/concept/sex/2](https://register.ld.admin.ch/i14y/concept/sex/2) |
+| non_binary |  Diverse / non-binary. |
 
 
 
@@ -594,7 +617,7 @@ URI: [act:GenderCodeEnum](https://ld.ech.ch/schema/0294/actors/GenderCodeEnum)
 ## Class: Occupation 
 
 
-_Occupation or profession of a person indicating a label, an ISCO-19 code, whether the position is paid, and temporal validity._
+_Occupation or profession of a person indicating a label, an ISCO-19 code, whether the activity is paid, and temporal validity._
 
 __
 
@@ -609,7 +632,7 @@ __
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| is_paid | 0..1 <br/> [Boolean](#Boolean) | Indicates if the position is paid.  |
+| is_paid | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the activity is paid.  |
 | occupation_code | 0..1 <br/> [String](#String) | ISCO-19 code of the occupation.  |
 | label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
 | organization_uid | 0..1 <br/> [String](#String) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).  |
@@ -655,6 +678,13 @@ At least one of the following must be set:
 
 
 ### Examples
+#### Example: Occupation-swiss_politicians_Sofia_Fisch_Juristin
+
+```yaml
+label: Jurist*in
+is_active: true
+
+```
 #### Example: Occupation-swiss_politicians_Beat_Jans_Politiker
 
 ```yaml
@@ -845,7 +875,6 @@ URI: [act:TrainingTypeEnum](https://ld.ech.ch/schema/0294/actors/TrainingTypeEnu
 | 323 |  Doctorate or habilitation. |
 | | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/323](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/323) |
 | military |  Military service (Swiss army). Use `value` to specify the rank reached. |
-| |  |
 
 
 
@@ -1229,13 +1258,9 @@ URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 | Value | Description |
 | --- | --- |
 | member |  Regular member (default).  |
-| |  |
 | president |  President or chair of the group.  |
-| |  |
 | deputy |  Deputy or vice-chair role.  |
-| |  |
 | other |  Other role; use role_label for a descriptive label.  |
-| |  |
 
 
 
@@ -1339,7 +1364,7 @@ __
 | organization_uid | 0..1 <br/> [String](#String) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).  |
 | organization_address | 0..1 <br/> [String](#String) | Address of the organization.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm  |
-| is_paid | 0..1 <br/> [Boolean](#Boolean) | Indicates if the position is paid.  |
+| is_paid | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the activity is paid.  |
 | committee | 0..1 <br/> [String](#String) | Committee or board within the organization (e.g., Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).  |
 | function_role | 0..1 <br/> [String](#String) | Function or role in the organization (e.g., Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in).  |
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
@@ -1941,11 +1966,8 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 | Value | Description |
 | --- | --- |
 | privateAddress |  Private address.  |
-| |  |
 | businessAddress |  Business address.  |
-| |  |
 | localAddress |  Local address.  |
-| |  |
 
 
 

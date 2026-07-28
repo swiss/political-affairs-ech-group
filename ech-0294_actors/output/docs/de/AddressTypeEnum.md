@@ -17,11 +17,8 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 | Wert | Beschreibung |
 | --- | --- |
 | privateAddress |  Privatadresse.  |
-| |  |
 | businessAddress |  Geschäftsadresse.  |
-| |  |
 | localAddress |  Lokaladresse.  |
-| |  |
 
 
 

@@ -17,13 +17,9 @@ URI: [act:ContactTypeEnum](https://ld.ech.ch/schema/0294/actors/ContactTypeEnum)
 | Valeur | Description |
 | --- | --- |
 | email |  Adresse e-mail.  |
-| |  |
 | contact_website |  Site web de contact.  |
-| |  |
 | linked_in |  Profil LinkedIn.  |
-| |  |
 | twitter |  Profil Twitter.  |
-| |  |
 
 
 

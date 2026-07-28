@@ -6,7 +6,7 @@ search:
 # Slot: is_paid 
 
 
-_Gibt an, ob die Position bezahlt ist._
+_Gibt an, ob die Tätigkeit bezahlt ist._
 
 __
 
@@ -77,15 +77,15 @@ name: is_paid
 annotations:
   description_de:
     tag: description_de
-    value: 'Gibt an, ob die Position bezahlt ist.
+    value: 'Gibt an, ob die Tätigkeit bezahlt ist.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Indique si le poste est rémunéré.
+    value: 'Indique si l''activité est rémunérée.
 
       '
-description: 'Gibt an, ob die Position bezahlt ist.
+description: 'Gibt an, ob die Tätigkeit bezahlt ist.
 
   '
 examples:

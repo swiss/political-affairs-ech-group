@@ -90,7 +90,7 @@ Name: actors-schema
 | [is_active](is_active.md) | Indicates whether the information is currently valid |
 | [is_correspondence](is_correspondence.md) | Indicates if this is the preferred language |
 | [is_native](is_native.md) | Indicates if this is the native language |
-| [is_paid](is_paid.md) | Indicates if the position is paid |
+| [is_paid](is_paid.md) | Indicates whether the activity is paid |
 | [label](label.md) | Assign a label to a structured piece of information (e |
 | [label_long](label_long.md) | Assign an extended label to a structured piece of information (e |
 | [landing_page](landing_page.md) | Website providing further information |
@@ -141,7 +141,7 @@ Name: actors-schema
 | [GroupTypeEnum](GroupTypeEnum.md) | Types of political groups and organizations |
 | [InterestTypeEnum](InterestTypeEnum.md) | Types of interest links (conflicts of interest, political financing) |
 | [LegalFormEnum](LegalFormEnum.md) | Legal forms based on the Swiss UID register codelist (eCH-0108) |
-| [NameTypeEnum](NameTypeEnum.md) | Categories of name types according to eCH-0011 (personNameData) and https://d... |
+| [NameTypeEnum](NameTypeEnum.md) | Categories of name types according to eCH-0011 (personNameData) and the offic... |
 | [RoleEnum](RoleEnum.md) | Roles a person can have within a membership |
 | [TrainingTypeEnum](TrainingTypeEnum.md) | Types of training or education based on the Swiss BFS LEVEL_EDUC codelist |
 

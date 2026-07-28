@@ -101,7 +101,6 @@ URI: [act:TrainingTypeEnum](https://ld.ech.ch/schema/0294/actors/TrainingTypeEnu
 | 323 |  Doctorat / habilitation. |
 | | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/323](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/323) |
 | military |  Service militaire (armée suisse). Indiquer le grade atteint dans le champ `value`. |
-| |  |
 
 
 

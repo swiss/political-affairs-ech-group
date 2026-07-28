@@ -102,9 +102,10 @@ Das Personenschema beschreibt natürliche Personen im politischen Kontext.
 
 - **Stabile Person, zeitlich gültige Merkmale:** Die `Person` selbst trägt keine zeitliche Gültigkeit, ihre Merkmale hingegen schon – Name, Staatsangehörigkeit, Geschlecht, Beruf und Ausbildung tragen je eigene `valid_from`/`valid_through`. So bleibt die Identität der Person stabil, während sich einzelne Angaben über die Zeit ändern und die Historie erhalten bleibt (z. B. Namensänderung bei Heirat). Der Wahlkreis ist demgegenüber kein Personenmerkmal: Er hängt an der `Membership` (`electoral_district`) und erbt deren zeitliche Gültigkeit – ein Wechsel des Wahlkreises bildet sich damit über die jeweilige Mitgliedschaft ab.
 - **Anzeigename (`label`) obligatorisch, Namensstruktur (`names`) optional:** Jede Person hat einen kurzen Anzeigenamen. So ist auch bei unvollständigen Angaben immer ein Name vorhanden. Empfohlen wird die Kombination aus amtlichem Namen (`PersonOfficialName`) und Rufname (`PersonCallFirstName`). Über `label_long` können auch akademische Titel abgebildet werden.
-- **Namenstypen nach amtlicher Systematik:** Die Namenstypen (`NameTypeEnum`) folgen der Registerharmonisierung des BFS bzw. eCH-0011 (u. a. amtlicher Name, angestammter Name, Allianzname, Rufname sowie Varianten für ausländische Ausweise). Damit sind die Namen mit den amtlichen Personenregistern kompatibel, und deren Semantik klar.
+- **Namenstypen nach amtlicher Systematik:** Die Namenstypen (`NameTypeEnum`) übernehmen die Systematik der Registerharmonisierung (u. a. amtlicher Name, angestammter Name, Allianzname, Rufname sowie Varianten für ausländische Ausweise). Massgebend ist der [Amtliche Katalog der Merkmale](https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/nomenklaturen.assetdetail.24565576.html), den das Bundesamt für Statistik gestützt auf Art. 4 des Registerharmonisierungsgesetzes (RHG, SR 431.02) herausgibt; die Nummern in den Wertbeschreibungen (211–224) sind die Merkmalsnummern dieses Katalogs. Das zugehörige Austauschformat definiert der eCH-Standard [eCH-0011 Datenstandard Personendaten](https://www.ech.ch/de/ech/ech-0011/9.0.0), auf den dieser Standard damit aufsetzt. Die Namen sind so mit den amtlichen Personenregistern kompatibel und ihre Semantik ist klar.
 - **Geburtsdatum in zwei Genauigkeitsstufen (`birth_year` / `birth_date`):** Ist das genaue Geburtsdatum nicht verfügbar oder nicht zur Veröffentlichung bestimmt, kann nur das Geburtsjahr angegeben werden. Liegt ein `birth_date` vor, hat es Vorrang.
 - **Mehrfachwerte statt Einzelwerte:** Namen, Staatsangehörigkeiten und Geschlechtsangaben sind als Listen mit zeitlicher Gültigkeit modelliert – etwa für Doppelbürgerschaften, Namensänderungen oder eine sich ändernde Geschlechtsangabe.
+- **Geschlecht: amtliche Codes plus offene Kategorie (`GenderCodeEnum`):** `male` und `female` entsprechen den Werten der Registerharmonisierung und verweisen über `meaning` auf die I14Y-Konzepte `sex/1` und `sex/2`. Für `non_binary` gibt es dort bewusst keine Entsprechung: Die amtliche Codeliste kennt als dritten Wert nur „unbestimmt", was etwas anderes bedeutet als eine positive Angabe jenseits von männlich und weiblich. Ist das Geschlecht nicht bekannt, wird deshalb gar kein Eintrag gesetzt — ein fehlender Eintrag und `non_binary` sind klar zu unterscheiden.
 - **Harmonisierung über föderale Ebenen (Langzeitziel):** Die Verknüpfung derselben Person über die föderalen Ebenen hinweg ist ein wichtiges Langzeitziel. Der Aufbau einer zentralen Personendatenbank liegt ausserhalb der Möglichkeiten der eCH-Fachgruppe. Da für diesen Zweck bereits eine offene, etablierte Infrastruktur besteht, wird **Wikidata als übergreifender Identifikator empfohlen** (`wikidata_uri`); zusammen mit global eindeutigen Identifikatoren (URIs) lässt sich die Zuordnung so schrittweise über die Systeme hinweg harmonisieren.
 
 
@@ -217,6 +218,29 @@ names:
   value: Gerri
 - name_type: PersonOfficialName
   value: Beretta-Piccoli
+
+```
+#### Beispiel: Person-swiss_politicians_Sofia_Fisch
+
+```yaml
+local_id: 72c7232be92944e3876f3b6723824ff9
+global_uri: https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9
+label: Sofia Fisch
+birth_year: 1996
+names:
+- name_type: PersonFirstName
+  value: Sofia
+- name_type: PersonOfficialName
+  value: Fisch
+genders:
+- gender_code: non_binary
+  label: divers
+occupations:
+- label: Jurist*in
+  is_active: true
+trainings:
+- training_type: '3223'
+  value: MLaw
 
 ```
 #### Beispiel: Person-swiss_politicians_Alois_Arnold_1965
@@ -346,7 +370,7 @@ __
 
 
 
-_Kategorien von Namenstypen gemäss eCH-0011 (personNameData) und https://dam-api.bfs.admin.ch/hub/api/dam/assets/24565576/master, URI gemäss I14Y Identifier aber als Klasse und nicht als Attribut. Beschreibungen und Übersetzungen gemäss I14Y._
+_Kategorien von Namenstypen gemäss eCH-0011 (personNameData) und dem Amtlichen Katalog der Merkmale der Registerharmonisierung (https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/nomenklaturen.assetdetail.24565576.html), URI gemäss I14Y Identifier aber als Klasse und nicht als Attribut. Beschreibungen und Übersetzungen gemäss I14Y._
 
 __
 
@@ -359,27 +383,27 @@ URI: [act:NameTypeEnum](https://ld.ech.ch/schema/0294/actors/NameTypeEnum)
 ### Zulässige Werte
 | Wert | Beschreibung |
 | --- | --- |
-| PersonOfficialName |  Gemäss amtlichen Katalog der Merkmale (Nr. 211) Registerharmonisierung: Name gemäss amtlichen Unterlagen. Der amtliche Name entspricht dem Namen im schweizerischen Zivilstandsregister. Bei ausländischen Personen ohne Zivilstandsereignis in der Schweiz entspricht dieser Name dem Namen im ausländischen Pass oder auf der Identitätskarte (siehe 214 sowie Weisung des SEM über die Bestimmung und Schreibweise der Namen von ausländischen Staatsangehörigen vom 1. Januar 2012. Im Ausnahmefall siehe auch "Name nach Deklaration" (z. B. Asyl), wenn keine amtlichen Dokumente vorliegen). Der amtliche Name kann aus einem oder mehreren Teilen bestehen.  |
+| PersonOfficialName |  Name gemäss amtlichen Unterlagen. Der amtliche Name entspricht dem Namen im schweizerischen Zivilstandsregister. Bei ausländischen Personen ohne Zivilstandsereignis in der Schweiz entspricht dieser Name dem Namen im ausländischen Pass oder auf der Identitätskarte (siehe 214 sowie Weisung des SEM über die Bestimmung und Schreibweise der Namen von ausländischen Staatsangehörigen vom 1. Januar 2012. Im Ausnahmefall siehe auch "Name nach Deklaration" (z. B. Asyl), wenn keine amtlichen Dokumente vorliegen). Der amtliche Name kann aus einem oder mehreren Teilen bestehen. Gemäss amtlichen Katalog der Merkmale (Nr. 211) Registerharmonisierung.  |
 | | [https://register.ld.admin.ch/i14y/concept/personOfficialName](https://register.ld.admin.ch/i14y/concept/personOfficialName) |
-| PersonOriginalName |  Gemäss amtlichen Katalog der Merkmale (Nr. 212) Registerharmonisierung: Angestammter Name gemäss amtlichen Unterlagen, den eine Person unmittelbar vor ihrer ersten Eheschliessung oder Begründung einer eingetragenen Partnerschaft geführt hat oder, gestützt auf einen Namensänderungsentscheid, als neuen Ledignamen erworben hat (Art. 24 Abs. 2 ZStV, SR 211.112.2).  |
+| PersonOriginalName |  Angestammter Name gemäss amtlichen Unterlagen, den eine Person unmittelbar vor ihrer ersten Eheschliessung oder Begründung einer eingetragenen Partnerschaft geführt hat oder, gestützt auf einen Namensänderungsentscheid, als neuen Ledignamen erworben hat (Art. 24 Abs. 2 ZStV, SR 211.112.2). Gemäss amtlichen Katalog der Merkmale (Nr. 212) Registerharmonisierung.  |
 | | [https://register.ld.admin.ch/i14y/concept/personOriginalName](https://register.ld.admin.ch/i14y/concept/personOriginalName) |
-| PersonAllianceName |  Gemäss amtlichen Katalog der Merkmale (Nr. 213) Registerharmonisierung: Der Allianzname zeigt die Verbindung von zwei Personen auf, die verheiratet sind oder in einer eingetragenen Partnerschaft leben. Ein bereits verwendeter Allianzname kann nach Auflösung der Ehe oder der Partnerschaft weiterverwendet werden, wenn der amtliche Name bei der Auflösung nicht geändert wurde. Dabei wird dem amtlichen Namen mittels Bindestrich der Ledigname des Partners/der Partnerin oder der eigene Ledigname angehängt. Der Allianzname kann auf Antrag im Pass oder auf der Identitätskarte eingetragen werden.  |
+| PersonAllianceName |  Der Allianzname zeigt die Verbindung von zwei Personen auf, die verheiratet sind oder in einer eingetragenen Partnerschaft leben. Ein bereits verwendeter Allianzname kann nach Auflösung der Ehe oder der Partnerschaft weiterverwendet werden, wenn der amtliche Name bei der Auflösung nicht geändert wurde. Dabei wird dem amtlichen Namen mittels Bindestrich der Ledigname des Partners/der Partnerin oder der eigene Ledigname angehängt. Der Allianzname kann auf Antrag im Pass oder auf der Identitätskarte eingetragen werden. Gemäss amtlichen Katalog der Merkmale (Nr. 213) Registerharmonisierung.  |
 | | [https://register.ld.admin.ch/i14y/concept/personAllianceName](https://register.ld.admin.ch/i14y/concept/personAllianceName) |
-| PersonNameOnForeignPassport |  Gemäss amtlichen Katalog der Merkmale (Nr. 214) Registerharmonisierung: Für Personen mit ausländischer Nationalität. Dieser Name entspricht dem Eintrag im Reisepass gemäss der maschinenlesbaren Zone (MRZ) des Reisepasses. Enthält die MRZ abgekürzte Namen oder Vornamen, sind diese möglichst in voller Länge gemäss visuell lesbarer Zone des Ausweispapieres zu erfassen.  |
+| PersonNameOnForeignPassport |  Für Personen mit ausländischer Nationalität. Dieser Name entspricht dem Eintrag im Reisepass gemäss der maschinenlesbaren Zone (MRZ) des Reisepasses. Enthält die MRZ abgekürzte Namen oder Vornamen, sind diese möglichst in voller Länge gemäss visuell lesbarer Zone des Ausweispapieres zu erfassen. Gemäss amtlichen Katalog der Merkmale (Nr. 214) Registerharmonisierung.  |
 | | [https://register.ld.admin.ch/i14y/concept/personNameOnForeignPassport](https://register.ld.admin.ch/i14y/concept/personNameOnForeignPassport) |
-| PersonAliasName |  Gemäss amtlichen Katalog der Merkmale (Nr. 215) Registerharmonisierung: Name (z. B. Künstler- oder Ordensname), der aufgrund eines bewilligten Gesuchs geführt werden darf. Der Aliasname kann aus einem oder mehreren Teilen (z. B. auch aus Aliasvorname und Aliasname) bestehen.  |
+| PersonAliasName |  Name (z. B. Künstler- oder Ordensname), der aufgrund eines bewilligten Gesuchs geführt werden darf. Der Aliasname kann aus einem oder mehreren Teilen (z. B. auch aus Aliasvorname und Aliasname) bestehen. Gemäss amtlichen Katalog der Merkmale (Nr. 215) Registerharmonisierung.  |
 | | [https://register.ld.admin.ch/i14y/concept/personAliasName](https://register.ld.admin.ch/i14y/concept/personAliasName) |
-| PersonOtherName |  Gemäss amtlichen Katalog der Merkmale (Nr. 216) Registerharmonisierung: Weitere amtliche Namen gemäss schweizerischen Zivilstandsdokumenten (Art. 24 Abs. 3 ZStV) oder ausländischen Dokumenten, welche weder Familiennamen noch Vornamen sind.  |
+| PersonOtherName |  Weitere amtliche Namen gemäss schweizerischen Zivilstandsdokumenten (Art. 24 Abs. 3 ZStV) oder ausländischen Dokumenten, welche weder Familiennamen noch Vornamen sind. Gemäss amtlichen Katalog der Merkmale (Nr. 216) Registerharmonisierung.  |
 | | [https://register.ld.admin.ch/i14y/concept/personOtherName](https://register.ld.admin.ch/i14y/concept/personOtherName) |
-| PersonDeclaredForeignerName |  Gemäss amtlichen Katalog der Merkmale (Nr. 217) Registerharmonisierung: Für Personen mit ausländischer Nationalität, die keine offiziellen Dokumente besitzen (hauptsächlich im Asylbereich).  |
+| PersonDeclaredForeignerName |  Für Personen mit ausländischer Nationalität, die keine offiziellen Dokumente besitzen (hauptsächlich im Asylbereich). Gemäss amtlichen Katalog der Merkmale (Nr. 217) Registerharmonisierung.  |
 | | [https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerName](https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerName) |
-| PersonFirstName |  Gemäss amtlichen Katalog der Merkmale (Nr. 221) Registerharmonisierung: Vornamen gemäss Geburtsurkunde oder Zivilstandsregister/Infostar in der aufgeführten Reihenfolge bzw. gemäss ausländischen Ausweispapieren.  |
+| PersonFirstName |  Vornamen gemäss Geburtsurkunde oder Zivilstandsregister/Infostar in der aufgeführten Reihenfolge bzw. gemäss ausländischen Ausweispapieren. Gemäss amtlichen Katalog der Merkmale (Nr. 221) Registerharmonisierung.  |
 | | [https://register.ld.admin.ch/i14y/concept/personFirstName](https://register.ld.admin.ch/i14y/concept/personFirstName) |
-| PersonCallFirstName |  Gemäss amtlichen Katalog der Merkmale (Nr. 222) Registerharmonisierung: Eine Person hat das Recht, aus der Liste ihrer amtlichen Vornamen einen Rufnamen auszuwählen. Der Rufname kann aus einem oder mehreren Vornamen (aus den "amtlichen Vornamen") bestehen.  |
+| PersonCallFirstName |  Eine Person hat das Recht, aus der Liste ihrer amtlichen Vornamen einen Rufnamen auszuwählen. Der Rufname kann aus einem oder mehreren Vornamen (aus den "amtlichen Vornamen") bestehen. Gemäss amtlichen Katalog der Merkmale (Nr. 222) Registerharmonisierung.  |
 | | [https://register.ld.admin.ch/i14y/concept/personCallFirstName](https://register.ld.admin.ch/i14y/concept/personCallFirstName) |
-| PersonFirstNameOnForeignPassport |  Gemäss amtlichen Katalog der Merkmale (Nr. 223) Registerharmonisierung: Für Personen mit ausländischer Nationalität. Zu benutzen in Verbindung mit dem Namen im ausländischen Pass."  |
+| PersonFirstNameOnForeignPassport |  Für Personen mit ausländischer Nationalität. Zu benutzen in Verbindung mit dem Namen im ausländischen Pass. Gemäss amtlichen Katalog der Merkmale (Nr. 223) Registerharmonisierung.  |
 | | [https://register.ld.admin.ch/i14y/concept/personFirstNameOnForeignPassport](https://register.ld.admin.ch/i14y/concept/personFirstNameOnForeignPassport) |
-| PersonDeclaredForeignerFirstName |  Gemäss amtlichen Katalog der Merkmale (Nr. 224) Registerharmonisierung: Für Personen mit ausländischer Nationalität, die keine amtlichen Dokumente besitzen (hauptsächlich im Asylbereich). Zu benutzen in Verbindung mit dem Namen gemäss Deklaration.  |
+| PersonDeclaredForeignerFirstName |  Für Personen mit ausländischer Nationalität, die keine amtlichen Dokumente besitzen (hauptsächlich im Asylbereich). Zu benutzen in Verbindung mit dem Namen gemäss Deklaration. Gemäss amtlichen Katalog der Merkmale (Nr. 224) Registerharmonisierung.  |
 | | [https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerFirstName](https://register.ld.admin.ch/i14y/concept/personDeclaredForeignerFirstName) |
 
 
@@ -519,7 +543,7 @@ __
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
-| gender_code | 1 <br/> [GenderCodeEnum](#GenderCodeEnum) | Geschlechtscode. Empfohlene Werte: male, female, diverse .  |
+| gender_code | 1 <br/> [GenderCodeEnum](#GenderCodeEnum) | Geschlechtscode. Empfohlene Werte: male, female, non_binary.  |
 | label | 0..1 <br/> [String](#String) | Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).  |
 | pronouns | * <br/> [String](#String) | Von der Person verwendete Pronomen.  |
 | valid_from | 0..1 <br/> [Date](#Date) | Das Datum, ab dem die Information gültig ist. <br/><br/>Vererbung: [HasTemporalValidity](#HasTemporalValidity) |
@@ -561,7 +585,7 @@ __
 
 
 
-_Geschlechtscodes für Personen. Wenn das Geschlecht nicht bekannt ist, soll kein Geschlechtseintrag hinzugefügt werden. Der Code `diverse` soll zusammen mit einer Bezeichnung verwendet werden, um weitere Angaben zum selbst deklarierten Geschlecht bereitzustellen._
+_Geschlechtscodes für Personen. Wenn das Geschlecht nicht bekannt ist, soll kein Geschlechtseintrag hinzugefügt werden. Der Code `non_binary` soll zusammen mit einer Bezeichnung verwendet werden, um weitere Angaben zum selbst deklarierten Geschlecht bereitzustellen._
 
 __
 
@@ -575,11 +599,10 @@ URI: [act:GenderCodeEnum](https://ld.ech.ch/schema/0294/actors/GenderCodeEnum)
 | Wert | Beschreibung |
 | --- | --- |
 | male |  Männlich. |
-| |  |
+| | [https://register.ld.admin.ch/i14y/concept/sex/1](https://register.ld.admin.ch/i14y/concept/sex/1) |
 | female |  Weiblich. |
-| |  |
-| diverse |  Divers / nicht-binär. |
-| |  |
+| | [https://register.ld.admin.ch/i14y/concept/sex/2](https://register.ld.admin.ch/i14y/concept/sex/2) |
+| non_binary |  Divers / nicht-binär. |
 
 
 
@@ -594,7 +617,7 @@ URI: [act:GenderCodeEnum](https://ld.ech.ch/schema/0294/actors/GenderCodeEnum)
 ## Klasse: Occupation 
 
 
-_Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Codes, ob die Position bezahlt ist, und der zeitlichen Gültigkeit._
+_Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Codes, ob die Tätigkeit bezahlt ist, und der zeitlichen Gültigkeit._
 
 __
 
@@ -609,7 +632,7 @@ __
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
-| is_paid | 0..1 <br/> [Boolean](#Boolean) | Gibt an, ob die Position bezahlt ist.  |
+| is_paid | 0..1 <br/> [Boolean](#Boolean) | Gibt an, ob die Tätigkeit bezahlt ist.  |
 | occupation_code | 0..1 <br/> [String](#String) | ISCO-19 Code der Tätigkeit.  |
 | label | 0..1 <br/> [String](#String) | Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).  |
 | organization_uid | 0..1 <br/> [String](#String) | UID der Organisation (Format eCH-0097: CHE-XXX.XXX.XXX) aus dem eidgenössischen UID-Register (uid.admin.ch).  |
@@ -655,6 +678,13 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 
 ### Beispiele
+#### Beispiel: Occupation-swiss_politicians_Sofia_Fisch_Juristin
+
+```yaml
+label: Jurist*in
+is_active: true
+
+```
 #### Beispiel: Occupation-swiss_politicians_Beat_Jans_Politiker
 
 ```yaml
@@ -845,7 +875,6 @@ URI: [act:TrainingTypeEnum](https://ld.ech.ch/schema/0294/actors/TrainingTypeEnu
 | 323 |  Doktorat / Habilitation. |
 | | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/323](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/323) |
 | military |  Militärdienst (Schweizer Armee). Den erreichten Grad im Feld `value` angeben. |
-| |  |
 
 
 
@@ -1228,13 +1257,9 @@ URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 | Wert | Beschreibung |
 | --- | --- |
 | member |  Gewöhnliches Mitglied (Standard).  |
-| |  |
 | president |  Präsident oder Vorsitzender der Gruppe.  |
-| |  |
 | deputy |  Stellvertretung oder Vize.  |
-| |  |
 | other |  Andere Rolle; für eine beschreibende Bezeichnung role_label verwenden.  |
-| |  |
 
 
 
@@ -1337,7 +1362,7 @@ __
 | organization_uid | 0..1 <br/> [String](#String) | UID der Organisation (Format eCH-0097: CHE-XXX.XXX.XXX) aus dem eidgenössischen UID-Register (uid.admin.ch).  |
 | organization_address | 0..1 <br/> [String](#String) | Adresse der Organisation.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Rechtsform der Organisation. Siehe kontrolliertes Vokabular: https://register.ld.admin.ch/i14y/concept/legalForm  |
-| is_paid | 0..1 <br/> [Boolean](#Boolean) | Gibt an, ob die Position bezahlt ist.  |
+| is_paid | 0..1 <br/> [Boolean](#Boolean) | Gibt an, ob die Tätigkeit bezahlt ist.  |
 | committee | 0..1 <br/> [String](#String) | Gremium innerhalb der Organisation (z.B. Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).  |
 | function_role | 0..1 <br/> [String](#String) | Funktion oder Rolle in der Organisation (z.B. Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in).  |
 | local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
@@ -1938,11 +1963,8 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 | Wert | Beschreibung |
 | --- | --- |
 | privateAddress |  Privatadresse.  |
-| |  |
 | businessAddress |  Geschäftsadresse.  |
-| |  |
 | localAddress |  Lokaladresse.  |
-| |  |
 
 
 
