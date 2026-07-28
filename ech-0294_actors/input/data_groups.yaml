@@ -1,6 +1,10 @@
 # Beispiele für Gruppen und Organe unterschiedlicher Typen. Alle Einträge sind
-# echte Fälle aus der Plattform openparldata.ch; `global_uri` verweist auf den
-# jeweiligen API-Datensatz, `local_id` ist die dortige Kennung.
+# echte Fälle. `global_uri` ist der Identifikator und muss die einzelne Gruppe
+# eindeutig bezeichnen: wo die publizierende Stelle eine gruppenspezifische
+# Adresse führt, wird diese verwendet; führt sie nur eine Übersichtsseite über
+# alle Fraktionen bzw. Kommissionen, steht dort die eindeutige URI der Plattform
+# openparldata.ch, über die die Daten bezogen wurden, und die amtliche Übersicht
+# erscheint als `landing_page`. `local_id` ist die Kennung von openparldata.ch.
 #
 # `group_type` zeigt das Zusammenspiel von kontrolliertem Vokabular
 # (`group_type_enum`) und der herkunftsspezifischen Bezeichnung (`label`):
@@ -34,7 +38,7 @@ groups:
 
   # Gemeindeparlament — `spatial` verweist auf die BFS-Gemeindenummer
   - local_id: 700
-    global_uri: https://api.openparldata.ch/v1/groups/700
+    global_uri: https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
     label:
       - value: Stadtparlament St. Gallen
         language: de
@@ -49,6 +53,9 @@ groups:
     label:
       - value: Evangelische Volkspartei
         language: de
+    landing_page:
+      - value: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen
+        language: de
     group_type:
       group_type_enum: faction
       label: Fraktion
@@ -62,6 +69,9 @@ groups:
         language: de
     abbreviation:
       - value: GPK
+        language: de
+    landing_page:
+      - value: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/
         language: de
     group_type:
       group_type_enum: commission
@@ -81,7 +91,7 @@ groups:
 
   # Delegation in ein interkantonales Gremium
   - local_id: 5000
-    global_uri: https://api.openparldata.ch/v1/groups/5000
+    global_uri: https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
     label:
       - value: Freiburger Delegation IPK strafrechtliche Einschliessung
         language: de
