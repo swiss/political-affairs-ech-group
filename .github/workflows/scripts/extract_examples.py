@@ -59,6 +59,32 @@ SLOT_TO_CLASS = {
 }
 
 
+# A code block in the DOCX/PDF holds 97 characters per line. PyYAML treats the
+# width as a soft limit and overshoots by up to one word, so the wrap is set
+# well below that -- otherwise the renderer wraps a second time and the value
+# ends up spread over two different indentation levels.
+YAML_WIDTH = 80
+
+
+def represent_str(dumper, data):
+    """Emit long prose as a folded block scalar.
+
+    A wrapped plain scalar continues at an indentation of its own, which makes
+    it hard to see where a value begins and ends. A folded scalar keeps every
+    line at the same indentation and reads as one coherent value. Folding joins
+    the lines back with spaces on load, so it stays lossless -- but only for
+    text without line breaks or edge whitespace, hence the guard. Short values
+    are left alone: forcing a folded scalar on e.g. '0110' would drop its
+    quoting and turn it into a number.
+    """
+    if len(data) > YAML_WIDTH and "\n" not in data and data == data.strip():
+        return dumper.represent_scalar("tag:yaml.org,2002:str", data, style=">")
+    return dumper.represent_scalar("tag:yaml.org,2002:str", data)
+
+
+yaml.add_representer(str, represent_str)
+
+
 def slugify(text: str) -> str:
     """Turn a title into a file name; gen-doc renders it back as the heading.
 
@@ -239,7 +265,7 @@ def write_composites(composites: list, collected: dict, examples_dir: Path, lang
         filename = f"{class_name}-{slugify(title)}.yaml"
         with open(examples_dir / filename, "w", encoding="utf-8") as f:
             yaml.dump({slot_name: members}, f, default_flow_style=False,
-                      allow_unicode=True, sort_keys=False, width=100)
+                      allow_unicode=True, sort_keys=False, width=YAML_WIDTH)
         print(f"  {filename}  (composite of {len(members)})")
 
 
@@ -300,7 +326,7 @@ def extract(ech_folder: str):
             filepath = examples_dir / filename
             with open(filepath, "w", encoding="utf-8") as f:
                 yaml.dump(item, f, default_flow_style=False,
-                          allow_unicode=True, sort_keys=False, width=100)
+                          allow_unicode=True, sort_keys=False, width=YAML_WIDTH)
             print(f"  {filename}")
 
         # Slot values
