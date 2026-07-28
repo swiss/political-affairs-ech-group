@@ -1782,12 +1782,12 @@ enums:
       committee_extraparliamentary:
         meaning: act:enum/group_type/committee_extraparliamentary
         description: |
-          Extra-parliamentary commission with a government mandate (e.g., Bank Council of the Swiss National Bank, FINMA).
+          Commission appointed by the government to advise the administration on an ongoing basis or to decide in its stead. What sets it apart from a parliamentary committee is not its position in the hierarchy but its composition and legal basis: its members are external experts and interest-group representatives rather than members of the council, and it rests on government organisation law rather than on parliament law (e.g., Federal Consumer Affairs Commission as an advisory body, Competition Commission as a decision-making one). Governing bodies of federal organisations, such as the Bank Council of the Swiss National Bank, are expressly not part of this category.
         annotations:
           description_de: |
-            Ausserparlamentarische Kommission mit Regierungsauftrag (z.B. Bankrat der Schweizerischen Nationalbank, FINMA).
+            Kommission, die von der Regierung eingesetzt wird, um die Verwaltung dauernd zu beraten oder an ihrer Stelle zu entscheiden. Sie unterscheidet sich von einer parlamentarischen Kommission nicht durch ihre Stellung in der Hierarchie, sondern durch Zusammensetzung und Rechtsgrundlage: Ihre Mitglieder sind externe Fachleute und Interessenvertreterinnen und -vertreter statt Ratsmitglieder, und sie stützt sich auf das Regierungs- und Verwaltungsorganisationsrecht statt auf das Parlamentsrecht (z.B. Eidgenössische Kommission für Konsumentenfragen als beratende Verwaltungskommission, Wettbewerbskommission als entscheidende Behördenkommission). Leitungsorgane von Organisationen des Bundes wie der Bankrat der Schweizerischen Nationalbank zählen ausdrücklich nicht dazu.
           description_fr: |
-            Commission extraparlementaire dotée d'un mandat gouvernemental (p. ex. Conseil de banque de la Banque nationale suisse, FINMA).
+            Commission instituée par le gouvernement pour conseiller l'administration de manière permanente ou pour décider à sa place. Ce qui la distingue d'une commission parlementaire n'est pas sa position dans la hiérarchie, mais sa composition et sa base légale : ses membres sont des spécialistes externes et des représentantes et représentants d'intérêts plutôt que des membres du conseil, et elle se fonde sur le droit de l'organisation du gouvernement et de l'administration et non sur le droit parlementaire (p. ex. la Commission fédérale de la consommation comme commission consultative, la Commission de la concurrence comme commission décisionnelle). Les organes de direction d'organisations de la Confédération, tels que le Conseil de banque de la Banque nationale suisse, n'en font expressément pas partie.
       interest_group:
         meaning: act:enum/group_type/interest_group
         description: |
