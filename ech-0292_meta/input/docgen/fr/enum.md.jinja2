@@ -94,8 +94,8 @@ URI: {{ gen.uri_link(element) }}
 | --- | --- |
 {% for pv in element.permissible_values.values() -%}
 | {{ pv.text }} |  {{ pv.description | replace('\r\n', ' ') | replace('\n', ' ') | replace('\r', ' ') }} |
-| | {% if pv.meaning %}[{{ pv.meaning }}]({{ pv.meaning }}){% endif %} |
-{% endfor %}
+{% if pv.meaning %}| | [{{ pv.meaning }}]({{ pv.meaning }}) |
+{% endif %}{% endfor %}
 {%- endif %}
 {% else %}
 _This is a dynamic enum_

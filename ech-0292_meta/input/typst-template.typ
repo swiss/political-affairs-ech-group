@@ -39,6 +39,16 @@ $if(title)$#set document(title: "$title$")$endif$
 #set heading(numbering: "1.1")
 #show heading: set block(above: 1.2em, below: 0.6em)
 
+// Long URLs inside code blocks: Typst may break a line right after a hyphen that
+// is part of the URL, and most PDF viewers then swallow that hyphen when copying
+// (".../composizione-del-" + newline -> ".../composizione-delparlamento"). Insert a
+// word joiner (U+2060) after every hyphen of a URL so the line breaks after "/"
+// instead. Only URLs are touched; ordinary hyphens in code stay untouched.
+#show raw: it => {
+  show regex("https?://\S+"): m => m.text.replace("-", "-\u{2060}")
+  it
+}
+
 // Tables: no outer grid, bold header row, zebra body rows, left/top aligned (like Word).
 #set table(
   stroke: none,
