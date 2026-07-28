@@ -1,0 +1,23 @@
+@prefix chpaf: <https://ch.paf.link/> .
+@prefix con: <https://politics.ld.admin.ch/consultation/> .
+@prefix dcterm: <http://purl.org/dc/terms/> .
+
+con:2025 a chpaf:Container ;
+    chpaf:consultation con:2025-1,
+        con:2025-2 .
+
+con:2025-1 a chpaf:Consultation ;
+    dcterm:title "Consultation 1" ;
+    chpaf:content "Folgender Sachverhalt sei gegeben..." ;
+    chpaf:receiver "BAFU",
+        "BAR",
+        "BK" .
+
+con:2025-2 a chpaf:Consultation ;
+    dcterm:title "Consultation 2" ;
+    chpaf:content "Folgender Sachverhalt sei gegeben..." ;
+    chpaf:receiver "BAG",
+        "BFS",
+        "BLW" .
+
+

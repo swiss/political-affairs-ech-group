@@ -1,0 +1,23 @@
+global_uri: ops:agenda_item_be_2025_042
+parent_meeting: ops:meeting_be_committee_wak_2025_05_12
+agenda_item_type: item
+agenda_item_number: '4.2'
+agenda_item_position: 42
+agenda_item_title:
+- text: Steuergesetz - Detailberatung Art. 5
+  language: de
+- text: Loi fiscale - Délibération détaillée art. 5
+  language: fr
+agenda_item_description:
+- text: Beratung von Änderungsanträgen zu Artikel 5 des Steuergesetzes
+  language: de
+- text: Délibération sur les propositions de modification de l'article 5 de la loi
+    fiscale
+  language: fr
+agenda_item_category: Gesetzgebung
+state_id: completed
+datetime_begin_planned: '2025-05-12T15:00:00Z'
+datetime_begin_actual: '2025-05-12T15:15:00Z'
+affair_id: affairs:be_2024_089_steuergesetz
+datetime_created: '2025-04-15T09:00:00Z'
+datetime_modified: '2025-05-12T15:20:00Z'

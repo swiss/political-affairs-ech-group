@@ -1,0 +1,25 @@
+global_uri: ops:meeting_sg_2025_03_15
+body_key: SG
+meeting_type: session
+name:
+- text: Kantonsratssitzung vom 15. März 2025
+  language: de
+url:
+- text: https://www.ratsinfo.sg.ch/sessions/2025-03-15
+  language: de
+actor_id:
+  global_uri: https://api.openparldata.ch/v1/bodies/265
+  label: Kantonsrat St. Gallen
+  abbreviation:
+  - value: KR
+    language: de
+actor_name: Kantonsrat St. Gallen
+datetime_begin_planned: '2025-03-15T08:00:00Z'
+datetime_end_planned: '2025-03-15T18:00:00Z'
+datetime_begin_actual: '2025-03-15T08:15:00Z'
+datetime_end_actual: '2025-03-15T17:30:00Z'
+state: planned
+location: Kantonsratssaal, Regierungsgebäude St. Gallen
+parent_legislature: ops:legislature_sg_2024_2028
+datetime_created: '2025-02-01T10:00:00Z'
+datetime_modified: '2025-03-15T17:30:00Z'

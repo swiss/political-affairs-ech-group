@@ -1,0 +1,73 @@
+---
+search:
+  boost: 5.0
+---
+
+# Slot: sessions 
+
+<div data-search-exclude markdown="1">
+
+
+
+URI: [ops:session](https://ch.paf.link/schema/operations/session)
+<!-- no inheritance hierarchy -->
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Container](Container.md) |  |  no  |
+
+
+
+
+
+
+## Properties
+
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Session](Session.md) |
+| Domain Of | [Container](Container.md) |
+| Slot URI | [ops:session](https://ch.paf.link/schema/operations/session) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
+
+
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: sessions
+from_schema: https://ch.paf.link/schema/operations
+rank: 1000
+slot_uri: ops:session
+domain_of:
+- Container
+range: Session
+multivalued: true
+inlined: true
+inlined_as_list: true
+
+```
+</details></div>

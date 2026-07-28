@@ -1,0 +1,23 @@
+global_uri: ops:7b3545e4-57dc-3901-aaa8-4020da6ab0c6
+parent_meeting: ops:meeting_vaud_2008_04_30
+agenda_item_type: item
+datetime_begin_planned: '2008-04-30T00:00:00Z'
+agenda_item_position: 7
+agenda_item_number: '7'
+agenda_item_title:
+- text: Révision partielle de sept ordonnances fédérales relatives aux produits chimiques
+  language: fr
+agenda_item_description:
+- text: 'Le Conseil d''Etat approuve le projet de révision partielle de sept ordonnances
+    fédérales relatives aux produits chimiques. Il salue la volonté des autorités
+    fédérales d''introduire dans la législation fédérale les modifications nécessaires
+    découlant des nouveaux règlements européens, afin d''éliminer des entraves au
+    commerce et d''augmenter la sécurité d''évaluation des produits chimiques.
+
+    '
+  language: fr
+url:
+- text: https://www.vd.ch/actualites/decisions-du-conseil-detat/seance-du-conseil-detat/seance/265632#7b3545e4-57dc-3901-aaa8-4020da6ab0c6
+  language: fr
+datetime_created: '2024-12-06T10:50:04Z'
+datetime_modified: '2024-12-06T10:50:04Z'

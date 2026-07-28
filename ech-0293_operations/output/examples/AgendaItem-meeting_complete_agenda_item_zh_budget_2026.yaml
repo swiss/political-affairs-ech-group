@@ -1,0 +1,18 @@
+global_uri: ops:agenda_item_zh_budget_2026
+parent_meeting: ops:meeting_zh_2025_11_20
+agenda_item_type: item
+agenda_item_number: '8'
+agenda_item_position: 8
+agenda_item_title:
+- text: Budget 2026
+  language: de
+agenda_item_description:
+- text: Beratung und Beschlussfassung über das Kantonsbudget für das Jahr 2026
+  language: de
+agenda_item_category: Budget und Finanzen
+state_id: completed
+datetime_begin_planned: '2025-11-20T16:00:00Z'
+datetime_begin_actual: '2025-11-20T16:45:00Z'
+affair_id: affairs:zh_2025_budget_2026
+datetime_created: '2025-10-01T08:00:00Z'
+datetime_modified: '2025-11-20T16:50:00Z'

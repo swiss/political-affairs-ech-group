@@ -27,29 +27,16 @@ permissions:
   contents: write
 
 jobs:
-  # Die generierten Dateien sind nicht mehr im Repository eingecheckt, deshalb
-  # baut der Release sie aus dem Quellstand des gewählten Commits neu. Der Build
-  # ist derselbe wie bei jedem Push und lädt das Ergebnis als Artefakt hoch.
-  build:
-    uses: ./.github/workflows/ech-0294.yaml
-
   release:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
 
-      - name: Generierte Artefakte herunterladen
-        uses: actions/download-artifact@v4
-        with:
-          name: ech-0294-output
-          path: ech-0294_actors/output
-
       - name: Artefakte einsammeln
         run: |
           mkdir -p release
-          # Fertige Word-Dokumente (im Build-Job erzeugt),
+          # Fertige Word-Dokumente (von der ech-0294-CI generiert und committet),
           # benannt nach eCH-0003-Nomenklatur:
           #   <TYP>_<d|f|e>_<STATUS>_<Datum>_eCH-0294_V<Version>_<Titel>.docx
           # Alle Bestandteile werden aus der Metadaten-Tabelle (01_head.md) abgeleitet.

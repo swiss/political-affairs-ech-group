@@ -1,0 +1,107 @@
+id: https://ch.paf.link/schema/tutorial
+name: tutorial
+description: '[en] This is a dummy schema for a parliamentary affairs system, including sessions, agenda items, and votes.
+  It is used to demonstrate the use of LinkML for defining data models. In this model, a session contains multiple agenda
+  items and each agenda item can have multiple votes.
+
+  [de] Dies ist ein Dummy-Schema für ein System von parlamentarischen Angelegenheiten, das Sitzungen, Tagesordnungspunkte
+  und Abstimmungen umfasst. Es wird verwendet, um die Verwendung von LinkML zur Definition von Datenmodellen zu demonstrieren.
+  In diesem Modell enthält eine Sitzung mehrere Tagesordnungspunkte und jeder Tagesordnungspunkt kann mehrere Abstimmungen
+  haben.
+
+  '
+prefixes:
+  xsd: http://www.w3.org/2001/XMLSchema#
+  prov: http://www.w3.org/ns/prov#
+  dcterm: http://purl.org/dc/terms/
+  linkml: https://w3id.org/linkml/
+  tutorial: https://ch.paf.link/schema/tutorial/
+imports:
+- linkml:types
+- ../../ech-0292_meta/input/schema_common
+default_prefix: tutorial
+default_range: string
+classes:
+  Session:
+    slots:
+    - id
+    - date_begin_actual
+    - date_end_actual
+    - name
+    - agenda_items
+  AgendaItem:
+    slots:
+    - id
+    - name
+    - votes
+  Vote:
+    attributes:
+      is_part_of_agenda_item:
+        range: AgendaItem
+    slots:
+    - id
+    - is_part_of
+    - question
+    - datetime_actual
+    - result
+  Container:
+    tree_root: true
+    slots:
+    - id
+    - sessions
+    - agenda_items
+    - votes
+slots:
+  id:
+    identifier: true
+    required: true
+    examples:
+    - value: tutorial:s2025
+    - value: tutorial:s2025-1
+    - value: tutorial:s2025-1_t1
+  name:
+    slot_uri: schema:name
+    range: MultilingualValue
+    multivalued: true
+    inlined_as_list: true
+  sessions:
+    slot_uri: tutorial:session
+    range: Session
+    multivalued: true
+    inlined_as_list: true
+  agenda_items:
+    slot_uri: tutorial:agendaItem
+    range: AgendaItem
+    multivalued: true
+    inlined_as_list: true
+  votes:
+    slot_uri: tutorial:vote
+    range: Vote
+    multivalued: true
+    inlined_as_list: true
+  question:
+    range: string
+    required: true
+    examples:
+    - value: Soll die Farbe Auberginen-Oliv werden?
+    - value: Soll die Farbe geändert werden?
+    - value: Soll die Hymne geändert werden?
+  result:
+    range: result_enum
+    examples:
+    - value: 'no'
+    - value: 'yes'
+  text:
+    required: true
+  is_part_of:
+    range: uriorcurie
+    examples:
+    - value: tutorial:s2025-1_t1
+    - value: tutorial:s2025-2_t1
+enums:
+  result_enum:
+    permissible_values:
+      'yes':
+        meaning: tutorial:results/yes
+      'no':
+        meaning: tutorial:results/no

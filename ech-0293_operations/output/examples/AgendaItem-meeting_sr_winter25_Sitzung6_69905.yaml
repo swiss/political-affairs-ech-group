@@ -1,0 +1,16 @@
+global_uri: ops:69905
+parent_meeting: parl:sr_winter25_sitzung_6
+agenda_item_type: item
+datetime_begin_planned: '2025-12-19T09:15:00+01:00'
+datetime_begin_actual: '2025-12-19T09:20:00+01:00'
+agenda_item_number: '6'
+agenda_item_position: 4
+agenda_item_title:
+- text: Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich
+    durchführen, um die Verzögerungen zu verstehen
+  language: de
+affair_id: affairs:24.4471
+landing_page: https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3
+agenda_item_category: agenda_item
+datetime_created: '2026-01-12T00:00:00+01:00'
+datetime_modified: '2026-01-12T00:00:00+01:00'

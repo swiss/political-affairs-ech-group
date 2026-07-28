@@ -1,0 +1,75 @@
+---
+search:
+  boost: 5.0
+---
+
+# Slot: name 
+
+<div data-search-exclude markdown="1">
+
+
+
+URI: [ops:name](https://ch.paf.link/schema/operations/name)
+<!-- no inheritance hierarchy -->
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Legislature](Legislature.md) | [en] Term of office of a parliament as a legislative assembly |  no  |
+| [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
+
+
+
+
+
+
+## Properties
+
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [MultilingualString](MultilingualString.md) |
+| Domain Of | [Legislature](Legislature.md), [Session](Session.md), [Meeting](Meeting.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+
+
+
+
+
+
+
+
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: name
+from_schema: https://ch.paf.link/schema/operations
+rank: 1000
+domain_of:
+- Legislature
+- Session
+- Meeting
+range: MultilingualString
+multivalued: true
+inlined: true
+inlined_as_list: true
+
+```
+</details></div>

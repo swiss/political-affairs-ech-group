@@ -1,0 +1,83 @@
+{
+    "$defs": {
+        "Consultation": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "content": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "receivers": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "content"
+            ],
+            "title": "Consultation",
+            "type": "object"
+        },
+        "Container": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "consultations": {
+                    "items": {
+                        "$ref": "#/$defs/Consultation"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Container",
+            "type": "object"
+        }
+    },
+    "$id": "https://ch.paf.link/schema/consultation",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "description": "",
+    "metamodel_version": "1.7.0",
+    "properties": {
+        "consultations": {
+            "items": {
+                "$ref": "#/$defs/Consultation"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "id": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id"
+    ],
+    "title": "ch-paf-link-consultation",
+    "type": "object",
+    "version": null
+}

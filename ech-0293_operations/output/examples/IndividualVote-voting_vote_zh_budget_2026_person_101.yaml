@@ -1,0 +1,8 @@
+global_uri: ops:vote_zh_budget_2026_person_101
+parent_voting: ops:voting_zh_budget_2026
+actor_id:
+  global_uri: https://api.openparldata.ch/v1/persons/27237
+  label: Thomas Wolf
+seat_nr: '1'
+individual_vote_type: 'yes'
+datetime_created: '2025-11-20T16:45:00Z'

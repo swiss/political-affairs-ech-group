@@ -1,0 +1,94 @@
+---
+search:
+  boost: 5.0
+---
+
+# Slot: datetime_begin_actual 
+
+
+_The actual start date and time of an event or occurrence with time duration._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+URI: [mcm:datetimeBeginActual](https://ld.ech.ch/schema/0292/meta-common/datetimeBeginActual)
+<!-- no inheritance hierarchy -->
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [IsEventWithDuration](IsEventWithDuration.md) | A mixin class that provides slots for modeling events or occurrences with tim... |  no  |
+| [IsProcessStep](IsProcessStep.md) | A mixin class for a single step in a multi-stage process (e |  no  |
+
+
+
+
+
+
+## Properties
+
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Datetime](Datetime.md) |
+| Domain Of | [IsEventWithDuration](IsEventWithDuration.md), [IsProcessStep](IsProcessStep.md) |
+| Slot URI | [mcm:datetimeBeginActual](https://ld.ech.ch/schema/0292/meta-common/datetimeBeginActual) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
+
+
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: datetime_begin_actual
+annotations:
+  description_de:
+    tag: description_de
+    value: 'Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen
+      mit Zeitdauer.
+
+      '
+  description_fr:
+    tag: description_fr
+    value: 'La date et l''heure de début effectives d''un événement ou d''une occurrence
+      avec durée.
+
+      '
+description: 'The actual start date and time of an event or occurrence with time duration.
+
+  '
+from_schema: https://ld.ech.ch/schema/0294/actors
+rank: 1000
+slot_uri: mcm:datetimeBeginActual
+domain_of:
+- IsEventWithDuration
+- IsProcessStep
+range: datetime
+
+```
+</details></div>

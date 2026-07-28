@@ -1,0 +1,25 @@
+global_uri: ops:voting_sg_2025_001
+voting_title:
+- text: Schlussabstimmung Energiegesetz
+  language: de
+voting_type: final_vote
+datetime_begin: '2025-03-15T14:30:00Z'
+datetime_end: '2025-03-15T14:35:00Z'
+total_count_yes: 78
+total_count_no: 42
+total_count_abstention: 5
+total_absent: 3
+total: 128
+majority_type: absolute
+majority_count: 65
+result_text: Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen
+parent_agenda_item: ops:agenda_item_sg_2025_015
+parent_meeting: ops:meeting_sg_2025_03_15
+actor_id:
+  global_uri: https://api.openparldata.ch/v1/bodies/265
+  label: Kantonsrat St. Gallen
+  abbreviation:
+  - value: KR
+    language: de
+datetime_created: '2025-03-15T14:30:00Z'
+datetime_modified: '2025-03-15T14:35:00Z'

@@ -1,0 +1,161 @@
+@prefix actors: <https://ld.ech.ch/schema/0294/actors/> .
+@prefix mcm: <https://ld.ech.ch/schema/0292/meta-common/> .
+@prefix ops: <https://ch.paf.link/schema/operations/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ops:meeting_examples_2025 a ops:Container ;
+    ops:agendaItem ops:agenda_item_be_2025_042,
+        ops:agenda_item_sg_2025_015,
+        ops:agenda_item_zh_budget_2026 ;
+    ops:meeting ops:meeting_be_committee_wak_2025_05_12,
+        ops:meeting_gl_landsgemeinde_2025,
+        ops:meeting_sg_2025_03_15 .
+
+<https://api.openparldata.ch/v1/bodies/258> a mcm:GroupReference ;
+    mcm:abbreviation [ a mcm:MultilingualValue ;
+            mcm:language "de" ;
+            mcm:value "LG" ] ;
+    mcm:label "Landsgemeinde Glarus" .
+
+<https://api.openparldata.ch/v1/bodies/265> a mcm:GroupReference ;
+    mcm:abbreviation [ a mcm:MultilingualValue ;
+            mcm:language "de" ;
+            mcm:value "KR" ] ;
+    mcm:label "Kantonsrat St. Gallen" .
+
+ops:agenda_item_be_2025_042 a ops:AgendaItem ;
+    ops:affair_id "affairs:be_2024_089_steuergesetz" ;
+    ops:agenda_item_category "Gesetzgebung" ;
+    ops:agenda_item_description [ a ops:MultilingualString ;
+            ops:text "Délibération sur les propositions de modification de l'article 5 de la loi fiscale" ;
+            mcm:language "fr" ],
+        [ a ops:MultilingualString ;
+            ops:text "Beratung von Änderungsanträgen zu Artikel 5 des Steuergesetzes" ;
+            mcm:language "de" ] ;
+    ops:agenda_item_number "4.2" ;
+    ops:agenda_item_position 42 ;
+    ops:agenda_item_title [ a ops:MultilingualString ;
+            ops:text "Steuergesetz - Detailberatung Art. 5" ;
+            mcm:language "de" ],
+        [ a ops:MultilingualString ;
+            ops:text "Loi fiscale - Délibération détaillée art. 5" ;
+            mcm:language "fr" ] ;
+    ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
+    ops:parent_meeting "ops:meeting_be_committee_wak_2025_05_12" ;
+    ops:state_id "completed" ;
+    mcm:datetimeBeginActual "2025-05-12T15:15:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeBeginPlanned "2025-05-12T15:00:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeCreated "2025-04-15T09:00:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeModified "2025-05-12T15:20:00+00:00"^^xsd:dateTime .
+
+ops:agenda_item_sg_2025_015 a ops:AgendaItem ;
+    ops:affair_id "affairs:sg_2024_123_energiegesetz" ;
+    ops:agenda_item_category "Gesetzgebung" ;
+    ops:agenda_item_description [ a ops:MultilingualString ;
+            ops:text "Schlussabstimmung über das revidierte Energiegesetz des Kantons St. Gallen" ;
+            mcm:language "de" ] ;
+    ops:agenda_item_number "15" ;
+    ops:agenda_item_position 15 ;
+    ops:agenda_item_title [ a ops:MultilingualString ;
+            ops:text "Energiegesetz - Schlussabstimmung" ;
+            mcm:language "de" ] ;
+    ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
+    ops:parent_meeting "ops:meeting_sg_2025_03_15" ;
+    ops:state_id "completed" ;
+    mcm:datetimeBeginActual "2025-03-15T14:30:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeBeginPlanned "2025-03-15T14:00:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeCreated "2025-02-01T10:00:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeModified "2025-03-15T14:35:00+00:00"^^xsd:dateTime .
+
+ops:agenda_item_zh_budget_2026 a ops:AgendaItem ;
+    ops:affair_id "affairs:zh_2025_budget_2026" ;
+    ops:agenda_item_category "Budget und Finanzen" ;
+    ops:agenda_item_description [ a ops:MultilingualString ;
+            ops:text "Beratung und Beschlussfassung über das Kantonsbudget für das Jahr 2026" ;
+            mcm:language "de" ] ;
+    ops:agenda_item_number "8" ;
+    ops:agenda_item_position 8 ;
+    ops:agenda_item_title [ a ops:MultilingualString ;
+            ops:text "Budget 2026" ;
+            mcm:language "de" ] ;
+    ops:agenda_item_type <https://ch.paf.link/schema/operations/enum/agenda_item_type/item> ;
+    ops:parent_meeting "ops:meeting_zh_2025_11_20" ;
+    ops:state_id "completed" ;
+    mcm:datetimeBeginActual "2025-11-20T16:45:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeBeginPlanned "2025-11-20T16:00:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeCreated "2025-10-01T08:00:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeModified "2025-11-20T16:50:00+00:00"^^xsd:dateTime .
+
+ops:meeting_be_committee_wak_2025_05_12 a ops:Meeting ;
+    ops:actor_id actors:committee_wak_be ;
+    ops:actor_name "Kommission für Wirtschaft und Abgaben (WAK)" ;
+    ops:body_key "BE" ;
+    ops:location "Kommissionszimmer 301, Rathaus Bern" ;
+    ops:meetingType <https://ch.paf.link/schema/operations/enum/meeting_type/committee> ;
+    ops:name [ a ops:MultilingualString ;
+            ops:text "Séance Commission de l'économie et des redevances" ;
+            mcm:language "fr" ],
+        [ a ops:MultilingualString ;
+            ops:text "Sitzung Kommission für Wirtschaft und Abgaben" ;
+            mcm:language "de" ] ;
+    ops:parent_legislature "ops:legislature_be_2022_2026" ;
+    ops:state <https://ch.paf.link/schema/operations/enum/state/planned> ;
+    ops:url [ a ops:MultilingualString ;
+            ops:text "https://www.gr.be.ch/kommissionen/wak/2025-05-12" ;
+            mcm:language "de" ] ;
+    mcm:datetimeBeginActual "2025-05-12T14:10:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeBeginPlanned "2025-05-12T14:00:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeCreated "2025-04-15T09:00:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeEndActual "2025-05-12T16:45:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeEndPlanned "2025-05-12T17:00:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeModified "2025-05-12T16:45:00+00:00"^^xsd:dateTime .
+
+ops:meeting_gl_landsgemeinde_2025 a ops:Meeting ;
+    ops:actor_id <https://api.openparldata.ch/v1/bodies/258> ;
+    ops:actor_name "Landsgemeinde Glarus" ;
+    ops:body_key "GL" ;
+    ops:location "Zaunplatz, Glarus" ;
+    ops:meetingType <https://ch.paf.link/schema/operations/enum/meeting_type/sitting> ;
+    ops:name [ a ops:MultilingualString ;
+            ops:text "Landsgemeinde 2025" ;
+            mcm:language "de" ] ;
+    ops:parent_legislature "ops:legislature_gl_2024_2028" ;
+    ops:state <https://ch.paf.link/schema/operations/enum/state/planned> ;
+    ops:url [ a ops:MultilingualString ;
+            ops:text "https://www.landsgemeinde.gl.ch/2025" ;
+            mcm:language "de" ] ;
+    mcm:datetimeBeginActual "2025-05-04T09:30:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeBeginPlanned "2025-05-04T09:30:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeCreated "2025-01-10T12:00:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeEndActual "2025-05-04T13:45:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeEndPlanned "2025-05-04T14:00:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeModified "2025-05-04T13:45:00+00:00"^^xsd:dateTime .
+
+ops:meeting_sg_2025_03_15 a ops:Meeting ;
+    ops:actor_id <https://api.openparldata.ch/v1/bodies/265> ;
+    ops:actor_name "Kantonsrat St. Gallen" ;
+    ops:body_key "SG" ;
+    ops:location "Kantonsratssaal, Regierungsgebäude St. Gallen" ;
+    ops:meetingType <https://ch.paf.link/schema/operations/enum/meeting_type/session> ;
+    ops:name [ a ops:MultilingualString ;
+            ops:text "Kantonsratssitzung vom 15. März 2025" ;
+            mcm:language "de" ] ;
+    ops:parent_legislature "ops:legislature_sg_2024_2028" ;
+    ops:state <https://ch.paf.link/schema/operations/enum/state/planned> ;
+    ops:url [ a ops:MultilingualString ;
+            ops:text "https://www.ratsinfo.sg.ch/sessions/2025-03-15" ;
+            mcm:language "de" ] ;
+    mcm:datetimeBeginActual "2025-03-15T08:15:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeBeginPlanned "2025-03-15T08:00:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeCreated "2025-02-01T10:00:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeEndActual "2025-03-15T17:30:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeEndPlanned "2025-03-15T18:00:00+00:00"^^xsd:dateTime ;
+    mcm:datetimeModified "2025-03-15T17:30:00+00:00"^^xsd:dateTime .
+
+actors:committee_wak_be a mcm:GroupReference ;
+    mcm:abbreviation [ a mcm:MultilingualValue ;
+            mcm:language "de" ;
+            mcm:value "WAK" ] ;
+    mcm:label "Kommission für Wirtschaft und Abgaben (WAK)" .
+
+

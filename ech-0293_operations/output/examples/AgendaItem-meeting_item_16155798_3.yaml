@@ -1,0 +1,14 @@
+global_uri: ops:16155798_3
+parent_meeting: ops:meeting_schaffhausen_2025_03_31
+agenda_item_type: item
+datetime_begin_planned: '2025-03-31T00:00:00Z'
+agenda_item_position: 2
+agenda_item_number: '2'
+agenda_item_title:
+- text: Motion Nr. 2023/9 von Rainer Schmidig vom 18. Dezember 2023 betreffend zeitgemässe
+    Abzüge in den Art. 35 und 37 des Gesetzes über die direkten Steuern
+  language: de
+agenda_item_category: Traktanden
+affair_id: affairs:MOT_2023_9
+datetime_created: '2025-05-02T11:23:49Z'
+datetime_modified: '2025-05-02T11:23:49Z'

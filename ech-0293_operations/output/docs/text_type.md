@@ -1,0 +1,90 @@
+---
+search:
+  boost: 5.0
+---
+
+# Slot: text_type 
+
+
+_[en] Type of text (raw draft, edited version)_
+
+_[de] Typ des Textes (Rohfassung, bearbeitete Fassung)_
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+URI: [ops:text_type](https://ch.paf.link/schema/operations/text_type)
+<!-- no inheritance hierarchy -->
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Speech](Speech.md) | [en] A speech or statement made during a meeting (also called Votum or speake... |  no  |
+
+
+
+
+
+
+## Properties
+
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [Speech](Speech.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
+
+
+
+## Examples
+
+| Value |
+| --- |
+| final |
+
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: text_type
+description: '[en] Type of text (raw draft, edited version)
+
+  [de] Typ des Textes (Rohfassung, bearbeitete Fassung)
+
+  '
+examples:
+- value: final
+from_schema: https://ch.paf.link/schema/operations
+rank: 1000
+domain_of:
+- Speech
+range: string
+
+```
+</details></div>

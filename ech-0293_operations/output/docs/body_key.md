@@ -1,0 +1,85 @@
+---
+search:
+  boost: 5.0
+---
+
+# Slot: body_key 
+
+
+_[en] Key identifying the political body or jurisdiction (e.g., BE for Bern, CHE for Switzerland)._
+
+_[de] Schlüssel zur Identifizierung des politischen Organs oder der Gerichtsbarkeit (z.B. BE für Bern, CHE für Schweiz)._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+URI: [ops:body_key](https://ch.paf.link/schema/operations/body_key)
+<!-- no inheritance hierarchy -->
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Session](Session.md) | [en] A parliamentary session that groups multiple meetings and spans a specif... |  no  |
+| [Meeting](Meeting.md) | [en] A general meeting class used for Sessions, Comittee Meetings, individual... |  no  |
+
+
+
+
+
+
+## Properties
+
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [Session](Session.md), [Meeting](Meeting.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
+
+
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: body_key
+description: '[en] Key identifying the political body or jurisdiction (e.g., BE for
+  Bern, CHE for Switzerland).
+
+  [de] Schlüssel zur Identifizierung des politischen Organs oder der Gerichtsbarkeit
+  (z.B. BE für Bern, CHE für Schweiz).
+
+  '
+from_schema: https://ch.paf.link/schema/operations
+rank: 1000
+domain_of:
+- Session
+- Meeting
+range: string
+
+```
+</details></div>

@@ -1,0 +1,21 @@
+global_uri: parl:sr_winter25_sitzung_6
+body_key: CHE
+meeting_type: session
+name:
+- text: Sechste Sitzung
+  language: de
+- text: Sixième séance
+  language: fr
+url:
+- text: https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin
+  language: de
+actor_id:
+  global_uri: https://api.openparldata.ch/v1/bodies/42
+  label: Ständerat
+  abbreviation:
+  - value: SR
+    language: de
+actor_name: Ständerat
+datetime_begin_planned: '2025-12-19T08:15:00+01:00'
+datetime_created: '2026-01-12T00:00:00+01:00'
+datetime_modified: '2026-01-12T00:00:00+01:00'

@@ -1,0 +1,11 @@
+global_uri: ops:49_253
+parent_meeting: ops:meeting_2025_03_31
+agenda_item_type: item
+datetime_begin_planned: '2025-03-31T00:00:00Z'
+agenda_item_position: 2
+agenda_item_number: '2'
+agenda_item_title:
+- text: Programmvereinbarungen 2024
+  language: de
+datetime_created: '2025-03-29T01:07:14Z'
+datetime_modified: '2025-03-29T01:07:14Z'

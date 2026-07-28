@@ -1,0 +1,20 @@
+id: tutorial:s2025-2
+date_begin_actual: '2025-06-01'
+date_end_actual: '2025-07-10'
+name:
+- value: Sommersession 2025
+  language: de
+- value: Summer Session 2025
+  language: en
+agenda_items:
+- id: tutorial:s2025-2_t1
+  name:
+  - value: Landeshymne
+    language: de
+  - value: National Anthem
+    language: en
+  votes:
+  - id: tutorial:s2025-2_t1_a1
+    question: Soll die Hymne geändert werden?
+    datetime_actual: '2025-06-15T10:00:00+01:00'
+    result: 'no'

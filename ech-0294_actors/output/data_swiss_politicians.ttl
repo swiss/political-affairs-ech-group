@@ -1,0 +1,103 @@
+@prefix act: <https://ld.ech.ch/schema/0294/actors/> .
+@prefix mcm: <https://ld.ech.ch/schema/0292/meta-common/> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+act:swiss_politicians_example a act:Container ;
+    act:person <https://data-example.parlament.ch/person/4032>,
+        <https://parlament.winterthur.ch/behoerdenmitglieder/280958>,
+        <https://www.ur.ch/behoerdenmitglieder/6370>,
+        <https://www.ur.ch/behoerdenmitglieder/6447>,
+        <https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269> .
+
+<https://data-example.parlament.ch/person/4032> a act:Person ;
+    schema1:birthDate "1964-07-12"^^xsd:date ;
+    mcm:label "Beat Jans" ;
+    mcm:labelLong "Beat Jans, dipl. nat. ETH" ;
+    mcm:localId "4032" ;
+    mcm:wikidataUri <http://www.wikidata.org/entity/Q813067> ;
+    act:address [ a act:Address ;
+            act:addressType "businessAddress" ;
+            act:postalLocality "Basel-Stadt" ] ;
+    act:birthYear 1964 ;
+    act:citizenship [ a act:Citizenship ;
+            schema1:validFrom "1964-07-12"^^xsd:date ;
+            act:country "CH" ] ;
+    act:contact [ a act:Contact ;
+            mcm:value "beat.jans@admin.ch" ;
+            act:contactType "email" ],
+        [ a act:Contact ;
+            mcm:value "http://www.beat-jans.ch" ;
+            act:contactType "contact_website" ] ;
+    act:gender [ a act:Gender ;
+            schema1:validFrom "1964-07-12"^^xsd:date ;
+            act:genderCode "male" ] ;
+    act:languageProficiency [ a act:LanguageProficiency ;
+            mcm:language "de" ;
+            act:isCorrespondence true ;
+            act:isNative true ] ;
+    act:name [ a act:Name ;
+            mcm:value "Beat" ;
+            act:nameType "PersonFirstName" ],
+        [ a act:Name ;
+            schema1:validFrom "1964-07-12"^^xsd:date ;
+            mcm:value "Jans" ;
+            act:nameType "PersonOfficialName" ] ;
+    act:occupation [ a act:Occupation ;
+            schema1:validFrom "1964-01-01"^^xsd:date ;
+            mcm:isCurrent true ;
+            mcm:label "Politiker" ] ;
+    act:picture <https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg> ;
+    act:training [ a act:Training ;
+            mcm:value "dipl. nat. ETH" ;
+            act:trainingType "3223" ] .
+
+<https://parlament.winterthur.ch/behoerdenmitglieder/280958> a act:Person ;
+    mcm:label "Cristina Bozzi-Brunel" ;
+    mcm:localId "280958" ;
+    act:name [ a act:Name ;
+            mcm:value "Brunel" ;
+            act:nameType "PersonOriginalName" ],
+        [ a act:Name ;
+            mcm:value "Bozzi-Brunel" ;
+            act:nameType "PersonOfficialName" ],
+        [ a act:Name ;
+            mcm:value "Cristina" ;
+            act:nameType "PersonFirstName" ] .
+
+<https://www.ur.ch/behoerdenmitglieder/6370> a act:Person ;
+    mcm:label "Alois Arnold (1965)" ;
+    mcm:localId "6370" ;
+    act:birthYear 1965 ;
+    act:name [ a act:Name ;
+            mcm:value "Arnold" ;
+            act:nameType "PersonOfficialName" ],
+        [ a act:Name ;
+            mcm:value "Alois" ;
+            act:nameType "PersonFirstName" ] .
+
+<https://www.ur.ch/behoerdenmitglieder/6447> a act:Person ;
+    mcm:label "Alois Arnold (1981)" ;
+    mcm:localId "6447" ;
+    act:birthYear 1981 ;
+    act:name [ a act:Name ;
+            mcm:value "Arnold" ;
+            act:nameType "PersonOfficialName" ],
+        [ a act:Name ;
+            mcm:value "Alois" ;
+            act:nameType "PersonFirstName" ] .
+
+<https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269> a act:Person ;
+    mcm:label "Gerri Beretta-Piccoli" ;
+    mcm:localId "1269" ;
+    act:name [ a act:Name ;
+            mcm:value "Gerri" ;
+            act:nameType "PersonCallFirstName" ],
+        [ a act:Name ;
+            mcm:value "Fausto" ;
+            act:nameType "PersonFirstName" ],
+        [ a act:Name ;
+            mcm:value "Beretta-Piccoli" ;
+            act:nameType "PersonOfficialName" ] .
+
+

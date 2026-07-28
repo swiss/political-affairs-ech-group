@@ -1,0 +1,21 @@
+global_uri: ops:session_5207
+body_key: CHE
+name:
+- text: Frühjahrssession 2025
+  language: de
+- text: Session de printemps 2025
+  language: fr
+- text: Sessione primaverile 2025
+  language: it
+url:
+- text: https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025
+  language: de
+- text: https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025
+  language: fr
+- text: https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025
+  language: it
+date_begin_planned: '2025-03-03'
+date_end_planned: '2025-03-21'
+parent_legislature: ops:legislature_51
+datetime_modified: '2025-04-24T00:19:37Z'
+datetime_created: '2025-03-20T14:27:09Z'

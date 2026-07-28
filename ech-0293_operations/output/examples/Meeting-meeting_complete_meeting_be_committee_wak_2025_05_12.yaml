@@ -1,0 +1,27 @@
+global_uri: ops:meeting_be_committee_wak_2025_05_12
+body_key: BE
+meeting_type: committee
+name:
+- text: Sitzung Kommission für Wirtschaft und Abgaben
+  language: de
+- text: Séance Commission de l'économie et des redevances
+  language: fr
+url:
+- text: https://www.gr.be.ch/kommissionen/wak/2025-05-12
+  language: de
+actor_id:
+  global_uri: actors:committee_wak_be
+  label: Kommission für Wirtschaft und Abgaben (WAK)
+  abbreviation:
+  - value: WAK
+    language: de
+actor_name: Kommission für Wirtschaft und Abgaben (WAK)
+datetime_begin_planned: '2025-05-12T14:00:00Z'
+datetime_end_planned: '2025-05-12T17:00:00Z'
+datetime_begin_actual: '2025-05-12T14:10:00Z'
+datetime_end_actual: '2025-05-12T16:45:00Z'
+state: planned
+location: Kommissionszimmer 301, Rathaus Bern
+parent_legislature: ops:legislature_be_2022_2026
+datetime_created: '2025-04-15T09:00:00Z'
+datetime_modified: '2025-05-12T16:45:00Z'
