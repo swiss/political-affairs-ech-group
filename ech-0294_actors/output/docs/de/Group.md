@@ -231,6 +231,8 @@ global_uri: https://api.openparldata.ch/v1/groups/3
 label:
 - value: Geschäftsprüfungskommission
   language: de
+parent_groups:
+- https://www.ar.ch/kantonsrat/
 abbreviation:
 - value: GPK
   language: de

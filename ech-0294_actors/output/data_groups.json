@@ -238,6 +238,9 @@
           "language": "de"
         }
       ],
+      "parent_groups": [
+        "https://www.ar.ch/kantonsrat/"
+      ],
       "spatial": "https://ld.admin.ch/canton/15",
       "local_id": "3"
     },

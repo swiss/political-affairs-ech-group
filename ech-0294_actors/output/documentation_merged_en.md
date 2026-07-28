@@ -1127,6 +1127,8 @@ global_uri: https://api.openparldata.ch/v1/groups/3
 label:
 - value: Geschäftsprüfungskommission
   language: de
+parent_groups:
+- https://www.ar.ch/kantonsrat/
 abbreviation:
 - value: GPK
   language: de
@@ -1264,7 +1266,19 @@ __
 
 
 
-_Types of political groups and organizations._
+_Types of political groups and organizations. Three conventions govern this vocabulary._
+
+__
+
+_First, the value states the political function, while the designation used locally is preserved in the group's label. The same body is called Büro in one canton, Ratsleitung or Geschäftsleitung in another, Ufficio presidenziale in Ticino; all of these are recorded as council_bureau so that they remain comparable across cantons and levels, without the local name being lost._
+
+__
+
+_Second, values that belong together share a prefix. The council_ family covers the councils and their bodies, and it deliberately does not distinguish by council: a state chancellery serves the executive, parliamentary services serve the legislature, yet both are a council_secretariat. Which council a body belongs to follows from its parent group, not from its type. The committee_ family works the same way, with committee as the base case and committee_ad_hoc and committee_extraparliamentary as its qualified variants._
+
+__
+
+_Third, this vocabulary does not record legal form. Whether an organization is an association, a foundation or a public limited company is stated in legal_form using the code list of the federal UID register; group_type remains reserved for the political function._
 
 __
 
@@ -1305,7 +1319,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/department](act:enum/group_type/department) |
 | office |  Government office.  |
 | | [act:enum/group_type/office](act:enum/group_type/office) |
-| committee_extraparliamentary |  Commission normally appointed by the government to advise the administration on an ongoing basis or to decide in its stead. What sets it apart from a parliamentary committee is not its position in the hierarchy but its composition and legal basis: its members are external experts and interest-group representatives rather than members of the council, and it rests on the law governing the organisation of the government and the administration rather than on parliament law. The type exists at federal and at cantonal level alike (e.g., the federal Competition Commission; the commissions extraparlementaires in the canton of Vaud). A committee whose members are members of the council is not covered by this value even when it is attached to the executive; it is recorded as a committee or an ad hoc committee with the executive council as its parent group.  |
+| committee_extraparliamentary |  Commission normally appointed by the government to advise the administration in its field and to give its business a first reading; some also hold decision-making powers of their own. What sets it apart from a parliamentary committee are its composition and its legal basis: its members are external experts and interest-group representatives rather than members of the council, and it rests on the law governing the organisation of the government and the administration rather than on parliament law. The type exists at federal and at cantonal level alike (e.g., the federal Competition Commission; the commissions extraparlementaires in the canton of Vaud). A committee whose members are members of the council is not covered by this value even when it is attached to the executive; it is recorded as a committee or an ad hoc committee with the executive council as its parent group.  |
 | | [act:enum/group_type/committee_extraparliamentary](act:enum/group_type/committee_extraparliamentary) |
 | interest_group |  Interest group from civil society.  |
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |

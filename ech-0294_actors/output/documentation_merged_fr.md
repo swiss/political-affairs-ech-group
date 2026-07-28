@@ -1126,6 +1126,8 @@ global_uri: https://api.openparldata.ch/v1/groups/3
 label:
 - value: Geschäftsprüfungskommission
   language: de
+parent_groups:
+- https://www.ar.ch/kantonsrat/
 abbreviation:
 - value: GPK
   language: de
@@ -1263,7 +1265,19 @@ __
 
 
 
-_Types de groupes et d'organisations politiques._
+_Types de groupes et d'organisations politiques. Trois conventions régissent ce vocabulaire._
+
+__
+
+_Premièrement, la valeur désigne la fonction politique, tandis que la désignation employée localement est conservée dans le libellé du groupe. Le même organe s'appelle Büro dans un canton, Ratsleitung ou Geschäftsleitung dans un autre, Ufficio presidenziale au Tessin ; tous sont saisis comme council_bureau, afin qu'ils restent comparables par-delà les cantons et les niveaux, sans que la désignation locale se perde._
+
+__
+
+_Deuxièmement, les valeurs qui vont ensemble partagent un préfixe. La famille council_ regroupe les conseils et leurs organes et ne distingue délibérément pas selon le conseil : une chancellerie d'État sert l'exécutif, les services du parlement servent le législatif, mais les deux sont un council_secretariat. Le conseil auquel un organe se rattache ressort du groupe supérieur, non du type. La famille committee_ fonctionne de même, avec committee comme cas de base et committee_ad_hoc ainsi que committee_extraparliamentary comme variantes qualifiées._
+
+__
+
+_Troisièmement, ce vocabulaire ne consigne pas la forme juridique. Qu'une organisation soit une association, une fondation ou une société anonyme s'indique dans legal_form au moyen de la liste de codes du registre IDE fédéral ; group_type reste réservé à la fonction politique._
 
 __
 
@@ -1304,7 +1318,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/department](act:enum/group_type/department) |
 | office |  Office gouvernemental.  |
 | | [act:enum/group_type/office](act:enum/group_type/office) |
-| committee_extraparliamentary |  Commission généralement instituée par le gouvernement pour conseiller l'administration de manière permanente ou pour décider à sa place. Ce qui la distingue d'une commission parlementaire n'est pas sa position dans la hiérarchie, mais sa composition et sa base légale : ses membres sont des spécialistes externes et des représentantes et représentants d'intérêts plutôt que des membres du conseil, et elle se fonde sur le droit régissant l'organisation du gouvernement et de l'administration et non sur le droit parlementaire. Ce type existe tant au niveau fédéral qu'au niveau cantonal (p. ex. la Commission de la concurrence de la Confédération ; les commissions extraparlementaires du canton de Vaud). Une commission dont les membres sont des membres du conseil ne relève pas de cette valeur, même lorsqu'elle est rattachée à l'exécutif ; elle est saisie comme commission ou commission ad hoc avec le conseil exécutif comme groupe supérieur.  |
+| committee_extraparliamentary |  Commission généralement instituée par le gouvernement pour conseiller l'administration dans son domaine et pour examiner ses affaires au préalable ; certaines disposent en outre de compétences décisionnelles propres. Ce qui la distingue d'une commission parlementaire sont sa composition et sa base légale : ses membres sont des spécialistes externes et des représentantes et représentants d'intérêts plutôt que des membres du conseil, et elle se fonde sur le droit régissant l'organisation du gouvernement et de l'administration et non sur le droit parlementaire. Ce type existe tant au niveau fédéral qu'au niveau cantonal (p. ex. la Commission de la concurrence de la Confédération ; les commissions extraparlementaires du canton de Vaud). Une commission dont les membres sont des membres du conseil ne relève pas de cette valeur, même lorsqu'elle est rattachée à l'exécutif ; elle est saisie comme commission ou commission ad hoc avec le conseil exécutif comme groupe supérieur.  |
 | | [act:enum/group_type/committee_extraparliamentary](act:enum/group_type/committee_extraparliamentary) |
 | interest_group |  Groupe d'intérêts issu de la société civile.  |
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |

@@ -84,11 +84,11 @@ groups:
       label: Parlament (Legislativrat)
     spatial: https://ld.admin.ch/municipality/3203
 
-  # Ausserparlamentarische Kommission des Bundes. Sie zeigt, dass sich der Typ
-  # nicht über die Hierarchie bestimmt: Ihre Mitglieder sind externe Fachleute,
-  # nicht Ratsmitglieder, und sie stützt sich auf das Organisationsrecht von
-  # Regierung und Verwaltung. Als Behördenkommission entscheidet sie an Stelle
-  # der Verwaltung, statt sie bloss zu beraten.
+  # Ausserparlamentarische Kommission des Bundes: Ihre Mitglieder sind externe
+  # Fachleute, nicht Ratsmitglieder, und sie stützt sich auf das
+  # Organisationsrecht von Regierung und Verwaltung. Sie gehört zu den wenigen
+  # Kommissionen mit eigener Entscheidbefugnis; der Regelfall ist die blosse
+  # Beratung der Verwaltung.
   - global_uri: https://www.weko.admin.ch/
     label:
       - value: Wettbewerbskommission
@@ -173,12 +173,17 @@ groups:
       label: Fraktion
     spatial: https://ld.admin.ch/canton/12
 
-  # Ständige Kommission mit gebräuchlicher Abkürzung
+  # Ständige Kommission mit gebräuchlicher Abkürzung. Der Verweis auf den
+  # Kantonsrat zeigt, dass eine übergeordnete Gruppe über ihre URI benannt wird
+  # und nicht in derselben Lieferung enthalten sein muss — erst dieser Verweis
+  # macht sichtbar, welchem Rat die Kommission zugehört.
   - local_id: 3
     global_uri: https://api.openparldata.ch/v1/groups/3
     label:
       - value: Geschäftsprüfungskommission
         language: de
+    parent_groups:
+      - https://www.ar.ch/kantonsrat/
     abbreviation:
       - value: GPK
         language: de

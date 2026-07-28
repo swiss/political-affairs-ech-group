@@ -3,7 +3,19 @@
 
 
 
-_Typen politischer Gruppen und Organisationen._
+_Typen politischer Gruppen und Organisationen. Für dieses Vokabular gelten drei Konventionen._
+
+__
+
+_Erstens benennt der Wert die politische Funktion, während die örtlich verwendete Bezeichnung im Label der Gruppe erhalten bleibt. Dasselbe Organ heisst im einen Kanton Büro, im andern Ratsleitung oder Geschäftsleitung, im Tessin Ufficio presidenziale; alle werden als council_bureau erfasst, damit sie über Kantone und Ebenen hinweg vergleichbar bleiben, ohne dass die örtliche Benennung verloren geht._
+
+__
+
+_Zweitens tragen zusammengehörende Werte ein gemeinsames Präfix. Die Familie council_ umfasst die Räte und ihre Organe und unterscheidet bewusst nicht nach Rat: Eine Staatskanzlei bedient die Exekutive, die Parlamentsdienste bedienen die Legislative, beide sind aber ein council_secretariat. Welchem Rat ein Organ zugehört, ergibt sich aus der übergeordneten Gruppe, nicht aus dem Typ. Gleich verhält sich die Familie committee_, mit committee als Grundfall und committee_ad_hoc sowie committee_extraparliamentary als dessen Sonderformen._
+
+__
+
+_Drittens hält dieses Vokabular keine Rechtsform fest. Ob eine Organisation ein Verein, eine Stiftung oder eine Aktiengesellschaft ist, wird in legal_form über die Codeliste des eidgenössischen UID-Registers angegeben; group_type bleibt der politischen Funktion vorbehalten._
 
 __
 
@@ -44,7 +56,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/department](act:enum/group_type/department) |
 | office |  Amt.  |
 | | [act:enum/group_type/office](act:enum/group_type/office) |
-| committee_extraparliamentary |  Kommission, die in der Regel von der Regierung eingesetzt wird, um die Verwaltung dauernd zu beraten oder an ihrer Stelle zu entscheiden. Sie unterscheidet sich von einer parlamentarischen Kommission nicht durch ihre Stellung in der Hierarchie, sondern durch Zusammensetzung und Rechtsgrundlage: Ihre Mitglieder sind externe Fachleute und Interessenvertreterinnen und -vertreter statt Ratsmitglieder, und sie stützt sich auf das Organisationsrecht von Regierung und Verwaltung statt auf das Parlamentsrecht. Den Typ gibt es auf Bundes- wie auf Kantonsebene (z.B. die Wettbewerbskommission des Bundes; im Kanton Waadt die commissions extraparlementaires). Eine Kommission, deren Mitglieder Ratsmitglieder sind, fällt auch dann nicht unter diesen Wert, wenn sie bei der Exekutive angesiedelt ist; sie wird als Kommission oder Ad-hoc-Kommission mit dem Exekutivrat als übergeordneter Gruppe erfasst.  |
+| committee_extraparliamentary |  Kommission, die in der Regel von der Regierung eingesetzt wird, um die Verwaltung fachlich zu beraten und deren Geschäfte vorzuberaten; einzelne verfügen darüber hinaus über eigene Entscheidbefugnisse. Sie unterscheidet sich von einer parlamentarischen Kommission durch Zusammensetzung und Rechtsgrundlage: Ihre Mitglieder sind externe Fachleute und Interessenvertreterinnen und -vertreter statt Ratsmitglieder, und sie stützt sich auf das Organisationsrecht von Regierung und Verwaltung statt auf das Parlamentsrecht. Den Typ gibt es auf Bundes- wie auf Kantonsebene (z.B. die Wettbewerbskommission des Bundes; im Kanton Waadt die commissions extraparlementaires). Eine Kommission, deren Mitglieder Ratsmitglieder sind, fällt auch dann nicht unter diesen Wert, wenn sie bei der Exekutive angesiedelt ist; sie wird als Kommission oder Ad-hoc-Kommission mit dem Exekutivrat als übergeordneter Gruppe erfasst.  |
 | | [act:enum/group_type/committee_extraparliamentary](act:enum/group_type/committee_extraparliamentary) |
 | interest_group |  Interessengruppe aus der Zivilgesellschaft.  |
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |
