@@ -84,6 +84,10 @@ example_titles:
     de: Kantonsparlament als übergeordnete Gruppe
     fr: Parlement cantonal comme groupe supérieur
     en: Cantonal parliament as a superordinate group
+  "https://www.weko.admin.ch/":
+    de: Ausserparlamentarische Kommission mit Entscheidbefugnis
+    fr: Commission extraparlementaire dotée du pouvoir de décision
+    en: Extra-parliamentary commission with decision-making powers
   "1300":
     de: Exekutivrat eines Kantons
     fr: "Conseil exécutif d'un canton"
