@@ -3,19 +3,19 @@
 
 
 
-_Types de groupes et d'organisations politiques. Trois conventions régissent ce vocabulaire._
+_Types de groupes et d'organisations politiques. Trois conventions s'appliquent._
 
 __
 
-_Premièrement, la valeur désigne la fonction politique, tandis que la désignation employée localement est conservée dans le libellé du groupe. Le même organe s'appelle Büro dans un canton, Ratsleitung ou Geschäftsleitung dans un autre, Ufficio presidenziale au Tessin ; tous sont saisis comme council_bureau, afin qu'ils restent comparables par-delà les cantons et les niveaux, sans que la désignation locale se perde._
+_La valeur désigne la fonction politique, le libellé du groupe conserve la désignation locale. Büro, Ratsleitung et Ufficio presidenziale sont tous saisis comme council_bureau et restent ainsi comparables._
 
 __
 
-_Deuxièmement, les valeurs qui vont ensemble partagent un préfixe. La famille council_ regroupe les conseils et leurs organes et ne distingue délibérément pas selon le conseil : une chancellerie d'État sert l'exécutif, les services du parlement servent le législatif, mais les deux sont un council_secretariat. Le conseil auquel un organe se rattache ressort du groupe supérieur, non du type. La famille committee_ fonctionne de même, avec committee comme cas de base et committee_ad_hoc ainsi que committee_extraparliamentary comme variantes qualifiées._
+_Les valeurs qui vont ensemble partagent un préfixe. La famille council_ ne distingue pas selon le conseil : une chancellerie d'État et les services du parlement sont tous deux un council_secretariat ; le conseil auquel un organe se rattache est indiqué par le groupe supérieur. Il en va de même de la famille committee_, avec committee comme cas de base._
 
 __
 
-_Troisièmement, ce vocabulaire ne consigne pas la forme juridique. Qu'une organisation soit une association, une fondation ou une société anonyme s'indique dans legal_form au moyen de la liste de codes du registre IDE fédéral ; group_type reste réservé à la fonction politique._
+_La forme juridique ne relève pas d'ici, mais de legal_form._
 
 __
 

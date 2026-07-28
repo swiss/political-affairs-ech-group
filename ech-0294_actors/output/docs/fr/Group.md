@@ -148,6 +148,20 @@ group_type:
 spatial: https://ld.admin.ch/canton/12
 
 ```
+#### Exemple : groups  de
+
+```yaml
+local_id: 34
+global_uri: https://www.ar.ch/kantonsrat/
+label:
+- value: Kantonsrat Appenzell Ausserrhoden
+  language: de
+group_type:
+  group_type_enum: council_legislative
+  label: Parlament (Legislativrat)
+spatial: https://ld.admin.ch/canton/15
+
+```
 #### Exemple : State chancellery as the staff unit of the executive
 
 ```yaml
@@ -209,6 +223,24 @@ group_type:
 spatial: https://ld.admin.ch/country/CHE
 
 ```
+#### Exemple : Cantonal party referencing its national party
+
+```yaml
+global_uri: https://www.evp-bs.ch/
+label:
+- value: Evangelische Volkspartei Basel-Stadt
+  language: de
+abbreviation:
+- value: EVP BS
+  language: de
+parent_groups:
+- https://www.evppev.ch/
+group_type:
+  group_type_enum: party
+  label: Partei
+spatial: https://ld.admin.ch/canton/12
+
+```
 #### Exemple : Municipal parliament with spatial reference
 
 ```yaml
@@ -227,7 +259,7 @@ spatial: https://ld.admin.ch/municipality/3203
 
 ```yaml
 local_id: 3
-global_uri: https://api.openparldata.ch/v1/groups/3
+global_uri: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/
 label:
 - value: Geschäftsprüfungskommission
   language: de
@@ -235,9 +267,6 @@ parent_groups:
 - https://www.ar.ch/kantonsrat/
 abbreviation:
 - value: GPK
-  language: de
-landing_page:
-- value: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/
   language: de
 group_type:
   group_type_enum: committee

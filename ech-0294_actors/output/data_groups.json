@@ -195,6 +195,46 @@
       "local_id": "7172"
     },
     {
+      "global_uri": "https://bs.die-mitte.ch/",
+      "group_type": {
+        "group_type_enum": "party",
+        "label": "Partei"
+      },
+      "label": [
+        {
+          "value": "Die Mitte Basel-Stadt",
+          "language": "de"
+        }
+      ],
+      "parent_groups": [
+        "https://www.die-mitte.ch/"
+      ],
+      "spatial": "https://ld.admin.ch/canton/12"
+    },
+    {
+      "global_uri": "https://www.evp-bs.ch/",
+      "group_type": {
+        "group_type_enum": "party",
+        "label": "Partei"
+      },
+      "label": [
+        {
+          "value": "Evangelische Volkspartei Basel-Stadt",
+          "language": "de"
+        }
+      ],
+      "abbreviation": [
+        {
+          "value": "EVP BS",
+          "language": "de"
+        }
+      ],
+      "parent_groups": [
+        "https://www.evppev.ch/"
+      ],
+      "spatial": "https://ld.admin.ch/canton/12"
+    },
+    {
       "global_uri": "https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp",
       "group_type": {
         "group_type_enum": "parliamentary_group",
@@ -215,7 +255,22 @@
       "local_id": "1266"
     },
     {
-      "global_uri": "https://api.openparldata.ch/v1/groups/3",
+      "global_uri": "https://www.ar.ch/kantonsrat/",
+      "group_type": {
+        "group_type_enum": "council_legislative",
+        "label": "Parlament (Legislativrat)"
+      },
+      "label": [
+        {
+          "value": "Kantonsrat Appenzell Ausserrhoden",
+          "language": "de"
+        }
+      ],
+      "spatial": "https://ld.admin.ch/canton/15",
+      "local_id": "34"
+    },
+    {
+      "global_uri": "https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/",
       "group_type": {
         "group_type_enum": "committee",
         "label": "Kommission"
@@ -229,12 +284,6 @@
       "abbreviation": [
         {
           "value": "GPK",
-          "language": "de"
-        }
-      ],
-      "landing_page": [
-        {
-          "value": "https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/",
           "language": "de"
         }
       ],

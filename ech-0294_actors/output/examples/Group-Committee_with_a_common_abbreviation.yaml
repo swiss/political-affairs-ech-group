@@ -1,5 +1,5 @@
 local_id: 3
-global_uri: https://api.openparldata.ch/v1/groups/3
+global_uri: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/
 label:
 - value: Geschäftsprüfungskommission
   language: de
@@ -7,9 +7,6 @@ parent_groups:
 - https://www.ar.ch/kantonsrat/
 abbreviation:
 - value: GPK
-  language: de
-landing_page:
-- value: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/
   language: de
 group_type:
   group_type_enum: committee

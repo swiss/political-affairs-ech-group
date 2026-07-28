@@ -3,19 +3,19 @@
 
 
 
-_Typen politischer Gruppen und Organisationen. Für dieses Vokabular gelten drei Konventionen._
+_Typen politischer Gruppen und Organisationen. Es gelten drei Konventionen._
 
 __
 
-_Erstens benennt der Wert die politische Funktion, während die örtlich verwendete Bezeichnung im Label der Gruppe erhalten bleibt. Dasselbe Organ heisst im einen Kanton Büro, im andern Ratsleitung oder Geschäftsleitung, im Tessin Ufficio presidenziale; alle werden als council_bureau erfasst, damit sie über Kantone und Ebenen hinweg vergleichbar bleiben, ohne dass die örtliche Benennung verloren geht._
+_Der Wert benennt die politische Funktion, das Label der Gruppe bewahrt die örtliche Bezeichnung. Büro, Ratsleitung und Ufficio presidenziale werden alle als council_bureau erfasst und bleiben so vergleichbar._
 
 __
 
-_Zweitens tragen zusammengehörende Werte ein gemeinsames Präfix. Die Familie council_ umfasst die Räte und ihre Organe und unterscheidet bewusst nicht nach Rat: Eine Staatskanzlei bedient die Exekutive, die Parlamentsdienste bedienen die Legislative, beide sind aber ein council_secretariat. Welchem Rat ein Organ zugehört, ergibt sich aus der übergeordneten Gruppe, nicht aus dem Typ. Gleich verhält sich die Familie committee_, mit committee als Grundfall und committee_ad_hoc sowie committee_extraparliamentary als dessen Sonderformen._
+_Zusammengehörende Werte tragen ein Präfix. Die Familie council_ unterscheidet nicht nach Rat: Staatskanzlei und Parlamentsdienste sind beide ein council_secretariat; welchem Rat ein Organ zugehört, sagt die übergeordnete Gruppe. Ebenso die Familie committee_ mit committee als Grundfall._
 
 __
 
-_Drittens hält dieses Vokabular keine Rechtsform fest. Ob eine Organisation ein Verein, eine Stiftung oder eine Aktiengesellschaft ist, wird in legal_form über die Codeliste des eidgenössischen UID-Registers angegeben; group_type bleibt der politischen Funktion vorbehalten._
+_Die Rechtsform gehört nicht hierher, sondern in legal_form._
 
 __
 

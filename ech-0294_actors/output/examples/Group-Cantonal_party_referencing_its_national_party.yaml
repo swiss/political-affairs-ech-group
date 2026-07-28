@@ -1,0 +1,13 @@
+global_uri: https://www.evp-bs.ch/
+label:
+- value: Evangelische Volkspartei Basel-Stadt
+  language: de
+abbreviation:
+- value: EVP BS
+  language: de
+parent_groups:
+- https://www.evppev.ch/
+group_type:
+  group_type_enum: party
+  label: Partei
+spatial: https://ld.admin.ch/canton/12

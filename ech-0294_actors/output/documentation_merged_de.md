@@ -1044,6 +1044,20 @@ group_type:
 spatial: https://ld.admin.ch/canton/12
 
 ```
+#### Beispiel: groups  de
+
+```yaml
+local_id: 34
+global_uri: https://www.ar.ch/kantonsrat/
+label:
+- value: Kantonsrat Appenzell Ausserrhoden
+  language: de
+group_type:
+  group_type_enum: council_legislative
+  label: Parlament (Legislativrat)
+spatial: https://ld.admin.ch/canton/15
+
+```
 #### Beispiel: Staatskanzlei als Stabsstelle der Exekutive
 
 ```yaml
@@ -1105,6 +1119,24 @@ group_type:
 spatial: https://ld.admin.ch/country/CHE
 
 ```
+#### Beispiel: Kantonalpartei mit Verweis auf die Bundespartei
+
+```yaml
+global_uri: https://www.evp-bs.ch/
+label:
+- value: Evangelische Volkspartei Basel-Stadt
+  language: de
+abbreviation:
+- value: EVP BS
+  language: de
+parent_groups:
+- https://www.evppev.ch/
+group_type:
+  group_type_enum: party
+  label: Partei
+spatial: https://ld.admin.ch/canton/12
+
+```
 #### Beispiel: Gemeindeparlament mit räumlicher Referenz
 
 ```yaml
@@ -1123,7 +1155,7 @@ spatial: https://ld.admin.ch/municipality/3203
 
 ```yaml
 local_id: 3
-global_uri: https://api.openparldata.ch/v1/groups/3
+global_uri: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/
 label:
 - value: Geschäftsprüfungskommission
   language: de
@@ -1131,9 +1163,6 @@ parent_groups:
 - https://www.ar.ch/kantonsrat/
 abbreviation:
 - value: GPK
-  language: de
-landing_page:
-- value: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/
   language: de
 group_type:
   group_type_enum: committee
@@ -1266,19 +1295,19 @@ __
 
 
 
-_Typen politischer Gruppen und Organisationen. Für dieses Vokabular gelten drei Konventionen._
+_Typen politischer Gruppen und Organisationen. Es gelten drei Konventionen._
 
 __
 
-_Erstens benennt der Wert die politische Funktion, während die örtlich verwendete Bezeichnung im Label der Gruppe erhalten bleibt. Dasselbe Organ heisst im einen Kanton Büro, im andern Ratsleitung oder Geschäftsleitung, im Tessin Ufficio presidenziale; alle werden als council_bureau erfasst, damit sie über Kantone und Ebenen hinweg vergleichbar bleiben, ohne dass die örtliche Benennung verloren geht._
+_Der Wert benennt die politische Funktion, das Label der Gruppe bewahrt die örtliche Bezeichnung. Büro, Ratsleitung und Ufficio presidenziale werden alle als council_bureau erfasst und bleiben so vergleichbar._
 
 __
 
-_Zweitens tragen zusammengehörende Werte ein gemeinsames Präfix. Die Familie council_ umfasst die Räte und ihre Organe und unterscheidet bewusst nicht nach Rat: Eine Staatskanzlei bedient die Exekutive, die Parlamentsdienste bedienen die Legislative, beide sind aber ein council_secretariat. Welchem Rat ein Organ zugehört, ergibt sich aus der übergeordneten Gruppe, nicht aus dem Typ. Gleich verhält sich die Familie committee_, mit committee als Grundfall und committee_ad_hoc sowie committee_extraparliamentary als dessen Sonderformen._
+_Zusammengehörende Werte tragen ein Präfix. Die Familie council_ unterscheidet nicht nach Rat: Staatskanzlei und Parlamentsdienste sind beide ein council_secretariat; welchem Rat ein Organ zugehört, sagt die übergeordnete Gruppe. Ebenso die Familie committee_ mit committee als Grundfall._
 
 __
 
-_Drittens hält dieses Vokabular keine Rechtsform fest. Ob eine Organisation ein Verein, eine Stiftung oder eine Aktiengesellschaft ist, wird in legal_form über die Codeliste des eidgenössischen UID-Registers angegeben; group_type bleibt der politischen Funktion vorbehalten._
+_Die Rechtsform gehört nicht hierher, sondern in legal_form._
 
 __
 

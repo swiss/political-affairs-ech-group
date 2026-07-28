@@ -1043,6 +1043,20 @@ group_type:
 spatial: https://ld.admin.ch/canton/12
 
 ```
+#### Exemple : groups  de
+
+```yaml
+local_id: 34
+global_uri: https://www.ar.ch/kantonsrat/
+label:
+- value: Kantonsrat Appenzell Ausserrhoden
+  language: de
+group_type:
+  group_type_enum: council_legislative
+  label: Parlament (Legislativrat)
+spatial: https://ld.admin.ch/canton/15
+
+```
 #### Exemple : Chancellerie d'État comme état-major de l'exécutif
 
 ```yaml
@@ -1104,6 +1118,24 @@ group_type:
 spatial: https://ld.admin.ch/country/CHE
 
 ```
+#### Exemple : Parti cantonal renvoyant au parti national
+
+```yaml
+global_uri: https://www.evp-bs.ch/
+label:
+- value: Evangelische Volkspartei Basel-Stadt
+  language: de
+abbreviation:
+- value: EVP BS
+  language: de
+parent_groups:
+- https://www.evppev.ch/
+group_type:
+  group_type_enum: party
+  label: Partei
+spatial: https://ld.admin.ch/canton/12
+
+```
 #### Exemple : Parlement communal avec référence spatiale
 
 ```yaml
@@ -1122,7 +1154,7 @@ spatial: https://ld.admin.ch/municipality/3203
 
 ```yaml
 local_id: 3
-global_uri: https://api.openparldata.ch/v1/groups/3
+global_uri: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/
 label:
 - value: Geschäftsprüfungskommission
   language: de
@@ -1130,9 +1162,6 @@ parent_groups:
 - https://www.ar.ch/kantonsrat/
 abbreviation:
 - value: GPK
-  language: de
-landing_page:
-- value: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/
   language: de
 group_type:
   group_type_enum: committee
@@ -1265,19 +1294,19 @@ __
 
 
 
-_Types de groupes et d'organisations politiques. Trois conventions régissent ce vocabulaire._
+_Types de groupes et d'organisations politiques. Trois conventions s'appliquent._
 
 __
 
-_Premièrement, la valeur désigne la fonction politique, tandis que la désignation employée localement est conservée dans le libellé du groupe. Le même organe s'appelle Büro dans un canton, Ratsleitung ou Geschäftsleitung dans un autre, Ufficio presidenziale au Tessin ; tous sont saisis comme council_bureau, afin qu'ils restent comparables par-delà les cantons et les niveaux, sans que la désignation locale se perde._
+_La valeur désigne la fonction politique, le libellé du groupe conserve la désignation locale. Büro, Ratsleitung et Ufficio presidenziale sont tous saisis comme council_bureau et restent ainsi comparables._
 
 __
 
-_Deuxièmement, les valeurs qui vont ensemble partagent un préfixe. La famille council_ regroupe les conseils et leurs organes et ne distingue délibérément pas selon le conseil : une chancellerie d'État sert l'exécutif, les services du parlement servent le législatif, mais les deux sont un council_secretariat. Le conseil auquel un organe se rattache ressort du groupe supérieur, non du type. La famille committee_ fonctionne de même, avec committee comme cas de base et committee_ad_hoc ainsi que committee_extraparliamentary comme variantes qualifiées._
+_Les valeurs qui vont ensemble partagent un préfixe. La famille council_ ne distingue pas selon le conseil : une chancellerie d'État et les services du parlement sont tous deux un council_secretariat ; le conseil auquel un organe se rattache est indiqué par le groupe supérieur. Il en va de même de la famille committee_, avec committee comme cas de base._
 
 __
 
-_Troisièmement, ce vocabulaire ne consigne pas la forme juridique. Qu'une organisation soit une association, une fondation ou une société anonyme s'indique dans legal_form au moyen de la liste de codes du registre IDE fédéral ; group_type reste réservé à la fonction politique._
+_La forme juridique ne relève pas d'ici, mais de legal_form._
 
 __
 

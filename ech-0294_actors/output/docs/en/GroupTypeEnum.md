@@ -3,19 +3,19 @@
 
 
 
-_Types of political groups and organizations. Three conventions govern this vocabulary._
+_Types of political groups and organizations. Three conventions apply._
 
 __
 
-_First, the value states the political function, while the designation used locally is preserved in the group's label. The same body is called Büro in one canton, Ratsleitung or Geschäftsleitung in another, Ufficio presidenziale in Ticino; all of these are recorded as council_bureau so that they remain comparable across cantons and levels, without the local name being lost._
+_The value states the political function; the group's label keeps the designation used locally. Büro, Ratsleitung and Ufficio presidenziale are all recorded as council_bureau and thus stay comparable._
 
 __
 
-_Second, values that belong together share a prefix. The council_ family covers the councils and their bodies, and it deliberately does not distinguish by council: a state chancellery serves the executive, parliamentary services serve the legislature, yet both are a council_secretariat. Which council a body belongs to follows from its parent group, not from its type. The committee_ family works the same way, with committee as the base case and committee_ad_hoc and committee_extraparliamentary as its qualified variants._
+_Values that belong together share a prefix. The council_ family does not distinguish by council: a state chancellery and parliamentary services are both a council_secretariat, and which council a body belongs to is stated by its parent group. The same applies to the committee_ family, with committee as the base case._
 
 __
 
-_Third, this vocabulary does not record legal form. Whether an organization is an association, a foundation or a public limited company is stated in legal_form using the code list of the federal UID register; group_type remains reserved for the political function._
+_Legal form does not belong here but in legal_form._
 
 __
 
