@@ -8,7 +8,6 @@ search:
 
 _Site web fournissant de plus amples informations. Lorsque le site est publié à une adresse propre par langue, une entrée est saisie par langue._
 
-__
 
 
 

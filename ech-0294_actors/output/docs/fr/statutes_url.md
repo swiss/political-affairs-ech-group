@@ -8,7 +8,6 @@ search:
 
 _URL vers les statuts du parti (PDF ou page web ; facultatif pour les partis)._
 
-__
 
 
 

@@ -13,7 +13,6 @@ _Zeitdauer-Slots und ergänzt einen freien Bemerkungs-Slot. Konkrete_
 
 _Step-Klassen ergänzen ihre eigenen typ-spezifischen Slots._
 
-__
 
 
 

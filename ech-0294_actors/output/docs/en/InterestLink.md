@@ -5,7 +5,6 @@
 
 _An interest link (conflict of interest, political financing) of a person to an organization outside the actor schema._
 
-__
 
 
 

@@ -3,25 +3,17 @@
 
 
 
-_Types of political groups and organizations. Three conventions apply._
+_Three rules govern the types of political groups and organizations._
 
-__
 
-_The value states the political function; the group's label keeps the designation used locally. Büro, Ratsleitung and Ufficio presidenziale are all recorded as council_bureau and thus stay comparable._
+_The value states the political function; the designation used locally belongs in the group's label. Büro, Ratsleitung and Ufficio presidenziale therefore all take the value `council_bureau`._
 
-__
 
-_Values that belong together share a prefix. The council_ family does not distinguish by council: a state chancellery and parliamentary services are both a council_secretariat, and which council a body belongs to is stated by its parent group. The same applies to the committee_ family, with committee as the base case._
+_Related values share a prefix. The `council_` family does not distinguish by council: a state chancellery and parliamentary services are both `council_secretariat`, and the affiliation follows from `parent_groups`. It divides into `council_presidency` for the presidency, `council_bureau` for the managing body extended by the parliamentary group representation, and `council_secretariat` for the administrative unit staffed by employees. The `committee_` family follows the same pattern, with `committee` as the base case._
 
-__
 
-_The three council bodies differ as follows: council_presidency chairs the sittings and represents the council; council_bureau manages its business and additionally includes the parliamentary group representation; council_secretariat is the administrative unit, staffed by employees rather than by elected members._
+_Legal form does not belong in this vocabulary but in `legal_form`._
 
-__
-
-_Legal form does not belong here but in legal_form._
-
-__
 
 
 

@@ -5,7 +5,6 @@
 
 _Un groupe, une organisation ou une collectivité politique (p. ex. parti, commission, parlement, département)._
 
-__
 
 
 

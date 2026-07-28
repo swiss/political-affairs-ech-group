@@ -3,25 +3,17 @@
 
 
 
-_Types de groupes et d'organisations politiques. Trois conventions s'appliquent._
+_Trois règles s'appliquent aux types de groupes et d'organisations politiques._
 
-__
 
-_La valeur désigne la fonction politique, le libellé du groupe conserve la désignation locale. Büro, Ratsleitung et Ufficio presidenziale sont tous saisis comme council_bureau et restent ainsi comparables._
+_La valeur désigne la fonction politique ; la désignation locale relève du libellé du groupe. Büro, Ratsleitung et Ufficio presidenziale reçoivent donc tous la valeur `council_bureau`._
 
-__
 
-_Les valeurs qui vont ensemble partagent un préfixe. La famille council_ ne distingue pas selon le conseil : une chancellerie d'État et les services du parlement sont tous deux un council_secretariat ; le conseil auquel un organe se rattache est indiqué par le groupe supérieur. Il en va de même de la famille committee_, avec committee comme cas de base._
+_Les valeurs apparentées partagent un préfixe. La famille `council_` ne distingue pas selon le conseil : une chancellerie d'État et les services du parlement sont tous deux `council_secretariat`, le rattachement ressortant de `parent_groups`. Elle se subdivise en `council_presidency` pour la présidence, `council_bureau` pour l'organe de direction élargi à la représentation des groupes et `council_secretariat` pour l'unité administrative composée d'employés. La famille `committee_` suit le même modèle, avec `committee` comme cas de base._
 
-__
 
-_Les trois organes du conseil se distinguent ainsi : council_presidency préside les séances et représente le conseil ; council_bureau dirige la marche des affaires et comprend en outre la représentation des groupes ; council_secretariat est l'unité administrative, composée d'employés et non de membres élus._
+_La forme juridique ne relève pas de ce vocabulaire, mais de `legal_form`._
 
-__
-
-_La forme juridique ne relève pas d'ici, mais de legal_form._
-
-__
 
 
 

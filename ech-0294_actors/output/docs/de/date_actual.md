@@ -8,7 +8,6 @@ search:
 
 _Das tatsächliche Datum eines instantanen Ereignisses oder Vorkommnissen (ohne Zeitdauer)._
 
-__
 
 
 

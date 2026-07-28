@@ -5,7 +5,6 @@
 
 _Occupation or profession of a person indicating a label, an ISCO-19 code, whether the activity is paid, and temporal validity._
 
-__
 
 
 

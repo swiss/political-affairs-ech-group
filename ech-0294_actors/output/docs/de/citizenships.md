@@ -8,7 +8,6 @@ search:
 
 _Staatsbürgerschaften der Person._
 
-__
 
 
 

@@ -8,7 +8,6 @@ search:
 
 _Gibt an, ob die Tätigkeit bezahlt ist._
 
-__
 
 
 

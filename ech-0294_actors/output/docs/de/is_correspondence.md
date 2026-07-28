@@ -8,7 +8,6 @@ search:
 
 _Gibt an, ob es sich um die bevorzugte Sprache handelt._
 
-__
 
 
 

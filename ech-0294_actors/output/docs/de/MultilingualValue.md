@@ -5,7 +5,6 @@
 
 _Ein mehrsprachiger String mit Angabe der Sprache._
 
-__
 
 
 

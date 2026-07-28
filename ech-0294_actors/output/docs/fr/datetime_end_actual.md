@@ -8,7 +8,6 @@ search:
 
 _La date et l'heure de fin effectives d'un événement ou d'une occurrence avec durée._
 
-__
 
 
 

@@ -8,7 +8,6 @@ search:
 
 _UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch)._
 
-__
 
 
 

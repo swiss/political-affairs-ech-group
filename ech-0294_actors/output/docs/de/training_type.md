@@ -8,7 +8,6 @@ search:
 
 _Typ der Ausbildung oder Bildung._
 
-__
 
 
 

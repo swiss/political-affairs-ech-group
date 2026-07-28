@@ -8,7 +8,6 @@ search:
 
 _Year of birth. Only to be used, if there is no full `birthDate` available._
 
-__
 
 
 

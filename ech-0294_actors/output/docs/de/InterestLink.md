@@ -5,7 +5,6 @@
 
 _Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation ausserhalb des Akteur-Schemas._
 
-__
 
 
 

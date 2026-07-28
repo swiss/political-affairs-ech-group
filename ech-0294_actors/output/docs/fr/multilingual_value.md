@@ -8,7 +8,6 @@ search:
 
 _Une valeur multilingue avec indication de la langue._
 
-__
 
 
 

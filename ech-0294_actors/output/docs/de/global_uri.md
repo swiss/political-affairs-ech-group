@@ -8,7 +8,6 @@ search:
 
 _Eine eindeutige, global gültige URI für die Entität._
 
-__
 
 
 

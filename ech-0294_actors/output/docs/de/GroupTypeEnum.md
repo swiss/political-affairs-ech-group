@@ -3,25 +3,17 @@
 
 
 
-_Typen politischer Gruppen und Organisationen. Es gelten drei Konventionen._
+_Für Typen politischer Gruppen und Organisationen gelten drei Regeln._
 
-__
 
-_Der Wert benennt die politische Funktion, das Label der Gruppe bewahrt die örtliche Bezeichnung. Büro, Ratsleitung und Ufficio presidenziale werden alle als council_bureau erfasst und bleiben so vergleichbar._
+_Der Wert benennt die politische Funktion; die örtliche Bezeichnung gehört ins Label der Gruppe. Büro, Ratsleitung und Ufficio presidenziale erhalten deshalb alle den Wert `council_bureau`._
 
-__
 
-_Zusammengehörende Werte tragen ein Präfix. Die Familie council_ unterscheidet nicht nach Rat: Staatskanzlei und Parlamentsdienste sind beide ein council_secretariat; welchem Rat ein Organ zugehört, sagt die übergeordnete Gruppe. Ebenso die Familie committee_ mit committee als Grundfall._
+_Verwandte Werte teilen ein Präfix. Die Familie `council_` unterscheidet nicht nach Rat: Staatskanzlei und Parlamentsdienste sind beide `council_secretariat`, die Zugehörigkeit ergibt sich aus `parent_groups`. Sie gliedert sich in `council_presidency` für das Präsidium, `council_bureau` für das um die Fraktionsvertretung erweiterte Leitungsorgan und `council_secretariat` für die Verwaltungseinheit mit Angestellten. Die Familie `committee_` folgt demselben Muster, mit `committee` als Grundfall._
 
-__
 
-_Die drei Ratsorgane grenzen sich so ab: council_presidency führt die Sitzungen und vertritt den Rat; council_bureau leitet den Geschäftsgang und ist um die Fraktionsvertretung erweitert; council_secretariat ist die Verwaltungseinheit, besetzt mit Angestellten statt mit gewählten Mitgliedern._
+_Die Rechtsform gehört nicht in dieses Vokabular, sondern in `legal_form`._
 
-__
-
-_Die Rechtsform gehört nicht hierher, sondern in legal_form._
-
-__
 
 
 

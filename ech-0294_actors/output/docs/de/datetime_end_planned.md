@@ -8,7 +8,6 @@ search:
 
 _Das geplante Enddatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer._
 
-__
 
 
 

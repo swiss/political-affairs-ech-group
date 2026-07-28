@@ -8,7 +8,6 @@ search:
 
 _Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.)._
 
-__
 
 
 

@@ -8,7 +8,6 @@ search:
 
 _Type de nom selon eCH-0011 (personNameData)._
 
-__
 
 
 

@@ -8,7 +8,6 @@ search:
 
 _Reference to a group with snapshot data at time of linking._
 
-__
 
 
 

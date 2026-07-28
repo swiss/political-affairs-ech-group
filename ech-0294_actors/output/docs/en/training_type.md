@@ -8,7 +8,6 @@ search:
 
 _Type of training or education._
 
-__
 
 
 

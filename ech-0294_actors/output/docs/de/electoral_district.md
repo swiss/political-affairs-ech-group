@@ -8,7 +8,6 @@ search:
 
 _Link zum Wahlbezirk._
 
-__
 
 
 

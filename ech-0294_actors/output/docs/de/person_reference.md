@@ -8,7 +8,6 @@ search:
 
 _Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung._
 
-__
 
 
 

@@ -8,7 +8,6 @@ search:
 
 _ISCO-19 code of the occupation._
 
-__
 
 
 

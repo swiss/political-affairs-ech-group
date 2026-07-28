@@ -8,7 +8,6 @@ search:
 
 _Das Datum und die Uhrzeit, an dem eine Entität zuletzt geändert wurde._
 
-__
 
 
 

@@ -8,7 +8,6 @@ search:
 
 _The planned end date of an event or occurrence with time duration._
 
-__
 
 
 

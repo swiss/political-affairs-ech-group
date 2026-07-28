@@ -8,7 +8,6 @@ search:
 
 _Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem._
 
-__
 
 
 

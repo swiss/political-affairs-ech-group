@@ -8,7 +8,6 @@ search:
 
 _Collection of groups._
 
-__
 
 
 

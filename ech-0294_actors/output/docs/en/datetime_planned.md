@@ -8,7 +8,6 @@ search:
 
 _The planned date and time of an instantaneous event or occurrence (without time duration)._
 
-__
 
 
 

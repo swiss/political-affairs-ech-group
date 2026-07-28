@@ -5,7 +5,6 @@
 
 _Rôles qu'une personne peut occuper dans le cadre d'une affiliation._
 
-__
 
 
 

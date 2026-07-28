@@ -8,7 +8,6 @@ search:
 
 _URL zu Parteistatuten (PDF oder Webseite; optional für Parteien)._
 
-__
 
 
 

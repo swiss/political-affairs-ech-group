@@ -8,7 +8,6 @@ search:
 
 _Genaues Geburtsdatum, sofern verfügbar und öffentlich. Dieses Feld hat Vorrang vor dem Feld `birthYear`._
 
-__
 
 
 

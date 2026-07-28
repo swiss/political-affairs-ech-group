@@ -139,7 +139,7 @@ Name: actors-schema
 | [AddressTypeEnum](AddressTypeEnum.md) | Adresstypen |
 | [ContactTypeEnum](ContactTypeEnum.md) | Kontaktinformationstypen |
 | [GenderCodeEnum](GenderCodeEnum.md) | Geschlechtscodes für Personen |
-| [GroupTypeEnum](GroupTypeEnum.md) | Typen politischer Gruppen und Organisationen |
+| [GroupTypeEnum](GroupTypeEnum.md) | Für Typen politischer Gruppen und Organisationen gelten drei Regeln |
 | [InterestTypeEnum](InterestTypeEnum.md) | Typen von Interessenbindungen (Interessenkonflikte, Politikfinanzierung) |
 | [LegalFormEnum](LegalFormEnum.md) | Rechtsformen basierend auf der Codeliste des eidgenössischen UID-Registers (e... |
 | [NameTypeEnum](NameTypeEnum.md) | Kategorien von Namenstypen gemäss eCH-0011 (personNameData) und dem Amtlichen... |

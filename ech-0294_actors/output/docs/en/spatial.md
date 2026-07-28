@@ -8,7 +8,6 @@ search:
 
 _Spatial reference (fos-municipality number, fos-canton number, or country). Formats: municipality: ld.admin.ch/municipality/1234, canton: ld.admin.ch/canton/23, country: ld.admin.ch/country/CHE._
 
-__
 
 
 

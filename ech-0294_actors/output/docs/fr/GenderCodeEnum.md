@@ -5,7 +5,6 @@
 
 _Codes de sexe pour les personnes. Si le sexe n'est pas connu, aucune entrée de sexe ne doit être ajoutée. Le code `non_binary` doit être utilisé avec un libellé afin de fournir de plus amples détails sur le sexe auto-déclaré._
 
-__
 
 
 

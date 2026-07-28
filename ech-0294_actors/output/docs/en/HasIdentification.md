@@ -5,7 +5,6 @@
 
 _A mixin class that provides slots for the identification of an entity._
 
-__
 
 
 

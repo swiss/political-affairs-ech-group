@@ -8,7 +8,6 @@ search:
 
 _The value of an information besides other attributes such as type, language, etc._
 
-__
 
 
 

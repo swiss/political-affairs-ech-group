@@ -5,7 +5,6 @@
 
 _Art der Gruppe (z.B. Partei, Kommission, Parlament, Departement)._
 
-__
 
 
 

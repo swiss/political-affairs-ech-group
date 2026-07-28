@@ -8,7 +8,6 @@ search:
 
 _Gremium innerhalb der Organisation (z.B. Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung)._
 
-__
 
 
 

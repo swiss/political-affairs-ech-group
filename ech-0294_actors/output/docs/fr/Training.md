@@ -5,7 +5,6 @@
 
 _Formation ou éducation d'une personne indiquant un type (p. ex. diplôme scolaire, diplôme universitaire, service militaire), un libellé, un code ISCO-19 et la validité temporelle._
 
-__
 
 
 

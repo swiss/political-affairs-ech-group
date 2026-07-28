@@ -8,7 +8,6 @@ search:
 
 _UID der Organisation (Format eCH-0097: CHE-XXX.XXX.XXX) aus dem eidgenössischen UID-Register (uid.admin.ch)._
 
-__
 
 
 

@@ -5,7 +5,6 @@
 
 _Une classe mixin qui fournit des slots pour modéliser la validité temporelle d'une information (et non d'un événement)._
 
-__
 
 
 

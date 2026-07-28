@@ -5,7 +5,6 @@
 
 _Référence légère à un groupe avec les principales données d'identification au moment de la liaison._
 
-__
 
 
 

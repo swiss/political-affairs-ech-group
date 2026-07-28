@@ -5,7 +5,6 @@
 
 _Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Änderungsdaten einer Entität zur Verfügung stellt._
 
-__
 
 
 

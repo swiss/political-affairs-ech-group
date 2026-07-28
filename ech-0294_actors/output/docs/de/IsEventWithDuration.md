@@ -5,7 +5,6 @@
 
 _Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder Vorkommnissen mit Zeitdauer zur Verfügung stellt._
 
-__
 
 
 

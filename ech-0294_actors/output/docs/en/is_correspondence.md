@@ -8,7 +8,6 @@ search:
 
 _Indicates if this is the preferred language._
 
-__
 
 
 

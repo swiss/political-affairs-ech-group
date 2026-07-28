@@ -5,7 +5,6 @@
 
 _Ausbildungs- oder Bildungstypen basierend auf der BFS LEVEL_EDUC Codeliste._
 
-__
 
 
 

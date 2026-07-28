@@ -5,7 +5,6 @@
 
 _Un nom avec un type (p. ex. nom d'usage, nom officiel), une valeur et une validité temporelle._
 
-__
 
 
 

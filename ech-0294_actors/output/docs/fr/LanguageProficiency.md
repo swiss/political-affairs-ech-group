@@ -5,7 +5,6 @@
 
 _Compétences linguistiques d'une personne indiquant la langue et le fait qu'il s'agisse ou non de la langue préférée ou de la langue maternelle._
 
-__
 
 
 

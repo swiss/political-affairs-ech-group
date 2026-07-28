@@ -5,7 +5,6 @@
 
 _Une classe mixin qui fournit des slots pour modéliser des événements ou occurrences instantanés (sans durée)._
 
-__
 
 
 

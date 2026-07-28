@@ -8,7 +8,6 @@ search:
 
 _Indicates if the person is authorized to vote in the group. Typically false for substitute members (when not deputizing), observers, secretaries, and guests._
 
-__
 
 
 

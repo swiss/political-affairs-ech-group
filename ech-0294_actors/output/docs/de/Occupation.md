@@ -5,7 +5,6 @@
 
 _Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Codes, ob die Tätigkeit bezahlt ist, und der zeitlichen Gültigkeit._
 
-__
 
 
 

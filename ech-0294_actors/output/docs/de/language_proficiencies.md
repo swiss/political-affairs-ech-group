@@ -8,7 +8,6 @@ search:
 
 _Sprachkompetenzen der Person._
 
-__
 
 
 

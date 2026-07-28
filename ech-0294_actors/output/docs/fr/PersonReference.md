@@ -5,7 +5,6 @@
 
 _Référence légère à une personne avec les principales données d'identification au moment de la liaison. Préserve l'exactitude historique même si la personne change ultérieurement._
 
-__
 
 
 

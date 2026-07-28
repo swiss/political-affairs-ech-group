@@ -8,7 +8,6 @@ search:
 
 _Committee or board within the organization (e.g., Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung)._
 
-__
 
 
 

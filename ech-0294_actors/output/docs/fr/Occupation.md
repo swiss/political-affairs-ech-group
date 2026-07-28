@@ -5,7 +5,6 @@
 
 _Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si l'activité est rémunérée, ainsi que la validité temporelle._
 
-__
 
 
 

@@ -5,7 +5,6 @@
 
 _Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne avec une organisation située en dehors du schéma des acteurs._
 
-__
 
 
 

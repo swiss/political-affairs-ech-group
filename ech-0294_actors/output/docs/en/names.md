@@ -8,7 +8,6 @@ search:
 
 _Names of the person with type and value._
 
-__
 
 
 

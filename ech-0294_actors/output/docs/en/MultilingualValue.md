@@ -5,7 +5,6 @@
 
 _A multilingual string with language specification._
 
-__
 
 
 

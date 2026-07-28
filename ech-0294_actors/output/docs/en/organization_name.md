@@ -8,7 +8,6 @@ search:
 
 _Name of the organization or enterprise._
 
-__
 
 
 

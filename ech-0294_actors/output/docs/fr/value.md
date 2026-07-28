@@ -8,7 +8,6 @@ search:
 
 _La valeur proprement dite d'une information, en plus d'autres attributs tels que le type, la langue, etc._
 
-__
 
 
 

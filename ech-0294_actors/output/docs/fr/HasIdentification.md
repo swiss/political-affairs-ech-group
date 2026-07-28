@@ -5,7 +5,6 @@
 
 _Une classe mixin qui fournit des slots pour l'identification d'une entité._
 
-__
 
 
 

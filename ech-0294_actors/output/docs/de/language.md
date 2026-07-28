@@ -8,7 +8,6 @@ search:
 
 _Sprachcode im ISO 639-1 Format (zwei Kleinbuchstaben, z.B. "de", "fr", "it", "en")._
 
-__
 
 
 

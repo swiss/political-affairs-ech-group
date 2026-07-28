@@ -5,7 +5,6 @@
 
 _Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereignissen oder Vorkommnissen (ohne Zeitdauer) zur Verfügung stellt._
 
-__
 
 
 

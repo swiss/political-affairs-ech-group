@@ -8,7 +8,6 @@ search:
 
 _Contact information (email, website, social media). Guideline: email is quasi-mandatory and should always be provided where available._
 
-__
 
 
 

@@ -8,7 +8,6 @@ search:
 
 _Remarque ou note en texte libre pour les cas particuliers ou pour un contexte supplémentaire relatif à une étape de processus ou à une entité._
 
-__
 
 
 

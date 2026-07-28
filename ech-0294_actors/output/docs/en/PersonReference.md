@@ -5,7 +5,6 @@
 
 _Lightweight reference to a person with key identification data at time of linking. Preserves historical accuracy even if the person changes later._
 
-__
 
 
 

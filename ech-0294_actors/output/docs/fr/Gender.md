@@ -5,7 +5,6 @@
 
 _Sexe d'une personne indiquant un code de sexe et la validité temporelle._
 
-__
 
 
 

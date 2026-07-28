@@ -8,7 +8,6 @@ search:
 
 _La date à partir de laquelle l'information est valable._
 
-__
 
 
 

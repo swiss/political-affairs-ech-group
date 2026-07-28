@@ -8,7 +8,6 @@ search:
 
 _Indique si la personne dispose du droit de vote au sein du groupe. Généralement false pour les membres suppléants (lorsqu'ils ne remplacent personne), les observateurs, les secrétaires et les invités._
 
-__
 
 
 

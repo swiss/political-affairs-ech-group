@@ -5,7 +5,6 @@
 
 _Circonscription ou région électorale associée à une affiliation. La validité temporelle est héritée de l'affiliation englobante._
 
-__
 
 
 

@@ -5,7 +5,6 @@
 
 _Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung._
 
-__
 
 
 

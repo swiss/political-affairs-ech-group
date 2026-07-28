@@ -8,7 +8,6 @@ search:
 
 _Fonction ou rôle dans l'organisation (p. ex. président/e, vice-président/e, membre, délégué, directeur/directrice, conseiller/ère)._
 
-__
 
 
 

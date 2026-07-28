@@ -8,7 +8,6 @@ search:
 
 _The date until which the information is valid, inclusive._
 
-__
 
 
 

@@ -8,7 +8,6 @@ search:
 
 _Ausbildungen oder Bildungen der Person. Richtlinie: Im Grundsatz nur die höchste Ausbildung angeben._
 
-__
 
 
 

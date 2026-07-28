@@ -8,7 +8,6 @@ search:
 
 _Compétences linguistiques de la personne._
 
-__
 
 
 

@@ -8,7 +8,6 @@ search:
 
 _Forme juridique de l'organisation. Voir le vocabulaire contrôlé : https://register.ld.admin.ch/i14y/concept/legalForm_
 
-__
 
 
 

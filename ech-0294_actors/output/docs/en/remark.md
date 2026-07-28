@@ -8,7 +8,6 @@ search:
 
 _Free-text remark or note for edge cases or additional context on a process step or an entity._
 
-__
 
 
 

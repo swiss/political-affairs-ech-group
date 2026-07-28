@@ -8,7 +8,6 @@ search:
 
 _Rôle de la personne dans l'affiliation ou la fonction._
 
-__
 
 
 

@@ -139,7 +139,7 @@ Name: actors-schema
 | [AddressTypeEnum](AddressTypeEnum.md) | Types of addresses |
 | [ContactTypeEnum](ContactTypeEnum.md) | Types of contact information |
 | [GenderCodeEnum](GenderCodeEnum.md) | Gender codes for persons |
-| [GroupTypeEnum](GroupTypeEnum.md) | Types of political groups and organizations |
+| [GroupTypeEnum](GroupTypeEnum.md) | Three rules govern the types of political groups and organizations |
 | [InterestTypeEnum](InterestTypeEnum.md) | Types of interest links (conflicts of interest, political financing) |
 | [LegalFormEnum](LegalFormEnum.md) | Legal forms based on the Swiss UID register codelist (eCH-0108) |
 | [NameTypeEnum](NameTypeEnum.md) | Categories of name types according to eCH-0011 (personNameData) and the offic... |

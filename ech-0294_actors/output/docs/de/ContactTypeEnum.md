@@ -5,7 +5,6 @@
 
 _Kontaktinformationstypen._
 
-__
 
 
 

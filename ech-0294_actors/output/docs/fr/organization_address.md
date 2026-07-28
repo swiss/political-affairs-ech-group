@@ -8,7 +8,6 @@ search:
 
 _Adresse de l'organisation._
 
-__
 
 
 

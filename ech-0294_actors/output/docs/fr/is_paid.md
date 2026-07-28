@@ -8,7 +8,6 @@ search:
 
 _Indique si l'activité est rémunérée._
 
-__
 
 
 

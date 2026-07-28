@@ -5,7 +5,6 @@
 
 _Electoral district or region associated with a membership. The temporal validity is inherited from the enclosing membership._
 
-__
 
 
 

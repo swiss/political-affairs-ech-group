@@ -8,7 +8,6 @@ search:
 
 _Function or role in the organization (e.g., Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in)._
 
-__
 
 
 

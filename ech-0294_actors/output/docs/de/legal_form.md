@@ -8,7 +8,6 @@ search:
 
 _Rechtsform der Organisation. Siehe kontrolliertes Vokabular: https://register.ld.admin.ch/i14y/concept/legalForm_
 
-__
 
 
 

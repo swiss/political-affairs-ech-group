@@ -8,7 +8,6 @@ search:
 
 _Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer._
 
-__
 
 
 

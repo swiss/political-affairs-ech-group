@@ -8,7 +8,6 @@ search:
 
 _Addresses with type (private, business, local)._
 
-__
 
 
 

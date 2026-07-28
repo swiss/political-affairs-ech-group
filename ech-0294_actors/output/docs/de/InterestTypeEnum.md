@@ -5,7 +5,6 @@
 
 _Typen von Interessenbindungen (Interessenkonflikte, Politikfinanzierung)._
 
-__
 
 
 

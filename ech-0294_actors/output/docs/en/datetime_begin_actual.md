@@ -8,7 +8,6 @@ search:
 
 _The actual start date and time of an event or occurrence with time duration._
 
-__
 
 
 

@@ -5,7 +5,6 @@
 
 _Wahlkreis oder Wahlregion, die einer Mitgliedschaft zugeordnet ist. Die zeitliche Gültigkeit wird von der umschliessenden Mitgliedschaft übernommen._
 
-__
 
 
 

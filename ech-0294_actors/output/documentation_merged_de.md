@@ -116,7 +116,6 @@ Das Personenschema beschreibt natürliche Personen im politischen Kontext.
 
 _Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Berufen._
 
-__
 
 
 
@@ -318,7 +317,6 @@ names:
 
 _Ein Name mit einem Typ (z.B. Rufname, amtlicher Name) und einem Wert und einer zeitlichen Gültigkeit._
 
-__
 
 
 
@@ -374,7 +372,6 @@ __
 
 _Kategorien von Namenstypen gemäss eCH-0011 (personNameData) und dem Amtlichen Katalog der Merkmale der Registerharmonisierung (https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/nomenklaturen.assetdetail.24565576.html), URI gemäss I14Y Identifier aber als Klasse und nicht als Attribut. Beschreibungen und Übersetzungen gemäss I14Y._
 
-__
 
 
 
@@ -423,7 +420,6 @@ URI: [act:NameTypeEnum](https://ld.ech.ch/schema/0294/actors/NameTypeEnum)
 
 _Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um die bevorzugte Sprache oder die Muttersprache handelt._
 
-__
 
 
 
@@ -477,7 +473,6 @@ __
 
 _Staatsangehörigkeit (wird auch für Nationalität verwendet) einer Person unter Angabe des Landes und der zeitlichen Gültigkeit. Wenn kein `valid_from` angegeben ist, ist diese Information nicht bekannt. Ist bekannt, dass die Staatsangehörigkeit seit der Geburt gültig ist, ist das Geburtsdatum hier anzugeben. Wenn kein `valid_through` angegeben ist, ist die Staatsangehörigkeit weiterhin gültig._
 
-__
 
 
 
@@ -532,7 +527,6 @@ __
 
 _Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen Gültigkeit._
 
-__
 
 
 
@@ -589,7 +583,6 @@ __
 
 _Geschlechtscodes für Personen. Wenn das Geschlecht nicht bekannt ist, soll kein Geschlechtseintrag hinzugefügt werden. Der Code `non_binary` soll zusammen mit einer Bezeichnung verwendet werden, um weitere Angaben zum selbst deklarierten Geschlecht bereitzustellen._
 
-__
 
 
 
@@ -621,7 +614,6 @@ URI: [act:GenderCodeEnum](https://ld.ech.ch/schema/0294/actors/GenderCodeEnum)
 
 _Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Codes, ob die Tätigkeit bezahlt ist, und der zeitlichen Gültigkeit._
 
-__
 
 
 
@@ -710,7 +702,6 @@ is_active: true
 
 _Ausbildung oder Bildung einer Person mit Angabe eines Typs (z.B. Schulabschluss, Universitätsabschluss, Militärdienst), eines Labels, eines ISCO-19 Codes und der zeitlichen Gültigkeit._
 
-__
 
 
 
@@ -781,7 +772,6 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 _Ausbildungs- oder Bildungstypen basierend auf der BFS LEVEL_EDUC Codeliste._
 
-__
 
 
 
@@ -903,7 +893,6 @@ Das Group-Schema bildet politische Gruppen, Organisationen und Körperschaften a
 
 _Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommission, Parlament, Departement)._
 
-__
 
 
 
@@ -1293,7 +1282,6 @@ valid_from: 2012-01-01
 
 _Art der Gruppe (z.B. Partei, Kommission, Parlament, Departement)._
 
-__
 
 
 
@@ -1344,25 +1332,17 @@ __
 
 
 
-_Typen politischer Gruppen und Organisationen. Es gelten drei Konventionen._
+_Für Typen politischer Gruppen und Organisationen gelten drei Regeln._
 
-__
 
-_Der Wert benennt die politische Funktion, das Label der Gruppe bewahrt die örtliche Bezeichnung. Büro, Ratsleitung und Ufficio presidenziale werden alle als council_bureau erfasst und bleiben so vergleichbar._
+_Der Wert benennt die politische Funktion; die örtliche Bezeichnung gehört ins Label der Gruppe. Büro, Ratsleitung und Ufficio presidenziale erhalten deshalb alle den Wert `council_bureau`._
 
-__
 
-_Zusammengehörende Werte tragen ein Präfix. Die Familie council_ unterscheidet nicht nach Rat: Staatskanzlei und Parlamentsdienste sind beide ein council_secretariat; welchem Rat ein Organ zugehört, sagt die übergeordnete Gruppe. Ebenso die Familie committee_ mit committee als Grundfall._
+_Verwandte Werte teilen ein Präfix. Die Familie `council_` unterscheidet nicht nach Rat: Staatskanzlei und Parlamentsdienste sind beide `council_secretariat`, die Zugehörigkeit ergibt sich aus `parent_groups`. Sie gliedert sich in `council_presidency` für das Präsidium, `council_bureau` für das um die Fraktionsvertretung erweiterte Leitungsorgan und `council_secretariat` für die Verwaltungseinheit mit Angestellten. Die Familie `committee_` folgt demselben Muster, mit `committee` als Grundfall._
 
-__
 
-_Die drei Ratsorgane grenzen sich so ab: council_presidency führt die Sitzungen und vertritt den Rat; council_bureau leitet den Geschäftsgang und ist um die Fraktionsvertretung erweitert; council_secretariat ist die Verwaltungseinheit, besetzt mit Angestellten statt mit gewählten Mitgliedern._
+_Die Rechtsform gehört nicht in dieses Vokabular, sondern in `legal_form`._
 
-__
-
-_Die Rechtsform gehört nicht hierher, sondern in legal_form._
-
-__
 
 
 
@@ -1447,7 +1427,6 @@ Das Membership-Schema bildet die Beziehung zwischen Personen und Gruppen ab und 
 
 _Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe, die eine formale Zugehörigkeit darstellt (z.B. Parteimitglied, Kommissionsmitglied, Parlamentarier/in). Im Unterschied zu InterestLink, der externe Interessenbindungen und Interessenkonflikte zu Organisationen ausserhalb des Akteur-Schemas abbildet._
 
-__
 
 
 
@@ -1513,7 +1492,6 @@ __
 
 _Rolle einer Person in einer Mitgliedschaft oder Funktion (z.B. Mitglied, Präsident/in, Stellvertreter/in). Wenn eine Rolle im vorgeschlagenen RoleEnum-Vokabular nicht enthalten ist, kann der Wert 'other' verwendet werden; in diesem Fall soll im Slot `role_label` eine beschreibende Bezeichnung angegeben werden. Die Bezeichnung kann auch verwendet werden, wenn eine spezifische Rollenbezeichnung nötig ist, selbst wenn in `role_type_enum` bereits ein passender semantischer Wert vorhanden ist; bei `role_type_enum = other` soll sie angegeben werden._
 
-__
 
 
 
@@ -1585,7 +1563,6 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 _Rollen, die eine Person im Rahmen einer Mitgliedschaft haben kann._
 
-__
 
 
 
@@ -1616,7 +1593,6 @@ URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 
 _Wahlkreis oder Wahlregion, die einer Mitgliedschaft zugeordnet ist. Die zeitliche Gültigkeit wird von der umschliessenden Mitgliedschaft übernommen._
 
-__
 
 
 
@@ -1683,7 +1659,6 @@ Das InterestLink-Schema erfasst Interessenbindungen, Interessenkonflikte und Ver
 
 _Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person zu einer Organisation ausserhalb des Akteur-Schemas._
 
-__
 
 
 
@@ -1946,7 +1921,6 @@ is_paid: true
 
 _Typen von Interessenbindungen (Interessenkonflikte, Politikfinanzierung)._
 
-__
 
 
 
@@ -1979,7 +1953,6 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 
 _Rechtsformen basierend auf der Codeliste des eidgenössischen UID-Registers (eCH-0098). Siehe https://register.ld.admin.ch/i14y/concept/legalForm_
 
-__
 
 
 
@@ -2097,7 +2070,6 @@ Dies dient drei Zwecken:
 
 _Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung. Ermöglicht historische Korrektheit auch wenn sich die Person später ändert._
 
-__
 
 
 
@@ -2155,7 +2127,6 @@ __
 
 _Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung._
 
-__
 
 
 
@@ -2213,7 +2184,6 @@ __
 
 _Eine Adresse mit einem Typ (z.B. Privatadresse, Geschäftsadresse) und einem Wert._
 
-__
 
 
 
@@ -2305,7 +2275,6 @@ country: CH
 
 _Adresstypen._
 
-__
 
 
 
@@ -2335,7 +2304,6 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 
 _Kontaktinformation einer Person mit Angabe eines Typs (z.B. E-Mail, LinkedIn) und eines Werts._
 
-__
 
 
 

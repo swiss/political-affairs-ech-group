@@ -8,7 +8,6 @@ search:
 
 _Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en")._
 
-__
 
 
 

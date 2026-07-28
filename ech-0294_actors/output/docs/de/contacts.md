@@ -8,7 +8,6 @@ search:
 
 _Kontaktinformationen (E-Mail, Website, Social Media). Richtlinie: E-Mail ist quasi-obligatorisch und sollte wenn vorhanden immer angegeben werden._
 
-__
 
 
 

@@ -5,7 +5,6 @@
 
 _Geschlechtscodes für Personen. Wenn das Geschlecht nicht bekannt ist, soll kein Geschlechtseintrag hinzugefügt werden. Der Code `non_binary` soll zusammen mit einer Bezeichnung verwendet werden, um weitere Angaben zum selbst deklarierten Geschlecht bereitzustellen._
 
-__
 
 
 

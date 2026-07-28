@@ -8,7 +8,6 @@ search:
 
 _Party color as hexadecimal value (optional for parties, e.g., "#FF0000")._
 
-__
 
 
 

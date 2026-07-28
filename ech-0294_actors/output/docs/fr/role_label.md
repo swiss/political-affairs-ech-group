@@ -8,7 +8,6 @@ search:
 
 _Libellé de rôle spécifique. À utiliser lorsqu'un nom de rôle spécifique est nécessaire, même s'il existe une valeur sémantique appropriée dans `role_type_enum` ; fournir ce libellé lorsque « role_type_enum » est réglé sur « other ». La désignation est saisie avec la langue dans laquelle elle est publiée ; lorsqu'elle est publiée en plusieurs langues, une entrée est saisie par langue._
 
-__
 
 
 

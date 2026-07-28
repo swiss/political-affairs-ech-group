@@ -8,7 +8,6 @@ search:
 
 _Couleur du parti sous forme de valeur hexadécimale (facultatif pour les partis, p. ex. « #FF0000 »)._
 
-__
 
 
 

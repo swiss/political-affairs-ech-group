@@ -8,7 +8,6 @@ search:
 
 _IDE de l'organisation (format eCH-0097 : CHE-XXX.XXX.XXX) issu du registre fédéral IDE (uid.admin.ch)._
 
-__
 
 
 

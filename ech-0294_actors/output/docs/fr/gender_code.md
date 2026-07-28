@@ -8,7 +8,6 @@ search:
 
 _Code de sexe. Valeurs recommandées : male, female, non_binary._
 
-__
 
 
 

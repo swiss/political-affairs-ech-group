@@ -5,7 +5,6 @@
 
 _Types of addresses._
 
-__
 
 
 

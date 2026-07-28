@@ -8,7 +8,6 @@ search:
 
 _Type of group (e.g., party, commission, parliament, or similar). The exact naming and description of the group is provided via `label`._
 
-__
 
 
 

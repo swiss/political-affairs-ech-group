@@ -8,7 +8,6 @@ search:
 
 _ISCO-19 Code der Ausbildung oder Bildung._
 
-__
 
 
 

@@ -8,7 +8,6 @@ search:
 
 _Collection de personnes._
 
-__
 
 
 

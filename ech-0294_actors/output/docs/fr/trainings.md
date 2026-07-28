@@ -8,7 +8,6 @@ search:
 
 _Formations ou éducations de la personne. Directive : n'indiquer en principe que la qualification la plus élevée obtenue._
 
-__
 
 
 

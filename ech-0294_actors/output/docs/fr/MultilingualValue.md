@@ -5,7 +5,6 @@
 
 _Une chaîne de caractères multilingue avec indication de la langue._
 
-__
 
 
 

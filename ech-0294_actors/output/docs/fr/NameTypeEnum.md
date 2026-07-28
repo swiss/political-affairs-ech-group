@@ -5,7 +5,6 @@
 
 _Catégories de types de noms selon eCH-0011 (personNameData) et le Catalogue officiel des caractères de l'harmonisation de registres (https://www.bfs.admin.ch/bfs/fr/home/registres/registre-personnes/harmonisation-registres/nomenclatures.assetdetail.24565577.html), URI selon l'identifiant I14Y mais en tant que classe et non en tant qu'attribut. Descriptions et traductions selon I14Y._
 
-__
 
 
 

@@ -5,7 +5,6 @@
 
 _A mixin class that provides slots for modeling creation and modification dates of an entity._
 
-__
 
 
 

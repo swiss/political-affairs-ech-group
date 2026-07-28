@@ -5,7 +5,6 @@
 
 _Conteneur pour les acteurs politiques, les groupes et les relations._
 
-__
 
 
 

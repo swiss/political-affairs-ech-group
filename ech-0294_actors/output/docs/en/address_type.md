@@ -8,7 +8,6 @@ search:
 
 _Type of address._
 
-__
 
 
 

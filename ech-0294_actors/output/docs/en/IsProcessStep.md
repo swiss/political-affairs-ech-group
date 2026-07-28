@@ -11,7 +11,6 @@ _Combines identification and event-duration slots and adds a free-text_
 
 _remark slot. Concrete step classes add their own type-specific slots._
 
-__
 
 
 

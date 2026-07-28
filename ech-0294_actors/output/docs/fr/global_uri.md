@@ -8,7 +8,6 @@ search:
 
 _Une URI unique et globalement valide pour l'entité._
 
-__
 
 
 

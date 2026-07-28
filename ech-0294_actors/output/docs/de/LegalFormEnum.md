@@ -5,7 +5,6 @@
 
 _Rechtsformen basierend auf der Codeliste des eidgenössischen UID-Registers (eCH-0098). Siehe https://register.ld.admin.ch/i14y/concept/legalForm_
 
-__
 
 
 

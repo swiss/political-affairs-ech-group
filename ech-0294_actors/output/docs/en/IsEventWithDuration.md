@@ -5,7 +5,6 @@
 
 _A mixin class that provides slots for modeling events or occurrences with time duration._
 
-__
 
 
 

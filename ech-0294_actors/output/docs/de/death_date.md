@@ -8,7 +8,6 @@ search:
 
 _Genaues Todesdatum._
 
-__
 
 
 

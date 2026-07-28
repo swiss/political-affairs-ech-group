@@ -8,7 +8,6 @@ search:
 
 _Identifiant local. Par exemple, un UUID issu du système d'information du conseil._
 
-__
 
 
 

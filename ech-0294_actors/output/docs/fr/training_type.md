@@ -8,7 +8,6 @@ search:
 
 _Type de formation ou d'éducation._
 
-__
 
 
 

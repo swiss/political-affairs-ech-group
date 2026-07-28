@@ -5,7 +5,6 @@
 
 _Types d'informations de contact._
 
-__
 
 
 

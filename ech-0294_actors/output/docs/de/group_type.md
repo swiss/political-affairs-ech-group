@@ -8,7 +8,6 @@ search:
 
 _Klasse der Gruppierung, wie z.B. Partei, Kommission, Parlament oder ähnliches. Die genaue Benennung und Beschreibung der Gruppierung wird über `label` gemacht._
 
-__
 
 
 

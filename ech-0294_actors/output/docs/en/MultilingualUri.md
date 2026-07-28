@@ -5,7 +5,6 @@
 
 _A URI together with the language of the resource it points to. Same structure as MultilingualValue, but the value is a URI: it is used where the same content is published under a separate address per language._
 
-__
 
 
 

@@ -5,7 +5,6 @@
 
 _Lightweight reference to a group with key identification data at time of linking._
 
-__
 
 
 

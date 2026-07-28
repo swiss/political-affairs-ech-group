@@ -5,7 +5,6 @@
 
 _Roles a person can have within a membership._
 
-__
 
 
 

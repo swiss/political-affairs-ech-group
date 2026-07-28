@@ -5,7 +5,6 @@
 
 _Eine Adresse mit einem Typ (z.B. Privatadresse, Geschäftsadresse) und einem Wert._
 
-__
 
 
 

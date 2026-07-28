@@ -8,7 +8,6 @@ search:
 
 _Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein)._
 
-__
 
 
 

@@ -8,7 +8,6 @@ search:
 
 _Indicates whether the activity is paid._
 
-__
 
 
 

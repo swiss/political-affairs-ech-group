@@ -5,7 +5,6 @@
 
 _A mixin class that provides slots for modeling instantaneous events or occurrences (without time duration)._
 
-__
 
 
 

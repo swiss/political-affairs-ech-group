@@ -8,7 +8,6 @@ search:
 
 _Date de naissance exacte si disponible et publique. Ce champ prime sur le champ `birthYear`._
 
-__
 
 
 

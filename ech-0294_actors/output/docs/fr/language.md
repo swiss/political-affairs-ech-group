@@ -8,7 +8,6 @@ search:
 
 _Code de langue au format ISO 639-1 (deux lettres minuscules, par ex. « de », « fr », « it », « en »)._
 
-__
 
 
 

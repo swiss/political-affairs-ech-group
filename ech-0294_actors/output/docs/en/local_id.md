@@ -8,7 +8,6 @@ search:
 
 _Local identifier. For example, a UUID from the council information system._
 
-__
 
 
 

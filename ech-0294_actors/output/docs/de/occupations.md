@@ -8,7 +8,6 @@ search:
 
 _Berufe oder Tätigkeiten der Person._
 
-__
 
 
 

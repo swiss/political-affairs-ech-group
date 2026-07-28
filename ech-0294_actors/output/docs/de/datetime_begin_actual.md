@@ -8,7 +8,6 @@ search:
 
 _Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer._
 
-__
 
 
 

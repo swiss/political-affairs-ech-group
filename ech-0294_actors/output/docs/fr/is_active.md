@@ -8,7 +8,6 @@ search:
 
 _Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible._
 
-__
 
 
 

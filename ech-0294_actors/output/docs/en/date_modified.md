@@ -8,7 +8,6 @@ search:
 
 _The date when an entity was last modified._
 
-__
 
 
 

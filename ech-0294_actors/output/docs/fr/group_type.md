@@ -8,7 +8,6 @@ search:
 
 _Type de groupe (p. ex. parti, commission, parlement ou similaire). La désignation et la description exactes du groupe sont fournies via `label`._
 
-__
 
 
 

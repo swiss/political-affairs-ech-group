@@ -8,7 +8,6 @@ search:
 
 _Das Datum, bis und mit dem die Information gültig ist._
 
-__
 
 
 

@@ -5,7 +5,6 @@
 
 _Training or education of a person indicating a type (e.g., school diploma, university degree, military service), a label, an ISCO-19 code, and temporal validity._
 
-__
 
 
 

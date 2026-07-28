@@ -5,7 +5,6 @@
 
 _Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gültigkeit einer Information (nicht eines Events) zur Verfügung stellt._
 
-__
 
 
 

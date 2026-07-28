@@ -8,7 +8,6 @@ search:
 
 _La date de fin planifiée d'un événement ou d'une occurrence avec durée._
 
-__
 
 
 

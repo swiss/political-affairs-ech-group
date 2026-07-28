@@ -5,7 +5,6 @@
 
 _Types de formation ou d'éducation basés sur la liste de codes suisse LEVEL_EDUC de l'OFS._
 
-__
 
 
 

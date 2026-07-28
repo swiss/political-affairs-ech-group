@@ -8,7 +8,6 @@ search:
 
 _Lien vers le vocabulaire contrôlé pour les types de groupes._
 
-__
 
 
 

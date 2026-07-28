@@ -5,7 +5,6 @@
 
 _Une personne avec des identifiants, des noms, des adresses, des nationalités et des professions._
 
-__
 
 
 

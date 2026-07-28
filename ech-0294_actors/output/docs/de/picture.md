@@ -8,7 +8,6 @@ search:
 
 _Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF)._
 
-__
 
 
 

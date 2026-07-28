@@ -8,7 +8,6 @@ search:
 
 _Language proficiencies of the person._
 
-__
 
 
 

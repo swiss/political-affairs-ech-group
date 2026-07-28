@@ -8,7 +8,6 @@ search:
 
 _Adresses avec type (privée, professionnelle, locale)._
 
-__
 
 
 

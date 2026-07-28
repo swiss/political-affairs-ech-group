@@ -8,7 +8,6 @@ search:
 
 _Exact date of birth if available and public. This field has precedence over the field `birthYear`._
 
-__
 
 
 

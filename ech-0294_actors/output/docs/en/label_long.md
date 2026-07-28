@@ -8,7 +8,6 @@ search:
 
 _Assign an extended label to a structured piece of information (e.g., display name with title, position, etc.)._
 
-__
 
 
 

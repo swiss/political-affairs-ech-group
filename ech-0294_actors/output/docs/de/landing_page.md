@@ -8,7 +8,6 @@ search:
 
 _Website mit weiteren Informationen. Wird die Website je Sprache unter einer eigenen Adresse publiziert, wird pro Sprache ein Eintrag erfasst._
 
-__
 
 
 

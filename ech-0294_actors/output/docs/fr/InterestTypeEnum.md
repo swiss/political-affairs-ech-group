@@ -5,7 +5,6 @@
 
 _Types de liens d'intérêts (conflits d'intérêts, financement politique)._
 
-__
 
 
 

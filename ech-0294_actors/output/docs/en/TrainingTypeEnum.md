@@ -5,7 +5,6 @@
 
 _Types of training or education based on the Swiss BFS LEVEL_EDUC codelist._
 
-__
 
 
 

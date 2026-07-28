@@ -8,7 +8,6 @@ search:
 
 _Role of the person in the membership or function._
 
-__
 
 
 

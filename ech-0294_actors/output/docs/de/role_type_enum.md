@@ -8,7 +8,6 @@ search:
 
 _Rolle der Person in der Mitgliedschaft oder Funktion._
 
-__
 
 
 

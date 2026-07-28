@@ -8,7 +8,6 @@ search:
 
 _Collection d'affiliations._
 
-__
 
 
 

@@ -8,7 +8,6 @@ search:
 
 _Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.)._
 
-__
 
 
 

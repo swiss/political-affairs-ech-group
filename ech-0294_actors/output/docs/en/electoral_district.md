@@ -8,7 +8,6 @@ search:
 
 _Link to the electoral district._
 
-__
 
 
 

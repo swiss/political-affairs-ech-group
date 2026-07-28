@@ -5,7 +5,6 @@
 
 _Une classe mixin qui fournit des slots pour modéliser les dates de création et de modification d'une entité._
 
-__
 
 
 

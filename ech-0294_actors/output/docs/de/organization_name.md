@@ -8,7 +8,6 @@ search:
 
 _Name der Organisation oder des Unternehmens._
 
-__
 
 
 

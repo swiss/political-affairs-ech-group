@@ -8,7 +8,6 @@ search:
 
 _Specific role label. Use this when a specific role name is needed, even if a fitting semantic value exists in `role_type_enum`; provide this label when `role_type_enum` is set to 'other'. The designation is recorded with the language it is published in; where it is published in several languages, one entry per language is recorded._
 
-__
 
 
 

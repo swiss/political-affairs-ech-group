@@ -116,7 +116,6 @@ The person schema describes natural persons in the political context.
 
 _A person with identifiers, names, addresses, citizenships, and occupations._
 
-__
 
 
 
@@ -318,7 +317,6 @@ names:
 
 _A name with a type (e.g., call name, official name), a value, and a temporal validity._
 
-__
 
 
 
@@ -374,7 +372,6 @@ __
 
 _Categories of name types according to eCH-0011 (personNameData) and the official catalogue of attributes of the register harmonisation (https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/nomenklaturen.assetdetail.24565576.html), URI according to I14Y identifier but as class and not as attribute. Descriptions and translations according to I14Y._
 
-__
 
 
 
@@ -423,7 +420,6 @@ URI: [act:NameTypeEnum](https://ld.ech.ch/schema/0294/actors/NameTypeEnum)
 
 _Language proficiency of a person indicating the language and whether it is the preferred language or native language._
 
-__
 
 
 
@@ -477,7 +473,6 @@ __
 
 _Citizenship (also used for Nationality) of a person indicating the country and temporal validity. If there is no `valid_from` provided, the information is not known. If it is known that the citizenship is valid from birth, the birthdate is to be repeated here. If there is no `valid_through`, the citizenship is still active._
 
-__
 
 
 
@@ -532,7 +527,6 @@ __
 
 _Gender of a person indicating a gender code and temporal validity._
 
-__
 
 
 
@@ -589,7 +583,6 @@ __
 
 _Gender codes for persons. If the gender is not known, no gender entry shall be added. The `non_binary` code shall be used together with a label to provide further details about the self-identified gender._
 
-__
 
 
 
@@ -621,7 +614,6 @@ URI: [act:GenderCodeEnum](https://ld.ech.ch/schema/0294/actors/GenderCodeEnum)
 
 _Occupation or profession of a person indicating a label, an ISCO-19 code, whether the activity is paid, and temporal validity._
 
-__
 
 
 
@@ -710,7 +702,6 @@ is_active: true
 
 _Training or education of a person indicating a type (e.g., school diploma, university degree, military service), a label, an ISCO-19 code, and temporal validity._
 
-__
 
 
 
@@ -781,7 +772,6 @@ At least one of the following must be set:
 
 _Types of training or education based on the Swiss BFS LEVEL_EDUC codelist._
 
-__
 
 
 
@@ -903,7 +893,6 @@ The group schema represents political groups, organisations and corporate bodies
 
 _A political group, organization, or body (e.g., party, committee, parliament, department)._
 
-__
 
 
 
@@ -1293,7 +1282,6 @@ valid_from: 2012-01-01
 
 _Type of group (e.g., party, committee, parliament, department)._
 
-__
 
 
 
@@ -1344,25 +1332,17 @@ __
 
 
 
-_Types of political groups and organizations. Three conventions apply._
+_Three rules govern the types of political groups and organizations._
 
-__
 
-_The value states the political function; the group's label keeps the designation used locally. Büro, Ratsleitung and Ufficio presidenziale are all recorded as council_bureau and thus stay comparable._
+_The value states the political function; the designation used locally belongs in the group's label. Büro, Ratsleitung and Ufficio presidenziale therefore all take the value `council_bureau`._
 
-__
 
-_Values that belong together share a prefix. The council_ family does not distinguish by council: a state chancellery and parliamentary services are both a council_secretariat, and which council a body belongs to is stated by its parent group. The same applies to the committee_ family, with committee as the base case._
+_Related values share a prefix. The `council_` family does not distinguish by council: a state chancellery and parliamentary services are both `council_secretariat`, and the affiliation follows from `parent_groups`. It divides into `council_presidency` for the presidency, `council_bureau` for the managing body extended by the parliamentary group representation, and `council_secretariat` for the administrative unit staffed by employees. The `committee_` family follows the same pattern, with `committee` as the base case._
 
-__
 
-_The three council bodies differ as follows: council_presidency chairs the sittings and represents the council; council_bureau manages its business and additionally includes the parliamentary group representation; council_secretariat is the administrative unit, staffed by employees rather than by elected members._
+_Legal form does not belong in this vocabulary but in `legal_form`._
 
-__
-
-_Legal form does not belong here but in legal_form._
-
-__
 
 
 
@@ -1448,7 +1428,6 @@ The membership schema represents the relationship between persons and groups and
 
 _A membership relationship between a person and a group, representing formal affiliation (e.g., party member, commission member, parliamentarian). Distinct from InterestLink, which covers external interest bindings and conflicts of interest to organizations outside the actor schema._
 
-__
 
 
 
@@ -1514,7 +1493,6 @@ __
 
 _Role of a person in a membership or function (e.g., member, president, deputy). If a role is not listed in the proposed RoleEnum vocabulary, the value 'other' can be used, and a descriptive label should be provided in the `role_label` slot. The label can also be used when a specific name is needed, even if a fitting semantic value exists in `role_type_enum`; it should be provided when `role_type_enum` is set to 'other'._
 
-__
 
 
 
@@ -1586,7 +1564,6 @@ At least one of the following must be set:
 
 _Roles a person can have within a membership._
 
-__
 
 
 
@@ -1617,7 +1594,6 @@ URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 
 _Electoral district or region associated with a membership. The temporal validity is inherited from the enclosing membership._
 
-__
 
 
 
@@ -1685,7 +1661,6 @@ The InterestLink schema records interest links, conflicts of interest and entang
 
 _An interest link (conflict of interest, political financing) of a person to an organization outside the actor schema._
 
-__
 
 
 
@@ -1948,7 +1923,6 @@ is_paid: true
 
 _Types of interest links (conflicts of interest, political financing)._
 
-__
 
 
 
@@ -1981,7 +1955,6 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 
 _Legal forms based on the Swiss UID register codelist (eCH-0108). See https://register.ld.admin.ch/i14y/concept/legalForm_
 
-__
 
 
 
@@ -2100,7 +2073,6 @@ This serves three purposes:
 
 _Lightweight reference to a person with key identification data at time of linking. Preserves historical accuracy even if the person changes later._
 
-__
 
 
 
@@ -2158,7 +2130,6 @@ __
 
 _Lightweight reference to a group with key identification data at time of linking._
 
-__
 
 
 
@@ -2216,7 +2187,6 @@ __
 
 _An address with a type (e.g., private address, business address) and a value._
 
-__
 
 
 
@@ -2308,7 +2278,6 @@ country: CH
 
 _Types of addresses._
 
-__
 
 
 
@@ -2338,7 +2307,6 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 
 _Contact information of a person indicating a type (e.g., email, LinkedIn) and a value._
 
-__
 
 
 

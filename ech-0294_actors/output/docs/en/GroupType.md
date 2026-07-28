@@ -5,7 +5,6 @@
 
 _Type of group (e.g., party, committee, parliament, department)._
 
-__
 
 
 

@@ -5,7 +5,6 @@
 
 _Kategorien von Namenstypen gemäss eCH-0011 (personNameData) und dem Amtlichen Katalog der Merkmale der Registerharmonisierung (https://www.bfs.admin.ch/bfs/de/home/register/personenregister/registerharmonisierung/nomenklaturen.assetdetail.24565576.html), URI gemäss I14Y Identifier aber als Klasse und nicht als Attribut. Beschreibungen und Übersetzungen gemäss I14Y._
 
-__
 
 
 

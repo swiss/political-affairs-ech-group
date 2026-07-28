@@ -5,7 +5,6 @@
 
 _Rollen, die eine Person im Rahmen einer Mitgliedschaft haben kann._
 
-__
 
 
 

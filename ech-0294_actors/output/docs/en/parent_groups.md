@@ -8,7 +8,6 @@ search:
 
 _Reference to the parent groups, stated by their identifier (global_uri). For example, the parent party for cantonal parties, or to describe the hierarchy in the executive. Also used to link sub-commissions to commissions, or factions to both their parliament and their party. (parentGroup is typically used within the same group_type, but cross-type links are permitted, e.g., faction → parliament and faction → party.)_
 
-__
 
 
 

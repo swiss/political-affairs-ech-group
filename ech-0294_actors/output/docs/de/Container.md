@@ -5,7 +5,6 @@
 
 _Container für politische Akteure, Gruppen und Beziehungen._
 
-__
 
 
 

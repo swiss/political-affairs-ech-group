@@ -8,7 +8,6 @@ search:
 
 _Gibt an, ob die Person in der Gruppe stimmberechtigt ist. Typischerweise false für Ersatzmitglieder (wenn nicht im Einsatz), Beobachter/innen, Sekretär/innen und Gäste._
 
-__
 
 
 

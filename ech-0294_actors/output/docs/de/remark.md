@@ -8,7 +8,6 @@ search:
 
 _Freitext-Bemerkung oder Notiz für Sonderfälle oder zusätzlichen Kontext zu einem Prozessschritt oder einer Entität._
 
-__
 
 
 

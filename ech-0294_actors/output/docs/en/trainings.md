@@ -8,7 +8,6 @@ search:
 
 _Trainings or educations of the person. Guideline: generally only provide the highest qualification obtained._
 
-__
 
 
 

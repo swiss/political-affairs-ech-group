@@ -5,7 +5,6 @@
 
 _Ein Name mit einem Typ (z.B. Rufname, amtlicher Name) und einem Wert und einer zeitlichen Gültigkeit._
 
-__
 
 
 

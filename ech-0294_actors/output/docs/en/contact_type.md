@@ -8,7 +8,6 @@ search:
 
 _Type of contact information._
 
-__
 
 
 

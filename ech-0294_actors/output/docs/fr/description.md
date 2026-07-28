@@ -8,7 +8,6 @@ search:
 
 _Description de l'entité._
 
-__
 
 
 

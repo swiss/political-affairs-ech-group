@@ -8,7 +8,6 @@ search:
 
 _Abbreviation (can be multilingual)._
 
-__
 
 
 

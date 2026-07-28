@@ -8,7 +8,6 @@ search:
 
 _The date when an entity was created._
 
-__
 
 
 

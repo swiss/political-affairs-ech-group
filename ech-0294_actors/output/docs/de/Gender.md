@@ -5,7 +5,6 @@
 
 _Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen Gültigkeit._
 
-__
 
 
 

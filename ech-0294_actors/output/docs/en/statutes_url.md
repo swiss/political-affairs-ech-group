@@ -8,7 +8,6 @@ search:
 
 _URL to party statutes (PDF or webpage; optional for parties)._
 
-__
 
 
 

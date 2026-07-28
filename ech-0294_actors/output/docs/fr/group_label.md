@@ -8,7 +8,6 @@ search:
 
 _Nom de l'organe/du groupe au moment de la liaison._
 
-__
 
 
 

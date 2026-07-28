@@ -13,7 +13,6 @@ _et de durée d'événement et ajoute un slot de remarque en texte libre._
 
 _Les classes d'étape concrètes ajoutent leurs propres slots spécifiques au type._
 
-__
 
 
 

@@ -8,7 +8,6 @@ search:
 
 _Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc._
 
-__
 
 
 

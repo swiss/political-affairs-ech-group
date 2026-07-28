@@ -8,7 +8,6 @@ search:
 
 _Référence à un groupe avec des données instantanées au moment de la mise en relation._
 
-__
 
 
 

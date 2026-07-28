@@ -8,7 +8,6 @@ search:
 
 _Name of the body/group at time of linking._
 
-__
 
 
 

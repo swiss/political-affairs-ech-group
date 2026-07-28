@@ -8,7 +8,6 @@ search:
 
 _Name des Gremiums zum Zeitpunkt der Verknüpfung._
 
-__
 
 
 

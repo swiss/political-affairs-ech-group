@@ -8,7 +8,6 @@ search:
 
 _Gibt an, ob die Information aktuell gültig ist. Kann nützlich sein, wenn diese Information explizit vorhanden ist._
 
-__
 
 
 

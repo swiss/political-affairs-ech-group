@@ -8,7 +8,6 @@ search:
 
 _La date et l'heure effectives d'un événement ou d'une occurrence instantané (sans durée)._
 
-__
 
 
 

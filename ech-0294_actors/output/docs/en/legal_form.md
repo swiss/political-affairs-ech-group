@@ -8,7 +8,6 @@ search:
 
 _Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm_
 
-__
 
 
 

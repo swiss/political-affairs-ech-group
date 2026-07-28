@@ -8,7 +8,6 @@ search:
 
 _Parteifarbe als Hexadezimalwert (optional für Parteien, z.B. "#FF0000")._
 
-__
 
 
 

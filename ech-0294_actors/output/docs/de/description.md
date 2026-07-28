@@ -8,7 +8,6 @@ search:
 
 _Kurze Beschreibung der Gruppierung._
 
-__
 
 
 

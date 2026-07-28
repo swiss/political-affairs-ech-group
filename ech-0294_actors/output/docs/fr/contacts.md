@@ -8,7 +8,6 @@ search:
 
 _Informations de contact (e-mail, site web, réseaux sociaux). Directive : l'e-mail est quasi obligatoire et devrait toujours être fourni lorsqu'il est disponible._
 
-__
 
 
 

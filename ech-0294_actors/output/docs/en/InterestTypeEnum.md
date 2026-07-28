@@ -5,7 +5,6 @@
 
 _Types of interest links (conflicts of interest, political financing)._
 
-__
 
 
 

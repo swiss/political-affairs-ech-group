@@ -5,7 +5,6 @@
 
 _A name with a type (e.g., call name, official name), a value, and a temporal validity._
 
-__
 
 
 

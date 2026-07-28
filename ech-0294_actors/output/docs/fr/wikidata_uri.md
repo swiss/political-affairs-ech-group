@@ -8,7 +8,6 @@ search:
 
 _Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans._
 
-__
 
 
 

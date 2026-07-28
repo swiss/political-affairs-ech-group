@@ -115,7 +115,6 @@ Le schéma Person décrit les personnes physiques dans le contexte politique.
 
 _Une personne avec des identifiants, des noms, des adresses, des nationalités et des professions._
 
-__
 
 
 
@@ -317,7 +316,6 @@ names:
 
 _Un nom avec un type (p. ex. nom d'usage, nom officiel), une valeur et une validité temporelle._
 
-__
 
 
 
@@ -373,7 +371,6 @@ __
 
 _Catégories de types de noms selon eCH-0011 (personNameData) et le Catalogue officiel des caractères de l'harmonisation de registres (https://www.bfs.admin.ch/bfs/fr/home/registres/registre-personnes/harmonisation-registres/nomenclatures.assetdetail.24565577.html), URI selon l'identifiant I14Y mais en tant que classe et non en tant qu'attribut. Descriptions et traductions selon I14Y._
 
-__
 
 
 
@@ -422,7 +419,6 @@ URI: [act:NameTypeEnum](https://ld.ech.ch/schema/0294/actors/NameTypeEnum)
 
 _Compétences linguistiques d'une personne indiquant la langue et le fait qu'il s'agisse ou non de la langue préférée ou de la langue maternelle._
 
-__
 
 
 
@@ -476,7 +472,6 @@ __
 
 _Nationalité (également utilisée pour la citoyenneté) d'une personne indiquant le pays et la validité temporelle. Si aucun `valid_from` n'est fourni, cette information n'est pas connue. S'il est établi que la nationalité est valable depuis la naissance, la date de naissance doit être répétée ici. En l'absence de `valid_through`, la nationalité est toujours en vigueur._
 
-__
 
 
 
@@ -531,7 +526,6 @@ __
 
 _Sexe d'une personne indiquant un code de sexe et la validité temporelle._
 
-__
 
 
 
@@ -588,7 +582,6 @@ __
 
 _Codes de sexe pour les personnes. Si le sexe n'est pas connu, aucune entrée de sexe ne doit être ajoutée. Le code `non_binary` doit être utilisé avec un libellé afin de fournir de plus amples détails sur le sexe auto-déclaré._
 
-__
 
 
 
@@ -620,7 +613,6 @@ URI: [act:GenderCodeEnum](https://ld.ech.ch/schema/0294/actors/GenderCodeEnum)
 
 _Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si l'activité est rémunérée, ainsi que la validité temporelle._
 
-__
 
 
 
@@ -709,7 +701,6 @@ is_active: true
 
 _Formation ou éducation d'une personne indiquant un type (p. ex. diplôme scolaire, diplôme universitaire, service militaire), un libellé, un code ISCO-19 et la validité temporelle._
 
-__
 
 
 
@@ -780,7 +771,6 @@ Au moins l'un des champs suivants doit être renseigné :
 
 _Types de formation ou d'éducation basés sur la liste de codes suisse LEVEL_EDUC de l'OFS._
 
-__
 
 
 
@@ -902,7 +892,6 @@ Le schéma Group représente les groupes, organisations et corporations politiqu
 
 _Un groupe, une organisation ou une collectivité politique (p. ex. parti, commission, parlement, département)._
 
-__
 
 
 
@@ -1292,7 +1281,6 @@ valid_from: 2012-01-01
 
 _Type de groupe (p. ex. parti, commission, parlement, département)._
 
-__
 
 
 
@@ -1343,25 +1331,17 @@ __
 
 
 
-_Types de groupes et d'organisations politiques. Trois conventions s'appliquent._
+_Trois règles s'appliquent aux types de groupes et d'organisations politiques._
 
-__
 
-_La valeur désigne la fonction politique, le libellé du groupe conserve la désignation locale. Büro, Ratsleitung et Ufficio presidenziale sont tous saisis comme council_bureau et restent ainsi comparables._
+_La valeur désigne la fonction politique ; la désignation locale relève du libellé du groupe. Büro, Ratsleitung et Ufficio presidenziale reçoivent donc tous la valeur `council_bureau`._
 
-__
 
-_Les valeurs qui vont ensemble partagent un préfixe. La famille council_ ne distingue pas selon le conseil : une chancellerie d'État et les services du parlement sont tous deux un council_secretariat ; le conseil auquel un organe se rattache est indiqué par le groupe supérieur. Il en va de même de la famille committee_, avec committee comme cas de base._
+_Les valeurs apparentées partagent un préfixe. La famille `council_` ne distingue pas selon le conseil : une chancellerie d'État et les services du parlement sont tous deux `council_secretariat`, le rattachement ressortant de `parent_groups`. Elle se subdivise en `council_presidency` pour la présidence, `council_bureau` pour l'organe de direction élargi à la représentation des groupes et `council_secretariat` pour l'unité administrative composée d'employés. La famille `committee_` suit le même modèle, avec `committee` comme cas de base._
 
-__
 
-_Les trois organes du conseil se distinguent ainsi : council_presidency préside les séances et représente le conseil ; council_bureau dirige la marche des affaires et comprend en outre la représentation des groupes ; council_secretariat est l'unité administrative, composée d'employés et non de membres élus._
+_La forme juridique ne relève pas de ce vocabulaire, mais de `legal_form`._
 
-__
-
-_La forme juridique ne relève pas d'ici, mais de legal_form._
-
-__
 
 
 
@@ -1446,7 +1426,6 @@ Le schéma Membership représente la relation entre personnes et groupes et cons
 
 _Une relation d'affiliation entre une personne et un groupe, représentant une appartenance formelle (p. ex. membre d'un parti, membre d'une commission, parlementaire). À distinguer de InterestLink, qui recouvre les liens d'intérêts externes et les conflits d'intérêts avec des organisations situées en dehors du schéma des acteurs._
 
-__
 
 
 
@@ -1512,7 +1491,6 @@ __
 
 _Rôle d'une personne dans une affiliation ou une fonction (p. ex. membre, président, suppléant). Si un rôle ne figure pas dans le vocabulaire RoleEnum proposé, la valeur « other » peut être utilisée, et un libellé descriptif doit être fourni dans le slot `role_label`. Le libellé peut également être utilisé lorsqu'une désignation spécifique est nécessaire, même s'il existe une valeur sémantique appropriée dans `role_type_enum` ; il doit être fourni lorsque `role_type_enum` est réglé sur « other »._
 
-__
 
 
 
@@ -1584,7 +1562,6 @@ Au moins l'un des champs suivants doit être renseigné :
 
 _Rôles qu'une personne peut occuper dans le cadre d'une affiliation._
 
-__
 
 
 
@@ -1615,7 +1592,6 @@ URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 
 _Circonscription ou région électorale associée à une affiliation. La validité temporelle est héritée de l'affiliation englobante._
 
-__
 
 
 
@@ -1682,7 +1658,6 @@ Le schéma InterestLink consigne les liens d'intérêts, les conflits d'intérê
 
 _Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne avec une organisation située en dehors du schéma des acteurs._
 
-__
 
 
 
@@ -1945,7 +1920,6 @@ is_paid: true
 
 _Types de liens d'intérêts (conflits d'intérêts, financement politique)._
 
-__
 
 
 
@@ -1978,7 +1952,6 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 
 _Formes juridiques basées sur la liste de codes du registre fédéral IDE (eCH-0108). Voir https://register.ld.admin.ch/i14y/concept/legalForm_
 
-__
 
 
 
@@ -2096,7 +2069,6 @@ Cela sert trois objectifs :
 
 _Référence légère à une personne avec les principales données d'identification au moment de la liaison. Préserve l'exactitude historique même si la personne change ultérieurement._
 
-__
 
 
 
@@ -2154,7 +2126,6 @@ __
 
 _Référence légère à un groupe avec les principales données d'identification au moment de la liaison._
 
-__
 
 
 
@@ -2212,7 +2183,6 @@ __
 
 _Une adresse avec un type (p. ex. adresse privée, adresse professionnelle) et une valeur._
 
-__
 
 
 
@@ -2304,7 +2274,6 @@ country: CH
 
 _Types d'adresses._
 
-__
 
 
 
@@ -2334,7 +2303,6 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 
 _Informations de contact d'une personne indiquant un type (p. ex. e-mail, LinkedIn) et une valeur._
 
-__
 
 
 

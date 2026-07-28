@@ -5,7 +5,6 @@
 
 _Contact information of a person indicating a type (e.g., email, LinkedIn) and a value._
 
-__
 
 
 
