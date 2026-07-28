@@ -13,6 +13,9 @@ description:
     et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s
     en Suisse.
   language: fr
+landing_page:
+- value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
+  language: de
 group_type:
   group_type_enum: interest_group
   label: Interessengruppe

@@ -13,14 +13,11 @@ abbreviation:
 description:
 - value: Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung
     besteht aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg,
-    Genf, Jura, Neuenburg, Waadt und Wallis. Sie ist für die parlamentarische Aufsicht
-    über den Vollzug der beiden lateinischen Konkordate über den strafrechtlichen
-    Freiheitsentzug zuständig.
+    Genf, Jura, Neuenburg, Waadt und Wallis.
   language: de
 - value: 'La Commission interparlementaire de contrôle détention pénale est composée
     de 18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel,
-    Vaud et Valais. Elle est chargée de la surveillance parlementaire de l''exécution
-    des deux concordats latins sur la détention pénale.'
+    Vaud et Valais.'
   language: fr
 landing_page:
 - value: https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5

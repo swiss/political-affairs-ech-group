@@ -354,6 +354,9 @@ groups:
     description:
       - value: L'intergroupe parlementaire « Information et défense des consommateurs » réunit toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s en Suisse.
         language: fr
+    landing_page:
+      - value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
+        language: de
     group_type:
       group_type_enum: interest_group
       label: Interessengruppe
@@ -398,7 +401,7 @@ groups:
 
   # Ratsbüro
   - local_id: 50
-    global_uri: https://api.openparldata.ch/v1/groups/50
+    global_uri: https://grosserrat.bs.ch/gremien/praesidium-und-buero
     label:
       - value: Büro des Grossen Rates
         language: de
@@ -421,9 +424,9 @@ groups:
       - value: Del-DetPen
         language: fr
     description:
-      - value: Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg, Genf, Jura, Neuenburg, Waadt und Wallis. Sie ist für die parlamentarische Aufsicht über den Vollzug der beiden lateinischen Konkordate über den strafrechtlichen Freiheitsentzug zuständig.
+      - value: Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg, Genf, Jura, Neuenburg, Waadt und Wallis.
         language: de
-      - value: "La Commission interparlementaire de contrôle détention pénale est composée de 18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel, Vaud et Valais. Elle est chargée de la surveillance parlementaire de l'exécution des deux concordats latins sur la détention pénale."
+      - value: "La Commission interparlementaire de contrôle détention pénale est composée de 18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel, Vaud et Valais."
         language: fr
     landing_page:
       - value: https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5

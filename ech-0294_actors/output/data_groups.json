@@ -27,6 +27,12 @@
           "language": "fr"
         }
       ],
+      "landing_page": [
+        {
+          "value": "https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf",
+          "language": "de"
+        }
+      ],
       "spatial": "https://ld.admin.ch/country/CHE",
       "local_id": "6627",
       "valid_from": "2012-01-01"
@@ -83,7 +89,7 @@
       "local_id": "3"
     },
     {
-      "global_uri": "https://api.openparldata.ch/v1/groups/50",
+      "global_uri": "https://grosserrat.bs.ch/gremien/praesidium-und-buero",
       "group_type": {
         "group_type_enum": "parliamentary_bureau",
         "label": "Ratsbüro"
@@ -125,11 +131,11 @@
       ],
       "description": [
         {
-          "value": "Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg, Genf, Jura, Neuenburg, Waadt und Wallis. Sie ist für die parlamentarische Aufsicht über den Vollzug der beiden lateinischen Konkordate über den strafrechtlichen Freiheitsentzug zuständig.",
+          "value": "Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg, Genf, Jura, Neuenburg, Waadt und Wallis.",
           "language": "de"
         },
         {
-          "value": "La Commission interparlementaire de contrôle détention pénale est composée de 18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel, Vaud et Valais. Elle est chargée de la surveillance parlementaire de l'exécution des deux concordats latins sur la détention pénale.",
+          "value": "La Commission interparlementaire de contrôle détention pénale est composée de 18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel, Vaud et Valais.",
           "language": "fr"
         }
       ],
