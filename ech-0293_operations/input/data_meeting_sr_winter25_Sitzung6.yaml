@@ -48,7 +48,7 @@ speeches:
     actor_fullname: "Pascal Broulis"
     actor_id:
       global_uri: "https://api.openparldata.ch/v1/persons/18682"
-      wikidata_uri: "https://www.wikidata.org/wiki/Q116407"
+      wikidata_uri: "http://www.wikidata.org/entity/Q116407"
       label: "Pascal Broulis"
     role: "speaker"
     text: >-

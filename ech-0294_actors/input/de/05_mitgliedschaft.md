@@ -9,9 +9,12 @@ Das Membership-Schema bildet die Beziehung zwischen Personen und Gruppen ab und 
 - **Aktivität explizit oder abgeleitet (`is_active`):** Ob eine Mitgliedschaft aktiv ist, kann explizit über `is_active` gesetzt oder aus der zeitlichen Gültigkeit abgeleitet werden. Ist `is_active` nicht gesetzt, ergibt sich die Aktivität aus `valid_from`/`valid_through`.
 - **Mitgliedschaft ≠ Stimmrecht (`authorized_to_vote`):** Das Stimmrecht wird getrennt von der Mitgliedschaft geführt – typischerweise `false` bei Ersatzmitgliedern (ausser im Einsatz), Beobachtenden, dem Sekretariat und Gästen.
 - **Rolle als kontrolliertes Vokabular mit Freitext-Option (`role_type`):** Die Rolle in der Gruppe (z. B. Mitglied, Präsidium, Stellvertretung) wird über ein kontrolliertes Vokabular (`RoleEnum`) angegeben; für nicht abgedeckte Rollen dient der Wert `other` mit einer freien Bezeichnung.
+- **Wahlkreis an der Mitgliedschaft statt an der Person (`electoral_district`):** Der Wahlkreis beschreibt nicht die Person, sondern das Mandat – dieselbe Person kann über die Zeit oder auf verschiedenen föderalen Ebenen aus unterschiedlichen Wahlkreisen gewählt sein. `ElectoralDistrict` führt deshalb keine eigene zeitliche Gültigkeit, sondern erbt die `valid_from`/`valid_through` der umschliessenden Mitgliedschaft. Für die Identifikation sind die LINDAS-Ressourcen der Schweizer Raumeinheiten vorgesehen (siehe `global_uri`).
 
 {{include:ech-0294_actors/output/docs/Membership.md}}
 
 {{include:ech-0294_actors/output/docs/RoleType.md}}
 
 {{include:ech-0294_actors/output/docs/RoleEnum.md}}
+
+{{include:ech-0294_actors/output/docs/ElectoralDistrict.md}}

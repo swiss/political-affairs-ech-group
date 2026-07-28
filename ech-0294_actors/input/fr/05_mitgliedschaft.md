@@ -9,9 +9,12 @@ Le schéma Membership représente la relation entre personnes et groupes et cons
 - **Activité explicite ou déduite (`is_active`) :** le fait qu'une affiliation soit active peut être défini explicitement au moyen d'`is_active` ou déduit de la validité temporelle. Si `is_active` n'est pas défini, l'activité découle de `valid_from`/`valid_through`.
 - **Affiliation ≠ droit de vote (`authorized_to_vote`) :** le droit de vote est géré séparément de l'affiliation – typiquement `false` pour les membres suppléants (sauf lorsqu'ils sont en fonction), les personnes observatrices, le secrétariat et les invités.
 - **Rôle comme vocabulaire contrôlé avec option en texte libre (`role_type`) :** le rôle au sein du groupe (p. ex. membre, présidence, suppléance) est indiqué au moyen d'un vocabulaire contrôlé (`RoleEnum`) ; pour les rôles non couverts, la valeur `other` est utilisée, assortie d'une désignation libre.
+- **Circonscription électorale rattachée à l'affiliation et non à la personne (`electoral_district`) :** la circonscription ne décrit pas la personne, mais le mandat – une même personne peut être élue, au fil du temps ou à différents niveaux fédéraux, dans des circonscriptions différentes. `ElectoralDistrict` ne porte donc pas de validité temporelle propre, mais hérite des `valid_from`/`valid_through` de l'affiliation englobante. Pour l'identification, les ressources LINDAS des unités spatiales suisses sont prévues (voir `global_uri`).
 
 {{include:ech-0294_actors/output/docs/Membership.md}}
 
 {{include:ech-0294_actors/output/docs/RoleType.md}}
 
 {{include:ech-0294_actors/output/docs/RoleEnum.md}}
+
+{{include:ech-0294_actors/output/docs/ElectoralDistrict.md}}
