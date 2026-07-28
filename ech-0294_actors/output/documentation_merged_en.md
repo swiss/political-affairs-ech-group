@@ -1274,7 +1274,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/department](act:enum/group_type/department) |
 | office |  Government office.  |
 | | [act:enum/group_type/office](act:enum/group_type/office) |
-| committee_extraparliamentary |  Extra-parliamentary commission with a government mandate (e.g., Bank Council of the Swiss National Bank, FINMA).  |
+| committee_extraparliamentary |  Commission appointed by the government to advise the administration on an ongoing basis or to decide in its stead. What sets it apart from a parliamentary committee is not its position in the hierarchy but its composition and legal basis: its members are external experts and interest-group representatives rather than members of the council, and it rests on government organisation law rather than on parliament law (e.g., Federal Consumer Affairs Commission as an advisory body, Competition Commission as a decision-making one). Governing bodies of federal organisations, such as the Bank Council of the Swiss National Bank, are expressly not part of this category.  |
 | | [act:enum/group_type/committee_extraparliamentary](act:enum/group_type/committee_extraparliamentary) |
 | interest_group |  Interest group from civil society.  |
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |

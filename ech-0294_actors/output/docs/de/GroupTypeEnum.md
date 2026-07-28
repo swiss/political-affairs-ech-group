@@ -44,7 +44,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/department](act:enum/group_type/department) |
 | office |  Amt.  |
 | | [act:enum/group_type/office](act:enum/group_type/office) |
-| committee_extraparliamentary |  Ausserparlamentarische Kommission mit Regierungsauftrag (z.B. Bankrat der Schweizerischen Nationalbank, FINMA).  |
+| committee_extraparliamentary |  Kommission, die von der Regierung eingesetzt wird, um die Verwaltung dauernd zu beraten oder an ihrer Stelle zu entscheiden. Sie unterscheidet sich von einer parlamentarischen Kommission nicht durch ihre Stellung in der Hierarchie, sondern durch Zusammensetzung und Rechtsgrundlage: Ihre Mitglieder sind externe Fachleute und Interessenvertreterinnen und -vertreter statt Ratsmitglieder, und sie stützt sich auf das Regierungs- und Verwaltungsorganisationsrecht statt auf das Parlamentsrecht (z.B. Eidgenössische Kommission für Konsumentenfragen als beratende Verwaltungskommission, Wettbewerbskommission als entscheidende Behördenkommission). Leitungsorgane von Organisationen des Bundes wie der Bankrat der Schweizerischen Nationalbank zählen ausdrücklich nicht dazu.  |
 | | [act:enum/group_type/committee_extraparliamentary](act:enum/group_type/committee_extraparliamentary) |
 | interest_group |  Interessengruppe aus der Zivilgesellschaft.  |
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |

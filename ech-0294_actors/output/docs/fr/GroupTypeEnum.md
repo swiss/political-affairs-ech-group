@@ -44,7 +44,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/department](act:enum/group_type/department) |
 | office |  Office gouvernemental.  |
 | | [act:enum/group_type/office](act:enum/group_type/office) |
-| committee_extraparliamentary |  Commission extraparlementaire dotée d'un mandat gouvernemental (p. ex. Conseil de banque de la Banque nationale suisse, FINMA).  |
+| committee_extraparliamentary |  Commission instituée par le gouvernement pour conseiller l'administration de manière permanente ou pour décider à sa place. Ce qui la distingue d'une commission parlementaire n'est pas sa position dans la hiérarchie, mais sa composition et sa base légale : ses membres sont des spécialistes externes et des représentantes et représentants d'intérêts plutôt que des membres du conseil, et elle se fonde sur le droit de l'organisation du gouvernement et de l'administration et non sur le droit parlementaire (p. ex. la Commission fédérale de la consommation comme commission consultative, la Commission de la concurrence comme commission décisionnelle). Les organes de direction d'organisations de la Confédération, tels que le Conseil de banque de la Banque nationale suisse, n'en font expressément pas partie.  |
 | | [act:enum/group_type/committee_extraparliamentary](act:enum/group_type/committee_extraparliamentary) |
 | interest_group |  Groupe d'intérêts issu de la société civile.  |
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |
