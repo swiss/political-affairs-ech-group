@@ -3,6 +3,11 @@ import sys
 import re
 from pathlib import Path
 
+try:
+    import yaml
+except ImportError:  # pragma: no cover - yaml ships with the CI image
+    yaml = None
+
 def modify_header(content):
     """
     Modifies the header of the content to include a local id. 
@@ -92,6 +97,48 @@ def process_includes(file_link, lang=None):
 
     return content
 
+def localize_example_headings(content, path, lang):
+    """Translate the example headings into `lang`.
+
+    gen-doc derives the heading of an example from its file name, and the same
+    example files are used for every language. The titles themselves live in
+    `input/pipeline_examples_generator_config.yaml` under `example_titles`,
+    keyed by the instance's `local_id` and given per language. Here the heading
+    that gen-doc produced is swapped for the one of the target language.
+    """
+    if not lang or yaml is None:
+        return content
+
+    config_path = Path(path) / "input" / "pipeline_examples_generator_config.yaml"
+    if not config_path.exists():
+        return content
+    with open(config_path, encoding="utf-8") as f:
+        config = yaml.safe_load(f) or {}
+
+    titles = config.get("example_titles") or {}
+    source_lang = config.get("example_title_language", "en")
+
+    # Heading as written by gen-doc -> title in the target language.
+    mapping = {}
+    for entry in titles.values():
+        if not isinstance(entry, dict):
+            continue
+        written = entry.get(source_lang)
+        wanted = entry.get(lang)
+        if written and wanted and written != wanted:
+            mapping[written.replace("_", " ")] = wanted
+
+    if not mapping:
+        return content
+
+    def repl(m):
+        prefix, heading = m.group(1), m.group(2).strip()
+        # The class prefix ("Person-") is already stripped by the template.
+        return f"{prefix}{mapping.get(heading, heading)}"
+
+    return re.sub(r"(^#### [^:]+:\s*)(.+)$", repl, content, flags=re.M)
+
+
 def process_folder(path, lang=None):
     """
     Processes all markdown files in the given folder and applies the modifications.
@@ -114,6 +161,8 @@ def process_folder(path, lang=None):
 
     for file in md_files:
         content += process_includes(f"{input_dir}/{file}", lang) + "\n"
+
+    content = localize_example_headings(content, path, lang)
 
     # Write the modified content to a new file
     suffix = f"_{lang}" if lang else ""
