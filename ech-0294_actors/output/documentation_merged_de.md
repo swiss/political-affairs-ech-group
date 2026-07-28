@@ -963,7 +963,7 @@ __
 
 
 ### Beispiele
-#### Beispiel: Kantonsparlament als übergeordnete Gruppe
+#### Beispiel: Kantonsparlament als übergeordnete Gruppe von Büro und Fraktion
 
 ```yaml
 local_id: 33
@@ -975,6 +975,20 @@ group_type:
   group_type_enum: council_legislative
   label: Parlament (Legislativrat)
 spatial: https://ld.admin.ch/canton/12
+
+```
+#### Beispiel: Kantonsparlament als übergeordnete Gruppe einer Kommission
+
+```yaml
+local_id: 34
+global_uri: https://www.ar.ch/kantonsrat/
+label:
+- value: Kantonsrat Appenzell Ausserrhoden
+  language: de
+group_type:
+  group_type_enum: council_legislative
+  label: Parlament (Legislativrat)
+spatial: https://ld.admin.ch/canton/15
 
 ```
 #### Beispiel: Ratsbüro
@@ -1045,20 +1059,6 @@ group_type:
 spatial: https://ld.admin.ch/canton/12
 
 ```
-#### Beispiel: groups  de
-
-```yaml
-local_id: 34
-global_uri: https://www.ar.ch/kantonsrat/
-label:
-- value: Kantonsrat Appenzell Ausserrhoden
-  language: de
-group_type:
-  group_type_enum: council_legislative
-  label: Parlament (Legislativrat)
-spatial: https://ld.admin.ch/canton/15
-
-```
 #### Beispiel: Staatskanzlei als Stabsstelle der Exekutive
 
 ```yaml
@@ -1086,6 +1086,21 @@ label:
 group_type:
   group_type_enum: council_executive
   label: Regierung (Exekutivrat)
+spatial: https://ld.admin.ch/canton/12
+
+```
+#### Beispiel: Kantonalpartei, welche eine Fraktionsgemeinschaft mitträgt
+
+```yaml
+global_uri: https://bs.die-mitte.ch/
+label:
+- value: Die Mitte Basel-Stadt
+  language: de
+parent_groups:
+- https://www.die-mitte.ch/
+group_type:
+  group_type_enum: party
+  label: Partei
 spatial: https://ld.admin.ch/canton/12
 
 ```
@@ -1706,23 +1721,23 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 
 ### Beispiele
-#### Beispiel: interest links il burkart 008
+#### Beispiel: Eigene Gesellschaft, operativ geführt
 
 ```yaml
-global_uri: act:il_burkart_008
+global_uri: act:il_burkart_001
 person_reference:
   global_uri: http://www.wikidata.org/entity/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_name: Stiebel Eltron AG, Lupfig
-legal_form: '0106'
-committee: Beirat
-function_role: Beirat
+organization_name: Burkart Advisory GmbH, Baden
+legal_form: '0107'
+committee: Geschäftsleitung
+function_role: Geschäftsführer
 is_paid: true
 
 ```
-#### Beispiel: interest links il burkart 010
+#### Beispiel: Unbezahltes Präsidium einer politischen Allianz
 
 ```yaml
 global_uri: act:il_burkart_010
@@ -1738,7 +1753,7 @@ function_role: Präsident
 is_paid: false
 
 ```
-#### Beispiel: interest links il burkart 002
+#### Beispiel: Verwaltungsratsmandat in einer Holding
 
 ```yaml
 global_uri: act:il_burkart_002
@@ -1754,7 +1769,39 @@ function_role: Mitglied
 is_paid: true
 
 ```
-#### Beispiel: interest links il burkart 007
+#### Beispiel: Verwaltungsratsmandat in einer Immobiliengesellschaft
+
+```yaml
+global_uri: act:il_burkart_003
+person_reference:
+  global_uri: http://www.wikidata.org/entity/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: professional_activity
+organization_name: Bovida Real Estate AG, Baar
+legal_form: '0106'
+committee: Verwaltungsrat
+function_role: Mitglied
+is_paid: true
+
+```
+#### Beispiel: Mitgliedschaft in einem Branchenverband
+
+```yaml
+global_uri: act:il_burkart_009
+person_reference:
+  global_uri: http://www.wikidata.org/entity/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: SUISSEDIGITAL Verband für Kommunikationsnetze
+legal_form: 0109
+committee: Vorstand
+function_role: Mitglied
+is_paid: true
+
+```
+#### Beispiel: Stiftungsratsmandat mit UID der Organisation
 
 ```yaml
 global_uri: act:il_burkart_007
@@ -1771,55 +1818,23 @@ function_role: Vizepräsident
 is_paid: false
 
 ```
-#### Beispiel: interest links il burkart 005
+#### Beispiel: Beiratsmandat ohne Organstellung
 
 ```yaml
-global_uri: act:il_burkart_005
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
-legal_form: 0109
-committee: Zentralvorstand
-function_role: Präsident
-is_paid: true
-
-```
-#### Beispiel: interest links il burkart 001
-
-```yaml
-global_uri: act:il_burkart_001
+global_uri: act:il_burkart_008
 person_reference:
   global_uri: http://www.wikidata.org/entity/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_name: Burkart Advisory GmbH, Baden
-legal_form: '0107'
-committee: Geschäftsleitung
-function_role: Geschäftsführer
-is_paid: true
-
-```
-#### Beispiel: interest links il burkart 003
-
-```yaml
-global_uri: act:il_burkart_003
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: Bovida Real Estate AG, Baar
+organization_name: Stiebel Eltron AG, Lupfig
 legal_form: '0106'
-committee: Verwaltungsrat
-function_role: Mitglied
+committee: Beirat
+function_role: Beirat
 is_paid: true
 
 ```
-#### Beispiel: interest links il burkart 011
+#### Beispiel: Ehrenamtliche Mitwirkung im Trägerverein eines Grossprojekts
 
 ```yaml
 global_uri: act:il_burkart_011
@@ -1835,23 +1850,23 @@ function_role: Mitglied
 is_paid: false
 
 ```
-#### Beispiel: interest links il burkart 004
+#### Beispiel: Präsidium eines Wirtschaftsverbands
 
 ```yaml
-global_uri: act:il_burkart_004
+global_uri: act:il_burkart_005
 person_reference:
   global_uri: http://www.wikidata.org/entity/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: ELCA Group SA, Lausanne
-legal_form: '0106'
-committee: Verwaltungsrat
-function_role: Mitglied
+interest_type: association
+organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+legal_form: 0109
+committee: Zentralvorstand
+function_role: Präsident
 is_paid: true
 
 ```
-#### Beispiel: interest links il burkart 006
+#### Beispiel: Präsidium einer Bundespartei
 
 ```yaml
 global_uri: act:il_burkart_006
@@ -1867,18 +1882,18 @@ function_role: Präsident
 is_paid: true
 
 ```
-#### Beispiel: interest links il burkart 009
+#### Beispiel: Verwaltungsratsmandat in einem Technologieunternehmen
 
 ```yaml
-global_uri: act:il_burkart_009
+global_uri: act:il_burkart_004
 person_reference:
   global_uri: http://www.wikidata.org/entity/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: SUISSEDIGITAL Verband für Kommunikationsnetze
-legal_form: 0109
-committee: Vorstand
+interest_type: professional_activity
+organization_name: ELCA Group SA, Lausanne
+legal_form: '0106'
+committee: Verwaltungsrat
 function_role: Mitglied
 is_paid: true
 
@@ -2230,7 +2245,7 @@ address_type: businessAddress
 postal_locality: Basel-Stadt
 
 ```
-#### Beispiel: groups  it 1
+#### Beispiel: groups Konsumenteninformation und -schutz 1
 
 ```yaml
 address_type: businessAddress

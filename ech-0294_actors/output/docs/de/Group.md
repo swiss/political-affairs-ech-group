@@ -67,7 +67,7 @@ __
 
 
 ### Beispiele
-#### Beispiel: Cantonal parliament as a superordinate group
+#### Beispiel: Cantonal parliament as parent group of bureau and parliamentary group
 
 ```yaml
 local_id: 33
@@ -79,6 +79,20 @@ group_type:
   group_type_enum: council_legislative
   label: Parlament (Legislativrat)
 spatial: https://ld.admin.ch/canton/12
+
+```
+#### Beispiel: Cantonal parliament as parent group of a committee
+
+```yaml
+local_id: 34
+global_uri: https://www.ar.ch/kantonsrat/
+label:
+- value: Kantonsrat Appenzell Ausserrhoden
+  language: de
+group_type:
+  group_type_enum: council_legislative
+  label: Parlament (Legislativrat)
+spatial: https://ld.admin.ch/canton/15
 
 ```
 #### Beispiel: Council bureau
@@ -149,20 +163,6 @@ group_type:
 spatial: https://ld.admin.ch/canton/12
 
 ```
-#### Beispiel: groups  de
-
-```yaml
-local_id: 34
-global_uri: https://www.ar.ch/kantonsrat/
-label:
-- value: Kantonsrat Appenzell Ausserrhoden
-  language: de
-group_type:
-  group_type_enum: council_legislative
-  label: Parlament (Legislativrat)
-spatial: https://ld.admin.ch/canton/15
-
-```
 #### Beispiel: State chancellery as the staff unit of the executive
 
 ```yaml
@@ -190,6 +190,21 @@ label:
 group_type:
   group_type_enum: council_executive
   label: Regierung (Exekutivrat)
+spatial: https://ld.admin.ch/canton/12
+
+```
+#### Beispiel: Cantonal party co-carrying a joint parliamentary group
+
+```yaml
+global_uri: https://bs.die-mitte.ch/
+label:
+- value: Die Mitte Basel-Stadt
+  language: de
+parent_groups:
+- https://www.die-mitte.ch/
+group_type:
+  group_type_enum: party
+  label: Partei
 spatial: https://ld.admin.ch/canton/12
 
 ```

@@ -76,23 +76,23 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 
 ### Beispiele
-#### Beispiel: interest links il burkart 008
+#### Beispiel: Own company run operationally
 
 ```yaml
-global_uri: act:il_burkart_008
+global_uri: act:il_burkart_001
 person_reference:
   global_uri: http://www.wikidata.org/entity/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_name: Stiebel Eltron AG, Lupfig
-legal_form: '0106'
-committee: Beirat
-function_role: Beirat
+organization_name: Burkart Advisory GmbH, Baden
+legal_form: '0107'
+committee: Geschäftsleitung
+function_role: Geschäftsführer
 is_paid: true
 
 ```
-#### Beispiel: interest links il burkart 010
+#### Beispiel: Unpaid presidency of a political alliance
 
 ```yaml
 global_uri: act:il_burkart_010
@@ -108,7 +108,7 @@ function_role: Präsident
 is_paid: false
 
 ```
-#### Beispiel: interest links il burkart 002
+#### Beispiel: Board mandate in a holding company
 
 ```yaml
 global_uri: act:il_burkart_002
@@ -124,7 +124,39 @@ function_role: Mitglied
 is_paid: true
 
 ```
-#### Beispiel: interest links il burkart 007
+#### Beispiel: Board mandate in a real estate company
+
+```yaml
+global_uri: act:il_burkart_003
+person_reference:
+  global_uri: http://www.wikidata.org/entity/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: professional_activity
+organization_name: Bovida Real Estate AG, Baar
+legal_form: '0106'
+committee: Verwaltungsrat
+function_role: Mitglied
+is_paid: true
+
+```
+#### Beispiel: Membership in a sector association
+
+```yaml
+global_uri: act:il_burkart_009
+person_reference:
+  global_uri: http://www.wikidata.org/entity/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: SUISSEDIGITAL Verband für Kommunikationsnetze
+legal_form: 0109
+committee: Vorstand
+function_role: Mitglied
+is_paid: true
+
+```
+#### Beispiel: Foundation board mandate with the organisations UID
 
 ```yaml
 global_uri: act:il_burkart_007
@@ -141,55 +173,23 @@ function_role: Vizepräsident
 is_paid: false
 
 ```
-#### Beispiel: interest links il burkart 005
+#### Beispiel: Advisory board mandate without a governing function
 
 ```yaml
-global_uri: act:il_burkart_005
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
-legal_form: 0109
-committee: Zentralvorstand
-function_role: Präsident
-is_paid: true
-
-```
-#### Beispiel: interest links il burkart 001
-
-```yaml
-global_uri: act:il_burkart_001
+global_uri: act:il_burkart_008
 person_reference:
   global_uri: http://www.wikidata.org/entity/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
-organization_name: Burkart Advisory GmbH, Baden
-legal_form: '0107'
-committee: Geschäftsleitung
-function_role: Geschäftsführer
-is_paid: true
-
-```
-#### Beispiel: interest links il burkart 003
-
-```yaml
-global_uri: act:il_burkart_003
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: Bovida Real Estate AG, Baar
+organization_name: Stiebel Eltron AG, Lupfig
 legal_form: '0106'
-committee: Verwaltungsrat
-function_role: Mitglied
+committee: Beirat
+function_role: Beirat
 is_paid: true
 
 ```
-#### Beispiel: interest links il burkart 011
+#### Beispiel: Voluntary involvement in the association carrying a major project
 
 ```yaml
 global_uri: act:il_burkart_011
@@ -205,23 +205,23 @@ function_role: Mitglied
 is_paid: false
 
 ```
-#### Beispiel: interest links il burkart 004
+#### Beispiel: Presidency of a trade association
 
 ```yaml
-global_uri: act:il_burkart_004
+global_uri: act:il_burkart_005
 person_reference:
   global_uri: http://www.wikidata.org/entity/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: ELCA Group SA, Lausanne
-legal_form: '0106'
-committee: Verwaltungsrat
-function_role: Mitglied
+interest_type: association
+organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+legal_form: 0109
+committee: Zentralvorstand
+function_role: Präsident
 is_paid: true
 
 ```
-#### Beispiel: interest links il burkart 006
+#### Beispiel: Presidency of a national party
 
 ```yaml
 global_uri: act:il_burkart_006
@@ -237,18 +237,18 @@ function_role: Präsident
 is_paid: true
 
 ```
-#### Beispiel: interest links il burkart 009
+#### Beispiel: Board mandate in a technology company
 
 ```yaml
-global_uri: act:il_burkart_009
+global_uri: act:il_burkart_004
 person_reference:
   global_uri: http://www.wikidata.org/entity/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: SUISSEDIGITAL Verband für Kommunikationsnetze
-legal_form: 0109
-committee: Vorstand
+interest_type: professional_activity
+organization_name: ELCA Group SA, Lausanne
+legal_form: '0106'
+committee: Verwaltungsrat
 function_role: Mitglied
 is_paid: true
 

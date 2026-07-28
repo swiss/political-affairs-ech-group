@@ -1,0 +1,10 @@
+global_uri: https://bs.die-mitte.ch/
+label:
+- value: Die Mitte Basel-Stadt
+  language: de
+parent_groups:
+- https://www.die-mitte.ch/
+group_type:
+  group_type_enum: party
+  label: Partei
+spatial: https://ld.admin.ch/canton/12

@@ -70,7 +70,7 @@ address_type: businessAddress
 postal_locality: Basel-Stadt
 
 ```
-#### Beispiel: groups  it 1
+#### Beispiel: groups Konsumenteninformation und -schutz 1
 
 ```yaml
 address_type: businessAddress
