@@ -84,6 +84,14 @@ example_titles:
     de: Kantonsparlament als übergeordnete Gruppe
     fr: Parlement cantonal comme groupe supérieur
     en: Cantonal parliament as a superordinate group
+  "1300":
+    de: Exekutivrat eines Kantons
+    fr: "Conseil exécutif d'un canton"
+    en: Executive council of a canton
+  "7172":
+    de: Staatskanzlei als Stabsstelle der Exekutive
+    fr: "Chancellerie d'État comme état-major de l'exécutif"
+    en: State chancellery as the staff unit of the executive
   "1266":
     de: Fraktion mit Verweis auf Parlament und tragende Parteien
     fr: Groupe parlementaire renvoyant au parlement et aux partis porteurs

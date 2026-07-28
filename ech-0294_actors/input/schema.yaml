@@ -1809,12 +1809,12 @@ enums:
       council_secretariat:
         meaning: act:enum/group_type/council_secretariat
         description: |
-          Administrative unit serving a council, whatever it is called locally (parliamentary services, council secretariat, city or municipal chancellery). Used for the legislative as well as the executive council.
+          Administrative unit serving a council, whatever it is called locally (parliamentary services, council secretariat, state, cantonal or municipal chancellery). Used for the legislative as well as the executive council: the state chancellery is the staff unit of the executive council, the parliamentary services are that of the legislative council.
         annotations:
           description_de: |
-            Verwaltungseinheit, die einen Rat bedient, unabhängig von der örtlichen Bezeichnung (Parlamentsdienste, Ratssekretariat, Stadt- oder Gemeindekanzlei). Wird für den Legislativ- wie für den Exekutivrat verwendet.
+            Verwaltungseinheit, die einen Rat bedient, unabhängig von der örtlichen Bezeichnung (Parlamentsdienste, Ratssekretariat, Staats-, Kantons-, Standes-, Stadt- oder Gemeindekanzlei). Wird für den Legislativ- wie für den Exekutivrat verwendet: Die Staatskanzlei ist die Stabsstelle des Exekutivrates, die Parlamentsdienste sind jene des Legislativrates.
           description_fr: |
-            Unité administrative au service d'un conseil, quelle que soit sa désignation locale (services du parlement, secrétariat du conseil, chancellerie communale ou municipale). S'emploie aussi bien pour le conseil législatif que pour le conseil exécutif.
+            Unité administrative au service d'un conseil, quelle que soit sa désignation locale (services du parlement, secrétariat du conseil, chancellerie d'État, cantonale ou communale). S'emploie aussi bien pour le conseil législatif que pour le conseil exécutif : la chancellerie d'État est l'état-major du conseil exécutif, les services du parlement celui du conseil législatif.
       court:
         meaning: act:enum/group_type/court
         description: |
