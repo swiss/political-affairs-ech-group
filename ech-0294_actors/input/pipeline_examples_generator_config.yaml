@@ -45,8 +45,8 @@ max_examples_per_slot: 3
 
 # Sprechende Titel für einzelne Beispiele. Ohne Eintrag heisst ein Beispiel nach
 # Datei und Label (z. B. "Person-swiss_politicians_Beat_Jans"); mit Eintrag nach
-# dem Punkt, den es zeigt. Schlüssel ist die `local_id` der Instanz, der Titel
-# wird je Dokumentsprache gesetzt.
+# dem Punkt, den es zeigt. Schlüssel ist die `local_id` der Instanz oder, wo
+# diese fehlt, ihre `global_uri`. Der Titel wird je Dokumentsprache gesetzt.
 example_titles:
   "4032":
     de: Vollständig erfasste Person
@@ -81,9 +81,9 @@ example_titles:
     fr: Parlement communal avec référence spatiale
     en: Municipal parliament with spatial reference
   "33":
-    de: Kantonsparlament als übergeordnete Gruppe
-    fr: Parlement cantonal comme groupe supérieur
-    en: Cantonal parliament as a superordinate group
+    de: Kantonsparlament als übergeordnete Gruppe von Büro und Fraktion
+    fr: "Parlement cantonal, groupe supérieur du bureau et d'un groupe parlementaire"
+    en: Cantonal parliament as parent group of bureau and parliamentary group
   "https://www.weko.admin.ch/":
     de: Ausserparlamentarische Kommission mit Entscheidbefugnis
     fr: Commission extraparlementaire dotée du pouvoir de décision
@@ -96,6 +96,14 @@ example_titles:
     de: Staatskanzlei als Stabsstelle der Exekutive
     fr: "Chancellerie d'État comme état-major de l'exécutif"
     en: State chancellery as the staff unit of the executive
+  "34":
+    de: Kantonsparlament als übergeordnete Gruppe einer Kommission
+    fr: "Parlement cantonal comme groupe supérieur d'une commission"
+    en: Cantonal parliament as parent group of a committee
+  "https://bs.die-mitte.ch/":
+    de: Kantonalpartei, welche eine Fraktionsgemeinschaft mitträgt
+    fr: Parti cantonal co-portant un groupe parlementaire commun
+    en: Cantonal party co-carrying a joint parliamentary group
   "https://www.evp-bs.ch/":
     de: Kantonalpartei mit Verweis auf die Bundespartei
     fr: Parti cantonal renvoyant au parti national
@@ -120,3 +128,49 @@ example_titles:
     de: Zweisprachige Delegation in ein interkantonales Gremium
     fr: "Délégation bilingue auprès d'un organe intercantonal"
     en: Bilingual delegation to an intercantonal body
+  # Interessenbindungen — sie zeigen die Bandbreite von Mandatstypen, von der
+  # eigenen operativen Gesellschaft bis zum ehrenamtlichen Vereinsvorstand.
+  "act:il_burkart_001":
+    de: Eigene Gesellschaft, operativ geführt
+    fr: "Société propre, dirigée à titre opérationnel"
+    en: Own company, run operationally
+  "act:il_burkart_002":
+    de: Verwaltungsratsmandat in einer Holding
+    fr: "Mandat d'administrateur dans une holding"
+    en: Board mandate in a holding company
+  "act:il_burkart_003":
+    de: Verwaltungsratsmandat in einer Immobiliengesellschaft
+    fr: "Mandat d'administrateur dans une société immobilière"
+    en: Board mandate in a real estate company
+  "act:il_burkart_004":
+    de: Verwaltungsratsmandat in einem Technologieunternehmen
+    fr: "Mandat d'administrateur dans une entreprise technologique"
+    en: Board mandate in a technology company
+  "act:il_burkart_005":
+    de: Präsidium eines Wirtschaftsverbands
+    fr: "Présidence d'une association économique"
+    en: Presidency of a trade association
+  "act:il_burkart_006":
+    de: Präsidium einer Bundespartei
+    fr: "Présidence d'un parti national"
+    en: Presidency of a national party
+  "act:il_burkart_007":
+    de: Stiftungsratsmandat mit UID der Organisation
+    fr: "Mandat au conseil de fondation avec IDE de l'organisation"
+    en: Foundation board mandate with the organisation's UID
+  "act:il_burkart_008":
+    de: Beiratsmandat ohne Organstellung
+    fr: "Mandat au comité consultatif sans fonction d'organe"
+    en: Advisory board mandate without a governing function
+  "act:il_burkart_009":
+    de: Mitgliedschaft in einem Branchenverband
+    fr: "Affiliation à une association de branche"
+    en: Membership in a sector association
+  "act:il_burkart_010":
+    de: Unbezahltes Präsidium einer politischen Allianz
+    fr: "Présidence non rémunérée d'une alliance politique"
+    en: Unpaid presidency of a political alliance
+  "act:il_burkart_011":
+    de: Ehrenamtliche Mitwirkung im Trägerverein eines Grossprojekts
+    fr: "Participation bénévole à l'association porteuse d'un grand projet"
+    en: Voluntary involvement in the association carrying a major project

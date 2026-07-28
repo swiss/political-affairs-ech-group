@@ -91,10 +91,26 @@ def title_for_instance(obj, titles: dict, lang: str) -> str:
     return slugify(entry.get(lang) or entry.get("de") or next(iter(entry.values()), ""))
 
 
+def plain_text(value):
+    """Reduce a slot value to a single string usable in a file name.
+
+    A multilingual slot holds a list of {value, language} entries; without this
+    the whole structure would be stringified and every instance would end up
+    with the same file name, silently overwriting one another.
+    """
+    if isinstance(value, list):
+        value = value[0] if value else None
+    if isinstance(value, dict):
+        value = value.get("value")
+    return str(value) if value else ""
+
+
 def label_for_instance(obj, index: int) -> str:
     for key in ("label", "global_uri", "name", "id"):
         if key in obj and obj[key]:
-            val = str(obj[key])
+            val = plain_text(obj[key])
+            if not val:
+                continue
             val = val.split("/")[-1].split(":")[-1]
             return slugify(val)
     return str(index + 1)
