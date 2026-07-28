@@ -15,6 +15,10 @@ _Zusammengehörende Werte tragen ein Präfix. Die Familie council_ unterscheidet
 
 __
 
+_Die drei Ratsorgane grenzen sich so ab: council_presidency führt die Sitzungen und vertritt den Rat; council_bureau leitet den Geschäftsgang und ist um die Fraktionsvertretung erweitert; council_secretariat ist die Verwaltungseinheit, besetzt mit Angestellten statt mit gewählten Mitgliedern._
+
+__
+
 _Die Rechtsform gehört nicht hierher, sondern in legal_form._
 
 __

@@ -921,7 +921,7 @@ __
 | organization_uid | 0..1 <br/> [String](#String) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).  |
 | legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm  |
 | landing_page | * <br/> [MultilingualUri](#MultilingualUri) | Website providing further information. Where the site is published under a separate address per language, one entry per language is recorded.  |
-| parent_groups | * <br/> [Uriorcurie](#Uriorcurie) | Link to parent groups. For example, the parent party for cantonal parties, or to describe the hierarchy in the executive. Also used to link sub-commissions to commissions, or factions to both their parliament and their party. (parentGroup is typically used within the same group_type, but cross-type links are permitted, e.g., faction → parliament and faction → party.)  |
+| parent_groups | * <br/> [Group](#Group) | Reference to the parent groups, stated by their identifier (global_uri). For example, the parent party for cantonal parties, or to describe the hierarchy in the executive. Also used to link sub-commissions to commissions, or factions to both their parliament and their party. (parentGroup is typically used within the same group_type, but cross-type links are permitted, e.g., faction → parliament and faction → party.)  |
 | spatial | 0..1 <br/> [String](#String) | Spatial reference (fos-municipality number, fos-canton number, or country). Formats: municipality: ld.admin.ch/municipality/1234, canton: ld.admin.ch/canton/23, country: ld.admin.ch/country/CHE.  |
 | contacts | * <br/> [Contact](#Contact) | Contact information (email, website, social media). Guideline: email is quasi-mandatory and should always be provided where available.  |
 | addresses | * <br/> [Address](#Address) | Addresses with type (private, business, local).  |
@@ -947,6 +947,7 @@ __
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Container](#Container) | [groups](#groups) | range | [Group](#Group) |
+| [Group](#Group) | [parent_groups](#parent_groups) | range | [Group](#Group) |
 
 
 
@@ -1304,6 +1305,10 @@ _The value states the political function; the group's label keeps the designatio
 __
 
 _Values that belong together share a prefix. The council_ family does not distinguish by council: a state chancellery and parliamentary services are both a council_secretariat, and which council a body belongs to is stated by its parent group. The same applies to the committee_ family, with committee as the base case._
+
+__
+
+_The three council bodies differ as follows: council_presidency chairs the sittings and represents the council; council_bureau manages its business and additionally includes the parliamentary group representation; council_secretariat is the administrative unit, staffed by employees rather than by elected members._
 
 __
 

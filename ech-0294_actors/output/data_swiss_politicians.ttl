@@ -18,11 +18,11 @@ act:swiss_politicians_example a act:Container ;
             mcm:value "Brunel" ;
             act:nameType "PersonOriginalName" ],
         [ a act:Name ;
-            mcm:value "Cristina" ;
-            act:nameType "PersonFirstName" ],
-        [ a act:Name ;
             mcm:value "Bozzi-Brunel" ;
-            act:nameType "PersonOfficialName" ] .
+            act:nameType "PersonOfficialName" ],
+        [ a act:Name ;
+            mcm:value "Cristina" ;
+            act:nameType "PersonFirstName" ] .
 
 <https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9> a act:Person ;
     mcm:label "Sofia Fisch" ;
@@ -32,11 +32,11 @@ act:swiss_politicians_example a act:Container ;
             mcm:label "divers" ;
             act:genderCode "non_binary" ] ;
     act:name [ a act:Name ;
-            mcm:value "Fisch" ;
-            act:nameType "PersonOfficialName" ],
-        [ a act:Name ;
             mcm:value "Sofia" ;
-            act:nameType "PersonFirstName" ] ;
+            act:nameType "PersonFirstName" ],
+        [ a act:Name ;
+            mcm:value "Fisch" ;
+            act:nameType "PersonOfficialName" ] ;
     act:occupation [ a act:Occupation ;
             mcm:isCurrent true ;
             mcm:label "Jurist*in" ] ;
@@ -91,11 +91,11 @@ act:swiss_politicians_example a act:Container ;
     mcm:localId "6370" ;
     act:birthYear 1965 ;
     act:name [ a act:Name ;
-            mcm:value "Alois" ;
-            act:nameType "PersonFirstName" ],
-        [ a act:Name ;
             mcm:value "Arnold" ;
-            act:nameType "PersonOfficialName" ] .
+            act:nameType "PersonOfficialName" ],
+        [ a act:Name ;
+            mcm:value "Alois" ;
+            act:nameType "PersonFirstName" ] .
 
 <https://www.ur.ch/behoerdenmitglieder/6447> a act:Person ;
     mcm:label "Alois Arnold (1981)" ;
@@ -112,13 +112,13 @@ act:swiss_politicians_example a act:Container ;
     mcm:label "Gerri Beretta-Piccoli" ;
     mcm:localId "1269" ;
     act:name [ a act:Name ;
-            mcm:value "Beretta-Piccoli" ;
-            act:nameType "PersonOfficialName" ],
-        [ a act:Name ;
             mcm:value "Gerri" ;
             act:nameType "PersonCallFirstName" ],
         [ a act:Name ;
             mcm:value "Fausto" ;
-            act:nameType "PersonFirstName" ] .
+            act:nameType "PersonFirstName" ],
+        [ a act:Name ;
+            mcm:value "Beretta-Piccoli" ;
+            act:nameType "PersonOfficialName" ] .
 
 

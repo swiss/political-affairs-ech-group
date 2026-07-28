@@ -15,6 +15,10 @@ _Les valeurs qui vont ensemble partagent un préfixe. La famille council_ ne dis
 
 __
 
+_Les trois organes du conseil se distinguent ainsi : council_presidency préside les séances et représente le conseil ; council_bureau dirige la marche des affaires et comprend en outre la représentation des groupes ; council_secretariat est l'unité administrative, composée d'employés et non de membres élus._
+
+__
+
 _La forme juridique ne relève pas d'ici, mais de legal_form._
 
 __

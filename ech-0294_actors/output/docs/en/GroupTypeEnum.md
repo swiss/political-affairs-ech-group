@@ -15,6 +15,10 @@ _Values that belong together share a prefix. The council_ family does not distin
 
 __
 
+_The three council bodies differ as follows: council_presidency chairs the sittings and represents the council; council_bureau manages its business and additionally includes the parliamentary group representation; council_secretariat is the administrative unit, staffed by employees rather than by elected members._
+
+__
+
 _Legal form does not belong here but in legal_form._
 
 __

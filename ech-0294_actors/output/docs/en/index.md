@@ -108,7 +108,7 @@ Name: actors-schema
 | [organization_address](organization_address.md) | Address of the organization |
 | [organization_name](organization_name.md) | Name of the organization or enterprise |
 | [organization_uid](organization_uid.md) | UID of the organization (eCH-0097 format: CHE-XXX |
-| [parent_groups](parent_groups.md) | Link to parent groups |
+| [parent_groups](parent_groups.md) | Reference to the parent groups, stated by their identifier (global_uri) |
 | [party_color](party_color.md) | Party color as hexadecimal value (optional for parties, e |
 | [person_reference](person_reference.md) | Reference to a person with snapshot data at time of linking |
 | [persons](persons.md) | Collection of persons |

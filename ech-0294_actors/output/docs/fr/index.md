@@ -108,7 +108,7 @@ Name: actors-schema
 | [organization_address](organization_address.md) | Adresse de l'organisation |
 | [organization_name](organization_name.md) | Nom de l'organisation ou de l'entreprise |
 | [organization_uid](organization_uid.md) | IDE de l'organisation (format eCH-0097 : CHE-XXX |
-| [parent_groups](parent_groups.md) | Lien vers les groupes parents |
+| [parent_groups](parent_groups.md) | Référence aux groupes supérieurs, indiquée au moyen de leur identifiant (glob... |
 | [party_color](party_color.md) | Couleur du parti sous forme de valeur hexadécimale (facultatif pour les parti... |
 | [person_reference](person_reference.md) | Référence à une personne avec des données instantanées au moment de la mise e... |
 | [persons](persons.md) | Collection de personnes |
