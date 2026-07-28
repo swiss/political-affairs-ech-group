@@ -89,9 +89,9 @@ example_titles:
     fr: Groupe parlementaire renvoyant au parlement et aux partis porteurs
     en: Parliamentary group referencing its parliament and supporting parties
   "https://www.frc.ch/":
-    de: Verein mit UID aus dem Handelsregister
-    fr: Association avec IDE du registre du commerce
-    en: Association with a UID from the commercial register
+    de: Verein mit UID und Rechtsform aus dem Handelsregister
+    fr: Association avec IDE et forme juridique du registre du commerce
+    en: Association with UID and legal form from the commercial register
   "3":
     de: Kommission mit gebräuchlicher Abkürzung
     fr: Commission avec abréviation usuelle

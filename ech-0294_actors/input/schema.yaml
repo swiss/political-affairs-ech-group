@@ -108,6 +108,7 @@ classes:
       - abbreviation
       - description
       - organization_uid
+      - legal_form
       - landing_page
       - parent_groups
       - spatial
@@ -1733,24 +1734,24 @@ enums:
             Parlamentsfraktion.
           description_fr: |
             Groupe parlementaire.
-      parliamentary_bureau:
-        meaning: act:enum/group_type/parliamentary_bureau
+      council_bureau:
+        meaning: act:enum/group_type/council_bureau
         description: |
-          Parliamentary bureau.
+          Body managing the business of a council, whatever it is called locally (bureau, council management, executive board). Used for the legislative as well as the executive council; the local designation is recorded in the label.
         annotations:
           description_de: |
-            Parlamentsbüro.
+            Organ, das den Geschäftsgang eines Rates leitet, unabhängig von der örtlichen Bezeichnung (Büro, Ratsleitung, Geschäftsleitung). Wird für den Legislativ- wie für den Exekutivrat verwendet; die örtliche Benennung wird im Label festgehalten.
           description_fr: |
-            Bureau du parlement.
-      presidency:
-        meaning: act:enum/group_type/presidency
+            Organe dirigeant la marche des affaires d'un conseil, quelle que soit sa désignation locale (bureau, direction du conseil, comité de direction). S'emploie aussi bien pour le conseil législatif que pour le conseil exécutif ; la désignation locale est consignée dans le libellé.
+      council_presidency:
+        meaning: act:enum/group_type/council_presidency
         description: |
-          Presidency of parliament.
+          Presidency of a council, for the legislative as well as the executive council.
         annotations:
           description_de: |
-            Präsidium des Parlaments.
+            Präsidium eines Rates, für den Legislativ- wie für den Exekutivrat.
           description_fr: |
-            Présidence du parlement.
+            Présidence d'un conseil, pour le conseil législatif comme pour le conseil exécutif.
       council_executive:
         meaning: act:enum/group_type/council_executive
         description: |
@@ -1805,15 +1806,15 @@ enums:
             Kontroll- oder Aufsichtsorgan (z.B. Eidgenössische Finanzkontrolle EFK, Aufsichtsbehörde AB-BA).
           description_fr: |
             Organe de contrôle ou de surveillance (p. ex. Contrôle fédéral des finances CDF, autorité de surveillance AS-MPC).
-      parliamentary_services:
-        meaning: act:enum/group_type/parliamentary_services
+      council_secretariat:
+        meaning: act:enum/group_type/council_secretariat
         description: |
-          Parliamentary services.
+          Administrative unit serving a council, whatever it is called locally (parliamentary services, council secretariat, city or municipal chancellery). Used for the legislative as well as the executive council.
         annotations:
           description_de: |
-            Parlamentsdienste.
+            Verwaltungseinheit, die einen Rat bedient, unabhängig von der örtlichen Bezeichnung (Parlamentsdienste, Ratssekretariat, Stadt- oder Gemeindekanzlei). Wird für den Legislativ- wie für den Exekutivrat verwendet.
           description_fr: |
-            Services du parlement.
+            Unité administrative au service d'un conseil, quelle que soit sa désignation locale (services du parlement, secrétariat du conseil, chancellerie communale ou municipale). S'emploie aussi bien pour le conseil législatif que pour le conseil exécutif.
       court:
         meaning: act:enum/group_type/court
         description: |
