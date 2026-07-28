@@ -3,6 +3,8 @@ global_uri: https://grosserrat.bs.ch/gremien/praesidium-und-buero
 label:
 - value: Büro des Grossen Rates
   language: de
+parent_groups:
+- https://www.grosserrat.bs.ch/
 group_type:
   group_type_enum: parliamentary_bureau
   label: Ratsbüro

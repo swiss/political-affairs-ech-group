@@ -27,6 +27,7 @@ URI: [act:organizationUid](https://ld.ech.ch/schema/0294/actors/organizationUid)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
+| [Group](Group.md) | Eine politische Gruppe, Organisation oder Körperschaft (z |  no  |
 | [InterestLink](InterestLink.md) | Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person... |  no  |
 | [Occupation](Occupation.md) | Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Code... |  no  |
 
@@ -42,7 +43,7 @@ URI: [act:organizationUid](https://ld.ech.ch/schema/0294/actors/organizationUid)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [String](String.md) |
-| Domäne von | [InterestLink](InterestLink.md), [Occupation](Occupation.md) |
+| Domäne von | [Group](Group.md), [InterestLink](InterestLink.md), [Occupation](Occupation.md) |
 | Slot-URI | [act:organizationUid](https://ld.ech.ch/schema/0294/actors/organizationUid) |
 
 ### Kardinalität und Anforderungen
@@ -63,6 +64,14 @@ URI: [act:organizationUid](https://ld.ech.ch/schema/0294/actors/organizationUid)
 
 
 
+
+
+## Beispiele
+
+| Wert |
+| --- |
+| CHE-106.063.525 |
+| CHE-109.810.537 |
 
 
 
@@ -90,10 +99,14 @@ description: 'UID der Organisation (Format eCH-0097: CHE-XXX.XXX.XXX) aus dem ei
   UID-Register (uid.admin.ch).
 
   '
+examples:
+- value: CHE-106.063.525
+- value: CHE-109.810.537
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:organizationUid
 domain_of:
+- Group
 - InterestLink
 - Occupation
 range: string

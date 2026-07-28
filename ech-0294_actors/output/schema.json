@@ -439,6 +439,14 @@
                         "null"
                     ]
                 },
+                "organization_uid": {
+                    "description": "UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).\n",
+                    "pattern": "^CHE-\\d{3}\\.\\d{3}\\.\\d{3}$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "parent_groups": {
                     "description": "Link to parent groups. For example, the parent party for cantonal parties, or to describe the hierarchy in the executive. Also used to link sub-commissions to commissions, or factions to both their parliament and their party. (parentGroup is typically used within the same group_type, but cross-type links are permitted, e.g., faction \u2192 parliament and faction \u2192 party.)\n",
                     "items": {

@@ -1,0 +1,12 @@
+global_uri: https://www.frc.ch/
+organization_uid: CHE-106.063.525
+label:
+- value: Fédération romande des consommateurs
+  language: fr
+abbreviation:
+- value: FRC
+  language: fr
+group_type:
+  group_type_enum: association
+  label: Verein
+spatial: https://ld.admin.ch/canton/22

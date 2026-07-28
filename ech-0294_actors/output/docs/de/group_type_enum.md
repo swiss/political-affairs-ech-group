@@ -61,9 +61,9 @@ URI: [act:groupTypeEnum](https://ld.ech.ch/schema/0294/actors/groupTypeEnum)
 
 | Wert |
 | --- |
+| association |
 | committee_standing |
 | council_legislative |
-| delegation |
 
 
 
@@ -89,9 +89,9 @@ description: 'Link zum kontrollierten Vokabular für Gruppentypen.
 
   '
 examples:
+- value: association
 - value: committee_standing
 - value: council_legislative
-- value: delegation
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:groupTypeEnum

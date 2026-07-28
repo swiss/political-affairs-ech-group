@@ -1,0 +1,13 @@
+local_id: 1266
+global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp
+label:
+- value: Die Mitte / Evangelische Volkspartei
+  language: de
+parent_groups:
+- https://www.grosserrat.bs.ch/
+- https://bs.die-mitte.ch/
+- https://www.evp-bs.ch/
+group_type:
+  group_type_enum: parliamentary_group
+  label: Fraktion
+spatial: https://ld.admin.ch/canton/12

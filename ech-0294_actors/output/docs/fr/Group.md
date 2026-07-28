@@ -22,6 +22,7 @@ __
 | label | 1..* <br/> [MultilingualValue](MultilingualValue.md) | Désignation du groupe avec la langue dans laquelle elle est publiée. Lorsqu'un groupe porte officiellement un nom dans plusieurs langues, une entrée est saisie par langue.  |
 | abbreviation | * <br/> [MultilingualValue](MultilingualValue.md) | Abréviation (peut être multilingue).  |
 | description | * <br/> [MultilingualValue](MultilingualValue.md) | Description de l'entité.  |
+| organization_uid | 0..1 <br/> [String](String.md) | IDE de l'organisation (format eCH-0097 : CHE-XXX.XXX.XXX) issu du registre fédéral IDE (uid.admin.ch).  |
 | landing_page | * <br/> [MultilingualUri](MultilingualUri.md) | Site web fournissant de plus amples informations. Lorsque le site est publié à une adresse propre par langue, une entrée est saisie par langue.  |
 | parent_groups | * <br/> [Uriorcurie](Uriorcurie.md) | Lien vers les groupes parents. Par exemple, le parti faîtier pour les partis cantonaux, ou pour décrire la hiérarchie au sein de l'exécutif. Utilisé également pour rattacher des sous-commissions à des commissions, ou des groupes parlementaires à la fois à leur parlement et à leur parti. (parentGroup est généralement utilisé au sein d'un même group_type, mais les liens intertypes sont autorisés, p. ex. groupe parlementaire → parlement et groupe parlementaire → parti.)  |
 | spatial | 0..1 <br/> [String](String.md) | Référence spatiale (numéro OFS de commune, numéro OFS de canton ou pays). Formats : commune : ld.admin.ch/municipality/1234, canton : ld.admin.ch/canton/23, pays : ld.admin.ch/country/CHE.  |
@@ -64,21 +65,35 @@ __
 
 
 ### Exemples
-#### Exemple : Parliamentary group of a cantonal parliament
+#### Exemple : Cantonal parliament as a superordinate group
 
 ```yaml
-local_id: 20
-global_uri: https://api.openparldata.ch/v1/groups/20
+local_id: 33
+global_uri: https://www.grosserrat.bs.ch/
 label:
-- value: Evangelische Volkspartei
-  language: de
-landing_page:
-- value: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen
+- value: Grosser Rat Basel-Stadt
   language: de
 group_type:
-  group_type_enum: parliamentary_group
-  label: Fraktion
+  group_type_enum: council_legislative
+  label: Parlament (Legislativrat)
 spatial: https://ld.admin.ch/canton/12
+
+```
+#### Exemple : Association with a UID from the commercial register
+
+```yaml
+global_uri: https://www.frc.ch/
+organization_uid: CHE-106.063.525
+label:
+- value: Fédération romande des consommateurs
+  language: fr
+abbreviation:
+- value: FRC
+  language: fr
+group_type:
+  group_type_enum: association
+  label: Verein
+spatial: https://ld.admin.ch/canton/22
 
 ```
 #### Exemple : Council bureau
@@ -89,6 +104,8 @@ global_uri: https://grosserrat.bs.ch/gremien/praesidium-und-buero
 label:
 - value: Büro des Grossen Rates
   language: de
+parent_groups:
+- https://www.grosserrat.bs.ch/
 group_type:
   group_type_enum: parliamentary_bureau
   label: Ratsbüro
@@ -127,6 +144,24 @@ group_type:
   label: Delegation
 spatial: https://ld.admin.ch/canton/10
 valid_from: 2007-12-12
+
+```
+#### Exemple : Parliamentary group referencing its parliament and supporting parties
+
+```yaml
+local_id: 1266
+global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp
+label:
+- value: Die Mitte / Evangelische Volkspartei
+  language: de
+parent_groups:
+- https://www.grosserrat.bs.ch/
+- https://bs.die-mitte.ch/
+- https://www.evp-bs.ch/
+group_type:
+  group_type_enum: parliamentary_group
+  label: Fraktion
+spatial: https://ld.admin.ch/canton/12
 
 ```
 #### Exemple : Municipal parliament with spatial reference

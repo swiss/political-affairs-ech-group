@@ -60,6 +60,27 @@
       "valid_from": "2012-01-01"
     },
     {
+      "global_uri": "https://www.frc.ch/",
+      "group_type": {
+        "group_type_enum": "association",
+        "label": "Verein"
+      },
+      "label": [
+        {
+          "value": "Fédération romande des consommateurs",
+          "language": "fr"
+        }
+      ],
+      "abbreviation": [
+        {
+          "value": "FRC",
+          "language": "fr"
+        }
+      ],
+      "organization_uid": "CHE-106.063.525",
+      "spatial": "https://ld.admin.ch/canton/22"
+    },
+    {
       "global_uri": "https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html",
       "group_type": {
         "group_type_enum": "council_legislative",
@@ -75,25 +96,39 @@
       "local_id": "700"
     },
     {
-      "global_uri": "https://api.openparldata.ch/v1/groups/20",
+      "global_uri": "https://www.grosserrat.bs.ch/",
+      "group_type": {
+        "group_type_enum": "council_legislative",
+        "label": "Parlament (Legislativrat)"
+      },
+      "label": [
+        {
+          "value": "Grosser Rat Basel-Stadt",
+          "language": "de"
+        }
+      ],
+      "spatial": "https://ld.admin.ch/canton/12",
+      "local_id": "33"
+    },
+    {
+      "global_uri": "https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp",
       "group_type": {
         "group_type_enum": "parliamentary_group",
         "label": "Fraktion"
       },
       "label": [
         {
-          "value": "Evangelische Volkspartei",
+          "value": "Die Mitte / Evangelische Volkspartei",
           "language": "de"
         }
       ],
-      "landing_page": [
-        {
-          "value": "https://grosserrat.bs.ch/gremien/parteien-und-fraktionen",
-          "language": "de"
-        }
+      "parent_groups": [
+        "https://www.grosserrat.bs.ch/",
+        "https://bs.die-mitte.ch/",
+        "https://www.evp-bs.ch/"
       ],
       "spatial": "https://ld.admin.ch/canton/12",
-      "local_id": "20"
+      "local_id": "1266"
     },
     {
       "global_uri": "https://api.openparldata.ch/v1/groups/3",
@@ -133,6 +168,9 @@
           "value": "Büro des Grossen Rates",
           "language": "de"
         }
+      ],
+      "parent_groups": [
+        "https://www.grosserrat.bs.ch/"
       ],
       "spatial": "https://ld.admin.ch/canton/12",
       "local_id": "50"

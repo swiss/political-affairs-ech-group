@@ -386,6 +386,24 @@ groups:
     spatial: https://ld.admin.ch/country/CHE
     valid_from: 2012-01-01
 
+  # Zivilgesellschaftliche Organisation — sie führt das Sekretariat der
+  # vorangehenden parlamentarischen Gruppe. Anders als parlamentarische Organe
+  # ist sie eine im Handelsregister eingetragene juristische Person und trägt
+  # deshalb eine `organization_uid`. Diese ist der stabilere Identifikator als
+  # die Webadresse, die sich bei jedem Relaunch ändern kann.
+  - global_uri: https://www.frc.ch/
+    organization_uid: CHE-106.063.525
+    label:
+      - value: Fédération romande des consommateurs
+        language: fr
+    abbreviation:
+      - value: FRC
+        language: fr
+    group_type:
+      group_type_enum: association
+      label: Verein
+    spatial: https://ld.admin.ch/canton/22
+
   # Gemeindeparlament — `spatial` verweist auf die BFS-Gemeindenummer
   - local_id: 700
     global_uri: https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
@@ -397,15 +415,32 @@ groups:
       label: Parlament (Legislativrat)
     spatial: https://ld.admin.ch/municipality/3203
 
-  # Fraktion im Grossen Rat Basel-Stadt
-  - local_id: 20
-    global_uri: https://api.openparldata.ch/v1/groups/20
+  # Kantonsparlament — dient den beiden folgenden Einträgen als übergeordnete
+  # Gruppe (`parent_groups`).
+  - local_id: 33
+    global_uri: https://www.grosserrat.bs.ch/
     label:
-      - value: Evangelische Volkspartei
+      - value: Grosser Rat Basel-Stadt
         language: de
-    landing_page:
-      - value: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen
+    group_type:
+      group_type_enum: council_legislative
+      label: Parlament (Legislativrat)
+    spatial: https://ld.admin.ch/canton/12
+
+  # Fraktion im Grossen Rat Basel-Stadt. Sie zeigt den typenübergreifenden und
+  # mehrfachen Verweis über `parent_groups`: Die Fraktion gehört zum Parlament
+  # und wird zugleich von zwei Parteien getragen, die je eine eigene Gruppe
+  # sind. Eine Fraktionsgemeinschaft lässt sich nur so abbilden — ein einzelner
+  # Verweis auf «die» Partei gäbe es hier nicht.
+  - local_id: 1266
+    global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp
+    label:
+      - value: Die Mitte / Evangelische Volkspartei
         language: de
+    parent_groups:
+      - https://www.grosserrat.bs.ch/
+      - https://bs.die-mitte.ch/
+      - https://www.evp-bs.ch/
     group_type:
       group_type_enum: parliamentary_group
       label: Fraktion
@@ -434,6 +469,8 @@ groups:
     label:
       - value: Büro des Grossen Rates
         language: de
+    parent_groups:
+      - https://www.grosserrat.bs.ch/
     group_type:
       group_type_enum: parliamentary_bureau
       label: Ratsbüro

@@ -18,11 +18,11 @@ act:swiss_politicians_example a act:Container ;
             mcm:value "Cristina" ;
             act:nameType "PersonFirstName" ],
         [ a act:Name ;
-            mcm:value "Bozzi-Brunel" ;
-            act:nameType "PersonOfficialName" ],
-        [ a act:Name ;
             mcm:value "Brunel" ;
-            act:nameType "PersonOriginalName" ] .
+            act:nameType "PersonOriginalName" ],
+        [ a act:Name ;
+            mcm:value "Bozzi-Brunel" ;
+            act:nameType "PersonOfficialName" ] .
 
 <https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9> a act:Person ;
     mcm:label "Sofia Fisch" ;
@@ -58,11 +58,11 @@ act:swiss_politicians_example a act:Container ;
             schema1:validFrom "1964-07-12"^^xsd:date ;
             act:country "CH" ] ;
     act:contact [ a act:Contact ;
-            mcm:value "http://www.beat-jans.ch" ;
-            act:contactType "contact_website" ],
-        [ a act:Contact ;
             mcm:value "beat.jans@admin.ch" ;
-            act:contactType "email" ] ;
+            act:contactType "email" ],
+        [ a act:Contact ;
+            mcm:value "http://www.beat-jans.ch" ;
+            act:contactType "contact_website" ] ;
     act:gender [ a act:Gender ;
             schema1:validFrom "1964-07-12"^^xsd:date ;
             act:genderCode "male" ] ;
@@ -71,12 +71,12 @@ act:swiss_politicians_example a act:Container ;
             act:isCorrespondence true ;
             act:isNative true ] ;
     act:name [ a act:Name ;
-            mcm:value "Beat" ;
-            act:nameType "PersonFirstName" ],
-        [ a act:Name ;
             schema1:validFrom "1964-07-12"^^xsd:date ;
             mcm:value "Jans" ;
-            act:nameType "PersonOfficialName" ] ;
+            act:nameType "PersonOfficialName" ],
+        [ a act:Name ;
+            mcm:value "Beat" ;
+            act:nameType "PersonFirstName" ] ;
     act:occupation [ a act:Occupation ;
             schema1:validFrom "1964-01-01"^^xsd:date ;
             mcm:isCurrent true ;
