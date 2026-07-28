@@ -29,7 +29,7 @@ __
 | function_role | 0..1 <br/> [String](String.md) | Fonction ou rôle dans l'organisation (p. ex. président/e, vice-président/e, membre, délégué, directeur/directrice, conseiller/ère).  |
 | local_id | 0..1 <br/> [String](String.md) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q39 pour la Suisse. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
 | date_created | 0..1 <br/> [Date](Date.md) | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |
 | datetime_created | 0..1 <br/> [Datetime](Datetime.md) | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |
 | date_modified | 0..1 <br/> [Date](Date.md) | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |
@@ -76,44 +76,12 @@ Au moins l'un des champs suivants doit être renseigné :
 
 
 ### Exemples
-#### Exemple : InterestLink-interest_links_il_burkart_010
-
-```yaml
-global_uri: act:il_burkart_010
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: Allianz Sicherheit Schweiz, Baden
-legal_form: 0109
-committee: Vorstand
-function_role: Präsident
-is_paid: false
-
-```
-#### Exemple : InterestLink-interest_links_il_burkart_001
-
-```yaml
-global_uri: act:il_burkart_001
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: Burkart Advisory GmbH, Baden
-legal_form: '0107'
-committee: Geschäftsleitung
-function_role: Geschäftsführer
-is_paid: true
-
-```
 #### Exemple : InterestLink-interest_links_il_burkart_008
 
 ```yaml
 global_uri: act:il_burkart_008
 person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
+  global_uri: http://www.wikidata.org/entity/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
@@ -124,16 +92,96 @@ function_role: Beirat
 is_paid: true
 
 ```
+#### Exemple : InterestLink-interest_links_il_burkart_010
+
+```yaml
+global_uri: act:il_burkart_010
+person_reference:
+  global_uri: http://www.wikidata.org/entity/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: Allianz Sicherheit Schweiz, Baden
+legal_form: 0109
+committee: Vorstand
+function_role: Präsident
+is_paid: false
+
+```
 #### Exemple : InterestLink-interest_links_il_burkart_002
 
 ```yaml
 global_uri: act:il_burkart_002
 person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
+  global_uri: http://www.wikidata.org/entity/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_name: Birchmeier Holding AG, Döttingen
+legal_form: '0106'
+committee: Verwaltungsrat
+function_role: Mitglied
+is_paid: true
+
+```
+#### Exemple : InterestLink-interest_links_il_burkart_007
+
+```yaml
+global_uri: act:il_burkart_007
+person_reference:
+  global_uri: http://www.wikidata.org/entity/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+legal_form: '0110'
+committee: Stiftungsrat
+function_role: Vizepräsident
+is_paid: false
+
+```
+#### Exemple : InterestLink-interest_links_il_burkart_005
+
+```yaml
+global_uri: act:il_burkart_005
+person_reference:
+  global_uri: http://www.wikidata.org/entity/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+legal_form: 0109
+committee: Zentralvorstand
+function_role: Präsident
+is_paid: true
+
+```
+#### Exemple : InterestLink-interest_links_il_burkart_001
+
+```yaml
+global_uri: act:il_burkart_001
+person_reference:
+  global_uri: http://www.wikidata.org/entity/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: professional_activity
+organization_name: Burkart Advisory GmbH, Baden
+legal_form: '0107'
+committee: Geschäftsleitung
+function_role: Geschäftsführer
+is_paid: true
+
+```
+#### Exemple : InterestLink-interest_links_il_burkart_003
+
+```yaml
+global_uri: act:il_burkart_003
+person_reference:
+  global_uri: http://www.wikidata.org/entity/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: professional_activity
+organization_name: Bovida Real Estate AG, Baar
 legal_form: '0106'
 committee: Verwaltungsrat
 function_role: Mitglied
@@ -145,7 +193,7 @@ is_paid: true
 ```yaml
 global_uri: act:il_burkart_011
 person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
+  global_uri: http://www.wikidata.org/entity/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: association
@@ -156,60 +204,12 @@ function_role: Mitglied
 is_paid: false
 
 ```
-#### Exemple : InterestLink-interest_links_il_burkart_009
-
-```yaml
-global_uri: act:il_burkart_009
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: SUISSEDIGITAL Verband für Kommunikationsnetze
-legal_form: 0109
-committee: Vorstand
-function_role: Mitglied
-is_paid: true
-
-```
-#### Exemple : InterestLink-interest_links_il_burkart_005
-
-```yaml
-global_uri: act:il_burkart_005
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
-legal_form: 0109
-committee: Zentralvorstand
-function_role: Präsident
-is_paid: true
-
-```
-#### Exemple : InterestLink-interest_links_il_burkart_003
-
-```yaml
-global_uri: act:il_burkart_003
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: Bovida Real Estate AG, Baar
-legal_form: '0106'
-committee: Verwaltungsrat
-function_role: Mitglied
-is_paid: true
-
-```
 #### Exemple : InterestLink-interest_links_il_burkart_004
 
 ```yaml
 global_uri: act:il_burkart_004
 person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
+  global_uri: http://www.wikidata.org/entity/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
@@ -225,7 +225,7 @@ is_paid: true
 ```yaml
 global_uri: act:il_burkart_006
 person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
+  global_uri: http://www.wikidata.org/entity/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: association
@@ -236,20 +236,20 @@ function_role: Präsident
 is_paid: true
 
 ```
-#### Exemple : InterestLink-interest_links_il_burkart_007
+#### Exemple : InterestLink-interest_links_il_burkart_009
 
 ```yaml
-global_uri: act:il_burkart_007
+global_uri: act:il_burkart_009
 person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
+  global_uri: http://www.wikidata.org/entity/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: association
-organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-legal_form: '0110'
-committee: Stiftungsrat
-function_role: Vizepräsident
-is_paid: false
+organization_name: SUISSEDIGITAL Verband für Kommunikationsnetze
+legal_form: 0109
+committee: Vorstand
+function_role: Mitglied
+is_paid: true
 
 ```
 

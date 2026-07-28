@@ -6,7 +6,7 @@ search:
 # Slot: wikidata_uri 
 
 
-_Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q39 pour la Suisse._
+_Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans._
 
 __
 
@@ -77,18 +77,18 @@ name: wikidata_uri
 annotations:
   description_de:
     tag: description_de
-    value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q39
-      für die Schweiz.
+    value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067
+      für Beat Jans.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q39
-      pour la Suisse.
+    value: 'Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067
+      pour Beat Jans.
 
       '
-description: 'Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q39
-  pour la Suisse.
+description: 'Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067
+  pour Beat Jans.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

@@ -100,12 +100,12 @@ This standard defines four main classes:
 
 The person schema describes natural persons in the political context.
 
-- **Stable person, temporally valid attributes:** The `Person` itself carries no temporal validity, but its attributes do – name, citizenship, gender, occupation, training and electoral district each carry their own `valid_from`/`valid_through`. This keeps the identity of the person stable while individual details change over time and the history is preserved (e.g. a change of name upon marriage or a change of electoral district).
-- **Mandatory display name (`label`) alongside structured names (`names`):** Every person has a mandatory short name so that a display name is always available even when the details are incomplete. The recommended combination is the official name (`PersonOfficialName`) and the call name (`PersonCallFirstName`), supplemented by the year of birth in the case of identical names. `label_long` additionally captures academic titles; the fine-grained, typed name structure (`names`) is optional, but its use is advised. In some cases, the use of specific types, such as the official name (`PersonOfficialName`), is a legal requirement.
+- **Stable person, temporally valid attributes:** The `Person` itself carries no temporal validity, but its attributes do – name, citizenship, gender, occupation and training each carry their own `valid_from`/`valid_through`. This keeps the identity of the person stable while individual details change over time and the history is preserved (e.g. a change of name upon marriage). The electoral district, by contrast, is not an attribute of the person: it is attached to the `Membership` (`electoral_district`) and inherits its temporal validity – a change of electoral district is therefore reflected in the respective membership.
+- **Display name (`label`) mandatory, name structure (`names`) optional:** Every person has a short display name. This means a name is always available, even when the details are incomplete. The recommended combination is the official name (`PersonOfficialName`) and the call name (`PersonCallFirstName`). Academic titles can also be represented via `label_long`.
 - **Name types according to the official taxonomy:** The name types (`NameTypeEnum`) follow the register harmonisation of the FSO, respectively eCH-0011 (including official name, original name, alliance name, call name, as well as variants for foreign identity documents). This makes the names compatible with the official person registers, and their semantics clear.
-- **`birth_year` as a data-minimising alternative to `birth_date`:** If the exact date of birth is not available or not intended for publication, only the year of birth may be given. If a `birth_date` is available, it takes precedence.
+- **Date of birth at two levels of precision (`birth_year` / `birth_date`):** If the exact date of birth is not available or not intended for publication, only the year of birth may be given. If a `birth_date` is available, it takes precedence.
 - **Multiple values instead of single values:** Names, citizenships and gender entries are modelled as lists with temporal validity – for example for dual citizenships, changes of name or a changing gender entry.
-- **Harmonisation across federal levels (long-term goal):** Linking the same person across the federal levels is an important long-term goal. Building a central person database lies outside the mandate of the eCH specialist group. Since an open, established infrastructure already exists for this purpose, **Wikidata is recommended as a cross-cutting identifier** (`wikidata_uri`); together with globally unique identifiers (URIs), the mapping can thus be harmonised step by step across the systems.
+- **Harmonisation across federal levels (long-term goal):** Linking the same person across the federal levels is an important long-term goal. Building a central person database is beyond the means of the eCH specialist group. Since an open, established infrastructure already exists for this purpose, **Wikidata is recommended as a cross-cutting identifier** (`wikidata_uri`); together with globally unique identifiers (URIs), the mapping can thus be harmonised step by step across the systems.
 
 
 
@@ -145,7 +145,7 @@ __
 | interest_links | * <br/> [InterestLink](#InterestLink) | Collection of interest links.  |
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -175,12 +175,70 @@ __
 
 
 ### Examples
+#### Example: Person-swiss_politicians_Cristina_Bozzi-Brunel
+
+```yaml
+local_id: 280958
+global_uri: https://parlament.winterthur.ch/behoerdenmitglieder/280958
+label: Cristina Bozzi-Brunel
+names:
+- name_type: PersonFirstName
+  value: Cristina
+- name_type: PersonOfficialName
+  value: Bozzi-Brunel
+- name_type: PersonOriginalName
+  value: Brunel
+
+```
+#### Example: Person-swiss_politicians_Alois_Arnold_1981
+
+```yaml
+local_id: 6447
+global_uri: https://www.ur.ch/behoerdenmitglieder/6447
+label: Alois Arnold (1981)
+birth_year: 1981
+names:
+- name_type: PersonFirstName
+  value: Alois
+- name_type: PersonOfficialName
+  value: Arnold
+
+```
+#### Example: Person-swiss_politicians_Gerri_Beretta-Piccoli
+
+```yaml
+local_id: 1269
+global_uri: https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
+label: Gerri Beretta-Piccoli
+names:
+- name_type: PersonFirstName
+  value: Fausto
+- name_type: PersonCallFirstName
+  value: Gerri
+- name_type: PersonOfficialName
+  value: Beretta-Piccoli
+
+```
+#### Example: Person-swiss_politicians_Alois_Arnold_1965
+
+```yaml
+local_id: 6370
+global_uri: https://www.ur.ch/behoerdenmitglieder/6370
+label: Alois Arnold (1965)
+birth_year: 1965
+names:
+- name_type: PersonFirstName
+  value: Alois
+- name_type: PersonOfficialName
+  value: Arnold
+
+```
 #### Example: Person-swiss_politicians_Beat_Jans
 
 ```yaml
 local_id: 4032
 global_uri: https://data-example.parlament.ch/person/4032
-wikidata_uri: https://www.wikidata.org/wiki/Q813067
+wikidata_uri: http://www.wikidata.org/entity/Q813067
 label: Beat Jans
 label_long: Beat Jans, dipl. nat. ETH
 birth_year: 1964
@@ -217,64 +275,6 @@ contacts:
   value: beat.jans@admin.ch
 - contact_type: contact_website
   value: http://www.beat-jans.ch
-
-```
-#### Example: Person-swiss_politicians_Gerri_Beretta-Piccoli
-
-```yaml
-local_id: 1269
-global_uri: https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
-label: Gerri Beretta-Piccoli
-names:
-- name_type: PersonFirstName
-  value: Fausto
-- name_type: PersonCallFirstName
-  value: Gerri
-- name_type: PersonOfficialName
-  value: Beretta-Piccoli
-
-```
-#### Example: Person-swiss_politicians_Cristina_Bozzi-Brunel
-
-```yaml
-local_id: 280958
-global_uri: https://parlament.winterthur.ch/behoerdenmitglieder/280958
-label: Cristina Bozzi-Brunel
-names:
-- name_type: PersonFirstName
-  value: Cristina
-- name_type: PersonOfficialName
-  value: Bozzi-Brunel
-- name_type: PersonOriginalName
-  value: Brunel
-
-```
-#### Example: Person-swiss_politicians_Alois_Arnold_1965
-
-```yaml
-local_id: 6370
-global_uri: https://www.ur.ch/behoerdenmitglieder/6370
-label: Alois Arnold (1965)
-birth_year: 1965
-names:
-- name_type: PersonFirstName
-  value: Alois
-- name_type: PersonOfficialName
-  value: Arnold
-
-```
-#### Example: Person-swiss_politicians_Alois_Arnold_1981
-
-```yaml
-local_id: 6447
-global_uri: https://www.ur.ch/behoerdenmitglieder/6447
-label: Alois Arnold (1981)
-birth_year: 1981
-names:
-- name_type: PersonFirstName
-  value: Alois
-- name_type: PersonOfficialName
-  value: Arnold
 
 ```
 
@@ -855,61 +855,6 @@ URI: [act:TrainingTypeEnum](https://ld.ech.ch/schema/0294/actors/TrainingTypeEnu
 
 </div>
 
-
-
-## Class: ElectoralDistrict 
-
-
-_Electoral district or region associated with a membership. The temporal validity is inherited from the enclosing membership._
-
-__
-
-
-
-<div data-search-exclude markdown="1">
-
-
-
-
-### Attribute
-
-| Name | Cardinality and Range | Description |
-| ---  | --- | --- |
-| label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | For IRI references, LINDAS resources should be used. The IRIs for the different administrative levels of Swiss spatial units are available at: ch:country/CHE. Under links in the schema:containsPlace section, the desired level can be selected. Examples for each administrative level: - Country - Switzerland: https://ld.admin.ch/country/CHE - Canton - Aargau: https://ld.admin.ch/canton/19 - District - Brig: https://ld.admin.ch/district/2301 - Municipality - Versoix: https://ld.admin.ch/municipality/6644 <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-
-
-
-
-
-### Usages
-
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [Membership](#Membership) | [electoral_district](#electoral_district) | range | [ElectoralDistrict](#ElectoralDistrict) |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
 \newpage
 
 # Groups and Bodies (Groups)
@@ -953,7 +898,7 @@ __
 | party_color | 0..1 <br/> [String](#String) | Party color as hexadecimal value (optional for parties, e.g., "#FF0000").  |
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -1125,6 +1070,7 @@ The membership schema represents the relationship between persons and groups and
 - **Activity explicit or derived (`is_active`):** Whether a membership is active can be set explicitly via `is_active` or derived from the temporal validity. If `is_active` is not set, activity is derived from `valid_from`/`valid_through`.
 - **Membership ≠ voting right (`authorized_to_vote`):** The voting right is recorded separately from the membership – typically `false` for substitute members (except when on duty), observers, the secretariat and guests.
 - **Role as a controlled vocabulary with free-text option (`role_type`):** The role in the group (e.g. member, presidency, deputy) is specified via a controlled vocabulary (`RoleEnum`); for roles not covered, the value `other` with a free-text designation is used.
+- **Electoral district on the membership rather than on the person (`electoral_district`):** The electoral district describes the mandate, not the person – the same person may be elected from different districts over time or at different federal levels. `ElectoralDistrict` therefore carries no temporal validity of its own but inherits the `valid_from`/`valid_through` of the enclosing membership. For identification, the LINDAS resources for Swiss spatial units are intended (see `global_uri`).
 
 
 
@@ -1154,7 +1100,7 @@ __
 | is_active | 0..1 <br/> [Boolean](#Boolean) | Indicates if the membership is currently active. Can complement or replace `valid_from`/`valid_through`. If not set, activity is derived from the temporal validity fields.  |
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -1299,6 +1245,61 @@ URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 
 </div>
 
+
+
+## Class: ElectoralDistrict 
+
+
+_Electoral district or region associated with a membership. The temporal validity is inherited from the enclosing membership._
+
+__
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+### Attribute
+
+| Name | Cardinality and Range | Description |
+| ---  | --- | --- |
+| label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
+| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | For IRI references, LINDAS resources should be used. The IRIs for the different administrative levels of Swiss spatial units are available at: ch:country/CHE. Under links in the schema:containsPlace section, the desired level can be selected. Examples for each administrative level: - Country - Switzerland: https://ld.admin.ch/country/CHE - Canton - Aargau: https://ld.admin.ch/canton/19 - District - Brig: https://ld.admin.ch/district/2301 - Municipality - Versoix: https://ld.admin.ch/municipality/6644 <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+
+
+
+
+
+### Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Membership](#Membership) | [electoral_district](#electoral_district) | range | [ElectoralDistrict](#ElectoralDistrict) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
 \newpage
 
 # Interest Links
@@ -1343,7 +1344,7 @@ __
 | function_role | 0..1 <br/> [String](#String) | Function or role in the organization (e.g., Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in).  |
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -1390,44 +1391,12 @@ At least one of the following must be set:
 
 
 ### Examples
-#### Example: InterestLink-interest_links_il_burkart_010
-
-```yaml
-global_uri: act:il_burkart_010
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: Allianz Sicherheit Schweiz, Baden
-legal_form: 0109
-committee: Vorstand
-function_role: Präsident
-is_paid: false
-
-```
-#### Example: InterestLink-interest_links_il_burkart_001
-
-```yaml
-global_uri: act:il_burkart_001
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: Burkart Advisory GmbH, Baden
-legal_form: '0107'
-committee: Geschäftsleitung
-function_role: Geschäftsführer
-is_paid: true
-
-```
 #### Example: InterestLink-interest_links_il_burkart_008
 
 ```yaml
 global_uri: act:il_burkart_008
 person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
+  global_uri: http://www.wikidata.org/entity/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
@@ -1438,16 +1407,96 @@ function_role: Beirat
 is_paid: true
 
 ```
+#### Example: InterestLink-interest_links_il_burkart_010
+
+```yaml
+global_uri: act:il_burkart_010
+person_reference:
+  global_uri: http://www.wikidata.org/entity/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: Allianz Sicherheit Schweiz, Baden
+legal_form: 0109
+committee: Vorstand
+function_role: Präsident
+is_paid: false
+
+```
 #### Example: InterestLink-interest_links_il_burkart_002
 
 ```yaml
 global_uri: act:il_burkart_002
 person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
+  global_uri: http://www.wikidata.org/entity/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
 organization_name: Birchmeier Holding AG, Döttingen
+legal_form: '0106'
+committee: Verwaltungsrat
+function_role: Mitglied
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_007
+
+```yaml
+global_uri: act:il_burkart_007
+person_reference:
+  global_uri: http://www.wikidata.org/entity/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+legal_form: '0110'
+committee: Stiftungsrat
+function_role: Vizepräsident
+is_paid: false
+
+```
+#### Example: InterestLink-interest_links_il_burkart_005
+
+```yaml
+global_uri: act:il_burkart_005
+person_reference:
+  global_uri: http://www.wikidata.org/entity/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: association
+organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+legal_form: 0109
+committee: Zentralvorstand
+function_role: Präsident
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_001
+
+```yaml
+global_uri: act:il_burkart_001
+person_reference:
+  global_uri: http://www.wikidata.org/entity/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: professional_activity
+organization_name: Burkart Advisory GmbH, Baden
+legal_form: '0107'
+committee: Geschäftsleitung
+function_role: Geschäftsführer
+is_paid: true
+
+```
+#### Example: InterestLink-interest_links_il_burkart_003
+
+```yaml
+global_uri: act:il_burkart_003
+person_reference:
+  global_uri: http://www.wikidata.org/entity/Q23060472
+  label: Thierry Burkart
+  group_label: FDP.Die Liberalen
+interest_type: professional_activity
+organization_name: Bovida Real Estate AG, Baar
 legal_form: '0106'
 committee: Verwaltungsrat
 function_role: Mitglied
@@ -1459,7 +1508,7 @@ is_paid: true
 ```yaml
 global_uri: act:il_burkart_011
 person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
+  global_uri: http://www.wikidata.org/entity/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: association
@@ -1470,60 +1519,12 @@ function_role: Mitglied
 is_paid: false
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_009
-
-```yaml
-global_uri: act:il_burkart_009
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: SUISSEDIGITAL Verband für Kommunikationsnetze
-legal_form: 0109
-committee: Vorstand
-function_role: Mitglied
-is_paid: true
-
-```
-#### Example: InterestLink-interest_links_il_burkart_005
-
-```yaml
-global_uri: act:il_burkart_005
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
-legal_form: 0109
-committee: Zentralvorstand
-function_role: Präsident
-is_paid: true
-
-```
-#### Example: InterestLink-interest_links_il_burkart_003
-
-```yaml
-global_uri: act:il_burkart_003
-person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: Bovida Real Estate AG, Baar
-legal_form: '0106'
-committee: Verwaltungsrat
-function_role: Mitglied
-is_paid: true
-
-```
 #### Example: InterestLink-interest_links_il_burkart_004
 
 ```yaml
 global_uri: act:il_burkart_004
 person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
+  global_uri: http://www.wikidata.org/entity/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: professional_activity
@@ -1539,7 +1540,7 @@ is_paid: true
 ```yaml
 global_uri: act:il_burkart_006
 person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
+  global_uri: http://www.wikidata.org/entity/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: association
@@ -1550,20 +1551,20 @@ function_role: Präsident
 is_paid: true
 
 ```
-#### Example: InterestLink-interest_links_il_burkart_007
+#### Example: InterestLink-interest_links_il_burkart_009
 
 ```yaml
-global_uri: act:il_burkart_007
+global_uri: act:il_burkart_009
 person_reference:
-  global_uri: https://www.wikidata.org/wiki/Q23060472
+  global_uri: http://www.wikidata.org/entity/Q23060472
   label: Thierry Burkart
   group_label: FDP.Die Liberalen
 interest_type: association
-organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-legal_form: '0110'
-committee: Stiftungsrat
-function_role: Vizepräsident
-is_paid: false
+organization_name: SUISSEDIGITAL Verband für Kommunikationsnetze
+legal_form: 0109
+committee: Vorstand
+function_role: Mitglied
+is_paid: true
 
 ```
 
@@ -1751,7 +1752,7 @@ __
 | group_label | 0..1 <br/> [String](#String) | Name of the body/group at time of linking.  |
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 
 
 
@@ -1808,7 +1809,7 @@ __
 | abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abbreviation (can be multilingual).  |
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 
 
 

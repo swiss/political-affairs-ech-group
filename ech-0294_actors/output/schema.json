@@ -194,7 +194,7 @@
                     ]
                 },
                 "wikidata_uri": {
-                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
                     "type": [
                         "string",
                         "null"
@@ -230,7 +230,7 @@
                     ]
                 },
                 "wikidata_uri": {
-                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
                     "type": [
                         "string",
                         "null"
@@ -466,7 +466,7 @@
                     ]
                 },
                 "wikidata_uri": {
-                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
                     "type": [
                         "string",
                         "null"
@@ -514,7 +514,7 @@
                     ]
                 },
                 "wikidata_uri": {
-                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
                     "type": [
                         "string",
                         "null"
@@ -630,7 +630,7 @@
                     ]
                 },
                 "wikidata_uri": {
-                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
                     "type": [
                         "string",
                         "null"
@@ -818,7 +818,7 @@
                     ]
                 },
                 "wikidata_uri": {
-                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
                     "type": [
                         "string",
                         "null"
@@ -1042,7 +1042,7 @@
                     ]
                 },
                 "wikidata_uri": {
-                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
                     "type": [
                         "string",
                         "null"
@@ -1234,7 +1234,7 @@
                     ]
                 },
                 "wikidata_uri": {
-                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
                     "type": [
                         "string",
                         "null"
@@ -1598,7 +1598,7 @@
                     ]
                 },
                 "wikidata_uri": {
-                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
                     "type": [
                         "string",
                         "null"
@@ -1646,7 +1646,7 @@
                     ]
                 },
                 "wikidata_uri": {
-                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
                     "type": [
                         "string",
                         "null"
@@ -1910,7 +1910,7 @@
             ]
         },
         "wikidata_uri": {
-            "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland.\n",
+            "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
             "type": [
                 "string",
                 "null"

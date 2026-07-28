@@ -35,7 +35,7 @@ __
 | interest_links | * <br/> [InterestLink](InterestLink.md) | Collection de liens d'intérêts.  |
 | local_id | 0..1 <br/> [String](String.md) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q39 pour la Suisse. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
 | date_created | 0..1 <br/> [Date](Date.md) | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |
 | datetime_created | 0..1 <br/> [Datetime](Datetime.md) | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |
 | date_modified | 0..1 <br/> [Date](Date.md) | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |
@@ -65,12 +65,70 @@ __
 
 
 ### Exemples
+#### Exemple : Person-swiss_politicians_Cristina_Bozzi-Brunel
+
+```yaml
+local_id: 280958
+global_uri: https://parlament.winterthur.ch/behoerdenmitglieder/280958
+label: Cristina Bozzi-Brunel
+names:
+- name_type: PersonFirstName
+  value: Cristina
+- name_type: PersonOfficialName
+  value: Bozzi-Brunel
+- name_type: PersonOriginalName
+  value: Brunel
+
+```
+#### Exemple : Person-swiss_politicians_Alois_Arnold_1981
+
+```yaml
+local_id: 6447
+global_uri: https://www.ur.ch/behoerdenmitglieder/6447
+label: Alois Arnold (1981)
+birth_year: 1981
+names:
+- name_type: PersonFirstName
+  value: Alois
+- name_type: PersonOfficialName
+  value: Arnold
+
+```
+#### Exemple : Person-swiss_politicians_Gerri_Beretta-Piccoli
+
+```yaml
+local_id: 1269
+global_uri: https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
+label: Gerri Beretta-Piccoli
+names:
+- name_type: PersonFirstName
+  value: Fausto
+- name_type: PersonCallFirstName
+  value: Gerri
+- name_type: PersonOfficialName
+  value: Beretta-Piccoli
+
+```
+#### Exemple : Person-swiss_politicians_Alois_Arnold_1965
+
+```yaml
+local_id: 6370
+global_uri: https://www.ur.ch/behoerdenmitglieder/6370
+label: Alois Arnold (1965)
+birth_year: 1965
+names:
+- name_type: PersonFirstName
+  value: Alois
+- name_type: PersonOfficialName
+  value: Arnold
+
+```
 #### Exemple : Person-swiss_politicians_Beat_Jans
 
 ```yaml
 local_id: 4032
 global_uri: https://data-example.parlament.ch/person/4032
-wikidata_uri: https://www.wikidata.org/wiki/Q813067
+wikidata_uri: http://www.wikidata.org/entity/Q813067
 label: Beat Jans
 label_long: Beat Jans, dipl. nat. ETH
 birth_year: 1964
@@ -107,64 +165,6 @@ contacts:
   value: beat.jans@admin.ch
 - contact_type: contact_website
   value: http://www.beat-jans.ch
-
-```
-#### Exemple : Person-swiss_politicians_Gerri_Beretta-Piccoli
-
-```yaml
-local_id: 1269
-global_uri: https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
-label: Gerri Beretta-Piccoli
-names:
-- name_type: PersonFirstName
-  value: Fausto
-- name_type: PersonCallFirstName
-  value: Gerri
-- name_type: PersonOfficialName
-  value: Beretta-Piccoli
-
-```
-#### Exemple : Person-swiss_politicians_Cristina_Bozzi-Brunel
-
-```yaml
-local_id: 280958
-global_uri: https://parlament.winterthur.ch/behoerdenmitglieder/280958
-label: Cristina Bozzi-Brunel
-names:
-- name_type: PersonFirstName
-  value: Cristina
-- name_type: PersonOfficialName
-  value: Bozzi-Brunel
-- name_type: PersonOriginalName
-  value: Brunel
-
-```
-#### Exemple : Person-swiss_politicians_Alois_Arnold_1965
-
-```yaml
-local_id: 6370
-global_uri: https://www.ur.ch/behoerdenmitglieder/6370
-label: Alois Arnold (1965)
-birth_year: 1965
-names:
-- name_type: PersonFirstName
-  value: Alois
-- name_type: PersonOfficialName
-  value: Arnold
-
-```
-#### Exemple : Person-swiss_politicians_Alois_Arnold_1981
-
-```yaml
-local_id: 6447
-global_uri: https://www.ur.ch/behoerdenmitglieder/6447
-label: Alois Arnold (1981)
-birth_year: 1981
-names:
-- name_type: PersonFirstName
-  value: Alois
-- name_type: PersonOfficialName
-  value: Arnold
 
 ```
 

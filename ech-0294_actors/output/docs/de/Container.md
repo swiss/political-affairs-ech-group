@@ -24,7 +24,7 @@ __
 | interest_links | * <br/> [InterestLink](InterestLink.md) | Sammlung von Interessenbindungen.  |
 | local_id | 0..1 <br/> [String](String.md) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q39 für die Schweiz. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 
 
 
@@ -59,7 +59,7 @@ interest_links:
   # Berufliche Tätigkeit: eigene Beratungsfirma
   - global_uri: act:il_burkart_001
     person_reference:
-      global_uri: https://www.wikidata.org/wiki/Q23060472
+      global_uri: http://www.wikidata.org/entity/Q23060472
       label: Thierry Burkart
       group_label: FDP.Die Liberalen
     interest_type: professional_activity
@@ -72,7 +72,7 @@ interest_links:
   # Verwaltungsrat AG
   - global_uri: act:il_burkart_002
     person_reference:
-      global_uri: https://www.wikidata.org/wiki/Q23060472
+      global_uri: http://www.wikidata.org/entity/Q23060472
       label: Thierry Burkart
       group_label: FDP.Die Liberalen
     interest_type: professional_activity
@@ -85,7 +85,7 @@ interest_links:
   # Verwaltungsrat AG
   - global_uri: act:il_burkart_003
     person_reference:
-      global_uri: https://www.wikidata.org/wiki/Q23060472
+      global_uri: http://www.wikidata.org/entity/Q23060472
       label: Thierry Burkart
       group_label: FDP.Die Liberalen
     interest_type: professional_activity
@@ -98,7 +98,7 @@ interest_links:
   # Verwaltungsrat IT-Unternehmen
   - global_uri: act:il_burkart_004
     person_reference:
-      global_uri: https://www.wikidata.org/wiki/Q23060472
+      global_uri: http://www.wikidata.org/entity/Q23060472
       label: Thierry Burkart
       group_label: FDP.Die Liberalen
     interest_type: professional_activity
@@ -111,7 +111,7 @@ interest_links:
   # Verbandspräsidium (bezahlt)
   - global_uri: act:il_burkart_005
     person_reference:
-      global_uri: https://www.wikidata.org/wiki/Q23060472
+      global_uri: http://www.wikidata.org/entity/Q23060472
       label: Thierry Burkart
       group_label: FDP.Die Liberalen
     interest_type: association
@@ -124,7 +124,7 @@ interest_links:
   # Parteiamt
   - global_uri: act:il_burkart_006
     person_reference:
-      global_uri: https://www.wikidata.org/wiki/Q23060472
+      global_uri: http://www.wikidata.org/entity/Q23060472
       label: Thierry Burkart
       group_label: FDP.Die Liberalen
     interest_type: association
@@ -137,7 +137,7 @@ interest_links:
   # Stiftung (ehrenamtlich)
   - global_uri: act:il_burkart_007
     person_reference:
-      global_uri: https://www.wikidata.org/wiki/Q23060472
+      global_uri: http://www.wikidata.org/entity/Q23060472
       label: Thierry Burkart
       group_label: FDP.Die Liberalen
     interest_type: association
@@ -150,7 +150,7 @@ interest_links:
   # Beirat Unternehmen
   - global_uri: act:il_burkart_008
     person_reference:
-      global_uri: https://www.wikidata.org/wiki/Q23060472
+      global_uri: http://www.wikidata.org/entity/Q23060472
       label: Thierry Burkart
       group_label: FDP.Die Liberalen
     interest_type: professional_activity
@@ -163,7 +163,7 @@ interest_links:
   # Branchenverband (bezahlt)
   - global_uri: act:il_burkart_009
     person_reference:
-      global_uri: https://www.wikidata.org/wiki/Q23060472
+      global_uri: http://www.wikidata.org/entity/Q23060472
       label: Thierry Burkart
       group_label: FDP.Die Liberalen
     interest_type: association
@@ -176,7 +176,7 @@ interest_links:
   # Ehrenamtliche Vereinsmitgliedschaften
   - global_uri: act:il_burkart_010
     person_reference:
-      global_uri: https://www.wikidata.org/wiki/Q23060472
+      global_uri: http://www.wikidata.org/entity/Q23060472
       label: Thierry Burkart
       group_label: FDP.Die Liberalen
     interest_type: association
@@ -188,7 +188,7 @@ interest_links:
 
   - global_uri: act:il_burkart_011
     person_reference:
-      global_uri: https://www.wikidata.org/wiki/Q23060472
+      global_uri: http://www.wikidata.org/entity/Q23060472
       label: Thierry Burkart
       group_label: FDP.Die Liberalen
     interest_type: association
@@ -205,7 +205,7 @@ global_uri: act:swiss_politicians_example
 persons:
   - local_id: 4032
     global_uri: https://data-example.parlament.ch/person/4032
-    wikidata_uri: https://www.wikidata.org/wiki/Q813067
+    wikidata_uri: http://www.wikidata.org/entity/Q813067
     label: Beat Jans
     label_long: Beat Jans, dipl. nat. ETH
     birth_year: 1964
