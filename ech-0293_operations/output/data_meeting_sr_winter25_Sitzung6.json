@@ -70,7 +70,7 @@
       "actor_id": {
         "global_uri": "https://api.openparldata.ch/v1/persons/18682",
         "label": "Pascal Broulis",
-        "wikidata_uri": "https://www.wikidata.org/wiki/Q116407"
+        "wikidata_uri": "http://www.wikidata.org/entity/Q116407"
       },
       "role": "speaker",
       "text_format": "html",

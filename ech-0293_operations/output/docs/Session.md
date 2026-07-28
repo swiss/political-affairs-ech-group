@@ -32,7 +32,7 @@ __
 | documents | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind. [en] List of documents (FRBR Works) linked to the entity.  |
 | local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | date_begin_actual | 0..1 <br/> [Date](Date.md) | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](Datetime.md) | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
 | date_begin_planned | 0..1 <br/> [Date](Date.md) | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
@@ -91,23 +91,6 @@ datetime_modified: '2025-05-19T01:06:44Z'
 datetime_created: '2025-04-25T11:10:24Z'
 
 ```
-#### Example: Session-session_session_gl_landsgemeinde_2025_05_04
-
-```yaml
-global_uri: ops:session_gl_landsgemeinde_2025_05_04
-body_key: GL
-name:
-- text: Landsgemeinde vom 04. Mai 2025
-  language: de
-url:
-- text: https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04
-  language: de
-date_begin_planned: '2025-05-04'
-date_end_planned: '2025-05-04'
-datetime_modified: '2025-04-25T13:40:34Z'
-datetime_created: '2025-04-23T22:58:39Z'
-
-```
 #### Example: Session-session_session_5207
 
 ```yaml
@@ -147,6 +130,23 @@ url:
   language: de
 date_begin_planned: '2025-02-26'
 date_end_planned: '2025-02-26'
+datetime_modified: '2025-04-25T13:40:34Z'
+datetime_created: '2025-04-23T22:58:39Z'
+
+```
+#### Example: Session-session_session_gl_landsgemeinde_2025_05_04
+
+```yaml
+global_uri: ops:session_gl_landsgemeinde_2025_05_04
+body_key: GL
+name:
+- text: Landsgemeinde vom 04. Mai 2025
+  language: de
+url:
+- text: https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04
+  language: de
+date_begin_planned: '2025-05-04'
+date_end_planned: '2025-05-04'
 datetime_modified: '2025-04-25T13:40:34Z'
 datetime_created: '2025-04-23T22:58:39Z'
 

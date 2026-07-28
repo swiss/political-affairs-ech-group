@@ -27,7 +27,7 @@ URI: [mcm:value](https://ld.ech.ch/schema/0292/meta-common/value)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MultilingualValue](MultilingualValue.md) | A multilingual string with language specification |  no  |
+| [MultilingualValue](MultilingualValue.md) | A multilingual string with language specification |  yes  |
 
 
 

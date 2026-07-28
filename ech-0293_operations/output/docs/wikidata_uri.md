@@ -6,7 +6,7 @@ search:
 # Slot: wikidata_uri 
 
 
-_A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland._
+_A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans._
 
 __
 
@@ -87,18 +87,18 @@ name: wikidata_uri
 annotations:
   description_de:
     tag: description_de
-    value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q39
-      für die Schweiz.
+    value: 'Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067
+      für Beat Jans.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q39
-      pour la Suisse.
+    value: 'Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067
+      pour Beat Jans.
 
       '
-description: 'A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39
-  for Switzerland.
+description: 'A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067
+  for Beat Jans.
 
   '
 from_schema: https://ch.paf.link/schema/operations

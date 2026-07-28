@@ -47,7 +47,7 @@ __
 | documents | * <br/> [Work](Work.md) | [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind. [en] List of documents (FRBR Works) linked to the entity.  |
 | local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q39 for Switzerland. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | date_created | 0..1 <br/> [Date](Date.md) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
 | datetime_created | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
 | date_modified | 0..1 <br/> [Date](Date.md) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
@@ -79,6 +79,66 @@ __
 
 
 ### Examples
+#### Example: Voting-voting_voting_zh_budget_2026
+
+```yaml
+global_uri: ops:voting_zh_budget_2026
+voting_title:
+- text: Budgetbeschluss 2026
+  language: de
+voting_type: final_vote
+datetime_begin: '2025-11-20T16:45:00Z'
+datetime_end: '2025-11-20T16:50:00Z'
+total_count_yes: 105
+total_count_no: 70
+total_count_abstention: 5
+total_absent: 0
+total: 180
+majority_type: absolute
+majority_count: 91
+result_text: Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen
+parent_agenda_item: ops:agenda_item_zh_budget_2026
+parent_meeting: ops:meeting_zh_2025_11_20
+actor_id:
+  global_uri: https://api.openparldata.ch/v1/bodies/275
+  label: Kantonsrat Zürich
+  abbreviation:
+  - value: KR
+    language: de
+datetime_created: '2025-11-20T16:45:00Z'
+datetime_modified: '2025-11-20T16:50:00Z'
+
+```
+#### Example: Voting-voting_voting_sg_2025_001
+
+```yaml
+global_uri: ops:voting_sg_2025_001
+voting_title:
+- text: Schlussabstimmung Energiegesetz
+  language: de
+voting_type: final_vote
+datetime_begin: '2025-03-15T14:30:00Z'
+datetime_end: '2025-03-15T14:35:00Z'
+total_count_yes: 78
+total_count_no: 42
+total_count_abstention: 5
+total_absent: 3
+total: 128
+majority_type: absolute
+majority_count: 65
+result_text: Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen
+parent_agenda_item: ops:agenda_item_sg_2025_015
+parent_meeting: ops:meeting_sg_2025_03_15
+actor_id:
+  global_uri: https://api.openparldata.ch/v1/bodies/265
+  label: Kantonsrat St. Gallen
+  abbreviation:
+  - value: KR
+    language: de
+datetime_created: '2025-03-15T14:30:00Z'
+datetime_modified: '2025-03-15T14:35:00Z'
+
+```
 #### Example: Voting-voting_voting_be_2025_042
 
 ```yaml
@@ -149,66 +209,6 @@ actor_id:
     language: de
 datetime_created: '2024-02-28T00:00:00Z'
 datetime_modified: '2024-02-28T00:00:00Z'
-
-```
-#### Example: Voting-voting_voting_sg_2025_001
-
-```yaml
-global_uri: ops:voting_sg_2025_001
-voting_title:
-- text: Schlussabstimmung Energiegesetz
-  language: de
-voting_type: final_vote
-datetime_begin: '2025-03-15T14:30:00Z'
-datetime_end: '2025-03-15T14:35:00Z'
-total_count_yes: 78
-total_count_no: 42
-total_count_abstention: 5
-total_absent: 3
-total: 128
-majority_type: absolute
-majority_count: 65
-result_text: Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen
-parent_agenda_item: ops:agenda_item_sg_2025_015
-parent_meeting: ops:meeting_sg_2025_03_15
-actor_id:
-  global_uri: https://api.openparldata.ch/v1/bodies/265
-  label: Kantonsrat St. Gallen
-  abbreviation:
-  - value: KR
-    language: de
-datetime_created: '2025-03-15T14:30:00Z'
-datetime_modified: '2025-03-15T14:35:00Z'
-
-```
-#### Example: Voting-voting_voting_zh_budget_2026
-
-```yaml
-global_uri: ops:voting_zh_budget_2026
-voting_title:
-- text: Budgetbeschluss 2026
-  language: de
-voting_type: final_vote
-datetime_begin: '2025-11-20T16:45:00Z'
-datetime_end: '2025-11-20T16:50:00Z'
-total_count_yes: 105
-total_count_no: 70
-total_count_abstention: 5
-total_absent: 0
-total: 180
-majority_type: absolute
-majority_count: 91
-result_text: Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen
-parent_agenda_item: ops:agenda_item_zh_budget_2026
-parent_meeting: ops:meeting_zh_2025_11_20
-actor_id:
-  global_uri: https://api.openparldata.ch/v1/bodies/275
-  label: Kantonsrat Zürich
-  abbreviation:
-  - value: KR
-    language: de
-datetime_created: '2025-11-20T16:45:00Z'
-datetime_modified: '2025-11-20T16:50:00Z'
 
 ```
 

@@ -16,7 +16,7 @@ ops:data_meeting_sr_winter25_Sitzung6 a ops:Container ;
 
 <https://api.openparldata.ch/v1/persons/18682> a mcm:PersonReference ;
     mcm:label "Pascal Broulis" ;
-    mcm:wikidataUri <https://www.wikidata.org/wiki/Q116407> .
+    mcm:wikidataUri <http://www.wikidata.org/entity/Q116407> .
 
 ops:366631 a ops:Speech ;
     ops:actor_fullname "Pascal Broulis" ;
