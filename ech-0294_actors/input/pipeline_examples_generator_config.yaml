@@ -48,50 +48,50 @@ max_examples_per_slot: 3
 # wird je Dokumentsprache gesetzt.
 example_titles:
   "4032":
-    de: Vollstaendig erfasste Person
-    fr: Personne saisie de maniere complete
+    de: Vollständig erfasste Person
+    fr: Personne saisie de manière complète
     en: Fully recorded person
   "6447":
-    de: Gleichnamige Personen ueber das Label unterscheiden
+    de: Gleichnamige Personen über das Label unterscheiden
     fr: Distinguer des personnes homonymes par le label
     en: Telling apart persons with identical names via the label
   "6370":
-    de: Gleichnamige Personen ueber das Label unterscheiden (zweite Person)
-    fr: Distinguer des personnes homonymes par le label (deuxieme personne)
+    de: Gleichnamige Personen über das Label unterscheiden (zweite Person)
+    fr: Distinguer des personnes homonymes par le label (deuxième personne)
     en: Telling apart persons with identical names via the label (second person)
   "1269":
     de: Rufname weicht vom amtlichen Vornamen ab
-    fr: Prenom usuel different du prenom officiel
+    fr: Prénom usuel différent du prénom officiel
     en: Call name differing from the official first name
   "280958":
     de: Namensvariante neben dem amtlichen Doppelnamen
-    fr: Variante de nom a cote du double nom officiel
+    fr: Variante de nom à côté du double nom officiel
     en: Name variant alongside the official double name
   "72c7232be92944e3876f3b6723824ff9":
-    de: Nicht-binaere Geschlechtsangabe mit Beruf und Abschluss
+    de: Nicht-binäre Geschlechtsangabe mit Beruf und Abschluss
     fr: Indication de sexe non binaire avec profession et formation
     en: Non-binary gender entry with occupation and training
   "6627":
     de: Interessengruppe mit dreisprachigem Namen und Kontakt
-    fr: Groupe d interet avec nom trilingue et contact
+    fr: "Groupe d'intérêt avec nom trilingue et contact"
     en: Interest group with a trilingual name and contact
   "700":
-    de: Gemeindeparlament mit raeumlicher Referenz
-    fr: Parlement communal avec reference spatiale
+    de: Gemeindeparlament mit räumlicher Referenz
+    fr: Parlement communal avec référence spatiale
     en: Municipal parliament with spatial reference
   "20":
     de: Fraktion eines Kantonsparlaments
-    fr: Groupe parlementaire d un parlement cantonal
+    fr: "Groupe parlementaire d'un parlement cantonal"
     en: Faction of a cantonal parliament
   "3":
-    de: Kommission mit gebraeuchlicher Abkuerzung
-    fr: Commission avec abreviation usuelle
+    de: Kommission mit gebräuchlicher Abkürzung
+    fr: Commission avec abréviation usuelle
     en: Commission with a common abbreviation
   "50":
-    de: Ratsbuero
+    de: Ratsbüro
     fr: Bureau du conseil
     en: Council bureau
   "5000":
     de: Zweisprachige Delegation in ein interkantonales Gremium
-    fr: Delegation bilingue aupres d un organe intercantonal
+    fr: "Délégation bilingue auprès d'un organe intercantonal"
     en: Bilingual delegation to an intercantonal body
