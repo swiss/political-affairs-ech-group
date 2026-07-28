@@ -62,7 +62,7 @@
     {
       "global_uri": "https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html",
       "group_type": {
-        "group_type_enum": "parliament",
+        "group_type_enum": "council_legislative",
         "label": "Parlament (Legislativrat)"
       },
       "label": [

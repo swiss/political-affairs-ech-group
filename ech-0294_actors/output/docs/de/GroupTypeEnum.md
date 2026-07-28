@@ -22,20 +22,24 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/list](act:enum/group_type/list) |
 | workgroup |  Ad-hoc-Arbeitsgruppe, typischerweise mit begrenzter Laufzeit.  |
 | | [act:enum/group_type/workgroup](act:enum/group_type/workgroup) |
-| parliament |  Parlament auf Bundes-, Kantons- oder Gemeindeebene (z.B. Bundesversammlung, Nationalrat, Ständerat, Grosser Rat, Kantonsrat, Gemeindeparlament).  |
-| | [act:enum/group_type/parliament](act:enum/group_type/parliament) |
+| assembly |  Versammlung der Stimmberechtigten als gesetzgebendes Organ, insbesondere die Gemeindeversammlung. Anders als ein Rat ist sie kein gewähltes Gremium.  |
+| | [act:enum/group_type/assembly](act:enum/group_type/assembly) |
+| council_legislative |  Parlament auf Bundes-, Kantons- oder Gemeindeebene (z.B. Bundesversammlung, Nationalrat, Ständerat, Grosser Rat, Kantonsrat, Gemeindeparlament).  |
+| | [act:enum/group_type/council_legislative](act:enum/group_type/council_legislative) |
 | delegation |  Delegation.  |
 | | [act:enum/group_type/delegation](act:enum/group_type/delegation) |
-| committee |  Kommission (ständig oder ad-hoc), einschliesslich Aufsichtskommissionen (z.B. GPK), Sachkommissionen, Parlamentarische Untersuchungskommissionen (PUK) und Rechnungsprüfungskommissionen.  |
+| committee |  Ständige Kommission, einschliesslich Aufsichtskommissionen (z.B. GPK), Sachkommissionen, Parlamentarische Untersuchungskommissionen (PUK) und Rechnungsprüfungskommissionen.  |
 | | [act:enum/group_type/committee](act:enum/group_type/committee) |
+| ad_hoc_committee |  Kommission, die für eine einzelne Aufgabe eingesetzt und nach deren Erledigung wieder aufgelöst wird, im Unterschied zur ständigen Kommission.  |
+| | [act:enum/group_type/ad_hoc_committee](act:enum/group_type/ad_hoc_committee) |
 | parliamentary_group |  Parlamentsfraktion.  |
 | | [act:enum/group_type/parliamentary_group](act:enum/group_type/parliamentary_group) |
 | parliamentary_bureau |  Parlamentsbüro.  |
 | | [act:enum/group_type/parliamentary_bureau](act:enum/group_type/parliamentary_bureau) |
 | presidency |  Präsidium des Parlaments.  |
 | | [act:enum/group_type/presidency](act:enum/group_type/presidency) |
-| government |  Regierung / Exekutive als Gesamtorgan (z.B. Bundesrat, Regierungsrat, Stadtrat / Gemeinderat).  |
-| | [act:enum/group_type/government](act:enum/group_type/government) |
+| council_executive |  Regierung / Exekutive als Gesamtorgan (z.B. Bundesrat, Regierungsrat, Stadtrat / Gemeinderat).  |
+| | [act:enum/group_type/council_executive](act:enum/group_type/council_executive) |
 | department |  Departement.  |
 | | [act:enum/group_type/department](act:enum/group_type/department) |
 | office |  Amt.  |

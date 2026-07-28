@@ -22,20 +22,24 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/list](act:enum/group_type/list) |
 | workgroup |  Ad-hoc working group, typically with a limited duration.  |
 | | [act:enum/group_type/workgroup](act:enum/group_type/workgroup) |
-| parliament |  Parliament at federal, cantonal, or municipal level (e.g., Federal Assembly, National Council, Council of States, Grand Council, cantonal parliament, municipal parliament).  |
-| | [act:enum/group_type/parliament](act:enum/group_type/parliament) |
+| assembly |  Assembly of the persons entitled to vote acting as the legislative body, in particular the communal assembly ("Gemeindeversammlung"). Unlike a council, it is not an elected body.  |
+| | [act:enum/group_type/assembly](act:enum/group_type/assembly) |
+| council_legislative |  Parliament at federal, cantonal, or municipal level (e.g., Federal Assembly, National Council, Council of States, Grand Council, cantonal parliament, municipal parliament).  |
+| | [act:enum/group_type/council_legislative](act:enum/group_type/council_legislative) |
 | delegation |  Delegation.  |
 | | [act:enum/group_type/delegation](act:enum/group_type/delegation) |
-| committee |  Commission (permanent or ad-hoc), including supervisory commissions (e.g., CPC), subject commissions, parliamentary investigation commissions (PIC), and audit commissions.  |
+| committee |  Standing committee, including supervisory committees (e.g., CPC), subject commissions, parliamentary investigation commissions (PIC), and audit commissions.  |
 | | [act:enum/group_type/committee](act:enum/group_type/committee) |
+| ad_hoc_committee |  Committee set up for a single task and dissolved once it is completed, in contrast to a standing committee.  |
+| | [act:enum/group_type/ad_hoc_committee](act:enum/group_type/ad_hoc_committee) |
 | parliamentary_group |  Parliamentary faction.  |
 | | [act:enum/group_type/parliamentary_group](act:enum/group_type/parliamentary_group) |
 | parliamentary_bureau |  Parliamentary bureau.  |
 | | [act:enum/group_type/parliamentary_bureau](act:enum/group_type/parliamentary_bureau) |
 | presidency |  Presidency of parliament.  |
 | | [act:enum/group_type/presidency](act:enum/group_type/presidency) |
-| government |  Government / Executive as a collective body (e.g., Federal Council, Cantonal Government, City or Municipal Council).  |
-| | [act:enum/group_type/government](act:enum/group_type/government) |
+| council_executive |  Government / Executive as a collective body (e.g., Federal Council, Cantonal Government, City or Municipal Council).  |
+| | [act:enum/group_type/council_executive](act:enum/group_type/council_executive) |
 | department |  Government department.  |
 | | [act:enum/group_type/department](act:enum/group_type/department) |
 | office |  Government office.  |

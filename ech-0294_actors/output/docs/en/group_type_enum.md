@@ -62,8 +62,8 @@ URI: [act:groupTypeEnum](https://ld.ech.ch/schema/0294/actors/groupTypeEnum)
 | Value |
 | --- |
 | committee |
+| council_legislative |
 | delegation |
-| interest_group |
 
 
 
@@ -90,8 +90,8 @@ description: 'Link to the controlled vocabulary for group types.
   '
 examples:
 - value: committee
+- value: council_legislative
 - value: delegation
-- value: interest_group
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:groupTypeEnum

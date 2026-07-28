@@ -392,7 +392,7 @@ groups:
       - value: Stadtparlament St. Gallen
         language: de
     group_type:
-      group_type_enum: parliament
+      group_type_enum: council_legislative
       label: Parlament (Legislativrat)
     spatial: https://ld.admin.ch/municipality/3203
 

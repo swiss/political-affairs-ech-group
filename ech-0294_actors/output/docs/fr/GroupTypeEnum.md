@@ -22,20 +22,24 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/list](act:enum/group_type/list) |
 | workgroup |  Groupe de travail ad hoc, généralement d'une durée limitée.  |
 | | [act:enum/group_type/workgroup](act:enum/group_type/workgroup) |
-| parliament |  Parlement au niveau fédéral, cantonal ou communal (p. ex. Assemblée fédérale, Conseil national, Conseil des États, Grand Conseil, parlement cantonal, parlement communal).  |
-| | [act:enum/group_type/parliament](act:enum/group_type/parliament) |
+| assembly |  Assemblée des personnes ayant le droit de vote en tant qu'organe législatif, en particulier l'assemblée communale. Contrairement à un conseil, elle n'est pas un organe élu.  |
+| | [act:enum/group_type/assembly](act:enum/group_type/assembly) |
+| council_legislative |  Parlement au niveau fédéral, cantonal ou communal (p. ex. Assemblée fédérale, Conseil national, Conseil des États, Grand Conseil, parlement cantonal, parlement communal).  |
+| | [act:enum/group_type/council_legislative](act:enum/group_type/council_legislative) |
 | delegation |  Délégation.  |
 | | [act:enum/group_type/delegation](act:enum/group_type/delegation) |
-| committee |  Commission (permanente ou ad hoc), y compris les commissions de surveillance (p. ex. CdG), les commissions thématiques, les commissions d'enquête parlementaire (CEP) et les commissions de vérification des comptes.  |
+| committee |  Commission permanente, y compris les commissions de surveillance (p. ex. CdG), les commissions thématiques, les commissions d'enquête parlementaire (CEP) et les commissions de vérification des comptes.  |
 | | [act:enum/group_type/committee](act:enum/group_type/committee) |
+| ad_hoc_committee |  Commission instituée pour une tâche unique et dissoute une fois celle-ci accomplie, par opposition à une commission permanente.  |
+| | [act:enum/group_type/ad_hoc_committee](act:enum/group_type/ad_hoc_committee) |
 | parliamentary_group |  Groupe parlementaire.  |
 | | [act:enum/group_type/parliamentary_group](act:enum/group_type/parliamentary_group) |
 | parliamentary_bureau |  Bureau du parlement.  |
 | | [act:enum/group_type/parliamentary_bureau](act:enum/group_type/parliamentary_bureau) |
 | presidency |  Présidence du parlement.  |
 | | [act:enum/group_type/presidency](act:enum/group_type/presidency) |
-| government |  Gouvernement / exécutif en tant qu'organe collégial (p. ex. Conseil fédéral, conseil d'État, conseil municipal ou conseil communal).  |
-| | [act:enum/group_type/government](act:enum/group_type/government) |
+| council_executive |  Gouvernement / exécutif en tant qu'organe collégial (p. ex. Conseil fédéral, conseil d'État, conseil municipal ou conseil communal).  |
+| | [act:enum/group_type/council_executive](act:enum/group_type/council_executive) |
 | department |  Département gouvernemental.  |
 | | [act:enum/group_type/department](act:enum/group_type/department) |
 | office |  Office gouvernemental.  |
