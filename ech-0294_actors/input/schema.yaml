@@ -1707,8 +1707,8 @@ enums:
             Delegation.
           description_fr: |
             Délégation.
-      committee_standing:
-        meaning: act:enum/group_type/committee_standing
+      committee:
+        meaning: act:enum/group_type/committee
         description: |
           Standing committee, including supervisory committees (e.g., CPC), subject commissions, parliamentary investigation commissions (PIC), and audit commissions.
         annotations:
