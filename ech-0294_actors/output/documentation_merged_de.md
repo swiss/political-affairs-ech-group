@@ -1103,7 +1103,7 @@ landing_page:
 - value: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/
   language: de
 group_type:
-  group_type_enum: committee_standing
+  group_type_enum: committee
   label: Kommission
 spatial: https://ld.admin.ch/canton/15
 
@@ -1258,8 +1258,8 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/council_legislative](act:enum/group_type/council_legislative) |
 | delegation |  Delegation.  |
 | | [act:enum/group_type/delegation](act:enum/group_type/delegation) |
-| committee_standing |  Ständige Kommission, einschliesslich Aufsichtskommissionen (z.B. GPK), Sachkommissionen, Parlamentarische Untersuchungskommissionen (PUK) und Rechnungsprüfungskommissionen.  |
-| | [act:enum/group_type/committee_standing](act:enum/group_type/committee_standing) |
+| committee |  Ständige Kommission, einschliesslich Aufsichtskommissionen (z.B. GPK), Sachkommissionen, Parlamentarische Untersuchungskommissionen (PUK) und Rechnungsprüfungskommissionen.  |
+| | [act:enum/group_type/committee](act:enum/group_type/committee) |
 | committee_ad_hoc |  Kommission, die für eine einzelne Aufgabe eingesetzt und nach deren Erledigung wieder aufgelöst wird, im Unterschied zur ständigen Kommission.  |
 | | [act:enum/group_type/committee_ad_hoc](act:enum/group_type/committee_ad_hoc) |
 | parliamentary_group |  Parlamentsfraktion.  |

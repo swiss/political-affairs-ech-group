@@ -25,7 +25,7 @@ act:groups_example a act:Container ;
     mcm:localId "3" ;
     act:groupType [ a act:GroupType ;
             mcm:label "Kommission" ;
-            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/committee_standing> ] ;
+            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/committee> ] ;
     act:landingPage [ a mcm:MultilingualUri ;
             mcm:language "de" ;
             mcm:value <https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/> ] ;
@@ -101,12 +101,12 @@ act:groups_example a act:Container ;
             act:streetAddress "Fédération romande des consommateurs, Rue de Genève 17, case postale 585" ] ;
     act:contact [ a act:Contact ;
             mcm:label "Sekretariat" ;
-            mcm:value "l.altwegg@frc.ch" ;
-            act:contactType "email" ],
+            mcm:value "+41 21 331 00 95" ;
+            act:contactType "phone" ],
         [ a act:Contact ;
             mcm:label "Sekretariat" ;
-            mcm:value "+41 21 331 00 95" ;
-            act:contactType "phone" ] ;
+            mcm:value "l.altwegg@frc.ch" ;
+            act:contactType "email" ] ;
     act:description [ a mcm:MultilingualValue ;
             mcm:language "fr" ;
             mcm:value "L'intergroupe parlementaire « Information et défense des consommateurs » réunit toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s en Suisse." ] ;
@@ -137,11 +137,11 @@ act:groups_example a act:Container ;
             mcm:language "de" ;
             mcm:value "Del-StRFE" ] ;
     mcm:label [ a mcm:MultilingualValue ;
-            mcm:language "fr" ;
-            mcm:value "Délégation FR à la CIP détention pénale" ],
-        [ a mcm:MultilingualValue ;
             mcm:language "de" ;
-            mcm:value "Freiburger Delegation IPK strafrechtliche Einschliessung" ] ;
+            mcm:value "Freiburger Delegation IPK strafrechtliche Einschliessung" ],
+        [ a mcm:MultilingualValue ;
+            mcm:language "fr" ;
+            mcm:value "Délégation FR à la CIP détention pénale" ] ;
     mcm:localId "5000" ;
     act:description [ a mcm:MultilingualValue ;
             mcm:language "fr" ;

@@ -28,8 +28,8 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/council_legislative](act:enum/group_type/council_legislative) |
 | delegation |  Délégation.  |
 | | [act:enum/group_type/delegation](act:enum/group_type/delegation) |
-| committee_standing |  Commission permanente, y compris les commissions de surveillance (p. ex. CdG), les commissions thématiques, les commissions d'enquête parlementaire (CEP) et les commissions de vérification des comptes.  |
-| | [act:enum/group_type/committee_standing](act:enum/group_type/committee_standing) |
+| committee |  Commission permanente, y compris les commissions de surveillance (p. ex. CdG), les commissions thématiques, les commissions d'enquête parlementaire (CEP) et les commissions de vérification des comptes.  |
+| | [act:enum/group_type/committee](act:enum/group_type/committee) |
 | committee_ad_hoc |  Commission instituée pour une tâche unique et dissoute une fois celle-ci accomplie, par opposition à une commission permanente.  |
 | | [act:enum/group_type/committee_ad_hoc](act:enum/group_type/committee_ad_hoc) |
 | parliamentary_group |  Groupe parlementaire.  |

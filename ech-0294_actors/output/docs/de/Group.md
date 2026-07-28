@@ -207,7 +207,7 @@ landing_page:
 - value: https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/
   language: de
 group_type:
-  group_type_enum: committee_standing
+  group_type_enum: committee
   label: Kommission
 spatial: https://ld.admin.ch/canton/15
 

@@ -28,8 +28,8 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/council_legislative](act:enum/group_type/council_legislative) |
 | delegation |  Delegation.  |
 | | [act:enum/group_type/delegation](act:enum/group_type/delegation) |
-| committee_standing |  Standing committee, including supervisory committees (e.g., CPC), subject commissions, parliamentary investigation commissions (PIC), and audit commissions.  |
-| | [act:enum/group_type/committee_standing](act:enum/group_type/committee_standing) |
+| committee |  Standing committee, including supervisory committees (e.g., CPC), subject commissions, parliamentary investigation commissions (PIC), and audit commissions.  |
+| | [act:enum/group_type/committee](act:enum/group_type/committee) |
 | committee_ad_hoc |  Committee set up for a single task and dissolved once it is completed, in contrast to a standing committee.  |
 | | [act:enum/group_type/committee_ad_hoc](act:enum/group_type/committee_ad_hoc) |
 | parliamentary_group |  Parliamentary faction.  |

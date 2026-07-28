@@ -62,7 +62,7 @@ URI: [act:groupTypeEnum](https://ld.ech.ch/schema/0294/actors/groupTypeEnum)
 | Valeur |
 | --- |
 | association |
-| committee_standing |
+| committee |
 | council_bureau |
 
 
@@ -90,7 +90,7 @@ description: 'Lien vers le vocabulaire contrôlé pour les types de groupes.
   '
 examples:
 - value: association
-- value: committee_standing
+- value: committee
 - value: council_bureau
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
