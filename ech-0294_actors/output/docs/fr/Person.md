@@ -69,7 +69,7 @@ __
 
 ```yaml
 local_id: 4032
-global_uri: https://data-example.parlament.ch/person/4032
+global_uri: https://www.admin.ch/de/beat-jans
 wikidata_uri: http://www.wikidata.org/entity/Q813067
 label: Beat Jans
 label_long: Beat Jans, dipl. nat. ETH
