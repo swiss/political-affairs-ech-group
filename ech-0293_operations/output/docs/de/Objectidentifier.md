@@ -1,0 +1,42 @@
+---
+search:
+  boost: 1.0
+---# Typ: Objectidentifier 
+
+
+
+
+_A URI or CURIE that represents an object in the model._
+
+
+
+<div data-search-exclude markdown="1">
+
+URI: [shex:iri](http://www.w3.org/ns/shex#iri)
+
+## Typ-Eigenschaften
+
+| Eigenschaft | Wert |
+| --- | --- |
+| Base | `ElementIdentifier` |
+| Type URI | [shex:iri](http://www.w3.org/ns/shex#iri) |
+| Representation | `str` |
+
+
+
+
+
+
+## Kommentare
+
+* Used for inheritance and type checking
+
+## Hinweise
+
+* If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "objectidentifier".
+
+
+
+
+
+</div>
