@@ -1,10 +1,10 @@
 ---
-title: "eCH-0293 Activité publique des conseils"
+title: "eCH-0293 Fonctionnement public des conseils"
 lang: fr
 toc: false
 ---
 
-|**Nom**|**Activité publique des conseils**|
+|**Nom**|**Fonctionnement public des conseils**|
 |---|---|
 |**Numéro eCH**|eCH-0293|
 |**Catégorie**|Norme|
@@ -24,11 +24,11 @@ toc: false
 
 # Résumé
 
-La norme eCH-0293 définit un modèle de données commun pour la saisie et la publication d'informations relatives à l'activité publique des conseils en Suisse. Elle couvre l'organisation temporelle des travaux parlementaires (législatures, sessions), la structuration des séances et des points de l'ordre du jour, les votes et les élections, les voix individuelles, les listes de présence ainsi que les interventions et les décisions.
+La norme eCH-0293 définit un modèle de données commun pour la saisie et la publication d'informations relatives au fonctionnement public des conseils en Suisse. Elle couvre l'organisation temporelle des travaux parlementaires (législatures, sessions), la structuration des séances et des points de l'ordre du jour, les votes et les élections, les voix individuelles, les listes de présence ainsi que les interventions et les décisions.
 
 Cette norme s'adresse aux services parlementaires, aux fournisseuses et fournisseurs de logiciels de gestion parlementaire, aux utilisatrices et utilisateurs de données à des fins d'analyse et de visualisation ainsi qu'aux plateformes de données ouvertes.
 
-eCH-0293 fait partie d'une famille de normes pour les données politiques et travaille en étroite articulation avec eCH-0294 (acteurs politiques), eCH-0295 (affaires parlementaires), eCH-0296 (actes normatifs et textes de loi) et eCH-0297 (consultations publiques).
+eCH-0293 fait partie d'une famille de normes pour les données politiques et travaille en étroite articulation avec eCH-0294 (acteurs politiques), eCH-0295 (affaires parlementaires), eCH-0296 (actes législatifs et textes de loi) et eCH-0297 (consultations publiques).
 
 \newpage
 
