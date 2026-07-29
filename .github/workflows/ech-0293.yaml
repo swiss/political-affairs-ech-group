@@ -8,6 +8,8 @@ on:
       # The FRBR/common schemas are imported by ech-0293 and feed its docs.
       - 'ech-0292_meta/input/schema.yaml'
       - 'ech-0292_meta/input/schema_common.yaml'
+      # gen-doc renders the docs from these templates.
+      - 'ech-0292_meta/input/docgen/**'
   workflow_dispatch:
 
 # Zwei gleichzeitige Laeufe erzeugen dieselben Dateien und kollidieren beim
