@@ -1,4 +1,6 @@
-ToDo: Michel
+\newpage
+
+<!-- ToDo: Michel -->
 
 # Tagesordnung (Traktandenliste), Protokoll und Beschlüsse
 

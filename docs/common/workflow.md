@@ -93,13 +93,14 @@ subgroup-name/
 │   ├── subgroup-name.docx
 ```
 
-## Multilingual Output and PDF (ech-0294)
+## Multilingual Output and PDF (ech-0293, ech-0294)
 
-Most subgroups produce a single German DOCX. **ech-0294** additionally builds the document in **three languages (de / fr / en)** and, per language, also a **PDF**. The base pipeline above is run once per language.
+Most subgroups produce a single German DOCX. **ech-0294** and **ech-0293** additionally build the document in **three languages (de / fr / en)** and, per language, also a **PDF**. The base pipeline above is run once per language. The two workflows (`.github/workflows/ech-0294.yaml`, `.github/workflows/ech-0293.yaml`) are structurally identical — the subgroup folder is the only difference, so a change to one usually belongs in the other as well. ech-0293 additionally triggers on changes to `ech-0292_meta/input/schema.yaml` and `schema_common.yaml`, because it imports both and their descriptions end up in its generated docs.
 
 ### Where the languages live
 
-- **Prose** is kept per language in `ech-0294_actors/input/<lang>/NN_*.md` (`de`, `fr`, `en`), i.e. one translated set of chapter files per language. `merge_documentation.py <subgroup> <lang>` reads `input/<lang>/` and writes `output/documentation_merged_<lang>.md`.
+- **Prose** is kept per language in `<subgroup>/input/<lang>/NN_*.md` (`de`, `fr`, `en`), i.e. one translated set of chapter files per language. `merge_documentation.py <subgroup> <lang>` reads `input/<lang>/` and writes `output/documentation_merged_<lang>.md`.
+- **Example headings** are given speaking, per-language titles in `input/pipeline_examples_generator_config.yaml` under `example_titles`, keyed by the instance's `local_id` (or its `global_uri` where there is none). Without an entry, an example is named after its data file and label (`Meeting-meeting_complete_meeting_gl_landsgemeinde_2025`), which reads poorly in the finished document.
 - **Schema descriptions** are trilingual: English in `description:`, German in `annotations.description_de:`, French in `annotations.description_fr:`. **Keep all three in sync** — when you add or change a description, update the other two. A missing translation falls back to English, so gaps show up as English text in an otherwise translated document.
 - **gen-doc templates** exist per language in `ech-0292_meta/input/docgen/{en,de,fr}/`. `en` is the source of truth; `docgen_labels.py` regenerates `de/` and `fr/` from it, translating the static UI labels (e.g. *Class* → *Klasse*). Re-run it after changing the English templates.
 
@@ -109,9 +110,9 @@ For each of `de`, `fr`, `en`:
 
 1. `localize_schema.py <base_schema> <lang> <out>` — produces a language copy of the (examples-enriched) schema in which each `description` is replaced by its `description_<lang>` (falling back to English). It also localizes the imported `schema_common` so inherited slots (`global_uri`, `valid_from`, …) render in the target language.
 2. `gen-doc` runs against that localized schema with `--template-directory ech-0292_meta/input/docgen/<lang>` → `output/docs/<lang>/`.
-3. `merge_documentation.py ech-0294_actors <lang>` merges `input/<lang>/*.md`, redirecting `{{include:…/output/docs/…}}` to `output/docs/<lang>/`.
-4. `pandoc … --reference-doc=input/template.docx` → `output/ech-0294_actors_<lang>.docx`, then `set_docx_updatefields.py` and `shade_alternate_rows.py` (see below).
-5. `docx_to_pdf.sh` converts the finished `output/ech-0294_actors_<lang>.docx` directly to `output/ech-0294_actors_<lang>.pdf` via LibreOffice (see below).
+3. `merge_documentation.py <subgroup> <lang>` merges `input/<lang>/*.md`, redirecting `{{include:…/output/docs/…}}` to `output/docs/<lang>/` and translating the example headings via `example_titles`.
+4. `pandoc … --reference-doc=input/template.docx` → `output/<subgroup>_<lang>.docx`, then `set_docx_updatefields.py`, `shade_alternate_rows.py`, `set_docx_footer.py` and `set_docx_page_label.py` (see below).
+5. `docx_to_pdf.sh` converts the finished `output/<subgroup>_<lang>.docx` directly to `output/<subgroup>_<lang>.pdf` via LibreOffice (see below).
 
 ### DOCX specifics
 
@@ -147,7 +148,7 @@ Generated artifacts are published as **GitHub Releases** so that specific, versi
 - **Assets:** the three Word documents **and the three PDFs** (Typst, styled to match the Word rendering, with a populated table of contents), the schema (`schema.yaml` / `.json` / `.ttl`), the example data (`data_*.yaml` + generated JSON/RDF) and a **ZIP bundle** of all of them.
 - **eCH-0003 file naming:** the released Word documents are renamed to the eCH-0003 nomenclature `<TYP>_<d|f|e>_<STATUS>_<YYYY-MM-DD>_eCH-0294_V<version>_<Titel>.docx` (e.g. `STAN_d_DRA_2026-07-22_eCH-0294_V1.0.0_Politische Akteure - Personen, Gruppen und Organe.docx`). `TYP` comes from `Kategorie` (`Standard` → `STAN`), the status code from `Status` (pre-approval `In Arbeit`/`Entwurf`/`Vorschlag` → `DRA`, `Genehmigt` → `DEF`), the rest from the metadata table — derived by `ech_doc_filename.py`. Schema/data assets keep their descriptive names.
 - **Versioning:** the version lives in the **tag** and is chosen per release — it is *not* derived from the commit count. A later release is simply another run with a higher number (`1.0.2`, `1.1.0`, …), each producing its own tag and Release, giving a clean, linkable history. The workflow emits a warning if the entered version differs from the **Version** field in `01_head.md`.
-- **Per standard:** the workflow lives in `.github/workflows/release-ech-0294.yaml` and is specific to ech-0294. Copy it per subgroup (`release-ech-0295.yaml`, …) to release the other standards.
+- **Per standard:** the workflow lives in `.github/workflows/release-ech-0294.yaml` and is specific to ech-0294; `release-ech-0293.yaml` is its ech-0293 counterpart (trigger *Release ech-0293*, tag `ech-0293-v<version>`). Copy either one per subgroup (`release-ech-0295.yaml`, …) to release the other standards.
 
 ## Tutorial
 

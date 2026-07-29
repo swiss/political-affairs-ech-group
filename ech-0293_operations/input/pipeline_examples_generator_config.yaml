@@ -46,3 +46,188 @@ slots:
   - result_text
 
 max_examples_per_slot: 3
+
+# Sprechende Titel für einzelne Beispiele. Ohne Eintrag heisst ein Beispiel nach
+# Datei und Label (z. B. "Meeting-meeting_complete_meeting_gl_landsgemeinde_2025");
+# mit Eintrag nach dem Punkt, den es zeigt. Schlüssel ist die `local_id` der
+# Instanz oder, wo diese fehlt, ihre `global_uri`. Der Titel wird je
+# Dokumentsprache gesetzt.
+example_titles:
+
+  # --- Session ------------------------------------------------------------
+  "ops:session_5207":
+    de: Eidgenössische Session mit dreisprachiger Bezeichnung
+    fr: Session fédérale avec désignation trilingue
+    en: Federal session with a trilingual designation
+  "ops:session_be_summer_2025":
+    de: Kantonale Session mit zweisprachiger Bezeichnung
+    fr: Session cantonale avec désignation bilingue
+    en: Cantonal session with a bilingual designation
+  "ops:session_gl_landrat_2025_02_26":
+    de: Eintägige Sitzungsperiode eines Landrates
+    fr: Période de séance d'un jour d'un Grand Conseil
+    en: One-day sitting period of a cantonal parliament
+  "ops:session_gl_landsgemeinde_2025_05_04":
+    de: Landsgemeinde als Sitzungsperiode
+    fr: Landsgemeinde comme période de séance
+    en: Landsgemeinde as a sitting period
+
+  # --- Meeting ------------------------------------------------------------
+  "ops:meeting_gl_landsgemeinde_2025":
+    de: Landsgemeinde als Sitzungstyp „sitting“
+    fr: Landsgemeinde comme type de séance « sitting »
+    en: Landsgemeinde as meeting type "sitting"
+  "ops:meeting_be_committee_wak_2025_05_12":
+    de: Kommissionssitzung mit Anwesenheitsliste
+    fr: Séance de commission avec liste de présence
+    en: Committee sitting with an attendance list
+  "ops:meeting_sg_2025_03_15":
+    de: Kantonsratssitzung mit Traktanden und Abstimmungen
+    fr: Séance de Grand Conseil avec points de l'ordre du jour et votes
+    en: Cantonal parliament sitting with agenda items and votings
+  "parl:sr_winter25_sitzung_6":
+    de: Ständeratssitzung mit Protokoll und Wortmeldungen
+    fr: Séance du Conseil des États avec procès-verbal et interventions
+    en: Council of States sitting with protocol and speeches
+  "ops:340dcf932fb044dd8f8c5c943267fbcc":
+    de: Regierungssitzung mit zweisprachiger Bezeichnung
+    fr: Séance du gouvernement avec désignation bilingue
+    en: Government sitting with a bilingual designation
+  "ops:e7c5d453-848a-430a-b024-1dd2f6873aa6":
+    de: Halbtagessitzung innerhalb einer Session
+    fr: Séance d'une demi-journée au sein d'une session
+    en: Half-day sitting within a session
+
+  # --- AgendaItem (kuratierte Beispiele) ----------------------------------
+  "ops:agenda_item_be_2025_042":
+    de: Detailberatung eines Gesetzesartikels
+    fr: Discussion par article d'une loi
+    en: Detailed deliberation of an article of an act
+  "ops:agenda_item_sg_2025_015":
+    de: Traktandum mit Schlussabstimmung
+    fr: Point de l'ordre du jour avec vote final
+    en: Agenda item with a final vote
+  "ops:agenda_item_zh_budget_2026":
+    de: Budgettraktandum
+    fr: Point de l'ordre du jour budgétaire
+    en: Budget agenda item
+
+  # --- AgendaItem (Übernahmen aus produktiven Systemen) -------------------
+  "ops:06fb582b753c416d8fdb05fa13873545":
+    de: Interpellation als Traktandum
+    fr: Interpellation comme point de l'ordre du jour
+    en: Interpellation as an agenda item
+  "ops:0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a":
+    de: Postulat, Kategorie „voting“
+    fr: Postulat, catégorie « voting »
+    en: Postulate, category "voting"
+  "ops:16155798_3":
+    de: Motion in einer Traktandengruppe
+    fr: Motion dans un groupe de points de l'ordre du jour
+    en: Motion within a group of agenda items
+  "ops:16155798_4":
+    de: Volksmotion in einer Traktandengruppe
+    fr: Motion populaire dans un groupe de points de l'ordre du jour
+    en: Popular motion within a group of agenda items
+  "ops:2023_10_03-52":
+    de: Französischsprachiges Traktandum (Postulat)
+    fr: Point de l'ordre du jour en français (postulat)
+    en: French-language agenda item (postulate)
+  "ops:2025_05_20-23":
+    de: Dringliche Interpellation, französischsprachig
+    fr: Interpellation urgente, en français
+    en: Urgent interpellation, in French
+  "ops:21c50b86d21b4b4baeb1a76738ff82a3_2025-04-02_1_de":
+    de: Petition als Traktandum
+    fr: Pétition comme point de l'ordre du jour
+    en: Petition as an agenda item
+  "ops:49_253":
+    de: Sachgeschäft ohne Traktandenkategorie
+    fr: Affaire matérielle sans catégorie de point
+    en: Substantive affair without an agenda category
+  "ops:7b3545e4-57dc-3901-aaa8-4020da6ab0c6":
+    de: Teilrevision mehrerer Verordnungen, französischsprachig
+    fr: Révision partielle de plusieurs ordonnances, en français
+    en: Partial revision of several ordinances, in French
+  "ops:87b69a72919445a493a061d9b0daeba3":
+    de: Sachgeschäft aus einem kantonalen Ratsinformationssystem
+    fr: Affaire matérielle issue d'un système d'information parlementaire cantonal
+    en: Substantive affair from a cantonal parliamentary information system
+  "ops:cea750a5bd7b420fa4da1c914f801384":
+    de: Interpellation einer Fraktion
+    fr: Interpellation d'un groupe parlementaire
+    en: Interpellation of a parliamentary group
+  "ops:fa732e0e-7e5f-4d45-994a-fc74720c0781":
+    de: Postulat mit Abstimmung
+    fr: Postulat avec vote
+    en: Postulate with a voting
+  "ops:69905":
+    de: Traktandum einer Ständeratssitzung
+    fr: Point de l'ordre du jour d'une séance du Conseil des États
+    en: Agenda item of a Council of States sitting
+
+  # --- Voting -------------------------------------------------------------
+  "ops:voting_be_2025_042":
+    de: Zwischenabstimmung über einen Änderungsantrag
+    fr: Vote intermédiaire sur une proposition de modification
+    en: Intermediate voting on an amendment
+  "ops:voting_sg_2025_001":
+    de: Schlussabstimmung mit Einzelstimmen
+    fr: Vote final avec voix individuelles
+    en: Final vote with individual votes
+  "ops:voting_zh_budget_2026":
+    de: Schlussabstimmung über das Budget
+    fr: Vote final sur le budget
+    en: Final vote on the budget
+  "ops:voting_zh_gr_2024_2023_361":
+    de: Gleichgerichtete Anträge mit Mehrfachauswahl
+    fr: Propositions de même sens avec choix multiple
+    en: Motions in the same direction with multiple choice
+
+  # --- IndividualVote -----------------------------------------------------
+  "ops:vote_sg_2025_001_person_123":
+    de: Ja-Stimme
+    fr: Voix « oui »
+    en: Yes vote
+  "ops:vote_sg_2025_001_person_456":
+    de: Nein-Stimme
+    fr: Voix « non »
+    en: No vote
+  "ops:vote_sg_2025_001_person_789":
+    de: Enthaltung
+    fr: Abstention
+    en: Abstention
+  "ops:vote_sg_2025_001_person_321":
+    de: Nicht abgestimmt
+    fr: N'a pas voté
+    en: Did not vote
+  "ops:vote_zh_budget_2026_person_101":
+    de: Ja-Stimme zum Budget
+    fr: Voix « oui » sur le budget
+    en: Yes vote on the budget
+  "ops:vote_zh_budget_2026_person_102":
+    de: Nein-Stimme zum Budget
+    fr: Voix « non » sur le budget
+    en: No vote on the budget
+  "ops:vote_zh_gr_2024_2023_361_a1":
+    de: Einzelstimme für Auswahloption A
+    fr: Voix individuelle pour l'option A
+    en: Individual vote for selection option A
+  "ops:vote_zh_gr_2024_2023_361_b1":
+    de: Einzelstimme für Auswahloption B
+    fr: Voix individuelle pour l'option B
+    en: Individual vote for selection option B
+  "ops:vote_zh_gr_2024_2023_361_c1":
+    de: Einzelstimme für Auswahloption C
+    fr: Voix individuelle pour l'option C
+    en: Individual vote for selection option C
+  "ops:vote_zh_gr_2024_2023_361_abs1":
+    de: Abwesend bei einer Mehrfachauswahl
+    fr: Absent lors d'un choix multiple
+    en: Absent in a multiple-choice voting
+
+  # --- Speech -------------------------------------------------------------
+  "ops:366631":
+    de: Wortmeldung mit Wortlauttext und Videoaufzeichnung
+    fr: Intervention avec texte in extenso et enregistrement vidéo
+    en: Speech with verbatim text and video recording

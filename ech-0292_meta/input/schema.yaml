@@ -1,7 +1,12 @@
 id: https://ch.paf.link/schema/meta
 name: meta
 description: |
-  [de] Dieses Schema modelliert Meta-Themen für die eCH Standards 0293-0297. In einem ersten Schritt werden FRBR-Entitäten modelliert, um die Verwaltung von Dokumenten und deren Übersetzungen zu ermöglichen.
+  This schema models meta topics for the eCH standards 0293-0297. In a first step, FRBR entities are modelled in order to manage documents and their translations.
+annotations:
+  description_de: |
+    Dieses Schema modelliert Meta-Themen für die eCH Standards 0293-0297. In einem ersten Schritt werden FRBR-Entitäten modelliert, um die Verwaltung von Dokumenten und deren Übersetzungen zu ermöglichen.
+  description_fr: |
+    Ce schéma modélise les thèmes transversaux des normes eCH 0293-0297. Dans un premier temps, des entités FRBR sont modélisées afin de permettre la gestion des documents et de leurs traductions.
 prefixes:
   xsd: http://www.w3.org/2001/XMLSchema#
   prov: http://www.w3.org/ns/prov#
@@ -16,6 +21,13 @@ default_range: string
 classes:
   
   Work: # only used if there are still documents, where ever possible the data should directly be structured in the data model
+    description: |
+      FRBR Work: the abstract document as such, independent of a concrete language version or file format.
+    annotations:
+      description_de: |
+        FRBR Work: das abstrakte Dokument als solches, unabhängig von einer konkreten Sprachfassung oder einem Dateiformat.
+      description_fr: |
+        FRBR Work : le document abstrait en tant que tel, indépendamment d'une version linguistique ou d'un format de fichier concrets.
     slots:
       - id
       - work_type
@@ -23,6 +35,13 @@ classes:
       - expressions
     
   Expression:
+    description: |
+      FRBR Expression: a concrete language version of a Work.
+    annotations:
+      description_de: |
+        FRBR Expression: eine konkrete Sprachfassung eines Works.
+      description_fr: |
+        FRBR Expression : une version linguistique concrète d'un Work.
     slots:
       - id
       - dates
@@ -32,6 +51,13 @@ classes:
       - manifestations
 
   Manifestation:
+    description: |
+      FRBR Manifestation: a concrete file format of an Expression, addressable via a URL.
+    annotations:
+      description_de: |
+        FRBR Manifestation: eine konkrete Dateiform einer Expression, über eine URL adressierbar.
+      description_fr: |
+        FRBR Manifestation : une forme de fichier concrète d'une Expression, adressable au moyen d'une URL.
     slots:
       - id
       - dates
@@ -47,11 +73,25 @@ classes:
   # the merged schema. Convert meta's own example data with
   # `--target-class WorkContainer`.
   WorkContainer:
+    description: |
+      Container for the documents (FRBR Works) of this schema. Deliberately not a tree_root, because the consuming schemas define their own Container.
+    annotations:
+      description_de: |
+        Container für die Dokumente (FRBR Works) dieses Schemas. Bewusst kein tree_root, weil die konsumierenden Schemata ihren eigenen Container definieren.
+      description_fr: |
+        Conteneur pour les documents (FRBR Works) de ce schéma. Volontairement pas un tree_root, car les schémas consommateurs définissent leur propre Container.
     slots:
       - id
       - works
 
   Date:
+    description: |
+      A date with a type indication (e.g. first publication, last revision).
+    annotations:
+      description_de: |
+        Ein Datum mit Typangabe (z.B. Erstpublikation, letzte Revision).
+      description_fr: |
+        Une date assortie d'une indication de type (p. ex. première publication, dernière révision).
     slots:
       - xdate
       - date_type
@@ -60,28 +100,63 @@ slots:
   
   works:
     slot_uri: meta:works
+    description: |
+      The documents (FRBR Works) contained in the container.
+    annotations:
+      description_de: |
+        Die im Container enthaltenen Dokumente (FRBR Works).
+      description_fr: |
+        Les documents (FRBR Works) contenus dans le conteneur.
     range: Work
     multivalued: true
     inlined_as_list: true
 
   expressions:
     slot_uri: meta:expressions
+    description: |
+      The language versions (Expressions) of a Work.
+    annotations:
+      description_de: |
+        Die Sprachfassungen (Expressions) eines Works.
+      description_fr: |
+        Les versions linguistiques (Expressions) d'un Work.
     range: Expression
     multivalued: true
     inlined_as_list: true
 
   manifestations:
     slot_uri: meta:manifestations
+    description: |
+      The file forms (Manifestations) of an Expression.
+    annotations:
+      description_de: |
+        Die Dateiformen (Manifestations) einer Expression.
+      description_fr: |
+        Les formes de fichier (Manifestations) d'une Expression.
     range: Manifestation
     multivalued: true
     inlined_as_list: true
   
   id:
     identifier: true
+    description: |
+      Unique identifier of the element.
+    annotations:
+      description_de: |
+        Eindeutiger Identifikator des Elements.
+      description_fr: |
+        Identifiant univoque de l'élément.
     required: true
 
   work_type:
     slot_uri: meta:workType
+    description: |
+      Type of the document (e.g. minutes, submitted version, current law).
+    annotations:
+      description_de: |
+        Art des Dokuments (z.B. Protokoll, eingereichte Fassung, geltendes Recht).
+      description_fr: |
+        Type de document (p. ex. procès-verbal, version déposée, droit en vigueur).
     range: WorkTypesEnum
 
 
@@ -95,60 +170,118 @@ slots:
     required: true
     pattern: ^[a-z]{2}$
     description: |
-      [en] Language code in ISO 639-1 format.
-      [de] Sprachcode im ISO 639-1-Format.
+      Language code in ISO 639-1 format.
+    annotations:
+      description_de: |
+        Sprachcode im ISO 639-1-Format.
+      description_fr: |
+        Code de langue au format ISO 639-1.
 
   expression_title:
     slot_uri: meta:title
+    description: |
+      Title of the language version.
+    annotations:
+      description_de: |
+        Titel der Sprachfassung.
+      description_fr: |
+        Titre de la version linguistique.
     range: string
     required: true
 
   expression_description:
     slot_uri: schema:description
+    description: |
+      Descriptive text of the language version.
+    annotations:
+      description_de: |
+        Beschreibender Text zur Sprachfassung.
+      description_fr: |
+        Texte descriptif de la version linguistique.
     range: string
 
   format: #probably from http://publications.europa.eu/resource/authority/file-type
     slot_uri: meta:format
     range: string
     description: |
-      [en] The file format of the manifestation (e.g., pdf, html).
-      [de] Das Dateiformat der Manifestation (z.B. pdf, html).
+      The file format of the manifestation (e.g., pdf, html).
+    annotations:
+      description_de: |
+        Das Dateiformat der Manifestation (z.B. pdf, html).
+      description_fr: |
+        Le format de fichier de la manifestation (p. ex. pdf, html).
 
   # Renamed from the generic `url` to avoid colliding with consumer schemas
   # that define their own `url` slot (ech-0293's is multilingual).
   manifestation_url:
     slot_uri: meta:url
+    description: |
+      URL under which the file form can be retrieved.
+    annotations:
+      description_de: |
+        URL, unter der die Dateiform abgerufen werden kann.
+      description_fr: |
+        URL sous laquelle la forme de fichier peut être consultée.
     range: uri
 
   dates:
     slot_uri: meta:dates
+    description: |
+      Dates relating to the element, each with a type indication.
+    annotations:
+      description_de: |
+        Datumsangaben zum Element, jeweils mit Typangabe.
+      description_fr: |
+        Dates relatives à l'élément, chacune assortie d'une indication de type.
     range: Date
     multivalued: true
     inlined_as_list: true
 
   xdate:
     slot_uri: dcterms:date
+    description: |
+      The date value itself.
+    annotations:
+      description_de: |
+        Der Datumswert selbst.
+      description_fr: |
+        La valeur de date elle-même.
     range: date
     required: true
 
   date_type:
     slot_uri: meta:dateType
+    description: |
+      Meaning of the date (e.g. first publication, last revision).
+    annotations:
+      description_de: |
+        Bedeutung des Datums (z.B. Erstpublikation, letzte Revision).
+      description_fr: |
+        Signification de la date (p. ex. première publication, dernière révision).
     range: DateTypesEnum
     required: true
 
   document_category:
     slot_uri: meta:documentCategory
     description: |
-      [de] Kategorie des Dokuments. Wenn nicht gesetzt, wird automatisch 'other' verwendet.
-      [en] Category of the document. If not set, 'other' is automatically used.
+      Category of the document. If not set, 'other' is automatically used.
+    annotations:
+      description_de: |
+        Kategorie des Dokuments. Wenn nicht gesetzt, wird automatisch 'other' verwendet.
+      description_fr: |
+        Catégorie du document. Si elle n'est pas renseignée, la valeur 'other' est utilisée automatiquement.
     range: DocumentCategoryEnum
     ifabsent: string(other)
 
   documents:
     slot_uri: meta:documents
     description: |
-      [de] Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.
-      [en] List of documents (FRBR Works) linked to the entity.
+      List of documents (FRBR Works) linked to the entity.
+    annotations:
+      description_de: |
+        Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.
+      description_fr: |
+        Liste des documents (FRBR Works) liés à l'entité.
     range: Work
     multivalued: true
     inlined_as_list: true
@@ -156,34 +289,90 @@ slots:
 enums:
 
   DateTypesEnum:
+    description: |
+      Meaning of a date entry.
+    annotations:
+      description_de: |
+        Bedeutung einer Datumsangabe.
+      description_fr: |
+        Signification d'une indication de date.
     permissible_values:
       first_publication:
         meaning: meta:vocabulary/date_types/FirstPublication
+        description: |
+          Date of first publication.
+        annotations:
+          description_de: |
+            Datum der Erstpublikation.
+          description_fr: |
+            Date de la première publication.
       last_revision:
         meaning: meta:vocabulary/date_types/LastRevision
+        description: |
+          Date of the last revision.
+        annotations:
+          description_de: |
+            Datum der letzten Revision.
+          description_fr: |
+            Date de la dernière révision.
 
   WorkTypesEnum:
+    description: |
+      Type of a document (FRBR Work).
+    annotations:
+      description_de: |
+        Art eines Dokuments (FRBR Work).
+      description_fr: |
+        Type d'un document (FRBR Work).
     permissible_values:
       pv:
         meaning: meta:vocabulary/work_types/PV
+        description: |
+          Minutes (Protokoll).
+        annotations:
+          description_de: |
+            Protokoll.
+          description_fr: |
+            Procès-verbal.
       submitted_version:
         meaning: meta:vocabulary/work_types/SubmittedVersion
+        description: |
+          Version as submitted.
+        annotations:
+          description_de: |
+            Eingereichte Fassung.
+          description_fr: |
+            Version telle que déposée.
       current_law:
         meaning: meta:vocabulary/work_types/CurrentLaw
+        description: |
+          Law currently in force.
+        annotations:
+          description_de: |
+            Geltendes Recht.
+          description_fr: |
+            Droit en vigueur.
 
   DocumentCategoryEnum:
     description: |
-      [de] Kategorien zur Klassifikation von Dokumenten, die in den eCH Standards 0292-0297 referenziert werden. Mehrsprachige Labels (DE/FR/IT/RM/EN) sind über `annotations` (Konvention `label_xx`) abgebildet; Erstvorschläge für FR/IT/RM stehen unter Plenum-Review.
-      [en] Categories for classifying documents referenced in eCH standards 0292-0297. Multilingual labels (DE/FR/IT/RM/EN) are encoded via `annotations` (convention `label_xx`); first proposals for FR/IT/RM are pending plenum review.
+      Categories for classifying documents referenced in eCH standards 0292-0297. Multilingual labels (DE/FR/IT/RM/EN) are encoded via `annotations` (convention `label_xx`); first proposals for FR/IT/RM are pending plenum review.
+    annotations:
+      description_de: |
+        Kategorien zur Klassifikation von Dokumenten, die in den eCH Standards 0292-0297 referenziert werden. Mehrsprachige Labels (DE/FR/IT/RM/EN) sind über `annotations` (Konvention `label_xx`) abgebildet; Erstvorschläge für FR/IT/RM stehen unter Plenum-Review.
+      description_fr: |
+        Catégories de classification des documents référencés dans les normes eCH 0292-0297. Les libellés multilingues (DE/FR/IT/RM/EN) sont représentés au moyen d'`annotations` (convention `label_xx`) ; les premières propositions pour FR/IT/RM sont en cours de revue par le plénum.
     permissible_values:
 
       protocol:
         title: Protocol
         description: |
-          [de] Protokolle aller Art. Beispiele: Entscheidungsprotokoll, Wortprotokoll, Kurzprotokoll, Tagblatt, Wortlautdokument, Eröffnungsrede, Sprecherliste, Audio- und Videoaufnahmen.
-          [en] Protocols of any kind. Examples: decision protocol, verbatim protocol, short protocol, daily journal (Tagblatt), opening speech, speaker list, audio and video recordings.
+          Protocols of any kind. Examples: decision protocol, verbatim protocol, short protocol, daily journal (Tagblatt), opening speech, speaker list, audio and video recordings.
         meaning: meta:vocabulary/document_category/Protocol
         annotations:
+          description_de: |
+            Protokolle aller Art. Beispiele: Entscheidungsprotokoll, Wortprotokoll, Kurzprotokoll, Tagblatt, Wortlautdokument, Eröffnungsrede, Sprecherliste, Audio- und Videoaufnahmen.
+          description_fr: |
+            Procès-verbaux de tout type. Exemples : procès-verbal de décision, procès-verbal in extenso, procès-verbal succinct, bulletin officiel, discours d'ouverture, liste des orateurs, enregistrements audio et vidéo.
           label_de: Protokoll
           label_fr: Procès-verbal
           label_it: Verbale
@@ -193,10 +382,13 @@ enums:
       voting_result:
         title: Voting result
         description: |
-          [de] Abstimmungs- und Wahlergebnisse. Beispiele: Abstimmungsprotokoll, Wahlprotokoll, Protokolle namentlicher Abstimmungen.
-          [en] Voting and election results. Examples: voting protocol, election protocol, roll-call voting protocols.
+          Voting and election results. Examples: voting protocol, election protocol, roll-call voting protocols.
         meaning: meta:vocabulary/document_category/VotingResult
         annotations:
+          description_de: |
+            Abstimmungs- und Wahlergebnisse. Beispiele: Abstimmungsprotokoll, Wahlprotokoll, Protokolle namentlicher Abstimmungen.
+          description_fr: |
+            Résultats des votes et des élections. Exemples : procès-verbal de vote, procès-verbal d'élection, procès-verbaux des votes nominatifs.
           label_de: Abstimmungsergebnis
           label_fr: Résultat du vote
           label_it: Risultato della votazione
@@ -206,10 +398,13 @@ enums:
       meeting_documents:
         title: Meeting documents
         description: |
-          [de] Sitzungsunterlagen, die zu Beginn einer Sitzung zu den Geschäften vorliegen. Beispiele: Traktandenliste, Tagesordnung, Sessionsprogramm, Sessionsvorschau, traktandierte Petitionen, Vorstossliste, Vereidigung/Gelübdenahme, Tagblattbeilagen, Geschäftsverzeichnis, Vorschau, Traktandenvorschau, Vorstoss Dringlichkeit.
-          [en] Meeting documents available at the start of a meeting concerning the affairs. Examples: agenda list, daily agenda, session programme, session preview, agendaed petitions, motion list, oath ceremony, daily journal supplements, affairs directory.
+          Meeting documents available at the start of a meeting concerning the affairs. Examples: agenda list, daily agenda, session programme, session preview, agendaed petitions, motion list, oath ceremony, daily journal supplements, affairs directory.
         meaning: meta:vocabulary/document_category/MeetingDocuments
         annotations:
+          description_de: |
+            Sitzungsunterlagen, die zu Beginn einer Sitzung zu den Geschäften vorliegen. Beispiele: Traktandenliste, Tagesordnung, Sessionsprogramm, Sessionsvorschau, traktandierte Petitionen, Vorstossliste, Vereidigung/Gelübdenahme, Tagblattbeilagen, Geschäftsverzeichnis, Vorschau, Traktandenvorschau, Vorstoss Dringlichkeit.
+          description_fr: |
+            Documents de séance disponibles au début d'une séance et relatifs aux affaires. Exemples : ordre du jour, programme de session, aperçu de la session, pétitions inscrites à l'ordre du jour, liste des interventions, prestation de serment, annexes du bulletin officiel, répertoire des affaires.
           label_de: Sitzungsunterlagen
           label_fr: Documents de séance
           label_it: Documenti di seduta
@@ -219,10 +414,13 @@ enums:
       meeting_planning:
         title: Meeting planning
         description: |
-          [de] Planungsdokumente für Sitzungen und Sessionen. Beispiele: Einladung, Sitzplan, Arbeitsplanung, Zeitbudget, Geschäftsplanung, Freitagsliste, Fristen für Einzelanträge, Liste der Zutrittsberechtigten, Veranstaltungen während der Session.
-          [en] Planning documents for meetings and sessions. Examples: invitation, seating plan, work schedule, time budget, affairs planning, friday list, amendment deadlines, access authorization list, session events.
+          Planning documents for meetings and sessions. Examples: invitation, seating plan, work schedule, time budget, affairs planning, friday list, amendment deadlines, access authorization list, session events.
         meaning: meta:vocabulary/document_category/MeetingPlanning
         annotations:
+          description_de: |
+            Planungsdokumente für Sitzungen und Sessionen. Beispiele: Einladung, Sitzplan, Arbeitsplanung, Zeitbudget, Geschäftsplanung, Freitagsliste, Fristen für Einzelanträge, Liste der Zutrittsberechtigten, Veranstaltungen während der Session.
+          description_fr: |
+            Documents de planification des séances et des sessions. Exemples : convocation, plan de salle, planification des travaux, budget-temps, planification des affaires, liste du vendredi, délais pour les propositions individuelles, liste des personnes autorisées à accéder, manifestations durant la session.
           label_de: Sitzungsplanung
           label_fr: Planification de séance
           label_it: Pianificazione della seduta
@@ -232,10 +430,13 @@ enums:
       media_release:
         title: Media release
         description: |
-          [de] Medienmitteilungen.
-          [en] Press releases.
+          Press releases.
         meaning: meta:vocabulary/document_category/MediaRelease
         annotations:
+          description_de: |
+            Medienmitteilungen.
+          description_fr: |
+            Communiqués de presse.
           label_de: Medienmitteilung
           label_fr: Communiqué de presse
           label_it: Comunicato stampa
@@ -245,10 +446,13 @@ enums:
       group_documents:
         title: Group documents
         description: |
-          [de] Unterlagen, die zu einer Gruppe (Kommission, Partei, Delegation etc.) gehören. Beispiele: Statuten, Einsetzungsverfügungen, Kommissionszuweisungen, Jahresberichte, Berichte zu internationalen Aktivitäten.
-          [en] Documents belonging to a group (committee, party, delegation, etc.). Examples: statutes, establishment decrees, committee allocations, annual reports, reports on international activities.
+          Documents belonging to a group (committee, party, delegation, etc.). Examples: statutes, establishment decrees, committee allocations, annual reports, reports on international activities.
         meaning: meta:vocabulary/document_category/GroupDocuments
         annotations:
+          description_de: |
+            Unterlagen, die zu einer Gruppe (Kommission, Partei, Delegation etc.) gehören. Beispiele: Statuten, Einsetzungsverfügungen, Kommissionszuweisungen, Jahresberichte, Berichte zu internationalen Aktivitäten.
+          description_fr: |
+            Documents relatifs à un groupe (commission, parti, délégation, etc.). Exemples : statuts, décisions d'institution, attributions aux commissions, rapports annuels, rapports sur les activités internationales.
           label_de: Gruppenunterlagen
           label_fr: Documents de groupe
           label_it: Documenti di gruppo
@@ -258,10 +462,13 @@ enums:
       member_directory:
         title: Member directory
         description: |
-          [de] Mitgliederverzeichnisse. Beispiele: Mitglieder der eidgenössischen Räte, Mitgliederverzeichnisse von Kommissionen, Gruppen und Freundschaftsgruppen, Liste aller Bundesrätinnen und Bundesräte.
-          [en] Member directories. Examples: members of the federal councils, member directories of committees, groups and friendship groups, list of all Federal Councillors.
+          Member directories. Examples: members of the federal councils, member directories of committees, groups and friendship groups, list of all Federal Councillors.
         meaning: meta:vocabulary/document_category/MemberDirectory
         annotations:
+          description_de: |
+            Mitgliederverzeichnisse. Beispiele: Mitglieder der eidgenössischen Räte, Mitgliederverzeichnisse von Kommissionen, Gruppen und Freundschaftsgruppen, Liste aller Bundesrätinnen und Bundesräte.
+          description_fr: |
+            Listes des membres. Exemples : membres des Chambres fédérales, listes des membres des commissions, des groupes et des groupes d'amitié, liste de toutes les conseillères et de tous les conseillers fédéraux.
           label_de: Mitgliederverzeichnis
           label_fr: Liste des membres
           label_it: Elenco dei membri
@@ -271,10 +478,13 @@ enums:
       person_documents:
         title: Person documents
         description: |
-          [de] Personenbezogene Unterlagen. Beispiele: Portraits der Ratsmitglieder, Fotos, Listen der persönlichen Mitarbeitenden.
-          [en] Person-related documents. Examples: portraits of council members, photos, lists of personal staff.
+          Person-related documents. Examples: portraits of council members, photos, lists of personal staff.
         meaning: meta:vocabulary/document_category/PersonDocuments
         annotations:
+          description_de: |
+            Personenbezogene Unterlagen. Beispiele: Portraits der Ratsmitglieder, Fotos, Listen der persönlichen Mitarbeitenden.
+          description_fr: |
+            Documents relatifs aux personnes. Exemples : portraits des membres du conseil, photos, listes des collaboratrices et collaborateurs personnels.
           label_de: Personenunterlagen
           label_fr: Documents personnels
           label_it: Documenti personali
@@ -284,10 +494,13 @@ enums:
       interest_disclosure:
         title: Interest disclosure
         description: |
-          [de] Register der Interessenbindungen von Ratsmitgliedern. Beispiele: Register der Interessenbindungen Nationalrat, Register der Interessenbindungen Ständerat.
-          [en] Registers of interest disclosures of council members. Examples: register of interest disclosures National Council, register of interest disclosures Council of States.
+          Registers of interest disclosures of council members. Examples: register of interest disclosures National Council, register of interest disclosures Council of States.
         meaning: meta:vocabulary/document_category/InterestDisclosure
         annotations:
+          description_de: |
+            Register der Interessenbindungen von Ratsmitgliedern. Beispiele: Register der Interessenbindungen Nationalrat, Register der Interessenbindungen Ständerat.
+          description_fr: |
+            Registres des liens d'intérêts des membres du conseil. Exemples : registre des liens d'intérêts du Conseil national, registre des liens d'intérêts du Conseil des États.
           label_de: Interessenbindungen
           label_fr: Liens d'intérêts
           label_it: Relazioni d'interesse
@@ -297,10 +510,13 @@ enums:
       other:
         title: Other
         description: |
-          [de] Dokumenttyp, der keiner der definierten Kategorien zugeordnet werden kann oder bei dem die Kategorie nicht bekannt ist. Default-Wert wenn `document_category` nicht explizit gesetzt wird.
-          [en] Document type that cannot be assigned to any of the defined categories or where the category is unknown. Default value if `document_category` is not set explicitly.
+          Document type that cannot be assigned to any of the defined categories or where the category is unknown. Default value if `document_category` is not set explicitly.
         meaning: meta:vocabulary/document_category/Other
         annotations:
+          description_de: |
+            Dokumenttyp, der keiner der definierten Kategorien zugeordnet werden kann oder bei dem die Kategorie nicht bekannt ist. Default-Wert wenn `document_category` nicht explizit gesetzt wird.
+          description_fr: |
+            Type de document ne pouvant être rattaché à aucune des catégories définies ou dont la catégorie est inconnue. Valeur par défaut si `document_category` n'est pas explicitement renseigné.
           label_de: Andere
           label_fr: Autre
           label_it: Altro

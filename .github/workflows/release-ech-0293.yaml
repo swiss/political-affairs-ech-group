@@ -1,0 +1,88 @@
+name: Release ech-0293
+
+# Manueller Release: du wählst die Versionsnummer selbst (z. B. 0.2.0) —
+# unabhängig von der Anzahl Commits. Der Workflow taggt den aktuellen Stand
+# als `ech-0293-v<version>` und veröffentlicht die generierten Artefakte
+# (Word, PDF, Schema, Beispiele) als GitHub Release.
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release-Version, z. B. 0.2.0 (frei wählbar)"
+        required: true
+        type: string
+      prerelease:
+        description: "Als Pre-Release markieren (Entwurf/Vorschlag, noch nicht genehmigt)"
+        required: false
+        type: boolean
+        default: true
+      draft:
+        description: "Nur als Entwurf (Draft) erstellen — still, ohne Tag und ohne Benachrichtigung; erst beim manuellen 'Publish' sichtbar"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Artefakte einsammeln
+        run: |
+          mkdir -p release
+          # Fertige Word-Dokumente (von der ech-0293-CI generiert und committet),
+          # benannt nach eCH-0003-Nomenklatur:
+          #   <TYP>_<d|f|e>_<STATUS>_<Datum>_eCH-0293_V<Version>_<Titel>.docx
+          # Alle Bestandteile werden aus der Metadaten-Tabelle (01_head.md) abgeleitet.
+          for pair in de:d fr:f en:e; do
+            lang="${pair%%:*}"; code="${pair##*:}"
+            stem="$(python .github/workflows/scripts/ech_doc_filename.py \
+                     "ech-0293_operations/input/${lang}/01_head.md" "$code" "${{ inputs.version }}")"
+            cp "ech-0293_operations/output/ech-0293_operations_${lang}.docx" "release/${stem}.docx"
+            # PDF (direkte LibreOffice-Konversion des Word-Dokuments, mit befülltem
+            # Inhaltsverzeichnis)
+            cp "ech-0293_operations/output/ech-0293_operations_${lang}.pdf" "release/${stem}.pdf"
+          done
+          # Schema (Quelle + generierte Formate)
+          cp ech-0293_operations/input/schema.yaml   release/ech-0293_operations_schema.yaml
+          cp ech-0293_operations/output/schema.json  release/ech-0293_operations_schema.json
+          cp ech-0293_operations/output/schema.ttl   release/ech-0293_operations_schema.ttl
+          # Beispieldaten (Quelle + generierte Formate)
+          for f in ech-0293_operations/input/data_*.yaml; do cp "$f" release/; done
+          for f in ech-0293_operations/output/data_*.json ech-0293_operations/output/data_*.ttl; do
+            [ -f "$f" ] && cp "$f" release/
+          done
+          # Zusätzlich alles als ein ZIP bündeln
+          ( cd release && zip -q "ech-0293_operations_v${{ inputs.version }}.zip" ./* )
+          echo "=== Release-Assets ==="
+          ls -la release/
+
+      - name: Versions-Konsistenz prüfen (nur Warnung)
+        run: |
+          META=$(grep -oE '\*\*Version\*\*[^|]*\|[^|]*' ech-0293_operations/input/de/01_head.md \
+                 | grep -oE '[0-9]+\.[0-9]+(\.[0-9]+)?' | head -1)
+          echo "Release-Version: ${{ inputs.version }} | Metadaten-Version (01_head.md): ${META:-unbekannt}"
+          if [ -n "$META" ] && [ "$META" != "${{ inputs.version }}" ]; then
+            echo "::warning::Release-Version ${{ inputs.version }} weicht von der Metadaten-Version $META ab — ggf. 01_head.md anpassen."
+          fi
+
+      - name: GitHub Release erstellen
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="ech-0293-v${{ inputs.version }}"
+          FLAGS=""
+          [ "${{ inputs.prerelease }}" = "true" ] && FLAGS="$FLAGS --prerelease"
+          # Draft: still, kein Tag, keine Benachrichtigung (erst beim Publish).
+          [ "${{ inputs.draft }}" = "true" ] && FLAGS="$FLAGS --draft"
+          gh release create "$TAG" release/* \
+            --target "${{ github.sha }}" \
+            --title "eCH-0293 Öffentlicher Ratsbetrieb — v${{ inputs.version }}" \
+            --notes "Generierte Artefakte für eCH-0293 v${{ inputs.version }} (Word + PDF in de/fr/en, Schema, Beispieldaten). Stand: Commit ${{ github.sha }}." \
+            $FLAGS
