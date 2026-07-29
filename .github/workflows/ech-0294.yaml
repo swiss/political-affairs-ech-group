@@ -5,6 +5,9 @@ on:
   push:
     paths:
       - 'ech-0294_actors/input/**'
+      # schema_common wird von ech-0294 importiert; seine Beschreibungen
+      # landen ueber die geerbten Slots in der generierten Doku.
+      - 'ech-0292_meta/input/schema_common.yaml'
   workflow_dispatch:
 
 # Zwei gleichzeitige Laeufe erzeugen dieselben Dateien und kollidieren beim
