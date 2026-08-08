@@ -221,8 +221,9 @@ groups:
   # Verweis über `parent_groups`: Eine Fraktion (`parliamentary_group`) gehört
   # zum Parlament (`council_legislative`), also zu einem anderen `group_type`.
   # Dass die Fraktion von zwei Parteien getragen wird, ist demgegenüber keine
-  # Über-/Unterordnung und darum kein `parent_groups`-Verweis. Der Name der
-  # Fraktion benennt beide Parteien; der Verweis auf sie bleibt bewusst offen.
+  # Über-/Unterordnung und darum kein `parent_groups`-Verweis. Diese Beziehung
+  # bildet der Standard bewusst nicht ab; hier benennt sie einzig der Name der
+  # Fraktion.
   - local_id: 1266
     global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp
     label:

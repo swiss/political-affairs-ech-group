@@ -15,14 +15,14 @@ act:swiss_politicians_example a act:Container ;
     mcm:label "Cristina Bozzi-Brunel" ;
     mcm:localId "280958" ;
     act:name [ a act:Name ;
-            mcm:value "Bozzi-Brunel" ;
-            act:nameType "PersonOfficialName" ],
-        [ a act:Name ;
             mcm:value "Brunel" ;
             act:nameType "PersonOriginalName" ],
         [ a act:Name ;
             mcm:value "Cristina" ;
-            act:nameType "PersonFirstName" ] .
+            act:nameType "PersonFirstName" ],
+        [ a act:Name ;
+            mcm:value "Bozzi-Brunel" ;
+            act:nameType "PersonOfficialName" ] .
 
 <https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9> a act:Person ;
     mcm:label "Sofia Fisch" ;
@@ -32,11 +32,11 @@ act:swiss_politicians_example a act:Container ;
             mcm:label "divers" ;
             act:genderCode "non_binary" ] ;
     act:name [ a act:Name ;
-            mcm:value "Sofia" ;
-            act:nameType "PersonFirstName" ],
-        [ a act:Name ;
             mcm:value "Fisch" ;
-            act:nameType "PersonOfficialName" ] ;
+            act:nameType "PersonOfficialName" ],
+        [ a act:Name ;
+            mcm:value "Sofia" ;
+            act:nameType "PersonFirstName" ] ;
     act:occupation [ a act:Occupation ;
             mcm:isCurrent true ;
             mcm:label "Jurist*in" ] ;
