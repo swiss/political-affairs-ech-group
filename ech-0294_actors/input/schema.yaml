@@ -1741,12 +1741,12 @@ enums:
       assembly:
         meaning: act:enum/group_type/assembly
         description: |
-          Assembly of the persons entitled to vote acting as the legislative body, in particular the communal assembly ("Gemeindeversammlung"). Unlike a council, it is not an elected body.
+          Assembly of the persons entitled to vote acting as the legislative body, in particular the communal assembly ("Gemeindeversammlung") and, at cantonal level, the Landsgemeinde. Unlike a council, it is not an elected body.
         annotations:
           description_de: |
-            Versammlung der Stimmberechtigten als gesetzgebendes Organ, insbesondere die Gemeindeversammlung. Anders als ein Rat ist sie kein gewähltes Gremium.
+            Versammlung der Stimmberechtigten als gesetzgebendes Organ, insbesondere die Gemeindeversammlung und, auf Kantonsebene, die Landsgemeinde. Anders als ein Rat ist sie kein gewähltes Gremium.
           description_fr: |
-            Assemblée des personnes ayant le droit de vote en tant qu'organe législatif, en particulier l'assemblée communale. Contrairement à un conseil, elle n'est pas un organe élu.
+            Assemblée des personnes ayant le droit de vote en tant qu'organe législatif, en particulier l'assemblée communale et, au niveau cantonal, la Landsgemeinde. Contrairement à un conseil, elle n'est pas un organe élu.
       council_legislative:
         meaning: act:enum/group_type/council_legislative
         description: |
