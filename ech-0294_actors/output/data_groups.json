@@ -322,21 +322,8 @@
       "parent_groups": [
         {
           "label": "Grosser Rat Basel-Stadt",
-          "local_id": "33"
-        },
-        {
-          "label": "Die Mitte Basel-Stadt",
-          "global_uri": "https://bs.die-mitte.ch/"
-        },
-        {
-          "label": "Evangelische Volkspartei Basel-Stadt",
-          "abbreviation": [
-            {
-              "value": "EVP BS",
-              "language": "de"
-            }
-          ],
-          "global_uri": "https://www.evp-bs.ch/"
+          "local_id": "33",
+          "global_uri": "https://www.grosserrat.bs.ch/"
         }
       ],
       "spatial": "https://ld.admin.ch/canton/12",

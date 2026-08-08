@@ -24,7 +24,7 @@ _Un groupe, une organisation ou une collectivité politique (p. ex. parti, commi
 | organization_uid | 0..1 <br/> [String](String.md) | IDE de l'organisation (format eCH-0097 : CHE-XXX.XXX.XXX) issu du registre fédéral IDE (uid.admin.ch).  |
 | legal_form | 0..1 <br/> [LegalFormEnum](LegalFormEnum.md) | Forme juridique de l'organisation. Voir le vocabulaire contrôlé : https://register.ld.admin.ch/i14y/concept/legalForm  |
 | landing_page | * <br/> [MultilingualUri](MultilingualUri.md) | Site web fournissant de plus amples informations. Lorsque le site est publié à une adresse propre par langue, une entrée est saisie par langue.  |
-| parent_groups | * <br/> [GroupReference](GroupReference.md) | Référence aux groupes supérieurs sous forme de GroupReference, c'est-à-dire indiquée au moyen de leur local_id ou de leur global_uri. Par exemple, le parti faîtier pour les partis cantonaux, ou pour décrire la hiérarchie au sein de l'exécutif. Utilisé également pour rattacher des sous-commissions à des commissions, ou des groupes parlementaires à la fois à leur parlement et à leur parti. (parentGroup est généralement utilisé au sein d'un même group_type, mais les liens intertypes sont autorisés, p. ex. groupe parlementaire → parlement et groupe parlementaire → parti.)  |
+| parent_groups | * <br/> [GroupReference](GroupReference.md) | Référence aux groupes supérieurs sous forme de GroupReference, c'est-à-dire indiquée au moyen de leur local_id ou de leur global_uri. Seule une véritable relation de subordination y a sa place : le parti faîtier d'un parti cantonal, la hiérarchie au sein de l'exécutif, une sous-commission rattachée à sa commission ou un groupe parlementaire rattaché à son parlement. (parentGroup est généralement utilisé au sein d'un même group_type, mais les liens intertypes sont autorisés, p. ex. groupe parlementaire → parlement.) Les partis qui portent un groupe parlementaire ne lui sont pas supérieurs et ne sont donc pas indiqués ici.  |
 | spatial | 0..1 <br/> [String](String.md) | Référence spatiale (numéro OFS de commune, numéro OFS de canton ou pays). Formats : commune : ld.admin.ch/municipality/1234, canton : ld.admin.ch/canton/23, pays : ld.admin.ch/country/CHE.  |
 | contacts | * <br/> [Contact](Contact.md) | Informations de contact (e-mail, site web, réseaux sociaux). Directive : l'e-mail est quasi obligatoire et devrait toujours être fourni lorsqu'il est disponible.  |
 | addresses | * <br/> [Address](Address.md) | Adresses avec type (privée, professionnelle, locale).  |
@@ -65,6 +65,26 @@ _Un groupe, une organisation ou une collectivité politique (p. ex. parti, commi
 
 
 ### Exemples
+#### Exemple : Parliamentary group referencing the parliament it belongs to
+
+```yaml
+local_id: 1266
+global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp
+label:
+- value: Die Mitte / Evangelische Volkspartei
+  language: de
+group_type:
+  group_type_enum: parliamentary_group
+  label:
+  - value: Fraktion
+    language: de
+spatial: https://ld.admin.ch/canton/12
+parent_groups:
+- local_id: 33
+  global_uri: https://www.grosserrat.bs.ch/
+  label: Grosser Rat Basel-Stadt
+
+```
 #### Exemple : Committee referencing its cantonal council
 
 ```yaml
@@ -86,9 +106,6 @@ groups:
   label:
   - value: Geschäftsprüfungskommission
     language: de
-  parent_groups:
-  - local_id: 34
-    label: Kantonsrat Appenzell Ausserrhoden
   abbreviation:
   - value: GPK
     language: de
@@ -98,6 +115,9 @@ groups:
     - value: Kommission
       language: de
   spatial: https://ld.admin.ch/canton/15
+  parent_groups:
+  - local_id: 34
+    label: Kantonsrat Appenzell Ausserrhoden
 
 ```
 #### Exemple : State chancellery referencing its government
@@ -120,15 +140,15 @@ groups:
   label:
   - value: Staatskanzlei Basel-Stadt
     language: de
-  parent_groups:
-  - local_id: 1300
-    label: Regierungsrat Basel-Stadt
   group_type:
     group_type_enum: council_secretariat
     label:
     - value: Staatskanzlei
       language: de
   spatial: https://ld.admin.ch/canton/12
+  parent_groups:
+  - local_id: 1300
+    label: Regierungsrat Basel-Stadt
 
 ```
 #### Exemple : Bilingual delegation to an intercantonal body
@@ -171,50 +191,6 @@ group_type:
     language: fr
 spatial: https://ld.admin.ch/canton/10
 valid_from: 2007-12-12
-
-```
-#### Exemple : Parliamentary group referencing its parliament and supporting parties
-
-```yaml
-local_id: 1266
-global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp
-label:
-- value: Die Mitte / Evangelische Volkspartei
-  language: de
-parent_groups:
-- local_id: 33
-  label: Grosser Rat Basel-Stadt
-- global_uri: https://bs.die-mitte.ch/
-  label: Die Mitte Basel-Stadt
-- global_uri: https://www.evp-bs.ch/
-  label: Evangelische Volkspartei Basel-Stadt
-  abbreviation:
-  - value: EVP BS
-    language: de
-group_type:
-  group_type_enum: parliamentary_group
-  label:
-  - value: Fraktion
-    language: de
-spatial: https://ld.admin.ch/canton/12
-
-```
-#### Exemple : Cantonal party co-carrying a joint parliamentary group
-
-```yaml
-global_uri: https://bs.die-mitte.ch/
-label:
-- value: Die Mitte Basel-Stadt
-  language: de
-parent_groups:
-- global_uri: https://www.die-mitte.ch/
-  label: Die Mitte Schweiz
-group_type:
-  group_type_enum: party
-  label:
-  - value: Partei
-    language: de
-spatial: https://ld.admin.ch/canton/12
 
 ```
 #### Exemple : Extra-parliamentary commission with decision-making powers
@@ -260,18 +236,18 @@ label:
 abbreviation:
 - value: EVP BS
   language: de
-parent_groups:
-- global_uri: https://www.evppev.ch/
-  label: Evangelische Volkspartei der Schweiz
-  abbreviation:
-  - value: EVP
-    language: de
 group_type:
   group_type_enum: party
   label:
   - value: Partei
     language: de
 spatial: https://ld.admin.ch/canton/12
+parent_groups:
+- global_uri: https://www.evppev.ch/
+  label: Evangelische Volkspartei der Schweiz
+  abbreviation:
+  - value: EVP
+    language: de
 
 ```
 #### Exemple : Municipal parliament with spatial reference
@@ -331,15 +307,33 @@ groups:
   label:
   - value: Büro des Grossen Rates
     language: de
-  parent_groups:
-  - local_id: 33
-    label: Grosser Rat Basel-Stadt
   group_type:
     group_type_enum: council_bureau
     label:
     - value: Ratsbüro
       language: de
   spatial: https://ld.admin.ch/canton/12
+  parent_groups:
+  - local_id: 33
+    label: Grosser Rat Basel-Stadt
+
+```
+#### Exemple : Cantonal party as its own group at its federal level
+
+```yaml
+global_uri: https://bs.die-mitte.ch/
+label:
+- value: Die Mitte Basel-Stadt
+  language: de
+group_type:
+  group_type_enum: party
+  label:
+  - value: Partei
+    language: de
+spatial: https://ld.admin.ch/canton/12
+parent_groups:
+- global_uri: https://www.die-mitte.ch/
+  label: Die Mitte Schweiz
 
 ```
 #### Exemple : Interest group with a trilingual name and contact

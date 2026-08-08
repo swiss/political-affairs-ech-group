@@ -883,7 +883,7 @@ URI: [act:TrainingTypeEnum](https://ld.ech.ch/schema/0294/actors/TrainingTypeEnu
 Das Group-Schema bildet politische Gruppen, Organisationen und Körperschaften ab.
 
 - **Ein generisches Modell statt vieler Spezialklassen:** Parlamente, Parteien, Fraktionen, Kommissionen, Departemente, Gerichte und zivilgesellschaftliche Organisationen werden alle als *eine* Klasse `Group` abgebildet und über `group_type` unterschieden. Das hält das Modell einfach und ohne Schemaänderung erweiterbar – Legislative, Exekutive, Judikative und Zivilgesellschaft sind damit gleichermassen abbildbar.
-- **Gruppen und Sub-Gruppen über `parent_groups`:** Untergeordnete Gruppen verweisen auf ihre übergeordnete Gruppe – z. B. eine Kommission des Ständerats, eine Subkommission innerhalb einer Kommission, eine Kantonalpartei unter ihrer Mutterpartei oder eine Behörde innerhalb einer Direktion. Die Hierarchie entsteht so aus diesen Verweisen statt aus einer festen Ebenenstruktur. Sie bleibt meist innerhalb desselben `group_type`; typenübergreifende und mehrfache Verweise sind aber möglich (z. B. eine Fraktion, die zugleich auf ihr Parlament und ihre Partei verweist). Der Verweis erfolgt als `GroupReference` – dieselbe Form, mit der eine Mitgliedschaft ihre Gruppe benennt. Dass es sich um eine Über-/Unterordnung handelt, sagt dabei der Slot `parent_groups` selbst; die Referenz trägt nur die Adressierung. Diese kann über die `local_id` erfolgen, wenn die übergeordnete Gruppe Teil derselben Lieferung ist, oder über die `global_uri`, wenn sie ausserhalb liegt – eine Kantonalpartei kann so auf ihre Bundespartei verweisen, ohne dass diese mitgeliefert werden muss. Weil die Referenz zusätzlich ein Label aufnehmen kann, bleibt auch eine Liste mehrerer übergeordneter Gruppen lesbar.
+- **Gruppen und Sub-Gruppen über `parent_groups`:** Untergeordnete Gruppen verweisen auf ihre übergeordnete Gruppe – z. B. eine Kommission des Ständerats, eine Subkommission innerhalb einer Kommission, eine Kantonalpartei unter ihrer Mutterpartei oder eine Behörde innerhalb einer Direktion. Die Hierarchie entsteht so aus diesen Verweisen statt aus einer festen Ebenenstruktur. Sie bleibt meist innerhalb desselben `group_type`; typenübergreifende Verweise sind aber möglich (z. B. eine Fraktion, die auf ihr Parlament verweist). Massgebend ist dabei allein die Über-/Unterordnung: Die Parteien, welche eine Fraktion tragen, sind ihr nicht übergeordnet, und ihr Verhältnis zur Fraktion wird über `parent_groups` deshalb nicht abgebildet. Der Verweis erfolgt als `GroupReference` – dieselbe Form, mit der eine Mitgliedschaft ihre Gruppe benennt. Dass es sich um eine Über-/Unterordnung handelt, sagt dabei der Slot `parent_groups` selbst; die Referenz trägt nur die Adressierung. Diese kann über die `local_id` erfolgen, wenn die übergeordnete Gruppe Teil derselben Lieferung ist, oder über die `global_uri`, wenn sie ausserhalb liegt – eine Kantonalpartei kann so auf ihre Bundespartei verweisen, ohne dass diese mitgeliefert werden muss. Sind beide bekannt, werden beide angegeben.
 - **Zeitliche Gültigkeit auch für Gruppen:** Über `valid_from`/`valid_through` lassen sich z. B. nur während einer Legislatur bestehende Kommissionen oder Umbenennungen und Fusionen von Parteien abbilden.
 
 
@@ -912,7 +912,7 @@ _Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommissio
 | organization_uid | 0..1 <br/> [String](#String) | UID der Organisation (Format eCH-0097: CHE-XXX.XXX.XXX) aus dem eidgenössischen UID-Register (uid.admin.ch).  |
 | legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Rechtsform der Organisation. Siehe kontrolliertes Vokabular: https://register.ld.admin.ch/i14y/concept/legalForm  |
 | landing_page | * <br/> [MultilingualUri](#MultilingualUri) | Website mit weiteren Informationen. Wird die Website je Sprache unter einer eigenen Adresse publiziert, wird pro Sprache ein Eintrag erfasst.  |
-| parent_groups | * <br/> [GroupReference](#GroupReference) | Verweis auf die übergeordneten Gruppen als GroupReference, also angegeben über deren local_id oder deren global_uri. Zum Beispiel die Mutterpartei zu Kantonalparteien, oder zur Beschreibung der Hierarchie in der Exekutive. Auch zur Verknüpfung von Subkommissionen mit Kommissionen oder Fraktionen mit Parlament und Partei. (parentGroup wird typischerweise im selben group_type verwendet, typenübergreifende Verknüpfungen sind aber erlaubt, z.B. Fraktion → Parlament und Fraktion → Partei.)  |
+| parent_groups | * <br/> [GroupReference](#GroupReference) | Verweis auf die übergeordneten Gruppen als GroupReference, also angegeben über deren local_id oder deren global_uri. Hierher gehört nur eine echte Über-/Unterordnung: die Mutterpartei einer Kantonalpartei, die Hierarchie in der Exekutive, eine Subkommission unter ihrer Kommission oder eine Fraktion unter ihrem Parlament. (parentGroup wird typischerweise im selben group_type verwendet, typenübergreifende Verknüpfungen sind aber erlaubt, z.B. Fraktion → Parlament.) Die eine Fraktion tragenden Parteien sind ihr nicht übergeordnet und werden hier deshalb nicht angegeben.  |
 | spatial | 0..1 <br/> [String](#String) | Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer oder Land). Formate: Gemeinde: ld.admin.ch/municipality/1234, Kanton: ld.admin.ch/canton/23, Bund: ld.admin.ch/country/CHE.  |
 | contacts | * <br/> [Contact](#Contact) | Kontaktinformationen (E-Mail, Website, Social Media). Richtlinie: E-Mail ist quasi-obligatorisch und sollte wenn vorhanden immer angegeben werden.  |
 | addresses | * <br/> [Address](#Address) | Adressen mit Typ (privat, geschäftlich, lokal).  |
@@ -953,6 +953,26 @@ _Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommissio
 
 
 ### Beispiele
+#### Beispiel: Fraktion mit Verweis auf das übergeordnete Parlament
+
+```yaml
+local_id: 1266
+global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp
+label:
+- value: Die Mitte / Evangelische Volkspartei
+  language: de
+group_type:
+  group_type_enum: parliamentary_group
+  label:
+  - value: Fraktion
+    language: de
+spatial: https://ld.admin.ch/canton/12
+parent_groups:
+- local_id: 33
+  global_uri: https://www.grosserrat.bs.ch/
+  label: Grosser Rat Basel-Stadt
+
+```
 #### Beispiel: Kommission mit Verweis auf ihren Kantonsrat
 
 ```yaml
@@ -974,9 +994,6 @@ groups:
   label:
   - value: Geschäftsprüfungskommission
     language: de
-  parent_groups:
-  - local_id: 34
-    label: Kantonsrat Appenzell Ausserrhoden
   abbreviation:
   - value: GPK
     language: de
@@ -986,6 +1003,9 @@ groups:
     - value: Kommission
       language: de
   spatial: https://ld.admin.ch/canton/15
+  parent_groups:
+  - local_id: 34
+    label: Kantonsrat Appenzell Ausserrhoden
 
 ```
 #### Beispiel: Staatskanzlei mit Verweis auf ihre Regierung
@@ -1008,15 +1028,15 @@ groups:
   label:
   - value: Staatskanzlei Basel-Stadt
     language: de
-  parent_groups:
-  - local_id: 1300
-    label: Regierungsrat Basel-Stadt
   group_type:
     group_type_enum: council_secretariat
     label:
     - value: Staatskanzlei
       language: de
   spatial: https://ld.admin.ch/canton/12
+  parent_groups:
+  - local_id: 1300
+    label: Regierungsrat Basel-Stadt
 
 ```
 #### Beispiel: Zweisprachige Delegation in ein interkantonales Gremium
@@ -1059,50 +1079,6 @@ group_type:
     language: fr
 spatial: https://ld.admin.ch/canton/10
 valid_from: 2007-12-12
-
-```
-#### Beispiel: Fraktion mit Verweis auf Parlament und tragende Parteien
-
-```yaml
-local_id: 1266
-global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp
-label:
-- value: Die Mitte / Evangelische Volkspartei
-  language: de
-parent_groups:
-- local_id: 33
-  label: Grosser Rat Basel-Stadt
-- global_uri: https://bs.die-mitte.ch/
-  label: Die Mitte Basel-Stadt
-- global_uri: https://www.evp-bs.ch/
-  label: Evangelische Volkspartei Basel-Stadt
-  abbreviation:
-  - value: EVP BS
-    language: de
-group_type:
-  group_type_enum: parliamentary_group
-  label:
-  - value: Fraktion
-    language: de
-spatial: https://ld.admin.ch/canton/12
-
-```
-#### Beispiel: Kantonalpartei, welche eine Fraktionsgemeinschaft mitträgt
-
-```yaml
-global_uri: https://bs.die-mitte.ch/
-label:
-- value: Die Mitte Basel-Stadt
-  language: de
-parent_groups:
-- global_uri: https://www.die-mitte.ch/
-  label: Die Mitte Schweiz
-group_type:
-  group_type_enum: party
-  label:
-  - value: Partei
-    language: de
-spatial: https://ld.admin.ch/canton/12
 
 ```
 #### Beispiel: Ausserparlamentarische Kommission mit Entscheidbefugnis
@@ -1148,18 +1124,18 @@ label:
 abbreviation:
 - value: EVP BS
   language: de
-parent_groups:
-- global_uri: https://www.evppev.ch/
-  label: Evangelische Volkspartei der Schweiz
-  abbreviation:
-  - value: EVP
-    language: de
 group_type:
   group_type_enum: party
   label:
   - value: Partei
     language: de
 spatial: https://ld.admin.ch/canton/12
+parent_groups:
+- global_uri: https://www.evppev.ch/
+  label: Evangelische Volkspartei der Schweiz
+  abbreviation:
+  - value: EVP
+    language: de
 
 ```
 #### Beispiel: Gemeindeparlament mit räumlicher Referenz
@@ -1219,15 +1195,33 @@ groups:
   label:
   - value: Büro des Grossen Rates
     language: de
-  parent_groups:
-  - local_id: 33
-    label: Grosser Rat Basel-Stadt
   group_type:
     group_type_enum: council_bureau
     label:
     - value: Ratsbüro
       language: de
   spatial: https://ld.admin.ch/canton/12
+  parent_groups:
+  - local_id: 33
+    label: Grosser Rat Basel-Stadt
+
+```
+#### Beispiel: Kantonalpartei als eigene Gruppe der föderalen Ebene
+
+```yaml
+global_uri: https://bs.die-mitte.ch/
+label:
+- value: Die Mitte Basel-Stadt
+  language: de
+group_type:
+  group_type_enum: party
+  label:
+  - value: Partei
+    language: de
+spatial: https://ld.admin.ch/canton/12
+parent_groups:
+- global_uri: https://www.die-mitte.ch/
+  label: Die Mitte Schweiz
 
 ```
 #### Beispiel: Interessengruppe mit dreisprachigem Namen und Kontakt

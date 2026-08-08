@@ -452,7 +452,7 @@
                     ]
                 },
                 "parent_groups": {
-                    "description": "Reference to the parent groups as a GroupReference, i.e. stated by their local_id or their global_uri. For example, the parent party for cantonal parties, or to describe the hierarchy in the executive. Also used to link sub-commissions to commissions, or factions to both their parliament and their party. (parentGroup is typically used within the same group_type, but cross-type links are permitted, e.g., faction \u2192 parliament and faction \u2192 party.)\n",
+                    "description": "Reference to the parent groups as a GroupReference, i.e. stated by their local_id or their global_uri. Only genuine super-/subordination belongs here: the parent party of a cantonal party, the hierarchy within the executive, a sub-commission under its commission, or a parliamentary group under its parliament. (parentGroup is typically used within the same group_type, but cross-type links are permitted, e.g. parliamentary group \u2192 parliament.) The parties carrying a parliamentary group are not a superordinate group of it and are therefore not stated here.\n",
                     "items": {
                         "$ref": "#/$defs/GroupReference"
                     },
