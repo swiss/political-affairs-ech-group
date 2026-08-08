@@ -1692,22 +1692,22 @@ enums:
             Autre rôle ; utiliser role_label pour un libellé descriptif.
   GroupTypeEnum:
     description: |
-      The vocabulary classifies a group by its political function, so that groups can be compared across communes, cantons and the Confederation. What counts is the function, not the designation used locally: Büro, Ratsleitung and Ufficio presidenziale all take the value `council_bureau`, while their respective designation is recorded in the group's label.
+      Controlled vocabulary for the type of a group. It covers the councils and their organs, assemblies, committees and delegations, parties, parliamentary groups and electoral lists, the units of the administration, courts and oversight bodies, as well as organisations outside the state.
 
-      The classification is mandatory: every group carries a `group_type`. Where no value fits, `other` is used and the designation is recorded in the label.
+      The classification is mandatory: every group carries a `group_type`. What counts is the political function, not the designation used locally; the latter is recorded in the label. Where no value fits, `other` is used.
 
       Legal form does not belong in this vocabulary but in `legal_form`.
     annotations:
       description_de: |
-        Das Vokabular ordnet eine Gruppe nach ihrer politischen Funktion ein, damit sich Gruppen über Gemeinden, Kantone und den Bund hinweg vergleichen lassen. Massgebend ist die Funktion, nicht die örtliche Bezeichnung: Büro, Ratsleitung und Ufficio presidenziale erhalten alle den Wert `council_bureau`, während ihre jeweilige Benennung im Label der Gruppe festgehalten wird.
+        Kontrolliertes Vokabular für die Art einer Gruppe. Es umfasst die Räte und ihre Organe, Versammlungen, Kommissionen und Delegationen, Parteien, Fraktionen und Wahllisten, die Einheiten der Verwaltung, Gerichte und Aufsichtsorgane sowie Organisationen ausserhalb des Staates.
 
-        Die Einordnung ist obligatorisch: Jede Gruppe führt einen `group_type`. Findet sich kein passender Wert, wird `other` gesetzt und die Bezeichnung im Label festgehalten.
+        Die Einordnung ist obligatorisch: Jede Gruppe führt einen `group_type`. Massgebend ist die politische Funktion, nicht die örtliche Bezeichnung; diese wird im Label festgehalten. Findet sich kein passender Wert, wird `other` gesetzt.
 
         Die Rechtsform gehört nicht in dieses Vokabular, sondern in `legal_form`.
       description_fr: |
-        Le vocabulaire classe un groupe selon sa fonction politique, afin que les groupes soient comparables d'une commune, d'un canton et de la Confédération à l'autre. Ce qui compte est la fonction, non la désignation locale : Büro, Ratsleitung et Ufficio presidenziale reçoivent tous la valeur `council_bureau`, tandis que leur désignation respective est saisie dans le libellé du groupe.
+        Vocabulaire contrôlé pour le type d'un groupe. Il recouvre les conseils et leurs organes, les assemblées, les commissions et délégations, les partis, groupes parlementaires et listes électorales, les unités de l'administration, les tribunaux et organes de surveillance, ainsi que les organisations extérieures à l'État.
 
-        Le classement est obligatoire : chaque groupe porte un `group_type`. Lorsqu'aucune valeur ne convient, `other` est utilisé et la désignation est saisie dans le libellé.
+        Le classement est obligatoire : chaque groupe porte un `group_type`. Ce qui compte est la fonction politique, non la désignation locale ; celle-ci est saisie dans le libellé. Lorsqu'aucune valeur ne convient, `other` est utilisé.
 
         La forme juridique ne relève pas de ce vocabulaire, mais de `legal_form`.
     permissible_values:
