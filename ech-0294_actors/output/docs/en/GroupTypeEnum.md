@@ -6,7 +6,7 @@
 _Controlled vocabulary for the type of a group. It covers the councils and their organs, assemblies, committees and delegations, parties, parliamentary groups and electoral lists, the units of the administration, courts and oversight bodies, as well as organisations outside the state._
 
 
-_The classification is mandatory: every group carries a `group_type`. What counts is the political function, not the designation used locally; the latter is recorded in the label. Where no value fits, `other` is used._
+_A `group_type` must always be set. What counts is the political function, not the designation used locally; the latter is recorded in the label. Where no value fits, `other` is used._
 
 
 _Legal form does not belong in this vocabulary but in `legal_form`._

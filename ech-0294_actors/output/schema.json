@@ -606,7 +606,7 @@
             "type": "object"
         },
         "GroupTypeEnum": {
-            "description": "Controlled vocabulary for the type of a group. It covers the councils and their organs, assemblies, committees and delegations, parties, parliamentary groups and electoral lists, the units of the administration, courts and oversight bodies, as well as organisations outside the state.\n\nThe classification is mandatory: every group carries a `group_type`. What counts is the political function, not the designation used locally; the latter is recorded in the label. Where no value fits, `other` is used.\n\nLegal form does not belong in this vocabulary but in `legal_form`.",
+            "description": "Controlled vocabulary for the type of a group. It covers the councils and their organs, assemblies, committees and delegations, parties, parliamentary groups and electoral lists, the units of the administration, courts and oversight bodies, as well as organisations outside the state.\n\nA `group_type` must always be set. What counts is the political function, not the designation used locally; the latter is recorded in the label. Where no value fits, `other` is used.\n\nLegal form does not belong in this vocabulary but in `legal_form`.",
             "enum": [
                 "party",
                 "list",

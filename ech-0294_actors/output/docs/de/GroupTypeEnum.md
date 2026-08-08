@@ -6,7 +6,7 @@
 _Kontrolliertes Vokabular für die Art einer Gruppe. Es umfasst die Räte und ihre Organe, Versammlungen, Kommissionen und Delegationen, Parteien, Fraktionen und Wahllisten, die Einheiten der Verwaltung, Gerichte und Aufsichtsorgane sowie Organisationen ausserhalb des Staates._
 
 
-_Die Einordnung ist obligatorisch: Jede Gruppe führt einen `group_type`. Massgebend ist die politische Funktion, nicht die örtliche Bezeichnung; diese wird im Label festgehalten. Findet sich kein passender Wert, wird `other` gesetzt._
+_Ein `group_type` muss immer gesetzt werden. Massgebend ist die politische Funktion, nicht die örtliche Bezeichnung; diese wird im Label festgehalten. Findet sich kein passender Wert, wird `other` gesetzt._
 
 
 _Die Rechtsform gehört nicht in dieses Vokabular, sondern in `legal_form`._

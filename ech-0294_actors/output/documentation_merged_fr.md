@@ -1347,7 +1347,7 @@ _Type de groupe (p. ex. parti, commission, parlement, département)._
 _Vocabulaire contrôlé pour le type d'un groupe. Il recouvre les conseils et leurs organes, les assemblées, les commissions et délégations, les partis, groupes parlementaires et listes électorales, les unités de l'administration, les tribunaux et organes de surveillance, ainsi que les organisations extérieures à l'État._
 
 
-_Le classement est obligatoire : chaque groupe porte un `group_type`. Ce qui compte est la fonction politique, non la désignation locale ; celle-ci est saisie dans le libellé. Lorsqu'aucune valeur ne convient, `other` est utilisé._
+_Un `group_type` doit toujours être renseigné. Ce qui compte est la fonction politique, non la désignation locale ; celle-ci est saisie dans le libellé. Lorsqu'aucune valeur ne convient, `other` est utilisé._
 
 
 _La forme juridique ne relève pas de ce vocabulaire, mais de `legal_form`._
