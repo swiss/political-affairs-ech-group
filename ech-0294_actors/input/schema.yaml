@@ -1858,12 +1858,12 @@ enums:
       oversight_body:
         meaning: act:enum/group_type/oversight_body
         description: |
-          Independent body that oversees or audits the state without belonging to the body overseen or reporting to it (e.g., Swiss Federal Audit Office SFAO, Supervisory Authority for the Office of the Attorney General AS-OAG, cantonal audit offices).
+          Independent oversight or audit body that does not belong to the body overseen and does not report to it (e.g., Swiss Federal Audit Office SFAO, Supervisory Authority for the Office of the Attorney General AS-OAG, Swiss Financial Market Supervisory Authority FINMA, cantonal audit offices).
         annotations:
           description_de: |
-            Unabhängiges Organ, das den Staat beaufsichtigt oder prüft, ohne dem beaufsichtigten Organ anzugehören oder ihm zu berichten (z.B. Eidgenössische Finanzkontrolle EFK, Aufsichtsbehörde über die Bundesanwaltschaft AB-BA, kantonale Finanzkontrollen).
+            Unabhängiges Aufsichts- oder Prüforgan, das dem beaufsichtigten Organ nicht angehört und ihm nicht berichtet (z.B. Eidgenössische Finanzkontrolle EFK, Aufsichtsbehörde über die Bundesanwaltschaft AB-BA, Eidgenössische Finanzmarktaufsicht FINMA, kantonale Finanzkontrollen).
           description_fr: |
-            Organe indépendant qui surveille ou contrôle l'État sans appartenir à l'organe surveillé ni lui faire rapport (p. ex. Contrôle fédéral des finances CDF, Autorité de surveillance du Ministère public de la Confédération AS-MPC, contrôles cantonaux des finances).
+            Organe indépendant de surveillance ou de contrôle qui n'appartient pas à l'organe surveillé et ne lui fait pas rapport (p. ex. Contrôle fédéral des finances CDF, Autorité de surveillance du Ministère public de la Confédération AS-MPC, Autorité fédérale de surveillance des marchés financiers FINMA, contrôles cantonaux des finances).
       council_secretariat:
         meaning: act:enum/group_type/council_secretariat
         description: |
