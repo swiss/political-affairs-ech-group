@@ -166,34 +166,35 @@ groups:
     label:
       - value: Staatskanzlei Basel-Stadt
         language: de
-    parent_groups:
-      - local_id: 1300
-        label: Regierungsrat Basel-Stadt
     group_type:
       group_type_enum: council_secretariat
       label:
         - value: Staatskanzlei
           language: de
     spatial: https://ld.admin.ch/canton/12
+    parent_groups:
+      - local_id: 1300
+        label: Regierungsrat Basel-Stadt
 
-  # Die beiden Kantonalparteien, welche die folgende Fraktion tragen. Ihr
-  # Verweis geht auf die jeweilige Bundespartei — jede föderale Ebene ist eine
-  # eigene Gruppe. Die Bundesparteien sind hier nicht mitgeliefert: Weil sie
-  # ausserhalb der Lieferung liegen, werden sie über `global_uri` benannt und
-  # nicht über eine `local_id`, die nur innerhalb der Lieferung auflösbar wäre.
+  # Die beiden Kantonalparteien, deren Namen die weiter unten stehende Fraktion
+  # trägt. Ihr Verweis geht auf die jeweilige Bundespartei — jede föderale Ebene
+  # ist eine eigene Gruppe, und hier liegt eine echte Über-/Unterordnung vor.
+  # Die Bundesparteien sind nicht mitgeliefert: Weil sie ausserhalb der
+  # Lieferung liegen, werden sie über `global_uri` benannt und nicht über eine
+  # `local_id`, die nur innerhalb der Lieferung auflösbar wäre.
   - global_uri: https://bs.die-mitte.ch/
     label:
       - value: Die Mitte Basel-Stadt
         language: de
-    parent_groups:
-      - global_uri: https://www.die-mitte.ch/
-        label: Die Mitte Schweiz
     group_type:
       group_type_enum: party
       label:
         - value: Partei
           language: de
     spatial: https://ld.admin.ch/canton/12
+    parent_groups:
+      - global_uri: https://www.die-mitte.ch/
+        label: Die Mitte Schweiz
 
   - global_uri: https://www.evp-bs.ch/
     label:
@@ -202,48 +203,40 @@ groups:
     abbreviation:
       - value: EVP BS
         language: de
-    parent_groups:
-      - global_uri: https://www.evppev.ch/
-        label: Evangelische Volkspartei der Schweiz
-        abbreviation:
-          - value: EVP
-            language: de
     group_type:
       group_type_enum: party
       label:
         - value: Partei
           language: de
     spatial: https://ld.admin.ch/canton/12
+    parent_groups:
+      - global_uri: https://www.evppev.ch/
+        label: Evangelische Volkspartei der Schweiz
+        abbreviation:
+          - value: EVP
+            language: de
 
-  # Fraktion im Grossen Rat Basel-Stadt. Sie zeigt den typenübergreifenden und
-  # mehrfachen Verweis über `parent_groups`: Die Fraktion gehört zum Parlament
-  # und wird zugleich von zwei Parteien getragen, die je eine eigene Gruppe
-  # sind. Eine Fraktionsgemeinschaft lässt sich nur so abbilden — ein einzelner
-  # Verweis auf «die» Partei gäbe es hier nicht. Der Eintrag zeigt zugleich die
-  # beiden Adressierungsformen einer `GroupReference` in einer Liste: Das
-  # Parlament wird über seine `local_id` benannt, weil es Teil derselben
-  # Lieferung ist, die Parteien über ihre `global_uri`.
+  # Fraktion im Grossen Rat Basel-Stadt. Sie zeigt den typenübergreifenden
+  # Verweis über `parent_groups`: Eine Fraktion (`parliamentary_group`) gehört
+  # zum Parlament (`council_legislative`), also zu einem anderen `group_type`.
+  # Dass die Fraktion von zwei Parteien getragen wird, ist demgegenüber keine
+  # Über-/Unterordnung und darum kein `parent_groups`-Verweis. Der Name der
+  # Fraktion benennt beide Parteien; der Verweis auf sie bleibt bewusst offen.
   - local_id: 1266
     global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp
     label:
       - value: Die Mitte / Evangelische Volkspartei
         language: de
-    parent_groups:
-      - local_id: 33
-        label: Grosser Rat Basel-Stadt
-      - global_uri: https://bs.die-mitte.ch/
-        label: Die Mitte Basel-Stadt
-      - global_uri: https://www.evp-bs.ch/
-        label: Evangelische Volkspartei Basel-Stadt
-        abbreviation:
-          - value: EVP BS
-            language: de
     group_type:
       group_type_enum: parliamentary_group
       label:
         - value: Fraktion
           language: de
     spatial: https://ld.admin.ch/canton/12
+    parent_groups:
+      - local_id: 33
+        global_uri: https://www.grosserrat.bs.ch/
+        label: Grosser Rat Basel-Stadt
 
   # Kantonsparlament — übergeordnete Gruppe der folgenden Kommission
   - local_id: 34
@@ -266,9 +259,6 @@ groups:
     label:
       - value: Geschäftsprüfungskommission
         language: de
-    parent_groups:
-      - local_id: 34
-        label: Kantonsrat Appenzell Ausserrhoden
     abbreviation:
       - value: GPK
         language: de
@@ -278,6 +268,9 @@ groups:
         - value: Kommission
           language: de
     spatial: https://ld.admin.ch/canton/15
+    parent_groups:
+      - local_id: 34
+        label: Kantonsrat Appenzell Ausserrhoden
 
   # Ratsbüro
   - local_id: 50
@@ -285,15 +278,15 @@ groups:
     label:
       - value: Büro des Grossen Rates
         language: de
-    parent_groups:
-      - local_id: 33
-        label: Grosser Rat Basel-Stadt
     group_type:
       group_type_enum: council_bureau
       label:
         - value: Ratsbüro
           language: de
     spatial: https://ld.admin.ch/canton/12
+    parent_groups:
+      - local_id: 33
+        label: Grosser Rat Basel-Stadt
 
   # Delegation in ein interkantonales Gremium
   - local_id: 5000

@@ -85,17 +85,17 @@ example_titles:
     fr: Commission extraparlementaire dotée du pouvoir de décision
     en: Extra-parliamentary commission with decision-making powers
   "https://bs.die-mitte.ch/":
-    de: Kantonalpartei, welche eine Fraktionsgemeinschaft mitträgt
-    fr: Parti cantonal co-portant un groupe parlementaire commun
-    en: Cantonal party co-carrying a joint parliamentary group
+    de: Kantonalpartei als eigene Gruppe der föderalen Ebene
+    fr: Parti cantonal constituant un groupe propre à son niveau fédéral
+    en: Cantonal party as its own group at its federal level
   "https://www.evp-bs.ch/":
     de: Kantonalpartei mit Verweis auf die Bundespartei
     fr: Parti cantonal renvoyant au parti national
     en: Cantonal party referencing its national party
   "1266":
-    de: Fraktion mit Verweis auf Parlament und tragende Parteien
-    fr: Groupe parlementaire renvoyant au parlement et aux partis porteurs
-    en: Parliamentary group referencing its parliament and supporting parties
+    de: Fraktion mit Verweis auf das übergeordnete Parlament
+    fr: Groupe parlementaire renvoyant au parlement dont il relève
+    en: Parliamentary group referencing the parliament it belongs to
   "https://www.frc.ch/":
     de: Verein mit UID und Rechtsform aus dem Handelsregister
     fr: Association avec IDE et forme juridique du registre du commerce
