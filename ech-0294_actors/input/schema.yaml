@@ -1858,12 +1858,12 @@ enums:
       oversight_body:
         meaning: act:enum/group_type/oversight_body
         description: |
-          Independent body that oversees or audits the state (e.g., Swiss Federal Audit Office SFAO, Supervisory Authority for the Office of the Attorney General AS-OAG, cantonal audit offices). What characterises it is that it does not belong to the body it oversees, and that it reports to parliament or to the government rather than to the body overseen. Not covered are authorities overseeing private actors or markets, nor the oversight committees of parliament, which are recorded as `committee`.
+          Independent body that oversees or audits the state (e.g., Swiss Federal Audit Office SFAO, Supervisory Authority for the Office of the Attorney General AS-OAG, cantonal audit offices). What characterises it is that it does not belong to the body it oversees, and that it reports to parliament or to the government rather than to the body overseen.
         annotations:
           description_de: |
-            Unabhängiges Organ, das den Staat beaufsichtigt oder prüft (z.B. Eidgenössische Finanzkontrolle EFK, Aufsichtsbehörde über die Bundesanwaltschaft AB-BA, kantonale Finanzkontrollen). Kennzeichnend ist, dass es nicht dem Organ angehört, das es beaufsichtigt, und dass es dem Parlament oder der Regierung berichtet statt dem beaufsichtigten Organ. Nicht gemeint sind Behörden, die private Akteure oder Märkte beaufsichtigen, sowie die Aufsichtskommissionen des Parlaments, die als `committee` erfasst werden.
+            Unabhängiges Organ, das den Staat beaufsichtigt oder prüft (z.B. Eidgenössische Finanzkontrolle EFK, Aufsichtsbehörde über die Bundesanwaltschaft AB-BA, kantonale Finanzkontrollen). Kennzeichnend ist, dass es nicht dem Organ angehört, das es beaufsichtigt, und dass es dem Parlament oder der Regierung berichtet statt dem beaufsichtigten Organ.
           description_fr: |
-            Organe indépendant qui surveille ou contrôle l'État (p. ex. Contrôle fédéral des finances CDF, Autorité de surveillance du Ministère public de la Confédération AS-MPC, contrôles cantonaux des finances). Ce qui le caractérise, c'est qu'il n'appartient pas à l'organe qu'il surveille et qu'il fait rapport au parlement ou au gouvernement plutôt qu'à l'organe surveillé. Ne sont pas visées les autorités qui surveillent des acteurs privés ou des marchés, ni les commissions de haute surveillance du parlement, saisies comme `committee`.
+            Organe indépendant qui surveille ou contrôle l'État (p. ex. Contrôle fédéral des finances CDF, Autorité de surveillance du Ministère public de la Confédération AS-MPC, contrôles cantonaux des finances). Ce qui le caractérise, c'est qu'il n'appartient pas à l'organe qu'il surveille et qu'il fait rapport au parlement ou au gouvernement plutôt qu'à l'organe surveillé.
       council_secretariat:
         meaning: act:enum/group_type/council_secretariat
         description: |
