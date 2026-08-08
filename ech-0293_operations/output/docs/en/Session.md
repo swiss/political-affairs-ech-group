@@ -17,6 +17,9 @@ _A parliamentary session that groups multiple meetings and spans a specific time
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | body_key | 0..1 <br/> [String](String.md) | Key identifying the political body or jurisdiction (e.g., BE for Bern, CHE for Switzerland).  |
 | name | * <br/> [MultilingualString](MultilingualString.md) | Multilingual full designation.  |
 | number | 0..1 <br/> [String](String.md) | Sequential number, e.g. within the legislature, the session or the year.  |
@@ -27,9 +30,6 @@ _A parliamentary session that groups multiple meetings and spans a specific time
 | parent_legislature | 0..1 <br/> [String](String.md) | The legislative body in which the meeting is based.  |
 | meetings | * <br/> [Meeting](Meeting.md) | Collection of meeting records.  |
 | documents | * <br/> [Work](Work.md) | List of documents (FRBR Works) linked to the entity.  |
-| local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
-| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | date_begin_actual | 0..1 <br/> [Date](Date.md) | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](Datetime.md) | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
 | date_begin_planned | 0..1 <br/> [Date](Date.md) | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |

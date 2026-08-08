@@ -175,15 +175,15 @@ _Amtsdauer eines Parlaments als gesetzgebender Versammlung. Dauert in der Regel 
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | administrative_id | 0..1 <br/> [String](#String) | Verwaltungs-ID des gesetzgebenden Körpers, wie z.B. Gemeinde, Kanton oder Land.  |
 | name | * <br/> [MultilingualString](#MultilingualString) | Mehrsprachige vollständige Bezeichnung.  |
 | description | 0..1 <br/> [String](#String) | Beschreibender Text zum Element.  |
 | landing_page | 0..1 <br/> [String](#String) | URL mit weiteren Informationen.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | documents | * <br/> [Work](#Work) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
-| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | date_begin_actual | 0..1 <br/> [Date](#Date) | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](#Datetime) | Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> [Date](#Date) | Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
@@ -310,6 +310,9 @@ _Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen be
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | body_key | 0..1 <br/> [String](#String) | Schlüssel zur Identifizierung des politischen Organs oder der Gerichtsbarkeit (z.B. BE für Bern, CHE für Schweiz).  |
 | name | * <br/> [MultilingualString](#MultilingualString) | Mehrsprachige vollständige Bezeichnung.  |
 | number | 0..1 <br/> [String](#String) | Laufende Nummer, z.B. innerhalb der Legislatur, der Session oder des Jahres.  |
@@ -320,9 +323,6 @@ _Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen be
 | parent_legislature | 0..1 <br/> [String](#String) | Der gesetzgebende Körper, auf dem die Sitzung basiert.  |
 | meetings | * <br/> [Meeting](#Meeting) | Sammlung der Sitzungen.  |
 | documents | * <br/> [Work](#Work) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
-| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | date_begin_actual | 0..1 <br/> [Date](#Date) | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](#Datetime) | Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> [Date](#Date) | Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
@@ -596,6 +596,9 @@ _Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessi
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | body_key | 0..1 <br/> [String](#String) | Schlüssel zur Identifizierung des politischen Organs oder der Gerichtsbarkeit (z.B. BE für Bern, CHE für Schweiz).  |
 | meeting_type | 0..1 <br/> [MeetingTypeEnum](#MeetingTypeEnum) | Art der Sitzung, z.B. Session, Kommission, Sessionssitzung, Verschiedenes.  |
 | administrative_id | 0..1 <br/> [String](#String) | Verwaltungs-ID des gesetzgebenden Körpers, wie z.B. Gemeinde, Kanton oder Land.  |
@@ -618,9 +621,6 @@ _Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessi
 | parent_legislature | 0..1 <br/> [String](#String) | Der gesetzgebende Körper, auf dem die Sitzung basiert.  |
 | documents | * <br/> [Work](#Work) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
 | protocol_ref | 0..1 <br/> [Protocol](#Protocol) | Das nach der Sitzung erstellte Protokoll dieser Sitzung.  |
-| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | date_begin_actual | 0..1 <br/> [Date](#Date) | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](#Datetime) | Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> [Date](#Date) | Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
@@ -1036,6 +1036,9 @@ _Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, E
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | parent_meeting | 0..1 <br/> [String](#String) | Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.  |
 | datetime_begin | 0..1 <br/> [Datetime](#Datetime) | Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
@@ -1043,9 +1046,6 @@ _Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, E
 | total_present | 0..1 <br/> [Integer](#Integer) | Gesamtzahl der anwesenden Mitglieder.  |
 | total_absent | 0..1 <br/> [Integer](#Integer) | Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.  |
 | total_excused | 0..1 <br/> [Integer](#Integer) | Gesamtzahl der entschuldigten Abwesenheiten.  |
-| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | date_created | 0..1 <br/> [Date](#Date) | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> [Datetime](#Datetime) | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> [Date](#Date) | Das Datum, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -1101,13 +1101,13 @@ _Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft üb
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | parent_attendance | 0..1 <br/> [Attendance](#Attendance) | Das Attendance-Aggregat, zu dem dieser einzelne Anwesenheits-Eintrag gehört.  |
 | actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Referenz auf die handelnde Person (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | attendance_type | 0..1 <br/> [AttendanceTypeEnum](#AttendanceTypeEnum) | Art der individuellen Anwesenheit.  |
 | reason | * <br/> [MultilingualString](#MultilingualString) | Grund für Abwesenheit oder Verspätung (Freitext, mehrsprachig).  |
-| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | date_created | 0..1 <br/> [Date](#Date) | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> [Datetime](#Datetime) | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> [Date](#Date) | Das Datum, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -1350,6 +1350,9 @@ _Ein Traktandum einer Sitzung._
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | parent_meeting | 0..1 <br/> [String](#String) | Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.  |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Art des Traktandums, unterscheidet Einzeltraktanden von Traktandengruppen.  |
 | agenda_item_number | 0..1 <br/> [String](#String) | Laufnummer des Traktandums (String-Typ zur Unterstützung römischer Ziffern).  |
@@ -1367,9 +1370,6 @@ _Ein Traktandum einer Sitzung._
 | parent_agenda_item | 0..1 <br/> [String](#String) | Wenn erforderlich, baut dieser Slot eine Hierarchie von Traktanden auf.  |
 | has_resolution | 0..1 <br/> [Resolution](#Resolution) | Die Resolution oder Entscheidung zu diesem Traktandum.  |
 | documents | * <br/> [Work](#Work) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
-| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | date_begin_actual | 0..1 <br/> [Date](#Date) | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](#Datetime) | Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> [Date](#Date) | Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
@@ -1843,15 +1843,15 @@ _Das nach der Sitzung erstellte Protokoll. Ein Wrapper-Container, der die tatsä
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | parent_meeting | 0..1 <br/> [String](#String) | Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.  |
 | protocol_items | * <br/> [ProtocolItem](#ProtocolItem) | Traktanden, wie sie im Protokoll tatsächlich festgehalten wurden.  |
 | votings | * <br/> [Voting](#Voting) | Sammlung der Abstimmungen.  |
 | speeches | * <br/> [Speech](#Speech) | Sammlung der Wortmeldungen.  |
 | text_segments | * <br/> [TextSegment](#TextSegment) | Sammlung von Textsegmenten (z.B. Wortprotokoll).  |
 | documents | * <br/> [Work](#Work) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
-| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | date_created | 0..1 <br/> [Date](#Date) | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> [Datetime](#Datetime) | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> [Date](#Date) | Das Datum, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -1911,6 +1911,9 @@ _Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde._
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | parent_meeting | 0..1 <br/> [String](#String) | Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert. <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Art des Traktandums, unterscheidet Einzeltraktanden von Traktandengruppen. <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
 | agenda_item_number | 0..1 <br/> [String](#String) | Laufnummer des Traktandums (String-Typ zur Unterstützung römischer Ziffern). <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
@@ -1928,9 +1931,6 @@ _Ein Traktandum, wie es im Protokoll tatsächlich festgehalten wurde._
 | parent_agenda_item | 0..1 <br/> [String](#String) | Wenn erforderlich, baut dieser Slot eine Hierarchie von Traktanden auf. <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
 | has_resolution | 0..1 <br/> [Resolution](#Resolution) | Die Resolution oder Entscheidung zu diesem Traktandum. <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
 | documents | * <br/> [Work](#Work) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind. <br/><br/>Vererbung: [AgendaItem](#AgendaItem) |
-| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | date_begin_actual | 0..1 <br/> [Date](#Date) | Das tatsächliche Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](#Datetime) | Das tatsächliche Startdatum und die Uhrzeit eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> [Date](#Date) | Das geplante Startdatum eines Ereignisses oder Vorkommnissen mit Zeitdauer. <br/><br/>Vererbung: [IsEventWithDuration](#IsEventWithDuration) |
@@ -2350,12 +2350,12 @@ _Ein formeller Antrag, der während der Verhandlungen eingereicht wird._
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
-| title | 0..1 <br/> [String](#String) | Titel des Elements.  |
-| description | 0..1 <br/> [String](#String) | Beschreibender Text zum Element.  |
-| documents | * <br/> [Work](#Work) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
 | local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| title | 0..1 <br/> [String](#String) | Titel des Elements.  |
+| description | 0..1 <br/> [String](#String) | Beschreibender Text zum Element.  |
+| documents | * <br/> [Work](#Work) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
 
 
 
@@ -2629,6 +2629,9 @@ _Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen._
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | datetime_begin | 0..1 <br/> [Datetime](#Datetime) | Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.  |
 | datetime_end | 0..1 <br/> [Datetime](#Datetime) | Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung endet.  |
 | voting_type | 0..1 <br/> [VotingTypeEnum](#VotingTypeEnum) | Art des Abstimmungsverfahrens (Zwischen-, Schlussabstimmung, geheim, etc.).  |
@@ -2654,9 +2657,6 @@ _Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen._
 | affair_id | 0..1 <br/> [String](#String) | Die Verbindung zu den Geschäften des Traktandums.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | documents | * <br/> [Work](#Work) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
-| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | date_created | 0..1 <br/> [Date](#Date) | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> [Datetime](#Datetime) | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> [Date](#Date) | Das Datum, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -3030,15 +3030,15 @@ _Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens._
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | parent_voting | 0..1 <br/> [Voting](#Voting) | Die ID der Abstimmung, die mit der Einzelstimme verbunden ist.  |
 | actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Referenz auf die handelnde Person (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | seat_nr | 0..1 <br/> [String](#String) | Die Sitznummer der Einzelstimme, falls zutreffend.  |
 | weight | 0..1 <br/> [Integer](#Integer) | Die Anzahl der Stimmen, die die Einzelperson hat, falls zutreffend (z.B. in Fällen, in denen eine Person mehrere Stimmen hat).  |
 | individual_vote_type | 0..1 <br/> [IndividualVoteTypeEnum](#IndividualVoteTypeEnum) | Art der abgegebenen Stimme (Ja, Nein, Enthaltung, nicht abgestimmt, etc.).  |
 | type_label | 0..1 <br/> [String](#String) | Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen.  |
-| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | date_created | 0..1 <br/> [Date](#Date) | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> [Datetime](#Datetime) | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> [Date](#Date) | Das Datum, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -3485,6 +3485,9 @@ _Ein Wahlverfahren zur Wahl von Personen in Positionen._
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | datetime_begin | 0..1 <br/> [Datetime](#Datetime) | Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.  |
 | datetime_end | 0..1 <br/> [Datetime](#Datetime) | Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung endet.  |
 | election_type | 0..1 <br/> [ElectionTypeEnum](#ElectionTypeEnum) | Art des Wahlverfahrens.  |
@@ -3501,9 +3504,6 @@ _Ein Wahlverfahren zur Wahl von Personen in Positionen._
 | affair_id | 0..1 <br/> [String](#String) | Die Verbindung zu den Geschäften des Traktandums.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | documents | * <br/> [Work](#Work) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
-| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | date_created | 0..1 <br/> [Date](#Date) | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> [Datetime](#Datetime) | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> [Date](#Date) | Das Datum, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -3738,6 +3738,9 @@ _Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt)._
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | language | 0..1 <br/> [String](#String) | Sprachcode im ISO 639-1 Format (zwei Kleinbuchstaben, z.B. "de", "fr", "it", "en").  |
 | start | 0..1 <br/> [String](#String) | Startangabe oder Position.  |
 | datetime_begin | 0..1 <br/> [Datetime](#Datetime) | Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.  |
@@ -3753,9 +3756,6 @@ _Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt)._
 | media_type | 0..1 <br/> [String](#String) | Art des Mediums (Audio, Video, Dokument).  |
 | media_format | 0..1 <br/> [String](#String) | MIME-Typ der Mediendatei.  |
 | documents | * <br/> [Work](#Work) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
-| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | date_created | 0..1 <br/> [Date](#Date) | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> [Datetime](#Datetime) | Das Datum und die Uhrzeit, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> [Date](#Date) | Das Datum, an dem eine Entität zuletzt geändert wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -3921,10 +3921,10 @@ _Ein Textsegment wie Querverweise oder Zwischentitel in Sitzungsprotokollen._
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
-| text | 1 <br/> [String](#String) | Textinhalt des Elements.  |
 | local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| text | 1 <br/> [String](#String) | Textinhalt des Elements.  |
 
 
 
@@ -3975,14 +3975,14 @@ _Mediendateien oder Dokumente (einschliesslich Protokolle in PDF/HTML/WORD oder 
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | title | 0..1 <br/> [String](#String) | Titel des Elements.  |
 | media_type | 0..1 <br/> [String](#String) | Art des Mediums (Audio, Video, Dokument).  |
 | url | * <br/> [MultilingualString](#MultilingualString) | Landing Page oder weiterführende Webadresse, mehrsprachig.  |
 | version | 0..1 <br/> [String](#String) | Versionsnummer oder Versionskennung.  |
 | parent_type | 0..1 <br/> [String](#String) | Typ des übergeordneten Objekts (Sitzung, Traktandum, Wortmeldung, Geschäft).  |
-| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 
 
 
@@ -4091,6 +4091,9 @@ _Container für die Daten des öffentlichen Ratsbetriebs: Legislaturperioden, Se
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | legislatures | * <br/> [Legislature](#Legislature) | Sammlung der Legislaturperioden.  |
 | sessions | * <br/> [Session](#Session) | Sammlung der Sessionen.  |
 | meetings | * <br/> [Meeting](#Meeting) | Sammlung der Sitzungen.  |
@@ -4103,9 +4106,6 @@ _Container für die Daten des öffentlichen Ratsbetriebs: Legislaturperioden, Se
 | individual_attendances | * <br/> [IndividualAttendance](#IndividualAttendance) | Sammlung der einzelnen Anwesenheitsfeststellungen.  |
 | speeches | * <br/> [Speech](#Speech) | Sammlung der Wortmeldungen.  |
 | resolutions | * <br/> [Resolution](#Resolution) | Sammlung der Resolutionen.  |
-| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 
 
 

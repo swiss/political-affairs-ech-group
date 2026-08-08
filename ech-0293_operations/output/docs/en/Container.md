@@ -17,6 +17,9 @@ _Container for the records of public council operations: legislatures, sessions,
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | legislatures | * <br/> [Legislature](Legislature.md) | Collection of legislature records.  |
 | sessions | * <br/> [Session](Session.md) | Collection of session records.  |
 | meetings | * <br/> [Meeting](Meeting.md) | Collection of meeting records.  |
@@ -29,9 +32,6 @@ _Container for the records of public council operations: legislatures, sessions,
 | individual_attendances | * <br/> [IndividualAttendance](IndividualAttendance.md) | Collection of individual attendance records.  |
 | speeches | * <br/> [Speech](Speech.md) | Collection of speech records.  |
 | resolutions | * <br/> [Resolution](Resolution.md) | Collection of resolution records.  |
-| local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
-| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 
 
 

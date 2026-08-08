@@ -17,6 +17,9 @@ _An agenda item as actually recorded in the protocol._
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | parent_meeting | 0..1 <br/> [String](String.md) | The linked meeting ID that groups the current meeting. <br/><br/>Inheritance: [AgendaItem](AgendaItem.md) |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](AgendaItemTypeEnum.md) | Type of agenda item, distinguishing individual items from groups. <br/><br/>Inheritance: [AgendaItem](AgendaItem.md) |
 | agenda_item_number | 0..1 <br/> [String](String.md) | Sequential number of the agenda item (string type to support roman numerals). <br/><br/>Inheritance: [AgendaItem](AgendaItem.md) |
@@ -34,9 +37,6 @@ _An agenda item as actually recorded in the protocol._
 | parent_agenda_item | 0..1 <br/> [String](String.md) | If needed, this slot builds a hierarchy of agenda items. <br/><br/>Inheritance: [AgendaItem](AgendaItem.md) |
 | has_resolution | 0..1 <br/> [Resolution](Resolution.md) | The resolution or decision taken on this agenda item. <br/><br/>Inheritance: [AgendaItem](AgendaItem.md) |
 | documents | * <br/> [Work](Work.md) | List of documents (FRBR Works) linked to the entity. <br/><br/>Inheritance: [AgendaItem](AgendaItem.md) |
-| local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
-| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | date_begin_actual | 0..1 <br/> [Date](Date.md) | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](Datetime.md) | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |
 | date_begin_planned | 0..1 <br/> [Date](Date.md) | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](IsEventWithDuration.md) |

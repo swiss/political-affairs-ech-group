@@ -175,15 +175,15 @@ _Term of office of a parliament as a legislative assembly. Usually lasts four ye
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | administrative_id | 0..1 <br/> [String](#String) | Administrative ID of the legislative body, such as a municipality, canton, or country.  |
 | name | * <br/> [MultilingualString](#MultilingualString) | Multilingual full designation.  |
 | description | 0..1 <br/> [String](#String) | Descriptive text of the element.  |
 | landing_page | 0..1 <br/> [String](#String) | URL providing further information.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
 | documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity.  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | date_begin_actual | 0..1 <br/> [Date](#Date) | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](#Datetime) | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> [Date](#Date) | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
@@ -310,6 +310,9 @@ _A parliamentary session that groups multiple meetings and spans a specific time
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | body_key | 0..1 <br/> [String](#String) | Key identifying the political body or jurisdiction (e.g., BE for Bern, CHE for Switzerland).  |
 | name | * <br/> [MultilingualString](#MultilingualString) | Multilingual full designation.  |
 | number | 0..1 <br/> [String](#String) | Sequential number, e.g. within the legislature, the session or the year.  |
@@ -320,9 +323,6 @@ _A parliamentary session that groups multiple meetings and spans a specific time
 | parent_legislature | 0..1 <br/> [String](#String) | The legislative body in which the meeting is based.  |
 | meetings | * <br/> [Meeting](#Meeting) | Collection of meeting records.  |
 | documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity.  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | date_begin_actual | 0..1 <br/> [Date](#Date) | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](#Datetime) | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> [Date](#Date) | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
@@ -596,6 +596,9 @@ _A general meeting class used for Sessions, Comittee Meetings, individual sessio
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | body_key | 0..1 <br/> [String](#String) | Key identifying the political body or jurisdiction (e.g., BE for Bern, CHE for Switzerland).  |
 | meeting_type | 0..1 <br/> [MeetingTypeEnum](#MeetingTypeEnum) | Type of the meeting, e.g. session, committee, sitting, various.  |
 | administrative_id | 0..1 <br/> [String](#String) | Administrative ID of the legislative body, such as a municipality, canton, or country.  |
@@ -618,9 +621,6 @@ _A general meeting class used for Sessions, Comittee Meetings, individual sessio
 | parent_legislature | 0..1 <br/> [String](#String) | The legislative body in which the meeting is based.  |
 | documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity.  |
 | protocol_ref | 0..1 <br/> [Protocol](#Protocol) | The protocol (minutes) of this meeting, recorded after the meeting.  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | date_begin_actual | 0..1 <br/> [Date](#Date) | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](#Datetime) | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> [Date](#Date) | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
@@ -1036,6 +1036,9 @@ _Aggregated attendance record for a meeting (number of members present, absent, 
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | parent_meeting | 0..1 <br/> [String](#String) | The linked meeting ID that groups the current meeting.  |
 | datetime_begin | 0..1 <br/> [Datetime](#Datetime) | The date and time when the meeting or voting begins.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
@@ -1043,9 +1046,6 @@ _Aggregated attendance record for a meeting (number of members present, absent, 
 | total_present | 0..1 <br/> [Integer](#Integer) | Total number of members present.  |
 | total_absent | 0..1 <br/> [Integer](#Integer) | Total number of absent members. Distinction between absent/excused absent - presence is tracked on attendance list.  |
 | total_excused | 0..1 <br/> [Integer](#Integer) | Total number of excused absences.  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -1101,13 +1101,13 @@ _Individual attendance record for a specific person at a meeting (linked via the
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | parent_attendance | 0..1 <br/> [Attendance](#Attendance) | The Attendance aggregate this individual attendance record belongs to.  |
 | actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Reference to the acting person (lightweight snapshot at time of linking).  |
 | attendance_type | 0..1 <br/> [AttendanceTypeEnum](#AttendanceTypeEnum) | Type of individual attendance.  |
 | reason | * <br/> [MultilingualString](#MultilingualString) | Reason for absence or lateness (free-text, multilingual).  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -1349,6 +1349,9 @@ _An agenda item of a meeting._
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | parent_meeting | 0..1 <br/> [String](#String) | The linked meeting ID that groups the current meeting.  |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Type of agenda item, distinguishing individual items from groups.  |
 | agenda_item_number | 0..1 <br/> [String](#String) | Sequential number of the agenda item (string type to support roman numerals).  |
@@ -1366,9 +1369,6 @@ _An agenda item of a meeting._
 | parent_agenda_item | 0..1 <br/> [String](#String) | If needed, this slot builds a hierarchy of agenda items.  |
 | has_resolution | 0..1 <br/> [Resolution](#Resolution) | The resolution or decision taken on this agenda item.  |
 | documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity.  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | date_begin_actual | 0..1 <br/> [Date](#Date) | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](#Datetime) | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> [Date](#Date) | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
@@ -1842,15 +1842,15 @@ _The minutes of a meeting, recorded after the meeting. A wrapper container bundl
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | parent_meeting | 0..1 <br/> [String](#String) | The linked meeting ID that groups the current meeting.  |
 | protocol_items | * <br/> [ProtocolItem](#ProtocolItem) | Agenda items as actually recorded in the protocol.  |
 | votings | * <br/> [Voting](#Voting) | Collection of voting records.  |
 | speeches | * <br/> [Speech](#Speech) | Collection of speech records.  |
 | text_segments | * <br/> [TextSegment](#TextSegment) | Collection of text segments (e.g. verbatim protocol).  |
 | documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity.  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -1910,6 +1910,9 @@ _An agenda item as actually recorded in the protocol._
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | parent_meeting | 0..1 <br/> [String](#String) | The linked meeting ID that groups the current meeting. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Type of agenda item, distinguishing individual items from groups. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
 | agenda_item_number | 0..1 <br/> [String](#String) | Sequential number of the agenda item (string type to support roman numerals). <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
@@ -1927,9 +1930,6 @@ _An agenda item as actually recorded in the protocol._
 | parent_agenda_item | 0..1 <br/> [String](#String) | If needed, this slot builds a hierarchy of agenda items. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
 | has_resolution | 0..1 <br/> [Resolution](#Resolution) | The resolution or decision taken on this agenda item. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
 | documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | date_begin_actual | 0..1 <br/> [Date](#Date) | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](#Datetime) | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
 | date_begin_planned | 0..1 <br/> [Date](#Date) | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
@@ -2349,12 +2349,12 @@ _A formal proposal or motion submitted during proceedings._
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| title | 0..1 <br/> [String](#String) | Title of the element.  |
-| description | 0..1 <br/> [String](#String) | Descriptive text of the element.  |
-| documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity.  |
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| title | 0..1 <br/> [String](#String) | Title of the element.  |
+| description | 0..1 <br/> [String](#String) | Descriptive text of the element.  |
+| documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity.  |
 
 
 
@@ -2628,6 +2628,9 @@ _A voting procedure with individual votes and results._
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | datetime_begin | 0..1 <br/> [Datetime](#Datetime) | The date and time when the meeting or voting begins.  |
 | datetime_end | 0..1 <br/> [Datetime](#Datetime) | The date and time when the meeting or voting ends.  |
 | voting_type | 0..1 <br/> [VotingTypeEnum](#VotingTypeEnum) | Type of voting procedure (preliminary, final, secret, etc.).  |
@@ -2653,9 +2656,6 @@ _A voting procedure with individual votes and results._
 | affair_id | 0..1 <br/> [String](#String) | The connection to the affairs (business items) of the agenda item.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
 | documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity.  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -3029,15 +3029,15 @@ _An individual vote cast by a member during a voting procedure._
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | parent_voting | 0..1 <br/> [Voting](#Voting) | The ID of the voting associated with the individual vote.  |
 | actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Reference to the acting person (lightweight snapshot at time of linking).  |
 | seat_nr | 0..1 <br/> [String](#String) | The seat number of the individual vote, if applicable.  |
 | weight | 0..1 <br/> [Integer](#Integer) | The number of votes held by the individual, if applicable (e.g., in cases where a person has multiple votes).  |
 | individual_vote_type | 0..1 <br/> [IndividualVoteTypeEnum](#IndividualVoteTypeEnum) | Type of vote cast (yes, no, abstention, no vote, etc.).  |
 | type_label | 0..1 <br/> [String](#String) | Custom type label when standard type values don't apply.  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -3482,6 +3482,9 @@ _An election procedure for selecting persons to positions._
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | datetime_begin | 0..1 <br/> [Datetime](#Datetime) | The date and time when the meeting or voting begins.  |
 | datetime_end | 0..1 <br/> [Datetime](#Datetime) | The date and time when the meeting or voting ends.  |
 | election_type | 0..1 <br/> [ElectionTypeEnum](#ElectionTypeEnum) | Type of election procedure.  |
@@ -3498,9 +3501,6 @@ _An election procedure for selecting persons to positions._
 | affair_id | 0..1 <br/> [String](#String) | The connection to the affairs (business items) of the agenda item.  |
 | actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
 | documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity.  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -3735,6 +3735,9 @@ _A speech or statement made during a meeting (also called Votum or speaker segme
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | language | 0..1 <br/> [String](#String) | Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en").  |
 | start | 0..1 <br/> [String](#String) | Start indicator or position.  |
 | datetime_begin | 0..1 <br/> [Datetime](#Datetime) | The date and time when the meeting or voting begins.  |
@@ -3750,9 +3753,6 @@ _A speech or statement made during a meeting (also called Votum or speaker segme
 | media_type | 0..1 <br/> [String](#String) | Type of media (audio, video, document).  |
 | media_format | 0..1 <br/> [String](#String) | MIME type of the media file.  |
 | documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity.  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -3918,10 +3918,10 @@ _A text segment such as cross-references or subtitles in meeting protocols._
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
-| text | 1 <br/> [String](#String) | Text content of the element.  |
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| text | 1 <br/> [String](#String) | Text content of the element.  |
 
 
 
@@ -3972,14 +3972,14 @@ _Media files or documents (including protocols in PDF/HTML/WORD or links to audi
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | title | 0..1 <br/> [String](#String) | Title of the element.  |
 | media_type | 0..1 <br/> [String](#String) | Type of media (audio, video, document).  |
 | url | * <br/> [MultilingualString](#MultilingualString) | Landing page or further web address, multilingual.  |
 | version | 0..1 <br/> [String](#String) | Version number or identifier.  |
 | parent_type | 0..1 <br/> [String](#String) | Type of parent object (meeting, agenda, speech, affair).  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 
 
 
@@ -4088,6 +4088,9 @@ _Container for the records of public council operations: legislatures, sessions,
 
 | Name | Cardinality and Range | Description |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | legislatures | * <br/> [Legislature](#Legislature) | Collection of legislature records.  |
 | sessions | * <br/> [Session](#Session) | Collection of session records.  |
 | meetings | * <br/> [Meeting](#Meeting) | Collection of meeting records.  |
@@ -4100,9 +4103,6 @@ _Container for the records of public council operations: legislatures, sessions,
 | individual_attendances | * <br/> [IndividualAttendance](#IndividualAttendance) | Collection of individual attendance records.  |
 | speeches | * <br/> [Speech](#Speech) | Collection of speech records.  |
 | resolutions | * <br/> [Resolution](#Resolution) | Collection of resolution records.  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 
 
 

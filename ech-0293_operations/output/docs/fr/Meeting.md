@@ -17,6 +17,9 @@ _Une classe générale de séance utilisée pour les sessions, les séances de c
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
+| local_id | 0..1 <br/> [String](String.md) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
+| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
 | body_key | 0..1 <br/> [String](String.md) | Clé identifiant l'organe politique ou la collectivité (p. ex. BE pour Berne, CHE pour la Suisse).  |
 | meeting_type | 0..1 <br/> [MeetingTypeEnum](MeetingTypeEnum.md) | Type de séance, p. ex. session, commission, séance de session, divers.  |
 | administrative_id | 0..1 <br/> [String](String.md) | Identifiant administratif du corps législatif, p. ex. commune, canton ou pays.  |
@@ -39,9 +42,6 @@ _Une classe générale de séance utilisée pour les sessions, les séances de c
 | parent_legislature | 0..1 <br/> [String](String.md) | La législature dans le cadre de laquelle la séance a lieu.  |
 | documents | * <br/> [Work](Work.md) | Liste des documents (FRBR Works) liés à l'entité.  |
 | protocol_ref | 0..1 <br/> [Protocol](Protocol.md) | Le procès-verbal de cette séance, établi après celle-ci.  |
-| local_id | 0..1 <br/> [String](String.md) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
-| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
 | date_begin_actual | 0..1 <br/> [Date](Date.md) | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](IsEventWithDuration.md) |
 | datetime_begin_actual | 0..1 <br/> [Datetime](Datetime.md) | La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](IsEventWithDuration.md) |
 | date_begin_planned | 0..1 <br/> [Date](Date.md) | La date de début planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](IsEventWithDuration.md) |
