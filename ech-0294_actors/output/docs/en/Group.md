@@ -89,17 +89,6 @@ parent_groups:
 
 ```yaml
 groups:
-- local_id: 34
-  global_uri: https://www.ar.ch/kantonsrat/
-  label:
-  - value: Kantonsrat Appenzell Ausserrhoden
-    language: de
-  group_type:
-    group_type_enum: council_legislative
-    label:
-    - value: Parlament (Legislativrat)
-      language: de
-  spatial: https://ld.admin.ch/canton/15
 - local_id: 3
   global_uri: >-
     https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/
@@ -117,24 +106,25 @@ groups:
   spatial: https://ld.admin.ch/canton/15
   parent_groups:
   - local_id: 34
+    global_uri: https://www.ar.ch/kantonsrat/
     label: Kantonsrat Appenzell Ausserrhoden
+- local_id: 34
+  global_uri: https://www.ar.ch/kantonsrat/
+  label:
+  - value: Kantonsrat Appenzell Ausserrhoden
+    language: de
+  group_type:
+    group_type_enum: council_legislative
+    label:
+    - value: Parlament (Legislativrat)
+      language: de
+  spatial: https://ld.admin.ch/canton/15
 
 ```
 #### Example: State chancellery referencing its government
 
 ```yaml
 groups:
-- local_id: 1300
-  global_uri: https://www.regierungsrat.bs.ch/
-  label:
-  - value: Regierungsrat Basel-Stadt
-    language: de
-  group_type:
-    group_type_enum: council_executive
-    label:
-    - value: Regierung (Exekutivrat)
-      language: de
-  spatial: https://ld.admin.ch/canton/12
 - local_id: 7172
   global_uri: https://www.bs.ch/regierungsrat/staatskanzlei
   label:
@@ -148,7 +138,19 @@ groups:
   spatial: https://ld.admin.ch/canton/12
   parent_groups:
   - local_id: 1300
+    global_uri: https://www.regierungsrat.bs.ch/
     label: Regierungsrat Basel-Stadt
+- local_id: 1300
+  global_uri: https://www.regierungsrat.bs.ch/
+  label:
+  - value: Regierungsrat Basel-Stadt
+    language: de
+  group_type:
+    group_type_enum: council_executive
+    label:
+    - value: Regierung (Exekutivrat)
+      language: de
+  spatial: https://ld.admin.ch/canton/12
 
 ```
 #### Example: Bilingual delegation to an intercantonal body
@@ -291,17 +293,6 @@ spatial: https://ld.admin.ch/canton/22
 
 ```yaml
 groups:
-- local_id: 33
-  global_uri: https://www.grosserrat.bs.ch/
-  label:
-  - value: Grosser Rat Basel-Stadt
-    language: de
-  group_type:
-    group_type_enum: council_legislative
-    label:
-    - value: Parlament (Legislativrat)
-      language: de
-  spatial: https://ld.admin.ch/canton/12
 - local_id: 50
   global_uri: https://grosserrat.bs.ch/gremien/praesidium-und-buero
   label:
@@ -315,7 +306,19 @@ groups:
   spatial: https://ld.admin.ch/canton/12
   parent_groups:
   - local_id: 33
+    global_uri: https://www.grosserrat.bs.ch/
     label: Grosser Rat Basel-Stadt
+- local_id: 33
+  global_uri: https://www.grosserrat.bs.ch/
+  label:
+  - value: Grosser Rat Basel-Stadt
+    language: de
+  group_type:
+    group_type_enum: council_legislative
+    label:
+    - value: Parlament (Legislativrat)
+      language: de
+  spatial: https://ld.admin.ch/canton/12
 
 ```
 #### Example: Cantonal party as its own group at its federal level
