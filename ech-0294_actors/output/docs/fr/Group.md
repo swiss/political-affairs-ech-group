@@ -108,6 +108,7 @@ groups:
   - local_id: 34
     global_uri: https://www.ar.ch/kantonsrat/
     label: Kantonsrat Appenzell Ausserrhoden
+
 - local_id: 34
   global_uri: https://www.ar.ch/kantonsrat/
   label:
@@ -140,6 +141,7 @@ groups:
   - local_id: 1300
     global_uri: https://www.regierungsrat.bs.ch/
     label: Regierungsrat Basel-Stadt
+
 - local_id: 1300
   global_uri: https://www.regierungsrat.bs.ch/
   label:
@@ -308,6 +310,7 @@ groups:
   - local_id: 33
     global_uri: https://www.grosserrat.bs.ch/
     label: Grosser Rat Basel-Stadt
+
 - local_id: 33
   global_uri: https://www.grosserrat.bs.ch/
   label:

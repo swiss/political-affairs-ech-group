@@ -996,6 +996,7 @@ groups:
   - local_id: 34
     global_uri: https://www.ar.ch/kantonsrat/
     label: Kantonsrat Appenzell Ausserrhoden
+
 - local_id: 34
   global_uri: https://www.ar.ch/kantonsrat/
   label:
@@ -1028,6 +1029,7 @@ groups:
   - local_id: 1300
     global_uri: https://www.regierungsrat.bs.ch/
     label: Regierungsrat Basel-Stadt
+
 - local_id: 1300
   global_uri: https://www.regierungsrat.bs.ch/
   label:
@@ -1196,6 +1198,7 @@ groups:
   - local_id: 33
     global_uri: https://www.grosserrat.bs.ch/
     label: Grosser Rat Basel-Stadt
+
 - local_id: 33
   global_uri: https://www.grosserrat.bs.ch/
   label:
@@ -2219,13 +2222,11 @@ At least one of the following must be set:
 
 ## Reused Classes
 
-An address is written in the customary way – `street_address`, `postal_code`, `postal_locality` and `country` – and may in addition point into swisstopo's official building address register via `address_uri`. The final number of that URI is the EGAID, the federal building address identifier; `https://geo.ld.admin.ch/location/address/101009806` thus denotes "Rue de Genève 17, 1003 Lausanne" as an officially registered building address.
+An address is written in `street_address`, `postal_code`, `postal_locality` and `country` and may point into swisstopo's official building address register via `address_uri`. The final number of that URI is the EGAID, the federal building address identifier; `https://geo.ld.admin.ch/location/address/101009806` thus denotes "Rue de Genève 17, 1003 Lausanne" as an officially registered building address.
 
-`address_uri` is optional and remains so. The written address is the customary form, and it often carries more than the register knows – an organisation name, a PO box, a "c/o" line; nor is every address to be found in the register, a foreign one for instance. In the example of the Fédération romande des consommateurs the EGAID denotes the physical address at Rue de Genève 17 in 1003 Lausanne, while the written address states PO box 585 with its own postal code 1001. Where the EGAID is known it is worth stating, being the more stable of the two: street names change, municipalities merge, postal codes are recut, yet the EGAID remains and can be joined with the Register of Buildings and Dwellings as well as with geodata.
+`address_uri` is optional. The written address on its own is permissible, but the reference via the EGAID is preferable: it is an unambiguous identifier and stable over time, whereas street names change, municipalities merge and postal codes are recut. Not every address can be found in the register, a foreign one for instance; the slot therefore remains optional.
 
 To arrive at the EGAID, one can use the [search API of geo.admin.ch](https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=Rue+de+Gen%C3%A8ve+17+1003+Lausanne&type=locations&origins=address) or match against the [official directory of building addresses](https://www.swisstopo.admin.ch/en/official-directory-of-building-addresses). The result is recorded in `address_uri`.
-
-Not every address can be found in the register, a foreign address for instance. `address_uri` is therefore optional; where it is known, it should be set.
 
 
 

@@ -996,6 +996,7 @@ groups:
   - local_id: 34
     global_uri: https://www.ar.ch/kantonsrat/
     label: Kantonsrat Appenzell Ausserrhoden
+
 - local_id: 34
   global_uri: https://www.ar.ch/kantonsrat/
   label:
@@ -1028,6 +1029,7 @@ groups:
   - local_id: 1300
     global_uri: https://www.regierungsrat.bs.ch/
     label: Regierungsrat Basel-Stadt
+
 - local_id: 1300
   global_uri: https://www.regierungsrat.bs.ch/
   label:
@@ -1196,6 +1198,7 @@ groups:
   - local_id: 33
     global_uri: https://www.grosserrat.bs.ch/
     label: Grosser Rat Basel-Stadt
+
 - local_id: 33
   global_uri: https://www.grosserrat.bs.ch/
   label:
@@ -2216,13 +2219,11 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 ## Mehrfach benutzte Klassen
 
-Eine Adresse wird klassisch geschrieben – `street_address`, `postal_code`, `postal_locality` und `country` – und kann zusätzlich über `address_uri` ins Amtliche Gebäudeadressverzeichnis von swisstopo verweisen. Die letzte Zahl dieser URI ist die EGAID, der eidgenössische Gebäudeadressidentifikator; `https://geo.ld.admin.ch/location/address/101009806` bezeichnet damit „Rue de Genève 17, 1003 Lausanne" als amtlich geführte Gebäudeadresse.
+Eine Adresse wird in `street_address`, `postal_code`, `postal_locality` und `country` geschrieben und kann über `address_uri` ins Amtliche Gebäudeadressverzeichnis von swisstopo verweisen. Die letzte Zahl dieser URI ist die EGAID, der eidgenössische Gebäudeadressidentifikator; `https://geo.ld.admin.ch/location/address/101009806` bezeichnet damit „Rue de Genève 17, 1003 Lausanne" als amtlich geführte Gebäudeadresse.
 
-`address_uri` ist optional und bleibt es. Üblich ist die geschriebene Adresse, und sie enthält oft mehr, als das Verzeichnis kennt – einen Organisationsnamen, ein Postfach, ein „c/o"; auch steht nicht jede Adresse im Verzeichnis, etwa eine im Ausland. Im Beispiel der Fédération romande des consommateurs bezeichnet die EGAID die physische Adresse an der Rue de Genève 17 in 1003 Lausanne, während die geschriebene Adresse das Postfach 585 mit der eigenen Postleitzahl 1001 führt. Wo die EGAID bekannt ist, lohnt sie sich als die stabilere Angabe: Strassennamen werden geändert, Gemeinden fusionieren, Postleitzahlen werden neu zugeschnitten, doch die EGAID bleibt und lässt sich mit dem Gebäude- und Wohnungsregister sowie mit Geodaten verbinden.
+`address_uri` ist optional. Die geschriebene Adresse allein ist zulässig, vorzuziehen ist aber der Verweis über die EGAID: Sie ist ein eindeutiger Identifikator und über die Zeit stabil, während Strassennamen geändert, Gemeinden fusioniert und Postleitzahlen neu zugeschnitten werden. Nicht jede Adresse ist im Verzeichnis auffindbar, etwa eine im Ausland; deshalb bleibt der Slot optional.
 
 Um zur EGAID zu gelangen, kann man die [Such-API von geo.admin.ch](https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=Rue+de+Gen%C3%A8ve+17+1003+Lausanne&type=locations&origins=address) benutzen oder mit dem [Amtlichen Verzeichnis der Gebäudeadressen](https://www.swisstopo.admin.ch/de/amtliches-verzeichnis-der-gebaeudeadressen) abgleichen. Erfasst wird das Ergebnis in `address_uri`.
-
-Nicht jede Adresse ist im Verzeichnis auffindbar, etwa eine Adresse im Ausland. `address_uri` ist deshalb optional; wo sie bekannt ist, soll sie gesetzt werden.
 
 
 
