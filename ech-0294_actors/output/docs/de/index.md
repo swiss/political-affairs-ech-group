@@ -121,7 +121,7 @@ Name: actors-schema
 | [role_label](role_label.md) | Spezifische Rollenbezeichnung |
 | [role_type](role_type.md) | Rolle der Person in der Mitgliedschaft oder Funktion |
 | [role_type_enum](role_type_enum.md) | Rolle der Person in der Mitgliedschaft oder Funktion |
-| [spatial](spatial.md) | Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer oder Land) |
+| [spatial](spatial.md) | Räumliche Referenz auf eine LINDAS-Ressource (BFS-Gemeindenummer, BFS-Kantons... |
 | [statutes_url](statutes_url.md) | URL zu Parteistatuten (PDF oder Webseite; optional für Parteien) |
 | [street_address](street_address.md) | Strassenadresse |
 | [training_code](training_code.md) | ISCO-19 Code der Ausbildung oder Bildung |

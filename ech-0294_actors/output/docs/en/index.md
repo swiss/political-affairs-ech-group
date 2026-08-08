@@ -121,7 +121,7 @@ Name: actors-schema
 | [role_label](role_label.md) | Specific role label |
 | [role_type](role_type.md) | Role of the person in the membership or function |
 | [role_type_enum](role_type_enum.md) | Role of the person in the membership or function |
-| [spatial](spatial.md) | Spatial reference (fos-municipality number, fos-canton number, or country) |
+| [spatial](spatial.md) | Spatial reference to a LINDAS resource (fos-municipality number, fos-canton n... |
 | [statutes_url](statutes_url.md) | URL to party statutes (PDF or webpage; optional for parties) |
 | [street_address](street_address.md) | Street address |
 | [training_code](training_code.md) | ISCO-19 code of the training or education |

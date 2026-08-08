@@ -28,6 +28,7 @@
                 },
                 "address_uri": {
                     "description": "URI of the address from the Swiss federal building address register (Amtliches Geb\u00e4udeadressverzeichnis, swisstopo). The final segment of the URI is the EGAID, the federal building address identifier of that register. Example of a valid URI: https://geo.ld.admin.ch/location/address/101904050 \u2014 the same register can be browsed as a map layer at https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis\n",
+                    "pattern": "^https://geo\\.ld\\.admin\\.ch/location/address/[0-9]+$",
                     "type": [
                         "string",
                         "null"
@@ -469,7 +470,8 @@
                     ]
                 },
                 "spatial": {
-                    "description": "Spatial reference (fos-municipality number, fos-canton number, or country). Formats: municipality: ld.admin.ch/municipality/1234, canton: ld.admin.ch/canton/23, country: ld.admin.ch/country/CHE.\n",
+                    "description": "Spatial reference to a LINDAS resource (fos-municipality number, fos-canton number, district, or country). Formats: municipality: https://ld.admin.ch/municipality/1234, district: https://ld.admin.ch/district/2301, canton: https://ld.admin.ch/canton/23, country: https://ld.admin.ch/country/CHE.\n",
+                    "pattern": "^https://ld\\.admin\\.ch/(country/[A-Z]{3}|canton/[0-9]+|district/[0-9]+|municipality/[0-9]+)$",
                     "type": [
                         "string",
                         "null"

@@ -47,6 +47,13 @@ URI: [act:addressURI](https://ld.ech.ch/schema/0294/actors/addressURI)
 
 | Eigenschaft | Wert |
 | --- | --- |
+### Wertebeschränkungen
+
+| Eigenschaft | Wert |
+| --- | --- |
+| Regex Pattern | `^https://geo\.ld\.admin\.ch/location/address/[0-9]+$` |
+
+
 
 
 
@@ -94,6 +101,7 @@ slot_uri: act:addressURI
 domain_of:
 - Address
 range: uriorcurie
+pattern: ^https://geo\.ld\.admin\.ch/location/address/[0-9]+$
 
 ```
 </details></div>
