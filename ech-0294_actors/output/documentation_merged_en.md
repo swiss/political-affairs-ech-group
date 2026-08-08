@@ -1390,9 +1390,9 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/council_presidency](act:enum/group_type/council_presidency) |
 | council_executive |  Government / Executive as a collective body (e.g., Federal Council, Cantonal Government, City or Municipal Council).  |
 | | [act:enum/group_type/council_executive](act:enum/group_type/council_executive) |
-| department |  Government department.  |
+| department |  Government department, e.g. Departement or Direktion.  |
 | | [act:enum/group_type/department](act:enum/group_type/department) |
-| office |  Government office.  |
+| office |  Government office ("Amt"), usually the unit below a department.  |
 | | [act:enum/group_type/office](act:enum/group_type/office) |
 | committee_extraparliamentary |  Commission normally appointed by the government to advise the administration in its field and to give its business a first reading; some also hold decision-making powers of their own. What sets it apart from a parliamentary committee are its composition and its legal basis: its members are external experts and interest-group representatives rather than members of the council, and it rests on the law governing the organisation of the government and the administration rather than on parliament law. The type exists at federal and at cantonal level alike (e.g., the federal Competition Commission; the commissions extraparlementaires in the canton of Vaud). A committee whose members are members of the council is not covered by this value even when it is attached to the executive; it is recorded as a committee or an ad hoc committee with the executive council as its parent group.  |
 | | [act:enum/group_type/committee_extraparliamentary](act:enum/group_type/committee_extraparliamentary) |

@@ -48,9 +48,9 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/council_presidency](act:enum/group_type/council_presidency) |
 | council_executive |  Gouvernement / exécutif en tant qu'organe collégial (p. ex. Conseil fédéral, conseil d'État, conseil municipal ou conseil communal).  |
 | | [act:enum/group_type/council_executive](act:enum/group_type/council_executive) |
-| department |  Département gouvernemental.  |
+| department |  Département gouvernemental, p. ex. Departement ou Direktion.  |
 | | [act:enum/group_type/department](act:enum/group_type/department) |
-| office |  Office gouvernemental.  |
+| office |  Office gouvernemental (« Amt »), généralement l'unité située en dessous du département.  |
 | | [act:enum/group_type/office](act:enum/group_type/office) |
 | committee_extraparliamentary |  Commission généralement instituée par le gouvernement pour conseiller l'administration dans son domaine et pour examiner ses affaires au préalable ; certaines disposent en outre de compétences décisionnelles propres. Ce qui la distingue d'une commission parlementaire sont sa composition et sa base légale : ses membres sont des spécialistes externes et des représentantes et représentants d'intérêts plutôt que des membres du conseil, et elle se fonde sur le droit régissant l'organisation du gouvernement et de l'administration et non sur le droit parlementaire. Ce type existe tant au niveau fédéral qu'au niveau cantonal (p. ex. la Commission de la concurrence de la Confédération ; les commissions extraparlementaires du canton de Vaud). Une commission dont les membres sont des membres du conseil ne relève pas de cette valeur, même lorsqu'elle est rattachée à l'exécutif ; elle est saisie comme commission ou commission ad hoc avec le conseil exécutif comme groupe supérieur.  |
 | | [act:enum/group_type/committee_extraparliamentary](act:enum/group_type/committee_extraparliamentary) |

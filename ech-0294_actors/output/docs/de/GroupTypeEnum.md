@@ -48,9 +48,9 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/council_presidency](act:enum/group_type/council_presidency) |
 | council_executive |  Regierung / Exekutive als Gesamtorgan (z.B. Bundesrat, Regierungsrat, Stadtrat / Gemeinderat).  |
 | | [act:enum/group_type/council_executive](act:enum/group_type/council_executive) |
-| department |  Departement.  |
+| department |  Departement, z.B. Departement oder Direktion.  |
 | | [act:enum/group_type/department](act:enum/group_type/department) |
-| office |  Amt.  |
+| office |  Amt, häufig die Einheit unterhalb des Departements.  |
 | | [act:enum/group_type/office](act:enum/group_type/office) |
 | committee_extraparliamentary |  Kommission, die in der Regel von der Regierung eingesetzt wird, um die Verwaltung fachlich zu beraten und deren Geschäfte vorzuberaten; einzelne verfügen darüber hinaus über eigene Entscheidbefugnisse. Sie unterscheidet sich von einer parlamentarischen Kommission durch Zusammensetzung und Rechtsgrundlage: Ihre Mitglieder sind externe Fachleute und Interessenvertreterinnen und -vertreter statt Ratsmitglieder, und sie stützt sich auf das Organisationsrecht von Regierung und Verwaltung statt auf das Parlamentsrecht. Den Typ gibt es auf Bundes- wie auf Kantonsebene (z.B. die Wettbewerbskommission des Bundes; im Kanton Waadt die commissions extraparlementaires). Eine Kommission, deren Mitglieder Ratsmitglieder sind, fällt auch dann nicht unter diesen Wert, wenn sie bei der Exekutive angesiedelt ist; sie wird als Kommission oder Ad-hoc-Kommission mit dem Exekutivrat als übergeordneter Gruppe erfasst.  |
 | | [act:enum/group_type/committee_extraparliamentary](act:enum/group_type/committee_extraparliamentary) |
