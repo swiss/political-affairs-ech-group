@@ -1396,7 +1396,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/office](act:enum/group_type/office) |
 | committee_extraparliamentary |  Commission normally appointed by the government to advise the administration in its field and to give its business a first reading; some also hold decision-making powers of their own. What sets it apart from a parliamentary committee are its composition and its legal basis: its members are external experts and interest-group representatives rather than members of the council, and it rests on the law governing the organisation of the government and the administration rather than on parliament law. The type exists at federal and at cantonal level alike (e.g., the federal Competition Commission; the commissions extraparlementaires in the canton of Vaud). A committee whose members are members of the council is not covered by this value even when it is attached to the executive; it is recorded as a committee or an ad hoc committee with the executive council as its parent group.  |
 | | [act:enum/group_type/committee_extraparliamentary](act:enum/group_type/committee_extraparliamentary) |
-| interest_group |  Interest group from civil society.  |
+| interest_group |  Interest group on a subject matter: both the parliamentary interest group, in which members of the council join across party lines, and the interest group from civil society.  |
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |
 | control_body |  Control or supervisory body (e.g., Federal Finance Control EFC, supervisory authority AB-BA).  |
 | | [act:enum/group_type/control_body](act:enum/group_type/control_body) |
