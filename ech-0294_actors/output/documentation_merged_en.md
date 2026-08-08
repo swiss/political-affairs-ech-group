@@ -1345,10 +1345,10 @@ _Type of group (e.g., party, committee, parliament, department)._
 
 
 
-_The vocabulary classifies a group by its political function, so that groups can be compared across communes, cantons and the Confederation. What counts is the function, not the designation used locally: Büro, Ratsleitung and Ufficio presidenziale all take the value `council_bureau`, while their respective designation is recorded in the group's label._
+_Controlled vocabulary for the type of a group. It covers the councils and their organs, assemblies, committees and delegations, parties, parliamentary groups and electoral lists, the units of the administration, courts and oversight bodies, as well as organisations outside the state._
 
 
-_The classification is mandatory: every group carries a `group_type`. Where no value fits, `other` is used and the designation is recorded in the label._
+_The classification is mandatory: every group carries a `group_type`. What counts is the political function, not the designation used locally; the latter is recorded in the label. Where no value fits, `other` is used._
 
 
 _Legal form does not belong in this vocabulary but in `legal_form`._
