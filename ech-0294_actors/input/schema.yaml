@@ -1855,15 +1855,15 @@ enums:
             Interessengruppe zu einem Sachthema: sowohl die parlamentarische Gruppe, in der sich Ratsmitglieder fraktionsübergreifend zusammenschliessen, als auch die Interessengruppe aus der Zivilgesellschaft.
           description_fr: |
             Groupe d'intérêts portant sur un thème : aussi bien l'intergroupe parlementaire, au sein duquel des membres du conseil se réunissent par-delà les groupes, que le groupe d'intérêts issu de la société civile.
-      control_body:
-        meaning: act:enum/group_type/control_body
+      oversight_body:
+        meaning: act:enum/group_type/oversight_body
         description: |
-          Control or supervisory body (e.g., Federal Finance Control EFC, supervisory authority AB-BA).
+          Independent body that oversees or audits the state (e.g., Swiss Federal Audit Office SFAO, Supervisory Authority for the Office of the Attorney General AS-OAG, cantonal audit offices). What characterises it is that it does not belong to the body it oversees, and that it reports to parliament or to the government rather than to the body overseen. Not covered are authorities overseeing private actors or markets, nor the oversight committees of parliament, which are recorded as `committee`.
         annotations:
           description_de: |
-            Kontroll- oder Aufsichtsorgan (z.B. Eidgenössische Finanzkontrolle EFK, Aufsichtsbehörde AB-BA).
+            Unabhängiges Organ, das den Staat beaufsichtigt oder prüft (z.B. Eidgenössische Finanzkontrolle EFK, Aufsichtsbehörde über die Bundesanwaltschaft AB-BA, kantonale Finanzkontrollen). Kennzeichnend ist, dass es nicht dem Organ angehört, das es beaufsichtigt, und dass es dem Parlament oder der Regierung berichtet statt dem beaufsichtigten Organ. Nicht gemeint sind Behörden, die private Akteure oder Märkte beaufsichtigen, sowie die Aufsichtskommissionen des Parlaments, die als `committee` erfasst werden.
           description_fr: |
-            Organe de contrôle ou de surveillance (p. ex. Contrôle fédéral des finances CDF, autorité de surveillance AS-MPC).
+            Organe indépendant qui surveille ou contrôle l'État (p. ex. Contrôle fédéral des finances CDF, Autorité de surveillance du Ministère public de la Confédération AS-MPC, contrôles cantonaux des finances). Ce qui le caractérise, c'est qu'il n'appartient pas à l'organe qu'il surveille et qu'il fait rapport au parlement ou au gouvernement plutôt qu'à l'organe surveillé. Ne sont pas visées les autorités qui surveillent des acteurs privés ou des marchés, ni les commissions de haute surveillance du parlement, saisies comme `committee`.
       council_secretariat:
         meaning: act:enum/group_type/council_secretariat
         description: |
