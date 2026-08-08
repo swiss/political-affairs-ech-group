@@ -26,7 +26,7 @@ URI: [mcm:labelLong](https://ld.ech.ch/schema/0292/meta-common/labelLong)
 
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
-| [PersonReference](PersonReference.md) | Référence légère à une personne avec les principales données d'identification... |  yes  |
+| [PersonReference](PersonReference.md) | Référence abrégée à une personne avec les principales données d'identificatio... |  yes  |
 
 
 

@@ -66,14 +66,14 @@ name: group_id
 annotations:
   description_de:
     tag: description_de
-    value: 'Referenz auf die Gruppe oder das Gremium (leichtgewichtiger Snapshot zum
-      Zeitpunkt der Verknüpfung).
+    value: 'Referenz auf die Gruppe oder das Gremium (Momentaufnahme zum Zeitpunkt
+      der Verknüpfung).
 
       '
   description_fr:
     tag: description_fr
-    value: 'Référence au groupe ou à l''organe (instantané allégé au moment de la
-      mise en relation).
+    value: 'Référence au groupe ou à l''organe (instantané au moment de la mise en
+      relation).
 
       '
 description: 'Reference to the group or body (lightweight snapshot at time of linking).

@@ -19,7 +19,7 @@ _Liste de présence agrégée pour une séance (nombre de membres présents, abs
 | ---  | --- | --- |
 | parent_meeting | 0..1 <br/> [String](String.md) | Identifiant de la séance liée qui regroupe la séance courante.  |
 | datetime_begin | 0..1 <br/> [Datetime](Datetime.md) | La date et l'heure auxquelles la séance ou le vote commence.  |
-| actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Référence à l'organe agissant (instantané allégé au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | total_count | 0..1 <br/> [Integer](Integer.md) | Nombre total de membres de l'organe (valeur de référence pour le calcul du quorum).  |
 | total_present | 0..1 <br/> [Integer](Integer.md) | Nombre total de membres présents.  |
 | total_absent | 0..1 <br/> [Integer](Integer.md) | Nombre total de membres absents. La distinction entre absent et absent excusé se fait dans la liste de présence.  |

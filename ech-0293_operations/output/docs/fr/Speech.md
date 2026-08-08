@@ -22,7 +22,7 @@ _Une intervention prononcée au cours d'une séance (également appelée prise d
 | datetime_begin | 0..1 <br/> [Datetime](Datetime.md) | La date et l'heure auxquelles la séance ou le vote commence.  |
 | datetime_end | 0..1 <br/> [Datetime](Datetime.md) | La date et l'heure auxquelles la séance ou le vote se termine.  |
 | actor_fullname | 0..1 <br/> [String](String.md) | Nom complet de l'actrice ou de l'acteur, respectivement de la personne.  |
-| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Référence à la personne agissante (instantané allégé au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Référence à la personne agissante (instantané au moment de la mise en relation).  |
 | role | 0..1 <br/> [String](String.md) | Rôle de la personne (p. ex. rapporteuse ou rapporteur de commission).  |
 | text | 1 <br/> [String](String.md) | Contenu textuel de l'élément.  |
 | text_format | 0..1 <br/> [String](String.md) | Format du texte (text, html, html_with_timestamps).  |

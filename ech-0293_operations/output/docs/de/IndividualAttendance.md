@@ -18,7 +18,7 @@ _Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft üb
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
 | parent_attendance | 0..1 <br/> [Attendance](Attendance.md) | Das Attendance-Aggregat, zu dem dieser einzelne Anwesenheits-Eintrag gehört.  |
-| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Referenz auf die handelnde Person (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).  |
+| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Referenz auf die handelnde Person (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | attendance_type | 0..1 <br/> [AttendanceTypeEnum](AttendanceTypeEnum.md) | Art der individuellen Anwesenheit.  |
 | reason | * <br/> [MultilingualString](MultilingualString.md) | Grund für Abwesenheit oder Verspätung (Freitext, mehrsprachig).  |
 | local_id | 0..1 <br/> [String](String.md) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |

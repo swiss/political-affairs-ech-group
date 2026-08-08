@@ -6,7 +6,7 @@ search:
 # Slot: group_id 
 
 
-_Referenz auf die Gruppe oder das Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung)._
+_Referenz auf die Gruppe oder das Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung)._
 
 
 
@@ -66,18 +66,18 @@ name: group_id
 annotations:
   description_de:
     tag: description_de
-    value: 'Referenz auf die Gruppe oder das Gremium (leichtgewichtiger Snapshot zum
-      Zeitpunkt der Verknüpfung).
+    value: 'Referenz auf die Gruppe oder das Gremium (Momentaufnahme zum Zeitpunkt
+      der Verknüpfung).
 
       '
   description_fr:
     tag: description_fr
-    value: 'Référence au groupe ou à l''organe (instantané allégé au moment de la
-      mise en relation).
+    value: 'Référence au groupe ou à l''organe (instantané au moment de la mise en
+      relation).
 
       '
-description: 'Referenz auf die Gruppe oder das Gremium (leichtgewichtiger Snapshot
-  zum Zeitpunkt der Verknüpfung).
+description: 'Referenz auf die Gruppe oder das Gremium (Momentaufnahme zum Zeitpunkt
+  der Verknüpfung).
 
   '
 from_schema: https://ch.paf.link/schema/operations

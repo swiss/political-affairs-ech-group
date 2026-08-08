@@ -20,7 +20,7 @@ Name: operations
 | [Date](Date.md) | Ein Datum mit Typangabe (z |
 | [Election](Election.md) | Ein Wahlverfahren zur Wahl von Personen in Positionen |
 | [Expression](Expression.md) | FRBR Expression: eine konkrete Sprachfassung eines Works |
-| [GroupReference](GroupReference.md) | Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikations... |
+| [GroupReference](GroupReference.md) | Kurzreferenz auf eine Gruppe mit den wichtigsten Identifikationsmerkmalen zum... |
 | [HasCreationModificationDates](HasCreationModificationDates.md) | Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Änderu... |
 | [HasIdentification](HasIdentification.md) | Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfügu... |
 | [HasReferenceIdentification](HasReferenceIdentification.md) | Eine Mixin-Klasse, welche die Slots bereitstellt, mit denen eine Referenz die... |
@@ -39,7 +39,7 @@ Name: operations
 | [MultilingualString](MultilingualString.md) | Ein String, der Text in mehreren Sprachen enthalten kann |
 | [MultilingualUri](MultilingualUri.md) | Eine URI zusammen mit der Sprache der Ressource, auf die sie verweist |
 | [MultilingualValue](MultilingualValue.md) | Ein mehrsprachiger String mit Angabe der Sprache |
-| [PersonReference](PersonReference.md) | Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikations... |
+| [PersonReference](PersonReference.md) | Kurzreferenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum... |
 | [Protocol](Protocol.md) | Das nach der Sitzung erstellte Protokoll |
 | [Resolution](Resolution.md) | Eine Resolution oder Entscheidung zu einem Traktandum, einschliesslich Abstim... |
 | [Session](Session.md) | Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen b... |
@@ -58,7 +58,7 @@ Name: operations
 | --- | --- |
 | [abbreviation](abbreviation.md) | Abkürzung (kann mehrsprachig sein) |
 | [actor_fullname](actor_fullname.md) | Vollständiger Name der Akteurin oder des Akteurs bzw |
-| [actor_id](actor_id.md) | Referenz auf die handelnde Person (leichtgewichtiger Snapshot zum Zeitpunkt d... |
+| [actor_id](actor_id.md) | Referenz auf die handelnde Person (Momentaufnahme zum Zeitpunkt der Verknüpfu... |
 | [actor_name](actor_name.md) | Name des politischen Organs (z |
 | [administrative_id](administrative_id.md) | Verwaltungs-ID des gesetzgebenden Körpers, wie z |
 | [affair_id](affair_id.md) | Die Verbindung zu den Geschäften des Traktandums |
@@ -106,7 +106,7 @@ Name: operations
 | [expressions](expressions.md) | Die Sprachfassungen (Expressions) eines Works |
 | [format](format.md) | Das Dateiformat der Manifestation (z |
 | [global_uri](global_uri.md) | Eine eindeutige, global gültige URI für die Entität |
-| [group_id](group_id.md) | Referenz auf die Gruppe oder das Gremium (leichtgewichtiger Snapshot zum Zeit... |
+| [group_id](group_id.md) | Referenz auf die Gruppe oder das Gremium (Momentaufnahme zum Zeitpunkt der Ve... |
 | [group_label](group_label.md) | Name des Gremiums zum Zeitpunkt der Verknüpfung |
 | [group_name](group_name.md) | Name der Gruppe oder des Gremiums |
 | [has_resolution](has_resolution.md) | Die Resolution oder Entscheidung zu diesem Traktandum |

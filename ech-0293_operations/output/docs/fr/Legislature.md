@@ -21,7 +21,7 @@ _Durée du mandat d'un parlement en tant qu'assemblée législative. Elle est en
 | name | * <br/> [MultilingualString](MultilingualString.md) | Désignation complète multilingue.  |
 | description | 0..1 <br/> [String](String.md) | Texte descriptif de l'élément.  |
 | landing_page | 0..1 <br/> [String](String.md) | URL fournissant des informations complémentaires.  |
-| actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Référence à l'organe agissant (instantané allégé au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | documents | * <br/> [Work](Work.md) | Liste des documents (FRBR Works) liés à l'entité.  |
 | local_id | 0..1 <br/> [String](String.md) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |

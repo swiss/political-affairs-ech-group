@@ -6,7 +6,7 @@ search:
 # Slot: actor_id 
 
 
-_Référence à la personne agissante (instantané allégé au moment de la mise en relation)._
+_Référence à la personne agissante (instantané au moment de la mise en relation)._
 
 
 
@@ -73,18 +73,17 @@ name: actor_id
 annotations:
   description_de:
     tag: description_de
-    value: 'Referenz auf die handelnde Person (leichtgewichtiger Snapshot zum Zeitpunkt
-      der Verknüpfung).
+    value: 'Referenz auf die handelnde Person (Momentaufnahme zum Zeitpunkt der Verknüpfung).
 
       '
   description_fr:
     tag: description_fr
-    value: 'Référence à la personne agissante (instantané allégé au moment de la mise
-      en relation).
+    value: 'Référence à la personne agissante (instantané au moment de la mise en
+      relation).
 
       '
-description: 'Référence à la personne agissante (instantané allégé au moment de la
-  mise en relation).
+description: 'Référence à la personne agissante (instantané au moment de la mise en
+  relation).
 
   '
 from_schema: https://ch.paf.link/schema/operations

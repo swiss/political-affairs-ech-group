@@ -26,7 +26,7 @@ URI: [mcm:groupLabel](https://ld.ech.ch/schema/0292/meta-common/groupLabel)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [PersonReference](PersonReference.md) | Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikations... |  no  |
+| [PersonReference](PersonReference.md) | Kurzreferenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum... |  no  |
 
 
 

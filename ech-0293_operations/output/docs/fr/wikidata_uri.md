@@ -45,8 +45,8 @@ URI: [mcm:wikidataUri](https://ld.ech.ch/schema/0292/meta-common/wikidataUri)
 | [Motion](Motion.md) | Une proposition formelle déposée au cours des délibérations |  no  |
 | [Media](Media.md) | Fichiers médias ou documents (y compris les procès-verbaux en PDF/HTML/WORD o... |  no  |
 | [HasReferenceIdentification](HasReferenceIdentification.md) | Une classe mixin qui fournit les slots par lesquels une référence désigne l'e... |  no  |
-| [PersonReference](PersonReference.md) | Référence légère à une personne avec les principales données d'identification... |  no  |
-| [GroupReference](GroupReference.md) | Référence légère à un groupe avec les principales données d'identification au... |  no  |
+| [PersonReference](PersonReference.md) | Référence abrégée à une personne avec les principales données d'identificatio... |  no  |
+| [GroupReference](GroupReference.md) | Référence abrégée à un groupe avec les principales données d'identification a... |  no  |
 
 
 

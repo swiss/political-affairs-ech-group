@@ -18,7 +18,7 @@ _Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens._
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
 | parent_voting | 0..1 <br/> [Voting](Voting.md) | Die ID der Abstimmung, die mit der Einzelstimme verbunden ist.  |
-| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Referenz auf die handelnde Person (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).  |
+| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Referenz auf die handelnde Person (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | seat_nr | 0..1 <br/> [String](String.md) | Die Sitznummer der Einzelstimme, falls zutreffend.  |
 | weight | 0..1 <br/> [Integer](Integer.md) | Die Anzahl der Stimmen, die die Einzelperson hat, falls zutreffend (z.B. in Fällen, in denen eine Person mehrere Stimmen hat).  |
 | individual_vote_type | 0..1 <br/> [IndividualVoteTypeEnum](IndividualVoteTypeEnum.md) | Art der abgegebenen Stimme (Ja, Nein, Enthaltung, nicht abgestimmt, etc.).  |

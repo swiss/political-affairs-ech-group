@@ -179,7 +179,7 @@ _Amtsdauer eines Parlaments als gesetzgebender Versammlung. Dauert in der Regel 
 | name | * <br/> [MultilingualString](#MultilingualString) | Mehrsprachige vollständige Bezeichnung.  |
 | description | 0..1 <br/> [String](#String) | Beschreibender Text zum Element.  |
 | landing_page | 0..1 <br/> [String](#String) | URL mit weiteren Informationen.  |
-| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).  |
+| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | documents | * <br/> [Work](#Work) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
 | local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
@@ -602,14 +602,14 @@ _Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessi
 | name | * <br/> [MultilingualString](#MultilingualString) | Mehrsprachige vollständige Bezeichnung.  |
 | url | * <br/> [MultilingualString](#MultilingualString) | Landing Page oder weiterführende Webadresse, mehrsprachig.  |
 | group_name | 0..1 <br/> [String](#String) | Name der Gruppe oder des Gremiums.  |
-| group_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf die Gruppe oder das Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).  |
+| group_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf die Gruppe oder das Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | number | 0..1 <br/> [String](#String) | Laufende Nummer, z.B. innerhalb der Legislatur, der Session oder des Jahres.  |
 | landing_page | 0..1 <br/> [String](#String) | URL mit weiteren Informationen.  |
 | sequential_number | 0..1 <br/> [Integer](#Integer) | Laufende Nummer der Sitzung, die zur Sortierung verwendet wird.  |
 | position | 0..1 <br/> [String](#String) | Ganzzahlige Position innerhalb der übergeordneten Reihenfolge.  |
 | meeting_abbreviation | 0..1 <br/> [String](#String) | Kurzbezeichnung der Session oder Sitzung (z.B. „FS24“ für die Frühjahrssession 2024).  |
 | actor_name | 0..1 <br/> [String](#String) | Name des politischen Organs (z.B. Nationalrat).  |
-| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).  |
+| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | state | 0..1 <br/> [StateEnum](#StateEnum) | Aktueller Status der Sitzung (geplant, abgesagt, verschoben).  |
 | state_name | 0..1 <br/> [String](#String) | Benutzerdefinierte Zustandsbeschreibung für die Sitzung.  |
 | description | 0..1 <br/> [String](#String) | Beschreibender Text zum Element.  |
@@ -1038,7 +1038,7 @@ _Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, E
 | ---  | --- | --- |
 | parent_meeting | 0..1 <br/> [String](#String) | Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.  |
 | datetime_begin | 0..1 <br/> [Datetime](#Datetime) | Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.  |
-| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).  |
+| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | total_count | 0..1 <br/> [Integer](#Integer) | Gesamtzahl aller Mitglieder des Gremiums (Bezugsgrösse für Quorum-Berechnungen).  |
 | total_present | 0..1 <br/> [Integer](#Integer) | Gesamtzahl der anwesenden Mitglieder.  |
 | total_absent | 0..1 <br/> [Integer](#Integer) | Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.  |
@@ -1102,7 +1102,7 @@ _Einzelne Anwesenheitsfeststellung einer Person an einer Sitzung (verknüpft üb
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
 | parent_attendance | 0..1 <br/> [Attendance](#Attendance) | Das Attendance-Aggregat, zu dem dieser einzelne Anwesenheits-Eintrag gehört.  |
-| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Referenz auf die handelnde Person (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).  |
+| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Referenz auf die handelnde Person (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | attendance_type | 0..1 <br/> [AttendanceTypeEnum](#AttendanceTypeEnum) | Art der individuellen Anwesenheit.  |
 | reason | * <br/> [MultilingualString](#MultilingualString) | Grund für Abwesenheit oder Verspätung (Freitext, mehrsprachig).  |
 | local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
@@ -2652,7 +2652,7 @@ _Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen._
 | parent_meeting | 0..1 <br/> [String](#String) | Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.  |
 | parent_agenda_item | 0..1 <br/> [String](#String) | Wenn erforderlich, baut dieser Slot eine Hierarchie von Traktanden auf.  |
 | affair_id | 0..1 <br/> [String](#String) | Die Verbindung zu den Geschäften des Traktandums.  |
-| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).  |
+| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | documents | * <br/> [Work](#Work) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
 | local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
@@ -3031,7 +3031,7 @@ _Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens._
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
 | parent_voting | 0..1 <br/> [Voting](#Voting) | Die ID der Abstimmung, die mit der Einzelstimme verbunden ist.  |
-| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Referenz auf die handelnde Person (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).  |
+| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Referenz auf die handelnde Person (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | seat_nr | 0..1 <br/> [String](#String) | Die Sitznummer der Einzelstimme, falls zutreffend.  |
 | weight | 0..1 <br/> [Integer](#Integer) | Die Anzahl der Stimmen, die die Einzelperson hat, falls zutreffend (z.B. in Fällen, in denen eine Person mehrere Stimmen hat).  |
 | individual_vote_type | 0..1 <br/> [IndividualVoteTypeEnum](#IndividualVoteTypeEnum) | Art der abgegebenen Stimme (Ja, Nein, Enthaltung, nicht abgestimmt, etc.).  |
@@ -3499,7 +3499,7 @@ _Ein Wahlverfahren zur Wahl von Personen in Positionen._
 | parent_meeting | 0..1 <br/> [String](#String) | Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.  |
 | parent_agenda_item | 0..1 <br/> [String](#String) | Wenn erforderlich, baut dieser Slot eine Hierarchie von Traktanden auf.  |
 | affair_id | 0..1 <br/> [String](#String) | Die Verbindung zu den Geschäften des Traktandums.  |
-| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).  |
+| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | documents | * <br/> [Work](#Work) | Liste von Dokumenten (FRBR Works), die mit der Entität verknüpft sind.  |
 | local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
@@ -3743,7 +3743,7 @@ _Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt)._
 | datetime_begin | 0..1 <br/> [Datetime](#Datetime) | Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.  |
 | datetime_end | 0..1 <br/> [Datetime](#Datetime) | Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung endet.  |
 | actor_fullname | 0..1 <br/> [String](#String) | Vollständiger Name der Akteurin oder des Akteurs bzw. der Person.  |
-| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Referenz auf die handelnde Person (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).  |
+| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Referenz auf die handelnde Person (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | role | 0..1 <br/> [String](#String) | Rolle der Person (z.B. Kommissionssprecherin oder Kommissionssprecher).  |
 | text | 1 <br/> [String](#String) | Textinhalt des Elements.  |
 | text_format | 0..1 <br/> [String](#String) | Format des Textes (text, html, html_with_timestamps).  |

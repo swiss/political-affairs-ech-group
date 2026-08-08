@@ -179,7 +179,7 @@ _Durée du mandat d'un parlement en tant qu'assemblée législative. Elle est en
 | name | * <br/> [MultilingualString](#MultilingualString) | Désignation complète multilingue.  |
 | description | 0..1 <br/> [String](#String) | Texte descriptif de l'élément.  |
 | landing_page | 0..1 <br/> [String](#String) | URL fournissant des informations complémentaires.  |
-| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané allégé au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | documents | * <br/> [Work](#Work) | Liste des documents (FRBR Works) liés à l'entité.  |
 | local_id | 0..1 <br/> [String](#String) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
@@ -602,14 +602,14 @@ _Une classe générale de séance utilisée pour les sessions, les séances de c
 | name | * <br/> [MultilingualString](#MultilingualString) | Désignation complète multilingue.  |
 | url | * <br/> [MultilingualString](#MultilingualString) | Page d'accueil ou adresse web complémentaire, multilingue.  |
 | group_name | 0..1 <br/> [String](#String) | Nom du groupe ou de l'organe.  |
-| group_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence au groupe ou à l'organe (instantané allégé au moment de la mise en relation).  |
+| group_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence au groupe ou à l'organe (instantané au moment de la mise en relation).  |
 | number | 0..1 <br/> [String](#String) | Numéro courant, p. ex. au sein de la législature, de la session ou de l'année.  |
 | landing_page | 0..1 <br/> [String](#String) | URL fournissant des informations complémentaires.  |
 | sequential_number | 0..1 <br/> [Integer](#Integer) | Numéro séquentiel de la séance, utilisé pour le tri.  |
 | position | 0..1 <br/> [String](#String) | Position (nombre entier) au sein de la séquence supérieure.  |
 | meeting_abbreviation | 0..1 <br/> [String](#String) | Désignation abrégée de la session ou de la séance (p. ex. « FS24 » pour la session de printemps 2024).  |
 | actor_name | 0..1 <br/> [String](#String) | Nom de l'organe politique (p. ex. Conseil national).  |
-| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané allégé au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | state | 0..1 <br/> [StateEnum](#StateEnum) | État actuel de la séance (planifiée, annulée, reportée).  |
 | state_name | 0..1 <br/> [String](#String) | Description personnalisée de l'état de la séance.  |
 | description | 0..1 <br/> [String](#String) | Texte descriptif de l'élément.  |
@@ -1038,7 +1038,7 @@ _Liste de présence agrégée pour une séance (nombre de membres présents, abs
 | ---  | --- | --- |
 | parent_meeting | 0..1 <br/> [String](#String) | Identifiant de la séance liée qui regroupe la séance courante.  |
 | datetime_begin | 0..1 <br/> [Datetime](#Datetime) | La date et l'heure auxquelles la séance ou le vote commence.  |
-| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané allégé au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | total_count | 0..1 <br/> [Integer](#Integer) | Nombre total de membres de l'organe (valeur de référence pour le calcul du quorum).  |
 | total_present | 0..1 <br/> [Integer](#Integer) | Nombre total de membres présents.  |
 | total_absent | 0..1 <br/> [Integer](#Integer) | Nombre total de membres absents. La distinction entre absent et absent excusé se fait dans la liste de présence.  |
@@ -1102,7 +1102,7 @@ _Constatation individuelle de la présence d'une personne à une séance (rattac
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
 | parent_attendance | 0..1 <br/> [Attendance](#Attendance) | L'agrégat Attendance auquel appartient cette constatation individuelle de présence.  |
-| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Référence à la personne agissante (instantané allégé au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Référence à la personne agissante (instantané au moment de la mise en relation).  |
 | attendance_type | 0..1 <br/> [AttendanceTypeEnum](#AttendanceTypeEnum) | Type de présence individuelle.  |
 | reason | * <br/> [MultilingualString](#MultilingualString) | Motif de l'absence ou du retard (texte libre, multilingue).  |
 | local_id | 0..1 <br/> [String](#String) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
@@ -2651,7 +2651,7 @@ _Une procédure de vote avec les voix individuelles et les résultats._
 | parent_meeting | 0..1 <br/> [String](#String) | Identifiant de la séance liée qui regroupe la séance courante.  |
 | parent_agenda_item | 0..1 <br/> [String](#String) | Au besoin, ce slot permet de construire une hiérarchie de points de l'ordre du jour.  |
 | affair_id | 0..1 <br/> [String](#String) | Le lien vers les affaires rattachées au point de l'ordre du jour.  |
-| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané allégé au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | documents | * <br/> [Work](#Work) | Liste des documents (FRBR Works) liés à l'entité.  |
 | local_id | 0..1 <br/> [String](#String) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
@@ -3030,7 +3030,7 @@ _Une voix individuelle exprimée par un membre lors d'une procédure de vote._
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
 | parent_voting | 0..1 <br/> [Voting](#Voting) | L'identifiant du vote auquel se rattache la voix individuelle.  |
-| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Référence à la personne agissante (instantané allégé au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Référence à la personne agissante (instantané au moment de la mise en relation).  |
 | seat_nr | 0..1 <br/> [String](#String) | Le numéro de siège correspondant à la voix individuelle, le cas échéant.  |
 | weight | 0..1 <br/> [Integer](#Integer) | Le nombre de voix dont dispose la personne, le cas échéant (p. ex. lorsqu'une personne détient plusieurs voix).  |
 | individual_vote_type | 0..1 <br/> [IndividualVoteTypeEnum](#IndividualVoteTypeEnum) | Type de voix exprimée (oui, non, abstention, n'a pas voté, etc.).  |
@@ -3496,7 +3496,7 @@ _Une procédure d'élection visant à pourvoir des fonctions par des personnes._
 | parent_meeting | 0..1 <br/> [String](#String) | Identifiant de la séance liée qui regroupe la séance courante.  |
 | parent_agenda_item | 0..1 <br/> [String](#String) | Au besoin, ce slot permet de construire une hiérarchie de points de l'ordre du jour.  |
 | affair_id | 0..1 <br/> [String](#String) | Le lien vers les affaires rattachées au point de l'ordre du jour.  |
-| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané allégé au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | documents | * <br/> [Work](#Work) | Liste des documents (FRBR Works) liés à l'entité.  |
 | local_id | 0..1 <br/> [String](#String) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
@@ -3740,7 +3740,7 @@ _Une intervention prononcée au cours d'une séance (également appelée prise d
 | datetime_begin | 0..1 <br/> [Datetime](#Datetime) | La date et l'heure auxquelles la séance ou le vote commence.  |
 | datetime_end | 0..1 <br/> [Datetime](#Datetime) | La date et l'heure auxquelles la séance ou le vote se termine.  |
 | actor_fullname | 0..1 <br/> [String](#String) | Nom complet de l'actrice ou de l'acteur, respectivement de la personne.  |
-| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Référence à la personne agissante (instantané allégé au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Référence à la personne agissante (instantané au moment de la mise en relation).  |
 | role | 0..1 <br/> [String](#String) | Rôle de la personne (p. ex. rapporteuse ou rapporteur de commission).  |
 | text | 1 <br/> [String](#String) | Contenu textuel de l'élément.  |
 | text_format | 0..1 <br/> [String](#String) | Format du texte (text, html, html_with_timestamps).  |

@@ -86,11 +86,11 @@ ops:meeting_be_committee_wak_2025_05_12 a ops:Meeting ;
     ops:location "Kommissionszimmer 301, Rathaus Bern" ;
     ops:meetingType <https://ch.paf.link/schema/operations/enum/meeting_type/committee> ;
     ops:name [ a ops:MultilingualString ;
-            ops:text "Séance Commission de l'économie et des redevances" ;
-            mcm:language "fr" ],
-        [ a ops:MultilingualString ;
             ops:text "Sitzung Kommission für Wirtschaft und Abgaben" ;
-            mcm:language "de" ] ;
+            mcm:language "de" ],
+        [ a ops:MultilingualString ;
+            ops:text "Séance Commission de l'économie et des redevances" ;
+            mcm:language "fr" ] ;
     ops:parent_legislature "ops:legislature_be_2022_2026" ;
     ops:state <https://ch.paf.link/schema/operations/enum/state/planned> ;
     ops:url [ a ops:MultilingualString ;

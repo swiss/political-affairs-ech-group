@@ -23,14 +23,14 @@ _Une classe générale de séance utilisée pour les sessions, les séances de c
 | name | * <br/> [MultilingualString](MultilingualString.md) | Désignation complète multilingue.  |
 | url | * <br/> [MultilingualString](MultilingualString.md) | Page d'accueil ou adresse web complémentaire, multilingue.  |
 | group_name | 0..1 <br/> [String](String.md) | Nom du groupe ou de l'organe.  |
-| group_id | 0..1 <br/> [GroupReference](GroupReference.md) | Référence au groupe ou à l'organe (instantané allégé au moment de la mise en relation).  |
+| group_id | 0..1 <br/> [GroupReference](GroupReference.md) | Référence au groupe ou à l'organe (instantané au moment de la mise en relation).  |
 | number | 0..1 <br/> [String](String.md) | Numéro courant, p. ex. au sein de la législature, de la session ou de l'année.  |
 | landing_page | 0..1 <br/> [String](String.md) | URL fournissant des informations complémentaires.  |
 | sequential_number | 0..1 <br/> [Integer](Integer.md) | Numéro séquentiel de la séance, utilisé pour le tri.  |
 | position | 0..1 <br/> [String](String.md) | Position (nombre entier) au sein de la séquence supérieure.  |
 | meeting_abbreviation | 0..1 <br/> [String](String.md) | Désignation abrégée de la session ou de la séance (p. ex. « FS24 » pour la session de printemps 2024).  |
 | actor_name | 0..1 <br/> [String](String.md) | Nom de l'organe politique (p. ex. Conseil national).  |
-| actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Référence à l'organe agissant (instantané allégé au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | state | 0..1 <br/> [StateEnum](StateEnum.md) | État actuel de la séance (planifiée, annulée, reportée).  |
 | state_name | 0..1 <br/> [String](String.md) | Description personnalisée de l'état de la séance.  |
 | description | 0..1 <br/> [String](String.md) | Texte descriptif de l'élément.  |

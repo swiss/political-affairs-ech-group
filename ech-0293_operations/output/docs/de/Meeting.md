@@ -23,14 +23,14 @@ _Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessi
 | name | * <br/> [MultilingualString](MultilingualString.md) | Mehrsprachige vollständige Bezeichnung.  |
 | url | * <br/> [MultilingualString](MultilingualString.md) | Landing Page oder weiterführende Webadresse, mehrsprachig.  |
 | group_name | 0..1 <br/> [String](String.md) | Name der Gruppe oder des Gremiums.  |
-| group_id | 0..1 <br/> [GroupReference](GroupReference.md) | Referenz auf die Gruppe oder das Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).  |
+| group_id | 0..1 <br/> [GroupReference](GroupReference.md) | Referenz auf die Gruppe oder das Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | number | 0..1 <br/> [String](String.md) | Laufende Nummer, z.B. innerhalb der Legislatur, der Session oder des Jahres.  |
 | landing_page | 0..1 <br/> [String](String.md) | URL mit weiteren Informationen.  |
 | sequential_number | 0..1 <br/> [Integer](Integer.md) | Laufende Nummer der Sitzung, die zur Sortierung verwendet wird.  |
 | position | 0..1 <br/> [String](String.md) | Ganzzahlige Position innerhalb der übergeordneten Reihenfolge.  |
 | meeting_abbreviation | 0..1 <br/> [String](String.md) | Kurzbezeichnung der Session oder Sitzung (z.B. „FS24“ für die Frühjahrssession 2024).  |
 | actor_name | 0..1 <br/> [String](String.md) | Name des politischen Organs (z.B. Nationalrat).  |
-| actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).  |
+| actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | state | 0..1 <br/> [StateEnum](StateEnum.md) | Aktueller Status der Sitzung (geplant, abgesagt, verschoben).  |
 | state_name | 0..1 <br/> [String](String.md) | Benutzerdefinierte Zustandsbeschreibung für die Sitzung.  |
 | description | 0..1 <br/> [String](String.md) | Beschreibender Text zum Element.  |

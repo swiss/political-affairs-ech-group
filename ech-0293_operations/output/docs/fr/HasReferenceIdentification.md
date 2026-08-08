@@ -27,8 +27,8 @@ _Une classe mixin qui fournit les slots par lesquels une référence désigne l'
 
 | mixed into | description |
 | --- | --- |
-| [PersonReference](PersonReference.md) | Référence légère à une personne avec les principales données d'identification... |
-| [GroupReference](GroupReference.md) | Référence légère à un groupe avec les principales données d'identification au... |
+| [PersonReference](PersonReference.md) | Référence abrégée à une personne avec les principales données d'identificatio... |
+| [GroupReference](GroupReference.md) | Référence abrégée à un groupe avec les principales données d'identification a... |
 
 
 

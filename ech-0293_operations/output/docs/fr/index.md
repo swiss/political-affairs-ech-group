@@ -20,7 +20,7 @@ Name: operations
 | [Date](Date.md) | Une date assortie d'une indication de type (p |
 | [Election](Election.md) | Une procédure d'élection visant à pourvoir des fonctions par des personnes |
 | [Expression](Expression.md) | FRBR Expression : une version linguistique concrète d'un Work |
-| [GroupReference](GroupReference.md) | Référence légère à un groupe avec les principales données d'identification au... |
+| [GroupReference](GroupReference.md) | Référence abrégée à un groupe avec les principales données d'identification a... |
 | [HasCreationModificationDates](HasCreationModificationDates.md) | Une classe mixin qui fournit des slots pour modéliser les dates de création e... |
 | [HasIdentification](HasIdentification.md) | Une classe mixin qui fournit des slots pour l'identification d'une entité |
 | [HasReferenceIdentification](HasReferenceIdentification.md) | Une classe mixin qui fournit les slots par lesquels une référence désigne l'e... |
@@ -39,7 +39,7 @@ Name: operations
 | [MultilingualString](MultilingualString.md) | Une chaîne de caractères pouvant contenir du texte en plusieurs langues |
 | [MultilingualUri](MultilingualUri.md) | Une URI accompagnée de la langue de la ressource vers laquelle elle renvoie |
 | [MultilingualValue](MultilingualValue.md) | Une chaîne de caractères multilingue avec indication de la langue |
-| [PersonReference](PersonReference.md) | Référence légère à une personne avec les principales données d'identification... |
+| [PersonReference](PersonReference.md) | Référence abrégée à une personne avec les principales données d'identificatio... |
 | [Protocol](Protocol.md) | Le procès-verbal établi après la séance |
 | [Resolution](Resolution.md) | Une décision prise sur un point de l'ordre du jour, y compris les procédures ... |
 | [Session](Session.md) | Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p... |
@@ -58,7 +58,7 @@ Name: operations
 | --- | --- |
 | [abbreviation](abbreviation.md) | Abréviation (peut être multilingue) |
 | [actor_fullname](actor_fullname.md) | Nom complet de l'actrice ou de l'acteur, respectivement de la personne |
-| [actor_id](actor_id.md) | Référence à la personne agissante (instantané allégé au moment de la mise en ... |
+| [actor_id](actor_id.md) | Référence à la personne agissante (instantané au moment de la mise en relatio... |
 | [actor_name](actor_name.md) | Nom de l'organe politique (p |
 | [administrative_id](administrative_id.md) | Identifiant administratif du corps législatif, p |
 | [affair_id](affair_id.md) | Le lien vers les affaires rattachées au point de l'ordre du jour |
@@ -106,7 +106,7 @@ Name: operations
 | [expressions](expressions.md) | Les versions linguistiques (Expressions) d'un Work |
 | [format](format.md) | Le format de fichier de la manifestation (p |
 | [global_uri](global_uri.md) | Une URI unique et globalement valide pour l'entité |
-| [group_id](group_id.md) | Référence au groupe ou à l'organe (instantané allégé au moment de la mise en ... |
+| [group_id](group_id.md) | Référence au groupe ou à l'organe (instantané au moment de la mise en relatio... |
 | [group_label](group_label.md) | Nom de l'organe/du groupe au moment de la liaison |
 | [group_name](group_name.md) | Nom du groupe ou de l'organe |
 | [has_resolution](has_resolution.md) | La décision prise sur ce point de l'ordre du jour |

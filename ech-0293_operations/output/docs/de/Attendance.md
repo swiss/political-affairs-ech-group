@@ -19,7 +19,7 @@ _Aggregierte Anwesenheitsliste für eine Sitzung (Anzahl Anwesende, Abwesende, E
 | ---  | --- | --- |
 | parent_meeting | 0..1 <br/> [String](String.md) | Die verknüpfte Sitzungs-ID, die die aktuelle Sitzung gruppiert.  |
 | datetime_begin | 0..1 <br/> [Datetime](Datetime.md) | Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.  |
-| actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Referenz auf das handelnde Organ/Gremium (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).  |
+| actor_id | 0..1 <br/> [GroupReference](GroupReference.md) | Referenz auf das handelnde Organ/Gremium (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | total_count | 0..1 <br/> [Integer](Integer.md) | Gesamtzahl aller Mitglieder des Gremiums (Bezugsgrösse für Quorum-Berechnungen).  |
 | total_present | 0..1 <br/> [Integer](Integer.md) | Gesamtzahl der anwesenden Mitglieder.  |
 | total_absent | 0..1 <br/> [Integer](Integer.md) | Gesamtzahl abwesender Mitglieder. Unterscheidung zwischen abwesend/entschuldigt abwesend - Anwesenheit wird auf Anwesenheitsliste verfolgt.  |

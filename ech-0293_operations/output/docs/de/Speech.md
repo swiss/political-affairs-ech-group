@@ -22,7 +22,7 @@ _Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt)._
 | datetime_begin | 0..1 <br/> [Datetime](Datetime.md) | Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung beginnt.  |
 | datetime_end | 0..1 <br/> [Datetime](Datetime.md) | Das Datum und die Uhrzeit, zu der die Sitzung oder Abstimmung endet.  |
 | actor_fullname | 0..1 <br/> [String](String.md) | Vollständiger Name der Akteurin oder des Akteurs bzw. der Person.  |
-| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Referenz auf die handelnde Person (leichtgewichtiger Snapshot zum Zeitpunkt der Verknüpfung).  |
+| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Referenz auf die handelnde Person (Momentaufnahme zum Zeitpunkt der Verknüpfung).  |
 | role | 0..1 <br/> [String](String.md) | Rolle der Person (z.B. Kommissionssprecherin oder Kommissionssprecher).  |
 | text | 1 <br/> [String](String.md) | Textinhalt des Elements.  |
 | text_format | 0..1 <br/> [String](String.md) | Format des Textes (text, html, html_with_timestamps).  |

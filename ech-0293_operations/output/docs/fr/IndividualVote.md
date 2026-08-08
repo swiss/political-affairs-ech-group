@@ -18,7 +18,7 @@ _Une voix individuelle exprimée par un membre lors d'une procédure de vote._
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
 | parent_voting | 0..1 <br/> [Voting](Voting.md) | L'identifiant du vote auquel se rattache la voix individuelle.  |
-| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Référence à la personne agissante (instantané allégé au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Référence à la personne agissante (instantané au moment de la mise en relation).  |
 | seat_nr | 0..1 <br/> [String](String.md) | Le numéro de siège correspondant à la voix individuelle, le cas échéant.  |
 | weight | 0..1 <br/> [Integer](Integer.md) | Le nombre de voix dont dispose la personne, le cas échéant (p. ex. lorsqu'une personne détient plusieurs voix).  |
 | individual_vote_type | 0..1 <br/> [IndividualVoteTypeEnum](IndividualVoteTypeEnum.md) | Type de voix exprimée (oui, non, abstention, n'a pas voté, etc.).  |

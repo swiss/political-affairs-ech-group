@@ -18,7 +18,7 @@ _Constatation individuelle de la présence d'une personne à une séance (rattac
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
 | parent_attendance | 0..1 <br/> [Attendance](Attendance.md) | L'agrégat Attendance auquel appartient cette constatation individuelle de présence.  |
-| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Référence à la personne agissante (instantané allégé au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [PersonReference](PersonReference.md) | Référence à la personne agissante (instantané au moment de la mise en relation).  |
 | attendance_type | 0..1 <br/> [AttendanceTypeEnum](AttendanceTypeEnum.md) | Type de présence individuelle.  |
 | reason | * <br/> [MultilingualString](MultilingualString.md) | Motif de l'absence ou du retard (texte libre, multilingue).  |
 | local_id | 0..1 <br/> [String](String.md) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
