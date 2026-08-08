@@ -255,6 +255,25 @@ def load_config(ech_folder: Path) -> dict:
 CLASS_TO_SLOT = {cls: slot for slot, cls in SLOT_TO_CLASS.items()}
 
 
+def blank_line_between_members(text: str) -> str:
+    """Separate the top-level list items of a dumped listing by a blank line.
+
+    Without it the last line of one member and the first line of the next sit
+    directly on top of each other, and a reader of the printed example cannot
+    see where one instance ends and the next begins -- precisely what a
+    composite example is meant to show. A blank line inside a block sequence is
+    ignored by YAML, so the file stays loadable.
+    """
+    out, seen_first = [], False
+    for line in text.split("\n"):
+        if line.startswith("- "):
+            if seen_first:
+                out.append("")
+            seen_first = True
+        out.append(line)
+    return "\n".join(out)
+
+
 def write_composites(composites: list, collected: dict, examples_dir: Path, lang: str):
     """Write one file per composite example, holding all its members.
 
@@ -274,9 +293,10 @@ def write_composites(composites: list, collected: dict, examples_dir: Path, lang
             print(f"  WARNING: composite '{title}' skipped (class/slot/title/members missing)")
             continue
         filename = f"{class_name}-{slugify(title)}.yaml"
+        dumped = yaml.dump({slot_name: members}, default_flow_style=False,
+                           allow_unicode=True, sort_keys=False, width=YAML_WIDTH)
         with open(examples_dir / filename, "w", encoding="utf-8") as f:
-            yaml.dump({slot_name: members}, f, default_flow_style=False,
-                      allow_unicode=True, sort_keys=False, width=YAML_WIDTH)
+            f.write(blank_line_between_members(dumped))
         print(f"  {filename}  (composite of {len(members)})")
 
 
