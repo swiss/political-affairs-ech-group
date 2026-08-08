@@ -27,4 +27,5 @@ groups:
   spatial: https://ld.admin.ch/canton/15
   parent_groups:
   - local_id: 34
+    global_uri: https://www.ar.ch/kantonsrat/
     label: Kantonsrat Appenzell Ausserrhoden
