@@ -1822,21 +1822,21 @@ enums:
       department:
         meaning: act:enum/group_type/department
         description: |
-          Government department.
+          Government department, e.g. Departement or Direktion.
         annotations:
           description_de: |
-            Departement.
+            Departement, z.B. Departement oder Direktion.
           description_fr: |
-            Département gouvernemental.
+            Département gouvernemental, p. ex. Departement ou Direktion.
       office:
         meaning: act:enum/group_type/office
         description: |
-          Government office.
+          Government office ("Amt"), usually the unit below a department.
         annotations:
           description_de: |
-            Amt.
+            Amt, häufig die Einheit unterhalb des Departements.
           description_fr: |
-            Office gouvernemental.
+            Office gouvernemental (« Amt »), généralement l'unité située en dessous du département.
       committee_extraparliamentary:
         meaning: act:enum/group_type/committee_extraparliamentary
         description: |
