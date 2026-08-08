@@ -1971,12 +1971,12 @@ enums:
             Divers / non binaire.
   LegalFormEnum:
     description: |
-      Legal forms based on the Swiss UID register codelist (eCH-0108). See https://register.ld.admin.ch/i14y/concept/legalForm
+      Legal forms according to the code list published by the Federal Statistical Office on the I14Y platform, conformant to eCH-0108 (business master data and business register). See https://register.ld.admin.ch/i14y/concept/legalForm
     annotations:
       description_de: |
-        Rechtsformen basierend auf der Codeliste des eidgenössischen UID-Registers (eCH-0098). Siehe https://register.ld.admin.ch/i14y/concept/legalForm
+        Rechtsformen gemäss der Codeliste des Bundesamts für Statistik auf der I14Y-Plattform, konform zu eCH-0108 (Unternehmensstammdaten und Unternehmensregister). Siehe https://register.ld.admin.ch/i14y/concept/legalForm
       description_fr: |
-        Formes juridiques basées sur la liste de codes du registre fédéral IDE (eCH-0108). Voir https://register.ld.admin.ch/i14y/concept/legalForm
+        Formes juridiques selon la liste de codes publiée par l'Office fédéral de la statistique sur la plateforme I14Y, conforme à eCH-0108 (données de base des entreprises et registre des entreprises). Voir https://register.ld.admin.ch/i14y/concept/legalForm
     permissible_values:
       "0101":
         meaning: https://register.ld.admin.ch/i14y/concept/legalForm/0101
