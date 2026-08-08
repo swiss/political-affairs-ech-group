@@ -1398,7 +1398,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/committee_extraparliamentary](act:enum/group_type/committee_extraparliamentary) |
 | interest_group |  Interest group on a subject matter: both the parliamentary interest group, in which members of the council join across party lines, and the interest group from civil society.  |
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |
-| oversight_body |  Independent body that oversees or audits the state without belonging to the body overseen or reporting to it (e.g., Swiss Federal Audit Office SFAO, Supervisory Authority for the Office of the Attorney General AS-OAG, cantonal audit offices).  |
+| oversight_body |  Independent oversight or audit body that does not belong to the body overseen and does not report to it (e.g., Swiss Federal Audit Office SFAO and cantonal audit offices, Supervisory Authority for the Office of the Attorney General AS-OAG, Swiss Financial Market Supervisory Authority FINMA, ombudsman offices).  |
 | | [act:enum/group_type/oversight_body](act:enum/group_type/oversight_body) |
 | council_secretariat |  Administrative unit serving a council, whatever it is called locally (parliamentary services, council secretariat, state, cantonal or municipal chancellery). Used for the legislative as well as the executive council: the state chancellery is the staff unit of the executive council, the parliamentary services are that of the legislative council.  |
 | | [act:enum/group_type/council_secretariat](act:enum/group_type/council_secretariat) |

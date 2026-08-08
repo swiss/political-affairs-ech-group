@@ -1398,7 +1398,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/committee_extraparliamentary](act:enum/group_type/committee_extraparliamentary) |
 | interest_group |  Interessengruppe zu einem Sachthema: sowohl die parlamentarische Gruppe, in der sich Ratsmitglieder fraktionsübergreifend zusammenschliessen, als auch die Interessengruppe aus der Zivilgesellschaft.  |
 | | [act:enum/group_type/interest_group](act:enum/group_type/interest_group) |
-| oversight_body |  Unabhängiges Organ, das den Staat beaufsichtigt oder prüft, ohne dem beaufsichtigten Organ anzugehören oder ihm zu berichten (z.B. Eidgenössische Finanzkontrolle EFK, Aufsichtsbehörde über die Bundesanwaltschaft AB-BA, kantonale Finanzkontrollen).  |
+| oversight_body |  Unabhängiges Aufsichts- oder Prüforgan, das dem beaufsichtigten Organ nicht angehört und ihm nicht berichtet (z.B. Eidgenössische Finanzkontrolle EFK und kantonale Finanzkontrollen, Aufsichtsbehörde über die Bundesanwaltschaft AB-BA, Eidgenössische Finanzmarktaufsicht FINMA, Ombudsstellen).  |
 | | [act:enum/group_type/oversight_body](act:enum/group_type/oversight_body) |
 | council_secretariat |  Verwaltungseinheit, die einen Rat bedient, unabhängig von der örtlichen Bezeichnung (Parlamentsdienste, Ratssekretariat, Staats-, Kantons-, Standes-, Stadt- oder Gemeindekanzlei). Wird für den Legislativ- wie für den Exekutivrat verwendet: Die Staatskanzlei ist die Stabsstelle des Exekutivrates, die Parlamentsdienste sind jene des Legislativrates.  |
 | | [act:enum/group_type/council_secretariat](act:enum/group_type/council_secretariat) |
