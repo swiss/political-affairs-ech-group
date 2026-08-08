@@ -229,7 +229,7 @@
             "description": "Electoral district or region associated with a membership. The temporal validity is inherited from the enclosing membership.",
             "properties": {
                 "global_uri": {
-                    "description": "For IRI references, LINDAS resources should be used.\nThe IRIs for the different administrative levels of Swiss spatial units are available at: ch:country/CHE.\nUnder links in the schema:containsPlace section, the desired level can be selected.\nExamples for each administrative level:\n- Country - Switzerland: https://ld.admin.ch/country/CHE\n- Canton - Aargau: https://ld.admin.ch/canton/19\n- District - Brig: https://ld.admin.ch/district/2301\n- Municipality - Versoix: https://ld.admin.ch/municipality/6644\n",
+                    "description": "For IRI references, LINDAS resources should be used.\nThe IRIs for the different administrative levels of Swiss spatial units are available at: https://ld.admin.ch/country/CHE.\nUnder links in the schema:containsPlace section, the desired level can be selected.\nExamples for each administrative level:\n- Country - Switzerland: https://ld.admin.ch/country/CHE\n- Canton - Aargau: https://ld.admin.ch/canton/19\n- District - Brig: https://ld.admin.ch/district/2301\n- Municipality - Versoix: https://ld.admin.ch/municipality/6644\n",
                     "type": "string"
                 },
                 "label": {

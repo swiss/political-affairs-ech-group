@@ -1371,7 +1371,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/list](act:enum/group_type/list) |
 | workgroup |  Groupe de travail ad hoc, généralement d'une durée limitée.  |
 | | [act:enum/group_type/workgroup](act:enum/group_type/workgroup) |
-| assembly |  Assemblée des personnes ayant le droit de vote en tant qu'organe législatif, en particulier l'assemblée communale. Contrairement à un conseil, elle n'est pas un organe élu.  |
+| assembly |  Assemblée des personnes ayant le droit de vote en tant qu'organe législatif, en particulier l'assemblée communale et, au niveau cantonal, la Landsgemeinde. Contrairement à un conseil, elle n'est pas un organe élu.  |
 | | [act:enum/group_type/assembly](act:enum/group_type/assembly) |
 | council_legislative |  Parlement au niveau fédéral, cantonal ou communal (p. ex. Assemblée fédérale, Conseil national, Conseil des États, Grand Conseil, parlement cantonal, parlement communal).  |
 | | [act:enum/group_type/council_legislative](act:enum/group_type/council_legislative) |

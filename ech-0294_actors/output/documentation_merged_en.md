@@ -1372,7 +1372,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/list](act:enum/group_type/list) |
 | workgroup |  Ad-hoc working group, typically with a limited duration.  |
 | | [act:enum/group_type/workgroup](act:enum/group_type/workgroup) |
-| assembly |  Assembly of the persons entitled to vote acting as the legislative body, in particular the communal assembly ("Gemeindeversammlung"). Unlike a council, it is not an elected body.  |
+| assembly |  Assembly of the persons entitled to vote acting as the legislative body, in particular the communal assembly ("Gemeindeversammlung") and, at cantonal level, the Landsgemeinde. Unlike a council, it is not an elected body.  |
 | | [act:enum/group_type/assembly](act:enum/group_type/assembly) |
 | council_legislative |  Parliament at federal, cantonal, or municipal level (e.g., Federal Assembly, National Council, Council of States, Grand Council, cantonal parliament, municipal parliament).  |
 | | [act:enum/group_type/council_legislative](act:enum/group_type/council_legislative) |
@@ -1621,7 +1621,7 @@ _Electoral district or region associated with a membership. The temporal validit
 | ---  | --- | --- |
 | label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | For IRI references, LINDAS resources should be used. The IRIs for the different administrative levels of Swiss spatial units are available at: ch:country/CHE. Under links in the schema:containsPlace section, the desired level can be selected. Examples for each administrative level: - Country - Switzerland: https://ld.admin.ch/country/CHE - Canton - Aargau: https://ld.admin.ch/canton/19 - District - Brig: https://ld.admin.ch/district/2301 - Municipality - Versoix: https://ld.admin.ch/municipality/6644 <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | For IRI references, LINDAS resources should be used. The IRIs for the different administrative levels of Swiss spatial units are available at: https://ld.admin.ch/country/CHE. Under links in the schema:containsPlace section, the desired level can be selected. Examples for each administrative level: - Country - Switzerland: https://ld.admin.ch/country/CHE - Canton - Aargau: https://ld.admin.ch/canton/19 - District - Brig: https://ld.admin.ch/district/2301 - Municipality - Versoix: https://ld.admin.ch/municipality/6644 <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 
 

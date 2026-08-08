@@ -30,7 +30,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/list](act:enum/group_type/list) |
 | workgroup |  Ad-hoc working group, typically with a limited duration.  |
 | | [act:enum/group_type/workgroup](act:enum/group_type/workgroup) |
-| assembly |  Assembly of the persons entitled to vote acting as the legislative body, in particular the communal assembly ("Gemeindeversammlung"). Unlike a council, it is not an elected body.  |
+| assembly |  Assembly of the persons entitled to vote acting as the legislative body, in particular the communal assembly ("Gemeindeversammlung") and, at cantonal level, the Landsgemeinde. Unlike a council, it is not an elected body.  |
 | | [act:enum/group_type/assembly](act:enum/group_type/assembly) |
 | council_legislative |  Parliament at federal, cantonal, or municipal level (e.g., Federal Assembly, National Council, Council of States, Grand Council, cantonal parliament, municipal parliament).  |
 | | [act:enum/group_type/council_legislative](act:enum/group_type/council_legislative) |

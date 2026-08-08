@@ -139,11 +139,11 @@ act:groups_example a act:Container ;
 <https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz> a act:Group ;
     schema1:validFrom "2012-01-01"^^xsd:date ;
     mcm:label [ a mcm:MultilingualValue ;
-            mcm:language "fr" ;
-            mcm:value "Information et défense des consommateurs" ],
-        [ a mcm:MultilingualValue ;
             mcm:language "it" ;
             mcm:value "Informazione e tutela dei consumatori" ],
+        [ a mcm:MultilingualValue ;
+            mcm:language "fr" ;
+            mcm:value "Information et défense des consommateurs" ],
         [ a mcm:MultilingualValue ;
             mcm:language "de" ;
             mcm:value "Konsumenteninformation und -schutz" ] ;
@@ -171,11 +171,11 @@ act:groups_example a act:Container ;
                     mcm:language "fr" ;
                     mcm:value "Groupe d'intérêt" ],
                 [ a mcm:MultilingualValue ;
-                    mcm:language "it" ;
-                    mcm:value "Gruppo d'interesse" ],
-                [ a mcm:MultilingualValue ;
                     mcm:language "de" ;
-                    mcm:value "Interessengruppe" ] ;
+                    mcm:value "Interessengruppe" ],
+                [ a mcm:MultilingualValue ;
+                    mcm:language "it" ;
+                    mcm:value "Gruppo d'interesse" ] ;
             act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/interest_group> ] ;
     act:landingPage [ a mcm:MultilingualUri ;
             mcm:language "de" ;
@@ -196,23 +196,23 @@ act:groups_example a act:Container ;
 
 <https://www.weko.admin.ch/> a act:Group ;
     mcm:abbreviation [ a mcm:MultilingualValue ;
-            mcm:language "fr" ;
-            mcm:value "COMCO" ],
-        [ a mcm:MultilingualValue ;
             mcm:language "de" ;
             mcm:value "WEKO" ],
+        [ a mcm:MultilingualValue ;
+            mcm:language "fr" ;
+            mcm:value "COMCO" ],
         [ a mcm:MultilingualValue ;
             mcm:language "it" ;
             mcm:value "COMCO" ] ;
     mcm:label [ a mcm:MultilingualValue ;
+            mcm:language "de" ;
+            mcm:value "Wettbewerbskommission" ],
+        [ a mcm:MultilingualValue ;
             mcm:language "fr" ;
             mcm:value "Commission de la concurrence" ],
         [ a mcm:MultilingualValue ;
             mcm:language "it" ;
-            mcm:value "Commissione della concorrenza" ],
-        [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Wettbewerbskommission" ] ;
+            mcm:value "Commissione della concorrenza" ] ;
     act:groupType [ a act:GroupType ;
             mcm:label [ a mcm:MultilingualValue ;
                     mcm:language "de" ;
@@ -257,11 +257,11 @@ act:groups_example a act:Container ;
             mcm:value "Freiburger Delegation IPK strafrechtliche Einschliessung" ] ;
     mcm:localId "5000" ;
     act:description [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg, Genf, Jura, Neuenburg, Waadt und Wallis." ],
-        [ a mcm:MultilingualValue ;
             mcm:language "fr" ;
-            mcm:value "La Commission interparlementaire de contrôle détention pénale est composée de 18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel, Vaud et Valais." ] ;
+            mcm:value "La Commission interparlementaire de contrôle détention pénale est composée de 18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel, Vaud et Valais." ],
+        [ a mcm:MultilingualValue ;
+            mcm:language "de" ;
+            mcm:value "Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg, Genf, Jura, Neuenburg, Waadt und Wallis." ] ;
     act:groupType [ a act:GroupType ;
             mcm:label [ a mcm:MultilingualValue ;
                     mcm:language "fr" ;
@@ -271,11 +271,11 @@ act:groups_example a act:Container ;
                     mcm:value "Delegation" ] ;
             act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/delegation> ] ;
     act:landingPage [ a mcm:MultilingualUri ;
-            mcm:language "fr" ;
-            mcm:value <https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5> ],
-        [ a mcm:MultilingualUri ;
             mcm:language "de" ;
-            mcm:value <https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5> ] ;
+            mcm:value <https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5> ],
+        [ a mcm:MultilingualUri ;
+            mcm:language "fr" ;
+            mcm:value <https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5> ] ;
     act:spatial "https://ld.admin.ch/canton/10" .
 
 <https://www.regierungsrat.bs.ch/> a act:Group ;

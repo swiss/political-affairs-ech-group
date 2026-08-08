@@ -30,7 +30,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 | | [act:enum/group_type/list](act:enum/group_type/list) |
 | workgroup |  Ad-hoc-Arbeitsgruppe, typischerweise mit begrenzter Laufzeit.  |
 | | [act:enum/group_type/workgroup](act:enum/group_type/workgroup) |
-| assembly |  Versammlung der Stimmberechtigten als gesetzgebendes Organ, insbesondere die Gemeindeversammlung. Anders als ein Rat ist sie kein gewähltes Gremium.  |
+| assembly |  Versammlung der Stimmberechtigten als gesetzgebendes Organ, insbesondere die Gemeindeversammlung und, auf Kantonsebene, die Landsgemeinde. Anders als ein Rat ist sie kein gewähltes Gremium.  |
 | | [act:enum/group_type/assembly](act:enum/group_type/assembly) |
 | council_legislative |  Parlament auf Bundes-, Kantons- oder Gemeindeebene (z.B. Bundesversammlung, Nationalrat, Ständerat, Grosser Rat, Kantonsrat, Gemeindeparlament).  |
 | | [act:enum/group_type/council_legislative](act:enum/group_type/council_legislative) |

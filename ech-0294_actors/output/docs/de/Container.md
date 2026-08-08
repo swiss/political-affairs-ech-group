@@ -321,10 +321,10 @@ persons:
 #       global_uri: https://www.admin.ch/de/beat-jans
 #       label: Beat Jans
 #     group_reference:
-#       global_uri: ch:FC
+#       global_uri: https://www.admin.ch/de/bundesrat
 #       label: Bundesrat
 #     electoral_district:
-#       global_uri: ch:canton/12
+#       global_uri: https://ld.admin.ch/canton/12
 ```
 #### Beispiel: groups
 
