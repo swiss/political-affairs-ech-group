@@ -17,7 +17,7 @@ _Art der Gruppe (z.B. Partei, Kommission, Parlament, Departement)._
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
-| group_type_enum | 0..1 <br/> [GroupTypeEnum](GroupTypeEnum.md) | Link zum kontrollierten Vokabular für Gruppentypen.  |
+| group_type_enum | 1 <br/> [GroupTypeEnum](GroupTypeEnum.md) | Link zum kontrollierten Vokabular für Gruppentypen.  |
 | label | * <br/> [MultilingualValue](MultilingualValue.md) | Bezeichnung des Typs, wie ihn die publizierende Stelle verwendet, mit der Sprache, in der sie publiziert wird. Publiziert eine Stelle die Bezeichnung in mehreren Sprachen, wird pro Sprache ein Eintrag erfasst.  |
 
 

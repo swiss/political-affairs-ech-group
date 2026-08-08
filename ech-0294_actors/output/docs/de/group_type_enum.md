@@ -26,7 +26,7 @@ URI: [act:groupTypeEnum](https://ld.ech.ch/schema/0294/actors/groupTypeEnum)
 
 | Name | Beschreibung | Ändert Slot |
 | --- | --- | --- |
-| [GroupType](GroupType.md) | Art der Gruppe (z |  no  |
+| [GroupType](GroupType.md) | Art der Gruppe (z |  yes  |
 
 
 
