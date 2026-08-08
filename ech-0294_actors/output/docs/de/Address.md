@@ -18,7 +18,7 @@ _Eine Adresse mit einem Typ (z.B. Privatadresse, Geschäftsadresse) und einem We
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
 | address_type | 0..1 <br/> [AddressTypeEnum](AddressTypeEnum.md) | Typ der Adresse.  |
-| address_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | URI der Adresse aus dem eidgenössischen Gebäudeadressverzeichnis. Der Layer ist zugänglich unter https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis. Beispiel einer gültigen URI: https://geo.ld.admin.ch/location/address/101904050  |
+| address_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | URI der Adresse aus dem Amtlichen Gebäudeadressverzeichnis (swisstopo). Der letzte Abschnitt der URI ist die EGAID, der eidgenössische Gebäudeadressidentifikator dieses Verzeichnisses. Beispiel einer gültigen URI: https://geo.ld.admin.ch/location/address/101904050 — dasselbe Verzeichnis ist als Kartenlayer einsehbar unter https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis  |
 | street_address | 0..1 <br/> [String](String.md) | Strassenadresse.  |
 | postal_code | 0..1 <br/> [Integer](Integer.md) | Postleitzahl.  |
 | postal_locality | 0..1 <br/> [String](String.md) | Ort.  |

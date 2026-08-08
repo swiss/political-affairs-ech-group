@@ -49,7 +49,7 @@ Name: actors-schema
 | --- | --- |
 | [abbreviation](abbreviation.md) | Abkürzung (kann mehrsprachig sein) |
 | [address_type](address_type.md) | Typ der Adresse |
-| [address_uri](address_uri.md) | URI der Adresse aus dem eidgenössischen Gebäudeadressverzeichnis |
+| [address_uri](address_uri.md) | URI der Adresse aus dem Amtlichen Gebäudeadressverzeichnis (swisstopo) |
 | [addresses](addresses.md) | Adressen mit Typ (privat, geschäftlich, lokal) |
 | [authorized_to_vote](authorized_to_vote.md) | Gibt an, ob die Person in der Gruppe stimmberechtigt ist |
 | [birth_date](birth_date.md) | Genaues Geburtsdatum, sofern verfügbar und öffentlich |

@@ -2215,6 +2215,12 @@ Au moins l'un des champs suivants doit être renseigné :
 
 ## Classes utilisées à plusieurs reprises
 
+Une adresse est saisie de deux manières : comme renvoi au Répertoire officiel des adresses de bâtiments de swisstopo (`address_uri`) et comme adresse rédigée dans `street_address`, `postal_code`, `postal_locality` et `country`. Le dernier nombre de l'URI est l'EGAID, l'identifiant fédéral d'adresse de bâtiment – `https://geo.ld.admin.ch/location/address/101009806` désigne ainsi « Rue de Genève 17, 1003 Lausanne » en tant qu'adresse de bâtiment officiellement répertoriée.
+
+Le renvoi est l'indication la plus stable : les noms de rue changent, les communes fusionnent, les numéros postaux sont redécoupés, mais l'EGAID demeure et permet des rapprochements avec le Registre des bâtiments et des logements ainsi qu'avec les géodonnées. L'adresse rédigée ne devient pas superflue, car elle contient souvent davantage que ce que connaît le répertoire – un nom d'organisation, une case postale, une mention « c/o ». L'exemple de la Fédération romande des consommateurs le montre bien : l'EGAID désigne l'adresse physique à la Rue de Genève 17, 1003 Lausanne, tandis que l'adresse rédigée indique la case postale 585 et son propre numéro postal 1001. Les deux indications sont correctes et aucune ne se déduit de l'autre.
+
+Toutes les adresses ne figurent pas dans le répertoire, ainsi une adresse à l'étranger. `address_uri` est donc facultatif ; là où il est connu, il doit être renseigné.
+
 
 
 ## Classe: Address 
@@ -2235,7 +2241,7 @@ _Une adresse avec un type (p. ex. adresse privée, adresse professionnelle) et u
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
 | address_type | 0..1 <br/> [AddressTypeEnum](#AddressTypeEnum) | Type d'adresse.  |
-| address_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | URI de l'adresse issue du répertoire fédéral des adresses de bâtiments. La couche est accessible à l'adresse https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis. Exemple d'URI valide : https://geo.ld.admin.ch/location/address/101904050  |
+| address_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | URI de l'adresse issue du Répertoire officiel des adresses de bâtiments (swisstopo). Le dernier segment de l'URI est l'EGAID, l'identifiant fédéral d'adresse de bâtiment de ce répertoire. Exemple d'URI valide : https://geo.ld.admin.ch/location/address/101904050 — le même répertoire est consultable comme couche cartographique à l'adresse https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis  |
 | street_address | 0..1 <br/> [String](#String) | Adresse (rue).  |
 | postal_code | 0..1 <br/> [Integer](#Integer) | Code postal.  |
 | postal_locality | 0..1 <br/> [String](#String) | Localité.  |

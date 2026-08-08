@@ -18,7 +18,7 @@ _Une adresse avec un type (p. ex. adresse privée, adresse professionnelle) et u
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
 | address_type | 0..1 <br/> [AddressTypeEnum](AddressTypeEnum.md) | Type d'adresse.  |
-| address_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | URI de l'adresse issue du répertoire fédéral des adresses de bâtiments. La couche est accessible à l'adresse https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis. Exemple d'URI valide : https://geo.ld.admin.ch/location/address/101904050  |
+| address_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | URI de l'adresse issue du Répertoire officiel des adresses de bâtiments (swisstopo). Le dernier segment de l'URI est l'EGAID, l'identifiant fédéral d'adresse de bâtiment de ce répertoire. Exemple d'URI valide : https://geo.ld.admin.ch/location/address/101904050 — le même répertoire est consultable comme couche cartographique à l'adresse https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis  |
 | street_address | 0..1 <br/> [String](String.md) | Adresse (rue).  |
 | postal_code | 0..1 <br/> [Integer](Integer.md) | Code postal.  |
 | postal_locality | 0..1 <br/> [String](String.md) | Localité.  |
