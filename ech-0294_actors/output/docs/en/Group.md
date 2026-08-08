@@ -21,7 +21,7 @@ _A political group, organization, or body (e.g., party, committee, parliament, d
 | label | 1..* <br/> [MultilingualValue](MultilingualValue.md) | Name of the group, with the language it is published in. Where a group is officially named in several languages, one entry per language is recorded.  |
 | abbreviation | * <br/> [MultilingualValue](MultilingualValue.md) | Abbreviation (can be multilingual).  |
 | description | * <br/> [MultilingualValue](MultilingualValue.md) | Description of the entity.  |
-| organization_uid | 0..1 <br/> [String](String.md) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).  |
+| organization_uid | 0..1 <br/> [String](String.md) | UID of the organization from the federal UID register (uid.admin.ch), in the exchange format of eCH-0108: CHE followed by nine digits, without separators (e.g. CHE106063525). The last digit is a check digit calculated modulo 11. The dotted form CHE-106.063.525 is the presentation used by uid.admin.ch and is not recorded here.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](LegalFormEnum.md) | Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm  |
 | landing_page | * <br/> [MultilingualUri](MultilingualUri.md) | Website providing further information. Where the site is published under a separate address per language, one entry per language is recorded.  |
 | parent_groups | * <br/> [GroupReference](GroupReference.md) | Reference to the parent groups as a GroupReference, i.e. stated by their local_id or their global_uri. Only genuine super-/subordination belongs here: the parent party of a cantonal party, the hierarchy within the executive, a sub-commission under its commission, or a parliamentary group under its parliament. (parentGroup is typically used within the same group_type, but cross-type links are permitted, e.g. parliamentary group → parliament.) The parties carrying a parliamentary group are not a superordinate group of it and are therefore not stated here.  |
@@ -273,7 +273,7 @@ spatial: https://ld.admin.ch/municipality/3203
 
 ```yaml
 global_uri: https://www.frc.ch/
-organization_uid: CHE-106.063.525
+organization_uid: CHE106063525
 legal_form: '0109'
 label:
 - value: Fédération romande des consommateurs

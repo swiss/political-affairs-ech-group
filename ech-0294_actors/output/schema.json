@@ -444,8 +444,8 @@
                     ]
                 },
                 "organization_uid": {
-                    "description": "UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).\n",
-                    "pattern": "^CHE-\\d{3}\\.\\d{3}\\.\\d{3}$",
+                    "description": "UID of the organization from the federal UID register (uid.admin.ch), in the exchange format of eCH-0108: CHE followed by nine digits, without separators (e.g. CHE106063525). The last digit is a check digit calculated modulo 11. The dotted form CHE-106.063.525 is the presentation used by uid.admin.ch and is not recorded here.\n",
+                    "pattern": "^CHE[1-9][0-9]{8}$",
                     "type": [
                         "string",
                         "null"
@@ -875,8 +875,8 @@
                     ]
                 },
                 "organization_uid": {
-                    "description": "UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).\n",
-                    "pattern": "^CHE-\\d{3}\\.\\d{3}\\.\\d{3}$",
+                    "description": "UID of the organization from the federal UID register (uid.admin.ch), in the exchange format of eCH-0108: CHE followed by nine digits, without separators (e.g. CHE106063525). The last digit is a check digit calculated modulo 11. The dotted form CHE-106.063.525 is the presentation used by uid.admin.ch and is not recorded here.\n",
+                    "pattern": "^CHE[1-9][0-9]{8}$",
                     "type": [
                         "string",
                         "null"
@@ -1498,8 +1498,8 @@
                     ]
                 },
                 "organization_uid": {
-                    "description": "UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).\n",
-                    "pattern": "^CHE-\\d{3}\\.\\d{3}\\.\\d{3}$",
+                    "description": "UID of the organization from the federal UID register (uid.admin.ch), in the exchange format of eCH-0108: CHE followed by nine digits, without separators (e.g. CHE106063525). The last digit is a check digit calculated modulo 11. The dotted form CHE-106.063.525 is the presentation used by uid.admin.ch and is not recorded here.\n",
+                    "pattern": "^CHE[1-9][0-9]{8}$",
                     "type": [
                         "string",
                         "null"

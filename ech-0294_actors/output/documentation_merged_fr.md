@@ -628,7 +628,7 @@ _Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si
 | is_paid | 0..1 <br/> [Boolean](#Boolean) | Indique si l'activité est rémunérée.  |
 | occupation_code | 0..1 <br/> [String](#String) | Code ISCO-19 du métier.  |
 | label | 0..1 <br/> [String](#String) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
-| organization_uid | 0..1 <br/> [String](#String) | IDE de l'organisation (format eCH-0097 : CHE-XXX.XXX.XXX) issu du registre fédéral IDE (uid.admin.ch).  |
+| organization_uid | 0..1 <br/> [String](#String) | IDE de l'organisation issu du registre fédéral IDE (uid.admin.ch), dans le format d'échange d'eCH-0108 : CHE suivi de neuf chiffres, sans séparateurs (p. ex. CHE106063525). Le dernier chiffre est un chiffre de contrôle calculé modulo 11. La forme pointée CHE-106.063.525 est la présentation utilisée par uid.admin.ch et n'est pas saisie ici.  |
 | organization_name | 0..1 <br/> [String](#String) | Nom de l'organisation ou de l'entreprise.  |
 | valid_from | 0..1 <br/> [Date](#Date) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
 | valid_through | 0..1 <br/> [Date](#Date) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
@@ -908,7 +908,7 @@ _Un groupe, une organisation ou une collectivité politique (p. ex. parti, commi
 | label | 1..* <br/> [MultilingualValue](#MultilingualValue) | Désignation du groupe avec la langue dans laquelle elle est publiée. Lorsqu'un groupe porte officiellement un nom dans plusieurs langues, une entrée est saisie par langue.  |
 | abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abréviation (peut être multilingue).  |
 | description | * <br/> [MultilingualValue](#MultilingualValue) | Description de l'entité.  |
-| organization_uid | 0..1 <br/> [String](#String) | IDE de l'organisation (format eCH-0097 : CHE-XXX.XXX.XXX) issu du registre fédéral IDE (uid.admin.ch).  |
+| organization_uid | 0..1 <br/> [String](#String) | IDE de l'organisation issu du registre fédéral IDE (uid.admin.ch), dans le format d'échange d'eCH-0108 : CHE suivi de neuf chiffres, sans séparateurs (p. ex. CHE106063525). Le dernier chiffre est un chiffre de contrôle calculé modulo 11. La forme pointée CHE-106.063.525 est la présentation utilisée par uid.admin.ch et n'est pas saisie ici.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Forme juridique de l'organisation. Voir le vocabulaire contrôlé : https://register.ld.admin.ch/i14y/concept/legalForm  |
 | landing_page | * <br/> [MultilingualUri](#MultilingualUri) | Site web fournissant de plus amples informations. Lorsque le site est publié à une adresse propre par langue, une entrée est saisie par langue.  |
 | parent_groups | * <br/> [GroupReference](#GroupReference) | Référence aux groupes supérieurs sous forme de GroupReference, c'est-à-dire indiquée au moyen de leur local_id ou de leur global_uri. Seule une véritable relation de subordination y a sa place : le parti faîtier d'un parti cantonal, la hiérarchie au sein de l'exécutif, une sous-commission rattachée à sa commission ou un groupe parlementaire rattaché à son parlement. (parentGroup est généralement utilisé au sein d'un même group_type, mais les liens intertypes sont autorisés, p. ex. groupe parlementaire → parlement.) Les partis qui portent un groupe parlementaire ne lui sont pas supérieurs et ne sont donc pas indiqués ici.  |
@@ -1160,7 +1160,7 @@ spatial: https://ld.admin.ch/municipality/3203
 
 ```yaml
 global_uri: https://www.frc.ch/
-organization_uid: CHE-106.063.525
+organization_uid: CHE106063525
 legal_form: '0109'
 label:
 - value: Fédération romande des consommateurs
@@ -1656,7 +1656,7 @@ Le schéma InterestLink consigne les liens d'intérêts, les conflits d'intérê
 
 - **Délimitation par rapport aux affiliations (`Membership`) :** `InterestLink` représente les liens avec des organisations *extérieures* au schéma des acteurs (conflits d'intérêts, financement de la politique) – par opposition à l'appartenance formelle *au sein* du schéma, qui est consignée au moyen de `Membership`.
 - **Classification obligatoire (`interest_type`) :** chaque lien est obligatoirement classé selon son type (activité professionnelle, mandats politiques, association), en s'appuyant sur les catégories de divulgation de l'Assemblée fédérale.
-- **Organisation référençable par IDE (`organization_uid`) :** si l'organisation est enregistrée dans le registre IDE, elle est référencée au moyen de son IDE (eCH-0097, `CHE-XXX.XXX.XXX`) – ce qui permet des analyses, p. ex. à l'aide de codes NOGA. Pour les organisations sans IDE, `organization_name`/`organization_address` sont disponibles ; la forme juridique suit un vocabulaire contrôlé (`LegalFormEnum`).
+- **Organisation référençable par IDE (`organization_uid`) :** si l'organisation est enregistrée dans le registre IDE, elle est référencée au moyen de son IDE – ce qui permet des analyses, p. ex. à l'aide de codes NOGA. C'est le format d'échange d'eCH-0108 qui est saisi, soit `CHE` suivi de neuf chiffres sans séparateurs (`CHE106063525`). Pour les organisations sans IDE, `organization_name`/`organization_address` sont disponibles ; la forme juridique suit un vocabulaire contrôlé (`LegalFormEnum`).
 - **Étendue et rémunération (`is_paid`, `committee`, `function_role`) :** outre l'organe et la fonction au sein de l'organisation, il est explicitement consigné si la position est rémunérée – un aspect central de la transparence.
 
 
@@ -1683,7 +1683,7 @@ _Un lien d'intérêts (conflit d'intérêts, financement politique) d'une person
 | person_reference | 1 <br/> [PersonReference](#PersonReference) | Référence à une personne avec des données instantanées au moment de la mise en relation.  |
 | interest_type | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | Type de lien d'intérêts (activité professionnelle, mandat politique, association).  |
 | organization_name | 0..1 <br/> [String](#String) | Nom de l'organisation ou de l'entreprise.  |
-| organization_uid | 0..1 <br/> [String](#String) | IDE de l'organisation (format eCH-0097 : CHE-XXX.XXX.XXX) issu du registre fédéral IDE (uid.admin.ch).  |
+| organization_uid | 0..1 <br/> [String](#String) | IDE de l'organisation issu du registre fédéral IDE (uid.admin.ch), dans le format d'échange d'eCH-0108 : CHE suivi de neuf chiffres, sans séparateurs (p. ex. CHE106063525). Le dernier chiffre est un chiffre de contrôle calculé modulo 11. La forme pointée CHE-106.063.525 est la présentation utilisée par uid.admin.ch et n'est pas saisie ici.  |
 | organization_address | 0..1 <br/> [String](#String) | Adresse de l'organisation.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Forme juridique de l'organisation. Voir le vocabulaire contrôlé : https://register.ld.admin.ch/i14y/concept/legalForm  |
 | is_paid | 0..1 <br/> [Boolean](#Boolean) | Indique si l'activité est rémunérée.  |
@@ -1828,7 +1828,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-organization_uid: CHE-109.810.537
+organization_uid: CHE109810537
 legal_form: '0110'
 committee: Stiftungsrat
 function_role: Vizepräsident
@@ -2409,8 +2409,7 @@ La version indiquée est celle sur la base de laquelle la présente norme a ét�
 | | |
 |---|---|
 |[eCH-0011]|eCH-0011 : Datenstandard Personendaten, version 9.0.0 (approuvée, 27.07.2023). Base des types de noms dans `NameTypeEnum` (`personNameData`) : [https://www.ech.ch/de/ech/ech-0011/9.0.0](https://www.ech.ch/de/ech/ech-0011/9.0.0)|
-|[eCH-0097]|eCH-0097 : Datenstandard Unternehmensidentifikation, version 5.2.0 (02.07.2021). Structure de l'IDE (`uidStructureType`), utilisée dans `organization_uid` : [https://www.ech.ch/de/ech/ech-0097/5.2.0](https://www.ech.ch/de/ech/ech-0097/5.2.0)|
-|[eCH-0108]|eCH-0108 : Datenstandard: Unternehmensstammdaten und Unternehmensregister, version 6.0.0 (approuvée, 04.04.2024). Norme à laquelle la liste de codes des formes juridiques de `LegalFormEnum` est conforme ; définit en outre le format d'échange de l'IDE : [https://www.ech.ch/de/ech/ech-0108/6.0.0](https://www.ech.ch/de/ech/ech-0108/6.0.0)|
+|[eCH-0108]|eCH-0108 : Datenstandard: Unternehmensstammdaten und Unternehmensregister, version 6.0.0 (approuvée, 04.04.2024). Définit le format d'échange de l'IDE (`organization_uid`) et constitue la norme à laquelle la liste de codes des formes juridiques de `LegalFormEnum` est conforme : [https://www.ech.ch/de/ech/ech-0108/6.0.0](https://www.ech.ch/de/ech/ech-0108/6.0.0)|
 
 ## Listes de codes et autres sources
 

@@ -141,7 +141,7 @@ interest_links:
       group_label: FDP.Die Liberalen
     interest_type: association
     organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-    organization_uid: CHE-109.810.537
+    organization_uid: CHE109810537
     legal_form: "0110"  # Stiftung
     committee: Stiftungsrat
     function_role: Vizepräsident
@@ -400,7 +400,7 @@ groups:
   # deshalb eine `organization_uid`. Diese ist der stabilere Identifikator als
   # die Webadresse, die sich bei jedem Relaunch ändern kann.
   - global_uri: https://www.frc.ch/
-    organization_uid: CHE-106.063.525
+    organization_uid: CHE106063525
     legal_form: "0109"  # Verein
     label:
       - value: Fédération romande des consommateurs

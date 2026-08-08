@@ -21,7 +21,7 @@ _Un groupe, une organisation ou une collectivité politique (p. ex. parti, commi
 | label | 1..* <br/> [MultilingualValue](MultilingualValue.md) | Désignation du groupe avec la langue dans laquelle elle est publiée. Lorsqu'un groupe porte officiellement un nom dans plusieurs langues, une entrée est saisie par langue.  |
 | abbreviation | * <br/> [MultilingualValue](MultilingualValue.md) | Abréviation (peut être multilingue).  |
 | description | * <br/> [MultilingualValue](MultilingualValue.md) | Description de l'entité.  |
-| organization_uid | 0..1 <br/> [String](String.md) | IDE de l'organisation (format eCH-0097 : CHE-XXX.XXX.XXX) issu du registre fédéral IDE (uid.admin.ch).  |
+| organization_uid | 0..1 <br/> [String](String.md) | IDE de l'organisation issu du registre fédéral IDE (uid.admin.ch), dans le format d'échange d'eCH-0108 : CHE suivi de neuf chiffres, sans séparateurs (p. ex. CHE106063525). Le dernier chiffre est un chiffre de contrôle calculé modulo 11. La forme pointée CHE-106.063.525 est la présentation utilisée par uid.admin.ch et n'est pas saisie ici.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](LegalFormEnum.md) | Forme juridique de l'organisation. Voir le vocabulaire contrôlé : https://register.ld.admin.ch/i14y/concept/legalForm  |
 | landing_page | * <br/> [MultilingualUri](MultilingualUri.md) | Site web fournissant de plus amples informations. Lorsque le site est publié à une adresse propre par langue, une entrée est saisie par langue.  |
 | parent_groups | * <br/> [GroupReference](GroupReference.md) | Référence aux groupes supérieurs sous forme de GroupReference, c'est-à-dire indiquée au moyen de leur local_id ou de leur global_uri. Seule une véritable relation de subordination y a sa place : le parti faîtier d'un parti cantonal, la hiérarchie au sein de l'exécutif, une sous-commission rattachée à sa commission ou un groupe parlementaire rattaché à son parlement. (parentGroup est généralement utilisé au sein d'un même group_type, mais les liens intertypes sont autorisés, p. ex. groupe parlementaire → parlement.) Les partis qui portent un groupe parlementaire ne lui sont pas supérieurs et ne sont donc pas indiqués ici.  |
@@ -273,7 +273,7 @@ spatial: https://ld.admin.ch/municipality/3203
 
 ```yaml
 global_uri: https://www.frc.ch/
-organization_uid: CHE-106.063.525
+organization_uid: CHE106063525
 legal_form: '0109'
 label:
 - value: Fédération romande des consommateurs

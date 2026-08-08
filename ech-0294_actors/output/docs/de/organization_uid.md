@@ -6,7 +6,7 @@ search:
 # Slot: organization_uid 
 
 
-_UID der Organisation (Format eCH-0097: CHE-XXX.XXX.XXX) aus dem eidgenössischen UID-Register (uid.admin.ch)._
+_UID der Organisation aus dem eidgenössischen UID-Register (uid.admin.ch), im Austauschformat von eCH-0108: CHE gefolgt von neun Ziffern, ohne Trennzeichen (z.B. CHE106063525). Die letzte Ziffer ist eine Prüfziffer nach Modulo 11. Die punktierte Form CHE-106.063.525 ist die Darstellung von uid.admin.ch und wird hier nicht erfasst._
 
 
 
@@ -53,7 +53,7 @@ URI: [act:organizationUid](https://ld.ech.ch/schema/0294/actors/organizationUid)
 
 | Eigenschaft | Wert |
 | --- | --- |
-| Regex Pattern | `^CHE-\d{3}\.\d{3}\.\d{3}$` |
+| Regex Pattern | `^CHE[1-9][0-9]{8}$` |
 
 
 
@@ -69,8 +69,8 @@ URI: [act:organizationUid](https://ld.ech.ch/schema/0294/actors/organizationUid)
 
 | Wert |
 | --- |
-| CHE-106.063.525 |
-| CHE-109.810.537 |
+| CHE106063525 |
+| CHE109810537 |
 
 
 
@@ -84,23 +84,31 @@ name: organization_uid
 annotations:
   description_de:
     tag: description_de
-    value: 'UID der Organisation (Format eCH-0097: CHE-XXX.XXX.XXX) aus dem eidgenössischen
-      UID-Register (uid.admin.ch).
+    value: 'UID der Organisation aus dem eidgenössischen UID-Register (uid.admin.ch),
+      im Austauschformat von eCH-0108: CHE gefolgt von neun Ziffern, ohne Trennzeichen
+      (z.B. CHE106063525). Die letzte Ziffer ist eine Prüfziffer nach Modulo 11. Die
+      punktierte Form CHE-106.063.525 ist die Darstellung von uid.admin.ch und wird
+      hier nicht erfasst.
 
       '
   description_fr:
     tag: description_fr
-    value: 'IDE de l''organisation (format eCH-0097 : CHE-XXX.XXX.XXX) issu du registre
-      fédéral IDE (uid.admin.ch).
+    value: 'IDE de l''organisation issu du registre fédéral IDE (uid.admin.ch), dans
+      le format d''échange d''eCH-0108 : CHE suivi de neuf chiffres, sans séparateurs
+      (p. ex. CHE106063525). Le dernier chiffre est un chiffre de contrôle calculé
+      modulo 11. La forme pointée CHE-106.063.525 est la présentation utilisée par
+      uid.admin.ch et n''est pas saisie ici.
 
       '
-description: 'UID der Organisation (Format eCH-0097: CHE-XXX.XXX.XXX) aus dem eidgenössischen
-  UID-Register (uid.admin.ch).
+description: 'UID der Organisation aus dem eidgenössischen UID-Register (uid.admin.ch),
+  im Austauschformat von eCH-0108: CHE gefolgt von neun Ziffern, ohne Trennzeichen
+  (z.B. CHE106063525). Die letzte Ziffer ist eine Prüfziffer nach Modulo 11. Die punktierte
+  Form CHE-106.063.525 ist die Darstellung von uid.admin.ch und wird hier nicht erfasst.
 
   '
 examples:
-- value: CHE-106.063.525
-- value: CHE-109.810.537
+- value: CHE106063525
+- value: CHE109810537
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:organizationUid
@@ -109,7 +117,7 @@ domain_of:
 - InterestLink
 - Occupation
 range: string
-pattern: ^CHE-\d{3}\.\d{3}\.\d{3}$
+pattern: ^CHE[1-9][0-9]{8}$
 
 ```
 </details></div>

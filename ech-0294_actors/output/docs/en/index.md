@@ -108,7 +108,7 @@ Name: actors-schema
 | [occupations](occupations.md) | Occupations or professions of the person |
 | [organization_address](organization_address.md) | Address of the organization |
 | [organization_name](organization_name.md) | Name of the organization or enterprise |
-| [organization_uid](organization_uid.md) | UID of the organization (eCH-0097 format: CHE-XXX |
+| [organization_uid](organization_uid.md) | UID of the organization from the federal UID register (uid |
 | [parent_groups](parent_groups.md) | Reference to the parent groups as a GroupReference, i |
 | [party_color](party_color.md) | Party color as hexadecimal value (optional for parties, e |
 | [person_reference](person_reference.md) | Reference to a person with snapshot data at time of linking |

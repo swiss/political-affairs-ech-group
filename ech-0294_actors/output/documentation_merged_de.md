@@ -629,7 +629,7 @@ _Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Codes
 | is_paid | 0..1 <br/> [Boolean](#Boolean) | Gibt an, ob die Tätigkeit bezahlt ist.  |
 | occupation_code | 0..1 <br/> [String](#String) | ISCO-19 Code der Tätigkeit.  |
 | label | 0..1 <br/> [String](#String) | Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).  |
-| organization_uid | 0..1 <br/> [String](#String) | UID der Organisation (Format eCH-0097: CHE-XXX.XXX.XXX) aus dem eidgenössischen UID-Register (uid.admin.ch).  |
+| organization_uid | 0..1 <br/> [String](#String) | UID der Organisation aus dem eidgenössischen UID-Register (uid.admin.ch), im Austauschformat von eCH-0108: CHE gefolgt von neun Ziffern, ohne Trennzeichen (z.B. CHE106063525). Die letzte Ziffer ist eine Prüfziffer nach Modulo 11. Die punktierte Form CHE-106.063.525 ist die Darstellung von uid.admin.ch und wird hier nicht erfasst.  |
 | organization_name | 0..1 <br/> [String](#String) | Name der Organisation oder des Unternehmens.  |
 | valid_from | 0..1 <br/> [Date](#Date) | Das Datum, ab dem die Information gültig ist. <br/><br/>Vererbung: [HasTemporalValidity](#HasTemporalValidity) |
 | valid_through | 0..1 <br/> [Date](#Date) | Das Datum, bis und mit dem die Information gültig ist. <br/><br/>Vererbung: [HasTemporalValidity](#HasTemporalValidity) |
@@ -909,7 +909,7 @@ _Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommissio
 | label | 1..* <br/> [MultilingualValue](#MultilingualValue) | Bezeichnung der Gruppe mit der Sprache, in der sie publiziert wird. Ist eine Gruppe amtlich in mehreren Sprachen benannt, wird pro Sprache ein Eintrag erfasst.  |
 | abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abkürzung (kann mehrsprachig sein).  |
 | description | * <br/> [MultilingualValue](#MultilingualValue) | Kurze Beschreibung der Gruppierung.  |
-| organization_uid | 0..1 <br/> [String](#String) | UID der Organisation (Format eCH-0097: CHE-XXX.XXX.XXX) aus dem eidgenössischen UID-Register (uid.admin.ch).  |
+| organization_uid | 0..1 <br/> [String](#String) | UID der Organisation aus dem eidgenössischen UID-Register (uid.admin.ch), im Austauschformat von eCH-0108: CHE gefolgt von neun Ziffern, ohne Trennzeichen (z.B. CHE106063525). Die letzte Ziffer ist eine Prüfziffer nach Modulo 11. Die punktierte Form CHE-106.063.525 ist die Darstellung von uid.admin.ch und wird hier nicht erfasst.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Rechtsform der Organisation. Siehe kontrolliertes Vokabular: https://register.ld.admin.ch/i14y/concept/legalForm  |
 | landing_page | * <br/> [MultilingualUri](#MultilingualUri) | Website mit weiteren Informationen. Wird die Website je Sprache unter einer eigenen Adresse publiziert, wird pro Sprache ein Eintrag erfasst.  |
 | parent_groups | * <br/> [GroupReference](#GroupReference) | Verweis auf die übergeordneten Gruppen als GroupReference, also angegeben über deren local_id oder deren global_uri. Hierher gehört nur eine echte Über-/Unterordnung: die Mutterpartei einer Kantonalpartei, die Hierarchie in der Exekutive, eine Subkommission unter ihrer Kommission oder eine Fraktion unter ihrem Parlament. (parentGroup wird typischerweise im selben group_type verwendet, typenübergreifende Verknüpfungen sind aber erlaubt, z.B. Fraktion → Parlament.) Die eine Fraktion tragenden Parteien sind ihr nicht übergeordnet und werden hier deshalb nicht angegeben.  |
@@ -1161,7 +1161,7 @@ spatial: https://ld.admin.ch/municipality/3203
 
 ```yaml
 global_uri: https://www.frc.ch/
-organization_uid: CHE-106.063.525
+organization_uid: CHE106063525
 legal_form: '0109'
 label:
 - value: Fédération romande des consommateurs
@@ -1657,7 +1657,7 @@ Das InterestLink-Schema erfasst Interessenbindungen, Interessenkonflikte und Ver
 
 - **Abgrenzung zu Mitgliedschaften (`Membership`):** `InterestLink` bildet Bindungen zu Organisationen *ausserhalb* des Akteur-Schemas ab (Interessenkonflikte, Politikfinanzierung) – im Unterschied zur formalen Zugehörigkeit *innerhalb* des Schemas, die über `Membership` erfasst wird.
 - **Obligatorische Klassifikation (`interest_type`):** Jede Bindung wird zwingend nach Art eingeordnet (berufliche Tätigkeit, politische Ämter, Verein), angelehnt an die Offenlegungskategorien der Bundesversammlung.
-- **Organisation über UID referenzierbar (`organization_uid`):** Ist die Organisation im UID-Register erfasst, wird sie über ihre UID (eCH-0097, `CHE-XXX.XXX.XXX`) referenziert – das ermöglicht Auswertungen, z. B. mit NOGA-Codes. Für Organisationen ohne UID stehen `organization_name`/`organization_address` bereit; die Rechtsform folgt einem kontrollierten Vokabular (`LegalFormEnum`).
+- **Organisation über UID referenzierbar (`organization_uid`):** Ist die Organisation im UID-Register erfasst, wird sie über ihre UID referenziert – das ermöglicht Auswertungen, z. B. mit NOGA-Codes. Erfasst wird das Austauschformat von eCH-0108, also `CHE` gefolgt von neun Ziffern ohne Trennzeichen (`CHE106063525`). Für Organisationen ohne UID stehen `organization_name`/`organization_address` bereit; die Rechtsform folgt einem kontrollierten Vokabular (`LegalFormEnum`).
 - **Umfang und Entschädigung (`is_paid`, `committee`, `function_role`):** Neben Gremium und Funktion innerhalb der Organisation wird explizit festgehalten, ob die Position bezahlt ist – ein zentraler Transparenzaspekt.
 
 
@@ -1684,7 +1684,7 @@ _Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person z
 | person_reference | 1 <br/> [PersonReference](#PersonReference) | Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.  |
 | interest_type | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).  |
 | organization_name | 0..1 <br/> [String](#String) | Name der Organisation oder des Unternehmens.  |
-| organization_uid | 0..1 <br/> [String](#String) | UID der Organisation (Format eCH-0097: CHE-XXX.XXX.XXX) aus dem eidgenössischen UID-Register (uid.admin.ch).  |
+| organization_uid | 0..1 <br/> [String](#String) | UID der Organisation aus dem eidgenössischen UID-Register (uid.admin.ch), im Austauschformat von eCH-0108: CHE gefolgt von neun Ziffern, ohne Trennzeichen (z.B. CHE106063525). Die letzte Ziffer ist eine Prüfziffer nach Modulo 11. Die punktierte Form CHE-106.063.525 ist die Darstellung von uid.admin.ch und wird hier nicht erfasst.  |
 | organization_address | 0..1 <br/> [String](#String) | Adresse der Organisation.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Rechtsform der Organisation. Siehe kontrolliertes Vokabular: https://register.ld.admin.ch/i14y/concept/legalForm  |
 | is_paid | 0..1 <br/> [Boolean](#Boolean) | Gibt an, ob die Tätigkeit bezahlt ist.  |
@@ -1829,7 +1829,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-organization_uid: CHE-109.810.537
+organization_uid: CHE109810537
 legal_form: '0110'
 committee: Stiftungsrat
 function_role: Vizepräsident
@@ -2410,8 +2410,7 @@ Angegeben ist jeweils die Version, gegen die dieser Standard erarbeitet wurde.
 | | |
 |---|---|
 |[eCH-0011]|eCH-0011: Datenstandard Personendaten, Version 9.0.0 (Genehmigt, 27.07.2023). Grundlage der Namenstypen in `NameTypeEnum` (`personNameData`): [https://www.ech.ch/de/ech/ech-0011/9.0.0](https://www.ech.ch/de/ech/ech-0011/9.0.0)|
-|[eCH-0097]|eCH-0097: Datenstandard Unternehmensidentifikation, Version 5.2.0 (02.07.2021). Struktur der UID (`uidStructureType`), verwendet in `organization_uid`: [https://www.ech.ch/de/ech/ech-0097/5.2.0](https://www.ech.ch/de/ech/ech-0097/5.2.0)|
-|[eCH-0108]|eCH-0108: Datenstandard: Unternehmensstammdaten und Unternehmensregister, Version 6.0.0 (Genehmigt, 04.04.2024). Standard, zu dem die Rechtsform-Codeliste in `LegalFormEnum` konform ist; definiert zudem das Austauschformat der UID: [https://www.ech.ch/de/ech/ech-0108/6.0.0](https://www.ech.ch/de/ech/ech-0108/6.0.0)|
+|[eCH-0108]|eCH-0108: Datenstandard: Unternehmensstammdaten und Unternehmensregister, Version 6.0.0 (Genehmigt, 04.04.2024). Definiert das Austauschformat der UID (`organization_uid`) und ist der Standard, zu dem die Rechtsform-Codeliste in `LegalFormEnum` konform ist: [https://www.ech.ch/de/ech/ech-0108/6.0.0](https://www.ech.ch/de/ech/ech-0108/6.0.0)|
 
 ## Codelisten und weitere Quellen
 

@@ -21,7 +21,7 @@ _Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommissio
 | label | 1..* <br/> [MultilingualValue](MultilingualValue.md) | Bezeichnung der Gruppe mit der Sprache, in der sie publiziert wird. Ist eine Gruppe amtlich in mehreren Sprachen benannt, wird pro Sprache ein Eintrag erfasst.  |
 | abbreviation | * <br/> [MultilingualValue](MultilingualValue.md) | Abkürzung (kann mehrsprachig sein).  |
 | description | * <br/> [MultilingualValue](MultilingualValue.md) | Kurze Beschreibung der Gruppierung.  |
-| organization_uid | 0..1 <br/> [String](String.md) | UID der Organisation (Format eCH-0097: CHE-XXX.XXX.XXX) aus dem eidgenössischen UID-Register (uid.admin.ch).  |
+| organization_uid | 0..1 <br/> [String](String.md) | UID der Organisation aus dem eidgenössischen UID-Register (uid.admin.ch), im Austauschformat von eCH-0108: CHE gefolgt von neun Ziffern, ohne Trennzeichen (z.B. CHE106063525). Die letzte Ziffer ist eine Prüfziffer nach Modulo 11. Die punktierte Form CHE-106.063.525 ist die Darstellung von uid.admin.ch und wird hier nicht erfasst.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](LegalFormEnum.md) | Rechtsform der Organisation. Siehe kontrolliertes Vokabular: https://register.ld.admin.ch/i14y/concept/legalForm  |
 | landing_page | * <br/> [MultilingualUri](MultilingualUri.md) | Website mit weiteren Informationen. Wird die Website je Sprache unter einer eigenen Adresse publiziert, wird pro Sprache ein Eintrag erfasst.  |
 | parent_groups | * <br/> [GroupReference](GroupReference.md) | Verweis auf die übergeordneten Gruppen als GroupReference, also angegeben über deren local_id oder deren global_uri. Hierher gehört nur eine echte Über-/Unterordnung: die Mutterpartei einer Kantonalpartei, die Hierarchie in der Exekutive, eine Subkommission unter ihrer Kommission oder eine Fraktion unter ihrem Parlament. (parentGroup wird typischerweise im selben group_type verwendet, typenübergreifende Verknüpfungen sind aber erlaubt, z.B. Fraktion → Parlament.) Die eine Fraktion tragenden Parteien sind ihr nicht übergeordnet und werden hier deshalb nicht angegeben.  |
@@ -273,7 +273,7 @@ spatial: https://ld.admin.ch/municipality/3203
 
 ```yaml
 global_uri: https://www.frc.ch/
-organization_uid: CHE-106.063.525
+organization_uid: CHE106063525
 legal_form: '0109'
 label:
 - value: Fédération romande des consommateurs

@@ -629,7 +629,7 @@ _Occupation or profession of a person indicating a label, an ISCO-19 code, wheth
 | is_paid | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the activity is paid.  |
 | occupation_code | 0..1 <br/> [String](#String) | ISCO-19 code of the occupation.  |
 | label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
-| organization_uid | 0..1 <br/> [String](#String) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).  |
+| organization_uid | 0..1 <br/> [String](#String) | UID of the organization from the federal UID register (uid.admin.ch), in the exchange format of eCH-0108: CHE followed by nine digits, without separators (e.g. CHE106063525). The last digit is a check digit calculated modulo 11. The dotted form CHE-106.063.525 is the presentation used by uid.admin.ch and is not recorded here.  |
 | organization_name | 0..1 <br/> [String](#String) | Name of the organization or enterprise.  |
 | valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 | valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
@@ -909,7 +909,7 @@ _A political group, organization, or body (e.g., party, committee, parliament, d
 | label | 1..* <br/> [MultilingualValue](#MultilingualValue) | Name of the group, with the language it is published in. Where a group is officially named in several languages, one entry per language is recorded.  |
 | abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abbreviation (can be multilingual).  |
 | description | * <br/> [MultilingualValue](#MultilingualValue) | Description of the entity.  |
-| organization_uid | 0..1 <br/> [String](#String) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).  |
+| organization_uid | 0..1 <br/> [String](#String) | UID of the organization from the federal UID register (uid.admin.ch), in the exchange format of eCH-0108: CHE followed by nine digits, without separators (e.g. CHE106063525). The last digit is a check digit calculated modulo 11. The dotted form CHE-106.063.525 is the presentation used by uid.admin.ch and is not recorded here.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm  |
 | landing_page | * <br/> [MultilingualUri](#MultilingualUri) | Website providing further information. Where the site is published under a separate address per language, one entry per language is recorded.  |
 | parent_groups | * <br/> [GroupReference](#GroupReference) | Reference to the parent groups as a GroupReference, i.e. stated by their local_id or their global_uri. Only genuine super-/subordination belongs here: the parent party of a cantonal party, the hierarchy within the executive, a sub-commission under its commission, or a parliamentary group under its parliament. (parentGroup is typically used within the same group_type, but cross-type links are permitted, e.g. parliamentary group → parliament.) The parties carrying a parliamentary group are not a superordinate group of it and are therefore not stated here.  |
@@ -1161,7 +1161,7 @@ spatial: https://ld.admin.ch/municipality/3203
 
 ```yaml
 global_uri: https://www.frc.ch/
-organization_uid: CHE-106.063.525
+organization_uid: CHE106063525
 legal_form: '0109'
 label:
 - value: Fédération romande des consommateurs
@@ -1659,7 +1659,7 @@ The InterestLink schema records interest links, conflicts of interest and entang
 
 - **Distinction from memberships (`Membership`):** `InterestLink` represents links to organisations *outside* the actor schema (conflicts of interest, political financing) – in contrast to the formal affiliation *within* the schema, which is recorded via `Membership`.
 - **Mandatory classification (`interest_type`):** Every link is mandatorily categorised by type (professional activity, political offices, association), based on the disclosure categories of the Federal Assembly.
-- **Organisation referenceable via UID (`organization_uid`):** If the organisation is recorded in the UID register, it is referenced via its UID (eCH-0097, `CHE-XXX.XXX.XXX`) – this enables analyses, e.g. with NOGA codes. For organisations without a UID, `organization_name`/`organization_address` are available; the legal form follows a controlled vocabulary (`LegalFormEnum`).
+- **Organisation referenceable via UID (`organization_uid`):** If the organisation is recorded in the UID register, it is referenced via its UID – this enables analyses, e.g. with NOGA codes. What is recorded is the exchange format of eCH-0108, i.e. `CHE` followed by nine digits without separators (`CHE106063525`). For organisations without a UID, `organization_name`/`organization_address` are available; the legal form follows a controlled vocabulary (`LegalFormEnum`).
 - **Scope and remuneration (`is_paid`, `committee`, `function_role`):** In addition to the committee and function within the organisation, it is explicitly recorded whether the position is paid – a central transparency aspect.
 
 
@@ -1686,7 +1686,7 @@ _An interest link (conflict of interest, political financing) of a person to an 
 | person_reference | 1 <br/> [PersonReference](#PersonReference) | Reference to a person with snapshot data at time of linking.  |
 | interest_type | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | Type of interest link (professional activity, political office, association).  |
 | organization_name | 0..1 <br/> [String](#String) | Name of the organization or enterprise.  |
-| organization_uid | 0..1 <br/> [String](#String) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).  |
+| organization_uid | 0..1 <br/> [String](#String) | UID of the organization from the federal UID register (uid.admin.ch), in the exchange format of eCH-0108: CHE followed by nine digits, without separators (e.g. CHE106063525). The last digit is a check digit calculated modulo 11. The dotted form CHE-106.063.525 is the presentation used by uid.admin.ch and is not recorded here.  |
 | organization_address | 0..1 <br/> [String](#String) | Address of the organization.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm  |
 | is_paid | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the activity is paid.  |
@@ -1831,7 +1831,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-organization_uid: CHE-109.810.537
+organization_uid: CHE109810537
 legal_form: '0110'
 committee: Stiftungsrat
 function_role: Vizepräsident
@@ -2414,8 +2414,7 @@ The version stated is the one this standard was developed against.
 | | |
 |---|---|
 |[eCH-0011]|eCH-0011: Datenstandard Personendaten, version 9.0.0 (approved, 27.07.2023). Basis of the name types in `NameTypeEnum` (`personNameData`): [https://www.ech.ch/de/ech/ech-0011/9.0.0](https://www.ech.ch/de/ech/ech-0011/9.0.0)|
-|[eCH-0097]|eCH-0097: Datenstandard Unternehmensidentifikation, version 5.2.0 (02.07.2021). Structure of the UID (`uidStructureType`), used in `organization_uid`: [https://www.ech.ch/de/ech/ech-0097/5.2.0](https://www.ech.ch/de/ech/ech-0097/5.2.0)|
-|[eCH-0108]|eCH-0108: Datenstandard: Unternehmensstammdaten und Unternehmensregister, version 6.0.0 (approved, 04.04.2024). The standard the legal form code list in `LegalFormEnum` conforms to; it also defines the exchange format of the UID: [https://www.ech.ch/de/ech/ech-0108/6.0.0](https://www.ech.ch/de/ech/ech-0108/6.0.0)|
+|[eCH-0108]|eCH-0108: Datenstandard: Unternehmensstammdaten und Unternehmensregister, version 6.0.0 (approved, 04.04.2024). Defines the exchange format of the UID (`organization_uid`) and is the standard the legal form code list in `LegalFormEnum` conforms to: [https://www.ech.ch/de/ech/ech-0108/6.0.0](https://www.ech.ch/de/ech/ech-0108/6.0.0)|
 
 ## Code lists and further sources
 

@@ -20,7 +20,7 @@ _Un lien d'intérêts (conflit d'intérêts, financement politique) d'une person
 | person_reference | 1 <br/> [PersonReference](PersonReference.md) | Référence à une personne avec des données instantanées au moment de la mise en relation.  |
 | interest_type | 1 <br/> [InterestTypeEnum](InterestTypeEnum.md) | Type de lien d'intérêts (activité professionnelle, mandat politique, association).  |
 | organization_name | 0..1 <br/> [String](String.md) | Nom de l'organisation ou de l'entreprise.  |
-| organization_uid | 0..1 <br/> [String](String.md) | IDE de l'organisation (format eCH-0097 : CHE-XXX.XXX.XXX) issu du registre fédéral IDE (uid.admin.ch).  |
+| organization_uid | 0..1 <br/> [String](String.md) | IDE de l'organisation issu du registre fédéral IDE (uid.admin.ch), dans le format d'échange d'eCH-0108 : CHE suivi de neuf chiffres, sans séparateurs (p. ex. CHE106063525). Le dernier chiffre est un chiffre de contrôle calculé modulo 11. La forme pointée CHE-106.063.525 est la présentation utilisée par uid.admin.ch et n'est pas saisie ici.  |
 | organization_address | 0..1 <br/> [String](String.md) | Adresse de l'organisation.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](LegalFormEnum.md) | Forme juridique de l'organisation. Voir le vocabulaire contrôlé : https://register.ld.admin.ch/i14y/concept/legalForm  |
 | is_paid | 0..1 <br/> [Boolean](Boolean.md) | Indique si l'activité est rémunérée.  |
@@ -165,7 +165,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-organization_uid: CHE-109.810.537
+organization_uid: CHE109810537
 legal_form: '0110'
 committee: Stiftungsrat
 function_role: Vizepräsident

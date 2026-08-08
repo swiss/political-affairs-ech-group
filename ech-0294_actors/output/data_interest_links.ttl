@@ -94,7 +94,7 @@ act:il_burkart_007 a act:InterestLink ;
     act:isPaid false ;
     act:legalForm "0110" ;
     act:organizationName "FONDATION SUISSE DE DEMINAGE (FSD), Genf" ;
-    act:organizationUid "CHE-109.810.537" ;
+    act:organizationUid "CHE109810537" ;
     act:personReference [ a mcm:PersonReference ;
             mcm:globalURI <http://www.wikidata.org/entity/Q23060472> ;
             mcm:groupLabel "FDP.Die Liberalen" ;
