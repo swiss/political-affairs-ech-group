@@ -2221,7 +2221,7 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 Eine Adresse wird in `street_address`, `postal_code`, `postal_locality` und `country` geschrieben und kann über `address_uri` ins Amtliche Gebäudeadressverzeichnis von swisstopo verweisen. Die letzte Zahl dieser URI ist die EGAID, der eidgenössische Gebäudeadressidentifikator; `https://geo.ld.admin.ch/location/address/101009806` bezeichnet damit „Rue de Genève 17, 1003 Lausanne" als amtlich geführte Gebäudeadresse.
 
-`address_uri` ist optional. Die geschriebene Adresse allein ist zulässig, vorzuziehen ist aber der Verweis über die EGAID: Sie ist ein eindeutiger Identifikator und über die Zeit stabil, während Strassennamen geändert, Gemeinden fusioniert und Postleitzahlen neu zugeschnitten werden. Nicht jede Adresse ist im Verzeichnis auffindbar, etwa eine im Ausland; deshalb bleibt der Slot optional.
+`address_uri` ist optional. Die geschriebene Adresse allein ist zulässig, vorzuziehen ist aber der Verweis über die EGAID: Sie ist ein eindeutiger Identifikator und über die Zeit stabil, während Strassennamen geändert, Gemeinden fusioniert und Postleitzahlen neu zugeschnitten werden.
 
 Um zur EGAID zu gelangen, kann man die [Such-API von geo.admin.ch](https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=Rue+de+Gen%C3%A8ve+17+1003+Lausanne&type=locations&origins=address) benutzen oder mit dem [Amtlichen Verzeichnis der Gebäudeadressen](https://www.swisstopo.admin.ch/de/amtliches-verzeichnis-der-gebaeudeadressen) abgleichen. Erfasst wird das Ergebnis in `address_uri`.
 

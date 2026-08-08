@@ -2224,7 +2224,7 @@ At least one of the following must be set:
 
 An address is written in `street_address`, `postal_code`, `postal_locality` and `country` and may point into swisstopo's official building address register via `address_uri`. The final number of that URI is the EGAID, the federal building address identifier; `https://geo.ld.admin.ch/location/address/101009806` thus denotes "Rue de Genève 17, 1003 Lausanne" as an officially registered building address.
 
-`address_uri` is optional. The written address on its own is permissible, but the reference via the EGAID is preferable: it is an unambiguous identifier and stable over time, whereas street names change, municipalities merge and postal codes are recut. Not every address can be found in the register, a foreign one for instance; the slot therefore remains optional.
+`address_uri` is optional. The written address on its own is permissible, but the reference via the EGAID is preferable: it is an unambiguous identifier and stable over time, whereas street names change, municipalities merge and postal codes are recut.
 
 To arrive at the EGAID, one can use the [search API of geo.admin.ch](https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=Rue+de+Gen%C3%A8ve+17+1003+Lausanne&type=locations&origins=address) or match against the [official directory of building addresses](https://www.swisstopo.admin.ch/en/official-directory-of-building-addresses). The result is recorded in `address_uri`.
 
