@@ -142,7 +142,7 @@ Name: actors-schema
 | [GenderCodeEnum](GenderCodeEnum.md) | Geschlechtscodes für Personen |
 | [GroupTypeEnum](GroupTypeEnum.md) | Für Typen politischer Gruppen und Organisationen gelten drei Regeln |
 | [InterestTypeEnum](InterestTypeEnum.md) | Typen von Interessenbindungen (Interessenkonflikte, Politikfinanzierung) |
-| [LegalFormEnum](LegalFormEnum.md) | Rechtsformen basierend auf der Codeliste des eidgenössischen UID-Registers (e... |
+| [LegalFormEnum](LegalFormEnum.md) | Rechtsformen gemäss der Codeliste des Bundesamts für Statistik auf der I14Y-P... |
 | [NameTypeEnum](NameTypeEnum.md) | Kategorien von Namenstypen gemäss eCH-0011 (personNameData) und dem Amtlichen... |
 | [RoleEnum](RoleEnum.md) | Rollen, die eine Person im Rahmen einer Mitgliedschaft haben kann |
 | [TrainingTypeEnum](TrainingTypeEnum.md) | Ausbildungs- oder Bildungstypen basierend auf der BFS LEVEL_EDUC Codeliste |

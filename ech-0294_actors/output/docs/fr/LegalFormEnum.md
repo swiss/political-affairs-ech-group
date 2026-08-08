@@ -3,7 +3,7 @@
 
 
 
-_Formes juridiques basées sur la liste de codes du registre fédéral IDE (eCH-0108). Voir https://register.ld.admin.ch/i14y/concept/legalForm_
+_Formes juridiques selon la liste de codes publiée par l'Office fédéral de la statistique sur la plateforme I14Y, conforme à eCH-0108 (données de base des entreprises et registre des entreprises). Voir https://register.ld.admin.ch/i14y/concept/legalForm_
 
 
 

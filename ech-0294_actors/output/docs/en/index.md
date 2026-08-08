@@ -142,7 +142,7 @@ Name: actors-schema
 | [GenderCodeEnum](GenderCodeEnum.md) | Gender codes for persons |
 | [GroupTypeEnum](GroupTypeEnum.md) | Three rules govern the types of political groups and organizations |
 | [InterestTypeEnum](InterestTypeEnum.md) | Types of interest links (conflicts of interest, political financing) |
-| [LegalFormEnum](LegalFormEnum.md) | Legal forms based on the Swiss UID register codelist (eCH-0108) |
+| [LegalFormEnum](LegalFormEnum.md) | Legal forms according to the code list published by the Federal Statistical O... |
 | [NameTypeEnum](NameTypeEnum.md) | Categories of name types according to eCH-0011 (personNameData) and the offic... |
 | [RoleEnum](RoleEnum.md) | Roles a person can have within a membership |
 | [TrainingTypeEnum](TrainingTypeEnum.md) | Types of training or education based on the Swiss BFS LEVEL_EDUC codelist |

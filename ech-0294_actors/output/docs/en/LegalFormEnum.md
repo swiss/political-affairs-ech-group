@@ -3,7 +3,7 @@
 
 
 
-_Legal forms based on the Swiss UID register codelist (eCH-0108). See https://register.ld.admin.ch/i14y/concept/legalForm_
+_Legal forms according to the code list published by the Federal Statistical Office on the I14Y platform, conformant to eCH-0108 (business master data and business register). See https://register.ld.admin.ch/i14y/concept/legalForm_
 
 
 

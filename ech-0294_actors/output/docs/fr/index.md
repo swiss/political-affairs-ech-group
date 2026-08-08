@@ -142,7 +142,7 @@ Name: actors-schema
 | [GenderCodeEnum](GenderCodeEnum.md) | Codes de sexe pour les personnes |
 | [GroupTypeEnum](GroupTypeEnum.md) | Trois règles s'appliquent aux types de groupes et d'organisations politiques |
 | [InterestTypeEnum](InterestTypeEnum.md) | Types de liens d'intérêts (conflits d'intérêts, financement politique) |
-| [LegalFormEnum](LegalFormEnum.md) | Formes juridiques basées sur la liste de codes du registre fédéral IDE (eCH-0... |
+| [LegalFormEnum](LegalFormEnum.md) | Formes juridiques selon la liste de codes publiée par l'Office fédéral de la ... |
 | [NameTypeEnum](NameTypeEnum.md) | Catégories de types de noms selon eCH-0011 (personNameData) et le Catalogue o... |
 | [RoleEnum](RoleEnum.md) | Rôles qu'une personne peut occuper dans le cadre d'une affiliation |
 | [TrainingTypeEnum](TrainingTypeEnum.md) | Types de formation ou d'éducation basés sur la liste de codes suisse LEVEL_ED... |

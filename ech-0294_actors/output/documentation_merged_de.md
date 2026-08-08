@@ -1961,7 +1961,7 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 
 
 
-_Rechtsformen basierend auf der Codeliste des eidgenössischen UID-Registers (eCH-0098). Siehe https://register.ld.admin.ch/i14y/concept/legalForm_
+_Rechtsformen gemäss der Codeliste des Bundesamts für Statistik auf der I14Y-Plattform, konform zu eCH-0108 (Unternehmensstammdaten und Unternehmensregister). Siehe https://register.ld.admin.ch/i14y/concept/legalForm_
 
 
 
