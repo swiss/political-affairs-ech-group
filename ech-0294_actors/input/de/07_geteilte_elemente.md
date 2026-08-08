@@ -26,16 +26,7 @@ Eine Adresse wird zweifach geführt: als Verweis ins Amtliche Gebäudeadressverz
 
 Der Verweis ist die stabilere Angabe: Strassennamen werden geändert, Gemeinden fusionieren, Postleitzahlen werden neu zugeschnitten, doch die EGAID bleibt und lässt sich mit dem Gebäude- und Wohnungsregister sowie mit Geodaten verbinden. Die geschriebene Adresse ersetzt sie nicht, weil sie oft mehr enthält als das Verzeichnis kennt – einen Organisationsnamen, ein Postfach, einen Zusatz „c/o". Im Beispiel der Fédération romande des consommateurs zeigt sich das deutlich: Die EGAID bezeichnet die physische Adresse an der Rue de Genève 17 in 1003 Lausanne, während die geschriebene Adresse das Postfach 585 und dessen eigene Postleitzahl 1001 führt. Beide Angaben sind richtig, und keine ist aus der anderen herzuleiten.
 
-Wer nur die geschriebene Adresse hat, kommt auf zwei Wegen zur EGAID. Für einzelne Adressen liefert die Such-API von geo.admin.ch sie mit:
-
-```
-https://api3.geo.admin.ch/rest/services/api/SearchServer
-  ?searchText=Rue+de+Genève+17+1003+Lausanne&type=locations&origins=address
-```
-
-Im Treffer steht sie im `links`-Eintrag zum Layer `ch.swisstopo.amtliches-gebaeudeadressverzeichnis` als letzter Abschnitt der Adresse — hier `101009806`. Für viele Adressen lohnt der zweite Weg: Das Amtliche Verzeichnis der Gebäudeadressen ist als Ganzes beziehbar (CSV, GDB, XTF) und lässt sich einmalig gegen den eigenen Bestand abgleichen.
-
-Zu unterscheiden sind dabei vier Identifikatoren, die im selben Datensatz nebeneinander stehen: die **EGAID** (`adr_egaid`) bezeichnet die Adresse, der **EGID** (`bdg_egid`) das Gebäude, der **EDID** (`adr_edid`) den Eingang und der **ESID** (`str_esid`) die Strasse. In `address_uri` gehört die EGAID.
+Um zur EGAID zu gelangen, kann man die [Such-API von geo.admin.ch](https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=Rue+de+Gen%C3%A8ve+17+1003+Lausanne&type=locations&origins=address) benutzen oder mit dem [Amtlichen Verzeichnis der Gebäudeadressen](https://www.swisstopo.admin.ch/de/amtliches-verzeichnis-der-gebaeudeadressen) abgleichen. Erfasst wird das Ergebnis in `address_uri`.
 
 Nicht jede Adresse ist im Verzeichnis auffindbar, etwa eine Adresse im Ausland. `address_uri` ist deshalb optional; wo sie bekannt ist, soll sie gesetzt werden.
 
