@@ -5,7 +5,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_name: FDP.Die Liberalen
-legal_form: 0109
+legal_form: '0109'
 committee: Vorstand
 function_role: Präsident
 is_paid: true

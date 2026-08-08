@@ -66,8 +66,17 @@ SLOT_TO_CLASS = {
 YAML_WIDTH = 80
 
 
+# Codes whose leading zero carries meaning, e.g. the legal form "0109" (Verein).
+# PyYAML quotes "0106" and "0110" on its own, because under its YAML 1.1
+# resolver those read as octal numbers -- but "0109" contains a 9, is therefore
+# no valid octal, resolves as a string and is emitted bare. The printed example
+# then shows a four-digit code that looks like a number, and a reader (or a
+# parser applying a different resolver) may take it for 109.
+LEADING_ZERO_CODE = re.compile(r"^0[0-9]+$")
+
+
 def represent_str(dumper, data):
-    """Emit long prose as a folded block scalar.
+    """Quote leading-zero codes, emit long prose as a folded block scalar.
 
     A wrapped plain scalar continues at an indentation of its own, which makes
     it hard to see where a value begins and ends. A folded scalar keeps every
@@ -77,6 +86,8 @@ def represent_str(dumper, data):
     are left alone: forcing a folded scalar on e.g. '0110' would drop its
     quoting and turn it into a number.
     """
+    if LEADING_ZERO_CODE.match(data):
+        return dumper.represent_scalar("tag:yaml.org,2002:str", data, style="'")
     if len(data) > YAML_WIDTH and "\n" not in data and data == data.strip():
         return dumper.represent_scalar("tag:yaml.org,2002:str", data, style=">")
     return dumper.represent_scalar("tag:yaml.org,2002:str", data)
