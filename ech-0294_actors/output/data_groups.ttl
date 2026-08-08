@@ -139,14 +139,14 @@ act:groups_example a act:Container ;
 <https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz> a act:Group ;
     schema1:validFrom "2012-01-01"^^xsd:date ;
     mcm:label [ a mcm:MultilingualValue ;
-            mcm:language "it" ;
-            mcm:value "Informazione e tutela dei consumatori" ],
-        [ a mcm:MultilingualValue ;
             mcm:language "de" ;
             mcm:value "Konsumenteninformation und -schutz" ],
         [ a mcm:MultilingualValue ;
             mcm:language "fr" ;
-            mcm:value "Information et défense des consommateurs" ] ;
+            mcm:value "Information et défense des consommateurs" ],
+        [ a mcm:MultilingualValue ;
+            mcm:language "it" ;
+            mcm:value "Informazione e tutela dei consumatori" ] ;
     mcm:localId "6627" ;
     act:address [ a act:Address ;
             act:addressType "businessAddress" ;
@@ -168,14 +168,14 @@ act:groups_example a act:Container ;
             mcm:value "L'intergroupe parlementaire « Information et défense des consommateurs » réunit toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s en Suisse." ] ;
     act:groupType [ a act:GroupType ;
             mcm:label [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "Interessengruppe" ],
-                [ a mcm:MultilingualValue ;
                     mcm:language "it" ;
                     mcm:value "Gruppo d'interesse" ],
                 [ a mcm:MultilingualValue ;
                     mcm:language "fr" ;
-                    mcm:value "Groupe d'intérêt" ] ;
+                    mcm:value "Groupe d'intérêt" ],
+                [ a mcm:MultilingualValue ;
+                    mcm:language "de" ;
+                    mcm:value "Interessengruppe" ] ;
             act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/interest_group> ] ;
     act:landingPage [ a mcm:MultilingualUri ;
             mcm:language "de" ;
@@ -196,37 +196,37 @@ act:groups_example a act:Container ;
 
 <https://www.weko.admin.ch/> a act:Group ;
     mcm:abbreviation [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "WEKO" ],
-        [ a mcm:MultilingualValue ;
             mcm:language "fr" ;
             mcm:value "COMCO" ],
         [ a mcm:MultilingualValue ;
             mcm:language "it" ;
-            mcm:value "COMCO" ] ;
-    mcm:label [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Wettbewerbskommission" ],
+            mcm:value "COMCO" ],
         [ a mcm:MultilingualValue ;
+            mcm:language "de" ;
+            mcm:value "WEKO" ] ;
+    mcm:label [ a mcm:MultilingualValue ;
             mcm:language "fr" ;
             mcm:value "Commission de la concurrence" ],
         [ a mcm:MultilingualValue ;
             mcm:language "it" ;
-            mcm:value "Commissione della concorrenza" ] ;
+            mcm:value "Commissione della concorrenza" ],
+        [ a mcm:MultilingualValue ;
+            mcm:language "de" ;
+            mcm:value "Wettbewerbskommission" ] ;
     act:groupType [ a act:GroupType ;
             mcm:label [ a mcm:MultilingualValue ;
                     mcm:language "de" ;
                     mcm:value "Ausserparlamentarische Kommission" ] ;
             act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/committee_extraparliamentary> ] ;
     act:landingPage [ a mcm:MultilingualUri ;
-            mcm:language "fr" ;
-            mcm:value <https://www.weko.admin.ch/fr> ],
+            mcm:language "de" ;
+            mcm:value <https://www.weko.admin.ch/de> ],
         [ a mcm:MultilingualUri ;
             mcm:language "it" ;
             mcm:value <https://www.weko.admin.ch/it> ],
         [ a mcm:MultilingualUri ;
-            mcm:language "de" ;
-            mcm:value <https://www.weko.admin.ch/de> ] ;
+            mcm:language "fr" ;
+            mcm:value <https://www.weko.admin.ch/fr> ] ;
     act:spatial "https://ld.admin.ch/country/CHE" .
 
 <https://www.ar.ch/kantonsrat/> a act:Group ;
@@ -250,11 +250,11 @@ act:groups_example a act:Container ;
             mcm:language "fr" ;
             mcm:value "Del-DetPen" ] ;
     mcm:label [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Freiburger Delegation IPK strafrechtliche Einschliessung" ],
-        [ a mcm:MultilingualValue ;
             mcm:language "fr" ;
-            mcm:value "Délégation FR à la CIP détention pénale" ] ;
+            mcm:value "Délégation FR à la CIP détention pénale" ],
+        [ a mcm:MultilingualValue ;
+            mcm:language "de" ;
+            mcm:value "Freiburger Delegation IPK strafrechtliche Einschliessung" ] ;
     mcm:localId "5000" ;
     act:description [ a mcm:MultilingualValue ;
             mcm:language "de" ;
@@ -264,11 +264,11 @@ act:groups_example a act:Container ;
             mcm:value "La Commission interparlementaire de contrôle détention pénale est composée de 18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel, Vaud et Valais." ] ;
     act:groupType [ a act:GroupType ;
             mcm:label [ a mcm:MultilingualValue ;
-                    mcm:language "fr" ;
-                    mcm:value "Délégation" ],
-                [ a mcm:MultilingualValue ;
                     mcm:language "de" ;
-                    mcm:value "Delegation" ] ;
+                    mcm:value "Delegation" ],
+                [ a mcm:MultilingualValue ;
+                    mcm:language "fr" ;
+                    mcm:value "Délégation" ] ;
             act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/delegation> ] ;
     act:landingPage [ a mcm:MultilingualUri ;
             mcm:language "de" ;

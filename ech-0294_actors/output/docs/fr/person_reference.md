@@ -6,7 +6,7 @@ search:
 # Slot: person_reference 
 
 
-_Référence à une personne avec des données instantanées au moment de la mise en relation._
+_Référence abrégée à une personne, retenant ses caractéristiques au moment de la mise en relation._
 
 
 
@@ -68,17 +68,18 @@ name: person_reference
 annotations:
   description_de:
     tag: description_de
-    value: 'Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
+    value: 'Kurzreferenz auf eine Person, welche deren Merkmale zum Zeitpunkt der
+      Verknüpfung festhält.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Référence à une personne avec des données instantanées au moment de la
-      mise en relation.
+    value: 'Référence abrégée à une personne, retenant ses caractéristiques au moment
+      de la mise en relation.
 
       '
-description: 'Référence à une personne avec des données instantanées au moment de
-  la mise en relation.
+description: 'Référence abrégée à une personne, retenant ses caractéristiques au moment
+  de la mise en relation.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

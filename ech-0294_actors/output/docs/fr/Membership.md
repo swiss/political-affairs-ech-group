@@ -17,8 +17,8 @@ _Une relation d'affiliation entre une personne et un groupe, représentant une a
 
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
-| person_reference | 1 <br/> [PersonReference](PersonReference.md) | Référence à une personne avec des données instantanées au moment de la mise en relation.  |
-| group_reference | 1 <br/> [GroupReference](GroupReference.md) | Référence à un groupe avec des données instantanées au moment de la mise en relation.  |
+| person_reference | 1 <br/> [PersonReference](PersonReference.md) | Référence abrégée à une personne, retenant ses caractéristiques au moment de la mise en relation.  |
+| group_reference | 1 <br/> [GroupReference](GroupReference.md) | Référence abrégée à un groupe, retenant ses caractéristiques au moment de la mise en relation.  |
 | electoral_district | 0..1 <br/> [ElectoralDistrict](ElectoralDistrict.md) | Lien vers la circonscription électorale.  |
 | role_type | 0..1 <br/> [RoleType](RoleType.md) | Rôle de la personne dans l'affiliation ou la fonction.  |
 | authorized_to_vote | 0..1 <br/> [Boolean](Boolean.md) | Indique si la personne dispose du droit de vote au sein du groupe. Généralement false pour les membres suppléants (lorsqu'ils ne remplacent personne), les observateurs, les secrétaires et les invités.  |

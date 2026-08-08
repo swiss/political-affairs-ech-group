@@ -6,7 +6,7 @@ search:
 # Slot: group_reference 
 
 
-_Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung._
+_Kurzreferenz auf eine Gruppe, welche deren Merkmale zum Zeitpunkt der Verknüpfung festhält._
 
 
 
@@ -67,16 +67,18 @@ name: group_reference
 annotations:
   description_de:
     tag: description_de
-    value: 'Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
+    value: 'Kurzreferenz auf eine Gruppe, welche deren Merkmale zum Zeitpunkt der
+      Verknüpfung festhält.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Référence à un groupe avec des données instantanées au moment de la mise
-      en relation.
+    value: 'Référence abrégée à un groupe, retenant ses caractéristiques au moment
+      de la mise en relation.
 
       '
-description: 'Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
+description: 'Kurzreferenz auf eine Gruppe, welche deren Merkmale zum Zeitpunkt der
+  Verknüpfung festhält.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors

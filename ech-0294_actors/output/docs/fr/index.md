@@ -20,7 +20,7 @@ Name: actors-schema
 | [ElectoralDistrict](ElectoralDistrict.md) | Circonscription ou région électorale associée à une affiliation |
 | [Gender](Gender.md) | Sexe d'une personne indiquant un code de sexe et la validité temporelle |
 | [Group](Group.md) | Un groupe, une organisation ou une collectivité politique (p |
-| [GroupReference](GroupReference.md) | Référence légère à un groupe avec les principales données d'identification au... |
+| [GroupReference](GroupReference.md) | Référence abrégée à un groupe avec les principales données d'identification a... |
 | [GroupType](GroupType.md) | Type de groupe (p |
 | [HasCreationModificationDates](HasCreationModificationDates.md) | Une classe mixin qui fournit des slots pour modéliser les dates de création e... |
 | [HasIdentification](HasIdentification.md) | Une classe mixin qui fournit des slots pour l'identification d'une entité |
@@ -37,7 +37,7 @@ Name: actors-schema
 | [Name](Name.md) | Un nom avec un type (p |
 | [Occupation](Occupation.md) | Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si... |
 | [Person](Person.md) | Une personne avec des identifiants, des noms, des adresses, des nationalités ... |
-| [PersonReference](PersonReference.md) | Référence légère à une personne avec les principales données d'identification... |
+| [PersonReference](PersonReference.md) | Référence abrégée à une personne avec les principales données d'identificatio... |
 | [RoleType](RoleType.md) | Rôle d'une personne dans une affiliation ou une fonction (p |
 | [Training](Training.md) | Formation ou éducation d'une personne indiquant un type (p |
 
@@ -83,7 +83,7 @@ Name: actors-schema
 | [genders](genders.md) | Sexe de la personne |
 | [global_uri](global_uri.md) | Une URI unique et globalement valide pour l'entité |
 | [group_label](group_label.md) | Nom de l'organe/du groupe au moment de la liaison |
-| [group_reference](group_reference.md) | Référence à un groupe avec des données instantanées au moment de la mise en r... |
+| [group_reference](group_reference.md) | Référence abrégée à un groupe, retenant ses caractéristiques au moment de la ... |
 | [group_type](group_type.md) | Type de groupe (p |
 | [group_type_enum](group_type_enum.md) | Lien vers le vocabulaire contrôlé pour les types de groupes |
 | [groups](groups.md) | Collection de groupes |
@@ -111,7 +111,7 @@ Name: actors-schema
 | [organization_uid](organization_uid.md) | IDE de l'organisation issu du registre fédéral IDE (uid |
 | [parent_groups](parent_groups.md) | Référence aux groupes supérieurs sous forme de GroupReference, c'est-à-dire i... |
 | [party_color](party_color.md) | Couleur du parti sous forme de valeur hexadécimale (facultatif pour les parti... |
-| [person_reference](person_reference.md) | Référence à une personne avec des données instantanées au moment de la mise e... |
+| [person_reference](person_reference.md) | Référence abrégée à une personne, retenant ses caractéristiques au moment de ... |
 | [persons](persons.md) | Collection de personnes |
 | [picture](picture.md) | Lien vers une image (de préférence : PNG, puis JPG, puis GIF) |
 | [postal_code](postal_code.md) | Code postal |

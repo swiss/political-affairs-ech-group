@@ -33,8 +33,8 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 | [Contact](Contact.md) | Informations de contact d'une personne indiquant un type (p |  no  |
 | [ElectoralDistrict](ElectoralDistrict.md) | Circonscription ou région électorale associée à une affiliation |  no  |
 | [GroupType](GroupType.md) | Type de groupe (p |  yes  |
-| [PersonReference](PersonReference.md) | Référence légère à une personne avec les principales données d'identification... |  yes  |
-| [GroupReference](GroupReference.md) | Référence légère à un groupe avec les principales données d'identification au... |  no  |
+| [PersonReference](PersonReference.md) | Référence abrégée à une personne avec les principales données d'identificatio... |  yes  |
+| [GroupReference](GroupReference.md) | Référence abrégée à un groupe avec les principales données d'identification a... |  no  |
 
 
 

@@ -20,7 +20,7 @@ Name: actors-schema
 | [ElectoralDistrict](ElectoralDistrict.md) | Wahlkreis oder Wahlregion, die einer Mitgliedschaft zugeordnet ist |
 | [Gender](Gender.md) | Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen ... |
 | [Group](Group.md) | Eine politische Gruppe, Organisation oder Körperschaft (z |
-| [GroupReference](GroupReference.md) | Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikations... |
+| [GroupReference](GroupReference.md) | Kurzreferenz auf eine Gruppe mit den wichtigsten Identifikationsmerkmalen zum... |
 | [GroupType](GroupType.md) | Art der Gruppe (z |
 | [HasCreationModificationDates](HasCreationModificationDates.md) | Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Änderu... |
 | [HasIdentification](HasIdentification.md) | Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfügu... |
@@ -37,7 +37,7 @@ Name: actors-schema
 | [Name](Name.md) | Ein Name mit einem Typ (z |
 | [Occupation](Occupation.md) | Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Code... |
 | [Person](Person.md) | Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Be... |
-| [PersonReference](PersonReference.md) | Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikations... |
+| [PersonReference](PersonReference.md) | Kurzreferenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum... |
 | [RoleType](RoleType.md) | Rolle einer Person in einer Mitgliedschaft oder Funktion (z |
 | [Training](Training.md) | Ausbildung oder Bildung einer Person mit Angabe eines Typs (z |
 
@@ -83,7 +83,7 @@ Name: actors-schema
 | [genders](genders.md) | Geschlecht der Person |
 | [global_uri](global_uri.md) | Eine eindeutige, global gültige URI für die Entität |
 | [group_label](group_label.md) | Name des Gremiums zum Zeitpunkt der Verknüpfung |
-| [group_reference](group_reference.md) | Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung |
+| [group_reference](group_reference.md) | Kurzreferenz auf eine Gruppe, welche deren Merkmale zum Zeitpunkt der Verknüp... |
 | [group_type](group_type.md) | Klasse der Gruppierung, wie z |
 | [group_type_enum](group_type_enum.md) | Link zum kontrollierten Vokabular für Gruppentypen |
 | [groups](groups.md) | Sammlung von Gruppen |
@@ -111,7 +111,7 @@ Name: actors-schema
 | [organization_uid](organization_uid.md) | UID der Organisation aus dem eidgenössischen UID-Register (uid |
 | [parent_groups](parent_groups.md) | Verweis auf die übergeordneten Gruppen als GroupReference, also angegeben übe... |
 | [party_color](party_color.md) | Parteifarbe als Hexadezimalwert (optional für Parteien, z |
-| [person_reference](person_reference.md) | Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung |
+| [person_reference](person_reference.md) | Kurzreferenz auf eine Person, welche deren Merkmale zum Zeitpunkt der Verknüp... |
 | [persons](persons.md) | Sammlung von Personen |
 | [picture](picture.md) | Link zu einem Bild (bevorzugt: PNG, dann JPG, dann GIF) |
 | [postal_code](postal_code.md) | Postleitzahl |

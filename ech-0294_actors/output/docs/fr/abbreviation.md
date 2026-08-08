@@ -27,7 +27,7 @@ URI: [mcm:abbreviation](https://ld.ech.ch/schema/0292/meta-common/abbreviation)
 | Nom | Description | Modifie le slot |
 | --- | --- | --- |
 | [Group](Group.md) | Un groupe, une organisation ou une collectivité politique (p |  no  |
-| [GroupReference](GroupReference.md) | Référence légère à un groupe avec les principales données d'identification au... |  no  |
+| [GroupReference](GroupReference.md) | Référence abrégée à un groupe avec les principales données d'identification a... |  no  |
 
 
 

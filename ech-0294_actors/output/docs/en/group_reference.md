@@ -67,13 +67,14 @@ name: group_reference
 annotations:
   description_de:
     tag: description_de
-    value: 'Referenz auf eine Gruppe mit Snapshot-Daten zum Zeitpunkt der Verknüpfung.
+    value: 'Kurzreferenz auf eine Gruppe, welche deren Merkmale zum Zeitpunkt der
+      Verknüpfung festhält.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Référence à un groupe avec des données instantanées au moment de la mise
-      en relation.
+    value: 'Référence abrégée à un groupe, retenant ses caractéristiques au moment
+      de la mise en relation.
 
       '
 description: 'Reference to a group with snapshot data at time of linking.
