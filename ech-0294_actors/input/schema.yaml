@@ -419,6 +419,12 @@ classes:
       - group_type_enum
       - label
     slot_usage:
+      # `group_type` is mandatory on Group, but that alone would be met by an
+      # empty object. The classification only carries if the value itself is
+      # there, and it always can be: where nothing fits, `other` applies and the
+      # designation goes into the label.
+      group_type_enum:
+        required: true
       # The type designation follows the group's name: a body published in
       # several languages also carries its type designation in each of them.
       label:
