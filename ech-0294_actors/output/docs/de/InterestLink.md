@@ -101,7 +101,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_name: Allianz Sicherheit Schweiz, Baden
-legal_form: 0109
+legal_form: '0109'
 committee: Vorstand
 function_role: Präsident
 is_paid: false
@@ -149,7 +149,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_name: SUISSEDIGITAL Verband für Kommunikationsnetze
-legal_form: 0109
+legal_form: '0109'
 committee: Vorstand
 function_role: Mitglied
 is_paid: true
@@ -198,7 +198,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_name: Verein Landesausstellung Svizra27, Aarau
-legal_form: 0109
+legal_form: '0109'
 committee: Vorstand
 function_role: Mitglied
 is_paid: false
@@ -214,7 +214,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
-legal_form: 0109
+legal_form: '0109'
 committee: Zentralvorstand
 function_role: Präsident
 is_paid: true
@@ -230,7 +230,7 @@ person_reference:
   group_label: FDP.Die Liberalen
 interest_type: association
 organization_name: FDP.Die Liberalen
-legal_form: 0109
+legal_form: '0109'
 committee: Vorstand
 function_role: Präsident
 is_paid: true

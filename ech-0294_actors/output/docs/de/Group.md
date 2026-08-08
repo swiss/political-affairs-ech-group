@@ -274,7 +274,7 @@ spatial: https://ld.admin.ch/municipality/3203
 ```yaml
 global_uri: https://www.frc.ch/
 organization_uid: CHE-106.063.525
-legal_form: 0109
+legal_form: '0109'
 label:
 - value: Fédération romande des consommateurs
   language: fr
