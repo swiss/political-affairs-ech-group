@@ -1694,20 +1694,20 @@ enums:
     description: |
       Controlled vocabulary for the type of a group. It covers the councils and their organs, assemblies, committees and delegations, parties, parliamentary groups and electoral lists, the units of the administration, courts and oversight bodies, as well as organisations outside the state.
 
-      The classification is mandatory: every group carries a `group_type`. What counts is the political function, not the designation used locally; the latter is recorded in the label. Where no value fits, `other` is used.
+      A `group_type` must always be set. What counts is the political function, not the designation used locally; the latter is recorded in the label. Where no value fits, `other` is used.
 
       Legal form does not belong in this vocabulary but in `legal_form`.
     annotations:
       description_de: |
         Kontrolliertes Vokabular für die Art einer Gruppe. Es umfasst die Räte und ihre Organe, Versammlungen, Kommissionen und Delegationen, Parteien, Fraktionen und Wahllisten, die Einheiten der Verwaltung, Gerichte und Aufsichtsorgane sowie Organisationen ausserhalb des Staates.
 
-        Die Einordnung ist obligatorisch: Jede Gruppe führt einen `group_type`. Massgebend ist die politische Funktion, nicht die örtliche Bezeichnung; diese wird im Label festgehalten. Findet sich kein passender Wert, wird `other` gesetzt.
+        Ein `group_type` muss immer gesetzt werden. Massgebend ist die politische Funktion, nicht die örtliche Bezeichnung; diese wird im Label festgehalten. Findet sich kein passender Wert, wird `other` gesetzt.
 
         Die Rechtsform gehört nicht in dieses Vokabular, sondern in `legal_form`.
       description_fr: |
         Vocabulaire contrôlé pour le type d'un groupe. Il recouvre les conseils et leurs organes, les assemblées, les commissions et délégations, les partis, groupes parlementaires et listes électorales, les unités de l'administration, les tribunaux et organes de surveillance, ainsi que les organisations extérieures à l'État.
 
-        Le classement est obligatoire : chaque groupe porte un `group_type`. Ce qui compte est la fonction politique, non la désignation locale ; celle-ci est saisie dans le libellé. Lorsqu'aucune valeur ne convient, `other` est utilisé.
+        Un `group_type` doit toujours être renseigné. Ce qui compte est la fonction politique, non la désignation locale ; celle-ci est saisie dans le libellé. Lorsqu'aucune valeur ne convient, `other` est utilisé.
 
         La forme juridique ne relève pas de ce vocabulaire, mais de `legal_form`.
     permissible_values:
