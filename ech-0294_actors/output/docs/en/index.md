@@ -140,7 +140,7 @@ Name: actors-schema
 | [AddressTypeEnum](AddressTypeEnum.md) | Types of addresses |
 | [ContactTypeEnum](ContactTypeEnum.md) | Types of contact information |
 | [GenderCodeEnum](GenderCodeEnum.md) | Gender codes for persons |
-| [GroupTypeEnum](GroupTypeEnum.md) | Three rules govern the types of political groups and organizations |
+| [GroupTypeEnum](GroupTypeEnum.md) | The vocabulary classifies a group by its political function, so that groups c... |
 | [InterestTypeEnum](InterestTypeEnum.md) | Types of interest links (conflicts of interest, political financing) |
 | [LegalFormEnum](LegalFormEnum.md) | Legal forms according to the code list published by the Federal Statistical O... |
 | [NameTypeEnum](NameTypeEnum.md) | Categories of name types according to eCH-0011 (personNameData) and the offic... |

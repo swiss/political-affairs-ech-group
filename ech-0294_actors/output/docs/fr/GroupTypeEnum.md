@@ -3,13 +3,10 @@
 
 
 
-_Trois règles s'appliquent aux types de groupes et d'organisations politiques._
+_Le vocabulaire classe un groupe selon sa fonction politique, afin que les groupes soient comparables d'une commune, d'un canton et de la Confédération à l'autre. Ce qui compte est la fonction, non la désignation locale : Büro, Ratsleitung et Ufficio presidenziale reçoivent tous la valeur `council_bureau`, tandis que leur désignation respective est saisie dans le libellé du groupe._
 
 
-_La valeur désigne la fonction politique ; la désignation locale relève du libellé du groupe. Büro, Ratsleitung et Ufficio presidenziale reçoivent donc tous la valeur `council_bureau`._
-
-
-_Les valeurs apparentées partagent un préfixe. La famille `council_` désigne d'une part les conseils eux-mêmes – `council_legislative` le parlement, `council_executive` le gouvernement –, d'autre part leurs organes : `council_presidency` la présidence, `council_bureau` l'organe de direction élargi à la représentation des groupes, `council_secretariat` l'unité administrative composée d'employés. Les trois valeurs d'organe ne distinguent pas le conseil qu'elles servent : une chancellerie d'État et les services du parlement sont tous deux `council_secretariat`, le rattachement ressortant de `parent_groups`. Dans la famille `committee_`, `committee` est le cas de base de la commission permanente, `committee_ad_hoc` et `committee_extraparliamentary` en étant les cas particuliers._
+_Le classement est obligatoire : chaque groupe porte un `group_type`. Lorsqu'aucune valeur ne convient, `other` est utilisé et la désignation est saisie dans le libellé._
 
 
 _La forme juridique ne relève pas de ce vocabulaire, mais de `legal_form`._

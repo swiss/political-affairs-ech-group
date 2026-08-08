@@ -1345,13 +1345,10 @@ _Type of group (e.g., party, committee, parliament, department)._
 
 
 
-_Three rules govern the types of political groups and organizations._
+_The vocabulary classifies a group by its political function, so that groups can be compared across communes, cantons and the Confederation. What counts is the function, not the designation used locally: Büro, Ratsleitung and Ufficio presidenziale all take the value `council_bureau`, while their respective designation is recorded in the group's label._
 
 
-_The value states the political function; the designation used locally belongs in the group's label. Büro, Ratsleitung and Ufficio presidenziale therefore all take the value `council_bureau`._
-
-
-_Related values share a prefix. The `council_` family names the councils themselves on the one hand — `council_legislative` the parliament, `council_executive` the government — and their organs on the other: `council_presidency` the presidency, `council_bureau` the managing body extended by the parliamentary group representation, `council_secretariat` the administrative unit staffed by employees. The three organ values do not distinguish which council they serve: a state chancellery and parliamentary services are both `council_secretariat`, and the affiliation follows from `parent_groups`. In the `committee_` family, `committee` is the base case of the standing committee, with `committee_ad_hoc` and `committee_extraparliamentary` as its special cases._
+_The classification is mandatory: every group carries a `group_type`. Where no value fits, `other` is used and the designation is recorded in the label._
 
 
 _Legal form does not belong in this vocabulary but in `legal_form`._

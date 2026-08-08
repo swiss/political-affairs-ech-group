@@ -1345,13 +1345,10 @@ _Art der Gruppe (z.B. Partei, Kommission, Parlament, Departement)._
 
 
 
-_Für Typen politischer Gruppen und Organisationen gelten drei Regeln._
+_Das Vokabular ordnet eine Gruppe nach ihrer politischen Funktion ein, damit sich Gruppen über Gemeinden, Kantone und den Bund hinweg vergleichen lassen. Massgebend ist die Funktion, nicht die örtliche Bezeichnung: Büro, Ratsleitung und Ufficio presidenziale erhalten alle den Wert `council_bureau`, während ihre jeweilige Benennung im Label der Gruppe festgehalten wird._
 
 
-_Der Wert benennt die politische Funktion; die örtliche Bezeichnung gehört ins Label der Gruppe. Büro, Ratsleitung und Ufficio presidenziale erhalten deshalb alle den Wert `council_bureau`._
-
-
-_Verwandte Werte teilen ein Präfix. Die Familie `council_` benennt einerseits die Räte selbst – `council_legislative` das Parlament, `council_executive` die Regierung –, andererseits ihre Organe: `council_presidency` das Präsidium, `council_bureau` das um die Fraktionsvertretung erweiterte Leitungsorgan, `council_secretariat` die Verwaltungseinheit mit Angestellten. Die drei Organwerte unterscheiden nicht, welchem Rat sie dienen: Staatskanzlei und Parlamentsdienste sind beide `council_secretariat`, die Zugehörigkeit ergibt sich aus `parent_groups`. In der Familie `committee_` ist `committee` der Grundfall der ständigen Kommission, `committee_ad_hoc` und `committee_extraparliamentary` sind dessen Sonderfälle._
+_Die Einordnung ist obligatorisch: Jede Gruppe führt einen `group_type`. Findet sich kein passender Wert, wird `other` gesetzt und die Bezeichnung im Label festgehalten._
 
 
 _Die Rechtsform gehört nicht in dieses Vokabular, sondern in `legal_form`._
