@@ -1849,12 +1849,12 @@ enums:
       interest_group:
         meaning: act:enum/group_type/interest_group
         description: |
-          Interest group on a subject matter: both the parliamentary interest group, in which members of the council join across party lines, and the interest group from civil society. Not to be confused with the parliamentary group (`parliamentary_group`), which forms along political lines and holds a formal role in council operations.
+          Interest group on a subject matter: both the parliamentary interest group, in which members of the council join across party lines, and the interest group from civil society.
         annotations:
           description_de: |
-            Interessengruppe zu einem Sachthema: sowohl die parlamentarische Gruppe, in der sich Ratsmitglieder fraktionsübergreifend zusammenschliessen, als auch die Interessengruppe aus der Zivilgesellschaft. Nicht zu verwechseln mit der Fraktion (`parliamentary_group`), die sich nach politischer Ausrichtung bildet und im Ratsbetrieb eine formelle Rolle hat.
+            Interessengruppe zu einem Sachthema: sowohl die parlamentarische Gruppe, in der sich Ratsmitglieder fraktionsübergreifend zusammenschliessen, als auch die Interessengruppe aus der Zivilgesellschaft.
           description_fr: |
-            Groupe d'intérêts portant sur un thème : aussi bien l'intergroupe parlementaire, au sein duquel des membres du conseil se réunissent par-delà les groupes, que le groupe d'intérêts issu de la société civile. À ne pas confondre avec le groupe parlementaire (`parliamentary_group`), qui se constitue selon l'orientation politique et joue un rôle formel dans le fonctionnement du conseil.
+            Groupe d'intérêts portant sur un thème : aussi bien l'intergroupe parlementaire, au sein duquel des membres du conseil se réunissent par-delà les groupes, que le groupe d'intérêts issu de la société civile.
       control_body:
         meaning: act:enum/group_type/control_body
         description: |
