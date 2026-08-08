@@ -1690,7 +1690,7 @@ enums:
 
       The value states the political function; the designation used locally belongs in the group's label. Büro, Ratsleitung and Ufficio presidenziale therefore all take the value `council_bureau`.
 
-      Related values share a prefix. The `council_` family does not distinguish by council: a state chancellery and parliamentary services are both `council_secretariat`, and the affiliation follows from `parent_groups`. It divides into `council_presidency` for the presidency, `council_bureau` for the managing body extended by the parliamentary group representation, and `council_secretariat` for the administrative unit staffed by employees. The `committee_` family follows the same pattern, with `committee` as the base case.
+      Related values share a prefix. The `council_` family names the councils themselves on the one hand — `council_legislative` the parliament, `council_executive` the government — and their organs on the other: `council_presidency` the presidency, `council_bureau` the managing body extended by the parliamentary group representation, `council_secretariat` the administrative unit staffed by employees. The three organ values do not distinguish which council they serve: a state chancellery and parliamentary services are both `council_secretariat`, and the affiliation follows from `parent_groups`. In the `committee_` family, `committee` is the base case of the standing committee, with `committee_ad_hoc` and `committee_extraparliamentary` as its special cases.
 
       Legal form does not belong in this vocabulary but in `legal_form`.
     annotations:
@@ -1699,7 +1699,7 @@ enums:
 
         Der Wert benennt die politische Funktion; die örtliche Bezeichnung gehört ins Label der Gruppe. Büro, Ratsleitung und Ufficio presidenziale erhalten deshalb alle den Wert `council_bureau`.
 
-        Verwandte Werte teilen ein Präfix. Die Familie `council_` unterscheidet nicht nach Rat: Staatskanzlei und Parlamentsdienste sind beide `council_secretariat`, die Zugehörigkeit ergibt sich aus `parent_groups`. Sie gliedert sich in `council_presidency` für das Präsidium, `council_bureau` für das um die Fraktionsvertretung erweiterte Leitungsorgan und `council_secretariat` für die Verwaltungseinheit mit Angestellten. Die Familie `committee_` folgt demselben Muster, mit `committee` als Grundfall.
+        Verwandte Werte teilen ein Präfix. Die Familie `council_` benennt einerseits die Räte selbst – `council_legislative` das Parlament, `council_executive` die Regierung –, andererseits ihre Organe: `council_presidency` das Präsidium, `council_bureau` das um die Fraktionsvertretung erweiterte Leitungsorgan, `council_secretariat` die Verwaltungseinheit mit Angestellten. Die drei Organwerte unterscheiden nicht, welchem Rat sie dienen: Staatskanzlei und Parlamentsdienste sind beide `council_secretariat`, die Zugehörigkeit ergibt sich aus `parent_groups`. In der Familie `committee_` ist `committee` der Grundfall der ständigen Kommission, `committee_ad_hoc` und `committee_extraparliamentary` sind dessen Sonderfälle.
 
         Die Rechtsform gehört nicht in dieses Vokabular, sondern in `legal_form`.
       description_fr: |
@@ -1707,7 +1707,7 @@ enums:
 
         La valeur désigne la fonction politique ; la désignation locale relève du libellé du groupe. Büro, Ratsleitung et Ufficio presidenziale reçoivent donc tous la valeur `council_bureau`.
 
-        Les valeurs apparentées partagent un préfixe. La famille `council_` ne distingue pas selon le conseil : une chancellerie d'État et les services du parlement sont tous deux `council_secretariat`, le rattachement ressortant de `parent_groups`. Elle se subdivise en `council_presidency` pour la présidence, `council_bureau` pour l'organe de direction élargi à la représentation des groupes et `council_secretariat` pour l'unité administrative composée d'employés. La famille `committee_` suit le même modèle, avec `committee` comme cas de base.
+        Les valeurs apparentées partagent un préfixe. La famille `council_` désigne d'une part les conseils eux-mêmes – `council_legislative` le parlement, `council_executive` le gouvernement –, d'autre part leurs organes : `council_presidency` la présidence, `council_bureau` l'organe de direction élargi à la représentation des groupes, `council_secretariat` l'unité administrative composée d'employés. Les trois valeurs d'organe ne distinguent pas le conseil qu'elles servent : une chancellerie d'État et les services du parlement sont tous deux `council_secretariat`, le rattachement ressortant de `parent_groups`. Dans la famille `committee_`, `committee` est le cas de base de la commission permanente, `committee_ad_hoc` et `committee_extraparliamentary` en étant les cas particuliers.
 
         La forme juridique ne relève pas de ce vocabulaire, mais de `legal_form`.
     permissible_values:
