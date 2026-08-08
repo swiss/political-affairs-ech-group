@@ -2223,6 +2223,17 @@ An address is recorded twice: as a reference into swisstopo's official building 
 
 The reference is the more stable statement: street names change, municipalities merge, postal codes are recut, yet the EGAID remains and can be joined with the Register of Buildings and Dwellings as well as with geodata. It does not make the written address redundant, because that often carries more than the register knows – an organisation name, a PO box, a "c/o" line. The example of the Fédération romande des consommateurs shows this plainly: the EGAID denotes the physical address at Rue de Genève 17 in 1003 Lausanne, while the written address states PO box 585 with its own postal code 1001. Both statements are correct, and neither can be derived from the other.
 
+Anyone holding only the written address can reach the EGAID by two routes. For individual addresses, the search API of geo.admin.ch supplies it:
+
+```
+https://api3.geo.admin.ch/rest/services/api/SearchServer
+  ?searchText=Rue+de+Genève+17+1003+Lausanne&type=locations&origins=address
+```
+
+In the hit it appears in the `links` entry for the layer `ch.swisstopo.amtliches-gebaeudeadressverzeichnis`, as the final segment of the address – here `101009806`. For many addresses the second route is preferable: the official building address register can be downloaded in full (CSV, GDB, XTF) and matched against one's own holdings once.
+
+Four identifiers sit side by side in the same record and must be told apart: the **EGAID** (`adr_egaid`) denotes the address, the **EGID** (`bdg_egid`) the building, the **EDID** (`adr_edid`) the entrance and the **ESID** (`str_esid`) the street. It is the EGAID that belongs in `address_uri`.
+
 Not every address can be found in the register, a foreign address for instance. `address_uri` is therefore optional; where it is known, it should be set.
 
 

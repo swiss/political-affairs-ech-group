@@ -2219,6 +2219,17 @@ Une adresse est saisie de deux manières : comme renvoi au Répertoire officiel 
 
 Le renvoi est l'indication la plus stable : les noms de rue changent, les communes fusionnent, les numéros postaux sont redécoupés, mais l'EGAID demeure et permet des rapprochements avec le Registre des bâtiments et des logements ainsi qu'avec les géodonnées. L'adresse rédigée ne devient pas superflue, car elle contient souvent davantage que ce que connaît le répertoire – un nom d'organisation, une case postale, une mention « c/o ». L'exemple de la Fédération romande des consommateurs le montre bien : l'EGAID désigne l'adresse physique à la Rue de Genève 17, 1003 Lausanne, tandis que l'adresse rédigée indique la case postale 585 et son propre numéro postal 1001. Les deux indications sont correctes et aucune ne se déduit de l'autre.
 
+Qui ne dispose que de l'adresse rédigée peut obtenir l'EGAID par deux voies. Pour des adresses isolées, l'API de recherche de geo.admin.ch la livre :
+
+```
+https://api3.geo.admin.ch/rest/services/api/SearchServer
+  ?searchText=Rue+de+Genève+17+1003+Lausanne&type=locations&origins=address
+```
+
+Dans le résultat, elle figure dans l'entrée `links` relative à la couche `ch.swisstopo.amtliches-gebaeudeadressverzeichnis`, comme dernier segment de l'adresse — ici `101009806`. Pour de nombreuses adresses, la seconde voie est préférable : le Répertoire officiel des adresses de bâtiments peut être téléchargé dans son ensemble (CSV, GDB, XTF) et rapproché une fois pour toutes de ses propres données.
+
+Quatre identifiants figurent côte à côte dans le même enregistrement et doivent être distingués : l'**EGAID** (`adr_egaid`) désigne l'adresse, l'**EGID** (`bdg_egid`) le bâtiment, l'**EDID** (`adr_edid`) l'entrée et l'**ESID** (`str_esid`) la rue. C'est l'EGAID qui a sa place dans `address_uri`.
+
 Toutes les adresses ne figurent pas dans le répertoire, ainsi une adresse à l'étranger. `address_uri` est donc facultatif ; là où il est connu, il doit être renseigné.
 
 
