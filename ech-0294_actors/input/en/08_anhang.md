@@ -19,8 +19,7 @@ The version stated is the one this standard was developed against.
 | | |
 |---|---|
 |[eCH-0011]|eCH-0011: Datenstandard Personendaten, version 9.0.0 (approved, 27.07.2023). Basis of the name types in `NameTypeEnum` (`personNameData`): [https://www.ech.ch/de/ech/ech-0011/9.0.0](https://www.ech.ch/de/ech/ech-0011/9.0.0)|
-|[eCH-0097]|eCH-0097: Datenstandard Unternehmensidentifikation, version 5.2.0 (02.07.2021). Structure of the UID (`uidStructureType`), used in `organization_uid`: [https://www.ech.ch/de/ech/ech-0097/5.2.0](https://www.ech.ch/de/ech/ech-0097/5.2.0)|
-|[eCH-0108]|eCH-0108: Datenstandard: Unternehmensstammdaten und Unternehmensregister, version 6.0.0 (approved, 04.04.2024). The standard the legal form code list in `LegalFormEnum` conforms to; it also defines the exchange format of the UID: [https://www.ech.ch/de/ech/ech-0108/6.0.0](https://www.ech.ch/de/ech/ech-0108/6.0.0)|
+|[eCH-0108]|eCH-0108: Datenstandard: Unternehmensstammdaten und Unternehmensregister, version 6.0.0 (approved, 04.04.2024). Defines the exchange format of the UID (`organization_uid`) and is the standard the legal form code list in `LegalFormEnum` conforms to: [https://www.ech.ch/de/ech/ech-0108/6.0.0](https://www.ech.ch/de/ech/ech-0108/6.0.0)|
 
 ## Code lists and further sources
 
