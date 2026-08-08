@@ -71,12 +71,12 @@ act:swiss_politicians_example a act:Container ;
             act:isCorrespondence true ;
             act:isNative true ] ;
     act:name [ a act:Name ;
-            mcm:value "Beat" ;
-            act:nameType "PersonFirstName" ],
-        [ a act:Name ;
             schema1:validFrom "1964-07-12"^^xsd:date ;
             mcm:value "Jans" ;
-            act:nameType "PersonOfficialName" ] ;
+            act:nameType "PersonOfficialName" ],
+        [ a act:Name ;
+            mcm:value "Beat" ;
+            act:nameType "PersonFirstName" ] ;
     act:occupation [ a act:Occupation ;
             schema1:validFrom "1964-01-01"^^xsd:date ;
             mcm:isCurrent true ;
@@ -115,10 +115,10 @@ act:swiss_politicians_example a act:Container ;
             mcm:value "Gerri" ;
             act:nameType "PersonCallFirstName" ],
         [ a act:Name ;
-            mcm:value "Fausto" ;
-            act:nameType "PersonFirstName" ],
-        [ a act:Name ;
             mcm:value "Beretta-Piccoli" ;
-            act:nameType "PersonOfficialName" ] .
+            act:nameType "PersonOfficialName" ],
+        [ a act:Name ;
+            mcm:value "Fausto" ;
+            act:nameType "PersonFirstName" ] .
 
 

@@ -14,7 +14,6 @@ groups:
   - local_id: 33
     global_uri: https://www.grosserrat.bs.ch/
     label: Grosser Rat Basel-Stadt
-
 - local_id: 33
   global_uri: https://www.grosserrat.bs.ch/
   label:

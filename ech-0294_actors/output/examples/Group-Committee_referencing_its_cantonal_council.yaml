@@ -18,7 +18,6 @@ groups:
   - local_id: 34
     global_uri: https://www.ar.ch/kantonsrat/
     label: Kantonsrat Appenzell Ausserrhoden
-
 - local_id: 34
   global_uri: https://www.ar.ch/kantonsrat/
   label:
