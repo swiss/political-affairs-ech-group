@@ -883,7 +883,7 @@ URI: [act:TrainingTypeEnum](https://ld.ech.ch/schema/0294/actors/TrainingTypeEnu
 Das Group-Schema bildet politische Gruppen, Organisationen und Körperschaften ab.
 
 - **Ein generisches Modell statt vieler Spezialklassen:** Parlamente, Parteien, Fraktionen, Kommissionen, Departemente, Gerichte und zivilgesellschaftliche Organisationen werden alle als *eine* Klasse `Group` abgebildet und über `group_type` unterschieden. Das hält das Modell einfach und ohne Schemaänderung erweiterbar – Legislative, Exekutive, Judikative und Zivilgesellschaft sind damit gleichermassen abbildbar.
-- **Gruppen und Sub-Gruppen über `parent_groups`:** Untergeordnete Gruppen verweisen auf ihre übergeordnete Gruppe – z. B. eine Kommission des Ständerats, eine Subkommission innerhalb einer Kommission, eine Kantonalpartei unter ihrer Mutterpartei oder eine Behörde innerhalb einer Direktion. Die Hierarchie entsteht so aus diesen Verweisen statt aus einer festen Ebenenstruktur. Sie bleibt meist innerhalb desselben `group_type`; typenübergreifende und mehrfache Verweise sind aber möglich (z. B. eine Fraktion, die zugleich auf ihr Parlament und ihre Partei verweist).
+- **Gruppen und Sub-Gruppen über `parent_groups`:** Untergeordnete Gruppen verweisen auf ihre übergeordnete Gruppe – z. B. eine Kommission des Ständerats, eine Subkommission innerhalb einer Kommission, eine Kantonalpartei unter ihrer Mutterpartei oder eine Behörde innerhalb einer Direktion. Die Hierarchie entsteht so aus diesen Verweisen statt aus einer festen Ebenenstruktur. Sie bleibt meist innerhalb desselben `group_type`; typenübergreifende und mehrfache Verweise sind aber möglich (z. B. eine Fraktion, die zugleich auf ihr Parlament und ihre Partei verweist). Der Verweis erfolgt als `GroupReference` – dieselbe Form, mit der eine Mitgliedschaft ihre Gruppe benennt. Dass es sich um eine Über-/Unterordnung handelt, sagt dabei der Slot `parent_groups` selbst; die Referenz trägt nur die Adressierung. Diese kann über die `local_id` erfolgen, wenn die übergeordnete Gruppe Teil derselben Lieferung ist, oder über die `global_uri`, wenn sie ausserhalb liegt – eine Kantonalpartei kann so auf ihre Bundespartei verweisen, ohne dass diese mitgeliefert werden muss. Weil die Referenz zusätzlich ein Label aufnehmen kann, bleibt auch eine Liste mehrerer übergeordneter Gruppen lesbar.
 - **Zeitliche Gültigkeit auch für Gruppen:** Über `valid_from`/`valid_through` lassen sich z. B. nur während einer Legislatur bestehende Kommissionen oder Umbenennungen und Fusionen von Parteien abbilden.
 
 
@@ -912,7 +912,7 @@ _Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommissio
 | organization_uid | 0..1 <br/> [String](#String) | UID der Organisation (Format eCH-0097: CHE-XXX.XXX.XXX) aus dem eidgenössischen UID-Register (uid.admin.ch).  |
 | legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Rechtsform der Organisation. Siehe kontrolliertes Vokabular: https://register.ld.admin.ch/i14y/concept/legalForm  |
 | landing_page | * <br/> [MultilingualUri](#MultilingualUri) | Website mit weiteren Informationen. Wird die Website je Sprache unter einer eigenen Adresse publiziert, wird pro Sprache ein Eintrag erfasst.  |
-| parent_groups | * <br/> [Group](#Group) | Verweis auf die übergeordneten Gruppen, angegeben über deren Identifikator (global_uri). Zum Beispiel die Mutterpartei zu Kantonalparteien, oder zur Beschreibung der Hierarchie in der Exekutive. Auch zur Verknüpfung von Subkommissionen mit Kommissionen oder Fraktionen mit Parlament und Partei. (parentGroup wird typischerweise im selben group_type verwendet, typenübergreifende Verknüpfungen sind aber erlaubt, z.B. Fraktion → Parlament und Fraktion → Partei.)  |
+| parent_groups | * <br/> [GroupReference](#GroupReference) | Verweis auf die übergeordneten Gruppen als GroupReference, also angegeben über deren local_id oder deren global_uri. Zum Beispiel die Mutterpartei zu Kantonalparteien, oder zur Beschreibung der Hierarchie in der Exekutive. Auch zur Verknüpfung von Subkommissionen mit Kommissionen oder Fraktionen mit Parlament und Partei. (parentGroup wird typischerweise im selben group_type verwendet, typenübergreifende Verknüpfungen sind aber erlaubt, z.B. Fraktion → Parlament und Fraktion → Partei.)  |
 | spatial | 0..1 <br/> [String](#String) | Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer oder Land). Formate: Gemeinde: ld.admin.ch/municipality/1234, Kanton: ld.admin.ch/canton/23, Bund: ld.admin.ch/country/CHE.  |
 | contacts | * <br/> [Contact](#Contact) | Kontaktinformationen (E-Mail, Website, Social Media). Richtlinie: E-Mail ist quasi-obligatorisch und sollte wenn vorhanden immer angegeben werden.  |
 | addresses | * <br/> [Address](#Address) | Adressen mit Typ (privat, geschäftlich, lokal).  |
@@ -938,7 +938,6 @@ _Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommissio
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Container](#Container) | [groups](#groups) | range | [Group](#Group) |
-| [Group](#Group) | [parent_groups](#parent_groups) | range | [Group](#Group) |
 
 
 
@@ -976,7 +975,8 @@ groups:
   - value: Geschäftsprüfungskommission
     language: de
   parent_groups:
-  - https://www.ar.ch/kantonsrat/
+  - local_id: 34
+    label: Kantonsrat Appenzell Ausserrhoden
   abbreviation:
   - value: GPK
     language: de
@@ -1009,7 +1009,8 @@ groups:
   - value: Staatskanzlei Basel-Stadt
     language: de
   parent_groups:
-  - https://www.regierungsrat.bs.ch/
+  - local_id: 1300
+    label: Regierungsrat Basel-Stadt
   group_type:
     group_type_enum: council_secretariat
     label:
@@ -1069,9 +1070,15 @@ label:
 - value: Die Mitte / Evangelische Volkspartei
   language: de
 parent_groups:
-- https://www.grosserrat.bs.ch/
-- https://bs.die-mitte.ch/
-- https://www.evp-bs.ch/
+- local_id: 33
+  label: Grosser Rat Basel-Stadt
+- global_uri: https://bs.die-mitte.ch/
+  label: Die Mitte Basel-Stadt
+- global_uri: https://www.evp-bs.ch/
+  label: Evangelische Volkspartei Basel-Stadt
+  abbreviation:
+  - value: EVP BS
+    language: de
 group_type:
   group_type_enum: parliamentary_group
   label:
@@ -1088,7 +1095,8 @@ label:
 - value: Die Mitte Basel-Stadt
   language: de
 parent_groups:
-- https://www.die-mitte.ch/
+- global_uri: https://www.die-mitte.ch/
+  label: Die Mitte Schweiz
 group_type:
   group_type_enum: party
   label:
@@ -1141,7 +1149,11 @@ abbreviation:
 - value: EVP BS
   language: de
 parent_groups:
-- https://www.evppev.ch/
+- global_uri: https://www.evppev.ch/
+  label: Evangelische Volkspartei der Schweiz
+  abbreviation:
+  - value: EVP
+    language: de
 group_type:
   group_type_enum: party
   label:
@@ -1208,7 +1220,8 @@ groups:
   - value: Büro des Grossen Rates
     language: de
   parent_groups:
-  - https://www.grosserrat.bs.ch/
+  - local_id: 33
+    label: Grosser Rat Basel-Stadt
   group_type:
     group_type_enum: council_bureau
     label:
@@ -2063,12 +2076,14 @@ Dies dient drei Zwecken:
 - **Keine Redundanz**, da nicht alle Informationen bei jeder Erwähnung wiederholt werden müssen
 - **Implizite Versionierung**, da die lokale Referenz unverändert bleibt, auch wenn sich die verknüpfte Entität später ändert
 
+Anders als eine Entität ist eine Referenz nicht aus sich heraus identifiziert – sie benennt bloss eine identifizierte Entität. Deshalb ist die `global_uri` hier nicht obligatorisch: Verlangt wird nur, dass mindestens eine der beiden Angaben `local_id` oder `global_uri` gesetzt ist. Ein System, das von der referenzierten Entität nur die lokale Id kennt, gibt diese an; sie wird innerhalb derselben Lieferung aufgelöst. Über die Lieferung hinaus verweist die `global_uri`.
+
 
 
 ## Klasse: PersonReference 
 
 
-_Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung. Ermöglicht historische Korrektheit auch wenn sich die Person später ändert._
+_Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung. Ermöglicht historische Korrektheit auch wenn sich die Person später ändert. Die referenzierte Person wird über `local_id` oder `global_uri` bezeichnet; mindestens eines von beiden ist erforderlich._
 
 
 
@@ -2085,9 +2100,22 @@ _Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikationsme
 | label | 1 <br/> [String](#String) | Obligatorischer Kurzname zur Identifikation der Person innerhalb der Organisation (z.B. mit Geburtsjahr zur Unterscheidung von Personen mit gleichem Namen).  |
 | label_long | 0..1 <br/> [String](#String) | Optionaler langer Anzeigename mit akademischen Titeln und vollständigem amtlichem Namen (z.B. "Dr. Maria Muster-Beispiel").  |
 | group_label | 0..1 <br/> [String](#String) | Name des Gremiums zum Zeitpunkt der Verknüpfung.  |
-| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator der referenzierten Entität. Er wird innerhalb derselben Lieferung aufgelöst. <br/><br/>Vererbung: [HasReferenceIdentification](#HasReferenceIdentification) |
+| global_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Die eindeutige, global gültige URI der referenzierten Entität. Im Unterschied zu einer local_id ist sie auch über die Lieferung hinaus auflösbar. <br/><br/>Vererbung: [HasReferenceIdentification](#HasReferenceIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasReferenceIdentification](#HasReferenceIdentification) |
+
+##### Einschränkungen
+
+
+Mindestens eines der folgenden Felder muss gesetzt sein:
+
+- [local_id](#local_id)
+- [global_uri](#global_uri)
+
+
+
+
+
 
 
 
@@ -2125,7 +2153,7 @@ _Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikationsme
 ## Klasse: GroupReference 
 
 
-_Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung._
+_Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung. Die referenzierte Gruppe wird über `local_id` oder `global_uri` bezeichnet; mindestens eines von beiden ist erforderlich. Eine `local_id` wird innerhalb derselben Lieferung aufgelöst, eine `global_uri` auch darüber hinaus._
 
 
 
@@ -2141,9 +2169,22 @@ _Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikationsme
 | ---  | --- | --- |
 | label | 0..1 <br/> [String](#String) | Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).  |
 | abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abkürzung (kann mehrsprachig sein).  |
-| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator der referenzierten Entität. Er wird innerhalb derselben Lieferung aufgelöst. <br/><br/>Vererbung: [HasReferenceIdentification](#HasReferenceIdentification) |
+| global_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Die eindeutige, global gültige URI der referenzierten Entität. Im Unterschied zu einer local_id ist sie auch über die Lieferung hinaus auflösbar. <br/><br/>Vererbung: [HasReferenceIdentification](#HasReferenceIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasReferenceIdentification](#HasReferenceIdentification) |
+
+##### Einschränkungen
+
+
+Mindestens eines der folgenden Felder muss gesetzt sein:
+
+- [local_id](#local_id)
+- [global_uri](#global_uri)
+
+
+
+
+
 
 
 
@@ -2153,6 +2194,7 @@ _Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikationsme
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
+| [Group](#Group) | [parent_groups](#parent_groups) | range | [GroupReference](#GroupReference) |
 | [Membership](#Membership) | [group_reference](#group_reference) | range | [GroupReference](#GroupReference) |
 
 

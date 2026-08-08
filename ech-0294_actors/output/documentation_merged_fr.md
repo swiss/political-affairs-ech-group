@@ -882,7 +882,7 @@ URI: [act:TrainingTypeEnum](https://ld.ech.ch/schema/0294/actors/TrainingTypeEnu
 Le schéma Group représente les groupes, organisations et corporations politiques.
 
 - **Un modèle générique plutôt que de nombreuses classes spécialisées :** les parlements, partis, groupes parlementaires, commissions, départements, tribunaux et organisations de la société civile sont tous représentés par *une seule* classe `Group` et différenciés au moyen de `group_type`. Cela maintient le modèle simple et extensible sans modification du schéma – le législatif, l'exécutif, le judiciaire et la société civile peuvent ainsi être représentés de manière équivalente.
-- **Groupes et sous-groupes au moyen de `parent_groups` :** les groupes subordonnés renvoient à leur groupe supérieur – p. ex. une commission du Conseil des États, une sous-commission au sein d'une commission, un parti cantonal sous son parti mère ou une autorité au sein d'une direction. La hiérarchie découle ainsi de ces renvois plutôt que d'une structure de niveaux fixe. Elle reste le plus souvent au sein d'un même `group_type` ; des renvois transversaux et multiples sont toutefois possibles (p. ex. un groupe parlementaire qui renvoie à la fois à son parlement et à son parti).
+- **Groupes et sous-groupes au moyen de `parent_groups` :** les groupes subordonnés renvoient à leur groupe supérieur – p. ex. une commission du Conseil des États, une sous-commission au sein d'une commission, un parti cantonal sous son parti mère ou une autorité au sein d'une direction. La hiérarchie découle ainsi de ces renvois plutôt que d'une structure de niveaux fixe. Elle reste le plus souvent au sein d'un même `group_type` ; des renvois transversaux et multiples sont toutefois possibles (p. ex. un groupe parlementaire qui renvoie à la fois à son parlement et à son parti). Le renvoi prend la forme d'une `GroupReference` – la même que celle par laquelle une affiliation désigne son groupe. Que le lien exprime un rapport de subordination est indiqué par le slot `parent_groups` lui-même ; la référence ne porte que l'adressage. Celui-ci peut se faire au moyen du `local_id` lorsque le groupe supérieur fait partie de la même livraison, ou du `global_uri` lorsqu'il se situe en dehors – un parti cantonal peut ainsi renvoyer à son parti national sans que celui-ci doive être livré. Comme la référence peut en outre porter un libellé, une liste de plusieurs groupes supérieurs reste lisible.
 - **Validité temporelle également pour les groupes :** au moyen de `valid_from`/`valid_through`, il est possible de représenter p. ex. des commissions n'existant que durant une législature, ou des changements de nom et des fusions de partis.
 
 
@@ -911,7 +911,7 @@ _Un groupe, une organisation ou une collectivité politique (p. ex. parti, commi
 | organization_uid | 0..1 <br/> [String](#String) | IDE de l'organisation (format eCH-0097 : CHE-XXX.XXX.XXX) issu du registre fédéral IDE (uid.admin.ch).  |
 | legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Forme juridique de l'organisation. Voir le vocabulaire contrôlé : https://register.ld.admin.ch/i14y/concept/legalForm  |
 | landing_page | * <br/> [MultilingualUri](#MultilingualUri) | Site web fournissant de plus amples informations. Lorsque le site est publié à une adresse propre par langue, une entrée est saisie par langue.  |
-| parent_groups | * <br/> [Group](#Group) | Référence aux groupes supérieurs, indiquée au moyen de leur identifiant (global_uri). Par exemple, le parti faîtier pour les partis cantonaux, ou pour décrire la hiérarchie au sein de l'exécutif. Utilisé également pour rattacher des sous-commissions à des commissions, ou des groupes parlementaires à la fois à leur parlement et à leur parti. (parentGroup est généralement utilisé au sein d'un même group_type, mais les liens intertypes sont autorisés, p. ex. groupe parlementaire → parlement et groupe parlementaire → parti.)  |
+| parent_groups | * <br/> [GroupReference](#GroupReference) | Référence aux groupes supérieurs sous forme de GroupReference, c'est-à-dire indiquée au moyen de leur local_id ou de leur global_uri. Par exemple, le parti faîtier pour les partis cantonaux, ou pour décrire la hiérarchie au sein de l'exécutif. Utilisé également pour rattacher des sous-commissions à des commissions, ou des groupes parlementaires à la fois à leur parlement et à leur parti. (parentGroup est généralement utilisé au sein d'un même group_type, mais les liens intertypes sont autorisés, p. ex. groupe parlementaire → parlement et groupe parlementaire → parti.)  |
 | spatial | 0..1 <br/> [String](#String) | Référence spatiale (numéro OFS de commune, numéro OFS de canton ou pays). Formats : commune : ld.admin.ch/municipality/1234, canton : ld.admin.ch/canton/23, pays : ld.admin.ch/country/CHE.  |
 | contacts | * <br/> [Contact](#Contact) | Informations de contact (e-mail, site web, réseaux sociaux). Directive : l'e-mail est quasi obligatoire et devrait toujours être fourni lorsqu'il est disponible.  |
 | addresses | * <br/> [Address](#Address) | Adresses avec type (privée, professionnelle, locale).  |
@@ -937,7 +937,6 @@ _Un groupe, une organisation ou une collectivité politique (p. ex. parti, commi
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Container](#Container) | [groups](#groups) | range | [Group](#Group) |
-| [Group](#Group) | [parent_groups](#parent_groups) | range | [Group](#Group) |
 
 
 
@@ -975,7 +974,8 @@ groups:
   - value: Geschäftsprüfungskommission
     language: de
   parent_groups:
-  - https://www.ar.ch/kantonsrat/
+  - local_id: 34
+    label: Kantonsrat Appenzell Ausserrhoden
   abbreviation:
   - value: GPK
     language: de
@@ -1008,7 +1008,8 @@ groups:
   - value: Staatskanzlei Basel-Stadt
     language: de
   parent_groups:
-  - https://www.regierungsrat.bs.ch/
+  - local_id: 1300
+    label: Regierungsrat Basel-Stadt
   group_type:
     group_type_enum: council_secretariat
     label:
@@ -1068,9 +1069,15 @@ label:
 - value: Die Mitte / Evangelische Volkspartei
   language: de
 parent_groups:
-- https://www.grosserrat.bs.ch/
-- https://bs.die-mitte.ch/
-- https://www.evp-bs.ch/
+- local_id: 33
+  label: Grosser Rat Basel-Stadt
+- global_uri: https://bs.die-mitte.ch/
+  label: Die Mitte Basel-Stadt
+- global_uri: https://www.evp-bs.ch/
+  label: Evangelische Volkspartei Basel-Stadt
+  abbreviation:
+  - value: EVP BS
+    language: de
 group_type:
   group_type_enum: parliamentary_group
   label:
@@ -1087,7 +1094,8 @@ label:
 - value: Die Mitte Basel-Stadt
   language: de
 parent_groups:
-- https://www.die-mitte.ch/
+- global_uri: https://www.die-mitte.ch/
+  label: Die Mitte Schweiz
 group_type:
   group_type_enum: party
   label:
@@ -1140,7 +1148,11 @@ abbreviation:
 - value: EVP BS
   language: de
 parent_groups:
-- https://www.evppev.ch/
+- global_uri: https://www.evppev.ch/
+  label: Evangelische Volkspartei der Schweiz
+  abbreviation:
+  - value: EVP
+    language: de
 group_type:
   group_type_enum: party
   label:
@@ -1207,7 +1219,8 @@ groups:
   - value: Büro des Grossen Rates
     language: de
   parent_groups:
-  - https://www.grosserrat.bs.ch/
+  - local_id: 33
+    label: Grosser Rat Basel-Stadt
   group_type:
     group_type_enum: council_bureau
     label:
@@ -2062,12 +2075,14 @@ Cela sert trois objectifs :
 - **Aucune redondance**, car il n'est pas nécessaire de répéter toutes les informations à chaque mention
 - **Un versionnement implicite**, car la référence locale demeure inchangée, même si l'entité liée change ultérieurement
 
+Contrairement à une entité, une référence n'est pas identifiée en propre – elle ne fait que désigner une entité identifiée. C'est pourquoi le `global_uri` n'y est pas obligatoire : il est seulement exigé qu'au moins l'une des deux indications `local_id` ou `global_uri` soit renseignée. Un système qui ne connaît que l'identifiant local de l'entité référencée indique celui-ci ; il est résolu au sein de la même livraison. Au-delà de la livraison, c'est le `global_uri` qui fait le renvoi.
+
 
 
 ## Classe: PersonReference 
 
 
-_Référence légère à une personne avec les principales données d'identification au moment de la liaison. Préserve l'exactitude historique même si la personne change ultérieurement._
+_Référence légère à une personne avec les principales données d'identification au moment de la liaison. Préserve l'exactitude historique même si la personne change ultérieurement. La personne référencée est désignée par `local_id` ou `global_uri` ; au moins l'un des deux est requis._
 
 
 
@@ -2084,9 +2099,22 @@ _Référence légère à une personne avec les principales données d'identifica
 | label | 1 <br/> [String](#String) | Nom d'affichage court obligatoire permettant d'identifier la personne au sein de l'organisation (par ex. avec l'ajout de l'année de naissance afin de distinguer les personnes portant le même nom).  |
 | label_long | 0..1 <br/> [String](#String) | Nom d'affichage long facultatif comprenant les titres académiques et le nom officiel complet (par ex. « Dr. Maria Muster-Beispiel »).  |
 | group_label | 0..1 <br/> [String](#String) | Nom de l'organe/du groupe au moment de la liaison.  |
-| local_id | 0..1 <br/> [String](#String) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| local_id | 0..1 <br/> [String](#String) | Identifiant local de l'entité référencée. Il est résolu au sein de la même livraison. <br/><br/>Héritage : [HasReferenceIdentification](#HasReferenceIdentification) |
+| global_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | L'URI unique et globalement valide de l'entité référencée. Contrairement à un local_id, elle est également résoluble au-delà de la livraison. <br/><br/>Héritage : [HasReferenceIdentification](#HasReferenceIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Une URI qui renvoie à une entité Wikidata, p. ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasReferenceIdentification](#HasReferenceIdentification) |
+
+##### Contraintes
+
+
+Au moins l'un des champs suivants doit être renseigné :
+
+- [local_id](#local_id)
+- [global_uri](#global_uri)
+
+
+
+
+
 
 
 
@@ -2124,7 +2152,7 @@ _Référence légère à une personne avec les principales données d'identifica
 ## Classe: GroupReference 
 
 
-_Référence légère à un groupe avec les principales données d'identification au moment de la liaison._
+_Référence légère à un groupe avec les principales données d'identification au moment de la liaison. Le groupe référencé est désigné par `local_id` ou `global_uri` ; au moins l'un des deux est requis. Un `local_id` est résolu au sein de la même livraison, un `global_uri` également au-delà._
 
 
 
@@ -2140,9 +2168,22 @@ _Référence légère à un groupe avec les principales données d'identificatio
 | ---  | --- | --- |
 | label | 0..1 <br/> [String](#String) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
 | abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abréviation (peut être multilingue).  |
-| local_id | 0..1 <br/> [String](#String) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| local_id | 0..1 <br/> [String](#String) | Identifiant local de l'entité référencée. Il est résolu au sein de la même livraison. <br/><br/>Héritage : [HasReferenceIdentification](#HasReferenceIdentification) |
+| global_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | L'URI unique et globalement valide de l'entité référencée. Contrairement à un local_id, elle est également résoluble au-delà de la livraison. <br/><br/>Héritage : [HasReferenceIdentification](#HasReferenceIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Une URI qui renvoie à une entité Wikidata, p. ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasReferenceIdentification](#HasReferenceIdentification) |
+
+##### Contraintes
+
+
+Au moins l'un des champs suivants doit être renseigné :
+
+- [local_id](#local_id)
+- [global_uri](#global_uri)
+
+
+
+
+
 
 
 
@@ -2152,6 +2193,7 @@ _Référence légère à un groupe avec les principales données d'identificatio
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
+| [Group](#Group) | [parent_groups](#parent_groups) | range | [GroupReference](#GroupReference) |
 | [Membership](#Membership) | [group_reference](#group_reference) | range | [GroupReference](#GroupReference) |
 
 

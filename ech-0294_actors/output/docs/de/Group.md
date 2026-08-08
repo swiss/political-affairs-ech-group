@@ -24,7 +24,7 @@ _Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommissio
 | organization_uid | 0..1 <br/> [String](String.md) | UID der Organisation (Format eCH-0097: CHE-XXX.XXX.XXX) aus dem eidgenössischen UID-Register (uid.admin.ch).  |
 | legal_form | 0..1 <br/> [LegalFormEnum](LegalFormEnum.md) | Rechtsform der Organisation. Siehe kontrolliertes Vokabular: https://register.ld.admin.ch/i14y/concept/legalForm  |
 | landing_page | * <br/> [MultilingualUri](MultilingualUri.md) | Website mit weiteren Informationen. Wird die Website je Sprache unter einer eigenen Adresse publiziert, wird pro Sprache ein Eintrag erfasst.  |
-| parent_groups | * <br/> [Group](Group.md) | Verweis auf die übergeordneten Gruppen, angegeben über deren Identifikator (global_uri). Zum Beispiel die Mutterpartei zu Kantonalparteien, oder zur Beschreibung der Hierarchie in der Exekutive. Auch zur Verknüpfung von Subkommissionen mit Kommissionen oder Fraktionen mit Parlament und Partei. (parentGroup wird typischerweise im selben group_type verwendet, typenübergreifende Verknüpfungen sind aber erlaubt, z.B. Fraktion → Parlament und Fraktion → Partei.)  |
+| parent_groups | * <br/> [GroupReference](GroupReference.md) | Verweis auf die übergeordneten Gruppen als GroupReference, also angegeben über deren local_id oder deren global_uri. Zum Beispiel die Mutterpartei zu Kantonalparteien, oder zur Beschreibung der Hierarchie in der Exekutive. Auch zur Verknüpfung von Subkommissionen mit Kommissionen oder Fraktionen mit Parlament und Partei. (parentGroup wird typischerweise im selben group_type verwendet, typenübergreifende Verknüpfungen sind aber erlaubt, z.B. Fraktion → Parlament und Fraktion → Partei.)  |
 | spatial | 0..1 <br/> [String](String.md) | Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer oder Land). Formate: Gemeinde: ld.admin.ch/municipality/1234, Kanton: ld.admin.ch/canton/23, Bund: ld.admin.ch/country/CHE.  |
 | contacts | * <br/> [Contact](Contact.md) | Kontaktinformationen (E-Mail, Website, Social Media). Richtlinie: E-Mail ist quasi-obligatorisch und sollte wenn vorhanden immer angegeben werden.  |
 | addresses | * <br/> [Address](Address.md) | Adressen mit Typ (privat, geschäftlich, lokal).  |
@@ -50,7 +50,6 @@ _Eine politische Gruppe, Organisation oder Körperschaft (z.B. Partei, Kommissio
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [groups](groups.md) | range | [Group](Group.md) |
-| [Group](Group.md) | [parent_groups](parent_groups.md) | range | [Group](Group.md) |
 
 
 
@@ -88,7 +87,8 @@ groups:
   - value: Geschäftsprüfungskommission
     language: de
   parent_groups:
-  - https://www.ar.ch/kantonsrat/
+  - local_id: 34
+    label: Kantonsrat Appenzell Ausserrhoden
   abbreviation:
   - value: GPK
     language: de
@@ -121,7 +121,8 @@ groups:
   - value: Staatskanzlei Basel-Stadt
     language: de
   parent_groups:
-  - https://www.regierungsrat.bs.ch/
+  - local_id: 1300
+    label: Regierungsrat Basel-Stadt
   group_type:
     group_type_enum: council_secretariat
     label:
@@ -181,9 +182,15 @@ label:
 - value: Die Mitte / Evangelische Volkspartei
   language: de
 parent_groups:
-- https://www.grosserrat.bs.ch/
-- https://bs.die-mitte.ch/
-- https://www.evp-bs.ch/
+- local_id: 33
+  label: Grosser Rat Basel-Stadt
+- global_uri: https://bs.die-mitte.ch/
+  label: Die Mitte Basel-Stadt
+- global_uri: https://www.evp-bs.ch/
+  label: Evangelische Volkspartei Basel-Stadt
+  abbreviation:
+  - value: EVP BS
+    language: de
 group_type:
   group_type_enum: parliamentary_group
   label:
@@ -200,7 +207,8 @@ label:
 - value: Die Mitte Basel-Stadt
   language: de
 parent_groups:
-- https://www.die-mitte.ch/
+- global_uri: https://www.die-mitte.ch/
+  label: Die Mitte Schweiz
 group_type:
   group_type_enum: party
   label:
@@ -253,7 +261,11 @@ abbreviation:
 - value: EVP BS
   language: de
 parent_groups:
-- https://www.evppev.ch/
+- global_uri: https://www.evppev.ch/
+  label: Evangelische Volkspartei der Schweiz
+  abbreviation:
+  - value: EVP
+    language: de
 group_type:
   group_type_enum: party
   label:
@@ -320,7 +332,8 @@ groups:
   - value: Büro des Grossen Rates
     language: de
   parent_groups:
-  - https://www.grosserrat.bs.ch/
+  - local_id: 33
+    label: Grosser Rat Basel-Stadt
   group_type:
     group_type_enum: council_bureau
     label:

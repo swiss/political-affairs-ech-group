@@ -24,6 +24,7 @@ Name: actors-schema
 | [GroupType](GroupType.md) | Art der Gruppe (z |
 | [HasCreationModificationDates](HasCreationModificationDates.md) | Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Änderu... |
 | [HasIdentification](HasIdentification.md) | Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfügu... |
+| [HasReferenceIdentification](HasReferenceIdentification.md) | Eine Mixin-Klasse, welche die Slots bereitstellt, mit denen eine Referenz die... |
 | [HasTemporalValidity](HasTemporalValidity.md) | Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gültigkeit... |
 | [InterestLink](InterestLink.md) | Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person... |
 | [IsEventWithDuration](IsEventWithDuration.md) | Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder Vorkom... |
@@ -108,7 +109,7 @@ Name: actors-schema
 | [organization_address](organization_address.md) | Adresse der Organisation |
 | [organization_name](organization_name.md) | Name der Organisation oder des Unternehmens |
 | [organization_uid](organization_uid.md) | UID der Organisation (Format eCH-0097: CHE-XXX |
-| [parent_groups](parent_groups.md) | Verweis auf die übergeordneten Gruppen, angegeben über deren Identifikator (g... |
+| [parent_groups](parent_groups.md) | Verweis auf die übergeordneten Gruppen als GroupReference, also angegeben übe... |
 | [party_color](party_color.md) | Parteifarbe als Hexadezimalwert (optional für Parteien, z |
 | [person_reference](person_reference.md) | Referenz auf eine Person mit Snapshot-Daten zum Zeitpunkt der Verknüpfung |
 | [persons](persons.md) | Sammlung von Personen |

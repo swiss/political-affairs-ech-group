@@ -24,6 +24,7 @@ Name: actors-schema
 | [GroupType](GroupType.md) | Type de groupe (p |
 | [HasCreationModificationDates](HasCreationModificationDates.md) | Une classe mixin qui fournit des slots pour modéliser les dates de création e... |
 | [HasIdentification](HasIdentification.md) | Une classe mixin qui fournit des slots pour l'identification d'une entité |
+| [HasReferenceIdentification](HasReferenceIdentification.md) | Une classe mixin qui fournit les slots par lesquels une référence désigne l'e... |
 | [HasTemporalValidity](HasTemporalValidity.md) | Une classe mixin qui fournit des slots pour modéliser la validité temporelle ... |
 | [InterestLink](InterestLink.md) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |
 | [IsEventWithDuration](IsEventWithDuration.md) | Une classe mixin qui fournit des slots pour modéliser des événements ou occur... |
@@ -108,7 +109,7 @@ Name: actors-schema
 | [organization_address](organization_address.md) | Adresse de l'organisation |
 | [organization_name](organization_name.md) | Nom de l'organisation ou de l'entreprise |
 | [organization_uid](organization_uid.md) | IDE de l'organisation (format eCH-0097 : CHE-XXX |
-| [parent_groups](parent_groups.md) | Référence aux groupes supérieurs, indiquée au moyen de leur identifiant (glob... |
+| [parent_groups](parent_groups.md) | Référence aux groupes supérieurs sous forme de GroupReference, c'est-à-dire i... |
 | [party_color](party_color.md) | Couleur du parti sous forme de valeur hexadécimale (facultatif pour les parti... |
 | [person_reference](person_reference.md) | Référence à une personne avec des données instantanées au moment de la mise e... |
 | [persons](persons.md) | Collection de personnes |

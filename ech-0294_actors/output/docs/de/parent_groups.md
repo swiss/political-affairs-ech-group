@@ -6,7 +6,7 @@ search:
 # Slot: parent_groups 
 
 
-_Verweis auf die übergeordneten Gruppen, angegeben über deren Identifikator (global_uri). Zum Beispiel die Mutterpartei zu Kantonalparteien, oder zur Beschreibung der Hierarchie in der Exekutive. Auch zur Verknüpfung von Subkommissionen mit Kommissionen oder Fraktionen mit Parlament und Partei. (parentGroup wird typischerweise im selben group_type verwendet, typenübergreifende Verknüpfungen sind aber erlaubt, z.B. Fraktion → Parlament und Fraktion → Partei.)_
+_Verweis auf die übergeordneten Gruppen als GroupReference, also angegeben über deren local_id oder deren global_uri. Zum Beispiel die Mutterpartei zu Kantonalparteien, oder zur Beschreibung der Hierarchie in der Exekutive. Auch zur Verknüpfung von Subkommissionen mit Kommissionen oder Fraktionen mit Parlament und Partei. (parentGroup wird typischerweise im selben group_type verwendet, typenübergreifende Verknüpfungen sind aber erlaubt, z.B. Fraktion → Parlament und Fraktion → Partei.)_
 
 
 
@@ -39,7 +39,7 @@ URI: [act:parentGroup](https://ld.ech.ch/schema/0294/actors/parentGroup)
 
 | Eigenschaft | Wert |
 | --- | --- |
-| Wertebereich | [Group](Group.md) |
+| Wertebereich | [GroupReference](GroupReference.md) |
 | Domäne von | [Group](Group.md) |
 | Slot-URI | [act:parentGroup](https://ld.ech.ch/schema/0294/actors/parentGroup) |
 
@@ -68,31 +68,33 @@ name: parent_groups
 annotations:
   description_de:
     tag: description_de
-    value: 'Verweis auf die übergeordneten Gruppen, angegeben über deren Identifikator
-      (global_uri). Zum Beispiel die Mutterpartei zu Kantonalparteien, oder zur Beschreibung
-      der Hierarchie in der Exekutive. Auch zur Verknüpfung von Subkommissionen mit
-      Kommissionen oder Fraktionen mit Parlament und Partei. (parentGroup wird typischerweise
-      im selben group_type verwendet, typenübergreifende Verknüpfungen sind aber erlaubt,
-      z.B. Fraktion → Parlament und Fraktion → Partei.)
+    value: 'Verweis auf die übergeordneten Gruppen als GroupReference, also angegeben
+      über deren local_id oder deren global_uri. Zum Beispiel die Mutterpartei zu
+      Kantonalparteien, oder zur Beschreibung der Hierarchie in der Exekutive. Auch
+      zur Verknüpfung von Subkommissionen mit Kommissionen oder Fraktionen mit Parlament
+      und Partei. (parentGroup wird typischerweise im selben group_type verwendet,
+      typenübergreifende Verknüpfungen sind aber erlaubt, z.B. Fraktion → Parlament
+      und Fraktion → Partei.)
 
       '
   description_fr:
     tag: description_fr
-    value: 'Référence aux groupes supérieurs, indiquée au moyen de leur identifiant
-      (global_uri). Par exemple, le parti faîtier pour les partis cantonaux, ou pour
-      décrire la hiérarchie au sein de l''exécutif. Utilisé également pour rattacher
-      des sous-commissions à des commissions, ou des groupes parlementaires à la fois
-      à leur parlement et à leur parti. (parentGroup est généralement utilisé au sein
-      d''un même group_type, mais les liens intertypes sont autorisés, p. ex. groupe
-      parlementaire → parlement et groupe parlementaire → parti.)
+    value: 'Référence aux groupes supérieurs sous forme de GroupReference, c''est-à-dire
+      indiquée au moyen de leur local_id ou de leur global_uri. Par exemple, le parti
+      faîtier pour les partis cantonaux, ou pour décrire la hiérarchie au sein de
+      l''exécutif. Utilisé également pour rattacher des sous-commissions à des commissions,
+      ou des groupes parlementaires à la fois à leur parlement et à leur parti. (parentGroup
+      est généralement utilisé au sein d''un même group_type, mais les liens intertypes
+      sont autorisés, p. ex. groupe parlementaire → parlement et groupe parlementaire
+      → parti.)
 
       '
-description: 'Verweis auf die übergeordneten Gruppen, angegeben über deren Identifikator
-  (global_uri). Zum Beispiel die Mutterpartei zu Kantonalparteien, oder zur Beschreibung
-  der Hierarchie in der Exekutive. Auch zur Verknüpfung von Subkommissionen mit Kommissionen
-  oder Fraktionen mit Parlament und Partei. (parentGroup wird typischerweise im selben
-  group_type verwendet, typenübergreifende Verknüpfungen sind aber erlaubt, z.B. Fraktion
-  → Parlament und Fraktion → Partei.)
+description: 'Verweis auf die übergeordneten Gruppen als GroupReference, also angegeben
+  über deren local_id oder deren global_uri. Zum Beispiel die Mutterpartei zu Kantonalparteien,
+  oder zur Beschreibung der Hierarchie in der Exekutive. Auch zur Verknüpfung von
+  Subkommissionen mit Kommissionen oder Fraktionen mit Parlament und Partei. (parentGroup
+  wird typischerweise im selben group_type verwendet, typenübergreifende Verknüpfungen
+  sind aber erlaubt, z.B. Fraktion → Parlament und Fraktion → Partei.)
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors
@@ -100,9 +102,10 @@ rank: 1000
 slot_uri: act:parentGroup
 domain_of:
 - Group
-range: Group
+range: GroupReference
 multivalued: true
-inlined: false
+inlined: true
+inlined_as_list: true
 
 ```
 </details></div>

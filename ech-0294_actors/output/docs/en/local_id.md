@@ -34,6 +34,7 @@ URI: [mcm:localId](https://ld.ech.ch/schema/0292/meta-common/localId)
 | [Membership](Membership.md) | A membership relationship between a person and a group, representing formal a... |  no  |
 | [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |  no  |
 | [ElectoralDistrict](ElectoralDistrict.md) | Electoral district or region associated with a membership |  no  |
+| [HasReferenceIdentification](HasReferenceIdentification.md) | A mixin class that provides the slots with which a reference names the entity... |  no  |
 | [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |  no  |
 | [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |  no  |
 
@@ -49,7 +50,7 @@ URI: [mcm:localId](https://ld.ech.ch/schema/0292/meta-common/localId)
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [HasIdentification](HasIdentification.md), [IsProcessStep](IsProcessStep.md) |
+| Domain Of | [HasIdentification](HasIdentification.md), [HasReferenceIdentification](HasReferenceIdentification.md), [IsProcessStep](IsProcessStep.md) |
 | Slot URI | [mcm:localId](https://ld.ech.ch/schema/0292/meta-common/localId) |
 
 ### Cardinality and Requirements
@@ -93,6 +94,7 @@ rank: 1000
 slot_uri: mcm:localId
 domain_of:
 - HasIdentification
+- HasReferenceIdentification
 - IsProcessStep
 range: string
 

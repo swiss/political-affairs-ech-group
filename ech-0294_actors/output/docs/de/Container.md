@@ -498,7 +498,8 @@ groups:
       - value: Staatskanzlei Basel-Stadt
         language: de
     parent_groups:
-      - https://www.regierungsrat.bs.ch/
+      - local_id: 1300
+        label: Regierungsrat Basel-Stadt
     group_type:
       group_type_enum: council_secretariat
       label:
@@ -508,15 +509,16 @@ groups:
 
   # Die beiden Kantonalparteien, welche die folgende Fraktion tragen. Ihr
   # Verweis geht auf die jeweilige Bundespartei — jede föderale Ebene ist eine
-  # eigene Gruppe. Die Bundesparteien sind hier nicht mitgeliefert; eine
-  # übergeordnete Gruppe wird über ihre URI benannt und muss nicht Teil
-  # derselben Lieferung sein.
+  # eigene Gruppe. Die Bundesparteien sind hier nicht mitgeliefert: Weil sie
+  # ausserhalb der Lieferung liegen, werden sie über `global_uri` benannt und
+  # nicht über eine `local_id`, die nur innerhalb der Lieferung auflösbar wäre.
   - global_uri: https://bs.die-mitte.ch/
     label:
       - value: Die Mitte Basel-Stadt
         language: de
     parent_groups:
-      - https://www.die-mitte.ch/
+      - global_uri: https://www.die-mitte.ch/
+        label: Die Mitte Schweiz
     group_type:
       group_type_enum: party
       label:
@@ -532,7 +534,11 @@ groups:
       - value: EVP BS
         language: de
     parent_groups:
-      - https://www.evppev.ch/
+      - global_uri: https://www.evppev.ch/
+        label: Evangelische Volkspartei der Schweiz
+        abbreviation:
+          - value: EVP
+            language: de
     group_type:
       group_type_enum: party
       label:
@@ -544,16 +550,25 @@ groups:
   # mehrfachen Verweis über `parent_groups`: Die Fraktion gehört zum Parlament
   # und wird zugleich von zwei Parteien getragen, die je eine eigene Gruppe
   # sind. Eine Fraktionsgemeinschaft lässt sich nur so abbilden — ein einzelner
-  # Verweis auf «die» Partei gäbe es hier nicht.
+  # Verweis auf «die» Partei gäbe es hier nicht. Der Eintrag zeigt zugleich die
+  # beiden Adressierungsformen einer `GroupReference` in einer Liste: Das
+  # Parlament wird über seine `local_id` benannt, weil es Teil derselben
+  # Lieferung ist, die Parteien über ihre `global_uri`.
   - local_id: 1266
     global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp
     label:
       - value: Die Mitte / Evangelische Volkspartei
         language: de
     parent_groups:
-      - https://www.grosserrat.bs.ch/
-      - https://bs.die-mitte.ch/
-      - https://www.evp-bs.ch/
+      - local_id: 33
+        label: Grosser Rat Basel-Stadt
+      - global_uri: https://bs.die-mitte.ch/
+        label: Die Mitte Basel-Stadt
+      - global_uri: https://www.evp-bs.ch/
+        label: Evangelische Volkspartei Basel-Stadt
+        abbreviation:
+          - value: EVP BS
+            language: de
     group_type:
       group_type_enum: parliamentary_group
       label:
@@ -583,7 +598,8 @@ groups:
       - value: Geschäftsprüfungskommission
         language: de
     parent_groups:
-      - https://www.ar.ch/kantonsrat/
+      - local_id: 34
+        label: Kantonsrat Appenzell Ausserrhoden
     abbreviation:
       - value: GPK
         language: de
@@ -601,7 +617,8 @@ groups:
       - value: Büro des Grossen Rates
         language: de
     parent_groups:
-      - https://www.grosserrat.bs.ch/
+      - local_id: 33
+        label: Grosser Rat Basel-Stadt
     group_type:
       group_type_enum: council_bureau
       label:

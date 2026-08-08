@@ -3,7 +3,7 @@
 ## Classe: GroupReference 
 
 
-_Référence légère à un groupe avec les principales données d'identification au moment de la liaison._
+_Référence légère à un groupe avec les principales données d'identification au moment de la liaison. Le groupe référencé est désigné par `local_id` ou `global_uri` ; au moins l'un des deux est requis. Un `local_id` est résolu au sein de la même livraison, un `global_uri` également au-delà._
 
 
 
@@ -19,9 +19,22 @@ _Référence légère à un groupe avec les principales données d'identificatio
 | ---  | --- | --- |
 | label | 0..1 <br/> [String](String.md) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
 | abbreviation | * <br/> [MultilingualValue](MultilingualValue.md) | Abréviation (peut être multilingue).  |
-| local_id | 0..1 <br/> [String](String.md) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
-| global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
+| local_id | 0..1 <br/> [String](String.md) | Identifiant local de l'entité référencée. Il est résolu au sein de la même livraison. <br/><br/>Héritage : [HasReferenceIdentification](HasReferenceIdentification.md) |
+| global_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | L'URI unique et globalement valide de l'entité référencée. Contrairement à un local_id, elle est également résoluble au-delà de la livraison. <br/><br/>Héritage : [HasReferenceIdentification](HasReferenceIdentification.md) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI qui renvoie à une entité Wikidata, p. ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasReferenceIdentification](HasReferenceIdentification.md) |
+
+##### Contraintes
+
+
+Au moins l'un des champs suivants doit être renseigné :
+
+- [local_id](local_id.md)
+- [global_uri](global_uri.md)
+
+
+
+
+
 
 
 
@@ -31,6 +44,7 @@ _Référence légère à un groupe avec les principales données d'identificatio
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
+| [Group](Group.md) | [parent_groups](parent_groups.md) | range | [GroupReference](GroupReference.md) |
 | [Membership](Membership.md) | [group_reference](group_reference.md) | range | [GroupReference](GroupReference.md) |
 
 

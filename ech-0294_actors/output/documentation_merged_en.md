@@ -883,7 +883,7 @@ URI: [act:TrainingTypeEnum](https://ld.ech.ch/schema/0294/actors/TrainingTypeEnu
 The group schema represents political groups, organisations and corporate bodies.
 
 - **One generic model instead of many special classes:** Parliaments, parties, parliamentary groups, committees, departments, courts and civil-society organisations are all represented as *one* class `Group` and distinguished via `group_type`. This keeps the model simple and extensible without schema changes – the legislature, executive, judiciary and civil society can thus all be represented equally.
-- **Groups and sub-groups via `parent_groups`:** Subordinate groups reference their superordinate group – e.g. a committee of the Council of States, a subcommittee within a committee, a cantonal party under its parent party, or an authority within a directorate. The hierarchy thus arises from these references rather than from a fixed level structure. It usually remains within the same `group_type`; however, cross-type and multiple references are possible (e.g. a parliamentary group that references both its parliament and its party).
+- **Groups and sub-groups via `parent_groups`:** Subordinate groups reference their superordinate group – e.g. a committee of the Council of States, a subcommittee within a committee, a cantonal party under its parent party, or an authority within a directorate. The hierarchy thus arises from these references rather than from a fixed level structure. It usually remains within the same `group_type`; however, cross-type and multiple references are possible (e.g. a parliamentary group that references both its parliament and its party). The reference takes the form of a `GroupReference` – the same form in which a membership names its group. That the link expresses a superordinate/subordinate relation is stated by the `parent_groups` slot itself; the reference merely carries the addressing. That addressing may use the `local_id` where the parent group is part of the same delivery, or the `global_uri` where it lies outside it – a cantonal party can thus reference its national party without that party having to be delivered. Because the reference can additionally carry a label, a list of several parent groups also remains readable.
 - **Temporal validity for groups as well:** Using `valid_from`/`valid_through`, it is possible to represent, for example, committees that exist only during a legislative period, or renamings and mergers of parties.
 
 
@@ -912,7 +912,7 @@ _A political group, organization, or body (e.g., party, committee, parliament, d
 | organization_uid | 0..1 <br/> [String](#String) | UID of the organization (eCH-0097 format: CHE-XXX.XXX.XXX) from the federal UID register (uid.admin.ch).  |
 | legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm  |
 | landing_page | * <br/> [MultilingualUri](#MultilingualUri) | Website providing further information. Where the site is published under a separate address per language, one entry per language is recorded.  |
-| parent_groups | * <br/> [Group](#Group) | Reference to the parent groups, stated by their identifier (global_uri). For example, the parent party for cantonal parties, or to describe the hierarchy in the executive. Also used to link sub-commissions to commissions, or factions to both their parliament and their party. (parentGroup is typically used within the same group_type, but cross-type links are permitted, e.g., faction → parliament and faction → party.)  |
+| parent_groups | * <br/> [GroupReference](#GroupReference) | Reference to the parent groups as a GroupReference, i.e. stated by their local_id or their global_uri. For example, the parent party for cantonal parties, or to describe the hierarchy in the executive. Also used to link sub-commissions to commissions, or factions to both their parliament and their party. (parentGroup is typically used within the same group_type, but cross-type links are permitted, e.g., faction → parliament and faction → party.)  |
 | spatial | 0..1 <br/> [String](#String) | Spatial reference (fos-municipality number, fos-canton number, or country). Formats: municipality: ld.admin.ch/municipality/1234, canton: ld.admin.ch/canton/23, country: ld.admin.ch/country/CHE.  |
 | contacts | * <br/> [Contact](#Contact) | Contact information (email, website, social media). Guideline: email is quasi-mandatory and should always be provided where available.  |
 | addresses | * <br/> [Address](#Address) | Addresses with type (private, business, local).  |
@@ -938,7 +938,6 @@ _A political group, organization, or body (e.g., party, committee, parliament, d
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Container](#Container) | [groups](#groups) | range | [Group](#Group) |
-| [Group](#Group) | [parent_groups](#parent_groups) | range | [Group](#Group) |
 
 
 
@@ -976,7 +975,8 @@ groups:
   - value: Geschäftsprüfungskommission
     language: de
   parent_groups:
-  - https://www.ar.ch/kantonsrat/
+  - local_id: 34
+    label: Kantonsrat Appenzell Ausserrhoden
   abbreviation:
   - value: GPK
     language: de
@@ -1009,7 +1009,8 @@ groups:
   - value: Staatskanzlei Basel-Stadt
     language: de
   parent_groups:
-  - https://www.regierungsrat.bs.ch/
+  - local_id: 1300
+    label: Regierungsrat Basel-Stadt
   group_type:
     group_type_enum: council_secretariat
     label:
@@ -1069,9 +1070,15 @@ label:
 - value: Die Mitte / Evangelische Volkspartei
   language: de
 parent_groups:
-- https://www.grosserrat.bs.ch/
-- https://bs.die-mitte.ch/
-- https://www.evp-bs.ch/
+- local_id: 33
+  label: Grosser Rat Basel-Stadt
+- global_uri: https://bs.die-mitte.ch/
+  label: Die Mitte Basel-Stadt
+- global_uri: https://www.evp-bs.ch/
+  label: Evangelische Volkspartei Basel-Stadt
+  abbreviation:
+  - value: EVP BS
+    language: de
 group_type:
   group_type_enum: parliamentary_group
   label:
@@ -1088,7 +1095,8 @@ label:
 - value: Die Mitte Basel-Stadt
   language: de
 parent_groups:
-- https://www.die-mitte.ch/
+- global_uri: https://www.die-mitte.ch/
+  label: Die Mitte Schweiz
 group_type:
   group_type_enum: party
   label:
@@ -1141,7 +1149,11 @@ abbreviation:
 - value: EVP BS
   language: de
 parent_groups:
-- https://www.evppev.ch/
+- global_uri: https://www.evppev.ch/
+  label: Evangelische Volkspartei der Schweiz
+  abbreviation:
+  - value: EVP
+    language: de
 group_type:
   group_type_enum: party
   label:
@@ -1208,7 +1220,8 @@ groups:
   - value: Büro des Grossen Rates
     language: de
   parent_groups:
-  - https://www.grosserrat.bs.ch/
+  - local_id: 33
+    label: Grosser Rat Basel-Stadt
   group_type:
     group_type_enum: council_bureau
     label:
@@ -2066,12 +2079,14 @@ This serves three purposes:
 - **No redundancy**, since not all information has to be repeated at every mention
 - **Implicit versioning**, since the local reference remains unchanged even if the linked entity changes later
 
+Unlike an entity, a reference is not identified in its own right – it merely names an identified entity. The `global_uri` is therefore not mandatory here: all that is required is that at least one of `local_id` or `global_uri` is set. A system that only knows the local id of the referenced entity states that id; it is resolved within the same delivery. Beyond the delivery, the `global_uri` provides the link.
+
 
 
 ## Class: PersonReference 
 
 
-_Lightweight reference to a person with key identification data at time of linking. Preserves historical accuracy even if the person changes later._
+_Lightweight reference to a person with key identification data at time of linking. Preserves historical accuracy even if the person changes later. The referenced person is identified by `local_id` or `global_uri`; at least one of the two is required._
 
 
 
@@ -2088,9 +2103,22 @@ _Lightweight reference to a person with key identification data at time of linki
 | label | 1 <br/> [String](#String) | Mandatory short display name to identify the person within the organisation (e.g. with added birth year to distinguish persons with the same name).  |
 | label_long | 0..1 <br/> [String](#String) | Optional long display name including academic titles and full official name (e.g. "Dr. Maria Muster-Beispiel").  |
 | group_label | 0..1 <br/> [String](#String) | Name of the body/group at time of linking.  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| local_id | 0..1 <br/> [String](#String) | Local identifier of the referenced entity. It is resolved within the same delivery. <br/><br/>Inheritance: [HasReferenceIdentification](#HasReferenceIdentification) |
+| global_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | The unique, globally valid URI of the referenced entity. Unlike a local_id it also resolves beyond the delivery. <br/><br/>Inheritance: [HasReferenceIdentification](#HasReferenceIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasReferenceIdentification](#HasReferenceIdentification) |
+
+##### Constraints
+
+
+At least one of the following must be set:
+
+- [local_id](#local_id)
+- [global_uri](#global_uri)
+
+
+
+
+
 
 
 
@@ -2128,7 +2156,7 @@ _Lightweight reference to a person with key identification data at time of linki
 ## Class: GroupReference 
 
 
-_Lightweight reference to a group with key identification data at time of linking._
+_Lightweight reference to a group with key identification data at time of linking. The referenced group is identified by `local_id` or `global_uri`; at least one of the two is required. A `local_id` is resolved within the same delivery, a `global_uri` also beyond it._
 
 
 
@@ -2144,9 +2172,22 @@ _Lightweight reference to a group with key identification data at time of linkin
 | ---  | --- | --- |
 | label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
 | abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abbreviation (can be multilingual).  |
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| local_id | 0..1 <br/> [String](#String) | Local identifier of the referenced entity. It is resolved within the same delivery. <br/><br/>Inheritance: [HasReferenceIdentification](#HasReferenceIdentification) |
+| global_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | The unique, globally valid URI of the referenced entity. Unlike a local_id it also resolves beyond the delivery. <br/><br/>Inheritance: [HasReferenceIdentification](#HasReferenceIdentification) |
+| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasReferenceIdentification](#HasReferenceIdentification) |
+
+##### Constraints
+
+
+At least one of the following must be set:
+
+- [local_id](#local_id)
+- [global_uri](#global_uri)
+
+
+
+
+
 
 
 
@@ -2156,6 +2197,7 @@ _Lightweight reference to a group with key identification data at time of linkin
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
+| [Group](#Group) | [parent_groups](#parent_groups) | range | [GroupReference](#GroupReference) |
 | [Membership](#Membership) | [group_reference](#group_reference) | range | [GroupReference](#GroupReference) |
 
 

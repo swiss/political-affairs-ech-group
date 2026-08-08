@@ -3,7 +3,7 @@
 ## Class: HasIdentification 
 
 
-_A mixin class that provides slots for the identification of an entity._
+_A mixin class that provides slots for the identification of an entity. It is used for entities that are identified in their own right; their `global_uri` is the identifier and therefore mandatory._
 
 
 
@@ -33,8 +33,6 @@ _A mixin class that provides slots for the identification of an entity._
 | [Membership](Membership.md) | A membership relationship between a person and a group, representing formal a... |
 | [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |
 | [ElectoralDistrict](ElectoralDistrict.md) | Electoral district or region associated with a membership |
-| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |
-| [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |
 
 
 

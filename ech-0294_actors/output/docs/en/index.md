@@ -24,6 +24,7 @@ Name: actors-schema
 | [GroupType](GroupType.md) | Type of group (e |
 | [HasCreationModificationDates](HasCreationModificationDates.md) | A mixin class that provides slots for modeling creation and modification date... |
 | [HasIdentification](HasIdentification.md) | A mixin class that provides slots for the identification of an entity |
+| [HasReferenceIdentification](HasReferenceIdentification.md) | A mixin class that provides the slots with which a reference names the entity... |
 | [HasTemporalValidity](HasTemporalValidity.md) | A mixin class that provides slots for modeling a temporal validity of informa... |
 | [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |
 | [IsEventWithDuration](IsEventWithDuration.md) | A mixin class that provides slots for modeling events or occurrences with tim... |
@@ -108,7 +109,7 @@ Name: actors-schema
 | [organization_address](organization_address.md) | Address of the organization |
 | [organization_name](organization_name.md) | Name of the organization or enterprise |
 | [organization_uid](organization_uid.md) | UID of the organization (eCH-0097 format: CHE-XXX |
-| [parent_groups](parent_groups.md) | Reference to the parent groups, stated by their identifier (global_uri) |
+| [parent_groups](parent_groups.md) | Reference to the parent groups as a GroupReference, i |
 | [party_color](party_color.md) | Party color as hexadecimal value (optional for parties, e |
 | [person_reference](person_reference.md) | Reference to a person with snapshot data at time of linking |
 | [persons](persons.md) | Collection of persons |

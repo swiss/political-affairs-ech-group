@@ -34,6 +34,7 @@ URI: [mcm:globalURI](https://ld.ech.ch/schema/0292/meta-common/globalURI)
 | [Membership](Membership.md) | Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe, die ein... |  no  |
 | [InterestLink](InterestLink.md) | Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person... |  no  |
 | [ElectoralDistrict](ElectoralDistrict.md) | Wahlkreis oder Wahlregion, die einer Mitgliedschaft zugeordnet ist |  yes  |
+| [HasReferenceIdentification](HasReferenceIdentification.md) | Eine Mixin-Klasse, welche die Slots bereitstellt, mit denen eine Referenz die... |  no  |
 | [PersonReference](PersonReference.md) | Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikations... |  no  |
 | [GroupReference](GroupReference.md) | Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikations... |  no  |
 
@@ -49,7 +50,7 @@ URI: [mcm:globalURI](https://ld.ech.ch/schema/0292/meta-common/globalURI)
 | Eigenschaft | Wert |
 | --- | --- |
 | Wertebereich | [Uriorcurie](Uriorcurie.md) |
-| Domäne von | [HasIdentification](HasIdentification.md), [IsProcessStep](IsProcessStep.md) |
+| Domäne von | [HasIdentification](HasIdentification.md), [HasReferenceIdentification](HasReferenceIdentification.md), [IsProcessStep](IsProcessStep.md) |
 | Slot-URI | [mcm:globalURI](https://ld.ech.ch/schema/0292/meta-common/globalURI) |
 
 ### Kardinalität und Anforderungen
@@ -101,6 +102,7 @@ slot_uri: mcm:globalURI
 identifier: true
 domain_of:
 - HasIdentification
+- HasReferenceIdentification
 - IsProcessStep
 range: uriorcurie
 required: true

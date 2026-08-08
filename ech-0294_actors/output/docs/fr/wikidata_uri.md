@@ -34,6 +34,7 @@ URI: [mcm:wikidataUri](https://ld.ech.ch/schema/0292/meta-common/wikidataUri)
 | [Membership](Membership.md) | Une relation d'affiliation entre une personne et un groupe, représentant une ... |  no  |
 | [InterestLink](InterestLink.md) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |  no  |
 | [ElectoralDistrict](ElectoralDistrict.md) | Circonscription ou région électorale associée à une affiliation |  no  |
+| [HasReferenceIdentification](HasReferenceIdentification.md) | Une classe mixin qui fournit les slots par lesquels une référence désigne l'e... |  no  |
 | [PersonReference](PersonReference.md) | Référence légère à une personne avec les principales données d'identification... |  no  |
 | [GroupReference](GroupReference.md) | Référence légère à un groupe avec les principales données d'identification au... |  no  |
 
@@ -49,7 +50,7 @@ URI: [mcm:wikidataUri](https://ld.ech.ch/schema/0292/meta-common/wikidataUri)
 | Propriété | Valeur |
 | --- | --- |
 | Plage | [Uriorcurie](Uriorcurie.md) |
-| Domaine de | [HasIdentification](HasIdentification.md), [IsProcessStep](IsProcessStep.md) |
+| Domaine de | [HasIdentification](HasIdentification.md), [HasReferenceIdentification](HasReferenceIdentification.md), [IsProcessStep](IsProcessStep.md) |
 | URI du slot | [mcm:wikidataUri](https://ld.ech.ch/schema/0292/meta-common/wikidataUri) |
 
 ### Cardinalité et exigences
@@ -95,6 +96,7 @@ rank: 1000
 slot_uri: mcm:wikidataUri
 domain_of:
 - HasIdentification
+- HasReferenceIdentification
 - IsProcessStep
 range: uriorcurie
 
