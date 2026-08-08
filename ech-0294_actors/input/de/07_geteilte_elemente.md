@@ -22,6 +22,12 @@ Anders als eine Entität ist eine Referenz nicht aus sich heraus identifiziert �
 
 ## Mehrfach benutzte Klassen
 
+Eine Adresse wird zweifach geführt: als Verweis ins Amtliche Gebäudeadressverzeichnis von swisstopo (`address_uri`) und als geschriebene Adresse in `street_address`, `postal_code`, `postal_locality` und `country`. Die letzte Zahl der URI ist die EGAID, der eidgenössische Gebäudeadressidentifikator – `https://geo.ld.admin.ch/location/address/101009806` bezeichnet damit „Rue de Genève 17, 1003 Lausanne" als amtlich geführte Gebäudeadresse.
+
+Der Verweis ist die stabilere Angabe: Strassennamen werden geändert, Gemeinden fusionieren, Postleitzahlen werden neu zugeschnitten, doch die EGAID bleibt und lässt sich mit dem Gebäude- und Wohnungsregister sowie mit Geodaten verbinden. Die geschriebene Adresse ersetzt sie nicht, weil sie oft mehr enthält als das Verzeichnis kennt – einen Organisationsnamen, ein Postfach, einen Zusatz „c/o". Im Beispiel der Fédération romande des consommateurs zeigt sich das deutlich: Die EGAID bezeichnet die physische Adresse an der Rue de Genève 17 in 1003 Lausanne, während die geschriebene Adresse das Postfach 585 und dessen eigene Postleitzahl 1001 führt. Beide Angaben sind richtig, und keine ist aus der anderen herzuleiten.
+
+Nicht jede Adresse ist im Verzeichnis auffindbar, etwa eine Adresse im Ausland. `address_uri` ist deshalb optional; wo sie bekannt ist, soll sie gesetzt werden.
+
 {{include:ech-0294_actors/output/docs/Address.md}}
 
 {{include:ech-0294_actors/output/docs/AddressTypeEnum.md}}

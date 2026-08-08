@@ -22,6 +22,12 @@ Contrairement à une entité, une référence n'est pas identifiée en propre �
 
 ## Classes utilisées à plusieurs reprises
 
+Une adresse est saisie de deux manières : comme renvoi au Répertoire officiel des adresses de bâtiments de swisstopo (`address_uri`) et comme adresse rédigée dans `street_address`, `postal_code`, `postal_locality` et `country`. Le dernier nombre de l'URI est l'EGAID, l'identifiant fédéral d'adresse de bâtiment – `https://geo.ld.admin.ch/location/address/101009806` désigne ainsi « Rue de Genève 17, 1003 Lausanne » en tant qu'adresse de bâtiment officiellement répertoriée.
+
+Le renvoi est l'indication la plus stable : les noms de rue changent, les communes fusionnent, les numéros postaux sont redécoupés, mais l'EGAID demeure et permet des rapprochements avec le Registre des bâtiments et des logements ainsi qu'avec les géodonnées. L'adresse rédigée ne devient pas superflue, car elle contient souvent davantage que ce que connaît le répertoire – un nom d'organisation, une case postale, une mention « c/o ». L'exemple de la Fédération romande des consommateurs le montre bien : l'EGAID désigne l'adresse physique à la Rue de Genève 17, 1003 Lausanne, tandis que l'adresse rédigée indique la case postale 585 et son propre numéro postal 1001. Les deux indications sont correctes et aucune ne se déduit de l'autre.
+
+Toutes les adresses ne figurent pas dans le répertoire, ainsi une adresse à l'étranger. `address_uri` est donc facultatif ; là où il est connu, il doit être renseigné.
+
 {{include:ech-0294_actors/output/docs/Address.md}}
 
 {{include:ech-0294_actors/output/docs/AddressTypeEnum.md}}
