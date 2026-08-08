@@ -9,7 +9,7 @@ _Trois règles s'appliquent aux types de groupes et d'organisations politiques._
 _La valeur désigne la fonction politique ; la désignation locale relève du libellé du groupe. Büro, Ratsleitung et Ufficio presidenziale reçoivent donc tous la valeur `council_bureau`._
 
 
-_Les valeurs apparentées partagent un préfixe. La famille `council_` ne distingue pas selon le conseil : une chancellerie d'État et les services du parlement sont tous deux `council_secretariat`, le rattachement ressortant de `parent_groups`. Elle se subdivise en `council_presidency` pour la présidence, `council_bureau` pour l'organe de direction élargi à la représentation des groupes et `council_secretariat` pour l'unité administrative composée d'employés. La famille `committee_` suit le même modèle, avec `committee` comme cas de base._
+_Les valeurs apparentées partagent un préfixe. La famille `council_` désigne d'une part les conseils eux-mêmes – `council_legislative` le parlement, `council_executive` le gouvernement –, d'autre part leurs organes : `council_presidency` la présidence, `council_bureau` l'organe de direction élargi à la représentation des groupes, `council_secretariat` l'unité administrative composée d'employés. Les trois valeurs d'organe ne distinguent pas le conseil qu'elles servent : une chancellerie d'État et les services du parlement sont tous deux `council_secretariat`, le rattachement ressortant de `parent_groups`. Dans la famille `committee_`, `committee` est le cas de base de la commission permanente, `committee_ad_hoc` et `committee_extraparliamentary` en étant les cas particuliers._
 
 
 _La forme juridique ne relève pas de ce vocabulaire, mais de `legal_form`._
