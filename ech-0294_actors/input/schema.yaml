@@ -501,6 +501,11 @@ slots:
       description_fr: |
         URI de l'adresse issue du Répertoire officiel des adresses de bâtiments (swisstopo). Le dernier segment de l'URI est l'EGAID, l'identifiant fédéral d'adresse de bâtiment de ce répertoire. Exemple d'URI valide : https://geo.ld.admin.ch/location/address/101904050 — le même répertoire est consultable comme couche cartographique à l'adresse https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis
     range: uriorcurie
+    # Der Wert besteht darin, in genau diesem Namensraum zu liegen; `uriorcurie`
+    # allein liesse einen map.geo.admin.ch-Permalink oder eine beliebige
+    # Kartenadresse durch. Festgehalten wird deshalb der Namensraum, nicht die
+    # Stellenzahl: swisstopo führt ADR_EGAID als DOUBLE ohne festgelegte Länge.
+    pattern: ^https://geo\.ld\.admin\.ch/location/address/[0-9]+$
 
   street_address:
     slot_uri: act:streetAddress
@@ -754,13 +759,17 @@ slots:
 
   spatial:
     description: |
-      Spatial reference (fos-municipality number, fos-canton number, or country). Formats: municipality: ld.admin.ch/municipality/1234, canton: ld.admin.ch/canton/23, country: ld.admin.ch/country/CHE.
+      Spatial reference to a LINDAS resource (fos-municipality number, fos-canton number, district, or country). Formats: municipality: https://ld.admin.ch/municipality/1234, district: https://ld.admin.ch/district/2301, canton: https://ld.admin.ch/canton/23, country: https://ld.admin.ch/country/CHE.
     annotations:
       description_de: |
-        Räumliche Referenz (BFS-Gemeindenummer, BFS-Kantonsnummer oder Land). Formate: Gemeinde: ld.admin.ch/municipality/1234, Kanton: ld.admin.ch/canton/23, Bund: ld.admin.ch/country/CHE.
+        Räumliche Referenz auf eine LINDAS-Ressource (BFS-Gemeindenummer, BFS-Kantonsnummer, Bezirk oder Land). Formate: Gemeinde: https://ld.admin.ch/municipality/1234, Bezirk: https://ld.admin.ch/district/2301, Kanton: https://ld.admin.ch/canton/23, Bund: https://ld.admin.ch/country/CHE.
 
       description_fr: |
-        Référence spatiale (numéro OFS de commune, numéro OFS de canton ou pays). Formats : commune : ld.admin.ch/municipality/1234, canton : ld.admin.ch/canton/23, pays : ld.admin.ch/country/CHE.
+        Référence spatiale à une ressource LINDAS (numéro OFS de commune, numéro OFS de canton, district ou pays). Formats : commune : https://ld.admin.ch/municipality/1234, district : https://ld.admin.ch/district/2301, canton : https://ld.admin.ch/canton/23, pays : https://ld.admin.ch/country/CHE.
+    # Wie bei `address_uri` wird der Namensraum festgehalten, nicht die
+    # Stellenzahl der Nummer. Die vier Ebenen sind die, welche LINDAS fuer die
+    # Schweizer Raumeinheiten fuehrt.
+    pattern: ^https://ld\.admin\.ch/(country/[A-Z]{3}|canton/[0-9]+|district/[0-9]+|municipality/[0-9]+)$
   contacts:
     slot_uri: act:contact
     description: |
