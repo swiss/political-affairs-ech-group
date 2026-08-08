@@ -44,6 +44,7 @@ URI: [mcm:localId](https://ld.ech.ch/schema/0292/meta-common/localId)
 | [TextSegment](TextSegment.md) | A text segment such as cross-references or subtitles in meeting protocols |  no  |
 | [Motion](Motion.md) | A formal proposal or motion submitted during proceedings |  no  |
 | [Media](Media.md) | Media files or documents (including protocols in PDF/HTML/WORD or links to au... |  no  |
+| [HasReferenceIdentification](HasReferenceIdentification.md) | A mixin class that provides the slots with which a reference names the entity... |  no  |
 | [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |  no  |
 | [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |  no  |
 
@@ -59,7 +60,7 @@ URI: [mcm:localId](https://ld.ech.ch/schema/0292/meta-common/localId)
 | Property | Value |
 | --- | --- |
 | Range | [String](String.md) |
-| Domain Of | [HasIdentification](HasIdentification.md), [IsProcessStep](IsProcessStep.md) |
+| Domain Of | [HasIdentification](HasIdentification.md), [HasReferenceIdentification](HasReferenceIdentification.md), [IsProcessStep](IsProcessStep.md) |
 | Slot URI | [mcm:localId](https://ld.ech.ch/schema/0292/meta-common/localId) |
 
 ### Cardinality and Requirements
@@ -103,6 +104,7 @@ rank: 1000
 slot_uri: mcm:localId
 domain_of:
 - HasIdentification
+- HasReferenceIdentification
 - IsProcessStep
 range: string
 

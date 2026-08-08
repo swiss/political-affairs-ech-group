@@ -27,14 +27,14 @@
       ],
       "actor_name": "Regierungsrat Bern",
       "actor_id": {
-        "global_uri": "actors:rr_be",
         "label": "Regierungsrat Bern",
         "abbreviation": [
           {
             "value": "RR",
             "language": "de"
           }
-        ]
+        ],
+        "global_uri": "actors:rr_be"
       },
       "date_begin_planned": "2021-03-31",
       "date_end_planned": "2021-03-31",
@@ -63,14 +63,14 @@
       ],
       "actor_name": "Grosser Rat Bern",
       "actor_id": {
-        "global_uri": "https://api.openparldata.ch/v1/bodies/253",
         "label": "Grosser Rat Bern",
         "abbreviation": [
           {
             "value": "GR",
             "language": "de"
           }
-        ]
+        ],
+        "global_uri": "https://api.openparldata.ch/v1/bodies/253"
       },
       "date_begin_planned": "2025-06-05",
       "date_end_planned": "2025-06-05",

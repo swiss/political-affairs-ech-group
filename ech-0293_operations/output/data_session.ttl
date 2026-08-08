@@ -11,21 +11,21 @@ ops:sessions_example_2025 a ops:Container ;
 ops:session_5207 a ops:Session ;
     ops:body_key "CHE" ;
     ops:name [ a ops:MultilingualString ;
-            ops:text "Sessione primaverile 2025" ;
-            mcm:language "it" ],
-        [ a ops:MultilingualString ;
             ops:text "Frühjahrssession 2025" ;
             mcm:language "de" ],
+        [ a ops:MultilingualString ;
+            ops:text "Sessione primaverile 2025" ;
+            mcm:language "it" ],
         [ a ops:MultilingualString ;
             ops:text "Session de printemps 2025" ;
             mcm:language "fr" ] ;
     ops:parent_legislature "ops:legislature_51" ;
     ops:url [ a ops:MultilingualString ;
-            ops:text "https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025" ;
-            mcm:language "de" ],
-        [ a ops:MultilingualString ;
             ops:text "https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025" ;
             mcm:language "it" ],
+        [ a ops:MultilingualString ;
+            ops:text "https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025" ;
+            mcm:language "de" ],
         [ a ops:MultilingualString ;
             ops:text "https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025" ;
             mcm:language "fr" ] ;

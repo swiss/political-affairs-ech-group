@@ -19,14 +19,14 @@
       ],
       "actor_name": "Kantonsrat St. Gallen",
       "actor_id": {
-        "global_uri": "https://api.openparldata.ch/v1/bodies/265",
         "label": "Kantonsrat St. Gallen",
         "abbreviation": [
           {
             "value": "KR",
             "language": "de"
           }
-        ]
+        ],
+        "global_uri": "https://api.openparldata.ch/v1/bodies/265"
       },
       "state": "planned",
       "location": "Kantonsratssaal, Regierungsgebäude St. Gallen",
@@ -60,14 +60,14 @@
       ],
       "actor_name": "Kommission für Wirtschaft und Abgaben (WAK)",
       "actor_id": {
-        "global_uri": "actors:committee_wak_be",
         "label": "Kommission für Wirtschaft und Abgaben (WAK)",
         "abbreviation": [
           {
             "value": "WAK",
             "language": "de"
           }
-        ]
+        ],
+        "global_uri": "actors:committee_wak_be"
       },
       "state": "planned",
       "location": "Kommissionszimmer 301, Rathaus Bern",
@@ -97,14 +97,14 @@
       ],
       "actor_name": "Landsgemeinde Glarus",
       "actor_id": {
-        "global_uri": "https://api.openparldata.ch/v1/bodies/258",
         "label": "Landsgemeinde Glarus",
         "abbreviation": [
           {
             "value": "LG",
             "language": "de"
           }
-        ]
+        ],
+        "global_uri": "https://api.openparldata.ch/v1/bodies/258"
       },
       "state": "planned",
       "location": "Zaunplatz, Glarus",

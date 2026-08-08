@@ -828,7 +828,25 @@
         },
         "GroupReference": {
             "additionalProperties": false,
-            "description": "Lightweight reference to a group with key identification data at time of linking.",
+            "anyOf": [
+                {
+                    "properties": {
+                        "local_id": {}
+                    },
+                    "required": [
+                        "local_id"
+                    ]
+                },
+                {
+                    "properties": {
+                        "global_uri": {}
+                    },
+                    "required": [
+                        "global_uri"
+                    ]
+                }
+            ],
+            "description": "Lightweight reference to a group with key identification data at time of linking. The referenced group is identified by `local_id` or `global_uri`; at least one of the two is required. A `local_id` is resolved within the same delivery, a `global_uri` also beyond it.",
             "properties": {
                 "abbreviation": {
                     "description": "Abbreviation (can be multilingual).\n",
@@ -841,8 +859,11 @@
                     ]
                 },
                 "global_uri": {
-                    "description": "A unique, globally valid URI for the entity.\n",
-                    "type": "string"
+                    "description": "The unique, globally valid URI of the referenced entity. Unlike a local_id it also resolves beyond the delivery.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "label": {
                     "description": "Assign a label to a structured piece of information (e.g., display name, position, etc.).\n",
@@ -852,7 +873,7 @@
                     ]
                 },
                 "local_id": {
-                    "description": "Local identifier. For example, a UUID from the council information system.\n",
+                    "description": "Local identifier of the referenced entity. It is resolved within the same delivery.\n",
                     "type": [
                         "string",
                         "null"
@@ -866,9 +887,6 @@
                     ]
                 }
             },
-            "required": [
-                "global_uri"
-            ],
             "title": "GroupReference",
             "type": "object"
         },
@@ -914,7 +932,7 @@
         },
         "HasIdentification": {
             "additionalProperties": false,
-            "description": "A mixin class that provides slots for the identification of an entity.",
+            "description": "A mixin class that provides slots for the identification of an entity. It is used for entities that are identified in their own right; their `global_uri` is the identifier and therefore mandatory.",
             "properties": {
                 "global_uri": {
                     "description": "A unique, globally valid URI for the entity.\n",
@@ -939,6 +957,35 @@
                 "global_uri"
             ],
             "title": "HasIdentification",
+            "type": "object"
+        },
+        "HasReferenceIdentification": {
+            "additionalProperties": false,
+            "description": "A mixin class that provides the slots with which a reference names the entity it points at. Unlike `HasIdentification` it does not identify the referencing object itself, which is why `global_uri` is neither an identifier here nor mandatory: a system that only holds the local id of the referenced entity states that id instead. A reference class using this mixin should require at least one of the two.",
+            "properties": {
+                "global_uri": {
+                    "description": "The unique, globally valid URI of the referenced entity. Unlike a local_id it also resolves beyond the delivery.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "local_id": {
+                    "description": "Local identifier of the referenced entity. It is resolved within the same delivery.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "wikidata_uri": {
+                    "description": "A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "HasReferenceIdentification",
             "type": "object"
         },
         "HasTemporalValidity": {
@@ -2132,11 +2179,32 @@
         },
         "PersonReference": {
             "additionalProperties": false,
-            "description": "Lightweight reference to a person with key identification data at time of linking. Preserves historical accuracy even if the person changes later.",
+            "anyOf": [
+                {
+                    "properties": {
+                        "local_id": {}
+                    },
+                    "required": [
+                        "local_id"
+                    ]
+                },
+                {
+                    "properties": {
+                        "global_uri": {}
+                    },
+                    "required": [
+                        "global_uri"
+                    ]
+                }
+            ],
+            "description": "Lightweight reference to a person with key identification data at time of linking. Preserves historical accuracy even if the person changes later. The referenced person is identified by `local_id` or `global_uri`; at least one of the two is required.",
             "properties": {
                 "global_uri": {
-                    "description": "A unique, globally valid URI for the entity.\n",
-                    "type": "string"
+                    "description": "The unique, globally valid URI of the referenced entity. Unlike a local_id it also resolves beyond the delivery.\n",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "group_label": {
                     "description": "Name of the body/group at time of linking.\n",
@@ -2157,7 +2225,7 @@
                     ]
                 },
                 "local_id": {
-                    "description": "Local identifier. For example, a UUID from the council information system.\n",
+                    "description": "Local identifier of the referenced entity. It is resolved within the same delivery.\n",
                     "type": [
                         "string",
                         "null"
@@ -2172,8 +2240,7 @@
                 }
             },
             "required": [
-                "label",
-                "global_uri"
+                "label"
             ],
             "title": "PersonReference",
             "type": "object"

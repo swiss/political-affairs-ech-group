@@ -3,7 +3,7 @@
 ## Klasse: HasIdentification 
 
 
-_Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfügung stellt._
+_Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfügung stellt. Sie wird für Entitäten verwendet, die aus sich heraus identifiziert sind; deren `global_uri` ist der Identifikator und daher obligatorisch._
 
 
 
@@ -42,8 +42,6 @@ _Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfüg
 | [TextSegment](TextSegment.md) | Ein Textsegment wie Querverweise oder Zwischentitel in Sitzungsprotokollen |
 | [Motion](Motion.md) | Ein formeller Antrag, der während der Verhandlungen eingereicht wird |
 | [Media](Media.md) | Mediendateien oder Dokumente (einschliesslich Protokolle in PDF/HTML/WORD ode... |
-| [PersonReference](PersonReference.md) | Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikations... |
-| [GroupReference](GroupReference.md) | Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikations... |
 
 
 

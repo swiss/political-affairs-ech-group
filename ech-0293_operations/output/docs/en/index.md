@@ -23,6 +23,7 @@ Name: operations
 | [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |
 | [HasCreationModificationDates](HasCreationModificationDates.md) | A mixin class that provides slots for modeling creation and modification date... |
 | [HasIdentification](HasIdentification.md) | A mixin class that provides slots for the identification of an entity |
+| [HasReferenceIdentification](HasReferenceIdentification.md) | A mixin class that provides the slots with which a reference names the entity... |
 | [HasTemporalValidity](HasTemporalValidity.md) | A mixin class that provides slots for modeling a temporal validity of informa... |
 | [IndividualAttendance](IndividualAttendance.md) | Individual attendance record for a specific person at a meeting (linked via t... |
 | [IndividualVote](IndividualVote.md) | An individual vote cast by a member during a voting procedure |

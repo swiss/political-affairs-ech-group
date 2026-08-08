@@ -3,7 +3,7 @@
 ## Class: HasIdentification 
 
 
-_A mixin class that provides slots for the identification of an entity._
+_A mixin class that provides slots for the identification of an entity. It is used for entities that are identified in their own right; their `global_uri` is the identifier and therefore mandatory._
 
 
 
@@ -42,8 +42,6 @@ _A mixin class that provides slots for the identification of an entity._
 | [TextSegment](TextSegment.md) | A text segment such as cross-references or subtitles in meeting protocols |
 | [Motion](Motion.md) | A formal proposal or motion submitted during proceedings |
 | [Media](Media.md) | Media files or documents (including protocols in PDF/HTML/WORD or links to au... |
-| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |
-| [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |
 
 
 

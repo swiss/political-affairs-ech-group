@@ -18,86 +18,64 @@ ops:voting_examples_2025 a ops:Container ;
         ops:voting_zh_budget_2026,
         ops:voting_zh_gr_2024_2023_361 .
 
-<https://api.openparldata.ch/v1/bodies/253> a mcm:GroupReference ;
-    mcm:abbreviation [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "GR" ] ;
-    mcm:label "Grosser Rat Bern" .
-
-<https://api.openparldata.ch/v1/bodies/265> a mcm:GroupReference ;
-    mcm:abbreviation [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "KR" ] ;
-    mcm:label "Kantonsrat St. Gallen" .
-
-<https://api.openparldata.ch/v1/bodies/275> a mcm:GroupReference ;
-    mcm:abbreviation [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "KR" ] ;
-    mcm:label "Kantonsrat Zürich" .
-
-<https://api.openparldata.ch/v1/persons/25177> a mcm:PersonReference ;
-    mcm:label "Ruedi Thomann" .
-
-<https://api.openparldata.ch/v1/persons/25208> a mcm:PersonReference ;
-    mcm:label "Jean-Daniel Strub" .
-
-<https://api.openparldata.ch/v1/persons/27233> a mcm:PersonReference ;
-    mcm:label "Thomas Ammann" .
-
-<https://api.openparldata.ch/v1/persons/27234> a mcm:PersonReference ;
-    mcm:label "Andreas Eggenberger" .
-
-<https://api.openparldata.ch/v1/persons/27235> a mcm:PersonReference ;
-    mcm:label "Paul Schlegel" .
-
-<https://api.openparldata.ch/v1/persons/27237> a mcm:PersonReference ;
-    mcm:label "Thomas Wolf" .
-
 ops:vote_sg_2025_001_person_123 a ops:IndividualVote ;
-    ops:actor_id <https://api.openparldata.ch/v1/persons/27235> ;
+    ops:actor_id [ a mcm:PersonReference ;
+            mcm:globalURI <https://api.openparldata.ch/v1/persons/27235> ;
+            mcm:label "Paul Schlegel" ] ;
     ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/yes> ;
     ops:parentVoting ops:voting_sg_2025_001 ;
     ops:seat_nr "1" ;
     mcm:datetimeCreated "2025-03-15T14:30:00+00:00"^^xsd:dateTime .
 
 ops:vote_sg_2025_001_person_321 a ops:IndividualVote ;
-    ops:actor_id <https://api.openparldata.ch/v1/persons/25177> ;
+    ops:actor_id [ a mcm:PersonReference ;
+            mcm:globalURI <https://api.openparldata.ch/v1/persons/25177> ;
+            mcm:label "Ruedi Thomann" ] ;
     ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/not_voted> ;
     ops:parentVoting ops:voting_sg_2025_001 ;
     ops:seat_nr "4" ;
     mcm:datetimeCreated "2025-03-15T14:30:00+00:00"^^xsd:dateTime .
 
 ops:vote_sg_2025_001_person_456 a ops:IndividualVote ;
-    ops:actor_id <https://api.openparldata.ch/v1/persons/27234> ;
+    ops:actor_id [ a mcm:PersonReference ;
+            mcm:globalURI <https://api.openparldata.ch/v1/persons/27234> ;
+            mcm:label "Andreas Eggenberger" ] ;
     ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/no> ;
     ops:parentVoting ops:voting_sg_2025_001 ;
     ops:seat_nr "2" ;
     mcm:datetimeCreated "2025-03-15T14:30:00+00:00"^^xsd:dateTime .
 
 ops:vote_sg_2025_001_person_789 a ops:IndividualVote ;
-    ops:actor_id <https://api.openparldata.ch/v1/persons/27233> ;
+    ops:actor_id [ a mcm:PersonReference ;
+            mcm:globalURI <https://api.openparldata.ch/v1/persons/27233> ;
+            mcm:label "Thomas Ammann" ] ;
     ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/abstention> ;
     ops:parentVoting ops:voting_sg_2025_001 ;
     ops:seat_nr "3" ;
     mcm:datetimeCreated "2025-03-15T14:30:00+00:00"^^xsd:dateTime .
 
 ops:vote_zh_budget_2026_person_101 a ops:IndividualVote ;
-    ops:actor_id <https://api.openparldata.ch/v1/persons/27237> ;
+    ops:actor_id [ a mcm:PersonReference ;
+            mcm:globalURI <https://api.openparldata.ch/v1/persons/27237> ;
+            mcm:label "Thomas Wolf" ] ;
     ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/yes> ;
     ops:parentVoting ops:voting_zh_budget_2026 ;
     ops:seat_nr "1" ;
     mcm:datetimeCreated "2025-11-20T16:45:00+00:00"^^xsd:dateTime .
 
 ops:vote_zh_budget_2026_person_102 a ops:IndividualVote ;
-    ops:actor_id <https://api.openparldata.ch/v1/persons/25208> ;
+    ops:actor_id [ a mcm:PersonReference ;
+            mcm:globalURI <https://api.openparldata.ch/v1/persons/25208> ;
+            mcm:label "Jean-Daniel Strub" ] ;
     ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/no> ;
     ops:parentVoting ops:voting_zh_budget_2026 ;
     ops:seat_nr "2" ;
     mcm:datetimeCreated "2025-11-20T16:45:00+00:00"^^xsd:dateTime .
 
 ops:vote_zh_gr_2024_2023_361_a1 a ops:IndividualVote ;
-    ops:actor_id <https://www.gemeinderat-zuerich.ch/personen/1> ;
+    ops:actor_id [ a mcm:PersonReference ;
+            mcm:globalURI <https://www.gemeinderat-zuerich.ch/personen/1> ;
+            mcm:label "Mitglied Auswahl A" ] ;
     ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/other> ;
     ops:parentVoting ops:voting_zh_gr_2024_2023_361 ;
     ops:seat_nr "12" ;
@@ -105,14 +83,18 @@ ops:vote_zh_gr_2024_2023_361_a1 a ops:IndividualVote ;
     mcm:datetimeCreated "2024-02-28T00:00:00+00:00"^^xsd:dateTime .
 
 ops:vote_zh_gr_2024_2023_361_abs1 a ops:IndividualVote ;
-    ops:actor_id <https://www.gemeinderat-zuerich.ch/personen/4> ;
+    ops:actor_id [ a mcm:PersonReference ;
+            mcm:globalURI <https://www.gemeinderat-zuerich.ch/personen/4> ;
+            mcm:label "Abwesendes Mitglied" ] ;
     ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/not_voted> ;
     ops:parentVoting ops:voting_zh_gr_2024_2023_361 ;
     ops:seat_nr "103" ;
     mcm:datetimeCreated "2024-02-28T00:00:00+00:00"^^xsd:dateTime .
 
 ops:vote_zh_gr_2024_2023_361_b1 a ops:IndividualVote ;
-    ops:actor_id <https://www.gemeinderat-zuerich.ch/personen/2> ;
+    ops:actor_id [ a mcm:PersonReference ;
+            mcm:globalURI <https://www.gemeinderat-zuerich.ch/personen/2> ;
+            mcm:label "Mitglied Auswahl B" ] ;
     ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/other> ;
     ops:parentVoting ops:voting_zh_gr_2024_2023_361 ;
     ops:seat_nr "47" ;
@@ -120,7 +102,9 @@ ops:vote_zh_gr_2024_2023_361_b1 a ops:IndividualVote ;
     mcm:datetimeCreated "2024-02-28T00:00:00+00:00"^^xsd:dateTime .
 
 ops:vote_zh_gr_2024_2023_361_c1 a ops:IndividualVote ;
-    ops:actor_id <https://www.gemeinderat-zuerich.ch/personen/3> ;
+    ops:actor_id [ a mcm:PersonReference ;
+            mcm:globalURI <https://www.gemeinderat-zuerich.ch/personen/3> ;
+            mcm:label "Mitglied Auswahl C" ] ;
     ops:individual_vote_type <https://ch.paf.link/schema/operations/enum/individual_vote_type/other> ;
     ops:parentVoting ops:voting_zh_gr_2024_2023_361 ;
     ops:seat_nr "88" ;
@@ -128,7 +112,12 @@ ops:vote_zh_gr_2024_2023_361_c1 a ops:IndividualVote ;
     mcm:datetimeCreated "2024-02-28T00:00:00+00:00"^^xsd:dateTime .
 
 ops:voting_be_2025_042 a ops:Voting ;
-    ops:actor_id <https://api.openparldata.ch/v1/bodies/253> ;
+    ops:actor_id [ a mcm:GroupReference ;
+            mcm:abbreviation [ a mcm:MultilingualValue ;
+                    mcm:language "de" ;
+                    mcm:value "GR" ] ;
+            mcm:globalURI <https://api.openparldata.ch/v1/bodies/253> ;
+            mcm:label "Grosser Rat Bern" ] ;
     ops:datetime_begin "2025-06-05T10:15:00+00:00"^^xsd:dateTime ;
     ops:datetime_end "2025-06-05T10:17:00+00:00"^^xsd:dateTime ;
     ops:majority_count 76 ;
@@ -151,26 +140,13 @@ ops:voting_be_2025_042 a ops:Voting ;
     mcm:datetimeCreated "2025-06-05T10:15:00+00:00"^^xsd:dateTime ;
     mcm:datetimeModified "2025-06-05T10:15:00+00:00"^^xsd:dateTime .
 
-<https://www.gemeinderat-zuerich.ch/> a mcm:GroupReference ;
-    mcm:abbreviation [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "GR" ] ;
-    mcm:label "Gemeinderat der Stadt Zürich" .
-
-<https://www.gemeinderat-zuerich.ch/personen/1> a mcm:PersonReference ;
-    mcm:label "Mitglied Auswahl A" .
-
-<https://www.gemeinderat-zuerich.ch/personen/2> a mcm:PersonReference ;
-    mcm:label "Mitglied Auswahl B" .
-
-<https://www.gemeinderat-zuerich.ch/personen/3> a mcm:PersonReference ;
-    mcm:label "Mitglied Auswahl C" .
-
-<https://www.gemeinderat-zuerich.ch/personen/4> a mcm:PersonReference ;
-    mcm:label "Abwesendes Mitglied" .
-
 ops:voting_zh_budget_2026 a ops:Voting ;
-    ops:actor_id <https://api.openparldata.ch/v1/bodies/275> ;
+    ops:actor_id [ a mcm:GroupReference ;
+            mcm:abbreviation [ a mcm:MultilingualValue ;
+                    mcm:language "de" ;
+                    mcm:value "KR" ] ;
+            mcm:globalURI <https://api.openparldata.ch/v1/bodies/275> ;
+            mcm:label "Kantonsrat Zürich" ] ;
     ops:datetime_begin "2025-11-20T16:45:00+00:00"^^xsd:dateTime ;
     ops:datetime_end "2025-11-20T16:50:00+00:00"^^xsd:dateTime ;
     ops:majority_count 91 ;
@@ -191,7 +167,12 @@ ops:voting_zh_budget_2026 a ops:Voting ;
     mcm:datetimeModified "2025-11-20T16:50:00+00:00"^^xsd:dateTime .
 
 ops:voting_sg_2025_001 a ops:Voting ;
-    ops:actor_id <https://api.openparldata.ch/v1/bodies/265> ;
+    ops:actor_id [ a mcm:GroupReference ;
+            mcm:abbreviation [ a mcm:MultilingualValue ;
+                    mcm:language "de" ;
+                    mcm:value "KR" ] ;
+            mcm:globalURI <https://api.openparldata.ch/v1/bodies/265> ;
+            mcm:label "Kantonsrat St. Gallen" ] ;
     ops:datetime_begin "2025-03-15T14:30:00+00:00"^^xsd:dateTime ;
     ops:datetime_end "2025-03-15T14:35:00+00:00"^^xsd:dateTime ;
     ops:majority_count 65 ;
@@ -212,7 +193,12 @@ ops:voting_sg_2025_001 a ops:Voting ;
     mcm:datetimeModified "2025-03-15T14:35:00+00:00"^^xsd:dateTime .
 
 ops:voting_zh_gr_2024_2023_361 a ops:Voting ;
-    ops:actor_id <https://www.gemeinderat-zuerich.ch/> ;
+    ops:actor_id [ a mcm:GroupReference ;
+            mcm:abbreviation [ a mcm:MultilingualValue ;
+                    mcm:language "de" ;
+                    mcm:value "GR" ] ;
+            mcm:globalURI <https://www.gemeinderat-zuerich.ch/> ;
+            mcm:label "Gemeinderat der Stadt Zürich" ] ;
     ops:affair_id "2023/361" ;
     ops:datetime_begin "2024-02-28T00:00:00+00:00"^^xsd:dateTime ;
     ops:datetime_end "2024-02-28T00:00:00+00:00"^^xsd:dateTime ;
@@ -227,14 +213,14 @@ ops:voting_zh_gr_2024_2023_361 a ops:Voting ;
             ops:count 12 ;
             mcm:label "Auswahl C" ],
         [ a ops:TotalOther ;
-            ops:count 25 ;
-            mcm:label "Auswahl B" ],
+            ops:count 75 ;
+            mcm:label "Auswahl A (siegreich)" ],
         [ a ops:TotalOther ;
             ops:count 0 ;
             mcm:label "Auswahl D" ],
         [ a ops:TotalOther ;
-            ops:count 75 ;
-            mcm:label "Auswahl A (siegreich)" ] ;
+            ops:count 25 ;
+            mcm:label "Auswahl B" ] ;
     ops:type_label "Gleichgerichtete Anträge (Mehrfachauswahl)" ;
     ops:voting_title [ a ops:MultilingualString ;
             ops:text "Liegenschaften Stadt Zürich, Wohnhaus Magnusstrasse 27, Gesamtinstandsetzung, Grundrissanpassung, Netto-Zusatzkredit (Geschäft 2023/361)" ;
