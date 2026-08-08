@@ -18,11 +18,11 @@ act:swiss_politicians_example a act:Container ;
             mcm:value "Brunel" ;
             act:nameType "PersonOriginalName" ],
         [ a act:Name ;
-            mcm:value "Bozzi-Brunel" ;
-            act:nameType "PersonOfficialName" ],
-        [ a act:Name ;
             mcm:value "Cristina" ;
-            act:nameType "PersonFirstName" ] .
+            act:nameType "PersonFirstName" ],
+        [ a act:Name ;
+            mcm:value "Bozzi-Brunel" ;
+            act:nameType "PersonOfficialName" ] .
 
 <https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9> a act:Person ;
     mcm:label "Sofia Fisch" ;
@@ -102,11 +102,11 @@ act:swiss_politicians_example a act:Container ;
     mcm:localId "6447" ;
     act:birthYear 1981 ;
     act:name [ a act:Name ;
-            mcm:value "Arnold" ;
-            act:nameType "PersonOfficialName" ],
-        [ a act:Name ;
             mcm:value "Alois" ;
-            act:nameType "PersonFirstName" ] .
+            act:nameType "PersonFirstName" ],
+        [ a act:Name ;
+            mcm:value "Arnold" ;
+            act:nameType "PersonOfficialName" ] .
 
 <https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269> a act:Person ;
     mcm:label "Gerri Beretta-Piccoli" ;
