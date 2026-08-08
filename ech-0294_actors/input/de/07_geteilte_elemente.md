@@ -14,6 +14,8 @@ Dies dient drei Zwecken:
 - **Keine Redundanz**, da nicht alle Informationen bei jeder Erwähnung wiederholt werden müssen
 - **Implizite Versionierung**, da die lokale Referenz unverändert bleibt, auch wenn sich die verknüpfte Entität später ändert
 
+Anders als eine Entität ist eine Referenz nicht aus sich heraus identifiziert – sie benennt bloss eine identifizierte Entität. Deshalb ist die `global_uri` hier nicht obligatorisch: Verlangt wird nur, dass mindestens eine der beiden Angaben `local_id` oder `global_uri` gesetzt ist. Ein System, das von der referenzierten Entität nur die lokale Id kennt, gibt diese an; sie wird innerhalb derselben Lieferung aufgelöst. Über die Lieferung hinaus verweist die `global_uri`.
+
 {{include:ech-0294_actors/output/docs/PersonReference.md}}
 
 {{include:ech-0294_actors/output/docs/GroupReference.md}}

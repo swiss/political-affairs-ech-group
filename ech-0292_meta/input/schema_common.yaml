@@ -46,16 +46,63 @@ classes:
   HasIdentification:
     mixin: true
     description: |
-      A mixin class that provides slots for the identification of an entity.
+      A mixin class that provides slots for the identification of an entity. It is used for entities that are identified in their own right; their `global_uri` is the identifier and therefore mandatory.
     annotations:
       description_de: |
-        Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfügung stellt.
+        Eine Mixin-Klasse, die Slots für die Identifikation einer Entität zur Verfügung stellt. Sie wird für Entitäten verwendet, die aus sich heraus identifiziert sind; deren `global_uri` ist der Identifikator und daher obligatorisch.
       description_fr: |
-        Une classe mixin qui fournit des slots pour l'identification d'une entité.
+        Une classe mixin qui fournit des slots pour l'identification d'une entité. Elle est utilisée pour les entités identifiées en propre ; leur `global_uri` constitue l'identifiant et est donc obligatoire.
     slots:
       - local_id
       - global_uri
       - wikidata_uri
+
+  HasReferenceIdentification:
+    mixin: true
+    description: |
+      A mixin class that provides the slots with which a reference names the entity it points at. Unlike `HasIdentification` it does not identify the referencing object itself, which is why `global_uri` is neither an identifier here nor mandatory: a system that only holds the local id of the referenced entity states that id instead. A reference class using this mixin should require at least one of the two.
+    annotations:
+      description_de: |
+        Eine Mixin-Klasse, welche die Slots bereitstellt, mit denen eine Referenz die Entität benennt, auf die sie zeigt. Im Unterschied zu `HasIdentification` identifiziert sie nicht das referenzierende Objekt selbst; deshalb ist `global_uri` hier weder Identifikator noch obligatorisch: Ein System, das nur die lokale Id der referenzierten Entität führt, gibt diese an. Eine Referenzklasse, die diesen Mixin verwendet, soll mindestens eines von beiden verlangen.
+      description_fr: |
+        Une classe mixin qui fournit les slots par lesquels une référence désigne l'entité vers laquelle elle pointe. Contrairement à `HasIdentification`, elle n'identifie pas l'objet référençant lui-même ; c'est pourquoi `global_uri` n'y est ni identifiant ni obligatoire : un système qui ne dispose que de l'identifiant local de l'entité référencée indique celui-ci. Une classe de référence utilisant ce mixin doit exiger au moins l'un des deux.
+    # These are attributes rather than the shared `local_id`/`global_uri`/
+    # `wikidata_uri` slots on purpose. The shared `global_uri` slot is
+    # `identifier: true` and hence mandatory, and LinkML only permits slot_usage
+    # to *narrow* an inherited slot — `required: false` is silently dropped by
+    # the Python/RDF generators even though gen-json-schema honours it. Own
+    # attributes with the same names and slot_uris avoid that inheritance while
+    # keeping the field names and RDF predicates identical.
+    attributes:
+      local_id:
+        slot_uri: mcm:localId
+        description: |
+          Local identifier of the referenced entity. It is resolved within the same delivery.
+        annotations:
+          description_de: |
+            Lokaler Identifikator der referenzierten Entität. Er wird innerhalb derselben Lieferung aufgelöst.
+          description_fr: |
+            Identifiant local de l'entité référencée. Il est résolu au sein de la même livraison.
+      global_uri:
+        slot_uri: mcm:globalURI
+        range: uriorcurie
+        description: |
+          The unique, globally valid URI of the referenced entity. Unlike a local_id it also resolves beyond the delivery.
+        annotations:
+          description_de: |
+            Die eindeutige, global gültige URI der referenzierten Entität. Im Unterschied zu einer local_id ist sie auch über die Lieferung hinaus auflösbar.
+          description_fr: |
+            L'URI unique et globalement valide de l'entité référencée. Contrairement à un local_id, elle est également résoluble au-delà de la livraison.
+      wikidata_uri:
+        slot_uri: mcm:wikidataUri
+        range: uriorcurie
+        description: |
+          A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.
+        annotations:
+          description_de: |
+            Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans.
+          description_fr: |
+            Une URI qui renvoie à une entité Wikidata, p. ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans.
 
   IsInstantaneousEvent:
     mixin: true
@@ -184,18 +231,27 @@ classes:
 
   PersonReference:
     description: |
-      Lightweight reference to a person with key identification data at time of linking. Preserves historical accuracy even if the person changes later.
+      Lightweight reference to a person with key identification data at time of linking. Preserves historical accuracy even if the person changes later. The referenced person is identified by `local_id` or `global_uri`; at least one of the two is required.
     annotations:
       description_de: |
-        Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung. Ermöglicht historische Korrektheit auch wenn sich die Person später ändert.
+        Leichtgewichtige Referenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung. Ermöglicht historische Korrektheit auch wenn sich die Person später ändert. Die referenzierte Person wird über `local_id` oder `global_uri` bezeichnet; mindestens eines von beiden ist erforderlich.
       description_fr: |
-        Référence légère à une personne avec les principales données d'identification au moment de la liaison. Préserve l'exactitude historique même si la personne change ultérieurement.
+        Référence légère à une personne avec les principales données d'identification au moment de la liaison. Préserve l'exactitude historique même si la personne change ultérieurement. La personne référencée est désignée par `local_id` ou `global_uri` ; au moins l'un des deux est requis.
+    # Same reasoning as for GroupReference below: a reference names an entity, it
+    # is not one, so it must not inherit the mandatory identifier.
     mixins:
-      - HasIdentification
+      - HasReferenceIdentification
     slots:
       - label
       - label_long
       - group_label
+    any_of:
+      - slot_conditions:
+          local_id:
+            required: true
+      - slot_conditions:
+          global_uri:
+            required: true
     slot_usage:
       label:
         description: |
@@ -217,17 +273,29 @@ classes:
             Nom d'affichage long facultatif comprenant les titres académiques et le nom officiel complet (par ex. « Dr. Maria Muster-Beispiel »).
   GroupReference:
     description: |
-      Lightweight reference to a group with key identification data at time of linking.
+      Lightweight reference to a group with key identification data at time of linking. The referenced group is identified by `local_id` or `global_uri`; at least one of the two is required. A `local_id` is resolved within the same delivery, a `global_uri` also beyond it.
     annotations:
       description_de: |
-        Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung.
+        Leichtgewichtige Referenz auf eine Gruppe mit den wichtigsten Identifikationsmerkmalen zum Zeitpunkt der Verknüpfung. Die referenzierte Gruppe wird über `local_id` oder `global_uri` bezeichnet; mindestens eines von beiden ist erforderlich. Eine `local_id` wird innerhalb derselben Lieferung aufgelöst, eine `global_uri` auch darüber hinaus.
       description_fr: |
-        Référence légère à un groupe avec les principales données d'identification au moment de la liaison.
+        Référence légère à un groupe avec les principales données d'identification au moment de la liaison. Le groupe référencé est désigné par `local_id` ou `global_uri` ; au moins l'un des deux est requis. Un `local_id` est résolu au sein de la même livraison, un `global_uri` également au-delà.
+    # A reference is not itself an identified entity: it merely names one.
+    # `global_uri` is therefore neither the identifier of this class (several
+    # references within one delivery may well point at the same group) nor
+    # mandatory — a system that only knows the parent group's `local_id` states
+    # that instead. The `any_of` keeps a reference from being unidentified.
     mixins:
-      - HasIdentification
+      - HasReferenceIdentification
     slots:
       - label
       - abbreviation
+    any_of:
+      - slot_conditions:
+          local_id:
+            required: true
+      - slot_conditions:
+          global_uri:
+            required: true
 
 # SLOTS
 # ----------------------------------------------------------------

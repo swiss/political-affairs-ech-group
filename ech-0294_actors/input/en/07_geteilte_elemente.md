@@ -14,6 +14,8 @@ This serves three purposes:
 - **No redundancy**, since not all information has to be repeated at every mention
 - **Implicit versioning**, since the local reference remains unchanged even if the linked entity changes later
 
+Unlike an entity, a reference is not identified in its own right – it merely names an identified entity. The `global_uri` is therefore not mandatory here: all that is required is that at least one of `local_id` or `global_uri` is set. A system that only knows the local id of the referenced entity states that id; it is resolved within the same delivery. Beyond the delivery, the `global_uri` provides the link.
+
 {{include:ech-0294_actors/output/docs/PersonReference.md}}
 
 {{include:ech-0294_actors/output/docs/GroupReference.md}}

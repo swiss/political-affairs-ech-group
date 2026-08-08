@@ -14,6 +14,8 @@ Cela sert trois objectifs :
 - **Aucune redondance**, car il n'est pas nécessaire de répéter toutes les informations à chaque mention
 - **Un versionnement implicite**, car la référence locale demeure inchangée, même si l'entité liée change ultérieurement
 
+Contrairement à une entité, une référence n'est pas identifiée en propre – elle ne fait que désigner une entité identifiée. C'est pourquoi le `global_uri` n'y est pas obligatoire : il est seulement exigé qu'au moins l'une des deux indications `local_id` ou `global_uri` soit renseignée. Un système qui ne connaît que l'identifiant local de l'entité référencée indique celui-ci ; il est résolu au sein de la même livraison. Au-delà de la livraison, c'est le `global_uri` qui fait le renvoi.
+
 {{include:ech-0294_actors/output/docs/PersonReference.md}}
 
 {{include:ech-0294_actors/output/docs/GroupReference.md}}
