@@ -24,7 +24,7 @@ Contrairement à une entité, une référence n'est pas identifiée en propre �
 
 Une adresse est rédigée dans `street_address`, `postal_code`, `postal_locality` et `country` et peut renvoyer, au moyen d'`address_uri`, au Répertoire officiel des adresses de bâtiments de swisstopo. Le dernier nombre de cette URI est l'EGAID, l'identifiant fédéral d'adresse de bâtiment ; `https://geo.ld.admin.ch/location/address/101009806` désigne ainsi « Rue de Genève 17, 1003 Lausanne » en tant qu'adresse de bâtiment officiellement répertoriée.
 
-`address_uri` est facultatif. L'adresse rédigée seule est admise, mais le renvoi au moyen de l'EGAID est préférable : celle-ci constitue un identifiant univoque et stable dans le temps, alors que les noms de rue changent, que les communes fusionnent et que les numéros postaux sont redécoupés. Toutes les adresses ne figurent pas dans le répertoire, ainsi une adresse à l'étranger ; c'est pourquoi le slot reste facultatif.
+`address_uri` est facultatif. L'adresse rédigée seule est admise, mais le renvoi au moyen de l'EGAID est préférable : celle-ci constitue un identifiant univoque et stable dans le temps, alors que les noms de rue changent, que les communes fusionnent et que les numéros postaux sont redécoupés.
 
 Pour obtenir l'EGAID, on peut utiliser l'[API de recherche de geo.admin.ch](https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=Rue+de+Gen%C3%A8ve+17+1003+Lausanne&type=locations&origins=address) ou procéder à un rapprochement avec le [Répertoire officiel des adresses de bâtiments](https://www.swisstopo.admin.ch/fr/repertoire-officiel-des-adresses-de-batiments). Le résultat est saisi dans `address_uri`.
 
