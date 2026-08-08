@@ -1,15 +1,4 @@
 groups:
-- local_id: 1300
-  global_uri: https://www.regierungsrat.bs.ch/
-  label:
-  - value: Regierungsrat Basel-Stadt
-    language: de
-  group_type:
-    group_type_enum: council_executive
-    label:
-    - value: Regierung (Exekutivrat)
-      language: de
-  spatial: https://ld.admin.ch/canton/12
 - local_id: 7172
   global_uri: https://www.bs.ch/regierungsrat/staatskanzlei
   label:
@@ -25,3 +14,14 @@ groups:
   - local_id: 1300
     global_uri: https://www.regierungsrat.bs.ch/
     label: Regierungsrat Basel-Stadt
+- local_id: 1300
+  global_uri: https://www.regierungsrat.bs.ch/
+  label:
+  - value: Regierungsrat Basel-Stadt
+    language: de
+  group_type:
+    group_type_enum: council_executive
+    label:
+    - value: Regierung (Exekutivrat)
+      language: de
+  spatial: https://ld.admin.ch/canton/12

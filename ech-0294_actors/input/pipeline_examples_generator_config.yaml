@@ -156,17 +156,17 @@ example_titles:
 # Instanzen erscheinen dafür nicht mehr einzeln.
 composite_examples:
   - class: Group
-    members: ["33", "50"]
+    members: ["50", "33"]
     de: Ratsbüro mit Verweis auf sein Parlament
     fr: Bureau du conseil renvoyant à son parlement
     en: Council bureau referencing its parliament
   - class: Group
-    members: ["34", "3"]
+    members: ["3", "34"]
     de: Kommission mit Verweis auf ihren Kantonsrat
     fr: Commission renvoyant à son conseil cantonal
     en: Committee referencing its cantonal council
   - class: Group
-    members: ["1300", "7172"]
+    members: ["7172", "1300"]
     de: Staatskanzlei mit Verweis auf ihre Regierung
     fr: "Chancellerie d'État renvoyant à son gouvernement"
     en: State chancellery referencing its government
