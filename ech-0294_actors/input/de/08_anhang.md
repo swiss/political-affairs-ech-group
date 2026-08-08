@@ -2,23 +2,25 @@
 
 # Anhang A – Referenzen & Bibliographie
 
+Angegeben ist jeweils die Version, gegen die dieser Standard erarbeitet wurde.
+
 ## Standards der Fachgruppe „Politische Geschäfte"
 
 | | |
 |---|---|
-|[eCH-0292]|eCH-0292: Metaprozesse zu politischen Geschäften – gemeinsame Datenelemente|
-|[eCH-0293]|eCH-0293: Öffentlicher Ratsbetrieb|
-|[eCH-0295]|eCH-0295: Parlamentarische Geschäfte|
-|[eCH-0296]|eCH-0296: Erlasse und Gesetzestexte|
-|[eCH-0297]|eCH-0297: Öffentliche Konsultationen|
+|[eCH-0292]|eCH-0292: Metaprozesse zu politischen Geschäften, Version 1.0.0 – gemeinsame Datenelemente: [https://www.ech.ch/de/ech/ech-0292](https://www.ech.ch/de/ech/ech-0292)|
+|[eCH-0293]|eCH-0293: Öffentlicher Ratsbetrieb, Version 1.0.0: [https://www.ech.ch/de/ech/ech-0293](https://www.ech.ch/de/ech/ech-0293)|
+|[eCH-0295]|eCH-0295: Parlamentarische Geschäfte, Version 1.0.0: [https://www.ech.ch/de/ech/ech-0295](https://www.ech.ch/de/ech/ech-0295)|
+|[eCH-0296]|eCH-0296: Erlasse und Gesetzestexte, Version 1.0.0: [https://www.ech.ch/de/ech/ech-0296](https://www.ech.ch/de/ech/ech-0296)|
+|[eCH-0297]|eCH-0297: Öffentliche Konsultationen, Version 1.0.0: [https://www.ech.ch/de/ech/ech-0297](https://www.ech.ch/de/ech/ech-0297)|
 
 ## Weitere eCH-Standards
 
 | | |
 |---|---|
-|[eCH-0011]|eCH-0011: Datenstandard Personendaten, Version 9.0.0. Grundlage der Namenstypen in `NameTypeEnum` (`personNameData`).|
-|[eCH-0097]|eCH-0097: Datenstandard Unternehmensidentifikation, Version 5.2.0. Format der UID (`CHE-XXX.XXX.XXX`) in `organization_uid`.|
-|[eCH-0108]|eCH-0108: Datenstandard: Unternehmensstammdaten und Unternehmensregister, Version 6.0.0. Standard, zu dem die Rechtsform-Codeliste in `LegalFormEnum` konform ist.|
+|[eCH-0011]|eCH-0011: Datenstandard Personendaten, Version 9.0.0 (Genehmigt, 27.07.2023). Grundlage der Namenstypen in `NameTypeEnum` (`personNameData`): [https://www.ech.ch/de/ech/ech-0011/9.0.0](https://www.ech.ch/de/ech/ech-0011/9.0.0)|
+|[eCH-0097]|eCH-0097: Datenstandard Unternehmensidentifikation, Version 5.2.0 (02.07.2021). Struktur der UID (`uidStructureType`), verwendet in `organization_uid`: [https://www.ech.ch/de/ech/ech-0097/5.2.0](https://www.ech.ch/de/ech/ech-0097/5.2.0)|
+|[eCH-0108]|eCH-0108: Datenstandard: Unternehmensstammdaten und Unternehmensregister, Version 6.0.0 (Genehmigt, 04.04.2024). Standard, zu dem die Rechtsform-Codeliste in `LegalFormEnum` konform ist; definiert zudem das Austauschformat der UID: [https://www.ech.ch/de/ech/ech-0108/6.0.0](https://www.ech.ch/de/ech/ech-0108/6.0.0)|
 
 ## Codelisten und weitere Quellen
 
