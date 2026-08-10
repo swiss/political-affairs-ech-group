@@ -1985,21 +1985,21 @@ enums:
       public_committee:
         meaning: act:enum/interest_type/public_committee
         description: |
-          Participation in committees and other bodies of the Confederation, a canton, a commune or of intercantonal and intercommunal cooperation. Unlike `political_office` the seat is not won in an election but conferred by an authority, often precisely because of the political mandate.
+          Participation in a committee or another body of the public sector — of the Confederation, a canton, a commune or of intercantonal and intercommunal cooperation, including extra-parliamentary committees and the supervisory bodies of public-law institutions. What distinguishes it from `political_office` is not how the seat is filled but what it is: not an office of one's own in an authority, but participation in one of its bodies. Whether the person sits there on behalf of their own public body is stated by `is_ex_officio`.
         annotations:
           description_de: |
-            Mitwirkung in Kommissionen und anderen Organen des Bundes, eines Kantons, einer Gemeinde oder der interkantonalen und interkommunalen Zusammenarbeit. Anders als beim `political_office` wird der Sitz nicht in einer Wahl errungen, sondern von einer Behörde übertragen — häufig gerade wegen des politischen Mandats.
+            Mitwirkung in einer Kommission oder einem anderen Gremium der öffentlichen Hand — des Bundes, eines Kantons, einer Gemeinde oder der interkantonalen und interkommunalen Zusammenarbeit, einschliesslich ausserparlamentarischer Kommissionen und der Aufsichtsgremien öffentlich-rechtlicher Anstalten. Der Unterschied zum `political_office` liegt nicht darin, wie der Sitz besetzt wird, sondern worum es sich handelt: nicht um ein eigenes Amt in einer Behörde, sondern um die Mitwirkung in einem ihrer Gremien. Ob die Person dort für ihr eigenes Gemeinwesen sitzt, sagt `is_ex_officio`.
           description_fr: |
-            Participation à des commissions et à d'autres organes de la Confédération, d'un canton, d'une commune ou de la coopération intercantonale et intercommunale. À la différence du `political_office`, le siège n'est pas obtenu par une élection mais conféré par une autorité, souvent précisément en raison du mandat politique.
+            Participation à une commission ou à un autre organe de la sphère publique — de la Confédération, d'un canton, d'une commune ou de la coopération intercantonale et intercommunale, y compris les commissions extraparlementaires et les organes de surveillance des établissements de droit public. Ce qui la distingue du `political_office` n'est pas le mode de désignation, mais la nature de la chose : il ne s'agit pas d'une fonction propre au sein d'une autorité, mais de la participation à l'un de ses organes. La question de savoir si la personne y siège pour le compte de sa propre collectivité relève de `is_ex_officio`.
       political_office:
         meaning: act:enum/interest_type/political_office
         description: |
-          Elected office at another federal level or in another public body — communal executive or legislative, school board, parish. The mandate for which the disclosure is made is never stated here.
+          Office of one's own in an authority at another federal level or in another public body — communal executive or legislative, school board, parish —, as a rule filled by election. The mandate for which the disclosure is made is never stated here.
         annotations:
           description_de: |
-            Gewähltes Amt auf einer anderen föderalen Ebene oder in einer anderen Körperschaft — Gemeindeexekutive oder -parlament, Schulpflege, Kirchgemeinde. Das Mandat, für das offengelegt wird, gehört nie hierher.
+            Eigenes Amt in einer Behörde auf einer anderen föderalen Ebene oder in einer anderen Körperschaft — Gemeindeexekutive oder -parlament, Schulpflege, Kirchgemeinde —, in der Regel durch Wahl besetzt. Das Mandat, für das offengelegt wird, gehört nie hierher.
           description_fr: |
-            Fonction élective à un autre niveau fédéral ou dans une autre collectivité — exécutif ou législatif communal, commission scolaire, paroisse. Le mandat pour lequel la déclaration est faite n'y figure jamais.
+            Fonction propre au sein d'une autorité à un autre niveau fédéral ou dans une autre collectivité — exécutif ou législatif communal, commission scolaire, paroisse —, en règle générale pourvue par élection. Le mandat pour lequel la déclaration est faite n'y figure jamais.
       association:
         meaning: act:enum/interest_type/association
         description: |
