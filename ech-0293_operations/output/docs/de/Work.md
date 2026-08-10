@@ -16,7 +16,7 @@ _FRBR Work: das abstrakte Dokument als solches, unabhängig von einer konkreten 
 ### Attribute
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | id | 1 <br/> [String](String.md) | Eindeutiger Identifikator des Elements.  |
 | work_type | 0..1 <br/> [WorkTypesEnum](WorkTypesEnum.md) | Art des Dokuments (z.B. Protokoll, eingereichte Fassung, geltendes Recht).  |
 | document_category | 0..1 <br/> [DocumentCategoryEnum](DocumentCategoryEnum.md) | Kategorie des Dokuments. Wenn nicht gesetzt, wird automatisch 'other' verwendet.  |

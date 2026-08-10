@@ -16,7 +16,7 @@ _FRBR Manifestation: eine konkrete Dateiform einer Expression, über eine URL ad
 ### Attribute
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | id | 1 <br/> [String](String.md) | Eindeutiger Identifikator des Elements.  |
 | dates | * <br/> [Date](Date.md) | Datumsangaben zum Element, jeweils mit Typangabe.  |
 | format | 0..1 <br/> [String](String.md) | Das Dateiformat der Manifestation (z.B. pdf, html).  |

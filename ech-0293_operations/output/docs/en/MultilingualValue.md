@@ -16,7 +16,7 @@ _A multilingual string with language specification._
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | value | 1 <br/> [String](String.md) | The value of an information besides other attributes such as type, language, etc.  |
 | language | 0..1 <br/> [String](String.md) | Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en").  |
 

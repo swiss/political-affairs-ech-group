@@ -24,11 +24,11 @@ ops:340dcf932fb044dd8f8c5c943267fbcc a ops:Meeting ;
             ops:text "Séance du gouvernement du 31 mars 2021" ;
             mcm:language "fr" ] ;
     ops:url [ a ops:MultilingualString ;
-            ops:text "https://www.rr.be.ch/de/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc" ;
-            mcm:language "de" ],
-        [ a ops:MultilingualString ;
             ops:text "https://www.rr.be.ch/fr/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc" ;
-            mcm:language "fr" ] ;
+            mcm:language "fr" ],
+        [ a ops:MultilingualString ;
+            ops:text "https://www.rr.be.ch/de/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc" ;
+            mcm:language "de" ] ;
     mcm:dateBeginPlanned "2021-03-31"^^xsd:date ;
     mcm:dateEndPlanned "2021-03-31"^^xsd:date ;
     mcm:datetimeCreated "2024-10-28T01:22:26+00:00"^^xsd:dateTime ;

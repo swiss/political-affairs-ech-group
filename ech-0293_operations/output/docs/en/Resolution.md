@@ -16,7 +16,7 @@ _A resolution or decision taken on an agenda item, including voting procedures._
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | resolution_type | 0..1 <br/> [ResolutionTypeEnum](ResolutionTypeEnum.md) | Type of resolution taken on the agenda item.  |
 | type_label | 0..1 <br/> [String](String.md) | Custom type label when standard type values don't apply.  |
 | vote_procedures | * <br/> [String](String.md) | Procedures for voting, such as secret ballot or open vote.  |

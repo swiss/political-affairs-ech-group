@@ -16,7 +16,7 @@ _FRBR Work: the abstract document as such, independent of a concrete language ve
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | id | 1 <br/> [String](String.md) | Unique identifier of the element.  |
 | work_type | 0..1 <br/> [WorkTypesEnum](WorkTypesEnum.md) | Type of the document (e.g. minutes, submitted version, current law).  |
 | document_category | 0..1 <br/> [DocumentCategoryEnum](DocumentCategoryEnum.md) | Category of the document. If not set, 'other' is automatically used.  |

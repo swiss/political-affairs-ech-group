@@ -16,7 +16,7 @@ _Container für die Dokumente (FRBR Works) dieses Schemas. Bewusst kein tree_roo
 ### Attribute
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | id | 1 <br/> [String](String.md) | Eindeutiger Identifikator des Elements.  |
 | works | * <br/> [Work](Work.md) | Die im Container enthaltenen Dokumente (FRBR Works).  |
 

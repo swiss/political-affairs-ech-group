@@ -16,7 +16,7 @@ _Agenda Items which are debated together._
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | agenda_items | * <br/> [AgendaItem](AgendaItem.md) | Collection of agenda item records.  |
 
 

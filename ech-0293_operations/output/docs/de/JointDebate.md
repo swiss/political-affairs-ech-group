@@ -16,7 +16,7 @@ _Traktanden die gemeinsam behandelt werden._
 ### Attribute
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | agenda_items | * <br/> [AgendaItem](AgendaItem.md) | Sammlung der Traktanden.  |
 
 

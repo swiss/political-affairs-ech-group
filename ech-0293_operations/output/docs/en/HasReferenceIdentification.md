@@ -16,7 +16,7 @@ _A mixin class that provides the slots with which a reference names the entity i
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | local_id | 0..1 <br/> [String](String.md) | Local identifier of the referenced entity. It is resolved within the same delivery.  |
 | global_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | The unique, globally valid URI of the referenced entity. Unlike a local_id it also resolves beyond the delivery.  |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans.  |

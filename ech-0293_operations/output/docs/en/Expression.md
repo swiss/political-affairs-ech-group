@@ -16,7 +16,7 @@ _FRBR Expression: a concrete language version of a Work._
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | id | 1 <br/> [String](String.md) | Unique identifier of the element.  |
 | dates | * <br/> [Date](Date.md) | Dates relating to the element, each with a type indication.  |
 | expression_language | 1 <br/> [String](String.md) | Language code in ISO 639-1 format.  |

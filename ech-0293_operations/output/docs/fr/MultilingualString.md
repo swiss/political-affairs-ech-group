@@ -16,7 +16,7 @@ _Une chaîne de caractères pouvant contenir du texte en plusieurs langues._
 ### Attributs
 
 | Nom | Cardinalité et plage | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | text | 1 <br/> [String](String.md) | Contenu textuel de l'élément.  |
 | language | 1 <br/> [String](String.md) | Code de langue au format ISO 639-1 (deux lettres minuscules, par ex. « de », « fr », « it », « en »).  |
 

@@ -16,7 +16,7 @@ _Points de l'ordre du jour traités conjointement._
 ### Attributs
 
 | Nom | Cardinalité et plage | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | agenda_items | * <br/> [AgendaItem](AgendaItem.md) | Ensemble des points de l'ordre du jour.  |
 
 

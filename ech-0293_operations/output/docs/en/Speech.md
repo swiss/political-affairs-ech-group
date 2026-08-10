@@ -16,7 +16,7 @@ _A speech or statement made during a meeting (also called Votum or speaker segme
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
@@ -68,30 +68,32 @@ _A speech or statement made during a meeting (also called Votum or speaker segme
 #### Example Speech: Speech with verbatim text and video recording
 
 ```yaml
-global_uri: ops:366631
-language: fr
-datetime_begin: '2025-12-19T09:20:00+01:00'
-datetime_end: '2025-12-19T09:25:00+01:00'
-actor_fullname: Pascal Broulis
-actor_id:
-  global_uri: https://api.openparldata.ch/v1/persons/18682
-  wikidata_uri: http://www.wikidata.org/entity/Q116407
-  label: Pascal Broulis
-role: speaker
-text: >-
-  Je remercie la rapporteuse pour son rapport exhaustif. J'ai également lu avec attention
-  les différents commentaires qui ont été effectués sur mon postulat. Cela reste un
-  postulat, ce n'est pas une motion. D'abord, je ne partage pas l'avis selon lequel
-  ce postulat n'apporterait pas une valeur ajoutée. En effet, un "benchmark", à savoir
-  un modèle chiffré de performance, permettrait de mieux comprendre les raisons des
-  retards que notre pays rencontre en comparaison avec les principaux pays européens.
-text_format: html
-text_type: final
-landing_page: >-
-  https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-videos?TranscriptId=366631
-media_url: https://par-pcache.simplex.tv/content?externalid=366631
-media_type: video
-media_format: video/mp4
+speeches:
+- global_uri: ops:366631
+  language: fr
+  datetime_begin: '2025-12-19T09:20:00+01:00'
+  datetime_end: '2025-12-19T09:25:00+01:00'
+  actor_fullname: Pascal Broulis
+  actor_id:
+    global_uri: https://api.openparldata.ch/v1/persons/18682
+    wikidata_uri: http://www.wikidata.org/entity/Q116407
+    label: Pascal Broulis
+  role: speaker
+  text: >-
+    Je remercie la rapporteuse pour son rapport exhaustif. J'ai également lu avec
+    attention les différents commentaires qui ont été effectués sur mon postulat.
+    Cela reste un postulat, ce n'est pas une motion. D'abord, je ne partage pas l'avis
+    selon lequel ce postulat n'apporterait pas une valeur ajoutée. En effet, un "benchmark",
+    à savoir un modèle chiffré de performance, permettrait de mieux comprendre les
+    raisons des retards que notre pays rencontre en comparaison avec les principaux
+    pays européens.
+  text_format: html
+  text_type: final
+  landing_page: >-
+    https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-videos?TranscriptId=366631
+  media_url: https://par-pcache.simplex.tv/content?externalid=366631
+  media_type: video
+  media_format: video/mp4
 
 ```
 

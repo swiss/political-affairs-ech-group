@@ -16,7 +16,7 @@ _Zusätzliche Stimmzahlen, wenn mehrere Optionen zur Abstimmung gestellt werden 
 ### Attribute
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | count | 0..1 <br/> [Integer](Integer.md) | Die Anzahl der Stimmen für die Kategorie „Andere“.  |
 | label | 0..1 <br/> [String](String.md) | Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).  |
 

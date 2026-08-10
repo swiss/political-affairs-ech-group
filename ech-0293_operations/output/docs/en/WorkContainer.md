@@ -16,7 +16,7 @@ _Container for the documents (FRBR Works) of this schema. Deliberately not a tre
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | id | 1 <br/> [String](String.md) | Unique identifier of the element.  |
 | works | * <br/> [Work](Work.md) | The documents (FRBR Works) contained in the container.  |
 

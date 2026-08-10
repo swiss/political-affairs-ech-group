@@ -16,7 +16,7 @@ _Une décision prise sur un point de l'ordre du jour, y compris les procédures 
 ### Attributs
 
 | Nom | Cardinalité et plage | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | resolution_type | 0..1 <br/> [ResolutionTypeEnum](ResolutionTypeEnum.md) | Type de décision prise sur le point de l'ordre du jour.  |
 | type_label | 0..1 <br/> [String](String.md) | Libellé de type personnalisé lorsque les valeurs de type standard ne s'appliquent pas.  |
 | vote_procedures | * <br/> [String](String.md) | Modalités du vote, p. ex. vote secret ou vote ouvert.  |

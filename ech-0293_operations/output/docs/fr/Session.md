@@ -16,7 +16,7 @@ _Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p
 ### Attributs
 
 | Nom | Cardinalité et plage | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | local_id | 0..1 <br/> [String](String.md) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](HasIdentification.md) |
@@ -70,84 +70,88 @@ _Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p
 #### Exemple Session : Federal session with a trilingual designation
 
 ```yaml
-global_uri: ops:session_5207
-body_key: CHE
-name:
-- text: Frühjahrssession 2025
-  language: de
-- text: Session de printemps 2025
-  language: fr
-- text: Sessione primaverile 2025
-  language: it
-url:
-- text: https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025
-  language: de
-- text: https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025
-  language: fr
-- text: https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025
-  language: it
-date_begin_planned: '2025-03-03'
-date_end_planned: '2025-03-21'
-parent_legislature: ops:legislature_51
-datetime_modified: '2025-04-24T00:19:37Z'
-datetime_created: '2025-03-20T14:27:09Z'
+sessions:
+- global_uri: ops:session_5207
+  body_key: CHE
+  name:
+  - text: Frühjahrssession 2025
+    language: de
+  - text: Session de printemps 2025
+    language: fr
+  - text: Sessione primaverile 2025
+    language: it
+  url:
+  - text: https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025
+    language: de
+  - text: https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025
+    language: fr
+  - text: https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025
+    language: it
+  date_begin_planned: '2025-03-03'
+  date_end_planned: '2025-03-21'
+  parent_legislature: ops:legislature_51
+  datetime_modified: '2025-04-24T00:19:37Z'
+  datetime_created: '2025-03-20T14:27:09Z'
 
 ```
 #### Exemple Session : Landsgemeinde as a sitting period
 
 ```yaml
-global_uri: ops:session_gl_landsgemeinde_2025_05_04
-body_key: GL
-name:
-- text: Landsgemeinde vom 04. Mai 2025
-  language: de
-url:
-- text: https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04
-  language: de
-date_begin_planned: '2025-05-04'
-date_end_planned: '2025-05-04'
-datetime_modified: '2025-04-25T13:40:34Z'
-datetime_created: '2025-04-23T22:58:39Z'
+sessions:
+- global_uri: ops:session_gl_landsgemeinde_2025_05_04
+  body_key: GL
+  name:
+  - text: Landsgemeinde vom 04. Mai 2025
+    language: de
+  url:
+  - text: https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04
+    language: de
+  date_begin_planned: '2025-05-04'
+  date_end_planned: '2025-05-04'
+  datetime_modified: '2025-04-25T13:40:34Z'
+  datetime_created: '2025-04-23T22:58:39Z'
 
 ```
 #### Exemple Session : Cantonal session with a bilingual designation
 
 ```yaml
-global_uri: ops:session_be_summer_2025
-body_key: BE
-name:
-- text: Sommersession 2025
-  language: de
-- text: Session d'été 2025
-  language: fr
-url:
-- text: >-
-    https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
-  language: de
-- text: >-
-    https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
-  language: fr
-date_begin_planned: '2025-06-02'
-date_end_planned: '2025-06-12'
-datetime_modified: '2025-05-19T01:06:44Z'
-datetime_created: '2025-04-25T11:10:24Z'
+sessions:
+- global_uri: ops:session_be_summer_2025
+  body_key: BE
+  name:
+  - text: Sommersession 2025
+    language: de
+  - text: Session d'été 2025
+    language: fr
+  url:
+  - text: >-
+      https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
+    language: de
+  - text: >-
+      https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
+    language: fr
+  date_begin_planned: '2025-06-02'
+  date_end_planned: '2025-06-12'
+  datetime_modified: '2025-05-19T01:06:44Z'
+  datetime_created: '2025-04-25T11:10:24Z'
 
 ```
 #### Exemple Session : One-day sitting period of a cantonal parliament
 
 ```yaml
-global_uri: ops:session_gl_landrat_2025_02_26
-body_key: GL
-name:
-- text: Sitzung des Landrates vom 26.02.2025
-  language: de
-url:
-- text: https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239
-  language: de
-date_begin_planned: '2025-02-26'
-date_end_planned: '2025-02-26'
-datetime_modified: '2025-04-25T13:40:34Z'
-datetime_created: '2025-04-23T22:58:39Z'
+sessions:
+- global_uri: ops:session_gl_landrat_2025_02_26
+  body_key: GL
+  name:
+  - text: Sitzung des Landrates vom 26.02.2025
+    language: de
+  url:
+  - text: https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239
+    language: de
+  date_begin_planned: '2025-02-26'
+  date_end_planned: '2025-02-26'
+  datetime_modified: '2025-04-25T13:40:34Z'
+  datetime_created: '2025-04-23T22:58:39Z'
 
 ```
 

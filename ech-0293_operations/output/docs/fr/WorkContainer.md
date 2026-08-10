@@ -16,7 +16,7 @@ _Conteneur pour les documents (FRBR Works) de ce schéma. Volontairement pas un 
 ### Attributs
 
 | Nom | Cardinalité et plage | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | id | 1 <br/> [String](String.md) | Identifiant univoque de l'élément.  |
 | works | * <br/> [Work](Work.md) | Les documents (FRBR Works) contenus dans le conteneur.  |
 

@@ -16,7 +16,7 @@ _FRBR Manifestation : une forme de fichier concrète d'une Expression, adressabl
 ### Attributs
 
 | Nom | Cardinalité et plage | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | id | 1 <br/> [String](String.md) | Identifiant univoque de l'élément.  |
 | dates | * <br/> [Date](Date.md) | Dates relatives à l'élément, chacune assortie d'une indication de type.  |
 | format | 0..1 <br/> [String](String.md) | Le format de fichier de la manifestation (p. ex. pdf, html).  |

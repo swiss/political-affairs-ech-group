@@ -16,7 +16,7 @@ _Une classe mixin qui fournit des slots pour modéliser les dates de création e
 ### Attributs
 
 | Nom | Cardinalité et plage | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | date_created | 0..1 <br/> [Date](Date.md) | La date à laquelle une entité a été créée.  |
 | datetime_created | 0..1 <br/> [Datetime](Datetime.md) | La date et l'heure auxquelles une entité a été créée.  |
 | date_modified | 0..1 <br/> [Date](Date.md) | La date à laquelle une entité a été modifiée pour la dernière fois.  |

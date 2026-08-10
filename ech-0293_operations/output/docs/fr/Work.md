@@ -16,7 +16,7 @@ _FRBR Work : le document abstrait en tant que tel, indépendamment d'une version
 ### Attributs
 
 | Nom | Cardinalité et plage | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | id | 1 <br/> [String](String.md) | Identifiant univoque de l'élément.  |
 | work_type | 0..1 <br/> [WorkTypesEnum](WorkTypesEnum.md) | Type de document (p. ex. procès-verbal, version déposée, droit en vigueur).  |
 | document_category | 0..1 <br/> [DocumentCategoryEnum](DocumentCategoryEnum.md) | Catégorie du document. Si elle n'est pas renseignée, la valeur 'other' est utilisée automatiquement.  |

@@ -16,7 +16,7 @@ _Eine Resolution oder Entscheidung zu einem Traktandum, einschliesslich Abstimmu
 ### Attribute
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | resolution_type | 0..1 <br/> [ResolutionTypeEnum](ResolutionTypeEnum.md) | Art der Resolution zum Traktandum.  |
 | type_label | 0..1 <br/> [String](String.md) | Benutzerdefinierte Typbezeichnung, wenn Standardtypwerte nicht zutreffen.  |
 | vote_procedures | * <br/> [String](String.md) | Verfahren für die Abstimmung, wie geheime Abstimmung oder offene Abstimmung.  |

@@ -16,7 +16,7 @@ _A string that can contain text in multiple languages._
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | text | 1 <br/> [String](String.md) | Text content of the element.  |
 | language | 1 <br/> [String](String.md) | Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en").  |
 

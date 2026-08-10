@@ -16,7 +16,7 @@ _Décomptes de voix supplémentaires lorsque plusieurs options sont soumises au 
 ### Attributs
 
 | Nom | Cardinalité et plage | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | count | 0..1 <br/> [Integer](Integer.md) | Le nombre de voix pour la catégorie « autres ».  |
 | label | 0..1 <br/> [String](String.md) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
 

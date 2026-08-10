@@ -16,7 +16,7 @@ _FRBR Expression: eine konkrete Sprachfassung eines Works._
 ### Attribute
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | id | 1 <br/> [String](String.md) | Eindeutiger Identifikator des Elements.  |
 | dates | * <br/> [Date](Date.md) | Datumsangaben zum Element, jeweils mit Typangabe.  |
 | expression_language | 1 <br/> [String](String.md) | Sprachcode im ISO 639-1-Format.  |
