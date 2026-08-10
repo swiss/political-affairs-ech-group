@@ -16,7 +16,7 @@ _Nationalité (également utilisée pour la citoyenneté) d'une personne indiqua
 ### Attributs
 
 | Nom | Cardinalité et plage | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | country | 1 <br/> [String](String.md) | Code de pays ISO 3166-1 alpha-2.  |
 | valid_from | 0..1 <br/> [Date](Date.md) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](HasTemporalValidity.md) |
 | valid_through | 0..1 <br/> [Date](Date.md) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](HasTemporalValidity.md) |

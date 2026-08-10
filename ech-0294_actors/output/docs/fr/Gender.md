@@ -16,7 +16,7 @@ _Sexe d'une personne indiquant un code de sexe et la validité temporelle._
 ### Attributs
 
 | Nom | Cardinalité et plage | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | gender_code | 1 <br/> [GenderCodeEnum](GenderCodeEnum.md) | Code de sexe. Valeurs recommandées : male, female, non_binary.  |
 | label | 0..1 <br/> [String](String.md) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
 | pronouns | * <br/> [String](String.md) | Pronoms utilisés par la personne.  |

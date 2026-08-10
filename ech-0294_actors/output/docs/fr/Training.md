@@ -16,7 +16,7 @@ _Formation ou éducation d'une personne indiquant un type (p. ex. diplôme scola
 ### Attributs
 
 | Nom | Cardinalité et plage | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | training_type | 0..1 <br/> [TrainingTypeEnum](TrainingTypeEnum.md) | Type de formation ou d'éducation.  |
 | training_code | 0..1 <br/> [String](String.md) | Code ISCO-19 de la formation ou de l'éducation.  |
 | value | 0..1 <br/> [String](String.md) | La valeur proprement dite d'une information, en plus d'autres attributs tels que le type, la langue, etc.  |

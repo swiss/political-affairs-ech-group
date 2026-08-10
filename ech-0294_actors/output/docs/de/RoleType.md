@@ -16,7 +16,7 @@ _Rolle einer Person in einer Mitgliedschaft oder Funktion (z.B. Mitglied, Präsi
 ### Attribute
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | role_type_enum | 0..1 <br/> [RoleEnum](RoleEnum.md) | Rolle der Person in der Mitgliedschaft oder Funktion.  |
 | role_label | * <br/> [MultilingualValue](MultilingualValue.md) | Spezifische Rollenbezeichnung. Dieses Feld kann verwendet werden, wenn eine konkrete Rollenbezeichnung benötigt wird, auch wenn in `role_type_enum` bereits ein passender semantischer Wert vorhanden ist; bei `role_type_enum = other` soll diese Bezeichnung angegeben werden. Die Bezeichnung wird mit der Sprache erfasst, in der sie publiziert wird; wird sie in mehreren Sprachen publiziert, wird pro Sprache ein Eintrag erfasst.  |
 

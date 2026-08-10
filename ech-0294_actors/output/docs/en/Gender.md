@@ -16,7 +16,7 @@ _Gender of a person indicating a gender code and temporal validity._
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | gender_code | 1 <br/> [GenderCodeEnum](GenderCodeEnum.md) | Gender code. Recommended values: male, female, non_binary.  |
 | label | 0..1 <br/> [String](String.md) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
 | pronouns | * <br/> [String](String.md) | Pronouns used by the person.  |

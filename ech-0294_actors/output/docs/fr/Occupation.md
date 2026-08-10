@@ -16,7 +16,7 @@ _Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si
 ### Attributs
 
 | Nom | Cardinalité et plage | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | is_paid | 0..1 <br/> [Boolean](Boolean.md) | Indique si l'activité est rémunérée.  |
 | occupation_code | 0..1 <br/> [String](String.md) | Code ISCO-19 du métier.  |
 | label | 0..1 <br/> [String](String.md) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |

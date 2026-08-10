@@ -6,7 +6,7 @@ search:
 # Slot: interest_type 
 
 
-_Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein)._
+_Art der Interessenbindung, den Kategorien der Offenlegungsregister folgend (berufliche Tätigkeit, Sitz in einem Führungsgremium, Mandat für eine Interessengruppe, Amt in der öffentlichen Hand, Mitgliedschaft)._
 
 
 
@@ -77,16 +77,21 @@ name: interest_type
 annotations:
   description_de:
     tag: description_de
-    value: 'Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).
+    value: 'Art der Interessenbindung, den Kategorien der Offenlegungsregister folgend
+      (berufliche Tätigkeit, Sitz in einem Führungsgremium, Mandat für eine Interessengruppe,
+      Amt in der öffentlichen Hand, Mitgliedschaft).
 
       '
   description_fr:
     tag: description_fr
-    value: 'Type de lien d''intérêts (activité professionnelle, mandat politique,
-      association).
+    value: 'Type de lien d''intérêts, suivant les catégories tenues par les registres
+      de publicité (activité professionnelle, siège dans un organe de direction, mandat
+      pour un groupe d''intérêts, fonction dans la sphère publique, appartenance).
 
       '
-description: 'Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).
+description: 'Art der Interessenbindung, den Kategorien der Offenlegungsregister folgend
+  (berufliche Tätigkeit, Sitz in einem Führungsgremium, Mandat für eine Interessengruppe,
+  Amt in der öffentlichen Hand, Mitgliedschaft).
 
   '
 examples:

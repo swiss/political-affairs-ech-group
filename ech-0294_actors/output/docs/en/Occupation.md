@@ -16,7 +16,7 @@ _Occupation or profession of a person indicating a label, an ISCO-19 code, wheth
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | is_paid | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether the activity is paid.  |
 | occupation_code | 0..1 <br/> [String](String.md) | ISCO-19 code of the occupation.  |
 | label | 0..1 <br/> [String](String.md) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |

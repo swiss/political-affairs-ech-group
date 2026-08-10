@@ -16,7 +16,7 @@ _Citizenship (also used for Nationality) of a person indicating the country and 
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | country | 1 <br/> [String](String.md) | ISO 3166-1 alpha-2 country code.  |
 | valid_from | 0..1 <br/> [Date](Date.md) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |
 | valid_through | 0..1 <br/> [Date](Date.md) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |

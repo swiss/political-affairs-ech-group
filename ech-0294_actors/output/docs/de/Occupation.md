@@ -16,7 +16,7 @@ _Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Codes
 ### Attribute
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | is_paid | 0..1 <br/> [Boolean](Boolean.md) | Gibt an, ob die Tätigkeit bezahlt ist.  |
 | occupation_code | 0..1 <br/> [String](String.md) | ISCO-19 Code der Tätigkeit.  |
 | label | 0..1 <br/> [String](String.md) | Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).  |

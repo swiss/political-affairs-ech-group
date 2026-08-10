@@ -16,7 +16,7 @@ _Un nom avec un type (p. ex. nom d'usage, nom officiel), une valeur et une valid
 ### Attributs
 
 | Nom | Cardinalité et plage | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | name_type | 1 <br/> [NameTypeEnum](NameTypeEnum.md) | Type de nom selon eCH-0011 (personNameData).  |
 | value | 1 <br/> [String](String.md) | La valeur proprement dite d'une information, en plus d'autres attributs tels que le type, la langue, etc.  |
 | valid_from | 0..1 <br/> [Date](Date.md) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](HasTemporalValidity.md) |

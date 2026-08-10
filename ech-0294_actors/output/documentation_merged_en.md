@@ -127,7 +127,7 @@ _A person with identifiers, names, addresses, citizenships, and occupations._
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
@@ -334,7 +334,7 @@ _A name with a type (e.g., call name, official name), a value, and a temporal va
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | name_type | 1 <br/> [NameTypeEnum](#NameTypeEnum) | Type of name according to eCH-0011 (personNameData).  |
 | value | 1 <br/> [String](#String) | The value of an information besides other attributes such as type, language, etc.  |
 | valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
@@ -437,7 +437,7 @@ _Language proficiency of a person indicating the language and whether it is the 
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | language | 1 <br/> [String](#String) | Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en").  |
 | is_correspondence | 0..1 <br/> [Boolean](#Boolean) | Indicates if this is the preferred language.  |
 | is_native | 0..1 <br/> [Boolean](#Boolean) | Indicates if this is the native language.  |
@@ -490,7 +490,7 @@ _Citizenship (also used for Nationality) of a person indicating the country and 
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | country | 1 <br/> [String](#String) | ISO 3166-1 alpha-2 country code.  |
 | valid_from | 0..1 <br/> [Date](#Date) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
 | valid_through | 0..1 <br/> [Date](#Date) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](#HasTemporalValidity) |
@@ -544,7 +544,7 @@ _Gender of a person indicating a gender code and temporal validity._
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | gender_code | 1 <br/> [GenderCodeEnum](#GenderCodeEnum) | Gender code. Recommended values: male, female, non_binary.  |
 | label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
 | pronouns | * <br/> [String](#String) | Pronouns used by the person.  |
@@ -631,7 +631,7 @@ _Occupation or profession of a person indicating a label, an ISCO-19 code, wheth
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | is_paid | 0..1 <br/> [Boolean](#Boolean) | Indicates whether the activity is paid.  |
 | occupation_code | 0..1 <br/> [String](#String) | ISCO-19 code of the occupation.  |
 | label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
@@ -721,7 +721,7 @@ _Training or education of a person indicating a type (e.g., school diploma, univ
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | training_type | 0..1 <br/> [TrainingTypeEnum](#TrainingTypeEnum) | Type of training or education.  |
 | training_code | 0..1 <br/> [String](#String) | ISCO-19 code of the training or education.  |
 | value | 0..1 <br/> [String](#String) | The value of an information besides other attributes such as type, language, etc.  |
@@ -912,7 +912,7 @@ _A political group, organization, or body (e.g., party, committee, parliament, d
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
@@ -1303,7 +1303,7 @@ _Type of group (e.g., party, committee, parliament, department)._
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | group_type_enum | 1 <br/> [GroupTypeEnum](#GroupTypeEnum) | Link to the controlled vocabulary for group types.  |
 | label | * <br/> [MultilingualValue](#MultilingualValue) | Designation of the type as used by the publishing body, with the language it is published in. Where a body publishes the designation in several languages, one entry per language is recorded.  |
 
@@ -1446,7 +1446,7 @@ _A membership relationship between a person and a group, representing formal aff
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
@@ -1690,7 +1690,7 @@ _Role of a person in a membership or function (e.g., member, president, deputy).
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | role_type_enum | 0..1 <br/> [RoleEnum](#RoleEnum) | Role of the person in the membership or function.  |
 | role_label | * <br/> [MultilingualValue](#MultilingualValue) | Specific role label. Use this when a specific role name is needed, even if a fitting semantic value exists in `role_type_enum`; provide this label when `role_type_enum` is set to 'other'. The designation is recorded with the language it is published in; where it is published in several languages, one entry per language is recorded.  |
 
@@ -1791,7 +1791,7 @@ _Electoral district or region associated with a membership. The temporal validit
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | For IRI references, LINDAS resources should be used. The IRIs for the different administrative levels of Swiss spatial units are available at: https://ld.admin.ch/country/CHE. Under links in the schema:containsPlace section, the desired level can be selected. Examples for each administrative level: - Country - Switzerland: https://ld.admin.ch/country/CHE - Canton - Aargau: https://ld.admin.ch/canton/19 - District - Brig: https://ld.admin.ch/district/2301 - Municipality - Versoix: https://ld.admin.ch/municipality/6644 Electoral districts that correspond to no official spatial unit, such as districts grouping together neighbourhoods of a municipality, are given an identifier in the namespace of the publishing body instead. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
@@ -1884,12 +1884,12 @@ _An interest link (conflict of interest, political financing) of a person to an 
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
 | person_reference | 1 <br/> [PersonReference](#PersonReference) | Reference to a person with snapshot data at time of linking.  |
-| interest_type | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | Type of interest link (professional activity, political office, association).  |
+| interest_type | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | Type of interest link, following the categories the disclosure registers maintain (professional activity, seat on a governing body, mandate for an interest group, public mandate, membership).  |
 | organization_name | 0..1 <br/> [String](#String) | Name of the organization or enterprise.  |
 | organization_uid | 0..1 <br/> [String](#String) | UID of the organization from the federal UID register (uid.admin.ch), in the exchange format of eCH-0108: CHE followed by nine digits, without separators (e.g. CHE106063525). The last digit is a check digit calculated modulo 11. The dotted form CHE-106.063.525 is the presentation used by uid.admin.ch and is not recorded here.  |
 | organization_address | 0..1 <br/> [String](#String) | Address of the organization.  |
@@ -2280,7 +2280,7 @@ _Lightweight reference to a person with key identification data at time of linki
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | local_id | 0..1 <br/> [String](#String) | Local identifier of the referenced entity. It is resolved within the same delivery. <br/><br/>Inheritance: [HasReferenceIdentification](#HasReferenceIdentification) |
 | global_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | The unique, globally valid URI of the referenced entity. Unlike a local_id it also resolves beyond the delivery. <br/><br/>Inheritance: [HasReferenceIdentification](#HasReferenceIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasReferenceIdentification](#HasReferenceIdentification) |
@@ -2350,7 +2350,7 @@ _Lightweight reference to a group with key identification data at time of linkin
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | local_id | 0..1 <br/> [String](#String) | Local identifier of the referenced entity. It is resolved within the same delivery. <br/><br/>Inheritance: [HasReferenceIdentification](#HasReferenceIdentification) |
 | global_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | The unique, globally valid URI of the referenced entity. Unlike a local_id it also resolves beyond the delivery. <br/><br/>Inheritance: [HasReferenceIdentification](#HasReferenceIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasReferenceIdentification](#HasReferenceIdentification) |
@@ -2427,7 +2427,7 @@ _An address with a type (e.g., private address, business address) and a value._
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | address_type | 0..1 <br/> [AddressTypeEnum](#AddressTypeEnum) | Type of address.  |
 | address_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | URI of the address from the Swiss federal building address register (Amtliches Gebäudeadressverzeichnis, swisstopo). The final segment of the URI is the EGAID, the federal building address identifier of that register. Example of a valid URI: https://geo.ld.admin.ch/location/address/101904050 — the same register can be browsed as a map layer at https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis  |
 | street_address | 0..1 <br/> [String](#String) | Street address.  |
@@ -2549,7 +2549,7 @@ _Contact information of a person indicating a type (e.g., email, LinkedIn) and a
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | contact_type | 1 <br/> [ContactTypeEnum](#ContactTypeEnum) | Type of contact information.  |
 | value | 1 <br/> [String](#String) | The value of an information besides other attributes such as type, language, etc.  |
 | label | 0..1 <br/> [String](#String) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |

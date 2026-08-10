@@ -16,7 +16,7 @@ _Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um die bevo
 ### Attribute
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | language | 1 <br/> [String](String.md) | Sprachcode im ISO 639-1 Format (zwei Kleinbuchstaben, z.B. "de", "fr", "it", "en").  |
 | is_correspondence | 0..1 <br/> [Boolean](Boolean.md) | Gibt an, ob es sich um die bevorzugte Sprache handelt.  |
 | is_native | 0..1 <br/> [Boolean](Boolean.md) | Gibt an, ob es sich um die Muttersprache handelt.  |

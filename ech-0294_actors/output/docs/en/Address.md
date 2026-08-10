@@ -16,7 +16,7 @@ _An address with a type (e.g., private address, business address) and a value._
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | address_type | 0..1 <br/> [AddressTypeEnum](AddressTypeEnum.md) | Type of address.  |
 | address_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | URI of the address from the Swiss federal building address register (Amtliches Gebäudeadressverzeichnis, swisstopo). The final segment of the URI is the EGAID, the federal building address identifier of that register. Example of a valid URI: https://geo.ld.admin.ch/location/address/101904050 — the same register can be browsed as a map layer at https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis  |
 | street_address | 0..1 <br/> [String](String.md) | Street address.  |

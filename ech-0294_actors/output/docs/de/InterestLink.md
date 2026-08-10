@@ -16,12 +16,12 @@ _Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person z
 ### Attribute
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | local_id | 0..1 <br/> [String](String.md) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | Eine eindeutige, global gültige URI für die Entität. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](HasIdentification.md) |
 | person_reference | 1 <br/> [PersonReference](PersonReference.md) | Kurzreferenz auf eine Person, welche deren Merkmale zum Zeitpunkt der Verknüpfung festhält.  |
-| interest_type | 1 <br/> [InterestTypeEnum](InterestTypeEnum.md) | Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).  |
+| interest_type | 1 <br/> [InterestTypeEnum](InterestTypeEnum.md) | Art der Interessenbindung, den Kategorien der Offenlegungsregister folgend (berufliche Tätigkeit, Sitz in einem Führungsgremium, Mandat für eine Interessengruppe, Amt in der öffentlichen Hand, Mitgliedschaft).  |
 | organization_name | 0..1 <br/> [String](String.md) | Name der Organisation oder des Unternehmens.  |
 | organization_uid | 0..1 <br/> [String](String.md) | UID der Organisation aus dem eidgenössischen UID-Register (uid.admin.ch), im Austauschformat von eCH-0108: CHE gefolgt von neun Ziffern, ohne Trennzeichen (z.B. CHE106063525). Die letzte Ziffer ist eine Prüfziffer nach Modulo 11. Die punktierte Form CHE-106.063.525 ist die Darstellung von uid.admin.ch und wird hier nicht erfasst.  |
 | organization_address | 0..1 <br/> [String](String.md) | Adresse der Organisation.  |

@@ -16,7 +16,7 @@ _Type of group (e.g., party, committee, parliament, department)._
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | group_type_enum | 1 <br/> [GroupTypeEnum](GroupTypeEnum.md) | Link to the controlled vocabulary for group types.  |
 | label | * <br/> [MultilingualValue](MultilingualValue.md) | Designation of the type as used by the publishing body, with the language it is published in. Where a body publishes the designation in several languages, one entry per language is recorded.  |
 

@@ -16,7 +16,7 @@ _Training or education of a person indicating a type (e.g., school diploma, univ
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | training_type | 0..1 <br/> [TrainingTypeEnum](TrainingTypeEnum.md) | Type of training or education.  |
 | training_code | 0..1 <br/> [String](String.md) | ISCO-19 code of the training or education.  |
 | value | 0..1 <br/> [String](String.md) | The value of an information besides other attributes such as type, language, etc.  |

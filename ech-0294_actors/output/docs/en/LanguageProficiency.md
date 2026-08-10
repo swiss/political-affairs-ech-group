@@ -16,7 +16,7 @@ _Language proficiency of a person indicating the language and whether it is the 
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | language | 1 <br/> [String](String.md) | Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en").  |
 | is_correspondence | 0..1 <br/> [Boolean](Boolean.md) | Indicates if this is the preferred language.  |
 | is_native | 0..1 <br/> [Boolean](Boolean.md) | Indicates if this is the native language.  |

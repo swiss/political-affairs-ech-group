@@ -88,7 +88,7 @@ Name: actors-schema
 | [group_type_enum](group_type_enum.md) | Link to the controlled vocabulary for group types |
 | [groups](groups.md) | Collection of groups |
 | [interest_links](interest_links.md) | Collection of interest links |
-| [interest_type](interest_type.md) | Type of interest link (professional activity, political office, association) |
+| [interest_type](interest_type.md) | Type of interest link, following the categories the disclosure registers main... |
 | [is_active](is_active.md) | Indicates whether the information is currently valid |
 | [is_correspondence](is_correspondence.md) | Indicates if this is the preferred language |
 | [is_ex_officio](is_ex_officio.md) | Indicates whether the person holds the mandate on behalf of the public body t... |

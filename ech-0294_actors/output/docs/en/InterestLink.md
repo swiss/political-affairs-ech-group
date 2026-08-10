@@ -16,12 +16,12 @@ _An interest link (conflict of interest, political financing) of a person to an 
 ### Attribute
 
 | Name | Cardinality and Range | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | local_id | 0..1 <br/> [String](String.md) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | global_uri | 1 <br/> [Uriorcurie](Uriorcurie.md) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | person_reference | 1 <br/> [PersonReference](PersonReference.md) | Reference to a person with snapshot data at time of linking.  |
-| interest_type | 1 <br/> [InterestTypeEnum](InterestTypeEnum.md) | Type of interest link (professional activity, political office, association).  |
+| interest_type | 1 <br/> [InterestTypeEnum](InterestTypeEnum.md) | Type of interest link, following the categories the disclosure registers maintain (professional activity, seat on a governing body, mandate for an interest group, public mandate, membership).  |
 | organization_name | 0..1 <br/> [String](String.md) | Name of the organization or enterprise.  |
 | organization_uid | 0..1 <br/> [String](String.md) | UID of the organization from the federal UID register (uid.admin.ch), in the exchange format of eCH-0108: CHE followed by nine digits, without separators (e.g. CHE106063525). The last digit is a check digit calculated modulo 11. The dotted form CHE-106.063.525 is the presentation used by uid.admin.ch and is not recorded here.  |
 | organization_address | 0..1 <br/> [String](String.md) | Address of the organization.  |

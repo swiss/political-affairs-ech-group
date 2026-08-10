@@ -16,7 +16,7 @@ _Type de groupe (p. ex. parti, commission, parlement, département)._
 ### Attributs
 
 | Nom | Cardinalité et plage | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | group_type_enum | 1 <br/> [GroupTypeEnum](GroupTypeEnum.md) | Lien vers le vocabulaire contrôlé pour les types de groupes.  |
 | label | * <br/> [MultilingualValue](MultilingualValue.md) | Désignation du type telle que l'emploie l'organe qui la publie, avec la langue dans laquelle elle est publiée. Lorsqu'un organe publie la désignation en plusieurs langues, une entrée est saisie par langue.  |
 

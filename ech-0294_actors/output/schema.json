@@ -841,7 +841,7 @@
                 },
                 "interest_type": {
                     "$ref": "#/$defs/InterestTypeEnum",
-                    "description": "Type of interest link (professional activity, political office, association).\n"
+                    "description": "Type of interest link, following the categories the disclosure registers maintain (professional activity, seat on a governing body, mandate for an interest group, public mandate, membership).\n"
                 },
                 "is_active": {
                     "description": "Indicates whether the information is currently valid. Can be useful when this information is explicitly available.\n",

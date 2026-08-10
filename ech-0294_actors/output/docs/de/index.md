@@ -88,7 +88,7 @@ Name: actors-schema
 | [group_type_enum](group_type_enum.md) | Link zum kontrollierten Vokabular für Gruppentypen |
 | [groups](groups.md) | Sammlung von Gruppen |
 | [interest_links](interest_links.md) | Sammlung von Interessenbindungen |
-| [interest_type](interest_type.md) | Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein) |
+| [interest_type](interest_type.md) | Art der Interessenbindung, den Kategorien der Offenlegungsregister folgend (b... |
 | [is_active](is_active.md) | Gibt an, ob die Information aktuell gültig ist |
 | [is_correspondence](is_correspondence.md) | Gibt an, ob es sich um die bevorzugte Sprache handelt |
 | [is_ex_officio](is_ex_officio.md) | Gibt an, ob die Person das Mandat im Auftrag des Gemeinwesens wahrnimmt, dem ... |

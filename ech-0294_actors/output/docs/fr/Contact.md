@@ -16,7 +16,7 @@ _Informations de contact d'une personne indiquant un type (p. ex. e-mail, Linked
 ### Attributs
 
 | Nom | Cardinalité et plage | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | contact_type | 1 <br/> [ContactTypeEnum](ContactTypeEnum.md) | Type d'informations de contact.  |
 | value | 1 <br/> [String](String.md) | La valeur proprement dite d'une information, en plus d'autres attributs tels que le type, la langue, etc.  |
 | label | 0..1 <br/> [String](String.md) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |

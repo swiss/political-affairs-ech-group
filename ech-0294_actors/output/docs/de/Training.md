@@ -16,7 +16,7 @@ _Ausbildung oder Bildung einer Person mit Angabe eines Typs (z.B. Schulabschluss
 ### Attribute
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | training_type | 0..1 <br/> [TrainingTypeEnum](TrainingTypeEnum.md) | Typ der Ausbildung oder Bildung.  |
 | training_code | 0..1 <br/> [String](String.md) | ISCO-19 Code der Ausbildung oder Bildung.  |
 | value | 0..1 <br/> [String](String.md) | Der eigentliche Wert einer Information neben weiteren attributen wie Typ, Sprache, etc.  |

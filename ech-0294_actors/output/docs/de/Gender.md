@@ -16,7 +16,7 @@ _Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen G�
 ### Attribute
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | gender_code | 1 <br/> [GenderCodeEnum](GenderCodeEnum.md) | Geschlechtscode. Empfohlene Werte: male, female, non_binary.  |
 | label | 0..1 <br/> [String](String.md) | Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).  |
 | pronouns | * <br/> [String](String.md) | Von der Person verwendete Pronomen.  |

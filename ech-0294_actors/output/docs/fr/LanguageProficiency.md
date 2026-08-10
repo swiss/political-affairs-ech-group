@@ -16,7 +16,7 @@ _Compétences linguistiques d'une personne indiquant la langue et le fait qu'il 
 ### Attributs
 
 | Nom | Cardinalité et plage | Description |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 | language | 1 <br/> [String](String.md) | Code de langue au format ISO 639-1 (deux lettres minuscules, par ex. « de », « fr », « it », « en »).  |
 | is_correspondence | 0..1 <br/> [Boolean](Boolean.md) | Indique s'il s'agit de la langue préférée.  |
 | is_native | 0..1 <br/> [Boolean](Boolean.md) | Indique s'il s'agit de la langue maternelle.  |
