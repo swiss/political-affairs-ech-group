@@ -2,19 +2,19 @@
 
 # Appendix A – References & Bibliography
 
-The version stated is the one this standard was developed against.
+Where a version is stated, it is the one this standard was developed against.
 
 ## Standards of the "Political Affairs" specialist group
 
-The standards of the specialist group are developed jointly and reference one another. All of them currently carry the status "In Arbeit" (in progress; as of 10 August 2026); the version number 1.0.0 denotes the version being drafted, not an approved one.
+The standards of the specialist group are developed jointly and reference one another. All of them currently carry the status "In Arbeit" (in progress; as of 10 August 2026); no version is therefore stated.
 
 | | |
 |------------------|----------------------------------------------------------------------------------|
-|eCH-0292|eCH-0292: Meta-processes for political affairs, version 1.0.0 – shared data elements: [https://www.ech.ch/de/ech/ech-0292](https://www.ech.ch/de/ech/ech-0292)|
-|eCH-0293|eCH-0293: Public council operations, version 1.0.0: [https://www.ech.ch/de/ech/ech-0293](https://www.ech.ch/de/ech/ech-0293)|
-|eCH-0295|eCH-0295: Parliamentary affairs, version 1.0.0: [https://www.ech.ch/de/ech/ech-0295](https://www.ech.ch/de/ech/ech-0295)|
-|eCH-0296|eCH-0296: Legal acts and legislative texts, version 1.0.0: [https://www.ech.ch/de/ech/ech-0296](https://www.ech.ch/de/ech/ech-0296)|
-|eCH-0297|eCH-0297: Public consultations, version 1.0.0: [https://www.ech.ch/de/ech/ech-0297](https://www.ech.ch/de/ech/ech-0297)|
+|eCH-0292|eCH-0292: Meta-processes for political affairs – shared data elements: [https://www.ech.ch/de/ech/ech-0292](https://www.ech.ch/de/ech/ech-0292)|
+|eCH-0293|eCH-0293: Public council operations: [https://www.ech.ch/de/ech/ech-0293](https://www.ech.ch/de/ech/ech-0293)|
+|eCH-0295|eCH-0295: Parliamentary affairs: [https://www.ech.ch/de/ech/ech-0295](https://www.ech.ch/de/ech/ech-0295)|
+|eCH-0296|eCH-0296: Legal acts and legislative texts: [https://www.ech.ch/de/ech/ech-0296](https://www.ech.ch/de/ech/ech-0296)|
+|eCH-0297|eCH-0297: Public consultations: [https://www.ech.ch/de/ech/ech-0297](https://www.ech.ch/de/ech/ech-0297)|
 
 ## Further eCH standards
 

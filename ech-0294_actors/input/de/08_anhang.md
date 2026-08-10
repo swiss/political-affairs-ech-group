@@ -2,19 +2,19 @@
 
 # Anhang A – Referenzen & Bibliographie
 
-Angegeben ist jeweils die Version, gegen die dieser Standard erarbeitet wurde.
+Wo eine Version genannt ist, ist es diejenige, gegen die dieser Standard erarbeitet wurde.
 
 ## Standards der Fachgruppe „Politische Geschäfte"
 
-Die Standards der Fachgruppe entstehen gemeinsam und verweisen aufeinander. Sie stehen zurzeit alle im Status „In Arbeit" (Stand: 10. August 2026); die Versionsangabe 1.0.0 bezeichnet die in Erarbeitung stehende Fassung und nicht eine genehmigte.
+Die Standards der Fachgruppe entstehen gemeinsam und verweisen aufeinander. Sie stehen zurzeit alle im Status „In Arbeit" (Stand: 10. August 2026); eine Version ist deshalb nicht angegeben.
 
 | | |
 |------------------|----------------------------------------------------------------------------------|
-|eCH-0292|eCH-0292: Metaprozesse zu politischen Geschäften, Version 1.0.0 – gemeinsame Datenelemente: [https://www.ech.ch/de/ech/ech-0292](https://www.ech.ch/de/ech/ech-0292)|
-|eCH-0293|eCH-0293: Öffentlicher Ratsbetrieb, Version 1.0.0: [https://www.ech.ch/de/ech/ech-0293](https://www.ech.ch/de/ech/ech-0293)|
-|eCH-0295|eCH-0295: Parlamentarische Geschäfte, Version 1.0.0: [https://www.ech.ch/de/ech/ech-0295](https://www.ech.ch/de/ech/ech-0295)|
-|eCH-0296|eCH-0296: Erlasse und Gesetzestexte, Version 1.0.0: [https://www.ech.ch/de/ech/ech-0296](https://www.ech.ch/de/ech/ech-0296)|
-|eCH-0297|eCH-0297: Öffentliche Konsultationen, Version 1.0.0: [https://www.ech.ch/de/ech/ech-0297](https://www.ech.ch/de/ech/ech-0297)|
+|eCH-0292|eCH-0292: Metaprozesse zu politischen Geschäften – gemeinsame Datenelemente: [https://www.ech.ch/de/ech/ech-0292](https://www.ech.ch/de/ech/ech-0292)|
+|eCH-0293|eCH-0293: Öffentlicher Ratsbetrieb: [https://www.ech.ch/de/ech/ech-0293](https://www.ech.ch/de/ech/ech-0293)|
+|eCH-0295|eCH-0295: Parlamentarische Geschäfte: [https://www.ech.ch/de/ech/ech-0295](https://www.ech.ch/de/ech/ech-0295)|
+|eCH-0296|eCH-0296: Erlasse und Gesetzestexte: [https://www.ech.ch/de/ech/ech-0296](https://www.ech.ch/de/ech/ech-0296)|
+|eCH-0297|eCH-0297: Öffentliche Konsultationen: [https://www.ech.ch/de/ech/ech-0297](https://www.ech.ch/de/ech/ech-0297)|
 
 ## Weitere eCH-Standards
 
