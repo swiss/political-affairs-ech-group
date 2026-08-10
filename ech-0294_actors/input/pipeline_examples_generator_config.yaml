@@ -156,6 +156,14 @@ example_titles:
     de: Politisches Amt auf einer anderen föderalen Ebene
     fr: Mandat politique à un autre niveau fédéral
     en: Political office at another federal level
+  "act:il_quadranti_001":
+    de: Ernannter Sitz in einer kantonalen Kommission
+    fr: Siège nommé dans une commission cantonale
+    en: Appointed seat on a cantonal committee
+  "act:il_zanini_001":
+    de: Mandat als Vertretung der eigenen Gemeinde
+    fr: Mandat exercé comme représentation de sa propre commune
+    en: Mandate held as a delegate of the person's own commune
   "act:il_balaban_001":
     de: Verwaltungsratsmandat ohne UID und ohne Angabe zur Entschädigung
     fr: "Mandat d'administrateur sans IDE ni indication de rémunération"
@@ -171,14 +179,10 @@ example_titles:
     de: Eigene Gesellschaft, operativ geführt
     fr: "Société propre, dirigée à titre opérationnel"
     en: Own company, run operationally
-  "act:il_burkart_002":
-    de: Verwaltungsratsmandat in einer Holding
-    fr: "Mandat d'administrateur dans une holding"
-    en: Board mandate in a holding company
   "act:il_burkart_005":
-    de: Präsidium eines Wirtschaftsverbands
-    fr: "Présidence d'une association économique"
-    en: Presidency of a trade association
+    de: Verbandspräsidium — Gegenüber entscheidet, nicht die Funktion
+    fr: "Présidence de fédération — c'est l'interlocuteur qui décide, non la fonction"
+    en: Federation presidency — the counterpart decides, not the function
   "act:il_burkart_007":
     de: Stiftungsratsmandat mit UID der Organisation
     fr: "Mandat au conseil de fondation avec IDE de l'organisation"
