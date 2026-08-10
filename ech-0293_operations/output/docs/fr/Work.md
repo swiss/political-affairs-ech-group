@@ -28,7 +28,7 @@ _FRBR Work : le document abstrait en tant que tel, indépendamment d'une version
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Legislature](Legislature.md) | [documents](documents.md) | range | [Work](Work.md) |
 | [Session](Session.md) | [documents](documents.md) | range | [Work](Work.md) |

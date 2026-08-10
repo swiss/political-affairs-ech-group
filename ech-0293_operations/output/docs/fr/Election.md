@@ -47,7 +47,7 @@ _Une procédure d'élection visant à pourvoir des fonctions par des personnes._
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [elections](elections.md) | range | [Election](Election.md) |
 

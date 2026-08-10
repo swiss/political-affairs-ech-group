@@ -30,12 +30,7 @@ _A mixin class that provides slots for modeling events or occurrences with time 
 
 ### Mixin Usage
 
-| mixed into | description |
-| --- | --- |
-| [Legislature](Legislature.md) | Term of office of a parliament as a legislative assembly |
-| [Session](Session.md) | A parliamentary session that groups multiple meetings and spans a specific ti... |
-| [Meeting](Meeting.md) | A general meeting class used for Sessions, Comittee Meetings, individual sess... |
-| [AgendaItem](AgendaItem.md) | An agenda item of a meeting |
+[Legislature](Legislature.md), [Session](Session.md), [Meeting](Meeting.md), [AgendaItem](AgendaItem.md)
 
 
 

@@ -30,7 +30,7 @@ _FRBR Expression: a concrete language version of a Work._
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Work](Work.md) | [expressions](expressions.md) | range | [Expression](Expression.md) |
 

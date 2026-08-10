@@ -28,7 +28,7 @@ _FRBR Work: the abstract document as such, independent of a concrete language ve
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Legislature](Legislature.md) | [documents](documents.md) | range | [Work](Work.md) |
 | [Session](Session.md) | [documents](documents.md) | range | [Work](Work.md) |

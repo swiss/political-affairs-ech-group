@@ -26,7 +26,7 @@ _Additional vote counts when multiple options are presented (e.g., Zurich uses 5
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Voting](Voting.md) | [total_other](total_other.md) | range | [TotalOther](TotalOther.md) |
 

@@ -61,7 +61,7 @@ _Une classe générale de séance utilisée pour les sessions, les séances de c
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [meetings](meetings.md) | range | [Meeting](Meeting.md) |
 | [Session](Session.md) | [meetings](meetings.md) | range | [Meeting](Meeting.md) |

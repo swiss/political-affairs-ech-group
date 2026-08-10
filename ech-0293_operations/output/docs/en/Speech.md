@@ -46,7 +46,7 @@ _A speech or statement made during a meeting (also called Votum or speaker segme
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [speeches](speeches.md) | range | [Speech](Speech.md) |
 | [Protocol](Protocol.md) | [speeches](speeches.md) | range | [Speech](Speech.md) |

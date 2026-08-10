@@ -61,7 +61,7 @@ _Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessi
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [meetings](meetings.md) | range | [Meeting](Meeting.md) |
 | [Session](Session.md) | [meetings](meetings.md) | range | [Meeting](Meeting.md) |

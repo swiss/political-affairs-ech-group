@@ -45,7 +45,7 @@ _Term of office of a parliament as a legislative assembly. Usually lasts four ye
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [legislatures](legislatures.md) | range | [Legislature](Legislature.md) |
 

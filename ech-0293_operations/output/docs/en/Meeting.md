@@ -61,7 +61,7 @@ _A general meeting class used for Sessions, Comittee Meetings, individual sessio
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [meetings](meetings.md) | range | [Meeting](Meeting.md) |
 | [Session](Session.md) | [meetings](meetings.md) | range | [Meeting](Meeting.md) |

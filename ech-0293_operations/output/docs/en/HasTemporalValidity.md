@@ -25,8 +25,7 @@ _A mixin class that provides slots for modeling a temporal validity of informati
 
 ### Mixin Usage
 
-| mixed into | description |
-| --- | --- |
+
 
 
 

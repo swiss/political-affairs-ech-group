@@ -56,7 +56,7 @@ _Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen._
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [votings](votings.md) | range | [Voting](Voting.md) |
 | [Protocol](Protocol.md) | [votings](votings.md) | range | [Voting](Voting.md) |

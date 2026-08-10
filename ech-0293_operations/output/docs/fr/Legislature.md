@@ -45,7 +45,7 @@ _Durée du mandat d'un parlement en tant qu'assemblée législative. Elle est en
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [legislatures](legislatures.md) | range | [Legislature](Legislature.md) |
 

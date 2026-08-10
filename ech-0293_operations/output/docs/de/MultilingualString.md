@@ -26,7 +26,7 @@ _Ein String, der Text in mehreren Sprachen enthalten kann._
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Legislature](Legislature.md) | [name](name.md) | range | [MultilingualString](MultilingualString.md) |
 | [Session](Session.md) | [name](name.md) | range | [MultilingualString](MultilingualString.md) |

@@ -30,7 +30,7 @@ _FRBR Expression: eine konkrete Sprachfassung eines Works._
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Work](Work.md) | [expressions](expressions.md) | range | [Expression](Expression.md) |
 

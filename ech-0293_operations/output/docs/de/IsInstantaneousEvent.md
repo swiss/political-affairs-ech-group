@@ -26,8 +26,7 @@ _Eine Mixin-Klasse, die Slots für die Modellierung von instantanen Ereignissen 
 
 ### Mixin-Verwendung
 
-| mixed into | description |
-| --- | --- |
+
 
 
 

@@ -28,7 +28,7 @@ _Un segment de texte tel qu'un renvoi ou un intertitre dans un procès-verbal de
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Protocol](Protocol.md) | [text_segments](text_segments.md) | range | [TextSegment](TextSegment.md) |
 

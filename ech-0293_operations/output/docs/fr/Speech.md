@@ -46,7 +46,7 @@ _Une intervention prononcée au cours d'une séance (également appelée prise d
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [speeches](speeches.md) | range | [Speech](Speech.md) |
 | [Protocol](Protocol.md) | [speeches](speeches.md) | range | [Speech](Speech.md) |

@@ -56,7 +56,7 @@ _A voting procedure with individual votes and results._
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [votings](votings.md) | range | [Voting](Voting.md) |
 | [Protocol](Protocol.md) | [votings](votings.md) | range | [Voting](Voting.md) |

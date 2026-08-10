@@ -42,8 +42,7 @@ _Les classes d'étape concrètes ajoutent leurs propres slots spécifiques au ty
 
 ### Utilisation de mixin
 
-| mixed into | description |
-| --- | --- |
+
 
 
 

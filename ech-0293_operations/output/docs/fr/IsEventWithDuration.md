@@ -30,12 +30,7 @@ _Une classe mixin qui fournit des slots pour modéliser des événements ou occu
 
 ### Utilisation de mixin
 
-| mixed into | description |
-| --- | --- |
-| [Legislature](Legislature.md) | Durée du mandat d'un parlement en tant qu'assemblée législative |
-| [Session](Session.md) | Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p... |
-| [Meeting](Meeting.md) | Une classe générale de séance utilisée pour les sessions, les séances de comm... |
-| [AgendaItem](AgendaItem.md) | Un point de l'ordre du jour d'une séance |
+[Legislature](Legislature.md), [Session](Session.md), [Meeting](Meeting.md), [AgendaItem](AgendaItem.md)
 
 
 

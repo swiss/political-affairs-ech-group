@@ -25,8 +25,7 @@ _Une classe mixin qui fournit des slots pour modéliser la validité temporelle 
 
 ### Utilisation de mixin
 
-| mixed into | description |
-| --- | --- |
+
 
 
 

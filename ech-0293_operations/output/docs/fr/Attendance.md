@@ -38,7 +38,7 @@ _Liste de présence agrégée pour une séance (nombre de membres présents, abs
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [attendances](attendances.md) | range | [Attendance](Attendance.md) |
 | [IndividualAttendance](IndividualAttendance.md) | [parent_attendance](parent_attendance.md) | range | [Attendance](Attendance.md) |

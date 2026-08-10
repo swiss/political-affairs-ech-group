@@ -28,7 +28,7 @@ _FRBR Manifestation: eine konkrete Dateiform einer Expression, über eine URL ad
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Expression](Expression.md) | [manifestations](manifestations.md) | range | [Manifestation](Manifestation.md) |
 

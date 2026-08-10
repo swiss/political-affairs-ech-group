@@ -28,7 +28,7 @@ _FRBR Work: das abstrakte Dokument als solches, unabhängig von einer konkreten 
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Legislature](Legislature.md) | [documents](documents.md) | range | [Work](Work.md) |
 | [Session](Session.md) | [documents](documents.md) | range | [Work](Work.md) |

@@ -49,7 +49,7 @@ _Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [sessions](sessions.md) | range | [Session](Session.md) |
 

@@ -158,7 +158,7 @@ The slot **documents** allows relevant documents (e.g. member directories of the
 
 
 
-## Class: Legislature 
+## Class: Legislature []{#Legislature}
 
 
 _Term of office of a parliament as a legislative assembly. Usually lasts four years._
@@ -175,27 +175,27 @@ _Term of office of a parliament as a legislative assembly. Usually lasts four ye
 
 | Name | Cardinality and Range | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| administrative_id | 0..1 <br/> [String](#String) | Administrative ID of the legislative body, such as a municipality, canton, or country.  |
+| local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: HasIdentification |
+| global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: HasIdentification |
+| wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: HasIdentification |
+| administrative_id | 0..1 <br/> String | Administrative ID of the legislative body, such as a municipality, canton, or country.  |
 | name | * <br/> [MultilingualString](#MultilingualString) | Multilingual full designation.  |
-| description | 0..1 <br/> [String](#String) | Descriptive text of the element.  |
-| landing_page | 0..1 <br/> [String](#String) | URL providing further information.  |
-| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
-| documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity.  |
-| date_begin_actual | 0..1 <br/> [Date](#Date) | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| datetime_begin_actual | 0..1 <br/> [Datetime](#Datetime) | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| date_begin_planned | 0..1 <br/> [Date](#Date) | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| datetime_begin_planned | 0..1 <br/> [Datetime](#Datetime) | The planned start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| date_end_actual | 0..1 <br/> [Date](#Date) | The actual end date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| datetime_end_actual | 0..1 <br/> [Datetime](#Datetime) | The actual end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| date_end_planned | 0..1 <br/> [Date](#Date) | The planned end date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| datetime_end_planned | 0..1 <br/> [Datetime](#Datetime) | The planned end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| description | 0..1 <br/> String | Descriptive text of the element.  |
+| landing_page | 0..1 <br/> String | URL providing further information.  |
+| actor_id | 0..1 <br/> GroupReference | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
+| documents | * <br/> Work | List of documents (FRBR Works) linked to the entity.  |
+| date_begin_actual | 0..1 <br/> Date | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| datetime_begin_actual | 0..1 <br/> Datetime | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| date_begin_planned | 0..1 <br/> Date | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| datetime_begin_planned | 0..1 <br/> Datetime | The planned start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| date_end_actual | 0..1 <br/> Date | The actual end date of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| datetime_end_actual | 0..1 <br/> Datetime | The actual end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| date_end_planned | 0..1 <br/> Date | The planned end date of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| datetime_end_planned | 0..1 <br/> Datetime | The planned end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| date_created | 0..1 <br/> Date | The date when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_created | 0..1 <br/> Datetime | The date and time when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| date_modified | 0..1 <br/> Date | The date when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_modified | 0..1 <br/> Datetime | The date and time when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
 
 
 
@@ -203,9 +203,9 @@ _Term of office of a parliament as a legislative assembly. Usually lasts four ye
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
-| [Container](#Container) | [legislatures](#legislatures) | range | [Legislature](#Legislature) |
+| [Container](#Container) | legislatures | range | [Legislature](#Legislature) |
 
 
 
@@ -293,7 +293,7 @@ The standard is deliberately flexible in order to reflect different forms of org
 
 
 
-## Class: Session 
+## Class: Session []{#Session}
 
 
 _A parliamentary session that groups multiple meetings and spans a specific time period._
@@ -310,31 +310,31 @@ _A parliamentary session that groups multiple meetings and spans a specific time
 
 | Name | Cardinality and Range | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| body_key | 0..1 <br/> [String](#String) | Key identifying the political body or jurisdiction (e.g., BE for Bern, CHE for Switzerland).  |
+| local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: HasIdentification |
+| global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: HasIdentification |
+| wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: HasIdentification |
+| body_key | 0..1 <br/> String | Key identifying the political body or jurisdiction (e.g., BE for Bern, CHE for Switzerland).  |
 | name | * <br/> [MultilingualString](#MultilingualString) | Multilingual full designation.  |
-| number | 0..1 <br/> [String](#String) | Sequential number, e.g. within the legislature, the session or the year.  |
-| sequential_number | 0..1 <br/> [Integer](#Integer) | Sequential number of the meeting, used for ordering.  |
-| position | 0..1 <br/> [String](#String) | Integer position within the superordinate sequence.  |
-| meeting_abbreviation | 0..1 <br/> [String](#String) | Short designation of the session or meeting (e.g. "FS24" for the 2024 spring session).  |
+| number | 0..1 <br/> String | Sequential number, e.g. within the legislature, the session or the year.  |
+| sequential_number | 0..1 <br/> Integer | Sequential number of the meeting, used for ordering.  |
+| position | 0..1 <br/> String | Integer position within the superordinate sequence.  |
+| meeting_abbreviation | 0..1 <br/> String | Short designation of the session or meeting (e.g. "FS24" for the 2024 spring session).  |
 | url | * <br/> [MultilingualString](#MultilingualString) | Landing page or further web address, multilingual.  |
-| parent_legislature | 0..1 <br/> [String](#String) | The legislative body in which the meeting is based.  |
+| parent_legislature | 0..1 <br/> String | The legislative body in which the meeting is based.  |
 | meetings | * <br/> [Meeting](#Meeting) | Collection of meeting records.  |
-| documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity.  |
-| date_begin_actual | 0..1 <br/> [Date](#Date) | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| datetime_begin_actual | 0..1 <br/> [Datetime](#Datetime) | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| date_begin_planned | 0..1 <br/> [Date](#Date) | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| datetime_begin_planned | 0..1 <br/> [Datetime](#Datetime) | The planned start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| date_end_actual | 0..1 <br/> [Date](#Date) | The actual end date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| datetime_end_actual | 0..1 <br/> [Datetime](#Datetime) | The actual end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| date_end_planned | 0..1 <br/> [Date](#Date) | The planned end date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| datetime_end_planned | 0..1 <br/> [Datetime](#Datetime) | The planned end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| documents | * <br/> Work | List of documents (FRBR Works) linked to the entity.  |
+| date_begin_actual | 0..1 <br/> Date | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| datetime_begin_actual | 0..1 <br/> Datetime | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| date_begin_planned | 0..1 <br/> Date | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| datetime_begin_planned | 0..1 <br/> Datetime | The planned start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| date_end_actual | 0..1 <br/> Date | The actual end date of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| datetime_end_actual | 0..1 <br/> Datetime | The actual end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| date_end_planned | 0..1 <br/> Date | The planned end date of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| datetime_end_planned | 0..1 <br/> Datetime | The planned end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| date_created | 0..1 <br/> Date | The date when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_created | 0..1 <br/> Datetime | The date and time when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| date_modified | 0..1 <br/> Date | The date when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_modified | 0..1 <br/> Datetime | The date and time when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
 
 
 
@@ -342,9 +342,9 @@ _A parliamentary session that groups multiple meetings and spans a specific time
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
-| [Container](#Container) | [sessions](#sessions) | range | [Session](#Session) |
+| [Container](#Container) | sessions | range | [Session](#Session) |
 
 
 
@@ -583,7 +583,7 @@ A meeting connects various elements of parliamentary operations:
 
 
 
-## Class: Meeting 
+## Class: Meeting []{#Meeting}
 
 
 _A general meeting class used for Sessions, Comittee Meetings, individual session Sittings and other various Meetings._
@@ -600,43 +600,43 @@ _A general meeting class used for Sessions, Comittee Meetings, individual sessio
 
 | Name | Cardinality and Range | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| body_key | 0..1 <br/> [String](#String) | Key identifying the political body or jurisdiction (e.g., BE for Bern, CHE for Switzerland).  |
+| local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: HasIdentification |
+| global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: HasIdentification |
+| wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: HasIdentification |
+| body_key | 0..1 <br/> String | Key identifying the political body or jurisdiction (e.g., BE for Bern, CHE for Switzerland).  |
 | meeting_type | 0..1 <br/> [MeetingTypeEnum](#MeetingTypeEnum) | Type of the meeting, e.g. session, committee, sitting, various.  |
-| administrative_id | 0..1 <br/> [String](#String) | Administrative ID of the legislative body, such as a municipality, canton, or country.  |
+| administrative_id | 0..1 <br/> String | Administrative ID of the legislative body, such as a municipality, canton, or country.  |
 | name | * <br/> [MultilingualString](#MultilingualString) | Multilingual full designation.  |
 | url | * <br/> [MultilingualString](#MultilingualString) | Landing page or further web address, multilingual.  |
-| group_name | 0..1 <br/> [String](#String) | Name of the group or body.  |
-| group_id | 0..1 <br/> [GroupReference](#GroupReference) | Reference to the group or body (lightweight snapshot at time of linking).  |
-| number | 0..1 <br/> [String](#String) | Sequential number, e.g. within the legislature, the session or the year.  |
-| landing_page | 0..1 <br/> [String](#String) | URL providing further information.  |
-| sequential_number | 0..1 <br/> [Integer](#Integer) | Sequential number of the meeting, used for ordering.  |
-| position | 0..1 <br/> [String](#String) | Integer position within the superordinate sequence.  |
-| meeting_abbreviation | 0..1 <br/> [String](#String) | Short designation of the session or meeting (e.g. "FS24" for the 2024 spring session).  |
-| actor_name | 0..1 <br/> [String](#String) | Name of the political body (e.g., Nationalrat).  |
-| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
+| group_name | 0..1 <br/> String | Name of the group or body.  |
+| group_id | 0..1 <br/> GroupReference | Reference to the group or body (lightweight snapshot at time of linking).  |
+| number | 0..1 <br/> String | Sequential number, e.g. within the legislature, the session or the year.  |
+| landing_page | 0..1 <br/> String | URL providing further information.  |
+| sequential_number | 0..1 <br/> Integer | Sequential number of the meeting, used for ordering.  |
+| position | 0..1 <br/> String | Integer position within the superordinate sequence.  |
+| meeting_abbreviation | 0..1 <br/> String | Short designation of the session or meeting (e.g. "FS24" for the 2024 spring session).  |
+| actor_name | 0..1 <br/> String | Name of the political body (e.g., Nationalrat).  |
+| actor_id | 0..1 <br/> GroupReference | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
 | state | 0..1 <br/> [StateEnum](#StateEnum) | Current state of the meeting (planned, canceled, postponed).  |
-| state_name | 0..1 <br/> [String](#String) | Custom state description for the meeting.  |
-| description | 0..1 <br/> [String](#String) | Descriptive text of the element.  |
-| location | 0..1 <br/> [String](#String) | Place where the meeting is held (physical room, video conference or hybrid format).  |
-| parent_meeting | 0..1 <br/> [String](#String) | The linked meeting ID that groups the current meeting.  |
-| parent_legislature | 0..1 <br/> [String](#String) | The legislative body in which the meeting is based.  |
-| documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity.  |
+| state_name | 0..1 <br/> String | Custom state description for the meeting.  |
+| description | 0..1 <br/> String | Descriptive text of the element.  |
+| location | 0..1 <br/> String | Place where the meeting is held (physical room, video conference or hybrid format).  |
+| parent_meeting | 0..1 <br/> String | The linked meeting ID that groups the current meeting.  |
+| parent_legislature | 0..1 <br/> String | The legislative body in which the meeting is based.  |
+| documents | * <br/> Work | List of documents (FRBR Works) linked to the entity.  |
 | protocol_ref | 0..1 <br/> [Protocol](#Protocol) | The protocol (minutes) of this meeting, recorded after the meeting.  |
-| date_begin_actual | 0..1 <br/> [Date](#Date) | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| datetime_begin_actual | 0..1 <br/> [Datetime](#Datetime) | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| date_begin_planned | 0..1 <br/> [Date](#Date) | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| datetime_begin_planned | 0..1 <br/> [Datetime](#Datetime) | The planned start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| date_end_actual | 0..1 <br/> [Date](#Date) | The actual end date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| datetime_end_actual | 0..1 <br/> [Datetime](#Datetime) | The actual end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| date_end_planned | 0..1 <br/> [Date](#Date) | The planned end date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| datetime_end_planned | 0..1 <br/> [Datetime](#Datetime) | The planned end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_begin_actual | 0..1 <br/> Date | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| datetime_begin_actual | 0..1 <br/> Datetime | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| date_begin_planned | 0..1 <br/> Date | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| datetime_begin_planned | 0..1 <br/> Datetime | The planned start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| date_end_actual | 0..1 <br/> Date | The actual end date of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| datetime_end_actual | 0..1 <br/> Datetime | The actual end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| date_end_planned | 0..1 <br/> Date | The planned end date of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| datetime_end_planned | 0..1 <br/> Datetime | The planned end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| date_created | 0..1 <br/> Date | The date when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_created | 0..1 <br/> Datetime | The date and time when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| date_modified | 0..1 <br/> Date | The date when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_modified | 0..1 <br/> Datetime | The date and time when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
 
 
 
@@ -644,10 +644,10 @@ _A general meeting class used for Sessions, Comittee Meetings, individual sessio
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
-| [Container](#Container) | [meetings](#meetings) | range | [Meeting](#Meeting) |
-| [Session](#Session) | [meetings](#meetings) | range | [Meeting](#Meeting) |
+| [Container](#Container) | meetings | range | [Meeting](#Meeting) |
+| [Session](#Session) | meetings | range | [Meeting](#Meeting) |
 
 
 
@@ -855,7 +855,7 @@ meetings:
 
 </div>
 
-## Enum: MeetingTypeEnum 
+## Enum: MeetingTypeEnum []{#MeetingTypeEnum}
 
 
 
@@ -889,7 +889,7 @@ URI: [ops:MeetingTypeEnum](https://ch.paf.link/schema/operations/MeetingTypeEnum
 
 </div>
 
-## Enum: StateEnum 
+## Enum: StateEnum []{#StateEnum}
 
 
 
@@ -1029,7 +1029,7 @@ The attendance entities enable:
 
 
 
-## Class: Attendance 
+## Class: Attendance []{#Attendance}
 
 
 _Aggregated attendance record for a meeting (number of members present, absent, excused)._
@@ -1046,20 +1046,20 @@ _Aggregated attendance record for a meeting (number of members present, absent, 
 
 | Name | Cardinality and Range | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| parent_meeting | 0..1 <br/> [String](#String) | The linked meeting ID that groups the current meeting.  |
-| datetime_begin | 0..1 <br/> [Datetime](#Datetime) | The date and time when the meeting or voting begins.  |
-| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
-| total_count | 0..1 <br/> [Integer](#Integer) | Total number of members of the body (reference value for quorum calculations).  |
-| total_present | 0..1 <br/> [Integer](#Integer) | Total number of members present.  |
-| total_absent | 0..1 <br/> [Integer](#Integer) | Total number of absent members. Distinction between absent/excused absent - presence is tracked on attendance list.  |
-| total_excused | 0..1 <br/> [Integer](#Integer) | Total number of excused absences.  |
-| date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: HasIdentification |
+| global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: HasIdentification |
+| wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: HasIdentification |
+| parent_meeting | 0..1 <br/> String | The linked meeting ID that groups the current meeting.  |
+| datetime_begin | 0..1 <br/> Datetime | The date and time when the meeting or voting begins.  |
+| actor_id | 0..1 <br/> GroupReference | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
+| total_count | 0..1 <br/> Integer | Total number of members of the body (reference value for quorum calculations).  |
+| total_present | 0..1 <br/> Integer | Total number of members present.  |
+| total_absent | 0..1 <br/> Integer | Total number of absent members. Distinction between absent/excused absent - presence is tracked on attendance list.  |
+| total_excused | 0..1 <br/> Integer | Total number of excused absences.  |
+| date_created | 0..1 <br/> Date | The date when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_created | 0..1 <br/> Datetime | The date and time when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| date_modified | 0..1 <br/> Date | The date when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_modified | 0..1 <br/> Datetime | The date and time when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
 
 
 
@@ -1067,10 +1067,10 @@ _Aggregated attendance record for a meeting (number of members present, absent, 
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
-| [Container](#Container) | [attendances](#attendances) | range | [Attendance](#Attendance) |
-| [IndividualAttendance](#IndividualAttendance) | [parent_attendance](#parent_attendance) | range | [Attendance](#Attendance) |
+| [Container](#Container) | attendances | range | [Attendance](#Attendance) |
+| [IndividualAttendance](#IndividualAttendance) | parent_attendance | range | [Attendance](#Attendance) |
 
 
 
@@ -1094,7 +1094,7 @@ _Aggregated attendance record for a meeting (number of members present, absent, 
 
 
 
-## Class: IndividualAttendance 
+## Class: IndividualAttendance []{#IndividualAttendance}
 
 
 _Individual attendance record for a specific person at a meeting (linked via the parent Attendance aggregate)._
@@ -1111,17 +1111,17 @@ _Individual attendance record for a specific person at a meeting (linked via the
 
 | Name | Cardinality and Range | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: HasIdentification |
+| global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: HasIdentification |
+| wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: HasIdentification |
 | parent_attendance | 0..1 <br/> [Attendance](#Attendance) | The Attendance aggregate this individual attendance record belongs to.  |
-| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Reference to the acting person (lightweight snapshot at time of linking).  |
+| actor_id | 0..1 <br/> PersonReference | Reference to the acting person (lightweight snapshot at time of linking).  |
 | attendance_type | 0..1 <br/> [AttendanceTypeEnum](#AttendanceTypeEnum) | Type of individual attendance.  |
 | reason | * <br/> [MultilingualString](#MultilingualString) | Reason for absence or lateness (free-text, multilingual).  |
-| date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_created | 0..1 <br/> Date | The date when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_created | 0..1 <br/> Datetime | The date and time when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| date_modified | 0..1 <br/> Date | The date when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_modified | 0..1 <br/> Datetime | The date and time when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
 
 
 
@@ -1129,9 +1129,9 @@ _Individual attendance record for a specific person at a meeting (linked via the
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
-| [Container](#Container) | [individual_attendances](#individual_attendances) | range | [IndividualAttendance](#IndividualAttendance) |
+| [Container](#Container) | individual_attendances | range | [IndividualAttendance](#IndividualAttendance) |
 
 
 
@@ -1153,7 +1153,7 @@ _Individual attendance record for a specific person at a meeting (linked via the
 
 </div>
 
-## Enum: AttendanceTypeEnum 
+## Enum: AttendanceTypeEnum []{#AttendanceTypeEnum}
 
 
 
@@ -1342,7 +1342,7 @@ An AgendaItem is the central link between:
 
 
 
-## Class: AgendaItem 
+## Class: AgendaItem []{#AgendaItem}
 
 
 _An agenda item of a meeting._
@@ -1359,38 +1359,38 @@ _An agenda item of a meeting._
 
 | Name | Cardinality and Range | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| parent_meeting | 0..1 <br/> [String](#String) | The linked meeting ID that groups the current meeting.  |
+| local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: HasIdentification |
+| global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: HasIdentification |
+| wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: HasIdentification |
+| parent_meeting | 0..1 <br/> String | The linked meeting ID that groups the current meeting.  |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Type of agenda item, distinguishing individual items from groups.  |
-| agenda_item_number | 0..1 <br/> [String](#String) | Sequential number of the agenda item (string type to support roman numerals).  |
-| agenda_item_position | 0..1 <br/> [Integer](#Integer) | Integer position of the agenda item in the meeting sequence.  |
-| leading_actor_id | 0..1 <br/> [String](#String) | The leading department for the agenda item.  |
-| speaking_actor_id | 0..1 <br/> [String](#String) | The speaker or head of the department for the agenda item.  |
+| agenda_item_number | 0..1 <br/> String | Sequential number of the agenda item (string type to support roman numerals).  |
+| agenda_item_position | 0..1 <br/> Integer | Integer position of the agenda item in the meeting sequence.  |
+| leading_actor_id | 0..1 <br/> String | The leading department for the agenda item.  |
+| speaking_actor_id | 0..1 <br/> String | The speaker or head of the department for the agenda item.  |
 | agenda_item_title | * <br/> [MultilingualString](#MultilingualString) | Title of the agenda item.  |
-| affair_id | 0..1 <br/> [String](#String) | The connection to the affairs (business items) of the agenda item.  |
+| affair_id | 0..1 <br/> String | The connection to the affairs (business items) of the agenda item.  |
 | agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Subtitle or detailed description of the agenda item.  |
-| state_id | 0..1 <br/> [String](#String) | State identifier (reference to state enum or custom state).  |
-| state_name | 0..1 <br/> [String](#String) | Custom state description for the meeting.  |
-| landing_page | 0..1 <br/> [String](#String) | URL providing further information.  |
+| state_id | 0..1 <br/> String | State identifier (reference to state enum or custom state).  |
+| state_name | 0..1 <br/> String | Custom state description for the meeting.  |
+| landing_page | 0..1 <br/> String | URL providing further information.  |
 | url | * <br/> [MultilingualString](#MultilingualString) | Landing page or further web address, multilingual.  |
-| agenda_item_category | 0..1 <br/> [String](#String) | Category for grouped agenda items (e.g., introduction, by department, technical agenda items).  |
-| parent_agenda_item | 0..1 <br/> [String](#String) | If needed, this slot builds a hierarchy of agenda items.  |
+| agenda_item_category | 0..1 <br/> String | Category for grouped agenda items (e.g., introduction, by department, technical agenda items).  |
+| parent_agenda_item | 0..1 <br/> String | If needed, this slot builds a hierarchy of agenda items.  |
 | has_resolution | 0..1 <br/> [Resolution](#Resolution) | The resolution or decision taken on this agenda item.  |
-| documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity.  |
-| date_begin_actual | 0..1 <br/> [Date](#Date) | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| datetime_begin_actual | 0..1 <br/> [Datetime](#Datetime) | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| date_begin_planned | 0..1 <br/> [Date](#Date) | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| datetime_begin_planned | 0..1 <br/> [Datetime](#Datetime) | The planned start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| date_end_actual | 0..1 <br/> [Date](#Date) | The actual end date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| datetime_end_actual | 0..1 <br/> [Datetime](#Datetime) | The actual end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| date_end_planned | 0..1 <br/> [Date](#Date) | The planned end date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| datetime_end_planned | 0..1 <br/> [Datetime](#Datetime) | The planned end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| documents | * <br/> Work | List of documents (FRBR Works) linked to the entity.  |
+| date_begin_actual | 0..1 <br/> Date | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| datetime_begin_actual | 0..1 <br/> Datetime | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| date_begin_planned | 0..1 <br/> Date | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| datetime_begin_planned | 0..1 <br/> Datetime | The planned start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| date_end_actual | 0..1 <br/> Date | The actual end date of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| datetime_end_actual | 0..1 <br/> Datetime | The actual end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| date_end_planned | 0..1 <br/> Date | The planned end date of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| datetime_end_planned | 0..1 <br/> Datetime | The planned end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| date_created | 0..1 <br/> Date | The date when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_created | 0..1 <br/> Datetime | The date and time when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| date_modified | 0..1 <br/> Date | The date when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_modified | 0..1 <br/> Datetime | The date and time when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
 
 
 
@@ -1398,10 +1398,10 @@ _An agenda item of a meeting._
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
-| [Container](#Container) | [agenda_items](#agenda_items) | range | [AgendaItem](#AgendaItem) |
-| [JointDebate](#JointDebate) | [agenda_items](#agenda_items) | range | [AgendaItem](#AgendaItem) |
+| [Container](#Container) | agenda_items | range | [AgendaItem](#AgendaItem) |
+| [JointDebate](#JointDebate) | agenda_items | range | [AgendaItem](#AgendaItem) |
 
 
 
@@ -1804,7 +1804,7 @@ agenda_items:
 
 </div>
 
-## Enum: AgendaItemTypeEnum 
+## Enum: AgendaItemTypeEnum []{#AgendaItemTypeEnum}
 
 
 
@@ -1853,7 +1853,7 @@ Meeting
 
 
 
-## Class: Protocol 
+## Class: Protocol []{#Protocol}
 
 
 _The minutes of a meeting, recorded after the meeting. A wrapper container bundling the actually handled agenda items (protocol_items), votings, speeches, verbatim text segments and linked documents._
@@ -1870,19 +1870,19 @@ _The minutes of a meeting, recorded after the meeting. A wrapper container bundl
 
 | Name | Cardinality and Range | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| parent_meeting | 0..1 <br/> [String](#String) | The linked meeting ID that groups the current meeting.  |
+| local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: HasIdentification |
+| global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: HasIdentification |
+| wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: HasIdentification |
+| parent_meeting | 0..1 <br/> String | The linked meeting ID that groups the current meeting.  |
 | protocol_items | * <br/> [ProtocolItem](#ProtocolItem) | Agenda items as actually recorded in the protocol.  |
 | votings | * <br/> [Voting](#Voting) | Collection of voting records.  |
 | speeches | * <br/> [Speech](#Speech) | Collection of speech records.  |
 | text_segments | * <br/> [TextSegment](#TextSegment) | Collection of text segments (e.g. verbatim protocol).  |
-| documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity.  |
-| date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| documents | * <br/> Work | List of documents (FRBR Works) linked to the entity.  |
+| date_created | 0..1 <br/> Date | The date when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_created | 0..1 <br/> Datetime | The date and time when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| date_modified | 0..1 <br/> Date | The date when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_modified | 0..1 <br/> Datetime | The date and time when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
 
 
 
@@ -1890,10 +1890,10 @@ _The minutes of a meeting, recorded after the meeting. A wrapper container bundl
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
-| [Container](#Container) | [protocols](#protocols) | range | [Protocol](#Protocol) |
-| [Meeting](#Meeting) | [protocol_ref](#protocol_ref) | range | [Protocol](#Protocol) |
+| [Container](#Container) | protocols | range | [Protocol](#Protocol) |
+| [Meeting](#Meeting) | protocol_ref | range | [Protocol](#Protocol) |
 
 
 
@@ -1921,7 +1921,7 @@ _The minutes of a meeting, recorded after the meeting. A wrapper container bundl
 
 
 
-## Class: ProtocolItem 
+## Class: ProtocolItem []{#ProtocolItem}
 
 
 _An agenda item as actually recorded in the protocol._
@@ -1938,38 +1938,38 @@ _An agenda item as actually recorded in the protocol._
 
 | Name | Cardinality and Range | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| parent_meeting | 0..1 <br/> [String](#String) | The linked meeting ID that groups the current meeting. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: HasIdentification |
+| global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: HasIdentification |
+| wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: HasIdentification |
+| parent_meeting | 0..1 <br/> String | The linked meeting ID that groups the current meeting. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Type of agenda item, distinguishing individual items from groups. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
-| agenda_item_number | 0..1 <br/> [String](#String) | Sequential number of the agenda item (string type to support roman numerals). <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
-| agenda_item_position | 0..1 <br/> [Integer](#Integer) | Integer position of the agenda item in the meeting sequence. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
-| leading_actor_id | 0..1 <br/> [String](#String) | The leading department for the agenda item. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
-| speaking_actor_id | 0..1 <br/> [String](#String) | The speaker or head of the department for the agenda item. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| agenda_item_number | 0..1 <br/> String | Sequential number of the agenda item (string type to support roman numerals). <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| agenda_item_position | 0..1 <br/> Integer | Integer position of the agenda item in the meeting sequence. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| leading_actor_id | 0..1 <br/> String | The leading department for the agenda item. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| speaking_actor_id | 0..1 <br/> String | The speaker or head of the department for the agenda item. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
 | agenda_item_title | * <br/> [MultilingualString](#MultilingualString) | Title of the agenda item. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
-| affair_id | 0..1 <br/> [String](#String) | The connection to the affairs (business items) of the agenda item. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| affair_id | 0..1 <br/> String | The connection to the affairs (business items) of the agenda item. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
 | agenda_item_description | * <br/> [MultilingualString](#MultilingualString) | Subtitle or detailed description of the agenda item. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
-| state_id | 0..1 <br/> [String](#String) | State identifier (reference to state enum or custom state). <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
-| state_name | 0..1 <br/> [String](#String) | Custom state description for the meeting. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
-| landing_page | 0..1 <br/> [String](#String) | URL providing further information. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| state_id | 0..1 <br/> String | State identifier (reference to state enum or custom state). <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| state_name | 0..1 <br/> String | Custom state description for the meeting. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| landing_page | 0..1 <br/> String | URL providing further information. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
 | url | * <br/> [MultilingualString](#MultilingualString) | Landing page or further web address, multilingual. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
-| agenda_item_category | 0..1 <br/> [String](#String) | Category for grouped agenda items (e.g., introduction, by department, technical agenda items). <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
-| parent_agenda_item | 0..1 <br/> [String](#String) | If needed, this slot builds a hierarchy of agenda items. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| agenda_item_category | 0..1 <br/> String | Category for grouped agenda items (e.g., introduction, by department, technical agenda items). <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| parent_agenda_item | 0..1 <br/> String | If needed, this slot builds a hierarchy of agenda items. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
 | has_resolution | 0..1 <br/> [Resolution](#Resolution) | The resolution or decision taken on this agenda item. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
-| documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
-| date_begin_actual | 0..1 <br/> [Date](#Date) | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| datetime_begin_actual | 0..1 <br/> [Datetime](#Datetime) | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| date_begin_planned | 0..1 <br/> [Date](#Date) | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| datetime_begin_planned | 0..1 <br/> [Datetime](#Datetime) | The planned start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| date_end_actual | 0..1 <br/> [Date](#Date) | The actual end date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| datetime_end_actual | 0..1 <br/> [Datetime](#Datetime) | The actual end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| date_end_planned | 0..1 <br/> [Date](#Date) | The planned end date of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| datetime_end_planned | 0..1 <br/> [Datetime](#Datetime) | The planned end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: [IsEventWithDuration](#IsEventWithDuration) |
-| date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| documents | * <br/> Work | List of documents (FRBR Works) linked to the entity. <br/><br/>Inheritance: [AgendaItem](#AgendaItem) |
+| date_begin_actual | 0..1 <br/> Date | The actual start date of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| datetime_begin_actual | 0..1 <br/> Datetime | The actual start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| date_begin_planned | 0..1 <br/> Date | The planned start date of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| datetime_begin_planned | 0..1 <br/> Datetime | The planned start date and time of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| date_end_actual | 0..1 <br/> Date | The actual end date of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| datetime_end_actual | 0..1 <br/> Datetime | The actual end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| date_end_planned | 0..1 <br/> Date | The planned end date of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| datetime_end_planned | 0..1 <br/> Datetime | The planned end date and time of an event or occurrence with time duration. <br/><br/>Inheritance: IsEventWithDuration |
+| date_created | 0..1 <br/> Date | The date when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_created | 0..1 <br/> Datetime | The date and time when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| date_modified | 0..1 <br/> Date | The date when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_modified | 0..1 <br/> Datetime | The date and time when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
 
 
 
@@ -1977,9 +1977,9 @@ _An agenda item as actually recorded in the protocol._
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
-| [Protocol](#Protocol) | [protocol_items](#protocol_items) | range | [ProtocolItem](#ProtocolItem) |
+| [Protocol](#Protocol) | protocol_items | range | [ProtocolItem](#ProtocolItem) |
 
 
 
@@ -2009,7 +2009,7 @@ _An agenda item as actually recorded in the protocol._
 
 
 
-## Class: JointDebate 
+## Class: JointDebate []{#JointDebate}
 
 
 _Agenda Items which are debated together._
@@ -2222,7 +2222,7 @@ In multilingual parliaments (CH, BE, etc.) decision texts have to be recorded in
 
 
 
-## Class: Resolution 
+## Class: Resolution []{#Resolution}
 
 
 _A resolution or decision taken on an agenda item, including voting procedures._
@@ -2240,9 +2240,9 @@ _A resolution or decision taken on an agenda item, including voting procedures._
 | Name | Cardinality and Range | Description |
 |------------------------|----------------------|------------------------------------------------------|
 | resolution_type | 0..1 <br/> [ResolutionTypeEnum](#ResolutionTypeEnum) | Type of resolution taken on the agenda item.  |
-| type_label | 0..1 <br/> [String](#String) | Custom type label when standard type values don't apply.  |
-| vote_procedures | * <br/> [String](#String) | Procedures for voting, such as secret ballot or open vote.  |
-| documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity.  |
+| type_label | 0..1 <br/> String | Custom type label when standard type values don't apply.  |
+| vote_procedures | * <br/> String | Procedures for voting, such as secret ballot or open vote.  |
+| documents | * <br/> Work | List of documents (FRBR Works) linked to the entity.  |
 
 
 
@@ -2250,11 +2250,11 @@ _A resolution or decision taken on an agenda item, including voting procedures._
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
-| [Container](#Container) | [resolutions](#resolutions) | range | [Resolution](#Resolution) |
-| [AgendaItem](#AgendaItem) | [has_resolution](#has_resolution) | range | [Resolution](#Resolution) |
-| [ProtocolItem](#ProtocolItem) | [has_resolution](#has_resolution) | range | [Resolution](#Resolution) |
+| [Container](#Container) | resolutions | range | [Resolution](#Resolution) |
+| [AgendaItem](#AgendaItem) | has_resolution | range | [Resolution](#Resolution) |
+| [ProtocolItem](#ProtocolItem) | has_resolution | range | [Resolution](#Resolution) |
 
 
 
@@ -2276,7 +2276,7 @@ _A resolution or decision taken on an agenda item, including voting procedures._
 
 </div>
 
-## Enum: ResolutionTypeEnum 
+## Enum: ResolutionTypeEnum []{#ResolutionTypeEnum}
 
 
 
@@ -2360,7 +2360,7 @@ AgendaItem (Energy act — art. 15)
 
 
 
-## Class: Motion 
+## Class: Motion []{#Motion}
 
 
 _A formal proposal or motion submitted during proceedings._
@@ -2377,12 +2377,12 @@ _A formal proposal or motion submitted during proceedings._
 
 | Name | Cardinality and Range | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| title | 0..1 <br/> [String](#String) | Title of the element.  |
-| description | 0..1 <br/> [String](#String) | Descriptive text of the element.  |
-| documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity.  |
+| local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: HasIdentification |
+| global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: HasIdentification |
+| wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: HasIdentification |
+| title | 0..1 <br/> String | Title of the element.  |
+| description | 0..1 <br/> String | Descriptive text of the element.  |
+| documents | * <br/> Work | List of documents (FRBR Works) linked to the entity.  |
 
 
 
@@ -2639,7 +2639,7 @@ Voting
 
 
 
-## Class: Voting 
+## Class: Voting []{#Voting}
 
 
 _A voting procedure with individual votes and results._
@@ -2656,38 +2656,38 @@ _A voting procedure with individual votes and results._
 
 | Name | Cardinality and Range | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| datetime_begin | 0..1 <br/> [Datetime](#Datetime) | The date and time when the meeting or voting begins.  |
-| datetime_end | 0..1 <br/> [Datetime](#Datetime) | The date and time when the meeting or voting ends.  |
+| local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: HasIdentification |
+| global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: HasIdentification |
+| wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: HasIdentification |
+| datetime_begin | 0..1 <br/> Datetime | The date and time when the meeting or voting begins.  |
+| datetime_end | 0..1 <br/> Datetime | The date and time when the meeting or voting ends.  |
 | voting_type | 0..1 <br/> [VotingTypeEnum](#VotingTypeEnum) | Type of voting procedure (preliminary, final, secret, etc.).  |
-| type_label | 0..1 <br/> [String](#String) | Custom type label when standard type values don't apply.  |
+| type_label | 0..1 <br/> String | Custom type label when standard type values don't apply.  |
 | voting_title | * <br/> [MultilingualString](#MultilingualString) | Title or question being voted on. If no specific subject exists, do not use the business item title.  |
-| optional | 0..1 <br/> [Boolean](#Boolean) | Indicates if the meeting or voting is optional.  |
-| landing_page | 0..1 <br/> [String](#String) | URL providing further information.  |
-| label_yes | 0..1 <br/> [String](#String) | Meaning of a 'yes' vote.  |
-| label_no | 0..1 <br/> [String](#String) | Meaning of a 'no' vote.  |
-| label_abstention | 0..1 <br/> [String](#String) | Meaning of an 'abstention' vote.  |
-| tie_breaker | 0..1 <br/> [Boolean](#Boolean) | Indicates if a tie-breaker was used in the voting.  |
-| total_count_yes | 0..1 <br/> [Integer](#Integer) | Total number of 'yes' votes.  |
-| total_count_no | 0..1 <br/> [Integer](#Integer) | Total number of 'no' votes.  |
-| total_count_abstention | 0..1 <br/> [Integer](#Integer) | Total number of abstentions.  |
-| total_other | * <br/> [TotalOther](#TotalOther) | Used when multiple options are presented for voting (e.g., 5 buttons in Zurich).  |
-| total_absent | 0..1 <br/> [Integer](#Integer) | Total number of absent members. Distinction between absent/excused absent - presence is tracked on attendance list.  |
-| total | 0..1 <br/> [Integer](#Integer) | Total number of votes, excluding absent and president's vote.  |
+| optional | 0..1 <br/> Boolean | Indicates if the meeting or voting is optional.  |
+| landing_page | 0..1 <br/> String | URL providing further information.  |
+| label_yes | 0..1 <br/> String | Meaning of a 'yes' vote.  |
+| label_no | 0..1 <br/> String | Meaning of a 'no' vote.  |
+| label_abstention | 0..1 <br/> String | Meaning of an 'abstention' vote.  |
+| tie_breaker | 0..1 <br/> Boolean | Indicates if a tie-breaker was used in the voting.  |
+| total_count_yes | 0..1 <br/> Integer | Total number of 'yes' votes.  |
+| total_count_no | 0..1 <br/> Integer | Total number of 'no' votes.  |
+| total_count_abstention | 0..1 <br/> Integer | Total number of abstentions.  |
+| total_other | * <br/> TotalOther | Used when multiple options are presented for voting (e.g., 5 buttons in Zurich).  |
+| total_absent | 0..1 <br/> Integer | Total number of absent members. Distinction between absent/excused absent - presence is tracked on attendance list.  |
+| total | 0..1 <br/> Integer | Total number of votes, excluding absent and president's vote.  |
 | majority_type | 0..1 <br/> [MajorityTypeEnum](#MajorityTypeEnum) | Type of majority required for the vote (absolute, two-thirds, etc.).  |
-| majority_count | 0..1 <br/> [Integer](#Integer) | Number of votes required for the relevant majority threshold.  |
-| result_text | 0..1 <br/> [String](#String) | Free text describing the outcome of the vote, e.g., "Accepted with 78 votes".  |
-| parent_meeting | 0..1 <br/> [String](#String) | The linked meeting ID that groups the current meeting.  |
-| parent_agenda_item | 0..1 <br/> [String](#String) | If needed, this slot builds a hierarchy of agenda items.  |
-| affair_id | 0..1 <br/> [String](#String) | The connection to the affairs (business items) of the agenda item.  |
-| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
-| documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity.  |
-| date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| majority_count | 0..1 <br/> Integer | Number of votes required for the relevant majority threshold.  |
+| result_text | 0..1 <br/> String | Free text describing the outcome of the vote, e.g., "Accepted with 78 votes".  |
+| parent_meeting | 0..1 <br/> String | The linked meeting ID that groups the current meeting.  |
+| parent_agenda_item | 0..1 <br/> String | If needed, this slot builds a hierarchy of agenda items.  |
+| affair_id | 0..1 <br/> String | The connection to the affairs (business items) of the agenda item.  |
+| actor_id | 0..1 <br/> GroupReference | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
+| documents | * <br/> Work | List of documents (FRBR Works) linked to the entity.  |
+| date_created | 0..1 <br/> Date | The date when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_created | 0..1 <br/> Datetime | The date and time when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| date_modified | 0..1 <br/> Date | The date when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_modified | 0..1 <br/> Datetime | The date and time when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
 
 
 
@@ -2695,11 +2695,11 @@ _A voting procedure with individual votes and results._
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
-| [Container](#Container) | [votings](#votings) | range | [Voting](#Voting) |
-| [Protocol](#Protocol) | [votings](#votings) | range | [Voting](#Voting) |
-| [IndividualVote](#IndividualVote) | [parent_voting](#parent_voting) | range | [Voting](#Voting) |
+| [Container](#Container) | votings | range | [Voting](#Voting) |
+| [Protocol](#Protocol) | votings | range | [Voting](#Voting) |
+| [IndividualVote](#IndividualVote) | parent_voting | range | [Voting](#Voting) |
 
 
 
@@ -2862,7 +2862,7 @@ votings:
 
 </div>
 
-## Enum: VotingTypeEnum 
+## Enum: VotingTypeEnum []{#VotingTypeEnum}
 
 
 
@@ -2898,7 +2898,7 @@ URI: [ops:VotingTypeEnum](https://ch.paf.link/schema/operations/VotingTypeEnum)
 
 </div>
 
-## Enum: MajorityTypeEnum 
+## Enum: MajorityTypeEnum []{#MajorityTypeEnum}
 
 
 
@@ -3044,7 +3044,7 @@ IndividualVote entities are only recorded in roll-call (open) votings:
 
 
 
-## Class: IndividualVote 
+## Class: IndividualVote []{#IndividualVote}
 
 
 _An individual vote cast by a member during a voting procedure._
@@ -3061,19 +3061,19 @@ _An individual vote cast by a member during a voting procedure._
 
 | Name | Cardinality and Range | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: HasIdentification |
+| global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: HasIdentification |
+| wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: HasIdentification |
 | parent_voting | 0..1 <br/> [Voting](#Voting) | The ID of the voting associated with the individual vote.  |
-| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Reference to the acting person (lightweight snapshot at time of linking).  |
-| seat_nr | 0..1 <br/> [String](#String) | The seat number of the individual vote, if applicable.  |
-| weight | 0..1 <br/> [Integer](#Integer) | The number of votes held by the individual, if applicable (e.g., in cases where a person has multiple votes).  |
+| actor_id | 0..1 <br/> PersonReference | Reference to the acting person (lightweight snapshot at time of linking).  |
+| seat_nr | 0..1 <br/> String | The seat number of the individual vote, if applicable.  |
+| weight | 0..1 <br/> Integer | The number of votes held by the individual, if applicable (e.g., in cases where a person has multiple votes).  |
 | individual_vote_type | 0..1 <br/> [IndividualVoteTypeEnum](#IndividualVoteTypeEnum) | Type of vote cast (yes, no, abstention, no vote, etc.).  |
-| type_label | 0..1 <br/> [String](#String) | Custom type label when standard type values don't apply.  |
-| date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| type_label | 0..1 <br/> String | Custom type label when standard type values don't apply.  |
+| date_created | 0..1 <br/> Date | The date when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_created | 0..1 <br/> Datetime | The date and time when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| date_modified | 0..1 <br/> Date | The date when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_modified | 0..1 <br/> Datetime | The date and time when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
 
 
 
@@ -3081,9 +3081,9 @@ _An individual vote cast by a member during a voting procedure._
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
-| [Container](#Container) | [individual_votes](#individual_votes) | range | [IndividualVote](#IndividualVote) |
+| [Container](#Container) | individual_votes | range | [IndividualVote](#IndividualVote) |
 
 
 
@@ -3250,7 +3250,7 @@ individual_votes:
 
 </div>
 
-## Enum: IndividualVoteTypeEnum 
+## Enum: IndividualVoteTypeEnum []{#IndividualVoteTypeEnum}
 
 
 
@@ -3507,7 +3507,7 @@ In open elections:
 
 
 
-## Class: Election 
+## Class: Election []{#Election}
 
 
 _An election procedure for selecting persons to positions._
@@ -3524,29 +3524,29 @@ _An election procedure for selecting persons to positions._
 
 | Name | Cardinality and Range | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| datetime_begin | 0..1 <br/> [Datetime](#Datetime) | The date and time when the meeting or voting begins.  |
-| datetime_end | 0..1 <br/> [Datetime](#Datetime) | The date and time when the meeting or voting ends.  |
+| local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: HasIdentification |
+| global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: HasIdentification |
+| wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: HasIdentification |
+| datetime_begin | 0..1 <br/> Datetime | The date and time when the meeting or voting begins.  |
+| datetime_end | 0..1 <br/> Datetime | The date and time when the meeting or voting ends.  |
 | election_type | 0..1 <br/> [ElectionTypeEnum](#ElectionTypeEnum) | Type of election procedure.  |
-| type_label | 0..1 <br/> [String](#String) | Custom type label when standard type values don't apply.  |
-| title | 0..1 <br/> [String](#String) | Title of the element.  |
-| landing_page | 0..1 <br/> [String](#String) | URL providing further information.  |
-| total_absent | 0..1 <br/> [Integer](#Integer) | Total number of absent members. Distinction between absent/excused absent - presence is tracked on attendance list.  |
-| total | 0..1 <br/> [Integer](#Integer) | Total number of votes, excluding absent and president's vote.  |
+| type_label | 0..1 <br/> String | Custom type label when standard type values don't apply.  |
+| title | 0..1 <br/> String | Title of the element.  |
+| landing_page | 0..1 <br/> String | URL providing further information.  |
+| total_absent | 0..1 <br/> Integer | Total number of absent members. Distinction between absent/excused absent - presence is tracked on attendance list.  |
+| total | 0..1 <br/> Integer | Total number of votes, excluding absent and president's vote.  |
 | majority_type | 0..1 <br/> [MajorityTypeEnum](#MajorityTypeEnum) | Type of majority required for the vote (absolute, two-thirds, etc.).  |
-| majority_count | 0..1 <br/> [Integer](#Integer) | Number of votes required for the relevant majority threshold.  |
-| result_text | 0..1 <br/> [String](#String) | Free text describing the outcome of the vote, e.g., "Accepted with 78 votes".  |
-| parent_meeting | 0..1 <br/> [String](#String) | The linked meeting ID that groups the current meeting.  |
-| parent_agenda_item | 0..1 <br/> [String](#String) | If needed, this slot builds a hierarchy of agenda items.  |
-| affair_id | 0..1 <br/> [String](#String) | The connection to the affairs (business items) of the agenda item.  |
-| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
-| documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity.  |
-| date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| majority_count | 0..1 <br/> Integer | Number of votes required for the relevant majority threshold.  |
+| result_text | 0..1 <br/> String | Free text describing the outcome of the vote, e.g., "Accepted with 78 votes".  |
+| parent_meeting | 0..1 <br/> String | The linked meeting ID that groups the current meeting.  |
+| parent_agenda_item | 0..1 <br/> String | If needed, this slot builds a hierarchy of agenda items.  |
+| affair_id | 0..1 <br/> String | The connection to the affairs (business items) of the agenda item.  |
+| actor_id | 0..1 <br/> GroupReference | Reference to the acting body/organ (lightweight snapshot at time of linking).  |
+| documents | * <br/> Work | List of documents (FRBR Works) linked to the entity.  |
+| date_created | 0..1 <br/> Date | The date when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_created | 0..1 <br/> Datetime | The date and time when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| date_modified | 0..1 <br/> Date | The date when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_modified | 0..1 <br/> Datetime | The date and time when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
 
 
 
@@ -3554,9 +3554,9 @@ _An election procedure for selecting persons to positions._
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
-| [Container](#Container) | [elections](#elections) | range | [Election](#Election) |
+| [Container](#Container) | elections | range | [Election](#Election) |
 
 
 
@@ -3578,7 +3578,7 @@ _An election procedure for selecting persons to positions._
 
 </div>
 
-## Enum: ElectionTypeEnum 
+## Enum: ElectionTypeEnum []{#ElectionTypeEnum}
 
 
 
@@ -3760,7 +3760,7 @@ The field **speech_type** can distinguish various kinds:
 
 
 
-## Class: Speech 
+## Class: Speech []{#Speech}
 
 
 _A speech or statement made during a meeting (also called Votum or speaker segment)._
@@ -3777,28 +3777,28 @@ _A speech or statement made during a meeting (also called Votum or speaker segme
 
 | Name | Cardinality and Range | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| language | 0..1 <br/> [String](#String) | Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en").  |
-| start | 0..1 <br/> [String](#String) | Start indicator or position.  |
-| datetime_begin | 0..1 <br/> [Datetime](#Datetime) | The date and time when the meeting or voting begins.  |
-| datetime_end | 0..1 <br/> [Datetime](#Datetime) | The date and time when the meeting or voting ends.  |
-| actor_fullname | 0..1 <br/> [String](#String) | Full name of the actor/person.  |
-| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Reference to the acting person (lightweight snapshot at time of linking).  |
-| role | 0..1 <br/> [String](#String) | Role of the person (e.g., commission speaker).  |
-| text | 1 <br/> [String](#String) | Text content of the element.  |
-| text_format | 0..1 <br/> [String](#String) | Format of text (text, html, html_with_timestamps).  |
-| text_type | 0..1 <br/> [String](#String) | Type of text (raw draft, edited version).  |
-| landing_page | 0..1 <br/> [String](#String) | URL providing further information.  |
-| media_url | 0..1 <br/> [String](#String) | URL to media file (audio/video).  |
-| media_type | 0..1 <br/> [String](#String) | Type of media (audio, video, document).  |
-| media_format | 0..1 <br/> [String](#String) | MIME type of the media file.  |
-| documents | * <br/> [Work](#Work) | List of documents (FRBR Works) linked to the entity.  |
-| date_created | 0..1 <br/> [Date](#Date) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | The date and time when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](#HasCreationModificationDates) |
+| local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: HasIdentification |
+| global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: HasIdentification |
+| wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: HasIdentification |
+| language | 0..1 <br/> String | Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en").  |
+| start | 0..1 <br/> String | Start indicator or position.  |
+| datetime_begin | 0..1 <br/> Datetime | The date and time when the meeting or voting begins.  |
+| datetime_end | 0..1 <br/> Datetime | The date and time when the meeting or voting ends.  |
+| actor_fullname | 0..1 <br/> String | Full name of the actor/person.  |
+| actor_id | 0..1 <br/> PersonReference | Reference to the acting person (lightweight snapshot at time of linking).  |
+| role | 0..1 <br/> String | Role of the person (e.g., commission speaker).  |
+| text | 1 <br/> String | Text content of the element.  |
+| text_format | 0..1 <br/> String | Format of text (text, html, html_with_timestamps).  |
+| text_type | 0..1 <br/> String | Type of text (raw draft, edited version).  |
+| landing_page | 0..1 <br/> String | URL providing further information.  |
+| media_url | 0..1 <br/> String | URL to media file (audio/video).  |
+| media_type | 0..1 <br/> String | Type of media (audio, video, document).  |
+| media_format | 0..1 <br/> String | MIME type of the media file.  |
+| documents | * <br/> Work | List of documents (FRBR Works) linked to the entity.  |
+| date_created | 0..1 <br/> Date | The date when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_created | 0..1 <br/> Datetime | The date and time when an entity was created. <br/><br/>Inheritance: HasCreationModificationDates |
+| date_modified | 0..1 <br/> Date | The date when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
+| datetime_modified | 0..1 <br/> Datetime | The date and time when an entity was last modified. <br/><br/>Inheritance: HasCreationModificationDates |
 
 
 
@@ -3806,10 +3806,10 @@ _A speech or statement made during a meeting (also called Votum or speaker segme
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
-| [Container](#Container) | [speeches](#speeches) | range | [Speech](#Speech) |
-| [Protocol](#Protocol) | [speeches](#speeches) | range | [Speech](#Speech) |
+| [Container](#Container) | speeches | range | [Speech](#Speech) |
+| [Protocol](#Protocol) | speeches | range | [Speech](#Speech) |
 
 
 
@@ -3945,7 +3945,7 @@ Meeting
 
 
 
-## Class: TextSegment 
+## Class: TextSegment []{#TextSegment}
 
 
 _A text segment such as cross-references or subtitles in meeting protocols._
@@ -3962,10 +3962,10 @@ _A text segment such as cross-references or subtitles in meeting protocols._
 
 | Name | Cardinality and Range | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| text | 1 <br/> [String](#String) | Text content of the element.  |
+| local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: HasIdentification |
+| global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: HasIdentification |
+| wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: HasIdentification |
+| text | 1 <br/> String | Text content of the element.  |
 
 
 
@@ -3973,9 +3973,9 @@ _A text segment such as cross-references or subtitles in meeting protocols._
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
-| [Protocol](#Protocol) | [text_segments](#text_segments) | range | [TextSegment](#TextSegment) |
+| [Protocol](#Protocol) | text_segments | range | [TextSegment](#TextSegment) |
 
 
 
@@ -3999,7 +3999,7 @@ _A text segment such as cross-references or subtitles in meeting protocols._
 
 
 
-## Class: Media 
+## Class: Media []{#Media}
 
 
 _Media files or documents (including protocols in PDF/HTML/WORD or links to audio/video)._
@@ -4016,14 +4016,14 @@ _Media files or documents (including protocols in PDF/HTML/WORD or links to audi
 
 | Name | Cardinality and Range | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| title | 0..1 <br/> [String](#String) | Title of the element.  |
-| media_type | 0..1 <br/> [String](#String) | Type of media (audio, video, document).  |
+| local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: HasIdentification |
+| global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: HasIdentification |
+| wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: HasIdentification |
+| title | 0..1 <br/> String | Title of the element.  |
+| media_type | 0..1 <br/> String | Type of media (audio, video, document).  |
 | url | * <br/> [MultilingualString](#MultilingualString) | Landing page or further web address, multilingual.  |
-| version | 0..1 <br/> [String](#String) | Version number or identifier.  |
-| parent_type | 0..1 <br/> [String](#String) | Type of parent object (meeting, agenda, speech, affair).  |
+| version | 0..1 <br/> String | Version number or identifier.  |
+| parent_type | 0..1 <br/> String | Type of parent object (meeting, agenda, speech, affair).  |
 
 
 
@@ -4050,7 +4050,7 @@ _Media files or documents (including protocols in PDF/HTML/WORD or links to audi
 
 
 
-## Class: MultilingualString 
+## Class: MultilingualString []{#MultilingualString}
 
 
 _A string that can contain text in multiple languages._
@@ -4067,8 +4067,8 @@ _A string that can contain text in multiple languages._
 
 | Name | Cardinality and Range | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| text | 1 <br/> [String](#String) | Text content of the element.  |
-| language | 1 <br/> [String](#String) | Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en").  |
+| text | 1 <br/> String | Text content of the element.  |
+| language | 1 <br/> String | Language code in ISO 639-1 format (two lowercase letters, e.g. "de", "fr", "it", "en").  |
 
 
 
@@ -4076,22 +4076,22 @@ _A string that can contain text in multiple languages._
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
-| [Legislature](#Legislature) | [name](#name) | range | [MultilingualString](#MultilingualString) |
-| [Session](#Session) | [name](#name) | range | [MultilingualString](#MultilingualString) |
-| [Session](#Session) | [url](#url) | range | [MultilingualString](#MultilingualString) |
-| [Meeting](#Meeting) | [name](#name) | range | [MultilingualString](#MultilingualString) |
-| [Meeting](#Meeting) | [url](#url) | range | [MultilingualString](#MultilingualString) |
-| [AgendaItem](#AgendaItem) | [agenda_item_title](#agenda_item_title) | range | [MultilingualString](#MultilingualString) |
-| [AgendaItem](#AgendaItem) | [agenda_item_description](#agenda_item_description) | range | [MultilingualString](#MultilingualString) |
-| [AgendaItem](#AgendaItem) | [url](#url) | range | [MultilingualString](#MultilingualString) |
-| [ProtocolItem](#ProtocolItem) | [agenda_item_title](#agenda_item_title) | range | [MultilingualString](#MultilingualString) |
-| [ProtocolItem](#ProtocolItem) | [agenda_item_description](#agenda_item_description) | range | [MultilingualString](#MultilingualString) |
-| [ProtocolItem](#ProtocolItem) | [url](#url) | range | [MultilingualString](#MultilingualString) |
-| [Voting](#Voting) | [voting_title](#voting_title) | range | [MultilingualString](#MultilingualString) |
-| [IndividualAttendance](#IndividualAttendance) | [reason](#reason) | range | [MultilingualString](#MultilingualString) |
-| [Media](#Media) | [url](#url) | range | [MultilingualString](#MultilingualString) |
+| [Legislature](#Legislature) | name | range | [MultilingualString](#MultilingualString) |
+| [Session](#Session) | name | range | [MultilingualString](#MultilingualString) |
+| [Session](#Session) | url | range | [MultilingualString](#MultilingualString) |
+| [Meeting](#Meeting) | name | range | [MultilingualString](#MultilingualString) |
+| [Meeting](#Meeting) | url | range | [MultilingualString](#MultilingualString) |
+| [AgendaItem](#AgendaItem) | agenda_item_title | range | [MultilingualString](#MultilingualString) |
+| [AgendaItem](#AgendaItem) | agenda_item_description | range | [MultilingualString](#MultilingualString) |
+| [AgendaItem](#AgendaItem) | url | range | [MultilingualString](#MultilingualString) |
+| [ProtocolItem](#ProtocolItem) | agenda_item_title | range | [MultilingualString](#MultilingualString) |
+| [ProtocolItem](#ProtocolItem) | agenda_item_description | range | [MultilingualString](#MultilingualString) |
+| [ProtocolItem](#ProtocolItem) | url | range | [MultilingualString](#MultilingualString) |
+| [Voting](#Voting) | voting_title | range | [MultilingualString](#MultilingualString) |
+| [IndividualAttendance](#IndividualAttendance) | reason | range | [MultilingualString](#MultilingualString) |
+| [Media](#Media) | url | range | [MultilingualString](#MultilingualString) |
 
 
 
@@ -4115,7 +4115,7 @@ _A string that can contain text in multiple languages._
 
 
 
-## Class: Container 
+## Class: Container []{#Container}
 
 
 _Container for the records of public council operations: legislatures, sessions, meetings, agenda items, protocols, votings, elections, attendances, speeches and resolutions._
@@ -4132,9 +4132,9 @@ _Container for the records of public council operations: legislatures, sessions,
 
 | Name | Cardinality and Range | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | A unique, globally valid URI for the entity. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](#HasIdentification) |
+| local_id | 0..1 <br/> String | Local identifier. For example, a UUID from the council information system. <br/><br/>Inheritance: HasIdentification |
+| global_uri | 1 <br/> Uriorcurie | A unique, globally valid URI for the entity. <br/><br/>Inheritance: HasIdentification |
+| wikidata_uri | 0..1 <br/> Uriorcurie | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: HasIdentification |
 | legislatures | * <br/> [Legislature](#Legislature) | Collection of legislature records.  |
 | sessions | * <br/> [Session](#Session) | Collection of session records.  |
 | meetings | * <br/> [Meeting](#Meeting) | Collection of meeting records.  |

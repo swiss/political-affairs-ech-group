@@ -47,7 +47,7 @@ _Ein Wahlverfahren zur Wahl von Personen in Positionen._
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [elections](elections.md) | range | [Election](Election.md) |
 

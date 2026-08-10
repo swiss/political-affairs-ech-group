@@ -26,7 +26,7 @@ _Une chaîne de caractères pouvant contenir du texte en plusieurs langues._
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Legislature](Legislature.md) | [name](name.md) | range | [MultilingualString](MultilingualString.md) |
 | [Session](Session.md) | [name](name.md) | range | [MultilingualString](MultilingualString.md) |

@@ -28,7 +28,7 @@ _FRBR Manifestation: a concrete file format of an Expression, addressable via a 
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Expression](Expression.md) | [manifestations](manifestations.md) | range | [Manifestation](Manifestation.md) |
 

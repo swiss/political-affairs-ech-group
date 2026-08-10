@@ -25,8 +25,7 @@ _Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gültigkeit
 
 ### Mixin-Verwendung
 
-| mixed into | description |
-| --- | --- |
+
 
 
 

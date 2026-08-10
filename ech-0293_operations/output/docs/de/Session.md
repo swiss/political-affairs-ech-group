@@ -49,7 +49,7 @@ _Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen be
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [sessions](sessions.md) | range | [Session](Session.md) |
 

@@ -28,7 +28,7 @@ _Ein Textsegment wie Querverweise oder Zwischentitel in Sitzungsprotokollen._
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Protocol](Protocol.md) | [text_segments](text_segments.md) | range | [TextSegment](TextSegment.md) |
 

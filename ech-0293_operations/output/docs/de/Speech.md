@@ -46,7 +46,7 @@ _Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt)._
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [speeches](speeches.md) | range | [Speech](Speech.md) |
 | [Protocol](Protocol.md) | [speeches](speeches.md) | range | [Speech](Speech.md) |

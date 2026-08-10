@@ -26,7 +26,7 @@ _Zusätzliche Stimmzahlen, wenn mehrere Optionen zur Abstimmung gestellt werden 
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Voting](Voting.md) | [total_other](total_other.md) | range | [TotalOther](TotalOther.md) |
 

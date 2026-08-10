@@ -37,7 +37,7 @@ _Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens._
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [individual_votes](individual_votes.md) | range | [IndividualVote](IndividualVote.md) |
 

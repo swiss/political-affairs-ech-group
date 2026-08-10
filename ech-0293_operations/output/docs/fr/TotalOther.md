@@ -26,7 +26,7 @@ _Décomptes de voix supplémentaires lorsque plusieurs options sont soumises au 
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Voting](Voting.md) | [total_other](total_other.md) | range | [TotalOther](TotalOther.md) |
 

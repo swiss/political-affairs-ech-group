@@ -49,7 +49,7 @@ _A parliamentary session that groups multiple meetings and spans a specific time
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [sessions](sessions.md) | range | [Session](Session.md) |
 

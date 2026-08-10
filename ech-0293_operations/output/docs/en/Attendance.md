@@ -38,7 +38,7 @@ _Aggregated attendance record for a meeting (number of members present, absent, 
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [attendances](attendances.md) | range | [Attendance](Attendance.md) |
 | [IndividualAttendance](IndividualAttendance.md) | [parent_attendance](parent_attendance.md) | range | [Attendance](Attendance.md) |
