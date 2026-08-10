@@ -81,7 +81,7 @@ URI: {{ gen.uri_link(element) }}
 
 {%- if has_pv_extras.found %}
 | Valeur | Description | Info supplémentaire |
-| --- | --- | --- |
+|----------------------|----------------------------------------------------------|--------------------|
 {% for pv in element.permissible_values.values() -%}
 | {{ pv.text }}{% if pv.meaning %} ([{{ pv.meaning }}]({{ pv.meaning }})){% endif %} | {{ pv.description | replace('\r\n', ' ') | replace('\n', ' ') | replace('\r', ' ') }} |
 {%- if pv.title %} Title: {{ pv.title }}<br>{% endif -%}
@@ -92,7 +92,7 @@ URI: {{ gen.uri_link(element) }}
 {% endfor %}
 {%- else %}
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 {% for pv in element.permissible_values.values() -%}
 | {{ pv.text }} |  {{ pv.description | replace('\r\n', ' ') | replace('\n', ' ') | replace('\r', ' ') }} |
 {% if pv.meaning %}| | [{{ pv.meaning }}]({{ pv.meaning }}) |
