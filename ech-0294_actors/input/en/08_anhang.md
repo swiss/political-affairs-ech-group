@@ -6,6 +6,8 @@ The version stated is the one this standard was developed against.
 
 ## Standards of the "Political Affairs" specialist group
 
+The standards of the specialist group are developed jointly and reference one another. All of them currently carry the status "In Arbeit" (in progress; as of 10 August 2026); the version number 1.0.0 denotes the version being drafted, not an approved one.
+
 | | |
 |------------------|----------------------------------------------------------------------------------|
 |eCH-0292|eCH-0292: Meta-processes for political affairs, version 1.0.0 – shared data elements: [https://www.ech.ch/de/ech/ech-0292](https://www.ech.ch/de/ech/ech-0292)|

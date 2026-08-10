@@ -6,6 +6,8 @@ Angegeben ist jeweils die Version, gegen die dieser Standard erarbeitet wurde.
 
 ## Standards der Fachgruppe „Politische Geschäfte"
 
+Die Standards der Fachgruppe entstehen gemeinsam und verweisen aufeinander. Sie stehen zurzeit alle im Status „In Arbeit" (Stand: 10. August 2026); die Versionsangabe 1.0.0 bezeichnet die in Erarbeitung stehende Fassung und nicht eine genehmigte.
+
 | | |
 |------------------|----------------------------------------------------------------------------------|
 |eCH-0292|eCH-0292: Metaprozesse zu politischen Geschäften, Version 1.0.0 – gemeinsame Datenelemente: [https://www.ech.ch/de/ech/ech-0292](https://www.ech.ch/de/ech/ech-0292)|
