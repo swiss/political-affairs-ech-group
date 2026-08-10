@@ -5,7 +5,13 @@ interest_links:
     label: Stefan Balaban
     group_label: LJS
   interest_type: governing_body
-  organization_name: X-net SA
+  organization_name:
+  - value: X-net SA
+    language: fr
   legal_form: '0106'
-  committee: Conseil d'administration
-  function_role: Membre
+  committee:
+  - value: Conseil d'administration
+    language: fr
+  function_role:
+  - value: Membre
+    language: fr

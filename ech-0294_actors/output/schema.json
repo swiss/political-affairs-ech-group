@@ -780,7 +780,10 @@
                 },
                 {
                     "properties": {
-                        "organization_name": {}
+                        "organization_name": {
+                            "items": {},
+                            "type": "array"
+                        }
                     },
                     "required": [
                         "organization_name"
@@ -790,9 +793,12 @@
             "description": "An interest link (conflict of interest, political financing) of a person to an organization outside the actor schema.",
             "properties": {
                 "committee": {
-                    "description": "Committee or board within the organization (e.g., Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Gesch\u00e4ftsleitung).\n",
+                    "description": "Committee or board within the organization (e.g., Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Gesch\u00e4ftsleitung), with the language it is published in; one entry is recorded per language.\n",
+                    "items": {
+                        "$ref": "#/$defs/MultilingualValue"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
@@ -829,9 +835,12 @@
                     ]
                 },
                 "function_role": {
-                    "description": "Function or role in the organization (e.g., Pr\u00e4sident/in, Vizepr\u00e4sident/in, Mitglied, Delegierter, Gesch\u00e4ftsf\u00fchrer/in, Berater/in).\n",
+                    "description": "Function or role in the organization (e.g., Pr\u00e4sident/in, Vizepr\u00e4sident/in, Mitglied, Delegierter, Gesch\u00e4ftsf\u00fchrer/in, Berater/in), with the language it is published in; one entry is recorded per language.\n",
+                    "items": {
+                        "$ref": "#/$defs/MultilingualValue"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
@@ -883,9 +892,12 @@
                     ]
                 },
                 "organization_name": {
-                    "description": "Name of the organization or enterprise.\n",
+                    "description": "Name of the organization or enterprise, with the language it is published in. Bilingual registers state the name in both languages; one entry is recorded per language.\n",
+                    "items": {
+                        "$ref": "#/$defs/MultilingualValue"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
@@ -1513,9 +1525,12 @@
                     ]
                 },
                 "organization_name": {
-                    "description": "Name of the organization or enterprise.\n",
+                    "description": "Name of the organization or enterprise, with the language it is published in. Bilingual registers state the name in both languages; one entry is recorded per language.\n",
+                    "items": {
+                        "$ref": "#/$defs/MultilingualValue"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },

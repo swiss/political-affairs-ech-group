@@ -9,11 +9,26 @@
         "global_uri": "http://www.wikidata.org/entity/Q23060472"
       },
       "interest_type": "professional_activity",
-      "organization_name": "Burkart Advisory GmbH, Baden",
+      "organization_name": [
+        {
+          "value": "Burkart Advisory GmbH, Baden",
+          "language": "de"
+        }
+      ],
       "legal_form": "0107",
       "is_paid": true,
-      "committee": "Geschäftsleitung",
-      "function_role": "Geschäftsführer"
+      "committee": [
+        {
+          "value": "Geschäftsleitung",
+          "language": "de"
+        }
+      ],
+      "function_role": [
+        {
+          "value": "Geschäftsführer",
+          "language": "de"
+        }
+      ]
     },
     {
       "global_uri": "act:il_burkart_005",
@@ -23,11 +38,26 @@
         "global_uri": "http://www.wikidata.org/entity/Q23060472"
       },
       "interest_type": "interest_group_mandate",
-      "organization_name": "ASTAG Schweizerischer Nutzfahrzeugverband, Bern",
+      "organization_name": [
+        {
+          "value": "ASTAG Schweizerischer Nutzfahrzeugverband, Bern",
+          "language": "de"
+        }
+      ],
       "legal_form": "0109",
       "is_paid": true,
-      "committee": "Zentralvorstand",
-      "function_role": "Präsident"
+      "committee": [
+        {
+          "value": "Zentralvorstand",
+          "language": "de"
+        }
+      ],
+      "function_role": [
+        {
+          "value": "Präsident",
+          "language": "de"
+        }
+      ]
     },
     {
       "global_uri": "act:il_burkart_007",
@@ -37,12 +67,27 @@
         "global_uri": "http://www.wikidata.org/entity/Q23060472"
       },
       "interest_type": "governing_body",
-      "organization_name": "FONDATION SUISSE DE DEMINAGE (FSD), Genf",
+      "organization_name": [
+        {
+          "value": "FONDATION SUISSE DE DEMINAGE (FSD), Genf",
+          "language": "de"
+        }
+      ],
       "organization_uid": "CHE109810537",
       "legal_form": "0110",
       "is_paid": false,
-      "committee": "Stiftungsrat",
-      "function_role": "Vizepräsident"
+      "committee": [
+        {
+          "value": "Stiftungsrat",
+          "language": "de"
+        }
+      ],
+      "function_role": [
+        {
+          "value": "Vizepräsident",
+          "language": "de"
+        }
+      ]
     },
     {
       "global_uri": "act:il_beretta_001",
@@ -52,10 +97,25 @@
         "global_uri": "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269"
       },
       "interest_type": "governing_body",
-      "organization_name": "Fondazione Gruppo Intervento Maltrattamento Infantile (GIMI), Lugano",
+      "organization_name": [
+        {
+          "value": "Fondazione Gruppo Intervento Maltrattamento Infantile (GIMI), Lugano",
+          "language": "it"
+        }
+      ],
       "legal_form": "0110",
-      "committee": "Consiglio di fondazione",
-      "function_role": "Vice Presidente"
+      "committee": [
+        {
+          "value": "Consiglio di fondazione",
+          "language": "it"
+        }
+      ],
+      "function_role": [
+        {
+          "value": "Vice Presidente",
+          "language": "it"
+        }
+      ]
     },
     {
       "global_uri": "act:il_dafond_001",
@@ -65,9 +125,19 @@
         "global_uri": "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14"
       },
       "interest_type": "public_mandate",
-      "organization_name": "Municipio di Minusio",
+      "organization_name": [
+        {
+          "value": "Municipio di Minusio",
+          "language": "it"
+        }
+      ],
       "legal_form": "0223",
-      "function_role": "Sindaco"
+      "function_role": [
+        {
+          "value": "Sindaco",
+          "language": "it"
+        }
+      ]
     },
     {
       "global_uri": "act:il_quadranti_001",
@@ -77,8 +147,18 @@
         "global_uri": "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487"
       },
       "interest_type": "public_mandate",
-      "organization_name": "Commissione Cantonale Cultura",
-      "function_role": "Vice-presidente"
+      "organization_name": [
+        {
+          "value": "Commissione Cantonale Cultura",
+          "language": "it"
+        }
+      ],
+      "function_role": [
+        {
+          "value": "Vice-presidente",
+          "language": "it"
+        }
+      ]
     },
     {
       "global_uri": "act:il_zanini_001",
@@ -88,11 +168,26 @@
         "global_uri": "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=2160"
       },
       "interest_type": "governing_body",
-      "organization_name": "Fondazione Giovanni Stamm",
+      "organization_name": [
+        {
+          "value": "Fondazione Giovanni Stamm",
+          "language": "it"
+        }
+      ],
       "legal_form": "0110",
       "is_ex_officio": true,
-      "committee": "Consiglio di amministrazione",
-      "function_role": "Membro"
+      "committee": [
+        {
+          "value": "Consiglio di amministrazione",
+          "language": "it"
+        }
+      ],
+      "function_role": [
+        {
+          "value": "Membro",
+          "language": "it"
+        }
+      ]
     },
     {
       "global_uri": "act:il_balaban_001",
@@ -102,10 +197,25 @@
         "global_uri": "https://ge.ch/grandconseil/gc/depute/2517/"
       },
       "interest_type": "governing_body",
-      "organization_name": "X-net SA",
+      "organization_name": [
+        {
+          "value": "X-net SA",
+          "language": "fr"
+        }
+      ],
       "legal_form": "0106",
-      "committee": "Conseil d'administration",
-      "function_role": "Membre"
+      "committee": [
+        {
+          "value": "Conseil d'administration",
+          "language": "fr"
+        }
+      ],
+      "function_role": [
+        {
+          "value": "Membre",
+          "language": "fr"
+        }
+      ]
     },
     {
       "global_uri": "act:il_mauron_001",
@@ -115,10 +225,37 @@
         "global_uri": "https://www.fr.ch/parlinfo/membres-du-grand-conseil/5ee6eb9754704902bfd4b4ee01dcf327"
       },
       "interest_type": "interest_group_mandate",
-      "organization_name": "ASLOCA Fribourg",
+      "organization_name": [
+        {
+          "value": "ASLOCA Fribourg",
+          "language": "fr"
+        },
+        {
+          "value": "ASLOCA Freiburg",
+          "language": "de"
+        }
+      ],
       "legal_form": "0109",
-      "committee": "Comité",
-      "function_role": "Président"
+      "committee": [
+        {
+          "value": "Comité",
+          "language": "fr"
+        },
+        {
+          "value": "Vorstand",
+          "language": "de"
+        }
+      ],
+      "function_role": [
+        {
+          "value": "Président",
+          "language": "fr"
+        },
+        {
+          "value": "Präsident",
+          "language": "de"
+        }
+      ]
     }
   ],
   "@type": "Container"

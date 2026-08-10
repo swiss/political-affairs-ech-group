@@ -6,7 +6,7 @@ search:
 # Slot: committee 
 
 
-_Gremium innerhalb der Organisation (z.B. Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung)._
+_Gremium innerhalb der Organisation (z.B. Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung) mit der Sprache, in der es publiziert wird; erfasst wird pro Sprache ein Eintrag._
 
 
 
@@ -39,7 +39,7 @@ URI: [act:committee](https://ld.ech.ch/schema/0294/actors/committee)
 
 | Eigenschaft | Wert |
 | --- | --- |
-| Wertebereich | [String](String.md) |
+| Wertebereich | [MultilingualValue](MultilingualValue.md) |
 | Domäne von | [InterestLink](InterestLink.md) |
 | Slot-URI | [act:committee](https://ld.ech.ch/schema/0294/actors/committee) |
 
@@ -47,6 +47,7 @@ URI: [act:committee](https://ld.ech.ch/schema/0294/actors/committee)
 
 | Eigenschaft | Wert |
 | --- | --- |
+| Mehrwertig | Yes |
 
 
 
@@ -68,18 +69,21 @@ annotations:
   description_de:
     tag: description_de
     value: 'Gremium innerhalb der Organisation (z.B. Verwaltungsrat, Stiftungsrat,
-      Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).
+      Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung) mit der Sprache, in der es
+      publiziert wird; erfasst wird pro Sprache ein Eintrag.
 
       '
   description_fr:
     tag: description_fr
     value: 'Comité ou organe au sein de l''organisation (p. ex. conseil d''administration,
       conseil de fondation, comité directeur, conseil de surveillance, comité consultatif,
-      direction).
+      direction), avec la langue dans laquelle il est publié ; une entrée est saisie
+      par langue.
 
       '
 description: 'Gremium innerhalb der Organisation (z.B. Verwaltungsrat, Stiftungsrat,
-  Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).
+  Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung) mit der Sprache, in der es publiziert
+  wird; erfasst wird pro Sprache ein Eintrag.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors
@@ -87,7 +91,10 @@ rank: 1000
 slot_uri: act:committee
 domain_of:
 - InterestLink
-range: string
+range: MultilingualValue
+multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details></div>

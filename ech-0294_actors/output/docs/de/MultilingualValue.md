@@ -31,6 +31,10 @@ _Ein mehrsprachiger String mit Angabe der Sprache._
 | [Group](Group.md) | [label](label.md) | range | [MultilingualValue](MultilingualValue.md) |
 | [Group](Group.md) | [abbreviation](abbreviation.md) | range | [MultilingualValue](MultilingualValue.md) |
 | [Group](Group.md) | [description](description.md) | range | [MultilingualValue](MultilingualValue.md) |
+| [InterestLink](InterestLink.md) | [organization_name](organization_name.md) | range | [MultilingualValue](MultilingualValue.md) |
+| [InterestLink](InterestLink.md) | [committee](committee.md) | range | [MultilingualValue](MultilingualValue.md) |
+| [InterestLink](InterestLink.md) | [function_role](function_role.md) | range | [MultilingualValue](MultilingualValue.md) |
+| [Occupation](Occupation.md) | [organization_name](organization_name.md) | range | [MultilingualValue](MultilingualValue.md) |
 | [ElectoralDistrict](ElectoralDistrict.md) | [label](label.md) | range | [MultilingualValue](MultilingualValue.md) |
 | [GroupType](GroupType.md) | [label](label.md) | range | [MultilingualValue](MultilingualValue.md) |
 | [RoleType](RoleType.md) | [role_label](role_label.md) | range | [MultilingualValue](MultilingualValue.md) |

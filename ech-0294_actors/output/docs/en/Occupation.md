@@ -21,7 +21,7 @@ _Occupation or profession of a person indicating a label, an ISCO-19 code, wheth
 | occupation_code | 0..1 <br/> [String](String.md) | ISCO-19 code of the occupation.  |
 | label | 0..1 <br/> [String](String.md) | Assign a label to a structured piece of information (e.g., display name, position, etc.).  |
 | organization_uid | 0..1 <br/> [String](String.md) | UID of the organization from the federal UID register (uid.admin.ch), in the exchange format of eCH-0108: CHE followed by nine digits, without separators (e.g. CHE106063525). The last digit is a check digit calculated modulo 11. The dotted form CHE-106.063.525 is the presentation used by uid.admin.ch and is not recorded here.  |
-| organization_name | 0..1 <br/> [String](String.md) | Name of the organization or enterprise.  |
+| organization_name | * <br/> [MultilingualValue](MultilingualValue.md) | Name of the organization or enterprise, with the language it is published in. Bilingual registers state the name in both languages; one entry is recorded per language.  |
 | valid_from | 0..1 <br/> [Date](Date.md) | The date from which the information is valid. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |
 | valid_through | 0..1 <br/> [Date](Date.md) | The date until which the information is valid, inclusive. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |
 | is_active | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether the information is currently valid. Can be useful when this information is explicitly available. <br/><br/>Inheritance: [HasTemporalValidity](HasTemporalValidity.md) |

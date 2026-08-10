@@ -6,7 +6,7 @@ search:
 # Slot: function_role 
 
 
-_Funktion oder Rolle in der Organisation (z.B. Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in)._
+_Funktion oder Rolle in der Organisation (z.B. Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in) mit der Sprache, in der sie publiziert wird; erfasst wird pro Sprache ein Eintrag._
 
 
 
@@ -39,7 +39,7 @@ URI: [act:functionRole](https://ld.ech.ch/schema/0294/actors/functionRole)
 
 | Eigenschaft | Wert |
 | --- | --- |
-| Wertebereich | [String](String.md) |
+| Wertebereich | [MultilingualValue](MultilingualValue.md) |
 | Domäne von | [InterestLink](InterestLink.md) |
 | Slot-URI | [act:functionRole](https://ld.ech.ch/schema/0294/actors/functionRole) |
 
@@ -47,6 +47,7 @@ URI: [act:functionRole](https://ld.ech.ch/schema/0294/actors/functionRole)
 
 | Eigenschaft | Wert |
 | --- | --- |
+| Mehrwertig | Yes |
 
 
 
@@ -68,17 +69,20 @@ annotations:
   description_de:
     tag: description_de
     value: 'Funktion oder Rolle in der Organisation (z.B. Präsident/in, Vizepräsident/in,
-      Mitglied, Delegierter, Geschäftsführer/in, Berater/in).
+      Mitglied, Delegierter, Geschäftsführer/in, Berater/in) mit der Sprache, in der
+      sie publiziert wird; erfasst wird pro Sprache ein Eintrag.
 
       '
   description_fr:
     tag: description_fr
     value: 'Fonction ou rôle dans l''organisation (p. ex. président/e, vice-président/e,
-      membre, délégué, directeur/directrice, conseiller/ère).
+      membre, délégué, directeur/directrice, conseiller/ère), avec la langue dans
+      laquelle elle est publiée ; une entrée est saisie par langue.
 
       '
 description: 'Funktion oder Rolle in der Organisation (z.B. Präsident/in, Vizepräsident/in,
-  Mitglied, Delegierter, Geschäftsführer/in, Berater/in).
+  Mitglied, Delegierter, Geschäftsführer/in, Berater/in) mit der Sprache, in der sie
+  publiziert wird; erfasst wird pro Sprache ein Eintrag.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors
@@ -86,7 +90,10 @@ rank: 1000
 slot_uri: act:functionRole
 domain_of:
 - InterestLink
-range: string
+range: MultilingualValue
+multivalued: true
+inlined: true
+inlined_as_list: true
 
 ```
 </details></div>

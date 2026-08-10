@@ -5,8 +5,14 @@ interest_links:
     label: Thierry Burkart
     group_label: FDP.Die Liberalen
   interest_type: professional_activity
-  organization_name: Burkart Advisory GmbH, Baden
+  organization_name:
+  - value: Burkart Advisory GmbH, Baden
+    language: de
   legal_form: '0107'
-  committee: Geschäftsleitung
-  function_role: Geschäftsführer
+  committee:
+  - value: Geschäftsleitung
+    language: de
+  function_role:
+  - value: Geschäftsführer
+    language: de
   is_paid: true

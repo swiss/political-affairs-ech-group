@@ -6,8 +6,14 @@ interest_links:
     label: Cristina Zanini Barzaghi
     group_label: PS, GISO e FA
   interest_type: governing_body
-  organization_name: Fondazione Giovanni Stamm
+  organization_name:
+  - value: Fondazione Giovanni Stamm
+    language: it
   legal_form: '0110'
-  committee: Consiglio di amministrazione
-  function_role: Membro
+  committee:
+  - value: Consiglio di amministrazione
+    language: it
+  function_role:
+  - value: Membro
+    language: it
   is_ex_officio: true

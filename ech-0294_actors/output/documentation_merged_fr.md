@@ -635,7 +635,7 @@ _Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si
 | occupation_code | 0..1 <br/> String | Code ISCO-19 du métier.  |
 | label | 0..1 <br/> String | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
 | organization_uid | 0..1 <br/> String | IDE de l'organisation issu du registre fédéral IDE (uid.admin.ch), dans le format d'échange d'eCH-0108 : CHE suivi de neuf chiffres, sans séparateurs (p. ex. CHE106063525). Le dernier chiffre est un chiffre de contrôle calculé modulo 11. La forme pointée CHE-106.063.525 est la présentation utilisée par uid.admin.ch et n'est pas saisie ici.  |
-| organization_name | 0..1 <br/> String | Nom de l'organisation ou de l'entreprise.  |
+| organization_name | * <br/> MultilingualValue | Nom de l'organisation ou de l'entreprise, avec la langue dans laquelle il est publié. Les registres bilingues indiquent le nom dans les deux langues ; une entrée est saisie par langue.  |
 | valid_from | 0..1 <br/> Date | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
 | valid_through | 0..1 <br/> Date | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
 | is_active | 0..1 <br/> Boolean | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
@@ -1858,6 +1858,7 @@ Le schéma InterestLink consigne les liens d'intérêts, les conflits d'intérê
 - **C'est l'interlocuteur qui décide, non la fonction :** `governing_body` et `interest_group_mandate` ne se distinguent pas par la fonction, car une présidence de fédération est formellement les deux. Ce qui compte, c'est le type d'organisation en face : si elle poursuit un but propre (entreprise, établissement, fondation), `governing_body` s'applique ; si son but est la représentation d'intérêts elle-même (fédération de branche, association professionnelle, association de locataires), c'est `interest_group_mandate` — même lorsque la fonction consiste en un siège au comité. Fribourg classe précisément ainsi la présidence de l'ASLOCA, bien que l'entrée porte la mention « Comité ». Cette bipartition n'est pas une invention des cantons : elle figure déjà à l'article 11 de la loi sur l'Assemblée fédérale.
 - **Représentation de sa propre collectivité (`is_ex_officio`) :** savoir si une personne détient un mandat à titre privé ou l'exerce comme représentante de sa propre autorité est consigné indépendamment du type de lien — l'Argovie distingue pour cette raison « Private Ämter » et « Öffentliche Ämter », la ville de Schaffhouse « Privates Engagement » et « Vertretung Stadt Schaffhausen ». Un même siège au conseil d'administration n'a pas la même portée selon le cas. Sont concernées avant tout les fonctions exécutives, car la représentation dans les organes des organisations concernées y va de pair avec le dicastère. Comme champ propre plutôt que comme catégorie, l'indication se combine avec n'importe quel `interest_type`.
 - **Ce que la Confédération inscrit à cet endroit :** dans le registre fédéral, le champ de type ne contient pas la catégorie mais la forme juridique de l'organisation (association, société anonyme, fondation). Celle-ci relève de `legal_form` dans le standard ; la catégorie doit être déduite de l'organe et de la fonction lors de la reprise des données.
+- **Registres bilingues (`organization_name`, `committee`, `function_role`) :** Fribourg, le Valais et Berne publient le nom de l'organisation, l'organe et la fonction en deux langues — dans la collection d'openparldata.ch, cela concerne environ 5000 des quelque 30 000 entrées. Ces trois indications sont donc gérées, comme la désignation des groupes, de manière multilingue : une entrée par langue publiée, sans rien traduire.
 - **Organisation référençable par IDE (`organization_uid`) :** si l'organisation est enregistrée dans le registre IDE, elle est référencée au moyen de son IDE – ce qui permet des analyses, p. ex. à l'aide de codes NOGA. C'est le format d'échange d'eCH-0108 qui est saisi, soit `CHE` suivi de neuf chiffres sans séparateurs (`CHE106063525`). Pour les organisations sans IDE, `organization_name`/`organization_address` sont disponibles ; la forme juridique suit un vocabulaire contrôlé (`LegalFormEnum`).
 - **Étendue et rémunération (`is_paid`, `committee`, `function_role`) :** outre l'organe et la fonction au sein de l'organisation, il est explicitement consigné si la position est rémunérée – un aspect central de la transparence.
 
@@ -1887,14 +1888,14 @@ _Un lien d'intérêts (conflit d'intérêts, financement politique) d'une person
 | wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | person_reference | 1 <br/> [PersonReference](#PersonReference) | Référence abrégée à une personne, retenant ses caractéristiques au moment de la mise en relation.  |
 | interest_type | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | Type de lien d'intérêts, suivant les catégories tenues par les registres de publicité (activité professionnelle, siège dans un organe de direction, mandat pour un groupe d'intérêts, fonction dans la sphère publique, appartenance).  |
-| organization_name | 0..1 <br/> String | Nom de l'organisation ou de l'entreprise.  |
+| organization_name | * <br/> MultilingualValue | Nom de l'organisation ou de l'entreprise, avec la langue dans laquelle il est publié. Les registres bilingues indiquent le nom dans les deux langues ; une entrée est saisie par langue.  |
 | organization_uid | 0..1 <br/> String | IDE de l'organisation issu du registre fédéral IDE (uid.admin.ch), dans le format d'échange d'eCH-0108 : CHE suivi de neuf chiffres, sans séparateurs (p. ex. CHE106063525). Le dernier chiffre est un chiffre de contrôle calculé modulo 11. La forme pointée CHE-106.063.525 est la présentation utilisée par uid.admin.ch et n'est pas saisie ici.  |
 | organization_address | 0..1 <br/> String | Adresse de l'organisation.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Forme juridique de l'organisation. Voir le vocabulaire contrôlé : https://register.ld.admin.ch/i14y/concept/legalForm  |
 | is_paid | 0..1 <br/> Boolean | Indique si l'activité est rémunérée.  |
 | is_ex_officio | 0..1 <br/> Boolean | Indique si la personne exerce le mandat pour le compte de la collectivité à laquelle elle appartient — donc en tant que représentante de celle-ci et non à titre privé. L'indication est indépendante du type de lien d'intérêts et se combine avec chacun d'eux : un même siège au conseil d'administration n'a pas la même portée selon que la commune y délègue une personne ou que celle-ci l'occupe à titre privé. Sont concernées avant tout les fonctions exécutives, car la représentation dans les organes des organisations concernées y va généralement de pair avec le dicastère.  |
-| committee | 0..1 <br/> String | Comité ou organe au sein de l'organisation (p. ex. conseil d'administration, conseil de fondation, comité directeur, conseil de surveillance, comité consultatif, direction).  |
-| function_role | 0..1 <br/> String | Fonction ou rôle dans l'organisation (p. ex. président/e, vice-président/e, membre, délégué, directeur/directrice, conseiller/ère).  |
+| committee | * <br/> MultilingualValue | Comité ou organe au sein de l'organisation (p. ex. conseil d'administration, conseil de fondation, comité directeur, conseil de surveillance, comité consultatif, direction), avec la langue dans laquelle il est publié ; une entrée est saisie par langue.  |
+| function_role | * <br/> MultilingualValue | Fonction ou rôle dans l'organisation (p. ex. président/e, vice-président/e, membre, délégué, directeur/directrice, conseiller/ère), avec la langue dans laquelle elle est publiée ; une entrée est saisie par langue.  |
 | date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 | datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 | date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -1951,10 +1952,16 @@ interest_links:
     label: Thierry Burkart
     group_label: FDP.Die Liberalen
   interest_type: professional_activity
-  organization_name: Burkart Advisory GmbH, Baden
+  organization_name:
+  - value: Burkart Advisory GmbH, Baden
+    language: de
   legal_form: '0107'
-  committee: Geschäftsleitung
-  function_role: Geschäftsführer
+  committee:
+  - value: Geschäftsleitung
+    language: de
+  function_role:
+  - value: Geschäftsführer
+    language: de
   is_paid: true
 
 ```
@@ -1968,11 +1975,17 @@ interest_links:
     label: Thierry Burkart
     group_label: FDP.Die Liberalen
   interest_type: governing_body
-  organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+  organization_name:
+  - value: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+    language: de
   organization_uid: CHE109810537
   legal_form: '0110'
-  committee: Stiftungsrat
-  function_role: Vizepräsident
+  committee:
+  - value: Stiftungsrat
+    language: de
+  function_role:
+  - value: Vizepräsident
+    language: de
   is_paid: false
 
 ```
@@ -1987,10 +2000,22 @@ interest_links:
     label: Pierre Mauron
     group_label: Parti socialiste
   interest_type: interest_group_mandate
-  organization_name: ASLOCA Fribourg
+  organization_name:
+  - value: ASLOCA Fribourg
+    language: fr
+  - value: ASLOCA Freiburg
+    language: de
   legal_form: '0109'
-  committee: Comité
-  function_role: Président
+  committee:
+  - value: Comité
+    language: fr
+  - value: Vorstand
+    language: de
+  function_role:
+  - value: Président
+    language: fr
+  - value: Präsident
+    language: de
 
 ```
 #### Exemple InterestLink : Lien cantonal, personne issue de la même livraison
@@ -2004,11 +2029,16 @@ interest_links:
       https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
     label: Gerri Beretta-Piccoli
   interest_type: governing_body
-  organization_name: Fondazione Gruppo Intervento Maltrattamento Infantile (GIMI),
-    Lugano
+  organization_name:
+  - value: Fondazione Gruppo Intervento Maltrattamento Infantile (GIMI), Lugano
+    language: it
   legal_form: '0110'
-  committee: Consiglio di fondazione
-  function_role: Vice Presidente
+  committee:
+  - value: Consiglio di fondazione
+    language: it
+  function_role:
+  - value: Vice Presidente
+    language: it
 
 ```
 #### Exemple InterestLink : Fonction publique à un autre niveau fédéral
@@ -2022,9 +2052,13 @@ interest_links:
     label: Felice Dafond
     group_label: PLR
   interest_type: public_mandate
-  organization_name: Municipio di Minusio
+  organization_name:
+  - value: Municipio di Minusio
+    language: it
   legal_form: '0223'
-  function_role: Sindaco
+  function_role:
+  - value: Sindaco
+    language: it
 
 ```
 #### Exemple InterestLink : Mandat d'administrateur sans IDE ni indication de rémunération
@@ -2037,10 +2071,16 @@ interest_links:
     label: Stefan Balaban
     group_label: LJS
   interest_type: governing_body
-  organization_name: X-net SA
+  organization_name:
+  - value: X-net SA
+    language: fr
   legal_form: '0106'
-  committee: Conseil d'administration
-  function_role: Membre
+  committee:
+  - value: Conseil d'administration
+    language: fr
+  function_role:
+  - value: Membre
+    language: fr
 
 ```
 #### Exemple InterestLink : Mandat exercé comme représentation de sa propre commune
@@ -2054,10 +2094,16 @@ interest_links:
     label: Cristina Zanini Barzaghi
     group_label: PS, GISO e FA
   interest_type: governing_body
-  organization_name: Fondazione Giovanni Stamm
+  organization_name:
+  - value: Fondazione Giovanni Stamm
+    language: it
   legal_form: '0110'
-  committee: Consiglio di amministrazione
-  function_role: Membro
+  committee:
+  - value: Consiglio di amministrazione
+    language: it
+  function_role:
+  - value: Membro
+    language: it
   is_ex_officio: true
 
 ```
@@ -2071,10 +2117,16 @@ interest_links:
     label: Thierry Burkart
     group_label: FDP.Die Liberalen
   interest_type: interest_group_mandate
-  organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+  organization_name:
+  - value: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+    language: de
   legal_form: '0109'
-  committee: Zentralvorstand
-  function_role: Präsident
+  committee:
+  - value: Zentralvorstand
+    language: de
+  function_role:
+  - value: Präsident
+    language: de
   is_paid: true
 
 ```
@@ -2089,8 +2141,12 @@ interest_links:
     label: Matteo Quadranti
     group_label: Partito liberale radicale ticinese (PLR)
   interest_type: public_mandate
-  organization_name: Commissione Cantonale Cultura
-  function_role: Vice-presidente
+  organization_name:
+  - value: Commissione Cantonale Cultura
+    language: it
+  function_role:
+  - value: Vice-presidente
+    language: it
 
 ```
 

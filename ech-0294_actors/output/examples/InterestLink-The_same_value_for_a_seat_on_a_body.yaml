@@ -6,5 +6,9 @@ interest_links:
     label: Matteo Quadranti
     group_label: Partito liberale radicale ticinese (PLR)
   interest_type: public_mandate
-  organization_name: Commissione Cantonale Cultura
-  function_role: Vice-presidente
+  organization_name:
+  - value: Commissione Cantonale Cultura
+    language: it
+  function_role:
+  - value: Vice-presidente
+    language: it

@@ -5,9 +5,15 @@ interest_links:
     label: Thierry Burkart
     group_label: FDP.Die Liberalen
   interest_type: governing_body
-  organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+  organization_name:
+  - value: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+    language: de
   organization_uid: CHE109810537
   legal_form: '0110'
-  committee: Stiftungsrat
-  function_role: Vizepräsident
+  committee:
+  - value: Stiftungsrat
+    language: de
+  function_role:
+  - value: Vizepräsident
+    language: de
   is_paid: false

@@ -108,7 +108,7 @@ Name: actors-schema
 | [occupation_code](occupation_code.md) | ISCO-19 Code der Tätigkeit |
 | [occupations](occupations.md) | Berufe oder Tätigkeiten der Person |
 | [organization_address](organization_address.md) | Adresse der Organisation |
-| [organization_name](organization_name.md) | Name der Organisation oder des Unternehmens |
+| [organization_name](organization_name.md) | Name der Organisation oder des Unternehmens mit der Sprache, in der er publiz... |
 | [organization_uid](organization_uid.md) | UID der Organisation aus dem eidgenössischen UID-Register (uid |
 | [parent_groups](parent_groups.md) | Verweis auf die übergeordneten Gruppen als GroupReference, also angegeben übe... |
 | [party_color](party_color.md) | Parteifarbe als Hexadezimalwert (optional für Parteien, z |

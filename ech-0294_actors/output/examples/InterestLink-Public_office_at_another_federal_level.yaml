@@ -6,6 +6,10 @@ interest_links:
     label: Felice Dafond
     group_label: PLR
   interest_type: public_mandate
-  organization_name: Municipio di Minusio
+  organization_name:
+  - value: Municipio di Minusio
+    language: it
   legal_form: '0223'
-  function_role: Sindaco
+  function_role:
+  - value: Sindaco
+    language: it

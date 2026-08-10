@@ -6,8 +6,13 @@ interest_links:
       https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
     label: Gerri Beretta-Piccoli
   interest_type: governing_body
-  organization_name: Fondazione Gruppo Intervento Maltrattamento Infantile (GIMI),
-    Lugano
+  organization_name:
+  - value: Fondazione Gruppo Intervento Maltrattamento Infantile (GIMI), Lugano
+    language: it
   legal_form: '0110'
-  committee: Consiglio di fondazione
-  function_role: Vice Presidente
+  committee:
+  - value: Consiglio di fondazione
+    language: it
+  function_role:
+  - value: Vice Presidente
+    language: it

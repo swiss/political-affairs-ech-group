@@ -5,8 +5,14 @@ interest_links:
     label: Thierry Burkart
     group_label: FDP.Die Liberalen
   interest_type: interest_group_mandate
-  organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+  organization_name:
+  - value: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+    language: de
   legal_form: '0109'
-  committee: Zentralvorstand
-  function_role: Präsident
+  committee:
+  - value: Zentralvorstand
+    language: de
+  function_role:
+  - value: Präsident
+    language: de
   is_paid: true

@@ -22,14 +22,14 @@ _An interest link (conflict of interest, political financing) of a person to an 
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | person_reference | 1 <br/> [PersonReference](PersonReference.md) | Reference to a person with snapshot data at time of linking.  |
 | interest_type | 1 <br/> [InterestTypeEnum](InterestTypeEnum.md) | Type of interest link, following the categories the disclosure registers maintain (professional activity, seat on a governing body, mandate for an interest group, public mandate, membership).  |
-| organization_name | 0..1 <br/> [String](String.md) | Name of the organization or enterprise.  |
+| organization_name | * <br/> [MultilingualValue](MultilingualValue.md) | Name of the organization or enterprise, with the language it is published in. Bilingual registers state the name in both languages; one entry is recorded per language.  |
 | organization_uid | 0..1 <br/> [String](String.md) | UID of the organization from the federal UID register (uid.admin.ch), in the exchange format of eCH-0108: CHE followed by nine digits, without separators (e.g. CHE106063525). The last digit is a check digit calculated modulo 11. The dotted form CHE-106.063.525 is the presentation used by uid.admin.ch and is not recorded here.  |
 | organization_address | 0..1 <br/> [String](String.md) | Address of the organization.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](LegalFormEnum.md) | Legal form of the organization. See controlled vocabulary: https://register.ld.admin.ch/i14y/concept/legalForm  |
 | is_paid | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether the activity is paid.  |
 | is_ex_officio | 0..1 <br/> [Boolean](Boolean.md) | Indicates whether the person holds the mandate on behalf of the public body they belong to, i.e. as its delegate, rather than in a private capacity. The indication is independent of the interest type and can be combined with any of them: the same seat on a board of directors is one thing when the commune delegates a person there and quite another when they hold it privately. It concerns executive offices above all, since a delegation to the bodies of the organisations a public body holds an interest in usually comes with the department.  |
-| committee | 0..1 <br/> [String](String.md) | Committee or board within the organization (e.g., Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).  |
-| function_role | 0..1 <br/> [String](String.md) | Function or role in the organization (e.g., Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in).  |
+| committee | * <br/> [MultilingualValue](MultilingualValue.md) | Committee or board within the organization (e.g., Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung), with the language it is published in; one entry is recorded per language.  |
+| function_role | * <br/> [MultilingualValue](MultilingualValue.md) | Function or role in the organization (e.g., Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in), with the language it is published in; one entry is recorded per language.  |
 | date_created | 0..1 <br/> [Date](Date.md) | The date when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
 | datetime_created | 0..1 <br/> [Datetime](Datetime.md) | The date and time when an entity was created. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
 | date_modified | 0..1 <br/> [Date](Date.md) | The date when an entity was last modified. <br/><br/>Inheritance: [HasCreationModificationDates](HasCreationModificationDates.md) |
@@ -86,10 +86,16 @@ interest_links:
     label: Thierry Burkart
     group_label: FDP.Die Liberalen
   interest_type: professional_activity
-  organization_name: Burkart Advisory GmbH, Baden
+  organization_name:
+  - value: Burkart Advisory GmbH, Baden
+    language: de
   legal_form: '0107'
-  committee: Geschäftsleitung
-  function_role: Geschäftsführer
+  committee:
+  - value: Geschäftsleitung
+    language: de
+  function_role:
+  - value: Geschäftsführer
+    language: de
   is_paid: true
 
 ```
@@ -103,11 +109,17 @@ interest_links:
     label: Thierry Burkart
     group_label: FDP.Die Liberalen
   interest_type: governing_body
-  organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+  organization_name:
+  - value: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+    language: de
   organization_uid: CHE109810537
   legal_form: '0110'
-  committee: Stiftungsrat
-  function_role: Vizepräsident
+  committee:
+  - value: Stiftungsrat
+    language: de
+  function_role:
+  - value: Vizepräsident
+    language: de
   is_paid: false
 
 ```
@@ -122,10 +134,22 @@ interest_links:
     label: Pierre Mauron
     group_label: Parti socialiste
   interest_type: interest_group_mandate
-  organization_name: ASLOCA Fribourg
+  organization_name:
+  - value: ASLOCA Fribourg
+    language: fr
+  - value: ASLOCA Freiburg
+    language: de
   legal_form: '0109'
-  committee: Comité
-  function_role: Président
+  committee:
+  - value: Comité
+    language: fr
+  - value: Vorstand
+    language: de
+  function_role:
+  - value: Président
+    language: fr
+  - value: Präsident
+    language: de
 
 ```
 #### Example InterestLink: Cantonal link person from the same delivery
@@ -139,11 +163,16 @@ interest_links:
       https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
     label: Gerri Beretta-Piccoli
   interest_type: governing_body
-  organization_name: Fondazione Gruppo Intervento Maltrattamento Infantile (GIMI),
-    Lugano
+  organization_name:
+  - value: Fondazione Gruppo Intervento Maltrattamento Infantile (GIMI), Lugano
+    language: it
   legal_form: '0110'
-  committee: Consiglio di fondazione
-  function_role: Vice Presidente
+  committee:
+  - value: Consiglio di fondazione
+    language: it
+  function_role:
+  - value: Vice Presidente
+    language: it
 
 ```
 #### Example InterestLink: Public office at another federal level
@@ -157,9 +186,13 @@ interest_links:
     label: Felice Dafond
     group_label: PLR
   interest_type: public_mandate
-  organization_name: Municipio di Minusio
+  organization_name:
+  - value: Municipio di Minusio
+    language: it
   legal_form: '0223'
-  function_role: Sindaco
+  function_role:
+  - value: Sindaco
+    language: it
 
 ```
 #### Example InterestLink: Board mandate without a UID and without payment information
@@ -172,10 +205,16 @@ interest_links:
     label: Stefan Balaban
     group_label: LJS
   interest_type: governing_body
-  organization_name: X-net SA
+  organization_name:
+  - value: X-net SA
+    language: fr
   legal_form: '0106'
-  committee: Conseil d'administration
-  function_role: Membre
+  committee:
+  - value: Conseil d'administration
+    language: fr
+  function_role:
+  - value: Membre
+    language: fr
 
 ```
 #### Example InterestLink: Mandate held as a delegate of the persons own commune
@@ -189,10 +228,16 @@ interest_links:
     label: Cristina Zanini Barzaghi
     group_label: PS, GISO e FA
   interest_type: governing_body
-  organization_name: Fondazione Giovanni Stamm
+  organization_name:
+  - value: Fondazione Giovanni Stamm
+    language: it
   legal_form: '0110'
-  committee: Consiglio di amministrazione
-  function_role: Membro
+  committee:
+  - value: Consiglio di amministrazione
+    language: it
+  function_role:
+  - value: Membro
+    language: it
   is_ex_officio: true
 
 ```
@@ -206,10 +251,16 @@ interest_links:
     label: Thierry Burkart
     group_label: FDP.Die Liberalen
   interest_type: interest_group_mandate
-  organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+  organization_name:
+  - value: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+    language: de
   legal_form: '0109'
-  committee: Zentralvorstand
-  function_role: Präsident
+  committee:
+  - value: Zentralvorstand
+    language: de
+  function_role:
+  - value: Präsident
+    language: de
   is_paid: true
 
 ```
@@ -224,8 +275,12 @@ interest_links:
     label: Matteo Quadranti
     group_label: Partito liberale radicale ticinese (PLR)
   interest_type: public_mandate
-  organization_name: Commissione Cantonale Cultura
-  function_role: Vice-presidente
+  organization_name:
+  - value: Commissione Cantonale Cultura
+    language: it
+  function_role:
+  - value: Vice-presidente
+    language: it
 
 ```
 

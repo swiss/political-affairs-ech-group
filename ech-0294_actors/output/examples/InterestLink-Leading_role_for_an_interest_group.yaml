@@ -6,7 +6,19 @@ interest_links:
     label: Pierre Mauron
     group_label: Parti socialiste
   interest_type: interest_group_mandate
-  organization_name: ASLOCA Fribourg
+  organization_name:
+  - value: ASLOCA Fribourg
+    language: fr
+  - value: ASLOCA Freiburg
+    language: de
   legal_form: '0109'
-  committee: Comité
-  function_role: Président
+  committee:
+  - value: Comité
+    language: fr
+  - value: Vorstand
+    language: de
+  function_role:
+  - value: Président
+    language: fr
+  - value: Präsident
+    language: de
