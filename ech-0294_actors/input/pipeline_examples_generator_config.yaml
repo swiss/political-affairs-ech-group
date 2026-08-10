@@ -104,6 +104,47 @@ example_titles:
     de: Zweisprachige Delegation in ein interkantonales Gremium
     fr: "Délégation bilingue auprès d'un organe intercantonal"
     en: Bilingual delegation to an intercantonal body
+  # Mitgliedschaften — alle von derselben Person (Beat Jans) über drei
+  # föderale Ebenen hinweg, damit sichtbar wird, was an der Mitgliedschaft
+  # hängt und was an der Person.
+  "act:ms_jans_grossrat_bs":
+    de: Person und Gruppe derselben Lieferung, mit Wahlkreis
+    fr: Personne et groupe de la même livraison, avec circonscription
+    en: Person and group from the same delivery, with electoral district
+  "act:ms_jans_fraktion_sp_bs":
+    de: Fraktionsmitgliedschaft parallel zum Ratsmandat
+    fr: Appartenance à un groupe parlementaire parallèle au mandat
+    en: Parliamentary group membership alongside the council mandate
+  "act:ms_jans_wak_bs":
+    de: Kommissionsmitgliedschaft mit eigener Dauer
+    fr: Appartenance à une commission avec sa propre durée
+    en: Committee membership with a duration of its own
+  "act:ms_jans_regierungsrat_bs":
+    de: Exekutivmandat mit Rolle im Präsidium
+    fr: Mandat exécutif avec fonction présidentielle
+    en: Executive mandate with a presiding role
+  "act:ms_jans_nationalrat":
+    de: Dieselbe Person auf anderer Ebene, mit anderem Wahlkreis
+    fr: La même personne à un autre niveau, avec une autre circonscription
+    en: The same person at another level, with another electoral district
+  "act:ms_jans_partei_sp":
+    de: Parteimitgliedschaft ohne Zeitangaben
+    fr: Affiliation à un parti sans indications temporelles
+    en: Party membership without temporal information
+  "act:ms_jans_bundesrat":
+    de: Laufendes Mandat ohne Enddatum
+    fr: Mandat en cours sans date de fin
+    en: Ongoing mandate without an end date
+  # Wahlkreise — der eine hat eine amtliche Raumeinheit hinter sich, der
+  # andere nicht.
+  "https://grosserrat.bs.ch/wahlkreise/kleinbasel":
+    de: Wahlkreis ohne amtliche Raumeinheit
+    fr: Circonscription sans unité spatiale officielle
+    en: Electoral district without an official spatial unit
+  "https://ld.admin.ch/canton/12":
+    de: Kanton als Wahlkreis, über die LINDAS-Ressource identifiziert
+    fr: Canton comme circonscription, identifié par la ressource LINDAS
+    en: Canton as electoral district, identified via its LINDAS resource
   # Interessenbindungen — sie zeigen die Bandbreite von Mandatstypen, von der
   # eigenen operativen Gesellschaft bis zum ehrenamtlichen Vereinsvorstand.
   "act:il_burkart_001":

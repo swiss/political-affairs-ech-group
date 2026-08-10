@@ -377,6 +377,14 @@ classes:
     slots:
       - label
     slot_usage:
+      label:
+        description: |
+          Name of the electoral district as published by the body responsible for the election.
+        annotations:
+          description_de: |
+            Bezeichnung des Wahlkreises, wie sie von der für die Wahl zuständigen Stelle publiziert wird.
+          description_fr: |
+            Désignation de la circonscription électorale telle qu'elle est publiée par l'organe compétent pour l'élection.
       global_uri:
         description: |
           For IRI references, LINDAS resources should be used.
@@ -387,6 +395,7 @@ classes:
           - Canton - Aargau: https://ld.admin.ch/canton/19
           - District - Brig: https://ld.admin.ch/district/2301
           - Municipality - Versoix: https://ld.admin.ch/municipality/6644
+          Electoral districts that correspond to no official spatial unit, such as districts grouping together neighbourhoods of a municipality, are given an identifier in the namespace of the publishing body instead.
         annotations:
           description_de: |
             Für IRI-Referenzen sollen die LINDAS-Ressourcen verwendet werden.
@@ -397,6 +406,7 @@ classes:
             - Kanton - Aargau: https://ld.admin.ch/canton/19
             - Bezirk - Brig: https://ld.admin.ch/district/2301
             - Gemeinde - Versoix: https://ld.admin.ch/municipality/6644
+            Wahlkreise, die keiner amtlichen Raumeinheit entsprechen, etwa Wahlkreise, die Wohnviertel einer Gemeinde zusammenfassen, erhalten stattdessen einen Identifikator im Namensraum der publizierenden Stelle.
           description_fr: |
             Pour les références IRI, les ressources LINDAS doivent être utilisées.
             Les IRI des différents niveaux administratifs des unités spatiales suisses sont disponibles à l'adresse : https://ld.admin.ch/country/CHE.
@@ -406,6 +416,7 @@ classes:
             - Canton - Argovie : https://ld.admin.ch/canton/19
             - District - Brigue : https://ld.admin.ch/district/2301
             - Commune - Versoix : https://ld.admin.ch/municipality/6644
+            Les circonscriptions qui ne correspondent à aucune unité spatiale officielle, par exemple celles qui regroupent des quartiers d'une commune, reçoivent à la place un identifiant dans l'espace de noms de l'organe qui les publie.
 
   GroupType:
     description: |
@@ -1052,13 +1063,14 @@ slots:
   electoral_district:
     slot_uri: act:electoralDistrict
     description: |
-      Link to the electoral district.
+      Electoral district of the membership. Stated where the mandate was won in an electoral district; it is therefore recorded on the membership and not on the person.
     annotations:
       description_de: |
-        Link zum Wahlbezirk.
+        Wahlkreis der Mitgliedschaft. Wird angegeben, wo das Mandat in einem Wahlkreis errungen wurde; er wird deshalb an der Mitgliedschaft geführt und nicht an der Person.
       description_fr: |
-        Lien vers la circonscription électorale.
+        Circonscription électorale de l'affiliation. Indiquée lorsque le mandat a été obtenu dans une circonscription ; elle est donc rattachée à l'affiliation et non à la personne.
     range: ElectoralDistrict
+    inlined: true
 
   persons:
     slot_uri: act:person
