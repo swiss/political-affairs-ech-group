@@ -1856,7 +1856,7 @@ electoral_district:
 The InterestLink schema records interest links, conflicts of interest and entanglements of persons with organisations. It is based on the transparency requirements for members of parliament according to [Federal Assembly – Interest Links](https://www.parlament.ch/centers/documents/de/interessen-nr.pdf).
 
 - **Distinction from memberships (`Membership`):** `InterestLink` represents links to organisations *outside* the actor schema (conflicts of interest, political financing) – in contrast to the formal affiliation *within* the schema, which is recorded via `Membership`.
-- **Mandatory classification (`interest_type`):** Every link is mandatorily categorised by type (professional activity, political offices, association), based on the disclosure categories of the Federal Assembly.
+- **Mandatory classification (`interest_type`):** Every link is mandatorily categorised by type (professional activity, political offices, association).
 - **Organisation referenceable via UID (`organization_uid`):** If the organisation is recorded in the UID register, it is referenced via its UID – this enables analyses, e.g. with NOGA codes. What is recorded is the exchange format of eCH-0108, i.e. `CHE` followed by nine digits without separators (`CHE106063525`). For organisations without a UID, `organization_name`/`organization_address` are available; the legal form follows a controlled vocabulary (`LegalFormEnum`).
 - **Scope and remuneration (`is_paid`, `committee`, `function_role`):** In addition to the committee and function within the organisation, it is explicitly recorded whether the position is paid – a central transparency aspect.
 
@@ -2620,28 +2620,28 @@ The version stated is the one this standard was developed against.
 
 | | |
 |---|---|
-|[eCH-0292]|eCH-0292: Meta-processes for political affairs, version 1.0.0 – shared data elements: [https://www.ech.ch/de/ech/ech-0292](https://www.ech.ch/de/ech/ech-0292)|
-|[eCH-0293]|eCH-0293: Public council operations, version 1.0.0: [https://www.ech.ch/de/ech/ech-0293](https://www.ech.ch/de/ech/ech-0293)|
-|[eCH-0295]|eCH-0295: Parliamentary affairs, version 1.0.0: [https://www.ech.ch/de/ech/ech-0295](https://www.ech.ch/de/ech/ech-0295)|
-|[eCH-0296]|eCH-0296: Legal acts and legislative texts, version 1.0.0: [https://www.ech.ch/de/ech/ech-0296](https://www.ech.ch/de/ech/ech-0296)|
-|[eCH-0297]|eCH-0297: Public consultations, version 1.0.0: [https://www.ech.ch/de/ech/ech-0297](https://www.ech.ch/de/ech/ech-0297)|
+|eCH-0292|eCH-0292: Meta-processes for political affairs, version 1.0.0 – shared data elements: [https://www.ech.ch/de/ech/ech-0292](https://www.ech.ch/de/ech/ech-0292)|
+|eCH-0293|eCH-0293: Public council operations, version 1.0.0: [https://www.ech.ch/de/ech/ech-0293](https://www.ech.ch/de/ech/ech-0293)|
+|eCH-0295|eCH-0295: Parliamentary affairs, version 1.0.0: [https://www.ech.ch/de/ech/ech-0295](https://www.ech.ch/de/ech/ech-0295)|
+|eCH-0296|eCH-0296: Legal acts and legislative texts, version 1.0.0: [https://www.ech.ch/de/ech/ech-0296](https://www.ech.ch/de/ech/ech-0296)|
+|eCH-0297|eCH-0297: Public consultations, version 1.0.0: [https://www.ech.ch/de/ech/ech-0297](https://www.ech.ch/de/ech/ech-0297)|
 
 ## Further eCH standards
 
 | | |
 |---|---|
-|[eCH-0011]|eCH-0011: Datenstandard Personendaten, version 9.0.0 (approved, 27.07.2023). Basis of the name types in `NameTypeEnum` (`personNameData`): [https://www.ech.ch/de/ech/ech-0011/9.0.0](https://www.ech.ch/de/ech/ech-0011/9.0.0)|
-|[eCH-0108]|eCH-0108: Datenstandard: Unternehmensstammdaten und Unternehmensregister, version 6.0.0 (approved, 04.04.2024). Defines the exchange format of the UID (`organization_uid`) and is the standard the legal form code list in `LegalFormEnum` conforms to: [https://www.ech.ch/de/ech/ech-0108/6.0.0](https://www.ech.ch/de/ech/ech-0108/6.0.0)|
+|eCH-0011|eCH-0011: Datenstandard Personendaten, version 9.0.0 (approved, 27.07.2023). Basis of the name types in `NameTypeEnum` (`personNameData`): [https://www.ech.ch/de/ech/ech-0011/9.0.0](https://www.ech.ch/de/ech/ech-0011/9.0.0)|
+|eCH-0108|eCH-0108: Datenstandard: Unternehmensstammdaten und Unternehmensregister, version 6.0.0 (approved, 04.04.2024). Defines the exchange format of the UID (`organization_uid`) and is the standard the legal form code list in `LegalFormEnum` conforms to: [https://www.ech.ch/de/ech/ech-0108/6.0.0](https://www.ech.ch/de/ech/ech-0108/6.0.0)|
 
 ## Code lists and further sources
 
 | | |
 |---|---|
-|[I14Y]|Interoperability platform of the Federal Statistical Office. Source of the code lists for legal form (`LegalFormEnum`) and sex (`GenderCodeEnum`): [https://www.i14y.admin.ch](https://www.i14y.admin.ch)|
-|[LINDAS]|Linked Data Service of the Swiss federal administration. Identifiers of the Swiss spatial units (country, canton, district, municipality) for `spatial` and `ElectoralDistrict`: [https://ld.admin.ch](https://ld.admin.ch)|
-|[NOGA]|General Classification of Economic Activities of the Federal Statistical Office. Enables analyses via the UID of referenced organisations.|
-|[Wikidata]|Free knowledge base. Entity IRI (`http://www.wikidata.org/entity/Q…`) in `wikidata_uri`: [https://www.wikidata.org](https://www.wikidata.org)|
-|[ISO 639-1]|ISO (International Organization for Standardization). Language codes, used in the `language` slot of `MultilingualValue`.|
-|[schema.org]|Shared vocabulary for structured data. Source of several `slot_uri` assignments: [https://schema.org](https://schema.org)|
-|[LinkML]|The modelling language in which this standard is defined: [https://linkml.io](https://linkml.io)|
+|I14Y|Interoperability platform of the Federal Statistical Office. Source of the code lists for legal form (`LegalFormEnum`) and sex (`GenderCodeEnum`): [https://www.i14y.admin.ch](https://www.i14y.admin.ch)|
+|LINDAS|Linked Data Service of the Swiss federal administration. Identifiers of the Swiss spatial units (country, canton, district, municipality) for `spatial` and `ElectoralDistrict`: [https://ld.admin.ch](https://ld.admin.ch)|
+|NOGA|General Classification of Economic Activities of the Federal Statistical Office. Enables analyses via the UID of referenced organisations.|
+|Wikidata|Free knowledge base. Entity IRI (`http://www.wikidata.org/entity/Q…`) in `wikidata_uri`: [https://www.wikidata.org](https://www.wikidata.org)|
+|ISO 639-1|ISO (International Organization for Standardization). Language codes, used in the `language` slot of `MultilingualValue`.|
+|schema.org|Shared vocabulary for structured data. Source of several `slot_uri` assignments: [https://schema.org](https://schema.org)|
+|LinkML|The modelling language in which this standard is defined: [https://linkml.io](https://linkml.io)|
 

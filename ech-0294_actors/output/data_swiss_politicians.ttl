@@ -32,11 +32,11 @@ act:swiss_politicians_example a act:Container ;
             mcm:label "divers" ;
             act:genderCode "non_binary" ] ;
     act:name [ a act:Name ;
-            mcm:value "Fisch" ;
-            act:nameType "PersonOfficialName" ],
-        [ a act:Name ;
             mcm:value "Sofia" ;
-            act:nameType "PersonFirstName" ] ;
+            act:nameType "PersonFirstName" ],
+        [ a act:Name ;
+            mcm:value "Fisch" ;
+            act:nameType "PersonOfficialName" ] ;
     act:occupation [ a act:Occupation ;
             mcm:isCurrent true ;
             mcm:label "Jurist*in" ] ;
@@ -58,11 +58,11 @@ act:swiss_politicians_example a act:Container ;
             schema1:validFrom "1964-07-12"^^xsd:date ;
             act:country "CH" ] ;
     act:contact [ a act:Contact ;
-            mcm:value "beat.jans@admin.ch" ;
-            act:contactType "email" ],
-        [ a act:Contact ;
             mcm:value "http://www.beat-jans.ch" ;
-            act:contactType "contact_website" ] ;
+            act:contactType "contact_website" ],
+        [ a act:Contact ;
+            mcm:value "beat.jans@admin.ch" ;
+            act:contactType "email" ] ;
     act:gender [ a act:Gender ;
             schema1:validFrom "1964-07-12"^^xsd:date ;
             act:genderCode "male" ] ;
@@ -71,12 +71,12 @@ act:swiss_politicians_example a act:Container ;
             act:isCorrespondence true ;
             act:isNative true ] ;
     act:name [ a act:Name ;
-            mcm:value "Beat" ;
-            act:nameType "PersonFirstName" ],
-        [ a act:Name ;
             schema1:validFrom "1964-07-12"^^xsd:date ;
             mcm:value "Jans" ;
-            act:nameType "PersonOfficialName" ] ;
+            act:nameType "PersonOfficialName" ],
+        [ a act:Name ;
+            mcm:value "Beat" ;
+            act:nameType "PersonFirstName" ] ;
     act:occupation [ a act:Occupation ;
             schema1:validFrom "1964-01-01"^^xsd:date ;
             mcm:isCurrent true ;
@@ -91,11 +91,11 @@ act:swiss_politicians_example a act:Container ;
     mcm:localId "6370" ;
     act:birthYear 1965 ;
     act:name [ a act:Name ;
-            mcm:value "Alois" ;
-            act:nameType "PersonFirstName" ],
-        [ a act:Name ;
             mcm:value "Arnold" ;
-            act:nameType "PersonOfficialName" ] .
+            act:nameType "PersonOfficialName" ],
+        [ a act:Name ;
+            mcm:value "Alois" ;
+            act:nameType "PersonFirstName" ] .
 
 <https://www.ur.ch/behoerdenmitglieder/6447> a act:Person ;
     mcm:label "Alois Arnold (1981)" ;
