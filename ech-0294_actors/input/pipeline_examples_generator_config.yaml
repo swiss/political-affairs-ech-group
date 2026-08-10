@@ -131,6 +131,10 @@ example_titles:
     de: Laufendes Mandat ohne Enddatum
     fr: Mandat en cours sans date de fin
     en: Ongoing mandate without an end date
+  "act:ms_jans_ejpd":
+    de: Rolle ausserhalb des Vokabulars, benannt im role_label
+    fr: "Rôle hors du vocabulaire, désigné dans le role_label"
+    en: Role outside the vocabulary, named in the role_label
   # Wahlkreise — der eine hat eine amtliche Raumeinheit hinter sich, der
   # andere nicht.
   "https://grosserrat.bs.ch/wahlkreise/kleinbasel":
