@@ -67,7 +67,7 @@ _A parliamentary session that groups multiple meetings and spans a specific time
 
 
 ### Examples
-#### Example: Federal session with a trilingual designation
+#### Example Session: Federal session with a trilingual designation
 
 ```yaml
 global_uri: ops:session_5207
@@ -93,7 +93,7 @@ datetime_modified: '2025-04-24T00:19:37Z'
 datetime_created: '2025-03-20T14:27:09Z'
 
 ```
-#### Example: Landsgemeinde as a sitting period
+#### Example Session: Landsgemeinde as a sitting period
 
 ```yaml
 global_uri: ops:session_gl_landsgemeinde_2025_05_04
@@ -110,7 +110,7 @@ datetime_modified: '2025-04-25T13:40:34Z'
 datetime_created: '2025-04-23T22:58:39Z'
 
 ```
-#### Example: Cantonal session with a bilingual designation
+#### Example Session: Cantonal session with a bilingual designation
 
 ```yaml
 global_uri: ops:session_be_summer_2025
@@ -133,7 +133,7 @@ datetime_modified: '2025-05-19T01:06:44Z'
 datetime_created: '2025-04-25T11:10:24Z'
 
 ```
-#### Example: One-day sitting period of a cantonal parliament
+#### Example Session: One-day sitting period of a cantonal parliament
 
 ```yaml
 global_uri: ops:session_gl_landrat_2025_02_26

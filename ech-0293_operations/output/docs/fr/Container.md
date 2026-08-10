@@ -50,7 +50,7 @@ _Conteneur pour les données de l'activité publique des conseils : législature
 
 
 ### Exemples
-#### Exemple : meeting
+#### Exemple Container : meeting
 
 ```yaml
 global_uri: ops:meetings_1
@@ -104,7 +104,7 @@ meetings:
     datetime_modified: "2025-05-19T01:06:45Z"
 
 ```
-#### Exemple : meeting sr winter25 Sitzung6
+#### Exemple Container : meeting sr winter25 Sitzung6
 
 ```yaml
 global_uri: ops:data_meeting_sr_winter25_Sitzung6
@@ -175,7 +175,7 @@ speeches:
     media_format: "video/mp4"
 
 ```
-#### Exemple : meeting complete
+#### Exemple Container : meeting complete
 
 ```yaml
 global_uri: ops:meeting_examples_2025
@@ -326,7 +326,7 @@ agenda_items:
   datetime_modified: "2025-11-20T16:50:00Z"
 
 ```
-#### Exemple : meeting item
+#### Exemple Container : meeting item
 
 ```yaml
 global_uri: ops:agenda_items_1
@@ -544,7 +544,7 @@ agenda_items:
     datetime_modified: '2025-01-29T06:59:41Z'
 
 ```
-#### Exemple : voting
+#### Exemple Container : voting
 
 ```yaml
 global_uri: ops:voting_examples_2025
@@ -771,7 +771,7 @@ individual_votes:
   datetime_created: "2025-11-20T16:45:00Z"
 
 ```
-#### Exemple : session
+#### Exemple Container : session
 
 ```yaml
 global_uri: ops:sessions_example_2025

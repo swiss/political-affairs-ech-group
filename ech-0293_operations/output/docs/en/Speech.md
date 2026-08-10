@@ -65,7 +65,7 @@ _A speech or statement made during a meeting (also called Votum or speaker segme
 
 
 ### Examples
-#### Example: Speech with verbatim text and video recording
+#### Example Speech: Speech with verbatim text and video recording
 
 ```yaml
 global_uri: ops:366631

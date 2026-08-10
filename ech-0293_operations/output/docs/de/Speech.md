@@ -65,7 +65,7 @@ _Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt)._
 
 
 ### Beispiele
-#### Beispiel: Speech with verbatim text and video recording
+#### Beispiel Speech: Speech with verbatim text and video recording
 
 ```yaml
 global_uri: ops:366631

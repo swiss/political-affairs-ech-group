@@ -360,7 +360,7 @@ _Eine Parlamentssession, die mehrere Sitzungen gruppiert und sich über einen be
 
 
 ### Beispiele
-#### Beispiel: Eidgenössische Session mit dreisprachiger Bezeichnung
+#### Beispiel Session: Eidgenössische Session mit dreisprachiger Bezeichnung
 
 ```yaml
 global_uri: ops:session_5207
@@ -386,7 +386,7 @@ datetime_modified: '2025-04-24T00:19:37Z'
 datetime_created: '2025-03-20T14:27:09Z'
 
 ```
-#### Beispiel: Landsgemeinde als Sitzungsperiode
+#### Beispiel Session: Landsgemeinde als Sitzungsperiode
 
 ```yaml
 global_uri: ops:session_gl_landsgemeinde_2025_05_04
@@ -403,7 +403,7 @@ datetime_modified: '2025-04-25T13:40:34Z'
 datetime_created: '2025-04-23T22:58:39Z'
 
 ```
-#### Beispiel: Kantonale Session mit zweisprachiger Bezeichnung
+#### Beispiel Session: Kantonale Session mit zweisprachiger Bezeichnung
 
 ```yaml
 global_uri: ops:session_be_summer_2025
@@ -426,7 +426,7 @@ datetime_modified: '2025-05-19T01:06:44Z'
 datetime_created: '2025-04-25T11:10:24Z'
 
 ```
-#### Beispiel: Eintägige Sitzungsperiode eines Landrates
+#### Beispiel Session: Eintägige Sitzungsperiode eines Landrates
 
 ```yaml
 global_uri: ops:session_gl_landrat_2025_02_26
@@ -659,7 +659,7 @@ _Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessi
 
 
 ### Beispiele
-#### Beispiel: Ständeratssitzung mit Protokoll und Wortmeldungen
+#### Beispiel Meeting: Ständeratssitzung mit Protokoll und Wortmeldungen
 
 ```yaml
 global_uri: parl:sr_winter25_sitzung_6
@@ -685,7 +685,7 @@ datetime_created: '2026-01-12T00:00:00+01:00'
 datetime_modified: '2026-01-12T00:00:00+01:00'
 
 ```
-#### Beispiel: Kantonsratssitzung mit Traktanden und Abstimmungen
+#### Beispiel Meeting: Kantonsratssitzung mit Traktanden und Abstimmungen
 
 ```yaml
 global_uri: ops:meeting_sg_2025_03_15
@@ -715,7 +715,7 @@ datetime_created: '2025-02-01T10:00:00Z'
 datetime_modified: '2025-03-15T17:30:00Z'
 
 ```
-#### Beispiel: Halbtagessitzung innerhalb einer Session
+#### Beispiel Meeting: Halbtagessitzung innerhalb einer Session
 
 ```yaml
 body_key: BE
@@ -744,7 +744,7 @@ datetime_created: '2025-04-25T11:10:25Z'
 datetime_modified: '2025-05-19T01:06:45Z'
 
 ```
-#### Beispiel: Kommissionssitzung mit Anwesenheitsliste
+#### Beispiel Meeting: Kommissionssitzung mit Anwesenheitsliste
 
 ```yaml
 global_uri: ops:meeting_be_committee_wak_2025_05_12
@@ -776,7 +776,7 @@ datetime_created: '2025-04-15T09:00:00Z'
 datetime_modified: '2025-05-12T16:45:00Z'
 
 ```
-#### Beispiel: Regierungssitzung mit zweisprachiger Bezeichnung
+#### Beispiel Meeting: Regierungssitzung mit zweisprachiger Bezeichnung
 
 ```yaml
 body_key: BE
@@ -807,7 +807,7 @@ datetime_created: '2024-10-28T01:22:26Z'
 datetime_modified: '2024-11-27T20:40:57Z'
 
 ```
-#### Beispiel: Landsgemeinde als Sitzungstyp „sitting“
+#### Beispiel Meeting: Landsgemeinde als Sitzungstyp „sitting“
 
 ```yaml
 global_uri: ops:meeting_gl_landsgemeinde_2025
@@ -1408,7 +1408,7 @@ _Ein Traktandum einer Sitzung._
 
 
 ### Beispiele
-#### Beispiel: Budgettraktandum
+#### Beispiel AgendaItem: Budgettraktandum
 
 ```yaml
 global_uri: ops:agenda_item_zh_budget_2026
@@ -1431,7 +1431,7 @@ datetime_created: '2025-10-01T08:00:00Z'
 datetime_modified: '2025-11-20T16:50:00Z'
 
 ```
-#### Beispiel: Motion in einer Traktandengruppe
+#### Beispiel AgendaItem: Motion in einer Traktandengruppe
 
 ```yaml
 global_uri: ops:16155798_3
@@ -1451,7 +1451,7 @@ datetime_created: '2025-05-02T11:23:49Z'
 datetime_modified: '2025-05-02T11:23:49Z'
 
 ```
-#### Beispiel: Traktandum einer Ständeratssitzung
+#### Beispiel AgendaItem: Traktandum einer Ständeratssitzung
 
 ```yaml
 global_uri: ops:69905
@@ -1474,7 +1474,7 @@ datetime_created: '2026-01-12T00:00:00+01:00'
 datetime_modified: '2026-01-12T00:00:00+01:00'
 
 ```
-#### Beispiel: Postulat, Kategorie „voting“
+#### Beispiel AgendaItem: Postulat, Kategorie „voting“
 
 ```yaml
 global_uri: ops:0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
@@ -1499,7 +1499,7 @@ datetime_created: '2025-01-29T06:59:41Z'
 datetime_modified: '2025-01-29T06:59:41Z'
 
 ```
-#### Beispiel: Interpellation einer Fraktion
+#### Beispiel AgendaItem: Interpellation einer Fraktion
 
 ```yaml
 global_uri: ops:cea750a5bd7b420fa4da1c914f801384
@@ -1522,7 +1522,7 @@ datetime_created: '2025-01-17T21:25:52Z'
 datetime_modified: '2025-01-17T21:25:52Z'
 
 ```
-#### Beispiel: Petition als Traktandum
+#### Beispiel AgendaItem: Petition als Traktandum
 
 ```yaml
 global_uri: ops:21c50b86d21b4b4baeb1a76738ff82a3_2025-04-02_1_de
@@ -1543,7 +1543,7 @@ datetime_created: '2025-04-25T11:11:40Z'
 datetime_modified: '2025-04-25T11:11:40Z'
 
 ```
-#### Beispiel: Teilrevision mehrerer Verordnungen, französischsprachig
+#### Beispiel AgendaItem: Teilrevision mehrerer Verordnungen, französischsprachig
 
 ```yaml
 global_uri: ops:7b3545e4-57dc-3901-aaa8-4020da6ab0c6
@@ -1573,7 +1573,7 @@ datetime_created: '2024-12-06T10:50:04Z'
 datetime_modified: '2024-12-06T10:50:04Z'
 
 ```
-#### Beispiel: Sachgeschäft ohne Traktandenkategorie
+#### Beispiel AgendaItem: Sachgeschäft ohne Traktandenkategorie
 
 ```yaml
 global_uri: ops:49_253
@@ -1589,7 +1589,7 @@ datetime_created: '2025-03-29T01:07:14Z'
 datetime_modified: '2025-03-29T01:07:14Z'
 
 ```
-#### Beispiel: Detailberatung eines Gesetzesartikels
+#### Beispiel AgendaItem: Detailberatung eines Gesetzesartikels
 
 ```yaml
 global_uri: ops:agenda_item_be_2025_042
@@ -1617,7 +1617,7 @@ datetime_created: '2025-04-15T09:00:00Z'
 datetime_modified: '2025-05-12T15:20:00Z'
 
 ```
-#### Beispiel: Interpellation als Traktandum
+#### Beispiel AgendaItem: Interpellation als Traktandum
 
 ```yaml
 global_uri: ops:06fb582b753c416d8fdb05fa13873545
@@ -1634,7 +1634,7 @@ datetime_created: '2025-03-21T23:15:19Z'
 datetime_modified: '2025-03-21T23:15:19Z'
 
 ```
-#### Beispiel: Sachgeschäft aus einem kantonalen Ratsinformationssystem
+#### Beispiel AgendaItem: Sachgeschäft aus einem kantonalen Ratsinformationssystem
 
 ```yaml
 global_uri: ops:87b69a72919445a493a061d9b0daeba3
@@ -1649,7 +1649,7 @@ datetime_created: '2025-04-25T11:10:35Z'
 datetime_modified: '2025-04-25T11:10:35Z'
 
 ```
-#### Beispiel: Traktandum mit Schlussabstimmung
+#### Beispiel AgendaItem: Traktandum mit Schlussabstimmung
 
 ```yaml
 global_uri: ops:agenda_item_sg_2025_015
@@ -1672,7 +1672,7 @@ datetime_created: '2025-02-01T10:00:00Z'
 datetime_modified: '2025-03-15T14:35:00Z'
 
 ```
-#### Beispiel: Volksmotion in einer Traktandengruppe
+#### Beispiel AgendaItem: Volksmotion in einer Traktandengruppe
 
 ```yaml
 global_uri: ops:16155798_4
@@ -1694,7 +1694,7 @@ datetime_created: '2025-05-02T11:23:49Z'
 datetime_modified: '2025-05-02T11:23:49Z'
 
 ```
-#### Beispiel: Französischsprachiges Traktandum (Postulat)
+#### Beispiel AgendaItem: Französischsprachiges Traktandum (Postulat)
 
 ```yaml
 global_uri: ops:2023_10_03-52
@@ -1718,7 +1718,7 @@ datetime_created: '2025-02-08T12:33:10Z'
 datetime_modified: '2025-02-08T12:33:10Z'
 
 ```
-#### Beispiel: Postulat mit Abstimmung
+#### Beispiel AgendaItem: Postulat mit Abstimmung
 
 ```yaml
 global_uri: ops:fa732e0e-7e5f-4d45-994a-fc74720c0781
@@ -1743,7 +1743,7 @@ datetime_created: '2025-01-29T06:59:41Z'
 datetime_modified: '2025-01-29T06:59:41Z'
 
 ```
-#### Beispiel: Dringliche Interpellation, französischsprachig
+#### Beispiel AgendaItem: Dringliche Interpellation, französischsprachig
 
 ```yaml
 global_uri: ops:2025_05_20-23
@@ -2688,7 +2688,7 @@ _Ein Abstimmungsverfahren mit Einzelstimmen und Ergebnissen._
 
 
 ### Beispiele
-#### Beispiel: Zwischenabstimmung über einen Änderungsantrag
+#### Beispiel Voting: Zwischenabstimmung über einen Änderungsantrag
 
 ```yaml
 global_uri: ops:voting_be_2025_042
@@ -2720,7 +2720,7 @@ datetime_created: '2025-06-05T10:15:00Z'
 datetime_modified: '2025-06-05T10:15:00Z'
 
 ```
-#### Beispiel: Schlussabstimmung mit Einzelstimmen
+#### Beispiel Voting: Schlussabstimmung mit Einzelstimmen
 
 ```yaml
 global_uri: ops:voting_sg_2025_001
@@ -2750,7 +2750,7 @@ datetime_created: '2025-03-15T14:30:00Z'
 datetime_modified: '2025-03-15T14:35:00Z'
 
 ```
-#### Beispiel: Schlussabstimmung über das Budget
+#### Beispiel Voting: Schlussabstimmung über das Budget
 
 ```yaml
 global_uri: ops:voting_zh_budget_2026
@@ -2780,7 +2780,7 @@ datetime_created: '2025-11-20T16:45:00Z'
 datetime_modified: '2025-11-20T16:50:00Z'
 
 ```
-#### Beispiel: Gleichgerichtete Anträge mit Mehrfachauswahl
+#### Beispiel Voting: Gleichgerichtete Anträge mit Mehrfachauswahl
 
 ```yaml
 global_uri: ops:voting_zh_gr_2024_2023_361
@@ -3068,7 +3068,7 @@ _Eine Einzelstimme eines Mitglieds während eines Abstimmungsverfahrens._
 
 
 ### Beispiele
-#### Beispiel: Ja-Stimme
+#### Beispiel IndividualVote: Ja-Stimme
 
 ```yaml
 global_uri: ops:vote_sg_2025_001_person_123
@@ -3081,7 +3081,7 @@ individual_vote_type: 'yes'
 datetime_created: '2025-03-15T14:30:00Z'
 
 ```
-#### Beispiel: Nein-Stimme
+#### Beispiel IndividualVote: Nein-Stimme
 
 ```yaml
 global_uri: ops:vote_sg_2025_001_person_456
@@ -3094,7 +3094,7 @@ individual_vote_type: 'no'
 datetime_created: '2025-03-15T14:30:00Z'
 
 ```
-#### Beispiel: Enthaltung
+#### Beispiel IndividualVote: Enthaltung
 
 ```yaml
 global_uri: ops:vote_sg_2025_001_person_789
@@ -3107,7 +3107,7 @@ individual_vote_type: abstention
 datetime_created: '2025-03-15T14:30:00Z'
 
 ```
-#### Beispiel: Abwesend bei einer Mehrfachauswahl
+#### Beispiel IndividualVote: Abwesend bei einer Mehrfachauswahl
 
 ```yaml
 global_uri: ops:vote_zh_gr_2024_2023_361_abs1
@@ -3120,7 +3120,7 @@ individual_vote_type: not_voted
 datetime_created: '2024-02-28T00:00:00Z'
 
 ```
-#### Beispiel: Ja-Stimme zum Budget
+#### Beispiel IndividualVote: Ja-Stimme zum Budget
 
 ```yaml
 global_uri: ops:vote_zh_budget_2026_person_101
@@ -3133,7 +3133,7 @@ individual_vote_type: 'yes'
 datetime_created: '2025-11-20T16:45:00Z'
 
 ```
-#### Beispiel: Nein-Stimme zum Budget
+#### Beispiel IndividualVote: Nein-Stimme zum Budget
 
 ```yaml
 global_uri: ops:vote_zh_budget_2026_person_102
@@ -3146,7 +3146,7 @@ individual_vote_type: 'no'
 datetime_created: '2025-11-20T16:45:00Z'
 
 ```
-#### Beispiel: Nicht abgestimmt
+#### Beispiel IndividualVote: Nicht abgestimmt
 
 ```yaml
 global_uri: ops:vote_sg_2025_001_person_321
@@ -3159,7 +3159,7 @@ individual_vote_type: not_voted
 datetime_created: '2025-03-15T14:30:00Z'
 
 ```
-#### Beispiel: Einzelstimme für Auswahloption C
+#### Beispiel IndividualVote: Einzelstimme für Auswahloption C
 
 ```yaml
 global_uri: ops:vote_zh_gr_2024_2023_361_c1
@@ -3173,7 +3173,7 @@ type_label: Auswahl C
 datetime_created: '2024-02-28T00:00:00Z'
 
 ```
-#### Beispiel: Einzelstimme für Auswahloption A
+#### Beispiel IndividualVote: Einzelstimme für Auswahloption A
 
 ```yaml
 global_uri: ops:vote_zh_gr_2024_2023_361_a1
@@ -3187,7 +3187,7 @@ type_label: Auswahl A
 datetime_created: '2024-02-28T00:00:00Z'
 
 ```
-#### Beispiel: Einzelstimme für Auswahloption B
+#### Beispiel IndividualVote: Einzelstimme für Auswahloption B
 
 ```yaml
 global_uri: ops:vote_zh_gr_2024_2023_361_b1
@@ -3786,7 +3786,7 @@ _Eine Wortmeldung während einer Sitzung (auch Votum oder Redebeitrag genannt)._
 
 
 ### Beispiele
-#### Beispiel: Wortmeldung mit Wortlauttext und Videoaufzeichnung
+#### Beispiel Speech: Wortmeldung mit Wortlauttext und Videoaufzeichnung
 
 ```yaml
 global_uri: ops:366631
@@ -4124,7 +4124,7 @@ _Container für die Daten des öffentlichen Ratsbetriebs: Legislaturperioden, Se
 
 
 ### Beispiele
-#### Beispiel: meeting
+#### Beispiel Container: meeting
 
 ```yaml
 global_uri: ops:meetings_1
@@ -4178,7 +4178,7 @@ meetings:
     datetime_modified: "2025-05-19T01:06:45Z"
 
 ```
-#### Beispiel: meeting sr winter25 Sitzung6
+#### Beispiel Container: meeting sr winter25 Sitzung6
 
 ```yaml
 global_uri: ops:data_meeting_sr_winter25_Sitzung6
@@ -4249,7 +4249,7 @@ speeches:
     media_format: "video/mp4"
 
 ```
-#### Beispiel: meeting complete
+#### Beispiel Container: meeting complete
 
 ```yaml
 global_uri: ops:meeting_examples_2025
@@ -4400,7 +4400,7 @@ agenda_items:
   datetime_modified: "2025-11-20T16:50:00Z"
 
 ```
-#### Beispiel: meeting item
+#### Beispiel Container: meeting item
 
 ```yaml
 global_uri: ops:agenda_items_1
@@ -4618,7 +4618,7 @@ agenda_items:
     datetime_modified: '2025-01-29T06:59:41Z'
 
 ```
-#### Beispiel: voting
+#### Beispiel Container: voting
 
 ```yaml
 global_uri: ops:voting_examples_2025
@@ -4845,7 +4845,7 @@ individual_votes:
   datetime_created: "2025-11-20T16:45:00Z"
 
 ```
-#### Beispiel: session
+#### Beispiel Container: session
 
 ```yaml
 global_uri: ops:sessions_example_2025

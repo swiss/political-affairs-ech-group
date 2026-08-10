@@ -75,7 +75,7 @@ _Un point de l'ordre du jour d'une séance._
 
 
 ### Exemples
-#### Exemple : Budget agenda item
+#### Exemple AgendaItem : Budget agenda item
 
 ```yaml
 global_uri: ops:agenda_item_zh_budget_2026
@@ -98,7 +98,7 @@ datetime_created: '2025-10-01T08:00:00Z'
 datetime_modified: '2025-11-20T16:50:00Z'
 
 ```
-#### Exemple : Motion within a group of agenda items
+#### Exemple AgendaItem : Motion within a group of agenda items
 
 ```yaml
 global_uri: ops:16155798_3
@@ -118,7 +118,7 @@ datetime_created: '2025-05-02T11:23:49Z'
 datetime_modified: '2025-05-02T11:23:49Z'
 
 ```
-#### Exemple : Agenda item of a Council of States sitting
+#### Exemple AgendaItem : Agenda item of a Council of States sitting
 
 ```yaml
 global_uri: ops:69905
@@ -141,7 +141,7 @@ datetime_created: '2026-01-12T00:00:00+01:00'
 datetime_modified: '2026-01-12T00:00:00+01:00'
 
 ```
-#### Exemple : Postulate category voting
+#### Exemple AgendaItem : Postulate category voting
 
 ```yaml
 global_uri: ops:0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
@@ -166,7 +166,7 @@ datetime_created: '2025-01-29T06:59:41Z'
 datetime_modified: '2025-01-29T06:59:41Z'
 
 ```
-#### Exemple : Interpellation of a parliamentary group
+#### Exemple AgendaItem : Interpellation of a parliamentary group
 
 ```yaml
 global_uri: ops:cea750a5bd7b420fa4da1c914f801384
@@ -189,7 +189,7 @@ datetime_created: '2025-01-17T21:25:52Z'
 datetime_modified: '2025-01-17T21:25:52Z'
 
 ```
-#### Exemple : Petition as an agenda item
+#### Exemple AgendaItem : Petition as an agenda item
 
 ```yaml
 global_uri: ops:21c50b86d21b4b4baeb1a76738ff82a3_2025-04-02_1_de
@@ -210,7 +210,7 @@ datetime_created: '2025-04-25T11:11:40Z'
 datetime_modified: '2025-04-25T11:11:40Z'
 
 ```
-#### Exemple : Partial revision of several ordinances in French
+#### Exemple AgendaItem : Partial revision of several ordinances in French
 
 ```yaml
 global_uri: ops:7b3545e4-57dc-3901-aaa8-4020da6ab0c6
@@ -240,7 +240,7 @@ datetime_created: '2024-12-06T10:50:04Z'
 datetime_modified: '2024-12-06T10:50:04Z'
 
 ```
-#### Exemple : Substantive affair without an agenda category
+#### Exemple AgendaItem : Substantive affair without an agenda category
 
 ```yaml
 global_uri: ops:49_253
@@ -256,7 +256,7 @@ datetime_created: '2025-03-29T01:07:14Z'
 datetime_modified: '2025-03-29T01:07:14Z'
 
 ```
-#### Exemple : Detailed deliberation of an article of an act
+#### Exemple AgendaItem : Detailed deliberation of an article of an act
 
 ```yaml
 global_uri: ops:agenda_item_be_2025_042
@@ -284,7 +284,7 @@ datetime_created: '2025-04-15T09:00:00Z'
 datetime_modified: '2025-05-12T15:20:00Z'
 
 ```
-#### Exemple : Interpellation as an agenda item
+#### Exemple AgendaItem : Interpellation as an agenda item
 
 ```yaml
 global_uri: ops:06fb582b753c416d8fdb05fa13873545
@@ -301,7 +301,7 @@ datetime_created: '2025-03-21T23:15:19Z'
 datetime_modified: '2025-03-21T23:15:19Z'
 
 ```
-#### Exemple : Substantive affair from a cantonal parliamentary information system
+#### Exemple AgendaItem : Substantive affair from a cantonal parliamentary information system
 
 ```yaml
 global_uri: ops:87b69a72919445a493a061d9b0daeba3
@@ -316,7 +316,7 @@ datetime_created: '2025-04-25T11:10:35Z'
 datetime_modified: '2025-04-25T11:10:35Z'
 
 ```
-#### Exemple : Agenda item with a final vote
+#### Exemple AgendaItem : Agenda item with a final vote
 
 ```yaml
 global_uri: ops:agenda_item_sg_2025_015
@@ -339,7 +339,7 @@ datetime_created: '2025-02-01T10:00:00Z'
 datetime_modified: '2025-03-15T14:35:00Z'
 
 ```
-#### Exemple : Popular motion within a group of agenda items
+#### Exemple AgendaItem : Popular motion within a group of agenda items
 
 ```yaml
 global_uri: ops:16155798_4
@@ -361,7 +361,7 @@ datetime_created: '2025-05-02T11:23:49Z'
 datetime_modified: '2025-05-02T11:23:49Z'
 
 ```
-#### Exemple : French-language agenda item postulate
+#### Exemple AgendaItem : French-language agenda item postulate
 
 ```yaml
 global_uri: ops:2023_10_03-52
@@ -385,7 +385,7 @@ datetime_created: '2025-02-08T12:33:10Z'
 datetime_modified: '2025-02-08T12:33:10Z'
 
 ```
-#### Exemple : Postulate with a voting
+#### Exemple AgendaItem : Postulate with a voting
 
 ```yaml
 global_uri: ops:fa732e0e-7e5f-4d45-994a-fc74720c0781
@@ -410,7 +410,7 @@ datetime_created: '2025-01-29T06:59:41Z'
 datetime_modified: '2025-01-29T06:59:41Z'
 
 ```
-#### Exemple : Urgent interpellation in French
+#### Exemple AgendaItem : Urgent interpellation in French
 
 ```yaml
 global_uri: ops:2025_05_20-23

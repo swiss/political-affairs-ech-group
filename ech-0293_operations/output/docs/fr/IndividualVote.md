@@ -55,7 +55,7 @@ _Une voix individuelle exprimée par un membre lors d'une procédure de vote._
 
 
 ### Exemples
-#### Exemple : Yes vote
+#### Exemple IndividualVote : Yes vote
 
 ```yaml
 global_uri: ops:vote_sg_2025_001_person_123
@@ -68,7 +68,7 @@ individual_vote_type: 'yes'
 datetime_created: '2025-03-15T14:30:00Z'
 
 ```
-#### Exemple : No vote
+#### Exemple IndividualVote : No vote
 
 ```yaml
 global_uri: ops:vote_sg_2025_001_person_456
@@ -81,7 +81,7 @@ individual_vote_type: 'no'
 datetime_created: '2025-03-15T14:30:00Z'
 
 ```
-#### Exemple : Abstention
+#### Exemple IndividualVote : Abstention
 
 ```yaml
 global_uri: ops:vote_sg_2025_001_person_789
@@ -94,7 +94,7 @@ individual_vote_type: abstention
 datetime_created: '2025-03-15T14:30:00Z'
 
 ```
-#### Exemple : Absent in a multiple-choice voting
+#### Exemple IndividualVote : Absent in a multiple-choice voting
 
 ```yaml
 global_uri: ops:vote_zh_gr_2024_2023_361_abs1
@@ -107,7 +107,7 @@ individual_vote_type: not_voted
 datetime_created: '2024-02-28T00:00:00Z'
 
 ```
-#### Exemple : Yes vote on the budget
+#### Exemple IndividualVote : Yes vote on the budget
 
 ```yaml
 global_uri: ops:vote_zh_budget_2026_person_101
@@ -120,7 +120,7 @@ individual_vote_type: 'yes'
 datetime_created: '2025-11-20T16:45:00Z'
 
 ```
-#### Exemple : No vote on the budget
+#### Exemple IndividualVote : No vote on the budget
 
 ```yaml
 global_uri: ops:vote_zh_budget_2026_person_102
@@ -133,7 +133,7 @@ individual_vote_type: 'no'
 datetime_created: '2025-11-20T16:45:00Z'
 
 ```
-#### Exemple : Did not vote
+#### Exemple IndividualVote : Did not vote
 
 ```yaml
 global_uri: ops:vote_sg_2025_001_person_321
@@ -146,7 +146,7 @@ individual_vote_type: not_voted
 datetime_created: '2025-03-15T14:30:00Z'
 
 ```
-#### Exemple : Individual vote for selection option C
+#### Exemple IndividualVote : Individual vote for selection option C
 
 ```yaml
 global_uri: ops:vote_zh_gr_2024_2023_361_c1
@@ -160,7 +160,7 @@ type_label: Auswahl C
 datetime_created: '2024-02-28T00:00:00Z'
 
 ```
-#### Exemple : Individual vote for selection option A
+#### Exemple IndividualVote : Individual vote for selection option A
 
 ```yaml
 global_uri: ops:vote_zh_gr_2024_2023_361_a1
@@ -174,7 +174,7 @@ type_label: Auswahl A
 datetime_created: '2024-02-28T00:00:00Z'
 
 ```
-#### Exemple : Individual vote for selection option B
+#### Exemple IndividualVote : Individual vote for selection option B
 
 ```yaml
 global_uri: ops:vote_zh_gr_2024_2023_361_b1

@@ -65,7 +65,7 @@ _Une intervention prononcée au cours d'une séance (également appelée prise d
 
 
 ### Exemples
-#### Exemple : Speech with verbatim text and video recording
+#### Exemple Speech : Speech with verbatim text and video recording
 
 ```yaml
 global_uri: ops:366631

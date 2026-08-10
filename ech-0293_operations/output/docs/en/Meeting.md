@@ -80,7 +80,7 @@ _A general meeting class used for Sessions, Comittee Meetings, individual sessio
 
 
 ### Examples
-#### Example: Council of States sitting with protocol and speeches
+#### Example Meeting: Council of States sitting with protocol and speeches
 
 ```yaml
 global_uri: parl:sr_winter25_sitzung_6
@@ -106,7 +106,7 @@ datetime_created: '2026-01-12T00:00:00+01:00'
 datetime_modified: '2026-01-12T00:00:00+01:00'
 
 ```
-#### Example: Cantonal parliament sitting with agenda items and votings
+#### Example Meeting: Cantonal parliament sitting with agenda items and votings
 
 ```yaml
 global_uri: ops:meeting_sg_2025_03_15
@@ -136,7 +136,7 @@ datetime_created: '2025-02-01T10:00:00Z'
 datetime_modified: '2025-03-15T17:30:00Z'
 
 ```
-#### Example: Half-day sitting within a session
+#### Example Meeting: Half-day sitting within a session
 
 ```yaml
 body_key: BE
@@ -165,7 +165,7 @@ datetime_created: '2025-04-25T11:10:25Z'
 datetime_modified: '2025-05-19T01:06:45Z'
 
 ```
-#### Example: Committee sitting with an attendance list
+#### Example Meeting: Committee sitting with an attendance list
 
 ```yaml
 global_uri: ops:meeting_be_committee_wak_2025_05_12
@@ -197,7 +197,7 @@ datetime_created: '2025-04-15T09:00:00Z'
 datetime_modified: '2025-05-12T16:45:00Z'
 
 ```
-#### Example: Government sitting with a bilingual designation
+#### Example Meeting: Government sitting with a bilingual designation
 
 ```yaml
 body_key: BE
@@ -228,7 +228,7 @@ datetime_created: '2024-10-28T01:22:26Z'
 datetime_modified: '2024-11-27T20:40:57Z'
 
 ```
-#### Example: Landsgemeinde as meeting type sitting
+#### Example Meeting: Landsgemeinde as meeting type sitting
 
 ```yaml
 global_uri: ops:meeting_gl_landsgemeinde_2025

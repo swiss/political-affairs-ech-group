@@ -76,7 +76,7 @@ _Une procédure de vote avec les voix individuelles et les résultats._
 
 
 ### Exemples
-#### Exemple : Intermediate voting on an amendment
+#### Exemple Voting : Intermediate voting on an amendment
 
 ```yaml
 global_uri: ops:voting_be_2025_042
@@ -108,7 +108,7 @@ datetime_created: '2025-06-05T10:15:00Z'
 datetime_modified: '2025-06-05T10:15:00Z'
 
 ```
-#### Exemple : Final vote with individual votes
+#### Exemple Voting : Final vote with individual votes
 
 ```yaml
 global_uri: ops:voting_sg_2025_001
@@ -138,7 +138,7 @@ datetime_created: '2025-03-15T14:30:00Z'
 datetime_modified: '2025-03-15T14:35:00Z'
 
 ```
-#### Exemple : Final vote on the budget
+#### Exemple Voting : Final vote on the budget
 
 ```yaml
 global_uri: ops:voting_zh_budget_2026
@@ -168,7 +168,7 @@ datetime_created: '2025-11-20T16:45:00Z'
 datetime_modified: '2025-11-20T16:50:00Z'
 
 ```
-#### Exemple : Motions in the same direction with multiple choice
+#### Exemple Voting : Motions in the same direction with multiple choice
 
 ```yaml
 global_uri: ops:voting_zh_gr_2024_2023_361
