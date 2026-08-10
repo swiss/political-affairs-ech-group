@@ -110,7 +110,7 @@ Le schéma Person décrit les personnes physiques dans le contexte politique.
 
 
 
-## Classe: Person 
+## Classe: Person{#Person}
 
 
 _Une personne avec des identifiants, des noms, des adresses, des nationalités et des professions._
@@ -127,15 +127,15 @@ _Une personne avec des identifiants, des noms, des adresses, des nationalités e
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| label | 1 <br/> [String](#String) | Nom d'affichage court et obligatoire permettant d'identifier la personne au sein de l'organisation (p. ex. avec l'ajout de l'année de naissance afin de distinguer des personnes portant le même nom). Recommandé : PersonOfficialName combiné avec PersonCallFirstName.  |
-| label_long | 0..1 <br/> [String](#String) | Nom d'affichage long et facultatif comprenant les titres académiques et le nom officiel complet (p. ex. « Dr. Maria Muster-Beispiel »).  |
-| birth_year | 0..1 <br/> [Integer](#Integer) | Année de naissance. À utiliser uniquement lorsqu'aucune `birthDate` complète n'est disponible.  |
-| birth_date | 0..1 <br/> [Date](#Date) | Date de naissance exacte si disponible et publique. Ce champ prime sur le champ `birthYear`.  |
-| death_date | 0..1 <br/> [Date](#Date) | Date de décès exacte.  |
-| picture | 0..1 <br/> [Uri](#Uri) | Lien vers une image (de préférence : PNG, puis JPG, puis GIF).  |
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| label | 1 <br/> String | Nom d'affichage court et obligatoire permettant d'identifier la personne au sein de l'organisation (p. ex. avec l'ajout de l'année de naissance afin de distinguer des personnes portant le même nom). Recommandé : PersonOfficialName combiné avec PersonCallFirstName.  |
+| label_long | 0..1 <br/> String | Nom d'affichage long et facultatif comprenant les titres académiques et le nom officiel complet (p. ex. « Dr. Maria Muster-Beispiel »).  |
+| birth_year | 0..1 <br/> Integer | Année de naissance. À utiliser uniquement lorsqu'aucune `birthDate` complète n'est disponible.  |
+| birth_date | 0..1 <br/> Date | Date de naissance exacte si disponible et publique. Ce champ prime sur le champ `birthYear`.  |
+| death_date | 0..1 <br/> Date | Date de décès exacte.  |
+| picture | 0..1 <br/> Uri | Lien vers une image (de préférence : PNG, puis JPG, puis GIF).  |
 | names | * <br/> [Name](#Name) | Noms de la personne avec type et valeur.  |
 | addresses | * <br/> [Address](#Address) | Adresses avec type (privée, professionnelle, locale).  |
 | language_proficiencies | * <br/> [LanguageProficiency](#LanguageProficiency) | Compétences linguistiques de la personne.  |
@@ -145,10 +145,10 @@ _Une personne avec des identifiants, des noms, des adresses, des nationalités e
 | trainings | * <br/> [Training](#Training) | Formations ou éducations de la personne. Directive : n'indiquer en principe que la qualification la plus élevée obtenue.  |
 | contacts | * <br/> [Contact](#Contact) | Informations de contact (e-mail, site web, réseaux sociaux). Directive : l'e-mail est quasi obligatoire et devrait toujours être fourni lorsqu'il est disponible.  |
 | interest_links | * <br/> [InterestLink](#InterestLink) | Collection de liens d'intérêts.  |
-| date_created | 0..1 <br/> [Date](#Date) | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -158,7 +158,7 @@ _Une personne avec des identifiants, des noms, des adresses, des nationalités e
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Container](#Container) | [persons](#persons) | range | [Person](#Person) |
+| Container | persons | range | [Person](#Person) |
 
 
 
@@ -317,7 +317,7 @@ persons:
 
 
 
-## Classe: Name 
+## Classe: Name{#Name}
 
 
 _Un nom avec un type (p. ex. nom d'usage, nom officiel), une valeur et une validité temporelle._
@@ -335,10 +335,10 @@ _Un nom avec un type (p. ex. nom d'usage, nom officiel), une valeur et une valid
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
 | name_type | 1 <br/> [NameTypeEnum](#NameTypeEnum) | Type de nom selon eCH-0011 (personNameData).  |
-| value | 1 <br/> [String](#String) | La valeur proprement dite d'une information, en plus d'autres attributs tels que le type, la langue, etc.  |
-| valid_from | 0..1 <br/> [Date](#Date) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| value | 1 <br/> String | La valeur proprement dite d'une information, en plus d'autres attributs tels que le type, la langue, etc.  |
+| valid_from | 0..1 <br/> Date | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| valid_through | 0..1 <br/> Date | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| is_active | 0..1 <br/> Boolean | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
@@ -348,7 +348,7 @@ _Un nom avec un type (p. ex. nom d'usage, nom officiel), une valeur et une valid
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Person](#Person) | [names](#names) | range | [Name](#Name) |
+| [Person](#Person) | names | range | [Name](#Name) |
 
 
 
@@ -370,7 +370,7 @@ _Un nom avec un type (p. ex. nom d'usage, nom officiel), une valeur et une valid
 
 </div>
 
-## Enum: NameTypeEnum 
+## Enum: NameTypeEnum{#NameTypeEnum}
 
 
 
@@ -420,7 +420,7 @@ URI: [act:NameTypeEnum](https://ld.ech.ch/schema/0294/actors/NameTypeEnum)
 
 
 
-## Classe: LanguageProficiency 
+## Classe: LanguageProficiency{#LanguageProficiency}
 
 
 _Compétences linguistiques d'une personne indiquant la langue et le fait qu'il s'agisse ou non de la langue préférée ou de la langue maternelle._
@@ -437,9 +437,9 @@ _Compétences linguistiques d'une personne indiquant la langue et le fait qu'il 
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| language | 1 <br/> [String](#String) | Code de langue au format ISO 639-1 (deux lettres minuscules, par ex. « de », « fr », « it », « en »).  |
-| is_correspondence | 0..1 <br/> [Boolean](#Boolean) | Indique s'il s'agit de la langue préférée.  |
-| is_native | 0..1 <br/> [Boolean](#Boolean) | Indique s'il s'agit de la langue maternelle.  |
+| language | 1 <br/> String | Code de langue au format ISO 639-1 (deux lettres minuscules, par ex. « de », « fr », « it », « en »).  |
+| is_correspondence | 0..1 <br/> Boolean | Indique s'il s'agit de la langue préférée.  |
+| is_native | 0..1 <br/> Boolean | Indique s'il s'agit de la langue maternelle.  |
 
 
 
@@ -449,7 +449,7 @@ _Compétences linguistiques d'une personne indiquant la langue et le fait qu'il 
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Person](#Person) | [language_proficiencies](#language_proficiencies) | range | [LanguageProficiency](#LanguageProficiency) |
+| [Person](#Person) | language_proficiencies | range | [LanguageProficiency](#LanguageProficiency) |
 
 
 
@@ -473,7 +473,7 @@ _Compétences linguistiques d'une personne indiquant la langue et le fait qu'il 
 
 
 
-## Classe: Citizenship 
+## Classe: Citizenship{#Citizenship}
 
 
 _Nationalité (également utilisée pour la citoyenneté) d'une personne indiquant le pays et la validité temporelle. Si aucun `valid_from` n'est fourni, cette information n'est pas connue. S'il est établi que la nationalité est valable depuis la naissance, la date de naissance doit être répétée ici. En l'absence de `valid_through`, la nationalité est toujours en vigueur._
@@ -490,10 +490,10 @@ _Nationalité (également utilisée pour la citoyenneté) d'une personne indiqua
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| country | 1 <br/> [String](#String) | Code de pays ISO 3166-1 alpha-2.  |
-| valid_from | 0..1 <br/> [Date](#Date) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| country | 1 <br/> String | Code de pays ISO 3166-1 alpha-2.  |
+| valid_from | 0..1 <br/> Date | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| valid_through | 0..1 <br/> Date | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| is_active | 0..1 <br/> Boolean | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
@@ -503,7 +503,7 @@ _Nationalité (également utilisée pour la citoyenneté) d'une personne indiqua
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Person](#Person) | [citizenships](#citizenships) | range | [Citizenship](#Citizenship) |
+| [Person](#Person) | citizenships | range | [Citizenship](#Citizenship) |
 
 
 
@@ -527,7 +527,7 @@ _Nationalité (également utilisée pour la citoyenneté) d'une personne indiqua
 
 
 
-## Classe: Gender 
+## Classe: Gender{#Gender}
 
 
 _Sexe d'une personne indiquant un code de sexe et la validité temporelle._
@@ -545,11 +545,11 @@ _Sexe d'une personne indiquant un code de sexe et la validité temporelle._
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
 | gender_code | 1 <br/> [GenderCodeEnum](#GenderCodeEnum) | Code de sexe. Valeurs recommandées : male, female, non_binary.  |
-| label | 0..1 <br/> [String](#String) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
-| pronouns | * <br/> [String](#String) | Pronoms utilisés par la personne.  |
-| valid_from | 0..1 <br/> [Date](#Date) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| label | 0..1 <br/> String | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
+| pronouns | * <br/> String | Pronoms utilisés par la personne.  |
+| valid_from | 0..1 <br/> Date | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| valid_through | 0..1 <br/> Date | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| is_active | 0..1 <br/> Boolean | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
@@ -559,7 +559,7 @@ _Sexe d'une personne indiquant un code de sexe et la validité temporelle._
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Person](#Person) | [genders](#genders) | range | [Gender](#Gender) |
+| [Person](#Person) | genders | range | [Gender](#Gender) |
 
 
 
@@ -581,7 +581,7 @@ _Sexe d'une personne indiquant un code de sexe et la validité temporelle._
 
 </div>
 
-## Enum: GenderCodeEnum 
+## Enum: GenderCodeEnum{#GenderCodeEnum}
 
 
 
@@ -614,7 +614,7 @@ URI: [act:GenderCodeEnum](https://ld.ech.ch/schema/0294/actors/GenderCodeEnum)
 
 
 
-## Classe: Occupation 
+## Classe: Occupation{#Occupation}
 
 
 _Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si l'activité est rémunérée, ainsi que la validité temporelle._
@@ -631,22 +631,22 @@ _Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| is_paid | 0..1 <br/> [Boolean](#Boolean) | Indique si l'activité est rémunérée.  |
-| occupation_code | 0..1 <br/> [String](#String) | Code ISCO-19 du métier.  |
-| label | 0..1 <br/> [String](#String) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
-| organization_uid | 0..1 <br/> [String](#String) | IDE de l'organisation issu du registre fédéral IDE (uid.admin.ch), dans le format d'échange d'eCH-0108 : CHE suivi de neuf chiffres, sans séparateurs (p. ex. CHE106063525). Le dernier chiffre est un chiffre de contrôle calculé modulo 11. La forme pointée CHE-106.063.525 est la présentation utilisée par uid.admin.ch et n'est pas saisie ici.  |
-| organization_name | 0..1 <br/> [String](#String) | Nom de l'organisation ou de l'entreprise.  |
-| valid_from | 0..1 <br/> [Date](#Date) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| is_paid | 0..1 <br/> Boolean | Indique si l'activité est rémunérée.  |
+| occupation_code | 0..1 <br/> String | Code ISCO-19 du métier.  |
+| label | 0..1 <br/> String | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
+| organization_uid | 0..1 <br/> String | IDE de l'organisation issu du registre fédéral IDE (uid.admin.ch), dans le format d'échange d'eCH-0108 : CHE suivi de neuf chiffres, sans séparateurs (p. ex. CHE106063525). Le dernier chiffre est un chiffre de contrôle calculé modulo 11. La forme pointée CHE-106.063.525 est la présentation utilisée par uid.admin.ch et n'est pas saisie ici.  |
+| organization_name | 0..1 <br/> String | Nom de l'organisation ou de l'entreprise.  |
+| valid_from | 0..1 <br/> Date | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| valid_through | 0..1 <br/> Date | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| is_active | 0..1 <br/> Boolean | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
 
 ##### Contraintes
 
 
 Au moins l'un des champs suivants doit être renseigné :
 
-- [occupation_code](#occupation_code)
-- [label](#label)
+- occupation_code
+- label
 
 
 
@@ -661,7 +661,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Person](#Person) | [occupations](#occupations) | range | [Occupation](#Occupation) |
+| [Person](#Person) | occupations | range | [Occupation](#Occupation) |
 
 
 
@@ -704,7 +704,7 @@ occupations:
 
 
 
-## Classe: Training 
+## Classe: Training{#Training}
 
 
 _Formation ou éducation d'une personne indiquant un type (p. ex. diplôme scolaire, diplôme universitaire, service militaire), un libellé, un code ISCO-19 et la validité temporelle._
@@ -722,20 +722,20 @@ _Formation ou éducation d'une personne indiquant un type (p. ex. diplôme scola
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
 | training_type | 0..1 <br/> [TrainingTypeEnum](#TrainingTypeEnum) | Type de formation ou d'éducation.  |
-| training_code | 0..1 <br/> [String](#String) | Code ISCO-19 de la formation ou de l'éducation.  |
-| value | 0..1 <br/> [String](#String) | La valeur proprement dite d'une information, en plus d'autres attributs tels que le type, la langue, etc.  |
-| valid_from | 0..1 <br/> [Date](#Date) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| training_code | 0..1 <br/> String | Code ISCO-19 de la formation ou de l'éducation.  |
+| value | 0..1 <br/> String | La valeur proprement dite d'une information, en plus d'autres attributs tels que le type, la langue, etc.  |
+| valid_from | 0..1 <br/> Date | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| valid_through | 0..1 <br/> Date | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| is_active | 0..1 <br/> Boolean | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
 
 ##### Contraintes
 
 
 Au moins l'un des champs suivants doit être renseigné :
 
-- [training_type](#training_type)
-- [training_code](#training_code)
-- [value](#value)
+- training_type
+- training_code
+- value
 
 
 
@@ -750,7 +750,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Person](#Person) | [trainings](#trainings) | range | [Training](#Training) |
+| [Person](#Person) | trainings | range | [Training](#Training) |
 
 
 
@@ -772,7 +772,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 </div>
 
-## Enum: TrainingTypeEnum 
+## Enum: TrainingTypeEnum{#TrainingTypeEnum}
 
 
 
@@ -895,7 +895,7 @@ Le schéma Group représente les groupes, organisations et corporations politiqu
 
 
 
-## Classe: Group 
+## Classe: Group{#Group}
 
 
 _Un groupe, une organisation ou une collectivité politique (p. ex. parti, commission, parlement, département)._
@@ -912,29 +912,29 @@ _Un groupe, une organisation ou une collectivité politique (p. ex. parti, commi
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | group_type | 1 <br/> [GroupType](#GroupType) | Type de groupe (p. ex. parti, commission, parlement ou similaire). La désignation et la description exactes du groupe sont fournies via `label`.  |
-| label | 1..* <br/> [MultilingualValue](#MultilingualValue) | Désignation du groupe avec la langue dans laquelle elle est publiée. Lorsqu'un groupe porte officiellement un nom dans plusieurs langues, une entrée est saisie par langue.  |
-| abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abréviation (peut être multilingue).  |
-| description | * <br/> [MultilingualValue](#MultilingualValue) | Description de l'entité.  |
-| organization_uid | 0..1 <br/> [String](#String) | IDE de l'organisation issu du registre fédéral IDE (uid.admin.ch), dans le format d'échange d'eCH-0108 : CHE suivi de neuf chiffres, sans séparateurs (p. ex. CHE106063525). Le dernier chiffre est un chiffre de contrôle calculé modulo 11. La forme pointée CHE-106.063.525 est la présentation utilisée par uid.admin.ch et n'est pas saisie ici.  |
+| label | 1..* <br/> MultilingualValue | Désignation du groupe avec la langue dans laquelle elle est publiée. Lorsqu'un groupe porte officiellement un nom dans plusieurs langues, une entrée est saisie par langue.  |
+| abbreviation | * <br/> MultilingualValue | Abréviation (peut être multilingue).  |
+| description | * <br/> MultilingualValue | Description de l'entité.  |
+| organization_uid | 0..1 <br/> String | IDE de l'organisation issu du registre fédéral IDE (uid.admin.ch), dans le format d'échange d'eCH-0108 : CHE suivi de neuf chiffres, sans séparateurs (p. ex. CHE106063525). Le dernier chiffre est un chiffre de contrôle calculé modulo 11. La forme pointée CHE-106.063.525 est la présentation utilisée par uid.admin.ch et n'est pas saisie ici.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Forme juridique de l'organisation. Voir le vocabulaire contrôlé : https://register.ld.admin.ch/i14y/concept/legalForm  |
-| landing_page | * <br/> [MultilingualUri](#MultilingualUri) | Site web fournissant de plus amples informations. Lorsque le site est publié à une adresse propre par langue, une entrée est saisie par langue.  |
+| landing_page | * <br/> MultilingualUri | Site web fournissant de plus amples informations. Lorsque le site est publié à une adresse propre par langue, une entrée est saisie par langue.  |
 | parent_groups | * <br/> [GroupReference](#GroupReference) | Référence aux groupes supérieurs sous forme de GroupReference, c'est-à-dire indiquée au moyen de leur local_id ou de leur global_uri. Seule une véritable relation de subordination y a sa place : le parti faîtier d'un parti cantonal, la hiérarchie au sein de l'exécutif, une sous-commission rattachée à sa commission ou un groupe parlementaire rattaché à son parlement. (parentGroup est généralement utilisé au sein d'un même group_type, mais les liens intertypes sont autorisés, p. ex. groupe parlementaire → parlement.) Les partis qui portent un groupe parlementaire ne lui sont pas supérieurs et ne sont donc pas indiqués ici.  |
-| spatial | 0..1 <br/> [String](#String) | Référence spatiale à une ressource LINDAS (numéro OFS de commune, numéro OFS de canton, district ou pays). Formats : commune : https://ld.admin.ch/municipality/1234, district : https://ld.admin.ch/district/2301, canton : https://ld.admin.ch/canton/23, pays : https://ld.admin.ch/country/CHE.  |
+| spatial | 0..1 <br/> String | Référence spatiale à une ressource LINDAS (numéro OFS de commune, numéro OFS de canton, district ou pays). Formats : commune : https://ld.admin.ch/municipality/1234, district : https://ld.admin.ch/district/2301, canton : https://ld.admin.ch/canton/23, pays : https://ld.admin.ch/country/CHE.  |
 | contacts | * <br/> [Contact](#Contact) | Informations de contact (e-mail, site web, réseaux sociaux). Directive : l'e-mail est quasi obligatoire et devrait toujours être fourni lorsqu'il est disponible.  |
 | addresses | * <br/> [Address](#Address) | Adresses avec type (privée, professionnelle, locale).  |
-| statutes_url | 0..1 <br/> [String](#String) | URL vers les statuts du parti (PDF ou page web ; facultatif pour les partis).  |
-| party_color | 0..1 <br/> [String](#String) | Couleur du parti sous forme de valeur hexadécimale (facultatif pour les partis, p. ex. « #FF0000 »).  |
-| date_created | 0..1 <br/> [Date](#Date) | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| valid_from | 0..1 <br/> [Date](#Date) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| statutes_url | 0..1 <br/> String | URL vers les statuts du parti (PDF ou page web ; facultatif pour les partis).  |
+| party_color | 0..1 <br/> String | Couleur du parti sous forme de valeur hexadécimale (facultatif pour les partis, p. ex. « #FF0000 »).  |
+| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| valid_from | 0..1 <br/> Date | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| valid_through | 0..1 <br/> Date | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| is_active | 0..1 <br/> Boolean | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
@@ -944,7 +944,7 @@ _Un groupe, une organisation ou une collectivité politique (p. ex. parti, commi
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Container](#Container) | [groups](#groups) | range | [Group](#Group) |
+| Container | groups | range | [Group](#Group) |
 
 
 
@@ -1286,7 +1286,7 @@ groups:
 
 
 
-## Classe: GroupType 
+## Classe: GroupType{#GroupType}
 
 
 _Type de groupe (p. ex. parti, commission, parlement, département)._
@@ -1304,7 +1304,7 @@ _Type de groupe (p. ex. parti, commission, parlement, département)._
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
 | group_type_enum | 1 <br/> [GroupTypeEnum](#GroupTypeEnum) | Lien vers le vocabulaire contrôlé pour les types de groupes.  |
-| label | * <br/> [MultilingualValue](#MultilingualValue) | Désignation du type telle que l'emploie l'organe qui la publie, avec la langue dans laquelle elle est publiée. Lorsqu'un organe publie la désignation en plusieurs langues, une entrée est saisie par langue.  |
+| label | * <br/> MultilingualValue | Désignation du type telle que l'emploie l'organe qui la publie, avec la langue dans laquelle elle est publiée. Lorsqu'un organe publie la désignation en plusieurs langues, une entrée est saisie par langue.  |
 
 
 
@@ -1314,7 +1314,7 @@ _Type de groupe (p. ex. parti, commission, parlement, département)._
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Group](#Group) | [group_type](#group_type) | range | [GroupType](#GroupType) |
+| [Group](#Group) | group_type | range | [GroupType](#GroupType) |
 
 
 
@@ -1336,7 +1336,7 @@ _Type de groupe (p. ex. parti, commission, parlement, département)._
 
 </div>
 
-## Enum: GroupTypeEnum 
+## Enum: GroupTypeEnum{#GroupTypeEnum}
 
 
 
@@ -1428,7 +1428,7 @@ Le schéma Membership représente la relation entre personnes et groupes et cons
 
 
 
-## Classe: Membership 
+## Classe: Membership{#Membership}
 
 
 _Une relation d'affiliation entre une personne et un groupe, représentant une appartenance formelle (p. ex. membre d'un parti, membre d'une commission, parlementaire). À distinguer de InterestLink, qui recouvre les liens d'intérêts externes et les conflits d'intérêts avec des organisations situées en dehors du schéma des acteurs._
@@ -1445,21 +1445,21 @@ _Une relation d'affiliation entre une personne et un groupe, représentant une a
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | person_reference | 1 <br/> [PersonReference](#PersonReference) | Référence abrégée à une personne, retenant ses caractéristiques au moment de la mise en relation.  |
 | group_reference | 1 <br/> [GroupReference](#GroupReference) | Référence abrégée à un groupe, retenant ses caractéristiques au moment de la mise en relation.  |
 | electoral_district | 0..1 <br/> [ElectoralDistrict](#ElectoralDistrict) | Circonscription électorale de l'affiliation. Indiquée lorsque le mandat a été obtenu dans une circonscription ; elle est donc rattachée à l'affiliation et non à la personne.  |
 | role_type | 0..1 <br/> [RoleType](#RoleType) | Rôle de la personne dans l'affiliation ou la fonction.  |
-| authorized_to_vote | 0..1 <br/> [Boolean](#Boolean) | Indique si la personne dispose du droit de vote au sein du groupe. Généralement false pour les membres suppléants (lorsqu'ils ne remplacent personne), les observateurs, les secrétaires et les invités.  |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | Indique si l'affiliation est actuellement active. Peut compléter ou remplacer `valid_from`/`valid_through`. Si cette valeur n'est pas renseignée, l'activité est déduite des champs de validité temporelle.  |
-| date_created | 0..1 <br/> [Date](#Date) | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| valid_from | 0..1 <br/> [Date](#Date) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| authorized_to_vote | 0..1 <br/> Boolean | Indique si la personne dispose du droit de vote au sein du groupe. Généralement false pour les membres suppléants (lorsqu'ils ne remplacent personne), les observateurs, les secrétaires et les invités.  |
+| is_active | 0..1 <br/> Boolean | Indique si l'affiliation est actuellement active. Peut compléter ou remplacer `valid_from`/`valid_through`. Si cette valeur n'est pas renseignée, l'activité est déduite des champs de validité temporelle.  |
+| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| valid_from | 0..1 <br/> Date | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| valid_through | 0..1 <br/> Date | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
 
 
 
@@ -1469,7 +1469,7 @@ _Une relation d'affiliation entre une personne et un groupe, représentant une a
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Container](#Container) | [memberships](#memberships) | range | [Membership](#Membership) |
+| Container | memberships | range | [Membership](#Membership) |
 
 
 
@@ -1672,7 +1672,7 @@ memberships:
 
 
 
-## Classe: RoleType 
+## Classe: RoleType{#RoleType}
 
 
 _Rôle d'une personne dans une affiliation ou une fonction (p. ex. membre, président, suppléant). Si un rôle ne figure pas dans le vocabulaire RoleEnum proposé, la valeur « other » peut être utilisée, et un libellé descriptif doit être fourni dans le slot `role_label`. Le libellé peut également être utilisé lorsqu'une désignation spécifique est nécessaire, même s'il existe une valeur sémantique appropriée dans `role_type_enum` ; il doit être fourni lorsque `role_type_enum` est réglé sur « other »._
@@ -1690,15 +1690,15 @@ _Rôle d'une personne dans une affiliation ou une fonction (p. ex. membre, prés
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
 | role_type_enum | 0..1 <br/> [RoleEnum](#RoleEnum) | Rôle de la personne dans l'affiliation ou la fonction.  |
-| role_label | * <br/> [MultilingualValue](#MultilingualValue) | Libellé de rôle spécifique. À utiliser lorsqu'un nom de rôle spécifique est nécessaire, même s'il existe une valeur sémantique appropriée dans `role_type_enum` ; fournir ce libellé lorsque « role_type_enum » est réglé sur « other ». La désignation est saisie avec la langue dans laquelle elle est publiée ; lorsqu'elle est publiée en plusieurs langues, une entrée est saisie par langue.  |
+| role_label | * <br/> MultilingualValue | Libellé de rôle spécifique. À utiliser lorsqu'un nom de rôle spécifique est nécessaire, même s'il existe une valeur sémantique appropriée dans `role_type_enum` ; fournir ce libellé lorsque « role_type_enum » est réglé sur « other ». La désignation est saisie avec la langue dans laquelle elle est publiée ; lorsqu'elle est publiée en plusieurs langues, une entrée est saisie par langue.  |
 
 ##### Contraintes
 
 
 Au moins l'un des champs suivants doit être renseigné :
 
-- [role_type_enum](#role_type_enum)
-- [role_label](#role_label)
+- role_type_enum
+- role_label
 
 
 
@@ -1713,7 +1713,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Membership](#Membership) | [role_type](#role_type) | range | [RoleType](#RoleType) |
+| [Membership](#Membership) | role_type | range | [RoleType](#RoleType) |
 
 
 
@@ -1741,7 +1741,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 </div>
 
-## Enum: RoleEnum 
+## Enum: RoleEnum{#RoleEnum}
 
 
 
@@ -1773,7 +1773,7 @@ URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 
 
 
-## Classe: ElectoralDistrict 
+## Classe: ElectoralDistrict{#ElectoralDistrict}
 
 
 _Circonscription ou région électorale associée à une affiliation. La validité temporelle est héritée de l'affiliation englobante._
@@ -1790,10 +1790,10 @@ _Circonscription ou région électorale associée à une affiliation. La validit
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Pour les références IRI, les ressources LINDAS doivent être utilisées. Les IRI des différents niveaux administratifs des unités spatiales suisses sont disponibles à l'adresse : https://ld.admin.ch/country/CHE. Sous les liens de la section schema:containsPlace, le niveau souhaité peut être sélectionné. Exemples pour chaque niveau administratif : - Pays - Suisse : https://ld.admin.ch/country/CHE - Canton - Argovie : https://ld.admin.ch/canton/19 - District - Brigue : https://ld.admin.ch/district/2301 - Commune - Versoix : https://ld.admin.ch/municipality/6644 Les circonscriptions qui ne correspondent à aucune unité spatiale officielle, par exemple celles qui regroupent des quartiers d'une commune, reçoivent à la place un identifiant dans l'espace de noms de l'organe qui les publie. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| label | * <br/> [MultilingualValue](#MultilingualValue) | Désignation de la circonscription électorale telle qu'elle est publiée par l'organe compétent pour l'élection, avec la langue dans laquelle elle est publiée. Lorsqu'une circonscription porte officiellement un nom dans plusieurs langues, une entrée est saisie par langue.  |
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Pour les références IRI, les ressources LINDAS doivent être utilisées. Les IRI des différents niveaux administratifs des unités spatiales suisses sont disponibles à l'adresse : https://ld.admin.ch/country/CHE. Sous les liens de la section schema:containsPlace, le niveau souhaité peut être sélectionné. Exemples pour chaque niveau administratif : - Pays - Suisse : https://ld.admin.ch/country/CHE - Canton - Argovie : https://ld.admin.ch/canton/19 - District - Brigue : https://ld.admin.ch/district/2301 - Commune - Versoix : https://ld.admin.ch/municipality/6644 Les circonscriptions qui ne correspondent à aucune unité spatiale officielle, par exemple celles qui regroupent des quartiers d'une commune, reçoivent à la place un identifiant dans l'espace de noms de l'organe qui les publie. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| label | * <br/> MultilingualValue | Désignation de la circonscription électorale telle qu'elle est publiée par l'organe compétent pour l'élection, avec la langue dans laquelle elle est publiée. Lorsqu'une circonscription porte officiellement un nom dans plusieurs langues, une entrée est saisie par langue.  |
 
 
 
@@ -1803,7 +1803,7 @@ _Circonscription ou région électorale associée à une affiliation. La validit
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Membership](#Membership) | [electoral_district](#electoral_district) | range | [ElectoralDistrict](#ElectoralDistrict) |
+| [Membership](#Membership) | electoral_district | range | [ElectoralDistrict](#ElectoralDistrict) |
 
 
 
@@ -1865,7 +1865,7 @@ Le schéma InterestLink consigne les liens d'intérêts, les conflits d'intérê
 
 
 
-## Classe: InterestLink 
+## Classe: InterestLink{#InterestLink}
 
 
 _Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne avec une organisation située en dehors du schéma des acteurs._
@@ -1882,34 +1882,34 @@ _Un lien d'intérêts (conflit d'intérêts, financement politique) d'une person
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | person_reference | 1 <br/> [PersonReference](#PersonReference) | Référence abrégée à une personne, retenant ses caractéristiques au moment de la mise en relation.  |
 | interest_type | 1 <br/> [InterestTypeEnum](#InterestTypeEnum) | Type de lien d'intérêts, suivant les catégories tenues par les registres de publicité (activité professionnelle, siège dans un organe de direction, mandat pour un groupe d'intérêts, fonction dans la sphère publique, appartenance).  |
-| organization_name | 0..1 <br/> [String](#String) | Nom de l'organisation ou de l'entreprise.  |
-| organization_uid | 0..1 <br/> [String](#String) | IDE de l'organisation issu du registre fédéral IDE (uid.admin.ch), dans le format d'échange d'eCH-0108 : CHE suivi de neuf chiffres, sans séparateurs (p. ex. CHE106063525). Le dernier chiffre est un chiffre de contrôle calculé modulo 11. La forme pointée CHE-106.063.525 est la présentation utilisée par uid.admin.ch et n'est pas saisie ici.  |
-| organization_address | 0..1 <br/> [String](#String) | Adresse de l'organisation.  |
+| organization_name | 0..1 <br/> String | Nom de l'organisation ou de l'entreprise.  |
+| organization_uid | 0..1 <br/> String | IDE de l'organisation issu du registre fédéral IDE (uid.admin.ch), dans le format d'échange d'eCH-0108 : CHE suivi de neuf chiffres, sans séparateurs (p. ex. CHE106063525). Le dernier chiffre est un chiffre de contrôle calculé modulo 11. La forme pointée CHE-106.063.525 est la présentation utilisée par uid.admin.ch et n'est pas saisie ici.  |
+| organization_address | 0..1 <br/> String | Adresse de l'organisation.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Forme juridique de l'organisation. Voir le vocabulaire contrôlé : https://register.ld.admin.ch/i14y/concept/legalForm  |
-| is_paid | 0..1 <br/> [Boolean](#Boolean) | Indique si l'activité est rémunérée.  |
-| is_ex_officio | 0..1 <br/> [Boolean](#Boolean) | Indique si la personne exerce le mandat pour le compte de la collectivité à laquelle elle appartient — donc en tant que représentante de celle-ci et non à titre privé. L'indication est indépendante du type de lien d'intérêts et se combine avec chacun d'eux : un même siège au conseil d'administration n'a pas la même portée selon que la commune y délègue une personne ou que celle-ci l'occupe à titre privé. Sont concernées avant tout les fonctions exécutives, car la représentation dans les organes des organisations concernées y va généralement de pair avec le dicastère.  |
-| committee | 0..1 <br/> [String](#String) | Comité ou organe au sein de l'organisation (p. ex. conseil d'administration, conseil de fondation, comité directeur, conseil de surveillance, comité consultatif, direction).  |
-| function_role | 0..1 <br/> [String](#String) | Fonction ou rôle dans l'organisation (p. ex. président/e, vice-président/e, membre, délégué, directeur/directrice, conseiller/ère).  |
-| date_created | 0..1 <br/> [Date](#Date) | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_created | 0..1 <br/> [Datetime](#Datetime) | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| date_modified | 0..1 <br/> [Date](#Date) | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| datetime_modified | 0..1 <br/> [Datetime](#Datetime) | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
-| valid_from | 0..1 <br/> [Date](#Date) | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
-| valid_through | 0..1 <br/> [Date](#Date) | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
-| is_active | 0..1 <br/> [Boolean](#Boolean) | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| is_paid | 0..1 <br/> Boolean | Indique si l'activité est rémunérée.  |
+| is_ex_officio | 0..1 <br/> Boolean | Indique si la personne exerce le mandat pour le compte de la collectivité à laquelle elle appartient — donc en tant que représentante de celle-ci et non à titre privé. L'indication est indépendante du type de lien d'intérêts et se combine avec chacun d'eux : un même siège au conseil d'administration n'a pas la même portée selon que la commune y délègue une personne ou que celle-ci l'occupe à titre privé. Sont concernées avant tout les fonctions exécutives, car la représentation dans les organes des organisations concernées y va généralement de pair avec le dicastère.  |
+| committee | 0..1 <br/> String | Comité ou organe au sein de l'organisation (p. ex. conseil d'administration, conseil de fondation, comité directeur, conseil de surveillance, comité consultatif, direction).  |
+| function_role | 0..1 <br/> String | Fonction ou rôle dans l'organisation (p. ex. président/e, vice-président/e, membre, délégué, directeur/directrice, conseiller/ère).  |
+| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| valid_from | 0..1 <br/> Date | La date à partir de laquelle l'information est valable. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| valid_through | 0..1 <br/> Date | La date jusqu'à laquelle l'information est valable, incluse. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
+| is_active | 0..1 <br/> Boolean | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible. <br/><br/>Héritage : [HasTemporalValidity](#HasTemporalValidity) |
 
 ##### Contraintes
 
 
 Au moins l'un des champs suivants doit être renseigné :
 
-- [organization_uid](#organization_uid)
-- [organization_name](#organization_name)
+- organization_uid
+- organization_name
 
 
 
@@ -1924,8 +1924,8 @@ Au moins l'un des champs suivants doit être renseigné :
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Container](#Container) | [interest_links](#interest_links) | range | [InterestLink](#InterestLink) |
-| [Person](#Person) | [interest_links](#interest_links) | range | [InterestLink](#InterestLink) |
+| Container | interest_links | range | [InterestLink](#InterestLink) |
+| [Person](#Person) | interest_links | range | [InterestLink](#InterestLink) |
 
 
 
@@ -2101,7 +2101,7 @@ interest_links:
 
 </div>
 
-## Enum: InterestTypeEnum 
+## Enum: InterestTypeEnum{#InterestTypeEnum}
 
 
 
@@ -2139,7 +2139,7 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 
 </div>
 
-## Enum: LegalFormEnum 
+## Enum: LegalFormEnum{#LegalFormEnum}
 
 
 
@@ -2260,7 +2260,7 @@ Contrairement à une entité, une référence n'est pas identifiée en propre �
 
 
 
-## Classe: PersonReference 
+## Classe: PersonReference{#PersonReference}
 
 
 _Référence abrégée à une personne avec les principales données d'identification au moment de la liaison. Préserve l'exactitude historique même si la personne change ultérieurement. La personne référencée est désignée par `local_id` ou `global_uri` ; au moins l'un des deux est requis._
@@ -2277,20 +2277,20 @@ _Référence abrégée à une personne avec les principales données d'identific
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Identifiant local de l'entité référencée. Il est résolu au sein de la même livraison. <br/><br/>Héritage : [HasReferenceIdentification](#HasReferenceIdentification) |
-| global_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | L'URI unique et globalement valide de l'entité référencée. Contrairement à un local_id, elle est également résoluble au-delà de la livraison. <br/><br/>Héritage : [HasReferenceIdentification](#HasReferenceIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Une URI qui renvoie à une entité Wikidata, p. ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasReferenceIdentification](#HasReferenceIdentification) |
-| label | 1 <br/> [String](#String) | Nom d'affichage court obligatoire permettant d'identifier la personne au sein de l'organisation (par ex. avec l'ajout de l'année de naissance afin de distinguer les personnes portant le même nom).  |
-| label_long | 0..1 <br/> [String](#String) | Nom d'affichage long facultatif comprenant les titres académiques et le nom officiel complet (par ex. « Dr. Maria Muster-Beispiel »).  |
-| group_label | 0..1 <br/> [String](#String) | Nom de l'organe/du groupe au moment de la liaison.  |
+| local_id | 0..1 <br/> String | Identifiant local de l'entité référencée. Il est résolu au sein de la même livraison. <br/><br/>Héritage : [HasReferenceIdentification](#HasReferenceIdentification) |
+| global_uri | 0..1 <br/> Uriorcurie | L'URI unique et globalement valide de l'entité référencée. Contrairement à un local_id, elle est également résoluble au-delà de la livraison. <br/><br/>Héritage : [HasReferenceIdentification](#HasReferenceIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, p. ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasReferenceIdentification](#HasReferenceIdentification) |
+| label | 1 <br/> String | Nom d'affichage court obligatoire permettant d'identifier la personne au sein de l'organisation (par ex. avec l'ajout de l'année de naissance afin de distinguer les personnes portant le même nom).  |
+| label_long | 0..1 <br/> String | Nom d'affichage long facultatif comprenant les titres académiques et le nom officiel complet (par ex. « Dr. Maria Muster-Beispiel »).  |
+| group_label | 0..1 <br/> String | Nom de l'organe/du groupe au moment de la liaison.  |
 
 ##### Contraintes
 
 
 Au moins l'un des champs suivants doit être renseigné :
 
-- [local_id](#local_id)
-- [global_uri](#global_uri)
+- local_id
+- global_uri
 
 
 
@@ -2305,8 +2305,8 @@ Au moins l'un des champs suivants doit être renseigné :
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Membership](#Membership) | [person_reference](#person_reference) | range | [PersonReference](#PersonReference) |
-| [InterestLink](#InterestLink) | [person_reference](#person_reference) | range | [PersonReference](#PersonReference) |
+| [Membership](#Membership) | person_reference | range | [PersonReference](#PersonReference) |
+| [InterestLink](#InterestLink) | person_reference | range | [PersonReference](#PersonReference) |
 
 
 
@@ -2330,7 +2330,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 
 
-## Classe: GroupReference 
+## Classe: GroupReference{#GroupReference}
 
 
 _Référence abrégée à un groupe avec les principales données d'identification au moment de la liaison. Le groupe référencé est désigné par `local_id` ou `global_uri` ; au moins l'un des deux est requis. Un `local_id` est résolu au sein de la même livraison, un `global_uri` également au-delà._
@@ -2347,19 +2347,19 @@ _Référence abrégée à un groupe avec les principales données d'identificati
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> [String](#String) | Identifiant local de l'entité référencée. Il est résolu au sein de la même livraison. <br/><br/>Héritage : [HasReferenceIdentification](#HasReferenceIdentification) |
-| global_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | L'URI unique et globalement valide de l'entité référencée. Contrairement à un local_id, elle est également résoluble au-delà de la livraison. <br/><br/>Héritage : [HasReferenceIdentification](#HasReferenceIdentification) |
-| wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Une URI qui renvoie à une entité Wikidata, p. ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasReferenceIdentification](#HasReferenceIdentification) |
-| label | 0..1 <br/> [String](#String) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
-| abbreviation | * <br/> [MultilingualValue](#MultilingualValue) | Abréviation (peut être multilingue).  |
+| local_id | 0..1 <br/> String | Identifiant local de l'entité référencée. Il est résolu au sein de la même livraison. <br/><br/>Héritage : [HasReferenceIdentification](#HasReferenceIdentification) |
+| global_uri | 0..1 <br/> Uriorcurie | L'URI unique et globalement valide de l'entité référencée. Contrairement à un local_id, elle est également résoluble au-delà de la livraison. <br/><br/>Héritage : [HasReferenceIdentification](#HasReferenceIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, p. ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasReferenceIdentification](#HasReferenceIdentification) |
+| label | 0..1 <br/> String | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
+| abbreviation | * <br/> MultilingualValue | Abréviation (peut être multilingue).  |
 
 ##### Contraintes
 
 
 Au moins l'un des champs suivants doit être renseigné :
 
-- [local_id](#local_id)
-- [global_uri](#global_uri)
+- local_id
+- global_uri
 
 
 
@@ -2374,8 +2374,8 @@ Au moins l'un des champs suivants doit être renseigné :
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Group](#Group) | [parent_groups](#parent_groups) | range | [GroupReference](#GroupReference) |
-| [Membership](#Membership) | [group_reference](#group_reference) | range | [GroupReference](#GroupReference) |
+| [Group](#Group) | parent_groups | range | [GroupReference](#GroupReference) |
+| [Membership](#Membership) | group_reference | range | [GroupReference](#GroupReference) |
 
 
 
@@ -2407,7 +2407,7 @@ Pour obtenir l'EGAID, on peut utiliser l'[API de recherche de geo.admin.ch](http
 
 
 
-## Classe: Address 
+## Classe: Address{#Address}
 
 
 _Une adresse avec un type (p. ex. adresse privée, adresse professionnelle) et une valeur._
@@ -2425,19 +2425,19 @@ _Une adresse avec un type (p. ex. adresse privée, adresse professionnelle) et u
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
 | address_type | 0..1 <br/> [AddressTypeEnum](#AddressTypeEnum) | Type d'adresse.  |
-| address_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | URI de l'adresse issue du Répertoire officiel des adresses de bâtiments (swisstopo). Le dernier segment de l'URI est l'EGAID, l'identifiant fédéral d'adresse de bâtiment de ce répertoire. Exemple d'URI valide : https://geo.ld.admin.ch/location/address/101904050 — le même répertoire est consultable comme couche cartographique à l'adresse https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis  |
-| street_address | 0..1 <br/> [String](#String) | Adresse (rue).  |
-| postal_code | 0..1 <br/> [Integer](#Integer) | Code postal.  |
-| postal_locality | 0..1 <br/> [String](#String) | Localité.  |
-| country | 0..1 <br/> [String](#String) | Code de pays ISO 3166-1 alpha-2.  |
+| address_uri | 0..1 <br/> Uriorcurie | URI de l'adresse issue du Répertoire officiel des adresses de bâtiments (swisstopo). Le dernier segment de l'URI est l'EGAID, l'identifiant fédéral d'adresse de bâtiment de ce répertoire. Exemple d'URI valide : https://geo.ld.admin.ch/location/address/101904050 — le même répertoire est consultable comme couche cartographique à l'adresse https://map.geo.admin.ch/#/map?topic=ech&layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis  |
+| street_address | 0..1 <br/> String | Adresse (rue).  |
+| postal_code | 0..1 <br/> Integer | Code postal.  |
+| postal_locality | 0..1 <br/> String | Localité.  |
+| country | 0..1 <br/> String | Code de pays ISO 3166-1 alpha-2.  |
 
 ##### Contraintes
 
 
 Au moins l'un des champs suivants doit être renseigné :
 
-- [postal_locality](#postal_locality)
-- [address_uri](#address_uri)
+- postal_locality
+- address_uri
 
 
 
@@ -2452,8 +2452,8 @@ Au moins l'un des champs suivants doit être renseigné :
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Person](#Person) | [addresses](#addresses) | range | [Address](#Address) |
-| [Group](#Group) | [addresses](#addresses) | range | [Address](#Address) |
+| [Person](#Person) | addresses | range | [Address](#Address) |
+| [Group](#Group) | addresses | range | [Address](#Address) |
 
 
 
@@ -2498,7 +2498,7 @@ addresses:
 
 </div>
 
-## Enum: AddressTypeEnum 
+## Enum: AddressTypeEnum{#AddressTypeEnum}
 
 
 
@@ -2529,7 +2529,7 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 
 
 
-## Classe: Contact 
+## Classe: Contact{#Contact}
 
 
 _Informations de contact d'une personne indiquant un type (p. ex. e-mail, LinkedIn) et une valeur._
@@ -2546,9 +2546,9 @@ _Informations de contact d'une personne indiquant un type (p. ex. e-mail, Linked
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| contact_type | 1 <br/> [ContactTypeEnum](#ContactTypeEnum) | Type d'informations de contact.  |
-| value | 1 <br/> [String](#String) | La valeur proprement dite d'une information, en plus d'autres attributs tels que le type, la langue, etc.  |
-| label | 0..1 <br/> [String](#String) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
+| contact_type | 1 <br/> ContactTypeEnum | Type d'informations de contact.  |
+| value | 1 <br/> String | La valeur proprement dite d'une information, en plus d'autres attributs tels que le type, la langue, etc.  |
+| label | 0..1 <br/> String | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
 
 
 
@@ -2558,8 +2558,8 @@ _Informations de contact d'une personne indiquant un type (p. ex. e-mail, Linked
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Person](#Person) | [contacts](#contacts) | range | [Contact](#Contact) |
-| [Group](#Group) | [contacts](#contacts) | range | [Contact](#Contact) |
+| [Person](#Person) | contacts | range | [Contact](#Contact) |
+| [Group](#Group) | contacts | range | [Contact](#Contact) |
 
 
 
@@ -2580,6 +2580,243 @@ _Informations de contact d'une personne indiquant un type (p. ex. e-mail, Linked
 
 
 </div>
+
+
+## Classes mixin
+
+Quatre classes ne portent pas de données propres : elles regroupent des slots qui se présentent de la même manière dans de nombreuses classes — l'identification d'une entité, l'identification d'une référence, la validité temporelle ainsi que les dates de création et de modification. Elles proviennent du schéma commun du groupe spécialisé (eCH-0292) et sont intégrées par les standards du groupe, afin que les mêmes indications portent partout le même nom et fonctionnent de la même façon.
+
+Un mixin n'est pas une superclasse : aucune instance d'une classe mixin n'est créée et rien n'en apparaît dans les données. Les tableaux d'attributs des classes énumèrent donc individuellement les slots hérités et en signalent la provenance par la mention « Héritage » — les quatre sections suivantes expliquent ce qui se cache derrière cette indication.
+
+
+
+## Classe: HasIdentification{#HasIdentification}
+
+
+_Une classe mixin qui fournit des slots pour l'identification d'une entité. Elle est utilisée pour les entités identifiées en propre ; leur `global_uri` constitue l'identifiant et est donc obligatoire._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+### Attributs
+
+| Nom | Cardinalité et plage | Description |
+|------------------------|----------------------|------------------------------------------------------|
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil.  |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité.  |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans.  |
+
+
+
+### Utilisation de mixin
+
+| mixed into | description |
+| --- | --- |
+| Container | Conteneur pour les acteurs politiques, les groupes et les relations |
+| [Person](#Person) | Une personne avec des identifiants, des noms, des adresses, des nationalités ... |
+| [Group](#Group) | Un groupe, une organisation ou une collectivité politique (p |
+| [Membership](#Membership) | Une relation d'affiliation entre une personne et un groupe, représentant une ... |
+| [InterestLink](#InterestLink) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |
+| [ElectoralDistrict](#ElectoralDistrict) | Circonscription ou région électorale associée à une affiliation |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+## Classe: HasReferenceIdentification{#HasReferenceIdentification}
+
+
+_Une classe mixin qui fournit les slots par lesquels une référence désigne l'entité vers laquelle elle pointe. Contrairement à `HasIdentification`, elle n'identifie pas l'objet référençant lui-même ; c'est pourquoi `global_uri` n'y est ni identifiant ni obligatoire : un système qui ne dispose que de l'identifiant local de l'entité référencée indique celui-ci. Une classe de référence utilisant ce mixin doit exiger au moins l'un des deux._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+### Attributs
+
+| Nom | Cardinalité et plage | Description |
+|------------------------|----------------------|------------------------------------------------------|
+| local_id | 0..1 <br/> String | Identifiant local de l'entité référencée. Il est résolu au sein de la même livraison.  |
+| global_uri | 0..1 <br/> Uriorcurie | L'URI unique et globalement valide de l'entité référencée. Contrairement à un local_id, elle est également résoluble au-delà de la livraison.  |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, p. ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans.  |
+
+
+
+### Utilisation de mixin
+
+| mixed into | description |
+| --- | --- |
+| [PersonReference](#PersonReference) | Référence abrégée à une personne avec les principales données d'identificatio... |
+| [GroupReference](#GroupReference) | Référence abrégée à un groupe avec les principales données d'identification a... |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+## Classe: HasTemporalValidity{#HasTemporalValidity}
+
+
+_Une classe mixin qui fournit des slots pour modéliser la validité temporelle d'une information (et non d'un événement)._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+### Attributs
+
+| Nom | Cardinalité et plage | Description |
+|------------------------|----------------------|------------------------------------------------------|
+| valid_from | 0..1 <br/> Date | La date à partir de laquelle l'information est valable.  |
+| valid_through | 0..1 <br/> Date | La date jusqu'à laquelle l'information est valable, incluse.  |
+| is_active | 0..1 <br/> Boolean | Indique si l'information est actuellement valable. Peut être utile lorsque cette information est explicitement disponible.  |
+
+
+
+### Utilisation de mixin
+
+| mixed into | description |
+| --- | --- |
+| [Group](#Group) | Un groupe, une organisation ou une collectivité politique (p |
+| [Membership](#Membership) | Une relation d'affiliation entre une personne et un groupe, représentant une ... |
+| [InterestLink](#InterestLink) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |
+| [Name](#Name) | Un nom avec un type (p |
+| [Citizenship](#Citizenship) | Nationalité (également utilisée pour la citoyenneté) d'une personne indiquant... |
+| [Gender](#Gender) | Sexe d'une personne indiquant un code de sexe et la validité temporelle |
+| [Occupation](#Occupation) | Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si... |
+| [Training](#Training) | Formation ou éducation d'une personne indiquant un type (p |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+## Classe: HasCreationModificationDates{#HasCreationModificationDates}
+
+
+_Une classe mixin qui fournit des slots pour modéliser les dates de création et de modification d'une entité._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+### Attributs
+
+| Nom | Cardinalité et plage | Description |
+|------------------------|----------------------|------------------------------------------------------|
+| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée.  |
+| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée.  |
+| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois.  |
+| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois.  |
+
+
+
+### Utilisation de mixin
+
+| mixed into | description |
+| --- | --- |
+| [Person](#Person) | Une personne avec des identifiants, des noms, des adresses, des nationalités ... |
+| [Group](#Group) | Un groupe, une organisation ou une collectivité politique (p |
+| [Membership](#Membership) | Une relation d'affiliation entre une personne et un groupe, représentant une ... |
+| [InterestLink](#InterestLink) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
 \newpage
 
 # Annexe A – Références et bibliographie
