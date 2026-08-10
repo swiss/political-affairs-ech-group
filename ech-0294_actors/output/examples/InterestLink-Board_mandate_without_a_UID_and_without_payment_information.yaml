@@ -1,0 +1,11 @@
+interest_links:
+- global_uri: act:il_balaban_001
+  person_reference:
+    global_uri: https://ge.ch/grandconseil/gc/depute/2517/
+    label: Stefan Balaban
+    group_label: LJS
+  interest_type: professional_activity
+  organization_name: X-net SA
+  legal_form: '0106'
+  committee: Conseil d'administration
+  function_role: Membre

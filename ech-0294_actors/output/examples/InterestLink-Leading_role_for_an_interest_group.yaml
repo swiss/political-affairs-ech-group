@@ -1,0 +1,12 @@
+interest_links:
+- global_uri: act:il_mauron_001
+  person_reference:
+    global_uri: >-
+      https://www.fr.ch/parlinfo/membres-du-grand-conseil/5ee6eb9754704902bfd4b4ee01dcf327
+    label: Pierre Mauron
+    group_label: Parti socialiste
+  interest_type: association
+  organization_name: ASLOCA Fribourg
+  legal_form: '0109'
+  committee: Comité
+  function_role: Président

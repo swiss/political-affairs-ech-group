@@ -1956,23 +1956,6 @@ interest_links:
   is_paid: true
 
 ```
-#### Example InterestLink: Unpaid presidency of a political alliance
-
-```yaml
-interest_links:
-- global_uri: act:il_burkart_010
-  person_reference:
-    global_uri: http://www.wikidata.org/entity/Q23060472
-    label: Thierry Burkart
-    group_label: FDP.Die Liberalen
-  interest_type: association
-  organization_name: Allianz Sicherheit Schweiz, Baden
-  legal_form: '0109'
-  committee: Vorstand
-  function_role: Präsident
-  is_paid: false
-
-```
 #### Example InterestLink: Board mandate in a holding company
 
 ```yaml
@@ -1986,40 +1969,6 @@ interest_links:
   organization_name: Birchmeier Holding AG, Döttingen
   legal_form: '0106'
   committee: Verwaltungsrat
-  function_role: Mitglied
-  is_paid: true
-
-```
-#### Example InterestLink: Board mandate in a real estate company
-
-```yaml
-interest_links:
-- global_uri: act:il_burkart_003
-  person_reference:
-    global_uri: http://www.wikidata.org/entity/Q23060472
-    label: Thierry Burkart
-    group_label: FDP.Die Liberalen
-  interest_type: professional_activity
-  organization_name: Bovida Real Estate AG, Baar
-  legal_form: '0106'
-  committee: Verwaltungsrat
-  function_role: Mitglied
-  is_paid: true
-
-```
-#### Example InterestLink: Membership in a sector association
-
-```yaml
-interest_links:
-- global_uri: act:il_burkart_009
-  person_reference:
-    global_uri: http://www.wikidata.org/entity/Q23060472
-    label: Thierry Burkart
-    group_label: FDP.Die Liberalen
-  interest_type: association
-  organization_name: SUISSEDIGITAL Verband für Kommunikationsnetze
-  legal_form: '0109'
-  committee: Vorstand
   function_role: Mitglied
   is_paid: true
 
@@ -2042,38 +1991,21 @@ interest_links:
   is_paid: false
 
 ```
-#### Example InterestLink: Advisory board mandate without a governing function
+#### Example InterestLink: Leading role for an interest group
 
 ```yaml
 interest_links:
-- global_uri: act:il_burkart_008
+- global_uri: act:il_mauron_001
   person_reference:
-    global_uri: http://www.wikidata.org/entity/Q23060472
-    label: Thierry Burkart
-    group_label: FDP.Die Liberalen
-  interest_type: professional_activity
-  organization_name: Stiebel Eltron AG, Lupfig
-  legal_form: '0106'
-  committee: Beirat
-  function_role: Beirat
-  is_paid: true
-
-```
-#### Example InterestLink: Voluntary involvement in the association carrying a major project
-
-```yaml
-interest_links:
-- global_uri: act:il_burkart_011
-  person_reference:
-    global_uri: http://www.wikidata.org/entity/Q23060472
-    label: Thierry Burkart
-    group_label: FDP.Die Liberalen
+    global_uri: >-
+      https://www.fr.ch/parlinfo/membres-du-grand-conseil/5ee6eb9754704902bfd4b4ee01dcf327
+    label: Pierre Mauron
+    group_label: Parti socialiste
   interest_type: association
-  organization_name: Verein Landesausstellung Svizra27, Aarau
+  organization_name: ASLOCA Fribourg
   legal_form: '0109'
-  committee: Vorstand
-  function_role: Mitglied
-  is_paid: false
+  committee: Comité
+  function_role: Président
 
 ```
 #### Example InterestLink: Presidency of a trade association
@@ -2093,38 +2025,54 @@ interest_links:
   is_paid: true
 
 ```
-#### Example InterestLink: Presidency of a national party
+#### Example InterestLink: Political office at another federal level
 
 ```yaml
 interest_links:
-- global_uri: act:il_burkart_006
+- global_uri: act:il_dafond_001
   person_reference:
-    global_uri: http://www.wikidata.org/entity/Q23060472
-    label: Thierry Burkart
-    group_label: FDP.Die Liberalen
-  interest_type: association
-  organization_name: FDP.Die Liberalen
-  legal_form: '0109'
-  committee: Vorstand
-  function_role: Präsident
-  is_paid: true
+    global_uri: >-
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14
+    label: Felice Dafond
+    group_label: PLR
+  interest_type: political_office
+  organization_name: Municipio di Minusio
+  legal_form: '0223'
+  function_role: Sindaco
 
 ```
-#### Example InterestLink: Board mandate in a technology company
+#### Example InterestLink: Cantonal link person from the same delivery
 
 ```yaml
 interest_links:
-- global_uri: act:il_burkart_004
+- global_uri: act:il_beretta_001
   person_reference:
-    global_uri: http://www.wikidata.org/entity/Q23060472
-    label: Thierry Burkart
-    group_label: FDP.Die Liberalen
+    local_id: 1269
+    global_uri: >-
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
+    label: Gerri Beretta-Piccoli
+  interest_type: association
+  organization_name: Fondazione Gruppo Intervento Maltrattamento Infantile (GIMI),
+    Lugano
+  legal_form: '0110'
+  committee: Consiglio di fondazione
+  function_role: Vice Presidente
+
+```
+#### Example InterestLink: Board mandate without a UID and without payment information
+
+```yaml
+interest_links:
+- global_uri: act:il_balaban_001
+  person_reference:
+    global_uri: https://ge.ch/grandconseil/gc/depute/2517/
+    label: Stefan Balaban
+    group_label: LJS
   interest_type: professional_activity
-  organization_name: ELCA Group SA, Lausanne
+  organization_name: X-net SA
   legal_form: '0106'
-  committee: Verwaltungsrat
-  function_role: Mitglied
-  is_paid: true
+  committee: Conseil d'administration
+  function_role: Membre
 
 ```
 

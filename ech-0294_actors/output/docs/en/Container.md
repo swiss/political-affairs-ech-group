@@ -46,16 +46,25 @@ _Container for political actors, groups, and relationships._
 
 ```yaml
 # Interessenbindungen Beispieldaten
-# Quelle: https://api.openparldata.ch/v1/interests/ und parlament.ch
-# Bodies: CHE (Bundesversammlung), ZH (Kanton Zürich), BS (Kanton Basel-Stadt),
-#         261 (Stadt Zürich), 351 (Stadt Bern)
+# Quelle: parlament.ch (Bundesversammlung) sowie die Register der Kantone
+# Tessin, Genf und Freiburg.
+#
+# Die Beispiele decken bewusst beide Ebenen ab: Der Bund publiziert die
+# Bindungen strukturiert mit Organ, Funktion und Entschädigung, die Kantone
+# oft nur als Bezeichnung mit Funktion. Beides muss das Schema tragen — die
+# Pflichtangabe ist einzig, dass die Organisation entweder über
+# `organization_name` oder über `organization_uid` benannt ist.
+#
+# Die Bezeichnungen bleiben in der Sprache, in der sie publiziert werden;
+# übersetzt wird nichts.
 
 global_uri: act:interest_links_example
 interest_links:
-  
-  # --- Thierry Burkart (FDP, Ständerat AG) ---
-  
-  # Berufliche Tätigkeit: eigene Beratungsfirma
+
+  # --- Bundesebene: Thierry Burkart (FDP, Ständerat AG) ---
+
+  # Berufliche Tätigkeit: eigene Beratungsfirma. Der Bund führt Organ
+  # (`committee`), Funktion (`function_role`) und Entschädigung getrennt.
   - global_uri: act:il_burkart_001
     person_reference:
       global_uri: http://www.wikidata.org/entity/Q23060472
@@ -68,7 +77,7 @@ interest_links:
     function_role: Geschäftsführer
     is_paid: true
 
-  # Verwaltungsrat AG
+  # Verwaltungsratsmandat in einer AG
   - global_uri: act:il_burkart_002
     person_reference:
       global_uri: http://www.wikidata.org/entity/Q23060472
@@ -81,33 +90,7 @@ interest_links:
     function_role: Mitglied
     is_paid: true
 
-  # Verwaltungsrat AG
-  - global_uri: act:il_burkart_003
-    person_reference:
-      global_uri: http://www.wikidata.org/entity/Q23060472
-      label: Thierry Burkart
-      group_label: FDP.Die Liberalen
-    interest_type: professional_activity
-    organization_name: Bovida Real Estate AG, Baar
-    legal_form: "0106"  # AG
-    committee: Verwaltungsrat
-    function_role: Mitglied
-    is_paid: true
-
-  # Verwaltungsrat IT-Unternehmen
-  - global_uri: act:il_burkart_004
-    person_reference:
-      global_uri: http://www.wikidata.org/entity/Q23060472
-      label: Thierry Burkart
-      group_label: FDP.Die Liberalen
-    interest_type: professional_activity
-    organization_name: ELCA Group SA, Lausanne
-    legal_form: "0106"  # AG
-    committee: Verwaltungsrat
-    function_role: Mitglied
-    is_paid: true
-
-  # Verbandspräsidium (bezahlt)
+  # Verbandspräsidium, bezahlt
   - global_uri: act:il_burkart_005
     person_reference:
       global_uri: http://www.wikidata.org/entity/Q23060472
@@ -120,20 +103,9 @@ interest_links:
     function_role: Präsident
     is_paid: true
 
-  # Parteiamt
-  - global_uri: act:il_burkart_006
-    person_reference:
-      global_uri: http://www.wikidata.org/entity/Q23060472
-      label: Thierry Burkart
-      group_label: FDP.Die Liberalen
-    interest_type: association
-    organization_name: FDP.Die Liberalen
-    legal_form: "0109"  # Verein
-    committee: Vorstand
-    function_role: Präsident
-    is_paid: true
-
-  # Stiftung (ehrenamtlich)
+  # Stiftungsratsmandat, ehrenamtlich. Einziges Beispiel mit `organization_uid`:
+  # Ist die Organisation im UID-Register eingetragen, wird sie darüber
+  # eindeutig bezeichnet, und der Name dient nur noch der Lesbarkeit.
   - global_uri: act:il_burkart_007
     person_reference:
       global_uri: http://www.wikidata.org/entity/Q23060472
@@ -147,56 +119,70 @@ interest_links:
     function_role: Vizepräsident
     is_paid: false
 
-  # Beirat Unternehmen
-  - global_uri: act:il_burkart_008
+  # --- Kanton Tessin ---
+
+  # Die Person ist in dieser Lieferung erfasst (data_swiss_politicians.yaml)
+  # und wird über ihre `local_id` aufgelöst. Das Tessin publiziert die Bindung
+  # ohne Angabe zur Entschädigung — `is_paid` bleibt deshalb leer, statt eine
+  # Annahme zu treffen.
+  - global_uri: act:il_beretta_001
     person_reference:
-      global_uri: http://www.wikidata.org/entity/Q23060472
-      label: Thierry Burkart
-      group_label: FDP.Die Liberalen
+      local_id: 1269
+      global_uri: "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269"
+      label: Gerri Beretta-Piccoli
+    interest_type: association
+    organization_name: Fondazione Gruppo Intervento Maltrattamento Infantile (GIMI), Lugano
+    legal_form: "0110"  # Stiftung
+    committee: Consiglio di fondazione
+    function_role: Vice Presidente
+
+  # Politisches Amt auf einer anderen föderalen Ebene: Das Gemeindepräsidium
+  # ist keine Mitgliedschaft im Sinne von `Membership`, weil die Gemeinde
+  # ausserhalb der gelieferten Gruppen liegt; es wird als Interessenbindung des
+  # kantonalen Mandats offengelegt. Die Rechtsform kommt hier aus dem
+  # öffentlich-rechtlichen Teil der Codeliste.
+  - global_uri: act:il_dafond_001
+    person_reference:
+      global_uri: "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14"
+      label: Felice Dafond
+      group_label: PLR
+    interest_type: political_office
+    organization_name: Municipio di Minusio
+    legal_form: "0223"  # Verwaltungseinheit der Gemeinde
+    function_role: Sindaco
+
+  # --- Kanton Genf ---
+
+  # Verwaltungsratsmandat, französische Bezeichnungen. Genf publiziert weder
+  # UID noch Entschädigung; getragen wird der Eintrag allein von
+  # `organization_name`.
+  - global_uri: act:il_balaban_001
+    person_reference:
+      global_uri: https://ge.ch/grandconseil/gc/depute/2517/
+      label: Stefan Balaban
+      group_label: LJS
     interest_type: professional_activity
-    organization_name: Stiebel Eltron AG, Lupfig
+    organization_name: X-net SA
     legal_form: "0106"  # AG
-    committee: Beirat
-    function_role: Beirat
-    is_paid: true
+    committee: Conseil d'administration
+    function_role: Membre
 
-  # Branchenverband (bezahlt)
-  - global_uri: act:il_burkart_009
-    person_reference:
-      global_uri: http://www.wikidata.org/entity/Q23060472
-      label: Thierry Burkart
-      group_label: FDP.Die Liberalen
-    interest_type: association
-    organization_name: SUISSEDIGITAL Verband für Kommunikationsnetze
-    legal_form: "0109"  # Verein
-    committee: Vorstand
-    function_role: Mitglied
-    is_paid: true
+  # --- Kanton Freiburg ---
 
-  # Ehrenamtliche Vereinsmitgliedschaften
-  - global_uri: act:il_burkart_010
+  # Dauernde Leitungstätigkeit für eine Interessengruppe. Freiburg publiziert
+  # den Namen zweisprachig (ASLOCA Fribourg / ASLOCA Freiburg); `organization_name`
+  # führt eine Bezeichnung, hier die des französischsprachigen Registers.
+  - global_uri: act:il_mauron_001
     person_reference:
-      global_uri: http://www.wikidata.org/entity/Q23060472
-      label: Thierry Burkart
-      group_label: FDP.Die Liberalen
+      global_uri: https://www.fr.ch/parlinfo/membres-du-grand-conseil/5ee6eb9754704902bfd4b4ee01dcf327
+      label: Pierre Mauron
+      group_label: Parti socialiste
     interest_type: association
-    organization_name: Allianz Sicherheit Schweiz, Baden
+    organization_name: ASLOCA Fribourg
     legal_form: "0109"  # Verein
-    committee: Vorstand
-    function_role: Präsident
-    is_paid: false
+    committee: Comité
+    function_role: Président
 
-  - global_uri: act:il_burkart_011
-    person_reference:
-      global_uri: http://www.wikidata.org/entity/Q23060472
-      label: Thierry Burkart
-      group_label: FDP.Die Liberalen
-    interest_type: association
-    organization_name: Verein Landesausstellung Svizra27, Aarau
-    legal_form: "0109"  # Verein
-    committee: Vorstand
-    function_role: Mitglied
-    is_paid: false
 ```
 #### Example Container: swiss politicians
 
