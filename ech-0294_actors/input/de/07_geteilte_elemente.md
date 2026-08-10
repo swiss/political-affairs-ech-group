@@ -33,3 +33,18 @@ Um zur EGAID zu gelangen, kann man die [Such-API von geo.admin.ch](https://api3.
 {{include:ech-0294_actors/output/docs/AddressTypeEnum.md}}
 
 {{include:ech-0294_actors/output/docs/Contact.md}}
+
+
+## Mixin-Klassen
+
+Vier Klassen tragen keine eigenen Daten, sondern bündeln Slots, die in vielen Klassen gleich aussehen: die Identifikation einer Entität, die Identifikation einer Referenz, die zeitliche Gültigkeit und die Erstellungs- und Änderungsdaten. Sie stammen aus dem gemeinsamen Schema der Fachgruppe (eCH-0292) und werden von den Standards der Fachgruppe eingebunden, damit dieselben Angaben überall gleich heissen und gleich funktionieren.
+
+Ein Mixin ist keine Oberklasse: Es entsteht keine Instanz einer Mixin-Klasse, und in den Daten ist von ihr nichts zu sehen. Die Attributtabellen der Klassen führen die geerbten Slots deshalb einzeln auf und vermerken mit „Vererbung" die Herkunft — die vier folgenden Abschnitte erklären, was hinter dieser Angabe steht.
+
+{{include:ech-0294_actors/output/docs/HasIdentification.md}}
+
+{{include:ech-0294_actors/output/docs/HasReferenceIdentification.md}}
+
+{{include:ech-0294_actors/output/docs/HasTemporalValidity.md}}
+
+{{include:ech-0294_actors/output/docs/HasCreationModificationDates.md}}

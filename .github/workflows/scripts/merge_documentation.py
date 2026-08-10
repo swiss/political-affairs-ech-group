@@ -22,13 +22,17 @@ def modify_header(content):
         str: The modified content with the header.
     """
 
-    # Regular expression pattern to match lines starting with "# <Keyword>: <Name>"
-    pattern = r"^(# (Class|Slot|Enum|Type): (\w+))$"
+    # Lines of the form "## Klasse: Person" / "# Slot: local_id" / "# Typ: String".
+    # The keyword is localized by the docgen templates and the heading level
+    # differs by element kind (classes and enums are h2, slots and types h1);
+    # gen-doc also leaves a trailing space. Matching only "# Class: X" -- as an
+    # earlier version did -- therefore produced no anchor at all, and every
+    # cross-reference in the document pointed nowhere.
+    pattern = r"^(#{1,3} (?:Klasse|Classe|Class|Slot|Enum|Typ|Type)\s*:\s*(\w+))[ \t]*$"
 
     # Function to replace the matched header with the modified header
     def replace_header(match):
-        keyword = match.group(2)
-        name = match.group(3)
+        name = match.group(2)
         return f"{match.group(1)}{{#{name}}}"
 
     # Replace all headers in the content
@@ -157,6 +161,25 @@ def localize_example_headings(content, path, lang):
     return re.sub(r"(^#### [^:]+:\s*)(.+)$", repl, content, flags=re.M)
 
 
+def unlink_dangling_targets(content):
+    """Turn cross-references without a target back into plain text.
+
+    `modify_links()` rewrites every generated link into a document-internal
+    one, including links to elements that are not part of the document -- the
+    built-in types (String, Date, Boolean) and the per-slot pages, which are
+    not included anywhere. In Word and PDF those render as blue link text that
+    leads nowhere, which is worse than no link: the reader tries it. Only
+    references whose anchor was actually written survive as links.
+    """
+    anchors = set(re.findall(r"\{#([A-Za-z_]\w*)\}", content))
+
+    def repl(match):
+        text, target = match.group(1), match.group(2)
+        return match.group(0) if target in anchors else text
+
+    return re.sub(r"\[([^\]]+)\]\(#([A-Za-z_]\w*)\)", repl, content)
+
+
 def process_folder(path, lang=None):
     """
     Processes all markdown files in the given folder and applies the modifications.
@@ -181,6 +204,7 @@ def process_folder(path, lang=None):
         content += process_includes(f"{input_dir}/{file}", lang) + "\n"
 
     content = localize_example_headings(content, path, lang)
+    content = unlink_dangling_targets(content)
 
     # Write the modified content to a new file
     suffix = f"_{lang}" if lang else ""

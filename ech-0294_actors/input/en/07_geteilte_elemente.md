@@ -33,3 +33,18 @@ To arrive at the EGAID, one can use the [search API of geo.admin.ch](https://api
 {{include:ech-0294_actors/output/docs/AddressTypeEnum.md}}
 
 {{include:ech-0294_actors/output/docs/Contact.md}}
+
+
+## Mixin classes
+
+Four classes carry no data of their own; they bundle slots that look the same across many classes — the identification of an entity, the identification of a reference, the temporal validity, and the creation and modification dates. They come from the specialist group's common schema (eCH-0292) and are imported by the group's standards so that the same information is named alike and behaves alike everywhere.
+
+A mixin is not a superclass: no instance of a mixin class is ever created, and nothing of it shows in the data. The attribute tables of the classes therefore list the inherited slots individually and note their origin under "Inheritance" — the four sections below explain what stands behind that note.
+
+{{include:ech-0294_actors/output/docs/HasIdentification.md}}
+
+{{include:ech-0294_actors/output/docs/HasReferenceIdentification.md}}
+
+{{include:ech-0294_actors/output/docs/HasTemporalValidity.md}}
+
+{{include:ech-0294_actors/output/docs/HasCreationModificationDates.md}}
