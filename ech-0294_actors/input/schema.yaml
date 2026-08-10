@@ -379,12 +379,15 @@ classes:
     slot_usage:
       label:
         description: |
-          Name of the electoral district as published by the body responsible for the election.
+          Name of the electoral district as published by the body responsible for the election, with the language it is published in. Where a district is officially named in several languages, one entry per language is recorded.
         annotations:
           description_de: |
-            Bezeichnung des Wahlkreises, wie sie von der für die Wahl zuständigen Stelle publiziert wird.
+            Bezeichnung des Wahlkreises, wie sie von der für die Wahl zuständigen Stelle publiziert wird, mit der Sprache, in der sie publiziert wird. Ist ein Wahlkreis amtlich in mehreren Sprachen benannt, wird pro Sprache ein Eintrag erfasst.
           description_fr: |
-            Désignation de la circonscription électorale telle qu'elle est publiée par l'organe compétent pour l'élection.
+            Désignation de la circonscription électorale telle qu'elle est publiée par l'organe compétent pour l'élection, avec la langue dans laquelle elle est publiée. Lorsqu'une circonscription porte officiellement un nom dans plusieurs langues, une entrée est saisie par langue.
+        range: MultilingualValue
+        multivalued: true
+        inlined_as_list: true
       global_uri:
         description: |
           For IRI references, LINDAS resources should be used.
