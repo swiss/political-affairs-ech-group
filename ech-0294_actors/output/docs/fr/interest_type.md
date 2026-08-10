@@ -63,7 +63,7 @@ URI: [act:interestType](https://ld.ech.ch/schema/0294/actors/interestType)
 | --- |
 | governing_body |
 | interest_group_mandate |
-| political_office |
+| professional_activity |
 
 
 
@@ -93,7 +93,7 @@ description: 'Type de lien d''intérêts (activité professionnelle, mandat poli
 examples:
 - value: governing_body
 - value: interest_group_mandate
-- value: political_office
+- value: professional_activity
 from_schema: https://ld.ech.ch/schema/0294/actors
 rank: 1000
 slot_uri: act:interestType

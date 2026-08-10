@@ -1853,7 +1853,8 @@ electoral_district:
 Le schéma InterestLink consigne les liens d'intérêts, les conflits d'intérêts et les imbrications des personnes avec des organisations. Il s'appuie sur les exigences de transparence applicables aux membres du parlement selon [Assemblée fédérale – Liens d'intérêts](https://www.parlament.ch/centers/documents/de/interessen-nr.pdf).
 
 - **Délimitation par rapport aux affiliations (`Membership`) :** `InterestLink` représente les liens avec des organisations *extérieures* au schéma des acteurs (conflits d'intérêts, financement de la politique) – par opposition à l'appartenance formelle *au sein* du schéma, qui est consignée au moyen de `Membership`.
-- **Classification obligatoire (`interest_type`) :** chaque lien est obligatoirement classé selon son type. Le vocabulaire reprend les catégories que les registres tiennent déjà aujourd'hui : « Tätigkeiten in Führungs- und Aufsichtsorganen sowie Beiräten und ähnlichen Gremien » (Lucerne) devient `governing_body`, « Leitungsfunktionen und dauernde Beratungs- oder Expertentätigkeiten für Interessengruppen und Verbände » (Lucerne) `interest_group_mandate`, « Mitwirkung in Kommissionen und anderen Organen des Bundes, eines Kantons, einer Gemeinde oder einer interkantonalen Zusammenarbeit » (Fribourg) `public_committee`, « Ausübung politischer Ämter in Bund, Kanton und Gemeinden (ausgenommen Landratsmandat) » (Bâle-Campagne) `political_office`, « berufliche Tätigkeiten und allfällige Arbeitgeber » (Schwytz) `professional_activity`. Bâle-Ville se contente de deux catégories (« Führung und Aufsicht », « staatliche Kommission »), la ville de Zoug en compte six — la même trame, découpée plus ou moins finement.
+- **Classification obligatoire (`interest_type`) :** chaque lien est obligatoirement classé selon son type. Le vocabulaire reprend les catégories que les registres tiennent déjà aujourd'hui : « Tätigkeiten in Führungs- und Aufsichtsorganen sowie Beiräten und ähnlichen Gremien » (Lucerne) devient `governing_body`, « Leitungsfunktionen und dauernde Beratungs- oder Expertentätigkeiten für Interessengruppen und Verbände » (Lucerne) `interest_group_mandate`, « Mitwirkung in Kommissionen und anderen Organen des Bundes, eines Kantons, einer Gemeinde oder einer interkantonalen Zusammenarbeit » (Fribourg) et « Ausübung politischer Ämter in Bund, Kanton und Gemeinden (ausgenommen Landratsmandat) » (Bâle-Campagne) toutes deux `public_mandate`, « berufliche Tätigkeiten und allfällige Arbeitgeber » (Schwytz) `professional_activity`. Bâle-Ville se contente de deux catégories (« Führung und Aufsicht », « staatliche Kommission »), la ville de Zoug en compte six — la même trame, découpée plus ou moins finement.
+- **Une seule valeur pour la sphère publique (`public_mandate`) :** une fonction dans une autorité et un siège dans une commission étatique restent délibérément réunis dans une seule valeur. Sur 24 registres exploitables, quatre seulement tiennent les deux catégories séparément (Fribourg, Neuchâtel, la ville de Berne et une commune vaudoise) ; sept ne connaissent que les « politische Ämter », treize uniquement les « Kommissionen und andere Organe » — laquelle des deux relève du hasard du modèle cantonal. Une bipartition devrait donc être devinée lors de la reprise des données, et chaque canton devinerait autrement.
 - **C'est l'interlocuteur qui décide, non la fonction :** `governing_body` et `interest_group_mandate` ne se distinguent pas par la fonction, car une présidence de fédération est formellement les deux. Ce qui compte, c'est le type d'organisation en face : si elle poursuit un but propre (entreprise, établissement, fondation), `governing_body` s'applique ; si son but est la représentation d'intérêts elle-même (fédération de branche, association professionnelle, association de locataires), c'est `interest_group_mandate` — même lorsque la fonction consiste en un siège au comité. Fribourg classe précisément ainsi la présidence de l'ASLOCA, bien que l'entrée porte la mention « Comité ». Cette bipartition n'est pas une invention des cantons : elle figure déjà à l'article 11 de la loi sur l'Assemblée fédérale.
 - **Représentation de sa propre collectivité (`is_ex_officio`) :** savoir si une personne détient un mandat à titre privé ou l'exerce comme représentante de sa propre autorité est consigné indépendamment du type de lien — l'Argovie distingue pour cette raison « Private Ämter » et « Öffentliche Ämter », la ville de Schaffhouse « Privates Engagement » et « Vertretung Stadt Schaffhausen ». Un même siège au conseil d'administration n'a pas la même portée selon le cas. Sont concernées avant tout les fonctions exécutives, car la représentation dans les organes des organisations concernées y va de pair avec le dicastère. Comme champ propre plutôt que comme catégorie, l'indication se combine avec n'importe quel `interest_type`.
 - **Ce que la Confédération inscrit à cet endroit :** dans le registre fédéral, le champ de type ne contient pas la catégorie mais la forme juridique de l'organisation (association, société anonyme, fondation). Celle-ci relève de `legal_form` dans le standard ; la catégorie doit être déduite de l'organe et de la fonction lors de la reprise des données.
@@ -1940,21 +1941,6 @@ Au moins l'un des champs suivants doit être renseigné :
 
 
 ### Exemples
-#### Exemple InterestLink : Siège dans un organe de la sphère publique
-
-```yaml
-interest_links:
-- global_uri: act:il_quadranti_001
-  person_reference:
-    global_uri: >-
-      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487
-    label: Matteo Quadranti
-    group_label: Partito liberale radicale ticinese (PLR)
-  interest_type: public_committee
-  organization_name: Commissione Cantonale Cultura
-  function_role: Vice-presidente
-
-```
 #### Exemple InterestLink : Société propre, dirigée à titre opérationnel
 
 ```yaml
@@ -2007,22 +1993,6 @@ interest_links:
   function_role: Président
 
 ```
-#### Exemple InterestLink : Mandat politique à un autre niveau fédéral
-
-```yaml
-interest_links:
-- global_uri: act:il_dafond_001
-  person_reference:
-    global_uri: >-
-      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14
-    label: Felice Dafond
-    group_label: PLR
-  interest_type: political_office
-  organization_name: Municipio di Minusio
-  legal_form: '0223'
-  function_role: Sindaco
-
-```
 #### Exemple InterestLink : Lien cantonal, personne issue de la même livraison
 
 ```yaml
@@ -2039,6 +2009,22 @@ interest_links:
   legal_form: '0110'
   committee: Consiglio di fondazione
   function_role: Vice Presidente
+
+```
+#### Exemple InterestLink : Fonction publique à un autre niveau fédéral
+
+```yaml
+interest_links:
+- global_uri: act:il_dafond_001
+  person_reference:
+    global_uri: >-
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14
+    label: Felice Dafond
+    group_label: PLR
+  interest_type: public_mandate
+  organization_name: Municipio di Minusio
+  legal_form: '0223'
+  function_role: Sindaco
 
 ```
 #### Exemple InterestLink : Mandat d'administrateur sans IDE ni indication de rémunération
@@ -2092,6 +2078,21 @@ interest_links:
   is_paid: true
 
 ```
+#### Exemple InterestLink : La même valeur pour le siège dans un organe
+
+```yaml
+interest_links:
+- global_uri: act:il_quadranti_001
+  person_reference:
+    global_uri: >-
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487
+    label: Matteo Quadranti
+    group_label: Partito liberale radicale ticinese (PLR)
+  interest_type: public_mandate
+  organization_name: Commissione Cantonale Cultura
+  function_role: Vice-presidente
+
+```
 
 
 
@@ -2123,10 +2124,8 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 | | [act:enum/interest_type/governing_body](act:enum/interest_type/governing_body) |
 | interest_group_mandate |  Fonction permanente de direction ou de conseil pour un groupe d'intérêts ou une fédération — une organisation dont le but même est la représentation d'intérêts. C'est l'interlocuteur qui est déterminant, non la fonction : lorsque le but de l'organisation est de représenter des intérêts, cette valeur s'applique même si la fonction consiste en un siège dans un organe de direction. À la différence de `governing_body`, elle couvre en outre les mandats de conseil permanents sans siège dans un organe.  |
 | | [act:enum/interest_type/interest_group_mandate](act:enum/interest_type/interest_group_mandate) |
-| public_committee |  Participation à une commission ou à un autre organe de la sphère publique — de la Confédération, d'un canton, d'une commune ou de la coopération intercantonale et intercommunale, y compris les commissions extraparlementaires et les organes de surveillance des établissements de droit public. Ce qui la distingue du `political_office` n'est pas le mode de désignation, mais la nature de la chose : il ne s'agit pas d'une fonction propre au sein d'une autorité, mais de la participation à l'un de ses organes. La question de savoir si la personne y siège pour le compte de sa propre collectivité relève de `is_ex_officio`.  |
-| | [act:enum/interest_type/public_committee](act:enum/interest_type/public_committee) |
-| political_office |  Fonction propre au sein d'une autorité à un autre niveau fédéral ou dans une autre collectivité — exécutif ou législatif communal, commission scolaire, paroisse —, en règle générale pourvue par élection. Le mandat pour lequel la déclaration est faite n'y figure jamais.  |
-| | [act:enum/interest_type/political_office](act:enum/interest_type/political_office) |
+| public_mandate |  Fonction ou siège dans la sphère publique à un autre niveau fédéral ou dans une autre collectivité : siège dans un exécutif ou un législatif communal, dans une commission scolaire ou une paroisse, de même que la participation à une commission ou à un autre organe de la Confédération, d'un canton, d'une commune ou de la coopération intercantonale et intercommunale. La plupart des registres ne distinguent pas les deux cas, raison pour laquelle le standard les réunit en une seule valeur. Le mandat pour lequel la déclaration est faite n'y figure jamais ; la question de savoir si la personne exerce le mandat comme représentante de sa propre collectivité relève de `is_ex_officio`.  |
+| | [act:enum/interest_type/public_mandate](act:enum/interest_type/public_mandate) |
 | association |  Simple appartenance à une association, une fédération ou une organisation d'intérêts, sans fonction dirigeante ni siège dans un organe. Lorsqu'une fonction est exercée, `governing_body` ou `interest_group_mandate` s'applique.  |
 | | [act:enum/interest_type/association](act:enum/interest_type/association) |
 | other |  Lien d'intérêts que ne couvre aucune des autres valeurs. La désignation publiée figure dans `function_role` ou `organization_name`, afin que l'entrée reste lisible.  |

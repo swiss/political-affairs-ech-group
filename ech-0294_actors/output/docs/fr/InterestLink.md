@@ -76,21 +76,6 @@ Au moins l'un des champs suivants doit être renseigné :
 
 
 ### Exemples
-#### Exemple InterestLink : Seat on a body of the public sector
-
-```yaml
-interest_links:
-- global_uri: act:il_quadranti_001
-  person_reference:
-    global_uri: >-
-      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487
-    label: Matteo Quadranti
-    group_label: Partito liberale radicale ticinese (PLR)
-  interest_type: public_committee
-  organization_name: Commissione Cantonale Cultura
-  function_role: Vice-presidente
-
-```
 #### Exemple InterestLink : Own company run operationally
 
 ```yaml
@@ -143,22 +128,6 @@ interest_links:
   function_role: Président
 
 ```
-#### Exemple InterestLink : Political office at another federal level
-
-```yaml
-interest_links:
-- global_uri: act:il_dafond_001
-  person_reference:
-    global_uri: >-
-      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14
-    label: Felice Dafond
-    group_label: PLR
-  interest_type: political_office
-  organization_name: Municipio di Minusio
-  legal_form: '0223'
-  function_role: Sindaco
-
-```
 #### Exemple InterestLink : Cantonal link person from the same delivery
 
 ```yaml
@@ -175,6 +144,22 @@ interest_links:
   legal_form: '0110'
   committee: Consiglio di fondazione
   function_role: Vice Presidente
+
+```
+#### Exemple InterestLink : Public office at another federal level
+
+```yaml
+interest_links:
+- global_uri: act:il_dafond_001
+  person_reference:
+    global_uri: >-
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14
+    label: Felice Dafond
+    group_label: PLR
+  interest_type: public_mandate
+  organization_name: Municipio di Minusio
+  legal_form: '0223'
+  function_role: Sindaco
 
 ```
 #### Exemple InterestLink : Board mandate without a UID and without payment information
@@ -226,6 +211,21 @@ interest_links:
   committee: Zentralvorstand
   function_role: Präsident
   is_paid: true
+
+```
+#### Exemple InterestLink : The same value for a seat on a body
+
+```yaml
+interest_links:
+- global_uri: act:il_quadranti_001
+  person_reference:
+    global_uri: >-
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487
+    label: Matteo Quadranti
+    group_label: Partito liberale radicale ticinese (PLR)
+  interest_type: public_mandate
+  organization_name: Commissione Cantonale Cultura
+  function_role: Vice-presidente
 
 ```
 

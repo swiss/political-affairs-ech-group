@@ -128,31 +128,30 @@ interest_links:
     committee: Consiglio di fondazione
     function_role: Vice Presidente
 
-  # Politisches Amt auf einer anderen föderalen Ebene: Das Gemeindepräsidium
-  # ist keine Mitgliedschaft im Sinne von `Membership`, weil die Gemeinde
-  # ausserhalb der gelieferten Gruppen liegt; es wird als Interessenbindung des
-  # kantonalen Mandats offengelegt. Die Rechtsform kommt hier aus dem
-  # öffentlich-rechtlichen Teil der Codeliste.
+  # Amt in der öffentlichen Hand auf einer anderen föderalen Ebene. Das
+  # Gemeindepräsidium ist keine Mitgliedschaft im Sinne von `Membership`, weil
+  # die Gemeinde ausserhalb der gelieferten Gruppen liegt; es wird als
+  # Interessenbindung des kantonalen Mandats offengelegt. Die Rechtsform kommt
+  # hier aus dem öffentlich-rechtlichen Teil der Codeliste.
   - global_uri: act:il_dafond_001
     person_reference:
       global_uri: "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=14"
       label: Felice Dafond
       group_label: PLR
-    interest_type: political_office
+    interest_type: public_mandate
     organization_name: Municipio di Minusio
     legal_form: "0223"  # Verwaltungseinheit der Gemeinde
     function_role: Sindaco
 
-  # Sitz in einer kantonalen Kommission: `public_committee`. Gegenüber ist ein
-  # Gremium der öffentlichen Hand, nicht eine Behörde, in der die Person ein
-  # eigenes Amt hätte — deshalb nicht `political_office`. Wie der Sitz besetzt
-  # wird, spielt für die Einordnung keine Rolle.
+  # Zweiter Fall desselben Werts: Gremiensitz statt Amt. Die Register
+  # unterscheiden das mehrheitlich nicht — 20 von 24 führen nur eine der beiden
+  # Kategorien —, deshalb trägt `public_mandate` beides.
   - global_uri: act:il_quadranti_001
     person_reference:
       global_uri: "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487"
       label: Matteo Quadranti
       group_label: Partito liberale radicale ticinese (PLR)
-    interest_type: public_committee
+    interest_type: public_mandate
     organization_name: Commissione Cantonale Cultura
     function_role: Vice-presidente
 
