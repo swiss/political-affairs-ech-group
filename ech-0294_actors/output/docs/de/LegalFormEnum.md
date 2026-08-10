@@ -14,7 +14,7 @@ URI: [act:LegalFormEnum](https://ld.ech.ch/schema/0294/actors/LegalFormEnum)
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | 0101 |  Einzelunternehmen. |
 | | [https://register.ld.admin.ch/i14y/concept/legalForm/0101](https://register.ld.admin.ch/i14y/concept/legalForm/0101) |
 | 0103 |  Kollektivgesellschaft (KlG). |

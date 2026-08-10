@@ -20,7 +20,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | party |  Politische Partei auf Bundes-, Kantons- oder Gemeindeebene. Jede föderale Ebene wird als eigene Gruppe geführt (z.B. Bundespartei, Kantonspartei, Gemeindesektion).  |
 | | [act:enum/group_type/party](act:enum/group_type/party) |
 | list |  Wahlliste (kann Teil einer Partei sein oder unabhängig).  |

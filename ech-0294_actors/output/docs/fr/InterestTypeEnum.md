@@ -14,7 +14,7 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 
 ### Valeurs admissibles
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | professional_activity |  Activité lucrative en dehors du mandat politique : emploi salarié, activité indépendante, entreprise propre dirigée à titre opérationnel. Pour les salariés, l'employeur et la fonction sont indiqués. Question de contrôle : est-ce là que la personne gagne sa vie ?  |
 | | [act:enum/interest_type/professional_activity](act:enum/interest_type/professional_activity) |
 | governing_body |  Siège dans un organe de direction, de surveillance ou de conseil d'une organisation poursuivant un but propre — conseil d'administration, conseil de fondation, comité consultatif —, indépendamment de la forme juridique et de la rémunération. Question de contrôle : la personne co-dirige-t-elle une organisation sans y être employée ?  |

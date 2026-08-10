@@ -14,7 +14,7 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | professional_activity |  Erwerbstätigkeit ausserhalb des politischen Mandats: Anstellung, selbstständige Tätigkeit, das eigene operativ geführte Unternehmen. Bei Angestellten werden Arbeitgeber und Funktion angegeben. Prüffrage: Verdient die Person hier ihren Lebensunterhalt?  |
 | | [act:enum/interest_type/professional_activity](act:enum/interest_type/professional_activity) |
 | governing_body |  Sitz in einem Führungs-, Aufsichts- oder Beratungsgremium einer Organisation, die einem eigenen Zweck nachgeht — Verwaltungsrat, Stiftungsrat, Beirat —, unabhängig von Rechtsform und Entschädigung. Prüffrage: Steuert die Person eine Organisation mit, ohne dort angestellt zu sein?  |

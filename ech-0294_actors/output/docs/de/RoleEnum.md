@@ -14,7 +14,7 @@ URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | member |  Gewöhnliches Mitglied (Standard).  |
 | president |  Präsident oder Vorsitzender der Gruppe.  |
 | deputy |  Stellvertretung oder Vize.  |

@@ -14,7 +14,7 @@ URI: [act:TrainingTypeEnum](https://ld.ech.ch/schema/0294/actors/TrainingTypeEnu
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | 10 |  Maximal obligatorische Schule. |
 | | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/10](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/10) |
 | 110 |  Keine Ausbildung. |

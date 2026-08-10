@@ -387,7 +387,7 @@ URI: [act:NameTypeEnum](https://ld.ech.ch/schema/0294/actors/NameTypeEnum)
 
 ### Permissible Values
 | Value | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | PersonOfficialName |  Name according to official documents. The official name corresponds to the name appearing in the Swiss civil register. For foreign nationals with no civil status events in Switzerland, the official name corresponds to the name appearing on the foreign passport or identity card (see ‘Name according to foreign passport’ or SEM guidelines on the determination and spelling of names of foreign nationals dated 1 January 2012. If no official documents exist, see also ‘Name according to declaration’ (e.g. in the case of asylum seekers). The official name may consist of one or more parts. According to the official catalogue of attributes (No. 211) for the harmonisation of registers.  |
 | | [https://register.ld.admin.ch/i14y/concept/personOfficialName](https://register.ld.admin.ch/i14y/concept/personOfficialName) |
 | PersonOriginalName |  Name of filiation according to official documents, which corresponds to the person's name before their first marriage or registered partnership. It may also be a maiden name acquired by decision to change one's name (see Art. 24, para. 2 OEC, RS 211.112.2). According to the official catalogue of attributes (No. 212) for the harmonisation of registers.  |
@@ -598,7 +598,7 @@ URI: [act:GenderCodeEnum](https://ld.ech.ch/schema/0294/actors/GenderCodeEnum)
 
 ### Permissible Values
 | Value | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | male |  Male. |
 | | [https://register.ld.admin.ch/i14y/concept/sex/1](https://register.ld.admin.ch/i14y/concept/sex/1) |
 | female |  Female. |
@@ -789,7 +789,7 @@ URI: [act:TrainingTypeEnum](https://ld.ech.ch/schema/0294/actors/TrainingTypeEnu
 
 ### Permissible Values
 | Value | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | 10 |  Maximum compulsory school. |
 | | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/10](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/10) |
 | 110 |  No education. |
@@ -1359,7 +1359,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 
 ### Permissible Values
 | Value | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | party |  Political party at federal, cantonal, or municipal level. Each federal level is managed as its own group (e.g., national party, cantonal party, municipal party).  |
 | | [act:enum/group_type/party](act:enum/group_type/party) |
 | list |  Electoral list (can be part of a party or independent).  |
@@ -1759,7 +1759,7 @@ URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 
 ### Permissible Values
 | Value | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | member |  Regular member (default).  |
 | president |  President or chair of the group.  |
 | deputy |  Deputy or vice-chair role.  |
@@ -2120,7 +2120,7 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 
 ### Permissible Values
 | Value | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | professional_activity |  Gainful employment outside the political mandate: employment, self-employment, the own operationally run company. Where the person is an employee, employer and function are stated. Test question: is this where the person earns their living?  |
 | | [act:enum/interest_type/professional_activity](act:enum/interest_type/professional_activity) |
 | governing_body |  Seat in a management, supervisory or advisory body of an organisation that pursues a purpose of its own — board of directors, foundation board, advisory board — irrespective of legal form and remuneration. Test question: does the person help steer an organisation without being employed by it?  |
@@ -2158,7 +2158,7 @@ URI: [act:LegalFormEnum](https://ld.ech.ch/schema/0294/actors/LegalFormEnum)
 
 ### Permissible Values
 | Value | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | 0101 |  Sole proprietorship. |
 | | [https://register.ld.admin.ch/i14y/concept/legalForm/0101](https://register.ld.admin.ch/i14y/concept/legalForm/0101) |
 | 0103 |  General partnership (GP). |
@@ -2518,7 +2518,7 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 
 ### Permissible Values
 | Value | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | privateAddress |  Private address.  |
 | businessAddress |  Business address.  |
 | localAddress |  Local address.  |

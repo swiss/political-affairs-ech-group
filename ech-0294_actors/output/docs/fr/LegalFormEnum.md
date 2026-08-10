@@ -14,7 +14,7 @@ URI: [act:LegalFormEnum](https://ld.ech.ch/schema/0294/actors/LegalFormEnum)
 
 ### Valeurs admissibles
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | 0101 |  Entreprise individuelle. |
 | | [https://register.ld.admin.ch/i14y/concept/legalForm/0101](https://register.ld.admin.ch/i14y/concept/legalForm/0101) |
 | 0103 |  Société en nom collectif (SNC). |

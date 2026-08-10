@@ -20,7 +20,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 
 ### Valeurs admissibles
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | party |  Parti politique au niveau fédéral, cantonal ou communal. Chaque niveau fédéral est géré comme un groupe distinct (p. ex. parti national, parti cantonal, parti communal).  |
 | | [act:enum/group_type/party](act:enum/group_type/party) |
 | list |  Liste électorale (peut faire partie d'un parti ou être indépendante).  |

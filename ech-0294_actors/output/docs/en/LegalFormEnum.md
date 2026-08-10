@@ -14,7 +14,7 @@ URI: [act:LegalFormEnum](https://ld.ech.ch/schema/0294/actors/LegalFormEnum)
 
 ### Permissible Values
 | Value | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | 0101 |  Sole proprietorship. |
 | | [https://register.ld.admin.ch/i14y/concept/legalForm/0101](https://register.ld.admin.ch/i14y/concept/legalForm/0101) |
 | 0103 |  General partnership (GP). |

@@ -14,7 +14,7 @@ URI: [act:NameTypeEnum](https://ld.ech.ch/schema/0294/actors/NameTypeEnum)
 
 ### Valeurs admissibles
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | PersonOfficialName |  Nom selon les documents officiels. Le nom officiel correspond au nom figurant dans le registre suisse de l'état civil. Pour les ressortissants étrangers n'ayant pas d'événement d'état civil en Suisse, le nom officiel correspond au nom figurant sur le passeport étranger ou la carte d'identité (voir « Nom selon le passeport étranger » ou les directives du SEM sur la détermination et l'orthographe des noms des ressortissants étrangers du 1er janvier 2012. En l'absence de documents officiels, voir également « Nom selon la déclaration » (p. ex. dans le cas de requérants d'asile). Le nom officiel peut se composer d'une ou de plusieurs parties. Selon le catalogue officiel des caractères (n° 211) pour l'harmonisation des registres.  |
 | | [https://register.ld.admin.ch/i14y/concept/personOfficialName](https://register.ld.admin.ch/i14y/concept/personOfficialName) |
 | PersonOriginalName |  Nom de filiation selon les documents officiels, qui correspond au nom porté par la personne avant son premier mariage ou son premier partenariat enregistré. Il peut également s'agir d'un nom de célibataire acquis par une décision de changement de nom (voir art. 24, al. 2 OEC, RS 211.112.2). Selon le catalogue officiel des caractères (n° 212) pour l'harmonisation des registres.  |

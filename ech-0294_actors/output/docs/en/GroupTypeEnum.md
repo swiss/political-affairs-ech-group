@@ -20,7 +20,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 
 ### Permissible Values
 | Value | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | party |  Political party at federal, cantonal, or municipal level. Each federal level is managed as its own group (e.g., national party, cantonal party, municipal party).  |
 | | [act:enum/group_type/party](act:enum/group_type/party) |
 | list |  Electoral list (can be part of a party or independent).  |

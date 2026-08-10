@@ -14,7 +14,7 @@ URI: [act:GenderCodeEnum](https://ld.ech.ch/schema/0294/actors/GenderCodeEnum)
 
 ### Permissible Values
 | Value | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | male |  Male. |
 | | [https://register.ld.admin.ch/i14y/concept/sex/1](https://register.ld.admin.ch/i14y/concept/sex/1) |
 | female |  Female. |

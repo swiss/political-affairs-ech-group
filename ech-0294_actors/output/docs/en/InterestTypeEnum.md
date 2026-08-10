@@ -14,7 +14,7 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 
 ### Permissible Values
 | Value | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | professional_activity |  Gainful employment outside the political mandate: employment, self-employment, the own operationally run company. Where the person is an employee, employer and function are stated. Test question: is this where the person earns their living?  |
 | | [act:enum/interest_type/professional_activity](act:enum/interest_type/professional_activity) |
 | governing_body |  Seat in a management, supervisory or advisory body of an organisation that pursues a purpose of its own — board of directors, foundation board, advisory board — irrespective of legal form and remuneration. Test question: does the person help steer an organisation without being employed by it?  |

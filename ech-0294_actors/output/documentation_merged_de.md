@@ -387,7 +387,7 @@ URI: [act:NameTypeEnum](https://ld.ech.ch/schema/0294/actors/NameTypeEnum)
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | PersonOfficialName |  Name gemäss amtlichen Unterlagen. Der amtliche Name entspricht dem Namen im schweizerischen Zivilstandsregister. Bei ausländischen Personen ohne Zivilstandsereignis in der Schweiz entspricht dieser Name dem Namen im ausländischen Pass oder auf der Identitätskarte (siehe 214 sowie Weisung des SEM über die Bestimmung und Schreibweise der Namen von ausländischen Staatsangehörigen vom 1. Januar 2012. Im Ausnahmefall siehe auch "Name nach Deklaration" (z. B. Asyl), wenn keine amtlichen Dokumente vorliegen). Der amtliche Name kann aus einem oder mehreren Teilen bestehen. Gemäss amtlichen Katalog der Merkmale (Nr. 211) Registerharmonisierung.  |
 | | [https://register.ld.admin.ch/i14y/concept/personOfficialName](https://register.ld.admin.ch/i14y/concept/personOfficialName) |
 | PersonOriginalName |  Angestammter Name gemäss amtlichen Unterlagen, den eine Person unmittelbar vor ihrer ersten Eheschliessung oder Begründung einer eingetragenen Partnerschaft geführt hat oder, gestützt auf einen Namensänderungsentscheid, als neuen Ledignamen erworben hat (Art. 24 Abs. 2 ZStV, SR 211.112.2). Gemäss amtlichen Katalog der Merkmale (Nr. 212) Registerharmonisierung.  |
@@ -598,7 +598,7 @@ URI: [act:GenderCodeEnum](https://ld.ech.ch/schema/0294/actors/GenderCodeEnum)
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | male |  Männlich. |
 | | [https://register.ld.admin.ch/i14y/concept/sex/1](https://register.ld.admin.ch/i14y/concept/sex/1) |
 | female |  Weiblich. |
@@ -789,7 +789,7 @@ URI: [act:TrainingTypeEnum](https://ld.ech.ch/schema/0294/actors/TrainingTypeEnu
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | 10 |  Maximal obligatorische Schule. |
 | | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/10](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/10) |
 | 110 |  Keine Ausbildung. |
@@ -1359,7 +1359,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | party |  Politische Partei auf Bundes-, Kantons- oder Gemeindeebene. Jede föderale Ebene wird als eigene Gruppe geführt (z.B. Bundespartei, Kantonspartei, Gemeindesektion).  |
 | | [act:enum/group_type/party](act:enum/group_type/party) |
 | list |  Wahlliste (kann Teil einer Partei sein oder unabhängig).  |
@@ -1758,7 +1758,7 @@ URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | member |  Gewöhnliches Mitglied (Standard).  |
 | president |  Präsident oder Vorsitzender der Gruppe.  |
 | deputy |  Stellvertretung oder Vize.  |
@@ -2118,7 +2118,7 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | professional_activity |  Erwerbstätigkeit ausserhalb des politischen Mandats: Anstellung, selbstständige Tätigkeit, das eigene operativ geführte Unternehmen. Bei Angestellten werden Arbeitgeber und Funktion angegeben. Prüffrage: Verdient die Person hier ihren Lebensunterhalt?  |
 | | [act:enum/interest_type/professional_activity](act:enum/interest_type/professional_activity) |
 | governing_body |  Sitz in einem Führungs-, Aufsichts- oder Beratungsgremium einer Organisation, die einem eigenen Zweck nachgeht — Verwaltungsrat, Stiftungsrat, Beirat —, unabhängig von Rechtsform und Entschädigung. Prüffrage: Steuert die Person eine Organisation mit, ohne dort angestellt zu sein?  |
@@ -2156,7 +2156,7 @@ URI: [act:LegalFormEnum](https://ld.ech.ch/schema/0294/actors/LegalFormEnum)
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | 0101 |  Einzelunternehmen. |
 | | [https://register.ld.admin.ch/i14y/concept/legalForm/0101](https://register.ld.admin.ch/i14y/concept/legalForm/0101) |
 | 0103 |  Kollektivgesellschaft (KlG). |
@@ -2515,7 +2515,7 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | privateAddress |  Privatadresse.  |
 | businessAddress |  Geschäftsadresse.  |
 | localAddress |  Lokaladresse.  |

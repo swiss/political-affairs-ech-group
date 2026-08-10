@@ -386,7 +386,7 @@ URI: [act:NameTypeEnum](https://ld.ech.ch/schema/0294/actors/NameTypeEnum)
 
 ### Valeurs admissibles
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | PersonOfficialName |  Nom selon les documents officiels. Le nom officiel correspond au nom figurant dans le registre suisse de l'état civil. Pour les ressortissants étrangers n'ayant pas d'événement d'état civil en Suisse, le nom officiel correspond au nom figurant sur le passeport étranger ou la carte d'identité (voir « Nom selon le passeport étranger » ou les directives du SEM sur la détermination et l'orthographe des noms des ressortissants étrangers du 1er janvier 2012. En l'absence de documents officiels, voir également « Nom selon la déclaration » (p. ex. dans le cas de requérants d'asile). Le nom officiel peut se composer d'une ou de plusieurs parties. Selon le catalogue officiel des caractères (n° 211) pour l'harmonisation des registres.  |
 | | [https://register.ld.admin.ch/i14y/concept/personOfficialName](https://register.ld.admin.ch/i14y/concept/personOfficialName) |
 | PersonOriginalName |  Nom de filiation selon les documents officiels, qui correspond au nom porté par la personne avant son premier mariage ou son premier partenariat enregistré. Il peut également s'agir d'un nom de célibataire acquis par une décision de changement de nom (voir art. 24, al. 2 OEC, RS 211.112.2). Selon le catalogue officiel des caractères (n° 212) pour l'harmonisation des registres.  |
@@ -597,7 +597,7 @@ URI: [act:GenderCodeEnum](https://ld.ech.ch/schema/0294/actors/GenderCodeEnum)
 
 ### Valeurs admissibles
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | male |  Masculin.  |
 | | [https://register.ld.admin.ch/i14y/concept/sex/1](https://register.ld.admin.ch/i14y/concept/sex/1) |
 | female |  Féminin.  |
@@ -788,7 +788,7 @@ URI: [act:TrainingTypeEnum](https://ld.ech.ch/schema/0294/actors/TrainingTypeEnu
 
 ### Valeurs admissibles
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | 10 |  École obligatoire au maximum. |
 | | [https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/10](https://register.ld.admin.ch/i14y/concept/LEVEL_EDUC/10) |
 | 110 |  Aucune formation. |
@@ -1358,7 +1358,7 @@ URI: [act:GroupTypeEnum](https://ld.ech.ch/schema/0294/actors/GroupTypeEnum)
 
 ### Valeurs admissibles
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | party |  Parti politique au niveau fédéral, cantonal ou communal. Chaque niveau fédéral est géré comme un groupe distinct (p. ex. parti national, parti cantonal, parti communal).  |
 | | [act:enum/group_type/party](act:enum/group_type/party) |
 | list |  Liste électorale (peut faire partie d'un parti ou être indépendante).  |
@@ -1757,7 +1757,7 @@ URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 
 ### Valeurs admissibles
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | member |  Membre ordinaire (par défaut).  |
 | president |  Président ou président du groupe.  |
 | deputy |  Rôle de suppléance ou de vice-présidence.  |
@@ -2117,7 +2117,7 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 
 ### Valeurs admissibles
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | professional_activity |  Activité lucrative en dehors du mandat politique : emploi salarié, activité indépendante, entreprise propre dirigée à titre opérationnel. Pour les salariés, l'employeur et la fonction sont indiqués. Question de contrôle : est-ce là que la personne gagne sa vie ?  |
 | | [act:enum/interest_type/professional_activity](act:enum/interest_type/professional_activity) |
 | governing_body |  Siège dans un organe de direction, de surveillance ou de conseil d'une organisation poursuivant un but propre — conseil d'administration, conseil de fondation, comité consultatif —, indépendamment de la forme juridique et de la rémunération. Question de contrôle : la personne co-dirige-t-elle une organisation sans y être employée ?  |
@@ -2155,7 +2155,7 @@ URI: [act:LegalFormEnum](https://ld.ech.ch/schema/0294/actors/LegalFormEnum)
 
 ### Valeurs admissibles
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | 0101 |  Entreprise individuelle. |
 | | [https://register.ld.admin.ch/i14y/concept/legalForm/0101](https://register.ld.admin.ch/i14y/concept/legalForm/0101) |
 | 0103 |  Société en nom collectif (SNC). |
@@ -2514,7 +2514,7 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 
 ### Valeurs admissibles
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | privateAddress |  Adresse privée.  |
 | businessAddress |  Adresse professionnelle.  |
 | localAddress |  Adresse locale.  |

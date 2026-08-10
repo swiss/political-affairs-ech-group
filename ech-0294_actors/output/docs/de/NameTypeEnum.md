@@ -14,7 +14,7 @@ URI: [act:NameTypeEnum](https://ld.ech.ch/schema/0294/actors/NameTypeEnum)
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | PersonOfficialName |  Name gemäss amtlichen Unterlagen. Der amtliche Name entspricht dem Namen im schweizerischen Zivilstandsregister. Bei ausländischen Personen ohne Zivilstandsereignis in der Schweiz entspricht dieser Name dem Namen im ausländischen Pass oder auf der Identitätskarte (siehe 214 sowie Weisung des SEM über die Bestimmung und Schreibweise der Namen von ausländischen Staatsangehörigen vom 1. Januar 2012. Im Ausnahmefall siehe auch "Name nach Deklaration" (z. B. Asyl), wenn keine amtlichen Dokumente vorliegen). Der amtliche Name kann aus einem oder mehreren Teilen bestehen. Gemäss amtlichen Katalog der Merkmale (Nr. 211) Registerharmonisierung.  |
 | | [https://register.ld.admin.ch/i14y/concept/personOfficialName](https://register.ld.admin.ch/i14y/concept/personOfficialName) |
 | PersonOriginalName |  Angestammter Name gemäss amtlichen Unterlagen, den eine Person unmittelbar vor ihrer ersten Eheschliessung oder Begründung einer eingetragenen Partnerschaft geführt hat oder, gestützt auf einen Namensänderungsentscheid, als neuen Ledignamen erworben hat (Art. 24 Abs. 2 ZStV, SR 211.112.2). Gemäss amtlichen Katalog der Merkmale (Nr. 212) Registerharmonisierung.  |
