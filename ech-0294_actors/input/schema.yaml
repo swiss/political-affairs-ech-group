@@ -930,13 +930,15 @@ slots:
   organization_name:
     slot_uri: act:organizationName
     description: |
-      Name of the organization or enterprise.
+      Name of the organization or enterprise, with the language it is published in. Bilingual registers state the name in both languages; one entry is recorded per language.
     annotations:
       description_de: |
-        Name der Organisation oder des Unternehmens.
-
+        Name der Organisation oder des Unternehmens mit der Sprache, in der er publiziert wird. Zweisprachige Register führen den Namen in beiden Sprachen; erfasst wird pro Sprache ein Eintrag.
       description_fr: |
-        Nom de l'organisation ou de l'entreprise.
+        Nom de l'organisation ou de l'entreprise, avec la langue dans laquelle il est publié. Les registres bilingues indiquent le nom dans les deux langues ; une entrée est saisie par langue.
+    range: MultilingualValue
+    multivalued: true
+    inlined_as_list: true
   organization_uid:
     slot_uri: act:organizationUid
     description: |
@@ -979,23 +981,27 @@ slots:
   committee:
     slot_uri: act:committee
     description: |
-      Committee or board within the organization (e.g., Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).
+      Committee or board within the organization (e.g., Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung), with the language it is published in; one entry is recorded per language.
     annotations:
       description_de: |
-        Gremium innerhalb der Organisation (z.B. Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).
-
+        Gremium innerhalb der Organisation (z.B. Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung) mit der Sprache, in der es publiziert wird; erfasst wird pro Sprache ein Eintrag.
       description_fr: |
-        Comité ou organe au sein de l'organisation (p. ex. conseil d'administration, conseil de fondation, comité directeur, conseil de surveillance, comité consultatif, direction).
+        Comité ou organe au sein de l'organisation (p. ex. conseil d'administration, conseil de fondation, comité directeur, conseil de surveillance, comité consultatif, direction), avec la langue dans laquelle il est publié ; une entrée est saisie par langue.
+    range: MultilingualValue
+    multivalued: true
+    inlined_as_list: true
   function_role:
     slot_uri: act:functionRole
     description: |
-      Function or role in the organization (e.g., Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in).
+      Function or role in the organization (e.g., Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in), with the language it is published in; one entry is recorded per language.
     annotations:
       description_de: |
-        Funktion oder Rolle in der Organisation (z.B. Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in).
-
+        Funktion oder Rolle in der Organisation (z.B. Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in) mit der Sprache, in der sie publiziert wird; erfasst wird pro Sprache ein Eintrag.
       description_fr: |
-        Fonction ou rôle dans l'organisation (p. ex. président/e, vice-président/e, membre, délégué, directeur/directrice, conseiller/ère).
+        Fonction ou rôle dans l'organisation (p. ex. président/e, vice-président/e, membre, délégué, directeur/directrice, conseiller/ère), avec la langue dans laquelle elle est publiée ; une entrée est saisie par langue.
+    range: MultilingualValue
+    multivalued: true
+    inlined_as_list: true
   names:
     slot_uri: act:name
     description: |
