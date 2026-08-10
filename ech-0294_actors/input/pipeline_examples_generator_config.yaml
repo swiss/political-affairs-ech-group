@@ -153,13 +153,13 @@ example_titles:
     fr: Lien cantonal, personne issue de la même livraison
     en: Cantonal link, person from the same delivery
   "act:il_dafond_001":
-    de: Politisches Amt auf einer anderen föderalen Ebene
-    fr: Mandat politique à un autre niveau fédéral
-    en: Political office at another federal level
+    de: Amt in der öffentlichen Hand auf anderer föderaler Ebene
+    fr: Fonction publique à un autre niveau fédéral
+    en: Public office at another federal level
   "act:il_quadranti_001":
-    de: Sitz in einem Gremium der öffentlichen Hand
-    fr: Siège dans un organe de la sphère publique
-    en: Seat on a body of the public sector
+    de: Derselbe Wert für den Gremiensitz
+    fr: La même valeur pour le siège dans un organe
+    en: The same value for a seat on a body
   "act:il_zanini_001":
     de: Mandat als Vertretung der eigenen Gemeinde
     fr: Mandat exercé comme représentation de sa propre commune
