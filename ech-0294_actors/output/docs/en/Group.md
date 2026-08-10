@@ -65,7 +65,7 @@ _A political group, organization, or body (e.g., party, committee, parliament, d
 
 
 ### Examples
-#### Example: Parliamentary group referencing the parliament it belongs to
+#### Example Group: Parliamentary group referencing the parliament it belongs to
 
 ```yaml
 local_id: 1266
@@ -85,7 +85,7 @@ parent_groups:
   label: Grosser Rat Basel-Stadt
 
 ```
-#### Example: Committee referencing its cantonal council
+#### Example Group: Committee referencing its cantonal council
 
 ```yaml
 groups:
@@ -122,7 +122,7 @@ groups:
   spatial: https://ld.admin.ch/canton/15
 
 ```
-#### Example: State chancellery referencing its government
+#### Example Group: State chancellery referencing its government
 
 ```yaml
 groups:
@@ -155,7 +155,7 @@ groups:
   spatial: https://ld.admin.ch/canton/12
 
 ```
-#### Example: Bilingual delegation to an intercantonal body
+#### Example Group: Bilingual delegation to an intercantonal body
 
 ```yaml
 local_id: 5000
@@ -197,7 +197,7 @@ spatial: https://ld.admin.ch/canton/10
 valid_from: 2007-12-12
 
 ```
-#### Example: Extra-parliamentary commission with decision-making powers
+#### Example Group: Extra-parliamentary commission with decision-making powers
 
 ```yaml
 global_uri: https://www.weko.admin.ch/
@@ -230,7 +230,7 @@ group_type:
 spatial: https://ld.admin.ch/country/CHE
 
 ```
-#### Example: Cantonal party referencing its national party
+#### Example Group: Cantonal party referencing its national party
 
 ```yaml
 global_uri: https://www.evp-bs.ch/
@@ -254,7 +254,7 @@ parent_groups:
     language: de
 
 ```
-#### Example: Municipal parliament with spatial reference
+#### Example Group: Municipal parliament with spatial reference
 
 ```yaml
 local_id: 700
@@ -271,7 +271,7 @@ group_type:
 spatial: https://ld.admin.ch/municipality/3203
 
 ```
-#### Example: Association with UID and legal form from the commercial register
+#### Example Group: Association with UID and legal form from the commercial register
 
 ```yaml
 global_uri: https://www.frc.ch/
@@ -291,7 +291,7 @@ group_type:
 spatial: https://ld.admin.ch/canton/22
 
 ```
-#### Example: Council bureau referencing its parliament
+#### Example Group: Council bureau referencing its parliament
 
 ```yaml
 groups:
@@ -324,7 +324,7 @@ groups:
   spatial: https://ld.admin.ch/canton/12
 
 ```
-#### Example: Interest group with a trilingual name and contact
+#### Example Group: Interest group with a trilingual name and contact
 
 ```yaml
 local_id: 6627

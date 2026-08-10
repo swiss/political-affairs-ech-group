@@ -63,14 +63,14 @@ At least one of the following must be set:
 
 
 ### Examples
-#### Example: swiss politicians Sofia Fisch Juristin
+#### Example Occupation: swiss politicians Sofia Fisch Juristin
 
 ```yaml
 label: Jurist*in
 is_active: true
 
 ```
-#### Example: swiss politicians Beat Jans Politiker
+#### Example Occupation: swiss politicians Beat Jans Politiker
 
 ```yaml
 label: Politiker

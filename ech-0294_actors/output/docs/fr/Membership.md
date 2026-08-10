@@ -57,7 +57,7 @@ _Une relation d'affiliation entre une personne et un groupe, représentant une a
 
 
 ### Exemples
-#### Exemple : The same person at another level with another electoral district
+#### Exemple Membership : The same person at another level with another electoral district
 
 ```yaml
 global_uri: act:ms_jans_nationalrat
@@ -79,7 +79,7 @@ valid_through: 2011-12-04
 is_active: false
 
 ```
-#### Exemple : Executive mandate with a presiding role
+#### Exemple Membership : Executive mandate with a presiding role
 
 ```yaml
 global_uri: act:ms_jans_regierungsrat_bs
@@ -102,7 +102,7 @@ valid_through: 2023-12-31
 is_active: false
 
 ```
-#### Exemple : Person and group from the same delivery with electoral district
+#### Exemple Membership : Person and group from the same delivery with electoral district
 
 ```yaml
 global_uri: act:ms_jans_grossrat_bs
@@ -125,7 +125,7 @@ valid_through: 2011-04-30
 is_active: false
 
 ```
-#### Exemple : Ongoing mandate without an end date
+#### Exemple Membership : Ongoing mandate without an end date
 
 ```yaml
 global_uri: act:ms_jans_bundesrat
@@ -143,7 +143,7 @@ valid_from: 2024-01-01
 is_active: true
 
 ```
-#### Exemple : Parliamentary group membership alongside the council mandate
+#### Exemple Membership : Parliamentary group membership alongside the council mandate
 
 ```yaml
 global_uri: act:ms_jans_fraktion_sp_bs
@@ -162,7 +162,7 @@ valid_through: 2011-04-30
 is_active: false
 
 ```
-#### Exemple : Committee membership with a duration of its own
+#### Exemple Membership : Committee membership with a duration of its own
 
 ```yaml
 global_uri: act:ms_jans_wak_bs
@@ -181,7 +181,7 @@ valid_through: 2011-04-30
 is_active: false
 
 ```
-#### Exemple : Party membership without temporal information
+#### Exemple Membership : Party membership without temporal information
 
 ```yaml
 global_uri: act:ms_jans_partei_sp

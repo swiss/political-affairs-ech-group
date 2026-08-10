@@ -46,14 +46,14 @@ _Circonscription ou région électorale associée à une affiliation. La validit
 
 
 ### Exemples
-#### Exemple : Electoral district without an official spatial unit
+#### Exemple ElectoralDistrict : Electoral district without an official spatial unit
 
 ```yaml
 global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
 label: Kleinbasel
 
 ```
-#### Exemple : Canton as electoral district identified via its LINDAS resource
+#### Exemple ElectoralDistrict : Canton as electoral district identified via its LINDAS resource
 
 ```yaml
 global_uri: https://ld.admin.ch/canton/12

@@ -174,7 +174,7 @@ _Une personne avec des identifiants, des noms, des adresses, des nationalités e
 
 
 ### Exemples
-#### Exemple : Variante de nom à côté du double nom officiel
+#### Exemple Person : Variante de nom à côté du double nom officiel
 
 ```yaml
 local_id: 280958
@@ -189,7 +189,7 @@ names:
   value: Brunel
 
 ```
-#### Exemple : Prénom usuel différent du prénom officiel
+#### Exemple Person : Prénom usuel différent du prénom officiel
 
 ```yaml
 local_id: 1269
@@ -205,7 +205,7 @@ names:
   value: Beretta-Piccoli
 
 ```
-#### Exemple : Indication de sexe non binaire avec profession et formation
+#### Exemple Person : Indication de sexe non binaire avec profession et formation
 
 ```yaml
 local_id: 72c7232be92944e3876f3b6723824ff9
@@ -229,7 +229,7 @@ trainings:
   value: MLaw
 
 ```
-#### Exemple : Distinguer des personnes homonymes par le label
+#### Exemple Person : Distinguer des personnes homonymes par le label
 
 ```yaml
 local_id: 6447
@@ -243,7 +243,7 @@ names:
   value: Arnold
 
 ```
-#### Exemple : Personne saisie de manière complète
+#### Exemple Person : Personne saisie de manière complète
 
 ```yaml
 local_id: 4032
@@ -287,7 +287,7 @@ contacts:
   value: http://www.beat-jans.ch
 
 ```
-#### Exemple : Distinguer des personnes homonymes par le label (deuxième personne)
+#### Exemple Person : Distinguer des personnes homonymes par le label (deuxième personne)
 
 ```yaml
 local_id: 6370
@@ -671,14 +671,14 @@ Au moins l'un des champs suivants doit être renseigné :
 
 
 ### Exemples
-#### Exemple : swiss politicians Sofia Fisch Juristin
+#### Exemple Occupation : swiss politicians Sofia Fisch Juristin
 
 ```yaml
 label: Jurist*in
 is_active: true
 
 ```
-#### Exemple : swiss politicians Beat Jans Politiker
+#### Exemple Occupation : swiss politicians Beat Jans Politiker
 
 ```yaml
 label: Politiker
@@ -952,7 +952,7 @@ _Un groupe, une organisation ou une collectivité politique (p. ex. parti, commi
 
 
 ### Exemples
-#### Exemple : Groupe parlementaire renvoyant au parlement dont il relève
+#### Exemple Group : Groupe parlementaire renvoyant au parlement dont il relève
 
 ```yaml
 local_id: 1266
@@ -972,7 +972,7 @@ parent_groups:
   label: Grosser Rat Basel-Stadt
 
 ```
-#### Exemple : Commission renvoyant à son conseil cantonal
+#### Exemple Group : Commission renvoyant à son conseil cantonal
 
 ```yaml
 groups:
@@ -1009,7 +1009,7 @@ groups:
   spatial: https://ld.admin.ch/canton/15
 
 ```
-#### Exemple : Chancellerie d'État renvoyant à son gouvernement
+#### Exemple Group : Chancellerie d'État renvoyant à son gouvernement
 
 ```yaml
 groups:
@@ -1042,7 +1042,7 @@ groups:
   spatial: https://ld.admin.ch/canton/12
 
 ```
-#### Exemple : Délégation bilingue auprès d'un organe intercantonal
+#### Exemple Group : Délégation bilingue auprès d'un organe intercantonal
 
 ```yaml
 local_id: 5000
@@ -1084,7 +1084,7 @@ spatial: https://ld.admin.ch/canton/10
 valid_from: 2007-12-12
 
 ```
-#### Exemple : Commission extraparlementaire dotée du pouvoir de décision
+#### Exemple Group : Commission extraparlementaire dotée du pouvoir de décision
 
 ```yaml
 global_uri: https://www.weko.admin.ch/
@@ -1117,7 +1117,7 @@ group_type:
 spatial: https://ld.admin.ch/country/CHE
 
 ```
-#### Exemple : Parti cantonal renvoyant au parti national
+#### Exemple Group : Parti cantonal renvoyant au parti national
 
 ```yaml
 global_uri: https://www.evp-bs.ch/
@@ -1141,7 +1141,7 @@ parent_groups:
     language: de
 
 ```
-#### Exemple : Parlement communal avec référence spatiale
+#### Exemple Group : Parlement communal avec référence spatiale
 
 ```yaml
 local_id: 700
@@ -1158,7 +1158,7 @@ group_type:
 spatial: https://ld.admin.ch/municipality/3203
 
 ```
-#### Exemple : Association avec IDE et forme juridique du registre du commerce
+#### Exemple Group : Association avec IDE et forme juridique du registre du commerce
 
 ```yaml
 global_uri: https://www.frc.ch/
@@ -1178,7 +1178,7 @@ group_type:
 spatial: https://ld.admin.ch/canton/22
 
 ```
-#### Exemple : Bureau du conseil renvoyant à son parlement
+#### Exemple Group : Bureau du conseil renvoyant à son parlement
 
 ```yaml
 groups:
@@ -1211,7 +1211,7 @@ groups:
   spatial: https://ld.admin.ch/canton/12
 
 ```
-#### Exemple : Groupe d'intérêt avec nom trilingue et contact
+#### Exemple Group : Groupe d'intérêt avec nom trilingue et contact
 
 ```yaml
 local_id: 6627
@@ -1470,7 +1470,7 @@ _Une relation d'affiliation entre une personne et un groupe, représentant une a
 
 
 ### Exemples
-#### Exemple : La même personne à un autre niveau, avec une autre circonscription
+#### Exemple Membership : La même personne à un autre niveau, avec une autre circonscription
 
 ```yaml
 global_uri: act:ms_jans_nationalrat
@@ -1492,7 +1492,7 @@ valid_through: 2011-12-04
 is_active: false
 
 ```
-#### Exemple : Mandat exécutif avec fonction présidentielle
+#### Exemple Membership : Mandat exécutif avec fonction présidentielle
 
 ```yaml
 global_uri: act:ms_jans_regierungsrat_bs
@@ -1515,7 +1515,7 @@ valid_through: 2023-12-31
 is_active: false
 
 ```
-#### Exemple : Personne et groupe de la même livraison, avec circonscription
+#### Exemple Membership : Personne et groupe de la même livraison, avec circonscription
 
 ```yaml
 global_uri: act:ms_jans_grossrat_bs
@@ -1538,7 +1538,7 @@ valid_through: 2011-04-30
 is_active: false
 
 ```
-#### Exemple : Mandat en cours sans date de fin
+#### Exemple Membership : Mandat en cours sans date de fin
 
 ```yaml
 global_uri: act:ms_jans_bundesrat
@@ -1556,7 +1556,7 @@ valid_from: 2024-01-01
 is_active: true
 
 ```
-#### Exemple : Appartenance à un groupe parlementaire parallèle au mandat
+#### Exemple Membership : Appartenance à un groupe parlementaire parallèle au mandat
 
 ```yaml
 global_uri: act:ms_jans_fraktion_sp_bs
@@ -1575,7 +1575,7 @@ valid_through: 2011-04-30
 is_active: false
 
 ```
-#### Exemple : Appartenance à une commission avec sa propre durée
+#### Exemple Membership : Appartenance à une commission avec sa propre durée
 
 ```yaml
 global_uri: act:ms_jans_wak_bs
@@ -1594,7 +1594,7 @@ valid_through: 2011-04-30
 is_active: false
 
 ```
-#### Exemple : Affiliation à un parti sans indications temporelles
+#### Exemple Membership : Affiliation à un parti sans indications temporelles
 
 ```yaml
 global_uri: act:ms_jans_partei_sp
@@ -1767,14 +1767,14 @@ _Circonscription ou région électorale associée à une affiliation. La validit
 
 
 ### Exemples
-#### Exemple : Circonscription sans unité spatiale officielle
+#### Exemple ElectoralDistrict : Circonscription sans unité spatiale officielle
 
 ```yaml
 global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
 label: Kleinbasel
 
 ```
-#### Exemple : Canton comme circonscription, identifié par la ressource LINDAS
+#### Exemple ElectoralDistrict : Canton comme circonscription, identifié par la ressource LINDAS
 
 ```yaml
 global_uri: https://ld.admin.ch/canton/12
@@ -1878,7 +1878,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 
 ### Exemples
-#### Exemple : Société propre, dirigée à titre opérationnel
+#### Exemple InterestLink : Société propre, dirigée à titre opérationnel
 
 ```yaml
 global_uri: act:il_burkart_001
@@ -1894,7 +1894,7 @@ function_role: Geschäftsführer
 is_paid: true
 
 ```
-#### Exemple : Présidence non rémunérée d'une alliance politique
+#### Exemple InterestLink : Présidence non rémunérée d'une alliance politique
 
 ```yaml
 global_uri: act:il_burkart_010
@@ -1910,7 +1910,7 @@ function_role: Präsident
 is_paid: false
 
 ```
-#### Exemple : Mandat d'administrateur dans une holding
+#### Exemple InterestLink : Mandat d'administrateur dans une holding
 
 ```yaml
 global_uri: act:il_burkart_002
@@ -1926,7 +1926,7 @@ function_role: Mitglied
 is_paid: true
 
 ```
-#### Exemple : Mandat d'administrateur dans une société immobilière
+#### Exemple InterestLink : Mandat d'administrateur dans une société immobilière
 
 ```yaml
 global_uri: act:il_burkart_003
@@ -1942,7 +1942,7 @@ function_role: Mitglied
 is_paid: true
 
 ```
-#### Exemple : Affiliation à une association de branche
+#### Exemple InterestLink : Affiliation à une association de branche
 
 ```yaml
 global_uri: act:il_burkart_009
@@ -1958,7 +1958,7 @@ function_role: Mitglied
 is_paid: true
 
 ```
-#### Exemple : Mandat au conseil de fondation avec IDE de l'organisation
+#### Exemple InterestLink : Mandat au conseil de fondation avec IDE de l'organisation
 
 ```yaml
 global_uri: act:il_burkart_007
@@ -1975,7 +1975,7 @@ function_role: Vizepräsident
 is_paid: false
 
 ```
-#### Exemple : Mandat au comité consultatif sans fonction d'organe
+#### Exemple InterestLink : Mandat au comité consultatif sans fonction d'organe
 
 ```yaml
 global_uri: act:il_burkart_008
@@ -1991,7 +1991,7 @@ function_role: Beirat
 is_paid: true
 
 ```
-#### Exemple : Participation bénévole à l'association porteuse d'un grand projet
+#### Exemple InterestLink : Participation bénévole à l'association porteuse d'un grand projet
 
 ```yaml
 global_uri: act:il_burkart_011
@@ -2007,7 +2007,7 @@ function_role: Mitglied
 is_paid: false
 
 ```
-#### Exemple : Présidence d'une association économique
+#### Exemple InterestLink : Présidence d'une association économique
 
 ```yaml
 global_uri: act:il_burkart_005
@@ -2023,7 +2023,7 @@ function_role: Präsident
 is_paid: true
 
 ```
-#### Exemple : Présidence d'un parti national
+#### Exemple InterestLink : Présidence d'un parti national
 
 ```yaml
 global_uri: act:il_burkart_006
@@ -2039,7 +2039,7 @@ function_role: Präsident
 is_paid: true
 
 ```
-#### Exemple : Mandat d'administrateur dans une entreprise technologique
+#### Exemple InterestLink : Mandat d'administrateur dans une entreprise technologique
 
 ```yaml
 global_uri: act:il_burkart_004
@@ -2425,14 +2425,14 @@ Au moins l'un des champs suivants doit être renseigné :
 
 
 ### Exemples
-#### Exemple : swiss politicians Beat Jans 1
+#### Exemple Address : swiss politicians Beat Jans 1
 
 ```yaml
 address_type: businessAddress
 postal_locality: Basel-Stadt
 
 ```
-#### Exemple : groups Konsumenteninformation und -schutz 1
+#### Exemple Address : groups Konsumenteninformation und -schutz 1
 
 ```yaml
 address_type: businessAddress

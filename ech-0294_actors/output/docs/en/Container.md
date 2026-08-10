@@ -42,7 +42,7 @@ _Container for political actors, groups, and relationships._
 
 
 ### Examples
-#### Example: interest links
+#### Example Container: interest links
 
 ```yaml
 # Interessenbindungen Beispieldaten
@@ -198,7 +198,7 @@ interest_links:
     function_role: Mitglied
     is_paid: false
 ```
-#### Example: swiss politicians
+#### Example Container: swiss politicians
 
 ```yaml
 global_uri: act:swiss_politicians_example
@@ -315,7 +315,7 @@ persons:
         value: MLaw
 
 ```
-#### Example: groups
+#### Example Container: groups
 
 ```yaml
 # Beispiele für Gruppen und Organe unterschiedlicher Typen. Alle Einträge sind
@@ -638,7 +638,7 @@ groups:
     valid_from: 2007-12-12
 
 ```
-#### Example: memberships
+#### Example Container: memberships
 
 ```yaml
 # Mitgliedschaften einer einzigen Person über drei föderale Ebenen hinweg.

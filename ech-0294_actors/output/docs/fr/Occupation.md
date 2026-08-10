@@ -63,14 +63,14 @@ Au moins l'un des champs suivants doit être renseigné :
 
 
 ### Exemples
-#### Exemple : swiss politicians Sofia Fisch Juristin
+#### Exemple Occupation : swiss politicians Sofia Fisch Juristin
 
 ```yaml
 label: Jurist*in
 is_active: true
 
 ```
-#### Exemple : swiss politicians Beat Jans Politiker
+#### Exemple Occupation : swiss politicians Beat Jans Politiker
 
 ```yaml
 label: Politiker

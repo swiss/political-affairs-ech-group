@@ -75,7 +75,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 
 ### Exemples
-#### Exemple : Own company run operationally
+#### Exemple InterestLink : Own company run operationally
 
 ```yaml
 global_uri: act:il_burkart_001
@@ -91,7 +91,7 @@ function_role: Geschäftsführer
 is_paid: true
 
 ```
-#### Exemple : Unpaid presidency of a political alliance
+#### Exemple InterestLink : Unpaid presidency of a political alliance
 
 ```yaml
 global_uri: act:il_burkart_010
@@ -107,7 +107,7 @@ function_role: Präsident
 is_paid: false
 
 ```
-#### Exemple : Board mandate in a holding company
+#### Exemple InterestLink : Board mandate in a holding company
 
 ```yaml
 global_uri: act:il_burkart_002
@@ -123,7 +123,7 @@ function_role: Mitglied
 is_paid: true
 
 ```
-#### Exemple : Board mandate in a real estate company
+#### Exemple InterestLink : Board mandate in a real estate company
 
 ```yaml
 global_uri: act:il_burkart_003
@@ -139,7 +139,7 @@ function_role: Mitglied
 is_paid: true
 
 ```
-#### Exemple : Membership in a sector association
+#### Exemple InterestLink : Membership in a sector association
 
 ```yaml
 global_uri: act:il_burkart_009
@@ -155,7 +155,7 @@ function_role: Mitglied
 is_paid: true
 
 ```
-#### Exemple : Foundation board mandate with the organisations UID
+#### Exemple InterestLink : Foundation board mandate with the organisations UID
 
 ```yaml
 global_uri: act:il_burkart_007
@@ -172,7 +172,7 @@ function_role: Vizepräsident
 is_paid: false
 
 ```
-#### Exemple : Advisory board mandate without a governing function
+#### Exemple InterestLink : Advisory board mandate without a governing function
 
 ```yaml
 global_uri: act:il_burkart_008
@@ -188,7 +188,7 @@ function_role: Beirat
 is_paid: true
 
 ```
-#### Exemple : Voluntary involvement in the association carrying a major project
+#### Exemple InterestLink : Voluntary involvement in the association carrying a major project
 
 ```yaml
 global_uri: act:il_burkart_011
@@ -204,7 +204,7 @@ function_role: Mitglied
 is_paid: false
 
 ```
-#### Exemple : Presidency of a trade association
+#### Exemple InterestLink : Presidency of a trade association
 
 ```yaml
 global_uri: act:il_burkart_005
@@ -220,7 +220,7 @@ function_role: Präsident
 is_paid: true
 
 ```
-#### Exemple : Presidency of a national party
+#### Exemple InterestLink : Presidency of a national party
 
 ```yaml
 global_uri: act:il_burkart_006
@@ -236,7 +236,7 @@ function_role: Präsident
 is_paid: true
 
 ```
-#### Exemple : Board mandate in a technology company
+#### Exemple InterestLink : Board mandate in a technology company
 
 ```yaml
 global_uri: act:il_burkart_004

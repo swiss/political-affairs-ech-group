@@ -46,14 +46,14 @@ _Electoral district or region associated with a membership. The temporal validit
 
 
 ### Examples
-#### Example: Electoral district without an official spatial unit
+#### Example ElectoralDistrict: Electoral district without an official spatial unit
 
 ```yaml
 global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
 label: Kleinbasel
 
 ```
-#### Example: Canton as electoral district identified via its LINDAS resource
+#### Example ElectoralDistrict: Canton as electoral district identified via its LINDAS resource
 
 ```yaml
 global_uri: https://ld.admin.ch/canton/12

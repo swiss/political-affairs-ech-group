@@ -64,7 +64,7 @@ _Une personne avec des identifiants, des noms, des adresses, des nationalités e
 
 
 ### Exemples
-#### Exemple : Name variant alongside the official double name
+#### Exemple Person : Name variant alongside the official double name
 
 ```yaml
 local_id: 280958
@@ -79,7 +79,7 @@ names:
   value: Brunel
 
 ```
-#### Exemple : Call name differing from the official first name
+#### Exemple Person : Call name differing from the official first name
 
 ```yaml
 local_id: 1269
@@ -95,7 +95,7 @@ names:
   value: Beretta-Piccoli
 
 ```
-#### Exemple : Non-binary gender entry with occupation and training
+#### Exemple Person : Non-binary gender entry with occupation and training
 
 ```yaml
 local_id: 72c7232be92944e3876f3b6723824ff9
@@ -119,7 +119,7 @@ trainings:
   value: MLaw
 
 ```
-#### Exemple : Telling apart persons with identical names via the label
+#### Exemple Person : Telling apart persons with identical names via the label
 
 ```yaml
 local_id: 6447
@@ -133,7 +133,7 @@ names:
   value: Arnold
 
 ```
-#### Exemple : Fully recorded person
+#### Exemple Person : Fully recorded person
 
 ```yaml
 local_id: 4032
@@ -177,7 +177,7 @@ contacts:
   value: http://www.beat-jans.ch
 
 ```
-#### Exemple : Telling apart persons with identical names via the label second person
+#### Exemple Person : Telling apart persons with identical names via the label second person
 
 ```yaml
 local_id: 6370
