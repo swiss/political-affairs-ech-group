@@ -14,10 +14,20 @@ act:memberships_example a act:Container ;
         act:ms_jans_wak_bs .
 
 <https://grosserrat.bs.ch/wahlkreise/kleinbasel> a act:ElectoralDistrict ;
-    mcm:label "Kleinbasel" .
+    mcm:label [ a mcm:MultilingualValue ;
+            mcm:language "de" ;
+            mcm:value "Kleinbasel" ] .
 
 <https://ld.admin.ch/canton/12> a act:ElectoralDistrict ;
-    mcm:label "Basel-Stadt" .
+    mcm:label [ a mcm:MultilingualValue ;
+            mcm:language "fr" ;
+            mcm:value "Bâle-Ville" ],
+        [ a mcm:MultilingualValue ;
+            mcm:language "it" ;
+            mcm:value "Basilea-Città" ],
+        [ a mcm:MultilingualValue ;
+            mcm:language "de" ;
+            mcm:value "Basel-Stadt" ] .
 
 act:ms_jans_bundesrat a act:Membership ;
     schema1:validFrom "2024-01-01"^^xsd:date ;
@@ -97,11 +107,11 @@ act:ms_jans_nationalrat a act:Membership ;
     act:roleType [ a act:RoleType ;
             act:roleTypeEnum "member" ;
             act:role_label [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "Mitglied" ],
-                [ a mcm:MultilingualValue ;
                     mcm:language "it" ;
-                    mcm:value "Membro" ] ] .
+                    mcm:value "Membro" ],
+                [ a mcm:MultilingualValue ;
+                    mcm:language "de" ;
+                    mcm:value "Mitglied" ] ] .
 
 act:ms_jans_partei_sp a act:Membership ;
     mcm:isCurrent true ;

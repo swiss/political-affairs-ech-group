@@ -1,3 +1,5 @@
 electoral_district:
   global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
-  label: Kleinbasel
+  label:
+  - value: Kleinbasel
+    language: de

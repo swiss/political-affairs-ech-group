@@ -71,7 +71,13 @@ memberships:
     label: Nationalrat
   electoral_district:
     global_uri: https://ld.admin.ch/canton/12
-    label: Basel-Stadt
+    label:
+    - value: Basel-Stadt
+      language: de
+    - value: Bâle-Ville
+      language: fr
+    - value: Basilea-Città
+      language: it
   role_type:
     role_type_enum: member
     role_label:
@@ -124,7 +130,9 @@ memberships:
     label: Grosser Rat Basel-Stadt
   electoral_district:
     global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
-    label: Kleinbasel
+    label:
+    - value: Kleinbasel
+      language: de
   role_type:
     role_type_enum: member
   authorized_to_vote: true

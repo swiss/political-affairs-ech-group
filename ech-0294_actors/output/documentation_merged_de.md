@@ -1500,7 +1500,13 @@ memberships:
     label: Nationalrat
   electoral_district:
     global_uri: https://ld.admin.ch/canton/12
-    label: Basel-Stadt
+    label:
+    - value: Basel-Stadt
+      language: de
+    - value: Bâle-Ville
+      language: fr
+    - value: Basilea-Città
+      language: it
   role_type:
     role_type_enum: member
     role_label:
@@ -1553,7 +1559,9 @@ memberships:
     label: Grosser Rat Basel-Stadt
   electoral_district:
     global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
-    label: Kleinbasel
+    label:
+    - value: Kleinbasel
+      language: de
   role_type:
     role_type_enum: member
   authorized_to_vote: true
@@ -1790,7 +1798,7 @@ _Wahlkreis oder Wahlregion, die einer Mitgliedschaft zugeordnet ist. Die zeitlic
 | local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Für IRI-Referenzen sollen die LINDAS-Ressourcen verwendet werden. Die IRI für die verschiedenen Verwaltungsebenen der Schweizer Raumeinheiten sind bei LINDAS zu finden: https://ld.admin.ch/country/CHE. Unter den Links im Abschnitt schema:containsPlace kann die gewünschte Ebene gefunden werden. Beispiele für die einzelnen Verwaltungsebenen: - Land - Schweiz: https://ld.admin.ch/country/CHE - Kanton - Aargau: https://ld.admin.ch/canton/19 - Bezirk - Brig: https://ld.admin.ch/district/2301 - Gemeinde - Versoix: https://ld.admin.ch/municipality/6644 Wahlkreise, die keiner amtlichen Raumeinheit entsprechen, etwa Wahlkreise, die Wohnviertel einer Gemeinde zusammenfassen, erhalten stattdessen einen Identifikator im Namensraum der publizierenden Stelle. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| label | 0..1 <br/> [String](#String) | Bezeichnung des Wahlkreises, wie sie von der für die Wahl zuständigen Stelle publiziert wird.  |
+| label | * <br/> [MultilingualValue](#MultilingualValue) | Bezeichnung des Wahlkreises, wie sie von der für die Wahl zuständigen Stelle publiziert wird, mit der Sprache, in der sie publiziert wird. Ist ein Wahlkreis amtlich in mehreren Sprachen benannt, wird pro Sprache ein Eintrag erfasst.  |
 
 
 
@@ -1821,7 +1829,9 @@ _Wahlkreis oder Wahlregion, die einer Mitgliedschaft zugeordnet ist. Die zeitlic
 ```yaml
 electoral_district:
   global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
-  label: Kleinbasel
+  label:
+  - value: Kleinbasel
+    language: de
 
 ```
 #### Beispiel ElectoralDistrict: Kanton als Wahlkreis, über die LINDAS-Ressource identifiziert
@@ -1829,7 +1839,13 @@ electoral_district:
 ```yaml
 electoral_district:
   global_uri: https://ld.admin.ch/canton/12
-  label: Basel-Stadt
+  label:
+  - value: Basel-Stadt
+    language: de
+  - value: Bâle-Ville
+    language: fr
+  - value: Basilea-Città
+    language: it
 
 ```
 

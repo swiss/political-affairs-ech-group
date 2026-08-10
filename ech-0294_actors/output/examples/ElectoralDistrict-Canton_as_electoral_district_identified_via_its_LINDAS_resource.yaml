@@ -1,3 +1,9 @@
 electoral_district:
   global_uri: https://ld.admin.ch/canton/12
-  label: Basel-Stadt
+  label:
+  - value: Basel-Stadt
+    language: de
+  - value: Bâle-Ville
+    language: fr
+  - value: Basilea-Città
+    language: it

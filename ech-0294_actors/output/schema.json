@@ -233,9 +233,12 @@
                     "type": "string"
                 },
                 "label": {
-                    "description": "Name of the electoral district as published by the body responsible for the election.\n",
+                    "description": "Name of the electoral district as published by the body responsible for the election, with the language it is published in. Where a district is officially named in several languages, one entry per language is recorded.\n",
+                    "items": {
+                        "$ref": "#/$defs/MultilingualValue"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },

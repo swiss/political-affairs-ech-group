@@ -10,7 +10,9 @@ memberships:
     label: Grosser Rat Basel-Stadt
   electoral_district:
     global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
-    label: Kleinbasel
+    label:
+    - value: Kleinbasel
+      language: de
   role_type:
     role_type_enum: member
   authorized_to_vote: true
