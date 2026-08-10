@@ -91,6 +91,7 @@ Name: actors-schema
 | [interest_type](interest_type.md) | Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein) |
 | [is_active](is_active.md) | Gibt an, ob die Information aktuell gültig ist |
 | [is_correspondence](is_correspondence.md) | Gibt an, ob es sich um die bevorzugte Sprache handelt |
+| [is_ex_officio](is_ex_officio.md) | Gibt an, ob die Person das Mandat im Auftrag des Gemeinwesens wahrnimmt, dem ... |
 | [is_native](is_native.md) | Gibt an, ob es sich um die Muttersprache handelt |
 | [is_paid](is_paid.md) | Gibt an, ob die Tätigkeit bezahlt ist |
 | [label](label.md) | Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw |

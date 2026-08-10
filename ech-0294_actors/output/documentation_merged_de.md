@@ -1854,7 +1854,10 @@ electoral_district:
 Das InterestLink-Schema erfasst Interessenbindungen, Interessenkonflikte und Verflechtungen von Personen mit Organisationen. Es orientiert sich an den Transparenzanforderungen für Parlamentsmitglieder gemäss [Bundesversammlung – Interessenbindungen](https://www.parlament.ch/centers/documents/de/interessen-nr.pdf).
 
 - **Abgrenzung zu Mitgliedschaften (`Membership`):** `InterestLink` bildet Bindungen zu Organisationen *ausserhalb* des Akteur-Schemas ab (Interessenkonflikte, Politikfinanzierung) – im Unterschied zur formalen Zugehörigkeit *innerhalb* des Schemas, die über `Membership` erfasst wird.
-- **Obligatorische Klassifikation (`interest_type`):** Jede Bindung wird zwingend nach Art eingeordnet (berufliche Tätigkeit, politische Ämter, Verein).
+- **Obligatorische Klassifikation (`interest_type`):** Jede Bindung wird zwingend nach Art eingeordnet. Das Vokabular folgt den Kategorien, welche die Register heute schon führen: „Tätigkeiten in Führungs- und Aufsichtsorganen sowie Beiräten und ähnlichen Gremien" (Luzern) wird zu `governing_body`, „Leitungsfunktionen und dauernde Beratungs- oder Expertentätigkeiten für Interessengruppen und Verbände" (Luzern) zu `interest_group_mandate`, „Mitwirkung in Kommissionen und anderen Organen des Bundes, eines Kantons, einer Gemeinde oder einer interkantonalen Zusammenarbeit" (Freiburg) zu `public_committee`, „Ausübung politischer Ämter in Bund, Kanton und Gemeinden (ausgenommen Landratsmandat)" (Basel-Landschaft) zu `political_office`, „berufliche Tätigkeiten und allfällige Arbeitgeber" (Schwyz) zu `professional_activity`. Basel-Stadt kommt mit zwei Kategorien aus („Führung und Aufsicht", „staatliche Kommission"), die Stadt Zug nennt sechs — dasselbe Raster, verschieden fein geschnitten.
+- **Gegenüber entscheidet, nicht die Funktion:** `governing_body` und `interest_group_mandate` lassen sich nicht über die Funktion trennen, denn ein Verbandspräsidium ist formal beides. Massgebend ist, was für eine Organisation gegenübersteht: Verfolgt sie einen eigenen Zweck (Unternehmen, Anstalt, Stiftung), gilt `governing_body`; ist ihr Zweck die Interessenvertretung selbst (Branchen-, Berufs-, Mieterverband), gilt `interest_group_mandate` — auch dann, wenn die Funktion ein Sitz im Vorstand ist. Freiburg verbucht die Präsidentschaft der ASLOCA genau so, obwohl „Comité" dransteht. Diese Zweiteilung ist keine Erfindung der Kantone, sondern findet sich schon in Artikel 11 des Parlamentsgesetzes.
+- **Vertretung des eigenen Gemeinwesens (`is_ex_officio`):** Ob jemand ein Mandat privat hält oder als Vertretung der eigenen Behörde wahrnimmt, wird unabhängig vom Typ der Bindung festgehalten — der Aargau teilt deswegen in „Private Ämter" und „Öffentliche Ämter", die Stadt Schaffhausen in „Privates Engagement" und „Vertretung Stadt Schaffhausen". Derselbe Verwaltungsratssitz bedeutet etwas anderes, je nachdem. Betroffen sind vor allem Exekutivämter, weil die Vertretung in den Organen beteiligter Organisationen dort mit dem Ressort einhergeht. Als eigenes Feld statt als Kategorie lässt sie sich mit jedem `interest_type` kombinieren.
+- **Was der Bund an dieser Stelle führt:** Im eidgenössischen Register steht im Typfeld nicht die Kategorie, sondern die Rechtsform der Organisation (Verein, Aktiengesellschaft, Stiftung). Diese gehört im Standard in `legal_form`; die Kategorie ist beim Übernehmen aus Gremium und Funktion abzuleiten.
 - **Organisation über UID referenzierbar (`organization_uid`):** Ist die Organisation im UID-Register erfasst, wird sie über ihre UID referenziert – das ermöglicht Auswertungen, z. B. mit NOGA-Codes. Erfasst wird das Austauschformat von eCH-0108, also `CHE` gefolgt von neun Ziffern ohne Trennzeichen (`CHE106063525`). Für Organisationen ohne UID stehen `organization_name`/`organization_address` bereit; die Rechtsform folgt einem kontrollierten Vokabular (`LegalFormEnum`).
 - **Umfang und Entschädigung (`is_paid`, `committee`, `function_role`):** Neben Gremium und Funktion innerhalb der Organisation wird explizit festgehalten, ob die Position bezahlt ist – ein zentraler Transparenzaspekt.
 
@@ -1889,6 +1892,7 @@ _Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person z
 | organization_address | 0..1 <br/> [String](#String) | Adresse der Organisation.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](#LegalFormEnum) | Rechtsform der Organisation. Siehe kontrolliertes Vokabular: https://register.ld.admin.ch/i14y/concept/legalForm  |
 | is_paid | 0..1 <br/> [Boolean](#Boolean) | Gibt an, ob die Tätigkeit bezahlt ist.  |
+| is_ex_officio | 0..1 <br/> [Boolean](#Boolean) | Gibt an, ob die Person das Mandat im Auftrag des Gemeinwesens wahrnimmt, dem sie angehört — also als dessen Vertretung und nicht privat. Die Angabe ist unabhängig vom Typ der Interessenbindung und lässt sich mit jedem Wert kombinieren: Derselbe Verwaltungsratssitz ist etwas anderes, wenn die Gemeinde jemanden dorthin delegiert, als wenn er privat gehalten wird. Betroffen sind vor allem Exekutivämter, weil die Vertretung in den Organen beteiligter Organisationen dort in der Regel mit dem Ressort einhergeht.  |
 | committee | 0..1 <br/> [String](#String) | Gremium innerhalb der Organisation (z.B. Verwaltungsrat, Stiftungsrat, Vorstand, Aufsichtsrat, Beirat, Geschäftsleitung).  |
 | function_role | 0..1 <br/> [String](#String) | Funktion oder Rolle in der Organisation (z.B. Präsident/in, Vizepräsident/in, Mitglied, Delegierter, Geschäftsführer/in, Berater/in).  |
 | date_created | 0..1 <br/> [Date](#Date) | Das Datum, an dem eine Entität erstellt wurde. <br/><br/>Vererbung: [HasCreationModificationDates](#HasCreationModificationDates) |
@@ -1954,23 +1958,6 @@ interest_links:
   is_paid: true
 
 ```
-#### Beispiel InterestLink: Verwaltungsratsmandat in einer Holding
-
-```yaml
-interest_links:
-- global_uri: act:il_burkart_002
-  person_reference:
-    global_uri: http://www.wikidata.org/entity/Q23060472
-    label: Thierry Burkart
-    group_label: FDP.Die Liberalen
-  interest_type: professional_activity
-  organization_name: Birchmeier Holding AG, Döttingen
-  legal_form: '0106'
-  committee: Verwaltungsrat
-  function_role: Mitglied
-  is_paid: true
-
-```
 #### Beispiel InterestLink: Stiftungsratsmandat mit UID der Organisation
 
 ```yaml
@@ -1980,7 +1967,7 @@ interest_links:
     global_uri: http://www.wikidata.org/entity/Q23060472
     label: Thierry Burkart
     group_label: FDP.Die Liberalen
-  interest_type: association
+  interest_type: governing_body
   organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
   organization_uid: CHE109810537
   legal_form: '0110'
@@ -1999,28 +1986,11 @@ interest_links:
       https://www.fr.ch/parlinfo/membres-du-grand-conseil/5ee6eb9754704902bfd4b4ee01dcf327
     label: Pierre Mauron
     group_label: Parti socialiste
-  interest_type: association
+  interest_type: interest_group_mandate
   organization_name: ASLOCA Fribourg
   legal_form: '0109'
   committee: Comité
   function_role: Président
-
-```
-#### Beispiel InterestLink: Präsidium eines Wirtschaftsverbands
-
-```yaml
-interest_links:
-- global_uri: act:il_burkart_005
-  person_reference:
-    global_uri: http://www.wikidata.org/entity/Q23060472
-    label: Thierry Burkart
-    group_label: FDP.Die Liberalen
-  interest_type: association
-  organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
-  legal_form: '0109'
-  committee: Zentralvorstand
-  function_role: Präsident
-  is_paid: true
 
 ```
 #### Beispiel InterestLink: Politisches Amt auf einer anderen föderalen Ebene
@@ -2049,7 +2019,7 @@ interest_links:
     global_uri: >-
       https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
     label: Gerri Beretta-Piccoli
-  interest_type: association
+  interest_type: governing_body
   organization_name: Fondazione Gruppo Intervento Maltrattamento Infantile (GIMI),
     Lugano
   legal_form: '0110'
@@ -2066,11 +2036,61 @@ interest_links:
     global_uri: https://ge.ch/grandconseil/gc/depute/2517/
     label: Stefan Balaban
     group_label: LJS
-  interest_type: professional_activity
+  interest_type: governing_body
   organization_name: X-net SA
   legal_form: '0106'
   committee: Conseil d'administration
   function_role: Membre
+
+```
+#### Beispiel InterestLink: Mandat als Vertretung der eigenen Gemeinde
+
+```yaml
+interest_links:
+- global_uri: act:il_zanini_001
+  person_reference:
+    global_uri: >-
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=2160
+    label: Cristina Zanini Barzaghi
+    group_label: PS, GISO e FA
+  interest_type: governing_body
+  organization_name: Fondazione Giovanni Stamm
+  legal_form: '0110'
+  committee: Consiglio di amministrazione
+  function_role: Membro
+  is_ex_officio: true
+
+```
+#### Beispiel InterestLink: Verbandspräsidium — Gegenüber entscheidet, nicht die Funktion
+
+```yaml
+interest_links:
+- global_uri: act:il_burkart_005
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: interest_group_mandate
+  organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+  legal_form: '0109'
+  committee: Zentralvorstand
+  function_role: Präsident
+  is_paid: true
+
+```
+#### Beispiel InterestLink: Ernannter Sitz in einer kantonalen Kommission
+
+```yaml
+interest_links:
+- global_uri: act:il_quadranti_001
+  person_reference:
+    global_uri: >-
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487
+    label: Matteo Quadranti
+    group_label: Partito liberale radicale ticinese (PLR)
+  interest_type: public_committee
+  organization_name: Commissione Cantonale Cultura
+  function_role: Vice-presidente
 
 ```
 
@@ -2098,12 +2118,20 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 ### Zulässige Werte
 | Wert | Beschreibung |
 | --- | --- |
-| professional_activity |  Berufliche Tätigkeit ausserhalb des politischen Mandats (z.B. Anstellung, selbstständige Tätigkeit, Beratungsmandate, Verwaltungsratsmandate in Privatunternehmen).  |
+| professional_activity |  Erwerbstätigkeit ausserhalb des politischen Mandats: Anstellung, selbstständige Tätigkeit, das eigene operativ geführte Unternehmen. Bei Angestellten werden Arbeitgeber und Funktion angegeben. Prüffrage: Verdient die Person hier ihren Lebensunterhalt?  |
 | | [act:enum/interest_type/professional_activity](act:enum/interest_type/professional_activity) |
-| political_office |  Politisches Amt oder Mandat auf anderen föderalen Ebenen oder in anderen Körperschaften (z.B. Mitgliedschaft in kantonalen/kommunalen Parlamenten, Regierungsrat, ausserparlamentarische Kommission).  |
+| governing_body |  Sitz in einem Führungs-, Aufsichts- oder Beratungsgremium einer Organisation, die einem eigenen Zweck nachgeht — Verwaltungsrat, Stiftungsrat, Beirat —, unabhängig von Rechtsform und Entschädigung. Prüffrage: Steuert die Person eine Organisation mit, ohne dort angestellt zu sein?  |
+| | [act:enum/interest_type/governing_body](act:enum/interest_type/governing_body) |
+| interest_group_mandate |  Dauernde Leitungs- oder Beratungsfunktion für eine Interessengruppe oder einen Verband — also für eine Organisation, deren Zweck die Interessenvertretung selbst ist. Massgebend ist das Gegenüber, nicht die Funktion: Ist der Zweck der Organisation die Vertretung von Interessen, gilt dieser Wert auch dann, wenn die Funktion ein Sitz in einem Führungsgremium ist. Anders als `governing_body` erfasst er zudem dauernde Beratungsmandate ohne Sitz in einem Gremium.  |
+| | [act:enum/interest_type/interest_group_mandate](act:enum/interest_type/interest_group_mandate) |
+| public_committee |  Mitwirkung in Kommissionen und anderen Organen des Bundes, eines Kantons, einer Gemeinde oder der interkantonalen und interkommunalen Zusammenarbeit. Anders als beim `political_office` wird der Sitz nicht in einer Wahl errungen, sondern von einer Behörde übertragen — häufig gerade wegen des politischen Mandats.  |
+| | [act:enum/interest_type/public_committee](act:enum/interest_type/public_committee) |
+| political_office |  Gewähltes Amt auf einer anderen föderalen Ebene oder in einer anderen Körperschaft — Gemeindeexekutive oder -parlament, Schulpflege, Kirchgemeinde. Das Mandat, für das offengelegt wird, gehört nie hierher.  |
 | | [act:enum/interest_type/political_office](act:enum/interest_type/political_office) |
-| association |  Mitgliedschaft in Vereinen, Verbänden oder Interessenorganisationen (z.B. Branchenverbände, Berufsverbände, Lobbyorganisationen, Stiftungen, gemeinnützige Vereine).  |
+| association |  Blosse Mitgliedschaft in einem Verein, Verband oder einer Interessenorganisation, ohne Leitungsfunktion und ohne Sitz in einem Gremium. Wird eine Funktion ausgeübt, gilt `governing_body` oder `interest_group_mandate`.  |
 | | [act:enum/interest_type/association](act:enum/interest_type/association) |
+| other |  Interessenbindung, die keiner der übrigen Werte abdeckt. Die publizierte Bezeichnung gehört in `function_role` oder `organization_name`, damit der Eintrag lesbar bleibt.  |
+| | [act:enum/interest_type/other](act:enum/interest_type/other) |
 
 
 

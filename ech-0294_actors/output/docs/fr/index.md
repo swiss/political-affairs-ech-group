@@ -91,6 +91,7 @@ Name: actors-schema
 | [interest_type](interest_type.md) | Type de lien d'intérêts (activité professionnelle, mandat politique, associat... |
 | [is_active](is_active.md) | Indique si l'information est actuellement valable |
 | [is_correspondence](is_correspondence.md) | Indique s'il s'agit de la langue préférée |
+| [is_ex_officio](is_ex_officio.md) | Indique si la personne exerce le mandat pour le compte de la collectivité à l... |
 | [is_native](is_native.md) | Indique s'il s'agit de la langue maternelle |
 | [is_paid](is_paid.md) | Indique si l'activité est rémunérée |
 | [label](label.md) | Attribuer un label à une information structurée (par ex |

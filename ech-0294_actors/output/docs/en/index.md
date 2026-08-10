@@ -91,6 +91,7 @@ Name: actors-schema
 | [interest_type](interest_type.md) | Type of interest link (professional activity, political office, association) |
 | [is_active](is_active.md) | Indicates whether the information is currently valid |
 | [is_correspondence](is_correspondence.md) | Indicates if this is the preferred language |
+| [is_ex_officio](is_ex_officio.md) | Indicates whether the person holds the mandate on behalf of the public body t... |
 | [is_native](is_native.md) | Indicates if this is the native language |
 | [is_paid](is_paid.md) | Indicates whether the activity is paid |
 | [label](label.md) | Assign a label to a structured piece of information (e |

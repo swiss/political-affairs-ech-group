@@ -27,6 +27,7 @@ _Un lien d'intérêts (conflit d'intérêts, financement politique) d'une person
 | organization_address | 0..1 <br/> [String](String.md) | Adresse de l'organisation.  |
 | legal_form | 0..1 <br/> [LegalFormEnum](LegalFormEnum.md) | Forme juridique de l'organisation. Voir le vocabulaire contrôlé : https://register.ld.admin.ch/i14y/concept/legalForm  |
 | is_paid | 0..1 <br/> [Boolean](Boolean.md) | Indique si l'activité est rémunérée.  |
+| is_ex_officio | 0..1 <br/> [Boolean](Boolean.md) | Indique si la personne exerce le mandat pour le compte de la collectivité à laquelle elle appartient — donc en tant que représentante de celle-ci et non à titre privé. L'indication est indépendante du type de lien d'intérêts et se combine avec chacun d'eux : un même siège au conseil d'administration n'a pas la même portée selon que la commune y délègue une personne ou que celle-ci l'occupe à titre privé. Sont concernées avant tout les fonctions exécutives, car la représentation dans les organes des organisations concernées y va généralement de pair avec le dicastère.  |
 | committee | 0..1 <br/> [String](String.md) | Comité ou organe au sein de l'organisation (p. ex. conseil d'administration, conseil de fondation, comité directeur, conseil de surveillance, comité consultatif, direction).  |
 | function_role | 0..1 <br/> [String](String.md) | Fonction ou rôle dans l'organisation (p. ex. président/e, vice-président/e, membre, délégué, directeur/directrice, conseiller/ère).  |
 | date_created | 0..1 <br/> [Date](Date.md) | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](HasCreationModificationDates.md) |
@@ -92,23 +93,6 @@ interest_links:
   is_paid: true
 
 ```
-#### Exemple InterestLink : Board mandate in a holding company
-
-```yaml
-interest_links:
-- global_uri: act:il_burkart_002
-  person_reference:
-    global_uri: http://www.wikidata.org/entity/Q23060472
-    label: Thierry Burkart
-    group_label: FDP.Die Liberalen
-  interest_type: professional_activity
-  organization_name: Birchmeier Holding AG, Döttingen
-  legal_form: '0106'
-  committee: Verwaltungsrat
-  function_role: Mitglied
-  is_paid: true
-
-```
 #### Exemple InterestLink : Foundation board mandate with the organisations UID
 
 ```yaml
@@ -118,7 +102,7 @@ interest_links:
     global_uri: http://www.wikidata.org/entity/Q23060472
     label: Thierry Burkart
     group_label: FDP.Die Liberalen
-  interest_type: association
+  interest_type: governing_body
   organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
   organization_uid: CHE109810537
   legal_form: '0110'
@@ -137,28 +121,11 @@ interest_links:
       https://www.fr.ch/parlinfo/membres-du-grand-conseil/5ee6eb9754704902bfd4b4ee01dcf327
     label: Pierre Mauron
     group_label: Parti socialiste
-  interest_type: association
+  interest_type: interest_group_mandate
   organization_name: ASLOCA Fribourg
   legal_form: '0109'
   committee: Comité
   function_role: Président
-
-```
-#### Exemple InterestLink : Presidency of a trade association
-
-```yaml
-interest_links:
-- global_uri: act:il_burkart_005
-  person_reference:
-    global_uri: http://www.wikidata.org/entity/Q23060472
-    label: Thierry Burkart
-    group_label: FDP.Die Liberalen
-  interest_type: association
-  organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
-  legal_form: '0109'
-  committee: Zentralvorstand
-  function_role: Präsident
-  is_paid: true
 
 ```
 #### Exemple InterestLink : Political office at another federal level
@@ -187,7 +154,7 @@ interest_links:
     global_uri: >-
       https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
     label: Gerri Beretta-Piccoli
-  interest_type: association
+  interest_type: governing_body
   organization_name: Fondazione Gruppo Intervento Maltrattamento Infantile (GIMI),
     Lugano
   legal_form: '0110'
@@ -204,11 +171,61 @@ interest_links:
     global_uri: https://ge.ch/grandconseil/gc/depute/2517/
     label: Stefan Balaban
     group_label: LJS
-  interest_type: professional_activity
+  interest_type: governing_body
   organization_name: X-net SA
   legal_form: '0106'
   committee: Conseil d'administration
   function_role: Membre
+
+```
+#### Exemple InterestLink : Mandate held as a delegate of the persons own commune
+
+```yaml
+interest_links:
+- global_uri: act:il_zanini_001
+  person_reference:
+    global_uri: >-
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=2160
+    label: Cristina Zanini Barzaghi
+    group_label: PS, GISO e FA
+  interest_type: governing_body
+  organization_name: Fondazione Giovanni Stamm
+  legal_form: '0110'
+  committee: Consiglio di amministrazione
+  function_role: Membro
+  is_ex_officio: true
+
+```
+#### Exemple InterestLink : Federation presidency  the counterpart decides not the function
+
+```yaml
+interest_links:
+- global_uri: act:il_burkart_005
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: interest_group_mandate
+  organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+  legal_form: '0109'
+  committee: Zentralvorstand
+  function_role: Präsident
+  is_paid: true
+
+```
+#### Exemple InterestLink : Appointed seat on a cantonal committee
+
+```yaml
+interest_links:
+- global_uri: act:il_quadranti_001
+  person_reference:
+    global_uri: >-
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487
+    label: Matteo Quadranti
+    group_label: Partito liberale radicale ticinese (PLR)
+  interest_type: public_committee
+  organization_name: Commissione Cantonale Cultura
+  function_role: Vice-presidente
 
 ```
 

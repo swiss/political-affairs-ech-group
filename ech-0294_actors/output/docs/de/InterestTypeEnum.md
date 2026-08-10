@@ -15,12 +15,20 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 ### Zulässige Werte
 | Wert | Beschreibung |
 | --- | --- |
-| professional_activity |  Berufliche Tätigkeit ausserhalb des politischen Mandats (z.B. Anstellung, selbstständige Tätigkeit, Beratungsmandate, Verwaltungsratsmandate in Privatunternehmen).  |
+| professional_activity |  Erwerbstätigkeit ausserhalb des politischen Mandats: Anstellung, selbstständige Tätigkeit, das eigene operativ geführte Unternehmen. Bei Angestellten werden Arbeitgeber und Funktion angegeben. Prüffrage: Verdient die Person hier ihren Lebensunterhalt?  |
 | | [act:enum/interest_type/professional_activity](act:enum/interest_type/professional_activity) |
-| political_office |  Politisches Amt oder Mandat auf anderen föderalen Ebenen oder in anderen Körperschaften (z.B. Mitgliedschaft in kantonalen/kommunalen Parlamenten, Regierungsrat, ausserparlamentarische Kommission).  |
+| governing_body |  Sitz in einem Führungs-, Aufsichts- oder Beratungsgremium einer Organisation, die einem eigenen Zweck nachgeht — Verwaltungsrat, Stiftungsrat, Beirat —, unabhängig von Rechtsform und Entschädigung. Prüffrage: Steuert die Person eine Organisation mit, ohne dort angestellt zu sein?  |
+| | [act:enum/interest_type/governing_body](act:enum/interest_type/governing_body) |
+| interest_group_mandate |  Dauernde Leitungs- oder Beratungsfunktion für eine Interessengruppe oder einen Verband — also für eine Organisation, deren Zweck die Interessenvertretung selbst ist. Massgebend ist das Gegenüber, nicht die Funktion: Ist der Zweck der Organisation die Vertretung von Interessen, gilt dieser Wert auch dann, wenn die Funktion ein Sitz in einem Führungsgremium ist. Anders als `governing_body` erfasst er zudem dauernde Beratungsmandate ohne Sitz in einem Gremium.  |
+| | [act:enum/interest_type/interest_group_mandate](act:enum/interest_type/interest_group_mandate) |
+| public_committee |  Mitwirkung in Kommissionen und anderen Organen des Bundes, eines Kantons, einer Gemeinde oder der interkantonalen und interkommunalen Zusammenarbeit. Anders als beim `political_office` wird der Sitz nicht in einer Wahl errungen, sondern von einer Behörde übertragen — häufig gerade wegen des politischen Mandats.  |
+| | [act:enum/interest_type/public_committee](act:enum/interest_type/public_committee) |
+| political_office |  Gewähltes Amt auf einer anderen föderalen Ebene oder in einer anderen Körperschaft — Gemeindeexekutive oder -parlament, Schulpflege, Kirchgemeinde. Das Mandat, für das offengelegt wird, gehört nie hierher.  |
 | | [act:enum/interest_type/political_office](act:enum/interest_type/political_office) |
-| association |  Mitgliedschaft in Vereinen, Verbänden oder Interessenorganisationen (z.B. Branchenverbände, Berufsverbände, Lobbyorganisationen, Stiftungen, gemeinnützige Vereine).  |
+| association |  Blosse Mitgliedschaft in einem Verein, Verband oder einer Interessenorganisation, ohne Leitungsfunktion und ohne Sitz in einem Gremium. Wird eine Funktion ausgeübt, gilt `governing_body` oder `interest_group_mandate`.  |
 | | [act:enum/interest_type/association](act:enum/interest_type/association) |
+| other |  Interessenbindung, die keiner der übrigen Werte abdeckt. Die publizierte Bezeichnung gehört in `function_role` oder `organization_name`, damit der Eintrag lesbar bleibt.  |
+| | [act:enum/interest_type/other](act:enum/interest_type/other) |
 
 
 

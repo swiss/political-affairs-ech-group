@@ -4,7 +4,7 @@ interest_links:
     global_uri: http://www.wikidata.org/entity/Q23060472
     label: Thierry Burkart
     group_label: FDP.Die Liberalen
-  interest_type: association
+  interest_type: interest_group_mandate
   organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
   legal_form: '0109'
   committee: Zentralvorstand

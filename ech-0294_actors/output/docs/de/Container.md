@@ -77,41 +77,33 @@ interest_links:
     function_role: Geschäftsführer
     is_paid: true
 
-  # Verwaltungsratsmandat in einer AG
-  - global_uri: act:il_burkart_002
-    person_reference:
-      global_uri: http://www.wikidata.org/entity/Q23060472
-      label: Thierry Burkart
-      group_label: FDP.Die Liberalen
-    interest_type: professional_activity
-    organization_name: Birchmeier Holding AG, Döttingen
-    legal_form: "0106"  # AG
-    committee: Verwaltungsrat
-    function_role: Mitglied
-    is_paid: true
-
-  # Verbandspräsidium, bezahlt
+  # Verbandspräsidium. Formal ein Sitz im Zentralvorstand, also ein
+  # Führungsgremium — massgebend ist aber das Gegenüber: Die ASTAG ist ein
+  # Branchenverband, ihr Zweck ist die Interessenvertretung selbst. Deshalb
+  # `interest_group_mandate` und nicht `governing_body`.
   - global_uri: act:il_burkart_005
     person_reference:
       global_uri: http://www.wikidata.org/entity/Q23060472
       label: Thierry Burkart
       group_label: FDP.Die Liberalen
-    interest_type: association
+    interest_type: interest_group_mandate
     organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
     legal_form: "0109"  # Verein
     committee: Zentralvorstand
     function_role: Präsident
     is_paid: true
 
-  # Stiftungsratsmandat, ehrenamtlich. Einziges Beispiel mit `organization_uid`:
-  # Ist die Organisation im UID-Register eingetragen, wird sie darüber
-  # eindeutig bezeichnet, und der Name dient nur noch der Lesbarkeit.
+  # Stiftungsratsmandat, ehrenamtlich. Die Stiftung räumt Minen — sie verfolgt
+  # einen eigenen Zweck und vertritt keine Interessen, deshalb `governing_body`.
+  # Einziges Beispiel mit `organization_uid`: Ist die Organisation im
+  # UID-Register eingetragen, wird sie darüber eindeutig bezeichnet, und der
+  # Name dient nur noch der Lesbarkeit.
   - global_uri: act:il_burkart_007
     person_reference:
       global_uri: http://www.wikidata.org/entity/Q23060472
       label: Thierry Burkart
       group_label: FDP.Die Liberalen
-    interest_type: association
+    interest_type: governing_body
     organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
     organization_uid: CHE109810537
     legal_form: "0110"  # Stiftung
@@ -130,7 +122,7 @@ interest_links:
       local_id: 1269
       global_uri: "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269"
       label: Gerri Beretta-Piccoli
-    interest_type: association
+    interest_type: governing_body
     organization_name: Fondazione Gruppo Intervento Maltrattamento Infantile (GIMI), Lugano
     legal_form: "0110"  # Stiftung
     committee: Consiglio di fondazione
@@ -151,6 +143,35 @@ interest_links:
     legal_form: "0223"  # Verwaltungseinheit der Gemeinde
     function_role: Sindaco
 
+  # Ernannter Sitz in einer kantonalen Kommission: `public_committee`. Der Sitz
+  # wird nicht in einer Wahl errungen, sondern von der Regierung übertragen —
+  # deshalb nicht `political_office`, obwohl es ein öffentliches Gremium ist.
+  - global_uri: act:il_quadranti_001
+    person_reference:
+      global_uri: "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487"
+      label: Matteo Quadranti
+      group_label: Partito liberale radicale ticinese (PLR)
+    interest_type: public_committee
+    organization_name: Commissione Cantonale Cultura
+    function_role: Vice-presidente
+
+  # Verwaltungsratssitz, den die Person nicht privat hält, sondern als
+  # Vertretung ihrer Gemeinde wahrnimmt. Das Tessiner Register schreibt die
+  # Delegation in die Funktionsbezeichnung („Membro, rappresentante
+  # Municipio"); im Standard trägt sie `is_ex_officio`, damit sie auswertbar
+  # ist. Der Typ bleibt derselbe wie bei einem privat gehaltenen Sitz.
+  - global_uri: act:il_zanini_001
+    person_reference:
+      global_uri: "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=2160"
+      label: Cristina Zanini Barzaghi
+      group_label: PS, GISO e FA
+    interest_type: governing_body
+    organization_name: Fondazione Giovanni Stamm
+    legal_form: "0110"  # Stiftung
+    committee: Consiglio di amministrazione
+    function_role: Membro
+    is_ex_officio: true
+
   # --- Kanton Genf ---
 
   # Verwaltungsratsmandat, französische Bezeichnungen. Genf publiziert weder
@@ -161,7 +182,7 @@ interest_links:
       global_uri: https://ge.ch/grandconseil/gc/depute/2517/
       label: Stefan Balaban
       group_label: LJS
-    interest_type: professional_activity
+    interest_type: governing_body
     organization_name: X-net SA
     legal_form: "0106"  # AG
     committee: Conseil d'administration
@@ -177,7 +198,7 @@ interest_links:
       global_uri: https://www.fr.ch/parlinfo/membres-du-grand-conseil/5ee6eb9754704902bfd4b4ee01dcf327
       label: Pierre Mauron
       group_label: Parti socialiste
-    interest_type: association
+    interest_type: interest_group_mandate
     organization_name: ASLOCA Fribourg
     legal_form: "0109"  # Verein
     committee: Comité

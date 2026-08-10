@@ -850,6 +850,13 @@
                         "null"
                     ]
                 },
+                "is_ex_officio": {
+                    "description": "Indicates whether the person holds the mandate on behalf of the public body they belong to, i.e. as its delegate, rather than in a private capacity. The indication is independent of the interest type and can be combined with any of them: the same seat on a board of directors is one thing when the commune delegates a person there and quite another when they hold it privately. It concerns executive offices above all, since a delegation to the bodies of the organisations a public body holds an interest in usually comes with the department.\n",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
                 "is_paid": {
                     "description": "Indicates whether the activity is paid.\n",
                     "type": [
@@ -930,8 +937,12 @@
             "description": "Types of interest links (conflicts of interest, political financing).",
             "enum": [
                 "professional_activity",
+                "governing_body",
+                "interest_group_mandate",
+                "public_committee",
                 "political_office",
-                "association"
+                "association",
+                "other"
             ],
             "title": "InterestTypeEnum",
             "type": "string"

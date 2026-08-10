@@ -6,16 +6,17 @@ act:interest_links_example a act:Container ;
     act:interestLink act:il_balaban_001,
         act:il_beretta_001,
         act:il_burkart_001,
-        act:il_burkart_002,
         act:il_burkart_005,
         act:il_burkart_007,
         act:il_dafond_001,
-        act:il_mauron_001 .
+        act:il_mauron_001,
+        act:il_quadranti_001,
+        act:il_zanini_001 .
 
 act:il_balaban_001 a act:InterestLink ;
     act:committee "Conseil d'administration" ;
     act:functionRole "Membre" ;
-    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/professional_activity> ;
+    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/governing_body> ;
     act:legalForm "0106" ;
     act:organizationName "X-net SA" ;
     act:personReference [ a mcm:PersonReference ;
@@ -26,7 +27,7 @@ act:il_balaban_001 a act:InterestLink ;
 act:il_beretta_001 a act:InterestLink ;
     act:committee "Consiglio di fondazione" ;
     act:functionRole "Vice Presidente" ;
-    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/association> ;
+    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/governing_body> ;
     act:legalForm "0110" ;
     act:organizationName "Fondazione Gruppo Intervento Maltrattamento Infantile (GIMI), Lugano" ;
     act:personReference [ a mcm:PersonReference ;
@@ -46,22 +47,10 @@ act:il_burkart_001 a act:InterestLink ;
             mcm:groupLabel "FDP.Die Liberalen" ;
             mcm:label "Thierry Burkart" ] .
 
-act:il_burkart_002 a act:InterestLink ;
-    act:committee "Verwaltungsrat" ;
-    act:functionRole "Mitglied" ;
-    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/professional_activity> ;
-    act:isPaid true ;
-    act:legalForm "0106" ;
-    act:organizationName "Birchmeier Holding AG, Döttingen" ;
-    act:personReference [ a mcm:PersonReference ;
-            mcm:globalURI <http://www.wikidata.org/entity/Q23060472> ;
-            mcm:groupLabel "FDP.Die Liberalen" ;
-            mcm:label "Thierry Burkart" ] .
-
 act:il_burkart_005 a act:InterestLink ;
     act:committee "Zentralvorstand" ;
     act:functionRole "Präsident" ;
-    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/association> ;
+    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/interest_group_mandate> ;
     act:isPaid true ;
     act:legalForm "0109" ;
     act:organizationName "ASTAG Schweizerischer Nutzfahrzeugverband, Bern" ;
@@ -73,7 +62,7 @@ act:il_burkart_005 a act:InterestLink ;
 act:il_burkart_007 a act:InterestLink ;
     act:committee "Stiftungsrat" ;
     act:functionRole "Vizepräsident" ;
-    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/association> ;
+    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/governing_body> ;
     act:isPaid false ;
     act:legalForm "0110" ;
     act:organizationName "FONDATION SUISSE DE DEMINAGE (FSD), Genf" ;
@@ -96,12 +85,33 @@ act:il_dafond_001 a act:InterestLink ;
 act:il_mauron_001 a act:InterestLink ;
     act:committee "Comité" ;
     act:functionRole "Président" ;
-    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/association> ;
+    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/interest_group_mandate> ;
     act:legalForm "0109" ;
     act:organizationName "ASLOCA Fribourg" ;
     act:personReference [ a mcm:PersonReference ;
             mcm:globalURI <https://www.fr.ch/parlinfo/membres-du-grand-conseil/5ee6eb9754704902bfd4b4ee01dcf327> ;
             mcm:groupLabel "Parti socialiste" ;
             mcm:label "Pierre Mauron" ] .
+
+act:il_quadranti_001 a act:InterestLink ;
+    act:functionRole "Vice-presidente" ;
+    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/public_committee> ;
+    act:organizationName "Commissione Cantonale Cultura" ;
+    act:personReference [ a mcm:PersonReference ;
+            mcm:globalURI <https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487> ;
+            mcm:groupLabel "Partito liberale radicale ticinese (PLR)" ;
+            mcm:label "Matteo Quadranti" ] .
+
+act:il_zanini_001 a act:InterestLink ;
+    act:committee "Consiglio di amministrazione" ;
+    act:functionRole "Membro" ;
+    act:interestType <https://ld.ech.ch/schema/0294/actors/enum/interest_type/governing_body> ;
+    act:isExOfficio true ;
+    act:legalForm "0110" ;
+    act:organizationName "Fondazione Giovanni Stamm" ;
+    act:personReference [ a mcm:PersonReference ;
+            mcm:globalURI <https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=2160> ;
+            mcm:groupLabel "PS, GISO e FA" ;
+            mcm:label "Cristina Zanini Barzaghi" ] .
 
 
