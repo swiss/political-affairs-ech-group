@@ -2857,6 +2857,8 @@ La version indiquée est celle sur la base de laquelle la présente norme a ét�
 
 ## Normes du groupe spécialisé « Affaires politiques »
 
+Les normes du groupe spécialisé sont élaborées conjointement et se renvoient les unes aux autres. Elles portent actuellement toutes le statut « In Arbeit » (en cours d'élaboration ; état au 10 août 2026) ; l'indication de version 1.0.0 désigne la version en cours d'élaboration et non une version approuvée.
+
 | | |
 |------------------|----------------------------------------------------------------------------------|
 |eCH-0292|eCH-0292 : Métaprocessus relatifs aux affaires politiques, version 1.0.0 – éléments de données communs : [https://www.ech.ch/de/ech/ech-0292](https://www.ech.ch/de/ech/ech-0292)|
