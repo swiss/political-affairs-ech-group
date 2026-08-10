@@ -15,14 +15,14 @@ act:swiss_politicians_example a act:Container ;
     mcm:label "Cristina Bozzi-Brunel" ;
     mcm:localId "280958" ;
     act:name [ a act:Name ;
-            mcm:value "Brunel" ;
-            act:nameType "PersonOriginalName" ],
+            mcm:value "Cristina" ;
+            act:nameType "PersonFirstName" ],
         [ a act:Name ;
             mcm:value "Bozzi-Brunel" ;
             act:nameType "PersonOfficialName" ],
         [ a act:Name ;
-            mcm:value "Cristina" ;
-            act:nameType "PersonFirstName" ] .
+            mcm:value "Brunel" ;
+            act:nameType "PersonOriginalName" ] .
 
 <https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9> a act:Person ;
     mcm:label "Sofia Fisch" ;
@@ -32,11 +32,11 @@ act:swiss_politicians_example a act:Container ;
             mcm:label "divers" ;
             act:genderCode "non_binary" ] ;
     act:name [ a act:Name ;
-            mcm:value "Sofia" ;
-            act:nameType "PersonFirstName" ],
-        [ a act:Name ;
             mcm:value "Fisch" ;
-            act:nameType "PersonOfficialName" ] ;
+            act:nameType "PersonOfficialName" ],
+        [ a act:Name ;
+            mcm:value "Sofia" ;
+            act:nameType "PersonFirstName" ] ;
     act:occupation [ a act:Occupation ;
             mcm:isCurrent true ;
             mcm:label "Jurist*in" ] ;
@@ -91,22 +91,22 @@ act:swiss_politicians_example a act:Container ;
     mcm:localId "6370" ;
     act:birthYear 1965 ;
     act:name [ a act:Name ;
-            mcm:value "Arnold" ;
-            act:nameType "PersonOfficialName" ],
-        [ a act:Name ;
             mcm:value "Alois" ;
-            act:nameType "PersonFirstName" ] .
+            act:nameType "PersonFirstName" ],
+        [ a act:Name ;
+            mcm:value "Arnold" ;
+            act:nameType "PersonOfficialName" ] .
 
 <https://www.ur.ch/behoerdenmitglieder/6447> a act:Person ;
     mcm:label "Alois Arnold (1981)" ;
     mcm:localId "6447" ;
     act:birthYear 1981 ;
     act:name [ a act:Name ;
-            mcm:value "Arnold" ;
-            act:nameType "PersonOfficialName" ],
-        [ a act:Name ;
             mcm:value "Alois" ;
-            act:nameType "PersonFirstName" ] .
+            act:nameType "PersonFirstName" ],
+        [ a act:Name ;
+            mcm:value "Arnold" ;
+            act:nameType "PersonOfficialName" ] .
 
 <https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269> a act:Person ;
     mcm:label "Gerri Beretta-Piccoli" ;

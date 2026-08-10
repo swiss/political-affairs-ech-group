@@ -758,6 +758,11 @@ memberships:
       label: Basel-Stadt
     role_type:
       role_type_enum: member
+      role_label:
+        - value: Mitglied
+          language: de
+        - value: Membro
+          language: it
     authorized_to_vote: true
     valid_from: 2010-05-31
     valid_through: 2011-12-04
