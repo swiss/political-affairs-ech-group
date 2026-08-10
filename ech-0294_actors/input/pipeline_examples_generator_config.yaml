@@ -145,8 +145,28 @@ example_titles:
     de: Kanton als Wahlkreis, über die LINDAS-Ressource identifiziert
     fr: Canton comme circonscription, identifié par la ressource LINDAS
     en: Canton as electoral district, identified via its LINDAS resource
-  # Interessenbindungen — sie zeigen die Bandbreite von Mandatstypen, von der
-  # eigenen operativen Gesellschaft bis zum ehrenamtlichen Vereinsvorstand.
+  # Kantonale Beispiele — Tessin, Genf, Freiburg. Sie zeigen, was die Kantone
+  # publizieren: Bezeichnung und Funktion, oft ohne UID und ohne Angabe zur
+  # Entschädigung.
+  "act:il_beretta_001":
+    de: Kantonale Bindung, Person aus derselben Lieferung
+    fr: Lien cantonal, personne issue de la même livraison
+    en: Cantonal link, person from the same delivery
+  "act:il_dafond_001":
+    de: Politisches Amt auf einer anderen föderalen Ebene
+    fr: Mandat politique à un autre niveau fédéral
+    en: Political office at another federal level
+  "act:il_balaban_001":
+    de: Verwaltungsratsmandat ohne UID und ohne Angabe zur Entschädigung
+    fr: "Mandat d'administrateur sans IDE ni indication de rémunération"
+    en: Board mandate without a UID and without payment information
+  "act:il_mauron_001":
+    de: Leitungstätigkeit für eine Interessengruppe
+    fr: "Fonction de direction pour un groupe d'intérêts"
+    en: Leading role for an interest group
+  # Interessenbindungen auf Bundesebene — sie zeigen die Bandbreite von
+  # Mandatstypen, von der eigenen operativen Gesellschaft bis zum
+  # ehrenamtlichen Stiftungsrat, und die strukturierte Publikation des Bundes.
   "act:il_burkart_001":
     de: Eigene Gesellschaft, operativ geführt
     fr: "Société propre, dirigée à titre opérationnel"
@@ -155,42 +175,14 @@ example_titles:
     de: Verwaltungsratsmandat in einer Holding
     fr: "Mandat d'administrateur dans une holding"
     en: Board mandate in a holding company
-  "act:il_burkart_003":
-    de: Verwaltungsratsmandat in einer Immobiliengesellschaft
-    fr: "Mandat d'administrateur dans une société immobilière"
-    en: Board mandate in a real estate company
-  "act:il_burkart_004":
-    de: Verwaltungsratsmandat in einem Technologieunternehmen
-    fr: "Mandat d'administrateur dans une entreprise technologique"
-    en: Board mandate in a technology company
   "act:il_burkart_005":
     de: Präsidium eines Wirtschaftsverbands
     fr: "Présidence d'une association économique"
     en: Presidency of a trade association
-  "act:il_burkart_006":
-    de: Präsidium einer Bundespartei
-    fr: "Présidence d'un parti national"
-    en: Presidency of a national party
   "act:il_burkart_007":
     de: Stiftungsratsmandat mit UID der Organisation
     fr: "Mandat au conseil de fondation avec IDE de l'organisation"
     en: Foundation board mandate with the organisation's UID
-  "act:il_burkart_008":
-    de: Beiratsmandat ohne Organstellung
-    fr: "Mandat au comité consultatif sans fonction d'organe"
-    en: Advisory board mandate without a governing function
-  "act:il_burkart_009":
-    de: Mitgliedschaft in einem Branchenverband
-    fr: "Affiliation à une association de branche"
-    en: Membership in a sector association
-  "act:il_burkart_010":
-    de: Unbezahltes Präsidium einer politischen Allianz
-    fr: "Présidence non rémunérée d'une alliance politique"
-    en: Unpaid presidency of a political alliance
-  "act:il_burkart_011":
-    de: Ehrenamtliche Mitwirkung im Trägerverein eines Grossprojekts
-    fr: "Participation bénévole à l'association porteuse d'un grand projet"
-    en: Voluntary involvement in the association carrying a major project
 # Zusammengesetzte Beispiele. Sie bündeln mehrere Instanzen in einer Auflistung,
 # damit eine Beziehung zwischen ihnen — etwa `parent_groups` — überhaupt
 # sichtbar wird; ein Beispiel je Instanz kann das nicht zeigen. Die genannten
