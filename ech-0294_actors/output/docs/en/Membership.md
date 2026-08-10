@@ -22,7 +22,7 @@ _A membership relationship between a person and a group, representing formal aff
 | wikidata_uri | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | A URI that refers to a Wikidata entity, e.g. http://www.wikidata.org/entity/Q813067 for Beat Jans. <br/><br/>Inheritance: [HasIdentification](HasIdentification.md) |
 | person_reference | 1 <br/> [PersonReference](PersonReference.md) | Reference to a person with snapshot data at time of linking.  |
 | group_reference | 1 <br/> [GroupReference](GroupReference.md) | Reference to a group with snapshot data at time of linking.  |
-| electoral_district | 0..1 <br/> [ElectoralDistrict](ElectoralDistrict.md) | Link to the electoral district.  |
+| electoral_district | 0..1 <br/> [ElectoralDistrict](ElectoralDistrict.md) | Electoral district of the membership. Stated where the mandate was won in an electoral district; it is therefore recorded on the membership and not on the person.  |
 | role_type | 0..1 <br/> [RoleType](RoleType.md) | Role of the person in the membership or function.  |
 | authorized_to_vote | 0..1 <br/> [Boolean](Boolean.md) | Indicates if the person is authorized to vote in the group. Typically false for substitute members (when not deputizing), observers, secretaries, and guests.  |
 | is_active | 0..1 <br/> [Boolean](Boolean.md) | Indicates if the membership is currently active. Can complement or replace `valid_from`/`valid_through`. If not set, activity is derived from the temporal validity fields.  |
@@ -55,6 +55,148 @@ _A membership relationship between a person and a group, representing formal aff
 
 
 
+
+### Examples
+#### Example: The same person at another level with another electoral district
+
+```yaml
+global_uri: act:ms_jans_nationalrat
+person_reference:
+  local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  label: Beat Jans
+group_reference:
+  global_uri: https://www.parlament.ch/de/organe/nationalrat
+  label: Nationalrat
+electoral_district:
+  global_uri: https://ld.admin.ch/canton/12
+  label: Basel-Stadt
+role_type:
+  role_type_enum: member
+authorized_to_vote: true
+valid_from: 2010-05-31
+valid_through: 2011-12-04
+is_active: false
+
+```
+#### Example: Executive mandate with a presiding role
+
+```yaml
+global_uri: act:ms_jans_regierungsrat_bs
+person_reference:
+  local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  label: Beat Jans
+group_reference:
+  local_id: 1300
+  global_uri: https://www.regierungsrat.bs.ch/
+  label: Regierungsrat Basel-Stadt
+role_type:
+  role_type_enum: president
+  role_label:
+  - value: Regierungspräsident
+    language: de
+authorized_to_vote: true
+valid_from: 2021-02-03
+valid_through: 2023-12-31
+is_active: false
+
+```
+#### Example: Person and group from the same delivery with electoral district
+
+```yaml
+global_uri: act:ms_jans_grossrat_bs
+person_reference:
+  local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  label: Beat Jans
+group_reference:
+  local_id: 33
+  global_uri: https://www.grosserrat.bs.ch/
+  label: Grosser Rat Basel-Stadt
+electoral_district:
+  global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
+  label: Kleinbasel
+role_type:
+  role_type_enum: member
+authorized_to_vote: true
+valid_from: 2001-02-07
+valid_through: 2011-04-30
+is_active: false
+
+```
+#### Example: Ongoing mandate without an end date
+
+```yaml
+global_uri: act:ms_jans_bundesrat
+person_reference:
+  local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  label: Beat Jans
+group_reference:
+  global_uri: https://www.admin.ch/de/der-bundesrat
+  label: Bundesrat
+role_type:
+  role_type_enum: member
+authorized_to_vote: true
+valid_from: 2024-01-01
+is_active: true
+
+```
+#### Example: Parliamentary group membership alongside the council mandate
+
+```yaml
+global_uri: act:ms_jans_fraktion_sp_bs
+person_reference:
+  local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  label: Beat Jans
+group_reference:
+  global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/sp
+  label: Sozialdemokratische Partei (SP)
+role_type:
+  role_type_enum: member
+authorized_to_vote: true
+valid_from: 2001-02-07
+valid_through: 2011-04-30
+is_active: false
+
+```
+#### Example: Committee membership with a duration of its own
+
+```yaml
+global_uri: act:ms_jans_wak_bs
+person_reference:
+  local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  label: Beat Jans
+group_reference:
+  global_uri: https://grosserrat.bs.ch/gremien/sachkommissionen/wirtschaft-abgaben
+  label: Wirtschafts- und Abgabekommission (WAK)
+role_type:
+  role_type_enum: member
+authorized_to_vote: true
+valid_from: 2003-02-12
+valid_through: 2011-04-30
+is_active: false
+
+```
+#### Example: Party membership without temporal information
+
+```yaml
+global_uri: act:ms_jans_partei_sp
+person_reference:
+  local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  label: Beat Jans
+group_reference:
+  global_uri: https://www.sp-ps.ch/
+  label: Sozialdemokratische Partei der Schweiz
+role_type:
+  role_type_enum: member
+is_active: true
+
+```
 
 
 

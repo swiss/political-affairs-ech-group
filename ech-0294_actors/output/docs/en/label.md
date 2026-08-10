@@ -31,7 +31,7 @@ URI: [mcm:label](https://ld.ech.ch/schema/0292/meta-common/label)
 | [Gender](Gender.md) | Gender of a person indicating a gender code and temporal validity |  no  |
 | [Occupation](Occupation.md) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |  no  |
 | [Contact](Contact.md) | Contact information of a person indicating a type (e |  no  |
-| [ElectoralDistrict](ElectoralDistrict.md) | Electoral district or region associated with a membership |  no  |
+| [ElectoralDistrict](ElectoralDistrict.md) | Electoral district or region associated with a membership |  yes  |
 | [GroupType](GroupType.md) | Type of group (e |  yes  |
 | [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |  yes  |
 | [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |  no  |

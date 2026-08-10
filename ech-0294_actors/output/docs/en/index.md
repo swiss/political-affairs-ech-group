@@ -77,7 +77,7 @@ Name: actors-schema
 | [datetime_planned](datetime_planned.md) | The planned date and time of an instantaneous event or occurrence (without ti... |
 | [death_date](death_date.md) | Exact date of death |
 | [description](description.md) | Description of the entity |
-| [electoral_district](electoral_district.md) | Link to the electoral district |
+| [electoral_district](electoral_district.md) | Electoral district of the membership |
 | [function_role](function_role.md) | Function or role in the organization (e |
 | [gender_code](gender_code.md) | Gender code |
 | [genders](genders.md) | Gender of the person |

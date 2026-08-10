@@ -1427,7 +1427,7 @@ Le schéma Membership représente la relation entre personnes et groupes et cons
 - **Activité explicite ou déduite (`is_active`) :** le fait qu'une affiliation soit active peut être défini explicitement au moyen d'`is_active` ou déduit de la validité temporelle. Si `is_active` n'est pas défini, l'activité découle de `valid_from`/`valid_through`.
 - **Affiliation ≠ droit de vote (`authorized_to_vote`) :** le droit de vote est géré séparément de l'affiliation – typiquement `false` pour les membres suppléants (sauf lorsqu'ils sont en fonction), les personnes observatrices, le secrétariat et les invités.
 - **Rôle comme vocabulaire contrôlé avec option en texte libre (`role_type`) :** le rôle au sein du groupe (p. ex. membre, présidence, suppléance) est indiqué au moyen d'un vocabulaire contrôlé (`RoleEnum`) ; pour les rôles non couverts, la valeur `other` est utilisée, assortie d'une désignation libre.
-- **Circonscription électorale rattachée à l'affiliation et non à la personne (`electoral_district`) :** la circonscription ne décrit pas la personne, mais le mandat – une même personne peut être élue, au fil du temps ou à différents niveaux fédéraux, dans des circonscriptions différentes. `ElectoralDistrict` ne porte donc pas de validité temporelle propre, mais hérite des `valid_from`/`valid_through` de l'affiliation englobante. Pour l'identification, les ressources LINDAS des unités spatiales suisses sont prévues (voir `global_uri`).
+- **Circonscription électorale rattachée à l'affiliation et non à la personne (`electoral_district`) :** la circonscription ne décrit pas la personne, mais le mandat – une même personne peut être élue, au fil du temps ou à différents niveaux fédéraux, dans des circonscriptions différentes. `ElectoralDistrict` ne porte donc pas de validité temporelle propre, mais hérite des `valid_from`/`valid_through` de l'affiliation englobante. Pour l'identification, les ressources LINDAS des unités spatiales suisses sont prévues (voir `global_uri`). Qu'une circonscription soit identifiable de la sorte dépend de sa coïncidence avec une unité spatiale officielle : dans le canton de Bâle-Ville, les circonscriptions de Riehen et de Bettingen sont des communes et disposent d'une ressource LINDAS, tandis que Grossbasel-Ost, Grossbasel-West et Kleinbasel regroupent des quartiers de la commune de Bâle et n'en ont pas. Les circonscriptions sans équivalent officiel reçoivent un identifiant dans l'espace de noms de l'organe qui les publie.
 
 
 
@@ -1453,7 +1453,7 @@ _Une relation d'affiliation entre une personne et un groupe, représentant une a
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | person_reference | 1 <br/> [PersonReference](#PersonReference) | Référence abrégée à une personne, retenant ses caractéristiques au moment de la mise en relation.  |
 | group_reference | 1 <br/> [GroupReference](#GroupReference) | Référence abrégée à un groupe, retenant ses caractéristiques au moment de la mise en relation.  |
-| electoral_district | 0..1 <br/> [ElectoralDistrict](#ElectoralDistrict) | Lien vers la circonscription électorale.  |
+| electoral_district | 0..1 <br/> [ElectoralDistrict](#ElectoralDistrict) | Circonscription électorale de l'affiliation. Indiquée lorsque le mandat a été obtenu dans une circonscription ; elle est donc rattachée à l'affiliation et non à la personne.  |
 | role_type | 0..1 <br/> [RoleType](#RoleType) | Rôle de la personne dans l'affiliation ou la fonction.  |
 | authorized_to_vote | 0..1 <br/> [Boolean](#Boolean) | Indique si la personne dispose du droit de vote au sein du groupe. Généralement false pour les membres suppléants (lorsqu'ils ne remplacent personne), les observateurs, les secrétaires et les invités.  |
 | is_active | 0..1 <br/> [Boolean](#Boolean) | Indique si l'affiliation est actuellement active. Peut compléter ou remplacer `valid_from`/`valid_through`. Si cette valeur n'est pas renseignée, l'activité est déduite des champs de validité temporelle.  |
@@ -1486,6 +1486,148 @@ _Une relation d'affiliation entre une personne et un groupe, représentant une a
 
 
 
+
+### Exemples
+#### Exemple : La même personne à un autre niveau, avec une autre circonscription
+
+```yaml
+global_uri: act:ms_jans_nationalrat
+person_reference:
+  local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  label: Beat Jans
+group_reference:
+  global_uri: https://www.parlament.ch/de/organe/nationalrat
+  label: Nationalrat
+electoral_district:
+  global_uri: https://ld.admin.ch/canton/12
+  label: Basel-Stadt
+role_type:
+  role_type_enum: member
+authorized_to_vote: true
+valid_from: 2010-05-31
+valid_through: 2011-12-04
+is_active: false
+
+```
+#### Exemple : Mandat exécutif avec fonction présidentielle
+
+```yaml
+global_uri: act:ms_jans_regierungsrat_bs
+person_reference:
+  local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  label: Beat Jans
+group_reference:
+  local_id: 1300
+  global_uri: https://www.regierungsrat.bs.ch/
+  label: Regierungsrat Basel-Stadt
+role_type:
+  role_type_enum: president
+  role_label:
+  - value: Regierungspräsident
+    language: de
+authorized_to_vote: true
+valid_from: 2021-02-03
+valid_through: 2023-12-31
+is_active: false
+
+```
+#### Exemple : Personne et groupe de la même livraison, avec circonscription
+
+```yaml
+global_uri: act:ms_jans_grossrat_bs
+person_reference:
+  local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  label: Beat Jans
+group_reference:
+  local_id: 33
+  global_uri: https://www.grosserrat.bs.ch/
+  label: Grosser Rat Basel-Stadt
+electoral_district:
+  global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
+  label: Kleinbasel
+role_type:
+  role_type_enum: member
+authorized_to_vote: true
+valid_from: 2001-02-07
+valid_through: 2011-04-30
+is_active: false
+
+```
+#### Exemple : Mandat en cours sans date de fin
+
+```yaml
+global_uri: act:ms_jans_bundesrat
+person_reference:
+  local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  label: Beat Jans
+group_reference:
+  global_uri: https://www.admin.ch/de/der-bundesrat
+  label: Bundesrat
+role_type:
+  role_type_enum: member
+authorized_to_vote: true
+valid_from: 2024-01-01
+is_active: true
+
+```
+#### Exemple : Appartenance à un groupe parlementaire parallèle au mandat
+
+```yaml
+global_uri: act:ms_jans_fraktion_sp_bs
+person_reference:
+  local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  label: Beat Jans
+group_reference:
+  global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/sp
+  label: Sozialdemokratische Partei (SP)
+role_type:
+  role_type_enum: member
+authorized_to_vote: true
+valid_from: 2001-02-07
+valid_through: 2011-04-30
+is_active: false
+
+```
+#### Exemple : Appartenance à une commission avec sa propre durée
+
+```yaml
+global_uri: act:ms_jans_wak_bs
+person_reference:
+  local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  label: Beat Jans
+group_reference:
+  global_uri: https://grosserrat.bs.ch/gremien/sachkommissionen/wirtschaft-abgaben
+  label: Wirtschafts- und Abgabekommission (WAK)
+role_type:
+  role_type_enum: member
+authorized_to_vote: true
+valid_from: 2003-02-12
+valid_through: 2011-04-30
+is_active: false
+
+```
+#### Exemple : Affiliation à un parti sans indications temporelles
+
+```yaml
+global_uri: act:ms_jans_partei_sp
+person_reference:
+  local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  label: Beat Jans
+group_reference:
+  global_uri: https://www.sp-ps.ch/
+  label: Sozialdemokratische Partei der Schweiz
+role_type:
+  role_type_enum: member
+is_active: true
+
+```
 
 
 
@@ -1615,9 +1757,9 @@ _Circonscription ou région électorale associée à une affiliation. La validit
 | Nom | Cardinalité et plage | Description |
 | ---  | --- | --- |
 | local_id | 0..1 <br/> [String](#String) | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Pour les références IRI, les ressources LINDAS doivent être utilisées. Les IRI des différents niveaux administratifs des unités spatiales suisses sont disponibles à l'adresse : https://ld.admin.ch/country/CHE. Sous les liens de la section schema:containsPlace, le niveau souhaité peut être sélectionné. Exemples pour chaque niveau administratif : - Pays - Suisse : https://ld.admin.ch/country/CHE - Canton - Argovie : https://ld.admin.ch/canton/19 - District - Brigue : https://ld.admin.ch/district/2301 - Commune - Versoix : https://ld.admin.ch/municipality/6644 <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Pour les références IRI, les ressources LINDAS doivent être utilisées. Les IRI des différents niveaux administratifs des unités spatiales suisses sont disponibles à l'adresse : https://ld.admin.ch/country/CHE. Sous les liens de la section schema:containsPlace, le niveau souhaité peut être sélectionné. Exemples pour chaque niveau administratif : - Pays - Suisse : https://ld.admin.ch/country/CHE - Canton - Argovie : https://ld.admin.ch/canton/19 - District - Brigue : https://ld.admin.ch/district/2301 - Commune - Versoix : https://ld.admin.ch/municipality/6644 Les circonscriptions qui ne correspondent à aucune unité spatiale officielle, par exemple celles qui regroupent des quartiers d'une commune, reçoivent à la place un identifiant dans l'espace de noms de l'organe qui les publie. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
-| label | 0..1 <br/> [String](#String) | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
+| label | 0..1 <br/> [String](#String) | Désignation de la circonscription électorale telle qu'elle est publiée par l'organe compétent pour l'élection.  |
 
 
 
@@ -1641,6 +1783,22 @@ _Circonscription ou région électorale associée à une affiliation. La validit
 
 
 
+
+### Exemples
+#### Exemple : Circonscription sans unité spatiale officielle
+
+```yaml
+global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
+label: Kleinbasel
+
+```
+#### Exemple : Canton comme circonscription, identifié par la ressource LINDAS
+
+```yaml
+global_uri: https://ld.admin.ch/canton/12
+label: Basel-Stadt
+
+```
 
 
 

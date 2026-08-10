@@ -313,18 +313,7 @@ persons:
     trainings:
       - training_type: "3223"  # Master Universität, ETH (inklusive Lizentiat / Diplom)
         value: MLaw
-# memberships:
-#   - global_uri: https://data-example.parlament.ch/membership/4032-bundesrat
-#     valid_from: 2023-12-13
-#     person_reference:
-#       local_id: 4032
-#       global_uri: https://www.admin.ch/de/beat-jans
-#       label: Beat Jans
-#     group_reference:
-#       global_uri: https://www.admin.ch/de/bundesrat
-#       label: Bundesrat
-#     electoral_district:
-#       global_uri: https://ld.admin.ch/canton/12
+
 ```
 #### Exemple : groups
 
@@ -661,6 +650,191 @@ groups:
           language: fr
     spatial: https://ld.admin.ch/canton/10
     valid_from: 2007-12-12
+
+```
+#### Exemple : memberships
+
+```yaml
+# Mitgliedschaften einer einzigen Person über drei föderale Ebenen hinweg.
+# Alle Einträge sind echte, publizierte Fälle (Quellen: grosserrat.bs.ch,
+# regierungsrat.bs.ch, parlament.ch, admin.ch).
+#
+# Die Mitgliedschaft ist das Bindeglied zwischen Person und Gruppe: Sie führt
+# keine eigenen Angaben über die beiden, sondern verweist auf sie und hält
+# fest, was nur für diese Verbindung gilt — Dauer, Rolle, Stimmrecht,
+# Wahlkreis. Deshalb bleibt die Person hier immer dieselbe (Beat Jans, wie in
+# data_swiss_politicians.yaml erfasst), während sich die Gruppe ändert.
+#
+# Referenziert wird über `local_id` und `global_uri`: Die `local_id` ist
+# innerhalb derselben Lieferung auflösbar — bei der Person auf den Eintrag in
+# data_swiss_politicians.yaml, bei Grossem Rat und Regierungsrat auf die
+# Einträge in data_groups.yaml. Gruppen ausserhalb dieser Lieferung werden
+# allein über ihre `global_uri` bezeichnet; das `any_of` von GroupReference
+# verlangt mindestens eines von beiden.
+#
+# Die Mitgliedschaft ist eine eigenständig identifizierte Entität und braucht
+# deshalb eine eigene `global_uri`. Die publizierenden Stellen vergeben dafür
+# keine Adresse — sie zeigen Mitgliedschaften nur als Zeilen auf der Personen-
+# oder Gremienseite. Für die Beispiele wird deshalb eine Kennung im Namensraum
+# des Standards vergeben; produktiv tritt an ihre Stelle die Adresse aus dem
+# Ratsinformationssystem der publizierenden Stelle.
+global_uri: act:memberships_example
+memberships:
+  # Kantonales Parlamentsmandat, der Grundfall: Person und Gruppe sind beide in
+  # dieser Lieferung erfasst und werden über ihre `local_id` aufgelöst.
+  # Der Wahlkreis hängt an der Mitgliedschaft und nicht an der Person.
+  # Kleinbasel ist einer der fünf Wahlkreise des Grossen Rates. Zwei davon sind
+  # Gemeinden und über LINDAS identifizierbar (Riehen, Bettingen), die drei
+  # städtischen — Grossbasel-Ost, Grossbasel-West, Kleinbasel — fassen
+  # Wohnviertel der Gemeinde Basel zusammen und haben dort keine Entsprechung.
+  # Die `global_uri` ist deshalb eine Adresse im Namensraum der publizierenden
+  # Stelle; so sähe ein eindeutiger Identifikator des Wahlkreises dort aus.
+  - global_uri: act:ms_jans_grossrat_bs
+    person_reference:
+      local_id: 4032
+      global_uri: https://www.admin.ch/de/beat-jans
+      label: Beat Jans
+    group_reference:
+      local_id: 33
+      global_uri: https://www.grosserrat.bs.ch/
+      label: Grosser Rat Basel-Stadt
+    electoral_district:
+      global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
+      label: Kleinbasel
+    role_type:
+      role_type_enum: member
+    authorized_to_vote: true
+    valid_from: 2001-02-07
+    valid_through: 2011-04-30
+    is_active: false
+
+  # Fraktionsmitgliedschaft parallel zum Ratsmandat, mit derselben Dauer. Sie
+  # ist eine eigene Mitgliedschaft und nicht ein Merkmal des Ratsmandats, weil
+  # ein Fraktionswechsel während der Amtsdauer möglich ist. Ein Wahlkreis wird
+  # hier nicht geführt: In die Fraktion wird nicht gewählt. Die Fraktion ist in
+  # dieser Lieferung nicht erfasst und wird deshalb über ihre `global_uri`
+  # bezeichnet.
+  - global_uri: act:ms_jans_fraktion_sp_bs
+    person_reference:
+      local_id: 4032
+      global_uri: https://www.admin.ch/de/beat-jans
+      label: Beat Jans
+    group_reference:
+      global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/sp
+      label: Sozialdemokratische Partei (SP)
+    role_type:
+      role_type_enum: member
+    authorized_to_vote: true
+    valid_from: 2001-02-07
+    valid_through: 2011-04-30
+    is_active: false
+
+  # Kommissionsmitgliedschaft: dritte gleichzeitige Mitgliedschaft derselben
+  # Person im selben Parlament, mit eigener Dauer. Erst die Mitgliedschaft
+  # trennt diese Fälle sauber — die Person ist einmal erfasst, die Kommission
+  # ebenfalls, und nur ihre Verbindung ist befristet.
+  - global_uri: act:ms_jans_wak_bs
+    person_reference:
+      local_id: 4032
+      global_uri: https://www.admin.ch/de/beat-jans
+      label: Beat Jans
+    group_reference:
+      global_uri: https://grosserrat.bs.ch/gremien/sachkommissionen/wirtschaft-abgaben
+      label: Wirtschafts- und Abgabekommission (WAK)
+    role_type:
+      role_type_enum: member
+    authorized_to_vote: true
+    valid_from: 2003-02-12
+    valid_through: 2011-04-30
+    is_active: false
+
+  # Eidgenössisches Mandat derselben Person, zeitlich überlappend mit dem
+  # Grossratsmandat (Nachrücken in den Nationalrat am 31.05.2010, Rücktritt aus
+  # dem Grossen Rat auf den 30.04.2011). Der Wahlkreis ist ein anderer als oben
+  # — für den Nationalrat der Kanton als Ganzes. Er hat als amtliche
+  # Raumeinheit eine LINDAS-Ressource und wird über diese identifiziert. Genau
+  # diese Überschneidung zeigt, dass der Wahlkreis am Mandat hängt: dieselbe
+  # Person, gleichzeitig, zwei verschiedene Wahlkreise.
+  #
+  # Die Bundesversammlung führt je Legislatur eine eigene Mitgliedschaft. Hier
+  # steht die 48. Legislatur; Beat Jans war bis zum 17.12.2020 im Nationalrat,
+  # verteilt auf vier solche Einträge.
+  - global_uri: act:ms_jans_nationalrat
+    person_reference:
+      local_id: 4032
+      global_uri: https://www.admin.ch/de/beat-jans
+      label: Beat Jans
+    group_reference:
+      global_uri: https://www.parlament.ch/de/organe/nationalrat
+      label: Nationalrat
+    electoral_district:
+      global_uri: https://ld.admin.ch/canton/12
+      label: Basel-Stadt
+    role_type:
+      role_type_enum: member
+    authorized_to_vote: true
+    valid_from: 2010-05-31
+    valid_through: 2011-12-04
+    is_active: false
+
+  # Exekutivmandat, ebenfalls in dieser Lieferung auflösbar (Regierungsrat
+  # Basel-Stadt in data_groups.yaml). Es trägt die Rolle: gewählt wurde direkt
+  # ins Präsidium, deshalb `president` mit der amtlichen Bezeichnung im
+  # `role_label`. Ein Wahlkreis wird nicht geführt — der Regierungsrat wird im
+  # Gesamtkanton gewählt.
+  - global_uri: act:ms_jans_regierungsrat_bs
+    person_reference:
+      local_id: 4032
+      global_uri: https://www.admin.ch/de/beat-jans
+      label: Beat Jans
+    group_reference:
+      local_id: 1300
+      global_uri: https://www.regierungsrat.bs.ch/
+      label: Regierungsrat Basel-Stadt
+    role_type:
+      role_type_enum: president
+      role_label:
+        - value: Regierungspräsident
+          language: de
+    authorized_to_vote: true
+    valid_from: 2021-02-03
+    valid_through: 2023-12-31
+    is_active: false
+
+  # Parteimitgliedschaft. Sie ist von der Fraktionsmitgliedschaft getrennt
+  # (andere Gruppe, andere Ebene) und wird ohne Zeitangaben publiziert: Das
+  # Eintrittsdatum ist nicht bekannt, die Mitgliedschaft besteht. Deshalb wird
+  # die Aktivität hier explizit über `is_active` gesetzt statt aus
+  # `valid_from`/`valid_through` abgeleitet.
+  - global_uri: act:ms_jans_partei_sp
+    person_reference:
+      local_id: 4032
+      global_uri: https://www.admin.ch/de/beat-jans
+      label: Beat Jans
+    group_reference:
+      global_uri: https://www.sp-ps.ch/
+      label: Sozialdemokratische Partei der Schweiz
+    role_type:
+      role_type_enum: member
+    is_active: true
+
+  # Laufendes Mandat in der Landesregierung: `valid_from` ohne
+  # `valid_through`. In den Bundesrat wird nicht aus einem Wahlkreis gewählt,
+  # `electoral_district` bleibt deshalb leer — die Kantonszugehörigkeit eines
+  # Mitglieds ist keine Wahlkreiszuteilung.
+  - global_uri: act:ms_jans_bundesrat
+    person_reference:
+      local_id: 4032
+      global_uri: https://www.admin.ch/de/beat-jans
+      label: Beat Jans
+    group_reference:
+      global_uri: https://www.admin.ch/de/der-bundesrat
+      label: Bundesrat
+    role_type:
+      role_type_enum: member
+    authorized_to_vote: true
+    valid_from: 2024-01-01
+    is_active: true
 
 ```
 

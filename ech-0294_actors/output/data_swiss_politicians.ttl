@@ -15,11 +15,11 @@ act:swiss_politicians_example a act:Container ;
     mcm:label "Cristina Bozzi-Brunel" ;
     mcm:localId "280958" ;
     act:name [ a act:Name ;
-            mcm:value "Bozzi-Brunel" ;
-            act:nameType "PersonOfficialName" ],
-        [ a act:Name ;
             mcm:value "Cristina" ;
             act:nameType "PersonFirstName" ],
+        [ a act:Name ;
+            mcm:value "Bozzi-Brunel" ;
+            act:nameType "PersonOfficialName" ],
         [ a act:Name ;
             mcm:value "Brunel" ;
             act:nameType "PersonOriginalName" ] .
@@ -91,11 +91,11 @@ act:swiss_politicians_example a act:Container ;
     mcm:localId "6370" ;
     act:birthYear 1965 ;
     act:name [ a act:Name ;
-            mcm:value "Arnold" ;
-            act:nameType "PersonOfficialName" ],
-        [ a act:Name ;
             mcm:value "Alois" ;
-            act:nameType "PersonFirstName" ] .
+            act:nameType "PersonFirstName" ],
+        [ a act:Name ;
+            mcm:value "Arnold" ;
+            act:nameType "PersonOfficialName" ] .
 
 <https://www.ur.ch/behoerdenmitglieder/6447> a act:Person ;
     mcm:label "Alois Arnold (1981)" ;

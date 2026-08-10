@@ -1,0 +1,129 @@
+@prefix act: <https://ld.ech.ch/schema/0294/actors/> .
+@prefix mcm: <https://ld.ech.ch/schema/0292/meta-common/> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+act:memberships_example a act:Container ;
+    act:membership act:ms_jans_bundesrat,
+        act:ms_jans_fraktion_sp_bs,
+        act:ms_jans_grossrat_bs,
+        act:ms_jans_nationalrat,
+        act:ms_jans_partei_sp,
+        act:ms_jans_regierungsrat_bs,
+        act:ms_jans_wak_bs .
+
+<https://grosserrat.bs.ch/wahlkreise/kleinbasel> a act:ElectoralDistrict ;
+    mcm:label "Kleinbasel" .
+
+<https://ld.admin.ch/canton/12> a act:ElectoralDistrict ;
+    mcm:label "Basel-Stadt" .
+
+act:ms_jans_bundesrat a act:Membership ;
+    schema1:validFrom "2024-01-01"^^xsd:date ;
+    mcm:isCurrent true ;
+    act:authorizedToVote true ;
+    act:groupReference [ a mcm:GroupReference ;
+            mcm:globalURI <https://www.admin.ch/de/der-bundesrat> ;
+            mcm:label "Bundesrat" ] ;
+    act:personReference [ a mcm:PersonReference ;
+            mcm:globalURI <https://www.admin.ch/de/beat-jans> ;
+            mcm:label "Beat Jans" ;
+            mcm:localId "4032" ] ;
+    act:roleType [ a act:RoleType ;
+            act:roleTypeEnum "member" ] .
+
+act:ms_jans_fraktion_sp_bs a act:Membership ;
+    schema1:validFrom "2001-02-07"^^xsd:date ;
+    schema1:validThrough "2011-04-30"^^xsd:date ;
+    mcm:isCurrent false ;
+    act:authorizedToVote true ;
+    act:groupReference [ a mcm:GroupReference ;
+            mcm:globalURI <https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/sp> ;
+            mcm:label "Sozialdemokratische Partei (SP)" ] ;
+    act:personReference [ a mcm:PersonReference ;
+            mcm:globalURI <https://www.admin.ch/de/beat-jans> ;
+            mcm:label "Beat Jans" ;
+            mcm:localId "4032" ] ;
+    act:roleType [ a act:RoleType ;
+            act:roleTypeEnum "member" ] .
+
+act:ms_jans_grossrat_bs a act:Membership ;
+    schema1:validFrom "2001-02-07"^^xsd:date ;
+    schema1:validThrough "2011-04-30"^^xsd:date ;
+    mcm:isCurrent false ;
+    act:authorizedToVote true ;
+    act:electoralDistrict <https://grosserrat.bs.ch/wahlkreise/kleinbasel> ;
+    act:groupReference [ a mcm:GroupReference ;
+            mcm:globalURI <https://www.grosserrat.bs.ch/> ;
+            mcm:label "Grosser Rat Basel-Stadt" ;
+            mcm:localId "33" ] ;
+    act:personReference [ a mcm:PersonReference ;
+            mcm:globalURI <https://www.admin.ch/de/beat-jans> ;
+            mcm:label "Beat Jans" ;
+            mcm:localId "4032" ] ;
+    act:roleType [ a act:RoleType ;
+            act:roleTypeEnum "member" ] .
+
+act:ms_jans_nationalrat a act:Membership ;
+    schema1:validFrom "2010-05-31"^^xsd:date ;
+    schema1:validThrough "2011-12-04"^^xsd:date ;
+    mcm:isCurrent false ;
+    act:authorizedToVote true ;
+    act:electoralDistrict <https://ld.admin.ch/canton/12> ;
+    act:groupReference [ a mcm:GroupReference ;
+            mcm:globalURI <https://www.parlament.ch/de/organe/nationalrat> ;
+            mcm:label "Nationalrat" ] ;
+    act:personReference [ a mcm:PersonReference ;
+            mcm:globalURI <https://www.admin.ch/de/beat-jans> ;
+            mcm:label "Beat Jans" ;
+            mcm:localId "4032" ] ;
+    act:roleType [ a act:RoleType ;
+            act:roleTypeEnum "member" ] .
+
+act:ms_jans_partei_sp a act:Membership ;
+    mcm:isCurrent true ;
+    act:groupReference [ a mcm:GroupReference ;
+            mcm:globalURI <https://www.sp-ps.ch/> ;
+            mcm:label "Sozialdemokratische Partei der Schweiz" ] ;
+    act:personReference [ a mcm:PersonReference ;
+            mcm:globalURI <https://www.admin.ch/de/beat-jans> ;
+            mcm:label "Beat Jans" ;
+            mcm:localId "4032" ] ;
+    act:roleType [ a act:RoleType ;
+            act:roleTypeEnum "member" ] .
+
+act:ms_jans_regierungsrat_bs a act:Membership ;
+    schema1:validFrom "2021-02-03"^^xsd:date ;
+    schema1:validThrough "2023-12-31"^^xsd:date ;
+    mcm:isCurrent false ;
+    act:authorizedToVote true ;
+    act:groupReference [ a mcm:GroupReference ;
+            mcm:globalURI <https://www.regierungsrat.bs.ch/> ;
+            mcm:label "Regierungsrat Basel-Stadt" ;
+            mcm:localId "1300" ] ;
+    act:personReference [ a mcm:PersonReference ;
+            mcm:globalURI <https://www.admin.ch/de/beat-jans> ;
+            mcm:label "Beat Jans" ;
+            mcm:localId "4032" ] ;
+    act:roleType [ a act:RoleType ;
+            act:roleTypeEnum "president" ;
+            act:role_label [ a mcm:MultilingualValue ;
+                    mcm:language "de" ;
+                    mcm:value "Regierungspräsident" ] ] .
+
+act:ms_jans_wak_bs a act:Membership ;
+    schema1:validFrom "2003-02-12"^^xsd:date ;
+    schema1:validThrough "2011-04-30"^^xsd:date ;
+    mcm:isCurrent false ;
+    act:authorizedToVote true ;
+    act:groupReference [ a mcm:GroupReference ;
+            mcm:globalURI <https://grosserrat.bs.ch/gremien/sachkommissionen/wirtschaft-abgaben> ;
+            mcm:label "Wirtschafts- und Abgabekommission (WAK)" ] ;
+    act:personReference [ a mcm:PersonReference ;
+            mcm:globalURI <https://www.admin.ch/de/beat-jans> ;
+            mcm:label "Beat Jans" ;
+            mcm:localId "4032" ] ;
+    act:roleType [ a act:RoleType ;
+            act:roleTypeEnum "member" ] .
+
+

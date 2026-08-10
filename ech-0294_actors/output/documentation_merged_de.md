@@ -1428,7 +1428,7 @@ Das Membership-Schema bildet die Beziehung zwischen Personen und Gruppen ab und 
 - **Aktivität explizit oder abgeleitet (`is_active`):** Ob eine Mitgliedschaft aktiv ist, kann explizit über `is_active` gesetzt oder aus der zeitlichen Gültigkeit abgeleitet werden. Ist `is_active` nicht gesetzt, ergibt sich die Aktivität aus `valid_from`/`valid_through`.
 - **Mitgliedschaft ≠ Stimmrecht (`authorized_to_vote`):** Das Stimmrecht wird getrennt von der Mitgliedschaft geführt – typischerweise `false` bei Ersatzmitgliedern (ausser im Einsatz), Beobachtenden, dem Sekretariat und Gästen.
 - **Rolle als kontrolliertes Vokabular mit Freitext-Option (`role_type`):** Die Rolle in der Gruppe (z. B. Mitglied, Präsidium, Stellvertretung) wird über ein kontrolliertes Vokabular (`RoleEnum`) angegeben; für nicht abgedeckte Rollen dient der Wert `other` mit einer freien Bezeichnung.
-- **Wahlkreis an der Mitgliedschaft statt an der Person (`electoral_district`):** Der Wahlkreis beschreibt nicht die Person, sondern das Mandat – dieselbe Person kann über die Zeit oder auf verschiedenen föderalen Ebenen aus unterschiedlichen Wahlkreisen gewählt sein. `ElectoralDistrict` führt deshalb keine eigene zeitliche Gültigkeit, sondern erbt die `valid_from`/`valid_through` der umschliessenden Mitgliedschaft. Für die Identifikation sind die LINDAS-Ressourcen der Schweizer Raumeinheiten vorgesehen (siehe `global_uri`).
+- **Wahlkreis an der Mitgliedschaft statt an der Person (`electoral_district`):** Der Wahlkreis beschreibt nicht die Person, sondern das Mandat – dieselbe Person kann über die Zeit oder auf verschiedenen föderalen Ebenen aus unterschiedlichen Wahlkreisen gewählt sein. `ElectoralDistrict` führt deshalb keine eigene zeitliche Gültigkeit, sondern erbt die `valid_from`/`valid_through` der umschliessenden Mitgliedschaft. Für die Identifikation sind die LINDAS-Ressourcen der Schweizer Raumeinheiten vorgesehen (siehe `global_uri`). Ob ein Wahlkreis so identifizierbar ist, hängt davon ab, ob er mit einer amtlichen Raumeinheit zusammenfällt: Im Kanton Basel-Stadt sind die Wahlkreise Riehen und Bettingen Gemeinden und haben eine LINDAS-Ressource, während Grossbasel-Ost, Grossbasel-West und Kleinbasel Wohnviertel der Gemeinde Basel zusammenfassen und keine haben. Wahlkreise ohne amtliche Entsprechung erhalten einen Identifikator im Namensraum der publizierenden Stelle.
 
 
 
@@ -1454,7 +1454,7 @@ _Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe, die eine 
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | person_reference | 1 <br/> [PersonReference](#PersonReference) | Kurzreferenz auf eine Person, welche deren Merkmale zum Zeitpunkt der Verknüpfung festhält.  |
 | group_reference | 1 <br/> [GroupReference](#GroupReference) | Kurzreferenz auf eine Gruppe, welche deren Merkmale zum Zeitpunkt der Verknüpfung festhält.  |
-| electoral_district | 0..1 <br/> [ElectoralDistrict](#ElectoralDistrict) | Link zum Wahlbezirk.  |
+| electoral_district | 0..1 <br/> [ElectoralDistrict](#ElectoralDistrict) | Wahlkreis der Mitgliedschaft. Wird angegeben, wo das Mandat in einem Wahlkreis errungen wurde; er wird deshalb an der Mitgliedschaft geführt und nicht an der Person.  |
 | role_type | 0..1 <br/> [RoleType](#RoleType) | Rolle der Person in der Mitgliedschaft oder Funktion.  |
 | authorized_to_vote | 0..1 <br/> [Boolean](#Boolean) | Gibt an, ob die Person in der Gruppe stimmberechtigt ist. Typischerweise false für Ersatzmitglieder (wenn nicht im Einsatz), Beobachter/innen, Sekretär/innen und Gäste.  |
 | is_active | 0..1 <br/> [Boolean](#Boolean) | Gibt an, ob die Mitgliedschaft derzeit aktiv ist. Kann `valid_from`/`valid_through` ergänzen oder ersetzen. Wenn nicht gesetzt, wird die Aktivität aus den zeitlichen Gültigkeitsfeldern abgeleitet.  |
@@ -1487,6 +1487,148 @@ _Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe, die eine 
 
 
 
+
+### Beispiele
+#### Beispiel: Dieselbe Person auf anderer Ebene, mit anderem Wahlkreis
+
+```yaml
+global_uri: act:ms_jans_nationalrat
+person_reference:
+  local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  label: Beat Jans
+group_reference:
+  global_uri: https://www.parlament.ch/de/organe/nationalrat
+  label: Nationalrat
+electoral_district:
+  global_uri: https://ld.admin.ch/canton/12
+  label: Basel-Stadt
+role_type:
+  role_type_enum: member
+authorized_to_vote: true
+valid_from: 2010-05-31
+valid_through: 2011-12-04
+is_active: false
+
+```
+#### Beispiel: Exekutivmandat mit Rolle im Präsidium
+
+```yaml
+global_uri: act:ms_jans_regierungsrat_bs
+person_reference:
+  local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  label: Beat Jans
+group_reference:
+  local_id: 1300
+  global_uri: https://www.regierungsrat.bs.ch/
+  label: Regierungsrat Basel-Stadt
+role_type:
+  role_type_enum: president
+  role_label:
+  - value: Regierungspräsident
+    language: de
+authorized_to_vote: true
+valid_from: 2021-02-03
+valid_through: 2023-12-31
+is_active: false
+
+```
+#### Beispiel: Person und Gruppe derselben Lieferung, mit Wahlkreis
+
+```yaml
+global_uri: act:ms_jans_grossrat_bs
+person_reference:
+  local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  label: Beat Jans
+group_reference:
+  local_id: 33
+  global_uri: https://www.grosserrat.bs.ch/
+  label: Grosser Rat Basel-Stadt
+electoral_district:
+  global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
+  label: Kleinbasel
+role_type:
+  role_type_enum: member
+authorized_to_vote: true
+valid_from: 2001-02-07
+valid_through: 2011-04-30
+is_active: false
+
+```
+#### Beispiel: Laufendes Mandat ohne Enddatum
+
+```yaml
+global_uri: act:ms_jans_bundesrat
+person_reference:
+  local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  label: Beat Jans
+group_reference:
+  global_uri: https://www.admin.ch/de/der-bundesrat
+  label: Bundesrat
+role_type:
+  role_type_enum: member
+authorized_to_vote: true
+valid_from: 2024-01-01
+is_active: true
+
+```
+#### Beispiel: Fraktionsmitgliedschaft parallel zum Ratsmandat
+
+```yaml
+global_uri: act:ms_jans_fraktion_sp_bs
+person_reference:
+  local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  label: Beat Jans
+group_reference:
+  global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/sp
+  label: Sozialdemokratische Partei (SP)
+role_type:
+  role_type_enum: member
+authorized_to_vote: true
+valid_from: 2001-02-07
+valid_through: 2011-04-30
+is_active: false
+
+```
+#### Beispiel: Kommissionsmitgliedschaft mit eigener Dauer
+
+```yaml
+global_uri: act:ms_jans_wak_bs
+person_reference:
+  local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  label: Beat Jans
+group_reference:
+  global_uri: https://grosserrat.bs.ch/gremien/sachkommissionen/wirtschaft-abgaben
+  label: Wirtschafts- und Abgabekommission (WAK)
+role_type:
+  role_type_enum: member
+authorized_to_vote: true
+valid_from: 2003-02-12
+valid_through: 2011-04-30
+is_active: false
+
+```
+#### Beispiel: Parteimitgliedschaft ohne Zeitangaben
+
+```yaml
+global_uri: act:ms_jans_partei_sp
+person_reference:
+  local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  label: Beat Jans
+group_reference:
+  global_uri: https://www.sp-ps.ch/
+  label: Sozialdemokratische Partei der Schweiz
+role_type:
+  role_type_enum: member
+is_active: true
+
+```
 
 
 
@@ -1616,9 +1758,9 @@ _Wahlkreis oder Wahlregion, die einer Mitgliedschaft zugeordnet ist. Die zeitlic
 | Name | Kardinalität und Wertebereich | Beschreibung |
 | ---  | --- | --- |
 | local_id | 0..1 <br/> [String](#String) | Lokaler Identifikator. Bspw. eine UUID aus dem Ratsinformationssystem. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Für IRI-Referenzen sollen die LINDAS-Ressourcen verwendet werden. Die IRI für die verschiedenen Verwaltungsebenen der Schweizer Raumeinheiten sind bei LINDAS zu finden: https://ld.admin.ch/country/CHE. Unter den Links im Abschnitt schema:containsPlace kann die gewünschte Ebene gefunden werden. Beispiele für die einzelnen Verwaltungsebenen: - Land - Schweiz: https://ld.admin.ch/country/CHE - Kanton - Aargau: https://ld.admin.ch/canton/19 - Bezirk - Brig: https://ld.admin.ch/district/2301 - Gemeinde - Versoix: https://ld.admin.ch/municipality/6644 <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> [Uriorcurie](#Uriorcurie) | Für IRI-Referenzen sollen die LINDAS-Ressourcen verwendet werden. Die IRI für die verschiedenen Verwaltungsebenen der Schweizer Raumeinheiten sind bei LINDAS zu finden: https://ld.admin.ch/country/CHE. Unter den Links im Abschnitt schema:containsPlace kann die gewünschte Ebene gefunden werden. Beispiele für die einzelnen Verwaltungsebenen: - Land - Schweiz: https://ld.admin.ch/country/CHE - Kanton - Aargau: https://ld.admin.ch/canton/19 - Bezirk - Brig: https://ld.admin.ch/district/2301 - Gemeinde - Versoix: https://ld.admin.ch/municipality/6644 Wahlkreise, die keiner amtlichen Raumeinheit entsprechen, etwa Wahlkreise, die Wohnviertel einer Gemeinde zusammenfassen, erhalten stattdessen einen Identifikator im Namensraum der publizierenden Stelle. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
 | wikidata_uri | 0..1 <br/> [Uriorcurie](#Uriorcurie) | Eine URI, die auf eine Wikidata-Entität verweist, z.B. http://www.wikidata.org/entity/Q813067 für Beat Jans. <br/><br/>Vererbung: [HasIdentification](#HasIdentification) |
-| label | 0..1 <br/> [String](#String) | Möglichkeit bei einer strukturierten Information, ein Label zu vergeben (bspw. Anzeigename, Anstellung, etc.).  |
+| label | 0..1 <br/> [String](#String) | Bezeichnung des Wahlkreises, wie sie von der für die Wahl zuständigen Stelle publiziert wird.  |
 
 
 
@@ -1642,6 +1784,22 @@ _Wahlkreis oder Wahlregion, die einer Mitgliedschaft zugeordnet ist. Die zeitlic
 
 
 
+
+### Beispiele
+#### Beispiel: Wahlkreis ohne amtliche Raumeinheit
+
+```yaml
+global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
+label: Kleinbasel
+
+```
+#### Beispiel: Kanton als Wahlkreis, über die LINDAS-Ressource identifiziert
+
+```yaml
+global_uri: https://ld.admin.ch/canton/12
+label: Basel-Stadt
+
+```
 
 
 

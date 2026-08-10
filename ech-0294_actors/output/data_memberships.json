@@ -1,0 +1,151 @@
+{
+  "global_uri": "act:memberships_example",
+  "memberships": [
+    {
+      "global_uri": "act:ms_jans_grossrat_bs",
+      "person_reference": {
+        "label": "Beat Jans",
+        "local_id": "4032",
+        "global_uri": "https://www.admin.ch/de/beat-jans"
+      },
+      "group_reference": {
+        "label": "Grosser Rat Basel-Stadt",
+        "local_id": "33",
+        "global_uri": "https://www.grosserrat.bs.ch/"
+      },
+      "electoral_district": {
+        "global_uri": "https://grosserrat.bs.ch/wahlkreise/kleinbasel",
+        "label": "Kleinbasel"
+      },
+      "role_type": {
+        "role_type_enum": "member"
+      },
+      "authorized_to_vote": true,
+      "is_active": false,
+      "valid_from": "2001-02-07",
+      "valid_through": "2011-04-30"
+    },
+    {
+      "global_uri": "act:ms_jans_fraktion_sp_bs",
+      "person_reference": {
+        "label": "Beat Jans",
+        "local_id": "4032",
+        "global_uri": "https://www.admin.ch/de/beat-jans"
+      },
+      "group_reference": {
+        "label": "Sozialdemokratische Partei (SP)",
+        "global_uri": "https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/sp"
+      },
+      "role_type": {
+        "role_type_enum": "member"
+      },
+      "authorized_to_vote": true,
+      "is_active": false,
+      "valid_from": "2001-02-07",
+      "valid_through": "2011-04-30"
+    },
+    {
+      "global_uri": "act:ms_jans_wak_bs",
+      "person_reference": {
+        "label": "Beat Jans",
+        "local_id": "4032",
+        "global_uri": "https://www.admin.ch/de/beat-jans"
+      },
+      "group_reference": {
+        "label": "Wirtschafts- und Abgabekommission (WAK)",
+        "global_uri": "https://grosserrat.bs.ch/gremien/sachkommissionen/wirtschaft-abgaben"
+      },
+      "role_type": {
+        "role_type_enum": "member"
+      },
+      "authorized_to_vote": true,
+      "is_active": false,
+      "valid_from": "2003-02-12",
+      "valid_through": "2011-04-30"
+    },
+    {
+      "global_uri": "act:ms_jans_nationalrat",
+      "person_reference": {
+        "label": "Beat Jans",
+        "local_id": "4032",
+        "global_uri": "https://www.admin.ch/de/beat-jans"
+      },
+      "group_reference": {
+        "label": "Nationalrat",
+        "global_uri": "https://www.parlament.ch/de/organe/nationalrat"
+      },
+      "electoral_district": {
+        "global_uri": "https://ld.admin.ch/canton/12",
+        "label": "Basel-Stadt"
+      },
+      "role_type": {
+        "role_type_enum": "member"
+      },
+      "authorized_to_vote": true,
+      "is_active": false,
+      "valid_from": "2010-05-31",
+      "valid_through": "2011-12-04"
+    },
+    {
+      "global_uri": "act:ms_jans_regierungsrat_bs",
+      "person_reference": {
+        "label": "Beat Jans",
+        "local_id": "4032",
+        "global_uri": "https://www.admin.ch/de/beat-jans"
+      },
+      "group_reference": {
+        "label": "Regierungsrat Basel-Stadt",
+        "local_id": "1300",
+        "global_uri": "https://www.regierungsrat.bs.ch/"
+      },
+      "role_type": {
+        "role_type_enum": "president",
+        "role_label": [
+          {
+            "value": "Regierungspräsident",
+            "language": "de"
+          }
+        ]
+      },
+      "authorized_to_vote": true,
+      "is_active": false,
+      "valid_from": "2021-02-03",
+      "valid_through": "2023-12-31"
+    },
+    {
+      "global_uri": "act:ms_jans_partei_sp",
+      "person_reference": {
+        "label": "Beat Jans",
+        "local_id": "4032",
+        "global_uri": "https://www.admin.ch/de/beat-jans"
+      },
+      "group_reference": {
+        "label": "Sozialdemokratische Partei der Schweiz",
+        "global_uri": "https://www.sp-ps.ch/"
+      },
+      "role_type": {
+        "role_type_enum": "member"
+      },
+      "is_active": true
+    },
+    {
+      "global_uri": "act:ms_jans_bundesrat",
+      "person_reference": {
+        "label": "Beat Jans",
+        "local_id": "4032",
+        "global_uri": "https://www.admin.ch/de/beat-jans"
+      },
+      "group_reference": {
+        "label": "Bundesrat",
+        "global_uri": "https://www.admin.ch/de/der-bundesrat"
+      },
+      "role_type": {
+        "role_type_enum": "member"
+      },
+      "authorized_to_vote": true,
+      "is_active": true,
+      "valid_from": "2024-01-01"
+    }
+  ],
+  "@type": "Container"
+}

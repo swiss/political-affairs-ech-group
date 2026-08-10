@@ -6,7 +6,7 @@ search:
 # Slot: electoral_district 
 
 
-_Lien vers la circonscription électorale._
+_Circonscription électorale de l'affiliation. Indiquée lorsque le mandat a été obtenu dans une circonscription ; elle est donc rattachée à l'affiliation et non à la personne._
 
 
 
@@ -67,15 +67,21 @@ name: electoral_district
 annotations:
   description_de:
     tag: description_de
-    value: 'Link zum Wahlbezirk.
+    value: 'Wahlkreis der Mitgliedschaft. Wird angegeben, wo das Mandat in einem Wahlkreis
+      errungen wurde; er wird deshalb an der Mitgliedschaft geführt und nicht an der
+      Person.
 
       '
   description_fr:
     tag: description_fr
-    value: 'Lien vers la circonscription électorale.
+    value: 'Circonscription électorale de l''affiliation. Indiquée lorsque le mandat
+      a été obtenu dans une circonscription ; elle est donc rattachée à l''affiliation
+      et non à la personne.
 
       '
-description: 'Lien vers la circonscription électorale.
+description: 'Circonscription électorale de l''affiliation. Indiquée lorsque le mandat
+  a été obtenu dans une circonscription ; elle est donc rattachée à l''affiliation
+  et non à la personne.
 
   '
 from_schema: https://ld.ech.ch/schema/0294/actors
@@ -84,6 +90,7 @@ slot_uri: act:electoralDistrict
 domain_of:
 - Membership
 range: ElectoralDistrict
+inlined: true
 
 ```
 </details></div>
