@@ -197,7 +197,13 @@ def extract_nested(obj, context: str, allowed_classes: set, parent_label: str = 
                     else:
                         prefix = f"{parent_label}_" if parent_label else ""
                         filename = f"{class_name}-{context}_{prefix}{item_label}.yaml"
-                    results.append((filename, item))
+                    # Wrapped in the slot it was found under: the printed example
+                    # otherwise starts straight with the instance's own slots and
+                    # says nowhere what it is an instance of. The wrapper also
+                    # keeps list and single-valued slots apart, so the example
+                    # reads exactly as the data file writes it.
+                    wrapped = {slot_name: [item]} if isinstance(value, list) else {slot_name: item}
+                    results.append((filename, wrapped))
             results.extend(extract_nested(item, context, allowed_classes, item_label,
                                           titles, lang, held_back, collected))
 
