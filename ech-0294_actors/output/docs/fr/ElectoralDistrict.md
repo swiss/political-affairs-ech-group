@@ -64,10 +64,6 @@ electoral_district:
   label:
   - value: Basel-Stadt
     language: de
-  - value: Bâle-Ville
-    language: fr
-  - value: Basilea-Città
-    language: it
 
 ```
 
