@@ -175,27 +175,27 @@ _Durée du mandat d'un parlement en tant qu'assemblée législative. Elle est en
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : HasIdentification |
-| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : HasIdentification |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : HasIdentification |
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | administrative_id | 0..1 <br/> String | Identifiant administratif du corps législatif, p. ex. commune, canton ou pays.  |
 | name | * <br/> [MultilingualString](#MultilingualString) | Désignation complète multilingue.  |
 | description | 0..1 <br/> String | Texte descriptif de l'élément.  |
 | landing_page | 0..1 <br/> String | URL fournissant des informations complémentaires.  |
-| actor_id | 0..1 <br/> GroupReference | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
-| date_begin_actual | 0..1 <br/> Date | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| datetime_begin_actual | 0..1 <br/> Datetime | La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| date_begin_planned | 0..1 <br/> Date | La date de début planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| datetime_begin_planned | 0..1 <br/> Datetime | La date et l'heure de début planifiées d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| date_end_actual | 0..1 <br/> Date | La date de fin effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| datetime_end_actual | 0..1 <br/> Datetime | La date et l'heure de fin effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| date_end_planned | 0..1 <br/> Date | La date de fin planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| datetime_end_planned | 0..1 <br/> Datetime | La date et l'heure de fin planifiées d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
+| date_begin_actual | 0..1 <br/> Date | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| datetime_begin_actual | 0..1 <br/> Datetime | La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| date_begin_planned | 0..1 <br/> Date | La date de début planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| datetime_begin_planned | 0..1 <br/> Datetime | La date et l'heure de début planifiées d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| date_end_actual | 0..1 <br/> Date | La date de fin effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| datetime_end_actual | 0..1 <br/> Datetime | La date et l'heure de fin effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| date_end_planned | 0..1 <br/> Date | La date de fin planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| datetime_end_planned | 0..1 <br/> Datetime | La date et l'heure de fin planifiées d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -310,9 +310,9 @@ _Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : HasIdentification |
-| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : HasIdentification |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : HasIdentification |
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | body_key | 0..1 <br/> String | Clé identifiant l'organe politique ou la collectivité (p. ex. BE pour Berne, CHE pour la Suisse).  |
 | name | * <br/> [MultilingualString](#MultilingualString) | Désignation complète multilingue.  |
 | number | 0..1 <br/> String | Numéro courant, p. ex. au sein de la législature, de la session ou de l'année.  |
@@ -323,18 +323,18 @@ _Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p
 | parent_legislature | 0..1 <br/> String | La législature dans le cadre de laquelle la séance a lieu.  |
 | meetings | * <br/> [Meeting](#Meeting) | Ensemble des séances.  |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
-| date_begin_actual | 0..1 <br/> Date | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| datetime_begin_actual | 0..1 <br/> Datetime | La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| date_begin_planned | 0..1 <br/> Date | La date de début planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| datetime_begin_planned | 0..1 <br/> Datetime | La date et l'heure de début planifiées d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| date_end_actual | 0..1 <br/> Date | La date de fin effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| datetime_end_actual | 0..1 <br/> Datetime | La date et l'heure de fin effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| date_end_planned | 0..1 <br/> Date | La date de fin planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| datetime_end_planned | 0..1 <br/> Datetime | La date et l'heure de fin planifiées d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
+| date_begin_actual | 0..1 <br/> Date | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| datetime_begin_actual | 0..1 <br/> Datetime | La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| date_begin_planned | 0..1 <br/> Date | La date de début planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| datetime_begin_planned | 0..1 <br/> Datetime | La date et l'heure de début planifiées d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| date_end_actual | 0..1 <br/> Date | La date de fin effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| datetime_end_actual | 0..1 <br/> Datetime | La date et l'heure de fin effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| date_end_planned | 0..1 <br/> Date | La date de fin planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| datetime_end_planned | 0..1 <br/> Datetime | La date et l'heure de fin planifiées d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -600,23 +600,23 @@ _Une classe générale de séance utilisée pour les sessions, les séances de c
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : HasIdentification |
-| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : HasIdentification |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : HasIdentification |
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | body_key | 0..1 <br/> String | Clé identifiant l'organe politique ou la collectivité (p. ex. BE pour Berne, CHE pour la Suisse).  |
 | meeting_type | 0..1 <br/> [MeetingTypeEnum](#MeetingTypeEnum) | Type de séance, p. ex. session, commission, séance de session, divers.  |
 | administrative_id | 0..1 <br/> String | Identifiant administratif du corps législatif, p. ex. commune, canton ou pays.  |
 | name | * <br/> [MultilingualString](#MultilingualString) | Désignation complète multilingue.  |
 | url | * <br/> [MultilingualString](#MultilingualString) | Page d'accueil ou adresse web complémentaire, multilingue.  |
 | group_name | 0..1 <br/> String | Nom du groupe ou de l'organe.  |
-| group_id | 0..1 <br/> GroupReference | Référence au groupe ou à l'organe (instantané au moment de la mise en relation).  |
+| group_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence au groupe ou à l'organe (instantané au moment de la mise en relation).  |
 | number | 0..1 <br/> String | Numéro courant, p. ex. au sein de la législature, de la session ou de l'année.  |
 | landing_page | 0..1 <br/> String | URL fournissant des informations complémentaires.  |
 | sequential_number | 0..1 <br/> Integer | Numéro séquentiel de la séance, utilisé pour le tri.  |
 | position | 0..1 <br/> String | Position (nombre entier) au sein de la séquence supérieure.  |
 | meeting_abbreviation | 0..1 <br/> String | Désignation abrégée de la session ou de la séance (p. ex. « FS24 » pour la session de printemps 2024).  |
 | actor_name | 0..1 <br/> String | Nom de l'organe politique (p. ex. Conseil national).  |
-| actor_id | 0..1 <br/> GroupReference | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | state | 0..1 <br/> [StateEnum](#StateEnum) | État actuel de la séance (planifiée, annulée, reportée).  |
 | state_name | 0..1 <br/> String | Description personnalisée de l'état de la séance.  |
 | description | 0..1 <br/> String | Texte descriptif de l'élément.  |
@@ -625,18 +625,18 @@ _Une classe générale de séance utilisée pour les sessions, les séances de c
 | parent_legislature | 0..1 <br/> String | La législature dans le cadre de laquelle la séance a lieu.  |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
 | protocol_ref | 0..1 <br/> [Protocol](#Protocol) | Le procès-verbal de cette séance, établi après celle-ci.  |
-| date_begin_actual | 0..1 <br/> Date | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| datetime_begin_actual | 0..1 <br/> Datetime | La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| date_begin_planned | 0..1 <br/> Date | La date de début planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| datetime_begin_planned | 0..1 <br/> Datetime | La date et l'heure de début planifiées d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| date_end_actual | 0..1 <br/> Date | La date de fin effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| datetime_end_actual | 0..1 <br/> Datetime | La date et l'heure de fin effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| date_end_planned | 0..1 <br/> Date | La date de fin planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| datetime_end_planned | 0..1 <br/> Datetime | La date et l'heure de fin planifiées d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
+| date_begin_actual | 0..1 <br/> Date | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| datetime_begin_actual | 0..1 <br/> Datetime | La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| date_begin_planned | 0..1 <br/> Date | La date de début planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| datetime_begin_planned | 0..1 <br/> Datetime | La date et l'heure de début planifiées d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| date_end_actual | 0..1 <br/> Date | La date de fin effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| datetime_end_actual | 0..1 <br/> Datetime | La date et l'heure de fin effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| date_end_planned | 0..1 <br/> Date | La date de fin planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| datetime_end_planned | 0..1 <br/> Datetime | La date et l'heure de fin planifiées d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -1046,20 +1046,20 @@ _Liste de présence agrégée pour une séance (nombre de membres présents, abs
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : HasIdentification |
-| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : HasIdentification |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : HasIdentification |
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | parent_meeting | 0..1 <br/> String | Identifiant de la séance liée qui regroupe la séance courante.  |
 | datetime_begin | 0..1 <br/> Datetime | La date et l'heure auxquelles la séance ou le vote commence.  |
-| actor_id | 0..1 <br/> GroupReference | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | total_count | 0..1 <br/> Integer | Nombre total de membres de l'organe (valeur de référence pour le calcul du quorum).  |
 | total_present | 0..1 <br/> Integer | Nombre total de membres présents.  |
 | total_absent | 0..1 <br/> Integer | Nombre total de membres absents. La distinction entre absent et absent excusé se fait dans la liste de présence.  |
 | total_excused | 0..1 <br/> Integer | Nombre total d'absences excusées.  |
-| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
+| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -1111,17 +1111,17 @@ _Constatation individuelle de la présence d'une personne à une séance (rattac
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : HasIdentification |
-| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : HasIdentification |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : HasIdentification |
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | parent_attendance | 0..1 <br/> [Attendance](#Attendance) | L'agrégat Attendance auquel appartient cette constatation individuelle de présence.  |
-| actor_id | 0..1 <br/> PersonReference | Référence à la personne agissante (instantané au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Référence à la personne agissante (instantané au moment de la mise en relation).  |
 | attendance_type | 0..1 <br/> [AttendanceTypeEnum](#AttendanceTypeEnum) | Type de présence individuelle.  |
 | reason | * <br/> [MultilingualString](#MultilingualString) | Motif de l'absence ou du retard (texte libre, multilingue).  |
-| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
+| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -1359,9 +1359,9 @@ _Un point de l'ordre du jour d'une séance._
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : HasIdentification |
-| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : HasIdentification |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : HasIdentification |
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | parent_meeting | 0..1 <br/> String | Identifiant de la séance liée qui regroupe la séance courante.  |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Type de point de l'ordre du jour, distinguant les points isolés des groupes de points.  |
 | agenda_item_number | 0..1 <br/> String | Numéro d'ordre du point de l'ordre du jour (type chaîne, afin de permettre les chiffres romains).  |
@@ -1379,18 +1379,18 @@ _Un point de l'ordre du jour d'une séance._
 | parent_agenda_item | 0..1 <br/> String | Au besoin, ce slot permet de construire une hiérarchie de points de l'ordre du jour.  |
 | has_resolution | 0..1 <br/> [Resolution](#Resolution) | La décision prise sur ce point de l'ordre du jour.  |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
-| date_begin_actual | 0..1 <br/> Date | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| datetime_begin_actual | 0..1 <br/> Datetime | La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| date_begin_planned | 0..1 <br/> Date | La date de début planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| datetime_begin_planned | 0..1 <br/> Datetime | La date et l'heure de début planifiées d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| date_end_actual | 0..1 <br/> Date | La date de fin effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| datetime_end_actual | 0..1 <br/> Datetime | La date et l'heure de fin effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| date_end_planned | 0..1 <br/> Date | La date de fin planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| datetime_end_planned | 0..1 <br/> Datetime | La date et l'heure de fin planifiées d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
+| date_begin_actual | 0..1 <br/> Date | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| datetime_begin_actual | 0..1 <br/> Datetime | La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| date_begin_planned | 0..1 <br/> Date | La date de début planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| datetime_begin_planned | 0..1 <br/> Datetime | La date et l'heure de début planifiées d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| date_end_actual | 0..1 <br/> Date | La date de fin effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| datetime_end_actual | 0..1 <br/> Datetime | La date et l'heure de fin effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| date_end_planned | 0..1 <br/> Date | La date de fin planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| datetime_end_planned | 0..1 <br/> Datetime | La date et l'heure de fin planifiées d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -1870,19 +1870,19 @@ _Le procès-verbal établi après la séance. Un conteneur qui regroupe les poin
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : HasIdentification |
-| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : HasIdentification |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : HasIdentification |
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | parent_meeting | 0..1 <br/> String | Identifiant de la séance liée qui regroupe la séance courante.  |
 | protocol_items | * <br/> [ProtocolItem](#ProtocolItem) | Points de l'ordre du jour tels qu'ils ont effectivement été consignés au procès-verbal.  |
 | votings | * <br/> [Voting](#Voting) | Ensemble des votes.  |
 | speeches | * <br/> [Speech](#Speech) | Ensemble des interventions.  |
 | text_segments | * <br/> [TextSegment](#TextSegment) | Ensemble de segments de texte (p. ex. procès-verbal in extenso).  |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
-| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
+| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -1938,9 +1938,9 @@ _Un point de l'ordre du jour tel qu'il a effectivement été consigné au procè
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : HasIdentification |
-| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : HasIdentification |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : HasIdentification |
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | parent_meeting | 0..1 <br/> String | Identifiant de la séance liée qui regroupe la séance courante. <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
 | agenda_item_type | 0..1 <br/> [AgendaItemTypeEnum](#AgendaItemTypeEnum) | Type de point de l'ordre du jour, distinguant les points isolés des groupes de points. <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
 | agenda_item_number | 0..1 <br/> String | Numéro d'ordre du point de l'ordre du jour (type chaîne, afin de permettre les chiffres romains). <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
@@ -1958,18 +1958,18 @@ _Un point de l'ordre du jour tel qu'il a effectivement été consigné au procè
 | parent_agenda_item | 0..1 <br/> String | Au besoin, ce slot permet de construire une hiérarchie de points de l'ordre du jour. <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
 | has_resolution | 0..1 <br/> [Resolution](#Resolution) | La décision prise sur ce point de l'ordre du jour. <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité. <br/><br/>Héritage : [AgendaItem](#AgendaItem) |
-| date_begin_actual | 0..1 <br/> Date | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| datetime_begin_actual | 0..1 <br/> Datetime | La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| date_begin_planned | 0..1 <br/> Date | La date de début planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| datetime_begin_planned | 0..1 <br/> Datetime | La date et l'heure de début planifiées d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| date_end_actual | 0..1 <br/> Date | La date de fin effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| datetime_end_actual | 0..1 <br/> Datetime | La date et l'heure de fin effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| date_end_planned | 0..1 <br/> Date | La date de fin planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| datetime_end_planned | 0..1 <br/> Datetime | La date et l'heure de fin planifiées d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : IsEventWithDuration |
-| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
+| date_begin_actual | 0..1 <br/> Date | La date de début effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| datetime_begin_actual | 0..1 <br/> Datetime | La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| date_begin_planned | 0..1 <br/> Date | La date de début planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| datetime_begin_planned | 0..1 <br/> Datetime | La date et l'heure de début planifiées d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| date_end_actual | 0..1 <br/> Date | La date de fin effective d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| datetime_end_actual | 0..1 <br/> Datetime | La date et l'heure de fin effectives d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| date_end_planned | 0..1 <br/> Date | La date de fin planifiée d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| datetime_end_planned | 0..1 <br/> Datetime | La date et l'heure de fin planifiées d'un événement ou d'une occurrence avec durée. <br/><br/>Héritage : [IsEventWithDuration](#IsEventWithDuration) |
+| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -2377,9 +2377,9 @@ _Une proposition formelle déposée au cours des délibérations._
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : HasIdentification |
-| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : HasIdentification |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : HasIdentification |
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | title | 0..1 <br/> String | Titre de l'élément.  |
 | description | 0..1 <br/> String | Texte descriptif de l'élément.  |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
@@ -2656,9 +2656,9 @@ _Une procédure de vote avec les voix individuelles et les résultats._
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : HasIdentification |
-| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : HasIdentification |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : HasIdentification |
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | datetime_begin | 0..1 <br/> Datetime | La date et l'heure auxquelles la séance ou le vote commence.  |
 | datetime_end | 0..1 <br/> Datetime | La date et l'heure auxquelles la séance ou le vote se termine.  |
 | voting_type | 0..1 <br/> [VotingTypeEnum](#VotingTypeEnum) | Type de procédure de vote (vote intermédiaire, vote final, vote secret, etc.).  |
@@ -2682,12 +2682,12 @@ _Une procédure de vote avec les voix individuelles et les résultats._
 | parent_meeting | 0..1 <br/> String | Identifiant de la séance liée qui regroupe la séance courante.  |
 | parent_agenda_item | 0..1 <br/> String | Au besoin, ce slot permet de construire une hiérarchie de points de l'ordre du jour.  |
 | affair_id | 0..1 <br/> String | Le lien vers les affaires rattachées au point de l'ordre du jour.  |
-| actor_id | 0..1 <br/> GroupReference | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
-| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
+| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -3061,19 +3061,19 @@ _Une voix individuelle exprimée par un membre lors d'une procédure de vote._
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : HasIdentification |
-| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : HasIdentification |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : HasIdentification |
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | parent_voting | 0..1 <br/> [Voting](#Voting) | L'identifiant du vote auquel se rattache la voix individuelle.  |
-| actor_id | 0..1 <br/> PersonReference | Référence à la personne agissante (instantané au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Référence à la personne agissante (instantané au moment de la mise en relation).  |
 | seat_nr | 0..1 <br/> String | Le numéro de siège correspondant à la voix individuelle, le cas échéant.  |
 | weight | 0..1 <br/> Integer | Le nombre de voix dont dispose la personne, le cas échéant (p. ex. lorsqu'une personne détient plusieurs voix).  |
 | individual_vote_type | 0..1 <br/> [IndividualVoteTypeEnum](#IndividualVoteTypeEnum) | Type de voix exprimée (oui, non, abstention, n'a pas voté, etc.).  |
 | type_label | 0..1 <br/> String | Libellé de type personnalisé lorsque les valeurs de type standard ne s'appliquent pas.  |
-| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
+| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -3524,9 +3524,9 @@ _Une procédure d'élection visant à pourvoir des fonctions par des personnes._
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : HasIdentification |
-| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : HasIdentification |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : HasIdentification |
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | datetime_begin | 0..1 <br/> Datetime | La date et l'heure auxquelles la séance ou le vote commence.  |
 | datetime_end | 0..1 <br/> Datetime | La date et l'heure auxquelles la séance ou le vote se termine.  |
 | election_type | 0..1 <br/> [ElectionTypeEnum](#ElectionTypeEnum) | Type de procédure d'élection.  |
@@ -3541,12 +3541,12 @@ _Une procédure d'élection visant à pourvoir des fonctions par des personnes._
 | parent_meeting | 0..1 <br/> String | Identifiant de la séance liée qui regroupe la séance courante.  |
 | parent_agenda_item | 0..1 <br/> String | Au besoin, ce slot permet de construire une hiérarchie de points de l'ordre du jour.  |
 | affair_id | 0..1 <br/> String | Le lien vers les affaires rattachées au point de l'ordre du jour.  |
-| actor_id | 0..1 <br/> GroupReference | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [GroupReference](#GroupReference) | Référence à l'organe agissant (instantané au moment de la mise en relation).  |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
-| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
+| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -3777,15 +3777,15 @@ _Une intervention prononcée au cours d'une séance (également appelée prise d
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : HasIdentification |
-| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : HasIdentification |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : HasIdentification |
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | language | 0..1 <br/> String | Code de langue au format ISO 639-1 (deux lettres minuscules, par ex. « de », « fr », « it », « en »).  |
 | start | 0..1 <br/> String | Indication de début ou position.  |
 | datetime_begin | 0..1 <br/> Datetime | La date et l'heure auxquelles la séance ou le vote commence.  |
 | datetime_end | 0..1 <br/> Datetime | La date et l'heure auxquelles la séance ou le vote se termine.  |
 | actor_fullname | 0..1 <br/> String | Nom complet de l'actrice ou de l'acteur, respectivement de la personne.  |
-| actor_id | 0..1 <br/> PersonReference | Référence à la personne agissante (instantané au moment de la mise en relation).  |
+| actor_id | 0..1 <br/> [PersonReference](#PersonReference) | Référence à la personne agissante (instantané au moment de la mise en relation).  |
 | role | 0..1 <br/> String | Rôle de la personne (p. ex. rapporteuse ou rapporteur de commission).  |
 | text | 1 <br/> String | Contenu textuel de l'élément.  |
 | text_format | 0..1 <br/> String | Format du texte (text, html, html_with_timestamps).  |
@@ -3795,10 +3795,10 @@ _Une intervention prononcée au cours d'une séance (également appelée prise d
 | media_type | 0..1 <br/> String | Type de média (audio, vidéo, document).  |
 | media_format | 0..1 <br/> String | Type MIME du fichier média.  |
 | documents | * <br/> Work | Liste des documents (FRBR Works) liés à l'entité.  |
-| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : HasCreationModificationDates |
-| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
-| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : HasCreationModificationDates |
+| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
+| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois. <br/><br/>Héritage : [HasCreationModificationDates](#HasCreationModificationDates) |
 
 
 
@@ -3962,9 +3962,9 @@ _Un segment de texte tel qu'un renvoi ou un intertitre dans un procès-verbal de
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : HasIdentification |
-| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : HasIdentification |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : HasIdentification |
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | text | 1 <br/> String | Contenu textuel de l'élément.  |
 
 
@@ -4016,9 +4016,9 @@ _Fichiers médias ou documents (y compris les procès-verbaux en PDF/HTML/WORD o
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : HasIdentification |
-| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : HasIdentification |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : HasIdentification |
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | title | 0..1 <br/> String | Titre de l'élément.  |
 | media_type | 0..1 <br/> String | Type de média (audio, vidéo, document).  |
 | url | * <br/> [MultilingualString](#MultilingualString) | Page d'accueil ou adresse web complémentaire, multilingue.  |
@@ -4132,9 +4132,9 @@ _Conteneur pour les données de l'activité publique des conseils : législature
 
 | Nom | Cardinalité et plage | Description |
 |------------------------|----------------------|------------------------------------------------------|
-| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : HasIdentification |
-| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : HasIdentification |
-| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : HasIdentification |
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : [HasIdentification](#HasIdentification) |
 | legislatures | * <br/> [Legislature](#Legislature) | Ensemble des législatures.  |
 | sessions | * <br/> [Session](#Session) | Ensemble des sessions.  |
 | meetings | * <br/> [Meeting](#Meeting) | Ensemble des séances.  |
@@ -4965,4 +4965,355 @@ sessions:
 
 
 </div>
+
+\newpage
+
+# Éléments partagés
+
+## Classes de référence
+
+`PersonReference` et `GroupReference` désignent respectivement une personne et un groupe sans les décrire ici : ce qu'est une personne ou un organe est défini par eCH-0294 ; le fonctionnement des conseils ne fait qu'y renvoyer. Outre le renvoi, la référence retient les principales caractéristiques **au moment de la mise en relation** — pour une intervention, par exemple, le groupe parlementaire auquel la personne appartenait alors.
+
+Cela sert trois objectifs :
+
+- **Des données locales utiles** sans interrogation coûteuse de l'entité complète
+- **Pas de redondance**, puisque toutes les indications ne doivent pas être répétées à chaque mention
+- **Un versionnage implicite**, la référence restant inchangée même si la personne ou le groupe lié évolue par la suite
+
+Contrairement à une entité, une référence n'est pas identifiée en propre — elle ne fait que désigner une entité identifiée. C'est pourquoi la `global_uri` n'y est pas obligatoire : il est seulement exigé qu'au moins l'une des deux indications `local_id` ou `global_uri` soit renseignée. Un système qui ne connaît de l'entité référencée que l'identifiant local indique celui-ci ; il est résolu au sein de la même livraison. Au-delà de la livraison, c'est la `global_uri` qui renvoie.
+
+
+
+## Classe: PersonReference []{#PersonReference}
+
+
+_Référence abrégée à une personne avec les principales données d'identification au moment de la liaison. Préserve l'exactitude historique même si la personne change ultérieurement. La personne référencée est désignée par `local_id` ou `global_uri` ; au moins l'un des deux est requis._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+### Attributs
+
+| Nom | Cardinalité et plage | Description |
+|------------------------|----------------------|------------------------------------------------------|
+| local_id | 0..1 <br/> String | Identifiant local de l'entité référencée. Il est résolu au sein de la même livraison. <br/><br/>Héritage : HasReferenceIdentification |
+| global_uri | 0..1 <br/> Uriorcurie | L'URI unique et globalement valide de l'entité référencée. Contrairement à un local_id, elle est également résoluble au-delà de la livraison. <br/><br/>Héritage : HasReferenceIdentification |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, p. ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : HasReferenceIdentification |
+| label | 1 <br/> String | Nom d'affichage court obligatoire permettant d'identifier la personne au sein de l'organisation (par ex. avec l'ajout de l'année de naissance afin de distinguer les personnes portant le même nom).  |
+| label_long | 0..1 <br/> String | Nom d'affichage long facultatif comprenant les titres académiques et le nom officiel complet (par ex. « Dr. Maria Muster-Beispiel »).  |
+| group_label | 0..1 <br/> String | Nom de l'organe/du groupe au moment de la liaison.  |
+
+##### Contraintes
+
+
+Au moins l'un des champs suivants doit être renseigné :
+
+- local_id
+- global_uri
+
+
+
+
+
+
+
+
+
+
+### Utilisations
+
+| Utilisé par | Dans le slot | Rôle | Élément |
+| ---  | --- | --- | --- |
+| [IndividualVote](#IndividualVote) | actor_id | range | [PersonReference](#PersonReference) |
+| [IndividualAttendance](#IndividualAttendance) | actor_id | range | [PersonReference](#PersonReference) |
+| [Speech](#Speech) | actor_id | range | [PersonReference](#PersonReference) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+## Classe: GroupReference []{#GroupReference}
+
+
+_Référence abrégée à un groupe avec les principales données d'identification au moment de la liaison. Le groupe référencé est désigné par `local_id` ou `global_uri` ; au moins l'un des deux est requis. Un `local_id` est résolu au sein de la même livraison, un `global_uri` également au-delà._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+### Attributs
+
+| Nom | Cardinalité et plage | Description |
+|------------------------|----------------------|------------------------------------------------------|
+| local_id | 0..1 <br/> String | Identifiant local de l'entité référencée. Il est résolu au sein de la même livraison. <br/><br/>Héritage : HasReferenceIdentification |
+| global_uri | 0..1 <br/> Uriorcurie | L'URI unique et globalement valide de l'entité référencée. Contrairement à un local_id, elle est également résoluble au-delà de la livraison. <br/><br/>Héritage : HasReferenceIdentification |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, p. ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans. <br/><br/>Héritage : HasReferenceIdentification |
+| label | 0..1 <br/> String | Attribuer un label à une information structurée (par ex. nom d'affichage, poste, etc.).  |
+| abbreviation | * <br/> MultilingualValue | Abréviation (peut être multilingue).  |
+
+##### Contraintes
+
+
+Au moins l'un des champs suivants doit être renseigné :
+
+- local_id
+- global_uri
+
+
+
+
+
+
+
+
+
+
+### Utilisations
+
+| Utilisé par | Dans le slot | Rôle | Élément |
+| ---  | --- | --- | --- |
+| [Legislature](#Legislature) | actor_id | range | [GroupReference](#GroupReference) |
+| [Meeting](#Meeting) | group_id | range | [GroupReference](#GroupReference) |
+| [Meeting](#Meeting) | actor_id | range | [GroupReference](#GroupReference) |
+| [Voting](#Voting) | actor_id | range | [GroupReference](#GroupReference) |
+| [Election](#Election) | actor_id | range | [GroupReference](#GroupReference) |
+| [Attendance](#Attendance) | actor_id | range | [GroupReference](#GroupReference) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+## Classes mixin
+
+Trois classes ne portent pas de données propres : elles regroupent des slots qui se présentent de la même manière dans de nombreuses classes — l'identification d'une entité, ses dates de création et de modification ainsi que le déroulement temporel d'un événement, avec un début et une fin planifiés et effectifs. Elles proviennent du schéma commun du groupe spécialisé (eCH-0292) et sont intégrées par les normes de celui-ci, afin que les mêmes indications portent partout le même nom et fonctionnent de la même façon.
+
+Un mixin n'est pas une superclasse : aucune instance d'une classe mixin n'est créée et rien n'en apparaît dans les données. Les tableaux d'attributs des classes énumèrent donc individuellement les slots hérités et en signalent la provenance par la mention « Héritage » — les trois sections suivantes expliquent ce qui se cache derrière cette indication.
+
+
+
+## Classe: HasIdentification []{#HasIdentification}
+
+
+_Une classe mixin qui fournit des slots pour l'identification d'une entité. Elle est utilisée pour les entités identifiées en propre ; leur `global_uri` constitue l'identifiant et est donc obligatoire._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+### Attributs
+
+| Nom | Cardinalité et plage | Description |
+|------------------------|----------------------|------------------------------------------------------|
+| local_id | 0..1 <br/> String | Identifiant local. Par exemple, un UUID issu du système d'information du conseil.  |
+| global_uri | 1 <br/> Uriorcurie | Une URI unique et globalement valide pour l'entité.  |
+| wikidata_uri | 0..1 <br/> Uriorcurie | Une URI qui renvoie à une entité Wikidata, par ex. http://www.wikidata.org/entity/Q813067 pour Beat Jans.  |
+
+
+
+### Utilisation de mixin
+
+[Container](#Container), [Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem), [Protocol](#Protocol), [Voting](#Voting), [IndividualVote](#IndividualVote), [Election](#Election), [Attendance](#Attendance), [IndividualAttendance](#IndividualAttendance), [Speech](#Speech), [TextSegment](#TextSegment), [Motion](#Motion), [Media](#Media)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+## Classe: HasCreationModificationDates []{#HasCreationModificationDates}
+
+
+_Une classe mixin qui fournit des slots pour modéliser les dates de création et de modification d'une entité._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+### Attributs
+
+| Nom | Cardinalité et plage | Description |
+|------------------------|----------------------|------------------------------------------------------|
+| date_created | 0..1 <br/> Date | La date à laquelle une entité a été créée.  |
+| datetime_created | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été créée.  |
+| date_modified | 0..1 <br/> Date | La date à laquelle une entité a été modifiée pour la dernière fois.  |
+| datetime_modified | 0..1 <br/> Datetime | La date et l'heure auxquelles une entité a été modifiée pour la dernière fois.  |
+
+
+
+### Utilisation de mixin
+
+[Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem), [Protocol](#Protocol), [Voting](#Voting), [IndividualVote](#IndividualVote), [Election](#Election), [Attendance](#Attendance), [IndividualAttendance](#IndividualAttendance), [Speech](#Speech)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+## Classe: IsEventWithDuration []{#IsEventWithDuration}
+
+
+_Une classe mixin qui fournit des slots pour modéliser des événements ou occurrences avec une durée._
+
+
+
+
+<div data-search-exclude markdown="1">
+
+
+
+
+### Attributs
+
+| Nom | Cardinalité et plage | Description |
+|------------------------|----------------------|------------------------------------------------------|
+| date_begin_actual | 0..1 <br/> Date | La date de début effective d'un événement ou d'une occurrence avec durée.  |
+| datetime_begin_actual | 0..1 <br/> Datetime | La date et l'heure de début effectives d'un événement ou d'une occurrence avec durée.  |
+| date_begin_planned | 0..1 <br/> Date | La date de début planifiée d'un événement ou d'une occurrence avec durée.  |
+| datetime_begin_planned | 0..1 <br/> Datetime | La date et l'heure de début planifiées d'un événement ou d'une occurrence avec durée.  |
+| date_end_actual | 0..1 <br/> Date | La date de fin effective d'un événement ou d'une occurrence avec durée.  |
+| datetime_end_actual | 0..1 <br/> Datetime | La date et l'heure de fin effectives d'un événement ou d'une occurrence avec durée.  |
+| date_end_planned | 0..1 <br/> Date | La date de fin planifiée d'un événement ou d'une occurrence avec durée.  |
+| datetime_end_planned | 0..1 <br/> Datetime | La date et l'heure de fin planifiées d'un événement ou d'une occurrence avec durée.  |
+
+
+
+### Utilisation de mixin
+
+[Legislature](#Legislature), [Session](#Session), [Meeting](#Meeting), [AgendaItem](#AgendaItem)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+\newpage
+
+# Annexe A – Références et bibliographie
+
+Lorsqu'une version est indiquée, il s'agit de celle sur la base de laquelle la présente norme a été élaborée.
+
+## Normes du groupe spécialisé « Affaires politiques »
+
+Les normes du groupe spécialisé sont élaborées conjointement et se renvoient les unes aux autres. Elles portent actuellement toutes le statut « In Arbeit » (en cours d'élaboration ; état au 10 août 2026) ; aucune version n'est donc indiquée.
+
+| | |
+|------------------|----------------------------------------------------------------------------------|
+|eCH-0292|eCH-0292 : Métaprocessus relatifs aux affaires politiques – éléments de données communs, dont la présente norme tire les classes de référence et les mixins : [https://www.ech.ch/de/ech/ech-0292](https://www.ech.ch/de/ech/ech-0292)|
+|eCH-0294|eCH-0294 : Acteurs politiques – définit les personnes et les groupes auxquels renvoient `PersonReference` et `GroupReference` : [https://www.ech.ch/de/ech/ech-0294](https://www.ech.ch/de/ech/ech-0294)|
+|eCH-0295|eCH-0295 : Affaires parlementaires – les affaires traitées dans les points de l'ordre du jour, les votes et les interventions : [https://www.ech.ch/de/ech/ech-0295](https://www.ech.ch/de/ech/ech-0295)|
+|eCH-0296|eCH-0296 : Actes législatifs et textes de loi : [https://www.ech.ch/de/ech/ech-0296](https://www.ech.ch/de/ech/ech-0296)|
+|eCH-0297|eCH-0297 : Consultations publiques : [https://www.ech.ch/de/ech/ech-0297](https://www.ech.ch/de/ech/ech-0297)|
+
+## Listes de codes et autres sources
+
+| | |
+|------------------|----------------------------------------------------------------------------------|
+|ISO 639-1|ISO (International Organization for Standardization). Codes de langue, utilisés dans le slot `language` de `MultilingualString`.|
+|Dublin Core|DCMI Metadata Terms. Source de plusieurs attributions de `slot_uri` (préfixe `dcterms`) : [https://www.dublincore.org/specifications/dublin-core/dcmi-terms/](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/)|
+|LinkML|Langage de modélisation dans lequel la présente norme est définie : [https://linkml.io](https://linkml.io)|
 
