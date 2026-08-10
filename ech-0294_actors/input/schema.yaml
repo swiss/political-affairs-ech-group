@@ -921,13 +921,12 @@ slots:
     slot_uri: act:interestType
     required: true
     description: |
-      Type of interest link (professional activity, political office, association).
+      Type of interest link, following the categories the disclosure registers maintain (professional activity, seat on a governing body, mandate for an interest group, public mandate, membership).
     annotations:
       description_de: |
-        Art der Interessenbindung (Berufliche Tätigkeit, Politische Ämter, Verein).
-
+        Art der Interessenbindung, den Kategorien der Offenlegungsregister folgend (berufliche Tätigkeit, Sitz in einem Führungsgremium, Mandat für eine Interessengruppe, Amt in der öffentlichen Hand, Mitgliedschaft).
       description_fr: |
-        Type de lien d'intérêts (activité professionnelle, mandat politique, association).
+        Type de lien d'intérêts, suivant les catégories tenues par les registres de publicité (activité professionnelle, siège dans un organe de direction, mandat pour un groupe d'intérêts, fonction dans la sphère publique, appartenance).
   organization_name:
     slot_uri: act:organizationName
     description: |

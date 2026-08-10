@@ -114,7 +114,7 @@ URI: {{ gen.uri_link(element) }}
 ### Attribute
 
 | Name | Kardinalität und Wertebereich | Beschreibung |
-| ---  | --- | --- |
+|------------------------|----------------------|------------------------------------------------------|
 {% set id_slots = ['local_id', 'global_uri', 'wikidata_uri'] %}
 {%- for slot in gen.get_direct_slots(element) if slot.name in id_slots -%}
 | {{ slot.name }} | {{ gen.cardinality(slot) }} <br/> {{ compute_range(slot) }} | {{ slot.description | replace('\r\n', ' ') | replace('\n', ' ') | replace('\r', ' ') }} |
