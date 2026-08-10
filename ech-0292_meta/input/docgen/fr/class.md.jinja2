@@ -190,17 +190,14 @@ Aucun des champs suivants ne doit être renseigné :
 {% if schemaview.is_mixin(element.name) %}
 ### Utilisation de mixin
 
-| mixed into | description |
-| --- | --- |
-{% for c in schemaview.class_children(element.name, is_a=False) -%}
-| {{ gen.link(c) }} | {{ schemaview.get_class(c).description|enshorten }} |
-{% endfor %}
+{{ gen.links(schemaview.class_children(element.name, is_a=False)) | join(', ') }}
+
 {% endif %}
 
 {% if schemaview.usage_index().get(element.name) %}
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 {% for usage in schemaview.usage_index().get(element.name) -%}
 | {{ gen.link(usage.used_by) }} | {{ gen.link(usage.slot) }} | {{ usage.metaslot }} | {{ gen.link(usage.used) }} |

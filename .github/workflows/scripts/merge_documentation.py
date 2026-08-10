@@ -30,10 +30,16 @@ def modify_header(content):
     # cross-reference in the document pointed nowhere.
     pattern = r"^(#{1,3} (?:Klasse|Classe|Class|Slot|Enum|Typ|Type)\s*:\s*(\w+))[ \t]*$"
 
-    # Function to replace the matched header with the modified header
+    # The anchor is an empty inline span, not a heading attribute. Pandoc turns
+    # a heading attribute into a `bookmarkStart` *before* the heading paragraph,
+    # and where the preceding element is a table -- which is the normal case
+    # here, since every element doc ends with one -- LibreOffice discards that
+    # bookmark when converting the DOCX to PDF. Every cross-reference into such
+    # a section then leads nowhere in the PDF, while it still works in Word. As
+    # an inline span the bookmark sits inside the heading paragraph and survives.
     def replace_header(match):
         name = match.group(2)
-        return f"{match.group(1)}{{#{name}}}"
+        return f"{match.group(1)} []{{#{name}}}"
 
     # Replace all headers in the content
     return re.sub(pattern, replace_header, content, flags=re.MULTILINE)
