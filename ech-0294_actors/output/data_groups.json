@@ -242,31 +242,6 @@
       "local_id": "7172"
     },
     {
-      "global_uri": "https://bs.die-mitte.ch/",
-      "group_type": {
-        "group_type_enum": "party",
-        "label": [
-          {
-            "value": "Partei",
-            "language": "de"
-          }
-        ]
-      },
-      "label": [
-        {
-          "value": "Die Mitte Basel-Stadt",
-          "language": "de"
-        }
-      ],
-      "parent_groups": [
-        {
-          "label": "Die Mitte Schweiz",
-          "global_uri": "https://www.die-mitte.ch/"
-        }
-      ],
-      "spatial": "https://ld.admin.ch/canton/12"
-    },
-    {
       "global_uri": "https://www.evp-bs.ch/",
       "group_type": {
         "group_type_enum": "party",

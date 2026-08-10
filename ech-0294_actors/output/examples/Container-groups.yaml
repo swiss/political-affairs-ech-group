@@ -177,26 +177,12 @@ groups:
         global_uri: https://www.regierungsrat.bs.ch/
         label: Regierungsrat Basel-Stadt
 
-  # Die beiden Kantonalparteien, deren Namen die weiter unten stehende Fraktion
-  # trägt. Ihr Verweis geht auf die jeweilige Bundespartei — jede föderale Ebene
+  # Eine der beiden Kantonalparteien, deren Namen die weiter unten stehende
+  # Fraktion trägt. Ihr Verweis geht auf die Bundespartei — jede föderale Ebene
   # ist eine eigene Gruppe, und hier liegt eine echte Über-/Unterordnung vor.
-  # Die Bundesparteien sind nicht mitgeliefert: Weil sie ausserhalb der
-  # Lieferung liegen, werden sie über `global_uri` benannt und nicht über eine
-  # `local_id`, die nur innerhalb der Lieferung auflösbar wäre.
-  - global_uri: https://bs.die-mitte.ch/
-    label:
-      - value: Die Mitte Basel-Stadt
-        language: de
-    group_type:
-      group_type_enum: party
-      label:
-        - value: Partei
-          language: de
-    spatial: https://ld.admin.ch/canton/12
-    parent_groups:
-      - global_uri: https://www.die-mitte.ch/
-        label: Die Mitte Schweiz
-
+  # Die Bundespartei ist nicht mitgeliefert: Weil sie ausserhalb der Lieferung
+  # liegt, wird sie über `global_uri` benannt und nicht über eine `local_id`,
+  # die nur innerhalb der Lieferung auflösbar wäre.
   - global_uri: https://www.evp-bs.ch/
     label:
       - value: Evangelische Volkspartei Basel-Stadt

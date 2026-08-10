@@ -324,24 +324,6 @@ groups:
   spatial: https://ld.admin.ch/canton/12
 
 ```
-#### Exemple : Cantonal party as its own group at its federal level
-
-```yaml
-global_uri: https://bs.die-mitte.ch/
-label:
-- value: Die Mitte Basel-Stadt
-  language: de
-group_type:
-  group_type_enum: party
-  label:
-  - value: Partei
-    language: de
-spatial: https://ld.admin.ch/canton/12
-parent_groups:
-- global_uri: https://www.die-mitte.ch/
-  label: Die Mitte Schweiz
-
-```
 #### Exemple : Interest group with a trilingual name and contact
 
 ```yaml

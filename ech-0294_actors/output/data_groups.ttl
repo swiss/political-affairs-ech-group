@@ -5,7 +5,6 @@
 
 act:groups_example a act:Container ;
     act:group <https://ar.ch/kantonsrat/kommissionen/staendige-kommissionen-des-kantonsrates/geschaeftspruefungskommission/>,
-        <https://bs.die-mitte.ch/>,
         <https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp>,
         <https://grosserrat.bs.ch/gremien/praesidium-und-buero>,
         <https://www.ar.ch/kantonsrat/>,
@@ -37,20 +36,6 @@ act:groups_example a act:Container ;
             mcm:label "Kantonsrat Appenzell Ausserrhoden" ;
             mcm:localId "34" ] ;
     act:spatial "https://ld.admin.ch/canton/15" .
-
-<https://bs.die-mitte.ch/> a act:Group ;
-    mcm:label [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Die Mitte Basel-Stadt" ] ;
-    act:groupType [ a act:GroupType ;
-            mcm:label [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "Partei" ] ;
-            act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/party> ] ;
-    act:parentGroup [ a mcm:GroupReference ;
-            mcm:globalURI <https://www.die-mitte.ch/> ;
-            mcm:label "Die Mitte Schweiz" ] ;
-    act:spatial "https://ld.admin.ch/canton/12" .
 
 <https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp> a act:Group ;
     mcm:label [ a mcm:MultilingualValue ;
@@ -139,14 +124,14 @@ act:groups_example a act:Container ;
 <https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz> a act:Group ;
     schema1:validFrom "2012-01-01"^^xsd:date ;
     mcm:label [ a mcm:MultilingualValue ;
-            mcm:language "it" ;
-            mcm:value "Informazione e tutela dei consumatori" ],
+            mcm:language "de" ;
+            mcm:value "Konsumenteninformation und -schutz" ],
         [ a mcm:MultilingualValue ;
             mcm:language "fr" ;
             mcm:value "Information et défense des consommateurs" ],
         [ a mcm:MultilingualValue ;
-            mcm:language "de" ;
-            mcm:value "Konsumenteninformation und -schutz" ] ;
+            mcm:language "it" ;
+            mcm:value "Informazione e tutela dei consumatori" ] ;
     mcm:localId "6627" ;
     act:address [ a act:Address ;
             act:addressType "businessAddress" ;
@@ -168,11 +153,11 @@ act:groups_example a act:Container ;
             mcm:value "L'intergroupe parlementaire « Information et défense des consommateurs » réunit toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s en Suisse." ] ;
     act:groupType [ a act:GroupType ;
             mcm:label [ a mcm:MultilingualValue ;
-                    mcm:language "it" ;
-                    mcm:value "Gruppo d'interesse" ],
-                [ a mcm:MultilingualValue ;
                     mcm:language "de" ;
                     mcm:value "Interessengruppe" ],
+                [ a mcm:MultilingualValue ;
+                    mcm:language "it" ;
+                    mcm:value "Gruppo d'interesse" ],
                 [ a mcm:MultilingualValue ;
                     mcm:language "fr" ;
                     mcm:value "Groupe d'intérêt" ] ;
@@ -196,10 +181,10 @@ act:groups_example a act:Container ;
 
 <https://www.weko.admin.ch/> a act:Group ;
     mcm:abbreviation [ a mcm:MultilingualValue ;
-            mcm:language "fr" ;
+            mcm:language "it" ;
             mcm:value "COMCO" ],
         [ a mcm:MultilingualValue ;
-            mcm:language "it" ;
+            mcm:language "fr" ;
             mcm:value "COMCO" ],
         [ a mcm:MultilingualValue ;
             mcm:language "de" ;
@@ -208,11 +193,11 @@ act:groups_example a act:Container ;
             mcm:language "de" ;
             mcm:value "Wettbewerbskommission" ],
         [ a mcm:MultilingualValue ;
-            mcm:language "it" ;
-            mcm:value "Commissione della concorrenza" ],
-        [ a mcm:MultilingualValue ;
             mcm:language "fr" ;
-            mcm:value "Commission de la concurrence" ] ;
+            mcm:value "Commission de la concurrence" ],
+        [ a mcm:MultilingualValue ;
+            mcm:language "it" ;
+            mcm:value "Commissione della concorrenza" ] ;
     act:groupType [ a act:GroupType ;
             mcm:label [ a mcm:MultilingualValue ;
                     mcm:language "de" ;
@@ -244,11 +229,11 @@ act:groups_example a act:Container ;
 <https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5> a act:Group ;
     schema1:validFrom "2007-12-12"^^xsd:date ;
     mcm:abbreviation [ a mcm:MultilingualValue ;
-            mcm:language "fr" ;
-            mcm:value "Del-DetPen" ],
-        [ a mcm:MultilingualValue ;
             mcm:language "de" ;
-            mcm:value "Del-StRFE" ] ;
+            mcm:value "Del-StRFE" ],
+        [ a mcm:MultilingualValue ;
+            mcm:language "fr" ;
+            mcm:value "Del-DetPen" ] ;
     mcm:label [ a mcm:MultilingualValue ;
             mcm:language "fr" ;
             mcm:value "Délégation FR à la CIP détention pénale" ],
