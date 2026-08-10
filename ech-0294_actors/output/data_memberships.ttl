@@ -5,6 +5,7 @@
 
 act:memberships_example a act:Container ;
     act:membership act:ms_jans_bundesrat,
+        act:ms_jans_ejpd,
         act:ms_jans_fraktion_sp_bs,
         act:ms_jans_grossrat_bs,
         act:ms_jans_nationalrat,
@@ -31,6 +32,22 @@ act:ms_jans_bundesrat a act:Membership ;
             mcm:localId "4032" ] ;
     act:roleType [ a act:RoleType ;
             act:roleTypeEnum "member" ] .
+
+act:ms_jans_ejpd a act:Membership ;
+    schema1:validFrom "2024-01-01"^^xsd:date ;
+    mcm:isCurrent true ;
+    act:groupReference [ a mcm:GroupReference ;
+            mcm:globalURI <https://www.ejpd.admin.ch/> ;
+            mcm:label "Eidgenössisches Justiz- und Polizeidepartement" ] ;
+    act:personReference [ a mcm:PersonReference ;
+            mcm:globalURI <https://www.admin.ch/de/beat-jans> ;
+            mcm:label "Beat Jans" ;
+            mcm:localId "4032" ] ;
+    act:roleType [ a act:RoleType ;
+            act:roleTypeEnum "other" ;
+            act:role_label [ a mcm:MultilingualValue ;
+                    mcm:language "de" ;
+                    mcm:value "Departementsvorsteher" ] ] .
 
 act:ms_jans_fraktion_sp_bs a act:Membership ;
     schema1:validFrom "2001-02-07"^^xsd:date ;

@@ -78,178 +78,189 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 #### Beispiel InterestLink: Own company run operationally
 
 ```yaml
-global_uri: act:il_burkart_001
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: Burkart Advisory GmbH, Baden
-legal_form: '0107'
-committee: Geschäftsleitung
-function_role: Geschäftsführer
-is_paid: true
+interest_links:
+- global_uri: act:il_burkart_001
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: professional_activity
+  organization_name: Burkart Advisory GmbH, Baden
+  legal_form: '0107'
+  committee: Geschäftsleitung
+  function_role: Geschäftsführer
+  is_paid: true
 
 ```
 #### Beispiel InterestLink: Unpaid presidency of a political alliance
 
 ```yaml
-global_uri: act:il_burkart_010
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: Allianz Sicherheit Schweiz, Baden
-legal_form: '0109'
-committee: Vorstand
-function_role: Präsident
-is_paid: false
+interest_links:
+- global_uri: act:il_burkart_010
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: association
+  organization_name: Allianz Sicherheit Schweiz, Baden
+  legal_form: '0109'
+  committee: Vorstand
+  function_role: Präsident
+  is_paid: false
 
 ```
 #### Beispiel InterestLink: Board mandate in a holding company
 
 ```yaml
-global_uri: act:il_burkart_002
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: Birchmeier Holding AG, Döttingen
-legal_form: '0106'
-committee: Verwaltungsrat
-function_role: Mitglied
-is_paid: true
+interest_links:
+- global_uri: act:il_burkart_002
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: professional_activity
+  organization_name: Birchmeier Holding AG, Döttingen
+  legal_form: '0106'
+  committee: Verwaltungsrat
+  function_role: Mitglied
+  is_paid: true
 
 ```
 #### Beispiel InterestLink: Board mandate in a real estate company
 
 ```yaml
-global_uri: act:il_burkart_003
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: Bovida Real Estate AG, Baar
-legal_form: '0106'
-committee: Verwaltungsrat
-function_role: Mitglied
-is_paid: true
+interest_links:
+- global_uri: act:il_burkart_003
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: professional_activity
+  organization_name: Bovida Real Estate AG, Baar
+  legal_form: '0106'
+  committee: Verwaltungsrat
+  function_role: Mitglied
+  is_paid: true
 
 ```
 #### Beispiel InterestLink: Membership in a sector association
 
 ```yaml
-global_uri: act:il_burkart_009
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: SUISSEDIGITAL Verband für Kommunikationsnetze
-legal_form: '0109'
-committee: Vorstand
-function_role: Mitglied
-is_paid: true
+interest_links:
+- global_uri: act:il_burkart_009
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: association
+  organization_name: SUISSEDIGITAL Verband für Kommunikationsnetze
+  legal_form: '0109'
+  committee: Vorstand
+  function_role: Mitglied
+  is_paid: true
 
 ```
 #### Beispiel InterestLink: Foundation board mandate with the organisations UID
 
 ```yaml
-global_uri: act:il_burkart_007
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-organization_uid: CHE109810537
-legal_form: '0110'
-committee: Stiftungsrat
-function_role: Vizepräsident
-is_paid: false
+interest_links:
+- global_uri: act:il_burkart_007
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: association
+  organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+  organization_uid: CHE109810537
+  legal_form: '0110'
+  committee: Stiftungsrat
+  function_role: Vizepräsident
+  is_paid: false
 
 ```
 #### Beispiel InterestLink: Advisory board mandate without a governing function
 
 ```yaml
-global_uri: act:il_burkart_008
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: Stiebel Eltron AG, Lupfig
-legal_form: '0106'
-committee: Beirat
-function_role: Beirat
-is_paid: true
+interest_links:
+- global_uri: act:il_burkart_008
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: professional_activity
+  organization_name: Stiebel Eltron AG, Lupfig
+  legal_form: '0106'
+  committee: Beirat
+  function_role: Beirat
+  is_paid: true
 
 ```
 #### Beispiel InterestLink: Voluntary involvement in the association carrying a major project
 
 ```yaml
-global_uri: act:il_burkart_011
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: Verein Landesausstellung Svizra27, Aarau
-legal_form: '0109'
-committee: Vorstand
-function_role: Mitglied
-is_paid: false
+interest_links:
+- global_uri: act:il_burkart_011
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: association
+  organization_name: Verein Landesausstellung Svizra27, Aarau
+  legal_form: '0109'
+  committee: Vorstand
+  function_role: Mitglied
+  is_paid: false
 
 ```
 #### Beispiel InterestLink: Presidency of a trade association
 
 ```yaml
-global_uri: act:il_burkart_005
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
-legal_form: '0109'
-committee: Zentralvorstand
-function_role: Präsident
-is_paid: true
+interest_links:
+- global_uri: act:il_burkart_005
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: association
+  organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+  legal_form: '0109'
+  committee: Zentralvorstand
+  function_role: Präsident
+  is_paid: true
 
 ```
 #### Beispiel InterestLink: Presidency of a national party
 
 ```yaml
-global_uri: act:il_burkart_006
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: FDP.Die Liberalen
-legal_form: '0109'
-committee: Vorstand
-function_role: Präsident
-is_paid: true
+interest_links:
+- global_uri: act:il_burkart_006
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: association
+  organization_name: FDP.Die Liberalen
+  legal_form: '0109'
+  committee: Vorstand
+  function_role: Präsident
+  is_paid: true
 
 ```
 #### Beispiel InterestLink: Board mandate in a technology company
 
 ```yaml
-global_uri: act:il_burkart_004
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: ELCA Group SA, Lausanne
-legal_form: '0106'
-committee: Verwaltungsrat
-function_role: Mitglied
-is_paid: true
+interest_links:
+- global_uri: act:il_burkart_004
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: professional_activity
+  organization_name: ELCA Group SA, Lausanne
+  legal_form: '0106'
+  committee: Verwaltungsrat
+  function_role: Mitglied
+  is_paid: true
 
 ```
 

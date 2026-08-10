@@ -68,21 +68,22 @@ _A political group, organization, or body (e.g., party, committee, parliament, d
 #### Example Group: Parliamentary group referencing the parliament it belongs to
 
 ```yaml
-local_id: 1266
-global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp
-label:
-- value: Die Mitte / Evangelische Volkspartei
-  language: de
-group_type:
-  group_type_enum: parliamentary_group
+groups:
+- local_id: 1266
+  global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp
   label:
-  - value: Fraktion
+  - value: Die Mitte / Evangelische Volkspartei
     language: de
-spatial: https://ld.admin.ch/canton/12
-parent_groups:
-- local_id: 33
-  global_uri: https://www.grosserrat.bs.ch/
-  label: Grosser Rat Basel-Stadt
+  group_type:
+    group_type_enum: parliamentary_group
+    label:
+    - value: Fraktion
+      language: de
+  spatial: https://ld.admin.ch/canton/12
+  parent_groups:
+  - local_id: 33
+    global_uri: https://www.grosserrat.bs.ch/
+    label: Grosser Rat Basel-Stadt
 
 ```
 #### Example Group: Committee referencing its cantonal council
@@ -158,137 +159,142 @@ groups:
 #### Example Group: Bilingual delegation to an intercantonal body
 
 ```yaml
-local_id: 5000
-global_uri: https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
-label:
-- value: Freiburger Delegation IPK strafrechtliche Einschliessung
-  language: de
-- value: Délégation FR à la CIP détention pénale
-  language: fr
-abbreviation:
-- value: Del-StRFE
-  language: de
-- value: Del-DetPen
-  language: fr
-description:
-- value: >-
-    Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht
-    aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg, Genf,
-    Jura, Neuenburg, Waadt und Wallis.
-  language: de
-- value: >-
-    La Commission interparlementaire de contrôle détention pénale est composée de
-    18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel,
-    Vaud et Valais.
-  language: fr
-landing_page:
-- value: https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
-  language: de
-- value: https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
-  language: fr
-group_type:
-  group_type_enum: delegation
+groups:
+- local_id: 5000
+  global_uri: https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
   label:
-  - value: Delegation
+  - value: Freiburger Delegation IPK strafrechtliche Einschliessung
     language: de
-  - value: Délégation
+  - value: Délégation FR à la CIP détention pénale
     language: fr
-spatial: https://ld.admin.ch/canton/10
-valid_from: 2007-12-12
+  abbreviation:
+  - value: Del-StRFE
+    language: de
+  - value: Del-DetPen
+    language: fr
+  description:
+  - value: >-
+      Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung
+      besteht aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg,
+      Genf, Jura, Neuenburg, Waadt und Wallis.
+    language: de
+  - value: >-
+      La Commission interparlementaire de contrôle détention pénale est composée de
+      18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel,
+      Vaud et Valais.
+    language: fr
+  landing_page:
+  - value: https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
+    language: de
+  - value: https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
+    language: fr
+  group_type:
+    group_type_enum: delegation
+    label:
+    - value: Delegation
+      language: de
+    - value: Délégation
+      language: fr
+  spatial: https://ld.admin.ch/canton/10
+  valid_from: 2007-12-12
 
 ```
 #### Example Group: Extra-parliamentary commission with decision-making powers
 
 ```yaml
-global_uri: https://www.weko.admin.ch/
-label:
-- value: Wettbewerbskommission
-  language: de
-- value: Commission de la concurrence
-  language: fr
-- value: Commissione della concorrenza
-  language: it
-abbreviation:
-- value: WEKO
-  language: de
-- value: COMCO
-  language: fr
-- value: COMCO
-  language: it
-landing_page:
-- value: https://www.weko.admin.ch/de
-  language: de
-- value: https://www.weko.admin.ch/fr
-  language: fr
-- value: https://www.weko.admin.ch/it
-  language: it
-group_type:
-  group_type_enum: committee_extraparliamentary
+groups:
+- global_uri: https://www.weko.admin.ch/
   label:
-  - value: Ausserparlamentarische Kommission
+  - value: Wettbewerbskommission
     language: de
-spatial: https://ld.admin.ch/country/CHE
+  - value: Commission de la concurrence
+    language: fr
+  - value: Commissione della concorrenza
+    language: it
+  abbreviation:
+  - value: WEKO
+    language: de
+  - value: COMCO
+    language: fr
+  - value: COMCO
+    language: it
+  landing_page:
+  - value: https://www.weko.admin.ch/de
+    language: de
+  - value: https://www.weko.admin.ch/fr
+    language: fr
+  - value: https://www.weko.admin.ch/it
+    language: it
+  group_type:
+    group_type_enum: committee_extraparliamentary
+    label:
+    - value: Ausserparlamentarische Kommission
+      language: de
+  spatial: https://ld.admin.ch/country/CHE
 
 ```
 #### Example Group: Cantonal party referencing its national party
 
 ```yaml
-global_uri: https://www.evp-bs.ch/
-label:
-- value: Evangelische Volkspartei Basel-Stadt
-  language: de
-abbreviation:
-- value: EVP BS
-  language: de
-group_type:
-  group_type_enum: party
+groups:
+- global_uri: https://www.evp-bs.ch/
   label:
-  - value: Partei
+  - value: Evangelische Volkspartei Basel-Stadt
     language: de
-spatial: https://ld.admin.ch/canton/12
-parent_groups:
-- global_uri: https://www.evppev.ch/
-  label: Evangelische Volkspartei der Schweiz
   abbreviation:
-  - value: EVP
+  - value: EVP BS
     language: de
+  group_type:
+    group_type_enum: party
+    label:
+    - value: Partei
+      language: de
+  spatial: https://ld.admin.ch/canton/12
+  parent_groups:
+  - global_uri: https://www.evppev.ch/
+    label: Evangelische Volkspartei der Schweiz
+    abbreviation:
+    - value: EVP
+      language: de
 
 ```
 #### Example Group: Municipal parliament with spatial reference
 
 ```yaml
-local_id: 700
-global_uri: >-
-  https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
-label:
-- value: Stadtparlament St. Gallen
-  language: de
-group_type:
-  group_type_enum: council_legislative
+groups:
+- local_id: 700
+  global_uri: >-
+    https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
   label:
-  - value: Parlament (Legislativrat)
+  - value: Stadtparlament St. Gallen
     language: de
-spatial: https://ld.admin.ch/municipality/3203
+  group_type:
+    group_type_enum: council_legislative
+    label:
+    - value: Parlament (Legislativrat)
+      language: de
+  spatial: https://ld.admin.ch/municipality/3203
 
 ```
 #### Example Group: Association with UID and legal form from the commercial register
 
 ```yaml
-global_uri: https://www.frc.ch/
-organization_uid: CHE106063525
-legal_form: '0109'
-label:
-- value: Fédération romande des consommateurs
-  language: fr
-abbreviation:
-- value: FRC
-  language: fr
-group_type:
-  group_type_enum: association
+groups:
+- global_uri: https://www.frc.ch/
+  organization_uid: CHE106063525
+  legal_form: '0109'
   label:
-  - value: Verein
-    language: de
-spatial: https://ld.admin.ch/canton/22
+  - value: Fédération romande des consommateurs
+    language: fr
+  abbreviation:
+  - value: FRC
+    language: fr
+  group_type:
+    group_type_enum: association
+    label:
+    - value: Verein
+      language: de
+  spatial: https://ld.admin.ch/canton/22
 
 ```
 #### Example Group: Council bureau referencing its parliament
@@ -327,51 +333,52 @@ groups:
 #### Example Group: Interest group with a trilingual name and contact
 
 ```yaml
-local_id: 6627
-global_uri: https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz
-label:
-- value: Konsumenteninformation und -schutz
-  language: de
-- value: Information et défense des consommateurs
-  language: fr
-- value: Informazione e tutela dei consumatori
-  language: it
-description:
-- value: >-
-    L'intergroupe parlementaire « Information et défense des consommateurs » réunit
-    toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer
-    et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s
-    en Suisse.
-  language: fr
-landing_page:
-- value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
-  language: de
-contacts:
-- contact_type: email
-  value: l.altwegg@frc.ch
-  label: Sekretariat
-- contact_type: phone
-  value: +41 21 331 00 95
-  label: Sekretariat
-addresses:
-- address_type: businessAddress
-  address_uri: https://geo.ld.admin.ch/location/address/101009806
-  street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
-    585
-  postal_code: '1001'
-  postal_locality: Lausanne
-  country: CH
-group_type:
-  group_type_enum: interest_group
+groups:
+- local_id: 6627
+  global_uri: https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz
   label:
-  - value: Interessengruppe
+  - value: Konsumenteninformation und -schutz
     language: de
-  - value: Groupe d'intérêt
+  - value: Information et défense des consommateurs
     language: fr
-  - value: Gruppo d'interesse
+  - value: Informazione e tutela dei consumatori
     language: it
-spatial: https://ld.admin.ch/country/CHE
-valid_from: 2012-01-01
+  description:
+  - value: >-
+      L'intergroupe parlementaire « Information et défense des consommateurs » réunit
+      toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer
+      et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s
+      en Suisse.
+    language: fr
+  landing_page:
+  - value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
+    language: de
+  contacts:
+  - contact_type: email
+    value: l.altwegg@frc.ch
+    label: Sekretariat
+  - contact_type: phone
+    value: +41 21 331 00 95
+    label: Sekretariat
+  addresses:
+  - address_type: businessAddress
+    address_uri: https://geo.ld.admin.ch/location/address/101009806
+    street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
+      585
+    postal_code: '1001'
+    postal_locality: Lausanne
+    country: CH
+  group_type:
+    group_type_enum: interest_group
+    label:
+    - value: Interessengruppe
+      language: de
+    - value: Groupe d'intérêt
+      language: fr
+    - value: Gruppo d'interesse
+      language: it
+  spatial: https://ld.admin.ch/country/CHE
+  valid_from: 2012-01-01
 
 ```
 

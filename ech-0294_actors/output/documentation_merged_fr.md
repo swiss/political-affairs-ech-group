@@ -177,128 +177,134 @@ _Une personne avec des identifiants, des noms, des adresses, des nationalités e
 #### Exemple Person : Variante de nom à côté du double nom officiel
 
 ```yaml
-local_id: 280958
-global_uri: https://parlament.winterthur.ch/behoerdenmitglieder/280958
-label: Cristina Bozzi-Brunel
-names:
-- name_type: PersonFirstName
-  value: Cristina
-- name_type: PersonOfficialName
-  value: Bozzi-Brunel
-- name_type: PersonOriginalName
-  value: Brunel
+persons:
+- local_id: 280958
+  global_uri: https://parlament.winterthur.ch/behoerdenmitglieder/280958
+  label: Cristina Bozzi-Brunel
+  names:
+  - name_type: PersonFirstName
+    value: Cristina
+  - name_type: PersonOfficialName
+    value: Bozzi-Brunel
+  - name_type: PersonOriginalName
+    value: Brunel
 
 ```
 #### Exemple Person : Prénom usuel différent du prénom officiel
 
 ```yaml
-local_id: 1269
-global_uri: >-
-  https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
-label: Gerri Beretta-Piccoli
-names:
-- name_type: PersonFirstName
-  value: Fausto
-- name_type: PersonCallFirstName
-  value: Gerri
-- name_type: PersonOfficialName
-  value: Beretta-Piccoli
+persons:
+- local_id: 1269
+  global_uri: >-
+    https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1269
+  label: Gerri Beretta-Piccoli
+  names:
+  - name_type: PersonFirstName
+    value: Fausto
+  - name_type: PersonCallFirstName
+    value: Gerri
+  - name_type: PersonOfficialName
+    value: Beretta-Piccoli
 
 ```
 #### Exemple Person : Indication de sexe non binaire avec profession et formation
 
 ```yaml
-local_id: 72c7232be92944e3876f3b6723824ff9
-global_uri: >-
-  https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9
-label: Sofia Fisch
-birth_year: 1996
-names:
-- name_type: PersonFirstName
-  value: Sofia
-- name_type: PersonOfficialName
-  value: Fisch
-genders:
-- gender_code: non_binary
-  label: divers
-occupations:
-- label: Jurist*in
-  is_active: true
-trainings:
-- training_type: '3223'
-  value: MLaw
+persons:
+- local_id: 72c7232be92944e3876f3b6723824ff9
+  global_uri: >-
+    https://stadtrat.bern.ch/de/mitglieder/detail.php?gid=72c7232be92944e3876f3b6723824ff9
+  label: Sofia Fisch
+  birth_year: 1996
+  names:
+  - name_type: PersonFirstName
+    value: Sofia
+  - name_type: PersonOfficialName
+    value: Fisch
+  genders:
+  - gender_code: non_binary
+    label: divers
+  occupations:
+  - label: Jurist*in
+    is_active: true
+  trainings:
+  - training_type: '3223'
+    value: MLaw
 
 ```
 #### Exemple Person : Distinguer des personnes homonymes par le label
 
 ```yaml
-local_id: 6447
-global_uri: https://www.ur.ch/behoerdenmitglieder/6447
-label: Alois Arnold (1981)
-birth_year: 1981
-names:
-- name_type: PersonFirstName
-  value: Alois
-- name_type: PersonOfficialName
-  value: Arnold
+persons:
+- local_id: 6447
+  global_uri: https://www.ur.ch/behoerdenmitglieder/6447
+  label: Alois Arnold (1981)
+  birth_year: 1981
+  names:
+  - name_type: PersonFirstName
+    value: Alois
+  - name_type: PersonOfficialName
+    value: Arnold
 
 ```
 #### Exemple Person : Personne saisie de manière complète
 
 ```yaml
-local_id: 4032
-global_uri: https://www.admin.ch/de/beat-jans
-wikidata_uri: http://www.wikidata.org/entity/Q813067
-label: Beat Jans
-label_long: Beat Jans, dipl. nat. ETH
-birth_year: 1964
-birth_date: 1964-07-12
-picture: https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg
-names:
-- name_type: PersonFirstName
-  value: Beat
-- name_type: PersonOfficialName
-  value: Jans
-  valid_from: 1964-07-12
-addresses:
-- address_type: businessAddress
-  postal_locality: Basel-Stadt
-language_proficiencies:
-- language: de
-  is_correspondence: true
-  is_native: true
-citizenships:
-- country: CH
-  valid_from: 1964-07-12
-genders:
-- gender_code: male
-  valid_from: 1964-07-12
-occupations:
-- label: Politiker
-  valid_from: 1964-01-01
-  is_active: true
-trainings:
-- training_type: '3223'
-  value: dipl. nat. ETH
-contacts:
-- contact_type: email
-  value: beat.jans@admin.ch
-- contact_type: contact_website
-  value: http://www.beat-jans.ch
+persons:
+- local_id: 4032
+  global_uri: https://www.admin.ch/de/beat-jans
+  wikidata_uri: http://www.wikidata.org/entity/Q813067
+  label: Beat Jans
+  label_long: Beat Jans, dipl. nat. ETH
+  birth_year: 1964
+  birth_date: 1964-07-12
+  picture: https://commons.wikimedia.org/wiki/File:Beat_Jans_(2026)_(cropped).jpg
+  names:
+  - name_type: PersonFirstName
+    value: Beat
+  - name_type: PersonOfficialName
+    value: Jans
+    valid_from: 1964-07-12
+  addresses:
+  - address_type: businessAddress
+    postal_locality: Basel-Stadt
+  language_proficiencies:
+  - language: de
+    is_correspondence: true
+    is_native: true
+  citizenships:
+  - country: CH
+    valid_from: 1964-07-12
+  genders:
+  - gender_code: male
+    valid_from: 1964-07-12
+  occupations:
+  - label: Politiker
+    valid_from: 1964-01-01
+    is_active: true
+  trainings:
+  - training_type: '3223'
+    value: dipl. nat. ETH
+  contacts:
+  - contact_type: email
+    value: beat.jans@admin.ch
+  - contact_type: contact_website
+    value: http://www.beat-jans.ch
 
 ```
 #### Exemple Person : Distinguer des personnes homonymes par le label (deuxième personne)
 
 ```yaml
-local_id: 6370
-global_uri: https://www.ur.ch/behoerdenmitglieder/6370
-label: Alois Arnold (1965)
-birth_year: 1965
-names:
-- name_type: PersonFirstName
-  value: Alois
-- name_type: PersonOfficialName
-  value: Arnold
+persons:
+- local_id: 6370
+  global_uri: https://www.ur.ch/behoerdenmitglieder/6370
+  label: Alois Arnold (1965)
+  birth_year: 1965
+  names:
+  - name_type: PersonFirstName
+    value: Alois
+  - name_type: PersonOfficialName
+    value: Arnold
 
 ```
 
@@ -674,16 +680,18 @@ Au moins l'un des champs suivants doit être renseigné :
 #### Exemple Occupation : swiss politicians Sofia Fisch Juristin
 
 ```yaml
-label: Jurist*in
-is_active: true
+occupations:
+- label: Jurist*in
+  is_active: true
 
 ```
 #### Exemple Occupation : swiss politicians Beat Jans Politiker
 
 ```yaml
-label: Politiker
-valid_from: 1964-01-01
-is_active: true
+occupations:
+- label: Politiker
+  valid_from: 1964-01-01
+  is_active: true
 
 ```
 
@@ -955,21 +963,22 @@ _Un groupe, une organisation ou une collectivité politique (p. ex. parti, commi
 #### Exemple Group : Groupe parlementaire renvoyant au parlement dont il relève
 
 ```yaml
-local_id: 1266
-global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp
-label:
-- value: Die Mitte / Evangelische Volkspartei
-  language: de
-group_type:
-  group_type_enum: parliamentary_group
+groups:
+- local_id: 1266
+  global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/mitte-evp
   label:
-  - value: Fraktion
+  - value: Die Mitte / Evangelische Volkspartei
     language: de
-spatial: https://ld.admin.ch/canton/12
-parent_groups:
-- local_id: 33
-  global_uri: https://www.grosserrat.bs.ch/
-  label: Grosser Rat Basel-Stadt
+  group_type:
+    group_type_enum: parliamentary_group
+    label:
+    - value: Fraktion
+      language: de
+  spatial: https://ld.admin.ch/canton/12
+  parent_groups:
+  - local_id: 33
+    global_uri: https://www.grosserrat.bs.ch/
+    label: Grosser Rat Basel-Stadt
 
 ```
 #### Exemple Group : Commission renvoyant à son conseil cantonal
@@ -1045,137 +1054,142 @@ groups:
 #### Exemple Group : Délégation bilingue auprès d'un organe intercantonal
 
 ```yaml
-local_id: 5000
-global_uri: https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
-label:
-- value: Freiburger Delegation IPK strafrechtliche Einschliessung
-  language: de
-- value: Délégation FR à la CIP détention pénale
-  language: fr
-abbreviation:
-- value: Del-StRFE
-  language: de
-- value: Del-DetPen
-  language: fr
-description:
-- value: >-
-    Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht
-    aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg, Genf,
-    Jura, Neuenburg, Waadt und Wallis.
-  language: de
-- value: >-
-    La Commission interparlementaire de contrôle détention pénale est composée de
-    18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel,
-    Vaud et Valais.
-  language: fr
-landing_page:
-- value: https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
-  language: de
-- value: https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
-  language: fr
-group_type:
-  group_type_enum: delegation
+groups:
+- local_id: 5000
+  global_uri: https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
   label:
-  - value: Delegation
+  - value: Freiburger Delegation IPK strafrechtliche Einschliessung
     language: de
-  - value: Délégation
+  - value: Délégation FR à la CIP détention pénale
     language: fr
-spatial: https://ld.admin.ch/canton/10
-valid_from: 2007-12-12
+  abbreviation:
+  - value: Del-StRFE
+    language: de
+  - value: Del-DetPen
+    language: fr
+  description:
+  - value: >-
+      Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung
+      besteht aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg,
+      Genf, Jura, Neuenburg, Waadt und Wallis.
+    language: de
+  - value: >-
+      La Commission interparlementaire de contrôle détention pénale est composée de
+      18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel,
+      Vaud et Valais.
+    language: fr
+  landing_page:
+  - value: https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
+    language: de
+  - value: https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
+    language: fr
+  group_type:
+    group_type_enum: delegation
+    label:
+    - value: Delegation
+      language: de
+    - value: Délégation
+      language: fr
+  spatial: https://ld.admin.ch/canton/10
+  valid_from: 2007-12-12
 
 ```
 #### Exemple Group : Commission extraparlementaire dotée du pouvoir de décision
 
 ```yaml
-global_uri: https://www.weko.admin.ch/
-label:
-- value: Wettbewerbskommission
-  language: de
-- value: Commission de la concurrence
-  language: fr
-- value: Commissione della concorrenza
-  language: it
-abbreviation:
-- value: WEKO
-  language: de
-- value: COMCO
-  language: fr
-- value: COMCO
-  language: it
-landing_page:
-- value: https://www.weko.admin.ch/de
-  language: de
-- value: https://www.weko.admin.ch/fr
-  language: fr
-- value: https://www.weko.admin.ch/it
-  language: it
-group_type:
-  group_type_enum: committee_extraparliamentary
+groups:
+- global_uri: https://www.weko.admin.ch/
   label:
-  - value: Ausserparlamentarische Kommission
+  - value: Wettbewerbskommission
     language: de
-spatial: https://ld.admin.ch/country/CHE
+  - value: Commission de la concurrence
+    language: fr
+  - value: Commissione della concorrenza
+    language: it
+  abbreviation:
+  - value: WEKO
+    language: de
+  - value: COMCO
+    language: fr
+  - value: COMCO
+    language: it
+  landing_page:
+  - value: https://www.weko.admin.ch/de
+    language: de
+  - value: https://www.weko.admin.ch/fr
+    language: fr
+  - value: https://www.weko.admin.ch/it
+    language: it
+  group_type:
+    group_type_enum: committee_extraparliamentary
+    label:
+    - value: Ausserparlamentarische Kommission
+      language: de
+  spatial: https://ld.admin.ch/country/CHE
 
 ```
 #### Exemple Group : Parti cantonal renvoyant au parti national
 
 ```yaml
-global_uri: https://www.evp-bs.ch/
-label:
-- value: Evangelische Volkspartei Basel-Stadt
-  language: de
-abbreviation:
-- value: EVP BS
-  language: de
-group_type:
-  group_type_enum: party
+groups:
+- global_uri: https://www.evp-bs.ch/
   label:
-  - value: Partei
+  - value: Evangelische Volkspartei Basel-Stadt
     language: de
-spatial: https://ld.admin.ch/canton/12
-parent_groups:
-- global_uri: https://www.evppev.ch/
-  label: Evangelische Volkspartei der Schweiz
   abbreviation:
-  - value: EVP
+  - value: EVP BS
     language: de
+  group_type:
+    group_type_enum: party
+    label:
+    - value: Partei
+      language: de
+  spatial: https://ld.admin.ch/canton/12
+  parent_groups:
+  - global_uri: https://www.evppev.ch/
+    label: Evangelische Volkspartei der Schweiz
+    abbreviation:
+    - value: EVP
+      language: de
 
 ```
 #### Exemple Group : Parlement communal avec référence spatiale
 
 ```yaml
-local_id: 700
-global_uri: >-
-  https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
-label:
-- value: Stadtparlament St. Gallen
-  language: de
-group_type:
-  group_type_enum: council_legislative
+groups:
+- local_id: 700
+  global_uri: >-
+    https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
   label:
-  - value: Parlament (Legislativrat)
+  - value: Stadtparlament St. Gallen
     language: de
-spatial: https://ld.admin.ch/municipality/3203
+  group_type:
+    group_type_enum: council_legislative
+    label:
+    - value: Parlament (Legislativrat)
+      language: de
+  spatial: https://ld.admin.ch/municipality/3203
 
 ```
 #### Exemple Group : Association avec IDE et forme juridique du registre du commerce
 
 ```yaml
-global_uri: https://www.frc.ch/
-organization_uid: CHE106063525
-legal_form: '0109'
-label:
-- value: Fédération romande des consommateurs
-  language: fr
-abbreviation:
-- value: FRC
-  language: fr
-group_type:
-  group_type_enum: association
+groups:
+- global_uri: https://www.frc.ch/
+  organization_uid: CHE106063525
+  legal_form: '0109'
   label:
-  - value: Verein
-    language: de
-spatial: https://ld.admin.ch/canton/22
+  - value: Fédération romande des consommateurs
+    language: fr
+  abbreviation:
+  - value: FRC
+    language: fr
+  group_type:
+    group_type_enum: association
+    label:
+    - value: Verein
+      language: de
+  spatial: https://ld.admin.ch/canton/22
 
 ```
 #### Exemple Group : Bureau du conseil renvoyant à son parlement
@@ -1214,51 +1228,52 @@ groups:
 #### Exemple Group : Groupe d'intérêt avec nom trilingue et contact
 
 ```yaml
-local_id: 6627
-global_uri: https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz
-label:
-- value: Konsumenteninformation und -schutz
-  language: de
-- value: Information et défense des consommateurs
-  language: fr
-- value: Informazione e tutela dei consumatori
-  language: it
-description:
-- value: >-
-    L'intergroupe parlementaire « Information et défense des consommateurs » réunit
-    toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer
-    et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s
-    en Suisse.
-  language: fr
-landing_page:
-- value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
-  language: de
-contacts:
-- contact_type: email
-  value: l.altwegg@frc.ch
-  label: Sekretariat
-- contact_type: phone
-  value: +41 21 331 00 95
-  label: Sekretariat
-addresses:
-- address_type: businessAddress
-  address_uri: https://geo.ld.admin.ch/location/address/101009806
-  street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
-    585
-  postal_code: '1001'
-  postal_locality: Lausanne
-  country: CH
-group_type:
-  group_type_enum: interest_group
+groups:
+- local_id: 6627
+  global_uri: https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz
   label:
-  - value: Interessengruppe
+  - value: Konsumenteninformation und -schutz
     language: de
-  - value: Groupe d'intérêt
+  - value: Information et défense des consommateurs
     language: fr
-  - value: Gruppo d'interesse
+  - value: Informazione e tutela dei consumatori
     language: it
-spatial: https://ld.admin.ch/country/CHE
-valid_from: 2012-01-01
+  description:
+  - value: >-
+      L'intergroupe parlementaire « Information et défense des consommateurs » réunit
+      toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer
+      et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s
+      en Suisse.
+    language: fr
+  landing_page:
+  - value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
+    language: de
+  contacts:
+  - contact_type: email
+    value: l.altwegg@frc.ch
+    label: Sekretariat
+  - contact_type: phone
+    value: +41 21 331 00 95
+    label: Sekretariat
+  addresses:
+  - address_type: businessAddress
+    address_uri: https://geo.ld.admin.ch/location/address/101009806
+    street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
+      585
+    postal_code: '1001'
+    postal_locality: Lausanne
+    country: CH
+  group_type:
+    group_type_enum: interest_group
+    label:
+    - value: Interessengruppe
+      language: de
+    - value: Groupe d'intérêt
+      language: fr
+    - value: Gruppo d'interesse
+      language: it
+  spatial: https://ld.admin.ch/country/CHE
+  valid_from: 2012-01-01
 
 ```
 
@@ -1473,141 +1488,169 @@ _Une relation d'affiliation entre une personne et un groupe, représentant une a
 #### Exemple Membership : La même personne à un autre niveau, avec une autre circonscription
 
 ```yaml
-global_uri: act:ms_jans_nationalrat
-person_reference:
-  local_id: 4032
-  global_uri: https://www.admin.ch/de/beat-jans
-  label: Beat Jans
-group_reference:
-  global_uri: https://www.parlament.ch/de/organe/nationalrat
-  label: Nationalrat
-electoral_district:
-  global_uri: https://ld.admin.ch/canton/12
-  label: Basel-Stadt
-role_type:
-  role_type_enum: member
-authorized_to_vote: true
-valid_from: 2010-05-31
-valid_through: 2011-12-04
-is_active: false
+memberships:
+- global_uri: act:ms_jans_nationalrat
+  person_reference:
+    local_id: 4032
+    global_uri: https://www.admin.ch/de/beat-jans
+    label: Beat Jans
+  group_reference:
+    global_uri: https://www.parlament.ch/de/organe/nationalrat
+    label: Nationalrat
+  electoral_district:
+    global_uri: https://ld.admin.ch/canton/12
+    label: Basel-Stadt
+  role_type:
+    role_type_enum: member
+  authorized_to_vote: true
+  valid_from: 2010-05-31
+  valid_through: 2011-12-04
+  is_active: false
 
 ```
 #### Exemple Membership : Mandat exécutif avec fonction présidentielle
 
 ```yaml
-global_uri: act:ms_jans_regierungsrat_bs
-person_reference:
-  local_id: 4032
-  global_uri: https://www.admin.ch/de/beat-jans
-  label: Beat Jans
-group_reference:
-  local_id: 1300
-  global_uri: https://www.regierungsrat.bs.ch/
-  label: Regierungsrat Basel-Stadt
-role_type:
-  role_type_enum: president
-  role_label:
-  - value: Regierungspräsident
-    language: de
-authorized_to_vote: true
-valid_from: 2021-02-03
-valid_through: 2023-12-31
-is_active: false
+memberships:
+- global_uri: act:ms_jans_regierungsrat_bs
+  person_reference:
+    local_id: 4032
+    global_uri: https://www.admin.ch/de/beat-jans
+    label: Beat Jans
+  group_reference:
+    local_id: 1300
+    global_uri: https://www.regierungsrat.bs.ch/
+    label: Regierungsrat Basel-Stadt
+  role_type:
+    role_type_enum: president
+    role_label:
+    - value: Regierungspräsident
+      language: de
+  authorized_to_vote: true
+  valid_from: 2021-02-03
+  valid_through: 2023-12-31
+  is_active: false
 
 ```
 #### Exemple Membership : Personne et groupe de la même livraison, avec circonscription
 
 ```yaml
-global_uri: act:ms_jans_grossrat_bs
-person_reference:
-  local_id: 4032
-  global_uri: https://www.admin.ch/de/beat-jans
-  label: Beat Jans
-group_reference:
-  local_id: 33
-  global_uri: https://www.grosserrat.bs.ch/
-  label: Grosser Rat Basel-Stadt
-electoral_district:
-  global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
-  label: Kleinbasel
-role_type:
-  role_type_enum: member
-authorized_to_vote: true
-valid_from: 2001-02-07
-valid_through: 2011-04-30
-is_active: false
+memberships:
+- global_uri: act:ms_jans_grossrat_bs
+  person_reference:
+    local_id: 4032
+    global_uri: https://www.admin.ch/de/beat-jans
+    label: Beat Jans
+  group_reference:
+    local_id: 33
+    global_uri: https://www.grosserrat.bs.ch/
+    label: Grosser Rat Basel-Stadt
+  electoral_district:
+    global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
+    label: Kleinbasel
+  role_type:
+    role_type_enum: member
+  authorized_to_vote: true
+  valid_from: 2001-02-07
+  valid_through: 2011-04-30
+  is_active: false
 
 ```
 #### Exemple Membership : Mandat en cours sans date de fin
 
 ```yaml
-global_uri: act:ms_jans_bundesrat
-person_reference:
-  local_id: 4032
-  global_uri: https://www.admin.ch/de/beat-jans
-  label: Beat Jans
-group_reference:
-  global_uri: https://www.admin.ch/de/der-bundesrat
-  label: Bundesrat
-role_type:
-  role_type_enum: member
-authorized_to_vote: true
-valid_from: 2024-01-01
-is_active: true
+memberships:
+- global_uri: act:ms_jans_bundesrat
+  person_reference:
+    local_id: 4032
+    global_uri: https://www.admin.ch/de/beat-jans
+    label: Beat Jans
+  group_reference:
+    global_uri: https://www.admin.ch/de/der-bundesrat
+    label: Bundesrat
+  role_type:
+    role_type_enum: member
+  authorized_to_vote: true
+  valid_from: 2024-01-01
+  is_active: true
 
 ```
 #### Exemple Membership : Appartenance à un groupe parlementaire parallèle au mandat
 
 ```yaml
-global_uri: act:ms_jans_fraktion_sp_bs
-person_reference:
-  local_id: 4032
-  global_uri: https://www.admin.ch/de/beat-jans
-  label: Beat Jans
-group_reference:
-  global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/sp
-  label: Sozialdemokratische Partei (SP)
-role_type:
-  role_type_enum: member
-authorized_to_vote: true
-valid_from: 2001-02-07
-valid_through: 2011-04-30
-is_active: false
+memberships:
+- global_uri: act:ms_jans_fraktion_sp_bs
+  person_reference:
+    local_id: 4032
+    global_uri: https://www.admin.ch/de/beat-jans
+    label: Beat Jans
+  group_reference:
+    global_uri: https://grosserrat.bs.ch/gremien/parteien-und-fraktionen/sp
+    label: Sozialdemokratische Partei (SP)
+  role_type:
+    role_type_enum: member
+  authorized_to_vote: true
+  valid_from: 2001-02-07
+  valid_through: 2011-04-30
+  is_active: false
 
 ```
 #### Exemple Membership : Appartenance à une commission avec sa propre durée
 
 ```yaml
-global_uri: act:ms_jans_wak_bs
-person_reference:
-  local_id: 4032
-  global_uri: https://www.admin.ch/de/beat-jans
-  label: Beat Jans
-group_reference:
-  global_uri: https://grosserrat.bs.ch/gremien/sachkommissionen/wirtschaft-abgaben
-  label: Wirtschafts- und Abgabekommission (WAK)
-role_type:
-  role_type_enum: member
-authorized_to_vote: true
-valid_from: 2003-02-12
-valid_through: 2011-04-30
-is_active: false
+memberships:
+- global_uri: act:ms_jans_wak_bs
+  person_reference:
+    local_id: 4032
+    global_uri: https://www.admin.ch/de/beat-jans
+    label: Beat Jans
+  group_reference:
+    global_uri: https://grosserrat.bs.ch/gremien/sachkommissionen/wirtschaft-abgaben
+    label: Wirtschafts- und Abgabekommission (WAK)
+  role_type:
+    role_type_enum: member
+  authorized_to_vote: true
+  valid_from: 2003-02-12
+  valid_through: 2011-04-30
+  is_active: false
 
 ```
 #### Exemple Membership : Affiliation à un parti sans indications temporelles
 
 ```yaml
-global_uri: act:ms_jans_partei_sp
-person_reference:
-  local_id: 4032
-  global_uri: https://www.admin.ch/de/beat-jans
-  label: Beat Jans
-group_reference:
-  global_uri: https://www.sp-ps.ch/
-  label: Sozialdemokratische Partei der Schweiz
-role_type:
-  role_type_enum: member
-is_active: true
+memberships:
+- global_uri: act:ms_jans_partei_sp
+  person_reference:
+    local_id: 4032
+    global_uri: https://www.admin.ch/de/beat-jans
+    label: Beat Jans
+  group_reference:
+    global_uri: https://www.sp-ps.ch/
+    label: Sozialdemokratische Partei der Schweiz
+  role_type:
+    role_type_enum: member
+  is_active: true
+
+```
+#### Exemple Membership : Rôle hors du vocabulaire, désigné dans le role_label
+
+```yaml
+memberships:
+- global_uri: act:ms_jans_ejpd
+  person_reference:
+    local_id: 4032
+    global_uri: https://www.admin.ch/de/beat-jans
+    label: Beat Jans
+  group_reference:
+    global_uri: https://www.ejpd.admin.ch/
+    label: Eidgenössisches Justiz- und Polizeidepartement
+  role_type:
+    role_type_enum: other
+    role_label:
+    - value: Departementsvorsteher
+      language: de
+  valid_from: 2024-01-01
+  is_active: true
 
 ```
 
@@ -1770,15 +1813,17 @@ _Circonscription ou région électorale associée à une affiliation. La validit
 #### Exemple ElectoralDistrict : Circonscription sans unité spatiale officielle
 
 ```yaml
-global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
-label: Kleinbasel
+electoral_district:
+  global_uri: https://grosserrat.bs.ch/wahlkreise/kleinbasel
+  label: Kleinbasel
 
 ```
 #### Exemple ElectoralDistrict : Canton comme circonscription, identifié par la ressource LINDAS
 
 ```yaml
-global_uri: https://ld.admin.ch/canton/12
-label: Basel-Stadt
+electoral_district:
+  global_uri: https://ld.admin.ch/canton/12
+  label: Basel-Stadt
 
 ```
 
@@ -1881,178 +1926,189 @@ Au moins l'un des champs suivants doit être renseigné :
 #### Exemple InterestLink : Société propre, dirigée à titre opérationnel
 
 ```yaml
-global_uri: act:il_burkart_001
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: Burkart Advisory GmbH, Baden
-legal_form: '0107'
-committee: Geschäftsleitung
-function_role: Geschäftsführer
-is_paid: true
+interest_links:
+- global_uri: act:il_burkart_001
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: professional_activity
+  organization_name: Burkart Advisory GmbH, Baden
+  legal_form: '0107'
+  committee: Geschäftsleitung
+  function_role: Geschäftsführer
+  is_paid: true
 
 ```
 #### Exemple InterestLink : Présidence non rémunérée d'une alliance politique
 
 ```yaml
-global_uri: act:il_burkart_010
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: Allianz Sicherheit Schweiz, Baden
-legal_form: '0109'
-committee: Vorstand
-function_role: Präsident
-is_paid: false
+interest_links:
+- global_uri: act:il_burkart_010
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: association
+  organization_name: Allianz Sicherheit Schweiz, Baden
+  legal_form: '0109'
+  committee: Vorstand
+  function_role: Präsident
+  is_paid: false
 
 ```
 #### Exemple InterestLink : Mandat d'administrateur dans une holding
 
 ```yaml
-global_uri: act:il_burkart_002
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: Birchmeier Holding AG, Döttingen
-legal_form: '0106'
-committee: Verwaltungsrat
-function_role: Mitglied
-is_paid: true
+interest_links:
+- global_uri: act:il_burkart_002
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: professional_activity
+  organization_name: Birchmeier Holding AG, Döttingen
+  legal_form: '0106'
+  committee: Verwaltungsrat
+  function_role: Mitglied
+  is_paid: true
 
 ```
 #### Exemple InterestLink : Mandat d'administrateur dans une société immobilière
 
 ```yaml
-global_uri: act:il_burkart_003
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: Bovida Real Estate AG, Baar
-legal_form: '0106'
-committee: Verwaltungsrat
-function_role: Mitglied
-is_paid: true
+interest_links:
+- global_uri: act:il_burkart_003
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: professional_activity
+  organization_name: Bovida Real Estate AG, Baar
+  legal_form: '0106'
+  committee: Verwaltungsrat
+  function_role: Mitglied
+  is_paid: true
 
 ```
 #### Exemple InterestLink : Affiliation à une association de branche
 
 ```yaml
-global_uri: act:il_burkart_009
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: SUISSEDIGITAL Verband für Kommunikationsnetze
-legal_form: '0109'
-committee: Vorstand
-function_role: Mitglied
-is_paid: true
+interest_links:
+- global_uri: act:il_burkart_009
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: association
+  organization_name: SUISSEDIGITAL Verband für Kommunikationsnetze
+  legal_form: '0109'
+  committee: Vorstand
+  function_role: Mitglied
+  is_paid: true
 
 ```
 #### Exemple InterestLink : Mandat au conseil de fondation avec IDE de l'organisation
 
 ```yaml
-global_uri: act:il_burkart_007
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
-organization_uid: CHE109810537
-legal_form: '0110'
-committee: Stiftungsrat
-function_role: Vizepräsident
-is_paid: false
+interest_links:
+- global_uri: act:il_burkart_007
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: association
+  organization_name: FONDATION SUISSE DE DEMINAGE (FSD), Genf
+  organization_uid: CHE109810537
+  legal_form: '0110'
+  committee: Stiftungsrat
+  function_role: Vizepräsident
+  is_paid: false
 
 ```
 #### Exemple InterestLink : Mandat au comité consultatif sans fonction d'organe
 
 ```yaml
-global_uri: act:il_burkart_008
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: Stiebel Eltron AG, Lupfig
-legal_form: '0106'
-committee: Beirat
-function_role: Beirat
-is_paid: true
+interest_links:
+- global_uri: act:il_burkart_008
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: professional_activity
+  organization_name: Stiebel Eltron AG, Lupfig
+  legal_form: '0106'
+  committee: Beirat
+  function_role: Beirat
+  is_paid: true
 
 ```
 #### Exemple InterestLink : Participation bénévole à l'association porteuse d'un grand projet
 
 ```yaml
-global_uri: act:il_burkart_011
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: Verein Landesausstellung Svizra27, Aarau
-legal_form: '0109'
-committee: Vorstand
-function_role: Mitglied
-is_paid: false
+interest_links:
+- global_uri: act:il_burkart_011
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: association
+  organization_name: Verein Landesausstellung Svizra27, Aarau
+  legal_form: '0109'
+  committee: Vorstand
+  function_role: Mitglied
+  is_paid: false
 
 ```
 #### Exemple InterestLink : Présidence d'une association économique
 
 ```yaml
-global_uri: act:il_burkart_005
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
-legal_form: '0109'
-committee: Zentralvorstand
-function_role: Präsident
-is_paid: true
+interest_links:
+- global_uri: act:il_burkart_005
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: association
+  organization_name: ASTAG Schweizerischer Nutzfahrzeugverband, Bern
+  legal_form: '0109'
+  committee: Zentralvorstand
+  function_role: Präsident
+  is_paid: true
 
 ```
 #### Exemple InterestLink : Présidence d'un parti national
 
 ```yaml
-global_uri: act:il_burkart_006
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: association
-organization_name: FDP.Die Liberalen
-legal_form: '0109'
-committee: Vorstand
-function_role: Präsident
-is_paid: true
+interest_links:
+- global_uri: act:il_burkart_006
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: association
+  organization_name: FDP.Die Liberalen
+  legal_form: '0109'
+  committee: Vorstand
+  function_role: Präsident
+  is_paid: true
 
 ```
 #### Exemple InterestLink : Mandat d'administrateur dans une entreprise technologique
 
 ```yaml
-global_uri: act:il_burkart_004
-person_reference:
-  global_uri: http://www.wikidata.org/entity/Q23060472
-  label: Thierry Burkart
-  group_label: FDP.Die Liberalen
-interest_type: professional_activity
-organization_name: ELCA Group SA, Lausanne
-legal_form: '0106'
-committee: Verwaltungsrat
-function_role: Mitglied
-is_paid: true
+interest_links:
+- global_uri: act:il_burkart_004
+  person_reference:
+    global_uri: http://www.wikidata.org/entity/Q23060472
+    label: Thierry Burkart
+    group_label: FDP.Die Liberalen
+  interest_type: professional_activity
+  organization_name: ELCA Group SA, Lausanne
+  legal_form: '0106'
+  committee: Verwaltungsrat
+  function_role: Mitglied
+  is_paid: true
 
 ```
 
@@ -2428,20 +2484,22 @@ Au moins l'un des champs suivants doit être renseigné :
 #### Exemple Address : swiss politicians Beat Jans 1
 
 ```yaml
-address_type: businessAddress
-postal_locality: Basel-Stadt
+addresses:
+- address_type: businessAddress
+  postal_locality: Basel-Stadt
 
 ```
 #### Exemple Address : groups Konsumenteninformation und -schutz 1
 
 ```yaml
-address_type: businessAddress
-address_uri: https://geo.ld.admin.ch/location/address/101009806
-street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
-  585
-postal_code: '1001'
-postal_locality: Lausanne
-country: CH
+addresses:
+- address_type: businessAddress
+  address_uri: https://geo.ld.admin.ch/location/address/101009806
+  street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
+    585
+  postal_code: '1001'
+  postal_locality: Lausanne
+  country: CH
 
 ```
 

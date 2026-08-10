@@ -1,2 +1,3 @@
-global_uri: https://ld.admin.ch/canton/12
-label: Basel-Stadt
+electoral_district:
+  global_uri: https://ld.admin.ch/canton/12
+  label: Basel-Stadt

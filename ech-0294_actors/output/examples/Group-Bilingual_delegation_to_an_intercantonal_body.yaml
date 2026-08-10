@@ -1,37 +1,38 @@
-local_id: 5000
-global_uri: https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
-label:
-- value: Freiburger Delegation IPK strafrechtliche Einschliessung
-  language: de
-- value: Délégation FR à la CIP détention pénale
-  language: fr
-abbreviation:
-- value: Del-StRFE
-  language: de
-- value: Del-DetPen
-  language: fr
-description:
-- value: >-
-    Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung besteht
-    aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg, Genf,
-    Jura, Neuenburg, Waadt und Wallis.
-  language: de
-- value: >-
-    La Commission interparlementaire de contrôle détention pénale est composée de
-    18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel,
-    Vaud et Valais.
-  language: fr
-landing_page:
-- value: https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
-  language: de
-- value: https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
-  language: fr
-group_type:
-  group_type_enum: delegation
+groups:
+- local_id: 5000
+  global_uri: https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
   label:
-  - value: Delegation
+  - value: Freiburger Delegation IPK strafrechtliche Einschliessung
     language: de
-  - value: Délégation
+  - value: Délégation FR à la CIP détention pénale
     language: fr
-spatial: https://ld.admin.ch/canton/10
-valid_from: 2007-12-12
+  abbreviation:
+  - value: Del-StRFE
+    language: de
+  - value: Del-DetPen
+    language: fr
+  description:
+  - value: >-
+      Die Interparlamentarische Aufsichtskommission strafrechtliche Einschliessung
+      besteht aus 18 Grossrätinnen und Grossräten aus den sechs Vertragskantonen Freiburg,
+      Genf, Jura, Neuenburg, Waadt und Wallis.
+    language: de
+  - value: >-
+      La Commission interparlementaire de contrôle détention pénale est composée de
+      18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel,
+      Vaud et Valais.
+    language: fr
+  landing_page:
+  - value: https://www.fr.ch/de/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
+    language: de
+  - value: https://www.fr.ch/parlinfo/app/organizations/a1acb0c030d54b3baed840fe8bbed6b5
+    language: fr
+  group_type:
+    group_type_enum: delegation
+    label:
+    - value: Delegation
+      language: de
+    - value: Délégation
+      language: fr
+  spatial: https://ld.admin.ch/canton/10
+  valid_from: 2007-12-12

@@ -1,12 +1,13 @@
-local_id: 700
-global_uri: >-
-  https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
-label:
-- value: Stadtparlament St. Gallen
-  language: de
-group_type:
-  group_type_enum: council_legislative
+groups:
+- local_id: 700
+  global_uri: >-
+    https://www.stadt.sg.ch/home/verwaltung-politik/demokratie-politik/stadtparlament.html
   label:
-  - value: Parlament (Legislativrat)
+  - value: Stadtparlament St. Gallen
     language: de
-spatial: https://ld.admin.ch/municipality/3203
+  group_type:
+    group_type_enum: council_legislative
+    label:
+    - value: Parlament (Legislativrat)
+      language: de
+  spatial: https://ld.admin.ch/municipality/3203

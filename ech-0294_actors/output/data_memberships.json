@@ -145,6 +145,29 @@
       "authorized_to_vote": true,
       "is_active": true,
       "valid_from": "2024-01-01"
+    },
+    {
+      "global_uri": "act:ms_jans_ejpd",
+      "person_reference": {
+        "label": "Beat Jans",
+        "local_id": "4032",
+        "global_uri": "https://www.admin.ch/de/beat-jans"
+      },
+      "group_reference": {
+        "label": "Eidgenössisches Justiz- und Polizeidepartement",
+        "global_uri": "https://www.ejpd.admin.ch/"
+      },
+      "role_type": {
+        "role_type_enum": "other",
+        "role_label": [
+          {
+            "value": "Departementsvorsteher",
+            "language": "de"
+          }
+        ]
+      },
+      "is_active": true,
+      "valid_from": "2024-01-01"
     }
   ],
   "@type": "Container"

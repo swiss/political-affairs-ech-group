@@ -1,7 +1,8 @@
-address_type: businessAddress
-address_uri: https://geo.ld.admin.ch/location/address/101009806
-street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
-  585
-postal_code: '1001'
-postal_locality: Lausanne
-country: CH
+addresses:
+- address_type: businessAddress
+  address_uri: https://geo.ld.admin.ch/location/address/101009806
+  street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
+    585
+  postal_code: '1001'
+  postal_locality: Lausanne
+  country: CH

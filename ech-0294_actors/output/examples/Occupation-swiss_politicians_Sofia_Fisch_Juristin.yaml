@@ -1,2 +1,3 @@
-label: Jurist*in
-is_active: true
+occupations:
+- label: Jurist*in
+  is_active: true

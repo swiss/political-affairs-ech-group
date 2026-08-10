@@ -178,3 +178,24 @@ memberships:
     authorized_to_vote: true
     valid_from: 2024-01-01
     is_active: true
+
+  # Die Departementsleitung ist eine eigene Mitgliedschaft, nicht ein Merkmal
+  # des Bundesratsmandats: Mitglied ist die Person im Kollegium Bundesrat, das
+  # Departement ist eine andere Gruppe, und die Zuteilung kann wechseln, ohne
+  # dass das Mandat endet. Die Rolle kennt `RoleEnum` nicht — dann gilt `other`,
+  # und die Bezeichnung muss im `role_label` stehen.
+  - global_uri: act:ms_jans_ejpd
+    person_reference:
+      local_id: 4032
+      global_uri: https://www.admin.ch/de/beat-jans
+      label: Beat Jans
+    group_reference:
+      global_uri: https://www.ejpd.admin.ch/
+      label: Eidgenössisches Justiz- und Polizeidepartement
+    role_type:
+      role_type_enum: other
+      role_label:
+        - value: Departementsvorsteher
+          language: de
+    valid_from: 2024-01-01
+    is_active: true

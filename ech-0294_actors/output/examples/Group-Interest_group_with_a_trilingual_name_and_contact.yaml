@@ -1,45 +1,46 @@
-local_id: 6627
-global_uri: https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz
-label:
-- value: Konsumenteninformation und -schutz
-  language: de
-- value: Information et défense des consommateurs
-  language: fr
-- value: Informazione e tutela dei consumatori
-  language: it
-description:
-- value: >-
-    L'intergroupe parlementaire « Information et défense des consommateurs » réunit
-    toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer
-    et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s
-    en Suisse.
-  language: fr
-landing_page:
-- value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
-  language: de
-contacts:
-- contact_type: email
-  value: l.altwegg@frc.ch
-  label: Sekretariat
-- contact_type: phone
-  value: +41 21 331 00 95
-  label: Sekretariat
-addresses:
-- address_type: businessAddress
-  address_uri: https://geo.ld.admin.ch/location/address/101009806
-  street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
-    585
-  postal_code: '1001'
-  postal_locality: Lausanne
-  country: CH
-group_type:
-  group_type_enum: interest_group
+groups:
+- local_id: 6627
+  global_uri: https://www.parlament.ch/de/organe/gruppen/konsumenteninformation-und-schutz
   label:
-  - value: Interessengruppe
+  - value: Konsumenteninformation und -schutz
     language: de
-  - value: Groupe d'intérêt
+  - value: Information et défense des consommateurs
     language: fr
-  - value: Gruppo d'interesse
+  - value: Informazione e tutela dei consumatori
     language: it
-spatial: https://ld.admin.ch/country/CHE
-valid_from: 2012-01-01
+  description:
+  - value: >-
+      L'intergroupe parlementaire « Information et défense des consommateurs » réunit
+      toutes les sensibilités politiques. Cet intergroupe a pour mission d'informer
+      et de sensibiliser les élu·e·s aux questions relatives à la défense des consommateur·rice·s
+      en Suisse.
+    language: fr
+  landing_page:
+  - value: https://www.parlament.ch/centers/documents/de/gruppen-der-bundesversammlung.pdf
+    language: de
+  contacts:
+  - contact_type: email
+    value: l.altwegg@frc.ch
+    label: Sekretariat
+  - contact_type: phone
+    value: +41 21 331 00 95
+    label: Sekretariat
+  addresses:
+  - address_type: businessAddress
+    address_uri: https://geo.ld.admin.ch/location/address/101009806
+    street_address: Fédération romande des consommateurs, Rue de Genève 17, case postale
+      585
+    postal_code: '1001'
+    postal_locality: Lausanne
+    country: CH
+  group_type:
+    group_type_enum: interest_group
+    label:
+    - value: Interessengruppe
+      language: de
+    - value: Groupe d'intérêt
+      language: fr
+    - value: Gruppo d'interesse
+      language: it
+  spatial: https://ld.admin.ch/country/CHE
+  valid_from: 2012-01-01

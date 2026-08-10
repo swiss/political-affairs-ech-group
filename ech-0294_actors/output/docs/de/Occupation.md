@@ -66,16 +66,18 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 #### Beispiel Occupation: swiss politicians Sofia Fisch Juristin
 
 ```yaml
-label: Jurist*in
-is_active: true
+occupations:
+- label: Jurist*in
+  is_active: true
 
 ```
 #### Beispiel Occupation: swiss politicians Beat Jans Politiker
 
 ```yaml
-label: Politiker
-valid_from: 1964-01-01
-is_active: true
+occupations:
+- label: Politiker
+  valid_from: 1964-01-01
+  is_active: true
 
 ```
 

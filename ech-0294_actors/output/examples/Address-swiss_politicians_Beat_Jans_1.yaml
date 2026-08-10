@@ -1,2 +1,3 @@
-address_type: businessAddress
-postal_locality: Basel-Stadt
+addresses:
+- address_type: businessAddress
+  postal_locality: Basel-Stadt
