@@ -12,7 +12,7 @@ toc: false
 |**Version**|1.0.0|
 |**Status**|Vorschlag|
 |**Beschluss am**||
-|**Ausgabedatum**|2026-07-22|
+|**Ausgabedatum**|2026-08-10|
 |**Ersetzt Version**||
 |**Voraussetzungen**||
 |**Beilagen**|-|
