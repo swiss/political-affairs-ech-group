@@ -76,6 +76,21 @@ Au moins l'un des champs suivants doit être renseigné :
 
 
 ### Exemples
+#### Exemple InterestLink : Seat on a body of the public sector
+
+```yaml
+interest_links:
+- global_uri: act:il_quadranti_001
+  person_reference:
+    global_uri: >-
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487
+    label: Matteo Quadranti
+    group_label: Partito liberale radicale ticinese (PLR)
+  interest_type: public_committee
+  organization_name: Commissione Cantonale Cultura
+  function_role: Vice-presidente
+
+```
 #### Exemple InterestLink : Own company run operationally
 
 ```yaml
@@ -211,21 +226,6 @@ interest_links:
   committee: Zentralvorstand
   function_role: Präsident
   is_paid: true
-
-```
-#### Exemple InterestLink : Appointed seat on a cantonal committee
-
-```yaml
-interest_links:
-- global_uri: act:il_quadranti_001
-  person_reference:
-    global_uri: >-
-      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487
-    label: Matteo Quadranti
-    group_label: Partito liberale radicale ticinese (PLR)
-  interest_type: public_committee
-  organization_name: Commissione Cantonale Cultura
-  function_role: Vice-presidente
 
 ```
 

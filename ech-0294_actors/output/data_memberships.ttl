@@ -101,11 +101,11 @@ act:ms_jans_nationalrat a act:Membership ;
     act:roleType [ a act:RoleType ;
             act:roleTypeEnum "member" ;
             act:role_label [ a mcm:MultilingualValue ;
-                    mcm:language "it" ;
-                    mcm:value "Membro" ],
-                [ a mcm:MultilingualValue ;
                     mcm:language "de" ;
-                    mcm:value "Mitglied" ] ] .
+                    mcm:value "Mitglied" ],
+                [ a mcm:MultilingualValue ;
+                    mcm:language "it" ;
+                    mcm:value "Membro" ] ] .
 
 act:ms_jans_partei_sp a act:Membership ;
     mcm:isCurrent true ;

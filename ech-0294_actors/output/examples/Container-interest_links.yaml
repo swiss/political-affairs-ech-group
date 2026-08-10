@@ -96,9 +96,10 @@ interest_links:
     legal_form: "0223"  # Verwaltungseinheit der Gemeinde
     function_role: Sindaco
 
-  # Ernannter Sitz in einer kantonalen Kommission: `public_committee`. Der Sitz
-  # wird nicht in einer Wahl errungen, sondern von der Regierung übertragen —
-  # deshalb nicht `political_office`, obwohl es ein öffentliches Gremium ist.
+  # Sitz in einer kantonalen Kommission: `public_committee`. Gegenüber ist ein
+  # Gremium der öffentlichen Hand, nicht eine Behörde, in der die Person ein
+  # eigenes Amt hätte — deshalb nicht `political_office`. Wie der Sitz besetzt
+  # wird, spielt für die Einordnung keine Rolle.
   - global_uri: act:il_quadranti_001
     person_reference:
       global_uri: "https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487"

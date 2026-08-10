@@ -1941,6 +1941,21 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 
 ### Beispiele
+#### Beispiel InterestLink: Sitz in einem Gremium der öffentlichen Hand
+
+```yaml
+interest_links:
+- global_uri: act:il_quadranti_001
+  person_reference:
+    global_uri: >-
+      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487
+    label: Matteo Quadranti
+    group_label: Partito liberale radicale ticinese (PLR)
+  interest_type: public_committee
+  organization_name: Commissione Cantonale Cultura
+  function_role: Vice-presidente
+
+```
 #### Beispiel InterestLink: Eigene Gesellschaft, operativ geführt
 
 ```yaml
@@ -2078,21 +2093,6 @@ interest_links:
   is_paid: true
 
 ```
-#### Beispiel InterestLink: Ernannter Sitz in einer kantonalen Kommission
-
-```yaml
-interest_links:
-- global_uri: act:il_quadranti_001
-  person_reference:
-    global_uri: >-
-      https://www4.ti.ch/poteri/gc/parlamento/composizione-del-parlamento/composizione-nelle-ultime-legislature/dettaglio-deputati/?user_gcparlamento_pi3%5BcanID%5D=1487
-    label: Matteo Quadranti
-    group_label: Partito liberale radicale ticinese (PLR)
-  interest_type: public_committee
-  organization_name: Commissione Cantonale Cultura
-  function_role: Vice-presidente
-
-```
 
 
 
@@ -2124,9 +2124,9 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 | | [act:enum/interest_type/governing_body](act:enum/interest_type/governing_body) |
 | interest_group_mandate |  Dauernde Leitungs- oder Beratungsfunktion für eine Interessengruppe oder einen Verband — also für eine Organisation, deren Zweck die Interessenvertretung selbst ist. Massgebend ist das Gegenüber, nicht die Funktion: Ist der Zweck der Organisation die Vertretung von Interessen, gilt dieser Wert auch dann, wenn die Funktion ein Sitz in einem Führungsgremium ist. Anders als `governing_body` erfasst er zudem dauernde Beratungsmandate ohne Sitz in einem Gremium.  |
 | | [act:enum/interest_type/interest_group_mandate](act:enum/interest_type/interest_group_mandate) |
-| public_committee |  Mitwirkung in Kommissionen und anderen Organen des Bundes, eines Kantons, einer Gemeinde oder der interkantonalen und interkommunalen Zusammenarbeit. Anders als beim `political_office` wird der Sitz nicht in einer Wahl errungen, sondern von einer Behörde übertragen — häufig gerade wegen des politischen Mandats.  |
+| public_committee |  Mitwirkung in einer Kommission oder einem anderen Gremium der öffentlichen Hand — des Bundes, eines Kantons, einer Gemeinde oder der interkantonalen und interkommunalen Zusammenarbeit, einschliesslich ausserparlamentarischer Kommissionen und der Aufsichtsgremien öffentlich-rechtlicher Anstalten. Der Unterschied zum `political_office` liegt nicht darin, wie der Sitz besetzt wird, sondern worum es sich handelt: nicht um ein eigenes Amt in einer Behörde, sondern um die Mitwirkung in einem ihrer Gremien. Ob die Person dort für ihr eigenes Gemeinwesen sitzt, sagt `is_ex_officio`.  |
 | | [act:enum/interest_type/public_committee](act:enum/interest_type/public_committee) |
-| political_office |  Gewähltes Amt auf einer anderen föderalen Ebene oder in einer anderen Körperschaft — Gemeindeexekutive oder -parlament, Schulpflege, Kirchgemeinde. Das Mandat, für das offengelegt wird, gehört nie hierher.  |
+| political_office |  Eigenes Amt in einer Behörde auf einer anderen föderalen Ebene oder in einer anderen Körperschaft — Gemeindeexekutive oder -parlament, Schulpflege, Kirchgemeinde —, in der Regel durch Wahl besetzt. Das Mandat, für das offengelegt wird, gehört nie hierher.  |
 | | [act:enum/interest_type/political_office](act:enum/interest_type/political_office) |
 | association |  Blosse Mitgliedschaft in einem Verein, Verband oder einer Interessenorganisation, ohne Leitungsfunktion und ohne Sitz in einem Gremium. Wird eine Funktion ausgeübt, gilt `governing_body` oder `interest_group_mandate`.  |
 | | [act:enum/interest_type/association](act:enum/interest_type/association) |

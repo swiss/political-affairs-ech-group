@@ -181,20 +181,20 @@ act:groups_example a act:Container ;
 
 <https://www.weko.admin.ch/> a act:Group ;
     mcm:abbreviation [ a mcm:MultilingualValue ;
+            mcm:language "it" ;
+            mcm:value "COMCO" ],
+        [ a mcm:MultilingualValue ;
             mcm:language "fr" ;
             mcm:value "COMCO" ],
         [ a mcm:MultilingualValue ;
             mcm:language "de" ;
-            mcm:value "WEKO" ],
-        [ a mcm:MultilingualValue ;
-            mcm:language "it" ;
-            mcm:value "COMCO" ] ;
+            mcm:value "WEKO" ] ;
     mcm:label [ a mcm:MultilingualValue ;
-            mcm:language "fr" ;
-            mcm:value "Commission de la concurrence" ],
-        [ a mcm:MultilingualValue ;
             mcm:language "it" ;
             mcm:value "Commissione della concorrenza" ],
+        [ a mcm:MultilingualValue ;
+            mcm:language "fr" ;
+            mcm:value "Commission de la concurrence" ],
         [ a mcm:MultilingualValue ;
             mcm:language "de" ;
             mcm:value "Wettbewerbskommission" ] ;
@@ -207,11 +207,11 @@ act:groups_example a act:Container ;
             mcm:language "de" ;
             mcm:value <https://www.weko.admin.ch/de> ],
         [ a mcm:MultilingualUri ;
-            mcm:language "it" ;
-            mcm:value <https://www.weko.admin.ch/it> ],
-        [ a mcm:MultilingualUri ;
             mcm:language "fr" ;
-            mcm:value <https://www.weko.admin.ch/fr> ] ;
+            mcm:value <https://www.weko.admin.ch/fr> ],
+        [ a mcm:MultilingualUri ;
+            mcm:language "it" ;
+            mcm:value <https://www.weko.admin.ch/it> ] ;
     act:spatial "https://ld.admin.ch/country/CHE" .
 
 <https://www.ar.ch/kantonsrat/> a act:Group ;
@@ -249,11 +249,11 @@ act:groups_example a act:Container ;
             mcm:value "La Commission interparlementaire de contrôle détention pénale est composée de 18 députés issus des six cantons partenaires : Fribourg, Genève, Jura, Neuchâtel, Vaud et Valais." ] ;
     act:groupType [ a act:GroupType ;
             mcm:label [ a mcm:MultilingualValue ;
-                    mcm:language "de" ;
-                    mcm:value "Delegation" ],
-                [ a mcm:MultilingualValue ;
                     mcm:language "fr" ;
-                    mcm:value "Délégation" ] ;
+                    mcm:value "Délégation" ],
+                [ a mcm:MultilingualValue ;
+                    mcm:language "de" ;
+                    mcm:value "Delegation" ] ;
             act:groupTypeEnum <https://ld.ech.ch/schema/0294/actors/enum/group_type/delegation> ] ;
     act:landingPage [ a mcm:MultilingualUri ;
             mcm:language "de" ;
