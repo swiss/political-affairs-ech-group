@@ -14,7 +14,7 @@ URI: [ops:AgendaItemTypeEnum](https://ch.paf.link/schema/operations/AgendaItemTy
 
 ### Valeurs admissibles
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | item |  Point isolé de l'ordre du jour  |
 | | [ops:enum/agenda_item_type/item](ops:enum/agenda_item_type/item) |
 | group |  Groupe de points de l'ordre du jour  |

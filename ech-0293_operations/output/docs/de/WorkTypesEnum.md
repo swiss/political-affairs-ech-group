@@ -14,7 +14,7 @@ URI: [ops:WorkTypesEnum](https://ch.paf.link/schema/operations/WorkTypesEnum)
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | pv |  Protokoll.  |
 | | [meta:vocabulary/work_types/PV](meta:vocabulary/work_types/PV) |
 | submitted_version |  Eingereichte Fassung.  |

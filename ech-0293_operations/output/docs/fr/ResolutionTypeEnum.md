@@ -14,7 +14,7 @@ URI: [ops:ResolutionTypeEnum](https://ch.paf.link/schema/operations/ResolutionTy
 
 ### Valeurs admissibles
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | accepted |  Acceptation  |
 | | [ops:enum/resolution_type/accepted](ops:enum/resolution_type/accepted) |
 | rejected |  Rejet  |

@@ -14,7 +14,7 @@ URI: [ops:VotingTypeEnum](https://ch.paf.link/schema/operations/VotingTypeEnum)
 
 ### Permissible Values
 | Value | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | preliminary_vote |  Preliminary vote (Zwischenabstimmung)  |
 | | [ops:enum/voting_type/preliminary_vote](ops:enum/voting_type/preliminary_vote) |
 | final_vote |  Final vote (Schlussabstimmung)  |

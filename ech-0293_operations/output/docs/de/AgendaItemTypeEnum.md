@@ -14,7 +14,7 @@ URI: [ops:AgendaItemTypeEnum](https://ch.paf.link/schema/operations/AgendaItemTy
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | item |  Einzelnes Traktandum  |
 | | [ops:enum/agenda_item_type/item](ops:enum/agenda_item_type/item) |
 | group |  Traktandengruppe  |

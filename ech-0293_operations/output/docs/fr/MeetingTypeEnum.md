@@ -14,7 +14,7 @@ URI: [ops:MeetingTypeEnum](https://ch.paf.link/schema/operations/MeetingTypeEnum
 
 ### Valeurs admissibles
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | session |  Séance plénière de l'ensemble du parlement ou d'une chambre.  |
 | | [ops:enum/meeting_type/session](ops:enum/meeting_type/session) |
 | committee |  Séance d'une commission parlementaire.  |

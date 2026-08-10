@@ -14,7 +14,7 @@ URI: [ops:DateTypesEnum](https://ch.paf.link/schema/operations/DateTypesEnum)
 
 ### Permissible Values
 | Value | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | first_publication |  Date of first publication.  |
 | | [meta:vocabulary/date_types/FirstPublication](meta:vocabulary/date_types/FirstPublication) |
 | last_revision |  Date of the last revision.  |

@@ -14,7 +14,7 @@ URI: [ops:IndividualVoteTypeEnum](https://ch.paf.link/schema/operations/Individu
 
 ### Valeurs admissibles
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | yes |  Voix favorable (oui)  |
 | | [ops:enum/individual_vote_type/yes](ops:enum/individual_vote_type/yes) |
 | no |  Voix défavorable (non)  |

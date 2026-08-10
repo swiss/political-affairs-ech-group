@@ -14,7 +14,7 @@ URI: [ops:MeetingTypeEnum](https://ch.paf.link/schema/operations/MeetingTypeEnum
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | session |  Plenarsitzung des gesamten Parlaments oder einer Kammer.  |
 | | [ops:enum/meeting_type/session](ops:enum/meeting_type/session) |
 | committee |  Sitzung einer parlamentarischen Kommission.  |

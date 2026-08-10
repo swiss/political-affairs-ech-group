@@ -14,7 +14,7 @@ URI: [ops:ElectionTypeEnum](https://ch.paf.link/schema/operations/ElectionTypeEn
 
 ### Valeurs admissibles
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | secret |  Élection à bulletin secret  |
 | | [ops:enum/election_type/secret](ops:enum/election_type/secret) |
 | open |  Élection à main levée  |

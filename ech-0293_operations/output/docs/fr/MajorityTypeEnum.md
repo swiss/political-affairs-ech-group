@@ -14,7 +14,7 @@ URI: [ops:MajorityTypeEnum](https://ch.paf.link/schema/operations/MajorityTypeEn
 
 ### Valeurs admissibles
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | absolute |  Majorité absolue.  |
 | | [ops:enum/majority_type/absolute](ops:enum/majority_type/absolute) |
 | two_thirds |  Majorité des deux tiers.  |

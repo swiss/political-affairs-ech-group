@@ -14,7 +14,7 @@ URI: [ops:ResolutionTypeEnum](https://ch.paf.link/schema/operations/ResolutionTy
 
 ### Permissible Values
 | Value | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | accepted |  Accepted (Annahme)  |
 | | [ops:enum/resolution_type/accepted](ops:enum/resolution_type/accepted) |
 | rejected |  Rejected (Ablehnung)  |

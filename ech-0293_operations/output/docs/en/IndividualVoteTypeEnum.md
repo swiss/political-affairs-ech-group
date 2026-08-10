@@ -14,7 +14,7 @@ URI: [ops:IndividualVoteTypeEnum](https://ch.paf.link/schema/operations/Individu
 
 ### Permissible Values
 | Value | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | yes |  Vote in favor (yes)  |
 | | [ops:enum/individual_vote_type/yes](ops:enum/individual_vote_type/yes) |
 | no |  Vote against (no)  |

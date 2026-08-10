@@ -14,7 +14,7 @@ URI: [ops:MeetingTypeEnum](https://ch.paf.link/schema/operations/MeetingTypeEnum
 
 ### Permissible Values
 | Value | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | session |  Plenary sitting of the whole parliament or of one chamber.  |
 | | [ops:enum/meeting_type/session](ops:enum/meeting_type/session) |
 | committee |  Meeting of a parliamentary committee.  |

@@ -14,7 +14,7 @@ URI: [ops:WorkTypesEnum](https://ch.paf.link/schema/operations/WorkTypesEnum)
 
 ### Permissible Values
 | Value | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | pv |  Minutes (Protokoll).  |
 | | [meta:vocabulary/work_types/PV](meta:vocabulary/work_types/PV) |
 | submitted_version |  Version as submitted.  |

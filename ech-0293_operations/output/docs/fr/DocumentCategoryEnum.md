@@ -14,7 +14,7 @@ URI: [ops:DocumentCategoryEnum](https://ch.paf.link/schema/operations/DocumentCa
 
 ### Valeurs admissibles
 | Valeur | Description | Info supplémentaire |
-| --- | --- | --- |
+|----------------------|----------------------------------------------------------|--------------------|
 | protocol ([meta:vocabulary/document_category/Protocol](meta:vocabulary/document_category/Protocol)) | Procès-verbaux de tout type. Exemples : procès-verbal de décision, procès-verbal in extenso, procès-verbal succinct, bulletin officiel, discours d'ouverture, liste des orateurs, enregistrements audio et vidéo.  | Title: Protocol<br>|
 | voting_result ([meta:vocabulary/document_category/VotingResult](meta:vocabulary/document_category/VotingResult)) | Résultats des votes et des élections. Exemples : procès-verbal de vote, procès-verbal d'élection, procès-verbaux des votes nominatifs.  | Title: Voting result<br>|
 | meeting_documents ([meta:vocabulary/document_category/MeetingDocuments](meta:vocabulary/document_category/MeetingDocuments)) | Documents de séance disponibles au début d'une séance et relatifs aux affaires. Exemples : ordre du jour, programme de session, aperçu de la session, pétitions inscrites à l'ordre du jour, liste des interventions, prestation de serment, annexes du bulletin officiel, répertoire des affaires.  | Title: Meeting documents<br>|

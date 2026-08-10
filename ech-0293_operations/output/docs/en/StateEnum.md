@@ -14,7 +14,7 @@ URI: [ops:StateEnum](https://ch.paf.link/schema/operations/StateEnum)
 
 ### Permissible Values
 | Value | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | planned |  The meeting is planned and will take place as scheduled.  |
 | | [ops:enum/state/planned](ops:enum/state/planned) |
 | canceled |  The meeting has been cancelled.  |

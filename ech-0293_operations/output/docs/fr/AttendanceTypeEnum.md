@@ -14,7 +14,7 @@ URI: [ops:AttendanceTypeEnum](https://ch.paf.link/schema/operations/AttendanceTy
 
 ### Valeurs admissibles
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | remote |  Participation à distance  |
 | | [ops:enum/attendance_type/remote](ops:enum/attendance_type/remote) |
 | substitute |  Suppléance  |

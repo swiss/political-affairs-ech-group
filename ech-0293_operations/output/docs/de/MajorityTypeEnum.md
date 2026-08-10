@@ -14,7 +14,7 @@ URI: [ops:MajorityTypeEnum](https://ch.paf.link/schema/operations/MajorityTypeEn
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | absolute |  Absolutes Mehr.  |
 | | [ops:enum/majority_type/absolute](ops:enum/majority_type/absolute) |
 | two_thirds |  Zweidrittelmehr.  |

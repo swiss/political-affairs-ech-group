@@ -14,7 +14,7 @@ URI: [ops:DocumentCategoryEnum](https://ch.paf.link/schema/operations/DocumentCa
 
 ### Zulässige Werte
 | Wert | Beschreibung | Zusätzliche Info |
-| --- | --- | --- |
+|----------------------|----------------------------------------------------------|--------------------|
 | protocol ([meta:vocabulary/document_category/Protocol](meta:vocabulary/document_category/Protocol)) | Protokolle aller Art. Beispiele: Entscheidungsprotokoll, Wortprotokoll, Kurzprotokoll, Tagblatt, Wortlautdokument, Eröffnungsrede, Sprecherliste, Audio- und Videoaufnahmen.  | Title: Protocol<br>|
 | voting_result ([meta:vocabulary/document_category/VotingResult](meta:vocabulary/document_category/VotingResult)) | Abstimmungs- und Wahlergebnisse. Beispiele: Abstimmungsprotokoll, Wahlprotokoll, Protokolle namentlicher Abstimmungen.  | Title: Voting result<br>|
 | meeting_documents ([meta:vocabulary/document_category/MeetingDocuments](meta:vocabulary/document_category/MeetingDocuments)) | Sitzungsunterlagen, die zu Beginn einer Sitzung zu den Geschäften vorliegen. Beispiele: Traktandenliste, Tagesordnung, Sessionsprogramm, Sessionsvorschau, traktandierte Petitionen, Vorstossliste, Vereidigung/Gelübdenahme, Tagblattbeilagen, Geschäftsverzeichnis, Vorschau, Traktandenvorschau, Vorstoss Dringlichkeit.  | Title: Meeting documents<br>|

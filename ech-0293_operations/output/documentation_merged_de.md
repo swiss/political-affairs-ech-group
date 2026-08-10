@@ -871,7 +871,7 @@ URI: [ops:MeetingTypeEnum](https://ch.paf.link/schema/operations/MeetingTypeEnum
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | session |  Plenarsitzung des gesamten Parlaments oder einer Kammer.  |
 | | [ops:enum/meeting_type/session](ops:enum/meeting_type/session) |
 | committee |  Sitzung einer parlamentarischen Kommission.  |
@@ -905,7 +905,7 @@ URI: [ops:StateEnum](https://ch.paf.link/schema/operations/StateEnum)
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | planned |  Die Sitzung ist geplant und findet wie vorgesehen statt.  |
 | | [ops:enum/state/planned](ops:enum/state/planned) |
 | canceled |  Die Sitzung wurde abgesagt.  |
@@ -1169,7 +1169,7 @@ URI: [ops:AttendanceTypeEnum](https://ch.paf.link/schema/operations/AttendanceTy
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | remote |  Teilnahme per Fernzugriff  |
 | | [ops:enum/attendance_type/remote](ops:enum/attendance_type/remote) |
 | substitute |  Stellvertretung  |
@@ -1821,7 +1821,7 @@ URI: [ops:AgendaItemTypeEnum](https://ch.paf.link/schema/operations/AgendaItemTy
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | item |  Einzelnes Traktandum  |
 | | [ops:enum/agenda_item_type/item](ops:enum/agenda_item_type/item) |
 | group |  Traktandengruppe  |
@@ -2293,7 +2293,7 @@ URI: [ops:ResolutionTypeEnum](https://ch.paf.link/schema/operations/ResolutionTy
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | accepted |  Annahme  |
 | | [ops:enum/resolution_type/accepted](ops:enum/resolution_type/accepted) |
 | rejected |  Ablehnung  |
@@ -2879,7 +2879,7 @@ URI: [ops:VotingTypeEnum](https://ch.paf.link/schema/operations/VotingTypeEnum)
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | preliminary_vote |  Zwischenabstimmung  |
 | | [ops:enum/voting_type/preliminary_vote](ops:enum/voting_type/preliminary_vote) |
 | final_vote |  Schlussabstimmung  |
@@ -2915,7 +2915,7 @@ URI: [ops:MajorityTypeEnum](https://ch.paf.link/schema/operations/MajorityTypeEn
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | absolute |  Absolutes Mehr.  |
 | | [ops:enum/majority_type/absolute](ops:enum/majority_type/absolute) |
 | two_thirds |  Zweidrittelmehr.  |
@@ -3267,7 +3267,7 @@ URI: [ops:IndividualVoteTypeEnum](https://ch.paf.link/schema/operations/Individu
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | yes |  Ja-Stimme  |
 | | [ops:enum/individual_vote_type/yes](ops:enum/individual_vote_type/yes) |
 | no |  Nein-Stimme  |
@@ -3597,7 +3597,7 @@ URI: [ops:ElectionTypeEnum](https://ch.paf.link/schema/operations/ElectionTypeEn
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | secret |  Geheime Wahl  |
 | | [ops:enum/election_type/secret](ops:enum/election_type/secret) |
 | open |  Offene Wahl  |

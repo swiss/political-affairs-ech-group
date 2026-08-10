@@ -14,7 +14,7 @@ URI: [ops:DocumentCategoryEnum](https://ch.paf.link/schema/operations/DocumentCa
 
 ### Permissible Values
 | Value | Description | Additional Info |
-| --- | --- | --- |
+|----------------------|----------------------------------------------------------|--------------------|
 | protocol ([meta:vocabulary/document_category/Protocol](meta:vocabulary/document_category/Protocol)) | Protocols of any kind. Examples: decision protocol, verbatim protocol, short protocol, daily journal (Tagblatt), opening speech, speaker list, audio and video recordings.  | Title: Protocol<br>|
 | voting_result ([meta:vocabulary/document_category/VotingResult](meta:vocabulary/document_category/VotingResult)) | Voting and election results. Examples: voting protocol, election protocol, roll-call voting protocols.  | Title: Voting result<br>|
 | meeting_documents ([meta:vocabulary/document_category/MeetingDocuments](meta:vocabulary/document_category/MeetingDocuments)) | Meeting documents available at the start of a meeting concerning the affairs. Examples: agenda list, daily agenda, session programme, session preview, agendaed petitions, motion list, oath ceremony, daily journal supplements, affairs directory.  | Title: Meeting documents<br>|

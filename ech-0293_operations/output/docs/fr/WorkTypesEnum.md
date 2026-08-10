@@ -14,7 +14,7 @@ URI: [ops:WorkTypesEnum](https://ch.paf.link/schema/operations/WorkTypesEnum)
 
 ### Valeurs admissibles
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | pv |  Procès-verbal.  |
 | | [meta:vocabulary/work_types/PV](meta:vocabulary/work_types/PV) |
 | submitted_version |  Version telle que déposée.  |

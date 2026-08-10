@@ -14,7 +14,7 @@ URI: [ops:StateEnum](https://ch.paf.link/schema/operations/StateEnum)
 
 ### Zulässige Werte
 | Wert | Beschreibung |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | planned |  Die Sitzung ist geplant und findet wie vorgesehen statt.  |
 | | [ops:enum/state/planned](ops:enum/state/planned) |
 | canceled |  Die Sitzung wurde abgesagt.  |

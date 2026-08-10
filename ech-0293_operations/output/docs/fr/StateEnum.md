@@ -14,7 +14,7 @@ URI: [ops:StateEnum](https://ch.paf.link/schema/operations/StateEnum)
 
 ### Valeurs admissibles
 | Valeur | Description |
-| --- | --- |
+|------------------------|----------------------------------------------------------------------------|
 | planned |  La séance est planifiée et se tiendra comme prévu.  |
 | | [ops:enum/state/planned](ops:enum/state/planned) |
 | canceled |  La séance a été annulée.  |
