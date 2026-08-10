@@ -25,10 +25,7 @@ _Eine Mixin-Klasse, welche die Slots bereitstellt, mit denen eine Referenz die E
 
 ### Mixin-Verwendung
 
-| mixed into | description |
-| --- | --- |
-| [PersonReference](PersonReference.md) | Kurzreferenz auf eine Person mit den wichtigsten Identifikationsmerkmalen zum... |
-| [GroupReference](GroupReference.md) | Kurzreferenz auf eine Gruppe mit den wichtigsten Identifikationsmerkmalen zum... |
+[PersonReference](PersonReference.md), [GroupReference](GroupReference.md)
 
 
 

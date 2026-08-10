@@ -29,7 +29,7 @@ _Ein Name mit einem Typ (z.B. Rufname, amtlicher Name) und einem Wert und einer 
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Person](Person.md) | [names](names.md) | range | [Name](Name.md) |
 

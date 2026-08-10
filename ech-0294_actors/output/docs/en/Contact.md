@@ -27,7 +27,7 @@ _Contact information of a person indicating a type (e.g., email, LinkedIn) and a
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Person](Person.md) | [contacts](contacts.md) | range | [Contact](Contact.md) |
 | [Group](Group.md) | [contacts](contacts.md) | range | [Contact](Contact.md) |

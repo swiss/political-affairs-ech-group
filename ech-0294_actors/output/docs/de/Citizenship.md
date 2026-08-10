@@ -28,7 +28,7 @@ _Staatsangehörigkeit (wird auch für Nationalität verwendet) einer Person unte
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Person](Person.md) | [citizenships](citizenships.md) | range | [Citizenship](Citizenship.md) |
 

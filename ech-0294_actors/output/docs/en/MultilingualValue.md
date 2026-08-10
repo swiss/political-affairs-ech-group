@@ -26,7 +26,7 @@ _A multilingual string with language specification._
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Group](Group.md) | [label](label.md) | range | [MultilingualValue](MultilingualValue.md) |
 | [Group](Group.md) | [abbreviation](abbreviation.md) | range | [MultilingualValue](MultilingualValue.md) |

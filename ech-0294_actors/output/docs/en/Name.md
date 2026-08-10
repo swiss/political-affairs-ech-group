@@ -29,7 +29,7 @@ _A name with a type (e.g., call name, official name), a value, and a temporal va
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Person](Person.md) | [names](names.md) | range | [Name](Name.md) |
 

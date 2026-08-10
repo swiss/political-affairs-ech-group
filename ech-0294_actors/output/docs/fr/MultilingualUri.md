@@ -26,7 +26,7 @@ _Une URI accompagnée de la langue de la ressource vers laquelle elle renvoie. S
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Group](Group.md) | [landing_page](landing_page.md) | range | [MultilingualUri](MultilingualUri.md) |
 

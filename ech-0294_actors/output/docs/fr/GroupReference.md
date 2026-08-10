@@ -42,7 +42,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Group](Group.md) | [parent_groups](parent_groups.md) | range | [GroupReference](GroupReference.md) |
 | [Membership](Membership.md) | [group_reference](group_reference.md) | range | [GroupReference](GroupReference.md) |

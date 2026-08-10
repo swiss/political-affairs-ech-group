@@ -39,7 +39,7 @@ _Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe, die eine 
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [memberships](memberships.md) | range | [Membership](Membership.md) |
 

@@ -28,7 +28,7 @@ _Citizenship (also used for Nationality) of a person indicating the country and 
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Person](Person.md) | [citizenships](citizenships.md) | range | [Citizenship](Citizenship.md) |
 

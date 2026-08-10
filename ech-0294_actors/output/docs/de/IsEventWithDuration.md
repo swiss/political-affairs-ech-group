@@ -30,8 +30,7 @@ _Eine Mixin-Klasse, die Slots für die Modellierung von Ereignissen oder Vorkomm
 
 ### Mixin-Verwendung
 
-| mixed into | description |
-| --- | --- |
+
 
 
 

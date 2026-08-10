@@ -43,7 +43,7 @@ At least one of the following must be set:
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Person](Person.md) | [addresses](addresses.md) | range | [Address](Address.md) |
 | [Group](Group.md) | [addresses](addresses.md) | range | [Address](Address.md) |

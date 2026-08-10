@@ -27,7 +27,7 @@ _Sprachkenntnisse einer Person mit Angabe der Sprache und ob es sich um die bevo
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Person](Person.md) | [language_proficiencies](language_proficiencies.md) | range | [LanguageProficiency](LanguageProficiency.md) |
 

@@ -25,16 +25,7 @@ _Eine Mixin-Klasse, die Slots für die Modellierung einer zeitlichen Gültigkeit
 
 ### Mixin-Verwendung
 
-| mixed into | description |
-| --- | --- |
-| [Group](Group.md) | Eine politische Gruppe, Organisation oder Körperschaft (z |
-| [Membership](Membership.md) | Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe, die ein... |
-| [InterestLink](InterestLink.md) | Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person... |
-| [Name](Name.md) | Ein Name mit einem Typ (z |
-| [Citizenship](Citizenship.md) | Staatsangehörigkeit (wird auch für Nationalität verwendet) einer Person unter... |
-| [Gender](Gender.md) | Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen ... |
-| [Occupation](Occupation.md) | Beruf oder Tätigkeit einer Person mit Angabe eines Labels, eines ISCO-19 Code... |
-| [Training](Training.md) | Ausbildung oder Bildung einer Person mit Angabe eines Typs (z |
+[Group](Group.md), [Membership](Membership.md), [InterestLink](InterestLink.md), [Name](Name.md), [Citizenship](Citizenship.md), [Gender](Gender.md), [Occupation](Occupation.md), [Training](Training.md)
 
 
 

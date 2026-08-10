@@ -30,7 +30,7 @@ _Sexe d'une personne indiquant un code de sexe et la validité temporelle._
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Person](Person.md) | [genders](genders.md) | range | [Gender](Gender.md) |
 

@@ -40,8 +40,7 @@ _remark slot. Concrete step classes add their own type-specific slots._
 
 ### Mixin Usage
 
-| mixed into | description |
-| --- | --- |
+
 
 
 

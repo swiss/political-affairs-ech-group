@@ -27,7 +27,7 @@ _Kontaktinformation einer Person mit Angabe eines Typs (z.B. E-Mail, LinkedIn) u
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Person](Person.md) | [contacts](contacts.md) | range | [Contact](Contact.md) |
 | [Group](Group.md) | [contacts](contacts.md) | range | [Contact](Contact.md) |

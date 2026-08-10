@@ -44,7 +44,7 @@ At least one of the following must be set:
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Person](Person.md) | [trainings](trainings.md) | range | [Training](Training.md) |
 

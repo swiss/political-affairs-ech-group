@@ -25,14 +25,7 @@ _Une classe mixin qui fournit des slots pour l'identification d'une entité. Ell
 
 ### Utilisation de mixin
 
-| mixed into | description |
-| --- | --- |
-| [Container](Container.md) | Conteneur pour les acteurs politiques, les groupes et les relations |
-| [Person](Person.md) | Une personne avec des identifiants, des noms, des adresses, des nationalités ... |
-| [Group](Group.md) | Un groupe, une organisation ou une collectivité politique (p |
-| [Membership](Membership.md) | Une relation d'affiliation entre une personne et un groupe, représentant une ... |
-| [InterestLink](InterestLink.md) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |
-| [ElectoralDistrict](ElectoralDistrict.md) | Circonscription ou région électorale associée à une affiliation |
+[Container](Container.md), [Person](Person.md), [Group](Group.md), [Membership](Membership.md), [InterestLink](InterestLink.md), [ElectoralDistrict](ElectoralDistrict.md)
 
 
 

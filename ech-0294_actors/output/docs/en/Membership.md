@@ -39,7 +39,7 @@ _A membership relationship between a person and a group, representing formal aff
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [memberships](memberships.md) | range | [Membership](Membership.md) |
 

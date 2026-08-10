@@ -57,7 +57,7 @@ At least one of the following must be set:
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [interest_links](interest_links.md) | range | [InterestLink](InterestLink.md) |
 | [Person](Person.md) | [interest_links](interest_links.md) | range | [InterestLink](InterestLink.md) |

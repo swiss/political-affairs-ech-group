@@ -26,7 +26,7 @@ _Une chaîne de caractères multilingue avec indication de la langue._
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Group](Group.md) | [label](label.md) | range | [MultilingualValue](MultilingualValue.md) |
 | [Group](Group.md) | [abbreviation](abbreviation.md) | range | [MultilingualValue](MultilingualValue.md) |

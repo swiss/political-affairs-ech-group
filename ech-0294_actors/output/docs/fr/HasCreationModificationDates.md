@@ -26,12 +26,7 @@ _Une classe mixin qui fournit des slots pour modéliser les dates de création e
 
 ### Utilisation de mixin
 
-| mixed into | description |
-| --- | --- |
-| [Person](Person.md) | Une personne avec des identifiants, des noms, des adresses, des nationalités ... |
-| [Group](Group.md) | Un groupe, une organisation ou une collectivité politique (p |
-| [Membership](Membership.md) | Une relation d'affiliation entre une personne et un groupe, représentant une ... |
-| [InterestLink](InterestLink.md) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |
+[Person](Person.md), [Group](Group.md), [Membership](Membership.md), [InterestLink](InterestLink.md)
 
 
 

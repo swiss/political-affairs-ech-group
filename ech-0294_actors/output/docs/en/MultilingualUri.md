@@ -26,7 +26,7 @@ _A URI together with the language of the resource it points to. Same structure a
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Group](Group.md) | [landing_page](landing_page.md) | range | [MultilingualUri](MultilingualUri.md) |
 

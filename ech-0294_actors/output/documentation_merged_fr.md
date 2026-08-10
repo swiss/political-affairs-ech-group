@@ -12,7 +12,7 @@ toc: false
 |**Version**|1.0.0|
 |**Statut**|Proposition|
 |**Décidé le**||
-|**Date de publication**|2026-07-22|
+|**Date de publication**|2026-08-10|
 |**Remplace la version**||
 |**Conditions préalables**||
 |**Annexes**|-|
@@ -110,7 +110,7 @@ Le schéma Person décrit les personnes physiques dans le contexte politique.
 
 
 
-## Classe: Person{#Person}
+## Classe: Person []{#Person}
 
 
 _Une personne avec des identifiants, des noms, des adresses, des nationalités et des professions._
@@ -156,7 +156,7 @@ _Une personne avec des identifiants, des noms, des adresses, des nationalités e
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | Container | persons | range | [Person](#Person) |
 
@@ -317,7 +317,7 @@ persons:
 
 
 
-## Classe: Name{#Name}
+## Classe: Name []{#Name}
 
 
 _Un nom avec un type (p. ex. nom d'usage, nom officiel), une valeur et une validité temporelle._
@@ -346,7 +346,7 @@ _Un nom avec un type (p. ex. nom d'usage, nom officiel), une valeur et une valid
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Person](#Person) | names | range | [Name](#Name) |
 
@@ -370,7 +370,7 @@ _Un nom avec un type (p. ex. nom d'usage, nom officiel), une valeur et une valid
 
 </div>
 
-## Enum: NameTypeEnum{#NameTypeEnum}
+## Enum: NameTypeEnum []{#NameTypeEnum}
 
 
 
@@ -420,7 +420,7 @@ URI: [act:NameTypeEnum](https://ld.ech.ch/schema/0294/actors/NameTypeEnum)
 
 
 
-## Classe: LanguageProficiency{#LanguageProficiency}
+## Classe: LanguageProficiency []{#LanguageProficiency}
 
 
 _Compétences linguistiques d'une personne indiquant la langue et le fait qu'il s'agisse ou non de la langue préférée ou de la langue maternelle._
@@ -447,7 +447,7 @@ _Compétences linguistiques d'une personne indiquant la langue et le fait qu'il 
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Person](#Person) | language_proficiencies | range | [LanguageProficiency](#LanguageProficiency) |
 
@@ -473,7 +473,7 @@ _Compétences linguistiques d'une personne indiquant la langue et le fait qu'il 
 
 
 
-## Classe: Citizenship{#Citizenship}
+## Classe: Citizenship []{#Citizenship}
 
 
 _Nationalité (également utilisée pour la citoyenneté) d'une personne indiquant le pays et la validité temporelle. Si aucun `valid_from` n'est fourni, cette information n'est pas connue. S'il est établi que la nationalité est valable depuis la naissance, la date de naissance doit être répétée ici. En l'absence de `valid_through`, la nationalité est toujours en vigueur._
@@ -501,7 +501,7 @@ _Nationalité (également utilisée pour la citoyenneté) d'une personne indiqua
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Person](#Person) | citizenships | range | [Citizenship](#Citizenship) |
 
@@ -527,7 +527,7 @@ _Nationalité (également utilisée pour la citoyenneté) d'une personne indiqua
 
 
 
-## Classe: Gender{#Gender}
+## Classe: Gender []{#Gender}
 
 
 _Sexe d'une personne indiquant un code de sexe et la validité temporelle._
@@ -557,7 +557,7 @@ _Sexe d'une personne indiquant un code de sexe et la validité temporelle._
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Person](#Person) | genders | range | [Gender](#Gender) |
 
@@ -581,7 +581,7 @@ _Sexe d'une personne indiquant un code de sexe et la validité temporelle._
 
 </div>
 
-## Enum: GenderCodeEnum{#GenderCodeEnum}
+## Enum: GenderCodeEnum []{#GenderCodeEnum}
 
 
 
@@ -614,7 +614,7 @@ URI: [act:GenderCodeEnum](https://ld.ech.ch/schema/0294/actors/GenderCodeEnum)
 
 
 
-## Classe: Occupation{#Occupation}
+## Classe: Occupation []{#Occupation}
 
 
 _Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si l'activité est rémunérée, ainsi que la validité temporelle._
@@ -659,7 +659,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Person](#Person) | occupations | range | [Occupation](#Occupation) |
 
@@ -704,7 +704,7 @@ occupations:
 
 
 
-## Classe: Training{#Training}
+## Classe: Training []{#Training}
 
 
 _Formation ou éducation d'une personne indiquant un type (p. ex. diplôme scolaire, diplôme universitaire, service militaire), un libellé, un code ISCO-19 et la validité temporelle._
@@ -748,7 +748,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Person](#Person) | trainings | range | [Training](#Training) |
 
@@ -772,7 +772,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 </div>
 
-## Enum: TrainingTypeEnum{#TrainingTypeEnum}
+## Enum: TrainingTypeEnum []{#TrainingTypeEnum}
 
 
 
@@ -895,7 +895,7 @@ Le schéma Group représente les groupes, organisations et corporations politiqu
 
 
 
-## Classe: Group{#Group}
+## Classe: Group []{#Group}
 
 
 _Un groupe, une organisation ou une collectivité politique (p. ex. parti, commission, parlement, département)._
@@ -942,7 +942,7 @@ _Un groupe, une organisation ou une collectivité politique (p. ex. parti, commi
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | Container | groups | range | [Group](#Group) |
 
@@ -1286,7 +1286,7 @@ groups:
 
 
 
-## Classe: GroupType{#GroupType}
+## Classe: GroupType []{#GroupType}
 
 
 _Type de groupe (p. ex. parti, commission, parlement, département)._
@@ -1312,7 +1312,7 @@ _Type de groupe (p. ex. parti, commission, parlement, département)._
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Group](#Group) | group_type | range | [GroupType](#GroupType) |
 
@@ -1336,7 +1336,7 @@ _Type de groupe (p. ex. parti, commission, parlement, département)._
 
 </div>
 
-## Enum: GroupTypeEnum{#GroupTypeEnum}
+## Enum: GroupTypeEnum []{#GroupTypeEnum}
 
 
 
@@ -1428,7 +1428,7 @@ Le schéma Membership représente la relation entre personnes et groupes et cons
 
 
 
-## Classe: Membership{#Membership}
+## Classe: Membership []{#Membership}
 
 
 _Une relation d'affiliation entre une personne et un groupe, représentant une appartenance formelle (p. ex. membre d'un parti, membre d'une commission, parlementaire). À distinguer de InterestLink, qui recouvre les liens d'intérêts externes et les conflits d'intérêts avec des organisations situées en dehors du schéma des acteurs._
@@ -1467,7 +1467,7 @@ _Une relation d'affiliation entre une personne et un groupe, représentant une a
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | Container | memberships | range | [Membership](#Membership) |
 
@@ -1672,7 +1672,7 @@ memberships:
 
 
 
-## Classe: RoleType{#RoleType}
+## Classe: RoleType []{#RoleType}
 
 
 _Rôle d'une personne dans une affiliation ou une fonction (p. ex. membre, président, suppléant). Si un rôle ne figure pas dans le vocabulaire RoleEnum proposé, la valeur « other » peut être utilisée, et un libellé descriptif doit être fourni dans le slot `role_label`. Le libellé peut également être utilisé lorsqu'une désignation spécifique est nécessaire, même s'il existe une valeur sémantique appropriée dans `role_type_enum` ; il doit être fourni lorsque `role_type_enum` est réglé sur « other »._
@@ -1711,7 +1711,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Membership](#Membership) | role_type | range | [RoleType](#RoleType) |
 
@@ -1741,7 +1741,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 </div>
 
-## Enum: RoleEnum{#RoleEnum}
+## Enum: RoleEnum []{#RoleEnum}
 
 
 
@@ -1773,7 +1773,7 @@ URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 
 
 
-## Classe: ElectoralDistrict{#ElectoralDistrict}
+## Classe: ElectoralDistrict []{#ElectoralDistrict}
 
 
 _Circonscription ou région électorale associée à une affiliation. La validité temporelle est héritée de l'affiliation englobante._
@@ -1801,7 +1801,7 @@ _Circonscription ou région électorale associée à une affiliation. La validit
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Membership](#Membership) | electoral_district | range | [ElectoralDistrict](#ElectoralDistrict) |
 
@@ -1865,7 +1865,7 @@ Le schéma InterestLink consigne les liens d'intérêts, les conflits d'intérê
 
 
 
-## Classe: InterestLink{#InterestLink}
+## Classe: InterestLink []{#InterestLink}
 
 
 _Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne avec une organisation située en dehors du schéma des acteurs._
@@ -1922,7 +1922,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | Container | interest_links | range | [InterestLink](#InterestLink) |
 | [Person](#Person) | interest_links | range | [InterestLink](#InterestLink) |
@@ -2101,7 +2101,7 @@ interest_links:
 
 </div>
 
-## Enum: InterestTypeEnum{#InterestTypeEnum}
+## Enum: InterestTypeEnum []{#InterestTypeEnum}
 
 
 
@@ -2139,7 +2139,7 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 
 </div>
 
-## Enum: LegalFormEnum{#LegalFormEnum}
+## Enum: LegalFormEnum []{#LegalFormEnum}
 
 
 
@@ -2260,7 +2260,7 @@ Contrairement à une entité, une référence n'est pas identifiée en propre �
 
 
 
-## Classe: PersonReference{#PersonReference}
+## Classe: PersonReference []{#PersonReference}
 
 
 _Référence abrégée à une personne avec les principales données d'identification au moment de la liaison. Préserve l'exactitude historique même si la personne change ultérieurement. La personne référencée est désignée par `local_id` ou `global_uri` ; au moins l'un des deux est requis._
@@ -2303,7 +2303,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Membership](#Membership) | person_reference | range | [PersonReference](#PersonReference) |
 | [InterestLink](#InterestLink) | person_reference | range | [PersonReference](#PersonReference) |
@@ -2330,7 +2330,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 
 
-## Classe: GroupReference{#GroupReference}
+## Classe: GroupReference []{#GroupReference}
 
 
 _Référence abrégée à un groupe avec les principales données d'identification au moment de la liaison. Le groupe référencé est désigné par `local_id` ou `global_uri` ; au moins l'un des deux est requis. Un `local_id` est résolu au sein de la même livraison, un `global_uri` également au-delà._
@@ -2372,7 +2372,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Group](#Group) | parent_groups | range | [GroupReference](#GroupReference) |
 | [Membership](#Membership) | group_reference | range | [GroupReference](#GroupReference) |
@@ -2407,7 +2407,7 @@ Pour obtenir l'EGAID, on peut utiliser l'[API de recherche de geo.admin.ch](http
 
 
 
-## Classe: Address{#Address}
+## Classe: Address []{#Address}
 
 
 _Une adresse avec un type (p. ex. adresse privée, adresse professionnelle) et une valeur._
@@ -2450,7 +2450,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Person](#Person) | addresses | range | [Address](#Address) |
 | [Group](#Group) | addresses | range | [Address](#Address) |
@@ -2498,7 +2498,7 @@ addresses:
 
 </div>
 
-## Enum: AddressTypeEnum{#AddressTypeEnum}
+## Enum: AddressTypeEnum []{#AddressTypeEnum}
 
 
 
@@ -2529,7 +2529,7 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 
 
 
-## Classe: Contact{#Contact}
+## Classe: Contact []{#Contact}
 
 
 _Informations de contact d'une personne indiquant un type (p. ex. e-mail, LinkedIn) et une valeur._
@@ -2556,7 +2556,7 @@ _Informations de contact d'une personne indiquant un type (p. ex. e-mail, Linked
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Person](#Person) | contacts | range | [Contact](#Contact) |
 | [Group](#Group) | contacts | range | [Contact](#Contact) |
@@ -2590,7 +2590,7 @@ Un mixin n'est pas une superclasse : aucune instance d'une classe mixin n'est cr
 
 
 
-## Classe: HasIdentification{#HasIdentification}
+## Classe: HasIdentification []{#HasIdentification}
 
 
 _Une classe mixin qui fournit des slots pour l'identification d'une entité. Elle est utilisée pour les entités identifiées en propre ; leur `global_uri` constitue l'identifiant et est donc obligatoire._
@@ -2615,14 +2615,7 @@ _Une classe mixin qui fournit des slots pour l'identification d'une entité. Ell
 
 ### Utilisation de mixin
 
-| mixed into | description |
-| --- | --- |
-| Container | Conteneur pour les acteurs politiques, les groupes et les relations |
-| [Person](#Person) | Une personne avec des identifiants, des noms, des adresses, des nationalités ... |
-| [Group](#Group) | Un groupe, une organisation ou une collectivité politique (p |
-| [Membership](#Membership) | Une relation d'affiliation entre une personne et un groupe, représentant une ... |
-| [InterestLink](#InterestLink) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |
-| [ElectoralDistrict](#ElectoralDistrict) | Circonscription ou région électorale associée à une affiliation |
+Container, [Person](#Person), [Group](#Group), [Membership](#Membership), [InterestLink](#InterestLink), [ElectoralDistrict](#ElectoralDistrict)
 
 
 
@@ -2648,7 +2641,7 @@ _Une classe mixin qui fournit des slots pour l'identification d'une entité. Ell
 
 
 
-## Classe: HasReferenceIdentification{#HasReferenceIdentification}
+## Classe: HasReferenceIdentification []{#HasReferenceIdentification}
 
 
 _Une classe mixin qui fournit les slots par lesquels une référence désigne l'entité vers laquelle elle pointe. Contrairement à `HasIdentification`, elle n'identifie pas l'objet référençant lui-même ; c'est pourquoi `global_uri` n'y est ni identifiant ni obligatoire : un système qui ne dispose que de l'identifiant local de l'entité référencée indique celui-ci. Une classe de référence utilisant ce mixin doit exiger au moins l'un des deux._
@@ -2673,10 +2666,7 @@ _Une classe mixin qui fournit les slots par lesquels une référence désigne l'
 
 ### Utilisation de mixin
 
-| mixed into | description |
-| --- | --- |
-| [PersonReference](#PersonReference) | Référence abrégée à une personne avec les principales données d'identificatio... |
-| [GroupReference](#GroupReference) | Référence abrégée à un groupe avec les principales données d'identification a... |
+[PersonReference](#PersonReference), [GroupReference](#GroupReference)
 
 
 
@@ -2702,7 +2692,7 @@ _Une classe mixin qui fournit les slots par lesquels une référence désigne l'
 
 
 
-## Classe: HasTemporalValidity{#HasTemporalValidity}
+## Classe: HasTemporalValidity []{#HasTemporalValidity}
 
 
 _Une classe mixin qui fournit des slots pour modéliser la validité temporelle d'une information (et non d'un événement)._
@@ -2727,16 +2717,7 @@ _Une classe mixin qui fournit des slots pour modéliser la validité temporelle 
 
 ### Utilisation de mixin
 
-| mixed into | description |
-| --- | --- |
-| [Group](#Group) | Un groupe, une organisation ou une collectivité politique (p |
-| [Membership](#Membership) | Une relation d'affiliation entre une personne et un groupe, représentant une ... |
-| [InterestLink](#InterestLink) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |
-| [Name](#Name) | Un nom avec un type (p |
-| [Citizenship](#Citizenship) | Nationalité (également utilisée pour la citoyenneté) d'une personne indiquant... |
-| [Gender](#Gender) | Sexe d'une personne indiquant un code de sexe et la validité temporelle |
-| [Occupation](#Occupation) | Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si... |
-| [Training](#Training) | Formation ou éducation d'une personne indiquant un type (p |
+[Group](#Group), [Membership](#Membership), [InterestLink](#InterestLink), [Name](#Name), [Citizenship](#Citizenship), [Gender](#Gender), [Occupation](#Occupation), [Training](#Training)
 
 
 
@@ -2762,7 +2743,7 @@ _Une classe mixin qui fournit des slots pour modéliser la validité temporelle 
 
 
 
-## Classe: HasCreationModificationDates{#HasCreationModificationDates}
+## Classe: HasCreationModificationDates []{#HasCreationModificationDates}
 
 
 _Une classe mixin qui fournit des slots pour modéliser les dates de création et de modification d'une entité._
@@ -2788,12 +2769,7 @@ _Une classe mixin qui fournit des slots pour modéliser les dates de création e
 
 ### Utilisation de mixin
 
-| mixed into | description |
-| --- | --- |
-| [Person](#Person) | Une personne avec des identifiants, des noms, des adresses, des nationalités ... |
-| [Group](#Group) | Un groupe, une organisation ou une collectivité politique (p |
-| [Membership](#Membership) | Une relation d'affiliation entre une personne et un groupe, représentant une ... |
-| [InterestLink](#InterestLink) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |
+[Person](#Person), [Group](#Group), [Membership](#Membership), [InterestLink](#InterestLink)
 
 
 

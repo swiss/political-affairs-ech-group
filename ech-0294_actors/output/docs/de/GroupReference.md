@@ -42,7 +42,7 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Group](Group.md) | [parent_groups](parent_groups.md) | range | [GroupReference](GroupReference.md) |
 | [Membership](Membership.md) | [group_reference](group_reference.md) | range | [GroupReference](GroupReference.md) |

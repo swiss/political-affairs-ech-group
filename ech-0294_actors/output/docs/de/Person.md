@@ -46,7 +46,7 @@ _Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Ber
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [persons](persons.md) | range | [Person](Person.md) |
 

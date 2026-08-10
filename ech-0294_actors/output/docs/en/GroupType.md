@@ -26,7 +26,7 @@ _Type of group (e.g., party, committee, parliament, department)._
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Group](Group.md) | [group_type](group_type.md) | range | [GroupType](GroupType.md) |
 

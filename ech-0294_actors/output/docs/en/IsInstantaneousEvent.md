@@ -26,8 +26,7 @@ _A mixin class that provides slots for modeling instantaneous events or occurren
 
 ### Mixin Usage
 
-| mixed into | description |
-| --- | --- |
+
 
 
 

@@ -39,7 +39,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Membership](Membership.md) | [role_type](role_type.md) | range | [RoleType](RoleType.md) |
 

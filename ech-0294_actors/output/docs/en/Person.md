@@ -46,7 +46,7 @@ _A person with identifiers, names, addresses, citizenships, and occupations._
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [persons](persons.md) | range | [Person](Person.md) |
 

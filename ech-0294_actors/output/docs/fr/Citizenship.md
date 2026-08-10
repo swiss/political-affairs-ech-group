@@ -28,7 +28,7 @@ _Nationalité (également utilisée pour la citoyenneté) d'une personne indiqua
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Person](Person.md) | [citizenships](citizenships.md) | range | [Citizenship](Citizenship.md) |
 

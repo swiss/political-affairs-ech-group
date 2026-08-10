@@ -26,12 +26,7 @@ _A mixin class that provides slots for modeling creation and modification dates 
 
 ### Mixin Usage
 
-| mixed into | description |
-| --- | --- |
-| [Person](Person.md) | A person with identifiers, names, addresses, citizenships, and occupations |
-| [Group](Group.md) | A political group, organization, or body (e |
-| [Membership](Membership.md) | A membership relationship between a person and a group, representing formal a... |
-| [InterestLink](InterestLink.md) | An interest link (conflict of interest, political financing) of a person to a... |
+[Person](Person.md), [Group](Group.md), [Membership](Membership.md), [InterestLink](InterestLink.md)
 
 
 

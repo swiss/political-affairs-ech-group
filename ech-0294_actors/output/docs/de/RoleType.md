@@ -39,7 +39,7 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Membership](Membership.md) | [role_type](role_type.md) | range | [RoleType](RoleType.md) |
 

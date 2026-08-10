@@ -26,8 +26,7 @@ _Une classe mixin qui fournit des slots pour modéliser des événements ou occu
 
 ### Utilisation de mixin
 
-| mixed into | description |
-| --- | --- |
+
 
 
 

@@ -25,16 +25,7 @@ _Une classe mixin qui fournit des slots pour modéliser la validité temporelle 
 
 ### Utilisation de mixin
 
-| mixed into | description |
-| --- | --- |
-| [Group](Group.md) | Un groupe, une organisation ou une collectivité politique (p |
-| [Membership](Membership.md) | Une relation d'affiliation entre une personne et un groupe, représentant une ... |
-| [InterestLink](InterestLink.md) | Un lien d'intérêts (conflit d'intérêts, financement politique) d'une personne... |
-| [Name](Name.md) | Un nom avec un type (p |
-| [Citizenship](Citizenship.md) | Nationalité (également utilisée pour la citoyenneté) d'une personne indiquant... |
-| [Gender](Gender.md) | Sexe d'une personne indiquant un code de sexe et la validité temporelle |
-| [Occupation](Occupation.md) | Métier ou profession d'une personne indiquant un libellé, un code ISCO-19, si... |
-| [Training](Training.md) | Formation ou éducation d'une personne indiquant un type (p |
+[Group](Group.md), [Membership](Membership.md), [InterestLink](InterestLink.md), [Name](Name.md), [Citizenship](Citizenship.md), [Gender](Gender.md), [Occupation](Occupation.md), [Training](Training.md)
 
 
 

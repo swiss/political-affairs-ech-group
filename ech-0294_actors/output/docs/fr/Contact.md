@@ -27,7 +27,7 @@ _Informations de contact d'une personne indiquant un type (p. ex. e-mail, Linked
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Person](Person.md) | [contacts](contacts.md) | range | [Contact](Contact.md) |
 | [Group](Group.md) | [contacts](contacts.md) | range | [Contact](Contact.md) |

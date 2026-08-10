@@ -26,12 +26,7 @@ _Eine Mixin-Klasse, die Slots für die Modellierung von Erstellungs- und Änderu
 
 ### Mixin-Verwendung
 
-| mixed into | description |
-| --- | --- |
-| [Person](Person.md) | Eine Person mit Identifikatoren, Namen, Adressen, Staatsbürgerschaften und Be... |
-| [Group](Group.md) | Eine politische Gruppe, Organisation oder Körperschaft (z |
-| [Membership](Membership.md) | Eine Mitgliedschaftsbeziehung zwischen einer Person und einer Gruppe, die ein... |
-| [InterestLink](InterestLink.md) | Eine Interessenbindung (Interessenkonflikt, Politikfinanzierung) einer Person... |
+[Person](Person.md), [Group](Group.md), [Membership](Membership.md), [InterestLink](InterestLink.md)
 
 
 

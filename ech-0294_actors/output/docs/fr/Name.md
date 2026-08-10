@@ -29,7 +29,7 @@ _Un nom avec un type (p. ex. nom d'usage, nom officiel), une valeur et une valid
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Person](Person.md) | [names](names.md) | range | [Name](Name.md) |
 

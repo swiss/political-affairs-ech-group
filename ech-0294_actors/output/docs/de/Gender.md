@@ -30,7 +30,7 @@ _Geschlecht einer Person mit Angabe eines Geschlechtscodes und der zeitlichen GÃ
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Person](Person.md) | [genders](genders.md) | range | [Gender](Gender.md) |
 

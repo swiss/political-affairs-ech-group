@@ -25,10 +25,7 @@ _A mixin class that provides the slots with which a reference names the entity i
 
 ### Mixin Usage
 
-| mixed into | description |
-| --- | --- |
-| [PersonReference](PersonReference.md) | Lightweight reference to a person with key identification data at time of lin... |
-| [GroupReference](GroupReference.md) | Lightweight reference to a group with key identification data at time of link... |
+[PersonReference](PersonReference.md), [GroupReference](GroupReference.md)
 
 
 

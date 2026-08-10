@@ -45,7 +45,7 @@ Au moins l'un des champs suivants doit être renseigné :
 
 ### Utilisations
 
-| used by | used in | type | used |
+| Utilisé par | Dans le slot | Rôle | Élément |
 | ---  | --- | --- | --- |
 | [Person](Person.md) | [occupations](occupations.md) | range | [Occupation](Occupation.md) |
 

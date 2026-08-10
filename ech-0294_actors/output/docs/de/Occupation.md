@@ -45,7 +45,7 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Person](Person.md) | [occupations](occupations.md) | range | [Occupation](Occupation.md) |
 

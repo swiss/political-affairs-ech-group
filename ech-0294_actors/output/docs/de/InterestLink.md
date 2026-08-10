@@ -57,7 +57,7 @@ Mindestens eines der folgenden Felder muss gesetzt sein:
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [interest_links](interest_links.md) | range | [InterestLink](InterestLink.md) |
 | [Person](Person.md) | [interest_links](interest_links.md) | range | [InterestLink](InterestLink.md) |

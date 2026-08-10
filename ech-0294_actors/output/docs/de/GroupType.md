@@ -26,7 +26,7 @@ _Art der Gruppe (z.B. Partei, Kommission, Parlament, Departement)._
 
 ### Verwendungen
 
-| used by | used in | type | used |
+| Verwendet von | Im Slot | Rolle | Element |
 | ---  | --- | --- | --- |
 | [Group](Group.md) | [group_type](group_type.md) | range | [GroupType](GroupType.md) |
 

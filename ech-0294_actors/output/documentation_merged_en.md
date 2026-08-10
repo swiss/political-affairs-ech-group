@@ -12,7 +12,7 @@ toc: false
 |**Version**|1.0.0|
 |**Status**|Proposal|
 |**Adopted on**||
-|**Issue date**|2026-07-22|
+|**Issue date**|2026-08-10|
 |**Replaces version**||
 |**Prerequisites**||
 |**Annexes**|-|
@@ -111,7 +111,7 @@ The person schema describes natural persons in the political context.
 
 
 
-## Class: Person{#Person}
+## Class: Person []{#Person}
 
 
 _A person with identifiers, names, addresses, citizenships, and occupations._
@@ -157,7 +157,7 @@ _A person with identifiers, names, addresses, citizenships, and occupations._
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | Container | persons | range | [Person](#Person) |
 
@@ -318,7 +318,7 @@ persons:
 
 
 
-## Class: Name{#Name}
+## Class: Name []{#Name}
 
 
 _A name with a type (e.g., call name, official name), a value, and a temporal validity._
@@ -347,7 +347,7 @@ _A name with a type (e.g., call name, official name), a value, and a temporal va
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Person](#Person) | names | range | [Name](#Name) |
 
@@ -371,7 +371,7 @@ _A name with a type (e.g., call name, official name), a value, and a temporal va
 
 </div>
 
-## Enum: NameTypeEnum{#NameTypeEnum}
+## Enum: NameTypeEnum []{#NameTypeEnum}
 
 
 
@@ -421,7 +421,7 @@ URI: [act:NameTypeEnum](https://ld.ech.ch/schema/0294/actors/NameTypeEnum)
 
 
 
-## Class: LanguageProficiency{#LanguageProficiency}
+## Class: LanguageProficiency []{#LanguageProficiency}
 
 
 _Language proficiency of a person indicating the language and whether it is the preferred language or native language._
@@ -448,7 +448,7 @@ _Language proficiency of a person indicating the language and whether it is the 
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Person](#Person) | language_proficiencies | range | [LanguageProficiency](#LanguageProficiency) |
 
@@ -474,7 +474,7 @@ _Language proficiency of a person indicating the language and whether it is the 
 
 
 
-## Class: Citizenship{#Citizenship}
+## Class: Citizenship []{#Citizenship}
 
 
 _Citizenship (also used for Nationality) of a person indicating the country and temporal validity. If there is no `valid_from` provided, the information is not known. If it is known that the citizenship is valid from birth, the birthdate is to be repeated here. If there is no `valid_through`, the citizenship is still active._
@@ -502,7 +502,7 @@ _Citizenship (also used for Nationality) of a person indicating the country and 
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Person](#Person) | citizenships | range | [Citizenship](#Citizenship) |
 
@@ -528,7 +528,7 @@ _Citizenship (also used for Nationality) of a person indicating the country and 
 
 
 
-## Class: Gender{#Gender}
+## Class: Gender []{#Gender}
 
 
 _Gender of a person indicating a gender code and temporal validity._
@@ -558,7 +558,7 @@ _Gender of a person indicating a gender code and temporal validity._
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Person](#Person) | genders | range | [Gender](#Gender) |
 
@@ -582,7 +582,7 @@ _Gender of a person indicating a gender code and temporal validity._
 
 </div>
 
-## Enum: GenderCodeEnum{#GenderCodeEnum}
+## Enum: GenderCodeEnum []{#GenderCodeEnum}
 
 
 
@@ -615,7 +615,7 @@ URI: [act:GenderCodeEnum](https://ld.ech.ch/schema/0294/actors/GenderCodeEnum)
 
 
 
-## Class: Occupation{#Occupation}
+## Class: Occupation []{#Occupation}
 
 
 _Occupation or profession of a person indicating a label, an ISCO-19 code, whether the activity is paid, and temporal validity._
@@ -660,7 +660,7 @@ At least one of the following must be set:
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Person](#Person) | occupations | range | [Occupation](#Occupation) |
 
@@ -705,7 +705,7 @@ occupations:
 
 
 
-## Class: Training{#Training}
+## Class: Training []{#Training}
 
 
 _Training or education of a person indicating a type (e.g., school diploma, university degree, military service), a label, an ISCO-19 code, and temporal validity._
@@ -749,7 +749,7 @@ At least one of the following must be set:
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Person](#Person) | trainings | range | [Training](#Training) |
 
@@ -773,7 +773,7 @@ At least one of the following must be set:
 
 </div>
 
-## Enum: TrainingTypeEnum{#TrainingTypeEnum}
+## Enum: TrainingTypeEnum []{#TrainingTypeEnum}
 
 
 
@@ -896,7 +896,7 @@ The group schema represents political groups, organisations and corporate bodies
 
 
 
-## Class: Group{#Group}
+## Class: Group []{#Group}
 
 
 _A political group, organization, or body (e.g., party, committee, parliament, department)._
@@ -943,7 +943,7 @@ _A political group, organization, or body (e.g., party, committee, parliament, d
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | Container | groups | range | [Group](#Group) |
 
@@ -1287,7 +1287,7 @@ groups:
 
 
 
-## Class: GroupType{#GroupType}
+## Class: GroupType []{#GroupType}
 
 
 _Type of group (e.g., party, committee, parliament, department)._
@@ -1313,7 +1313,7 @@ _Type of group (e.g., party, committee, parliament, department)._
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Group](#Group) | group_type | range | [GroupType](#GroupType) |
 
@@ -1337,7 +1337,7 @@ _Type of group (e.g., party, committee, parliament, department)._
 
 </div>
 
-## Enum: GroupTypeEnum{#GroupTypeEnum}
+## Enum: GroupTypeEnum []{#GroupTypeEnum}
 
 
 
@@ -1430,7 +1430,7 @@ The membership schema represents the relationship between persons and groups and
 
 
 
-## Class: Membership{#Membership}
+## Class: Membership []{#Membership}
 
 
 _A membership relationship between a person and a group, representing formal affiliation (e.g., party member, commission member, parliamentarian). Distinct from InterestLink, which covers external interest bindings and conflicts of interest to organizations outside the actor schema._
@@ -1469,7 +1469,7 @@ _A membership relationship between a person and a group, representing formal aff
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | Container | memberships | range | [Membership](#Membership) |
 
@@ -1674,7 +1674,7 @@ memberships:
 
 
 
-## Class: RoleType{#RoleType}
+## Class: RoleType []{#RoleType}
 
 
 _Role of a person in a membership or function (e.g., member, president, deputy). If a role is not listed in the proposed RoleEnum vocabulary, the value 'other' can be used, and a descriptive label should be provided in the `role_label` slot. The label can also be used when a specific name is needed, even if a fitting semantic value exists in `role_type_enum`; it should be provided when `role_type_enum` is set to 'other'._
@@ -1713,7 +1713,7 @@ At least one of the following must be set:
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Membership](#Membership) | role_type | range | [RoleType](#RoleType) |
 
@@ -1743,7 +1743,7 @@ At least one of the following must be set:
 
 </div>
 
-## Enum: RoleEnum{#RoleEnum}
+## Enum: RoleEnum []{#RoleEnum}
 
 
 
@@ -1775,7 +1775,7 @@ URI: [act:RoleEnum](https://ld.ech.ch/schema/0294/actors/RoleEnum)
 
 
 
-## Class: ElectoralDistrict{#ElectoralDistrict}
+## Class: ElectoralDistrict []{#ElectoralDistrict}
 
 
 _Electoral district or region associated with a membership. The temporal validity is inherited from the enclosing membership._
@@ -1803,7 +1803,7 @@ _Electoral district or region associated with a membership. The temporal validit
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Membership](#Membership) | electoral_district | range | [ElectoralDistrict](#ElectoralDistrict) |
 
@@ -1868,7 +1868,7 @@ The InterestLink schema records interest links, conflicts of interest and entang
 
 
 
-## Class: InterestLink{#InterestLink}
+## Class: InterestLink []{#InterestLink}
 
 
 _An interest link (conflict of interest, political financing) of a person to an organization outside the actor schema._
@@ -1925,7 +1925,7 @@ At least one of the following must be set:
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | Container | interest_links | range | [InterestLink](#InterestLink) |
 | [Person](#Person) | interest_links | range | [InterestLink](#InterestLink) |
@@ -2104,7 +2104,7 @@ interest_links:
 
 </div>
 
-## Enum: InterestTypeEnum{#InterestTypeEnum}
+## Enum: InterestTypeEnum []{#InterestTypeEnum}
 
 
 
@@ -2142,7 +2142,7 @@ URI: [act:InterestTypeEnum](https://ld.ech.ch/schema/0294/actors/InterestTypeEnu
 
 </div>
 
-## Enum: LegalFormEnum{#LegalFormEnum}
+## Enum: LegalFormEnum []{#LegalFormEnum}
 
 
 
@@ -2264,7 +2264,7 @@ Unlike an entity, a reference is not identified in its own right – it merely n
 
 
 
-## Class: PersonReference{#PersonReference}
+## Class: PersonReference []{#PersonReference}
 
 
 _Lightweight reference to a person with key identification data at time of linking. Preserves historical accuracy even if the person changes later. The referenced person is identified by `local_id` or `global_uri`; at least one of the two is required._
@@ -2307,7 +2307,7 @@ At least one of the following must be set:
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Membership](#Membership) | person_reference | range | [PersonReference](#PersonReference) |
 | [InterestLink](#InterestLink) | person_reference | range | [PersonReference](#PersonReference) |
@@ -2334,7 +2334,7 @@ At least one of the following must be set:
 
 
 
-## Class: GroupReference{#GroupReference}
+## Class: GroupReference []{#GroupReference}
 
 
 _Lightweight reference to a group with key identification data at time of linking. The referenced group is identified by `local_id` or `global_uri`; at least one of the two is required. A `local_id` is resolved within the same delivery, a `global_uri` also beyond it._
@@ -2376,7 +2376,7 @@ At least one of the following must be set:
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Group](#Group) | parent_groups | range | [GroupReference](#GroupReference) |
 | [Membership](#Membership) | group_reference | range | [GroupReference](#GroupReference) |
@@ -2411,7 +2411,7 @@ To arrive at the EGAID, one can use the [search API of geo.admin.ch](https://api
 
 
 
-## Class: Address{#Address}
+## Class: Address []{#Address}
 
 
 _An address with a type (e.g., private address, business address) and a value._
@@ -2454,7 +2454,7 @@ At least one of the following must be set:
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Person](#Person) | addresses | range | [Address](#Address) |
 | [Group](#Group) | addresses | range | [Address](#Address) |
@@ -2502,7 +2502,7 @@ addresses:
 
 </div>
 
-## Enum: AddressTypeEnum{#AddressTypeEnum}
+## Enum: AddressTypeEnum []{#AddressTypeEnum}
 
 
 
@@ -2533,7 +2533,7 @@ URI: [act:AddressTypeEnum](https://ld.ech.ch/schema/0294/actors/AddressTypeEnum)
 
 
 
-## Class: Contact{#Contact}
+## Class: Contact []{#Contact}
 
 
 _Contact information of a person indicating a type (e.g., email, LinkedIn) and a value._
@@ -2560,7 +2560,7 @@ _Contact information of a person indicating a type (e.g., email, LinkedIn) and a
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Person](#Person) | contacts | range | [Contact](#Contact) |
 | [Group](#Group) | contacts | range | [Contact](#Contact) |
@@ -2594,7 +2594,7 @@ A mixin is not a superclass: no instance of a mixin class is ever created, and n
 
 
 
-## Class: HasIdentification{#HasIdentification}
+## Class: HasIdentification []{#HasIdentification}
 
 
 _A mixin class that provides slots for the identification of an entity. It is used for entities that are identified in their own right; their `global_uri` is the identifier and therefore mandatory._
@@ -2619,14 +2619,7 @@ _A mixin class that provides slots for the identification of an entity. It is us
 
 ### Mixin Usage
 
-| mixed into | description |
-| --- | --- |
-| Container | Container for political actors, groups, and relationships |
-| [Person](#Person) | A person with identifiers, names, addresses, citizenships, and occupations |
-| [Group](#Group) | A political group, organization, or body (e |
-| [Membership](#Membership) | A membership relationship between a person and a group, representing formal a... |
-| [InterestLink](#InterestLink) | An interest link (conflict of interest, political financing) of a person to a... |
-| [ElectoralDistrict](#ElectoralDistrict) | Electoral district or region associated with a membership |
+Container, [Person](#Person), [Group](#Group), [Membership](#Membership), [InterestLink](#InterestLink), [ElectoralDistrict](#ElectoralDistrict)
 
 
 
@@ -2652,7 +2645,7 @@ _A mixin class that provides slots for the identification of an entity. It is us
 
 
 
-## Class: HasReferenceIdentification{#HasReferenceIdentification}
+## Class: HasReferenceIdentification []{#HasReferenceIdentification}
 
 
 _A mixin class that provides the slots with which a reference names the entity it points at. Unlike `HasIdentification` it does not identify the referencing object itself, which is why `global_uri` is neither an identifier here nor mandatory: a system that only holds the local id of the referenced entity states that id instead. A reference class using this mixin should require at least one of the two._
@@ -2677,10 +2670,7 @@ _A mixin class that provides the slots with which a reference names the entity i
 
 ### Mixin Usage
 
-| mixed into | description |
-| --- | --- |
-| [PersonReference](#PersonReference) | Lightweight reference to a person with key identification data at time of lin... |
-| [GroupReference](#GroupReference) | Lightweight reference to a group with key identification data at time of link... |
+[PersonReference](#PersonReference), [GroupReference](#GroupReference)
 
 
 
@@ -2706,7 +2696,7 @@ _A mixin class that provides the slots with which a reference names the entity i
 
 
 
-## Class: HasTemporalValidity{#HasTemporalValidity}
+## Class: HasTemporalValidity []{#HasTemporalValidity}
 
 
 _A mixin class that provides slots for modeling a temporal validity of information (not of an event)._
@@ -2731,16 +2721,7 @@ _A mixin class that provides slots for modeling a temporal validity of informati
 
 ### Mixin Usage
 
-| mixed into | description |
-| --- | --- |
-| [Group](#Group) | A political group, organization, or body (e |
-| [Membership](#Membership) | A membership relationship between a person and a group, representing formal a... |
-| [InterestLink](#InterestLink) | An interest link (conflict of interest, political financing) of a person to a... |
-| [Name](#Name) | A name with a type (e |
-| [Citizenship](#Citizenship) | Citizenship (also used for Nationality) of a person indicating the country an... |
-| [Gender](#Gender) | Gender of a person indicating a gender code and temporal validity |
-| [Occupation](#Occupation) | Occupation or profession of a person indicating a label, an ISCO-19 code, whe... |
-| [Training](#Training) | Training or education of a person indicating a type (e |
+[Group](#Group), [Membership](#Membership), [InterestLink](#InterestLink), [Name](#Name), [Citizenship](#Citizenship), [Gender](#Gender), [Occupation](#Occupation), [Training](#Training)
 
 
 
@@ -2766,7 +2747,7 @@ _A mixin class that provides slots for modeling a temporal validity of informati
 
 
 
-## Class: HasCreationModificationDates{#HasCreationModificationDates}
+## Class: HasCreationModificationDates []{#HasCreationModificationDates}
 
 
 _A mixin class that provides slots for modeling creation and modification dates of an entity._
@@ -2792,12 +2773,7 @@ _A mixin class that provides slots for modeling creation and modification dates 
 
 ### Mixin Usage
 
-| mixed into | description |
-| --- | --- |
-| [Person](#Person) | A person with identifiers, names, addresses, citizenships, and occupations |
-| [Group](#Group) | A political group, organization, or body (e |
-| [Membership](#Membership) | A membership relationship between a person and a group, representing formal a... |
-| [InterestLink](#InterestLink) | An interest link (conflict of interest, political financing) of a person to a... |
+[Person](#Person), [Group](#Group), [Membership](#Membership), [InterestLink](#InterestLink)
 
 
 

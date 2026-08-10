@@ -42,7 +42,7 @@ At least one of the following must be set:
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Group](Group.md) | [parent_groups](parent_groups.md) | range | [GroupReference](GroupReference.md) |
 | [Membership](Membership.md) | [group_reference](group_reference.md) | range | [GroupReference](GroupReference.md) |

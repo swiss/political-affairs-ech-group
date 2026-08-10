@@ -42,8 +42,7 @@ _Step-Klassen ergänzen ihre eigenen typ-spezifischen Slots._
 
 ### Mixin-Verwendung
 
-| mixed into | description |
-| --- | --- |
+
 
 
 

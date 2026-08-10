@@ -47,7 +47,7 @@ _A political group, organization, or body (e.g., party, committee, parliament, d
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Container](Container.md) | [groups](groups.md) | range | [Group](Group.md) |
 

@@ -39,7 +39,7 @@ At least one of the following must be set:
 
 ### Usages
 
-| used by | used in | type | used |
+| Used by | In slot | Role | Element |
 | ---  | --- | --- | --- |
 | [Membership](Membership.md) | [role_type](role_type.md) | range | [RoleType](RoleType.md) |
 
