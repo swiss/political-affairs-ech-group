@@ -213,11 +213,11 @@ ops:voting_zh_gr_2024_2023_361 a ops:Voting ;
             ops:count 0 ;
             mcm:label "Auswahl D" ],
         [ a ops:TotalOther ;
-            ops:count 12 ;
-            mcm:label "Auswahl C" ],
-        [ a ops:TotalOther ;
             ops:count 25 ;
             mcm:label "Auswahl B" ],
+        [ a ops:TotalOther ;
+            ops:count 12 ;
+            mcm:label "Auswahl C" ],
         [ a ops:TotalOther ;
             ops:count 75 ;
             mcm:label "Auswahl A (siegreich)" ] ;

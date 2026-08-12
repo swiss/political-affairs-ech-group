@@ -79,7 +79,7 @@ Ziel dieser Standardfamilie ist es, eine gemeinsam nutzbare Struktur für politi
 
 # Zeitliche Organisation des Ratsbetriebs
 
-Der Ratsbetrieb ist zeitlich auf drei Ebenen organisiert: Legislaturperioden bilden den langfristigen Rahmen, Sessions strukturieren die Arbeit innerhalb einer Legislaturperiode, und Meetings sind die konkreten Sitzungen, in denen Geschäfte beraten werden.
+Der Ratsbetrieb ist zeitlich in vier Klassen gegliedert:
 
 ```
 Legislature (Legislaturperiode)
@@ -88,27 +88,13 @@ Legislature (Legislaturperiode)
           └─ AgendaItem (Traktandum)
 ```
 
-Die drei Klassen sind bewusst gleich gebaut: Identifikation, Zeitangaben, Organbezug und verknüpfte Dokumente funktionieren auf allen drei Ebenen identisch. Diese gemeinsamen Konventionen sind einmal bei der Legislature beschrieben; bei Session und Meeting folgen nur noch die Eigenheiten der jeweiligen Ebene.
+Legislaturperioden bilden den langfristigen Rahmen, Sessions strukturieren die Arbeit innerhalb einer Legislaturperiode, Meetings sind die konkreten Sitzungen, in denen Geschäfte beraten werden, und Traktanden gliedern die einzelne Sitzung. Die ersten drei Klassen sind nachfolgend beschrieben, das Traktandum im nächsten Kapitel.
+
+Die drei Klassen sind bewusst gleich gebaut: Identifikation, Zeitangaben, Organbezug und verknüpfte Dokumente sind auf allen Ebenen dieselben. `actor_id` zeigt dabei auf die politischen Akteure gemäss eCH-0294, `documents` auf FRBR-Works gemäss eCH-0292. Beginn und Ende werden doppelt geführt: Auf Stufe Legislaturperiode fallen Planung (`*_planned`) und Verlauf (`*_actual`) kaum auseinander, auf Stufe Sitzung regelmässig.
 
 ## Legislature (Legislaturperiode)
 
-Eine Legislaturperiode bezeichnet den Zeitraum, für den ein Parlament gewählt wird und in seiner aktuellen Zusammensetzung tätig ist. Ihre Dauer ist nicht vorgegeben — die Beispiele am Ende dieses Abschnitts zeigen eine vier- und eine fünfjährige Amtsdauer.
-
-### Geplant und tatsächlich
-
-Beginn und Ende werden doppelt geführt: `date_begin_planned` und `date_end_planned` halten die Planung fest, `date_begin_actual` und `date_end_actual` den tatsächlichen Verlauf. Wo die Uhrzeit relevant ist, stehen die Varianten `datetime_*` zur Verfügung. Bei einer Legislaturperiode sind Planung und Verlauf meist deckungsgleich; dieselben Felder gelten unverändert für Session und Meeting, wo sie regelmässig auseinanderfallen.
-
-### Identifikation
-
-`global_uri` ist der Identifikator und obligatorisch. `local_id` nimmt die Id des liefernden Systems auf, `wikidata_uri` verweist auf den Wikidata-Eintrag, sofern es einen gibt. Dies gilt gleichermassen für Session und Meeting.
-
-### Bezug zum Organ
-
-`actor_id` verweist als Kurzreferenz auf das Organ gemäss eCH-0294 (z.B. Nationalrat, Kantonsrat), `administrative_id` auf die Verwaltungseinheit, für die dieses Organ tätig ist (Land, Kanton, Gemeinde). Dieses Paar findet sich auch beim Meeting.
-
-### Verlinkte Dokumente
-
-`documents` verknüpft Dokumente als FRBR-Works gemäss eCH-0292 — bei der Legislaturperiode etwa Mitglieder- und Geschäftsverzeichnisse, bei der Session das Sessionsprogramm, beim Meeting das Protokoll.
+Eine Legislaturperiode bezeichnet den Zeitraum, für den ein Parlament gewählt wird und in seiner aktuellen Zusammensetzung tätig ist. Ihre Dauer ist nicht vorgegeben — die Beispiele zeigen eine vier- und eine fünfjährige Amtsdauer.
 
 
 
@@ -266,29 +252,9 @@ legislatures:
 
 ## Session (Sitzungsperiode)
 
-Eine Session ist eine zusammenhängende Sitzungsperiode, in der mehrere Meetings stattfinden. Sie ist die mittlere Ebene — und optional: Föderaleinheiten ohne formale Sessions lassen sie weg und führen ihre Meetings direkt.
+Eine Session ist eine zusammenhängende Sitzungsperiode, in der mehrere Meetings stattfinden. Sie ist die mittlere Ebene — und optional: Föderaleinheiten ohne formale Sessions lassen sie weg und führen ihre Meetings direkt. Session und Meeting können auch zusammenfallen: Eine eintägige Sitzung des Landrats oder eine Landsgemeinde wird als Sitzungsperiode mit einer einzigen Sitzung geführt.
 
-### Session oder Meeting?
-
-Die Session ist die Periode, das Meeting die einzelne Sitzung darin:
-
-```
-Legislature (51. Legislaturperiode)
-  └─ Session (Frühjahrssession 2024)
-      ├─ Meeting (Nationalratssitzung 4. März 2024)
-      ├─ Meeting (Ständeratssitzung 4. März 2024)
-      └─ ...
-```
-
-Beide Ebenen können zusammenfallen: Eine eintägige Sitzung des Landrats oder eine Landsgemeinde wird als Sitzungsperiode mit einer einzigen Sitzung geführt — die Beispiele zeigen beide Fälle.
-
-### Nummerierung
-
-Sessions werden nummeriert, wobei sich die Praxis stark unterscheidet: `number` hält die laufende Nummer als Zahl fest, `sequential_number` dieselbe Angabe als Zeichenkette (und damit auch römische Ziffern), `position` die Position innerhalb der Legislaturperiode und `meeting_abbreviation` eine Kurzbezeichnung wie „FS24“. Das Meeting kennt dieselben vier Felder.
-
-### Einordnung und Verknüpfungen
-
-`body_key` hält das Organ als Kurzschlüssel fest (z.B. „NR“, „SR“), `parent_legislature` ordnet die Session ihrer Legislaturperiode zu, `meetings` listet die zugehörigen Sitzungen, `url` verweist auf die Landing Page.
+Nummeriert wird sehr unterschiedlich, weshalb vier Felder zur Verfügung stehen: `number` hält die laufende Nummer als Zahl fest, `sequential_number` dieselbe Angabe als Zeichenkette (und damit auch römische Ziffern), `position` die Position innerhalb der Legislaturperiode und `meeting_abbreviation` eine Kurzbezeichnung wie „FS24“. Das Meeting kennt dieselben vier Felder. `body_key` hält das Organ als Kurzschlüssel fest (z.B. „NR“, „SR“), `parent_legislature` ordnet die Session ihrer Legislaturperiode zu.
 
 
 
@@ -456,25 +422,11 @@ sessions:
 
 ## Meeting (Einzelne Sitzung)
 
-Ein Meeting ist die einzelne Sitzung eines Organs — die Ebene, auf der Traktanden beraten, Beschlüsse gefasst und Wortmeldungen festgehalten werden.
+Ein Meeting ist die einzelne Sitzung eines Organs — die Ebene, auf der Traktanden beraten, Beschlüsse gefasst und Wortmeldungen festgehalten werden. `meeting_type` unterscheidet vier Typen: `session` für Plenarsitzungen eines Parlaments oder einer Kammer, `committee` für Kommissionssitzungen, `sitting` für Versammlungen wie Landsgemeinden, Gemeinde- und Bürgergemeindeversammlungen und `various` als Auffangwert. Der Wert `sitting` ist eine bewusste Setzung: Landsgemeinden und Gemeindeversammlungen sind Versammlungen der Stimmberechtigten selbst, entscheiden aber als tagendes Organ mit Traktandenliste und werden deshalb wie eine Ratssitzung abgebildet.
 
-### Sitzungstypen
-
-`meeting_type` unterscheidet vier Typen: `session` für Plenarsitzungen eines Parlaments oder einer Kammer, `committee` für Kommissionssitzungen, `sitting` für Versammlungen wie Landsgemeinden, Gemeinde- und Bürgergemeindeversammlungen und `various` als Auffangwert. Der Wert `sitting` ist eine bewusste Setzung: Landsgemeinden und Gemeindeversammlungen sind Versammlungen der Stimmberechtigten selbst, entscheiden aber als tagendes Organ mit Traktandenliste und werden deshalb wie eine Ratssitzung abgebildet.
-
-### Planung und Realität
-
-Auf Sitzungsebene fallen Planung und Verlauf regelmässig auseinander: Eine für 14:00 angesetzte Sitzung beginnt wegen Verzögerungen erst um 14:25 und endet statt um 18:00 bereits um 17:30. Genau dafür sind die `*_planned`- und `*_actual`-Felder da; für Uhrzeiten sind die `datetime_*`-Varianten zu verwenden. Ob eine Sitzung überhaupt wie vorgesehen stattfindet, hält `state` fest (`planned`, `canceled`, `postponed`); `state_name` nimmt eine abweichende, freitextliche Statusbezeichnung auf.
-
-### Ort
-
-`location` erfasst den Sitzungsort — den physischen Raum („Bundeshaus, Nationalratssaal“), eine Videokonferenz oder ein hybrides Format.
-
-### Organbezug und Einordnung
+Auf dieser Ebene fallen Planung und Verlauf regelmässig auseinander: Eine für 14:00 angesetzte Sitzung beginnt wegen Verzögerungen erst um 14:25 und endet statt um 18:00 bereits um 17:30. Genau dafür sind die `*_planned`- und `*_actual`-Felder da; für Uhrzeiten sind die `datetime_*`-Varianten zu verwenden. Ob eine Sitzung überhaupt wie vorgesehen stattfindet, hält `state` fest (`planned`, `canceled`, `postponed`); `state_name` nimmt eine abweichende, freitextliche Statusbezeichnung auf. `location` erfasst den Sitzungsort — den physischen Raum („Bundeshaus, Nationalratssaal“), eine Videokonferenz oder ein hybrides Format.
 
 Zusätzlich zu `actor_id` und `administrative_id` hält `actor_name` den Namen des Organs für den schnellen Zugriff fest und `body_key` einen kurzen Schlüssel; `group_name` und `group_id` ergänzen Gruppierungen, wo nötig. `parent_meeting` bildet Sitzungen ab, die Teil einer übergeordneten Sitzung sind, `parent_legislature` ordnet die Sitzung der Legislaturperiode zu. Nummeriert wird wie bei der Session.
-
-### Anknüpfungspunkte
 
 Das Meeting ist der Knoten, an dem die übrigen Klassen dieses Standards hängen: Traktanden (`AgendaItem`), Abstimmungen und Wahlen (`Voting`, `Election`), Wortmeldungen (`Speech`) sowie die Anwesenheitsliste (`Attendance.parent_meeting`). `documents` verknüpft Sitzungsunterlagen wie Tagblatt oder Beilagen, `protocol_ref` das Protokoll.
 
