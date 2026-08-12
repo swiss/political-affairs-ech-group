@@ -53,9 +53,3 @@ eCH-0293 fait partie d'une famille de normes pour les données politiques et tra
   </w:r>
 </w:p>
 ```
-
-\newpage
-
-# Remarque
-
-Le présent document recourt à une formulation épicène pour les désignations de personnes. Il se fonde sur les [directives](https://www.bk.admin.ch/bk/de/home/dokumentation/sprachen/hilfsmittel-textredaktion/leitfaden-zum-geschlechtergerechten-formulieren.html) de la Chancellerie fédérale. Selon les situations, on utilise des doublets (les citoyennes et les citoyens), des formes abstraites du point de vue du genre (la personne assurée), des formes neutres ou des paraphrases sans référence à des personnes. Le masculin générique n'est pas admis. Les formes complètes sont utilisées dans les textes suivis ; dans les passages abrégés, notamment dans les tableaux, les formes courtes sont admises. Les astérisques de genre et les graphies analogues ne sont pas utilisés.

@@ -4,250 +4,90 @@
 
 # Temporal organisation of council operations
 
-Parliamentary operations are organised in time on three levels: legislatures form the long-term frame, sessions structure the work within a legislature, and meetings are the concrete sittings in which affairs are deliberated. This hierarchy allows both long-term planning and flexible adaptation to current requirements.
+Council operations are organised in time on three levels: legislatures form the long-term frame, sessions structure the work within a legislature, and meetings are the concrete sittings in which affairs are deliberated.
+
+```
+Legislature (legislature)
+  └─ Session (e.g. spring session)
+      └─ Meeting (individual sitting)
+          └─ AgendaItem (agenda item)
+```
+
+The three classes are deliberately built alike: identification, temporal data, the link to the body and linked documents work identically on all three levels. These common conventions are described once, at the legislature; for session and meeting only the particularities of the respective level follow.
 
 ## Legislature
 
-### Term and meaning
+A legislature denotes the period for which a parliament is elected and acts in its current composition. Its duration is not prescribed — the examples at the end of this section show a four-year and a five-year term.
 
-A legislature denotes the period for which a parliament is elected and acts in its current composition. It is the highest temporal unit of parliamentary operations and marks the frame for a parliament's legislative work.
+### Planned and actual
 
-In Switzerland the duration of legislatures varies by federal level:
-
-- **Federal level**: 4 years (National Council and Council of States)
-- **Cantons**: mostly 4 years, in some cantons also 5 years
-- **Communes**: varying, frequently 4 years
-
-### Structure and hierarchy
-
-The legislature stands hierarchically above the sessions and meetings:
-
-```
-Legislature
-  └─ Sessions (e.g. spring session, autumn session)
-      └─ Meetings (individual sittings)
-          └─ Agenda Items
-```
-
-### Parliamentary context
-
-Every legislature is assigned to a specific parliamentary body, identified by:
-
-- **actor_id**: reference to the parliament as a political actor (e.g. National Council, cantonal parliament) according to eCH-0294 Actors
-- **administrative_id**: administrative ID of the legislative body (e.g. commune, canton, country)
-
-### Temporal placement
-
-A legislature is characterised via the mixin `IsEventWithDuration`. The most important date fields are:
-
-- **date_begin_planned** / **date_begin_actual**: planned respectively actual start of the legislature (usually after elections)
-- **date_end_planned** / **date_end_actual**: planned respectively actual end of the legislature (before the next elections)
-
-Where needed, analogous `datetime_*` variants with a time of day are available.
-
-Example at federal level: the 51st legislature of the Swiss Parliament lasted from 5 December 2019 to 4 December 2023.
+Begin and end are recorded twice: `date_begin_planned` and `date_end_planned` hold the planning, `date_begin_actual` and `date_end_actual` the actual course. Where the time of day matters, the `datetime_*` variants are available. For a legislature, planning and actual course usually coincide; the same fields apply unchanged to session and meeting, where they regularly diverge.
 
 ### Identification
 
-The mixin `HasIdentification` provides `local_id`, `global_uri` and `wikidata_uri`. The `global_uri` is mandatory and serves as the unique identifier.
+`global_uri` is the identifier and is mandatory. `local_id` takes the id of the delivering system, `wikidata_uri` points to the Wikidata entry where one exists. This applies equally to session and meeting.
+
+### Link to the body
+
+`actor_id` points, as a lightweight reference, to the body according to eCH-0294 (e.g. National Council, cantonal parliament), `administrative_id` to the administrative unit for which that body acts (country, canton, commune). This pair recurs on the meeting.
 
 ### Linked documents
 
-The slot **documents** allows relevant documents (e.g. member directories of the legislature, affairs directories) to be linked as FRBR Works.
+`documents` links documents as FRBR works according to eCH-0292 — for the legislature, for instance, membership and affair registers, for the session the session programme, for the meeting the protocol.
 
 {{include:ech-0293_operations/output/docs/Legislature.md}}
 
-## Session
+## Session (sitting period)
 
-### Term and meaning
+A session is a continuous sitting period in which several meetings take place. It is the middle level — and it is optional: federal entities without formal sessions leave it out and record their meetings directly.
 
-A session denotes a continuous sitting period of a parliament during which several meetings take place. It is the middle temporal unit between the legislature and the individual meetings.
+### Session or meeting?
 
-### Distinction: session vs. meeting
+The session is the period, the meeting the individual sitting within it:
 
-This distinction is important for understanding the standard:
-
-- **Session**: a sitting period that typically extends over several days or weeks
-- **Meeting**: an individual sitting within a session
-
-#### Example at federal level
 ```
 Legislature (51st legislature)
-  └─ Session (spring session 2024)
-      ├─ Meeting (National Council sitting 4 March 2024)
-      ├─ Meeting (Council of States sitting 4 March 2024)
-      ├─ Meeting (National Council sitting 5 March 2024)
+  └─ Session (2024 spring session)
+      ├─ Meeting (National Council sitting of 4 March 2024)
+      ├─ Meeting (Council of States sitting of 4 March 2024)
       └─ ...
 ```
 
-### Assignment to bodies
+Both levels may coincide: a one-day sitting of a cantonal parliament or a Landsgemeinde is recorded as a sitting period with a single meeting — the examples show both cases.
 
-A session relates to the political body that organises the sessions as a series of sittings. Examples:
+### Numbering
 
-- **Parliament**: sessions of a cantonal parliament or of the Federal Assembly
-- **Committees**: sitting periods of parliamentary committees
-- **Joint bodies**: e.g. sessions of the United Federal Assembly
+Sessions are numbered, with widely differing practice: `number` holds the running number as a figure, `sequential_number` the same information as a string (and therefore also Roman numerals), `position` the position within the legislature and `meeting_abbreviation` a short designation such as "FS24". The meeting has the same four fields.
 
-Via **body_key** the body (e.g. "NR" for the National Council, "SR" for the Council of States) can be recorded as a key. Via **parent_legislature** the session is assigned to the corresponding legislature.
+### Classification and links
 
-### Identification and numbering
-
-Sessions are usually numbered. The following slots are available — they are compatible with the corresponding modelling of Meeting:
-
-- **number**: sequential number (e.g. within the legislature or the year)
-- **sequential_number**: sequential number as a string (roman numerals also possible)
-- **position**: integer position
-- **abbreviation**: short designation (e.g. "FS24" for the 2024 spring session)
-- **name**: multilingual full designation
-
-The mixin `HasIdentification` additionally provides `local_id`, `global_uri` and `wikidata_uri`.
-
-### Temporal attributes
-
-Sessions use the mixin `IsEventWithDuration` and therefore offer the same date fields as legislatures and meetings:
-
-- **date_begin_planned** / **datetime_begin_planned**: planned start of the session
-- **date_begin_actual** / **datetime_begin_actual**: actual start
-- **date_end_planned** / **datetime_end_planned**: planned end of the session
-- **date_end_actual** / **datetime_end_actual**: actual end
-
-### Links
-
-- **meetings**: list of the meetings within the session
-- **documents**: linked FRBR Works (e.g. session programme, session preview)
-- **url**: landing page of the session
-
-### Flexibility in the standard
-
-The standard is deliberately flexible in order to reflect different forms of organisation. Federal units without formal sessions can use this entity optionally or reference meetings directly.
+`body_key` holds the body as a short key (e.g. "NR", "SR"), `parent_legislature` assigns the session to its legislature, `meetings` lists the sittings belonging to it, `url` points to the landing page.
 
 {{include:ech-0293_operations/output/docs/Session.md}}
 
 ## Meeting (individual sitting)
 
-### Term and meaning
+A meeting is the individual sitting of a body — the level at which agenda items are deliberated, decisions taken and speeches recorded.
 
-A meeting denotes an individual sitting of a parliamentary body. This is the concrete event at which the members of a parliament, a committee or another body assemble in order to deliberate affairs and take decisions.
+### Meeting types
 
-### Types of meetings
+`meeting_type` distinguishes four types: `session` for plenary sittings of a parliament or a chamber, `committee` for committee sittings, `sitting` for assemblies such as Landsgemeinden, communal assemblies and citizens' communal assemblies, and `various` as a catch-all. The value `sitting` is a deliberate choice: Landsgemeinden and communal assemblies are assemblies of the eligible voters themselves, but they decide as a convened body with an agenda and are therefore represented like a council sitting.
 
-The standard distinguishes different meeting types via the field **meeting_type** (enum `MeetingTypeEnum`):
+### Planning and reality
 
-#### session
-Plenary sittings of the whole parliament or of one chamber
+At the sitting level, planning and actual course regularly diverge: a sitting scheduled for 14:00 only begins at 14:25 because of delays and ends at 17:30 instead of 18:00. This is precisely what the `*_planned` and `*_actual` fields are for; for times of day, the `datetime_*` variants are to be used. Whether a sitting takes place as planned at all is held by `state` (`planned`, `canceled`, `postponed`); `state_name` takes a diverging, free-text status designation.
 
-**Examples:**
-- National Council sitting during the autumn session
-- Sitting of a cantonal parliament
-- Sitting of the United Federal Assembly
+### Location
 
-#### committee
-Sittings of parliamentary committees
+`location` records the place of the sitting — the physical room ("Federal Palace, National Council chamber"), a video conference or a hybrid format.
 
-**Examples:**
-- Sitting of the Committee for Economic Affairs and Taxation (WAK/CER)
-- Control Committee (GPK/CdG)
-- Foreign Affairs Committee (APK/CPE)
+### Link to the body and classification
 
-#### sitting
-Special forms of assembly
+In addition to `actor_id` and `administrative_id`, `actor_name` holds the name of the body for quick access and `body_key` a short key; `group_name` and `group_id` supplement groupings where needed. `parent_meeting` represents sittings that are part of a superordinate sitting, `parent_legislature` assigns the sitting to the legislature. Numbering works as for the session.
 
-**Examples:**
-- Landsgemeinden (in the cantons of Glarus and Appenzell Innerrhoden)
-- Citizens' commune assemblies
-- Communal assemblies
+### Anchor points
 
-#### various
-Other forms of meeting that do not fall into the categories above
-
-### Hierarchy and structure
-
-A meeting is part of a session (where used) and contains several agenda items:
-
-```
-Session (spring session 2024)
-  └─ Meeting (National Council sitting, 4 March 2024, 08:00)
-      ├─ AgendaItem (item 1: welcome)
-      ├─ AgendaItem (item 2: legislative deliberation)
-      └─ AgendaItem (item 3: votings)
-```
-
-### Planned timing vs. reality
-
-Via the mixin `IsEventWithDuration` the meeting distinguishes between planned and actual points in time:
-
-#### Planned dates
-- **date_begin_planned** / **datetime_begin_planned**: planned start
-- **date_end_planned** / **datetime_end_planned**: planned end
-
-#### Actual dates
-- **date_begin_actual** / **datetime_begin_actual**: actual start
-- **date_end_actual** / **datetime_end_actual**: actual end
-
-This distinction is important because:
-- sittings can be delayed
-- agenda items can be brought forward or postponed
-- sittings can end earlier than planned
-
-**Use case:** a sitting planned for 14:00 only starts at 14:25 due to delays and ends at 17:30 instead of 18:00.
-
-### Meeting state
-
-The field **state** (enum `StateEnum`) records the current state of a meeting:
-
-- **planned**: the sitting is planned and will take place as scheduled
-- **canceled**: the sitting has been cancelled
-- **postponed**: the sitting has been postponed
-
-Via **state_name** a divergent, free-text state description can be added.
-
-This state is important for:
-- up-to-date information for members of parliament and the public
-- historical traceability of planning changes
-- automatic notifications in case of changes
-
-### Identification and numbering
-
-Meetings are identified by:
-
-- **local_id** / **global_uri** / **wikidata_uri** (via the mixin `HasIdentification`)
-- **number**: sequential number (e.g. "5" for the 5th sitting of a session)
-- **sequential_number**: sequential number as a string (roman numerals also possible)
-- **position**: integer position within the session
-- **abbreviation**: short designation (e.g. "NR-24-05")
-- **name**: multilingual full designation
-
-### Place of the sitting
-
-The field **location** records the place of the sitting:
-
-- Physical place: "Federal Palace, National Council chamber"
-- Virtual sittings: "Video conference via [platform]"
-- Hybrid formats: "Federal Palace and video conference"
-
-### Assignment to bodies
-
-The responsible body is referenced via **actor_id** (according to eCH-0294 Actors). Via **actor_name** the name of the body can additionally be recorded for quick access, via **body_key** a short key (e.g. "NR", "SR"). Via **administrative_id** the administrative level can be indicated; **group_name** and **group_id** complement groupings where needed.
-
-- Plenary sittings: reference to the whole parliament
-- Committee sittings: reference to the specific committee
-- Joint sittings: reference to the joint body
-
-### Hierarchical links
-
-- **parent_meeting**: if a meeting is part of a superordinate meeting
-- **parent_legislature**: the legislature within which the meeting takes place
-
-### Relations to other entities
-
-A meeting connects various elements of parliamentary operations:
-
-- **Agenda Items**: the items dealt with
-- **Votings**: votings during the sitting
-- **Elections**: elections during the sitting
-- **Speeches**: speeches and statements
-- **Attendance**: attendance lists (via `Attendance.parent_meeting`)
-- **documents**: linked FRBR Works (minutes, meeting documents, daily journal, etc.)
+The meeting is the node to which the remaining classes of this standard attach: agenda items (`AgendaItem`), votings and elections (`Voting`, `Election`), speeches (`Speech`) as well as the attendance list (`Attendance.parent_meeting`). `documents` links sitting documents such as the bulletin or annexes, `protocol_ref` the protocol.
 
 {{include:ech-0293_operations/output/docs/Meeting.md}}
 

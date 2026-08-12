@@ -53,9 +53,3 @@ eCH-0293 is part of a family of standards for political data and works closely t
   </w:r>
 </w:p>
 ```
-
-\newpage
-
-# Note
-
-This document uses gender-inclusive language when referring to persons. It follows the [guidelines](https://www.bk.admin.ch/bk/de/home/dokumentation/sprachen/hilfsmittel-textredaktion/leitfaden-zum-geschlechtergerechten-formulieren.html) (German) of the Federal Chancellery. Depending on the situation, paired forms (citizens), gender-abstract forms (the insured person), gender-neutral forms or paraphrases without personal reference are used. The generic masculine is not permitted. Full forms are used in continuous text; short forms may be used in abbreviated passages, notably in tables. Gender asterisks and similar spellings are not used.

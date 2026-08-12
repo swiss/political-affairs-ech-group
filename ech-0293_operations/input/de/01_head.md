@@ -53,9 +53,3 @@ eCH-0293 ist Teil einer Familie von Standards für politische Daten und arbeitet
   </w:r>
 </w:p>
 ```
-
-\newpage
-
-# Hinweis
-
-Dieses Dokument verwendet bei Personenbezeichnungen eine geschlechtergerechte Formulierung. Massgebend sind die [Richtlinien](https://www.bk.admin.ch/bk/de/home/dokumentation/sprachen/hilfsmittel-textredaktion/leitfaden-zum-geschlechtergerechten-formulieren.html) der Bundeskanzlei. Je nach Situation werden Paarformen (Bürgerinnen und Bürger), geschlechtsabstrakte Formen (die versicherte Person), geschlechtsneutrale Formen oder Umschreibungen ohne Personenbezug verwendet. Das generische Maskulinum ist nicht zulässig. In Fliesstexten werden Vollformen verwendet; in verkürzten Textpassagen, namentlich in Tabellen, sind Kurzformen zulässig. Gendersternchen und ähnliche Schreibweisen werden nicht verwendet.

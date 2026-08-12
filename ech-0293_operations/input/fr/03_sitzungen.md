@@ -2,252 +2,92 @@
 
 <!-- ToDo: Christian -->
 
-# Organisation temporelle de l'activité des conseils
+# Organisation temporelle du fonctionnement des conseils
 
-L'activité parlementaire est organisée dans le temps à trois niveaux : les législatures constituent le cadre à long terme, les sessions structurent le travail au sein d'une législature, et les séances sont les rencontres concrètes au cours desquelles les affaires sont délibérées. Cette hiérarchie permet à la fois une planification à long terme et une adaptation souple aux besoins du moment.
-
-## Legislature (législature)
-
-### Notion et signification
-
-Une législature désigne la période pour laquelle un parlement est élu et durant laquelle il exerce ses fonctions dans sa composition actuelle. Elle constitue l'unité temporelle la plus élevée de l'activité parlementaire et délimite le cadre du travail législatif d'un parlement.
-
-En Suisse, la durée des législatures varie selon le niveau fédéral :
-
-- **Niveau fédéral** : 4 ans (Conseil national et Conseil des États)
-- **Cantons** : le plus souvent 4 ans, dans certains cantons 5 ans
-- **Communes** : variable, souvent 4 ans
-
-### Structure et hiérarchie
-
-La législature se situe hiérarchiquement au-dessus des sessions et des séances :
+Le fonctionnement des conseils s'organise dans le temps sur trois niveaux : les législatures constituent le cadre à long terme, les sessions structurent le travail au sein d'une législature, et les séances (Meetings) sont les réunions concrètes au cours desquelles les affaires sont délibérées.
 
 ```
 Legislature (législature)
-  └─ Sessions (p. ex. session de printemps, session d'automne)
-      └─ Meetings (séances individuelles)
-          └─ Agenda Items (points de l'ordre du jour)
+  └─ Session (p. ex. session de printemps)
+      └─ Meeting (séance individuelle)
+          └─ AgendaItem (point de l'ordre du jour)
 ```
 
-### Contexte parlementaire
+Les trois classes sont délibérément construites de la même manière : l'identification, les indications temporelles, le rattachement à l'organe et les documents liés fonctionnent de façon identique aux trois niveaux. Ces conventions communes sont décrites une seule fois, à la législature ; pour la session et la séance ne suivent que les particularités du niveau concerné.
 
-Chaque législature est rattachée à un organe parlementaire déterminé, identifié par :
+## Legislature (législature)
 
-- **actor_id** : renvoi au parlement en tant qu'acteur politique (p. ex. Conseil national, Grand Conseil) selon eCH-0294 Actors
-- **administrative_id** : identifiant administratif du corps législatif (p. ex. commune, canton, pays)
+Une législature désigne la période pour laquelle un parlement est élu et durant laquelle il exerce ses fonctions dans sa composition actuelle. Sa durée n'est pas prescrite — les exemples à la fin de la présente section montrent un mandat de quatre ans et un mandat de cinq ans.
 
-### Situation temporelle
+### Planifié et effectif
 
-Une législature est caractérisée au moyen du mixin `IsEventWithDuration`. Les principaux champs de date sont :
-
-- **date_begin_planned** / **date_begin_actual** : début planifié, respectivement effectif, de la législature (généralement après les élections)
-- **date_end_planned** / **date_end_actual** : fin planifiée, respectivement effective, de la législature (avant les élections suivantes)
-
-Au besoin, il existe des variantes analogues `datetime_*` avec indication de l'heure.
-
-Exemple au niveau fédéral : la 51e législature du Parlement suisse a duré du 5 décembre 2019 au 4 décembre 2023.
+Le début et la fin sont consignés deux fois : `date_begin_planned` et `date_end_planned` retiennent la planification, `date_begin_actual` et `date_end_actual` le déroulement effectif. Lorsque l'heure importe, les variantes `datetime_*` sont à disposition. Pour une législature, planification et déroulement coïncident le plus souvent ; les mêmes champs valent tels quels pour la session et la séance, où ils divergent régulièrement.
 
 ### Identification
 
-Le mixin `HasIdentification` met à disposition `local_id`, `global_uri` et `wikidata_uri`. Le `global_uri` est obligatoire et sert d'identifiant univoque.
+`global_uri` est l'identifiant et est obligatoire. `local_id` reprend l'identifiant du système livreur, `wikidata_uri` renvoie à l'entrée Wikidata, lorsqu'elle existe. Cela vaut de la même manière pour la session et la séance.
+
+### Rattachement à l'organe
+
+`actor_id` renvoie, sous forme de référence abrégée, à l'organe selon eCH-0294 (p. ex. Conseil national, Grand Conseil), `administrative_id` à l'unité administrative pour laquelle cet organe agit (pays, canton, commune). Ce couple se retrouve également dans le Meeting.
 
 ### Documents liés
 
-Le slot **documents** permet de lier des documents pertinents (p. ex. listes des membres de la législature, répertoires des affaires) sous forme de FRBR Works.
+`documents` relie des documents en tant que FRBR-Works selon eCH-0292 — pour la législature p. ex. les listes des membres et les répertoires des affaires, pour la session le programme de session, pour la séance le procès-verbal.
 
 {{include:ech-0293_operations/output/docs/Legislature.md}}
 
-## Session (période de session)
+## Session (période de séance)
 
-### Notion et signification
+Une session est une période de séance continue au cours de laquelle plusieurs séances ont lieu. Elle constitue le niveau intermédiaire — et elle est facultative : les entités fédérées sans sessions formelles s'en passent et gèrent directement leurs séances.
 
-Une session désigne une période de séances continue d'un parlement, au cours de laquelle plusieurs séances ont lieu. Elle constitue l'unité temporelle intermédiaire entre la législature et les séances individuelles.
+### Session ou séance ?
 
-### Distinction : session et séance
+La session est la période, la séance la réunion individuelle qui s'y déroule :
 
-Cette distinction est importante pour comprendre la norme :
-
-- **Session** : une période de séances qui s'étend typiquement sur plusieurs jours ou semaines
-- **Meeting** : une séance individuelle au sein d'une session
-
-#### Exemple au niveau fédéral
 ```
 Legislature (51e législature)
   └─ Session (session de printemps 2024)
       ├─ Meeting (séance du Conseil national du 4 mars 2024)
       ├─ Meeting (séance du Conseil des États du 4 mars 2024)
-      ├─ Meeting (séance du Conseil national du 5 mars 2024)
       └─ ...
 ```
 
-### Rattachement aux organes
+Les deux niveaux peuvent coïncider : une séance d'un jour du Grand Conseil ou une Landsgemeinde est gérée comme une période de séance comportant une seule séance — les exemples montrent les deux cas.
 
-Une session se rapporte à l'organe politique qui organise les sessions comme suite de séances. Exemples :
+### Numérotation
 
-- **Parlement** : sessions d'un Grand Conseil ou de l'Assemblée fédérale
-- **Commissions** : périodes de séances des commissions parlementaires
-- **Organes communs** : p. ex. sessions de l'Assemblée fédérale (Chambres réunies)
+Les sessions sont numérotées, la pratique variant fortement : `number` retient le numéro courant sous forme de nombre, `sequential_number` la même indication sous forme de chaîne de caractères (et donc aussi en chiffres romains), `position` la position au sein de la législature et `meeting_abbreviation` une désignation abrégée telle que « FS24 ». Le Meeting connaît les mêmes quatre champs.
 
-Le champ **body_key** permet de consigner l'organe (p. ex. « NR » pour le Conseil national, « SR » pour le Conseil des États) sous forme de clé. Le champ **parent_legislature** rattache la session à la législature correspondante.
+### Rattachement et liens
 
-### Identification et numérotation
-
-Les sessions sont habituellement numérotées. Les slots suivants sont disponibles — ils sont compatibles avec la modélisation correspondante de Meeting :
-
-- **number** : numéro courant (p. ex. au sein de la législature ou de l'année)
-- **sequential_number** : numéro courant sous forme de chaîne (chiffres romains également possibles)
-- **position** : position sous forme de nombre entier
-- **abbreviation** : désignation abrégée (p. ex. « FS24 » pour la session de printemps 2024)
-- **name** : désignation complète multilingue
-
-Le mixin `HasIdentification` met en outre à disposition `local_id`, `global_uri` et `wikidata_uri`.
-
-### Attributs temporels
-
-Les sessions utilisent le mixin `IsEventWithDuration` et offrent ainsi les mêmes champs de date que les législatures et les séances :
-
-- **date_begin_planned** / **datetime_begin_planned** : début planifié de la session
-- **date_begin_actual** / **datetime_begin_actual** : début effectif
-- **date_end_planned** / **datetime_end_planned** : fin planifiée de la session
-- **date_end_actual** / **datetime_end_actual** : fin effective
-
-### Liens
-
-- **meetings** : liste des séances au sein de la session
-- **documents** : FRBR Works liés (p. ex. programme de session, aperçu de la session)
-- **url** : page d'accueil de la session
-
-### Souplesse de la norme
-
-La norme est délibérément souple afin de refléter différentes formes d'organisation. Les entités fédérées sans sessions formelles peuvent utiliser cette entité de manière facultative ou renvoyer directement aux séances.
+`body_key` retient l'organe sous forme de clé abrégée (p. ex. « NR », « SR »), `parent_legislature` rattache la session à sa législature, `meetings` énumère les séances correspondantes, `url` renvoie à la page d'accueil.
 
 {{include:ech-0293_operations/output/docs/Session.md}}
 
 ## Meeting (séance individuelle)
 
-### Notion et signification
+Un Meeting est la séance individuelle d'un organe — le niveau auquel les points de l'ordre du jour sont délibérés, les décisions prises et les interventions consignées.
 
-Un Meeting désigne une séance individuelle d'un organe parlementaire. Il s'agit de la manifestation concrète au cours de laquelle les membres d'un parlement, d'une commission ou d'un autre organe se réunissent pour délibérer d'affaires et prendre des décisions.
+### Types de séance
 
-### Types de séances
+`meeting_type` distingue quatre types : `session` pour les séances plénières d'un parlement ou d'une chambre, `committee` pour les séances de commission, `sitting` pour les assemblées telles que les Landsgemeinden, les assemblées communales et les assemblées de commune bourgeoise, et `various` comme valeur résiduelle. La valeur `sitting` procède d'un choix délibéré : les Landsgemeinden et les assemblées communales sont des assemblées des personnes ayant le droit de vote elles-mêmes, mais elles décident en tant qu'organe siégeant doté d'un ordre du jour et sont donc représentées comme une séance de conseil.
 
-La norme distingue différents types de séances au moyen du champ **meeting_type** (énumération `MeetingTypeEnum`) :
+### Planification et réalité
 
-#### session
-Séances plénières de l'ensemble du parlement ou d'une chambre
+Au niveau de la séance, planification et déroulement divergent régulièrement : une séance fixée à 14h00 ne commence, en raison de retards, qu'à 14h25 et se termine à 17h30 au lieu de 18h00. C'est précisément à cela que servent les champs `*_planned` et `*_actual` ; pour les heures, il convient d'utiliser les variantes `datetime_*`. `state` retient si une séance a lieu comme prévu (`planned`, `canceled`, `postponed`) ; `state_name` reprend une désignation de statut divergente, en texte libre.
 
-**Exemples :**
-- Séance du Conseil national durant la session d'automne
-- Séance du Grand Conseil
-- Séance de l'Assemblée fédérale (Chambres réunies)
+### Lieu
 
-#### committee
-Séances des commissions parlementaires
+`location` consigne le lieu de la séance — la salle physique (« Palais fédéral, salle du Conseil national »), une visioconférence ou un format hybride.
 
-**Exemples :**
-- Séance de la Commission de l'économie et des redevances (CER)
-- Commission de gestion (CdG)
-- Commission de politique extérieure (CPE)
+### Rattachement à l'organe et classement
 
-#### sitting
-Formes de séance particulières
+Outre `actor_id` et `administrative_id`, `actor_name` retient le nom de l'organe pour un accès rapide et `body_key` une clé abrégée ; `group_name` et `group_id` complètent les regroupements là où c'est nécessaire. `parent_meeting` représente les séances qui font partie d'une séance de rang supérieur, `parent_legislature` rattache la séance à la législature. La numérotation se fait comme pour la session.
 
-**Exemples :**
-- Landsgemeinden (dans les cantons de Glaris et d'Appenzell Rhodes-Intérieures)
-- Assemblées bourgeoisiales
-- Assemblées communales
+### Points d'ancrage
 
-#### various
-Autres formes de séance n'entrant pas dans les catégories ci-dessus
-
-### Hiérarchie et structure
-
-Un Meeting fait partie d'une session (lorsque celle-ci est utilisée) et contient plusieurs Agenda Items (points de l'ordre du jour) :
-
-```
-Session (session de printemps 2024)
-  └─ Meeting (séance du Conseil national, 4 mars 2024, 08h00)
-      ├─ AgendaItem (point 1 : salutations)
-      ├─ AgendaItem (point 2 : délibération législative)
-      └─ AgendaItem (point 3 : votes)
-```
-
-### Planification temporelle et réalité
-
-Au moyen du mixin `IsEventWithDuration`, le Meeting distingue les moments planifiés des moments effectifs :
-
-#### Dates planifiées
-- **date_begin_planned** / **datetime_begin_planned** : début planifié
-- **date_end_planned** / **datetime_end_planned** : fin planifiée
-
-#### Dates effectives
-- **date_begin_actual** / **datetime_begin_actual** : début effectif
-- **date_end_actual** / **datetime_end_actual** : fin effective
-
-Cette distinction est importante, car :
-- les séances peuvent prendre du retard
-- les points de l'ordre du jour peuvent être avancés ou reportés
-- les séances peuvent se terminer plus tôt que prévu
-
-**Cas d'application :** une séance planifiée pour 14h00 ne commence, en raison de retards, qu'à 14h25 et se termine à 17h30 au lieu de 18h00.
-
-### État de la séance
-
-Le champ **state** (énumération `StateEnum`) saisit l'état actuel d'un Meeting :
-
-- **planned** : la séance est planifiée et se tiendra comme prévu
-- **canceled** : la séance a été annulée
-- **postponed** : la séance a été reportée
-
-Le champ **state_name** permet d'ajouter une description d'état divergente, en texte libre.
-
-Cet état est important pour :
-- l'information actuelle des membres du parlement et du public
-- la traçabilité historique des changements de planification
-- les notifications automatiques en cas de modification
-
-### Identification et numérotation
-
-Les séances sont identifiées par :
-
-- **local_id** / **global_uri** / **wikidata_uri** (via le mixin `HasIdentification`)
-- **number** : numéro courant (p. ex. « 5 » pour la 5e séance d'une session)
-- **sequential_number** : numéro courant sous forme de chaîne (chiffres romains également possibles)
-- **position** : position sous forme de nombre entier au sein de la session
-- **abbreviation** : désignation abrégée (p. ex. « NR-24-05 »)
-- **name** : désignation complète multilingue
-
-### Lieu de la séance
-
-Le champ **location** saisit le lieu de la séance :
-
-- Lieu physique : « Palais fédéral, salle du Conseil national »
-- Séances virtuelles : « Visioconférence via [plateforme] »
-- Formats hybrides : « Palais fédéral et visioconférence »
-
-### Rattachement aux organes
-
-L'organe compétent est référencé au moyen d'**actor_id** (selon eCH-0294 Actors). Le champ **actor_name** permet en outre de consigner le nom de l'organe pour un accès rapide, **body_key** une clé courte (p. ex. « NR », « SR »). Le champ **administrative_id** permet d'indiquer le niveau administratif ; **group_name** et **group_id** complètent les regroupements lorsque cela est nécessaire.
-
-- Séances plénières : renvoi à l'ensemble du parlement
-- Séances de commission : renvoi à la commission concernée
-- Séances communes : renvoi à l'organe commun
-
-### Liens hiérarchiques
-
-- **parent_meeting** : lorsqu'une séance fait partie d'une séance de rang supérieur
-- **parent_legislature** : la législature dans le cadre de laquelle la séance a lieu
-
-### Relations avec d'autres entités
-
-Un Meeting relie différents éléments de l'activité parlementaire :
-
-- **Agenda Items** : les points traités
-- **Votings** : les votes durant la séance
-- **Elections** : les élections durant la séance
-- **Speeches** : les interventions et prises de parole
-- **Attendance** : les listes de présence (via `Attendance.parent_meeting`)
-- **documents** : FRBR Works liés (procès-verbaux, documents de séance, bulletin officiel, etc.)
+Le Meeting est le nœud auquel se rattachent les autres classes de la présente norme : les points de l'ordre du jour (`AgendaItem`), les votes et élections (`Voting`, `Election`), les interventions (`Speech`) ainsi que la liste de présence (`Attendance.parent_meeting`). `documents` relie les documents de séance tels que le bulletin ou les annexes, `protocol_ref` le procès-verbal.
 
 {{include:ech-0293_operations/output/docs/Meeting.md}}
 

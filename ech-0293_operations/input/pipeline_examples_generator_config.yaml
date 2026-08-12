@@ -54,6 +54,20 @@ max_examples_per_slot: 3
 # Dokumentsprache gesetzt.
 example_titles:
 
+  # --- Legislature --------------------------------------------------------
+  "ops:legislature_51":
+    de: Abgeschlossene Legislaturperiode des Bundes
+    fr: Législature fédérale achevée
+    en: Completed federal legislature
+  "GR-BE-2022-2026":
+    de: Kantonale Legislatur mit vierjähriger Amtsdauer
+    fr: Législature cantonale d'une durée de quatre ans
+    en: Cantonal legislature with a four-year term
+  "ops:legislature_vd_2022_2027":
+    de: Laufende kantonale Legislatur mit fünfjähriger Amtsdauer
+    fr: Législature cantonale en cours d'une durée de cinq ans
+    en: Ongoing cantonal legislature with a five-year term
+
   # --- Session ------------------------------------------------------------
   "ops:session_5207":
     de: Eidgenössische Session mit dreisprachiger Bezeichnung
