@@ -67,12 +67,11 @@ annotations:
     tag: description_de
     value: Dateiformat dieser Manifestation (akn:FRBRformat/@value), typischerweise
       'xml'.
-  xml_element:
-    tag: xml_element
-    value: akn:FRBRformat
 description: Dateiformat dieser Manifestation (akn:FRBRformat/@value), typischerweise
   'xml'.
 from_schema: https://ld.ech.ch/schema/0296/laws
+exact_mappings:
+- akn:FRBRformat
 rank: 1000
 domain_of:
 - FRBRManifestation

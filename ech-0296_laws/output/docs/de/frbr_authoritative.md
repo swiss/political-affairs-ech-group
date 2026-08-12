@@ -66,11 +66,10 @@ annotations:
   description_de:
     tag: description_de
     value: Ob dies die massgebliche Version ist (akn:FRBRauthoritative/@value).
-  xml_element:
-    tag: xml_element
-    value: akn:FRBRauthoritative
 description: Ob dies die massgebliche Version ist (akn:FRBRauthoritative/@value).
 from_schema: https://ld.ech.ch/schema/0296/laws
+exact_mappings:
+- akn:FRBRauthoritative
 rank: 1000
 domain_of:
 - FRBRWork
