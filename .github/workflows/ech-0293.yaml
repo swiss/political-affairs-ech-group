@@ -121,7 +121,10 @@ jobs:
         run: |
           for lang in de fr en; do
             # Merge generated docs with hand-written language-specific content.
-            python .github/workflows/scripts/merge_documentation.py ech-0293_operations "$lang"
+            # --demote-includes: every class/enum doc is introduced by a section
+            # of its own, so it is nested under that section instead of becoming
+            # a sibling chapter. Only eCH-0293 is written this way.
+            python .github/workflows/scripts/merge_documentation.py ech-0293_operations "$lang" --demote-includes
             # Footer (version/status) derived from 01_head.md — shared by DOCX and
             # PDF so both stay in sync with the metadata table.
             footer="$(python .github/workflows/scripts/pdf_footer_info.py "ech-0293_operations/input/${lang}/01_head.md")"

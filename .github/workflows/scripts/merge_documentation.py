@@ -67,7 +67,29 @@ def modify_links(content):
     # Replace all links in the content
     return re.sub(pattern, replace_link, content)
 
-def process_includes(file_link, lang=None):
+def demote_headings(content):
+    """Push every heading of an included file one level down.
+
+    Without it the generated `## Klasse: Meeting` sits at the same level as the
+    authored `## Meeting (Einzelne Sitzung)` that introduces it, so Word numbers
+    the two as sibling sections and the prose reads as a chapter of its own
+    rather than as the lead-in to the class it describes.
+
+    Headings inside fenced code blocks are left alone: the LinkML source and the
+    YAML examples both contain comment lines starting with `#`, which are not
+    headings. Level 6 is the deepest ATX heading, so it stays as it is.
+    """
+    out, in_fence = [], False
+    for line in content.split("\n"):
+        if line.lstrip().startswith("```"):
+            in_fence = not in_fence
+        elif not in_fence and re.match(r"^#{1,5} ", line):
+            line = "#" + line
+        out.append(line)
+    return "\n".join(out)
+
+
+def process_includes(file_link, lang=None, demote=False):
     """
     Opens the file from the given link, reads its content,
     makes the inclusions and modifies the header and links
@@ -80,6 +102,10 @@ def process_includes(file_link, lang=None):
         to `.../output/docs/...` are redirected to the per-language docs
         directory `.../output/docs/<lang>/...`, so the same language-agnostic
         include directive resolves to the localized generated docs.
+        demote (bool): When true, the headings of every included file are
+        pushed one level down, so a generated element doc becomes a subsection
+        of the authored section that introduces it. Off by default -- a
+        document written against the flat layout keeps its structure.
     """
     # Read the content of the file
     with open(file_link, 'r', encoding='utf-8') as f:
@@ -101,6 +127,8 @@ def process_includes(file_link, lang=None):
             raw_content = f.read()
             raw_content = modify_header(raw_content)
             raw_content = modify_links(raw_content)
+            if demote:
+                raw_content = demote_headings(raw_content)
             # Replace the include directive with the content of the included file
             directive = f"{{{{include:{inc_path}}}}}" if include[1] else f"{{{{include:'{inc_path}'}}}}"
             content = content.replace(directive, raw_content)
@@ -186,7 +214,7 @@ def unlink_dangling_targets(content):
     return re.sub(r"\[([^\]]+)\]\(#([A-Za-z_]\w*)\)", repl, content)
 
 
-def process_folder(path, lang=None):
+def process_folder(path, lang=None, demote=False):
     """
     Processes all markdown files in the given folder and applies the modifications.
 
@@ -196,6 +224,9 @@ def process_folder(path, lang=None):
         prose is read from `<path>/input/<lang>/` and the merged output is
         written to `documentation_merged_<lang>.md`. Without it, the original
         single-language behaviour applies (`<path>/input/`).
+        demote (bool): Passed on to `process_includes()`. Set per standard --
+        eCH-0293 introduces every element doc with a section of its own and
+        wants them nested; the other documents keep the flat layout.
     """
     content = ""
 
@@ -207,7 +238,7 @@ def process_folder(path, lang=None):
     md_files = sorted([f.name for f in directory.glob('*.md')])
 
     for file in md_files:
-        content += process_includes(f"{input_dir}/{file}", lang) + "\n"
+        content += process_includes(f"{input_dir}/{file}", lang, demote) + "\n"
 
     content = localize_example_headings(content, path, lang)
     content = unlink_dangling_targets(content)
@@ -220,10 +251,14 @@ def process_folder(path, lang=None):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) not in (2, 3):
-        print("Usage: python .github/workflows/scripts/merge_documentation.py <path> [lang]")
+    args = [a for a in sys.argv[1:] if a != "--demote-includes"]
+    demote = "--demote-includes" in sys.argv[1:]
+
+    if len(args) not in (1, 2):
+        print("Usage: python .github/workflows/scripts/merge_documentation.py "
+              "<path> [lang] [--demote-includes]")
         sys.exit(1)
 
-    path = sys.argv[1]
-    lang = sys.argv[2] if len(sys.argv) == 3 else None
-    process_folder(path, lang)
+    path = args[0]
+    lang = args[1] if len(args) == 2 else None
+    process_folder(path, lang, demote)
