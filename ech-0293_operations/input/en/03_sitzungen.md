@@ -4,7 +4,7 @@
 
 # Temporal organisation of council operations
 
-Council operations are organised in time on three levels: legislatures form the long-term frame, sessions structure the work within a legislature, and meetings are the concrete sittings in which affairs are deliberated.
+Council operations are structured in time by four classes:
 
 ```
 Legislature (legislature)
@@ -13,79 +13,31 @@ Legislature (legislature)
           └─ AgendaItem (agenda item)
 ```
 
-The three classes are deliberately built alike: identification, temporal data, the link to the body and linked documents work identically on all three levels. These common conventions are described once, at the legislature; for session and meeting only the particularities of the respective level follow.
+Legislatures form the long-term frame, sessions structure the work within a legislature, meetings are the concrete sittings in which affairs are deliberated, and agenda items structure the individual sitting. The first three classes are described below, the agenda item in the next chapter.
+
+The three classes are deliberately built alike: identification, temporal data, the link to the body and linked documents are the same on all levels. `actor_id` points to the political actors according to eCH-0294, `documents` to FRBR works according to eCH-0292. Begin and end are recorded twice: at legislature level, planning (`*_planned`) and actual course (`*_actual`) hardly diverge, at sitting level they regularly do.
 
 ## Legislature
 
-A legislature denotes the period for which a parliament is elected and acts in its current composition. Its duration is not prescribed — the examples at the end of this section show a four-year and a five-year term.
-
-### Planned and actual
-
-Begin and end are recorded twice: `date_begin_planned` and `date_end_planned` hold the planning, `date_begin_actual` and `date_end_actual` the actual course. Where the time of day matters, the `datetime_*` variants are available. For a legislature, planning and actual course usually coincide; the same fields apply unchanged to session and meeting, where they regularly diverge.
-
-### Identification
-
-`global_uri` is the identifier and is mandatory. `local_id` takes the id of the delivering system, `wikidata_uri` points to the Wikidata entry where one exists. This applies equally to session and meeting.
-
-### Link to the body
-
-`actor_id` points, as a lightweight reference, to the body according to eCH-0294 (e.g. National Council, cantonal parliament), `administrative_id` to the administrative unit for which that body acts (country, canton, commune). This pair recurs on the meeting.
-
-### Linked documents
-
-`documents` links documents as FRBR works according to eCH-0292 — for the legislature, for instance, membership and affair registers, for the session the session programme, for the meeting the protocol.
+A legislature denotes the period for which a parliament is elected and acts in its current composition. Its duration is not prescribed — the examples show a four-year and a five-year term.
 
 {{include:ech-0293_operations/output/docs/Legislature.md}}
 
 ## Session (sitting period)
 
-A session is a continuous sitting period in which several meetings take place. It is the middle level — and it is optional: federal entities without formal sessions leave it out and record their meetings directly.
+A session is a continuous sitting period in which several meetings take place. It is the middle level — and it is optional: federal entities without formal sessions leave it out and record their meetings directly. Session and meeting may also coincide: a one-day sitting of a cantonal parliament or a Landsgemeinde is recorded as a sitting period with a single meeting.
 
-### Session or meeting?
-
-The session is the period, the meeting the individual sitting within it:
-
-```
-Legislature (51st legislature)
-  └─ Session (2024 spring session)
-      ├─ Meeting (National Council sitting of 4 March 2024)
-      ├─ Meeting (Council of States sitting of 4 March 2024)
-      └─ ...
-```
-
-Both levels may coincide: a one-day sitting of a cantonal parliament or a Landsgemeinde is recorded as a sitting period with a single meeting — the examples show both cases.
-
-### Numbering
-
-Sessions are numbered, with widely differing practice: `number` holds the running number as a figure, `sequential_number` the same information as a string (and therefore also Roman numerals), `position` the position within the legislature and `meeting_abbreviation` a short designation such as "FS24". The meeting has the same four fields.
-
-### Classification and links
-
-`body_key` holds the body as a short key (e.g. "NR", "SR"), `parent_legislature` assigns the session to its legislature, `meetings` lists the sittings belonging to it, `url` points to the landing page.
+Numbering practice differs widely, which is why four fields are available: `number` holds the running number as a figure, `sequential_number` the same information as a string (and therefore also Roman numerals), `position` the position within the legislature and `meeting_abbreviation` a short designation such as "FS24". The meeting has the same four fields. `body_key` holds the body as a short key (e.g. "NR", "SR"), `parent_legislature` assigns the session to its legislature.
 
 {{include:ech-0293_operations/output/docs/Session.md}}
 
 ## Meeting (individual sitting)
 
-A meeting is the individual sitting of a body — the level at which agenda items are deliberated, decisions taken and speeches recorded.
+A meeting is the individual sitting of a body — the level at which agenda items are deliberated, decisions taken and speeches recorded. `meeting_type` distinguishes four types: `session` for plenary sittings of a parliament or a chamber, `committee` for committee sittings, `sitting` for assemblies such as Landsgemeinden, communal assemblies and citizens' communal assemblies, and `various` as a catch-all. The value `sitting` is a deliberate choice: Landsgemeinden and communal assemblies are assemblies of the eligible voters themselves, but they decide as a convened body with an agenda and are therefore represented like a council sitting.
 
-### Meeting types
-
-`meeting_type` distinguishes four types: `session` for plenary sittings of a parliament or a chamber, `committee` for committee sittings, `sitting` for assemblies such as Landsgemeinden, communal assemblies and citizens' communal assemblies, and `various` as a catch-all. The value `sitting` is a deliberate choice: Landsgemeinden and communal assemblies are assemblies of the eligible voters themselves, but they decide as a convened body with an agenda and are therefore represented like a council sitting.
-
-### Planning and reality
-
-At the sitting level, planning and actual course regularly diverge: a sitting scheduled for 14:00 only begins at 14:25 because of delays and ends at 17:30 instead of 18:00. This is precisely what the `*_planned` and `*_actual` fields are for; for times of day, the `datetime_*` variants are to be used. Whether a sitting takes place as planned at all is held by `state` (`planned`, `canceled`, `postponed`); `state_name` takes a diverging, free-text status designation.
-
-### Location
-
-`location` records the place of the sitting — the physical room ("Federal Palace, National Council chamber"), a video conference or a hybrid format.
-
-### Link to the body and classification
+At this level, planning and actual course regularly diverge: a sitting scheduled for 14:00 only begins at 14:25 because of delays and ends at 17:30 instead of 18:00. This is precisely what the `*_planned` and `*_actual` fields are for; for times of day, the `datetime_*` variants are to be used. Whether a sitting takes place as planned at all is held by `state` (`planned`, `canceled`, `postponed`); `state_name` takes a diverging, free-text status designation. `location` records the place of the sitting — the physical room ("Federal Palace, National Council chamber"), a video conference or a hybrid format.
 
 In addition to `actor_id` and `administrative_id`, `actor_name` holds the name of the body for quick access and `body_key` a short key; `group_name` and `group_id` supplement groupings where needed. `parent_meeting` represents sittings that are part of a superordinate sitting, `parent_legislature` assigns the sitting to the legislature. Numbering works as for the session.
-
-### Anchor points
 
 The meeting is the node to which the remaining classes of this standard attach: agenda items (`AgendaItem`), votings and elections (`Voting`, `Election`), speeches (`Speech`) as well as the attendance list (`Attendance.parent_meeting`). `documents` links sitting documents such as the bulletin or annexes, `protocol_ref` the protocol.
 
