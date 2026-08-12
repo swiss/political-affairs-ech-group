@@ -131,129 +131,231 @@ _Conteneur pour les données de l'activité publique des conseils : législature
 
 
 #### Exemples
-##### Exemple Container : meeting
+##### Exemple Container : voting
 
 ```yaml
-global_uri: ops:meetings_1
-meetings:
-  - spatial: "https://ld.admin.ch/canton/2"
-    global_uri: ops:340dcf932fb044dd8f8c5c943267fbcc
-    meeting_type: "session"
-    name:
-      - text: "Regierungssitzung vom 31. März 2021"
-        language: "de"
-      - text: "Séance du gouvernement du 31 mars 2021"
-        language: "fr"
-    url:
-      - text: "https://www.rr.be.ch/de/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc"
-        language: "de"
-      - text: "https://www.rr.be.ch/fr/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc"
-        language: "fr"
-    actor_id:
-      global_uri: "actors:rr_be"
-      label: "Regierungsrat Bern"
-      abbreviation:
-        - value: "RR"
-          language: de
-    actor_name: "Regierungsrat Bern"
-    date_begin_planned: "2021-03-31"
-    date_end_planned: "2021-03-31"
-    datetime_created: "2024-10-28T01:22:26Z"
-    datetime_modified: "2024-11-27T20:40:57Z"
+global_uri: ops:voting_examples_2025
 
-  - spatial: "https://ld.admin.ch/canton/2"
-    global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
-    meeting_type: "session"
-    name:
-      - text: "Donnerstag (Nachmittag)"
-        language: "de"
-    url:
-      - text: "https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
-        language: "de"
-      - text: "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
-        language: "fr"
-    actor_id:
-      global_uri: "https://api.openparldata.ch/v1/bodies/253"
-      label: "Grosser Rat Bern"
-      abbreviation:
-        - value: "GR"
-          language: de
-    actor_name: "Grosser Rat Bern"
-    date_begin_planned: "2025-06-05"
-    date_end_planned: "2025-06-05"
-    datetime_created: "2025-04-25T11:10:25Z"
-    datetime_modified: "2025-05-19T01:06:45Z"
+votings:
 
-```
-##### Exemple Container : meeting sr winter25 Sitzung6
+- global_uri: ops:voting_sg_2025_001
+  voting_title:
+    - text: "Schlussabstimmung Energiegesetz"
+      language: "de"
+  voting_type: "final_vote"
+  datetime_begin: "2025-03-15T14:30:00Z"
+  datetime_end: "2025-03-15T14:35:00Z"
+  total_count_yes: 78
+  total_count_no: 42
+  total_count_abstention: 5
+  total_absent: 3
+  total: 128
+  majority_type: "absolute"
+  majority_count: 65
+  result_text: "Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen"
+  parent_agenda_item: ops:agenda_item_sg_2025_015
+  parent_meeting: ops:meeting_sg_2025_03_15
+  actor_id:
+    global_uri: "actors:kr_sg"
+    label: "Kantonsrat St. Gallen"
+    abbreviation:
+      - value: "KR"
+        language: de
+  datetime_created: "2025-03-15T14:30:00Z"
+  datetime_modified: "2025-03-15T14:35:00Z"
 
-```yaml
-global_uri: ops:data_meeting_sr_winter25_Sitzung6
+- global_uri: ops:voting_be_2025_042
+  voting_title:
+    - text: "Änderungsantrag Art. 5 Abs. 2"
+      language: "de"
+    - text: "Proposition de modification art. 5 al. 2"
+      language: "fr"
+  voting_type: "preliminary_vote"
+  datetime_begin: "2025-06-05T10:15:00Z"
+  datetime_end: "2025-06-05T10:17:00Z"
+  total_count_yes: 45
+  total_count_no: 87
+  total_count_abstention: 8
+  total_absent: 10
+  total: 150
+  majority_type: "absolute"
+  majority_count: 76
+  result_text: "Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt"
+  parent_agenda_item: ops:agenda_item_be_2025_042
+  parent_meeting: ops:meeting_be_2025_06_05
+  actor_id:
+    global_uri: "actors:gr_be"
+    label: "Grosser Rat Bern"
+    abbreviation:
+      - value: "GR"
+        language: de
+  datetime_created: "2025-06-05T10:15:00Z"
+  datetime_modified: "2025-06-05T10:15:00Z"
 
-meetings:
-  - global_uri: "parl:sr_winter25_sitzung_6"
-    spatial: "https://ld.admin.ch/country/CHE"
-    meeting_type: "session"
-    name:
-      - text: "Sechste Sitzung"
-        language: "de"
-      - text: "Sixième séance"
-        language: "fr"
-    url:
-      - text: "https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin"
-        language: "de"
-    actor_id:
-      global_uri: "https://api.openparldata.ch/v1/bodies/42"
-      label: "Ständerat"
-      abbreviation:
-        - value: "SR"
-          language: de
-    actor_name: "Ständerat"
-    datetime_begin_planned: "2025-12-19T08:15:00+01:00"
-    datetime_created: "2026-01-12T00:00:00+01:00"
-    datetime_modified: "2026-01-12T00:00:00+01:00"
+- global_uri: ops:voting_zh_budget_2026
+  voting_title:
+    - text: "Budgetbeschluss 2026"
+      language: "de"
+  voting_type: "final_vote"
+  datetime_begin: "2025-11-20T16:45:00Z"
+  datetime_end: "2025-11-20T16:50:00Z"
+  total_count_yes: 105
+  total_count_no: 70
+  total_count_abstention: 5
+  total_absent: 0
+  total: 180
+  majority_type: "absolute"
+  majority_count: 91
+  result_text: "Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen"
+  parent_agenda_item: ops:agenda_item_zh_budget_2026
+  parent_meeting: ops:meeting_zh_2025_11_20
+  actor_id:
+    global_uri: "actors:kr_zh"
+    label: "Kantonsrat Zürich"
+    abbreviation:
+      - value: "KR"
+        language: de
+  datetime_created: "2025-11-20T16:45:00Z"
+  datetime_modified: "2025-11-20T16:50:00Z"
 
-agenda_items:
-  - global_uri: ops:69905
-    parent_meeting: "parl:sr_winter25_sitzung_6"
-    agenda_item_type: "item"
-    datetime_begin_planned: "2025-12-19T09:15:00+01:00"
-    datetime_begin_actual: "2025-12-19T09:20:00+01:00"
-    agenda_item_number: "6"
-    agenda_item_position: 4
-    agenda_item_title:
-      - text: "Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen, um die Verzögerungen zu verstehen"
-        language: "de"
-    affair_id: "affairs:24.4471"
-    landing_page: "https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3"
-    agenda_item_category: "agenda_item"
-    datetime_created: "2026-01-12T00:00:00+01:00"
-    datetime_modified: "2026-01-12T00:00:00+01:00"
+# Realbeispiel Gemeinderat der Stadt Zürich (28.02.2024, 86. Sitzung):
+# "Gleichgerichtete Anträge" mit mehreren Auswahloptionen (Zürich: mehrere Knöpfe).
+# Die Optionen sind nicht Ja/Nein/Enthaltung, sondern Auswahl A–D und werden
+# deshalb über total_other (Liste von TotalOther {count, label}) abgebildet.
+# Quelle: https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=aa10c137274f424fa4eda877e7644a89
+- global_uri: ops:voting_zh_gr_2024_2023_361
+  voting_title:
+    - text: "Liegenschaften Stadt Zürich, Wohnhaus Magnusstrasse 27, Gesamtinstandsetzung, Grundrissanpassung, Netto-Zusatzkredit (Geschäft 2023/361)"
+      language: "de"
+  voting_type: "other"
+  type_label: "Gleichgerichtete Anträge (Mehrfachauswahl)"
+  datetime_begin: "2024-02-28T00:00:00Z"
+  datetime_end: "2024-02-28T00:00:00Z"
+  landing_page: "https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=aa10c137274f424fa4eda877e7644a89"
+  # Bei reinen Auswahlabstimmungen bleiben Ja/Nein/Enthaltung leer; jede Option
+  # erhält einen eigenen TotalOther-Eintrag mit Stimmenzahl und Bezeichnung.
+  total_other:
+    - count: 75
+      label: "Auswahl A (siegreich)"
+    - count: 25
+      label: "Auswahl B"
+    - count: 12
+      label: "Auswahl C"
+    - count: 0
+      label: "Auswahl D"
+  total_absent: 13
+  total: 112
+  majority_type: "other"
+  result_text: "Auswahl A mit 75 von 112 abgegebenen Stimmen angenommen (Auswahl B: 25, Auswahl C: 12, Auswahl D: 0; 13 abwesend von 125 Mitgliedern)."
+  parent_agenda_item: ops:agenda_item_zh_gr_2024_2023_361
+  parent_meeting: ops:meeting_zh_gr_2024_02_28
+  affair_id: "2023/361"
+  actor_id:
+    global_uri: "actors:gr_stadt_zuerich"
+    label: "Gemeinderat der Stadt Zürich"
+    abbreviation:
+      - value: "GR"
+        language: de
+  datetime_created: "2024-02-28T00:00:00Z"
+  datetime_modified: "2024-02-28T00:00:00Z"
 
-speeches:
-  - global_uri: ops:366631
-    language: "fr"
-    datetime_begin: "2025-12-19T09:20:00+01:00"
-    datetime_end: "2025-12-19T09:25:00+01:00"
-    actor_fullname: "Pascal Broulis"
-    actor_id:
-      global_uri: "https://api.openparldata.ch/v1/persons/18682"
-      wikidata_uri: "http://www.wikidata.org/entity/Q116407"
-      label: "Pascal Broulis"
-    role: "speaker"
-    text: >-
-      Je remercie la rapporteuse pour son rapport exhaustif. J'ai également lu avec attention
-      les différents commentaires qui ont été effectués sur mon postulat. Cela reste un postulat,
-      ce n'est pas une motion. D'abord, je ne partage pas l'avis selon lequel ce postulat
-      n'apporterait pas une valeur ajoutée. En effet, un "benchmark", à savoir un modèle chiffré
-      de performance, permettrait de mieux comprendre les raisons des retards que notre pays
-      rencontre en comparaison avec les principaux pays européens.
-    text_format: "html"
-    text_type: "final"
-    landing_page: "https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-videos?TranscriptId=366631"
-    media_url: "https://par-pcache.simplex.tv/content?externalid=366631"
-    media_type: "video"
-    media_format: "video/mp4"
+individual_votes:
+
+# Einzelstimmen zum Zürcher Mehrfachoptionen-Beispiel: Da die Auswahloptionen
+# nicht Ja/Nein/Enthaltung sind, wird individual_vote_type "other" mit type_label
+# je gewählter Option verwendet; abwesende Mitglieder erhalten "not_voted".
+- global_uri: ops:vote_zh_gr_2024_2023_361_a1
+  parent_voting: ops:voting_zh_gr_2024_2023_361
+  actor_id:
+    global_uri: "actors:person_zh_stadt_1"
+    label: "Mitglied Auswahl A"
+  seat_nr: "12"
+  individual_vote_type: "other"
+  type_label: "Auswahl A"
+  datetime_created: "2024-02-28T00:00:00Z"
+
+- global_uri: ops:vote_zh_gr_2024_2023_361_b1
+  parent_voting: ops:voting_zh_gr_2024_2023_361
+  actor_id:
+    global_uri: "actors:person_zh_stadt_2"
+    label: "Mitglied Auswahl B"
+  seat_nr: "47"
+  individual_vote_type: "other"
+  type_label: "Auswahl B"
+  datetime_created: "2024-02-28T00:00:00Z"
+
+- global_uri: ops:vote_zh_gr_2024_2023_361_c1
+  parent_voting: ops:voting_zh_gr_2024_2023_361
+  actor_id:
+    global_uri: "actors:person_zh_stadt_3"
+    label: "Mitglied Auswahl C"
+  seat_nr: "88"
+  individual_vote_type: "other"
+  type_label: "Auswahl C"
+  datetime_created: "2024-02-28T00:00:00Z"
+
+- global_uri: ops:vote_zh_gr_2024_2023_361_abs1
+  parent_voting: ops:voting_zh_gr_2024_2023_361
+  actor_id:
+    global_uri: "actors:person_zh_stadt_4"
+    label: "Abwesendes Mitglied"
+  seat_nr: "103"
+  individual_vote_type: "not_voted"
+  datetime_created: "2024-02-28T00:00:00Z"
+
+- global_uri: ops:vote_sg_2025_001_person_123
+  parent_voting: ops:voting_sg_2025_001
+  actor_id:
+    global_uri: "actors:person_paul_schlegel"
+    label: "Paul Schlegel"
+  seat_nr: "1"
+  individual_vote_type: "yes"
+  datetime_created: "2025-03-15T14:30:00Z"
+
+- global_uri: ops:vote_sg_2025_001_person_456
+  parent_voting: ops:voting_sg_2025_001
+  actor_id:
+    global_uri: "actors:person_andreas_eggenberger"
+    label: "Andreas Eggenberger"
+  seat_nr: "2"
+  individual_vote_type: "no"
+  datetime_created: "2025-03-15T14:30:00Z"
+
+- global_uri: ops:vote_sg_2025_001_person_789
+  parent_voting: ops:voting_sg_2025_001
+  actor_id:
+    global_uri: "actors:person_thomas_ammann"
+    label: "Thomas Ammann"
+  seat_nr: "3"
+  individual_vote_type: "abstention"
+  datetime_created: "2025-03-15T14:30:00Z"
+
+- global_uri: ops:vote_sg_2025_001_person_321
+  parent_voting: ops:voting_sg_2025_001
+  actor_id:
+    global_uri: "actors:person_ruedi_thomann"
+    label: "Ruedi Thomann"
+  seat_nr: "4"
+  individual_vote_type: "not_voted"
+  datetime_created: "2025-03-15T14:30:00Z"
+
+- global_uri: ops:vote_zh_budget_2026_person_101
+  parent_voting: ops:voting_zh_budget_2026
+  actor_id:
+    global_uri: "actors:person_thomas_wolf"
+    label: "Thomas Wolf"
+  seat_nr: "1"
+  individual_vote_type: "yes"
+  datetime_created: "2025-11-20T16:45:00Z"
+
+- global_uri: ops:vote_zh_budget_2026_person_102
+  parent_voting: ops:voting_zh_budget_2026
+  actor_id:
+    global_uri: "actors:person_jean_daniel_strub"
+    label: "Jean-Daniel Strub"
+  seat_nr: "2"
+  individual_vote_type: "no"
+  datetime_created: "2025-11-20T16:45:00Z"
 
 ```
 ##### Exemple Container : meeting complete
@@ -273,7 +375,7 @@ meetings:
     - text: "https://www.ratsinfo.sg.ch/sessions/2025-03-15"
       language: "de"
   actor_id:
-    global_uri: "https://api.openparldata.ch/v1/bodies/265"
+    global_uri: "actors:kr_sg"
     label: "Kantonsrat St. Gallen"
     abbreviation:
       - value: "KR"
@@ -327,7 +429,7 @@ meetings:
     - text: "https://www.landsgemeinde.gl.ch/2025"
       language: "de"
   actor_id:
-    global_uri: "https://api.openparldata.ch/v1/bodies/258"
+    global_uri: "actors:landsgemeinde_gl"
     label: "Landsgemeinde Glarus"
     abbreviation:
       - value: "LG"
@@ -407,80 +509,76 @@ agenda_items:
   datetime_modified: "2025-11-20T16:50:00Z"
 
 ```
-##### Exemple Container : legislature
+##### Exemple Container : session
 
 ```yaml
-global_uri: ops:legislature_examples
-legislatures:
+global_uri: ops:sessions_example_2025
+sessions:
 
-# Bund: abgeschlossene Legislaturperiode, vier Jahre, dreisprachige Bezeichnung.
-- global_uri: ops:legislature_51
-  wikidata_uri: http://www.wikidata.org/entity/Q71712404
+- global_uri: ops:session_5207
   spatial: "https://ld.admin.ch/country/CHE"
   name:
-    - text: "51. Legislaturperiode"
+    - text: "Frühjahrssession 2025"
       language: "de"
-    - text: "51e législature"
+    - text: "Session de printemps 2025"
       language: "fr"
-    - text: "51ª legislatura"
+    - text: "Sessione primaverile 2025"
       language: "it"
-  description: "Amtsdauer der am 20. Oktober 2019 gewählten Bundesversammlung; sie endete am Vortag der konstituierenden Sitzung der 52. Legislaturperiode vom 4. Dezember 2023."
-  landing_page: "https://www.parlament.ch/de/ratsbetrieb/sessionen"
-  actor_id:
-    global_uri: "actors:bundesversammlung"
-    label: "Bundesversammlung"
-    abbreviation:
-      - value: "BV"
-        language: de
-  date_begin_actual: "2019-12-02"
-  date_end_actual: "2023-12-03"
-  datetime_created: "2019-12-02T09:00:00+01:00"
-  datetime_modified: "2023-12-04T08:30:00+01:00"
+  url:
+    - text: "https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025"
+      language: "de"
+    - text: "https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025"
+      language: "fr"
+    - text: "https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025"
+      language: "it"
+  date_begin_planned: "2025-03-03"
+  date_end_planned: "2025-03-21"
+  parent_legislature: ops:legislature_51
+  datetime_modified: "2025-04-24T00:19:37Z"
+  datetime_created: "2025-03-20T14:27:09Z"
 
-# Kanton mit vierjähriger Amtsdauer; Beginn und Ende sind hier von Gesetzes
-# wegen auf den Tag festgelegt und deshalb schon bei der Planung bekannt.
-- global_uri: ops:legislature_be_2022_2026
-  local_id: "GR-BE-2022-2026"
+- global_uri: ops:session_be_summer_2025
   spatial: "https://ld.admin.ch/canton/2"
   name:
-    - text: "Legislatur 2022–2026"
+    - text: "Sommersession 2025"
       language: "de"
-    - text: "Législature 2022-2026"
+    - text: "Session d'été 2025"
       language: "fr"
-  landing_page: "https://www.gr.be.ch/de/start/grosser-rat.html"
-  actor_id:
-    global_uri: "https://api.openparldata.ch/v1/bodies/253"
-    label: "Grosser Rat Bern"
-    abbreviation:
-      - value: "GR"
-        language: de
-  date_begin_planned: "2022-06-01"
-  date_end_planned: "2026-05-31"
-  date_begin_actual: "2022-06-01"
-  date_end_actual: "2026-05-31"
-  datetime_created: "2022-04-01T10:15:00+02:00"
-  datetime_modified: "2026-06-01T07:00:00+02:00"
+  url:
+    - text: "https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
+      language: "de"
+    - text: "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
+      language: "fr"
+  date_begin_planned: "2025-06-02"
+  date_end_planned: "2025-06-12"
+  datetime_modified: "2025-05-19T01:06:44Z"
+  datetime_created: "2025-04-25T11:10:24Z"
 
-# Kanton mit fünfjähriger Amtsdauer: laufende Legislatur, deren Ende erst
-# geplant ist -- date_end_actual bleibt deshalb leer.
-- global_uri: ops:legislature_vd_2022_2027
-  wikidata_uri: http://www.wikidata.org/entity/Q131627357
-  spatial: "https://ld.admin.ch/canton/22"
+- global_uri: ops:session_gl_landrat_2025_02_26
+  spatial: "https://ld.admin.ch/canton/8"
   name:
-    - text: "Législature 2022-2027"
-      language: "fr"
-  description: "Le Grand Conseil vaudois est élu pour cinq ans."
-  landing_page: "https://www.vd.ch/gc"
-  actor_id:
-    global_uri: "actors:gc_vd"
-    label: "Grand Conseil du canton de Vaud"
-    abbreviation:
-      - value: "GC"
-        language: fr
-  date_begin_actual: "2022-07-01"
-  date_end_planned: "2027-06-30"
-  datetime_created: "2022-05-10T14:00:00+02:00"
-  datetime_modified: "2025-01-08T11:20:00+01:00"
+    - text: "Sitzung des Landrates vom 26.02.2025"
+      language: "de"
+  url:
+    - text: "https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239"
+      language: "de"
+  date_begin_planned: "2025-02-26"
+  date_end_planned: "2025-02-26"
+  datetime_modified: "2025-04-25T13:40:34Z"
+  datetime_created: "2025-04-23T22:58:39Z"
+
+- global_uri: ops:session_gl_landsgemeinde_2025_05_04
+  spatial: "https://ld.admin.ch/canton/8"
+  name:
+    - text: "Landsgemeinde vom 04. Mai 2025"
+      language: "de"
+  url:
+    - text: "https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04"
+      language: "de"
+  date_begin_planned: "2025-05-04"
+  date_end_planned: "2025-05-04"
+  datetime_modified: "2025-04-25T13:40:34Z"
+  datetime_created: "2025-04-23T22:58:39Z"
 
 ```
 ##### Exemple Container : meeting item
@@ -701,303 +799,205 @@ agenda_items:
     datetime_modified: '2025-01-29T06:59:41Z'
 
 ```
-##### Exemple Container : voting
+##### Exemple Container : legislature
 
 ```yaml
-global_uri: ops:voting_examples_2025
+global_uri: ops:legislature_examples
+legislatures:
 
-votings:
-
-- global_uri: ops:voting_sg_2025_001
-  voting_title:
-    - text: "Schlussabstimmung Energiegesetz"
+# Bund: abgeschlossene Legislaturperiode, vier Jahre, dreisprachige Bezeichnung.
+- global_uri: ops:legislature_51
+  wikidata_uri: http://www.wikidata.org/entity/Q71712404
+  spatial: "https://ld.admin.ch/country/CHE"
+  name:
+    - text: "51. Legislaturperiode"
       language: "de"
-  voting_type: "final_vote"
-  datetime_begin: "2025-03-15T14:30:00Z"
-  datetime_end: "2025-03-15T14:35:00Z"
-  total_count_yes: 78
-  total_count_no: 42
-  total_count_abstention: 5
-  total_absent: 3
-  total: 128
-  majority_type: "absolute"
-  majority_count: 65
-  result_text: "Mit 78 zu 42 Stimmen bei 5 Enthaltungen angenommen"
-  parent_agenda_item: ops:agenda_item_sg_2025_015
-  parent_meeting: ops:meeting_sg_2025_03_15
-  actor_id:
-    global_uri: "https://api.openparldata.ch/v1/bodies/265"
-    label: "Kantonsrat St. Gallen"
-    abbreviation:
-      - value: "KR"
-        language: de
-  datetime_created: "2025-03-15T14:30:00Z"
-  datetime_modified: "2025-03-15T14:35:00Z"
-
-- global_uri: ops:voting_be_2025_042
-  voting_title:
-    - text: "Änderungsantrag Art. 5 Abs. 2"
-      language: "de"
-    - text: "Proposition de modification art. 5 al. 2"
+    - text: "51e législature"
       language: "fr"
-  voting_type: "preliminary_vote"
-  datetime_begin: "2025-06-05T10:15:00Z"
-  datetime_end: "2025-06-05T10:17:00Z"
-  total_count_yes: 45
-  total_count_no: 87
-  total_count_abstention: 8
-  total_absent: 10
-  total: 150
-  majority_type: "absolute"
-  majority_count: 76
-  result_text: "Mit 45 zu 87 Stimmen bei 8 Enthaltungen abgelehnt"
-  parent_agenda_item: ops:agenda_item_be_2025_042
-  parent_meeting: ops:meeting_be_2025_06_05
+    - text: "51ª legislatura"
+      language: "it"
+  description: "Amtsdauer der am 20. Oktober 2019 gewählten Bundesversammlung; sie endete am Vortag der konstituierenden Sitzung der 52. Legislaturperiode vom 4. Dezember 2023."
+  landing_page: "https://www.parlament.ch/de/ratsbetrieb/sessionen"
   actor_id:
-    global_uri: "https://api.openparldata.ch/v1/bodies/253"
+    global_uri: "actors:bundesversammlung"
+    label: "Bundesversammlung"
+    abbreviation:
+      - value: "BV"
+        language: de
+  date_begin_actual: "2019-12-02"
+  date_end_actual: "2023-12-03"
+  datetime_created: "2019-12-02T09:00:00+01:00"
+  datetime_modified: "2023-12-04T08:30:00+01:00"
+
+# Kanton mit vierjähriger Amtsdauer; Beginn und Ende sind hier von Gesetzes
+# wegen auf den Tag festgelegt und deshalb schon bei der Planung bekannt.
+- global_uri: ops:legislature_be_2022_2026
+  local_id: "GR-BE-2022-2026"
+  spatial: "https://ld.admin.ch/canton/2"
+  name:
+    - text: "Legislatur 2022–2026"
+      language: "de"
+    - text: "Législature 2022-2026"
+      language: "fr"
+  landing_page: "https://www.gr.be.ch/de/start/grosser-rat.html"
+  actor_id:
+    global_uri: "actors:gr_be"
     label: "Grosser Rat Bern"
     abbreviation:
       - value: "GR"
         language: de
-  datetime_created: "2025-06-05T10:15:00Z"
-  datetime_modified: "2025-06-05T10:15:00Z"
+  date_begin_planned: "2022-06-01"
+  date_end_planned: "2026-05-31"
+  date_begin_actual: "2022-06-01"
+  date_end_actual: "2026-05-31"
+  datetime_created: "2022-04-01T10:15:00+02:00"
+  datetime_modified: "2026-06-01T07:00:00+02:00"
 
-- global_uri: ops:voting_zh_budget_2026
-  voting_title:
-    - text: "Budgetbeschluss 2026"
-      language: "de"
-  voting_type: "final_vote"
-  datetime_begin: "2025-11-20T16:45:00Z"
-  datetime_end: "2025-11-20T16:50:00Z"
-  total_count_yes: 105
-  total_count_no: 70
-  total_count_abstention: 5
-  total_absent: 0
-  total: 180
-  majority_type: "absolute"
-  majority_count: 91
-  result_text: "Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen"
-  parent_agenda_item: ops:agenda_item_zh_budget_2026
-  parent_meeting: ops:meeting_zh_2025_11_20
+# Kanton mit fünfjähriger Amtsdauer: laufende Legislatur, deren Ende erst
+# geplant ist -- date_end_actual bleibt deshalb leer.
+- global_uri: ops:legislature_vd_2022_2027
+  wikidata_uri: http://www.wikidata.org/entity/Q131627357
+  spatial: "https://ld.admin.ch/canton/22"
+  name:
+    - text: "Législature 2022-2027"
+      language: "fr"
+  description: "Le Grand Conseil vaudois est élu pour cinq ans."
+  landing_page: "https://www.vd.ch/gc"
   actor_id:
-    global_uri: "https://api.openparldata.ch/v1/bodies/275"
-    label: "Kantonsrat Zürich"
+    global_uri: "actors:gc_vd"
+    label: "Grand Conseil du canton de Vaud"
     abbreviation:
-      - value: "KR"
-        language: de
-  datetime_created: "2025-11-20T16:45:00Z"
-  datetime_modified: "2025-11-20T16:50:00Z"
-
-# Realbeispiel Gemeinderat der Stadt Zürich (28.02.2024, 86. Sitzung):
-# "Gleichgerichtete Anträge" mit mehreren Auswahloptionen (Zürich: mehrere Knöpfe).
-# Die Optionen sind nicht Ja/Nein/Enthaltung, sondern Auswahl A–D und werden
-# deshalb über total_other (Liste von TotalOther {count, label}) abgebildet.
-# Quelle: https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=aa10c137274f424fa4eda877e7644a89
-- global_uri: ops:voting_zh_gr_2024_2023_361
-  voting_title:
-    - text: "Liegenschaften Stadt Zürich, Wohnhaus Magnusstrasse 27, Gesamtinstandsetzung, Grundrissanpassung, Netto-Zusatzkredit (Geschäft 2023/361)"
-      language: "de"
-  voting_type: "other"
-  type_label: "Gleichgerichtete Anträge (Mehrfachauswahl)"
-  datetime_begin: "2024-02-28T00:00:00Z"
-  datetime_end: "2024-02-28T00:00:00Z"
-  landing_page: "https://www.gemeinderat-zuerich.ch/abstimmungen/detail.php?aid=aa10c137274f424fa4eda877e7644a89"
-  # Bei reinen Auswahlabstimmungen bleiben Ja/Nein/Enthaltung leer; jede Option
-  # erhält einen eigenen TotalOther-Eintrag mit Stimmenzahl und Bezeichnung.
-  total_other:
-    - count: 75
-      label: "Auswahl A (siegreich)"
-    - count: 25
-      label: "Auswahl B"
-    - count: 12
-      label: "Auswahl C"
-    - count: 0
-      label: "Auswahl D"
-  total_absent: 13
-  total: 112
-  majority_type: "other"
-  result_text: "Auswahl A mit 75 von 112 abgegebenen Stimmen angenommen (Auswahl B: 25, Auswahl C: 12, Auswahl D: 0; 13 abwesend von 125 Mitgliedern)."
-  parent_agenda_item: ops:agenda_item_zh_gr_2024_2023_361
-  parent_meeting: ops:meeting_zh_gr_2024_02_28
-  affair_id: "2023/361"
-  actor_id:
-    global_uri: "https://www.gemeinderat-zuerich.ch/"
-    label: "Gemeinderat der Stadt Zürich"
-    abbreviation:
-      - value: "GR"
-        language: de
-  datetime_created: "2024-02-28T00:00:00Z"
-  datetime_modified: "2024-02-28T00:00:00Z"
-
-individual_votes:
-
-# Einzelstimmen zum Zürcher Mehrfachoptionen-Beispiel: Da die Auswahloptionen
-# nicht Ja/Nein/Enthaltung sind, wird individual_vote_type "other" mit type_label
-# je gewählter Option verwendet; abwesende Mitglieder erhalten "not_voted".
-- global_uri: ops:vote_zh_gr_2024_2023_361_a1
-  parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
-    global_uri: "https://www.gemeinderat-zuerich.ch/personen/1"
-    label: "Mitglied Auswahl A"
-  seat_nr: "12"
-  individual_vote_type: "other"
-  type_label: "Auswahl A"
-  datetime_created: "2024-02-28T00:00:00Z"
-
-- global_uri: ops:vote_zh_gr_2024_2023_361_b1
-  parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
-    global_uri: "https://www.gemeinderat-zuerich.ch/personen/2"
-    label: "Mitglied Auswahl B"
-  seat_nr: "47"
-  individual_vote_type: "other"
-  type_label: "Auswahl B"
-  datetime_created: "2024-02-28T00:00:00Z"
-
-- global_uri: ops:vote_zh_gr_2024_2023_361_c1
-  parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
-    global_uri: "https://www.gemeinderat-zuerich.ch/personen/3"
-    label: "Mitglied Auswahl C"
-  seat_nr: "88"
-  individual_vote_type: "other"
-  type_label: "Auswahl C"
-  datetime_created: "2024-02-28T00:00:00Z"
-
-- global_uri: ops:vote_zh_gr_2024_2023_361_abs1
-  parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
-    global_uri: "https://www.gemeinderat-zuerich.ch/personen/4"
-    label: "Abwesendes Mitglied"
-  seat_nr: "103"
-  individual_vote_type: "not_voted"
-  datetime_created: "2024-02-28T00:00:00Z"
-
-- global_uri: ops:vote_sg_2025_001_person_123
-  parent_voting: ops:voting_sg_2025_001
-  actor_id:
-    global_uri: "https://api.openparldata.ch/v1/persons/27235"
-    label: "Paul Schlegel"
-  seat_nr: "1"
-  individual_vote_type: "yes"
-  datetime_created: "2025-03-15T14:30:00Z"
-
-- global_uri: ops:vote_sg_2025_001_person_456
-  parent_voting: ops:voting_sg_2025_001
-  actor_id:
-    global_uri: "https://api.openparldata.ch/v1/persons/27234"
-    label: "Andreas Eggenberger"
-  seat_nr: "2"
-  individual_vote_type: "no"
-  datetime_created: "2025-03-15T14:30:00Z"
-
-- global_uri: ops:vote_sg_2025_001_person_789
-  parent_voting: ops:voting_sg_2025_001
-  actor_id:
-    global_uri: "https://api.openparldata.ch/v1/persons/27233"
-    label: "Thomas Ammann"
-  seat_nr: "3"
-  individual_vote_type: "abstention"
-  datetime_created: "2025-03-15T14:30:00Z"
-
-- global_uri: ops:vote_sg_2025_001_person_321
-  parent_voting: ops:voting_sg_2025_001
-  actor_id:
-    global_uri: "https://api.openparldata.ch/v1/persons/25177"
-    label: "Ruedi Thomann"
-  seat_nr: "4"
-  individual_vote_type: "not_voted"
-  datetime_created: "2025-03-15T14:30:00Z"
-
-- global_uri: ops:vote_zh_budget_2026_person_101
-  parent_voting: ops:voting_zh_budget_2026
-  actor_id:
-    global_uri: "https://api.openparldata.ch/v1/persons/27237"
-    label: "Thomas Wolf"
-  seat_nr: "1"
-  individual_vote_type: "yes"
-  datetime_created: "2025-11-20T16:45:00Z"
-
-- global_uri: ops:vote_zh_budget_2026_person_102
-  parent_voting: ops:voting_zh_budget_2026
-  actor_id:
-    global_uri: "https://api.openparldata.ch/v1/persons/25208"
-    label: "Jean-Daniel Strub"
-  seat_nr: "2"
-  individual_vote_type: "no"
-  datetime_created: "2025-11-20T16:45:00Z"
+      - value: "GC"
+        language: fr
+  date_begin_actual: "2022-07-01"
+  date_end_planned: "2027-06-30"
+  datetime_created: "2022-05-10T14:00:00+02:00"
+  datetime_modified: "2025-01-08T11:20:00+01:00"
 
 ```
-##### Exemple Container : session
+##### Exemple Container : meeting
 
 ```yaml
-global_uri: ops:sessions_example_2025
-sessions:
+global_uri: ops:meetings_1
+meetings:
+  - spatial: "https://ld.admin.ch/canton/2"
+    global_uri: ops:340dcf932fb044dd8f8c5c943267fbcc
+    meeting_type: "session"
+    name:
+      - text: "Regierungssitzung vom 31. März 2021"
+        language: "de"
+      - text: "Séance du gouvernement du 31 mars 2021"
+        language: "fr"
+    url:
+      - text: "https://www.rr.be.ch/de/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc"
+        language: "de"
+      - text: "https://www.rr.be.ch/fr/start/beschluesse/beschluesse-unterlagen-nach-sitzungen/sitzungs-detail?guid=340dcf932fb044dd8f8c5c943267fbcc"
+        language: "fr"
+    actor_id:
+      global_uri: "actors:rr_be"
+      label: "Regierungsrat Bern"
+      abbreviation:
+        - value: "RR"
+          language: de
+    actor_name: "Regierungsrat Bern"
+    date_begin_planned: "2021-03-31"
+    date_end_planned: "2021-03-31"
+    datetime_created: "2024-10-28T01:22:26Z"
+    datetime_modified: "2024-11-27T20:40:57Z"
 
-- global_uri: ops:session_5207
-  spatial: "https://ld.admin.ch/country/CHE"
-  name:
-    - text: "Frühjahrssession 2025"
-      language: "de"
-    - text: "Session de printemps 2025"
-      language: "fr"
-    - text: "Sessione primaverile 2025"
-      language: "it"
-  url:
-    - text: "https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025"
-      language: "de"
-    - text: "https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025"
-      language: "fr"
-    - text: "https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025"
-      language: "it"
-  date_begin_planned: "2025-03-03"
-  date_end_planned: "2025-03-21"
-  parent_legislature: ops:legislature_51
-  datetime_modified: "2025-04-24T00:19:37Z"
-  datetime_created: "2025-03-20T14:27:09Z"
+  - spatial: "https://ld.admin.ch/canton/2"
+    global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
+    meeting_type: "session"
+    name:
+      - text: "Donnerstag (Nachmittag)"
+        language: "de"
+    url:
+      - text: "https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
+        language: "de"
+      - text: "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
+        language: "fr"
+    actor_id:
+      global_uri: "actors:gr_be"
+      label: "Grosser Rat Bern"
+      abbreviation:
+        - value: "GR"
+          language: de
+    actor_name: "Grosser Rat Bern"
+    date_begin_planned: "2025-06-05"
+    date_end_planned: "2025-06-05"
+    datetime_created: "2025-04-25T11:10:25Z"
+    datetime_modified: "2025-05-19T01:06:45Z"
 
-- global_uri: ops:session_be_summer_2025
-  spatial: "https://ld.admin.ch/canton/2"
-  name:
-    - text: "Sommersession 2025"
-      language: "de"
-    - text: "Session d'été 2025"
-      language: "fr"
-  url:
-    - text: "https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
-      language: "de"
-    - text: "https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8"
-      language: "fr"
-  date_begin_planned: "2025-06-02"
-  date_end_planned: "2025-06-12"
-  datetime_modified: "2025-05-19T01:06:44Z"
-  datetime_created: "2025-04-25T11:10:24Z"
+```
+##### Exemple Container : meeting sr winter25 Sitzung6
 
-- global_uri: ops:session_gl_landrat_2025_02_26
-  spatial: "https://ld.admin.ch/canton/8"
-  name:
-    - text: "Sitzung des Landrates vom 26.02.2025"
-      language: "de"
-  url:
-    - text: "https://www.gl.ch/parlament/landrat/landratsprotokolle-ab-30-juni-2010.html/239"
-      language: "de"
-  date_begin_planned: "2025-02-26"
-  date_end_planned: "2025-02-26"
-  datetime_modified: "2025-04-25T13:40:34Z"
-  datetime_created: "2025-04-23T22:58:39Z"
+```yaml
+global_uri: ops:data_meeting_sr_winter25_Sitzung6
 
-- global_uri: ops:session_gl_landsgemeinde_2025_05_04
-  spatial: "https://ld.admin.ch/canton/8"
-  name:
-    - text: "Landsgemeinde vom 04. Mai 2025"
-      language: "de"
-  url:
-    - text: "https://www.landsgemeinde.gl.ch/landsgemeinde/2025-05-04"
-      language: "de"
-  date_begin_planned: "2025-05-04"
-  date_end_planned: "2025-05-04"
-  datetime_modified: "2025-04-25T13:40:34Z"
-  datetime_created: "2025-04-23T22:58:39Z"
+meetings:
+  - global_uri: "parl:sr_winter25_sitzung_6"
+    spatial: "https://ld.admin.ch/country/CHE"
+    meeting_type: "session"
+    name:
+      - text: "Sechste Sitzung"
+        language: "de"
+      - text: "Sixième séance"
+        language: "fr"
+    url:
+      - text: "https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin"
+        language: "de"
+    actor_id:
+      global_uri: "actors:staenderat"
+      label: "Ständerat"
+      abbreviation:
+        - value: "SR"
+          language: de
+    actor_name: "Ständerat"
+    datetime_begin_planned: "2025-12-19T08:15:00+01:00"
+    datetime_created: "2026-01-12T00:00:00+01:00"
+    datetime_modified: "2026-01-12T00:00:00+01:00"
+
+agenda_items:
+  - global_uri: ops:69905
+    parent_meeting: "parl:sr_winter25_sitzung_6"
+    agenda_item_type: "item"
+    datetime_begin_planned: "2025-12-19T09:15:00+01:00"
+    datetime_begin_actual: "2025-12-19T09:20:00+01:00"
+    agenda_item_number: "6"
+    agenda_item_position: 4
+    agenda_item_title:
+      - text: "Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen, um die Verzögerungen zu verstehen"
+        language: "de"
+    affair_id: "affairs:24.4471"
+    landing_page: "https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3"
+    agenda_item_category: "agenda_item"
+    datetime_created: "2026-01-12T00:00:00+01:00"
+    datetime_modified: "2026-01-12T00:00:00+01:00"
+
+speeches:
+  - global_uri: ops:366631
+    language: "fr"
+    datetime_begin: "2025-12-19T09:20:00+01:00"
+    datetime_end: "2025-12-19T09:25:00+01:00"
+    actor_fullname: "Pascal Broulis"
+    actor_id:
+      global_uri: "actors:person_pascal_broulis"
+      wikidata_uri: "http://www.wikidata.org/entity/Q116407"
+      label: "Pascal Broulis"
+    role: "speaker"
+    text: >-
+      Je remercie la rapporteuse pour son rapport exhaustif. J'ai également lu avec attention
+      les différents commentaires qui ont été effectués sur mon postulat. Cela reste un postulat,
+      ce n'est pas une motion. D'abord, je ne partage pas l'avis selon lequel ce postulat
+      n'apporterait pas une valeur ajoutée. En effet, un "benchmark", à savoir un modèle chiffré
+      de performance, permettrait de mieux comprendre les raisons des retards que notre pays
+      rencontre en comparaison avec les principaux pays européens.
+    text_format: "html"
+    text_type: "final"
+    landing_page: "https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-videos?TranscriptId=366631"
+    media_url: "https://par-pcache.simplex.tv/content?externalid=366631"
+    media_type: "video"
+    media_format: "video/mp4"
 
 ```
 
@@ -1042,10 +1042,6 @@ Les trois classes sont délibérément construites de la même manière. Les cha
 ## Legislature (législature)
 
 Une législature désigne la période pour laquelle un parlement est élu et durant laquelle il exerce ses fonctions dans sa composition actuelle.
-
-### Durée et déroulement
-
-La durée n'est pas prescrite — les exemples montrent un mandat de quatre ans et un mandat de cinq ans. Contrairement à la séance, planification et déroulement ne divergent guère à ce niveau ; là où une législature est fixée au jour près par la loi, `*_planned` et `*_actual` portent les mêmes dates.
 
 
 
@@ -1113,7 +1109,37 @@ _Durée du mandat d'un parlement en tant qu'assemblée législative. Elle est en
 
 
 #### Exemples
-##### Exemple Legislature : Législature cantonale en cours d'une durée de cinq ans
+##### Exemple Legislature : Législature fédérale achevée
+
+```yaml
+legislatures:
+- global_uri: ops:legislature_51
+  wikidata_uri: http://www.wikidata.org/entity/Q71712404
+  spatial: https://ld.admin.ch/country/CHE
+  name:
+  - text: 51. Legislaturperiode
+    language: de
+  - text: 51e législature
+    language: fr
+  - text: 51ª legislatura
+    language: it
+  description: >-
+    Amtsdauer der am 20. Oktober 2019 gewählten Bundesversammlung; sie endete am Vortag
+    der konstituierenden Sitzung der 52. Legislaturperiode vom 4. Dezember 2023.
+  landing_page: https://www.parlament.ch/de/ratsbetrieb/sessionen
+  actor_id:
+    global_uri: actors:bundesversammlung
+    label: Bundesversammlung
+    abbreviation:
+    - value: BV
+      language: de
+  date_begin_actual: '2019-12-02'
+  date_end_actual: '2023-12-03'
+  datetime_created: '2019-12-02T09:00:00+01:00'
+  datetime_modified: '2023-12-04T08:30:00+01:00'
+
+```
+##### Exemple Legislature : Ongoing cantonal legislature with a five-year term
 
 ```yaml
 legislatures:
@@ -1151,7 +1177,7 @@ legislatures:
     language: fr
   landing_page: https://www.gr.be.ch/de/start/grosser-rat.html
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/253
+    global_uri: actors:gr_be
     label: Grosser Rat Bern
     abbreviation:
     - value: GR
@@ -1162,36 +1188,6 @@ legislatures:
   date_end_actual: '2026-05-31'
   datetime_created: '2022-04-01T10:15:00+02:00'
   datetime_modified: '2026-06-01T07:00:00+02:00'
-
-```
-##### Exemple Legislature : Completed federal legislature
-
-```yaml
-legislatures:
-- global_uri: ops:legislature_51
-  wikidata_uri: http://www.wikidata.org/entity/Q71712404
-  spatial: https://ld.admin.ch/country/CHE
-  name:
-  - text: 51. Legislaturperiode
-    language: de
-  - text: 51e législature
-    language: fr
-  - text: 51ª legislatura
-    language: it
-  description: >-
-    Amtsdauer der am 20. Oktober 2019 gewählten Bundesversammlung; sie endete am Vortag
-    der konstituierenden Sitzung der 52. Legislaturperiode vom 4. Dezember 2023.
-  landing_page: https://www.parlament.ch/de/ratsbetrieb/sessionen
-  actor_id:
-    global_uri: actors:bundesversammlung
-    label: Bundesversammlung
-    abbreviation:
-    - value: BV
-      language: de
-  date_begin_actual: '2019-12-02'
-  date_end_actual: '2023-12-03'
-  datetime_created: '2019-12-02T09:00:00+01:00'
-  datetime_modified: '2023-12-04T08:30:00+01:00'
 
 ```
 
@@ -1283,34 +1279,7 @@ _Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p
 
 
 #### Exemples
-##### Exemple Session : Session fédérale avec désignation trilingue
-
-```yaml
-sessions:
-- global_uri: ops:session_5207
-  spatial: https://ld.admin.ch/country/CHE
-  name:
-  - text: Frühjahrssession 2025
-    language: de
-  - text: Session de printemps 2025
-    language: fr
-  - text: Sessione primaverile 2025
-    language: it
-  url:
-  - text: https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025
-    language: de
-  - text: https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025
-    language: fr
-  - text: https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025
-    language: it
-  date_begin_planned: '2025-03-03'
-  date_end_planned: '2025-03-21'
-  parent_legislature: ops:legislature_51
-  datetime_modified: '2025-04-24T00:19:37Z'
-  datetime_created: '2025-03-20T14:27:09Z'
-
-```
-##### Exemple Session : Landsgemeinde as a sitting period
+##### Exemple Session : Landsgemeinde comme période de séance
 
 ```yaml
 sessions:
@@ -1368,6 +1337,33 @@ sessions:
   date_end_planned: '2025-02-26'
   datetime_modified: '2025-04-25T13:40:34Z'
   datetime_created: '2025-04-23T22:58:39Z'
+
+```
+##### Exemple Session : Federal session with a trilingual designation
+
+```yaml
+sessions:
+- global_uri: ops:session_5207
+  spatial: https://ld.admin.ch/country/CHE
+  name:
+  - text: Frühjahrssession 2025
+    language: de
+  - text: Session de printemps 2025
+    language: fr
+  - text: Sessione primaverile 2025
+    language: it
+  url:
+  - text: https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025
+    language: de
+  - text: https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025
+    language: fr
+  - text: https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025
+    language: it
+  date_begin_planned: '2025-03-03'
+  date_end_planned: '2025-03-21'
+  parent_legislature: ops:legislature_51
+  datetime_modified: '2025-04-24T00:19:37Z'
+  datetime_created: '2025-03-20T14:27:09Z'
 
 ```
 
@@ -1476,34 +1472,7 @@ _Une classe générale de séance utilisée pour les sessions, les séances de c
 
 
 #### Exemples
-##### Exemple Meeting : Séance du Conseil des États avec procès-verbal et interventions
-
-```yaml
-meetings:
-- global_uri: parl:sr_winter25_sitzung_6
-  spatial: https://ld.admin.ch/country/CHE
-  meeting_type: session
-  name:
-  - text: Sechste Sitzung
-    language: de
-  - text: Sixième séance
-    language: fr
-  url:
-  - text: https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin
-    language: de
-  actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/42
-    label: Ständerat
-    abbreviation:
-    - value: SR
-      language: de
-  actor_name: Ständerat
-  datetime_begin_planned: '2025-12-19T08:15:00+01:00'
-  datetime_created: '2026-01-12T00:00:00+01:00'
-  datetime_modified: '2026-01-12T00:00:00+01:00'
-
-```
-##### Exemple Meeting : Cantonal parliament sitting with agenda items and votings
+##### Exemple Meeting : Séance de Grand Conseil avec points de l'ordre du jour et votes
 
 ```yaml
 meetings:
@@ -1517,7 +1486,7 @@ meetings:
   - text: https://www.ratsinfo.sg.ch/sessions/2025-03-15
     language: de
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/265
+    global_uri: actors:kr_sg
     label: Kantonsrat St. Gallen
     abbreviation:
     - value: KR
@@ -1534,34 +1503,31 @@ meetings:
   datetime_modified: '2025-03-15T17:30:00Z'
 
 ```
-##### Exemple Meeting : Half-day sitting within a session
+##### Exemple Meeting : Council of States sitting with protocol and speeches
 
 ```yaml
 meetings:
-- spatial: https://ld.admin.ch/canton/2
-  global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
+- global_uri: parl:sr_winter25_sitzung_6
+  spatial: https://ld.admin.ch/country/CHE
   meeting_type: session
   name:
-  - text: Donnerstag (Nachmittag)
+  - text: Sechste Sitzung
     language: de
-  url:
-  - text: >-
-      https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
-    language: de
-  - text: >-
-      https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
+  - text: Sixième séance
     language: fr
+  url:
+  - text: https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin
+    language: de
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/253
-    label: Grosser Rat Bern
+    global_uri: actors:staenderat
+    label: Ständerat
     abbreviation:
-    - value: GR
+    - value: SR
       language: de
-  actor_name: Grosser Rat Bern
-  date_begin_planned: '2025-06-05'
-  date_end_planned: '2025-06-05'
-  datetime_created: '2025-04-25T11:10:25Z'
-  datetime_modified: '2025-05-19T01:06:45Z'
+  actor_name: Ständerat
+  datetime_begin_planned: '2025-12-19T08:15:00+01:00'
+  datetime_created: '2026-01-12T00:00:00+01:00'
+  datetime_modified: '2026-01-12T00:00:00+01:00'
 
 ```
 ##### Exemple Meeting : Committee sitting with an attendance list
@@ -1597,6 +1563,67 @@ meetings:
   datetime_modified: '2025-05-12T16:45:00Z'
 
 ```
+##### Exemple Meeting : Half-day sitting within a session
+
+```yaml
+meetings:
+- spatial: https://ld.admin.ch/canton/2
+  global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
+  meeting_type: session
+  name:
+  - text: Donnerstag (Nachmittag)
+    language: de
+  url:
+  - text: >-
+      https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
+    language: de
+  - text: >-
+      https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
+    language: fr
+  actor_id:
+    global_uri: actors:gr_be
+    label: Grosser Rat Bern
+    abbreviation:
+    - value: GR
+      language: de
+  actor_name: Grosser Rat Bern
+  date_begin_planned: '2025-06-05'
+  date_end_planned: '2025-06-05'
+  datetime_created: '2025-04-25T11:10:25Z'
+  datetime_modified: '2025-05-19T01:06:45Z'
+
+```
+##### Exemple Meeting : Landsgemeinde as meeting type sitting
+
+```yaml
+meetings:
+- global_uri: ops:meeting_gl_landsgemeinde_2025
+  spatial: https://ld.admin.ch/canton/8
+  meeting_type: sitting
+  name:
+  - text: Landsgemeinde 2025
+    language: de
+  url:
+  - text: https://www.landsgemeinde.gl.ch/2025
+    language: de
+  actor_id:
+    global_uri: actors:landsgemeinde_gl
+    label: Landsgemeinde Glarus
+    abbreviation:
+    - value: LG
+      language: de
+  actor_name: Landsgemeinde Glarus
+  datetime_begin_planned: '2025-05-04T09:30:00Z'
+  datetime_end_planned: '2025-05-04T14:00:00Z'
+  datetime_begin_actual: '2025-05-04T09:30:00Z'
+  datetime_end_actual: '2025-05-04T13:45:00Z'
+  state: planned
+  location: Zaunplatz, Glarus
+  parent_legislature: ops:legislature_gl_2024_2028
+  datetime_created: '2025-01-10T12:00:00Z'
+  datetime_modified: '2025-05-04T13:45:00Z'
+
+```
 ##### Exemple Meeting : Government sitting with a bilingual designation
 
 ```yaml
@@ -1627,37 +1654,6 @@ meetings:
   date_end_planned: '2021-03-31'
   datetime_created: '2024-10-28T01:22:26Z'
   datetime_modified: '2024-11-27T20:40:57Z'
-
-```
-##### Exemple Meeting : Landsgemeinde as meeting type sitting
-
-```yaml
-meetings:
-- global_uri: ops:meeting_gl_landsgemeinde_2025
-  spatial: https://ld.admin.ch/canton/8
-  meeting_type: sitting
-  name:
-  - text: Landsgemeinde 2025
-    language: de
-  url:
-  - text: https://www.landsgemeinde.gl.ch/2025
-    language: de
-  actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/258
-    label: Landsgemeinde Glarus
-    abbreviation:
-    - value: LG
-      language: de
-  actor_name: Landsgemeinde Glarus
-  datetime_begin_planned: '2025-05-04T09:30:00Z'
-  datetime_end_planned: '2025-05-04T14:00:00Z'
-  datetime_begin_actual: '2025-05-04T09:30:00Z'
-  datetime_end_actual: '2025-05-04T13:45:00Z'
-  state: planned
-  location: Zaunplatz, Glarus
-  parent_legislature: ops:legislature_gl_2024_2028
-  datetime_created: '2025-01-10T12:00:00Z'
-  datetime_modified: '2025-05-04T13:45:00Z'
 
 ```
 
@@ -1966,148 +1962,7 @@ _Un point de l'ordre du jour d'une séance._
 
 
 #### Exemples
-##### Exemple AgendaItem : Point de l'ordre du jour budgétaire
-
-```yaml
-agenda_items:
-- global_uri: ops:agenda_item_zh_budget_2026
-  parent_meeting: ops:meeting_zh_2025_11_20
-  agenda_item_type: item
-  agenda_item_number: '8'
-  agenda_item_position: 8
-  agenda_item_title:
-  - text: Budget 2026
-    language: de
-  agenda_item_description:
-  - text: Beratung und Beschlussfassung über das Kantonsbudget für das Jahr 2026
-    language: de
-  agenda_item_category: Budget und Finanzen
-  state_id: completed
-  datetime_begin_planned: '2025-11-20T16:00:00Z'
-  datetime_begin_actual: '2025-11-20T16:45:00Z'
-  affair_id: affairs:zh_2025_budget_2026
-  datetime_created: '2025-10-01T08:00:00Z'
-  datetime_modified: '2025-11-20T16:50:00Z'
-
-```
-##### Exemple AgendaItem : Motion within a group of agenda items
-
-```yaml
-agenda_items:
-- global_uri: ops:16155798_3
-  parent_meeting: ops:meeting_schaffhausen_2025_03_31
-  agenda_item_type: item
-  datetime_begin_planned: '2025-03-31T00:00:00Z'
-  agenda_item_position: 2
-  agenda_item_number: '2'
-  agenda_item_title:
-  - text: >-
-      Motion Nr. 2023/9 von Rainer Schmidig vom 18. Dezember 2023 betreffend zeitgemässe
-      Abzüge in den Art. 35 und 37 des Gesetzes über die direkten Steuern
-    language: de
-  agenda_item_category: Traktanden
-  affair_id: affairs:MOT_2023_9
-  datetime_created: '2025-05-02T11:23:49Z'
-  datetime_modified: '2025-05-02T11:23:49Z'
-
-```
-##### Exemple AgendaItem : Agenda item of a Council of States sitting
-
-```yaml
-agenda_items:
-- global_uri: ops:69905
-  parent_meeting: parl:sr_winter25_sitzung_6
-  agenda_item_type: item
-  datetime_begin_planned: '2025-12-19T09:15:00+01:00'
-  datetime_begin_actual: '2025-12-19T09:20:00+01:00'
-  agenda_item_number: '6'
-  agenda_item_position: 4
-  agenda_item_title:
-  - text: >-
-      Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen,
-      um die Verzögerungen zu verstehen
-    language: de
-  affair_id: affairs:24.4471
-  landing_page: >-
-    https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3
-  agenda_item_category: agenda_item
-  datetime_created: '2026-01-12T00:00:00+01:00'
-  datetime_modified: '2026-01-12T00:00:00+01:00'
-
-```
-##### Exemple AgendaItem : Postulate category voting
-
-```yaml
-agenda_items:
-- global_uri: ops:0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
-  parent_meeting: ops:meeting_luzern_2025_01_28
-  agenda_item_type: item
-  datetime_begin_planned: '2025-01-28T00:00:00Z'
-  agenda_item_position: 29
-  agenda_item_number: '29'
-  agenda_item_title:
-  - text: >-
-      Postulat Widmer Reichlin Gisela und Mit. über Massnahmen zur Erfüllung des Sonderschulkonkordats
-      und zur gezielten Behebung des Fachkräftemangels im Bereich schulische Heilpädagogik
-      / Bildungs- und Kulturdepartement
-    language: de
-  agenda_item_category: voting
-  url:
-  - text: >-
-      https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
-    language: de
-  affair_id: affairs:2024P_125
-  datetime_created: '2025-01-29T06:59:41Z'
-  datetime_modified: '2025-01-29T06:59:41Z'
-
-```
-##### Exemple AgendaItem : Interpellation of a parliamentary group
-
-```yaml
-agenda_items:
-- global_uri: ops:cea750a5bd7b420fa4da1c914f801384
-  parent_meeting: ops:meeting_bern_2022_03_17
-  agenda_item_type: item
-  datetime_begin_planned: '2022-03-17T17:00:00Z'
-  agenda_item_position: 29
-  agenda_item_number: '8'
-  agenda_item_title:
-  - text: >-
-      Interpellation Fraktion GB/JA! (Katharina Gallizzi, GB): Welche Konsequenzen
-      haben die Klimaziele für das Gasnetz in Bern?
-    language: de
-  affair_id: affairs:2020.SR.000007
-  url:
-  - text: >-
-      https://stadtrat.bern.ch/de/sitzungen/detail.php?gid=000d6cf5f0bc4d89a5171e0123cfbff5#cea750a5bd7b420fa4da1c914f801384
-    language: de
-  datetime_created: '2025-01-17T21:25:52Z'
-  datetime_modified: '2025-01-17T21:25:52Z'
-
-```
-##### Exemple AgendaItem : Petition as an agenda item
-
-```yaml
-agenda_items:
-- global_uri: ops:21c50b86d21b4b4baeb1a76738ff82a3_2025-04-02_1_de
-  parent_meeting: ops:meeting_bern_rr_2025_04_02
-  agenda_item_type: item
-  datetime_begin_planned: '2025-04-02T00:00:00Z'
-  agenda_item_title:
-  - text: >-
-      Petition «Gleichberechtigung für Tagesfamilien: Gleich hohe Betreuungsgutscheine
-      für alle Anbieter im Kanton Bern». Regierungsrätliches Antwortschreiben
-    language: de
-  affair_id: affairs:2025.STA.622
-  url:
-  - text: >-
-      https://www.rr.be.ch/de/start/beschluesse/suche/geschaeftsdetail.html?guid=21c50b86d21b4b4baeb1a76738ff82a3
-    language: de
-  datetime_created: '2025-04-25T11:11:40Z'
-  datetime_modified: '2025-04-25T11:11:40Z'
-
-```
-##### Exemple AgendaItem : Partial revision of several ordinances in French
+##### Exemple AgendaItem : Révision partielle de plusieurs ordonnances, en français
 
 ```yaml
 agenda_items:
@@ -2138,21 +1993,124 @@ agenda_items:
   datetime_modified: '2024-12-06T10:50:04Z'
 
 ```
-##### Exemple AgendaItem : Substantive affair without an agenda category
+##### Exemple AgendaItem : Urgent interpellation in French
 
 ```yaml
 agenda_items:
-- global_uri: ops:49_253
-  parent_meeting: ops:meeting_2025_03_31
+- global_uri: ops:2025_05_20-23
+  parent_meeting: ops:meeting_lausanne_2025_05_20
+  agenda_item_type: item
+  datetime_begin_planned: '2025-05-20T00:00:00Z'
+  agenda_item_position: 23
+  agenda_item_number: '23'
+  agenda_item_title:
+  - text: >-
+      Interpellation urgente du 20 mai 2025 de M. Yusuf KULMIYE : « Interpellation
+      urgente de Kulmiye Yusuf et crts – Solidarité sans frontières, Lausanne en faveur
+      du respect du droit international et de la protection des populations civiles
+      à Gaza »
+    language: fr
+  state_id: not_treated
+  agenda_item_category: ANNONCES ET INTERPELLATIONS
+  affair_id: affairs:INT25/027
+  url:
+  - text: >-
+      https://www.lausanne.ch/apps/agir/affaire/6c/049b6c612fe2428f9be66ea39522ac6c.htm
+    language: fr
+  datetime_created: '2025-06-07T23:50:18Z'
+  datetime_modified: '2025-06-07T23:50:18Z'
+
+```
+##### Exemple AgendaItem : Popular motion within a group of agenda items
+
+```yaml
+agenda_items:
+- global_uri: ops:16155798_4
+  parent_meeting: ops:meeting_schaffhausen_2025_03_31_b
+  agenda_item_type: item
+  datetime_begin_planned: '2025-03-31T00:00:00Z'
+  agenda_item_position: 3
+  agenda_item_number: '3'
+  agenda_item_title:
+  - text: >-
+      Volksmotion Nr. 2024/1 von Sandro Mamedow und Livia Schraff (Erstunterzeichnende)
+      sowie weitere 150 Mitunterzeichnende vom 22. März 2024 mit dem Titel: «Für eine
+      Stimme der Studierenden im Hochschulrat der Pädagogischen Hochschule Schaffhausen
+      (PHSH)»
+    language: de
+  agenda_item_category: Traktanden
+  affair_id: affairs:MOT_2024_1
+  datetime_created: '2025-05-02T11:23:49Z'
+  datetime_modified: '2025-05-02T11:23:49Z'
+
+```
+##### Exemple AgendaItem : Postulate category voting
+
+```yaml
+agenda_items:
+- global_uri: ops:0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
+  parent_meeting: ops:meeting_luzern_2025_01_28
+  agenda_item_type: item
+  datetime_begin_planned: '2025-01-28T00:00:00Z'
+  agenda_item_position: 29
+  agenda_item_number: '29'
+  agenda_item_title:
+  - text: >-
+      Postulat Widmer Reichlin Gisela und Mit. über Massnahmen zur Erfüllung des Sonderschulkonkordats
+      und zur gezielten Behebung des Fachkräftemangels im Bereich schulische Heilpädagogik
+      / Bildungs- und Kulturdepartement
+    language: de
+  agenda_item_category: voting
+  url:
+  - text: >-
+      https://www.lu.ch/kr/Sessionen/sessionsdaten_2020/Abstimmungsresultate/Detail?TraktandumGuid=0de4ecdb-23f1-49ab-95b8-1afc2e4feb1a
+    language: de
+  affair_id: affairs:2024P_125
+  datetime_created: '2025-01-29T06:59:41Z'
+  datetime_modified: '2025-01-29T06:59:41Z'
+
+```
+##### Exemple AgendaItem : Motion within a group of agenda items
+
+```yaml
+agenda_items:
+- global_uri: ops:16155798_3
+  parent_meeting: ops:meeting_schaffhausen_2025_03_31
   agenda_item_type: item
   datetime_begin_planned: '2025-03-31T00:00:00Z'
   agenda_item_position: 2
   agenda_item_number: '2'
   agenda_item_title:
-  - text: Programmvereinbarungen 2024
+  - text: >-
+      Motion Nr. 2023/9 von Rainer Schmidig vom 18. Dezember 2023 betreffend zeitgemässe
+      Abzüge in den Art. 35 und 37 des Gesetzes über die direkten Steuern
     language: de
-  datetime_created: '2025-03-29T01:07:14Z'
-  datetime_modified: '2025-03-29T01:07:14Z'
+  agenda_item_category: Traktanden
+  affair_id: affairs:MOT_2023_9
+  datetime_created: '2025-05-02T11:23:49Z'
+  datetime_modified: '2025-05-02T11:23:49Z'
+
+```
+##### Exemple AgendaItem : Petition as an agenda item
+
+```yaml
+agenda_items:
+- global_uri: ops:21c50b86d21b4b4baeb1a76738ff82a3_2025-04-02_1_de
+  parent_meeting: ops:meeting_bern_rr_2025_04_02
+  agenda_item_type: item
+  datetime_begin_planned: '2025-04-02T00:00:00Z'
+  agenda_item_title:
+  - text: >-
+      Petition «Gleichberechtigung für Tagesfamilien: Gleich hohe Betreuungsgutscheine
+      für alle Anbieter im Kanton Bern». Regierungsrätliches Antwortschreiben
+    language: de
+  affair_id: affairs:2025.STA.622
+  url:
+  - text: >-
+      https://www.rr.be.ch/de/start/beschluesse/suche/geschaeftsdetail.html?guid=21c50b86d21b4b4baeb1a76738ff82a3
+    language: de
+  datetime_created: '2025-04-25T11:11:40Z'
+  datetime_modified: '2025-04-25T11:11:40Z'
 
 ```
 ##### Exemple AgendaItem : Detailed deliberation of an article of an act
@@ -2184,85 +2142,45 @@ agenda_items:
   datetime_modified: '2025-05-12T15:20:00Z'
 
 ```
-##### Exemple AgendaItem : Interpellation as an agenda item
+##### Exemple AgendaItem : Substantive affair without an agenda category
 
 ```yaml
 agenda_items:
-- global_uri: ops:06fb582b753c416d8fdb05fa13873545
-  parent_meeting: ops:meeting_2011_11_23
-  agenda_item_type: item
-  datetime_begin_planned: '2011-11-23T00:00:00Z'
-  agenda_item_position: 2
-  agenda_item_title:
-  - text: >-
-      Interpellation Peter Mark betr. elektronische Datenerfassung durch Mitarbeiter
-      im Werkhof – Versuchsphase
-    language: de
-  datetime_created: '2025-03-21T23:15:19Z'
-  datetime_modified: '2025-03-21T23:15:19Z'
-
-```
-##### Exemple AgendaItem : Substantive affair from a cantonal parliamentary information system
-
-```yaml
-agenda_items:
-- global_uri: ops:87b69a72919445a493a061d9b0daeba3
-  parent_meeting: ops:meeting_be_2025_06_02
-  agenda_item_type: item
-  datetime_begin_planned: '2025-06-02T00:00:00Z'
-  agenda_item_title:
-  - text: Differenzierte Anpassung des Gehalts von Lehrpersonen ohne Lehrdiplom
-    language: de
-  affair_id: affairs:2025.GRPARL.81
-  datetime_created: '2025-04-25T11:10:35Z'
-  datetime_modified: '2025-04-25T11:10:35Z'
-
-```
-##### Exemple AgendaItem : Agenda item with a final vote
-
-```yaml
-agenda_items:
-- global_uri: ops:agenda_item_sg_2025_015
-  parent_meeting: ops:meeting_sg_2025_03_15
-  agenda_item_type: item
-  agenda_item_number: '15'
-  agenda_item_position: 15
-  agenda_item_title:
-  - text: Energiegesetz - Schlussabstimmung
-    language: de
-  agenda_item_description:
-  - text: Schlussabstimmung über das revidierte Energiegesetz des Kantons St. Gallen
-    language: de
-  agenda_item_category: Gesetzgebung
-  state_id: completed
-  datetime_begin_planned: '2025-03-15T14:00:00Z'
-  datetime_begin_actual: '2025-03-15T14:30:00Z'
-  affair_id: affairs:sg_2024_123_energiegesetz
-  datetime_created: '2025-02-01T10:00:00Z'
-  datetime_modified: '2025-03-15T14:35:00Z'
-
-```
-##### Exemple AgendaItem : Popular motion within a group of agenda items
-
-```yaml
-agenda_items:
-- global_uri: ops:16155798_4
-  parent_meeting: ops:meeting_schaffhausen_2025_03_31_b
+- global_uri: ops:49_253
+  parent_meeting: ops:meeting_2025_03_31
   agenda_item_type: item
   datetime_begin_planned: '2025-03-31T00:00:00Z'
-  agenda_item_position: 3
-  agenda_item_number: '3'
+  agenda_item_position: 2
+  agenda_item_number: '2'
+  agenda_item_title:
+  - text: Programmvereinbarungen 2024
+    language: de
+  datetime_created: '2025-03-29T01:07:14Z'
+  datetime_modified: '2025-03-29T01:07:14Z'
+
+```
+##### Exemple AgendaItem : Agenda item of a Council of States sitting
+
+```yaml
+agenda_items:
+- global_uri: ops:69905
+  parent_meeting: parl:sr_winter25_sitzung_6
+  agenda_item_type: item
+  datetime_begin_planned: '2025-12-19T09:15:00+01:00'
+  datetime_begin_actual: '2025-12-19T09:20:00+01:00'
+  agenda_item_number: '6'
+  agenda_item_position: 4
   agenda_item_title:
   - text: >-
-      Volksmotion Nr. 2024/1 von Sandro Mamedow und Livia Schraff (Erstunterzeichnende)
-      sowie weitere 150 Mitunterzeichnende vom 22. März 2024 mit dem Titel: «Für eine
-      Stimme der Studierenden im Hochschulrat der Pädagogischen Hochschule Schaffhausen
-      (PHSH)»
+      Postulat Broulis Pascal. Bauprojekte im Mobilitätsbereich. Einen Vergleich durchführen,
+      um die Verzögerungen zu verstehen
     language: de
-  agenda_item_category: Traktanden
-  affair_id: affairs:MOT_2024_1
-  datetime_created: '2025-05-02T11:23:49Z'
-  datetime_modified: '2025-05-02T11:23:49Z'
+  affair_id: affairs:24.4471
+  landing_page: >-
+    https://www.parlament.ch/de/ratsbetrieb/amtliches-bulletin/amtliches-bulletin-die-verhandlungen?SubjectId=69905#votum3
+  agenda_item_category: agenda_item
+  datetime_created: '2026-01-12T00:00:00+01:00'
+  datetime_modified: '2026-01-12T00:00:00+01:00'
 
 ```
 ##### Exemple AgendaItem : French-language agenda item postulate
@@ -2291,6 +2209,22 @@ agenda_items:
   datetime_modified: '2025-02-08T12:33:10Z'
 
 ```
+##### Exemple AgendaItem : Substantive affair from a cantonal parliamentary information system
+
+```yaml
+agenda_items:
+- global_uri: ops:87b69a72919445a493a061d9b0daeba3
+  parent_meeting: ops:meeting_be_2025_06_02
+  agenda_item_type: item
+  datetime_begin_planned: '2025-06-02T00:00:00Z'
+  agenda_item_title:
+  - text: Differenzierte Anpassung des Gehalts von Lehrpersonen ohne Lehrdiplom
+    language: de
+  affair_id: affairs:2025.GRPARL.81
+  datetime_created: '2025-04-25T11:10:35Z'
+  datetime_modified: '2025-04-25T11:10:35Z'
+
+```
 ##### Exemple AgendaItem : Postulate with a voting
 
 ```yaml
@@ -2317,32 +2251,94 @@ agenda_items:
   datetime_modified: '2025-01-29T06:59:41Z'
 
 ```
-##### Exemple AgendaItem : Urgent interpellation in French
+##### Exemple AgendaItem : Agenda item with a final vote
 
 ```yaml
 agenda_items:
-- global_uri: ops:2025_05_20-23
-  parent_meeting: ops:meeting_lausanne_2025_05_20
+- global_uri: ops:agenda_item_sg_2025_015
+  parent_meeting: ops:meeting_sg_2025_03_15
   agenda_item_type: item
-  datetime_begin_planned: '2025-05-20T00:00:00Z'
-  agenda_item_position: 23
-  agenda_item_number: '23'
+  agenda_item_number: '15'
+  agenda_item_position: 15
+  agenda_item_title:
+  - text: Energiegesetz - Schlussabstimmung
+    language: de
+  agenda_item_description:
+  - text: Schlussabstimmung über das revidierte Energiegesetz des Kantons St. Gallen
+    language: de
+  agenda_item_category: Gesetzgebung
+  state_id: completed
+  datetime_begin_planned: '2025-03-15T14:00:00Z'
+  datetime_begin_actual: '2025-03-15T14:30:00Z'
+  affair_id: affairs:sg_2024_123_energiegesetz
+  datetime_created: '2025-02-01T10:00:00Z'
+  datetime_modified: '2025-03-15T14:35:00Z'
+
+```
+##### Exemple AgendaItem : Interpellation as an agenda item
+
+```yaml
+agenda_items:
+- global_uri: ops:06fb582b753c416d8fdb05fa13873545
+  parent_meeting: ops:meeting_2011_11_23
+  agenda_item_type: item
+  datetime_begin_planned: '2011-11-23T00:00:00Z'
+  agenda_item_position: 2
   agenda_item_title:
   - text: >-
-      Interpellation urgente du 20 mai 2025 de M. Yusuf KULMIYE : « Interpellation
-      urgente de Kulmiye Yusuf et crts – Solidarité sans frontières, Lausanne en faveur
-      du respect du droit international et de la protection des populations civiles
-      à Gaza »
-    language: fr
-  state_id: not_treated
-  agenda_item_category: ANNONCES ET INTERPELLATIONS
-  affair_id: affairs:INT25/027
+      Interpellation Peter Mark betr. elektronische Datenerfassung durch Mitarbeiter
+      im Werkhof – Versuchsphase
+    language: de
+  datetime_created: '2025-03-21T23:15:19Z'
+  datetime_modified: '2025-03-21T23:15:19Z'
+
+```
+##### Exemple AgendaItem : Interpellation of a parliamentary group
+
+```yaml
+agenda_items:
+- global_uri: ops:cea750a5bd7b420fa4da1c914f801384
+  parent_meeting: ops:meeting_bern_2022_03_17
+  agenda_item_type: item
+  datetime_begin_planned: '2022-03-17T17:00:00Z'
+  agenda_item_position: 29
+  agenda_item_number: '8'
+  agenda_item_title:
+  - text: >-
+      Interpellation Fraktion GB/JA! (Katharina Gallizzi, GB): Welche Konsequenzen
+      haben die Klimaziele für das Gasnetz in Bern?
+    language: de
+  affair_id: affairs:2020.SR.000007
   url:
   - text: >-
-      https://www.lausanne.ch/apps/agir/affaire/6c/049b6c612fe2428f9be66ea39522ac6c.htm
-    language: fr
-  datetime_created: '2025-06-07T23:50:18Z'
-  datetime_modified: '2025-06-07T23:50:18Z'
+      https://stadtrat.bern.ch/de/sitzungen/detail.php?gid=000d6cf5f0bc4d89a5171e0123cfbff5#cea750a5bd7b420fa4da1c914f801384
+    language: de
+  datetime_created: '2025-01-17T21:25:52Z'
+  datetime_modified: '2025-01-17T21:25:52Z'
+
+```
+##### Exemple AgendaItem : Budget agenda item
+
+```yaml
+agenda_items:
+- global_uri: ops:agenda_item_zh_budget_2026
+  parent_meeting: ops:meeting_zh_2025_11_20
+  agenda_item_type: item
+  agenda_item_number: '8'
+  agenda_item_position: 8
+  agenda_item_title:
+  - text: Budget 2026
+    language: de
+  agenda_item_description:
+  - text: Beratung und Beschlussfassung über das Kantonsbudget für das Jahr 2026
+    language: de
+  agenda_item_category: Budget und Finanzen
+  state_id: completed
+  datetime_begin_planned: '2025-11-20T16:00:00Z'
+  datetime_begin_actual: '2025-11-20T16:45:00Z'
+  affair_id: affairs:zh_2025_budget_2026
+  datetime_created: '2025-10-01T08:00:00Z'
+  datetime_modified: '2025-11-20T16:50:00Z'
 
 ```
 
@@ -3288,7 +3284,7 @@ votings:
   parent_agenda_item: ops:agenda_item_be_2025_042
   parent_meeting: ops:meeting_be_2025_06_05
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/253
+    global_uri: actors:gr_be
     label: Grosser Rat Bern
     abbreviation:
     - value: GR
@@ -3319,44 +3315,13 @@ votings:
   parent_agenda_item: ops:agenda_item_sg_2025_015
   parent_meeting: ops:meeting_sg_2025_03_15
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/265
+    global_uri: actors:kr_sg
     label: Kantonsrat St. Gallen
     abbreviation:
     - value: KR
       language: de
   datetime_created: '2025-03-15T14:30:00Z'
   datetime_modified: '2025-03-15T14:35:00Z'
-
-```
-##### Exemple Voting : Final vote on the budget
-
-```yaml
-votings:
-- global_uri: ops:voting_zh_budget_2026
-  voting_title:
-  - text: Budgetbeschluss 2026
-    language: de
-  voting_type: final_vote
-  datetime_begin: '2025-11-20T16:45:00Z'
-  datetime_end: '2025-11-20T16:50:00Z'
-  total_count_yes: 105
-  total_count_no: 70
-  total_count_abstention: 5
-  total_absent: 0
-  total: 180
-  majority_type: absolute
-  majority_count: 91
-  result_text: Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen
-  parent_agenda_item: ops:agenda_item_zh_budget_2026
-  parent_meeting: ops:meeting_zh_2025_11_20
-  actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/275
-    label: Kantonsrat Zürich
-    abbreviation:
-    - value: KR
-      language: de
-  datetime_created: '2025-11-20T16:45:00Z'
-  datetime_modified: '2025-11-20T16:50:00Z'
 
 ```
 ##### Exemple Voting : Motions in the same direction with multiple choice
@@ -3394,13 +3359,44 @@ votings:
   parent_meeting: ops:meeting_zh_gr_2024_02_28
   affair_id: 2023/361
   actor_id:
-    global_uri: https://www.gemeinderat-zuerich.ch/
+    global_uri: actors:gr_stadt_zuerich
     label: Gemeinderat der Stadt Zürich
     abbreviation:
     - value: GR
       language: de
   datetime_created: '2024-02-28T00:00:00Z'
   datetime_modified: '2024-02-28T00:00:00Z'
+
+```
+##### Exemple Voting : Final vote on the budget
+
+```yaml
+votings:
+- global_uri: ops:voting_zh_budget_2026
+  voting_title:
+  - text: Budgetbeschluss 2026
+    language: de
+  voting_type: final_vote
+  datetime_begin: '2025-11-20T16:45:00Z'
+  datetime_end: '2025-11-20T16:50:00Z'
+  total_count_yes: 105
+  total_count_no: 70
+  total_count_abstention: 5
+  total_absent: 0
+  total: 180
+  majority_type: absolute
+  majority_count: 91
+  result_text: Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen
+  parent_agenda_item: ops:agenda_item_zh_budget_2026
+  parent_meeting: ops:meeting_zh_2025_11_20
+  actor_id:
+    global_uri: actors:kr_zh
+    label: Kantonsrat Zürich
+    abbreviation:
+    - value: KR
+      language: de
+  datetime_created: '2025-11-20T16:45:00Z'
+  datetime_modified: '2025-11-20T16:50:00Z'
 
 ```
 
@@ -3700,18 +3696,61 @@ _Une voix individuelle exprimée par un membre lors d'une procédure de vote._
 
 
 #### Exemples
-##### Exemple IndividualVote : Voix « oui »
+##### Exemple IndividualVote : Voix « non » sur le budget
+
+```yaml
+individual_votes:
+- global_uri: ops:vote_zh_budget_2026_person_102
+  parent_voting: ops:voting_zh_budget_2026
+  actor_id:
+    global_uri: actors:person_jean_daniel_strub
+    label: Jean-Daniel Strub
+  seat_nr: '2'
+  individual_vote_type: 'no'
+  datetime_created: '2025-11-20T16:45:00Z'
+
+```
+##### Exemple IndividualVote : Yes vote
 
 ```yaml
 individual_votes:
 - global_uri: ops:vote_sg_2025_001_person_123
   parent_voting: ops:voting_sg_2025_001
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/persons/27235
+    global_uri: actors:person_paul_schlegel
     label: Paul Schlegel
   seat_nr: '1'
   individual_vote_type: 'yes'
   datetime_created: '2025-03-15T14:30:00Z'
+
+```
+##### Exemple IndividualVote : Individual vote for selection option B
+
+```yaml
+individual_votes:
+- global_uri: ops:vote_zh_gr_2024_2023_361_b1
+  parent_voting: ops:voting_zh_gr_2024_2023_361
+  actor_id:
+    global_uri: actors:person_zh_stadt_2
+    label: Mitglied Auswahl B
+  seat_nr: '47'
+  individual_vote_type: other
+  type_label: Auswahl B
+  datetime_created: '2024-02-28T00:00:00Z'
+
+```
+##### Exemple IndividualVote : Yes vote on the budget
+
+```yaml
+individual_votes:
+- global_uri: ops:vote_zh_budget_2026_person_101
+  parent_voting: ops:voting_zh_budget_2026
+  actor_id:
+    global_uri: actors:person_thomas_wolf
+    label: Thomas Wolf
+  seat_nr: '1'
+  individual_vote_type: 'yes'
+  datetime_created: '2025-11-20T16:45:00Z'
 
 ```
 ##### Exemple IndividualVote : No vote
@@ -3721,7 +3760,7 @@ individual_votes:
 - global_uri: ops:vote_sg_2025_001_person_456
   parent_voting: ops:voting_sg_2025_001
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/persons/27234
+    global_uri: actors:person_andreas_eggenberger
     label: Andreas Eggenberger
   seat_nr: '2'
   individual_vote_type: 'no'
@@ -3735,7 +3774,7 @@ individual_votes:
 - global_uri: ops:vote_sg_2025_001_person_789
   parent_voting: ops:voting_sg_2025_001
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/persons/27233
+    global_uri: actors:person_thomas_ammann
     label: Thomas Ammann
   seat_nr: '3'
   individual_vote_type: abstention
@@ -3749,39 +3788,11 @@ individual_votes:
 - global_uri: ops:vote_zh_gr_2024_2023_361_abs1
   parent_voting: ops:voting_zh_gr_2024_2023_361
   actor_id:
-    global_uri: https://www.gemeinderat-zuerich.ch/personen/4
+    global_uri: actors:person_zh_stadt_4
     label: Abwesendes Mitglied
   seat_nr: '103'
   individual_vote_type: not_voted
   datetime_created: '2024-02-28T00:00:00Z'
-
-```
-##### Exemple IndividualVote : Yes vote on the budget
-
-```yaml
-individual_votes:
-- global_uri: ops:vote_zh_budget_2026_person_101
-  parent_voting: ops:voting_zh_budget_2026
-  actor_id:
-    global_uri: https://api.openparldata.ch/v1/persons/27237
-    label: Thomas Wolf
-  seat_nr: '1'
-  individual_vote_type: 'yes'
-  datetime_created: '2025-11-20T16:45:00Z'
-
-```
-##### Exemple IndividualVote : No vote on the budget
-
-```yaml
-individual_votes:
-- global_uri: ops:vote_zh_budget_2026_person_102
-  parent_voting: ops:voting_zh_budget_2026
-  actor_id:
-    global_uri: https://api.openparldata.ch/v1/persons/25208
-    label: Jean-Daniel Strub
-  seat_nr: '2'
-  individual_vote_type: 'no'
-  datetime_created: '2025-11-20T16:45:00Z'
 
 ```
 ##### Exemple IndividualVote : Did not vote
@@ -3791,7 +3802,7 @@ individual_votes:
 - global_uri: ops:vote_sg_2025_001_person_321
   parent_voting: ops:voting_sg_2025_001
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/persons/25177
+    global_uri: actors:person_ruedi_thomann
     label: Ruedi Thomann
   seat_nr: '4'
   individual_vote_type: not_voted
@@ -3805,7 +3816,7 @@ individual_votes:
 - global_uri: ops:vote_zh_gr_2024_2023_361_c1
   parent_voting: ops:voting_zh_gr_2024_2023_361
   actor_id:
-    global_uri: https://www.gemeinderat-zuerich.ch/personen/3
+    global_uri: actors:person_zh_stadt_3
     label: Mitglied Auswahl C
   seat_nr: '88'
   individual_vote_type: other
@@ -3820,26 +3831,11 @@ individual_votes:
 - global_uri: ops:vote_zh_gr_2024_2023_361_a1
   parent_voting: ops:voting_zh_gr_2024_2023_361
   actor_id:
-    global_uri: https://www.gemeinderat-zuerich.ch/personen/1
+    global_uri: actors:person_zh_stadt_1
     label: Mitglied Auswahl A
   seat_nr: '12'
   individual_vote_type: other
   type_label: Auswahl A
-  datetime_created: '2024-02-28T00:00:00Z'
-
-```
-##### Exemple IndividualVote : Individual vote for selection option B
-
-```yaml
-individual_votes:
-- global_uri: ops:vote_zh_gr_2024_2023_361_b1
-  parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
-    global_uri: https://www.gemeinderat-zuerich.ch/personen/2
-    label: Mitglied Auswahl B
-  seat_nr: '47'
-  individual_vote_type: other
-  type_label: Auswahl B
   datetime_created: '2024-02-28T00:00:00Z'
 
 ```
@@ -4707,7 +4703,7 @@ speeches:
   datetime_end: '2025-12-19T09:25:00+01:00'
   actor_fullname: Pascal Broulis
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/persons/18682
+    global_uri: actors:person_pascal_broulis
     wikidata_uri: http://www.wikidata.org/entity/Q116407
     label: Pascal Broulis
   role: speaker

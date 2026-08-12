@@ -9,7 +9,7 @@ legislatures:
     language: fr
   landing_page: https://www.gr.be.ch/de/start/grosser-rat.html
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/253
+    global_uri: actors:gr_be
     label: Grosser Rat Bern
     abbreviation:
     - value: GR

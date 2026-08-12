@@ -80,33 +80,6 @@ _Eine allgemeine Sitzungsklasse, die für Sessionen, Kommissionssitzungen, Sessi
 
 
 ### Beispiele
-#### Beispiel Meeting: Council of States sitting with protocol and speeches
-
-```yaml
-meetings:
-- global_uri: parl:sr_winter25_sitzung_6
-  spatial: https://ld.admin.ch/country/CHE
-  meeting_type: session
-  name:
-  - text: Sechste Sitzung
-    language: de
-  - text: Sixième séance
-    language: fr
-  url:
-  - text: https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin
-    language: de
-  actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/42
-    label: Ständerat
-    abbreviation:
-    - value: SR
-      language: de
-  actor_name: Ständerat
-  datetime_begin_planned: '2025-12-19T08:15:00+01:00'
-  datetime_created: '2026-01-12T00:00:00+01:00'
-  datetime_modified: '2026-01-12T00:00:00+01:00'
-
-```
 #### Beispiel Meeting: Cantonal parliament sitting with agenda items and votings
 
 ```yaml
@@ -121,7 +94,7 @@ meetings:
   - text: https://www.ratsinfo.sg.ch/sessions/2025-03-15
     language: de
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/265
+    global_uri: actors:kr_sg
     label: Kantonsrat St. Gallen
     abbreviation:
     - value: KR
@@ -138,34 +111,31 @@ meetings:
   datetime_modified: '2025-03-15T17:30:00Z'
 
 ```
-#### Beispiel Meeting: Half-day sitting within a session
+#### Beispiel Meeting: Council of States sitting with protocol and speeches
 
 ```yaml
 meetings:
-- spatial: https://ld.admin.ch/canton/2
-  global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
+- global_uri: parl:sr_winter25_sitzung_6
+  spatial: https://ld.admin.ch/country/CHE
   meeting_type: session
   name:
-  - text: Donnerstag (Nachmittag)
+  - text: Sechste Sitzung
     language: de
-  url:
-  - text: >-
-      https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
-    language: de
-  - text: >-
-      https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
+  - text: Sixième séance
     language: fr
+  url:
+  - text: https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin
+    language: de
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/253
-    label: Grosser Rat Bern
+    global_uri: actors:staenderat
+    label: Ständerat
     abbreviation:
-    - value: GR
+    - value: SR
       language: de
-  actor_name: Grosser Rat Bern
-  date_begin_planned: '2025-06-05'
-  date_end_planned: '2025-06-05'
-  datetime_created: '2025-04-25T11:10:25Z'
-  datetime_modified: '2025-05-19T01:06:45Z'
+  actor_name: Ständerat
+  datetime_begin_planned: '2025-12-19T08:15:00+01:00'
+  datetime_created: '2026-01-12T00:00:00+01:00'
+  datetime_modified: '2026-01-12T00:00:00+01:00'
 
 ```
 #### Beispiel Meeting: Committee sitting with an attendance list
@@ -201,6 +171,67 @@ meetings:
   datetime_modified: '2025-05-12T16:45:00Z'
 
 ```
+#### Beispiel Meeting: Half-day sitting within a session
+
+```yaml
+meetings:
+- spatial: https://ld.admin.ch/canton/2
+  global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
+  meeting_type: session
+  name:
+  - text: Donnerstag (Nachmittag)
+    language: de
+  url:
+  - text: >-
+      https://www.gr.be.ch/de/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
+    language: de
+  - text: >-
+      https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
+    language: fr
+  actor_id:
+    global_uri: actors:gr_be
+    label: Grosser Rat Bern
+    abbreviation:
+    - value: GR
+      language: de
+  actor_name: Grosser Rat Bern
+  date_begin_planned: '2025-06-05'
+  date_end_planned: '2025-06-05'
+  datetime_created: '2025-04-25T11:10:25Z'
+  datetime_modified: '2025-05-19T01:06:45Z'
+
+```
+#### Beispiel Meeting: Landsgemeinde as meeting type sitting
+
+```yaml
+meetings:
+- global_uri: ops:meeting_gl_landsgemeinde_2025
+  spatial: https://ld.admin.ch/canton/8
+  meeting_type: sitting
+  name:
+  - text: Landsgemeinde 2025
+    language: de
+  url:
+  - text: https://www.landsgemeinde.gl.ch/2025
+    language: de
+  actor_id:
+    global_uri: actors:landsgemeinde_gl
+    label: Landsgemeinde Glarus
+    abbreviation:
+    - value: LG
+      language: de
+  actor_name: Landsgemeinde Glarus
+  datetime_begin_planned: '2025-05-04T09:30:00Z'
+  datetime_end_planned: '2025-05-04T14:00:00Z'
+  datetime_begin_actual: '2025-05-04T09:30:00Z'
+  datetime_end_actual: '2025-05-04T13:45:00Z'
+  state: planned
+  location: Zaunplatz, Glarus
+  parent_legislature: ops:legislature_gl_2024_2028
+  datetime_created: '2025-01-10T12:00:00Z'
+  datetime_modified: '2025-05-04T13:45:00Z'
+
+```
 #### Beispiel Meeting: Government sitting with a bilingual designation
 
 ```yaml
@@ -231,37 +262,6 @@ meetings:
   date_end_planned: '2021-03-31'
   datetime_created: '2024-10-28T01:22:26Z'
   datetime_modified: '2024-11-27T20:40:57Z'
-
-```
-#### Beispiel Meeting: Landsgemeinde as meeting type sitting
-
-```yaml
-meetings:
-- global_uri: ops:meeting_gl_landsgemeinde_2025
-  spatial: https://ld.admin.ch/canton/8
-  meeting_type: sitting
-  name:
-  - text: Landsgemeinde 2025
-    language: de
-  url:
-  - text: https://www.landsgemeinde.gl.ch/2025
-    language: de
-  actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/258
-    label: Landsgemeinde Glarus
-    abbreviation:
-    - value: LG
-      language: de
-  actor_name: Landsgemeinde Glarus
-  datetime_begin_planned: '2025-05-04T09:30:00Z'
-  datetime_end_planned: '2025-05-04T14:00:00Z'
-  datetime_begin_actual: '2025-05-04T09:30:00Z'
-  datetime_end_actual: '2025-05-04T13:45:00Z'
-  state: planned
-  location: Zaunplatz, Glarus
-  parent_legislature: ops:legislature_gl_2024_2028
-  datetime_created: '2025-01-10T12:00:00Z'
-  datetime_modified: '2025-05-04T13:45:00Z'
 
 ```
 

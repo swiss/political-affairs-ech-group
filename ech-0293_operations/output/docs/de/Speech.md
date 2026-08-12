@@ -75,7 +75,7 @@ speeches:
   datetime_end: '2025-12-19T09:25:00+01:00'
   actor_fullname: Pascal Broulis
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/persons/18682
+    global_uri: actors:person_pascal_broulis
     wikidata_uri: http://www.wikidata.org/entity/Q116407
     label: Pascal Broulis
   role: speaker

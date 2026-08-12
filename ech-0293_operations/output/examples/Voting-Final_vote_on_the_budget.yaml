@@ -17,7 +17,7 @@ votings:
   parent_agenda_item: ops:agenda_item_zh_budget_2026
   parent_meeting: ops:meeting_zh_2025_11_20
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/275
+    global_uri: actors:kr_zh
     label: Kantonsrat Zürich
     abbreviation:
     - value: KR

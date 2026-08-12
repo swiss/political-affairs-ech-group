@@ -30,7 +30,7 @@
             "language": "de"
           }
         ],
-        "global_uri": "https://api.openparldata.ch/v1/bodies/265"
+        "global_uri": "actors:kr_sg"
       },
       "datetime_created": "2025-03-15T14:30:00+00:00",
       "datetime_modified": "2025-03-15T14:35:00+00:00"
@@ -68,7 +68,7 @@
             "language": "de"
           }
         ],
-        "global_uri": "https://api.openparldata.ch/v1/bodies/253"
+        "global_uri": "actors:gr_be"
       },
       "datetime_created": "2025-06-05T10:15:00+00:00",
       "datetime_modified": "2025-06-05T10:15:00+00:00"
@@ -102,7 +102,7 @@
             "language": "de"
           }
         ],
-        "global_uri": "https://api.openparldata.ch/v1/bodies/275"
+        "global_uri": "actors:kr_zh"
       },
       "datetime_created": "2025-11-20T16:45:00+00:00",
       "datetime_modified": "2025-11-20T16:50:00+00:00"
@@ -153,7 +153,7 @@
             "language": "de"
           }
         ],
-        "global_uri": "https://www.gemeinderat-zuerich.ch/"
+        "global_uri": "actors:gr_stadt_zuerich"
       },
       "datetime_created": "2024-02-28T00:00:00+00:00",
       "datetime_modified": "2024-02-28T00:00:00+00:00"
@@ -165,7 +165,7 @@
       "parent_voting": "ops:voting_zh_gr_2024_2023_361",
       "actor_id": {
         "label": "Mitglied Auswahl A",
-        "global_uri": "https://www.gemeinderat-zuerich.ch/personen/1"
+        "global_uri": "actors:person_zh_stadt_1"
       },
       "seat_nr": "12",
       "individual_vote_type": "other",
@@ -177,7 +177,7 @@
       "parent_voting": "ops:voting_zh_gr_2024_2023_361",
       "actor_id": {
         "label": "Mitglied Auswahl B",
-        "global_uri": "https://www.gemeinderat-zuerich.ch/personen/2"
+        "global_uri": "actors:person_zh_stadt_2"
       },
       "seat_nr": "47",
       "individual_vote_type": "other",
@@ -189,7 +189,7 @@
       "parent_voting": "ops:voting_zh_gr_2024_2023_361",
       "actor_id": {
         "label": "Mitglied Auswahl C",
-        "global_uri": "https://www.gemeinderat-zuerich.ch/personen/3"
+        "global_uri": "actors:person_zh_stadt_3"
       },
       "seat_nr": "88",
       "individual_vote_type": "other",
@@ -201,7 +201,7 @@
       "parent_voting": "ops:voting_zh_gr_2024_2023_361",
       "actor_id": {
         "label": "Abwesendes Mitglied",
-        "global_uri": "https://www.gemeinderat-zuerich.ch/personen/4"
+        "global_uri": "actors:person_zh_stadt_4"
       },
       "seat_nr": "103",
       "individual_vote_type": "not_voted",
@@ -212,7 +212,7 @@
       "parent_voting": "ops:voting_sg_2025_001",
       "actor_id": {
         "label": "Paul Schlegel",
-        "global_uri": "https://api.openparldata.ch/v1/persons/27235"
+        "global_uri": "actors:person_paul_schlegel"
       },
       "seat_nr": "1",
       "individual_vote_type": "yes",
@@ -223,7 +223,7 @@
       "parent_voting": "ops:voting_sg_2025_001",
       "actor_id": {
         "label": "Andreas Eggenberger",
-        "global_uri": "https://api.openparldata.ch/v1/persons/27234"
+        "global_uri": "actors:person_andreas_eggenberger"
       },
       "seat_nr": "2",
       "individual_vote_type": "no",
@@ -234,7 +234,7 @@
       "parent_voting": "ops:voting_sg_2025_001",
       "actor_id": {
         "label": "Thomas Ammann",
-        "global_uri": "https://api.openparldata.ch/v1/persons/27233"
+        "global_uri": "actors:person_thomas_ammann"
       },
       "seat_nr": "3",
       "individual_vote_type": "abstention",
@@ -245,7 +245,7 @@
       "parent_voting": "ops:voting_sg_2025_001",
       "actor_id": {
         "label": "Ruedi Thomann",
-        "global_uri": "https://api.openparldata.ch/v1/persons/25177"
+        "global_uri": "actors:person_ruedi_thomann"
       },
       "seat_nr": "4",
       "individual_vote_type": "not_voted",
@@ -256,7 +256,7 @@
       "parent_voting": "ops:voting_zh_budget_2026",
       "actor_id": {
         "label": "Thomas Wolf",
-        "global_uri": "https://api.openparldata.ch/v1/persons/27237"
+        "global_uri": "actors:person_thomas_wolf"
       },
       "seat_nr": "1",
       "individual_vote_type": "yes",
@@ -267,7 +267,7 @@
       "parent_voting": "ops:voting_zh_budget_2026",
       "actor_id": {
         "label": "Jean-Daniel Strub",
-        "global_uri": "https://api.openparldata.ch/v1/persons/25208"
+        "global_uri": "actors:person_jean_daniel_strub"
       },
       "seat_nr": "2",
       "individual_vote_type": "no",

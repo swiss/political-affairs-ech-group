@@ -30,7 +30,7 @@
             "language": "de"
           }
         ],
-        "global_uri": "https://api.openparldata.ch/v1/bodies/42"
+        "global_uri": "actors:staenderat"
       },
       "datetime_begin_planned": "2025-12-19T08:15:00+01:00",
       "datetime_created": "2026-01-12T00:00:00+01:00",
@@ -69,7 +69,7 @@
       "actor_fullname": "Pascal Broulis",
       "actor_id": {
         "label": "Pascal Broulis",
-        "global_uri": "https://api.openparldata.ch/v1/persons/18682",
+        "global_uri": "actors:person_pascal_broulis",
         "wikidata_uri": "http://www.wikidata.org/entity/Q116407"
       },
       "role": "speaker",

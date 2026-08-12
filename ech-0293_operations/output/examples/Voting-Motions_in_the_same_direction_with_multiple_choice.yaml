@@ -30,7 +30,7 @@ votings:
   parent_meeting: ops:meeting_zh_gr_2024_02_28
   affair_id: 2023/361
   actor_id:
-    global_uri: https://www.gemeinderat-zuerich.ch/
+    global_uri: actors:gr_stadt_zuerich
     label: Gemeinderat der Stadt Zürich
     abbreviation:
     - value: GR

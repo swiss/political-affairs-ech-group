@@ -2,7 +2,7 @@ individual_votes:
 - global_uri: ops:vote_sg_2025_001_person_456
   parent_voting: ops:voting_sg_2025_001
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/persons/27234
+    global_uri: actors:person_andreas_eggenberger
     label: Andreas Eggenberger
   seat_nr: '2'
   individual_vote_type: 'no'

@@ -13,7 +13,7 @@ meetings:
       https://www.gr.be.ch/fr/start/sessionen/sessionen-auswahl/sessionsdetail.html?guid=66ccf0a9f4d24d318ff3b99e646644e8
     language: fr
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/253
+    global_uri: actors:gr_be
     label: Grosser Rat Bern
     abbreviation:
     - value: GR

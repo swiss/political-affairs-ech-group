@@ -2,7 +2,7 @@ individual_votes:
 - global_uri: ops:vote_zh_gr_2024_2023_361_b1
   parent_voting: ops:voting_zh_gr_2024_2023_361
   actor_id:
-    global_uri: https://www.gemeinderat-zuerich.ch/personen/2
+    global_uri: actors:person_zh_stadt_2
     label: Mitglied Auswahl B
   seat_nr: '47'
   individual_vote_type: other

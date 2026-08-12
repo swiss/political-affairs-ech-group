@@ -9,7 +9,7 @@ meetings:
   - text: https://www.landsgemeinde.gl.ch/2025
     language: de
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/258
+    global_uri: actors:landsgemeinde_gl
     label: Landsgemeinde Glarus
     abbreviation:
     - value: LG

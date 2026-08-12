@@ -19,7 +19,7 @@ votings:
   parent_agenda_item: ops:agenda_item_be_2025_042
   parent_meeting: ops:meeting_be_2025_06_05
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/253
+    global_uri: actors:gr_be
     label: Grosser Rat Bern
     abbreviation:
     - value: GR

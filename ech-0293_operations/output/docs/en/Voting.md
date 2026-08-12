@@ -100,7 +100,7 @@ votings:
   parent_agenda_item: ops:agenda_item_be_2025_042
   parent_meeting: ops:meeting_be_2025_06_05
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/253
+    global_uri: actors:gr_be
     label: Grosser Rat Bern
     abbreviation:
     - value: GR
@@ -131,44 +131,13 @@ votings:
   parent_agenda_item: ops:agenda_item_sg_2025_015
   parent_meeting: ops:meeting_sg_2025_03_15
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/265
+    global_uri: actors:kr_sg
     label: Kantonsrat St. Gallen
     abbreviation:
     - value: KR
       language: de
   datetime_created: '2025-03-15T14:30:00Z'
   datetime_modified: '2025-03-15T14:35:00Z'
-
-```
-#### Example Voting: Final vote on the budget
-
-```yaml
-votings:
-- global_uri: ops:voting_zh_budget_2026
-  voting_title:
-  - text: Budgetbeschluss 2026
-    language: de
-  voting_type: final_vote
-  datetime_begin: '2025-11-20T16:45:00Z'
-  datetime_end: '2025-11-20T16:50:00Z'
-  total_count_yes: 105
-  total_count_no: 70
-  total_count_abstention: 5
-  total_absent: 0
-  total: 180
-  majority_type: absolute
-  majority_count: 91
-  result_text: Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen
-  parent_agenda_item: ops:agenda_item_zh_budget_2026
-  parent_meeting: ops:meeting_zh_2025_11_20
-  actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/275
-    label: Kantonsrat Zürich
-    abbreviation:
-    - value: KR
-      language: de
-  datetime_created: '2025-11-20T16:45:00Z'
-  datetime_modified: '2025-11-20T16:50:00Z'
 
 ```
 #### Example Voting: Motions in the same direction with multiple choice
@@ -206,13 +175,44 @@ votings:
   parent_meeting: ops:meeting_zh_gr_2024_02_28
   affair_id: 2023/361
   actor_id:
-    global_uri: https://www.gemeinderat-zuerich.ch/
+    global_uri: actors:gr_stadt_zuerich
     label: Gemeinderat der Stadt Zürich
     abbreviation:
     - value: GR
       language: de
   datetime_created: '2024-02-28T00:00:00Z'
   datetime_modified: '2024-02-28T00:00:00Z'
+
+```
+#### Example Voting: Final vote on the budget
+
+```yaml
+votings:
+- global_uri: ops:voting_zh_budget_2026
+  voting_title:
+  - text: Budgetbeschluss 2026
+    language: de
+  voting_type: final_vote
+  datetime_begin: '2025-11-20T16:45:00Z'
+  datetime_end: '2025-11-20T16:50:00Z'
+  total_count_yes: 105
+  total_count_no: 70
+  total_count_abstention: 5
+  total_absent: 0
+  total: 180
+  majority_type: absolute
+  majority_count: 91
+  result_text: Mit 105 zu 70 Stimmen bei 5 Enthaltungen angenommen
+  parent_agenda_item: ops:agenda_item_zh_budget_2026
+  parent_meeting: ops:meeting_zh_2025_11_20
+  actor_id:
+    global_uri: actors:kr_zh
+    label: Kantonsrat Zürich
+    abbreviation:
+    - value: KR
+      language: de
+  datetime_created: '2025-11-20T16:45:00Z'
+  datetime_modified: '2025-11-20T16:50:00Z'
 
 ```
 

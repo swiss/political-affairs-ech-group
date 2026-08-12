@@ -67,33 +67,6 @@ _Une session parlementaire qui regroupe plusieurs séances et s'étend sur une p
 
 
 ### Exemples
-#### Exemple Session : Federal session with a trilingual designation
-
-```yaml
-sessions:
-- global_uri: ops:session_5207
-  spatial: https://ld.admin.ch/country/CHE
-  name:
-  - text: Frühjahrssession 2025
-    language: de
-  - text: Session de printemps 2025
-    language: fr
-  - text: Sessione primaverile 2025
-    language: it
-  url:
-  - text: https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025
-    language: de
-  - text: https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025
-    language: fr
-  - text: https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025
-    language: it
-  date_begin_planned: '2025-03-03'
-  date_end_planned: '2025-03-21'
-  parent_legislature: ops:legislature_51
-  datetime_modified: '2025-04-24T00:19:37Z'
-  datetime_created: '2025-03-20T14:27:09Z'
-
-```
 #### Exemple Session : Landsgemeinde as a sitting period
 
 ```yaml
@@ -152,6 +125,33 @@ sessions:
   date_end_planned: '2025-02-26'
   datetime_modified: '2025-04-25T13:40:34Z'
   datetime_created: '2025-04-23T22:58:39Z'
+
+```
+#### Exemple Session : Federal session with a trilingual designation
+
+```yaml
+sessions:
+- global_uri: ops:session_5207
+  spatial: https://ld.admin.ch/country/CHE
+  name:
+  - text: Frühjahrssession 2025
+    language: de
+  - text: Session de printemps 2025
+    language: fr
+  - text: Sessione primaverile 2025
+    language: it
+  url:
+  - text: https://www.parlament.ch/de/ratsbetrieb/sessionen/fruehjahr-2025
+    language: de
+  - text: https://www.parlament.ch/fr/ratsbetrieb/sessionen/fruehjahr-2025
+    language: fr
+  - text: https://www.parlament.ch/it/ratsbetrieb/sessionen/fruehjahr-2025
+    language: it
+  date_begin_planned: '2025-03-03'
+  date_end_planned: '2025-03-21'
+  parent_legislature: ops:legislature_51
+  datetime_modified: '2025-04-24T00:19:37Z'
+  datetime_created: '2025-03-20T14:27:09Z'
 
 ```
 

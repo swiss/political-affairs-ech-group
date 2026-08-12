@@ -55,6 +55,20 @@ _Une voix individuelle exprimée par un membre lors d'une procédure de vote._
 
 
 ### Exemples
+#### Exemple IndividualVote : No vote on the budget
+
+```yaml
+individual_votes:
+- global_uri: ops:vote_zh_budget_2026_person_102
+  parent_voting: ops:voting_zh_budget_2026
+  actor_id:
+    global_uri: actors:person_jean_daniel_strub
+    label: Jean-Daniel Strub
+  seat_nr: '2'
+  individual_vote_type: 'no'
+  datetime_created: '2025-11-20T16:45:00Z'
+
+```
 #### Exemple IndividualVote : Yes vote
 
 ```yaml
@@ -62,11 +76,40 @@ individual_votes:
 - global_uri: ops:vote_sg_2025_001_person_123
   parent_voting: ops:voting_sg_2025_001
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/persons/27235
+    global_uri: actors:person_paul_schlegel
     label: Paul Schlegel
   seat_nr: '1'
   individual_vote_type: 'yes'
   datetime_created: '2025-03-15T14:30:00Z'
+
+```
+#### Exemple IndividualVote : Individual vote for selection option B
+
+```yaml
+individual_votes:
+- global_uri: ops:vote_zh_gr_2024_2023_361_b1
+  parent_voting: ops:voting_zh_gr_2024_2023_361
+  actor_id:
+    global_uri: actors:person_zh_stadt_2
+    label: Mitglied Auswahl B
+  seat_nr: '47'
+  individual_vote_type: other
+  type_label: Auswahl B
+  datetime_created: '2024-02-28T00:00:00Z'
+
+```
+#### Exemple IndividualVote : Yes vote on the budget
+
+```yaml
+individual_votes:
+- global_uri: ops:vote_zh_budget_2026_person_101
+  parent_voting: ops:voting_zh_budget_2026
+  actor_id:
+    global_uri: actors:person_thomas_wolf
+    label: Thomas Wolf
+  seat_nr: '1'
+  individual_vote_type: 'yes'
+  datetime_created: '2025-11-20T16:45:00Z'
 
 ```
 #### Exemple IndividualVote : No vote
@@ -76,7 +119,7 @@ individual_votes:
 - global_uri: ops:vote_sg_2025_001_person_456
   parent_voting: ops:voting_sg_2025_001
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/persons/27234
+    global_uri: actors:person_andreas_eggenberger
     label: Andreas Eggenberger
   seat_nr: '2'
   individual_vote_type: 'no'
@@ -90,7 +133,7 @@ individual_votes:
 - global_uri: ops:vote_sg_2025_001_person_789
   parent_voting: ops:voting_sg_2025_001
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/persons/27233
+    global_uri: actors:person_thomas_ammann
     label: Thomas Ammann
   seat_nr: '3'
   individual_vote_type: abstention
@@ -104,39 +147,11 @@ individual_votes:
 - global_uri: ops:vote_zh_gr_2024_2023_361_abs1
   parent_voting: ops:voting_zh_gr_2024_2023_361
   actor_id:
-    global_uri: https://www.gemeinderat-zuerich.ch/personen/4
+    global_uri: actors:person_zh_stadt_4
     label: Abwesendes Mitglied
   seat_nr: '103'
   individual_vote_type: not_voted
   datetime_created: '2024-02-28T00:00:00Z'
-
-```
-#### Exemple IndividualVote : Yes vote on the budget
-
-```yaml
-individual_votes:
-- global_uri: ops:vote_zh_budget_2026_person_101
-  parent_voting: ops:voting_zh_budget_2026
-  actor_id:
-    global_uri: https://api.openparldata.ch/v1/persons/27237
-    label: Thomas Wolf
-  seat_nr: '1'
-  individual_vote_type: 'yes'
-  datetime_created: '2025-11-20T16:45:00Z'
-
-```
-#### Exemple IndividualVote : No vote on the budget
-
-```yaml
-individual_votes:
-- global_uri: ops:vote_zh_budget_2026_person_102
-  parent_voting: ops:voting_zh_budget_2026
-  actor_id:
-    global_uri: https://api.openparldata.ch/v1/persons/25208
-    label: Jean-Daniel Strub
-  seat_nr: '2'
-  individual_vote_type: 'no'
-  datetime_created: '2025-11-20T16:45:00Z'
 
 ```
 #### Exemple IndividualVote : Did not vote
@@ -146,7 +161,7 @@ individual_votes:
 - global_uri: ops:vote_sg_2025_001_person_321
   parent_voting: ops:voting_sg_2025_001
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/persons/25177
+    global_uri: actors:person_ruedi_thomann
     label: Ruedi Thomann
   seat_nr: '4'
   individual_vote_type: not_voted
@@ -160,7 +175,7 @@ individual_votes:
 - global_uri: ops:vote_zh_gr_2024_2023_361_c1
   parent_voting: ops:voting_zh_gr_2024_2023_361
   actor_id:
-    global_uri: https://www.gemeinderat-zuerich.ch/personen/3
+    global_uri: actors:person_zh_stadt_3
     label: Mitglied Auswahl C
   seat_nr: '88'
   individual_vote_type: other
@@ -175,26 +190,11 @@ individual_votes:
 - global_uri: ops:vote_zh_gr_2024_2023_361_a1
   parent_voting: ops:voting_zh_gr_2024_2023_361
   actor_id:
-    global_uri: https://www.gemeinderat-zuerich.ch/personen/1
+    global_uri: actors:person_zh_stadt_1
     label: Mitglied Auswahl A
   seat_nr: '12'
   individual_vote_type: other
   type_label: Auswahl A
-  datetime_created: '2024-02-28T00:00:00Z'
-
-```
-#### Exemple IndividualVote : Individual vote for selection option B
-
-```yaml
-individual_votes:
-- global_uri: ops:vote_zh_gr_2024_2023_361_b1
-  parent_voting: ops:voting_zh_gr_2024_2023_361
-  actor_id:
-    global_uri: https://www.gemeinderat-zuerich.ch/personen/2
-    label: Mitglied Auswahl B
-  seat_nr: '47'
-  individual_vote_type: other
-  type_label: Auswahl B
   datetime_created: '2024-02-28T00:00:00Z'
 
 ```

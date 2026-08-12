@@ -17,7 +17,7 @@ votings:
   parent_agenda_item: ops:agenda_item_sg_2025_015
   parent_meeting: ops:meeting_sg_2025_03_15
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/265
+    global_uri: actors:kr_sg
     label: Kantonsrat St. Gallen
     abbreviation:
     - value: KR

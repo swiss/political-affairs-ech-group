@@ -11,7 +11,7 @@ meetings:
   - text: https://www.parlament.ch/de/ratsbetrieb/suche-Amtliches-bulletin
     language: de
   actor_id:
-    global_uri: https://api.openparldata.ch/v1/bodies/42
+    global_uri: actors:staenderat
     label: Ständerat
     abbreviation:
     - value: SR
