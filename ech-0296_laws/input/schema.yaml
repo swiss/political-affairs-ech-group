@@ -136,7 +136,7 @@ classes:
       xml_namespace_fedlex: http://fedlex.admin.ch/
       schematron_rule: 'FLX-RT-001: The document root should only contain an act'
     slots:
-    - act_element
+    - act_ref
   Act:
     description: |
       The legislative act element (akn:act). Main content container of an AkomaNtoso document. The @name attribute specifies the type of act (e.g. 'publicLaw').
@@ -147,8 +147,8 @@ classes:
     slots:
     - act_name
     - meta
-    - preface_element
-    - preamble_element
+    - preface_ref
+    - preamble_ref
     - body
   ActMeta:
     description: |
@@ -158,8 +158,8 @@ classes:
         Metadaten-Abschnitt des Erlasses (akn:meta). Enthält die FRBR-Identifikation (Work-, Expression-, Manifestations-Ebene) sowie benannte Referenz-Definitionen.
       xml_element: akn:meta
     slots:
-    - identification_element
-    - references_element
+    - identification_ref
+    - references_ref
   Identification:
     description: |
       FRBR identification block (akn:identification) grouping Work, Expression, and Manifestation descriptions. The @source attribute references the responsible organization as an intra-document anchor (e.g. '#ch.bk').
@@ -551,7 +551,7 @@ classes:
     - heading
     - subheading
     - fedlex_role
-    - content_element
+    - content_ref
     - books
     - titles
     - parts
@@ -626,7 +626,7 @@ classes:
     - eId
     - num
     - heading
-    - content_element
+    - content_ref
     slot_usage:
       eId:
         required: true
@@ -852,7 +852,7 @@ classes:
     slots:
     - block_paragraphs
 slots:
-  act_element:
+  act_ref:
     description: The legislative act (akn:act). Must be the only child of akn:akomaNtoso (FLX-RT-001).
     range: Act
     required: true
@@ -870,7 +870,7 @@ slots:
     range: ActMeta
     annotations:
       description_de: Metadaten-Abschnitt des Erlasses (akn:meta).
-  preface_element:
+  preface_ref:
     description: Preface of the act (akn:preface).
     range: Preface
     annotations:
@@ -882,7 +882,7 @@ slots:
     annotations:
       description_de: Die akn:p-Absätze des Vorspanns, die docNumber/docTitle umschliessen.
       xml_element: akn:p
-  preamble_element:
+  preamble_ref:
     description: Preamble of the act (akn:preamble).
     range: Preamble
     annotations:
@@ -892,7 +892,7 @@ slots:
     range: ActBody
     annotations:
       description_de: Hauptteil des Erlasses (akn:body).
-  identification_element:
+  identification_ref:
     description: FRBR identification block (akn:identification).
     range: Identification
     annotations:
@@ -903,7 +903,7 @@ slots:
     annotations:
       description_de: Anker-Referenz auf die verantwortliche Organisation (@source), z.B. '#ch.bk'.
       xml_attribute: 'true'
-  references_element:
+  references_ref:
     description: References section of the meta (akn:references).
     range: References
     annotations:
@@ -1219,7 +1219,7 @@ slots:
     multivalued: true
     annotations:
       description_de: Unterabschnitt-Kindelemente (akn:subdivision) innerhalb eines Artikels.
-  content_element:
+  content_ref:
     description: Content element within a paragraph (akn:content).
     range: Content
     annotations:

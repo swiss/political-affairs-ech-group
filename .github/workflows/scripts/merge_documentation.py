@@ -67,6 +67,24 @@ def modify_links(content):
     # Replace all links in the content
     return re.sub(pattern, replace_link, content)
 
+def strip_front_matter(content):
+    """Drop a leading YAML block from an included file.
+
+    gen-doc puts a `---\nsearch:\n  boost: 1.0\n---` header on slot and type docs
+    (a MkDocs search hint). In the middle of the merged document pandoc reads such
+    a block as document metadata and aborts the conversion, so it has to go. Class
+    and enum docs carry no such header, which is why the standards that include
+    only those never ran into it.
+    """
+    if not content.startswith("---\n"):
+        return content
+    end = content.find("\n---", 4)
+    if end == -1:
+        return content
+    rest = content[end + 4:]
+    return rest[1:] if rest.startswith("\n") else rest
+
+
 def demote_headings(content):
     """Push every heading of an included file one level down.
 
@@ -125,6 +143,7 @@ def process_includes(file_link, lang=None, demote=False):
         # Read the content of the included file
         with open(read_path, 'r', encoding='utf-8') as f:
             raw_content = f.read()
+            raw_content = strip_front_matter(raw_content)
             raw_content = modify_header(raw_content)
             raw_content = modify_links(raw_content)
             if demote:

@@ -1,0 +1,161 @@
+name: ech-0296_laws
+
+on:
+  # Regenerate artifacts whenever source inputs for ech-0296 change.
+  push:
+    paths:
+      - 'ech-0296_laws/input/**'
+      # gen-doc renders the docs from these templates.
+      - 'ech-0292_meta/input/docgen/**'
+  workflow_dispatch:
+
+# Zwei gleichzeitige Laeufe erzeugen dieselben Dateien und kollidieren beim
+# Push. Bei mehreren Pushes kurz hintereinander zaehlt ohnehin nur der letzte,
+# da er den neusten Input verarbeitet -- laufende Laeufe werden abgebrochen.
+concurrency:
+  group: ech-0296_laws
+  cancel-in-progress: true
+
+jobs:
+
+  ech-0296_laws:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Prepare output directory
+        run: |
+          # Start from a clean output tree to avoid stale generated files.
+          rm -rf ech-0296_laws/output
+          mkdir -p ech-0296_laws/output/docs
+
+      - name: Generate LinkML artefacts
+        run: |
+          cd ech-0296_laws/input
+
+          # Canonical schema exports.
+          gen-owl --no-use-native-uris schema.yaml > ../output/schema.ttl
+          gen-json-schema schema.yaml > ../output/schema.json
+
+          # Beispieldaten (data_*.yaml) gibt es noch keine; sobald welche
+          # vorliegen, kommen hier die linkml-convert-Aufrufe von eCH-0293 dazu.
+
+      - name: Generate LinkML documentation (de)
+        run: |
+          # Localized schema files are temporary helpers for docs only.
+          # Keeping them outside output avoids committing schema_gen_* copies.
+          TMP_SCHEMA_DIR=$(mktemp -d)
+          trap 'rm -rf "$TMP_SCHEMA_DIR"' EXIT
+
+          # Keep the enriched schema at its original relative location while
+          # localizing, so local imports (../../ech-0292_meta/...) resolve.
+          BASE_DOC_SCHEMA="ech-0296_laws/input/schema.yaml"
+
+          for lang in de; do
+            # English descriptions are already in the base schema.
+            if [ "$lang" = "en" ]; then
+              DOC_SCHEMA="$BASE_DOC_SCHEMA"
+            else
+              # For de/fr, localize descriptions (including local imports)
+              # into a temporary schema consumed by gen-doc.
+              DOC_SCHEMA="$TMP_SCHEMA_DIR/schema_gen_${lang}.yaml"
+              python .github/workflows/scripts/localize_schema.py \
+                "$BASE_DOC_SCHEMA" \
+                "$lang" \
+                "$DOC_SCHEMA"
+            fi
+
+            # Generate per-language markdown fragments used later for docx/pdf.
+            gen-doc "$DOC_SCHEMA" \
+              --directory "ech-0296_laws/output/docs/${lang}" \
+              --template-directory "ech-0292_meta/input/docgen/${lang}"
+          done
+
+
+      - name: Install Pandoc
+        # Fixed Pandoc version for deterministic conversion output.
+        run: |
+          curl -fsSL https://github.com/jgm/pandoc/releases/download/3.5/pandoc-3.5-1-amd64.deb -o /tmp/pandoc.deb
+          sudo dpkg -i /tmp/pandoc.deb
+          pandoc --version | head -1
+
+      - name: Install LibreOffice (for direct DOCX -> PDF)
+        # LibreOffice converts the finished Word document directly to PDF;
+        # fonts-liberation substitutes Arial with matching metrics.
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends libreoffice-writer fonts-liberation
+          soffice --version | head -1
+
+      - name: Download Pandoc pagebreak Lua filter
+        # Used by pandoc when producing docx/pdf outputs.
+        run: |
+          curl -L https://raw.githubusercontent.com/pandoc-ext/pagebreak/refs/heads/main/pagebreak.lua \
+          -o pagebreak.lua
+
+      - name: Merge, convert to Word and PDF (de)
+        run: |
+          for lang in de; do
+            # Merge generated docs with hand-written language-specific content.
+            # --demote-includes: every class/enum doc is introduced by a section
+            # of its own, so it is nested under that section instead of becoming
+            # a sibling chapter. Only eCH-0293 is written this way.
+            python .github/workflows/scripts/merge_documentation.py ech-0296_laws "$lang" --demote-includes
+            # Footer (version/status) derived from 01_head.md — shared by DOCX and
+            # PDF so both stay in sync with the metadata table.
+            footer="$(python .github/workflows/scripts/pdf_footer_info.py "ech-0296_laws/input/${lang}/01_head.md")"
+            # Word (DOCX)
+            pandoc "ech-0296_laws/output/documentation_merged_${lang}.md" \
+              -o "ech-0296_laws/output/ech-0296_laws_${lang}.docx" \
+              --reference-doc=ech-0296_laws/input/template.docx \
+              --lua-filter=pagebreak.lua
+            python .github/workflows/scripts/set_docx_updatefields.py "ech-0296_laws/output/ech-0296_laws_${lang}.docx"
+            python .github/workflows/scripts/shade_alternate_rows.py "ech-0296_laws/output/ech-0296_laws_${lang}.docx"
+            python .github/workflows/scripts/set_docx_footer.py "ech-0296_laws/output/ech-0296_laws_${lang}.docx" "$footer"
+            # Seitenzaehler der Kopfzeile uebersetzen ("Seite 3 von 47" / "Page 3 sur 47");
+            # das Word-Template fuehrt nur eine sprachneutrale Vorlage.
+            python .github/workflows/scripts/set_docx_page_label.py "ech-0296_laws/output/ech-0296_laws_${lang}.docx" "$lang"
+            # PDF: direct conversion of the finished Word document via LibreOffice,
+            # updating fields + the table of contents so the TOC is populated.
+            bash .github/workflows/scripts/docx_to_pdf.sh \
+              "ech-0296_laws/output/ech-0296_laws_${lang}.docx" \
+              "ech-0296_laws/output/ech-0296_laws_${lang}.pdf"
+          done
+
+      - name: Commit and push changes
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+            # Commit only when generated output has changed.
+            git config --global user.name "github-actions"
+            git config --global user.email "github-actions@github.com"
+            git add ech-0296_laws/output/
+            git diff --quiet && git diff --staged --quiet || git commit -m "Auto-generated ech-0296_laws files"
+            REMOTE="https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
+            # Retry on rejection. A rebase is not an option here: docx and pdf
+            # are binary and can never be merged. Instead move onto the new
+            # upstream tip and place our freshly generated output/ on top of it
+            # unchanged — everything else (notably input/) is taken from
+            # upstream, so concurrent input changes are not reverted.
+            for attempt in 1 2 3 4 5; do
+              git push "$REMOTE" HEAD:${{ github.ref }} && exit 0
+              echo "Push rejected (attempt $attempt) — re-applying output/ onto ${{ github.ref_name }}"
+              git fetch "$REMOTE" ${{ github.ref_name }} || exit 1
+              git reset --soft FETCH_HEAD || exit 1
+              git reset || exit 1
+              git add ech-0296_laws/output/
+              git diff --staged --quiet && echo "Nothing left to commit" && exit 0
+              git commit -m "Auto-generated ech-0296_laws files" || exit 1
+              sleep $((RANDOM % 5 + 2))
+            done
+            echo "::error::Auto-generated push failed after 5 attempts" && exit 1
