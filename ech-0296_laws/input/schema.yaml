@@ -166,19 +166,19 @@ classes:
     annotations:
       description_de: |
         FRBR-Identifikationsblock (akn:identification) mit Work-, Expression- und Manifestations-Beschreibungen. Das @source-Attribut referenziert die verantwortliche Organisation als Dokument-internen Anker (z.B. '#ch.bk').
-      xml_element: akn:identification
     slots:
     - source
     - frbr_work
     - frbr_expression
     - frbr_manifestation
+    exact_mappings:
+    - akn:identification
   FRBRWork:
     description: |
       FRBR Work level (akn:FRBRWork): the abstract legislative text independent of language or version. Contains ELI URIs, Fedlex/JoLux dates, authors, country code (CH), SR number, and multilingual names with short forms.
     annotations:
       description_de: |
         FRBR-Work-Ebene (akn:FRBRWork): der abstrakte Erlass unabhängig von Sprache und Version. Enthält ELI-URIs, Fedlex/JoLux-Daten, Autoren, Ländercode (CH), SR-Nummer und mehrsprachige Namen mit Kurzformen.
-      xml_element: akn:FRBRWork
     slots:
     - frbr_this
     - frbr_uri
@@ -188,26 +188,28 @@ classes:
     - frbr_number
     - frbr_names
     - frbr_authoritative
+    exact_mappings:
+    - akn:FRBRWork
   FRBRExpression:
     description: |
       FRBR Expression level (akn:FRBRExpression): a specific language version of the legislative text. Identified by an ELI URI that includes the language code.
     annotations:
       description_de: |
         FRBR-Expression-Ebene (akn:FRBRExpression): eine sprachspezifische Version des Erlasses. Identifiziert durch einen ELI-URI mit Sprachcode.
-      xml_element: akn:FRBRExpression
     slots:
     - frbr_this
     - frbr_uri
     - frbr_dates
     - frbr_authors
     - frbr_language
+    exact_mappings:
+    - akn:FRBRExpression
   FRBRManifestation:
     description: |
       FRBR Manifestation level (akn:FRBRManifestation): a specific file format of the expression. For Fedlex XML files the format value is 'xml'. The optional fedlex:generator attribute is only permitted here (FLX-XF-002).
     annotations:
       description_de: |
         FRBR-Manifestations-Ebene (akn:FRBRManifestation): ein spezifisches Dateiformat der Expression. Für Fedlex XML-Dateien ist der Formatwert 'xml'. Das optionale Attribut fedlex:generator ist nur hier erlaubt (FLX-XF-002).
-      xml_element: akn:FRBRManifestation
       schematron_note: 'FLX-XF-002: fedlex:generator only allowed on FRBRformat[@value=''xml'']'
     slots:
     - frbr_this
@@ -215,37 +217,42 @@ classes:
     - frbr_dates
     - frbr_authors
     - frbr_format
+    exact_mappings:
+    - akn:FRBRManifestation
   FRBRDate:
     description: |
       A date entry for an FRBR entity (akn:FRBRdate). The @name attribute uses Fedlex/JoLux vocabulary: jolux:dateEntryInForce, jolux:dateDocument, jolux:dateApplicability.
     annotations:
       description_de: |
         Ein Datumseintrag einer FRBR-Entität (akn:FRBRdate). Das @name-Attribut verwendet Fedlex/JoLux-Vokabular: jolux:dateEntryInForce, jolux:dateDocument, jolux:dateApplicability.
-      xml_element: akn:FRBRdate
     slots:
     - date
     - frbr_date_name
+    exact_mappings:
+    - akn:FRBRdate
   FRBRAuthor:
     description: |
       An author or rights-holder entry for an FRBR entity (akn:FRBRauthor). @href references the organization; @as references the role (both as intra-document anchors).
     annotations:
       description_de: |
         Ein Autoren- oder Rechteinhaber-Eintrag einer FRBR-Entität (akn:FRBRauthor). @href referenziert die Organisation; @as referenziert die Rolle (beide als Dokument-interne Anker).
-      xml_element: akn:FRBRauthor
     slots:
     - href
     - as_role
+    exact_mappings:
+    - akn:FRBRauthor
   FRBRName:
     description: |
       A multilingual name entry for the FRBR Work (akn:FRBRname). Carries the full official name and an optional abbreviation. One entry per language.
     annotations:
       description_de: |
         Ein mehrsprachiger Namenseintrag des FRBR-Works (akn:FRBRname). Enthält den offiziellen Langtitel und eine optionale Abkürzung. Ein Eintrag pro Sprache.
-      xml_element: akn:FRBRname
     slots:
     - xml_lang
     - value
     - short_form
+    exact_mappings:
+    - akn:FRBRname
   ValueType:
     description: |
       A simple holder carrying a single @value attribute (AKN valueType). Reused for FRBRcountry, FRBRnumber, FRBRauthoritative, etc.
@@ -928,13 +935,15 @@ slots:
     range: UriValueType
     annotations:
       description_de: Kanonische ELI-URI dieser FRBR-Entität (akn:FRBRthis/@value).
-      xml_element: akn:FRBRthis
+    exact_mappings:
+    - akn:FRBRthis
   frbr_uri:
     description: Base ELI URI of this FRBR entity (akn:FRBRuri/@value).
     range: UriValueType
     annotations:
       description_de: Basis-ELI-URI dieser FRBR-Entität (akn:FRBRuri/@value).
-      xml_element: akn:FRBRuri
+    exact_mappings:
+    - akn:FRBRuri
   frbr_dates:
     description: |
       Date entries for this FRBR entity (akn:FRBRdate). Multiple entries for different event types (dateEntryInForce, dateDocument, dateApplicability).
@@ -954,13 +963,15 @@ slots:
     range: ValueType
     annotations:
       description_de: Ländercode für diesen Erlass (akn:FRBRcountry/@value), z.B. 'CH'.
-      xml_element: akn:FRBRcountry
+    exact_mappings:
+    - akn:FRBRcountry
   frbr_number:
     description: SR (Systematische Rechtssammlung) number (akn:FRBRnumber/@value), e.g. '101'.
     range: ValueType
     annotations:
       description_de: SR-Nummer (akn:FRBRnumber/@value), z.B. '101'.
-      xml_element: akn:FRBRnumber
+    exact_mappings:
+    - akn:FRBRnumber
   frbr_names:
     description: Multilingual name entries for the FRBR Work (akn:FRBRname). One entry per language.
     range: FRBRName
@@ -972,19 +983,22 @@ slots:
     range: ValueType
     annotations:
       description_de: Ob dies die massgebliche Version ist (akn:FRBRauthoritative/@value).
-      xml_element: akn:FRBRauthoritative
+    exact_mappings:
+    - akn:FRBRauthoritative
   frbr_language:
     description: Language code of this expression (akn:FRBRlanguage/@language).
     range: LanguageType
     annotations:
       description_de: Sprachcode dieser Expression (akn:FRBRlanguage/@language).
-      xml_element: akn:FRBRlanguage
+    exact_mappings:
+    - akn:FRBRlanguage
   frbr_format:
     description: File format of this manifestation (akn:FRBRformat/@value), typically 'xml'.
     range: FormatType
     annotations:
       description_de: Dateiformat dieser Manifestation (akn:FRBRformat/@value), typischerweise 'xml'.
-      xml_element: akn:FRBRformat
+    exact_mappings:
+    - akn:FRBRformat
   frbr_date_name:
     description: |
       Type of date (akn:FRBRdate/@name), using Fedlex/JoLux vocabulary, e.g. 'jolux:dateEntryInForce', 'jolux:dateDocument', 'jolux:dateApplicability'.
