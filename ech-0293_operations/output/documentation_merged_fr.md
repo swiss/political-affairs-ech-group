@@ -56,17 +56,7 @@ eCH-0293 fait partie d'une famille de normes pour les données politiques et tra
 
 \newpage
 
-# Remarque
-
-Le présent document recourt à une formulation épicène pour les désignations de personnes. Il se fonde sur les [directives](https://www.bk.admin.ch/bk/de/home/dokumentation/sprachen/hilfsmittel-textredaktion/leitfaden-zum-geschlechtergerechten-formulieren.html) de la Chancellerie fédérale. Selon les situations, on utilise des doublets (les citoyennes et les citoyens), des formes abstraites du point de vue du genre (la personne assurée), des formes neutres ou des paraphrases sans référence à des personnes. Le masculin générique n'est pas admis. Les formes complètes sont utilisées dans les textes suivis ; dans les passages abrégés, notamment dans les tableaux, les formes courtes sont admises. Les astérisques de genre et les graphies analogues ne sont pas utilisés.
-
-\newpage
-
 # Introduction
-
-## Contexte : fonctionnement public des conseils
-
-Aux niveaux fédéral, cantonal et communal, des conseils et des assemblées siègent, délibèrent sur des affaires politiques, prennent des décisions et contrôlent l'exécutif.
 
 ## La famille de normes « Affaires politiques »
 
@@ -83,78 +73,42 @@ La famille comprend :
 
 L'objectif de cette famille de normes est de créer une structure utilisable en commun pour les données politiques et de mettre à la disposition des organisations qui publient des informations sur les affaires politiques un modèle de données robuste.
 
-## Délimitation par rapport au groupe spécialisé « Droits politiques »
-
-Outre le groupe spécialisé « Affaires politiques », l'association eCH compte le groupe spécialisé « Droits politiques ». Tous deux concernent le domaine politique, mais couvrent des domaines différents :
-
-- **Affaires politiques** (la présente famille de normes) décrit le processus de formation de la volonté et de décision parlementaire et administratif : les acteurs (eCH-0294), le fonctionnement des conseils (eCH-0293), les affaires parlementaires (eCH-0295), les actes législatifs qui en découlent (eCH-0296) ainsi que les consultations en amont (eCH-0297).
-- **Droits politiques** traite de l'exercice des droits politiques par les personnes ayant le droit de vote : registres des électeurs et des candidats, déroulement des votations et élections populaires, vote électronique (eVoting), cartes de vote ainsi que résultats des votations et des élections (notamment eCH-0045, eCH-0110, eCH-0155, eCH-0157, eCH-0159, eCH-0222, eCH-0228, eCH-0252, eCH-0310).
-
-Cette délimitation est particulièrement importante pour eCH-0293, puisque la norme modélise des votes et des élections. Ce qui est déterminant n'est pas de savoir qui a le droit de vote, mais **où la décision est prise** – dans l'assemblée réunie ou aux urnes :
-
-- **Dans l'assemblée** – la présente norme : les votes et élections auxquels procède un organe siégeant dans le cadre d'une séance dotée d'un ordre du jour. En font partie les votes nominatifs et les votes finaux au parlement, tout comme l'élection de membres des autorités, de juges ou de présidences de commission par le conseil. Cela est consigné au moyen de `Voting`, `IndividualVote` et `Election`.
-- **Aux urnes** – groupe spécialisé « Droits politiques » : les votations et élections populaires ainsi que les registres électoraux, le déroulement, les cartes de vote et les résultats. Ces éléments ne sont pas modélisés ici.
-
-Se situent délibérément du côté de la présente norme les **Landsgemeinden et les assemblées communales** (`meeting_type: sitting`). Il s'agit certes d'assemblées des personnes ayant le droit de vote elles-mêmes, mais elles décident en tant qu'organe siégeant, avec ordre du jour, prises de parole et décisions – et sont donc représentées comme une séance de conseil.
-
-Un second point de contact concerne les personnes élues : dans les résultats électoraux du groupe spécialisé « Droits politiques » figurent les candidats et les personnes élues. Dès qu'une personne exerce un mandat, elle est répertoriée dans eCH-0294 en tant qu'actrice ou acteur politique, avec ses rôles et ses affiliations – eCH-0293 la référence depuis là au moyen d'`actor_id`.
-
 \newpage
 
 <!-- ToDo: Christian -->
 
-# Organisation temporelle de l'activité des conseils
+# Organisation temporelle du fonctionnement des conseils
 
-L'activité parlementaire est organisée dans le temps à trois niveaux : les législatures constituent le cadre à long terme, les sessions structurent le travail au sein d'une législature, et les séances sont les rencontres concrètes au cours desquelles les affaires sont délibérées. Cette hiérarchie permet à la fois une planification à long terme et une adaptation souple aux besoins du moment.
-
-## Legislature (législature)
-
-### Notion et signification
-
-Une législature désigne la période pour laquelle un parlement est élu et durant laquelle il exerce ses fonctions dans sa composition actuelle. Elle constitue l'unité temporelle la plus élevée de l'activité parlementaire et délimite le cadre du travail législatif d'un parlement.
-
-En Suisse, la durée des législatures varie selon le niveau fédéral :
-
-- **Niveau fédéral** : 4 ans (Conseil national et Conseil des États)
-- **Cantons** : le plus souvent 4 ans, dans certains cantons 5 ans
-- **Communes** : variable, souvent 4 ans
-
-### Structure et hiérarchie
-
-La législature se situe hiérarchiquement au-dessus des sessions et des séances :
+Le fonctionnement des conseils s'organise dans le temps sur trois niveaux : les législatures constituent le cadre à long terme, les sessions structurent le travail au sein d'une législature, et les séances (Meetings) sont les réunions concrètes au cours desquelles les affaires sont délibérées.
 
 ```
 Legislature (législature)
-  └─ Sessions (p. ex. session de printemps, session d'automne)
-      └─ Meetings (séances individuelles)
-          └─ Agenda Items (points de l'ordre du jour)
+  └─ Session (p. ex. session de printemps)
+      └─ Meeting (séance individuelle)
+          └─ AgendaItem (point de l'ordre du jour)
 ```
 
-### Contexte parlementaire
+Les trois classes sont délibérément construites de la même manière : l'identification, les indications temporelles, le rattachement à l'organe et les documents liés fonctionnent de façon identique aux trois niveaux. Ces conventions communes sont décrites une seule fois, à la législature ; pour la session et la séance ne suivent que les particularités du niveau concerné.
 
-Chaque législature est rattachée à un organe parlementaire déterminé, identifié par :
+## Legislature (législature)
 
-- **actor_id** : renvoi au parlement en tant qu'acteur politique (p. ex. Conseil national, Grand Conseil) selon eCH-0294 Actors
-- **administrative_id** : identifiant administratif du corps législatif (p. ex. commune, canton, pays)
+Une législature désigne la période pour laquelle un parlement est élu et durant laquelle il exerce ses fonctions dans sa composition actuelle. Sa durée n'est pas prescrite — les exemples à la fin de la présente section montrent un mandat de quatre ans et un mandat de cinq ans.
 
-### Situation temporelle
+### Planifié et effectif
 
-Une législature est caractérisée au moyen du mixin `IsEventWithDuration`. Les principaux champs de date sont :
-
-- **date_begin_planned** / **date_begin_actual** : début planifié, respectivement effectif, de la législature (généralement après les élections)
-- **date_end_planned** / **date_end_actual** : fin planifiée, respectivement effective, de la législature (avant les élections suivantes)
-
-Au besoin, il existe des variantes analogues `datetime_*` avec indication de l'heure.
-
-Exemple au niveau fédéral : la 51e législature du Parlement suisse a duré du 5 décembre 2019 au 4 décembre 2023.
+Le début et la fin sont consignés deux fois : `date_begin_planned` et `date_end_planned` retiennent la planification, `date_begin_actual` et `date_end_actual` le déroulement effectif. Lorsque l'heure importe, les variantes `datetime_*` sont à disposition. Pour une législature, planification et déroulement coïncident le plus souvent ; les mêmes champs valent tels quels pour la session et la séance, où ils divergent régulièrement.
 
 ### Identification
 
-Le mixin `HasIdentification` met à disposition `local_id`, `global_uri` et `wikidata_uri`. Le `global_uri` est obligatoire et sert d'identifiant univoque.
+`global_uri` est l'identifiant et est obligatoire. `local_id` reprend l'identifiant du système livreur, `wikidata_uri` renvoie à l'entrée Wikidata, lorsqu'elle existe. Cela vaut de la même manière pour la session et la séance.
+
+### Rattachement à l'organe
+
+`actor_id` renvoie, sous forme de référence abrégée, à l'organe selon eCH-0294 (p. ex. Conseil national, Grand Conseil), `administrative_id` à l'unité administrative pour laquelle cet organe agit (pays, canton, commune). Ce couple se retrouve également dans le Meeting.
 
 ### Documents liés
 
-Le slot **documents** permet de lier des documents pertinents (p. ex. listes des membres de la législature, répertoires des affaires) sous forme de FRBR Works.
+`documents` relie des documents en tant que FRBR-Works selon eCH-0292 — pour la législature p. ex. les listes des membres et les répertoires des affaires, pour la session le programme de session, pour la séance le procès-verbal.
 
 
 
@@ -220,6 +174,89 @@ _Durée du mandat d'un parlement en tant qu'assemblée législative. Elle est en
 
 
 
+### Exemples
+#### Exemple Legislature : Législature cantonale en cours d'une durée de cinq ans
+
+```yaml
+legislatures:
+- global_uri: ops:legislature_vd_2022_2027
+  wikidata_uri: http://www.wikidata.org/entity/Q131627357
+  administrative_id: https://ld.admin.ch/canton/22
+  name:
+  - text: Législature 2022-2027
+    language: fr
+  description: Le Grand Conseil vaudois est élu pour cinq ans.
+  landing_page: https://www.vd.ch/gc
+  actor_id:
+    global_uri: actors:gc_vd
+    label: Grand Conseil du canton de Vaud
+    abbreviation:
+    - value: GC
+      language: fr
+  date_begin_actual: '2022-07-01'
+  date_end_planned: '2027-06-30'
+  datetime_created: '2022-05-10T14:00:00+02:00'
+  datetime_modified: '2025-01-08T11:20:00+01:00'
+
+```
+#### Exemple Legislature : Législature cantonale d'une durée de quatre ans
+
+```yaml
+legislatures:
+- global_uri: ops:legislature_be_2022_2026
+  local_id: GR-BE-2022-2026
+  administrative_id: https://ld.admin.ch/canton/2
+  name:
+  - text: Legislatur 2022–2026
+    language: de
+  - text: Législature 2022-2026
+    language: fr
+  landing_page: https://www.gr.be.ch/de/start/grosser-rat.html
+  actor_id:
+    global_uri: https://api.openparldata.ch/v1/bodies/253
+    label: Grosser Rat Bern
+    abbreviation:
+    - value: GR
+      language: de
+  date_begin_planned: '2022-06-01'
+  date_end_planned: '2026-05-31'
+  date_begin_actual: '2022-06-01'
+  date_end_actual: '2026-05-31'
+  datetime_created: '2022-04-01T10:15:00+02:00'
+  datetime_modified: '2026-06-01T07:00:00+02:00'
+
+```
+#### Exemple Legislature : Législature fédérale achevée
+
+```yaml
+legislatures:
+- global_uri: ops:legislature_51
+  wikidata_uri: http://www.wikidata.org/entity/Q71712404
+  administrative_id: https://ld.admin.ch/country/CHE
+  name:
+  - text: 51. Legislaturperiode
+    language: de
+  - text: 51e législature
+    language: fr
+  - text: 51ª legislatura
+    language: it
+  description: >-
+    Amtsdauer der am 20. Oktober 2019 gewählten Bundesversammlung; sie endete am Vortag
+    der konstituierenden Sitzung der 52. Legislaturperiode vom 4. Dezember 2023.
+  landing_page: https://www.parlament.ch/de/ratsbetrieb/sessionen
+  actor_id:
+    global_uri: actors:bundesversammlung
+    label: Bundesversammlung
+    abbreviation:
+    - value: BV
+      language: de
+  date_begin_actual: '2019-12-02'
+  date_end_actual: '2023-12-03'
+  datetime_created: '2019-12-02T09:00:00+01:00'
+  datetime_modified: '2023-12-04T08:30:00+01:00'
+
+```
+
 
 
 
@@ -227,69 +264,31 @@ _Durée du mandat d'un parlement en tant qu'assemblée législative. Elle est en
 
 </div>
 
-## Session (période de session)
+## Session (période de séance)
 
-### Notion et signification
+Une session est une période de séance continue au cours de laquelle plusieurs séances ont lieu. Elle constitue le niveau intermédiaire — et elle est facultative : les entités fédérées sans sessions formelles s'en passent et gèrent directement leurs séances.
 
-Une session désigne une période de séances continue d'un parlement, au cours de laquelle plusieurs séances ont lieu. Elle constitue l'unité temporelle intermédiaire entre la législature et les séances individuelles.
+### Session ou séance ?
 
-### Distinction : session et séance
+La session est la période, la séance la réunion individuelle qui s'y déroule :
 
-Cette distinction est importante pour comprendre la norme :
-
-- **Session** : une période de séances qui s'étend typiquement sur plusieurs jours ou semaines
-- **Meeting** : une séance individuelle au sein d'une session
-
-#### Exemple au niveau fédéral
 ```
 Legislature (51e législature)
   └─ Session (session de printemps 2024)
       ├─ Meeting (séance du Conseil national du 4 mars 2024)
       ├─ Meeting (séance du Conseil des États du 4 mars 2024)
-      ├─ Meeting (séance du Conseil national du 5 mars 2024)
       └─ ...
 ```
 
-### Rattachement aux organes
+Les deux niveaux peuvent coïncider : une séance d'un jour du Grand Conseil ou une Landsgemeinde est gérée comme une période de séance comportant une seule séance — les exemples montrent les deux cas.
 
-Une session se rapporte à l'organe politique qui organise les sessions comme suite de séances. Exemples :
+### Numérotation
 
-- **Parlement** : sessions d'un Grand Conseil ou de l'Assemblée fédérale
-- **Commissions** : périodes de séances des commissions parlementaires
-- **Organes communs** : p. ex. sessions de l'Assemblée fédérale (Chambres réunies)
+Les sessions sont numérotées, la pratique variant fortement : `number` retient le numéro courant sous forme de nombre, `sequential_number` la même indication sous forme de chaîne de caractères (et donc aussi en chiffres romains), `position` la position au sein de la législature et `meeting_abbreviation` une désignation abrégée telle que « FS24 ». Le Meeting connaît les mêmes quatre champs.
 
-Le champ **body_key** permet de consigner l'organe (p. ex. « NR » pour le Conseil national, « SR » pour le Conseil des États) sous forme de clé. Le champ **parent_legislature** rattache la session à la législature correspondante.
+### Rattachement et liens
 
-### Identification et numérotation
-
-Les sessions sont habituellement numérotées. Les slots suivants sont disponibles — ils sont compatibles avec la modélisation correspondante de Meeting :
-
-- **number** : numéro courant (p. ex. au sein de la législature ou de l'année)
-- **sequential_number** : numéro courant sous forme de chaîne (chiffres romains également possibles)
-- **position** : position sous forme de nombre entier
-- **abbreviation** : désignation abrégée (p. ex. « FS24 » pour la session de printemps 2024)
-- **name** : désignation complète multilingue
-
-Le mixin `HasIdentification` met en outre à disposition `local_id`, `global_uri` et `wikidata_uri`.
-
-### Attributs temporels
-
-Les sessions utilisent le mixin `IsEventWithDuration` et offrent ainsi les mêmes champs de date que les législatures et les séances :
-
-- **date_begin_planned** / **datetime_begin_planned** : début planifié de la session
-- **date_begin_actual** / **datetime_begin_actual** : début effectif
-- **date_end_planned** / **datetime_end_planned** : fin planifiée de la session
-- **date_end_actual** / **datetime_end_actual** : fin effective
-
-### Liens
-
-- **meetings** : liste des séances au sein de la session
-- **documents** : FRBR Works liés (p. ex. programme de session, aperçu de la session)
-- **url** : page d'accueil de la session
-
-### Souplesse de la norme
-
-La norme est délibérément souple afin de refléter différentes formes d'organisation. Les entités fédérées sans sessions formelles peuvent utiliser cette entité de manière facultative ou renvoyer directement aux séances.
+`body_key` retient l'organe sous forme de clé abrégée (p. ex. « NR », « SR »), `parent_legislature` rattache la session à sa législature, `meetings` énumère les séances correspondantes, `url` renvoie à la page d'accueil.
 
 
 
@@ -457,129 +456,27 @@ sessions:
 
 ## Meeting (séance individuelle)
 
-### Notion et signification
+Un Meeting est la séance individuelle d'un organe — le niveau auquel les points de l'ordre du jour sont délibérés, les décisions prises et les interventions consignées.
 
-Un Meeting désigne une séance individuelle d'un organe parlementaire. Il s'agit de la manifestation concrète au cours de laquelle les membres d'un parlement, d'une commission ou d'un autre organe se réunissent pour délibérer d'affaires et prendre des décisions.
+### Types de séance
 
-### Types de séances
+`meeting_type` distingue quatre types : `session` pour les séances plénières d'un parlement ou d'une chambre, `committee` pour les séances de commission, `sitting` pour les assemblées telles que les Landsgemeinden, les assemblées communales et les assemblées de commune bourgeoise, et `various` comme valeur résiduelle. La valeur `sitting` procède d'un choix délibéré : les Landsgemeinden et les assemblées communales sont des assemblées des personnes ayant le droit de vote elles-mêmes, mais elles décident en tant qu'organe siégeant doté d'un ordre du jour et sont donc représentées comme une séance de conseil.
 
-La norme distingue différents types de séances au moyen du champ **meeting_type** (énumération `MeetingTypeEnum`) :
+### Planification et réalité
 
-#### session
-Séances plénières de l'ensemble du parlement ou d'une chambre
+Au niveau de la séance, planification et déroulement divergent régulièrement : une séance fixée à 14h00 ne commence, en raison de retards, qu'à 14h25 et se termine à 17h30 au lieu de 18h00. C'est précisément à cela que servent les champs `*_planned` et `*_actual` ; pour les heures, il convient d'utiliser les variantes `datetime_*`. `state` retient si une séance a lieu comme prévu (`planned`, `canceled`, `postponed`) ; `state_name` reprend une désignation de statut divergente, en texte libre.
 
-**Exemples :**
-- Séance du Conseil national durant la session d'automne
-- Séance du Grand Conseil
-- Séance de l'Assemblée fédérale (Chambres réunies)
+### Lieu
 
-#### committee
-Séances des commissions parlementaires
+`location` consigne le lieu de la séance — la salle physique (« Palais fédéral, salle du Conseil national »), une visioconférence ou un format hybride.
 
-**Exemples :**
-- Séance de la Commission de l'économie et des redevances (CER)
-- Commission de gestion (CdG)
-- Commission de politique extérieure (CPE)
+### Rattachement à l'organe et classement
 
-#### sitting
-Formes de séance particulières
+Outre `actor_id` et `administrative_id`, `actor_name` retient le nom de l'organe pour un accès rapide et `body_key` une clé abrégée ; `group_name` et `group_id` complètent les regroupements là où c'est nécessaire. `parent_meeting` représente les séances qui font partie d'une séance de rang supérieur, `parent_legislature` rattache la séance à la législature. La numérotation se fait comme pour la session.
 
-**Exemples :**
-- Landsgemeinden (dans les cantons de Glaris et d'Appenzell Rhodes-Intérieures)
-- Assemblées bourgeoisiales
-- Assemblées communales
+### Points d'ancrage
 
-#### various
-Autres formes de séance n'entrant pas dans les catégories ci-dessus
-
-### Hiérarchie et structure
-
-Un Meeting fait partie d'une session (lorsque celle-ci est utilisée) et contient plusieurs Agenda Items (points de l'ordre du jour) :
-
-```
-Session (session de printemps 2024)
-  └─ Meeting (séance du Conseil national, 4 mars 2024, 08h00)
-      ├─ AgendaItem (point 1 : salutations)
-      ├─ AgendaItem (point 2 : délibération législative)
-      └─ AgendaItem (point 3 : votes)
-```
-
-### Planification temporelle et réalité
-
-Au moyen du mixin `IsEventWithDuration`, le Meeting distingue les moments planifiés des moments effectifs :
-
-#### Dates planifiées
-- **date_begin_planned** / **datetime_begin_planned** : début planifié
-- **date_end_planned** / **datetime_end_planned** : fin planifiée
-
-#### Dates effectives
-- **date_begin_actual** / **datetime_begin_actual** : début effectif
-- **date_end_actual** / **datetime_end_actual** : fin effective
-
-Cette distinction est importante, car :
-- les séances peuvent prendre du retard
-- les points de l'ordre du jour peuvent être avancés ou reportés
-- les séances peuvent se terminer plus tôt que prévu
-
-**Cas d'application :** une séance planifiée pour 14h00 ne commence, en raison de retards, qu'à 14h25 et se termine à 17h30 au lieu de 18h00.
-
-### État de la séance
-
-Le champ **state** (énumération `StateEnum`) saisit l'état actuel d'un Meeting :
-
-- **planned** : la séance est planifiée et se tiendra comme prévu
-- **canceled** : la séance a été annulée
-- **postponed** : la séance a été reportée
-
-Le champ **state_name** permet d'ajouter une description d'état divergente, en texte libre.
-
-Cet état est important pour :
-- l'information actuelle des membres du parlement et du public
-- la traçabilité historique des changements de planification
-- les notifications automatiques en cas de modification
-
-### Identification et numérotation
-
-Les séances sont identifiées par :
-
-- **local_id** / **global_uri** / **wikidata_uri** (via le mixin `HasIdentification`)
-- **number** : numéro courant (p. ex. « 5 » pour la 5e séance d'une session)
-- **sequential_number** : numéro courant sous forme de chaîne (chiffres romains également possibles)
-- **position** : position sous forme de nombre entier au sein de la session
-- **abbreviation** : désignation abrégée (p. ex. « NR-24-05 »)
-- **name** : désignation complète multilingue
-
-### Lieu de la séance
-
-Le champ **location** saisit le lieu de la séance :
-
-- Lieu physique : « Palais fédéral, salle du Conseil national »
-- Séances virtuelles : « Visioconférence via [plateforme] »
-- Formats hybrides : « Palais fédéral et visioconférence »
-
-### Rattachement aux organes
-
-L'organe compétent est référencé au moyen d'**actor_id** (selon eCH-0294 Actors). Le champ **actor_name** permet en outre de consigner le nom de l'organe pour un accès rapide, **body_key** une clé courte (p. ex. « NR », « SR »). Le champ **administrative_id** permet d'indiquer le niveau administratif ; **group_name** et **group_id** complètent les regroupements lorsque cela est nécessaire.
-
-- Séances plénières : renvoi à l'ensemble du parlement
-- Séances de commission : renvoi à la commission concernée
-- Séances communes : renvoi à l'organe commun
-
-### Liens hiérarchiques
-
-- **parent_meeting** : lorsqu'une séance fait partie d'une séance de rang supérieur
-- **parent_legislature** : la législature dans le cadre de laquelle la séance a lieu
-
-### Relations avec d'autres entités
-
-Un Meeting relie différents éléments de l'activité parlementaire :
-
-- **Agenda Items** : les points traités
-- **Votings** : les votes durant la séance
-- **Elections** : les élections durant la séance
-- **Speeches** : les interventions et prises de parole
-- **Attendance** : les listes de présence (via `Attendance.parent_meeting`)
-- **documents** : FRBR Works liés (procès-verbaux, documents de séance, bulletin officiel, etc.)
+Le Meeting est le nœud auquel se rattachent les autres classes de la présente norme : les points de l'ordre du jour (`AgendaItem`), les votes et élections (`Voting`, `Election`), les interventions (`Speech`) ainsi que la liste de présence (`Attendance.parent_meeting`). `documents` relie les documents de séance tels que le bulletin ou les annexes, `protocol_ref` le procès-verbal.
 
 
 
@@ -4439,6 +4336,82 @@ agenda_items:
   affair_id: "affairs:zh_2025_budget_2026"
   datetime_created: "2025-10-01T08:00:00Z"
   datetime_modified: "2025-11-20T16:50:00Z"
+
+```
+#### Exemple Container : legislature
+
+```yaml
+global_uri: ops:legislature_examples
+legislatures:
+
+# Bund: abgeschlossene Legislaturperiode, vier Jahre, dreisprachige Bezeichnung.
+- global_uri: ops:legislature_51
+  wikidata_uri: http://www.wikidata.org/entity/Q71712404
+  administrative_id: "https://ld.admin.ch/country/CHE"
+  name:
+    - text: "51. Legislaturperiode"
+      language: "de"
+    - text: "51e législature"
+      language: "fr"
+    - text: "51ª legislatura"
+      language: "it"
+  description: "Amtsdauer der am 20. Oktober 2019 gewählten Bundesversammlung; sie endete am Vortag der konstituierenden Sitzung der 52. Legislaturperiode vom 4. Dezember 2023."
+  landing_page: "https://www.parlament.ch/de/ratsbetrieb/sessionen"
+  actor_id:
+    global_uri: "actors:bundesversammlung"
+    label: "Bundesversammlung"
+    abbreviation:
+      - value: "BV"
+        language: de
+  date_begin_actual: "2019-12-02"
+  date_end_actual: "2023-12-03"
+  datetime_created: "2019-12-02T09:00:00+01:00"
+  datetime_modified: "2023-12-04T08:30:00+01:00"
+
+# Kanton mit vierjähriger Amtsdauer; Beginn und Ende sind hier von Gesetzes
+# wegen auf den Tag festgelegt und deshalb schon bei der Planung bekannt.
+- global_uri: ops:legislature_be_2022_2026
+  local_id: "GR-BE-2022-2026"
+  administrative_id: "https://ld.admin.ch/canton/2"
+  name:
+    - text: "Legislatur 2022–2026"
+      language: "de"
+    - text: "Législature 2022-2026"
+      language: "fr"
+  landing_page: "https://www.gr.be.ch/de/start/grosser-rat.html"
+  actor_id:
+    global_uri: "https://api.openparldata.ch/v1/bodies/253"
+    label: "Grosser Rat Bern"
+    abbreviation:
+      - value: "GR"
+        language: de
+  date_begin_planned: "2022-06-01"
+  date_end_planned: "2026-05-31"
+  date_begin_actual: "2022-06-01"
+  date_end_actual: "2026-05-31"
+  datetime_created: "2022-04-01T10:15:00+02:00"
+  datetime_modified: "2026-06-01T07:00:00+02:00"
+
+# Kanton mit fünfjähriger Amtsdauer: laufende Legislatur, deren Ende erst
+# geplant ist -- date_end_actual bleibt deshalb leer.
+- global_uri: ops:legislature_vd_2022_2027
+  wikidata_uri: http://www.wikidata.org/entity/Q131627357
+  administrative_id: "https://ld.admin.ch/canton/22"
+  name:
+    - text: "Législature 2022-2027"
+      language: "fr"
+  description: "Le Grand Conseil vaudois est élu pour cinq ans."
+  landing_page: "https://www.vd.ch/gc"
+  actor_id:
+    global_uri: "actors:gc_vd"
+    label: "Grand Conseil du canton de Vaud"
+    abbreviation:
+      - value: "GC"
+        language: fr
+  date_begin_actual: "2022-07-01"
+  date_end_planned: "2027-06-30"
+  datetime_created: "2022-05-10T14:00:00+02:00"
+  datetime_modified: "2025-01-08T11:20:00+01:00"
 
 ```
 #### Exemple Container : meeting item
