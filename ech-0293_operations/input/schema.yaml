@@ -73,6 +73,7 @@ classes:
       - IsEventWithDuration
       - HasCreationModificationDates
     slots:
+      - spatial
       - administrative_id
       - name
       - description
@@ -104,7 +105,7 @@ classes:
       - IsEventWithDuration
       - HasCreationModificationDates
     slots:
-      - body_key
+      - spatial
       - name
       - number
       - sequential_number
@@ -128,7 +129,7 @@ classes:
       - IsEventWithDuration
       - HasCreationModificationDates
     slots:
-      - body_key
+      - spatial
       - meeting_type
       - administrative_id
       - name
@@ -528,14 +529,18 @@ slots:
     range: PersonReference
     inlined: true
 
-  body_key:
+  spatial:
     description: |
-      Key identifying the political body or jurisdiction (e.g., BE for Bern, CHE for Switzerland).
+      Spatial reference to a LINDAS resource (fos-municipality number, fos-canton number, district, or country). Formats: municipality: https://ld.admin.ch/municipality/1234, district: https://ld.admin.ch/district/2301, canton: https://ld.admin.ch/canton/23, country: https://ld.admin.ch/country/CHE.
     annotations:
       description_de: |
-        Schlüssel zur Identifizierung des politischen Organs oder der Gerichtsbarkeit (z.B. BE für Bern, CHE für Schweiz).
+        Räumliche Referenz auf eine LINDAS-Ressource (BFS-Gemeindenummer, BFS-Kantonsnummer, Bezirk oder Land). Formate: Gemeinde: https://ld.admin.ch/municipality/1234, Bezirk: https://ld.admin.ch/district/2301, Kanton: https://ld.admin.ch/canton/23, Bund: https://ld.admin.ch/country/CHE.
       description_fr: |
-        Clé identifiant l'organe politique ou la collectivité (p. ex. BE pour Berne, CHE pour la Suisse).
+        Référence spatiale à une ressource LINDAS (numéro OFS de commune, numéro OFS de canton, district ou pays). Formats : commune : https://ld.admin.ch/municipality/1234, district : https://ld.admin.ch/district/2301, canton : https://ld.admin.ch/canton/23, pays : https://ld.admin.ch/country/CHE.
+    # Wortgleich mit `spatial` in eCH-0294: dieselbe Raumeinheit, damit ein
+    # Ratsbetrieb und die Akteure, die ihn tragen, auf dieselbe LINDAS-Ressource
+    # zeigen. Festgehalten wird der Namensraum, nicht die Stellenzahl der Nummer.
+    pattern: ^https://ld\.admin\.ch/(country/[A-Z]{3}|canton/[0-9]+|district/[0-9]+|municipality/[0-9]+)$
 
   type_label:
     description: |

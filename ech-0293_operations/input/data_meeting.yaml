@@ -1,6 +1,6 @@
 global_uri: ops:meetings_1
 meetings:
-  - body_key: "BE"
+  - spatial: "https://ld.admin.ch/canton/2"
     global_uri: ops:340dcf932fb044dd8f8c5c943267fbcc
     meeting_type: "session"
     name:
@@ -25,7 +25,7 @@ meetings:
     datetime_created: "2024-10-28T01:22:26Z"
     datetime_modified: "2024-11-27T20:40:57Z"
 
-  - body_key: "BE"
+  - spatial: "https://ld.admin.ch/canton/2"
     global_uri: ops:e7c5d453-848a-430a-b024-1dd2f6873aa6
     meeting_type: "session"
     name:
